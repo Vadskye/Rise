@@ -74,13 +74,9 @@ Performance feats allow a character to use the Perform skill to create magical e
 All Performance feats are also Skill feats.
 
 Each performance has an effect when it is used.
-Some performances can also be sustained.
-While you are sustaining a performance, you take a \minus5 penalty to other Perform checks you make.
-You also cannot cast spells, activate magic items by spell completion (such as scrolls), or activate magic items by magic word (such as wands) while sustaining a performance.
-You can sustain a performance for a number of minutes equal to 5 \add your Constitution before you must stop performing.
+Most performances continue their effects if you continue performing.
 
-To be affected by a performance feat, a creature must be able to either see or hear the creature giving the performance, depending on whether the performance is visual or auditory.
-The Perform skill being used determines whether the performance is visual or auditory.
+All performance feats are \glossterm{Auditory}, \glossterm{Speech}, or \glossterm{Visual} effects, depending on the nature of the performance used to activate the feat.
 
 You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have.
 If you fail the Perform check, the use of the ability is wasted.
@@ -285,18 +281,19 @@ Some strike feats instead require a specific action to use.
 
         \midrule
         \tb{Performance Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
-        \featref{Fascinating Performance} & Perform 4 ranks & Fascinate group of creatures & \x & \featpref{Fascinating Performance} \\
-            \tind \featref{Suggestive Performance} & Perform 10 ranks, Fascinating Performance & Suggest action to fascinated creatures & \x & \featpref{Suggestive Performance} \\
-        \featref{Freeing Performance} & Perform 12 ranks  & Dispel magical effects on ally & \x & \featpref{Freeing Performance} \\
-        \featref{Inspire Competence} & Perform 4 ranks  & Grant allies bonuses to skill checks & \x & \featpref{Inspire Competence} \\
-        \featref{Inspire Courage} & Perform 6 ranks  & Grant allies bonuses to accuracy and defenses against fear & \x & \featpref{Inspire Courage} \\
-        \featref{Inspire Greatness} & Perform 12 ranks  & Grant allies bonuses to defenses & \x & \featpref{Inspire Greatness} \\
-        \featref{Inspire Heroics} & Perform 20 ranks  & Grant allies temporary hit points and extra strike & \x & \featpref{Inspire Heroics} \\
-        \featref{Inspire Spellpower} & Perform 10 ranks  & Grant allies bonus to spellpower & \x & \featpref{Inspire Spellpower} \\
-        \featref{Legendary Performance} & Perform 15 ranks, any three Performance feats & Sustain two performances at once & \x & \featpref{Legendary Performance} \\
-        \featref{Rapid Performance} & Perform 14 ranks, any three Performance feats & Perform as a swift action & \x & \featpref{Rapid Performance} \\
-        \featref{Recover Performance} & Perform 10 ranks, any other Performance feat & Reroll failed performance attempt & \x & \featpref{Recover Performance} \\
-        \featref{Spellwoven Performance} & Perform 10 ranks, any other Performance feat & Cast some spells while performing & \x & \featpref{Spellwoven Performance} \\
+        \featref{Dual Performance} & Perform 15 ranks, any three Performance feats & Sustain two performances at once & Skill & \featpref{Dual Performance} \\
+        \featref{Fascinating Performance} & Perform 5 ranks & Fascinate creatures & Skill & \featpref{Fascinating Performance} \\
+            \tind \featref{Suggestive Performance} & Perform 13 ranks, Fascinating Performance & Suggest action to fascinated creatures & Skill & \featpref{Suggestive Performance} \\
+        \featref{Inspire Competence} & Perform 5 ranks  & Grant allies offensive legend point & Skill & \featpref{Inspire Competence} \\
+        \featref{Inspire Courage} & Perform 9 ranks  & Grant allies temporary hit points, immunity to fear & Skill & \featpref{Inspire Courage} \\
+        \featref{Inspire Resilience} & Perform 13 ranks  & Grant allies damage reduction, defensive legend point & Skill & \featpref{Inspire Resilience} \\
+        \featref{Inspire Mastery} & Perform 17 ranks  & Grant allies legend points every round & Skill & \featpref{Inspire Mastery} \\
+        \featref{Inspire Serenity} & Perform 13 ranks  & Dispel magical effects on ally & Skill & \featpref{Inspire Serenity} \\
+        \featref{Mocking Performance} & Perform 5 ranks & Impair foes with mockery & Skill & \featpref{Mocking Performance} \\
+        \featref{Rapid Performance} & Perform 15 ranks, any three Performance feats & Perform as a swift action & Skill & \featpref{Rapid Performance} \\
+        \featref{Recover Performance} & Perform 11 ranks, any other Performance feat & Reroll failed performance attempt & Skill & \featpref{Recover Performance} \\
+        \featref{Spellwoven Performance} & Perform 9 ranks, any other Performance feat & Cast some spells while performing & Skill & \featpref{Spellwoven Performance} \\
+        \featref{Terrifying Performance} & Perform 15 ranks & Invoke fear in foes & Skill & \featpref{Terrifying Performance} \\
 
         \midrule
         \tb{Racial Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
@@ -980,6 +977,11 @@ If you know a Divination spell of 5th level or higher, this bonus increases to \
 This metamagic can only be applied to spells with a range of \rngclose, \rngmed, \rnglong, or \rngext.
 A distant spell uses up a spell slot one level higher than the spell's actual level.
 
+\feat{Dual Performance}{Performance, Skill}
+\featpres Perform 15 ranks, any three Performance feats.
+\featben You can use two Performance feats as part of the same performance.
+You can activate them both as part of the same action (if they require the same action to activate), and sustain both feats with a single performance.
+
 \feat{Eye of the Storm}{Awareness, Combat, Defense, Style}
 \featpre Perception 5, combat prowess 4.
 \featben You reduce your overwhelm penalties by 1.
@@ -1034,16 +1036,15 @@ In addition, you may use your fae power to determine your spellpower with spellg
 When you use a thrown weapon, its range increment is doubled.
 
 \feat{Fascinating Performance}{Performance, Skill}
-\featpre Perform 4 ranks.
-\featben As a standard action, you can make a Perform vs. Mental attack to fascinate creatures within \rngmed range of you.
-Your check result must beat DR 8, and you can affect one creature per Perform rank you have.
-Success against a target means it is \fascinated as long as you keep performing.
-Failure means it is unaffected.
-You can continue the performance as a standard action.
-
+\featpre Perform 5 ranks.
+\featben As a standard action, you can make a DR 8 Perform check to fascinate another creature within \rngmed range of you.
+For every 5 points by which your Perform check succeeds, you can affect an additional target.
+If your check result beats a target's Mental defense, it is \fascinated by you as long as you sustain the performance.
+Otherwise, it is unaffected.
+This is a \glossterm{Compulsion}, \glossterm{Mind} effect.
+\parhead{Special}
 You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have.
 If you fail the Perform check, the use of the ability is wasted.
-This is an Enchantment [Compulsion, Mind] effect.
 
 \feat{Fearless}{General}
 \featpre Willpower 10.
@@ -1080,7 +1081,7 @@ Some creatures immune to Divination spells may still catch you unaware.
 
 \feat{Fortune's Friend}{General}
 \featpre One general \glossterm{legend point}.
-\featben You can spend a general legend point to cause a fortunate turn of events for you or your allies.
+\featben You can spend a legend point to cause a fortunate turn of events for you or your allies.
 The effects of this ability can vary, and are determined by the game master.
 The event is always beneficial for you, and you can suggest possible lucky events.
 In general, the power and scope of the event should not exceed that of a spell or ritual with a level equal to half your level.
@@ -1091,11 +1092,8 @@ Some examples of events this ability could cause are given below.
     \item A conversation you are overhearing happens to include exactly the juicy gossip you are looking for.
 \end{enumerate}
 
-\feat{Freeing Performance}{Performance, Skill}
-\featpre Perform 12 ranks.
-\featben By spending a minute performing continuously, you can make a DR 28 Perform check to free an ally within \rngmed range from hostile magic.
-This creates an effect similar to the \spell{break enchantment}
-spell, with a spellpower equal to your Perform ranks.
+You can only use legend points gained from your character level for this ability.
+Bonus legend points from any other source cannot be used.
 
 \feat{Frenzy}{Class, Rage}
 \featpre Rage ability, barbarian level 6.
@@ -1268,57 +1266,53 @@ You can also use Perception in place of Intelligence for the battlemaster abilit
 \featben You can use Perception in place of Intelligence for combat tricks that depend on Intelligence, and for your accuracy with combat tricks.
 
 \feat{Inspire Competence}{Performance, Skill}
-\featpre Perform 4 ranks.
-\featben As a standard action, you can make a DR 8 Perform check to inspire competence in allies within \rngmed range of you.
-You can affect one creature per two Perform ranks you have.
-You cannot affect yourself with this performance.
-An affected creature gains a \plus2 enhancement bonus to skill checks made with a particular skill.
-This bonus increases by 1 at 8 Perform ranks and every 6 Perform ranks thereafter.
-You can sustain the performance as a swift action.
+\featpre Perform 5 ranks.
+\featben As a standard action, you can make a DR 8 Perform check to inspire competence in another willing creature within \rngmed range of you.
+For every 5 points by which your Perform check succeeds, you can affect an additional target.
+Each target gains a bonus offensive \glossterm{legend point} which it can spend as long as you sustain the performance.
+If a target's legend point has not been used when you end the performance, the legend point is wasted.
+This is a \glossterm{Mind} effect.
 
-You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have.
+\parhead{Special} You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have.
 If you fail the Perform check, the use of the ability is wasted.
-This is a mind-affecting ability.
 
 \feat{Inspire Courage}{Performance, Skill}
-\featpre Perform 6 ranks.
-\featben As a standard action, you can make a DR 12 Perform check to inspire courage in allies within \rngmed range of you, including yourself.
-You can affect one creature per two Perform ranks you have.
-An affected creatures gains a \plus2 enhancement bonus to accuracy on physical attacks and defenses against fear.
-This bonus increases by 1 at 8 Perform ranks and every 6 Perform ranks thereafter.
-You can sustain the performance as a swift action.
-
-You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have.
+\featpre Perform 9 ranks.
+\featben As a standard action, you can make a DR 16 Perform check to inpsire courage in another willing creature within \rngmed range of you.
+For every 5 points by which your Perform check succeeds, you can affect an additional target.
+Each target gains temporary hit points equal to twice your Perform ranks.
+This is a \glossterm{Mind} effect.
+\parhead{Special} You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have.
 If you fail the Perform check, the use of the ability is wasted.
-This is a mind-affecting ability.
 
-\feat{Inspire Greatness}{Performance, Skill}
-\featpre Perform 12 ranks.
-\featben As a standard action, you can make a DR 24 Perform check to inspire greatness in allies within \rngmed range of you, including yourself.
-You can affect one creature per two Perform ranks you have.
-The affected creatures gain a \plus4 enhancement bonus to defenses.
-This bonus increases to \plus5 at 20 Perform ranks.
-
-You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have.
+\feat{Inspire Mastery}{Performance, Skill}
+\featpre Perform 17 ranks, any three other Performance feats.
+\featben As a standard action, you can make a DR 32 Perform check to inspire mastery in another willing creature within \rngmed range of you.
+For every 5 points by which your Perform check succeeds, you can affect an additional target.
+As long as you sustain the performance, at the start of each round, each target gains a bonus general \glossterm{legend point} which it can spend during that round.
+If a target's legend point has not yet been used when the round ends, the legend point is wasted.
+This is a \glossterm{Mind} effect.
+\parhead{Special} You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have.
 If you fail the Perform check, the use of the ability is wasted.
-This is a mind-affecting ability.
 
-\feat{Inspire Heroics}{Performance, Skill}
-\featpre Perform 20 ranks.
-\featben As a standard action, you can make a DR 32 Perform check to inspire heroics in allies within \rngmed range of you, including yourself.
-You can affect one creature per two Perform ranks you have.
-All affected creatures gain temporary hit points equal to your check result and can take an extra strike at a \minus5 penalty when making a standard attack.
-This extra strike does not stack with any other effects which grant extra strikes.
-You can sustain the performance as a swift action.
+\feat{Inspire Resilience}{Performance, Skill}
+\featpre Perform 13 ranks.
+\featben As a standard action, you can make a DR 24 Perform check to inspire resilience in another willing creature within \rngmed range of you.
+For every 5 points by which your Perform check succeeds, you can affect an additional target.
+Each target gains damage reduction against all damage equal to your Perform ranks.
+In addition, it gains a bonus defensive \glossterm{legend point} which it can spend as long as you sustain the performnace.
+If a target's legend point has not been used when you end the performance, the legend point is wasted.
+This is a \glossterm{Mind} effect.
+\parhead{Special} You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have.
+If you fail the Perform check, the use of the ability is wasted.
 
-\feat{Inspire Spellpower}{Performance, Skill}
-\featpre Perform 10 ranks.
-\featben As a standard action, you can make a DR 16 Perform check to inspire spellpower in allies within \rngmed range of you, including yourself.
-You can affect one creature per two Perform ranks you have.
-All affected creatures gain a \plus3 bonus to their spellpower with spells and spell-like abilities.
-This bonus increases by 1 at 14 Perform ranks and every 6 Perform ranks thereafter.
-You can sustain the performance as a swift action.
-
+\feat{Inspire Serenity}{Performance, Skill}
+\featpre Perform 13 ranks.
+\featben As a standard action, you can make a DR 24 Perform check to clear the mind of a willing creature within \rngmed range of you.
+For every 5 points by which your Perform check succeeds, you can affect an additional target.
+Each target is immune to all hostile Mind effects as long as you sustain the performance.
+This is a \glossterm{Mind} effect.
+\parhead{Special}
 You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have.
 If you fail the Perform check, the use of the ability is wasted.
 
@@ -1545,11 +1539,6 @@ You treat spaces occupied by foes as difficult terrain.
 \featben When you take damage, you may choose to have your mount suffer half the damage instead of you (rounded down).
 Likewise, when your mount takes damage, you may choose to suffer half of that damage instead of your mount (rounded down).
 
-\feat{Legendary Performance}{Performance, Skill}
-\featpres Perform 15 ranks, any three Performance feats.
-\featben You can sustain two performances as part of the same swift action.
-You take a \minus10 penalty to other Perform checks while sustaining two performances at once.
-
 \feat{Legendary Persuasion}{Skill}
 \featpre Persuasion 15 ranks.
 \featben When you make a Persuasion check, if the result is 30 or higher, you may treat it as an attack against the Mental defense of one creature that understands you.
@@ -1714,8 +1703,19 @@ They are unable to target you, damage you, or affect you in any way.
 If this would make a spell impossible to miscast, such as if you are the only valid target of a retargeting miscast, the miscast has no effect.
 You may still choose to be affected by miscast effects, if desired.
 
+\feat{Mocking Performance}{Performance, Skill}
+\featpre Perform 5 ranks.
+\featben As a standard action, you can make a DR 8 Perform check to mock a creature within \rngmed range of you.
+For every 5 points by which your Perform check succeeds, you can affect an additional target.
+If your check result beats a target's Mental defense, it is \impaired with attacks and checks as long as you sustain the performance.
+Otherwise, it is unaffected.
+This is a \glossterm{Mind} effect.
+\parhead{Special}
+You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have.
+If you fail the Perform check, the use of the ability is wasted.
+
 \feat{Mounted Archery}{Combat, Mounted}
-\featpre Training in Ride.
+\featpre Training in the Ride skill.
 \featben The penalty you take when using a ranged weapon while mounted is decreased by 4: \minus0 instead of \minus4 if your mount is taking a double move, and \minus4 instead of \minus8 if your mount is sprinting.
 
 \feat{Mounted Charge}{Combat, Mounted}
@@ -1933,8 +1933,8 @@ This means you require only two hours of rest to heal half your hit points.
 This stacks with the benefits of accelerating recovery with the Heal skill (see \pcref{Accelerate Recovery}).
 
 \feat{Rapid Performance}{Performance, Skill}
-\featpres Perform 14 ranks, any three Performance feats.
-\featben You can use performance feats as a swift action by taking a \minus5 penalty on the Perform check to activate the feat.
+\featpres Perform 15 ranks, any three Performance feats.
+\featben You can use Performance feats as a swift action by taking a \minus10 penalty on the Perform check to activate the feat.
 
 \feat{Reach Spell}{Metamagic}
 \featpre 2nd level spell known.
@@ -1949,9 +1949,8 @@ In exchange, you gain a \plus2 bonus to damage with melee attacks.
 \stylereq Wield a melee weapon.
 
 \feat{Recover Performance}{Performance, Skill}
-\featpres Perform 10 ranks, any other Performance feat.
-\featben If you fail the Perform check to use a Performance feat, you can take a move action to reroll the Perform check.
-If the initial performance was done with the Rapid Performance feat, you take the same \minus5 penalty on the reroll.
+\featpres Perform 11 ranks, any other Performance feat.
+\featben If you fail the Perform check to use a Performance feat, you can reroll the Perform check as an immediate action.
 
 \feat{Resilient Magic}{Magic}
 \featpre 3rd level or higher Antimagic spell known.
@@ -2109,8 +2108,8 @@ You can perform rituals from up to 30 feet away from the ritual components.
 You perform rituals twice as quickly.
 
 \feat{Spellwoven Performance}{Performance, Skill}
-\featpres Any spell known, Perform 10 ranks, any other Performance feat.
-\featben You can cast enchantment and illusion spells while sustaining a performance.
+\featpres Perform 9 ranks, any other Performance feat.
+\featben You can cast Enchantment and Illusion spells while sustaining a performance.
 The Spellcraft DR to identify those spells as they are cast increases by 10, as the performance disguises the magic.
 
 \feat{Spring Attack}{Combat}
@@ -2136,12 +2135,17 @@ Finally, you can also intuit depth, sensing your approximate depth underground a
 \featben You are immune to hostile \glossterm{Compulsion} effects.
 
 \feat{Suggestive Performance}{Performance, Skill}
-\featpres Perform 10 ranks, Fascinating Performance.
-\featben As a swift action, you can make a DR 20 Perform check to suggest an action to a single creature you are currently fascinating with the Fascinating Performance feat.
-This functions as the \spell{suggestion} spell, with an accuracy equal to your Perform modifier.
-You can affect an additional creature at 12 Perform ranks and every 2 Perform ranks thereafter.
+\featpres Perform 13 ranks, Fascinating Performance.
+\featben As a standard action, you can make a DR 24 Perform check to suggest an course of action to a creature within \rngmed range of you.
+For every 5 points by which your Perform check succeeds, you can suggest the same course of action an additional target.
+Each target must be already \fascinated by you using the Fascinating Performance feat.
+If your check result beats a target's Mental defense, it thinks your suggestion is a good idea and will try to follow it as long as you sustain the performance.
+Otherwise, it is unaffected, though it remains fascinated.
+This is a \glossterm{Delusion}, \glossterm{Mind}, \glossterm{Speech} effect.
 
-You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have.
+Using this ability is considered continuing your performance for the Fascinating Performance feat, and does not free creatures you have fascinated from that effect.
+
+\parhead{Special} You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have.
 If you fail the Perform check, the use of the ability is wasted.
 
 \feat{Summoning Mastery}{Magic}
@@ -2192,6 +2196,14 @@ Whenever you hit a creature with a melee strike, it is \taunted by you for 2 rou
 \feat{Terrain Lore}{Class}
 \featpre Terrain lore ability, ranger 7.
 \featben You gain an additional terrain lore ability that you qualify for.
+
+\feat{Terrifying Performance}{Performance, Skill}
+\featpre Perform 15 ranks.
+\featben As a standard action, you can make a DR 20 Perform check to terrify a creature within \rngmed range of you.
+For every 5 points by which your Perform check succeeds, you can affect an additional target.
+If your check result beats a target's Mental defense, it is \frightened by you as long as you sustain the performance.
+Otherwise, it is \shaken by you.
+This is a \glossterm{Fear}, \glossterm{Mind} effect.
 
 \feat{Threatening Fire}{Combat, Reaction, Style}
 \featpres Dexterity 5, Overwhelming Fire, combat prowess 8.
