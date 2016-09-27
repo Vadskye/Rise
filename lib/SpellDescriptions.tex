@@ -4,7 +4,7 @@
 
 \pdfbookmark[2]{A}{SpellDescriptionsA}
 
-\begin{spellsection}{Ablative Shield}[1]
+\begin{spellsection}{Ablative Shield}[2]
     \begin{spellheader}
         \spelldesc{You instantly reduce the power of an incoming attack.}
     \end{spellheader}
@@ -621,7 +621,7 @@
     \end{spellcontent}
     \begin{spellsubcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One willing creature}{\rngclose}
+            \spellquicktargeting{One willing creature}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target gains damage reduction against all damage equal to your spellpower. This effect lasts until the spell ends, or until you shield a different creature.
@@ -803,7 +803,7 @@
     \end{spellaugments}
 \end{spellsection}
 
-\begin{spellsection}{Barkskin}[1]
+\begin{spellsection}{Barkskin}[2]
     \begin{spellheader}
         \spelldesc{You toughen a creature's skin, giving it the appearance of tree bark.}
     \end{spellheader}
@@ -1866,7 +1866,7 @@
             \spellquicktargeting{One willing creature}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains damage reduction against all damage equal to your spellpower.
+            \spelleffect The target gains damage reduction against physical damage equal to your spellpower.
             In addition, at the end of each round, it heals hit points equal to your spellpower.
             \spelldur 5 rounds
         \end{spelleffects}
@@ -2227,7 +2227,7 @@
             \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You become larger, as \spell{enlarge}. In addition, you gain damage reduction against all damage equal to your spellpower. Appropriately aligned damage ignores this damage reduction and negates it for 1 round. Evil attacks overcome your damage reduction if you are good or neutral, and good attacks overcome your damage reduction if you are evil.
+            \spelleffect You become larger, as \spell{enlarge}. In addition, you gain damage reduction against physical damage equal to your spellpower. Appropriately aligned damage ignores this damage reduction and negates it for 1 round. Evil attacks overcome your damage reduction if you are good or neutral, and good attacks overcome your damage reduction if you are evil.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
@@ -3585,7 +3585,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngtouch}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target gains damage reduction against all damage equal to your spellpower.
@@ -3677,7 +3677,7 @@
     \end{spellaugments}
 \end{spellsection}
 
-\begin{spellsection}{Invulnerability}[3]
+\begin{spellsection}{Invulnerability}[4]
     \begin{spellheader}
         \spelldesc{You become nearly invulnerable to damage.}
     \end{spellheader}
@@ -4676,7 +4676,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spellspecial Choose an alignment other than neutral (chaotic, good, evil, lawful).
-            \spelleffect The target gains damage reduction equal to your spellpower against attacks with the chosen alignment, and attacks made by creatures with the chosen alignment.
+            \spelleffect The target gains damage reduction equal to your spellpower against effects that have the chosen alignment, and physical attacks made by creatures with the chosen alignment.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
