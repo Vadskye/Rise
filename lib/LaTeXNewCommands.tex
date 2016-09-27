@@ -203,6 +203,7 @@
 %featref no target
 \newcommand{\featrefnt}[1]{\hyperlink{feat:#1}{#1}}
 \newcommand{\featpref}[1]{\pageref{feat:#1}}
+\newcommand{\mitempref}[1]{\pageref{item:#1}}
 \newcommand{\featpcref}[1]{#1, page \pageref{feat:#1}}
 \newcommand{\featpdref}[1]{#1 (page \pageref{feat:#1})}
 %\newcommand{\featref}[1]{}
@@ -407,7 +408,7 @@
 % args:
 %   magic item price or type of price
 %   effective spell level
-\DeclareDocumentCommand{\magicitempricetext}{m m}
+\DeclareDocumentCommand{\mitempricewithlevel}{m m}
 {
     \IfSubStr{#1}{Passive}
     {
@@ -428,7 +429,7 @@
     \pgfmathparse{\TempVar > 4}
     \ifcase\pgfmathresult
         % handle normal magic items
-        \parhead*{Price~(Level)} \num{\TempVarTwo}~gp~(\magicitemitemlevel{\TempVarTwo})
+        \parhead*{Price~(Level)} \num{\TempVarTwo}~gp~(\cheapitemlevel{\TempVarTwo})
     \or
         % handle very expensive magic items
         % by passing the number with the right three digits removed
@@ -437,6 +438,38 @@
             \magicitemexpensiveitemlevel{\TempVar}
         )
     \fi
+}
+
+\DeclareDocumentCommand{\mitempricetable}{m m}
+{
+    \IfSubStr{#1}{Passive}
+    {
+        %\renewcommand{\TempVarTwo}{\magicitempricepassive{#2}}
+        \magicitempricepassive{#2}
+    }
+    {
+        \IfSubStr{#1}{Active}
+        {
+            \magicitempriceactive{#2}
+        }
+        {
+            \renewcommand{\TempVarTwo}{#1}
+        }
+    }
+    \xdef\ItemCost{\num{\TempVarTwo}~gp}
+
+    \StrLen{\TempVarTwo}[\TempVar]
+    \pgfmathparse{\TempVar > 4}
+    \ifcase\pgfmathresult
+        % handle normal magic items
+        \xdef\ItemLevel{\cheapitemlevel{\TempVarTwo}}
+    \or
+        % handle very expensive magic items
+        % by passing the number with the right three digits removed
+        \StrGobbleRight{\TempVarTwo}{3}[\TempVar]
+        \xdef\ItemLevel{\magicitemexpensiveitemlevel{\TempVar}}
+    \fi
+    \ItemCost & \ItemLevel
 }
 
 % args:
@@ -798,11 +831,20 @@
 
 \DeclareDocumentCommand{\featref}{s m}
 {
-    \hyperlink{feat:#2}{#2}
     \IfBooleanF{#1}
     {
         \hypertarget{ft:#2}{}
     }
+    \hyperlink{feat:#2}{#2}
+}
+
+\DeclareDocumentCommand{\mitemref}{s m}
+{
+    \IfBooleanF{#1}
+    {
+        \hypertarget{it:#2}{}
+    }
+    \hyperlink{item:#2}{#2}
 }
 
 \DeclareDocumentCommand{\term}{m}
@@ -852,7 +894,7 @@
 
 % args:
 %   item price
-\DeclareDocumentCommand{\magicitemitemlevel}{m}
+\DeclareDocumentCommand{\cheapitemlevel}{m}
 {
     % construct a statement that returns 0-20, incrementing by 1 for each
     % category of item level the item falls into

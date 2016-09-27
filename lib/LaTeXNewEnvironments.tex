@@ -313,13 +313,14 @@
 \DeclareDocumentEnvironment{magicitemdef}{m o m o m o m o}
 {
     \begin{thesamepage}
-    \subsubsection{#1}
+    \hypertarget{item:#1}{\sssecfakehref{it:#1}{#1}}
+    \label{item:#1}
 
     \begin{spellcontent}
     \begin{spelltargetinginfo}
         \IfValueTF{#2}
         {
-            \magicitempricetext{#2}{#3}
+            \mitempricewithlevel{#2}{#3}
         }
         {
             %\parhead{Price (Level)} \magicitemprice{#3}{#6} \magicitemitemlevel{\TempVar}
