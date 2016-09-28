@@ -152,39 +152,9 @@ Magic items are objects that have been imbued with magical energy. They can take
         A rare few apparel items can be ``worn'' without taking up space on a character's body.
         The description of an item indicates when it has this property.
 
-        \begin{dtable}
-            \lcaption{General Apparel Items}
-            \begin{dtabularx}{\columnwidth}{>{\lcol}X l l l}
-                \tb{Special Ability}              & \tb{Cost} & \tb{Item Level} & \tb{Location} \\
-                \hline
-                Ring of Protection \plus1         & 100 gp    & 2nd             & Ring          \\
-                Ring of Energy Resistance, Lesser & 200 gp    & 3rd             & Ring          \\
-                Boots of Elvenkind                & 500 gp    & 4th             & Legs          \\
-                Ring of Protection \plus2         & 500 gp    & 4th             & Ring          \\
-                Boots of Mobility                 & 1,000 gp  & 6th             & Legs          \\
-                Ring of Sustenance                & 1,000 gp  & 6th             & Ring          \\
-                Belt of Constitution              & 2,000 gp  & 8th             & Torso         \\
-                Circlet of Perception                 & 2,000 gp  & 8th             & Head          \\
-                Gauntlets of Strength             & 2,000 gp  & 8th             & Arms          \\
-                Gloves of Dexterity               & 2,000 gp  & 8th             & Arms          \\
-                Headband of Intellect             & 2,000 gp  & 8th             & Head          \\
-                Ring of Energy Resistance         & 2,000 gp  & 8th             & Ring          \\
-                Torc of Willpower                 & 2,000 gp  & 8th             & Torso         \\
-                Ring of Protection \plus3         & 2,500 gp  & 8th             & Ring          \\
-                Boots of Speed                    & 5,000 gp  & 10th            & Legs          \\
-                Belt of Constitution, Greater     & 12,000 gp & 12th            & Torso         \\
-                Circlet of Perception, Greater        & 12,000 gp & 12th            & Head          \\
-                Gauntlets of Strength, Greater    & 12,000 gp & 12th            & Arms          \\
-                Gloves of Dexterity, Greater      & 12,000 gp & 12th            & Arms          \\
-                Headband of Intellect, Greater    & 12,000 gp & 12th            & Head          \\
-                Torc of Willpower, Greater        & 12,000 gp & 12th            & Torso         \\
-                Ring of Protection \plus4         & 12,500 gp & 12th            & Ring          \\
-                Boots of Teleportation, Greater   & 60,000 gp & 16th            & Legs          \\
-                Ring of Protection \plus5         & 62,500 gp & 16th            & Ring          \\
-            \end{dtabularx}
-        \end{dtable}
-
         \onecolumn
+
+    \subsection{Apparel Table}
 
         \begin{longtabuwrapper}
             \begin{longtabu}{l X l l l l}
@@ -210,7 +180,72 @@ Magic items are objects that have been imbued with magical energy. They can take
 
                 \midrule
                 \tb{Arms} & \tb{Description} & \tb{Cost} & \tb{Item Level} & \tb{Location} & \tb{Page} \\
+                \mitemref{Greatreach Bracers} & Can grant increased reach & \mitempricetable{Active}{0} & Arms & \mitempref{Greatreach Bracers} \\
+                \mitemref{Burning Gloves} & Can throw ball of fire & \mitempricetable{Active}{1} & Arms & \mitempref{Burning Gloves} \\
                 \mitemref{Bracers of Archery} & Grants proficiency with bows & \mitempricetable{Passive}{1} & Arms & \mitempref{Bracers of Archery} \\
+                \mitemref{Bracers of Armor} & Grants invisible body armor & \mitempricetable{Passive}{1} & Arms & \mitempref{Bracers of Armor} \\
+                \mitemref{Bracers of Repulsion} & Can shove foe when hit & \mitempricetable{Active}{2} & Arms & \mitempref{Bracers of Repulsion} \\
+                \mitemref{Gauntlet of the Ram} & Can shove foe after unarmed attack & \mitempricetable{Active}{2} & Arms & \mitempref{Gauntlet of the Ram} \\
+                \mitemref{Puppeteer's Glove} & Can concentrate on Figments more easily & \mitempricetable{Active}{2} & location & \mitempref{Puppeteer's Glove} \\
+                \mitemref{Gauntlets of Strength} & Grants \plus2 Strength & \mitempricetable{Passive}{2} & Arms & \mitempref{Gauntlets of Strength} \\
+                \mitemref{Gloves of Dexterity} & Grants \plus2 Dexterity & \mitempricetable{Passive}{2} & Arms & \mitempref{Gloves of Dexterity} \\
+                \mitemref{Throwing Gloves} & Grants ability to throw anything accurately & \mitempricetable{Passive}{2} & Arms & \mitempref{Throwing Gloves} \\
+                \mitemref{Gauntlets of Strength, Greater} & Grants \plus4 Strength & \mitempricetable{Passive}{4} & Arms & \mitempref{Gauntlets of Strength, Greater} \\
+                \mitemref{Gloves of Dexterity, Greater} & Grants \plus4 Dexterity & \mitempricetable{Passive}{4} & Arms & \mitempref{Gloves of Dexterity, Greater} \\
+
+                \midrule
+                \tb{Head} & \tb{Description} & \tb{Cost} & \tb{Item Level} & \tb{Location} & \tb{Page} \\
+                \mitemref{Hat of Disguise} & Can disguise your appearance & \mitempricetable{Active}{1} & Head & \mitempref{Hat of Disguise} \\
+                \mitemref{Mask of Water Breathing} & Can grant ability to breathe water & \mitempricetable{Active}{2} & Head & \mitempref{Mask of Water Breathing} \\
+                \mitemref{Circlet of Perception} & Grants \plus2 Perception & \mitempricetable{Passive}{2} & Head & \mitempref{Circlet of Perception} \\
+                \mitemref{Headband of Intellect} & Grants \plus2 Intellect & \mitempricetable{Passive}{2} & Head & \mitempref{Headband of Intellect} \\
+                \mitemref{Circlet of Perception, Greater} & Grants \plus4 Perception & \mitempricetable{Passive}{4} & Head & \mitempref{Circlet of Perception, Greater} \\
+                \mitemref{Headband of Intellect, Greater} & Grants \plus4 Intellect & \mitempricetable{Passive}{4} & Head & \mitempref{Headband of Intellect, Greater} \\
+
+                \midrule
+                \tb{Legs} & \tb{Description} & \tb{Cost} & \tb{Item Level} & \tb{Location} & \tb{Page} \\
+                \mitemref{Boots of Earth's Embrace} & Can ignore forced movement & \mitempricetable{Active}{1} & Legs & \mitempref{Boots of Earth's Embrace} \\
+                \mitemref{Boots of Speed} & Can double movement speed & \mitempricetable{Active}{1} & Legs & \mitempref{Boots of Speed} \\
+                \mitemref{Boots of Swift Passage} & Can teleport you short distances & \mitempricetable{Active}{1} & Legs & \mitempref{Boots of Swift Passage} \\
+                \mitemref{Boots of Elvenkind} & Grants \plus4 to Stealth & 500 gp & 4th & Legs & \mitempref{Boots of Elvenkind} \\
+                \mitemref{Sandals of Sprinting} & Grants \plus4 to Sprint & 500 gp & 4th & Legs & \mitempref{Sandals of Sprinting} \\
+                \mitemref{Boots of the Winterlands} & Grants benefits in cold environments & \mitempricetable{Passive}{1} & Legs & \mitempref{Boots of the Winterlands} \\
+                \mitemref{Boots of Levitation} & Can levitate you & \mitempricetable{Active}{2} & Legs & \mitempref{Boots of Levitation} \\
+                \mitemref{Boots of Mobility} & Grants \plus4 to Jump, Sprint & 1000 gp & 6th & Legs & \mitempref{Boots of Mobility} \\
+                \mitemref{Boots of Striding and Springing} & Grants \plus10 foot speed & \mitempricetable{Passive}{3} & Legs & \mitempref{Boots of Striding and Springing} \\
+                \mitemref{Boots of Teleportation} & Can teleport you long distances & \mitempricetable{Active}{4} & Legs & \mitempref{Boots of Teleportation} \\
+                \mitemref{Seven League Boots} & Can teleport you exactly 25 miles & \mitempricetable{Active}{6} & Legs & \mitempref{Seven League Boots} \\
+
+                \midrule
+                \tb{Rings} & \tb{Description} & \tb{Cost} & \tb{Item Level} & \tb{Location} & \tb{Page} \\
+                \mitemref{Protection} \plus1 & Grants \plus1 armor enhancement & 100 gp & 2nd & Ring & \mitempref{Protection} \\
+                \mitemref{Energy Resistance} & Can briefly reduce energy damage & \mitempricetable{Active}{1} & Ring & \mitempref{Energy Resistance} \\
+                \mitemref*{Protection} \plus2 & Grants \plus2 armor enhancement & 500 gp & 4th & Ring & \mitempref{Protection} \\
+                \mitemref{Nourishment} & Grants food and drink automatically & \mitempricetable{Passive}{1} & Ring & \mitempref{Nourishment} \\
+                \mitemref{Heroic Vengeance} & Can deal damage when foe rolls a 20 & \mitempricetable{Active}{3} & Ring & \mitempref{Heroic Vengeance} \\
+                \mitemref*{Protection} \plus3 & Grants \plus3 armor enhancement & 2,500 gp & 8th & Ring & \mitempref{Protection} \\
+                \mitemref{Sustenance} & Grants food, drink, and sleep automatically & \mitempricetable{Passive}{3} & Ring & \mitempref{Sustenance} \\
+                \mitemref*{Protection} \plus4 & Grants \plus4 armor enhancement & 12,500 gp & 12th & Ring & \mitempref{Protection} \\
+                \mitemref*{Protection} \plus5 & Grants \plus5 armor enhancement & 62,500 gp & 16th & Ring & \mitempref{Protection} \\
+
+                \midrule
+                \tb{Torso} & \tb{Description} & \tb{Cost} & \tb{Item Level} & \tb{Location} & \tb{Page} \\
+                \mitemref{Amulet of Mighty Fists} \plus1 & Grants \plus1 unarmed weapon enhancement & 200 gp & 3rd & Torso & \mitempref{Amulet of Mighty Fists} \\
+                \mitemref{Healing Belt} & Can heal touched creature & \mitempricetable{Active}{1} & Torso & \mitempref{Healing Belt} \\
+                \mitemref{Heroic Recovery} & Can heal when you roll a 20 & \mitempricetable{Active}{1} & Torso & \mitempref{Heroic Recovery} \\
+                \mitemref{Obscuring Cloak} & Can summon fog around you & \mitempricetable{Active}{1} & Torso & \mitempref{Obscuring Cloak} \\
+                \mitemref*{Amulet of Mighty Fists} \plus2 & Grants \plus2 unarmed weapon enhancement & 1,000 gp & 6th & Torso & \mitempref{Amulet of Mighty Fists} \\
+                \mitemref{Belt of Constitution} & Grants \plus2 Constitution & \mitempricetable{Passive}{2} & Torso & \mitempref{Belt of Constitution} \\
+                \mitemref{Torc of Willpower} & Grants \plus2 Willpower & \mitempricetable{Passive}{2} & Torso & \mitempref{Torc of Willpower} \\
+                \mitemref*{Amulet of Mighty Fists} \plus3 & Grants \plus3 unarmed weapon enhancement & 5,000 gp & 10th & Torso & \mitempref{Amulet of Mighty Fists} \\
+                \mitemref{Amulet of Nondetection} & Grants resistance to divination spells & \mitempricetable{Passive}{3} & Torso & \mitempref{Amulet of Nondetection} \\
+                \mitemref{Belt of Dwarvenkind} & Grants \plus2 Constitution, dwarven characteristics & \mitempricetable{Passive}{3} & Torso & \mitempref{Belt of Dwarvenkind} \\
+                \mitemref{Vanishing Cloak} & Can teleport and summon fog around you & \mitempricetable{Active}{4} & Torso & \mitempref{Vanishing Cloak} \\
+                \mitemref{Belt of Constitution, Greater} & Grants \plus4 Constitution & \mitempricetable{Passive}{4} & Torso & \mitempref{Belt of Constitution, Greater} \\
+                \mitemref{Torc of Willpower, Greater} & Grants \plus4 Willpower & \mitempricetable{Passive}{4} & Torso & \mitempref{Torc of Willpower, Greater} \\
+                \mitemref*{Amulet of Mighty Fists} \plus4 & Grants \plus4 unarmed weapon enhancement & 25,000 gp & 13th & Torso & \mitempref{Amulet of Mighty Fists} \\
+                \mitemref*{Amulet of Mighty Fists} \plus5 & Grants \plus5 unarmed weapon enhancement & 125,000 gp & 17th & Torso & \mitempref{Amulet of Mighty Fists} \\
+                \mitemref{Amulet of the Planes} & Can transport you to other planes & \mitempricetable{Active}{6} & Torso & \mitempref{Amulet of the Planes} \\
             \end{longtabu}
         \end{longtabuwrapper}
 
@@ -394,7 +429,7 @@ Magic items are objects that have been imbued with magical energy. They can take
             \magicitemability{Passive} You are proficient with bows.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Bracers of Armor}[Passive]{1}[Arms]{Abjuration [Shielding]}{leather or metal}
+        \begin{magicitemdef}{Bracers of Armor}[Passive]{1}[Arms]{Abjuration [Force]}{leather or metal}
             \magicitemability{Passive} You gain a \plus2 bonus to Armor defense.
             The protection from these bracers is treated as body armor, and does not stack with any other body armor you wear.
             Since this armor is made of magical force, incorporeal creatures can't bypass it the way they do normal armor.
@@ -407,6 +442,14 @@ Magic items are objects that have been imbued with magical energy. They can take
 
             After you activate this item, barely visible fields of telekinetic energy surround the bracers.
             This effect lasts for 5 rounds, during which time you cannot activate this ability again.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}{Burning Gloves}[Active]{1}[Arms]{Evocation [Fire]}{leather or textiles}
+            \magicitemability{Active}[Standard action] By flicking your fingers, you can create fire in your hand.
+            You can immediately throw this fire at a creature or object within \rngmed range.
+            If you do, you make Item power vs. Reflex attack against the target.
+            A successful attack means the target takes 1d6 fire damage per item power.
+            A failed attack deals half damage.
         \end{magicitemdef}
 
         \begin{magicitemdef}{Gauntlets of Strength}[Passive]{2}[Arms]{Transmutation [Augment]}{bone or metal}
@@ -434,22 +477,14 @@ Magic items are objects that have been imbued with magical energy. They can take
             \magicitemability{Passive} You gain a \plus4 bonus to Dexterity, up to a maximum Dexterity equal to the item's power.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Gloves of the Flame}[Active]{1}[Arms]{Evocation [Fire]}{leather or textiles}
-            \magicitemability{Active}[Standard action] By flicking your fingers, you can create fire in your hand.
-            You can immediately throw this fire at a creature or object within \rngclose range.
-            If you do, you make an attack with an accuracy equal to the item's power against the target's Reflex defense.
-            If the attack succeeds, the target takes 1d6 fire damage per item power.
-            A failed attack deals half damage.
-        \end{magicitemdef}
-
-        \begin{magicitemdef}{Greatreach Bracers}[Active]{1}[Arms]{Transmutation [Augment]}{bone or metal}
-            \magicitemability{Active}[Swift action] You can activate this item to increase your \glossterm{reach} by 5 feet for 1 round.
+        \begin{magicitemdef}{Greatreach Bracers}[Active]{0}[Arms]{Transmutation [Augment]}{bone or metal}
+            \magicitemability{Active}[Swift action] You can activate this item to increase your \glossterm{reach} by 5 feet until the end of the round.
 
             After you activate this ability, the bracers visually grow in size, though not in weight or encumbrance.
             This effect lasts for 5 rounds, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Puppeteer's Glove}[Passive]{2}[Arms]{Illusion [Figment]}{leather or textiles}
+        \begin{magicitemdef}{Puppeteer's Glove}[Active]{2}[Arms]{Illusion [Figment]}{leather or textiles}
             \magicitemability{Triggered}[Immediate action] When you cast a Figment spell or use an Figment spell-like ability, you can activate this glove.
             If you do, you can concentrate on the spell or spell-like ability as a swift action by controlling the figment with your glove.
             If you are unable to control the figment with the glove, such as if you use the gloved hand for any other purpose, you lose your concentration on the figment.
@@ -461,8 +496,8 @@ Magic items are objects that have been imbued with magical energy. They can take
         \end{magicitemdef}
 
         \begin{magicitemdef}{Throwing Gloves}[Passive]{2}[Arms]{Transmutation [Augment]}{leather or textiles}
-            \magicitemability{Passive} You can throw any item as if it was designed to be thrown, granting you a \plus4 bonus to accuracy.
-            This does not improve your ability to throw items already designed to be thrown, such as darts.
+            \magicitemability{Passive} You can throw any item as if you were proficient with throwing it, granting you a \plus4 bonus to accuracy.
+            This does not improve your ability to throw items you are already proficient with throwing, such as darts.
         \end{magicitemdef}
 
     \subsection{Head}
@@ -495,12 +530,11 @@ Magic items are objects that have been imbued with magical energy. They can take
 
     \subsection{Legs}
 
-        \begin{magicitemdef}{Boots of Earth's Embrace}[Active]{3}[legs]{Transmutation [Augment]}{leather or textiles}
-            \magicitemability{Triggered}[Immediate action] When you are affected by a forced movement effect (such as a shove attack) while standing on solid ground, you can activate these boots.
-            If you do, you are not subject to the forced movement.
-            This does not prevent any other effects from the attack, such as damage.
+        \begin{magicitemdef}{Boots of Earth's Embrace}[Active]{1}[legs]{Transmutation [Augment]}{leather or textiles}
+            \magicitemability{Triggered}[Immediate action] When you are hit by an attack that would deal physical damage or force you to move (such as a shove attack), you can activate these boots.
+            If you do, until the end of the round, you are immune to forced movement effects and you gain damage reduction against physical damage equal to your item power.
 
-            After you activate this ability, the boots appear to be made from solid rock.
+            After you activate this ability, the boots appear to be made from solid rock, though this does not impede your movement.
             This effect lasts for 5 rounds, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
@@ -508,7 +542,7 @@ Magic items are objects that have been imbued with magical energy. They can take
             \magicitemability{Passive} You gain a \plus4 bonus to Stealth checks.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Boots of Levitation}[Active]{3}[Legs]{Evocation [Telekinesis]}{leather or textiles}
+        \begin{magicitemdef}{Boots of Levitation}[Active]{2}[Legs]{Evocation [Telekinesis]}{leather or textiles}
             \magicitemability{Active}[Standard action] By lifting and planting one leg in mid-air, as if climbing an invisible stair, you can gain the benefit of the \spell{levitate} spell on yourself for 5 rounds.
         \end{magicitemdef}
 
@@ -516,32 +550,25 @@ Magic items are objects that have been imbued with magical energy. They can take
             \magicitemability{Passive} You gain a \plus4 bonus to Jump and Sprint checks.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Boots of Speed}[Active]{4}[Legs]{Transmutation [Temporal]}{leather or textiles}
+        \begin{magicitemdef}{Boots of Speed}[Active]{1}[Legs]{Transmutation [Temporal]}{leather or textiles}
             \magicitemability{Active}[Standard action] If you stomp your foot on the ground three times, you gain the effects of the \spell{haste} spell.
             This benefit lasts as long as you move continuously without taking any other action, and for 5 rounds thereafter (maximum 5 minutes).
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Boots of Striding and Springing}[Passive]{2}[Legs]{Transmutation [Augment], Transmutation [Augment]}{leather or textiles}
+        \begin{magicitemdef}{Boots of Striding and Springing}[Passive]{3}[Legs]{Transmutation [Augment]}{leather or textiles}
             \magicitemability{Passive} You gain a \plus10 foot bonus to your land speed.
             A high land speed increases your ability to jump, as described in \pcref{Jump Modifiers}.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Boots of Swift Passage}[Active]{3}[Legs]{Conjuration [Teleportation]}{leather or textiles}
-            \magicitemability{Active}[Move action] If you take three rapid steps in the shape of a triangle, you can teleport up to 30 feet to a location you can see, as the \spell{dimension slide} spell.
+        \begin{magicitemdef}{Boots of Swift Passage}[Active]{1}[Legs]{Conjuration [Teleportation]}{leather or textiles}
+            \magicitemability{Active}[Move action] If you take three rapid steps in the shape of a triangle, you can teleport up to 100 feet to a location you can see, as the \spell{dimension slide} spell.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Boots of Teleportation}[Active]{5}[Legs]{Conjuration [Teleportation]}{leather or textiles}
+        \begin{magicitemdef}{Boots of Teleportation}[Active]{4}[Legs]{Conjuration [Teleportation]}{leather or textiles}
             \magicitemability{Active}[Standard action] If you click your heels together three times, you can teleport up to 1,000 feet to a location you can specify, as the \spell{dimension door} spell.
         \end{magicitemdef}
 
-        % teleport, +2 level for minute -> standard
-        \begin{magicitemdef}{Boots of Teleportation, Greater}[Active]{8}[Legs]{Conjuration [Teleportation]}{leather or textiles}
-            \magicitemability{Active}[Standard action] If you click your heels together three times, you can teleport up to 100 miles to a location you can specify, as the \spell{teleport} ritual.
-        \end{magicitemdef}
-
-        %800 for endure elements, *3/4 for warming only, +800 for snow+ice travelling
-        %(like 1st level ritual?)
-        \begin{magicitemdef}{Boots of the Winterlands}[1400]{2}[Legs]{Evocation/Transmutation [Augment]}{leather or textiles}
+        \begin{magicitemdef}{Boots of the Winterlands}[Passive]{1}[Legs]{Evocation/Transmutation [Augment]}{leather or textiles}
             \magicitemability{Passive} You can travel across snow and ice without slipping or suffering movement penalties for the terrain.
             In addition, the boots keep you warm, protecting you in conditions as cold as \minus50 Fahrenheit.
         \end{magicitemdef}
@@ -550,11 +577,19 @@ Magic items are objects that have been imbued with magical energy. They can take
             \magicitemability{Passive} You gain a \plus4 bonus to Sprint checks.
         \end{magicitemdef}
 
+        \begin{magicitemdef}{Seven League Boots}[Active]{6}[Legs]{Conjuration [Teleportation]}{leather or textiles}
+            \magicitemability{Active}[Move action] If you take an extraordinarily long step, you can teleport exactly 25 miles in a direction you specify.
+            If this would place you within a solid object or otherwise impossible space, the boots will shunt you up to 1,000 feet in any direction to the closest available space, and you take 1d10 physical damage.
+            If there is no available space within 1,000 feet of your intended destination, the effect fails and you take 2d10 physical damage.
+        \end{magicitemdef}
+
         \begin{magicitemdef}{Winged Boots}[Active]{4}[Legs]{Transmutation [Augment]}{leather or textiles}
-            \magicitemability{Active}[Standard action] If you tap your boots together in midair, you can cause wings to sprout from them.
-            If you are unencumbered, you can fly with a 30 foot speed and average maneuverability, as the \spell{fly} spell.
+            \magicitemability{Active}[Standard action] If you tap your boots together in midair, you gain a 30 foot fly speed with average maneuverability.
             See \pcref{Flying}, for more details.
             This effect lasts for 5 rounds.
+
+            After you activate this ability, small wings sprout from the sides of the boots.
+            This effect lasts for 5 minutes, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
     \subsection{Rings}
@@ -590,33 +625,22 @@ Magic items are objects that have been imbued with magical energy. They can take
             \end{dtable}
 \end{comment}
 
-        \begin{magicitemdef}{Energy Resistance, Lesser}[Active]{1}[Ring]{Abjuration [Shielding]}{bone, metal, or jewelry}
-            \magicitemability{Triggered}[Immediate action] When you take \glossterm{energy damage}, you can activate this item. If you do, you reduce the damage by an amount equal to the item's power.
+        \begin{magicitemdef}{Energy Resistance}[Active]{1}[Ring]{Abjuration [Shielding]}{bone, metal, or jewelry}
+            \magicitemability{Triggered}[Immediate action] When you would take \glossterm{energy damage}, you can activate this ring.
+            If you do, you gain damage reduction against \glossterm{energy damage} equal to twice the item's power until the end of the round.
 
             After you activate this ability, the ring sheds light as a torch.
-            The color of the light depends on the energy damage resisted: green for acid, blue for cold, yellow for electricity, and red for fire.
-            The light lasts for 5 rounds, during which time you cannot activate this ability again.
+            The color of the light depends on the energy damage resisted: green for acid, blue for cold, yellow for electricity, red for fire, and white for none.
+            This effect lasts for 5 rounds, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Energy Resistance}[Passive]{3}[Ring]{Abjuration [Shielding]}{bone, metal, or jewelry}
-            \magicitemability{Passive} You have damage reduction against \glossterm{energy damage} equal to the item's power.
-            Whenever you resist energy with this item, it sheds light as a torch for 5 rounds.
-            The color of the light depends on the energy damage resisted: green for acid, blue for cold, yellow for electricity, and red for fire.
+        \begin{magicitemdef}{Heroic Vengeance}[Active]{3}[Ring]{Abjuration}{bone, metal, or jewelry}
+            \magicitemability{Triggered}[Immediate action] When a foe within \rngmed range rolls a natural 20 on an attack against you, you can activate this item.
+            If you do, the attacking creature takes 1d10 divine damage per item power.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Heroic Vengeance}[Active]{3}[Ring]{Abjuration [Retributive]}{bone, metal, or jewelry}
-            \magicitemability{Triggered}[Immediate action] When a foe within \rngmed range rolls a natural 20 on an attack against you, you can activate this item. If you do, the attacking creature takes 1d10 divine damage per item power.
-        \end{magicitemdef}
-
-        \begin{magicitemdef}{Sustenance, Lesser}[Passive]{1}[Ring]{Conjuration/Transmutation [Creation, Temporal]}{bone, metal, or jewelry}
+        \begin{magicitemdef}{Nourishment}[Passive]{1}[Ring]{Conjuration/Transmutation [Creation, Temporal]}{bone, metal, or jewelry}
             \magicitemability{Passive} You continuously gain nourishment, and no longer need to eat or drink.
-            The ring must be worn for 24 hours before it begins to work.
-        \end{magicitemdef}
-
-        \begin{magicitemdef}{Sustenance}[Passive]{3}[Ring]{Conjuration/Transmutation [Creation, Temporal]}{bone, metal, or jewelry}
-            \magicitemability{Passive} You continuously gain nourishment, and no longer need to eat or drink.
-            In addition, you need only one-quarter your normal amount of sleep (or similar activity, such as elven trance) each day.
-
             The ring must be worn for 24 hours before it begins to work.
         \end{magicitemdef}
 
@@ -647,6 +671,13 @@ Magic items are objects that have been imbued with magical energy. They can take
                 \plus5 & 62,500 gp & 16th \\
             \end{dtabularx}
         \end{dtable}
+
+        \begin{magicitemdef}{Sustenance}[Passive]{3}[Ring]{Conjuration/Transmutation [Creation, Temporal]}{bone, metal, or jewelry}
+            \magicitemability{Passive} You continuously gain nourishment, and no longer need to eat or drink.
+            In addition, you need only one-quarter your normal amount of sleep (or similar activity, such as elven trance) each day.
+
+            The ring must be worn for 24 hours before it begins to work.
+        \end{magicitemdef}
 
     \subsection{Torso}
 
@@ -725,14 +756,14 @@ Magic items are objects that have been imbued with magical energy. They can take
         \end{magicitemdef}
 
         % +1 level for extra thick fog in the first round
-        \begin{magicitemdef}{Vanishing Cloak}[Active]{2}[Torso]{Conjuration [Creation, Fog]}{textiles}
+        \begin{magicitemdef}{Obscuring Cloak}[Active]{1}[Torso]{Conjuration [Creation, Fog]}{textiles}
             \magicitemability{Active}[Standard action] If you wrap this cloak around yourself with one hand, you can create a cloud of fog centered on you, as the \spell{fog cloud} spell.
             The effect lasts for 5 rounds.
             For the first round of the effect, the fog is unusually thick, blocking all sight beyond 10 feet.
             This can allow you to hide unobserved.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Vanishing Cloak, Greater}[Active]{4}[Torso]{Conjuration [Creation, Fog, Teleportation]}{textiles}
+        \begin{magicitemdef}{Vanishing Cloak}[Active]{4}[Torso]{Conjuration [Creation, Fog, Teleportation]}{textiles}
             \magicitemability{Active}[Standard action] If you wrap this cloak around yourself with one hand, you can teleport up to 100 feet away to a location you can see, as the \spell{dimension slide} spell.
             In addition, you create a cloud of fog centered on you, as the \spell{fog cloud} spell.
             You can choose whether the cloud appears at your original location, or at your location after teleporting.
