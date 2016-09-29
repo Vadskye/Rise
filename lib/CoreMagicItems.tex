@@ -206,9 +206,9 @@ Magic items are objects that have been imbued with magical energy. They can take
                 \tb{Legs} & \tb{Description} & \tb{Cost} & \tb{Item Level} & \tb{Location} & \tb{Page} \\
                 \mitemref{Boots of Earth's Embrace} & Can ignore forced movement & \mitempricetable{Active}{1} & Legs & \mitempref{Boots of Earth's Embrace} \\
                 \mitemref{Boots of Speed} & Can double movement speed & \mitempricetable{Active}{1} & Legs & \mitempref{Boots of Speed} \\
-                \mitemref{Boots of Swift Passage} & Can teleport you short distances & \mitempricetable{Active}{1} & Legs & \mitempref{Boots of Swift Passage} \\
                 \mitemref{Boots of Elvenkind} & Grants \plus4 to Stealth & 500 gp & 4th & Legs & \mitempref{Boots of Elvenkind} \\
                 \mitemref{Sandals of Sprinting} & Grants \plus4 to Sprint & 500 gp & 4th & Legs & \mitempref{Sandals of Sprinting} \\
+                \mitemref{Boots of Swift Passage} & Can teleport you short distances & \mitempricetable{Active}{2} & Legs & \mitempref{Boots of Swift Passage} \\
                 \mitemref{Boots of the Winterlands} & Grants benefits in cold environments & \mitempricetable{Passive}{1} & Legs & \mitempref{Boots of the Winterlands} \\
                 \mitemref{Boots of Levitation} & Can levitate you & \mitempricetable{Active}{2} & Legs & \mitempref{Boots of Levitation} \\
                 \mitemref{Boots of Mobility} & Grants \plus4 to Jump, Sprint & 1000 gp & 6th & Legs & \mitempref{Boots of Mobility} \\
@@ -560,8 +560,13 @@ Magic items are objects that have been imbued with magical energy. They can take
             A high land speed increases your ability to jump, as described in \pcref{Jump Modifiers}.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Boots of Swift Passage}[Active]{1}[Legs]{Conjuration [Teleportation]}{leather or textiles}
+        \begin{magicitemdef}{Boots of Swift Passage}[Active]{2}[Legs]{Conjuration [Teleportation]}{leather or textiles}
             \magicitemability{Active}[Move action] If you take three rapid steps in the shape of a triangle, you can teleport up to 100 feet to a location you can see, as the \spell{dimension slide} spell.
+            You must be able to move in order to activate this item.
+            If you are \grappled, \immobilized, or otherwise unable to move normally, you cannot activate it.
+
+            After you activate this ability, the boots shimmer and seem faintly translucent.
+            This effect lasts for 5 rounds, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
         \begin{magicitemdef}{Boots of Teleportation}[Active]{4}[Legs]{Conjuration [Teleportation]}{leather or textiles}
@@ -1066,9 +1071,8 @@ Magic items are objects that have been imbued with magical energy. They can take
         \subsubsection{Staff Enhancement Bonuses}\label{Staff Enhancement Bonuses}
 
             Magic staffs can have enhancement bonuses ranging from \plus1 to \plus5.
-            Each \plus1 of enhancement bonus grants you an extra damage die with damaging spells.
-            The bonus damage die is of the same size as the other dice rolled by the spell.
-            This only affects spells which gain additional damage dice based on your spellpower.
+            Each \plus1 of enhancement bonus increases your effective spellpower by 1 for the purpose of determining how much damage your spells do.
+            This only affects damage, and does not increase your accuracy or have any other effects.
 
             In addition, each \plus1 of enhancement bonus grants you an additional offensive legend point each day.
             These legend points can only be gained once per day, regardless of the number of staffs you use.
