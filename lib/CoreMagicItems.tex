@@ -779,10 +779,10 @@ Magic items are objects that have been imbued with magical energy. They can take
                 \mitemref{Vorpal} & Deals massive damage on a natural 20 & \mitempricetable{Passive}{8} & \mitempref{Vorpal} \\
 
                 \tb{Wands} & \tb{Description} & \tb{Cost} & \tb{Item Level} & \tb{Page} \\
-                \mitemref{Distant}[wand] & Can double spell's range & \mitempricetable{Active}{2} & \mitempref{Distant} \\
-                \mitemref{Flamespell}[wand] & Can ignite creature & \mitempricetable{Active}{3} & \mitempref{Flamespell} \\
-                \mitemref{Frostspell}[wand] & Can fatigue creature & \mitempricetable{Active}{3} & \mitempref{Frostspell} \\
-                \mitemref{Thunderspell}[wand] & Can stagger creature & \mitempricetable{Active}{3} & \mitempref{Thunderspell} \\
+                \mitemref{Distant} & Can double spell's range & \mitempricetable{Active}{2} & \mitempref{Distant} \\
+                \mitemref{Flamespell} & Can ignite creature & \mitempricetable{Active}{3} & \mitempref{Flamespell} \\
+                \mitemref{Frostspell} & Can fatigue creature & \mitempricetable{Active}{3} & \mitempref{Frostspell} \\
+                \mitemref{Thunderspell} & Can stagger creature & \mitempricetable{Active}{3} & \mitempref{Thunderspell} \\
             \end{longtabu}
         \end{longtabuwrapper}
         \twocolumn
@@ -1187,6 +1187,29 @@ Magic items are objects that have been imbued with magical energy. They can take
 
 \section{Tools}
 
+    \onecolumn
+    \subsection{Tool Table}
+
+        \begin{longtabuwrapper}
+            \begin{longtabu}{l X l l l l}
+                \tb{Wondrous Items} & \tb{Description} & \tb{Cost} & \tb{Item Level} & \tb{Page} \\
+                \mitemref{Bag of Holding} Type I & Contains an extradimensional space & \mitempricetable{Passive}{1} & \mitempref{Bag of Holding} \\
+                \mitemref{Friendstone} & Can summon an attuned creature once & 1500 gp & 7th & \mitempref{Friendstone} \\
+                \mitemref*{Bag of Holding} Type II & Contains a 10' extradimensional cube & \mitempricetable{Passive}{2} & \mitempref{Bag of Holding} \\
+                \mitemref{Candle of Truth} & Can create a zone of truth & \mitempricetable{Active}{2} & \mitempref{Candle of Truth} \\
+                \mitemref*{Bag of Holding} Type III & Contains a 15' extradimensional cube & \mitempricetable{Passive}{3} & \mitempref{Bag of Holding} \\
+                \mitemref*{Bag of Holding} Type IV & Contains a 20' extradimensional cube & \mitempricetable{Passive}{4} & \mitempref{Bag of Holding} \\
+                \mitemref{Witch's Broom} & Flying broomstick & \mitempricetable{Passive}{7} & \mitempref{Witch's Broom} \\
+
+                \tb{Wands} & \tb{Description} & \tb{Cost} & \tb{Item Level} & \tb{Page} \\
+                \mitemref{Distant} & Can double spell's range & \mitempricetable{Active}{2} & \mitempref{Distant} \\
+                \mitemref{Flamespell} & Can ignite creature & \mitempricetable{Active}{3} & \mitempref{Flamespell} \\
+                \mitemref{Frostspell} & Can fatigue creature & \mitempricetable{Active}{3} & \mitempref{Frostspell} \\
+                \mitemref{Thunderspell} & Can stagger creature & \mitempricetable{Active}{3} & \mitempref{Thunderspell} \\
+            \end{longtabu}
+        \end{longtabuwrapper}
+        \twocolumn
+
     \subsection{Scrolls}
         A scroll is a spell (or collection of spells) that has been stored in written form.
         A spell on a scroll can be used only once.
@@ -1245,7 +1268,7 @@ Magic items are objects that have been imbued with magical energy. They can take
             \begin{dtabularx}{\columnwidth}{X l l}
                 \tb{Common Spells\fn{1}} & \tb{Market Price}       & \tb{Item Level} \\
                 \hline
-                1st-Level                & 10 gp                   & 1st             \\
+                1st-Level                & 10 gp                   & 1/2             \\
                 2nd-Level                & 40 gp                   & 1st             \\
                 3rd-Level                & 100 gp                  & 2nd             \\
                 4th-Level                & 250 gp                  & 3rd             \\
@@ -1340,133 +1363,84 @@ Magic items are objects that have been imbued with magical energy. They can take
 
         Wondrous items are items which are inherently magical in some way.
 
-        \tooldescription{Answerstone}{2,000}{8th}{Faint Divination (Knowledge)}{6th}{Standard (specific action)} If you shake this stone and ask a simple yes or no question (a standard action), you receive an answer of either ``yes'', ``no'', or ``unclear''.
-        The answer has a 75\% chance of being correct.
-        If the answerstone is incorrect, it will always answer ``unclear''.
-        The answerstone will always answer ``unclear'' if asked questions about events more than thirty minutes into the future or past, farther than ten miles from its current location.
-        It can only answer questions about observable quantities (including spells).
+        \begin{magicitemdef}{Answerstone}[Active]{3}{Divination [Knowledge]}{bone, metal, or stone}
+            \magicitemability{Active}[Standard action] If you shake this stone and ask a simple yes or no question (a standard action), you receive an answer of either ``yes'', ``no'', or ``unclear''.
+            The answer has a 75\% chance of being correct.
+            If the answerstone is incorrect, it will always answer ``unclear''.
+            The answerstone will always answer ``unclear'' if asked questions about events more than thirty minutes into the future or past, farther than ten miles from its current location.
+            It can only answer questions about observable quantities (including spells).
 
-        If you attempt to use an answerstone when you have no uses of magic items remaining, it will give random answers, including answers other than ``yes'', ``no'', and ``unknown''.
-        Although answerstones are usually made of stone, they can also be made of other sturdy materials.
-
-        \mitemreq{Divination}{Knowledge}{3}{6th}{Craft (bone, metal, or stone)}
-
-        \tooldescription{Bag of Holding}{Varies}{see text}{Varied Conjuration (Translocation) [Planar]}{}{\x} This appears to be a common cloth sack about 2 feet by 4 feet in size.
-        The bag of holding opens into a nondimensional space: Its inside is larger than its outside dimensions.
-        Regardless of what is put into the bag, it weighs a fixed amount.
-        This weight, and the limits in weight and volume of the bag's contents, depend on the bag's type, as shown on the table below.
+            Although answerstones are usually made of stone, they can also be made of other sturdy materials.
+        \end{magicitemdef}
 
         \begin{dtable*}
-            \begin{dtabularx}{\textwidth}{l l X X X X}
-                \tb{Bag} & \tb{Bag Weight} & \tb{Weight Limit} & \tb{Space Limit} & \tb{Base Price} & \tb{Item Level} \\
+            \lcaption{Bag of Holding Types}
+            \begin{dtabularx}{\textwidth}{l l X X X X X}
+                \tb{Bag} & \tb{Bag Weight} & \tb{Weight Limit} & \tb{Space Limit} & \tb{Survival Time}\fn{1} & \tb{Base Price} & \tb{Item Level} \\
                 \hline
-                Type I   & 15 lb.          & 250 lb.           & 5 ft.  radius    & 750 gp          & 5th             \\
-                Type II  & 20 lb.          & 500 lb.           & 10 ft.  radius   & 1,500 gp        & 7th             \\
-                Type III & 25 lb.          & 1,000 lb.         & 15 ft.  radius   & 3,000           & 9th             \\
-                Type IV  & 30 lb.          & 1,500 lb.         & 20 ft.  radius   & 6,000           & 10th            \\
+                % survival times come from math
+                Type I   & 15 lb. & 250 lb.   & 5 ft. cube  & 10 hours & 800 gp    & 5th  \\
+                Type II  & 20 lb. & 500 lb.   & 10 ft. cube & 3 days & 2,000 gp  & 8th  \\
+                Type III & 25 lb. & 1,000 lb. & 15 ft. cube & 12 days & 5,000 gp  & 10th \\
+                Type IV  & 30 lb. & 2,000 lb. & 20 ft. cube & 30 days & 12,000 gp & 12th \\
             \end{dtabularx}
+            1. For a single Medium creature trapped in the bag. Treat four Small creatures as one Medium creature, four Medium creatures as one Large creature, and so on.
         \end{dtable*}
+        \begin{magicitemdef}{Bag of Holding}{1}{Conjuration [Planar]}{textiles}
+            \magicitemability{Passive} A bag of holding appears to be a common cloth sack about 2 feet by 4 feet in size.
+            It opens into an extradimensional space: its inside is larger than its outside dimensions.
+            Regardless of what is put into the bag, it weighs a fixed amount.
+            This weight, and the limits in weight and volume of the bag's contents, depend on the bag's type, as shown on \trefnp{Bag of Holding Types}.
 
-        If the bag is overloaded, or if sharp objects pierce it from the outside, the bag ruptures and is ruined.
-        All contents are lost forever.
-        If a bag of holding is turned inside out, its contents spill out, unharmed, but the bag must be put right before it can be used again.
-        If living creatures are placed within the bag, they can survive for up to 10 minutes, after which time they suffocate.
-        Retrieving a specific item from a bag of holding is a move action - unless the bag contains more than an ordinary backpack would hold, in which case retrieving a specific item is a full-round action.
+            The walls inside the bag appear to be made from the same material as the outside, though they is significantly more durable.
+            A five-foot square of interior wall has a hardness of 10 and 50 hit points.
+            If the bag is overloaded, or if sharp objects pierce the bag from the inside or outside, it ruptures and is ruined.
+            All its contents are lost forever.
 
-        If a bag of holding is placed within a portable hole a rift to the Astral Plane is torn in the space: Bag and hole alike are sucked into the void and forever lost.
-        If a portable hole is placed within a bag of holding, it opens a gate to the Astral Plane: The hole, the bag, and any creatures within a 10-foot radius are drawn there, destroying the portable hole and bag of holding in the process.
+            If a bag of holding is turned inside out, its contents spill out, unharmed, but the bag must be put right before it can be used again.
+            Retrieving a specific item from a bag of holding is a move action - unless the bag contains more than an ordinary backpack would hold, in which case retrieving a specific item is a full-round action.
 
-        \mitemreqdesc{Conjuration}{Translocation}{Planar}{2}{4th}{Craft (textiles) 8}
+            If a bag of holding is placed within a portable hole, a rift to the Astral Plane is torn in the space. The bag and hole alike are sucked into the void and forever lost.
+            If a portable hole is placed within a bag of holding, it opens a gate to the Astral Plane. The hole, the bag, and any creatures within a 10-foot radius are drawn there, destroying the portable hole and bag of holding in the process.
+        \end{magicitemdef}
 
-        \tooldescription{Bag of Tricks}{Varies}{see text}{Varied Conjuration (Summoning)}{}{\x} This small sack appears normal and empty.
-        However, anyone reaching into the bag feels a small, fuzzy ball.
-        If the ball is removed and tossed up to 20 feet away, it turns into an animal.
-        The animal serves the character who drew it from the bag for 1 minute (or until slain or ordered back into the bag), at which point it disappears.
-        It can follow any of the commands described in the Creature Handling skill.
-        Each of the three kinds of a bag of tricks produces a different set of animals.
-        Use the following tables to determine what animals can be drawn out of each.
+        \begin{magicitemdef}{Bottle of Air}[Active]{1}{Conjuration [Creation]}{ceramics}
+            This item appears to be a normal glass bottle with a cork.
+            \magicitemability{Active}[Standard action] If you uncork the bottle, it continually fills itself with clean air for 1 hour.
+            It will remain filled with clean air even if taken into an airless environment or environment with dangerous gases, allowing you to breathe from the bottle.
+            Liquid can still fill the bottle, and the bottle will continuously bubble as air is created until the liquid is removed.
+            If the bottle is corked (a standard action), it stops filling itself with air until activated again.
+        \end{magicitemdef}
 
-        Animals produced are always random, and only one may exist at a time.
-        If a new animal is drawn from the bag, the previous animal is immediately unsummoned.
+        \begin{magicitemdef}{Candle of Truth}[Active]{2}{Enchantment [Compulsion, Mind]}{alchemy}
+            This item appears to be a simple white candle.
+            \magicitemability{Active}[Standard action] If you light this candle, creatures within a \areamed radius of the candle are unable to lie, as the \spell{zone of truth} ritual.
+            The zone lasts as long as the candle remains lit, which is normally 1 hour.
+            If the candle is snuffed, the zone immediately ends.
+            While lit, the candle does not burn down, and provides servicable candle-light.
+        \end{magicitemdef}
 
-        \begin{dtable}
-            \lcaption{Bag of Tricks Types}
-            \begin{dtabularx}{\columnwidth}{l X X}
-                \tb{Bag Type} & \tb{Base Price} & \tb{Item Level} \\
-                \hline
-                Gray          & 200 gp          & 3rd             \\
-                Rust          & 2,000 gp        & 8th             \\
-                Tan           & 12,000 gp       & 12th            \\
-            \end{dtabularx}
-        \end{dtable}
+        \begin{magicitemdef}{Friendstone}[1500]{6}{Conjuration/Divination [Scrying, Teleportation]}{ceramics or stone}
+            This item appears to be a glossy, smooth stone or ball of glass about three inches in diameter.
+            \magicitemability{Active}[Standard action] If you press the stone to your forehead and speak your full name, you can attune to it.
+            If you do, you can be summoned by a creature using the stone.
+            This replaces the stone's attunement to any other creature.
+            \magicitemability{Active}[Standard action] If you grasp the stone in your hand and throw it to the ground, you can activate it.
+            if you do, you instantly teleport the creature attuned to the stone to the stone's location.
+            The creature is granted a brief glimpse of the stone's surroundings, as if looking out through the stone, and may refuse the summoning.
+            If the creature refuses, or if it is physically impossible for the creature to appear, your activation of the stone has no effect.
+            If the creature accepts, the stone is destroyed and the creature is unerringly teleported into the stone's location.
+            The creature must be on the same plane as the stone, but the teleportation works across any distance.
+        \end{magicitemdef}
 
-        \begin{dtable}
-            \lcaption{Bag of Tricks Animals}
-            \begin{dtabularx}{\columnwidth}{l X X X}
-                \tb{Roll} & \tb{Gray Bag} & \tb{Rust Bag} & \tb{Tan Bag} \\
-                \hline
-                1-20   & Dire rat   & Dire weasel   & Snake, giant constrictor \\
-                21-40  & Cat        & Lion          & Dire lion \\
-                41-60  & Badger     & Dire badger   & Dire wolverine \\
-                61-80  & Owl        & Giant owl     & Griffon \\
-                81-100 & Wolf       & Dire wolf    & Rhinoceros \\
-            \end{dtabularx}
-        \end{dtable}
-
-        \mitemreq{Conjuration}{Summoning}{1 (gray), 3 (rust), or 5 (tan)}{2 (gray), 6 (rust), or 10 (tan)}{Craft (textiles) 6 (gray), 10 (rust), or 14 (tan)}
-
-        \tooldescription{Bead of Force}{600}{5th}{Moderate Evocation (Control) [Force]}{10th}{Standard (specific action)} This small black sphere appears to be a lusterless pearl.
-        By holding it in your hand and throwing it at an object or creature, you can surround the struck target with a \spell{resilient sphere}, as the spell.
-        The bead is treated as a thrown weapon with a range increment of 20 feet.
-        Your Reflex attack bonus for the \spell{resilient sphere} effect is equal to your level \add 5.
-
-        If you miss your target, the bead will still activate if it strikes a solid object, potentially wasting its effect.
-        After being activated, the bead is destroyed.
-
-        \mitemreqdesc{Evocation}{Control}{Force}{5}{10th}{Craft (jewelry) 14}
-
-        \tooldescription{Bottle of Air}{800}{5th}{Faint Conjuration (Creation)}{4th}{Standard (specific action)} This item appears to be a normal glass bottle with a cork.
-        By uncorking the bottle (a standard action), you can cause the bottle to continually fill itself with clean air for 1 hour.
-        It will remain filled with clean air even if taken into an airless environment or environment with dangerous gases, allowing you to breathe from the bottle.
-        Liquid can still fill the bottle, and the bottle will continuously bubble as air is created until the liquid is removed.
-
-        The bottle can even be shared by multiple creatures who pass it around.
-        Breathing out of the bottle is a standard action, but a creature that does so can then act for as long as it can hold its breath.
-
-        \mitemreq{Conjuration}{Creation}{2}{4th}{Craft (ceramics) 8}
-
-        \tooldescription{Candle of Truth}{100}{2nd}{Faint Enchantment (Inhibition) [Mind-Affecting]}{6th}{Standard (specific action)} By lighting this white tallow candle, you can prevent creatures within a \areamed radius of the candle from being able to lie, as the \ritual{zone of truth} ritual.
-        The zone lasts as long as the candle remains lit, which is normally 1 hour.
-        If the candle is snuffed, the zone immediately ends.
-        Relighting the candle does not recreate the zone.
-
-        %no good craft skill
-        \mitemreq{Enchantment}{Inhibition}{Mind-Affecting}{2}{6th}{Craft (alchemy) 10}
-
-        \tooldescription{Friendstone}{3,000}{9th}{Strong Conjuration/Divination (Scrying, Translocation) [Teleportation]}{14th}{Standard (specific action)} This item appears to be a glossy, smooth stone about three inches in diameter.
-        It can be used to summon a willing creature from a great distance.
-        By pressing the stone to your forehead and speaking your full name, you can activate the stone to make it attune to you, allowing you to be summoned by a creature using the stone.
-        This replaces the stone's attunement to any other creature.
-
-        By grasping the stone in your hand and throwing it to the ground, you can activate cause the stone to transport the creature attuned to the stone to the stone's location.
-        The creature is granted a brief glimpse of the stone's surroundings, as if looking out through the stone, and may refuse the summoning.
-        If the creature refuses, or if it is physically impossible for the creature to appear, your activation of the stone has no effect.
-        If the creature accepts, the stone is destroyed and the creature is unerringly teleported into the stone's location.
-
-        This item is usually made of stone, but can also be made from glass.
-
-        \mitemreq{Conjuration/Divination}{Scrying, Translocation}{7}{14th}{Craft (ceramics or stone) 18th}
-
-        \tooldescription{Witch's Broom}{60,000}{16th}{Strong Divination/Transmutation (Communication, Imbuement)}{14th}{Standard (specific action)} This broom can fly as directed by its owner, as the \ritual{overland flight} ritual.
-        Riding the broom is like riding a mount, except that you do not need to control it and some actions (such as taking cover behind the mount) are infeasible due to the shape of the broom.
-
-        In addition to riding the broom, you attune to the broom as a standard action by holding it firmly by the handle and concentrating.
-        If you have attuned to the broom, you can command it to fly on its own by specifying a location or a direction and distance.
-        The broom understands all locations that you know.
-        If the broom is within \rngext range of you and can hear your commands, it will obey your commands after 1 round.
-        Both attuning to the broom and issuing a command to the broom count as activating the broom, but simply riding the broom does not.
-
-        \mitemreq{Divination/Transmutation}{Communication, Imbuement}{7}{14th}{Craft (wood) 18}
+        \begin{magicitemdef}{Witch's Broom}[Passive]{7}{Divination/Transmutation [Augment, Communication]}{wood}
+            \magicitemability{Passive} While you ride this broom, it can fly, as the \spell{overland flight} ritual.
+            Riding the broom is like riding a mount, except that you do not need to control it and some actions (such as taking cover behind the mount) are infeasible due to the shape of the broom.
+            It can carry up to 1,000 pounds before it becomes unable to fly.
+            \magicitemability{Active}[Standard action] As a standard action, you can speak a command word to summon the broom.
+            If you do, it flies next to you and hovers at a convenient height to ride.
+            The broom must be able to hear the commmand word.
+        \end{magicitemdef}
 
 \section{Special Materials}
 
