@@ -1065,7 +1065,7 @@ Magic items are objects that have been imbued with magical energy. They can take
     \subsection{Staffs}
 
         A staff is a long shaft, usually made of wood, that enhances a spellcaster's power.
-        All magic staffs have an enhancement bonus to improve your spell damage and ability to hit.
+        All magic staffs have an enhancement bonus to improve your spell damage.
         In addition to an enhancement bonus, magic staffs may have special abilities or be made of an unusual material.
 
         \subsubsection{Staff Enhancement Bonuses}\label{Staff Enhancement Bonuses}
@@ -1106,9 +1106,9 @@ Magic items are objects that have been imbued with magical energy. They can take
 
     \subsection{Holy Symbols}
         A holy symbol is a small object that enhances a divine spellcaster's power.
-        Holy symbols function exactly like wands (see below), except that they enhance all schools of magic at once.
+        Holy symbols function exactly like staffs, except that they enhance divine spells instead of all spells.
 
-        \parhead{Holy Symbol Prices} Enhancement bonuses on holy symbols are three times as expensive as wands, but holy symbols otherwise use the same pricing rules as wands.
+        \parhead{Holy Symbol Prices} Enhancement bonuses on holy symbols use the same pricing rules as staffs.
 
         \begin{dtable}
             \caption{Holy Symbol Prices}
@@ -1126,7 +1126,7 @@ Magic items are objects that have been imbued with magical energy. They can take
         \parhead{Physical Description} A typical holy symbol is a no larger than 4 inches in each dimension and can be easily held in the palm of a hand.
         Most holy symbols are metal, but they can be made from wood, bone, or even more exotic materials, depending on the deity they symbolize.
 
-        Many holy symbols are designed to be worn as an amulet in addition to being held in the hand.
+        Most holy symbols are designed to be worn as an amulet in addition to being held in the hand.
         When worn in this way, the holy symbol occupies a torso body slot.
 
         \parhead{Activation} Holy symbols use the same activation method as wands.
@@ -1143,8 +1143,22 @@ Magic items are objects that have been imbued with magical energy. They can take
     \subsection{Wands}
 
         A wand is a thin baton that enhances a spellcaster's power.
-        Wands always provide an enhancement bonus to spellpower with a particular school of magic.
+        All wands have an enhancement bonus to improve your spell damage with a particular type of magic.
         In addition to an enhancement bonus, wands may have special abilities or be made of an unusual material.
+
+        \subsubsection{Wand Enhancement Bonuses}\label{Wand Enhancement Bonuses}
+
+            A wand only affects spells from a particular school of magic (see \pcref{Schools of Magic}), or spells with a particular tag (see \pcref{Spell Tags}).
+
+            Magic wands can have enhancement bonuses ranging from \plus1 to \plus5.
+            Each \plus1 of enhancement bonus increases your effective spellpower by 1 for the purpose of determining how much damage some spells do.
+            This only affects damage, and does not increase your accuracy or have any other effects.
+
+            In addition, each \plus1 of enhancement bonus grants you an additional offensive legend point each day.
+            These legend points can only be spent as part of casting spells the wand provides bonuses with.
+            They can only be gained once per day, regardless of the number of wands you use.
+            If you use multiple wands at once, or change between different wands, use only the highest number of legend points that applies.
+            If you change from a weaker magical wand to a stronger magical wand, you gain legend points equal to the difference between the two enhancement bonuses.
 
         \parhead{Wand Prices} The prices of enhancement bonuses to wands are listed in \trefnp{Magic Wands}, and the prices of special abilities are listed on \trefnp{Wand Special Abilities}.
         If a wand has a special ability, the price of the special ability is added to the price of the wand.
@@ -1180,7 +1194,7 @@ Magic items are objects that have been imbued with magical energy. They can take
             \begin{dtabularx}{\columnwidth}{>{\lcol}X l l}
                 \tb{Special Ability} & \tb{Cost} & \tb{Item Level} \\
                 \hline
-                Enlarging & 400 gp   & 4th \\
+                Distant & 400 gp   & 4th \\
                 Flaming   & 400 gp   & 4th \\
                 Freezing  & 400 gp   & 4th \\
                 Shocking  & 1,600 gp & 7th \\
@@ -1189,45 +1203,30 @@ Magic items are objects that have been imbued with magical energy. They can take
         %Wand special abilities: priced as close range, immediate action trigger.
         %Trigger needs to be immediate; otherwise, a caster casting a quickened spell
         %could potentially unleash four separate effects simultaneously.
-        \impdescription{Enlarging}{400}{4th}{Faint Universal}{2nd}{Immediate (triggered)} When you cast a spell, you can activate this wand to double the range of the spell.
+        \impdescription{Distant}{400}{4th}{Faint Universal}{2nd}{Immediate (triggered)} When you cast a spell affected by this wand, you can activate it to double the range of the spell.
 
         When you activate this ability, the wand doubles in length.
         This effect lasts for 5 rounds, during which time you cannot activate the item.
-
         \mitemreq{No school}{}{1}{2nd}{Craft (as wand) 6}
 
-        \impdescription{Flaming}{400}{4th}{Faint Evocation (Energy) [Fire]}{2nd}{Immediate (triggered)} When you cast a spell, you can activate this wand to ignite a single creature affected by the spell for 5 rounds.
-
-        An ignited creature is vulnerable, causing it to take a \minus2 penalty to attacks, defenses, and checks.
-        In addition, at the end of each of its turns, it takes 1d6 damage from the fire.
-        If the creature takes a move action, it can attempt a DR 10 Dexterity check to put out the flames.
-        This action requires a free hand.
-        Dropping prone as part of the action gives a \plus5 bonus on this check.
+        \impdescription{Flaming}{400}{4th}{Faint Evocation (Energy) [Fire]}{2nd}{Immediate (triggered)} When you cast a spell affected by this wand, you can activate it to make a single creature affected by the spell \ignited for 5 rounds.
 
         When you activate this ability, the wand is wreathed in flame, causing it to cast light as a torch.
         This effect lasts for 5 rounds, during which time you cannot activate the item.
-
         \mitemreqdesc{Evocation}{Energy}{Fire}{1}{2nd}{Craft (as wand) 6}
 
-        \impdescription{Freezing}{400}{4th}{Faint Evocation (Energy) [Cold]}{2nd}{Immediate (triggered)} As you cast a spell, you can activate this wand to fatigue a single creature affected by the spell for 5 rounds.
-        A fatigued creature can neither sprint nor charge and is vulnerable, giving it a \minus2 penalty to attacks, defenses, and checks.
+        \impdescription{Freezing}{400}{4th}{Faint Evocation (Energy) [Cold]}{2nd}{Immediate (triggered)} When you cast a spell affected by this wand, you can activate it to make a single creature affected by the spell \fatigued for 5 rounds.
 
         When you activate this ability, the wand radiate frigid cold, causing it to snuff out torches and other small fires within a 5 foot radius of it.
         This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
-
         \mitemreqdesc{Evocation}{Energy}{Cold}{1}{2nd}{Craft (as wand) 6}
 
-        \impdescriptiondc{Shocking}{1,600}{7th}{Faint Evocation (Energy) [Electricity]}{8th}{Immediate (triggered)}{Fortitude (level \add 2)} As you cast a spell, you can activate this wand.
+        \impdescriptiondc{Shocking}{1,600}{7th}{Faint Evocation (Energy) [Electricity]}{8th}{Immediate (triggered)}{Fortitude (level \add 2)} When you cast a spell affected by this wand, you can activate it.
         If you do, make a Fortitude attack against a single creature affected by the spell.
-        A successful attack causes the target to be staggered for 5 rounds.
-
-        A staggered creature may take a single move action or standard action each round, but not both.
-        She cannot take full-round actions, but she may take swift actions.
-        In addition, she is vulnerable, causing her to take a \minus2 penalty on attacks, defenses, and checks.
+        A successful attack causes the target to be \staggered for 5 rounds.
 
         When you activate this ability, you crackle with electrical energy, causing you to radiate flashing light as a torch.
         This effect lasts for 5 rounds, during which time you cannot activate the item's abilities.
-
         \mitemreqdesc{Evocation}{Energy}{Electricity}{2}{4th}{Craft (as wand) 8}
 
 \section{Tools}
