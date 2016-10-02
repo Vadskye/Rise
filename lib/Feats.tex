@@ -361,7 +361,7 @@ The table of combat feats is organized according to the combat prowess each feat
         \featref{Close-Quarters Fighting} & Dex 3 & No penalty for squeezing or attacking while grappling & Finesse & \featpref{Close-Quarters Fighting} \\
         \featref{Exotic Weapon Proficiency} & \x & Become proficient with exotic weapons & Equipment & \featpref{Exotic Weapon Proficiency} \\
         \featref{Far Shot} & Str 3 & Increase range increment & Power & \featpref{Far Shot} \\
-        \featref{Mighty Blows} & Str 3 & \plus1 to physical damage & Power & \featpref{Mighty Blows} \\
+        \featref{Mighty Blows}\fn{1} & Str 3 & \plus1 to physical damage & Power & \featpref{Mighty Blows} \\
         \featref{Mounted Archery} & Ride training & Reduce penalty for ranged accuracy while mounted & Mounted, Precision & \featpref{Mounted Archery} \\
         \featref{Mounted Defense} & Ride training & Negate hits on mount with Ride check & Defense, Mounted & \featpref{Mounted Defense} \\
         \featref{Mounted Trample} & Ride 10 ranks & Target cannot avoid mounted overrun & Maneuver, Mounted & \featpref{Mounted Trample} \\
@@ -373,22 +373,16 @@ The table of combat feats is organized according to the combat prowess each feat
             \tind \featref{Two-Weapon Defense} & Two-Weapon Fighting & Gain \plus1 to defenses when fighting with two weapons & Defense, Finesse & \featpref{Two-Weapon Defense} \\
         \featref{Unarmed Proficiency} & \x & Proficient with unarmed attacks & \x & \featpref{Unarmed Proficiency} \\
             \tind \featref{Deflect Arrows} & Dex 3, Unarmed Proficiency & Deflect ranged attacks with your bare hands & Finesse, Reaction & \featpref{Deflect Arrows} \\
-        \featref{Weapon Proficiency}\fn{1} & \x & Gain proficiency with weapon group & Equipment & \featpref{Weapon Proficiency} \\
-        \featref{Weapon Finesse} & Dex 3 & \plus1 damage with light weapons & Finesse & \featpref{Weapon Finesse} \\
-        \featref{Weapon Focus} & Proficiency with weapon group & Special ability with weapon group & Equipment & \featpref{Weapon Focus} \\
+        \featref{Weapon Proficiency}\fn{2} & \x & Gain proficiency with weapon group & Equipment & \featpref{Weapon Proficiency} \\
+        \featref{Weapon Finesse}\fn{1} & Dex 3 & \plus1 damage with light weapons & Finesse & \featpref{Weapon Finesse} \\
+        \featref{Weapon Focus}\fn{2} & Proficiency with weapon group & Special ability with weapon group & Equipment & \featpref{Weapon Focus} \\
 
         \midrule
         \tb{Combat Feats} & \tb{Prerequisites (Prowess 4)} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
         \featref{Combat Mobility} & Dex 5 & Move through foe & Defense, Mobility & \featpref{Combat Mobility} \\
         \featref{Gang Up} & \x & Increase overwhelm penalties foes suffer & \x & \featpref{Gang Up} \\
         \featref{Heavy Hitter} & Str 5 & \plus2 damage with heavy weapons & Power & \featpref{Heavy Hitter} \\
-        \featref{Improved Dirty Trick} & \x & \plus2 to dirty trick accuracy; dirty tricks last longer & Finesse, Maneuver & \featpref{Improved Dirty Trick} \\
-        \featref{Improved Disarm} & \x & \plus2 to disarm accuracy; knock foe's weapon away after disarming & Finesse, Maneuver & \featpref{Improved Disarm} \\
-        \featref{Improved Feint} & \x & \plus2 to feint accuracy; feint lasts longer & Finesse, Maneuver & \featpref{Improved Feint} \\
-        \featref{Improved Grapple} & \x & \plus2 to grapple accuracy; not defenseless while grappling & Maneuver, Power & \featpref{Improved Grapple} \\
-        \featref{Improved Overrun} & \x & \plus2 to overrun accuracy; target can't avoid & Maneuver, Power & \featpref{Improved Overrun} \\
-        \featref{Improved Shove} & \x & \plus2 to shove accuracy; move target away from you & Maneuver, Power & \featpref{Improved Shove} \\
-        \featref{Improved Trip} & \x & \plus2 to trip accuracy; free strike against tripped foe & Finesse, Maneuver & \featpref{Improved Trip} \\
+        \featref{Maneuver Focus} & \x & \plus2 to accuracy with maneuver, special ability & Maneuver & \featpref{Improved Dirty Trick} \\
         \featref{Improvised Might} & Str 5 & Attacks with improvised weapons deal more damage & \x & \featpref{Improvised Might} \\
         \featref{Mounted Charge} & Ride 10 ranks & Gain bonus damage with mounted charge & Mounted, Power & \featpref{Mounted Charge} \\
         \featref{Tactical Prediction} & Int 5 & Predict foe's next action & Awareness & \featpref{Tactical Prediction} \\
@@ -439,10 +433,8 @@ The table of combat feats is organized according to the combat prowess each feat
         \featref{Immobilizing Strike} & \x & Melee attack immobilizes foe & Strike & \featpref{Immobilizing Strike} \\
         \featref{Predictive Strike} & Int 15 & Bonus damage if foe takes predicted action & Reaction, Strike & \featpref{Predictive Strike} \\
     \end{longtabu}
-    \begin{enumerate*}
-        \item You can gain this feat multiple times.
-            Each time you do, it has a different effect.
-    \end{enumerate*}
+    1. You can gain this feat multiple times. Each time you do, it has a different effect. \\
+    2. You can gain this feat multiple times. Its effects stack. \\
 \end{longtabuwrapper}
 
 \subsection{Combat Style Feat Table}
@@ -1205,47 +1197,6 @@ If your attack result also beats the foe's Fortitude defense, it is \immobilized
 \featben When counterspelling, you may attempt to counter spells of any school, regardless of which spell you cast.
 In addition, your spells are treated as being one higher level than normal for the purpose of determining what spells they can counter.
 
-\feat{Improved Dirty Trick}{Combat, Maneuver}
-\featpre Combat prowess 4.
-\featben When you perform a dirty trick on a cretaure successfully, the creature is \impaired for 1d4 rounds.
-You also gain a \plus2 bonus to accuracy on dirty trick attacks.
-
-\feat{Improved Disarm}{Combat, Finesse}
-\featpre Combat prowess 4.
-\featben When you disarm a creature, you can make the disarmed item land up to 15 feet away in a random direction.
-You also gain a \plus2 bonus to accuracy on disarm attacks.
-
-\feat{Improved Feint}{Combat, Finesse}
-\featpre Combat prowess 4.
-\featben When you feint against a creature, if you beat its Armor defense by 5 or more, you deal damage with your weapon normally.
-You also gain a \plus2 bonus to accuracy on feint attacks.
-
-\feat{Improved Grapple}{Combat, Maneuver}
-\featpre Combat prowess 4.
-\featben Grappling does not make you \defenseless against other creatures.
-You also gain a \plus2 bonus to accuracy on grapple attacks.
-This does not prevent you from being defenseless if you have no hands free to defend yourself with.
-\parhead{Normal}
-While grappling, you are defenseless against all creatures except the ones you are grappling.
-
-\feat{Improved Overrun}{Combat, Maneuver}
-\featpre Combat prowess 4.
-\featben When you attempt to overrun a foe, the creature may not choose to avoid you unless you let it.
-You also gain a \plus2 bonus to accuracy on overrun attacks.
-\parhead{Normal}
-Without this feat, the target of an overrun can choose to avoid you or to block you.
-
-\feat{Improved Shove}{Combat, Maneuver}
-\featpre Combat prowess 4.
-\featben When you shove a creature, you can move it outside of your reach.
-You also gain a \plus2 bonus to accuracy on shove attacks.
-
-\feat{Improved Trip}{Combat, Maneuver}
-\featpre Combat prowess 4.
-\featben When you successfully trip a foe, you get a free melee attack against it.
-This attack is made as the creature is being tripped, so it does not have penalties for being prone.
-You also gain a \plus2 bonus to accuracy on trip attacks.
-
 \feat{Improvised Might}{Combat, Power}
 \featpres Combat prowess 4, Strength 5.
 \featben Your attacks with improvised weapons deal damage as if the weapon were two size categories larger than normal.
@@ -1674,6 +1625,21 @@ Choose two magical classes you possess.
 Levels in two magical classes.
 \featben When gaining levels in either of your chosen classes, you increase your spellcasting ability with the other class as if your class was nonmagical.
 See \pcref{Spellcasters and Multiclassing}.
+
+\feat{Maneuver Focus}{Combat}
+Choose one combat maneuver.
+\featpre Combat prowess 4.
+\featben You cain a \plus2 bonus to accuracy with the chosen maneuver.
+In addition, you gain a special ability based on the maneuver chosen.
+\begin{itemize}
+    \item Dirty trick: When you successfully perform a dirty trick, the target is \impaired for 1d4 rounds, rather than 1 round.
+    \item Disarm: When you successfully perform a disarm, you can make the disarmed item land up to 15 feet away in a random direction.
+    \item Feint: When you critically succeed at a feint, you deal damage with your weapon normally.
+    \item Grapple: Grappling does not cause you to be \defenseless.
+    \item Overrun: The target of your overrun attempts cannot choose to avoid you unless you let it.
+    \item Shove: When you successfully perform a shove, you can move the target the full distance without needing to move with it.
+    \item Trip: When you successfully perform a trip, you can make a free \glossterm{strike} against the target. The target does not suffer prone penalties for the trip against the free attack.
+\end{itemize}
 
 \feat{Manyshot}{Combat, Finesse}
 \featpres Dex 5, combat prowess 8.
