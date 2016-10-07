@@ -13,41 +13,41 @@ If your character is weak or carrying a lot of gear, however, then you'll need t
     \lcaption{Weight Limits}
     \setlength{\tabcolsep}{4pt}
     \begin{dtabularx}{\columnwidth}{X l l l l}
-         \tb{Strength} & \tb{Unencumbered} & \tb{Maximum} & \tb{Overloaded} & \tb{Push/Drag} \\
-         \hline
-        -9 & 2 lb.  & 4 lb.   & 6 lb.   & 20 lb.  \\
-        -8 & 3      & 6       & 9       & 30      \\
-        -7 & 4      & 8       & 12      & 40      \\
-        -6 & 6      & 12      & 18      & 60      \\
-        -5 & 8      & 17      & 25      & 85      \\
-        -4 & 12     & 25      & 37      & 125     \\
-        -3 & 17     & 35      & 52      & 175     \\
-        -2 & 25     & 50      & 75      & 250     \\
-        -1 & 35     & 70      & 105     & 350     \\
-        0  & 50     & 100     & 150     & 500     \\
-        1  & 70     & 140     & 210     & 700     \\
-        2  & 100    & 200     & 300     & 1,000   \\
-        3  & 140    & 280     & 420     & 1,400   \\
-        4  & 200    & 400     & 600     & 2,000   \\
-        5  & 280    & 560     & 840     & 2,800   \\
-        6  & 400    & 800     & 1,200   & 4,000   \\
-        7  & 550    & 1,150   & 1,700   & 5,750   \\
-        8  & 800    & 1,600   & 2,400   & 8,000   \\
-        9  & 1,150  & 2,300   & 3,450   & 11,500  \\
-        10 & 1,600  & 3,200   & 4,800   & 16,000  \\
-        11 & 2,250  & 4,500   & 6,750   & 22,500  \\
-        12 & 3,200  & 6,400   & 9,600   & 32,000  \\
-        13 & 4,500  & 9,000   & 13,500  & 45,000  \\
-        14 & 6,500  & 13,000  & 19,500  & 65,000  \\
-        15 & 9,000  & 18,000  & 27,000  & 90,000  \\
-        16 & 13,000 & 26,000  & 39,000  & 130,000 \\
-        17 & 18,000 & 36,000  & 54,000  & 180,000 \\
-        18 & 25,500 & 51,000  & 76,500  & 255,000 \\
-        19 & 36,000 & 72,000  & 108,000 & 360,000 \\
-        20 & 51,000 & 102,000 & 153,000 & 510,000 \\
+        \tb{Strength} & \tb{Unencumbered} & \tb{Maximum} & \tb{Overloaded} & \tb{Push/Drag} \\
+        \hline
+        -9 & 6 lb. & 12 lb. & 18 lb. & 60 lb. \\
+        -8 & 7     & 14     & 21     & 70     \\
+        -7 & 9     & 18     & 27     & 90     \\
+        -6 & 12    & 24     & 36     & 120    \\
+        -5 & 15    & 30     & 45     & 150    \\
+        -4 & 20    & 40     & 60     & 200    \\
+        -3 & 25    & 50     & 75     & 250    \\
+        -2 & 30    & 60     & 90     & 300    \\
+        -1 & 40    & 80     & 120    & 400    \\
+        0  & 50    & 100    & 150    & 500    \\
+        1  & 60    & 120    & 180    & 600    \\
+        2  & 80    & 160    & 240    & 800    \\
+        3  & 100   & 200    & 300    & 1,000  \\
+        4  & 120   & 240    & 360    & 1,200  \\
+        5  & 160   & 320    & 480    & 1,600  \\
+        6  & 200   & 400    & 600    & 2,000  \\
+        7  & 250   & 500    & 750    & 2,500  \\
+        8  & 320   & 640    & 960    & 3,200  \\
+        9  & 400   & 800    & 1,200  & 4,000  \\
+        10 & 500   & 1,000  & 1,500  & 5,000  \\
+        11 & 630   & 1,260  & 1,890  & 6,300  \\
+        12 & 800   & 1,600  & 2,400  & 8,000  \\
+        13 & 1,000 & 2,000  & 3,000  & 10,000 \\
+        14 & 1,300 & 2,600  & 3,900  & 13,000 \\
+        15 & 1,600 & 3,200  & 4,800  & 16,000 \\
+        16 & 2,000 & 4,000  & 6,000  & 20,000 \\
+        17 & 2,500 & 5,000  & 7,500  & 25,000 \\
+        18 & 3,200 & 6,400  & 9,600  & 32,000 \\
+        19 & 4,000 & 8,000  & 12,000 & 40,000 \\
+        20 & 5,100 & 10,200 & 15,300 & 51,000 \\
         21\plus\fn{1} & \x & \x & \x & \x \\
     \end{dtabularx}
-    1 To calculate weight limits for a creature with epic Strength, double its carrying capacity every 2 Strength.
+    1 To calculate weight limits for a creature with epic Strength, double its weight limit every 3 Strength.
 \end{dtable}
 
 \subsection{Encumbrance by Weight}
@@ -63,7 +63,7 @@ A character can generally push or drag along the ground as much as five times hi
 
 Quadrupeds can carry heavier loads than characters can. Instead of the multipliers given above, multiply the value corresponding to the creature's Strength score from Table 9-1 by the appropriate modifier, as follows: Fine \mult1/4, Diminutive \mult1/2, Tiny \mult3/4, Small \mult1, Medium \mult1-1/2, Large \mult3, Huge \mult6, Gargantuan \mult12, Colossal \mult24.
 
-\parhead{Tremendous Strength} For Strength scores not shown on \trefnp{Weight Limits}, find the Strength score between 20 and 29 that has the same number in the ``ones" digit as the creature's Strength score does. Multiply the figures by 4 for every ten points the creature's strength is above the score for that row.
+\parhead{Tremendous Strength} For Strength scores not shown on \trefnp{Weight Limits}, subtract 3 from its Strength until you find a Strength value shown on the chart. For each time you subtracted in this way, double the weight limits listed on the chart.
 
 \section{Movement}
 
@@ -73,7 +73,7 @@ Quadrupeds can carry heavier loads than characters can. Instead of the multiplie
  & \multicolumn{4}{c}{\x\x\x Speed \x\x\x} \\
 \hline
  & 15 feet & 20 feet & 30 feet & 40 feet \\
-One Round (Tactical)1 &  &  &  &  \\
+One Round (Tactical) &  &  &  &  \\
 Walk & 15 ft. & 20 ft. & 30 ft. & 40 ft. \\
 Hustle & 30 ft. & 40 ft. & 60 ft. & 80 ft. \\
 One Minute (Local) &  &  &  &  \\
