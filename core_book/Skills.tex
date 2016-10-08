@@ -76,7 +76,7 @@ A character's skills describe the myriad of talents that people have.
                 Bluff             & \x & C  & \x & C  & C  & C  & C  & C  & C  & C  & \x & \x\fn{3}     \\
                 Persuasion        & \x & C  & C  & C  & C  & C  & C  & C  & C  & C  & \x & \x\fn{3}     \\
             \end{dtabularx}
-            C: class skill \\
+            C\@: class skill \\
             1. Always treated as a class skill \\
             2. Attribute varies depending on skill usage \\
             3. No attribute applies \\
@@ -200,7 +200,7 @@ A character's skills describe the myriad of talents that people have.
     In addition to the skill's name, the line also indicates the attribute associated with the skill, if there is one.
     The skill name line is followed by a general description of what using the skill represents. After the description are a few other types of information:
 
-    \parhead{Check} What a character (``you'' in the skill description) can do with a successful skill check, and the check's DR.
+    \parhead{Check} What a character (``you'' in the skill description) can do with a successful skill check, and the check's DR\@.
 
     \parhead{Action} The type of action using the skill requires, or the amount of time required for a check.
 
@@ -255,7 +255,7 @@ A character's skills describe the myriad of talents that people have.
         As a free action, you can make a DR 15 sight-based Awareness check to read a creature's lips. You must be able to understand the language spoken. Success means you can understand the general content of the message, but not the exact words. Critical success means you understand the exact words. Failure means you don't understand the message. Critical failure means you draw an incorrect conclusion about the message.
 
     \subsection{Search}\label{Search}
-        As a standard action, you can make a Awareness check to notice things in a single 5-ft. square within 10 feet of you.
+        As a standard action, you can make a Awareness check to notice things in a single 5-ft.\ square within 10 feet of you.
         If you do, you gain a \plus10 bonus to the check.
 
     \subsection{Senses}
@@ -345,7 +345,7 @@ A character's skills describe the myriad of talents that people have.
                 Diminuitive & \plus12 \\
                 Tiny & \plus8 \\
                 Small & \plus4 \\
-                Medium & \plus \\
+                Medium & \plus0 \\
                 Large & \minus4 \\
                 Huge & \minus8 \\
                 Gargantuan & \minus12 \\
@@ -545,7 +545,7 @@ A character's skills describe the myriad of talents that people have.
                 Very simple item (wooden spoon) & Varies & 5 \\
                 Typical item (iron pot) & Varies & 10 \\
                 High-quality item (bell, average lock) & Varies & 15 \\
-                Complex or superior item (fine china, document with official seal)  & Varies & 20\plus \\
+                Complex or superior item (fine china, document with official seal)  & Varies & 20\add \\
             \end{dtabularx}
             1 Traps have their own rules for construction.
         \end{dtable}
@@ -571,7 +571,7 @@ A character's skills describe the myriad of talents that people have.
         You can make a Craft check to repair a broken item. This functions like crafting the item from scratch, except that you use one-tenth of the item's price to determine the price of raw materials and the crafting time.
 
     \subsection{Other Tasks}
-        You can use the Craft skill for various tasks related to the object of your craft. For example, you could use Craft (wood) to sabotage a wagon so it will break at a later time, or Craft (alchemy) to purify spoiled food or ingredients. The DRs of such tasks, and what can be accomplished, can vary widely. In general, the more difficult the task, and the more loosely it is related to the skill, the higher the DR.
+        You can use the Craft skill for various tasks related to the object of your craft. For example, you could use Craft (wood) to sabotage a wagon so it will break at a later time, or Craft (alchemy) to purify spoiled food or ingredients. The DRs of such tasks, and what can be accomplished, can vary widely. In general, the more difficult the task, and the more loosely it is related to the skill, the higher the DR\@.
 
     \skill{Creature Handling}{Per}
     The Creature Handling skill represents your ability to handle creatures without being able to speak with them. With it, you can convince them to do what you want or train them to follow commands. This skill can only be used with creatures with an Intelligence of \minus5 or lower.
@@ -587,7 +587,7 @@ A character's skills describe the myriad of talents that people have.
     \subsection{Training Creatures}
         You can use Creature Handling to train a creature. Success means the creature learns a trick or becomes domesticated. Failure means your time is wasted, and you must try again. Exceptional failure may indicate that the animal becomes unable to learn the trick, becomes hostile, or other consequences depending on the situation. Training a creature takes a week or more; this requires spending at least four hours each day with the creature. It is not generally possible to accelerate the process by spending more time each day; the creature must take time to learn the new behavior. If the training is interrupted for a week or more, the attempt automatically fails.
 
-        \parhead{Teach a Trick} You can teach a creature a specific trick with one week of work and a successful Creature Handling check against the indicated DR. A creature can learn a number of tricks equal to its Intelligence \add 10. Thus, a creature with an Intelligence of \minus9 can learn a single trick, while a creature with an Intelligence of \minus5 can learn five tricks. Possible tricks (and their associated DRs) include, but are not necessarily limited to, the following.
+        \parhead{Teach a Trick} You can teach a creature a specific trick with one week of work and a successful Creature Handling check against the indicated DR\@. A creature can learn a number of tricks equal to its Intelligence \add 10. Thus, a creature with an Intelligence of \minus9 can learn a single trick, while a creature with an Intelligence of \minus5 can learn five tricks. Possible tricks (and their associated DRs) include, but are not necessarily limited to, the following.
 
         \subsk{Attack (DR 20)} The creature attacks apparent enemies. You may point to a particular creature that you wish the creature to attack, and it will comply if able. Normally, a creature will attack only humanoids, monstrous humanoids, giants, or other creatures. Teaching a creature to attack all creatures (including such unnatural creatures as undead and aberrations) counts as two tricks.
         \subsk{Come (DR 15)} The creature comes to you, even if it normally would not do so.
@@ -768,12 +768,12 @@ A character's skills describe the myriad of talents that people have.
         You can make a DR 15 Jump check while moving to intentionally jump down from a height to reduce your falling damage. Success means you take damage as if you had dropped 10 fewer feet than you actually did. Failure means you take the normal falling damage.
 
     \subsection{Long Jump}
-        As part of movement, you can make a Jump check to jump forward. When you make a long jump, choose a DR. If you have a running start, you jump forward by a number of feet equal to your check result, to a maximum of the DR you chose. At the midpoint of the jump, you achieve a height equal to a quarter of that distance. Critical failure means you fall prone after making the jump. If a failed jump would cause you to fall into a gap, you can make a DR 20 Climb check to catch the edge of the gap, provided you can reach it.
+        As part of movement, you can make a Jump check to jump forward. When you make a long jump, choose a DR\@. If you have a running start, you jump forward by a number of feet equal to your check result, to a maximum of the DR you chose. At the midpoint of the jump, you achieve a height equal to a quarter of that distance. Critical failure means you fall prone after making the jump. If a failed jump would cause you to fall into a gap, you can make a DR 20 Climb check to catch the edge of the gap, provided you can reach it.
 
         If you do not have a running start, jumping is more difficult (see \pcref{Running Start}).
 
     \subsection{High Jump}
-        As part of movement, you can make an Jump check while moving to jump up. When you make a high jump, choose a DR. If you have a running start, you move forward by an amount to a quarter of your check result, to a maximum of a quarter of the DR. At the midpoint of the jump, you gain a height equal to that distance. Critical failure means you land prone after making the jump.
+        As part of movement, you can make an Jump check while moving to jump up. When you make a high jump, choose a DR\@. If you have a running start, you move forward by an amount to a quarter of your check result, to a maximum of a quarter of the DR\@. At the midpoint of the jump, you gain a height equal to that distance. Critical failure means you land prone after making the jump.
 
         If you do not have a running start, jumping is more difficult (see \pcref{Running Start}).
 
@@ -1219,7 +1219,7 @@ A character's skills describe the myriad of talents that people have.
     \subsection{Navigate Wilderness}
         You can make a Survival check while moving overland to avoid natural hazards and getting lost. The DR depends on the terrain, as shown on \trefnp{Terrain DRs}. Success means that you and any group you lead can move without any trouble. Failure means you may encounter a natural hazard, depending on the terrain. Critical failure means you become lost.
 
-        You can notice that you are lost the next time that you succeed on a check to navigate in the wilderness. Rediscovering your location requires backtracking for 1d6 hours and another Survival check against the same DR.
+        You can notice that you are lost the next time that you succeed on a check to navigate in the wilderness. Rediscovering your location requires backtracking for 1d6 hours and another Survival check against the same DR\@.
 
         This check is made once every 8 hours you spend travelling overland. If you move at half speed, you gain a \plus5 bonus on the check.
 
