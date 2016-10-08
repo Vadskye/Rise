@@ -31,7 +31,7 @@ If you are damaged or distracted while taking an action that requires focus, you
 
 \parhead{Concentration Checks}\label{Concentration Checks}
 
-To make a concentration check, roll d20 \add level \minus overwhelm penalties.
+To make a concentration check, roll d20 \add level \sub overwhelm penalties.
 The DR is equal to 10 \add (twice the level of the spell you are casting).
 If the total damage you took in the current round exceeds your Fortitude or Mental defense, you take a \minus5 penalty to this check.
 If the damage exceeds both defenses, you take a \minus10 penalty instead.
@@ -268,7 +268,7 @@ Some spells have a target or targets. You cast these spells on creatures or obje
 
 \subparhead{Redirecting a Spell} Some spells allow you to redirect the effect to new targets or areas after you cast the spell. Redirecting a spell is a swift action.
 
-\subparhead{Targeting Restrictions} Many spells affect ``living creatures,'' which means all creatures other than constructs and undead. Creatures in the spell's area that are not of the appropriate type do not count against the creatures affected.
+\subparhead{Targeting Restrictions} Many spells affect ``living creatures'', which means all creatures other than constructs and undead. Creatures in the spell's area that are not of the appropriate type do not count against the creatures affected.
 
 \subparhead{Willing Targets} Some spells restrict you to willing targets only. You can choose to be a willing target at any time. Unconscious creatures and objects are automatically considered willing, but a character who is conscious but immobile or helpless (such as one who is bound or paralyzed) is not automatically willing.
 
@@ -303,7 +303,7 @@ If a spell's duration is variable, the duration is rolled secretly (the caster d
 \subparhead{Other} Some spells, such as long-lasting rituals, last for a specific amount of time specified in the spell description.
 \parhead{Permanent} The energy remains as long as the effect does. This means the spell is vulnerable to \spell{dispel magic}.
 
-\parhead{Instantaneous} Spells without a listed duration are instantaneous. spell energy comes and goes the instant the spell is cast, though the consequences might be long-lasting.
+\parhead{Instantaneous} Spells without a listed duration are instantaneous. Spell energy comes and goes the instant the spell is cast, though the consequences might be long-lasting.
 
 \parhead{Subjects, Effects, and Areas} If the spell affects creatures directly, the result travels with the subjects for the spell's duration. If the spell creates or summons objects or creatures, they last for the duration, and are capable of moving outside the spell's initial area. Such effects can sometimes be destroyed prior to when its duration ends. If the spell creates an emanation, then the spell stays with that area for its duration. Creatures become subject to the spell when they enter the emanation and are no longer subject to it when they leave.
 
@@ -317,7 +317,7 @@ Spells which do not directly affect targets, such as \spell{summon monster} or \
 Normally, creatures with spell resistance can choose to allow spells through their resistance. Some creatures cannot control their spell resistance, so an attack is always necessary to affect them. This is specified in the description of the creature's spell resistance.
 
 \subsection{Effect}
-This portion of a spell description details what the spell does and how it works. If one of the previous entries in the description included ``see text,'' this is where the explanation is found. There are several key parts of a spell which are also contained here.
+This portion of a spell description details what the spell does and how it works. If one of the previous entries in the description included ``see text'', this is where the explanation is found. There are several key parts of a spell which are also contained here.
 
 \subsubsection{Damage}
 This is the amount of damage the spell deals. Typically, the effect will specify who takes the damage. If no effect is specified, the spell damages all of its targets, or all creatures (but not objects) in the area. A spell with this entry is considered a damaging spell. A spell without this entry is not, even if it could be used to deal damage.
@@ -342,7 +342,7 @@ Most spells have tags that describe the spell's effects or nature. Many of these
 
 {
     \onecolumn
-    \taburowcolors [2] 2{tbrown .. white}
+    \taburowcolors [2] 2{tbrown .. white} % chktex-file 26 chktex-file 12
     \begin{longtabu}{l X}
         \lcaption{Spell Tags} \\
         \tb{Tag} & \tb{Effect} \\
@@ -401,7 +401,7 @@ Most spells have tags that describe the spell's effects or nature. Many of these
         Temporal & \x \\
         Trap & The spell has no immediately obvious effect, but it can be detected with the Perception skill. Unless otherwise noted, it is also possible to disable the spell with the Devices skill before it triggers. The DR to detect and disable the spell is equal to 25 \add spell level.
         \par No more than one trap spell can be placed on the same object or in the same area. Only the first trap placed has any effect. It must be dispelled or discharged before any new traps can be placed. \\
-        \label{Unreal Spells}Unreal & The spell can be recognized as unreal with a Perception check against a DR equal to 10 \add your spellpower. Creatures get a \plus10 bonus on this Perception check when using senses which should be present in the figment, but which are missing. Alternately, if the figment has a visual manifestation, physical contact can reveal it as unreal.
+        Unreal\label{Unreal Spells} & The spell can be recognized as unreal with a Perception check against a DR equal to 10 \add your spellpower. Creatures get a \plus10 bonus on this Perception check when using senses which should be present in the figment, but which are missing. Alternately, if the figment has a visual manifestation, physical contact can reveal it as unreal.
 
         A creature faced with definitive proof that the figment is unreal can disbelieve it, treating it as if it were not there. Its effects can still be observed if desired, but they are mere shadows of the full effect: visual effects appear translucent outlines, sounds can be heard as ghostly echoes, and so on. \\
         Visual & Creatures that cannot see the spell's effect are immune to the spell. \\
