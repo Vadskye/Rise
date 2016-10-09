@@ -102,8 +102,8 @@
                 \begin{dtabularx}{\columnwidth}{X X}
                     \tb{Attribute Score} & \tb{Point Cost} \\
                     \hline
-                    \minus2 & \minus2\fn{1} \\
-                    \minus1 & \minus1\fn{1} \\
+                    \minus2\fn{1} & \minus2 \\
+                    \minus1\fn{1} & \minus1 \\
                     0       & 0             \\
                     1       & 1             \\
                     2       & 2             \\
@@ -111,8 +111,13 @@
                     4       & 5             \\
                     5       & 8             \\
                 \end{dtabularx}
-                1 No more than two attribute scores can be reduced below 0 in this way.
+                1 If you reduce an attribute below 0, it is a \glossterm{flawed attribute} (see Flawed Attributes, below).
+                You cannot reduce more than two attributes below 0 in this way.
             \end{dtable}
+
+        \subsubsection{Flawed Attributes}\label{Flawed Attributes}
+            If you reduce an attribute below 0 at character creation, it is considered a flawed attribute.
+            A flawed attribute cannot be increased by the attribute increases you gain as you gain levels (see \pcref{Character Advancement}).
 
 \section{Combat Overview}\label{Combat Overview}
 
