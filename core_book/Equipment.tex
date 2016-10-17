@@ -396,7 +396,7 @@ A character's encumbrance (the amount of gear carried, including armor) may also
 \parhead{Weight} This column gives the weight of the armor sized for a Medium wearer. Armor fitted for Small characters weighs half as much, and armor for Large characters weighs twice as much.
 
 \subsubsection{Moving in Armor}
-The heavier the armor, the more it slows your movement. Light armor has no effect on your movement speed, though it does impose armor check penalties. Running in medium or heavy armor is difficult, and you can run at only three times your movement speed instead of four times your movement speed. Heavy armor slows down your movement speed even further, causing you to move at 2/3 of your normal movement rate.
+    The heavier the armor, the more it slows your movement. Light armor has no effect on your movement speed, though it does impose \glossterm{encumbrance penalties}. Medium and heavy armor slow down your movement speed, causing you to move at 2/3 of your normal movement rate.
 
 \subsection{Getting Into And Out Of Armor}
 The time required to don armor depends on its type; see \trefnp{Donning Armor}. Donning armor of any kind takes both hands.
@@ -405,52 +405,49 @@ The time required to don armor depends on its type; see \trefnp{Donning Armor}. 
 \parhead{Remove} This column tells how long it takes to get the armor off. Loosing a shield (removing it from the arm and dropping it) is only a move action.
 
 \begin{dtable}
-\lcaption{Donning Armor}
-\begin{dtabularx}{\columnwidth}{>{\lcol}X c c c}
-\tb{Armor Type} & \tb{Don} & \tb{Don Hastily} & \tb{Remove} \\
-\hline
-Shield (any) & 1 move action & n/a & 1 move action \\
-Light body armor & 1 minute & 5 rounds & 1 minute\fn{1} \\
-Medium body armor & 4 minutes\fn{1} & 1 minute & 1 minute\fn{1} \\
-Heavy body armmor & 4 minutes\fn{2} & 4 minutes\fn{1} & 1d4\plus1 minutes\fn{1} \\
-\end{dtabularx}
-1 If the character has some help, cut this time in half. A single character doing nothing else can help one or two adjacent characters. Two characters can't help each other don armor at the same time. \\
-2 The wearer must have help to don this armor. Without help, it can be donned only hastily.
+    \lcaption{Donning Armor}
+    \begin{dtabularx}{\columnwidth}{>{\lcol}X c c c}
+        \tb{Armor Type} & \tb{Don} & \tb{Don Hastily} & \tb{Remove} \\
+        \hline
+        Shield (any)      & 1 move action   & n/a             & 1 move action           \\
+        Light body armor  & 1 minute        & 5 rounds        & 1 minute\fn{1}          \\
+        Medium body armor & 4 minutes\fn{1} & 1 minute        & 1 minute\fn{1}          \\
+        Heavy body armmor & 4 minutes\fn{2} & 4 minutes\fn{1} & 1d4\plus1 minutes\fn{1} \\
+    \end{dtabularx}
+    1 If the character has some help, cut this time in half. A single character doing nothing else can help one or two adjacent characters. Two characters can't help each other don armor at the same time. \\
+    2 The wearer must have help to don this armor. Without help, it can be donned only hastily.
 \end{dtable}
 
 \begin{dtable!*}
-\lcaption{Armor and Shields}
-\begin{dtabularx}{\textwidth}{>{\lcol}X >{\ccol}p{6em} >{\ccol}p{5em} >{\ccol}p{6em} >{\ccol}p{7em} c c c c}
-  &  &  &  &  &  \multicolumn{2}{c}{\x\x Speed \x\x} & & \\
-\hline
-\tb{Armor} & \tb{Armor/Shield Bonus} & \tb{Dex Modifier} & \tb{Encumbrance Penalty} & \tb{Arcane Spell Failure Chance} & \tb{(30 ft.)} & \tb{(20 ft.)} & \tb{Cost} & \tb{Weight\fn{1}} \\
-Light armor &  &  &  &  &  &  &  &  \\
-\tind Leather 				& \plus1 		& 1\mtimes 	& \minus1 & 10\% & 30 ft. & 20 ft. & 10 gp        & 15 lb.\\
-\tind Studded leather 		& \plus2 		& 1\mtimes 	& \minus2 & 15\% & 30 ft. & 20 ft. & 25 gp & 20 lb.\\
-\tind Chain shirt 			& \plus2 		& 1\mtimes 	& \minus2 & 20\% & 30 ft. & 20 ft. & 40 gp   & 25 lb.\\
-Medium armor 				&  &  &  &  &  &  &  & \\
-\tind Hide 					& \plus3 		& 1\mtimes 	& \minus4 & 20\% & 20 ft. & 15 ft. & 15 gp           & 25 lb.\\
-\tind Scale mail 			& \plus3 		& 1\mtimes 	& \minus4 & 25\% & 20 ft. & 15 ft. & 50 gp     & 30 lb.\\
-\tind Breastplate 			& \plus4 		& 1\mtimes 	& \minus3 & 25\% & 20 ft. & 15 ft. & 150 gp    & 30 lb.\\
-Heavy armor 				&  &  &  &  &  &  &  & \\
-\tind Half-plate 			& \plus5 		& 1/2\mtimes 	& \minus6 & 40\% & 20 ft. & 15 ft. & 250 gp  & 50 lb.\\
-\tind Full plate 			& \plus6 		& 1/2\mtimes 	& \minus6 & 35\% & 20 ft. & 15 ft. & 500 gp  & 50 lb.\\
-Shields 					&  &  &  &  &  &  &  & \\
-\tind Buckler 				& \plus1 		& \x 		& \minus1 & 5\% & \x & \x & 15 gp             & 5 lb.\\
-\tind Shield, light wooden 	& \plus2 		& \x 		& \minus2 & 5\%\fn{2} & \x & \x & 3 gp & 5 lb.\\
-\tind Shield, light steel 	& \plus2 		& \x 		& \minus2 & 5\%\fn{2} & \x & \x & 9 gp  & 6 lb.\\
-\tind Shield, heavy wooden 	& \plus3 		& \x 		& \minus3 & 15\%\fn{2} & \x & \x & 7 gp & 10 lb.\\
-\tind Shield, heavy steel 	& \plus4 		& \x 		& \minus3 & 15\%\fn{2} & \x & \x & 20 gp & 15 lb.\\
-\tind Shield, tower 		& \plus4\fn{3} 	& 1/2\mtimes 	& \minus10 & 50\%\fn{2} & \x & \x & 30 gp       & 45 lb.\\
-Extras 						&  &  &  &  &  &  &  & \\
-\tind Armor spikes 			& \minus1\fn{4} & \x 		& \minus2 & \x & \x & \x & \plus50 gp & \plus10 lb.\\
-\tind Gauntlet, locked 		& \x 			& \x 		& Special & \x\fn{2} & \x & \x & 8 gp & \plus5 lb.\\
-\tind Shield spikes 		& \x 			& \x 		& \minus1 & \x & \x & \x & \plus10 gp & \plus5 lb.\\
-\end{dtabularx}
-1 Weight figures are for armor sized to fit Medium characters. Armor fitted for Small characters weighs half as much, and armor fitted for Large characters weighs twice as much. \\
-2 Hand not free to cast spells. \\
-3 Tower shields can grant you cover. See the description. \\
-4 Armor spikes reduce the defense bonus granted by the armor they are put on by 1. \\
+    \lcaption{Armor and Shields}
+    \begin{dtabularx}{\textwidth}{>{\lcol}X >{\ccol}p{6em} >{\ccol}p{5em} >{\ccol}p{6em} >{\ccol}p{7em} c c c}
+        \hline
+        \tb{Armor} & \tb{Armor/Shield Bonus} & \tb{Dex Modifier} & \tb{Encumbrance Penalty} & \tb{Arcane Spell Failure Chance} & \tb{Material} & \tb{Cost} & \tb{Weight\fn{1}} \\
+        Light armor &  &  &  &  &  &  &  \\
+        \tind Leather          & \plus1        & 1\mtimes   & \minus1  & 10\%       & Leather       & 10 gp        & 15 lb. \\
+        \tind Studded leather  & \plus2        & 1\mtimes   & \minus2  & 15\%       & Leather       & 25 gp        & 20 lb. \\
+        \tind Chain shirt      & \plus2        & 1\mtimes   & \minus2  & 20\%       & Metal         & 40 gp        & 25 lb. \\
+        Medium armor           &               &            &          &            &               &              &        \\
+        \tind Hide             & \plus3        & 1\mtimes   & \minus4  & 20\%       & Leather       & 15 gp        & 25 lb. \\
+        \tind Scale mail       & \plus3        & 1\mtimes   & \minus4  & 25\%       & Metal         & 50 gp        & 30 lb. \\
+        \tind Breastplate      & \plus4        & 1\mtimes   & \minus3  & 25\%       & Metal         & 150 gp       & 30 lb. \\
+        Heavy armor            &               &            &          &            &               &              &        \\
+        \tind Half-plate       & \plus5        & 1/2\mtimes & \minus6  & 40\%       & Metal         & 250 gp       & 50 lb. \\
+        \tind Full plate       & \plus6        & 1/2\mtimes & \minus6  & 35\%       & Metal         & 500 gp       & 50 lb. \\
+        Shields                &               &            &          &            &               &              &        \\
+        \tind Buckler          & \plus1        & \x         & \minus1  & 5\%        & Metal         & 15 gp        & 5 lb.  \\
+        \tind Shield, light    & \plus2        & \x         & \minus2  & 5\%\fn{2}  & Metal or wood & 5 gp         & 5 lb.  \\
+        \tind Shield, heavy    & \plus3        & \x         & \minus3  & 15\%\fn{2} & Metal or wood & 15 gp        & 10 lb. \\
+        \tind Shield, tower    & \plus4\fn{3}  & 1/2\mtimes & \minus10 & 50\%\fn{2} & Metal & 30 gp         & 45 lb.      \\
+        Extras                 &               &            &          &            &               &              &        \\
+        \tind Armor spikes     & \minus1\fn{4} & \x         & \minus2  & \x         & Metal & \plus50 gp    & \plus10 lb. \\
+        \tind Gauntlet, locked & \x            & \x         & Special  & \x\fn{2}   & Metal & 8 gp          & \plus5 lb.  \\
+        \tind Shield spikes    & \x            & \x         & \minus1  & \x         & Metal & \plus10 gp    & \plus5 lb.  \\
+    \end{dtabularx}
+    1 Weight figures are for armor sized to fit Medium characters. Armor fitted for Small characters weighs half as much, and armor fitted for Large characters weighs twice as much. \\
+    2 Hand not free to cast spells. \\
+    3 Tower shields can grant you cover. See the description. \\
+    4 Armor spikes reduce the defense bonus granted by the armor they are put on by 1. \\
 \end{dtable!*}
 
 \subsection{Armor Descriptions}
