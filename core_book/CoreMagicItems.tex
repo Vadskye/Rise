@@ -61,13 +61,16 @@ Magic items are objects that have been imbued with magical energy. They can take
         If the item is not being used or worn by a creature, its item power is equal to its base power.
         If it is being used or worn by a creature, its item power is equal its base power or the level of the creature \add the maximum number of general legend points it has, whichever is higher.
 
+        In addition to modifying an item's special effects, item power also affects an item's defenses.
+        An item's Fortitude and Mental defenses are equal to 10 \add its item power.
+        Its Armor defense, Maneuver defense, and Reflex defense are not affected by item power, and are solely determined by the item's size and shape.
+
     \subsection{Removing Magic Items}
         Unless otherwise noted, magic items that have effects on the creature using the item must continue to be worn or held as long as the effect lasts.
         If a magic item is removed before its effect's duration is up, the effect ends.
         Items which are consumed when used or which do not affect their user are unaffected by this rule.
 
     \subsection{Special Attacks}
-
         If a magic item requires a successful special attack to have its full effect, the accuracy is listed in the item's description.
         Typically, the accuracy is equal to the item's power.
 
@@ -87,8 +90,7 @@ Magic items are objects that have been imbued with magical energy. They can take
     Items with full descriptions have their abilities detailed, and each of the following topics is covered in notational form at the end of the description.
 
     \parhead{Base Power} The next item in a notational entry gives the base power of the item.
-    An item's power can affect how strong its abilities are, as well as its special defenses when unattended and its effective spellpower for the purpose of effects like \spell{dispel magic}.
-    An item's power is equal to its base power or the level of the creature using it \add the number of legend points that creature has, whichever is higher.
+    An item's base power can affect its item power (see \pcref{Item Power}).
 
     For potions and scrolls, the item's base power must be at least twice the level of the spell contained.
     Generally, an item's base power is the same as the minimum spellpower required to create the item.
@@ -779,6 +781,7 @@ Magic items are objects that have been imbued with magical energy. They can take
         \begin{longtabuwrapper}
             \begin{longtabu}{l X l l l l}
                 \tb{Weapons} & \tb{Description} & \tb{Cost} & \tb{Item Level} & \tb{Page} \\
+                \mitemref{Bane} & Special ability only works against some creatures & Varies & Varies & \mitempref{Bane} \\
                 \mitemref{Sweeping} & Can make extra attack against another foe & \mitempricetable{Active}{0} & \mitempref{Sweeping} \\
                 \mitemref{Rebounding} & Returns to you slowly when thrown & \mitempricetable{Passive}{0} & \mitempref{Rebounding} \\
                 \mitemref{Forceful} & Can knock struck creature flying & \mitempricetable{Active}{1} & \mitempref{Forceful} \\
