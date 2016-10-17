@@ -441,7 +441,7 @@ A character's skills describe the myriad of talents that people have.
             \begin{dtabularx}{\textwidth}{l X l}
                 \tb{Climb DR} & \tb{Surface or Activity} & \tb{Example} \\
                 \hline
-                10 & Surface with large hand and holds to stand on & Very rough rocks, ship's rigging \\
+                10 & Surface with large hand and holds to stand on & Very rough rocks, ship's rigging, cliff edge \\
                 15 & Surface with some hand and foot holds & Knotted rope, surface with pitons or carved holes, rough wall \\
                 15 & Surface with only large hand holds & Pulling yourself up by your hands while dangling \\
                 20 & Uneven surface with narrow hand and foot holds & Unknotted rope, unweathered natural rock, typical ruin wall, brick wall \\
@@ -474,6 +474,32 @@ A character's skills describe the myriad of talents that people have.
             A creature with a climb speed can move a distance equal to its climb speed with a successful Climb check.
             However, it does not move double its speed if it gets a critical success on a Climb check.
             In addition, it gains a \plus10 bonus to all Climb checks.
+
+    \subsubsection{Grab Edge}\label{Grab Edge}
+        If you are next to the edge of a wall or cliff, you can grab it.
+        Grabbing an edge is done as part of other movement, and does not take an action in itself.
+        The DR of the check depends on the nature of the edge, but a typical stone or similarly solid edge has a DR of 10.
+        You can pull yourself up from a grabbed edge as a move action that requires a Climb check against the edge's DR\@.
+
+        Your ability to grab an edge depends on your reach. The maximum vertical reach (height the creature can reach without jumping) for an average creature of a given size is shown on the table below. (As a Medium creature, a typical human can reach 8 feet without jumping.) The maximum vertical reach for an individual creature is usually given by the 1 and 1/2 times the creature's height. Quadrupedal creatures don't have the same vertical reach as a bipedal creature; treat them as being one size category smaller.
+
+        \begin{dtable}
+            \begin{dtabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
+                \tb{Creature Size}  & \tb{Vertical Reach} \\
+                \hline
+                Colossal  & 128 ft. \\
+                Gargantuan  & 64 ft. \\
+                Huge  & 32 ft. \\
+                Large  & 16 ft. \\
+                Medium  & 8 ft. \\
+                Small  & 4 ft. \\
+                Tiny  & 2 ft. \\
+                Diminutive  & 1 ft. \\
+                Fine  & 1/2 ft.
+            \end{dtabularx}
+        \end{dtable}
+
+        If you can't reach an edge, you can jump to grab it (see \pcref{High Jump}).
 
     \subsection{Stop Fall}\label{Stop Fall}
         It is possible, but difficult, to make a Climb check to stop yourself from falling when near a wall. To catch yourself while falling, make a Climb check against a DR equal to the wall's DR \add 10.
@@ -773,29 +799,9 @@ A character's skills describe the myriad of talents that people have.
         If your movement is not stopped by hitting the ground after travelling the normal distance, such as if you jump off a ledge, you move one quarter of your jump distance farther forward as you fall before your fall becomes entirely downward. If an insufficiently long jump would cause you to fall into a gap, you can attempt to stop your fall (see \pcref{Stop Fall}) if you can reach the wall.
 
     \subsection{High Jump}
-        As part of movement, you can make an Jump check to jump up. You achieve a height equal to one quarter of your Jump check result in feet. If you do not have a running start, making a high jump is more difficult (see \pcref{Running Start}).
+        As part of movement, you can make an Jump check to jump up. You can jump up any number of feet, up to a maximum equal to one quarter of your check result in feet. If you do not have a running start, making a high jump is more difficult (see \pcref{Running Start}).
 
-        If you jumped up to grab something, success means you reached the desired height. If you wish to pull yourself up, you can do so with a move action and a DR 15 Climb check. If you fail the Jump check, you do not reach the height, and you land on your feet in the same spot from which you jumped. As with a long jump, the DR is doubled if you do not get a running start of at least 20 feet.
-
-        Obviously, the difficulty of reaching a given height varies according to the size of the character or creature. The maximum vertical reach (height the creature can reach without jumping) for an average creature of a given size is shown on the table below. (As a Medium creature, a typical human can reach 8 feet without jumping.) The maximum vertical reach for an individual creature is usually given by the 1 and 1/2 times the creature's height.
-
-        Quadrupedal creatures don't have the same vertical reach as a bipedal creature; treat them as being one size category smaller.
-
-        \begin{dtable}
-            \begin{dtabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
-                \tb{Creature Size}  & \tb{Vertical Reach} \\
-                \hline
-                Colossal  & 128 ft. \\
-                Gargantuan  & 64 ft. \\
-                Huge  & 32 ft. \\
-                Large  & 16 ft. \\
-                Medium  & 8 ft. \\
-                Small  & 4 ft. \\
-                Tiny  & 2 ft. \\
-                Diminutive  & 1 ft. \\
-                Fine  & 1/2 ft.
-            \end{dtabularx}
-        \end{dtable}
+        If you jumped up to grab something, you can grab it and pull yourself up with a Climb check (see \pcref{Grab Edge}).
 
     \subsection{Rebounding Jump}\label{Rebounding Jump}
         While in midair, if you make contact with a solid object that can support your weight, you can jump off of that object. You are not considered to have a running start. In addition, you take a \minus10 penalty to the check (after the halving), because rebounding off of an object in midair is difficult. You must travel at least 10 feet between each rebounding jump.
