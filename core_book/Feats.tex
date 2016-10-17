@@ -24,6 +24,8 @@ The categories are given below:
     \item Magic feats affect the way a character casts spells or uses magic.
     \item Metamagic feats let spellcasters cast spells with greater effect, albeit as if the spells were a higher level than they actually are.
     \item Performance feats allow a character to create magical effects through skilled performances.
+    \item Rage feats improve a character's ability to enter an angry rage in combat.
+        A character can only use one rage feat at a time.
     \item Skill feats affect a character's mastery of his or her skills.
     \item Spellgift feats grant a non-spellcasting character a limited ability to use spells.
     %\item Surge feats allow a character to temporarily gain supernatural abilities.
@@ -128,6 +130,7 @@ Some strike feats instead require a specific action to use.
         \tb{General Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
         \featref{Attribute Training} & \x & Gain \plus1 to an attribute           & \x & \featpref{Attribute Training} \\
         \featref{Arcane Spellgift} & 2nd level, Wil 1 & Gain arcane spell as spell-like ability & Spellgift & \featpref{Arcane Spellgift} \\
+        \featref{Battlerage} & Combat prowess 4 & Gain ability to rage & \x & \featref{Battlerage} \\
         %\featref{Destructive} & Str 3 & Gain \plus5 to breaking things            & \x & \featpref{Destructive} \\
         \featref{Diehard} & Con 5 & Halve penalties from critical damage         & \x & \featpref{Diehard} \\
         \featref{Divine Spellgift} & 2nd level, Wil 1 & Gain divine spell as spell-like ability & Spellgift & \featpref{Divine Spellgift} \\
@@ -584,7 +587,33 @@ After using this ability, you cannot use it again for 5 minutes.
 \featpres Intelligence 10, fighter level 16.
 \featben When using your battlemaster ability, you can grant two feats instead of one.
 
-\feat{Battletrance}{Class}
+\feat{Battlerage}{General}
+\featpres Willpower 10.
+\featben You gain the rage ability, allowing you to fly into a rage as a free action.
+While raging, you have the following benefits and drawbacks:
+\begin{itemize}
+    \item \plus2 bonus to damage with physical attacks.
+    \item \plus2 bonus to Fortitude and Mental defense.
+    \item 2 temporary hit points per Willpower.
+        These extra hit points gained from raging are lost before any other hit points (see \pcref{Temporary Hit Points}).
+    \item \minus2 to physical defenses (Armor, Maneuver, Reflex).
+    \item Unable to take any action that requires patience or concentration, such as casting spells.
+    \item If you does not spend a swift round to sustain the rage, it ends at the end of the round.
+    \item At the end of each round, if you did not attack a creature or object, you take nonlethal damage equal to your level.
+\end{itemize}
+
+A rage lasts for up to 5 rounds.
+At the end of the rage, you take nonlethal damage equal to his level.
+If you have any temporary hit points remaining at the end of your rage, the nonlethal damage is dealt to those hit points before they go away.
+In addition, you become \fatigued and unable to rage until you rest for 5 minutes.
+
+The bonuses granted by a rage increase with level.
+This is called your rage bonus.
+At 5th level, and every 5 levels thereafter, the bonus to physical damage and the bonus to Fortitude and Mental defenses increases by \plus1.
+In addition, the number of hit points gained per Willpower increases by 1.
+The penalty to physical defenses while raging remains the same.
+
+\feat{Battletrance}{Rage}
 \featpres Rage ability, combat prowess 4.
 \featben When you use your rage ability, you can use this feat. If you do, in place of the normal benefits and drawbacks from raging, you can use your Perception to determine your damage with light weapons.
 In addition, you add your rage bonus to your Fortitude and Mental defenses.
