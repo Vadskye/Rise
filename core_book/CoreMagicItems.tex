@@ -1480,30 +1480,31 @@ Magic items are objects that have been imbued with magical energy. They can take
 
     \subsection{Special Material Descriptions}
 
-        \begin{dtable}
+        \begin{dtable*}
             \lcaption{Special Materials}
-            \begin{dtabularx}{\columnwidth}{l l X l}
+            \begin{dtabularx}{\columnwidth}{l l X l l}
                 \tb{Material Name} & \tb{Material Type} & \tb{Effect} & \tb{Weapon Price (Level)} & \tb{Armor Price (Level)} \\
                 \hline
                 Adamantine  & Metal   & Grant or overcome physical damage reduction & 12,000 gp (12th) & 30,000 gp (14th) \\
-                Cold Iron   & Metal   & Effective against supernatural creatures    &  \\
-                Darkwood    & Wood    & Extraordinarily light                       &  \\
-                Dragonbone  & Metal   & Inherently magical                          &  \\
-                Dragonhide  & Leather & Resist energy                               &  \\
-                Dragonscale & Metal   & Resist energy                               &  \\
-                Ironwood    & Metal   & Metallic wood                               &  \\
-                Mithral     & Metal   & Extraordinarily light                       &  \\
-                Silvered    & Metal   & Effective against supernatural creatures    &  \\
+                Cold Iron   & Metal   & Bonuses against enchantments and mages      & 2,000 gp (8th) & 5,000 gp (10th) \\
+                Darkwood    & Wood    & Extraordinarily light                       & 2,000 gp (8th) & 5,000 gp (10th) \\
+                Dragonbone  & Metal   & Inherently magical                          & 30,000 gp (14th) & 60,000 gp (16th) \\
+                Dragonhide  & Leather & Resist energy                               & \tdash & 2,000 gp (8th) \\
+                Dragonscale & Metal   & Resist energy                               & \tdash & 2,000 gp (8th) \\
+                Ironwood    & Metal   & Metallic wood                               & \tdash & 100 gp (5th) \\
+                Mithral     & Metal   & Extraordinarily light                       & 2,000 gp (8th) & 5,000 gp (10th) \\
+                Silvered    & Metal   & Effective against supernatural creatures    & 100 gp (3rd) & 200 gp (3rd) \\
             \end{dtabularx}
-        \end{dtable}
+        \end{dtable*}
 
         \parhead{Adamantine}
         Adamantine is a rare metal that is among the hardest substances known.
 
         Adamantine weapons ignore the \glossterm{hardness} of creatures and objects.
 
-        Adamantine armor grants its wearer damage reduction against physical damage equal to your item power.
+        Adamantine body armor grants its wearer damage reduction against physical damage equal to your item power.
         This damage reduction is overcome by adamantine weapons.
+        Adamantine shields have no special effects.
 
         Adamantine items of any kind have double the hit points and hardness of an equivalent item of the same type.
 
@@ -1512,17 +1513,21 @@ Magic items are objects that have been imbued with magical energy. They can take
         Cold iron is iron that has been magically smelted without the use of heat.
 
         Cold iron items are especially effective against some supernatural creatures, as indicated in the creature descriptions.
+        In addition, cold iron items have inherent spell resistance equal to 10 \add the item's power.
+        This spell resistance is unique to the item, and is not granted to its user.
+        However, the maximum number and price of special abilities that can be imbued into the armor is halved.
 
-        When you damage a creature with a cold iron weapon, they are \impaired with casting arcane spells for 2 rounds.
+        When you damage a creature with a cold iron weapon, it is \impaired with casting arcane spells for 2 rounds.
 
-        Cold iron armor does something useful.
+        Cold iron body armor grants its wearer immunity to \glossterm{Compulsion} and \glossterm{Delusion} effects.
+        Cold iron shields have no special effects.
 
         \parhead{Darkwood}
         Darkwood is a rare magic wood that is very light.
 
-        Darkwood weapons have the Finesse weapon property, allowing you to use Dexterity to attack with them instead of Strength.
+        Darkwood weapons have the Finesse weapon property, allowing you to apply your Dexterity instead of your Strength when determining your accuracy with physical attacks using the weapon, even if it isn't a light weapon for you.
 
-        Darkwood shields have their \glossterm{encumbrance penalty} reduced by 2.
+        Darkwood shields have their \glossterm{encumbrance penalty} reduced by 2, and their arcane spell failure reduced by 10\%.
 
         Darkwood items of any kind weigh half as much as an equivalent item of the same type.
 
@@ -1530,8 +1535,8 @@ Magic items are objects that have been imbued with magical energy. They can take
 
         Dragon bones can be used in place of metal when creating weapons and armor.
 
-        Dragonbone weapons gain an effective enhancement bonus equal to a third of your level (to a maximum of \plus5 at 15th level).
-        This bonus does not contribute to the number or value of the special abilities a dragonbone weapon can have.
+        Dragonbone weapons grant twice the normal number of offensive legend points from their enhancement bonus.
+        This does not affect the damage dealt by the weapon.
 
         Dragonbone armor grants its wearer spell resistance.
         To affect a creature with spell resistance using a spell, a caster must make an attack with an accuracy equal to its spellpower.
@@ -1540,9 +1545,9 @@ Magic items are objects that have been imbued with magical energy. They can take
 
         \parhead{Dragonhide}
 
-        Dragon hide can be used as leather when creating weapons and armor.
+        Dragon hide can be used as leather when creating armor.
 
-        Dragonhide armor grants damage reduction equal to your level against the energy type used by the dragon the hide is taken from.
+        Dragonhide body armor grants damage reduction equal to your level against the energy type used by the dragon the hide is taken from.
 
         \parhead{Dragonscale}
 
@@ -1560,7 +1565,7 @@ Magic items are objects that have been imbued with magical energy. They can take
         \parhead{Mithral}
         Mithral is a rare metal that is very light, but has the strength of iron.
 
-        Mithral weapons have the Finesse weapon property, allowing you to use Dexterity to attack with them instead of Strength.
+        Mithral weapons have the Finesse weapon property, allowing you to apply your Dexterity instead of your Strength when determining your accuracy with physical attacks using the weapon, even if it isn't a light weapon for you.
 
         Mithral armor has its \glossterm{encumbrance penalty} reduced by 2, and its arcane spell failure reduced by 10.
 
@@ -1569,9 +1574,10 @@ Magic items are objects that have been imbued with magical energy. They can take
         \parhead{Silvered}
 
         Silvered items have silver infused into them in the process of their creation.
-        Only metal items can be silvered.
+        Only metal items made of iron or steel can be silvered.
 
         Silvered items are especially effective against some supernatural creatures, as indicated in the creature descriptions.
+        However, silvered weapons deal damage as if they were one size category smaller, and mithral armor has its defense bonus reduced by 1.
 
 \section{Magic Item Rules}
 
