@@ -50,9 +50,6 @@ Some bloodline feats have stronger effects if you have more feats from that heri
 \subsection{Class Feats}
 Class feats improve a character's class abilities, or grant new special abilities related to a class.
 
-\subsection{Item Creation Feats}
-An item creation feats let a spellcaster create magic items.
-
 \subsection{Metamagic Feats}
 Metamagic feats change properties of spells you cast.
 Spells modified by a metamagic feat are treated as being higher level than normal.
@@ -66,7 +63,7 @@ Changes to the spell's level are cumulative.
 You can't apply the same metamagic feat more than once to a single spell.
 
 \parhead{Magic Items and Metamagic Spells}
-With the right item creation feat, you can store a metamagic version of a spell in a scroll, potion, or wand.
+With the right feats, you can store a metamagic version of a spell in a scroll, potion, or wand.
 Level limits for potions and wands apply to the spell's higher spell level (after the application of the metamagic feat).
 A character doesn't need the metamagic feat to activate an item storing a metamagic version of a spell.
 
@@ -201,11 +198,6 @@ Some strike feats instead require a specific action to use.
         \featref{Versatility}           & Levels in two different classes   & Increase effective class level with abilities & \tdash & \featpref{Versatility} \\
 
         \midrule
-        \tb{Item Creation Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
-        \featref{Imbuement Admixture} & 2nd level spells, 6th & Combine multiple spells to create items & Item Creation & \featpref{Imbuement Admixture} \\
-        \featref{Versatile Crafter} & Craft (any) 10 ranks & Craft items from many Craft skills & Item Creation & \featpref{Versatile Crafter} \\
-
-        \midrule
         \tb{Magic Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
         \featref{Abjurant Shield} & 2nd level Shielding spell & \plus1 to physical defenses & \tdash & \featpref{Abjurant Shield} \\
         \featref{Augment Summoning} & Summoning spell, 2nd level spells & \plus2 to spellpower with Summoning spells & \tdash & \featpref{Augment Summoning} \\
@@ -220,6 +212,7 @@ Some strike feats instead require a specific action to use.
         \featref{Delusive Guise} & 1st level Delusion spell & \plus2 to Bluff and Disguise, later \plus4 & \tdash & \featpref{Delusive Guise} \\
         \featref{Dispel Mastery} & 3rd level Antimagic spell & Dispel more effectively & \tdash & \featpref{Dispel Mastery} \\
         \featref{Enchant Item} & 1st level spells & Create magic items & \tdash & \featpref{Enchant Item} \\
+        \item \featref{Enchantment Admixture} & Enchant Item, 3rd level spells & Combine multiple spells to create items & \tdash & \featpref{Enchantment Admixture} \\
         \featref{Enhanced Senses} & 1st level Awareness spell & \plus2 to Awareness and Sense Motive, later \plus4 & \tdash & \featpref{Enhanced Senses} \\
         \featref{Explosive Miscast} & 4th level spells & Miscast explosions are larger, target foes & \tdash & \featpref{Explosive Miscast} \\
         \featref{Fire Mastery} & 3rd level Fire spell & Fire spells can ignite foes & \tdash & \featpref{Fire Mastery} \\
@@ -350,6 +343,7 @@ Some strike feats instead require a specific action to use.
         \featref{Trap Sense} & Awareness 10 ranks & Automatically detect traps & \tdash & \featpref{Trap Sense} \\
         \featref{Track} & Survival 5 ranks &  Use Survival skill to track & \tdash & \featpref{Track} \\
         \featref{Untrackable} & Survival 15 ranks & Become impossible to track & \tdash & \featpref{Untrackable} \\
+        \featref{Versatile Crafter} & Craft (any) 10 ranks & Craft items from many Craft skills & \tdash & \featpref{Versatile Crafter} \\
         \featref{Veteran's Experience} & Combat prowess 8 & Identify monsters without Knowledge & \tdash & \featpref{Veteran's Experience} \\
         \featref{Wallpuncher} & Strength 5, Climb 10 & Punch walls to create handholds & \tdash & \featpref{Wallpuncher} \\
     \end{longtabu}
@@ -1031,9 +1025,25 @@ You can also mend a broken magic item if it is one that you could make.
 Doing so costs a tenth of the raw materials and a quarter of the time it would take to craft that item in the first place.
 You cannot mend a destroyed magic item.
 
+\feat{Enchantment Admixture}{Magic}
+\featpres Enchant Item, 3rd level spells.
+\featben You can blend two spells together to create magic items.
+This allows you to meet item crafting prerequisites that you could not meet with a single spell.
+
+
 \feat{Executioner}{Combat, Reaction}
 \featpres Four strikes, any three Reaction feats.
 \featben At the end of every round, you can make a free melee \glossterm{strike} against all creatures you threaten that have no hit points remaining.
+
+\feat{Disguise Auras}{Skill}
+\featpre Disguise 10 ranks.
+\featben Your disguises can change how divination spells perceive a creature.
+When you make a Disguise check, you can decide how that creature and any items on the creature appear when examined by divination spells.
+For example, you could cause all of its equipment to appear nonmagical, or you could cause it to have a strong aura of good when examined with \spell{detect good}.
+You cannot create an aura of overwhelming strength with this skill.
+
+Anyone using divination magic on the creature must make a spellpower check with a DR equal to your Disguise check result in order to perceive the truth.
+Regardless of the result of the check, the caster is not aware that the check was made.
 
 \feat{Distant Spell}{Metamagic}
 \featpre 2nd level spell known.
@@ -1247,11 +1257,6 @@ The imbuement fades away without effect at the end of the next round if you have
 Only spells which affect a single target and have a casting time no shorter than 1 standard action can be channeled in this way.
 An imbued spellstrike uses up a spell slot one level higher than the spell's actual level.
 
-\feat{Imbuement Admixture}{Magic}
-\featpre 3rd level spells.
-\featben You can blend two spells together to create magic items.
-This allows you to meet item crafting prerequisites that you could not meet with a single spell.
-
 \feat{Immobilizing Strike}{Combat, Strike}
 \featpre Four strikes.
 \featben In place of four strikes, you can make a single melee attack.
@@ -1453,7 +1458,11 @@ You cannot disable spell effects on creatures.
 
 \feat{Legendary Disguise}{Skill}
 \featpre Disguise 15 ranks.
-\featben Your disguises can change how divination spells perceive a creature.
+\featben You can disguise yourself in seemingly impossible ways.
+You can disguise yourself as larger or smaller size categories.
+The DR of the Disguise check increases by 20 per size category different from your own.
+This does not actually change the space you occupy, your \glossterm{reach}, or the size of space you can squeeze through, but creatures fooled by the disguise may treat you as if your space and reach were appropriate to your disguised size.
+
 When you make a Disguise check, if the result is 30 or higher, you can decide how that creature and any items on the creature appear when examined by divination spells.
 For example, you could cause all of its equipment to appear nonmagical, or you could cause it to have a strong aura of good when examined with \spell{detect good}.
 You cannot create an aura of overwhelming strength with this skill.
@@ -2390,11 +2399,12 @@ This does not prevent effects that reveal your current location, such as the \sp
 \featben For the purpose of abilities based on your class level, you treat your class level as being equal to your total level.
 This can increase the power of abilities you already have, but it does not affect the rate at which you gain new abilities.
 
-\feat{Versatile Crafter}{Item Creation}
+\feat{Versatile Crafter}{Skill}
 \featpre Craft (any) 10 ranks.
-\featben You can craft items that require any Craft skill.
-Your effective Craft ranks are equal to half your Craft ranks with your highest Craft skill.
-See the Craft skill, \pref{Craft}, for details.
+\featben You can craft items from many different materials with equal talent.
+Choose any three Craft skills.
+If you have trained or mastered any Craft skill, you are equivalently trained or mastered in those three Craft skills.
+This functions just like training or mastery acquired by spending skill points.
 
 \feat{Veteran's Experience}{Skill}
 \featpre Combat prowess 8.
