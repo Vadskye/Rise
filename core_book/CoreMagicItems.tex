@@ -1308,49 +1308,46 @@ Magic items are objects that have been imbued with magical energy. They can take
 
     \subsection{Potions and Oils}
 
-        A potion is a magic liquid that produces its effect when imbibed.
-        Magic oils are similar to potions, except that oils are applied externally rather than imbibed.
-        A potion or oil can be used only once.
-        It can duplicate the effect of a spell that has a casting time of a standard action or less.
+        Potions and oils are magical liquids that can be activated to produce spell effects when drunk or used to coat a surface.
+        Potions have their effects when drunk, and always target the creature drinking the potion.
+        Oils have their effects when applied externally, and always target the creature or object the oil is applied to.
+        Once activated, the magic in a potion or oil is expended and useless.
 
-        Potions are like spells cast upon the imbiber.
-        The character taking the potion doesn't get to make any decisions about the effect -- the caster who brewed the potion has already done so.
-        The drinker of a potion is both the effective target and the effective caster of the effect.
+        Both potions and oils can only mimic the effects of spells with a casting time of a standard action or less.
+        Potions can contain the effects of spells with a single target, or which affect the caster.
+        Oils can only contain the effects of spells with a single target.
 
-        The person applying an oil is the effective caster, but the object is the target.
+        Once activated, the effects of a potion or oil function as if the target had cast the spell on itself.
+        Neither the character activating the effect nor the target of the effect can make any decisions about the spell's effects, including concentrating on the effect.
+        All decisions must be made by the creator of the potion when it is made.
 
-        \parhead{Physical Description} A typical potion or oil consists of 1 ounce of liquid held in a ceramic or glass vial fitted with a tight stopper.
-        The stoppered container is usually no more than 1 inch wide and 2 inches high.
+        \parhead{Physical Description} A typical potion or oil consists of 3 ounces of liquid held in a ceramic or glass vial fitted with a tight stopper.
+        The stoppered container is usually no more than 2 inches wide and 4 inches high.
         The vial has AC 13, 1 hit point, hardness 1, and a break DR of 12.
-        Vials hold 1 ounce of liquid.
+        Vials hold 3 ounces of liquid.
 
-        \parhead{Identifying Potions} In addition to the standard methods of identification, PCs can sample from each container they find to attempt to determine the nature of the liquid inside.
-        An experienced character learns to identify potions by memory -- for example, the last time she tasted a liquid that reminded her of almonds, it turned out to be a potion of cure moderate wounds.
+        \parhead{Identifying Potions and Oils}
+        The magical aura on a potion or oil can be identified with a Spellcraft check (see \pcref{Spellcraft}), revealing the nature of the spell contained in the potion.
+        If you sample a taste from the potion as you use the Spellcraft skill, you gain a \plus5 bonus to the Spellcraft check.
+        You cannot accidentally activate the spell effect while sampling the potion, but you risk being poisoned or otherwise negatively effected if the potion is not as it seems.
+        The \spell{identify} ritual can also be used to identify potions.
 
-        \parhead{Activation} Drinking a potion or applying an oil requires no special skill.
-        The user merely removes the stopper and swallows the potion or smears on the oil.
-        The following rules govern potion and oil use.
+        Alternately, you can simply learn to identify potions by memory.
+        Potions with the same spell effect from the same source of magic (arcane, divine, or nature) almost always have a similar appearance and taste.
+        This can be dangerous if you encounter a liquid designed to look and taste like a potion it is not.
 
-        Drinking a potion or using an oil on an item of gear is a standard action.
-        The potion or oil takes effect immediately.
+        \parhead{Activation} As a standard action, you can drink a potion, apply an oil to a creature or object within your \glossterm{reach}, or feed a potion to another willing creature within your reach.
+        If you spend a magic item use, the spell contained takes effect at the same time that spells cast that round resolve.
+        If you drink multiple potions or apply multiple oils at the same time, you can still only activate one of them.
 
-        A creature must be able to swallow a potion or smear on an oil.
-        Because of this, incorporeal creatures cannot use potions or oils.
+        If you are physically unable to drink a potion or smear on oil, you cannot activate the item's effects.
+        You can attempt to apply an oil to an unwilling target.
+        To do so, you must make a touch attack against your target (see \pcref{Touch Attacks}).
 
-        Any corporeal creature can imbibe a potion.
-        The potion must be swallowed, or in some other way ingested.
-        Any corporeal creature can use an oil.
+        \parhead{Spellpower} The spellpower for a standard potion or oil is equal to twice the spell level of the spell in the potion.
 
-        A character can carefully administer a potion to an unconscious creature as a full-round action, trickling the liquid down the creature's throat.
-        Likewise, it takes a full-round action to apply an oil to an unconscious creature.
-        Exceptionally large objects or creatures require a greater time expenditure.
-
-        \parhead{Potion Descriptions} The spellpower for a standard potion is equal to twice the spell level of the spell in the potion.
-        Common potions refer to potions of spells on the unrestricted arcane, divine, and nature lists.
-        Any other spells, such as cleric domain spells and restricted arcane spells, are considered ``uncommon''.
-
-        \parhead{Potion Mishaps} Extraordinarily powerful potions can be dangerous to imbibe.
-        Whenever you use a potion, if the spellpower of the potion exceeds your level, roll 1d20 and subtract the difference between your level and the potion's spellpower.
+        \parhead{Mishaps} Extraordinarily powerful potions and oils can be dangerous to activate.
+        Whenever you activate a potion or oil, if the spellpower of the potion exceeds your level, roll 1d20 and subtract the difference between your level and the potion's spellpower.
         Compare the result to \trefnp{Potion Mishaps}.
 
         \begin{dtable}
@@ -1358,9 +1355,9 @@ Magic items are objects that have been imbued with magical energy. They can take
             \begin{dtabularx}{\columnwidth}{l X}
                 \tb{Mishap Result} & \tb{Mishap Effect}                                       \\
                 \hline
-                11\add            & No additional effects                                    \\
-                6--10              & User also takes damage equal to the potion's spellpower  \\
-                1--5               & As above, and the user is nauseated for 1 round          \\
+                11\add             & No additional effects                                    \\
+                6--10              & You also takes damage equal to the potion's spellpower   \\
+                1--5               & As above, and are \nauseated for 1 round                 \\
                 0 or below         & As above, and the potion does not have its normal effect \\
             \end{dtabularx}
         \end{dtable}
