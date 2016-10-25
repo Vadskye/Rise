@@ -21,71 +21,87 @@
 
     \subsection{Special Attacks}
 
-        \subsubsection{Feint}\label{Feint}
-            In place of a \glossterm{strike}, you can feint to leave your foe off-balance. You make an attack roll with a melee weapon as normal, except that you target your target's Reflex defense instead of its Armor defense. Success means you deal no damage, but you gain a \plus5 bonus to accuracy with melee attacks against the creature during the next round.
-
         \subsubsection{Touch Attacks}\label{Touch Attacks}
             In place of a \glossterm{strike}, you can try to just touch your opponent.
             Touch attacks target Reflex defense instead of Armor defense, but deal no damage.
 
     \subsection{Combat Maneuvers}\label{Combat Maneuvers}
-        A combat maneuver is an attempt to physically hinder your foe with your body, such as by shoving or tripping it. Unless otherwise noted, using a combat maneuver requires a free hand and replaces a \glossterm{strike} made during a standard attack. You make an attack roll against a creature within your reach, using your maneuver accuracy instead of your accuracy with your weapon. If your result equals or exceeds your foe's Maneuver defense, your attack hits, and your foe is affected by the maneuver.
+        A combat maneuver is an attempt to physically hinder your foe with your body, such as by shoving or tripping it.
+        Unless otherwise noted, combat maneuvers do not deal damage.
+        There are two kinds of combat maneuvers: heavy maneuvers and light maneuvers.
+
+        \parhead{Heavy Maneuvers} You can use a heavy maneuver as a standard action.
+        You cannot use Dexterity to determine your accuracy with a heavy maneuver, just like attacking with a heavy weapon.
+
+        \parhead{Light Maneuvers} You can use a light maneuver in place of a \glossterm{strike} as part of a \glossterm{standard attack}.
+        You can use either Strength or Dexterity to determine your accuracy with a light maneuver, just like attacking with a light weapon.
 
         \begin{dtable}
             \lcaption{Combat Maneuvers}
             \begin{dtabularx}{\columnwidth}{l l l X}
-                \tb{Maneuver}  & \tb{Action} & \tb{Attribute} & \tb{Brief Description} \\
+                \tb{Maneuver}  & \tb{Type} & \tb{Defense} & \tb{Brief Description} \\
                 \hline
-                Dirty Trick & Strike & Str or Dex & Impose penalty on a foe \\
-                Disarm      & Strike & Str or Dex & Force foe to drop item  \\
-                Grapple     & Standard & Str        & Wrestle with a foe      \\
-                Overrun     & Move   & Str        & Move through a foe      \\
-                Shove       & Strike & Str        & Move a foe              \\
-                Trip        & Strike & Str or Dex & Trip a foe              \\
+                Dirty Trick & Light & Any    & Impose penalty on a foe \\
+                Disarm      & Light & Reflex & Force foe to drop item  \\
+                Feint       & Light & Reflex & Leave foe vulnerable to attacks \\
+                Grapple     & Heavy & Special & Wrestle with a foe      \\
+                Shove       & Heavy & Fortitude        & Move a foe              \\
+                Trip        & Light & Reflex & Trip a foe              \\
             \end{dtabularx}
         \end{dtable}
 
-        \subsubsection{Maneuver Accuracy}
-            Your maneuver accuracy is equal to the following:
-
-            \begin{figure}[h]
-                \centering Combat prowess or attack attribute \add special size modifier \add other bonuses and penalties
-            \end{figure}
-
-            Your attack attribute depends on the maneuver you are using, as described in \pcref{Combat Maneuvers}. Your special size modifier is described in \tref{Size in Combat}.
-
         \subsubsection{Maneuver Descriptions}
 
-            \parhead{Dirty Trick}\label{Dirty Trick} You strike your foe in a sensitive spot, pull its pants down, or creatively use your environment to attack. Success means the creature is \impaired with relevant actions for 1 round. For every 5 points by which you succeed, the creature is impaired for an additional round. You can perform a dirty trick with a free hand, using either Strength or Dexterity.
+            \parhead{Dirty Trick}\label{Dirty Trick} You strike your foe in a sensitive spot, pull its pants down, or creatively use your environment to attack.
+            Depending on the nature of your dirty trick, you can target Fortitude, Reflex, or Mental defense.
+            You must use a free hand to perform a dirty trick.
+            Success means the target is \impaired with actions relevant to the nature of your trick for 2 rounds.
+            Critical success means the target is \severelyimpaired instead.
+            Dirty tricks are a light maneuver.
 
-            \parhead{Disarm}\label{Disarm} You can strike an item your foe is wearing or holding.
+            \parhead{Disarm}\label{Disarm} You can strike an item your foe is wearing or holding to knock it out of their hands or damage it.
+            You can perform a disarm with a free hand or any weapon.
+            You make a physical attack against the target's Reflex defense.
             Success means you hit the object, and can choose whether or not to deal damage to it.
-            In addition, if the object is not well secured and not held directly in the creature's hands, it falls to the ground in the foe's square.
-            Success by 10 or more causes any item to fall to the ground, even well secured items.
-            Failure means you miss the object.
+            In addition, if the creature is not holding the item in its hands, it falls to the ground in the foe's square.
+            Critical success means you can also knock an item held directly in a creature's hands to the ground.
 
-            If you disarm a foe using your bare hand, you can hold a disarmed item rather than letting it fall to the ground.
-            You can perform a disarm attack with a free hand or any melee weapon, using either Strength or Dexterity.
-            Some items that are extraordinarily well secured, such as worn rings, cannot be knocked to the ground.
+            If you disarm a foe using a free hand, you can hold a disarmed item rather than letting it fall to the ground.
+            Items that are very well secured, such as worn rings, cannot be knocked to the ground or grabbed.
+            Disarming is a light maneuver.
 
-            \parhead{Grapple}\label{Grapple} You physically grab and restrain your foe. Success means you and the creature become grappled, which limits your ability to act. You can perform a grapple with a free hand, using Strength. See \pcref{Grappling} for more details.
+            \parhead{Feint}\label{Feint} You can make a fake attack to leave your foe off-balance.
+            You can perform a feint with a free hand or any weapon.
+            You make a physical attack against the target's Reflex defense.
+            Success means the target takes a \minus5 penalty to physical defenses against your next attack.
+            Critical success means the target takes a \minus5 penalty to physical defenses against all of your attacks.
+            In either case, if you stop threatening the target, the effect of the feint immediately ends.
+            Feinting is a light maneuver.
 
-            \parhead{Overrun}\label{Overrun}
-            As part of a move action, you can try to move directly through creatures in your way.
-            When you attempt to overrun, you make an overrun attack.
-            Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered.
+            \parhead{Grapple}\label{Grapple} You physically grab and restrain your foe.
+            You must use a free hand to perform a grapple.
+            You make a physical attack against the target's Reflex and Fortitude defenses.
+            Success against both defenses means you and the creature become \grappled.
+            See \pcref{Grappling} for more details.
+            Grapping is a heavy maneuver.
 
-            If a creature does not try to avoid you, apply your overrun attack result against its Manevuer defense.
-            Success means you move through the creature's space, though it is considered difficult terrain.
-            Success by 10 or more means the creature is knocked prone, and its space is not considered difficult terrain.
-            Failure means you end your movement immediately.
-            Failure by 10 or more means you end your movement and fall prone.
+            \parhead{Shove}\label{Shove} You shove your foe where you want it to go.
+            You must use a free hand to perform a shove.
+            You make a physical attack against the target's Fortitude defense.
+            Success means you move the creature 5 feet in a direction of your choice.
+            For every 5 points by which you succeed, you can move it an additional 5 feet.
+            You cannot normally move the creature further after moving it outside of your reach.
+            If you have movement remaining in the round, you can move with the creature in order to shove it farther.
+            If the creature encounters a solid object or creature, you must stop shoving it.
+            Shoving is a heavy maneuver.
 
-            You must use Strength to overrun, but you do not need a free hand.
-
-            \parhead{Shove}\label{Shove} You shove your foe where you want it to go. Success means you move the creature 5 feet in a direction of your choice. For every 5 points by which you succeed, you can move it an additional 5 feet. You cannot normally move the creature further after moving it outside of your reach. If you have movement remaining in the round, you can move with the creature in order to shove it farther. If the creature encounters a solid object or creature, you must stop shoving it. You can perform a shove with a free hand, using Strength.
-
-            \parhead{Trip}\label{Trip} You try to trip your foe. Success means the creature falls prone, causing it to take a \minus4 penalty to physical accuracy and defenses. It can stand up as a move action. You perform a trip with a free hand, using either Strength or Dexterity.
+            \parhead{Trip}\label{Trip} You try to trip your foe.
+            You must use a free hand to perform a trip.
+            You make a physical attack against the target's Reflex defense.
+            Success means the target falls \prone.
+            As with other effects, the target does not suffer penalties for being prone against your other attacks within the same round.
+            It is still in the process of falling as you make the subsequent attacks.
+            Tripping is a light maneuver.
 
 \section{Movement and Positioning}
 
@@ -112,6 +128,14 @@
         \par If your combat prowess is high enough to grant you multiple strikes, the strike at the end of your charge deals double damage for each additional strike granted by your combat prowess.
 
         \parhead{Struggle} As a full-round action, you can move five feet, regardless of movement penalties. You can use this to move even if your speed is decreased below five feet by penalties.
+
+        \parhead{Overrun}\label{Overrun} As part of a move action, you can try to move directly through creatures in your way.
+        Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered.
+        If a creature does not attempt to avoid you, you make a Strength vs. Fortitude attack against it.
+        Success means you move through the creature's space, though it is considered difficult terrain.
+        Critical success means the creature is knocked prone, and its space is not considered difficult terrain.
+        Failure means you end your movement immediately.
+        Critical failure means you end your movement and fall \prone.
 
     \subsection{Movement Impediments}
 
