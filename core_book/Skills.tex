@@ -836,49 +836,15 @@ A character's skills describe the myriad of talents that people have.
         After you appraise an item, you can't appraise it again with any skill until you gain a level.
 
     \skill{Linguistics}{Int}
-        The Linguistics skill represents your mastery of other languages.
+        The Linguistics skill represents your mastery of spoken and written languages.
+        Normally, you don't make Linguistics checks to speak or understand languages.
+        You either know a language or you don't.
+        However, training in Linguistics causes you to learn additional languages, and you can use Linguistics to attempt to decipher unfamiliar languages.
 
-        \parhead{Learning Languages}
-        For every two ranks in Linguistics that you have, you may learn a new common language, in addition to your starting languages. You don't make Linguistics checks to speak or understand languages. You either know a language or you don't. All characters with an Intelligence of \minus2 or higher are presumed to be literate, allowing them to read and write any language they speak. Each language has an alphabet, though sometimes several spoken languages share a single alphabet. Common languages are summarized on \trefnp{Common Languages}, below.
+        \parhead{Learning Languages}\label{Learning Languages}
+        For every two ranks in Linguistics that you have, you may learn a new \glossterm{common language}, in addition to your starting languages (see \tref{Common Languages}). In place of two common languages, you may learn a \glossterm{rare language} (see \pcref{Rare Languages}). Rare languages are more difficult to learn, and are usually only spoken by unusual creatures.
 
-        In place of two common languages, you may learn a rare language. Rare languages are more difficult to learn, and are usually only spoken by unusual creatures. Rare languages are summarized on \trefnp{Rare Languages}, below.
-
-        Druidic is a special language. Druids learn Druidic as part of their initation as druids, and are forbidden from teaching it to non-druids. As a result, it cannot be learned through ordinary means.
-
-        \begin{dtable}
-            \lcaption{Common Languages}
-            \begin{dtabularx}{\columnwidth}{l >{\lcol}X l}
-                \tb{Language}  & \tb{Typical Speakers}  & \tb{Alphabet} \\
-                \hline
-                Common   & Civilized creatures & Common   \\
-                Draconic & Dragons, kobolds    & Draconic \\
-                Dwarven  & Dwarves             & Dwarven  \\
-                Elven    & Elves               & Elven    \\
-                Giant    & Ogres, giants       & Dwarven  \\
-                Gnoll    & Gnolls              & Common   \\
-                Gnome    & Gnomes              & Dwarven  \\
-                Goblin   & Goblins, hobgoblins & Dwarven  \\
-                Halfling & Halflings           & Common   \\
-                Orc      & Orcs                & Dwarven  \\
-            \end{dtabularx}
-        \end{dtable}
-
-        \begin{dtable}
-            \lcaption{Rare Languages}
-            \begin{dtabularx}{\columnwidth}{l >{\lcol}X l}
-                \tb{Language}  & \tb{Typical Speakers}  & \tb{Alphabet} \\
-                \hline
-                Abyssal     & Demons, chaotic evil outsiders & Infernal  \\
-                Aquan       & Water-based creatures          & Elemental \\
-                Auran       & Air-based creatures            & Elemental \\
-                Celestial   & Good outsiders                 & Celestial \\
-                Ignan       & Fire-based creatures           & Elemental \\
-                Infernal    & Devils, lawful evil outsiders  & Infernal  \\
-                Sylvan      & Dryads, faeries                & Elven     \\
-                Terran      & Earth-based creatures          & Elemental \\
-                Undercommon & Drow                           & Elven
-            \end{dtabularx}
-        \end{dtable}
+        Druidic is a special language. Druids learn Druidic as part of their initation as druids, and are forbidden from teaching it to non-druids. As a result, it cannot be learned through ordinary means. Druidic uses its own alphabet.
 
     \subsection{Decipher Script}
         You can make a Linguistics check to decipher writing in an unfamiliar language or a message written in an incomplete or archaic form. The base DR is 20 for the simplest messages, 25 for standard texts, and 30 or higher for intricate, exotic, or very old writing. In addition, the DR increases by 5 if you do not know any languages that use the same alphabet as the writing being deciphered. Deciphering the equivalent of a single page of script takes 1 minute (ten consecutive full-round actions).
@@ -1194,7 +1160,8 @@ A character's skills describe the myriad of talents that people have.
     \subsection{Sprint}
         As part of movement, you can make an Sprint check to move faster. For every 10 points by which you beat DR 0, you double your speed during that action: 2x speed at DR 10, 3x speed at DR 20, and so on.
         
-        You can sprint for a number of rounds equal to twice your Constitution (minimum 2). After that time, you must rest for 5 minutes before you can sprint again. You can sprint in any movement mode that you have a speed for.
+        You can sprint for a number of rounds equal to twice your Constitution (minimum 1).
+        After that time, you must rest for 5 minutes before you can sprint again. You can sprint in any movement mode that you have a speed for.
 
     \subsection{Wallrun}
         As part of movement, you can make a Sprint check to run along a wall rather than climbing. The DR is 10 higher than normal for the wall (see \pcref{Climb}, for typical wall DRs), but this does not require free hands. Success means you move up to half your land speed horizontally, or up to a quarter of your land speed vertically. Failure means you fall. Critical failure means you are prone when you land. For every round you spend running on a wall, the DR increases by 10.
