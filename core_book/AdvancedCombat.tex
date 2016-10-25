@@ -41,12 +41,12 @@
             \begin{dtabularx}{\columnwidth}{l l l X}
                 \tb{Maneuver}  & \tb{Type} & \tb{Defense} & \tb{Brief Description} \\
                 \hline
-                Dirty Trick & Light & Any    & Impose penalty on a foe \\
-                Disarm      & Light & Reflex & Force foe to drop item  \\
-                Feint       & Light & Reflex & Leave foe vulnerable to attacks \\
-                Grapple     & Heavy & Special & Wrestle with a foe      \\
-                Shove       & Heavy & Fortitude        & Move a foe              \\
-                Trip        & Light & Reflex & Trip a foe              \\
+                Dirty Trick & Light & Any       & Impose penalty on a foe         \\
+                Disarm      & Light & Reflex    & Force foe to drop item          \\
+                Feint       & Light & Reflex    & Leave foe vulnerable to attacks \\
+                Grapple     & Heavy & Special   & Wrestle with a foe              \\
+                Shove       & Heavy & Fortitude & Move a foe                      \\
+                Trip        & Light & Reflex    & Trip a foe                      \\
             \end{dtabularx}
         \end{dtable}
 
@@ -57,6 +57,8 @@
             You must use a free hand to perform a dirty trick.
             Success means the target is \impaired with actions relevant to the nature of your trick for 2 rounds.
             Critical success means the target is \severelyimpaired instead.
+            Critical failure means you are \impaired with relevant actions instead.
+            Unusual dirty tricks using the environment may impose other effects of similar strength.
             Dirty tricks are a light maneuver.
 
             \parhead{Disarm}\label{Disarm} You can strike an item your foe is wearing or holding to knock it out of their hands or damage it.
@@ -65,6 +67,7 @@
             Success means you hit the object, and can choose whether or not to deal damage to it.
             In addition, if the creature is not holding the item in its hands, it falls to the ground in the foe's square.
             Critical success means you can also knock an item held directly in a creature's hands to the ground.
+            Critical failure means you drop the weapon you used to attack (if any).
 
             If you disarm a foe using a free hand, you can hold a disarmed item rather than letting it fall to the ground.
             Items that are very well secured, such as worn rings, cannot be knocked to the ground or grabbed.
@@ -75,6 +78,7 @@
             You make a physical attack against the target's Reflex defense.
             Success means the target takes a \minus5 penalty to physical defenses against your next attack.
             Critical success means the target takes a \minus5 penalty to physical defenses against all of your attacks.
+            Critical failure means you take a \minus5 penalty to physical defenses against the next attack by the target.
             In either case, if you stop threatening the target, the effect of the feint immediately ends.
             Feinting is a light maneuver.
 
@@ -99,6 +103,7 @@
             You must use a free hand to perform a trip.
             You make a physical attack against the target's Reflex defense.
             Success means the target falls \prone.
+            Critical failure means you fall prone instead.
             As with other effects, the target does not suffer penalties for being prone against your other attacks within the same round.
             It is still in the process of falling as you make the subsequent attacks.
             Tripping is a light maneuver.
@@ -329,10 +334,10 @@
         \subsubsection{Grapple Actions}\label{Grapple Actions}
             While grappled, you can take four special actions to try to affect the grapple.
 
-            \parhead{Bind Foe} As a standard action, you can make a grapple attack to bind your foe with ropes or other restraints. You must have the restraints in hand (in addition to the free hand required to grapple). Apply the result against the Maneuver defense of a creature grappling you. Success means the creature is bound, rendering it helpless and effectively paralyzed. The only physical actions a bound creature can take are to esccape or break the bindings. Escaping the bindings requires a grapple attack or Escape Artist check which beats the grapple attack made to bind the creature. Breaking the bindings requires making a Strength check sufficient to break the item used to bind the creature. If you have the time, you can \glossterm{take 20} on your grapple attack to secure bindings on a helpless foe, including a foe rendered helpless through this attack.
-            \parhead{Escape the Grapple} As a standard action, you can make a grapple attack or Escape Artist check to escape from the grapple. Apply the result against the Maneuver defense of each creature grappling you. Success against an individual creature means you are no longer grappling that creature.
-            \parhead{Move the Grapple} As a move action, you can make a grapple attack to move the grapple. Apply the result against the Maneuver defense of each creature grappling you. If you beat every creature's Maneuver defense, you can move yourself and all other creatures in the grapple up to half your speed. At the end of your movement, you choose which spaces creatures grappling you are in, as long as they stay adjacent to you.
-            \parhead{Pin} As a standard action, you can make a grapple attack to pin a foe. If you succeed, that creature becomes pinned (in addition to being grappled), while you remain only grappled. The only physical action a pinned creature can take is to escape the grapple, though it can take mental actions. At your discretion, you can cover the mouth of a pinned creature to prevent it from speaking.
+            \parhead{Bind Foe} As a standard action, you can make a grapple attack to bind your foe with ropes or other restraints. You must have the restraints in hand (in addition to the free hand required to grapple). Apply the result against the Fortitude and Reflex defenses of a creature grappling you. Success against both defenses means the creature is bound, rendering it helpless and effectively paralyzed. The only physical actions a bound creature can take are to esccape or break the bindings. Escaping the bindings requires a grapple attack or Escape Artist check which beats the grapple attack made to bind the creature. Breaking the bindings requires making a Strength check sufficient to break the item used to bind the creature. If you have the time, you can \glossterm{take 20} on your grapple attack to secure bindings on a helpless foe, including a foe rendered helpless through this attack.
+            \parhead{Escape the Grapple} As a standard action, you can make a grapple attack or Escape Artist check to escape from the grapple. Apply the result against the Reflex defense of each creature grappling you. Success against an individual creature means you are no longer grappling that creature.
+            \parhead{Move the Grapple} As a move action, you can make a grapple attack to move the grapple. Apply the result against the Fortitude defense of each creature grappling you. If you beat every creature's Fortitude defense, you can move yourself and all other creatures in the grapple up to half your speed. At the end of your movement, you choose which spaces creatures grappling you are in, as long as they stay adjacent to you.
+            \parhead{Pin} As a standard action, you can make a grapple attack against the Fortitude and Reflex defenses of a creature you are grappling with. Success against both defenses means the creature becomes \glossterm{pinned} (in addition to being grappled), while you remain only grappled. The only physical action a pinned creature can take is to escape the grapple, though it can take mental actions. At your discretion, you can cover the mouth of a pinned creature to prevent it from speaking.
 
     \subsection{Helpless Defenders}
         A helpless creature is completely at an opponent's mercy. Its physical defenses are equal to 10 \add its size modifier. Paralyzed, bound, and unconscious creatures are helpless.
