@@ -42,11 +42,20 @@ This choice determines a great deal about your character's abilities.
             \parhead{Skill Points}
             This is the number of skill points that members of this class get.
 
+            \parhead{Combat Prowess}
+            Each class grants a bonus to combat prowess.
+            This bonus is already included in the values given in the class table.
+            Do not add the base class bonus for combat prowess to the value given for the class table.
+            The bonus in the table must be removed when determining the combat prowess of a character with multiple classes (see \pcref{Multiclass Characters}).
+
+            These bonuses do not stack with other combat prowess bonuses granted by base classes.
+            If a character has multiple base classes, only use the highest bonus to combat prowess.
+
             \parhead{Defenses}
             Each class grants bonuses to defenses the class specializes in.
             If the class has a good base defense progression, it grants a \plus4 bonus to that defense.
             If the class has an average base defense progression, it grants a \plus2 bonus to that defense.
-            These bonuses apply regardless of the attribute or base progression used to determine the defense.
+            These bonuses apply regardless of the attribute or base progression used to determine the defense, and are not included in the defense values given in the class table.
 
             These bonuses do not stack with other defense bonuses granted by base classes.
             If a character has multiple base classes, use the highest bonuses that apply to each defense.
@@ -102,7 +111,7 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 10.
 
-        \classbasics{Combat Prowess} \plus2.
+        \classbasics{Combat Prowess} \plus2. This benefit is included in the class table.
 
         \classbasics{Defenses} \plus4 Fortitude, \plus2 Reflex.
 
@@ -248,7 +257,7 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 5.
 
-        \classbasics{Combat Prowess} \plus2.
+        \classbasics{Combat Prowess} \plus2. This benefit is included in the class table.
 
         \classbasics{Defenses} \plus2 Fortitude, \plus4 Mental.
 
@@ -871,7 +880,7 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 10.
 
-        \classbasics{Combat Prowess} \plus2.
+        \classbasics{Combat Prowess} \plus2. This benefit is included in the class table.
 
         \classbasics{Defenses} \plus4 Fortitude, \plus2 Mental.
 
@@ -1292,7 +1301,7 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 10.
 
-        \classbasics{Combat Prowess} \plus2.
+        \classbasics{Combat Prowess} \plus2. This benefit is included in the class table.
 
         \classbasics{Defenses} \plus4 Fortitude, \plus2 Mental.
 
@@ -1493,7 +1502,7 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 10.
 
-        \classbasics{Combat Prowess} \plus2.
+        \classbasics{Combat Prowess} \plus2. This benefit is included in the class table.
 
         \classbasics{Defenses} \plus2 Fortitude, \plus4 Reflex, \plus4 Mental.
 
@@ -1709,7 +1718,7 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 5.
 
-        \classbasics{Combat Prowess} \plus2.
+        \classbasics{Combat Prowess} \plus2. This benefit is included in the class table.
 
         \classbasics{Defenses} \plus4 Fortitude, \plus4 Mental.
 
@@ -2005,7 +2014,7 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 15.
 
-        \classbasics{Combat Prowess} \plus2.
+        \classbasics{Combat Prowess} \plus2. This benefit is included in the class table.
 
         \classbasics{Defenses} \plus4 Fortitude, \plus4 Reflex, \plus2 Mental.
 
@@ -2291,7 +2300,7 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 15.
 
-        \classbasics{Combat Prowess} \plus2.
+        \classbasics{Combat Prowess} \plus2. This benefit is included in the class table.
 
         \classbasics{Defenses} \plus4 Reflex, \plus2 Mental.
 
@@ -2495,7 +2504,7 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 5.
 
-        \classbasics{Combat Prowess} \plus1.
+        \classbasics{Combat Prowess} \plus1. This benefit is included in the class table.
 
         \classbasics{Defenses} \plus4 Mental.
 
@@ -2686,7 +2695,7 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 5.
 
-        \classbasics{Combat Prowess} \plus2.
+        \classbasics{Combat Prowess} \plus2. This benefit is included in the class table.
 
         \classbasics{Defenses} \plus4 good defense, \plus2 other defenses.
 
@@ -3182,7 +3191,7 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 5.
 
-        \classbasics{Combat Prowess} \plus1.
+        \classbasics{Combat Prowess} \plus1. This benefit is included in the class table.
 
         \classbasics{Defenses} \plus4 Mental.
 
@@ -3392,11 +3401,13 @@ This choice determines a great deal about your character's abilities.
         The normal rules for determining hit points apply to multiclass characters.
 
         \parhead{Combat Prowess}
-        Add the base combat prowess bonuses granted by each class together.
+        For each class, take the combat prowess given on the chart and subtract the combat prowess bonus granted to the class from its base class bonuses.
+        Take the resulting combat prowess values for each class and add them together.
+        Finally, add the base class bonus from the character's base class to that sum.
         The result is the character's total combat prowess.
 
         \parhead{Defenses}
-        For each defense, add the base defense bonuses granted by each class together.
+        For each defense, add the base defense bonuses granted by each class, as given on the class's chart, together.
         The result is the character's total base defense bonus for that defense.
 
         \parhead{Skills}

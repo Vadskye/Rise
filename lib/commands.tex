@@ -644,39 +644,35 @@
     }
 
     \ifcase\imathresult
-        \plus #1 % case -1
+        {}#1 % case -1
     \or
-        \plus #1 % case 0
+        {}#1 % case 0
     \or
-        \plus #1~{}~(\mult2) % case 1
+        {}#1~{}~(\mult2) % case 1
     \or
-        \plus #1~{}~(\mult3) % case 2
+        {}#1~{}~(\mult3) % case 2
     \or
-        \plus #1~{}~(\mult4) % case 3
+        {}#1~{}~(\mult4) % case 3
     \or
-        \plus #1~{}~(\mult5) % case 3
+        {}#1~{}~(\mult5) % case 3
     \fi
 }
 
 \DeclareDocumentCommand{\goodbab}{m}
 {
-    \pgfmathparse{int(floor(#1))}
+    \pgfmathparse{int(floor(#1+2))}
     \bab{\pgfmathresult}
 }
 
 \DeclareDocumentCommand{\avgbab}{m}
 {
-    %\pgfmathparse{int(floor((#1*3)/4+1))}
-    \pgfmathparse{int(floor((#1*4/5)))}
-    %\pgfmathparse{int(floor(#1+3))}
+    \pgfmathparse{int(floor((#1*4/5+2)))}
     \bab{\pgfmathresult}
 }
 
 \DeclareDocumentCommand{\poorbab}{m}
 {
-    %\pgfmathparse{int(floor((#1*1/2)))}
-    \pgfmathparse{int(floor((#1*2/3)))}
-    %\pgfmathparse{int(floor(#1+3))}
+    \pgfmathparse{int(floor((#1*2/3+1)))}
     \bab{\pgfmathresult}
 }
 
