@@ -8,17 +8,18 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
     \subsection{Casting Process}
 
         \begin{itemize}
-            \itemhead{Choose spell}: You must choose which spell to cast from among the spells you know. If a spell has multiple versions, you choose which version to use when you cast it. Similarly, if a spell has augments, you must choose which augments to use when you cast it.
-            \itemhead{Pay spell slot}: If you use spell slots to cast spells, you must expend a spell slot of the spell's level or higher. If you do not have spells slots to spend, your attempt to cast the spell fails. If you are augmenting a spell, you must expend a spell slot of a level no less than the spell's level \add the level of all augments used.
-            \itemhead{Perform spell components}: All spells have verbal and somatic components unless their description indicates otherwise.
-                \begin{itemize}
-                    \itemhead{Verbal components}\label{Verbal Components} involve speaking the spell's incantation loudly and clearly.
-                    \itemhead{Somatic components}\label{Somatic Components} involve using at least one hand to make gestures with magical significance. While casting a spell with somatic components, one hand is used to cast the spell, and cannot be used to defend yourself or take other actions.
-                \end{itemize}
-            \itemhead{Concentrate}: You must concentrate to cast spells. If you take damage or are otherwise distracted during a phase in which you attempt to cast a spell, you may miscast the spell. See \pcref{Concentration}, for details.
+            \itemhead{Choose spell}: You must choose which spell to cast from among the spells you know. If a spell has multiple versions, you choose which version to use when you cast it. Similarly, if a spell has \glossterm{augments}, you must choose which augments to use when you cast it.
+            \itemhead{Choose augments}: If the spell has \glossterm{augments}, you can add the level of any number of augments to the spell's level. If you do, the spell gains the effects of those augments.
+            \itemhead{Pay spell slot}: If you use spell slots to cast spells, you must expend a spell slot of the spell's level or higher. If you do not have spells slots to spend, your attempt to cast the spell fails. Effects that replace spell slots, such as a sorcerer's wild magic, also happen at this time (see \pcref{Wild Magic}).
+            \itemhead{Perform spell components}: All spells have verbal and somatic components unless their description indicates otherwise (see \pcref{Components}).
             \itemhead{Choose effects}: You make choices about the spell's effects as you finish casting the spell. This includes deciding which creatures to target, where the spell takes effect, and so on.
-            \itemhead{Roll dice}: Finally, after making any necessary decisions about the spell's effects, you roll any dice required to determine how successful the spell is. This includes attack rolls, damage rolls, and so on.
         \end{itemize}
+
+        All of the above steps take place at the start of the action phase, at the same time that other actions are decided.
+        However, spells take time to cast, and their effects do not resolve until the end of the round.
+        If you take damage or are otherwise distracted during a phase in which you attempt to cast a spell, you may miscast the spell (see \pcref{Concentration}).
+
+        At the end of the round, after all non-spell effects resolve, all spell effects resolve simultaneously. At that time, you roll any dice required to determine how successful the spell is. This includes attack rolls, damage rolls, and so on.
 
     \subsection{Spell Slots}
         To cast a spell of a given level, most spellcasters must spend a spell slot of the appropriate level. If the spellcaster has no spell slots of the appropriate level, she may use a higher-level spell slot instead. The spell is still treated as if it were its actual level, not the level of the slot used to cast it.
@@ -177,14 +178,16 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
 
         The domains a spell can be associated with include Air, Chaos, Death, Destruction, Earth, Evil, Fire, Good, Knowledge, Law, Leadership, Magic, Nature, Protection, Strength, Travel, Trickery, Vitality, War, and Water.
 
-    \subsection{Components}
+    \subsection{Components}\label{Components}
         A spell's components are what you must do or possess to cast it. All spells have verbal and somatic components unless the spell description says otherwise. The Components entry in a spell description includes abbreviations that tell you what type of components it has. Specifics for material components and focuses are given at the end of the descriptive text.
 
         \parhead{Verbal (V)} A verbal component is a spoken incantation. To provide a verbal component, you speak in a strong voice with a volume at least as loud as ordinary conversation.
 
         A gag spoils the incantation (and thus the spell). A spellcaster who has been deafened has a 20\% chance to spoil any spell with a verbal component that he or she tries to cast. Likewise, a \spell{silence} spell imposes a 20\% chance of failure.
 
-        \parhead{Somatic (S)} A somatic component is a measured and precise movement of the hand. You must have at least one hand free to provide a somatic component. Touch range spells often include the act of touching the spell recipient as part of the somatic component.
+        \parhead{Somatic (S)} A somatic component is a measured and precise movement of at least one hand.
+        While casting a spell with somatic components, one hand is used to cast the spell, and cannot be used to defend yourself or take other actions.
+        % Touch range spells often include the act of touching the spell recipient as part of the somatic component.
 
         \parhead{Material (M)} A material component is one or more physical substances or objects that are annihilated by the spell energies in the casting process.
 
@@ -345,7 +348,6 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
             Alteration & \tdash \\
             Antimagic & The spell attacks magic itself. It does not allow spell resistance. \\
             Auditory & Creatures that cannot hear the spell's effect are immune to the spell. \\
-            Augment & \tdash \\
             Barrier & If you attempt to move the spell's area towards a force or creature it prohibits, you feel a discernible pressure. If you continue moving, the spell ends. \\
             Charm & \tdash \\
             Chaotic & \tdash \\
@@ -370,6 +372,7 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
             Force & \tdash \\
             Glamer & \tdash \\
             Good & \tdash \\
+            Imbuement & \tdash \\
             Instantaneous & The spell instantly causes some change which is thereafter nonmagical. It cannot be dispelled or dismissed. \\
             Lawful & \tdash \\
             Life & The spell only affects living creatures. \\
