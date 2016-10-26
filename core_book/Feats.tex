@@ -416,14 +416,14 @@ The table of combat feats is organized according to the combat prowess each feat
         \tb{Combat Feats} & \tb{Prerequisites (Prowess 12)} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
         \featref{Disorienting Strike} & \tdash & Attack disorients foe & Power, Strike & \featpref{Disorienting Strike} \\
         \featref{Killing Blow} & Int 10 & Attack instantly kills foe without hit points & Precision, Strike & \featpref{Killing Blow} \\
-        \featref{Hydra Strike} & Str 5, Dex 5, Con 5 & Attack all defenses for bonus damage & \tdash & \featpref{Hydra Strike} \\
+        \featref{Hydra Strike} & Str 5, Dex 5 & Attack all defenses for bonus damage & \tdash & \featpref{Hydra Strike} \\
         \featref{Legendary Strike} & Any three Strike feats & \plus2 to accuracy with strikes & \tdash & \featpref{Legendary Strike} \\
         \featref{Legendary Combat Awareness} & Per 10, any three Awareness feats & Immune to being overwhelmed & Awareness & \featpref{Legendary Combat Awareness} \\
         \featref{Legendary Defense} & Any three Defense feats & \plus2 to all defenses & Defense & \featpref{Legendary Defense} \\
         \featref{Legendary Finesse} & Dex 10, any three Finesse feats & Roll maximum damage again & Finesse & \featpref{Legendary Finesse} \\
         \featref{Legendary Maneuver Master} & Any three Maneuver feats & Deal damage with very successful maneuvers & Maneuver & \featpref{Legendary Maneuver Master} \\
         \featref{Legendary Mobility} & Dex 10, any three Mobility feats & Move through enemies & Mobility& \featpref{Legendary Mobility} \\
-        \featref{Legendary Mounted Warrior} & Any three Mounted feats & Share damage with mount & Mounted& \featpref{Legendary Mounted Warrior} \\
+        \featref{Legendary Mounted Warrior} & Any three Mounted feats & Share damage with mount & Mounted & \featpref{Legendary Mounted Warrior} \\
         \featref{Legendary Power} & Str 10, any three Power feats & Wield weapons as if they were less encumbering & Power& \featpref{Legendary Power} \\
         \featref{Legendary Precision} & Per 10, any three Precision feats & Very accurate hits deal maximum damage & Precision & \featpref{Legendary Precision} \\
         \featref{Legendary Reaction} & Dex 10, any three Reaction feats & Extra immediate actions & Combat, Reaction & \featpref{Legendary Reaction} \\
@@ -453,7 +453,7 @@ The table of combat feats is organized according to the combat prowess each feat
         \featref{Distracting Foe} & \tdash & Threatened foes suffer Concentration penalties & Reaction, Style & \featpref{Distracting Foe} \\
         \featref{Eye of the Storm} & Per 5 & Reduce overwhelm penalties & Awareness, Defense, Style & \featpref{Eye of the Storm} \\
         \featref{Guardian} & \tdash & Adjacent allies suffer reduced overwhelm penalties & Defense, Style & \featpref{Guardian} \\
-        \featref{Overpowering Assault} & Str 3 & Trade defense for maneuver bonus & Power, Style & \featpref{Overpowering Assault} \\
+        \featref{Overpowering Assault} & Str 3 & Trade defense for maneuver accuracy & Power, Style & \featpref{Overpowering Assault} \\
         \featref{Overwhelming Fire} & Dex 3 & Overwhelm foes with ranged weapons & Style & \featpref{Overwhelming Fire} \\
         \featref{Parry} & Dex 3 & Ready yourself to parry incoming blows & Defense, Reaction, Style & \featpref{Parry} \\
             \tind \featref{Shielded Parry} & Shield proficiency, Parry & Add shield bonus to parry attempts & Defense, Reaction & \featpref{Shielded Parry} \\
@@ -592,7 +592,7 @@ While raging, you have the following benefits and drawbacks:
     \item \plus2 bonus to Fortitude and Mental defense.
     \item 2 temporary hit points per Willpower.
         These extra hit points gained from raging are lost before any other hit points (see \pcref{Temporary Hit Points}).
-    \item \minus2 to physical defenses (Armor, Maneuver, Reflex).
+    \item \minus2 to \glossterm{physical defenses}.
     \item Unable to take any action that requires patience or concentration, such as casting spells.
     \item If you does not spend a swift round to sustain the rage, it ends at the end of the round.
     \item At the end of each round, if you did not attack a creature or object, you take nonlethal damage equal to your level.
@@ -988,8 +988,8 @@ If you are 18th level, you can fly for up to 5 minutes before resting.
 \feat{Driving Assault}{Combat, Maneuver, Power, Strike}
 \featpres Str 5, combat prowess 8.
 \featben In place of two strikes, you can make a single melee attack.
-If hit, you deal damage normally, and you can make an immediate shove attack against the struck foe.
-You gain a bonus on the shove attack equal to the damage dealt.
+If hit, you deal damage normally, and you can make an immediate \glossterm{shove} against the struck foe (see \pcref{Shove}).
+You gain a bonus to accuracy with the shove equal to the damage dealt.
 
 \feat{Dwarven Resilience}{Racial}
 \featpre Dwarf.
@@ -1253,10 +1253,11 @@ You still need cover or concealment to hide.
 If your Dexterity is at least 20, you can use this feat as a standard action.
 
 \feat{Hydra Strike}{Combat, Strike}
-\featpres Three strikes, Strength 5, Dexterity 5, Constitution 5.
+\featpres Three strikes, Strength 5, Dexterity 5.
 \featben In place of three strikes, you can make a physical attack.
 If you hit, you deal damage normally.
-You deal double damage for each additional defense you beat (Maneuver, Reflex, Fortitude, and Mental), up to a maximum of five times your normal damage.
+You deal double damage for each additional defense you beat (Reflex, Fortitude, and Mental), up to a maximum of four times your normal damage.
+If you beat all of the target's defenses, you deal five times your normal damage instead.
 After you use this strike, you cannot use it again for 2 rounds.
 
 \feat{Imbued Spellstrike}{Metamagic}
@@ -1414,9 +1415,10 @@ If the target took damage from this strike and has no hit points remaining at th
 
 \feat{Knockdown}{Combat, Maneuver, Power, Strike}
 \featpres Strength 5, combat prowess 8.
-\featben In place of two strikes, you can attempt to shove an opponent.
-If you succeed, it is knocked prone at the end of its movement, and you can make an extra melee attack against it if you still threaten it.
-The free attack gains the normal benefit for striking a prone target (\minus4 to physical defenses).
+\featben In place of two strikes, you can attempt to \glossterm{shove} an opponent.
+If you succeed, you can make a \glossterm{strike} against it if you still threaten it, and it is knocked \prone at the end of its movement.
+That strike, and any future strikes you make in the same round, do not gain the bonus for striking a prone target.
+It is still falling as the attacks are made.
 
 \feat{Ledgewalker}{Skill}
 \featpre Acrobatics 5 ranks.
@@ -1553,8 +1555,9 @@ Certain extremely obscure languages may be beyond your knowledge.
 
 \feat{Legendary Maneuver Master}{Combat}
 \featpres Combat prowess 12, any three Maneuver feats.
-\featben If you succeed at a combat maneuver attack, if your attack result also beats the target's Armor defense, you deal normal damage with the weapon used to perform the maneuver in addition to gaining the successful effects of the maneuver.
-If the maneuver was performed without a weapon, you deal damage equivalent to an unarmed attack.
+\featben Whenever you perform a \glossterm{combat maneuver}, if your attack result also beats the target's Armor defense, you deal normal damage with the weapon used to perform the maneuver.
+This damage is in addition to gaining the normal effects of the maneuver.
+If the maneuver was performed with a free hand, you deal damage with your unarmed attack (see \pcref{Unarmed Combat}).
 
 \feat{Legendary Mobility}{Combat, Mobility}
 \featpres Dexterity 10, combat prowess 12, any three Mobility feats.
@@ -1599,7 +1602,7 @@ However, you still cannot use two immediate actions in response to the same trig
 \featpre Ride 15 ranks.
 \featben You can attempt to ride unwilling creature.
 You can only ride creatures of your size category or up to two size categories larger.
-To ride an unwilling creature, you must beat its Maneuver defense with a Ride check.
+To ride an unwilling creature, you must beat its Reflex defense with a Ride check.
 
 Riding a creature is like grappling the creature, with the following changes.
 \begin{itemize}
@@ -1704,7 +1707,7 @@ Levels in two magical classes.
 See \pcref{Spellcasters and Multiclassing}.
 
 \feat{Maneuver Focus}{Combat}
-Choose one combat maneuver.
+Choose one \glossterm{combat maneuver}.
 \featpre Combat prowess 4.
 \featben You cain a \plus2 bonus to accuracy with the chosen maneuver.
 In addition, you gain a special ability based on the maneuver chosen.
@@ -1713,7 +1716,6 @@ In addition, you gain a special ability based on the maneuver chosen.
     \item Disarm: When you successfully perform a disarm, you can make the disarmed item land up to 15 feet away in a random direction.
     \item Feint: When you critically succeed at a feint, you deal damage with your weapon normally.
     \item Grapple: Grappling does not cause you to be \defenseless.
-    \item Overrun: The target of your overrun attempts cannot choose to avoid you unless you let it.
     \item Shove: When you successfully perform a shove, you can move the target the full distance without needing to move with it.
     \item Trip: When you successfully perform a trip, you can make a free \glossterm{strike} against the target. The target does not suffer prone penalties for the trip against the free attack.
 \end{itemize}
@@ -1785,9 +1787,9 @@ For example, a Medium human charging on a Large horse would increase his weapon'
 Your check result is used in place of the mount's physical defenses, if it is higher.
 If that would make the attack fail, the attack fails.
 
-\feat{Mounted Trample}{Combat, Mounted, Maneuver}
+\feat{Mounted Trample}{Combat, Mounted}
 \featpre Ride 10 ranks.
-\featben When you attempt to overrun an opponent while mounted, your target may not choose to avoid you.
+\featben When you attempt to \glossterm{overrun} an opponent while mounted, your target may not choose to avoid you.
 Your mount may make one attack with an appropriate natural weapon (hoof, claw, or other leg-based attack) against any target you knock down, gaining the normal \plus4 bonus to accuracy against prone targets.
 
 \feat{Natural Spellgift}{Spellgift}
@@ -1813,13 +1815,13 @@ You may spend these skill points immediately.
 
 \feat{Overpowering Assault}{Combat, Power, Style}
 \featpre Str 3.
-\featben While in this style, you gain a \plus2 bonus to accuracy with maneuvers.
+\featben While in this style, you gain a \plus2 bonus to accuracy with \glossterm{combat maneuvers}.
 This bonus increases by \plus1 for each strike you can make per round beyond the first.
 \stylereq You must make a melee attack each round.
 
 \feat{Overpowering Rage}{Power, Rage}
 \featpres Rage ability, combat prowess 8.
-\featben When you enter a rage, you can use this feat. If you do, during the rage you add your rage bonus to your Maneuver defense and your accuracy with combat maneuvers.
+\featben When you enter a rage, you can use this feat. If you do, during the rage you add your rage bonus to your accuracy with \glossterm{combat maneuvers}.
 \parhead{Special} You can only gain the benefit of one Rage feat at a time.
 
 \feat{Overwhelming Fire}{Combat, Style}
@@ -1943,7 +1945,7 @@ In addition, when you shoot or throw ranged weapons at a grappling opponent, you
 
 \feat{Predictive Defense}{Awareness, Combat, Defense, Style}
 \featpres Intelligence 5, combat prowess 4.
-\featben You can use your Intelligence to determine your Armor and Maneuver defenses in place of your Dexterity or Constitution.
+\featben You can use your Intelligence to determine your Armor defense in place of your Dexterity or Constitution.
 \stylereq Wield a melee weapon.
 You must make a physical attack or take the total defense action each round.
 
@@ -2015,8 +2017,8 @@ If you know an Antimagic spell of 7th level or higher, your spells cannot be dis
 
 \feat{Resist Maneuver}{Class, Fighter}
 \featpre Fighter.
-\featben Choose a combat maneuver.
-You gain a \plus5 bonus to Maneuver Defense against that maneuver.
+\featben Choose a \glossterm{combat maneuver}.
+You gain a \plus5 bonus to defenses against that maneuver.
 
 \feat{Retargeting Miscast}{Magic}
 \featpre 3rd level spells.
@@ -2053,12 +2055,12 @@ If you do, during the rage you gain the benefits of the Unarmed Proficiency, Una
 
 \feat{Scale the Beast}{Skill}
 \featpre Climb 10 ranks.
-\featben As a standard action, you can make a Climb check against the Maneuver defense of a creature adjacent to you.
+\featben As a standard action, you can make a Climb check against the Reflex defense of a creature adjacent to you.
 The creature must be three or more size categories larger than you.
 You gain a \plus4 bonus to the check for every size category by which it exceeds your own.
-If you succeed, you can climb the creature as if it were a solid object with a Climb DR equal to its Maneuver defense.
+If you succeed, you can climb the creature as if it were a solid object with a Climb DR equal to its Reflex defense.
 The creature takes a \minus4 penalty to accuracy on physical attacks against you, but is not otherwise encumbered by your presence unless it cannot support your weight.
-It can attempt to remove you by attacking you, or with an appropriate maneuver, such as grappling or shoving.
+It can attempt to remove you by attacking you, or with an appropriate \glossterm{combat maneuver}, such as grappling or shoving.
 
 \feat{Shape Spell}{Metamagic}
 \featpre 3rd level spell known.
@@ -2363,7 +2365,7 @@ This bonus increases to \plus2 at Strength 10, and to \plus3 at Strength 20.
 
 \feat{Unarmed Dodge}{Combat, Defense}
 \featpres Combat prowess 8, Unarmed Proficiency, Dexterity 5.
-\featben You gain a \plus1 bonus to physical defenses (Armor, Maneuver, Reflex) while both your hands are free.
+\featben You gain a \plus1 bonus to \glossterm{physical defenses} while both your hands are free.
 
 \feat{Unarmed Might}{Combat, Power}
 \featpres Combat prowess 4, Unarmed Proficiency, Strength 5.
@@ -2434,8 +2436,8 @@ This ability works on any wall with \glossterm{hardness} no greater than your St
 
 \feat{Wall Slam}{Combat, Maneuver, Power, Strike}
 \featpres Strength 5, combat prowess 8.
-\featben As a standard action, you can attempt to shove an opponent into a solid obstacle.
-If you succeed, the creature takes 1d6 bludgeoning damage per Strength.
+\featben As a standard action, you can attempt to \glossterm{shove} a creature.
+If you shove the target into a solid obstacle, it takes 1d6 bludgeoning damage per Strength.
 
 \feat{Wardwalker}{Magic}
 \featpre 3rd level or higher \glossterm{Warding} spell known.

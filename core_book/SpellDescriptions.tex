@@ -836,7 +836,7 @@
             \spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect Ground within the area is considered difficult terrain. At the end of every round, make a Spellpower vs. Maneuver defense against all creatures in the area that are within 5 feet of the ground. Success against a creature means it takes \spelldamage{bludgeoning}[d8]. A critical success causes the target to be \immobilized for the duration of the spell.
+            \spelleffect Ground within the area is considered difficult terrain. At the end of every round, make a Spellpower vs. Fortitude defense against all creatures in the area that are within 5 feet of the ground. Success against a creature means it takes \spelldamage{bludgeoning}[d8]. A critical success causes the target to be \immobilized for the duration of the spell.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
@@ -2490,7 +2490,6 @@
                 \begin{itemize}
                     \item \plus10 ft.\ bonus to movement speed.
                     \item \plus4 bonus to Fortitude defense.
-                    \item \plus4 bonus to maneuver accuracy and defense.
                     \item \minus1 penalty to other physical accuracy and defenses.
                     \item \minus4 penalty to Stealth checks.
                     \item Weapons increase damage die size (see \tref{Weapon Damage and Size}).
@@ -2984,7 +2983,7 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target is immune to effects that restrict its mobility. It suffers no penalties for acting underwater. In addition, it gains a \plus20 bonus to Maneuver defense against grapple attacks, as well as on grapple attacks or Escape Artist checks made to escape a grapple or a pin.
+            \spelleffect The target is immune to effects that restrict its mobility. It suffers no penalties for acting underwater. In addition, it gains a \plus20 bonus to Reflex defense against grapple attacks, as well as on grapple attacks or Escape Artist checks made to escape a grapple or a pin.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
@@ -3181,7 +3180,7 @@
             \spelltgts{Everything in the area}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Maneuver Defense}
+            \begin{spellattack}{Spellpower vs. Fortitude Defense}
                 \spellsuccess The target is affected by a shove attack, pushing it back by 5 feet \add 5 feet per 5 points by which your attack exceeded its defense. If it is pushed outside the spell's area, it is not pushed farther.
             \end{spellattack}
         \end{spelleffects}
@@ -4177,7 +4176,7 @@
             \spellquicktargeting{One creature or object}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Strength or Spellpower vs. Maneuver (shove)}
+            \begin{spellattack}{Strength or Spellpower vs. Fortitude (shove)}
                 \spellsuccess The target is thrown up to 20 feet per spellpower in any direction. You can throw it vertically, but it flies half as far vertically as it does horizontally. When the creature strikes a solid object, it suffers 1d6 bludgeoning damage per 20 feet of movement remaining.
                 \spellcritical As above, but the target is thrown 40 feet per spellpower.
                 \spellfailure The target takes \spelldamage{bludgeoning}[d6] as it resists the force of the throw.
@@ -5162,7 +5161,7 @@
             \spellquicktargeting{One creature or object on solid ground}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Strength or Spellpower vs. Maneuver (shove)}
+            \begin{spellattack}{Strength or Spellpower vs. Fortitude (shove)}
                 \spellsuccess \spelldamage{bludgeoning}, and the target is \immobilized for 2 rounds.
                 \spellcritical As above, but double damage.
                 \spellfailure As above, but half damage.
@@ -5455,7 +5454,6 @@
                 \begin{itemize}
                     \item \minus10 ft.\ penalty to movement speed.
                     \item \minus4 penalty to Fortitude defense.
-                    \item \minus4 penalty to maneuver accuracy and defense.
                     \item \plus1 bonus to other physical attacks and defenses.
                     \item \plus4 bonus to Stealth checks.
                     \item Weapons decrease damage die size (see \tref{Weapon Damage and Size}).
@@ -6693,9 +6691,8 @@
             \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Fortitude and Maneuver defense (shove)}
-                \spellsuccess[Fortitude] \spelldamage{bludgeoning}.
-                \spellsuccess[Maneuver] You shove the target in any direction -- even vertically. Moving the target up takes twice as much movement as moving the target horizontally.
+            \begin{spellattack}{Spellpower vs. Fortitude defense (shove)}
+                \spellsuccess[Fortitude] \spelldamage{bludgeoning}. In addition, you shove the target in any direction -- even vertically. Moving the target up takes twice as much movement as moving the target horizontally.
                 \spellfailure[Fortitude] Half damage.
             \end{spellattack}
         \end{spelleffects}
