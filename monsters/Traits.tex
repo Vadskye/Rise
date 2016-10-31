@@ -105,7 +105,7 @@
     \featben Your natural attacks deal damage as if you were one size category larger than normal.
     At your 5th slayer level, and every 5 slayer levels thereafter, your damage increases by an additional size category.
 
-    \feat{Burrower}{2}
+    \feat{Burrower}{Slayer}
     \featpre Slayer level 2.
     \featben You gain a burrow speed equal to half your land speed.
     You can only burrow through loose earth and dirt, and you cannot construct usable tunnels while burrowing.
@@ -118,6 +118,11 @@
         \item You gain the ability to burrow through solid rock and objects of similar durability.
         \item If you have the ability to burrow through solid rock, you can burrow through iron and objects of similar durability.
     \end{itemize}
+
+    \feat{Climber}{General}
+    \featben You gain a climb speed equal to half your land speed.
+
+    If your Dexterity is at least 5, your climb speed is instead equal to your land speed.
 
     \feat{Damage Reduction}{Behemoth}
     \featpre Behemoth level 6.
@@ -151,6 +156,72 @@
 
     \feat{Mighty Will}{General}
     \featben You gain a \plus4 bonus to Mental defense.
+
+    \feat{Humanoid Form}{Adept}
+    \featpre Adept level 4.
+    \featben As a standard action, you can spend an adept point to change your shape.
+    When you change your shape, you can assume a humanoid form.
+    You choose the appearance and nature of your humanoid form when you gain this trait, and are not able to change it freely.
+    Your humanoid form resembles your choice of the common humanoid races: dwarf, elf, gnome, half-elf, half-orc, halfling, or human.
+    Your form has the size and shape of the race you mimic, but you do not gain any abilities of the chosen race.
+    While in humanoid form, you cannot use any special abilities that require physical features of your normal form.
+    This includes natural weapons, poisons, Armor defense bonuses, and similar abilities.
+
+    In addition to assuming the humanoid form completely, you can also assume a hybrid form.
+    In a hybrid form, you retain physical features of your normal form, allowing you the full use of your special abilities.
+    However, a DR 20 Awareness check can identify unusual physical features that reveal your inhuman nature.
+
+    In both humanoid and hybrid forms, you can wield weapons and wear equipment like other humanoids.
+    Changing your form with this ability is not a magical effect, does not have a duration, and cannot be dispelled.
+    You revert to your true form when killed.
+
+    \feat{Magical Ability}{Adept}
+    \featpre Adept level.
+    \featben When you gain this trait, choose a spell.
+    You may also choose any number of augments to apply to the spell, increasing its level appropriately.
+    The spell's total level must be no greater than half your level (minimum 1).
+    You can spend an \glossterm{adept point} to gain that spell's effect as a supernatural ability, as if you had cast the spell.
+    Its spellpower is equal to your level or your \glossterm{adept attribute}, whichever is higher.
+    If you chose any augments when you gained this trait, the spell also gains the effect of those augments.
+
+    When using this ability, you cannot apply additional augments to the spell, apply metamagic feats, or use similar abilities, since you are not actually casting the spell.
+    Likewise, your concentration cannot be disrupted when using this ability.
+
+    \parhead{Special} You may take this trait multiple times.
+    Each time, you choose a new spell.
+
+    \feat{Magical Strike}{Adept}
+    \featpres Natural weapon, adept level 8.
+    \featben When you gain this trait, choose one of your natural weapons and a spell.
+    The spell must be a \glossterm{targeted spell}.
+    You may also choose any number of augments to apply to the spell, increasing its level appropriately.
+    The spell's total level must be no greater than half your level, \sub 3.
+
+    When you make a successful attack with that weapon, you can gain inflict the spell's effects on the struck creature as an immediate action.
+    You can spend an \glossterm{adept point} to gain that spell's effect as a supernatural ability, as if you had cast the spell.
+    Its spellpower is equal to your level or your \glossterm{adept attribute}, whichever is higher.
+    If you chose any augments when you gained this trait, the spell also gains the effect of those augments.
+
+    When using this ability, you cannot apply additional augments to the spell, apply metamagic feats, or use similar abilities, since you are not actually casting the spell.
+    Likewise, your concentration cannot be disrupted when using this ability.
+
+    \parhead{Special} You may take this trait multiple times.
+    Each time, you choose a new spell.
+
+    \feat{Myriad Magical Abilities}{Adept}
+    \featpre Adept level 6.
+    \featben When you gain this trait, choose up to three spells.
+    You may also choose any number of augments to apply to the spell, increasing its level appropriately.
+    The total level of each spell individually must be no greater than half your level, \sub 2.
+    You can spend an \glossterm{adept point} to gain the effects of any of those spells as a supernatural ability, as if you had cast the spell.
+    Its spellpower is equal to your level or your \glossterm{adept attribute}, whichever is higher.
+    If you chose any augments when you gained this trait, the spell also gains the effect of those augments.
+
+    When using this ability, you cannot apply additional augments to the spell, apply metamagic feats, or use similar abilities, since you are not actually casting the spell.
+    Likewise, your concentration cannot be disrupted when using this ability.
+
+    \parhead{Special} You may take this trait multiple times.
+    Each time, you choose up to three new spells.
 
     \feat{Natural Armor}{General}
     \featben You gain a \plus2 bonus to Armor defense.
@@ -225,6 +296,26 @@
     Any individual creature can only take this damage once per round.
     This is a supernatural ability.
 
+    \feat{Spellcaster}{Adept}
+    \featpre Adept level 1.
+    \featben You can cast spells.
+    You choose a type of spellcasting when you gain this trait: arcane, divine, or nature.
+    You know a number of spells equal to half your adept level \add 1.
+    These spells can be of any level.
+    You can spend an adept point to cast any spell you know.
+    \parhead{Special} You may take this trait multiple times.
+    Each time, you choose a new type of spellcasting.
+    You track your spells known separately for each type of spellcasting you have.
+
+    \feat{Spit Web}{General}
+    \featben As a standard action, you can spit a web (or similar substance) at a creature or object within \rngmed range.
+    You make a Level vs. Reflex attack against the target.
+    Success means the target is \immobilized for 2 rounds.
+    As a standard action, the target can make a grapple attack or Escape Artist check to escape the webbing.
+    The DR to escape is equal to 10 \add your level.
+
+    If you are 8th level or higher, you can use this ability as a swift action.
+
     \feat{Superior Senses}{General}
     \featpre 6th level.
     \featben You gain one of the following senses.
@@ -238,63 +329,6 @@
     \end{itemize}
     \parhead{Special} You may take this trait multiple times.
     Each time, you choose a new sense.
-
-    \feat{Spit Web}{General}
-    \featben As a standard action, you can spit a web (or similar substance) at a creature or object within \rngmed range.
-    You make a Level vs. Reflex attack against the target.
-    Success means the target is \immobilized for 2 rounds.
-    As a standard action, the target can make a grapple attack or Escape Artist check to escape the webbing.
-    The DR to escape is equal to 10 \add your level.
-
-    If you are 8th level or higher, you can use this ability as a swift action.
-
-    \feat{Magical Ability}{Adept}
-    \featpre Adept level.
-    \featben When you gain this trait, choose a spell.
-    You may also choose any number of augments to apply to the spell, increasing its level appropriately.
-    The spell's total level must be no greater than half your level (minimum 1).
-    You can spend an \glossterm{adept point} to gain that spell's effect as a supernatural ability, as if you had cast the spell.
-    Its spellpower is equal to your level or your \glossterm{adept attribute}, whichever is higher.
-    If you chose any augments when you gained this trait, the spell also gains the effect of those augments.
-
-    When using this ability, you cannot apply additional augments to the spell, apply metamagic feats, or use similar abilities, since you are not actually casting the spell.
-    Likewise, your concentration cannot be disrupted when using this ability.
-
-    \parhead{Special} You may take this trait multiple times.
-    Each time, you choose a new spell.
-
-    \feat{Magical Strike}{Adept}
-    \featpres Natural weapon, adept level 8.
-    \featben When you gain this trait, choose one of your natural weapons and a spell.
-    The spell must be a \glossterm{targeted spell}.
-    You may also choose any number of augments to apply to the spell, increasing its level appropriately.
-    The spell's total level must be no greater than half your level, \sub 3.
-
-    When you make a successful attack with that weapon, you can gain inflict the spell's effects on the struck creature as an immediate action.
-    You can spend an \glossterm{adept point} to gain that spell's effect as a supernatural ability, as if you had cast the spell.
-    Its spellpower is equal to your level or your \glossterm{adept attribute}, whichever is higher.
-    If you chose any augments when you gained this trait, the spell also gains the effect of those augments.
-
-    When using this ability, you cannot apply additional augments to the spell, apply metamagic feats, or use similar abilities, since you are not actually casting the spell.
-    Likewise, your concentration cannot be disrupted when using this ability.
-
-    \parhead{Special} You may take this trait multiple times.
-    Each time, you choose a new spell.
-
-    \feat{Myriad Magical Abilities}{Adept}
-    \featpre Adept level 6.
-    \featben When you gain this trait, choose up to three spells.
-    You may also choose any number of augments to apply to the spell, increasing its level appropriately.
-    The total level of each spell individually must be no greater than half your level, \sub 2.
-    You can spend an \glossterm{adept point} to gain the effects of any of those spells as a supernatural ability, as if you had cast the spell.
-    Its spellpower is equal to your level or your \glossterm{adept attribute}, whichever is higher.
-    If you chose any augments when you gained this trait, the spell also gains the effect of those augments.
-
-    When using this ability, you cannot apply additional augments to the spell, apply metamagic feats, or use similar abilities, since you are not actually casting the spell.
-    Likewise, your concentration cannot be disrupted when using this ability.
-
-    \parhead{Special} You may take this trait multiple times.
-    Each time, you choose up to three new spells.
 
     \feat{Titanic Defenses}{General}
     \featpre Bememoth level 8.
