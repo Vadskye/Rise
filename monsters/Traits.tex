@@ -27,9 +27,11 @@
             \midrule
             \tb{Adept Traits}\label{Adept Traits} & \tb{Prerequisites} & \tb{Benefit} & \tb{Page} \\
             \featref{Draining Touch} & Adept & Gain ability to deal damage with a touch & \featpref{Draining Touch} \\
+            \featref{Humanoid Form} & Adept 4 & Gain ability to change into humanoid form & \featpref{Humanoid Form} \\
             \featref{Magical Ability} & Adept & Gain ability to mimic a spell's effects & \featpref{Magical Ability} \\
             \featref{Magical Strike} & Natural weapon, adept 8 & Natural weapon causes a spell's effects & \featpref{Magical Strike} \\
             \featref{Myriad Magical Abilities} & Adept 6 & Gain many abilities that mimic spell effects & \featpref{Myriad Magical Abilities} \\
+            \featref{Spellcaster} & Adept & Gain ability to cast spells & \featpref{Spellcaster} \\
 
             \midrule
             \tb{Behemoth Traits}\label{Behemoth Traits} & \tb{Prerequisites} & \tb{Benefit} & \tb{Page} \\
@@ -48,6 +50,7 @@
             \featref{Breath Weapon: Line} & Slayer & Gain line-shaped breath weapon & \featpref{Breath Weapon: Line} \\
             \featref{Brute Force} & Slayer & Increase damage of natural weapons & \featpref{Brute Force} \\
             \featref{Burrower} & Slayer 2 & Gain burrow speed & \featpref{Burrower} \\
+            \featref{Damaging Ray} & Slayer & Gain ability to fire damaging ray & \featpref{Damaging Ray} \\
             \featref{Natural Energy} & Natural weapon, slayer 4 & Natural weapon deals energy damage & \featpref{Natural Energy} \\
             \featref{Rend} & Slayer, two strikes, Strength 5, two natural weapons & Deal bonus damage after hitting with two weapons & \featpref{Rend} \\
         \end{longtabu}
@@ -135,6 +138,13 @@
     \feat{Durable}{Behemoth}
     \featpre Behemoth level 1.
     \featben You increase your maximum hit points by an amount equal to twice your level.
+
+    \feat{Damaging Ray}{Slayer}
+    \featpre Slayer level 1.
+    \featben As a standard action, you can fire an ray at a creature or object within \rngclose range.
+    Success deals 1d6 damage per level.
+    You choose the damage type when you gain this trait.
+    Failure deals half damage.
 
     \feat{Great Fortitude}{General}
     \featben You gain a \plus4 bonus to Fortitude defense.
