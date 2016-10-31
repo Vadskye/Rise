@@ -1,0 +1,31 @@
+\ExplSyntaxOn
+\DeclareDocumentEnvironment{monsection}{o m m}
+{
+    \vspace{1em}
+    \begin{thesamepage}
+    \setlength\multicolsep{0pt}
+    \begin{multicols}{2}
+        \IfValueTF{#1}
+        {
+            \lowercase{\hypertarget{mon:#1~#2}{}}
+            \label{mon:#1~#2}
+            \hypertarget{mon:#1~#2}
+                {\subsection{#2,~#1}}
+        }
+        {
+            \lowercase{\hypertarget{mon:#2}{}}
+            \label{mon:#2}
+            \hypertarget{mon:#2}
+                {\subsection{#2}}
+        }
+
+        \columnbreak
+        \begin{flushright}
+            \large\textbf{Level~#3}
+        \end{flushright}
+    \end{multicols}
+}
+{
+    \end{thesamepage}
+}
+\ExplSyntaxOff

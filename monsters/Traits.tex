@@ -1,0 +1,306 @@
+\chapter{Traits}\label{Traits}
+
+\section{Trait Limitations}
+    The number of traits you have from a particular class cannot exceed the levels you have in that class.
+
+\section{Trait Tables}
+    \onecolumn
+
+    \begin{longtabuwrapper}
+        \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{3em}}
+            \lcaption{Traits}\\
+            \tb{General Traits}\label{General Traits} & \tb{Prerequisites} & \tb{Benefit} & \tb{Page} \\
+            \featref{Attribute Mastery} & 2nd level & Gain bonus to attribute & \featpref{Attribute Mastery} \\
+            \featref{Great Fortitude} & \tdash & Gain \plus4 to Fortitude defense & \featpref{Great Fortitude} \\
+            \featref{Incorporeal} & 4th level & Become incorporeal & \featpref{Incorporeal} \\
+            \featref{Increased Size} & 6th level & Increase size with level & \featpref{Increased Size} \\
+            \featref{Instant Reflexes} & \tdash & Gain \plus4 to Reflex defense & \featpref{Instant Reflexes} \\
+            \featref{Mighty Will} & \tdash & Gain \plus4 to Mental defense & \featpref{Mighty Will} \\
+            \featref{Natural Armor} & \tdash & Gain \plus2 to Armor defense & \featpref{Natural Armor} \\
+            \featref{Natural Grab} & Natural weapon, combat prowess 4 & Natural weapon can grapple & \featpref{Natural Grab} \\
+            \featref{Natural Shove} & Natural weapon & Natural weapon can shove & \featpref{Natural Shove} \\
+            \featref{Natural Trip} & Natural weapon & Natural weapon can trip & \featpref{Natural Grab} \\
+            \featref{Natural Venom} & Natural weapon & Natural weapon becomes poisonous & \featpref{Natural Venom} \\
+            \featref{Spit Web} & \tdash & Gain ability to spit immobilizing webs & \featpref{Spit Web} \\
+            \featref{Superior Senses} & \tdash & Gain extraordinary sense & \featpref{Superior Senses} \\
+
+            \midrule
+            \tb{Adept Traits}\label{Adept Traits} & \tb{Prerequisites} & \tb{Benefit} & \tb{Page} \\
+            \featref{Draining Touch} & Adept & Gain ability to deal damage with a touch & \featpref{Draining Touch} \\
+            \featref{Magical Ability} & Adept & Gain ability to mimic a spell's effects & \featpref{Magical Ability} \\
+            \featref{Magical Strike} & Natural weapon, adept 8 & Natural weapon causes a spell's effects & \featpref{Magical Strike} \\
+            \featref{Myriad Magical Abilities} & Adept 6 & Gain many abilities that mimic spell effects & \featpref{Myriad Magical Abilities} \\
+
+            \midrule
+            \tb{Behemoth Traits}\label{Behemoth Traits} & \tb{Prerequisites} & \tb{Benefit} & \tb{Page} \\
+            \featref{Armored Carapace} & Behemoth 4 & Gain \plus4 to Armor defense & \featpref{Armored Carapace} \\
+            \featref{Behemoth Size} & Behemoth 4 & Increase size with level & \featpref{Behemoth Size} \\
+            \featref{Damage Reduction} & Behemoth 6 & Gain damage reduction & \featpref{Damage Reduction} \\
+            \featref{Durable} & Behemoth & Increase maximum hit points & \featpref{Durable} \\
+            \featref{Retributive Spikes} & Behemoth 4 & Deal damage to melee attackers & \featpref{Retributive Spikes} \\
+            \featref{Retributive Punishment} & Behemoth 8 & Deal damage to attackers & \featpref{Retributive Punishment} \\
+            \featref{Titanic Defenses} & Behemoth 8 & \plus2 to all defenses & \featpref{Titanic Defenses} \\
+            \featref{Titanic Body} & Behemoth 8 & Increase size by one size category & \featpref{Titanic Body} \\
+
+            \midrule
+            \tb{Slayer Traits}\label{Slayer Traits} & \tb{Prerequisites} & \tb{Benefit} & \tb{Page} \\
+            \featref{Breath Weapon: Cone} & Slayer & Gain cone-shaped breath weapon & \featpref{Breath Weapon: Cone} \\
+            \featref{Breath Weapon: Line} & Slayer & Gain line-shaped breath weapon & \featpref{Breath Weapon: Line} \\
+            \featref{Brute Force} & Slayer & Increase damage of natural weapons & \featpref{Brute Force} \\
+            \featref{Burrower} & Slayer 2 & Gain burrow speed & \featpref{Burrower} \\
+            \featref{Natural Energy} & Natural weapon, slayer 4 & Natural weapon deals energy damage & \featpref{Natural Energy} \\
+            \featref{Rend} & Slayer, two strikes, Strength 5, two natural weapons & Deal bonus damage after hitting with two weapons & \featpref{Rend} \\
+        \end{longtabu}
+    \end{longtabuwrapper}
+
+    \twocolumn
+
+\section{Trait Descriptions}
+
+    \feat{Armored Carapace}{Behemoth}
+    \featben You gain a \plus4 bonus to Armor defense.
+
+    \feat{Attribute Mastery}{General}
+    \featpre 2nd level.
+    \featben Choose an attribute.
+    You gain a bonus to that attribute equal to your level \sub 1.
+    This effect does not stack with attribute bonuses gained from leveling up (see \pcref{Level Advancement}).
+    \parhead{Special} This trait can be chosen multiple times.
+    Each time, it applies to a different attribute.
+
+    \feat{Behemoth Size}{Behemoth}
+    \featpre Behemoth level 4.
+    \featben Your size increases by one size category.
+    At 8th level, and every four levels thereafter, you can increase your size by one additional size category.
+    This effect stacks with most other effects that increase your size, but does not not stack with the Increased Size trait (see page \featpref{Increased Size}).
+
+    \feat{Breath Weapon: Cone}{Slayer}
+    \featpre Slayer level 1.
+    \featben You gain a breath weapon attack.
+    As a standard action, you can make a Level vs. Reflex attack against all creatures within a \areasmall cone-shaped burst.
+    Success deals 1d8 damage per two levels.
+    You choose the damage type when you gain this trait.
+    Failure deals half damage.
+
+    At slayer level 5, the area increases to \areamed.
+    At slayer level 10, the area increases to \arealarge.
+    At slayer level 15, the area increases to \areahuge.
+    At slayer level 20, the damage increases to 1d10 damage per two levels.
+
+    \feat{Breath Weapon: Line}{Slayer}
+    \featpre Slayer level 1.
+    \featben You gain a breath weapon attack.
+    As a standard action, you can make a Level vs. Reflex attack against all creatures within a \areamed, 5 ft.\ wide line-shaped burst.
+    Success deals 1d8 damage per two levels.
+    You choose the damage type when you gain this trait.
+    Failure deals half damage.
+
+    At slayer level 5, the area increases to a \arealarge, 5 ft.\ wide line.
+    At slayer level 10, the area increases to \arealarge, 10 ft.\ wide line.
+    At slayer level 15, the area increases to \areahuge, 10 ft.\ wide line.
+    At slayer level 20, the damage increases to 1d10 damage per two levels.
+
+    \feat{Brute Force}{Slayer}
+    \featpre Slayer level 1.
+    \featben Your natural attacks deal damage as if you were one size category larger than normal.
+    At your 5th slayer level, and every 5 slayer levels thereafter, your damage increases by an additional size category.
+
+    \feat{Burrower}{2}
+    \featpre Slayer level 2.
+    \featben You gain a burrow speed equal to half your land speed.
+    You can only burrow through loose earth and dirt, and you cannot construct usable tunnels while burrowing.
+
+    At your 6th slayer level, and every 4 slayer levels thereafter, you can gain one of the following abilities.
+    \begin{itemize}
+        \item Your burrow speed because equal to your land speed.
+        \item You gain the ability to construct usable tunnels while burrowing.
+            You burrow at half speed while doing so.
+        \item You gain the ability to burrow through solid rock and objects of similar durability.
+        \item If you have the ability to burrow through solid rock, you can burrow through iron and objects of similar durability.
+    \end{itemize}
+
+    \feat{Damage Reduction}{Behemoth}
+    \featpre Behemoth level 6.
+    \featben You gain damage reduction against physical damage equal to your level.
+    Damage of a type of your choice, or by a special material of your choice, ignores this damage reduction and negates it for 1 round.
+
+    If you are 10th level or higher, you can choose for this damage reduction to apply against all damage, rather than physical damage.
+    Alternately, you can choose for the damage reduction to be impossible to overcome.
+
+    \feat{Durable}{Behemoth}
+    \featpre Behemoth level 1.
+    \featben You increase your maximum hit points by an amount equal to twice your level.
+
+    \feat{Great Fortitude}{General}
+    \featben You gain a \plus4 bonus to Fortitude defense.
+
+    \feat{Incorporeal}{General}
+    \featpre 4th level.
+    \featben You become \glossterm{incorporeal}.
+    You no longer have a land speed, and gain a fly speed with perfect maneuverability.
+    Your fly speed is equal to what your land speed would be.
+
+    \feat{Increased Size}{General}
+    \featpre 6th level.
+    \featben Your size increases by one size category.
+    At 11th level, and every six levels thereafter, you can increase your size by one additional size category.
+    This effect stacks with most other effects that increase your size, but does not not stack with the Behemoth Size trait (see page \featpref{Behemoth Size}).
+
+    \feat{Instant Reflexes}{General}
+    \featben You gain a \plus4 bonus to Reflex defense.
+
+    \feat{Mighty Will}{General}
+    \featben You gain a \plus4 bonus to Mental defense.
+
+    \feat{Natural Armor}{General}
+    \featben You gain a \plus2 bonus to Armor defense.
+
+    \feat{Natural Grab}{General}
+    \featpre At least one \glossterm{natural weapon}, combat prowess 4.
+    \featben Choose one of your natural weapons.
+    When you make a successful attack with that weapon, you can attempt to \glossterm{grapple} the struck creature as an immediate action.
+
+    \feat{Natural Energy}{Slayer 4}
+    \featpre Natural weapon, slayer level 4.
+    \featben Choose a natural weapon and an energy type (acid, cold, electricity, fire).
+    That natural weapon deals 1d6 extra damage of that energy type on every successful attack.
+
+    At slayer level 8, and every 4 slayer levels thereafter, the die size of this damage increases by one.
+
+    \feat{Natural Shove}{General}
+    \featpre At least one \glossterm{natural weapon}.
+    \featben Choose one of your natural weapons.
+    When you make a successful attack with that weapon, you can attempt to \glossterm{shove} the struck creature as an immediate action.
+
+    \feat{Natural Trip}{General}
+    \featpre At least one \glossterm{natural weapon}.
+    \featben Choose one of your natural weapons.
+    When you make a successful attack with that weapon, you can attempt to \glossterm{trip} the struck creature as an immediate action.
+
+    \feat{Natural Venom}{General}
+    \featpre At least one \glossterm{natural weapon}.
+    \featben Choose one of your natural weapons.
+    Whenever you deal physical damage with that weapon, you can inject poison into the damaged creature as an immediate action.
+    The potency of the poison is equal to your level.
+    Choose one of the following poison effects.
+    Some poison effects have level prerequisites, as described in the name of the ability.
+    \begin{itemize}
+        \item Damaging Poison: Primary effect 1d6 poison damage per two potency, terminal effect 1d6 poison damage per potency.
+        \item Sickening Poison: Primary effect \sickened, terminal effect \nauseated for 2 rounds.
+        \item Paralyzing Poison (5th): Primary effect \immobilized, terminal effect \paralyzed for 2 rounds.
+    \end{itemize}
+
+    At 6th level, and every 6 levels thereafter, this ability improves, and you gain one of the following benefits.
+    \begin{itemize}
+        \item Choose a different natural weapon and apply a single type of poison to it.
+        \item Choose a natural weapon that already has poison and apply a new type of poison to it.
+            If one natural weapon has multiple poisons, you can inject all poisons as part of the same immediate action.
+        \item Choose a natural weapon that already has poison.
+            You do not need to spend an immediate action to apply poison with that weapon.
+            You still cannot poison more than one creature per round in this way.
+    \end{itemize}
+
+    \feat{Draining Touch}{Adept}
+    \featpre Adept level 1.
+    \featben If you touch a creature, it takes 1d6 life damage \add 1 per two adept attribute.
+    You heal hit points equal to half the damage dealt in this way.
+    In addition, you become proficient with touching creatures, gaining the normal \plus4 accuracy bonus for proficiency.
+
+    \feat{Rend}{Slayer}
+    \featpres Slayer level 1, two strikes, Strength 5, two natural weapons.
+    \featben If you hit the same target twice in the same round with two different natural weapons, you can rend it as an immediate action.
+    If you do, you make a Strength vs. Fortitude attack against the target.
+    Success deals 1d10 slashing damage per two Strength.
+    Failure deals half damage.
+
+    \feat{Retributive Spikes}{Behemoth}
+    \featpre Behemoth level 4.
+    \featben Whenever a creature hits you with a physical melee attack, the attacking creature takes 1d6 piercing damage per two levels.
+    Any individual creature can only take this damage once per round.
+
+    \feat{Retributive Punishment}{Behemoth}
+    \featpre Behemoth level 8.
+    \featben Whenever a creature within \rngmed range of you attacks you, the attacking creature takes 1d6 damage per two levels.
+    You choose the damage type when you gain this trait.
+    Any individual creature can only take this damage once per round.
+    This is a supernatural ability.
+
+    \feat{Superior Senses}{General}
+    \featpre 6th level.
+    \featben You gain one of the following senses.
+    \begin{itemize}
+        \item Blindsense (200 ft.\ range)
+        \item Darkvision (200 ft.\ range)
+        \item Tremorsense (200 ft.\ range)
+        \item Lifesense (50 ft.\ range)
+        \item Tremorsight (50 ft.\ range)
+        \item Lifesight (20 ft.\ range)
+    \end{itemize}
+    \parhead{Special} You may take this trait multiple times.
+    Each time, you choose a new sense.
+
+    \feat{Spit Web}{General}
+    \featben As a standard action, you can spit a web (or similar substance) at a creature or object within \rngmed range.
+    You make a Level vs. Reflex attack against the target.
+    Success means the target is \immobilized for 2 rounds.
+    As a standard action, the target can make a grapple attack or Escape Artist check to escape the webbing.
+    The DR to escape is equal to 10 \add your level.
+
+    If you are 8th level or higher, you can use this ability as a swift action.
+
+    \feat{Magical Ability}{Adept}
+    \featpre Adept level.
+    \featben When you gain this trait, choose a spell.
+    You may also choose any number of augments to apply to the spell, increasing its level appropriately.
+    The spell's total level must be no greater than half your level (minimum 1).
+    You can spend an \glossterm{adept point} to gain that spell's effect as a supernatural ability, as if you had cast the spell.
+    Its spellpower is equal to your level or your \glossterm{adept attribute}, whichever is higher.
+    If you chose any augments when you gained this trait, the spell also gains the effect of those augments.
+
+    When using this ability, you cannot apply additional augments to the spell, apply metamagic feats, or use similar abilities, since you are not actually casting the spell.
+    Likewise, your concentration cannot be disrupted when using this ability.
+
+    \parhead{Special} You may take this trait multiple times.
+    Each time, you choose a new spell.
+
+    \feat{Magical Strike}{Adept}
+    \featpres Natural weapon, adept level 8.
+    \featben When you gain this trait, choose one of your natural weapons and a spell.
+    The spell must be a \glossterm{targeted spell}.
+    You may also choose any number of augments to apply to the spell, increasing its level appropriately.
+    The spell's total level must be no greater than half your level, \sub 3.
+
+    When you make a successful attack with that weapon, you can gain inflict the spell's effects on the struck creature as an immediate action.
+    You can spend an \glossterm{adept point} to gain that spell's effect as a supernatural ability, as if you had cast the spell.
+    Its spellpower is equal to your level or your \glossterm{adept attribute}, whichever is higher.
+    If you chose any augments when you gained this trait, the spell also gains the effect of those augments.
+
+    When using this ability, you cannot apply additional augments to the spell, apply metamagic feats, or use similar abilities, since you are not actually casting the spell.
+    Likewise, your concentration cannot be disrupted when using this ability.
+
+    \parhead{Special} You may take this trait multiple times.
+    Each time, you choose a new spell.
+
+    \feat{Myriad Magical Abilities}{Adept}
+    \featpre Adept level 6.
+    \featben When you gain this trait, choose up to three spells.
+    You may also choose any number of augments to apply to the spell, increasing its level appropriately.
+    The total level of each spell individually must be no greater than half your level, \sub 2.
+    You can spend an \glossterm{adept point} to gain the effects of any of those spells as a supernatural ability, as if you had cast the spell.
+    Its spellpower is equal to your level or your \glossterm{adept attribute}, whichever is higher.
+    If you chose any augments when you gained this trait, the spell also gains the effect of those augments.
+
+    When using this ability, you cannot apply additional augments to the spell, apply metamagic feats, or use similar abilities, since you are not actually casting the spell.
+    Likewise, your concentration cannot be disrupted when using this ability.
+
+    \parhead{Special} You may take this trait multiple times.
+    Each time, you choose up to three new spells.
+
+    \feat{Titanic Defenses}{General}
+    \featpre Bememoth level 8.
+    \featben You gain a \plus2 bonus to all defenses.
+
+    \feat{Titanic Body}{Behemoth}
+    \featpre Behemoth level 8.
+    \featben Your size increases by one size category.
+    This stacks with other effects that increase your size.
