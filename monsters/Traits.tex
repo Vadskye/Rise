@@ -11,6 +11,7 @@
             \lcaption{Traits}\\
             \tb{General Traits}\label{General Traits} & \tb{Prerequisites} & \tb{Benefit} & \tb{Page} \\
             \featref{Attribute Mastery} & 2nd level & Gain bonus to attribute & \featpref{Attribute Mastery} \\
+            \featref{Evasive} & Dex 5 & Gain \plus2 to physical defenses & \featpref{Evasive} \\
             \featref{Great Fortitude} & \tdash & Gain \plus4 to Fortitude defense & \featpref{Great Fortitude} \\
             \featref{Incorporeal} & 4th level & Become incorporeal & \featpref{Incorporeal} \\
             \featref{Increased Size} & 6th level & Increase size with level & \featpref{Increased Size} \\
@@ -51,6 +52,7 @@
             \featref{Brute Force} & Slayer & Increase damage of natural weapons & \featpref{Brute Force} \\
             \featref{Burrower} & Slayer 2 & Gain burrow speed & \featpref{Burrower} \\
             \featref{Damaging Ray} & Slayer & Gain ability to fire damaging ray & \featpref{Damaging Ray} \\
+            \featref{Endless Breath} & Breath weapon & No delay after using breath weapon & \featpref{Endless Breath} \\
             \featref{Natural Energy} & Natural weapon, slayer 4 & Natural weapon deals energy damage & \featpref{Natural Energy} \\
             \featref{Rend} & Slayer, two strikes, Strength 5, two natural weapons & Deal bonus damage after hitting with two weapons & \featpref{Rend} \\
         \end{longtabu}
@@ -79,24 +81,28 @@
 
     \feat{Breath Weapon: Cone}{Slayer}
     \featpre Slayer level 1.
+    \parhead{Choice} Choose a damage type when you gain this trait.
     \featben You gain a breath weapon attack.
-    As a standard action, you can make a Level vs. Reflex attack against all creatures within a \areasmall cone-shaped burst.
-    Success deals 1d8 damage per two levels.
-    You choose the damage type when you gain this trait.
+    As a standard action, you can make a \glossterm{Power} vs. Reflex attack against all creatures within a \areasmall cone-shaped burst.
+    Success deals 1d8 damage of your chosen damage type per two power.
+    Critical success deals double damage.
     Failure deals half damage.
+    After using this ability, you cannot use it again for 1d4 rounds.
 
     At slayer level 5, the area increases to \areamed.
     At slayer level 10, the area increases to \arealarge.
     At slayer level 15, the area increases to \areahuge.
-    At slayer level 20, the damage increases to 1d10 damage per two levels.
+    At slayer level 20, the damage increases to 1d10 damage per two power.
 
     \feat{Breath Weapon: Line}{Slayer}
     \featpre Slayer level 1.
+    \parhead{Choice} Choose a damage type when you gain this trait.
     \featben You gain a breath weapon attack.
-    As a standard action, you can make a Level vs. Reflex attack against all creatures within a \areamed, 5 ft.\ wide line-shaped burst.
-    Success deals 1d8 damage per two levels.
-    You choose the damage type when you gain this trait.
+    As a standard action, you can make a \glossterm{Power} vs. Reflex attack against all creatures within a \areamed, 5 ft.\ wide line-shaped burst.
+    Success deals 1d8 damage of your chosen damage type per two power.
+    Critical success deals double damage.
     Failure deals half damage.
+    After using this ability, you cannot use it again for 1d4 rounds.
 
     At slayer level 5, the area increases to a \arealarge, 5 ft.\ wide line.
     At slayer level 10, the area increases to \arealarge, 10 ft.\ wide line.
@@ -137,14 +143,25 @@
 
     \feat{Durable}{Behemoth}
     \featpre Behemoth level 1.
-    \featben You increase your maximum hit points by an amount equal to twice your level.
+    \featben You increase your maximum hit points by an amount equal to twice your \glossterm{power}.
 
     \feat{Damaging Ray}{Slayer}
     \featpre Slayer level 1.
+    \parhead{Choice} Choose a damage type when you gain this trait.
     \featben As a standard action, you can fire an ray at a creature or object within \rngclose range.
-    Success deals 1d6 damage per level.
-    You choose the damage type when you gain this trait.
+    You make a \glossterm{Power} vs. Reflex attack against the target.
+    Success deals 1d6 damage of your chosen damage type per power.
+    Critical success deals double damage.
     Failure deals half damage.
+
+    \feat{Endless Breath}{Slayer}
+    \featpre Breath weapon.
+    \featben You can use your breath weapon at will.
+    You do not need to wait for it to recharge.
+
+    \feat{Evasive}{General}
+    \featpre Dexterity 5.
+    \featben You gain a \plus2 bonus to \glossterm{physical defenses}.
 
     \feat{Great Fortitude}{General}
     \featben You gain a \plus4 bonus to Fortitude defense.
@@ -191,7 +208,7 @@
     You may also choose any number of augments to apply to the spell, increasing its level appropriately.
     The spell's total level must be no greater than half your level (minimum 1).
     You can spend an \glossterm{adept point} to gain that spell's effect as a supernatural ability, as if you had cast the spell.
-    Its spellpower is equal to your level or your \glossterm{adept attribute}, whichever is higher.
+    Its spellpower is equal to your \glossterm{power}.
     If you chose any augments when you gained this trait, the spell also gains the effect of those augments.
 
     When using this ability, you cannot apply additional augments to the spell, apply metamagic feats, or use similar abilities, since you are not actually casting the spell.
@@ -209,7 +226,7 @@
 
     When you make a successful attack with that weapon, you can gain inflict the spell's effects on the struck creature as an immediate action.
     You can spend an \glossterm{adept point} to gain that spell's effect as a supernatural ability, as if you had cast the spell.
-    Its spellpower is equal to your level or your \glossterm{adept attribute}, whichever is higher.
+    Its spellpower is equal to your \glossterm{power}.
     If you chose any augments when you gained this trait, the spell also gains the effect of those augments.
 
     When using this ability, you cannot apply additional augments to the spell, apply metamagic feats, or use similar abilities, since you are not actually casting the spell.
@@ -224,7 +241,7 @@
     You may also choose any number of augments to apply to the spell, increasing its level appropriately.
     The total level of each spell individually must be no greater than half your level, \sub 2.
     You can spend an \glossterm{adept point} to gain the effects of any of those spells as a supernatural ability, as if you had cast the spell.
-    Its spellpower is equal to your level or your \glossterm{adept attribute}, whichever is higher.
+    Its spellpower is equal to your \glossterm{power}.
     If you chose any augments when you gained this trait, the spell also gains the effect of those augments.
 
     When using this ability, you cannot apply additional augments to the spell, apply metamagic feats, or use similar abilities, since you are not actually casting the spell.
@@ -262,11 +279,11 @@
     \featpre At least one \glossterm{natural weapon}.
     \featben Choose one of your natural weapons.
     Whenever you deal physical damage with that weapon, you can inject poison into the damaged creature as an immediate action.
-    The potency of the poison is equal to your level.
+    The potency of the poison is equal to your \glossterm{power}.
     Choose one of the following poison effects.
     Some poison effects have level prerequisites, as described in the name of the ability.
     \begin{itemize}
-        \item Damaging Poison: Primary effect 1d6 poison damage per two potency, terminal effect 1d6 poison damage per potency.
+        \item Damaging Poison: Primary effect 1d6 poison damage per two potency, terminal effect 1d8 poison damage per potency.
         \item Sickening Poison: Primary effect \sickened, terminal effect \nauseated for 2 rounds.
         \item Paralyzing Poison (5th): Primary effect \immobilized, terminal effect \paralyzed for 2 rounds.
     \end{itemize}
@@ -283,25 +300,25 @@
 
     \feat{Draining Touch}{Adept}
     \featpre Adept level 1.
-    \featben If you touch a creature, it takes 1d6 life damage \add 1 per two adept attribute.
+    \featben If you touch a creature, it takes 1d6 life damage \add 1 per two \glossterm{power}.
     You heal hit points equal to half the damage dealt in this way.
     In addition, you become proficient with touching creatures, gaining the normal \plus4 accuracy bonus for proficiency.
 
     \feat{Rend}{Slayer}
     \featpres Slayer level 1, two strikes, Strength 5, two natural weapons.
     \featben If you hit the same target twice in the same round with two different natural weapons, you can rend it as an immediate action.
-    If you do, you make a Strength vs. Fortitude attack against the target.
-    Success deals 1d10 slashing damage per two Strength.
+    If you do, you make a \glossterm{Power} vs. Fortitude attack against the target.
+    Success deals 1d10 slashing damage per two power.
     Failure deals half damage.
 
     \feat{Retributive Spikes}{Behemoth}
     \featpre Behemoth level 4.
-    \featben Whenever a creature hits you with a physical melee attack, the attacking creature takes 1d6 piercing damage per two levels.
+    \featben Whenever a creature hits you with a physical melee attack, the attacking creature takes 1d6 piercing damage per two \glossterm{power}.
     Any individual creature can only take this damage once per round.
 
     \feat{Retributive Punishment}{Behemoth}
     \featpre Behemoth level 8.
-    \featben Whenever a creature within \rngmed range of you attacks you, the attacking creature takes 1d6 damage per two levels.
+    \featben Whenever a creature within \rngmed range of you attacks you, the attacking creature takes 1d6 damage per two \glossterm{power}.
     You choose the damage type when you gain this trait.
     Any individual creature can only take this damage once per round.
     This is a supernatural ability.
@@ -313,16 +330,17 @@
     You know a number of spells equal to half your adept level \add 1.
     These spells can be of any level.
     You can spend an adept point to cast any spell you know.
+    Your spellpower is equal to your \glossterm{power}.
     \parhead{Special} You may take this trait multiple times.
     Each time, you choose a new type of spellcasting.
     You track your spells known separately for each type of spellcasting you have.
 
     \feat{Spit Web}{General}
     \featben As a standard action, you can spit a web (or similar substance) at a creature or object within \rngmed range.
-    You make a Level vs. Reflex attack against the target.
+    You make a \glossterm{Power} vs. Reflex attack against the target.
     Success means the target is \immobilized for 2 rounds.
     As a standard action, the target can make a grapple attack or Escape Artist check to escape the webbing.
-    The DR to escape is equal to 10 \add your level.
+    The DR to escape is equal to 10 \add your power.
 
     If you are 8th level or higher, you can use this ability as a swift action.
 
