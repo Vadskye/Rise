@@ -8,61 +8,63 @@
                 \pari \mb{Size} Small; \mb{Reach} 5 ft.
             \end{spelltargetinginfo}
             \begin{spelleffects}
-                \pari \mb{HP} 24; \mb{Defenses} AD 19, Fort 12, Ref 21, Wil 16
-                \pari \mb{Attacks} Bite \plus12 (1d6\plus2, 1d6 electricity); \mb{Strikes} 1
-                \pari \mb{Special Attacks} Electricity ray \plus4 (3d6 electricity)
-                \pari \mb{Attributes} Str 2, Dex 7, Con 2, Int 0, Per 6, Wil 2
+                \pari \mb{HP} 24; \mb{Defenses} AD 21, Fort 12, Ref 21, Wil 16
+                \pari \mb{Attacks} Bite \plus11 (1d6\plus2, 1d6 electricity); \mb{Strikes} 1
+                \pari \mb{Special Attacks} Electricity ray \plus5 (4d6 electricity)
+                \pari \mb{Attributes} Str 2, Dex 6, Con 2, Int 0, Per 6, Wil 2
             \end{spelleffects}
         \end{spellcontent}
         \begin{spellfooter}
+            \pari \mb{Languages} Auran
             \pari \mb{Levels} Slayer 3
-            \pari \mb{Environment} Plane of Air
-            \pari \mb{Organization} Solitary or clutch (2-4)
-            \pari \mb{Traits} Flight, Damaging Ray, Natural Energy
+            \pari \mb{Encounter} Plane of Air; solitary or clutch (2-4)
+            \pari \mb{Abilities} Natural armor \plus2, Flight, Damaging Ray, Natural Energy
         \end{spellfooter}
     \end{monsection}
 
     \parhead{Electricity Ray} As a standard action, an arrowhawk can fire a ray of electricity from its tail at a creature or object within \rngmed range.
-    It makes an attack vs. Reflex against the target with a \plus4 accuracy.
-    Success means the target takes 3d6 electricity damage.
+    It makes a \plus5 vs. Reflex attack against the target.
+    Success means the target takes 3d10 electricity damage.
+    Critical success deals double damage.
     Failure deals half damage.
 
     \begin{monsection}[Bebelith]{Demon}{11}
         \begin{spellcontent}
             \begin{spelltargetinginfo}
                 \pari \mb{Senses} Awareness \plus{16}, darkvision 50 ft.
-                \pari \mb{Movement} 50 ft.\ land speed
+                \par Telepathy (100 ft. range, willing only)
+                \pari \mb{Movement} 50 ft.\ land speed, 25 ft. climb speed
                 \pari \mb{Size} Huge; \mb{Reach} 10 ft.
             \end{spelltargetinginfo}
             \begin{spelleffects}
-                \pari \mb{HP} 209; \mb{Defenses} AD 27, Fort 39, Ref 21, Ment 22
+                \pari \mb{HP} 237; \mb{Defenses} AD 27, Fort 39, Ref 21, Ment 22
                 \pari \mb{Attacks} Bite +16 (2d10+7, poison); \mb{Strikes} 3
                 \par Claw +16 (2d8+7, rend)
-                \pari \mb{Special Attacks} [Immediate] Poison \plus11 vs Fort (6d6, 13d6)
-                \par [Immediate] Rend +14 vs. Fort (7d10)
-                \par [Swift] Web +11 vs. Ref (immobilized 2 rounds)
+                \pari \mb{Special Attacks} Poison \plus14 vs Fort (6d6, 13d6) [Immediate]
+                \par Rend +14 vs. Fort (7d10) [Immediate]
+                \par Web +14 vs. Ref (immobilized 2 rounds) [Swift]
                 \pari \mb{Attributes} Str 14, Dex 4, Con 13, Int 1, Per 5, Wil 2
             \end{spelleffects}
         \end{spellcontent}
         \begin{spellfooter}
+            \pari \mb{Languages} Abyssal (hearing only)
             \pari \mb{Levels} Behemoth 5, Slayer 6
-            \pari \mb{Environment} The Abyss
-            \pari \mb{Organization} Solitary
-            \pari \mb{Traits} Behemoth Size, Natural Venom, Rend, Spit Web, Armored Carapace, Brute Force
+            \pari \mb{Encounter} The Abyss; solitary
+            \pari \mb{Abilities} Natural armor \plus4, Behemoth Size, Natural Venom, Rend, Spit Web, Brute Force, Durable
         \end{spellfooter}
     \end{monsection}
 
     \parhead{Poison} If a bebelith damages a target with its bite attack, it can inject poison as an immediate action.
-    The poison's potency is 11.
-    The primary effect makes the target \sickened and deals 5d6 poison damage.
-    The terminal effect makes the target \nauseated for 1 round and deals 11d6 poison damage.
+    The poison's potency is 14.
+    The primary effect makes the target \sickened and deals 7d6 poison damage.
+    The terminal effect makes the target \nauseated for 1 round and deals 14d8 poison damage.
 
     \parhead{Rend} If a bebelith hits the same target with two claw attacks in the same round, it can attempt to rend as an immediate action.
-    It makes an attack vs. Fortitude with a \plus14 accuracy.
+    It makes a \plus14 vs. Fortitude attack against the target.
     Success deals 7d10 bludgeoning damage.
 
     \parhead{Web} As a swift action, a bebelith can spit a web at a creature or object within \rngmed range.
-    It makes an attack vs. Reflex against the target with a \plus11 accuracy.
+    It makes a \plus14 vs. Reflex attack against the target.
     Success means the target is \immobilized for 2 rounds.
 
     As a standard action, the target can make a grapple attack or Escape Artist check to escape the webbing.
