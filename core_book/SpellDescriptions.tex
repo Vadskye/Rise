@@ -1539,7 +1539,7 @@
         \spellinfo{Illusion [Figment, Unreal]}{Arcane, Trickery}
         \spellnotes When you cast this spell, you make a check with a bonus equal to 10 \add your spellpower. Creatures can recognize the figment as unreal by interacting with it physically, or by making a Awareness check against a DR equal to your check result when casting the spell. A creature gets a \plus10 bonus on this Awareness check when using senses which should be present in the figment, but which are missing.
 
-        A creature faced with definitive proof that the figment is unreal can disbelieve it, treating it as if it were not there.
+        A creature that disbelieves the effect can treat it as if it did not exist. Its effects can still be observed if desired, but they are mere shadows of the full effect: visual effects appear translucent outlines, sounds can be heard as ghostly echoes, and so on.
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -2488,11 +2488,11 @@
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellsuccess The target and its equipment instantly grows, doubling its height and multiplying its weight by 8. This changes the creature's size category to the next larger one. This has several effects.
                 \begin{itemize}
-                    \item \plus10 ft.\ bonus to movement speed.
                     \item \plus4 bonus to Fortitude defense.
                     \item \minus1 penalty to other physical accuracy and defenses.
                     \item \minus4 penalty to Stealth checks.
                     \item Weapons increase damage die size (see \tref{Weapon Damage and Size}).
+                    \item If the target's new size is Small or smaller, it gains a \plus5 ft.\ bonus to movement speed. Otherwise, it gains a \plus10 ft.\ bonus to movement speed.
                 \end{itemize}
                 \par If insufficient room is available for the desired growth, the creature attains the maximum possible size and may make a Strength check (using its increased Strength) to burst any enclosures in the process. If it fails, it is constrained without harm by the materials enclosing it -- the spell cannot be used to crush a creature by increasing its size.
                 \par Equipment that leaves the target's possession returns to its original size.
@@ -5452,11 +5452,11 @@
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellsuccess The target and its equipment instantly shrinks, halving its height and dividing its weight by 8. This changes the creature's size category to the next smaller one. This has several effects.
                 \begin{itemize}
-                    \item \minus10 ft.\ penalty to movement speed.
                     \item \minus4 penalty to Fortitude defense.
                     \item \plus1 bonus to other physical attacks and defenses.
                     \item \plus4 bonus to Stealth checks.
                     \item Weapons decrease damage die size (see \tref{Weapon Damage and Size}).
+                    \item If the target's new size is Medium or larger, it takes a \minus10 ft.\ penalty to movement speed. Otherwise, it takes a \minus5 ft.\ penalty to movement speed.
                 \end{itemize}
                 \par Equipment that leaves the target's possession returns to its original size.
             \end{spellattack}
