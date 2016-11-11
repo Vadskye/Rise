@@ -95,30 +95,32 @@
         \subsubsection{Point Buy}
             With this method, you can fully control your character's attribute scores to match what you want your character to be.
             All your character's attribute scores start at 0.
-            You get 10 points to distribute among your character's attribute scores.
-            Attribute scores can be bought according to the costs on \trefnp{Attribute Score Point Costs}.
+            You get 12 points to distribute among your character's attributes.
+            Attributes can be bought according to the costs on \trefnp{Attribute Score Point Costs}.
+
+            \parhead{Penalized Attributes}
+            You can start with up to two attributes below 0.
+            If you do, you compensate for your impairment in that area with additional talents in other areas.
+            For each point below 0, you gain an additional skill point.
 
             \begin{dtable}
                 \lcaption{Attribute Score Point Costs}
                 \begin{dtabularx}{\columnwidth}{X X}
-                    \tb{Attribute Score} & \tb{Point Cost} \\
+                    \tb{Attribute Score}        & \tb{Point Cost} \\
                     \hline
-                    \minus2\fn{1} & \minus2 \\
-                    \minus1\fn{1} & \minus1 \\
-                    0       & 0             \\
-                    1       & 1             \\
-                    2       & 2             \\
-                    3       & 3             \\
-                    4       & 5             \\
-                    5       & 8             \\
+                    \minus2\fn{1}               & 0\fn{2}         \\
+                    \minus1\fn{1}               & 0\fn{3}         \\
+                    0                           & 0               \\
+                    1 \add one-quarter level    & 1               \\
+                    2 \add half level           & 2               \\
+                    3 \add three-quarters level & 3               \\
+                    3 \add level                & 5               \\
+                    4 \add level                & 8               \\
                 \end{dtabularx}
-                1 If you reduce an attribute below 0, it is a \glossterm{flawed attribute} (see Flawed Attributes, below).
-                You cannot reduce more than two attributes below 0 in this way.
+                1 You cannot reduce more than two attributes below 0 in this way. \\
+                2 You gain two skill points. \\
+                3 You gain one skill point. \\
             \end{dtable}
-
-        \subsubsection{Flawed Attributes}\label{Flawed Attributes}
-            If you reduce an attribute below 0 at character creation, it is considered a flawed attribute.
-            A flawed attribute cannot be increased by the attribute increases you gain as you gain levels (see \pcref{Character Advancement}).
 
 \section{Combat Overview}\label{Combat Overview}
 
