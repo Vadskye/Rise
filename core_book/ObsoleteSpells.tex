@@ -1561,3 +1561,23 @@
         \spellaugment{3}{Mass}{The spell can affect up to five targets.}
     \end{spellaugments}
 \end{spellsection}
+
+\begin{spellsection}{Shield of Faith}[1]
+    \begin{spellheader}
+        \spelldesc{You create a floating shield that protects you.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect The target gains a floating shield with a \plus2 defense bonus. Unlike a mundane shield, this shield does not require a free hand and has no \glossterm{encumbrance penalty} or arcane spell failure chance.
+            \spelldur \durpersonallong
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Conjuration/Transmutation [Shielding]}{Divine}
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
+
