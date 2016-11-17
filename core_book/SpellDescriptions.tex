@@ -26,7 +26,7 @@
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
-        \spellaugment{1}{Spellshield}{Damage from spells is also reduced. Spells that are not subject to spell resistance are not affected.}
+        \spellaugment{1}{Complete}{The damage reduction applies against all damage, not just physical damage.}
         \spellaugment{4}{Empowered}{The damage reduction is equal to twice your spellpower.}
     \end{spellaugments}
 \end{spellsection}
@@ -165,7 +165,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration [Barrier]}{Divine, Nature}
+        \spellinfo{Vivimancy [Barrier]}{Divine, Nature}
         \spellnotes Barrier spells may be used only defensively, not aggressively. Creatures in the area at the time that the spell is cast are unaffected by the spell.
         \miscastexplode
     \end{spellfooter}
@@ -836,13 +836,21 @@
             \spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect Ground within the area is considered difficult terrain. At the end of every round, make a Spellpower vs. Fortitude defense against all creatures in the area that are within 5 feet of the ground. Success against a creature means it takes \spelldamage{bludgeoning}[d8]. A critical success causes the target to be \immobilized for the duration of the spell.
+            \spelleffect Each 5-ft.\ square within the spell that is adjacent to a solid surface contains a single tentacle.
+            A square with a tentacle is considered difficult terrain.
+            At the end of every round, each tentacle attacks one random creature within its space.
+            You make a Spellpower vs. Fortitude attack to determine the success of each tentacle's attack.
+            Success against a target means it takes \spelldamage{bludgeoning}[d8].
+            A critical success causes the target to be \immobilized for the duration of the spell, and the tentacle in that space stops attacking until the creature breaks free.
+
+            The tentacles can be attacked and destroyed.
+            Each tentacle has defenses equal to 10 \add your spellpower, and hit points equal to three times your spellpower.
+            If a tentacle is destroyed, its space is no longer considered difficult terrain and can be traversed safely.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation}{Arcane}
-        \spellnotes The tentacles are immune to all forms of attack.
+        \spellinfo{Conjuration/Transmutation [Augment, Creation]}{Arcane}
         \miscastyou
     \end{spellfooter}
     \begin{spellaugments}
@@ -1758,7 +1766,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration/Vivimancy [Positive, Shielding]}*{Divine, Protection}
+        \spellinfo{Vivimancy [Positive, Shielding]}*{Divine, Protection}
         \spellnotes This does not prevent the targets from dying by means other than Death effects, such as by taking critical damage.
         \miscastexplode
     \end{spellfooter}
@@ -1805,7 +1813,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration [Shielding]}{Arcane}
+        \spellinfo{Evocation [Shielding]}{Arcane, Protection}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -2550,7 +2558,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration [Shielding]}{Chaos, Divine}
+        \spellinfo{Evocation [Shielding]}{Chaos, Divine}
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -2742,7 +2750,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration/Evocation [Fire, Shielding]}{Arcane, Fire}
+        \spellinfo{Evocation [Fire, Shielding]}{Arcane, Fire}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -3765,7 +3773,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration/Vivimancy [Life, Shielding]}{Arcane, Life}
+        \spellinfo{Vivimancy [Life, Shielding]}{Arcane, Life}
         \spellnotes A creature affected by this spell cannot be affected by other \spell{lifebound} spells.
         \miscastexplode
     \end{spellfooter}
@@ -3826,11 +3834,11 @@
             \spelltwocol{\spelltgt{One willing ally}[Secondary]}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You throw a willing ally at the target. The ally gains damage reduction against physical damage equal to twice your spellpower for 1 round.
+            \spelleffect You throw a willing ally at the target. The ally gains damage reduction against physical damage equal to twice your spellpower for 2 rounds.
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess The target takes \spelldamage{bludgeoning}. The ally takes half this damage.
-                \spellcritical As above, but double damage. This does not increase the damage taken by the ally.
-                \spellfailure The target takes half damage. This does not reduce the damage taken by the ally.
+                \spellsuccess The target takes \spelldamage{bludgeoning}. The ally takes half this damage, reduced by the damage reduction as appropriate.
+                \spellcritical As above, but the target takes doubles damage. This does not increase the damage taken by the ally.
+                \spellfailure As above, but the target takes half damage. This does not reduce the damage taken by the ally.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -3904,7 +3912,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration [Force]}{Arcane}
+        \spellinfo{Evocation [Force]}{Arcane}
         \spellnotes If you cast this spell twice, you can gain both body armor and a shield. The armor created by this spell is treated as a separate piece or armor from any other armor the creature is wearing, so it does not stack with any existing bonuses. Since this armor is made of force, incorporeal creatures can't bypass it the way they do normal armor.
         \miscastexplode
     \end{spellfooter}
@@ -4034,7 +4042,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration/Vivimancy [Life]}{Divine, Good, Protection}
+        \spellinfo{Vivimancy [Life]}{Divine, Good, Protection}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -4204,7 +4212,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration [Shielding]}{Arcane}
+        \spellinfo{Enchantment [Shielding]}{Arcane}
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -4620,7 +4628,7 @@
             \spellemanation{\arealarge radius fromyou}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You loudly declare a prohibition on a single, specific action which creatures must not take, such as ``Do not use ranged weapons'' or ``Do not lie''. You may choose any action that must be taken intentionally, but not involuntary actions or states of being, such as breathing or wearing armor. If the rule is too complicated, the spell fails.
+            \spelleffect You loudly declare a prohibition on a single, specific action which creatures must not take, such as ``Do not use ranged weapons'' or ``Do not lie''. You may choose any action that must be taken intentionally, but not involuntary actions or states of being, such as breathing or wearing armor. If the rule is too complicated, the spell fails. You also choose a type of \glossterm{energy damage}.
 
             The spell grants all creatures that enter the area an understanding of the prohibition, even if they were unable to understand the rule as originally stated. If you break the rule, the spell ends -- after you suffer the consequences.
             \spelldur \durshort
@@ -4631,11 +4639,11 @@
             \spelltwocol{\spelltgr{A creature breaks the rule}}{\spelltgt{Triggering creature}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect \spelldamage{}[d8]. You know a creature broke the rule, but not which creature.
+            \spelleffect \spelldamage{}[d8] of the chosen damage type. You know a creature broke the rule, but not which creature.
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration/Divination}*{Arcane, Law}
+        \spellinfo{Divination/Evocation}*{Arcane, Law}
         \spellnotes Mindless creatures are given no special insight into the rule. Any individual creature can only take damage for breaking the rule once per round.
         \miscastexplode
     \end{spellfooter}
@@ -4737,27 +4745,25 @@
     \end{spellaugments}
 \end{spellsection}
 
-\begin{spellsection}{Repulsion}[5]
+\begin{spellsection}{Repulsion}[6]
     \begin{spellheader}
         \spelldesc{An invisible, mobile field surrounds you and prevents creatures from approaching you.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spellemanation{\areahuge radius from you}
-            \spelltwocol{\spelltgr{A creature in the area moves towards you}}{\spelltgt{The moving creature}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target is unable to move towards you for the remainder of the spell. It can stand still, or alter the direction of its movement to move parallel towards you or away from you.
-                \spellcritical The target's movement is cancelled, and it is shoved backwards to the edge of the area.
-                If it encounters an obstacle, it stops moving. It cannot move towards you for the remainder of the spell.
-                \spellfailure The target's movement is unimpeded, and it is immune to the spell for the rest of its duration.
-            \end{spellattack}
+            Whenever a creature within the area tries to move towards you, you can make a Spellpower vs. Mental attack against it.
+            \spellsuccess The creature is unable to move towards you for the remainder of the spell. It can stand still, or alter the direction of its movement to move parallel towards you or away from you.
+            \spellcritical The creature's movement is cancelled, and it is shoved backwards to the edge of the area.
+            If it encounters an obstacle, it stops moving. It cannot move towards you for the remainder of the spell.
+            \spellfailure The creature's movement is unimpeded, and it is immune to the spell for the rest of its duration.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration [Barrier]}{Arcane, Protection}
+        \spellinfo{Evocation [Barrier]}{Arcane}
         \spellnotes Unlike most barrier spells, this spell does not collapse if you move towards a creature held at bay by the barrier. The spell continues to prevent that creature from approaching you, but the creature suffers no other ill effect.
         \miscastexplode
     \end{spellfooter}
@@ -4771,7 +4777,7 @@
             \spellquicktargeting{One creature}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains damage reduction against energy damage (acid, cold, electricity, fire) equal to your spellpower.
+            \spelleffect The target gains damage reduction against \glossterm{energy damage} equal to your spellpower.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
@@ -5043,8 +5049,8 @@
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration/Enchantment [Compulsion, Mind, Shielding]}{Arcane, Divine, Protection}
-        \spellnotes This is considered a mental effect on any creature that attempts to attack the target. Creatures immune to mental effects can attack the target freely.
+        \spellinfo{Enchantment [Compulsion, Mind, Shielding]}{Arcane, Divine, Protection}
+        \spellnotes This is considered a \glossterm{Mind} effect on any creature that attempts to attack the target. Creatures immune to Mind effects can attack the target freely.
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -5143,7 +5149,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Divination/Transmutation [Imbuement]}{Arcane}
+        \spellinfo{Divination [Imbuement]}{Arcane}
         \spellnotes The spell does not reveal the method used to obtain invisibility. It does not reveal illusions other than invisibility. It does not reveal creatures who are simply hiding, concealed, or otherwise hard to see.
         \miscastexplode
     \end{spellfooter}
@@ -5247,7 +5253,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration/Illusion [Barrier, Figment, Unreal]}{Arcane, Trickery}
+        \spellinfo{Evocation/Illusion [Barrier, Figment, Unreal]}{Arcane, Trickery}
         \spellnotes Creatures can identify that the wall is an illusion, as \spell{create image}.
         This can allow creatures to see through the wall, but does not allow them to pass through it.
         \miscastexplode
@@ -5316,7 +5322,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Conjuration/Illusion [Figment, Glamer, Teleportation, Unreal]}*{Arcane, Trickery}
+        \spellinfo{Conjuration/Illusion [Figment, Glamer, Teleportation, Unreal]}*{Arcane, Travel, Trickery}
         \spellnotes Creatures can identify the duplicate as illusory, as \spell{create image}.
         \miscastexplode
     \end{spellfooter}
@@ -5370,25 +5376,6 @@
         \spellaugment{2}{Lifebound}{The targets also share healing in the same way that they share damage.}
         \spellaugment{3}{Distant}{The targets are considered to be within range of each other as long as they are on the same plane, regardless of their distance from each other.}
     \end{spellaugments}
-\end{spellsection}
-
-\begin{spellsection}{Shield of Faith}[1]
-    \begin{spellheader}
-        \spelldesc{You create a shimmmering, magical shield that protects you.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect The target gains a floating shield with a \plus2 defense bonus. Unlike a mundane shield, this shield does not require a free hand and has no \glossterm{encumbrance penalty} or arcane spell failure chance.
-            \spelldur \durpersonallong
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Abjuration [Shielding]}{Divine}
-        \miscastexplode
-    \end{spellfooter}
 \end{spellsection}
 
 \begin{spellsection}{Shocking Grasp}[1]
@@ -5756,7 +5743,7 @@
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration/Evocation [Air, Electricity, Shielding]}{Air, Nature}
+        \spellinfo{Evocation [Air, Electricity, Shielding]}{Air, Nature}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
