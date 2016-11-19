@@ -501,7 +501,7 @@ A character's skills describe the myriad of talents that people have.
             \end{dtabularx}
         \end{dtable}
 
-        If you can't reach an edge, you can jump to grab it (see \pcref{High Jump}).
+        If you can't reach an edge, you can jump to grab it (see \pcref{Leap}).
 
     \subsection{Stop Fall}\label{Stop Fall}
         It is possible, but difficult, to make a Climb check to stop yourself from falling when near a wall. To catch yourself while falling, make a Climb check against a DR equal to the wall's DR \add 10.
@@ -777,12 +777,13 @@ A character's skills describe the myriad of talents that people have.
     \subsection{Demoralize}\label{Demoralize}
         As a standard action, you can make an Intimidate check against a creature within \rngmed range of you. The DR is equal to the target's Mental defense. If you succeed, the creature is \shaken by you for 2 rounds.
 
-    \skill{Jump}{Str}
+    \skill{Jump}{Str}\label{Jump}
         The Jump skill represents your ability to jump. All Jump checks are made as part of movement, so they take no special action to perform. Distance moved with Jump checks is counted against your normal maximum movement in a round.
 
         Several modifiers apply to all Jump checks, which are described below.
 
-        \parhead{Running Start}\label{Running Start} If you move at least twenty feet before jumping, you have a running start. Jumping without a running start is difficult, and you take a \minus10 penalty to all Jump checks.
+        \parhead{Running Start}\label{Running Start} If you move at least twenty feet before jumping, you have a running start.
+        Jumping without a running start is difficult, and you take a \minus10 penalty to all Jump checks.
 
         \parhead{Land Speed} For every 5 feet by which your land speed is slower than 30 feet, you take a \minus4 penalty to Jump checks. If you jump with a running start, for every 5 feet by which your land speed exceeds 30 feet, you gain a \plus2 bonus to your Jump checks.
 
@@ -792,18 +793,27 @@ A character's skills describe the myriad of talents that people have.
     \subsection{Jump Down}
         You can make a DR 10 Jump check while moving to intentionally jump down from a height to reduce your falling damage. Success means you take damage as if you had dropped 10 fewer feet than you actually did. Failure means you take the normal falling damage. You do not need to get a running start to hop up.
 
-    \subsection{Long Jump}\label{Long Jump}
-        As part of movement, you can make a Jump check to jump forward. You move forward any number of feet, up to a maximum equal to your Jump check result. At the midpoint of the jump, you achieve a height equal to a quarter of your forward distance. If you do not have a running start, making a long jump is more difficult (see \pcref{Running Start}).
+    \subsection{Leap}\label{Leap}
+        As part of movement, you can make a Jump check to jump.
+        You move forward any number of feet, up to a maximum equal to your Jump check result.
+        Your maximum height must be no greater than a quarter of your Jump check result, and at least equal to a quarter of your forward distance travelled.
+        For example, if you jump forward twenty feet with a Jump check result of 40, your maximum height must be between 5 and 10 feet.
 
-        If your movement is not stopped by hitting the ground after travelling the normal distance, such as if you jump off a ledge, you move one quarter of your jump distance farther forward as you fall before your fall becomes entirely downward. If an insufficiently long jump would cause you to fall into a gap, you can attempt to stop your fall (see \pcref{Stop Fall}) if you can reach the wall.
+        You always reach your maximum height at the midpoint of the jump.
+        However, you can interrupt your leap before travelling the full horizontal distance.
+        For example, if you need to travel five feet forward and five feet vertically to reach a rope, you can start a leap which would take you ten feet forward and reach a maximum height of five feet.
+        Making such a leap would require a Jump check of 20.
+        When you reach the rope, you can stop your movement there, ignoring the forward motion which would make you travel the full ten feet.
 
-    \subsection{High Jump}\label{High Jump}
-        As part of movement, you can make an Jump check to jump up. You can jump up any number of feet, up to a maximum equal to one quarter of your check result in feet. If you do not have a running start, making a high jump is more difficult (see \pcref{Running Start}).
+        When leaping, your movement may not stopped by hitting the ground after travelling the normal distance, such as if you jump off of a ledge.
+        In that case, you move one quarter of your jump distance farther forward as you fall before your fall becomes entirely downward.
+        If an insufficiently long jump would cause you to fall into a gap, you can attempt to stop your fall (see \pcref{Stop Fall}) if you can reach the wall.
 
-        If you jumped up to grab something, you can grab it and pull yourself up with a Climb check (see \pcref{Grab Edge}).
-
-    \subsection{Rebounding Jump}\label{Rebounding Jump}
-        While in midair, if you make contact with a solid object that can support your weight, you can jump off of that object. You are not considered to have a running start. In addition, you take a \minus10 penalty to the check (after the halving), because rebounding off of an object in midair is difficult. You must travel at least 10 feet between each rebounding jump.
+    \subsection{Rebounding Leap}\label{Rebounding Leap}
+        While in midair, if you make contact with a solid object that can support your weight, you can jump off of that object.
+        You are not considered to have a running start.
+        In addition, you take a \minus10 penalty to the check (after the halving), because rebounding off of an object in midair is difficult.
+        You must travel at least 10 feet between each rebounding jump.
 
     \skill{Knowledge}{Int}
         Like the Craft, Profession, and Perform skills, Knowledge actually encompasses a number of separate skills. Knowledge represents a study of some body of lore, possibly an academic or even scientific discipline. Below are listed typical fields of study.
