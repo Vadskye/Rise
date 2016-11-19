@@ -24,6 +24,7 @@
             \tb{General Traits}\label{General Traits} & \tb{Prerequisites} & \tb{Benefit} & \tb{Trait Types} & \tb{Page} \\
             \featref{Attribute Mastery} & 2nd level & Gain bonus to attribute & Augment & \featpref{Attribute Mastery} \\
             \featref{Evasive} & Dex 5 & Gain \plus2 to physical defenses & Defense & \featpref{Evasive} \\
+            \featref{Damage Immunity} & 6th level & Become immune to specific damage types & Defense & \featpref{Damage Immunity} \\
             \featref{Great Fortitude} & \tdash & Gain \plus4 to Fortitude defense & Defense & \featpref{Great Fortitude} \\
             \featref{Improved Natural Armor} & \tdash & Gain \plus2 to Armor defense & Defense & \featpref{Improved Natural Armor} \\
             \featref{Incorporeal} & 4th level & Become incorporeal & Body & \featpref{Incorporeal} \\
@@ -63,11 +64,12 @@
 
             \midrule
             \tb{Slayer Traits}\label{Slayer Traits} & \tb{Prerequisites} & \tb{Benefit} & \tb{Trait Types} & \tb{Page} \\
-            \featref{Boulder Toss} & Slayer 6, Strength 10 & Throw objects incredible distance & Active & \featpref{Boulder Toss} \\
+            \featref{Boulder Toss} & Slayer 4, Strength 5 & Throw objects incredible distances & Active & \featpref{Boulder Toss} \\
             \featref{Breath Weapon: Cone} & Slayer & Gain cone-shaped breath weapon & Active & \featpref{Breath Weapon: Cone} \\
             \featref{Breath Weapon: Line} & Slayer & Gain line-shaped breath weapon & Active & \featpref{Breath Weapon: Line} \\
             \featref{Brute Force} & Slayer & Increase damage of physical attacks & Augment & \featpref{Brute Force} \\
-            \featref{Burrower} & Slayer 2 & Gain burrow speed & Mobility & \featpref{Burrower} \\
+            \featref{Burrower} & Slayer & Gain burrow speed & Mobility & \featpref{Burrower} \\
+            \featref{Damaging Aura} & Slayer & Gain aura that damages nearby foes & Augment & \featpref{Energetic Aura} \\
             \featref{Damaging Ray} & Slayer & Gain ability to fire damaging ray & Active & \featpref{Damaging Ray} \\
             \featref{Endless Breath} & Breath weapon & No delay after using breath weapon & Augment & \featpref{Endless Breath} \\
             \featref{Multistrike} & Slayer 6, three hands & Attack all threatened foes & Active & \featpref{Multistrike} \\
@@ -107,48 +109,47 @@
     This effect stacks with most other effects that increase your size, but does not not stack with the Increased Size trait (see page \featpref{Increased Size}).
 
     \feat{Boulder Toss}{Active, Slayer}
-    \featpre Slayer level 6, Strength 10
-    \featben You can throw objects, such as rocks, a great distance.
-    Your \glossterm{range increment} with thrown weapons becomes 50 feet.
+    \featpre Slayer level 4, Strength 5
+    \featben You can throw improvised objects, such as rocks, with great accuracy and power.
+    You gain proficiency with improvised thrown weapons, and your \glossterm{range increment} with all thrown weapons becomes 50 feet.
 
-    If your Strength is at least 20, your range increment with thrown weapons becomes 100 feet.
+    If your Strength is at least 10, your range increment with thrown weapons becomes 100 feet.
 
     \feat{Breath Weapon: Cone}{Active, Slayer}
     \featpre Slayer level 1.
     \parhead{Choice} Choose a damage type when you gain this trait.
     \featben You gain a breath weapon attack.
-    As a standard action, you can make a \glossterm{Power} vs. Reflex attack against all creatures within a \areasmall cone-shaped burst.
+    As a standard action, you can make a \glossterm{Power} vs. Reflex attack against all creatures within a \areamed cone-shaped burst.
     Success deals 1d8 damage of your chosen damage type per two power.
     Critical success deals double damage.
     Failure deals half damage.
     After using this ability, you cannot use it again for 1d4 rounds.
 
-    At slayer level 5, the area increases to \areamed.
-    At slayer level 10, the area increases to \arealarge.
-    At slayer level 15, the area increases to \areahuge.
-    At slayer level 20, the damage increases to 1d10 damage per two power.
+    At slayer level 8, the area increases to a \arealarge cone.
+    At slayer level 16, the damage increases to 1d10 damage per two power.
+    At slayer level 20, the area increases to a \areahuge cone.
 
     \feat{Breath Weapon: Line}{Active, Slayer}
     \featpre Slayer level 1.
     \parhead{Choice} Choose a damage type when you gain this trait.
     \featben You gain a breath weapon attack.
-    As a standard action, you can make a \glossterm{Power} vs. Reflex attack against all creatures within a \areamed, 5 ft.\ wide line-shaped burst.
+    As a standard action, you can make a \glossterm{Power} vs. Reflex attack against all creatures within a \arealarge, 5 ft.\ wide line-shaped burst.
     Success deals 1d8 damage of your chosen damage type per two power.
     Critical success deals double damage.
     Failure deals half damage.
     After using this ability, you cannot use it again for 1d4 rounds.
 
-    At slayer level 5, the area increases to a \arealarge, 5 ft.\ wide line.
-    At slayer level 10, the area increases to \arealarge, 10 ft.\ wide line.
-    At slayer level 15, the area increases to \areahuge, 10 ft.\ wide line.
-    At slayer level 20, the damage increases to 1d10 damage per two levels.
+    At slayer level 6, the area increases to \arealarge, 10 ft.\ wide line.
+    At slayer level 10, the area increases to \areahuge, 10 ft.\ wide line.
+    At slayer level 14, the area increases to \areahuge, 20 ft.\ wide line.
+    At slayer level 18, the damage increases to 1d10 damage per two levels.
 
     \feat{Brute Force}{Augment, Slayer}
     \featpre Slayer level 1.
     \featben Your gain a bonus to damage with your physical attacks equal to half your slayer level.
 
     \feat{Burrower}{Mobility, Slayer}
-    \featpre Slayer level 2.
+    \featpre Slayer level 1.
     \featben You gain a burrow speed equal to half your land speed.
     You can only burrow through loose earth and dirt, and you cannot construct usable tunnels while burrowing.
 
@@ -161,9 +162,20 @@
         \item If you have the ability to burrow through solid rock, you can burrow through iron and objects of similar durability.
     \end{itemize}
 
-    \feat{Durable}{Behemoth, Defense}
-    \featpre Behemoth level 1.
-    \featben You increase your maximum hit points by an amount equal to twice your \glossterm{power}.
+    \feat{Damage Immunity}{Defense, General}
+    \featpre 6th level
+    \featben Choose a non-physical damage type.
+    You become immune to that type of damage.
+    At 10th level, and every 4 levels thereafter, you may choose an additional type of non-physical damage to become immune to.
+    \parhead{Special} A monster can naturally be immune to one type of damage without needing this trait.
+    For details, see \pcref{Starting Abilities}.
+
+    \feat{Damaging Aura}{Augment, General}
+    \featpre Slayer level 1.
+    \parhead{Choice} Choose a damage type when you gain this trait.
+    \featben At the end of every round, enemies within a 5-ft.\ radius emanation from you take damage equal to your \glossterm{power} of the chosen damage type.
+    At your 8th slayer level, the area increases to a \areasmall radius emanation.
+    At your 16th slayer level, the area increases to a \areamed radius emanation.
 
     \feat{Damaging Ray}{Active, Slayer}
     \featpre Slayer level 1.
@@ -179,6 +191,10 @@
     \featben If you touch a creature, it takes 1d6 life damage \add 1 per two \glossterm{power}.
     You heal hit points equal to half the damage dealt in this way.
     In addition, you become proficient with touching creatures, gaining the normal \plus4 accuracy bonus for proficiency.
+
+    \feat{Durable}{Behemoth, Defense}
+    \featpre Behemoth level 1.
+    \featben You increase your maximum hit points by an amount equal to twice your \glossterm{power}.
 
     \feat{Endless Breath}{Augment, Slayer}
     \featpre Breath weapon.
