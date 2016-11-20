@@ -1581,3 +1581,37 @@
     \end{spellfooter}
 \end{spellsection}
 
+%need to run expected damage calculation
+\begin{spellsection}{Spiritual Weapon}[5]
+    \begin{spellheader}
+        \spelldesc{You bring into being a weapon made of pure force which attacks your foes of its own volition.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect This spell creates a floating weapon made of magical force. At the beginning of each round, you may spend a swift action to command the weapon. If you do, the weapon moves during the movement phase with a fly speed of 50 feet (perfect maneuverability), and attacks in the action phase. If you do not direct the weapon, it remains motionless.
+
+            The weapon is sized for you, and can be any type of weapon you are proficient with, though the weapon's shape does not alter this spell's effects. Since it is made of force, the weapon is immune to damage and most effects.
+            \spelldur \durlong \dismissable
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellsubcontent}
+        \begin{spelltargetinginfo}
+            \spelltrigger{During the action phase, if you commanded the weapon that round}
+            \spelltgt{One creature adjacent to the weapon}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \begin{spellattack}{Spellpower vs. Armor defense}
+                \spellsuccess \spelldamage{force}[d8]
+                \spellcritical Double damage.
+            \end{spellattack}
+        \end{spelleffects}
+    \end{spellsubcontent}
+    \begin{spellfooter}
+        \spellinfo{Evocation [Force]}{Divine, War}
+        \spellnotes Since the weapon is directed by you, its ability to interact with invisible or concealed creatures is no better than yours. Its defenses are equal to 10 \add your spellpower. If the weapon goes out of range of you, the spell ends.
+        \miscastexplode
+    \end{spellfooter}
+\end{spellsection}
