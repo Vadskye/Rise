@@ -15,7 +15,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect You gain damage reduction against physical damage equal to your spellpower.
-            Force damage ignores this damage reduction and negates it for 1 round.
+            Arcane damage ignores this damage reduction and negates it for 1 round.
             \spelldur Until end of round
         \end{spelleffects}
     \end{spellcontent}
@@ -571,7 +571,7 @@
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Force]}{Arcane, Magic}
+        \spellinfo{Evocation}{Arcane, Magic}
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -860,7 +860,7 @@
 
 \begin{spellsection}{Blade Barrier}[4]
     \begin{spellheader}
-        \spelldesc{You create an immobile, vertical curtain of whirling blades shaped of pure force.}
+        \spelldesc{You create an immobile, vertical curtain of whirling blades.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
@@ -2120,7 +2120,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Alteration]}{Arcane, Destruction}
-        \spellnotes This spell affects even objects constructed entirely of force, such as \spell{wall of force}, but not magical effects such as an \spell{antimagic field}.
+        \spellnotes This spell affects even objects constructed entirely of telekinetic force, such as \spell{wall of force}, but not magical effects such as an \spell{antimagic field}.
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -2878,7 +2878,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Fire]}{Destruction, Divine, Fire}
+        \spellinfo{Evocation [Destructive, Fire]}{Destruction, Divine, Fire, War}
         \spellnotes \destructivespellnotes
 
         \firespellnotes
@@ -2953,7 +2953,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Force, Physical]}{Arcane}
-        \spellnotes As \spell{wall of force}.
+        \spellnotes The walls and ceiling can be destroyed. A 5-foot square of wall has hit points equal to five times your spellpower, and hardness equal to your spellpower.
         \miscastrandom
     \end{spellfooter}
 \end{spellsection}
@@ -3571,7 +3571,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target gains damage reduction against all damage equal to your spellpower.
-            Force damage ignores this damage reduction and negates it for 1 round.
+            Arcane damage ignores this damage reduction and negates it for 1 round.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
@@ -3906,14 +3906,14 @@
             \spellspecial When you cast this spell, you choose whether to create body armor or a shield.
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You gain invisible body armor or a shield of the chosen kind, made of force. Body armor grants a \plus4 defense bonus, while a shield grants a \plus2 defense bonus.
+            \spelleffect You gain invisible body armor or a shield of the chosen kind, formed from telekinetic force. Body armor grants a \plus4 defense bonus, while a shield grants a \plus2 defense bonus.
             \par Unlike mundane armor, this armor has no \glossterm{encumbrance penalty}, arcane spell failure chance, or encumbrance. If you create a shield, it floats in front of you, and does not need to be wielded actively to grant its bonus.
             \spelldur \durlong
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Force]}{Arcane}
-        \spellnotes If you cast this spell twice, you can gain both body armor and a shield. The armor created by this spell is treated as a separate piece or armor from any other armor the creature is wearing, so it does not stack with any existing bonuses. Since this armor is made of force, incorporeal creatures can't bypass it the way they do normal armor.
+        \spellnotes If you cast this spell twice, you can gain both body armor and a shield. The armor created by this spell is treated as a separate piece or armor from any other armor the creature is wearing, so it does not stack with any existing bonuses.
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -3949,11 +3949,11 @@
             \spelltwocol{\spelltgts{See text}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You create a number of missiles equal to half your spellpower. Each missile strikes one target creature for 1d10 force damage. You can direct each missile to strike the same or different targets.
+            \spelleffect You create a number of missiles equal to half your spellpower. Each missile strikes one target creature for 1d10 arcane damage. You can direct each missile to strike the same or different targets.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Force]}{Arcane, Magic}
+        \spellinfo{Evocation}{Arcane, Magic}
         \spellnotes \forcespellnotes
         \miscastrandom
     \end{spellfooter}
@@ -4080,7 +4080,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target is teleported into an extradimensional labyrinth of force planes. Each round, as a full-round action, it may attempt a DR 20 Intelligence check to escape the labyrinth. If the target doesn't escape, the maze disappears after 5 minutes, forcing the target back to the location where it was originally banished.
+                \spellsuccess The target is teleported into an extradimensional labyrinth of stone walls. Each round, as a full-round action, it may attempt a DR 20 Intelligence check to escape the labyrinth. If the target doesn't escape, the maze disappears after 5 minutes, forcing the target back to the location where it was originally banished.
                 \spellfailure As above, but the DR of the Intelligence check to escape is 10.
             \end{spellattack}
         \end{spelleffects}
@@ -4090,6 +4090,8 @@
         \spellnotes Spells and abilities that move a creature within a plane, such as \spell{teleport} and \spell{dimension door}, do not help a creature escape a \spell{maze} spell, although a \spell{plane shift} spell allows it to exit to whatever plane is designated in that spell. Minotaurs can escape the spell automatically.
 
         When leaving the maze, the target reappears where it had been when the maze spell was cast. If this location is filled with a solid object, the target appears in the nearest open space.
+
+        In extraordinarily rare circumstances, it may be possible to meet other creatures trapped in the same maze.
 
         \norepeatspellnotes
         \miscastrandom
@@ -4254,11 +4256,11 @@
             \spelltwocol{\spelltgts{Up to five creatures}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect \spelldamage{force}[d6]
+            \spelleffect \spelldamage{arcane}[d6]
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Force]}{Arcane, Magic}
+        \spellinfo{Evocation}{Arcane, Magic}
         \spellnotes \forcespellnotes
         \miscastexplode
     \end{spellfooter}
@@ -5646,41 +5648,6 @@
     \end{spellaugments}
 \end{spellsection}
 
-%need to run expected damage calculation
-\begin{spellsection}{Spiritual Weapon}[5]
-    \begin{spellheader}
-        \spelldesc{You bring into being a weapon made of pure force which attacks your foes of its own volition.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect This spell creates a floating weapon made of magical force. At the beginning of each round, you may spend a swift action to command the weapon. If you do, the weapon moves during the movement phase with a fly speed of 50 feet (perfect maneuverability), and attacks in the action phase. If you do not direct the weapon, it remains motionless.
-
-            The weapon is sized for you, and can be any type of weapon you are proficient with, though the weapon's shape does not alter this spell's effects. Since it is made of force, the weapon is immune to damage and most effects.
-            \spelldur \durlong \dismissable
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellsubcontent}
-        \begin{spelltargetinginfo}
-            \spelltrigger{During the action phase, if you commanded the weapon that round}
-            \spelltgt{One creature adjacent to the weapon}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Armor defense}
-                \spellsuccess \spelldamage{force}[d8]
-                \spellcritical Double damage.
-            \end{spellattack}
-        \end{spelleffects}
-    \end{spellsubcontent}
-    \begin{spellfooter}
-        \spellinfo{Evocation [Force]}{Divine, War}
-        \spellnotes Since the weapon is directed by you, its ability to interact with invisible or concealed creatures is no better than yours. Its defenses are equal to 10 \add your spellpower. If the weapon goes out of range of you, the spell ends.
-        \miscastexplode
-    \end{spellfooter}
-\end{spellsection}
-
 \begin{spellsection}{Storm of Vengeance}[9]
     \begin{spellheader}
     \end{spellheader}
@@ -6541,7 +6508,7 @@
             \spelltwocol{\spellzone{100 ft.\ solid wall, 10 ft.\ high}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect This spell creates an invisible wall made of force. Nothing can pass through the wall.
+            \spelleffect This spell creates an invisible wall made of telekinetic force. Nothing can pass through the wall.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
