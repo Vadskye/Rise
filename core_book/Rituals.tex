@@ -1359,16 +1359,18 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect When you perform this ritual, you make a Disguise check to disguise the target.
-            You gain a \plus10 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form.
+            You gain a \plus10 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form. However, the glamer does not include sound, smell, texture, or temperature.
+
+            When you finish this ritual, you make a check with a bonus equal to your spellpower \add 10. Creatures can recognize the disguise is created by illusory magic by interacting with it physically, or by making an Awareness check against a DR equal to your check result when finishing the ritual. A creature gets a \plus10 bonus on this Awareness check when using senses which should be present in the glamer, but which are missing.
             \spelldur \durlong \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Illusion [Glamer, Unreal]}{Arcane}
-        \spellnotes Creatures can identify the illusion, as \spell{create image}.
+        \spellinfo{Illusion [Glamer]}{Arcane}
         \ritualcost*{1}
     \end{spellfooter}
     \begin{spellaugments}
+        \spellaugment{1}{Sensory}{The illusion affects an additional sense: sound, smell, texture, or temperature. This augment can be used multiple times, affecting a different sense each time.}
         \spellaugment{3}{Malleable}{As a standard action, if the target is within range of you, you can concentrate to alter the target's appearance, just as if you had performed this ritual again.}
         \spellaugment{3}{Mass}{The spell can affect up to five targets.}
         \spellaugment{3}{Permanent}{The ritual's duration becomes permanent. You can only make one casting of this ritual permanent. If you use this augment again, the previous effect immediately ends.}
@@ -1815,12 +1817,12 @@
             \spelltwocol{\spellzone{\arealarge radius}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect A figment of your design appears within the area, as \spell{create image}.
+            \spelleffect A figment of your design appears within the area, as the \spell{create image} spell.
             \spelldur Thirty days \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Illusion [Figment, Unreal]}{Arcane}
+        \spellinfo{Illusion [Figment]}{Arcane}
         \spellnotes Creatures can identify the illusion, as \spell{create image}.
         \ritualcost{6}
     \end{spellfooter}
