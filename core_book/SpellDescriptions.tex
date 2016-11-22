@@ -107,7 +107,7 @@
     \end{spellaugments}
 \end{spellsection}
 
-\begin{spellsection}{Aid}[2]
+\begin{spellsection}{Aid}[1]
     \begin{spellheader}
         \spelldesc{You fill your ally with confidence, improving his resilience in combat.}
     \end{spellheader}
@@ -116,13 +116,14 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains temporary hit points equal to twice your spellpower. In addition, it is immune to fear effects.
+            \spelleffect The target gains temporary hit points equal to twice your spellpower.
+            If the target takes life damage, it loses all temporary hit points provided by this spell before applying the damage.
             \spelldur \durpersonallong
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Enchantment [Mind, Morale]}{Divine, Good}
-        \spellnotes If the target takes life damage, it loses all temporary hit points provided by this spell before applying the damage.
+        \spellinfo{Enchantment [Delusion, Mind]}{Divine, Good}
+        \spellnotes 
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -146,7 +147,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Air, Augment]}{Air, Divine, Nature, Travel}
+        \spellinfo{Transmutation [Air, Imbuement]}{Air, Divine, Nature, Travel}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -165,8 +166,8 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Vivimancy [Barrier]}{Divine, Nature}
-        \spellnotes Barrier spells may be used only defensively, not aggressively. Creatures in the area at the time that the spell is cast are unaffected by the spell.
+        \spellinfo{Vivimancy}{Divine, Nature}
+        \spellnotes Creatures in the area at the time that the spell is cast are unaffected by the spell.
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -189,7 +190,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration [Antimagic]}{Arcane, Divine, Magic}
+        \spellinfo{Abjuration [Thaumaturgy]}{Arcane, Divine, Magic}
         \spellnotes The effects of instantaneous conjurations, such as \spell{create water}, are not affected by this spell because the conjuration itself is no longer in effect, only its result.
 
         \par \spell{Dispel magic} and similar magic has no effect on an \spell{antimagic field}. Two or more \spellindirect{antimagicfield}{antimagic fields} sharing any of the same space have no effect on each other.
@@ -204,7 +205,7 @@
 
 \begin{spellsection}{Animate Corpse}[1]
     \begin{spellheader}
-        \spelldesc{You infuse a recently deceased corse with negative energy, giving it a semblance of life.}
+        \spelldesc{You infuse a recently deceased corse with life force, giving it a semblance of life.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
@@ -230,7 +231,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Vivimancy [Negative]}{Arcane}
+        \spellinfo{Vivimancy [Life, Soul]}{Arcane}
         \miscastrandom
     \end{spellfooter}
 \end{spellsection}
@@ -278,7 +279,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration, Water]}{Nature, War, Water}
+        \spellinfo{Transmutation [Shaping, Water]}{Nature, War, Water}
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -304,7 +305,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation/Vivimancy [Alteration]}{Arcane}
+        \spellinfo{Transmutation/Vivimancy [Death, Shaping]}{Arcane}
         \miscastrandom
     \end{spellfooter}
 \end{spellsection}
@@ -454,7 +455,7 @@
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration, Physical]}{Nature, Wild}
+        \spellinfo{Transmutation [Animation, Physical]}{Nature, Wild}
         \spellnotes The effects of the ability granted by this spell may be altered somewhat based on the nature of the plants near the target.
         \miscastexplode
     \end{spellfooter}
@@ -486,7 +487,7 @@
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
-        \spellinfo{Vivimancy [Positive]}{Divine, Good, Life}
+        \spellinfo{Vivimancy [Life]}{Divine, Good, Life}
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -544,7 +545,7 @@
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Augment, Physical]}{Nature, Strength}
+        \spellinfo{Transmutation [Imbuement, Physical]}{Nature, Strength}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -817,7 +818,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Augment]}{Nature}
+        \spellinfo{Transmutation [Imbuement]}{Nature}
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -850,7 +851,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Conjuration/Transmutation [Augment, Creation]}{Arcane}
+        \spellinfo{Conjuration/Transmutation [Creation, Imbuement]}{Arcane}
         \miscastyou
     \end{spellfooter}
     \begin{spellaugments}
@@ -968,7 +969,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Enchantment [Mind, Morale]}{Divine}
+        \spellinfo{Enchantment [Delusion, Mind]}{Divine}
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -991,7 +992,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Augment]}{Divine, War}
+        \spellinfo{Transmutation [Imbuement]}{Divine, War}
         \spellnotes A weapon wielded by a creature can be affected if its wielder is willing.
         \miscastexplode
     \end{spellfooter}
@@ -1086,7 +1087,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Augment]}{Arcane, Knowledge}
+        \spellinfo{Transmutation [Imbuement]}{Arcane, Knowledge}
         \miscastrandom
     \end{spellfooter}
 \end{spellsection}
@@ -1377,7 +1378,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Vivimancy [Positive]}{Divine, Nature}
+        \spellinfo{Vivimancy [Life]}{Divine, Nature}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -1608,22 +1609,18 @@
 
 \begin{spellsection}{Cure Wounds}[1]
     \begin{spellheader}
-        \spelldesc{You lay your hand on a creature and channel positive energy into it, healing some of its wounds.}
+        \spelldesc{You lay your hand on a creature and channel life force into it, healing some of its wounds.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect If the target is living, it is healed for \spelldamage{}.
-            \begin{spellattacktriggered}{If the target is undead, make a Spellpower vs. Fortitude attack.}
-                \spellsuccess \spelldamage{positive}.
-                \spellfailure Half damage.
-            \end{spellattacktriggered}
+            \spelleffect The target is healed for \spelldamage{}.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Vivimancy [Positive]}{Divine, Life, Nature}
+        \spellinfo{Vivimancy [Life]}{Divine, Life, Nature}
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -1716,7 +1713,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Augment]}{Arcane}
+        \spellinfo{Transmutation [Imbuement]}{Arcane}
         \spellnotes This spell does not grant the ability to see in magical darkness.
         \miscastexplode
     \end{spellfooter}
@@ -1752,22 +1749,21 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Death Ward}[4]
+\begin{spellsection}{Life Ward}[4]
     \begin{spellheader}
-        \spelldesc{You shield your allies from deadly spells and abilities.}
+        \spelldesc{You shield your allies from spells and abilities that affect their life force.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{Up to five living creatures}{\rngmed}
+            \spellquicktargeting{Up to five creatures}{\rngmed}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target is immune to \glossterm{Death} effects and negative energy damage.
+            \spelleffect The target is immune to hostile \glossterm{Life} effects.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Vivimancy [Positive, Shielding]}*{Divine, Protection}
-        \spellnotes This does not prevent the targets from dying by means other than Death effects, such as by taking critical damage.
+        \spellinfo{Vivimancy [Life, Shielding]}*{Divine, Protection}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -1996,7 +1992,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration [Antimagic]}{Arcane, Divine, Magic}
+        \spellinfo{Abjuration [Thaumaturgy]}{Arcane, Divine, Magic}
         \spellnotes This spell does not interfere with the movement of creatures already on other planes when the spell is cast, nor does it block extradimensional perception or attack forms, such as summoning monsters. Also, it does not prevent summoned creatures from disappearing at the end of a summoning spell.
         \miscastrandom
     \end{spellfooter}
@@ -2119,7 +2115,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration]}{Arcane, Destruction}
+        \spellinfo{Transmutation [Shaping]}{Arcane, Destruction}
         \spellnotes This spell affects even objects constructed entirely of telekinetic force, such as \spell{wall of force}, but not magical effects such as an \spell{antimagic field}.
         \miscastrandom
     \end{spellfooter}
@@ -2183,7 +2179,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration [Antimagic]}{Arcane, Divine, Magic, Nature}
+        \spellinfo{Abjuration [Thaumaturgy]}{Arcane, Divine, Magic, Nature}
         \spellnotes When a spell is dispelled, all its effects with a duration end. Unless otherwise specified, any spell with a lasting effect can be dispelled.
 
         If a spell affects multiple targets, it must be dispelled individually on each target. Dispelling the effect on one target does not affect the other targets of the spell.
@@ -2217,7 +2213,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Augment]}{Divine, War}
+        \spellinfo{Transmutation [Imbuement]}{Divine, War}
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -2238,7 +2234,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration, Augment, Sizing]}*{Divine, Strength}
+        \spellinfo{Transmutation [Imbuement, Shaping, Sizing]}*{Divine, Strength}
         \spellnotes \sizingspellnotes
         \miscastexplode
     \end{spellfooter}
@@ -2372,7 +2368,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration, Augment, Earth]}{Earth, Nature, War}
+        \spellinfo{Transmutation [Earth, Imbuement, Shaping]}{Earth, Nature, War}
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -2395,7 +2391,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Augment, Earth]}{Earth, Nature}
+        \spellinfo{Transmutation [Earth, Imbuement]}{Earth, Nature}
         \spellnotes The target's burrowing leaves behind no tunnel or hole, nor does it create any ripple or other signs of its presence.
         This spell does not grant the target the ability to breathe earth, and it may suffocate if it remains within earth for a prolonged period of time.
 
@@ -2452,7 +2448,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration, Earth, Physical]}{Earth, Nature}
+        \spellinfo{Transmutation [Earth, Physical, Shaping]}{Earth, Nature}
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -2472,11 +2468,12 @@
         \begin{spelleffects}
             \spelleffect If the target is living, it gains two \conditionlink{negative levels}. This imposes a \minus2 penalty to the target's accuracy, defenses, and checks, and a penalty to its current and maximum hit points equal to twice its level.
 
-            If the target is undead, it gains damage reduction against physical damage equal to your spellpower. Positive damage ignores this damage reduction and negates it for 1 round.
+            If the target is undead, it gains damage reduction against physical damage equal to your spellpower.
+            Life damage ignores this damage reduction and negates it for 1 round.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Vivimancy [Negative]}{Arcane, Death, Divine, Evil}
+        \spellinfo{Vivimancy [Life]}{Arcane, Death, Divine, Evil}
         \spellnotes These negative levels do not stack with other negative levels the target has, if any.
         \miscastrandom
     \end{spellfooter}
@@ -2510,7 +2507,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration, Sizing]}{Arcane, Nature, Strength}
+        \spellinfo{Transmutation [Shaping, Sizing]}{Arcane, Nature, Strength}
         \spellnotes A typical humanoid creature whose size increases to Large has a space of 10 feet and a natural reach of 10 feet. \sizingspellnotes
         \miscastrandom
     \end{spellfooter}
@@ -2534,12 +2531,12 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration, Physical]}{Nature, Wild}
+        \spellinfo{Transmutation [Animation, Physical]}{Nature, Wild}
         \spellnotes The effects of this spell may be altered somewhat based on the nature of the plants near the target.
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
-        \spellaugment{2}{Wild Growth}{The target does not need to be near plants.}
+        \spellaugment{2}{Wild Growth}{The target does not need to be near plants. This is a Conjuration, \glossterm{Creation} effect.}
         \spellaugment{3}{Mass}{The spell can affect up to five targets.}
     \end{spellaugments}
 \end{spellsection}
@@ -2581,7 +2578,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Augment]}{Nature}
+        \spellinfo{Transmutation [Imbuement]}{Nature}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -2654,7 +2651,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Enchantment [Fear, Mind]}{Arcane}
+        \spellinfo{Enchantment [Delusion, Mind]}{Arcane}
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -2899,7 +2896,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Augment]}{Arcane}
+        \spellinfo{Transmutation [Imbuement]}{Arcane}
         \spellnotes An unencumbered creature with a fly speed can fly through the air. See \pcref{Flying}, for more details.
         \miscastexplode
     \end{spellfooter}
@@ -2952,7 +2949,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Force, Physical]}{Arcane}
+        \spellinfo{Evocation [Physical, Telekinesis]}{Arcane}
         \spellnotes The walls and ceiling can be destroyed. A 5-foot square of wall has hit points equal to five times your spellpower, and hardness equal to your spellpower.
         \miscastrandom
     \end{spellfooter}
@@ -2996,7 +2993,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Augment]}{Divine, Nature}
+        \spellinfo{Transmutation [Imbuement]}{Divine, Nature}
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -3049,7 +3046,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration]}{Arcane, Travel}
+        \spellinfo{Transmutation [Shaping]}{Arcane, Travel}
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -3071,7 +3068,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Air, Augment]}{Air, Nature}
+        \spellinfo{Transmutation [Air, Imbuement]}{Air, Nature}
         \spellnotes A creature with a glide speed can glide through the air at the indicated speed (see \pcref{Gliding}).
         \miscastrandom
     \end{spellfooter}
@@ -3150,7 +3147,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Augment]}{Arcane, Earth, Nature, Strength}
+        \spellinfo{Transmutation [Imbuement]}{Arcane, Earth, Nature, Strength}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -3207,27 +3204,26 @@
 
 \begin{spellsection}{Harm}[6]
     \begin{spellheader}
-        \spelldesc{You fill your foe with a massive influx of negative energy, crippling its body.}
+        \spelldesc{You attack your foe's life force, weakening its body.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect If the target is undead, it is healed for \spelldamage{}.
-            \begin{spellattacktriggered}{If the target is living, make a Spellpower vs. Fortitude attack.}
-                \spellsuccess The target takes \spelldamage{negative}, and is \impaired with attacks and checks for 2 rounds. All damage dealt in excess of the target's hit points is dealt as critical damage.
+            \begin{spellattack}
+                \spellsuccess The target takes \spelldamage{life}. If it takes damage in this way, it is \impaired with attacks and checks for 2 rounds. All damage dealt in excess of the target's hit points is dealt as critical damage.
                 \spellcritical As above, but double damage.
                 \spellfailure As above, but half damage.
-            \end{spellattacktriggered}
+            \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Vivimancy [Negative]}{Arcane, Divine, Evil}
+        \spellinfo{Vivimancy [Life]}{Arcane, Divine, Evil}
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
-        \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage and healing become \spelldamage{negative}[d8].}
+        \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage and healing become \spelldamage{life}[d8].}
     \end{spellaugments}
 \end{spellsection}
 
@@ -3256,28 +3252,23 @@
 
 \begin{spellsection}{Heal}[6]
     \begin{spellheader}
-        \spelldesc{You fill an ally with a massive influx of positive energy, restoring its body to perfect health.}
+        \spelldesc{You fill an ally with a massive influx of life force, restoring its body to perfect health.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect If the target is living, it is healed for \spelldamage{}.
+            \spelleffect The target is healed for \spelldamage{}.
             For every point of healing granted by this spell, it can instead cure 1 point of critical damage.
-            \begin{spellattacktriggered}{If the target is undead, make a Spellpower vs. Fortitude attack.}
-                \spellsuccess \spelldamage{positive}.
-                \spellcritical Double damage.
-                \spellfailure Half damage.
-            \end{spellattacktriggered}
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Vivimancy [Positive]}{Divine, Good, Life, Nature}
+        \spellinfo{Vivimancy [Life]}{Divine, Good, Life, Nature}
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
-        \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage and healing become \spelldamage{}[d8].}
+        \spellaugment{3}{Mass}{The spell can affect up to five targets. Its healing becomes \spelldamage{}[d8].}
     \end{spellaugments}
 \end{spellsection}
 
@@ -3523,14 +3514,14 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess \spelldamage{life}. In addition, the target is \staggered for 5 rounds.
+                \spellsuccess \spelldamage{bludgeoning}. In addition, the target is \staggered for 5 rounds.
                 \spellcritical The target dies.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Alteration]}{Divine}
+        \spellinfo{Evocation [Sonic]}{Divine}
         \spellnotes This spell has no effect on creatures in \spell{gaseous form} or on incorporeal creatures.
         \miscastexplode
     \end{spellfooter}
@@ -3615,16 +3606,15 @@
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect If the target is undead, it is healed for \spelldamage{}.
-            \begin{spellattacktriggered}{If the target is living, make a Spellpower vs. Fortitude attack.}
-                \spellsuccess \spelldamage{negative}.
+            \begin{spellattack}
+                \spellsuccess \spelldamage{life}.
                 \spellcritical Double damage.
                 \spellfailure Half damage.
-            \end{spellattacktriggered}
+            \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Vivimancy [Negative]}{Arcane, Death, Divine}
+        \spellinfo{Vivimancy [Life]}{Arcane, Death, Divine}
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -3793,7 +3783,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Augment]}{Nature, Wild}
+        \spellinfo{Transmutation [Imbuement]}{Nature, Wild}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -3865,7 +3855,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Augment]}{Arcane, Nature}
+        \spellinfo{Transmutation [Imbuement]}{Arcane, Nature}
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -3886,7 +3876,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Augment]}{Nature, Travel}
+        \spellinfo{Transmutation [Imbuement]}{Nature, Travel}
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -3912,7 +3902,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Force]}{Arcane}
+        \spellinfo{Evocation [Telekinesis]}{Arcane}
         \spellnotes If you cast this spell twice, you can gain both body armor and a shield. The armor created by this spell is treated as a separate piece or armor from any other armor the creature is wearing, so it does not stack with any existing bonuses.
         \miscastexplode
     \end{spellfooter}
@@ -4116,7 +4106,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration, Earth]}{Nature}
+        \spellinfo{Transmutation [Earth, Shaping]}{Nature}
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -4331,7 +4321,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Enchantment/Illusion [Death, Fear, Mind]}*{Arcane, Trickery}
+        \spellinfo{Enchantment/Illusion [Death, Mind]}*{Arcane, Trickery}
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -4381,7 +4371,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Vivimancy [Flesh, Physical, Poison]}{Destruction, Divine, Nature}
+        \spellinfo{Vivimancy [Flesh, Physical]}{Destruction, Divine, Nature}
         \spellnotes \physicalspellnotes
         \miscastrandom
     \end{spellfooter}
@@ -4450,7 +4440,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Enchantment [Compulsion, Mind]}{Arcane}
+        \spellinfo{Enchantment [Delusion, Mind]}{Arcane}
         \miscastrandom
     \end{spellfooter}
 \end{spellsection}
@@ -4765,8 +4755,8 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Barrier]}{Arcane}
-        \spellnotes Unlike most barrier spells, this spell does not collapse if you move towards a creature held at bay by the barrier. The spell continues to prevent that creature from approaching you, but the creature suffers no other ill effect.
+        \spellinfo{Evocation [Telekinesis]}{Arcane}
+        \spellnotes If you move towards a creature held at bay by the barrier, the spell continues to prevent that creature from approaching you, but the creature suffers no other ill effect.
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -4854,7 +4844,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Vivimancy [Life]}{Divine, Life, Nature}
+        \spellinfo{Vivimancy [Flesh]}{Divine, Life, Nature}
         \spellnotes The following conditions are considered simple conditions: blinded, confused, dazed, dazzled, deafened, exhausted, fascinated, fatigued, frightened, nauseated, panicked, shaken, sickened, stunned, and taunted.
         \miscastexplode
     \end{spellfooter}
@@ -5200,7 +5190,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration [Antimagic]}{Arcane, Magic}
+        \spellinfo{Abjuration [Thaumaturgy]}{Arcane, Magic}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -5247,7 +5237,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect This spell creates an illusion of a wall or similar physical barricade.
-            In the same position, this spell creates a powerful barrier that blocks the passage of most objects and creatures.
+            In the same position, this spell creates a barrier of telekinetic force that blocks the passage of most objects and creatures.
             However, your allies and their equipment can pass through the barrier unimpeded.
             The wall blocks all spell effects, including those of your allies.
 
@@ -5255,7 +5245,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation/Illusion [Barrier, Figment, Unreal]}{Arcane, Trickery}
+        \spellinfo{Evocation/Illusion [Figment, Telekinesis, Unreal]}{Arcane, Trickery}
         \spellnotes Creatures can identify that the wall is an illusion, as \spell{create image}.
         This can allow creatures to see through the wall, but does not allow them to pass through it.
         \miscastexplode
@@ -5369,7 +5359,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration/Vivimancy [Life, Shielding]}{Arcane, Divine, Life, Protection}
+        \spellinfo{Abjuration/Vivimancy [Life, Shielding]}{Arcane, Good, Divine, Life, Protection}
         \spellnotes The loss of hit points caused by this spell is not damage, and is not affected by damage reduction or other abilities which affect damage.
         \miscastexplode
     \end{spellfooter}
@@ -5453,7 +5443,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration, Sizing]}{Arcane, Nature}
+        \spellinfo{Transmutation [Shaping, Sizing]}{Arcane, Nature}
         \spellnotes A Small humanoid creature whose size decreases to Tiny has a space of 2-1/2 feet and a natural reach of 0 feet (meaning that it must enter an opponent's square to attack).
 
         \sizingspellnotes
@@ -5483,7 +5473,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration]}{Arcane}
+        \spellinfo{Transmutation [Shaping, Sizing]}{Arcane}
         \spellnotes  If you recast this spell each day on an object, you can keep it at its small size indefinitely.
         \miscastrandom
     \end{spellfooter}
@@ -6026,7 +6016,6 @@
     \end{spellaugments}
 \end{spellsection}
 
-
 \begin{spellsection}{Telekinetic Shove}[2]
     \begin{spellheader}
         \spelldesc{You push and pull your foes around the battlefield with your mind.}
@@ -6199,11 +6188,11 @@
             \spellrng{\rngmed}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spellspecial This spell can be used to duplicate the effects of \spell{fabricate}, \spell{passwall}, \spell{shape metal}, \spell{shape stone}, \spell{shape wood}, \spell{transmute flesh and stone}, or \spell{wall of stone}. The object or creature to be transformed must meet any requirements of the spell being duplicated, other than range.
+            \spellspecial This spell can be used to duplicate the effects of \spell{fabricate}, \spell{passwall}, \spell{shape metal}, \spell{shape stone}, \spell{shape wood}, or \spell{transmute flesh and stone}. The object or creature to be transformed must meet any requirements of the spell being duplicated, other than range.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration]}{Arcane}
+        \spellinfo{Transmutation [Shaping]}{Arcane}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -6238,7 +6227,7 @@
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration]}{Arcane, Earth}
+        \spellinfo{Transmutation [Shaping]}{Arcane, Earth}
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -6259,7 +6248,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Alteration]}{Nature}
+        \spellinfo{Transmutation [Shaping]}{Nature}
         \spellnotes You can sleep comfortably in this form.
         \miscastexplode
     \end{spellfooter}
@@ -6513,7 +6502,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Force, Physical, Wall]}{Arcane}
+        \spellinfo{Evocation [Physical, Telekinesis, Wall]}{Arcane}
         \spellnotes The wall can be destroyed. A 5-foot square of wall has hit points equal to five times your spellpower, and hardness equal to your spellpower.
 
         \forcespellnotes

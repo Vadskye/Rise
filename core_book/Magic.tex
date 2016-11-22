@@ -335,79 +335,133 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
         \subsubsection{Bloodied Effect}
             This is the effect a spell has on a bloodied subject (at or below half hit points remaining). If the spell has a duration, and a healthy creature becomes bloodied during the duration of the spell, it immediately suffers the bloodied effect of the spell. If the spell does not have a duration, any damage the subject takes after being affected by the spell does not change which effect the spell has.
 
+\section{Ability Tags}\label{Ability Tags}
 
-\section{Spell Tags}\label{Spell Tags}
+    Many spells and other abilities have tags that describe the ability's nature. Many of these tags have no game effect by themselves, but they govern how the ability interacts with spells, special abilities, unusual creatures, and so on. They are described below.
 
-    Most spells have tags that describe the spell's effects or nature. Many of these tags have no game effect by themselves, but they govern how the spell interacts with other spells, with special abilities, with unusual creatures, with alignment, and so on. They are described on \trefnp{Spell Tags}.
+    \parhead{Acid} Acid abilities use corrosive acid. They do not function underwater.
 
-    {
-        \onecolumn
-        \taburowcolors [2] 2{tbrown .. white} % chktex-file 26 chktex-file 12
-        \begin{longtabu}{l X}
-            \lcaption{Spell Tags} \\
-            \tb{Tag} & \tb{Effect} \\
-            Acid & \tdash \\
-            Air & The spell has no effect in environments without air. \\
-            Alteration & \tdash \\
-            Antimagic & The spell attacks magic itself. It does not allow spell resistance. \\
-            Auditory & Creatures that cannot hear the spell's effect are immune to the spell. \\
-            Barrier & If you attempt to move the spell's area towards a force or creature it prohibits, you feel a discernible pressure. If you continue moving, the spell ends. \\
-            Charm & \tdash \\
-            Chaotic & \tdash \\
-            Cold & \tdash \\
-            Compulsion & The spell forcibly alters a creature's actions, but does not necessarily affect its opinions or personality. All Compulsion effects are Mind effects. \\
-            Creation & The spell creates an object. Normally, Creation spells create temporary objects out of raw magical energy. Such objects disappear without a trace at the end of the spell, as the magic sustaining them fades. If the spell is also Physical, the objects created are real, and persist indefinitely.  \\
-            Curse & The spell cannot be dispelled. It can be removed with \spell{break enchantment} or \spell{remove curse}. \\
-            Death & The spell only affects living creatures. A creature killed by a death effect cannot be returned to life by \spell{resurrection}. \\
-            Delusion & The spell alters a creature's opinions or personality, but does not necessarily affect its actions. All Delusion effects are Mind effects. \\
-            Destructive & If the spell deals enough damage to a barrier to destroy it, its area continues past the barrier up to its normal limits. \\
-            Detection & The spell's area can penetrate physical objects. Unless otherwise specified, it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt. \\
-            Disease & \tdash \\
-            Earth & \tdash \\
-            Electricity & \tdash \\
-            Evil & \tdash \\
-            Fear & \tdash \\
-            Figment & The spell creates a false sensation shared by everyone viewing or otherwise perceiving the figment. Figments cannot remove real sensations present in their area, but they can add additional false sensations. You can only create figments of sensations you understand; for example, you cannot create a figment which speaks in a language you do not understand.
-            \par A figment's physical defenses are equal to 10 \add its size modifier. \\
-            Fire & The spell has no effect underwater. It provides light equivalent to a torch for its duration. Effects without a duration create a brief burst of torchlight. \\
-            Flesh & The spell has no effect on creatures without flesh, such as ghosts or oozes. \\
-            Fog & The spell has effect underwater. If at least 5 points of fire damage are dealt in a square within the spell's area, the fog is destroyed in that area. Unless otherwise specified, a moderate wind (11\add mph) disperses the fog in 5 rounds, and a strong wind (21\add mph) disperses the fog in 1 round. \\
-            Force & \tdash \\
-            Glamer & \tdash \\
-            Good & \tdash \\
-            Imbuement & \tdash \\
-            Instantaneous & The spell instantly causes some change which is thereafter nonmagical. It cannot be dispelled or dismissed. \\
-            Lawful & \tdash \\
-            Life & The spell only affects living creatures. \\
-            Light & The spell's effect is blocked by effects that block sight, and can pass through barriers that do not block sight. \\
-            Mind & The spell has no effect on creatures with an Intelligence of \minus8 or lower, or on creatures without minds (such as oozes or constructs). \\
-            Morale & \tdash \\
-            Negative & \tdash \\
-            Physical & The spell creates or modifies physical objects rather than using a direct magical effect. The spell does not allow spell resistance. \\
-            Planar & \tdash \\
-            Poison & \tdash \\
-            Positive & \tdash \\
-            %Retributive & A creature may only benefit from one retributive effect at once. \\
-            Scrying & The spell creates an invisible magical sensor that sends you information. Unless noted otherwise, the sensor has the same powers of sensory acuity that you possess. This level of acuity includes any spells or effects that target you, but not spells or effects that emanate from you. However, the sensor is treated as a separate, independent sensory organ of yours, and thus it functions normally even if you have been blinded, deafened, or otherwise suffered sensory impairment.
-            Any creature trained in Spellcraft can notice the sensor by making a DR 20 Spellcraft check. The sensor can be dispelled as if it were an active spell. Lead sheeting or magical protection blocks a scrying spell, and you sense that the spell is so blocked. \\
-            Shielding & \tdash \\
-            Sizing & Multiple size increasing or size decreasing effects never stack. Opposing size modifications cancel each other out on one for one basis, and any remaining effect occurs normally. \\
-            Sonic & \tdash \\
-            Speech & The spell be cast using a specific language you know. The spell has no effect on targets that do not understand the language used. \\
-            Subtle & \subtlespellnotes \\
-            Summoning & The spell manifests a creature from another plane. The manifestation immediately disappears when it dies, its hit points reach 0, or the spell's duration ends. Damage to the manifestation does not affect the original creature. Summoned creatures cannot use summoning abilities. Summoned creatures must be summoned within the spell's range, but can travel beyond that range freely. \\
-            Telekinesis & \tdash \\
-            Teleportation & A teleported creature can bring along equipment and held objects as long as their weight doesn't exceed its maximum load. Any excess items are left behind, in order of their distance from the creature's body. \\
-            Temporal & \tdash \\
-            Trap & The spell has no immediately obvious effect, but it can be detected with the Perception skill. Unless otherwise noted, it is also possible to disable the spell with the Devices skill before it triggers. The DR to detect and disable the spell is equal to 25 \add spell level.
-            \par No more than one trap spell can be placed on the same object or in the same area. Only the first trap placed has any effect. It must be dispelled or discharged before any new traps can be placed. \\
-            Unreal\label{Unreal Spells} & When you cast this spell, you make a check with a bonus equal to 10 \add your spellpower. Creatures can recognize the spell effect as unreal by interacting with it physically, or by making a Awareness check against a DR equal to your check result when casting the spell. A creature gets a \plus10 bonus on this Awareness check when using senses which should be present in the effect, but which are missing.
-            A creature that disbelieves the effect can treat it as if it did not exist. Its effects can still be observed if desired, but they are mere shadows of the full effect: visual effects appear translucent outlines, sounds can be heard as ghostly echoes, and so on. \\
-            Visual & Creatures that cannot see the spell's effect are immune to the spell. \\
-            Water & \tdash \\
-        \end{longtabu}
-        \twocolumn
-    }
+    \parhead{Air} Air abilities control the surrounding air. They do not function in environments without air.
+
+    \parhead{Animation} Animation abilities grant a semblance of life to objects.
+
+    \parhead{Auditory} Auditory abilities use sound to cause their effects. Creatures and objects that cannot hear the effect are immune to it.
+
+    \parhead{Chaotic} Chaotic abilities channel the essence of chaos.
+
+    \parhead{Cold} Cold abilities use cold \glossterm{energy}. It is possible to freeze liquids and perform similar feats with cold abilities.
+
+    \parhead{Compulsion} Compulsion abilities forcibly alter a creature's actions, but do not necessarily affect its opinions or personality.
+    All Compulsion abilities are also \glossterm{Mind} abilities.
+
+    \parhead{Creation} Creation abilities create physical objects. Unless otherwise specified, the objects created are temporarily formed from raw magical energy, and disappear without a trace at the end of the effect, as the magic sustaining them fades.
+
+    \parhead{Curse} Curse abilities lay supernatural curses on their targets. They cannot be dispelled, but can be removed with the \spell{break enchantment} or \spell{remove curse} spells.
+
+    \parhead{Death} Death abilities only affect living creatures. A creature killed by a death effect cannot be returned to life by \spell{resurrection} or similar abilities that depend on an intact corpse.
+
+    \parhead{Delusion} Delusion abilities alter a creature's opinons or personality, but do not necessarily affect their actions.
+    All Delusion abilities are also Mind abilities.
+
+    \parhead{Destructive} Destructive abilities can blast through intervening obstacles.
+    If a Destruction effect deals enough damage to a barrier to destroy it, the area of the effect continues past the barrier up to its normal limits.
+
+    \parhead{Detection} Detection abilities reveal magical auras or information within an area.
+    They can penetrate up to 1 foot of stone, 1 inch of common metal, a thin sheet of lead, 3 feet of wood or dirt.
+    For its ability to penetrate other materials, use the most similar substance from the list above.
+
+    \parhead{Earth} Earth abilities manipulate the ground or other forms of dirt.
+    They do not function if no earth is accessible.
+
+    \parhead{Electricity} Electricity abilities use electrical \glossterm{energy}.
+
+    \parhead{Evil} Evil abilities channel the essence of evil.
+
+    \parhead{Figment} Figment abilities create a false sensation shared by everyone viewing or otherwise perceiving the figment.
+    Figments cannot remove real sensations present in their area, but they can add additional false sensations.
+    You can only create figments of sensations you understand; for example, you cannot create a figment which speaks in a language you do not understand.
+    \par A figment's physical defenses are equal to 10 \add its size modifier.
+
+    \parhead{Fire} Fire abilities use fire \glossterm{energy}. They do not function underwater.
+    \par Fire abilities provide light equivalent to a torch for their duration.
+    Abilities without a duration create a brief burst of torchlight.
+
+    \parhead{Flesh} Flesh abilities manipulate the physical flesh of creatures.
+    They have no effect on creatures without flesh, such as ghosts or oozes.
+
+    \parhead{Fog} Fog abilities create physical fog in an area.
+    They have no effect underwater.
+    If at least 5 points of fire damage are dealt in a square within the area of effect, the fog is destroyed in that area.
+    Unless otherwise specified, a moderate wind (11\add mph) disperses the fog in 5 rounds, and a strong wind (21\add mph) disperses the fog in 1 round.
+
+    \parhead{Glamer} Glamer abilities alter sensations from everyone viewing or otherwise perceiving the glamer.
+    They can be used to change how something real appears, or to remove it from perception entirely.
+
+    \parhead{Good} Good abilities channel the essence of good.
+
+    \parhead{Imbuement} Imbuement abilities grant a target new abilities, or improve its existing abilities.
+
+    \parhead{Lawful} Good abilities channel the essence of law.
+
+    \parhead{Life} Life abilities attack, restore, or manipulate the life force of creatures. They have no effect on objects and creatures that are not alive.
+    \par Undead creatures are affected in a special way by Life abilities. In addition to any differences given in the effect's description, life damage instead heals undead creatures, and healing instead deals life damage.
+
+    \parhead{Light} Light abilities create visible light. Their area is blocked by barriers that prevent sight, even if the barriers would not otherwise block effect areas. Similarly, their area of effect is not blocked by barriers which do not prevent sight, even if the barriers would normally block effect areas.
+
+    \parhead{Mind} Mind abilities manipulate the minds of creatures. They have no effect on objects or creatures without minds.
+
+    \parhead{Physical} Physical abilities create or manipulate physical objects rather than having a directly magical effect. They do not allow spell resistance.
+
+    \parhead{Planar} Planar abilities transport matter or information between planes.
+
+    \parhead{Scrying} Scrying abilities create one or more invisible magical sensors that send you information.
+    Unless otherwise noted, the sensor created has the same powers of sensory acuity that you possess.
+    This includes the effect of any abilities which target you personally, such as spells to increase your visual acuity, but not abilities which affect an area around you.
+    However, the sensor is treated as a separate, independent sensory organ, and it functions normally even if you have been blinded, deafened, or otherwise suffered sensory impairment.
+    \par Any creature trained in Spellcraft can notice the sensor by making a DR 20 Spellcraft check. The sensor can be dispelled as if it were an active spell. You cannot create a sensor in a location with lead sheeting between you and the location, and you sense that the effect is blocked in this way. \\
+
+    \parhead{Shaping} Shaping abilities change the shape or structure of their targets.
+
+    \parhead{Shielding} Shielding abilities improve the defenses of their targets.
+
+    \parhead{Sizing} Sizing abilities alter the size of their targets. Unless otherwise stated, multiple effects which increase or decrease size do not stack. Opposing size modifications cancel each other out on a one for one basis, and any remaining effects occur normally.
+
+    \parhead{Sonic} Sonic abilities use sonic \glossterm{energy}.
+
+    \parhead{Speech} Speech abilities use words to achieve their ends. You must specify a language when using a Speech effect, and the language must be one you know (or have memorized the correct words to say). They have no effect on objects or creatures that do not understand the chosen language.
+
+    \parhead{Subtle} Subtle abilities have no visual or otherwise perceivable manifestation. Creatures affected by Subtle abilities do not generally know that they are being magically influenced. Subtle spells can still be identified with the Spellcraft skill (see \pcref{Spellcraft}), but the DR is 10 higher than normal.
+
+    \parhead{Summoning} Summoning abilities create a manifestation of a creature from another plane. The manifestation immediately disappears when it dies, its hit points reach 0, or the spell's duration ends. Damage to the manifestation does not affect the original creature. Summoned creatures cannot use Summoning abilities. Summoned creatures must be summoned within the spell's range, but can travel beyond that range freely.
+
+    \parhead{Telekinesis} Telekinesis abilities use telekinesis, the power of the mind. Many telekinesis abilities create fields of solid telekinetic force.
+
+    \parhead{Teleportation} Teleportation abilities move creature or objects through the Astral Plane to a distant destination. A teleported creature can bring along equipment and held objects as long as their weight does not exceed the creature's maximum load (see \pcref{Weight Limits}). Any excess items are left behind, in order of their distance from the creature's body.
+
+    \parhead{Temporal} Temporal abilities alter the flow of time.
+
+    \parhead{Thaumaturgy} Thaumaturgy abilities alter or destroy magic itself. They do not allow \glossterm{spell resistance}.
+
+    \parhead{Trap} Trap abilities do not have their full effect immediately.
+    All Trap abilities specify a condition or circumstance, such as opening a door, which triggers the full effect of the ability.
+    \par Unless otherwise noted, active Trap effects can be detected with the Awareness skill and disabled with the Devices skill before their effect triggers (see \pcref{Awareness}, and \pcref{Devices}).
+    The DR to detect and disable the effect is equal to 20 \add the \glossterm{power} of the effect.
+    \par No more than one Trap ability can be placed on the same object or in the same area. Only the first trap placed has any effect. It must be dispelled or discharged before any new traps can be placed.
+
+    \parhead{Unreal} Unreal abilities have effects that are not completely real.
+    Their effects can be disbelieved once inconsistencies with reality are noticed.
+    All Unreal abilities are also either \glossterm{Figment} or \glossterm{Glamer} abilities.
+
+    When you use an Unreal ability, you make a check with a bonus equal to 10 \add your \glossterm{power} with the ability.
+    Creatures who observe its effect can recognize the effect as unreal by interacting with it physically, or by making an Awareness check (see \pcref{Awareness}).
+    The DR of the Awareness check is equal to your check result when using the ability.
+    A creature gets a \plus10 bonus on this Awareness check for each sense it uses that should be present in the effect, but which is missing.
+
+    A creature that recognizes an unreal ability as false can treat it as if it did not exist. Its effects can still be observed if desired, but they are mere shadows of the full effect: visual effects appear translucent outlines, sounds can be heard as ghostly echoes, and so on.
+
+    \parhead{Visual} Visual abilities use visible objects or forces to cause their effects. Creatures and objects that cannot see the effect are immune to it.
+
+    \parhead{Water} Water abilities use water to cause their effects.
 
 \section{Cantrips}\label{Cantrips}
     Cantrips are special spell-like abilities that arcane casters can use at will. Unlike other spell-like abilities, they have verbal and somatic components and are subject to arcane spell failure. All cantrips take a standard action to cast unless specified otherwise in the description. Cantrips are considered to be 0th level for the purpose of spells and abilities which reference spell level. They are described at the end of Chapter 12.
