@@ -1156,6 +1156,33 @@
     \end{spellfooter}
 \end{spellsection}
 
+\begin{spellsection}{Boulder Drop}[4]
+    \begin{spellheader}
+        \spelldesc{You create a massive boulder over the heads of your foes and drop it on them.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spellburst{\areasmall radius}}{\spellrng{\rngmed}}
+            \spelltgts{Everything in the area}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect A boulder appears in midair above the target area and falls, crushing everything in the area before disappearing. You can create the boulder up to 50 feet above the area. The height of the boulder does not affect the damage dealt, but it must not share space with any creature creature in the area.
+            \begin{spellattack}{Spellpower vs. Reflex}
+                \spellsuccess \spelldamage{bludgeoning}[d8].
+                \spellcritical Double damage.
+                \spellfailure Half damage.
+            \end{spellattack}
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Conjuration [Creation, Physical]}{Arcane, Nature}
+        \miscastexplode
+    \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{2}{Widened}{You summon a larger boulder, causing the spell's area becomes a \areamed radius.}
+    \end{spellaugments}
+\end{spellsection}
+
 \begin{spellsection}{Burning Hands}[1]
     \begin{spellheader}
         \spelldesc{You expel a cone of searing flame shoots from your fingertips, searing creatures in front of you.}
@@ -2873,7 +2900,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Fire]}{Destruction, Divine, Fire, War}
+        \spellinfo{Evocation [Destructive, Fire]}{Destruction, Divine, Fire}
         \spellnotes \destructivespellnotes
 
         \firespellnotes
@@ -4009,6 +4036,33 @@
     \end{spellaugments}
 \end{spellsection}
 
+\begin{spellsection}{Martial Transformation}[5]
+    \begin{spellheader}
+        \spelldesc{You grant an ally incredible combat prowess.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{One willing creature; see text}{\rngclose}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect The target is proficient with all weapons, including improvised weapons.
+            It may use your spellpower \add 4 in place of its normal accuracy with all physical attacks.
+            This replaces all other bonuses and penalties to accuracy.
+
+            If the target's level is lower than half your spellpower, it takes damage equal to your spellpower at the end of each round from the power of the transformation.
+            \spelldur \durshort
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Transmutation [Augment]}{Arcane, War}
+        \spellnotes This spell does not affect the damage the target deals with physical attacks.
+        \miscastexplode
+    \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{3}{Damaging Transformation}{The target may also use your spellpower in place all other bonuses to physical damage. It still rolls damage with its weapon normally.}
+    \end{spellaugments}
+\end{spellsection}
+
 \begin{spellsection}{Martyr's Gift}[8]
     \begin{spellheader}
         \spelldesc{You selflessly shield your allies from harm by sacrificing your own health.}
@@ -5018,13 +5072,13 @@
     \end{spellaugments}
 \end{spellsection}
 
-\begin{spellsection}{Scorching Ray}[3]
+\begin{spellsection}{Scorching Ray}[4]
     \begin{spellheader}
         \spelldesc{You blast your foe with a fiery ray.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngclose}}
+            \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
@@ -5035,7 +5089,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Fire]}{Arcane, Destruction}
+        \spellinfo{Evocation [Destructive, Fire]}{Arcane, Destruction, Nature}
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -5088,7 +5142,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Light]}{Divine}
+        \spellinfo{Illusion [Figment, Light]}{Arcane, Nature}
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -5224,7 +5278,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature or object}{\rngclose}
+            \spellquicktargeting{One creature or object}{\rngmed}
             \spellcmp{Somatic only}
         \end{spelltargetinginfo}
         \begin{spelleffects}
@@ -5334,6 +5388,26 @@
         \spellaugment{1}{Flexible}{As a swift action, you can suppress or resume the spell's effects without dismissing the spell.}
         \spellaugment{2}{Lifebound}{The targets also share healing in the same way that they share damage.}
         \spellaugment{3}{Distant}{The targets are considered to be within range of each other as long as they are on the same plane, regardless of their distance from each other.}
+    \end{spellaugments}
+\end{spellsection}
+
+\begin{spellsection}{Shining Beacon}[3]
+    \begin{spellheader}
+        \spelldesc{You become a beacon of light, illuminating your surroundings and blinding your foes.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelleffects}
+            \spelleffect You radiate bright light up to a 500 foot radius, and dim light an additional 500 feet beyond that. In addition, whenever a creature within \rngclose range of you attacks you, it is \partiallyblinded for 2 rounds.
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Illusion [Figment, Light, Visual]}{Arcane}
+        \miscastexplode
+    \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{2}{Aura}{Allies within a \rngmed radius emanation from you also partially blind foes that attack them.}
+        \spellaugment{2}{Distant}{The range of partial blinding is extended to include the entire radius of bright light.}
+        \spellaugment{3}{Widened}{The radius of bright light is extended to 1 mile, with dim light for an additional 1 mile beyond that.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -5898,7 +5972,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Light]}{Nature, Wild}
+        \spellinfo{Illusion [Figment, Light]}{Arcane, Nature, Wild}
         \spellnotes This light is considered natural sunlight for the purpose of effects which depend on sunlight.
         \miscastexplode
     \end{spellfooter}
@@ -5923,7 +5997,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Light]}{Nature, Wil}
+        \spellinfo{Illusion [Figment, Light]}{Arcane, Nature, Wild}
         \spellnotes This light is considered natural sunlight for the purpose of effects which depend on sunlight.
         \miscastyou
     \end{spellfooter}
@@ -6425,6 +6499,36 @@
         \spellinfo{Vivimancy [Auditory, Death]}{Arcane, Death}
         \miscastexplode
     \end{spellfooter}
+\end{spellsection}
+
+\begin{spellsection}{Wall of Antimagic}[4]
+    \begin{spellheader}
+        \spelldesc{You create a shimmering field that hangs in the air, blocking the magical abilities of your foes.}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spelltwocol{\spellzone{50 ft.\ wall, 10 ft.\ high}}{\spellrng{\rngmed}}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \spelleffect This spell creates a translucent wall that selectively blocks magical abilities.
+            The wall blocks line of effect for spells, spell-like abilities, and supernatural abilities, except for abilities that you allow to pass through the wall.
+            Any creature may attempt to use abilities through the wall.
+            If you block an ability, it fails if its range would be beyond the wall, and any effects of the ability stop at the edge of the wall.
+            If you allow an ability through the wall, it functions normally.
+
+            Deciding whether to allow an ability through the wall does not take an action, but you must be aware of the use of an ability to make that decision.
+            Each round, you may choose whether the wall blocks abilities that you are not aware of or allows them through the wall.
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Abjuration [Thaumaturgy]}{Arcane}
+        \spellnotes You cannot partially block an ability, such as by allowing a \spell{fireball} spell to be cast through the wall, but blocking its effect at the edge of the well.
+        An ability can either pass through the wall entirely or is blocked completely.
+        \miscastexplode
+    \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{2}{Widened}{The wall appears in a 100 ft.\ line or a 20 ft.\ radius.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Wall of Fire}[2]
