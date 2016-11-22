@@ -1536,23 +1536,23 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spellzone{\areamed radius}}{\spellrng{\rngmed}}
+            \spellrng{\rngmed}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect This spell creates the visual illusion of an object, creature, or force within the area, as determined by you. The illusion does not create sound, smell, texture, or temperature. If you concentrate as a swift action, you can alter and control the image for the rest of the round.
+            \spelleffect This spell creates the visual illusion of an Large or smaller object, creature, or force, as determined by you. The figment does not create sound, smell, texture, or temperature. If you concentrate as a swift action, you can move the figment anywhere within the range and alter its form for the rest of the round. For example, you could concentrate to make an illusion of human guards walk realistically across a room. If you do not concentrate on the image, it is static.
+
+            When you cast this spell, you make a check with a bonus equal to your spellpower \add 10. Creatures can recognize the figment is created by illusory magic by interacting with it physically, or by making an Awareness check against a DR equal to your check result when casting the spell. A creature gets a \plus10 bonus on this Awareness check when using senses which should be present in the figment, but which are missing.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Illusion [Figment, Unreal]}{Arcane, Trickery}
-        \spellnotes When you cast this spell, you make a check with a bonus equal to 10 \add your spellpower. Creatures can recognize the figment as unreal by interacting with it physically, or by making a Awareness check against a DR equal to your check result when casting the spell. A creature gets a \plus10 bonus on this Awareness check when using senses which should be present in the figment, but which are missing.
-
-        A creature that disbelieves the effect can treat it as if it did not exist. Its effects can still be observed if desired, but they are mere shadows of the full effect: visual effects appear translucent outlines, sounds can be heard as ghostly echoes, and so on.
+        \spellinfo{Illusion [Figment]}{Arcane, Trickery}
+        \spellnotes A creature that recognizes the created figment as illusory still perceives the figment normally.
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{1}{Sensory}{The illusion affects an additional sense: sound, smell, texture, or temperature. This augment can be used multiple times, affecting a different sense each time.}
-        \spellaugment{1}{Widened}{The spell's area becomes a \arealarge radius.}
+        \spellaugment{1}{Giant}{The spell can create a figment one size category larger. This augment can be used multiple times.}
         \spellaugment{2}{Persistent}{The spell's duration becomes \durlong.}
         \spellaugment{2}{Scripted}{When you cast the spell, you set a simple script for the figment to follow. It follows that script automatically. As a swift action, you can concentrate to change the script for the remainder of the spell.}
         \spellaugment{5}{False Reality}{The spell's area becomes a 1 mile radius zone, centered on you.}
@@ -1573,8 +1573,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Illusion [Figment, Unreal]}{Arcane}
-        \spellnotes Creatures can identify the illusion, as \spell{create image}.
+        \spellinfo{Illusion [Figment]}{Arcane}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -3397,21 +3396,14 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect Lights appear in the area, illuminating the surroundings like a torch.
+            When the lights first appear, you make a Spellpower vs. Mental attack against all creatures in the area.
+            Success means a target is \fascinated by the lights.
+            At the end of each round, you make the same attack against any creatures that entered the area that round.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
-    \begin{spellsubcontent}
-        \begin{spelltargetinginfo}
-            \spelltgts{All creatures in the area}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target is \fascinated by the lights.
-            \end{spellattack}
-        \end{spelleffects}
-    \end{spellsubcontent}
     \begin{spellfooter}
-        \spellinfo{Enchantment/Illusion [Compulsion, Figment, Light, Mind, Visual]}*{Arcane}
+        \spellinfo{Illusion [Figment, Light, Mind, Visual]}*{Arcane}
         \miscastyou
     \end{spellfooter}
     \begin{spellaugments}
@@ -4305,22 +4297,22 @@
 
 \begin{spellsection}{Phantasmal Killer}[4]
     \begin{spellheader}
-        \spelldesc{You create a phantasmal image of the most fearsome creature imaginable to your foe.}
+        \spelldesc{You make your foe believe it sees the most fearsome creature it can imagine.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Mental and Fortitude}
-                \spellsuccess[Mental] The target is \frightened for 5 rounds.
-                \spellcritical[Mental and Fortitude] The target dies.
+            \begin{spellattack}{Spellpower vs. Mental}
+                \spellsuccess The target is \frightened for 5 rounds.
+                \spellcritical Make a second Spellpower vs. Fortitude attack against the target. If that attack succeeds, the target dies.
                 \spellfailure The target is \shaken for 5 rounds.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Enchantment/Illusion [Death, Mind]}*{Arcane, Trickery}
+        \spellinfo{Enchantment [Delusion, Mind]}*{Arcane, Trickery}
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -4440,29 +4432,6 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Enchantment [Delusion, Mind]}{Arcane}
-        \miscastrandom
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Power Word Impair}[4]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
-            \spellcmp{Verbal only}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target is \severelyimpaired with attacks and checks for 2 rounds.
-                \spellcritical The target is \severelyimpaired with attacks and checks for one year.
-                \spellfailure The target is \impaired with attacks and checks for 2 rounds.
-            \end{spellattack}
-            \spelldur \durbrief or one year
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Enchantment [Compulsion, Mind]}{Arcane}
         \miscastrandom
     \end{spellfooter}
 \end{spellsection}
@@ -5203,7 +5172,7 @@
             \spellcmp{Somatic only}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You create an illusory duplicate of yourself. The duplicate looks, sounds, and smells like you, but is intangible. Normally, it mimics your actions perfectly, including speech.
+            \spelleffect You create an illusory duplicate of yourself, as the \spell{create image} spell. The duplicate looks, sounds, and smells like you, but is intangible. Normally, it mimics your actions perfectly, including speech.
             \par As a swift action, you can attune to the projected image. This has several effects.
             \begin{itemize}
                 \item You see and hear from the image's location, rather from where your body is.
@@ -5218,9 +5187,8 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Divination/Illusion [Figment, Scrying, Unreal]}{Arcane}
-        \spellnotes Creatures can identify the duplicate as an illusion, as \spell{create image}.
-        Since the image is not a creature, it is difficult to disrupt, and many spells have no effect on it.
+        \spellinfo{Divination/Illusion [Figment, Scrying]}{Arcane}
+        \spellnotes Since the image is not a creature, it is difficult to disrupt, and many spells have no effect on it.
         However, the image is treated as a scrying sensor for the purpose of abilities that affect scrying sensors.
         \miscastexplode
     \end{spellfooter}
@@ -5235,18 +5203,17 @@
             \spelltwocol{\spellarea{\arealarge solid wall, 10 ft.\ high}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect This spell creates an illusion of a wall or similar physical barricade.
+            \spelleffect This spell creates an image of a wall or similar physical barricade.
             In the same position, this spell creates a barrier of telekinetic force that blocks the passage of most objects and creatures.
             However, your allies and their equipment can pass through the barrier unimpeded.
             The wall blocks all spell effects, including those of your allies.
 
-            \spelldur 5 rounds
+            When you cast this spell, you make a check with a bonus equal to your spellpower \add 10. Creatures can recognize the wall is created by illusory magic by making an Awareness check against a DR equal to your check result when casting the spell. A creature gets a \plus10 bonus on this Awareness check when using senses which should be present in the figment, but which are missing.
+            \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation/Illusion [Figment, Telekinesis, Unreal]}{Arcane, Trickery}
-        \spellnotes Creatures can identify that the wall is an illusion, as \spell{create image}.
-        This can allow creatures to see through the wall, but does not allow them to pass through it.
+        \spellinfo{Evocation/Illusion [Figment, Telekinesis]}{Arcane, Trickery}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -5306,15 +5273,14 @@
             \spelleffect This spell has three simultaneous effects.
             First, you become invisible for 5 rounds, as \spell{invisibility}.
             Second, you teleport up to 100 feet, as \spell{dimension slide}.
-            Third, an illusory duplicate of you appears in your original location for 5 rounds, as \spell{create image}.
+            Third, an illusory duplicate of you appears in your original location for 5 rounds, as the \spell{create image} spell.
             The image appears superimposed over your original position, preventing onlookers from noticing your disappearance.
 
             You can control the image of yourself as you would control any other figment with \spell{create image}. If not directed, it remains stationary.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Conjuration/Illusion [Figment, Glamer, Teleportation, Unreal]}*{Arcane, Travel, Trickery}
-        \spellnotes Creatures can identify the duplicate as illusory, as \spell{create image}.
+        \spellinfo{Conjuration/Illusion [Figment, Glamer, Teleportation]}*{Arcane, Travel, Trickery}
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
