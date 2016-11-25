@@ -781,7 +781,7 @@ Magic items are objects that have been imbued with magical energy. They can take
         \begin{longtabuwrapper}
             \begin{longtabu}{l X l l l l}
                 \lcaption{Weapon Special Abilities}\\
-                \tb{Name} & \tb{Description} & \tb{Cost} & \tb{Item Level} & \tb{Location} & \tb{Page} \\
+                \tb{Name} & \tb{Description} & \tb{Cost} & \tb{Item Level} & \tb{Weapon Type} & \tb{Page} \\
                 \mitemref{Bane} & Special ability only works against some creatures & Varies & Varies & Varies & \mitempref{Bane} \\
                 \mitemref{Sweeping} & Can make extra attack against another foe & \mitempricetable{Active}{0} & Melee & \mitempref{Sweeping} \\
                 \mitemref{Rebounding} & Returns to you slowly when thrown & \mitempricetable{Passive}{0} & Melee & \mitempref{Rebounding} \\
@@ -801,7 +801,7 @@ Magic items are objects that have been imbued with magical energy. They can take
                 \mitemref{Transforming} & Can transform into any weapon & \mitempricetable{Active}{3} & Any & \mitempref{Transforming} \\
                 \mitemref{Poisoning} & Can instantly duplicate minor poison & \mitempricetable{Active}{3} & Melee & \mitempref{Poisoning} \\
                 \mitemref{Fixating} & Can automatically critical after striking foe repeatedly & \mitempricetable{Active}{4} & Melee & \mitempref{Fixating} \\
-                \mitemref{Disorienting} & Can disorient foe & \mitempricetable{Active}{6} & \mitempref{Disorienting} \\
+                \mitemref{Disorienting} & Can disorient foe & \mitempricetable{Active}{6} & Any & \mitempref{Disorienting} \\
                 \mitemref{Speed} & Grants extra strikes & \mitempricetable{Passive}{5} & Any & \mitempref{Speed} \\
                 \mitemref{Toxic} & Can instantly coat itself with major poison & \mitempricetable{Active}{6} & Melee & \mitempref{Poisoning} \\
                 \mitemref{Soulreaving} & Deals delayed damage instead of immediate damage & \mitempricetable{Passive}{7} & Any & \mitempref{Soulreaving} \\
@@ -1082,9 +1082,9 @@ Magic items are objects that have been imbued with magical energy. They can take
                 \mitemref{Fire, Lesser} & Know \spell{burning hands} spell & \mitempricetable{Active}{1} & Arcane, Nature & \mitempref{Fire, Lesser} \\
                 \mitemref{Missiles, Lesser} & Know \spell{magic missile} spell & \mitempricetable{Active}{1} & Arcane & \mitempref{Missiles, Lesser} \\
                 \mitemref{Time, Lesser} & Know \spell{haste} spell & \mitempricetable{Active}{1} & Arcane & \mitempref{Time, Lesser} \\
+                \mitemref{Cold, Lesser} & Know \spell{cone of cold} spell & \mitempricetable{Active}{2} & Arcane, Nature & \mitempref{Cold, Lesser} \\
                 \mitemref{Curses, Lesser} & Know \spell{curse of blood and bone} spell & \mitempricetable{Active}{2} & Arcane, Divine & \mitempref{Curses, Lesser} \\
                 \mitemref{Acid} & Know \spell{acid arrow} spell & \mitempricetable{Active}{3} & Arcane & \mitempref{Acid} \\
-                \mitemref{Cold, Lesser} & Know \spell{cone of cold} spell & \mitempricetable{Active}{3} & Arcane, Nature & \mitempref{Cold, Lesser} \\
                 \mitemref{Electricity} & Know \spell{lightning bolt}, \spell{shocking grasp} spells & \mitempricetable{Active}{3} & Arcane, Nature & \mitempref{Electricity} \\
                 \mitemref{Fire} & Know \spell{fireball}, \spell{burning hands} spells & \mitempricetable{Active}{3} & Arcane, Nature & \mitempref{Fire} \\
                 \mitemref{Time} & Know \spell{slow}, \spell{haste} spells & \mitempricetable{Active}{3} & Arcane & \mitempref{Time} \\
@@ -1120,10 +1120,10 @@ Magic items are objects that have been imbued with magical energy. They can take
                 \tb{Enhancement Bonus} & \tb{Base Price} & \tb{Item Level}\\
                 \hline
                 \plus1 & 150 gp    & 3rd  \\
-                \plus2 & 750 gp    & 5th  \\
-                \plus3 & 3,750 gp  & 9th  \\
-                \plus4 & 18,750 gp & 13th \\
-                \plus5 & 93,750 gp & 17th \\
+                \plus2 & 800 gp    & 5th  \\
+                \plus3 & 4,000 gp  & 9th  \\
+                \plus4 & 20,000 gp & 13th \\
+                \plus5 & 95,000 gp & 17th \\
             \end{dtabularx}
         \end{dtable}
 
@@ -1144,7 +1144,8 @@ Magic items are objects that have been imbued with magical energy. They can take
             \parhead{Physical Description} A typical holy symbol is a no larger than 4 inches in each dimension and can be easily held in the palm of a hand.
             Most holy symbols are metal, but they can be made from wood, bone, or even more exotic materials, depending on the deity they symbolize.
 
-            \parhead{Special Rules} Most holy symbols are designed to be worn as an amulet in addition to being held in the hand.
+            \parhead{Special Rules} All holy symbols are divine implements.
+            Most holy symbols are designed to be worn as an amulet in addition to being held in the hand.
             When worn in this way, the holy symbol occupies a torso body slot.
             A holy symbol worn on the body cannot be used to perform somatic components for spellcasting.
             However, it still grants enhancement bonuses and spells known as if it was being actively wielded.
