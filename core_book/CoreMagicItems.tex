@@ -7,8 +7,10 @@ Magic items are objects that have been imbued with magical energy. They can take
     \begin{itemize}
         \item Apparel items provide access to their abilities while worn.
             A \mitem{flaming burst full plate} and a \mitem{ring of protection} are apparel items.
-        \item Implements provide access to their abilities when wielded.
-            A \mitem{flaming longsword} and a \mitem{wand of fire} are implements.
+        \item Weapons are used to make physical attacks. They provide access to their abilities when wielded.
+            A \mitem{\plus1 flaming longsword} and a \mitem{\plus3 vampiric scythe} are weapons.
+        \item Implements are used to cast spells. They provide access to their abilities when wielded and attuned to.
+            A \mitem{\plus2 staff of fire} and a \mitem{\plus5 staff of time} are implements.
         \item Tools provide access to their abilities when used in some way.
             A \mitem{bag of holding} is a tool.
     \end{itemize}
@@ -99,6 +101,8 @@ Magic items are objects that have been imbued with magical energy. They can take
     This information (when applicable) is given at the beginning of the item's notational entry.
     See the Spellcraft skill for details.
 
+    \subparhead{Ability Tags} Unless otherwise noted, an item's abilities have all tags included in the item's aura.
+
     \parhead{Requirements} The qualifications that must be met to create the item, %described in \pcref{Creating Magic Items}.
 
     \parhead{Market Price} This gold piece value, given following the word ``Price,'' represents the price someone should expect to pay to buy the item.
@@ -168,21 +172,23 @@ Magic items are objects that have been imbued with magical energy. They can take
                 \lcaption{Apparel Special Abilities}\\
                 \tb{Armor and Shields} & \tb{Description} & \tb{Cost} & \tb{Item Level} & \tb{Location} & \tb{Page} \\
                 \mitemref{Feather} \minus1 & \minus1 encumbrance penalty & 100 gp & 2nd & Body, Shield & \mitempref{Feather} \\
+                \mitemref{Arrow Deflection} & Can instantly deflect a ranged attack & \mitempricetable{Active}{1} & Shield & \mitempref{Arrow Deflection} \\
                 \mitemref{Resilient} & Can grant damage reduction & \mitempricetable{Active}{1} & Body & \mitempref{Resilient} \\
                 \mitemref*{Feather} \minus2 & \minus2 encumbrance penalty & 500 gp & 4th & Body, Shield & \mitempref{Feather} \\
+                \mitemref{Arrow Catching} & Redirects arrows to hit you & \mitempricetable{Active}{2} & Shield & \mitempref{Arrow Catching} \\
                 \mitemref{Bashing} & Deals more damage when used to bash & \mitempricetable{Passive}{1} & Shield & \mitempref{Bashing} \\
+                \mitemref{Spell Resistant} & Can grant spell resistance & \mitempricetable{Active}{2} & Body & \mitempref{Spell Resistant} \\
                 \mitemref{Flaming Burst} & Can deal fire damage when hit or missed & \mitempricetable{Active}{3} & Body, Shield & \mitempref{Flaming Burst} \\
                 \mitemref{Freezing Burst} & Can deal cold damage when hit or missed & \mitempricetable{Active}{3} & Body, Shield & \mitempref{Freezing Burst} \\
-                \mitemref{Ghost Touch} & Functions against incorporeal attacks & \mitempricetable{Passive}{2} & Body, Shield & \mitempref{Ghost Touch} \\
                 \mitemref{Shocking Burst} & Can deal electricity damage when hit or missed & \mitempricetable{Active}{3} & Body, Shield & \mitempref{Shocking Burst} \\
-                \mitemref{Spell Resistant} & Can grant spell resistance & \mitempricetable{Active}{3} & Body & \mitempref{Spell Resistant} \\
                 \mitemref*{Feather} \minus3 & \minus3 encumbrance penalty & 2,500 gp & 8th & Body, Shield & \mitempref{Feather} \\
+                \mitemref{Fortified} & Grants immunity to critical hits & \mitempricetable{Passive}{3} & Body & \mitempref{Fortified} \\
                 \mitemref*{Feather} \minus4 & \minus4 encumbrance penalty & 12,500 gp & 12th & Body, Shield & \mitempref{Feather} \\
                 \mitemref{Energy Resistant} & Reduces energy damage & \mitempricetable{Passive}{4} & Body & \mitempref{Energy Resistant} \\
                 \mitemref*{Feather} \minus5 & \minus5 encumbrance penalty & 62,500 gp & 16th & Body, Shield & \mitempref{Feather} \\
                 \mitemref{Flameforged} & Deals fire damage when hit or missed & \mitempricetable{Passive}{5} & Body, Shield & \mitempref{Flameforged} \\
                 \mitemref{Iceforged} & Deals fire damage when hit or missed & \mitempricetable{Passive}{5} & Body, Shield & \mitempref{Iceforged} \\
-                \mitemref{Invulnerable} & Reduces physical & \mitempricetable{Passive}{5} & Body & \mitempref{Invulnerable} \\
+                \mitemref{Invulnerable} & Reduces physical damage & \mitempricetable{Passive}{5} & Body & \mitempref{Invulnerable} \\
                 \mitemref{Sparkforged} & Deals fire damage when hit or missed & \mitempricetable{Passive}{5} & Body, Shield & \mitempref{Sparkforged} \\
                 \mitemref{Spell Reflecting} & Can reflect spells & \mitempricetable{Active}{7} & Shield & \mitempref{Spell Reflecting} \\
 
@@ -204,8 +210,10 @@ Magic items are objects that have been imbued with magical energy. They can take
 
                 \midrule
                 \tb{Legs} & \tb{Description} & \tb{Cost} & \tb{Item Level} & \tb{Location} & \tb{Page} \\
+                \mitemref{Boots of Water Walking} & Can walk on water & \mitempricetable{Active}{0} & Legs & \mitempref{Boots of Water Walking} \\
                 \mitemref{Boots of Earth's Embrace} & Can ignore forced movement & \mitempricetable{Active}{1} & Legs & \mitempref{Boots of Earth's Embrace} \\
                 \mitemref{Boots of Speed} & Can double movement speed & \mitempricetable{Active}{1} & Legs & \mitempref{Boots of Speed} \\
+                \mitemref{Boots of Freedom} & Can ignore movement-impairing effects & \mitempricetable{Active}{1} & Legs & \mitempref{Boots of Speed} \\
                 \mitemref{Boots of Elvenkind} & Grants \plus4 to Stealth & 500 gp & 4th & Legs & \mitempref{Boots of Elvenkind} \\
                 \mitemref{Sandals of Sprinting} & Grants \plus4 to Sprint & 500 gp & 4th & Legs & \mitempref{Sandals of Sprinting} \\
                 \mitemref{Boots of Swift Passage} & Can teleport you short distances & \mitempricetable{Active}{2} & Legs & \mitempref{Boots of Swift Passage} \\
@@ -220,12 +228,16 @@ Magic items are objects that have been imbued with magical energy. They can take
                 \tb{Rings} & \tb{Description} & \tb{Cost} & \tb{Item Level} & \tb{Location} & \tb{Page} \\
                 \mitemref{Protection} \plus1 & Grants \plus1 armor enhancement & 100 gp & 2nd & Ring & \mitempref{Protection} \\
                 \mitemref{Energy Resistance} & Can briefly reduce energy damage & \mitempricetable{Active}{1} & Ring & \mitempref{Energy Resistance} \\
+                \mitemref{Animal Friendship} & Grants \plus4 to Creature Handling & 500 gp & 4th & Ring & \mitempref{Animal Friendship} \\
                 \mitemref*{Protection} \plus2 & Grants \plus2 armor enhancement & 500 gp & 4th & Ring & \mitempref{Protection} \\
                 \mitemref{Nourishment} & Grants food and drink automatically & \mitempricetable{Passive}{1} & Ring & \mitempref{Nourishment} \\
+                \mitemref{Invisibility} & Can grant invisibility & \mitempricetable{Active}{2} & Ring & \mitempref{Invisibility} \\
+                \mitemref{Counterspells} & Can counter spell cast into ring & \mitempricetable{Active}{3} & Ring & \mitempref{Counterspells} \\
                 \mitemref{Heroic Vengeance} & Can deal damage when foe rolls a 20 & \mitempricetable{Active}{3} & Ring & \mitempref{Heroic Vengeance} \\
                 \mitemref*{Protection} \plus3 & Grants \plus3 armor enhancement & 2,500 gp & 8th & Ring & \mitempref{Protection} \\
                 \mitemref{Sustenance} & Grants food, drink, and sleep automatically & \mitempricetable{Passive}{3} & Ring & \mitempref{Sustenance} \\
                 \mitemref*{Protection} \plus4 & Grants \plus4 armor enhancement & 12,500 gp & 12th & Ring & \mitempref{Protection} \\
+                \mitemref{Regeneration} & Grants healing each round & \mitempricetable{Passive}{6} & Ring & \mitempref{Regeneration} \\
                 \mitemref*{Protection} \plus5 & Grants \plus5 armor enhancement & 62,500 gp & 16th & Ring & \mitempref{Protection} \\
 
                 \midrule
@@ -236,9 +248,9 @@ Magic items are objects that have been imbued with magical energy. They can take
                 \mitemref{Obscuring Cloak} & Can summon fog around you & \mitempricetable{Active}{1} & Torso & \mitempref{Obscuring Cloak} \\
                 \mitemref{Hunter's Cloak} & Can grant invisibility while immobile & \mitempricetable{Active}{2} & Torso & \mitempref{Hunter's Cloak} \\
                 \mitemref*{Amulet of Mighty Fists} \plus2 & Grants \plus2 unarmed weapon enhancement & 1,000 gp & 6th & Torso & \mitempref{Amulet of Mighty Fists} \\
+                \mitemref{Belt of Dwarvenkind} & Grants \plus2 Fortitude, dwarven characteristics & \mitempricetable{Passive}{2} & Torso & \mitempref{Belt of Dwarvenkind} \\
                 \mitemref*{Amulet of Mighty Fists} \plus3 & Grants \plus3 unarmed weapon enhancement & 5,000 gp & 10th & Torso & \mitempref{Amulet of Mighty Fists} \\
                 \mitemref{Amulet of Nondetection} & Grants resistance to divination spells & \mitempricetable{Passive}{3} & Torso & \mitempref{Amulet of Nondetection} \\
-                \mitemref{Belt of Dwarvenkind} & Grants \plus2 Fortitude, dwarven characteristics & \mitempricetable{Passive}{3} & Torso & \mitempref{Belt of Dwarvenkind} \\
                 \mitemref{Vanishing Cloak} & Can teleport and summon fog around you & \mitempricetable{Active}{4} & Torso & \mitempref{Vanishing Cloak} \\
                 \mitemref{Assassin's Cloak} & Can grant invisibility while immobile, and shortly afterward  & \mitempricetable{Active}{5} & Torso & \mitempref{Assassin's Cloak} \\
                 \mitemref*{Amulet of Mighty Fists} \plus4 & Grants \plus4 unarmed weapon enhancement & 25,000 gp & 13th & Torso & \mitempref{Amulet of Mighty Fists} \\
@@ -299,7 +311,21 @@ Magic items are objects that have been imbued with magical energy. They can take
 
     \subsection{Armor Special Abilities}\label{Armor Special Abilities}
 
-        \begin{magicitemdef}{Bashing}[Passive]{1}[Shield]{Transmutation [Augment]}{as shield}
+        \begin{magicitemdef}{Arrow Catching}[Active]{2}[Shield]{Evocation [Telekinesis]}{as shield}
+            \magicitemability{Active}[Standard action] If you trace a circle in the air with this shield, it pulls in nearby ranged weapons.
+            Whenever a creature within a \areasmall emanation of you would be attacked by a ranged weapon, the attack is redirected to target you instead.
+            Resolve the attack as if it had initially targeted you, except that the attack is not affected by cover or concealment.
+            Projectile and thrown objects that are Medium size or larger are not affected by this redirection.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}{Arrow Deflection}[Active]{1}[Shield]{Transmutation [Imbuement]}{as shield}
+            \magicitemability{Triggered}[Immediate action] When you are attacked by a ranged weapon, you can activate this item.
+            If you do, the shield deflects the attack without harm.
+            You must be aware of the attack to deflect it in this way.
+            Projectile and thrown objects that are Medium size or larger are not affected by this deflection.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}{Bashing}[Passive]{1}[Shield]{Transmutation [Imbuement]}{as shield}
             \magicitemability{Passive} This shield deals damage with shield bash attacks as if it was two size categories larger than normal (so a Medium-sized light shield deals 1d6 damage, and a Medium-sized heavy shield deals 1d8 damage).
         \end{magicitemdef}
 
@@ -309,7 +335,7 @@ Magic items are objects that have been imbued with magical energy. They can take
             The color of the light depends on the energy damage resisted: green for acid, blue for cold, yellow for electricity, and red for fire.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Feather}{1}[Body, Shield]{Transmutation (Augment)}{as armor}
+        \begin{magicitemdef}{Feather}{1}[Body, Shield]{Transmutation (Imbuement)}{as armor}
             \magicitemability{Passive} This armor has a reduced \glossterm{encumbrance penalty}.
             The price depends on the penalty reduction, as shown in the table below.
 
@@ -330,7 +356,7 @@ Magic items are objects that have been imbued with magical energy. They can take
             \end{dtabularx}
         \end{dtable}
 
-        %\mitemreq{Transmutation}{Augment}{1}{varies}{Craft (as armor) varies}
+        %\mitemreq{Transmutation}{Imbuement}{1}{varies}{Craft (as armor) varies}
 
         \begin{magicitemdef}{Flaming Burst}[Active]{3}[Body, Shield]{Evocation [Fire]}{as armor}
             \magicitemability{Triggered}[Immediate action] When you are hit or missed by a melee attack, you can activate this item.
@@ -347,6 +373,10 @@ Magic items are objects that have been imbued with magical energy. They can take
             A creature can only be dealt damage by this item once per round.
         \end{magicitemdef}
 
+        \begin{magicitemdef}{Fortified}[Passive]{3}[Body]{Transmutation [Imbuement]}{as armor}
+            \magicitemability{Passive} You are immune to critical hits.
+        \end{magicitemdef}
+
         \begin{magicitemdef}{Freezing Burst}[Active]{3}[Body, Shield]{Evocation [Cold]}{as armor}
             \magicitemability{Triggered}[Immediate action] When you are hit or missed by a melee attack, you can activate this item.
             Body armor triggers if the attack hits, and shields trigger if the attack misses.
@@ -354,12 +384,6 @@ Magic items are objects that have been imbued with magical energy. They can take
 
             After you activate this ability, the item radiates frigid cold, causing it to snuff out torches and other small fires within a 5 foot radius.
             This effect lasts for 5 rounds, during which time you cannot activate this ability again.
-        \end{magicitemdef}
-
-        \begin{magicitemdef}{Ghost Touch}[Passive]{2}[Body, Shield]{Conjuration [Teleportation]}{as armor}[This armor seems almost translucent.]
-            \magicitemability{Passive} You apply the full bonus granted by this armor against the attacks of incorporeal creatures.
-            It can be picked up, moved, and worn by incorporeal creatures at any time.
-            Incorporeal creatures gain this armor's bonus against both corporeal and incorporeal attacks, and they can still pass freely through solid objects.
         \end{magicitemdef}
 
         \begin{magicitemdef}{Glamered}[Active]{2}[Body]{Illusion [Glamer]}{as armor}
@@ -376,13 +400,13 @@ Magic items are objects that have been imbued with magical energy. They can take
             A creature can only be dealt damage by this item once per round.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Invulnerable}[Passive]{4}[Body]{Abjuration [Shielding]}{as armor}
+        \begin{magicitemdef}{Invulnerable}[Passive]{5}[Body]{Abjuration [Shielding]}{as armor}
             \magicitemability{Passive} You have physical damage reduction equal to the item's power.
             This allows you to ignore the first points of physical damage you take each round.
             Adamantine weapons ignore this damage reduction and negate it for 1 round.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Resilient}[Active]{2}[Body]{Abjuration [Shielding]}{as armor}
+        \begin{magicitemdef}{Resilient}[Active]{1}[Body]{Abjuration [Shielding]}{as armor}
             \magicitemability{Active}[Standard action] If you strike your chest with a weapon or other hard object, you gain physical damage reduction equal to the item's power for 5 rounds.
             This allows you to ignore the first points of physical damage you take each round.
             Adamantine weapons ignore this damage reduction and negate it for 1 round.
@@ -410,10 +434,9 @@ Magic items are objects that have been imbued with magical energy. They can take
             This effect lasts for 5 rounds, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Spell Resistant}[Active]{3}[Body]{Abjuration [Shielding]}{as armor}
-            \magicitemability{Active}[Standard action] If you crouch low and strike the ground with your fist, you gain spell resistance equal to 10 \add the item's power.
-            This spell resistance lasts as long as you remain crouching, and for 5 rounds thereafter (maximum 5 minutes).
-            You can move at half speed while crouching.
+        \begin{magicitemdef}{Spell Resistant}[Active]{2}[Body]{Abjuration [Shielding]}{as armor}
+            \magicitemability{Active}[Standard action] If you trace an inverted arcane sigil on your chest, you gain \glossterm{spell resistance} equal to 10 \add the item's power.
+            The spell resistance lasts for 5 rounds.
 
             To affect a creature with spell resistance using a spell, a caster must make an attack with an accuracy equal to its spellpower.
             If the attack beats the creature's spell resistance, the spell works normally.
@@ -422,7 +445,7 @@ Magic items are objects that have been imbued with magical energy. They can take
 
     \subsection{Arms}
 
-        \begin{magicitemdef}{Bracers of Archery}[Passive]{1}[Arms]{Transmutation (Augment)}{leather or metal}
+        \begin{magicitemdef}{Bracers of Archery}[Passive]{1}[Arms]{Transmutation (Imbuement)}{leather or metal}
             \magicitemability{Passive} You are proficient with bows.
         \end{magicitemdef}
 
@@ -458,7 +481,7 @@ Magic items are objects that have been imbued with magical energy. They can take
             This effect lasts for 5 rounds, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Greatreach Bracers}[Active]{0}[Arms]{Transmutation [Augment]}{bone or metal}
+        \begin{magicitemdef}{Greatreach Bracers}[Active]{0}[Arms]{Transmutation [Imbuement]}{bone or metal}
             \magicitemability{Active}[Swift action] You can activate this item to increase your \glossterm{reach} by 5 feet until the end of the round.
 
             After you activate this ability, the bracers visually grow in size, though not in weight or encumbrance.
@@ -476,7 +499,7 @@ Magic items are objects that have been imbued with magical energy. They can take
             This effect lasts for five rounds, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Throwing Gloves}[Passive]{2}[Arms]{Transmutation [Augment]}{leather or textiles}
+        \begin{magicitemdef}{Throwing Gloves}[Passive]{2}[Arms]{Transmutation [Imbuement]}{leather or textiles}
             \magicitemability{Passive} You can throw any item as if you were proficient with throwing it, granting you a \plus4 bonus to accuracy.
             This does not improve your ability to throw items you are already proficient with throwing, such as darts.
         \end{magicitemdef}
@@ -488,14 +511,14 @@ Magic items are objects that have been imbued with magical energy. They can take
             This functions as the \spell{disguise self} ritual.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Mask of Water Breathing}[Active]{2}[Head]{Transmutation [Augment]}{textiles}
+        \begin{magicitemdef}{Mask of Water Breathing}[Active]{2}[Head]{Transmutation [Imbuement]}{textiles}
             \magicitemability{Active}[Standard action] If you speak a command word while wearing this mask, you gain the ability to breathe water for 1 hour.
             This does not prevent you from breathing air, and does not grant you the ability to breathe other liquids.
         \end{magicitemdef}
 
     \subsection{Legs}
 
-        \begin{magicitemdef}{Boots of Earth's Embrace}[Active]{1}[legs]{Transmutation [Augment]}{leather or textiles}
+        \begin{magicitemdef}{Boots of Earth's Embrace}[Active]{1}[legs]{Transmutation [Imbuement]}{leather or textiles}
             \magicitemability{Triggered}[Immediate action] When you are hit by an attack that would deal physical damage or force you to move (such as a shove attack), you can activate these boots.
             If you do, until the end of the round, you are immune to forced movement effects and you gain damage reduction against physical damage equal to your item power.
 
@@ -503,24 +526,29 @@ Magic items are objects that have been imbued with magical energy. They can take
             This effect lasts for 5 rounds, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Boots of Elvenkind}[500]{1}[Legs]{Transmutation [Augment]}{leather or textiles}
+        \begin{magicitemdef}{Boots of Elvenkind}[500]{1}[Legs]{Transmutation [Imbuement]}{leather or textiles}
             \magicitemability{Passive} You gain a \plus4 bonus to Stealth checks.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}{Boots of Freedom}[Active]{1}[Legs]{Transmutation [Imbuement]}{leather or textiles}
+            \magicitemability{Active}[Standard action] If you wiggle your toes, you gain the effects of the \spell{freedom} spell.
+            This benefit lasts as long as you move continuously without taking any other action, and for 5 rounds thereafter (maximum 5 minutes).
         \end{magicitemdef}
 
         \begin{magicitemdef}{Boots of Levitation}[Active]{2}[Legs]{Evocation [Telekinesis]}{leather or textiles}
             \magicitemability{Active}[Standard action] By lifting and planting one leg in mid-air, as if climbing an invisible stair, you can gain the benefit of the \spell{levitate} spell on yourself for 5 rounds.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Boots of Mobility}[1000]{1}[Legs]{Transmutation [Augment]}{leather or textiles}
+        \begin{magicitemdef}{Boots of Mobility}[1000]{1}[Legs]{Transmutation [Imbuement]}{leather or textiles}
             \magicitemability{Passive} You gain a \plus4 bonus to Jump and Sprint checks.
         \end{magicitemdef}
 
         \begin{magicitemdef}{Boots of Speed}[Active]{1}[Legs]{Transmutation [Temporal]}{leather or textiles}
             \magicitemability{Active}[Standard action] If you stomp your foot on the ground three times, you gain the effects of the \spell{haste} spell.
-            This benefit lasts as long as you move continuously without taking any other action, and for 5 rounds thereafter (maximum 5 minutes).
+            This effect lasts as long as you move continuously without taking any other action, and for 5 rounds thereafter (maximum 5 minutes).
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Boots of Striding and Springing}[Passive]{3}[Legs]{Transmutation [Augment]}{leather or textiles}
+        \begin{magicitemdef}{Boots of Striding and Springing}[Passive]{3}[Legs]{Transmutation [Imbuement]}{leather or textiles}
             \magicitemability{Passive} You gain a \plus10 foot bonus to your land speed.
             A high land speed increases your ability to jump (see \pcref{Jump}).
         \end{magicitemdef}
@@ -538,12 +566,17 @@ Magic items are objects that have been imbued with magical energy. They can take
             \magicitemability{Active}[Standard action] If you click your heels together three times, you can teleport up to 1,000 feet to a location you can specify, as the \spell{dimension door} spell.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Boots of the Winterlands}[Passive]{1}[Legs]{Evocation/Transmutation [Augment]}{leather or textiles}
+        \begin{magicitemdef}{Boots of Water Walking}[Active]{0}[Legs]{Transmutation [Imbuement]}{leather or textiles}
+            \magicitemability{Active}[Standard action] If you step into water with your left foot, you can walk on water, as the \spell{water walk} spell.
+            This effect lasts as long as you move continuously on water without taking any other action, and for 5 rounds thereafter (maximum 1 hour).
+        \end{magicitemdef}
+
+        \begin{magicitemdef}{Boots of the Winterlands}[Passive]{1}[Legs]{Evocation/Transmutation [Imbuement]}{leather or textiles}
             \magicitemability{Passive} You can travel across snow and ice without slipping or suffering movement penalties for the terrain.
             In addition, the boots keep you warm, protecting you in conditions as cold as \minus50 Fahrenheit.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Sandals of Sprinting}[500]{1}[Legs]{Transmutation [Augment]}{leather or textiles}
+        \begin{magicitemdef}{Sandals of Sprinting}[500]{1}[Legs]{Transmutation [Imbuement]}{leather or textiles}
             \magicitemability{Passive} You gain a \plus4 bonus to Sprint checks.
         \end{magicitemdef}
 
@@ -553,7 +586,7 @@ Magic items are objects that have been imbued with magical energy. They can take
             If there is no available space within 1,000 feet of your intended destination, the effect fails and you take 2d10 physical damage.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Winged Boots}[Active]{4}[Legs]{Transmutation [Augment]}{leather or textiles}
+        \begin{magicitemdef}{Winged Boots}[Active]{4}[Legs]{Transmutation [Imbuement]}{leather or textiles}
             \magicitemability{Active}[Standard action] If you tap your boots together in midair, you gain a 30 foot fly speed with average maneuverability.
             See \pcref{Flying}, for more details.
             This effect lasts for 5 rounds.
@@ -568,6 +601,20 @@ Magic items are objects that have been imbued with magical energy. They can take
         Although exceptions exist that are crafted from glass or bone, the vast majority of rings are forged from metal -- usually precious metals such as gold, silver, and platinum.
         A typical ring has AD 13, 10 hit points, hardness 10, and a break DR of 25.
 
+        \begin{magicitemdef}{Animal Friendship}[500]{1}[Ring]{Transmutation [Imbuement]}{bone, metal, or jewelry}
+            \magicitemability{Passive} You gain a \plus4 bonus to Creature Handling checks.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}{Counterspells}[Active]{3}[Ring]{Abjuration [Thaumaturgy]}{crafting}
+            \magicitemability{Active}[Standard action] If cast a \glossterm{targeted spell} while wear this ring on your index finger, the spell becomes stored in the ring instead of having its normal effect.
+            The next time you (or another creature who wears the ring) becomes targeted by the stored spell, that spell is automatically counterspelled.
+            This discharges the energy stored in the ring, and it becomes unable to counter spells until another spell is stored in it.
+
+            The ring may only store one spell at a time.
+            If a new spell is stored into the ring while another spell is already inside it, the new spell is stored and the old spell is discharged without effect.
+            Storing a spell in the ring requires an item use, but countering a spell does not.
+        \end{magicitemdef}
+
         \begin{magicitemdef}{Energy Resistance}[Active]{1}[Ring]{Abjuration [Shielding]}{bone, metal, or jewelry}
             \magicitemability{Triggered}[Immediate action] When you would take \glossterm{energy damage}, you can activate this ring.
             If you do, you gain damage reduction against \glossterm{energy damage} equal to twice the item's power until the end of the round.
@@ -580,6 +627,10 @@ Magic items are objects that have been imbued with magical energy. They can take
         \begin{magicitemdef}{Heroic Vengeance}[Active]{3}[Ring]{Abjuration}{bone, metal, or jewelry}
             \magicitemability{Triggered}[Immediate action] When a foe within \rngmed range rolls a natural 20 on an attack against you, you can activate this item.
             If you do, the attacking creature takes 1d10 divine damage per item power.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}{Invisibiility}[Active]{2}[Ring]{Illusion [Glamer]}{bone, metal, or jewelry}
+            \magicitemability{Active}[Standard action] If you put the hand wearing this ring into a pocket or otherwise conceal it from sight, you gain the effects of the \spell{invisibility} spell for 5 rounds.
         \end{magicitemdef}
 
         \begin{magicitemdef}{Nourishment}[Passive]{1}[Ring]{Conjuration/Transmutation [Creation, Temporal]}{bone, metal, or jewelry}
@@ -615,6 +666,11 @@ Magic items are objects that have been imbued with magical energy. They can take
             \end{dtabularx}
         \end{dtable}
 
+        \begin{magicitemdef}{Regeneration}[Passive]{6}[Ring]{Transmutation [Imbuement]}{bone, metal, or jewelry}
+            \magicitemability{Passive} At the end of each round, you heal hit points equal your item power.
+            Only damage taken while wearing the ring can be healed in this way.
+        \end{magicitemdef}
+
         \begin{magicitemdef}{Sustenance}[Passive]{3}[Ring]{Conjuration/Transmutation [Creation, Temporal]}{bone, metal, or jewelry}
             \magicitemability{Passive} You continuously gain nourishment, and no longer need to eat or drink.
             In addition, you need only one-quarter your normal amount of sleep (or similar activity, such as elven trance) each day.
@@ -624,7 +680,7 @@ Magic items are objects that have been imbued with magical energy. They can take
 
     \subsection{Torso}
 
-        \begin{magicitemdef}{Amulet of Mighty Fists}{1}[Torso]{Transmutation [Augment]}{bone or jewelry}
+        \begin{magicitemdef}{Amulet of Mighty Fists}{1}[Torso]{Transmutation [Imbuement]}{bone or jewelry}
             \magicitemability{Passive} This amulet has an enhancement bonus to improve your natural attacks and unarmed strikes.
             You gain a bonus to damage on natural attacks and unarmed strikes equal to this amulet's enhancement bonus.
             In addition, each \plus1 of enhancement bonus grants you an additional offensive legend point each day.
@@ -675,7 +731,7 @@ Magic items are objects that have been imbued with magical energy. They can take
             At the end of each round, if you did not attack a creature that round, you become invisible again.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Belt of Dwarvenkind}[Passive]{3}[Torso]{Divination/Transmutation [Augment]}{leather or textiles}
+        \begin{magicitemdef}{Belt of Dwarvenkind}[Passive]{2}[Torso]{Divination/Transmutation [Imbuement]}{leather or textiles}
             \magicitemability{Passive} You gain a \plus2 bonus to Fortitude defense.
             In addition, you gain dwarven characteristics.
             You gain a \plus4 bonus to social checks when dealing with dwarves, but take a \minus2 penalty with all other creatures.
@@ -713,110 +769,107 @@ Magic items are objects that have been imbued with magical energy. They can take
             This can allow you to hide unobserved.
         \end{magicitemdef}
 
-\section{Implements}
-    Magical implements must be wielded to gain their effects.
+\section{Weapons}
+    Magic weapons improve a character's combat abilities.
+    They must be wielded to gain their effects.
+    All magic weapons have an enhancement bonus to improve your damage and ability to hit.
+    In addition to an enhancement bonus, magic weapons may have special abilities or be made of an unusual material.
 
-    \onecolumn
-    \subsection{Implement Table}
+    \subsection{Weapon Table}
 
+        \onecolumn
         \begin{longtabuwrapper}
             \begin{longtabu}{l X l l l l}
-                \lcaption{Implement Special Abilities}\\
-                \tb{Weapons} & \tb{Description} & \tb{Cost} & \tb{Item Level} & \tb{Page} \\
-                \mitemref{Bane} & Special ability only works against some creatures & Varies & Varies & \mitempref{Bane} \\
-                \mitemref{Sweeping} & Can make extra attack against another foe & \mitempricetable{Active}{0} & \mitempref{Sweeping} \\
-                \mitemref{Rebounding} & Returns to you slowly when thrown & \mitempricetable{Passive}{0} & \mitempref{Rebounding} \\
-                \mitemref{Forceful} & Can knock struck creature flying & \mitempricetable{Active}{1} & \mitempref{Forceful} \\
-                \mitemref{Morphing} & Can transform into similar weapon & \mitempricetable{Active}{1} & \mitempref{Morphing} \\
-                \mitemref{Surestrike} & Can reroll missed attack & \mitempricetable{Active}{1} & \mitempref{Surestrike} \\
-                \mitemref{Flaming} & Can make powerful fire attack & \mitempricetable{Active}{2} & \mitempref{Flaming} \\
-                \mitemref{Freezing} & Can make powerful cold attack & \mitempricetable{Active}{2} & \mitempref{Flaming} \\
-                \mitemref{Shocking} & Can make powerful electricity attack & \mitempricetable{Active}{2} & \mitempref{Shocking} \\
-                \mitemref{Thundering} & Can make deafening attack & \mitempricetable{Active}{2} & \mitempref{Thundering} \\
-                \mitemref{Vampiric} & Can heal based on damage dealt & \mitempricetable{Active}{2} & \mitempref{Vampiric} \\
-                \mitemref{Defending} & Grants defensive legend points instead of offensive & \mitempricetable{Passive}{2} & \mitempref{Defending} \\
-                \mitemref{Returning} & Returns to you instantly when thrown & \mitempricetable{Passive}{2} & \mitempref{Returning} \\
-                \mitemref{Thieving} & Can absorb objects & \mitempricetable{Active}{3} & \mitempref{Thieving} \\
-                \mitemref{Transforming} & Can transform into any weapon & \mitempricetable{Active}{3} & \mitempref{Transforming} \\
-                \mitemref{Poisoning} & Can instantly duplicate minor poison & \mitempricetable{Active}{3} & \mitempref{Poisoning} \\
-                \mitemref{Fixating} & Can automatically critical after striking foe repeatedly & \mitempricetable{Active}{5} & \mitempref{Fixating} \\
+                \lcaption{Weapon Special Abilities}\\
+                \tb{Name} & \tb{Description} & \tb{Cost} & \tb{Item Level} & \tb{Location} & \tb{Page} \\
+                \mitemref{Bane} & Special ability only works against some creatures & Varies & Varies & Varies & \mitempref{Bane} \\
+                \mitemref{Sweeping} & Can make extra attack against another foe & \mitempricetable{Active}{0} & Melee & \mitempref{Sweeping} \\
+                \mitemref{Rebounding} & Returns to you slowly when thrown & \mitempricetable{Passive}{0} & Melee & \mitempref{Rebounding} \\
+                \mitemref{Forceful} & Can knock struck creature flying & \mitempricetable{Active}{1} & Any & \mitempref{Forceful} \\
+                \mitemref{Morphing} & Can transform into similar weapon & \mitempricetable{Active}{1} & Any & \mitempref{Morphing} \\
+                \mitemref{Surestrike} & Can reroll missed attack & \mitempricetable{Active}{1} & Any & \mitempref{Surestrike} \\
+                \mitemref{Flaming} & Can make powerful fire attack & \mitempricetable{Active}{2} & Any & \mitempref{Flaming} \\
+                \mitemref{Freezing} & Can make powerful cold attack & \mitempricetable{Active}{2} & Any & \mitempref{Flaming} \\
+                \mitemref{Merciful} & Deals nonlethal damage & \mitempricetable{Passive}{1} & Any & \mitempref{Merciful} \\
+                \mitemref{Shocking} & Can make powerful electricity attack & \mitempricetable{Active}{2} & Any & \mitempref{Shocking} \\
+                \mitemref{Thundering} & Can make deafening attack & \mitempricetable{Active}{2} & Any & \mitempref{Thundering} \\
+                \mitemref{Vampiric} & Can heal based on damage dealt & \mitempricetable{Active}{2} & Melee & \mitempref{Vampiric} \\
+                \mitemref{Defending} & Grants defensive legend points instead of offensive & \mitempricetable{Passive}{2} & Melee & \mitempref{Defending} \\
+                \mitemref{Longshot} & Has doubled range increment & \mitempricetable{Passive}{2} & Ranged & \mitempref{Longshot} \\
+                \mitemref{Returning} & Returns to you instantly when thrown & \mitempricetable{Passive}{2} & Melee & \mitempref{Returning} \\
+                \mitemref{Thieving} & Can absorb objects & \mitempricetable{Active}{3} & Melee & \mitempref{Thieving} \\
+                \mitemref{Transforming} & Can transform into any weapon & \mitempricetable{Active}{3} & Any & \mitempref{Transforming} \\
+                \mitemref{Poisoning} & Can instantly duplicate minor poison & \mitempricetable{Active}{3} & Melee & \mitempref{Poisoning} \\
+                \mitemref{Fixating} & Can automatically critical after striking foe repeatedly & \mitempricetable{Active}{4} & Melee & \mitempref{Fixating} \\
                 \mitemref{Disorienting} & Can disorient foe & \mitempricetable{Active}{6} & \mitempref{Disorienting} \\
-                \mitemref{Toxic} & Can instantly coat itself with major poison & \mitempricetable{Active}{6} & \mitempref{Poisoning} \\
-                \mitemref{Soulreaving} & Deals delayed damage instead of immediate damage & \mitempricetable{Passive}{7} & \mitempref{Soulreaving} \\
-                \mitemref{Vorpal} & Deals massive damage on a natural 20 & \mitempricetable{Passive}{8} & \mitempref{Vorpal} \\
-
-                \tb{Wands} & \tb{Description} & \tb{Cost} & \tb{Item Level} & \tb{Page} \\
-                \mitemref{Distant} & Can double spell's range & \mitempricetable{Active}{2} & \mitempref{Distant} \\
-                \mitemref{Flamespell} & Can ignite creature & \mitempricetable{Active}{3} & \mitempref{Flamespell} \\
-                \mitemref{Frostspell} & Can fatigue creature & \mitempricetable{Active}{3} & \mitempref{Frostspell} \\
-                \mitemref{Thunderspell} & Can stagger creature & \mitempricetable{Active}{3} & \mitempref{Thunderspell} \\
+                \mitemref{Speed} & Grants extra strikes & \mitempricetable{Passive}{5} & Any & \mitempref{Speed} \\
+                \mitemref{Toxic} & Can instantly coat itself with major poison & \mitempricetable{Active}{6} & Melee & \mitempref{Poisoning} \\
+                \mitemref{Soulreaving} & Deals delayed damage instead of immediate damage & \mitempricetable{Passive}{7} & Any & \mitempref{Soulreaving} \\
+                \mitemref{Vorpal} & Deals massive damage on a natural 20 & \mitempricetable{Passive}{8} & Melee & \mitempref{Vorpal} \\
             \end{longtabu}
         \end{longtabuwrapper}
         \twocolumn
 
-    \subsection{Weapons Overview}
+    \subsection{Weapon Enhancement Bonuses}\label{Weapon Enhancement Bonuses}
 
-        Magic weapons improve a character's combat abilities.
-        All magic weapons have an enhancement bonus to improve your damage and ability to hit.
-        In addition to an enhancement bonus, magic weapons may have special abilities or be made of an unusual material.
+        Magic weapons can have enhancement bonuses ranging from \plus1 to \plus5.
+        You gain a bonus to damage on physical attacks using a magic weapon equal to the weapon's enhancement bonus.
+        In addition, each \plus1 of enhancement bonus grants you an additional offensive legend point each day.
 
-        \subsubsection{Weapon Enhancement Bonuses}\label{Weapon Enhancement Bonuses}
+        These legend points can only be gained once per day, regardless of the number of weapons you use.
+        If you use multiple weapons at once, or change between different weapons, use only the highest number of legend points that applies.
+        If you change from a weaker magical weapon to a stronger magical weapon, you gain legend points equal to the difference between the two enhancement bonuses.
 
-            Magic weapons can have enhancement bonuses ranging from \plus1 to \plus5.
-            You gain a bonus to damage on physical attacks using a magic weapon equal to the weapon's enhancement bonus.
-            In addition, each \plus1 of enhancement bonus grants you an additional offensive legend point each day.
+        Offensive legend points gained from weapon enhancement bonuses do not stack with offensive legend points gained from implement enhancement bonuses.
+        Use the higher of the two.
 
-            These legend points can only be gained once per day, regardless of the number of weapons you use.
-            If you use multiple weapons at once, or change between different weapons, use only the highest number of legend points that applies.
-            If you change from a weaker magical weapon to a stronger magical weapon, you gain legend points equal to the difference between the two enhancement bonuses.
+    \subsection{Weapon Prices}\label{Weapon Prices}
+        The prices of enhancement bonuses to weapons are listed in \trefnp{Magic Weapon Prices}, and the prices of special abilities are listed on \trefnp{Weapon Special Abilities}.
+        If a weapon has a special ability, the price of the special ability is added to the price of the weapon.
+        The number of special abilities on the weapon cannot exceed the enhancement bonus of the weapon.
+        Additionally, the price of all special abilities cannot exceed twice the price of the enhancement bonus on the weapon.
 
-        \subsubsection{Weapon Prices}\label{Weapon Prices}
-            The prices of enhancement bonuses to weapons are listed in \trefnp{Magic Weapon Prices}, and the prices of special abilities are listed on \trefnp{Implement Special Abilities}.
-            If a weapon has a special ability, the price of the special ability is added to the price of the weapon.
-            The number of special abilities on the weapon cannot exceed the enhancement bonus of the weapon.
-            Additionally, the price of all special abilities cannot exceed twice the price of the enhancement bonus on the weapon.
+        \begin{dtable}
+            \lcaption{Magic Weapon Prices}
+            \begin{dtabularx}{\columnwidth} {>{\ccol}X c c}
+                \tb{Enhancement Bonus} & \tb{Base Price} & \tb{Item Level} \\
+                \hline
+                \plus1 weapon          & 200 gp          & 3rd             \\
+                \plus2 weapon          & 1,000 gp        & 6th             \\
+                \plus3 weapon          & 5,000 gp        & 10th            \\
+                \plus4 weapon          & 25,000 gp       & 13th            \\
+                \plus5 weapon          & 125,000 gp      & 17th            \\
+            \end{dtabularx}
+        \end{dtable}
 
-            \begin{dtable}
-                \lcaption{Magic Weapon Prices}
-                \begin{dtabularx}{\columnwidth} {>{\ccol}X c c}
-                    \tb{Enhancement Bonus} & \tb{Base Price} & \tb{Item Level} \\
-                    \hline
-                    \plus1 weapon          & 200 gp          & 3rd             \\
-                    \plus2 weapon          & 1,000 gp        & 6th             \\
-                    \plus3 weapon          & 5,000 gp        & 10th            \\
-                    \plus4 weapon          & 25,000 gp       & 13th            \\
-                    \plus5 weapon          & 125,000 gp      & 17th            \\
-                \end{dtabularx}
-            \end{dtable}
+        \parhead{Base Power for Weapons} The base power of a magic weapon with a special ability is given in the item description.
+        For an item with only an enhancement bonus, the base power is three times the enhancement bonus.
+        If an item has both an enhancement bonus and a special ability, the higher of the two base powers is used.
 
-            \parhead{Base Power for Weapons} The base power of a magic weapon with a special ability is given in the item description.
-            For an item with only an enhancement bonus, the base power is three times the enhancement bonus.
-            If an item has both an enhancement bonus and a special ability, the higher of the two base powers is used.
+        \parhead{Hardness and Hit Points} Each \plus1 of enhancement bonus adds 2 to a weapon's hardness and \plus10 to its hit points.
 
-            \parhead{Hardness and Hit Points} Each \plus1 of enhancement bonus adds 2 to a weapon's hardness and \plus10 to its hit points.
+        \parhead{Ranged Weapons and Ammunition} The enhancement bonus from a ranged weapon does not stack with the enhancement bonus from ammunition.
+        Only the higher of the two enhancement bonuses applies.
+        Special abilities are applied from both sources, as long as they are not identical.
+        If conflicting special abilities exist, the special ability on the ammunition takes precedence.
 
-            \parhead{Ranged Weapons and Ammunition} The enhancement bonus from a ranged weapon does not stack with the enhancement bonus from ammunition.
-            Only the higher of the two enhancement bonuses applies.
-            Special abilities are applied from both sources, as long as they are not identical.
-            If conflicting special abilities exist, the special ability on the ammunition takes precedence.
+        Magic ammunition loses its magic after being fired, whether it hits or misses.
 
-            Magic ammunition loses its magic after being fired, whether it hits or misses.
+        \parhead{Light Generation} Some magic weapons shed light equivalent to a light spell (bright light in a 20-foot radius, shadowy light in a 40-foot radius).
+        The light on such weapons cannot normally be shut off.
+        Some of the specific weapons detailed below always or never glow, as defined in their descriptions.
 
-            \parhead{Light Generation} Some magic weapons shed light equivalent to a light spell (bright light in a 20-foot radius, shadowy light in a 40-foot radius).
-            The light on such weapons cannot normally be shut off.
-            Some of the specific weapons detailed below always or never glow, as defined in their descriptions.
+        \parhead{Activation} Usually, a character benefits from a magic weapon in the same way a character benefits from a mundane weapon -- by attacking with it.
+        Special abilities on weapons are usually activated if the character strikes a foe with the weapon.
 
-            \parhead{Activation} Usually, a character benefits from a magic weapon in the same way a character benefits from a mundane weapon -- by attacking with it.
-            Special abilities on weapons are usually activated if the character strikes a foe with the weapon.
-
-            \parhead{Magic Weapons and Critical Hits} Some weapon qualities and some specific weapons have an extra effect on a critical hit.
-            These special effects function against creatures not subject to critical hits.
-            When fighting against such creatures, roll for critical hits as you would against any other creature subject to critical hits.
-            On a successful critical roll, apply the special effect, but do not multiply the weapon's regular damage.
+        \parhead{Magic Weapons and Critical Hits} Some weapon qualities and some specific weapons have an extra effect on a critical hit.
+        These special effects function against creatures not subject to critical hits.
+        When fighting against such creatures, roll for critical hits as you would against any other creature subject to critical hits.
+        On a successful critical roll, apply the special effect, but do not multiply the weapon's regular damage.
 
     \subsection{Weapon Special Abilities}\label{Weapon Special Abilities}
 
-        \begin{magicitemdef}{Bane}{2}{Transmutation [Augment]}{as weapon}
+        \begin{magicitemdef}{Bane}{2}{Transmutation [Imbuement]}{as weapon}
             \spellspecial A bane weapon excels at attacking a specific type of creature.
             Any weapon special ability can be designated as a ``bane'' ability, causing it to only function against a specific kind of creature.
             In exchange, the ability costs half the normal price in raw materials to add to the weapon.
@@ -840,26 +893,22 @@ Magic items are objects that have been imbued with magical energy. They can take
             \end{dtabularx}
         \end{dtable}
 
-        \begin{magicitemdef}{Sweeping}[Active]{0}[Melee]{Transmutation [Augment]}{as weapon}
-            \magicitemability{Triggered}[Immediate action] When you hit a foe with a melee attack with this weapon, you can activate it.
-            If you do, you can make an extra \glossterm{strike} at another creature you threaten.
-
-            After you activate this ability, the weapon sheds blood red light as a torch.
-            This effect lasts for 5 rounds, during which time you cannot activate this ability again.
-        \end{magicitemdef}
-
         \begin{magicitemdef}{Defending}[Passive]{2}[Melee]{Abjuration [Shielding]}{as weapon}
             \magicitemability{Passive} You can use the legend points granted by this weapon's enhancement bonus as defensive legend points, in addition to using them as offensive legend points.
             This stacks with any defensive legend points granted by armor, but not with other offensive legend points granted by weapons.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Disorienting}[Active]{6}[Melee, Ranged]{Enchantment [Compulsion]}{as weapon}
-            \magicitemability{Triggered}[Immediate action] When you hit a foe with this weapon, you can activate it to make the struck creature \disoriented for 5 rounds.
-            This is a Mind effect.
+        \begin{magicitemdef}{Disorienting}[Active]{6}[Melee, Ranged]{Enchantment [Compulsion, Mind]}{as weapon}
+            \magicitemability{Triggered}[Immediate action] When you hit a foe with this weapon, you can activate it to make the struck creature \disoriented for 2 rounds.
 
             After you activate this ability, the weapon cackles gleefully.
             It cackles again every time you hit a foe with it.
             This effect lasts for 5 rounds, during which time you cannot activate this ability again.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}{Longshot}[Passive]{2}[Ranged]{Transmutation [Imbuement]}{as weapon}
+            \magicitemability{Passive} Ranged attacks with this weapon have twice the normal \glossterm{range increment}.
+            This can affect both thrown weapons and projectile weapons.
         \end{magicitemdef}
 
         \begin{magicitemdef}{Flaming}[Active]{2}[Melee, Ranged]{Evocation [Fire]}{as weapon}
@@ -883,7 +932,7 @@ Magic items are objects that have been imbued with magical energy. They can take
             This effect lasts for 5 rounds, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Fixating}[Active]{5}[Melee]{Divination}{as weapon}
+        \begin{magicitemdef}{Fixating}[Active]{4}[Melee]{Divination}{as weapon}
             \magicitemability{Triggered}[Immediate action] If you strike the same foe with this weapon for three consecutive rounds, you can activate this weapon.
             If you do, your next attack with this weapon against the same target becomes a confirmed critical hit.
             This attack must be made within 1 round, or the benefit is lost.
@@ -892,7 +941,13 @@ Magic items are objects that have been imbued with magical energy. They can take
             This effect lasts for 5 rounds, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Morphing}[Active]{1}[Melee, Ranged]{Transmutation}{as weapon}
+        \begin{magicitemdef}{Merciful}[Passive]{1}[Melee, Ranged]{Transmutation [Imbuement]}{as weapon}
+            \magicitemability{Passive} This weapon deals \glossterm{nonlethal} damage.
+            As a standard action, you may run your hand along the \glossterm{striking surface} of the weapon.
+            This changes the weapon from dealing nonlethal damage to lethal damage, or vice versa.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}{Morphing}[Active]{1}[Melee, Ranged]{Transmutation [Shaping]}{as weapon}
             \magicitemability{Active}[Standard action] If you grab this weapon with both hands and strike it against your knee or another hard object while visualizing a different weapon type, this weapon transforms into the visualized weapon type.
             The new weapon type must be from the same weapon group as the weapon's original type.
             This weapon remains transformed until you transform it again.
@@ -923,6 +978,19 @@ Magic items are objects that have been imbued with magical energy. They can take
 
         \begin{magicitemdef}{Returning}[Passive]{2}[Melee]{Conjuration [Teleportation]}{as weapon}
             \magicitemability{Passive} This weapon functions like a \magicitem{returning} weapon, except that the weapon teleports back to the creature that threw or fired it immediately after the attack is resolved, allowing the creature to make multiple attacks in the same round with the same thrown weapon.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}{Speed}[Passive]{5}[Melee, Ranged]{Transmutation [Temporal]}{as weapon}
+            \magicitemability{Passive} Whenever you make a \glossterm{standard attack} with this weapon, you can make an additional \glossterm{strike} with a \minus5 penalty to accuracy.
+            This does not stack with any other effects which grant extra strikes.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}{Sweeping}[Active]{0}[Melee]{Transmutation [Imbuement]}{as weapon}
+            \magicitemability{Triggered}[Immediate action] When you hit a foe with a melee attack with this weapon, you can activate it.
+            If you do, you can make an extra \glossterm{strike} at another creature you threaten.
+
+            After you activate this ability, the weapon always feels slightly loose in your hands, no matter how tightly you grip it.
+            This effect lasts for 5 rounds, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
         % As 7th level spell? I have no idea.
@@ -989,107 +1057,120 @@ Magic items are objects that have been imbued with magical energy. They can take
             If the weapon has not dealt damage in the past round, you regain no hit points.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Vorpal}[Passive]{8}[Melee]{Transmutation [Augment]}{as weapon}
+        \begin{magicitemdef}{Vorpal}[Passive]{8}[Melee]{Transmutation [Imbuement]}{as weapon}
             \magicitemability{Passive} When you roll a natural 20 with this weapon, you deliver a vorpal blow.
             You immediately make any number of additional strikes against the struck creature until you miss a strike or hit with 10 successful strikes.
             All damage dealt in this way is considered to come from a single attack.
-            This efffect replaces the normal benefits of delivering a critical hit.
+            This effect replaces the normal benefits of delivering a critical hit.
         \end{magicitemdef}
 
-    \subsection{Staffs}
+\section{Implements}
+    Implements can take many forms: staffs, wands, holy symbols, and more.
+    Like weapons, implements must be wielded to gain their effects.
+    However, while weapons are used to deal physical damage to enemies, implements are used to cast spells.
+    All magical implements have an enhancement bonus to improve your spell damage.
+    In addition to an enhancement bonus, magical implements may have a single special ability.
 
-        A staff is a long shaft, usually made of wood, that enhances a spellcaster's power.
-        All magic staffs have an enhancement bonus to improve your spell damage.
-        In addition to an enhancement bonus, magic staffs may have special abilities or be made of an unusual material.
+    \onecolumn
+    \subsection{Implement Table}
 
-        \subsubsection{Staff Enhancement Bonuses}\label{Staff Enhancement Bonuses}
+        \begin{longtabuwrapper}
+            \begin{longtabu}{l X l l l l}
+                \lcaption{Implement Special Abilities}\\
+                \tb{Name} & \tb{Description} & \tb{Cost} & \tb{Item Level} & \tb{Magic Source} & \tb{Page} \\
+                \mitemref{Electricity, Lesser} & Know \spell{shocking grasp} spell & \mitempricetable{Active}{1} & Arcane, Nature & \mitempref{Electricity, Lesser} \\
+                \mitemref{Fire, Lesser} & Know \spell{burning hands} spell & \mitempricetable{Active}{1} & Arcane, Nature & \mitempref{Fire, Lesser} \\
+                \mitemref{Missiles, Lesser} & Know \spell{magic missile} spell & \mitempricetable{Active}{1} & Arcane & \mitempref{Missiles, Lesser} \\
+                \mitemref{Time, Lesser} & Know \spell{haste} spell & \mitempricetable{Active}{1} & Arcane & \mitempref{Time, Lesser} \\
+                \mitemref{Curses, Lesser} & Know \spell{curse of blood and bone} spell & \mitempricetable{Active}{2} & Arcane & \mitempref{Curses, Lesser} \\
+                \mitemref{Acid} & Know \spell{acid arrow} spell & \mitempricetable{Active}{3} & Arcane & \mitempref{Acid} \\
+                \mitemref{Cold, Lesser} & Know \spell{cone of cold} spell & \mitempricetable{Active}{3} & Arcane, Nature & \mitempref{Cold, Lesser} \\
+                \mitemref{Electricity} & Know \spell{lightning bolt}, \spell{shocking grasp} spells & \mitempricetable{Active}{3} & Arcane, Nature & \mitempref{Electricity} \\
+                \mitemref{Fire} & Know \spell{fireball}, \spell{burning hands} spells & \mitempricetable{Active}{3} & Arcane, Nature & \mitempref{Fire} \\
+                \mitemref{Time} & Know \spell{slow}, \spell{haste} spells & \mitempricetable{Active}{3} & Arcane & \mitempref{Time} \\
+                \mitemref{Missiles} & Know \spell{missile storm}, \spell{magic missile} spells & \mitempricetable{Active}{4} & Arcane & \mitempref{Missiles} \\
+                \mitemref{Cold} & Know \spell{ice spike}, \spell{cone of cold} spells & \mitempricetable{Active}{5} & Arcane, Nature & \mitempref{Cold} \\
+                \mitemref{Curses} & Know \spell{curse of the wayward mind}, \spell{curse of blood and bone} spells & \mitempricetable{Active}{5} & Arcane & \mitempref{Curses} \\
+                \mitemref{Electricity, Greater} & Know \spell{chain lightning}, \spell{lightning bolt}, \spell{shocking grasp} spells & \mitempricetable{Active}{6} & Arcane, Nature & \mitempref{Electricity, Greater} \\
+                \mitemref{Fire, Greater} & Know \spell{immolation}, \spell{fireball}, \spell{burning hands} spells & \mitempricetable{Active}{6} & Arcane, Nature & \mitempref{Fire, Greater} \\
+                \mitemref{Cold, Greater} & Know \spell{ice storm}, \spell{ice spike}, \spell{cone of cold} spells & \mitempricetable{Active}{7} & Arcane, Nature & \mitempref{Cold, Greater} \\
+                \mitemref{Time, Greater} & Know \spell{time stop}, \spell{slow}, \spell{haste} spells & Arcane & \mitempricetable{Active}{9} & \mitempref{Time, Greater} \\
+            \end{longtabu}
+        \end{longtabuwrapper}
+        \twocolumn
 
-            Magic staffs can have enhancement bonuses ranging from \plus1 to \plus5.
-            Each \plus1 of enhancement bonus increases your effective spellpower by 1 for the purpose of determining how much damage your spells do.
-            This only affects damage, and does not increase your accuracy or have any other effects.
+    \subsection{Implement Enhancement Bonuses}\label{Implement Enhancement Bonuses}
 
-            In addition, each \plus1 of enhancement bonus grants you an additional offensive legend point each day.
-            These legend points can only be gained once per day, regardless of the number of staffs you use.
-            If you use multiple staffs at once, or change between different staffs, use only the highest number of legend points that applies.
-            If you change from a weaker magical staff to a stronger magical staff, you gain legend points equal to the difference between the two enhancement bonuses.
+        Magical implements can have enhancement bonuses ranging from \plus1 to \plus5.
+        Each \plus1 of enhancement bonus increases your effective spellpower by 1 for the purpose of determining how much damage your spells do.
+        This only affects damage, and does not increase your accuracy or have any other effects.
 
+        In addition, each \plus1 of enhancement bonus grants you an additional offensive legend point each day.
+        These legend points can only be gained once per day, regardless of the number of implements you use.
+        If you use multiple implements at once, or change between different implements, use only the highest number of legend points that applies.
+        If you change from a weaker magical implements to a stronger magical implements, you gain legend points equal to the difference between the two enhancement bonuses.
 
-            \parhead{Staff Prices} Enhancement bonuses on staffs are three times as expensive as wands, but staffs otherwise use the same pricing rules as wands.
+        \parhead{Implement Prices} The prices of enhancement bonuses to implements are listed in \trefnp{Implement Prices}, and the prices of special abilities are listed on \trefnp{Implement Special Abilities}.
+        If an implement has a special ability, the price of the special ability is added to the price of the staff.
+        An implement can only have one special ability, and the price of that special ability cannot exceed twice the price of the enhancement bonus on the implement.
 
-            \begin{dtable}
-                \caption{Staff Prices}
-                \begin{dtabularx}{\columnwidth} {>{\ccol}X c c}
-                    \tb{Enhancement Bonus} & \tb{Base Price} & \tb{Item Level}\\
-                    \hline
-                    \plus1 staff & 150 gp    & 3rd  \\
-                    \plus2 staff & 750 gp    & 5th  \\
-                    \plus3 staff & 3,750 gp  & 9th  \\
-                    \plus4 staff & 18,750 gp & 13th \\
-                    \plus5 staff & 93,750 gp & 17th \\
-                \end{dtabularx}
-            \end{dtable}
+        \begin{dtable}
+            \caption{Implement Prices}
+            \begin{dtabularx}{\columnwidth} {>{\ccol}X c c}
+                \tb{Enhancement Bonus} & \tb{Base Price} & \tb{Item Level}\\
+                \hline
+                \plus1 & 150 gp    & 3rd  \\
+                \plus2 & 750 gp    & 5th  \\
+                \plus3 & 3,750 gp  & 9th  \\
+                \plus4 & 18,750 gp & 13th \\
+                \plus5 & 93,750 gp & 17th \\
+            \end{dtabularx}
+        \end{dtable}
+
+        \parhead{Somatic Components} While wielding an implement, you may gesture with it and channel magic through it.
+        These qualify as somatic components for the purpose of casting spells.
+
+        \parhead{Spells Known and Attunement} Magical implements can provide additional spells known.
+        Gaining access to the spells known from an implement requires attuning to it, which takes 10 minutes of concentration and an item use.
+        Attunement lasts until you attune to a different implement.
+        While you are attuned to an implement you wield, you gain access to additional spells known, as given in the description of the item.
+
+        You must have be able to cast and learn spells of a given level to learn and cast spells of that level from an implement.
+
+    \subsection{Implement Types}
+
+        \subsubsection{Holy Symbols}
+
+            \parhead{Physical Description} A typical holy symbol is a no larger than 4 inches in each dimension and can be easily held in the palm of a hand.
+            Most holy symbols are metal, but they can be made from wood, bone, or even more exotic materials, depending on the deity they symbolize.
+
+            \parhead{Special Rules} Most holy symbols are designed to be worn as an amulet in addition to being held in the hand.
+            When worn in this way, the holy symbol occupies a torso body slot.
+            A holy symbol worn on the body cannot be used to perform somatic components for spellcasting.
+            However, it still grants enhancement bonuses and spells known as if it was being actively wielded.
+
+        \subsubsection{Staffs}
 
             \parhead{Physical Description} A typical staff is 4 feet to 7 feet long and 2 inches to 3 inches thick, weighing about 5 pounds.
             Most staffs are wood, but a rare few are bone, metal, or even glass.
-            (These are extremely exotic.) Staffs often have a gem or some device at their tip or are shod in metal at one or both ends.
+            (These are extremely exotic.)
+            Staffs often have a gem or some device at their tip or are shod in metal at one or both ends.
+
             Staffs are often decorated with carvings or runes.
             A typical staff is like a walking stick, quarterstaff, or cudgel.
             It has AC 7, 10 hit points, hardness 5, and a break DR of 24.
 
-            \parhead{Activation} Staffs use the same activation method as wands.
+        \subsubsection{Wands}
 
-    \subsection{Holy Symbols}
-        A holy symbol is a small object that enhances a divine spellcaster's power.
-        Holy symbols function exactly like staffs, except that they enhance divine spells instead of all spells.
+            \parhead{Physical Description} A typical wand is 6 inches to 12 inches long and about 1/4 inch thick, and often weighs no more than 1 ounce.
+            Most wands are wood, but some are bone.
+            A rare few are metal, glass, or even ceramic, but these are quite exotic.
+            Occasionally, a wand has a gem or some device at its tip, and most are decorated with carvings or runes.
+            A typical wand has AC 7, 5 hit points, hardness 5, and a break DR of 16.
 
-        \parhead{Holy Symbol Prices} Enhancement bonuses on holy symbols use the same pricing rules as staffs.
-
-        \begin{dtable}
-            \caption{Holy Symbol Prices}
-            \begin{dtabularx}{\columnwidth} {>{\ccol}X c c}
-                \tb{Enhancement Bonus} & \tb{Base Price} & \tb{Item Level}\\
-                \hline
-                \plus1 holy symbol & 150 gp    & 3rd  \\
-                \plus2 holy symbol & 750 gp    & 5th  \\
-                \plus3 holy symbol & 3,750 gp  & 9th  \\
-                \plus4 holy symbol & 18,750 gp & 13th \\
-                \plus5 holy symbol & 93,750 gp & 17th \\
-            \end{dtabularx}
-        \end{dtable}
-
-        \parhead{Physical Description} A typical holy symbol is a no larger than 4 inches in each dimension and can be easily held in the palm of a hand.
-        Most holy symbols are metal, but they can be made from wood, bone, or even more exotic materials, depending on the deity they symbolize.
-
-        Most holy symbols are designed to be worn as an amulet in addition to being held in the hand.
-        When worn in this way, the holy symbol occupies a torso body slot.
-
-        \parhead{Activation} Holy symbols use the same activation method as wands.
-
-    \subsection{Wands}
-
-        A wand is a thin baton that enhances a spellcaster's power.
-        All wands have an enhancement bonus to improve your spell damage with a particular type of magic.
-        In addition to an enhancement bonus, wands may have special abilities or be made of an unusual material.
-
-        \subsubsection{Wand Enhancement Bonuses}\label{Wand Enhancement Bonuses}
-
-            A wand only affects spells from a particular school of magic (see \pcref{Schools of Magic}), or spells with a particular tag (see \pcref{Ability Tags}).
-
-            Magic wands can have enhancement bonuses ranging from \plus1 to \plus5.
-            Each \plus1 of enhancement bonus increases your effective spellpower by 1 for the purpose of determining how much damage some spells do.
-            This only affects damage, and does not increase your accuracy or have any other effects.
-
-            In addition, each \plus1 of enhancement bonus grants you an additional offensive legend point each day.
-            These legend points can only be spent as part of casting spells the wand provides bonuses with.
-            They can only be gained once per day, regardless of the number of wands you use.
-            If you use multiple wands at once, or change between different wands, use only the highest number of legend points that applies.
-            If you change from a weaker magical wand to a stronger magical wand, you gain legend points equal to the difference between the two enhancement bonuses.
-
-            \parhead{Wand Prices} The prices of enhancement bonuses to wands are listed in \trefnp{Magic Wands}, and the prices of special abilities are listed on \trefnp{Implement Special Abilities}.
-            If a wand has a special ability, the price of the special ability is added to the price of the wand.
-
-            \parhead{Special Ability Limitations} The number of special abilities on the wand cannot exceed the enhancement bonus of the wand.
-            Additionally, the price of all special abilities cannot exceed twice the price of the enhancement bonus on the wand.
+            \parhead{Special Rules}
+            Unlike most spellcasting implements, enhancement bonuses from wands wands only affect spells from a particular school of magic (see \pcref{Schools of Magic}), or spells with a particular tag (see \pcref{Ability Tags}).
+            The prices for enhancement bonuses on wands are correspondingly lower, as given on \trefnp{Wand Prices}.
 
             \subparhead{Multiple Schools} Some rare wands provide bonuses to two schools.
             The enhancement bonus on a wand costs twice as much if it provides bonuses to two schools.
@@ -1108,49 +1189,106 @@ Magic items are objects that have been imbued with magical energy. They can take
                 \end{dtabularx}
             \end{dtable}
 
-            \parhead{Physical Description} A typical wand is 6 inches to 12 inches long and about 1/4 inch thick, and often weighs no more than 1 ounce.
-            Most wands are wood, but some are bone.
-            A rare few are metal, glass, or even ceramic, but these are quite exotic.
-            Occasionally, a wand has a gem or some device at its tip, and most are decorated with carvings or runes.
-            A typical wand has AC 7, 5 hit points, hardness 5, and a break DR of 16.
+            % 1st-3rd should have 1 spell on the staff
+            % 4th-6th should have 2 spells on the staff
+            % 7th-9th should have 3 spells on the staff
 
-            %Wand special abilities: priced as close range, immediate action trigger.
-            %Trigger needs to be immediate; otherwise, a caster casting a quickened spell
-            %could potentially unleash four separate effects simultaneously.
+    \subsection{Implement Special Abilities}\label{Implement Special Abilities}
 
-            \begin{magicitemdef}{Distant}[Active]{2}{Universal}{as wand}
-                \magicitemability{Triggered}[Immediate action] When you cast a spell affected by this wand, you can activate it.
-                If you do, the spell's range is doubled.
-                The spell's level cannot exceed twice the wand's enhancement bonus.
+        \begin{magicitemdef}[Arcane]{Acid}[Active]{3}{Conjuration [Acid, Creation, Physical]}{as staff}
+            \magicitemability{Attuned} While wielding this staff, you gain \spell{acid arrow} as a spell known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \end{magicitemdef}
 
-                After you activate this ability, the wand doubles in length.
-                This effect lasts for 5 rounds, during which time you cannot activate this ability again.
-            \end{magicitemdef}
+        \begin{magicitemdef}[Arcane, Nature]{Cold, Lesser}[Active]{2}{Evocation [Cold]}{as staff}
+            \magicitemability{Attuned} While wielding this staff, you gain \spell{cone of cold} as a spell known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \end{magicitemdef}
 
-            \begin{magicitemdef}{Flamespell}[Active]{3}{Evocation [Fire]}{as wand}
-                \magicitemability{Triggered}[Immediate action] When you cast a spell affected by this wand, you can activate it.
-                If you do, a single creature affected by the spell is \ignited for 2 rounds.
+        \begin{magicitemdef}[Arcane, Nature]{Cold}[Active]{5}{Conjuration/Evocation [Cold, Creation, Destructive]}{as staff}
+            \magicitemability{Attuned} While wielding this staff, you gain \spell{ice spike} and \spell{cone of cold} as spells known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \end{magicitemdef}
 
-                After you activate this ability, the wand is wreathed in flame, causing it to cast light as a torch.
-                This effect lasts for 5 rounds, during which time you cannot activate this ability again.
-            \end{magicitemdef}
+        \begin{magicitemdef}[Arcane, Nature]{Cold, Greater}[Active]{7}{Conjuration/Evocation [Cold, Creation, Destructive]}{as staff}
+            \magicitemability{Attuned} While wielding this staff, you gain \spell{ice storm}, \spell{ice spike}, and \spell{cone of cold} as spells known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \end{magicitemdef}
 
-            \begin{magicitemdef}{Frostspell}[Active]{3}{Evocation [Cold]}{as wand}
-                \magicitemability{Triggered}[Immediate action] When you cast a spell affected by this wand, you can activate it.
-                If you do, a single creature affected by the spell is \fatigued for 2 rounds.
+        \begin{magicitemdef}[Arcane]{Curses, Lesser}[Active]{2}{Vivimancy [Curse]}{as staff}
+            \magicitemability{Attuned} You gain \spell{curse of blood and bone} as a spell known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \end{magicitemdef}
 
-                After you activate this ability, the wand radiates frigid cold, causing it to snuff out torches and other small fires within a 5 foot radius of it.
-                This effect lasts for 5 rounds, during which time you cannot activate this ability again.
-            \end{magicitemdef}
+        \begin{magicitemdef}[Arcane]{Curses}[Active]{5}{Vivimancy [Curse]}{as staff}
+            \magicitemability{Attuned} You gain \spell{curse of the wayward mind} and \spell{curse of blood and bone} as spells known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \end{magicitemdef}
 
-            \begin{magicitemdef}{Thunderspell}[Active]{3}{Evocation [Cold]}{as wand}
-                \magicitemability{Triggered}[Immediate action] When you cast a spell affected by this wand, you can activate it.
-                If you do, you make a Spellpower vs. Fortitude attack against a single creature affected by the spell.
-                Success means the target is \staggered for 2 rounds.
+        \begin{magicitemdef}[Arcane, Nature]{Electricity, Lesser}[Active]{1}{Evocation [Electricity]}{as staff}
+            \magicitemability{Attuned} While wielding this staff, you gain \spell{shocking grasp} as a spell known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \end{magicitemdef}
 
-                After you activate this ability, the wand crackles with electrical energy, causing it to radiate flashing light as a torch.
-                This effect lasts for 5 rounds, during which time you cannot activate this ability again.
-            \end{magicitemdef}
+        \begin{magicitemdef}[Arcane, Nature]{Electricity}[Active]{3}{Evocation [Electricity]}{as staff}
+            \magicitemability{Attuned} While wielding this staff, you gain \spell{lightning bolt} and \spell{shocking grasp} as spells known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}[Arcane, Nature]{Electricity, Greater}[Active]{6}{Evocation [Electricity]}{as staff}
+            \magicitemability{Attuned} While wielding this staff, you gain \spell{chain lightning}, \spell{lightning bolt}, and \spell{shocking grasp} as spells known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}[Arcane, Nature]{Fire, Lesser}[Active]{1}{Evocation [Fire]}{as staff}
+            \magicitemability{Attuned} While wielding this staff, you gain \spell{burning hands} as a spell known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}[Arcane, Nature]{Fire}[Active]{3}{Evocation [Fire]}{as staff}
+            \magicitemability{Attuned} While wielding this staff, you gain \spell{fireball} and \spell{burning hands} as spells known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}[Arcane, Nature]{Fire, Greater}[Active]{7}{Evocation [Fire]}{as staff}
+            \magicitemability{Attuned} While wielding this staff, you gain \spell{immolation}, \spell{fireball}, and \spell{burning hands} as spell known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}[Arcane]{Missiles, Lesser}[Active]{1}{Evocation}{as staff}
+            \magicitemability{Attuned} While wielding this staff, you gain \spell{magic missile} as a spell known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}[Arcane]{Missiles}[Active]{4}{Evocation}{as staff}
+            \magicitemability{Attuned} While wielding this staff, you gain \spell{missile storm} and \spell{magic missile} as spells known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}[Arcane, Nature]{Shielding, Lesser}[Active]{2}{Abjuration [Shielding]}{as staff}
+            \magicitemability{Attuned} You gain \spell{inertial shield} as a spell known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}[Arcane, Nature]{Shielding}[Active]{4}{Abjuration/Evocation [Shielding]}{as staff}
+            \magicitemability{Attuned} You gain \spell{fire shield} as spells known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}[Arcane]{Time, Lesser}[Active]{1}{Transmutation [Temporal]}{as staff}
+            \magicitemability{Attuned} While wielding this staff, you gain \spell{haste} as a spell known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}[Arcane]{Time}[Active]{3}{Transmutation [Temporal]}{as staff}
+            \magicitemability{Attuned} While wielding this staff, you gain \spell{slow} and \spell{haste} as spells known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}[Arcane]{Time, Greater}[Active]{9}{Transmutation [Temporal]}{as staff}
+            \magicitemability{Attuned} While wielding this staff, you gain \spell{time stop}, \spell{haste}, and \spell{slow} as spells known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \end{magicitemdef}
 
 \section{Tools}
 
@@ -1169,10 +1307,6 @@ Magic items are objects that have been imbued with magical energy. They can take
                 \mitemref{Witch's Broom} & Flying broomstick & \mitempricetable{Passive}{7} & \mitempref{Witch's Broom} \\
 
                 \tb{Wands} & \tb{Description} & \tb{Cost} & \tb{Item Level} & \tb{Page} \\
-                \mitemref{Distant} & Can double spell's range & \mitempricetable{Active}{2} & \mitempref{Distant} \\
-                \mitemref{Flamespell} & Can ignite creature & \mitempricetable{Active}{3} & \mitempref{Flamespell} \\
-                \mitemref{Frostspell} & Can fatigue creature & \mitempricetable{Active}{3} & \mitempref{Frostspell} \\
-                \mitemref{Thunderspell} & Can stagger creature & \mitempricetable{Active}{3} & \mitempref{Thunderspell} \\
             \end{longtabu}
         \end{longtabuwrapper}
         \twocolumn
@@ -1395,7 +1529,7 @@ Magic items are objects that have been imbued with magical energy. They can take
             The creature must be on the same plane as the stone, but the teleportation works across any distance.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Witch's Broom}[Passive]{7}{Divination/Transmutation [Augment, Communication]}{wood}
+        \begin{magicitemdef}{Witch's Broom}[Passive]{7}{Divination/Transmutation [Communication, Imbuement]}{wood}
             \magicitemability{Passive} While you ride this broom, it can fly, as the \spell{overland flight} ritual.
             Riding the broom is like riding a mount, except that you do not need to control it and some actions (such as taking cover behind the mount) are infeasible due to the shape of the broom.
             It can carry up to 1,000 pounds before it becomes unable to fly.
