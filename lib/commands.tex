@@ -762,9 +762,15 @@
     }
 }
 
-\DeclareDocumentCommand{\spellquicktargeting}{m m}
+\DeclareDocumentCommand{\spellquicktargeting}{s m m}
 {
-    \spelltwocol{\spelltgt{#1}}{\spellrng{#2}}
+    \IfBooleanTF{#1}
+    {
+        \spelltwocol{\spelltgts{#2}}{\spellrng{#3}}
+    }
+    {
+        \spelltwocol{\spelltgt{#2}}{\spellrng{#3}}
+    }
 }
 
 \DeclareDocumentCommand{\spelltabular}{}
