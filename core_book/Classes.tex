@@ -931,7 +931,7 @@ This choice determines a great deal about your character's abilities.
         Normally, her nature power is equal to her character level.
 
         \cf{Drd}{Spells}
-        A druid casts nature spells using her attunement with nature.
+        A druid casts nature spells using her connection to nature.
         The maximum spell level a druid can learn or cast is equal to half her druid level.
         A druid's \glossterm{spellpower} with nature spells is normally equal to her nature power.
 
@@ -942,7 +942,7 @@ This choice determines a great deal about your character's abilities.
         A druid's spells are drawn from the spells on the nature spell list (see \pcref{Nature Spells}).
 
         Druids have a limit on the number of spells they can cast, as given on \trefnp{Druid Spell Slots}.
-        A druid can regain all spent spell slots by attuning to her environment.
+        A druid can regain all spent spell slots by meditating and becoming in tune with her environment.
         This process takes one hour in a natural environment, or eight hours elsewhere.
 
         \begin{dtable}
@@ -1209,16 +1209,19 @@ This choice determines a great deal about your character's abilities.
 
             Blighters draw power from nature, as do other druids. However, while other druids revere nature and draw power from it gently, blighters steal power from nature forcefully. Wherever a blighter goes, destruction and death surely follows.
 
-            \altcf{Attunement} As normal, except that when a blighter attunes to a natural environment, the terrain within a 100 foot radius is blighted.
-            This has several effects, all of which slowly take place over the course of the attunement process.
-            Every living thing in the area other than the blighter takes damage equal to the blighter's level once per ten minutes.
-            All inanimate plants of Huge size or smaller wither and die.
+            \altcf{Blight} Instead of meditating to regain spell slots, a blighter draws power from her environment forcefully.
+            This affects a \areahuge radius zone centered on her, and the process takes 1 minute of concentration.
+            At the end of every round, every living thing in the area other than the blighter takes damage equal to her nature power.
+            All inanimate plants of Huge size or smaller immediately wither and die.
             The earth becomes cracked and infertile, and any nutrients from the soil are destroyed.
             This ability has no effect on artificial environments or materials, such as metal or worked stone.
+            At the end of the minute, the blighter regains her spent nature spell slots.
 
-            In addition, the blighter's bonus to spellpower from attuning lasts for 1 hour, regardless of whether she is in a natural environment.
+            A blighter can only blight her surroundings in this way once per hour.
+            If her surroundings are already blighted or are not natural terrain, she cannot use this ability to regain her spells.
+            Instead, she must meditate for 8 hours to slowly draw power from her surroundings, as a normal druid.
 
-            \altcf{Spells} As normal, except that a blighter adds all general Vivimancy arcane spells to her spell list.
+            \altcf{Spells} As normal, except that a blighter adds all Vivimancy arcane spells to her spell list.
 
             \altcf[2nd]{Wild Speech} As normal, except that a blighter gains a \plus5 bonus to Intimidate against her wild speech targets, and a \minus5 penalty to Persuasion.
 
@@ -1232,15 +1235,20 @@ This choice determines a great deal about your character's abilities.
 
             While most druids seek to emulate and interact with animals, rotbringers focus on the power of fungi, decay, and regeneration.
 
-            \altcf{Attunement} As normal, except that when a rotbringer attunes to a natural environment, the terrain within a 100 foot radius decomposes.
-            This has several effects, all of which slowly take place over the course of the attunement process.
+            \altcf{Invoke Rot} Instead of meditating to regain spell slots, a rotbringer accelerates the natural forces of decomposition and decay on her environment.
+            This affects a \areahuge radius zone centered on her, and the process takes 1 minute of concentration.
             All organic objects of Huge size or smaller, such as plants and corpses, decompose.
-            This decomposition kills living plants.
+            This decomposition kills inanimate, living plants.
             All organic objects, regardless of size, are covered with various fungi.
             This ability has no effect on artificial environments or materials, such as metal or worked stone.
+            At the end of the minute, the rotbringer regains her spent nature spell slots.
 
-            If the rotbringer decomposes a Huge object while attuning, or a combination of smaller objects equivalent in size to a Huge object, she gains an bonus spell slot of her highest available spell level.
-            This extra spell slot lasts until it is used, or until the druid attunes again.
+            If the rotbringer decomposes a Huge object with this ability, or a combination of smaller objects equivalent in size to a Huge object, she gains an bonus nature spell slot of her highest available spell level.
+            This extra spell slot lasts until it is used, or until she regains her spell slots again.
+
+            A rotbringer can only invoke rot on her surroundings in this way once per hour.
+            If her surroundings are already decomposed or are not natural terrain, she cannot use this ability to regain her spells.
+            Instead, she must meditate for 8 hours to slowly draw power from her surroundings, as a normal druid.
 
             \altcf[2nd]{Wild Speech} The rotbringer gains the ability to speak with plants at 2nd level.
             She gains the ability to speak with animals at 6th level, instead of at 2nd level.
@@ -2654,7 +2662,7 @@ This choice determines a great deal about your character's abilities.
             \hline
             \spellwarpedprogressionrow{1}  & Innate magic, invocation, warp regeneration  \\
             \spellwarpedprogressionrow{2}  & Spellwarped body, surge of power             \\
-            \spellwarpedprogressionrow{3}  & Attuned senses, spellwarped aspect           \\
+            \spellwarpedprogressionrow{3}  & Magical senses, spellwarped aspect           \\
             \spellwarpedprogressionrow{4}  & Invocation                                   \\
             \spellwarpedprogressionrow{5}  & Manipulate magic                             \\
             \spellwarpedprogressionrow{6}  & Invocation                                   \\
@@ -2813,7 +2821,7 @@ This choice determines a great deal about your character's abilities.
         The spellwarped gains a \plus2 bonus to Intelligence and Perception-based checks.
         This bonus increases by 1 at spellpower 5 and every 5 spellpower thereafter.
 
-        \cf{Spl}[3rd]{Attuned Senses}[Su]
+        \cf{Spl}[3rd]{Magical Senses}[Su]
         The spellwarped learns to recognize the telltale signs of his chosen magic.
         He must concentrate as a standard action to use this ability, and he may do so any number of times per day.
         \subcf{Alteration -- Perceive Alteration}
@@ -2846,9 +2854,9 @@ This choice determines a great deal about your character's abilities.
         The spellwarped can voluntarily take \glossterm{warp damage}, even if that would exceed half his maximum hit points.
         He is only unable to voluntarily take warp damage if the total warp damage would exceed his maximum hit points.
         \subcf{11th -- Persistent Senses}
-        The spellwarped can constantly gain the benefit of his attuned senses ability.
+        The spellwarped can constantly gain the benefit of his magical senses ability.
         He can toggle his enhanced senses on or off as a swift action.
-        If the ability does not have a duration, such as the temporal attuned senses ability, this aspect has no effect.
+        If the ability does not have a duration, such as the temporal magical senses ability, this aspect has no effect.
 
         \parhead{Alteration}
         \subcf{Damage Reduction}

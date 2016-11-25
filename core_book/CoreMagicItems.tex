@@ -1082,7 +1082,7 @@ Magic items are objects that have been imbued with magical energy. They can take
                 \mitemref{Fire, Lesser} & Know \spell{burning hands} spell & \mitempricetable{Active}{1} & Arcane, Nature & \mitempref{Fire, Lesser} \\
                 \mitemref{Missiles, Lesser} & Know \spell{magic missile} spell & \mitempricetable{Active}{1} & Arcane & \mitempref{Missiles, Lesser} \\
                 \mitemref{Time, Lesser} & Know \spell{haste} spell & \mitempricetable{Active}{1} & Arcane & \mitempref{Time, Lesser} \\
-                \mitemref{Curses, Lesser} & Know \spell{curse of blood and bone} spell & \mitempricetable{Active}{2} & Arcane & \mitempref{Curses, Lesser} \\
+                \mitemref{Curses, Lesser} & Know \spell{curse of blood and bone} spell & \mitempricetable{Active}{2} & Arcane, Divine & \mitempref{Curses, Lesser} \\
                 \mitemref{Acid} & Know \spell{acid arrow} spell & \mitempricetable{Active}{3} & Arcane & \mitempref{Acid} \\
                 \mitemref{Cold, Lesser} & Know \spell{cone of cold} spell & \mitempricetable{Active}{3} & Arcane, Nature & \mitempref{Cold, Lesser} \\
                 \mitemref{Electricity} & Know \spell{lightning bolt}, \spell{shocking grasp} spells & \mitempricetable{Active}{3} & Arcane, Nature & \mitempref{Electricity} \\
@@ -1090,7 +1090,7 @@ Magic items are objects that have been imbued with magical energy. They can take
                 \mitemref{Time} & Know \spell{slow}, \spell{haste} spells & \mitempricetable{Active}{3} & Arcane & \mitempref{Time} \\
                 \mitemref{Missiles} & Know \spell{missile storm}, \spell{magic missile} spells & \mitempricetable{Active}{4} & Arcane & \mitempref{Missiles} \\
                 \mitemref{Cold} & Know \spell{ice spike}, \spell{cone of cold} spells & \mitempricetable{Active}{5} & Arcane, Nature & \mitempref{Cold} \\
-                \mitemref{Curses} & Know \spell{curse of the wayward mind}, \spell{curse of blood and bone} spells & \mitempricetable{Active}{5} & Arcane & \mitempref{Curses} \\
+                \mitemref{Curses} & Know \spell{curse of the wayward mind}, \spell{curse of blood and bone} spells & \mitempricetable{Active}{5} & Arcane, Divine & \mitempref{Curses} \\
                 \mitemref{Electricity, Greater} & Know \spell{chain lightning}, \spell{lightning bolt}, \spell{shocking grasp} spells & \mitempricetable{Active}{6} & Arcane, Nature & \mitempref{Electricity, Greater} \\
                 \mitemref{Fire, Greater} & Know \spell{immolation}, \spell{fireball}, \spell{burning hands} spells & \mitempricetable{Active}{6} & Arcane, Nature & \mitempref{Fire, Greater} \\
                 \mitemref{Cold, Greater} & Know \spell{ice storm}, \spell{ice spike}, \spell{cone of cold} spells & \mitempricetable{Active}{7} & Arcane, Nature & \mitempref{Cold, Greater} \\
@@ -1195,99 +1195,109 @@ Magic items are objects that have been imbued with magical energy. They can take
 
     \subsection{Implement Special Abilities}\label{Implement Special Abilities}
 
-        \begin{magicitemdef}[Arcane]{Acid}[Active]{3}{Conjuration [Acid, Creation, Physical]}{as staff}
-            \magicitemability{Attuned} While wielding this staff, you gain \spell{acid arrow} as a spell known.
-            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \begin{magicitemdef}[Arcane]{Acid}[Active]{3}{Conjuration [Acid, Creation, Physical]}{as implement}
+            \magicitemability{Attuned} While wielding this item, you gain \spell{acid arrow} as a spell known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this item.
         \end{magicitemdef}
 
-        \begin{magicitemdef}[Arcane, Nature]{Cold, Lesser}[Active]{2}{Evocation [Cold]}{as staff}
-            \magicitemability{Attuned} While wielding this staff, you gain \spell{cone of cold} as a spell known.
-            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \begin{magicitemdef}[Arcane, Nature]{Cold, Lesser}[Active]{2}{Evocation [Cold]}{as implement}
+            \magicitemability{Attuned} While wielding this item, you gain \spell{cone of cold} as a spell known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this item.
         \end{magicitemdef}
 
-        \begin{magicitemdef}[Arcane, Nature]{Cold}[Active]{5}{Conjuration/Evocation [Cold, Creation, Destructive]}{as staff}
-            \magicitemability{Attuned} While wielding this staff, you gain \spell{ice spike} and \spell{cone of cold} as spells known.
-            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \begin{magicitemdef}[Arcane, Nature]{Cold}[Active]{5}{Conjuration/Evocation [Cold, Creation, Destructive]}{as implement}
+            \magicitemability{Attuned} While wielding this item, you gain \spell{ice spike} and \spell{cone of cold} as spells known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this item.
         \end{magicitemdef}
 
-        \begin{magicitemdef}[Arcane, Nature]{Cold, Greater}[Active]{7}{Conjuration/Evocation [Cold, Creation, Destructive]}{as staff}
-            \magicitemability{Attuned} While wielding this staff, you gain \spell{ice storm}, \spell{ice spike}, and \spell{cone of cold} as spells known.
-            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \begin{magicitemdef}[Arcane, Nature]{Cold, Greater}[Active]{7}{Conjuration/Evocation [Cold, Creation, Destructive]}{as implement}
+            \magicitemability{Attuned} While wielding this item, you gain \spell{ice storm}, \spell{ice spike}, and \spell{cone of cold} as spells known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this item.
         \end{magicitemdef}
 
-        \begin{magicitemdef}[Arcane]{Curses, Lesser}[Active]{2}{Vivimancy [Curse]}{as staff}
+        \begin{magicitemdef}[Arcane, Divine]{Curses, Lesser}[Active]{2}{Vivimancy [Curse]}{as implement}
             \magicitemability{Attuned} You gain \spell{curse of blood and bone} as a spell known.
-            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+            In addition, you can use item uses in place of spell slots to cast spells known from this item.
         \end{magicitemdef}
 
-        \begin{magicitemdef}[Arcane]{Curses}[Active]{5}{Vivimancy [Curse]}{as staff}
+        \begin{magicitemdef}[Arcane, Divine]{Curses}[Active]{5}{Vivimancy [Curse]}{as implement}
             \magicitemability{Attuned} You gain \spell{curse of the wayward mind} and \spell{curse of blood and bone} as spells known.
-            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+            In addition, you can use item uses in place of spell slots to cast spells known from this item.
         \end{magicitemdef}
 
-        \begin{magicitemdef}[Arcane, Nature]{Electricity, Lesser}[Active]{1}{Evocation [Electricity]}{as staff}
-            \magicitemability{Attuned} While wielding this staff, you gain \spell{shocking grasp} as a spell known.
-            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \begin{magicitemdef}[Arcane, Nature]{Electricity, Lesser}[Active]{1}{Evocation [Electricity]}{as implement}
+            \magicitemability{Attuned} While wielding this item, you gain \spell{shocking grasp} as a spell known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this item.
         \end{magicitemdef}
 
-        \begin{magicitemdef}[Arcane, Nature]{Electricity}[Active]{3}{Evocation [Electricity]}{as staff}
-            \magicitemability{Attuned} While wielding this staff, you gain \spell{lightning bolt} and \spell{shocking grasp} as spells known.
-            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \begin{magicitemdef}[Arcane, Nature]{Electricity}[Active]{3}{Evocation [Electricity]}{as implement}
+            \magicitemability{Attuned} While wielding this item, you gain \spell{lightning bolt} and \spell{shocking grasp} as spells known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this item.
         \end{magicitemdef}
 
-        \begin{magicitemdef}[Arcane, Nature]{Electricity, Greater}[Active]{6}{Evocation [Electricity]}{as staff}
-            \magicitemability{Attuned} While wielding this staff, you gain \spell{chain lightning}, \spell{lightning bolt}, and \spell{shocking grasp} as spells known.
-            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \begin{magicitemdef}[Arcane, Nature]{Electricity, Greater}[Active]{6}{Evocation [Electricity]}{as implement}
+            \magicitemability{Attuned} While wielding this item, you gain \spell{chain lightning}, \spell{lightning bolt}, and \spell{shocking grasp} as spells known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this item.
         \end{magicitemdef}
 
-        \begin{magicitemdef}[Arcane, Nature]{Fire, Lesser}[Active]{1}{Evocation [Fire]}{as staff}
-            \magicitemability{Attuned} While wielding this staff, you gain \spell{burning hands} as a spell known.
-            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \begin{magicitemdef}[Arcane, Nature]{Fire, Lesser}[Active]{1}{Evocation [Fire]}{as implement}
+            \magicitemability{Attuned} While wielding this item, you gain \spell{burning hands} as a spell known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this item.
         \end{magicitemdef}
 
-        \begin{magicitemdef}[Arcane, Nature]{Fire}[Active]{3}{Evocation [Fire]}{as staff}
-            \magicitemability{Attuned} While wielding this staff, you gain \spell{fireball} and \spell{burning hands} as spells known.
-            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \begin{magicitemdef}[Arcane, Nature]{Fire}[Active]{3}{Evocation [Fire]}{as implement}
+            \magicitemability{Attuned} While wielding this item, you gain \spell{fireball} and \spell{burning hands} as spells known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this item.
         \end{magicitemdef}
 
-        \begin{magicitemdef}[Arcane, Nature]{Fire, Greater}[Active]{7}{Evocation [Fire]}{as staff}
-            \magicitemability{Attuned} While wielding this staff, you gain \spell{immolation}, \spell{fireball}, and \spell{burning hands} as spell known.
-            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \begin{magicitemdef}[Arcane, Nature]{Fire, Greater}[Active]{7}{Evocation [Fire]}{as implement}
+            \magicitemability{Attuned} While wielding this item, you gain \spell{immolation}, \spell{fireball}, and \spell{burning hands} as spell known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this item.
         \end{magicitemdef}
 
-        \begin{magicitemdef}[Arcane]{Missiles, Lesser}[Active]{1}{Evocation}{as staff}
-            \magicitemability{Attuned} While wielding this staff, you gain \spell{magic missile} as a spell known.
-            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \begin{magicitemdef}[Divine, Nature]{Healing, Lesser}[Active]{1}{Vivimancy [Life]}{as implement}
+            \magicitemability{Attuned} You gain \spell{cure wounds} as a spell known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this item.
         \end{magicitemdef}
 
-        \begin{magicitemdef}[Arcane]{Missiles}[Active]{4}{Evocation}{as staff}
-            \magicitemability{Attuned} While wielding this staff, you gain \spell{missile storm} and \spell{magic missile} as spells known.
-            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \begin{magicitemdef}[Arcane, Nature]{Healing}[Active]{6}{Vivimancy [Life]}{as implement}
+            \magicitemability{Attuned} You gain \spell{heal} and \spell{cure wounds} as spells known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this item.
         \end{magicitemdef}
 
-        \begin{magicitemdef}[Arcane, Nature]{Shielding, Lesser}[Active]{2}{Abjuration [Shielding]}{as staff}
+        \begin{magicitemdef}[Arcane]{Missiles, Lesser}[Active]{1}{Evocation}{as implement}
+            \magicitemability{Attuned} While wielding this item, you gain \spell{magic missile} as a spell known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this item.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}[Arcane]{Missiles}[Active]{4}{Evocation}{as implement}
+            \magicitemability{Attuned} While wielding this item, you gain \spell{missile storm} and \spell{magic missile} as spells known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this item.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}[Arcane, Nature]{Shielding, Lesser}[Active]{2}{Abjuration [Shielding]}{as implement}
             \magicitemability{Attuned} You gain \spell{inertial shield} as a spell known.
-            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+            In addition, you can use item uses in place of spell slots to cast spells known from this item.
         \end{magicitemdef}
 
-        \begin{magicitemdef}[Arcane, Nature]{Shielding}[Active]{4}{Abjuration/Evocation [Shielding]}{as staff}
+        \begin{magicitemdef}[Arcane, Nature]{Shielding}[Active]{4}{Abjuration/Evocation [Shielding]}{as implement}
             \magicitemability{Attuned} You gain \spell{fire shield} as spells known.
-            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+            In addition, you can use item uses in place of spell slots to cast spells known from this item.
         \end{magicitemdef}
 
-        \begin{magicitemdef}[Arcane]{Time, Lesser}[Active]{1}{Transmutation [Temporal]}{as staff}
-            \magicitemability{Attuned} While wielding this staff, you gain \spell{haste} as a spell known.
-            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \begin{magicitemdef}[Arcane]{Time, Lesser}[Active]{1}{Transmutation [Temporal]}{as implement}
+            \magicitemability{Attuned} While wielding this item, you gain \spell{haste} as a spell known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this item.
         \end{magicitemdef}
 
-        \begin{magicitemdef}[Arcane]{Time}[Active]{3}{Transmutation [Temporal]}{as staff}
-            \magicitemability{Attuned} While wielding this staff, you gain \spell{slow} and \spell{haste} as spells known.
-            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \begin{magicitemdef}[Arcane]{Time}[Active]{3}{Transmutation [Temporal]}{as implement}
+            \magicitemability{Attuned} While wielding this item, you gain \spell{slow} and \spell{haste} as spells known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this item.
         \end{magicitemdef}
 
-        \begin{magicitemdef}[Arcane]{Time, Greater}[Active]{9}{Transmutation [Temporal]}{as staff}
-            \magicitemability{Attuned} While wielding this staff, you gain \spell{time stop}, \spell{haste}, and \spell{slow} as spells known.
-            In addition, you can use item uses in place of spell slots to cast spells known from this staff.
+        \begin{magicitemdef}[Arcane]{Time, Greater}[Active]{9}{Transmutation [Temporal]}{as implement}
+            \magicitemability{Attuned} While wielding this item, you gain \spell{time stop}, \spell{haste}, and \spell{slow} as spells known.
+            In addition, you can use item uses in place of spell slots to cast spells known from this item.
         \end{magicitemdef}
 
 \section{Tools}
