@@ -42,7 +42,8 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
                 \spellsuccess 1d8 acid damage per two spellpower immediately, and again at the end of the next round.
-                \spellcritical As above, except that the acid persists for 5 rounds, and the target is \sickened for 1 round each time it takes damage.
+                \spellcritical As above, except that the acid persists for 5 rounds, dealing damage at the end of each round.
+                In addition, the target is \sickened for 1 round each time it takes damage.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -938,7 +939,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgts{One creature}}{\spellrng{\rngclose}}
+            \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
@@ -1780,7 +1781,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{Up to five creatures}{\rngmed}
+            \spelltwocol{\spelltgts{Up to five creatures}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target is immune to hostile \glossterm{Life} effects.
@@ -2033,7 +2034,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{Up to five willing creatures}{\rngmed}
+            \spelltwocol{\spelltgts{Up to five willing creatures}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target teleports to a destination within \rngext range of you. You must clearly visualize the destination, but you do not need line of sight or line of effect. After arriving, the target cannot act until the next action phase.
@@ -2179,7 +2180,7 @@
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
-        \spellinfo{Abjuration [Shielding]}{Arcane, Magic}
+        \spellinfo{Abjuration [Thaumaturgy]}{Arcane, Magic}
         \spellnotes Destroying artifacts is dangerous, and it is likely to attract the attention of some powerful being who has an interest in or connection with the device.
         \miscastyou
     \end{spellfooter}
@@ -2191,7 +2192,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgts{One creature, object, or location}}{\spellrng{\rngmed}}
+            \spelltwocol{\spelltgt{One creature, object, or location}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Special}
@@ -2818,7 +2819,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Fire]}{Arcane, Fire}
+        \spellinfo{Evocation [Destructive, Fire]}{Arcane, Fire, Nature}
         \spellnotes \destructivespellnotes
 
         \firespellnotes
@@ -2956,7 +2957,7 @@
         \spellaugment{1}{Sickening}{Creatures within the area are \sickened for as long as they remain within the cloud, and for 1 round after they leave.}
         %\spellaugment{3}{Shielding}{The spell's area becomes an emanation from you that moves with you. When you move, new fog does not form immediately. At the end of each round, the fog in your previous location disappears, and new fog forms around your current location.}[Abjuration]
         \spellaugment{3}{Solid}{All creatures in the area move at half speed and suffer penalties as if they were fighting underwater. Attacks entering or passing through the area are similarly penalized.}
-        \spellaugment{4}{Acidic}{At the end of very round, make a Spellpower vs. Fortitude attack against everything in the fog. Success against a target means it takes 1d10 acid damage per four spellpower.}[Acid]
+        \spellaugment{4}{Acidic}{At the end of every round, everything in the fog takes 1d10 acid damage per four spellpower.}[Acid]
         %\spellaugment{5}{Sea of Fog}{The spell's area becomes a 50 ft.\ high, 500 ft.\ radius cylinder centered on you. A severe wind disperses the fog within 1 minute, a windstorm disperses it within 5 rounds, and a hurricane disperses it within a round.}
     \end{spellaugments}
 \end{spellsection}
@@ -3457,7 +3458,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Conjuration/Evocation [Cold, Creation]}*{Nature, Water}
+        \spellinfo{Conjuration/Evocation [Cold, Creation]}*{Arcane, Nature, Water}
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -3770,7 +3771,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{Two willing creatures}{\rngmed}
+            \spelltwocol{\spelltgts{Two willing creatures}}{\spellrng{\rngmed}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spellspecial When you cast this spell, you choose which target will be protected.
@@ -3962,7 +3963,6 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation}{Arcane, Magic}
-        \spellnotes \forcespellnotes
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -4296,7 +4296,6 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Evocation}{Arcane, Magic}
-        \spellnotes \forcespellnotes
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -5282,7 +5281,7 @@
             \spellcmp{Somatic only}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect \spelldamage{cold}[d10]
+            \spelleffect \spelldamage{cold}[d10].
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -5355,7 +5354,8 @@
             \spellcmp{Somatic only}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect At the end of every round, all enemies in the area take 1d8 cold damage per four spellpower.
+            \spelleffect At the end of every round, all enemies in the area take 1d10 cold damage per four spellpower.
+            \spelldur 5 rounds
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -5429,7 +5429,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Electricity]}{Arcane, Destruction}
+        \spellinfo{Evocation [Electricity]}{Arcane, Destruction, Nature}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -6497,7 +6497,7 @@
         \begin{spelleffects}
             \spelleffect This spell creates a wall made of fire.
             When the spell is cast, you choose which sides of the wall radiate heat.
-            At the end of each round, all creatures within 10 feet of a side radiating heat take 1d8 fire damage per four spellpower.
+            At the end of each round, all creatures within 10 feet of a side radiating heat take 1d10 fire damage per four spellpower.
 
             In addition, whenever a creature passes through the wall, make a spellpower vs. Reflex attack against it.
             Success deals \spelldamage{fire}[d6] to the creature.
@@ -6532,7 +6532,6 @@
         \spellinfo{Evocation [Physical, Telekinesis, Wall]}{Arcane}
         \spellnotes The wall can be destroyed. A 5-foot square of wall has hit points equal to five times your spellpower, and hardness equal to your spellpower.
 
-        \forcespellnotes
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
