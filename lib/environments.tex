@@ -310,34 +310,37 @@
 %   [activation]
 %   crafting skill
 %   fluff text
-\DeclareDocumentEnvironment{magicitemdef}{m o m o m o m o}
+\DeclareDocumentEnvironment{magicitemdef}{o m o m o m o m o}
 {
     \begin{thesamepage}
-    \hypertarget{item:#1}{\sssecfakehref{it:#1}{#1}}
-    \label{item:#1}
+    \IfValueTF{#1}
+    {
+        \hypertarget{item:#2 #1}{\sssecfakehref{it:#2 #1}{#2~[#1]}}
+    }
+    {
+        \hypertarget{item:#2}{\sssecfakehref{it:#2}{#2}}
+    }
+    \label{item:#2}
 
     \begin{spellcontent}
     \begin{spelltargetinginfo}
-        \IfValueTF{#2}
+        \IfValueT{#3}
         {
-            \mitempricewithlevel{#2}{#3}
-        }
-        {
-            %\parhead{Price (Level)} \magicitemprice{#3}{#6} \magicitemitemlevel{\TempVar}
+            \mitempricewithlevel{#3}{#4}
         }
 
-        \parhead*{Minimum~Power} \magicitemspellpower{#3}
+        \parhead*{Minimum~Power} \magicitemspellpower{#4}
 
-        \IfValueT{#4}
+        \IfValueT{#5}
         {
-            \parhead*{Location} #4
+            \parhead*{Location} #5
         }
 
-        \parhead*{Aura} \magicitemaurastrength{#3}~#5
+        \parhead*{Aura} \magicitemaurastrength{#4}~#6
 
-        \IfValueT{#6}
+        \IfValueT{#7}
         {
-            \parhead*{Activation} #6
+            \parhead*{Activation} #7
         }
         \par
     \end{spelltargetinginfo}
@@ -347,9 +350,9 @@
     \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \par\noindent \textit{Creation~Requirements:}~#5~\nth{#3}~level;~
-        spellpower~\magicitemspellpower{#3}~
-        or~Craft~(#7)~\imath{#3*2+5}
+        \par\noindent \textit{Creation~Requirements:}~#6~\nth{#4}~level;~
+        spellpower~\magicitemspellpower{#4}~
+        or~Craft~(#8)~\imath{#4*2+5}
     \end{spellfooter}
     \end{thesamepage}
 }
