@@ -37,9 +37,9 @@ This choice determines a great deal about your character's abilities.
     \subsection{Class Description Format}
 
         \parhead{Class Table}
-        The class's table describes its base progression for combat prowess, Fortitude defense, Reflex defense, and Mental defense.
+        The class's table describes its progression for \glossterm{combat prowess}.
         If a character has a high enough combat prowess to make multiple \glossterm{strikes}, the number of strikes it can make is in parentheses next to its combat prowess.
-        For details about base progressions, see \pcref{Base Progressions}.
+        For details about combat prowess progressions, see \pcref{Combat Prowess Progressions}.
 
         \parhead{Alignment}
         Some classes require specific alignments (see \pcref{Alignment}).
@@ -64,11 +64,7 @@ This choice determines a great deal about your character's abilities.
             If a character has multiple base classes, only use the highest bonus to combat prowess.
 
             \parhead{Defenses}
-            Each class grants bonuses to defenses the class specializes in.
-            If the class has a good base defense progression, it grants a \plus4 bonus to that defense.
-            If the class has an average base defense progression, it grants a \plus2 bonus to that defense.
-            These bonuses apply regardless of the attribute or base progression used to determine the defense, and are not included in the defense values given in the class table.
-
+            Each class grants bonuses to specific defenses.
             These bonuses do not stack with other defense bonuses granted by base classes.
             If a character has multiple base classes, use the highest bonuses that apply to each defense.
 
@@ -81,8 +77,8 @@ This choice determines a great deal about your character's abilities.
 \section{Barbarian}\label{Barbarian}
     \begin{dtable}
         \lcaption{Barbarian Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{Fort} & \tb{Ref} & \tb{Ment} & \tb{Special} \\
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} >{\lcol}X}
+            \tb{Level} & \tb{Combat Prowess} & \tb{Special} \\
             \hline
             \barbarianprogressionrow{1}  & Rage \plus2, damage reduction, grit \\
             \barbarianprogressionrow{2}  & Rage feat                           \\
@@ -180,7 +176,7 @@ This choice determines a great deal about your character's abilities.
         In addition, he is not \unaware when attacked by surprise.
 
         \cf{Bbn}[4th]{Durable}[Ex]
-        The barbarian gains a \plus4 bonus to Fortitude defense.
+        The barbarian gains a \plus2 bonus to Fortitude defense.
 
         \cf{Bbn}[7th]{Battle-Scarred}[Ex]
         The barbarian doubles the benefit of any healing he receives.
@@ -235,8 +231,8 @@ This choice determines a great deal about your character's abilities.
 \section{Cleric}\label{Cleric}
     \begin{dtable}
         \lcaption{Cleric Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{2em} >{\ccol}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{Fort} & \tb{Ref} & \tb{Ment} & \tb{Special} \\
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{2em} >{\ccol}p{\babcolavg} >{\lcol}X}
+            \tb{Level} & \tb{Combat Prowess} & \tb{Special} \\
             \hline
             \clericprogressionrow{1}  & Devotion \plus2, domain gifts, spells \\
             \clericprogressionrow{2}  & Domain invocation, rituals            \\
@@ -856,8 +852,8 @@ This choice determines a great deal about your character's abilities.
 \section{Druid}\label{Druid}
     \begin{dtable}
         \lcaption{Druid Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\centering}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{Fort} & \tb{Ref} & \tb{Ment} & \tb{Special} \\
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\centering}p{\babcolavg} >{\lcol}X}
+            \tb{Level} & \tb{Combat Prowess} & \tb{Special} \\
             \hline
             \druidprogressionrow{1}  & Metal abhorrence, spells, wild speech \\
             \druidprogressionrow{2}  & Rituals, wild aspect                  \\
@@ -1305,8 +1301,8 @@ This choice determines a great deal about your character's abilities.
 \section{Fighter}\label{Fighter}
     \begin{dtable}
         \lcaption{Fighter Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{Fort} & \tb{Ref} & \tb{Ment} & \tb{Special} \\
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} >{\lcol}X}
+            \tb{Level} & \tb{Combat Prowess} & \tb{Special} \\
             \hline
             \fighterprogressionrow{1}   & Advanced training, armor discipline \\
             \fighterprogressionrow{2}   & Combat feat                         \\
@@ -1508,8 +1504,8 @@ This choice determines a great deal about your character's abilities.
 \section{Monk}\label{Monk}
     \begin{dtable}
         \lcaption{Monk Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolavg} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{Fort} & \tb{Ref} & \tb{Ment} & \tb{Special} \\
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolavg} >{\lcol}X}
+            \tb{Level} & \tb{Combat Prowess} & \tb{Special} \\
             \hline
             \monkprogressionrow{1}  & Enlightened defenses, \ki strike \plus1, unarmed warrior \\
             \monkprogressionrow{2}  & Manifest \ki                                  \\
@@ -1726,8 +1722,8 @@ This choice determines a great deal about your character's abilities.
 \section{Paladin}\label{Paladin}
     \begin{dtable}
         \lcaption{Paladin Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{Fort} & \tb{Ref} & \tb{Ment} & \tb{Special} \\
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} >{\lcol}X}
+            \tb{Level} & \tb{Combat Prowess} & \tb{Special} \\
             \hline
             \paladinprogressionrow{1}  & Divine invocation (smite), divine protection \\
             \paladinprogressionrow{2}  & Divine invocation                            \\
@@ -2025,8 +2021,8 @@ This choice determines a great deal about your character's abilities.
 \section{Ranger}\label{Ranger}
     \begin{dtable}
         \lcaption{Ranger Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{Fort} & \tb{Ref} & \tb{Ment} & \tb{Special} \\
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} >{\lcol}X}
+            \tb{Level} & \tb{Combat Prowess} & \tb{Special} \\
             \hline
             \rangerprogressionrow{1}  & Quarry \plus2, tenacious hunter, wild speech \\
             \rangerprogressionrow{2}  & Hunting lore, tracker                        \\
@@ -2310,8 +2306,8 @@ This choice determines a great deal about your character's abilities.
 \section{Rogue}\label{Rogue}
     \begin{dtable}
         \lcaption{Rogue Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{Fort} & \tb{Ref} & \tb{Ment} & \tb{Special} \\
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} >{\lcol}X}
+            \tb{Level} & \tb{Combat Prowess} & \tb{Special} \\
             \hline
             \rogueprogressionrow{1}  & Advanced training, sneak attack \plus1d6                  \\
             \rogueprogressionrow{2}  & Skill talent                           \\
@@ -2484,10 +2480,10 @@ This choice determines a great deal about your character's abilities.
 
         \subcf{16th -- Deadly Ambush*}
         The rogue makes a Trick power vs. Fortitude attack against the struck creature.
-        Success means the target dies if it loses all its hit points, and is \staggered, for 2 rounds.
+        Success means the target is \staggered, and dies if it loses all its hit points for 2 rounds.
         Critical success means the target immediately dies.
         This is an ambush attack, and only works once per creature.
-        In addition, it is a \glossterm{Death} effect.
+        In addition, dying in this way is a \glossterm{Death} effect.
 
         \subcf{20th -- Dual Ambush}
         The rogue can apply the benefits of two ambush attacks to a single sneak attack.
@@ -2516,8 +2512,8 @@ This choice determines a great deal about your character's abilities.
 \section{Sorcerer}\label{Sorcerer}
     \begin{dtable}
         \lcaption{Sorcerer Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{Fort} & \tb{Ref} & \tb{Ment} & \tb{Special} \\
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} >{\lcol}X}
+            \tb{Level} & \tb{Combat Prowess} & \tb{Special} \\
             \hline
             \sorcererprogressionrow{1}  & Cantrip, spells, wild magic, wild tolerance \\
             \sorcererprogressionrow{2}  & Cantrip, personal spell     \\
@@ -2693,8 +2689,8 @@ This choice determines a great deal about your character's abilities.
 \section{Spellwarped}\label{Spellwarped}
     \begin{dtable*}
         \lcaption{Spellwarped Progression}
-        \begin{dtabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} *{2}{>{\ccol}p{4.5em}} >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{Good Defense}\fn{1} & \tb{Normal Defenses}\fn{1} & \tb{Special} \\
+        \begin{dtabularx}{\textwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} >{\lcol}X}
+            \tb{Level} & \tb{Combat Prowess} & \tb{Special} \\
             \hline
             \spellwarpedprogressionrow{1}  & Innate magic, invocation, warp regeneration  \\
             \spellwarpedprogressionrow{2}  & Spellwarped body, surge of power             \\
@@ -2717,7 +2713,6 @@ This choice determines a great deal about your character's abilities.
             \spellwarpedprogressionrow{19} & Permanent surge of power, spellwarped aspect \\
             \spellwarpedprogressionrow{20} & Invocation                                   \\
         \end{dtabularx}
-        1 Each spellwarped has a good defense determined by his choice of innate magic.
     \end{dtable*}
 
     \classbasics{Alignment} Any.
@@ -2750,7 +2745,7 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Combat Prowess} \plus2. This benefit is included in the class table.
 
-        \classbasics{Defenses} \plus4 good defense, \plus2 other defenses.
+        \classbasics{Defenses} \plus4 to one defense, \plus2 to other defenses (see the Innate Magic ability, below).
 
         \cf{Spl}{Weapon and Armor Proficiency}
         A spellwarped is proficient with simple weapons, any two weapon groups, light and medium armor, and shields.
@@ -3206,8 +3201,8 @@ This choice determines a great deal about your character's abilities.
 \section{Wizard}\label{Wizard}
     \begin{dtable}
         \lcaption{Wizard Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} *{3}{>{\ccol}p{\savecol}} >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{Fort} & \tb{Ref} & \tb{Ment} & \tb{Special} \\
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} >{\lcol}X}
+            \tb{Level} & \tb{Combat Prowess} & \tb{Special} \\
             \hline
             \wizardprogressionrow{1}  & Cantrip, rituals, spells          \\
             \wizardprogressionrow{2}  & Arcane insight, cantrip           \\
@@ -3413,8 +3408,7 @@ This choice determines a great deal about your character's abilities.
         The result is the character's total combat prowess.
 
         \parhead{Defenses}
-        For each defense, add the base defense bonuses granted by each class, as given on the class's chart, together.
-        The result is the character's total base defense bonus for that defense.
+        The normal rules for determining defenses apply to multiclass characters.
 
         \parhead{Skills}
         A multiclass character gains all class skills from all of his classes.
