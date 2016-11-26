@@ -306,6 +306,7 @@ Some strike feats instead require a specific action to use.
         \midrule
         \tb{Skill Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
         \featref{Craft Magic Item} & Craft 5 ranks & Create magic items & \tdash & \featpref{Craft Magic Item} \\
+        \tind \featref{Expanded Crafting Knowledge} & Craft 10 ranks & Create more types of magic items & \tdash & \featpref{Expanded Crafting Knowledge} \\
         \featref{Efficient Crafting} & Craft 10 ranks & Craft nonmagical items more cheaply & \tdash & \featpref{Efficient Crafting} \\
         \featref{Extraordinary Sense} & Awareness 10 ranks & Gain superhuman sense, such as darkvision & \tdash & \featpref{Extraordinary Sense} \\
         \featref{Disguise Auras} & Disguise 10 ranks & Alter magical auras with disguise & \tdash & \featpref{Disguise Auras} \\
@@ -797,6 +798,9 @@ If this bonus is not used within 1 round, it is lost.
 \featben You can imbue items with magic using your crafting skill.
 Imbuing an item with magic takes time and material components, as described in \pcref{Magic Item Creation}.
 
+When you gain this feat, you choose three ability tags (see \pcref{Ability Tags}).
+You know how to craft items with those ability tags.
+
 You can also mend a broken magic item if it is one that you could make.
 Doing so costs a tenth of the raw materials and a quarter of the time it would take to craft that item in the first place.
 You cannot mend a destroyed magic item.
@@ -1041,10 +1045,17 @@ You cannot mend a destroyed magic item.
 \featben You can blend two spells together to create magic items.
 This allows you to meet item crafting prerequisites that you could not meet with a single spell.
 
-
 \feat{Executioner}{Combat, Reaction}
 \featpres Four strikes, any three Reaction feats.
 \featben At the end of every round, you can make a free melee \glossterm{strike} against all creatures you threaten that have no hit points remaining.
+
+\feat{Expanded Crafting Knowledge}{Skill}
+\featpres Craft (any) 5 ranks, Craft Magic Item.
+\featben Choose three additional ability tags (see \pcref{Ability Tags}).
+You can craft items that have those ability tags.
+\parhead{Special} This feat can be taken multiple times.
+Each time, you choose three additional ability tags.
+You may take this feat a maximum number of times equal to one-fifth of your highest ranks in a Craft skill.
 
 \feat{Disguise Auras}{Skill}
 \featpre Disguise 10 ranks.
@@ -2407,7 +2418,7 @@ This can increase the power of abilities you already have, but it does not affec
 \featpre Craft (any) 10 ranks.
 \featben You can craft items from many different materials with equal talent.
 Choose any two Craft skills.
-If you have trained or mastered any Craft skill, you are equivalently trained or mastered in those three Craft skills.
+If you have trained or mastered any Craft skill, you are equivalently trained or mastered in those two Craft skills.
 This functions just like training or mastery acquired by spending skill points.
 \parhead{Special} This feat can be taken multiple times.
 Each time, you can choose two additional Craft skills.
