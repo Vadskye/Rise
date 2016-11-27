@@ -1,1 +1,921 @@
-<!DOCTYPE html><head><link rel="stylesheet" href="sheet.css"></link><link rel="stylesheet" href="first_page.css"></link><link rel="stylesheet" href="paper_sheet.css"></link></head><div class="dialog characterdialog ui-dialog ui-dialog-content ui-widget-content"><div id="root" class="charsheet tab-pane"><div class="flex-row first-page"><div class="flex-col sidebar"><div class="rise-title">Rise</div><div class="flex-col attributes-and-skills"><div class="flex-wrapper"><div class="section-header">Attributes and Skills</div></div><div class="flex-col attribute-section"><div class="flex-row labeled-number-input attribute"><span class="number-label">Strength</span><input value="(@{strength-base}+@{strength-level}+@{strength-misc})" type="number" name="strength-display" disabled="true"></input></div><div class="flex-row skill-box"><button class="number-label" value="Climb: [[1d20+ @{Climb}]]" type="roll" name="roll_skill-Climb">Climb</button><input type="number" name="climb"></input></div><div class="flex-row skill-box"><button class="number-label" value="Jump: [[1d20+ @{Jump}]]" type="roll" name="roll_skill-Jump">Jump</button><input type="number" name="jump"></input></div><div class="flex-row skill-box"><button class="number-label" value="Sprint: [[1d20+ @{Sprint}]]" type="roll" name="roll_skill-Sprint">Sprint</button><input type="number" name="sprint"></input></div><div class="flex-row skill-box"><button class="number-label" value="Swim: [[1d20+ @{Swim}]]" type="roll" name="roll_skill-Swim">Swim</button><input type="number" name="swim"></input></div></div><div class="flex-col attribute-section"><div class="flex-row labeled-number-input attribute"><span class="number-label">Dexterity</span><input value="(@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})" type="number" name="dexterity-display" disabled="true"></input></div><div class="flex-row skill-box"><button class="number-label" value="Acrobatics: [[1d20+ @{Acrobatics}]]" type="roll" name="roll_skill-Acrobatics">Acrobatics</button><input type="number" name="acrobatics"></input></div><div class="flex-row skill-box"><button class="number-label" value="Escape Artist: [[1d20+ @{Escape Artist}]]" type="roll" name="roll_skill-Escape Artist">Escape Artist</button><input type="number" name="escape artist"></input></div><div class="flex-row skill-box"><button class="number-label" value="Ride: [[1d20+ @{Ride}]]" type="roll" name="roll_skill-Ride">Ride</button><input type="number" name="ride"></input></div><div class="flex-row skill-box"><button class="number-label" value="Sleight of Hand: [[1d20+ @{Sleight of Hand}]]" type="roll" name="roll_skill-Sleight of Hand">Sleight of Hand</button><input type="number" name="sleight of hand"></input></div><div class="flex-row skill-box"><button class="number-label" value="Stealth: [[1d20+ @{Stealth}]]" type="roll" name="roll_skill-Stealth">Stealth</button><input type="number" name="stealth"></input></div></div><div class="flex-col attribute-section"><div class="flex-row labeled-number-input attribute"><span class="number-label">Constitution</span><input value="(@{constitution-base}+@{constitution-level}+@{constitution-misc})" type="number" name="constitution-display" disabled="true"></input></div></div><div class="flex-col attribute-section"><div class="flex-row labeled-number-input attribute"><span class="number-label">Intelligence</span><input value="(@{intelligence-base}+@{intelligence-level}+@{intelligence-misc})" type="number" name="intelligence-display" disabled="true"></input></div><div class="flex-row skill-box"><button class="number-label" value="Craft ______: [[1d20+ @{Craft ______}]]" type="roll" name="roll_skill-Craft ______">Craft ______</button><input type="number" name="craft ______"></input></div><div class="flex-row skill-box"><button class="number-label" value="Devices: [[1d20+ @{Devices}]]" type="roll" name="roll_skill-Devices">Devices</button><input type="number" name="devices"></input></div><div class="flex-row skill-box"><button class="number-label" value="Disguise: [[1d20+ @{Disguise}]]" type="roll" name="roll_skill-Disguise">Disguise</button><input type="number" name="disguise"></input></div><div class="flex-row skill-box"><button class="number-label" value="Heal: [[1d20+ @{Heal}]]" type="roll" name="roll_skill-Heal">Heal</button><input type="number" name="heal"></input></div><div class="flex-row skill-box"><button class="number-label" value="Knowledge ______: [[1d20+ @{Knowledge ______}]]" type="roll" name="roll_skill-Knowledge ______">Knowledge ______</button><input type="number" name="knowledge ______"></input></div><div class="flex-row skill-box"><button class="number-label" value="Knowledge ______: [[1d20+ @{Knowledge ______}]]" type="roll" name="roll_skill-Knowledge ______">Knowledge ______</button><input type="number" name="knowledge ______"></input></div><div class="flex-row skill-box"><button class="number-label" value="Linguistics: [[1d20+ @{Linguistics}]]" type="roll" name="roll_skill-Linguistics">Linguistics</button><input type="number" name="linguistics"></input></div></div><div class="flex-col attribute-section"><div class="flex-row labeled-number-input attribute"><span class="number-label">Perception</span><input value="(@{perception-base}+@{perception-level}+@{perception-misc})" type="number" name="perception-display" disabled="true"></input></div><div class="flex-row skill-box"><button class="number-label" value="Awareness: [[1d20+ @{Awareness}]]" type="roll" name="roll_skill-Awareness">Awareness</button><input type="number" name="awareness"></input></div><div class="flex-row skill-box"><button class="number-label" value="Creature Handling: [[1d20+ @{Creature Handling}]]" type="roll" name="roll_skill-Creature Handling">Creature Handling</button><input type="number" name="creature handling"></input></div><div class="flex-row skill-box"><button class="number-label" value="Sense Motive: [[1d20+ @{Sense Motive}]]" type="roll" name="roll_skill-Sense Motive">Sense Motive</button><input type="number" name="sense motive"></input></div><div class="flex-row skill-box"><button class="number-label" value="Spellcraft: [[1d20+ @{Spellcraft}]]" type="roll" name="roll_skill-Spellcraft">Spellcraft</button><input type="number" name="spellcraft"></input></div><div class="flex-row skill-box"><button class="number-label" value="Survival: [[1d20+ @{Survival}]]" type="roll" name="roll_skill-Survival">Survival</button><input type="number" name="survival"></input></div></div><div class="flex-col attribute-section"><div class="flex-row labeled-number-input attribute"><span class="number-label">Willpower</span><input value="(@{willpower-base}+@{willpower-level}+@{willpower-misc})" type="number" name="willpower-display" disabled="true"></input></div></div><div class="flex-col attribute-section"><div class="attribute attribute-header">Other Skills</div><div class="flex-row skill-box"><button class="number-label" value="Bluff: [[1d20+ @{Bluff}]]" type="roll" name="roll_skill-Bluff">Bluff</button><input type="number" name="bluff"></input></div><div class="flex-row skill-box"><button class="number-label" value="Intimidate: [[1d20+ @{Intimidate}]]" type="roll" name="roll_skill-Intimidate">Intimidate</button><input type="number" name="intimidate"></input></div><div class="flex-row skill-box"><button class="number-label" value="Perform ______: [[1d20+ @{Perform ______}]]" type="roll" name="roll_skill-Perform ______">Perform ______</button><input type="number" name="perform ______"></input></div><div class="flex-row skill-box"><button class="number-label" value="Persuasion: [[1d20+ @{Persuasion}]]" type="roll" name="roll_skill-Persuasion">Persuasion</button><input type="number" name="persuasion"></input></div><div class="flex-row unlabeled-number-input skill-box"><input type="text" size="1"></input><input type="number"></input></div><div class="flex-row unlabeled-number-input skill-box"><input type="text" size="1"></input><input type="number"></input></div><div class="flex-row unlabeled-number-input skill-box"><input type="text" size="1"></input><input type="number"></input></div><div class="flex-row unlabeled-number-input skill-box"><input type="text" size="1"></input><input type="number"></input></div></div></div></div><div class="flex-col main-body"><div class="boring-stuff"><div class="flex-row boring-row"><div class="labeled-text-input"><div class="flex-col"><input type="text" name="character-name" size="1"></input><span class="under-label">Character name</span></div></div><div class="labeled-text-input"><div class="flex-col"><input type="text" name="player-name" size="1"></input><span class="under-label">Player name</span></div></div><div class="labeled-text-input"><div class="flex-col"><input type="text" name="concept" size="1"></input><span class="under-label">Concept</span></div></div></div><div class="flex-row boring-row"><div class="labeled-text-input"><div class="flex-col"><input type="text" name="class-and-level" size="1"></input><span class="under-label">Class and level</span></div></div><div class="labeled-text-input"><div class="flex-col"><input type="text" name="race-and-background" size="1"></input><span class="under-label">Race and background</span></div></div><div class="labeled-text-input"><div class="flex-col"><input type="text" name="description" size="1"></input><span class="under-label">Description</span></div></div></div></div><div class="flex-row core-statistics"><div class="flex-col defenses"><div class="flex-wrapper"><div class="section-header">Defenses</div></div><div class="flex-row labeled-number-input"><span class="number-label">Armor</span><input value="('10+ceil(floor(((@{bab-good}+@{bab-avg}+@{bab-poor})-0.1+100)/(ceil(floor(((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})-0.1+100)/((@{constitution-base}+@{constitution-level}+@{constitution-misc})+100))/200)*((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+100)  + ceil(floor(((@{constitution-base}+@{constitution-level}+@{constitution-misc})+100)/((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+100))/(200))*((@{constitution-base}+@{constitution-level}+@{constitution-misc})+100)-100+100))/200)*((@{bab-good}+@{bab-avg}+@{bab-poor})+100)  + ceil(floor((ceil(floor(((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})-0.1+100)/((@{constitution-base}+@{constitution-level}+@{constitution-misc})+100))/200)*((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+100)  + ceil(floor(((@{constitution-base}+@{constitution-level}+@{constitution-misc})+100)/((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+100))/(200))*((@{constitution-base}+@{constitution-level}+@{constitution-misc})+100)-100+100)/((@{bab-good}+@{bab-avg}+@{bab-poor})+100))/(200))*(ceil(floor(((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})-0.1+100)/((@{constitution-base}+@{constitution-level}+@{constitution-misc})+100))/200)*((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+100)  + ceil(floor(((@{constitution-base}+@{constitution-level}+@{constitution-misc})+100)/((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+100))/(200))*((@{constitution-base}+@{constitution-level}+@{constitution-misc})+100)-100+100)-100+@{armor-body}+@{shield}+@{armor-misc}',)" type="number" name="Armor-display" disabled="true"></input></div><div class="flex-row labeled-number-input"><span class="number-label">Fortitude</span><input value="10+ceil(floor(((@{constitution-base}+@{constitution-level}+@{constitution-misc})+floor((@{strength-base}+@{strength-level}+@{strength-misc})/2)-0.1+100)/(@{fort-base}+100))/200)*((@{constitution-base}+@{constitution-level}+@{constitution-misc})+floor((@{strength-base}+@{strength-level}+@{strength-misc})/2)+100)  + ceil(floor((@{fort-base}+100)/((@{constitution-base}+@{constitution-level}+@{constitution-misc})+floor((@{strength-base}+@{strength-level}+@{strength-misc})/2)+100))/(200))*(@{fort-base}+100)-100+@{fort-misc}" type="number" name="Fortitude-display" disabled="true"></input></div><div class="flex-row labeled-number-input"><span class="number-label">Reflex</span><input value="10+ceil(floor(((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+floor((@{perception-base}+@{perception-level}+@{perception-misc})/2)-0.1+100)/(@{ref-base}+100))/200)*((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+floor((@{perception-base}+@{perception-level}+@{perception-misc})/2)+100)  + ceil(floor((@{ref-base}+100)/((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+floor((@{perception-base}+@{perception-level}+@{perception-misc})/2)+100))/(200))*(@{ref-base}+100)-100+@{ref-misc}" type="number" name="Reflex-display" disabled="true"></input></div><div class="flex-row labeled-number-input"><span class="number-label">Mental</span><input value="10+ceil(floor(((@{willpower-base}+@{willpower-level}+@{willpower-misc})+floor((@{intelligence-base}+@{intelligence-level}+@{intelligence-misc})/2)-0.1+100)/(@{ment-base}+100))/200)*((@{willpower-base}+@{willpower-level}+@{willpower-misc})+floor((@{intelligence-base}+@{intelligence-level}+@{intelligence-misc})/2)+100)  + ceil(floor((@{ment-base}+100)/((@{willpower-base}+@{willpower-level}+@{willpower-misc})+floor((@{intelligence-base}+@{intelligence-level}+@{intelligence-misc})/2)+100))/(200))*(@{ment-base}+100)-100+@{ment-misc}" type="number" name="Mental-display" disabled="true"></input></div></div><div class="flex-col offense"><div class="flex-wrapper"><div class="section-header">Core Statistics</div></div><div class="flex-wrapper legend-point-header">Legend points</div><div class="flex-row legend-point-wrapper"><div class="flex-col underlabeled-number-input"><input type="number"></input><div class="under-label">General</div></div><div class="flex-col underlabeled-number-input"><input type="number"></input><div class="under-label">Offense</div></div><div class="flex-col underlabeled-number-input"><input type="number"></input><div class="under-label">Defense</div></div></div><div class="flex-row labeled-number-input"><span class="number-label">Strikes/round</span><input type="number" name="Strikes/round-display" disabled="true"></input></div><div class="flex-row labeled-number-input"><span class="number-label">Land speed</span><input type="number" name="Land speed-display" disabled="true"></input></div></div><div class="flex-col hit-points"><div class="flex-wrapper"><div class="section-header">Hit Points</div></div><div class="flex-row labeled-number-input"><span class="number-label">Max</span><input type="number" name="hit-points-Max"></input></div><div class="flex-row labeled-number-input"><span class="number-label">Bloodied</span><input type="number" name="hit-points-Bloodied"></input></div><div class="flex-row labeled-number-input"><span class="number-label">Temp</span><input type="number" name="hit-points-Temp"></input></div><div class="flex-row labeled-number-input"><span class="number-label">Critical</span><input type="number" name="hit-points-Critical"></input></div></div><div class="flex-col resources"><div class="flex-wrapper section-header">Resources</div><div class="flex-row unlabeled-number-input"><input type="text" name="resource-name-0" size="1"></input><input type="number" name="resource-number-0"></input></div><div class="flex-row unlabeled-number-input"><input type="text" name="resource-name-1" size="1"></input><input type="number" name="resource-number-1"></input></div><div class="flex-row unlabeled-number-input"><input type="text" name="resource-name-2" size="1"></input><input type="number" name="resource-number-2"></input></div><div class="flex-row unlabeled-number-input"><input type="text" name="resource-name-3" size="1"></input><input type="number" name="resource-number-3"></input></div></div></div><div class="flex-col attacks"><div class="flex-wrapper"><div class="section-header">Attacks</div></div><div class="flex-row attack"><div class="labeled-text-input attack-name"><div class="flex-col"><input type="text" name="attack0-name" size="1"></input><span class="under-label">Name</span></div></div><div class="flex-col underlabeled-number-input attack-bonus"><input type="number" name="attack0-bonus"></input><div class="under-label">Bonus</div></div><div class="labeled-text-input attack-effect"><div class="flex-col"><input type="text" name="attack0-effect" size="1"></input><span class="under-label">Damage/Effect</span></div></div></div><div class="flex-row attack"><div class="labeled-text-input attack-name"><div class="flex-col"><input type="text" name="attack1-name" size="1"></input><span class="under-label">Name</span></div></div><div class="flex-col underlabeled-number-input attack-bonus"><input type="number" name="attack1-bonus"></input><div class="under-label">Bonus</div></div><div class="labeled-text-input attack-effect"><div class="flex-col"><input type="text" name="attack1-effect" size="1"></input><span class="under-label">Damage/Effect</span></div></div></div><div class="flex-row attack"><div class="labeled-text-input attack-name"><div class="flex-col"><input type="text" name="attack2-name" size="1"></input><span class="under-label">Name</span></div></div><div class="flex-col underlabeled-number-input attack-bonus"><input type="number" name="attack2-bonus"></input><div class="under-label">Bonus</div></div><div class="labeled-text-input attack-effect"><div class="flex-col"><input type="text" name="attack2-effect" size="1"></input><span class="under-label">Damage/Effect</span></div></div></div><div class="flex-row attack"><div class="labeled-text-input attack-name"><div class="flex-col"><input type="text" name="attack3-name" size="1"></input><span class="under-label">Name</span></div></div><div class="flex-col underlabeled-number-input attack-bonus"><input type="number" name="attack3-bonus"></input><div class="under-label">Bonus</div></div><div class="labeled-text-input attack-effect"><div class="flex-col"><input type="text" name="attack3-effect" size="1"></input><span class="under-label">Damage/Effect</span></div></div></div><div class="flex-row attack"><div class="labeled-text-input attack-name"><div class="flex-col"><input type="text" name="attack4-name" size="1"></input><span class="under-label">Name</span></div></div><div class="flex-col underlabeled-number-input attack-bonus"><input type="number" name="attack4-bonus"></input><div class="under-label">Bonus</div></div><div class="labeled-text-input attack-effect"><div class="flex-col"><input type="text" name="attack4-effect" size="1"></input><span class="under-label">Damage/Effect</span></div></div></div></div><div class="flex-col abilities"><div class="flex-wrapper"><div class="section-header">Abilities</div></div><div class="flex-row ability"><div class="labeled-text-input active-ability-name"><div class="flex-col"><input type="text" name="active-ability0-name" size="1"></input><span class="under-label">Name</span></div></div><div class="labeled-text-input active-ability-effect"><div class="flex-col"><input type="text" name="active-ability0-effect" size="1"></input><span class="under-label">Effect</span></div></div></div><div class="flex-row ability"><div class="labeled-text-input active-ability-name"><div class="flex-col"><input type="text" name="active-ability1-name" size="1"></input><span class="under-label">Name</span></div></div><div class="labeled-text-input active-ability-effect"><div class="flex-col"><input type="text" name="active-ability1-effect" size="1"></input><span class="under-label">Effect</span></div></div></div><div class="flex-row ability"><div class="labeled-text-input active-ability-name"><div class="flex-col"><input type="text" name="active-ability2-name" size="1"></input><span class="under-label">Name</span></div></div><div class="labeled-text-input active-ability-effect"><div class="flex-col"><input type="text" name="active-ability2-effect" size="1"></input><span class="under-label">Effect</span></div></div></div><div class="flex-row ability"><div class="labeled-text-input active-ability-name"><div class="flex-col"><input type="text" name="active-ability3-name" size="1"></input><span class="under-label">Name</span></div></div><div class="labeled-text-input active-ability-effect"><div class="flex-col"><input type="text" name="active-ability3-effect" size="1"></input><span class="under-label">Effect</span></div></div></div><div class="flex-row ability"><div class="labeled-text-input active-ability-name"><div class="flex-col"><input type="text" name="active-ability4-name" size="1"></input><span class="under-label">Name</span></div></div><div class="labeled-text-input active-ability-effect"><div class="flex-col"><input type="text" name="active-ability4-effect" size="1"></input><span class="under-label">Effect</span></div></div></div><div class="flex-row ability"><div class="labeled-text-input active-ability-name"><div class="flex-col"><input type="text" name="active-ability5-name" size="1"></input><span class="under-label">Name</span></div></div><div class="labeled-text-input active-ability-effect"><div class="flex-col"><input type="text" name="active-ability5-effect" size="1"></input><span class="under-label">Effect</span></div></div></div><div class="flex-row ability"><div class="labeled-text-input active-ability-name"><div class="flex-col"><input type="text" name="active-ability6-name" size="1"></input><span class="under-label">Name</span></div></div><div class="labeled-text-input active-ability-effect"><div class="flex-col"><input type="text" name="active-ability6-effect" size="1"></input><span class="under-label">Effect</span></div></div></div><div class="flex-row ability"><div class="labeled-text-input active-ability-name"><div class="flex-col"><input type="text" name="active-ability7-name" size="1"></input><span class="under-label">Name</span></div></div><div class="labeled-text-input active-ability-effect"><div class="flex-col"><input type="text" name="active-ability7-effect" size="1"></input><span class="under-label">Effect</span></div></div></div><div class="flex-row ability"><div class="labeled-text-input active-ability-name"><div class="flex-col"><input type="text" name="active-ability8-name" size="1"></input><span class="under-label">Name</span></div></div><div class="labeled-text-input active-ability-effect"><div class="flex-col"><input type="text" name="active-ability8-effect" size="1"></input><span class="under-label">Effect</span></div></div></div><div class="flex-row ability"><div class="labeled-text-input active-ability-name"><div class="flex-col"><input type="text" name="active-ability9-name" size="1"></input><span class="under-label">Name</span></div></div><div class="labeled-text-input active-ability-effect"><div class="flex-col"><input type="text" name="active-ability9-effect" size="1"></input><span class="under-label">Effect</span></div></div></div><div class="flex-row ability"><div class="labeled-text-input active-ability-name"><div class="flex-col"><input type="text" name="active-ability10-name" size="1"></input><span class="under-label">Name</span></div></div><div class="labeled-text-input active-ability-effect"><div class="flex-col"><input type="text" name="active-ability10-effect" size="1"></input><span class="under-label">Effect</span></div></div></div></div></div></div></div></div>
+<!DOCTYPE html><head>
+<link href="sheet.css" rel="stylesheet">
+
+</link>
+<link href="first_page.css" rel="stylesheet">
+
+</link>
+<link href="paper_sheet.css" rel="stylesheet">
+
+</link>
+</head><div class="dialog characterdialog ui-dialog ui-dialog-content ui-widget-content">
+<div id="root" class="charsheet tab-pane">
+<div class="flex-row first-page">
+<div class="flex-col sidebar">
+<div class="rise-title">
+Rise
+</div>
+<div class="flex-col attributes-and-skills">
+<div class="flex-wrapper">
+<div class="section-header">
+Attributes and Skills
+</div>
+</div>
+<div class="flex-col attribute-section">
+<div class="flex-row labeled-number-input attribute">
+<span class="number-label">
+Strength
+</span>
+<input type="number" name="strength-display" disabled="true" value="(@{strength-base}+@{strength-level}+@{strength-misc})">
+
+</input>
+</div>
+<div class="flex-row skill-box">
+<button type="roll" name="roll_skill-Climb" class="number-label" value="Climb: [[1d20+ @{Climb}]]">
+Climb
+</button>
+<input type="number" name="climb">
+
+</input>
+</div><div class="flex-row skill-box">
+<button type="roll" name="roll_skill-Jump" class="number-label" value="Jump: [[1d20+ @{Jump}]]">
+Jump
+</button>
+<input type="number" name="jump">
+
+</input>
+</div><div class="flex-row skill-box">
+<button type="roll" name="roll_skill-Sprint" class="number-label" value="Sprint: [[1d20+ @{Sprint}]]">
+Sprint
+</button>
+<input type="number" name="sprint">
+
+</input>
+</div><div class="flex-row skill-box">
+<button type="roll" name="roll_skill-Swim" class="number-label" value="Swim: [[1d20+ @{Swim}]]">
+Swim
+</button>
+<input type="number" name="swim">
+
+</input>
+</div>
+</div><div class="flex-col attribute-section">
+<div class="flex-row labeled-number-input attribute">
+<span class="number-label">
+Dexterity
+</span>
+<input type="number" name="dexterity-display" disabled="true" value="(@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})">
+
+</input>
+</div>
+<div class="flex-row skill-box">
+<button type="roll" name="roll_skill-Acrobatics" class="number-label" value="Acrobatics: [[1d20+ @{Acrobatics}]]">
+Acrobatics
+</button>
+<input type="number" name="acrobatics">
+
+</input>
+</div><div class="flex-row skill-box">
+<button type="roll" name="roll_skill-Escape Artist" class="number-label" value="Escape Artist: [[1d20+ @{Escape Artist}]]">
+Escape Artist
+</button>
+<input type="number" name="escape artist">
+
+</input>
+</div><div class="flex-row skill-box">
+<button type="roll" name="roll_skill-Ride" class="number-label" value="Ride: [[1d20+ @{Ride}]]">
+Ride
+</button>
+<input type="number" name="ride">
+
+</input>
+</div><div class="flex-row skill-box">
+<button type="roll" name="roll_skill-Sleight of Hand" class="number-label" value="Sleight of Hand: [[1d20+ @{Sleight of Hand}]]">
+Sleight of Hand
+</button>
+<input type="number" name="sleight of hand">
+
+</input>
+</div><div class="flex-row skill-box">
+<button type="roll" name="roll_skill-Stealth" class="number-label" value="Stealth: [[1d20+ @{Stealth}]]">
+Stealth
+</button>
+<input type="number" name="stealth">
+
+</input>
+</div>
+</div><div class="flex-col attribute-section">
+<div class="flex-row labeled-number-input attribute">
+<span class="number-label">
+Constitution
+</span>
+<input type="number" name="constitution-display" disabled="true" value="(@{constitution-base}+@{constitution-level}+@{constitution-misc})">
+
+</input>
+</div>
+
+</div><div class="flex-col attribute-section">
+<div class="flex-row labeled-number-input attribute">
+<span class="number-label">
+Intelligence
+</span>
+<input type="number" name="intelligence-display" disabled="true" value="(@{intelligence-base}+@{intelligence-level}+@{intelligence-misc})">
+
+</input>
+</div>
+<div class="flex-row skill-box">
+<button type="roll" name="roll_skill-Craft ______" class="number-label" value="Craft ______: [[1d20+ @{Craft ______}]]">
+Craft ______
+</button>
+<input type="number" name="craft ______">
+
+</input>
+</div><div class="flex-row skill-box">
+<button type="roll" name="roll_skill-Devices" class="number-label" value="Devices: [[1d20+ @{Devices}]]">
+Devices
+</button>
+<input type="number" name="devices">
+
+</input>
+</div><div class="flex-row skill-box">
+<button type="roll" name="roll_skill-Disguise" class="number-label" value="Disguise: [[1d20+ @{Disguise}]]">
+Disguise
+</button>
+<input type="number" name="disguise">
+
+</input>
+</div><div class="flex-row skill-box">
+<button type="roll" name="roll_skill-Heal" class="number-label" value="Heal: [[1d20+ @{Heal}]]">
+Heal
+</button>
+<input type="number" name="heal">
+
+</input>
+</div><div class="flex-row skill-box">
+<button type="roll" name="roll_skill-Knowledge ______" class="number-label" value="Knowledge ______: [[1d20+ @{Knowledge ______}]]">
+Knowledge ______
+</button>
+<input type="number" name="knowledge ______">
+
+</input>
+</div><div class="flex-row skill-box">
+<button type="roll" name="roll_skill-Knowledge ______" class="number-label" value="Knowledge ______: [[1d20+ @{Knowledge ______}]]">
+Knowledge ______
+</button>
+<input type="number" name="knowledge ______">
+
+</input>
+</div><div class="flex-row skill-box">
+<button type="roll" name="roll_skill-Linguistics" class="number-label" value="Linguistics: [[1d20+ @{Linguistics}]]">
+Linguistics
+</button>
+<input type="number" name="linguistics">
+
+</input>
+</div>
+</div><div class="flex-col attribute-section">
+<div class="flex-row labeled-number-input attribute">
+<span class="number-label">
+Perception
+</span>
+<input type="number" name="perception-display" disabled="true" value="(@{perception-base}+@{perception-level}+@{perception-misc})">
+
+</input>
+</div>
+<div class="flex-row skill-box">
+<button type="roll" name="roll_skill-Awareness" class="number-label" value="Awareness: [[1d20+ @{Awareness}]]">
+Awareness
+</button>
+<input type="number" name="awareness">
+
+</input>
+</div><div class="flex-row skill-box">
+<button type="roll" name="roll_skill-Creature Handling" class="number-label" value="Creature Handling: [[1d20+ @{Creature Handling}]]">
+Creature Handling
+</button>
+<input type="number" name="creature handling">
+
+</input>
+</div><div class="flex-row skill-box">
+<button type="roll" name="roll_skill-Sense Motive" class="number-label" value="Sense Motive: [[1d20+ @{Sense Motive}]]">
+Sense Motive
+</button>
+<input type="number" name="sense motive">
+
+</input>
+</div><div class="flex-row skill-box">
+<button type="roll" name="roll_skill-Spellcraft" class="number-label" value="Spellcraft: [[1d20+ @{Spellcraft}]]">
+Spellcraft
+</button>
+<input type="number" name="spellcraft">
+
+</input>
+</div><div class="flex-row skill-box">
+<button type="roll" name="roll_skill-Survival" class="number-label" value="Survival: [[1d20+ @{Survival}]]">
+Survival
+</button>
+<input type="number" name="survival">
+
+</input>
+</div>
+</div><div class="flex-col attribute-section">
+<div class="flex-row labeled-number-input attribute">
+<span class="number-label">
+Willpower
+</span>
+<input type="number" name="willpower-display" disabled="true" value="(@{willpower-base}+@{willpower-level}+@{willpower-misc})">
+
+</input>
+</div>
+
+</div>
+<div class="flex-col attribute-section">
+<div class="attribute attribute-header">
+Other Skills
+</div>
+<div class="flex-row skill-box">
+<button type="roll" name="roll_skill-Bluff" class="number-label" value="Bluff: [[1d20+ @{Bluff}]]">
+Bluff
+</button>
+<input type="number" name="bluff">
+
+</input>
+</div><div class="flex-row skill-box">
+<button type="roll" name="roll_skill-Intimidate" class="number-label" value="Intimidate: [[1d20+ @{Intimidate}]]">
+Intimidate
+</button>
+<input type="number" name="intimidate">
+
+</input>
+</div><div class="flex-row skill-box">
+<button type="roll" name="roll_skill-Perform ______" class="number-label" value="Perform ______: [[1d20+ @{Perform ______}]]">
+Perform ______
+</button>
+<input type="number" name="perform ______">
+
+</input>
+</div><div class="flex-row skill-box">
+<button type="roll" name="roll_skill-Persuasion" class="number-label" value="Persuasion: [[1d20+ @{Persuasion}]]">
+Persuasion
+</button>
+<input type="number" name="persuasion">
+
+</input>
+</div>
+<div class="flex-row unlabeled-number-input skill-box">
+<input size="1" type="text">
+
+</input>
+<input type="number">
+
+</input>
+</div>
+<div class="flex-row unlabeled-number-input skill-box">
+<input size="1" type="text">
+
+</input>
+<input type="number">
+
+</input>
+</div>
+<div class="flex-row unlabeled-number-input skill-box">
+<input size="1" type="text">
+
+</input>
+<input type="number">
+
+</input>
+</div>
+<div class="flex-row unlabeled-number-input skill-box">
+<input size="1" type="text">
+
+</input>
+<input type="number">
+
+</input>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-col main-body">
+<div class="boring-stuff">
+<div class="flex-row boring-row">
+<div class="labeled-text-input">
+<div class="flex-col">
+<input size="1" type="text" name="character-name">
+
+</input>
+<span class="under-label">
+Character name
+</span>
+</div>
+</div>
+<div class="labeled-text-input">
+<div class="flex-col">
+<input size="1" type="text" name="player-name">
+
+</input>
+<span class="under-label">
+Player name
+</span>
+</div>
+</div>
+<div class="labeled-text-input">
+<div class="flex-col">
+<input size="1" type="text" name="concept">
+
+</input>
+<span class="under-label">
+Concept
+</span>
+</div>
+</div>
+</div>
+<div class="flex-row boring-row">
+<div class="labeled-text-input">
+<div class="flex-col">
+<input size="1" type="text" name="class-and-level">
+
+</input>
+<span class="under-label">
+Class and level
+</span>
+</div>
+</div>
+<div class="labeled-text-input">
+<div class="flex-col">
+<input size="1" type="text" name="race-and-background">
+
+</input>
+<span class="under-label">
+Race and background
+</span>
+</div>
+</div>
+<div class="labeled-text-input">
+<div class="flex-col">
+<input size="1" type="text" name="description">
+
+</input>
+<span class="under-label">
+Description
+</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-row core-statistics">
+<div class="flex-col defenses">
+<div class="flex-wrapper">
+<div class="section-header">
+Defenses
+</div>
+</div>
+<div class="flex-row labeled-number-input">
+<span class="number-label">
+Armor
+</span>
+<input type="number" name="Armor-display" disabled="true" value="('10+ceil(floor(((@{bab-good}+@{bab-avg}+@{bab-poor})-0.1+100)/(ceil(floor(((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})-0.1+100)/((@{constitution-base}+@{constitution-level}+@{constitution-misc})+100))/200)*((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+100)  + ceil(floor(((@{constitution-base}+@{constitution-level}+@{constitution-misc})+100)/((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+100))/(200))*((@{constitution-base}+@{constitution-level}+@{constitution-misc})+100)-100+100))/200)*((@{bab-good}+@{bab-avg}+@{bab-poor})+100)  + ceil(floor((ceil(floor(((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})-0.1+100)/((@{constitution-base}+@{constitution-level}+@{constitution-misc})+100))/200)*((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+100)  + ceil(floor(((@{constitution-base}+@{constitution-level}+@{constitution-misc})+100)/((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+100))/(200))*((@{constitution-base}+@{constitution-level}+@{constitution-misc})+100)-100+100)/((@{bab-good}+@{bab-avg}+@{bab-poor})+100))/(200))*(ceil(floor(((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})-0.1+100)/((@{constitution-base}+@{constitution-level}+@{constitution-misc})+100))/200)*((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+100)  + ceil(floor(((@{constitution-base}+@{constitution-level}+@{constitution-misc})+100)/((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+100))/(200))*((@{constitution-base}+@{constitution-level}+@{constitution-misc})+100)-100+100)-100+@{armor-body}+@{shield}+@{armor-misc}',)">
+
+</input>
+</div><div class="flex-row labeled-number-input">
+<span class="number-label">
+Fortitude
+</span>
+<input type="number" name="Fortitude-display" disabled="true" value="10+ceil(floor(((@{constitution-base}+@{constitution-level}+@{constitution-misc})+floor((@{strength-base}+@{strength-level}+@{strength-misc})/2)-0.1+100)/(@{fort-base}+100))/200)*((@{constitution-base}+@{constitution-level}+@{constitution-misc})+floor((@{strength-base}+@{strength-level}+@{strength-misc})/2)+100)  + ceil(floor((@{fort-base}+100)/((@{constitution-base}+@{constitution-level}+@{constitution-misc})+floor((@{strength-base}+@{strength-level}+@{strength-misc})/2)+100))/(200))*(@{fort-base}+100)-100+@{fort-misc}">
+
+</input>
+</div><div class="flex-row labeled-number-input">
+<span class="number-label">
+Reflex
+</span>
+<input type="number" name="Reflex-display" disabled="true" value="10+ceil(floor(((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+floor((@{perception-base}+@{perception-level}+@{perception-misc})/2)-0.1+100)/(@{ref-base}+100))/200)*((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+floor((@{perception-base}+@{perception-level}+@{perception-misc})/2)+100)  + ceil(floor((@{ref-base}+100)/((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+floor((@{perception-base}+@{perception-level}+@{perception-misc})/2)+100))/(200))*(@{ref-base}+100)-100+@{ref-misc}">
+
+</input>
+</div><div class="flex-row labeled-number-input">
+<span class="number-label">
+Mental
+</span>
+<input type="number" name="Mental-display" disabled="true" value="10+ceil(floor(((@{willpower-base}+@{willpower-level}+@{willpower-misc})+floor((@{intelligence-base}+@{intelligence-level}+@{intelligence-misc})/2)-0.1+100)/(@{ment-base}+100))/200)*((@{willpower-base}+@{willpower-level}+@{willpower-misc})+floor((@{intelligence-base}+@{intelligence-level}+@{intelligence-misc})/2)+100)  + ceil(floor((@{ment-base}+100)/((@{willpower-base}+@{willpower-level}+@{willpower-misc})+floor((@{intelligence-base}+@{intelligence-level}+@{intelligence-misc})/2)+100))/(200))*(@{ment-base}+100)-100+@{ment-misc}">
+
+</input>
+</div>
+</div>
+<div class="flex-col offense">
+<div class="flex-wrapper">
+<div class="section-header">
+Core Statistics
+</div>
+</div>
+<div class="flex-wrapper legend-point-header">
+Legend points
+</div>
+<div class="flex-row legend-point-wrapper">
+<div class="flex-col underlabeled-number-input">
+<input type="number">
+
+</input>
+<div class="under-label">
+General
+</div>
+</div>
+<div class="flex-col underlabeled-number-input">
+<input type="number">
+
+</input>
+<div class="under-label">
+Offense
+</div>
+</div>
+<div class="flex-col underlabeled-number-input">
+<input type="number">
+
+</input>
+<div class="under-label">
+Defense
+</div>
+</div>
+</div>
+<div class="flex-row labeled-number-input">
+<span class="number-label">
+Strikes/round
+</span>
+<input type="number" name="Strikes/round-display" disabled="true">
+
+</input>
+</div><div class="flex-row labeled-number-input">
+<span class="number-label">
+Land speed
+</span>
+<input type="number" name="Land speed-display" disabled="true">
+
+</input>
+</div>
+</div>
+<div class="flex-col hit-points">
+<div class="flex-wrapper">
+<div class="section-header">
+Hit Points
+</div>
+</div>
+<div class="flex-row labeled-number-input">
+<span class="number-label">
+Max
+</span>
+<input type="number" name="hit-points-Max">
+
+</input>
+</div><div class="flex-row labeled-number-input">
+<span class="number-label">
+Bloodied
+</span>
+<input type="number" name="hit-points-Bloodied">
+
+</input>
+</div><div class="flex-row labeled-number-input">
+<span class="number-label">
+Temp
+</span>
+<input type="number" name="hit-points-Temp">
+
+</input>
+</div><div class="flex-row labeled-number-input">
+<span class="number-label">
+Critical
+</span>
+<input type="number" name="hit-points-Critical">
+
+</input>
+</div>
+</div>
+<div class="flex-col resources">
+<div class="flex-wrapper section-header">
+Resources
+</div>
+<div class="flex-row unlabeled-number-input">
+<input size="1" type="text" name="resource-name-0">
+
+</input>
+<input type="number" name="resource-number-0">
+
+</input>
+</div><div class="flex-row unlabeled-number-input">
+<input size="1" type="text" name="resource-name-1">
+
+</input>
+<input type="number" name="resource-number-1">
+
+</input>
+</div><div class="flex-row unlabeled-number-input">
+<input size="1" type="text" name="resource-name-2">
+
+</input>
+<input type="number" name="resource-number-2">
+
+</input>
+</div><div class="flex-row unlabeled-number-input">
+<input size="1" type="text" name="resource-name-3">
+
+</input>
+<input type="number" name="resource-number-3">
+
+</input>
+</div>
+</div>
+</div>
+<div class="flex-col attacks">
+<div class="flex-wrapper">
+<div class="section-header">
+Attacks
+</div>
+</div>
+<div class="flex-row attack">
+<div class="labeled-text-input attack-name">
+<div class="flex-col">
+<input size="1" type="text" name="attack0-name">
+
+</input>
+<span class="under-label">
+Name
+</span>
+</div>
+</div>
+<div class="flex-col underlabeled-number-input attack-bonus">
+<input type="number" name="attack0-bonus">
+
+</input>
+<div class="under-label">
+Bonus
+</div>
+</div>
+<div class="labeled-text-input attack-effect">
+<div class="flex-col">
+<input size="1" type="text" name="attack0-effect">
+
+</input>
+<span class="under-label">
+Damage/Effect
+</span>
+</div>
+</div>
+</div><div class="flex-row attack">
+<div class="labeled-text-input attack-name">
+<div class="flex-col">
+<input size="1" type="text" name="attack1-name">
+
+</input>
+<span class="under-label">
+Name
+</span>
+</div>
+</div>
+<div class="flex-col underlabeled-number-input attack-bonus">
+<input type="number" name="attack1-bonus">
+
+</input>
+<div class="under-label">
+Bonus
+</div>
+</div>
+<div class="labeled-text-input attack-effect">
+<div class="flex-col">
+<input size="1" type="text" name="attack1-effect">
+
+</input>
+<span class="under-label">
+Damage/Effect
+</span>
+</div>
+</div>
+</div><div class="flex-row attack">
+<div class="labeled-text-input attack-name">
+<div class="flex-col">
+<input size="1" type="text" name="attack2-name">
+
+</input>
+<span class="under-label">
+Name
+</span>
+</div>
+</div>
+<div class="flex-col underlabeled-number-input attack-bonus">
+<input type="number" name="attack2-bonus">
+
+</input>
+<div class="under-label">
+Bonus
+</div>
+</div>
+<div class="labeled-text-input attack-effect">
+<div class="flex-col">
+<input size="1" type="text" name="attack2-effect">
+
+</input>
+<span class="under-label">
+Damage/Effect
+</span>
+</div>
+</div>
+</div><div class="flex-row attack">
+<div class="labeled-text-input attack-name">
+<div class="flex-col">
+<input size="1" type="text" name="attack3-name">
+
+</input>
+<span class="under-label">
+Name
+</span>
+</div>
+</div>
+<div class="flex-col underlabeled-number-input attack-bonus">
+<input type="number" name="attack3-bonus">
+
+</input>
+<div class="under-label">
+Bonus
+</div>
+</div>
+<div class="labeled-text-input attack-effect">
+<div class="flex-col">
+<input size="1" type="text" name="attack3-effect">
+
+</input>
+<span class="under-label">
+Damage/Effect
+</span>
+</div>
+</div>
+</div><div class="flex-row attack">
+<div class="labeled-text-input attack-name">
+<div class="flex-col">
+<input size="1" type="text" name="attack4-name">
+
+</input>
+<span class="under-label">
+Name
+</span>
+</div>
+</div>
+<div class="flex-col underlabeled-number-input attack-bonus">
+<input type="number" name="attack4-bonus">
+
+</input>
+<div class="under-label">
+Bonus
+</div>
+</div>
+<div class="labeled-text-input attack-effect">
+<div class="flex-col">
+<input size="1" type="text" name="attack4-effect">
+
+</input>
+<span class="under-label">
+Damage/Effect
+</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-col abilities">
+<div class="flex-wrapper">
+<div class="section-header">
+Abilities
+</div>
+</div>
+<div class="flex-row ability">
+<div class="labeled-text-input active-ability-name">
+<div class="flex-col">
+<input size="1" type="text" name="active-ability0-name">
+
+</input>
+<span class="under-label">
+Name
+</span>
+</div>
+</div>
+<div class="labeled-text-input active-ability-effect">
+<div class="flex-col">
+<input size="1" type="text" name="active-ability0-effect">
+
+</input>
+<span class="under-label">
+Effect
+</span>
+</div>
+</div>
+</div><div class="flex-row ability">
+<div class="labeled-text-input active-ability-name">
+<div class="flex-col">
+<input size="1" type="text" name="active-ability1-name">
+
+</input>
+<span class="under-label">
+Name
+</span>
+</div>
+</div>
+<div class="labeled-text-input active-ability-effect">
+<div class="flex-col">
+<input size="1" type="text" name="active-ability1-effect">
+
+</input>
+<span class="under-label">
+Effect
+</span>
+</div>
+</div>
+</div><div class="flex-row ability">
+<div class="labeled-text-input active-ability-name">
+<div class="flex-col">
+<input size="1" type="text" name="active-ability2-name">
+
+</input>
+<span class="under-label">
+Name
+</span>
+</div>
+</div>
+<div class="labeled-text-input active-ability-effect">
+<div class="flex-col">
+<input size="1" type="text" name="active-ability2-effect">
+
+</input>
+<span class="under-label">
+Effect
+</span>
+</div>
+</div>
+</div><div class="flex-row ability">
+<div class="labeled-text-input active-ability-name">
+<div class="flex-col">
+<input size="1" type="text" name="active-ability3-name">
+
+</input>
+<span class="under-label">
+Name
+</span>
+</div>
+</div>
+<div class="labeled-text-input active-ability-effect">
+<div class="flex-col">
+<input size="1" type="text" name="active-ability3-effect">
+
+</input>
+<span class="under-label">
+Effect
+</span>
+</div>
+</div>
+</div><div class="flex-row ability">
+<div class="labeled-text-input active-ability-name">
+<div class="flex-col">
+<input size="1" type="text" name="active-ability4-name">
+
+</input>
+<span class="under-label">
+Name
+</span>
+</div>
+</div>
+<div class="labeled-text-input active-ability-effect">
+<div class="flex-col">
+<input size="1" type="text" name="active-ability4-effect">
+
+</input>
+<span class="under-label">
+Effect
+</span>
+</div>
+</div>
+</div><div class="flex-row ability">
+<div class="labeled-text-input active-ability-name">
+<div class="flex-col">
+<input size="1" type="text" name="active-ability5-name">
+
+</input>
+<span class="under-label">
+Name
+</span>
+</div>
+</div>
+<div class="labeled-text-input active-ability-effect">
+<div class="flex-col">
+<input size="1" type="text" name="active-ability5-effect">
+
+</input>
+<span class="under-label">
+Effect
+</span>
+</div>
+</div>
+</div><div class="flex-row ability">
+<div class="labeled-text-input active-ability-name">
+<div class="flex-col">
+<input size="1" type="text" name="active-ability6-name">
+
+</input>
+<span class="under-label">
+Name
+</span>
+</div>
+</div>
+<div class="labeled-text-input active-ability-effect">
+<div class="flex-col">
+<input size="1" type="text" name="active-ability6-effect">
+
+</input>
+<span class="under-label">
+Effect
+</span>
+</div>
+</div>
+</div><div class="flex-row ability">
+<div class="labeled-text-input active-ability-name">
+<div class="flex-col">
+<input size="1" type="text" name="active-ability7-name">
+
+</input>
+<span class="under-label">
+Name
+</span>
+</div>
+</div>
+<div class="labeled-text-input active-ability-effect">
+<div class="flex-col">
+<input size="1" type="text" name="active-ability7-effect">
+
+</input>
+<span class="under-label">
+Effect
+</span>
+</div>
+</div>
+</div><div class="flex-row ability">
+<div class="labeled-text-input active-ability-name">
+<div class="flex-col">
+<input size="1" type="text" name="active-ability8-name">
+
+</input>
+<span class="under-label">
+Name
+</span>
+</div>
+</div>
+<div class="labeled-text-input active-ability-effect">
+<div class="flex-col">
+<input size="1" type="text" name="active-ability8-effect">
+
+</input>
+<span class="under-label">
+Effect
+</span>
+</div>
+</div>
+</div><div class="flex-row ability">
+<div class="labeled-text-input active-ability-name">
+<div class="flex-col">
+<input size="1" type="text" name="active-ability9-name">
+
+</input>
+<span class="under-label">
+Name
+</span>
+</div>
+</div>
+<div class="labeled-text-input active-ability-effect">
+<div class="flex-col">
+<input size="1" type="text" name="active-ability9-effect">
+
+</input>
+<span class="under-label">
+Effect
+</span>
+</div>
+</div>
+</div><div class="flex-row ability">
+<div class="labeled-text-input active-ability-name">
+<div class="flex-col">
+<input size="1" type="text" name="active-ability10-name">
+
+</input>
+<span class="under-label">
+Name
+</span>
+</div>
+</div>
+<div class="labeled-text-input active-ability-effect">
+<div class="flex-col">
+<input size="1" type="text" name="active-ability10-effect">
+
+</input>
+<span class="under-label">
+Effect
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
