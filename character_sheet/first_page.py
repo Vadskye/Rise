@@ -36,7 +36,8 @@ def attributes_and_skills():
         ''.join([attribute_section(attribute) for attribute in ATTRIBUTES]),
         flex_col({'class': 'other-skills', 'class': 'attribute-section'}, [
             div({'class': 'attribute attribute-header'}, 'Other Skills'),
-            ''.join([skill_box(skill) for skill in 'Bluff Intimidate Perform Persuasion'.split()]),
+            ''.join([skill_box(skill) for skill in ['Bluff', 'Intimidate', 'Perform ______', 'Persuasion']]),
+            unlabeled_number_input({'class': 'skill-box'}),
             unlabeled_number_input({'class': 'skill-box'}),
             unlabeled_number_input({'class': 'skill-box'}),
             unlabeled_number_input({'class': 'skill-box'}),
@@ -76,17 +77,11 @@ def skill_box(name):
 def resources():
     return flex_col({'class': 'resources'}, [
         flex_wrapper({'class': 'section-header'}, 'Resources'),
-        flex_wrapper({'class': 'legend-point-header'}, 'Legend points'),
-        flex_row({'class': 'legend-point-wrapper'}, [
-            underlabeled_number_input('General'),
-            underlabeled_number_input('Offense'),
-            underlabeled_number_input('Defense'),
-        ]),
         ''.join([
             unlabeled_number_input(
                 text_input_attributes = {'name': 'resource-name-'+str(i)},
                 number_input_attributes = {'name': 'resource-number-'+str(i)},
-            ) for i in range(3)
+            ) for i in range(4)
         ]),
     ])
 
@@ -119,7 +114,13 @@ def defenses():
 
 def offenses():
     return flex_col({'class': 'offense'}, [
-        flex_wrapper(div({'class': 'section-header'}, 'Offense')),
+        flex_wrapper(div({'class': 'section-header'}, 'Core Statistics')),
+        flex_wrapper({'class': 'legend-point-header'}, 'Legend points'),
+        flex_row({'class': 'legend-point-wrapper'}, [
+            underlabeled_number_input('General'),
+            underlabeled_number_input('Offense'),
+            underlabeled_number_input('Defense'),
+        ]),
         "".join([
             labeled_number_input(
                 offense,
@@ -129,7 +130,7 @@ def offenses():
                     # TODO: roll20 value
                 },
             )
-            for offense in ['Melee', 'Ranged', 'Spells', 'Strikes/round', 'Land speed']
+            for offense in ['Strikes/round', 'Land speed']
         ]),
     ])
 
@@ -138,7 +139,7 @@ def hit_points():
         flex_wrapper(div({'class': 'section-header'}, 'Hit Points')),
         "".join([
             labeled_number_input(hp_type, input_name = 'hit-points-'+hp_type)
-            for hp_type in 'Max Bloodied Temp Nonlethal Critical'.split()
+            for hp_type in 'Max Bloodied Temp Critical'.split()
         ]),
     ])
 
@@ -155,7 +156,7 @@ def movement():
 def abilities():
     return flex_col({'class': 'abilities'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Abilities')),
-        "".join([ability(i) for i in range(10)]),
+        "".join([ability(i) for i in range(11)]),
     ])
 
 def ability(ability_number = None):
