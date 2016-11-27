@@ -35,9 +35,8 @@
     margin-bottom: 0.1em;
 }
 
-.legend-point-wrapper > div {
-    align-items: center;
-    flex-grow: 1;
+.legend-point-wrapper {
+    justify-content: space-around;
 }
 
 /* section-specific formatting */

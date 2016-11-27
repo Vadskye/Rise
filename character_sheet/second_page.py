@@ -244,7 +244,7 @@ def calc_melee():
                             'value': ROLL20_CALC['base_attack_bonus'],
                         },
                     ),
-                    underlabeled_number_input('Attr'),
+                    underlabeled_number_input('Str/Dex'),
                 ]),
                 plus(),
                 underlabeled_number_input('1/5 Per'),
@@ -428,7 +428,7 @@ def calc_armor():
                             'value': ROLL20_CALC['base_attack_bonus']
                         },
                     ),
-                    underlabeled_number_input('Attr'),
+                    underlabeled_number_input('Dex/Con'),
                 ]),
                 plus(),
                 underlabeled_number_input('Armor', 'armor-body'),
@@ -459,7 +459,7 @@ def calc_fort():
                 plus(),
                 this_or_that([
                     underlabeled_number_input('Level', 'fort-level'),
-                    underlabeled_number_input('Attr'),
+                    underlabeled_number_input('Str/Con'),
                 ]),
                 plus(),
                 underlabeled_number_input('Class'),
@@ -486,7 +486,7 @@ def calc_ref():
                 plus(),
                 this_or_that([
                     underlabeled_number_input('Level', 'ref-level'),
-                    underlabeled_number_input('Attr'),
+                    underlabeled_number_input('Dex/Per'),
                 ]),
                 plus(),
                 underlabeled_number_input('Class'),
@@ -515,7 +515,7 @@ def calc_mental():
                 plus(),
                 this_or_that([
                     underlabeled_number_input('Level', 'ment-level'),
-                    underlabeled_number_input('Attr'),
+                    underlabeled_number_input('Int/Wil'),
                 ]),
                 plus(),
                 underlabeled_number_input('Class'),

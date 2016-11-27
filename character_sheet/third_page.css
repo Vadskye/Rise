@@ -23,7 +23,7 @@
 }
 
 .equipment-name {
-    width: 20%;
+    width: 25%;
 }
 
 .equipment-special {
@@ -67,17 +67,6 @@
     width: 100%;
 }
 
-/* undo the hackery because these number inputs should occupy space */
-.equipment .underlabeled-number-input {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0;
-}
-.equipment .underlabeled-number-input .under-label {
-    position: static;
-}
-
-
 .inventory-col, .adventuring > div, .equipment > .flex-row > div, .wealth-and-xp > div, .weight-limits > div, .summary-row > div {
     margin-left: 0.25em;
     margin-right: 0.25em;
@@ -91,10 +80,6 @@
 
 .inventory, .equipment {
     margin-bottom: 0.25em;
-}
-
-.underlabeled-number-input {
-    padding-bottom: 0;
 }
 
 .feats-summary .summary-header > div, .equipment > .flex-wrapper:nth-child(1) > div {

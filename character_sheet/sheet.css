@@ -109,6 +109,9 @@ input[type=text] {
     position: absolute;
     bottom: 0;
     white-space: nowrap;
+    /* hackery to center arbitrarily sized underlabels */
+    width: 4.5em;
+    margin-left: -1em;
 }
 
 /* Rise-specific formatting */
