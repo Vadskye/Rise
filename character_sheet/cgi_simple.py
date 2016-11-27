@@ -55,7 +55,7 @@ def convert_html_attributes(attributes = None):
     if attributes is None:
         return ''
     attributes_text = ''
-    for attribute_name in attributes:
+    for attribute_name in sorted(attributes.keys()):
         if attributes.get(attribute_name) is not None:
             attributes_text += ' {0}="{1}"'.format(
                 attribute_name,
