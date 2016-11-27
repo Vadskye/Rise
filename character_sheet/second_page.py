@@ -1,6 +1,6 @@
 from cgi_simple import *
 
-from sheet_data import ALL_SKILLS, ATTRIBUTES, ROLL20_CALC, roll20_max_text
+from sheet_data import ATTRIBUTE_SKILLS, ALL_SKILLS_BY_ATTRIBUTE, ATTRIBUTES, ROLL20_CALC, roll20_max_text
 
 def create_page():
     return flex_row({'class': 'second-page'}, [
@@ -27,65 +27,40 @@ def create_page():
 def calc_skills():
     return flex_col({'class': 'calc-skills'}, [
         div({'class': 'section-header'}, 'Skills'),
-        skill_labels(),
-        "".join([calc_skill(skill_name) for skill_name in ALL_SKILLS]),
-        calc_anonymous_skill(),
-        calc_anonymous_skill(),
-        calc_anonymous_skill(),
-        calc_anonymous_skill(),
-        skill_labels(),
+        skill_labels('Str'),
+        *[calc_skill(skill_name) for skill_name in ATTRIBUTE_SKILLS['strength']],
+        skill_labels('Dex'),
+        *[calc_skill(skill_name) for skill_name in ATTRIBUTE_SKILLS['dexterity']],
+        # *[calc_skill(skill_name) for skill_name in ATTRIBUTE_SKILLS['constitution']],
+        skill_labels('Int'),
+        *[calc_skill(skill_name) for skill_name in ATTRIBUTE_SKILLS['intelligence']],
+        skill_labels('Per'),
+        *[calc_skill(skill_name) for skill_name in ATTRIBUTE_SKILLS['perception']],
+        *[calc_skill(skill_name) for skill_name in ATTRIBUTE_SKILLS['willpower']],
+        skill_labels('Other'),
+        *[calc_skill(skill_name) for skill_name in ['Bluff', 'Intimidate', 'Perform ______', 'Persuasion']],
+        calc_skill('____________'),
+        calc_skill('____________'),
+        calc_skill('____________'),
+        calc_skill('____________'),
     ])
 
-def skill_labels():
+def skill_labels(attribute):
     return flex_row({'class': 'skill-labels'}, [
-        div({'class': 'skill-name-spacer'}),
-        div({'class': 'skill-label'}, 'Total'),
-        div({'class': 'equation-glue'}),
-        div({'class': 'skill-label'}, 'Attr'),
-        div({'class': 'equation-glue'}),
+        div({'class': 'skill-name'}),
+        div({'class': 'skill-label'}, 'Train'),
         div({'class': 'skill-label'}, 'Ranks'),
-        div({'class': 'equation-glue'}),
+        div({'class': 'skill-label skill-attribute'}, attribute),
         div({'class': 'skill-label'}, 'Misc'),
     ])
 
 def calc_skill(skill_name):
     return flex_row({'class': 'skill-row'}, [
         div({'class': 'skill-name'}, skill_name),
-        number_input({'name': skill_name}),
-        equals(),
-        this_or_that([
-            number_input({
-                'class': 'eq-base',
-                'name': skill_name+'-base',
-            }),
-            number_input({
-                'name': skill_name+'-attr',
-            }),
-        ]),
-        plus(),
-        div({'class': 'eq-optional'}, [
-            number_input({
-                'class': 'eq-optional',
-                'name': skill_name+'-misc',
-            })
-        ])
-    ])
-
-def calc_anonymous_skill():
-    return flex_row({'class': 'skill-row'}, [
-        flex_wrapper({'class': 'skill-anonymous'}, [
-            text_input(),
-        ]),
-        number_input(),
-        equals(),
-        this_or_that([
-            number_input({'class': 'eq-base'}),
-            number_input(),
-        ]),
-        plus(),
-        div({'class': 'eq-optional'}, [
-            number_input({'class': 'eq-optional'}),
-        ]),
+        number_input({'class': 'skill-training'}),
+        number_input({'class': 'skill-ranks'}),
+        number_input({'class': 'skill-attr'}),
+        number_input({'class': 'skill-misc'}),
     ])
 
 def calc_attributes():

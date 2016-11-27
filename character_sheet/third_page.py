@@ -40,7 +40,7 @@ def abilities_summary():
             div({'class': 'summary-header-level section-header'}, 'Lvl'),
             div({'class': 'summary-header-name section-header'}, 'Abilities'),
         ]),
-        "".join([summary_row() for i in range(1, 16)]),
+        "".join([summary_row() for i in range(1, 15)]),
     ])
 
 def summary_row(level = None):
@@ -56,6 +56,7 @@ def proficiencies():
         flex_wrapper(div({'class': 'section-header'}, 'Proficiencies')),
         labeled_text_input('Armor', 'prof-armor'),
         labeled_text_input('Weapons', 'prof-weapons'),
+        text_input(),
         labeled_text_input('Languages', 'prof-languages'),
     ])
 
