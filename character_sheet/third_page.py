@@ -135,6 +135,6 @@ def description():
     return flex_col({'class': 'description'}, [
         div({'class': 'section-header'}, 'Personality and Description'),
         "".join([
-            div({'class': 'description-row'}, text_input()) for i in range(8)
+            div({'class': 'description-row'}, text_input()) for i in range(7)
         ]),
     ])
