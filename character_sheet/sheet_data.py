@@ -11,6 +11,17 @@ ATTRIBUTE_SKILLS = {
     'willpower': [],
 }
 
+ALL_SKILLS_BY_ATTRIBUTE = [
+    *ATTRIBUTE_SKILLS['strength'],
+    *ATTRIBUTE_SKILLS['dexterity'],
+    *ATTRIBUTE_SKILLS['constitution'],
+    *ATTRIBUTE_SKILLS['intelligence'],
+    *ATTRIBUTE_SKILLS['perception'],
+    *ATTRIBUTE_SKILLS['willpower'],
+    *['Bluff', 'Intimidate', 'Perform ______', 'Persuasion'],
+]
+
+
 ALL_SKILLS = ['Awareness', 'Balance', 'Bluff', 'Climb', 'Craft', 'Creature Handling',
               'Devices', 'Disguise', 'Escape Artist', 'Heal', 'Intimidate', 'Jump',
               'Knowledge', 'Linguistics', 'Perform', 'Persuasion',

@@ -107,36 +107,12 @@
     margin-bottom: 0.1em;
 }
 
-.skill-row {
-    align-items: center;
-    justify-content: flex-end;
-    margin-top: 0.2em;
-    margin-bottom: 0.2em;
-}
-
-.skill-row .equation {
-    flex-grow: 0;
-}
-
-.skill-name, .skill-anonymous, .skill-name-spacer {
-    font-size: 0.8em;
-    margin-right: 0.25em;
-}
-
-.skill-anonymous {
-    width: 5em;
-}
-
 .sidebar, .calc-attributes {
     margin-right: 0.25em;
 }
 
 .main-body, .level-chart {
     margin-left: 0.25em;
-}
-
-.main-body {
-    flex-grow: 1;
 }
 
 .level-chart {
@@ -153,26 +129,43 @@
     margin-bottom: 0;
 }
 
+.sidebar {
+    flex-grow: 1;
+}
+
 .calc-skills:nth-child(3) {
     margin-top: 0;
 }
 
+.skill-row, .skill-labels {
+    justify-content: space-between;
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+    align-items: center;
+}
+
 .skill-labels {
-    align-content: space-between;
-}
-
-.skill-name-spacer {
-    width: 7.3em;
-    text-align: right;
-}
-
-.skill-labels .equation-glue {
-    height: 0.5em;
+    margin-top: 0.2em;
+    margin-bottom: 0;
 }
 
 .skill-label {
-    font-size: 0.8em;
     flex-basis: 2.5em;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.skill-attribute {
+    font-weight: bold;
+}
+
+.skill-name {
+    text-align: right;
+    width: 8em;
+}
+
+.skill-attribute {
+    font-weight: bold;
     text-align: center;
 }
 
