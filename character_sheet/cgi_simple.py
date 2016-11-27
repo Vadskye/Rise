@@ -1,4 +1,4 @@
-is_pretty = False
+is_pretty = True
 input_name_prefix = None
 
 DESTINATION = 'paper'
