@@ -139,8 +139,8 @@
 
 .skill-row, .skill-labels {
     justify-content: space-between;
-    margin-top: 0.1em;
-    margin-bottom: 0.1em;
+    margin-top: 0.15em;
+    margin-bottom: 0.15em;
     align-items: center;
 }
 
