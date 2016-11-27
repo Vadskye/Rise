@@ -17,6 +17,7 @@ def create_page():
                 ]),
                 calc_hit_points(),
                 calc_attacks(),
+                calc_speed(),
                 flex_wrapper(div({'class': 'section-header'}, 'Defenses')),
                 calc_defenses(),
             ]),
@@ -208,6 +209,18 @@ def calc_attacks():
         calc_ranged(),
         calc_spellpower(),
         calc_special_attack(),
+    ])
+
+def calc_speed():
+    return flex_row([
+        div({'class': 'calc-header'}, 'Speed'),
+        equation([
+            underlabeled_number_input('Base'),
+            plus(),
+            underlabeled_number_input('Armor'),
+            plus(),
+            underlabeled_number_input('Misc', attributes={'class': 'eq-optional'}),
+        ])
     ])
 
 def calc_defenses():
@@ -431,11 +444,11 @@ def calc_armor():
                     underlabeled_number_input('Dex/Con'),
                 ]),
                 plus(),
+                underlabeled_number_input('1/5 Dex'),
+                plus(),
                 underlabeled_number_input('Armor', 'armor-body'),
                 plus(),
                 underlabeled_number_input('Shield', 'shield'),
-                plus(),
-                underlabeled_number_input('1/5 Dex'),
                 plus(),
                 underlabeled_number_input('Misc', 'armor-misc', {'class': 'eq-optional'}),
             ],
@@ -462,9 +475,9 @@ def calc_fort():
                     underlabeled_number_input('Str/Con'),
                 ]),
                 plus(),
-                underlabeled_number_input('Class'),
-                plus(),
                 underlabeled_number_input('1/2 Con'),
+                plus(),
+                underlabeled_number_input('Class'),
                 misc_spacer(),
                 plus(),
                 underlabeled_number_input('Misc', 'fort-misc', {'class': 'eq-optional'}),
@@ -489,9 +502,9 @@ def calc_ref():
                     underlabeled_number_input('Dex/Per'),
                 ]),
                 plus(),
-                underlabeled_number_input('Class'),
-                plus(),
                 underlabeled_number_input('1/5 Dex'),
+                plus(),
+                underlabeled_number_input('Class'),
                 plus(),
                 underlabeled_number_input('Shield', 'shield'),
                 misc_spacer(),
@@ -518,9 +531,9 @@ def calc_mental():
                     underlabeled_number_input('Int/Wil'),
                 ]),
                 plus(),
-                underlabeled_number_input('Class'),
-                plus(),
                 underlabeled_number_input('1/2 Wil'),
+                plus(),
+                underlabeled_number_input('Class'),
                 misc_spacer(),
                 plus(),
                 underlabeled_number_input('Misc', 'ment-misc', {'class': 'eq-optional'}),
