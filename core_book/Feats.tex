@@ -236,16 +236,6 @@ Some strike feats instead require a specific action to use.
         \featref{Wired} & 1st level Electricity spell & Increase speed by 5 feet, later 10 feet & \tdash & \featpref{Wired} \\
 
         \midrule
-        \tb{Magic Style Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} \tb{Page} \\
-        \featref{Blood Magic} & 4th level Vivimancy spell & Gain spellpower bonus after taking damage & Style & \featpref{Blood Magic} \\
-        \featref{Brutal Magic} & 4th level spells & Gain spellpower bonus after making physical strike & Style & \featpref{Brutal Magic} \\
-        \featref{Creative Magic} & 4th level spells & Gain spellpower bonus with spells not cast recently & Style & \featpref{Creative Magic} \\
-        \featref{Devastating Magic} & 8th level spells & Spells trigger critical successes more easily & Style & \featpref{Devastating Magic} \\
-        \featref{Flameborne Magic} & 4th level Fire spell & Gain spellpower bonus when fire is near & Style & \featpref{Flameborne Magic} \\
-        \featref{Peaceful Magic} & 4th level Abjuration spell & Gain spellpower bonus after not taking damage & Style & \featpref{Peaceful Magic} \\
-        \featref{Unliving Conduit} & 4th level Vivimancy spell & Gain spellpower bonus when undead are near & Style & \featpref{Unliving Conduit} \\
-
-        \midrule
         \tb{Metamagic Feats} & \tb{Prerequisites} & \tb{Benefit (Level Adjustment)} & \tb{Feat Types} & \tb{Page} \\
         \featref{Distant Spell} & 2nd level spells & Double spell's range (\plus1) & \tdash & \featpref{Distant Spell} \\
         \featref{Energetic Substitution} & 2nd level spells & Change spell's energy type (\plus1) & \tdash & \featpref{Energetic Substitution} \\
@@ -624,11 +614,6 @@ If you do not spend a swift round each round to sustain the rage, it ends at the
 \parhead{Normal}
 You have a 50\% chance to miss opponents you can't see, and you are \defenseless against them.
 
-\feat{Brutal Magic}{Magic, Style}
-\featpres 4th level spells.
-\featben At the end of each round, if you dealt damage with a \glossterm{strike} that round, you gain a \plus2 bonus to spellpower during the next round.
-This bonus increases by \plus1 when you gain access to 6th and 8th level spells.
-
 \feat{Calculated Strike}{Combat, Precision, Strike}
 \featpres Intelligence 5, combat prowess 8.
 \featben In place of two strikes, you can make a physical attack.
@@ -809,11 +794,6 @@ You cannot mend a destroyed magic item.
 \featpres Craft (any) 10 ranks, 2nd level spell known.
 \featben When casting spells which create or transform a physical substance that you are trained to craft, you gain a \plus2 bonus to your spellpower.
 
-\feat{Creative Magic}{Magic, Style}
-\featpre 4th level spell known.
-\featben You gain a \plus2 bonus to spellpower with all spells that you have not cast within the past 5 rounds.
-This bonus increases by \plus1 when you gain access to 6th and 8th level spells.
-
 \feat{Critical Rage}{Precision, Rage}
 \featpres Rage ability, combat prowess 12.
 \featben When you enter a rage, you can use this feat. If you do, during the rage you increase your critical range by 1.
@@ -850,11 +830,6 @@ If you know a Delusion spell of 5th level or higher, this bonus increases to \pl
 \featpres Rage ability, combat prowess 8.
 \featben When you enter a rage, you can use this feat. If you do, during the rage your physical attacks ignore an amount of hardness equal to your Strength.
 \parhead{Special} You can only gain the benefit of one Rage feat at a time.
-
-\feat{Devastating Magic}{Magic, Style}
-\featpre 8th level spells.
-\featben Your spells always inflict their critical success effects if they succeed by any amount, rather than if they succeed by 10.
-This has no effect on creatures whose level exceeds your spellpower.
 
 \feat{Diehard}{General}
 \featpre Con 5.
@@ -1159,12 +1134,6 @@ Once per round, when you hit with a melee strike, you may cause the target to be
 \feat{Fire Mastery}{Magic}
 \featpre 3rd level or higher \glossterm{Fire} spell known.
 \featben Whenever you get a critical success with a Fire spell, the target of the spell is \ignited for 5 rounds.
-
-\feat{Flameborne Magic}{Magic, Style}
-\featpre 4th level or higher \glossterm{Fire} spell known.
-\featben As long as you are within \rngmed range of an active fire of at least Medium size, you gain a \plus2 bonus to spellpower with Fire spells.
-If the source is at least Large size, this bonus applies to all spells you cast.
-This bonus increases by \plus1 when you gain access to 6th and 8th level spells.
 
 \feat{Focused Strike}{Combat, Precision, Strike}
 \featpre Two strikes.
@@ -1865,11 +1834,6 @@ You must make a melee attack or take the total defense action each round.
 If you hit, you deal damage normally.
 If the target does not attack you during the current phase, this attack deals quadruple damage.
 
-\feat{Peaceful Magic}{Magic, Style}
-\featpre 4th level or higher \glossterm{Abjuration} spell known.
-\featben If you have not taken damage within the past 5 rounds, you gain a \plus2 bonus to spellpower.
-This bonus increases by \plus1 when you gain access to 6th and 8th level spells.
-
 \feat{Penetrating Strike}{Combat, Strike}
 \featpre Three strikes.
 \featben In place of three strikes, you can make a physical attack.
@@ -2037,12 +2001,6 @@ You choose which result is used.
 If you do, the counterspelled spell is turned back on the caster as if it were affected by the \spell{spell turning}
 spell.
 If it cannot be affected by \spell{spell turning}, such as if it is a spell that only affects the caster, it is simply countered as normal.
-
-\feat{Blood Magic}{Magic, Style}
-\featpre 4th level Vivimancy spell known.
-\featben At the end of each round, if you took at least as much lethal damage as your spellpower during that round, you gain a \plus2 bonus to spellpower during the next round.
-In addition, as a swift action, you can deal yourself life damage equal to your spellpower.
-This bonus increases by \plus1 when you gain access to 6th and 8th level spells.
 
 \feat{Riposte}{Combat, Reaction}
 \featpres Dexterity 3, Parry.
@@ -2392,12 +2350,6 @@ In addition, your unarmed attacks can deal lethal or nonlethal damage as you cho
 \featpre 2nd level or higher \glossterm{Knowledge} spell known.
 \featben You gain a \plus2 bonus to all Knowledge checks.
 If you know a Knowledge spell of 6th level or higher, this bonus increases to \plus4.
-
-\feat{Unliving Conduit}{Magic, Style}
-\featpre 4th level or higher \glossterm{Vivimancy} spell known.
-\featben As long as you are within \rngclose range of an undead creature (other than yourself), you gain a \plus2 bonus to spellpower with Vivimancy spells.
-If the undead creature is under your control, this bonus applies to all spells you cast.
-This bonus increases by \plus1 when you gain access to 6th and 8th level spells.
 
 \feat{Untrackable}{Skill}
 \featpre Survival 15 ranks.

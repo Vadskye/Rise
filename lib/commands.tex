@@ -761,6 +761,21 @@
     }
 }
 
+\DeclareDocumentCommand{\spelldamageemp}{m o}
+{
+    \ifstr{#1}{}
+    {
+        \IfValueTF{#2}
+        {1#2~damage~per~spellpower}
+        {1d8~damage~per~spellpower}
+    }
+    {
+        \IfValueTF{#2}
+        {1#2~#1~damage~per~spellpower}
+        {1d8~#1~damage~per~spellpower}
+    }
+}
+
 \DeclareDocumentCommand{\spellquicktargeting}{s m m}
 {
     \IfBooleanTF{#1}

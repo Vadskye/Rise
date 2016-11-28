@@ -27,7 +27,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{1}{Complete}{The damage reduction applies against all damage, not just physical damage.}
-        \spellaugment{4}{Empowered}{The damage reduction is equal to twice your spellpower.}
+        % \spellaugment{4}{Empowered}{The damage reduction is equal to twice your spellpower.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -56,6 +56,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{3}{Staggering}{The target is \staggered for 1 round each time it takes damage.}
+        \spellaugment{4}{Empowered}{The damage increases to 1d10 acid damage per two spellpower immediately, and an additional 1d10 damage per round.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -80,6 +81,9 @@
         \spellnotes \physicalspellnotes
         \miscastrandom
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{acid}}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Agony}[3]
@@ -104,6 +108,7 @@
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
+        \spellaugment{2}{Complete}{The doubling of damage applies to all damage, not just physical damage.}
         \spellaugment{3}{Mass}{The spell can affect up to five targets.}
     \end{spellaugments}
 \end{spellsection}
@@ -129,6 +134,7 @@
     \begin{spellaugments}
         \spellaugment{2}{Heroic}{The target also gains an offensive legend point.}
         \spellaugment{3}{Mass}{The spell can affect up to five targets.}
+        \spellaugment{4}{Empowered}{The temporary hit points granted by this spell increase to three times your spellpower.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -492,6 +498,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{1}{Persistent}{The spell's duration becomes \durext.}
+        \spellaugment{4}{Empowered}{The healing increases to \spelldamageemp{}}
     \end{spellaugments}
 \end{spellsection}
 
@@ -569,6 +576,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{1}{Persistent}{The spell's duration becomes \durext.}
+        \spellaugment{4}{Empowered}{Each missile deals 2d6 arcane damage.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -848,6 +856,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{3}{Widened}{The spell's area becomes a \arealarge radius.}
+        \spellaugment{4}{Empowered}{The tentacle attacks gain a \plus5 bonus to accuracy.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -875,6 +884,7 @@
         \spellaugment{2}{Contracting}{The wall's radius shrinks by 5 feet at the end of every round, dealing damage to all creatures it moves through. This augment can only be used if the wall is created in a radius.}
         \spellaugment{2}{Dual}{Two parallel walls appear, five feet apart. This augment can only be used if the wall is created in a line.}
         \spellaugment{3}{Widened}{The wall appears in a 300 ft.\ line or a 50 ft.\ radius.}
+        \spellaugment{4}{Empowered}{The damage dealt to creatures passing through the wall increases to \spelldamage{slashing}[d10].}
     \end{spellaugments}
 \end{spellsection}
 
@@ -923,6 +933,9 @@
         \spellinfo{Channeling [Evil]}{Divine, Evil}
         \miscastexplode
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamage{divine}[d10]}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Bleed}[5]
@@ -945,6 +958,9 @@
         \spellinfo{Vivimancy [Flesh]}{Arcane, Death}
         \miscastrandom
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{5}{Empowered}{The damage increases to \spelldamageemp{slashing}, and the automatic critical damage dealt is doubled.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Bless}[1]
@@ -1172,6 +1188,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{2}{Widened}{You summon a larger boulder, causing the spell's area becomes a \areamed radius.}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamage{bludgeoning}[d10]}
     \end{spellaugments}
 \end{spellsection}
 
@@ -1196,6 +1213,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{3}{Widened}{The spell's area becomes a \arealarge cone.}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamage{fire}[d10]}
     \end{spellaugments}
 \end{spellsection}
 
@@ -1223,6 +1241,9 @@
         \spellinfo{Channeling [Chaotic]}{Chaos, Divine}
         \miscastexplode
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamage{divine}[d10]}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Call Lightning}[3]
@@ -1252,6 +1273,7 @@
     \begin{spellaugments}
         \spellaugment{1}{Seeking}{If no creatures or objects lie in the area of a bolt, the lightning strikes elsewhere instead. It strikes the occupied square within the spell's range that lies closest to its original destination. If multiple occupied squares are equally close, it strikes the largest target. The lightning can unerringly identify invisible and concealed creatures, but it does not differentiate between friend, foe, and inanimate object.}
         \spellaugment{3}{Staggering}{A successful attack also makes a target \staggered for 2 rounds.}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamage{electricity}. If you are outdoors in cloudy or storm weather, the damage instead increases to \spelldamageemp{electricity}.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -1302,6 +1324,9 @@
         \spellinfo{Evocation [Electricity]}{Air, Arcane, Nature}
         \miscastexplode
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamage{electricity}[d10]}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Chaos Hammer}[3]
@@ -1325,6 +1350,10 @@
         \spellinfo{Channeling [Chaotic]}{Chaos}
         \miscastrandom
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage becomes \spelldamage{divine}[d8]}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{divine}. If the Mass augment is applied, the damage instead increases to \spelldamage{divine}[d10].}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Charm Person}[2]
@@ -1484,6 +1513,7 @@
     \begin{spellaugments}
         \spellaugment{3}{Freezing}{If the attack succeeds against a creature, it is \immobilized for 2 rounds.}
         \spellaugment{3}{Widened}{The spell's area becomes a \arealarge cone.}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamage{cold}[d10]}
     \end{spellaugments}
 \end{spellsection}
 
@@ -1551,6 +1581,7 @@
     \begin{spellaugments}
         \spellaugment{2}{Dual Load}{The ballista is created with two separate bolt tracks, allowing it to fire at two different targets in the same round. It cannot fire at the same target twice.}
         \spellaugment{3}{Persistent}{The spell's duration becomes \durlong. If you use this augment again during that time, the previous effect immediately ends.}
+        \spellaugment{4}{Empowered}{The damage dealt by each ballista bolt increases to \spelldamage{piercing}[d10]}
     \end{spellaugments}
 \end{spellsection}
 
@@ -1625,6 +1656,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage becomes \spelldamage{life}[d8].}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{life}}
     \end{spellaugments}
 \end{spellsection}
 
@@ -1649,6 +1681,7 @@
         \spellaugment{2}{Serious Wounds}{For every 5 points of healing, this spell can instead cure 1 critical damage.}
         \spellaugment{3}{Critical Wounds}{For every 2 points of healing, this spell can instead cure 1 critical damage.}
         \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage becomes \spelldamage{}[d8]}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{}. If the Mass augment is applied, the damage instead increases to \spelldamage{}[d10].}
     \end{spellaugments}
 \end{spellsection}
 
@@ -1673,6 +1706,9 @@
         \spellnotes \cursespellnotes
         \miscastrandom
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{life}}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Curse of the Wayward Mind}[5]
@@ -1768,6 +1804,9 @@
         \spellnotes If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
         \miscastrandom
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{life}.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Life Ward}[4]
@@ -1849,6 +1888,7 @@
         \end{spelleffects}
         \begin{spellfooter}
             \spellinfo{Abjuration/Transmutation [Shielding, Temporal]}{Divine, Nature}
+            \spellnotes If this spell is dispelled or otherwise prematurely ended, you immediately take all of the delayed damage.
             \miscastexplode
         \end{spellfooter}
     \end{spellcontent}
@@ -1949,6 +1989,9 @@
         \spellinfo{Channeling [Lawful]}{Divine, Law}
         \miscastexplode
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamage{divine}[d10]}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Dimension Door}[4]
@@ -2143,6 +2186,7 @@
     \begin{spellaugments}
         \spellaugment{1}{Complete}{If the target is completely disintegrated, its equipment also takes damage from the spell. Equipment destroyed in this way is also disintegrated. This has no effect on artifacts.}
         \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage becomes \spelldamage{physical}[d8].}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{physical}.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -2320,7 +2364,8 @@
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
-        \spellaugment{2}{Empowered}{You gain temporary hit points equal to the damage you deal.}
+        \spellaugment{2}{Efficient}{You gain temporary hit points equal to the damage you deal.}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{life}.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -2480,6 +2525,7 @@
     \begin{spellaugments}
         \spellaugment{2}{Impaling}{If the attack succeeds, the target is \immobilized for 2 rounds instead of moving at half speed.}
         \spellaugment{2}{Spike Trap}{The spell targets a 5-ft.\ square of ground, and lasts for 5 rounds. If an enemy steps into the area, it suffers the effects of the spell. You may only have one such trap active at once.}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{piercing}.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -2608,6 +2654,9 @@
         \spellinfo{Transmutation [Imbuement]}{Nature}
         \miscastexplode
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamage{acid}[d10].}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Eyebite}[2]
@@ -2631,6 +2680,7 @@
     \begin{spellaugments}
         \spellaugment{3}{Earbite}{The target is also \deafened for 2 rounds.}
         \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage becomes \spelldamage{life}[d8].}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{life}.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -2754,6 +2804,7 @@
     \begin{spellaugments}
         \spellaugment{1}{Final}{The target's body cannot be used to restore it to life, such as with the \spell{resurrection} ritual. (See \pcref{Resurrecting the Dead}, for details).}
         \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage becomes \spelldamage{life}[d8].}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{life}.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -2777,6 +2828,9 @@
         \spellinfo{Evocation [Fire, Shielding]}{Arcane, Fire}
         \miscastexplode
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamage{fire}[d10].}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Fire Storm}[8]
@@ -2830,7 +2884,7 @@
         \spellaugment{2}{Delayed}{The fireball's detonation is delayed. As a swift action, you can command it to detonate during the next action phase. If not commanded to detonate, it will automatically detonate after 5 rounds. While the spell is delayed, an intangible bead of fire sits at the point of origin, shedding light as a torch.}
         \spellaugment{2}{Incendiary}{A successful attack also makes a target \ignited for 5 rounds.}
         \spellaugment{2}{Widened}{The spell's area becomes a \areamed radius.}
-        %\spellaugment{3}{Focused}{The attack automatically succeeds against one target adjacent to the spell's point of origin.}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamage{fire}[d10].}
     \end{spellaugments}
 \end{spellsection}
 
@@ -2858,6 +2912,7 @@
     \begin{spellaugments}
         \spellaugment{1}{Giant}{The spell can affect a target one size category larger. This augment can be used multiple times.}
         \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage becomes \spelldamage{bludgeoning}[d8].}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{bludgeoning}.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -2909,6 +2964,10 @@
         \firespellnotes
         \miscastyou
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{2}{Widened}{The area increases to a \arealarge radius cylinder, 100 ft.\ high.}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamage{fire and divine}[d10].}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Fly}[4]
@@ -3051,9 +3110,9 @@
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
+        \spellaugment{1}{Sickening}{The target is \sickened until the fungus is removed.}
         \spellaugment{2}{Deep Growth}{The DR to remove the fungus with a Heal check increases by 10.}
         \spellaugment{2}{Resilient}{The damage required to remove the fungus increases to five times your spellpower.}
-        \spellaugment{3}{Sickening}{The target is \sickened until the fungus is removed.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -3252,6 +3311,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage and healing become \spelldamage{life}[d8].}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{life}.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -3297,6 +3357,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{3}{Mass}{The spell can affect up to five targets. Its healing becomes \spelldamage{}[d8].}
+        \spellaugment{4}{Empowered}{The healing increases to \spelldamageemp{}.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -3367,6 +3428,10 @@
         \spellinfo{Channeling [Good]}{Good}
         \miscastrandom
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage becomes \spelldamage{divine}[d8].}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{divine}. If the Mass augment is applied, the damage instead increases to \spelldamage{divine}[d10].}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Holy Word}[5]
@@ -3390,6 +3455,9 @@
         \spellinfo{Channeling [Good]}{Good, Divine}
         \miscastexplode
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamage{divine}[d10].}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Horrid Wilting}[9]
@@ -3453,7 +3521,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess \spelldamage{cold}, and the target moves at half speed for 5 rounds.
+                \spellsuccess \spelldamage{cold and piercing}, and the target moves at half speed for 5 rounds.
                 \spellcritical As above, but double damage.
                 \spellfailure As above, but half damage.
             \end{spellattack}
@@ -3465,6 +3533,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{2}{Freezing}{If the attack succeeds, the target is \immobilized instead of moving at half speed.}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{cold}.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -3641,6 +3710,7 @@
     \begin{spellaugments}
         \spellaugment{2}{Critical Wounds}{All damage dealt in excess of the target's hit points is dealt as critical damage.}
         \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage and healing become \spelldamage{}[d8].}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{life}.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -3691,7 +3761,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{2}{Complete}{You do not need to choose an energy type when casting the spell, and the damage reduction cannot be overcome.}
-        \spellaugment{4}{Empowered}{The damage reduction is equal to twice your spellpower.}
+        % \spellaugment{4}{Empowered}{The damage reduction is equal to twice your spellpower.}
         \spellaugment{5}{Spellshield}{You also gain spell resistance equal to 10 \add your spellpower.}
     \end{spellaugments}
 \end{spellsection}
@@ -3832,6 +3902,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{3}{Staggering}{A successful attack also makes a target \staggered for 2 rounds.}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamage{electricity}[d10].}
     \end{spellaugments}
 \end{spellsection}
 
@@ -3859,6 +3930,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{3}{Mass}{The spell can affect up to five willing allies. All allies must be thrown at the same target. The target only takes damage once, not from each ally.}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamage{bludgeoning}[d10]. This also increases the damage taken by the ally.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -3969,6 +4041,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{2}{Lifeseeking}{Any missiles you do not explicitly target will automatically strike a living creature within range. The missiles are able to unerringly strike creatures you cannot see or are not aware of, including invisible or concealed creatures. You can direct the missiles to avoid specific targets, allowing you to strike a hidden foe among your allies.}
+        \spellaugment{4}{Empowered}{Each missile deals 2d6 arcane damage.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -4061,7 +4134,7 @@
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
-        \spellaugment{3}{Damaging Transformation}{The target may also use your spellpower in place all other bonuses to physical damage. It still rolls damage with its weapon normally.}
+        \spellaugment{3}{Damaging Transformation}{The target may also use your spellpower in place of all other bonuses to physical damage. It still rolls damage with its weapon normally.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -4236,6 +4309,9 @@
         \spellnotes The somatic components of this spell consist of throwing the target.
         \miscastexplode
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{4}{Empowered}{The damage from striking a solid object increases to 1d8 bludgeoning damage per 20 feet of movement remaining.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Mind Blank}[4]
@@ -4303,6 +4379,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{3}{Myriad}{The spell targets any number of creatures within range.}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamage{arcane}[d8].}
     \end{spellaugments}
 \end{spellsection}
 
@@ -4349,6 +4426,10 @@
         \spellinfo{Channeling [Lawful]}{Law}
         \miscastrandom
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage becomes \spelldamage{divine}[d8]}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{divine}. If the Mass augment is applied, the damage instead increases to \spelldamage{divine}[d10].}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Phantasmal Killer}[4]
@@ -4397,7 +4478,8 @@
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
-        \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage becomes \spelldamage{physical}[d8].}
+        \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage becomes \spelldamage{physical}[d8]}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{physical}. If the Mass augment is applied, the damage instead increases to \spelldamage{physical}[d10].}
     \end{spellaugments}
 \end{spellsection}
 
@@ -4443,6 +4525,10 @@
         \spellinfo{Evocation [Cold]}{Arcane, Water}
         \miscastrandom
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage becomes \spelldamage{cold}[d8].}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{cold}. If the Mass augment is applied, the damage instead increases to \spelldamage{cold}[d10].}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Power Word Blind}[6]
@@ -4549,6 +4635,9 @@
         \spellinfo{Universal [Light]}{Arcane}
         \miscastrandom
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{4}{Empowered}{The damage of the damaging effects increases to \spelldamageemp{}.}
+    \end{spellaugments}
 \end{spellsection}
 \begin{dtable*}
     \lcaption{Prismatic Effects}
@@ -4597,7 +4686,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Special}
-                \spellspecial The target is struck by a randomly colored beam of light. The beam color determines the effect and the defense used, as shown on \tref{Prismatic Effects}. The damaging effects deal \spelldamage{}[d8]
+                \spellspecial The target is struck by a randomly colored beam of light. The beam color determines the effect and the defense used, as shown on \tref{Prismatic Effects}. The damaging effects deal \spelldamage{}[d8].
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -4625,7 +4714,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellspecial The target is struck by a randomly colored beam of light. The beam color determines the effect and the defense used, as shown on \tref{Prismatic Effects}. The damaging effects deal \spelldamage{}[d8]
+                \spellspecial The target is struck by a randomly colored beam of light. The beam color determines the effect and the defense used, as shown on \tref{Prismatic Effects}. The damaging effects deal \spelldamage{}[d8].
             \end{spellattack}
         \end{spelleffects}
     \end{spellsubcontent}
@@ -4645,23 +4734,22 @@
         \begin{spelleffects}
             \spelleffect You loudly declare a prohibition on a single, specific action which creatures must not take, such as ``Do not use ranged weapons'' or ``Do not lie''. You may choose any action that must be taken intentionally, but not involuntary actions or states of being, such as breathing or wearing armor. If the rule is too complicated, the spell fails. You also choose a type of \glossterm{energy damage}.
 
+            Whenever a creature breaks the rule, that creature takes \spelldamage{}[d8] of the chosen energy type. You know a creature broke the rule, but not which creature.
+
             The spell grants all creatures that enter the area an understanding of the prohibition, even if they were unable to understand the rule as originally stated. If you break the rule, the spell ends -- after you suffer the consequences.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
-    \begin{spellsubcontent}
-        \begin{spelltargetinginfo}
-            \spelltwocol{\spelltgr{A creature breaks the rule}}{\spelltgt{Triggering creature}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect \spelldamage{}[d8] of the chosen damage type. You know a creature broke the rule, but not which creature.
-        \end{spelleffects}
-    \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Divination/Evocation}*{Arcane, Law}
         \spellnotes Mindless creatures are given no special insight into the rule. Any individual creature can only take damage for breaking the rule once per round.
+
+        When cast, this spell has the tag appropriate to the energy type chosen.
         \miscastexplode
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamage{}[d10] of the chosen energy type.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Protection from Alignment}[1]
@@ -4974,20 +5062,20 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess \spelldamage{bludgeoning}[d8]
+                \spellsuccess \spelldamage{bludgeoning}[d8].
                 \spellcritical Double damage.
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Conjuration [Earth, Physical]}{Nature, Wild}
-        \spellnotes This is a \glossterm{Physical} effect, and does not allow spell resistance.
+        \spellinfo{Conjuration [Creation, Earth]}{Nature, Wild}
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{1}{Precise}{The spell only targets enemies in the area.}
         \spellaugment{2}{Widened}{The spell's area becomes a \arealarge line, 10 ft.\ wide.}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamage{bludgeoning}[d10].}
     \end{spellaugments}
 \end{spellsection}
 
@@ -5095,6 +5183,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage becomes \spelldamage{fire}[d8].}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{fire}. If the Mass augment is applied, the damage instead increases to \spelldamage{fire}[d10].}
     \end{spellaugments}
 \end{spellsection}
 
@@ -5148,6 +5237,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage becomes \spelldamage{solar}[d8].}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{solar}. If the Mass augment is applied, the damage instead increases to \spelldamage{solar}[d10].}
     \end{spellaugments}
 \end{spellsection}
 
@@ -5195,6 +5285,9 @@
         \spellnotes The somatic components of this spell consist of slamming the target into the ground. The ground beneath the target also takes damage from the spell, which may cause weak ground (such as a building floor) to break.
         \miscastexplode
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{bludgeoning}.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Sever Magic}[8]
@@ -5294,6 +5387,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage becomes \spelldamage{cold}[d6].}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamage{cold}. If the Mass augment is applied, the damage instead increases to \spelldamage{cold}[d8].}
     \end{spellaugments}
 \end{spellsection}
 
@@ -5436,6 +5530,9 @@
         \spellinfo{Evocation [Electricity]}{Arcane, Destruction, Nature}
         \miscastexplode
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{electricity}.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Shout}[4]
@@ -5462,6 +5559,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{3}{Widened}{The spell's area becomes a \arealarge cone.}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamage{sonic}[d10].}
     \end{spellaugments}
 \end{spellsection}
 
@@ -5627,6 +5725,7 @@
     \begin{spellaugments}
         \spellaugment{2}{Widened}{The spell's area becomes a \areamed radius.}
         \spellaugment{3}{Deafening}{Affected targets are also \deafened for 2 rounds.}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamage{sonic}[d10].}
     \end{spellaugments}
 \end{spellsection}
 
@@ -5728,26 +5827,19 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect Physical ranged attacks against you have a 50\% miss chance. Other attacks that simply work at a distance are not affected.
+
+            In addition, whenever a creature within \rnglong range of you makes a physical attack against you, the attacking creature takes \spelldamage{bludgeoning}[d6].
+            A creature can only be dealt damage by this spell once per round.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
-    \begin{spellsubcontent}
-        \begin{spelltargetinginfo}
-            \spelltgr{Creature within \rnglong range of you makes a physical attack against you}
-            \spelltgt{Triggering creature}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess \spelldamage{bludgeoning}[d8].
-                \spellcritical Double damage.
-                \spellfailure Half damage.
-            \end{spellattack}
-        \end{spelleffects}
-    \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Evocation [Air, Electricity, Shielding]}{Air, Nature}
         \miscastexplode
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{4}{Empowered}{The damage against creatures that attack you increases to \spelldamage{bludgeoning}[d8].}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Strip the Flesh}[7]
@@ -5980,6 +6072,10 @@
         \spellnotes This light is considered natural sunlight for the purpose of effects which depend on sunlight.
         \miscastexplode
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{2}{Widened}{The spell's area becomes a \areahuge, 20 ft.\ wide line.}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamage{solar}[d10].}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Sunburst}[7]
@@ -6005,6 +6101,9 @@
         \spellnotes This light is considered natural sunlight for the purpose of effects which depend on sunlight.
         \miscastyou
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{2}{Widened}{The spell's area becomes a \areahuge radius.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Swarm of Bats}[2]
@@ -6057,6 +6156,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{2}{Widened}{The spell's area becomes a \arealarge radius.}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamage{bludgeoning}[d10].}
     \end{spellaugments}
 \end{spellsection}
 
@@ -6207,7 +6307,7 @@
     \end{spellcontent}
     \begin{spellsubcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature (Huge or smaller)}{\rngclose}
+            \spellquicktargeting{One creature (Large or smaller)}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spellspecial If the target is not made of flesh (such as a golem), it is unaffected.
@@ -6220,7 +6320,7 @@
     \end{spellsubcontent}
     \begin{spellsubcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature (Huge or smaller)}{\rngclose}
+            \spellquicktargeting{One creature (Large or smaller)}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target is restored to its normal state, including its equipment. Stone which was not originally a petrified creature is unaffected.
@@ -6231,7 +6331,9 @@
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
+        \spellaugment{1}{Giant}{The spell can affect a target one size category larger. This augment can be used multiple times.}
         \spellaugment{3}{Mass}{The spell can affect up to five targets. The same version must be used for all targets.}
+        \spellaugment{4}{Empowered}{The damage dealt by the damaging version of this spell increases to \spelldamageemp{physical}.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -6367,6 +6469,10 @@
         \spellinfo{Channeling [Evil]}{Evil}
         \miscastrandom
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage becomes \spelldamage{divine}[d8]}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{divine}. If the Mass augment is applied, the damage instead increases to \spelldamage{divine}[d10].}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Unliving Eyes}[4]
@@ -6414,6 +6520,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{2}{Regenerating}{If you lose temporary hit points, you regain the lost hit points 5 minutes later.}
+        \spellaugment{4}{Empowered}{The temporary hit points granted by this spell increase to three times your spellpower.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -6503,7 +6610,7 @@
             At the end of each round, all creatures within 10 feet of a side radiating heat take 1d10 fire damage per four spellpower.
 
             In addition, whenever a creature passes through the wall, make a spellpower vs. Reflex attack against it.
-            Success deals \spelldamage{fire}[d6] to the creature.
+            Success deals \spelldamage{fire}[d8] to the creature.
             Failure deals half damage.
             \spelldur \durshort
         \end{spelleffects}
@@ -6516,6 +6623,7 @@
     \begin{spellaugments}
         \spellaugment{2}{Dual}{Two parallel walls appear, five feet apart. This augment can only be used if the wall is created in a line.}
         \spellaugment{2}{Widened}{The wall appears in a 50 ft.\ line or a 20 ft.\ radius.}
+        \spellaugment{4}{Empowered}{The damage dealt to creatures near a side of the wall radiating heat increases to \spelldamage{fire}[d6]. In addition, the damage dealt to creatures passing through the wall increases to \spelldamage{fire}[d10].}
     \end{spellaugments}
 \end{spellsection}
 
@@ -6676,6 +6784,7 @@
     \begin{spellaugments}
         \spellaugment{2}{Distant}{The spell's range becomes \rngext.}
         \spellaugment{2}{Forceful}{You gain a \plus10 bonus to accuracy on the shove attack.}
+        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{bludgeoning}.}
     \end{spellaugments}
 \end{spellsection}
 
