@@ -84,6 +84,26 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
 
         \subsubsection{Not Resisting a Spell} A creature can voluntarily forego its defenses and willingly accept a spell's result. However, a character with a special immunity to specific magical effects cannot suppress that quality.
 
+    \subsection{Line of Effect}\label{Line of Effect}
+        
+        Almost all abilities must have a \glossterm{line of effect} to function.
+        Unless otherwise noted in an ability's description, you cannot target a creature you do not have line of effect to.
+        In addition, spells that affect an area do not affect targets that the spell does not have line of effect to.
+
+        A line of effect is a straight, unblocked path that indicates what a spell can affect. A line of effect is canceled by a solid barrier. It's like line of sight for ranged weapons, except that it's not blocked by fog, darkness, and other factors that limit normal sight.
+
+        You must have a clear line of effect to any target that you cast a spell on or to any space in which you wish to create an effect. You must have a clear line of effect to the point of origin of any spell you cast.
+
+        A burst, cone, cylinder, or emanation spell affects only an area, creatures, or objects to which it has line of effect from its origin (a spherical burst's center point, a cone-shaped burst's starting point, a cylinder's circle, or an emanation's point of origin).
+
+        An otherwise solid barrier with a hole of at least 1 square foot through it does not block a spell's line of effect. Such an opening means that the 5-foot length of wall containing the hole is no longer considered a barrier for purposes of a spell's line of effect.
+
+        \subsubsection{Destroying Barriers}\label{Destroying Barriers}
+            Some abilities, such as the \spell{fireball} spell, deal damage to both creatures and objects.
+            If a physical barrier is destroyed by an ability, that barrier does not affect the ability's line of effect.
+            For example, a thin curtain of silk normally blocks line of effect.
+            However, a spell that destroyed the curtain would have its full effect on everything behind the curtain.
+
     \subsection{Targeting Spells}
 
         \parhead{Midair Locations} A creature or object brought into being or transported to your location by a spell cannot appear floating in an empty space. It must arrive in an open location on a surface capable of supporting it.
@@ -278,14 +298,6 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
 
         If a ray spell deals damage, you can score a critical hit just as if it were a weapon. A ray spell threatens a critical hit on a natural roll of 20 and deals double damage on a successful critical hit.
 
-        \parhead{Line of Effect} A line of effect is a straight, unblocked path that indicates what a spell can affect. A line of effect is canceled by a solid barrier. It's like line of sight for ranged weapons, except that it's not blocked by fog, darkness, and other factors that limit normal sight.
-
-        You must have a clear line of effect to any target that you cast a spell on or to any space in which you wish to create an effect. You must have a clear line of effect to the point of origin of any spell you cast.
-
-        A burst, cone, cylinder, or emanation spell affects only an area, creatures, or objects to which it has line of effect from its origin (a spherical burst's center point, a cone-shaped burst's starting point, a cylinder's circle, or an emanation's point of origin).
-
-        An otherwise solid barrier with a hole of at least 1 square foot through it does not block a spell's line of effect. Such an opening means that the 5-foot length of wall containing the hole is no longer considered a barrier for purposes of a spell's line of effect.
-
     \subsection{Duration}
 
         A spell's Duration entry tells you how long the magical energy of the spell lasts.
@@ -354,7 +366,9 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
     \parhead{Compulsion} Compulsion abilities forcibly alter a creature's actions, but do not necessarily affect its opinions or personality.
     All Compulsion abilities are also \glossterm{Mind} abilities.
 
-    \parhead{Creation} Creation abilities create physical objects. Unless otherwise specified, the objects created are temporarily formed from raw magical energy, and disappear without a trace at the end of the effect, as the magic sustaining them fades.
+    \parhead{Creation} Creation abilities create physical objects. Unless otherwise specified, Creation abilities do not allow spell resistance. 
+    \par The objects created by Creation abilities are usually temporarily formed from raw magical energy.
+    Unless otherwise specified, they disappear without a trace at the end of the effect, as the magic sustaining them fades.
 
     \parhead{Curse} Curse abilities lay supernatural curses on their targets. They cannot be dispelled, but can be removed with the \spell{break enchantment} or \spell{remove curse} spells.
 
@@ -362,9 +376,6 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
 
     \parhead{Delusion} Delusion abilities alter a creature's opinons or personality, but do not necessarily affect their actions.
     All Delusion abilities are also Mind abilities.
-
-    \parhead{Destructive} Destructive abilities can blast through intervening obstacles.
-    If a Destruction effect deals enough damage to a barrier to destroy it, the area of the effect continues past the barrier up to its normal limits.
 
     \parhead{Detection} Detection abilities reveal magical auras or information within an area.
     They can penetrate up to 1 foot of stone, 1 inch of common metal, a thin sheet of lead, 3 feet of wood or dirt.
@@ -412,7 +423,8 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
 
     \parhead{Mind} Mind abilities manipulate the minds of creatures. They have no effect on objects or creatures without minds.
 
-    \parhead{Physical} Physical abilities create or manipulate physical objects rather than having a directly magical effect. They do not allow spell resistance.
+    \parhead{Physical} Physical abilities manipulate physical objects rather than having a direct magical effect on their targets. They do not allow spell resistance.
+    Some abilities are not themselves Physical, but have Physical effects, such as \spell{mighty throw}.
 
     \parhead{Planar} Planar abilities transport matter or information between planes.
 

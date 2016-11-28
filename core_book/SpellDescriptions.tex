@@ -331,15 +331,14 @@
             \begin{spellattack}{Spellpower vs. Fortitude}
                 \spellsuccess \spelldamage{slashing}. In addition, all physical damage the target takes is doubled for 2 rounds.
                 This does not apply to the initial damage dealt by this spell.
-                \spellcritical As above, except that the doubling of physical damage lasts for thirty days, and it applies to the initial damage dealt by the spell.
-                Effects which accelerate natural healing, such as the Heal skill, also reduce the duration of this effect.
+                If the target receives magical healing, the doubling of damage ends.
+                \spellcritical As above, except that the doubling of physical damage also applies to the initial damage dealt by the spell.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Creation]}{Arcane, War}
-        \spellnotes The doubling of physical damage is a Physical effect, and cannot be dismissed or dispelled.
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -451,11 +450,12 @@
         \begin{spelleffects}
             \spelleffect The target is \entangled.
             It can break this effect with a grapple or Escape Artist check against a DR equal to 10 \add your spellpower.
+            This is a \glossterm{Physical} effect, and does not allow spell resistance.
             \spelldur \durbrief
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Animation, Physical]}{Nature, Wild}
+        \spellinfo{Transmutation [Animation]}{Nature, Wild}
         \spellnotes The effects of the ability granted by this spell may be altered somewhat based on the nature of the plants near the target.
         \miscastexplode
     \end{spellfooter}
@@ -537,7 +537,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Enhancement, Physical]}{Nature, Strength}
+        \spellinfo{Transmutation [Enhancement]}{Nature, Strength}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -867,7 +867,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Conjuration [Creation, Wall]}{Divine, War}
+        \spellinfo{Conjuration [Creation]}{Divine, War}
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -1191,7 +1191,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Fire]}{Arcane, Nature, Fire}
+        \spellinfo{Evocation [Fire]}{Arcane, Nature, Fire}
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -1245,7 +1245,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Electricity]}{Air, Nature}
+        \spellinfo{Evocation [Electricity]}{Air, Nature}
         \spellnotes This spell functions indoors or underground, but not underwater. \destructivespellnotes
         \miscastexplode
     \end{spellfooter}
@@ -1299,7 +1299,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Electricity]}{Air, Arcane, Nature}
+        \spellinfo{Evocation [Electricity]}{Air, Arcane, Nature}
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -1548,6 +1548,10 @@
         If it is fired manually, you still use your spellpower to determine the accuracy and damage of the ballista bolt.
         \miscastexplode
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{2}{Dual Load}{The ballista is created with two separate bolt tracks, allowing it to fire at two different targets in the same round. It cannot fire at the same target twice.}
+        \spellaugment{3}{Persistent}{The spell's duration becomes \durlong. If you use this augment again during that time, the previous effect immediately ends.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Create Image}[2]
@@ -1872,7 +1876,7 @@
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
-        \spellaugment{2}{Persistent}{The target's body cannot be used to restore it to life, such as with the \spell{resurrection} ritual. (See \pcref{Resurrecting the Dead}, for details).}
+        \spellaugment{1}{Final}{The target's body cannot be used to restore it to life, such as with the \spell{resurrection} ritual. (See \pcref{Resurrecting the Dead}, for details).}
     \end{spellaugments}
 \end{spellsection}
 
@@ -2341,6 +2345,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration [Creation]}{Nature, Water}
+        \spellnotes Unlike most \glossterm{Creation} spells, this spell allows spell resistance.
         \miscastexplode
     \end{spellfooter}
 \end{spellsection}
@@ -2445,7 +2450,7 @@
         \spellinfo{Transmutation [Earth, Physical]}*{Destruction, Divine, Earth, Nature, Strength, Wild}
         \spellnotes In terrain with unusual ground, such as rivers or swamps, this spell may have different effects.
 
-        \physicalspellnotes
+        This is a \glossterm{Physical} effect, and does not allow spell resistance.
         \miscastyou
     \end{spellfooter}
 \end{spellsection}
@@ -2469,6 +2474,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Earth, Physical, Shaping]}{Earth, Nature}
+        \spellnotes This is a \glossterm{Physical} effect, and does not allow spell resistance.
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -2553,10 +2559,11 @@
     \begin{spellfooter}
         \spellinfo{Transmutation [Animation, Physical]}{Nature, Wild}
         \spellnotes The effects of this spell may be altered somewhat based on the nature of the plants near the target.
+        This is a \glossterm{Physical} effect, and does not allow spell resistance.
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
-        \spellaugment{2}{Wild Growth}{The target does not need to be near plants. This is a Conjuration, \glossterm{Creation} effect.}
+        \spellaugment{2}{Wild Growth}{The target does not need to be near plants. This is a Conjuration [ \glossterm{Creation}] effect.}
         \spellaugment{3}{Mass}{The spell can affect up to five targets.}
     \end{spellaugments}
 \end{spellsection}
@@ -2745,7 +2752,7 @@
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
-        \spellaugment{2}{Persistent}{The target's body cannot be used to restore it to life, such as with the \spell{resurrection} ritual. (See \pcref{Resurrecting the Dead}, for details).}
+        \spellaugment{1}{Final}{The target's body cannot be used to restore it to life, such as with the \spell{resurrection} ritual. (See \pcref{Resurrecting the Dead}, for details).}
         \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage becomes \spelldamage{life}[d8].}
     \end{spellaugments}
 \end{spellsection}
@@ -2790,7 +2797,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Fire]}{Destruction, Fire, Nature, War, Wild}
+        \spellinfo{Evocation [Fire]}{Destruction, Fire, Nature, War, Wild}
         \miscastyou
     \end{spellfooter}
 \end{spellsection}
@@ -2813,7 +2820,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Fire]}{Arcane, Fire, Nature}
+        \spellinfo{Evocation [Fire]}{Arcane, Fire, Nature}
         \spellnotes \destructivespellnotes
 
         \firespellnotes
@@ -2845,6 +2852,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Earth, Physical]}{Earth, Nature}
+        \spellnotes This is a \glossterm{Physical} effect, and does not allow spell resistance.
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -2895,7 +2903,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Fire]}{Destruction, Divine, Fire}
+        \spellinfo{Evocation [Fire]}{Destruction, Divine, Fire}
         \spellnotes \destructivespellnotes
 
         \firespellnotes
@@ -2941,7 +2949,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Conjuration [Creation, Fog, Physical]}{Arcane, Nature, Water}
+        \spellinfo{Conjuration [Creation, Fog]}{Arcane, Nature, Water}
         \spellnotes \fogspellnotes \fogwindspellnotes
 
         \physicalspellnotes
@@ -2969,7 +2977,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Physical, Telekinesis]}{Arcane}
+        \spellinfo{Evocation [Telekinesis]}{Arcane}
         \spellnotes The walls and ceiling can be destroyed. A 5-foot square of wall has hit points equal to five times your spellpower, and hardness equal to your spellpower.
         \miscastrandom
     \end{spellfooter}
@@ -3039,6 +3047,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Conjuration/Vivimancy [Creation, Flesh]}{Nature}
+        \spellnotes Unlike most \glossterm{Creation} spells, this spell allows spell resistance.
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -3185,8 +3194,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Conjuration [Creation, Physical]}{Arcane}
-        \spellnotes \physicalspellnotes
+        \spellinfo{Conjuration [Creation]}{Arcane}
         \miscastyou
     \end{spellfooter}
     \begin{spellaugments}
@@ -3216,7 +3224,7 @@
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
-        \spellaugment{3}{Persistent}{The gust of wind continues in the same area for 5 rounds.}
+        \spellaugment{3}{Persistent}{The gust of wind continues in the same area for 5 rounds. At the end of each round, its effect happens again.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -3481,7 +3489,7 @@
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
-        \spellinfo{Conjuration/Evocation [Cold, Creation, Destructive]}*{Arcane, Destruction, Nature, Water}
+        \spellinfo{Conjuration/Evocation [Cold, Creation]}*{Arcane, Destruction, Nature, Water}
         \spellnotes \destructivespellnotes
     % SR only applies to cold?
         \miscastyou
@@ -3658,7 +3666,7 @@
         \spellaugment{1}{Giant}{The spell can affect a target one size category larger. This augment can be used multiple times.}
         \spellaugment{1}{Sensory}{The target becomes undetectable by an additional sense: sound, smell, texture, or temperature. This augment can be used multiple times, affecting a different sense each time.}
         \spellaugment{3}{Mass}{The spell can affect up to five targets.}
-        \spellaugment{3}{Persistent}{At the end of every round, if the target did not attack a creature that round, it becomes invisible again.}
+        \spellaugment{3}{Recharging}{At the end of every round, if the target did not attack a creature that round, it becomes invisible again.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -3818,7 +3826,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Electricity]}{Arcane, Nature}
+        \spellinfo{Evocation [Electricity]}{Arcane, Nature}
         \spellnotes \destructivespellnotes
         \miscastexplode
     \end{spellfooter}
@@ -4096,7 +4104,7 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{3}{Empowered}{The target also gains a \plus5 bonus to Bluff and Persuasion checks.}
-        \spellaugment{3}{Persistent}{The spell's duration becomes \durlong.}
+        \spellaugment{3}{Persistent}{The spell's duration becomes \durlong. If you use this augment again during that time, the previous effect immediately ends.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -4198,7 +4206,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Fire]}{Arcane, Fire}
+        \spellinfo{Evocation [Fire]}{Arcane, Fire}
         \spellnotes \firespellnotes
 
         \destructivespellnotes
@@ -4217,13 +4225,14 @@
         \begin{spelleffects}
             \begin{spellattack}{Strength or Spellpower vs. Fortitude (shove)}
                 \spellsuccess The target is thrown up to 20 feet per spellpower in any direction. You can throw it vertically, but it flies half as far vertically as it does horizontally. When the creature strikes a solid object, it suffers 1d6 bludgeoning damage per 20 feet of movement remaining.
+                \par This is a \glossterm{Physical} effect, and does not allow spell resistance.
                 \spellcritical As above, but the target is thrown 40 feet per spellpower.
                 \spellfailure The target takes \spelldamage{bludgeoning}[d6] as it resists the force of the throw.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Enhancement, Physical]}{Divine, Nature, Strength, Wild}
+        \spellinfo{Transmutation [Enhancement]}{Divine, Nature, Strength, Wild}
         \spellnotes The somatic components of this spell consist of throwing the target.
         \miscastexplode
     \end{spellfooter}
@@ -4394,7 +4403,7 @@
 
 \begin{spellsection}{Poison}[4]
     \begin{spellheader}
-        \spelldesc{Calling upon the venomous powers of natural predators, you inject your foe with a potent poison.}
+        \spelldesc{You create a deadly poison on your foe's skin.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
@@ -4409,8 +4418,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Vivimancy [Flesh, Physical]}{Destruction, Divine, Nature}
-        \spellnotes \physicalspellnotes
+        \spellinfo{Conjuration [Creation]}{Destruction, Divine, Nature}
         \miscastrandom
     \end{spellfooter}
 \end{spellsection}
@@ -4973,8 +4981,8 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Conjuration [Destructive, Earth, Physical]}{Nature, Wild}
-        \spellnotes \destructivespellnotes
+        \spellinfo{Conjuration [Earth, Physical]}{Nature, Wild}
+        \spellnotes This is a \glossterm{Physical} effect, and does not allow spell resistance.
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -5082,7 +5090,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Fire]}{Arcane, Destruction, Nature}
+        \spellinfo{Evocation [Fire]}{Arcane, Destruction, Nature}
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -5176,13 +5184,14 @@
         \begin{spelleffects}
             \begin{spellattack}{Strength or Spellpower vs. Fortitude (shove)}
                 \spellsuccess \spelldamage{bludgeoning}, and the target is \immobilized for 2 rounds.
+                This is a \glossterm{Physical} effect, and does not allow spell resistance.
                 \spellcritical As above, but double damage.
                 \spellfailure As above, but half damage.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Enhancement, Physical]}{Strength}
+        \spellinfo{Transmutation [Enhancement]}{Strength}
         \spellnotes The somatic components of this spell consist of slamming the target into the ground. The ground beneath the target also takes damage from the spell, which may cause weak ground (such as a building floor) to break.
         \miscastexplode
     \end{spellfooter}
@@ -5448,7 +5457,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Sonic]}{Arcane, Destruction, Strength}
+        \spellinfo{Evocation [Sonic]}{Arcane, Destruction, Strength}
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -5612,7 +5621,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Sonic]}{Arcane, Destruction}
+        \spellinfo{Evocation [Sonic]}{Arcane, Destruction}
         \miscastyou
     \end{spellfooter}
     \begin{spellaugments}
@@ -5690,7 +5699,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Conjuration/Evocation [Acid, Creation, Electricity, Physical]}*{Air, Divine, Nature, Water}
+        \spellinfo{Conjuration/Evocation [Acid, Creation, Electricity]}*{Air, Divine, Nature, Water}
         \spellnotes When the storm has multiple effects in the same round, roll a single attack and compare the result to all relevant defenses.
 
         \physicalspellnotes
@@ -5760,7 +5769,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Vivimancy [Flesh, Physical]}{Arcane, Death, Evil}
+        \spellinfo{Vivimancy [Flesh]}{Arcane, Death, Evil}
         \spellnotes \physicalspellnotes
         \miscastrandom
     \end{spellfooter}
@@ -6500,7 +6509,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Destructive, Fire, Wall]}{Arcane, Fire, Nature}
+        \spellinfo{Evocation [Fire]}{Arcane, Fire, Nature}
         \spellnotes Any part of the wall takes cold damage in excess of your spellpower in a single round is extinguished.
         \miscastexplode
     \end{spellfooter}
@@ -6523,7 +6532,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Evocation [Physical, Telekinesis, Wall]}{Arcane}
+        \spellinfo{Evocation [Telekinesis]}{Arcane}
         \spellnotes The wall can be destroyed. A 5-foot square of wall has hit points equal to five times your spellpower, and hardness equal to your spellpower.
 
         \miscastexplode
@@ -6554,7 +6563,7 @@
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
-        \spellinfo{Conjuration [Creation, Physical, Wall]}{Nature}
+        \spellinfo{Conjuration [Creation]}{Nature}
         \spellnotes A \spell{wall of thorns} can be destroyed. A 5-foot cube of wall has hit points equal to twice your spellpower, is vulnerable to fire damage, and ignores piercing damage.
         \physicalspellnotes
         \miscastexplode
@@ -6637,7 +6646,7 @@
         \end{spelleffects}
     \end{spellsubcontent}
     \begin{spellfooter}
-        \spellinfo{Conjuration [Creation, Physical]}{Arcane}
+        \spellinfo{Conjuration [Creation]}{Arcane}
         \spellnotes The webs can be destroyed. A 5-foot cube of webs has hit points equal to twice your spellpower, is vulnerable to fire damage, and ignores piercing damage. Any fire can set the webs alight and burn away 5 square feet over the course of 2 rounds. All creatures within flaming webs are \ignited by the flames.
 
         \physicalspellnotes
