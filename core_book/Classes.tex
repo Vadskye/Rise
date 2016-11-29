@@ -852,8 +852,8 @@ This choice determines a great deal about your character's abilities.
 \section{Druid}\label{Druid}
     \begin{dtable}
         \lcaption{Druid Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\centering}p{\babcolavg} c c >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{Aspects} & \tb{Spells} & \tb{Special} \\
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\centering}p{\babcolavg} >{\ccol}p{3em} c >{\lcol}X}
+            \tb{Level} & \tb{Combat Prowess} & \tb{Active Aspects} & \tb{Spells} & \tb{Special} \\
             \hline
             \druidprogressionrow{1}  & \tdash & 2 & Metal abhorrence, spells, wild speech \\
             \druidprogressionrow{2}  & 1      & 3 & Rituals, wild aspect                  \\
@@ -1313,7 +1313,7 @@ This choice determines a great deal about your character's abilities.
             \fighterprogressionrow{7}   & Improved armor discipline           \\
             \fighterprogressionrow{8}   & Adaptive combat                     \\
             \fighterprogressionrow{9}   & Improved weapon discipline          \\
-            \fighterprogressionrow{10}  & Combat feat                         \\
+            \fighterprogressionrow{10}  & Combat feat, swift warrior          \\
             \fighterprogressionrow{11}  & Improved combat discipline          \\
             \fighterprogressionrow{12}  & Adaptive combat                     \\
             \fighterprogressionrow{13}  & Greater armor discipline            \\
@@ -1452,6 +1452,9 @@ This choice determines a great deal about your character's abilities.
         If he did not, he can apply all weapon group-specific feats he has to any weapon group that he trains with for 1 hour.
         He retains this benefit for one week after the training.
 
+        \cf{Ftr}[10th]{Swift Warrior}
+        The fighter can take two swift or immediate actions each round (see \pcref{Swift and Immediate Actions}).
+
         \cf{Ftr}[11th]{Improved Combat Discipline}
         The fighter's ability to keep fighting despite negative influence improves.
         He can reduce conditions by two steps instead of one when using combat discipline.
@@ -1505,7 +1508,7 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable}
         \lcaption{Monk Progression}
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolavg} c >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{Ki Strike} & \tb{Special} \\
+            \tb{Level} & \tb{Combat Prowess} & \tb{\Ki Strike} & \tb{Special} \\
             \hline
             \monkprogressionrow{1}  & \plus1 & Enlightened defenses, unarmed warrior     \\
             \monkprogressionrow{2}  & \plus1 & Manifest \ki                              \\
@@ -1579,10 +1582,10 @@ This choice determines a great deal about your character's abilities.
         The monk gains the ability to channel her \ki energy to temporarily enhance her abilities.
         She chooses one \ki manifestation from the list below.
 
-        Using a \ki manifestation costs a number of \ki points.
-        The monk has a number of \ki points equal to half her Willpower or half her monk level, whichever is higher.
+        Using a \ki manifestation costs a \ki point.
+        The monk has a number of \ki points equal to her Willpower or her monk level, whichever is higher.
         \Ki points can be recovered by meditation.
-        For every 5 minutes the monk spends meditating, she regains one \ki point.
+        If the monk meditates for 1 hour, she recovers all spent \ki points.
 
         Some \ki manifestations have minimum monk levels, as indicated in the title of the power.
         At her 4th monk level, and every even monk level thereafter, the monk learns an additional \ki manifestation.
@@ -1591,10 +1594,6 @@ This choice determines a great deal about your character's abilities.
         Unless otherwise noted, the monk's effective spellpower with these abilities is equal to her \ki power.
         All \ki manifestations are supernatural abilities unless otherwise noted.
 
-        \subcf{All Energy Becomes One}
-        As an immediate action, when the monk would take \glossterm{energy damage}, she can gain damage reduction against any single type of energy damage equal to her \ki power until the end of the round.
-        She heals hit points equal to the damage resisted in this way.
-        In addition, if she resists energy damage in this way, her physical attacks deal damage of that type for 5 rounds in addition to their normal damage types.
         \subcf{Elegant Whirl of Fluid Motion}
         As a swift action, the monk can gain a \plus20 bonus to Acrobatics checks until the end of the round.
         \subcf{Leap of the Heavens}
@@ -1605,7 +1604,7 @@ This choice determines a great deal about your character's abilities.
         As a swift action, the monk can gain a \plus30 foot bonus to her land speed, up to a maximum of double her original speed.
         In addition, she cannot be followed until the end of the round.
         \subcf{4th -- Dance of Falling Feathers}
-        As an immediate action, the monk can gain the benefits of the \spell{feather fall} spell.
+        As an immediate action, when the monk begins falling, she can gain the benefits of the \spell{feather fall} spell.
         \subcf{4th -- Fists of Distant Force}
         As a swift action, the monk can empower her unarmed attacks with \ki, allowing her to strike distant foes.
         Until the end of the round, she gains an additional ten feet of reach with her unarmed attacks, extending her threatened area.
@@ -1620,7 +1619,7 @@ This choice determines a great deal about your character's abilities.
         As a swift action during the movement phase, the monk can teleport to anywhere she can see within 30 feet.
         If her line of effect is blocked, even by an invisible barrier, or if this would somehow place her inside a solid object, the ability fails.
         \subcf{8th -- Focus the Wayward Mind}
-        As a swift action, the monk can dispel all Mind effects that are affecting her.
+        As a swift action, the monk can dispel all \glossterm{Mind} effects that are affecting her.
         This has no effect on Mind effects that cannot be dispelled.
         \subcf{8th -- Ki-Disrupting Strike}
         As an immediate action, when the monk hits with a melee strike, she can make the struck creature \impaired with all actions for 2 rounds.
