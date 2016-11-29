@@ -136,6 +136,7 @@ Some strike feats instead require a specific action to use.
         \featref{Iron Will} & Int 3 or Wil 3 & \plus2 to Mental defense           & \tdash & \featpref{Iron Will} \\
         \featref{Lifebound} & Con 10 & Immune to hostile Life and Death effects   & \tdash & \featpref{Lifebound} \\
         \featref{Lightning Reflexes} & Dex 3 or Per 3 &  \plus2 to Reflex defense & \tdash & \featpref{Lightning Reflexes} \\
+        \featref{Logical Mind} & Int 10 & Concentrate to negate \glossterm{Mind} effects & \tdash & \featpref{Logical Mind} \\
         \featref{Natural Spellgift} & 2nd level, Wil 1 & Gain natural spell as spell-like ability & Spellgift & \featpref{Natural Spellgift} \\
         \featref{Perfect Health} & Con 3 & Immune to disease, later poison        & \tdash & \featpref{Perfect Health} \\
         \featref{Pierce Delusions} & Per 5 & Immune to Delusion effects          & \tdash & \featpref{Pierce Delusions} \\
@@ -168,6 +169,7 @@ Some strike feats instead require a specific action to use.
 
         \midrule
         \tb{Class Feats}\label{cap:Class Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
+        \featref{All Energy Becomes One} & Monk 5, Con 3, manifest \ki & Gain \ki points from energy damage & \tdash & \featpref{All Energy Becomes One} \\
         \featref{Arcane Resilience}     & Sorcerer 5                        & Gain damage reduction against arcane spells & \tdash & \featpref{Arcane Resilience} \\
         \featref{Battlemaster}          & Fighter 10, Int 5                 & Grant ally a combat feat & Combat & \featpref{Battlemaster} \\
             \tind \featref{Lord of Battle} & Battlemaster, Int 10, fighter 16 & Grant ally two combat feats & Combat & \featpref{Lord of Battle} \\
@@ -183,6 +185,8 @@ Some strike feats instead require a specific action to use.
         \featref{Extra Domain Invocation} & Cleric 5, domain invocation & Gain domain invocation from additional domain & \tdash & \featpref{Extra Domain Gift} \\
         \featref{Extra Domain Gift} & Cleric 3, domain gift & Gain domain gift from additional domain & \tdash & \featpref{Extra Domain Gift} \\
         \featref{Extra Domain Spell} & Cleric 5, domain spell & Gain additional domain spell & \tdash & \featpref{Extra Domain Spell} \\
+        \featref{Extra Natural Aspect} & Druid 15, natural aspect & Gain additional wild aspect & \tdash & \featpref{Extra Natural Aspect} \\
+        \featref{Extra Wild Aspect} & Druid 5, wild aspect & Gain additional wild aspect & \tdash & \featpref{Extra Wild Aspect} \\
         \featref{Favored Servant} & Cleric 11, intercession & Can request additional intercession & \tdash & \featpref{Favored Servant} \\
         \featref{Insightful Fighter}    & Adaptive style                    & Use Perception for fighter abilities & \tdash & \featpref{Insightful Fighter} \\
         \featref{Insightful Rogue}      & Combat trick                      & Use Perception for combat tricks & \tdash & \featpref{Insightful Rogue} \\
@@ -425,6 +429,7 @@ The table of combat feats is organized according to the combat prowess each feat
         \featref{Legendary Unarmed Warrior} & Unarmed Dodge, Unarmed Might, Unarmed Proficiency & Unarmed attacks are incredibly strong & \tdash & \featpref{Legendary Unarmed Warrior} \\
         \featref{Patient Strike} & Int 10 & Bonus damage if you are not attacked & Reaction, Strike & \featpref{Patient Strike} \\
         \featref{Penetrating Strike} & \tdash & Attack removes foe's damage reduction & Strike & \featpref{Penetrating Strike} \\
+        \featref{Predictive Defense} & Int 10 & Use Intelligence for physical defenses & Awareness, Defense & \featpref{Predictive Defense} \\
         \featref{Staggering Strike} & \tdash & Attack staggers foe & Strike & \featpref{Staggering Strike} \\
 
         \midrule
@@ -443,31 +448,31 @@ The table of combat feats is organized according to the combat prowess each feat
 \begin{longtabuwrapper}
     \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{8em} >{\lcol}p{3em}}
         \tb{Style Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
-        \featref{Blind-Fight} & Perception 3 & Fight better when unable to see & Awareness, Style & \featpref{Blind-Fight} \\
+        \featref{Blind-Fight} & Per 3 & Fight better when unable to see & Awareness, Style & \featpref{Blind-Fight} \\
         \featref{Defensive Fighting} & \tdash & Gain bonus to physical defenses & Defense, Style & \featpref{Defensive Fighting} \\
         \featref{Distracting Foe} & \tdash & Threatened foes suffer Concentration penalties & Reaction, Style & \featpref{Distracting Foe} \\
-        \featref{Eye of the Storm} & Per 5 & Reduce overwhelm penalties & Awareness, Defense, Style & \featpref{Eye of the Storm} \\
         \featref{Guardian} & \tdash & Adjacent allies suffer reduced overwhelm penalties & Defense, Style & \featpref{Guardian} \\
         \featref{Overpowering Assault} & Str 3 & Trade defense for maneuver accuracy & Power, Style & \featpref{Overpowering Assault} \\
         \featref{Overwhelming Fire} & Dex 3 & Overwhelm foes with ranged weapons & Style & \featpref{Overwhelming Fire} \\
         \featref{Parry} & Dex 3 & Ready yourself to parry incoming blows & Defense, Reaction, Style & \featpref{Parry} \\
             \tind \featref{Shielded Parry} & Shield proficiency, Parry & Add shield bonus to parry attempts & Defense, Reaction & \featpref{Shielded Parry} \\
             \tind \featref{Riposte} & Parry & Foes are defenseless if you parry very well & Reaction & \featpref{Riposte} \\
-        \featref{Point Blank Shot} & \tdash &  \plus2 bonus to ranged accuracy within half range increment & Precision, Style & \featpref{Point Blank Shot} \\
+        \featref{Point Blank Shot} & \tdash &  \plus2 bonus to ranged damage against close foes & Precision, Style & \featpref{Point Blank Shot} \\
 
         \midrule
         \tb{Style Feats} & \tb{Prerequisites (Prowess 4)} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
         \featref{Covering Fire} & \tdash & Impair struck foes & Precision, Style & \featpref{Covering Fire} \\
-        \featref{Deadly Aim} & Per 5 & Trade accuracy for ranged damage & Precision & \featpref{Deadly Aim} \\
-        \featref{Power Attack} & Str 5 & Trade acccuracy for melee damage & Power & \featpref{Power Attack} \\
+        \featref{Deadly Aim} & Per 5 & Gain \plus2 ranged damage & Precision & \featpref{Deadly Aim} \\
+        \featref{Eye of the Storm} & Per 5 & Reduce overwhelm penalties & Awareness, Defense, Style & \featpref{Eye of the Storm} \\
+        \featref{Power Attack} & Str 5 & Gain \plus2 melee damage & Power & \featpref{Power Attack} \\
         \featref{Precise Shot} & Per 5 & Ignore less than perfect cover and concealment & Precision, Style & \featpref{Precise Shot} \\
-        \featref{Predictive Defense} & Int 5 & Use Intelligence for defenses & Awareness, Defense, Style & \featpref{Predictive Defense} \\
         \featref{Reckless Attack} & \tdash & Trade ability to defend yourself for damage & Power, Style & \featpref{Reckless Attack} \\
 
         \midrule
         \tb{Style Feats} & \tb{Prerequisites (Prowess 8)} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
         \featref{Heartseeker} & \tdash & Increase critical range & Precision, Style & \featpref{Heartseeker} \\
         \featref{Inescapable} & \tdash & Enemies you are blocking cannot move & Reaction, Style & \featpref{Inescapable} \\
+        \featref{Precise Fighting} & Per 5 & Trade damage for accuracy bonus & Precision, Style & \featpref{Precise Fighting} \\
         \featref{Spring Attack} & Dex 5, Combat Mobility & Move before and after attacks & Mobility, Style & \featpref{Spring Attack} \\
         \featref{Threatening Fire} & Dex 5, Overwhelming Fire & Threaten adjacent creatures with a ranged weapon & Reaction, Style & \featpref{Threatening Fire} \\
 
@@ -478,6 +483,7 @@ The table of combat feats is organized according to the combat prowess each feat
         \midrule
         \tb{Style Feats} & \tb{Prerequisites (Prowess 16)} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
         \featref{Counterstorm} & Per 15 & Gain bonuses against foes that miss you & Awareness, Reaction, Style & \featpref{Counterstorm} \\
+        \featref{Reflexive Dodge} & Dex 15 & Dodge physical attacks automatically & Reaction, Style & \featpref{Reflexive Dodge} \\
     \end{longtabu}
 \end{longtabuwrapper}
 
@@ -507,6 +513,11 @@ Additional facts about the feat that may be helpful when you decide whether to a
 \featpres Rage ability, combat prowess 8.
 \featben When you enter a rage, you can use this feat. If you do, during the rage you gain a \plus30 foot bonus to speed in all your movement modes, up to a maximum of double your original speed in that mode.
 \parhead{Special} You can only gain the benefit of one Rage feat at a time.
+
+\feat{All Energy Becomes One}{Monk}
+\featpre Monk 5, Constitution 3, manifest \ki ability.
+\featben Whenever you take \glossterm{energy damage} in excess of your \ki power, you can spend an \glossterm{immediate action} to channel the energy into your body.
+If you do, you recover one \ki point.
 
 \feat{Arcane Resilience}{Class}
 \featpre Sorcerer level 5.
@@ -758,7 +769,7 @@ You can move through that creature's space this phase, treating it as difficult 
 
 \feat{Covering Fire}{Combat, Style}
 \featpres Combat prowess 4.
-\featben While in this style, if you hit a creature with a physical ranged attack, it is \impaired with physical attacks for 1 round.
+\featben While in this style, if you hit a creature with a physical ranged attack, it is \impaired with physical attacks for 2 rounds.
 \stylereq Wield a ranged weapon.
 
 \feat{Counterspell}{Magic}
@@ -806,9 +817,7 @@ You cannot mend a destroyed magic item.
 
 \feat{Deadly Aim}{Combat, Precision, Style}
 \featpres Perception 5, combat prowess 4.
-\featben You gain a \plus2 bonus to physical ranged damage rolls.
-In exchange, you take a \minus2 penalty to physical ranged accuracy.
-This bonus increases by \plus1 for each strike you can make per round beyond the first.
+\featben You gain a \plus2 bonus to damage with physical ranged attacks.
 
 \feat{Defensive Fighting}{Combat, Defense, Style}
 \featben While in this style, you gain a \plus2 bonus to your physical defenses.
@@ -1065,7 +1074,7 @@ You can activate them both as part of the same action (if they require the same 
 
 \feat{Eye of the Storm}{Awareness, Combat, Defense, Style}
 \featpres Perception 5, combat prowess 4.
-\featben You reduce your overwhelm penalties by 1.
+\featben You reduce your \glossterm{overwhelm penalties} by 1.
 This penalty reduction increases to 2 at Perception 10, and to 3 at Perception 20.
 If your overwhelm penalty is reduced to 0, you are not considered to be overwhelmed.
 \featpre Wield a melee weapon.
@@ -1120,6 +1129,16 @@ You gain the benefits of that domain invocation.
 \featpres Cleric level 5, domain spell ability.
 \featben You gain an additional domain spell of your choice.
 The spell must meet all normal limitations on which spells you can choose as domain spells.
+
+\feat{Extra Natural Aspect}{Class}
+\featpres Druid level 15, natural aspect ability.
+\featben You gain an additional natural aspect of your choice.
+The aspect must meet all normal limitations on which natural aspects you can choose.
+
+\feat{Extra Wild Aspect}{Class}
+\featpres Druid level 5, wild aspect ability.
+\featben You gain an additional wild aspect of your choice.
+The aspect must meet all normal limitations on which wild aspects you can choose.
 
 \feat{Extraordinary Sense}{Skill}
 \featpre Awareness 10 ranks.
@@ -1700,6 +1719,12 @@ Use the highest numerical value among the character's base classes for each stat
 \parhead{Special} This feat can be taken multiple times. Its effects stack.
 You may take this feat a maximum number of times equal to half your Dexterity or half your Perception, whichever is higher.
 
+\feat{Logical Mind}{General}
+\featpre Intelligence 10.
+\featben As a standard action, you can concentrate to ensure your thoughts are unclouded by irrational influences.
+If you do, you dispel all \glossterm{Mind} effects that are affecting you.
+This has no effect on effects that cannot be dispelled.
+
 \feat{Lord of Battle}{Class, Combat}
 \featpres Fighter level 16, battlemaster ability, Intelligence 10.
 \featben When using your battlemaster ability, you can grant two feats instead of one.
@@ -1923,7 +1948,7 @@ If the foe takes the type of action you predicted, your attack deals quintuple d
 If the foe takes an action that fits into multiple action types, use all that apply.
 
 \feat{Point Blank Shot}{Combat, Precision, Style}
-\featben While in this style, you gain a \plus2 bonus to accuracy with physical ranged attacks when attacking targets within half of your range increment.
+\featben While in this style, you gain a \plus2 bonus to damage with physical ranged attacks if your target is within half of your \glossterm{range increment}.
 \stylereq Wield a ranged weapon.
 
 \feat{Poison Expert}{Skill}
@@ -1933,9 +1958,14 @@ In addition, you cannot accidentally poison yourself while applying poison to an
 
 \feat{Power Attack}{Combat, Power, Style}
 \featpres Str 5, combat prowess 4.
-\featben You gain a \plus2 bonus to physical melee damage rolls.
-In exchange, you take a \minus2 penalty to accuracy with physical melee attacks.
-This bonus increases by \plus1 for each strike you can make per round beyond the first.
+\featben While in this style, you gain a \plus2 bonus to damage with physical melee attacks.
+\stylereq Wield a melee weapon.
+
+\feat{Precise Fighting}{Combat, Precision, Style}
+\featpres Perception 5, combat prowess 8.
+\featben While in this style, you gain a \plus2 bonus to accuracy with \glossterm{physical attacks}.
+In exchange, you take a \minus4 penalty to damage with physical attacks (to a minimum of 1).
+\stylereq None.
 
 \feat{Precise Shot}{Combat, Precision, Style}
 \featpres Perception 5, combat prowess 4.
@@ -1943,11 +1973,9 @@ This bonus increases by \plus1 for each strike you can make per round beyond the
 In addition, when you shoot or throw ranged weapons at a grappling opponent, you automatically strike at the opponent you have chosen.
 \stylereq Wield a ranged weapon.
 
-\feat{Predictive Defense}{Awareness, Combat, Defense, Style}
-\featpres Intelligence 5, combat prowess 4.
-\featben You can use your Intelligence to determine your Armor defense in place of your Dexterity or Constitution.
-\stylereq Wield a melee weapon.
-You must make a physical attack or take the total defense action each round.
+\feat{Predictive Defense}{Awareness, Combat, Defense}
+\featpres Intelligence 10, combat prowess 12.
+\featben You can use your Intelligence to determine your \glossterm{physical defenses} in place of your other attributes.
 
 \feat{Quick Draw}{Combat}
 \featben You can draw light weapons as a free action and medium weapons as a swift action.
@@ -2009,6 +2037,14 @@ In exchange, you gain a \plus2 bonus to damage with melee attacks.
 \feat{Recover Performance}{Performance, Skill}
 \featpres Perform 11 ranks, any other Performance feat.
 \featben If you fail the Perform check to use a Performance feat, you can reroll the Perform check as an immediate action.
+
+\feat{Reflexive Dodge}{Combat, Reaction, Style}
+\featpres Combat prowess 18, Dexterity 15.
+\featben While in this style, you can dodge attacks more easily.
+Whenever you are hit by a \glossterm{physical attack}, but before the effects of the attack are resolved, you can dodge it as a \glossterm{immediate action}.
+If you do, the attack misses automatically, and you ignore its effects.
+You must be aware of the attack to negate it in this way.
+\stylereq None.
 
 \feat{Resilient Magic}{Magic}
 \featpre 3rd level or higher Thaumaturgy spell known.
