@@ -36,7 +36,7 @@ Each character is proficient with different weapon groups. These indicate the we
 \subsection{Weapon Encumbrance}
 This is a measure of how much effort it takes to wield a weapon in combat. A weapon's encumbrance indicates whether a melee weapon, when wielded by a character of the weapon's size category, is considered a light weapon, a medium weapon, or a heavy weapon.
 
-\parhead{Light} A light weapon can be used with more finesse than a medium weapon. The wielder can use Dexterity to attack with the weapon (in place of Strength and combat prowess). In addition, light weapons are easier to use while dual attacking (see \pcref{Dual Attacking}) or while grappling.
+\parhead{Light} A light weapon can be used with more finesse than a medium weapon. The wielder can use Dexterity to attack with the weapon (in place of Strength and combat prowess). In addition, light weapons are easier to use while dual attacking (see \pcref{Dual Attacking}) or while grappling. Light weapons cannot be held in two hands.
 
 \parhead{Medium} A medium weapon can be used in one hand. You can also hold a medium weapon in two hands. Changing grips to hold it in one hand or two hands can be done as a move action.
 
@@ -127,12 +127,11 @@ Large weapons.
 \parhead{Special} Some weapons have special properties. See the weapon
 descriptions for details.
 
-\begin{dtable!*}
-    \lcaption{Weapons}
-    \begin{dtabularx}{\textwidth}{p{12em} c c >{\ccol}p{10em} c c >{\ccol}X}
-        \tb{Weapons} & \tb{Encumbrance} & \tb{Damage} & \tb{Damage Type\fn{1}} & \tb{Cost} & \tb{Weight\fn{2}} & \tb{Special} \\
-        \hline
-
+\onecolumn
+\begin{longtabuwrapper}
+    \begin{longtabu}{p{12em} c c >{\ccol}p{10em} c c >{\ccol}X}
+        \lcaption{Weapons}\\
+        \tb{Name} & \tb{Encumbrance} & \tb{Damage} & \tb{Damage Type\fn{1}} & \tb{Cost} & \tb{Weight\fn{2}} & \tb{Special} \\
         Armor weapons &&&&&& \\
         \tind Shield, heavy\fn{3} & Medium & 1d4 & Bludgeoning & special & special & Forceful \\
         \tind Shield, light\fn{3} & Light & 1d3 & Bludgeoning & special & special & Forceful \\
@@ -184,13 +183,6 @@ descriptions for details.
         \tind Flail  & Medium & 1d8 & Bludgeoning & 8 gp & 5 lb. & Disarming, Tripping \\
         \tind Flail, heavy & Heavy & 1d10\plus1 & Bludgeoning & 15 gp & 10 lb. & Disarming, Tripping \\
 
-    \end{dtabularx}
-\end{dtable!*}
-
-\begin{dtable!*}
-    \begin{dtabularx}{\textwidth}{p{12em} c c >{\ccol}p{10em} c c >{\ccol}X}
-        \tb{Weapons} & \tb{Encumbrance} & \tb{Damage} & \tb{Damage Type\fn{1}} & \tb{Cost} & \tb{Weight\fn{2}} & \tb{Special} \\
-        \hline
         Headed weapons &&&&&& \\
         \tind Hammer, light & Light & 1d4 & Bludgeoning & 1 gp & 2 lb. & Throwing (20 ft.) \\
         \tind Pick, heavy & Medium & 1d8 & Piercing & 8 gp & 6 lb. & Unbalanced \\
@@ -243,8 +235,9 @@ descriptions for details.
         \tind Gauntlet & Light & 1d3 & Bludgeoning & 2 gp & 1 lb. & Unarmed \\
         \tind Gauntlet, spiked & Light & 1d4 & Piercing & 5 gp & 1 lb. & Unarmed \\
         \tind Unarmed strike & Light & 1d3 & Bludgeoning & \tdash & \tdash & Nonlethal, Unarmed \\
-    \end{dtabularx}
-\end{dtable!*}
+    \end{longtabu}
+\end{longtabuwrapper}
+\twocolumn
 
 \begin{dtable!*}
     \begin{dtabularx}{\textwidth}{p{12em} c c >{\ccol}p{10em} c c >{\ccol}X}
