@@ -176,8 +176,13 @@ Some strike feats instead require a specific action to use.
         \featref{Charming Wild Speech}  & Wild speech, druid 7              & Charm target with wild speech & \tdash & \featpref{Charming Wild Speech} \\
             \tind \featref{Dominating Wild Speech}  & Charming Wild Speech, druid 15       & Dominate target with wild speech & \tdash & \featpref{Dominating Wild Speech} \\
         \featref{Divine Health}         & Paladin 3                         & Immune to poison and disease & \tdash & \featpref{Divine Health} \\
+        \featref{Domain Spell Flexibility} & Domain spell & Can choose any spell as a domain spell & \tdash & \featpref{Domain Spell Flexibility} \\
         \featref{Elemental Speech}      & Wild speech, druid 9              & Speak with an element & \tdash & \featpref{Elemental Speech} \\
         \featref{Extra Ability}         & Class ability with limited uses   & Gain additional uses of class ability & \tdash & \featpref{Extra Ability} \\
+        \featref{Extra Domain Aspect} & Cleric 9, domain aspect & Gain domain aspect from additional domain & \tdash & \featpref{Extra Domain Gift} \\
+        \featref{Extra Domain Invocation} & Cleric 5, domain invocation & Gain domain invocation from additional domain & \tdash & \featpref{Extra Domain Gift} \\
+        \featref{Extra Domain Gift} & Cleric 3, domain gift & Gain domain gift from additional domain & \tdash & \featpref{Extra Domain Gift} \\
+        \featref{Favored Servant} & Cleric 11, intercession & Can request additional intercession & \tdash & \featpref{Favored Servant} \\
         \featref{Insightful Fighter}    & Adaptive style                    & Use Perception for fighter abilities & \tdash & \featpref{Insightful Fighter} \\
         \featref{Insightful Rogue}      & Combat trick                      & Use Perception for combat tricks & \tdash & \featpref{Insightful Rogue} \\
         \featref{Legendary Versatility} & 5 levels in two classes           & Treat multiple classes as base classes & \tdash & \featpref{Legendary Versatility} \\
@@ -196,6 +201,7 @@ Some strike feats instead require a specific action to use.
         \featref{Wild Substitution}     & Wild magic, sorcerer 7            & Miscasting removes access to lower level spells & \tdash & \featpref{Wild Substitution} \\
         \featref{Wild Suppression}     & Wild magic, sorcerer 3            & Suppress spell instead of miscasting it & \tdash & \featpref{Wild Suppression} \\
         \featref{Versatility}           & Levels in two different classes   & Increase effective class level with abilities & \tdash & \featpref{Versatility} \\
+        \featref{War Priest} & Cleric 7, devotion & \plus2 to physical damage & Power & \featpref{War Priest} \\
 
         \midrule
         \tb{Magic Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
@@ -871,8 +877,13 @@ Each time, you choose a new spell to gain as a spell-like ability.
 All spellgift feats you have use the same pool of spellgift points.
 The number of spellgift feats you have cannot exceed your Willpower.
 
+\feat{Domain Spell Flexibility}{Class}
+\featpre Domain spell ability.
+\featben You may choose spells from the divine spell list as a domain spell in addition to spells from your domains.
+This does not change the maximum spell level you may choose from.
+
 \feat{Dominating Wild Speech}{Class}
-\featpres Wild speech ability, Charming Wild Speech, druid level 15
+\featpres Wild speech ability, Charming Wild Speech, druid level 15.
 \featben When you use your Charming Wild Speech ability, if the attack succeeds, you can choose for the target to be \dominated instead of charmed.
 
 \feat{Draconic Breath}{Bloodline, Dragon}
@@ -1091,6 +1102,21 @@ Choose a class ability with limited uses.
     \end{dtabularx}
 \end{dtable}
 
+\feat{Extra Domain Aspect}{Class}
+\featpres Cleric level 9, domain aspect ability.
+\featben Choose a domain aspect from another domain offered by your deity.
+You gain the benefits of that domain aspect.
+
+\feat{Extra Domain Gift}{Class}
+\featpres Cleric level 3, domain gift ability.
+\featben Choose a domain gift from another domain offered by your deity.
+You gain the benefits of that domain gift.
+
+\feat{Extra Domain Invocation}{Class}
+\featpres Cleric level 5, domain invocation ability.
+\featben Choose a domain invocation from another domain offered by your deity.
+You gain the benefits of that domain invocation.
+
 \feat{Extraordinary Sense}{Skill}
 \featpre Awareness 10 ranks.
 \featben You gain one of the following senses: \glossterm{blindsense} (20 ft.), \glossterm{darkvision} (50 ft.), \glossterm{scent}, or \glossterm{tremorsense} (20 ft.).
@@ -1124,6 +1150,10 @@ This is a \glossterm{Compulsion}, \glossterm{Mind} effect.
 \parhead{Special}
 You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have.
 If you fail the Perform check, the use of the ability is wasted.
+
+\feat{Favored Servant}{Class}
+\featpres Cleric 11, intercession ability.
+\featben You can request an additional intercession each day.
 
 \feat{Fearsome Rage}{Rage}
 \featpres Rage ability, combat prowess 12.
@@ -1714,7 +1744,7 @@ You may still cast only one spell, but it is used to counter the spells cast by 
 
 \feat{Mighty Blows}{Combat, Power}
 \featpres Str 3.
-\featben You gain a \plus1 bonus to physical damage rolls.
+\featben You gain a \plus1 bonus to damage with \glossterm{physical attacks}.
 \parhead{Special} This feat can be taken multiple times. Its effects stack.
 You may take this feat a maximum number of times equal to half your Strength.
 
@@ -2397,6 +2427,10 @@ This ability works on any wall with \glossterm{hardness} no greater than your St
 \featben As a standard action, you can attempt to \glossterm{shove} a creature.
 If you shove the target into a solid obstacle, it takes 1d6 bludgeoning damage per Strength.
 
+\feat{War Priest}{Class}
+\featpres Cleric level 7, devotion ability.
+\featben As long as you have at least one devotion point remaining, you gain a \plus2 bonus to damage with \glossterm{physical attacks}.
+
 \feat{Wardwalker}{Magic}
 \featpre 3rd level or higher \glossterm{Warding} spell known.
 \featben When you trigger a Warding spell, it does not take effect until one round after you triggered it. This can give you time to escape the spell's effects.
@@ -2434,8 +2468,8 @@ Its effects do not stack.
 Each time, you choose a different weapon group.
 
 \feat{Weapon Finesse}{Combat, Finesse}
-\featpres Dexterity 3
-\featben You gain a \plus1 bonus to physical damage with light weapons.
+\featpre Dexterity 3.
+\featben You gain a \plus1 bonus to damage with \glossterm{physical attacks} using light weapons.
 \parhead{Special} This feat can be taken multiple times. Its effects stack.
 You may take this feat a maximum number of times equal to half your Dexterity.
 
