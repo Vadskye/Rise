@@ -131,15 +131,17 @@ Some strike feats instead require a specific action to use.
         %\featref{Destructive} & Str 3 & Gain \plus5 to breaking things            & \tdash & \featpref{Destructive} \\
         \featref{Diehard} & Con 5 & Halve penalties from critical damage         & \tdash & \featpref{Diehard} \\
         \featref{Divine Spellgift} & 2nd level, Wil 1 & Gain divine spell as spell-like ability & Spellgift & \featpref{Divine Spellgift} \\
+        \featref{Fast Healing} & Con 15 & Passively heal very quickly & \tdash & \featpref{Fast Healing} \\
         \featref{Fortune's Friend} & Legend point & Use legend points to be lucky  & \tdash & \featpref{Fortune's Friend} \\
         \featref{Item Conduit} & 5th level & Gain \plus2 daily item uses & \tdash & \featpref{Item Conduit} \\
         \featref{Iron Will} & Int 3 or Wil 3 & \plus2 to Mental defense           & \tdash & \featpref{Iron Will} \\
-        \featref{Lifebound} & Con 10 & Immune to hostile Life and Death effects   & \tdash & \featpref{Lifebound} \\
+        \featref{Lifebound} & Con 10 & Immune to hostile \glossterm{Life} and \glossterm{Death} effects   & \tdash & \featpref{Lifebound} \\
         \featref{Lightning Reflexes} & Dex 3 or Per 3 &  \plus2 to Reflex defense & \tdash & \featpref{Lightning Reflexes} \\
         \featref{Logical Mind} & Int 10 & Concentrate to negate \glossterm{Mind} effects & \tdash & \featpref{Logical Mind} \\
+        \featref{Mental Fortress} & Wil 15 & Immune to \glossterm{Mind} effects & \tdash & \featpref{Mental Fortress} \\
         \featref{Natural Spellgift} & 2nd level, Wil 1 & Gain natural spell as spell-like ability & Spellgift & \featpref{Natural Spellgift} \\
         \featref{Perfect Health} & Con 3 & Immune to disease, later poison        & \tdash & \featpref{Perfect Health} \\
-        \featref{Pierce Delusions} & Per 5 & Immune to Delusion effects          & \tdash & \featpref{Pierce Delusions} \\
+        \featref{Pierce Delusions} & Per 5 & Immune to \glossterm{Delusion} effects          & \tdash & \featpref{Pierce Delusions} \\
         %\featref{Rapid Recovery} & Con 3 & Naturally heal quickly & \tdash & \featpref{Rapid Recovery} \\
         \featref{Stubborn} & Wil 5 & Immune to Compulsion effects                 & \tdash & \featpref{Stubborn} \\
         \featref{Swift} & \tdash & Increase speed by 5 feet                           & Mobility & \featpref{Swift} \\
@@ -263,7 +265,7 @@ Some strike feats instead require a specific action to use.
         \featref{Fascinating Performance} & Perform 5 ranks & Fascinate creatures & Skill & \featpref{Fascinating Performance} \\
             \tind \featref{Suggestive Performance} & Perform 13 ranks, Fascinating Performance & Suggest action to fascinated creatures & Skill & \featpref{Suggestive Performance} \\
         \featref{Inspire Competence} & Perform 5 ranks  & Grant allies offensive legend point & Skill & \featpref{Inspire Competence} \\
-        \featref{Inspire Courage} & Perform 9 ranks  & Grant allies temporary hit points, immunity to fear & Skill & \featpref{Inspire Courage} \\
+        \featref{Inspire Courage} & Perform 7 ranks  & Grant allies temporary hit points & Skill & \featpref{Inspire Courage} \\
         \featref{Inspire Resilience} & Perform 13 ranks  & Grant allies damage reduction, defensive legend point & Skill & \featpref{Inspire Resilience} \\
         \featref{Inspire Mastery} & Perform 17 ranks  & Grant allies legend points every round & Skill & \featpref{Inspire Mastery} \\
         \featref{Inspire Serenity} & Perform 13 ranks  & Dispel magical effects on ally & Skill & \featpref{Inspire Serenity} \\
@@ -433,11 +435,13 @@ The table of combat feats is organized according to the combat prowess each feat
         \featref{Staggering Strike} & \tdash & Attack staggers foe & Strike & \featpref{Staggering Strike} \\
 
         \midrule
-        \tb{Combat Feats} & \tb{Prerequisites (Prowess 18)} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
+        \tb{Combat Feats} & \tb{Prerequisites (Prowess 16)} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
         \featref{Executioner} & Any three Reaction feats & Gain free strikes against foes near death & Reaction & \featpref{Executioner} \\
-        \featref{Hurricane Strike} & Dex 15, Whirlwind Strike & Two melee strikes against all threatened foes & Strike & \featpref{Hurricane Strike} \\
+        \featref{Hurricane Strike} & Dex 15, Whirlwind Strike & Make two strikes against all threatened foes & Strike & \featpref{Hurricane Strike} \\
         \featref{Immobilizing Strike} & \tdash & Melee attack immobilizes foe & Strike & \featpref{Immobilizing Strike} \\
         \featref{Predictive Strike} & Int 15 & Bonus damage if foe takes predicted action & Reaction, Strike & \featpref{Predictive Strike} \\
+        \featref{Supreme Prediction} & Int 15, Tactical Prediction & Predict foe's next action & Awareness & \featpref{Supreme Prediction} \\
+        \featref{Supreme Power} & Str 15 & \plus2 to physical damage & Power & \featpref{Supreme Power} \\
     \end{longtabu}
     1. You can gain this feat multiple times. Each time you do, it has a different effect. \\
     2. You can gain this feat multiple times. Its effects stack. \\
@@ -448,7 +452,7 @@ The table of combat feats is organized according to the combat prowess each feat
 \begin{longtabuwrapper}
     \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{8em} >{\lcol}p{3em}}
         \tb{Style Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
-        \featref{Blind-Fight} & Per 3 & Fight better when unable to see & Awareness, Style & \featpref{Blind-Fight} \\
+        \featref{Blind-Fight} & Per 3 & Fight better while unable to see & Awareness, Style & \featpref{Blind-Fight} \\
         \featref{Defensive Fighting} & \tdash & Gain bonus to physical defenses & Defense, Style & \featpref{Defensive Fighting} \\
         \featref{Distracting Foe} & \tdash & Threatened foes suffer Concentration penalties & Reaction, Style & \featpref{Distracting Foe} \\
         \featref{Guardian} & \tdash & Adjacent allies suffer reduced overwhelm penalties & Defense, Style & \featpref{Guardian} \\
@@ -479,11 +483,13 @@ The table of combat feats is organized according to the combat prowess each feat
         \midrule
         \tb{Style Feats} & \tb{Prerequisites (Prowess 12)} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
         \featref{Legendary Style} & Any three Style feats & Use two styles at once & \tdash & \featpref{Legendary Style} \\
+        \featref{Pierce Defenses} & Per 10 & Ignore damage reduction and hardness & Precision, Style & \featpref{Pierce Defenses} \\
 
         \midrule
         \tb{Style Feats} & \tb{Prerequisites (Prowess 16)} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
         \featref{Counterstorm} & Per 15 & Gain bonuses against foes that miss you & Awareness, Reaction, Style & \featpref{Counterstorm} \\
         \featref{Reflexive Dodge} & Dex 15 & Dodge physical attacks automatically & Reaction, Style & \featpref{Reflexive Dodge} \\
+        \featref{Supreme Speed} & Dex 15 & Make extra strike each round & Style & \featpref{Supreme Speed} \\
     \end{longtabu}
 \end{longtabuwrapper}
 
@@ -789,7 +795,7 @@ Metamagic feats and similar spell augmentations are ignored for the purpose of c
 The \spell{dispel magic} spell can be used to counter any spell, even higher level spells.
 
 \feat{Counterstorm}{Awareness, Combat, Reaction, Style}
-\featpres Perception 15, combat prowess 18.
+\featpres Perception 15, combat prowess 16.
 \featben Whenever a foe misses you with a melee attack, you gain a cumulative \plus2 bonus to accuracy and damage on your next melee attack against that creature.
 If this bonus is not used within 1 round, it is lost.
 \stylereq Wield a melee weapon.
@@ -820,7 +826,7 @@ You cannot mend a destroyed magic item.
 \featben You gain a \plus2 bonus to damage with physical ranged attacks.
 
 \feat{Defensive Fighting}{Combat, Defense, Style}
-\featben While in this style, you gain a \plus2 bonus to your physical defenses.
+\featben While in this style, you gain a \plus2 bonus to your \glossterm{physical defenses}.
 In exchange, you take a \minus2 penalty to your physical accuracy.
 If your Intelligence is at least 5, you take no penalty to accuracy.
 \stylereq Wield a melee weapon. You must make a melee attack or take the total defense action each round.
@@ -1163,6 +1169,11 @@ In addition, you may use your fae power to determine your spellpower with spellg
 \featben When you use a projectile weapon, such as a bow, its range increment increases by one-half (multiply by 1-1/2).
 When you use a thrown weapon, its range increment is doubled.
 
+\feat{Fast Healing}{General}
+\featpre Con 15.
+\featben At the end of every round, you heal hit points equal to your Constitution.
+In addition, you heal \glossterm{critical damage} at a rate of one critical damage per 5 minutes.
+
 \feat{Fascinating Performance}{Performance, Skill}
 \featpre Perform 5 ranks.
 \featben As a standard action, you can make a DR 8 Perform check to fascinate another creature within \rngmed range of you.
@@ -1276,7 +1287,7 @@ You must make a melee attack each round.
 You still need cover or concealment to hide.
 
 \feat{Hurricane Strike}{Combat, Strike}
-\featpres Dex 15, Whirlwind Strike, combat prowess 18.
+\featpres Dex 15, Whirlwind Strike, combat prowess 16.
 \featben As a full-round action, you can make two melee strikes against each foe you threaten. You cannot use Strike feats with these strikes.
 If your Dexterity is at least 20, you can use this feat as a standard action.
 
@@ -1345,7 +1356,7 @@ This is a \glossterm{Mind} effect.
 If you fail the Perform check, the use of the ability is wasted.
 
 \feat{Inspire Courage}{Performance, Skill}
-\featpre Perform 9 ranks.
+\featpre Perform 7 ranks.
 \featben As a standard action, you can make a DR 16 Perform check to inpsire courage in another willing creature within \rngmed range of you.
 For every 5 points by which your Perform check succeeds, you can affect an additional target.
 Each target gains temporary hit points equal to twice your Perform ranks.
@@ -1767,6 +1778,10 @@ You may still cast only one spell, but it is used to counter the spells cast by 
 \featpre 5th level or higher \glossterm{Teleportation} spell known.
 \featben When casting Conjuration (Translocation) spells and rituals which affect multiple creatures, you can affect a number of creatures equal to your spellpower.
 
+\feat{Mental Fortress}{General}
+\featpre Willpower 15.
+\featben You become immune to hostile \glossterm{Mind} effects.
+
 \feat{Mighty Blows}{Combat, Power}
 \featpres Str 3.
 \featben You gain a \plus1 bonus to damage with \glossterm{physical attacks}.
@@ -1917,9 +1932,14 @@ If the weapon leaves your hands or if you cast another spell, the imbuement fade
 
 A persistent spellstrike spell uses up a spell slot two levels higher than the spell's actual level.
 
-\feat{Pierce Delusions}
+\feat{Pierce Delusions}{General}
 \featpre Perception 5.
 \featben You are immune to hostile \glossterm{Delusion} effects.
+
+\feat{Pierce Defenses}{Combat, Precision, Style}
+\featpres Perception 10, combat prowess 12.
+\featben While in this style, your physical attacks ignore all \glossterm{hardness} and \glossterm{damage reduction}.
+\stylereq None.
 
 \feat{Pierce Wings}{Combat, Precision, Strike}
 \featpres Perception 5, combat prowess 8.
@@ -1934,7 +1954,7 @@ This only affects creatures who use wings or other physical means to fly, and ha
 A regular plant's sense of its surroundings is limited, so it won't be able to give (or recognize) detailed descriptions of creatures or answer questions about events outside its immediate vicinity.
 
 \feat{Predictive Strike}{Reaction, Strike}
-\featpres Intelligence 15, combat prowess 18.
+\featpres Intelligence 15, combat prowess 16.
 \featben In place of four strikes, you can make a physical attack.
 You also predict the type of action the foe will take during the current phase:
 \begin{itemize}
@@ -2039,11 +2059,11 @@ In exchange, you gain a \plus2 bonus to damage with melee attacks.
 \featben If you fail the Perform check to use a Performance feat, you can reroll the Perform check as an immediate action.
 
 \feat{Reflexive Dodge}{Combat, Reaction, Style}
-\featpres Combat prowess 18, Dexterity 15.
-\featben While in this style, you can dodge attacks more easily.
-Whenever you are hit by a \glossterm{physical attack}, but before the effects of the attack are resolved, you can dodge it as a \glossterm{immediate action}.
-If you do, the attack misses automatically, and you ignore its effects.
-You must be aware of the attack to negate it in this way.
+\featpres Combat prowess 16, Dexterity 15.
+\featben While in this style, you can dodge attacks with ease.
+Once per round, when you are hit by a \glossterm{physical attack}, you can make the attack miss automatically.
+You must decide which attack misses before the effects of any attacks are resolved, but you know whether it would be a critical hit.
+You must be aware of an attack to negate it in this way.
 \stylereq None.
 
 \feat{Resilient Magic}{Magic}
@@ -2246,6 +2266,20 @@ If this distance is exceeded, or if you become unconscious, you lose your connec
 
 You can only connect to one spell in this way at once.
 If you use this ability with another Summoning spell, the connection to the previous spell is broken.
+
+\feat{Supreme Power}{Combat, Power}
+\featpres Strength 15, combat prowess 16.
+\featben You gain a \plus2 bonus to damage with physical attacks.
+
+\feat{Supreme Prediction}{Awareness, Combat}
+\featpres Intelligence 15, combat prowess 16, Tactical Prediction.
+\featben When you attempt to predict a creature's actions with the Tactical Prediction feat, you automatically succeed.
+
+\feat{Supreme Speed}{Combat, Style}
+\featpres Dexterity 15, combat prowess 16.
+\featben While in this style, whenever you make a \glossterm{standard attack}, you may make an additional \glossterm{strike}.
+This does not stack with other effects that grant extra strikes.
+\stylereq None.
 
 \feat{Sustained Spell}{Metamagic}
 \featpre 2nd level spell known.
