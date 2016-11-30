@@ -1304,21 +1304,21 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} >{\lcol}X}
             \tb{Level} & \tb{Combat Prowess} & \tb{Special} \\
             \hline
-            \fighterprogressionrow{1}   & Advanced training, armor discipline \\
+            \fighterprogressionrow{1}   & Advanced training, weapon discipline \\
             \fighterprogressionrow{2}   & Combat feat                         \\
-            \fighterprogressionrow{3}   & Weapon discipline                   \\
+            \fighterprogressionrow{3}   & Armor discipline                   \\
             \fighterprogressionrow{4}   & Adaptive combat                     \\
             \fighterprogressionrow{5}   & Combat discipline                   \\
             \fighterprogressionrow{6}   & Combat feat                         \\
-            \fighterprogressionrow{7}   & Improved armor discipline           \\
+            \fighterprogressionrow{7}   & Improved weapon discipline           \\
             \fighterprogressionrow{8}   & Adaptive combat                     \\
-            \fighterprogressionrow{9}   & Improved weapon discipline          \\
+            \fighterprogressionrow{9}   & Improved armor discipline          \\
             \fighterprogressionrow{10}  & Combat feat, swift warrior          \\
             \fighterprogressionrow{11}  & Improved combat discipline          \\
             \fighterprogressionrow{12}  & Adaptive combat                     \\
-            \fighterprogressionrow{13}  & Greater armor discipline            \\
+            \fighterprogressionrow{13}  & Greater weapon discipline            \\
             \fighterprogressionrow{14}  & Combat feat                         \\
-            \fighterprogressionrow{15}  & Greater weapon discipline           \\
+            \fighterprogressionrow{15}  & Greater armor discipline           \\
             \fighterprogressionrow{16}  & Adaptive combat                     \\
             \fighterprogressionrow{17}  & Greater combat discipline           \\
             \fighterprogressionrow{18}  & Combat feat                         \\
@@ -1353,12 +1353,13 @@ This choice determines a great deal about your character's abilities.
     \subsection{Class Abilities}
         All fighters have the following abilities.
 
-        \cf{Ftr}{Armor Discipline}
-        A fighter's training grants him additional capability in armor.
-        He must choose to improve his agility or his resilience in armor.
-        This applies to all armor discipline abilities the fighter has.
-        If he improves his agility, he reduces his \glossterm{encumbrance penalty} by 2 and reduces his arcane spell failure by 5\% while wearing body armor.
-        If he improves his resilience, he gains a \plus1 bonus to Armor defense while wearing body armor.
+        \cf{Ftr}{Weapon Discipline}
+        The fighter's training grants him additional capability when using his weapons.
+        He may choose a weapon group, or he may choose to train equally with all weapons.
+        If he chooses a weapon group, he gains a \plus1 bonus to accuracy with weapons from that group.
+
+        If he chooses not to focus on a specific group of weapons, he gains the ability to become proficient with any weapon group if he spends 1 hour training with a weapon from that group.
+        He may only keep this proficiency with one weapon group at a time; if he trains with a new weapon group, he loses his proficiency in the previous group.
 
         \cf{Ftr}[2nd]{Combat Feat}
         The fighter gets a bonus combat-oriented feat.
@@ -1366,13 +1367,17 @@ This choice determines a great deal about your character's abilities.
         He must still meet all prerequisites for the bonus feat.
         He gains an additional bonus feat at his 6th fighter level and every four fighter levels thereafter (6th, 10th, 14th, and 18th).
 
-        \cf{Ftr}[3rd]{Weapon Discipline}
-        The fighter's training grants him additional capability when using his weapons.
-        He may choose a weapon group, or he may choose to train equally with all weapons.
-        If he chooses a weapon group, he gains a \plus1 bonus to accuracy with weapons from that group.
+        \cf{Ftr}{Armor Discipline}
+        A fighter's training grants him additional capability in armor.
+        He must choose to improve his agility or his resilience in armor.
+        This applies to all armor discipline abilities the fighter has.
 
-        If he chooses not to focus on a specific group of weapons, he gains the ability to become proficient with any weapon group if he spends 1 hour training with a weapon from that group.
-        He may only keep this proficiency with one weapon group at a time; if he trains with a new weapon group, he loses his proficiency in the previous group.
+        If he improves his agility, he reduces his \glossterm{encumbrance penalty} by 2 and reduces his arcane spell failure by 10\% while wearing body armor.
+        In addition, he treats all body armor as if it were one encumbrance category lighter than it is whenever doing so would be beneficial for him.
+        Heavy armor is treated as medium armor, medium armor is treated as light armor, and light armor is treated as being unarmored.
+        This can remove the speed reduction and reduced Dexterity associated with the armor's encumbrance, as appropriate for the new encumbrance of the fighter's armor.
+
+        If he improves his resilience, he gains damage reduction against physical damage equal to his character level. This allows him to ignore the first points of damage he would take each round.
 
         \cf{Ftr}[4th]{Adaptive Combat}
         The fighter gains a flexible bonus feat which he can change periodically.
@@ -1433,24 +1438,20 @@ This choice determines a great deal about your character's abilities.
         The lesser condition that this ability imposes may be cured or removed normally, but doing so does not affect the resurgence of the condition the fighter was originally afflicted with.
         If a fighter uses this ability to mitigate or negate a condition which he must suffer as a sacrifice or cost to gain some benefit, he automatically forfeits the benefit he would have gained.
 
-        \cf{Ftr}[7th]{Improved Armor Discipline}
-        The fighter's training with his armor improves.
-        If he chose agility, he reduces his \glossterm{encumbrance penalty} by 4 and decreases his arcane spell failure by 15\%.
-        This does not stack with the effects of armor discipline.
-        In addition, he treats all body armor as if it were one encumbrance category lighter than it is.
-        \par This ability means heavy armor is treated as medium armor, medium armor is treated as light armor, and light armor is treated as being unarmored.
-        This can remove the halving of the fighter's Dexterity bonus, if appropriate for the new encumbrance of the fighter's armor.
-        This allows the fighter to qualify for class abilities using the reduced armor encumbrance category.
-        For example, a fighter 9 / wizard 2 who reduces his encumbrance in light armor could cast spells without any arcane spell failure in light armor.
-
-        If the fighter chose resilience, he gains damage reduction against physical damage equal to his character level. This allows him to ignore the first points of damage he would take each round.
-
-        \cf{Ftr}[9th]{Improved Weapon Discipline}
+        \cf{Ftr}[7th]{Improved Weapon Discipline}
         The fighter's training in his chosen weapons improves.
         He increases the \glossterm{critical multiplier} of his chosen weapons by 1.
         In addition, if he chose a specific weapon group, he gains a \plus10 bonus to resist disarm attempts against his chosen weapons.
         If he did not, he can apply all weapon group-specific feats he has to any weapon group that he trains with for 1 hour.
         He retains this benefit for one week after the training.
+
+        \cf{Ftr}[9th]{Improved Armor Discipline}
+        The fighter's training with his armor improves.
+        If he chose agility, he reduces his \glossterm{encumbrance penalty} by 4 and decreases his arcane spell failure by 20\%.
+        In addition, he treats all body armor as if it were two encumbrance categories lighter than it is whenever doing so is beneficial for him.
+        This does not stack with the benefit of the armor discipline ability.
+
+        If he chose resilience, he may apply his damage reduction from the armor discipline ability against all damage, including from magical attacks.
 
         \cf{Ftr}[10th]{Swift Warrior}
         The fighter can take two swift or immediate actions each round (see \pcref{Swift and Immediate Actions}).
@@ -1462,19 +1463,19 @@ This choice determines a great deal about your character's abilities.
         \par In addition, a fighter may use combat discipline to reduce any penalties he suffers to his accuracy, damage, checks, or defenses by 2, even if the source of the penalty is not listed on the combat discipline chart.
         \par The fighter may also mitigate up to two conditions at once.
 
-        \cf{Ftr}[13th]{Greater Armor Discipline}
-        The fighter's training in his chosen armor becomes still greater.
-        If he chose agility, he reduces his \glossterm{encumbrance penalty} by 6 and decreases his arcane spell failure by 30\% while wearing armor of any kind.
-        In addition, he treats all armor as if it were two encumbrance categories lighter than it actually is whenever doing so would be beneficial to him.
-        This does not stack with the benefits of armor discipline or improved armor discipline.
-
-        If the fighter chose resilience, he may apply his damage reduction against all damage, including from magical attacks.
-
-        \cf{Ftr}[15th]{Greater Weapon Discipline}
+        \cf{Ftr}[13th]{Greater Weapon Discipline}
         The fighter's training in his chosen weapons becomes still greater.
         He increases the \glossterm{critical range} of his chosen weapons by 1.
         This increase stacks with any other effects that affect critical range.
-        Thus, a fighter using the Heartseeker combat style (see \featpcref{Heartseeker}) would have a critical range of 18-20.
+        For example, a fighter using the Heartseeker combat style (see \featpcref{Heartseeker}) would have a critical range of 18-20.
+
+        \cf{Ftr}[15th]{Greater Armor Discipline}
+        The fighter's training in his chosen armor becomes still greater.
+        If he chose agility, he reduces his \glossterm{encumbrance penalty} by 6 and decreases his arcane spell failure by 30\% while wearing armor of any kind.
+        In addition, he treats all body armor as if it were three encumbrance categories lighter than it actually is whenever doing so would be beneficial to him.
+        This does not stack with the benefits of armor discipline or improved armor discipline.
+
+        If he chose resilience, he doubles the damage reduction granted by his armor discipline ability.
 
         \cf{Ftr}[17th]{Greater Combat Discipline}
         The fighter's ability to keep fighting despite influence becomes still greater.
@@ -1488,15 +1489,12 @@ This choice determines a great deal about your character's abilities.
         He must choose either weapon discipline, armor discipline, or combat discipline.
         Depending on which discipline he chooses, he gains a different bonus.
         \subcf{True Weapon Discipline}
-        When the fighter makes a standard attack, he can make an additional strike.
+        When the fighter makes a \glossterm{standard attack}, he can make an additional \glossterm{strike}.
         This does not stack with any other effects which grant extra strikes.
         \subcf{True Armor Discipline}
-        If the fighter chose agility, he no longer suffers armor check penalties or arcane spell failure with any armor.
-        He ignores the encumbrance of all armor, causing him to be treated as unarmored whenever doing so is beneficial to him.
-        In addition, he applies the defense bonus from any body armor he wears to his Reflex defense.
+        If the fighter chose agility, he gains a \plus10 bonus to Reflex defense.
 
-        If the fighter chose resilience, he may apply his Constutition to his Reflex defense in place of his Dexterity while wearing armor of any kind.
-        In addition, he applies the defense bonus from any body armor he wears to his Fortitude defense.
+        If the fighter chose resilience, he gains a \plus10 bonus to Fortitude defense.
         \subcf{True Combat Discipline}
         The fighter can use combat discipline to be \impaired with attacks and checks instead of suffering any nondamaging negative effect with a duration.
         He may also mitigate up to four conditions at once.
