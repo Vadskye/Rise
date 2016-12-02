@@ -68,9 +68,25 @@ You take a \minus4 penalty to accuracy with medium and large ranged weapons agai
 
 \parhead{Thrown Weapons in Melee}\label{Thrown Weapons in Melee} You cannot defend yourself with a weapon you are throwing, which can cause you to be \defenseless. To avoid this, you can attempt to use the weapon as a melee weapon. Some thrown weapon are not designed for use in melee, such as shurikens. When using such a weapon, you are always treated as nonproficient with it, which means you cannot defend yourself with it and do not gain the \plus4 bonus for being proficient with your weapon.
 
-\subsection{Weapon Size} Every weapon has a size category. This designation indicates the size of the creature for which the weapon was designed. Weapons for unusually large creatures deal more damage, while weapons for unusually small creatures deal less damage. These differences are shown on \trefnp{Weapon Damage and Size}.
+\subsection{Weapon Size} Every weapon has a size category. This designation indicates the size of the creature for which the weapon was designed. Weapons for unusually large creatures deal more damage, while weapons for unusually small creatures deal less damage.
 
-In general, every size above Medium increases the size of your damage die by two, while every size below Medium decreases the size of your damage die by one.
+    In general, damage dice increase using the following pattern:
+    \begin{itemize}
+        \item 1d2
+        \item 1d3
+        \item 1d4
+        \item 1d6
+        \item 1d8
+        \item 1d10
+        \item 2d6
+        \item 2d8
+        \item 2d10
+        \item 4d6
+    \end{itemize}
+    If you would increase a pool of damage dice beyond 4d6, simply add one more d6 for each additional increase.
+
+    \parhead{Creature Size Increases}
+    Larger creatures deal more damage with their weapons. Every creature size above Medium increases your damage dice by two increments, while every size below Medium decreases your damage dice by one increment.  These differences are summarized on \trefnp{Weapon Damage and Size}.
 
 \begin{dtable}
     \lcaption{Weapon Damage and Size}
@@ -79,10 +95,10 @@ In general, every size above Medium increases the size of your damage die by two
         \hline
         1d2  & \tdash  & 1   & 1d4  & 1d8  & 2d6  & 2d10  \\
         1d3  & 1   & 1d2 & 1d6  & 1d10 & 2d8  & 4d6  \\
-        1d4  & 1d2 & 1d3 & 1d8  & 2d6  & 2d10 & 4d8 \\
-        1d6  & 1d3 & 1d4 & 1d10 & 2d8  & 4d6  & 4d10  \\
-        1d8  & 1d4 & 1d6 & 2d6  & 2d10 & 4d8  & 8d6  \\
-        1d10 & 1d6 & 1d8 & 2d8  & 4d6  & 4d10 & 8d8 \\
+        1d4  & 1d2 & 1d3 & 1d8  & 2d6  & 2d10 & 5d6 \\
+        1d6  & 1d3 & 1d4 & 1d10 & 2d8  & 4d6  & 6d6  \\
+        1d8  & 1d4 & 1d6 & 2d6  & 2d10 & 5d6  & 7d6  \\
+        1d10 & 1d6 & 1d8 & 2d8  & 4d6  & 6d6  & 8d6 \\
     \end{dtabularx}
 \end{dtable}
 
