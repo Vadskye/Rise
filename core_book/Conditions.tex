@@ -54,6 +54,11 @@ It moves at half speed, cannot sprint or charge, and is \impaired with physical 
 
 \condition{frightened} A frightened creature flees by any means necessary if it is within 30 feet of the source of its fear. If unable to flee, it may fight, but is \severelyimpaired with attacks and checks while doing so.
 
+\condition{goaded} A goaded creature wants to attack the creature that it is goaded by.
+If it is within \rngmed range of the taunting creature, it is \impaired with all attacks that do not directly affect that creature.
+If that creature is rendered \helpless, surrenders, or is otherwise unable to fight, this effect immediately ends.
+The \conditionlink{taunted} condition is a more severe version of this effect.
+
 \condition{grappled} A grappled creature is in wrestling or some other form of hand-to-hand struggle with one or more attackers. While grappled, you suffer certain penalties and restrictions, as described below.
 
 \begin{itemize}
@@ -119,9 +124,10 @@ If the source of fear is a creature and is rendered \helpless, surrenders, or is
 
 \condition{stunned} A stunned creature cannot take actions.
 
-\condition{taunted} A taunted creature is compelled to attack the creature that taunted it.
-It is \impaired with all attacks that do not directly affect the taunting creature.
-If the taunting creature is rendered \helpless, surrenders, or is otherwise unable to fight, this effect is broken.
+\condition{taunted} A taunted creature is compelled to attack the creature that it is taunted by.
+If it is within \rngmed range of the taunting creature, it is \severelyimpaired with all attacks that do not directly affect that creature.
+If that creature is rendered \helpless, surrenders, or is otherwise unable to fight, this effect immediately ends.
+The \conditionlink{goaded} condition is a more severe version of this effect.
 
 \condition{unaware} An unaware creature does not know that it is being attacked. Successful physical attacks against an unaware creature automatically threaten critical hits. After being attacked, an unaware creature typically stops being unaware of future attacks, even if cannot see or identify its attacker.
 
