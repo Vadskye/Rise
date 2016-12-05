@@ -16,7 +16,7 @@ A character's skills describe the myriad of talents that people have.
 
         \subsubsection{Other Skill Points}
 
-            You gain additional skill points equal to half your Intelligence (minimum 0).  Some other abilities, such as the Open Minded feat (page \featpref{Open Minded}), can also grant additional skill points. Unless otherwise noted, these skill points can be spent on any skills.
+            You gain additional skill points equal to half your Intelligence (minimum 0).  Some other abilities, such as the Skill Savant feat (see \featpcref{Skill Savant}), can also grant additional skill points. Unless otherwise noted, these skill points can be spent on any skills.
 
             \parhead{Intelligence Penalties} If your Intelligence is negative, you lose class skill points equal to your Intelligence.
 
@@ -627,10 +627,10 @@ A character's skills describe the myriad of talents that people have.
         Animals are easier to handle than other kinds of creatures. The DRs listed are for animals; the DRs to handle other kinds of creatures are 5 higher.
 
     \subsection{Handling Creatures}
-        You can use Creature Handling to control a creature's actions. Success means it does what you want on its next action. Failure means your action is wasted, and the creature does not listen to you. Exceptional failure may make the creature hostile, depending on the circumstances.
-        \parhead{Pacify} As a standard action, you can make a Creature Handling check against a creature. Your check is opposed by its Mental defense. If you succeed, the creature does nothing for 2 rounds. You take a \minus10 penalty to accuracy on this attack against actively hostile creatures. If the creature is threatened or damaged, this effect is automatically broken. If you interfere with an action the creature is trained to perform while it is pacified, such as entering a room it is trained to guard, you must make another check against it. If you fail or do not attempt the check, the effect is automatically broken. You can attempt to pacify a creature as a swift action by taking a \minus10 penalty on the check.
+        You can use Creature Handling to control a creature's actions. Critical failure with these checks may make the target hostile, depending on the circumstances.
+        \parhead{Pacify} As a standard action, you can make a Creature Handling vs. Mental attack against a creature within \rngmed range. Success means the creature does nothing for 2 rounds. You take a \minus10 penalty to accuracy on this attack against actively hostile creatures. If the creature is threatened or damaged, this effect is automatically broken. If you interfere with an action the creature is trained to perform while it is pacified, such as entering a room it is trained to guard, you must make another attack against it. Failure means the effect is broken.
         \parhead{Perform Trained Action} As a free action, you can make a DR 10 check to convince a creature to perform an action it is trained to perform. Generally, wild animals are not trained in any actions, so this is not effective on them.
-        \parhead{Push} As a standard action, you can make a DR 25 check to convince a willing creature to perform an action it is not trained to perform, but which it is physically capable of performing. This also covers making a creature perform a forced march and similar activities. You can attempt to push a creature as a swift action by taking a \minus10 penalty on the check.
+        \parhead{Push} As a standard action, you can make a DR 25 check to convince a willing creature to perform an action it is not trained to perform, but which it is physically capable of performing. This also covers making a creature perform a forced march and similar activities.
 
     \subsection{Training Creatures}
         You can use Creature Handling to train a creature. Success means the creature learns a trick or becomes domesticated. Failure means your time is wasted, and you must try again. Exceptional failure may indicate that the animal becomes unable to learn the trick, becomes hostile, or other consequences depending on the situation. Training a creature takes a week or more; this requires spending at least four hours each day with the creature. It is not generally possible to accelerate the process by spending more time each day; the creature must take time to learn the new behavior. If the training is interrupted for a week or more, the attempt automatically fails.
@@ -719,7 +719,7 @@ A character's skills describe the myriad of talents that people have.
             1 Per step of difference between your actual age category and your
             disguised age category. The steps are: young, adulthood, middle age, old, and venerable. \\
             2 Per limb. You must have suitable disguise materials available. \\
-            3 You cannot disguise yourself as a different size category without the Legendary Disguise feat (see page \featpref{Legendary Disguise}).
+            3 You cannot disguise yourself as a different size category without the Disguise Mastery feat (see page \featpref{Diguise Mastery}).
         \end{dtable}
 
     \subsection{Emulate Creature}
@@ -761,12 +761,12 @@ A character's skills describe the myriad of talents that people have.
         If you spend a minute tending to a character, you can make a DR 15 Heal check to accelerate its recovery.
         Success means it recovers a quarter of its hit points, as if it had rested for half an hour.
         For every 10 points by which you beat the DR, you double the effective rest time, to a maximum of two hours of rest at DR 45.
-        A character can only be treated in this way once until it rests for at least half an hour.
+        A character can only be treated in this way once until it rests for half an hour.
 
         To accelerate a creature's recovery, you need a few items and supplies (bandages, salves, and so on) that are easy to come by in civilized areas.
 
     \subsection{First Aid}
-        As a standard action, you can make a DR 15 Heal check to stabilize a dying character. Success means the patient becomes stable.
+        As a standard action, you can make a DR Heal check to stabilize a dying character (see \pcref{Dying}). The target can use your Heal check in place of its Fortitude defense to avoid dying. In addition, if your check result is at least 15, the target is partially stabilized, causing it to only make stabilization rolls once per minute.
 
     \subsection{Treat Poison or Disease}
         You can make a Heal check to treat poison or disease in a character.
@@ -791,7 +791,7 @@ A character's skills describe the myriad of talents that people have.
         You can make an Intimidate check to convince a creature to do what you want. This functions like a Persuasion check to form an agreement with a group, except that you do not apply a relationship modifier. In addition, the DR is up to 10 lower if the group thinks your group is significantly stronger than them, or up to 10 higher if the group thinks your group is significantly weaker.
 
     \subsection{Demoralize}\label{Demoralize}
-        As a standard action, you can make an Intimidate check against a creature within \rngmed range of you. The DR is equal to the target's Mental defense. If you succeed, the creature is \shaken by you for 2 rounds.
+        As a standard action, you can make an Intimidate vs. Mental attack against a creature within \rngmed range of you. Success means the creature is \shaken by you for 2 rounds.
 
     \skill{Jump}{Str}
         The Jump skill represents your ability to jump. All Jump checks are made as part of movement, so they take no special action to perform. Distance moved with Jump checks is counted against your normal maximum movement in a round.
@@ -1124,7 +1124,7 @@ A character's skills describe the myriad of talents that people have.
 
         Observers that you touch as part of the action gain a \plus10 bonus to their Awareness check. If you strike them hard, as with an attack, the bonus increases to a \plus20 bonus.
 
-        If you successfully conceal a ranged attack, the attack is treated as if it were an attack from an invisible creature. The target may be unaware of the attack, making it helpless. If the target is hit, it can tell the direction the attack came from, but not that you made the attack.
+        If you successfully conceal a ranged attack, the attack is treated as if it were an attack from an invisible creature. The target may be \unaware of the attack. If the target is hit, it can tell the direction the attack came from, but not that you made the attack.
 
         Nonhumanoid creatures without hands and arms may conceal actions using different parts of their body. Large movements can never be concealed with this ability; see the Stealth skill.
 
@@ -1223,7 +1223,7 @@ A character's skills describe the myriad of talents that people have.
 
         This check is made once every 8 hours you spend travelling overland. If you move at half speed, you gain a \plus5 bonus on the check.
 
-    \subsection{Sustinence}
+    \subsection{Sustenance}
         You can make a Survival check to move overland at half speed while hunting and foraging. The DR depends on the terrain, as shown on \trefnp{Terrain DRs}. Success means that you can feed yourself, and require no additional food or water. For every 2 points by which you succeed, you can provide food and water to an additional person.
 
         This check is made once every 8 hours you spend travelling overland. If you move at one-quarter speed, you gain a \plus5 bonus on the check.
@@ -1231,7 +1231,7 @@ A character's skills describe the myriad of talents that people have.
         \begin{dtable}
             \lcaption{Terrain DRs}
             \begin{dtabularx}{\columnwidth}{X l l}
-                \tb{Terrain} & \tb{Navigation DR} & \tb{Sustinence DR} \\
+                \tb{Terrain} & \tb{Navigation DR} & \tb{Sustenance DR} \\
                 \hline
                 Desert & 20 & 30 \\
                 Forest & 15 & 15 \\
@@ -1246,8 +1246,57 @@ A character's skills describe the myriad of talents that people have.
     \subsection{Predict Weather}
         You can make a DR 15 Survival check to predict the weather. This requires a minute of observation. Success means you know what the weather will be like up to 24 hours in advance. For every 5 points by which you succeed, you can predict the weather one additional day in advance.
 
-    \subsection{Track}
-        If you have the Track feat, you can use Survival to follow tracks.
+    \subsection{Track}\label{Track}
+        You can make a Survival check to follow tracks.
+        The DR of the check depends on how easy the tracks are to notice, as shown on \trefnp{Track DRs} and \trefnp{Track Modifiers}.
+        You must make another Survival check after following the trail for 1 mile, or if it becomes especially difficult to follow.
+        While tracking, you move at half your normal speed (or at your normal speed with a \minus5 penalty on the check, or at up to twice your normal speed with a \minus20 penalty on the check).
+        The DR depends on the surface and the prevailing conditions, as given on the table below:
+
+        A creautre can use the Awareness skill to notice signs of passage, but the Survival skill is necessary to follow tracks for any distance.
+
+        \begin{dtable}
+            \lcaption{Track DRs}
+            \begin{dtabularx}{\columnwidth}{l >{\lcol}X l}
+                \tb{Surface} & \tb{Description} & \tb{Survival DR} \\
+                \hline
+                Very soft ground & Any surface (fresh snow, thick dust, wet mud) that holds deep, clear impressions of footprints. & 5 \\
+                Soft ground & Any surface soft enough to yield to pressure, but firmer than wet mud or fresh snow, in which a creature leaves frequent but shallow footprints & 10 \\
+                Firm ground & Most normal outdoor surfaces (such as lawns, fields, woods, and the like) or exceptionally soft or dirty indoor surfaces (thick rugs and very dirty or dusty floors) & 15 \\
+                Hard ground & Any surface that doesn't hold footprints at all, such as bare rock or a streambed & 20
+            \end{dtabularx}
+        \end{dtable}
+
+        \begin{dtable}
+            \lcaption{Track Modifiers}
+            \begin{dtabularx}{\columnwidth}{>{\lcol}X l}
+                \tb{Condition} & \tb{DR Modifier} \\
+                \hline
+                Every three creatures in the group being tracked  & \minus1 \\
+                Size of creature or creatures being tracked:\fn{1} &  \\
+                Fine  & \plus16 \\
+                Diminutive  & \plus12 \\
+                Tiny  & \plus8 \\
+                Small  & \plus4 \\
+                Medium  & \plus0 \\
+                Large  & \minus4 \\
+                Huge  & \minus8 \\
+                Gargantuan  & \minus12 \\
+                Colossal  & \minus16 \\
+                Every 24 hours since the trail was made  & \plus1 \\
+                Every hour of rain since the trail was made  & \plus1 \\
+                Fresh snow cover since the trail was made  & \plus10 \\
+                \tb{Poor visibility:\fn{2}} &  \\
+                Overcast or moonless night  & \plus6 \\
+                Moonlight  & \plus3 \\
+                Fog or precipitation  & \plus3 \\
+                Tracked party hides trail (and moves at half speed)  & \plus5
+            \end{dtabularx}
+            1 For a group of mixed sizes, apply only the modifier for the largest size category. \\
+            2 Apply only the largest modifier from this category. \\
+        \end{dtable}
+
+        If you fail a Survival check to track, you can retry after 1 hour (outdoors) or 10 minutes (indoors) of searching.
 
     \subsection{Use Rope}
         You can make a Survival check as a standard action to tie knots. Success means you tie the knot successfully. Failure means your action is wasted, but you can try again. Tying a typical knot is DR 10. Tying a special knot, such as one that slips, slides slowly, or loosens with a tug is DR 15. Knots can also be tied with the Devices skill.
