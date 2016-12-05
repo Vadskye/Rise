@@ -138,12 +138,12 @@ Feats can be used to specialize your character particular area, to grant your ch
                 \tb{Magic Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
                 \featref{Abjurer} & 1st level Abjuration spell & Improve Abjuration spells you cast & \tdash & \featpref{Abjurer} \\
                 \featref{Battlecaster} & 1st level spells & Improve spellcasting in combat & \tdash & \featpref{Battlecaster} \\
-                \featref{Conjurer} & 5th level, 2nd level Conjuration spell & Improve Conjuration spells you cast & \tdash & \featpref{Conjurer} \\
+                \featref{Conjurer} & 1st level Conjuration spell & Improve Conjuration spells you cast & \tdash & \featpref{Conjurer} \\
                 \featref{Counterspell} & 5th level, 2nd level spells, Spellcraft 10 & Force foes to miscast spells & \tdash & \featpref{Counterspell} \\
                 \featref{Distant Magic} & 5th level, 2nd level spells & Cast spells at greater distances & \tdash & \featpref{Distant Magic} \\
-                \featref{Diviner} & 5th level, 2nd level Divination spell & Improve Divination spells you cast & \tdash & \featpref{Diviner} \\
+                \featref{Diviner} & 1st level Divination spell & Improve Divination spells you cast & \tdash & \featpref{Diviner} \\
                 \featref{Enchant Item} & 1st level spells & Gain ability to create magic items & \tdash & \featpref{Enchant Item} \\
-                \featref{Enchanter} & 5th level, 2nd level Enchantment spell & Improve Enchantment spells you cast & \tdash & \featpref{Enchanter} \\
+                \featref{Enchanter} & 1st level Enchantment spell & Improve Enchantment spells you cast & \tdash & \featpref{Enchanter} \\
                 \featref{Hidden Magic} & 5th level, 2nd level spells & Cast spells without components & \tdash & \featpref{Hidden Magic} \\
                 \featref{Miscaster} & 1st level spells & Improve your miscast spells & \tdash & \featpref{Miscaster} \\
                 \featref{Quickened Magic} & 9th level, 4th level spells & Cast spells quickly & \tdash & \featpref{Quickened Magic} \\
@@ -152,7 +152,7 @@ Feats can be used to specialize your character particular area, to grant your ch
                 \featref{Somatic Strike} & 9th level, 4th level spells & Attack in place of somatic components & \tdash & \featpref{Somatic Strike} \\
                 \featref{Spellcasting Versatility} & 5th level, 1st level spells & Improve spellcasting when multiclassing & \tdash & \featpref{Spellcasting Versatility} \\
                 \featref{Spellstrike} & 5th level, 2nd level spells & Channel spell through physical attack  & \tdash & \featpref{Spellstrike} \\
-                \featref{Vivimancer} & 5th level, 2nd level Vivimancy spell & Improve Vivimancy spells you cast & \tdash & \featpref{Vivimancer} \\
+                \featref{Vivimancer} & 1st level Vivimancy spell & Improve Vivimancy spells you cast & \tdash & \featpref{Vivimancer} \\
 
                 \tb{Skill Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
                 \featref{Acrobatics Mastery} & Acrobatics 5 & Improve Acrobatics checks & \tdash & \featpref{Acrobatics Mastery} \\
@@ -485,17 +485,18 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     \feat{Conjurer}{Magic}
     \featpres 1st level or higher \glossterm{Conjuration} spell known.
-    \featben Objects you create and creatures you summon have twice their normal hit points.
+    \featben Objects you create and creatures you summon have extra hit points equal to your spellpower.
     Permanent physical objects you create are not affected by this ability.
 
     At 7th level, if you know a 2nd level or higher Conjuration spell, your Conjuration spells are more powerful.
     Whenever you cast a Conjuration spell, you can reduce the cost to apply one augment to the spell by one spell level.
 
-    At 11th level, if you know a 4th level or higher Conjuration spell, your connnection to the Astral Plane is strengthened.
+    At 11th level, if you know a 4th level or higher Conjuration spell, your connection to the Astral Plane is strengthened.
     Whenever you teleport, you drift between your plane and the Astral Plane for 1 round.
     During this time, all attacks against you 20\% failure chance.
 
     At 15th level, you drift between planes after teleporting for 2 rounds.
+    In addition, objects you create and creatures you summon have damage reduction against all damage equal to twice your spellpower.
 
     \feat{Controlling Wild Speech}{Class}
     \featpres Druid or ranger level 5, wild speech ability.
@@ -728,7 +729,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     You are aware of all attacks against you, even those you cannot see, as long as you are conscious.
     This allows you to use some certain abilities to defend yourself, and prevents you from being \unaware.
 
-    At 15th level, the bonus to Awareness and Sense Motive checks increases to \plus4.
+    At 15th level, the bonus to skill checks increases to \plus4.
 
     \feat{Draconic Apotheosis}{Bloodline}
     \featpres 9th level, Draconic Heritage.
@@ -817,12 +818,13 @@ Feats can be used to specialize your character particular area, to grant your ch
     At 15th level, if you know 6th level spells, it takes you one hour per 2,500 gp of material components to create a magic item. % 27500-200000 gp, 11-80 hrs
 
     \feat{Enchanter}{Magic}
-    \featpres 5th level, 2nd level or higher \glossterm{Enchantment} spell known.
-    \featben Whenever you cast an Enchantment spell, you can reduce the cost to apply one augment to the spell by one spell level.
+    \featpres 1st level or higher \glossterm{Enchantment} spell known.
+    \featben you gain a \plus2 bonus to Bluff, Intimidate, and Persuasion checks.
 
-    At 7th level, you gain a \plus2 bonus to Bluff, Intimidate, and Persuasion checks.
+    At 7th level, if you know a 2nd level or higher Enchantment spell, your Enchantment spells are more powerful.
+    Whenever you cast an Enchantment spell, you can reduce the cost to apply one augment to the spell by one spell level.
 
-    At 11th level, if you know a 4th level or higher Enchantment spell, you no longer need verbal components to cast Enchantment spells.
+    At 11th level, if you know a 4th level or higher Enchantment spell, you no longer need verbal components to cast Enchantment spells (see \pcref{Components}).
 
     At 15th level, if you know a 6th level or higher Enchantment spell, the bonus to skill checks increases to \plus4.
 
@@ -1704,10 +1706,11 @@ Feats can be used to specialize your character particular area, to grant your ch
     Use the highest numerical value among the character's base classes for each statistic.
 
     \feat{Vivimancer}{Magic}
-    \featpres 5th level, 2nd level or higher \glossterm{Vivimancy} spell known.
-    \featben Whenever you cast a Vivimancy spell, you can reduce the cost to apply one augment to the spell by one spell level.
+    \featpres 1st level or higher \glossterm{Vivimancy} spell known.
+    \featben You are immune to hostile \glossterm{Life} and \glossterm{Death} effects.
 
-    At 7th level, \tdash.
+    At 7th level, if you know a 2nd level or higher Vivimancy spell, your Vivimancy spells are more powerful.
+    Whenever you cast an Vivimancy spell, you can reduce the cost to apply one augment to the spell by one spell level.
 
     At 11th level, if you know a 4th level or higher Vivimancy spell, you heal hit points equal to your spellpower with Vivimancy spells at the end of every round.
 
