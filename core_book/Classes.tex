@@ -81,24 +81,24 @@ This choice determines a great deal about your character's abilities.
             \tb{Level} & \tb{Combat Prowess} & \tb{Rage} & \tb{Special} \\
             \hline
             \barbarianprogressionrow{1}  & \plus2 & Rage, damage reduction, grit \\
-            \barbarianprogressionrow{2}  & \plus2 & Rage feat                    \\
-            \barbarianprogressionrow{3}  & \plus2 & Fast movement, uncanny dodge \\
-            \barbarianprogressionrow{4}  & \plus2 & Durable                      \\
-            \barbarianprogressionrow{5}  & \plus3 & \tdash                       \\
+            \barbarianprogressionrow{2}  & \plus2 & Fast movement                \\
+            \barbarianprogressionrow{3}  & \plus2 & Uncanny dodge                \\
+            \barbarianprogressionrow{4}  & \plus2 & Tireless rage                \\
+            \barbarianprogressionrow{5}  & \plus3 & Battle-scarred               \\
             \barbarianprogressionrow{6}  & \plus3 & Rage feat                    \\
-            \barbarianprogressionrow{7}  & \plus3 & Battle-scarred               \\
+            \barbarianprogressionrow{7}  & \plus3 & Improved uncanny dodge       \\
             \barbarianprogressionrow{8}  & \plus3 & Larger than life             \\
-            \barbarianprogressionrow{9}  & \plus3 & Improved uncanny dodge       \\
-            \barbarianprogressionrow{10} & \plus4 & Rage feat                    \\
-            \barbarianprogressionrow{11} & \plus4 & Adaptive rage                \\
-            \barbarianprogressionrow{12} & \plus4 & Fury of the storm            \\
-            \barbarianprogressionrow{13} & \plus4 & Tireless rage                \\
+            \barbarianprogressionrow{9}  & \plus3 & Durable                      \\
+            \barbarianprogressionrow{10} & \plus4 & Instinctive rage             \\
+            \barbarianprogressionrow{11} & \plus4 & Supreme uncanny dodge        \\
+            \barbarianprogressionrow{12} & \plus4 & Titanic resilience           \\
+            \barbarianprogressionrow{13} & \plus4 & Athletic rage                             \\
             \barbarianprogressionrow{14} & \plus4 & Rage feat                    \\
             \barbarianprogressionrow{15} & \plus5 & \tdash                       \\
             \barbarianprogressionrow{16} & \plus5 & Larger than belief           \\
-            \barbarianprogressionrow{17} & \plus5 & Deathless rage               \\
-            \barbarianprogressionrow{18} & \plus5 & Rage feat                    \\
-            \barbarianprogressionrow{19} & \plus5 & Supreme resilience           \\
+            \barbarianprogressionrow{17} & \plus5 & Fury of the storm            \\
+            \barbarianprogressionrow{18} & \plus5 & Deathless rage               \\
+            \barbarianprogressionrow{19} & \plus5 & \tdash                             \\
             \barbarianprogressionrow{20} & \plus6 & Endless rage
         \end{dtabularx}
     \end{dtable}
@@ -135,8 +135,8 @@ This choice determines a great deal about your character's abilities.
     \subsection{Class Abilities}
         All barbarians have the following abilities.
 
-        \cf{Bbn}{Rage}[Ex]
-        A barbarian can fly into a rage as a free action.
+        \cf{Bbn}{Rage}[Ex]\label{Rage}
+        A barbarian can fly into a rage as a \glossterm{free action}.
         Raging has the following benefits and drawbacks:
         \begin{itemize}
             \item \plus2 bonus to damage with physical attacks.
@@ -160,13 +160,7 @@ This choice determines a great deal about your character's abilities.
         In addition, the number of hit points gained per Willpower increases by 1.
         His penalty to physical defenses while raging remains the same.
 
-        \cf{Bbn}[2nd]{Rage Feat}
-        The barbarian gains a bonus Rage feat.
-        The bonus feat must be drawn from the list of Rage feats in \tref{Class Feats}.
-        He must still meet all prerequisites for the bonus feat.
-        He gains an additional bonus Rage feat at his 6th barbarian level and every four barbarian levels thereafter (6th, 10th, 14th, and 18th).
-
-        \cf{Bbn}[3rd]{Fast Movement}[Ex]
+        \cf{Bbn}[2nd]{Fast Movement}[Ex]
         The barbarian increases his land speed by 10 feet while \unencumbered.
 
         \cf{Bbn}[3rd]{Uncanny Dodge}[Ex]
@@ -175,12 +169,23 @@ This choice determines a great deal about your character's abilities.
         If his overwhelm penalty is reduced to 0, he is not considered to be overwhelmed.
         In addition, he is not \unaware when attacked by surprise.
 
-        \cf{Bbn}[4th]{Durable}[Ex]
-        The barbarian gains a \plus2 bonus to Fortitude defense.
+        \cf{Bbn}[4th]{Tireless Rage}[Ex]
+        The barbarian is not \fatigued at the end of his rage.
+        However, he must still rest for 5 minutes before he can rage again after finishing a rage.
 
-        \cf{Bbn}[7th]{Battle-Scarred}[Ex]
+        \cf{Bbn}[5th]{Battle-Scarred}[Ex]
         The barbarian doubles the benefit of any healing he receives.
         This affects both natural and magical healing.
+
+        \cf{Bbn}[6th]{Rage Feat}
+        The barbarian gains a bonus combat feat that only functions while he is raging.
+        The feat must be drawn from the list of combat feats in \tref{Combat Feats}, and he must still meet all prerequisites for the feat.
+        He gains an additional bonus feat that only functions while raging at his 14th barbarian level.
+
+        \cf{Bbn}[7th]{Improved Uncanny Dodge}[Ex]
+        The barbarian reduces his overwhelm penalties by 2.
+        This does not stack with the effects of uncanny dodge.
+        If his overwhelm penalty is reduced to 0, he is not considered to be overwhelmed.
 
         \cf{Bbn}[8th]{Larger than Life}[Ex]
         A barbarian holds the strength of a giant in the body of a man (or woman).
@@ -188,35 +193,36 @@ This choice determines a great deal about your character's abilities.
         Although he uses weapons of the same size as normal, his weapons deal damage as if they were one size category larger, including natural weapons and unarmed strikes.
         The benefits of this ability stack with the effects of spells and abilities that increase the barbarian's size category.
 
-        \cf{Bbn}[9th]{Improved Uncanny Dodge}[Ex]
-        The barbarian reduces his overwhelm penalties by 2.
-        This does not stack with the effects of uncanny dodge.
+        \cf{Bbn}[9th]{Durable}[Ex]
+        The barbarian gains a \plus4 bonus to Fortitude defense.
+
+        \cf{Bbn}[10th]{Instinctive Rage}[Ex]
+        The barbarian must spend a \glossterm{free action} to maintain his rage, rather than a swift action.
+
+        \cf{Bbn}[11th]{Supreme Uncanny Dodge}[Ex]
+        The barbarian reduces his overwhelm penalties by 3.
+        This does not stack with the effects of uncanny dodge or improved uncanny dodge.
         If his overwhelm penalty is reduced to 0, he is not considered to be overwhelmed.
 
-        \cf{Bbn}[11th]{Adaptive Rage}[Ex]
-        While the barbarian is raging, at the end of each round, he may change which Rage feat he is using for that rage.
-        Alternately, he may choose not to use any Rage feat for that rage.
+        \cf{Bbn}[12th]{Titanic Resilience}[Ex]
+        The barbarian cannot take more than half his maximum hit points in damage during a single round.
+        Any excess damage is ignored.
 
-        \cf{Bbn}[12th]{Fury of the Storm}[Ex]
-        A barbarian cannot be overwhelmed.
-        He does not suffer overwhelm penalties, regardless of the number of enemies threatening him.
-
-        \cf{Bbn}[13th]{Tireless Rage}[Ex]
-        The barbarian does not take damage when his rage ends, and is not \fatigued at the end of his rage.
-        However, he must still rest for 5 minutes before he can rage again after finishing a rage.
+        \cf{Bbn}[13th]{Athletic Rage}[Ex]
+        While raging, the barbarian adds his rage bonus to Climb, Jump, Sprint, and Swim checks.
 
         \cf{Bbn}[16th]{Larger than Belief}[Ex]
         The barbarian's larger than life ability improves.
         He is treated as being two size categories larger than he actually is.
 
-        \cf{Bbn}[17th]{Deathless Rage}[Ex]
+        \cf{Bbn}[17th]{Fury of the Storm}[Ex]
+        A barbarian cannot be overwhelmed.
+        He does not suffer overwhelm penalties, regardless of the number of enemies threatening him.
+
+        \cf{Bbn}[18th]{Deathless Rage}[Ex]
         While raging, the barbarian ignores all penalties from critical damage, and does not begin dying even he takes critical damage.
         However, if his critical damage exceeds his maximum hit points, the barbarian immediately dies.
         When his rage ends, if the barbarian has critical damage, he begins dying.
-
-        \cf{Bbn}[19th]{Supreme Resilience}[Ex]
-        The barbarian cannot take more than half his maximum hit points in damage during a single round.
-        Any excess damage is ignored.
 
         \cf{Bbn}[20th]{Endless Rage}[Ex]
         A barbarian's rage no longer has a limited duration.
@@ -234,26 +240,26 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{2em} >{\ccol}p{\babcolavg} c c >{\lcol}X}
             \tb{Level} & \tb{Combat Prowess} & \tb{Devotion} & \tb{Spells} & \tb{Special} \\
             \hline
-            \clericprogressionrow{1}  & \plus2 & 2 & Devotion, domain gifts, spells \\
-            \clericprogressionrow{2}  & \plus2 & 3 & Domain invocation, rituals            \\
-            \clericprogressionrow{3}  & \plus2 & 3 & Domain spell                          \\
-            \clericprogressionrow{4}  & \plus2 & 4 & Devotion feat, domain invocation      \\
-            \clericprogressionrow{5}  & \plus3 & 4 & Domain spell         \\
-            \clericprogressionrow{6}  & \plus3 & 5 & Domain aspect                         \\
-            \clericprogressionrow{7}  & \plus3 & 5 & Domain spell                          \\
-            \clericprogressionrow{8}  & \plus3 & 6 & Domain aspect                         \\
-            \clericprogressionrow{9}  & \plus3 & 6 & Domain spell                          \\
-            \clericprogressionrow{10} & \plus4 & 7 & Intercession         \\
-            \clericprogressionrow{11} & \plus4 & 7 & Domain spell                          \\
-            \clericprogressionrow{12} & \plus4 & 8 & Greater domain invocation             \\
-            \clericprogressionrow{13} & \plus4 & 8 & Domain spell                          \\
-            \clericprogressionrow{14} & \plus4 & 9 & Greater domain invocation             \\
-            \clericprogressionrow{15} & \plus5 & 9 & Domain spell         \\
-            \clericprogressionrow{16} & \plus5 & 10 & Domain mastery                        \\
-            \clericprogressionrow{17} & \plus5 & 10 & Domain spell                          \\
-            \clericprogressionrow{18} & \plus5 & 11 & Domain mastery                        \\
-            \clericprogressionrow{19} & \plus5 & 11 & Endless devotion, domain spell        \\
-            \clericprogressionrow{20} & \plus6 & 12 & Miracle              \\
+            \clericprogressionrow{1}  & \plus2 & 2  & Devotion, domain gifts, spells           \\
+            \clericprogressionrow{2}  & \plus2 & 3  & Domain invocation, rituals               \\
+            \clericprogressionrow{3}  & \plus2 & 3  & Domain spell                             \\
+            \clericprogressionrow{4}  & \plus2 & 4  & Devotion feat, domain invocation         \\
+            \clericprogressionrow{5}  & \plus3 & 4  & Domain spell                             \\
+            \clericprogressionrow{6}  & \plus3 & 5  & Domain aspect                            \\
+            \clericprogressionrow{7}  & \plus3 & 5  & Domain spell                             \\
+            \clericprogressionrow{8}  & \plus3 & 6  & Domain aspect                            \\
+            \clericprogressionrow{9}  & \plus3 & 6  & Domain spell                             \\
+            \clericprogressionrow{10} & \plus4 & 7  & Intercession                             \\
+            \clericprogressionrow{11} & \plus4 & 7  & Domain spell                             \\
+            \clericprogressionrow{12} & \plus4 & 8  & Greater domain invocation                \\
+            \clericprogressionrow{13} & \plus4 & 8  & Domain spell                             \\
+            \clericprogressionrow{14} & \plus4 & 9  & Devotion feat, greater domain invocation \\
+            \clericprogressionrow{15} & \plus5 & 9  & Domain spell                             \\
+            \clericprogressionrow{16} & \plus5 & 10 & Domain mastery                           \\
+            \clericprogressionrow{17} & \plus5 & 10 & Domain spell                             \\
+            \clericprogressionrow{18} & \plus5 & 11 & Domain mastery                           \\
+            \clericprogressionrow{19} & \plus5 & 11 & Endless devotion, domain spell           \\
+            \clericprogressionrow{20} & \plus6 & 12 & Miracle                                  \\
         \end{dtabularx}
     \end{dtable}
 
@@ -437,7 +443,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Clr}[4th]{Devotion Feat}[Su]
         The cleric chooses a feat that he meets the prerequisites for.
         As long as his devotion pool is at least half full, he gains that feat as a bonus feat.
-        At each level, the cleric may change this feat to a different feat he qualifies for.
+        At each level, the cleric may change this feat to a different feat he qualifies for at his newly increased level.
 
         At 14th level, the cleric gains a second devotion feat.
         The cleric may not normally use these devotion feats as prerequisites for other feats or abilities.
@@ -526,7 +532,7 @@ This choice determines a great deal about your character's abilities.
             The cleric adds Bluff, Disguise, and Stealth to his cleric class skill list.
             In addition, he gains two skill points which must be spent on any combination of those skills.
             \subcf{War}
-            The cleric gains Weapon Focus with his deity's favored weapon group as a bonus feat.
+            The cleric gains a \plus2 bonus to damage on physical attacks with weapons from his deity's favored weapon group.
             \subcf{Water}
             The cleric adds Swim to his cleric class skill list, gains a \plus5 bonus to Swim checks, and suffers no penalties for fighting underwater.
             \subcf{Wild}
@@ -629,8 +635,8 @@ This choice determines a great deal about your character's abilities.
             A creature can only be dealt damage by this effect once per round.
             \subcf{Life -- Critical Healer}
             All of the cleric's healing spells and abilities cure critical damage as easily as they cure hit points.
-            \subcf{Magic -- Magic Feat}
-            The cleric gains a bonus magic feat or metamagic feat.
+            \subcf{Magic -- Improved Spellpower}
+            The cleric gains a \plus1 bonus to spellpower with divine spells.
             \subcf{Protection -- Faithful Shield}
             The cleric may maintain concentration on \glossterm{Shielding} spells as a swift action.
             \subcf{Strength -- Strength of Will}
@@ -638,10 +644,10 @@ This choice determines a great deal about your character's abilities.
             \subcf{Travel -- Rapid Traveller}
             The cleric gains a \plus30 foot bonus to his speed in all movement modes, up to a maximum of double his original speed.
             In addition, whenever he makes a Sprint check, he rolls twice and takes the higher result.
-            \subcf{Trickery -- Legendary Trickster}
-            The cleric gains his choice of Legendary Disguise, Legendary Liar, or Legendary Stealth as a bonus feat, even if he does not meet the prerequisites.
-            \subcf{War -- Combat Feat}
-            The cleric gains a combat feat of his choice.
+            \subcf{Trickery -- Trick Master}
+            The cleric gains his choice of Bluff Mastery, Disguise Mastery, or Stealth Mastery as a bonus feat, even if he does not meet the prerequisites.
+            \subcf{War -- Warpriest}
+            The cleric gains a \plus2 bonus to damage on physical attacks with weapons from his deity's favored weapon group.
             \subcf{Water -- Water Breathing} The cleric may breathe and speak normally while underwater, as the \spell{water breathing}
             ritual.
             He also gains a \glossterm{swim speed} equal to his base land speed.
@@ -1304,26 +1310,26 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} >{\lcol}X}
             \tb{Level} & \tb{Combat Prowess} & \tb{Special} \\
             \hline
-            \fighterprogressionrow{1}   & Advanced training, weapon discipline \\
-            \fighterprogressionrow{2}   & Combat feat                         \\
-            \fighterprogressionrow{3}   & Armor discipline                   \\
-            \fighterprogressionrow{4}   & Adaptive combat                     \\
-            \fighterprogressionrow{5}   & Combat discipline                   \\
-            \fighterprogressionrow{6}   & Combat feat                         \\
-            \fighterprogressionrow{7}   & Improved weapon discipline           \\
-            \fighterprogressionrow{8}   & Adaptive combat                     \\
-            \fighterprogressionrow{9}   & Improved armor discipline          \\
-            \fighterprogressionrow{10}  & Combat feat, swift warrior          \\
-            \fighterprogressionrow{11}  & Improved combat discipline          \\
-            \fighterprogressionrow{12}  & Adaptive combat                     \\
-            \fighterprogressionrow{13}  & Greater weapon discipline            \\
-            \fighterprogressionrow{14}  & Combat feat                         \\
-            \fighterprogressionrow{15}  & Greater armor discipline           \\
-            \fighterprogressionrow{16}  & Adaptive combat                     \\
-            \fighterprogressionrow{17}  & Greater combat discipline           \\
-            \fighterprogressionrow{18}  & Combat feat                         \\
-            \fighterprogressionrow{19}  & True discipline                     \\
-            \fighterprogressionrow{20}  & Adaptive combat, combat supremacy   \\
+            \fighterprogressionrow{1}  & Advanced training, weapon discipline \\
+            \fighterprogressionrow{2}  & Combat feat                          \\
+            \fighterprogressionrow{3}  & Combat discipline                    \\
+            \fighterprogressionrow{4}  & Martial assault                      \\
+            \fighterprogressionrow{5}  & Armor discipline                     \\
+            \fighterprogressionrow{6}  & Combat feat                          \\
+            \fighterprogressionrow{7}  & Improved weapon discipline           \\
+            \fighterprogressionrow{8}  & Martial assault                      \\
+            \fighterprogressionrow{9}  & Improved combat discipline           \\
+            \fighterprogressionrow{10} & Combat feat, swift warrior           \\
+            \fighterprogressionrow{11} & Improved armor discipline            \\
+            \fighterprogressionrow{12} & Martial assault                      \\
+            \fighterprogressionrow{13} & Greater weapon discipline            \\
+            \fighterprogressionrow{14} & Combat feat                          \\
+            \fighterprogressionrow{15} & Greater combat discipline            \\
+            \fighterprogressionrow{16} & Martial assault                      \\
+            \fighterprogressionrow{17} & Greater armor discipline             \\
+            \fighterprogressionrow{18} & Combat feat                          \\
+            \fighterprogressionrow{19} & True discipline                      \\
+            \fighterprogressionrow{20} & Combat supremacy                     \\
         \end{dtabularx}
     \end{dtable}
 
@@ -1347,8 +1353,9 @@ This choice determines a great deal about your character's abilities.
         \cf{Ftr}{Weapon and Armor Proficiency}
         A fighter is proficient with simple weapons, any four other weapon groups,  all armor (heavy, medium, and light), and shields.
 
-        \cf{Ftr}{Advanced Training}[Ex]
-        A fighter treats his combat prowess as if it were 2 points higher than it actually is for the purpose of meeting feat prerequisites.
+        \cf{Ftr}{Martial Master}[Ex]
+        A fighter gains a \plus1 bonus to accuracy and damage with physical attacks.
+        In addition, he gains a \plus1 bonus to physical defenses.
 
     \subsection{Class Abilities}
         All fighters have the following abilities.
@@ -1356,7 +1363,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Ftr}{Weapon Discipline}
         The fighter's training grants him additional capability when using his weapons.
         He may choose a weapon group, or he may choose to train equally with all weapons.
-        If he chooses a weapon group, he gains a \plus1 bonus to accuracy with weapons from that group.
+        If he chooses a weapon group, he gains a \plus1 bonus to damage on attacks with weapons from that group.
 
         If he chooses not to focus on a specific group of weapons, he gains the ability to become proficient with any weapon group if he spends 1 hour training with a weapon from that group.
         He may only keep this proficiency with one weapon group at a time; if he trains with a new weapon group, he loses his proficiency in the previous group.
@@ -1364,40 +1371,10 @@ This choice determines a great deal about your character's abilities.
         \cf{Ftr}[2nd]{Combat Feat}
         The fighter gets a bonus combat-oriented feat.
         This bonus feat must be drawn from the list of combat feats in \tref{Combat Feats}.
-        He must still meet all prerequisites for the bonus feat.
-        He gains an additional bonus feat at his 6th fighter level and every four fighter levels thereafter (6th, 10th, 14th, and 18th).
+        He must use his fighter level in place of his character level to meet level prerequisites for the feat.
+        He gains an additional bonus feat at his 6th fighter level and every four fighter levels thereafter.
 
-        \cf{Ftr}{Armor Discipline}
-        A fighter's training grants him additional capability in armor.
-        He must choose to improve his agility or his resilience in armor.
-        This applies to all armor discipline abilities the fighter has.
-
-        If he improves his agility, he treats body armor he wears as less encumbering.
-        He reduces its \glossterm{encumbrance penalty} by 2 its arcane spell failure by 10\%.
-        In addition, he treats it were one encumbrance category lighter than it is whenever doing so would be beneficial for him.
-        Heavy armor is treated as medium armor, medium armor is treated as light armor, and light armor is treated as being unarmored.
-        This can remove the speed reduction and reduced Dexterity associated with the armor's encumbrance, as appropriate for the new encumbrance of the fighter's armor.
-
-        If he improves his resilience, he gains damage reduction against physical damage equal to his character level. This allows him to ignore the first points of damage he would take each round.
-
-        \cf{Ftr}[4th]{Adaptive Combat}
-        The fighter gains a flexible bonus feat which he can change periodically.
-        The fighter chooses a number of combat feats equal to half his fighter level or half his Intelligence, whichever is higher.
-        These feats comprise his adaptive feat pool.
-        The fighter gains one of the feats from his adaptive feat pool as a bonus feat.
-        By training for an hour, the fighter can change his current adapative combat feat to one of the other feats in his adaptive style feat pool.
-        He must meet the prerequisites for the new feat.
-
-        \par An adaptive style feat may be used normally as prerequisites for other feats or abilities.
-        However, if an adaptive style feat is used as a prerequisite, it cannot be changed until the fighter no longer needs to use it as a prerequisite, such as might happen if the fighter takes the feat as a normal feat or bonus feat.
-
-        \par In order to gain an adaptive style feat, it must be reasonably possible to do training related to the new feat.
-        For example, a fighter could not gain Weapon Focus in axes without at least one axe available to train with.
-
-        The fighter gains an additional adaptive combat feat at his 8th fighter level and every four fighter levels thereafter (8th, 12th, 16th, and 20th).
-        He may change all of his adaptive combat feats at once when he trains.
-
-        \cf{Ftr}[5th]{Combat Discipline}
+        \cf{Ftr}[3rd]{Combat Discipline}
         The fighter can use his superior training and focus to keep fighting in the face of debilitating effects.
         When a fighter is initially affected by one of the conditions listed on \trefnp{Combat Discipline Conditions}, he may use his combat discipline ability to instead suffer the mitigated condition one column to the right.
         He can suppress the condition up to 5 rounds.
@@ -1439,14 +1416,45 @@ This choice determines a great deal about your character's abilities.
         The lesser condition that this ability imposes may be cured or removed normally, but doing so does not affect the resurgence of the condition the fighter was originally afflicted with.
         If a fighter uses this ability to mitigate or negate a condition which he must suffer as a sacrifice or cost to gain some benefit, he automatically forfeits the benefit he would have gained.
 
+        \cf{Ftr}[4th]{Martial Assault}
+        The fighter gains the ability to perform special attacks called martial assaults.
+        Each martial assault replaces a specific number of \glossterm{strikes}, and must be performed as part of a \glossterm{standard attack}.
+        He chooses a single martial assault from the list below.
+        Some martial assaults have minimum fighter levels, as indicated in the title of the ability.
+        At his 6th fighter level, and every four fighter levels thereafter, the fight gains an additional martial assault.
+        All martial assaults are extraordinary abilities unless otherwise noted.
+
+        \cf{Ftr}[5th]{Armor Discipline}
+        A fighter's training grants him additional capability in armor.
+        He must choose to improve his agility or his resilience in armor.
+        This applies to all armor discipline abilities the fighter has.
+
+        If he improves his agility, he treats body armor he wears as less encumbering.
+        He reduces its \glossterm{encumbrance penalty} by 2 its arcane spell failure by 10\%.
+        In addition, he treats it were one encumbrance category lighter than it is whenever doing so would be beneficial for him.
+        Heavy armor is treated as medium armor, medium armor is treated as light armor, and light armor is treated as being unarmored.
+        This can remove the speed reduction and reduced Dexterity associated with the armor's encumbrance, as appropriate for the new encumbrance of the fighter's armor.
+
+        If he improves his resilience, he gains damage reduction against physical damage equal to his character level. This allows him to ignore the first points of damage he would take each round.
+
         \cf{Ftr}[7th]{Improved Weapon Discipline}
         The fighter's training in his chosen weapons improves.
         He increases the \glossterm{critical multiplier} of his chosen weapons by 1.
-        In addition, if he chose a specific weapon group, he gains a \plus10 bonus to resist disarm attempts against his chosen weapons.
+        In addition, if he chose a specific weapon group, he increases his damage bonus to \plus2.
         If he did not, he can apply all weapon group-specific feats he has to any weapon group that he trains with for 1 hour.
         He retains this benefit for one week after the training.
 
-        \cf{Ftr}[9th]{Improved Armor Discipline}
+        \cf{Ftr}[9th]{Improved Combat Discipline}
+        The fighter's ability to keep fighting despite negative influence improves.
+        He can reduce conditions by two steps instead of one when using combat discipline.
+        For example, a stunned fighter who used combat discipline would instead be staggered.
+        \par In addition, a fighter may use combat discipline to reduce any penalties he suffers to his accuracy, damage, checks, or defenses by 2, even if the source of the penalty is not listed on the combat discipline chart.
+        \par The fighter may also mitigate up to two conditions at once.
+
+        \cf{Ftr}[10th]{Swift Warrior}
+        The fighter can take two swift or immediate actions each round (see \pcref{Swift and Immediate Actions}).
+
+        \cf{Ftr}[11th]{Improved Armor Discipline}
         The fighter's training with his armor improves.
         If he chose agility, he treats body armor he wears as even less encumbering.
         He reduces its \glossterm{encumbrance penalty} by 4 and decreases its arcane spell failure by 20\%.
@@ -1454,38 +1462,29 @@ This choice determines a great deal about your character's abilities.
         This does not stack with the benefit of the armor discipline ability.
 
         If he chose resilience, he may apply his damage reduction from the armor discipline ability against all damage, including from magical attacks.
-
-        \cf{Ftr}[10th]{Swift Warrior}
-        The fighter can take two swift or immediate actions each round (see \pcref{Swift and Immediate Actions}).
-
-        \cf{Ftr}[11th]{Improved Combat Discipline}
-        The fighter's ability to keep fighting despite negative influence improves.
-        He can reduce conditions by two steps instead of one when using combat discipline.
-        For example, a stunned fighter who used combat discipline would instead be staggered.
-        \par In addition, a fighter may use combat discipline to reduce any penalties he suffers to his accuracy, damage, checks, or defenses by 2, even if the source of the penalty is not listed on the combat discipline chart.
-        \par The fighter may also mitigate up to two conditions at once.
+        In addition, he gains a \plus1 bonus to Armor defense while wearing armor.
 
         \cf{Ftr}[13th]{Greater Weapon Discipline}
         The fighter's training in his chosen weapons becomes still greater.
         He increases the \glossterm{critical range} of his chosen weapons by 1.
         This increase stacks with any other effects that affect critical range.
-        For example, a fighter using the Heartseeker combat style (see \featpcref{Heartseeker}) would have a critical range of 18-20.
+        For example, a fighter using heavy blades with the Weapon Focus feat (see \featpcref{Weapon Focus}) would have a critical range of 18-20.
 
-        \cf{Ftr}[15th]{Greater Armor Discipline}
-        The fighter's training in his chosen armor becomes still greater.
-        If he chose agility, he ignores all encumbrance penalties and arcane spell failure from body armor he wears.
-        In addition, he treats body armor he wears as if it were three encumbrance categories lighter than it actually is whenever doing so would be beneficial to him.
-        Finally, he gains a \plus10 foot bonus to his speed.
-        This does not stack with the benefits of armor discipline or improved armor discipline.
-
-        If he chose resilience, he doubles the damage reduction granted by his armor discipline ability.
-
-        \cf{Ftr}[17th]{Greater Combat Discipline}
+        \cf{Ftr}[15th]{Greater Combat Discipline}
         The fighter's ability to keep fighting despite influence becomes still greater.
         When using combat discipline, he may ignore any condition listed on the combat discipline chart.
         In addition, he may use combat discipline to be \severelyimpaired with attacks and checks rather than suffer any non-damaging condition not listed on the chart.
 
         \par The fighter may also mitigate up to three conditions at once.
+
+        \cf{Ftr}[17th]{Greater Armor Discipline}
+        The fighter's training in his chosen armor becomes still greater.
+        If he chose agility, he ignores all encumbrance penalties and arcane spell failure from body armor he wears.
+        In addition, he treats body armor he wears as if it were three encumbrance categories lighter than it actually is whenever doing so would be beneficial to him.
+        This does not stack with the benefits of armor discipline or improved armor discipline.
+        In addition, he gains a \plus4 bonus to Reflex defense.
+
+        If he chose resilience, he gains a \plus4 bonus to Fortitude defense.
 
         \cf{Ftr}[19th]{True Discipline}
         The fighter's discipline in his chosen area is beyond equal.
@@ -1495,9 +1494,9 @@ This choice determines a great deal about your character's abilities.
         When the fighter makes a \glossterm{standard attack}, he can make an additional \glossterm{strike}.
         This does not stack with any other effects which grant extra strikes.
         \subcf{True Armor Discipline}
-        If the fighter chose agility, he gains a \plus10 bonus to Reflex defense.
+        If the fighter chose agility, he gains a \plus1 bonus to physical defenses.
 
-        If the fighter chose resilience, he gains a \plus10 bonus to Fortitude defense.
+        If the fighter chose resilience, he doubles the damage reduction granted by his armor discipline ability.
         \subcf{True Combat Discipline}
         The fighter can use combat discipline to be \impaired with attacks and checks instead of suffering any nondamaging negative effect with a duration.
         He may also mitigate up to four conditions at once.
@@ -1575,8 +1574,10 @@ This choice determines a great deal about your character's abilities.
         A monk's \ki power is equal to her Willpower or her character level, whichever is higher.
 
         \cf{Mnk}{Unarmed Warrior}[Ex]
-        A monk's unarmed attacks are exceptionally deadly while she is able to freely use her body.
-        While \monkunencumbered, she gains the Unarmed Proficiency and Unarmed Might feats as bonus feats, even if she does not meet the prerequisites (see Unarmed Proficiency, page \featpref{Unarmed Proficiency}, and Unarmed Might, page \featpref{Unarmed Might}, for details).
+        A monk's unarmed attacks are exceptionally deadly.
+        She gains Unarmed Fighting as a bonus feat, making her proficient with her unarmed attack (see \featpcref{Unarmed Fighting}).
+        In addition, she increases the damage of her unarmed attacks by two increments (see \pcref{Weapon Size}).
+        For example, a Medium monk would deal 1d6 damage with her unarmed attack.
         For details about how to fight while unarmed, see \pcref{Unarmed Combat}.
 
         \cf{Mnk}[2nd]{Manifest Ki}[Su]
@@ -1664,8 +1665,9 @@ This choice determines a great deal about your character's abilities.
         In addition, she is not \unaware when attacked by surprise.
 
         \cf{Mnk}[5th]{Flurry of Blows}\label{Flurry of Blows}
-        When attacking unarmed, the monk can attack with multiple parts of her body simultaneously.
-        This allows her to make dual attacks with her unarmed strike (see \pcref{Dual Attacking}).
+        As a standard action, the monk can spend a \ki point to unleash a furious barrage of blows.
+        She can make a \glossterm{standard attack} with an extra \glossterm{strike}.
+        Alternately, she can choose to make one \glossterm{strike} against all foes she threatens.
 
         \cf{Mnk}[7th]{Perfect Motion}[Su]
         The monk becomes immune to effects that restrict her mobility.
@@ -1824,8 +1826,8 @@ This choice determines a great deal about your character's abilities.
         \subcf{6th -- Seeking Smite*}
         This smite attack ignores any miss chances, such as from active cover or visual impairment.
         The weapon must still be physically able to strike the target.
-        \subcf{6th -- Taunting Smite*}
-        The struck creature is \taunted by the paladin for 2 rounds.
+        \subcf{6th -- Goading Smite*}
+        The struck creature is \goaded by the paladin for 2 rounds.
         \subcf{10th -- Dispelling Smite*}
         The struck creature is affected by \spell{dispel magic}.
         \subcf{10th -- Divine Might}
@@ -1921,7 +1923,7 @@ This choice determines a great deal about your character's abilities.
 
         \parhead{Any Alignment}
         \subcf{8th -- Worthy Foe}
-        Enemies in the area are \taunted by the paladin.
+        Enemies in the area are \goaded by the paladin.
         \subcf{16th -- Aura of Unbending Purpose}
         Allies in the area are immune to \glossterm{Mind} effects.
 
@@ -2024,25 +2026,25 @@ This choice determines a great deal about your character's abilities.
             \tb{Level} & \tb{Combat Prowess} & \tb{Quarry} & \tb{Special} \\
             \hline
             \rangerprogressionrow{1}  & \plus2 & Quarry, tenacious hunter, wild speech \\
-            \rangerprogressionrow{2}  & \plus2 & Hunting lore, tracker                 \\
+            \rangerprogressionrow{2}  & \plus2 & Hunting skill, tracker                 \\
             \rangerprogressionrow{3}  & \plus2 & Free stride, keen vision              \\
-            \rangerprogressionrow{4}  & \plus2 & Terrain lore                          \\
+            \rangerprogressionrow{4}  & \plus2 & Hunting lore                          \\
             \rangerprogressionrow{5}  & \plus3 & Rapid tracker                         \\
-            \rangerprogressionrow{6}  & \plus3 & Hunting lore                          \\
+            \rangerprogressionrow{6}  & \plus3 & Hunting skill                          \\
             \rangerprogressionrow{7}  & \plus3 & Blindsense                            \\
-            \rangerprogressionrow{8}  & \plus3 & Terrain lore                          \\
+            \rangerprogressionrow{8}  & \plus3 & Hunting lore                          \\
             \rangerprogressionrow{9}  & \plus3 & Perfect stride                        \\
-            \rangerprogressionrow{10} & \plus4 & Hunting lore                          \\
+            \rangerprogressionrow{10} & \plus4 & Hunting skill                          \\
             \rangerprogressionrow{11} & \plus4 & Blindsight                            \\
-            \rangerprogressionrow{12} & \plus4 & Terrain lore                          \\
+            \rangerprogressionrow{12} & \plus4 & Hunting lore                          \\
             \rangerprogressionrow{13} & \plus4 & Unerring hunter                       \\
-            \rangerprogressionrow{14} & \plus4 & Hunting lore                          \\
+            \rangerprogressionrow{14} & \plus4 & Hunting skill                          \\
             \rangerprogressionrow{15} & \plus5 & Farsight                              \\
-            \rangerprogressionrow{16} & \plus5 & Terrain lore                          \\
+            \rangerprogressionrow{16} & \plus5 & Hunting lore                          \\
             \rangerprogressionrow{17} & \plus5 & Eternal quarry                        \\
-            \rangerprogressionrow{18} & \plus5 & Hunting lore                          \\
+            \rangerprogressionrow{18} & \plus5 & Hunting skill                          \\
             \rangerprogressionrow{19} & \plus5 & Truesight                             \\
-            \rangerprogressionrow{20} & \plus6 & Terrain lore
+            \rangerprogressionrow{20} & \plus6 & Hunting lore
         \end{dtabularx}
     \end{dtable}
 
@@ -2099,105 +2101,59 @@ This choice determines a great deal about your character's abilities.
         The ranger's quarry bonus improves by \plus1 at his 5th ranger level and every 5 ranger levels thereafter.
         His penalties against targets other than his quarry remains the same.
 
-        \cf{Rgr}[2nd]{Fast Movement}[Ex]
-        The ranger increases his movement speed by 10 feet when \unencumbered.
-
-        \cf{Rgr}[2nd]{Hunting Power}[Ex]
-        The strength of some ranger abilities are determined by his hunting power.
-        Normally, his hunting power is equal to his Perception or his character level, whichever is higher.
+        \cf{Rgr}[2nd]{Hunting Skill}[Ex]
+        The ranger gains any Skill feat with prerequisites that include one of the ranger class skills as a bonus feat.
+        He must use his ranger level in place of his character level to meet level prerequisites for the feat.
+        At his 6th ranger level, and every 4 ranger levels thereafter, he gains an additional feat.
 
         \cf{Rgr}[2nd]{Tracker}
-        A ranger gains Track as a bonus feat, even if he does not meet its prerequisites (see \featref{Track}).
-        In addition, he may his hunting power in place of his Survival skill to follow tracks.
+        The ranger gains a \plus5 bonus to checks made to follow tracks.
+        In addition, he may use his ranger level in place of the Survival skill to follow tracks.
 
-        \cf{Rgr}[2nd]{Hunting Lore}
+        \cf{Rgr}[4th]{Hunting Lore}
         The ranger gains an ability drawn from ancient hunting lore.
         He chooses a single hunting lore from the list below.
         Some hunting lores have minimum ranger levels, as indicated in the title of the ability.
-        At his 6th ranger level, and every four ranger levels thereafter, the ranger gains an additional hunting lore.
+        At his 8th ranger level, and every four ranger levels thereafter, the ranger gains an additional hunting lore.
 
         All hunting lore abilities are extraordinary abilities unless otherwise noted.
+        If a hunting lore grants the ranger a bonus feat, he must still meet any prerequisites for the feat to gain its effect.
 
-        \subcf{Combat Feat}
-        The ranger gains a combat feat for which he qualifies (see Feats).
-        This lore can be selected multiple times.
+        \subcf{Endurance}
+        The ranger gains the Endurance feat as a bonus feat (see \featpcref{Endurance}).
 
         \subcf{Energy Adaptation}
-        The ranger continuously gains the benefits of the \spell{resist energy} spell, with a spellpower equal to his hunting power.
+        The ranger gains \glossterm{damage reduction} equal to his hunting power against \glossterm{energy damage}.
 
-        \subcf{Survivalist}
-        The ranger gains a feat with Survival skill prerequisites for which he qualifies as a bonus feat.
-        This lore can be selected multiple times.
+        \subcf{Goading Hunter}
+        Whenever the ranger damages his quarry with a physical attack, it is \goaded by him for 2 rounds.
 
-        \subcf{Undead Destroyer}
-        Non-intelligent undead treat the ranger as if he were undead.
-        In addition, he increases his quarry bonus by \plus2 against undead.
+        \subcf{No Escape}
+        Whenever the ranger damages his quarry with a physical attack, it moves at half speed for 2 rounds.
 
-        \subcf{6th -- Aberrant Hunter}
-        The ranger gains a \plus2 bonus to Mental defense.
-        In addition, he increases his quarry bonus by \plus2 against aberrations.
+        \subcf{Merciless Hunter}
+        All damage dealt by the ranger's physical attacks against his quarry in excess of its remaining hit points is dealt as \glossterm{critical damage}.
 
-        \subcf{6th -- Giantslayer}
-        The ranger gains a \plus8 bonus to Fortitude defense against attacks that would move him.  % weird bonus
-        In addition, he increases his quarry bonus by \plus2 against monstrous humanoids.
+        \subcf{Swift Hunter}
+        The ranger gains the Swift feat as a bonus feat (see \featpcref{Swift}).
 
-        \subcf{6th -- Golem Breaker}
-        The ranger's attacks ignore an amount of hardness equal to half his hunting power.
-        In addition, he increases his quarry bonus by \plus2 against constructs.
+        \subcf{8th -- Flexible Quarry}
+        After giving up on a quarry, the ranger does not need to wait before designating a new quarry.
 
-        \subcf{6th -- Hidden Hunter}
-        The ranger becomes even more difficult for his quarry to detect.
-        He adds his quarry bonus to his Stealth checks against his quarry.
-        In addition, he continuously benefits from the effect of the \spell{nondetection} spell against all attempts that his quarry makes to detect him magically.
-        The effect uses a spellpower equal to his hunting power.
+        \subcf{8th -- Impaired Quarry}
+        Whenever the ranger damages his quarry with a physical attack, it is \impaired for 2 rounds.
 
-        \subcf{6th -- Ooze Hunter}
-        The ranger becomes immune to slime and engulf attacks.
-        In addition, he increases his quarry bonus by \plus2 against oozes.
+        \subcf{12th -- Anchored Quarry}
+        Whenever the ranger damages his quarry with a physical attack, it is dimensionally anchored, as the \spell{dimensional anchor} spell, for 2 rounds.
 
-        \subcf{6th -- Scent}
-        The ranger gains the scent ability (see \pcref{Scent}).
+        \subcf{12th -- Master of the Hunt}
+        As a standard action, the ranger may share the damage bonus from his quarry ability with all allies who can see and hear him for 5 rounds.
+        His allies do not suffer penalties against targets other than the quarry.
 
-        \subcf{6th -- Slowed Quarry}
-        If the ranger hits his quarry with a physical attack, that creature moves at half speed.
-        This effect lasts as wrong as it remains the ranger's quarry.
-
-        \subcf{10th -- Divine Avenger}
-        The ranger gains \glossterm{spell resistance} against divine spells equal to 10 \add his hunting power.
-        In addition, he increases his quarry bonus by \plus2 against divine spellcasters.
-
-        \subcf{10th -- Dragonslayer}
-        The ranger becomes immune to breath weapons, and his attacks ignore the damage reduction of dragons.
-        In addition, he increases his quarry bonus by \plus2 against dragons.
-
-        \subcf{10th -- Fey Stalker}
-        The ranger becomes immune to hostile \glossterm{Mind} effects.
-        In addition, he increases his quarry bonus by \plus2 against fey.
-
-        \subcf{10th -- Mageslayer}
-        The ranger gains \glossterm{spell resistance} against arcane spells equal to 10 \add his hunting power.
-        In addition, he increases his quarry bonus by \plus2 against arcane spellcasters.
-
-        \subcf{14th -- Master of the Hunt}
-        As a standard action, the ranger may share the benefits of his quarry ability with all allies who can see and hear him for 5 rounds.
-        This does not share the defensive benefits granted by the Tenacious Hunter ability.
-        However, his allies do not suffer penalties against targets other than the quarry.
-
-        \subcf{14th -- Flexible Quarry}
-        The ranger does not need to wait to designate a new quarry after giving up on his previous quarry.
-
-        \subcf{14th -- Impaired Quarry}
-        If the ranger hits his quarry with a physical attack, that creature is \impaired with all attacks and checks.
-        This effect lasts as long as it remains the ranger's quarry.
-
-        \subcf{14th -- Multiquarry}
+        \subcf{12th -- Multiquarry}
         The ranger may designate up to two targets whenever he chooses a quarry.
         He gains his quarry benefits against both targets.
         Whenever he designates new quarries, he may choose which previous quarry to give up (if any).
-
-        \subcf{18th -- Anchored Quarry}
-        If the ranger hits his quarry with a physical attack, that creature is dimensionally anchored, as the \spell{dimensional anchor} spell.
-        This effect lasts as long as it remains the ranger's quarry.
 
         \cf{Rgr}[3rd]{Free Stride}[Ex]
         The ranger can move through any sort of natural terrain that slows or impedes movement at his normal speed without suffering any sort of impairment.
@@ -2209,61 +2165,6 @@ This choice determines a great deal about your character's abilities.
         If he already has low-light vision, he doubles its benefit, allowing him to treat sources of light as if they had four times their normal illumination range.
         In addition, he gains \glossterm{darkvision} out to 50 feet, allowing him to see in complete darkness.
         If he already has darkvision, he increases its range by 50 feet.
-
-        \cf{Rgr}[4th]{Terrain Lore}[Ex]
-        The ranger becomes particularly attuned to certain kinds of terrain.
-        He chooses two terrain-based lores from the list below.
-        Usually, rangers favor lores relating to their home terrain, but a ranger may a lore from any kind of terrain that he has personally experienced at least once.
-        At his 8th ranger level, and every four ranger levels thereafter, the ranger gains an additional terrain lore.
-
-        Many terrain lores grant the ranger a particular terrain as a favored terrain.
-        While in a favored terrain, a ranger gains a \plus2 bonus to Awareness, Stealth, and Survival checks.
-        If he desires, he may leave no trace of his passage, causing attempts to track him to take a \minus20 penalty.
-        The options for terrain lores are listed below.
-
-        All terrain lore abilities are extraordinary abilities unless otherwise stated.
-
-        \subcf{Aquatic}
-        The ranger treats aquatic terrain as a favored terrain.
-        In addition, he gains a \glossterm{swim speed} equal to his base land speed.
-        If he already has a swim speed, he increases his swim speed by 10 feet.
-        \subcf{Cold}
-        The ranger treats cold terrain as a favored terrain.
-        In addition, he gains cold damage reduction equal to his Constitution or his character level, whichever is higher.
-        This allows him to ignore the first points of cold damage he would take each round.
-        \subcf{Desert}
-        The ranger treats deserts as a favored terrain.
-        In addition, he becomes immune to fatigue.
-        \subcf{Forest}
-        The ranger treats forests as a favored terrain.
-        In addition, he gains Skill Focus (Stealth) as a bonus feat.
-        \subcf{Mountains}
-        The ranger treats mountains as a favored terrain.
-        In addition, he gains a \glossterm{climb speed} equal to his land speed.
-        If he already has a climb speed, he increases his climb speed by 10 feet.
-        \subcf{Plains}
-        The ranger treats plains as a favored terrain.
-        In addition, he increases his land speed by 10 feet.
-        \subcf{Swamp}
-        The ranger treats swamps as a favored terrain.
-        In addition, he gains Perfect Health as a bonus feat.
-        \subcf{Underground}
-        The ranger treats underground terrain as a favored terrain.
-        In addition, he gains Blind-Fight as a bonus feat.
-        \subcf{Urban}
-        The ranger treats urban terrain as a favored terrain.
-        In addition, he gains Skill Focus (Persuasion) as a bonus feat.
-        \subcf{8th -- Guide}
-        Whenever the ranger is in a favored terrain, all allies that can see and hear the ranger gain his favored terrain bonuses in that terrain as well.
-        \subcf{12th -- Camouflage}
-        The ranger can use the Stealth skill to hide in any of his favored terrains, even if the terrain does not grant cover or concealment.
-        \subcf{12th -- Planar Terrain}
-        The ranger chooses a plane.
-        He treats that plane as favored terrain.
-        In addition, he is immune to any hostile planar effects from any plane he has chosen as favored terrain.
-        \subcf{18th -- Hide in Plain Sight}
-        While in any of his favored terrains, the ranger can use the Stealth skill to hide even while being observed, taking a \minus5 penalty to the Stealth check.
-        He still needs cover or concealment to hide.
 
         \cf{Rgr}[5th]{Rapid Tracker}[Ex]
         The ranger's ability to track his foes improves.
@@ -2290,7 +2191,7 @@ This choice determines a great deal about your character's abilities.
         Once per day, the ranger may concentrate for a full round to duplicate the effects of the \spell{discern location} ritual targeted at his quarry.
 
         \cf{Rgr}[15th]{Farsight}[Ex]
-        The ranger increases the range of his darkvision and blindsight abilities by 100 feet.
+        The ranger increases the range of his darkvision by 200 feet, and his blindsight by 50 feet.
         In addition, he halves his \glossterm{range increment penalties} for attacking at long range.
 
         \cf{Rgr}[17th]{Eternal Quarry}[Ex]
@@ -2353,8 +2254,9 @@ This choice determines a great deal about your character's abilities.
         Rogues are proficient with simple weapons, any two weapon groups, light armor, and bucklers.
         They are also proficient with saps.
 
-        \cf{Rog}{Advanced Training}
-        A rogue treats her skill ranks as if they were 2 points higher than they actually are for the purpose of meeting feat prerequisites.
+        \cf{Rog}{Skill Master}
+        A rogue gains a \plus2 bonus to all skills she is trained in.
+        This bonus increases by 1 at her 5th rogue level and every 5 rogue levels thereafter.
 
     \subsection{Class Abilities}
         All rogues have the following abilities.
@@ -2379,6 +2281,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Rog}[2nd]{Skill Talent}[Ex]
         The rogue's skills improve.
         She gains an additional skill point, which she can place in any skill, and a bonus skill feat for which she qualifies.
+        She must use her rogue level in place of her character level to meet level prerequisites for the feat.
         At her 6th rogue level, and every four rogue levels thereafter, she gains an additional skill point and skill feat.
 
         \cf{Rog}[3rd]{Uncanny Dodge}[Ex]
@@ -2400,10 +2303,6 @@ This choice determines a great deal about your character's abilities.
         Ambush attacks only function on the first sneak attack the rogue makes against a particular creature in an encounter.
 
         All combat tricks are extraordinary abilities unless otherwise noted.
-
-        \subcf{Combat Feat}
-        The rogue gains a combat feat for which she qualifies (see Feats).
-        This trick can be selected multiple times.
 
         \subcf{Confusing Ambush*}
         The rogue makes a Trick power vs. Mental attack against the struck creature.
@@ -2533,7 +2432,7 @@ This choice determines a great deal about your character's abilities.
             \sorcererprogressionrow{17} & 10 & Spell absorption            \\
             \sorcererprogressionrow{18} & 11 & Personal spell              \\
             \sorcererprogressionrow{19} & 11 & Innate magic                \\
-            \sorcererprogressionrow{20} & 12 & Personal spell              \\
+            \sorcererprogressionrow{20} & 12 & Font of power, personal spell              \\
         \end{dtabularx}
     \end{dtable}
 
@@ -2617,8 +2516,6 @@ This choice determines a great deal about your character's abilities.
                 If he would miscast it, the spell simply fails without effect.
                 In addition, he automatically succeeds at all Concentration checks he makes to cast the spell.
             \item Mastered: The sorcerer no longer needs verbal or somatic components to cast the spell.
-            \item Metamagic Mastery: The sorcerer chooses a metamagic feat.
-                The cost to use that metamagic feat on that spell is reduced by one level (to a minimum of zero).
         \end{itemize}
 
         If he trades the knowledge of his chosen spell for a different spell, he may choose a new personal spell (including the new spell he just gained).
@@ -2654,16 +2551,15 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Sor}[13th]{Spontaneous Augmentation}[Ex]
         Whenever he casts a spell, the sorcerer may reduce the level cost of one of the spell's augments by one level (to a minimum of zero).
-        Alternately, he may reduce the level cost to apply one of his metamagic feats to the spell by one level (to a minimum of zero).
 
         \cf{Sor}[17th]{Spell Absorption}[Ex]
         Whenever the sorcerer resists a spell with his spell resistance, he gains the ability to cast that spell once during the next 5 rounds.
-        The spell retains all augments, metamagic feats, and similar modifications from the original caster, and the sorcerer cannot choose any other augments or apply his own metamagic feats.
+        The spell retains all augments, effects from feats and other abilities, and similar modifications from the original caster, and the sorcerer cannot choose any other augments or apply effects from his own abilities.
         However, he makes all other decisions required to cast the spell, and uses his spellpower to determine the spell's effects.
         Once he casts the spell, he expends the absorbed energy, can cannot cast it again.
 
-        \cf{Sor}[20th]{Spontaneous Mastery}[Ex]
-        The sorcerer may use his spontaneous personalization ability twice every time he casts a spell, reducing the total level costs by two levels.
+        \cf{Sor}[20th]{Font of Power}[Ex]
+        After failing a wild magic roll, the sorcerer must wait one round per spell level before he can cast spells of the same level, rather than ten minutes per spell level.
 
     \subsection{Variant Sorcerer}
 
@@ -2877,9 +2773,24 @@ This choice determines a great deal about your character's abilities.
         The full list of spellwarped aspects is given below.
 
         \parhead{General}
+
         \subcf{Resilient}
         The spellwarped increases the defense improved by his choice of innate magic by 2.
         This can increase his hit points, if appropriate.
+        \subcf{Spellwarped Ritualist} The spellwarped can learn and perform rituals as if he were an arcane caster with a spellpower equal to his spellwarped spellpower.  The maximum level of ritual that he can learn or perform is equal to half his spellwarped level or half his spellwarped key attribute, whichever is lower.
+        In addition, he gains a special ability based on which type of spellwarped he is.
+        \begin{itemize}
+            \itemhead{Alteration} If a ritual requires a specific component with a value, the spellwarped can substitute its equivalent value in ritual components instead.
+                This cannot be used to replace components without a value or components with special properties that alter the ritual's effect, such as the body for a \spell{resurrection} ritual.
+            \itemhead{Pyromancy}
+                The spellwarped can use any combustable item as a ritual component.
+                It can replace an amount of normal ritual components equal to the value of the item.
+                It cannot replace special ritual components.
+            \itemhead{Telekinesis}
+                The spellwarped can perform rituals from up to 30 feet away from the ritual components.
+            \itemhead{Temporal}
+                The spellwarped performs rituals twice as quickly.
+        \end{itemize}
         \subcf{7th -- Warp Overload}
         The spellwarped can voluntarily take \glossterm{warp damage}, even if that would exceed half his maximum hit points.
         He is only unable to voluntarily take warp damage if the total warp damage would exceed his maximum hit points.
@@ -2892,8 +2803,8 @@ This choice determines a great deal about your character's abilities.
         \subcf{Damage Reduction}
         The spellwarped gains \glossterm{damage reduction} against physical damage equal to his spellpower.
         Adamantine weapons ignore this damage reduction and negate it for 1 round.
-        \subcf{7th -- Alter Movement}
-        The spellwarped gains his choice of the Legendary Balance, Legendary Climber, Legendary Leaper, Legendary Swimmer, or Legendary Tumbler feats, even if he does not meet the prerequisites.
+        \subcf{Alter Movement}
+        The spellwarped gains his choice of the Acrobatics Mastery, Climb Mastery, Jump Mastery, or Swim Mastery feats.
         He may select this aspect multiple times, choosing a different bonus feat each time.
         \subcf{7th -- Alter Size}
         When the spellwarped uses his surge of power, he can increase or decrease his size by one size category, as he chooses.
@@ -3040,7 +2951,7 @@ This choice determines a great deal about your character's abilities.
             As a swift action, the spellwarped can create a weapon made of flame that lasts for 5 rounds.
             The weapon is sized appropriately for him, and may take the form of any weapon he is proficient with.
             He can attack with the weapon as if it were a normal weapon of its type, except that he uses his spellpower to determine his damage in place of his combat prowess or Strength, and all damage dealt with the weapon is fire damage.
-            All other damage modifiers, such as from feats and abilities, apply normally.
+            All other damage modifiers apply normally.
             \par If the flame weapon leaves his hand, it is extinguished 1 round later.
 
             \subcf{4th -- Fiery Protection}
@@ -3203,26 +3114,26 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} c >{\lcol}X}
             \tb{Level} & \tb{Combat Prowess} & \tb{Spells} & \tb{Special} \\
             \hline
-            \wizardprogressionrow{1}  & 2 & Cantrip, rituals, spells          \\
-            \wizardprogressionrow{2}  & 3 & Arcane insight, cantrip           \\
-            \wizardprogressionrow{3}  & 3 & Attuned spell                     \\
-            \wizardprogressionrow{4}  & 4 & Arcane insight                    \\
-            \wizardprogressionrow{5}  & 4 & Ritual master                     \\
-            \wizardprogressionrow{6}  & 5 & Arcane insight                    \\
-            \wizardprogressionrow{7}  & 5 & Attuned spell                     \\
-            \wizardprogressionrow{8}  & 6 & Arcane insight                    \\
-            \wizardprogressionrow{9}  & 6 & Persistent attunement             \\
-            \wizardprogressionrow{10} & 7 & Arcane insight                    \\
-            \wizardprogressionrow{11} & 7 & Attuned spell                     \\
-            \wizardprogressionrow{12} & 8 & Arcane insight                    \\
-            \wizardprogressionrow{13} & 8 & Contingency                       \\
-            \wizardprogressionrow{14} & 9 & Arcane insight                    \\
-            \wizardprogressionrow{15} & 9 & Attuned spell                     \\
-            \wizardprogressionrow{16} & 10 & Arcane insight                    \\
-            \wizardprogressionrow{17} & 10 & Augmented attunement              \\
-            \wizardprogressionrow{18} & 11 & Arcane insight                    \\
-            \wizardprogressionrow{19} & 11 & Attuned spell                     \\
-            \wizardprogressionrow{20} & 12 & Arcane insight, chain contingency \\
+            \wizardprogressionrow{1}  & 2  & Cantrip, rituals, spells \\
+            \wizardprogressionrow{2}  & 3  & Arcane insight, cantrip  \\
+            \wizardprogressionrow{3}  & 3  & Attuned spell            \\
+            \wizardprogressionrow{4}  & 4  & Arcane insight           \\
+            \wizardprogressionrow{5}  & 4  & Predictive spells        \\
+            \wizardprogressionrow{6}  & 5  & Arcane insight           \\
+            \wizardprogressionrow{7}  & 5  & Attuned spell            \\
+            \wizardprogressionrow{8}  & 6  & Arcane insight           \\
+            \wizardprogressionrow{9}  & 6  & Contingency              \\
+            \wizardprogressionrow{10} & 7  & Arcane insight           \\
+            \wizardprogressionrow{11} & 7  & Attuned spell            \\
+            \wizardprogressionrow{12} & 8  & Arcane insight           \\
+            \wizardprogressionrow{13} & 8  & Augmented attunement     \\
+            \wizardprogressionrow{14} & 9  & Arcane insight           \\
+            \wizardprogressionrow{15} & 9  & Attuned spell            \\
+            \wizardprogressionrow{16} & 10 & Arcane insight           \\
+            \wizardprogressionrow{17} & 10 & Chain contingency        \\
+            \wizardprogressionrow{18} & 11 & Arcane insight           \\
+            \wizardprogressionrow{19} & 11 & Attuned spell            \\
+            \wizardprogressionrow{20} & 12 & Arcane insight, archmage \\
         \end{dtabularx}
     \end{dtable}
 
@@ -3245,8 +3156,8 @@ This choice determines a great deal about your character's abilities.
         Wizards are proficient with simple weapons, but not with any type of armor or shield.
         Armor of any type interferes with a wizard's movements, which can cause her spells with somatic components to fail.
 
-        \cf{Wiz}{Advanced Training}
-        A wizard treats her spells as if they were 1 level higher than they actually are for the purpose of meeting feat prerequisites.
+        \cf{Wiz}{Arcane Knowledge}
+        The wizard gains an additional spell known.
 
         \cf{Wiz}{Enhanced Spellpower}
         The wizard gains a \plus2 bonus to spellpower with her wizard spells.
@@ -3334,11 +3245,11 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Wiz}[3rd]{Attuned Spell}[Ex]
         Whenever the wizard casts a spell or performs a ritual on herself, she may attune to it to increase its duration.
-        The level of the spell or ritual, including any augments or metamagic, must not exceed half her wizard level.
-        % Effects that reduce the level cost of augments or metamagic do not reduce the spell's total level for this purpose.
+        The level of the spell or ritual, including any augments, must not exceed half her wizard level.
+        % Effects that reduce the level cost of augments do not reduce the spell's total level for this purpose.
         The spell must be a \glossterm{targeted spell}, and have a duration of \durshort or longer.
 
-        As long as the wizard is attuned to that spell, its duration becomes permanent.
+        As long as the wizard is attuned to that spell, its duration becomes permanent, and it cannot be dispelled.
         If it has secondary effects, such as the \spell{avatar of suffering} spell, the duration of the secondary effects is not changed.
         The wizard can only attune to one spell at a time.
         If she attunes to another spell, the other spell returns to its normal duration, and expires if appropriate.
@@ -3346,14 +3257,19 @@ This choice determines a great deal about your character's abilities.
         At her 7th wizard level, and every 4 wizard levels thereafter, the wizard gains the ability to attune to an additional spell simultaneously.
         Whenever she attunes to a new spell, she may choose which of her other attuned spells she stops being attuned to.
 
-        \cf{Wiz}[5th]{Ritual Master}[Ex]
-        When performing an arcane \glossterm{ritual}, the wizard may spend an arcane spell slot of the ritual's level or higher.
-        If she does, she need only pay half the normal material component costs to perform the ritual.
+        \cf{Wiz}[5th]{Predictive Spells}[Ex]
+        A wizard's intelligence and mastery of spells allows her to prepare for any situation.
+        As a standard action, she can begin casting two spells at once, designating one as the primary spell and the other as the secondary spell.
+        The level of both spells, including any augments, must not exceed half her wizard level.
+        If the two spells are different levels, she must designate the higher level spell to be the primary spell.
+        If her concentration is disrupted, the primary spell is miscast and its spell slot is expended, but the secondary spell dissipates without effect and its spell slot is not expended.
 
-        \cf{Wiz}[9th]{Persistent Attunement}[Ex]
-        A wizard's attuned spells cannot be dispelled.
+        When she finishes casting, she chooses which one of those spells takes effect.
+        The spell slot for that spell is expended, and its effect takes place.
+        The other spell is not expended, and its effect does not take place.
+        The wizard can use this ability a number of times per day equal to half her Intelligence.
 
-        \cf{Wiz}[13th]{Contingency}[Ex]
+        \cf{Wiz}[9th]{Contingency}[Ex]
         The wizard gains the ability to prepare a spell so it takes effect automatically if specific circumstances arise.
         To prepare a contingency, the wizard must spend 1 minute preparing the spell, which consumes the a spell slot two levels higher than the spell's level.
         During this casting time, the wizard specifies what circumstances cause the spell to take effect.
@@ -3371,14 +3287,17 @@ This choice determines a great deal about your character's abilities.
         A wizard can have only one contingency active at a time.
         If she creates another contingency, it replaces her old contingency.
 
-        \cf{Wiz}[17th]{Augmented Attunement}[Ex]
-        When the wizard attunes to a spell, she may reduce the cost of one augment to the spell by one level.
+        \cf{Wiz}[13th]{Augmented Attunement}[Ex]
+        Whenever the wizard attunes to a spell, she may reduce the cost of one augment to the spell by one level.
 
-        \cf{Wiz}[20th]{Chain Contingency}[Ex]
+        \cf{Wiz}[17th]{Chain Contingency}[Ex]
         The wizard may ready two spells in her contingency instead of a single spell.
         In addition, she may have two contingencies active at once instead of one.
         Only one contingency can trigger in a given round.
         If both would trigger, only the first contingency cast triggers, and the second does not.
+
+        \cf{Wiz}[20th]{Archmage}[Ex]
+        The wizard can regain her spent spells with an hour of study and arcane contemplation, rather than once per day.
 
 \section{Multiclass Characters}\label{Multiclass Characters}
     A character may add new classes as he or she progresses in level, thus becoming a multiclass character.
@@ -3437,15 +3356,3 @@ This choice determines a great deal about your character's abilities.
         \parhead{Weapon and Armor Proficiency}
         Only a character's base class grants weapon and armor proficiencies.
         If a character has multiple base classes, she must choose which base class grants weapon and armor profiencies.
-
-    \subsection{Spellcasters and Multiclassing}\label{Spellcasters and Multiclassing}
-        The character gains spells from all of his or her spellcasting classes separately and tracks his spells per day, spells known, and spellpower separately with each class.
-
-        A character with spellcasting abilities gains a special benefit when multiclassing.
-        She must choose a specific spellcasting class he has.
-        For every two levels that she in nonmagical classes, up to the number of levels she has in her chosen spellcasting class, she increases his spellcasting ability with that class.
-        This increases her spells per day (if any) and spells known, as if she had gained a level in her chosen spellcasting class.
-        No class abilities can be gained in this way.
-
-        For example, Gish, a 2nd level fighter / 2th level wizard, would have the spells per day, spells known, and spellpower of a 3rd level wizard.
-        If he gained two more fighter levels, his spellcasting ability would not increase.
