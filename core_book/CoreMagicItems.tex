@@ -1102,8 +1102,10 @@ Magic items are objects that have been imbued with magical energy. They can take
     \subsection{Implement Enhancement Bonuses}\label{Implement Enhancement Bonuses}
 
         Magical implements can have enhancement bonuses ranging from \plus1 to \plus5.
-        Each \plus1 of enhancement bonus increases your effective spellpower by 1 for the purpose of determining how much damage and healing your spells do.
+        Each \plus1 of enhancement bonus grants a bonus to damage and healing with spells equal to half the number of dice you would roll for that spell's damage or healing.
+        If no dice would be rolled, you simply gain a bonus to damage or healing equal to the enhancement bonus on the implement.
         This only affects damage, and does not increase your accuracy or have any other effects.
+        For example, if you cast a \spell{fireball} spell that would normally do 6d8 damage, it would deal 6d8\plus6 damage if you had a \plus2 staff.
 
         In addition, each \plus1 of enhancement bonus grants you an additional offensive legend point each day.
         These legend points can only be gained once per day, regardless of the number of implements you use.
