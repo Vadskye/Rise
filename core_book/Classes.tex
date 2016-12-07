@@ -181,7 +181,8 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Bbn}[6th]{Rage Feat}
         The barbarian gains a bonus combat feat that only functions while he is raging.
-        The feat must be drawn from the list of combat feats in \tref{Combat Feats}, and he must still meet all prerequisites for the feat.
+        The feat must be drawn from the list of combat feats in \tref{Combat Feats}.
+        He must use his barbarian level in place of his character level to meet level prerequisites for the feat.
         He gains an additional bonus feat that only functions while raging at his 14th barbarian level.
 
         \cf{Bbn}[7th]{Improved Uncanny Dodge}[Ex]
@@ -242,26 +243,26 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{2em} >{\ccol}p{\babcolavg} c c >{\lcol}X}
             \tb{Level} & \tb{Combat Prowess} & \tb{Devotion} & \tb{Spells} & \tb{Special} \\
             \hline
-            \clericprogressionrow{1}  & \plus2 & 2  & Devotion, domain gifts, spells           \\
-            \clericprogressionrow{2}  & \plus2 & 3  & Domain invocation, rituals               \\
-            \clericprogressionrow{3}  & \plus2 & 3  & Domain spell                             \\
-            \clericprogressionrow{4}  & \plus2 & 4  & Devotion feat, domain invocation         \\
-            \clericprogressionrow{5}  & \plus3 & 4  & Domain spell                             \\
-            \clericprogressionrow{6}  & \plus3 & 5  & Domain aspect                            \\
-            \clericprogressionrow{7}  & \plus3 & 5  & Domain spell                             \\
-            \clericprogressionrow{8}  & \plus3 & 6  & Domain aspect                            \\
-            \clericprogressionrow{9}  & \plus3 & 6  & Domain spell                             \\
-            \clericprogressionrow{10} & \plus4 & 7  & Intercession                             \\
-            \clericprogressionrow{11} & \plus4 & 7  & Domain spell                             \\
-            \clericprogressionrow{12} & \plus4 & 8  & Greater domain invocation                \\
-            \clericprogressionrow{13} & \plus4 & 8  & Domain spell                             \\
-            \clericprogressionrow{14} & \plus4 & 9  & Devotion feat, greater domain invocation \\
-            \clericprogressionrow{15} & \plus5 & 9  & Domain spell                             \\
-            \clericprogressionrow{16} & \plus5 & 10 & Domain mastery                           \\
-            \clericprogressionrow{17} & \plus5 & 10 & Domain spell                             \\
-            \clericprogressionrow{18} & \plus5 & 11 & Domain mastery                           \\
-            \clericprogressionrow{19} & \plus5 & 11 & Endless devotion, domain spell           \\
-            \clericprogressionrow{20} & \plus6 & 12 & Miracle                                  \\
+            \clericprogressionrow{1}  & \plus2 & 2  & Devotion, domain gifts, spells \\
+            \clericprogressionrow{2}  & \plus2 & 3  & Domain invocation, rituals     \\
+            \clericprogressionrow{3}  & \plus2 & 3  & Domain spell                   \\
+            \clericprogressionrow{4}  & \plus2 & 4  & Domain invocation              \\
+            \clericprogressionrow{5}  & \plus3 & 4  & Domain spell                   \\
+            \clericprogressionrow{6}  & \plus3 & 5  & Domain aspect                  \\
+            \clericprogressionrow{7}  & \plus3 & 5  & Domain spell                   \\
+            \clericprogressionrow{8}  & \plus3 & 6  & Domain aspect                  \\
+            \clericprogressionrow{9}  & \plus3 & 6  & Domain spell                   \\
+            \clericprogressionrow{10} & \plus4 & 7  & Intercession                   \\
+            \clericprogressionrow{11} & \plus4 & 7  & Domain spell                   \\
+            \clericprogressionrow{12} & \plus4 & 8  & Greater domain invocation      \\
+            \clericprogressionrow{13} & \plus4 & 8  & Domain spell                   \\
+            \clericprogressionrow{14} & \plus4 & 9  & Greater domain invocation      \\
+            \clericprogressionrow{15} & \plus5 & 9  & Domain spell                   \\
+            \clericprogressionrow{16} & \plus5 & 10 & Domain mastery                 \\
+            \clericprogressionrow{17} & \plus5 & 10 & Domain spell                   \\
+            \clericprogressionrow{18} & \plus5 & 11 & Domain mastery                 \\
+            \clericprogressionrow{19} & \plus5 & 11 & Endless devotion, domain spell \\
+            \clericprogressionrow{20} & \plus6 & 12 & Miracle                        \\
         \end{dtabularx}
     \end{dtable}
 
@@ -441,15 +442,6 @@ This choice determines a great deal about your character's abilities.
         If he knows that spell, he may spend a devotion point to cast it in place of a spell slot.
 
         At 5th level, and every odd level theareafter, the cleric gains an additional domain spell.
-
-        \cf{Clr}[4th]{Devotion Feat}[Su]
-        The cleric chooses a feat that he meets the prerequisites for.
-        As long as his devotion pool is at least half full, he gains that feat as a bonus feat.
-        At each level, the cleric may change this feat to a different feat he qualifies for at his newly increased level.
-
-        At 14th level, the cleric gains a second devotion feat.
-        The cleric may not normally use these devotion feats as prerequisites for other feats or abilities.
-        However, he he may use one devotion feat to meet a prerequiste for his second devotion feat.
 
         \cf{Clr}[6th]{Domain Aspect}[Su]
         The cleric gains a domain aspect from one of his domains.
@@ -2288,9 +2280,9 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rog}[2nd]{Skill Talent}[Ex]
         The rogue's skills improve.
-        She gains an additional skill point, which she can place in any skill, and a bonus skill feat for which she qualifies.
+        She gains an additional skill point, which she can place in any skill, and a bonus Skill feat for which she qualifies (see \pcref{Skill Feats}).
         She must use her rogue level in place of her character level to meet level prerequisites for the feat.
-        At her 6th rogue level, and every four rogue levels thereafter, she gains an additional skill point and skill feat.
+        At her 6th rogue level, and every four rogue levels thereafter, she gains an additional skill point and Skill feat.
 
         \cf{Rog}[3rd]{Uncanny Dodge}[Ex]
         The rogue can react to danger before her senses would normally allow her to do so.
