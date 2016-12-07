@@ -154,9 +154,11 @@ This choice determines a great deal about your character's abilities.
         If the barbarian has any temporary hit points remaining at the end of his rage, the nonlethal damage is dealt to those hit points before they go away.
         In addition, he becomes \fatigued and unable to rage until he rests for 5 minutes.
 
-        The bonuses granted by a barbarian's rage increase with his barbarian level.
-        This is called the barbarian's rage bonus.
-        At his 5th barbarian level, and every 5 barbarian levels thereafter, the bonus to physical damage and the bonus to Fortitude and Mental defenses increases by \plus1.
+        The bonuses to physical damage, Fortitude, and Mental defense granted by a barbarian's rage increase with his barbarian level.
+        This is called the barbarian's \glossterm{rage bonus}.
+        He may rage a number of times per day equal to his rage bonus.
+
+        At his 5th barbarian level, and every 5 barbarian levels thereafter, his rage bonus increases by 1.
         In addition, the number of hit points gained per Willpower increases by 1.
         His penalty to physical defenses while raging remains the same.
 
@@ -1310,26 +1312,26 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} >{\lcol}X}
             \tb{Level} & \tb{Combat Prowess} & \tb{Special} \\
             \hline
-            \fighterprogressionrow{1}  & Advanced training, weapon discipline \\
-            \fighterprogressionrow{2}  & Combat feat                          \\
-            \fighterprogressionrow{3}  & Combat discipline                    \\
-            \fighterprogressionrow{4}  & Martial assault                      \\
-            \fighterprogressionrow{5}  & Armor discipline                     \\
-            \fighterprogressionrow{6}  & Combat feat                          \\
-            \fighterprogressionrow{7}  & Improved weapon discipline           \\
-            \fighterprogressionrow{8}  & Martial assault                      \\
-            \fighterprogressionrow{9}  & Improved combat discipline           \\
-            \fighterprogressionrow{10} & Combat feat, swift warrior           \\
-            \fighterprogressionrow{11} & Improved armor discipline            \\
-            \fighterprogressionrow{12} & Martial assault                      \\
-            \fighterprogressionrow{13} & Greater weapon discipline            \\
-            \fighterprogressionrow{14} & Combat feat                          \\
-            \fighterprogressionrow{15} & Greater combat discipline            \\
-            \fighterprogressionrow{16} & Martial assault                      \\
-            \fighterprogressionrow{17} & Greater armor discipline             \\
-            \fighterprogressionrow{18} & Combat feat                          \\
-            \fighterprogressionrow{19} & True discipline                      \\
-            \fighterprogressionrow{20} & Combat supremacy                     \\
+            \fighterprogressionrow{1}  & Combat supremacy, martial excellence \\
+            \fighterprogressionrow{2}  & Weapon discipline                    \\
+            \fighterprogressionrow{3}  & Combat feat                          \\
+            \fighterprogressionrow{4}  & Combat discipline                    \\
+            \fighterprogressionrow{5}  & Battlemaster                         \\
+            \fighterprogressionrow{6}  & Armor discipline                     \\
+            \fighterprogressionrow{7}  & Combat feat                          \\
+            \fighterprogressionrow{8}  & Improved weapon discipline           \\
+            \fighterprogressionrow{9}  & Style fusion                         \\
+            \fighterprogressionrow{10} & Improved combat discipline           \\
+            \fighterprogressionrow{11} & Combat feat                          \\
+            \fighterprogressionrow{12} & Improved armor discipline            \\
+            \fighterprogressionrow{13} & Swift warrior                        \\
+            \fighterprogressionrow{14} & Greater weapon discipline            \\
+            \fighterprogressionrow{15} & Combat feat                          \\
+            \fighterprogressionrow{16} & Greater combat discipline            \\
+            \fighterprogressionrow{17} & Supreme battlemaster                 \\
+            \fighterprogressionrow{18} & Greater armor discipline             \\
+            \fighterprogressionrow{19} & Combat feat                          \\
+            \fighterprogressionrow{20} & Supreme discipline                   \\
         \end{dtabularx}
     \end{dtable}
 
@@ -1353,14 +1355,19 @@ This choice determines a great deal about your character's abilities.
         \cf{Ftr}{Weapon and Armor Proficiency}
         A fighter is proficient with simple weapons, any four other weapon groups,  all armor (heavy, medium, and light), and shields.
 
-        \cf{Ftr}{Martial Master}[Ex]
+        \cf{Ftr}{Martial Excellence}[Ex]
         A fighter gains a \plus1 bonus to accuracy and damage with physical attacks.
         In addition, he gains a \plus1 bonus to physical defenses.
 
     \subsection{Class Abilities}
         All fighters have the following abilities.
 
-        \cf{Ftr}{Weapon Discipline}
+        \cf{Ftr}{Combat Supremacy}
+        A fighter is a consummate warrior, and can stand toe to toe with even the toughest foes.
+        Whenever the fighter deals damage to a creature with a physical attack, he may impede its fighting ability as an \glossterm{immediate action}.
+        If he does, the struck creature is \impaired on attacks and checks against the fighter for 2 rounds, or until he uses this ability on that creature again.
+
+        \cf{Ftr}[2nd]{Weapon Discipline}
         The fighter's training grants him additional capability when using his weapons.
         He may choose a weapon group, or he may choose to train equally with all weapons.
         If he chooses a weapon group, he gains a \plus1 bonus to damage on attacks with weapons from that group.
@@ -1368,13 +1375,13 @@ This choice determines a great deal about your character's abilities.
         If he chooses not to focus on a specific group of weapons, he gains the ability to become proficient with any weapon group if he spends 1 hour training with a weapon from that group.
         He may only keep this proficiency with one weapon group at a time; if he trains with a new weapon group, he loses his proficiency in the previous group.
 
-        \cf{Ftr}[2nd]{Combat Feat}
+        \cf{Ftr}[3rd]{Combat Feat}
         The fighter gets a bonus combat-oriented feat.
         This bonus feat must be drawn from the list of combat feats in \tref{Combat Feats}.
         He must use his fighter level in place of his character level to meet level prerequisites for the feat.
-        He gains an additional bonus feat at his 6th fighter level and every four fighter levels thereafter.
+        He gains an additional bonus feat at his 7th fighter level and every four fighter levels thereafter.
 
-        \cf{Ftr}[3rd]{Combat Discipline}
+        \cf{Ftr}[4th]{Combat Discipline}
         The fighter can use his superior training and focus to keep fighting in the face of debilitating effects.
         When a fighter is initially affected by one of the conditions listed on \trefnp{Combat Discipline Conditions}, he may use his combat discipline ability to instead suffer the mitigated condition one column to the right.
         He can suppress the condition up to 5 rounds.
@@ -1416,16 +1423,12 @@ This choice determines a great deal about your character's abilities.
         The lesser condition that this ability imposes may be cured or removed normally, but doing so does not affect the resurgence of the condition the fighter was originally afflicted with.
         If a fighter uses this ability to mitigate or negate a condition which he must suffer as a sacrifice or cost to gain some benefit, he automatically forfeits the benefit he would have gained.
 
-        \cf{Ftr}[4th]{Martial Assault}
-        The fighter gains the ability to perform special attacks called martial assaults.
-        Each martial assault replaces a specific number of \glossterm{strikes}, and must be performed as part of a \glossterm{standard attack}.
-        He chooses a single martial assault from the list below.
-        Some martial assaults have minimum fighter levels, as indicated in the title of the ability.
-        At his 6th fighter level, and every four fighter levels thereafter, the fight gains an additional martial assault.
-        All martial assaults are extraordinary abilities unless otherwise noted.
+        \cf{Ftr}[5th]{Battlemaster}
+        The fighter becomes a master of controlling the ebb and flow of battle.
+        When he use his combat supremacy ability, he may choose for the struck creature to be \goaded by him or \shaken by him instead of impaired.
 
-        \cf{Ftr}[5th]{Armor Discipline}
-        A fighter's training grants him additional capability in armor.
+        \cf{Ftr}[6th]{Armor Discipline}
+        The fighter's training grants him additional capability in armor.
         He must choose to improve his agility or his resilience in armor.
         This applies to all armor discipline abilities the fighter has.
 
@@ -1437,24 +1440,26 @@ This choice determines a great deal about your character's abilities.
 
         If he improves his resilience, he gains damage reduction against physical damage equal to his character level. This allows him to ignore the first points of damage he would take each round.
 
-        \cf{Ftr}[7th]{Improved Weapon Discipline}
+        \cf{Ftr}[8th]{Improved Weapon Discipline}
         The fighter's training in his chosen weapons improves.
         He increases the \glossterm{critical multiplier} of his chosen weapons by 1.
         In addition, if he chose a specific weapon group, he increases his damage bonus to \plus2.
         If he did not, he can apply all weapon group-specific feats he has to any weapon group that he trains with for 1 hour.
         He retains this benefit for one week after the training.
 
-        \cf{Ftr}[9th]{Improved Combat Discipline}
+        \cf{Ftr}[9th]{Style Fusion}
+        The fighter gains a limited ability to combine the effects of multiple Style feats (see \pcref{Style Feats}).
+        He may use a single \glossterm{free action} to initiate two styles at once, or change which two styles he is using.
+        However, he can only use two styles at once a number of rounds per day equal to his Intelligence or half his fighter level, whichever is higher.
+
+        \cf{Ftr}[10th]{Improved Combat Discipline}
         The fighter's ability to keep fighting despite negative influence improves.
         He can reduce conditions by two steps instead of one when using combat discipline.
         For example, a stunned fighter who used combat discipline would instead be staggered.
         \par In addition, a fighter may use combat discipline to reduce any penalties he suffers to his accuracy, damage, checks, or defenses by 2, even if the source of the penalty is not listed on the combat discipline chart.
         \par The fighter may also mitigate up to two conditions at once.
 
-        \cf{Ftr}[10th]{Swift Warrior}
-        The fighter can take two swift or immediate actions each round (see \pcref{Swift and Immediate Actions}).
-
-        \cf{Ftr}[11th]{Improved Armor Discipline}
+        \cf{Ftr}[12th]{Improved Armor Discipline}
         The fighter's training with his armor improves.
         If he chose agility, he treats body armor he wears as even less encumbering.
         He reduces its \glossterm{encumbrance penalty} by 4 and decreases its arcane spell failure by 20\%.
@@ -1464,20 +1469,27 @@ This choice determines a great deal about your character's abilities.
         If he chose resilience, he may apply his damage reduction from the armor discipline ability against all damage, including from magical attacks.
         In addition, he gains a \plus1 bonus to Armor defense while wearing armor.
 
-        \cf{Ftr}[13th]{Greater Weapon Discipline}
+        \cf{Ftr}[13th]{Swift Warrior}
+        The fighter can take two swift or immediate actions each round (see \pcref{Swift and Immediate Actions}).
+
+        \cf{Ftr}[14th]{Greater Weapon Discipline}
         The fighter's training in his chosen weapons becomes still greater.
         He increases the \glossterm{critical range} of his chosen weapons by 1.
         This increase stacks with any other effects that affect critical range.
         For example, a fighter using heavy blades with the Weapon Focus feat (see \featpcref{Weapon Focus}) would have a critical range of 18-20.
 
-        \cf{Ftr}[15th]{Greater Combat Discipline}
+        \cf{Ftr}[16th]{Greater Combat Discipline}
         The fighter's ability to keep fighting despite influence becomes still greater.
         When using combat discipline, he may ignore any condition listed on the combat discipline chart.
         In addition, he may use combat discipline to be \severelyimpaired with attacks and checks rather than suffer any non-damaging condition not listed on the chart.
 
         \par The fighter may also mitigate up to three conditions at once.
 
-        \cf{Ftr}[17th]{Greater Armor Discipline}
+        \cf{Ftr}[17th]{Supreme Battlemaster}
+        The fighter's ability to control the battle improves.
+        Whenever he uses his combat supremacy ability, he may choose for the struck creature to be \taunted or \frightened instead of impaired.
+
+        \cf{Ftr}[18th]{Greater Armor Discipline}
         The fighter's training in his chosen armor becomes still greater.
         If he chose agility, he ignores all encumbrance penalties and arcane spell failure from body armor he wears.
         In addition, he treats body armor he wears as if it were three encumbrance categories lighter than it actually is whenever doing so would be beneficial to him.
@@ -1486,23 +1498,19 @@ This choice determines a great deal about your character's abilities.
 
         If he chose resilience, he gains a \plus4 bonus to Fortitude defense.
 
-        \cf{Ftr}[19th]{True Discipline}
+        \cf{Ftr}[20th]{Supreme Discipline}
         The fighter's discipline in his chosen area is beyond equal.
         He must choose either weapon discipline, armor discipline, or combat discipline.
         Depending on which discipline he chooses, he gains a different bonus.
-        \subcf{True Weapon Discipline}
-        When the fighter makes a \glossterm{standard attack}, he can make an additional \glossterm{strike}.
-        This does not stack with any other effects which grant extra strikes.
-        \subcf{True Armor Discipline}
+        \subcf{Supreme Weapon Discipline}
+        Whenever the fighter deals damage to a creature with a physical attack, the struck creature is \severelyimpaired with attacks and checks for 2 rounds.
+        \subcf{Supreme Armor Discipline}
         If the fighter chose agility, he gains a \plus1 bonus to physical defenses.
 
         If the fighter chose resilience, he doubles the damage reduction granted by his armor discipline ability.
-        \subcf{True Combat Discipline}
+        \subcf{Supreme Combat Discipline}
         The fighter can use combat discipline to be \impaired with attacks and checks instead of suffering any nondamaging negative effect with a duration.
         He may also mitigate up to four conditions at once.
-
-        \cf{Ftr}[20th]{Combat Supremacy}
-        Whenever a fighter successfully deals damage to a creature with a physical attack, the struck creature is \severelyimpaired with attacks and checks for 2 rounds.
 
 \section{Monk}\label{Monk}
     \begin{dtable}
@@ -1624,7 +1632,7 @@ This choice determines a great deal about your character's abilities.
         As a swift action, the monk can dispel all \glossterm{Mind} effects that are affecting her.
         This has no effect on Mind effects that cannot be dispelled.
         \subcf{8th -- Ki-Disrupting Strike}
-        As an immediate action, when the monk hits with a melee strike, she can make the struck creature \impaired with all actions for 2 rounds.
+        As an immediate action, when the monk hits with a melee strike, she can make the struck creature \impaired with attacks and checks for 2 rounds.
         \subcf{8th -- See the Flow of Life}
         As a swift action, the monk can gain the ability to see the \ki of living creatures until the end of the round.
         She can ``see'' any living creatures and their equipment within 50 feet perfectly, regardless of lighting conditions, invisibility, or any other means of concealment.
@@ -1651,7 +1659,7 @@ This choice determines a great deal about your character's abilities.
         If the destination is occupied, or dramatically different from how she visualized it, the effect fails.
         \subcf{20th -- Ki-Shattering Strike}
         As an immediate action, when the monk hits with a melee strike, she can disrupt her foe's \ki.
-        The target is \severelyimpaired with all actions for 2 rounds.
+        The target is \severelyimpaired with attacks and checks for 2 rounds.
 
         \cf{Mnk}[3rd]{Wholeness of Body}
         With concentration and focus, the monk can correct the flow of energy within her body.
