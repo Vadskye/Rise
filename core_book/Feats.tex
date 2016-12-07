@@ -144,7 +144,9 @@ Feats can be used to specialize your character particular area, to grant your ch
                 \featref{Diviner} & 1st level Divination spell & Improve Divination spells you cast & \tdash & \featpref{Diviner} \\
                 \featref{Enchant Item} & 1st level spells & Gain ability to create magic items & \tdash & \featpref{Enchant Item} \\
                 \featref{Enchanter} & 1st level Enchantment spell & Improve Enchantment spells you cast & \tdash & \featpref{Enchanter} \\
+                \featref{Evoker} & 1st level Evocation spell & Improve Evocation spells you cast & \tdash & \featpref{Evoker} \\
                 \featref{Hidden Magic} & 5th level, 2nd level spells & Cast spells without components & \tdash & \featpref{Hidden Magic} \\
+                \featref{Illusionist} & 1st level Illusion spell & Improve Illusion spells you cast & \tdash & \featpref{Illusionist} \\
                 \featref{Miscaster} & 1st level spells & Improve your miscast spells & \tdash & \featpref{Miscaster} \\
                 \featref{Quickened Magic} & 9th level, 4th level spells & Cast spells quickly & \tdash & \featpref{Quickened Magic} \\
                 \featref{Ritual Caster} & Int 3 & Gain ability to perform rituals & \tdash & \featpref{Ritual Caster} \\
@@ -152,6 +154,7 @@ Feats can be used to specialize your character particular area, to grant your ch
                 \featref{Somatic Strike} & 9th level, 4th level spells & Attack in place of somatic components & \tdash & \featpref{Somatic Strike} \\
                 \featref{Spellcasting Versatility} & 5th level, 1st level spells & Improve spellcasting when multiclassing & \tdash & \featpref{Spellcasting Versatility} \\
                 \featref{Spellstrike} & 5th level, 2nd level spells & Channel spell through physical attack  & \tdash & \featpref{Spellstrike} \\
+                \featref{Transmuter} & 1st level Transmutation spell & Improve Transmutation spells you cast & \tdash & \featpref{Transmuter} \\
                 \featref{Vivimancer} & 1st level Vivimancy spell & Improve Vivimancy spells you cast & \tdash & \featpref{Vivimancer} \\
 
                 \tb{Skill Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
@@ -737,16 +740,16 @@ Feats can be used to specialize your character particular area, to grant your ch
     \feat{Diviner}{Magic}
     \spelldesc{You have great talent with Divination spells.}
     \featpre 1st level or higher \glossterm{Divination} spell known.
-    \featben You gain a \plus2 bonus to Awareness, Knowledge, and Sense Motive checks.
+    \featben You gain a \plus2 bonus to Awareness, Knowledge, and Sense Motive.
 
     At 7th level, if you know a 2nd level or higher Divination spell, your Divination spells are more powerful.
-    Whenever you cast an Divination spell, you can reduce the cost to apply one augment to the spell by one spell level.
+    Whenever you cast a Divination spell, you can reduce the cost to apply one augment to the spell by one spell level.
 
     At 11th level, if you know a 4th level or higher Divination spell, you have a precognitive sense that warns you of attacks.
     You are aware of all attacks against you, even those you cannot see, as long as you are conscious.
     This allows you to use some certain abilities to defend yourself, and prevents you from being \unaware.
 
-    At 15th level, the bonus to skill checks increases to \plus4.
+    At 15th level, if you know a 6th level or higher Divination spell, the bonus to skills increases to \plus4.
 
     \feat{Draconic Apotheosis}{Bloodline}
     \featpres 9th level, Draconic Heritage.
@@ -845,6 +848,22 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 15th level, if you know a 6th level or higher Enchantment spell, the bonus to skill checks increases to \plus4.
 
+    \feat{Endurance}{General}
+    \featpre Constitution 3.
+    \featben You ignore effects which would make you \fatigued.
+    This allows you to sleep in medium or heavy armor without penalty.
+    In addition, if an effect would make you \exhausted, it makes you fatigued instead.
+    This ability does not allow you to ignore this fatigue.
+
+    At 3rd level, you treat your Constitution as if it were 5 higher for the purpose of abilities whose duration is limited by your Constitution, such as sprinting (see \pcref{Sprint}).
+    In addition, you are immune to effects which would force you to sleep.
+
+    At 7th level, if you have 6 Constitution, you are immune to all effects which would make you fatigued or exhausted.
+    In addition, you need half the normal amount of rest and sleep each day to function normally.
+    For example, a human would only need four hours of sleep per night.
+
+    At 11th level, if you have 9 Constitution, you need need one quarter the normal amount of rest and sleep each day to function normally.
+
     \feat{Escape Artist Mastery}{Skill}
     \featpre Escape Artist 5 ranks.
     \featben Whenever you make a Escape Artist check, you may roll twice and take the higher result.
@@ -861,6 +880,18 @@ Feats can be used to specialize your character particular area, to grant your ch
     You must be aware of an effect to escape it, either through the Spellcraft skill or because the effect is noticeable.
     You can only dispel effects which target you directly, not area effects which include you.
     If an ability targets multiple creatures, you can only remove its effects on you.
+
+    \feat{Evoker}{Magic}
+    \featpre 1st level or higher Evocation spell known.
+    \featben You gain \glossterm{damage reduction} against \glossterm{energy damage} equal to your spellpower with the source of magic used to qualify for this feat.
+
+    At 3rd level, you gain a bonus to damage with Evocation spells equal to half the number of dice you would roll for that spell's damage.
+    If no dice would be rolled, you simply gain a \plus1 bonus to damage.
+
+    At 7th level, if you know a 2nd level or higher Evocation spell, your Evocation spells are more powerful.
+    Whenever you cast a Evocation spell, you can reduce the cost to apply one augment to the spell by one spell level.
+
+    At 11th level, if you know a 4th level or higher Evocation spell, your damage reduction from this feat increases to twice your spellpower.
 
     \feat{Executioner}{Combat, Reaction}
     \featpres 5th level.
@@ -947,6 +978,17 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 15th level, you can omit either the verbal or somatic components of all spells you cast.
     In addition, the spell slot cost to omit both verbal and somatic components with this feat is reduced to one spell level.
+
+    \feat{Illusionist}{Magic}
+    \featpre 1st level or higher Illusion spell known.
+    \featben You gain a \plus2 bonus to Bluff, Disguise, and Stealth checks.
+
+    At 7th level, if you know a 2nd level or higher Illusion spell, your Illusion spells are more powerful.
+    Whenever you cast a Illusion spell, you can reduce the cost to apply one augment to the spell by one spell level.
+
+    At 11th level, if you know a 4th level or higher Illusion spell, you no longer need verbal components to cast Illusion spells (see \pcref{Components}).
+
+    At 15th level, if you know a 6th level or higher Illusion spell, the bonus to skills increases to \plus4.
 
     \feat{Inspiring Performer}{Performance, Skill}
     \featpre Perform 5 ranks.
@@ -1628,22 +1670,14 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 15th level, if you have 12 Intelligence, once per round you can attempt to predict a creature's actions as a \glossterm{free action}.
 
-    \feat{Endurance}{types}
-    \featpre Constitution 3.
-    \featben You ignore effects which would make you \fatigued.
-    This allows you to sleep in medium or heavy armor without penalty.
-    In addition, if an effect would make you \exhausted, it makes you fatigued instead.
-    This ability does not allow you to ignore this fatigue.
+    \feat{Transmuter}{Magic}
+    \featpre 1st level or higher Transmutation spell known.
+    \featben You gain \glossterm{damage reduction} against \glossterm{physical damage} equal to half your spellpower with the source of magic used to qualify for this feat.
 
-    At 3rd level, you treat your Constitution as if it were 5 higher for the purpose of abilities whose duration is limited by your Constitution, such as sprinting (see \pcref{Sprint}).
-    In addition, you are immune to effects which would force you to sleep.
+    At 7th level, if you know a 2nd level or higher Transmutation spell, your Transmutation spells are more powerful.
+    Whenever you cast a Transmutation spell, you can reduce the cost to apply one augment to the spell by one spell level.
 
-    At 7th level, if you have 6 Constitution, you are immune to all effects which would make you fatigued or exhausted.
-    In addition, you need half the normal amount of rest and sleep each day to function normally.
-    For example, a human would only need four hours of sleep per night.
-
-    At 11th level, if you have 9 Constitution, you need need one quarter the normal amount of rest and sleep each day to function normally.
-
+    At 11th level, if you know a 4th level or higher Transmutation spell, your damage reduction increases to be equal to your spellpower.
 
     \feat{Toughness}{General}
     \featpre Constitution 3.
@@ -1730,8 +1764,6 @@ Feats can be used to specialize your character particular area, to grant your ch
     Whenever you cast an Vivimancy spell, you can reduce the cost to apply one augment to the spell by one spell level.
 
     At 11th level, if you know a 4th level or higher Vivimancy spell, you heal hit points equal to your spellpower with Vivimancy spells at the end of every round.
-
-    At 15th level, if you know a 6th level or higher Vivimancy spell, \tdash.
 
     \feat{Weapon Focus}{Combat}
     Choose one weapon group.
