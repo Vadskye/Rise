@@ -129,8 +129,8 @@ Feats can be used to specialize your character particular area, to grant your ch
                 \tb{Class Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
                 \featref{All Energy Becomes One} & Monk 5, Con 6, manifest \ki & Instantly absorb energy attacks & \tdash & \featpref{All Energy Becomes One} \\
                 \featref{Arcane Resilience} & Sorcerer 1 & Reduce damage from spells & \tdash & \featpref{Arcane Resilience} \\
-                \featref{Battlemaster} & Fighter 9, Int 9 & Grant feats to allies & \tdash & \featpref{Battlemaster} \\
                 \featref{Chaotic Rage} & Paladin 5 & Gain ability to rage & \tdash & \featpref{Chaotic Rage} \\
+                \featref{Combat Leader} & Fighter 9, Int 9 & Grant feats to allies & \tdash & \featpref{Combat Leader} \\
                 \featref{Extra Domain} & Cleric 5 & Gain additional domain & \tdash & \featpref{Extra Domain} \\
                 \featref{Versatile Wild Speech} & Druid or ranger 1, wild speech & Improve communication with wild speech & \tdash & \featpref{Versatile Wild Speech} \\
                 \featref{Wild Control} & Sorcerer 1, wild magic & Improve control over wild magic & \tdash & \featpref{Wild Control} \\
@@ -212,6 +212,7 @@ Feats can be used to specialize your character particular area, to grant your ch
                 \featref{Destructive} & Str 3 & Ignore damage reduction and hardness & \tdash & \featpref{Destructive} \\
                 \featref{Executioner} & 5th level & Make free attacks against weakened foes & \tdash & \featpref{Executioner} \\
                 \featref{Eye of the Storm} & Dex 3 & Reduce overwhelm penalties & Style & \featpref{Eye of the Storm} \\
+                \featref{Far Shot} & Str 3 & Fight better at long range & \tdash & \featpref{Far Shot} \\
                 \featref{Fearsome} & 5th level, Intimidate 10 & Intimidate struck foes & Skill & \featpref{Fearsome} \\
                 \featref{Guardian} & \tdash & Reduce overwhelm penalties of allies & \tdash & \featpref{Guardian} \\
                 \featref{Heavy Weapon Fighting} & Str 3 & Bonus damage with two-handed attacks & \tdash & \featpref{Heavy Weapon Fighting} \\
@@ -229,6 +230,8 @@ Feats can be used to specialize your character particular area, to grant your ch
                 \featref{Power Attack} & 5th level, Str 6 & Gain bonus to damage & Style & \featpref{Power Attack} \\
                 \featref{Precise Attack} & Per 3 & Trade damage for accuracy bonus & Style & \featpref{Precise Attack} \\
                 \featref{Precise Shot} & 5th level, Per 6 & Ignore cover, concealment, miss chances & \tdash & \featpref{Precise Shot} \\
+                \featref{Precision Strikes} & 5th level, Per 6 & Gain precision-based special attacks & \tdash & \featpref{Precision Strikes} \\
+                \featref{Quick Draw} & \tdash & Draw and stow items more quickly & \tdash & \featpref{Quick Draw} \\
                 \featref{Reflexive Dodge} & 13th level, Dex 12 & Automatically dodge strikes & \tdash & \featpref{Reflexive Dodge} \\
                 \featref{Shielded Fighting} & Shield proficiency & Gain defense bonuses with shields & \tdash & \featpref{Shielded Fighting} \\
                 \featref{Tactical Prediction} & 5th level, Int 6 & Predict foe's next action & \tdash & \featpref{Tactical Prediction} \\
@@ -308,6 +311,27 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At sorcerer level 11, this damage reduction doubles.
 
+    \feat{Precision Strikes}{Combat}
+    \featpre 5th level, Perception 6.
+    \featben As a standard action, you can make a single physical attack against a creature's Armor and Reflex defenses.
+    Success against both defenses means the target takes damage from your weapon.
+    This damage is doubled for each strike you can make beyond the first.
+    If you fail to hit the target's Armor defense, but hit its Reflex defense, it takes half damage.
+
+    At 7th level, if you have Perception 9, you can attempt to disable a foe's wings.
+    As a standard action, you can make a single physical attack against a creature's Armor and Fortitude defenses.
+    Success against Armor defense means the target takes damage from your weapon.
+    This damage is doubled for each strike you can make beyond the first.
+    If you also beat the target's Fortitude defense, it loses the ability to fly for 2 rounds.
+    You must be able to hit the target's wings, which is usually only possible with melee attacks if it is no more than one size category larger than you.
+    This only affects creatures who use wings or other physical means to fly, and has no effect on creatures with magical or supernatural flight.
+
+    At 11th level, if you have Perception 12, you can deliver a killing blow.
+    As a standard action, you can make a single physical attack against a creature.
+    Success against Armor defense means the target takes damage from your weapon.
+    This damage is doubled for each strike you can make beyond the first.
+    Any damage in excess of the target's remaining hit points is dealt as \glossterm{critical damage}.
+
     \feat{Awareness Mastery}{Skill}
     \featpre Awareness 5 ranks.
     \featben Whenever you make an Awareness check, you may roll twice and take the higher result.
@@ -329,17 +353,6 @@ Feats can be used to specialize your character particular area, to grant your ch
     At 11th level, if you can cast 4th level spells, you automatically succeed at Concentration checks to cast spells or use spell-like abilities.
 
     At 15th level, if you can cast 6th level spells, you reduce your chance of arcane spell failure from wearing armor by a total of 20\%.
-
-    \feat{Battlemaster}{Class, Combat}
-    \featpres Fighter level 9, Intelligence 9.
-    \featben As a swift action, you may grant the use of one of your combat feats to a willing creature within \rngmed range of you who can see and hear you.
-    The target must meet level prerequisites for the granted feat, including class level prerequisites, but it can ignore all other prerequisites.
-    The effect lasts as long as you spend a swift action to maintain it, to a maximum of 5 rounds.
-    After using this ability, you cannot use it again for 5 minutes.
-
-    At fighter level 11, you can grant that feat to two willing creatures of your choice.
-
-    At fighter level 15, if you have 12 Intelligence, you can grant that feat to up to five willing creatures of your choice.
 
     \feat{Battlerage}{General}
     \featpres 5th level, Willpower 6.
@@ -488,6 +501,17 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 11th level, if you have 9 Dexterity, you can choose to occupy space as if you were a non-squeezing creature one size category smaller than your actual size while squeezing.
     This does not affect the minimum physical size you can squeeze through when using the Escape Artist skill (see \pcref{Escape Artist}).
+
+    \feat{Combat Leader}{Class, Combat}
+    \featpres Fighter level 9, Intelligence 9.
+    \featben As a swift action, you may grant the use of one of your combat feats to a willing creature within \rngmed range of you who can see and hear you.
+    The target must meet level prerequisites for the granted feat, including class level prerequisites, but it can ignore all other prerequisites.
+    The effect lasts as long as you spend a swift action to maintain it, to a maximum of 5 rounds.
+    After using this ability, you cannot use it again for 5 minutes.
+
+    At fighter level 11, you can grant that feat to two willing creatures of your choice.
+
+    At fighter level 15, if you have 12 Intelligence, you can grant that feat to up to five willing creatures of your choice.
 
     \feat{Combat Mobility}{Combat, Mobility}
     \featpres Dexterity 3.
@@ -927,6 +951,17 @@ Feats can be used to specialize your character particular area, to grant your ch
     \parhead{Special} This is a Style feat, and all of its effects only apply while you are in this style.
     For details, see \pcref{Style Feats}.
 
+    \feat{Far Shot}{Combat}
+    \featpre Strength 3.
+    \featben When you use a projectile weapon, such as a bow, its range increment increases by one-half (multiply by 1-1/2).
+    When you use a thrown weapon, its range increment is doubled.
+
+    At 3rd level, you gain a \plus2 bonus to damage with physical ranged attacks against targets more than 50 feet away from you.
+
+    At 7th level, if you have 6 Strength, the range increment of projectile weapons is doubled, and the range increment of thrown weapons is tripled.
+
+    At 11th level, if you have 9 Strength, the damage bonus increases to \plus3.
+
     \feat{Fearsome}{Combat, Skill}
     \spelldesc{You inspire fear in your foes in combat.}
     \featpres 5th level, Intimidate 10 ranks.
@@ -1320,7 +1355,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     You can activate them both as part of the same action (if they require the same action to activate), and sustain both feats with a single performance.
 
     \feat{Point Blank Shot}{Combat, Precision}
-    \featben You gain a \plus2 bonus to damage with physical ranged attacks against targets within half of your \glossterm{ranged increment}.
+    \featben You gain a \plus2 bonus to damage with physical ranged attacks against targets within 50 feet of you.
 
     At 3rd level, you reduce your penalty for firing medium and large ranged weapons at adjacent creatures to \minus2.
 
@@ -1366,6 +1401,18 @@ Feats can be used to specialize your character particular area, to grant your ch
     At 11th level, if you have 9 Perception, you ignore any effects which would give you a 20\% failure chance with your physical ranged attacks.
     This includes being \impaired.
     \stylereq Wield a ranged weapon.
+
+    \feat{Quick Draw}{Combat}
+    \featben You can draw light and medium weapons as a \glossterm{free action}.
+    In addition, you can draw heavy weapons and hidden weapons of any type (see the Sleight of Hand skill) as a move action.
+    This allows you to throw light weapons at your full normal rate of attacks (much like a character with a bow).
+
+    At 3rd level, you can draw any item of similar size to a light or medium weapon as a free action.
+
+    At 7th level, you can also draw any item of similar size to a heavy weapon as a free action.
+    In addition, you can sheathe or similarly put away items of similar size to light and medium weapons as a free action.
+
+    At 11th level, you can also sheathe or similarly put away items of similar size to heavy weapons as a free action.
 
     \feat{Quickened Magic}{Magic}
     \featpre 9th level, 4th level spells.
