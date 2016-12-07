@@ -797,13 +797,13 @@ This choice determines a great deal about your character's abilities.
             \subcf{Earth -- Earth Glide}
             The cleric gains the earth glide ability, as an earth elemental.
             \subcf{Evil -- Avatar of Evil} The cleric continuously gains the benefits of the \spell{protection from good}
-            spell, with a spellpower equal to his cleric level.
+            spell, with a spellpower equal to his divine power.
             If the effect is dispelled or suppressed, he can resume it as a swift action.
             \subcf{Fire -- Flaming Soul}
             The cleric gains the fire subtype, making him immune to fire but giving him a 50\% vulnerability to cold damage.
             In addition, whenever he deals fire damage to a creature, the creature is \ignited for 5 rounds.
             \subcf{Good -- Avatar of Good} The cleric continuously gains the benefits of the \spell{protection from evil}
-            spell, with a spellpower equal to his cleric level.
+            spell, with a spellpower equal to his divine power.
             If the effect is dispelled or suppressed, he can resume it as a swift action.
             \subcf{Knowledge -- Combat Insight}
             The cleric gains a \plus2 bonus to accuracy, checks, and defenses against non-humanoid creatures he has identified with a successful Knowledge check.
@@ -812,12 +812,8 @@ This choice determines a great deal about your character's abilities.
             You must declare the use of this ability before any additional effects from the roll are resolved.
             \subcf{Life -- }
             \subcf{Magic -- Spellfeeder}
-            The cleric gains spell resistance equal to 10 \add cleric level or Intelligence.
-            To affect the cleric with a spell, a caster must make an attack with its spellpower.
-            If the attack beats the cleric's spell resistance, the spell works normally.
-            Otherwise, the spell has no effect on the cleric.
-
-            In addition, whenever the cleric resists a spell with his spell resistance, he regains a spell slot of a level up to one lower than the level of the resisted spell.
+            The cleric gains \glossterm{spell resistance} equal to 10 \add divine power.
+            Whenever the cleric resists a spell with this spell resistance, he regains a spell slot of a level up to one lower than the level of the resisted spell.
             \subcf{Protection -- Martyr's Gift}
             The cleric constantly radiates a \areamed radius emanation of protective energy.
             Whenever a creature within the area takes damage, the cleric can choose to take half of that damage instead, as the \spell{share pain} spell.
@@ -827,10 +823,10 @@ This choice determines a great deal about your character's abilities.
             The cleric gains perfect stride, as the ranger class ability.
             He constantly acts as if he were under the effect of a \spell{freedom} spell, except that it does not allow him to act normally underwater.
             \subcf{Trickery -- Exemplar of Deceit} The cleric continuously gains the benefits of the \spell{nondetection}
-            spell, with a spellpower equal to his cleric level, except that it also protects him from any spells or effects which would prevent him from lying or reveal his lies.
+            spell, with a spellpower equal to his divine power, except that it also protects him from any spells or effects which would prevent him from lying or reveal his lies.
             If the effect is dispelled or suppressed, he can resume it as a swift action.
             \subcf{War -- Warmaster's Favor} The cleric continuously gains the benefits of the \spell{divine favor}
-            spell, with a spellpower equal to his cleric level.
+            spell, with a spellpower equal to his divine power.
             If the effect is dispelled or suppressed, he can resume it as a swift action.
             \subcf{Water -- Water's Flow}
             As a swift action, the cleric can transform himself into a rushing flow of water with a volume roughly equal to his normal volume until the end of his turn.
@@ -1399,15 +1395,14 @@ This choice determines a great deal about your character's abilities.
                 %Entangled             & None              & \tdash     & \tdash   \\
                 Deafened              & None              & \tdash     & \tdash   \\
                 Fascinated            & None              & \tdash     & \tdash   \\
-                Ignited\fn{2}         & None              & \tdash     & \tdash   \\
+                Ignited\fn{1}         & None              & \tdash     & \tdash   \\
                 Immobilized           & None              & \tdash     & \tdash   \\
-                Negative level\fn{3}  & None              & \tdash     & \tdash   \\
+                Negative level\fn{2}  & None              & \tdash     & \tdash   \\
                 Slowed                & None              & \tdash     & \tdash   \\
                 Vulnerable            & None              & \tdash     & \tdash   \\
             \end{dtabularx}
-            1.  Mitigate up to half fighter level or half Constitution, whichever is greater. \\
-            2.  Mitigates the impairment, but does not prevent the fighter from taking 1d6 fire damage per round until the fire is put out.  \\
-            3.  Mitigate a single negative level. \\
+            1.  Mitigates the impairment, but does not prevent the fighter from taking 1d6 fire damage per round until the fire is put out.  \\
+            2.  Mitigate a single negative level. \\
         \end{dtable}
 
         \par A fighter can never use this ability more than once against a single source.
@@ -1919,7 +1914,7 @@ This choice determines a great deal about your character's abilities.
         She may have multiple divine presences active simultaneously, and suppress or resume them individually.
         Most divine presences have minimum paladin levels, as indicated in the title of the ability.
         All divine presences are supernatural abilities unless otherwise noted.
-        If a divine presence emulates a spell, the paladin's effective spellpower is equal to her paladin level or her Willpower.
+        If a divine presence emulates a spell, the paladin's effective spellpower is equal to her paladin level or her Willpower, whichever is higher.
 
         \parhead{Any Alignment}
         \subcf{8th -- Worthy Foe}
@@ -2213,19 +2208,19 @@ This choice determines a great deal about your character's abilities.
             \rogueprogressionrow{2}  & \plus1d6  & Skill talent           \\
             \rogueprogressionrow{3}  & \plus2d6  & Uncanny dodge          \\
             \rogueprogressionrow{4}  & \plus2d6  & Combat trick           \\
-            \rogueprogressionrow{5}  & \plus3d6  & Skill exemplar         \\
+            \rogueprogressionrow{5}  & \plus3d6  & Lucky strike         \\
             \rogueprogressionrow{6}  & \plus3d6  & Skill talent           \\
             \rogueprogressionrow{7}  & \plus4d6  & Improved uncanny dodge \\
             \rogueprogressionrow{8}  & \plus4d6  & Combat trick           \\
-            \rogueprogressionrow{9}  & \plus5d6  & Skill exemplar         \\
+            \rogueprogressionrow{9}  & \plus5d6  & Lucky slip         \\
             \rogueprogressionrow{10} & \plus5d6  & Skill talent           \\
             \rogueprogressionrow{11} & \plus6d6  & Slippery mind          \\
             \rogueprogressionrow{12} & \plus6d6  & Combat trick           \\
-            \rogueprogressionrow{13} & \plus7d6  & Skill exemplar         \\
+            \rogueprogressionrow{13} & \plus7d6  & Lucky break         \\
             \rogueprogressionrow{14} & \plus7d6  & Skill talent           \\
             \rogueprogressionrow{15} & \plus8d6  & \tdash                 \\
             \rogueprogressionrow{16} & \plus8d6  & Combat trick           \\
-            \rogueprogressionrow{17} & \plus9d6  & Skill exemplar         \\
+            \rogueprogressionrow{17} & \plus9d6  & Legendary luck         \\
             \rogueprogressionrow{18} & \plus9d6  & Skill talent           \\
             \rogueprogressionrow{19} & \plus10d6 & Ambush master          \\
             \rogueprogressionrow{20} & \plus10d6 & Combat trick           \\
@@ -2254,7 +2249,7 @@ This choice determines a great deal about your character's abilities.
         Rogues are proficient with simple weapons, any two weapon groups, light armor, and bucklers.
         They are also proficient with saps.
 
-        \cf{Rog}{Skill Master}
+        \cf{Rog}{Skill Exemplar}
         A rogue gains a \plus2 bonus to all skills she is trained in.
         This bonus increases by 1 at her 5th rogue level and every 5 rogue levels thereafter.
 
@@ -2390,19 +2385,31 @@ This choice determines a great deal about your character's abilities.
         The effects of the rogue's ambush attacks last ten times longer than normal.
         This has no effect on ambush attacks that have no duration.
 
-        \cf{Rog}[5th]{Skill Exemplar}[Ex]
-        The rogue gains a \plus5 bonus with a single skill of her choice.
-        At her 9th rogue level, and every four rogue levels thereafter, she may gain this bonus with an additional skill.
+        \cf{Rog}[5th]{Lucky Strike}
+        The rogue gains an additional \glossterm{legend point}.
+        Whenever she spends a legend point to reroll a \glossterm{strike} that qualifies as a sneak attack, the target is treated as \unaware against the attack.
 
         \cf{Rog}[7th]{Improved Uncanny Dodge}[Ex]
         The rogue reduces her overwhelm penalties by 2.
         This does not stack with the effects of uncanny dodge.
         If her overwhelm penalty is reduced to 0, she is not considered to be overwhelmed.
 
+        \cf{Rog}[9th]{Lucky Slip}
+        The rogue gains an additional \glossterm{legend point}.
+        Whenever she spends a legend point to force a foe to reroll a physical attack, the reroll is treated as a 1.
+
         \cf{Rog}[11th]{Slippery Mind}[Ex]
         Whenever the attack for a \glossterm{Mind} spell or effect beats the rogue's Mental defense by less than 10, she is affected normally at first.
         One round later, the rogue is instead affected as if the attack had failed.
         This does not help against instantaneous effects.
+
+        \cf{Rog}[13th]{Lucky Break}
+        The rogue gains an additional \glossterm{legend point}.
+        Whenever she spends a legend point to reroll a skill check, the reroll is treated as a 20.
+
+        \cf{Rog}[17th]{Legendary Luck}
+        The rogue gains an additional \glossterm{legend point}.
+        She can always use legend points, even when fighting monsters that normally prevent legend points from being used.
 
         \cf{Rog}[19th]{Ambush Master}[Ex]
         The rogue's ambush attacks function on the first attack the rogue makes against a particular creature in a single round, rather than within a single encounter.
