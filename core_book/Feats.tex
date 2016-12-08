@@ -15,40 +15,37 @@ Feats can be used to specialize your character particular area, to grant your ch
         A character can't use a feat if he or she has lost a prerequisite.
 
 \section{Types Of Feats}
-    Some feats are general, meaning that no special rules govern them as a group.
-    Others belong to particular categories.
-    The categories are given below:
-    \begin{itemize}
-        \item Bloodline feats allow a character to tap into latent magical abilities in their blood.
-        \item Magic feats affect the way a character casts spells or uses magic.
-        \item Performance feats allow a character to create magical effects through skilled performances.
-        \item Rage feats improve a character's ability to enter an angry rage in combat.
-            A character can only use one rage feat at a time.
-        \item Skill feats affect a character's mastery of his or her skills.
-        \item Spellgift feats grant a non-spellcasting character a limited ability to use spells.
-            %\item Surge feats allow a character to temporarily gain supernatural abilities.
-        \item Combat feats affect a character's prowess in combat.
-        \item Combat maneuver feats are combat feats which grant a character particular talent with specific maneuvers.
-        \item Combat strike feats allow a character to impose special effects when they strike a foe.
-        \item Combat style feats change the way a character fights.
-            A character can only use one style at a time.
-            %\item Bane feats provide characters with bonuses against specific kinds of foes.
-            %You can only gain the benefits of a single Bane feat against a particular creature.
-            %If more than such feat applies, choose which one to gain the benefits from.
-    \end{itemize}
+    All feats belong to one of four broad categories.
 
-    \subsection{Bloodline Feats}
+    \parhead{General} General feats can have a wide variety of effects.
+    They often grant new abilities or improve your defenses.
+
+    \parhead{Combat} Combat feats improve your combat capabilities.
+    They can increase the damage you deal, grant you new combat abilities, or improve your defenses.
+
+    \parhead{Magic} Magic feats improve your spellcasting abilities.
+    All magic feats except for the Ritual Caster feat are useless to characters who cannot cast spells (see \featpcref{Ritual Caster}).
+
+    \parhead{Skill} Skill feats improve your skills.
+    They can make you more likely to succeed with skill checks and grant you new abilities based on your skills.
+
+    \subsection{Feat Tags}
+
+        All feats are tagged according to their category.
+        In addition, some feats have more specific tags that describe what the feat does.
+        The tags are described below.
+
+        \parhead{Bloodline Feats}
 
         Some characters have traces of monstrous blood running in their veins.
         Most of those will never understand the full potential of their unusual heritage.
         Bloodline feats allow characters to explore those posibilities by gaining abilites related to their ancestry.
         Each bloodline feat belongs to a specific type of monster, such as ``dragon''.
-        Some bloodline feats have stronger effects if you have more feats from that heritage.
 
-    \subsection{Class Feats}
-        Class feats improve a character's class abilities, or grant new special abilities related to a class.
+        You can only have one type of bloodline feat.
+        Each type of bloodline has a single feat with ``Heritage'' in the name, which all other feats in the bloodline have as a prerequisite.
 
-    \subsection{Performance Feats}\label{Performance Feats}
+        \parhead{Performance Feats}\label{Performance Feats}
         Performance feats allow a character to use the Perform skill to create magical effects.
         All Performance feats are also Skill feats.
 
@@ -60,30 +57,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         You can use any combination of performance feats you possess a number of times per day equal to twice the number of performance feats you have.
         If you fail the Perform check, the use of the ability is wasted.
 
-    \subsection{Racial Feats}\label{Racial Feats}
-        Racial feats improve a character's racial abilities or grant new abilities unique to the character's race.
-
-    \subsection{Skill Feats}
-        Skill feats improve a character's skills or grant them new abilities related to the skills they already have.
-
-    \subsection{Spellgift Feats}
-        Spellgift feats grant limited spell-like abilities.
-        They may represent the fruits of eldritch pacts, unusual heritage, the exposure to powerful magic, or a particular expression of innate magical ability.
-        You can use any combination of spell-like abilities gained from spellgift feats a number of times per day equal to the number of spellgift feats you possess.
-        The number of spellgift feats you have, plus the levels you have in spellcasting classes, cannot exceed your Willpower.
-
-        If your Willpower is lowered below this value, or you gain additional levels in spellcasting classes, you are treated as not possessing the spellgift feats you do not qualify for, as normal for feat prerequisites.
-        You lose access to the spellgift feats in order by when you acquired them, starting with the most recent feat.
-
-    \subsection{Combat Feats}
-        Combat feats affect a character's combat abilities.
-        Many combat feats require a minimum combat prowess to acquire.
-
-    \subsection{Combat Maneuver Feats}
-        Combat maneuver feats are combat feats which specifically deal with maneuvers -- pushing opponents around, grappling them, tripping them, or other unusual attacks.
-        Any feat designated as a combat maneuver feat is also considered a combat feat.
-
-    \subsection{Style Feats}\label{Style Feats}
+        \parhead{Style Feats}\label{Style Feats}
         Style feats grant a character the ability to fight or cast spells in a particular style, granting them bonuses while in that style.
         A character can only be in one style at once.
         Once per round, a character can initiate a style, change to a different style, or stop using a style as a \glossterm{free action}.
@@ -92,21 +66,19 @@ Feats can be used to specialize your character particular area, to grant your ch
         If a style requires specific equipment, such as a melee weapon, you must meet the requirements to activate the style.
         If you fail to meet a style's requirements during a round, you leave the style at the end of the round.
 
-    \subsection{Strike Feats}\label{Strike Feats}
-        Strike feats grant a character the ability to make unusual physical attacks.
-        Most strike feats replace a certain number of \glossterm{strikes} you would normally make.
-        Usually, this means strike feats are used as part of a standard attack action.
-        Some strike feats instead require a specific action to use.
-
 \section{Feat Tables}
     \onecolumn
 
-    \subsection{General Feats}
 % Feat names must follow ``have'', ``are (a)'', or ``can''.
         \begin{longtabuwrapper}
             \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{8em} >{\lcol}p{3em}}
                 \lcaption{Feats}\\
-                \tb{General Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
+                \tb{General Feats}\label{General Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
+                \featref{Celestial Heritage} & Non-evil & Gain holy abilities & Bloodline & \featpref{Celestial Heritage} \\
+                \tind \featref{Celestial Apotheosis} & 9th level, Celestial Heritage, non-evil & Gain wings and holy judgment & Bloodline & \featpref{Celestial Apotheosis} \\
+                \featref{Celestial Spell Conduit} & 5th level, 2nd level spells, Celestial Heritage, non-evil & Heal allies when you cast spells & Bloodline & \featpref{Celestial Spell Conduit} \\
+                \featref{Draconic Heritage} & \tdash & Gain draconic abilities & Bloodline & \featpref{Draconic Heritage} \\
+                \tind \featref{Draconic Apotheosis} & 9th level, Draconic Heritage & Gain wings, improved draconic abilities & Bloodline & \featpref{Draconic Apotheosis} \\
                 \featref{Endurance} & Con 3 & Resist fatigue and exhaustion & \tdash & \featpref{Endurance} \\
                 \featref{Iron Will} & Wil 3 & Improve Mental defenses & \tdash & \featpref{Iron Will} \\
                 \featref{Item Conduit} & 5th level & Improve magic item usage & \tdash & \featpref{Item Conduit} \\
@@ -118,24 +90,17 @@ Feats can be used to specialize your character particular area, to grant your ch
                 \featref{Toughness} & Con 3 & Improve Fortitude defenses & \tdash & \featpref{Toughness} \\
                 \featref{Versatility} & 5th level & Improve class abilities when multiclassing & \tdash & \featpref{Versatility} \\
 
-                \tb{Bloodline Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
-                \featref{Celestial Heritage} & Non-evil & Gain holy abilities & \tdash & \featpref{Celestial Heritage} \\
-                \tind \featref{Celestial Apotheosis} & 9th level, Celestial Heritage, non-evil & Gain wings and holy judgment & \tdash & \featpref{Celestial Apotheosis} \\
-                \featref{Celestial Spell Conduit} & 5th level, 2nd level spells, Celestial Heritage, non-evil & Heal allies when you cast spells & \tdash & \featpref{Celestial Spell Conduit} \\
-                \featref{Controlling Wild Speech} & Druid or ranger 5, wild speech & Control animals and objects with wild speech & \tdash & \featpref{Controlling Wild Speech} \\
-                \featref{Draconic Heritage} & \tdash & Gain draconic abilities & \tdash & \featpref{Draconic Heritage} \\
-                \tind \featref{Draconic Apotheosis} & 9th level, Draconic Heritage & Gain wings, improved draconic abilities & \tdash & \featpref{Draconic Apotheosis} \\
-
-                \tb{Class Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
+                \tb{Class Feats}\label{Class Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
                 \featref{All Energy Becomes One} & Monk 5, Con 6, manifest \ki & Instantly absorb energy attacks & \tdash & \featpref{All Energy Becomes One} \\
                 \featref{Arcane Resilience} & Sorcerer 1 & Reduce damage from spells & \tdash & \featpref{Arcane Resilience} \\
                 \featref{Chaotic Rage} & Paladin 5 & Gain ability to rage & \tdash & \featpref{Chaotic Rage} \\
                 \featref{Combat Leader} & Fighter 9, Int 9 & Grant feats to allies & \tdash & \featpref{Combat Leader} \\
+                \featref{Controlling Wild Speech} & Druid or ranger 5, wild speech & Control animals and objects with wild speech & \tdash & \featpref{Controlling Wild Speech} \\
                 \featref{Extra Domain} & Cleric 5 & Gain additional domain & \tdash & \featpref{Extra Domain} \\
                 \featref{Versatile Wild Speech} & Druid or ranger 1, wild speech & Improve communication with wild speech & \tdash & \featpref{Versatile Wild Speech} \\
                 \featref{Wild Control} & Sorcerer 1, wild magic & Improve control over wild magic & \tdash & \featpref{Wild Control} \\
 
-                \tb{Magic Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
+                \tb{Magic Feats}\label{Magic Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
                 \featref{Abjurer} & 1st level Abjuration spell & Improve Abjuration spells you cast & \tdash & \featpref{Abjurer} \\
                 \featref{Battlecaster} & 1st level spells & Improve spellcasting in combat & \tdash & \featpref{Battlecaster} \\
                 \featref{Conjurer} & 1st level Conjuration spell & Improve Conjuration spells you cast & \tdash & \featpref{Conjurer} \\
@@ -157,7 +122,7 @@ Feats can be used to specialize your character particular area, to grant your ch
                 \featref{Transmuter} & 1st level Transmutation spell & Improve Transmutation spells you cast & \tdash & \featpref{Transmuter} \\
                 \featref{Vivimancer} & 1st level Vivimancy spell & Improve Vivimancy spells you cast & \tdash & \featpref{Vivimancer} \\
 
-                \tb{Skill Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
+                \tb{Skill Feats}\label{Skill Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
                 \featref{Acrobatics Mastery} & Acrobatics 5 & Improve Acrobatics checks & \tdash & \featpref{Acrobatics Mastery} \\
                 \featref{Awareness Mastery} & Awareness 5 & Improve Awareness checks & \tdash & \featpref{Awareness Mastery} \\
                 \featref{Bluff Mastery} & Bluff 5 & Improve Bluff checks & \tdash & \featpref{Bluff Mastery} \\
@@ -191,15 +156,7 @@ Feats can be used to specialize your character particular area, to grant your ch
                 \featref{Swim Mastery} & Swim 5 & Improve Swim checks & \tdash & \featpref{Swim Mastery} \\
                 \featref{Trapfinder} & Awareness 5 & Improve ability to notice traps & \tdash & \featpref{Trapfinder} \\
 
-            \end{longtabu}
-        \end{longtabuwrapper}
-
-    \subsection{Combat Feat Table}
-
-        \begin{longtabuwrapper}
-            \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{8em} >{\lcol}p{3em}}
-                \lcaption{Combat Feats}\\
-                \tb{Name} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
+                \tb{Combat Feats}\label{Combat Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
                 \featref{Battlerage} & 5th level, Wil 6 & Gain ability to rage & \tdash & \featpref{Battlerage} \\
                 \featref{Blindfighter} & Per 3 & Fight better while unable to see & \tdash & \featpref{Blindfighter} \\
                 \featref{Close-Quarters Fighting} & Dex 3 & Fight better while squeezing and grappling & \tdash & \featpref{Close-Quarters Fighting} \\
@@ -387,7 +344,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     At 15th level, if you have 12 Willpower, your rage bonus increases to \plus5.
     In addition, the number of hit points gained per Willpower increases to 5.
 
-    \feat{Blindfighter}{Awareness, Combat}
+    \feat{Blindfighter}{Combat}
     \featpre Perception 3.
     \featben Whenever you miss a melee attack because of a miss chance caused by being unable to see your opponent, you can reroll your miss chance one time to see if you actually hit.
 
@@ -445,7 +402,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 15th level, you permanently gain the benefit of your \textit{holy protection} ability.
 
-    \feat{Celestial Spell Conduit}{Bloodline, Celestial}
+    \feat{Celestial Spell Conduit}{Bloodline}
     \featpres 5th level, 2nd level spells, non-evil alignment, Celestial Heritage.
     \featben Whenever you cast a spell, you can heal an ally within \rngclose range of you for 1d6 hit points per two celestial power.
     At 7th level, the range of this healing improves to \rngmed range.
@@ -491,7 +448,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     The DR is 30 for perfectly smooth vertical surfaces, and 40 to climb on a perfectly smooth ceiling.
     You can also wallrun on ceilings.
 
-    \feat{Close-Quarters Fighting}{Combat, Finesse}
+    \feat{Close-Quarters Fighting}{Combat}
     \featpre Dexterity 3.
     \featben You reduce your penalties for \glossterm{squeezing} by 2. In addition, you reduce your penalty for attacking with non-light weapons in a grapple by 2.
 
@@ -562,7 +519,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     At druid or ranger level 19, if you choose for the target to be dominated and get a critical success, it is dominated by you permanently.
     As with charming, if another druid or ranger dominates the target with this ability, it stops being dominated by you.
 
-    \feat{Counterattack}{Awareness, Combat, Reaction, Style}
+    \feat{Counterattack}{Combat, Style}
     \featpres 5th level, Dexterity 6.
     \featben Whenever a creature misses you with a physical melee attack, you can make a \glossterm{strike} against that creature as an \glossterm{immediate action}.
 
@@ -656,7 +613,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     In addition, when training a creature, if your check result is 30 or higher, you can train it in only a hour.
     The creature remembers the trick just as if you had spent the full amount of time training it.
 
-    \feat{Deadly Aim}{Combat, Precision, Style}
+    \feat{Deadly Aim}{Combat, Style}
     \featpres 5th level, Perception 6.
     \featben You gain a \plus2 bonus to damage with physical ranged attacks.
 
@@ -671,7 +628,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     \parhead{Special} This is a Style feat, and all of its effects only apply while you are in this style.
     For details, see \pcref{Style Feats}.
 
-    \feat{Defensive Fighting}{Combat, Defense, Style}
+    \feat{Defensive Fighting}{Combat, Style}
     \featben While in this style, you gain a \plus2 bonus to your \glossterm{physical defenses}.
     In exchange, you take a \minus2 penalty to damage with physical attacks (to a minimum of 1).
 
@@ -684,7 +641,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     \parhead{Special} This is a Style feat, and all of its effects only apply while you are in this style.
     For details, see \pcref{Style Feats}.
 
-    \feat{Deflect Arrows}{Combat, Finesse, Reaction}
+    \feat{Deflect Arrows}{Combat}
     \featpres Dexterity 3.
     \featben Whenever you are hit by a ranged \glossterm{strike}, you may deflect it as a \glossterm{immediate action}.
     If you do, the attack automatically misses.
@@ -702,7 +659,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     At 11th level, if you have 9 Dexterity, you can automatically catch or deflect two objects per round without spending an action.
     In addition, if you have 9 Strength, you can catch or deflect objects of your size category with this feat.
 
-    \feat{Destructive}{Combat, Power}
+    \feat{Destructive}{Combat}
     \featpres Strength 3.
     \featben Your physical attacks ignore an amount of hardness and damage reduction equal to half your Strength.
 
@@ -917,7 +874,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 11th level, if you know a 4th level or higher Evocation spell, your damage reduction from this feat increases to twice your spellpower.
 
-    \feat{Executioner}{Combat, Reaction}
+    \feat{Executioner}{Combat}
     \featpres 5th level.
     \featben At the start of every round, you can make a free melee \glossterm{strike} against all creatures you threaten that have no hit points remaining.
     This attack happens before the movement phase begins, and can kill a creature or knock it unconscious before it can act in the movement phase.
@@ -937,7 +894,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     You may learn spells from its spell list, and you may choose its domain abilities for your class abilities.
     In addition, you automatically gain its domain gift.
 
-    \feat{Eye of the Storm}{Awareness, Combat, Defense, Style}
+    \feat{Eye of the Storm}{Combat, Style}
     \featpres Dexterity 3.
     \featben You reduce your \glossterm{overwhelm penalties} by 2.
     If your overwhelm penalty is reduced to 0, you are not considered to be overwhelmed.
@@ -975,7 +932,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 15th level, \tdash.
 
-    \feat{Guardian}{Combat, Defense}
+    \feat{Guardian}{Combat}
     \featben Allies adjacent to you reduce their \glossterm{overwhelm penalties} by 1.
     If this effect reduces an ally's overwhelm penalty to 0, the ally is not considered to be overwhelmed.
 
@@ -995,7 +952,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     For every five hit points you would restore, you can instead cure one point of critical damage.
     Once you have used this ability on a creature, you cannot use it again on that creature until it rests for half an hour.
 
-    \feat{Heavy Weapon Fighting}{Combat, Power}
+    \feat{Heavy Weapon Fighting}{Combat}
     \featpre Strength 3.
     \featben When making a melee attack with a weapon held in two hands, you increase the damage die of the weapon by one increment (see \pcref{Weapon Size}).
 
@@ -1177,7 +1134,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     This does not allow you to speak with creatures that lack a language.
     Certain extremely obscure languages may be beyond your knowledge.
 
-    \feat{Mage Slayer}{Combat, Reaction, Style}
+    \feat{Mage Slayer}{Combat, Style}
     \featpre 5th level.
     \featben While in this style, if you hit a creature with a physical melee attack, that creature automatically fails Concentration checks it makes that round.
 
@@ -1306,7 +1263,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     \parhead{Special} This is a Style feat, and all of its effects only apply while you are in this style.
     For details, see \pcref{Style Feats}.
 
-    \feat{Parry}{Combat, Defense, Reaction, Style}
+    \feat{Parry}{Combat, Style}
     \featpre Dexterity 3.
     \featben While in this style, whenever you are hit by a \glossterm{strike}, you may attempt to parry it as an \glossterm{immediate action}.
     If you do, you make an attack roll with a weapon you wield.
@@ -1341,7 +1298,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     Success means the target it is compelled to obey your suggestion, as the \spell{suggestion} spell.
     You can use this ability three times per day.
 
-    \feat{Perform Mastery}{types}
+    \feat{Perform Mastery}{Skill}
     \featpre Perform (any) 5 ranks.
     \featben Whenever you make a Perform check, you may roll twice and take the higher result.
 
@@ -1354,7 +1311,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     At 11th level, you can use two Performance abilities as part of the same performance.
     You can activate them both as part of the same action (if they require the same action to activate), and sustain both feats with a single performance.
 
-    \feat{Point Blank Shot}{Combat, Precision}
+    \feat{Point Blank Shot}{Combat}
     \featben You gain a \plus2 bonus to damage with physical ranged attacks against targets within 50 feet of you.
 
     At 3rd level, you reduce your penalty for firing medium and large ranged weapons at adjacent creatures to \minus2.
@@ -1364,7 +1321,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     At 11th level, you are not treated as \defenseless while wielding a ranged weapon you are proficient with.
     \stylereq Wield a ranged weapon.
 
-    \feat{Power Attack}{Combat, Power, Style}
+    \feat{Power Attack}{Combat, Style}
     \featpres 5th level, Strength 6.
     \featben You gain a \plus2 bonus to damage with physical melee attacks.
 
@@ -1379,7 +1336,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     \parhead{Special} This is a Style feat, and all of its effects only apply while you are in this style.
     For details, see \pcref{Style Feats}.
 
-    \feat{Precise Attack}{Combat, Precision, Style}
+    \feat{Precise Attack}{Combat, Style}
     \featpres Perception 3.
     \featben You gain a \plus2 bonus to accuracy with \glossterm{physical attacks}.
     In exchange, you take a \minus2 penalty to damage with physical attacks (to a minimum of 1).
@@ -1392,7 +1349,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     \parhead{Special} This is a Style feat, and all of its effects only apply while you are in this style.
     For details, see \pcref{Style Feats}.
 
-    \feat{Precise Shot}{Combat, Precision}
+    \feat{Precise Shot}{Combat}
     \featpres 5th level, Perception 6.
     \featben Your ranged attacks ignore cover and concealment, except total cover and total concealment.
 
@@ -1438,7 +1395,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     At 11th level, if you have a 9 Constitution, you heal hit points equal to your Constitution at the end of every round.
     In addition, you heal \glossterm{critical damage} at a rate of one critical damage per 5 minutes.
 
-    \feat{Reflexive Dodge}{Combat, Reaction}
+    \feat{Reflexive Dodge}{Combat}
     \featpres 13th level, Dexterity 12.
     \featben Whenever you are hit by a \glossterm{strike}, you can take an \glossterm{immediate action} to dodge it.
     If you do, the attack misses.
@@ -1500,7 +1457,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 15th level, you can change the area of all area spells you cast without spending a spell slot of a higher level.
 
-    \feat{Shielded Fighting}{Combat, Defense}
+    \feat{Shielded Fighting}{Combat}
     \featpre Proficiency with shields.
     \featben While wielding a shield, you gain a \plus1 bonus to \glossterm{physical defenses}.
 
@@ -1754,7 +1711,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     At 11th level, the bonus to Awareness checks to find traps increases to \plus10.
     In addition, you can immediately make an Awareness check to notice any traps within 20 feet of you.
 
-    \feat{Two-Weapon Fighting}{Combat, Finesse}
+    \feat{Two-Weapon Fighting}{Combat}
     \featpre Dexterity 3.
     \featben When making a \glossterm{dual attack} with two weapons at once, you gain a \plus1 bonus to accuracy with physical attacks.
 
