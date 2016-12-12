@@ -361,14 +361,14 @@ Magic items are objects that have been imbued with magical energy. They can take
         \begin{magicitemdef}{Flaming Burst}[Active]{3}[Body, Shield]{Evocation [Fire]}{as armor}
             \magicitemability{Triggered}[Immediate action] When you are hit or missed by a melee attack, you can activate this item.
             Body armor triggers if the attack hits, and shields trigger if the attack misses.
-            If you activate the item, the attacking creature takes 1d10 fire damage per two item power.
+            If you activate the item, the attacking creature takes 1d6 fire damage per two item power.
 
             After you activate this ability, the item is wreathed in flame, causing it to shed light as a torch.
             This effect lasts for 5 rounds, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
         \begin{magicitemdef}{Flameforged}[Active]{5}[Body, Shield]{Evocation [Fire]}{as armor}
-            \magicitemability{Passive} When a creature hits or misses you with a melee attack, the attacking creature takes 1d10 fire damage per two item power.
+            \magicitemability{Passive} When a creature hits or misses you with a melee attack, the attacking creature takes 1d6 fire damage per two item power.
             Body armor triggers if the attack hits, and shields trigger if the attack misses.
             A creature can only be dealt damage by this item once per round.
         \end{magicitemdef}
@@ -380,7 +380,7 @@ Magic items are objects that have been imbued with magical energy. They can take
         \begin{magicitemdef}{Freezing Burst}[Active]{3}[Body, Shield]{Evocation [Cold]}{as armor}
             \magicitemability{Triggered}[Immediate action] When you are hit or missed by a melee attack, you can activate this item.
             Body armor triggers if the attack hits, and shields trigger if the attack misses.
-            If you activate the item, the attacking creature takes 1d10 cold damage per two item power.
+            If you activate the item, the attacking creature takes 1d6 cold damage per two item power.
 
             After you activate this ability, the item radiates frigid cold, causing it to snuff out torches and other small fires within a 5 foot radius.
             This effect lasts for 5 rounds, during which time you cannot activate this ability again.
@@ -395,7 +395,7 @@ Magic items are objects that have been imbued with magical energy. They can take
         \end{magicitemdef}
 
         \begin{magicitemdef}{Iceforged}[Active]{5}[Body, Shield]{Evocation [Cold]}{as armor}
-            \magicitemability{Passive} When a creature hits or misses you with a melee attack, the attacking creature takes 1d10 cold damage per two item power.
+            \magicitemability{Passive} When a creature hits or misses you with a melee attack, the attacking creature takes 1d6 cold damage per two item power.
             Body armor triggers if the attack hits, and shields trigger if the attack misses.
             A creature can only be dealt damage by this item once per round.
         \end{magicitemdef}
@@ -415,14 +415,14 @@ Magic items are objects that have been imbued with magical energy. They can take
         \begin{magicitemdef}{Shocking Burst}[Active]{3}[Body, Shield]{Evocation [Electricity]}{as armor}
             \magicitemability{Triggered}[Immediate action] When you are hit or missed by a melee attack, you can activate this item.
             Body armor triggers if the attack hits, and shields trigger if the attack misses.
-            If you activate the item, the attacking creature takes 1d10 electricity damage per two item power.
+            If you activate the item, the attacking creature takes 1d6 electricity damage per two item power.
 
             After you activate this ability, the item crackles with electrical energy, causing you to radiate flashing light as a torch.
             This effect lasts for 5 rounds, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
         \begin{magicitemdef}{Sparkforged}[Active]{5}[Body, Shield]{Evocation [Electricity]}{as armor}
-            \magicitemability{Passive} When a creature hits or misses you with a melee attack, the attacking creature takes 1d10 electricity damage per two item power.
+            \magicitemability{Passive} When a creature hits or misses you with a melee attack, the attacking creature takes 1d6 electricity damage per two item power.
             Body armor triggers if the attack hits, and shields trigger if the attack misses.
             A creature can only be dealt damage by this item once per round.
         \end{magicitemdef}
@@ -912,15 +912,19 @@ Magic items are objects that have been imbued with magical energy. They can take
         \end{magicitemdef}
 
         \begin{magicitemdef}{Flaming}[Active]{2}[Melee, Ranged]{Evocation [Fire]}{as weapon}
-            \magicitemability{Active}[Standard action] If you speak a command word, you can ignite this weapon in flames and make a single strike with it. The next time you hit with the weapon, the target takes 1d10 fire damage per two item power in addition to the damage from your attack.
+            \magicitemability{Active}[Immediate action] When you hit with a physical attack with this weapon, you can activate it.
+            If you do, the struck creature takes 1d6 fire damage per two item power.
 
-            If the attack misses, the weapon continues to flame for up to 5 rounds.
+            After you activate this ability, the item is wreathed in flame, causing it to shed light as a torch.
+            This effect lasts for 5 rounds, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
         \begin{magicitemdef}{Freezing}[Active]{2}[Melee, Ranged]{Evocation [Cold]}{as weapon}
-            \magicitemability{Active}[Standard action] If you speak a command word, you can surround this weapon in bitter cold and make a single attack with it. If this attack hits, the target takes 1d10 cold damage per two item power in addition to the damage from your attack.
+            \magicitemability{Active}[Immediate action] When you hit with a physical attack with this weapon, you can activate it.
+            If you do, the struck creature takes 1d6 cold damage per two item power.
 
-            If the attack misses, the weapon continues to radiate cold for up to 5 rounds.
+            After you activate this ability, the item radiates frigid cold, causing it to snuff out torches and other small fires within a 5 foot radius.
+            This effect lasts for 5 rounds, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
         \begin{magicitemdef}{Forceful}[Active]{1}[Melee, Ranged]{Evocation [Telekinesis]}{as weapon}
@@ -1013,10 +1017,11 @@ Magic items are objects that have been imbued with magical energy. They can take
         \end{magicitemdef}
 
         \begin{magicitemdef}{Shocking}[Active]{2}[Melee, Ranged]{Evocation [Electricity]}{as weapon}
-            \magicitemability{Active}[Standard action] If you speak a command word, you can charge this weapon with electricity and make a single strike with it.
-            The next time you hit with the weapon, the target takes 1d10 electricity damage per two item power in addition to the damage from your attack.
+            \magicitemability{Active}[Immediate action] When you hit with a physical attack with this weapon, you can activate it.
+            If you do, the struck creature takes 1d6 electricity damage per two item power.
 
-            If the attack misses, the weapon maintains its charge for up to 5 rounds.
+            After you activate this ability, the item crackles with electrical energy, causing you to radiate flashing light as a torch.
+            This effect lasts for 5 rounds, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
         \begin{magicitemdef}{Surestrike}[Active]{1}[Melee, Ranged]{Divination [Knowledge]}{as weapon}
