@@ -74,7 +74,7 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
 
         \parhead{Reducing Spellpower} You can voluntarily reduce the power of the spells you cast by using a lower spellpower. However, you cannot use a spellpower lower than the minimum spellpower required to cast the spell, which is equal to twice the spell's level.
 
-        \parhead{Spell Resistance} Some creatures have spell resistance, which is a special ability which allows them to resist spells. You can overcome spell resistance by making an attack with an accuracy equal to your spellpower. See \pcref{Spell Resistance}, for details.
+        \parhead{Magic Resistance} Some creatures have magic resistance, which is a special ability which allows them to resist \glossterm{magical} effects such as spells. You can overcome magic resistance by making an attack with an accuracy equal to your spellpower. See \pcref{Magic Resistance}, for details.
 
     \subsection{Magical Attacks}
 
@@ -318,12 +318,17 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
 
         \parhead{Discharge} Occasionally a spells lasts for a set duration or until triggered or discharged.
 
-    \subsection{Spell Resistance}\label{Spell Resistance}
-        Spell resistance is like an additional defense against spells and spell-like abilities. When you cast a spell or use a spell-like ability that directly affects a creature or object with spell resistance, you must make a special attack with an accuracy equal to your spellpower. If that attack beats a target's spell resistance, the spell or spell-like ability works normally on that target. Otherwise, it has no effect on the target. This does not prevent the spell from having its normal effect on other creatures or objects.
+    \subsection{Magic Resistance}\label{Magic Resistance}
+        Magic resistance is an additional defense against \glossterm{magical} abilities such as spells.
+        To affect a magic resistant creature with a magical ability, you must make an additional magical attack against the creature's magic resistance value.
+        Your accuracy is equal to your \glossterm{power} with the ability you using, such as your spellpower with spells.
+        If your attack result beats the creature's magic resistance, the ability works normally.
+        Otherwise, the ability has no effect on the creature.
 
-        Spells which do not directly affect targets, such as \spell{summon monster} or \spell{create image}, do not allow spell resistance. In addition, Antimagic and Physical spells do not allow spell resistance.
+        Magic resistance does not prevent a magical ability from having its normal effect on other creatures or objects.
+        Magical abilities which do not directly affect targets, such as the \spell{summon monster} or \spell{create image} spells, do not allow magic resistance. In addition, Thaumaturgy and Physical abilities do not allow magic resistance (see \pcref{Ability Tags}).
 
-        Normally, creatures with spell resistance can choose to allow spells through their resistance. Some creatures cannot control their spell resistance, so an attack is always necessary to affect them. This is specified in the description of the creature's spell resistance.
+        Normally, creatures with magic resistance can choose to allow spells through their resistance. Some creatures cannot control their magic resistance, so an attack is always necessary to affect them. This is specified in the description of the creature's magic resistance.
 
     \subsection{Effect}
         This portion of a spell description details what the spell does and how it works. If one of the previous entries in the description included ``see text'', this is where the explanation is found. There are several key parts of a spell which are also contained here.
@@ -363,7 +368,7 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
     \parhead{Compulsion} Compulsion abilities forcibly alter a creature's actions, but do not necessarily affect its opinions or personality.
     All Compulsion abilities are also \glossterm{Mind} abilities.
 
-    \parhead{Creation} Creation abilities create physical objects. Unless otherwise specified, Creation abilities do not allow spell resistance. 
+    \parhead{Creation} Creation abilities create physical objects. Unless otherwise specified, Creation abilities do not allow magic resistance. 
     \par The objects created by Creation abilities are usually temporarily formed from raw magical energy.
     Unless otherwise specified, they disappear without a trace at the end of the effect, as the magic sustaining them fades.
 
@@ -415,7 +420,7 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
 
     \parhead{Mind} Mind abilities manipulate the minds of creatures. They have no effect on objects or creatures without minds.
 
-    \parhead{Physical} Physical abilities manipulate physical objects rather than having a direct magical effect on their targets. They do not allow spell resistance.
+    \parhead{Physical} Physical abilities manipulate physical objects rather than having a direct magical effect on their targets. They do not allow magic resistance.
     Some abilities are not themselves Physical, but have Physical effects, such as \spell{mighty throw}.
 
     \parhead{Planar} Planar abilities transport matter or information between planes.
@@ -446,7 +451,7 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
 
     \parhead{Temporal} Temporal abilities alter the flow of time.
 
-    \parhead{Thaumaturgy} Thaumaturgy abilities alter or destroy magic itself. They do not allow \glossterm{spell resistance}.
+    \parhead{Thaumaturgy} Thaumaturgy abilities alter or destroy magic itself. They do not allow \glossterm{magic resistance}.
 
     \parhead{Trap} Trap abilities do not have their full effect immediately.
     All Trap abilities specify a condition or circumstance, such as opening a door, which triggers the full effect of the ability.
@@ -462,7 +467,7 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
     Cantrips are special spell-like abilities that arcane casters can use at will. Unlike other spell-like abilities, they have verbal and somatic components and are subject to arcane spell failure. All cantrips take a standard action to cast unless specified otherwise in the description. Cantrips are considered to be 0th level for the purpose of spells and abilities which reference spell level. They are described at the end of Chapter 12.
 
 \section{Rituals}\label{Rituals}
-    Rituals are ceremonies that create magical effects. Spellcasting characters, or characters with the Ritual Caster feat, can learn and perform rituals. You don't memorize a ritual as you would a normal spell; rituals are too complex for all but the mightiest wizards to commit to memory. To perform a ritual, you need to read from a book or a scroll containing it. Rituals are considered to be spells for many purposes, such as for spell resistance and for effects related to spells, but they are learned and cast in very different ways.
+    Rituals are ceremonies that create magical effects. Spellcasting characters, or characters with the Ritual Caster feat, can learn and perform rituals. You don't memorize a ritual as you would a normal spell; rituals are too complex for all but the mightiest mages to commit to memory. To perform a ritual, you need to read from a book or a scroll containing it. Rituals are considered to be spells for many purposes, such as for \glossterm{magic resistance} and for effects related to spells, but they are learned and cast in very different ways.
     \subsection{Ritual Descriptions}
         \par Like a spell, each ritual has a school, a level, and a magical effect. Rituals are described in Chapter 13. The description of each ritual follows the same format as the description of spells in Chapter 12, except for the description of ritual levels. Unlike spells, which have levels based on class, rituals have levels based on the source of magic: arcane, divine, or nature. A ritual always matches the magic source of the person performing the ritual. For example, \spell{scrying} is an arcane ritual when performed by a wizard, but a divine ritual when performed by a cleric.
     \subsection{Ritual Requirements} In order to learn and perform a ritual, you must be able to cast at least one spell of the same level as the ritual.
@@ -507,21 +512,24 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
         Once a character deciphers a particular magical writing, she does not need to decipher it again. Deciphering a magical writing allows the reader to identify the spell and gives some idea of its effects (as explained in the spell description). If the magical writing was a scroll and the reader can cast spells of the appropriate type, she can attempt to use
         the scroll.
 
-\section{Types of Magical Abilities}
+\section{Types of Abilities}
 
-    \parhead{Spell-Like Abilities} Usually, a spell-like ability works just like the spell of that name. A few spell-like abilities are unique; these are explained in the text where they are described.
+    There are two types of abilities: magical abilities and physical abilities.
 
-    A spell-like ability has no verbal, somatic, or material component, nor does it require a focus or have an XP cost. The user activates it mentally. Armor never affects a spell-like ability's use, even if the ability resembles an arcane spell with a somatic component.
+    \parhead{Magical Abilities}\label{Magical Abilities} A magical ability is an ability that has no physical explanation.
+    Examples include spells, a medusa's petrifying gaze, and a cleric's domain invocations.
+    Magical attacks often target Fortitude and Mental defenses, and can be resisted by \glossterm{magic resistance}.
+    Abilities that are magical in nature are indicated with a [Mag] tag.
+    Abilities that are not magical are \glossterm{physical}.
 
-    A spell-like ability has the casting time of the spell it mimics unless noted otherwise in the ability description. In all other ways, a spell-like ability functions just like a spell.
+    Many abilities which fundamentally concern magical effects are not themselves magical in nature.
+    This is most commmon with abilities that represent choices the character makes or knowledge the character has.
+    For example, although all spells are magical abilities, the ability to cast spells is not itself a magical ability, and would not be lost inside a \glossterm{antimagic field}.
+    It is simply knowledge that the creature possesses.
+    Of course, that knowledge would be useless if the creature had no access to magic.
 
-    Spell-like abilities are subject to spell resistance and to being dispelled by \spell{dispel magic}. They do not function in areas where magic is suppressed or negated. Spell-like abilities cannot be used to counterspell, nor can they be counterspelled.
-
-    Some creatures are actually sorcerers of a sort. They cast arcane spells as sorcerers do, using components when required. In fact, an individual creature could have some spell-like abilities and also cast other spells as a sorcerer.
-
-    \parhead{Supernatural Abilities} These abilities do not require concentration and cannot be disrupted in combat, as spells can. Supernatural abilities are not subject to spell resistance, counterspells, or to being dispelled by dispel magic, and do not function in areas where magic is suppressed or negated.
-
-    \parhead{Extraordinary Abilities} These abilities do not require concentration and cannot be disrupted in combat, as spells can. Effects or areas that negate or disrupt magic have no effect on extraordinary abilities. They are not subject to dispelling, and they function normally in an \spell{antimagic field}. Indeed, extraordinary abilities do not qualify as magical, though they may break the laws of physics.
-
-    \parhead{Natural Abilities} This category includes abilities a creature has because of its physical nature. Natural abilities are those not otherwise designated as extraordinary, supernatural, or spell-like.
-
+    \parhead{Physical Abilities}\label{Physical Abilities} A physical ability has a tangible component and some form of natural explanation.
+    Examples include weapon attacks, a dragon's breath weapon, and a barbarian's rage.
+    Physical attacks often target Armor and Reflex defenses.
+    Unless otherwise indicated, all abilities are physical in nature.
+    Abilities that are not physical are \glossterm{magical}.

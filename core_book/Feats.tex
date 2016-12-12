@@ -23,11 +23,17 @@ Feats can be used to specialize your character particular area, to grant your ch
     \parhead{Combat} Combat feats improve your combat capabilities.
     They can increase the damage you deal, grant you new combat abilities, or improve your defenses.
 
-    \parhead{Magic} Magic feats improve your spellcasting abilities.
+    \parhead{Spell} Spell feats improve your spellcasting abilities.
     All magic feats except for the Ritual Caster feat are useless to characters who cannot cast spells (see \featpcref{Ritual Caster}).
 
     \parhead{Skill} Skill feats improve your skills.
     They can make you more likely to succeed with skill checks and grant you new abilities based on your skills.
+    % generic skill feat rank requirements:
+    % 1st = 4, 5th = 6, 9th = 8, 13th = 10, 17th = 12
+    %    because should be able to get them 1 feat behind if trained
+    % mastery feats:
+    % 1st = 6, 5th = 10, 9th = 14, 13th = 18, 17th = 23
+    %    because should need to have mastered the skill
 
     \subsection{Feat Tags}
 
@@ -44,6 +50,11 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         You can only have one type of bloodline feat.
         Each type of bloodline has a single feat with ``Heritage'' in the name, which all other feats in the bloodline have as a prerequisite.
+
+        \parhead{Magical Feats}
+        Magical feats are \glossterm{magical} in nature.
+        Many feats are not entirely magical, but have specific effects that are magical.
+        These effects are indicated by the \magical tag.
 
         \parhead{Performance Feats}\label{Performance Feats}
         Performance feats allow a character to use the Perform skill to create magical effects.
@@ -87,7 +98,7 @@ Feats can be used to specialize your character particular area, to grant your ch
                 \featref{Item Conduit} & 5th level & Improve magic item usage & \tdash & \featpref{Item Conduit} \\
                 \featref{Lightning Reflexes} & Dex 3 & Improve Reflex defense, initiative & \tdash & \featpref{Lightning Reflexes} \\
                 \featref{Rapid Recovery} & Con 3 & Heal damage very quickly & \tdash & \featpref{Rapid Recovery} \\
-                \featref{Spellbreaker} & 9th level, Wil 9 & Gain spell resistance & \tdash & \featpref{Spellbreaker} \\
+                \featref{Spellbreaker} & 9th level, Wil 9 & Gain magic resistance & \tdash & \featpref{Spellbreaker} \\
                 \featref{Spellgift} & 5 non-spellcaster levels, Wil 6 & Gain spell-like abilities & \tdash & \featpref{Spellgift} \\
                 \featref{Swift} & \tdash & Gain speed bonus & \tdash & \featpref{Swift} \\
                 \featref{Toughness} & Con 3 & Improve Fortitude defenses & \tdash & \featpref{Toughness} \\
@@ -103,7 +114,7 @@ Feats can be used to specialize your character particular area, to grant your ch
                 \featref{Versatile Wild Speech} & Druid or ranger 1, wild speech & Improve communication with wild speech & \tdash & \featpref{Versatile Wild Speech} \\
                 \featref{Wild Control} & Sorcerer 1, wild magic & Improve control over wild magic & \tdash & \featpref{Wild Control} \\
 
-                \tb{Magic Feats}\label{Magic Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
+                \tb{Spell Feats}\label{Spell Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
                 \featref{Abjurer} & 1st level Abjuration spell & Improve Abjuration spells you cast & \tdash & \featpref{Abjurer} \\
                 \featref{Battlecaster} & 1st level spells & Improve spellcasting in combat & \tdash & \featpref{Battlecaster} \\
                 \featref{Conjurer} & 1st level Conjuration spell & Improve Conjuration spells you cast & \tdash & \featpref{Conjurer} \\
@@ -129,37 +140,37 @@ Feats can be used to specialize your character particular area, to grant your ch
                 \featref{Vivimancer} & 1st level Vivimancy spell & Improve Vivimancy spells you cast & \tdash & \featpref{Vivimancer} \\
 
                 \tb{Skill Feats}\label{Skill Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
-                \featref{Acrobatics Mastery} & Acrobatics 4 & Improve Acrobatics checks & \tdash & \featpref{Acrobatics Mastery} \\
-                \featref{Awareness Mastery} & Awareness 4 & Improve Awareness checks & \tdash & \featpref{Awareness Mastery} \\
-                \featref{Bluff Mastery} & Bluff 4 & Improve Bluff checks & \tdash & \featpref{Bluff Mastery} \\
-                \featref{Climb Mastery} & Climb 4 & Improve Climb checks & \tdash & \featpref{Climb Mastery} \\
+                \featref{Acrobatics Mastery} & Acrobatics 6 & Improve Acrobatics checks & \tdash & \featpref{Acrobatics Mastery} \\
+                \featref{Awareness Mastery} & Awareness 6 & Improve Awareness checks & \tdash & \featpref{Awareness Mastery} \\
+                \featref{Bluff Mastery} & Bluff 6 & Improve Bluff checks & \tdash & \featpref{Bluff Mastery} \\
+                \featref{Climb Mastery} & Climb 6 & Improve Climb checks & \tdash & \featpref{Climb Mastery} \\
                 \featref{Craft Magic Item} & Craft (any) 4 & Gain ability to craft magic items & \tdash & \featpref{Craft Magic Item} \\
-                \featref{Craft Mastery} & Craft 4 & Improve Craft checks & \tdash & \featpref{Craft Mastery} \\
-                \featref{Creature Handling Mastery} & Creature Handling 4 & Improve Creature Handling checks & \tdash & \featpref{Creature Handling Mastery} \\
-                \featref{Device Mastery} & Devices 4 & Improve Devices checks & \tdash & \featpref{Device Mastery} \\
-                \featref{Disguise Mastery} & Disguise 4 & Improve Disguise checks & \tdash & \featpref{Disguise Mastery} \\
-                \featref{Escape Artist Mastery} & Escape Artist 4 & Improve Escape Artist checks & \tdash & \featpref{Escape Artist Mastery} \\
-                \featref{Heal Mastery} & Heal 4 & Improve Heal checks & \tdash & \featpref{Heal Mastery} \\
+                \featref{Craft Mastery} & Craft 6 & Improve Craft checks & \tdash & \featpref{Craft Mastery} \\
+                \featref{Creature Handling Mastery} & Creature Handling 6 & Improve Creature Handling checks & \tdash & \featpref{Creature Handling Mastery} \\
+                \featref{Device Mastery} & Devices 6 & Improve Devices checks & \tdash & \featpref{Device Mastery} \\
+                \featref{Disguise Mastery} & Disguise 6 & Improve Disguise checks & \tdash & \featpref{Disguise Mastery} \\
+                \featref{Escape Artist Mastery} & Escape Artist 6 & Improve Escape Artist checks & \tdash & \featpref{Escape Artist Mastery} \\
+                \featref{Heal Mastery} & Heal 6 & Improve Heal checks & \tdash & \featpref{Heal Mastery} \\
                 \featref{Inspiring Performer} & Perform 4 & Perform to improve abilities of allies & Performance & \featpref{Inspiring Performer} \\
-                \featref{Intimidate Mastery} & Intimidate 4 & Improve Intimidate checks & \tdash & \featpref{Intimidate Mastery} \\
-                \featref{Jump Mastery} & Jump 4 & Improve Jump checks & \tdash & \featpref{Jump Mastery} \\
-                \featref{Knowledge Mastery} & Knowledge (any) 4 & Improve Knowledge checks & \tdash & \featpref{Knowledge Mastery} \\
-                \featref{Linguistic Mastery} & Linguistics 4 & Improve Linguistics checks & \tdash & \featpref{Linguistic Mastery} \\
+                \featref{Intimidate Mastery} & Intimidate 6 & Improve Intimidate checks & \tdash & \featpref{Intimidate Mastery} \\
+                \featref{Jump Mastery} & Jump 6 & Improve Jump checks & \tdash & \featpref{Jump Mastery} \\
+                \featref{Knowledge Mastery} & Knowledge (any) 6 & Improve Knowledge checks & \tdash & \featpref{Knowledge Mastery} \\
+                \featref{Linguistic Mastery} & Linguistics 6 & Improve Linguistics checks & \tdash & \featpref{Linguistic Mastery} \\
                 \featref{Mesmerizing Performer} & Perform (any) 4 & Perform to influence and distract foes & Performance & \featpref{Mesmerizing Performer} \\
                 \featref{Mocking Performer} & Perform (any) 4 & Perform to impair foes & Performance & \featpref{Mocking Performer} \\
-                \featref{Persuasion Mastery} & Persuasion 4 & Improve Persuasion checks & \tdash & \featpref{Persuasion Mastery} \\
-                \featref{Perform Mastery} & Perform 4 & Improve Perform checks & \tdash & \featpref{Perform Mastery} \\
-                \featref{Ride Mastery} & Ride 4 & Improve Ride checks & \tdash & \featpref{Ride Mastery} \\
-                \featref{Sense Motive Mastery} & Sense Motive 4 & Improve Sense Motive checks & \tdash & \featpref{Sense Motive Mastery} \\
+                \featref{Persuasion Mastery} & Persuasion 6 & Improve Persuasion checks & \tdash & \featpref{Persuasion Mastery} \\
+                \featref{Perform Mastery} & Perform 6 & Improve Perform checks & \tdash & \featpref{Perform Mastery} \\
+                \featref{Ride Mastery} & Ride 6 & Improve Ride checks & \tdash & \featpref{Ride Mastery} \\
+                \featref{Sense Motive Mastery} & Sense Motive 6 & Improve Sense Motive checks & \tdash & \featpref{Sense Motive Mastery} \\
                 \featref{Skill Savant} & \tdash & Gain skill points & \tdash & \featpref{Skill Savant} \\
-                \featref{Sleight of Hand Mastery} & Sleight of Hand 4 & Improve Sleight of Hand checks & \tdash & \featpref{Sleight of Hand Mastery} \\
-                \featref{Spellcraft Mastery} & Spellcraft 4 & Improve Spellcraft checks & \tdash & \featpref{Spellcraft Mastery} \\
-                \featref{Sprint Mastery} & Sprint 4 & Improve Sprint checks & \tdash & \featpref{Sprint Mastery} \\
-                \featref{Stealth Mastery} & Stealth 4 & Improve Stealth checks & \tdash & \featpref{Stealth Mastery} \\
-                \featref{Sprint Mastery} & Sprint 4 & Improve Sprint checks & \tdash & \featpref{Sprint Mastery} \\
+                \featref{Sleight of Hand Mastery} & Sleight of Hand 6 & Improve Sleight of Hand checks & \tdash & \featpref{Sleight of Hand Mastery} \\
+                \featref{Spellcraft Mastery} & Spellcraft 6 & Improve Spellcraft checks & \tdash & \featpref{Spellcraft Mastery} \\
+                \featref{Sprint Mastery} & Sprint 6 & Improve Sprint checks & \tdash & \featpref{Sprint Mastery} \\
+                \featref{Stealth Mastery} & Stealth 6 & Improve Stealth checks & \tdash & \featpref{Stealth Mastery} \\
+                \featref{Sprint Mastery} & Sprint 6 & Improve Sprint checks & \tdash & \featpref{Sprint Mastery} \\
                 \featref{Supreme Inspiration} & 9th level, Perform 9 & Perform to greatly inspire allies & \tdash & \featpref{Supreme Inspiration} \\
-                \featref{Survival Mastery} & Survival 4 & Improve Survival checks & \tdash & \featpref{Survival Mastery} \\
-                \featref{Swim Mastery} & Swim 4 & Improve Swim checks & \tdash & \featpref{Swim Mastery} \\
+                \featref{Survival Mastery} & Survival 6 & Improve Survival checks & \tdash & \featpref{Survival Mastery} \\
+                \featref{Swim Mastery} & Swim 6 & Improve Swim checks & \tdash & \featpref{Swim Mastery} \\
                 \featref{Trapfinder} & Awareness 4 & Improve ability to notice traps & \tdash & \featpref{Trapfinder} \\
 
                 \tb{Combat Feats}\label{Combat Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
@@ -223,7 +234,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     \parhead{Special}
     Additional facts about the feat that may be helpful when you decide whether to acquire the feat.
 
-    \feat{Abjurer}{Magic}
+    \feat{Abjurer}{Magical, Spell}
     \spelldesc{You have great talent with Abjuration spells.}
     \featpre 1st level or higher \glossterm{Abjuration} spell known.
     \featben Your damaging spells grant you sympathetic resistance to attacks.
@@ -237,20 +248,21 @@ Feats can be used to specialize your character particular area, to grant your ch
     At 15th level, if you know a 6th level or higher Abjuration spell, you gain a \plus1 bonus to all defenses.
 
     \feat{Acrobatics Mastery}{Skill}
-    \featpre Acrobatics 4 ranks.
+    \featpre Acrobatics 6 ranks.
     \featben Whenever you make a Acrobatics check, you may roll twice and take the higher result.
 
     At 3rd level, using Acrobatics to move along narrow surfaces does not reduce your speed.
 
-    At 7th level, if you have 6 ranks in Acrobatics, you gain a \plus5 bonus to Acrobatics checks.
+    At 7th level, if you have 10 ranks in Acrobatics, you gain a \plus5 bonus to Acrobatics checks.
 
-    At 11th level, if you have 9 ranks in Acrobatics, you can balance on surfaces that cannot support your weight.
+    At 11th level, if you have 14 ranks in Acrobatics, you can balance on surfaces that cannot support your weight.
     The DR is 30 for liquids such as water, 40 for dense gases and raw energy, and 50 for ordinary air.
     While balancing in this way, you must take a move action each round to continue moving; you cannot remain in the same place in consecutive rounds, or you will fall.
     The DR increases by 2 for each consecutive round that you spend balancing in this way.
     You gain a \plus4 bonus on this check per size category you are smaller than Medium, or a \minus4 penalty per size category larger than Medium.
+    \magical
 
-    \feat{All Energy Becomes One}{Class}
+    \feat{All Energy Becomes One}{Class, Magical}
     \featpres Monk level 5, Constitution 6, manifest \ki ability.
     \featben Whenever you take \glossterm{energy damage}, you can spend a \glossterm{immediate action} to channel the energy into your body.
     You gain damage reduction against that attack equal to your \ki power.
@@ -263,7 +275,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At monk level 15, if you have 12 Constitution, the damage reduction becomes equal to twice your \ki power.
 
-    \feat{Arcane Resilience}{Class}
+    \feat{Arcane Resilience}{Class, Magical}
     \featpre Sorcerer level 1.
     \featben You gain damage reduction against arcane spells equal to your sorcerer level or Constitution, whichever is higher.
     This damage reduction applies against your arcane spells, including miscast effects.
@@ -274,38 +286,17 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At sorcerer level 11, this damage reduction doubles.
 
-    \feat{Precision Strikes}{Combat}
-    \featpre 5th level, Perception 6.
-    \featben As a standard action, you can make a single physical attack against a creature's Armor and Reflex defenses.
-    Success against both defenses means the target takes damage from your weapon.
-    This damage is doubled for each strike you can make beyond the first.
-    If you fail to hit the target's Armor defense, but hit its Reflex defense, it takes half damage.
-
-    At 7th level, if you have Perception 9, you can attempt to disable a foe's wings.
-    As a standard action, you can make a single physical attack against a creature's Armor and Fortitude defenses.
-    Success against Armor defense means the target takes damage from your weapon.
-    This damage is doubled for each strike you can make beyond the first.
-    If you also beat the target's Fortitude defense, it loses the ability to fly for 2 rounds.
-    You must be able to hit the target's wings, which is usually only possible with melee attacks if it is no more than one size category larger than you.
-    This only affects creatures who use wings or other physical means to fly, and has no effect on creatures with magical or supernatural flight.
-
-    At 11th level, if you have Perception 12, you can deliver a killing blow.
-    As a standard action, you can make a single physical attack against a creature.
-    Success against Armor defense means the target takes damage from your weapon.
-    This damage is doubled for each strike you can make beyond the first.
-    Any damage in excess of the target's remaining hit points is dealt as \glossterm{critical damage}.
-
     \feat{Awareness Mastery}{Skill}
-    \featpre Awareness 4 ranks.
+    \featpre Awareness 6 ranks.
     \featben Whenever you make an Awareness check, you may roll twice and take the higher result.
 
     At 3rd level, you gain one of the following senses: \glossterm{blindsense} (50 ft.), \glossterm{darkvision} (100 ft.), \glossterm{scent}, or \glossterm{tremorsense} (50 ft.).
 
-    At 7th level, if you have 6 ranks in Awareness, you gain a \plus5 bonus to Awareness checks.
+    At 7th level, if you have 10 ranks in Awareness, you gain a \plus5 bonus to Awareness checks.
 
     At 11th level, you gain one of the following senses: \glossterm{blindsense} (200 ft.), \glossterm{blindsight} (50 ft.), \glossterm{darkvision} (500 ft.), \glossterm{tremorsense} (200 ft.), or \glossterm{tremorsight} (50 ft.).
 
-    \feat{Battlecaster}{Magic}
+    \feat{Battlecaster}{Spell}
     \featpre 1st level spells.
     \featben You gain a \plus3 bonus to Concentration checks made to cast spells or use spell-like abilities.
 
@@ -313,7 +304,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 7th level, if you can cast 2nd level spells, the Concentration check bonus increases to \plus10.
 
-    At 11th level, if you can cast 4th level spells, you automatically succeed at Concentration checks to cast spells or use spell-like abilities.
+    At 11th level, if you can cast 4th level spells, the Concentration check bonus increases to \plus20.
 
     At 15th level, if you can cast 6th level spells, you reduce your chance of arcane spell failure from wearing armor by a total of 20\%.
 
@@ -364,24 +355,26 @@ Feats can be used to specialize your character particular area, to grant your ch
     \parhead{Normal} You have a 50\% chance to miss opponents you can't see, and you are \defenseless against them.
 
     \feat{Bluff Mastery}{Skill}
-    \featpre Bluff 4 ranks.
+    \featpre Bluff 6 ranks.
     \featben Whenever you make a Bluff check, you may roll twice and take the higher result.
 
     At 3rd level, \tdash.
 
-    At 7th level, if you have 6 ranks in Bluff, you gain a \plus5 bonus to Bluff checks.
+    At 7th level, if you have 10 ranks in Bluff, you gain a \plus5 bonus to Bluff checks.
 
-    At 11th level, if you have 9 ranks in Bluff, your lies can change how creatures perceive reality.
+    At 11th level, if you have 14 ranks in Bluff, your lies can change how creatures perceive reality.
     As an immediate action, when you are telling a lie, you can make a Bluff vs. Mental attack against a creature within \rngmed range of you.
     Success means the target's sight, smell, hearing, and sense of temperature are altered so it perceives the world as you described it.
     This cannot remove things that do exist, but it can create new sensations where none existed.
     You can use this ability three times per day.
+    \magical
 
-    \feat{Celestial Apotheosis}{Bloodline}
+    \feat{Celestial Apotheosis}{Bloodline, Magical}
     \featpres 9th level, non-evil alignment, Celestial Heritage.
     \featben Your celestial heritage has developed into its full potential.
     You gain feathery wings that sprout from your back.
     You can use these wings to glide at a rate equal to your land speed (see \pcref{Gliding}).
+    The wings themselves are physical, but the ability to glide and fly with them is \glossterm{magical}.
     In addition, you gain the holy judgment ability.
     \parhead{Holy Judgment} As a standard action, you can inflict divine judgment on a non-good creature within \rnglong range. You make a Celestial power vs. Mental attack against the target. Success deals 1d6 divine damage per celestial power, and causes the target to be \dazed for two rounds. Critical success deals double damage. Failure deals half damage, and has no additional effects.
 
@@ -394,7 +387,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 19th level, you can fly for a number of minutes equal to half your celestial power before resting.
 
-    \feat{Celestial Heritage}{Bloodline}
+    \feat{Celestial Heritage}{Bloodline, Magical}
     \featpres Non-evil alignment.
     \featben You have the blood of a celestial creature in your veins, granting you celestial power.
     You gain two abilities you can use by spending a celestial point.
@@ -408,13 +401,13 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 15th level, you permanently gain the benefit of your \textit{holy protection} ability.
 
-    \feat{Celestial Spell Conduit}{Bloodline}
+    \feat{Celestial Spell Conduit}{Bloodline, Magical}
     \featpres 5th level, 2nd level spells, non-evil alignment, Celestial Heritage.
     \featben Whenever you cast a spell, you can heal an ally within \rngclose range of you for 1d6 hit points per two celestial power.
     At 7th level, the range of this healing improves to \rngmed range.
 
-    At 11th level, you gain spell resistance against evil spells and spells cast by evil creatures.
-    Your spell resistance is equal to 10 \add your celestial power.
+    At 11th level, you gain \glossterm{magic resistance} against evil spells and spells cast by evil creatures.
+    Your magic resistance is equal to 10 \add your celestial power.
 
     At 15th level, your healing with this ability increases to 1d8 hit points per two celestial power.
 
@@ -433,7 +426,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     In addition, the number of hit points gained per Willpower increases to 5.
 
     \feat{Climb Mastery}{Skill}
-    \featpre Climb 4 ranks.
+    \featpre Climb 6 ranks.
     \featben Whenever you make a Climb check, you may roll twice and take the higher result.
 
     At 3rd level, you can attempt to climb other creatures more easily.
@@ -450,7 +443,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \item You gain a \plus10 bonus to Climb checks.
     \end{itemize}
 
-    At 11th level, if you have 9 ranks in Climb, you can climb surfaces that are perfectly smooth.
+    At 11th level, if you have 14 ranks in Climb, you can climb surfaces that are perfectly smooth.
     The DR is 30 for perfectly smooth vertical surfaces, and 40 to climb on a perfectly smooth ceiling.
     You can also wallrun on ceilings.
 
@@ -490,9 +483,9 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 15th level, if you have 12 Dexterity, you do not treat space occupied by creatures as difficult terrain when moving through them with this feat.
 
-    \feat{Conjurer}{Magic}
+    \feat{Conjurer}{Magical, Spell}
     \featpres 1st level or higher \glossterm{Conjuration} spell known.
-    \featben Objects you create and creatures you summon have extra hit points equal to your spellpower.
+    \featben Objects you create and creatures you summon with Conjuration spells have extra hit points equal to your spellpower.
     Permanent physical objects you create are not affected by this ability.
 
     At 7th level, if you know a 2nd level or higher Conjuration spell, your Conjuration spells are more powerful.
@@ -505,7 +498,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     At 15th level, you drift between planes after teleporting for 2 rounds.
     In addition, objects you create and creatures you summon have damage reduction against all damage equal to twice your spellpower.
 
-    \feat{Controlling Wild Speech}{Class}
+    \feat{Controlling Wild Speech}{Class, Magical}
     \featpres Druid or ranger level 5, wild speech ability.
     \featben  As a standard action, you can make a Nature power vs. Mental attack against one animal or object you are communicating with using your wild speech ability.
     This consumes a use of your wild speech ability.
@@ -539,7 +532,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     \parhead{Special} This is a Style feat, and all of its effects only apply while you are in this style.
     For details, see \pcref{Style Feats}.
 
-    \feat{Counterspell}{Magic}
+    \feat{Counterspell}{Magical, Spell}
     \featpres 5th level, 2nd level spells, Spellcraft 6 ranks.
     \featben As a standard action, you can prepare to counterspell a creature within \rngmed range of you.
     If that creature casts a spell during the same phase, you can make a Spellcraft check to identify the spell as normal (see \pcref{Spellcraft}).
@@ -554,9 +547,9 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 7th level, you can choose to completely negate the effects of spells you counter rather than causing them to be miscast.
 
-    At 11th level, if you can cast 4th level spells and have 9 ranks in Spellcraft, your spell does not need to have the same school or ability tags as the target's spell to force a spellpower check.
+    At 11th level, if you can cast 4th level spells and have 8 ranks in Spellcraft, your spell does not need to have the same school or ability tags as the target's spell to force a spellpower check.
 
-    At 15th level, if you can cast 6th level spells and have 11 ranks in Spellcraft, you may counter up to five creatures within \rngmed range of you at once.
+    At 15th level, if you can cast 6th level spells and have 10 ranks in Spellcraft, you may counter up to five creatures within \rngmed range of you at once.
     You may still cast only one spell, but it is used to counter the spells cast by all of your targets.
     You make a single roll to determine your spellpower check result, and each target makes their own independent roll to oppose yours.
 
@@ -574,7 +567,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     \stylereq Make a physical ranged attack each round.
     \parhead{Special} This is a Style feat, and all of its effects only apply while you are in this style.
 
-    \feat{Craft Magic Item}{Skill}
+    \feat{Craft Magic Item}{Magical, Skill}
     \featpre Craft (any) 4 ranks.
     \featben You can imbue items with magic using your crafting skill.
     Imbuing an item with magic takes material components, as described in \pcref{Magic Item Creation}.
@@ -591,31 +584,31 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 7th level, if you have 6 ranks in any Craft skill, it takes you one hour per 100 gp of material components to create a magic item. % 900-3250 gp mats, 9-32 hrs
 
-    At 11th level, if you have 9 ranks in any Craft skill, it takes you one hour per 500 gp of material components to create a magic item. % 5000-18500 gp, 10-37 hrs
+    At 11th level, if you have 8 ranks in any Craft skill, it takes you one hour per 500 gp of material components to create a magic item. % 5000-18500 gp, 10-37 hrs
 
-    At 15th level, if you have 11 ranks in any Craft skill, it takes you one hour per 2,500 gp of material components to create a magic item. % 27500-200000 gp, 11-80 hrs
+    At 15th level, if you have 10 ranks in any Craft skill, it takes you one hour per 2,500 gp of material components to create a magic item. % 27500-200000 gp, 11-80 hrs
 
     \feat{Craft Mastery}{Skill}
-    \featpre Craft (any) 4 ranks.
+    \featpre Craft (any) 6 ranks.
     \featben Whenever you make a Craft check, you may roll twice and take the higher result.
 
     At 3rd level, as long as you have mastered one Craft skill, you treat all Craft skills you were trained in as if you had mastered them.
     This grants you additional skill ranks and increases your check modifier as normal for mastering a skill.
     However, you cannot use these additional ranks to qualify for any feats or abilities.
 
-    At 7th level, if you have 6 ranks in Craft, you gain a \plus5 bonus to Craft checks.
+    At 7th level, if you have 10 ranks in Craft, you gain a \plus5 bonus to Craft checks.
 
-    At 11th level, if you have 9 ranks in Craft, \tdash.
+    At 11th level, if you have 14 ranks in Craft, \tdash.
 
     \feat{Creature Handling Mastery}{Skill}
-    \featpre Creature Handling 4 ranks.
+    \featpre Creature Handling 6 ranks.
     \featben Whenever you make a Creature Handling check, you may roll twice and take the higher result.
 
     At 3rd level, you no longer take a penalty when using Creature Handling on non-animals.
 
-    At 7th level, if you have 6 ranks in Creature Handling, you gain a \plus5 bonus to Creature Handling checks.
+    At 7th level, if you have 10 ranks in Creature Handling, you gain a \plus5 bonus to Creature Handling checks.
 
-    At 11th level, if you have 9 ranks in Creature Handling, you can pacify and push creatures as a swift action.
+    At 11th level, if you have 14 ranks in Creature Handling, you can pacify and push creatures as a swift action.
     In addition, when training a creature, if your check result is 30 or higher, you can train it in only a hour.
     The creature remembers the trick just as if you had spent the full amount of time training it.
 
@@ -677,7 +670,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 15th level, if you have 12 Strength, you ignore all hardness and damage reduction with physical attacks.
 
-    \feat{Devastating Magic}{Magic}
+    \feat{Devastating Magic}{Magical, Spell}
     \featpre 13th level, 6th level spells.
     \featben You gain a bonus to damage and healing with all spells equal to the number of dice you would roll for that spell's damage or healing.
     If no dice would be rolled for a spell, you instead gain a \plus2 bonus to damage or healing.
@@ -687,23 +680,24 @@ Feats can be used to specialize your character particular area, to grant your ch
     If no dice would be rolled for a spell, the bonus instead increases to \plus4.
 
     \feat{Device Mastery}{Skill}
-    \featpre Devices 4 ranks.
+    \featpre Devices 6 ranks.
     \featben Whenever you make a Devices check, you may roll twice and take the higher result.
 
     At 3rd level, \tdash.
 
-    At 7th level, if you have 6 ranks in Devices, you gain a \plus5 bonus to Devices checks.
+    At 7th level, if you have 10 ranks in Devices, you gain a \plus5 bonus to Devices checks.
 
-    At 11th level, if you have 9 ranks in Devices, you can disable spell effects on objects or areas as if they were merely complex devices.
+    At 11th level, if you have 14 ranks in Devices, you can disable spell effects on objects or areas as if they were merely complex devices.
     You can make a Devices check against an active spell effect within your reach.
     The DR to dispel the effect is equal to 20 \add the spell's spellpower, and the result must be at least 30.
     Success means the spell is dispelled.
+    \magical
 
     You must be aware of a spell to disable it, either through the Spellcraft skill or because the effect is noticeable.
     You cannot disable spell effects on creatures.
 
     \feat{Disguise Mastery}{Skill}
-    \featpre Disguise 4 ranks.
+    \featpre Disguise 6 ranks.
     \featben Whenever you make a Disguise check, you may roll twice and take the higher result.
 
     At 3rd level, your disguises can change how Divination spells perceive a creature.
@@ -712,15 +706,17 @@ Feats can be used to specialize your character particular area, to grant your ch
     You cannot create an aura of overwhelming strength with this skill.
     Anyone using divination magic on the creature must make a spellpower check with a DR equal to your Disguise check result in order to perceive the truth.
     Regardless of the result of the check, the caster is not aware that the check was made.
+    \magical
 
-    At 7th level, if you have 6 ranks in Disguise, you gain a \plus5 bonus to Disguise checks.
+    At 7th level, if you have 10 ranks in Disguise, you gain a \plus5 bonus to Disguise checks.
 
     At 11th level, you can disguise yourself in seemingly impossible ways.
     You can disguise yourself as larger or smaller size categories.
     The DR of the Disguise check increases by 20 per size category different from your own.
     This does not actually change the space you occupy, your \glossterm{reach}, or the size of space you can squeeze through, but creatures fooled by the disguise treat you as if your space and reach were appropriate to your disguised size.
+    \magical
 
-    \feat{Distant Magic}{Magic}
+    \feat{Distant Magic}{Magical, Spell}
     \featpre 5th level, 2nd level spells.
     \featben If you cast a ranged spell using a spell slot one level higher than normal, its range is doubled.
     This can only be applied to spells with a range of \rngclose, \rngmed, \rnglong, or \rngext.
@@ -733,7 +729,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     At 11th level, you double the range of all ranged spells you cast.
     If you use a spell slot one level higher than normal, the range is tripled, not quadrupled.
 
-    \feat{Diviner}{Magic}
+    \feat{Diviner}{Magical, Spell}
     \spelldesc{You have great talent with Divination spells.}
     \featpre 1st level or higher \glossterm{Divination} spell known.
     \featben You gain a \plus2 bonus to Awareness, Knowledge, and Sense Motive.
@@ -752,6 +748,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     \featben Your draconic heritage has developed into its full potential.
     You gain scaly wings that sprout from your back.
     You can use these wings to glide at a rate equal to your land speed (see \pcref{Gliding}).
+    The wings themselves are physical, but the ability to glide and fly with them is \glossterm{magical}.
     In addition, your breath weapon no longer has a delay before it can be used again.
 
     At 11th level, the size of your breath weapon increases.
@@ -761,9 +758,9 @@ Feats can be used to specialize your character particular area, to grant your ch
     You can only fly for a number of rounds equal to half your draconic power.
     After that limit is reached, you must rest for 5 minutes before flying again.
 
-    At 15th level, your natural weapons gain an automatic enhancement bonus equal to one quarter of your draconic power.
+    At 15th level, your natural weapons gain an automatic enhancement bonus equal to one quarter of your draconic power. \magical
 
-    At 19th level, you can fly for a number of minutes equal to half your celestial power before resting.
+    At 19th level, you can fly for a number of minutes equal to half your celestial power before resting. \magical
 
     \feat{Draconic Heritage}{Bloodline}
     \featben You have the blood of a dragon in your veins.
@@ -791,8 +788,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 11th level, your voice becomes still more draconic, and the bonus to Intimidate and Persuasion checks increases to \plus4.
     In addition, your ancestral mastery of magic grants you a \plus1 bonus to spellpower with all spells.
-
-    At 15th level, your scales become more pronounced, increasing the bonus to Armor defense to \plus2.
+    The bonus to spellpower is \glossterm{magical}.
 
     \begin{dtable}
         \lcaption{Dragon Types}
@@ -812,7 +808,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \end{dtabularx}
     \end{dtable}
 
-    \feat{Empowered Magic}{Magic}
+    \feat{Empowered Magic}{Magical, Spell}
     \featpres 13th level, 6th level spells.
     \featben You reduce the cost to apply the Empowered augment to all of your spells by one spell level.
     Many spells have an Empowered augment which makes their effects stronger.
@@ -821,7 +817,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     If you cast a spell using a spell slot seven levels higher than normal, you do not roll dice to determine the amount of damage or healing provided by the spell.
     Instead, treat all dice the spell would have rolled as if they had rolled their maximum value.
 
-    \feat{Enchant Item}{Magic}
+    \feat{Enchant Item}{Magical, Spell}
     \featpre 1st level spells.
     \featben You can imbue items with magic using your spells.
     Imbuing an item with magic takes material components, as described in \pcref{Magic Item Creation}.
@@ -842,7 +838,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 15th level, if you know 6th level spells, it takes you one hour per 2,500 gp of material components to create a magic item. % 27500-200000 gp, 11-80 hrs
 
-    \feat{Enchanter}{Magic}
+    \feat{Enchanter}{Magical, Spell}
     \featpres 1st level or higher \glossterm{Enchantment} spell known.
     \featben you gain a \plus2 bonus to Bluff, Intimidate, and Persuasion checks.
 
@@ -870,23 +866,24 @@ Feats can be used to specialize your character particular area, to grant your ch
     At 11th level, if you have 9 Constitution, you need need one quarter the normal amount of rest and sleep each day to function normally.
 
     \feat{Escape Artist Mastery}{Skill}
-    \featpre Escape Artist 4 ranks.
+    \featpre Escape Artist 6 ranks.
     \featben Whenever you make a Escape Artist check, you may roll twice and take the higher result.
 
     At 3rd level, you can squeeze and escape bindings as a move action, rather than as a standard action.
 
-    At 7th level, if you have 6 ranks in Escape Artist, you gain a \plus5 bonus to Escape Artist checks.
+    At 7th level, if you have 10 ranks in Escape Artist, you gain a \plus5 bonus to Escape Artist checks.
 
-    At 11th level, if you have 9 ranks in Escape Artist, you can attempt to escape from magic itself, slipping hostile spells off of your body so they dissipate harmlessly.
+    At 11th level, if you have 14 ranks in Escape Artist, you can attempt to escape from magic itself, slipping hostile spells off of your body so they dissipate harmlessly.
     As a standard action, you can make an Escape Artist check to throw off magical effects on you.
     The DR to dispel an effect is equal to 20 \add its spellpower, and the result must be at least 30.
     Success means the effect is dispelled, if it is an effect that \spell{dispel magic} could dispel.
+    \magical
 
     You must be aware of an effect to escape it, either through the Spellcraft skill or because the effect is noticeable.
     You can only dispel effects which target you directly, not area effects which include you.
     If an ability targets multiple creatures, you can only remove its effects on you.
 
-    \feat{Evoker}{Magic}
+    \feat{Evoker}{Magical, Spell}
     \featpre 1st level or higher Evocation spell known.
     \featben You gain \glossterm{damage reduction} against \glossterm{energy damage} equal to your spellpower with the source of magic used to qualify for this feat.
 
@@ -943,7 +940,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 11th level, if you have 9 Strength, the damage bonus increases to \plus3.
 
-    \feat{Fearsome}{Combat, Skill}
+    \feat{Fearsome}{Combat, Magical, Skill}
     \spelldesc{You inspire fear in your foes in combat.}
     \featpres 5th level, Intimidate 6 ranks.
     \featben When you damage a creature with a physical melee attack, you can take an immediate action to inspire fear in the struck creature.
@@ -952,7 +949,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     Critical success means the struck creature is \frightened by you for 2 rounds instead.
     This is a \glossterm{Delusion}, \glossterm{Mind} effect.
 
-    At 11th level, if you have 9 ranks in Intimidate, you can inspire fear in this way once per round without spending an action.
+    At 11th level, if you have 8 ranks in Intimidate, you can inspire fear in this way once per round without spending an action.
 
     At 15th level, \tdash.
 
@@ -963,14 +960,14 @@ Feats can be used to specialize your character particular area, to grant your ch
     At 3rd, 7th, 11th, and 15th level, this penalty reduction increases by 1.
 
     \feat{Heal Mastery}{Skill}
-    \featpre Heal 4 ranks.
+    \featpre Heal 6 ranks.
     \featben Whenever you make a Heal check, you may roll twice and take the higher result.
 
     At 3rd level, you gain a \plus10 bonus to Heal checks to stabilize dying creatures (see \pcref{Dying}).
 
-    At 7th level, if you have 6 ranks in Heal, you gain a \plus5 bonus to Heal checks.
+    At 7th level, if you have 10 ranks in Heal, you gain a \plus5 bonus to Heal checks.
 
-    At 11th level, if you have 9 ranks in Heal, you can heal wounds with incredible speed.
+    At 11th level, if you have 14 ranks in Heal, you can heal wounds with incredible speed.
     As a standard action, you can make a Heal check on a creature you touch to heal its wounds.
     The target heals hit points equal to your check result.
     For every five hit points you would restore, you can instead cure one point of critical damage.
@@ -986,7 +983,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 11th level, if you have 9 Strength, the die size modifier increases to four increments.
 
-    \feat{Hidden Magic}{Magic}
+    \feat{Hidden Magic}{Magical, Spell}
     \featpre 5th level, 2nd level spells.
     \featben If you cast a spell using a spell slot one level higher than normal, you can omit the verbal or somatic components of the spell (see \pcref{Components}).
 
@@ -995,7 +992,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     At 15th level, you can omit either the verbal or somatic components of all spells you cast.
     In addition, the spell slot cost to omit both verbal and somatic components with this feat is reduced to one spell level.
 
-    \feat{Illusionist}{Magic}
+    \feat{Illusionist}{Magical, Spell}
     \featpre 1st level or higher Illusion spell known.
     \featben You gain a \plus2 bonus to Bluff, Disguise, and Stealth checks.
 
@@ -1006,7 +1003,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 15th level, if you know a 6th level or higher Illusion spell, the bonus to skills increases to \plus4.
 
-    \feat{Inspiring Performer}{Performance, Skill}
+    \feat{Inspiring Performer}{Magical, Performance, Skill}
     \featpre Perform 4 ranks.
     \featben You can create inspiring performances, starting with the ability to inspire competence.
     You can use any combination of performance abilities a number of times per day equal to half the ranks you have in your highest Perform skill.
@@ -1083,7 +1080,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 11th level, if you have 9 Willpower, you become immune to hostile \glossterm{Mind} effects.
 
-    \feat{Item Conduit}{General}
+    \feat{Item Conduit}{General, Magical}
     \featpre 5th level.
     \featben You gain two additional daily item uses.
 
@@ -1094,44 +1091,44 @@ Feats can be used to specialize your character particular area, to grant your ch
     At 15th level, you gain a fourth additional daily item use.
 
     \feat{Intimidate Mastery}{Skill}
-    \featpre Intimidate 4 ranks.
+    \featpre Intimidate 6 ranks.
     \featben Whenever you make a Intimidate check, you may roll twice and take the higher result.
 
     At 3rd level, critical success when you demoralize a foe means the target is \frightened by you for 2 rounds instead of being shaken.
 
-    At 7th level, if you have 6 ranks in Intimidate, you gain a \plus5 bonus to Intimidate checks.
+    At 7th level, if you have 10 ranks in Intimidate, you gain a \plus5 bonus to Intimidate checks.
 
-    At 11th level, if you have 9 ranks in Intimidate, you can demoralize creatures as a \glossterm{swift action}.
+    At 11th level, if you have 14 ranks in Intimidate, you can demoralize creatures as a \glossterm{swift action}.
 
     \feat{Jump Mastery}{Skill}
-    \featpre Jump 4 ranks.
+    \featpre Jump 6 ranks.
     \featben Whenever you make a Jump check, you may roll twice and take the higher result.
 
     At 3rd level, you are always treated as if you had a running start when jumping.
 
-    At 7th level, if you have 6 ranks in Jump, you gain a \plus5 bonus to Jump checks.
+    At 7th level, if you have 10 ranks in Jump, you gain a \plus5 bonus to Jump checks.
 
-    At 11th level, if you have 9 ranks in Jump, your maximum horizontal distance when leaping is equal to twice your check result, rather than being equal to your check result.
+    At 11th level, if you have 14 ranks in Jump, your maximum horizontal distance when leaping is equal to twice your check result, rather than being equal to your check result.
     In addition, your maximum height is equal to your check result, rather than a quarter of your check result.
 
     \feat{Knowledge Mastery}{Skill}
-    \featpre Knowledge (any) 4 ranks.
+    \featpre Knowledge (any) 6 ranks.
     \featben Whenever you make a Knowledge check, you may roll twice and take the higher result.
 
     At 3rd level, as long as you have mastered one Knowledge skill, you treat all Knowledge skills you were trained in as if you had mastered them.
     This grants you additional skill ranks and increases your check modifier as normal for mastering a skill.
     However, you cannot use these additional ranks to qualify for any feats or abilities.
 
-    At 7th level, if you have 6 ranks in any Knowledge skill, you gain a \plus5 bonus to all Knowledge checks.
+    At 7th level, if you have 10 ranks in any Knowledge skill, you gain a \plus5 bonus to all Knowledge checks.
 
-    At 11th level, if you have 9 ranks in any Knowledge skill, you gain a \plus2 bonus on accuracy, checks, and defenses against non-humanoid creatures you identify with a successful Knowledge check.
+    At 11th level, if you have 14 ranks in any Knowledge skill, you gain a \plus2 bonus on accuracy, checks, and defenses against non-humanoid creatures you identify with a successful Knowledge check.
 
     \feat{Legendary Speed}{Combat, Style}
     \featpres 13th level, Dexterity 12.
-    \featben You can make a \glossterm{strike} as a swift action.
-
-    At 19th level, if you have 15 Dexterity, you can make an additional strike whenever you make a \glossterm{standard attack}.
+    \featben You can make an additional \glossterm{strike} whenever you make a \glossterm{standard attack} .
     This does not stack with other effects that grant extra strikes.
+
+    At 19th level, if you have 15 Dexterity, you can make a strike as a \glossterm{swift action}.
     \stylereq None.
     \parhead{Special} This is a Style feat, and all of its effects only apply while you are in this style.
     For details, see \pcref{Style Feats}.
@@ -1147,14 +1144,14 @@ Feats can be used to specialize your character particular area, to grant your ch
     At 11th level, if you have 9 Dexterity, the initiative check bonus increases to \plus10.
 
     \feat{Linguistic Mastery}{Skill}
-    \featpre Linguistics 4 ranks.
+    \featpre Linguistics 6 ranks.
     \featben Whenever you make a Linguistics check, you may roll twice and take the higher result.
 
     At 3rd level, \tdash.
 
-    At 7th level, if you have 6 ranks in Linguistics, you gain a \plus5 bonus to Linguistics checks.
+    At 7th level, if you have 10 ranks in Linguistics, you gain a \plus5 bonus to Linguistics checks.
 
-    At 11th level, if you have 9 ranks in Linguistics, you can speak, read, and understand all languages.
+    At 11th level, if you have 14 ranks in Linguistics, you can speak, read, and understand all languages.
     This does not allow you to speak with creatures that lack a language.
     Certain extremely obscure languages may be beyond your knowledge.
 
@@ -1164,7 +1161,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 7th level, all foes you threaten take a \minus4 penalty to Concentration checks.
 
-    At 11th level, you gain \glossterm{spell resistance} equal to 10 \add your level.
+    At 11th level, you gain \glossterm{magic resistance} equal to 10 \add your level.
 
     At 15th level, if you attack a creature with a physical melee attack, that creature automatically fails Concentration checks it makes that round.
     \stylereq Wield a melee weapon. You must make a physical melee attack each round.
@@ -1202,7 +1199,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     A character who is wearing armor with which she is not proficient applies its \glossterm{encumbrance penalty} to accuracy with physical attacks.
     The character also suffers double the normal arcane spell failure chance for wearing the armor.
 
-    \feat{Mesmerizing Performer}{Performance, Skill}
+    \feat{Mesmerizing Performer}{Magical, Performance, Skill}
     \featpre Perform (any) 4 ranks.
     \featben You can create mesmerizing performances, starting with the ability to fascinate observers.
     You can use any combination of performance abilities a number of times per day equal to half the ranks you have in your highest Perform skill.
@@ -1226,7 +1223,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 11th level, you can affect a number of creatures with \textit{fascinating performance} equal to one fifth of your Perform check result.
 
-    \feat{Miscaster}{Magic}
+    \feat{Miscaster}{Magical, Spell}
     \featpre 1st level spells.
     \featben Your explosive miscasts do not affect your allies.
 
@@ -1244,7 +1241,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     They are unable to damage you or affect you in any way.
     You may still choose to be affected by miscast effects, if desired.
 
-    \feat{Mocking Performer}{Performance, Skill}
+    \feat{Mocking Performer}{Magical, Performance, Skill}
     \featpre Perform (any) 4 ranks.
     \featben You can create performances to mock your foes, starting with the ability to impair a foe.
     You can use any combination of performance abilities a number of times per day equal to half the ranks you have in your highest Perform skill.
@@ -1326,27 +1323,28 @@ Feats can be used to specialize your character particular area, to grant your ch
     For details, see \pcref{Style Feats}.
 
     \feat{Persuasion Mastery}{Skill}
-    \featpre Persuasion 4 ranks.
+    \featpre Persuasion 6 ranks.
     \featben Whenever you make a Persuasion check, you may roll twice and take the higher result.
 
     At 3rd level, \tdash.
 
-    At 7th level, if you have 6 ranks in Persuasion, you gain a \plus5 bonus to Persuasion checks.
+    At 7th level, if you have 10 ranks in Persuasion, you gain a \plus5 bonus to Persuasion checks.
 
-    At 11th level, if you have 9 ranks in Persuasion, you can compel creatures to obey your suggestions.
+    At 11th level, if you have 14 ranks in Persuasion, you can compel creatures to obey your suggestions.
     As an immediate action, when you speak a suggestion aloud, you can make a Persuasion vs. Mental attack against a creature within \rngmed range of you.
     Success means the target it is compelled to obey your suggestion, as the \spell{suggestion} spell.
     You can use this ability three times per day.
+    \magical
 
     \feat{Perform Mastery}{Skill}
-    \featpre Perform (any) 4 ranks.
+    \featpre Perform (any) 6 ranks.
     \featben Whenever you make a Perform check, you may roll twice and take the higher result.
 
     At 3rd level, as long as you have mastered one Perform skill, you treat all Perform skills you were trained in as if you had mastered them.
     This grants you additional skill ranks and increases your check modifier as normal for mastering a skill.
     However, you cannot use these additional ranks to qualify for any feats or abilities.
 
-    At 7th level, if you have 6 ranks in any Perform skill, you gain a \plus5 bonus to Disguise checks.
+    At 7th level, if you have 10 ranks in any Perform skill, you gain a \plus5 bonus to Disguise checks.
 
     At 11th level, you can use two Performance abilities as part of the same performance (see \pcref{Performance Feats}).
     You can activate them both as part of the same action (if they require the same action to activate), and sustain both feats with a single performance.
@@ -1400,6 +1398,27 @@ Feats can be used to specialize your character particular area, to grant your ch
     This includes being \impaired.
     \stylereq Wield a ranged weapon.
 
+    \feat{Precision Strikes}{Combat}
+    \featpre 5th level, Perception 6.
+    \featben As a standard action, you can make a single physical attack against a creature's Armor and Reflex defenses.
+    Success against both defenses means the target takes damage from your weapon.
+    This damage is doubled for each strike you can make beyond the first.
+    If you fail to hit the target's Armor defense, but hit its Reflex defense, it takes half damage.
+
+    At 7th level, if you have Perception 9, you can attempt to disable a foe's wings.
+    As a standard action, you can make a single physical attack against a creature's Armor and Fortitude defenses.
+    Success against Armor defense means the target takes damage from your weapon.
+    This damage is doubled for each strike you can make beyond the first.
+    If you also beat the target's Fortitude defense, it loses the ability to fly for 2 rounds.
+    You must be able to hit the target's wings, which is usually only possible with melee attacks if it is no more than one size category larger than you.
+    This only affects creatures who use wings or other physical means to fly, and has no effect on creatures with magical or supernatural flight.
+
+    At 11th level, if you have Perception 12, you can deliver a killing blow.
+    As a standard action, you can make a single physical attack against a creature.
+    Success against Armor defense means the target takes damage from your weapon.
+    This damage is doubled for each strike you can make beyond the first.
+    Any damage in excess of the target's remaining hit points is dealt as \glossterm{critical damage}.
+
     \feat{Quick Draw}{Combat}
     \featben You can draw light and medium weapons as a \glossterm{free action}.
     In addition, you can draw heavy weapons and hidden weapons of any type (see the Sleight of Hand skill) as a move action.
@@ -1412,7 +1431,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 11th level, you can also sheathe or similarly put away items of similar size to heavy weapons as a free action.
 
-    \feat{Quickened Magic}{Magic}
+    \feat{Quickened Magic}{Magical, Spell}
     \featpre 9th level, 4th level spells.
     \featben As a \glossterm{swift action}, you can cast a spell using a spell slot two levels higher than normal.
     The spell must have a casting time of one standard action.
@@ -1430,11 +1449,12 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 3rd level, you only need one successfully resisted \glossterm{stabilization roll} to stabilize while dying.
 
-    At 7th level, if you have a 6 Constitution, magical healing is more effective on you.
+    At 7th level, if you have 6 Constitution, magical healing is more effective on you.
     Whenever you receive magical healing, you increase the healing by an amount equal to your Constitution, up to a maximum of the original healing provided.
 
-    At 11th level, if you have a 9 Constitution, you heal hit points equal to your Constitution at the end of every round.
+    At 11th level, if you have 9 Constitution, you heal hit points equal to your Constitution at the end of every round.
     In addition, you heal \glossterm{critical damage} at a rate of one critical damage per 5 minutes.
+    \magical
 
     \feat{Reflexive Dodge}{Combat}
     \featpres 13th level, Dexterity 12.
@@ -1445,14 +1465,14 @@ Feats can be used to specialize your character particular area, to grant your ch
     At 19th level, if you have 15 Dexterity, you can dodge one attack per round in this way without spending an action.
 
     \feat{Ride Mastery}{Skill}
-    \featpre Ride 4 ranks.
+    \featpre Ride 6 ranks.
     \featben Whenever you make a Ride check, you may roll twice and take the higher result.
 
     At 3rd level, \tdash.
 
-    At 7th level, if you have 6 ranks in Ride, you gain a \plus5 bonus to Ride checks.
+    At 7th level, if you have 10 ranks in Ride, you gain a \plus5 bonus to Ride checks.
 
-    At 11th level, if you have 9 ranks in Ride, you can attempt to ride unwilling creatures.
+    At 11th level, if you have 14 ranks in Ride, you can attempt to ride unwilling creatures.
     As a standard action, you can make a Ride vs. Fortitude and Reflex attack against a creature adjacent to you.
     The creature must be at least one size category larger than you.
     Success means you ride the creature.
@@ -1465,25 +1485,26 @@ Feats can be used to specialize your character particular area, to grant your ch
         \item You cannot pin the creature.
     \end{itemize}
 
-    \feat{Ritual Caster}{Magic}
+    \feat{Ritual Caster}{Spell}
     \featpre Intelligence 3.
     \featben You can learn and perform rituals as if you were an arcane caster with a spellpower equal to your level.
     The maximum level of ritual that you can learn or perform is equal to half your level or your Intelligence, whichever is lower.
 
     \feat{Sense Motive Mastery}{Skill}
-    \featpre Sense Motive 4 ranks.
+    \featpre Sense Motive 6 ranks.
     \featben Whenever you make a Sense Motive check, you may roll twice and take the higher result.
 
     At 3rd level, \tdash.
 
-    At 7th level, if you have 6 ranks in Sense Motive, you gain a \plus5 bonus to Sense Motive checks.
+    At 7th level, if you have 10 ranks in Sense Motive, you gain a \plus5 bonus to Sense Motive checks.
 
-    At 11th level, if you have 9 ranks in Sense Motive, you can read the minds of creatures.
+    At 11th level, if you have 14 ranks in Sense Motive, you can read the minds of creatures.
     As a standard action, you can make a Sense Motive vs. Mental attack against a creature within \rngmed range of you.
     Success means you read the target's mind, as the \spell{read mind} spell.
     You can use this ability three times per day.
+    \magical
 
-    \feat{Shaped Magic}{Magic}
+    \feat{Shaped Magic}{Magical, Spell}
     \featpre 5th level, 2nd level spells.
     \featben If you cast a spell with an area using a spell slot one level higher than normal, you can change its area.
     The spell's area be a \areasmall, \areamed, \arealarge, or \areahuge \glossterm{burst}.
@@ -1518,19 +1539,20 @@ Feats can be used to specialize your character particular area, to grant your ch
     At 11th level, you gain a fourth additional skill point.
 
     \feat{Sleight of Hand Mastery}{Skill}
-    \featpre Sleight of Hand 4 ranks.
+    \featpre Sleight of Hand 6 ranks.
     \featben Whenever you make a Sleight of Hand check, you may roll twice and take the higher result.
 
     At 3rd level, \tdash.
 
-    At 7th level, if you have 6 ranks in Sleight of Hand, you gain a \plus5 bonus to Sleight of Hand checks.
+    At 7th level, if you have 10 ranks in Sleight of Hand, you gain a \plus5 bonus to Sleight of Hand checks.
 
-    At 11th level, if you have 9 ranks in Sleight of Hand, you can hide objects in impossible ways.
+    At 11th level, if you have 14 ranks in Sleight of Hand, you can hide objects in impossible ways.
     Whenever you make a Sleight of Hand check to conceal or pickpocket an object, if the result is 30 or higher, you can hide the object into a pocket dimension.
     You can retrieve the item later as a move action.
     You may only have up to three items hidden in this way, none of which can be larger than one size category smaller than you.
+    \magical
 
-    \feat{Somatic Strike}{Magic}
+    \feat{Somatic Strike}{Magical, Spell}
     \featpres 9th level, 4th level spells.
     \featben When you cast spells, you can make a single \glossterm{strike} with a melee weapon in place of the somatic components for the spell.
     The target of the strike does not matter, and you can even attack thin air.
@@ -1543,22 +1565,22 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 19th level, the bonus to damage increases to be equal to half your spellpower with the spell being cast.
 
-    \feat{Spellbreaker}{General}
+    \feat{Spellbreaker}{General, Magical}
     \featpres 9th level, Willpower 9.
-    \featben You gain \glossterm{spell resistance} equal to 10 \add your Willpower.
+    \featben You gain \glossterm{magic resistance} equal to 10 \add your Willpower.
 
     At 15th level, if you have 12 Willpower, you can reflect spells.
-    When you resist a \glossterm{targeted spell} with this spell resistance, you can choose for the spell to be reflected back at the caster.
+    When you resist a \glossterm{targeted spell} with this magic resistance, you can choose for the spell to be reflected back at the caster.
     The spell otherise functions normally, including effects on other targets of the spell, except that the caster is treated as a target of the spell instead of you.
     A spell reflected in this way cannot be reflected back at you.
 
     At 19th level, if you have 15 Willpower, you can completely negate spells cast on you.
-    When you resist a spell with this spell resistance, you can choose to negate the spell's effects entirely.
+    When you resist a spell with this magic resistance, you can choose to negate the spell's effects entirely.
     The spell has no effect, even if it was an area spell or a spell that targeted other creatures.
     If the spell had a duration, it is immediately dispelled, even if resisting it would not normally end or negate the spell's effects.
-    This happens before any other spell resistance effects, preventing other creatures from resisting or reflecting it.
+    This happens before any other magic resistance effects, preventing other creatures from resisting or reflecting it.
 
-    \feat{Spellcasting Versatility}{Magic}
+    \feat{Spellcasting Versatility}{Spell}
     Choose a spellcasting class you have.
     \featpres 5th level, 1st level spells from the chosen class.
     \featben You gain a bonus when determining your class level for the purpose of spells per day (if any), spells known, and maximum available spell level in your chosen class.
@@ -1570,16 +1592,16 @@ Feats can be used to specialize your character particular area, to grant your ch
     Each time, you choose a different spellcasting class you possess.
 
     \feat{Spellcraft Mastery}{Skill}
-    \featpre Spellcraft 4 ranks.
+    \featpre Spellcraft 6 ranks.
     \featben Whenever you make a Spellcraft check, you may roll twice and take the higher result.
 
     At 3rd level, \tdash.
 
-    At 7th level, if you have 6 ranks in Spellcraft, you gain a \plus5 bonus to Spellcraft checks.
+    At 7th level, if you have 10 ranks in Spellcraft, you gain a \plus5 bonus to Spellcraft checks.
 
-    At 11th level, if you have 9 ranks in Spellcraft, you gain a \plus2 bonus on accuracy, checks, and defenses against spells and magical effects you identify with a successful Spellcraft check.
+    At 11th level, if you have 14 ranks in Spellcraft, you gain a \plus2 bonus on accuracy, checks, and defenses against spells and \glossterm{magical} effects you identify with a successful Spellcraft check.
 
-    \feat{Spellgift}{General}
+    \feat{Spellgift}{General, Magical}
     \featpres 5 levels in classes without spellcasting, Willpower 6.
     \featben You have inherent magic in your body, granting you magical power.
     When you gain this feat, you choose a source of magic: arcane, divine, or nature.
@@ -1594,7 +1616,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 15 levels in non-spellcasting classes, if you have 12 Willpower, you can choose a spell of up to 6th level from the same source. You can also spend a spellgift point to use that spell.
 
-    \feat{Spellstrike}{Magic}
+    \feat{Spellstrike}{Magical, Spell}
     \featpre 5th level, 2nd level spells.
     \featben If you cast a \glossterm{targeted spell} using a spell slot one level higher than normal, you can make a single \glossterm{strike} with a weapon you wield as part of casting the spell.
     The spell must have a casting time of a standard action.
@@ -1614,7 +1636,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 15th level, you can spend a spell slot of the spell's level to gain the benefits of this feat, rather than a spell slot one level higher than normal.
 
-    \feat{Spellwoven Performance}{Magic, Skill}
+    \feat{Spellwoven Performance}{Magical, Skill, Spell}
     \featpres 5th level, 1st level spells, any Performance feat.
     \featben You can cast spells while sustaining a performance, including for performance abilities (see \pcref{Performace Feats}).
     This does not remove the need for verbal and somatic components, though you may attempt to incorporate those into your performance (see \pcref{Components}).
@@ -1626,26 +1648,26 @@ Feats can be used to specialize your character particular area, to grant your ch
     The spell slot must be of a spell level you have access to, and its level cannot exceed half your Perform ranks.
 
     \feat{Sprint Mastery}{Skill}
-    \featpre Sprint 4 ranks.
+    \featpre Sprint 6 ranks.
     \featben Whenever you make a Sprint check, you may roll twice and take the higher result.
 
     At 3rd level, you gain a \plus10 foot bonus to speed in all your movement modes.
 
-    At 7th level, if you have 6 ranks in Sprint, you gain a \plus5 bonus to Sprint checks.
+    At 7th level, if you have 10 ranks in Sprint, you gain a \plus5 bonus to Sprint checks.
 
-    At 11th level, if you have 9 ranks in Sprint, you can sprint for a number of minutes equal to twice your Constitution (minimum 2).
+    At 11th level, if you have 14 ranks in Sprint, you can sprint for a number of minutes equal to twice your Constitution (minimum 2).
     After that time, you must rest for 5 minutes before you can sprint again.
 
     \feat{Stealth Mastery}{Skill}
-    \featpre Stealth 4 ranks.
+    \featpre Stealth 6 ranks.
     \featben Whenever you make a Stealth check, you may roll twice and take the higher result.
 
     At 3rd level, your penalties for moving while hiding are reduced by 5.
     This means you can move at up to half speed with no penalty, and you can move at full speed with a \minus5 penalty.
 
-    At 7th level, if you have 6 ranks in Stealth, you gain a \plus5 bonus to Stealth checks.
+    At 7th level, if you have 10 ranks in Stealth, you gain a \plus5 bonus to Stealth checks.
 
-    At 11th level, if you have 9 ranks in Stealth, you can use the Stealth skill to hide even while being observed.
+    At 11th level, if you have 14 ranks in Stealth, you can use the Stealth skill to hide even while being observed.
     You take take a \minus10 penalty to the Stealth check when hiding in this way, and you still need passive cover or concealment to hide.
 
     At 15th level, if you have 11 ranks in Stealth, the penalty for hiding while observed is reduced to \minus5.
@@ -1656,7 +1678,9 @@ Feats can be used to specialize your character particular area, to grant your ch
     This allows you to use a single \glossterm{free action} to initiate two styles at once, or change which two styles you are using.
     You may only do this for a number of rounds per day equal to your Intelligence.
 
-    \feat{Supreme Inspiration}{Performance, Skill}
+    At 15th level, if you have 12 Intelligence, there is no limit on the number of rounds you can use this feat each day.
+
+    \feat{Supreme Inspiration}{Magical, Performance, Skill}
     \featpres 9th level, Perform 9 ranks.
     \featben You can create performances with staggering inspirational power, starting with the ability to inspire serenity.
     You can use any combination of performance abilities a number of times per day equal to half the ranks you have in your highest Perform skill.
@@ -1678,7 +1702,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     This performance is extraordinarily draining, and you can only perform it once per day.
 
     \feat{Survival Mastery}{Skill}
-    \featpre Survival 4 ranks.
+    \featpre Survival 6 ranks.
     \featben Whenever you make a Survival check, you may roll twice and take the higher result.
 
     At 3rd level, you ignore difficult terrain and harmful natural terrain of any kind.
@@ -1686,11 +1710,12 @@ Feats can be used to specialize your character particular area, to grant your ch
     In addition, you can choose to leave no trace of your passage as you move.
     If you do, tracking you is impossible by any physical means.
 
-    At 7th level, if you have 6 ranks in Survival, you gain a \plus5 bonus to Survival checks.
+    At 7th level, if you have 10 ranks in Survival, you gain a \plus5 bonus to Survival checks.
 
-    At 11th level, if you have 9 ranks in Survival, you are immune to harmful planar effects.
+    At 11th level, if you have 14 ranks in Survival, you are immune to harmful planar effects.
     In addition, as a standard action, you can find your way to any location, as the \spell{find the path} ritual.
     You may use this ability once per day.
+    Finding locations in this way is a \glossterm{magical} ability.
 
     \feat{Swift}{General}
     \featben You increase your land speed by 5 feet.
@@ -1702,7 +1727,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     At 11th level, the speed bonus increases to 30 feet.
 
     \feat{Swim Mastery}{Skill}
-    \featpre Swim 4 ranks.
+    \featpre Swim 6 ranks.
     \featben Whenever you make a Swim check, you may roll twice and take the higher result.
 
     At 3rd level, you gain a \glossterm{swim speed} equal to your land speed.
@@ -1712,9 +1737,9 @@ Feats can be used to specialize your character particular area, to grant your ch
         \item You gain a \plus10 bonus to Swim checks.
     \end{itemize}
 
-    At 7th level, if you have 6 ranks in Swim, you gain a \plus5 bonus to Swim checks.
+    At 7th level, if you have 10 ranks in Swim, you gain a \plus5 bonus to Swim checks.
 
-    At 11th level, if you have 9 ranks in Swim, you do not suffer any penalties to physical melee attacks, checks, or physical defenses for being underwater.
+    At 11th level, if you have 14 ranks in Swim, you do not suffer any penalties to physical melee attacks, checks, or physical defenses for being underwater.
     You still suffer the normal penalty with underwater ranged attacks.
 
     \feat{Tactical Prediction}{Combat}
@@ -1727,7 +1752,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 15th level, if you have 12 Intelligence, once per round you can attempt to predict a creature's actions as a \glossterm{free action}.
 
-    \feat{Transmuter}{Magic}
+    \feat{Transmuter}{Magical, Spell}
     \featpre 1st level or higher Transmutation spell known.
     \featben You gain \glossterm{damage reduction} against \glossterm{physical damage} equal to half your spellpower with the source of magic used to qualify for this feat.
 
@@ -1770,9 +1795,9 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 3rd level, you gain a \plus1 bonus to damage while making a dual attack with two weapons at once.
 
-    At 7th level, if you have a 6 Dexterity, the accuracy bonus increases to \plus2.
+    At 7th level, if you have 6 Dexterity, the accuracy bonus increases to \plus2.
 
-    At 11th level, if you have a 9 Dexterity, the damage bonus increases to \plus2.
+    At 11th level, if you have 9 Dexterity, the damage bonus increases to \plus2.
 
     \stylereq Wield two weapons at once.
     \parhead{Special} This is a Style feat, and all of its effects only apply while you are in this style.
@@ -1790,7 +1815,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 11th level, the damage bonus increases to \plus2.
 
-    \feat{Versatile Wild Speech}{Class}
+    \feat{Versatile Wild Speech}{Class, Magical}
     \featpres Druid or ranger level 1, wild speech ability.
     \featben You can use your wild speech ability to communicate with animates, such as oozes and animated plants, and ordinary plants. A regular plant's sense of its surroundings is limited, so it won't be able to give (or recognize) detailed descriptions of creatures or answer questions about events outside its immediate vicinity.
 
@@ -1803,7 +1828,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At druid or ranger level 15, you can use your wild speech to communicate with any living creature, even with creatures that do not have languages.
 
-    \feat{Vivimancer}{Magic}
+    \feat{Vivimancer}{Magical, Spell}
     \featpres 1st level or higher \glossterm{Vivimancy} spell known.
     \featben You are immune to hostile \glossterm{Life} and \glossterm{Death} effects.
 
@@ -1844,7 +1869,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     Its effects do not stack.
     Each time, you choose a different weapon group.
 
-    \feat{Wild Control}{Class, Magic}
+    \feat{Wild Control}{Class, Magical, Spell}
     \spelldesc{You become more adept at controlling your wild magic.}
     \featpres Sorcerer level 1, wild magic ability.
     \featben When you fail a wild magic roll, you may choose to suppress the magical energy released.
