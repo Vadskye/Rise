@@ -177,7 +177,7 @@ Magic items are objects that have been imbued with magical energy. They can take
                 \mitemref*{Feather} \minus2 & \minus2 encumbrance penalty & 500 gp & 4th & Body, Shield & \mitempref{Feather} \\
                 \mitemref{Arrow Catching} & Redirects arrows to hit you & \mitempricetable{Active}{2} & Shield & \mitempref{Arrow Catching} \\
                 \mitemref{Bashing} & Deals more damage when used to bash & \mitempricetable{Passive}{1} & Shield & \mitempref{Bashing} \\
-                \mitemref{Spell Resistant} & Can grant spell resistance & \mitempricetable{Active}{2} & Body & \mitempref{Spell Resistant} \\
+                \mitemref{Magic Resistant} & Can grant magic resistance & \mitempricetable{Active}{2} & Body & \mitempref{Magic Resistant} \\
                 \mitemref{Flaming Burst} & Can deal fire damage when hit or missed & \mitempricetable{Active}{3} & Body, Shield & \mitempref{Flaming Burst} \\
                 \mitemref{Freezing Burst} & Can deal cold damage when hit or missed & \mitempricetable{Active}{3} & Body, Shield & \mitempref{Freezing Burst} \\
                 \mitemref{Shocking Burst} & Can deal electricity damage when hit or missed & \mitempricetable{Active}{3} & Body, Shield & \mitempref{Shocking Burst} \\
@@ -406,6 +406,11 @@ Magic items are objects that have been imbued with magical energy. They can take
             Adamantine weapons ignore this damage reduction and negate it for 1 round.
         \end{magicitemdef}
 
+        \begin{magicitemdef}{Magic Resistant}[Active]{2}[Body]{Abjuration [Shielding]}{as armor}
+            \magicitemability{Active}[Standard action] If you trace an inverted arcane sigil on your chest, you gain \glossterm{magic resistance} equal to 10 \add the item's power.
+            The magic resistance lasts for 5 rounds.
+        \end{magicitemdef}
+
         \begin{magicitemdef}{Resilient}[Active]{1}[Body]{Abjuration [Shielding]}{as armor}
             \magicitemability{Active}[Standard action] If you strike your chest with a weapon or other hard object, you gain physical damage reduction equal to the item's power for 5 rounds.
             This allows you to ignore the first points of physical damage you take each round.
@@ -434,14 +439,6 @@ Magic items are objects that have been imbued with magical energy. They can take
             This effect lasts for 5 rounds, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Spell Resistant}[Active]{2}[Body]{Abjuration [Shielding]}{as armor}
-            \magicitemability{Active}[Standard action] If you trace an inverted arcane sigil on your chest, you gain \glossterm{spell resistance} equal to 10 \add the item's power.
-            The spell resistance lasts for 5 rounds.
-
-            To affect a creature with spell resistance using a spell, a caster must make an attack with an accuracy equal to its spellpower.
-            If the attack beats the creature's spell resistance, the spell works normally.
-            Otherwise, the spell has no effect on the creature.
-        \end{magicitemdef}
 
     \subsection{Arms}
 
@@ -1604,8 +1601,8 @@ Magic items are objects that have been imbued with magical energy. They can take
         Cold iron is iron that has been magically smelted without the use of heat.
 
         Cold iron items are especially effective against some supernatural creatures, as indicated in the creature descriptions.
-        In addition, cold iron items have inherent spell resistance equal to 10 \add the item's power.
-        This spell resistance is unique to the item, and is not granted to its user.
+        In addition, cold iron items have inherent \glossterm{magic resistance} equal to 10 \add the item's power.
+        This magic resistance is unique to the item, and is not granted to its user.
         However, the maximum number and price of special abilities that can be imbued into the armor is halved.
 
         When you damage a creature with a cold iron weapon, it is \impaired with casting arcane spells for 2 rounds.
@@ -1629,10 +1626,7 @@ Magic items are objects that have been imbued with magical energy. They can take
         Dragonbone weapons grant twice the normal number of offensive legend points from their enhancement bonus.
         This does not affect the damage dealt by the weapon.
 
-        Dragonbone armor grants its wearer spell resistance.
-        To affect a creature with spell resistance using a spell, a caster must make an attack with an accuracy equal to its spellpower.
-        If the attack beats the creature's spell resistance, the spell works normally.
-        Otherwise, the spell has no effect on the creature.
+        Dragonbone armor grants its wearer \glossterm{magic resistance} equal to 10 \add item power.
 
         \parhead{Dragonhide}
 
