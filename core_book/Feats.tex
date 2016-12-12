@@ -105,8 +105,10 @@ Feats can be used to specialize your character particular area, to grant your ch
                 \featref{Battlecaster} & 1st level spells & Improve spellcasting in combat & \tdash & \featpref{Battlecaster} \\
                 \featref{Conjurer} & 1st level Conjuration spell & Improve Conjuration spells you cast & \tdash & \featpref{Conjurer} \\
                 \featref{Counterspell} & 5th level, 2nd level spells, Spellcraft 10 & Force foes to miscast spells & \tdash & \featpref{Counterspell} \\
+                \featref{Devastating Magic} & 13th level, 6th level spells & Spells deal more damage & \tdash & \featpref{Devastating Magic} \\
                 \featref{Distant Magic} & 5th level, 2nd level spells & Cast spells at greater distances & \tdash & \featpref{Distant Magic} \\
                 \featref{Diviner} & 1st level Divination spell & Improve Divination spells you cast & \tdash & \featpref{Diviner} \\
+                \featref{Empowered Magic} & 13th level, 6th level spells & Empower effects of your spells & \tdash & \featpref{Empowered Magic} \\
                 \featref{Enchant Item} & 1st level spells & Gain ability to create magic items & \tdash & \featpref{Enchant Item} \\
                 \featref{Enchanter} & 1st level Enchantment spell & Improve Enchantment spells you cast & \tdash & \featpref{Enchanter} \\
                 \featref{Evoker} & 1st level Evocation spell & Improve Evocation spells you cast & \tdash & \featpref{Evoker} \\
@@ -671,6 +673,15 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 15th level, if you have 12 Strength, you ignore all hardness and damage reduction with physical attacks.
 
+    \feat{Devastating Magic}{Magic}
+    \featpre 13th level, 6th level spells.
+    \featben You gain a bonus to damage and healing with all spells equal to the number of dice you would roll for that spell's damage or healing.
+    If no dice would be rolled for a spell, you instead gain a \plus2 bonus to damage or healing.
+    This does not affect your accuracy or any other aspects of the spell.
+
+    At 19th level, if you have 8th level spells, this bonus increases to be equal to twice the number of dice you would roll.
+    If no dice would be rolled for a spell, the bonus instead increases to \plus4.
+
     \feat{Device Mastery}{Skill}
     \featpre Devices 5 ranks.
     \featben Whenever you make a Devices check, you may roll twice and take the higher result.
@@ -796,6 +807,15 @@ Feats can be used to specialize your character particular area, to grant your ch
             White & Cold & Cone \\
         \end{dtabularx}
     \end{dtable}
+
+    \feat{Empowered Magic}{Magic}
+    \featpres 13th level, 6th level spells.
+    \featben You reduce the cost to apply the Empowered augment to all of your spells by one spell level.
+    Many spells have an Empowered augment which makes their effects stronger.
+
+    At 19th level, if you have 8th level spells, you can empower spells to reach their maximum potential.
+    If you cast a spell using a spell slot seven levels higher than normal, you do not roll dice to determine the amount of damage or healing provided by the spell.
+    Instead, treat all dice the spell would have rolled as if they had rolled their maximum value.
 
     \feat{Enchant Item}{Magic}
     \featpre 1st level spells.
@@ -1559,12 +1579,12 @@ Feats can be used to specialize your character particular area, to grant your ch
     \featben If you cast a \glossterm{targeted spell} using a spell slot one level higher than normal, you can make a single \glossterm{strike} with a weapon you wield as part of casting the spell.
     The spell must have a casting time of a standard action.
     The strike is made at the same time as other physical attacks in the action phase.
-    If the strike hits, the spell takes effect on the struck creature when it resolves.
+    If the strike hits a creature or object, you can spend an \glossterm{immediate action} to activate the spell.
+    If you do, the target suffers the effects of the spell.
 
     If the strike misses, the spell is imbued into the weapon used to make the strike for 2 rounds.
-    At the end of that time, or if you cast another spell, the spell in the weapon dissipates without effect.
-    If the weapon hits a creature before the spell dissipates, you can spend an \glossterm{immediate action} to activate the spell.
-    If you do, the target suffers the effects of the spell, and the spell dissipates from the weapon.
+    If the weapon hits a creature or object during that time, you can spend an immediate action to activate the spell, just as if the initial strike had succeeded.
+    If you activate the spell, the duration runs out, or if you cast another spell, the spell in the weapon dissipates without effect.
 
     At 7th level, the imbuement lasts for 5 minutes before fading away.
     This can give you enough time to imbue a spell into a weapon and give the weapon to another creature.
