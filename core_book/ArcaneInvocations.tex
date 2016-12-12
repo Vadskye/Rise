@@ -10,7 +10,8 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{acid}[d6]. If your spellpower is at least 6, you 
+                \spellsuccess The target takes 1d8 acid damage \add 1 per spellpower. If your spellpower is at least 6, this instead deals \spelldamage{acid}[d10].
+                \spellcritical Double damage.
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
@@ -30,8 +31,8 @@
             \spelltwocol{\spelltgt{One willing creature}}{\spellrng{\rngclose}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The next time the target makes a physical attack, the attack deals bonus damage if it hits.
-            The bonus damage is equal to \spelldamage{}[d8].
+            \spelleffect The next time the target makes a physical \glossterm{strike}, the attack deals 1d6 \add 1 per spellpower bonus damage if it hits.
+            If your spellpower is at least 6, this instead increases the damage by \spelldamage{}[d10].
             \spelldur 1 round.
         \end{spelleffects}
     \end{spellcontent}
@@ -53,18 +54,18 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect You can use the target weapon to attack from its location.
-            This functions as if you were attacking with the weapon in your hands, except that you must use your spellpower to determine your attack and damage bonus.
-            You cannot use your Strength, Dexterity, or combat prowess to attack with the target weapon.
-            In addition, you cannot use any magical properties of the weapon.
+            This functions as if you were attacking with the weapon in your hands, except that you must use your spellpower in place of your attributes and \glossterm{combat prowess} to determine your accuracy and damage bonus.
+            This does not prevent any other modifiers from applying, such as a proficiency bonus (if you are proficient with the weapon).
+            In addition, you cannot use any activated magical properties of the weapon.
 
-            You contribute to overwhelm penalties and threaten enemies from both your location and the weapon's location.
+            You contribute to \glossterm{overwhelm penalties} and threaten enemies from both your location and the weapon's location.
             If you take a \glossterm{standard attack} action, you can attack with your own hands, with the weapon, or both, as you choose.
             The weapon's physical defenses are equal to 10 \add half your spellpower.
 
             During the movement phase, you can move the weapon up to 30 feet in any direction, including vertically.
             If the weapon goes outside of the spell's range, you lose control of it and it falls to the ground.
 
-            \spelldur 1 round. You can use a swift action at the beginning of each round to maintain control of the weapon.
+            \spelldur Focus. Unlike most spells, you can focus on this spell as a \glossterm{swift action}.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -104,7 +105,8 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower \add 4 vs. Armor defense}
-                \spellsuccess \spelldamage{piercing}[d8]
+                \spellsuccess The target takes 1d10 piercing damage \add 1 per spellpower. If your spellpower is at least 6, this instead deals \spelldamage{piercing}.
+                \spellcritical Double damage.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -142,7 +144,8 @@
             \spelltwocol{\spelltgt{One living creature}}{\spellrng{5 ft.}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect \spelldamage{life}[d6]. You gain temporary hit points equal to half the damage you deal. You can't gain more hit points than the target had.
+            \spelleffect The target takes 1d6 life damage \add 1 per spellpower. If your spellpower is at least 6, this instead deals \spelldamage{life}[d8].
+            You gain \glossterm{temporary hit points} equal to half the damage you deal. You can't gain more hit points than the target had.
 
             The temporary hit points disappear after 5 rounds. If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
         \end{spelleffects}
@@ -220,7 +223,7 @@
             \spellquicktargeting{One willing creature}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target gains an offensive legend point.
+            \spelleffect The target gains an offensive \glossterm{legend point}.
             \spelldur 1 round.
         \end{spelleffects}
     \end{spellcontent}
@@ -239,7 +242,8 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{force}[d6].
+                \spellsuccess The target takes 1d6 arcane damage \add 1 per spellpower. If your spellpower is at least 6, this instead deals \spelldamage{arcane}[d10].
+                \spellcritical Double damage.
                 \spellfailure Half damage.
             \end{spellattack}
         \end{spelleffects}
