@@ -807,6 +807,7 @@ Magic items are objects that have been imbued with magical energy. They can take
                 \mitemref{Transforming} & Can transform into any weapon & \mitempricetable{Active}{3} & Any & \mitempref{Transforming} \\
                 \mitemref{Poisoning} & Can instantly duplicate minor poison & \mitempricetable{Active}{3} & Melee & \mitempref{Poisoning} \\
                 \mitemref{Fixating} & Can automatically critical after striking foe repeatedly & \mitempricetable{Active}{4} & Melee & \mitempref{Fixating} \\
+                \mitemref{Seeking} & Ignores 20\% miss chances & \mitempricetable{Passive}{4} & \mitempref{Seeking} \\
                 \mitemref{Disorienting} & Can disorient foe & \mitempricetable{Active}{6} & Any & \mitempref{Disorienting} \\
                 \mitemref{Speed} & Grants extra strikes & \mitempricetable{Passive}{5} & Any & \mitempref{Speed} \\
                 \mitemref{Toxic} & Can instantly coat itself with major poison & \mitempricetable{Active}{6} & Melee & \mitempref{Poisoning} \\
@@ -1036,6 +1037,12 @@ Magic items are objects that have been imbued with magical energy. They can take
 
             After you activate this ability, you see shadowy glimpses of alternate futures superimposed over objects and creatures you see.
             This effect lasts for 5 rounds, during which time you cannot activate this ability again.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}{Seeking}[Passive]{4}[Ranged]{Divination [Knowledge]}{as weapon}
+            \magicitemability{Passive} This weapon automatically veers towards its intended target if misaimed.
+            Attacks with this weapon that would suffer a 50\% miss chance instead suffer a 20\% miss chance.
+            In additions, such attacks ignore all other effects that would apply a 20\% miss chance.
         \end{magicitemdef}
 
         \begin{magicitemdef}{Thieving}[Active]{3}[Melee]{Transmutation [Shaping, Sizing]}{as weapon}
