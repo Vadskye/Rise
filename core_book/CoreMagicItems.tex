@@ -214,6 +214,7 @@ Magic items are objects that have been imbued with magical energy. They can take
                 \mitemref{Boots of Earth's Embrace} & Can ignore forced movement & \mitempricetable{Active}{1} & Legs & \mitempref{Boots of Earth's Embrace} \\
                 \mitemref{Boots of Speed} & Can double movement speed & \mitempricetable{Active}{1} & Legs & \mitempref{Boots of Speed} \\
                 \mitemref{Boots of Freedom} & Can ignore movement-impairing effects & \mitempricetable{Active}{1} & Legs & \mitempref{Boots of Speed} \\
+                \mitemref{Shrinking Horseshoes} & Can shrink you & \mitempricetable{Active}{1} & Legs & \mitempref{Shrinking Horseshoes} \\
                 \mitemref{Boots of Elvenkind} & Grants \plus4 to Stealth & 500 gp & 4th & Legs & \mitempref{Boots of Elvenkind} \\
                 \mitemref{Sandals of Sprinting} & Grants \plus4 to Sprint & 500 gp & 4th & Legs & \mitempref{Sandals of Sprinting} \\
                 \mitemref{Boots of Swift Passage} & Can teleport you short distances & \mitempricetable{Active}{2} & Legs & \mitempref{Boots of Swift Passage} \\
@@ -583,6 +584,12 @@ Magic items are objects that have been imbued with magical energy. They can take
             \magicitemability{Active}[Move action] If you take an extraordinarily long step, you can teleport exactly 25 miles in a direction you specify.
             If this would place you within a solid object or otherwise impossible space, the boots will shunt you up to 1,000 feet in any direction to the closest available space, and you take 1d10 physical damage.
             If there is no available space within 1,000 feet of your intended destination, the effect fails and you take 2d10 physical damage.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}{Shrinking Horseshoes}[Active]{1}[Legs]{Transmutation [Shaping, Sizing]}{metal}[These horseshoes are intended to be worn by horses and similar animals. Similar items may exist with the same magical property that can be worn by other creatures.]
+            \magicitemability{Active}[Standard action] If tap a short pattern with one of your feet, you shrink to become one size category smaller, as the effect of the \spell{shrink} spell.
+            This pattern is simple, and an animal can be taught the pattern as a trick with a DR 15 Creature Handling check (see \pcref{Training Creatures}).
+            If you are riding a mount wearing these horseshoes, it can use one of your item uses in place of its own to activate this item.
         \end{magicitemdef}
 
         \begin{magicitemdef}{Winged Boots}[Active]{4}[Legs]{Transmutation [Imbuement]}{leather or textiles}
