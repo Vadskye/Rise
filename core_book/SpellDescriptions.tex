@@ -1533,7 +1533,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Enchantment [Compulsion, Mind]}{Arcane, Chaos, Divine}
+        \spellinfo{Enchantment [Compulsion, Mind]}{Arcane, Chaos, Divine, Trickery}
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -2023,7 +2023,6 @@
     \begin{spellcontent}
         \begin{spelltargetinginfo}
             \spellquicktargeting{One willing creature}{\rngclose}
-            \spelltime Standard action. If you cast this spell on yourself, you can cast it as a move action instead.
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target teleports to an unoccupied destination up to 100 feet away from its original location. If the destination is invalid, the spell fails.
@@ -2612,7 +2611,7 @@
     \end{spellaugments}
 \end{spellsection}
 
-\begin{spellsection}{Entropic Shield}[1]
+\begin{spellsection}{Entropic Shield}[2]
     \begin{spellheader}
         \spelldesc{You surround your ally with a magical field that glows with a chaotic blast of multicolored hues. This field deflects incoming ranged attacks, causing them to randomly swerve away from their intended target.}
     \end{spellheader}
@@ -2714,7 +2713,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{\rngclose}
+            \spellquicktargeting{One creature}{\rngmed}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
@@ -3309,7 +3308,7 @@
     \end{spellaugments}
 \end{spellsection}
 
-\begin{spellsection}{Haste}[1]
+\begin{spellsection}{Haste}[2]
     \begin{spellheader}
     \end{spellheader}
     \begin{spellcontent}
@@ -3322,7 +3321,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Temporal]}{Arcane, Strength}
+        \spellinfo{Transmutation [Temporal]}{Arcane}
         \spellnotes As with any effect that increases your speed, this effect affects your ability to jump (see \pcref{Jump}).
         \miscastrandom
     \end{spellfooter}
@@ -3960,7 +3959,7 @@
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Transmutation [Enhancement]}{Nature, Travel}
+        \spellinfo{Transmutation [Enhancement]}{Nature, Strength, Travel}
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
@@ -4421,9 +4420,9 @@
     \end{spellaugments}
 \end{spellsection}
 
-\begin{spellsection}{Phantasmal Killer}[4]
+\begin{spellsection}{Phantasmal Killer}[6]
     \begin{spellheader}
-        \spelldesc{You make your foe believe it sees the most fearsome creature it can imagine.}
+        \spelldesc{You make your foe believe see you as if you were the most fearsome creature it can imagine.}
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
@@ -4431,14 +4430,16 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target is \frightened for 5 rounds.
-                \spellcritical Make a second Spellpower vs. Fortitude attack against the target. If that attack succeeds, the target dies.
-                \spellfailure The target is \shaken for 5 rounds.
+                \spellsuccess The target is \panicked by you for 2 rounds.
+                \spellcritical If your attack result also beats the target's Fortitude defense, it dies.
+                Otherwise, it is frightened into a catatonic state for 2 rounds.
+                It is unable to take any actions, but is not \helpless.
+                \spellfailure The target is \frightened by you for 2 rounds.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
-        \spellinfo{Enchantment [Delusion, Mind]}*{Arcane, Trickery}
+        \spellinfo{Enchantment [Delusion, Mind]}{Arcane}
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -4539,29 +4540,6 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Vivimancy [Flesh]}{Arcane}
-        \miscastrandom
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Power Word Fear}[3]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{\rngclose}
-            \spellcmp{Verbal only}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target is \frightened by you for 2 rounds.
-                \spellcritical The target is \frightened by you for one year.
-                \spellfailure The target is \shaken by you for 2 rounds.
-            \end{spellattack}
-            \spelldur \durbrief or one year
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Enchantment [Delusion, Mind]}{Arcane}
         \miscastrandom
     \end{spellfooter}
 \end{spellsection}
@@ -5751,7 +5729,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{\rngclose}
+            \spellquicktargeting{One creature}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target gains a \glossterm{climb speed} of 20 feet. It must use at least one hand to climb in this manner.
@@ -5766,6 +5744,7 @@
     \begin{spellaugments}
         \spellaugment{1}{Accelerated}{The climb speed increases to 40 feet.}
         \spellaugment{3}{Mass}{The spell can affect up to five targets.}
+        \spellaugment{2}{Sticky}{When climbing, the target treats all surfaces as if they had handholds, which can lower the difficulty of climbing on surfaces. In addition, it does not need to use free hands to climb with this spell.}
     \end{spellaugments}
 \end{spellsection}
 

@@ -637,8 +637,8 @@ This choice determines a great deal about your character's abilities.
             \subcf{Strength -- Strength of Will}
             The cleric may use his Strength in place of his divine power to determine the strength of his invocations.
             \subcf{Travel -- Rapid Traveller}
-            The cleric gains a \plus30 foot bonus to his speed in all movement modes, up to a maximum of double his original speed.
-            In addition, whenever he makes a Sprint check, he rolls twice and takes the higher result.
+            The cleric gains a \plus30 foot bonus to his speed in all movement modes, up to a maximum of double his normal speed.
+            This stacks with the bonus from his travel domain gift.
             \subcf{Trickery -- Trick Master}
             The cleric gains his choice of Bluff Mastery, Disguise Mastery, or Stealth Mastery as a bonus feat, even if he does not meet the prerequisites.
             \subcf{War -- Warpriest}
@@ -783,9 +783,8 @@ This choice determines a great deal about your character's abilities.
         \subsubsection{Domain Masteries}\label{Domain Masteries}
 
             \subcf{Air -- Flight}
-            The cleric gains a fly speed (good maneuverability) equal to his land speed.
-            He may remain flying for up to 5 rounds at a time.
-            After that, he must land for 1 round before he can fly again.
+            The cleric gains a fly speed with good maneuverability equal to his land speed.
+            While \glossterm{unencumbered}, he can fly.
             See \pcref{Flying}, for more details.
             \subcf{Chaos -- Avatar of Luck}
             Once per round, the cleric can gain a \plus1d6 bonus to any check or physical attack.
@@ -821,8 +820,7 @@ This choice determines a great deal about your character's abilities.
             \subcf{Strength -- Might of the Gods}
             The cleric gains the larger than life ability, as the barbarian class ability (see Larger than Life, \pref{Bbn:Larger than Life}).
             \subcf{Travel -- Perfect Stride}
-            The cleric gains perfect stride, as the ranger class ability.
-            He constantly acts as if he were under the effect of a \spell{freedom} spell, except that it does not allow him to act normally underwater.
+            The cleric is immune to effects that restrict its mobility. In addition, he gains a \plus20 bonus to Reflex defense against grapple attacks, as well as on grapple attacks or Escape Artist checks made to escape a grapple or a pin.
             \subcf{Trickery -- Exemplar of Deceit} The cleric continuously gains the benefits of the \spell{nondetection}
             spell, with a spellpower equal to his divine power, except that it also protects him from any spells or effects which would prevent him from lying or reveal his lies.
             If the effect is dispelled or suppressed, he can resume it as a swift action.
@@ -849,7 +847,7 @@ This choice determines a great deal about your character's abilities.
 \section{Druid}\label{Druid}
     \begin{dtable}
         \lcaption{Druid Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\centering}p{\babcolavg} >{\ccol}p{3em} c >{\lcol}X}
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\centering}p{\babcolavg} >{\ccol}p{3.5em} c >{\lcol}X}
             \tb{Level} & \tb{Combat Prowess} & \tb{Active Aspects} & \tb{Spells} & \tb{Special} \\
             \hline
             \druidprogressionrow{1}  & \tdash & 2 & Metal abhorrence, spells, wild speech \\
@@ -863,15 +861,15 @@ This choice determines a great deal about your character's abilities.
             \druidprogressionrow{9}  & 3      & 6 & \tdash                                \\
             \druidprogressionrow{10} & 3      & 7 & Wild aspect                           \\
             \druidprogressionrow{11} & 3      & 7 & Natural casting (Close)               \\
-            \druidprogressionrow{12} & 3      & 8 & Natural aspect                        \\
+            \druidprogressionrow{12} & 3      & 8 & Wild aspect                        \\
             \druidprogressionrow{13} & 4      & 8 & \tdash                                \\
-            \druidprogressionrow{14} & 4      & 9 & Natural aspect                        \\
+            \druidprogressionrow{14} & 4      & 9 & Wild aspect                        \\
             \druidprogressionrow{15} & 4      & 9 & \tdash                                \\
-            \druidprogressionrow{16} & 4      & 10 & Natural aspect                        \\
+            \druidprogressionrow{16} & 4      & 10 & Wild aspect                        \\
             \druidprogressionrow{17} & 5      & 10 & \tdash                                \\
-            \druidprogressionrow{18} & 5      & 11 & Natural aspect                        \\
+            \druidprogressionrow{18} & 5      & 11 & Wild aspect                        \\
             \druidprogressionrow{19} & 5      & 11 & Natural casting (Medium)              \\
-            \druidprogressionrow{20} & 5      & 12 & Avatar of nature, natural aspect      \\
+            \druidprogressionrow{20} & 5      & 12 & Avatar of nature, wild aspect      \\
         \end{dtabularx}
     \end{dtable}
 
@@ -985,6 +983,7 @@ This choice determines a great deal about your character's abilities.
         She chooses two wild aspects from the list below.
         Some wild aspects have minimum druid levels, as indicated in the title of the aspect.
         At her 4th druid level, and every even druid level thereafter, the druid learns an additional wild aspect.
+        At higher levels, her aspects begin to mimic elements of the natural world in addition to animals.
 
         Unless otherwise noted, embodying a wild aspect is a standard action.
         Embodying a wild aspect costs a spell slot of any level.
@@ -1004,8 +1003,6 @@ This choice determines a great deal about your character's abilities.
         \subcf{Armaments of the Bear}
         The druid's mouth and hands transform, allowing her to perform bite and claw attacks.
         The bite attack deals 1d8 damage for a Medium druid, and the claws deal 1d6 damage.
-        \subcf{Climb}
-        The druid gains a \glossterm{climb speed} equal to her base land speed.
         \subcf{Senses}
         The druid, gains low-light vision.
         She treats sources of light as if they had double their normal illumination range.
@@ -1018,6 +1015,8 @@ This choice determines a great deal about your character's abilities.
 
         \subcf{4th -- Animal Affinity}
         The druid gains a \plus5 bonus to Creature Handling and Ride checks.
+        \subcf{4th -- Climb}
+        The druid gains a \glossterm{climb speed} equal to her land speed.
         \subcf{4th -- Constrict}
         The druid's body transforms, improving her grappling abilities.
         She gains a \plus5 bonus to accuracy with grapple attacks.
@@ -1027,14 +1026,6 @@ This choice determines a great deal about your character's abilities.
         The druid's head transforms, allowing her to perform a gore attack.
         The attack deals 1d8 damage for a Medium druid.
         In addition, if the druid hits with a natural attack, she may attempt to shove her foe as an immediate action.
-        \subcf{4th -- Lope}
-        The druid gains the ability to move on all four limbs.
-        When doing so, she gains a \plus30 foot bonus to her land speed, up to a maximum of double her original speed.
-        When not using her hands to move, her ability to use her hands is unchanged.
-        \subcf{4th -- Slither}
-        The druid gains a \glossterm{climb speed} equal to her base land speed.
-        She does not need to use her hands to climb in this way.
-        In addition, she gains a bite attack that deals 1d8 damage for a Medium druid.
 
         \subcf{6th -- A Thousand Faces}
         The druid's appearance changes, as if using the \spell{disguise self} spell.
@@ -1048,23 +1039,23 @@ This choice determines a great deal about your character's abilities.
         See \pcref{Gliding}, for more details.
         In addition, her feet transform, allowing her to perform a talon attack.
         The attack deals 1d6 damage for a Medium druid.
+        \subcf{6th -- Lope}
+        The druid gains the ability to move on all four limbs.
+        When doing so, she gains a \plus30 foot bonus to her land speed, up to a maximum of double her original speed.
+        When not using her hands to move, her ability to use her hands is unchanged.
         \subcf{6th -- Scent}
         The druid gains the scent ability, granting her a \plus10 bonus to scent-based Awareness checks (see \pcref{Awareness}).
         \subcf{6th -- Shrink}
         The druid shrinks by a size category.
         This functions like the \spell{reduce person} spell.
         This is a sizing effect.
-        \subcf{6th -- Totemic Mind}
-        The druid gains a \plus2 bonus to her choice of Intelligence, Perception, or Willpower.
-        This cannot increase the chosen attribute to be higher than her highest physical attribute.
-        \subcf{6th -- Totemic Power}
-        The druid gains a \plus2 bonus to her choice of Strength, Dexterity, or Constitution.
-        This cannot increase the chosen attribute to be higher than her highest mental attribute.
+        \subcf{6th -- Slither}
+        The druid gains a \glossterm{climb speed} equal to her land speed.
+        She does not need to use her hands to climb in this way.
+        In addition, she gains a bite attack that deals 1d8 damage for a Medium druid.
 
-        \subcf{8th -- Grow}
-        The druid increases in size by one size category.
-        This functions as the \spell{enlarge} spell.
-        This is a sizing effect, and does not stack with other sizing effects.
+        \subcf{8th -- Barkskin} The druid gains \glossterm{damage reduction} against physical damage equal to her nature power.
+        Fire damage ignores this damage reduction and negates it for 1 round.
         \subcf{8th -- Natural Grab}
         If the druid hits with a natural attack, she may attempt to grapple her foe as an immediate action.
         \subcf{8th -- Natural Trip}
@@ -1082,77 +1073,41 @@ This choice determines a great deal about your character's abilities.
         %TODO poison stacking rules
         \par In addition, the druid gains a bite attack that deals 1d8 damage for a Medium druid.
 
+        \subcf{10th -- Fluid Motion} The druid is immune to effects that restrict its mobility. She suffers no penalties for acting underwater. In addition, she gains a \plus20 bonus to Reflex defense against grapple attacks, as well as on grapple attacks or Escape Artist checks made to escape a grapple or a pin.
+        \subcf{10th -- Grow}
+        The druid increases in size by one size category, as the effect of the \spell{enlarge} spell.
+        This is a \glossterm{Sizing} effect, and does not stack with other Sizing effects.
         \subcf{10th -- Natural Renewal}
         At the end of each round, the druid heals hit points equal to her nature power.
-        \subcf{10th -- Swiftstrike}
+        \subcf{10th -- Wolfpack}
+        Overwhelmed foes the druid threatens increase their overwhelm penalties by 2.
+
+        \subcf{12th -- Elemental Retribution}
+        Whenever a creature within \rngmed range of the druid attacks her, the attacking creature takes \spelldamage{}[d6] of either cold, electricity, or fire damage.
+        The druid may choose the damage type independently for each attacking creature.
+        A creature can only be dealt damage by this effect once per round.
+        \subcf{12th -- Swiftstrike}
         The druid's attack speed increases.
         When she makes a standard attack, she may make an additional strike.
         This strike must be made with a natural weapon.
         This effect does not stack with similar effects that grant extra strikes.
-        \subcf{10th -- Wings}
-        The druid grows wings, granting her a fly speed equal to her land speed with average maneuverability.
-        See \pcref{Flying}, for details.
-        She can only fly for a number of rounds equal to 3 \add half her Constitution.
+        \subcf{12th -- Wings}
+        The druid grows wings, granting her a fly speed equal to her land speed.
+        While \glossterm{unencumbered}, she can fly (see \pcref{Flying}).
+        She can only fly for a number of rounds equal to half her nature power.
         After that limit is reached, she must rest for 5 minutes before flying again.
-        \subcf{10th -- Wolfpack}
-        Overwhelmed foes the druid threatens increase their overwhelm penalties by 2.
 
-        \cf{Drd}[3rd]{Natural Casting}[Mag]
-        Whenever the druid casts a nature spell with an area that originate from her, such as most cone or line spells, she may cause the spell to originate from any location within 10 feet of her.
-        All other aspects of the spell are unchanged.
-
-        For example, a druid casting \spell{burning hands} could create a cone of fire originating from 10 feet to her right.
-        The cone would extend 20 feet out from that point, as normal.
-        If the druid directed the cone back towards her, she could potentially be affected by the spell.
-
-        At 11th level, this ability's range improves to \rngclose.
-        At 19th level, this ability's range improves to \rngmed.
-
-        \cf{Drd}[5th]{Multiple Aspect}[Mag]
-        The druid gains the ability to embody two wild aspects at once.
-        At 9th level, and every 4 levels thereafter, the druid gains the ability to embody an additional wild aspect at the same time.
-
-        \cf{Drd}[12th]{Natural Aspect}[Mag]
-        The druid gains the ability to embody aspects of the natural world, including the elements, in addition to those of animals.
-        She adds the options below to the list of abilities she can gain with her wild aspect ability.
-
-        \subcf{Fire Shield} The druid gains the effects of the \spell{fire shield} spell.
-        Its spellpower is equal to her nature power or her Willpower, whichever is higher.
-        \subcf{Fluid Motion} The druid gains the effects of the \spell{freedom} spell.
-        Its spellpower is equal to her nature power or her Dexterity, whichever is higher.
-        In addition, she can move through her enemies, treating their space as difficult terrain.
-        \subcf{Stoneskin} The druid gains the effects of the \spell{stoneskin} spell.
-        Its spellpower is equal to her nature power or her Constitution, whichever is higher.
-        \subcf{14th -- Flight} The druid gains a fly speed equal to her base land speed.
-        See \pcref{Flying}, for details.
-        She can only fly in this way for up to 5 rounds.
-        After that limit is reached, she must rest for 5 minutes before flying again.
         \subcf{14th -- Earth Glide}
         The druid gains the earth glide ability, as the \spell{earth glide} spell.
         She can only glide through earth for up to 5 rounds.
         After that limit is reached, she must rest for 5 minutes before gliding through earth again.
+
         \subcf{18th -- Solar Radiance}
         The druid continuously radiates bright light out to a 500 foot radius (and shadowy illumination for an additional 500 feet).
         The illumination is so bright that she becomes hard to look at.
         Any creature attacking her from within the radius of bright light becomes \partiallyblinded for 2 rounds after the attack.
 
 \begin{comment}
-
-    \subcf{Heart of Air} The druid can breathe in any environment, and is immune to \spell{sickening cloud}
-    and similar effects.
-    In addition, she falls at half speed and takes no falling damage.
-    \subcf{Heart of Earth} The druid gains the effects of the \spell{stoneskin}
-    spell, with a spellpower equal to her druid level or Constitution.
-    \subcf{Heart of Fire} The druid gains the effects of the warm version of the \spell{fire shield}
-    spell, with a spellpower equal to her druid level or Constitution.
-    \subcf{Heart of the Sun}
-    The druid constantly radiates bright light out to a 100 foot radius (and shadowy illumination for an additional 100 feet).
-    The illumination is so bright that she becomes hard to look at.
-    Any creature attacking her from within the radius of bright light becomes dazzled for 5 rounds after the attack.
-    \subcf{Heart of Oak} The druid gains the effects of the \spell{stoneskin}
-    spell, with a spellpower equal to her druid level or Constitution, except that the damage reduction is overcome by fire instead of adamantine weapons.
-    \subcf{Heart of Water} The druid gains the effects of the \spell{freedom}
-    spell.
     \subcf{15th -- Air Mantle}
     The druid is surrounded by a mantle of air.
     Thrown and projectile weapons have a 50\% chance to miss her while this effect is active.
@@ -1172,11 +1127,6 @@ This choice determines a great deal about your character's abilities.
     Whenever a creature crosses the path, the druid makes a Reflex attack to entangle the creature, causing it to waste the rest of its movement.
     Her accuracy is equal to her druid level \add her Constitution.
     The plants appear on any surface, and will continue to grow if they can survive, though they may die quickly if they appear on inhospitable terrain.
-    \subcf{17th -- Flight}
-    The druid gains a fly speed equal to her land speed, with good maneuverability.
-    She may remain flying for up to 5 rounds at a time.
-    After that, she must land for 1 round before she can fly again.
-    See \pcref{Flying}, for more details.
     \subcf{17th -- Flaming Soul}
     The druid gains the fire subtype, making her immune to fire but giving her a 50\% vulnerability to cold damage.
     In addition, whenever she deals fire damage to a creature, the creature is \ignited for 5 rounds.
@@ -1197,11 +1147,26 @@ This choice determines a great deal about your character's abilities.
 
 \end{comment}
 
+        \cf{Drd}[3rd]{Natural Casting}[Mag]
+        Whenever the druid casts a nature spell with an area that originate from her, such as most cone or line spells, she may cause the spell to originate from any location within 10 feet of her.
+        All other aspects of the spell are unchanged.
+
+        For example, a druid casting \spell{burning hands} could create a cone of fire originating from 10 feet to her right.
+        The cone would extend 20 feet out from that point, as normal.
+        If the druid directed the cone back towards her, she could potentially be affected by the spell.
+
+        At 11th level, this ability's range improves to \rngclose.
+        At 19th level, this ability's range improves to \rngmed.
+
+        \cf{Drd}[5th]{Multiple Aspect}[Mag]
+        The druid gains the ability to embody two wild aspects at once.
+        At 9th level, and every 4 levels thereafter, the druid gains the ability to embody an additional wild aspect at the same time.
+
     \cf{Drd}[20th]{Avatar of Nature}[Mag]
     If the druid dies, except if by old age, she may choose to have her body and soul become an instrument of nature's will.
     Her body immediately decomposes or otherwise disappears, and her soul does not travel to an afterlife.
     She has no physical form, and cannot use any of her normal abilities.
-    Instead, she has a fly speed of 100 feet (perfect maneuverability).
+    Instead, she has a fly speed of 100 feet, with special maneuverability.
     As a standard action, she can temporarily possess any living plants or animals within a 10 mile radius of the place of her death.
 
     While possessing a living plant or animal, she can see through its senses and control its actions completely.
@@ -1595,14 +1560,14 @@ This choice determines a great deal about your character's abilities.
         As a swift action, the monk can gain a \plus20 bonus to Jump checks until the end of the round.
         \subcf{Scale the Highest Tower}
         As a swift action, the monk can gain a \plus20 bonus to Climb checks until the end of the round.
-        \subcf{4th -- Burst of Blinding Speed}
-        As a swift action, the monk can gain a \plus30 foot bonus to her land speed, up to a maximum of double her original speed.
-        In addition, she cannot be followed until the end of the round.
         \subcf{4th -- Dance of Falling Feathers}
         As an immediate action, when the monk begins falling, she can gain the benefits of the \spell{feather fall} spell.
         \subcf{4th -- Fists of Distant Force}
         As a swift action, the monk can empower her unarmed attacks with \ki, allowing her to strike distant foes.
         Until the end of the round, she gains an additional ten feet of reach with her unarmed attacks, extending her threatened area.
+        \subcf{6th -- Burst of Blinding Speed}
+        As a swift action, the monk can gain a \plus30 foot bonus to her land speed, up to a maximum of double her original speed.
+        In addition, she cannot be followed until the end of the round.
         \subcf{6th -- Dance of the Wayward Strike}
         As an immediate action, when a foe misses the monk with a melee strike, the monk can redirect the strike.
         Both the foe and the monk must threaten a third creature.
@@ -1919,7 +1884,7 @@ This choice determines a great deal about your character's abilities.
         \subcf{Mobile Aura}
         Allies in the area can move at full speed through threatened squares.
         \subcf{8th -- Accelerating Aura}
-        Allies in the area gain a \plus30 foot bonus to land speed, up to maximum of double their original speed.
+        Allies in the area gain a \plus10 foot bonus to land speed.
         \subcf{12th -- Aura of Freedom}
         Allies in the area gain the benefits of the \spell{freedom} spell.
         \subcf{20th -- Maddening Aura}
@@ -2928,9 +2893,14 @@ This choice determines a great deal about your character's abilities.
             Success deals 1d8 bludgeoning damage per two spellpower \add half his Strength.
             Failure deals half damage.
             \subcf{8th -- Flight}
-            The spellwarped grows physical wings that last for \durshort duration.
-            The wings grant him a fly speed equal to his base land speed with good maneuverability (see \pcref{Flying}, for details).
-            Unlike normal, he can fly with these wings even while encumbered.
+            As a standard action, the spellwarped can grow wings that last for 5 rounds.
+            The wings grant him a fly speed equal to his land speed.
+            While \glossterm{unencumbered}, he can fly (see \pcref{Flying}).
+            He can only fly for a number of rounds equal to half his spellpower, even if he uses this ability again to extend the duration of the wings.
+            After that limit is reached, he must rest for 5 minutes before flying again.
+
+            \subcf{10th -- Reinforced Flight}
+            This functions like the alteration flight invocation, except that the spellwarped can fly while encumbered.
 
         \subsubsection{Pyromancy Invocations}
             Unless otherwise noted, a pyromancer's invocations are \glossterm{Fire} effects, and shed light equivalent to a torch for their duration.
@@ -2983,9 +2953,9 @@ This choice determines a great deal about your character's abilities.
             Success means the target takes \spelldamage{fire}.
             Critical success deals double damage.
             \subcf{8th -- Flight of the Phoenix}
-            As a standard action, the spellwarped creates wings of flame that last for \durshort duration.
-            The wings grant him a fly speed equal to his land speed with good maneuverability (see \pcref{Flying}, for details).
-            Unlike normal, he can fly with these wings even while encumbered.
+            As a standard action, the spellwarped can create wings of flame that last for 5 rounds.
+            The wings grant him a fly speed equal to his land speed.
+            While \glossterm{unencumbered}, he can fly (see \pcref{Flying}).
             \subcf{10th -- Lifeseeking Flame}
             As a standard action, the spellwarped fires an orb of flame at a target within \rnglong range.
             If he does not target a creature, the flame automatically strikes a living creature within range.
@@ -3064,12 +3034,12 @@ This choice determines a great deal about your character's abilities.
             \subcf{4th -- Disjointed Time}
             As a standard action, the spellwarped chaotically disrupts the local flow of time of a creature within \rngclose range.
             The target is \impaired with attacks and checks for 5 rounds.
-            \subcf{4th -- Flash Step}
+
+            \subcf{6th -- Flash Step}
             As a move action, the spellwarped can accelerate a willing creature within \rngclose range so much that he can seem to pause time for everyone but the target.
             This allows the target to immediately take a single move action.
             During this move action, the target moves at double speed, cannot be followed or withdrawn from, and may move through squares occupied by creatures or threatened by blocking enemies without penalty.
             The target still suffers the effects of any environmental hazards.
-
             \subcf{6th -- Slow}
             This invocation functions like the \spell{slow} spell.
 
@@ -3079,7 +3049,7 @@ This choice determines a great deal about your character's abilities.
             \subcf{8th -- Mass Haste}
             This invocation functions like the \spell{haste} spell with the Mass augment applied.
 
-            \subcf{10th -- Mass Flash Step}
+            \subcf{12th -- Mass Flash Step}
             This invocation functions like the flashstep invocation, except that it affects up to five willing creatures.
             \subcf{10th -- Timestream}
             The spellwarped manipulates time in a \arealarge, 10 ft.\ wide line-shaped zone that extends out from him for 5 rounds.
