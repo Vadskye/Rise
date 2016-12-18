@@ -1682,3 +1682,26 @@
         \spellaugment{3}{Empowered}{The bonus increases to \plus4.}
     \end{spellaugments}
 \end{spellsection}
+
+\begin{spellsection}{Power Word Fear}[2]
+    \begin{spellheader}
+    \end{spellheader}
+    \begin{spellcontent}
+        \begin{spelltargetinginfo}
+            \spellquicktargeting{One creature}{\rngclose}
+            \spellcmp{Verbal only}
+        \end{spelltargetinginfo}
+        \begin{spelleffects}
+            \begin{spellattack}{Spellpower vs. Mental}
+                \spellsuccess The target is \frightened by you for 2 rounds.
+                \spellcritical The target is \frightened by you for one year.
+                \spellfailure The target is \shaken by you for 2 rounds.
+            \end{spellattack}
+            \spelldur \durbrief or one year
+        \end{spelleffects}
+    \end{spellcontent}
+    \begin{spellfooter}
+        \spellinfo{Enchantment [Delusion, Mind]}{Arcane}
+        \miscastrandom
+    \end{spellfooter}
+\end{spellsection}
