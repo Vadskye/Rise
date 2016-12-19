@@ -643,8 +643,7 @@ This choice determines a great deal about your character's abilities.
             The cleric gains his choice of Bluff Mastery, Disguise Mastery, or Stealth Mastery as a bonus feat, even if he does not meet the prerequisites.
             \subcf{War -- Warpriest}
             The cleric gains a \plus2 bonus to damage on physical attacks with weapons from his deity's favored weapon group.
-            \subcf{Water -- Water Breathing} The cleric may breathe and speak normally while underwater, as the \spell{water breathing}
-            ritual.
+            \subcf{Water -- Water Breathing} The cleric can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
             He also gains a \glossterm{swim speed} equal to his base land speed.
             \subcf{Wild -- Wild Aspect}
             When the cleric gains this ability, he chooses one wild aspect ability, as if he were a were a druid of a level equal to his cleric level (see Wild Aspect, \pref{Drd:Wild Aspect}).
@@ -723,7 +722,7 @@ This choice determines a great deal about your character's abilities.
             This is a [\glossterm{Compulsion}, \glossterm{Mind}] effect.
 
             \subcf{Life -- Prayer of Resurrection}
-            As a standard action, the cleric can resurrect a touched creature, as the \spell{resurrection} ritual.
+            As a standard action, the cleric can resurrect a touched creature, as the effect of the \spell{resurrection} ritual.
             The target must have been dead for no more than 5 minutes.
             He must spend a number of devotion points equal to the target's level.
             He does not know the cost before resurrecting the target.
@@ -753,7 +752,7 @@ This choice determines a great deal about your character's abilities.
             If he takes damage, the effect ends.
 
             \subcf{Travel -- Transcend Movement}
-            As a standard action, the cleric can spend a devotion point to teleport himself, as the \spell{teleport} ritual.
+            As a standard action, the cleric can spend a devotion point to teleport himself, as the effect of the \spell{teleport} ritual.
 
             \subcf{Trickery -- Enduring Falsehood}
             As a standard action, the cleric can delude a creature within \rngmed range into believing a lie, regardless of evidence.
@@ -814,9 +813,12 @@ This choice determines a great deal about your character's abilities.
             \subcf{Magic -- Spellfeeder}
             The cleric gains \glossterm{magic resistance} equal to 10 \add divine power.
             Whenever the cleric resists a spell with this magic resistance, he regains a spell slot of a level up to one lower than the level of the resisted spell.
-            \subcf{Protection -- Martyr's Gift}
+            \subcf{Protection -- Martyr's Boon}
             The cleric constantly radiates a \areamed radius emanation of protective energy.
-            Whenever a creature within the area takes damage, the cleric can choose to take half of that damage instead, as the \spell{share pain} spell.
+            Whenever a creature within the area would lose hit points, the cleric can choose to protect it.
+            If he does, the protected creature instead loses half that many hit points (rounded down), and he loses the other half (rounded up).
+            This effect applies after damage reduction and all other similar effects, and hit point loss caused by this effect cannot be reduced in any way.
+            If he takes damage in excess of his hit points in this way, the excess damage is dealt directly as critical damage.
             \subcf{Strength -- Might of the Gods}
             The cleric gains the larger than life ability, as the barbarian class ability (see Larger than Life, \pref{Bbn:Larger than Life}).
             \subcf{Travel -- Perfect Stride}
@@ -1098,8 +1100,12 @@ This choice determines a great deal about your character's abilities.
         After that limit is reached, she must rest for 5 minutes before flying again.
 
         \subcf{14th -- Earth Glide}
-        The druid gains the earth glide ability, as the \spell{earth glide} spell.
-        She can only glide through earth for up to 5 rounds.
+        The druid gains the earth glide ability, as an earth elemental.
+        This allows her to glide through stone, dirt, or almost any other sort of earth as if it were air.
+        She can walk or climb at any angle in the earth.
+        However, she cannot breathe, speak, or hear while gliding in this way.
+        While gliding, she can remain partially within the earth, granting it cover.
+        She can only glide through earth for a number of rounds equal to half her nature power.
         After that limit is reached, she must rest for 5 minutes before gliding through earth again.
 
         \subcf{18th -- Solar Radiance}
@@ -1176,7 +1182,7 @@ This choice determines a great deal about your character's abilities.
 
     While not possessing a plant or animal, the druid can meditate to regain spent spell slots, or she can focus on reincarnating her physical form.
     Creating a new body in this way takes 12 straight hours of concentration.
-    At the end of that time, the druid is reincarnated in a new body in her location, as the \spell{reincarnate} ritual, except that she can choose her race from among the races listed (not including the ``Other'' race).
+    At the end of that time, the druid is reincarnated in a new body in her location, as the effect of the \spell{reincarnate} ritual, except that she can choose her race from among the races listed (not including the ``Other'' race).
 
     While she is an avatar of nature, a druid does not age and does not die of old age.
     She can continue to exist in this form indefinitely.
@@ -1823,17 +1829,15 @@ This choice determines a great deal about your character's abilities.
 
         \parhead{Good Divine Invocations}
         \subcf{Shield Other}
-        As a standard action, the paladin can redirect damage from an ally to herself, as the \spell{share pain} spell.
+        This invocation functions like the \spell{share pain} spell.
         \subcf{6th -- Martyr's Shield}
         As an immediate action, when an ally within \rngmed range would take critical damage, the paladin can take that damage as regular damage instead.
         After using this invocation, the paladin cannot use it again for 5 rounds.
 
         \parhead{Evil Divine Invocations}
-        \subcf{2nd -- Enfeeblement} This invocation functions like the \spell{enfeeblement}
-        spell.
+        \subcf{2nd -- Enfeeblement} This invocation functions like the \spell{enfeeblement} spell.
         \subcf{6th -- Agony} This invocation functions like the \spell{agony} spell.
-        \subcf{10th -- Enervation} This invocation functions like the \spell{enervation}
-        spell.
+        \subcf{10th -- Enervation} This invocation functions like the \spell{enervation} spell.
         \subcf{10th -- Executing Smite*}
         The paladin makes a Divine power vs. Fortitude attack against the struck creature.
         Success means the target dies if it has no hit points remaining after taking damage from the smite.
@@ -1854,14 +1858,16 @@ This choice determines a great deal about your character's abilities.
         Whenever a creature in the area intentionally lies, the paladin knows the statement was a lie.
         This does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
 
-        At 11th level, the paladin can also see invisible creatures and objects within the area, as the \spell{see invisibility} spell.
+        At 11th level, the paladin can also see invisible creatures and objects within the area as if they were normally visible.
+        They are visible as translucent shapes, allowing her to easily distinguish between visible and invisible creatures and objects.
 
         At 15th level, the paladin can discern truth.
         When a lie is spoken, in addition to learning that the statement is a lie, the paladin learns what the creature believes the truth to be.
         This does not necessarily reveal the actual truth -- merely what the creature believes.
 
         At 19th level, the paladin can discern thoughts.
-        She knows the surface thoughts of all creatures in the area, as the \spell{read mind} spell.
+        She knows the surface thoughts of all creatures in the area.
+        She gains a \plus4 bonus to Bluff, Persuasion, and Intimidate attacks and checks against a creature whose thoughts she can read.
 
         \cf{Pal}[4th]{Divine Presence}[Mag]
         The paladin's presence alters the world around her.
@@ -2096,7 +2102,8 @@ This choice determines a great deal about your character's abilities.
         Whenever the ranger damages his quarry with a physical attack, it is \impaired for 2 rounds.
 
         \subcf{12th -- Anchored Quarry}
-        Whenever the ranger damages his quarry with a physical attack, it is dimensionally anchored, as the \spell{dimensional anchor} spell, for 2 rounds.
+        Whenever the ranger damages his quarry with a physical attack, it cannot travel extradimensionally for 2 rounds.
+        This blocks teleportation and all planar travel abilities except planar rifts.
 
         \subcf{12th -- Master of the Hunt}
         As a standard action, the ranger may share the damage bonus from his quarry ability with all allies who can see and hear him for 5 rounds.
@@ -2153,7 +2160,8 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rgr}[19th]{Truesight}[Mag]
         The ranger's perceptions are accurate enough to defeat even powerful magic.
-        He gains the ability to see all things as they actually are, as the \spell{true seeing} spell, out to a range of 50 feet.
+        He can see through normal and magical darkness, see the truth behind visual figments and glamers, and see the true form of creatures and objects affected by \glossterm{Shaping} abilities.
+        This effect extends out to a 50 foot range.
 
 \section{Rogue}\label{Rogue}
     \begin{dtable}
@@ -2718,8 +2726,8 @@ This choice determines a great deal about your character's abilities.
         This also grants him a \plus5 bonus to Awareness checks to see through disguises.
         \subcf{Pyromancy -- Flame of Life}
         The spellwarped can see the life-fire that lies within all living creatures, allowing him to clearly see all living creatures within 50 feet of him for 1 round.
-        This ability can reveal creatures hiding in concealment and defeat figments and glamers such as \spell{invisibility}, but does not reveal creatures hiding behind cover.
         It also allows the spellwarped to see unusually warm objects, such as fires.
+        This is a \glossterm{Detection} ability, and it can penetrate up to 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.
         \subcf{Telekinesis -- Spatial Awareness}
         The spellwarped can feel the forms of all objects and creatures around him, granting blindsense out to a 50 foot range for 1 round.
         \subcf{Temporal -- Rapid Search}
@@ -3255,7 +3263,7 @@ This choice determines a great deal about your character's abilities.
         The spell must have a casting time of 1 standard action or less.
         The contingency can specify a simple rule for identifying how to target the spell, such as ``the closest enemy''.
         If the rule is poorly worded or imprecise, the contingency may target incorrectly or fail to activate at all.
-        Any spells which require decisions, such as \spell{dimension door}, must have those decisions made at the time the contingency is created.
+        Any spells which require decisions, such as the \spell{dimension door} spell, must have those decisions made at the time the contingency is created.
         The wizard cannot change those decisions when the contingency takes effect.
 
         A wizard can have only one contingency active at a time.

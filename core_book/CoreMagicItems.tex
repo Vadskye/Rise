@@ -507,8 +507,8 @@ Magic items are objects that have been imbued with magical energy. They can take
     \subsection{Head}
 
         \begin{magicitemdef}{Hat of Disguise}[Active]{2}[Head]{Illusion [Glamer]}{textiles}
-            \magicitemability{Active}[Standard action] If you spin this hat on your head once, you can change your appearance for 1 hour.
-            This functions as the \spell{disguise self} ritual.
+            \magicitemability{Active}[Standard action] If you spin this hat on your head once, you can change your appearance for 1 hour, as the effect of the \spell{illusory guise} ritual.
+            Your effective spellpower is equal to your item power.
         \end{magicitemdef}
 
         \begin{magicitemdef}{Mask of Water Breathing}[Active]{2}[Head]{Transmutation [Imbuement]}{textiles}
@@ -554,11 +554,12 @@ Magic items are objects that have been imbued with magical energy. They can take
         \end{magicitemdef}
 
         \begin{magicitemdef}{Boots of Swift Passage}[Active]{2}[Legs]{Conjuration [Teleportation]}{leather or textiles}
-            \magicitemability{Active}[Move action] If you take three rapid steps in the shape of a triangle, you can teleport up to 100 feet to a location you can see, as the \spell{dimension slide} spell.
+            \magicitemability{Active}[Move action] If you take three rapid steps in the shape of a triangle, you can teleport to an unoccupied location within \rngclose range of your original location.
+            If that destination is invalid, this ability has no effect, though this does not prevent you from using the boots again.
             You must be able to move in order to activate this item.
             If you are \grappled, \immobilized, or otherwise unable to move normally, you cannot activate it.
 
-            After you activate this ability, the boots shimmer and seem faintly translucent.
+            After you activate this ability successfully, the boots shimmer and seem faintly translucent.
             This effect lasts for 5 rounds, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
@@ -760,18 +761,21 @@ Magic items are objects that have been imbued with magical energy. They can take
 
         % +1 level for extra thick fog in the first round
         \begin{magicitemdef}{Obscuring Cloak}[Active]{1}[Torso]{Conjuration [Creation, Fog]}{textiles}
-            \magicitemability{Active}[Standard action] If you wrap this cloak around yourself with one hand, you can create a cloud of fog centered on you, as the \spell{fog cloud} spell.
+            \magicitemability{Active}[Standard action] If you wrap this cloak around yourself with one hand, you can create a zone of fog in a \areamed radius cylinder centered on you.
+            All creatures within or looking through the area treat everything they see as if it had \concealment.
             The effect lasts for 5 rounds.
             For the first round of the effect, the fog is unusually thick, blocking all sight beyond 10 feet.
             This can allow you to hide unobserved.
         \end{magicitemdef}
 
         \begin{magicitemdef}{Vanishing Cloak}[Active]{4}[Torso]{Conjuration [Creation, Fog, Teleportation]}{textiles}
-            \magicitemability{Active}[Standard action] If you wrap this cloak around yourself with one hand, you can teleport up to 100 feet away to a location you can see, as the \spell{dimension slide} spell.
+            \magicitemability{Active}[Standard action] If you wrap this cloak around yourself with one hand, you can teleport up to an unoccupied location within \rngmed range of your original location.
             In addition, you create a cloud of fog centered on you, as the \spell{fog cloud} spell.
             You can choose whether the cloud appears at your original location, or at your location after teleporting.
             For the first round of the effect, the fog is unusually thick, blocking all sight beyond 10 feet.
-            This can allow you to hide unobserved.
+            This can allow you to hide unobserved (see \pcref{Stealth}).
+
+            If your intended destination is invalid, you do not teleport, though the fog cloud is still created.
         \end{magicitemdef}
 
 \section{Weapons}
@@ -1542,7 +1546,7 @@ Magic items are objects that have been imbued with magical energy. They can take
 
         \begin{magicitemdef}{Candle of Truth}[Active]{2}{Enchantment [Compulsion, Mind]}{alchemy}
             This item appears to be a simple white candle.
-            \magicitemability{Active}[Standard action] If you light this candle, creatures within a \areamed radius of the candle are unable to lie, as the \spell{zone of truth} ritual.
+            \magicitemability{Active}[Standard action] If you light this candle, it mimics the effect of the \spell{zone of truth} ritual, with a spellpower equal to its item power.
             The zone lasts as long as the candle remains lit, which is normally 1 hour.
             If the candle is snuffed, the zone immediately ends.
             While lit, the candle does not burn down, and provides servicable candle-light.
@@ -1562,11 +1566,12 @@ Magic items are objects that have been imbued with magical energy. They can take
         \end{magicitemdef}
 
         \begin{magicitemdef}{Witch's Broom}[Passive]{7}{Divination/Transmutation [Communication, Imbuement]}{wood}
-            \magicitemability{Passive} While you ride this broom, it can fly, as the \spell{overland flight} ritual.
-            Riding the broom is like riding a mount, except that you do not need to control it and some actions (such as taking cover behind the mount) are infeasible due to the shape of the broom.
+            \magicitemability{Passive} This broom has a 30 foot fly speed with good maneuverability.
+            You can ride the broom to fly.
+            Riding the broom is like riding a mount, except that you control it perfectly and some actions (such as taking cover behind the mount) are infeasible due to the shape of the broom.
             It can carry up to 1,000 pounds before it becomes unable to fly.
             \magicitemability{Active}[Standard action] As a standard action, you can speak a command word to summon the broom.
-            If you do, it flies next to you and hovers at a convenient height to ride.
+            If you do, and the broom is within \rngext range, it flies next to you and hovers at a convenient height to ride.
             The broom must be able to hear the commmand word.
         \end{magicitemdef}
 
