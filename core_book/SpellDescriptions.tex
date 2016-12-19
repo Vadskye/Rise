@@ -197,7 +197,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Abjuration [Thaumaturgy]}{Arcane, Divine, Magic}
-        \spellnotes The effects of instantaneous conjurations, such as \spell{create water}, are not affected by this spell because the conjuration itself is no longer in effect, only its result.
+        \spellnotes The effects of instantaneous conjurations, such as the \spell{create water} ritual, are not affected by this spell because the conjuration itself is no longer in effect, only its result.
 
         \par \spell{Dispel magic} and similar magic has no effect on an \spell{antimagic field}. Two or more \spellindirect{antimagicfield}{antimagic fields} sharing any of the same space have no effect on each other.
     %\par Any part of a creature that lies outside the field is unaffected by the field.
@@ -2179,7 +2179,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Transmutation [Shaping]}{Arcane, Destruction}
-        \spellnotes This spell affects even objects constructed entirely of telekinetic force, such as \spell{wall of force}, but not magical effects such as an \spell{antimagic field}.
+        \spellnotes This spell affects even objects constructed entirely of telekinetic force, such as the wall created by a a \spell{wall of force} spell, but not magical effects such as the field created by an \spell{antimagic field} spell.
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
@@ -2291,7 +2291,7 @@
             \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You become larger, as the \spell{enlarge} spell.
+            \spelleffect You become larger, as the effect of the \spell{enlarge} spell.
             In addition, you gain damage reduction against physical damage equal to your spellpower.
             Appropriately aligned damage ignores this damage reduction and negates it for 1 round.
             Evil attacks overcome your damage reduction if you are good or neutral, and good attacks overcome your damage reduction if you are evil.
@@ -3621,7 +3621,7 @@
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellsuccess \spelldamage{physical}. In addition, the target is \slowed for 5 rounds.
                 \spellfailure As above, but half damage.
-                \spellcritical The target becomes permanently entombed in a state of suspended animation (as the \spell{temporal stasis} spell) in a small sphere far beneath the surface of the earth. It remains there until an \spell{emancipation} spell is cast at the location where the imprisonment took place.
+                \spellcritical The target becomes permanently entombed in a state of suspended animation (as the effect of the \spell{temporal stasis} spell) in a small sphere far beneath the surface of the earth. It remains there until an \spell{emancipation} spell is cast at the location where the imprisonment took place.
             \end{spellattack}
         \end{spelleffects}
     \end{spellcontent}
@@ -4139,7 +4139,10 @@
             \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect Whenever an ally in the area takes damage, you may choose to take that damage instead. This damage ignores all forms of damage reduction and similar abilities. If you take damage in excess of your hit points in this way, the excess damage is dealt directly as critical damage.
+            \spelleffect Whenever a creature in the area would lose hit points, you may choose to protect it.
+            If you do, the protected creature instead loses half that many hit points (rounded down), and you lose the other half (rounded up).
+            This effect applies after damage reduction and all other similar effects, and hit point loss caused by this effect cannot be reduced in any way.
+            If you take damage in excess of your hit points in this way, the excess damage is dealt directly as critical damage.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -5215,7 +5218,7 @@
             \spellquicktargeting{One creature}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target can see any objects or beings that are invisible within its range of vision as if they were normally visible. Such creatures are visible as translucent shapes, allowing the target to easily distinguish between visible and invisible creatures.
+            \spelleffect The target can see any creature or objects that are invisible within its range of vision as if they were normally visible. They are visible as translucent shapes, allowing the target to easily distinguish between visible and invisible creatures and objects.
             \spelldur \durpersonallong
         \end{spelleffects}
     \end{spellcontent}
@@ -5287,7 +5290,7 @@
             \spellcmp{Somatic only}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect You create an illusory duplicate of yourself, as the \spell{create image} spell. The duplicate looks, sounds, and smells like you, but is intangible. Normally, it mimics your actions perfectly, including speech.
+            \spelleffect You create an illusory duplicate of yourself, as the effect of the \spell{create image} spell. The duplicate looks, sounds, and smells like you, but is intangible. Normally, it mimics your actions perfectly, including speech.
             \par As a swift action, you can attune to the projected image. This has several effects.
             \begin{itemize}
                 \item You see and hear from the image's location, rather from where your body is.
@@ -5389,9 +5392,9 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect This spell has three simultaneous effects.
-            First, you become invisible for 5 rounds, as \spell{invisibility}.
-            Second, you teleport up to 100 feet, as \spell{dimension slide}.
-            Third, an illusory duplicate of you appears in your original location for 5 rounds, as the \spell{create image} spell.
+            First, you become invisible for 5 rounds, as the effect of the \spell{invisibility} spell.
+            Second, you teleport up to 100 feet, as the effect of the \spell{dimension slide} spell.
+            Third, an illusory duplicate of you appears in your original location for 5 rounds, as the effect of the \spell{create image} spell.
             The image appears superimposed over your original position, preventing onlookers from noticing your disappearance.
 
             You can control the image of yourself as you would control any other figment with \spell{create image}. If not directed, it remains stationary.
@@ -5436,10 +5439,11 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spellspecial When you cast this spell, you choose which target will be protected.
-            \spelleffect When the protected creature would take hit point damage, it instead loses half that many hit points (rounded down), and the other target loses hit points equal to the other half of the damage (rounded up).
-
-            If the targets get out of range of each other, the effect is suppressed until they return within range.
-            \spelldur \durmed \dismissable
+            \spelleffect As long as both targets are within \rngmed range of each other, they share damage that would be dealt to the protected creature.
+            When the protected creature would lose hit points, it instead loses half that many hit points (rounded down), and the other target loses hit points equal to the other half (rounded up).
+            This effect applies after damage reduction and all other similar effects, and hit point loss caused by this effect cannot be reduced in any way.
+            If the protecting target takes damage in excess of its hit points in this way, the excess damage is dealt directly as critical damage.
+            \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -5757,7 +5761,7 @@
             \spelltwocol{\spellzone{500 ft.\ radius cylinder}}{\spellrng{\rnglong}}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect An enormous storm cloud occupies the top 200 feet of the area, as \spell{fog cloud}. Within the area, lightning strikes and thunder rolls. Sunlight is blocked by the dark cloud. This may cause the area to have shadowy illumination, granting everything in it \concealment.
+            \spelleffect An enormous storm cloud occupies the top 200 feet of the area, as the effect of the \spell{fog cloud} spell. Within the area, lightning strikes and thunder rolls. Sunlight is blocked by the dark cloud. This may cause the area to have shadowy illumination, granting everything in it \concealment.
 
             At the end of every round, the storm has an additional effect, as shown on \tref{Storm of Vengeance Effects}. Damaging effects deal \spelldamage{}[d8].
 
@@ -6355,15 +6359,20 @@
             \spellquicktargeting{One creature}{\rngtouch}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect The target sees through normal and magical darkness, sees the truth behind visual figments and glamers, and sees the true form of polymorphed, changed, or transmuted things. The effect extends out to \rngmed range.
+            \spelleffect The target sees through normal and magical darkness, sees the truth behind visual figments and glamers, and sees the true form of creatures and objects affected by \glossterm{Shaping} abilities.
+            This effect extends out to 50 foot range.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Divination [Imbuement]}{Arcane, Divine, Knowledge}
-        \spellnotes This spell does not negate concealment, including that caused by fog and the like. It does not help against mundane disguises or concealed objects or creatures. In addition, the spell's effects cannot be further enhanced with known magic, so the benefits do not apply when seeing through a scrying effect or similar vision enhancements.
+        \spellnotes This spell does not negate mundane \glossterm{concealment}, and it does not reveal the truth behind nonmagical disguises (see \pcref{Disguise}). In addition, the spell's effects cannot be further enhanced with known magic, so its benefits do not apply when seeing through \glossterm{Scrying} effects.
         \miscastexplode
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{2}{Widened}{The effect extends out to a 100 foot range.}
+        \spellaugment{3}{Mass}{The spell can affect up to five targets.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{True Strike}[1]
