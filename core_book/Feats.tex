@@ -244,9 +244,8 @@ Feats can be used to specialize your character particular area, to grant your ch
     At 7th level, if you know a 2nd level or higher Abjuration spell, your Abjuration spells are more powerful.
     Whenever you cast an Abjuration spell, you can reduce the cost to apply one augment to the spell by one spell level.
 
-    At 11th level, you gain a \plus4 bonus to spellpower when dispelling effects with \spell{dispel magic} and similar spells.
-
-    At 15th level, if you know a 6th level or higher Abjuration spell, you gain a \plus1 bonus to all defenses.
+    At 11th level, you gain a \plus1 bonus to all defenses.
+    In addition, you gain a \plus4 bonus to spellpower when dispelling effects with \spell{dispel magic} and similar spells.
 
     \feat{Acrobatics Mastery}{Skill}
     \featpre Acrobatics 6 ranks.
@@ -505,15 +504,15 @@ Feats can be used to specialize your character particular area, to grant your ch
     \featben Objects you create and creatures you summon with Conjuration spells have extra hit points equal to your spellpower.
     Permanent physical objects you create are not affected by this ability.
 
+    At 3rd level, you double the range of all \glossterm{Teleportation} spells you cast.
+
     At 7th level, if you know a 2nd level or higher Conjuration spell, your Conjuration spells are more powerful.
     Whenever you cast a Conjuration spell, you can reduce the cost to apply one augment to the spell by one spell level.
 
     At 11th level, if you know a 4th level or higher Conjuration spell, your connection to the Astral Plane is strengthened.
     Whenever you teleport, you drift between your plane and the Astral Plane for 1 round.
     During this time, all attacks against you 20\% failure chance.
-
-    At 15th level, you drift between planes after teleporting for 2 rounds.
-    In addition, objects you create and creatures you summon have damage reduction against all damage equal to twice your spellpower.
+    In addition, objects you create and creatures you summon have damage reduction against all damage equal to your spellpower.
 
     \feat{Controlling Wild Speech}{Class, Magical}
     \featpres Druid or ranger level 5, wild speech ability.
@@ -750,7 +749,9 @@ Feats can be used to specialize your character particular area, to grant your ch
     \feat{Diviner}{Magical, Spell}
     \spelldesc{You have great talent with Divination spells.}
     \featpre 1st level or higher \glossterm{Divination} spell known.
-    \featben You gain a \plus2 bonus to Awareness, Knowledge, and Sense Motive.
+    \featben You gain a \plus2 bonus to Awareness and Knowledge attacks and checks.
+
+    At 3rd level, the skill bonus increases to \plus5.
 
     At 7th level, if you know a 2nd level or higher Divination spell, your Divination spells are more powerful.
     Whenever you cast a Divination spell, you can reduce the cost to apply one augment to the spell by one spell level.
@@ -758,8 +759,6 @@ Feats can be used to specialize your character particular area, to grant your ch
     At 11th level, if you know a 4th level or higher Divination spell, you have a precognitive sense that warns you of attacks.
     You are aware of all attacks against you, even those you cannot see, as long as you are conscious.
     This allows you to use some certain abilities to defend yourself, and prevents you from being \unaware.
-
-    At 15th level, if you know a 6th level or higher Divination spell, the bonus to skills increases to \plus4.
 
     \feat{Draconic Apotheosis}{Bloodline}
     \featpres 9th level, Draconic Heritage.
@@ -858,14 +857,14 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     \feat{Enchanter}{Magical, Spell}
     \featpres 1st level or higher \glossterm{Enchantment} spell known.
-    \featben You gain a \plus2 bonus to Bluff, Intimidate, and Persuasion checks.
+    \featben You gain a \plus2 bonus to Intimidate and Persuasion checks.
+
+    At 3rd level, this bonus increases to \plus5.
 
     At 7th level, if you know a 2nd level or higher Enchantment spell, your Enchantment spells are more powerful.
     Whenever you cast an Enchantment spell, you can reduce the cost to apply one augment to the spell by one spell level.
 
     At 11th level, if you know a 4th level or higher Enchantment spell, you no longer need verbal components to cast Enchantment spells (see \pcref{Components}).
-
-    At 15th level, if you know a 6th level or higher Enchantment spell, the bonus to skill checks increases to \plus4.
 
     \feat{Endurance}{General}
     \featpre Constitution 3.
@@ -1023,14 +1022,14 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     \feat{Illusionist}{Magical, Spell}
     \featpre 1st level or higher Illusion spell known.
-    \featben You gain a \plus2 bonus to Bluff, Disguise, and Stealth checks.
+    \featben You gain a \plus2 bonus to Disguise and Stealth attacks and checks.
+
+    At 3rd level, the skill bonus increases to \plus5.
 
     At 7th level, if you know a 2nd level or higher Illusion spell, your Illusion spells are more powerful.
     Whenever you cast a Illusion spell, you can reduce the cost to apply one augment to the spell by one spell level.
 
     At 11th level, if you know a 4th level or higher Illusion spell, you no longer need verbal components to cast Illusion spells (see \pcref{Components}).
-
-    At 15th level, if you know a 6th level or higher Illusion spell, the bonus to skills increases to \plus4.
 
     \feat{Inspiring Performer}{Magical, Performance, Skill}
     \featpre Perform 4 ranks.
@@ -1533,10 +1532,17 @@ Feats can be used to specialize your character particular area, to grant your ch
     \feat{Shaped Magic}{Magical, Spell}
     \featpre 5th level, 2nd level spells.
     \featben If you cast a spell with an area using a spell slot one level higher than normal, you can change its area.
-    The spell's area becomes a \areasmall, \areamed, \arealarge, or \areahuge \glossterm{burst}.
-    You can change a cone to a 5 ft.\ wide line of the same size, or a radius one size smaller.
-    You can change a radius to a 5 ft.\ wide line one size larger, or a cone of the same size.
-    You can change a line to a cone one size smaller, or a radius two sizes smaller.
+    The spell's area becomes a \areasmall, \areamed, \arealarge, or \areahuge \glossterm{burst}, as described in \trefnp{Shaped Areas}.
+
+    \begin{dtable}
+        \lcaption{Shaped Areas}
+        \begin{dtabularx}{\columnwidth}{l >{\lcol}X >{\lcol}X >{\lcol}X}
+            \tb{Initial Shape} & \tb{Line} & \tb{Cone} & \tb{Radius} \\
+            Line & \tdash & One size smaller & Two sizes smaller \\
+            Cone & 5 ft.\ wide, same size & \tdash & One size smaller \\
+            Radius & 5 ft.\ wide, one size larger & Same size & \tdash \\
+        \end{dtabularx}
+    \end{dtable}
 
     At 11th level, you can cast a spell with an area using a spell slot two levels higher than normal.
     If you do, you can exclude any number of 5-foot cubes within the spell's area from its effect.
@@ -1781,11 +1787,12 @@ Feats can be used to specialize your character particular area, to grant your ch
     \feat{Transmuter}{Magical, Spell}
     \featpre 1st level or higher Transmutation spell known.
     \featben You gain \glossterm{damage reduction} against \glossterm{physical damage} equal to half your spellpower with the source of magic used to qualify for this feat.
+    Adamantine weapons ignore this damage reduction and negate it for 1 round.
 
     At 7th level, if you know a 2nd level or higher Transmutation spell, your Transmutation spells are more powerful.
     Whenever you cast a Transmutation spell, you can reduce the cost to apply one augment to the spell by one spell level.
 
-    At 11th level, if you know a 4th level or higher Transmutation spell, your damage reduction increases to be equal to your spellpower.
+    At 11th level, if you know a 4th level or higher Transmutation spell, your damage reduction increases to be equal to your spellpower, and applies against all damage.
 
     \feat{Toughness}{General}
     \featpre Constitution 3.
