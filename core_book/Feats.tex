@@ -277,14 +277,14 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     \feat{Arcane Resilience}{Class, Magical}
     \featpre Sorcerer level 1.
-    \featben You gain damage reduction against arcane spells equal to your sorcerer level or Constitution, whichever is higher.
-    This damage reduction applies against your arcane spells, including miscast effects.
+    \featben You gain damage reduction against \glossterm{magical} abilities equal to half your sorcerer level or half Constitution, whichever is higher.
+    This damage reduction applies against your own abilities, including miscast effects.
 
-    At sorcerer level 3, this damage reduction applies against all spells.
+    At sorcerer level 3, you take half damage from your own spell and miscast effects (before applying damage reduction).
 
-    At sorcerer level 7, you take half damage from your own spell and miscast effects (before applying damage reduction).
+    At sorcerer level 7, the damage reduction increases to be equal to your sorcerer level or Constitution, whichever is higher.
 
-    At sorcerer level 11, this damage reduction doubles.
+    At sorcerer level 11, 
 
     \feat{Awareness Mastery}{Skill}
     \featpre Awareness 6 ranks.
@@ -375,29 +375,32 @@ Feats can be used to specialize your character particular area, to grant your ch
     You gain feathery wings that sprout from your back.
     You can use these wings to glide at a rate equal to your land speed (see \pcref{Gliding}).
     The wings themselves are physical, but the ability to glide and fly with them is \glossterm{magical}.
-    In addition, you gain the holy judgment ability.
-    \parhead{Holy Judgment} As a standard action, you can inflict divine judgment on a non-good creature within \rnglong range. You make a Celestial power vs. Mental attack against the target. Success deals 1d6 divine damage per celestial power, and causes the target to be \dazed for two rounds. Critical success deals double damage. Failure deals half damage, and has no additional effects.
 
     At 11th level, your wings improve, granting you a fly speed equal to your land speed.
     While \glossterm{unencumbered}, you can fly (see \pcref{Flying}).
     You can only fly for a number of rounds equal to half your celestial power.
     After that limit is reached, you must rest for 5 minutes before flying again.
+    In addition, your holy blessing ability now grants two legend points instead of one.
 
-    At 15th level, your holy judgment ability dazes the target even if the attack fails.
+    At 15th level, the damage dealt by your holy judgment ability increases to 1d8 divine damage per celestial power.
 
     At 19th level, you can fly for a number of minutes equal to half your celestial power before resting.
 
     \feat{Celestial Heritage}{Bloodline, Magical}
     \featpres Non-evil alignment.
     \featben You have the blood of a celestial creature in your veins, granting you celestial power.
-    You gain two abilities you can use by spending a celestial point.
+    You gain an ability you can use by spending a celestial point.
     Your celestial power is equal to your Willpower or your level, whichever is higher.
     You have a maximum number of celestial points equal to half your celestial power (minimum 1).
     Each day, you recover all spent celestial points.
-    \parhead{Holy Blessing} As a standard action, you can bless a willing ally within \rngmed range. The target gains a general \glossterm{legend point} that lasts for 5 rounds, or until it is used.
-    \parhead{Holy Protection} As a standard action, you can shield a willing ally within \rngclose range from evil. The target gains damage reduction equal to your celestial power against evil effects and physical attacks made by evil creatures.
+    \parhead{Holy Blessing} As a standard action, you can bless a willing ally within \rngclose range. The target gains a general \glossterm{legend point} that lasts for \durshort duration, until it is used.
+
+    At 3rd level, you learn how to protect your allies by spending a celestial point.
+    \parhead{Holy Protection} As a standard action, you can shield a willing ally within \rngmed range from evil for \durshort duration. The target gains damage reduction equal to your celestial power against evil effects and physical attacks made by evil creatures.
 
     At 7th level, your \textit{holy blessing} ability affects up to five willing allies.
+    In addition, you gain the ability to inflict a damaging judgment on a foe by spending a celestial point.
+    \parhead{Holy Judgment} As a standard action, you can inflict divine judgment on a non-good creature within \rngmed range. You make a Celestial power vs. Mental attack against the target. Success deals 1d6 divine damage per celestial power, and causes the target to be \dazed for two rounds. Critical success deals double damage. Failure deals half damage, and has no additional effects.
 
     At 11th level, you permanently gain the benefit of your \textit{holy protection} ability.
 
@@ -859,12 +862,13 @@ Feats can be used to specialize your character particular area, to grant your ch
     \featpres 1st level or higher \glossterm{Enchantment} spell known.
     \featben You gain a \plus2 bonus to Intimidate and Persuasion checks.
 
-    At 3rd level, this bonus increases to \plus5.
+    At 3rd level, 
 
     At 7th level, if you know a 2nd level or higher Enchantment spell, your Enchantment spells are more powerful.
     Whenever you cast an Enchantment spell, you can reduce the cost to apply one augment to the spell by one spell level.
 
     At 11th level, if you know a 4th level or higher Enchantment spell, you no longer need verbal components to cast Enchantment spells (see \pcref{Components}).
+    In addition, the skill bonus increases to \plus5.
 
     \feat{Endurance}{General}
     \featpre Constitution 3.
@@ -1533,6 +1537,8 @@ Feats can be used to specialize your character particular area, to grant your ch
     \featpre 5th level, 2nd level spells.
     \featben If you cast a spell with an area using a spell slot one level higher than normal, you can change its area.
     The spell's area becomes a \areasmall, \areamed, \arealarge, or \areahuge \glossterm{burst}, as described in \trefnp{Shaped Areas}.
+    The spell's range does not change.
+    A radius burst without a range originates from you, and you may choose whether or not you are affected by it.
 
     \begin{dtable}
         \lcaption{Shaped Areas}
