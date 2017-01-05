@@ -1368,6 +1368,7 @@ Magic items are objects that have been imbued with magical energy. They can take
 
         \parhead{Activation} Activating a scroll simply means casting the spell written on the scroll.
         This functions exactly like casting the spell normally, except that you must spend an item use and the scroll itself rather than a spell slot, and you do not need to know the spell.
+        You use your own spellpower with that spell source to determine the effects of the spell.
         You must holding the scroll and able to see and read the writing on it.
 
         \parhead{Activation Restrictions} To successfully activate a scroll, you must be able to cast spells of the same level with the same \glossterm{spell source} as the scroll.
@@ -1377,21 +1378,6 @@ Magic items are objects that have been imbued with magical energy. They can take
         This requires a \ritual{read magic} ritual or a successful Spellcraft check (DR 20 \add double spell level).
         Deciphering a scroll to determine its contents does not activate the scroll.
         However, a scroll can be cursed or magically trapped to harm a creature trying to decipher it.
-
-        To have any chance of activating a spell scroll, the scroll user must meet the following requirements.
-        \begin{itemize}
-            \item The user's spellpower must be at least equal to the scroll's spellpower.
-            \item The user must have the spell on his or her spell list.
-                The spell list must be of the same magic type as the scroll (arcane, divine, or nature).
-            \item The user must have the minimum casting attribute required to cast spells of the scroll's spell level.
-                For arcane magic, the minimum attribute is equal to the spell's level.
-                For divine and nature magic, the minimum attribute is equal to half the spell's level.
-        \end{itemize}
-
-        \parhead{Determine Effect} A spell successfully activated from a scroll works exactly like a spell cast the normal way.
-        The spellpower of a spell cast from a scroll is normally equal to twice the spell's level.
-
-        Once a scroll has been activated, the writing disappears from it, leaving behind only faint traces with no magical power.
 
         \parhead{Scroll Levels} Some spells are acquired by multiple classes at different levels.
         Use the entry on the table appropriate to the scribing of each individual scroll.
@@ -1404,6 +1390,9 @@ Magic items are objects that have been imbued with magical energy. They can take
         Once activated, the magic in a potion or oil is expended and useless.
 
         Both potions and oils can only mimic the effects of \glossterm{targeted spells} with a casting time of a standard action or less.
+        Some spells are useless to create as a potion or oil.
+        For example, the \spell{suggestion} spell requires speaking a suggestion as part of casting the spell.
+        Since the drinker of a \spell{suggestion} potion would not hear the suggestion used to cast the spell, such a potion would be useless.
 
         Once activated, the effects of a potion or oil function as if the target had cast the spell on itself.
         Neither the character activating the effect nor the target of the effect can make any decisions about the spell's effects, including concentrating on the effect.
@@ -1433,6 +1422,9 @@ Magic items are objects that have been imbued with magical energy. They can take
         To do so, you must make a touch attack against your target (see \pcref{Touch Attacks}).
 
         \parhead{Spellpower} The spellpower for a standard potion or oil is normally equal to twice the spell level of the spell in the potion.
+        It is possible to create potions and oils with a higher spellpower than that minimum.
+        For every 2 points by which the spellpower of a potion or oil increases above the minimum for its spell level, the price doubles additively.
+        For example, a potion of a 1st level spell with a spellpower of 6 would cost 30 gp.
 
         \parhead{Mishaps} Extraordinarily powerful potions and oils can be dangerous to activate.
         Whenever you activate a potion or oil, if the spellpower of the potion exceeds your level, roll 1d20 and subtract the difference between your level and the potion's spellpower.
