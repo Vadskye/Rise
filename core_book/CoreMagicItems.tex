@@ -913,7 +913,7 @@ Magic items are objects that have been imbued with magical energy. They can take
             This can affect both thrown weapons and projectile weapons.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Flaming}[Active]{2}[Melee, Ranged]{Evocation [Fire]}{as weapon}
+        \begin{magicitemdef}{Flaming}[Active]{3}[Melee, Ranged]{Evocation [Fire]}{as weapon}
             \magicitemability{Active}[Immediate action] When you hit with a physical attack with this weapon, you can activate it.
             If you do, the struck creature takes 1d6 fire damage per two item power.
 
@@ -921,7 +921,7 @@ Magic items are objects that have been imbued with magical energy. They can take
             This effect lasts for 5 rounds, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Freezing}[Active]{2}[Melee, Ranged]{Evocation [Cold]}{as weapon}
+        \begin{magicitemdef}{Freezing}[Active]{3}[Melee, Ranged]{Evocation [Cold]}{as weapon}
             \magicitemability{Active}[Immediate action] When you hit with a physical attack with this weapon, you can activate it.
             If you do, the struck creature takes 1d6 cold damage per two item power.
 
@@ -986,16 +986,17 @@ Magic items are objects that have been imbued with magical energy. They can take
             \magicitemability{Passive} This weapon functions like a \magicitem{returning} weapon, except that the weapon teleports back to the creature that threw or fired it immediately after the attack is resolved, allowing the creature to make multiple attacks in the same round with the same thrown weapon.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Speed}[Passive]{5}[Melee, Ranged]{Transmutation [Temporal]}{as weapon}
-            \magicitemability{Passive} Whenever you make a \glossterm{standard attack} with this weapon, you can make an additional \glossterm{strike} with a \minus5 penalty to accuracy.
-            This does not stack with any other effects which grant extra strikes.
+        \begin{magicitemdef}{Seeking}[Passive]{4}[Ranged]{Divination [Knowledge]}{as weapon}
+            \magicitemability{Passive} This weapon automatically veers towards its intended target if misaimed.
+            Attacks with this weapon that would suffer a 50\% miss chance instead suffer a 20\% miss chance.
+            In additions, such attacks ignore all other effects that would apply a 20\% miss chance.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Sweeping}[Active]{0}[Melee]{Transmutation [Enhancement]}{as weapon}
-            \magicitemability{Triggered}[Immediate action] When you hit a foe with a melee attack with this weapon, you can activate it.
-            If you do, you can make an extra \glossterm{strike} at another creature you threaten.
+        \begin{magicitemdef}{Shocking}[Active]{2}[Melee, Ranged]{Evocation [Electricity]}{as weapon}
+            \magicitemability{Active}[Immediate action] When you hit with a physical attack with this weapon, you can activate it.
+            If you do, the struck creature takes 1d6 electricity damage per two item power.
 
-            After you activate this ability, the weapon always feels slightly loose in your hands, no matter how tightly you grip it.
+            After you activate this ability, the item crackles with electrical energy, causing you to radiate flashing light as a torch.
             This effect lasts for 5 rounds, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
@@ -1018,26 +1019,25 @@ Magic items are objects that have been imbued with magical energy. They can take
             This removes all delayed damage the weapon has dealt.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Shocking}[Active]{2}[Melee, Ranged]{Evocation [Electricity]}{as weapon}
-            \magicitemability{Active}[Immediate action] When you hit with a physical attack with this weapon, you can activate it.
-            If you do, the struck creature takes 1d6 electricity damage per two item power.
-
-            After you activate this ability, the item crackles with electrical energy, causing you to radiate flashing light as a torch.
-            This effect lasts for 5 rounds, during which time you cannot activate this ability again.
+        \begin{magicitemdef}{Speed}[Passive]{5}[Melee, Ranged]{Transmutation [Temporal]}{as weapon}
+            \magicitemability{Passive} Whenever you make a \glossterm{standard attack} with this weapon, you can make an additional \glossterm{strike} with a \minus5 penalty to accuracy.
+            This does not stack with any other effects which grant extra strikes.
         \end{magicitemdef}
 
         \begin{magicitemdef}{Surestrike}[Active]{1}[Melee, Ranged]{Divination [Knowledge]}{as weapon}
-            \magicitemability{Triggered}[Immediate action] When you miss an attack with this weapon, you can activate it to reroll the attack roll.
+            \magicitemability{Triggered}[Immediate action] When you miss a \glossterm{strike} with this weapon, you can activate it to reroll the attack roll.
             You must take the second result.
 
             After you activate this ability, you see shadowy glimpses of alternate futures superimposed over objects and creatures you see.
             This effect lasts for 5 rounds, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Seeking}[Passive]{4}[Ranged]{Divination [Knowledge]}{as weapon}
-            \magicitemability{Passive} This weapon automatically veers towards its intended target if misaimed.
-            Attacks with this weapon that would suffer a 50\% miss chance instead suffer a 20\% miss chance.
-            In additions, such attacks ignore all other effects that would apply a 20\% miss chance.
+        \begin{magicitemdef}{Sweeping}[Active]{0}[Melee]{Transmutation [Enhancement]}{as weapon}
+            \magicitemability{Triggered}[Immediate action] When you hit a foe with a melee attack with this weapon, you can activate it.
+            If you do, you can make an extra \glossterm{strike} at another creature you threaten.
+
+            After you activate this ability, the weapon always feels slightly loose in your hands, no matter how tightly you grip it.
+            This effect lasts for 5 rounds, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
         \begin{magicitemdef}{Thieving}[Active]{3}[Melee]{Transmutation [Shaping, Sizing]}{as weapon}
@@ -1053,12 +1053,12 @@ Magic items are objects that have been imbued with magical energy. They can take
             If you attempt to absorb an object while the weapon is full, the attempt fails.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Thundering}[Active]{2}[Melee, Ranged]{Evocation [Sonic]}{as weapon}
-            \magicitemability{Active}[Standard action] If you speak a command word, you can imbue this weapon with a rumbling sonic energy and make a single strike with it.
-            The next time you hit with the weapon, it emits a deafening thundering noise.
-            When it does, all creatures within 10 feet of the struck creature, excluding yourself, are \deafened for 2 rounds.
+        \begin{magicitemdef}{Thundering}[Active]{3}[Melee, Ranged]{Evocation [Sonic]}{as weapon}
+            \magicitemability{Active}[Immediate action] When you hit with a physical attack with this weapon, you activate it.
+            If you do, it emits a deafening thundering noise, causing the struck creature to be \deafened for 2 rounds.
 
-            If the attack misses, the weapon continues to rumble threateningly for up to 5 rounds.
+            After you activate this ability, the item continues to rumble threateningly.
+            This effect lasts for 5 rounds, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
         \begin{magicitemdef}{Transforming}[Active]{3}[Melee, Ranged]{Transmutation}{as weapon}
