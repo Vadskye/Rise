@@ -60,8 +60,8 @@ Magic items are objects that have been imbued with magical energy. They can take
 
     \subsection{Item Power}\label{Item Power}
         The strength of an item's effects depends on its item power.
-        If the item is not being used or worn by a creature, its item power is equal to its minimum power.
-        If it is being used or worn by a creature, its item power is equal its minimum power or the level of the creature, whichever is higher.
+        If the item is not being used or worn by a creature, its item power is equal to its base item power.
+        If it is being used or worn by a creature, its item power is equal its base item power or the level of the creature, whichever is higher.
 
         In addition to modifying an item's special effects, item power also affects an item's defenses.
         An item's Fortitude and Mental defenses are equal to 10 \add its item power.
@@ -793,20 +793,20 @@ Magic items are objects that have been imbued with magical energy. They can take
                 \mitemref{Forceful} & Can knock struck creature flying & \mitempricetable{Active}{1} & Any & \mitempref{Forceful} \\
                 \mitemref{Morphing} & Can transform into similar weapon & \mitempricetable{Active}{1} & Any & \mitempref{Morphing} \\
                 \mitemref{Surestrike} & Can reroll missed attack & \mitempricetable{Active}{1} & Any & \mitempref{Surestrike} \\
-                \mitemref{Flaming} & Can deal fire damage on hit & \mitempricetable{Active}{2} & Any & \mitempref{Flaming} \\
-                \mitemref{Freezing} & Can deal cold damage on hit & \mitempricetable{Active}{2} & Any & \mitempref{Flaming} \\
                 \mitemref{Merciful} & Deals nonlethal damage & \mitempricetable{Passive}{1} & Any & \mitempref{Merciful} \\
-                \mitemref{Shocking} & Can deal electricity damage on hit & \mitempricetable{Active}{2} & Any & \mitempref{Shocking} \\
-                \mitemref{Thundering} & Can make deafening attack & \mitempricetable{Active}{2} & Any & \mitempref{Thundering} \\
+                \mitemref{Transforming} & Can transform into any weapon & \mitempricetable{Active}{2} & Any & \mitempref{Transforming} \\
                 \mitemref{Vampiric} & Can heal based on damage dealt & \mitempricetable{Active}{2} & Melee & \mitempref{Vampiric} \\
                 \mitemref{Defending} & Grants defensive legend points instead of offensive & \mitempricetable{Passive}{2} & Melee & \mitempref{Defending} \\
+                \mitemref{Flaming} & Can deal fire damage on hit & \mitempricetable{Active}{3} & Any & \mitempref{Flaming} \\
+                \mitemref{Freezing} & Can deal cold damage on hit & \mitempricetable{Active}{3} & Any & \mitempref{Flaming} \\
                 \mitemref{Longshot} & Has doubled range increment & \mitempricetable{Passive}{2} & Ranged & \mitempref{Longshot} \\
-                \mitemref{Returning} & Returns to you instantly when thrown & \mitempricetable{Passive}{2} & Melee & \mitempref{Returning} \\
-                \mitemref{Thieving} & Can absorb objects & \mitempricetable{Active}{3} & Melee & \mitempref{Thieving} \\
-                \mitemref{Transforming} & Can transform into any weapon & \mitempricetable{Active}{3} & Any & \mitempref{Transforming} \\
                 \mitemref{Poisoning} & Can instantly duplicate minor poison & \mitempricetable{Active}{3} & Melee & \mitempref{Poisoning} \\
+                \mitemref{Returning} & Returns to you instantly when thrown & \mitempricetable{Passive}{2} & Melee & \mitempref{Returning} \\
+                \mitemref{Shocking} & Can deal electricity damage on hit & \mitempricetable{Active}{3} & Any & \mitempref{Shocking} \\
+                \mitemref{Thieving} & Can absorb objects & \mitempricetable{Active}{3} & Melee & \mitempref{Thieving} \\
+                \mitemref{Thundering} & Can make deafening attack & \mitempricetable{Active}{3} & Any & \mitempref{Thundering} \\
                 \mitemref{Fixating} & Can automatically critical after striking foe repeatedly & \mitempricetable{Active}{4} & Melee & \mitempref{Fixating} \\
-                \mitemref{Seeking} & Ignores 20\% miss chances & \mitempricetable{Passive}{4} & \mitempref{Seeking} \\
+                \mitemref{Seeking} & Reduce or ignore miss chances & \mitempricetable{Passive}{4} & Any & \mitempref{Seeking} \\
                 \mitemref{Disorienting} & Can disorient foe & \mitempricetable{Active}{6} & Any & \mitempref{Disorienting} \\
                 \mitemref{Speed} & Grants extra strikes & \mitempricetable{Passive}{5} & Any & \mitempref{Speed} \\
                 \mitemref{Toxic} & Can instantly coat itself with major poison & \mitempricetable{Active}{6} & Melee & \mitempref{Poisoning} \\
@@ -992,7 +992,7 @@ Magic items are objects that have been imbued with magical energy. They can take
             In additions, such attacks ignore all other effects that would apply a 20\% miss chance.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Shocking}[Active]{2}[Melee, Ranged]{Evocation [Electricity]}{as weapon}
+        \begin{magicitemdef}{Shocking}[Active]{3}[Melee, Ranged]{Evocation [Electricity]}{as weapon}
             \magicitemability{Active}[Immediate action] When you hit with a physical attack with this weapon, you can activate it.
             If you do, the struck creature takes 1d6 electricity damage per two item power.
 
@@ -1012,7 +1012,7 @@ Magic items are objects that have been imbued with magical energy. They can take
             While wielded, it has physical form only for its wielder, making it impossible to disarm.
             While not in use, it can be picked up and touched normally.
 
-            \magicitemability{Triggered}[Immediate] If you strike yourself in the heart with the weapon, you can activate it.
+            \magicitemability{Triggered}[Immediate] If you bury the weapon in your heart as a \glossterm{strike}, you can activate it.
             If you do, the delayed damage is converted into real damage.
             This deals no damage to you, but any other creatures that have been dealt damage by the weapon immediately the delayed damage the weapon has stored up for them.
             Any such damage dealt in excess of the creature's hit points is converted directly into critical damage.
@@ -1061,7 +1061,7 @@ Magic items are objects that have been imbued with magical energy. They can take
             This effect lasts for 5 rounds, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
-        \begin{magicitemdef}{Transforming}[Active]{3}[Melee, Ranged]{Transmutation}{as weapon}
+        \begin{magicitemdef}{Transforming}[Active]{2}[Melee, Ranged]{Transmutation}{as weapon}
             \magicitemability{Active}[Standard action] This weapon functions like a \magicitem{morphing} weapon, except that the weapon's new type may be from any weapon group.
         \end{magicitemdef}
 
