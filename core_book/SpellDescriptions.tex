@@ -682,7 +682,7 @@
     \end{spellcontent}
     \begin{spellsubcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One willing creature}{\rngmed}
+            \spellquicktargeting{One Large or smaller willing creature}{\rngmed}
 
             \spelltime Standard action to target an ally, or a move action to target yourself.
         \end{spelltargetinginfo}
@@ -695,6 +695,7 @@
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
+        \spellaugment{1}{Giant}{The teleporation ability can affect a target one size category larger. This augment can be used multiple times.}
         \spellaugment{1}{Persistent}{The spell's duration becomes \durext.}
     \end{spellaugments}
 \end{spellsection}
@@ -2012,7 +2013,8 @@
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
-        \spellaugment{1}{Companion}{You can touch a willing creature to bring them with you. This augment can be selected multiple times, allowing you to bring an additional creature each time.}
+        \spellaugment{1}{Companion}{You can touch a Large or smaller willing creature to bring them with you. This augment can be selected multiple times, allowing you to bring an additional creature each time.}
+        \spellaugment{1}{Giant Companion}{When using the Companion augment, you can bring along a target one size category larger. This augment can be used multiple times.}
         \spellaugment{2}{Distant}{You can teleport to a destination within 10,000 feet.}
     \end{spellaugments}
 \end{spellsection}
@@ -2022,7 +2024,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One willing creature}{\rngclose}
+            \spellquicktargeting{One Large or smaller willing creature}{\rngclose}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target teleports to an unoccupied destination up to 100 feet away from its original location. If the destination is invalid, the spell fails.
@@ -2033,6 +2035,7 @@
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
+        \spellaugment{1}{Giant}{The spell can affect a target one size category larger. This augment can be used multiple times.}
         \spellaugment{2}{Distant}{The destination can be up to 300 feet away.}
     \end{spellaugments}
 \end{spellsection}
@@ -3615,7 +3618,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{\rngmed}
+            \spellquicktargeting{One Large or smaller creature}{\rngmed}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
@@ -3632,6 +3635,9 @@
         On planes that have no earth to imprison the target, a critical success has the same effect as an ordinary success.
         \miscastrandom
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{1}{Giant}{The spell can affect a target one size category larger. This augment can be used multiple times.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Inertial Shield}[2]
@@ -4161,7 +4167,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{\rngmed}
+            \spellquicktargeting{One Large or smaller creature}{\rnglong}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
@@ -4181,6 +4187,9 @@
         \norepeatspellnotes
         \miscastrandom
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{1}{Giant}{The spell can affect a target one size category larger. This augment can be used multiple times.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Meld into Stone}[2]
@@ -4443,7 +4452,7 @@
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Mental}
                 \spellsuccess \spelldamage{physical}.
-                \spellcritical Double damage, and if the creature is an outsider native to another plane, it is sent back to its home plane.
+                \spellcritical Double damage, and if the creature is an \glossterm{outsider} native to another plane, it is sent back to its home plane.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
@@ -4736,7 +4745,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{\rngmed}
+            \spellquicktargeting{One Large or smaller creature}{\rnglong}
             \spelltime{Swift action}
         \end{spelltargetinginfo}
         \begin{spelleffects}
@@ -4751,6 +4760,9 @@
         \spellinfo{Conjuration [Teleportation]}{Arcane}
         \miscastrandom
     \end{spellfooter}
+    \begin{spellaugments}
+        \spellaugment{1}{Giant}{The spell can affect a target one size category larger. This augment can be used multiple times.}
+    \end{spellaugments}
 \end{spellsection}
 
 \begin{spellsection}{Read Mind}[2]
@@ -4917,7 +4929,7 @@
     \end{spellheader}
     \begin{spellcontent}
         \begin{spelltargetinginfo}
-            \spellquicktargeting{One unattended object (Medium or smaller)}{\rngmed}
+            \spellquicktargeting{One Medium or smaller unattended object}{\rngmed}
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target teleports into your hands.
