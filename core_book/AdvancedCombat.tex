@@ -21,10 +21,14 @@
 
     \subsection{Special Attacks}
 
-        \parhead{Charge}\label{Charge} As a full-round action, you can move up to your speed in both the movement and action phase, and make a single melee \glossterm{strike} with a \plus2 bonus to accuracy at the end of your charge. When you charge, you take a \minus2 penalty to physical defenses until the end of the round.
-        \par You must move at least 20 feet to gain the benefit of a charge, and all movement must be in a single straight line. If there are any obstacles in your path which hinder your movement, you cannot charge. If your charge fails or becomes invalid partway through, you move as far as you can and stop.
+        \parhead{Charge}\label{Charge} As a standard action, you can move up to your speed in the action phase and make a \glossterm{standard attack}.
+        Your strikes are delayed (see \pcref{Delayed Actions}).
+        However, if you charge, you take a \minus5 penalty to \glossterm{physical defenses} during that phase.
 
-        \par If your combat prowess is high enough to grant you multiple strikes, the strike at the end of your charge deals double damage for each additional strike granted by your combat prowess.
+        \par Your movement while charging has special limitations.
+        First, you must move entirely in a single straight line.
+        Your path must be clear of all obstacles and movement impediments, including \glossterm{difficult terrain}.
+        If your movement becomes impeded while charging, you stop moving immediately, though you still suffer the defense penalty for charging and can still attack from your new location.
 
         \parhead{Touch Attacks}\label{Touch Attacks} A touch attack is an attempt to simply touch a target, rather than to strike it for damage.
         A touch attack targets Reflex defense instead of Armor defense, but deals no damage.
@@ -115,26 +119,48 @@
 
 \section{Movement and Positioning}
 
-    \subsection{Special Move Actions}
+    Each round, creatures can move around the battlefield.
+    Movement almost always takes place during the \glossterm{movement phase}, as all creatures move around simultaneously.
 
-        \parhead{Move} As a move action, you can move up to your speed.
-        \parhead{Stand Up} As a move action, you can stand up from being prone. For most creatures, this requires using a hand to help get up.
-        \parhead{Follow} As a move action, you can designate a target creature or object to follow, and the maximum distance you want to follow at. When you do, you immediately move such that your distance to the target is no greater than your desired follow distance. For the rest of the round, whenever that creature or object moves, you move with it to stay within that follow distance.
+    \subsection{Standard Movement}
+        Every creature has one or more \glossterm{speeds} that indicate how far they can move.
+        At the start of the movement phase, each creature designates a location it is trying to move to.
+        If there are no conflicts, the moving creatures simply occupy their new locations, and the action phase begins.
 
-        You can follow the target as far as your movement speed allows; if the target continues beyond that point, you remain stationary where your movement ended. If the target takes an action that makes it impossible to follow, such as teleporting or using certain abilities, you cannot follow it for the rest of the round.
-        \parhead{Block} As a move action, you can designate a target creature or object to block, and the area you want to block it from entering.
+    \subsection{Reactive Movements}
+
+        It is possible to declare movement that reacts automatically to the movement of an opponent.
+        For example, you can try to follow a creature wherever it goes that round.
+        If you declare a reactive movement at the start of the movement phase, you automatically move accordingly.
+        In all cases, if you run out of movement speed before accomplishing your intended task, you simply stop where you ran out of movement.
+        The two most common types of reactive movements are \glossterm{blocking}, \glossterm{following}, and \glossterm{withdrawing}, but you can come up with other reactive movements.
+        The only requirement is that a reactive movement must have a simple criteria for determining how you move.
+
+        \parhead{Blocking}\label{Blocking} You can designate a target creature or object to block, and the area you want to block it from entering.
         When you do, you automatically move to intercept the target as it approaches the blocked area.
-        Usually, blocking a target requires an opposed initiative check against the target.
+        Usually, blocking a target requires an opposed \glossterm{initiative} check against the target.
         Success means you successfully keep ahead of the target as it moves, preventing it from entering the area (unless it can move through you).
         Failure means the target moves around you (if there is room) to enter the area.
 
         Multiple creatures can coordinate to block a single creature.
         The blocked creature must beat the initiative of all blocking creatures to enter the blocked area.
-        \parhead{Withdraw} As a move action, you can designate a target creature or object to withdraw from, and the minimum distance you want to maintain between you and the creature. This functions like following the creature, except that you specify a minimum distance between you and the target instead of a maximum distance.
 
-        \parhead{Struggle} As a full-round action, you can move five feet, regardless of movement penalties. You can use this to move even if your speed is decreased below five feet by penalties.
+        \parhead{Following}\label{Following} You can designate a target creature or object to follow, and the maximum distance you want to follow at. When you do, you automatically move such that your distance to the target is no greater than your desired follow distance. For the rest of the round, whenever that creature or object moves, you move with it to stay within that follow distance.
 
-        \parhead{Overrun}\label{Overrun} As part of a move action, you can try to move directly through creatures in your way.
+        If the target takes an action that makes it impossible to follow with movement, such as teleporting, you cannot follow it for the rest of the round.
+
+        \parhead{Withdrawing}\label{Withdrawing} Withdrawing functions the same way as following, except that you specify a minimum distance between you and the target instead of a maximum distance.
+        In addition, you can specify multiple targets and try to keep away from all of them.
+
+    \subsection{Special Movements}
+
+        Every character can take some special movement-related actions which are described below.
+
+        \parhead{Struggle} As a full-round action, you can move five feet, regardless of movement penalties.
+        This does not allow you to pass obstacles unrelated to movement speed penalties, such as walls.
+        You can only use this action with a land speed, and not with any other type of speed (see \pcref{Special Movement Modes}).
+
+        \parhead{Overrun}\label{Overrun} As part of movement, you can try to move directly through creatures in your way.
         Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered.
         If a creature does not attempt to avoid you, you make a Strength vs. Fortitude attack against it.
         Success means you move through the creature's space, though you treat it as \glossterm{difficult terrain}.
@@ -194,7 +220,7 @@
     \subsection{Changing Statistics}
 
         Your modifiers and defenses can change for many reasons.
-        Some changes take effect immediately, while other changes only happen after you rest overnight or after you level up.
+        In general, all changes take effect immediately, though some side effects of those changes may not happen until you rest or level up.
 
         \parhead{Numerical Modifiers} Changes to numerical modifiers always take effect immediately.
         For example, if a barbarian enters a rage, his damage and defenses are all adjusted immediately.
@@ -216,55 +242,6 @@
         They must be recovered in the normal fashion, such as by resting.
         If a character's maximum hit points are decreased below their current hit points, they immediately lose hit points until their current hit points are equal to their maximum hit points.
 
-    \subsection{Common Combat Modifiers}
-
-        Common combat modifiers are described on \trefnp{Accuracy Modifiers} and \trefnp{Physical Defense Modifiers}.
-
-    \begin{dtable}
-        \lcaption{Accuracy Modifiers}
-        \begin{dtabularx}{\columnwidth}{l X}
-            \tb{Attacker's Condition} & \tb{Accuracy Modifier} \\
-            \hline
-            %Entangled & \minus2 \\
-            Invisible                 & \tdash\fn{1}               \\
-            Prone                     & \minus4\fn{2}          \\
-            Squeezing through a space & \minus4                \\
-            Vulnerable                & \minus2                \\
-        \end{dtabularx}
-        1 The defender is \defenseless. \\
-        2 Most ranged weapons can't be used while the attacker is prone, but you can use a crossbow or shuriken while prone at no penalty.
-    \end{dtable}
-
-    \begin{dtable}
-        \lcaption{Physical Defense Modifiers}
-        \begin{dtabularx}{\columnwidth}{>{\lcol}X >{\ccol}X}
-            \tb{Defender's Condition} & \tb{Defense Modifier} \\
-            \hline
-            Behind active cover             & 20\% miss        \\
-            Behind passive cover            & \plus4           \\
-            Blinded                         & \tdash\fn{1}         \\
-            Concealed                       & \plus4           \\
-            Crouching or kneeling           & \minus2\fn{2}    \\
-            Grappling (but attacker is not) & \minus2          \\
-            Helpless                        & \tdash\fn{3}         \\
-            Invisible                       & see \pcref{Invisibility} \\
-            Overwhelmed                     & special\fn{4}    \\
-            Pinned                          & \tdash\fn{3}         \\
-            Prone                           & \minus4\fn{2}    \\
-            Squeezing through a space       & \minus4          \\
-            Stunned                         & \minus2\fn{1}    \\
-            Unaware of attacker             & \fn{5}           \\
-            Total defense                   & \plus4           \\
-        \end{dtabularx}
-        1 The defender is \defenseless. \\
-        2 Treat as a bonus against ranged attacks, instead of a penalty \\
-        3 The defender's physical defenses are equal to 10 \add its size modifier. \\
-        4 The creature suffers a penalty equal to the number of creatures threatening it. \\
-        5 Successful physical strikes automatically threaten critical hits. \\
-    \end{dtable}
-
-    Bonuses and penalties are the most basic way that a roll or numerical statistic can be modified. A bonus increases the roll or statistic, and a penalty decreases it. Bonuses and penalties are also called modifiers.
-
     \subsection{Stacking Rules}\label{Stacking Rules}
         Usually, modifiers stack with each other, meaning that you add or subtract all of the modifiers to get the final result. However, some modifiers do not stack with each other, as described below. When bonuses don't stack with each other, you only apply the largest bonus. Likewise, when penalties don't stack with each ather, you only apply the largest penalty.
 
@@ -272,53 +249,70 @@
 
         \begin{itemize}
             \item Effects from the same source do not stack. Any spell or ability with the same name has the same source.
-            \item Magical effects that alter size do not stack. If multiple effects both increase and decrease size, size increases offset size decreases on a one-for-one basis to determine the creature's final size.
-                %\item Damage reduction does not stack. Only the best value applicable to the attack applies.
-            \item Effects that grant extra strikes (such as the \spell{haste} spell with the Empowered augment) do not stack.
+            \item \glossterm{Sizing} effects do not stack.
+                If multiple effects both increase and decrease size, size increases offset size decreases on a one-for-one basis to determine the creature's final size.
+            \item Effects that grant extra \glossterm{strikes} (such as the \spell{haste} spell with the Empowered augment) do not stack.
             \item Temporary hit points do not stack.
-            \item If a character has two separate abilities which let him add the same attribute to a given roll or statistic, the attribute is still only added once.
+            \item If a character has two separate abilities which let them add the same attribute to a given roll or statistic, the attribute is still only added once.
         \end{itemize}
 
     \subsection{Cover}\label{Cover}
 
-        Cover represents any obstacle that physically prevents you from striking your target, such as a tree or intervening creature. A creature behind cover is more difficult to attack.
+        Cover represents any obstacle that physically prevents you from striking your target, such as a tree or intervening creature.
+        A creature behind cover is more difficult to attack.
+        There are three kinds of cover: \glossterm{active cover}, \glossterm{passive cover}, and \glossterm{total cover}.
+        All three types of cover are determined by the presence or absence of physical obstacles.
 
-        \parhead{Determining Cover} When making a melee attack against an adjacent target, your target has cover if any line from your square to the target's square goes through a wall (including a low wall) or other similar solid obstacle. If you occupy multiple squares, choose one square you occupy for this purpose.
+        \parhead{Active Cover} Active cover is provided by mobile obstacles between you and your target, such as creatures or tree branches blowing in the wind.
+        Physical attacks against creatures with active cover suffer a 20\% miss chance.
+        If an attack misses due to active cover, the attack is made against the intervening obstacle rather than being negated like normal for miss chances.
+        The obstacle takes any damage from a successful attack normally.
 
-        When making an attack against a target that is not adjacent to you, choose a corner of any square you occupy. In addition, choose a square the target occupies. If any line from this corner to any corner of the target square passes through a square or border that blocks line of effect or provides cover, or through a square occupied by a creature, the target has cover.
+        \parhead{Passive Cover} Passive cover is provided by immobile obstacles between you and your target, such as trees and walls.
+        Creatures with passive cover gain a \plus4 bonus to \glossterm{physical defenses}.
+        In addition, creatures with passive cover can hide (see \pcref{Stealth}).
 
-        There are two types of cover: active cover and passive cover.
+        \parhead{Measuring Cover}
 
-        \subsubsection{Active Cover}
+        When you make an attack, choose a single square within your \glossterm{space} and a single \glossterm{target square} within your target's space.
+        If you are making a ranged attack, choose one corner of your space.
+        If you are making a melee attack, choose any two corners of your square.
+        These corners are called the \glossterm{points of origin} for your attack.
+        For the purpose of determining cover, your attack originates from your chosen \glossterm{points of origin} and travels to the \glossterm{target square}.
 
-            If the obstacle is active and mobile, such as a creature or tree branches blowing in the wind, the defender has active cover. Any attacks against a creature with active cover relative to you have a 20\% miss chance. After rolling the attack, the attacker must make a miss chance percentile roll to see if the attack misses due to active cover. If an attack misses due to active cover, the attack is made against the intervening obstacle instead. If the attack is successful, the obstacle takes any damage from the attack normally.
+        First, check if you can attack the target at all.
+        You must be able to draw a line from the \glossterm{points of origin} of your attack to any two corners of your attack's \glossterm{target square}.
+        That line must not be blocked by solid objects, but it can pass through obstacles that do not take up the entire area within their space (such as most creatures).
+        In addition, the line must not be blocked by other squares within the target's space, preventing you from targeting the ``inside'' of large creatures.
+        If you cannot draw such a line, the target has \glossterm{total cover} from you.
+        This makes all targeted attacks impossible.
 
-            \parhead{Small Obstacles} Generally, an obstacle smaller than you are does not provide active cover (so a halfling does not provide active cover to a human).
+        If you can draw an uninterrupted line from the \glossterm{points of origin} of your attack to the center of your attack's \glossterm{target square}, the target does not have cover from you.
+        If such a line would be blocked by an obstacle that grants active or passive cover, the target has active or passive cover from you, according to the nature of the obstacle.
 
-        \subsubsection{Passive Cover}
-
-            If the obstacle is stationary, such as a tree trunk or wall, the defender has passive cover. A creature with passive cover relative to you has a \plus4 bonus to physical defenses.
-
-            \parhead{Small Obstacles} A low obstacle (such as a wall no higher than half your height) provides passive cover, but only to creatures within 30 feet (6 squares) of it. The attacker can ignore the cover if he's closer to the obstacle than his target. If two creatures are equally distant from the wall, it grants cover to both of them.
-            \parhead{Stealth Checks} You can use passive cover to make a Stealth check to hide, but not active cover.
-            \parhead{Total Cover} If you don't have line of effect to your target, it is considered to have total cover from you. You can't make an attack against a target that has total cover.
+        \parhead{Partial Obstacles} Many obstacles, such as trees and low walls, can provide passive cover without normally blocking \glossterm{line of sight} or providing \glossterm{total cover}.
+        Unusually small creatures, or creatures who intentionally take cover behind such obstacles, may be able to gain total cover from them.
 
         \subsubsection{Improved Cover}
 
-            A creature can benefit from both passive and active cover. However, cover of the same type generally doesn't stack; a creature behind two trees is not substantially more protected than a creature behind a single tree. In some cases, cover may stack. In that case, each additional obstacle increases the miss chance by 10\% or grants an additional \plus2 bonus to defenses, as appropritae.
-
-            Exceptionally well covered opponents, such as a creature behind an arrow slit in a castle, may receive additional benefits.
+            A creature can benefit from both passive and active cover.
+            Cover of the same type generally doesn't stack; a creature behind two trees is not substantially more protected than a creature behind a single tree.
+            However, exceptionally well covered creatures, such as a creature behind an arrow slit in a castle, may receive additional benefits.
+            In that case, each additional major obstacle increases the miss chance by 10\% or grants an additional \plus2 bonus to physical defenses, as appropriate.
 
     \subsection{Concealment}\label{Concealment}
-        Concealment represents anything which makes it more difficult to see your target, such as dim lighting. A creature with concealment from you gains a \plus4 bonus to physical defenses. Concealment bonuses do not apply if you can't see your opponent (such as if you close your eyes).
+        Concealment represents anything which makes it more difficult to see your target, such as dim lighting. A creature with concealment from you gains a \plus4 bonus to physical defenses. The concealment bonus does not apply if you can't see your opponent (such as if you close your eyes).
+        Determining concealment works similarly to determining cover.
+        You must use the same \glossterm{points of origin} and \glossterm{target square} when determining concealment that you would use to determine cover.
 
-        \parhead{Determining Concealment} When making a melee attack against an adjacent target, your target has concealment if its space is entirely within an effect that grants concealment.
+        \parhead{Determining Concealment} There are two things that can cause a creature to be concealed: poor lighting, and intervening obstacles that block sight.
+        Determining concealment from obstacles that block sight works the same way as determining cover.
 
-        Deterining concealment for making an attack against a target that is not adjacent to you works exactly like determining cover for ranged attacks.
+        Determining concealment from lighting conditions is simpler, since it ignores lighting conditions between you and the target.
+        If your \glossterm{target square} square is in lighting that provides concealment, the target has concealment.
+        Otherwise, it does not.
 
-        In addition, some magical effects provide concealment against all attacks, regardless of whether any intervening concealment exists.
-
-        \parhead{Concealment and Stealth Checks} You can use concealment to make a Stealth check to hide.
+        \parhead{Hiding} A creature with concealment can hide (see \pcref{Hiding}).
 
     \subsection{Grappling}\label{Grappling}
         Grappling creatures are physically struggling with each other. While grappled, you suffer certain penalties and restrictions, as described below.
