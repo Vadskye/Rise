@@ -175,6 +175,7 @@ Feats can be used to specialize your character particular area, to grant your ch
                 \featref{Trapfinder} & Awareness 4 & Improve ability to notice traps & \tdash & \featpref{Trapfinder} \\
 
                 \tb{Combat Feats}\label{Combat Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
+                \featref{Armor-Piercing Attack} & 5th level, Per 6 & Gain precision-based special attacks & \tdash & \featpref{Armor-Piercing Attack} \\
                 \featref{Battlerage} & 5th level, Wil 6 & Gain ability to rage & \tdash & \featpref{Battlerage} \\
                 \featref{Blindfighter} & Per 3 & Fight better while unable to see & \tdash & \featpref{Blindfighter} \\
                 \featref{Cleave} & Str 3 & Gain bonus strike after defeating foes & \tdash & \featpref{Cleave} \\
@@ -206,7 +207,6 @@ Feats can be used to specialize your character particular area, to grant your ch
                 \featref{Power Attack} & 5th level, Str 6 & Gain bonus to damage & Style & \featpref{Power Attack} \\
                 \featref{Precise Attack} & Per 3 & Trade damage for accuracy bonus & Style & \featpref{Precise Attack} \\
                 \featref{Precise Shot} & 5th level, Per 6 & Ignore cover, concealment, miss chances & \tdash & \featpref{Precise Shot} \\
-                \featref{Precision Strikes} & 5th level, Per 6 & Gain precision-based special attacks & \tdash & \featpref{Precision Strikes} \\
                 \featref{Quick Draw} & \tdash & Draw and stow items more quickly & \tdash & \featpref{Quick Draw} \\
                 \featref{Reflexive Dodge} & 13th level, Dex 12 & Automatically dodge strikes & \tdash & \featpref{Reflexive Dodge} \\
                 \featref{Shielded Fighting} & Shield proficiency & Gain defense bonuses with shields & \tdash & \featpref{Shielded Fighting} \\
@@ -1435,26 +1435,12 @@ Feats can be used to specialize your character particular area, to grant your ch
     This includes being \impaired.
     \stylereq Wield a ranged weapon.
 
-    \feat{Precision Strikes}{Combat}
+    \feat{Armor-Piercing Attack}{Combat, Style}
     \featpre 5th level, Perception 6.
-    \featben As a standard action, you can make a single physical attack against a creature's Armor and Reflex defenses.
-    Success against both defenses means the target takes damage from your weapon.
-    This damage is doubled for each strike you can make beyond the first.
-    If you fail to hit the target's Armor defense, but hit its Reflex defense, it takes half damage.
+    \featben Whenever you make a \glossterm{strike}, you compare your result against the target's Armor and Reflex defenses.
+    If you miss the target's Armor defense, but hit its Reflex defense, the strike hits and deals half damage.
 
-    At 7th level, if you have Perception 9, you can attempt to disable a foe's wings.
-    As a standard action, you can make a single physical attack against a creature's Armor and Fortitude defenses.
-    Success against Armor defense means the target takes damage from your weapon.
-    This damage is doubled for each strike you can make beyond the first.
-    If you also beat the target's Fortitude defense, it loses the ability to fly for 2 rounds.
-    You must be able to hit the target's wings, which is usually only possible with melee attacks if it is no more than one size category larger than you.
-    This only affects creatures who use wings or other physical means to fly, and has no effect on creatures with magical flight.
-
-    At 11th level, if you have Perception 12, you can deliver a killing blow.
-    As a standard action, you can make a single physical attack against a creature.
-    Success against Armor defense means the target takes damage from your weapon.
-    This damage is doubled for each strike you can make beyond the first.
-    Any damage in excess of the target's remaining hit points is dealt as \glossterm{critical damage}.
+    At 11th level, if you hit with a strike in this way, it deals full damage.
 
     \feat{Quick Draw}{Combat}
     \featben You can draw light and medium weapons as a \glossterm{free action}.
