@@ -281,14 +281,17 @@
         For the purpose of determining cover, your attack originates from your chosen \glossterm{points of origin} and travels to the \glossterm{target square}.
 
         First, check if you can attack the target at all.
-        You must be able to draw a line from the \glossterm{points of origin} of your attack to any two corners of your attack's \glossterm{target square}.
-        That line must not be blocked by solid objects, but it can pass through obstacles that do not take up the entire area within their space (such as most creatures).
-        In addition, the line must not be blocked by other squares within the target's space, preventing you from targeting the ``inside'' of large creatures.
+        For each \glossterm{point of origin} of your attack, you must be able to draw two lines to any two corners of your attack's \glossterm{target square}.
+        These two lines must not overlap each other.
+        In addition, each line must not be blocked by solid objects, though they can touch the edges of spaces blocked by solid objects.
+        The lines can pass through obstacles that do not take up the entire area within their space (such as most creatures).
+        Finally, the line must not be blocked by other squares within the target's space, preventing you from targeting the ``inside'' of large creatures.
         If you cannot draw such a line, the target has \glossterm{total cover} from you.
         This makes all targeted attacks impossible.
 
-        If you can draw an uninterrupted line from the \glossterm{points of origin} of your attack to the center of your attack's \glossterm{target square}, the target does not have cover from you.
-        If such a line would be blocked by an obstacle that grants active or passive cover, the target has active or passive cover from you, according to the nature of the obstacle.
+        Second, draw a line from the \glossterm{points of origin} of your attack to the center of your attack's target square.
+        If any such line touches a square with an obstacle that grants active or passive cover, even at an edge or corner, the target has the appropriate cover from you.
+        Otherwise, if the line is uninterrupted, the target does not have cover from you.
 
         \parhead{Partial Obstacles} Many obstacles, such as trees and low walls, can provide passive cover without normally blocking \glossterm{line of sight} or providing \glossterm{total cover}.
         Unusually small creatures, or creatures who intentionally take cover behind such obstacles, may be able to gain total cover from them.
