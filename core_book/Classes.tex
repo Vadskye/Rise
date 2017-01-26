@@ -2159,26 +2159,26 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolavg} c >{\lcol}X}
             \tb{Level} & \tb{Combat Prowess} & \tb{Sneak Attack} & \tb{Special} \\
             \hline
-            \rogueprogressionrow{1}  & \plus1d6  & Skill exemplar          \\
-            \rogueprogressionrow{2}  & \plus1d6  & Skill talent            \\
-            \rogueprogressionrow{3}  & \plus2d6  & Uncanny dodge           \\
-            \rogueprogressionrow{4}  & \plus2d6  & Combat trick            \\
-            \rogueprogressionrow{5}  & \plus3d6  & Lucky slip              \\
-            \rogueprogressionrow{6}  & \plus3d6  & Skill talent            \\
-            \rogueprogressionrow{7}  & \plus4d6  & Improved uncanny dodge  \\
-            \rogueprogressionrow{8}  & \plus4d6  & Combat trick            \\
-            \rogueprogressionrow{9}  & \plus5d6  & Lucky break             \\
-            \rogueprogressionrow{10} & \plus5d6  & Skill talent            \\
-            \rogueprogressionrow{11} & \plus6d6  & Slippery mind           \\
-            \rogueprogressionrow{12} & \plus6d6  & Combat trick            \\
-            \rogueprogressionrow{13} & \plus7d6  & Lucky dodge             \\
-            \rogueprogressionrow{14} & \plus7d6  & Skill talent            \\
-            \rogueprogressionrow{15} & \plus8d6  & Persistent sneak attack \\
-            \rogueprogressionrow{16} & \plus8d6  & Combat trick            \\
-            \rogueprogressionrow{17} & \plus9d6  & Legendary luck          \\
-            \rogueprogressionrow{18} & \plus9d6  & Skill talent            \\
-            \rogueprogressionrow{19} & \plus10d6 & Ambush master           \\
-            \rogueprogressionrow{20} & \plus10d6 & Combat trick            \\
+            \rogueprogressionrow{1}  & \plus1d6  & Skill exemplar, sneak attack \\
+            \rogueprogressionrow{2}  & \plus1d6  & Skill talent                 \\
+            \rogueprogressionrow{3}  & \plus2d6  & Uncanny dodge                \\
+            \rogueprogressionrow{4}  & \plus2d6  & Combat trick                 \\
+            \rogueprogressionrow{5}  & \plus3d6  & Lucky slip                   \\
+            \rogueprogressionrow{6}  & \plus3d6  & Skill talent                 \\
+            \rogueprogressionrow{7}  & \plus4d6  & Improved uncanny dodge       \\
+            \rogueprogressionrow{8}  & \plus4d6  & Combat trick                 \\
+            \rogueprogressionrow{9}  & \plus5d6  & Lucky break                  \\
+            \rogueprogressionrow{10} & \plus5d6  & Skill talent                 \\
+            \rogueprogressionrow{11} & \plus6d6  & Slippery mind                \\
+            \rogueprogressionrow{12} & \plus6d6  & Combat trick                 \\
+            \rogueprogressionrow{13} & \plus7d6  & Lucky dodge                  \\
+            \rogueprogressionrow{14} & \plus7d6  & Skill talent                 \\
+            \rogueprogressionrow{15} & \plus8d6  & Persistent sneak attack      \\
+            \rogueprogressionrow{16} & \plus8d6  & Combat trick                 \\
+            \rogueprogressionrow{17} & \plus9d6  & Legendary luck               \\
+            \rogueprogressionrow{18} & \plus9d6  & Skill talent                 \\
+            \rogueprogressionrow{19} & \plus10d6 & Ambush master                \\
+            \rogueprogressionrow{20} & \plus10d6 & Combat trick                 \\
         \end{dtabularx}
     \end{dtable}
 
@@ -2332,9 +2332,7 @@ This choice determines a great deal about your character's abilities.
         Whenever she spends a legend point to reroll a skill check, the reroll is treated as a 20.
 
         \cf{Rog}[11th]{Slippery Mind}
-        Whenever the attack for a \glossterm{Mind} spell or effect beats the rogue's Mental defense by less than 10, she is affected normally at first.
-        One round later, the rogue is instead affected as if the attack had failed.
-        This does not help against instantaneous effects.
+        The rogue gains a \plus4 bonus to Mental defense.
 
         \cf{Rog}[13th]{Lucky Dodge}[Mag]
         The rogue gains an additional \glossterm{legend point}.
@@ -3189,7 +3187,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Wiz}[3rd]{Attuned Spell}[Mag]
         Whenever the wizard casts a spell or performs a ritual on herself, she may attune to it to increase its duration.
-        The level of the spell or ritual, including any augments, must not exceed half her wizard level.
+        The spell or ritual must be be cast as a 1st level spell, including any augments.
         % Effects that reduce the level cost of augments do not reduce the spell's total level for this purpose.
         The spell must be a \glossterm{targeted spell}, and have a duration of \durshort or longer.
 
@@ -3198,7 +3196,10 @@ This choice determines a great deal about your character's abilities.
         The wizard can only attune to one spell at a time.
         If she attunes to another spell, the other spell returns to its normal duration, and expires if appropriate.
 
-        At her 7th wizard level, and every 4 wizard levels thereafter, the wizard gains the ability to attune to an additional spell simultaneously.
+        At her 7th wizard level, the wizard gains the ability to attune to an additional spell simultaneously.
+        The additional spell can be up to 3rd level, including any augments.
+        Every 4 levels thereafter, she gains the ability to attune to additional spell.
+        Each time, the maximum spell level of the additional spell increases by 2.
         Whenever she attunes to a new spell, she may choose which of her other attuned spells she stops being attuned to.
 
         \cf{Wiz}[5th]{Predictive Spells}
