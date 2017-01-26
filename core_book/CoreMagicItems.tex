@@ -187,21 +187,26 @@ Magic items are objects that have been imbued with magical energy. They can take
                 \mitemref{Energy Resistant} & Reduces energy damage & \mitempricetable{Passive}{4} & Body & \mitempref{Energy Resistant} \\
                 \mitemref*{Feather} \minus5 & \minus5 encumbrance penalty & 62,500 gp & 16th & Body, Shield & \mitempref{Feather} \\
                 \mitemref{Flameforged} & Deals fire damage when hit or missed & \mitempricetable{Passive}{5} & Body, Shield & \mitempref{Flameforged} \\
-                \mitemref{Iceforged} & Deals fire damage when hit or missed & \mitempricetable{Passive}{5} & Body, Shield & \mitempref{Iceforged} \\
+                \mitemref{Iceforged} & Deals cold damage when hit or missed & \mitempricetable{Passive}{5} & Body, Shield & \mitempref{Iceforged} \\
                 \mitemref{Invulnerable} & Reduces physical damage & \mitempricetable{Passive}{5} & Body & \mitempref{Invulnerable} \\
-                \mitemref{Sparkforged} & Deals fire damage when hit or missed & \mitempricetable{Passive}{5} & Body, Shield & \mitempref{Sparkforged} \\
+                \mitemref{Sparkforged} & Deals electricity damage when hit or missed & \mitempricetable{Passive}{5} & Body, Shield & \mitempref{Sparkforged} \\
                 \mitemref{Spell Reflecting} & Can reflect spells & \mitempricetable{Active}{7} & Shield & \mitempref{Spell Reflecting} \\
 
                 \midrule
                 \tb{Arms} & \tb{Description} & \tb{Cost} & \tb{Item Level} & \tb{Location} & \tb{Page} \\
                 \mitemref{Greatreach Bracers} & Can grant increased reach & \mitempricetable{Active}{0} & Arms & \mitempref{Greatreach Bracers} \\
                 \mitemref{Burning Gloves} & Can throw ball of fire & \mitempricetable{Active}{1} & Arms & \mitempref{Burning Gloves} \\
+                \mitemref{Gauntlets of Improvisation} \plus1 & Grants \plus1 with improvised weapons & 200 gp & 3rd & Arms & \mitempref{Gauntlets of Improvisation} \\
                 \mitemref{Bracers of Archery} & Grants proficiency with bows & \mitempricetable{Passive}{1} & Arms & \mitempref{Bracers of Archery} \\
                 \mitemref{Bracers of Armor} & Grants invisible body armor & \mitempricetable{Passive}{1} & Arms & \mitempref{Bracers of Armor} \\
                 \mitemref{Bracers of Repulsion} & Can shove foe when hit & \mitempricetable{Active}{2} & Arms & \mitempref{Bracers of Repulsion} \\
                 \mitemref{Gauntlet of the Ram} & Can shove foe after unarmed attack & \mitempricetable{Active}{2} & Arms & \mitempref{Gauntlet of the Ram} \\
                 \mitemref{Puppeteer's Glove} & Can concentrate on Figments more easily & \mitempricetable{Active}{2} & Arms & \mitempref{Puppeteer's Glove} \\
+                \mitemref*{Gauntlets of Improvisation} \plus2 & Grants \plus2 effect & 1,000 gp & 6th & Arms & \mitempref{Gauntlets of Improvisation} \\
                 \mitemref{Throwing Gloves} & Grants ability to throw anything accurately & \mitempricetable{Passive}{2} & Arms & \mitempref{Throwing Gloves} \\
+                \mitemref*{Gauntlets of Improvisation} \plus3 & Grants \plus3 effect & 5,000 gp & 10th & Arms & \mitempref{Gauntlets of Improvisation} \\
+                \mitemref*{Gauntlets of Improvisation} \plus4 & Grants \plus4 effect & 25,000 gp & 13th & Arms & \mitempref{Gauntlets of ImprovizationGauntlets of Improvisation} \\
+                \mitemref*{Gauntlets of Improvisation} \plus5 & Grants \plus5 effect & 125,000 gp & 17th & Arms & \mitempref{Gauntlets of Improvisation} \\
 
                 \midrule
                 \tb{Head} & \tb{Description} & \tb{Cost} & \tb{Item Level} & \tb{Location} & \tb{Page} \\
@@ -471,6 +476,28 @@ Magic items are objects that have been imbued with magical energy. They can take
             A failed attack deals half damage.
         \end{magicitemdef}
 
+        \begin{magicitemdef}{Gauntlets of Improvisation}{1}[Arms]{Transmutation [Enhancement]}{bone or metal}
+            \magicitemability{Passive} These gauntlets have an enhancement bonus to improve your improvised weapons.
+            This functions like an enhancement bonus with a weapon (see \pcref{Weapon Enhancement Bonuses}), except that the damage bonus applies to all improvised weapons you wield.
+
+            \spellspecial The price of the gauntlets depend on their enhancement bonus, as shown in \trefnp{Gauntlets of Improvisation}.
+            Its base power is equal to three times its enhancement bonus.
+            To craft the item, you must have a number of ranks in Craft (bone or metal) equal to the item's base power \add 4.
+        \end{magicitemdef}
+
+        \begin{dtable}
+            \lcaption{Gauntlets of Improvisation}
+            \begin{dtabularx}{\columnwidth}{l X X}
+                \tb{Bonus} & \tb{Base Price} & \tb{Item Level} \\
+                \hline
+                \plus1 & 200 gp & 3rd \\
+                \plus2 & 1000 gp & 6th \\
+                \plus3 & 5,000 gp & 10th \\
+                \plus4 & 25,000 gp & 13th \\
+                \plus5 & 125,000 gp & 17th \\
+            \end{dtabularx}
+        \end{dtable}
+
         \begin{magicitemdef}{Gauntlet of the Ram}[Active]{2}[Arms]{Evocation [Telekinesis]}{bone or metal}
             \magicitemability{Triggered}[Immediate action] When you make a successful unarmed attack with this gauntlet against a foe, you can activate it to immediately make a shove attack against the struck foe.
             You gain a bonus on the shove attack equal to the damage you dealt.
@@ -683,17 +710,10 @@ Magic items are objects that have been imbued with magical energy. They can take
     \subsection{Torso}
 
         \begin{magicitemdef}{Amulet of Mighty Fists}{1}[Torso]{Transmutation [Enhancement]}{bone or jewelry}
-            \magicitemability{Passive} This amulet has an enhancement bonus to improve your natural attacks and unarmed strikes.
-            You gain a bonus to damage on natural attacks and unarmed strikes equal to this amulet's enhancement bonus.
-            In addition, each \plus1 of enhancement bonus grants you an additional offensive legend point each day.
-            If you stop using the amulet, you lose the damage bonus and legend points.
-            The benefits of this ring function in the same way as enhancement bonuses on magic weapons, and they not stack with those bonuses.
+            \magicitemability{Passive} This amulet has an enhancement bonus to improve your natural attacks and unarmed attacks.
+            This functions like an enhancement bonus with a weapon (see \pcref{Weapon Enhancement Bonuses}), except that the damage bonus applies to your natural attacks and unarmed attacks.
 
-            These legend points can only be gained once per day, regardless of the number of items you use.
-            If you both wear an amulet and wield a magic weapon, or change between different amulets, use only the highest bonus that applies.
-            If you change from a weaker magical item to a stronger magical item, you gain bonuses equal to the difference between the two items.
-
-            \spellspecial The price of the amulet depends on its enhancement bonus, as shown in the table below.
+            \spellspecial The price of the amulet depends on its enhancement bonus, as shown in \trefnp{Amulet of Mighty Fists}.
             Its base power is equal to three times its enhancement bonus.
             To craft the item, you must have a number of ranks in Craft (jewelry) equal to the item's base power \add 4.
         \end{magicitemdef}
@@ -804,7 +824,7 @@ Magic items are objects that have been imbued with magical energy. They can take
                 \mitemref{Returning} & Returns to you instantly when thrown & \mitempricetable{Passive}{2} & Melee & \mitempref{Returning} \\
                 \mitemref{Shocking} & Can deal electricity damage on hit & \mitempricetable{Active}{3} & Any & \mitempref{Shocking} \\
                 \mitemref{Thieving} & Can absorb objects & \mitempricetable{Active}{3} & Melee & \mitempref{Thieving} \\
-                \mitemref{Thundering} & Can make deafening attack & \mitempricetable{Active}{3} & Any & \mitempref{Thundering} \\
+                \mitemref{Thundering} & Can deafen on hit & \mitempricetable{Active}{3} & Any & \mitempref{Thundering} \\
                 \mitemref{Fixating} & Can automatically critical after striking foe repeatedly & \mitempricetable{Active}{4} & Melee & \mitempref{Fixating} \\
                 \mitemref{Seeking} & Reduce or ignore miss chances & \mitempricetable{Passive}{4} & Any & \mitempref{Seeking} \\
                 \mitemref{Disorienting} & Can disorient foe & \mitempricetable{Active}{6} & Any & \mitempref{Disorienting} \\
@@ -940,7 +960,7 @@ Magic items are objects that have been imbued with magical energy. They can take
 
         \begin{magicitemdef}{Fixating}[Active]{4}[Melee]{Divination}{as weapon}
             \magicitemability{Triggered}[Immediate action] When you attack a foe with this weapon, if you successfully hit that creature with this weapon in both of the last two rounds, you can activate it.
-            If you do, the attack gains a \plus20 bonus and scores a critical hit if it hits.
+            If you do, the attack gains a \plus20 bonus to accuracy and scores a critical hit if it hits.
             You can decide to use this ability after learning whether the attack hit or missed, and the bonus can change a miss into a hit.
 
             After you activate this ability, the weapon twists slightly in your hand to point towards the target, if it is nearby and visible.
@@ -1103,6 +1123,7 @@ Magic items are objects that have been imbued with magical energy. They can take
                 \mitemref{Acid} & Know \spell{acid arrow} spell & \mitempricetable{Active}{3} & Arcane & \mitempref{Acid} \\
                 \mitemref{Electricity} & Know \spell{lightning bolt}, \spell{shocking grasp} spells & \mitempricetable{Active}{3} & Arcane, Nature & \mitempref{Electricity} \\
                 \mitemref{Fire} & Know \spell{fireball}, \spell{burning hands} spells & \mitempricetable{Active}{3} & Arcane, Nature & \mitempref{Fire} \\
+                \mitemref{Sympathetic} & Heal when you deal damage & \mitempricetable{Active}{3} & Divine & \mitempref{Sympathetic} \\
                 \mitemref{Time} & Know \spell{slow}, \spell{haste} spells & \mitempricetable{Active}{3} & Arcane & \mitempref{Time} \\
                 \mitemref{Missiles} & Know \spell{missile storm}, \spell{magic missile} spells & \mitempricetable{Active}{4} & Arcane & \mitempref{Missiles} \\
                 \mitemref{Cold} & Know \spell{ice spike}, \spell{cone of cold} spells & \mitempricetable{Active}{5} & Arcane, Nature & \mitempref{Cold} \\
@@ -1304,6 +1325,14 @@ Magic items are objects that have been imbued with magical energy. They can take
         \begin{magicitemdef}[Arcane, Nature]{Shielding}[Active]{4}{Abjuration/Evocation [Shielding]}{as implement}
             \magicitemability{Attuned} You gain \spell{fire shield} as spells known.
             In addition, you can use item uses in place of spell slots to cast spells known from this item.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}[Divine]{Sympathetic}[Active]{3}{Vivimancy [Life]}{as implement}
+            \magicitemability{Active}[Immediate action] When you deal damage to a creature with a spell you cast, you can activate this item.
+            If you do, you heal an ally within \rngclose range for 1d6 points of damage per two item power.
+
+            After you activate this ability, the holy symbol radiates a gentle warmth, and a faint heartbeat can be felt from it.
+            This effect lasts for 5 rounds, during which time you cannot activate this ability again.
         \end{magicitemdef}
 
         \begin{magicitemdef}[Arcane]{Time, Lesser}[Active]{1}{Transmutation [Temporal]}{as implement}
