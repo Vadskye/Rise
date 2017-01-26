@@ -173,18 +173,25 @@
         Italicized steps are less common, and can usually be skipped.
 
         \begin{enumerate*}
+            \item \textit{Choose swift actions.}
+            \item \textit{Determine targets affected by swift actions.}
+            \item \textit{Check swift action success.}
+            \item \textit{Determine swift action results.}
+            \item \textit{Apply swift action results.}
             \item Choose actions.
-            \item Determine affected targets.
-            \item \textit{Resolve swift actions}.
+            \item Determine targets affected by actions.
             \item Check action success.
                 Example: Making attack rolls.
             \item Determine action results.
                 Example: Making damage rolls.
-            \item Apply non-spell action results.
+            \item Apply action results.
                 Examples: Reducing hit points, moving character locations, and applying penalties.
-            \item \textit{Make Concentration checks to maintain focus on spells}.
-            \item Apply spell results.
-            \item \textit{Declare and resolve delayed actions}.
+                Effects that trigger when damage is dealt, such as Concentration checks (see \pcref{Concentration}), are resolved now.
+            \item \textit{Choose delayed actions.}
+            \item \textit{Determine targets affected by delayed actions.}
+            \item \textit{Check delayed action success.}
+            \item \textit{Determine delayed action results.}
+            \item \textit{Apply delayed action results.}
         \end{enumerate*}
 
         In the vast majority of cases, there is no need to go through this order explicitly.
@@ -234,14 +241,12 @@
         Like swift actions, free actions must be declared along with any other actions you intend to take during that phase.
 
         \parhead{Full-Round Actions} A full-round action requires your character's full attention.
-        Most full-round actions involve a combination of movement and concentrated effort, such as \glossterm{charging} to strike a distant foe.
         Unless otherwise specified, you perform any movement required for the action during the movement phase, and the rest of the action during the action phase.
 
         \parhead{Delaying}\label{Delaying}
         During the action phase, you can delay your action instead of acting immediately.
         If you delay, you do nothing until after the actions of all other creatures have been resolved.
-        At that point, you can declare and resolve your actions for the action phase.
-        If multiple creatures delay, all their actions are declared and resolved in the normal action resolution order, as if they were part of a shared ``delay phase''.
+        At that point, you can declare and resolve your actions for the action phase, as described in \pcref{Resolving Actions}.
         You cannot delay during the movement phase.
 
         Some abilities cause actions to be delayed, such as charging (see \pcref{Charge}).
@@ -262,6 +267,9 @@
 
             To make a strike, make an attack roll, as with most other atacks.
             If your attack roll beats the target's Armor defense, your foe takes damage.
+
+            More powerful characters can make multiple strikes within the same standard attack.
+            For details, see \pcref{Multiple Attacks}.
 
         \subsubsection{Physical Accuracy}\label{Physical Accuracy}
             Your accuracy with physical attacks is equal to the following:
@@ -322,10 +330,10 @@
                 \begin{dtabularx}{\textwidth}{l l l l l >{\lcol}X}
                     \tb{Defense Name} & \tb{Defense Bonus} & \tb{Attributes} & \tb{Body Armor Modifier} & \tb{Shield Modifier} & \tb{Size Modifier} \\
                     \hline
-                    Armor defense     & Combat prowess       & Dex or Con & Yes & Yes & Yes     \\
-                    Fortitude defense & Level & Con or Str & No  & No  & No      \\
-                    Reflex defense    & Level    & Dex or Per & No  & Yes & Yes     \\
-                    Mental defense    & Level    & Wil or Int & No  & No  & No      \\
+                    Armor defense     & Combat prowess & Dex or Con & Yes & Yes & Yes \\
+                    Fortitude defense & Level          & Con or Str & No  & No  & No  \\
+                    Reflex defense    & Level          & Dex or Per & No  & Yes & Yes \\
+                    Mental defense    & Level          & Wil or Int & No  & No  & No  \\
                 \end{dtabularx}
             \end{dtable!*}
 

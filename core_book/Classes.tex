@@ -80,26 +80,26 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} c >{\lcol}X}
             \tb{Level} & \tb{Combat Prowess} & \tb{Rage} & \tb{Special} \\
             \hline
-            \barbarianprogressionrow{1}  & \plus2 & Rage, damage reduction, grit \\
-            \barbarianprogressionrow{2}  & \plus2 & Fast movement                \\
-            \barbarianprogressionrow{3}  & \plus2 & Uncanny dodge                \\
-            \barbarianprogressionrow{4}  & \plus2 & Tireless rage                \\
-            \barbarianprogressionrow{5}  & \plus3 & Battle-scarred               \\
-            \barbarianprogressionrow{6}  & \plus3 & Rage feat                    \\
-            \barbarianprogressionrow{7}  & \plus3 & Improved uncanny dodge       \\
-            \barbarianprogressionrow{8}  & \plus3 & Larger than life             \\
-            \barbarianprogressionrow{9}  & \plus3 & Durable                      \\
-            \barbarianprogressionrow{10} & \plus4 & Instinctive rage             \\
-            \barbarianprogressionrow{11} & \plus4 & Supreme uncanny dodge        \\
-            \barbarianprogressionrow{12} & \plus4 & Titanic resilience           \\
-            \barbarianprogressionrow{13} & \plus4 & Athletic rage                             \\
-            \barbarianprogressionrow{14} & \plus4 & Rage feat                    \\
-            \barbarianprogressionrow{15} & \plus5 & \tdash                       \\
-            \barbarianprogressionrow{16} & \plus5 & Larger than belief           \\
-            \barbarianprogressionrow{17} & \plus5 & Fury of the storm            \\
-            \barbarianprogressionrow{18} & \plus5 & Deathless rage               \\
-            \barbarianprogressionrow{19} & \plus5 & \tdash                             \\
-            \barbarianprogressionrow{20} & \plus6 & Endless rage
+            \barbarianprogressionrow{1}  & \plus2 & Rage, primal rage      \\
+            \barbarianprogressionrow{2}  & \plus2 & Fast movement          \\
+            \barbarianprogressionrow{3}  & \plus2 & Uncanny dodge          \\
+            \barbarianprogressionrow{4}  & \plus2 & Durable                \\
+            \barbarianprogressionrow{5}  & \plus3 & Larger than life       \\
+            \barbarianprogressionrow{6}  & \plus3 & Rage feat              \\
+            \barbarianprogressionrow{7}  & \plus3 & Improved uncanny dodge \\
+            \barbarianprogressionrow{8}  & \plus3 & Battle-scarred         \\
+            \barbarianprogressionrow{9}  & \plus3 & Primal resilience      \\
+            \barbarianprogressionrow{10} & \plus4 & Instinctive rage       \\
+            \barbarianprogressionrow{11} & \plus4 & Supreme uncanny dodge  \\
+            \barbarianprogressionrow{12} & \plus4 & Titanic resilience     \\
+            \barbarianprogressionrow{13} & \plus4 & Larger than belief     \\
+            \barbarianprogressionrow{14} & \plus4 & Mindless rage          \\
+            \barbarianprogressionrow{15} & \plus5 & Fury of the storm      \\
+            \barbarianprogressionrow{16} & \plus5 & Supreme rage           \\
+            \barbarianprogressionrow{17} & \plus5 & Endless rage           \\
+            \barbarianprogressionrow{18} & \plus5 & Deathless rage         \\
+            \barbarianprogressionrow{19} & \plus5 & Titan of battle        \\
+            \barbarianprogressionrow{20} & \plus6 & \tdash                 \\
         \end{dtabularx}
     \end{dtable}
 
@@ -125,42 +125,35 @@ This choice determines a great deal about your character's abilities.
         \cf{Bbn}{Weapon and Armor Proficiency}
         A barbarian is proficient with simple weapons, any four other weapon groups, light armor, medium armor, and shields.
 
-        \cf{Bbn}{Damage Reduction}[Ex]
-        A barbarian has the ability to shrug off some amount of injury from attacks.
-        He has \glossterm{damage reduction} against physical damage equal to his character level.
-
-        \cf{Bbn}{Grit}[Ex]
-        The barbarian halves all \glossterm{critical damage} he takes (to a minimum of 1 damage).
+        \cf{Bbn}{Primal Rage}[Ex]
+        The barbarian has no limit on the number of times he can rage per day.
+        In addition, he is not \fatigued after finishing a rage.
+        He must still rest for 5 minutes before he can rage again after finishing a rage.
 
     \subsection{Class Abilities}
         All barbarians have the following abilities.
 
         \cf{Bbn}{Rage}[Ex]\label{Rage}
         A barbarian can fly into a rage as a \glossterm{free action}.
-        Raging has the following benefits and drawbacks:
+        While raging, the barbarian has the following benefits and drawbacks:
         \begin{itemize}
             \item \plus2 bonus to damage with physical attacks.
-            \item \plus2 bonus to Fortitude and Mental defense.
-            \item 2 temporary hit points per Willpower.
-                These extra hit points gained from raging are lost before any other hit points (see \pcref{Temporary Hit Points}).
-            \item \minus2 to \glossterm{physical defenses}.
+            \item \glossterm{Damage reduction} against physical damage equal to his level.
             \item Unable to take any action that requires patience or concentration, such as casting spells.
             \item If the barbarian does not spend a swift round to sustain the rage, it ends at the end of the round.
             \item At the end of each round, if the barbarian did not attack a creature or object, he takes \glossterm{nonlethal damage} equal to his level.
+                This damage ignores his damage reduction from raging.
         \end{itemize}
 
         A rage lasts for up to 5 rounds.
         At the end of the rage, the barbarian takes nonlethal damage equal to his level.
-        If the barbarian has any temporary hit points remaining at the end of his rage, the nonlethal damage is dealt to those hit points before they go away.
         In addition, he becomes \fatigued and unable to rage until he rests for 5 minutes.
 
-        The bonuses to physical damage, Fortitude, and Mental defense granted by a barbarian's rage increase with his barbarian level.
+        The bonus to physical damage granted by a barbarian's rage increases with his barbarian level.
         This is called the barbarian's \glossterm{rage bonus}.
         He may rage a number of times per day equal to his rage bonus.
 
         At his 5th barbarian level, and every 5 barbarian levels thereafter, his rage bonus increases by 1.
-        In addition, the number of hit points gained per Willpower increases by 1.
-        His penalty to physical defenses while raging remains the same.
 
         \cf{Bbn}[2nd]{Fast Movement}[Ex]
         The barbarian increases his land speed by 10 feet while \unencumbered.
@@ -171,36 +164,34 @@ This choice determines a great deal about your character's abilities.
         If his overwhelm penalty is reduced to 0, he is not considered to be overwhelmed.
         In addition, he is not \unaware when attacked by surprise.
 
-        \cf{Bbn}[4th]{Tireless Rage}[Ex]
-        The barbarian is not \fatigued at the end of his rage.
-        However, he must still rest for 5 minutes before he can rage again after finishing a rage.
+        \cf{Bbn}[4th]{Durable}[Ex]
+        The barbarian gains a \plus2 bonus to Fortitude defense.
 
-        \cf{Bbn}[5th]{Battle-Scarred}[Ex]
-        The barbarian doubles the benefit of any healing he receives.
-        This affects both natural and magical healing.
+        \cf{Bbn}[5th]{Larger than Life}[Ex]
+        A barbarian holds the strength of a giant in the body of a man (or woman).
+        He increases the damage die of weapons he wields by one increment (see \pcref{Weapon Size}).
 
         \cf{Bbn}[6th]{Rage Feat}
         The barbarian gains a bonus Combat feat (see \pcref{Combat Feats}).
         He must use his barbarian level in place of his character level to meet level prerequisites for the feat.
         He only gains the benefits of the feat while he is raging, and he cannot use that feat as a prerequisite for any other feat or ability.
-        He gains an additional bonus feat that only functions while raging at his 14th barbarian level.
 
         \cf{Bbn}[7th]{Improved Uncanny Dodge}[Ex]
         The barbarian reduces his overwhelm penalties by 2.
         This does not stack with the effects of uncanny dodge.
         If his overwhelm penalty is reduced to 0, he is not considered to be overwhelmed.
 
-        \cf{Bbn}[8th]{Larger than Life}[Ex]
-        A barbarian holds the strength of a giant in the body of a man (or woman).
-        The barbarian is treated as being one size category larger than he actually is for all purposes except his physical space and reach, and the weapons he wields.
-        Although he uses weapons of the same size as normal, his weapons deal damage as if they were one size category larger, including natural weapons and unarmed strikes.
-        The benefits of this ability stack with the effects of spells and abilities that increase the barbarian's size category.
+        \cf{Bbn}[8th]{Battle-Scarred}[Ex]
+        The barbarian doubles the benefit of any healing he receives.
+        This affects both natural and magical healing.
 
-        \cf{Bbn}[9th]{Durable}[Ex]
+        \cf{Bbn}[9th]{Primal Resilience}[Ex]
         The barbarian gains a \plus4 bonus to Fortitude defense.
+        This replaces the effect of his durable ability.
+        In addition, he gains a \plus2 bonus to Mental defense.
 
         \cf{Bbn}[10th]{Instinctive Rage}[Ex]
-        The barbarian must spend a \glossterm{free action} to maintain his rage, rather than a swift action.
+        The barbarian need only spend a \glossterm{free action} to maintain his rage, rather than a \glossterm{swift action}.
 
         \cf{Bbn}[11th]{Supreme Uncanny Dodge}[Ex]
         The barbarian reduces his overwhelm penalties by 3.
@@ -211,26 +202,37 @@ This choice determines a great deal about your character's abilities.
         The barbarian cannot take more than half his maximum hit points in damage during a single round.
         Any excess damage is ignored.
 
-        \cf{Bbn}[13th]{Athletic Rage}[Ex]
-        While raging, the barbarian adds his rage bonus to Climb, Jump, Sprint, and Swim checks.
-
-        \cf{Bbn}[16th]{Larger than Belief}[Ex]
+        \cf{Bbn}[13th]{Larger than Belief}[Ex]
         The barbarian's larger than life ability improves.
-        He is treated as being two size categories larger than he actually is.
+        He increases the damage die of weapons he wields by two increments.
+        This does not stack with the effect of the larger than life ability.
 
-        \cf{Bbn}[17th]{Fury of the Storm}[Ex]
+        \cf{Bbn}[14th]{Mindless Rage}[Ex]
+        The barbarian is immune to hostile \glossterm{Mind} effects while raging.
+
+        \cf{Bbn}[15th]{Fury of the Storm}[Ex]
         A barbarian cannot be overwhelmed.
         He does not suffer overwhelm penalties, regardless of the number of enemies threatening him.
 
-        \cf{Bbn}[18th]{Deathless Rage}[Ex]
-        While raging, the barbarian ignores all penalties from critical damage, and does not begin dying even he takes critical damage.
-        However, if his critical damage exceeds his maximum hit points, the barbarian immediately dies.
-        When his rage ends, if the barbarian has critical damage, he begins dying.
+        \cf{Bbn}[16th]{Supreme Rage}[Ex]
+        The barbarian no longer has any restrictions to his actions while raging.
+        He may freely take actions that require concentration.
+        In addition, failing to attack while raging no longer causes him to take damage at the end of the round.
 
-        \cf{Bbn}[20th]{Endless Rage}[Ex]
+        \cf{Bbn}[17th]{Endless Rage}[Ex]
         A barbarian's rage no longer has a limited duration.
         He may rage indefinitely without stopping.
         In addition, he may rage immediately after finishing a rage, without needing to rest.
+
+        \cf{Bbn}[18th]{Deathless Rage}[Ex]
+        While raging, the barbarian ignores all penalties from critical damage, and does not begin dying even if he takes critical damage.
+        However, if his critical damage exceeds his maximum hit points, the barbarian immediately dies.
+        When his rage ends, if the barbarian has critical damage, he begins dying.
+
+        \cf{Bbn}[19th]{Titan of Battle}[Ex]
+        The barbarian's larger than life ability improves.
+        He increases the damage die of weapons he wields by three increments.
+        This does not stack with the effect of the larger than life or larger than belief abilities.
 
         \subsubsection{Ex-Barbarians}
             A barbarian who becomes lawful loses his ability to rage, and cannot gain more levels as a barbarian.
@@ -240,29 +242,29 @@ This choice determines a great deal about your character's abilities.
 \section{Cleric}\label{Cleric}
     \begin{dtable}
         \lcaption{Cleric Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{2em} >{\ccol}p{\babcolavg} c c >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{Devotion} & \tb{Spells} & \tb{Special} \\
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{2em} >{\ccol}p{\babcolavg} c >{\lcol}X}
+            \tb{Level} & \tb{Combat Prowess} & \tb{Spells} & \tb{Special} \\
             \hline
-            \clericprogressionrow{1}  & \plus2 & 2  & Devotion, domain gifts, spells \\
-            \clericprogressionrow{2}  & \plus2 & 3  & Domain invocation, rituals     \\
-            \clericprogressionrow{3}  & \plus2 & 3  & Domain spell                   \\
-            \clericprogressionrow{4}  & \plus2 & 4  & Domain invocation              \\
-            \clericprogressionrow{5}  & \plus3 & 4  & Domain spell                   \\
-            \clericprogressionrow{6}  & \plus3 & 5  & Domain aspect                  \\
-            \clericprogressionrow{7}  & \plus3 & 5  & Domain spell                   \\
-            \clericprogressionrow{8}  & \plus3 & 6  & Domain aspect                  \\
-            \clericprogressionrow{9}  & \plus3 & 6  & Domain spell                   \\
-            \clericprogressionrow{10} & \plus4 & 7  & Intercession                   \\
-            \clericprogressionrow{11} & \plus4 & 7  & Domain spell                   \\
-            \clericprogressionrow{12} & \plus4 & 8  & Greater domain invocation      \\
-            \clericprogressionrow{13} & \plus4 & 8  & Domain spell                   \\
-            \clericprogressionrow{14} & \plus4 & 9  & Greater domain invocation      \\
-            \clericprogressionrow{15} & \plus5 & 9  & Domain spell                   \\
-            \clericprogressionrow{16} & \plus5 & 10 & Domain mastery                 \\
-            \clericprogressionrow{17} & \plus5 & 10 & Domain spell                   \\
-            \clericprogressionrow{18} & \plus5 & 11 & Domain mastery                 \\
-            \clericprogressionrow{19} & \plus5 & 11 & Endless devotion, domain spell \\
-            \clericprogressionrow{20} & \plus6 & 12 & Miracle                        \\
+            \clericprogressionrow{1}  & 2  & Domain gifts, rituals, spells \\
+            \clericprogressionrow{2}  & 3  & Devotion, domain invocation   \\
+            \clericprogressionrow{3}  & 3  & Domain invocation                        \\
+            \clericprogressionrow{4}  & 4  & \tdash             \\
+            \clericprogressionrow{5}  & 4  & Domain aspect                        \\
+            \clericprogressionrow{6}  & 5  & \tdash                 \\
+            \clericprogressionrow{7}  & 5  & Domain aspect                        \\
+            \clericprogressionrow{8}  & 6  & \tdash                 \\
+            \clericprogressionrow{9}  & 6  & Intercession                        \\
+            \clericprogressionrow{10} & 7  & \tdash                  \\
+            \clericprogressionrow{11} & 7  & Greater domain invocation                        \\
+            \clericprogressionrow{12} & 8  & \tdash     \\
+            \clericprogressionrow{13} & 8  & Greater domain invocation                        \\
+            \clericprogressionrow{14} & 9  & \tdash     \\
+            \clericprogressionrow{15} & 9  & Domain mastery                        \\
+            \clericprogressionrow{16} & 10 & \tdash                \\
+            \clericprogressionrow{17} & 10 & Domain mastery                        \\
+            \clericprogressionrow{18} & 11 & \tdash                \\
+            \clericprogressionrow{19} & 11 & Endless devotion              \\
+            \clericprogressionrow{20} & 12 & Miracle                       \\
         \end{dtabularx}
     \end{dtable}
 
@@ -410,48 +412,41 @@ This choice determines a great deal about your character's abilities.
             \end{dtabularx}
         \end{dtable!*}
 
-        \cf{Clr}{Devotion}[Mag]
-        A cleric has a devotion pool with a number of devotion points in it equal to half his Willpower or half his cleric level, whichever is higher.
-        Before making a physical attack or check, the cleric may spend a devotion point to gain a \plus2 bonus to the attack or check.
-        The bonus granted by spending a devotion point increases by \plus1 at 5th level and every 5 levels thereafter.
+        \cf{Clr}{Rituals}
+        Clerics can perform divine rituals to create unique magical effects (see \pcref{Rituals}).
+        A cleric begins play with a ritual book containing two divine rituals of his choice (see \pcref{Divine Rituals}).
+
+        \cf{Clr}[2nd]{Devotion}[Mag]
+        The cleric's devotion to his deity grants him additional power.
+        He gains a devotion pool with a number of devotion points in it equal to half his Willpower or half his cleric level, whichever is higher.
+        He may spend a devotion point in place of any spell slot to cast a spell from one of his domains.
 
         After regaining spells for the day, a cleric's devotion pool is full.
         He loses a point from his devotion pool if he acts against his deity.
-        If the cleric's devotion pool has no points remaining, he takes a \minus2 penalty to his attacks, checks, and defenses.
 
         The cleric can refill his devotion pool by spending an hour in prayer, supplication, or contemplation.
         If he is in a location exclusively dedicated to his deity, such as a temple, the time required is reduced to five minutes.
         Exceptionally holy locations may allow even faster recovery of devotion points.
 
-        \cf{Clr}[2nd]{Domain Invocations}[Mag]
+        \cf{Clr}[2nd]{Domain Invocation}[Mag]
         As a standard action, a cleric can spend a devotion point to invoke divine power.
-        He gains the domain invocations offered by two of his domains.
+        He gains the domain invocations offered by one of his domains.
 
         All domain invocations affect a single creature within \rngmed range and require a special attack against a defense.
         The cleric's accuracy with domain invocations is equal to his divine power.
         If the attack succeeds, a domain invocation heals or inflicts 1d6 damage per divine power.
         If the attack fails, the invocation heals or inflicts half damage.
 
-        \cf{Clr}[2nd]{Rituals}
-        The cleric gains the ability to perform divine rituals.
-        He does not automatically learn rituals, but must find a ritual book.
-        For details, see \pcref{Rituals}.
+        At 3rd level, the cleric gains another domain invocation from one of his domains.
 
-        \cf{Clr}[3rd]{Domain Spell}[Mag]
-        The cleric chooses a spell from one of his domains.
-        The spell's level cannot exceed half his cleric level.
-        If he knows that spell, he may spend a devotion point to cast it in place of a spell slot.
-
-        At 5th level, and every odd level theareafter, the cleric gains an additional domain spell.
-
-        \cf{Clr}[6th]{Domain Aspect}[Mag]
+        \cf{Clr}[5th]{Domain Aspect}[Mag]
         The cleric gains a domain aspect from one of his domains.
         Domain aspects do not require an action to activate.
         Options for domain aspects are listed at \pcref{Domain Aspects}.
 
-        At his 8th cleric level, the cleric gains an additional domain aspect from one of his domains.
+        At his 7th cleric level, the cleric gains an additional domain aspect from one of his domains.
 
-        \cf{Clr}[10th]{Intercession}[Mag]
+        \cf{Clr}[9th]{Intercession}[Mag]
         Once per day, the cleric can request a divine intercession as a standard action.
         He mentally specifies his request, and his deity fulfills that request in the manner it sees fit.
         This can emulate the effects of any spell of a level no greater than half of his level, or have any other effect of a similar power level.
@@ -459,20 +454,20 @@ This choice determines a great deal about your character's abilities.
 
         If the cleric performs a significant service for his deity, he can gain the ability to request an additional intercession that day.
 
-        \cf{Clr}[12th]{Greater Domain Invocations}[Mag]
+        \cf{Clr}[11th]{Greater Domain Invocations}[Mag]
         The cleric gains the ability to invoke the power of one of his domains even more effectively.
         Greater domain invocations are described at \pcref{Greater Domain Invocations}.
 
-        At his 14th cleric level, the cleric gains an additional greater domain invocation from one of his domains.
+        At his 13th cleric level, the cleric gains an additional greater domain invocation from one of his domains.
 
-        \cf{Clr}[16th]{Domain Mastery}[Mag]
+        \cf{Clr}[15th]{Domain Mastery}[Mag]
         The cleric gains a domain mastery from one of his domains.
         Options for domain masteries are listed at \pcref{Domain Masteries}.
 
-        At his 18th cleric level, the cleric gains an additional domain mastery from one of his domains.
+        At his 17th cleric level, the cleric gains an additional domain mastery from one of his domains.
 
         \cf{Clr}[19th]{Endless Devotion}[Mag]
-        Whenever the cleric casts a domain spell, if he did not spend any devotion points that round, he regains a spent devotion point.
+        Whenever the cleric casts a spell from one of his domains, if he did not spend any devotion points that round, he regains a spent devotion point.
 
         \cf{Clr}[20th]{Miracle}[Mag]
         Once per week, the cleric can request a miracle as a standard action.
@@ -493,12 +488,12 @@ This choice determines a great deal about your character's abilities.
             \subcf{Chaos}
             The cleric rolls twice for all \glossterm{random effects} and chooses his preferred result.
             \subcf{Death}
-            The cleric halves all critical damage he takes (to a minimum of 1 damage).
+            The cleric halves his penalties from \glossterm{critical damage}.
             In addition, he is immune to \glossterm{Death} effects.
             \subcf{Destruction}
-            When making physical attacks, the cleric ignores an amount of hardness and damage reduction equal to half his divine power.
+            When making physical attacks, the cleric ignores an amount of \glossterm{hardness} and \glossterm{damage reduction} equal to half his divine power.
             \subcf{Earth}
-            The cleric gains the tremorsense ability with a range of 50 feet.
+            The cleric gains the \glossterm{tremorsense} ability with a range of 50 feet.
             If he is touching a surface, he can automatically pinpoint the location of anything within 50 feet that is in contact with the surface, including inanimate objects.
             \subcf{Evil}
             The cleric gains \glossterm{damage reduction} against physical damage from non-evil sources equal to half his divine power.
@@ -510,25 +505,24 @@ This choice determines a great deal about your character's abilities.
             The cleric adds all Knowledge skills to his cleric class skill list.
             In addition, he gains two skill points which must be spent on Knowledge skills.
             \subcf{Law}
-            The cleric is immune to \glossterm{Delusion} effects.
+            The cleric gains a \plus2 bonus to Mental defense.
             \subcf{Life}
             The cleric gains a \plus2 bonus to Fortitude defense.
-            In addition, he gains bonus hit points equal to his cleric level.
             \subcf{Magic}
-            The cleric gains a \plus1 bonus to spellpower with divine spells.
+            The cleric gains \glossterm{damage reduction} against \glossterm{magical} damage equal to half his divine power.
             \subcf{Protection}
             As an \glossterm{immediate action}, when an ally adjacent to the cleric takes damage, the cleric can take half that damage instead of the ally.
             \subcf{Strength}
             The cleric adds Climb, Jump, Sprint, and Swim to his cleric class skill list.
             In addition, he gains two skill points which must be spent on Strength-based skills.
             \subcf{Travel}
-            The cleric adds Knowledge (geography) and Survival to his cleric class skill list.
-            In addition, he gains a \plus10 foot bonus to his land speed.
+            The cleric adds Knowledge (geography), Sprint, and Survival to his cleric class skill list.
+            In addition, he gains two skill points which must be spent on any combination of those skills.
             \subcf{Trickery}
             The cleric adds Bluff, Disguise, and Stealth to his cleric class skill list.
             In addition, he gains two skill points which must be spent on any combination of those skills.
             \subcf{War}
-            The cleric gains a \plus2 bonus to damage on physical attacks.
+            The cleric gains a \plus1 bonus to damage with physical attacks.
             \subcf{Water}
             The cleric adds Swim to his cleric class skill list, gains a \plus5 bonus to Swim checks, and suffers no penalties for fighting underwater.
             \subcf{Wild}
@@ -536,11 +530,14 @@ This choice determines a great deal about your character's abilities.
             In addition, he gains two skill points which must be spent on any combination of those skills.
 
         \subsubsection{Domain Invocations}\label{Domain Invocations}
+            All domain invocations affect a single creature within \rngmed range and require a special attack against a defense.
+            If the attack succeeds, a domain invocation heals or inflicts 1d6 damage per divine power.
+            If the attack fails, the invocation heals or inflicts half damage.
 
             \subcf{Air -- Reflex}
             The target takes electricity damage.
             \subcf{Chaos -- Mental}
-            This invocation randomly heals or inflicts damage.
+            This invocation randomly heals or inflicts divine damage.
             The cleric chooses the target after rolling to determine the effect.
             \subcf{Death -- Fortitude}
             The target takes divine damage.
@@ -552,20 +549,20 @@ This choice determines a great deal about your character's abilities.
             The target takes bludgeoning damage if it is on the ground.
             \subcf{Evil -- Mental}
             This invocation does not heal or inflict damage.
-            If the attack succeeds, and the target is good, it is \staggered for 5 rounds.
+            If the attack succeeds, and the target is non-evil, it is \staggered for 2 rounds.
             \subcf{Fire -- Reflex}
             The target takes fire damage.
             \subcf{Good -- Mental}
             This invocation does not heal or inflict damage.
-            If the attack succeeds, and the target is evil, it is \dazed for 5 rounds.
+            If the attack succeeds, and the target is non-good, it is \dazed for 2 rounds.
             \subcf{Knowledge -- Special}
             The target must make a Knowledge check.
-            If its check result beats your attack result, it is healed.
-            Otherwise, it takes damage.
+            If its check result beats your attack result, you can choose to heal it.
+            If it fails, you can choose to deal divine damage to it.
             This invocation heals or inflicts 1d10 damage per two divine power instead of the normal value.
             \subcf{Law -- Mental}
             This invocation does not heal or inflict damage.
-            If the attack succeeds, and the target is chaotic, it is \immobilized for 5 rounds.
+            If the attack succeeds, and the target is non-lawful, it is \immobilized for 2 rounds.
             \subcf{Life -- Fortitude}
             The target is healed.
             This invocation heals 1d8 damage per divine power instead of the normal value.
@@ -573,20 +570,22 @@ This choice determines a great deal about your character's abilities.
             If the target can cast spells, it is healed.
             Otherwise, it takes divine damage.
             This invocation heals or inflicts 1d10 damage per two divine power instead of the normal value.
-            \subcf{Protection -- Fortitude}
-            This invocation does not heal or inflict damage.
-            The target gains 1d10 temporary hit points per two divine power.
+            \subcf{Protection -- None}
+            This invocation does not heal or inflict damage, and no attack is required.
+            The target gains 1d10 \glossterm{temporary hit points} per two divine power.
             \subcf{Strength -- Special}
             The target must make a Strength check.
-            If its check result beats your attack result, it is healed.
-            Otherwise, it takes divine damage.
+            If its check result beats your attack result, you can choose to heal it.
+            If it fails, you can choose to deal divine damage to it.
             This invocation heals or inflicts 1d10 damage per two divine power instead of the normal value.
-            \subcf{Travel -- Reflex}
-            The target is healed.
-            In addition, it gains a \plus10 foot bonus to its movement speed for 1 round.
-            This invocation heals 1d10 damage per two divine power instead of the normal value.
+            \subcf{Travel -- None}
+            This invocation does not heal or inflict damage, and no attack is required.
+            The target gains a \plus30 foot bonus to its speed in all its movement modes, up to a maximum of double its original speed.
+            This effect lasts for 5 rounds.
             \subcf{Trickery -- Mental}
-            If the attack succeeds, the target is \disoriented for 1 round.
+            The target takes divine damage.
+            This is a \glossterm{Subtle} effect, making it hard to notice.
+            This invocation heals or inflicts 1d10 damage per two divine power instead of the normal value.
             \subcf{War -- Fortitude}
             This invocation affects all enemies within a \areasmall radius of you instead of the normal target.
             The targets take divine damage.
@@ -606,28 +605,29 @@ This choice determines a great deal about your character's abilities.
             In addition, as a swift action, he can spend a devotion point to treat air as if it was solid ground until the end of the round.
             He can only do this once before touching solid ground again.
             \subcf{Chaos -- Chaotic Retribution}
-            Whenever a lawful creature within 30 feet of you attacks you, means it takes 1d6 damage per two divine power.
+            Whenever a non-chaotic creature within 30 feet of you attacks you, it takes 1d6 damage per two divine power.
             A creature can only be dealt damage by this effect once per round.
-            \subcf{Death -- Lifedrinker}
-            Whenever the cleric kills a creature, he gains temporary hit points equal to his divine power for a number of rounds equal to the creature's level.
-            \subcf{Destruction -- Beacon of Destruction}
-            All enemies within a \areamed radius emanation of the cleric have their damage reduction and hardness (if any) reduced by an amount equal to half the cleric's divine power.
+            \subcf{Death -- Deathcaller}
+            Whenever the cleric damages a creature, any of his damage in excess of that creature's hit points is dealt as \glossterm{critical damage}.
+            \subcf{Destruction -- Ruinbringer}
+            The cleric's attacks ignore an amount of \glossterm{damage reduction} and \glossterm{hardness} equal to his divine power.
             \subcf{Earth -- Hardened Skin}
-            The cleric gains damage reduction against physical damage equal to his divine power.
+            The cleric gains \glossterm{damage reduction} against physical damage equal to his divine power.
             Adamantine weapons ignore this damage reduction and negate it for 1 round.
             \subcf{Evil -- Unholy Retribution}
-            Whenever a good creature within 30 feet of you attacks you, it takes 1d6 damage per two divine power.
+            Whenever a non-evil creature within 30 feet of you attacks you, it takes 1d6 damage per two divine power.
             A creature can only be dealt damage by this effect once per round.
             \subcf{Fire -- Friendly Fire}
             All of the cleric's fire spells and abilities do not deal fire damage to his allies.
+            In addition, whenever the cleric would take fire damage, he may heal that many hit points instead.
+            He may use this ability before applying damage reduction, damage immunity, and similar effects.
             \subcf{Good -- Holy Retribution}
-            Whenever an evil creature within 30 feet of you attacks you, it takes 1d6 damage per two divine power.
+            Whenever a non-good creature within 30 feet of you attacks you, it takes 1d6 damage per two divine power.
             A creature can only be dealt damage by this effect once per round.
             \subcf{Knowledge -- Knowledge Mastery}
-            Whenever the cleric makes a Knowledge check, he may roll twice and take the higher result.
-            In addition, he gains two skill points which must be spent on Knowledge skills.
+            The cleric gains the Knowledge Mastery feat (see page \featpref{Knowledge Mastery}).
             \subcf{Law -- Certain Retribution}
-            Whenever an chaotic creature within 30 feet of you attacks you, it takes 1d6 damage per two divine power.
+            Whenever a non-lawful creature within 30 feet of you attacks you, it takes 1d6 damage per two divine power.
             A creature can only be dealt damage by this effect once per round.
             \subcf{Life -- Critical Healer}
             All of the cleric's healing spells and abilities cure critical damage as easily as they cure hit points.
@@ -635,20 +635,20 @@ This choice determines a great deal about your character's abilities.
             The cleric gains a \plus1 bonus to spellpower with divine spells.
             \subcf{Protection -- Faithful Shield}
             The cleric may maintain concentration on \glossterm{Shielding} spells as a swift action.
-            \subcf{Strength -- Strength of Will}
-            The cleric may use his Strength in place of his divine power to determine the strength of his invocations.
+            \subcf{Strength -- Mighty Devotion}
+            The cleric may use his Strength in place of his divine power for the purpose of invocations he uses.
+            In addition, he may use his Strength in place of his Willpower to determine the number of devotion points he has.
             \subcf{Travel -- Rapid Traveller}
             The cleric gains a \plus30 foot bonus to his speed in all movement modes, up to a maximum of double his normal speed.
-            This stacks with the bonus from his travel domain gift.
             \subcf{Trickery -- Trick Master}
             The cleric gains his choice of Bluff Mastery, Disguise Mastery, or Stealth Mastery as a bonus feat, even if he does not meet the prerequisites.
             \subcf{War -- Warpriest}
-            The cleric gains a \plus2 bonus to damage on physical attacks with weapons from his deity's favored weapon group.
-            \subcf{Water -- Water Breathing} The cleric can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
-            He also gains a \glossterm{swim speed} equal to his base land speed.
+            The cleric gains a \plus2 bonus to damage with physical attacks.
+            \subcf{Water -- Water Breathing} The cleric can breathe water as easily as a human breathes air, preventing him from drowning or suffocating underwater.
+            He also gains a \glossterm{swim speed} equal to his land speed.
             \subcf{Wild -- Wild Aspect}
             When the cleric gains this ability, he chooses one wild aspect ability, as if he were a were a druid of a level equal to his cleric level (see Wild Aspect, \pref{Drd:Wild Aspect}).
-            He can spend a devotion point as a swift action to embody that wild aspect for 1 hour.
+            He can spend a devotion point as a standard action to embody that wild aspect for 1 hour.
 
         \subsubsection{Greater Domain Invocations}\label{Greater Domain Invocations}
 
@@ -790,18 +790,20 @@ This choice determines a great deal about your character's abilities.
             Once per round, the cleric can gain a \plus1d6 bonus to any check or physical attack.
             He may declare the use of the ability after failing the roll, but before any additional effects are resolved, potentially making it succeed where it would have failed.
             \subcf{Death -- Deathfeeder}
-            The cleric constantly radiates a \areamed radius emanation of death.
-            Whenever a creature dies within the area, the cleric gains the benefits of the \spell{death knell} spell as if it had been cast on the creature.
-            \subcf{Destruction -- Ruinbringer}
-            The cleric's attacks and spells ignore all damage reduction and hardness (but not damage immunity).
+            The cleric constantly radiates a \arealarge radius emanation of death.
+            Whenever an enemy takes damage in the area, all damage in excess of its hit points is dealt as \glossterm{critical damage}.
+            In addition, whenever a creature dies within the area, the cleric gains temporary hit points equal to twice his divine power.
+            \subcf{Destruction -- Beacon of Destruction}
+            The cleric constantly radiates a \arealarge radius emanation of destruction.
+            All enemies and objects in the area have their \glossterm{damage reduction} and \glossterm{hardness} reduced by an amount equal to twice the cleric's divine power.
             \subcf{Earth -- Earth Glide}
             The cleric gains the earth glide ability, as an earth elemental.
             \subcf{Evil -- Avatar of Evil} The cleric continuously gains the benefits of the \spell{protection from good}
             spell, with a spellpower equal to his divine power.
             If the effect is dispelled or suppressed, he can resume it as a swift action.
             \subcf{Fire -- Flaming Soul}
-            The cleric gains the fire subtype, making him immune to fire but giving him a 50\% vulnerability to cold damage.
-            In addition, whenever he deals fire damage to a creature, the creature is \ignited for 5 rounds.
+            The cleric becomes immune to fire damage.
+            In addition, whenever he deals fire damage to a creature, that creature is \ignited for 5 rounds.
             \subcf{Good -- Avatar of Good} The cleric continuously gains the benefits of the \spell{protection from evil}
             spell, with a spellpower equal to his divine power.
             If the effect is dispelled or suppressed, he can resume it as a swift action.
@@ -853,26 +855,26 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\centering}p{\babcolavg} >{\ccol}p{3.5em} c >{\lcol}X}
             \tb{Level} & \tb{Combat Prowess} & \tb{Active Aspects} & \tb{Spells} & \tb{Special} \\
             \hline
-            \druidprogressionrow{1}  & \tdash & 2 & Metal abhorrence, spells, wild speech \\
-            \druidprogressionrow{2}  & 1      & 3 & Rituals, wild aspect                  \\
-            \druidprogressionrow{3}  & 1      & 3 & Natural casting (10 ft.)              \\
-            \druidprogressionrow{4}  & 1      & 4 & Wild aspect                           \\
-            \druidprogressionrow{5}  & 2      & 4 & \tdash                                \\
-            \druidprogressionrow{6}  & 2      & 5 & Wild aspect                           \\
-            \druidprogressionrow{7}  & 2      & 5 & \tdash                                \\
-            \druidprogressionrow{8}  & 2      & 6 & Wild aspect                           \\
-            \druidprogressionrow{9}  & 3      & 6 & \tdash                                \\
-            \druidprogressionrow{10} & 3      & 7 & Wild aspect                           \\
-            \druidprogressionrow{11} & 3      & 7 & Natural casting (Close)               \\
-            \druidprogressionrow{12} & 3      & 8 & Wild aspect                        \\
-            \druidprogressionrow{13} & 4      & 8 & \tdash                                \\
-            \druidprogressionrow{14} & 4      & 9 & Wild aspect                        \\
-            \druidprogressionrow{15} & 4      & 9 & \tdash                                \\
-            \druidprogressionrow{16} & 4      & 10 & Wild aspect                        \\
-            \druidprogressionrow{17} & 5      & 10 & \tdash                                \\
-            \druidprogressionrow{18} & 5      & 11 & Wild aspect                        \\
-            \druidprogressionrow{19} & 5      & 11 & Natural casting (Medium)              \\
-            \druidprogressionrow{20} & 5      & 12 & Avatar of nature, wild aspect      \\
+            \druidprogressionrow{1}  & \tdash & 2  & Spells, rituals, wild speech \\
+            \druidprogressionrow{2}  & 1      & 3  & Wild aspect                  \\
+            \druidprogressionrow{3}  & 1      & 3  & Wild aspect                  \\
+            \druidprogressionrow{4}  & 1      & 4  & \tdash                       \\
+            \druidprogressionrow{5}  & 2      & 4  & Wild aspect                  \\
+            \druidprogressionrow{6}  & 2      & 5  & \tdash                       \\
+            \druidprogressionrow{7}  & 2      & 5  & Wild aspect                  \\
+            \druidprogressionrow{8}  & 2      & 6  & \tdash                       \\
+            \druidprogressionrow{9}  & 3      & 6  & Wild aspect                  \\
+            \druidprogressionrow{10} & 3      & 7  & \tdash                       \\
+            \druidprogressionrow{11} & 3      & 7  & Wild aspect                  \\
+            \druidprogressionrow{12} & 3      & 8  & \tdash                       \\
+            \druidprogressionrow{13} & 4      & 8  & Wild aspect                  \\
+            \druidprogressionrow{14} & 4      & 9  & \tdash                       \\
+            \druidprogressionrow{15} & 4      & 9  & Wild aspect                  \\
+            \druidprogressionrow{16} & 4      & 10 & \tdash                       \\
+            \druidprogressionrow{17} & 5      & 10 & Wild aspect                  \\
+            \druidprogressionrow{18} & 5      & 11 & \tdash                       \\
+            \druidprogressionrow{19} & 5      & 11 & Wild aspect                  \\
+            \druidprogressionrow{20} & 5      & 12 & Avatar of nature             \\
         \end{dtabularx}
     \end{dtable}
 
@@ -906,9 +908,8 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Drd}{Wild Speech}[Mag]
         Druids can communicate with animals.
-        As a standard action, the druid can choose a type of animal, such as owl or wolf.
+        As a standard action, the druid can spend a spell slot and choose a type of animal, such as owl or wolf.
         She gains the ability to speak to and understand animals of that type for 5 minutes.
-        A druid can use this ability a number of times per day equal to her Perception or half her druid level, whichever is higher.
 
         This ability doesn't make the animals any more friendly or cooperative than normal.
         Furthermore, wary and cunning animals are likely to be terse and evasive, while the more stupid ones make inane comments.
@@ -924,7 +925,7 @@ This choice determines a great deal about your character's abilities.
         The oaths that druids swear as part of their initiation prohibit them from wearing armor made of metal.
         A druid who wears prohibited armor or carries a prohibited shield is unable to cast druid spells or use any of her \glossterm{magical} class abilities while doing so and for 24 hours thereafter (not including this ability).
         
-        A druid avoid this penalty by using armor made of wood altered with the \spell{ironwood} ritual.
+        A druid can avoid this penalty by using armor made of wood altered with the \spell{ironwood} ritual.
         Such wood is as strong as steel.
 
         \cf{Drd}{Nature Power}
@@ -976,16 +977,15 @@ This choice determines a great deal about your character's abilities.
             \end{dtabularx}
         \end{dtable}
 
-        \cf{Drd}[2nd]{Rituals}
-        The druid gains the ability to perform nature rituals.
-        She does not automatically learn rituals, but must find a ritual book.
-        For details, see \pcref{Rituals}.
+        \cf{Drd}{Rituals}
+        Druids can perform nature rituals to create unique magical effects (see \pcref{Rituals}).
+        A druid begins play with a ritual book containing two nature rituals of her choice (see \pcref{Nature Rituals}).
 
         \cf{Drd}[2nd]{Wild Aspect}[Mag]
         The druid gains the ability to embody an aspect of an animal.
         She chooses two wild aspects from the list below.
         Some wild aspects have minimum druid levels, as indicated in the title of the aspect.
-        At her 4th druid level, and every even druid level thereafter, the druid learns an additional wild aspect.
+        At her 3rd druid level, and every odd druid level thereafter, the druid learns an additional wild aspect.
         At higher levels, her aspects begin to mimic elements of the natural world in addition to animals.
 
         Unless otherwise noted, embodying a wild aspect is a standard action.
@@ -1016,54 +1016,54 @@ This choice determines a great deal about your character's abilities.
         The druid may move through any sort of undergrowth (such as natural thorns, briars, overgrown areas, and similar terrain) at her normal speed and without taking damage or suffering any other impairment.
         However, plants magically manipulated to impede motion still affect her.
 
-        \subcf{4th -- Animal Affinity}
+        \subcf{5th -- Animal Affinity}
         The druid gains a \plus5 bonus to Creature Handling and Ride checks.
-        \subcf{4th -- Climb}
+        \subcf{5th -- Climb}
         The druid gains a \glossterm{climb speed} equal to her land speed.
-        \subcf{4th -- Constrict}
+        \subcf{5th -- Constrict}
         The druid's body transforms, improving her grappling abilities.
         She gains a \plus5 bonus to accuracy with grapple attacks.
         In addition, she gains a constrict attack.
         This attack deals 1d10 damage for a Medium druid, but it can only be used against a foe she is grappling with.
-        \subcf{4th -- Gore}
+        \subcf{5th -- Gore}
         The druid's head transforms, allowing her to perform a gore attack.
         The attack deals 1d8 damage for a Medium druid.
         In addition, if the druid hits with a natural attack, she may attempt to shove her foe as an immediate action.
 
-        \subcf{6th -- A Thousand Faces}
+        \subcf{7th -- A Thousand Faces}
         The druid's appearance changes, as if using the \spell{disguise self} spell.
         This affects the druid's body, but not her possessions.
         It is not an illusory effect, but a minor physical alteration of the druid's appearance, within the limits described for the spell.
-        \subcf{6th -- Enhanced Natural Weapons}
+        \subcf{7th -- Enhanced Natural Weapons}
         The druid's natural weapons gain a \glossterm{enhancement bonus} equal to one third of her nature power.
         This functions like an enhancement bonus on a weapon, increasing her damage and offensive legend points per day (see \pcref{Weapon Enhancement Bonuses}).
-        \subcf{6th -- Hawk}
+        \subcf{7th -- Hawk}
         The druid grows wings, granting her a glide speed equal to her land speed.
         See \pcref{Gliding}, for more details.
         In addition, her feet transform, allowing her to perform a talon attack.
         The attack deals 1d6 damage for a Medium druid.
-        \subcf{6th -- Lope}
+        \subcf{7th -- Lope}
         The druid gains the ability to move on all four limbs.
         When doing so, she gains a \plus30 foot bonus to her land speed, up to a maximum of double her original speed.
         When not using her hands to move, her ability to use her hands is unchanged.
-        \subcf{6th -- Scent}
-        The druid gains the scent ability, granting her a \plus10 bonus to scent-based Awareness checks (see \pcref{Awareness}).
-        \subcf{6th -- Shrink}
+        \subcf{7th -- Scent}
+        The druid gains the \glossterm{scent} ability.
+        \subcf{7th -- Shrink}
         The druid shrinks by a size category.
         This functions like the \spell{reduce person} spell.
         This is a sizing effect.
-        \subcf{6th -- Slither}
+        \subcf{7th -- Slither}
         The druid gains a \glossterm{climb speed} equal to her land speed.
         She does not need to use her hands to climb in this way.
         In addition, she gains a bite attack that deals 1d8 damage for a Medium druid.
 
-        \subcf{8th -- Barkskin} The druid gains \glossterm{damage reduction} against physical damage equal to her nature power.
+        \subcf{9th -- Barkskin} The druid gains \glossterm{damage reduction} against physical damage equal to her nature power.
         Fire damage ignores this damage reduction and negates it for 1 round.
-        \subcf{8th -- Natural Grab}
+        \subcf{9th -- Natural Grab}
         If the druid hits with a natural attack, she may attempt to grapple her foe as an immediate action.
-        \subcf{8th -- Natural Trip}
+        \subcf{9th -- Natural Trip}
         If the druid hits with a natural attack, she may attempt to trip her foe as an immediate action.
-        \subcf{8th -- Venom}
+        \subcf{9th -- Venom}
         If the druid hits with a natural attack, she may inject poison into her foe as an immediate action.
         At the end of every round, the druid makes a nature power vs. Fortitude attack against all creatures she has poisoned.
         The effects of the poison are described below.
@@ -1076,31 +1076,31 @@ This choice determines a great deal about your character's abilities.
         %TODO poison stacking rules
         \par In addition, the druid gains a bite attack that deals 1d8 damage for a Medium druid.
 
-        \subcf{10th -- Fluid Motion} The druid is immune to effects that restrict its mobility. She suffers no penalties for acting underwater. In addition, she gains a \plus20 bonus to Reflex defense against grapple attacks, as well as on grapple attacks or Escape Artist checks made to escape a grapple or a pin.
-        \subcf{10th -- Grow}
+        \subcf{11th -- Fluid Motion} The druid is immune to effects that restrict its mobility. She suffers no penalties for acting underwater. In addition, she gains a \plus20 bonus to Reflex defense against grapple attacks, as well as on grapple attacks or Escape Artist checks made to escape a grapple or a pin.
+        \subcf{11th -- Grow}
         The druid increases in size by one size category, as the effect of the \spell{enlarge} spell.
         This is a \glossterm{Sizing} effect, and does not stack with other Sizing effects.
-        \subcf{10th -- Natural Renewal}
+        \subcf{11th -- Natural Renewal}
         At the end of each round, the druid heals hit points equal to her nature power.
-        \subcf{10th -- Wolfpack}
+        \subcf{11th -- Wolfpack}
         Overwhelmed foes the druid threatens increase their overwhelm penalties by 2.
 
-        \subcf{12th -- Elemental Retribution}
+        \subcf{13th -- Elemental Retribution}
         Whenever a creature within \rngmed range of the druid attacks her, the attacking creature takes \spelldamage{}[d6] of either cold, electricity, or fire damage.
         The druid may choose the damage type independently for each attacking creature.
         A creature can only be dealt damage by this effect once per round.
-        \subcf{12th -- Swiftstrike}
+        \subcf{13th -- Swiftstrike}
         The druid's attack speed increases.
         When she makes a standard attack, she may make an additional strike.
         This strike must be made with a natural weapon.
         This effect does not stack with similar effects that grant extra strikes.
-        \subcf{12th -- Wings}
+        \subcf{13th -- Wings}
         The druid grows wings, granting her a fly speed equal to her land speed.
         While \unencumbered, she can fly (see \pcref{Flying}).
         She can only fly for a number of rounds equal to half her nature power.
         After that limit is reached, she must rest for 5 minutes before flying again.
 
-        \subcf{14th -- Earth Glide}
+        \subcf{15th -- Earth Glide}
         The druid gains the earth glide ability, as an earth elemental.
         This allows her to glide through stone, dirt, or almost any other sort of earth as if it were air.
         She can walk or climb at any angle in the earth.
@@ -1109,7 +1109,7 @@ This choice determines a great deal about your character's abilities.
         She can only glide through earth for a number of rounds equal to half her nature power.
         After that limit is reached, she must rest for 5 minutes before gliding through earth again.
 
-        \subcf{18th -- Solar Radiance}
+        \subcf{19th -- Solar Radiance}
         The druid continuously radiates bright light out to a 500 foot radius (and shadowy illumination for an additional 500 feet).
         The illumination is so bright that she becomes hard to look at.
         Any creature attacking her from within the radius of bright light becomes \partiallyblinded for 2 rounds after the attack.
@@ -1153,17 +1153,6 @@ This choice determines a great deal about your character's abilities.
     This usually causes the druid to die.
 
 \end{comment}
-
-        \cf{Drd}[3rd]{Natural Casting}[Mag]
-        Whenever the druid casts a nature spell with an area that originates from her, such as most cone or line spells, she may cause the spell to originate from any location within 10 feet of her.
-        All other aspects of the spell are unchanged.
-
-        For example, a druid casting \spell{burning hands} could create a cone of fire originating from 10 feet to her right.
-        The cone would extend 20 feet out from that point, as normal.
-        If the druid directed the cone back towards her, she could potentially be affected by the spell.
-
-        At 11th level, this ability's range improves to \rngclose.
-        At 19th level, this ability's range improves to \rngmed.
 
         \cf{Drd}[5th]{Multiple Aspect}[Mag]
         The druid gains the ability to embody two wild aspects at once.
@@ -1404,7 +1393,7 @@ This choice determines a great deal about your character's abilities.
         The fighter's training in his chosen weapons improves.
         He increases the \glossterm{critical multiplier} of his chosen weapons by 1.
         In addition, if he chose a specific weapon group, he increases his damage bonus to \plus2.
-        If he did not, he can apply all weapon group-specific feats he has to any weapon group that he trains with for 1 hour.
+        If he did not, he becomes proficient with all weapon groups and all exotic weapons.
         He retains this benefit for one week after the training.
 
         \cf{Ftr}[9th]{Combat Mastery}
@@ -1463,7 +1452,7 @@ This choice determines a great deal about your character's abilities.
         \subcf{Supreme Weapon Discipline}
         Whenever the fighter deals damage to a creature with a physical attack, the struck creature is \severelyimpaired with attacks and checks for 2 rounds.
         \subcf{Supreme Armor Discipline}
-        If the fighter chose agility, he gains a \plus1 bonus to physical defenses.
+        If the fighter chose agility, he gains a \plus2 bonus to physical defenses.
 
         If the fighter chose resilience, he doubles the damage reduction granted by his armor discipline ability.
         \subcf{Supreme Combat Discipline}
@@ -1651,7 +1640,7 @@ This choice determines a great deal about your character's abilities.
         At the end of each round, the monk heals hit points equal to her \ki power.
 
         \cf{Mnk}[13th]{Perfect Mind}[Mag]
-        The monk becomes immune to hostile Mind effects.
+        The monk becomes immune to hostile \glossterm{Mind} effects.
 
         \cf{Mnk}[15th]{Perfect Body}[Mag]
         The monk becomes immune to being blinded, deafened, fatigued, exhausted, nauseated, sickened, and staggered.
@@ -2057,7 +2046,7 @@ This choice determines a great deal about your character's abilities.
 
         If the ranger does not see his quarry for more than a week, it is no longer considered his quarry.
 
-        \par The amount by which a ranger's damage and skill checks increase against his quarry is called his quarry bonus.
+        The amount by which a ranger's damage and skill checks increase against his quarry is called his quarry bonus.
         The ranger's quarry bonus improves by \plus1 at his 5th ranger level and every 5 ranger levels thereafter.
         His penalties against targets other than his quarry remains the same.
 
@@ -2223,23 +2212,21 @@ This choice determines a great deal about your character's abilities.
         All rogues have the following abilities.
 
         \cf{Rog}{Sneak Attack}
-        If a rogue can catch an opponent when it is unable to defend himself effectively from her attack, she can strike a vital spot for extra damage.
-        She can choose to deal 1d6 points of extra damage if the target is \unaware or is suffering \glossterm{overwhelm penalties} from being surrounded by enemies (see \pcref{Overwhelm}).
-        Like other sources of bonus damage, this damage is doubled on a critical hit.
-        She can only make one sneak attack per round, but she can choose whether an attack is a sneak attack after seeing her attack results.
+        Once per round, when a rogue hits with a physical attack against a creature unable to defend itself effectively, she can make that attack a sneak attack.
+        She can make a sneak attack if her target is \unaware, \defenseless, or suffering \glossterm{overwhelm penalties} from being surrounded by enemies (see \pcref{Overwhelm}).
+        A sneak attack deals 1d6 points of bonus damage.
 
         The extra damage dealt by a sneak attack increases by 1d6 at her 3rd rogue level and every two rogue levels thereafter.
 
-        \par Ranged attacks can count as sneak attacks only if the target is within 30 feet.
+        Ranged attacks can count as sneak attacks only if the target is within 30 feet.
         A rogue can't strike with deadly accuracy from beyond that range.
 
-        With a sap (blackjack) or an unarmed strike, a rogue can make a sneak attack that deals \glossterm{nonlethal damage} instead of lethal damage.
-        She cannot use a weapon that deals lethal damage to deal nonlethal damage in a sneak attack, not even with the usual half damage penalty.
-
-        A rogue can only sneak attack creatures with a discernible body structure -- oozes, incorporeal creatures, and some plants lack vital areas to attack.
+        A rogue can only sneak attack creatures with a discernible body structure.
+        Oozes, incorporeal creatures, and some plants lack vital areas to attack.
         Any creature that is immune to critical hits is not vulnerable to sneak attacks.
         The rogue must be able to see the target well enough to pick out a vital spot and must be able to reach such a spot.
         A rogue cannot sneak attack while striking the limbs of a creature whose vitals are beyond reach.
+        Usually, this means she can only make sneak attacks against creatures no more than two size categories larger than her.
 
         \cf{Rog}[2nd]{Skill Talent}
         The rogue's skills improve.
@@ -2297,11 +2284,6 @@ This choice determines a great deal about your character's abilities.
         The rogue rolls d8s instead of d6s for her sneak attack dice on this ambush attack.
         This is an ambush attack, and only works once per creature.
 
-        \subcf{8th -- Dispelling Ambush (Su)*}
-        The rogue attempts to dispel all magical effects on the creature damaged by this ambush attack, as the effect of the \spell{dispel magic} spell.
-        The rogue's spellpower wih this ability is equal to her trick power.
-        This is an ambush attack, and only works once per creature.
-
         \subcf{8th -- Immobilizing Ambush*}
         A creature damaged by this ambush is \immobilized for 2 rounds.
         This is an ambush attack, and only works once per creature.
@@ -2313,11 +2295,6 @@ This choice determines a great deal about your character's abilities.
 
         \subcf{12th -- Perfect Precision}
         The rogue has no range limit on her sneak attacks.
-
-        \subcf{12th -- Spellreaving Ambush [Mag]*}
-        All spells and magical effects on the creature struck by this ambush attack are dispelled.
-        Spells and effects that cannot be removed by \spell{dispel magic} are unaffected.
-        This is an ambush attack, and only works once per creature.
 
         \subcf{12th -- Agonizing Ambush*}
         The rogue makes a Trick power vs. Mental attack against the struck creature.
@@ -2453,7 +2430,7 @@ This choice determines a great deal about your character's abilities.
 
         If the wild magic roll succeeds, the spell is cast normally.
         Failure means the spell is miscast instead (see \pcref{Miscasting}).
-        In addition, if the sorcerer fails a wild magic roll, he cannot cast spells of the same level as the miscast spell for 10 minutes per spell level.
+        In addition, if the sorcerer fails a wild magic roll, he cannot cast spells of the same level as the miscast spell for 10 minutes.
         Effects that prevent miscasts do not prevent the sorcerer from losing access to spells in this way.
 
         If a sorcerer has the ability to cast a spell without spending a spell slot, he may choose not to make a wild magic roll when casting the spell.
@@ -2472,12 +2449,12 @@ This choice determines a great deal about your character's abilities.
         He chooses a single spell he knows with a maximum level equal to half his sorcerer level.
         It gains one of the following benefits, as he chooses.
         \begin{itemize}
-            \item Augment: The sorcerer chooses one of the spell's augments.
-                The cost to use that augment is reduced by one level (to a minimum of zero).
+            \item Distant: The spell's range doubles.
             \item Flawless: The sorcerer cannot miscast the spell.
                 If he would miscast it, the spell simply fails without effect.
                 In addition, he automatically succeeds at all Concentration checks he makes to cast the spell.
             \item Mastered: The sorcerer no longer needs verbal or somatic components to cast the spell.
+            \item Simplified: The sorcerer can cast the spell as if it was one level lower than its actual level (minimum 1).
         \end{itemize}
 
         If he trades the knowledge of his chosen spell for a different spell, he may choose a new personal spell (including the new spell he just gained).
@@ -2508,8 +2485,8 @@ This choice determines a great deal about your character's abilities.
         This ability does not protect the sorcerer from his own miscast effects.
         If he already has magic resistance from another source, he increases that magic resistance by 2.
 
-        \cf{Sor}[13th]{Spontaneous Augmentation}[Mag]
-        Whenever he casts a spell, the sorcerer may reduce the level cost of one of the spell's augments by one level (to a minimum of zero).
+        \cf{Sor}[13th]{Arcane Recovery}[Mag]
+        After the sorcerer fails a wild magic roll, he regains the ability to cast spells of the same level after 5 rounds, rather than 10 minutes.
 
         \cf{Sor}[17th]{Spell Absorption}[Mag]
         Whenever the sorcerer resists a spell with his magic resistance, he gains the ability to cast that spell once during the next 5 rounds.
@@ -2518,7 +2495,7 @@ This choice determines a great deal about your character's abilities.
         Once he casts the spell, he expends the absorbed energy, can cannot cast it again.
 
         \cf{Sor}[20th]{Font of Power}[Mag]
-        After failing a wild magic roll, the sorcerer must wait one round per spell level before he can cast spells of the same level, rather than ten minutes per spell level.
+        After the sorcerer fails a wild magic roll, he regains the ability to cast spells of the same level after 1 round.
 
     \subsection{Variant Sorcerer}
 
@@ -2546,26 +2523,26 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} >{\lcol}X}
             \tb{Level} & \tb{Combat Prowess} & \tb{Special} \\
             \hline
-            \spellwarpedprogressionrow{1}  & Innate magic, invocation, warp regeneration  \\
-            \spellwarpedprogressionrow{2}  & Spellwarped body, surge of power             \\
-            \spellwarpedprogressionrow{3}  & Magical senses, spellwarped aspect           \\
-            \spellwarpedprogressionrow{4}  & Invocation                                   \\
-            \spellwarpedprogressionrow{5}  & Manipulate magic                             \\
-            \spellwarpedprogressionrow{6}  & Invocation                                   \\
-            \spellwarpedprogressionrow{7}  & Spellwarped aspect                           \\
-            \spellwarpedprogressionrow{8}  & Invocation                                   \\
-            \spellwarpedprogressionrow{9}  & Magic resistance                             \\
-            \spellwarpedprogressionrow{10} & Invocation                                   \\
-            \spellwarpedprogressionrow{11} & Spellwarped aspect                           \\
-            \spellwarpedprogressionrow{12} & Invocation                                   \\
-            \spellwarpedprogressionrow{13} & Improved manipulate magic                    \\
-            \spellwarpedprogressionrow{14} & Invocation                                   \\
-            \spellwarpedprogressionrow{15} & Spellwarped aspect                           \\
-            \spellwarpedprogressionrow{16} & Invocation                                   \\
-            \spellwarpedprogressionrow{17} & Mass surge of power                          \\
-            \spellwarpedprogressionrow{18} & Invocation                                   \\
-            \spellwarpedprogressionrow{19} & Permanent surge of power, spellwarped aspect \\
-            \spellwarpedprogressionrow{20} & Invocation                                   \\
+            \spellwarpedprogressionrow{1}  & Innate magic, invocation, warp regeneration \\
+            \spellwarpedprogressionrow{2}  & Spellwarped body                            \\
+            \spellwarpedprogressionrow{3}  & Magical senses, spellwarped aspect          \\
+            \spellwarpedprogressionrow{4}  & Invocation                                  \\
+            \spellwarpedprogressionrow{5}  & Manipulate magic                            \\
+            \spellwarpedprogressionrow{6}  & Invocation                                  \\
+            \spellwarpedprogressionrow{7}  & Spellwarped aspect                          \\
+            \spellwarpedprogressionrow{8}  & Invocation                                  \\
+            \spellwarpedprogressionrow{9}  & Magic resistance                            \\
+            \spellwarpedprogressionrow{10} & Invocation                                  \\
+            \spellwarpedprogressionrow{11} & Spellwarped aspect                          \\
+            \spellwarpedprogressionrow{12} & Invocation                                  \\
+            \spellwarpedprogressionrow{13} & Improved manipulate magic                   \\
+            \spellwarpedprogressionrow{14} & Invocation                                  \\
+            \spellwarpedprogressionrow{15} & Spellwarped aspect                          \\
+            \spellwarpedprogressionrow{16} & Invocation                                  \\
+            \spellwarpedprogressionrow{17} & \tdash                                      \\
+            \spellwarpedprogressionrow{18} & Invocation                                  \\
+            \spellwarpedprogressionrow{19} & Spellwarped aspect                          \\
+            \spellwarpedprogressionrow{20} & Invocation                                  \\
         \end{dtabularx}
     \end{dtable}
 
@@ -2668,26 +2645,6 @@ This choice determines a great deal about your character's abilities.
 
         The spellwarped's accuracy with invocations is equal to his spellpower.
 
-        \cf{Spl}[2nd]{Surge of Power}[Mag]
-        As a swift action, the spellwarped can invoke a surge of magical power that allows him to embody his innate magic more fully for 5 rounds.
-        Invoking a surge of power causes the spellwarped to take one warp damage.
-        The effect of his surge depends on his choice of innate magic, as described below.
-        \subcf{Alteration -- Fast Healing}
-        The spellwarped heals his wounds rapidly.
-        At the end of each round, he heals hit points equal to his spellpower.
-        \subcf{Pyromancy -- Flame Aura}
-        The spellwarped emanates an aura of fire.
-        At the end of each round, enemies adjacent to him take fire damage equal to his spellpower.
-        \subcf{Telekinesis -- Kinetic Deflection}
-        The spellwarped reflexively deflects attacks away with his mind.
-        He gains a \plus2 bonus to his \glossterm{physical defenses}.
-        In addition, he may use his Intelligence to determine his \glossterm{physical defenses} in place of his Dexterity or Constitution.
-        \subcf{Temporal -- Accelerate Movement}
-        The spellwarped accelerates his movement and reactions.
-        He gains a \plus2 bonus to his Reflex defense and a \plus10 foot bonus to his movement speed.
-        He also gains a bonus on his Sprint checks equal to his spellpower.
-        At spellpower 8, 14, and 20, the defense bonus increases by 1 and the speed bonus increases by 10 feet.
-
         \cf{Spl}[2nd]{Spellwarped Body}[Mag]
         The spellwarped's body is fundamentally altered by exposure to magic.
         He shows signs of the magic coursing through his body: strangely or inconsistently colored hair, natural skin markings which often resemble runes, and so on.
@@ -2700,11 +2657,11 @@ This choice determines a great deal about your character's abilities.
         \subcf{Pyromancy -- Energy Resistance}
         The spellwarped gains \glossterm{damage reduction} against cold and fire damage equal to twice his spellpower.
         \subcf{Telekinesis -- Tactile Telekinesis}
-        The spellwarped gains a \plus1 bonus to Strength and Dexterity-based checks.
+        The spellwarped gains a \plus2 bonus to Strength and Dexterity-based checks.
         This bonus increases by 1 at spellpower 5 and every 5 spellpower thereafter.
-        \subcf{Temporal -- Accelerate Mind}
-        The spellwarped gains a \plus2 bonus to Intelligence and Perception-based checks.
-        This bonus increases by 1 at spellpower 5 and every 5 spellpower thereafter.
+        \subcf{Temporal -- Accelerated Movement}
+        The spellwarped gains a \plus2 bonus to his Reflex defense and a \plus10 foot bonus to his movement speed.
+        At spellpower 8, 14, and 20, the defense bonus increases by 1 and the speed bonus increases by 10 feet.
 
         \cf{Spl}[3rd]{Magical Senses}[Mag]
         The spellwarped learns to recognize the telltale signs of his chosen magic.
@@ -2758,38 +2715,54 @@ This choice determines a great deal about your character's abilities.
         He can toggle his enhanced senses on or off as a swift action.
         If the ability does not have a duration, such as the temporal magical senses ability, this aspect has no effect.
 
+        \cf{Spl}[2nd]{Surge of Power}[Mag]
+        \subcf{Telekinesis -- Kinetic Deflection}
+        The spellwarped reflexively deflects attacks away with his mind.
+        He gains a \plus2 bonus to his \glossterm{physical defenses}.
+        \subcf{Temporal -- Accelerate Movement}
+        The spellwarped accelerates his movement and reactions.
+        He gains a \plus2 bonus to his Reflex defense and a \plus10 foot bonus to his movement speed.
+        At spellpower 8, 14, and 20, the defense bonus increases by 1 and the speed bonus increases by 10 feet.
+
         \parhead{Alteration}
-        \subcf{Damage Reduction}
-        The spellwarped gains \glossterm{damage reduction} against physical damage equal to his spellpower.
-        Adamantine weapons ignore this damage reduction and negate it for 1 round.
         \subcf{Alter Movement}
         The spellwarped gains his choice of the Acrobatics Mastery, Climb Mastery, Jump Mastery, or Swim Mastery feats.
         He may select this aspect multiple times, choosing a different bonus feat each time.
-        \subcf{7th -- Alter Size}
-        When the spellwarped uses his surge of power, he can increase or decrease his size by one size category, as he chooses.
-        The size alteration lasts as long as his surge of power does.
-        This is a sizing effect, and does not stack with other sizing effects.
+        \subcf{7th -- Damage Reduction}
+        The spellwarped gains \glossterm{damage reduction} against physical damage equal to his spellpower.
+        Adamantine weapons ignore this damage reduction and negate it for 1 round.
+        \subcf{11th -- Alter Size}
+        As a standard action, the spellwarped can grow or shrink by one size category, up to a maximum of one size category different from his normal size.
+        This effect lasts until he uses this ability again.
+        This is a \glossterm{Sizing} effect, and does not stack with other Sizing effects.
         \subcf{11th -- Regeneration}
-        While the spellwarped's surge of power is active, at the end of each round, he can heal critical damage equal to half his spellpower.
-        If he does, that replaces his normal fast healing for that round.
+        At the end of each round, the spellwarped heals hit points equal to his spellpower.
 
         \parhead{Pyromancy}
+        \subcf{Flame Aura}
+        The spellwarped emanates an aura of fire.
+        At the end of each round, enemies adjacent to him take fire damage equal to his spellpower.
+        He can suppress or resume this aura as a \glossterm{swift action}.
         \subcf{Intense Flames}
         The spellwarped can choose to have his spellwarped abilities ignore an amount of fire damage reduction equal to his spellpower.
         \subcf{7th -- Flame Eater}
-        When the spellwarped resists fire damage with his spellwarped body ability, he gains temporary hit points equal to the damage resisted for 5 minutes.
+        When the spellwarped resists fire damage with his spellwarped body ability, he heals hit points equal to the damage resisted.
         \subcf{7th -- Retributive Flames}
         When a creature makes a melee attack against the spellwarped, it takes \spelldamage{fire}[d6].
         Each creature can only take this damage once per round.
 
         \parhead{Telekinesis}
+        \subcf{Kinetic Deflection}
+        The spellwarped may use his Intelligence in place of his Dexterity or Constitution to determine his \glossterm{physical defenses}.
         \subcf{Improved Object Manipulation}
         When the spellwarped uses his object manipulation ability, he can affect objects within 10 feet, with a weight limit of up to two pounds per spellpower.
         He has enough control to make checks with a DR of up to 10.
+        \subcf{7th -- Force Barrier}
+        The spellwarped gains a \plus1 bonus to \glossterm{physical defenses}.
         \subcf{7th -- Shieldbearer}
         The spellwarped may wield shields, except tower shields, telekinetically.
         The shield floats in his square, granting him its bonus to his physical defenses just as if he were wielding it.
-        He does not need a free hand to wield the shield and suffers no \glossterm{encumbrance penalty} or arcane spell failure from it.
+        He does not need a free hand to wield the shield, and suffers no arcane spell failure for its use, though he is still affected by its \glossterm{encumbrance penalty}.
         The shield follows him as he moves.
         If it is forcibly removed from his square, he loses control over it and it falls to the ground.
         \subcf{11th -- Mind Armory}
@@ -2798,21 +2771,23 @@ This choice determines a great deal about your character's abilities.
         Each weapon threatens an area and contributes to overwhelm penalties, just as with his normal mind blade ability.
 
         \parhead{Temporal}
-        \subcf{Acceleration}
-        The spellwarped gains a \plus10 foot bonus to speed in all his movement modes.
+        \subcf{Accelerate Mind}
+        The spellwarped gains a \plus2 bonus to Intelligence-based and Perception-based checks.
+        \subcf{Sprint Mastery}
+        The spellwarped gains the Sprint Mastery feat (see page \featpref{Sprint Mastery}).
+        \subcf{Swift}
+        The spellwarped gains the Swift feat (see page \featpref{Swift}).
         \subcf{Uncanny Dodge}
         The spellwarped can react to danger before his senses would normally allow him to do so.
         He reduces his overwhelm penalties by 1.
         If his overwhelm penalty is reduced to 0, he is not considered to be overwhelmed.
         In addition, he is not \unaware when attacked by surprise.
-        \subcf{7th -- Accelerate Attack}
-        While his surge of power is active, the spellwarped can make an additional \glossterm{strike} at a \minus5 penalty when making a standard attack.
-        This does not stack with any other effects which grant extra strikes.
-        \subcf{7th -- Empowered Acceleration}
-        The spellwarped gains a \plus30 foot bonus to speed in all his movement modes.
-        \subcf{11th -- Improved Uncanny Dodge}
+        \subcf{7th -- Improved Uncanny Dodge}
         The spellwarped reduces his overwhelm penalties by 2.
         If his overwhelm penalty is reduced to 0, he is not considered to be overwhelmed.
+        \subcf{15th -- Accelerate Attack}
+        Whenever the spellwarped makes a \glossterm{standard attack}, he can make an additional \glossterm{strike} at a \minus5 penalty.
+        This does not stack with any other effects which grant extra strikes.
 
         \cf{Spl}[5th]{Manipulate Magic}[Su]
         The spellwarped can channel his innate magic to manipulate magical abilities.
@@ -2832,20 +2807,10 @@ This choice determines a great deal about your character's abilities.
         If this would reduce the duration by more than one day, the duration is instead reduced by one day.
 
         \cf{Spl}[9th]{Magic Resistance}[Mag]
-        The magic within the spellwarped allows him to completely ignore other magic, granting him \glossterm{magic resistance} equal to 10 \add his Constitution or character level, whichever is higher.
+        The magic within the spellwarped allows him to completely ignore other magic, granting him \glossterm{magic resistance} equal to 10 \add his Constitution or level, whichever is higher.
 
         \cf{Spl}[13th]{Improved Manipulate Magic}[Mag]
         The spellwarped can use his manipulate magic ability to affect any ally within \rngmed range of him.
-
-        \cf{Spl}[17th]{Mass Surge of Power}[Mag]
-        The spellwarped can share the benefits of his surge of power with his allies.
-        When he uses his surge of power, he can also affect up to five additional willing creatures within \rngmed range of him.
-
-        \cf{Spl}[19th]{Permanent Surge of Power}[Mag]
-        The spellwarped can maintain the full power of his innate magic without limit.
-        He can gain the effects of his surge of power indefinitely.
-        He may toggle the ability on or off as a swift action at will, without taking warp damage.
-        This does not allow him to activate his mass surge of power ability at will, and his allies only gain the benefits for 5 rounds.
 
     \subsection{Invocations}\label{Invocations}
 
@@ -2896,7 +2861,7 @@ This choice determines a great deal about your character's abilities.
             After that limit is reached, he must rest for 5 minutes before flying again.
 
             \subcf{12th -- Reinforced Flight}
-            This functions like the alteration flight invocation, except that the spellwarped can fly while encumbered.
+            This functions like the flight invocation, except that the spellwarped can fly while encumbered.
 
         \subsubsection{Pyromancy Invocations}
             Unless otherwise noted, a pyromancer's invocations are \glossterm{Fire} effects, and shed light equivalent to a torch for their duration.
@@ -3015,8 +2980,11 @@ This choice determines a great deal about your character's abilities.
         \subsubsection{Temporal Invocations}
             Unless otherwise noted, all temporal invocations are \glossterm{Temporal} effects.
 
-            \subcf{Haste}
-            This invocation functions like the \spell{haste} spell.
+            \subcf{Decelerate}
+            As a standard action, the spellwarped can attempt to slow a creature down.
+            He makes a Spellpower vs. Mental attack against a creature within \rngmed range.
+            Success means the target is \immobilized for 2 rounds.
+            Failure means it moves at half speed for 2 rounds.
             \subcf{Timelock}
             As a standard action, the spellwarped can attempt to lock a creature in time.
             He makes a Spellpower vs. Mental attack against an adjacent creature.
@@ -3025,11 +2993,13 @@ This choice determines a great deal about your character's abilities.
             Critical success means it slips selectively out of time for 1 round.
             During that time, it can take no actions, but can be harmed or moved as normal.
             It is not considered \helpless.
-            \par A creature affected by this ability is immune to the effect for 5 rounds.
+            \par A creature affected by this ability is immune to the effect for 5 rounds, even if the attack failed.
 
             \subcf{4th -- Disjointed Time}
             As a standard action, the spellwarped chaotically disrupts the local flow of time of a creature within \rngclose range.
             The target is \impaired with attacks and checks for 5 rounds.
+            \subcf{4th -- Haste}
+            This invocation functions like the \spell{haste} spell.
 
             \subcf{6th -- Flash Step}
             As a move action, the spellwarped can accelerate a willing creature within \rngclose range so much that he can seem to pause time for everyone but the target.
@@ -3042,18 +3012,18 @@ This choice determines a great deal about your character's abilities.
             \subcf{8th -- Inhuman Speed}
             As a move action, the spellwarped can accelerate himself to immense speed, allowing him to move up to five times his speed.
             During this time, he cannot be followed or withdrawn from, can move through squares occupied by enemies or threatened by blocking enemies without penalty, and can treat liquids as if they were solid ground.
-            \subcf{8th -- Mass Haste}
-            This invocation functions like the \spell{haste} spell with the Mass augment applied.
 
-            \subcf{12th -- Mass Flash Step}
-            This invocation functions like the flashstep invocation, except that it affects up to five willing creatures.
             \subcf{10th -- Timestream}
             The spellwarped manipulates time in a \arealarge, 10 ft.\ wide line-shaped zone that extends out from him for 5 rounds.
             All creatures and objects that pass through the line are \slowed for 1 round.
             The spellwarped can exclude his allies from the effect.
             The timestream is virtually invisible, requiring a DR 30 Awareness check to notice in a clear environment, though objects passing through the effect can make it more obvious.
+            \subcf{10th -- Mass Haste}
+            This invocation functions like the \spell{haste} spell with the Mass augment applied.
 
-            \subcf{14th -- Mass Slow}
+            \subcf{12th -- Mass Flash Step}
+            This invocation functions like the flashstep invocation, except that it affects up to five willing creatures.
+            \subcf{12th -- Mass Slow}
             This invocation functions like the \spell{slow} spell with the Mass augment applied.
 
             \subcf{16th -- Time Reversal}
@@ -3093,7 +3063,7 @@ This choice determines a great deal about your character's abilities.
             \wizardprogressionrow{10} & 7  & Arcane insight           \\
             \wizardprogressionrow{11} & 7  & Attuned spell            \\
             \wizardprogressionrow{12} & 8  & Arcane insight           \\
-            \wizardprogressionrow{13} & 8  & Augmented attunement     \\
+            \wizardprogressionrow{13} & 8  & Shared attunement     \\
             \wizardprogressionrow{14} & 9  & Arcane insight           \\
             \wizardprogressionrow{15} & 9  & Attuned spell            \\
             \wizardprogressionrow{16} & 10 & Arcane insight           \\
@@ -3189,7 +3159,7 @@ This choice determines a great deal about your character's abilities.
         At her 2nd wizard level, the wizard gains a second cantrip, which can be chosen from any non-prohibited school.
 
         \cf{Wiz}{Rituals}
-        Wizards can perform rituals to create unique magical effects (see \pcref{Rituals}).
+        Wizards can perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
         A wizard begins play with a ritual book containing two arcane rituals of her choice (see \pcref{Arcane Rituals}).
 
         \cf{Wiz}[2nd]{Arcane Insight}\label{Arcane Insight}
@@ -3260,8 +3230,9 @@ This choice determines a great deal about your character's abilities.
         A wizard can have only one contingency active at a time.
         If she creates another contingency, it replaces her old contingency.
 
-        \cf{Wiz}[13th]{Augmented Attunement}[Mag]
-        Whenever the wizard attunes to a spell, she may reduce the cost of one augment to the spell by one level.
+        \cf{Wiz}[13th]{Shared Attunement}[Mag]
+        When the wizard uses her attuned spell ability, she may attune to a spell she casts on a target other than herself.
+        She may only have one such spell attuned at once, and still counts against her limit on the number of attuned spells she can have active at once.
 
         \cf{Wiz}[17th]{Chain Contingency}[Mag]
         The wizard may ready two spells in her contingency instead of a single spell.
