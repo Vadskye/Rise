@@ -1,5 +1,5 @@
 \ExplSyntaxOn
-\DeclareDocumentEnvironment{monsection}{o m m}
+\DeclareDocumentEnvironment{monsection}{o m m o}
 {
     \vspace{1em}
     \begin{thesamepage}
@@ -22,6 +22,13 @@
         \columnbreak
         \begin{flushright}
             \large\textbf{Level~#3}
+            \IfValueTF{#4}
+            {
+                \textbf{~[CR~#4]}
+            }
+            {
+                \textbf{~[CR~1]}
+            }
         \end{flushright}
     \end{multicols}
 }
