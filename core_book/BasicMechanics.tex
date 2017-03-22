@@ -299,7 +299,7 @@
     \subsection{Defenses}\label{Defenses}
         Usually, when you are attacked, the attacker has to make an attack roll against a specific defense.
         If the attack roll is at least as high as that defense, the attack succeeds.
-        There are three physical defenses and two non-physical defenses.
+        There are two physical defenses and two non-physical defenses.
         \begin{itemize}
             \item Armor defense (AD): Your Armor defense protects you from normal physical attacks, such as attempts to hit you with a sword.
                 It is the most commonly used defense.
@@ -317,18 +317,19 @@
             Each of your defenses is calculated in the following way:
 
             \begin{figure}[h]
-                \centering 10 \add Base defense bonus or defense attribute \add size modifier \add other bonuses and penalties
+                \centering 10 \add Base defense bonus or defense attribute \add other bonuses and penalties
             \end{figure}
 
             The attributes and relevant bonuses which apply to each defense are described in \trefnp{Defense Calculations}.
-            Your base defense bonus for Armor defense is equal to your combat prowess.
-            Your base defense bonus for Fortitude, Reflex, and Mental defense is equal to your character level.
+            Your primary defense bonus is the largest number you add to that defense.
+            For Armor defense, your primary defense bonus is equal to your combat prowess.
+            For Fortitude, Reflex, and Mental defense, primary defense bonus is equal to your character level.
             It does not include the defense bonuses granted by your \glossterm{base class}.
 
             \begin{dtable!*}
                 \lcaption{Defense Calculations}
                 \begin{dtabularx}{\textwidth}{l l l l l >{\lcol}X}
-                    \tb{Defense Name} & \tb{Defense Bonus} & \tb{Attributes} & \tb{Body Armor Modifier} & \tb{Shield Modifier} & \tb{Size Modifier} \\
+                    \tb{Defense Name} & \tb{Primary Defense Bonus} & \tb{Attributes} & \tb{Body Armor Modifier} & \tb{Shield Modifier} & \tb{Size Modifier} \\
                     \hline
                     Armor defense     & Combat prowess & Dex or Con & Yes & Yes & Yes \\
                     Fortitude defense & Level          & Con or Str & No  & No  & No  \\
