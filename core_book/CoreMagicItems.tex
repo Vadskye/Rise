@@ -1357,11 +1357,13 @@ Magic items are objects that have been imbued with magical energy. They can take
         \begin{longtabuwrapper}
             \begin{longtabu}{l X l l l l}
                 \tb{Wondrous Items} & \tb{Description} & \tb{Cost} & \tb{Item Level} & \tb{Page} \\
+                \mitemref{Answerstone} & Answers yes or no questions & \mitempricetable{Active}{1} & \mitempref{Answerstone} \\
                 \mitemref{Bag of Holding}, Small & Objects within are weightless & \mitempricetable{Passive}{0} & \mitempref{Bag of Holding} \\
                 \mitemref*{Bag of Holding}, Medium & Objects within are weightless & \mitempricetable{Passive}{1} & \mitempref{Bag of Holding} \\
                 \mitemref{Candle of Truth} & Can create a zone of truth & \mitempricetable{Active}{2} & \mitempref{Candle of Truth} \\
                 \mitemref{Friendstone} & Can summon an attuned creature once & 1,500 gp & 7th & \mitempref{Friendstone} \\
                 \mitemref*{Bag of Holding}, Large & Objects within are weightless & \mitempricetable{Passive}{2} & \mitempref{Bag of Holding} \\
+                \mitemref{Truthstone} & Answers yes or no questions accurately & \mitempricetable{Active}{3} & \mitempref{Answerstone} \\
                 \mitemref{Witch's Broom} & Flying broomstick & \mitempricetable{Passive}{7} & \mitempref{Witch's Broom} \\
 
                 \tb{Scrolls and Potions} & \tb{Description} & \tb{Cost} & \tb{Item Level} & \tb{Page} \\
@@ -1493,14 +1495,20 @@ Magic items are objects that have been imbued with magical energy. They can take
 
         Wondrous items are items which are inherently magical in some way.
 
-        \begin{magicitemdef}{Answerstone}[Active]{3}{Divination [Knowledge]}{bone, metal, or stone}
+        \begin{magicitemdef}{Answerstone}[Active]{1}{Divination [Knowledge]}{bone, metal, or stone}
             \magicitemability{Active}[Standard action] If you shake this stone and ask a simple yes or no question, you receive an answer of either ``yes'', ``no'', or ``unclear''.
             The answer has a 75\% chance of being correct.
-            If the answerstone is incorrect, it will always answer ``unclear''.
-            The answerstone will always answer ``unclear'' if asked questions about events more than thirty minutes into the future or past, farther than ten miles from its current location.
+            If the answerstone is incorrect, it will answer ``yes'' or ``no'' randomly.
+            After being asked a question once, it will always give the same answer to that question (and any sufficiently similar question) for 24 hours.
+
+            The answerstone will always answer ``unclear'' if asked questions about events more than thirty minutes into the future or past, or farther than ten miles from its current location.
             It can only answer questions about observable quantities (including spells).
 
             Although answerstones are usually made of stone, they can also be made of other sturdy materials.
+        \end{magicitemdef}
+
+        \begin{magicitemdef}{Truthstone}[Active]{3}{Divination [Knowledge]}{bone, metal, or stone}
+            \magicitemability{Active}[Standard action] This item functions like an answerstone, except that it does not have a random chance of failure.
         \end{magicitemdef}
 
         \begin{dtable*}
