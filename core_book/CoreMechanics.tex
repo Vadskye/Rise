@@ -47,6 +47,21 @@ It defines how attributes work and explains how to make physical attacks in comb
         The more difficult the task, the higher the DR will be.
         If your result is at least equal to the DR, the check succeeds.
         This usually means you accomplish a task successfully.
+        Normal Difficulty Ratings are described in \tref{Difficulty Ratings}.
+
+        \begin{dtable}
+            \lcaption{Difficulty Ratings}
+            \begin{dtabularx}{\columnwidth}{p{8em} X}
+                \tb{Difficulty (DR)} & \tb{Example (Skill Used)} \\
+                \hline
+                Trivial (0) & Notice something in plain sight (Awareness) \\
+                Average (5) & Palm a coin-sided object (Sleight of Hand) \\
+                Tough (10) & Swim in stormy water (Swim) \\
+                Heroic (15) & Leap across a 30-foot chasm with a running start (Jump) \\
+                Legendary (20) & Track a squad of orcs across hard ground after 24 hours of rainfall (Survival) \\
+                Godlike (30) & Swim up a waterfall (Swim) \\
+            \end{dtabularx}
+        \end{dtable}
 
         \subsubsection{Critical Success}
             If your check result is at least 10 higher than the DR, your check is a \glossterm{critical success}.
@@ -86,7 +101,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             At the start of the movement phase, all creatures designate a location they attempt to move to, or some other type of movement they attempt to make (see \pcref{Movement and Positioning}).
             Once everyone has declared their actions, those actions resolve.
             Normally, you will simply arrive in the destination you are trying to reach.
-            For details about resolving conflicting movements, see \pcref{Resolving Actions}).
+            For details about resolving conflicting movements, see \pcref{Resolving Actions}.
 
             In addition to this movement, you can take other minor actions that require motion, such as drawing a weapon.
             There is no specific limit on the number of minor actions you can perform in this way, but you must be able to perform all of them simultaneously.
@@ -271,7 +286,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
             \parhead{Mutually Exclusive Actions} Sometimes, actions that should take place at the same time directly conflict with each other.
             This most commonly happens when two creatures move to the same place.
-            In this case, each involved character rolls \glossterm{initiative} (see \pcref{Initiative}.
+            In this case, each involved character rolls \glossterm{initiative} (see \pcref{Initiative}).
             The creature with the highest initiative result succeeds.
             All other creatures come as close as possible to completing their intended action.
 
@@ -658,6 +673,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             Larger creatures deal more damage with their weapons.
             Each creature size above Medium grants a \plus2d bonus to damage with strikes.
             Likewise, each creature size below Medium imposes a \minus1d penalty to damage with strikes.
+            This is described in \tref{Size in Combat}.
 
         \subsubsection{Spell Damage}
             Your damage dice with a \glossterm{spell} are based on the damage dice of the spell.
@@ -675,16 +691,16 @@ It defines how attributes work and explains how to make physical attacks in comb
                 \lcaption{Standard Damage}
                 \begin{dtabularx}{\columnwidth}{l X}
                     \tb{Statistic Value} & \tb{Damage} \\
-                    0---1 & 1d8 \\
-                    2---3 & 1d10 \\
-                    4---5 & 2d6 \\
-                    6---7 & 2d8 \\
-                    8---9 & 2d10 \\
-                    10---11 & 4d6 \\
-                    12---13 & 4d8 \\
-                    14---15 & 4d10 \\
-                    16---17 & 5d10 \\
-                    18---19 & 6d10 \\
+                    0--1 & 1d8 \\
+                    2--3 & 1d10 \\
+                    4--5 & 2d6 \\
+                    6--7 & 2d8 \\
+                    8--9 & 2d10 \\
+                    10--11 & 4d6 \\
+                    12--13 & 4d8 \\
+                    14--15 & 4d10 \\
+                    16--17 & 5d10 \\
+                    18--19 & 6d10 \\
                     20 & 7d10 \\
                 \end{dtabularx}
             \end{dtable}
@@ -734,7 +750,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
             \parhead{Natural Armor} Creatures with unusually tough skin or thick hide, including most monsters, gain bonuses to their Armor defense.
             These bonuses stack with any armor such creatures might wear.
-            \parhead{Size Modifier} Large creatures have a bonus to Fortitude defense and a penalty to Reflex defense.
+            \parhead{Size Modifier} Large creatures have a bonus to Fortitude defense and a penalty to Reflex defense and Stealth.
             For details, see \tref{Size in Combat}.
 
     \subsection{Initiative}\label{Initiative}
@@ -761,6 +777,19 @@ It defines how attributes work and explains how to make physical attacks in comb
 
     \subsection{Circumstances, Bonuses, and Penalties}
 
+        Many effects can grant bonuses or penalties to actions you take.
+
+        \subsubsection{Arbitrary Modifiers}
+
+            Circumstances frequently modify your odds of success when making attacks and checks, or when defending yourself from attacks.
+            There are two kinds of circumstantial modifiers.
+            Circumstances that make you better or worse at your task give you a bonus or penalty to your attack or check.
+            Circumstnaces that make the task easier or harder increase or decrease the \glossterm{difficulty rating} of the task, or the defense of the attacked creature.
+
+            Most circumstances grant a \plus2 bonus or impose a \minus2 penalty.
+            Extraordinary circumstances can potentially have greater modifiers.
+            All circumstantial modifiers should be used at the discretion of the GM.\@
+
         \subsubsection{Overwhelm}\label{Overwhelm}
             When a creature is being attacked by multiple foes at once, it is less able to defend itself.
             A creature is considered overwhelmed if it is being threatened by more than one creature.
@@ -780,37 +809,6 @@ It defines how attributes work and explains how to make physical attacks in comb
             For example, when using a longbow with a range increment of 100 feet against a target 170 feet away, you take a \minus1 penalty to accuracy.
             You cannot make a ranged attack beyond 10 range increments away from you.
 
-        \subsubsection{Size in Combat}\label{Size in Combat}
-            Size affects your space and reach in combat.
-            In addition, your Fortitude and Reflex defenses are affected by your size modifier.
-            These effects are shown on \trefnp{Size in Combat}.
-
-            \begin{dtable*}
-                \lcaption{Size in Combat}
-                \begin{dtabularx}{\textwidth}{l l l l l X}
-                    \tb{Size} & \tb{Space\fn{1}} & \tb{Reach\fn{1}} & \tb{Size Modifier\fn{2}} & \tb{Stealth Modifier} & \tb{Example Creature} \\
-                    \hline
-                    Fine              & 1/2 ft.    & 0          & \minus8  & \plus16 & Fly                      \\
-                    Diminutive        & 1 ft.      & 0          & \minus6  & \plus12 & Toad                     \\
-                    Tiny              & 2-1/2 ft.  & 0          & \minus4  & \plus8  & Cat                      \\
-                    Small             & 5 ft.      & 5 ft.      & \minus2  & \plus4  & Halfling                 \\
-                    Medium            & 5 ft.      & 5 ft.      & \minus0  & \plus0   & Human                    \\
-                    Large (tall)      & 10 ft.     & 10 ft.     & \plus2 & \minus4   & Ogre                     \\
-                    Large (long)      & 10 ft.     & 5 ft.      & \plus2 & \minus4   & Horse                    \\
-                    Huge (tall)       & 15 ft.     & 15 ft.     & \plus4 & \minus8   & Cloud giant              \\
-                    Huge (long)       & 15 ft.     & 10 ft.     & \plus4 & \minus8   & Bulette                  \\
-                    Gargantuan (tall) & 20 ft.     & 20 ft.     & \plus6 & \minus12  & 50-ft.\ animated statue  \\
-                    Gargantuan (long) & 20 ft.     & 15 ft.     & \plus6 & \minus12  & Kraken                   \\
-                    Colossal (tall)   & 30\add ft. & 30\add ft. & \plus8 & \minus16  & Colossal animated object \\
-                    Colossal (long)   & 30\add ft. & 20\add ft. & \plus8 & \minus16  & Great wyrm red dragon    \\
-                \end{dtabularx}
-                1 Creatures can vary in space and reach.  These are simply typical values.  \\
-                2 Applies to Fortitude defense. The same value is applied in reverse to Reflex defense. For example, a \plus4 bonus to Fortitude defense corresponds to a \minus4 penalty to Reflex defense..
-            \end{dtable*}
-
-            Unusually large or small creatures also have other special rules apply to them, as described in \pcref{Special Size Rules}.
-            In addition, larger creatures deal more damage with weapons, and smaller creatures deal less damage with weapons, as described in \tref{Weapon Damage and Creature Size}.
-
         \subsubsection{Cover}\label{Cover}
 
             Cover represents any obstacle that physically prevents you from striking your target, such as a tree or intervening creature.
@@ -824,7 +822,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             The obstacle takes any damage from a successful attack normally.
 
             \parhead{Passive Cover} Passive cover is provided by immobile obstacles between you and your target, such as trees and walls.
-            Creatures with passive cover gain a \plus4 bonus to \glossterm{physical defenses}.
+            Creatures with passive cover gain a \plus2 bonus to \glossterm{physical defenses}.
             In addition, creatures with passive cover can hide (see \pcref{Stealth}).
 
             \parhead{Measuring Cover}
@@ -855,10 +853,10 @@ It defines how attributes work and explains how to make physical attacks in comb
             A creature can benefit from both passive and active cover.
             Cover of the same type generally doesn't stack; a creature behind two trees is not substantially more protected than a creature behind a single tree.
             However, exceptionally well covered creatures, such as a creature behind an arrow slit in a castle, may receive additional benefits.
-            In that case, each additional major obstacle increases the miss chance by 10\% or grants an additional \plus2 bonus to physical defenses, as appropriate.
+            In that case, each additional major obstacle increases the miss chance by 10\% or grants an additional \plus1 bonus to physical defenses, as appropriate.
 
         \subsubsection{Concealment}\label{Concealment}
-            Concealment represents anything which makes it more difficult to see your target, such as dim lighting. A creature with concealment from you gains a \plus4 bonus to physical defenses. The concealment bonus does not apply if you can't see your opponent (such as if you close your eyes).
+            Concealment represents anything which makes it more difficult to see your target, such as dim lighting. A creature with concealment from you gains a \plus2 bonus to \glossterm{physical defenses}. The concealment bonus does not apply if you can't see your opponent (such as if you close your eyes).
             Determining concealment works similarly to determining cover.
             You must use the same \glossterm{points of origin} and \glossterm{target square} when determining concealment that you would use to determine cover.
 
@@ -875,7 +873,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             Paralyzed, bound, and unconscious creatures are helpless.
 
             \parhead{Coup de Grace}\label{Coup de Grace} As a full-round action, you can deliver a coup de grace to a helpless opponent within your \glossterm{reach} that you can see.
-            You automatically hit with your weapon and score a critical hit. If the damage exceeds the struck creature's Fortitude defense, it immediately dies.
+            You automatically hit with your weapon and score a \glossterm{critical success}. If the damage exceeds the struck creature's \glossterm{bloodied value}, it immediately dies.
 
             Delivering a coup de grace requires focused concentration and methodical action. This leaves you \defenseless. If you take damage in excess of your Fortitude defense while delivering a coup de grace, your attempt fails.
             If your target stops being helpless during your coup de grace attempt for any reason, the attempt fails.
@@ -886,6 +884,60 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \subsubsection{Surprise Attacks}\label{Surprise Attacks}
             Sometimes, creatures are not aware that combat is taking place when the combat starts. This most commonly happens with ambushes. Any creature that is not aware of the combat continues taking whatever actions it would normally be taking until it becomes aware of the combat. It is \unaware until that point.
+
+    \subsection{Size in Combat}\label{Size in Combat}
+        Size affects your space and reach in combat.
+        In addition, your Fortitude and Reflex defenses are affected by your size modifier.
+        These effects are shown on \trefnp{Size in Combat}.
+
+        \begin{dtable*}
+            \lcaption{Size in Combat}
+            \begin{dtabularx}{\textwidth}{l l l l l X}
+                \tb{Size} & \tb{Space\fn{1}} & \tb{Reach\fn{1}} & \tb{Size Modifier\fn{2}} & \tb{Damage Modifier\fn{3}} & \tb{Example Creature} \\
+                \hline
+                Fine              & 1/2 ft.    & 0          & \plus8  & \minus4d & Fly                      \\
+                Diminutive        & 1 ft.      & 0          & \plus6  & \minus3d & Toad                     \\
+                Tiny              & 2-1/2 ft.  & 0          & \plus4  & \minus2d & Cat                      \\
+                Small             & 5 ft.      & 5 ft.      & \plus2  & \minus1d & Halfling                 \\
+                Medium            & 5 ft.      & 5 ft.      & \tdash  & \tdash & Human                    \\
+                Large (tall)      & 10 ft.     & 10 ft.     & \minus2 & \plus2d & Ogre                     \\
+                Large (long)      & 10 ft.     & 5 ft.      & \minus2 & \plus2d & Horse                    \\
+                Huge (tall)       & 15 ft.     & 15 ft.     & \minus4 & \plus4d & Cloud giant              \\
+                Huge (long)       & 15 ft.     & 10 ft.     & \minus4 & \plus4d & Bulette                  \\
+                Gargantuan (tall) & 20 ft.     & 20 ft.     & \minus6 & \plus6d & 50-ft.\ animated statue  \\
+                Gargantuan (long) & 20 ft.     & 15 ft.     & \minus6 & \plus6d & Kraken                   \\
+                Colossal (tall)   & 30\add ft. & 30\add ft. & \minus8 & \plus8d & Colossal animated object \\
+                Colossal (long)   & 30\add ft. & 20\add ft. & \minus8 & \plus8d & Great wyrm red dragon    \\
+            \end{dtabularx}
+            1 Creatures can vary in space and reach.  These are simply typical values.  \\
+            2 Applies to Reflex defense and Stealth defense.
+            The same value is applied in reverse to Fortitude defense.
+            For example, a Huge creature has a \minus4 penalty to Reflex defense and Stealth, but a \plus4 bonus to Fortitude defense. \\
+            3. This damage modifier applies to \glossterm{strikes}.
+        \end{dtable*}
+
+        Unusually large or small creatures also have other special rules apply to them, as described below.
+        In addition, larger creatures deal more damage with weapons, and smaller creatures deal less damage with weapons, as described in \tref{Weapon Damage and Creature Size}.
+
+        \subsubsection{Very Small Creatures}
+            \parhead{Space} If a creature takes up less than a single square of space, you can fit multiple creatures in that square. You can fit four Tiny creatures in a square, twenty-five Diminuitive creatures, or 100 Fine creatures.
+
+            \parhead{Reach} Creatures that take up less than 1 square of space typically have a natural reach of 0 feet, meaning they can't reach into adjacent squares. They must enter an opponent's square to attack in melee. You can attack into your own square if you need to, so you can attack such creatures normally. Since they have no natural reach, they do not threaten the squares around them.
+
+            If a creature without a natural reach uses a reach weapon, it gains no benefits or penalties (see \pcref{Reach Weapon}).
+
+            \parhead{Movement} Creatures three size categories smaller than you are not considered obstacles and do not hinder your movement.
+
+        \subsubsection{Very Large Creatures}
+            \parhead{Space} Very large creatures take up multiple squares. Anything which affects a single square the creature occupies affects the creature.
+
+            \parhead{Reach} Creatures that take up more than 1 square typically have a natural reach of 10 feet or more, meaning that they can reach targets even if they aren't in adjacent squares. Creatures with a large natural reach can attack anyone within their reach, including adjacent foes.
+
+            Creatures with a large natural reach using reach weapons can strike at up to double their natural reach but can't strike at their natural reach or less, just like Medium sized creatures.
+
+            \parhead{Movement} Creatures three size categories larger than you are not considered obstacles and do not hinder your movement.
+
+            \parhead{Immunities} Creatures at least three size categories larger than you are difficult to fight. You cannot get a \glossterm{critical success} with \glossterm{strikes} or contribute to overwhelm penalties against such creatures. If you can reach a vulnerable point on the creature, such as by flying or by using ranged weapons, you can get critical successes and contribute to overwhelm penalties normally.
 
     \subsection{Stacking Rules}\label{Stacking Rules}
         Usually, modifiers stack with each other, meaning that you add or subtract all of the modifiers to get the final result. However, some modifiers do not stack with each other, as described below. When bonuses don't stack with each other, you only apply the largest bonus. Likewise, when penalties don't stack with each ather, you only apply the largest penalty.
@@ -985,6 +1037,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         If you take damage, you can become bloodied (see Bloodied, below).
 
         \parhead{Bloodied} When you drop to half your hit points or below, you are \bloodied.
+        Some abilities have effects based on your \glossterm{bloodied value}, which is equal to half your maximum hit points.
         If you take additional damage, you can become disabled (see Disabled, below).
 
         \parhead{Disabled}\label{Disabled} At the end of each round, if you have no hit points remaining after resolving all other effects in the round, you become \disabled.
@@ -1194,30 +1247,6 @@ It defines how attributes work and explains how to make physical attacks in comb
         Gauntlets can also be worn to increase the power of an unarmed attack (see \pcref{Unarmed Weapons}).
 
         If you have the Unarmed Fighting feat, you become proficient with your unarmed attack, and can deal lethal damage with it (see \featpcref{Unarmed Fighting}).
-
-    \subsection{Extraordinary Size Differences}\label{Special Size Rules}
-
-        \subsubsection{Very Small Creatures}
-            \parhead{Space} If a creature takes up less than a single square of space, you can fit multiple creatures in that square. You can fit four Tiny creatures in a square, twenty-five Diminuitive creatures, or 100 Fine creatures.
-
-            \parhead{Reach} Creatures that take up less than 1 square of space typically have a natural reach of 0 feet, meaning they can't reach into adjacent squares. They must enter an opponent's square to attack in melee. You can attack into your own square if you need to, so you can attack such creatures normally. Since they have no natural reach, they do not threaten the squares around them.
-
-            If a creature without a natural reach uses a reach weapon, it gains no benefits or penalties.
-
-            \parhead{Movement} Creatures three size categories smaller than you are not considered obstacles and do not hinder your movement.
-
-        \subsubsection{Very Large Creatures}
-            \parhead{Space} Very large creatures take up multiple squares. Anything which affects a single square the creature occupies affects the creature.
-
-            \parhead{Reach} Creatures that take up more than 1 square typically have a natural reach of 10 feet or more, meaning that they can reach targets even if they aren't in adjacent squares. Creatures with a large natural reach can attack anyone within their reach, including adjacent foes.
-
-            Creatures with a large natural reach using reach weapons can strike at up to double their natural reach but can't strike at their natural reach or less, just like Medium sized creatures.
-
-            \parhead{Movement} Creatures three size categories larger than you are not considered obstacles and do not hinder your movement.
-
-            \parhead{Stealth} Large creatures take a penalty to Stealth checks equal to their special size modifier.
-
-            \parhead{Immunities} Creatures at least three size categories larger than you are difficult to fight. You cannot score critical hits or contribute to overwhelm penalties against such creatures. If you can reach a vulnerable point on the creature, such as by flying or by using ranged weapons, you can score critical hits, but you still do not contribute to overwhelm penalties.
 
     \subsection{Mounted Combat}\label{Mounted Combat}
         \parhead{Horses in Combat} Warhorses and warponies can serve readily as combat steeds. Light horses, ponies, and heavy horses, however, are frightened by combat. If you don't dismount, you must make a DR 20 Ride check each round as a move action to control such a horse. If you succeed, you can perform a standard action after the move action. If you fail, you can't do anything else until your next turn.
