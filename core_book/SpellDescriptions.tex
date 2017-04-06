@@ -949,8 +949,8 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess \spelldamage{slashing}. In addition, the target takes one point of critical damage after this damage is dealt, regardless of its current hit points.
-                \spellcritical As above, except the target takes critical damage equal to your spellpower.
+                \spellsuccess \spelldamage{slashing}. In addition, the target takes one point of vital damage after this damage is dealt, regardless of its current hit points.
+                \spellcritical As above, except the target takes vital damage equal to your spellpower.
                 \spellfailure Half damage, and no additional effects.
             \end{spellattack}
         \end{spelleffects}
@@ -960,7 +960,7 @@
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
-        \spellaugment{5}{Empowered}{The damage increases to \spelldamageemp{slashing}, and the automatic critical damage dealt is doubled.}
+        \spellaugment{5}{Empowered}{The damage increases to \spelldamageemp{slashing}, and the automatic vital damage dealt is doubled.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -1653,9 +1653,9 @@
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
-        \spellaugment{1}{Moderate Wounds}{For every 10 points of healing, this spell can instead cure 1 critical damage.}
-        \spellaugment{2}{Serious Wounds}{For every 5 points of healing, this spell can instead cure 1 critical damage.}
-        \spellaugment{3}{Critical Wounds}{For every 2 points of healing, this spell can instead cure 1 critical damage.}
+        \spellaugment{1}{Moderate Wounds}{For every 10 points of healing, this spell can instead cure 1 vital damage.}
+        \spellaugment{2}{Serious Wounds}{For every 5 points of healing, this spell can instead cure 1 vital damage.}
+        \spellaugment{3}{Critical Wounds}{For every 2 points of healing, this spell can instead cure 1 vital damage.}
         \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage becomes \spelldamage{}[d8]}
         \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{}. If the Mass augment is applied, the damage instead increases to \spelldamage{}[d10].}
     \end{spellaugments}
@@ -1765,7 +1765,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess \spelldamage{life}. In addition, for 2 rounds, the target automatically dies if it takes critical damage while it has no hit points remaining.
+                \spellsuccess \spelldamage{life}. In addition, for 2 rounds, the target automatically dies if it takes vital damage while it has no hit points remaining.
 
                 If the target dies in this way, you gain temporary hit points equal to twice your spellpower. These temporary hit points last for 1 round per level the target had.
 
@@ -1839,7 +1839,7 @@
             \spelltgt{You}
         \end{spelltargetinginfo}
         \begin{spelleffects}
-            \spelleffect Whenever you take damage, half of the damage (rounded down) is not dealt to you immediately. This damage is tracked separately. At the end of the spell's duration, you take all of the delayed damage at once. When this happens, any damage in excess of your hit points is dealt as critical damage.
+            \spelleffect Whenever you take damage, half of the damage (rounded down) is not dealt to you immediately. This damage is tracked separately. At the end of the spell's duration, you take all of the delayed damage at once. When this happens, any damage in excess of your hit points is dealt as vital damage.
             \spelldur \durmed
         \end{spelleffects}
         \begin{spellfooter}
@@ -3251,7 +3251,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \begin{spellattack}
-                \spellsuccess The target takes \spelldamage{life}. If it takes damage in this way, it is \impaired with attacks and checks for 2 rounds. All damage dealt in excess of the target's hit points is dealt as critical damage.
+                \spellsuccess The target takes \spelldamage{life}. If it takes damage in this way, it is \impaired with attacks and checks for 2 rounds. All damage dealt in excess of the target's hit points is dealt as vital damage.
                 \spellcritical As above, but double damage.
                 \spellfailure As above, but half damage.
             \end{spellattack}
@@ -3300,7 +3300,7 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spelleffect The target is healed for \spelldamageemp{}.
-            For every point of healing granted by this spell, it can instead cure 1 point of critical damage.
+            For every point of healing granted by this spell, it can instead cure 1 point of vital damage.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -3661,7 +3661,7 @@
         \miscastrandom
     \end{spellfooter}
     \begin{spellaugments}
-        \spellaugment{2}{Critical Wounds}{All damage dealt in excess of the target's hit points is dealt as critical damage.}
+        \spellaugment{2}{Critical Wounds}{All damage dealt in excess of the target's hit points is dealt as vital damage.}
         \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage and healing become \spelldamage{}[d8].}
         \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{life}.}
     \end{spellaugments}
@@ -3776,9 +3776,9 @@
         \end{spelltargetinginfo}
         \begin{spelleffects}
             \spellspecial When you cast this spell, you choose which target will be protected.
-            \spelleffect The protected creature cannot take critical damage. Any damage it takes while it has no hit points remaining, or critical damage it would take for other reasons, is simply ignored. It is still \disabled when it has no hit points remaining.
+            \spelleffect The protected creature cannot take vital damage. Any damage it takes while it has no hit points remaining, or vital damage it would take for other reasons, is simply ignored. It is still \disabled when it has no hit points remaining.
 
-            If the targets become farther than 100 feet from each other, or if the unprotected target takes critical damage, the spell immediately ends.
+            If the targets become farther than 100 feet from each other, or if the unprotected target takes vital damage, the spell immediately ends.
             \spelldur \durshort
         \end{spelleffects}
     \end{spellcontent}
@@ -4084,7 +4084,7 @@
             \spelleffect Whenever a creature in the area would lose hit points, you may choose to protect it.
             If you do, the protected creature instead loses half that many hit points (rounded down), and you lose the other half (rounded up).
             This effect applies after damage reduction and all other similar effects, and hit point loss caused by this effect cannot be reduced in any way.
-            If you take damage in excess of your hit points in this way, the excess damage is dealt directly as critical damage.
+            If you take damage in excess of your hit points in this way, the excess damage is dealt directly as vital damage.
         \end{spelleffects}
     \end{spellcontent}
     \begin{spellfooter}
@@ -4762,7 +4762,7 @@
         \miscastexplode
     \end{spellfooter}
     \begin{spellaugments}
-        \spellaugment{3}{Critical Wounds}{At the end of every round, you can heal the target for one critical damage per two spellpower instead of the normal healing.}
+        \spellaugment{3}{Critical Wounds}{At the end of every round, you can heal the target for one vital damage per two spellpower instead of the normal healing.}
         \spellaugment{3}{Regrowth}{Instead of the normal effect, you can regrow lost portions of the target's body and reattach severed limbs or body parts. Both you and the target must do nothing but concentrate on regrowing the lost body part or reattaching the severed limb for the spell's duration.}
     \end{spellaugments}
 \end{spellsection}
@@ -5390,7 +5390,7 @@
             \spelleffect As long as both targets are within \rngmed range of each other, they share damage that would be dealt to the protected creature.
             When the protected creature would lose hit points, it instead loses half that many hit points (rounded down), and the other target loses hit points equal to the other half (rounded up).
             This effect applies after damage reduction and all other similar effects, and hit point loss caused by this effect cannot be reduced in any way.
-            If the protecting target takes damage in excess of its hit points in this way, the excess damage is dealt directly as critical damage.
+            If the protecting target takes damage in excess of its hit points in this way, the excess damage is dealt directly as vital damage.
             \spelldur \durshort \dismissable
         \end{spelleffects}
     \end{spellcontent}
