@@ -207,11 +207,11 @@ A character's skills describe the myriad of talents that people have.
                 At least two inches wide      & 10      \\
                 At least one inch wide        & 15      \\
                 Less than than one inch wide  & 20      \\
-                \tb{Precarious Surface}       & \tb{DR} \\
-                Water covered                 & 5      \\
-                Slightly mobile (rope bridge) & 5      \\
-                Ice or oil covered            & 10      \\
-                Very mobile (slack rope)      & 15      \\
+                \tb{Surface Condition}       & \tb{DR Modifier} \\
+                Water covered                 & \plus2      \\
+                Slightly mobile (rope bridge) & \plus2      \\
+                Ice or oil covered            & \plus5      \\
+                Very mobile (slack rope)      & \plus5      \\
             \end{dtabularx}
         \end{dtable}
 
@@ -604,9 +604,9 @@ A character's skills describe the myriad of talents that people have.
                 Simple device (wagon wheel, typical knot) & 5 \\
                 Average device (door hinge, complex knot) & 10 \\
                 Challenging device (typical lock or trap) & 15 \\
-                Difficult device (good lock) & 20 \\
+                Difficult device (good lock, complex trap) & 20 \\
                 Magic trap & 15 \add double spell level \\
-                Extraordinary device (masterwork lock, complex trap) & 25 \\
+                Extraordinary device (extraordinary lock) & 25 \\
             \end{dtabularx}
         \end{dtable}
 
@@ -615,7 +615,7 @@ A character's skills describe the myriad of talents that people have.
         You can attempt to leave no trace of your tampering while making a Devices check to activate or subvert a device. This increases the Devices DR by 5, but increases the Awareness DR to notice the tampering by 10.
 
     \subsection{Activate Device}
-        As a standard action, you can make a Devices check to make a device perform a function it was designed to do, even if you lack the normal requirements. For example, you could tie a knot, apply a poison, lock or unlock a lock without its key, or activate a trap without using its normal triggering mechanism (hopefully without being in its line of fire).
+        As a standard action, you can make a Devices check to make a device perform a function it was designed to do, even if you lack the normal requirements. For example, you could tie or untie a knot, apply a poison, lock or unlock a lock without its key, or activate a trap without using its normal triggering mechanism (hopefully without being in its line of fire).
 
     \subsection{Analyze Device}
         As a standard action, you can evaluate a device to understand how it functions. The DR is 10 lower than normal. Success grants you an insight into the device's mechanisms. For every 5 points by which you succeed, you glean additional information about the device, which can also help you estimate the device's true difficulty. Failure means you learn nothing about the device.
@@ -741,8 +741,6 @@ A character's skills describe the myriad of talents that people have.
         \parhead{Running Start}\label{Running Start} If you move at least twenty feet before jumping, you have a running start.
         Jumping without a running start is difficult, and you take a \minus5 penalty to all Jump checks.
 
-        \parhead{Land Speed} For every 5 feet by which your land speed is slower than 30 feet, you take a \minus2 penalty to Jump checks. If you jump with a running start, for every 10 feet by which your land speed exceeds 30 feet, you gain a \plus2 bonus to your Jump checks.
-
     \subsection{Hop Up}
         You can make a DR 5 Jump check while moving to jump up onto an object as tall as your waist, such as a table or small boulder. Doing so counts as 5 feet of movement. Success means you land on top of the object and can continue your movement. Failure indicates you stop your movement where you are. You do not need to get a running start to hop up.
 
@@ -751,14 +749,15 @@ A character's skills describe the myriad of talents that people have.
 
     \subsection{Leap}\label{Leap}
         As part of movement, you can make a Jump check to jump.
-        You move forward any number of feet, up to a maximum equal to twice your Jump check result.
+        You move forward any number of feet, up to a maximum equal to one quarter of your land speed \add your Jump check result.
         Your maximum height must be no greater than half of your Jump check result, and at least equal to a quarter of your forward distance travelled.
-        For example, if you jump forward twenty feet with a Jump check result of 20, your maximum height must be between 5 and 10 feet.
+        For example, if you have a land speed of 30 feet and you get a Jump check result of 20, you can move forward a maximum of 25 feet.
+        If you instead jump forward twenty feet, your maximum height must be between 5 and 10 feet.
 
         You always reach your maximum height at the midpoint of the jump.
         However, you can interrupt your leap before travelling the full horizontal distance.
         For example, if you need to travel five feet forward and five feet vertically to reach a rope, you can start a leap which would take you ten feet forward and reach a maximum height of five feet.
-        Making such a leap would require a Jump check of 10.
+        Making such a leap would require a Jump check result of 10.
         When you reach the rope, you can stop your movement there, ignoring the forward motion which would make you travel the full ten feet.
 
         When leaping, your movement may not stopped by hitting the ground after travelling the normal distance, such as if you jump off of a ledge.
