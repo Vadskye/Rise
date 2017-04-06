@@ -334,46 +334,16 @@ This choice determines a great deal about your character's abilities.
         A cleric begins play knowing two first-level spells.
         Every even level, he learns an additional spell of any level he has access to.
         In addition, each time he gains a level, he may trade one of his existing spells for a different spell known.
-        However, he must always know at least one spell of every level he has access to.
         He may learn spells from the divine \glossterm{spell list} (see \pcref{Divine Spells}).
         In addition, he adds the spells from his domains to his divine spell list (see \pcref{Cleric Domains}).
         Sometimes these domain spells are spells that are normally available to divine spellcasters, but often they are only accessible with the domain.
 
-        The number of spells a cleric can cast per day is given on \trefnp{Cleric Spell Slots}.
-        In order to regain his spell slots for the day, the cleric must dismiss all his active spells and spend 1 hour performing a ritual, worshipping, or quietly contemplating.
-        The cleric cannot regain spell slots in this way more than once per 24 hours.
+        To cast a spell, a cleric must spend an \glossterm{action point}.
+        As he gains power, he becomes able to cast weaker spells freely.
+        He may cast spells at least two levels lower than his highest level spell known without spending an action point.
 
         A cleric can't cast spells of an alignment opposed to his own or his deity's.
         Spells associated with particular alignments are indicated by the chaos, evil, good, and law descriptors in their spell descriptions.
-
-        \begin{dtable}
-            \lcaption{Cleric Spell Slots}
-            \begin{dtabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
-                & \multicolumn{9}{c}{\tb{---{}---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---{}---}} \\
-                \hline
-                \tb{Level} & \tb{1st} & \tb{2nd} & \tb{3rd} & \tb{4th} & \tb{5th} & \tb{6th} & \tb{7th} & \tb{8th} & \tb{9th} \\
-                1st  & 3 & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                2nd  & 4 & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                3rd  & 5 & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                4th  & 6 & 3  & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                5th  & 6 & 4  & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                6th  & 6 & 5  & 3  & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                7th  & 6 & 6  & 4  & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                8th  & 6 & 6  & 5  & 3  & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                9th  & 6 & 6  & 6  & 4  & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                10th & 6 & 6  & 6  & 5  & 3  & \tdash & \tdash & \tdash & \tdash \\
-                11th & 6 & 6  & 6  & 6  & 4  & \tdash & \tdash & \tdash & \tdash \\
-                12th & 6 & 6  & 6  & 6  & 5  & 3  & \tdash & \tdash & \tdash \\
-                13th & 6 & 6  & 6  & 6  & 6  & 4  & \tdash & \tdash & \tdash \\
-                14th & 6 & 6  & 6  & 6  & 6  & 5  & 3  & \tdash & \tdash \\
-                15th & 6 & 6  & 6  & 6  & 6  & 6  & 4  & \tdash & \tdash \\
-                16th & 6 & 6  & 6  & 6  & 6  & 6  & 5  & 3  & \tdash \\
-                17th & 6 & 6  & 6  & 6  & 6  & 6  & 6  & 4  & \tdash \\
-                18th & 6 & 6  & 6  & 6  & 6  & 6  & 6  & 5  & 3  \\
-                19th & 6 & 6  & 6  & 6  & 6  & 6  & 6  & 6  & 4  \\
-                20th & 6 & 6  & 6  & 6  & 6  & 6  & 6  & 6  & 6  \\
-            \end{dtabularx}
-        \end{dtable}
 
         \begin{dtable!*}
             \lcaption{Deities}
@@ -411,20 +381,8 @@ This choice determines a great deal about your character's abilities.
         Clerics can perform divine rituals to create unique magical effects (see \pcref{Rituals}).
         A cleric begins play with a ritual book containing two divine rituals of his choice (see \pcref{Divine Rituals}).
 
-        \cf{Clr}[2nd]{Devotion}[Mag]
-        The cleric's devotion to his deity grants him additional power.
-        He gains a devotion pool with a number of devotion points in it equal to half his Willpower or half his cleric level, whichever is higher.
-        He may spend a devotion point in place of any spell slot to cast a spell from one of his domains.
-
-        After regaining spells for the day, a cleric's devotion pool is full.
-        He loses a point from his devotion pool if he acts against his deity.
-
-        The cleric can refill his devotion pool by spending an hour in prayer, supplication, or contemplation.
-        If he is in a location exclusively dedicated to his deity, such as a temple, the time required is reduced to five minutes.
-        Exceptionally holy locations may allow even faster recovery of devotion points.
-
         \cf{Clr}[2nd]{Domain Invocation}[Mag]
-        As a standard action, a cleric can spend a devotion point to invoke divine power.
+        As a standard action, a cleric can spend an action point to invoke divine power.
         He gains the domain invocations offered by one of his domains.
 
         All domain invocations affect a single creature within \rngmed range and require a special attack against a defense.
@@ -810,7 +768,7 @@ This choice determines a great deal about your character's abilities.
             \subcf{Life -- }
             \subcf{Magic -- Spellfeeder}
             The cleric gains \glossterm{magic resistance} equal to 10 \add divine power.
-            Whenever the cleric resists a spell with this magic resistance, he regains a spell slot of a level up to one lower than the level of the resisted spell.
+            Whenever the cleric resists a spell with this magic resistance, he regains hit points equal to his divine power.
             \subcf{Protection -- Martyr's Boon}
             The cleric constantly radiates a \areamed radius emanation of protective energy.
             Whenever a creature within the area would lose hit points, the cleric can choose to protect it.
@@ -903,7 +861,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Drd}{Wild Speech}[Mag]
         Druids can communicate with animals.
-        As a standard action, the druid can spend a spell slot and choose a type of animal, such as owl or wolf.
+        As a standard action, the druid can spend an action point and choose a type of animal, such as owl or wolf.
         She gains the ability to speak to and understand animals of that type for 5 minutes.
 
         This ability doesn't make the animals any more friendly or cooperative than normal.
@@ -935,42 +893,11 @@ This choice determines a great deal about your character's abilities.
         A druid begins play knowing two first-level spells.
         Every even level, she learns an additional spell of any level she has access to.
         In addition, each time she gains a level, she may trade one of her existing spells for a different spell known.
-        However, she must always know at least one spell of every level she has access to.
         A druid's spells are drawn from the spells on the nature spell list (see \pcref{Nature Spells}).
 
-        Druids have a limit on the number of spells they can cast, as given on \trefnp{Druid Spell Slots}.
-        A druid can regain all spent spell slots by meditating and becoming in tune with her environment.
-        This process takes one hour in a natural environment, or eight hours elsewhere.
-
-        \begin{dtable}
-            \lcaption{Druid Spell Slots}
-            \centering
-            \begin{dtabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
-                & \multicolumn{9}{c}{\tb{---{}---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---{}---}} \\
-                \hline
-                \tb{Level} & \tb{1st} & \tb{2nd} & \tb{3rd} & \tb{4th} & \tb{5th} & \tb{6th} & \tb{7th} & \tb{8th} & \tb{9th} \\
-                1st  & 1 & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                2nd  & 2 & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                3rd  & 3 & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                4th  & 3 & 1  & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                5th  & 3 & 2  & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                6th  & 3 & 3  & 1  & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                7th  & 3 & 3  & 2  & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                8th  & 3 & 3  & 3  & 1  & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                9th  & 3 & 3  & 3  & 2  & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                10th & 3 & 3  & 3  & 3  & 1  & \tdash & \tdash & \tdash & \tdash \\
-                11th & 3 & 3  & 3  & 3  & 2  & \tdash & \tdash & \tdash & \tdash \\
-                12th & 3 & 3  & 3  & 3  & 3  & 1  & \tdash & \tdash & \tdash \\
-                13th & 3 & 3  & 3  & 3  & 3  & 2  & \tdash & \tdash & \tdash \\
-                14th & 3 & 3  & 3  & 3  & 3  & 3  & 1  & \tdash & \tdash \\
-                15th & 3 & 3  & 3  & 3  & 3  & 3  & 2  & \tdash & \tdash \\
-                16th & 3 & 3  & 3  & 3  & 3  & 3  & 3  & 1  & \tdash \\
-                17th & 3 & 3  & 3  & 3  & 3  & 3  & 3  & 2  & \tdash \\
-                18th & 3 & 3  & 3  & 3  & 3  & 3  & 3  & 3  & 1  \\
-                19th & 3 & 3  & 3  & 3  & 3  & 3  & 3  & 3  & 3  \\
-                20th & 3 & 3  & 3  & 3  & 3  & 3  & 3  & 3  & 3  \\
-            \end{dtabularx}
-        \end{dtable}
+        To cast a spell, a druid must spend an \glossterm{action point}.
+        As she gains power, she becomes able to cast weaker spells freely.
+        She may cast spells at least two levels lower than her highest level spell known without spending an action point.
 
         \cf{Drd}{Rituals}
         Druids can perform nature rituals to create unique magical effects (see \pcref{Rituals}).
@@ -983,7 +910,7 @@ This choice determines a great deal about your character's abilities.
         At her 3rd druid level, and every odd druid level thereafter, the druid learns an additional wild aspect.
 
         Unless otherwise noted, embodying a wild aspect is a standard action.
-        Embodying a wild aspect costs a spell slot of any level.
+        Embodying a wild aspect costs an \glossterm{action point}.
         Once embodied, a wild aspect persists until the druid embodies a new aspect or dismisses the aspect.
         If the druid embodies a new wild aspect, the previous aspect ends immediately.
         All wild aspects can be dismissed as a swift action.
@@ -1168,7 +1095,7 @@ This choice determines a great deal about your character's abilities.
     She uses the plant or animal's position to determine range, visible targets, and so on.
     She does not require verbal or somatic components to cast her spells in this form, but is unable to cast spells or perform rituals that require material components or focus objects.
 
-    While not possessing a plant or animal, the druid can meditate to regain spent spell slots, or she can focus on reincarnating her physical form.
+    While not possessing a plant or animal, the druid can rest, or she can focus on reincarnating her physical form.
     Creating a new body in this way takes 12 straight hours of concentration.
     At the end of that time, the druid is reincarnated in a new body in her location, as the effect of the \spell{reincarnate} ritual, except that she can choose her race from among the races listed (not including the ``Other'' race).
 
@@ -2364,179 +2291,6 @@ This choice determines a great deal about your character's abilities.
         \cf{Rog}[19th]{Ambush Master}
         The rogue's ambush attacks function on the first attack the rogue makes against a particular creature in a single round, rather than within a single encounter.
 
-\section{Sorcerer}\label{Sorcerer}
-    \begin{dtable}
-        \lcaption{Sorcerer Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} c >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{Spells} & \tb{Special} \\
-            \hline
-            \sorcererprogressionrow{1}  & 2 & Cantrip, spells, wild magic, wild tolerance \\
-            \sorcererprogressionrow{2}  & 3 & Cantrip, personal spell     \\
-            \sorcererprogressionrow{3}  & 3 & Innate magic                \\
-            \sorcererprogressionrow{4}  & 4 & Personal spell              \\
-            \sorcererprogressionrow{5}  & 4 & Focused casting             \\
-            \sorcererprogressionrow{6}  & 5 & Personal spell              \\
-            \sorcererprogressionrow{7}  & 5 & Innate magic                \\
-            \sorcererprogressionrow{8}  & 6 & Personal spell              \\
-            \sorcererprogressionrow{9}  & 6 & Magic resistance            \\
-            \sorcererprogressionrow{10} & 7 & Personal spell              \\
-            \sorcererprogressionrow{11} & 7 & Innate magic                \\
-            \sorcererprogressionrow{12} & 8 & Personal spell              \\
-            \sorcererprogressionrow{13} & 8 & Spontaneous personalization \\
-            \sorcererprogressionrow{14} & 9 & Personal spell              \\
-            \sorcererprogressionrow{15} & 9 & Innate magic                \\
-            \sorcererprogressionrow{16} & 10 & Personal spell              \\
-            \sorcererprogressionrow{17} & 10 & Spell absorption            \\
-            \sorcererprogressionrow{18} & 11 & Personal spell              \\
-            \sorcererprogressionrow{19} & 11 & Innate magic                \\
-            \sorcererprogressionrow{20} & 12 & Font of power, personal spell              \\
-        \end{dtabularx}
-    \end{dtable}
-
-    \classbasics{Alignment} Any.
-
-    \classbasics{Class Skills}
-    \subparhead{Intelligence} Knowledge (arcana, the planes).
-    \subparhead{Perception} Awareness, Spellcraft.
-    \subparhead{Other} Bluff, Intimidate, Persuasion.
-
-    \subsection{Base Class Abilities}
-        A character with sorcerer as a base class gains the following abilities.
-
-        \classbasics{Skill Points} 5.
-
-        \classbasics{Combat Prowess} \plus1. This benefit is included in the class table.
-
-        \classbasics{Defenses} \plus4 Mental.
-
-        \classbasics{Action Points} \plus3.
-
-        \cf{Sor}{Weapon and Armor Proficiency}
-        Sorcerers are proficient with simple weapons  and one other weapon group.
-        They are not proficient with any type of armor or shield.
-        Armor of any type interferes with a sorcerer's arcane gestures, which can cause his spells with somatic components to fail.
-
-        \cf{Sor}{Wild Tolerance}[Mag]
-        When the sorcerer fails a wild magic roll, the spell's normal effect happens in addition to its miscast effect.
-        See Wild Magic, below, for details.
-
-        \cf{Sor}{Enhanced Spellpower}[Mag]
-        The sorcerer gains a \plus2 bonus to spellpower with his sorcerer spells.
-
-    \subsection{Class Abilities}
-        All sorcerers have the following abilities.
-
-        \cf{Sor}{Spells}
-        A sorcerer casts arcane spells using his Willpower.
-        The maximum spell level a sorcerer can learn or cast is equal to half his sorcerer level (minimum 1) or his Willpower, whichever is lower.
-        A sorcerer's \glossterm{spellpower} is normally equal to his character level.
-
-        A sorcerer begins play knowing two first-level spells.
-        Every even level, he learns an additional spell of any level he has access to.
-        In addition, each time he gains a level, he may trade one of his existing spells for a different spell known.
-        However, he must always know at least one spell of every level he has access to.
-        A sorcerer's spells are drawn from the spells on the arcane spell list (see \pcref{Arcane Spells}).
-
-        Sorcerers do not have a limit on the number of spells they can cast each day.
-        Their ability to cast spells is limited by their lack of control over their magic.
-        See Wild Magic, below, for details.
-
-        \cf{Sor}{Wild Magic}[Mag]\label{Wild Magic}
-        Every time a sorcerer casts a spell, except cantrips, he must make a \glossterm{wild magic roll}.
-        To make a wild magic roll, roll d20 \add half sorcerer level or half Willpower, whichever is higher.
-        The DR of the roll is equal to 10 \add the spell's level.
-        This roll is not an attack or check, and is not modified by abilities that affect attacks or checks.
-        On a natural 1, this roll always fails, regardless of other modifiers.
-
-        If the wild magic roll succeeds, the spell is cast normally.
-        Failure means the spell is miscast instead (see \pcref{Miscasting}).
-        In addition, if the sorcerer fails a wild magic roll, he cannot cast spells of the same level as the miscast spell for 10 minutes.
-        Effects that prevent miscasts do not prevent the sorcerer from losing access to spells in this way.
-
-        If a sorcerer has the ability to cast a spell without spending a spell slot, he may choose not to make a wild magic roll when casting the spell.
-
-        \cf{Sor}{Cantrip}
-        Cantrips are minor spells which do not require effort to use.
-        A sorcerer chooses one cantrip from the list of cantrips on \pref{Cantrip List}.
-        He may use the cantrip at will.
-        Cantrips cannot be miscast, and are not affected by the sorcerer's wild magic ability.
-        For all other purposes, cantrips are treated as 0th level spells.
-
-        At his 2nd sorcerer level, the sorcerer learns a second cantrip of his choice.
-
-        \cf{Sor}[2nd]{Personal Spell}
-        The sorcerer's spells are unique to him.
-        He chooses a single spell he knows with a maximum level equal to half his sorcerer level.
-        It gains one of the following benefits, as he chooses.
-        \begin{itemize}
-            \item Distant: The spell's range doubles.
-            \item Flawless: The sorcerer cannot miscast the spell.
-                If he would miscast it, the spell simply fails without effect.
-                In addition, he automatically succeeds at all Concentration checks he makes to cast the spell.
-            \item Mastered: The sorcerer no longer needs verbal or somatic components to cast the spell.
-            \item Simplified: The sorcerer can cast the spell as if it was one level lower than its actual level (minimum 1).
-        \end{itemize}
-
-        If he trades the knowledge of his chosen spell for a different spell, he may choose a new personal spell (including the new spell he just gained).
-        At his 4th sorcerer level, and every even sorcerer level thereafter, the sorcerer gains a new personal spell.
-        He may choose a new spell, or a spell he has already chosen as a personal spell.
-        However, the spell's level \add the number of personalizations on the spell cannot exceed half his sorcerer level \add 1.
-
-        \cf{Sor}[3rd]{Innate Magic}[Mag]
-        The sorcerer becomes inherently magical.
-        He may choose an arcane spell with a maximum level equal to half his sorcerer level.
-        The spell must be a \glossterm{targeted spell} and have a duration of \durshort or longer.
-        He does not need to know the spell.
-        The sorcerer constantly gains the benefits of that spell.
-        If the spell has secondary effects, such as the \spell{avatar of suffering} spell, the duration of the secondary effects is not changed.
-
-        When the sorcerer chooses a spell in this way, the sorcerer may also choose specific augments for that spell, as long as the spell's effective level does not exceed half the sorcerer's level.
-        If the spell's effect ends for any reason, such as if its effect is discharged, it takes effect on the sorcerer again 5 minutes later.
-
-        At his 7th sorcerer level, and every 4 sorcerer levels thereafter, the sorcerer gains the benefit of an additional spell.
-
-        \cf{Sor}[5th]{Focused Casting}
-        If the sorcerer spends one minute focusing on casting a spell, he does not need to make a wild magic roll.
-        This prevents him from miscasting the spell due to wild magic.
-        If his concentration is broken while casting a spell in this way, the sorcerer automatically miscasts the spell and suffers consequences as if he had failed a wild magic roll.
-
-        \cf{Sor}[9th]{Magic Resistance}[Mag]
-        The sorcerer gains \glossterm{magic resistance} equal to 10 \add his character level or Constitution, whichever is higher.
-        This ability does not protect the sorcerer from his own miscast effects.
-        If he already has magic resistance from another source, he increases that magic resistance by 2.
-
-        \cf{Sor}[13th]{Arcane Recovery}[Mag]
-        After the sorcerer fails a wild magic roll, he regains the ability to cast spells of the same level after 5 rounds, rather than 10 minutes.
-
-        \cf{Sor}[17th]{Spell Absorption}[Mag]
-        Whenever the sorcerer resists a spell with his magic resistance, he gains the ability to cast that spell once during the next 5 rounds.
-        The spell retains all augments, effects from feats and other abilities, and similar modifications from the original caster, and the sorcerer cannot choose any other augments or apply effects from his own abilities.
-        However, he makes all other decisions required to cast the spell, and uses his spellpower to determine the spell's effects.
-        Once he casts the spell, he expends the absorbed energy, can cannot cast it again.
-
-        \cf{Sor}[20th]{Font of Power}[Mag]
-        After the sorcerer fails a wild magic roll, he regains the ability to cast spells of the same level after 1 round.
-
-    \subsection{Variant Sorcerer}
-
-        Warlocks are sorcerers that draw power from pacts with otherworldly creatures.
-
-        \subsubsection{Warlock}
-
-            Warlocks cast spells without training, like sorcerers.
-            However, while sorcerers have innate magical power, warlocks draw power from dark pacts they have made with demons, fae, or other otherworldly creatures.
-
-            \altcf{Wild Magic} The warlock does not gain this ability.
-
-            \altcf{Pact Magic} Every time the warlock casts a spell, he must make a pact magic roll.
-            To make a pact magic roll, roll d20 \add half warlock level or half Willpower, whichever is higher.
-            The DR of the roll is equal to 10 \add the spell's level.
-            This roll is not an attack or check, and is not modified by abilities that affect attacks or checks.
-            On a natural 1, this roll always fails, regardless of other modifiers.
-
-            Success means the spell is cast normally.
-            Failure means that the warlock's pact backfires, allowing the dark entities which gave him power to influence the world instead.
-
 \section{Spellwarped}\label{Spellwarped}
     \begin{dtable}
         \lcaption{Spellwarped Progression}
@@ -3070,32 +2824,32 @@ This choice determines a great deal about your character's abilities.
             During this time, all objects and creatures are frozen in place and are completely invulnerable to the spellwarped, though he may affect them with invocations normally.
             After using this ability, he must wait 5 rounds before he can use it again.
 
-\section{Wizard}\label{Wizard}
+\section{Mage}\label{Mage}
     \begin{dtable}
-        \lcaption{Wizard Progression}
+        \lcaption{Mage Progression}
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} c >{\lcol}X}
             \tb{Level} & \tb{Combat Prowess} & \tb{Spells} & \tb{Special} \\
             \hline
-            \wizardprogressionrow{1}  & 2  & Cantrip, rituals, spells \\
-            \wizardprogressionrow{2}  & 3  & Arcane insight, cantrip  \\
-            \wizardprogressionrow{3}  & 3  & Attuned spell            \\
-            \wizardprogressionrow{4}  & 4  & Arcane insight           \\
-            \wizardprogressionrow{5}  & 4  & Predictive spells        \\
-            \wizardprogressionrow{6}  & 5  & Arcane insight           \\
-            \wizardprogressionrow{7}  & 5  & Attuned spell            \\
-            \wizardprogressionrow{8}  & 6  & Arcane insight           \\
-            \wizardprogressionrow{9}  & 6  & Contingency              \\
-            \wizardprogressionrow{10} & 7  & Arcane insight           \\
-            \wizardprogressionrow{11} & 7  & Attuned spell            \\
-            \wizardprogressionrow{12} & 8  & Arcane insight           \\
-            \wizardprogressionrow{13} & 8  & Shared attunement     \\
-            \wizardprogressionrow{14} & 9  & Arcane insight           \\
-            \wizardprogressionrow{15} & 9  & Attuned spell            \\
-            \wizardprogressionrow{16} & 10 & Arcane insight           \\
-            \wizardprogressionrow{17} & 10 & Chain contingency        \\
-            \wizardprogressionrow{18} & 11 & Arcane insight           \\
-            \wizardprogressionrow{19} & 11 & Attuned spell            \\
-            \wizardprogressionrow{20} & 12 & Arcane insight, archmage \\
+            \wizardprogressionrow{1}  & 2  & Rituals, spells \\
+            \wizardprogressionrow{2}  & 3  &                 \\
+            \wizardprogressionrow{3}  & 3  & Arcane insight  \\
+            \wizardprogressionrow{4}  & 4  & Arcane essence      \\
+            \wizardprogressionrow{5}  & 4  & Arcane insight  \\
+            \wizardprogressionrow{6}  & 5  & Inherent magic  \\
+            \wizardprogressionrow{7}  & 5  & Arcane insight  \\
+            \wizardprogressionrow{8}  & 6  &                 \\
+            \wizardprogressionrow{9}  & 6  & Arcane insight  \\
+            \wizardprogressionrow{10} & 7  & Inherent magic  \\
+            \wizardprogressionrow{11} & 7  & Arcane insight  \\
+            \wizardprogressionrow{12} & 8  &                 \\
+            \wizardprogressionrow{13} & 8  & Arcane insight  \\
+            \wizardprogressionrow{14} & 9  & Inherent magic  \\
+            \wizardprogressionrow{15} & 9  & Arcane insight  \\
+            \wizardprogressionrow{16} & 10 &                 \\
+            \wizardprogressionrow{17} & 10 & Arcane insight  \\
+            \wizardprogressionrow{18} & 11 & Inherent magic  \\
+            \wizardprogressionrow{19} & 11 & Arcane insight  \\
+            \wizardprogressionrow{20} & 12 & Archmage        \\
         \end{dtabularx}
     \end{dtable}
 
@@ -3104,9 +2858,10 @@ This choice determines a great deal about your character's abilities.
     \classbasics{Class Skills}
     \subparhead{Intelligence} Knowledge (all kinds, taken individually), Linguistics.
     \subparhead{Perception} Awareness, Spellcraft.
+    \subparhead{Other} Bluff, Intimidate, Persuasion.
 
     \subsection{Base Class Abilities}
-        A character with wizard as a base class gains the following abilities.
+        A character with mage as a base class gains the following abilities.
 
         \classbasics{Skill Points} 5.
 
@@ -3116,131 +2871,138 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Action Points} \plus3.
 
-        \cf{Wiz}{Weapon and Armor Proficiency}
-        Wizards are proficient with simple weapons, but not with any type of armor or shield.
-        Armor of any type interferes with a wizard's movements, which can cause her spells with somatic components to fail.
+        \cf{Mag}{Weapon and Armor Proficiency}
+        Mages are proficient with simple weapons and one other weapon group.
+        They are not proficient with any type of armor or shield.
+        Armor of any type interferes with a mage's arcane gestures, which can cause her spells with somatic components to fail.
 
-        \cf{Wiz}{Arcane Knowledge}
-        The wizard gains an additional spell known.
-        This spell known is not included on the wizard class table.
+        \cf{Mag}{Spell Point}
+        The mage gains a spell point.
+        A spell point can be spent to cast spells in place of an action point.
+        She recovers all spent spell points after a \glossterm{short rest}.
 
-        \cf{Wiz}{Enhanced Spellpower}[Mag]
-        The wizard gains a \plus2 bonus to spellpower with her wizard spells.
+        \cf{Mag}{Enhanced Spellpower}[Mag]
+        The mage gains a \plus2 bonus to spellpower with her arcane spells.
 
     \subsection{Class Abilities}
-        All wizards have the following abilities.
+        All mages have the following abilities.
 
-        \cf{Wiz}{Spells}
-        A wizard casts arcane spells using her Intelligence.
-        The maximum spell level a wizard can learn or cast is equal to half her wizard level (minimum 1) or her Intelligence, whichever is lower.
-        A wizard's spellpower is normally equal to her character level.
+        \cf{Mag}{Arcane Essence}
+        All mages have access to great arcane power.
+        However, not all mages acquired this power in the same way.
+        A mage must choose an arcane essence.
+        The mage's arcane essence affects several aspects of her class abilities.
+        \parhead{Sorcerer} Sorcerers have an intuitive connection to magic that allows them to cast spells without preparation or training.
+        A sorcerer casts spells with her Willpower.
+        \parhead{Wizard} Wizards studied arcane mysteries for years to learn the secret ways of magic.
+        A wizard casts spells with her Intelligence.
 
-        A wizard begins play knowing two first-level spells.
+        \cf{Mag}{Spells}
+        A mage casts arcane spells.
+        Her \glossterm{spellpower} with arcane spells is normally equal to her character level.
+        Th
+        \textit{Sorcerer} --- The maximum spell level a sorcerer can learn or cast is equal to half her mage level (minimum 1).
+        \textit{Wizard} --- The maximum spell level a wizard can learn or cast is equal to half her mage level (minimum 1) or her Intelligence, whichever is lower.
+
+        To cast a spell, a mage must spend an \glossterm{action point}.
+        As she gains power, she becomes able to cast weaker spells freely.
+        She may cast spells at least two levels lower than her highest level spell known without spending an action point.
+        In addition, she may always cast cantrips without spending a action point.
+
+        A mage begins play knowing three spells.
         Every even level, she learns an additional spell of any level she has access to.
         In addition, each time she gains a level, she may trade one of her existing spells for a different spell known.
-        However, she must always know at least one spell of every level she has access to.
-        A wizard's spells are drawn from the spells on the arcane spell list (see \pcref{Arcane Spells}).
+        A mage's spells are drawn from the spells on the arcane spell list (see \pcref{Arcane Spells}).
 
-        The number of spells a wizard can cast per day is given on \trefnp{Wizard Spell Slots}.
+        Almost all mages know at least one cantrip.
+        Cantrips are special spells that do not require action points to cast.
+        They are decribed first on the list of arcane spells (see \pcref{Cantrip List}).
 
-        In order to regain her spells for the day, a wizard must dismiss all her active spells and rest for 8 hours.
-        This rest does not have to involve sleep, but most wizards get this rest when they sleep for the night.
-
-        \begin{dtable}
-            \lcaption{Wizard Spell Slots}
-            \centering
-            \begin{dtabularx}{\columnwidth}{>{\ccol}X *{9}{>{\ccol}p{\spellcol}}}
-                & \multicolumn{9}{c}{\tb{---{}---{}---{}---{}---{}---{}---{}---Spell Level---{}---{}---{}---{}---{}---{}---{}---}} \\
-                \hline
-                \tb{Level} & \tb{1st} & \tb{2nd} & \tb{3rd} & \tb{4th} & \tb{5th} & \tb{6th} & \tb{7th} & \tb{8th} & \tb{9th} \\
-                1st  & 3 & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                2nd  & 4 & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                3rd  & 5 & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                4th  & 6 & 3      & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                5th  & 6 & 4      & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                6th  & 6 & 5      & 3      & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                7th  & 6 & 6      & 4      & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                8th  & 6 & 6      & 5      & 3      & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                9th  & 6 & 6      & 6      & 4      & \tdash & \tdash & \tdash & \tdash & \tdash \\
-                10th & 6 & 6      & 6      & 5      & 3      & \tdash & \tdash & \tdash & \tdash \\
-                11th & 6 & 6      & 6      & 6      & 4      & \tdash & \tdash & \tdash & \tdash \\
-                12th & 6 & 6      & 6      & 6      & 5      & 3      & \tdash & \tdash & \tdash \\
-                13th & 6 & 6      & 6      & 6      & 6      & 4      & \tdash & \tdash & \tdash \\
-                14th & 6 & 6      & 6      & 6      & 6      & 5      & 3      & \tdash & \tdash \\
-                15th & 6 & 6      & 6      & 6      & 6      & 6      & 4      & \tdash & \tdash \\
-                16th & 6 & 6      & 6      & 6      & 6      & 6      & 5      & 3      & \tdash \\
-                17th & 6 & 6      & 6      & 6      & 6      & 6      & 6      & 4      & \tdash \\
-                18th & 6 & 6      & 6      & 6      & 6      & 6      & 6      & 5      & 3      \\
-                19th & 6 & 6      & 6      & 6      & 6      & 6      & 6      & 6      & 4      \\
-                20th & 6 & 6      & 6      & 6      & 6      & 6      & 6      & 6      & 6      \\
-            \end{dtabularx}
-        \end{dtable}
-
-        \cf{Wiz}{Cantrip}
-        Cantrips are minor spells which do not require effort to use.
-        A wizard chooses one cantrip from the list of cantrips on \pref{Cantrip List}.
-        She may use the cantrip at will.
-        Cantrips cannot be miscast.
-        For all other purposes, cantrips are treated as 0th level spells.
-
-        At her 2nd wizard level, the wizard gains a second cantrip, which can be chosen from any non-prohibited school.
-
-        \cf{Wiz}{Rituals}
-        Wizards can perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
+        \cf{Mag}{Rituals}
+        \subparhead{Sorcerer} Sorcerers cannot perform arcane rituals.
+        \subparhead{Wizard} Wizards can perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
         A wizard begins play with a ritual book containing two arcane rituals of her choice (see \pcref{Arcane Rituals}).
 
-        \cf{Wiz}[2nd]{Arcane Insight}\label{Arcane Insight}
-        The wizard gains a greater understanding of magic.
-        She chooses one of the following benefits.
+        \cf{Mag}[3rd]{Arcane Insight}\label{Arcane Insight}
+        The mage gains a greater understanding of magic.
+        She chooses one of the following insights.
+        Each insight can be chosen multiple times.
+        Unless otherwise noted, their effects stack.
         \begin{itemize}
-            \item Bonus Spell: The wizard gains an additional spell slot at her highest level of spells known.
-                As she gains new spell levels known, the spell slot increases in level accordingly.
-            \item Ritual Spell: The wizard scribes an arcane spell with a maximum level equal to half her wizard level into her ritual book.
-                She does not need to know the spell, and pays no cost to scribe it.
-                The spell is treated as a ritual, and she can perform a one minute ritual to gain the spell's effect.
-                Performing the ritual costs the normal amount of material components for a ritual of its level (see \pcref{Ritual Costs}).
-            \item Specialization: The wizard chooses a school of magic.
+            \item Arcane Defense: The mage gains a \plus1 bonus to defenses against spells.
+            \item Innate Spell: The mage chooses a spell she knows as an innate spell.
+                She no longer needs verbal or somatic components to cast the spell.
+                \par If she chooses this insight multiple times, she must choose a different spell each time.
+            \item Personal Spell: The mage chooses a spell she knows as a personal spell.
+                She cannot miscast the spell (see \pcref{Miscasting}).
+                If she would miscast it, the spell simply fails without effect.
+                In addition, she automatically succeeds at all Concentration checks she makes to cast the spell.
+                \par If the mage chooses this insight multiple times, she must choose a different spell each time.
+            \item Specialization: The mage chooses a school of magic.
                 She gains an additional spell known that can only be used to learn a spell from that school.
                 In exchange, she must ban a school of magic.
                 She can never learn or cast spells or rituals from her banned schools.
                 If she knows spells from a banned school, she must immediately learn different spells from unbanned schools in their place.
                 Divination cannot be chosen as a banned school.
-                \par If the wizard chooses this insight multiple times, she must choose to specialize in the same school each time.
+                \par If the mage chooses this insight multiple times, she must choose to specialize in the same school each time.
         \end{itemize}
 
-        At her 4th wizard level, and every even wizard level thereafter, the wizard gains a new arcane insight.
+        \subparhead{Sorcerer} A sorcerer may also choose the Expanded Spell Knowledge insight.
+        She chooses a single spell from the divine spell list or nature spell list and adds it to her arcane spell list.
+        The spell's level cannot exceed half her mage level.
+        This does not grant her the spell as a spell known.
+        \par If she chooses this insight multiple times, she must choose a different spell each time.
 
-        \cf{Wiz}[3rd]{Attuned Spell}[Mag]
-        Whenever the wizard casts a spell or performs a ritual on herself, she may attune to it to increase its duration.
-        The spell or ritual must be be cast as a 1st level spell, including any effects that change its spell level.
-        The spell must be a \glossterm{targeted spell}, and have a duration of \durshort or longer.
+        \subparhead{Wizard} A wizard may also choose the Ritual Spell insight.
+        She scribes an arcane spell with a maximum level equal to half her mage level into her ritual book.
+        She does not need to know the spell, and pays no cost to scribe it.
+        The spell is treated as a ritual, and she can perform a one minute ritual to gain the spell's effect.
+        Performing the ritual costs the normal amount of material components for a ritual of its level (see \pcref{Ritual Costs}).
 
-        As long as the wizard is attuned to that spell, its duration becomes permanent, and it cannot be dispelled.
-        If it has secondary effects, such as the \spell{avatar of suffering} spell, the duration of the secondary effects is not changed.
-        The wizard can only attune to one spell at a time.
-        If she attunes to another spell, the other spell returns to its normal duration, and expires if appropriate.
+        \cf{Mag}[4th]{Arcane Essence}
+        The mage gains an ability based on her choice of arcane essence.
+        \subparhead{Sorcerer} The sorcerer gains bonus hit points equal to her Willpower.
+        \subparhead{Wizard} The wizard gains a \plus2 bonus to all Knowledge skills.
 
-        At her 7th wizard level, the wizard gains the ability to attune to an additional spell simultaneously.
-        The additional spell can be up to 3rd level, including any augments.
-        Every 4 levels thereafter, she gains the ability to attune to additional spell.
-        Each time, the maximum spell level of the additional spell increases by 2.
-        Whenever she attunes to a new spell, she may choose which of her other attuned spells she stops being attuned to.
+        \cf{Mag}[6th]{Inherent Magic}
+        The mage becomes inherently magical.
+        She may choose an arcane spell with a maximum level equal to half her mage level \sub 2.
+        The spell must be a \glossterm{targeted spell} and have a duration of \durshort or longer.
+        She does not need to know the spell.
+        The mage constantly gains the benefits of that spell.
+        If the spell has secondary effects, such as the \spell{avatar of suffering} spell, the duration of the secondary effects is not changed.
 
-        \cf{Wiz}[5th]{Predictive Spells}
-        A wizard's intelligence and mastery of spells allows her to prepare for any situation.
-        As a standard action, she can begin casting two spells at once, designating one as the primary spell and the other as the secondary spell.
-        The level of both spells, including any augments, must not exceed half her wizard level.
+        When the mage chooses a spell in this way, the mage may also choose specific augments for that spell, as long as the spell's effective level does not exceed half the mage's character level.
+        If the spell's effect ends for any reason, such as if its effect is discharged, it takes effect on the mage again 5 minutes later.
+
+        At her 10th mage level, and every 4 mage levels thereafter, the mage may choose an additional attuned spell.
+
+        \cf{Mag}[8th]{Arcane Essence}
+        The mage gains an ability based on her choice of arcane essence.
+        \subparhead{Sorcerer} The sorcerer gains \glossterm{magic resistance} equal to 10 \add her character level or Willpower, whichever is higher.
+        This ability does not protect the sorcerer from her own miscast effects.
+        If she already has magic resistance from another source, she increases that magic resistance by 2.
+        \subparhead{Wizard} As a standard action, the wizard can spend an action point to begin casting two spells at once.
+        She must designate one as the primary spell and the other as the secondary spell.
+        The level of both spells, including any augments, must not exceed half her mage level.
         If the two spells are different levels, she must designate the higher level spell to be the primary spell.
-        If her concentration is disrupted, the primary spell is miscast and its spell slot is expended, but the secondary spell dissipates without effect and its spell slot is not expended.
 
         When she finishes casting, she chooses which one of those spells takes effect.
-        The spell slot for that spell is expended, and its effect takes place.
-        The other spell is not expended, and its effect does not take place.
-        The wizard can use this ability a number of times per day equal to half her Intelligence.
+        She spends an action point if necessary to cast the spell, and its effect takes place.
+        The second spell dissipates without spending an action point or having any effect.
 
-        \cf{Wiz}[9th]{Contingency}[Mag]
-        The wizard gains the ability to prepare a spell so it takes effect automatically if specific circumstances arise.
-        To prepare a contingency, the wizard must spend 1 minute preparing the spell, which consumes the a spell slot two levels higher than the spell's level.
+        If the wizard's concentration is disrupted, the primary spell is miscast.
+        If she must spend an action point to cast that spell, she spends it.
+        However, the secondary spell dissipates without spending an action point or having any effect.
+
+        \cf{Mag}[12th]{Arcane Essence}
+        The mage gains an ability based on her choice of arcane essence.
+        \subparhead{Sorcerer} The sorcerer gains a spell point.
+        A spell point can be spent to cast spells in place of an action point.
+        She recovers all spent spell points after a \glossterm{short rest}.
+        \subparhead{Wizard} The wizard gains the ability to prepare a spell so it takes effect automatically if specific circumstances arise.
+        To prepare a contingency, the wizard must spend 5 minutes preparing the spell.
+        A contingency spell is treated as being two levels higher than its actual level for the purpose of spending action points and determining whether the wizard can cast the spell.
         During this casting time, the wizard specifies what circumstances cause the spell to take effect.
 
         The contingency can be set to trigger in response to any circumstances that a typical human observing the wizard and her situation could detect.
@@ -3256,18 +3018,21 @@ This choice determines a great deal about your character's abilities.
         A wizard can have only one contingency active at a time.
         If she creates another contingency, it replaces her old contingency.
 
-        \cf{Wiz}[13th]{Shared Attunement}[Mag]
-        When the wizard uses her attuned spell ability, she may attune to a spell she casts on a target other than herself.
-        She may only have one such spell attuned at once, and still counts against her limit on the number of attuned spells she can have active at once.
+        \cf{Mag}[16th]{Arcane Essence}
+        The mage gains an ability based on her choice of arcane essence.
+        \subparhead{Sorcerer} Whenever the sorcerer resists a spell with her magic resistance, she gains the ability to cast that spell once during the next 5 rounds.
+        The spell retains all augments, effects from feats and other abilities, and similar modifications from the original caster, and the sorcerer cannot choose any other augments or apply effects from her own abilities.
+        However, she makes all other decisions required to cast the spell, and uses her spellpower to determine the spell's effects.
+        Once she casts the spell, she expends the absorbed energy, can cannot cast it again.
 
-        \cf{Wiz}[17th]{Chain Contingency}[Mag]
-        The wizard may ready two spells in her contingency instead of a single spell.
+        \subparhead{Wizard} The wizard may ready two spells in her contingency instead of a single spell.
         In addition, she may have two contingencies active at once instead of one.
         Only one contingency can trigger in a given round.
         If both would trigger, only the first contingency cast triggers, and the second does not.
 
-        \cf{Wiz}[20th]{Archmage}[Mag]
-        The wizard can regain her spent spells with an hour of study and arcane contemplation, rather than once per day.
+        \cf{Mag}[20th]{Archmage}
+        The mage no longer needs to spend action points to cast spells of any level.
+        If he has any spell points, he loses those spell points and gains the same number of legend points.
 
 \section{Multiclass Characters}\label{Multiclass Characters}
     A character may add new classes as he or she progresses in level, thus becoming a multiclass character.
