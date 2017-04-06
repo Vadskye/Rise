@@ -1390,26 +1390,26 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} c >{\lcol}X}
             \tb{Level} & \tb{Combat Prowess} & \tb{Spells} & \tb{Special} \\
             \hline
-            \wizardprogressionrow{1}  & 2  & Rituals, spells \\
-            \wizardprogressionrow{2}  & 3  &                 \\
-            \wizardprogressionrow{3}  & 3  & Arcane insight  \\
-            \wizardprogressionrow{4}  & 4  & Arcane essence      \\
-            \wizardprogressionrow{5}  & 4  & Arcane insight  \\
-            \wizardprogressionrow{6}  & 5  & Inherent magic  \\
-            \wizardprogressionrow{7}  & 5  & Arcane insight  \\
-            \wizardprogressionrow{8}  & 6  &                 \\
-            \wizardprogressionrow{9}  & 6  & Arcane insight  \\
-            \wizardprogressionrow{10} & 7  & Inherent magic  \\
-            \wizardprogressionrow{11} & 7  & Arcane insight  \\
-            \wizardprogressionrow{12} & 8  &                 \\
-            \wizardprogressionrow{13} & 8  & Arcane insight  \\
-            \wizardprogressionrow{14} & 9  & Inherent magic  \\
-            \wizardprogressionrow{15} & 9  & Arcane insight  \\
-            \wizardprogressionrow{16} & 10 &                 \\
-            \wizardprogressionrow{17} & 10 & Arcane insight  \\
-            \wizardprogressionrow{18} & 11 & Inherent magic  \\
-            \wizardprogressionrow{19} & 11 & Arcane insight  \\
-            \wizardprogressionrow{20} & 12 & Archmage        \\
+            \wizardprogressionrow{1}  & 2  & Arcane essence, rituals, spells \\
+            \wizardprogressionrow{2}  & 3  & Arcane defense \\
+            \wizardprogressionrow{3}  & 3  & Arcane insight \\
+            \wizardprogressionrow{4}  & 4  & Arcane essence \\
+            \wizardprogressionrow{5}  & 4  & Arcane insight \\
+            \wizardprogressionrow{6}  & 5  & Inherent magic \\
+            \wizardprogressionrow{7}  & 5  & Arcane insight \\
+            \wizardprogressionrow{8}  & 6  & Arcane essence \\
+            \wizardprogressionrow{9}  & 6  & Arcane insight \\
+            \wizardprogressionrow{10} & 7  & Inherent magic \\
+            \wizardprogressionrow{11} & 7  & Arcane insight \\
+            \wizardprogressionrow{12} & 8  & Arcane essence \\
+            \wizardprogressionrow{13} & 8  & Arcane insight \\
+            \wizardprogressionrow{14} & 9  & Inherent magic \\
+            \wizardprogressionrow{15} & 9  & Arcane insight \\
+            \wizardprogressionrow{16} & 10 & Arcane essence \\
+            \wizardprogressionrow{17} & 10 & Arcane insight \\
+            \wizardprogressionrow{18} & 11 & Inherent magic \\
+            \wizardprogressionrow{19} & 11 & Arcane insight \\
+            \wizardprogressionrow{20} & 12 & Archmage       \\
         \end{dtabularx}
     \end{dtable}
 
@@ -1453,14 +1453,12 @@ This choice determines a great deal about your character's abilities.
         A mage must choose an arcane essence.
         The mage's arcane essence affects several aspects of her class abilities.
         \parhead{Sorcerer} Sorcerers have an intuitive connection to magic that allows them to cast spells without preparation or training.
-        A sorcerer casts spells with her Willpower.
         \parhead{Wizard} Wizards studied arcane mysteries for years to learn the secret ways of magic.
         A wizard casts spells with her Intelligence.
 
         \cf{Mag}{Spells}
         A mage casts arcane spells.
         Her \glossterm{spellpower} with arcane spells is normally equal to her character level.
-        Th
         \textit{Sorcerer} --- The maximum spell level a sorcerer can learn or cast is equal to half her mage level (minimum 1).
         \textit{Wizard} --- The maximum spell level a wizard can learn or cast is equal to half her mage level (minimum 1) or her Intelligence, whichever is lower.
 
@@ -1483,13 +1481,15 @@ This choice determines a great deal about your character's abilities.
         \subparhead{Wizard} Wizards can perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
         A wizard begins play with a ritual book containing two arcane rituals of her choice (see \pcref{Arcane Rituals}).
 
+        \cf{Mag}[2nd]{Arcane Defense}
+        The mage gains a \plus2 bonus to defenses against spells.
+
         \cf{Mag}[3rd]{Arcane Insight}\label{Arcane Insight}
         The mage gains a greater understanding of magic.
         She chooses one of the following insights.
         Each insight can be chosen multiple times.
         Unless otherwise noted, their effects stack.
         \begin{itemize}
-            \item Arcane Defense: The mage gains a \plus1 bonus to defenses against spells.
             \item Innate Spell: The mage chooses a spell she knows as an innate spell.
                 She no longer needs verbal or somatic components to cast the spell.
                 \par If she chooses this insight multiple times, she must choose a different spell each time.
@@ -1521,7 +1521,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Mag}[4th]{Arcane Essence}
         The mage gains an ability based on her choice of arcane essence.
-        \subparhead{Sorcerer} The sorcerer gains bonus hit points equal to her Willpower.
+        \subparhead{Sorcerer} The sorcerer gains bonus hit points equal to her sorcerer level or Willpower, whichever is higher.
         \subparhead{Wizard} The wizard gains a \plus2 bonus to all Knowledge skills.
 
         \cf{Mag}[6th]{Inherent Magic}
@@ -1532,7 +1532,7 @@ This choice determines a great deal about your character's abilities.
         The mage constantly gains the benefits of that spell.
         If the spell has secondary effects, such as the \spell{avatar of suffering} spell, the duration of the secondary effects is not changed.
 
-        When the mage chooses a spell in this way, the mage may also choose specific augments for that spell, as long as the spell's effective level does not exceed half the mage's character level.
+        When the mage chooses a spell in this way, the mage may also choose specific augments for that spell, as long as the spell's effective level does not exceed half her character level.
         If the spell's effect ends for any reason, such as if its effect is discharged, it takes effect on the mage again 5 minutes later.
 
         At her 10th mage level, and every 4 mage levels thereafter, the mage may choose an additional attuned spell.
