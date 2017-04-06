@@ -1384,6 +1384,216 @@ This choice determines a great deal about your character's abilities.
         The fighter can use combat discipline to be \impaired with attacks and checks instead of suffering any nondamaging negative effect with a duration.
         He may also mitigate up to four conditions at once.
 
+\section{Mage}\label{Mage}
+    \begin{dtable}
+        \lcaption{Mage Progression}
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} c >{\lcol}X}
+            \tb{Level} & \tb{Combat Prowess} & \tb{Spells} & \tb{Special} \\
+            \hline
+            \wizardprogressionrow{1}  & 2  & Rituals, spells \\
+            \wizardprogressionrow{2}  & 3  &                 \\
+            \wizardprogressionrow{3}  & 3  & Arcane insight  \\
+            \wizardprogressionrow{4}  & 4  & Arcane essence      \\
+            \wizardprogressionrow{5}  & 4  & Arcane insight  \\
+            \wizardprogressionrow{6}  & 5  & Inherent magic  \\
+            \wizardprogressionrow{7}  & 5  & Arcane insight  \\
+            \wizardprogressionrow{8}  & 6  &                 \\
+            \wizardprogressionrow{9}  & 6  & Arcane insight  \\
+            \wizardprogressionrow{10} & 7  & Inherent magic  \\
+            \wizardprogressionrow{11} & 7  & Arcane insight  \\
+            \wizardprogressionrow{12} & 8  &                 \\
+            \wizardprogressionrow{13} & 8  & Arcane insight  \\
+            \wizardprogressionrow{14} & 9  & Inherent magic  \\
+            \wizardprogressionrow{15} & 9  & Arcane insight  \\
+            \wizardprogressionrow{16} & 10 &                 \\
+            \wizardprogressionrow{17} & 10 & Arcane insight  \\
+            \wizardprogressionrow{18} & 11 & Inherent magic  \\
+            \wizardprogressionrow{19} & 11 & Arcane insight  \\
+            \wizardprogressionrow{20} & 12 & Archmage        \\
+        \end{dtabularx}
+    \end{dtable}
+
+    \classbasics{Alignment} Any.
+
+    \classbasics{Class Skills}
+    \subparhead{Intelligence} Knowledge (all kinds, taken individually), Linguistics.
+    \subparhead{Perception} Awareness, Spellcraft.
+    \subparhead{Other} Bluff, Intimidate, Persuasion.
+
+    \subsection{Base Class Abilities}
+        A character with mage as a base class gains the following abilities.
+
+        \classbasics{Skill Points} 5.
+
+        \classbasics{Combat Prowess} \plus1. This benefit is included in the class table.
+
+        \classbasics{Defenses} \plus4 Mental.
+
+        \classbasics{Action Points} \plus3.
+
+        \cf{Mag}{Weapon and Armor Proficiency}
+        Mages are proficient with simple weapons and one other weapon group.
+        They are not proficient with any type of armor or shield.
+        Armor of any type interferes with a mage's arcane gestures, which can cause her spells with somatic components to fail.
+
+        \cf{Mag}{Spell Point}
+        The mage gains a spell point.
+        A spell point can be spent to cast spells in place of an action point.
+        She recovers all spent spell points after a \glossterm{short rest}.
+
+        \cf{Mag}{Enhanced Spellpower}[Mag]
+        The mage gains a \plus2 bonus to spellpower with her arcane spells.
+
+    \subsection{Class Abilities}
+        All mages have the following abilities.
+
+        \cf{Mag}{Arcane Essence}
+        All mages have access to great arcane power.
+        However, not all mages acquired this power in the same way.
+        A mage must choose an arcane essence.
+        The mage's arcane essence affects several aspects of her class abilities.
+        \parhead{Sorcerer} Sorcerers have an intuitive connection to magic that allows them to cast spells without preparation or training.
+        A sorcerer casts spells with her Willpower.
+        \parhead{Wizard} Wizards studied arcane mysteries for years to learn the secret ways of magic.
+        A wizard casts spells with her Intelligence.
+
+        \cf{Mag}{Spells}
+        A mage casts arcane spells.
+        Her \glossterm{spellpower} with arcane spells is normally equal to her character level.
+        Th
+        \textit{Sorcerer} --- The maximum spell level a sorcerer can learn or cast is equal to half her mage level (minimum 1).
+        \textit{Wizard} --- The maximum spell level a wizard can learn or cast is equal to half her mage level (minimum 1) or her Intelligence, whichever is lower.
+
+        To cast a spell, a mage must spend an \glossterm{action point}.
+        As she gains power, she becomes able to cast weaker spells freely.
+        She may cast spells at least two levels lower than her highest level spell known without spending an action point.
+        In addition, she may always cast cantrips without spending a action point.
+
+        A mage begins play knowing three spells.
+        Every even level, she learns an additional spell of any level she has access to.
+        In addition, each time she gains a level, she may trade one of her existing spells for a different spell known.
+        A mage's spells are drawn from the spells on the arcane spell list (see \pcref{Arcane Spells}).
+
+        Almost all mages know at least one cantrip.
+        Cantrips are special spells that do not require action points to cast.
+        They are decribed first on the list of arcane spells (see \pcref{Cantrip List}).
+
+        \cf{Mag}{Rituals}
+        \subparhead{Sorcerer} Sorcerers cannot perform arcane rituals.
+        \subparhead{Wizard} Wizards can perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
+        A wizard begins play with a ritual book containing two arcane rituals of her choice (see \pcref{Arcane Rituals}).
+
+        \cf{Mag}[3rd]{Arcane Insight}\label{Arcane Insight}
+        The mage gains a greater understanding of magic.
+        She chooses one of the following insights.
+        Each insight can be chosen multiple times.
+        Unless otherwise noted, their effects stack.
+        \begin{itemize}
+            \item Arcane Defense: The mage gains a \plus1 bonus to defenses against spells.
+            \item Innate Spell: The mage chooses a spell she knows as an innate spell.
+                She no longer needs verbal or somatic components to cast the spell.
+                \par If she chooses this insight multiple times, she must choose a different spell each time.
+            \item Personal Spell: The mage chooses a spell she knows as a personal spell.
+                She cannot miscast the spell (see \pcref{Miscasting}).
+                If she would miscast it, the spell simply fails without effect.
+                In addition, she automatically succeeds at all Concentration checks she makes to cast the spell.
+                \par If the mage chooses this insight multiple times, she must choose a different spell each time.
+            \item Specialization: The mage chooses a school of magic.
+                She gains an additional spell known that can only be used to learn a spell from that school.
+                In exchange, she must ban a school of magic.
+                She can never learn or cast spells or rituals from her banned schools.
+                If she knows spells from a banned school, she must immediately learn different spells from unbanned schools in their place.
+                Divination cannot be chosen as a banned school.
+                \par If the mage chooses this insight multiple times, she must choose to specialize in the same school each time.
+        \end{itemize}
+
+        \subparhead{Sorcerer} A sorcerer may also choose the Expanded Spell Knowledge insight.
+        She chooses a single spell from the divine spell list or nature spell list and adds it to her arcane spell list.
+        The spell's level cannot exceed half her mage level.
+        This does not grant her the spell as a spell known.
+        \par If she chooses this insight multiple times, she must choose a different spell each time.
+
+        \subparhead{Wizard} A wizard may also choose the Ritual Spell insight.
+        She scribes an arcane spell with a maximum level equal to half her mage level into her ritual book.
+        She does not need to know the spell, and pays no cost to scribe it.
+        The spell is treated as a ritual, and she can perform a one minute ritual to gain the spell's effect.
+        Performing the ritual costs the normal amount of material components for a ritual of its level (see \pcref{Ritual Costs}).
+
+        \cf{Mag}[4th]{Arcane Essence}
+        The mage gains an ability based on her choice of arcane essence.
+        \subparhead{Sorcerer} The sorcerer gains bonus hit points equal to her Willpower.
+        \subparhead{Wizard} The wizard gains a \plus2 bonus to all Knowledge skills.
+
+        \cf{Mag}[6th]{Inherent Magic}
+        The mage becomes inherently magical.
+        She may choose an arcane spell with a maximum level equal to half her mage level \sub 2.
+        The spell must be a \glossterm{targeted spell} and have a duration of \durshort or longer.
+        She does not need to know the spell.
+        The mage constantly gains the benefits of that spell.
+        If the spell has secondary effects, such as the \spell{avatar of suffering} spell, the duration of the secondary effects is not changed.
+
+        When the mage chooses a spell in this way, the mage may also choose specific augments for that spell, as long as the spell's effective level does not exceed half the mage's character level.
+        If the spell's effect ends for any reason, such as if its effect is discharged, it takes effect on the mage again 5 minutes later.
+
+        At her 10th mage level, and every 4 mage levels thereafter, the mage may choose an additional attuned spell.
+
+        \cf{Mag}[8th]{Arcane Essence}
+        The mage gains an ability based on her choice of arcane essence.
+        \subparhead{Sorcerer} The sorcerer gains \glossterm{magic resistance} equal to 10 \add her character level or Willpower, whichever is higher.
+        This ability does not protect the sorcerer from her own miscast effects.
+        If she already has magic resistance from another source, she increases that magic resistance by 2.
+        \subparhead{Wizard} As a standard action, the wizard can spend an action point to begin casting two spells at once.
+        She must designate one as the primary spell and the other as the secondary spell.
+        The level of both spells, including any augments, must not exceed half her mage level.
+        If the two spells are different levels, she must designate the higher level spell to be the primary spell.
+
+        When she finishes casting, she chooses which one of those spells takes effect.
+        She spends an action point if necessary to cast the spell, and its effect takes place.
+        The second spell dissipates without spending an action point or having any effect.
+
+        If the wizard's concentration is disrupted, the primary spell is miscast.
+        If she must spend an action point to cast that spell, she spends it.
+        However, the secondary spell dissipates without spending an action point or having any effect.
+
+        \cf{Mag}[12th]{Arcane Essence}
+        The mage gains an ability based on her choice of arcane essence.
+        \subparhead{Sorcerer} The sorcerer gains a spell point.
+        A spell point can be spent to cast spells in place of an action point.
+        She recovers all spent spell points after a \glossterm{short rest}.
+        \subparhead{Wizard} The wizard gains the ability to prepare a spell so it takes effect automatically if specific circumstances arise.
+        To prepare a contingency, the wizard must spend 5 minutes preparing the spell.
+        A contingency spell is treated as being two levels higher than its actual level for the purpose of spending action points and determining whether the wizard can cast the spell.
+        During this casting time, the wizard specifies what circumstances cause the spell to take effect.
+
+        The contingency can be set to trigger in response to any circumstances that a typical human observing the wizard and her situation could detect.
+        For example, a wizard could specify ``when I fall at least 50 feet'' or ``when I become bloodied'', but not ``when there is an invisible creature within 50 feet of me'' or ``when I am at 17 hit points or fewer.'' The more specific the required circumstances, the better -- vague requirements, such as ``when I am in danger'', may cause the contingency to trigger unexpectedly or fail to trigger at all.
+        If a wizard attempts to specify multiple separate triggering conditions, such as ``when I take damage or when an enemy is adjacent to me'', the contingency will randomly ignore all but one of the conditions.
+
+        The spell must have a casting time of 1 standard action or less.
+        The contingency can specify a simple rule for identifying how to target the spell, such as ``the closest enemy''.
+        If the rule is poorly worded or imprecise, the contingency may target incorrectly or fail to activate at all.
+        Any spells which require decisions, such as the \spell{dimension door} spell, must have those decisions made at the time the contingency is created.
+        The wizard cannot change those decisions when the contingency takes effect.
+
+        A wizard can have only one contingency active at a time.
+        If she creates another contingency, it replaces her old contingency.
+
+        \cf{Mag}[16th]{Arcane Essence}
+        The mage gains an ability based on her choice of arcane essence.
+        \subparhead{Sorcerer} Whenever the sorcerer resists a spell with her magic resistance, she gains the ability to cast that spell once during the next 5 rounds.
+        The spell retains all augments, effects from feats and other abilities, and similar modifications from the original caster, and the sorcerer cannot choose any other augments or apply effects from her own abilities.
+        However, she makes all other decisions required to cast the spell, and uses her spellpower to determine the spell's effects.
+        Once she casts the spell, she expends the absorbed energy, can cannot cast it again.
+
+        \subparhead{Wizard} The wizard may ready two spells in her contingency instead of a single spell.
+        In addition, she may have two contingencies active at once instead of one.
+        Only one contingency can trigger in a given round.
+        If both would trigger, only the first contingency cast triggers, and the second does not.
+
+        \cf{Mag}[20th]{Archmage}
+        The mage no longer needs to spend action points to cast spells of any level.
+        If he has any spell points, he loses those spell points and gains the same number of legend points.
+
 \section{Monk}\label{Monk}
     \begin{dtable}
         \lcaption{Monk Progression}
@@ -2823,216 +3033,6 @@ This choice determines a great deal about your character's abilities.
             He can act for 1d3\plus1 rounds of apparent time.
             During this time, all objects and creatures are frozen in place and are completely invulnerable to the spellwarped, though he may affect them with invocations normally.
             After using this ability, he must wait 5 rounds before he can use it again.
-
-\section{Mage}\label{Mage}
-    \begin{dtable}
-        \lcaption{Mage Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} c >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{Spells} & \tb{Special} \\
-            \hline
-            \wizardprogressionrow{1}  & 2  & Rituals, spells \\
-            \wizardprogressionrow{2}  & 3  &                 \\
-            \wizardprogressionrow{3}  & 3  & Arcane insight  \\
-            \wizardprogressionrow{4}  & 4  & Arcane essence      \\
-            \wizardprogressionrow{5}  & 4  & Arcane insight  \\
-            \wizardprogressionrow{6}  & 5  & Inherent magic  \\
-            \wizardprogressionrow{7}  & 5  & Arcane insight  \\
-            \wizardprogressionrow{8}  & 6  &                 \\
-            \wizardprogressionrow{9}  & 6  & Arcane insight  \\
-            \wizardprogressionrow{10} & 7  & Inherent magic  \\
-            \wizardprogressionrow{11} & 7  & Arcane insight  \\
-            \wizardprogressionrow{12} & 8  &                 \\
-            \wizardprogressionrow{13} & 8  & Arcane insight  \\
-            \wizardprogressionrow{14} & 9  & Inherent magic  \\
-            \wizardprogressionrow{15} & 9  & Arcane insight  \\
-            \wizardprogressionrow{16} & 10 &                 \\
-            \wizardprogressionrow{17} & 10 & Arcane insight  \\
-            \wizardprogressionrow{18} & 11 & Inherent magic  \\
-            \wizardprogressionrow{19} & 11 & Arcane insight  \\
-            \wizardprogressionrow{20} & 12 & Archmage        \\
-        \end{dtabularx}
-    \end{dtable}
-
-    \classbasics{Alignment} Any.
-
-    \classbasics{Class Skills}
-    \subparhead{Intelligence} Knowledge (all kinds, taken individually), Linguistics.
-    \subparhead{Perception} Awareness, Spellcraft.
-    \subparhead{Other} Bluff, Intimidate, Persuasion.
-
-    \subsection{Base Class Abilities}
-        A character with mage as a base class gains the following abilities.
-
-        \classbasics{Skill Points} 5.
-
-        \classbasics{Combat Prowess} \plus1. This benefit is included in the class table.
-
-        \classbasics{Defenses} \plus4 Mental.
-
-        \classbasics{Action Points} \plus3.
-
-        \cf{Mag}{Weapon and Armor Proficiency}
-        Mages are proficient with simple weapons and one other weapon group.
-        They are not proficient with any type of armor or shield.
-        Armor of any type interferes with a mage's arcane gestures, which can cause her spells with somatic components to fail.
-
-        \cf{Mag}{Spell Point}
-        The mage gains a spell point.
-        A spell point can be spent to cast spells in place of an action point.
-        She recovers all spent spell points after a \glossterm{short rest}.
-
-        \cf{Mag}{Enhanced Spellpower}[Mag]
-        The mage gains a \plus2 bonus to spellpower with her arcane spells.
-
-    \subsection{Class Abilities}
-        All mages have the following abilities.
-
-        \cf{Mag}{Arcane Essence}
-        All mages have access to great arcane power.
-        However, not all mages acquired this power in the same way.
-        A mage must choose an arcane essence.
-        The mage's arcane essence affects several aspects of her class abilities.
-        \parhead{Sorcerer} Sorcerers have an intuitive connection to magic that allows them to cast spells without preparation or training.
-        A sorcerer casts spells with her Willpower.
-        \parhead{Wizard} Wizards studied arcane mysteries for years to learn the secret ways of magic.
-        A wizard casts spells with her Intelligence.
-
-        \cf{Mag}{Spells}
-        A mage casts arcane spells.
-        Her \glossterm{spellpower} with arcane spells is normally equal to her character level.
-        Th
-        \textit{Sorcerer} --- The maximum spell level a sorcerer can learn or cast is equal to half her mage level (minimum 1).
-        \textit{Wizard} --- The maximum spell level a wizard can learn or cast is equal to half her mage level (minimum 1) or her Intelligence, whichever is lower.
-
-        To cast a spell, a mage must spend an \glossterm{action point}.
-        As she gains power, she becomes able to cast weaker spells freely.
-        She may cast spells at least two levels lower than her highest level spell known without spending an action point.
-        In addition, she may always cast cantrips without spending a action point.
-
-        A mage begins play knowing three spells.
-        Every even level, she learns an additional spell of any level she has access to.
-        In addition, each time she gains a level, she may trade one of her existing spells for a different spell known.
-        A mage's spells are drawn from the spells on the arcane spell list (see \pcref{Arcane Spells}).
-
-        Almost all mages know at least one cantrip.
-        Cantrips are special spells that do not require action points to cast.
-        They are decribed first on the list of arcane spells (see \pcref{Cantrip List}).
-
-        \cf{Mag}{Rituals}
-        \subparhead{Sorcerer} Sorcerers cannot perform arcane rituals.
-        \subparhead{Wizard} Wizards can perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
-        A wizard begins play with a ritual book containing two arcane rituals of her choice (see \pcref{Arcane Rituals}).
-
-        \cf{Mag}[3rd]{Arcane Insight}\label{Arcane Insight}
-        The mage gains a greater understanding of magic.
-        She chooses one of the following insights.
-        Each insight can be chosen multiple times.
-        Unless otherwise noted, their effects stack.
-        \begin{itemize}
-            \item Arcane Defense: The mage gains a \plus1 bonus to defenses against spells.
-            \item Innate Spell: The mage chooses a spell she knows as an innate spell.
-                She no longer needs verbal or somatic components to cast the spell.
-                \par If she chooses this insight multiple times, she must choose a different spell each time.
-            \item Personal Spell: The mage chooses a spell she knows as a personal spell.
-                She cannot miscast the spell (see \pcref{Miscasting}).
-                If she would miscast it, the spell simply fails without effect.
-                In addition, she automatically succeeds at all Concentration checks she makes to cast the spell.
-                \par If the mage chooses this insight multiple times, she must choose a different spell each time.
-            \item Specialization: The mage chooses a school of magic.
-                She gains an additional spell known that can only be used to learn a spell from that school.
-                In exchange, she must ban a school of magic.
-                She can never learn or cast spells or rituals from her banned schools.
-                If she knows spells from a banned school, she must immediately learn different spells from unbanned schools in their place.
-                Divination cannot be chosen as a banned school.
-                \par If the mage chooses this insight multiple times, she must choose to specialize in the same school each time.
-        \end{itemize}
-
-        \subparhead{Sorcerer} A sorcerer may also choose the Expanded Spell Knowledge insight.
-        She chooses a single spell from the divine spell list or nature spell list and adds it to her arcane spell list.
-        The spell's level cannot exceed half her mage level.
-        This does not grant her the spell as a spell known.
-        \par If she chooses this insight multiple times, she must choose a different spell each time.
-
-        \subparhead{Wizard} A wizard may also choose the Ritual Spell insight.
-        She scribes an arcane spell with a maximum level equal to half her mage level into her ritual book.
-        She does not need to know the spell, and pays no cost to scribe it.
-        The spell is treated as a ritual, and she can perform a one minute ritual to gain the spell's effect.
-        Performing the ritual costs the normal amount of material components for a ritual of its level (see \pcref{Ritual Costs}).
-
-        \cf{Mag}[4th]{Arcane Essence}
-        The mage gains an ability based on her choice of arcane essence.
-        \subparhead{Sorcerer} The sorcerer gains bonus hit points equal to her Willpower.
-        \subparhead{Wizard} The wizard gains a \plus2 bonus to all Knowledge skills.
-
-        \cf{Mag}[6th]{Inherent Magic}
-        The mage becomes inherently magical.
-        She may choose an arcane spell with a maximum level equal to half her mage level \sub 2.
-        The spell must be a \glossterm{targeted spell} and have a duration of \durshort or longer.
-        She does not need to know the spell.
-        The mage constantly gains the benefits of that spell.
-        If the spell has secondary effects, such as the \spell{avatar of suffering} spell, the duration of the secondary effects is not changed.
-
-        When the mage chooses a spell in this way, the mage may also choose specific augments for that spell, as long as the spell's effective level does not exceed half the mage's character level.
-        If the spell's effect ends for any reason, such as if its effect is discharged, it takes effect on the mage again 5 minutes later.
-
-        At her 10th mage level, and every 4 mage levels thereafter, the mage may choose an additional attuned spell.
-
-        \cf{Mag}[8th]{Arcane Essence}
-        The mage gains an ability based on her choice of arcane essence.
-        \subparhead{Sorcerer} The sorcerer gains \glossterm{magic resistance} equal to 10 \add her character level or Willpower, whichever is higher.
-        This ability does not protect the sorcerer from her own miscast effects.
-        If she already has magic resistance from another source, she increases that magic resistance by 2.
-        \subparhead{Wizard} As a standard action, the wizard can spend an action point to begin casting two spells at once.
-        She must designate one as the primary spell and the other as the secondary spell.
-        The level of both spells, including any augments, must not exceed half her mage level.
-        If the two spells are different levels, she must designate the higher level spell to be the primary spell.
-
-        When she finishes casting, she chooses which one of those spells takes effect.
-        She spends an action point if necessary to cast the spell, and its effect takes place.
-        The second spell dissipates without spending an action point or having any effect.
-
-        If the wizard's concentration is disrupted, the primary spell is miscast.
-        If she must spend an action point to cast that spell, she spends it.
-        However, the secondary spell dissipates without spending an action point or having any effect.
-
-        \cf{Mag}[12th]{Arcane Essence}
-        The mage gains an ability based on her choice of arcane essence.
-        \subparhead{Sorcerer} The sorcerer gains a spell point.
-        A spell point can be spent to cast spells in place of an action point.
-        She recovers all spent spell points after a \glossterm{short rest}.
-        \subparhead{Wizard} The wizard gains the ability to prepare a spell so it takes effect automatically if specific circumstances arise.
-        To prepare a contingency, the wizard must spend 5 minutes preparing the spell.
-        A contingency spell is treated as being two levels higher than its actual level for the purpose of spending action points and determining whether the wizard can cast the spell.
-        During this casting time, the wizard specifies what circumstances cause the spell to take effect.
-
-        The contingency can be set to trigger in response to any circumstances that a typical human observing the wizard and her situation could detect.
-        For example, a wizard could specify ``when I fall at least 50 feet'' or ``when I become bloodied'', but not ``when there is an invisible creature within 50 feet of me'' or ``when I am at 17 hit points or fewer.'' The more specific the required circumstances, the better -- vague requirements, such as ``when I am in danger'', may cause the contingency to trigger unexpectedly or fail to trigger at all.
-        If a wizard attempts to specify multiple separate triggering conditions, such as ``when I take damage or when an enemy is adjacent to me'', the contingency will randomly ignore all but one of the conditions.
-
-        The spell must have a casting time of 1 standard action or less.
-        The contingency can specify a simple rule for identifying how to target the spell, such as ``the closest enemy''.
-        If the rule is poorly worded or imprecise, the contingency may target incorrectly or fail to activate at all.
-        Any spells which require decisions, such as the \spell{dimension door} spell, must have those decisions made at the time the contingency is created.
-        The wizard cannot change those decisions when the contingency takes effect.
-
-        A wizard can have only one contingency active at a time.
-        If she creates another contingency, it replaces her old contingency.
-
-        \cf{Mag}[16th]{Arcane Essence}
-        The mage gains an ability based on her choice of arcane essence.
-        \subparhead{Sorcerer} Whenever the sorcerer resists a spell with her magic resistance, she gains the ability to cast that spell once during the next 5 rounds.
-        The spell retains all augments, effects from feats and other abilities, and similar modifications from the original caster, and the sorcerer cannot choose any other augments or apply effects from her own abilities.
-        However, she makes all other decisions required to cast the spell, and uses her spellpower to determine the spell's effects.
-        Once she casts the spell, she expends the absorbed energy, can cannot cast it again.
-
-        \subparhead{Wizard} The wizard may ready two spells in her contingency instead of a single spell.
-        In addition, she may have two contingencies active at once instead of one.
-        Only one contingency can trigger in a given round.
-        If both would trigger, only the first contingency cast triggers, and the second does not.
-
-        \cf{Mag}[20th]{Archmage}
-        The mage no longer needs to spend action points to cast spells of any level.
-        If he has any spell points, he loses those spell points and gains the same number of legend points.
 
 \section{Multiclass Characters}\label{Multiclass Characters}
     A character may add new classes as he or she progresses in level, thus becoming a multiclass character.
