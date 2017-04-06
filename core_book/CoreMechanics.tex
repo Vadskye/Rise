@@ -54,12 +54,14 @@ It defines how attributes work and explains how to make physical attacks in comb
             \begin{dtabularx}{\columnwidth}{p{8em} X}
                 \tb{Difficulty (DR)} & \tb{Example (Skill Used)} \\
                 \hline
-                Trivial (0) & Notice something in plain sight (Awareness) \\
-                Average (5) & Palm a coin-sided object (Sleight of Hand) \\
-                Tough (10) & Swim in stormy water (Swim) \\
-                Heroic (15) & Leap across a 30-foot chasm with a running start (Jump) \\
-                Legendary (20) & Track a squad of orcs across hard ground after 24 hours of rainfall (Survival) \\
-                Godlike (30) & Swim up a waterfall (Swim) \\
+                Trivial (0) & Hear a coversation from 10 feet away (Awareness) \\
+                Average (5) & Tie or untie a typical knot (Devices) \\
+                Tough (10) & Swim in rough water (Swim) \\
+                Challenging (15) & Balance on a one-inch wide wood beam (Acrobatics) \\
+                Heroic (20) & Open a high quality lock (Devices) \\
+                Legendary (25) & Leap across a 30-foot chasm with a running start (Jump) \\
+                Epic (30) & Convince a wise mayor she is secretly a werewolf (Persuasion) \\
+                Godlike (40) & Track three orcs across firm ground after 24 hours of rainfall (Survival) \\
             \end{dtabularx}
         \end{dtable}
 
@@ -910,11 +912,14 @@ It defines how attributes work and explains how to make physical attacks in comb
                 Colossal (long)   & 30\add ft. & 20\add ft. & \minus8 & \plus8d & Great wyrm red dragon    \\
             \end{dtabularx}
             1 Creatures can vary in space and reach.  These are simply typical values.  \\
-            2 Applies to Reflex defense and Stealth defense.
-            The same value is applied in reverse to Fortitude defense.
-            For example, a Huge creature has a \minus4 penalty to Reflex defense and Stealth, but a \plus4 bonus to Fortitude defense. \\
+            2 Applies to Reflex defense.  The same value is applied in reverse to Fortitude defense.
+            For example, a Huge creature has a \minus4 penalty to Reflex and a \plus4 bonus to Fortitude defense. \\
             3. This damage modifier applies to \glossterm{strikes}.
         \end{dtable*}
+
+        \parhead{Other Effects}
+        A creature's size affects a number of additional skills and abilities.
+        The effects of extraordinary size are described in those skills and abilities.
 
         Unusually large or small creatures also have other special rules apply to them, as described below.
         In addition, larger creatures deal more damage with weapons, and smaller creatures deal less damage with weapons, as described in \tref{Weapon Damage and Creature Size}.
@@ -1105,38 +1110,46 @@ It defines how attributes work and explains how to make physical attacks in comb
         Temporary hit points are not ``real'' hit points, and cannot be healed.
         If a character has temporary hit points from multiple effects, only the highest value is used.
 
-\section{Legend Points}\label{Legend Points}
+\section{Daily Resources}
 
-    As your character becomes increasingly legendary, she may gain \glossterm{legend points}.
-    Legend points allow you to change fate to ensure your character succeeds.
+    \subsection{Action Points}\label{Action Points}
+        \glossterm{Action points} allow you to perform special actions that your character has access to.
+        You have a number of action points equal to your level.
+        You can gain additional action points from your \glossterm{base class}, from your Intelligence, and from some special abilities.
+        After a \glossterm{short rest}, you regain all action points you spent since your last rest, up to a maximum equal to half of your maximum action points.
+        After a \glossterm{long rest}, you recover all spent action points.
 
-    \subsection{Using Legend Points}
-        You can use a legend point to automatically roll a 10 on any \glossterm{attack} or \glossterm{check} you make.
-        On attack rolls, this allows you to roll again, just as if you had rolled a 10 normally (see \pcref{Exploding Attacks}).
-        Alternately, you can use a legend point to make any \glossterm{attack} or \glossterm{check} against you roll a 1.
+    \subsection{Legend Points}\label{Legend Points}
 
-        Using a legend point is not an action, and can be done at any time.
-        You can decide to use a legend point after you learn whether the original roll succeeded or failed.
-        You can even use a legend point after you learn what the effects of a successful attack or check would be, if that is information you could normally learn if it succeeded.
-        However, you must use the legend point before the effects have completely resolved.
+        As your character gains power and influence in the world, you may gain \glossterm{legend points}.
+        Legend points allow you to change fate to ensure your character succeeds.
 
-        If an attack affects multiple targets, your legend point only affects the roll against you, and does not change the attack's effects against the other targets.
-        If you are \glossterm{unaware} of an attack or check, you cannot use a legend point on it.
+        \subsubsection{Using Legend Points}
+            You can use a legend point to automatically roll a 10 on any \glossterm{attack} or \glossterm{check} you make.
+            On attack rolls, this allows you to roll again, just as if you had rolled a 10 normally (see \pcref{Exploding Attacks}).
+            Alternately, you can use a legend point to make any \glossterm{attack} or \glossterm{check} against you roll a 1.
 
-    \subsection{Gaining Legend Points}
+            Using a legend point is not an action, and can be done at any time.
+            You can decide to use a legend point after you learn whether the original roll succeeded or failed.
+            You can even use a legend point after you learn what the effects of a successful attack or check would be, if that is information you could normally learn if it succeeded.
+            However, you must use the legend point before the effects have completely resolved.
 
-        You gain legend points as you gain levels, as described in \pcref{Character Advancement}.
-        In addition, some abilities can grant additional legend points.
+            If an attack affects multiple targets, your legend point only affects the roll against you, and does not change the attack's effects against the other targets.
+            If you are \glossterm{unaware} of an attack or check, you cannot use a legend point on it.
 
-    \subsection{Restoring Legend Points}
+        \subsubsection{Gaining Legend Points}
 
-        At dawn each day, you regain all missing legend points, up to your maximum number of legend points.
-        This does not require rest or any specific action.
-        It is possible to gain additional legend points during the day by performing extraordinary actions worthy of legends.
+            You gain legend points as you gain levels, as described in \pcref{Character Advancement}.
+            In addition, some abilities can grant additional legend points.
 
-    \subsection{Legendary Foes}
-        Some monsters and humanoid enemies you encounter may have their own legend points.
-        In addition, some monsters have such legendary might that they can prevent characters from using legend points near them.
+        \subsubsection{Restoring Legend Points}
+
+            After a \glossterm{long rest}, you regain all spent legend points, up to your maximum number of legend points.
+            It is possible to gain additional legend points during the day by performing extraordinary actions worthy of legends.
+
+        \subsubsection{Legendary Foes}
+            Some monsters and humanoid enemies you encounter may have their own legend points.
+            In addition, some monsters have such legendary might that they can prevent characters from using legend points near them.
 
 \section{Character Advancement}\label{Character Advancement}
 
