@@ -559,20 +559,19 @@ It defines how attributes work and explains how to make physical attacks in comb
             \begin{dtable}
                 \lcaption{Increasing Attributes with Level}
                 \begin{dtabularx}{\columnwidth}{X X}
-                    \tb{Starting Attribute} & \tb{Bonus} \\
-                    0 or lower & 0 \\
-                    1 & One-quarter level \\
-                    2 & Half level \\
-                    3 & Three-quarters level \\
-                    4 & Level \sub 1 \\
-                    5 & Level \sub 1 \\
+                    \tb{Starting Attribute} & \tb{Bonus}   \\
+                    0 or lower              & 0            \\
+                    1                       & Half level   \\
+                    2                       & \plus1 per level after 1st \\
+                    3                       & \plus1 per level after 1st \\
+                    4                       & \plus1 per level after 1st \\
                 \end{dtabularx}
             \end{dtable}
 
         \subsubsection{Point Buy}
             With this method, you can fully control your character's attribute scores to match what you want your character to be.
             All your character's attribute scores start at 0.
-            You get 12 points to distribute among your character's attributes.
+            You get 6 points to distribute among your character's attributes.
             Attributes can be bought according to the costs on \trefnp{Attribute Score Point Costs}.
             The listed cost is the total cost required to gain the listed starting attribute.
             A starting character is 1st level, which adds appropriately to the character's total attribute score.
@@ -587,18 +586,17 @@ It defines how attributes work and explains how to make physical attacks in comb
                 \begin{dtabularx}{\columnwidth}{X X l}
                     \tb{Starting Attribute Score} & \tb{Total Attribute Score}        & \tb{Point Cost} \\
                     \hline
-                    \minus2\fn{1} & \minus2                     & 0\fn{2} \\
-                    \minus1\fn{1} & \minus1                     & 0\fn{3} \\
-                    0             & 0                           & 0       \\
-                    1             & 1 \add one-quarter level    & 1       \\
-                    2             & 2 \add half level           & 2       \\
-                    3             & 3 \add three-quarters level & 3       \\
-                    4             & 3 \add level                & 5       \\
-                    5             & 4 \add level                & 8       \\
+                    \minus2\fn{1} & \minus2           & 0\fn{2} \\
+                    \minus1\fn{1} & \minus1           & 0\fn{3} \\
+                    0             & 0                 & 0       \\
+                    1             & 1 \add half level & 1       \\
+                    2             & 1 \add level      & 2       \\
+                    3             & 2 \add level      & 3       \\
+                    4             & 3 \add level      & 4       \\
                 \end{dtabularx}
                 1 You cannot reduce more than two attributes below 0 in this way. \\
-                2 You gain two \glossterm{skill points}. \\
-                3 You gain one skill point. \\
+                2 You gain four \glossterm{skill points}. \\
+                3 You gain two skill points. \\
             \end{dtable}
 
 \section{Character Statistics}
@@ -1108,7 +1106,8 @@ It defines how attributes work and explains how to make physical attacks in comb
 
     \subsection{Action Points}\label{Action Points}
         \glossterm{Action points} allow you to perform special actions that your character has access to.
-        You have a number of action points equal to half your level (minimum 0).
+        You have one action point at 1st level.
+        At 5th level, and every 4 levels thereafter, you gain an additional action point.
         You can gain additional action points from your \glossterm{base class}, from your Intelligence, and from some special abilities.
         After a \glossterm{short rest}, you regain all action points you spent since your last rest, up to a maximum equal to half of your maximum action points (minimum 1).
         After a \glossterm{long rest}, you recover all spent action points.
@@ -1147,15 +1146,16 @@ It defines how attributes work and explains how to make physical attacks in comb
 
 \section{Character Advancement}\label{Character Advancement}
 
-    As your character accomplishes challenges and defeats foes, he gains experience.
-    If your character has enough experience, he gains a level.
+    As your character accomplishes challenges and defeats foes, they gain experience.
+    If your character has enough experience, they gain a level.
     When you gain a level, you can increase your character's level in your current class or in any other class, and gain the benefits described for each class.
     Rules for taking levels in multiple classes are described in \pref{Multiclass Characters}, below.
 
     A character that increases in level gains additional benefits.
     \begin{itemize}
         \item At 1st level, and every 4 levels thereafter, you gain a feat (see \pcref{Feats}).
-        \item At 3rd level, and every 4 levels thereafter, you gain a \glossterm{legend point}.
+        \item At 1st level, and every 4 levels thereafter, you gain an \glossterm{action point}.
+        \item At 4th level, and every 4 levels thereafter, you gain a \glossterm{legend point}.
     \end{itemize}
 
     If a character has multiple classes, these benefits are gained based on the total character level, not based on class level.
