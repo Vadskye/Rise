@@ -30,6 +30,11 @@ spell_categories = set([
     'damage',
     'debuff',
 ])
+DEFENSES = [
+    'Fortitude',
+    'Mental',
+    'Reflex',
+]
 SPELL_SOURCES = [
     'Arcane',
     'Divine',
@@ -108,7 +113,10 @@ class Spell(object):
 
         if self.standard_augments is None:
             self.standard_augments = self.calculate_standard_augments()
-        if self.category is not None and self.category not in spell_categories:
+
+        if self.category is None:
+            log(WARNING, f"{self} has no category")
+        elif self.category not in spell_categories:
             log(WARNING, f"{self} has unrecognized category '{self.category}'")
 
     def calculate_standard_augments(self):
@@ -1149,23 +1157,35 @@ def sanity_check(spells):
                 log(WARNING, f"Source {source} has no spell for {category}")
 
     # Every spell source should have both single target and multi damage spells
-    has_multi_damage = {source: False for source in SPELL_SOURCES}
-    has_single_target_damage = {source: False for source in SPELL_SOURCES}
-    for spell in spells:
-        if spell.category == 'damage':
-            if spell.targeting.targets:
-                for source in spell.lists:
-                    if source in SPELL_SOURCES:
-                        has_multi_damage[source] = True
-            if spell.targeting.target:
-                for source in spell.lists:
-                    if source in SPELL_SOURCES:
-                        has_single_target_damage[source] = True
-    for source in SPELL_SOURCES:
-        if not has_multi_damage[source]:
-            log(WARNING, f"Source {source} has no multi damage spell")
-        if not has_single_target_damage[source]:
-            log(WARNING, f"Source {source} has no single target damage spell")
+    # that target every defense
+    for defense in DEFENSES:
+        has_multi_damage = {source: False for source in SPELL_SOURCES}
+        has_single_target_damage = {source: False for source in SPELL_SOURCES}
+        # Every source should also have debuffs against every defense
+        has_debuff = {source: False for source in SPELL_SOURCES}
+        for spell in spells:
+            if spell.effects.attack and spell.effects.attack.defense == defense:
+                if spell.category == 'damage':
+                    if spell.targeting.targets:
+                        for source in spell.lists:
+                            if source in SPELL_SOURCES:
+                                has_multi_damage[source] = True
+                    if spell.targeting.target:
+                        for source in spell.lists:
+                            if source in SPELL_SOURCES:
+                                has_single_target_damage[source] = True
+                elif spell.category == 'debuff':
+                    for source in spell.lists:
+                        if source in SPELL_SOURCES:
+                            has_debuff[source] = True
+
+        for source in SPELL_SOURCES:
+            if not has_multi_damage[source]:
+                log(WARNING, f"Source {source} has no multi damage spell against {defense}")
+            if not has_single_target_damage[source]:
+                log(WARNING, f"Source {source} has no single target damage spell against {defense}")
+            if not has_debuff[source]:
+                log(WARNING, f"Source {source} has no debuff spell against {defense}")
 
 
 @click.command()
