@@ -382,6 +382,8 @@ Silent
 
     \xspace \tdash
 
+    \or
+
     \addlinespace \cr \fill \frontmatter
     \toprule \midrule \bottomrule
 
