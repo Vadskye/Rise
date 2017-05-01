@@ -29,8 +29,12 @@ spell_categories = set([
     'buff',
     'damage',
     'debuff',
-    'unknown',
 ])
+SPELL_SOURCES = [
+    'Arcane',
+    'Divine',
+    'Nature',
+]
 
 
 def join(*args):
@@ -168,7 +172,7 @@ class Attack(object):
         )
 
     @classmethod
-    def area_damage(cls, defense, damage_type):
+    def multi_damage(cls, defense, damage_type):
         return cls(
             defense=defense,
             success=f"\\spelldamage<{damage_type}>[1d4].",
@@ -787,7 +791,7 @@ def generate_spells():
             targets='Everything in the area',
         ),
         effects=Effects(
-            attack=Attack.area_damage('Reflex', 'fire'),
+            attack=Attack.multi_damage('Reflex', 'fire'),
             tags=['Fire'],
         ),
         schools=['Evocation'],
@@ -882,7 +886,7 @@ def generate_spells():
             targets='Everything in the area',
         ),
         effects=Effects(
-            attack=Attack.area_damage('Fortitude', 'bludgeoning'),
+            attack=Attack.multi_damage('Fortitude', 'bludgeoning'),
             tags=['Creation', 'Water'],
         ),
         schools=['Conjuration'],
@@ -1130,32 +1134,38 @@ def generate_spells():
 
 
 def sanity_check(spells):
-    by_category = {}
+    # Make sure that the right kinds of spells exist
+
+    # Every spell source should have one spell of each category
     for category in spell_categories:
-        by_category[category] = []
+        has_spell = {source: False for source in SPELL_SOURCES}
+        for spell in spells:
+            if spell.category == category:
+                for source in spell.lists:
+                    if source in has_spell:
+                        has_spell[source] = True
+        for source in SPELL_SOURCES:
+            if not has_spell[source]:
+                log(WARNING, f"Source {source} has no spell for {category}")
+
+    # Every spell source should have both single target and multi damage spells
+    has_multi_damage = {source: False for source in SPELL_SOURCES}
+    has_single_target_damage = {source: False for source in SPELL_SOURCES}
     for spell in spells:
-        if spell.category:
-            by_category[spell.category].append(spell)
-            continue
-
-        # Try to guess what type of effect the spell is
-        category = 'unknown'
-        if spell.effects.duration == 'short' and spell.targeting.target:
-            category = 'buff'
-        elif spell.effects.duration == 'brief':
-            category = 'debuff'
-        elif (
-            spell.effects.attack
-            and spell.effects.attack.success
-            and 'spelldamage' in spell.effects.attack.success
-        ):
+        if spell.category == 'damage':
+            if spell.targeting.targets:
+                for source in spell.lists:
+                    if source in SPELL_SOURCES:
+                        has_multi_damage[source] = True
             if spell.targeting.target:
-                category = 'single target damage'
-            elif spell.targeting.targets:
-                category = 'area damage'
-        by_category[category].append(spell)
-
-    return pformat(by_category)
+                for source in spell.lists:
+                    if source in SPELL_SOURCES:
+                        has_single_target_damage[source] = True
+    for source in SPELL_SOURCES:
+        if not has_multi_damage[source]:
+            log(WARNING, f"Source {source} has no multi damage spell")
+        if not has_single_target_damage[source]:
+            log(WARNING, f"Source {source} has no single target damage spell")
 
 
 @click.command()
@@ -1164,7 +1174,7 @@ def sanity_check(spells):
 def main(output, check):
     spells = generate_spells()
     if check:
-        print(sanity_check(spells))
+        sanity_check(spells)
     spell_text = '\n'.join([
         spell.to_latex()
         for spell in spells
