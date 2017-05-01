@@ -215,6 +215,12 @@
     backgroundcolor=LightCyan,
 ]{spelltargetinginfo}
 
+\newmdenv[
+    style=colorenv,
+    leftmargin=1em,
+    backgroundcolor=LightCyan,
+]{augmenttargetinginfo}
+
 \DeclareDocumentEnvironment{spelleffects}{}
 {
     \begin{fakehang}
@@ -222,11 +228,25 @@
 {
     \end{fakehang}
 }
-
 \surroundwithmdframed[
     style=colorenv,
     backgroundcolor=Lavender,
 ]{spelleffects}
+
+\DeclareDocumentEnvironment{augmenteffects}{}
+{
+    \begin{thesamepage}
+    \begin{fakehang}
+}
+{
+    \end{fakehang}
+    \end{thesamepage}
+}
+\surroundwithmdframed[
+    style=colorenv,
+    leftmargin=1em,
+    backgroundcolor=Lavender,
+]{augmenteffects}
 
 \DeclareDocumentEnvironment{spellfooter}{}
 {
@@ -358,10 +378,10 @@
 \DeclareDocumentEnvironment{thesamepage}{}
 {
     \par\nobreak\vfil\penalty0\vfilneg
-    \vtop\bgroup
+    \vtop
 }
 {
-    \par\xdef\tpd{\the\prevdepth}\egroup
+    \par\xdef\tpd{\the\prevdepth}
     \prevdepth=\tpd
 }
 
@@ -377,6 +397,20 @@
     style=colorenv,
     backgroundcolor=MistyRose,
 ]{spellaugments}
+
+\DeclareDocumentEnvironment{spellcantrip}{}
+{
+    \parhead{Cantrip}
+    \begin{fakehang}
+}
+{
+    \par~If~you~cast~this~spell~as~a~cantrip,~you~do~not~need~to~spend~an~\glossterm{action~point}~to~cast~it,~but~you~cannot~apply~any~augments~to~it.
+    \end{fakehang}
+}
+\surroundwithmdframed[
+    style=colorenv,
+    backgroundcolor=MistyRose,
+]{spellcantrip}
 
 % args: modifier, name, tags
 \DeclareDocumentEnvironment{ability}{o m o}
