@@ -393,7 +393,7 @@
     \or 1,500~gp %7
     \or 3,000~gp %8
     \or 7,500~gp %9
-    \else ???
+    \else???
     \fi
 }
 
@@ -576,8 +576,13 @@
         \parhead*{Lists} #3
     }
     {
-        \spelltwocol{#1}{\tb{Lists}:~#3}
+        \spelltwocol{\parhead*{Schools}~#1}{\parhead*{Lists}~#3}
     }
+}
+
+\DeclareDocumentCommand{\spelltags}{m}
+{
+    \parhead*{Tags} #1
 }
 
 \DeclareDocumentCommand{\imath}{m}
@@ -744,17 +749,10 @@
 
 \DeclareDocumentCommand{\spelldamage}{m o}
 {
-    \ifstr{#1}{}
-    {
-        \IfValueTF{#2}
-        {1#2~damage~per~two~spellpower}
-        {1d6~damage~per~spellpower}
-    }
-    {
-        \IfValueTF{#2}
-        {1#2~#1~damage~per~two~spellpower}
-        {1d6~#1~damage~per~spellpower}
-    }
+    \IfValueTF{#2}{#2}{1d8}~
+    \ifstr{#1}{#1~}{}
+    damage~\plus1d~per~two~spellpower.
+    % or alternately: standard damage based on your spellpower \add 2, etc.
 }
 
 \DeclareDocumentCommand{\spelldamageemp}{m o}
@@ -872,10 +870,10 @@
 {
     \IfValueTF{#1}
     {
-        \hyperlink{gloss:#1}{\textbf{\mbox{#2}}}
+        \hyperlink{gloss:#1}{\textbf{#2}}
     }
     {
-        \hyperlink{gloss:#2}{\textbf{\mbox{#2}}}
+        \hyperlink{gloss:#2}{\textbf{#2}}
     }
 }
 
@@ -1010,6 +1008,11 @@
 {
     \par\textbf{#1}~--~\textit{#2}:~#3
     \IfValueT{#4}{~This~is~a~#4~effect.}
+}
+
+\DeclareDocumentCommand{\augment}{m m}
+{
+    \par #1~--~\textbf{#2}:\xspace
 }
 
 \ExplSyntaxOff
