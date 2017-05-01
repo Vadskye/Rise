@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
+
+import click
+from logging import getLogger, INFO, WARNING
+from pprint import pformat
 import re
+logger = getLogger(__name__)
+def log(*args):
+    logger.log(*args)
 
 duration_mapping = {
     'brief': r'\durbrief',
@@ -17,6 +24,13 @@ rng_mapping = {
     'long': r'\rnglong',
     'extreme': r'\rngext',
 }
+spell_categories = set([
+    'battlefield control',
+    'buff',
+    'damage',
+    'debuff',
+    'unknown',
+])
 
 
 def join(*args):
@@ -67,6 +81,7 @@ class Spell(object):
             targeting,
             augments=None,
             cantrip=None,
+            category=None,
             custom_augments=None,
             header=None,
             miscast='random',
@@ -75,6 +90,7 @@ class Spell(object):
     ):
         self.augments = augments
         self.cantrip = cantrip
+        self.category = category
         self.custom_augments = custom_augments
         self.effects = effects
         self.header = header
@@ -86,7 +102,25 @@ class Spell(object):
         self.standard_augments = standard_augments
         self.targeting = targeting
 
-    def __str__(self):
+        if self.standard_augments is None:
+            self.standard_augments = self.calculate_standard_augments()
+        if self.category is not None and self.category not in spell_categories:
+            log(WARNING, f"{self} has unrecognized category '{self.category}'")
+
+    def calculate_standard_augments(self):
+        augments = []
+        if self.targeting.rng is not None:
+            augments.append('Extended')
+        if self.targeting.area is not None:
+            augments.append('Widened')
+        if (
+                self.targeting.target is not None
+                and self.targeting.area is None
+        ):
+            augments.append('Mass')
+        return sorted(augments)
+
+    def to_latex(self):
         return join(
             f"""
                 \\begin<spellsection><{self.name}>
@@ -118,6 +152,9 @@ class Spell(object):
                 for augment in self.custom_augments
             ]) if self.custom_augments else None,
         )
+
+    def __repr__(self):
+        return f"Spell({self.name})"
 
 
 class Attack(object):
@@ -172,6 +209,7 @@ class Attack(object):
                 \\end<spellattack>
             """,
         )
+
 
 class Augment(object):
 
@@ -371,6 +409,7 @@ class Targeting(object):
                 \\end<spelltargetinginfo>
             """
 
+
 def generate_spells():
     spells = []
     spells.append(Spell(
@@ -387,7 +426,6 @@ def generate_spells():
         schools=['Evocation'],
         lists=['Air, Nature'],
         cantrip='The spell has \\rngclose range and deals -1d damage.',
-        standard_augments=['Extended', 'Mass'],
         custom_augments=[
             Augment(
                 level=1,
@@ -404,6 +442,7 @@ def generate_spells():
             ),
             Augment.empowered_damage(),
         ],
+        category='buff',
     ))
     spells.append(Spell(
         name='Control Air',
@@ -424,7 +463,6 @@ def generate_spells():
         schools=['Transmutation'],
         lists=['Air', 'Nature'],
         cantrip='The spell lasts for 2 rounds.',
-        standard_augments=['Extended', 'Mass'],
         custom_augments=[
             Augment.giant(),
             Augment(
@@ -458,6 +496,7 @@ def generate_spells():
                 school='Evocation',
             ),
         ],
+        category='buff',
     ))
     spells.append(Spell(
         name='Inertial Shield',
@@ -467,15 +506,16 @@ def generate_spells():
             rng='close',
         ),
         effects=Effects(
-            effect="""The target gains \glossterm{damage reduction} against \glossterm{physical damage} equal to your spellpower.
-                Arcane damage ignores this damage reduction and negates it for 2 rounds.""",
+            effect="""
+                The target gains \\glossterm<damage reduction> against \\glossterm<physical damage> equal to your spellpower.
+                In addition, it is \\glossterm<vulnerable> to arcane damage.
+            """,
             duration='short',
             tags=['Shielding'],
         ),
         schools=['Abjuration'],
         lists=['Arcane'],
-        cantrip='The spell lasts for 2 rounds',
-        standard_augments=['Extended', 'Mass'],
+        cantrip='The spell lasts for 2 rounds.',
         custom_augments=[
             Augment(
                 level=2,
@@ -512,6 +552,7 @@ def generate_spells():
                 stackable=True,
             ),
         ],
+        category='buff',
     ))
     spells.append(Spell(
         name='Create Acid',
@@ -527,7 +568,6 @@ def generate_spells():
         schools=['Conjuration'],
         lists=['Arcane'],
         cantrip='The spell deals -1d damage.',
-        standard_augments=['Extended', 'Mass'],
         custom_augments=[
             Augment(
                 level=2,
@@ -549,6 +589,7 @@ def generate_spells():
                 description=r'The target is \glossterm<staggered> for 2 rounds.'
             ),
         ],
+        category='damage',
     ))
     # Math: at 1st level, spellpower is probably ~2, so standard damage is probably 1d10.
     # Casting this spell and then two standard damage spells deals 4d8 = 18 damage
@@ -583,7 +624,6 @@ def generate_spells():
             The spell affects the first damage the target takes each round, rather than all damage.
             If the target takes damage from multiple sources, you choose which source deals increased damage.
         """,
-        standard_augments=['Extended', 'Mass'],
         custom_augments=[
             Augment(
                 level=2,
@@ -597,6 +637,7 @@ def generate_spells():
                 description="Whenever the target takes damage increased by this spell, it is \\glossterm<staggered> for 1 round.",
             )
         ],
+        category='debuff',
     ))
     spells.append(Spell(
         name='Aid',
@@ -617,7 +658,7 @@ def generate_spells():
         cantrip="""
             The spell grants temporary hit points equal to your spellpower, rather than twice your spellpower.
         """,
-        standard_augments=['Extended', 'Mass'],
+        standard_augments=['Extended'],
         custom_augments=[
             Augment(
                 level=3,
@@ -626,6 +667,7 @@ def generate_spells():
                 stackable=True,
             )
         ],
+        category='buff',
     ))
     spells.append(Spell(
         name='Barrier',
@@ -646,7 +688,6 @@ def generate_spells():
         schools=['Abjuration'],
         lists=['Divine', 'Nature'],
         cantrip="The spell lasts for 2 rounds.",
-        standard_augments=['Widened'],
         custom_augments=[
             Augment(
                 level=3,
@@ -673,6 +714,7 @@ def generate_spells():
                 tags=['Life'],
             ),
         ],
+        category='battlefield control',
     ))
     spells.append(Spell(
         name='Antimagic',
@@ -692,7 +734,6 @@ def generate_spells():
         schools=['Abjuration'],
         lists=['Arcane', 'Divine', 'Magic', 'Nature'],
         cantrip=None,
-        standard_augments=['Extended', 'Mass'],
         custom_augments=[
             Augment(
                 level=1,
@@ -734,6 +775,7 @@ def generate_spells():
                 """,
             ),
         ],
+        category='debuff',
     ))
     spells.append(Spell(
         name='Fireball',
@@ -751,7 +793,6 @@ def generate_spells():
         schools=['Evocation'],
         lists=['Arcane', 'Fire', 'Nature'],
         cantrip='The spell deals -1d damage.',
-        standard_augments=['Extended', 'Widened'],
         custom_augments=[
             Augment(
                 level=1,
@@ -763,6 +804,7 @@ def generate_spells():
                 ),
             ),
         ],
+        category='damage',
     ))
     spells.append(Spell(
         name="Charm Person",
@@ -782,7 +824,6 @@ def generate_spells():
         ),
         schools=['Enchantment'],
         lists=["Arcane"],
-        standard_augments=['Extended', 'Mass'],
         custom_augments=[
             Augment(
                 level=1,
@@ -830,6 +871,7 @@ def generate_spells():
                 """,
             ),
         ],
+        category='debuff',
     ))
     spells.append(Spell(
         name="Water Mastery",
@@ -848,7 +890,6 @@ def generate_spells():
         cantrip="""
             The spell affects an area 5 ft.\ wide, and does not deal damage on a failed attack.
         """,
-        standard_augments=['Widened'],
         custom_augments=[
             Augment(
                 level=1,
@@ -869,6 +910,7 @@ def generate_spells():
                 """,
             ),
         ],
+        category='damage',
     ))
     spells.append(Spell(
         name="Elemental Blade",
@@ -888,8 +930,7 @@ def generate_spells():
         ),
         schools=['Evocation', 'Transmutation'],
         lists=['Nature', 'War', 'Water'],
-        cantrip="cantripeffect",
-        standard_augments=['Extended', 'Mass'],
+        cantrip="The spell lasts for 2 rounds.",
         custom_augments=[
             Augment(
                 level=1,
@@ -913,6 +954,14 @@ def generate_spells():
                 tags=['Air'],
             ),
             Augment(
+                level=3,
+                name="Empowered",
+                description="""
+                    The spell's damage bonus increases by +1d.
+                """,
+                stackable=True,
+            ),
+            Augment(
                 level=5,
                 name="Zephyr Blade, Greater",
                 description="""
@@ -928,6 +977,7 @@ def generate_spells():
                 tags=['Water'],
             ),
         ],
+        category='buff',
     ))
     spells.append(Spell(
         name="Drain Life",
@@ -945,7 +995,6 @@ def generate_spells():
         cantrip="""
             The spell has \\rngclose range and deals -1d damage.
         """,
-        standard_augments=['Extended', 'Mass'],
         custom_augments=[
             Augment(
                 level=2,
@@ -973,6 +1022,7 @@ def generate_spells():
                 tags=['Death'],
             ),
         ],
+        category='damage',
     ))
     spells.append(Spell(
         name="Fear",
@@ -993,7 +1043,6 @@ def generate_spells():
         schools=['Enchantment'],
         lists=['Arcane'],
         cantrip="The spell has \rngclose range and has no effect on a failed attack.",
-        standard_augments=['Extended', 'Mass'],
         custom_augments=[
             Augment(
                 level=1,
@@ -1003,6 +1052,7 @@ def generate_spells():
                 """,
             ),
         ],
+        category='debuff',
     ))
     spells.append(Spell(
         name='Bless',
@@ -1035,20 +1085,99 @@ def generate_spells():
                 stackable=True,
             ),
         ],
+        category='buff',
+    ))
+    spells.append(Spell(
+        name="Barkskin",
+        header=Header("You toughen a creature's skin, giving it the appearance of tree bark."),
+        targeting=Targeting(
+            target='One living creature',
+            rng='close',
+        ),
+        effects=Effects(
+            effect="""
+                The target gains \\glossterm{damage reduction} against physical damage equal to your spellpower.
+                In addition, it is \\glossterm<vulnerable> to fire damage.
+            """,
+            duration='short',
+            tags=['Enhancement'],
+        ),
+        schools=['Transmutation'],
+        lists=['Nature'],
+        cantrip='The spell lasts for 2 rounds.',
+        standard_augments=['Extended'],
+        custom_augments=[
+            Augment(
+                level=2,
+                name="Stoneskin",
+                description="""
+                    The spell does not make the target vulnerable to fire damage.
+                    Instead, it makes the target \\glossterm<vulnerable> to damage from adamantine weapons.
+                """,
+            ),
+            Augment(
+                level=4,
+                name="Empowered",
+                description="""
+                    The damage reduction granted by this spell increases by an amount equal to your spellpower.
+                """,
+                stackable=True,
+            ),
+        ],
+        category='buff',
     ))
     return sorted(spells, key=lambda spell: spell.name)
 
-def main():
+
+def sanity_check(spells):
+    by_category = {}
+    for category in spell_categories:
+        by_category[category] = []
+    for spell in spells:
+        if spell.category:
+            by_category[spell.category].append(spell)
+            continue
+
+        # Try to guess what type of effect the spell is
+        category = 'unknown'
+        if spell.effects.duration == 'short' and spell.targeting.target:
+            category = 'buff'
+        elif spell.effects.duration == 'brief':
+            category = 'debuff'
+        elif (
+            spell.effects.attack
+            and spell.effects.attack.success
+            and 'spelldamage' in spell.effects.attack.success
+        ):
+            if spell.targeting.target:
+                category = 'single target damage'
+            elif spell.targeting.targets:
+                category = 'area damage'
+        by_category[category].append(spell)
+
+    return pformat(by_category)
+
+
+@click.command()
+@click.option('-c', '--check/--no-check', default=False)
+@click.option('-o', '--output')
+def main(output, check):
+    spells = generate_spells()
+    if check:
+        print(sanity_check(spells))
     spell_text = '\n'.join([
-        str(spell)
-        for spell in generate_spells()
+        spell.to_latex()
+        for spell in spells
     ])
-    print(
-        latexify(f"""
-            \\section<Autogenerated Spell Descriptions>
-            {spell_text}
-        """)
-    )
+    spell_text = latexify(f"""
+        \\section<Autogenerated Spell Descriptions>
+        {spell_text}
+    """)
+    if output is None:
+        print(spell_text)
+    else:
+        with open(output, 'w') as of:
+            of.write(spell_text)
 
 
 if __name__ == "__main__":
