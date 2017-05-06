@@ -72,17 +72,22 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
             Each time, the spell's range increases by an additional step.
             \par This augment can be applied to any spell with a range that is one of the above ranges.
 
-            \augment{3}{Mass} The spell affects up to five targets.
-            If it deals damage, that damage is reduced by \minus2d.
-            \par This augment can be applied to any spell that affects a single target of the caster's choice.
-            It cannot be applied to spells that affect a single specific target, such as the caster.
-
             \augment{2}{Widened} The spell's area increases by one step, to a maximum of \areahuge.
             The steps are, in order: \areasmall, \areamed, \arealarge, and \areahuge.
             A Small or Medium line is 5 ft.\ wide, while a Large or Huge line is 10 ft.\ wide.
             This augment can be applied multiple times.
             Each time, the spell's area increases by an additional step.
             \par This augment can be applied to any spell with an area that is one of the above areas.
+
+            \augment{3}{Intensified} The spell deals \plus1d damage.
+            This augment can be applied multiple times.
+            Its effects stack.
+            \par This augment can be applied to any spell that deals a dice pool of damage.
+
+            \augment{3}{Mass} The spell affects up to five targets.
+            If it deals damage, that damage is reduced by \minus2d.
+            \par This augment can be applied to any spell that affects a single target of the caster's choice.
+            It cannot be applied to spells that affect a single specific target, such as the caster.
 
     \subsection{Dismissing Spells}
 
@@ -334,19 +339,38 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
 
     \subsection{Duration}
 
-        A spell's Duration entry tells you how long the magical energy of the spell lasts.
+        A spell's duration entry tells you how long the magical energy of the spell lasts.
 
-        \parhead{Focus} The spell lasts as long as you focus on it. Focusing to maintain a spell is a standard action. Anything that could break your concentration when casting a spell can also break your concentration while you're maintaining one, causing your focus to end. You can't cast a spell while focusing on another one.
-        \parhead{Timed Durations} Many durations are measured in rounds, minutes, hours, or some other increment. When the time is up, the magic goes away and the spell ends at the end of your turn.
+        \parhead{Sustain} The spell lasts as long as you take an action to sustain it.
+        A Sustain duration always specifies an action type, such as Sustain (standard).
+        At the end of each round, the spell is dismissed unless you cast the spell that round or the action to sustain the spell.
+        Anything that could break your concentration when casting a spell can also break your concentration while you're sustaining one.
+
+        Taking an action to sustain a spell only allows you to sustain a single casting of that spell.
+        However, you can sustain multiple spells at once if you have available actions.
+
+        You can only sustain a spell for up to 5 minutes.
+        After that time, the spell is dismissed.
+
+        \parhead{Attunement} The spell lasts as long as you stay attuned to it.
+        Attuning to a spell works in the same way as attuning to a magic item, and reduces your maximum action points by 1 (see \pcref{Attunement}).
+        If you cast that spell again, all previous castings of the spell are dismissed at the end of the round.
+        If you dismiss the spell, you are no longer attuned to it, and your maximum (but not current) action points increase appropriately.
+
+        \parhead{Condition} The spell lasts until its target removes it, such as by taking the Recover action (see \pcref{Recover}).
+        Only spells that affect creatures can have the Condition duration.
+
+        \parhead{Timed Durations} Some durations are measured in rounds, minutes, hours, or some other increment. When the time is up, the magic goes away and the spell ends at the end of your turn.
 
         Spells end after the given length of time has completely elapsed. For example, a spell that lasts 1 round ends at the end of the next round after it is cast, not at the end of the round in which it is cast.
 
-        If a spell's duration is variable, the duration is rolled secretly (the caster doesn't know how long the spell will last).
         \subparhead{Short} The spell lasts for as long as you focus, plus 5 additional rounds.
         \subparhead{Medium} The spell lasts for 5 minutes.
         \subparhead{Long} The spell lasts for 1 hour.
         \subparhead{Extreme} The spell lasts for 12 hours.
         \subparhead{Other} Some spells, such as long-lasting rituals, last for a specific amount of time specified in the spell description.
+        If a spell's duration is variable, the duration is rolled secretly (the caster doesn't know how long the spell will last).
+
         \parhead{Permanent} The energy remains as long as the effect does. This means the spell is vulnerable to \spell{dispel magic}.
 
         \parhead{Instantaneous} Spells without a listed duration are instantaneous. Spell energy comes and goes the instant the spell is cast, though the consequences might be long-lasting.
