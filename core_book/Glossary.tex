@@ -494,6 +494,9 @@ For details, see \pcref{Vital Damage}.
 
 \glossdef{vulnerable} A creature can be vulnerable to a type of damage or a special weapon material.
 It takes double damage from sources it is vulnerable to.
+If it takes damage from a damage source with multiple types or multiple materials, it takes double damage if it is vulnerable to any of those types or materials.
+Vulnerability is calculated before applying \glossterm{damage reduction}.
+\par If a creature would become vulnerable to the same thing multiple times, it still only takes double damage from damage of that type.
 
 \glossdef{warp damage} Warp damage is a special kind of damage.
 Warp damage counts as damage for the purpose of determining how many hit points a character has remaining, just like other kinds of damage.
