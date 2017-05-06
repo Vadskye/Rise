@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
 
 import click
-from logging import getLogger, INFO, WARNING
-from pprint import pformat
+from logging import getLogger, WARNING
+# from pprint import pformat
 import re
 logger = getLogger(__name__)
 def log(*args):
     logger.log(*args)
+def warn(*args):
+    logger.log(WARNING, *args)
 
 duration_mapping = {
-    'brief': r'\durbrief',
-    'short': r'\durshort',
-    'medium': r'\durmed',
-    'long': r'\durlong',
-    'extreme': r'\durext',
+    'attune': 'Attunement',
+    'condition': 'Condition',
+    'sustain (swift)': 'Sustain (swift)',
 }
 miscast_mapping = {
     'random': r'\miscastexplode',
@@ -24,17 +24,32 @@ rng_mapping = {
     'long': r'\rnglong',
     'extreme': r'\rngext',
 }
-spell_categories = set([
-    'battlefield control',
-    'buff',
-    'damage',
-    'debuff',
-])
 DEFENSES = [
     'Fortitude',
     'Mental',
     'Reflex',
+    'Special',
 ]
+SCHOOLS = [
+    'Abjuration',
+    'Channeling',
+    'Conjuration',
+    'Divination',
+    'Enchantment',
+    'Evocation',
+    'Illusion',
+    'Transmutation',
+    'Vivimancy',
+]
+SPELL_CATEGORIES = set([
+    'buff, offense',
+    'buff, defense',
+    'buff, utility',
+    'damage',
+    'debuff, combat',
+    'debuff, mobility',
+    'narrative',
+])
 SPELL_SOURCES = [
     'Arcane',
     'Divine',
@@ -83,18 +98,19 @@ def latexify(text):
 class Spell(object):
     def __init__(
             self,
-            effects,
-            lists,
-            name,
-            schools,
-            targeting,
             augments=None,
             cantrip=None,
             category=None,
             custom_augments=None,
+            effects=None,
             header=None,
+            lists=None,
             miscast='random',
+            name=None,
+            schools=None,
+            targeting=None,
             notes=None,
+            short_description=None,
             standard_augments=None,
     ):
         self.augments = augments
@@ -108,16 +124,25 @@ class Spell(object):
         self.miscast = miscast
         self.notes = notes
         self.schools = schools
+        self.short_description = short_description or 'TODO'
         self.standard_augments = standard_augments
         self.targeting = targeting
+
+        for arg in ['cantrip', 'effects', 'lists', 'name', 'schools', 'targeting']:
+            if getattr(self, arg) is None:
+                print(f"Warning: {self} is missing required property '{arg}'")
 
         if self.standard_augments is None:
             self.standard_augments = self.calculate_standard_augments()
 
+        for school in self.schools:
+            if school not in SCHOOLS:
+                warn(f"{self} has unrecognized school '{school}'")
+
         if self.category is None:
-            log(WARNING, f"{self} has no category")
-        elif self.category not in spell_categories:
-            log(WARNING, f"{self} has unrecognized category '{self.category}'")
+            warn(f"{self} has no category")
+        elif self.category not in SPELL_CATEGORIES:
+            warn(f"{self} has unrecognized category '{self.category}'")
 
     def calculate_standard_augments(self):
         augments = []
@@ -128,11 +153,27 @@ class Spell(object):
         if (
                 self.targeting.target is not None
                 and self.targeting.area is None
+                and self.category[:4] != 'buff'
         ):
             augments.append('Mass')
+        if (
+                self.effects.attack
+                and self.effects.attack.success
+                and '\\spelldamage' in self.effects.attack.success
+        ):
+            augments.append('Intensified')
         return sorted(augments)
 
     def to_latex(self):
+        # Sort by level as primary, name as secondary
+        sorted_custom_augments = sorted(
+            sorted(
+                self.custom_augments,
+                key=lambda augment: augment.name
+            ),
+            key=lambda augment: augment.level
+        ) if self.custom_augments else None
+
         return join(
             f"""
                 \\begin<spellsection><{self.name}>
@@ -157,11 +198,11 @@ class Spell(object):
             """, f"""
                 \\subsubsection<Augments>
             """ if self.custom_augments or self.standard_augments else None, f"""
-                    \\parhead<Standard Augments> {', '.join(self.standard_augments)}.
+                    \\parhead<Standard Augments> {', '.join(sorted(self.standard_augments))}.
             """ if self.standard_augments else None,
             '\n'.join([
                 str(augment)
-                for augment in self.custom_augments
+                for augment in sorted_custom_augments
             ]) if self.custom_augments else None,
         )
 
@@ -205,6 +246,9 @@ class Attack(object):
         self.special = special
         self.success = success
 
+        if defense not in DEFENSES:
+            raise Exception(f"Attack has unrecognized defense '{defense}'")
+
     def __str__(self):
         return join(
             f"""
@@ -224,17 +268,6 @@ class Attack(object):
 
 
 class Augment(object):
-
-    @classmethod
-    def empowered_damage(cls):
-        return cls(
-            level=3,
-            name='Empowered',
-            description="""
-                The spell deals +1d damage.
-            """,
-            stackable=True,
-        )
 
     @classmethod
     def giant(cls):
@@ -312,25 +345,36 @@ class Augment(object):
             """ if self.tags or self.school or self.stackable or self.only_one else None, f"""
                 {self.tag_text()}
             """, f"""
-                You can apply this augment multiple times.
+                This augment can be applied multiple times.
                 Its effects stack.
             """ if self.stackable else None, f"""
-                You can only apply this augment to one casting of this spell at a time.
+                This augment can only be applied to one casting of this spell at a time.
             """ if self.only_one else None,
         ))
 
 
 class Effects(object):
-    def __init__(self, attack=None, duration=None, effect=None, tags=None):
+    def __init__(
+            self,
+            attack=None,
+            duration=None,
+            effect=None,
+            special=None,
+            tags=None,
+    ):
         self.attack = attack
         self.effect = effect
         self.duration = duration
+        self.special = special
         self.tags = tags
 
     def __str__(self):
         return join(
             f"""
                 \\begin<spelleffects>
+            """, f"""
+                    \\spellspecial {self.special}
+            """ if self.special else None, f"""
             """, f"""
                     \\spelleffect {self.effect}
             """ if self.effect else None, f"""
@@ -432,12 +476,12 @@ def generate_spells():
             rng='medium',
         ),
         effects=Effects(
-            attack=Attack.damage('fortitude', 'bludgeoning'),
+            attack=Attack.damage('Fortitude', 'bludgeoning'),
             tags=['Air'],
         ),
         schools=['Evocation'],
         lists=['Air, Nature'],
-        cantrip='The spell has \\rngclose range and deals -1d damage.',
+        cantrip='The spell deals -1d damage and has no additional effects on a critical success.',
         custom_augments=[
             Augment(
                 level=1,
@@ -445,37 +489,50 @@ def generate_spells():
                 description='If the attack succeeds, the target is moved up to 10 feet in any direction -- even vertically.',
             ),
             Augment(
-                level=2,
+                level=1,
                 name='Gust of Wind',
+                description="The spell deals -2d damage.",
                 targeting=Targeting(
                     area=r'\arealarge line, 10 ft. wide',
                     targets='Everything in the area',
                 )
             ),
-            Augment.empowered_damage(),
         ],
-        category='buff',
+        category='damage',
     ))
     spells.append(Spell(
         name='Control Air',
-        header=Header('You grant your ally ephemeral wings which allow them to glide.'),
+        header=Header('You shield your ally with a barrier of wind, protecting them from harm.'),
         targeting=Targeting(
             target='One willing creature (Medium or smaller)',
             rng='close',
         ),
         effects=Effects(
             effect="""
-                The target gains a 30 foot glide speed.
-                A creature with a glide speed can glide through the air at the indicated speed (see \pcref{Gliding}).
-                In addition, ranged \glossterm{strikes} against the target have a 20\% miss chance.
+                The target gains a +2 bonus to \\glossterm<physical defenses>.
+                This bonus is increased to +5 against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
+                Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
             """,
-            duration='short',
+            duration='attune',
             tags=['Air', 'Imbuement'],
         ),
         schools=['Transmutation'],
         lists=['Air', 'Nature'],
-        cantrip='The spell lasts for 2 rounds.',
+        cantrip="The spell's duration becomes Sustain (swift).",
         custom_augments=[
+            Augment(
+                level=1,
+                name="Gentle Descent",
+                description="""
+                    The target gains a 30 foot glide speed.
+                    A creature with a glide speed can glide through the air at the indicated speed (see \pcref{Gliding}).
+                """,
+            ),
+            Augment(
+                level=3,
+                name='Wind Screen',
+                description="The miss chance for ranged strikes against the target increases to 50\%.",
+            ),
             Augment.giant(),
             Augment(
                 level=2,
@@ -492,11 +549,6 @@ def generate_spells():
                 """,
             ),
             Augment(
-                level=3,
-                name='Wind Screen',
-                description="The miss chance for ranged strikes against the target increases to 50\%.",
-            ),
-            Augment(
                 level=4,
                 name='Stormlord',
                 description=r"""
@@ -508,7 +560,7 @@ def generate_spells():
                 school='Evocation',
             ),
         ],
-        category='buff',
+        category='buff, utility',
     ))
     spells.append(Spell(
         name='Inertial Shield',
@@ -522,12 +574,12 @@ def generate_spells():
                 The target gains \\glossterm<damage reduction> against \\glossterm<physical damage> equal to your spellpower.
                 In addition, it is \\glossterm<vulnerable> to arcane damage.
             """,
-            duration='short',
+            duration='attune',
             tags=['Shielding'],
         ),
         schools=['Abjuration'],
         lists=['Arcane'],
-        cantrip='The spell lasts for 2 rounds.',
+        cantrip="The spell's duration becomes Sustain (swift).",
         custom_augments=[
             Augment(
                 level=2,
@@ -564,7 +616,7 @@ def generate_spells():
                 stackable=True,
             ),
         ],
-        category='buff',
+        category='buff, defense',
     ))
     spells.append(Spell(
         name='Create Acid',
@@ -574,19 +626,18 @@ def generate_spells():
             rng='close',
         ),
         effects=Effects(
-            attack=Attack.damage('reflex', 'acid'),
+            attack=Attack.damage('Reflex', 'acid'),
             tags=['Acid', 'Creation'],
         ),
         schools=['Conjuration'],
         lists=['Arcane'],
-        cantrip='The spell deals -1d damage.',
+        cantrip="The spell deals -1d damage and has no additional effects on a critical success.",
         custom_augments=[
             Augment(
                 level=2,
                 name='Corrosive',
                 description='The spell deals double damage to objects.'
             ),
-            Augment.empowered_damage(),
             Augment(
                 level=3,
                 name='Lingering',
@@ -610,9 +661,9 @@ def generate_spells():
 
     # At 20th level, spellpower is ~22, so standard damage is 8d10
     # Casting this spell and then two standard damage spells deals 20d10
-    # But as a 7th level, with two Empowered augments, deals 24d10
+    # But as a 7th level, with two Intensified augments, deals 24d10
     # Casting three standard damage spells deals 24d10
-    # So this should be +3 per Empowered
+    # So this should be +3 per Intensified
     spells.append(Spell(
         name='Agony',
         header=Header('You inflict debilitating pain on your foe'),
@@ -626,15 +677,16 @@ def generate_spells():
                 success="Physical damage dealt to the target is increased by +2d.",
                 critical="Physical damage dealt to the target is increased by +4d.",
             ),
-            duration='brief',
+            duration='condition',
             tags=['Delusion', 'Mind'],
         ),
         schools=['Enchantment'],
         lists=['Arcane', 'Divine'],
         notes="This damage increase applies before other effects that modify the total damage dealt, such as \glossterm<damage reduction>.",
         cantrip="""
-            The spell affects the first damage the target takes each round, rather than all damage.
-            If the target takes damage from multiple sources, you choose which source deals increased damage.
+            The spell has no additional effects on a critical success.
+            In addition, its duration becomes Sustain (swift).
+            Its effect is still a condition, and can be removed by abilites that remove conditions.
         """,
         custom_augments=[
             Augment(
@@ -642,44 +694,13 @@ def generate_spells():
                 name='Complete',
                 description="The damage increase applies to all damage, not just physical damage.",
             ),
-            Augment.empowered_damage(),
             Augment(
                 level=4,
                 name='Staggering',
                 description="Whenever the target takes damage increased by this spell, it is \\glossterm<staggered> for 1 round.",
             )
         ],
-        category='debuff',
-    ))
-    spells.append(Spell(
-        name='Aid',
-        targeting=Targeting(
-            target='One creature',
-            rng='close',
-        ),
-        effects=Effects(
-            effect="""
-                The target gains temporary hit points equal to twice your spellpower.
-                If the target takes life damage, it loses all temporary hit points provided by this spell before applying the damage.
-            """,
-            duration='short',
-            tags=['Delusion', 'Mind'],
-        ),
-        schools=['Enchantment'],
-        lists=['Divine', 'Good'],
-        cantrip="""
-            The spell grants temporary hit points equal to your spellpower, rather than twice your spellpower.
-        """,
-        standard_augments=['Extended'],
-        custom_augments=[
-            Augment(
-                level=3,
-                name='Empowered',
-                description="The temporary hit points granted by this spell increase by an amount equal to your spellpower.",
-                stackable=True,
-            )
-        ],
-        category='buff',
+        category='debuff, combat',
     ))
     spells.append(Spell(
         name='Barrier',
@@ -695,11 +716,11 @@ def generate_spells():
                 Failure means the creature can enter the area unimpeded.
                 Creatures in the area at the time that the spell is cast are unaffected by the spell.
             """,
-            duration='short',
+            duration='sustain (swift)',
         ),
         schools=['Abjuration'],
         lists=['Divine', 'Nature'],
-        cantrip="The spell lasts for 2 rounds.",
+        cantrip="The spell's duration becomes Sustain (standard)",
         custom_augments=[
             Augment(
                 level=3,
@@ -708,12 +729,6 @@ def generate_spells():
                     Whenever a creature attempts to pass through the barrier for the first time, you can allow it to pass through unimpeded.
                     You must be aware of a creature attempting to pass through the barrier to allow it through.
                 """,
-            ),
-            Augment(
-                level=4,
-                name='Persistent',
-                description="The spell's duration becomes \\durlong",
-                only_one=True,
             ),
             Augment(
                 level=6,
@@ -726,7 +741,7 @@ def generate_spells():
                 tags=['Life'],
             ),
         ],
-        category='battlefield control',
+        category='debuff, mobility',
     ))
     spells.append(Spell(
         name='Antimagic',
@@ -738,23 +753,29 @@ def generate_spells():
             attack=Attack(
                 defense='Special',
                 special="""
-                    For every spell affecting the target, if the attack result beats a DR equal to 10 + the spellpower of the spell, the spell is \\glossterm<suppressed> for 2 rounds.
+                    For every \\glossterm<magical> effect on the target, if the attack result beats a DR equal to 10 + the \\glossterm<power> of the effect, the effect is \\glossterm<suppressed>.
                 """,
             ),
+            duration='sustain (swift)',
             tags=['Thaumaturgy'],
         ),
         schools=['Abjuration'],
         lists=['Arcane', 'Divine', 'Magic', 'Nature'],
-        cantrip=None,
+        cantrip="The spell's duration becomes Sustain (standard).",
         custom_augments=[
             Augment(
                 level=1,
                 name='Suppress Item',
-                description="""
-                    The spell does not have its normal effect.
-                    Instead, if the target is an object, and the attack result beats a DR equal to 10 + the spellpower of the object, the object is suppressed for 2 rounds.
-                    A suppressed object loses all its magical abilities, though it is still treated as being a magical object for the purpose of spells and effects.
-                """,
+                effects=Effects(
+                    attack=Attack(
+                        defense='Special',
+                        special="""
+                            If the target is an object, and the attack result beats a DR equal to 10 + the spellpower of the object, the object is \\glossterm<suppressed>.
+                        """,
+                    ),
+                    duration='sustain (swift)',
+                    tags=['Thaumaturgy'],
+                ),
             ),
             Augment(
                 level=2,
@@ -763,16 +784,6 @@ def generate_spells():
                     The spell does not have its normal effect.
                     If the target is an effect of an ongoing spell (such as a summoned creature) and the attack result beats a DR equal to 10 + the spellpower of the spell, the target is treated as if the spell that created it was dispelled.
                     This usually causes the target to disappear.
-                """,
-            ),
-            Augment(
-                level=5,
-                name='Spelltheft',
-                description="""
-                    Affected spells are dispelled instead of being suppressed.
-                    In addition, you can choose to gain the effects of any spells you dispel as if they had been originally cast on you.
-                    The effects last for the remainder of their original durations or for 5 rounds, whichever is shorter.
-                    Spells that cannot be cast on you, such as spells which only affect the caster, are simply dispelled.
                 """,
             ),
             Augment(
@@ -787,7 +798,7 @@ def generate_spells():
                 """,
             ),
         ],
-        category='debuff',
+        category='debuff, combat',
     ))
     spells.append(Spell(
         name='Fireball',
@@ -804,7 +815,7 @@ def generate_spells():
         ),
         schools=['Evocation'],
         lists=['Arcane', 'Fire', 'Nature'],
-        cantrip='The spell deals -1d damage.',
+        cantrip="The spell deals -1d damage and has no additional effects on a critical success.",
         custom_augments=[
             Augment(
                 level=1,
@@ -829,11 +840,19 @@ def generate_spells():
             attack=Attack(
                 defense='Mental',
                 special="If the target thinks that you or your allies are threatening it, you take a -5 penalty to accuracy on the attack.",
-                success="The target is \\charmed by you. Any act by you or your apparent allies that threatens or damages the \\spell<charmed> person breaks the spell.",
-                critical="As above, but the effect is permanent.",
+                success="""
+                    The target is \\charmed by you.
+                    Any act by you or your apparent allies that threatens or damages the \\spell<charmed> person breaks the effect.
+                """,
+                critical="As above, but the effect's duration becomes permanent.",
             ),
+            duration='sustain (swift)',
             tags=['Delusion', 'Mind', 'Subtle'],
         ),
+        cantrip="""
+            The spell has no additional effects on a critical success.
+            In addition, its duration becomes Sustain (standard).
+        """,
         schools=['Enchantment'],
         lists=["Arcane"],
         custom_augments=[
@@ -853,9 +872,10 @@ def generate_spells():
             ),
             Augment(
                 level=3,
-                name="Persistent",
+                name="Attuned",
                 description="""
-                    The spell's duration becomes \\durext.
+                    The spell's duration becomes Attunement.
+                    A critical sucess still makes the effect permanent.
                 """,
             ),
             Augment(
@@ -883,7 +903,7 @@ def generate_spells():
                 """,
             ),
         ],
-        category='debuff',
+        category='narrative',
     ))
     spells.append(Spell(
         name="Water Mastery",
@@ -899,9 +919,7 @@ def generate_spells():
         ),
         schools=['Conjuration'],
         lists=['Nature', 'Water'],
-        cantrip="""
-            The spell affects an area 5 ft.\ wide, and does not deal damage on a failed attack.
-        """,
+        cantrip='The spell deals -1d damage and has no additional effects on a critical success.',
         custom_augments=[
             Augment(
                 level=1,
@@ -915,9 +933,10 @@ def generate_spells():
             ),
             Augment(
                 level=3,
-                name="Persistent",
+                name="Sustained",
                 description="""
-                    The area affected by this spell becomes completely filled with water for \\durbrief duration.
+                    The area affected by this spell becomes completely filled with water.
+                    You can sustain the water as a swift action.
                     Creatures in this \\glossterm<zone> suffer penalties appropriate for fighting underwater, and may be unable to breathe.
                 """,
             ),
@@ -937,12 +956,12 @@ def generate_spells():
                 In addition, all damage dealt with the weapon with strikes becomes fire damage in addition to its normal damage types.
                 This suppresses any existing spell effects active on the weapon.
             """,
-            duration='short',
+            duration='attune',
             tags=['Fire', 'Shaping'],
         ),
         schools=['Evocation', 'Transmutation'],
-        lists=['Nature', 'War', 'Water'],
-        cantrip="The spell lasts for 2 rounds.",
+        lists=['Arcane', 'Nature', 'War', 'Water'],
+        cantrip="The spell's duration becomes Sustain (swift).",
         custom_augments=[
             Augment(
                 level=1,
@@ -952,7 +971,7 @@ def generate_spells():
                         \glossterm<Strikes> with the affected weapon are made against Reflex defense instead of Armor defense.
                         However, damage with the weapon is halved, including any bonuses to damage.
                     """,
-                    duration='short',
+                    duration='attune',
                     tags=['Shaping', 'Water'],
                 ),
             ),
@@ -989,52 +1008,7 @@ def generate_spells():
                 tags=['Water'],
             ),
         ],
-        category='buff',
-    ))
-    spells.append(Spell(
-        name="Drain Life",
-        # header=
-        targeting=Targeting(
-            target='One living creature',
-            rng='medium',
-        ),
-        effects=Effects(
-            attack=Attack.damage('Fortitude', 'life'),
-            tags=['Life'],
-        ),
-        schools=['Vivimancy'],
-        lists=['Arcane'],
-        cantrip="""
-            The spell has \\rngclose range and deals -1d damage.
-        """,
-        custom_augments=[
-            Augment(
-                level=2,
-                name="Vampiric",
-                description="""
-                    You gain temporary hit points equal to half the damage you deal with this spell.
-                """,
-            ),
-            Augment(
-                level=3,
-                name="Death Knell",
-                description="""
-                    If the spell's attack succeeds, the target suffers a death knell for 2 rounds.
-                    At the end of each round, if the target has 0 hit points, it immediately dies.
-                """,
-                tags=['Death'],
-            ),
-            Augment.empowered_damage(),
-            Augment(
-                level=6,
-                name="Finger of Death",
-                description="""
-                    If the spell's attack critically succeeds, the target immediately dies.
-                """,
-                tags=['Death'],
-            ),
-        ],
-        category='damage',
+        category='buff, offense',
     ))
     spells.append(Spell(
         name="Fear",
@@ -1050,11 +1024,15 @@ def generate_spells():
                 critical="The target is \\panicked by you.",
                 failure="The target is \\shaken by you.",
             ),
+            duration='condition',
             tags=['Delusion', 'Mind'],
         ),
         schools=['Enchantment'],
         lists=['Arcane'],
-        cantrip="The spell has \rngclose range and has no effect on a failed attack.",
+        cantrip="""
+            The spell has no additional effects on a critical success.
+            In addition, its duration becomes Sustain (swift).
+        """,
         custom_augments=[
             Augment(
                 level=1,
@@ -1064,7 +1042,7 @@ def generate_spells():
                 """,
             ),
         ],
-        category='debuff',
+        category='debuff, combat',
     ))
     spells.append(Spell(
         name='Bless',
@@ -1075,11 +1053,11 @@ def generate_spells():
         ),
         effects=Effects(
             effect='The target gains a +2d bonus to damage with all attacks.',
-            duration='short',
+            duration='attune',
         ),
+        cantrip="The spell's duration becomes Sustain (swift).",
         schools=['Channeling'],
         lists=['Divine'],
-        standard_augments=['Extended'],
         custom_augments=[
             Augment(
                 level=5,
@@ -1097,7 +1075,7 @@ def generate_spells():
                 stackable=True,
             ),
         ],
-        category='buff',
+        category='buff, offense',
     ))
     spells.append(Spell(
         name="Barkskin",
@@ -1111,13 +1089,12 @@ def generate_spells():
                 The target gains \\glossterm{damage reduction} against physical damage equal to your spellpower.
                 In addition, it is \\glossterm<vulnerable> to fire damage.
             """,
-            duration='short',
+            duration='attune',
             tags=['Enhancement'],
         ),
         schools=['Transmutation'],
         lists=['Nature'],
-        cantrip='The spell lasts for 2 rounds.',
-        standard_augments=['Extended'],
+        cantrip="The spell's duration becomes Sustain (swift).",
         custom_augments=[
             Augment(
                 level=2,
@@ -1136,7 +1113,467 @@ def generate_spells():
                 stackable=True,
             ),
         ],
-        category='buff',
+        category='buff, defense',
+    ))
+    spells.append(Spell(
+        name="Smite",
+        header=Header("You smite a foe with holy (or unholy) power."),
+        targeting=Targeting(
+            target='One creature',
+            rng='medium',
+        ),
+        effects=Effects(
+            attack=Attack.damage('Mental', 'divine')
+        ),
+        schools=['Channeling'],
+        lists=['Divine'],
+        cantrip='The spell deals -1d damage and has no additional effects on a critical success.',
+        custom_augments=[
+        ],
+        category='damage',
+    ))
+    spells.append(Spell(
+        name="Word of Faith",
+        header=Header("You speak an utterance that rebukes those who do not share your faith."),
+        targeting=Targeting(
+            area='\\areamed radius from you',
+            area_type='burst',
+            targets='Creatures in the area that do not worship your deity',
+        ),
+        effects=Effects(
+            attack=Attack.damage('Mental', 'divine')
+        ),
+        schools=['Channeling'],
+        lists=['Divine'],
+        cantrip='The spell deals -1d damage and has no additional effects on a critical success.',
+        category='damage',
+        custom_augments=[
+            Augment(
+                level=3,
+                name="Bolstering",
+                description="""
+                    Creatures in the spell's area that worship your deity heal 1d4 damage +1d per two spellpower.
+                """,
+            ),
+        ],
+    ))
+    spells.append(Spell(
+        name="Boon of Mastery",
+        header=Header("You grant your ally great mastery over a particular domain."),
+        targeting=Targeting(
+            target='One willing creature',
+            rng='close',
+        ),
+        effects=Effects(
+            special="""
+                When you cast this spell, choose a skill.
+                You must have mastered the chosen skill.
+            """,
+            effect="""
+                The target gains a +5 bonus to the chosen skill.
+            """,
+            duration='attune',
+            tags=['Enhancement'],
+        ),
+        schools=['Transmutation'],
+        lists=['Arcane', 'Divine', 'Nature'],
+        cantrip="The spell's duration becomes Sustain (swift).",
+        custom_augments=[
+            Augment(
+                level=3,
+                name="Myriad",
+                description="""
+                    You may choose an additional skill that you have mastered as you cast the spell.
+                    The target gains the same bonus to all chosen skills.
+                    \\par You can apply this augment multiple times.
+                    Each time, you may choose an additional skill that you have mastered.
+                """,
+            ),
+        ],
+        category='buff, utility',
+    ))
+    spells.append(Spell(
+        name="Web",
+        header=Header("""
+            You create a many-layered mass of strong, stricky strands that trap creatures caught within them.
+            The strands are similar to spider webs, but larger and tougher.
+        """),
+        targeting=Targeting(
+            area='\\areasmall radius',
+            area_type='zone',
+            rng='close',
+            targets='Everything in the area',
+        ),
+        effects=Effects(
+            effect="""
+                The area becomes filled with webs, making it \\glossterm<difficult terrain>.
+                Each 5-ft.\\ square of webbing has hit points equal to your spellpower, and is \\glossterm<vulnerable> to fire.
+            """,
+            attack=Attack(
+                defense='Reflex',
+                success="The target is \\immobilized as long as it has webbing from this spell in its space."
+            ),
+            duration='sustain (swift)',
+            tags=['Creation'],
+        ),
+        schools=['Conjuration'],
+        lists=['Arcane', 'Nature'],
+        cantrip="The spell's duration becomes Sustain (standard).",
+        custom_augments=[
+            Augment(
+                level=2,
+                name="Reinforced",
+                description="""
+                    Each 5-ft.\\ square of webbing gains additional hit points equal to your spellpower.
+                    In addition, the webs are no longer vulnerable to fire.
+                    \\par You can apply this augment multiple times.
+                    The hit point increase stacks.
+                """,
+            ),
+        ],
+        category='debuff, mobility',
+    ))
+    spells.append(Spell(
+        name="Curse",
+        header=Header("You lay a dreadful curse on your foe."),
+        targeting=Targeting(
+            target='One creature',
+            rng='close',
+        ),
+        effects=Effects(
+            attack=Attack(
+                defense='Mental',
+                success="""
+                    The target takes a -2 penalty to \\glossterm<accuracy>, \\glossterm<checks>, and \\glossterm<defenses>.
+                """,
+                critical="""
+                    As above, but the effect becomes permanent.
+                    It is no longer a condition, and cannot be removed by abilities that remove conditions.
+                """,
+            ),
+            duration='condition',
+            tags=['Curse'],
+        ),
+        notes='\\cursespellnotes',
+        schools=['Vivimancy'],
+        lists=['Arcane', 'Divine'],
+        cantrip="""
+            The spell's duration becomes Sustain (swift).
+            Its effect is still a condition, and can be removed by abilites that remove conditions.
+            In addition, it has no additional effects on a critical success.
+        """,
+        custom_augments=[
+            Augment(
+                level=1,
+                name="Curse of the Wayward Mind",
+                effects=Effects(
+                    effect="The target is \\disoriented.",
+                    duration='condition',
+                    tags=['Curse'],
+                ),
+            ),
+            Augment(
+                level=3,
+                name="Empowered",
+                description="""
+                    The penalty increases by 1.
+                """,
+                stackable=True,
+            ),
+            Augment(
+                level=4,
+                name="Curse of Blood and Bone",
+                description="""
+                    If the spell's attack succeeds, at the end of each round, the target takes life damage equal to your spellpower.
+                    The target's maximum hit points are reduced by the amount of damage it takes in this way.
+                    When the spell ends, the target's maximum hit points are restored.
+                """,
+            ),
+        ],
+        category='debuff, combat',
+    ))
+    spells.append(Spell(
+        name="Poison",
+        header=Header("You weaken your foe with a potent poison."),
+        targeting=Targeting(
+            target='One living creature',
+            rng='close',
+        ),
+        effects=Effects(
+            effect="""
+                At the end of each round, you make a Spellpower vs. Fortitude attack against the target.
+                Success means the target takes poison damage equal to your spellpower.
+                If this is the second successful attack, the target takes a -2 penalty to \\glossterm<accuracy>, \\glossterm<checks>, and \\glossterm<defenses>.
+                If this is the third successful attack, the penalty increases to -5.
+            """,
+            duration='condition',
+            tags=['Poison'],
+        ),
+        schools=['Transmutation'],
+        lists=['Destruction', 'Divine', 'Nature'],
+        cantrip="""
+            The spell does not have additional effects other than damage.
+        """,
+        custom_augments=[
+        ],
+        category='debuff, combat',
+    ))
+    spells.append(Spell(
+        name='Cone of Cold',
+        header=Header('You drain the heat from an area, creating a field of extreme cold.'),
+        targeting=Targeting(
+            area='\\areamed cone',
+            area_type='burst',
+            targets='Everything in the area',
+        ),
+        effects=Effects(
+            attack=Attack(
+                defense='Fortitude',
+                success="""
+                    \\spelldamage<cold>[1d4].
+                    In addition, the target moves at half speed until it removes this condition.
+                """,
+                critical='As above, but double damage.',
+            ),
+            tags=['Cold'],
+        ),
+        schools=['Evocation'],
+        lists=['Arcane', 'Nature'],
+        cantrip='The spell deals -1d damage and has no additional effects on a critical success.',
+        custom_augments=[
+        ],
+        category='damage',
+    ))
+    spells.append(Spell(
+        name="Lightning Bolt",
+        header=Header("You create a bolt of electricity that fries your foes."),
+        targeting=Targeting(
+            area='\\areamed line',
+            area_type='burst',
+            targets='Everything in the area',
+        ),
+        effects=Effects(
+            attack=Attack(
+                special="You gain a +2 bonus to accuracy against creatures wearing metal armor or otherwise carrying a significant amount of metal.",
+                defense='Reflex',
+                success="""
+                    \\spelldamage<electricity>[1d4].
+                """,
+                critical='As above, but double damage.',
+            ),
+            tags=['Electricity'],
+        ),
+        schools=['Evocation'],
+        lists=['Arcane', 'Nature'],
+        cantrip='The spell deals -1d damage and has no additional effects on a critical success.',
+        custom_augments=[
+            Augment(
+                level=3,
+                name="Instantaneous",
+                description="""
+                    The lightning bolt created by the spell is faster, but less penetrating.
+                    The spell's attack is made against Fortitude defense instead of Reflex defense.
+                """,
+            ),
+        ],
+        category='damage',
+    ))
+    spells.append(Spell(
+        name="Corruption",
+        header=Header("You corrupt your foe's life force, weakening them."),
+        targeting=Targeting(
+            target='One living creature',
+            rng='close',
+        ),
+        effects=Effects(
+            attack=Attack(
+                defense='Fortitude',
+                success="""
+                    The target takes a -2 penalty to \\glossterm<accuracy>, \\glossterm<checks>, and \\glossterm<defenses>.
+                    This effect lasts until the target removes this \\glossterm<condition>.
+                """,
+                critical="""
+                    As above, but the penalty is increased by 2.
+                """,
+            ),
+            duration='condition',
+            tags=['Life'],
+        ),
+        schools=['Vivimancy'],
+        lists=['Arcane', 'Divine', 'Nature'],
+        cantrip="""
+            The spell's duration becomes Sustain (swift).
+            Its effect is still a condition, and can be removed by abilites that remove conditions.
+        """,
+        custom_augments=[
+            Augment(
+                level=2,
+                name="Eyebite",
+                description="""
+                    If the spell's attack succeeds, the target is also \\partiallyblinded. If it critically succeeds, the target is \\blinded instead of partially blinded.
+                """,
+            ),
+            Augment(
+                level=2,
+                name="Finger of Death",
+                description="""
+                    If the spell's attack critically succeeds, the target immediately dies.
+                """,
+                tags=['Death'],
+            ),
+        ],
+        category='debuff, combat',
+    ))
+    spells.append(Spell(
+        name="Inflict Wounds",
+        # header=Header("description"),
+        targeting=Targeting(
+            target='One creature',
+            rng='medium',
+        ),
+        effects=Effects(
+            attack=Attack.damage('Fortitude', 'life'),
+            tags=['Life'],
+        ),
+        schools=['Vivimancy'],
+        lists=['Arcane', 'Divine', 'Nature'],
+        cantrip='The spell deals -1d damage and has no additional effects on a critical success.',
+        custom_augments=[
+            Augment(
+                level=2,
+                name="Drain Life",
+                description="""
+                    You gain temporary hit points equal to half the damage you deal with this spell.
+                """,
+            ),
+            Augment(
+                level=3,
+                name="Death Knell",
+                description="""
+                    If the spell's attack succeeds, the target suffers a death knell.
+                    At the end of each round, if the target has 0 hit points, it immediately dies.
+                    This effect lasts until the target removes this condition.
+                """,
+                tags=['Death'],
+            ),
+        ],
+        category='damage',
+    ))
+    spells.append(Spell(
+        name="Planar Disruption",
+        header=Header("You disrupt a creature's body by partially thrusting it into another plane."),
+        targeting=Targeting(
+            target='One creature',
+            rng='medium',
+        ),
+        effects=Effects(
+            attack=Attack(
+                defense='Mental',
+                success="\\spelldamage<physical>.",
+                critical="""
+                    As above, but double damage.
+                    In addition, if the creature is an \\glossterm<outsider> native to another plane, it is sent back to its home plane.
+                """,
+            ),
+            tags=['Planar', 'Teleportation'],
+        ),
+        schools=['Conjuration'],
+        lists=['Arcane', 'Divine'],
+        cantrip='The spell deals -1d damage and has no additional effects on a critical success.',
+        custom_augments=[
+        ],
+        category='damage',
+    ))
+    spells.append(Spell(
+        name="Cure Wounds",
+        # header=Header("description"),
+        targeting=Targeting(
+            target='One creature',
+            rng='medium',
+        ),
+        effects=Effects(
+            attack=Attack(
+                defense='Fortitude',
+                success="The target is healed for \\spelldamage<>.",
+            ),
+            tags=['Life'],
+        ),
+        schools=['Vivimancy'],
+        lists=['Divine', 'Life', 'Nature'],
+        cantrip="""
+            Instead of healing, the spell grants \\glossterm<temporary hit points> equal to twice your spellpower.
+            The duration of the temporary hit points is Sustain (swift).
+        """,
+        custom_augments=[
+            Augment(
+                level=1,
+                name="Moderate Wounds",
+                description="""
+                    For every 5 points of healing, this spell can instead cure 1 vital damage.
+                """,
+            ),
+            Augment(
+                level=1,
+                name="Undead Bane",
+                description="""
+                    If the target is undead, the spell gains a +2 bonus to accuracy and deals double damage on a critical success.
+                """,
+            ),
+            Augment(
+                level=2,
+                name="Serious Wounds",
+                description="""
+                    For every 2 points of healing, this spell can instead cure 1 vital damage.
+                """,
+            ),
+            Augment(
+                level=3,
+                name="Critical Wounds",
+                description="""
+                    For every point of healing, this spell can instead cure 1 vital damage.
+                """,
+            ),
+        ],
+        category='damage',  # kinda
+    ))
+    spells.append(Spell(
+        name="Protection from Alignment",
+        # header=Header("description"),
+        targeting=Targeting(
+            target='One creature',
+            rng='close',
+        ),
+        effects=Effects(
+            special="""
+                Choose an alignment other than neutral (chaotic, good, evil, lawful).
+                This spell gains the tag for that alignment's \\glossterm<opposed alignment>.
+            """,
+            effect="""
+                The target gains damage reduction equal to your spellpower against physical effects that have the chosen alignment, and physical attacks made by creatures with the chosen alignment.
+            """,
+            tags=['Shielding'],
+        ),
+        schools=['Abjuration'],
+        lists=['Arcane', 'Chaos', 'Divine', 'Evil', 'Good', 'Law'],
+        cantrip="The spell's duration becomes Sustain (swift).",
+        custom_augments=[
+            Augment(
+                level=2,
+                name="Complete",
+                description="""
+                    The damage reduction also applies against non-physical effects.
+                """,
+            ),
+            Augment(
+                level=3,
+                name="Retributive",
+                description="""
+                    Whenever a creature with the chosen alignment makes a physical melee attack against the target, you make a Spellpower vs. Mental attack against the attacking creature.
+                    Success means the attacker takes \\spelldamage<divine>[d4].
+                """,
+            ),
+        ],
+        category='buff, defense',
     ))
     return sorted(spells, key=lambda spell: spell.name)
 
@@ -1145,7 +1582,7 @@ def sanity_check(spells):
     # Make sure that the right kinds of spells exist
 
     # Every spell source should have one spell of each category
-    for category in spell_categories:
+    for category in SPELL_CATEGORIES:
         has_spell = {source: False for source in SPELL_SOURCES}
         for spell in spells:
             if spell.category == category:
@@ -1154,38 +1591,30 @@ def sanity_check(spells):
                         has_spell[source] = True
         for source in SPELL_SOURCES:
             if not has_spell[source]:
-                log(WARNING, f"Source {source} has no spell for {category}")
+                warn(f"Source {source} has no spell for {category}")
 
     # Every spell source should have both single target and multi damage spells
     # that target every defense
     for defense in DEFENSES:
-        has_multi_damage = {source: False for source in SPELL_SOURCES}
-        has_single_target_damage = {source: False for source in SPELL_SOURCES}
+        has_damage = {source: False for source in SPELL_SOURCES}
         # Every source should also have debuffs against every defense
         has_debuff = {source: False for source in SPELL_SOURCES}
         for spell in spells:
             if spell.effects.attack and spell.effects.attack.defense == defense:
                 if spell.category == 'damage':
-                    if spell.targeting.targets:
-                        for source in spell.lists:
-                            if source in SPELL_SOURCES:
-                                has_multi_damage[source] = True
-                    if spell.targeting.target:
-                        for source in spell.lists:
-                            if source in SPELL_SOURCES:
-                                has_single_target_damage[source] = True
-                elif spell.category == 'debuff':
+                    for source in spell.lists:
+                        if source in SPELL_SOURCES:
+                            has_damage[source] = True
+                elif spell.category[:6] == 'debuff':
                     for source in spell.lists:
                         if source in SPELL_SOURCES:
                             has_debuff[source] = True
 
         for source in SPELL_SOURCES:
-            if not has_multi_damage[source]:
-                log(WARNING, f"Source {source} has no multi damage spell against {defense}")
-            if not has_single_target_damage[source]:
-                log(WARNING, f"Source {source} has no single target damage spell against {defense}")
+            if not has_damage[source]:
+                warn(f"Source {source} has no damage spell against {defense}")
             if not has_debuff[source]:
-                log(WARNING, f"Source {source} has no debuff spell against {defense}")
+                warn(f"Source {source} has no debuff spell against {defense}")
 
 
 @click.command()
@@ -1200,7 +1629,7 @@ def main(output, check):
         for spell in spells
     ])
     spell_text = latexify(f"""
-        \\section<Autogenerated Spell Descriptions>
+        \\section<Spell Descriptions>
         {spell_text}
     """)
     if output is None:
