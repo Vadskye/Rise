@@ -288,7 +288,7 @@
 {
     \vspace{1em}
     \begin{thesamepage}
-    \setlength\multicolsep{0pt}
+    \setlength{\multicolsep}{0pt}
     \begin{multicols}{2}
         \IfValueTF{#1}
         {
@@ -378,7 +378,7 @@
 \DeclareDocumentEnvironment{thesamepage}{}
 {
     \par\nobreak\vfil\penalty0\vfilneg
-    \vtop
+    \vtop{}
 }
 {
     \par\xdef\tpd{\the\prevdepth}
@@ -417,7 +417,7 @@
 {
     % abilities should always stay on the same page
     \begin{thesamepage}
-    \setlength\multicolsep{0pt}
+    \setlength{\multicolsep}{0pt}
     % the name and tags go on a single row
     \begin{multicols}{2}
         \IfValueTF{#1}
