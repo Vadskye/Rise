@@ -4,211 +4,6 @@
 
 \pdfbookmark[2]{A}{SpellDescriptionsA}
 
-\begin{spellsection}{Ablative Shield}[2]
-    \begin{spellheader}
-        \spelldesc{You instantly reduce the power of an incoming attack.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltgt{You}
-            \spelltwocol{\spelltime{Immediate action}}{\spellcmp{Verbal only}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect You gain damage reduction against physical damage equal to your spellpower.
-            Arcane damage ignores this damage reduction and negates it for 1 round.
-            \spelldur Until end of round
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Abjuration [Shielding]}{Arcane}
-        \spellnotes After casting this spell, you cannot cast it again for 5 rounds.
-        You can cast this spell in response to an opponent attacking you, before the attack is rolled.
-        \miscastexplode
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{1}{Complete}{The damage reduction applies against all damage, not just physical damage.}
-        % \spellaugment{4}{Empowered}{The damage reduction is equal to twice your spellpower.}
-    \end{spellaugments}
-\end{spellsection}
-
-\begin{spellsection}{Acid Arrow}[3]
-    \begin{spellheader}
-        \spelldesc{You fire a magical arrow of acid from your hand that speeds to its target.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature or object}{\rnglong}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess 1d8 acid damage per two spellpower immediately, and again at the end of the next round.
-                \spellcritical As above, except that the acid persists for 5 rounds, dealing damage at the end of each round.
-                In addition, the target is \sickened for 1 round each time it takes damage.
-            \end{spellattack}
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Conjuration [Acid, Creation]}{Arcane}
-        \spellnotes If the target becomes submerged in water or is affected by a cold, fire, or water effect, it takes no secondary damage.
-
-        \physicalspellnotes
-        \miscastrandom
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{3}{Staggering}{The target is \staggered for 1 round each time it takes damage.}
-        \spellaugment{4}{Empowered}{The damage increases to 1d10 acid damage per two spellpower immediately, and an additional 1d10 damage per round.}
-    \end{spellaugments}
-\end{spellsection}
-
-\begin{spellsection}{Acid Splash}[1]
-    \begin{spellheader}
-        \spelldesc{You throw a magical sphere of acid from your hand that speeds to its target.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature or object}{\rngclose}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{acid}.
-                \spellcritical Double damage.
-                \spellfailure Half damage.
-            \end{spellattack}
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Conjuration [Acid, Creation]}{Arcane}
-        \spellnotes \physicalspellnotes
-        \miscastrandom
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{acid}}
-    \end{spellaugments}
-\end{spellsection}
-
-\begin{spellsection}{Agony}[3]
-    \begin{spellheader}
-        \spelldesc{You inflict debilitating pain on your foe.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{\rngmed}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess Whenever the target takes physical damage, it takes additional physical damage equal to your spellpower.
-                \spellcritical As above, and the target immediately takes \spelldamage{physical}. The target takes additional damage equal to your spellpower from this effect, just like other physical damage.
-                \spellfailure The target is \sickened.
-            \end{spellattack}
-            \spelldur \durbrief
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Enchantment [Delusion, Mind]}{Arcane, Divine}
-        \miscastrandom
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{2}{Complete}{The additional damage applies to all damage, not just physical damage.}
-        \spellaugment{3}{Mass}{The spell can affect up to five targets.}
-    \end{spellaugments}
-\end{spellsection}
-
-\begin{spellsection}{Aid}[1]
-    \begin{spellheader}
-        \spelldesc{You fill your ally with confidence, improving his resilience in combat.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{\rngclose}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect The target gains temporary hit points equal to twice your spellpower.
-            If the target takes life damage, it loses all temporary hit points provided by this spell before applying the damage.
-            \spelldur \durpersonallong
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Enchantment [Delusion, Mind]}{Divine, Good}
-        \miscastexplode
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{2}{Heroic}{The target also gains an offensive legend point.}
-        \spellaugment{3}{Mass}{The spell can affect up to five targets.}
-        \spellaugment{4}{Empowered}{The temporary hit points granted by this spell increase to three times your spellpower.}
-    \end{spellaugments}
-\end{spellsection}
-
-\begin{spellsection}{Air Walk}[4]
-    \begin{spellheader}
-        \spelldesc{You imbue an ally with the ability to walk on nothing but air.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature (Gargantuan size or smaller)}{\rngtouch}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect The target can walk on air as if it were solid ground. The magic only affects the target's legs and feet.
-            \par If the spell ends while the target is still aloft, the magic fails slowly. The target floats downward 60 feet per round for 1d6 rounds. If it reaches the ground in that amount of time, it lands safely. If not, it falls the rest of the distance, taking falling damage if appropriate.
-            \spelldur \durshort
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Transmutation [Air, Imbuement]}{Air, Divine, Nature, Travel}
-        \miscastexplode
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Antilife Shell}[7]
-    \begin{spellheader}
-        \spelldesc{You create an immobile, spherical energy field that hedges out living creatures.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellzone{\areasmall radius centered on you}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect Living creatures cannot enter the spell's area. Nonliving creatures, such as constructs and undead, suffer no ill effect.
-            \spelldur \durmed \dismissable
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Vivimancy}{Divine, Nature}
-        \spellnotes Creatures in the area at the time that the spell is cast are unaffected by the spell.
-        \miscastexplode
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{2}{Widened}{The spell's area becomes a \areamed radius.}
-    \end{spellaugments}
-\end{spellsection}
-
-\begin{spellsection}{Antimagic Field}[7]
-    \begin{spellheader}
-        \spelldesc{You create a mobile, spherical energy field that suppresses magic.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellemanation{\areasmall radius from you}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect All magical abilities and objects fail to function in the area. They cannot be activated from within the field, and any existing effects brought into or cast into the area are suppressed. Time spent within an \spell{antimagic field} counts against a suppressed ability's duration.
-            \par Creatures within an \spell{antimagic field} cannot concentrate on or dismiss spells. However, you can concentrate on and dismiss your own \spell{antimagic field}.
-            \spelldur \durshort
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Abjuration [Thaumaturgy]}{Arcane, Divine, Magic}
-        \spellnotes The effects of instantaneous conjurations, such as the \spell{create water} ritual, are not affected by this spell because the conjuration itself is no longer in effect, only its result.
-
-        \par \spell{Dispel magic} and similar magic has no effect on an \spell{antimagic field}. Two or more \spellindirect{antimagicfield}{antimagic fields} sharing any of the same space have no effect on each other.
-    %\par Any part of a creature that lies outside the field is unaffected by the field.
-        \par Artifacts and deities are unaffected by mortal magic such as this.
-        \miscastexplode
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{2}{Widened}{The spell's area becomes a \areamed radius.}
-    \end{spellaugments}
-\end{spellsection}
-
 \begin{spellsection}{Animate Corpse}[1]
     \begin{spellheader}
         \spelldesc{You infuse a recently deceased corse with life force, giving it a semblance of life.}
@@ -238,80 +33,6 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Vivimancy [Life, Soul]}{Arcane}
-        \miscastrandom
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Aquatic Sphere}[5]
-    \begin{spellheader}
-        \spelldesc{You surround yourself in a sphere of water, hindering your foes.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellemanation{\areamed radius from you}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect A mobile sphere of water fills the area.
-            Creatures in the area suffer penalties appropriate for fighting underwater, and may be unable to breathe.
-            In addition, you suffer no penalties for fighting underwater within the area, and can breathe this water as if it was air.
-            \spelldur \durshort
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Conjuration [Creation, Water]}{Nature, Water}
-        \spellnotes If a 5-foot section of the sphere is dealt 50 points of fire damage, it boils away for 1 round.
-        This creates a cloud of fog, as the \spell{fog cloud} spell, in a 10 foot radius around the destroyed area that also lasts for 1 round.
-        \miscastexplode
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{1}{Fixed}{The spell's area becomes a zone rather than an emanation. The water stays in place once the spell is cast, and does not move with you.}
-        \spellaugment{2}{Widened}{The spell's area becomes a \arealarge radius.}
-    \end{spellaugments}
-\end{spellsection}
-
-\begin{spellsection}{Aqueous Blade}[3]
-    \begin{spellheader}
-        \spelldesc{You transform the active part of a weapon into water, weakening its blows but allowing it penetrate defenses more easily.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One weapon}{\rngclose}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess Attacks with the affected weapon are made against Reflex defense instead of Armor defense. However, damage with the weapon is halved, including any bonuses to damage.
-            \end{spellattack}
-            \spelldur \durshort
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Transmutation [Shaping, Water]}{Nature, War, Water}
-        \miscastrandom
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{3}{Empowered}{Damage with the weapon is not halved.}
-    \end{spellaugments}
-\end{spellsection}
-
-\begin{spellsection}{Assimilate}[9]
-    \begin{spellheader}
-        \spelldesc{Your pointing finger turns black as obsidian. You touch a creature and it dissolves into dust as you assimilate its form into your own body.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One living creature}{\rngclose}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess \spelldamage{life}. If the target has no hit points remaining, it immediately dies, and you are transformed to mimic its appearance for 12 hours. This grants you a \plus10 bonus on Disguise checks made to appear as that creature.
-                \spellcritical As above, but double damage.
-                \spellfailure Half damage, and no additional effects.
-            \end{spellattack}
-            \spelldur \durext; see text
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Transmutation/Vivimancy [Death, Shaping]}{Arcane}
         \miscastrandom
     \end{spellfooter}
 \end{spellsection}
@@ -734,100 +455,7 @@
     \end{spellaugments}
 \end{spellsection}
 
-\begin{spellsection}{Aura of Immunity}[6]
-    \begin{spellheader}
-        \spelldesc{You grant your allies immunity to a particular kind of damage.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellemanation{\arealarge radius from you}
-            \spelltgts{All willing allies in the area}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spellspecial As you cast this spell, choose a type of damage.
-            \spelleffect The target becomes immune to the chosen damage type. Attacks that deal damage of multiple types still inflict damage normally unless the target is immune to all types of damage dealt.
-            % clarify interaction with immunity + DR against multiple damage types?
-            \spelldur \durshort
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Abjuration [Shielding]}{Arcane, Protection}
-        \spellnotes A creature can only be protected by one \spell{aura of immunity} spell at a time, even if there are multiple auras active in the same area. The creature may choose which aura to benefit from.
-        \miscastexplode
-    \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Aversion}[2]
-    \begin{spellheader}
-        \spelldesc{You make a creature want to avoid something.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{\rngmed}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target feels an aversion to a particular person or object for 2 rounds. If the object of the implanted aversion is an individual or a physical object, she will prefer not to approach within 30 feet of it. If it is a word, she will try not to utter it; if it is an action, she will not willingly attempt to perform it; and if it is an event, she will not willingly attend it. The target will take reasonable steps to avoid the object of its aversion, but will not put herself in jeopardy by doing so.
-                \par If the target is unable to avoid the object of her aversion, she is \severelyimpaired with attacks and checks as long as she is close to it (or similarly engaged with the object of her aversion, if the aversion is not a location).
-                \spellcritical As above, but the effect is permanent.
-            \end{spellattack}
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Enchantment [Mind]}{Arcane}
-        \miscastrandom
-    \end{spellfooter}
-\end{spellsection}
-
 \pdfbookmark[2]{B}{SpellDescriptionsB}
-
-\begin{spellsection}{Bane}[1]
-    \begin{spellheader}
-    %\spelldesc{}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{\rngclose}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect The target is \impaired with attacks and checks.
-
-            \spelldur 5 rounds
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Enchantment [Compulsion, Mind]}{Divine, Evil}
-        \miscastrandom
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{3}{Mass}{The spell can affect up to five targets.}
-    \end{spellaugments}
-\end{spellsection}
-
-\begin{spellsection}{Barkskin}[2]
-    \begin{spellheader}
-        \spelldesc{You toughen a creature's skin, giving it the appearance of tree bark.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One living creature}{\rngclose}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect The target gains \glossterm{damage reduction} against physical damage equal to your spellpower.
-            Fire damage ignores this damage reduction and negates it for 1 round.
-            \spelldur \durshort
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Transmutation [Enhancement]}{Nature}
-        \miscastexplode
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{1}{Stoneskin}{Adamantine weapons ignore and negate the damage reduction, rather than fire damage.}[Earth]
-        \spellaugment{2}{Critical Resistance}{The target is immune to critical hits unless the damage reduction is negated.}
-        %\spellaugment{2}{Personal}{The spell targets you, and its duration becomes \durlong.}
-    \end{spellaugments}
-\end{spellsection}
 
 \begin{spellsection}{Black Tentacles}[5]
     \begin{spellheader}
@@ -912,33 +540,6 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Blasphemy}[5]
-    \begin{spellheader}
-        \spelldesc{You speak an unholy utterance of great power, afflicting all those nearby who do not share your allegiance to evil.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellburst{\arealarge radius centered on you}
-            \spelltgts{All nonevil creatures in the area}
-            \spellcmp{Verbal only}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess \spelldamage{divine}[d8], and the target is \staggered for 2 rounds.
-                \spellcritical Double damage, and the target is \nauseated for 1 round instead of staggered.
-                \spellfailure Half damage, and no additional effects.
-            \end{spellattack}
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Channeling [Evil]}{Divine, Evil}
-        \miscastexplode
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{4}{Empowered}{The damage increases to \spelldamage{divine}[d10]}
-    \end{spellaugments}
-\end{spellsection}
-
 \begin{spellsection}{Bleed}[5]
     \begin{spellheader}
         \spelldesc{You carve a wound into your foe's flesh.}
@@ -961,29 +562,6 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{5}{Empowered}{The damage increases to \spelldamageemp{slashing}, and the automatic vital damage dealt is doubled.}
-    \end{spellaugments}
-\end{spellsection}
-
-\begin{spellsection}{Bless}[1]
-    \begin{spellheader}
-        \spelldesc{You fill your ally with confidence, improving her prowess in combat.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{\rngmed}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect The target gains a legend point.
-            \spelldur \durshort or until expended
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Enchantment [Delusion, Mind]}{Divine}
-        \miscastrandom
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{3}{Mass}{The spell can affect up to five targets.}
-        \spellaugment{4}{Empowered}{The target gains an additional legend point. This augment can be used multiple times.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -1044,7 +622,7 @@
     \end{spellcontent}
     \begin{spellfooter}
         \spellinfo{Divination [Knowledge]}{Arcane, Knowledge}
-        \spellnotes A creature who has already tried to use a Knowledge skill about a topic may retry the attempt under the effects of this spell, because its Knowledge modifier changed.
+        \spellnotes A creature who has already tried to use a Knowledge skill about a topic may retry the attempt under the effects of this spell.
         However, repeated castings of this spell do not grant additional attempts to recall information about a topic.
         \miscastrandom
     \end{spellfooter}
@@ -1164,32 +742,6 @@
     \begin{spellaugments}
         \spellaugment{2}{Widened}{You summon a larger boulder, causing the spell's area becomes a \areamed radius.}
         \spellaugment{4}{Empowered}{The damage increases to \spelldamage{bludgeoning}[d10]}
-    \end{spellaugments}
-\end{spellsection}
-
-\begin{spellsection}{Burning Hands}[1]
-    \begin{spellheader}
-        \spelldesc{You expel a cone of searing flame shoots from your fingertips, searing creatures in front of you.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltwocol{\spellburst{\areamed cone}}{\spelltgts{Everything in the area}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Reflex}
-                \spellsuccess \spelldamage{fire}[d8]
-                \spellcritical Double damage.
-                \spellfailure Half damage.
-            \end{spellattack}
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Evocation [Fire]}{Arcane, Nature, Fire}
-        \miscastexplode
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{3}{Widened}{The spell's area becomes a \arealarge cone.}
-        \spellaugment{4}{Empowered}{The damage increases to \spelldamage{fire}[d10]}
     \end{spellaugments}
 \end{spellsection}
 
@@ -1328,40 +880,6 @@
     \begin{spellaugments}
         \spellaugment{3}{Mass}{The spell can affect up to five targets. Its damage becomes \spelldamage{divine}[d8]}
         \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{divine}. If the Mass augment is applied, the damage instead increases to \spelldamage{divine}[d10].}
-    \end{spellaugments}
-\end{spellsection}
-
-\begin{spellsection}{Charm Person}[2]
-    \begin{spellheader}
-        \spelldesc{You manipulate a person's mind so he thinks of you as a trusted friend and ally.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One humanoid creature}{\rngclose}
-            \spellcmp{Somatic only}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Mental}
-                \spellspecial If the target thinks that you or your allies are threatening it, you take a \minus5 penalty to accuracy on the attack.
-                \spellsuccess The target is \charmed by you.
-                \spellcritical As above, but the effect is permanent.
-            \end{spellattack}
-            \spelldur \durlong
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Enchantment [Delusion, Mind, Subtle]}{Arcane}
-        \spellnotes Any act by you or your apparent allies that threatens or damages the \spell{charmed} person breaks the spell.
-
-        \subtlespellnotes
-
-        \norepeatspellnotes
-        \miscastrandom
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{1}{Charm Monster}{The spell can affect creatures of any type.}
-        \spellaugment{3}{Mass}{The spell can affect up to five targets.}
-        \spellaugment{3}{Persistent}{The spell lasts for thirty days.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -1752,36 +1270,6 @@
     \end{spellfooter}
     \begin{spellaugments}
         \spellaugment{3}{Mass}{The spell can affect up to five targets.}
-    \end{spellaugments}
-\end{spellsection}
-
-\begin{spellsection}{Death Knell}[3]
-    \begin{spellheader}
-        \spelldesc{You draw forth the ebbing life force of a creature and use it to fuel your own power.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One Living creature}{\rngclose}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Fortitude}
-                \spellsuccess \spelldamage{life}. In addition, for 2 rounds, the target automatically dies if it takes vital damage while it has no hit points remaining.
-
-                If the target dies in this way, you gain temporary hit points equal to twice your spellpower. These temporary hit points last for 1 round per level the target had.
-
-                \spellcritical As above, except that the temporary hit points are also granted to all allies within a \arealarge radius of the dead creature.
-
-                \spellfailure Half damage, and no additional effects.
-            \end{spellattack}
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Vivimancy [Death]}{Arcane, Death, Divine}
-        \spellnotes If you take life damage, you lose all temporary hit points provided by this spell before applying the damage.
-        \miscastrandom
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{life}.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -2665,57 +2153,6 @@
     \end{spellaugments}
 \end{spellsection}
 
-\begin{spellsection}{Fear}[2]
-    \begin{spellheader}
-        \spelldesc{You terrify your foe.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{\rngmed}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Mental}
-                \spellsuccess The target is \frightened by you.
-                \spellcritical The target is \panicked by you.
-                \spellfailure The target is \shaken by you.
-            \end{spellattack}
-            \spelldur \durbrief
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Enchantment [Delusion, Mind]}{Arcane}
-        \miscastrandom
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{1}{Redirected}{The target is instead afraid of a willing ally within \rngmed range.}
-        \spellaugment{3}{Mass}{The spell can affect up to five targets.}
-    \end{spellaugments}
-\end{spellsection}
-
-\begin{spellsection}{Feather Fall}[1]
-    \begin{spellheader}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltwocol{One freefalling object or willing creature (Medium or smaller)}{\spellrng{\rngmed}}
-            \spelltwocol{\spelltime{Swift action}}{\spellcmp{Verbal only}}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect The target falls at only 60 feet per round (equivalent to the end of a fall from a few feet). It takes no falling damage from falls of any length. If the object is heavy enough to deal falling damage to other creatures and objects, it deals half its normal falling damage, with no bonus for the height of the drop.
-            \spelldur \durshort
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Transmutation [Air]}{Arcane}
-        \spellnotes This spell works only upon free-falling objects and creatures. It no special effect on ranged weapons or projectiles unless they are falling an extraordinary distance.
-        \miscastrandom
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{1}{Giant}{The spell can affect a target one size category larger. This augment can be used multiple times.}
-        \spellaugment{3}{Mass}{The spell can affect up to five targets.}
-    \end{spellaugments}
-\end{spellsection}
-
 \begin{spellsection}{Feeblemind}[7]
     \begin{spellheader}
     \end{spellheader}
@@ -3094,30 +2531,6 @@
     \end{spellaugments}
 \end{spellsection}
 
-\begin{spellsection}{Gentle Descent}[1]
-    \begin{spellheader}
-        \spelldesc{You grant your ally ephemeral wings which allow him to glide.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature}{\rngclose}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect The target gains a 30 foot glide speed.
-            \spelldur \durshort
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Transmutation [Air, Imbuement]}{Air, Nature}
-        \spellnotes A creature with a glide speed can glide through the air at the indicated speed (see \pcref{Gliding}).
-        \miscastrandom
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{1}{Accelerated}{The glide speed increases to 60 feet.}
-        \spellaugment{3}{Mass}{The spell can affect up to five targets.}
-    \end{spellaugments}
-\end{spellsection}
-
 \begin{spellsection}{Ghoul Touch}[4]
     \begin{spellheader}
         \spelldesc{Your foe feels the touch of a ghoul's undead hand against its flesh.}
@@ -3211,31 +2624,6 @@
     \begin{spellaugments}
         \spellaugment{2}{Widened}{The spell's area becomes a \areamed radius.}
         \spellaugment{3}{Slick}{The DR of the Acrobatics check is equal to 10 \add your spellpower.}
-    \end{spellaugments}
-\end{spellsection}
-
-\begin{spellsection}{Gust of Wind}[1]
-    \begin{spellheader}
-        \spelldesc{You create a severe blast of air that knocks your foes flying.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellburst{\arealarge line from you}
-            \spelltgts{Everything in the area}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Fortitude Defense}
-                \spellsuccess The target is affected by a shove attack, pushing it back by 5 feet \add 5 feet per 5 points by which your attack exceeded its defense. If it is pushed outside the spell's area, it is not pushed farther.
-            \end{spellattack}
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Evocation [Air]}{Air, Nature}
-        \spellnotes In addition to the effect noted, a \spell{gust of wind} can do anything that a sudden blast of wind would be expected to do. It can extinguish open flames, create a stinging spray of sand or dust, fan a large fire, overturn delicate awnings or hangings, heel over a small boat, and blow gases or vapors to the edge of its range.
-        \miscastexplode
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{3}{Persistent}{The gust of wind continues in the same area for 5 rounds. At the end of each round, its effect happens again.}
     \end{spellaugments}
 \end{spellsection}
 
@@ -4559,7 +3947,7 @@
     \lcaption{Prismatic Effects}
     \begin{dtabularx}{\textwidth}{l >{\lcol}p{3.6em} l >{\lcol}X >{\lcol}X l}
         \tb{1d8} & \tb{Color of Beam} & \tb{Defense} & \tb{Success}\fn{1} & \tb{Critical Success} & \tb{Failure} \\
-        \hline
+        \midrule
         1 & Red      & Reflex    & Fire damage and ignited for 2 rounds                       & Double damage, ignited              & Half damage, ignited           \\
         2 & Orange   & Mental    & Frightened by you for 2 rounds                             & Panicked by you for 2 rounds        & Shaken by you for 2 rounds     \\
         3 & Yellow   & Reflex    & Electricity damage and partially blinded for 2 rounds      & Double damage, blinded for 2 rounds & Half damage, partially blinded \\
@@ -5728,38 +5116,13 @@
     \lcaption{Storm of Vengeance Effects}
     \begin{dtabularx}{\textwidth}{l l l >{\lcol}X l}
         \tb{Rounds} & \tb{Effect} & \tb{Defense} & \tb{Success} & \tb{Failure} \\
-        \hline
+        \midrule
         Odd (1, 3, 5, 7, 9)   & Lightning  & Reflex    & Electricity damage (enemies only) & Half damage \\
         Even (2, 4, 6, 8, 10) & Thunder    & None & Deafened for 5 rounds & \tdash \\
         2, 6, 10              & Hail       & Fortitude    & Bludgeoning damage & Half damage \\
         4, 8                  & Acid rain  & None      & Acid damage & \tdash \\
     \end{dtabularx}
 \end{dtable*}
-
-\begin{spellsection}{Stormlord}[5]
-    \begin{spellheader}
-        \spelldesc{You surround yourself in a whirlwind which deflects ranged attacks and batters your foes.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spelltgt{You}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect Physical ranged attacks against you have a 50\% miss chance. Other attacks that simply work at a distance are not affected.
-
-            In addition, whenever a creature within \rnglong range of you makes a physical attack against you, the attacking creature takes \spelldamage{bludgeoning}[d6].
-            A creature can only be dealt damage by this spell once per round.
-            \spelldur \durshort
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Evocation [Air, Electricity, Shielding]}{Air, Nature}
-        \miscastexplode
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{4}{Empowered}{The damage against creatures that attack you increases to \spelldamage{bludgeoning}[d8].}
-    \end{spellaugments}
-\end{spellsection}
 
 \begin{spellsection}{Strip the Flesh}[7]
     \begin{spellheader}
@@ -5853,7 +5216,7 @@
     \lcaption{Summon Monster List}
     \begin{dtabularx}{\textwidth}{>{\lcol}X c >{\lcol}X c >{\lcol}X c}
         \tb{1st Level} &  & \tb{4th Level} &  & Fiendish monstrous spider, Huge & CE \\
-        \hline
+        \midrule
         Celestial dog & LG & Archon, lantern & LG & Fiendish snake, giant constrictor & CE \\
         Celestial owl & LG & Celestial giant owl & LG &  &  \\
         Celestial giant fire beetle & NG & Celestial giant eagle & CG & \tb{7th Level} &  \\
@@ -5935,7 +5298,7 @@
     \lcaption{Summon Nature's Ally List}
     \begin{dtabularx}{\textwidth}{>{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
         \tb{1st Level} & Eagle, giant [NG] & \tb{5th Level} & \tb{7th Level} \\
-        \hline
+        \midrule
         Dire rat & Lion & Arrowhawk, adult & Arrowhawk, elder \\
         Eagle (animal) & Owl, giant [NG] & Bear, polar (animal) & Dire tiger \\
         Monkey (animal) & Satyr [CN;\ without pipes] & Dire lion & Elemental, greater (any)\fn{2} \\
@@ -6686,32 +6049,6 @@
     \end{spellfooter}
 \end{spellsection}
 
-\begin{spellsection}{Windstrike}[2]
-    \begin{spellheader}
-        \spelldesc{You command the air to bludgeon the target, sending it flying.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One creature or object}{\rngmed}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \begin{spellattack}{Spellpower vs. Fortitude defense (shove)}
-                \spellsuccess[Fortitude] \spelldamage{bludgeoning}. In addition, you shove the target in any direction -- even vertically. Moving the target up takes twice as much movement as moving the target horizontally.
-                \spellfailure[Fortitude] Half damage.
-            \end{spellattack}
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Evocation [Air]}{Air, Nature}
-        \miscastrandom
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{2}{Distant}{The spell's range becomes \rngext.}
-        \spellaugment{2}{Forceful}{You gain a \plus10 bonus to accuracy on the shove attack.}
-        \spellaugment{4}{Empowered}{The damage increases to \spelldamageemp{bludgeoning}.}
-    \end{spellaugments}
-\end{spellsection}
-
 \begin{spellsection}{Word of Recall}[6]
     \begin{spellheader}
     \end{spellheader}
@@ -6728,30 +6065,4 @@
         \spellinfo{Conjuration [Teleportation]}{Divine, Travel}
         \miscastexplode
     \end{spellfooter}
-\end{spellsection}
-
-\begin{spellsection}{Zephyr Blade}[2]
-    \begin{spellheader}
-        \spelldesc{You imbue a weapon with the power of the wind, allowing it to strike opponents with nothing but the air itself.}
-    \end{spellheader}
-    \begin{spellcontent}
-        \begin{spelltargetinginfo}
-            \spellquicktargeting{One melee weapon}{\rngclose}
-        \end{spelltargetinginfo}
-        \begin{spelleffects}
-            \spelleffect The target weapon gains an additional five feet of reach, extending the wielder's threatened area.
-
-            In addition, the weapon can also be used to attack as a ranged weapon by expelling blasts of wind. This functions like attacking with the weapon normally, using the wielder's normal attack and damage bonuses, except that the attack is a ranged attack against any creature within \rngclose range. All damage dealt when attacking in this way is bludgeoning damage instead of the attack's normal damage types. This effect does not increase the wielder's threatened area.
-            \spelldur \durpersonallong
-        \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \spellinfo{Evocation/Transmutation [Air, Imbuement]}{Nature}
-        \spellnotes Despite the name of the spell, it can affect melee weapons of any type, even reach weapons. The weapon's extended reach is visible, and opponents can defend themselves normally against the attacks.
-        \miscastexplode
-    \end{spellfooter}
-    \begin{spellaugments}
-        \spellaugment{2}{Empowered}{The target gains ten feet of reach, rather than five.}
-        \spellaugment{3}{Mass}{The spell can affect up to five targets.}
-    \end{spellaugments}
 \end{spellsection}
