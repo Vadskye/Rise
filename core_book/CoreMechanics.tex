@@ -325,111 +325,6 @@ It defines how attributes work and explains how to make physical attacks in comb
         If you take the total defense action, you increase your defenses even against other attacks that occur simultaneously.
         This is an exception to the normal way actions resolve (see \pcref{Resolving Actions}).
 
-    \subsection{Combat Maneuvers}\label{Combat Maneuvers}
-        A combat maneuver is an attempt to physically hinder your foe with your body, such as by shoving or tripping it.
-        Unless otherwise noted, combat maneuvers do not deal damage.
-        There are two kinds of combat maneuvers: heavy maneuvers and light maneuvers.
-
-        \parhead{Heavy Maneuvers} You can use a heavy maneuver as a standard action.
-        You cannot use Dexterity to determine your accuracy with a heavy maneuver, just like attacking with a heavy weapon.
-        You take a \minus2 penalty to accuracy with heavy maneuvers for each size category you are smaller than your target, or a \plus2 bonus for each size category you are larger.
-
-        \parhead{Light Maneuvers} You can use a light maneuver in place of a \glossterm{strike} as part of a \glossterm{standard attack}.
-        You can use either Strength or Dexterity to determine your accuracy with a light maneuver, just like attacking with a light weapon.
-
-        \begin{dtable}
-            \lcaption{Combat Maneuvers}
-            \begin{dtabularx}{\columnwidth}{l l l X}
-                \tb{Maneuver}  & \tb{Type} & \tb{Defense} & \tb{Brief Description} \\
-                \hline
-                Dirty Trick & Light & Any       & Impose penalty on a foe         \\
-                Disarm      & Light & Reflex    & Force foe to drop item          \\
-                Feint       & Light & Reflex    & Leave foe vulnerable to attacks \\
-                Grapple     & Heavy & Special   & Wrestle with a foe              \\
-                Shove       & Heavy & Fortitude & Move a foe                      \\
-                Trip        & Light & Reflex    & Trip a foe                      \\
-            \end{dtabularx}
-        \end{dtable}
-
-        \subsubsection{Maneuver Descriptions}
-
-            \parhead{Dirty Trick}\label{Dirty Trick} You strike your foe in a sensitive spot, pull its pants down, or creatively use your environment to attack.
-            Depending on the nature of your dirty trick, you can target Fortitude, Reflex, or Mental defense.
-            You must use a free hand to perform a dirty trick.
-            Success means the target is \impaired with actions relevant to the nature of your trick for 2 rounds.
-            Critical success means the target is \severelyimpaired instead.
-            Critical failure means you are \impaired with relevant actions instead.
-            Unusual dirty tricks using the environment may impose other effects of similar strength.
-            Dirty tricks are a light maneuver.
-
-            \parhead{Disarm}\label{Disarm} You can strike an item your foe is wearing or holding to knock it out of their hands or damage it.
-            You can perform a disarm with a free hand or any weapon.
-            You make a physical attack against the target's Reflex defense.
-            Success means you hit the object, and can choose whether or not to deal damage to it.
-            In addition, if the creature is not holding the item in its hands, it falls to the ground in the foe's square.
-            Critical success means you can also knock an item held directly in a creature's hands to the ground.
-            Critical failure means you drop the weapon you used to attack (if any).
-
-            If you disarm a foe using a free hand, you can hold a disarmed item rather than letting it fall to the ground.
-            Items that are very well secured, such as worn rings, cannot be knocked to the ground or grabbed.
-            Disarming is a light maneuver.
-
-            \parhead{Feint}\label{Feint} You can make a fake attack to leave your foe off-balance.
-            You can perform a feint with a free hand or any weapon.
-            You make a physical attack against the target's Reflex defense.
-            Success means the target takes a \minus5 penalty to physical defenses against your next attack.
-            Critical success means the target takes a \minus5 penalty to physical defenses against all of your attacks.
-            Critical failure means you take a \minus5 penalty to physical defenses against the next attack by the target.
-            In either case, if you stop threatening the target, the effect of the feint immediately ends.
-            Feinting is a light maneuver.
-
-            \parhead{Grapple}\label{Grapple} You physically grab and restrain your foe.
-            You must use a free hand to perform a grapple.
-            You make a physical attack against the target's Reflex and Fortitude defenses.
-            Success against both defenses means you and the creature become \grappled.
-            See \pcref{Grappling} for more details.
-            Grapping is a heavy maneuver.
-
-            \parhead{Shove}\label{Shove} You shove your foe where you want it to go.
-            You must use a free hand to perform a shove.
-            You make a physical attack against the target's Fortitude defense.
-            Success means you move the creature 5 feet in a direction of your choice.
-            For every 5 points by which you succeed, you can move it an additional 5 feet.
-            You cannot normally move the creature further after moving it outside of your reach.
-            If you have movement remaining in the round, you can move with the creature in order to shove it farther.
-            If the creature encounters a solid object or creature, you must stop shoving it.
-            Shoving is a heavy maneuver.
-
-            \parhead{Trip}\label{Trip} You try to trip your foe.
-            You must use a free hand to perform a trip.
-            You make a physical attack against the target's Reflex defense.
-            Success means the target falls \prone.
-            Critical failure means you fall prone instead.
-            As with other effects, the target does not suffer penalties for being prone against your other attacks within the same round.
-            It is still in the process of falling as you make the subsequent attacks.
-            Tripping is a light maneuver.
-
-    \subsection{Grappling}\label{Grappling}
-        Grappling creatures are physically struggling with each other. While grappled, you suffer certain penalties and restrictions, as described below.
-
-        \subsubsection{Being In A Grapple}
-            While grappling, you suffer certain penalties and restrictions, as described below. Other than these restrictions, you can act normally. You can also take certain actions in a grapple, as described in \pcref{Grapple Actions}
-            \begin{itemize}
-                \item You must use a free hand (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands. If you cannot free a hand, you suffer a \minus10 penalty to accuracy on all physical attacks, including grapple attacks, until you have a free hand.
-                \item You are \defenseless against creatures you are not grappling with.
-                \item You take a \minus4 penalty to accuracy with weapons that are not light, since they are too large and cumbersome to be used effectively in a grapple.
-                \item Spellcasting is extremely difficult. You cannot cast spells with somatic components. Casting a spell without somatic components requires a Concentration check with a DR equal to 20 \add double spell level.
-                \item You cannot move normally (but see Move the Grapple, below).
-            \end{itemize}
-
-        \subsubsection{Grapple Actions}\label{Grapple Actions}
-            While grappled, you can take four special actions to try to affect the grapple.
-
-            \parhead{Bind Foe} As a standard action, you can make a grapple attack to bind your foe with ropes or other restraints. You must have the restraints in hand (in addition to the free hand required to grapple). Apply the result against the Fortitude and Reflex defenses of a creature grappling you. Success against both defenses means the creature is bound, rendering it helpless and effectively paralyzed. The only physical actions a bound creature can take are to esccape or break the bindings. Escaping the bindings requires a grapple attack or Escape Artist check which beats the grapple attack made to bind the creature. Breaking the bindings requires making a Strength check sufficient to break the item used to bind the creature. If you have the time, you can \glossterm{take 20} on your grapple attack to secure bindings on a helpless foe, including a foe rendered helpless through this attack.
-            \parhead{Escape the Grapple} As a standard action, you can make a grapple attack or Escape Artist check to escape from the grapple. Apply the result against the Reflex defense of each creature grappling you. Success against an individual creature means you are no longer grappling that creature.
-            \parhead{Move the Grapple} As a move action, you can make a grapple attack to move the grapple. Apply the result against the Fortitude defense of each creature grappling you. If you beat every creature's Fortitude defense, you can move yourself and all other creatures in the grapple up to half your speed. At the end of your movement, you choose which spaces creatures grappling you are in, as long as they stay adjacent to you.
-            \parhead{Pin} As a standard action, you can make a grapple attack against the Fortitude and Reflex defenses of a creature you are grappling with. Success against both defenses means the creature becomes \glossterm{pinned} (in addition to being grappled), while you remain only grappled. The only physical action a pinned creature can take is to escape the grapple, though it can take mental actions. At your discretion, you can cover the mouth of a pinned creature to prevent it from speaking.
-
 \section{Attributes}
 
     Each character has six \glossterm[attribute]{attributes}: Strength (Str), Dexterity (Dex), Constitution (Con), Intelligence (Int), Perception (Per), and Willpower (Wil).
@@ -444,32 +339,30 @@ It defines how attributes work and explains how to make physical attacks in comb
             It has the following effects:
             \begin{itemize}
                 \item Strength determines how much a character can carry (see \tref{Weight Limits}).
-                \item For every 5 Strength you have, you increase your damage with \glossterm{mundane} attacks by one \glossterm{die increment}.
-                    If your Strength is negative, for every 2 Strength you have below 0, you reduce your damage with physical attacks by one die increment.
+                \item Strength affects Strength-based skills: Climb, Jump, Sprint, and Swim (see \pcref{Skills}).
                 \item If your Strength is negative, you take a penalty to all Strength-based skills equal to your Strength.
+                \item If your Strength is negative, you take a penalty to damage with \glossterm{physical} attacks equal to half your Strength in \glossterm{die increments}.
             \end{itemize}
 
             If you have a high Strength, you can use it to determine several statistics:
             \begin{itemize}
                 \item Your \glossterm{accuracy} with \glossterm{strikes} using melee and thrown weapons (see \pcref{Strike Accuracy}).
                 \item Your Fortitude defense (see \pcref{Defenses}).
-                \item Your Strength-based skills: Climb, Jump, Sprint, and Swim (see \pcref{Skills}).
             \end{itemize}
 
         \subsubsection{Dexterity (Dex)}\label{Dexterity}
             Dexterity measures hand-eye coordination, agility, and reflexes.
             It has the following effects:
             \begin{itemize}
-                \item For every 2 Dexterity you have, you gain a \plus1 bonus to Reflex defense. If your Dexterity is negative, you take a penalty to Reflex defense equal to your Dexterity.
-                \item For every 5 Dexterity you have, you gain a \plus1 bonus to Armor defense. If your Dexterity is negative, you take a penalty to your Armor defense equal to half your Dexterity.
+                \item Dexterity affects Dexterity-based skills: Acrobatics, Escape Artist, Ride, Sleight of Hand, and Stealth skill checks (see \pcref{Skills}).
                 \item If your Dexterity is negative, you take a penalty to all Dexterity-based skills equal to your Dexterity.
+                \item If your Dexterity is negative, you take a penalty to Reflex and Armor defense equal to half your Dexterity.
             \end{itemize}
 
             If you have a high Dexterity, you can use it to determine several statistics:
             \begin{itemize}
-                \item Your \glossterm{accuracy} with \glossterm{strikes} using light melee and thrown weapons (see \pcref{Strike Accuracy}).
+                \item Your \glossterm{accuracy} with \glossterm{strikes} using melee and thrown weapons (see \pcref{Strike Accuracy}).
                 \item Your Reflex defense (see \pcref{Defenses}).
-                \item Your Dexterity-based skills: Acrobatics, Escape Artist, Ride, Sleight of Hand, and Stealth skill checks (see \pcref{Skills}).
             \end{itemize}
 
         \subsubsection{Constitution (Con)}\label{Constitution}
@@ -477,7 +370,8 @@ It defines how attributes work and explains how to make physical attacks in comb
             It has the following efects:
             \begin{itemize}
                 \item You gain bonus hit points equal to your Constitution.
-                \item For every 2 Constitution you have, you gain a \plus1 bonus to Fortitude defense. If your Constitution is negative, you take a penalty to Fortitude defense equal to your Constitution.
+                \item Your ability to perform many feats of physical endurance is limited by your Constitution.
+                \item If your Constitution is negative, you take a penalty to Fortitude defense equal to your Constitution.
             \end{itemize}
 
             If you have a high Constitution, you can use it to determine your Armor and Fortitude defenses (see \pcref{Defenses}).
@@ -487,18 +381,14 @@ It defines how attributes work and explains how to make physical attacks in comb
             It has the following effects:
 
             \begin{itemize}
-                \item You gain bonus languages at 1st level equal to your starting Intelligence (see \pcref{Languages}).
-                \item For every 2 Intelligence you have, you gain an extra skill point. If your Intelligence is negative, you take a penalty to your skill points equal to your Intelligence.
-                \item For every 5 Intelligence you have, you gain an additional \glossterm{action point}.
-                    If your Intelligence is negative, you lose action points equal to half your Intelligence.
+                \item You gain bonus languages equal to your starting Intelligence (see \pcref{Languages}).
+                \item You gain extra skill points equal to your starting Intelligence (see \pcref{Skill Points}).
+                \item Your Intelligence affects Intelligence-based skills: Craft, Disguise, Heal, Knowledge, and Linguistics skill checks (see \pcref{Skills}).
                 \item If your Intelligence is negative, you take a penalty to all Intelligence-based skill checks equal to your Intelligence.
+                \item If your Intelligence is negative, you lose skill points equal to your Intelligence.
             \end{itemize}
 
-            If you have a high Intelligence, you can use it to determine several statistics:
-            \begin{itemize}
-                \item Your Mental defense (see \pcref{Defenses}).
-                \item Your Intelligence-based skills: Craft, Disguise, Heal, Knowledge, and Linguistics skill checks (see \pcref{Skills}).
-            \end{itemize}
+            If you have a high Intelligence, you can use it to determine your Mental defense (see \pcref{Defenses}).
 
             \par An animal has an Intelligence score of \minus6 or lower.
             A creature of humanlike intelligence has a score of at least a \minus5 Intelligence.
@@ -507,26 +397,22 @@ It defines how attributes work and explains how to make physical attacks in comb
             Perception describes a character's ability to observe and be aware of one's surroundings.
             It has the following effects:
             \begin{itemize}
-                \item For every 5 Perception you have, you gain a \plus1 bonus to \glossterm{accuracy} with all attacks.
-                    If your Perception is negative, you take a penalty to accuracy with all attacks equal to half your Perception.
+                \item Your Perception affects Perception-based skills: Awareness, Creature Handling, Sense Motive, Spellcraft, and Survival skill checks (see \pcref{Skills}).
                 \item If your Perception is negative, you take a penalty to all Perception-based skill checks equal to your Perception.
+                \item If your Perception is negative, you take a penalty to accuracy with all attacks equal to half your Perception.
             \end{itemize}
 
             If you have a high Perception, you can use it to determine several statistics:
             \begin{itemize}
                 \item Your \glossterm{accuracy} with \glossterm{strikes} using projectile weapons (see \pcref{Strike Accuracy}).
                 \item Your Reflex defense (see \pcref{Defenses}).
-                \item Your Perception-based skills: Awareness, Creature Handling, Sense Motive, Spellcraft, and Survival skill checks (see \pcref{Skills}).
             \end{itemize}
 
         \subsubsection{Willpower (Wil)}\label{Willpower}
             Willpower measures a character's ability to endure mental hardships.
             It has the following effects:
             \begin{itemize}
-                \item For every 2 Willpower you have, you gain a \plus1 bonus to Mental defense.
-                    If your Willpower is negative, you take a penalty to Mental defense equal to your Willpower.
-                \item For every 5 Willpower you have, you increase your damage with \glossterm{magical} attacks by one die increment.
-                    If your Willpower is negative, for every 2 Willpower you have below 0, you reduce your damage with physical attacks by one die increment.
+                \item You gain additional \glossterm{action points} equal to your starting Willpower.
             \end{itemize}
 
             If you have a high Willpower, you can use it to determine your Mental defense (see \pcref{Defenses}).
@@ -535,7 +421,6 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \subsubsection{Choosing Attributes to Use}
             In many cases, multiple attributes can be used for the same thing.
-            For example, both Strength and Dexterity can be used to determine your \glossterm{accuracy} with light weapons such as daggers.
             Whenever more than one attribute could be used, you must choose which one to use (usually, the higher attribute).
 
     \subsection{Determining Attributes}
@@ -624,8 +509,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \subsubsection{Strike Accuracy}\label{Strike Accuracy}
             Your accuracy with a \glossterm{strike} is normally equal to the higher of your \glossterm{combat prowess} and an attribute based on the nature of your strike.
-            You can use Strength to determine your accuracy with any \glossterm{melee weapon} or \glossterm{thrown weapon}.
-            You can use Dexterity to determine your accuracy with any \glossterm{light weapon}.
+            You can use Dexterity to determine your accuracy with any \glossterm{melee weapon} or \glossterm{thrown weapon}.
             You can use Perception to determine your accuracy with any \glossterm{projectile weapon}.
 
             In addition to this base number, your accuracy can include any number of bonuses and penalties from other sources, such as the bonus for having a high Perception (see \pcref{Perception}).
@@ -670,11 +554,9 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \subsubsection{Strike Damage}\label{Strike Damage}
             Your damage dice with a \glossterm{strike} are based on the damage dice of the weapon.
-            You gain a \plus1d bonus to damage for every 2 \glossterm{combat prowess} you have.
+            You gain a \plus1d bonus to damage for every 2 \glossterm{combat prowess} or Strength you have, whichever is higher.
             For example, if you have a combat prowess of 4, your damage dice with a strike using a longsword would be 2d6.
-
             Other abilities can also affect your damage with strikes.
-            For example, you increase your damage dice with all \glossterm{mundane} attacks by one die increment per 5 Strength, which affects your damage with strikes.
 
             \parhead{Creature Size and Damage}\label{Creature Size and Damage}
             Larger creatures deal more damage with their weapons.
@@ -682,13 +564,9 @@ It defines how attributes work and explains how to make physical attacks in comb
             Likewise, each creature size below Medium imposes a \minus1d penalty to damage with strikes.
             This is described in \tref{Size in Combat}.
 
-        \subsubsection{Spell Damage}
-            Your damage dice with a \glossterm{spell} are based on the damage dice of the spell.
-            Most spells also gain a \plus1d bonus to damage for every 2 \glossterm{spellpower} you have.
-            The details for a spell are given in its description.
-
-            Other abilities can also increase your damage with spells.
-            For example, you increase your damage dice with all \glossterm{magical} attacks by one die increment per 5 Willpower, which affects your damage with spells.
+        \subsubsection{Ability Damage}
+            Your damage dice with an \glossterm{ability} are based on the damage dice defined in the ability's description.
+            Most abilities gain a \plus1d bonus to damage for every 2 \glossterm{power} you have with the ability.
 
         \subsubsection{Standard Damage}\label{Standard Damage}
             Many abilities deal \glossterm{standard damage} based on your level, an attribute, or some other statistic.
@@ -708,11 +586,11 @@ It defines how attributes work and explains how to make physical attacks in comb
                     14--15 & 4d10 \\
                     16--17 & 5d10 \\
                     18--19 & 6d10 \\
-                    20 & 7d10 \\
+                    20--21 & 7d10 \\
+                    22\plus\fn{1} & \tdash \\
                 \end{dtabularx}
+                1 To calculate standard damage for a statistic beyond 20, add 1d10 per 2 points in the statistic. \\
             \end{dtable}
-
-            Other abilities, such as Strength or Willpower, can modify abilities that deal standard damage as normal.
 
     \subsection{Defenses}\label{Defenses}
         Usually, when you are attacked, the attacker has to make an \glossterm{attack roll} against a specific defense.
@@ -735,7 +613,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             Each of your defenses is calculated in the following way:
 
             \begin{figure}[h]
-                \centering 5 \add Base defense bonus or defense attribute \add other bonuses and penalties
+                \centering Base defense bonus \add level or defense attribute \add other bonuses and penalties
             \end{figure}
 
             The attributes and relevant bonuses which apply to each defense are described in \trefnp{Defense Calculations}.
@@ -746,12 +624,12 @@ It defines how attributes work and explains how to make physical attacks in comb
             \begin{dtable!*}
                 \lcaption{Defense Calculations}
                 \begin{dtabularx}{\textwidth}{l l l l l >{\lcol}X}
-                    \tb{Defense Name} & \tb{Primary Defense Bonus} & \tb{Attributes} & \tb{Body Armor Modifier} & \tb{Shield Modifier} & \tb{Size Modifier} \\
-                    \hline
-                    Armor defense     & Combat prowess & Dex or Con & Yes & Yes & No \\
-                    Fortitude defense & Level          & Con or Str & No  & No  & Yes \\
-                    Reflex defense    & Level          & Dex or Per & No  & Yes & Yes \\
-                    Mental defense    & Level          & Wil or Int & No  & No  & No \\
+                    \tb{Defense Name} & \tb{Base Defense Bonus} & \tb{Attributes} & \tb{Body Armor Modifier} & \tb{Shield Modifier} & \tb{Size Modifier} \\
+                    \midrule
+                    Armor defense     & 0 & Dex or Con & Yes & Yes & No  \\
+                    Fortitude defense & 5 & Con or Str & No  & No  & Yes \\
+                    Reflex defense    & 5 & Dex or Per & No  & Yes & Yes \\
+                    Mental defense    & 5 & Wil or Int & No  & No  & No  \\
                 \end{dtabularx}
             \end{dtable!*}
 
@@ -1113,7 +991,7 @@ It defines how attributes work and explains how to make physical attacks in comb
     \subsection{Action Points}\label{Action Points}
         \glossterm{Action points} allow you to perform special actions that your character has access to.
         You have one action point at 1st level.
-        At 3rd level, and every odd level thereafter, you gain an additional action point.
+        At 5th level, and every 4 levels thereafter, you gain an additional action point.
         You can gain additional action points from your \glossterm{base class}, from your Intelligence, and from some special abilities.
         After a \glossterm{short rest}, you regain all action points you spent since your last rest, up to a maximum equal to half of your maximum action points (minimum 1).
         After a \glossterm{long rest}, you recover all spent action points.
@@ -1246,6 +1124,111 @@ It defines how attributes work and explains how to make physical attacks in comb
         The tables for each class should be sufficient to determine each character's bonuses and abilities.
 
 \section{Special Rules}
+
+    \subsection{Combat Maneuvers}\label{Combat Maneuvers}
+        A combat maneuver is an attempt to physically hinder your foe with your body, such as by shoving or tripping it.
+        Unless otherwise noted, combat maneuvers do not deal damage.
+        There are two kinds of combat maneuvers: heavy maneuvers and light maneuvers.
+
+        \parhead{Heavy Maneuvers} You can use a heavy maneuver as a standard action.
+        You cannot use Dexterity to determine your accuracy with a heavy maneuver, just like attacking with a heavy weapon.
+        You take a \minus2 penalty to accuracy with heavy maneuvers for each size category you are smaller than your target, or a \plus2 bonus for each size category you are larger.
+
+        \parhead{Light Maneuvers} You can use a light maneuver in place of a \glossterm{strike} as part of a \glossterm{standard attack}.
+        You can use either Strength or Dexterity to determine your accuracy with a light maneuver, just like attacking with a light weapon.
+
+        \begin{dtable}
+            \lcaption{Combat Maneuvers}
+            \begin{dtabularx}{\columnwidth}{l l l X}
+                \tb{Maneuver}  & \tb{Type} & \tb{Defense} & \tb{Brief Description} \\
+                \hline
+                Dirty Trick & Light & Any       & Impose penalty on a foe         \\
+                Disarm      & Light & Reflex    & Force foe to drop item          \\
+                Feint       & Light & Reflex    & Leave foe vulnerable to attacks \\
+                Grapple     & Heavy & Special   & Wrestle with a foe              \\
+                Shove       & Heavy & Fortitude & Move a foe                      \\
+                Trip        & Light & Reflex    & Trip a foe                      \\
+            \end{dtabularx}
+        \end{dtable}
+
+        \subsubsection{Maneuver Descriptions}
+
+            \parhead{Dirty Trick}\label{Dirty Trick} You strike your foe in a sensitive spot, pull its pants down, or creatively use your environment to attack.
+            Depending on the nature of your dirty trick, you can target Fortitude, Reflex, or Mental defense.
+            You must use a free hand to perform a dirty trick.
+            Success means the target is \impaired with actions relevant to the nature of your trick for 2 rounds.
+            Critical success means the target is \severelyimpaired instead.
+            Critical failure means you are \impaired with relevant actions instead.
+            Unusual dirty tricks using the environment may impose other effects of similar strength.
+            Dirty tricks are a light maneuver.
+
+            \parhead{Disarm}\label{Disarm} You can strike an item your foe is wearing or holding to knock it out of their hands or damage it.
+            You can perform a disarm with a free hand or any weapon.
+            You make a physical attack against the target's Reflex defense.
+            Success means you hit the object, and can choose whether or not to deal damage to it.
+            In addition, if the creature is not holding the item in its hands, it falls to the ground in the foe's square.
+            Critical success means you can also knock an item held directly in a creature's hands to the ground.
+            Critical failure means you drop the weapon you used to attack (if any).
+
+            If you disarm a foe using a free hand, you can hold a disarmed item rather than letting it fall to the ground.
+            Items that are very well secured, such as worn rings, cannot be knocked to the ground or grabbed.
+            Disarming is a light maneuver.
+
+            \parhead{Feint}\label{Feint} You can make a fake attack to leave your foe off-balance.
+            You can perform a feint with a free hand or any weapon.
+            You make a physical attack against the target's Reflex defense.
+            Success means the target takes a \minus5 penalty to physical defenses against your next attack.
+            Critical success means the target takes a \minus5 penalty to physical defenses against all of your attacks.
+            Critical failure means you take a \minus5 penalty to physical defenses against the next attack by the target.
+            In either case, if you stop threatening the target, the effect of the feint immediately ends.
+            Feinting is a light maneuver.
+
+            \parhead{Grapple}\label{Grapple} You physically grab and restrain your foe.
+            You must use a free hand to perform a grapple.
+            You make a physical attack against the target's Reflex and Fortitude defenses.
+            Success against both defenses means you and the creature become \grappled.
+            See \pcref{Grappling} for more details.
+            Grapping is a heavy maneuver.
+
+            \parhead{Shove}\label{Shove} You shove your foe where you want it to go.
+            You must use a free hand to perform a shove.
+            You make a physical attack against the target's Fortitude defense.
+            Success means you move the creature 5 feet in a direction of your choice.
+            For every 5 points by which you succeed, you can move it an additional 5 feet.
+            You cannot normally move the creature further after moving it outside of your reach.
+            If you have movement remaining in the round, you can move with the creature in order to shove it farther.
+            If the creature encounters a solid object or creature, you must stop shoving it.
+            Shoving is a heavy maneuver.
+
+            \parhead{Trip}\label{Trip} You try to trip your foe.
+            You must use a free hand to perform a trip.
+            You make a physical attack against the target's Reflex defense.
+            Success means the target falls \prone.
+            Critical failure means you fall prone instead.
+            As with other effects, the target does not suffer penalties for being prone against your other attacks within the same round.
+            It is still in the process of falling as you make the subsequent attacks.
+            Tripping is a light maneuver.
+
+    \subsection{Grappling}\label{Grappling}
+        Grappling creatures are physically struggling with each other. While grappled, you suffer certain penalties and restrictions, as described below.
+
+        \subsubsection{Being In A Grapple}
+            While grappling, you suffer certain penalties and restrictions, as described below. Other than these restrictions, you can act normally. You can also take certain actions in a grapple, as described in \pcref{Grapple Actions}
+            \begin{itemize}
+                \item You must use a free hand (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands. If you cannot free a hand, you suffer a \minus10 penalty to accuracy on all physical attacks, including grapple attacks, until you have a free hand.
+                \item You are \defenseless against creatures you are not grappling with.
+                \item You take a \minus4 penalty to accuracy with weapons that are not light, since they are too large and cumbersome to be used effectively in a grapple.
+                \item Spellcasting is extremely difficult. You cannot cast spells with somatic components. Casting a spell without somatic components requires a Concentration check with a DR equal to 20 \add double spell level.
+                \item You cannot move normally (but see Move the Grapple, below).
+            \end{itemize}
+
+        \subsubsection{Grapple Actions}\label{Grapple Actions}
+            While grappled, you can take four special actions to try to affect the grapple.
+
+            \parhead{Bind Foe} As a standard action, you can make a grapple attack to bind your foe with ropes or other restraints. You must have the restraints in hand (in addition to the free hand required to grapple). Apply the result against the Fortitude and Reflex defenses of a creature grappling you. Success against both defenses means the creature is bound, rendering it helpless and effectively paralyzed. The only physical actions a bound creature can take are to esccape or break the bindings. Escaping the bindings requires a grapple attack or Escape Artist check which beats the grapple attack made to bind the creature. Breaking the bindings requires making a Strength check sufficient to break the item used to bind the creature. If you have the time, you can \glossterm{take 20} on your grapple attack to secure bindings on a helpless foe, including a foe rendered helpless through this attack.
+            \parhead{Escape the Grapple} As a standard action, you can make a grapple attack or Escape Artist check to escape from the grapple. Apply the result against the Reflex defense of each creature grappling you. Success against an individual creature means you are no longer grappling that creature.
+            \parhead{Move the Grapple} As a move action, you can make a grapple attack to move the grapple. Apply the result against the Fortitude defense of each creature grappling you. If you beat every creature's Fortitude defense, you can move yourself and all other creatures in the grapple up to half your speed. At the end of your movement, you choose which spaces creatures grappling you are in, as long as they stay adjacent to you.
+            \parhead{Pin} As a standard action, you can make a grapple attack against the Fortitude and Reflex defenses of a creature you are grappling with. Success against both defenses means the creature becomes \glossterm{pinned} (in addition to being grappled), while you remain only grappled. The only physical action a pinned creature can take is to escape the grapple, though it can take mental actions. At your discretion, you can cover the mouth of a pinned creature to prevent it from speaking.
 
     \subsection{Unarmed Combat}\label{Unarmed Combat}
         Every creature can attack with its body using an unarmed attack.
