@@ -341,12 +341,13 @@ It defines how attributes work and explains how to make physical attacks in comb
                 \item Strength determines how much a character can carry (see \tref{Weight Limits}).
                 \item Strength affects Strength-based skills: Climb, Jump, Sprint, and Swim (see \pcref{Skills}).
                 \item If your Strength is negative, you take a penalty to all Strength-based skills equal to your Strength.
-                \item If your Strength is negative, you take a penalty to damage with \glossterm{physical} attacks equal to half your Strength in \glossterm{die increments}.
+                \item If your Strength is negative, you take a penalty to damage with \glossterm{strikes} equal to half your Strength in \glossterm{die increments}.
             \end{itemize}
 
             If you have a high Strength, you can use it to determine several statistics:
             \begin{itemize}
-                \item Your \glossterm{accuracy} with \glossterm{strikes} using melee and thrown weapons (see \pcref{Strike Accuracy}).
+                \item Your \glossterm{accuracy} with \glossterm{strikes} using \glossterm{light weapons} (see \pcref{Strike Accuracy}).
+                \item Your damage with \glossterm{strikes} (see \pcref{Strike Damage}).
                 \item Your Fortitude defense (see \pcref{Defenses}).
             \end{itemize}
 
@@ -362,7 +363,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             If you have a high Dexterity, you can use it to determine several statistics:
             \begin{itemize}
                 \item Your \glossterm{accuracy} with \glossterm{strikes} using melee and thrown weapons (see \pcref{Strike Accuracy}).
-                \item Your Reflex defense (see \pcref{Defenses}).
+                \item Your Armor and Reflex defenses (see \pcref{Defenses}).
             \end{itemize}
 
         \subsubsection{Constitution (Con)}\label{Constitution}
@@ -404,7 +405,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
             If you have a high Perception, you can use it to determine several statistics:
             \begin{itemize}
-                \item Your \glossterm{accuracy} with \glossterm{strikes} using projectile weapons (see \pcref{Strike Accuracy}).
+                \item Your \glossterm{accuracy} with \glossterm{strikes} (see \pcref{Strike Accuracy}).
                 \item Your Reflex defense (see \pcref{Defenses}).
             \end{itemize}
 
@@ -493,26 +494,15 @@ It defines how attributes work and explains how to make physical attacks in comb
 \section{Character Statistics}
     This section explains how to calculate commonly used statistics about your character.
 
-    \subsection{Combat Prowess}\label{Combat Prowess}
-        Every character has a \glossterm{combat prowess}, which represents how skilled they are in physical combat.
-        You can use your combat prowess to determine your \glossterm{accuracy} with \glossterm{strikes} (see \pcref{Strike Accuracy}).
-        You can also use it to determine your Armor defense (see \pcref{Defenses}).
-        It also affects your damage \glossterm{mundane} attacks (see \pcref{Damage}).
-
-        As your character gains levels, her combat prowess will increase.
-        Gaining levels in physical classes, like fighter, will cause it to increase faster, while gaining levels in non-physical classes, like wizard, will cause it to increase slower.
-
     \subsection{Accuracy}\label{Accuracy}
         Your accuracy with an \glossterm{attack} is the number that you add to the \glossterm{attack roll}.
         You will have multiple different attacks you can make.
         The accuracy for an attack depends on the type of attack it is.
 
         \subsubsection{Strike Accuracy}\label{Strike Accuracy}
-            Your accuracy with a \glossterm{strike} is normally equal to the higher of your \glossterm{combat prowess} and an attribute based on the nature of your strike.
-            You can use Dexterity to determine your accuracy with any \glossterm{melee weapon} or \glossterm{thrown weapon}.
-            You can use Perception to determine your accuracy with any \glossterm{projectile weapon}.
-
-            In addition to this base number, your accuracy can include any number of bonuses and penalties from other sources, such as the bonus for having a high Perception (see \pcref{Perception}).
+            Your accuracy with a \glossterm{strike} is normally equal to the higher of your level and your Perception.
+            If you are using a \glossterm{light weapon}, you may use your Dexterity instead.
+            In addition to this base number, your accuracy can include any number of bonuses and penalties from other sources.
 
             \parhead{Proficiency} Each creature in Rise has \glossterm{proficiency} with a number of weapons.
             For details about the weapons you can be proficient with, see \pcref{Weapons}.
@@ -554,8 +544,8 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \subsubsection{Strike Damage}\label{Strike Damage}
             Your damage dice with a \glossterm{strike} are based on the damage dice of the weapon.
-            You gain a \plus1d bonus to damage for every 2 \glossterm{combat prowess} or Strength you have, whichever is higher.
-            For example, if you have a combat prowess of 4, your damage dice with a strike using a longsword would be 2d6.
+            You gain a \plus1d bonus to damage for every 2 levels or Strength you have, whichever is higher.
+            For example, if you have a Strength of 4, your damage dice with a strike using a longsword would be 2d6.
             Other abilities can also affect your damage with strikes.
 
             \parhead{Creature Size and Damage}\label{Creature Size and Damage}
@@ -617,9 +607,6 @@ It defines how attributes work and explains how to make physical attacks in comb
             \end{figure}
 
             The attributes and relevant bonuses which apply to each defense are described in \trefnp{Defense Calculations}.
-            Your primary defense bonus is the largest number you add to that defense.
-            For Armor defense, your primary defense bonus is equal to your \glossterm{combat prowess}.
-            For Fortitude, Reflex, and Mental defense, your primary defense bonus is equal to your character level.
 
             \begin{dtable!*}
                 \lcaption{Defense Calculations}
@@ -1074,55 +1061,6 @@ It defines how attributes work and explains how to make physical attacks in comb
         1. All races also grant a bonus feat at 1st level. The feat must be chosen from a specific list of racial bonus feats. \\
     \end{dtable}
 
-    \subsection{Combat Prowess Progressions}\label{Combat Prowess Progressions}
-
-        A character's \glossterm{combat prowess} measures how skilled they are combat (see \pcref{Combat Prowess}).
-        There are three progressions: Good, Average, or Poor.
-        The effects of each progression are described on \trefnp{Combat Prowess Progressions}.
-
-        \begin{dtable}
-            \lcaption{Combat Prowess Progressions}
-            \setlength\tabcolsep{0.45em}%
-            \begin{dtabularx}{\columnwidth}{l X}
-                \tb{Progression} & \tb{Combat Prowess} \\
-                \hline
-                Good                & Class level \\
-                Average             & Four-fifths class level \\
-                Poor                & Two-thirds class level \\
-            \end{dtabularx}
-        \end{dtable}
-
-        \begin{dtable}
-            \lcaption{Combat Prowess Progression Bonuses}
-            \begin{dtabularx}{\columnwidth}{l l X X}
-                \tb{Level} & \tb{Good} & \tb{Average} & \tb{Poor} \\
-                \hline
-                \allbabprogressionrow{1}  \\
-                \allbabprogressionrow{2}  \\
-                \allbabprogressionrow{3}  \\
-                \allbabprogressionrow{4}  \\
-                \allbabprogressionrow{5}  \\
-                \allbabprogressionrow{6}  \\
-                \allbabprogressionrow{7}  \\
-                \allbabprogressionrow{8}  \\
-                \allbabprogressionrow{9}  \\
-                \allbabprogressionrow{10} \\
-                \allbabprogressionrow{11} \\
-                \allbabprogressionrow{12} \\
-                \allbabprogressionrow{13} \\
-                \allbabprogressionrow{14} \\
-                \allbabprogressionrow{15} \\
-                \allbabprogressionrow{16} \\
-                \allbabprogressionrow{17} \\
-                \allbabprogressionrow{18} \\
-                \allbabprogressionrow{19} \\
-                \allbabprogressionrow{20} \\
-            \end{dtabularx}
-        \end{dtable}
-
-        Under normal circumstances, these tables will not need to be referenced.
-        The tables for each class should be sufficient to determine each character's bonuses and abilities.
-
 \section{Special Rules}
 
     \subsection{Combat Maneuvers}\label{Combat Maneuvers}
@@ -1131,11 +1069,12 @@ It defines how attributes work and explains how to make physical attacks in comb
         There are two kinds of combat maneuvers: heavy maneuvers and light maneuvers.
 
         \parhead{Heavy Maneuvers} You can use a heavy maneuver as a standard action.
-        You cannot use Dexterity to determine your accuracy with a heavy maneuver, just like attacking with a heavy weapon.
+        Before applying bonuses and penalties, your accuracy with a heavy maneuver is equal to your Strength.
         You take a \minus2 penalty to accuracy with heavy maneuvers for each size category you are smaller than your target, or a \plus2 bonus for each size category you are larger.
 
-        \parhead{Light Maneuvers} You can use a light maneuver in place of a \glossterm{strike} as part of a \glossterm{standard attack}.
-        You can use either Strength or Dexterity to determine your accuracy with a light maneuver, just like attacking with a light weapon.
+        \parhead{Light Maneuvers} You can use a light maneuver as a standard action.
+        Before applying bonuses and penalties, your accuracy with a light maneuver is equal to your normal accuracy with strikes (see \pcref{Strike Accuracy}).
+        A light maneuver is treated as a \glossterm{light weapon} for the purpose of determining your accuracy.
 
         \begin{dtable}
             \lcaption{Combat Maneuvers}
@@ -1257,7 +1196,8 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         If your mount moves more than its normal speed when charging, you also take the physical defense penalty associated with a charge. If you make an attack at the end of such a charge, you receive the bonus gained from the charge. When charging on horse-back, you deal double damage with a lance (see \pcref{Charge}).
 
-        You can use ranged weapons while your mount is taking a double move, but at a \minus4 penalty to accuracy. You can use ranged weapons while your mount is sprinting, but at a \minus8 penalty (see \pcref{Sprint}). In either case, you make the attack roll when your mount has completed half its movement. You can make a standard attack with a ranged weapon while your mount is moving. Likewise, you can take move actions normally.
+        You can use ranged weapons while your mount is moving in the same phase, but at a \minus2 penalty to accuracy.
+        If your mount is also sprinting (see \pcref{Sprint}), this penalty increases to \minus4.
 
         \parhead{Casting Spells while Mounted} You can cast a spell normally if your mount moves up to a normal move (its speed) either before or after you cast. If you have your mount move both before and after you cast a spell, then you're casting the spell while the mount is moving, and you have to make a Concentration check due to the vigorous motion (DR 10 \add double spell level) or lose the spell. If the mount is sprinting, your Concentration check is more difficult due to the violent motion (DR 15 \add double spell level).
 
@@ -1266,7 +1206,12 @@ It defines how attributes work and explains how to make physical attacks in comb
         \parhead{If You Are Dropped} If you are knocked unconscious, you have a 50\% chance to stay in the saddle (or 75\% if you're in a military saddle). Otherwise you fall and take 1d6 points of damage. Without you to guide it, most mounts avoid combat.
 
     \subsection{Dual Attacking}\label{Dual Attacking}
-        If you are wielding two weapons at once, you can attack with both weapons whenever you attack. This is called dual attacking. Roll a single attack roll for both weapons. If you hit, roll the base damage die for both weapons and add them together. All other damage modifiers are added only once. If the weapons have different damage bonuses, such as if they are magic weapons with different enhancement bonuses, use the lower of the two damage bonuses.
+        If you are wielding two weapons at once, you can attack with both weapons whenever you attack.
+        This is called dual attacking.
+        Roll a single attack roll for both weapons.
+        If you hit, roll the base damage die for both weapons and add them together.
+        All other damage modifiers are added only once.
+        If the weapons have different damage bonuses, such as if they are magic weapons with different enhancement bonuses, use the lower of the two damage bonuses.
 
         \parhead{Critical Hits} Normally, when you score a critical hit, you roll damage separately for each weapon and use the higher of the two results when dealing the bonus damage. If your weapons have different \glossterm{critical ranges}, it is possible to only score a critical hit with one of the two weapons. In that case, only use that weapon's damage when dealing extra damage.
 
@@ -1274,7 +1219,13 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \parhead{Unarmed Attacks} Normally, you can't make unarmed attacks as if fighting with two weapons. However, a character with the Unarmed Fighting feat gains the ability to make dual attacks with their unarmed attacks (see \featpcref{Unarmed Fighting}).
 
-        \parhead{Example} Felix the 1st-level fighter is wielding two short swords against an evil goblin. The goblin has an Armor defense of 15. Felix has a combat prowess of 3, and is proficient with his swords, so his accuracy is \plus7. If he attacks with both weapons at once, he takes no penalty to his accuracy, because both weapons are light. If he rolls an 8 or higher, he hits the goblin. His damage bonus is \plus1 from his combat prowess, so he rolls 1d6 for each weapon and adds 1, for a total of 2d6\plus1 damage. If he rolled a 2 and a 4, he would deal a total of 7 damage.
+        \parhead{Example} Felix the 1st-level fighter is wielding two short swords against an evil goblin.
+        The goblin has an Armor defense of 5.
+        Felix has a Dexterity of 2, and is proficient with his swords, so his accuracy is \plus2.
+        If he attacks with both weapons at once, he takes no penalty to his accuracy, because both weapons are light.
+        If he rolls a 3 or higher, he hits the goblin.
+        His Strength is 2, so he rolls 1d8 for each weapon, for a total of 2d8 damage.
+        If he rolled a 2 and a 4, he would deal a total of 7 damage.
 
     \subsection{Drowning}\label{Drowning}
         You can hold your breath for a number of rounds equal to 5 \add your Constitution.
