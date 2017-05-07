@@ -14,7 +14,7 @@ This choice determines a great deal about your character's abilities.
         Every character has one \glossterm{base class}.
         You may choose any class your character has at least one level in as a base class.
         Whenever your character gain a level, you can change its base class to a different class it has.
-        Your choice of base class affects your character's \glossterm{combat prowess}, \glossterm{defenses}, \glossterm{skill points}, and \glossterm{class skills}.
+        Your choice of base class affects your character's \glossterm{defenses}, \glossterm{skill points}, and \glossterm{class skills}.
         In addition, every class grants additional abilities if it is chosen as a base class, as given in the class description.
 
 \section{Class Introductions}
@@ -36,9 +36,7 @@ This choice determines a great deal about your character's abilities.
     \subsection{Class Description Format}
 
         \parhead{Class Table}
-        The class's table describes its progression for \glossterm{combat prowess}.
-        If a character has a high enough combat prowess to make multiple \glossterm{strikes}, the number of strikes it can make is in parentheses next to its combat prowess.
-        For details about combat prowess progressions, see \pcref{Combat Prowess Progressions}.
+        The class's table describes the special abilities they get at each level.
 
         \parhead{Alignment}
         Some classes require specific alignments (see \pcref{Alignment}).
@@ -52,15 +50,6 @@ This choice determines a great deal about your character's abilities.
 
             \parhead{Skill Points}
             This is the number of skill points that members of this class get.
-
-            \parhead{Combat Prowess}
-            Each class grants a bonus to combat prowess.
-            This bonus is already included in the values given in the class table.
-            Do not add the base class bonus for combat prowess to the value given for the class table.
-            The bonus in the table must be removed when determining the combat prowess of a character with multiple classes (see \pcref{Multiclass Characters}).
-
-            These bonuses do not stack with other combat prowess bonuses granted by base classes.
-            If a character has multiple base classes, only use the highest bonus to combat prowess.
 
             \parhead{Defenses}
             Each class grants bonuses to specific defenses.
@@ -76,29 +65,29 @@ This choice determines a great deal about your character's abilities.
 \section{Barbarian}\label{Barbarian}
     \begin{dtable}
         \lcaption{Barbarian Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} c >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{Rage} & \tb{Special} \\
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} c >{\lcol}X}
+            \tb{Level} & \tb{Rage} & \tb{Special} \\
             \hline
-            \barbarianprogressionrow{1}  & \plus2 & Rage, primal rage      \\
-            \barbarianprogressionrow{2}  & \plus2 & Fast movement          \\
-            \barbarianprogressionrow{3}  & \plus2 & Uncanny dodge          \\
-            \barbarianprogressionrow{4}  & \plus2 & Durable                \\
-            \barbarianprogressionrow{5}  & \plus3 & Larger than life       \\
-            \barbarianprogressionrow{6}  & \plus3 & Rage feat              \\
-            \barbarianprogressionrow{7}  & \plus3 & Improved uncanny dodge \\
-            \barbarianprogressionrow{8}  & \plus3 & Battle-scarred         \\
-            \barbarianprogressionrow{9}  & \plus3 & Primal resilience      \\
-            \barbarianprogressionrow{10} & \plus4 & Instinctive rage       \\
-            \barbarianprogressionrow{11} & \plus4 & Larger than belief     \\
-            \barbarianprogressionrow{12} & \plus4 & Titanic resilience     \\
-            \barbarianprogressionrow{13} & \plus4 & Fury of the storm      \\
-            \barbarianprogressionrow{14} & \plus4 & Mindless rage          \\
-            \barbarianprogressionrow{15} & \plus5 & \tdash                 \\
-            \barbarianprogressionrow{16} & \plus5 & Supreme rage           \\
-            \barbarianprogressionrow{17} & \plus5 & Titan of battle        \\
-            \barbarianprogressionrow{18} & \plus5 & Deathless rage         \\
-            \barbarianprogressionrow{19} & \plus5 & Endless rage           \\
-            \barbarianprogressionrow{20} & \plus6 & \tdash                 \\
+            \nth{1}  & \plus2 & Rage, primal rage      \\
+            \nth{2}  & \plus2 & Fast movement          \\
+            \nth{3}  & \plus2 & Uncanny dodge          \\
+            \nth{4}  & \plus2 & Durable                \\
+            \nth{5}  & \plus3 & Larger than life       \\
+            \nth{6}  & \plus3 & Rage feat              \\
+            \nth{7}  & \plus3 & Improved uncanny dodge \\
+            \nth{8}  & \plus3 & Battle-scarred         \\
+            \nth{9}  & \plus3 & Primal resilience      \\
+            \nth{10} & \plus4 & Instinctive rage       \\
+            \nth{11} & \plus4 & Larger than belief     \\
+            \nth{12} & \plus4 & Titanic resilience     \\
+            \nth{13} & \plus4 & Fury of the storm      \\
+            \nth{14} & \plus4 & Mindless rage          \\
+            \nth{15} & \plus5 & \tdash                 \\
+            \nth{16} & \plus5 & Supreme rage           \\
+            \nth{17} & \plus5 & Titan of battle        \\
+            \nth{18} & \plus5 & Deathless rage         \\
+            \nth{19} & \plus5 & Endless rage           \\
+            \nth{20} & \plus6 & \tdash                 \\
         \end{dtabularx}
     \end{dtable}
 
@@ -116,8 +105,6 @@ This choice determines a great deal about your character's abilities.
         A character with barbarian as a base class gains the following abilities.
 
         \classbasics{Skill Points} 10.
-
-        \classbasics{Combat Prowess} \plus2. This benefit is included in the class table.
 
         \classbasics{Defenses} \plus4 Fortitude, \plus2 Reflex.
 
@@ -232,29 +219,29 @@ This choice determines a great deal about your character's abilities.
 \section{Cleric}\label{Cleric}
     \begin{dtable}
         \lcaption{Cleric Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{2em} >{\ccol}p{\babcolavg} c >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{Spells} & \tb{Special} \\
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{2em} c >{\lcol}X}
+            \tb{Level} & \tb{Spells} & \tb{Special} \\
             \hline
-            \clericprogressionrow{1}  & 2  & Domain gifts, rituals, spells \\
-            \clericprogressionrow{2}  & 3  & Devotion, domain invocation   \\
-            \clericprogressionrow{3}  & 3  & Domain invocation                        \\
-            \clericprogressionrow{4}  & 4  & \tdash             \\
-            \clericprogressionrow{5}  & 4  & Domain aspect                        \\
-            \clericprogressionrow{6}  & 5  & \tdash                 \\
-            \clericprogressionrow{7}  & 5  & Domain aspect                        \\
-            \clericprogressionrow{8}  & 6  & \tdash                 \\
-            \clericprogressionrow{9}  & 6  & Intercession                        \\
-            \clericprogressionrow{10} & 7  & \tdash                  \\
-            \clericprogressionrow{11} & 7  & Greater domain invocation                        \\
-            \clericprogressionrow{12} & 8  & \tdash     \\
-            \clericprogressionrow{13} & 8  & Greater domain invocation                        \\
-            \clericprogressionrow{14} & 9  & \tdash     \\
-            \clericprogressionrow{15} & 9  & Domain mastery                        \\
-            \clericprogressionrow{16} & 10 & \tdash                \\
-            \clericprogressionrow{17} & 10 & Domain mastery                        \\
-            \clericprogressionrow{18} & 11 & \tdash                \\
-            \clericprogressionrow{19} & 11 & Endless devotion              \\
-            \clericprogressionrow{20} & 12 & Miracle                       \\
+            \nth{1}  & 2  & Domain gifts, rituals, spells \\
+            \nth{2}  & 3  & Devotion, domain invocation   \\
+            \nth{3}  & 3  & Domain invocation                        \\
+            \nth{4}  & 4  & \tdash             \\
+            \nth{5}  & 4  & Domain aspect                        \\
+            \nth{6}  & 5  & \tdash                 \\
+            \nth{7}  & 5  & Domain aspect                        \\
+            \nth{8}  & 6  & \tdash                 \\
+            \nth{9}  & 6  & Intercession                        \\
+            \nth{10} & 7  & \tdash                  \\
+            \nth{11} & 7  & Greater domain invocation                        \\
+            \nth{12} & 8  & \tdash     \\
+            \nth{13} & 8  & Greater domain invocation                        \\
+            \nth{14} & 9  & \tdash     \\
+            \nth{15} & 9  & Domain mastery                        \\
+            \nth{16} & 10 & \tdash                \\
+            \nth{17} & 10 & Domain mastery                        \\
+            \nth{18} & 11 & \tdash                \\
+            \nth{19} & 11 & Endless devotion              \\
+            \nth{20} & 12 & Miracle                       \\
         \end{dtabularx}
     \end{dtable}
 
@@ -270,7 +257,6 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 5.
 
-        \classbasics{Combat Prowess} \plus2. This benefit is included in the class table.
 
         \classbasics{Defenses} \plus2 Fortitude, \plus4 Mental.
 
@@ -800,29 +786,29 @@ This choice determines a great deal about your character's abilities.
 \section{Druid}\label{Druid}
     \begin{dtable}
         \lcaption{Druid Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\centering}p{\babcolavg} >{\ccol}p{3.5em} c >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{Active Aspects} & \tb{Spells} & \tb{Special} \\
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{3.5em} c >{\lcol}X}
+            \tb{Level} & \tb{Active Aspects} & \tb{Spells} & \tb{Special} \\
             \hline
-            \druidprogressionrow{1}  & \tdash & 2  & Spells, rituals, wild speech \\
-            \druidprogressionrow{2}  & 1      & 3  & Wild aspect                  \\
-            \druidprogressionrow{3}  & 1      & 3  & Wild aspect                  \\
-            \druidprogressionrow{4}  & 1      & 4  & \tdash                       \\
-            \druidprogressionrow{5}  & 2      & 4  & Wild aspect                  \\
-            \druidprogressionrow{6}  & 2      & 5  & \tdash                       \\
-            \druidprogressionrow{7}  & 2      & 5  & Wild aspect                  \\
-            \druidprogressionrow{8}  & 2      & 6  & \tdash                       \\
-            \druidprogressionrow{9}  & 3      & 6  & Wild aspect                  \\
-            \druidprogressionrow{10} & 3      & 7  & \tdash                       \\
-            \druidprogressionrow{11} & 3      & 7  & Wild aspect                  \\
-            \druidprogressionrow{12} & 3      & 8  & \tdash                       \\
-            \druidprogressionrow{13} & 4      & 8  & Wild aspect                  \\
-            \druidprogressionrow{14} & 4      & 9  & \tdash                       \\
-            \druidprogressionrow{15} & 4      & 9  & Wild aspect                  \\
-            \druidprogressionrow{16} & 4      & 10 & \tdash                       \\
-            \druidprogressionrow{17} & 5      & 10 & Wild aspect                  \\
-            \druidprogressionrow{18} & 5      & 11 & \tdash                       \\
-            \druidprogressionrow{19} & 5      & 11 & Wild aspect                  \\
-            \druidprogressionrow{20} & 5      & 12 & Avatar of nature             \\
+            \nth{1}  & \tdash & 2  & Spells, rituals, wild speech \\
+            \nth{2}  & 1      & 3  & Wild aspect                  \\
+            \nth{3}  & 1      & 3  & Wild aspect                  \\
+            \nth{4}  & 1      & 4  & \tdash                       \\
+            \nth{5}  & 2      & 4  & Wild aspect                  \\
+            \nth{6}  & 2      & 5  & \tdash                       \\
+            \nth{7}  & 2      & 5  & Wild aspect                  \\
+            \nth{8}  & 2      & 6  & \tdash                       \\
+            \nth{9}  & 3      & 6  & Wild aspect                  \\
+            \nth{10} & 3      & 7  & \tdash                       \\
+            \nth{11} & 3      & 7  & Wild aspect                  \\
+            \nth{12} & 3      & 8  & \tdash                       \\
+            \nth{13} & 4      & 8  & Wild aspect                  \\
+            \nth{14} & 4      & 9  & \tdash                       \\
+            \nth{15} & 4      & 9  & Wild aspect                  \\
+            \nth{16} & 4      & 10 & \tdash                       \\
+            \nth{17} & 5      & 10 & Wild aspect                  \\
+            \nth{18} & 5      & 11 & \tdash                       \\
+            \nth{19} & 5      & 11 & Wild aspect                  \\
+            \nth{20} & 5      & 12 & Avatar of nature             \\
         \end{dtabularx}
     \end{dtable}
 
@@ -839,8 +825,6 @@ This choice determines a great deal about your character's abilities.
         A character with druid as a base class gains the following abilities.
 
         \classbasics{Skill Points} 10.
-
-        \classbasics{Combat Prowess} \plus2. This benefit is included in the class table.
 
         \classbasics{Defenses} \plus4 Fortitude, \plus2 Mental.
 
@@ -1179,29 +1163,29 @@ This choice determines a great deal about your character's abilities.
 \section{Fighter}\label{Fighter}
     \begin{dtable}
         \lcaption{Fighter Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{Special} \\
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\lcol}X}
+            \tb{Level} & \tb{Special} \\
             \hline
-            \fighterprogressionrow{1}  & Combat supremacy, martial excellence \\
-            \fighterprogressionrow{2}  & Weapon discipline                    \\
-            \fighterprogressionrow{3}  & Combat feat                          \\
-            \fighterprogressionrow{4}  & Combat discipline                    \\
-            \fighterprogressionrow{5}  & Battlemaster                         \\
-            \fighterprogressionrow{6}  & Armor discipline                     \\
-            \fighterprogressionrow{7}  & Combat feat                          \\
-            \fighterprogressionrow{8}  & Improved weapon discipline           \\
-            \fighterprogressionrow{9}  & Combat mastery                       \\
-            \fighterprogressionrow{10} & Improved combat discipline           \\
-            \fighterprogressionrow{11} & Combat feat                          \\
-            \fighterprogressionrow{12} & Improved armor discipline            \\
-            \fighterprogressionrow{13} & Swift warrior                        \\
-            \fighterprogressionrow{14} & Greater weapon discipline            \\
-            \fighterprogressionrow{15} & Combat feat                          \\
-            \fighterprogressionrow{16} & Greater combat discipline            \\
-            \fighterprogressionrow{17} & Supreme battlemaster                 \\
-            \fighterprogressionrow{18} & Greater armor discipline             \\
-            \fighterprogressionrow{19} & Combat feat                          \\
-            \fighterprogressionrow{20} & Supreme discipline                   \\
+            \nth{1}  & Combat supremacy, martial excellence \\
+            \nth{2}  & Weapon discipline                    \\
+            \nth{3}  & Combat feat                          \\
+            \nth{4}  & Combat discipline                    \\
+            \nth{5}  & Battlemaster                         \\
+            \nth{6}  & Armor discipline                     \\
+            \nth{7}  & Combat feat                          \\
+            \nth{8}  & Improved weapon discipline           \\
+            \nth{9}  & Combat mastery                       \\
+            \nth{10} & Improved combat discipline           \\
+            \nth{11} & Combat feat                          \\
+            \nth{12} & Improved armor discipline            \\
+            \nth{13} & Swift warrior                        \\
+            \nth{14} & Greater weapon discipline            \\
+            \nth{15} & Combat feat                          \\
+            \nth{16} & Greater combat discipline            \\
+            \nth{17} & Supreme battlemaster                 \\
+            \nth{18} & Greater armor discipline             \\
+            \nth{19} & Combat feat                          \\
+            \nth{20} & Supreme discipline                   \\
         \end{dtabularx}
     \end{dtable}
 
@@ -1217,8 +1201,6 @@ This choice determines a great deal about your character's abilities.
         A character with fighter as a base class gains the following abilities.
 
         \classbasics{Skill Points} 10.
-
-        \classbasics{Combat Prowess} \plus2. This benefit is included in the class table.
 
         \classbasics{Defenses} \plus4 Fortitude, \plus2 Mental.
 
@@ -1384,29 +1366,29 @@ This choice determines a great deal about your character's abilities.
 \section{Mage}\label{Mage}
     \begin{dtable}
         \lcaption{Mage Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolpoor} c >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{Spells} & \tb{Special} \\
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} c >{\lcol}X}
+            \tb{Level} & \tb{Spells} & \tb{Special} \\
             \hline
-            \wizardprogressionrow{1}  & 3  & Arcane essence, rituals, spells \\
-            \wizardprogressionrow{2}  & 4  & Arcane defense \\
-            \wizardprogressionrow{3}  & 4  & Arcane insight \\
-            \wizardprogressionrow{4}  & 5  & Arcane essence \\
-            \wizardprogressionrow{5}  & 5  & Arcane insight \\
-            \wizardprogressionrow{6}  & 6  & Inherent magic \\
-            \wizardprogressionrow{7}  & 6  & Arcane insight \\
-            \wizardprogressionrow{8}  & 7  & Arcane essence \\
-            \wizardprogressionrow{9}  & 7  & Arcane insight \\
-            \wizardprogressionrow{10} & 8  & Inherent magic \\
-            \wizardprogressionrow{11} & 8  & Arcane insight \\
-            \wizardprogressionrow{12} & 9  & Arcane essence \\
-            \wizardprogressionrow{13} & 9  & Arcane insight \\
-            \wizardprogressionrow{14} & 10  & Inherent magic \\
-            \wizardprogressionrow{15} & 10  & Arcane insight \\
-            \wizardprogressionrow{16} & 11 & Arcane essence \\
-            \wizardprogressionrow{17} & 11 & Arcane insight \\
-            \wizardprogressionrow{18} & 12 & Inherent magic \\
-            \wizardprogressionrow{19} & 12 & Arcane insight \\
-            \wizardprogressionrow{20} & 13 & Archmage       \\
+            \nth{1}  & 3  & Arcane essence, rituals, spells \\
+            \nth{2}  & 4  & Arcane defense \\
+            \nth{3}  & 4  & Arcane insight \\
+            \nth{4}  & 5  & Arcane essence \\
+            \nth{5}  & 5  & Arcane insight \\
+            \nth{6}  & 6  & Inherent magic \\
+            \nth{7}  & 6  & Arcane insight \\
+            \nth{8}  & 7  & Arcane essence \\
+            \nth{9}  & 7  & Arcane insight \\
+            \nth{10} & 8  & Inherent magic \\
+            \nth{11} & 8  & Arcane insight \\
+            \nth{12} & 9  & Arcane essence \\
+            \nth{13} & 9  & Arcane insight \\
+            \nth{14} & 10  & Inherent magic \\
+            \nth{15} & 10  & Arcane insight \\
+            \nth{16} & 11 & Arcane essence \\
+            \nth{17} & 11 & Arcane insight \\
+            \nth{18} & 12 & Inherent magic \\
+            \nth{19} & 12 & Arcane insight \\
+            \nth{20} & 13 & Archmage       \\
         \end{dtabularx}
     \end{dtable}
 
@@ -1421,8 +1403,6 @@ This choice determines a great deal about your character's abilities.
         A character with mage as a base class gains the following abilities.
 
         \classbasics{Skill Points} 5.
-
-        \classbasics{Combat Prowess} \plus1. This benefit is included in the class table.
 
         \classbasics{Defenses} \plus4 Mental.
 
@@ -1593,29 +1573,29 @@ This choice determines a great deal about your character's abilities.
 \section{Monk}\label{Monk}
     \begin{dtable}
         \lcaption{Monk Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolavg} c >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{\Ki Strike} & \tb{Special} \\
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} c >{\lcol}X}
+            \tb{Level} & \tb{\Ki Strike} & \tb{Special} \\
             \hline
-            \monkprogressionrow{1}  & \plus1 & Enlightened defenses, unarmed warrior     \\
-            \monkprogressionrow{2}  & \plus1 & Manifest \ki                              \\
-            \monkprogressionrow{3}  & \plus1 & Wholeness of body, uncanny dodge \\
-            \monkprogressionrow{4}  & \plus2 & Manifest \ki                              \\
-            \monkprogressionrow{5}  & \plus2 & Flurry of blows                           \\
-            \monkprogressionrow{6}  & \plus2 & Manifest \ki                              \\
-            \monkprogressionrow{7}  & \plus3 & Perfect motion                            \\
-            \monkprogressionrow{8}  & \plus3 & Manifest \ki                              \\
-            \monkprogressionrow{9}  & \plus3 & Improved uncanny dodge, perfect soul      \\
-            \monkprogressionrow{10} & \plus4 & Manifest \ki                              \\
-            \monkprogressionrow{11} & \plus4 & Flow of life                              \\
-            \monkprogressionrow{12} & \plus4 & Manifest \ki                              \\
-            \monkprogressionrow{13} & \plus5 & Perfect mind                              \\
-            \monkprogressionrow{14} & \plus5 & Manifest \ki                              \\
-            \monkprogressionrow{15} & \plus5 & Perfect body                              \\
-            \monkprogressionrow{16} & \plus6 & Manifest \ki                              \\
-            \monkprogressionrow{17} & \plus6 & Perfect life                              \\
-            \monkprogressionrow{18} & \plus6 & Manifest \ki                              \\
-            \monkprogressionrow{19} & \plus7 & True perfection                           \\
-            \monkprogressionrow{20} & \plus7 & Manifest \ki, transcend mortality         \\
+            \nth{1}  & \plus1 & Enlightened defenses, unarmed warrior     \\
+            \nth{2}  & \plus1 & Manifest \ki                              \\
+            \nth{3}  & \plus1 & Wholeness of body, uncanny dodge \\
+            \nth{4}  & \plus2 & Manifest \ki                              \\
+            \nth{5}  & \plus2 & Flurry of blows                           \\
+            \nth{6}  & \plus2 & Manifest \ki                              \\
+            \nth{7}  & \plus3 & Perfect motion                            \\
+            \nth{8}  & \plus3 & Manifest \ki                              \\
+            \nth{9}  & \plus3 & Improved uncanny dodge, perfect soul      \\
+            \nth{10} & \plus4 & Manifest \ki                              \\
+            \nth{11} & \plus4 & Flow of life                              \\
+            \nth{12} & \plus4 & Manifest \ki                              \\
+            \nth{13} & \plus5 & Perfect mind                              \\
+            \nth{14} & \plus5 & Manifest \ki                              \\
+            \nth{15} & \plus5 & Perfect body                              \\
+            \nth{16} & \plus6 & Manifest \ki                              \\
+            \nth{17} & \plus6 & Perfect life                              \\
+            \nth{18} & \plus6 & Manifest \ki                              \\
+            \nth{19} & \plus7 & True perfection                           \\
+            \nth{20} & \plus7 & Manifest \ki, transcend mortality         \\
         \end{dtabularx}
     \end{dtable}
 
@@ -1632,8 +1612,6 @@ This choice determines a great deal about your character's abilities.
         A character with monk as a base class gains the following abilities.
 
         \classbasics{Skill Points} 10.
-
-        \classbasics{Combat Prowess} \plus2. This benefit is included in the class table.
 
         \classbasics{Defenses} \plus2 Fortitude, \plus4 Reflex, \plus4 Mental.
 
@@ -1808,29 +1786,29 @@ This choice determines a great deal about your character's abilities.
 \section{Paladin}\label{Paladin}
     \begin{dtable}
         \lcaption{Paladin Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{Special} \\
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\lcol}X}
+            \tb{Level} & \tb{Special} \\
             \hline
-            \paladinprogressionrow{1}  & Divine invocation (smite), divine protection \\
-            \paladinprogressionrow{2}  & Divine invocation                            \\
-            \paladinprogressionrow{3}  & Discernment (alignment)                      \\
-            \paladinprogressionrow{4}  & Divine presence                              \\
-            \paladinprogressionrow{5}  & Pass judgment                                \\
-            \paladinprogressionrow{6}  & Divine invocation                            \\
-            \paladinprogressionrow{7}  & Discernment (lies)                           \\
-            \paladinprogressionrow{8}  & Divine presence                              \\
-            \paladinprogressionrow{9}  & Expanded presence                            \\
-            \paladinprogressionrow{10} & Divine invocation                            \\
-            \paladinprogressionrow{11} & Discernment (invisibility)                   \\
-            \paladinprogressionrow{12} & Divine presence                              \\
-            \paladinprogressionrow{13} & Lingering presence                           \\
-            \paladinprogressionrow{14} & Divine invocation                            \\
-            \paladinprogressionrow{15} & Discernment (truth), martyr's retribution    \\
-            \paladinprogressionrow{16} & Divine presence                              \\
-            \paladinprogressionrow{17} & Mighty presence                              \\
-            \paladinprogressionrow{18} & Divine invocation                            \\
-            \paladinprogressionrow{19} & Discernment (thoughts)                       \\
-            \paladinprogressionrow{20} & Aligned soul, divine presence                 \\
+            \nth{1}  & Divine invocation (smite), divine protection \\
+            \nth{2}  & Divine invocation                            \\
+            \nth{3}  & Discernment (alignment)                      \\
+            \nth{4}  & Divine presence                              \\
+            \nth{5}  & Pass judgment                                \\
+            \nth{6}  & Divine invocation                            \\
+            \nth{7}  & Discernment (lies)                           \\
+            \nth{8}  & Divine presence                              \\
+            \nth{9}  & Expanded presence                            \\
+            \nth{10} & Divine invocation                            \\
+            \nth{11} & Discernment (invisibility)                   \\
+            \nth{12} & Divine presence                              \\
+            \nth{13} & Lingering presence                           \\
+            \nth{14} & Divine invocation                            \\
+            \nth{15} & Discernment (truth), martyr's retribution    \\
+            \nth{16} & Divine presence                              \\
+            \nth{17} & Mighty presence                              \\
+            \nth{18} & Divine invocation                            \\
+            \nth{19} & Discernment (thoughts)                       \\
+            \nth{20} & Aligned soul, divine presence                 \\
         \end{dtabularx}
     \end{dtable}
 
@@ -1846,8 +1824,6 @@ This choice determines a great deal about your character's abilities.
         A character with paladin as a base class gains the following abilities.
 
         \classbasics{Skill Points} 5.
-
-        \classbasics{Combat Prowess} \plus2. This benefit is included in the class table.
 
         \classbasics{Defenses} \plus4 Fortitude, \plus4 Mental.
 
@@ -2106,29 +2082,29 @@ This choice determines a great deal about your character's abilities.
 \section{Ranger}\label{Ranger}
     \begin{dtable}
         \lcaption{Ranger Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} c >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{Quarry} & \tb{Special} \\
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} c >{\lcol}X}
+            \tb{Level} & \tb{Quarry} & \tb{Special} \\
             \hline
-            \rangerprogressionrow{1}  & \plus2 & Quarry, tenacious hunter, wild speech \\
-            \rangerprogressionrow{2}  & \plus2 & Hunting skill, tracker                \\
-            \rangerprogressionrow{3}  & \plus2 & Free stride, keen vision              \\
-            \rangerprogressionrow{4}  & \plus2 & Hunting lore                          \\
-            \rangerprogressionrow{5}  & \plus3 & Rapid tracker                         \\
-            \rangerprogressionrow{6}  & \plus3 & Hunting skill                         \\
-            \rangerprogressionrow{7}  & \plus3 & Blindsense                            \\
-            \rangerprogressionrow{8}  & \plus3 & Hunting lore                          \\
-            \rangerprogressionrow{9}  & \plus3 & Perfect stride                        \\
-            \rangerprogressionrow{10} & \plus4 & Hunting skill                         \\
-            \rangerprogressionrow{11} & \plus4 & Blindsight                            \\
-            \rangerprogressionrow{12} & \plus4 & Hunting lore                          \\
-            \rangerprogressionrow{13} & \plus4 & Implacable hunter                     \\
-            \rangerprogressionrow{14} & \plus4 & Hunting skill                         \\
-            \rangerprogressionrow{15} & \plus5 & Farsight                              \\
-            \rangerprogressionrow{16} & \plus5 & Hunting lore                          \\
-            \rangerprogressionrow{17} & \plus5 & Eternal quarry                        \\
-            \rangerprogressionrow{18} & \plus5 & Hunting skill                         \\
-            \rangerprogressionrow{19} & \plus5 & Truesight                             \\
-            \rangerprogressionrow{20} & \plus6 & Hunting lore
+            \nth{1}  & \plus2 & Quarry, tenacious hunter, wild speech \\
+            \nth{2}  & \plus2 & Hunting skill, tracker                \\
+            \nth{3}  & \plus2 & Free stride, keen vision              \\
+            \nth{4}  & \plus2 & Hunting lore                          \\
+            \nth{5}  & \plus3 & Rapid tracker                         \\
+            \nth{6}  & \plus3 & Hunting skill                         \\
+            \nth{7}  & \plus3 & Blindsense                            \\
+            \nth{8}  & \plus3 & Hunting lore                          \\
+            \nth{9}  & \plus3 & Perfect stride                        \\
+            \nth{10} & \plus4 & Hunting skill                         \\
+            \nth{11} & \plus4 & Blindsight                            \\
+            \nth{12} & \plus4 & Hunting lore                          \\
+            \nth{13} & \plus4 & Implacable hunter                     \\
+            \nth{14} & \plus4 & Hunting skill                         \\
+            \nth{15} & \plus5 & Farsight                              \\
+            \nth{16} & \plus5 & Hunting lore                          \\
+            \nth{17} & \plus5 & Eternal quarry                        \\
+            \nth{18} & \plus5 & Hunting skill                         \\
+            \nth{19} & \plus5 & Truesight                             \\
+            \nth{20} & \plus6 & Hunting lore
         \end{dtabularx}
     \end{dtable}
 
@@ -2145,8 +2121,6 @@ This choice determines a great deal about your character's abilities.
         A character with ranger as a base class gains the following abilities.
 
         \classbasics{Skill Points} 15.
-
-        \classbasics{Combat Prowess} \plus2. This benefit is included in the class table.
 
         \classbasics{Defenses} \plus4 Fortitude, \plus4 Reflex, \plus2 Mental.
 
@@ -2305,29 +2279,29 @@ This choice determines a great deal about your character's abilities.
 \section{Rogue}\label{Rogue}
     \begin{dtable}
         \lcaption{Rogue Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolavg} c >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{Sneak Attack} & \tb{Special} \\
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} c >{\lcol}X}
+            \tb{Level} & \tb{Sneak Attack} & \tb{Special} \\
             \hline
-            \rogueprogressionrow{1}  & \plus1d6  & Skill exemplar, sneak attack \\
-            \rogueprogressionrow{2}  & \plus1d6  & Skill talent                 \\
-            \rogueprogressionrow{3}  & \plus2d6  & Uncanny dodge                \\
-            \rogueprogressionrow{4}  & \plus2d6  & Combat trick                 \\
-            \rogueprogressionrow{5}  & \plus3d6  & Lucky slip                   \\
-            \rogueprogressionrow{6}  & \plus3d6  & Skill talent                 \\
-            \rogueprogressionrow{7}  & \plus4d6  & Improved uncanny dodge       \\
-            \rogueprogressionrow{8}  & \plus4d6  & Combat trick                 \\
-            \rogueprogressionrow{9}  & \plus5d6  & Lucky break                  \\
-            \rogueprogressionrow{10} & \plus5d6  & Skill talent                 \\
-            \rogueprogressionrow{11} & \plus6d6  & Slippery mind                \\
-            \rogueprogressionrow{12} & \plus6d6  & Combat trick                 \\
-            \rogueprogressionrow{13} & \plus7d6  & Lucky dodge                  \\
-            \rogueprogressionrow{14} & \plus7d6  & Skill talent                 \\
-            \rogueprogressionrow{15} & \plus8d6  & Persistent sneak attack      \\
-            \rogueprogressionrow{16} & \plus8d6  & Combat trick                 \\
-            \rogueprogressionrow{17} & \plus9d6  & Legendary luck               \\
-            \rogueprogressionrow{18} & \plus9d6  & Skill talent                 \\
-            \rogueprogressionrow{19} & \plus10d6 & Ambush master                \\
-            \rogueprogressionrow{20} & \plus10d6 & Combat trick                 \\
+            \nth{1}  & \plus1d6  & Skill exemplar, sneak attack \\
+            \nth{2}  & \plus1d6  & Skill talent                 \\
+            \nth{3}  & \plus2d6  & Uncanny dodge                \\
+            \nth{4}  & \plus2d6  & Combat trick                 \\
+            \nth{5}  & \plus3d6  & Lucky slip                   \\
+            \nth{6}  & \plus3d6  & Skill talent                 \\
+            \nth{7}  & \plus4d6  & Improved uncanny dodge       \\
+            \nth{8}  & \plus4d6  & Combat trick                 \\
+            \nth{9}  & \plus5d6  & Lucky break                  \\
+            \nth{10} & \plus5d6  & Skill talent                 \\
+            \nth{11} & \plus6d6  & Slippery mind                \\
+            \nth{12} & \plus6d6  & Combat trick                 \\
+            \nth{13} & \plus7d6  & Lucky dodge                  \\
+            \nth{14} & \plus7d6  & Skill talent                 \\
+            \nth{15} & \plus8d6  & Persistent sneak attack      \\
+            \nth{16} & \plus8d6  & Combat trick                 \\
+            \nth{17} & \plus9d6  & Legendary luck               \\
+            \nth{18} & \plus9d6  & Skill talent                 \\
+            \nth{19} & \plus10d6 & Ambush master                \\
+            \nth{20} & \plus10d6 & Combat trick                 \\
         \end{dtabularx}
     \end{dtable}
 
@@ -2344,8 +2318,6 @@ This choice determines a great deal about your character's abilities.
         A character with rogue as a base class gains the following abilities.
 
         \classbasics{Skill Points} 15.
-
-        \classbasics{Combat Prowess} \plus2. This benefit is included in the class table.
 
         \classbasics{Defenses} \plus4 Reflex, \plus2 Mental.
 
@@ -2500,29 +2472,29 @@ This choice determines a great deal about your character's abilities.
 \section{Spellwarped}\label{Spellwarped}
     \begin{dtable}
         \lcaption{Spellwarped Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{\babcolgood} >{\lcol}X}
-            \tb{Level} & \tb{Combat Prowess} & \tb{Special} \\
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\lcol}X}
+            \tb{Level} & \tb{Special} \\
             \hline
-            \spellwarpedprogressionrow{1}  & Innate magic, invocation, warp regeneration \\
-            \spellwarpedprogressionrow{2}  & Spellwarped body                            \\
-            \spellwarpedprogressionrow{3}  & Magical senses, spellwarped aspect          \\
-            \spellwarpedprogressionrow{4}  & Invocation                                  \\
-            \spellwarpedprogressionrow{5}  & Manipulate magic                            \\
-            \spellwarpedprogressionrow{6}  & Invocation                                  \\
-            \spellwarpedprogressionrow{7}  & Spellwarped aspect                          \\
-            \spellwarpedprogressionrow{8}  & Invocation                                  \\
-            \spellwarpedprogressionrow{9}  & Magic resistance                            \\
-            \spellwarpedprogressionrow{10} & Invocation                                  \\
-            \spellwarpedprogressionrow{11} & Spellwarped aspect                          \\
-            \spellwarpedprogressionrow{12} & Invocation                                  \\
-            \spellwarpedprogressionrow{13} & Improved manipulate magic                   \\
-            \spellwarpedprogressionrow{14} & Invocation                                  \\
-            \spellwarpedprogressionrow{15} & Spellwarped aspect                          \\
-            \spellwarpedprogressionrow{16} & Invocation                                  \\
-            \spellwarpedprogressionrow{17} & \tdash                                      \\
-            \spellwarpedprogressionrow{18} & Invocation                                  \\
-            \spellwarpedprogressionrow{19} & Spellwarped aspect                          \\
-            \spellwarpedprogressionrow{20} & Invocation                                  \\
+            \nth{1}  & Innate magic, invocation, warp regeneration \\
+            \nth{2}  & Spellwarped body                            \\
+            \nth{3}  & Magical senses, spellwarped aspect          \\
+            \nth{4}  & Invocation                                  \\
+            \nth{5}  & Manipulate magic                            \\
+            \nth{6}  & Invocation                                  \\
+            \nth{7}  & Spellwarped aspect                          \\
+            \nth{8}  & Invocation                                  \\
+            \nth{9}  & Magic resistance                            \\
+            \nth{10} & Invocation                                  \\
+            \nth{11} & Spellwarped aspect                          \\
+            \nth{12} & Invocation                                  \\
+            \nth{13} & Improved manipulate magic                   \\
+            \nth{14} & Invocation                                  \\
+            \nth{15} & Spellwarped aspect                          \\
+            \nth{16} & Invocation                                  \\
+            \nth{17} & \tdash                                      \\
+            \nth{18} & Invocation                                  \\
+            \nth{19} & Spellwarped aspect                          \\
+            \nth{20} & Invocation                                  \\
         \end{dtabularx}
     \end{dtable}
 
@@ -2553,8 +2525,6 @@ This choice determines a great deal about your character's abilities.
         A character with spellwarped as a base class gains the following abilities.
 
         \classbasics{Skill Points} 5.
-
-        \classbasics{Combat Prowess} \plus2. This benefit is included in the class table.
 
         \classbasics{Defenses} \plus4 to one defense, \plus2 to other defenses (see the Innate Magic ability, below).
 
@@ -2860,7 +2830,7 @@ This choice determines a great deal about your character's abilities.
             \subcf{1st -- Flame Weapon}
             As a swift action, the spellwarped can create a weapon made of flame that lasts for 5 rounds.
             The weapon is sized appropriately for him, and may take the form of any weapon he is proficient with.
-            He can attack with the weapon as if it were a normal weapon of its type, except that he uses his spellpower to determine his damage in place of his combat prowess or Strength, and all damage dealt with the weapon is fire damage.
+            He can attack with the weapon as if it were a normal weapon of its type, except that he uses his spellpower to determine his damage in place of his level or Strength, and all damage dealt with the weapon is fire damage.
             All other damage modifiers apply normally.
             \par If the flame weapon leaves his hand, it is extinguished 1 round later.
 
@@ -3049,12 +3019,6 @@ This choice determines a great deal about your character's abilities.
 
         \parhead{Hit Points}
         The normal rules for determining hit points apply to multiclass characters.
-
-        \parhead{Combat Prowess}
-        For each class, take the combat prowess given on the chart and subtract the combat prowess bonus granted to the class from its base class bonuses.
-        Take the resulting combat prowess values for each class and add them together.
-        Finally, add the base class bonus from the character's base class to that sum.
-        The result is the character's total combat prowess.
 
         \parhead{Defenses}
         The normal rules for determining defenses apply to multiclass characters.
