@@ -15,29 +15,29 @@ A character's skills describe the myriad of talents that people have.
 
         \subsubsection{Other Skill Points}
 
-            You gain additional skill points equal to half your Intelligence.
-            If your Intelligence is negative, you instead lose class skill points equal to your Intelligence.
+            You gain additional skill points equal to twice your starting Intelligence.
+            If your Intelligence is negative, you instead lose skill points equal to your Intelligence, starting with normal skill points before removing class skill points.
             Some other abilities, such as the Skill Savant feat (see \featpcref{Skill Savant}), can also grant additional skill points.
             Unless otherwise noted, all skill points other than skill points from your base class can be spent on any skills.
 
-            \parhead{Intelligence Penalties} If your Intelligence is negative, you lose class skill points equal to your Intelligence.
+    \subsection{Skill Training}\label{Skill Training}
 
-            \parhead{Changing Intelligence} If your Intelligence permanently increases or decreases, you gain or lose skill points when you level up. If you gain additional skill points, you may immediately spend them to improve your skill training. If you lose skill points, you must reduce your skill training in skills you possess. You must lose training from free skill points before removing training from class skill points.
+        You can spend one skill point to become trained in a skill, or two skill points to master a skill.
+        Your training determines your base modifier for attacks and checks using that skill, as described below.
+        This is called your \glossterm{skill training modifier}.
 
-    \subsection{Skill Training and Ranks}\label{Skill Training}\label{Skill Ranks}\label{Skill Training and Ranks}
-
-        You can spend one skill point to become trained in a skill, or two skill points to master a skill. Your training determines your skill ranks, as well as your attribute modifier for that skill. See \trefnp{Skill Training and Ranks}, below, for details.
-
-        \begin{dtable}
-            \lcaption{Skill Training and Ranks}
-            \begin{dtabularx}{\columnwidth}{>{\lcol}p{4.5em} >{\lcol}p{3em} >{\lcol}X l}
-                \tb{Skill Training Level} & \tb{Skill Points Spent} & \tb{Skill Ranks} & \tb{Attribute Modifier} \\
-                \hline
-                Untrained & 0 & 0                          & Half attribute        \\
-                Trained   & 1 & 1/2 character level \add 1 & Full attribute        \\
-                Mastered  & 2 & Character level \add 2     & Full attribute \add 2 \\
-            \end{dtabularx}
-        \end{dtable}
+        \begin{itemize}
+            \itemhead{Untrained} Becoming untrained in a skill costs no skill points.
+                You are untrained in all skills by default.
+                Your modifier with an untrained skill is equal to half the skill's \glossterm{key attribute}.
+                If the skill does not have a key attribute, your modifier is \plus0.
+            \itemhead{Trained} Becoming trained in a skill costs one skill point.
+                Your modifier with a trained skill is equal to the skill's \glossterm{key attribute}.
+                If the skill does not have a key attribute, your modifier is equal to half your level.
+            \itemhead{Mastered} Mastering a skill costs two skill points.
+                Your modifier with a mastered skill is equal to the skill's key attribute \add 2.
+                If the skill does not have a key attribute, your modifier is equal to your level.
+        \end{itemize}
 
     \subsection{Class Skills}
 
@@ -91,12 +91,8 @@ A character's skills describe the myriad of talents that people have.
         Your bonus with a skill is calculated as follows:
 
         \begin{figure}[h]
-            \centering Skill ranks or key attribute modifier \add other bonuses and penalties
+            \centering Training modifier (see \pcref{Skill Training}) \add other bonuses and penalties
         \end{figure}
-
-        \subparhead{Key Attribute} The attribute used in a skill check is noted in its description.
-        Training can affect the attribute modifier you add to skill checks, as noted in \trefnp{Skill Training and Ranks}.
-        You add half your attribute if you are untrained, your full attribute if you are trained, or your full attribute \add 2 if you have mastered the skill.
 
         \subparhead{Bonuses and Penalties} Miscellaneous modifiers include racial bonuses, armor check penalties, bonuses provided by feats, and more.
 
@@ -133,9 +129,10 @@ A character's skills describe the myriad of talents that people have.
 
             \parhead{Collaborative Checks} When making a collaborative skill check, each member of the group gets their own result. Collaborative checks might include a group of scouts sneaking up on an enemy camp, a group of adventurers climbing a cliff, or a group of spies lying about their true allegiances.
 
-            When making a collaborative check, the group must choose a leader before making the check. Each member of the group can make the check using the higher of their skill ranks and half the leader's skill ranks. Other modifiers apply normally.
+            When making a collaborative check, the group must choose a leader before making the check.
+            Each member of the group can make the check using the higher of their skill modifier and half the leader's skill modifier. Other modifiers apply normally.
 
-            The group leader must remain in a position to help the other members of the group for the group members to gain this benefit. For example, if a group is making a collaborative check to leap across a chasm, the leader must jump last. If the group is making a collaborative Stealth check, the leader must remain adjacent to the other members of the group to correct their mistakes quietly. The exact circumstances depend on the situation.
+            The group leader must remain in a position to help the other members of the group for the group members to gain this benefit. For example, if a group is making a collaborative check to leap across a chasm, the leader must jump last. If the group is making a collaborative Stealth check, the leader must remain adjacent to the other members of the group to prevent their mistakes quietly. The exact circumstances depend on the situation.
 
             \parhead{Collective Checks} The group works together to get a single result. Collective checks might include a group of diplomats persuading a noble to go to war, a group of medics tending to a dying warrior, or a group of scouts keeping watch for enemy attacks.
 
@@ -472,7 +469,9 @@ A character's skills describe the myriad of talents that people have.
         Wallrunning on a ceiling is impossible.
 
     \skill{Craft}{Int}
-        Like Knowledge, Perform, and Profession, Craft is actually a number of separate skills. You could have several Craft skills, each with its own ranks, each purchased as a separate skill. Common Craft skills are listed below, with additional description for some skills.
+        Like Knowledge, Perform, and Profession, Craft is actually a number of separate skills.
+        You could have several Craft skills, each with a separate degree of training.
+        Common Craft skills are listed below, with additional description for some skills.
 
         \begin{itemize}
             \item Alchemy (Alchemist's fire, tanglefoot bags, potions)
@@ -809,9 +808,15 @@ A character's skills describe the myriad of talents that people have.
         However, training in Linguistics causes you to learn additional languages, and you can use Linguistics to attempt to decipher unfamiliar languages.
 
         \parhead{Learning Languages}\label{Learning Languages}
-        For every two ranks in Linguistics that you have, you may learn a new \glossterm{common language}, in addition to your starting languages (see \tref{Common Languages}). In place of two common languages, you may learn a \glossterm{rare language} (see \tref{Rare Languages}). Rare languages are more difficult to learn, and are usually only spoken by unusual creatures.
+        If you are trained in Linguistics, you learn additional \glossterm{common languages} equal to one quarter of your level.
+        If you have mastered Linguistics, you instead learn additional common languages equal to half your level.
+        In place of two common languages, you may instead learn a \glossterm{rare language}.
+        Rare languages are more difficult to learn, and are usually only spoken by unusual creatures.
 
-        Druidic is a special language. Druids learn Druidic as part of their initation as druids, and are forbidden from teaching it to non-druids. As a result, it cannot be learned through ordinary means. Druidic uses its own alphabet.
+        Druidic is a special language.
+        Druids learn Druidic as part of their initation as druids, and are forbidden from teaching it to non-druids.
+        As a result, it cannot be learned through ordinary means.
+        Druidic uses its own alphabet.
 
     \subsection{Decipher Script}
         You can make a Linguistics check to decipher writing in an unfamiliar language or a message written in an incomplete or archaic form. The base DR is 10 for the simplest messages, 15 for standard texts, and 20 or higher for intricate, exotic, or very old writing. In addition, the DR increases by 5 if you do not know any languages that use the same alphabet as the writing being deciphered. Deciphering the equivalent of a single page of script takes 1 minute (ten consecutive full-round actions).
@@ -822,9 +827,10 @@ A character's skills describe the myriad of talents that people have.
         You make a DR 10 Linguistics check to identify the language used in speech or writing, even if you can't understand the language.
 
     \skill{Perform}{Varies}
-        \par Like Craft, Knowledge, and Profession, Perform is actually a number of separate skills. You could have several Perform skills, each with its own ranks, each purchased as a separate skill.
-
+        \par Like Craft, Knowledge, and Profession, Perform is actually a number of separate skills.
+        You could have several Perform skills, each with a separate degree of training.
         Each of the nine categories of the Perform skill includes a variety of methods, instruments, or techniques, a small list of which is provided for each category below.
+
         \begin{itemize}
             \item Acting (drama, impersonation, mime)
             \item Comedy (buffoonery, limericks, joke-telling)
@@ -960,7 +966,10 @@ A character's skills describe the myriad of talents that people have.
         The difficulty depends on how widely known and shared the information you seek is.
 
     \skill{Profession}{Varies}
-        Like Craft, Knowledge, and Perform, Profession is actually a number of separate skills. You could have several Profession skills, each with its own ranks, each purchased as a separate skill. While a Craft skill represents ability in creating or making an item, a Profession skill represents an aptitude in a vocation requiring a broader range of less specific knowledge. Most commoners have some training in a Profession skill.
+        Like Craft, Knowledge, and Perform, Profession is actually a number of separate skills.
+        You could have several Profession skills, each with a separate degree of training.
+        While a Craft skill represents ability in creating or making an item, a Profession skill represents an aptitude in a vocation requiring a broader range of less specific knowledge.
+        Most commoners have some training in a Profession skill.
 
         Profession is always treated as a class skill, regardless of your classes.
 
