@@ -157,19 +157,21 @@ A character's skills describe the myriad of talents that people have.
 
     \parhead{Special} Any extra facts that apply to the skill, such as special effects deriving from its use or bonuses that certain characters receive because of class, feat choices, or race.
 
-    \sssecfake{Skill Use} A particular task the skill can be used to accomplish.
-    These skill uses are simply examples of what the skill can be used to do, and do not list everything that the feat can be used to do.
-    You should be creative with your skills, rather than only using abilities listed here.
+    \sssecfake{Tasks}\label{Tasks} A task is a particular way to use a skill.
+    Each skill has a number of tasks listed.
+    These tasks are simply examples, and do not list everything the skill can be used for.
+    You should be creative with your skills, rather than only using the tasks written here.
 
-    \subsection{Using Skills Passively}\label{Using Skills Passively}
-    Some uses for skills can be done passively, without requiring an action.
-    These skill uses are noted with a [Passive] tag in the name of the skill use.
-    Most passive skill uses are related to perception or movement.
+    \subsection{Hidden Tasks}\label{Hidden Tasks}
+        Some tasks are called \glossterm{hidden tasks}, and are marked with a [Hidden] tag in the task name.
+        These tasks rely on hidden information that your character should not have access to.
+        For example, you can make a Sense Motive check to identify whether a creature is lying.
+        If you are told to make a Sense Motive check when a creature talks, you can deduce that it is probably lying regardless of the success or failure of the check.
+        To solve this issue, any checks for hidden tasks should be made secretly by the GM.\@
+        Usually, you should not even know that your character made a check unless you learn a result from it.
 
-    At all times, you are considered to be ``taking 0'' for the purpose of passive skill uses.
-    Treat your check modifier as your check result.
-    If the result is high enough to succeed at a task, you succeed without needing to take an action.
-    For example, you don't need to take an action to notice the floor you're standing on.
+        If you are suspicious of a situation, you can ask the GM to make a relevant check for your character.
+        This usually should not grant a bonus to the check, but it can ensure that the GM did not forget to make the check!
 
     \skill{Acrobatics}{Dex}
         The Acrobatics skill represents your ability to balance, tumble, and perform similar feats of agility and poise.
@@ -218,8 +220,9 @@ A character's skills describe the myriad of talents that people have.
         For every 10 points by which you beat that DR, you can reduce the falling damage by 10 additional feet.
 
     \subsection{Rapid Stand}
-        You can make a DR 10 Acrobatics check to stand up as a \glossterm{swift action}.
-        Success means you regain your feet.
+        You can make a DR 10 Acrobatics check to stand up from a prone position more quickly.
+        Success means you stand up as a \glossterm{swift action}.
+        Critical success means you stand up as a \glossterm{free action}.
         Failure means you must spend a move action to stand up.
         Critical failure means you spend a move action and are unable to stand up.
         You cannot attempt this check unless you can spend a move action to stand up.
@@ -231,30 +234,49 @@ A character's skills describe the myriad of talents that people have.
 
     While sleeping, you take a \minus10 penalty to Awareness.
 
-    \parhead{Passive and Active Attention}\label{Awareness-Passive and Active Attention}
-    Most Awareness skill uses can be done passively (see \pcref{Using Skills Passively}).
-    You can make a conscious effort to pay attention to events around you. This allows you to make Awareness checks to notice events, rather than simply using your modifier, without spending an action. This is tiring to do over long periods of time: if the number of hours you have spent being actively attentive exceeds your Constitution (minimum 0), you become \fatigued.
-
-        In most combat situations, characters are always paying active attention, and should make Awareness checks to notice events rather than using their passive modifier.
-
-    \subsection{Discern Illusion [Passive]}
-        As a free action, you can notice inconsistencies in illusion spells. The DR is specified in the description of the spell or effect, but is usually equal to a check result made when creating the illusion. Success means you recognize the effect as an illusion, and can see through it as if it was not there. Failure means you don't notice anything amiss.
+    \subsection{Discern Illusion [Hidden]}
+        Whenever you observe a \glossterm{Figment} or \glossterm{Glamer}, you can make an Awarenss check to notice its unreal nature.
+        The DR is specified in the description of the ability creating the illusion, but is usually equal to a check result made when using the ability.
+        Success means you recognize the effect as an illusion, and can see through it as if it was almost entirely transparent.
+        Failure means you don't notice anything amiss.
 
         If the illusion is completely missing a sense that should logically be present, such as a \spell{silent image} of people marching in heavy armor, the DR to interact with the illusion with that sense is lowered by 5.
 
-    \subsection{Identify Disguise [Passive]}
-        As a free action, you can make an Awarness check to identify a disguise on another creature. The DR is equal to the Disguise check result used to create the disguise. Success means you know that the creature is disguised. Critical success means you can also discern the creature's true appearance beneath the disguise. After making a check to identify a disguise on a particular creature, you cannot make another check to identify the same disguise on that creature for one hour.
+        You cannot retry this check until you gain meaningful new information that would help you identify the illusion.
+
+    \subsection{Identify Disguise [Hidden]}
+        Whenever you observe a disguised creature or object, you can make an Awareness check to identify the disguise.
+        The DR is equal to the Disguise check result used to create the disguise (see \pcref{Disguise}).
+        Success means you know that the creature or object is disguised.
+        Critical success means you can also discern its true appearance beneath the disguise.
+        Failure means you don't notice anything unusual.
+
+        You cannot retry this check until you gain meaningful new information that would help you identify the disguise.
 
     \subsection{Identify Forgery}
-        As a standard action, you can identify forgeries. The DR to identify a forgery is equal to the Craft check result used to make the item. Success means you correctly identify whether the item is a forgery or not. Failure means you are unsure. Critical failure means you incorrectly identify the item, concluding that a forgery is genuine or a genuine item is a forgery. The check is made secretly, so you can't be sure how good the result is.
+        As a standard action, you can make an Awareness check to identify forgeries.
+        The DR to identify a forgery is equal to the Craft check result used to make the item (see \pcref{Craft}).
+        Success means you correctly identify whether the item is a forgery or not.
+        Failure means you don't notice anything indicating the item is a forgery.
 
-    \subsection{Notice Creatures and Events [Passive]}
-        As a free action, you can notice creatures and events around you. The DR depends on the sense used and the obviousness of the event, as described on tables below. Success means you notice something, but you don't know any details -- only its general direction. For every 5 points by which you beat the DR, you learn an additional piece of information, such as what caused the event or the location of the creature. Failure means you don't notice anything.
+        You cannot retry this check until you gain meaningful new information that would help you identify the forgery.
+
+    \subsection{Notice Creatures and Events}
+        As a free action, you can notice creatures and events around you.
+        The DR depends on the sense used and the obviousness of the event, as described on tables below.
+        Success means you notice something, but you don't know any details -- only its general direction.
+        For every 5 points by which you beat the DR, you learn an additional piece of information, such as what caused the event or the location of the creature.
+        Failure means you don't notice anything.
 
         This can be used to determine the precise location of a creature or object, even if you can't see it. The DR to identify the location is equal to the DR to notice the creature or object using the appropriate sense \add 5 (since you need to learn an additional piece of information).
 
-    \subsection{Read Lips [Passive]}
-        As a free action, you can make a DR 10 sight-based Awareness check to read a creature's lips. You must be able to understand the language spoken. Success means you can understand the general content of the message, but not the exact words. Critical success means you understand the exact words. Failure means you don't understand the message. Critical failure means you draw an incorrect conclusion about the message.
+    \subsection{Read Lips}
+        Whenever you see a creature speaking, you can make an sight-based Awareness check to read its lips.
+        The DR is 10 for ordinary conversation, or up to 20 if the speaking creature makes an effort to avoid moving its lips.
+        You must be able to understand the language spoken.
+        Success means you can understand the general content of the message, but not the exact words.
+        Critical success means you understand the exact words.
+        Failure means you don't understand the message.
 
     \subsection{Search}\label{Search}
         As a standard action, you can make a Awareness check to notice things in a single 5-ft.\ square within 10 feet of you.
@@ -356,20 +378,52 @@ A character's skills describe the myriad of talents that people have.
 
         If you act differently from the crowd you are trying to blend in with, anyone observing you gets a \plus5 bonus to find you. You may need to make Awareness or Sense Motive checks to figure out how to act, depending on the situation. If you are extremely dissimilar from the crowd, such as a naked person in a temple or a human among halflings, anyone observing you may gain a \plus10 or greater bonus to find you.
 
-    \subsection{Distract}
-        As a standard action, you can make a Bluff check to distract a creature or group of creatures you are talking with. Your Bluff check is opposed by your target's Sense Motive check. Success means they take a \minus5 penalty to Awareness and Sense Motive checks against targets other than you for 1 round. Failure means they take no penalty. Critical failure means they realize you were trying to distract them.
+    \subsection{Distract}\label{Distract}
+        As a standard action, you can make a Bluff check to distract a creature you are interacting with.
+        Your Bluff check is opposed by your target's Sense Motive check.
+        Success means they take a \minus5 penalty to Awareness and Sense Motive checks against targets other than you for 1 round.
+        Failure means they take no penalty, and realize you were trying to distract them.
+
+        Normally, distracting a creature requires both visible motion and sound.
+        If you take a \minus5 penalty to the Bluff check, you can distract a creature without moving, or without making sound, but not without both.
+        In addition, you can take a \minus5 penalty to your Bluff check to distract everyone who can see or hear you.
 
         If you successfully distract a creature, you can attempt to hide from that creature as if you were not being observed (see \pcref{Stealth}, for details).
 
-    \subsection{Lie}
-        As a free action, when you say something which you know is untrue, you can make a Bluff check to avoid revealing your deception. Anyone witnessing you lie can oppose your check with a Sense Motive check. If you succeed, they do not realize you are lying. If they succeed, they realize that you are lying.
+    \subsection{Impersonate}\label{Impersonate}
+        When you are pretending to be another creature, you can assume the mannerisms and speech patterns of the creature you are impersonating.
+        To do so, you must make a Bluff check.
+        Anyone observing you can oppose your check with a Sense Motive check to identify the impersonation (see \pcref{Identify Impersonation}).
+        If you succeed, the observer thinks your impersonation is accurate.
+        If you critically succeed, they also take a \minus5 penalty to any other check to see through your impersonation, such as to notice a flawed disguise.
+        If they succeed, they notice inconsistencies or mistakes in your impersonation, and may realize you are not what you seem.
 
-        A creature that fails its Sense Motive check may choose not to believe you for other reasons. This check only prevents a creature from recognizing the lie based on your body language and behavior. To convince creatures to believe lies, you need the Persuasion skill (see \pcref{Compel Belief}).
+        % Technically these should be bonuses to the checks observers make, but that's confusing
+        If you do not know how you are supposed to act, or are physically unable to perform necessary actions, impersonation is more difficult.
+        You take a \minus2 penalty if you cannot replicate minor details of an impersonation, such as a deep voice beyond your vocal range.
+        You take a \minus5 penalty if you cannot replicate significant details of an impersonation, such as the singing voice of a famous bard or the noble manners of a crown prince.
+        You take a \minus10 or greater penalty if you cannot replicate fundamental aspects of the impersonation, such as the actions required to lead a complex ritual as an archmage.
+        Observers who do not know your impersonation is inaccurate can take similar penalties; see Identify Impersonation for details.
+
+        A creature may not believe your impersonation even if you make a successful Bluff check.
+        For example, a halfling can impersonate an orc's voice perfectly with a Bluff check, but without a disguise anyone who sees the halfling will immediately realize it is not an orc (see \pcref{Disguise}).
+
+    \subsection{Lie}
+        As a free action, when you say something which you know is untrue, you can make a Bluff check to avoid revealing your deception.
+        Anyone observing you lie can oppose your check with a Sense Motive check.
+        If you succeed, the observer does not notice any indication that you are lying.
+        If they succeed, they realize that you are lying.
+
+        A creature that fails its Sense Motive check may choose not to believe you for other reasons.
+        This check only prevents a creature from recognizing the lie based on your body language and behavior.
+        To convince creatures to believe or take actions based on lies, you need the Persuasion skill (see \pcref{Compel Belief}).
 
     \subsection{Secret Message}
         As part of normal speech, you can make a Bluff check to attempt to convey a hidden message to another character without others understanding it using codes, metaphors, and similar misdirection tools. The DR is 10 for simple messages and 15 for complex messages. If the message contains completely new information, the DR increases by 5. You can freely increase the DR to make the message more difficult to intercept, but doing so also makes it more difficult for the intended recipient to interpret.
 
-        Anyone witnessing the exchange may make a Sense Motive check against the same DR to identify the hidden message. Creatures who know in advance that a message will be conveyed -- normally, the intended recipient -- receive a \plus5 bonus on this check. Creatures who know your system for conveying hidden messages also receive a \plus10 bonus.
+        Anyone witnessing the exchange may make a Sense Motive check against the same DR to identify the hidden message.
+        Creatures who know your system for conveying hidden messages -- normally, the intended recipient -- receive a \plus10 bonus.
+        Creatures who know in advance that a message will be conveyed also receive a \plus5 bonus on this check.
 
     \skill{Climb}{Str}
     The Climb skill represents your ability to climb obstacles.
@@ -663,8 +717,14 @@ A character's skills describe the myriad of talents that people have.
     \subsection{Emulate Creature}
         You can make a Disguise check to make a creature look like another creature you have previously observed. This functions like a disguise creature check, but the result of your Disguise check can't exceed the result of a Awareness check you have made to observe the creature. People viewing the disguise who know what that person looks like get a \plus5 bonus on their checks to identify the disguise.
 
-    \subsection{Identify Disguise [Passive]}
-        As a free action, you can make a Disguise check to identify a disguise on another creature. The DR is equal to the Disguise check used to create the disguise. Success means you know that the creature is disguised. Critical success means you can also discern the creature's true appearance beneath the disguise. After making a check to identify a disguise on a particular creature, you cannot make another check to identify the same disguise on that creature for one hour.
+    \subsection{Identify Disguise [Hidden]}
+        Whenever you observe a disguised creature or object, you can make an Disguise check to identify the disguise.
+        The DR is equal to the Disguise check result used to create the disguise.
+        Success means you know that the creature or object is disguised.
+        Critical success means you can also discern its true appearance beneath the disguise.
+        Failure means you don't notice anything unusual.
+
+        You cannot retry this check until you gain meaningful new information that would help you identify the disguise.
 
     \skill{Escape Artist}{Dex}
         The Escape Artist skill represents your ability to escape bindings and move through small areas by contorting your body.
@@ -784,7 +844,7 @@ A character's skills describe the myriad of talents that people have.
             \item Religion (gods and goddesses, mythic history, ecclesiastic tradition, holy symbols, undead)
         \end{itemize}
 
-        You cannot retry Knowledge checks unless you are presented with significant new information about the subject that could jog your memory.
+        You cannot retry Knowledge checks until you are presented with significant new information about the subject that could jog your memory.
 
     \subsection{Identify Monster}
         You can make a Knowledge check reactively to identify a monster and recall its special powers or vulnerabilities. In general, the DR is equal to 5 \add the monster's level. Success allows you to remember the monster's name and its most well-known features. For every 5 points by which you beat the DR, you remember an additional piece of useful information. Failure indicates you don't remember anything important about the monster. Critical failure means you remember incorrect information.
@@ -1022,27 +1082,40 @@ A character's skills describe the myriad of talents that people have.
 
     \skill{Sense Motive}{Per}
         The Sense Motive skill represents your ability to read body language and emotion.
+        Most Sense Motive tasks are \glossterm{hidden tasks}.
 
-    \subsection{Discern Enchantment [Passive]}
-        As a swift action, you can try to tell whether a creature is affected by mind-controlling magic -- including yourself. The DR to identify a \glossterm{Delusion} effect such as the \spell{charm person} spell is 20, while the DR to identify a \glossterm{Compulsion} effect such as \spell{dominate person} is 10. Success means you recognize that the creature is affected by mind-affecting magic. Failure means you don't notice anything amiss.
+    \subsection{Discern Enchantment [Hidden]}
+        Whenever you interact with a creature, you can try to notice whether it is affected by mind-affecting abilities with a Sense Motive check.
+        If the creature is not affected by any such abilities, the check automatically fails.
+        If the creature is affected by Compulsion or Delusion effects that are not currently altering its behavior, the check also automatically fails.
+        If the creature's behavior is currently being altered by a \glossterm{Compulsion} effect, the DR is 10, and success means you identify the presence of a Compulsion.
+        If the creature's behavior is currently being altered by a \glossterm{Delusion} effect, the DR is 20, and success means you identify the presence of a Delusion.
+        Failure means you do not notice any such effects on the creature.
 
-        This can only be used if the effect in question is actually affecting the creature's behavior at the time. For example, a person who has been given an unnatural aversion to cheese by the \spell{aversion} spell would generally not be affected by the enchantment unless it was presented with cheese. Therefore, you could not discern the enchantment on the creature simply by talking to it about the weather.
+        You can also use this ability to identify \glossterm{Subtle} effects on yourself, using the same DRs.
 
-        Identifying mind-controlling magic affecting you gives you no special ability to resist the magic, but it may help you mitigate its effects.
-
-    \subsection{Discern Lies [Passive]}
-        As a free action, you can make a Sense Motive check to notice when creatures lie to you. The DR is equal to the lying creature's Bluff check result. Success means you notice that the creature was lying. Failure means you do not.
+    \subsection{Discern Lies [Hidden]}
+        Whenever you observe a creature speak, you can make a Sense Motive check.
+        The DR is equal to the speaking creature's Bluff check result.
+        Success means you identify whether the creature was lying.
+        Failure means you do not notice any indication that the creature is lying.
 
     \subsection{Discern Secret Message}
-        You can automatically identify hidden messages conveyed with the Bluff skill. Treat your Sense Motive modifier as your check result. The DR is equal to DR of the secret message. Success means you recognize that a hidden message is present, but not its contents. Critical success means you can understand the message. Failure means you don't notice the hidden message.
-
-    \subsection{Focus Attention}
-        You can make a Sense Motive check as a move action to focus on a particular creature. If you do, you can use your check result to discern enchantments, lies, and hidden messages from that creature. This applies to any actions it took or things it said during the last round, and to actions it takes or things it says for the next 5 rounds. If you focus on a different creature, you lose your focus on the first creature.
+        Whenever you observe a hidden message being conveyed, you can make a Sense Motive check.
+        The DR is equal to the DR of the secret message (see \pcref{Bluff}).
+        Success means you recognize that a hidden message is present, but not its contents.
+        Critical success means you can understand the message.
+        Failure means you don't notice the hidden message.
 
     \subsection{Social Assessment}
-        You can make a DR 15 Sense Motive check to get a general assessment of a social situation. This does not take an action by itself, but you must observe the group for at least a minute. Success means you have an idea of behaviors that are expected or inappropriate, who outranks whom, or another piece of useful information. For every 5 points by which you beat the DR, you gain an additional insight into the social environment.
+        You can make a DR 5 Sense Motive check to get a general assessment of a social situation.
+        This does not take an action by itself, but you must observe the group for at least a minute.
+        Success means you learn a piece of useful information about the situation, such as a general understanding of expected behaviors or a rough understanding of the social hierarchy.
+        For every 5 points by which you beat the DR, you gain an additional insight into the situation.
 
-        You can make a social assessment after only a single round of observation, but you take a \minus10 penalty on the check. If you don't understand the language the group is using, you take a \minus10 penalty on the check. The information gained at a given DR may vary in usefulness depending on how obvious or subtle the group is.
+        You can make a social assessment after only a single round of observation, but you take a \minus10 penalty on the check.
+        If you don't understand the language the group is using, you take a \minus10 penalty on the check.
+        The information gained at a given DR may vary in usefulness depending on how obvious or subtle the situation is.
 
     \skill{Sleight of Hand}{Dex}
 
@@ -1089,45 +1162,48 @@ A character's skills describe the myriad of talents that people have.
 
         While sleeping, you take a \minus10 penalty to Spellcraft.
 
-    \subsection{Passive and Active Attention}\label{Spellcraft-Passive and Active Attention}
-        Like the Awareness skill, Spellcraft allows you to automatically notice spells and magical effects in your environment, even when you're distracted or focusing on other tasks. At all times, you are considered to be ``taking 0'' on a Spellcraft check, allowing you to notice anything with a DR up to your Spellcraft modifier, including all applicable bonuses and penalties. You can only passively perform tasks which do not require a specific action to perform.
+        \subsection{Identify Magical Effect}
+        Whenever you observe a magical effect, you can make a Spellcraft check to identify its nature.
+        This grants you no special ability to notice hidden magical effects, but can allow you to understand magical effects you have already noticed.
+        The DR is equal to 5 \add the \glossterm{power} of the effect.
+        Success means you know in general terms what the effect does.
+        Critical success means you know exactly what the effect does, and if it is a common effect, what ability caused it.
+        Failure means you do not recognize the effect.
 
-        As a swift action, you can make a conscious effort to pay attention to spells and magical effects around you. This allows you to make Spellcraft checks to notice events, rather than simply using your modifier. This is mentally tiring to do over long periods of time: if (5 \add twice the number of hours you have spent being actively attentive) exceeds your Mental defense, you become fatigued.
+        If the effect has obvious visual or other cues to its true nature, such as a wall of fire, the DR is lowered by 5.
+        If the effect has obvious cues that are misleading, such as a wall of fire that heals creatures that pass through it, the DR is increased by 5.
 
-    \subsection{Notice Magic Auras}
-        You can notice the presence of magic within 100 feet of you with a DR 10 Spellcraft check. Success means you notice that magic exists. Critical success means you know the number of magical auras, and the strength and direction to each aura. Critical success means you notice the location of each aura and their precise nature, including strength, school, and descriptors. Failure means you don't notice any magic.
-
-        Aura strengths are described in \trefnp{Aura Strengths}. With practice, you can ignore auras that you are commonly surrounded by, such as magic items on you and your companions. In general, it takes a day of frequent exposure to become accustomed to an aura. Once you are accustomed to an aura, you can freely choose to notice or ignore it.
-
-        A magical aura can linger after its original source dissipates (in the case of a spell or other magical ability) or is destroyed (in the case of a magic item). The strength of such an aura is ``dim'' (even weaker than a faint aura). Most auras linger for a number of minutes equal to the spellpower of the effect, but unusually powerful auras may linger for hours or days intead.
-
-        \begin{dtable*}
-            \lcaption{Aura Strengths}
-            \begin{dtabularx}{\textwidth}{>{\lcol}X *{4}{>{\lcol}p{9em}}}
-                & \multicolumn{4}{c}{\tb{---{}---{}---Aura Power---{}---{}---}} \\
-                \hline
-                \tb{Spell or Object} & \tb{Faint} & \tb{Moderate} & \tb{Strong} & \tb{Overwhelming} \\
-                Functioning spell (spell level) & 3rd or lower & 4th--6th & 7th--9th & 10th\add (deity-level) \\
-                Magic item (spellpower) & 6th or lower & 7th--12th & 13th--20th & 21st\add (artifact) \\
-            \end{dtabularx}
-        \end{dtable*}
-
-    \subsection{Identify Active Spell}
-        You can make a Spellcraft check to identify an active spell based on its magical aura. You must spend a move action to focus on a particular aura you have identified. The DR to identify a spell is equal to 10 \add the spell level of the spell.  If the effect has obvious visual or other cues to its true nature, the DR is lowered by 5. Success means you know the spell that produced the effect. Failure means you do not know the spell.
-
-        If a spell emulates another spell, such as the \spell{transmute any object} spell, success allows you to identify the spell being emulated. Critical success allows you to also identify the original spell.
+        You cannot retry this check until you gain meaningful new information that would help you identify the effect.
 
     \subsection{Identify Spellcasting}
-        You can identify spells being cast within 100 feet of you. The DR is equal to 10 \add the spell level of the spell. Success means you know what spell is being cast.
+        You can identify spells being cast within 100 foot \glossterm{range} of you.
+        The DR is equal to 5 \add the spell level of the spell.
+        Success means you know what spell is being cast.
+        Failure means you do not.
 
     \subsection{Identify Potion}
-        You can make a DR 15 Spellcraft check to identify a potion. This takes a minute of careful evaluation. Success means you know what spell the potion contains.
+        You can make a DR Spellcraft check to identify a potion.
+        This takes a minute of careful evaluation.
+        For most potions, the DR is 15, and success means you identify what spell the potion contains.
+        Failure means you do not learn anything about the potion's nature.
+
+        Potions can be crafted to conceal their true nature.
+        The DR to identify such potions is usually 25.
+        Success means you know what spell the potion contains.
+        Failure means you identify the potion as whatever spell the potion is intended to resemble.
+        Critical failure means you do not learn anything about the potion's nature.
 
     \subsection{Identify Written Spell}
-        You can make a Spellcraft check as a standard action to identify a scroll or similar piece of magical writing. The DR is equal to 10 \add the spell level of the spell. Success means you know what spell is written.
+        You can make a Spellcraft check as a standard action to identify a scroll or similar piece of magical writing.
+        The DR is equal to 10 \add the spell level of the spell.
+        Success means you know what spell is written.
 
     \subsection{Teleport Trace}
-        You can make a DR 10 Spellcraft check as a standard action to learn information about a teleportation that happened recently. You must have noticed the magic aura left by the teleportation effect. Success means you identify the direction of the teleportation. Critical success means you also identify the distance. Failure means you learn no information about the teleportation. The DR of this check increases by 5 for every minute that has passed since the teleportation happened.
+        As a standard action, you can make a Spellcraft check to learn information about a teleportation within \rngmed range of you.
+        The DR is equal to 10 \add 1 per round since the teleportation occurred.
+        Success means you identify the direction of the teleportation.
+        Critical success means you also identify the distance.
+        Failure means you learn no information about the teleportation.
 
     \skill{Sprint}{Str}
         The Sprint skill represents your ability to move more quickly and take movement-related actions.
@@ -1154,10 +1230,14 @@ A character's skills describe the myriad of talents that people have.
 
         If you act differently from the crowd you are trying to blend in with, anyone observing you gets a \plus5 bonus to find you. You may need to make Awareness or Sense Motive checks to figure out how to act, depending on the situation. If you are extremely dissimilar from the crowd, such as a naked person in church or a human among halflings, anyone observing you may gain a \plus10 or greater bonus to find you.
 
-    \subsection{Hide [Passive]}
-        As a move action, or as part of movement, you can make a Stealth check to hide so people can't see you. Your Stealth check is opposed by the Awareness checks of any observers. Success means that you can't be seen, heard, or detected in any way, effectively making you invisible. Failure means that the observer notices you. The more senses the observer notices you with, the more they learn about your location, as appropriate to the sense.
+    \subsection{Hide [Hidden]}
+        As a move action, or as part of movement, you can make a Stealth check to hide so people can't see you.
+        Your Stealth check is opposed by the Awareness checks of any observers.
+        Success means that you can't be seen, heard, or detected in any way.
+        Failure means that the observer can observe you using any senses they detected you with.
 
-        If you do not have passive cover or concealment from a creature (see \pcref{Cover} and \pcref{Concealment}), your Stealth check is automatically treated as a 0 against sight-based Awareness checks that creature makes, regardless of your modifiers. For this purpose, do not consider any cover that would be hidden as a result of a successful check, such as a shield you hold in front of you.
+        If you do not have passive cover or concealment from a creature (see \pcref{Cover} and \pcref{Concealment}), your Stealth check is automatically treated as a 0 against sight-based Awareness checks that creature makes, regardless of your modifiers.
+        For this purpose, do not consider any cover that would be hidden as a result of a successful check, such as a shield you hold in front of you.
 
         If you move at up to half your speed during your turn, you take a \minus5 penalty to Stealth checks. If you move at up to your full speed during your turn, you take a \minus10 penalty to Stealth checks. It's practically impossible (\minus20 penalty) to remain unobserved while attacking, sprinting, or charging.
 
@@ -1248,7 +1328,7 @@ A character's skills describe the myriad of talents that people have.
             3 With scent-based tracking, apply this modifier per hour since the trail was made. \\
         \end{dtable}
 
-        If you fail a Survival check to track, you can retry after 1 hour (outdoors) or 10 minutes (indoors) of searching.
+        If you fail a Survival check to track, you can retry after 5 minutes of searching.
 
     \subsection{Use Rope}
         You can make a Survival check as a standard action to tie knots. Success means you tie the knot successfully. Failure means your action is wasted, but you can try again. Tying a typical knot is DR 10. Tying a special knot, such as one that slips, slides slowly, or loosens with a tug is DR 15. Knots can also be tied with the Devices skill.
