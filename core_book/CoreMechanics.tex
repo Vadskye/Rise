@@ -27,16 +27,15 @@ It defines how attributes work and explains how to make physical attacks in comb
             You roll again and add the second result to the original 10 before applying your \glossterm{accuracy}.
             If you roll a 10 on the extra roll, you keep rolling until you stop rolling a 10 and add all of the rolls together.
 
-        \subsubsection{Critical Success}
-            If your attack result is at least 10 higher than your target's defense, your attack is a \glossterm{critical success}.
-            Many attacks have a special effect on a critical success.
-            For example, \glossterm{strikes} deal double damage when you get a critical success.
+        \subsubsection{Critical Hit}
+            If your attack result is at least 10 higher than your target's defense, your attack is a \glossterm{critical hit}.
+            Many attacks have a special effect on a critical hit.
+            For example, \glossterm{strikes} deal double damage when you get a critical hit.
 
-        \subsubsection{Critical Failure}
-            if your attack result is at least 10 lower than your target's defense, your attack is a \glossterm{critical failure}.
-            Some attacks have a special effect on a critical failure, which is usually bad for the attacker.
-            Some attacks also have special effects on non-critical failures, where you fail to beat your target's defense by 9 or less.
-            For example, the \glossterm{fireball} spell deals half damage on a non-critical failure.
+        \subsubsection{Critical Miss}
+            if your attack result is at least 10 lower than your target's defense, your attack is a \glossterm{critical miss}.
+            Some attacks have a special effect on a critical miss, which is usually bad for the attacker.
+            Some attacks also have special effects on a non-critical miss, where you fail to beat your target's defense by 9 or less.
 
     \subsection{Checks}
         Checks are required to perform actions that have a chance of failure that are not attacks.
@@ -89,7 +88,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
     \subsection{Combat Time}
         Combat takes place in a series of \glossterm{rounds}, which represent about six seconds of time.
-        Each round of a combat is divided into two phases: a \glossterm{movement phase} and an \glossterm{action phase}.
+        Each round of a combat is divided into three phases: a \glossterm{movement phase}, an \glossterm{action phase}, and sometimes a \glossterm{delayed action phase}.
         After both phases are complete, the round ends and the next round begins.
 
         \subsubsection{The Movement Phase}\label{The Movement Phase}
@@ -101,7 +100,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             A creature has a listed speed for any special form of movement it has.
 
             At the start of the movement phase, all creatures designate a location they attempt to move to, or some other type of movement they attempt to make (see \pcref{Movement and Positioning}).
-            Once everyone has declared their actions, those actions resolve.
+            Once everyone has chosen their actions, those actions are \glossterm{initiated}, and begin resolving.
             Normally, you will simply arrive in the destination you are trying to reach.
             For details about resolving conflicting movements, see \pcref{Resolving Actions}.
 
@@ -114,6 +113,12 @@ It defines how attributes work and explains how to make physical attacks in comb
         \subsubsection{The Action Phase}\label{The Action Phase}
             During the action phase, each creature can take actions.
             Usually, you will simply take a \glossterm{standard action}.
+
+        \subsubsection{The Delayed Action Phase}\label{The Delayed Action Phase}
+            Some abilities cause creatures to take \glossterm{delayed actions}, which are initiated and resolved after other actions in the round.
+            For example, spellcasting is a \glossterm{dual action}, which has a component in both the action phase and the delayed action phase.
+            Any creature can also take the Delay action (see \pcref{Delay}), which causes them to act during the delayed action phase instead of the action phase.
+            If there are no delayed actions, this phase is skipped.
 
     \subsection{Movement and Positioning}
 
@@ -258,11 +263,8 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \begin{enumerate*}
             \item \textit{Choose swift actions.}
-            \item \textit{Determine targets affected by swift actions.}
-            \item \textit{Check swift action success.}
-            \item \textit{Determine swift action results.}
-            \item \textit{Apply swift action results.}
-            \item Choose actions.
+            \item Choose standard actions.
+            \item All actions are \glossterm{initiated}.
             \item Determine targets affected by actions.
             \item Check action success.
                 Example: Making attack rolls.
@@ -271,11 +273,6 @@ It defines how attributes work and explains how to make physical attacks in comb
             \item Apply action results.
                 Examples: Reducing hit points, moving character locations, and applying penalties.
                 Effects that trigger when damage is dealt, such as Concentration checks (see \pcref{Concentration}), are resolved now.
-            \item \textit{Choose delayed actions.}
-            \item \textit{Determine targets affected by delayed actions.}
-            \item \textit{Check delayed action success.}
-            \item \textit{Determine delayed action results.}
-            \item \textit{Apply delayed action results.}
         \end{enumerate*}
 
         In the vast majority of cases, there is no need to go through this order explicitly.
@@ -1209,9 +1206,11 @@ It defines how attributes work and explains how to make physical attacks in comb
         If you are wielding two weapons at once, you can attack with both weapons whenever you make a \glossterm{strike}.
         This is called a \glossterm{dual strike}.
         When you make a dual strike, roll the attack roll twice, once for each weapon.
+        Roll any miss chances or failure chances independently for each weapon.
         If you hit with one of the weapons, you deal damage with that weapon.
         If you hit with both, you choose which weapon to deal damage with.
-        If you get a \glossterm{critical success}, you deal damage with both weapons, including all modifiers.
+        If you get a \glossterm{critical hit} with either weapon, you deal damage with both weapons, including all modifiers.
+        This replaces the normal doubling of damage for critical hits.
 
         \parhead{Critical Hits} Normally, when you score a critical hit, you roll damage separately for each weapon and use the higher of the two results when dealing the bonus damage. If your weapons have different \glossterm{critical ranges}, it is possible to only score a critical hit with one of the two weapons. In that case, only use that weapon's damage when dealing extra damage.
 
