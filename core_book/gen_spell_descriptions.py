@@ -315,7 +315,7 @@ class Augment(object):
             return "This is a {glossary_tags} effect{school_text}.".format(
                 glossary_tags=', '.join([
                     f"\\glossterm<{tag}>"
-                    for tag in self.tags
+                    for tag in sorted(self.tags)
                 ]),
                 school_text=(
                     f" from the \\glossterm<{self.school}> school"
@@ -369,6 +369,11 @@ class Effects(object):
         self.tags = tags
 
     def __str__(self):
+        tag_text = ', '.join([
+            f"\\glossterm<{tag}>"
+            for tag in sorted(self.tags)
+        ]) if self.tags else ""
+
         return join(
             f"""
                 \\begin<spelleffects>
@@ -382,6 +387,8 @@ class Effects(object):
             """, f"""
                     \\spelldur {duration_mapping[self.duration]}
             """ if self.duration else None, f"""
+                \\spelltags<{tag_text}>
+            """ if self.tags else None, f"""
                 \\end<spelleffects>
             """
         )
@@ -414,12 +421,14 @@ class Targeting(object):
             target=None,
             targets=None,
             rng=None,
+            unrestricted_range=False,
     ):
         self.area = area
         self.area_type = area_type
         self.rng = rng
         self.target = target
         self.targets = targets
+        self.unrestricted_range = unrestricted_range
 
     def area_text(self):
         """Return the text corresponding to this spell's area, if any."""
@@ -440,7 +449,10 @@ class Targeting(object):
 
     def __str__(self):
         if self.rng:
-            col2 = rng_mapping.get(self.rng, self.rng)
+            col2 = "\\spellrng<{rng}{unrestricted}>".format(
+                rng=rng_mapping.get(self.rng, self.rng),
+                unrestricted=" (Unrestricted)" if self.unrestricted_range else "",
+            )
             col1 = self.area_text()
             included_target_text = False
             if not col1:
@@ -623,11 +635,11 @@ def generate_spells():
         header=Header('You create a magical orb of acid in your hand that speeds to its target.'),
         targeting=Targeting(
             target='One creature or object',
-            rng='close',
+            rng='medium',
         ),
         effects=Effects(
             attack=Attack.damage('Reflex', 'acid'),
-            tags=['Acid', 'Creation'],
+            tags=['Acid', 'Manifestation'],
         ),
         schools=['Conjuration'],
         lists=['Arcane'],
@@ -915,7 +927,7 @@ def generate_spells():
         ),
         effects=Effects(
             attack=Attack.multi_damage('Fortitude', 'bludgeoning'),
-            tags=['Creation', 'Water'],
+            tags=['Manifestation', 'Water'],
         ),
         schools=['Conjuration'],
         lists=['Nature', 'Water'],
@@ -1214,7 +1226,7 @@ def generate_spells():
                 success="The target is \\immobilized as long as it has webbing from this spell in its space."
             ),
             duration='sustain (swift)',
-            tags=['Creation'],
+            tags=['Manifestation'],
         ),
         schools=['Conjuration'],
         lists=['Arcane', 'Nature'],
@@ -1575,6 +1587,141 @@ def generate_spells():
         ],
         category='buff, defense',
     ))
+    spells.append(Spell(
+        name="Summon Monster",
+        header=Header("You summon a creature to fight by your side."),
+        targeting=Targeting(
+            target="One unoccupied square",
+            rng="medium",
+        ),
+        effects=Effects(
+            effect="""
+                A creature appears in the target location.
+                It visually appears to be a common Small or Medium animal of your choice, though in reality it is a manifestation of magical energy.
+                Regardless of the appearance and size chosen, the creature has hit points equal to twice your spellpower.
+                All of its defenses are equal to your 5 \\add your spellpower, and its land speed is equal to 30 feet.
+
+                Each round, you choose the creature's actions.
+                There are only two actions it can take.
+                As a move action, it can move as you direct.
+                As a standard action, it can make a melee \glossterm{strike} against a creature it threatens.
+                Its accuracy is equal to your spellpower.
+                If it hits, it deals 1d3 damage \plus1d per two spellpower.
+                The type of damage dealt by this attack depends on the creature's appearance.
+                Most animals bite or claw their foes, which deals bludgeoning and slashing damage.
+            """,
+            duration="sustain (swift)",
+            tags=["Manifestation"],
+        ),
+        schools=['Conjuration'],
+        lists=['Arcane', 'Divine', 'Nature'],
+        cantrip="The spell's duration becomes Sustain (standard).",
+        custom_augments=[
+            Augment(
+                level=1,
+                name="Summon Bear",
+                description="""
+                    The creature appears to be a Medium bear.
+                    As a standard action, it can make a \\glossterm<grapple> attack against a creature it threatens.
+                    Its accuracy is the same as its accuracy with strikes.
+                    While grappling, the manifested creature can either make a strike or attempt to escape the grapple.
+
+                    This augment replaces the effects of any other augments that change the appearance of the creature.
+                """,
+            ),
+        ],
+        # What category does this belong to?
+        category='buff, offense',
+    ))
+    spells.append(Spell(
+        name="Scry",
+        header=Header("You create a scrying sensor that allows you to see at a distance."),
+        targeting=Targeting(
+            target='One square',
+            rng='medium',
+        ),
+        effects=Effects(
+            effect="""
+                A Fine object appears floating in the air in the target space.
+                It resembles a human eye in size and shape, though it is \\glossterm<invisible>.
+                At the start of each round, you choose whether you see from this sensor or from your body.
+                The sensor's visual acuity is the same as your own, except that it does not share the benefits of any \\glossterm<magical> effects that improve your vision.
+                You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \\blinded.
+
+                If undisturbed, the sensor floats in the air in its position.
+                As a standard action, you can concentrate to move the sensor up to 30 feet in any direction, even vertically.
+            """,
+            duration='sustain (swift)',
+            tags=['Scrying'],
+        ),
+        schools=['Divination'],
+        lists=['Arcane', 'Divine', 'Nature'],
+        cantrip="The sensor cannot be moved after it is originally created.",
+        custom_augments=[
+            Augment(
+                level=1,
+                name="Auditory",
+                description="""
+                    At the start of each round, you can choose whether you hear from the sensor or from your body.
+                    This choice is made independently from your sight.
+                    The sensor's auditory acuity is the same as your own, except that it does not share the benefits of any \\glossterm<magical> effects that improve your hearing.
+                """,
+            ),
+            Augment(
+                level=2,
+                name="Accelerated",
+                description="""
+                    When you move the sensor, you can move it up to 100 feet, instead of up to 30 feet.
+                """,
+            ),
+            Augment(
+                level=2,
+                name="Myriad",
+                description="""
+                    You create an additional sensor in the same location.
+                    Whenever you see or hear from the perspective of a sensor, you choose which sensor to see or hear from.
+                """,
+                stackable=True,
+            ),
+            Augment(
+                level=2,
+                name="Penetrating",
+                description="""
+                    The spell's range becomes \\rngunrestricted, allowing you to cast it into areas where you do not have \\glossterm<line of sight> or \\glossterm<line of effect>.
+                """,
+            ),
+            Augment(
+                level=3,
+                name="Autonomous",
+                description="""
+                    You can move the sensor as part of the action you take to sustain the spell, rather than as a standard action.
+                """,
+            ),
+            Augment(
+                level=4,
+                name="Scry Creature",
+                targeting=Targeting(
+                    target="One creature",
+                    rng="Unlimited",
+                    unrestricted_range=True,
+                ),
+                description="""
+                    You must make a Spellpower vs. Mental attack against the target.
+                    Success means the sensor appears in the creature's space.
+                    Failure means the sensor does not appear at all.
+                """,
+            ),
+            Augment(
+                level=5,
+                name="Split Senses",
+                description="""
+                    You do not have to choose whether to sense from the perspective of a sensor or from the perspective of your own body.
+                    You constantly receive sensory input from your body and all sensors you have created with this spell.
+                """,
+            ),
+        ],
+        category='narrative',
+    ))
     return sorted(spells, key=lambda spell: spell.name)
 
 
@@ -1616,6 +1763,16 @@ def sanity_check(spells):
             if not has_debuff[source]:
                 warn(f"Source {source} has no debuff spell against {defense}")
 
+    # Every spell school should have at least two unique categories of
+    # spells
+    categories_in_school = {school: {} for school in SCHOOLS}
+    for spell in spells:
+        for school in spell.schools:
+            categories_in_school[school][spell.category] = True
+    for school in SCHOOLS:
+        if len(categories_in_school[school]) < 2:
+            warn(f"School {school} has only {len(categories_in_school[school])} spell categories")
+
 
 @click.command()
 @click.option('-c', '--check/--no-check', default=False)
@@ -1624,14 +1781,16 @@ def main(output, check):
     spells = generate_spells()
     if check:
         sanity_check(spells)
-    spell_text = '\n'.join([
-        spell.to_latex()
-        for spell in spells
-    ])
-    spell_text = latexify(f"""
+    spell_texts = []
+    for spell in spells:
+        try:
+            spell_texts.append(spell.to_latex())
+        except Exception as e:
+            raise Exception(f"Error converting spell '{spell.name}' to LaTeX") from e
+    spell_text = latexify("""
         \\section<Spell Descriptions>
-        {spell_text}
-    """)
+        {}
+    """.format('\n'.join(spell_texts)))
     if output is None:
         print(spell_text)
     else:
