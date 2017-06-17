@@ -486,7 +486,6 @@ A character's skills describe the myriad of talents that people have.
         \parhead{Climb Speed}\label{Climb Speed}
             A creature with a climb speed can move a distance equal to its climb speed with a successful Climb check.
             However, it does not move double its speed if it gets a critical success on a Climb check.
-            In addition, it gains a \plus10 bonus to all Climb checks.
 
     \subsubsection{Grab Edge}\label{Grab Edge}
         If you are next to the edge of a wall or cliff, you can grab it.
@@ -521,6 +520,13 @@ A character's skills describe the myriad of talents that people have.
         As part of movement, you can make a Climb check to run along a wall rather than climbing it. The DR is 5 higher than normal for the wall, but this does not require free hands. Success means you move up to half your land speed horizontally, or up to a quarter of your land speed vertically. Failure means you fall. Critical failure means you are prone when you land. For every round you spend running on a wall, the DR increases by 5.
 
         Wallrunning on a ceiling is impossible.
+
+    \subsection{Creature Climb}
+        As a standard action, you can make a Climb vs. Reflex attack against a creature adjacent to you.
+        The creature must be three or more size categories larger than you.
+        Success means you can climb the creature as if it were a solid object with a Climb DR equal to its Reflex defense.
+        The creature takes a \minus4 penalty to accuracy on physical attacks against you, but is not otherwise encumbered by your presence unless it cannot support your weight.
+        It can attempt to remove you by attacking you, or with an appropriate \glossterm{combat maneuver}, such as grappling or shoving.
 
     \skill{Craft}{Int}
         Like Knowledge, Perform, and Profession, Craft is actually a number of separate skills.
@@ -616,11 +622,27 @@ A character's skills describe the myriad of talents that people have.
     \skill{Creature Handling}{Per}
     The Creature Handling skill represents your ability to handle creatures without being able to speak with them. With it, you can convince them to do what you want or train them to follow commands. This skill can only be used with creatures with an Intelligence of \minus6 or lower.
 
-        Animals are easier to handle than other kinds of creatures. The DRs listed are for animals; the DRs to handle other kinds of creatures are 5 higher.
+        Animals are easier to handle than other kinds of creatures.
+        The DRs listed are for animals; the DRs to handle other kinds of creatures are 5 higher.
 
     \subsection{Handling Creatures}
         You can use Creature Handling to control a creature's actions. Critical failure with these checks may make the target hostile, depending on the circumstances.
-        \parhead{Pacify} As a standard action, you can make a Creature Handling vs. Mental attack against a creature within \rngmed range. Success means the creature does nothing for 2 rounds. You take a \minus10 penalty to accuracy on this attack against actively hostile creatures. If the creature is threatened or damaged, this effect is automatically broken. If you interfere with an action the creature is trained to perform while it is pacified, such as entering a room it is trained to guard, you must make another attack against it. Failure means the effect is broken.
+        \parhead{Pacify}\label{Pacify} As a standard action, you can use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{One creature}{\rngmed}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \begin{spellattack}{Creature Handling vs. Mental}
+                    \spellspecial The target's defense is increased as normal for Creature Handling attacks and checks if it is not an animal.
+                    You take a \minus10 penalty to accuracy against an actively hostile target.
+                    \spellsuccess The target takes no actions.
+                    If it is threatened or damaged, this effect is automatically broken.
+                    \spelldur Sustain (standard)
+                    \spelltags{Compulsion, Mind}
+                \end{spellattack}
+            \end{spelleffects}
+        \end{ability}
         \parhead{Perform Trained Action} As a free action, you can make a DR 5 check to convince a creature to perform an action it is trained to perform. Generally, wild animals are not trained in any actions, so this is not effective on them.
         \parhead{Push} As a standard action, you can make a DR 15 check to convince a willing creature to perform an action it is not trained to perform, but which it is physically capable of performing. This also covers making a creature perform a forced march and similar activities.
 
@@ -643,6 +665,10 @@ A character's skills describe the myriad of talents that people have.
         \subsk{Work (DR 5)} The creature pulls or pushes a medium or heavy load.
 
         \parhead{Rear a Wild Creature} To rear a creature means to raise a wild creature from infancy so that it becomes domesticated. The time required depends on the creature in question. The DR for this check is equal to 5 \add the number of levels the creature has. You can rear as many as three creatures of the same kind at once without penalty. You can rear additional creatures, but you take a cumulative \minus2 penalty to checks you make to rear all of the animals. A successfully domesticated creature can be taught tricks at the same time it's being raised, or it can be taught as a domesticated creature later.
+
+        \parhead{Bonus Tricks} Some trainers can teach creatures bonus tricks in addition to their normal maximum number of tricks known.
+        Once a creature has learned a bonus trick, that trick may not be retrained into a different trick by any trainer without the same ability to grant bonus tricks.
+        However, any trainer may untrain the trick.
 
     \skill{Devices}{Int}
         You can use the Devices skill to manipulate mechanical devices such as locks, traps, and other contraptions. With enough skill, you can even manipulate magical devices.
@@ -679,6 +705,20 @@ A character's skills describe the myriad of talents that people have.
     \subsection{Create Bindings}
         As a standard action, you can make a Devices check to tie a knot or create a binding, including binding a helpless foe. The DR to escape the binding is equal to your check result.
 
+    \subsection{Improvise}\label{Improvise}
+        You can construct ad-hoc devices from available materials.
+        It takes five minutes to make a device of up to Tiny size.
+        You can make a Small device in the time required to make two Tiny devices, a Medium device in the time required to make two Small devices, and so on.
+        You make a Devices check against the DR required to craft the item normally.
+        Success means you create a device that lasts long enough for a single use before breaking.
+        For every 5 points by which you succeed, the device lasts for an additional use.
+
+        Normally, you must have materials at hand which are designed for the construction of the device.
+        You can jury-rig devices together from inappropriate materials by increasing the DR by 10.
+        The materials do not have to be well-suited to the device's construction, but they must be physically capable of performing any necessary actions.
+        For example, you could construct a simple arrow-throwing trap from bent sticks or creatively strung rope, but not from sand.
+        Especially appropriate or inappropriate materials may decrease or further increase the DR.\
+
     \subsection{Subvert Device}
         As a standard action, you can make a Devices check to subvert the normal functionality of a device. The DR is 5 higher than normal. This could allow you to sabotage a hinge or lock so it breaks once it is used, disable a trap without triggering it, or disable a lock so it is perpetually closed or open. Failure means you were unsuccessful, and your action was wasted. Critical failure means you break the device immediately, think you sabotaged the device when you did not, or activate the trap, depending on the circumstances.
 
@@ -711,11 +751,11 @@ A character's skills describe the myriad of talents that people have.
             1 Per step of difference between your actual age category and your
             disguised age category. The steps are: young, adulthood, middle age, old, and venerable. \\
             2 Per limb. You must have suitable disguise materials available. \\
-            3 You cannot disguise yourself as a different size category without the Disguise Mastery feat (see page \featpref{Disguise Mastery}).
+            3 You cannot disguise yourself as a different size category without the Disguise Specialization feat (see page \featpref{Disguise Specialization}).
         \end{dtable}
 
     \subsection{Emulate Creature}
-        You can make a Disguise check to make a creature look like another creature you have previously observed. This functions like a disguise creature check, but the result of your Disguise check can't exceed the result of a Awareness check you have made to observe the creature. People viewing the disguise who know what that person looks like get a \plus5 bonus on their checks to identify the disguise.
+        You can make a Disguise check to make a creature look like another creature you have previously observed. This functions like the \textit{disguise creature} ability, but the result of your Disguise check can't exceed the result of a Awareness check you have made to observe the creature. People viewing the disguise who know what that person looks like get a \plus5 bonus on their checks to identify the disguise.
 
     \subsection{Identify Disguise [Hidden]}
         Whenever you observe a disguised creature or object, you can make an Disguise check to identify the disguise.
