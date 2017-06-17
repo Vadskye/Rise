@@ -823,6 +823,26 @@
     }
 }
 
+% feat level
+% args:
+%   level
+%   name
+%   ability type, if any
+\DeclareDocumentCommand{\ff}{o m o}
+{
+    \IfValueTF{#1}
+    {
+        \IfValueTF{#3}
+        { \subparhead{\nth{#1}~--~#2~(#3)} }
+        { \subparhead{\nth{#1}~--~#2} }
+    }
+    {
+        \IfValueTF{#3}
+        { \subparhead{#2~(#3)} }
+        { \subparhead{#2} }
+    }
+}
+
 \DeclareDocumentCommand{\itemhead}{s m}
 {
     \item
