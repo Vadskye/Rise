@@ -5,7 +5,7 @@
 \end{spellheader}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One creature}}{\rngclose}
+\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Mental}
@@ -13,6 +13,7 @@
 \spellcritical Physical damage dealt to the target is increased by \plus4d.
 \end{spellattack}
 \spelldur Condition
+\spelltags{\glossterm{Delusion}, \glossterm{Mind}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -35,7 +36,7 @@ Whenever the target takes damage increased by this spell, it is \glossterm{stagg
 \begin{spellsection}{Antimagic}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One creature, object, or location}}{\rngmed}
+\spelltwocol{\spelltgt{One creature, object, or location}}{\spellrng{\rngmed}}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Special}
@@ -43,6 +44,7 @@ Whenever the target takes damage increased by this spell, it is \glossterm{stagg
 For every \glossterm{magical} effect on the target, if the attack result beats a DR equal to 10 + the \glossterm{power} of the effect, the effect is \glossterm{suppressed}.
 \end{spellattack}
 \spelldur Sustain (swift)
+\spelltags{\glossterm{Thaumaturgy}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -64,6 +66,7 @@ the spell's effects with the following:
 If the target is an object, and the attack result beats a DR equal to 10 + the spellpower of the object, the object is \glossterm{suppressed}.
 \end{spellattack}
 \spelldur Sustain (swift)
+\spelltags{\glossterm{Thaumaturgy}}
 \end{augmenteffects}
 \augment{2}{Banishing}
 The spell does not have its normal effect.
@@ -81,13 +84,14 @@ In addition, magical abilities and objects cannot be activated within the area.
 \end{spellheader}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One living creature}}{\rngclose}
+\spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngclose}}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \spelleffect
 The target gains \glossterm{damage reduction} against physical damage equal to your spellpower.
 In addition, it is \glossterm{vulnerable} to fire damage.
 \spelldur Attunement
+\spelltags{\glossterm{Enhancement}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -147,7 +151,7 @@ This is a \glossterm{Life} effect from the \glossterm{Vivimancy} school.
 \end{spellheader}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One creature}}{\rngclose}
+\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \spelleffect The target gains a \plus2d bonus to damage with all attacks.
@@ -177,7 +181,7 @@ The target gains \glossterm{damage reduction} against all damage equal to your s
 \end{spellheader}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One willing creature}}{\rngclose}
+\spelltwocol{\spelltgt{One willing creature}}{\spellrng{\rngclose}}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \spellspecial
@@ -186,6 +190,7 @@ You must have mastered the chosen skill.
 \spelleffect
 The target gains a \plus5 bonus to the chosen skill.
 \spelldur Attunement
+\spelltags{\glossterm{Enhancement}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -209,7 +214,7 @@ Each time, you may choose an additional skill that you have mastered.
 \end{spellheader}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One humanoid creature}}{\rngclose}
+\spelltwocol{\spelltgt{One humanoid creature}}{\spellrng{\rngclose}}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Mental}
@@ -220,6 +225,7 @@ Any act by you or your apparent allies that threatens or damages the \spell{char
 \spellcritical As above, but the effect's duration becomes permanent.
 \end{spellattack}
 \spelldur Sustain (swift)
+\spelltags{\glossterm{Delusion}, \glossterm{Mind}, \glossterm{Subtle}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -254,6 +260,7 @@ the spell's effects with the following:
 The target is \dominated for 2 rounds.
 If the target was already dominated by you, this effect lasts for 24 hours instead.
 \end{spellattack}
+\spelltags{\glossterm{Compulsion, Mind}}
 \end{augmenteffects}
 \begin{spellsection}{Cone of Cold}
 \begin{spellheader}
@@ -271,6 +278,7 @@ If the target was already dominated by you, this effect lasts for 24 hours inste
 In addition, the target moves at half speed until it removes this condition.
 \spellcritical As above, but double damage.
 \end{spellattack}
+\spelltags{\glossterm{Cold}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -289,7 +297,7 @@ The spell deals \minus1d damage and has no additional effects on a critical succ
 \end{spellheader}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One willing creature (Medium or smaller)}}{\rngclose}
+\spelltwocol{\spelltgt{One willing creature (Medium or smaller)}}{\spellrng{\rngclose}}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \spelleffect
@@ -297,6 +305,7 @@ The target gains a \plus2 bonus to \glossterm{physical defenses}.
 This bonus is increased to \plus5 against ranged \glossterm{strikes} from weapons or projectiles that are Small or smaller.
 Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
 \spelldur Attunement
+\spelltags{\glossterm{Air}, \glossterm{Imbuement}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -338,7 +347,7 @@ This is a \glossterm{Shielding} effect from the \glossterm{Evocation} school.
 \end{spellheader}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One living creature}}{\rngclose}
+\spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngclose}}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Fortitude}
@@ -349,6 +358,7 @@ This effect lasts until the target removes this \glossterm{condition}.
 As above, but the penalty is increased by 2.
 \end{spellattack}
 \spelldur Condition
+\spelltags{\glossterm{Life}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -374,13 +384,14 @@ This is a \glossterm{Death} effect.
 \end{spellheader}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One creature or object}}{\rngclose}
+\spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Reflex}
 \spellsuccess \spelldamage{acid}.
 \spellcritical As above, but double damage.
 \end{spellattack}
+\spelltags{\glossterm{Acid}, \glossterm{Manifestation}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -403,12 +414,13 @@ The target is \glossterm{staggered} for 2 rounds.
 \begin{spellsection}{Cure Wounds}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One creature}}{\rngmed}
+\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Fortitude}
 \spellsuccess The target is healed for \spelldamage{}.
 \end{spellattack}
+\spelltags{\glossterm{Life}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -436,7 +448,7 @@ For every point of healing, this spell can instead cure 1 vital damage.
 \end{spellheader}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One creature}}{\rngclose}
+\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Mental}
@@ -447,6 +459,7 @@ As above, but the effect becomes permanent.
 It is no longer a condition, and cannot be removed by abilities that remove conditions.
 \end{spellattack}
 \spelldur Condition
+\spelltags{\glossterm{Curse}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -468,6 +481,7 @@ the spell's effects with the following:
 \begin{augmenteffects}
 \spelleffect The target is \disoriented.
 \spelldur Condition
+\spelltags{\glossterm{Curse}}
 \end{augmenteffects}
 \augment{3}{Empowered}
 The penalty increases by 1.
@@ -484,7 +498,7 @@ When the spell ends, the target's maximum hit points are restored.
 \end{spellheader}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One unattended weapon}}{\rngclose}
+\spelltwocol{\spelltgt{One unattended weapon}}{\spellrng{\rngclose}}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \spelleffect
@@ -492,6 +506,7 @@ The target weapon deals \plus2d damage with \glossterm{strikes}.
 In addition, all damage dealt with the weapon with strikes becomes fire damage in addition to its normal damage types.
 This suppresses any existing spell effects active on the weapon.
 \spelldur Attunement
+\spelltags{\glossterm{Fire}, \glossterm{Shaping}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -512,6 +527,7 @@ the spell's effects with the following:
 \glossterm{Strikes} with the affected weapon are made against Reflex defense instead of Armor defense.
 However, damage with the weapon is halved, including any bonuses to damage.
 \spelldur Attunement
+\spelltags{\glossterm{Shaping}, \glossterm{Water}}
 \end{augmenteffects}
 \augment{2}{Zephyr Blade}
 The target weapon gains an additional five feet of reach, extending the wielder's threatened area.
@@ -535,7 +551,7 @@ This is a \glossterm{Water} effect.
 \end{spellheader}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One creature}}{\rngmed}
+\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Mental}
@@ -544,6 +560,7 @@ This is a \glossterm{Water} effect.
 \spellfailure The target is \shaken by you.
 \end{spellattack}
 \spelldur Condition
+\spelltags{\glossterm{Delusion}, \glossterm{Mind}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -565,7 +582,7 @@ The target is afraid of a willing ally within the spell's range instead of being
 \end{spellheader}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spellburst{\areasmall radius}}{\rngclose}
+\spelltwocol{\spellburst{\areasmall radius}}{\spellrng{\rngclose}}
 \spelltgts{Everything in the area}
 \end{spelltargetinginfo}
 \begin{spelleffects}
@@ -573,6 +590,7 @@ The target is afraid of a willing ally within the spell's range instead of being
 \spellsuccess \spelldamage{fire}[1d4].
 \spellcritical As above, but double damage.
 \end{spellattack}
+\spelltags{\glossterm{Fire}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -598,13 +616,14 @@ the spell's targets with the following:
 \end{spellheader}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One creature}}{\rngclose}
+\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \spelleffect
 The target gains \glossterm{damage reduction} against \glossterm{physical damage} equal to your spellpower.
 In addition, it is \glossterm{vulnerable} to arcane damage.
 \spelldur Attunement
+\spelltags{\glossterm{Shielding}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -638,13 +657,14 @@ Its effects stack.
 \begin{spellsection}{Inflict Wounds}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One creature}}{\rngmed}
+\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Fortitude}
 \spellsuccess \spelldamage{life}.
 \spellcritical As above, but double damage.
 \end{spellattack}
+\spelltags{\glossterm{Life}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -681,6 +701,7 @@ This is a \glossterm{Death} effect.
 \spelldamage{electricity}[1d4].
 \spellcritical As above, but double damage.
 \end{spellattack}
+\spelltags{\glossterm{Electricity}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -702,7 +723,7 @@ The spell's attack is made against Fortitude defense instead of Reflex defense.
 \end{spellheader}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One creature}}{\rngmed}
+\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Mental}
@@ -711,6 +732,7 @@ The spell's attack is made against Fortitude defense instead of Reflex defense.
 As above, but double damage.
 In addition, if the creature is an \glossterm{outsider} native to another plane, it is sent back to its home plane.
 \end{spellattack}
+\spelltags{\glossterm{Planar}, \glossterm{Teleportation}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -729,7 +751,7 @@ The spell deals \minus1d damage and has no additional effects on a critical succ
 \end{spellheader}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One living creature}}{\rngclose}
+\spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngclose}}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \spelleffect
@@ -738,6 +760,7 @@ Success means the target takes poison damage equal to your spellpower.
 If this is the second successful attack, the target takes a \minus2 penalty to \glossterm{accuracy}, \glossterm{checks}, and \glossterm{defenses}.
 If this is the third successful attack, the penalty increases to \minus5.
 \spelldur Condition
+\spelltags{\glossterm{Poison}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -753,7 +776,7 @@ The spell does not have additional effects other than damage.
 \begin{spellsection}{Protection from Alignment}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One creature}}{\rngclose}
+\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \spellspecial
@@ -761,6 +784,7 @@ Choose an alignment other than neutral (chaotic, good, evil, lawful).
 This spell gains the tag for that alignment's \glossterm{opposed alignment}.
 \spelleffect
 The target gains damage reduction equal to your spellpower against physical effects that have the chosen alignment, and physical attacks made by creatures with the chosen alignment.
+\spelltags{\glossterm{Shielding}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -778,13 +802,72 @@ The damage reduction also applies against non-physical effects.
 \augment{3}{Retributive}
 Whenever a creature with the chosen alignment makes a physical melee attack against the target, you make a Spellpower vs. Mental attack against the attacking creature.
 Success means the attacker takes \spelldamage{divine}[d4].
+\begin{spellsection}{Scry}
+\begin{spellheader}
+\spelldesc{You create a scrying sensor that allows you to see at a distance.}
+\end{spellheader}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{\spelltgt{One square}}{\spellrng{\rngmed}}
+\end{spelltargetinginfo}
+\begin{spelleffects}
+\spelleffect
+A Fine object appears floating in the air in the target space.
+It resembles a human eye in size and shape, though it is \glossterm{invisible}.
+At the start of each round, you choose whether you see from this sensor or from your body.
+The sensor's visual acuity is the same as your own, except that it does not share the benefits of any \glossterm{magical} effects that improve your vision.
+You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \blinded.
+If undisturbed, the sensor floats in the air in its position.
+As a standard action, you can concentrate to move the sensor up to 30 feet in any direction, even vertically.
+\spelldur Sustain (swift)
+\spelltags{\glossterm{Scrying}}
+\end{spelleffects}
+\end{spellcontent}
+\begin{spellfooter}
+\spellinfo{Divination}{Arcane, Divine, Nature}
+\miscastexplode
+\end{spellfooter}
+\begin{spellcantrip}
+The sensor cannot be moved after it is originally created.
+\end{spellcantrip}
+\end{spellsection}
+\subsubsection{Augments}
+\parhead{Standard Augments} Extended, Mass.
+\augment{1}{Auditory}
+At the start of each round, you can choose whether you hear from the sensor or from your body.
+This choice is made independently from your sight.
+The sensor's auditory acuity is the same as your own, except that it does not share the benefits of any \glossterm{magical} effects that improve your hearing.
+\augment{2}{Accelerated}
+When you move the sensor, you can move it up to 100 feet, instead of up to 30 feet.
+\augment{2}{Myriad}
+You create an additional sensor in the same location.
+Whenever you see or hear from the perspective of a sensor, you choose which sensor to see or hear from.
+\par
+This augment can be applied multiple times.
+Its effects stack.
+\augment{2}{Penetrating}
+The spell's range becomes \rngunrestricted, allowing you to cast it into areas where you do not have \glossterm{line of sight} or \glossterm{line of effect}.
+\augment{3}{Autonomous}
+You can move the sensor as part of the action you take to sustain the spell, rather than as a standard action.
+\augment{4}{Scry Creature}
+You must make a Spellpower vs. Mental attack against the target.
+Success means the sensor appears in the creature's space.
+Failure means the sensor does not appear at all.
+In addition, replace
+the spell's targets with the following:
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgt{One creature}}{\spellrng{Unlimited (Unrestricted)}}
+\end{augmenttargetinginfo}
+\augment{5}{Split Senses}
+You do not have to choose whether to sense from the perspective of a sensor or from the perspective of your own body.
+You constantly receive sensory input from your body and all sensors you have created with this spell.
 \begin{spellsection}{Smite}
 \begin{spellheader}
 \spelldesc{You smite a foe with holy (or unholy) power.}
 \end{spellheader}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One creature}}{\rngmed}
+\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Mental}
@@ -803,6 +886,48 @@ The spell deals \minus1d damage and has no additional effects on a critical succ
 \end{spellsection}
 \subsubsection{Augments}
 \parhead{Standard Augments} Extended, Intensified, Mass.
+\begin{spellsection}{Summon Monster}
+\begin{spellheader}
+\spelldesc{You summon a creature to fight by your side.}
+\end{spellheader}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{\spelltgt{One unoccupied square}}{\spellrng{\rngmed}}
+\end{spelltargetinginfo}
+\begin{spelleffects}
+\spelleffect
+A creature appears in the target location.
+It visually appears to be a common Small or Medium animal of your choice, though in reality it is a manifestation of magical energy.
+Regardless of the appearance and size chosen, the creature has hit points equal to twice your spellpower.
+All of its defenses are equal to your 5 \add your spellpower, and its land speed is equal to 30 feet.
+Each round, you choose the creature's actions.
+There are only two actions it can take.
+As a move action, it can move as you direct.
+As a standard action, it can make a melee \glossterm{strike} against a creature it threatens.
+Its accuracy is equal to your spellpower.
+If it hits, it deals 1d3 damage \plus1d per two spellpower.
+The type of damage dealt by this attack depends on the creature's appearance.
+Most animals bite or claw their foes, which deals bludgeoning and slashing damage.
+\spelldur Sustain (swift)
+\spelltags{\glossterm{Manifestation}}
+\end{spelleffects}
+\end{spellcontent}
+\begin{spellfooter}
+\spellinfo{Conjuration}{Arcane, Divine, Nature}
+\miscastexplode
+\end{spellfooter}
+\begin{spellcantrip}
+The spell's duration becomes Sustain (standard).
+\end{spellcantrip}
+\end{spellsection}
+\subsubsection{Augments}
+\parhead{Standard Augments} Extended.
+\augment{1}{Summon Bear}
+The creature appears to be a Medium bear.
+As a standard action, it can make a \glossterm{grapple} attack against a creature it threatens.
+Its accuracy is the same as its accuracy with strikes.
+While grappling, the manifested creature can either make a strike or attempt to escape the grapple.
+This augment replaces the effects of any other augments that change the appearance of the creature.
 \begin{spellsection}{Water Mastery}
 \begin{spellheader}
 \spelldesc{You create a wave of water to crush your foes.}
@@ -817,6 +942,7 @@ The spell deals \minus1d damage and has no additional effects on a critical succ
 \spellsuccess \spelldamage{bludgeoning}[1d4].
 \spellcritical As above, but double damage.
 \end{spellattack}
+\spelltags{\glossterm{Manifestation}, \glossterm{Water}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -833,7 +959,7 @@ The spell deals \minus1d damage and has no additional effects on a critical succ
 Replace
 the spell's targets with the following:
 \begin{augmenttargetinginfo}
-\spelltwocol{\spellburst{\areasmall radius}}{\rngclose}
+\spelltwocol{\spellburst{\areasmall radius}}{\spellrng{\rngclose}}
 \spelltgts{Everything in the area}
 \end{augmenttargetinginfo}
 \augment{3}{Sustained}
@@ -849,7 +975,7 @@ The strands are similar to spider webs, but larger and tougher.
 \end{spellheader}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spellzone{\areasmall radius}}{\rngclose}
+\spelltwocol{\spellzone{\areasmall radius}}{\spellrng{\rngclose}}
 \spelltgts{Everything in the area}
 \end{spelltargetinginfo}
 \begin{spelleffects}
@@ -860,6 +986,7 @@ Each 5-ft.\ square of webbing has hit points equal to your spellpower, and is \g
 \spellsuccess The target is \immobilized as long as it has webbing from this spell in its space.
 \end{spellattack}
 \spelldur Sustain (swift)
+\spelltags{\glossterm{Manifestation}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -883,13 +1010,14 @@ The hit point increase stacks.
 \end{spellheader}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One creature or object}}{\rngmed}
+\spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Fortitude}
 \spellsuccess \spelldamage{bludgeoning}.
 \spellcritical As above, but double damage.
 \end{spellattack}
+\spelltags{\glossterm{Air}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
