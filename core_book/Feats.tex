@@ -245,357 +245,492 @@ Feats can be used to specialize your character particular area, to grant your ch
     \parhead{Special}
     Additional facts about the feat that may be helpful when you decide whether to acquire the feat.
 
-    \feat{Abjurer}{Magical, Spell}
-    \spelldesc{You have great talent with Abjuration spells.}
-    \featpre 1st level or higher \glossterm{Abjuration} spell known.
-    \featben Your damaging spells grant you sympathetic resistance to attacks.
-    Whenever you cast a spell that deals non-physical damage, you gain damage reduction equal to your spellpower against damage of that type for 2 rounds.
+    \begin{feat}{Abjurer}{Magical, Spell}
+        \spelldesc{You have great talent with Abjuration spells.}
+        \featpre \glossterm{Abjuration} spell known.
+        \featben
+        \ff{Abjurant Shield} Whenever you cast an Abjuration spell with a duration, you can give one willing creature targeted by the spell a deflective shield.
+        The shielded creature gains a \plus1 bonus to \glossterm{physical defenses} as long as the spell lasts.
+        This is a \glossterm{Magical}, \glossterm{Shielding} effect.
+        You can only shield one creature in this way at a time.
+        If you shield another creature, all previous shields are dismissed when the new shield takes effect.
 
-    At 7th level, if you know a 2nd level or higher Abjuration spell, your Abjuration spells are easier to cast.
-    You can cast Abjuration spells as if they were one level lower than their actual level (minimum 1).
-    This does not stack with spell level reductions from other feats.
+        \ff[3]{Counterspell} While you are casting a spell, at any time before it resolves, you can take an \glossterm{immediate action} to turn that spell into a counterspell.
+        If you do, your spell has no effect when it resolves.
+        Instead, choose a creature within \rngmed range of you.
+        If that creature is casting a spell, and your spell's level, including all augments, is at least as high as their spell's level, their spell also has no effect when it resolves.
 
-    At 11th level, you gain a \plus1 bonus to all defenses.
-    In addition, you gain a \plus4 bonus to spellpower when dispelling effects with \spell{dispel magic} and similar spells.
+        \ff[5]{Ablative Shield} The shielded creature also gains damage reduction against physical damage equal to your spellpower.
+        % which spellpower?
 
-    \feat{Acrobatics Mastery}{Skill}
-    \featpre Acrobatics 6 ranks.
-    \featben Whenever you make a Acrobatics check, you may roll twice and take the higher result.
+        \ff[7]{Magic Against Magic} You gain a \plus2 bonus to accuracy with the \spell{antimagic} spell.
+        In addition, when you use your \textit{counterspell} ability with the \spell{antimagic} spell, it is treated as being two spell levels higher than its actual level for the purpose of determining which spells it can counter.
 
-    At 3rd level, using Acrobatics to move along narrow surfaces does not reduce your speed.
+        \ff[9]{Versatile Shield} The shielded creature's damage reduction applies against all damage, not just physical damage.
 
-    At 7th level, if you have 10 ranks in Acrobatics, you gain a \plus5 bonus to Acrobatics checks.
+        \ff[11]{Pierce Shields} Your skill at creating defenses allows you penetrate defenses more easily.
+        You gain a \plus1 bonus to \glossterm{accuracy} with magical attacks.
 
-    At 11th level, if you have 14 ranks in Acrobatics, you can balance on surfaces that cannot support your weight.
-    The DR is 30 for liquids such as water, 40 for dense gases and raw energy, and 50 for ordinary air.
-    While balancing in this way, you must take a move action each round to continue moving; you cannot remain in the same place in consecutive rounds, or you will fall.
-    The DR increases by 2 for each consecutive round that you spend balancing in this way.
-    You gain a \plus4 bonus on this check per size category you are smaller than Medium, or a \minus4 penalty per size category larger than Medium.
-    \magical
+        \ff[13]{Punishing Counterspell} When you use your \texit{counterspell} ability, you can make the target \glossterm{miscast} their spell instead of negating the spell's effects.
+        In addition, the range of your \textit{counterspell} ability increases to \rnglong.
 
-    \feat{All Energy Becomes One}{Class, Magical}
-    \featpres Monk level 5, Constitution 6, manifest \ki ability.
-    \featben Whenever you take \glossterm{energy damage}, you can spend a \glossterm{immediate action} to channel the energy into your body.
-    You gain damage reduction against that attack equal to your \ki power.
-    If the damage reduced in this way exceeds your level, you recover one spent \ki point.
+        \ff[15]{Empowered Shield} The shielded creature's defense bonus increases to \plus2.
 
-    At monk level 7, you can use this ability to reduce any non-physical damage you take.
+        \ff[17]{Mass Counterspell} When you use your \textit{counterspell} ability, you may target up to five creatures.
 
-    At monk level 11, if you have 9 Constitution, you can use this ability once per round without spending an action.
-    You cannot use it twice to affect the same attack.
+        \ff[19]{Abjuration Master} Your Abjuration spells are easier to cast.
+        You can cast Abjuration spells as if they were one level lower than their actual level.
+        This does not stack with spell level reductions from other feats.
+    \end{feat}
 
-    At monk level 15, if you have 12 Constitution, the damage reduction becomes equal to twice your \ki power.
+    \begin{feat}{Skill Specialization, Acrobatics}{Skill}
+        \featpre Acrobatics as a mastered skill.
+        \parhead{Benefits}
+        
+        \ff{Specialization, Lesser} You gain a \plus2 bonus to Acrobatics.
 
-    \feat{Arcane Resilience}{Class, Magical}
-    \featpre Mage level 1.
-    \featben You gain damage reduction against \glossterm{magical} abilities equal to half your mage level or half Constitution, whichever is higher.
-    This damage reduction applies against your own abilities, including miscast effects.
+        \ff[2]{Rapid Balance} Using Acrobatics to balance on slippery or narrow surfaces does not reduce your speed.
 
-    At mage level 3, you take half damage from your own spell and miscast effects (before applying damage reduction).
+        \ff[4]{Agile Charge} You can change directions freely while making a \glossterm{charge}.
 
-    At mage level 7, the damage reduction increases to be equal to your mage level or Constitution, whichever is higher.
+        \ff[6]{Surface Tolerance} You reduce DR modifiers for surface conditions on Acrobatics checks to balance by 2.
+        This allows you to ignore minor surface conditions, such as slippery surfaces, when balancing.
 
-    % need 11th level ability?
+        \ff[8]{Specialization} The bonus to Acrobatics increases to \plus3.
 
-    \feat{Awareness Mastery}{Skill}
-    \featpre Awareness 6 ranks.
-    \featben Whenever you make an Awareness check, you may roll twice and take the higher result.
+         % modifier at 10th: 12dex + 2mst + 2ft = 16
+        \ff[10]{Legendary Airwalker}[Mag] You can attempt to move on surfaces that cannot support your weight.
+        Surfaces that can support at least a quarter of your weight, such as thin tree branches and dense liquids, are DR 20.
+        Surfaces that can support at least a tenth of your weight, such as water, are DR 25.
+        Surfaces that can support at least a hundredth of your weight, such as tree leaves, are DR 30.
+        Surfaces that cannot support your weight at all, such as air, are DR 40.
+        Success means you move along the surface at half speed.
+        Failure means you fall through the surface.
+        The DR increases by 2 for each consecutive round that you spend moving in this way.
 
-    At 3rd level, you gain one of the following senses: \glossterm{blindsense} (50 ft.), \glossterm{darkvision} (100 ft.), \glossterm{scent}, or \glossterm{tremorsense} (50 ft.).
+        \ff[12]{Fall Tolerance} You take half damage from \glossterm{falling damage}.
 
-    At 7th level, if you have 10 ranks in Awareness, you gain a \plus5 bonus to Awareness checks.
+        \ff[14]{Surface Tolerance, Greater} The reduction of DR modifiers for surface conditions increases to 5.
+        This allows you to ignore almost all surface conditions when balancing.
 
-    At 11th level, you gain one of the following senses: \glossterm{blindsense} (200 ft.), \glossterm{blindsight} (50 ft.), \glossterm{darkvision} (500 ft.), \glossterm{tremorsense} (200 ft.), or \glossterm{tremorsight} (50 ft.).
+        \ff[16]{Specialization, Greater} The bonus to Acrobatics increases to \plus4.
 
-    \feat{Battlecaster}{Spell}
-    \featpre 1st level spells.
-    \featben You gain a \plus3 bonus to Concentration checks made to cast spells.
+        \ff[18]{Rapid Airwalker} You can move at full speed with the \textit{legendary airwalker} ability.
+    \end{feat}
 
-    At 3rd level, you reduce your chance of arcane spell failure from wearing armor by 10\%.
+    \begin{feat}{All Energy Becomes One}{Class, Magical}
+        \featpre Monk as a \glossterm{base class}, starting Constitution of 2.
+        \parhead{Benefits}
 
-    At 7th level, if you can cast 2nd level spells, the Concentration check bonus increases to \plus10.
+        \ff{Absorb Energy} Whenever you would take \glossterm{energy damage}, you can take an \glossterm{immediate action} to channel the energy into your body.
+        If you do, you gain damage reduction against that attack equal to your \ki power.
 
-    At 11th level, if you can cast 4th level spells, the Concentration check bonus increases to \plus20.
+        \ff[3]{Channel Energy} At the end of each round, if you reduced damage with your \textit{absorb energy} ability, you can channel that energy into your weapons.
+        If you do, choose a damage type that you reduced this round with that ability.
+        All damage you deal with your weapons gains that damage type until the end of the next round.
 
-    At 15th level, if you can cast 6th level spells, you reduce your chance of arcane spell failure from wearing armor by a total of 20\%.
+        \ff[5]{Energetic Unity} You can use \textit{absorb energy} to reduce any non-physical damage you take, instead of only energy damage.
 
-    \feat{Battlerage}{General}
-    \featpres 5th level, Willpower 6.
-    \featben You gain the rage ability, allowing you to fly into a rage as a free action.
-    While raging, you have the following benefits and drawbacks:
-    \begin{itemize}
-        \item \plus2 bonus to damage with physical attacks.
-        \item \plus2 bonus to Fortitude and Mental defense.
-        \item 2 temporary hit points per Willpower.
-            These extra hit points gained from raging are lost before any other hit points (see \pcref{Temporary Hit Points}).
-        \item \minus2 to \glossterm{physical defenses}.
-        \item Unable to take any action that requires patience or concentration, such as casting spells.
-        \item If you does not spend a swift round to sustain the rage, it ends at the end of the round.
-        \item At the end of each round, if you did not attack a creature or object, you take nonlethal damage equal to your level.
-    \end{itemize}
+        \ff[7]{Channel Power} While you are channeling energy with your \textit{channel energy} ability, you deal \plus1d damage with your weapons.
 
-    A rage lasts for up to 5 rounds.
-    At the end of the rage, you take nonlethal damage equal to his level.
-    If you have any temporary hit points remaining at the end of your rage, the nonlethal damage is dealt to those hit points before they go away.
-    In addition, you become \fatigued and unable to rage until you rest for 5 minutes.
+        \ff[9]{Sustained Channeling} You can sustain your \texit{channel energy} ability as a swift action.
 
-    The bonuses to physical damage, Fortitude, and Mental defense granted by your rage increase with level.
-    This is called your \glossterm{rage bonus}.
-    You may rage a number of times per day equal to your rage bonus.
+        \ff[11]{Absorb Energy, Greater} You increase the damage reduction to twice your \ki power.
 
-    At 7th level, your rage bonus increases to \plus3.
-    In addition, the number of hit points gained per Willpower increases to 3.
+        \ff[13]{Kinetic Absorption} You can use \textit{absorb energy} to reduce any damage you take, instead of only non-physical damage.
 
-    At 11th level, if you have 9 Willpower, your rage bonus increases to \plus4.
-    In addition, the number of hit points gained per Willpower increases to 4.
+        \ff[15]{Channel Power, Greater} You increase your damage bonus with your weapons to \plus2d.
 
-    At 15th level, if you have 12 Willpower, your rage bonus increases to \plus5.
-    In addition, the number of hit points gained per Willpower increases to 5.
+        \ff[17]{Attuned Channeling} When you use your \textit{channel energy} ability, you can spend an \glossterm{action point}.
+        If you do, you attune to the ability, causing it to last as long as you stay attuned to it.
+        For details, see \pcref{Attunement}.
 
-    \feat{Blindfighter}{Combat}
-    \featpre Perception 3.
-    \featben Whenever you miss a melee attack because of a miss chance caused by being unable to see your opponent, you can reroll your miss chance one time to see if you actually hit.
+        \ff[19]{Reflexive Absorption} You can use your \textit{greater absorb energy} ability once per round without spending an action.
+        You cannot use it twice to affect the same attack.
+    \end{feat}
 
-    At 3rd level, you are not \defenseless against foes you cannot see if you know their location.
+    \begin{feat}{Skill Specialization, Awareness}{Skill}
+        \featpre Awareness as a mastered skill.
+        \parhead{Benefits}
 
-    At 7th level, if you have 6 Perception, you gain \glossterm{blindsense} (50 ft.\ radius).
+        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Awareness.
 
-    At 11th level, if you have 9 Perception, you gain \glossterm{blindsight} (20 ft.\ radius).
+        \ff[2]{Broad Search} When you take the Search action, you can search a 10-ft.\ square within 30 feet of you (see \pcref{Search}).
 
-    At 15th level, if you have 12 Perception, the radius of your blindsight improves to 50 feet.
-    \parhead{Normal} You have a 50\% chance to miss opponents you can't see, and you are \defenseless against them.
+        \ff[4]{Extraordinary Senses} You gain one of the following senses: \glossterm{blindsense} (50 ft.), \glossterm{darkvision} (100 ft.), \glossterm{scent}, or \glossterm{tremorsense} (50 ft.).
 
-    \feat{Blows of Legendary Force}{Combat, Style}
-    \featpre 13th level, Strength 12.
-    \featben Whenever you make a \glossterm{strike}, you compare your result against the target's Armor and Fortitude defenses.
-    If you hit either defense, the strike hits and deals full damage.
+        \ff[6]{Distance Tolerance} You reduce DR modifiers for distance on Awareness rolls by 2.
+        This usually allows you to ignore up to 100 feet of distance.
 
-    \feat{Bluff Mastery}{Skill}
-    \featpre Bluff 6 ranks.
-    \featben Whenever you make a Bluff check, you may roll twice and take the higher result.
+        % \ff[6]{Attentive} You can pay \glossterm{active attention} to your surroundings for any length of time without becoming fatigued.
 
-    At 3rd level, \tdash.
+        \ff[8]{Specialization} The bonus to Awareness increases to \plus3.
 
-    At 7th level, if you have 10 ranks in Bluff, you gain a \plus5 bonus to Bluff checks.
+        \ff[10]{Legendary Senses} You gain one of the following senses: \glossterm{blindsense} (200 ft.), \glossterm{blindsight} (50 ft.), \glossterm{darkvision} (500 ft.), \glossterm{tremorsense} (200 ft.), or \glossterm{tremorsight} (50 ft.).
 
-    At 11th level, if you have 14 ranks in Bluff, your lies can change how creatures perceive reality.
-    As an immediate action, when you are telling a lie, you can make a Bluff vs. Mental attack against a creature within \rngmed range of you.
-    Success means the target's sight, smell, hearing, and sense of temperature are altered so it perceives the world as you described it.
-    This cannot remove things that do exist, but it can create new sensations where none existed.
-    You can use this ability three times per day.
-    \magical
+        \ff[12]{Trapmaster} Whenever you come within 50 feet of a trap, you can make an Awareness check to notice it, even if you were not searching for traps.
 
-    \feat{Celestial Apotheosis}{Bloodline, Magical}
-    \featpres 9th level, non-evil alignment, Celestial Heritage.
-    \featben Your celestial heritage has developed into its full potential.
-    You gain feathery wings that sprout from your back.
-    You can use these wings to glide at a rate equal to your land speed (see \pcref{Gliding}).
-    The wings themselves are physical, but the ability to glide and fly with them is \glossterm{magical}.
-    % TODO: make this less terrible
+        \ff[14]{Distance Tolerance, Greater} The reduction of DR modifiers for distance increases to 5.
+        This usually allows you to ignore up to 500 feet of distance.
 
-    At 11th level, your wings improve, granting you a fly speed equal to your land speed.
-    While \unencumbered, you can fly (see \pcref{Flying}).
-    You can only fly for a number of rounds equal to half your celestial power.
-    After that limit is reached, you must rest for 5 minutes before flying again.
-    In addition, your holy blessing ability now grants two legend points instead of one.
+        \ff[16]{Specialization, Greater} The bonus to Awareness increases to \plus4.
 
-    At 15th level, the damage dealt by your holy judgment ability increases to 1d8 divine damage per celestial power.
+        \ff[18]{Supreme Senses} You can choose an additional sense from the \textit{legendary senses} ability.
+        Its range is doubled.
+    \end{feat}
 
-    At 19th level, you can fly for a number of minutes equal to half your celestial power before resting.
+    \begin{feat}{Battlecaster}{Spell}
+        \featpre Ability to cast spells.
+        \featben
 
-    \feat{Celestial Heritage}{Bloodline, Magical}
-    \featpres Non-evil alignment.
-    \featben You have the blood of a celestial creature in your veins, granting you celestial power.
-    You gain an ability you can use by spending a celestial point.
-    Your celestial power is equal to your Willpower or your level, whichever is higher.
-    You have a maximum number of celestial points equal to half your celestial power (minimum 1).
-    Each day, you recover all spent celestial points.
-    \parhead{Holy Blessing} As a standard action, you can bless a willing ally within \rngclose range. The target gains a general \glossterm{legend point} that lasts for \durshort duration, until it is used.
+        \ff[1]{Combat Concentration, Lesser} You gain a \plus2 bonus to Concentration checks made to cast spells.
+        In addition, you reduce your chance of arcane spell failure from wearing armor by 10\%.
 
-    At 3rd level, you learn how to protect your allies by spending a celestial point.
-    \parhead{Holy Protection} As a standard action, you can shield a willing ally within \rngmed range from evil for \durshort duration. The target gains damage reduction equal to your celestial power against evil effects and physical attacks made by evil creatures.
+        \ff[3]{Spellstrike} As a standard action, you can spend an \glossterm{action point} to imbue magical power into your weapon.
+        This requires concentration as if casting a spell.
+        Whether or not your concentration was broken, you may make a \glossterm{strike} with the weapon as a \glossterm{delayed action}.
+        If you maintained your concentration, the strike gains a \plus2d bonus to damage.
 
-    At 7th level, your \textit{holy blessing} ability affects up to five willing allies.
-    In addition, you gain the ability to inflict a damaging judgment on a foe by spending a celestial point.
-    \parhead{Holy Judgment} As a standard action, you can inflict divine judgment on a non-good creature within \rngmed range. You make a Celestial power vs. Mental attack against the target. Success deals 1d6 divine damage per celestial power, and causes the target to be \dazed for two rounds. Critical success deals double damage. Failure deals half damage, and has no additional effects.
+        \ff[5]{Combat Concentration} The bonus to Concentration checks increases to \plus5.
 
-    At 11th level, you permanently gain the benefit of your \textit{holy protection} ability.
+        \ff[7]{Armor Tolerance} The reduction of arcane spell failure increases to 20\%.
 
-    \feat{Celestial Spell Conduit}{Bloodline, Magical}
-    \featpres 5th level, 2nd level spells, non-evil alignment, Celestial Heritage.
-    \featben Whenever you cast a spell, you can spend a celestial point as an \glossterm{immediate action} to heal an ally.
-    If you do, you heal a willing creature within \rngclose range of you for 1d6 hit points per two celestial power.
-    In addition, you gain additional celestial points equal to the level of your highest level spell known.
+        \ff[9]{Martial Spell} You gain a \plus1 bonus to \glossterm{accuracy} with spells against creatures you \glossterm{threaten}.
 
-    At 7th level, the range of this healing improves to \rngmed range.
+        \ff[11]{Defensive Caster} You gain a \plus1 bonus to physical defenses.
 
-    At 11th level, if you have 4th level spells, you gain \glossterm{magic resistance} against evil spells and spells cast by evil creatures.
-    Your magic resistance is equal to 10 \add your celestial power.
+        \ff[13]{Combat Concentration, Greater} The bonus to Concentration checks increases to \plus10.
 
-    At 15th level, if you have 6th level spells, your healing with this ability increases to 1d10 hit points per two celestial power.
+        \ff[15]{Martial Spell, Greater} The accuracy bonus with spells against threatened creatures increases to \plus2.
 
-    \feat{Chaotic Rage}{Class}
-    \featpres Paladin level 5, Chaos devoted alignment.
-    \featben You gain the rage ability, as the Battlerage feat (see Battlerage, page \featpref{Battlerage}).
-    However, your rage bonus increases based on your paladin level, rather than your level and Willpower.
+        \ff[17]{Armor Tolerance, Greater} The reduction of arcane spell failure increases to 30\%. 
 
-    At paladin level 7, your rage bonus increases to \plus3.
-    In addition, the number of hit points gained per Willpower increases to 3.
+        \ff[19]{Spellstrike, Greater} The damage bonus if you maintained your concentration increases to \plus3d.
+    \end{feat}
 
-    At paladin level 11, your rage bonus increases to \plus4.
-    In addition, the number of hit points gained per Willpower increases to 4.
+    \begin{feat}{Blindfighter}{Combat}
+        \featpre Starting Perception 2.
+        \featben
+        
+        \ff[1]{Blind Precision} Whenever you have a miss chance caused by being unable to see your opponent, you can roll the miss chance twice and take the better result.
 
-    At paladin level 15, your rage bonus increases to \plus5.
-    In addition, the number of hit points gained per Willpower increases to 5.
+        \ff[2]{Unseen Defense} You are not \defenseless against foes you cannot see if you know their location.
 
-    \feat{Cleave}{Combat}
-    \spelldesc{Your attacks can cleave through struck creatures to hit others nearby.}
-    \featpre Strength 3.
-    \featben Whenever a creature is knocked unconscious or killed, for each melee \glossterm{strike} you made against it that round, you can immediately make an extra melee strike against another creature you threaten.
-    The extra strike must be made with the same weapon, and uses the same accuracy, but it is otherwise treated as being a different attack.
-    There is no limit to the number of additional strikes you can make using this ability each round.
+        \ff[4]{Blindsense} You gain \glossterm{blindsense} (50 ft.).
 
-    At 3rd level, you also gain a free strike with this feat when a creature is reduced to 0 hit points.
-    You can only gain one strike with this feat for each strike you make.
+        \ff[6]{Attack the Unseen} If you know the location of a creature you cannot see, and you have \glossterm{line of effect} to that creature, you can target it with targeted abilities.
 
-    At 7th level, if you have 6 Strength, when you would make a bonus strike with this feat during the action phase, you can move up to half your movement speed before making the strike.
-    This movement counts against your normal movement limit in a round.
-    You can only move using this feat once per round.
+        \ff[8]{Blind Feint} If you are attacked by a creature who incorrectly thinks you are \glossterm{unaware} of the attack, you can take an \glossterm{immediate action} to spend an \glossterm{action point}.
+        If you do, you can immediately make a \glossterm{strike} against that creature.
 
-    At 11th level, if you have 9 Strength, you can move up to your full movement speed before making the strike.
+        \ff[10]{Blindsight} You gain \glossterm{blindsight} (50 ft.).
+        In addition, the range of your blindsense improves to 200 feet. 
 
-    \feat{Climb Mastery}{Skill}
-    \featpre Climb 6 ranks.
-    \featben Whenever you make a Climb check, you may roll twice and take the higher result.
+        \ff[12]{Controlled Sight} You are immune to all abilities that depend on sight to affect you.
 
-    At 3rd level, you can attempt to climb other creatures more easily.
-    As a standard action, you can make a Climb vs. Reflex attack against a creature adjacent to you.
-    The creature must be three or more size categories larger than you.
-    Success means you can climb the creature as if it were a solid object with a Climb DR equal to its Reflex defense.
-    The creature takes a \minus4 penalty to accuracy on physical attacks against you, but is not otherwise encumbered by your presence unless it cannot support your weight.
-    It can attempt to remove you by attacking you, or with an appropriate \glossterm{combat maneuver}, such as grappling or shoving.
+        \ff[14]{Blindsight, Greater} The range of your blindsight improves to 100 feet.
+        In addition, the range of your blindsense improves to 500 feet.
 
-    At 7th level, if you have 6 ranks in Climb, you gain a \glossterm{climb speed} equal to your land speed.
-    This grants several benefits.
-    \begin{itemize}
-        \item A successful Climb check to move allows you to move a distance equal to your climb speed.
-        \item You gain a \plus10 bonus to Climb checks.
-    \end{itemize}
+        \ff[16]{Blind Feint, Greater} When you use your \glossterm{blind feint} ability, the target is \glossterm{unaware} of the attack.
 
-    At 11th level, if you have 14 ranks in Climb, you can climb surfaces that are perfectly smooth.
-    The DR is 30 for perfectly smooth vertical surfaces, and 40 to climb on a perfectly smooth ceiling.
-    You can also wallrun on ceilings.
+        \ff[18]{Supreme Sight} The range of your blindsight improves to 200 feet.
+        In addition, the range of your blindsense improves to 1,000 feet.
+    \end{feat}
 
-    \feat{Close-Quarters Fighting}{Combat}
-    \featpre Dexterity 3.
-    \featben You reduce your penalties for \glossterm{squeezing} by 2. In addition, you reduce your penalty for attacking with non-light weapons in a grapple by 2.
+    % move this into power attack?
+    % \feat{Blows of Legendary Force}{Combat, Style}
+    % \featpre 13th level, Strength 12.
+    % \featben Whenever you make a \glossterm{strike}, you compare your result against the target's Armor and Fortitude defenses.
+    % If you hit either defense, the strike hits and deals full damage.
 
-    At 3rd level, your movement speed is not reduced while squeezing.
+    \begin{feat}{Bluff Specialization}{Skill}
+        \featpre Bluff as a mastered skill.
+        \featben
 
-    At 7th level, if you have 6 Dexterity, you suffer no penalties for squeezing or attacking with non-light weapons in a grapple.
+        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Bluff.
 
-    At 11th level, if you have 9 Dexterity, you can choose to occupy space as if you were a non-squeezing creature one size category smaller than your actual size while squeezing.
-    This does not affect the minimum physical size you can squeeze through when using the Escape Artist skill (see \pcref{Escape Artist}).
+        \ff[2]{Sustained Distraction} If you successfully distract a creature, you can sustain that distraction on that creature with a \glossterm{swift action} as long as you continue to be distracting.
+        You must make a new check each round, and the DR increases by 2 for each round you have distracted them.
+        For details, see \pcref{Distract}.
 
-    \feat{Combat Leader}{Class, Combat}
-    \featpres Fighter level 9, Intelligence 9.
-    \featben As a swift action, you may grant the use of one of your combat feats to a willing creature within \rngmed range of you who can see and hear you.
-    The target must meet level prerequisites for the granted feat, including class level prerequisites, but it can ignore all other prerequisites.
-    The effect lasts as long as you spend a swift action to maintain it, to a maximum of 5 rounds.
-    After using this ability, you cannot use it again for 5 minutes.
+        \ff[4]{Deceive Magic} Any magical abilities which detect lies are unable to detect lies you speak.
 
-    At fighter level 11, you can grant that feat to two willing creatures of your choice.
+        % You can make a Bluff attack to \glossterm{feint} instead of using your normal accuracy (see \pcref{Feint}).
 
-    At fighter level 15, if you have 12 Intelligence, you can grant that feat to up to five willing creatures of your choice.
+        \ff[6]{Impersonation Tolerance} You reduce DR modifiers for details you cannot replicate when impersonating creatures 2 (see \pcref{Impersonate}).
 
-    \feat{Combat Mobility}{Combat, Mobility}
-    \featpres Dexterity 3.
-    \featben At the start of each phase, if you are \glossterm{unemcumbered}, you may choose a creature you can see.
-    You can move through that creature's space this phase, though you move at half speed while in its space.
+        \ff[8]{Specialization} The bonus to Bluff increases to \plus3.
 
-    At 7th level, if you have 6 Dexterity, you gain the ability to move and attack simultaneously while unencumbered.
-    As a standard action, you can move up to your speed while making a \glossterm{standard attack}.
-    If you move more than half your speed without making an additional strike, you lose all remaining strikes you would make.
-    As with other movement during the action phase, this does not affect which location you are in when other creatures declare the targets for their actions, allowing them to hit you even if you move away.
+        \ff[10]{Dual Speech}[Mag] Whenever you speak, you can make a Bluff check to speak in two voices at once.
+        The base DR is 15.
+        Success means you speak the same words with two different vocal patterns, such as tone or accent, though you cannot significantly change the volume.
+        You can freely choose which creatures hear which pattern, treating all creatures you are not aware of as a single group.
+        Failure means you choose one of the vocal patterns and speak in that pattern.
+        Critical failure means the words come out garbled and incomprehensible.
 
-    At 11th level, if you have 9 Dexterity, you can choose up to two creatures to move through at the start of each phase.
+        If you increase the DR by 5, your vocal patterns can be in different languages.
+        If you increase the DR by 10, your vocal patterns can use entirely different words.
 
-    At 15th level, if you have 12 Dexterity, you do not move at half speed while moving through creatures with this feat.
+        \ff[12]{Deceive Magic, Greater} Whenever you impersonate a creature, if your Bluff check is high enough, magical abilities treat you as if you were that creature.
+        % is this DR high enough?
+        The DR is equal to 10 \add the \glossterm{power} of the ability you are deceiving.
+        % does this work mechanically?
+        For example, if you impersonate an undead creature, the \spell{inflict light wounds} spell would heal you.
+        This does not grant you any abilities associated with creatures you impersonate.
 
-    \feat{Conjurer}{Magical, Spell}
-    \featpres 1st level or higher \glossterm{Conjuration} spell known.
-    \featben Objects you create and creatures you summon with Conjuration spells have extra hit points equal to your spellpower.
-    Permanent physical objects you create are not affected by this ability.
+        \ff[14]{Impersonation Tolerance, Greater} The reduction of DR modifiers for impersonating details you cannot replicate increases to 5.
 
-    At 3rd level, you double the range of all \glossterm{Teleportation} spells you cast.
+        \ff[16]{Specialization, Greater} The bonus to Bluff increases to \plus4.
 
-    At 7th level, if you know a 2nd level or higher Conjuration spell, your Conjuration spells are more powerful.
-    You can cast Conjuration spells as if they were one level lower than their actual level (minimum 1).
-    This does not stack with spell level reductions from other feats.
+        \ff[18]{Deceive Reality} Whenever you are attacked, after learning whether the attack succeeded or failed, you can spend an \glossterm{action point} as an immediate action.
+        If you do, you can make a Bluff check to pretend the attack affected you differently.
+        The DR is equal to the result of the attack roll.
+        Success means you can choose the result of the attack roll, potentially causing it to miss instead of hitting, or to hit instead of missing.
+        However, you cannot make the attack critically fail.
+        After using this ability, you cannot use it again until you take a \glossterm{short rest}.
+    \end{feat}
 
-    At 11th level, if you know a 4th level or higher Conjuration spell, your connection to the Astral Plane is strengthened.
-    Whenever you teleport, you drift between your plane and the Astral Plane for 1 round.
-    During this time, all attacks against you 20\% failure chance.
-    In addition, objects you create and creatures you summon have damage reduction against all damage equal to your spellpower.
+    \begin{feat}{Celestial Heritage}{Bloodline, Magical}
+        \featpre Non-evil alignment
+        \featben
 
-    \feat{Controlling Wild Speech}{Class, Magical}
-    \featpres Druid or ranger level 5, wild speech ability.
-    \featben  As a standard action, you can make a Nature power vs. Mental attack against one animal or object you are communicating with using your wild speech ability.
-    This consumes a use of your wild speech ability.
-    Success means the target is \charmed by you for the duration of the conversation, and for 5 rounds thereafter.
-    Failure has no effect.
-    This is a \glossterm{Subtle} effect, which means the target is unlikely to notice the attempt at mental influence.
-    It is also not a \glossterm{Mind} effect, and can affect objects and elemental forces that the druid can use her wild speech to converse with.
-    The attack automatically critically succeeds against non-intelligent objects.
+        \ff[1]{Celestial Power} Your \glossterm{power} with abilities from this feat is equal to your Willpower or your level, whichever is higher.
 
-    At druid or ranger level 11, critical success means the target is charmed permanently.
-    This effect can only be broken by another druid or ranger using this ability.
-    If they charm the target in this way, the target stops being charmed by you.
+        \ff[1]{Holy Blessing} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spelleffect The target gains a \plus2d bonus to damage with all attacks.
+                \spelldur Attunement
+                \spelltags{\glossterm{Good}, \glossterm{Magical}}
+            \end{spelleffects}
+        \end{ability}
 
-    At druid or ranger level 15, you can choose for the target to be \dominated by you instead of charmed.
-    This is not a Subtle effect, and critical success has no effect if you choose this option.
+        \ff[3]{Holy Protection} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spelleffect The target gains damage reduction equal to your celestial power against \glossterm{Evil} physical effects, and physical attacks made by evil creatures.
+                \spelltags{\glossterm{Good}, \glossterm{Magical}}
+            \end{spelleffects}
+        \end{ability}
 
-    At druid or ranger level 19, if you choose for the target to be dominated and get a critical success, it is dominated by you permanently.
-    As with charming, if another druid or ranger dominates the target with this ability, it stops being dominated by you.
+        \ff[5]{Angel Wings} You gain feathery wings that sprout from your back.
+        You can use these wings to glide at a rate equal to your land speed (see \pcref{Gliding}).
+        The wings themselves are \glossterm{mundane}, but the ability to glide and fly with them is \glossterm{magical}.
 
-    \feat{Counterattack}{Combat, Style}
-    \featpres 5th level, Dexterity 6.
-    \featben Whenever a creature misses you with a physical melee attack, you can make a \glossterm{strike} against that creature as an \glossterm{immediate action}.
+        \ff[7]{Complete Protection} The damage reduction from your \textit{holy protection} ability also applies against non-physical effects.
 
-    At 7th level, you gain a \plus2 bonus to damage with strikes made using this feat.
+        \ff[9]{Empowered Blessing} The damage bonus from your \glossterm{holy blessing} ability increases to \plus3d.
 
-    At 11th level, if you have Dexterity 9, you can make one strike per round with this feat without spending an action.
+        \ff[11]{Angelic Flight} Your \textit{angel wings} grant you a fly speed equal to your land speed.
+        While \unencumbered, you can fly (see \pcref{Flying}).
+        You can only fly for a number of rounds equal to half your celestial power.
+        After that limit is reached, you must take a \glossterm{short rest} before flying again.
 
-    At 15th level, if you have Dexterity 12, you can also use this ability if a creature hits you with a physical melee attack.
+        \ff[13]{Holy Retribution} Whenever an evil creature makes a physical melee attack against the creature protected by your \textit{retributive protection} ability, you make a celestial power vs. Mental attack against the attacking creature.
+        Success means the attacker takes 1d4 divine damage \plus1d per celestial power.
 
-    \stylereq Wield a melee weapon.
-    \parhead{Special} This is a Style feat, and all of its effects only apply while you are in this style.
-    For details, see \pcref{Style Feats}.
+        \ff[15]{Empowered Blessing, Greater} The damage bonus from your \glossterm{holy blessing} ability increases to \plus4d.
 
-    \feat{Counterspell}{Magical, Spell}
-    \featpres 5th level, 2nd level spells, Spellcraft 6 ranks.
-    \featben As a standard action, you can prepare to counterspell a creature within \rngmed range of you.
-    If that creature casts a spell during the same phase, you can make a Spellcraft check to identify the spell as normal (see \pcref{Spellcraft}).
-    After attempting to identify the spell, you may cast any spell you know as a counterspell.
-    You do not have to identify the spell successfully to counterspell it.
-    The spell you cast does not have its normal effect.
+        \ff[17]{} % another augment?
 
-    If you cast the same spell as your target, regardless of any augments applied, the target miscasts its spell.
-    If you cast a different spell, but one from the same spell school or with all \glossterm{ability tags} that the target's spell has, and your spell is of the same spell level or higher, you and your target make opposed spellpower checks.
-    If you win, the target miscasts its spell.
-    If you fail the spellpower check, if your spell is of a different spell school, or if your spell is lower level, the target's spell takes effect normally.
+        \ff[19]{Angelic Flight, Greater} You no longer have a limit on how long you can fly with your \textit{angelic flight} ability.
+    \end{feat}
 
-    At 7th level, you can choose to completely negate the effects of spells you counter rather than causing them to be miscast.
+    \begin{feat}{Reaper}{Combat}
+        \spelldesc{You can attack with such force that you cleave through your foes.}
+        \featpre Starting Strength of 2.
 
-    At 11th level, if you can cast 4th level spells and have 8 ranks in Spellcraft, your spell does not need to have the same school or ability tags as the target's spell to force a spellpower check.
+        \ff[1]{Sweeping Strike} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spelltwocol{\spellarea{Up to three contiguous squares}}{\spellrng{Threatened}}
+                \spelltgts{Everything in the area}
+                \spellspecial Choose one or two melee weapons you are wielding that deal slashing or bludgeoning damage.
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spelleffect You make a melee \glossterm{strike} against the target with the chosen weapon or weapons.
+                You take a \minus1d penalty to damage with the strike.
+            \end{spelleffects}
+        \end{ability}
 
-    At 15th level, if you can cast 6th level spells and have 10 ranks in Spellcraft, you may counter up to five creatures within \rngmed range of you at once.
-    You may still cast only one spell, but it is used to counter the spells cast by all of your targets.
-    You make a single roll to determine your spellpower check result, and each target makes their own independent roll to oppose yours.
+        \ff[2]{Cleave} Whenever you get a \glossterm{critical hit} with a strike using a slashing or bludgeoning weapon, you can take an \glossterm{immediate action} to make another strike with the same weapon.
+        The target of the new strike must be adjacent to the struck creature.
+        You may continue making additional strikes as long as you keep getting critical hits.
+        However, you may not attack the same creature more than once.
 
-    \parhead{Special}
-    Spell augments affect the spell level of the spell being cast as normal, making augmented spells slightly more difficult to counterspell.
-    The \spell{dispel magic} spell can be used to counter any spell, even higher level spells.
+        \ff[4]{Reaping Charge} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spelltgts{Special; see below}
+                \spellspecial Choose one or two melee weapons you are wielding that deal slashing or bludgeoning damage.
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spelleffect You move up to half your movement speed in a straight line.
+                Choose either the right or left side of the line.
+                You can make a \glossterm{strike} against each creature and object on that side of the line that you threaten at any point during your movement.
+                You take a \minus2d penalty to damage on the strike.
+            \end{spelleffects}
+        \end{ability}
+
+        \ff[6]{Spinning Cleave} When you use your \textit{cleave} ability, the target of your additional attack does not have to be adjacent to the struck creature.
+
+        \ff[8]{Wide Sweep} When you use your \textit{sweeping strike} ability, you can target up to five contiguous squares you threaten.
+
+        \ff[10]{Reaping Whirlwind} When you use your \textit{reaping charge} ability, you do not have to choose a side of the line.
+        You can attack any creatures and objects that you threaten at any point during your movement.
+
+        \ff[12]{Mobile Cleave} When you use your \textit{cleave} ability, you can move up to half your movement speed before making the strike.
+        This movement counts against your normal movement limit in that phase.
+
+        \ff[14]{Reaping Charge, Greater} You can move up to your full movement speed when you use your \textit{reaping charge} ability, rather than half your movement speed.
+
+        \ff[16]{Whirlwind Sweep} When you use your \textit{sweeping strike} ability, you can target any number of contiguous squares you threaten.
+
+        \ff[18]{Reap the Harvest} When you use your \textit{reaping charge} or and \textit{sweeping strike} abilities, if every creature you attacked is dead at the end of the round, you regain the action point spent to use the ability.
+
+    \end{feat}
+
+    \begin{feat}{Climb Specialization}{Skill}
+        \featpre Climb as a mastered skill.
+        \featben
+
+        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Climb.
+
+        \ff[2]{Damage Tolerance} Taking damage while climbing does not force you to make an additional Climb check to avoid falling.
+
+        \ff[4]{Climb Speed} You gain a \glossterm{climb speed} equal to half your land speed.
+        A successful Climb check to move allows you to travel a distance equal to your climb speed.
+
+        \ff[6]{Scale the Beast}
+        You gain a \plus2 bonus to Climb attacks you make to climb on other creatures (see \pcref{Creature Climb}).
+        In addition, you gain a \plus1 bonus to accuracy with physical attacks against creatures you are climbing on.
+
+        \ff[8]{Specialization} The bonus to Climb increases to \plus3.
+
+        \ff[10]{Climb Speed, Greater} Your climb speed increases to be equal to your land speed.
+
+        \ff[12]{Impossible Climber} You can climb surfaces that are perfectly smooth.
+        The DR is 30 for perfectly smooth vertical surfaces, and 40 to climb on a perfectly smooth ceiling.
+        In addition, you are treated as one size category smaller than normal for the purpose of determining which creatures you can climb on.
+
+        \ff[14]{Scale the Beast, Greater} The bonus to Climb attack to climb on creatures increases to \plus4.
+        In addition, the bonus to physical accuracy against creatures you are climbing on increases to \plus2.
+
+        \ff[16]{Specialization, Greater} The bonus to Climb increases to \plus4.
+
+        \ff[18]{Impossible Climber, Greater} You can wallrun on ceilings in the same way you wallrun on walls.
+        In addition, the size category decrease for the purpose of climbing on creatures improves to two size categories smaller than normal.
+    \end{feat}
+
+    % Is this interesting enough to be a feat?
+    \begin{feat}{Compact Combatant}{Combat}
+        \featpre Starting Dexterity of 2.
+        \featben
+
+        \ff[1]{Constraint Tolerance, Lesser} You reduce your penalties to accuracy and defenses for \glossterm{squeezing} by 2.
+        In addition, you reduce your penalty for attacking with non-light weapons in a grapple by 2.
+
+        \ff[4]{Rapid Squeeze} Your movement speed is not reduced while squeezing.
+
+        \ff[6]{Constraint Tolerance} The penalty reduction for squeezing and grappling increases to 3.
+
+        \ff[12]{Constraint Tolerance, Greater} The penalty reduction for squeezing and grappling increases to 4.
+        This normally allows you to ignore all penalties for squeezing and attacking with non-light weapons in a grapple.
+    \end{feat}
+
+    \begin{feat}{Combat Mobility}{Combat, Mobility}
+        \featpre Starting Dexterity of 2.
+        \featben
+
+        \ff[1]{Unfettered Movement, Lesser} During each phase, you may move through one creature's space during movement.
+        You move at half speed while in its space.
+        After moving through that creature's space, other creatures block you as normal for the remainder of your movement.
+        Certain unusual creatures that occupy their entire space, such as gelatinous cubes, may be immune to this ability.
+
+        \ff[2]{Spring Attack} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        If you do, move up to your movement speed and make a \glossterm{strike}.
+        As a \glossterm{delayed action}, you may continue moving if you have remaining movement available in the phase.
+
+        \ff[8]{Unfettered Movement} Moving through spaces occupied by creatures does not reduce your movement speed.
+
+        \ff[14]{Unfettered Movement, Greater} You can move through the spaces of any number of creatures in the same phase, rather than just one creature.
+    \end{feat}
+
+    \begin{feat}{Conjurer}{Magical, Spell}
+        \featpre \glossterm{Conjuration} spell known.
+        \featben
+
+        \ff[1]{Astral Spirit} When you cast the \glossterm{summon monster} spell, you can manifest an astral spirit instead of an animal.
+        An astral spirit is a floating, spirit-like creature with a translucent body.
+        Its size is Medium, and it is vaguely humanoid in shape.
+        It has a physical form, and occupies space like any other creature.
+
+        An astral spirit does not have a land speed, but it has a 30 foot \glossterm{fly speed} with good maneuverability.
+        In addition, it can teleport any distance as a move action as long as its destination is within \rngmed range of you.
+        If an astral spirit hits with its strike, it deals arcane damage.
+
+        \ff[3]{Astral Spell Transit, Lesser} Your attacks with spells ignore \glossterm{cover}, but not \glossterm{total cover}.
+
+        \ff[5]{Fortified Manifestations} Objects and creatures you create with \glossterm{Manifestation} abilities have additional hit points equal to your spellpower.
+
+        \ff[7]{Astral Echo} Whenever you teleport, you drift between your plane and the Astral Plane until the end of the next round.
+        During this time, all attacks against you have a 20\% failure chance.
+
+        \ff[9]{Regenerating Manifestations} Whenever you cast a spell, objects and creatures you have created with \glossterm{Manifestation} abilities heal hit points equal to your spellpower.
+
+        \ff[11]{Astral Spell Transit} You double the range of all spells you cast.
+        In addition, all \glossterm{Teleportation} spells you cast can teleport twice their normal distance.
+
+        \ff[13]{Sustained Manifestations} Once per round, when you cast or sustain a spell, you can also sustain a \glossterm{Manifestation} spell as a \glossterm{free action}.
+
+        \ff[15]{Fortified Manifestations, Greater} Objects and creatures you create with \glossterm{Manifestation} abilities have damage reduction equal to your spellpower.
+
+        \ff[17]{Astral Spell Transit, Greater} When determining whether you have \glossterm{line of effect} to a particular location with a spell, you can ignore a single solid obstacle up to five feet thick.
+        This can allow you to cast spells through solid walls, though it does not grant you the ability to see through the wall.
+
+        \ff[19]{Astral Echo, Greater} You constantly drift between your plane and the Astral Plane.
+        All attacks against you have a 20\% failure chance.
+        You can suppress or resume this ability as a \glossterm{swift action}.
+        In addition, whenever you teleport, your connection to the Astral Plane is strengthened until the end of the next round.
+        During this time, all attacks against you have a 50\% failure chance.
+    \end{feat}
+
+    \begin{feat}{Duelist}{Combat}
+        \featpre Starting Dexterity of 1, starting Intelligence of 1.
+        \featben
+
+        \ff[1]{Parry} Whenever a creature \glossterm{initiates} a \glossterm{strike} against you, you can take an \glossterm{immediate action} to attempt to parry its attack.
+        If you do, you gain a \plus2 bonus to physical defenses against the attack.
+
+        \ff[2]{Defensive Stance} As a \glossterm{swift action}, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{One creature}{\rngmed}
+                \spellspecial You can change the target of this ability to a new creature within range as a \glossterm{swift action}.
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spelleffect You gain a \plus2 bonus to physical defenses against the target.
+                \spelldur Attunement
+            \end{spelleffects}
+        \end{ability}
+
+        \ff[4]{} 
+
+        \ff[6]{Overwhelm Tolerance} Your \textit{defensive stance} ability prevents you from suffering \glossterm{overwhelm penalties} against attacks from the target creature.
+
+        \ff[8]{Riposte} Whenever you use your \textit{parry} ability, you can spend an \glossterm{action point}.
+        If you do, you \glossterm{initiate} a \glossterm{strike} against the attacking creature.
+
+        \ff[10]{Focused Defense} You gain a \plus1 bonus to physical defenses against attacks you do not suffer \glossterm{overwhelm penalties} on.
+
+        \ff[14]{Rapid Parry} Once per round, you can \textit{parry} an attack without spending an immediate action.
+    \end{feat}
 
     \feat{Covering Fire}{Combat, Style}
     \featpres Perception 3.
@@ -607,230 +742,283 @@ Feats can be used to specialize your character particular area, to grant your ch
     \stylereq Make a physical ranged attack each round.
     \parhead{Special} This is a Style feat, and all of its effects only apply while you are in this style.
 
-    \feat{Craft Magic Item}{Magical, Skill}
-    \featpre Craft (any) 4 ranks.
-    \featben You can imbue items with magic using your crafting skill.
-    Imbuing an item with magic takes material components, as described in \pcref{Magic Item Creation}.
-    It takes you one hour per 2 gp of material components to create a item.
+    \begin{feat}{Craft Specialization}{Skill}
+        \featpre Craft (any) as a mastered skill.
+        \featben
+    
+        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to all Craft skills.
+    
+        \ff[2]{Craft Magic Item}[Magical] You can imbue items with magic using your crafting skill.
+        Imbuing an item with magic takes material components, as described in \pcref{Magic Item Creation}.
+        It takes you one hour per 10 gp of material components to create a item.
 
-    When you gain this feat, you choose three ability tags (see \pcref{Ability Tags}).
-    You know how to craft items with those ability tags.
+        You can also mend a broken magic item if it is one that you could make.
+        Doing so costs a tenth of the raw materials and a quarter of the time it would take to craft that item in the first place.
+        You cannot mend a \glossterm{destroyed} magic item.
 
-    You can also mend a broken magic item if it is one that you could make.
-    Doing so costs a tenth of the raw materials and a quarter of the time it would take to craft that item in the first place.
-    You cannot mend a destroyed magic item.
+        \ff[4]{Crafting Savant} You gain two additional \glossterm{skill points} which must be spent on Craft skills.
 
-    At 3rd level, it takes you one hour per 10 gp of material components to create a magic item. % 125-600 gp materials, so 12.5-60 hours to craft
+        \ff[6]{Rapid Creation} Crafting magic items takes you one hour per 100 gp of material components.
 
-    At 7th level, if you have 6 ranks in any Craft skill, you can craft items from an additional ability tag of your choice.
-    In addition, it takes you one hour per 100 gp of material components to create a magic item. % 900-3250 gp mats, 9-32 hrs
+        \ff[8]{Specialization} The bonus to Craft skills increases to \plus3.
 
-    At 11th level, if you have 8 ranks in any Craft skill, you can craft items from an additional ability tag of your choice. In addition, it takes you one hour per 500 gp of material components to create a magic item. % 5000-18500 gp, 10-37 hrs
+        \ff[10]{Rapid Creation} Crafting magic items takes you one hour per 500 gp of material components.
 
-    At 15th level, if you have 10 ranks in any Craft skill, it takes you one hour per 2,500 gp of material components to create a magic item. % 27500-200000 gp, 11-80 hrs
+        \ff[12]{Crafting Savant, Greater} You gain two additional \glossterm{skill points} which must be spent on Craft skills.
 
-    \feat{Craft Mastery}{Skill}
-    \featpre Craft (any) 6 ranks.
-    \featben Whenever you make a Craft check, you may roll twice and take the higher result.
+        \ff[14]{Rapid Creation} Crafting magic items takes you one hour per 2,500 gp of material components.
 
-    At 3rd level, as long as you have mastered one Craft skill, you treat all Craft skills you were trained in as if you had mastered them.
-    This grants you additional skill ranks and increases your check modifier as normal for mastering a skill.
-    However, you cannot use these additional ranks to qualify for any feats or abilities.
+        \ff[16]{Specialization, Greater} The bonus to Craft skills increases to \plus4.
 
-    At 7th level, if you have 10 ranks in Craft, you gain a \plus5 bonus to Craft checks.
+        \ff[18]{Rapid Creation} Crafting magic items takes you one hour per 12,500 gp of material components.
+    \end{feat}
 
-    At 11th level, if you have 14 ranks in Craft, \tdash.
+    \begin{feat}{Creature Handling Specialization}{Skill}
+        \featpre Creature Handling as a mastered skill.
+        \featben
 
-    \feat{Creature Handling Mastery}{Skill}
-    \featpre Creature Handling 6 ranks.
-    \featben Whenever you make a Creature Handling check, you may roll twice and take the higher result.
+        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Creature Handling.
 
-    At 3rd level, you no longer take a penalty when using Creature Handling on non-animals.
+        \ff[2]{Sustained Pacify} You can sustain the \textit{pacify} ability from the Creature Handling skill as a swift action, rather than as a standard action (see \pcref{Pacify}).
 
-    At 7th level, if you have 10 ranks in Creature Handling, you gain a \plus5 bonus to Creature Handling checks.
+        \ff[4]{Compressed Training} You can teach a creature a trick with 12 hours of work, split as you choose, rather than in a week of 4 hour sessions (see \pcref{Training Creatures}).
 
-    At 11th level, if you have 14 ranks in Creature Handling, you can pacify and push creatures as a swift action.
-    In addition, when training a creature, if your check result is 30 or higher, you can train it in only a hour.
-    The creature remembers the trick just as if you had spent the full amount of time training it.
+        \ff[6]{Species Tolerance} You reduce Creature Handling DR modifiers for handling non-animals by 2.
 
-    \feat{Deadly Aim}{Combat, Style}
-    \featpres 5th level, Perception 6.
-    \featben You gain a \plus2 bonus to damage with physical ranged attacks.
+        \ff[8]{Specialization} The bonus to Creature Handling increases to \plus3.
+        In addition, you can train creatures to learn one bonus trick beyond their normal maximum (see \pcref{Bonus Tricks}).
 
-    At 7th level, this bonus increases to \plus3.
+        \ff[10]{Battleforged Training} You can teach a creature the Battleforged trick.
+        The DR to train the trick is 20.
+        A creature with the trick gains the following benefits:
+        \begin{itemize}
+            \item Its maximum hit points increase by an amount equal to its level.
+            \item It gains a \plus1 bonus to accuracy with all attacks.
+            \item It gains a \plus1d bonus to damage with \glossterm{strikes}.
+        \end{itemize}
 
-    At 11th level, if you have 9 Perception, this bonus increases to \plus4.
+        \ff[12]{Rapid Pacify} You can use the \textit{pacify} ability from the Creature Handling skill as a swift action, rather than as a standard action.
 
-    At 15th level, if you have 12 Perception, this bonus increases to \plus5.
+        \ff[14]{Species Tolerance, Greater} The reduction of DR modifiers for handling non-animals increases to 5.
+        This usually allows you to ignore penalties for working with non-animals.
 
-    At 19th level, if you have 15 Perception, this bonus increases to \plus6.
-    \stylereq Wield a ranged weapon.
-    \parhead{Special} This is a Style feat, and all of its effects only apply while you are in this style.
-    For details, see \pcref{Style Feats}.
+        \ff[16]{Specialization, Greater} The bonus to Creature Handling increases to \plus4.
+        In addition, the number of bonus tricks you can train creatures to learn increases to two.
 
-    \feat{Defensive Fighting}{Combat, Style}
-    \featben While in this style, you gain a \plus2 bonus to your \glossterm{physical defenses}.
-    In exchange, you take a \minus2 penalty to damage with physical attacks (to a minimum of 1).
+        \ff[18]{Battleforged Training, Greater} You can teach a creature that has learned the Battleforged trick the Greater Battleforged trick.
+        The DR to train the trick is 30.
+        A creature with the trick gains the following benefits, which replace the benefits of the Battleforged trick:
+        \begin{itemize}
+            \item Its maximum hit points increase by an amount equal to twice its level.
+            \item It gains a \plus2 bonus to accuracy with all attacks.
+            \item It gains a \plus2d bonus to damage with \glossterm{strikes}.
+        \end{itemize}
+    \end{feat}
 
-    At 3rd level, the defense bonus increases to \plus1.
+    \begin{feat}{Sniper}{Combat}
+        \featpre Starting Perception of 2.
+        \featben
 
-    At 7th level, the damage penalty is reduced to \minus1.
+        \ff[1]{Aim} As a standard action, you can use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{One creature or object}{Line of sight}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spelleffect You gain a \plus2 bonus to accuracy on \glossterm{strikes} against that target.
+                \spelldur Sustain (swift). If you lose sight of the target for a full round, this effect ends.
+            \end{spelleffects}
+        \end{ability}
 
-    At 11th level, the damage penalty is removed.
-    \stylereq Wield a melee weapon. You must make a physical melee attack or take the total defense action each round.
-    \parhead{Special} This is a Style feat, and all of its effects only apply while you are in this style.
-    For details, see \pcref{Style Feats}.
+        \ff[2]{Penetrating Aim} Your physical ranged attacks ignore \glossterm{cover}, except total cover.
 
-    \feat{Deflect Arrows}{Combat}
-    \featpres Dexterity 3.
-    \featben Whenever you are hit by a ranged \glossterm{strike}, you may deflect it as a \glossterm{immediate action}.
-    If you do, the attack automatically misses.
-    You must have a free hand and be aware of the attack.
-    Objects of your size or larger cannot be deflected in this way.
+        \ff[4]{Distance Tolerance, Lesser} You reduce your accuracy penalties from \glossterm{range increments} by 2.
 
-    At 3rd level, you can choose to catch the object in your hand instead of deflecting it.
-    If you do, you can throw the object back as part of the same action.
-    You make a thrown weapon strike, using any normal modifiers that would apply to a thrown attack with the object.
+        \ff[6]{Sniper Shot} You gain a \plus2d bonus to damage on \glossterm{strikes} against \unaware creatures that are affected by your \textit{aim} ability.
 
-    At 7th level, if you have 6 Dexterity, you can automatically catch or deflect one strike per round without spending an action.
-    You can still spend an immediate action to catch or deflect an additional object, if you still have a free hand.
-    You cannot throw an object back as part of this free deflection.
+        \ff[8]{Failure Tolerance} You ignore effects that give you a 20\% miss chance or failure chance with physical ranged attacks, such as \glossterm{concealment}.
 
-    At 11th level, if you have 9 Dexterity, you can automatically catch or deflect two objects per round without spending an action.
-    In addition, if you have 9 Strength, you can catch or deflect objects of your size category with this feat.
+        \ff[10]{Distance Tolerance} The reduction in accuracy penalties for range increments increases to 4.
 
-    \feat{Destructive}{Combat}
-    \featpres Strength 3.
-    \featben Your physical attacks ignore an amount of hardness and damage reduction equal to half your Strength.
+        \ff[12]{Sustained Aim} You can sustain your \textit{aim} ability as a \glossterm{free action}.
 
-    At 3rd level, you gain a \plus1 bonus to damage with physical attacks.
+        \ff[14]{Sniper Shot, Greater} The bonus to damage increases to \plus4d.
 
-    At 7th level, if you have 6 Strength, the hardness and damage reduction ignored by your physical attacks increases to be equal to your Strength.
+        \ff[16]{Distance Tolerance, Greater} The reduction in accuracy penalties for range increments increases to 6.
 
-    At 11th level, if you have 9 Strength, your bonus to damage increases to \plus2.
+        \ff[18]{Rapid Aim} You can spend a \glossterm{action point} to use your \textit{aim} ability as a \glossterm{swift action}.
+    \end{feat}
 
-    % At 15th level, if you have 12 Strength, you ignore all hardness and damage reduction with physical attacks.
+    \begin{feat}{Devices Specialization}{Skill}
+        \featpre Devices as a mastered skill.
+        \featben
 
-    \feat{Devastating Magic}{Magical, Spell}
-    \featpre 13th level, 6th level spells.
-    \featben You gain a bonus to damage and healing with all spells equal to the number of dice you would roll for that spell's damage or healing.
-    If no dice would be rolled for a spell, you instead gain a \plus2 bonus to damage or healing.
-    This does not affect your accuracy or any other aspects of the spell.
+        \ff[1]{Specialization, Lesser}[Magical] You gain a \plus2 bonus to Devices.
 
-    At 19th level, if you have 8th level spells, this bonus increases to be equal to twice the number of dice you would roll.
-    If no dice would be rolled for a spell, the bonus instead increases to \plus4.
+        \ff[2]{Rapid Improvisation} As a standard action, you can spend an \glossterm{action point} to use the \textit{improvise} ability to create a device (see \pcref{Improvise}).
 
-    \feat{Device Mastery}{Skill}
-    \featpre Devices 6 ranks.
-    \featben Whenever you make a Devices check, you may roll twice and take the higher result.
+        \ff[4]{Steady Hands} You cannot \glossterm{critically fail} on Devices checks.
+        If you would critically fail, you simply fail instead, and suffer the normal penalties for non-critical failure.
 
-    At 3rd level, \tdash.
+        \ff[6]{Disable Arcana, Lesser}[Magical] You can disable arcane spell effects on objects or areas as if they were merely complex devices.
+        You must be aware of an effect to disable it, either through the Spellcraft skill or because the effect is noticeable.
+        You cannot disable effects on creatures.
+        The DR to disable an effect is equal to 15 \add the effect's \glossterm{power}.
+        Success means the spell is \glossterm{dispelled}.
+        This has no effect on abilities that cannot be dispelled.
 
-    At 7th level, if you have 10 ranks in Devices, you gain a \plus5 bonus to Devices checks.
+        \ff[8]{Specialization} The bonus to Devices increases to \plus3.
 
-    At 11th level, if you have 14 ranks in Devices, you can disable spell effects on objects or areas as if they were merely complex devices.
-    You can make a Devices check against an active spell effect within your reach.
-    The DR to dispel the effect is equal to 20 \add the spell's spellpower, and the result must be at least 30.
-    Success means the spell is dispelled.
-    \magical
+        \ff[10]{Improbable Improvisation} You reduce the DR for using the \textit{improvise} ability to make devices from unsuitable materials by 5.
 
-    You must be aware of a spell to disable it, either through the Spellcraft skill or because the effect is noticeable.
-    You cannot disable spell effects on creatures.
+        \ff[12]{Disable Arcana}[Magical] You can disable spell effects from any source, not just arcane spell effects.
 
-    \feat{Disguise Mastery}{Skill}
-    \featpre Disguise 6 ranks.
-    \featben Whenever you make a Disguise check, you may roll twice and take the higher result.
+        \ff[14]{Durable Improvization} Devices you create with the \textit{improvise} ability last for twice as many uses before they break.
 
-    At 3rd level, your disguises can change how Divination spells perceive a creature.
-    When you make a Disguise check, you can decide how that creature and any items on the creature appear when examined by divination spells.
-    For example, you could cause all of its equipment to appear nonmagical, or you could cause it to have a strong aura of good when examined with \spell{detect good}.
-    You cannot create an aura of overwhelming strength with this skill.
-    Anyone using divination magic on the creature must make a spellpower check with a DR equal to your Disguise check result in order to perceive the truth.
-    Regardless of the result of the check, the caster is not aware that the check was made.
-    \magical
+        \ff[16]{Specialization, Greater} The bonus to Devices increases to \plus4.
 
-    At 7th level, if you have 10 ranks in Disguise, you gain a \plus5 bonus to Disguise checks.
+        \ff[18]{Disable Arcana, Greater}[Magical] You can disable all magical effects on objects or areas, not just spell effects.
+    \end{feat}
 
-    At 11th level, you can disguise yourself in seemingly impossible ways.
-    You can disguise yourself as larger or smaller size categories.
-    The DR of the Disguise check increases by 20 per size category different from your own.
-    This does not actually change the space you occupy, your \glossterm{reach}, or the size of space you can squeeze through, but creatures fooled by the disguise treat you as if your space and reach were appropriate to your disguised size.
-    \magical
+    \begin{feat}{Disguise Specialization}{Skill}
+        \featpre Disguise as a mastered skill.
+        \featben
 
-    \feat{Distant Magic}{Magical, Spell}
-    \featpre 5th level, 2nd level spells.
-    \featben If you cast a ranged spell using a spell slot one level higher than normal, its range is doubled.
-    This can only be applied to spells with a range of \rngclose, \rngmed, \rnglong, or \rngext.
+        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Disguise.
 
-    At 7th level, you can cast a spell with a 5 foot range, or a range of Touch, using a spell slot two levels higher than normal.
-    If you do, the spell's range becomes 30 feet.
-    If the spell had a range of Touch, you must succeed at a Spellpower vs. Reflex attack against the spell's targets.
+        \ff[2]{Quick Change} As a standard action, you can spend an \glossterm{action point} to use the \textit{disguise creature} or \textit{emulate creature} ability.
 
-    At 11th level, you double the range of all ranged spells you cast.
-    If you use a spell slot one level higher than normal, the range is tripled, not quadrupled.
+        \ff[4]{Disguise Aura}[Magical] Whenever you use the \textit{disguise creature} or \textit{emulate creature} abilities, you can decide how the target and any items on the target appear when examined by \glossterm{Divination} spells.
+        For example, you could cause all of their equipment to appear nonmagical, or you could cause them to have a strong aura of good when examined with the \spell{detect alignment} spell.
+        % Will this spell still exist?
+        The maximum \glossterm{power} you can emulate is equal to your Disguise check result \minus15.
 
-    \feat{Diviner}{Magical, Spell}
-    \spelldesc{You have great talent with Divination spells.}
-    \featpre 1st level or higher \glossterm{Divination} spell known.
-    \featben You gain a \plus2 bonus to Awareness, and Knowledge attacks and checks.
+        Anyone using divination magic on the creature must make a spellpower check with a DR equal to your Disguise check result in order to perceive the truth.
+        Regardless of the result of the check, the caster is not aware that the check was made.
 
-    At 3rd level, you double the range of all \glossterm{Scrying} spells you cast.
-    In addition, once per round you can concentrate on \glossterm{Detection} spell you cast as a \glossterm{free action}.
+        \ff[6]{Mismatch Tolerance} You reduce Disguise penalties for differences between the target's normal appearance and its intended appearance by 2.
+        This allows you to ignore minor mismatches, such as if the target is a different gender than its intended appearance.
 
-    At 7th level, if you know a 2nd level or higher Divination spell, your Divination spells are more powerful.
-    You can cast Divination spells as if they were one level lower than their actual level (minimum 1).
-    This does not stack with spell level reductions from other feats.
+        \ff[8]{Specialization} The bonus to Disguise increases to \plus3.
 
-    At 11th level, if you know a 4th level or higher Divination spell, you have a precognitive sense that warns you of attacks.
-    You are aware of all attacks against you, even those you cannot see, as long as you are conscious.
-    This allows you to use some certain abilities to defend yourself, and prevents you from being \unaware.
+        \ff[10]{Disguise Size}[Magical] As a \glossterm{standard action}, you can spend an action point to use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spelltgt{You}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spelleffect You increase or decrease your size by one \glossterm{size category}.
+                \spelldur Attunement
+            \end{spelleffects}
+        \end{ability}
 
-    \feat{Draconic Apotheosis}{Bloodline}
-    \featpres 9th level, Draconic Heritage.
-    \featben Your draconic heritage has developed into its full potential.
-    You gain scaly wings that sprout from your back.
-    You can use these wings to glide at a rate equal to your land speed (see \pcref{Gliding}).
-    The wings themselves are physical, but the ability to glide and fly with them is \glossterm{magical}.
-    In addition, your breath weapon no longer has a delay before it can be used again.
+        \ff[14]{Mismatch Tolerance, Greater} The reduction of Disguise penalties for appearance differences increases to 5.
+        This can allow you to ignore significant appearance differences.
 
-    At 11th level, the size of your breath weapon increases.
-    A line breath weapon becomes a \areahuge, 10 ft.\ wide line, and a cone breath weapon becomes a \arealarge cone.
-    In addition, your wings improve, granting you a fly speed equal to your land speed.
-    While \unencumbered, you can fly (see \pcref{Flying}).
-    You can only fly for a number of rounds equal to half your draconic power.
-    After that limit is reached, you must rest for 5 minutes before flying again.
+        \ff[16]{Specialization, Greater} The bonus to Disguise increases to \plus4.
+    \end{feat}
 
-    At 15th level, your natural weapons gain an automatic enhancement bonus equal to one quarter of your draconic power. \magical
+    \begin{feat}{Diviner}{Magical, Spell}
+        \featpre \glossterm{Divination} spell known.
+        \featben
 
-    At 19th level, you can fly for a number of minutes equal to half your celestial power before resting. \magical
+        \ff[1]{Prophesy} As a \glossterm{standard action}, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelleffects}
+                \spellspecial The scope of this ability is limited to the next hour.
+                This time period is called the \textit{time of prophecy}.
+                When you use this ability, you visualize an action that a creature (or group of creatures) could take within the \textit{time of prophecy}.
+                \spelleffect You see a brief, cryptic vision describing the most likely outcome of the action you visualized.
+                This vision does not reveal any consequences that might occur after the \textit{time of prophecy} has ended.
 
-    \feat{Draconic Heritage}{Bloodline}
-    \featben You have the blood of a dragon in your veins.
-    When you take this feat, choose a type of dragon.
-    You gain damage reduction equal to twice your draconic power against the damage type that dragon's breath weapon deals.
-    Your draconic power is equal to your level, your spellpower with arcane spells, or your Constitution, whichever is higher.
-    A list of dragons and their associated damage type is given in \trefnp{Dragon Types}.
+                The vision does not have to be a literally accurate representation of the future.
+                For example, if you used this ability to foresee the results of entering a room that had a group of creatures waiting in ambush, you might see a vision of flashing daggers in darkness darting towards your exposed back, regardless of whether the creatures would actually use daggers to attack.
 
-    In addition, your eyes begin to match the keen senses of dragons, granting you \glossterm{low-light vision}.
-    If you already have low-light vision, you double the benefit, allowing you to quadruple the illumination range of light sources.
-    Visible draconic scales, colored appropriately for your chosen dragon, grant you a \plus1 bonus to Armor defense.
+                After using this ability, you cannot use it again until the \textit{time of prophecy} has ended, regardless of whether the action was taken.
+            \end{spelleffects}
+        \end{ability}
 
-    At 3rd level, your voice deepens and becomes more draconic, granting you a \plus2 bonus to Intimidate and Persuasion checks.
-    Your eyes continue to adapt, granting you \glossterm{darkvision} (50 ft.), or increasing the range of your existing darkvision by 50 feet.
-    In addition, you gain bite and claw natural weapons as your extremities shape into a more draconic form (see \pcref{Natural Weapons}).
+        \ff[3]{Precognitive Reaction, Lesser} You gain a \plus1 bonus to Reflex defense.
+        In addition, you gain a \plus2 bonus to \glossterm{initiative} checks.
 
-    At 7th level, you gain a breath weapon based on your chosen type of dragon.
-    The shape of the breath weapon is given on \trefnp{Dragon Types}: a burst in either a line or a cone.
-    A line breath weapon is an \arealarge, 5 ft.\ wide line, and a cone breath weapon is a \areamed cone.
+        \ff[5]{Deep Prophecy} When you use your \textit{prophesy} ability, you can increase the \textit{time of prophecy} to eight hours.
+        This affects both the distance you can see into the future and the time you must wait before using the ability again.
 
-    When you use your breath weapon, you make a Draconic power vs. Reflex attack against everything in the area.
-    Success deals 1d8 damage per two draconic power.
-    Failure deals half damage.
-    After using your breath weapon, you must wait 1d4 rounds before you can use it again.
+        \ff[7]{Truesight} You gain the \glossterm{truesight} ability with a 50 foot range.
 
-    At 11th level, your voice becomes still more draconic, and the bonus to Intimidate and Persuasion checks increases to \plus4.
-    In addition, your ancestral mastery of magic grants you a \plus1 bonus to spellpower with all spells.
-    The bonus to spellpower is \glossterm{magical}.
+        \ff[9]{Precognitive Reaction} The bonus to initiative checks increases to \plus4.
+        In addition, you are aware of all attacks against you, even those you cannot see, as long as you are conscious.
+        This allows you to use abilities to defend yourself, and prevents you from being \unaware.
+
+        \ff[11]{Dual Prophecy} You may use your \textit{prophesy} ability while you have an active \textit{time of prophecy}.
+        If you have two active \textit{times of prophecy}, you must wait until one has expired to use your \textit{prophesy} ability again.
+
+        \ff[13]{Truesight, Greater} The range of your \glossterm{truesight} increases to 500 feet.
+
+        \ff[15]{Flexible Prophecy} When you use your \textit{prophesy} ability, you can choose the \textit{time of prophecy} to be any five-minute increment of time, to a minimum of thirty minutes and a maximum of eight hours.
+
+        \ff[17]{Precognitive Reaction, Greater} The bonus to Reflex defense increases to \plus2, and the bonus to initiative checks increases to \plus6.
+        In addition, you can never be surprised in combat.
+        Whenever there are \glossterm{surprise phases}, you can act in them.
+
+        \ff[19]{Oracle} When you use your \textit{prophesy} ability, the maximum \textit{time of prophesy} you can choose is increased to one week.
+        In addition, you may have three active \textit{times of prophecy}, rather than two.
+    \end{feat}
+
+    \begin{feat}{Draconic Heritage}{Bloodline}
+        \featben
+
+        \ff[1]{Draconic Power} Your \glossterm{power} with abilities from this feat is equal to your level or your Constitution, whichever is higher.
+
+        \ff[1]{Draconic Ancestry} Choose a type of dragon from among the dragons on \trefnp{Dragon Types}.
+        You have the blood of that type of dragon in your veins.
+        This grants you damage reduction equal to twice your \textit{draconic power} against the damage type that dragon's breath weapon deals.
+
+        \ff[1]{Low-Light Vision} You gain \glossterm{low-light vision}.
+        If you already have low-light vision, you instead double the benefit, allowing you to quadruple the illumination range of light sources.
+
+        \ff[2]{Draconic Weapons} You gain a bite natural weapon and two claw natural weapons, one on each arm.
+        For details, see \pcref{Natural Weapons}.
+
+        \ff[2]{Darkvision} You gain \glossterm{darkvision} with a 50 foot range.
+        If you already have darkvision, you instead increase the range of your existing darkvision by 50 feet.
+
+        \ff[4]{Draconic Wings} You gain scaly wings that sprout from your back.
+        These wings grant you a glide speed equal to your land speed (see \pcref{Gliding}).
+        The wings themselves are physical, but the ability to glide with them is \glossterm{magical}.
+
+        \ff[6]{Breath Weapon} As a \glossterm{standard action}, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellspecial The area affected by this ability depends on your \textit{draconic ancestry}, as described in \trefnp{Dragon Types}.
+                \spellburst{\areamed cone or \arealarge line}
+                \spelltgts{All creatures in the area}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \begin{spellattack}{Draconic power vs. Reflex}
+                    \spellsuccess The target takes 1d6 damage \plus1d per two draconic power.
+                    The damage type depends on your \textit{draconic ancestry}, as described in \trefnp{Dragon Types}.
+                    \spellcritical As above, but double damage.
+                \end{spellattack}
+                \spellspecial After using this ability, you must wait one round before using it again.
+            \end{spelleffects}
+        \end{ability}
+
+        \ff[8]{Draconic Flight, Lesser}[Magical] 
+        As a standard action, if you are \unencumbered, you can use your draconic wings to fly with a \glossterm{fly speed} equal to your land speed.
+
+        \ff[10]{Widened Breath} The area affected by of your \textit{breath weapon} increases.
+        A line breath weapon becomes a \areahuge, 10 ft.\ wide line.
+        A cone breath weapon becomes a \arealarge cone.
+
+        \ff[12]{Draconic Weapons, Greater}[Magical] The natural weapons gain an \glossterm{enhancement bonus} equal to one quarter of your \textit{draconic power}.
+
+        \ff[14]{Draconic Flight}[Magical] You can use your \textit{draconic flight} ability to fly as a \glossterm{swift action}.
+
+        \ff[16]{Devastating Breath} The damage dealt by your \textit{breath weapon} increases by \plus1d.
+
+        \ff[18]{Draconic Flight, Greater}[Magical] You can use your \textit{draconic flight} ability to fly as a \glossterm{free action}.
+    \end{feat}
 
     \begin{dtable}
         \lcaption{Dragon Types}
@@ -850,48 +1038,54 @@ Feats can be used to specialize your character particular area, to grant your ch
         \end{dtabularx}
     \end{dtable}
 
-    \feat{Empowered Magic}{Magical, Spell}
-    \featpres 9th level, 4th level spells.
-    \featben You reduce the cost to apply the Empowered augment to all of your spells by one spell level.
-    Many spells have an Empowered augment which makes their effects stronger.
-    In addition, you gain a \plus1 bonus to spellpower.
+    \begin{feat}{Enchanter}{Magical, Spell}
+        \featpre \glossterm{Enchantment} spell known.
+        \featben
 
-    At 19th level, if you have 8th level spells, you can empower spells to reach their maximum potential.
-    If you cast a spell using a spell slot seven levels higher than normal, you do not roll dice to determine the amount of damage or healing provided by the spell.
-    Instead, treat all dice the spell would have rolled as if they had rolled their maximum value.
+        \ff[1]{Mind Fragments} When you use \glossterm{Mind} abilities, you can affect creatures with a \glossterm{mundane} immunity to \glossterm{Mind} abilities.
+        You take a \minus5 penalty to accuracy on attacks against such creatures.
+        This does not allow you to affect creatures with a \glossterm{magical} immunity to \glossterm{Mind} abilities.
 
-    \feat{Enchant Item}{Magical, Spell}
-    \featpre 1st level spells.
-    \featben You can imbue items with magic using your spells.
-    Imbuing an item with magic takes material components, as described in \pcref{Magic Item Creation}.
-    The items you can craft are limited by the schools and ability tags on spells you know.
-    It takes you one hour per 2 gp of material components to create a item.
+        \ff[3]{Mind Scour} As a \glossterm{standard action}, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{One creature}{\rngmed}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \begin{spellattack}{Spellpower vs. Mental} % Which spellpower?
+                    % No good damage type for this yet
+                    \spellsuccess The target takes \spelldamage{physical}[d6].
+                    In addition, its Mental defense is lowered by 2.
+                    This is a \glossterm{condition}, and lasts until it is removed.
+                    \spellcritical As above, but double damage, and its Mental defense is lowered by 5 instead of 2.
+                \end{spellattack}
+                \spelltags{\glossterm{Mind}}
+            \end{spelleffects}
+        \end{ability}
 
-    You can also mend a broken magic item if it is one that you could make.
-    Doing so costs a tenth of the raw materials and a quarter of the time it would take to craft that item in the first place.
-    You cannot mend a destroyed magic item.
+        \ff[5]{Subtle Influence} The DR to identify your \glossterm{Mind} abilities with Spellcraft, and to identify their effects with Sense Motive, increases by 5.
 
-    At 3rd level, it takes you one hour per 10 gp of material components to create a magic item. % 125-600 gp materials, so 12.5-60 hours to craft
+        \ff[7]{Enchanting Presence} You gain a \plus1 bonus to Intimidate and Persuasion.
+        In addition, creatures within a 50-foot radius \glossterm{emanation} of you take a \minus1 penalty to Mental defense.
+        You may freely exclude creatures you are aware of from this effect.
 
-    At 7th level, if you know 2nd level spells, it takes you one hour per 100 gp of material components to create a magic item. % 900-3250 gp mats, 9-32 hrs
-    In addition, you can combine the schools and tags from two different spells you know to create magic items.
-    This can allow you to meet item crafting prerequisites that you could not meet with a single spell.
+        \ff[9]{Brutal Scouring} You gain a \plus1d bonus to damage with your \textit{mind scour} ability. 
 
-    At 11th level, if you know 4th level spells, it takes you one hour per 500 gp of material components to create a magic item. % 5000-18500 gp, 10-37 hrs
+        \ff[11]{Mind Fragments, Greater} The penalty to accuracy against creatures with \glossterm{mundane} immunity to \glossterm{Mind} effects decreases to \minus2.
 
-    At 15th level, if you know 6th level spells, it takes you one hour per 2,500 gp of material components to create a magic item. % 27500-200000 gp, 11-80 hrs
+        \ff[13]{Enchanting Presence, Greater} The bonus to Intimidate and Persuasion increases to \plus2.
+        In addition, the penalty to Mental defense against creatures near you is increased to \minus2.
 
-    \feat{Enchanter}{Magical, Spell}
-    \featpres 1st level or higher \glossterm{Enchantment} spell known.
-    \featben You gain a \plus2 bonus to Bluff, Intimidate and Persuasion checks.
+        \ff[15]{Mental Breach} You gain a \plus1 bonus to accuracy with your \textit{mind scour} ability.
 
-    At 3rd level, the DR to identify your Enchantment spells with Spellcraft, and to identify their effects with Sense Motive, increases by 10.
+        \ff[17]{Subtle Influence, Greater} The DR increase to identify your \glossterm{Mind} abilities increases to 10.
 
-    At 7th level, if you know a 2nd level or higher Enchantment spell, your Enchantment spells are more powerful.
-    You can cast Enchantment spells as if they were one level lower than their actual level (minimum 1).
-    This does not stack with spell level reductions from other feats.
+        \ff[19]{Mental Torment} Whenever you target a creature with a Mind ability, that creature takes a \minus1 penalty to Mental defense.
+        This is a \glossterm{condition}, and lasts until it is removed.
+        This penalty stacks with itself if you target the same creature multiple times.
+    \end{feat}
 
-    At 11th level, if you know a 4th level or higher Enchantment spell, you no longer need verbal components to cast Enchantment spells (see \pcref{Components}).
+    % NEW FEAT CONTENT STOPS HERE
 
     \feat{Endurance}{General}
     \featpre Constitution 3.
