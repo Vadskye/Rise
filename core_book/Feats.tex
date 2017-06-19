@@ -1085,33 +1085,39 @@ Feats can be used to specialize your character particular area, to grant your ch
         This penalty stacks with itself if you target the same creature multiple times.
     \end{feat}
 
-    % NEW FEAT CONTENT STOPS HERE
+    \begin{feat}{Toughness}{General}
+        \featpre Starting Constitution of 2.
+        \featben
 
-    \feat{Endurance}{General}
-    \featpre Constitution 3.
-    \featben You ignore effects which would make you \fatigued.
-    This allows you to sleep in medium or heavy armor without penalty.
-    In addition, if an effect would make you \exhausted, it makes you fatigued instead.
-    This ability does not allow you to ignore this fatigue.
+        \ff[1]{Durable} You gain additional hit points equal to your Constitution.
 
-    At 3rd level, you treat your Constitution as if it were 5 higher for the purpose of abilities whose duration is limited by your Constitution, such as sprinting (see \pcref{Sprint}).
-    In addition, you are immune to effects which would force you to sleep.
+        \ff[2]{Great Fortitude, Lesser} You gain a \plus1 bonus to Fortitude defense.
 
-    At 7th level, if you have 6 Constitution, you are immune to all effects which would make you fatigued or exhausted.
-    In addition, you need half the normal amount of rest and sleep each day to function normally.
-    For example, a human would only need four hours of sleep per night.
+        \ff[4]{Fatigue Tolerance} You ignore effects which would make you \fatigued.
+        This allows you to sleep in heavy or medium armor without penalty.
+        In addition, any effect which would make you \exhausted makes you \fatigued instead.
+        This ability does not allow you to ignore this fatigue.
 
-    At 11th level, if you have 9 Constitution, you need need one quarter the normal amount of rest and sleep each day to function normally.
+        \ff[6]{Injury Tolerance} You take a \minus2 penalty for being \glossterm{bloodied} instead of a \minus5 penalty.
+        In addition, having \glossterm{vital damage} imposes half the normal penalties.
 
-    \feat{Energetic Magic}{Magical, Spell}
-    \featpre 9th level, 4th level or higher \glossterm{energy} spell.
-    \featben You gain a \plus2 bonus to spellpower for the purpose of determining the damage you deal with energy spells.
-    This does not affect your accuracy or any other aspects of the spells.
+        \ff[8]{Great Fortitude} The bonus to Fortitude defense increases to \plus2.
 
-    At 11th level, if you cast an energy spell using a spell slot one level higher than normal, you can change its energy type to any other energy type.
-    This changes the spell's tags and any energy damage the spell deals appropriately.
+        \ff[10]{Fatigue Tolerance, Greater} You ignore effects which would make you \exhausted, and which compel you to sleep.
+        In addition, you need half the normal amount of rest and sleep each day to function normally.
+        For example, a human would only need four hours of sleep per night.
 
-    At 15th level, if you know a 6th level or higher energy spell, the effective spellpower bonus increases to \plus3.
+        \ff[12]{Durable, Greater} The increase to hit points increases to twice your Constitution.
+
+        \ff[14]{Great Fortitude, Greater} The bonus to Fortitude defense increases to \plus3.
+
+        \ff[16]{Injury Tolerance, Greater} You do not take penalties for being \glossterm{bloodied}.
+        In addition, having \glossterm{vital damage} imposes one quarter of the normal penalties, rather than half.
+
+        \ff[18]{Deathless} You cannot take more than ten damage per level during a single round.
+        Any excess damage is ignored.
+        In addition, you are immune to \glossterm{Death} effects.
+    \end{feat}
 
     \feat{Escape Artist Mastery}{Skill}
     \featpre Escape Artist 6 ranks.
@@ -1131,19 +1137,47 @@ Feats can be used to specialize your character particular area, to grant your ch
     You can only dispel effects which target you directly, not area effects which include you.
     If an ability targets multiple creatures, you can only remove its effects on you.
 
-    \feat{Evoker}{Magical, Spell}
-    \featpre 1st level or higher Evocation spell known.
-    \featben You gain \glossterm{damage reduction} against \glossterm{energy damage} equal to your spellpower with the \glossterm{spell source} used to qualify for this feat.
+    \begin{feat}{Evoker}{Magical, Spell}
+        \featpre \glossterm{Evocation} spell known.
+        \featben
 
-    At 3rd level, you gain a \plus1 bonus to spellpower for the purpose of determining the damage you deal with Evocation spells.
-    This does not affect your accuracy or any other aspects of the spells.
+        \ff[1]{Energy Burst} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellspecial When you use this ability, you choose a type of energy: cold, electricity, fire, or sonic.
+                \spellquicktargeting{One creature or object}{\rngclose}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \begin{spellattack}{Spellpower vs. Special}
+                    \spellspecial If you chose electricity or fire energy, this attack is made against Reflex defense. If you chose cold or sonic energy, this attack is made against Fortitude defense.
+                    \spellsuccess The target takes 1d8 damage \plus1d per two spellpower.
+                    The type of energy you choose determines the type of damage dealt.
+                    \spellcritical As above, but double damage.
+                \end{spellattack}
+                \spelltags{As the energy type chosen}
+            \end{spelleffects}
+        \end{ability}
 
-    At 7th level, if you know a 2nd level or higher Evocation spell, your Evocation spells are more powerful.
-    You can cast Evocation spells as if they were one level lower than their actual level (minimum 1).
-    This does not stack with spell level reductions from other feats.
+        % Which spellpower?
+        \ff[3]{Energy Resistance} You gain damage reduction against \glossterm{energy damage} equal to your spellpower.
 
-    At 11th level, if you know a 4th level or higher Evocation spell, the effective spellpower bonus increases to \plus2.
-    In addition, your damage reduction from this feat increases to twice your spellpower.
+        \ff[5]{Mighty Telekinesis} You gain a \plus1 bonus to accuracy with the \spell{telekinesis} spell.
+
+        \ff[7]{Residual Energy Burst} When your attack succeeds with your \textit{energy burst} ability, the target suffers an additional effect depending on the energy type chosen.
+        These effects are \glossterm{conditions}, and last until they are removed.
+        \begin{itemize}
+            \item Cold: If target is a creature, it is \fatigued.
+            \item Electricity: If the target is a creature, it is \impaired with attacks and checks.
+            \item Fire: The target is \ignited.
+            \item Sonic: If the target has \glossterm{hardness}, its hardness is reduced by an amount equal to half your spellpower. Otherwise, if it has \glossterm{damage reduction}, its damage reduction is reduced by amount equal to your spellpower.
+        \end{itemize}
+
+        \ff[9]{Potent Evocation} You gain a \plus1d bonus to damage with \glossterm{Evocation} abilities that deal damage measured in a dice pool, as well as with the \textit{energy burst} ability.
+
+        \ff[11]{Energy Resistance, Greater} The damage reduction against \glossterm{energy damage} increases to twice your spellpower.
+
+        \ff[15]{Devastating Evocation} The area affected by your Evocation spells that affect areas doubles.
+    \end{feat}
 
     \feat{Executioner}{Combat}
     \featpres 5th level.
@@ -2070,19 +2104,6 @@ Feats can be used to specialize your character particular area, to grant your ch
     This does not stack with spell level reductions from other feats.
 
     At 11th level, if you know a 4th level or higher Transmutation spell, your damage reduction increases to be equal to your spellpower, and applies against all damage.
-
-    \feat{Toughness}{General}
-    \featpre Constitution 3.
-    \featben You gain a \plus2 bonus to your Fortitude defense.
-    This bonus can increase your hit points (see \pcref{Hit Points}).
-
-    At 3rd level, you gain bonus hit points equal to your level.
-    In addition, you become immune to disease.
-
-    At 7th level, if you have 6 Constitution, the defense bonus increases to \plus4.
-    In addition, you halve the penalties you take from having \glossterm{vital damage}.
-
-    At 11th level, if you have 9 Constitution, you become immune to poison.
 
     \feat{Trapfinder}{Skill}
     \spelldesc{You have honed your senses to recognize traps quickly and effectively.}
