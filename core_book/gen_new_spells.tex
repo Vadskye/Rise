@@ -41,7 +41,10 @@ Whenever the target takes damage increased by this spell, it is \glossterm{stagg
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Special}
 \spellspecial
-For every \glossterm{magical} effect on the target, if the attack result beats a DR equal to 10 + the \glossterm{power} of the effect, the effect is \glossterm{suppressed}.
+The attack result is applied to every \glossterm{magical} effect on the target.
+The DR for each effect is equal to 10 + the \glossterm{power} of that effect.
+\spellsuccess
+Success against a magical effect causes that effect to be \glossterm{suppressed}.
 \end{spellattack}
 \spelldur Sustain (swift)
 \spelltags{\glossterm{Thaumaturgy}}
@@ -59,25 +62,53 @@ The spell's duration becomes Sustain (standard).
 \parhead{Standard Augments} Extended, Mass.
 \augment{1}{Suppress Item}
 Replace
+the spell's targets with the following:
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgt{One object}}{\spellrng{\rngmed}}
+\end{augmenttargetinginfo}
+Replace
 the spell's effects with the following:
 \begin{augmenteffects}
 \begin{spellattack}{Spellpower vs. Special}
 \spellspecial
-If the target is an object, and the attack result beats a DR equal to 10 + the spellpower of the object, the object is \glossterm{suppressed}.
+The DR is equal to 10 + the target's spellpower.
+\spellsuccess
+The target object is \glossterm{suppressed}.
 \end{spellattack}
 \spelldur Sustain (swift)
 \spelltags{\glossterm{Thaumaturgy}}
 \end{augmenteffects}
 \augment{2}{Banishing}
-The spell does not have its normal effect.
-If the target is an effect of an ongoing spell (such as a summoned creature) and the attack result beats a DR equal to 10 + the spellpower of the spell, the target is treated as if the spell that created it was dispelled.
+Replace
+the spell's effects with the following:
+\begin{augmenteffects}
+\begin{spellattack}{Spellpower vs. Special}
+\spellspecial
+If the target is an effect of an ongoing \glossterm{magical} ability, such as a summoned monster, the DR is equal to 10 + the target's spellpower.
+Otherwise, this ability has no effect.
+\spellsuccess
+The target is treated as if the spell that created it was \glossterm{dispelled}.
 This usually causes the target to disappear.
+\end{spellattack}
+\spelltags{\glossterm{Thaumaturgy}}
+\end{augmenteffects}
 \augment{6}{Antimagic Field}
-The spell does not have its normal effects or targets.
-Instead, it creates a \areasmall radius emanation from you.
+Replace
+the spell's targets with the following:
+\begin{augmenttargetinginfo}
+\spellspecial This emanation always includes you in its area
+\spellemanation{\areasmall radius centered on you}
+\end{augmenttargetinginfo}
+Replace
+the spell's effects with the following:
+\begin{augmenteffects}
+\spelleffect
 All magical abilities and objects are \glossterm{suppressed} in the area.
 In addition, magical abilities and objects cannot be activated within the area.
 \par Creatures within the area cannot concentrate on or dismiss spells. However, you can concentrate on and dismiss your own \spell{antimagic field}.
+\spelldur Sustain (swift)
+\spelltags{\glossterm{Thaumaturgy}}
+\end{augmenteffects}
 \begin{spellsection}{Barkskin}
 \begin{spellheader}
 \spelldesc{You toughen a creature's skin, giving it the appearance of tree bark.}
@@ -610,6 +641,34 @@ the spell's targets with the following:
 \spellburst{\arealarge cone}
 \spelltgts{Everything in the area}
 \end{augmenttargetinginfo}
+\begin{spellsection}{Foresight}
+\begin{spellheader}
+\spelldesc{You grant a creature the ability to see fractions of a second into the future.}
+\end{spellheader}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{\spelltgt{One willing creature}}{\spellrng{\rngclose}}
+\end{spelltargetinginfo}
+\begin{spelleffects}
+\spelleffect
+The target gains a \plus2 bonus to \glossterm{accuracy} with physical attacks.
+\spelldur Attunement
+\spelltags{\glossterm{Enhancement}}
+\end{spelleffects}
+\end{spellcontent}
+\begin{spellfooter}
+\spellinfo{Divination}{Arcane, Divine, Nature}
+\miscastexplode
+\end{spellfooter}
+\begin{spellcantrip}
+The spell's duration becomes Sustain (swift).
+\end{spellcantrip}
+\end{spellsection}
+\subsubsection{Augments}
+\parhead{Standard Augments} Extended.
+\augment{6}{Foresee Actions}
+The target can learn what actions all creatures it can observe intend to take during each phase before it decides its actions for that phase.
+It learns this information in the instant before it acts, and normally does not have time to communicate it to other creatures.
 \begin{spellsection}{Inertial Shield}
 \begin{spellheader}
 \spelldesc{You create a barrier around your ally that resists physical intrusion.}
@@ -639,10 +698,14 @@ The spell's duration becomes Sustain (swift).
 \augment{2}{Complete}
 The damage reduction applies against all damage, not just physical damage.
 \augment{3}{Immunity}
-The spell does not have its normal effect.
-Instead, choose a type of damage.
+Replace
+the spell's effects with the following:
+\begin{augmenteffects}
+\spelleffect
+Choose a type of damage.
 The target becomes immune to damage of the chosen type.
 Attacks that deal damage of multiple types still inflict damage normally unless the target is immune to all types of damage dealt.
+\end{augmenteffects}
 \augment{3}{Retributive}
 Damage resisted by this spell is reflected back to the attacker as life damage.
 If the attacker is beyond \rngclose range of the target, this reflection fails.
@@ -928,6 +991,65 @@ As a standard action, it can make a \glossterm{grapple} attack against a creatur
 Its accuracy is the same as its accuracy with strikes.
 While grappling, the manifested creature can either make a strike or attempt to escape the grapple.
 This augment replaces the effects of any other augments that change the appearance of the creature.
+\begin{spellsection}{Telekinesis}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{\spelltgt{One Medium or smaller creature or object}}{\spellrng{\rngclose}}
+\end{spelltargetinginfo}
+\begin{spelleffects}
+\begin{spellattack}{Spellpower vs. Mental}
+\spellsuccess
+You move the target up five feet per spellpower. Moving the target upwards costs twice the normal movement cost.
+\spellcritical
+As above, but you move the target ten feet per spellpower instead of five feet per spellpower.
+\end{spellattack}
+\spelltags{\glossterm{Telekinesis}}
+\end{spelleffects}
+\end{spellcontent}
+\begin{spellfooter}
+\spellinfo{Evocation}{Arcane}
+\miscastexplode
+\end{spellfooter}
+\begin{spellcantrip}
+If your attack succeeds, you move the target one foot per spellpower. In addition, this has no additional effects on a critical success.
+\end{spellcantrip}
+\end{spellsection}
+\subsubsection{Augments}
+\parhead{Standard Augments} Extended, Mass.
+\augment{1}{Giant}
+The spell can affect a target one size category larger.
+\par
+This augment can be applied multiple times.
+Its effects stack.
+\augment{1}{Precise}
+Replace
+the spell's effects with the following:
+\begin{augmenteffects}
+\begin{spellattack}{Spellpower vs. Mental}
+\spellsuccess
+You move the target up to five feet in any direction.
+In addition, you can make a check to manipulate the target as if you were using your hands.
+The check's result has a maximum equal to your attack result.
+\end{spellattack}
+\spelltags{\glossterm{Telekinesis}}
+\end{augmenteffects}
+\augment{2}{Binding}
+If your attack roll beat both the target's Fortitude and Mental defenses, it is \immobilized after the forced movement is finished.
+This is a \glossterm{condition}, and lasts until removed.
+\augment{2}{Levitate}
+Replace
+the spell's targets with the following:
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgt{One Medium or smaller unattended object or willing creature}}{\spellrng{\rngclose}}
+\end{augmenttargetinginfo}
+Replace
+the spell's effects with the following:
+\begin{augmenteffects}
+\spelleffect
+The target floats in midair, unaffected by gravity.
+During the movement phase, you can move the target up to ten feet in any direction.
+\spelldur Sustain (swift)
+\end{augmenteffects}
 \begin{spellsection}{Water Mastery}
 \begin{spellheader}
 \spelldesc{You create a wave of water to crush your foes.}
