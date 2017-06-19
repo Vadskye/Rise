@@ -628,22 +628,6 @@ Feats can be used to specialize your character particular area, to grant your ch
         In addition, the size category decrease for the purpose of climbing on creatures improves to two size categories smaller than normal.
     \end{feat}
 
-    % Is this interesting enough to be a feat?
-    \begin{feat}{Compact Combatant}{Combat}
-        \featpre Starting Dexterity of 2.
-        \featben
-
-        \ff[1]{Constraint Tolerance, Lesser} You reduce your penalties to accuracy and defenses for \glossterm{squeezing} by 2.
-        In addition, you reduce your penalty for attacking with non-light weapons in a grapple by 2.
-
-        \ff[4]{Rapid Squeeze} Your movement speed is not reduced while squeezing.
-
-        \ff[6]{Constraint Tolerance} The penalty reduction for squeezing and grappling increases to 3.
-
-        \ff[12]{Constraint Tolerance, Greater} The penalty reduction for squeezing and grappling increases to 4.
-        This normally allows you to ignore all penalties for squeezing and attacking with non-light weapons in a grapple.
-    \end{feat}
-
     \begin{feat}{Combat Mobility}{Combat, Mobility}
         \featpre Starting Dexterity of 2.
         \featben
@@ -1119,23 +1103,40 @@ Feats can be used to specialize your character particular area, to grant your ch
         In addition, you are immune to \glossterm{Death} effects.
     \end{feat}
 
-    \feat{Escape Artist Mastery}{Skill}
-    \featpre Escape Artist 6 ranks.
-    \featben Whenever you make a Escape Artist check, you may roll twice and take the higher result.
+    \begin{feat}{Escape Artist Specialization}{Skill}
+        \featpre Escape Artist as a mastered skill.
+        \featben
 
-    At 3rd level, you can squeeze and escape bindings as a move action, rather than as a standard action.
+        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Escape Artist.
 
-    At 7th level, if you have 10 ranks in Escape Artist, you gain a \plus5 bonus to Escape Artist checks.
+        \ff[2]{Rapid Escape} You can squeeze and escape bindings as a move action, rather than as a standard action.
 
-    At 11th level, if you have 14 ranks in Escape Artist, you can attempt to escape from magic itself, slipping hostile spells off of your body so they dissipate harmlessly.
-    As a standard action, you can make an Escape Artist check to throw off magical effects on you.
-    The DR to dispel an effect is equal to 20 \add its spellpower, and the result must be at least 30.
-    Success means the effect is dispelled, if it is an effect that \spell{dispel magic} could dispel.
-    \magical
+        \ff[4]{Constraint Tolerance, Lesser} You reduce your penalties to accuracy and defenses for \glossterm{squeezing} by 2.
 
-    You must be aware of an effect to escape it, either through the Spellcraft skill or because the effect is noticeable.
-    You can only dispel effects which target you directly, not area effects which include you.
-    If an ability targets multiple creatures, you can only remove its effects on you.
+        \ff[6]{Accelerated Squeeze} Your movement speed is not reduced while squeezing.
+
+        \ff[8]{Specialization} The bonus to Escape Artist increases to \plus3.
+
+        \ff[10]{Escape Magic}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelleffects}
+                \spelleffect You make an Escape Artist attack against all \glossterm{magical} effects on you.
+                The DR for each effect is equal to 10 \add the effect's \glossterm{power}.
+                Success means the effect is \glossterm{dispelled}, if it is an effect that can be dispelled.
+                \par You can only dispel effects which target you directly, not area effects which include you as a target.
+                If an ability targets multiple creatures, you can only remove its effects on you.
+            \end{spelleffects}
+        \end{ability}
+
+        \ff[12]{Constraint Tolerance, Greater} The penalty reduction for squeezing increases to 4.
+        This normally allows you to ignore all penalties for squeezing.
+
+        \ff[14]{Rapid Escape, Greater} You can escape bindings as a \glossterm{swift action}.
+
+        \ff[16]{Specialization, Greater} The bonus to Escape Artist increases to \plus4.
+
+        \ff[18]{Escape Magic, Greater}[Magical] You can use your \textit{escape magic} ability as a \glossterm{swift action}.
+    \end{feat}
 
     \begin{feat}{Evoker}{Magical, Spell}
         \featpre \glossterm{Evocation} spell known.
@@ -1179,25 +1180,39 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[15]{Devastating Evocation} The area affected by your Evocation spells that affect areas doubles.
     \end{feat}
 
-    \feat{Executioner}{Combat}
-    \featpres 5th level.
-    \featben At the start of every round, you can make a free melee \glossterm{strike} against all creatures you threaten that have no hit points remaining.
-    This attack happens before the movement phase begins, and can kill a creature or knock it unconscious before it can act in the movement phase.
+    \begin{feat}{Executioner}{Combat}
+        \featpre Starting Strength and Dexterity of 1.
+        \featben
 
-    At 7th level, you gain a \plus5 bonus to accuracy with physical attacks against creatures with no hit points remaining.
+        \ff[1]{Strip the Flesh} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{One creature or object}{As weapon}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spelleffect You make a \glossterm{strike} against the target.
+                At the end of the round, if the target is not \glossterm{bloodied}, it takes additional damage equal to the damage you dealt to it with your strike.
+            \end{spelleffects}
+        \end{ability}
 
-    At 11th level, you also gain a free strike against creatures that are \helpless or \unaware.
-    You can still only make one strike with this feat against any individual creature.
+        \ff[2]{Purge the Weak, Lesser} You gain a \plus1 bonus to accuracy with physical attacks against \glossterm{bloodied} creatures.
 
-    At 15th level, you also gain a free strike against all creatures that are \bloodied.
-    You can still only make one strike with this feat against any individual creature.
+        \ff[4]{Final Blow} Whenever you deal \glossterm{vital damage} to a creature with a \glossterm{strike}, the creature immediately dies.
 
-    \feat{Extra Domain}{Class}
-    \featpre Cleric level 5.
-    \featben When you gain this feat, choose one domain from among those offered by your deity.
-    You gain that domain in addition to your other domains.
-    You may learn spells from its spell list, and you may choose its domain abilities for your class abilities.
-    In addition, you automatically gain its domain gift.
+        \ff[6]{Bloodfeeder}[Life, Magical] Whenever a creature dies, if you dealt damage to it that round with a \glossterm{strike}, you heal hit points equal to its level.
+
+        \ff[8]{Salt the Wound} When you use your \textit{strip the flesh} ability, the target continues taking damage at the end of each round until it becomes \glossterm{bloodied}.
+        This is a \glossterm{condition}, and can be removed by abilities that remove conditions.
+
+        \ff[10]{Purge the Weak} The accuracy bonus against \glossterm{bloodied} creatures increases to \plus2.
+
+        \ff[12]{Final Blow, Greater} Whenever a creature's hit points drop to zero, if you dealt damage to it that round with a \glossterm{strike}, it immediately dies.
+        In addition, whenever you deal damage to a creature that has no hit points remaining with a \glossterm{strike}, it immediately dies.
+
+        \ff[14]{Bloodfeeder, Greater}[Life, Magical] Whenever a creature dies, if you used your \textit{strip the flesh} ability on it since the last time it took a \glossterm{short rest}, you regain an \glossterm{action point}.
+
+        \ff[18]{Purge the Weak, Greater} The accuracy bonus against \glossterm{bloodied} creatures increases to \plus3.
+    \end{feat}
 
     \feat{Eye of the Storm}{Combat, Style}
     \featpres Dexterity 3.
