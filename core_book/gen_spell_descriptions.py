@@ -421,11 +421,13 @@ class Targeting(object):
             target=None,
             targets=None,
             rng=None,
+            special=None,
             unrestricted_range=False,
     ):
         self.area = area
         self.area_type = area_type
         self.rng = rng
+        self.special = special
         self.target = target
         self.targets = targets
         self.unrestricted_range = unrestricted_range
@@ -448,6 +450,7 @@ class Targeting(object):
             return ""
 
     def __str__(self):
+        special_text = f'\\spellspecial {self.special}' if self.special else ""
         if self.rng:
             col2 = "\\spellrng<{rng}{unrestricted}>".format(
                 rng=rng_mapping.get(self.rng, self.rng),
@@ -465,6 +468,7 @@ class Targeting(object):
             # if we included the target_text above, don't include it again
             return f"""
                 \\begin<spelltargetinginfo>
+                    {special_text}
                     {twocol_text}
                     {self.target_text() if not included_target_text else ""}
                 \\end<spelltargetinginfo>
@@ -472,6 +476,7 @@ class Targeting(object):
         else:
             return f"""
                 \\begin<spelltargetinginfo>
+                    {special_text}
                     {self.area_text()}
                     {self.target_text()}
                 \\end<spelltargetinginfo>
@@ -572,7 +577,7 @@ def generate_spells():
                 school='Evocation',
             ),
         ],
-        category='buff, utility',
+        category='buff, defense',
     ))
     spells.append(Spell(
         name='Inertial Shield',
@@ -601,12 +606,13 @@ def generate_spells():
             Augment(
                 level=3,
                 name='Immunity',
-                description="""
-                    The spell does not have its normal effect.
-                    Instead, choose a type of damage.
-                    The target becomes immune to damage of the chosen type.
-                    Attacks that deal damage of multiple types still inflict damage normally unless the target is immune to all types of damage dealt.
-                """,
+                effects=Effects(
+                    effect="""
+                        Choose a type of damage.
+                        The target becomes immune to damage of the chosen type.
+                        Attacks that deal damage of multiple types still inflict damage normally unless the target is immune to all types of damage dealt.
+                    """,
+                ),
             ),
             Augment(
                 level=3,
@@ -765,7 +771,11 @@ def generate_spells():
             attack=Attack(
                 defense='Special',
                 special="""
-                    For every \\glossterm<magical> effect on the target, if the attack result beats a DR equal to 10 + the \\glossterm<power> of the effect, the effect is \\glossterm<suppressed>.
+                    The attack result is applied to every \\glossterm<magical> effect on the target.
+                    The DR for each effect is equal to 10 + the \\glossterm<power> of that effect.
+                """,
+                success="""
+                    Success against a magical effect causes that effect to be \\glossterm<suppressed>.
                 """,
             ),
             duration='sustain (swift)',
@@ -778,11 +788,18 @@ def generate_spells():
             Augment(
                 level=1,
                 name='Suppress Item',
+                targeting=Targeting(
+                    target='One object',
+                    rng='medium',
+                ),
                 effects=Effects(
                     attack=Attack(
                         defense='Special',
                         special="""
-                            If the target is an object, and the attack result beats a DR equal to 10 + the spellpower of the object, the object is \\glossterm<suppressed>.
+                            The DR is equal to 10 + the target's spellpower.
+                        """,
+                        success="""
+                            The target object is \\glossterm<suppressed>.
                         """,
                     ),
                     duration='sustain (swift)',
@@ -792,22 +809,38 @@ def generate_spells():
             Augment(
                 level=2,
                 name='Banishing',
-                description="""
-                    The spell does not have its normal effect.
-                    If the target is an effect of an ongoing spell (such as a summoned creature) and the attack result beats a DR equal to 10 + the spellpower of the spell, the target is treated as if the spell that created it was dispelled.
-                    This usually causes the target to disappear.
-                """,
+                effects=Effects(
+                    attack=Attack(
+                        defense='Special',
+                        special="""
+                            If the target is an effect of an ongoing \\glossterm<magical> ability, such as a summoned monster, the DR is equal to 10 + the target's spellpower.
+                            Otherwise, this ability has no effect.
+                        """,
+                        success="""
+                            The target is treated as if the spell that created it was \\glossterm<dispelled>.
+                            This usually causes the target to disappear.
+                        """,
+                    ),
+                    tags=['Thaumaturgy'],
+                ),
             ),
             Augment(
                 level=6,
                 name='Antimagic Field',
-                description="""
-                    The spell does not have its normal effects or targets.
-                    Instead, it creates a \\areasmall radius emanation from you.
-                    All magical abilities and objects are \glossterm{suppressed} in the area.
-                    In addition, magical abilities and objects cannot be activated within the area.
-                    \\par Creatures within the area cannot concentrate on or dismiss spells. However, you can concentrate on and dismiss your own \spell{antimagic field}.
-                """,
+                targeting=Targeting(
+                    area='\\areasmall radius centered on you',
+                    area_type='emanation',
+                    special='This emanation always includes you in its area',
+                ),
+                effects=Effects(
+                    effect="""
+                        All magical abilities and objects are \glossterm{suppressed} in the area.
+                        In addition, magical abilities and objects cannot be activated within the area.
+                        \\par Creatures within the area cannot concentrate on or dismiss spells. However, you can concentrate on and dismiss your own \\spell{antimagic field}.
+                    """,
+                    duration='sustain (swift)',
+                    tags=['Thaumaturgy'],
+                ),
             ),
         ],
         category='debuff, combat',
@@ -1721,6 +1754,100 @@ def generate_spells():
             ),
         ],
         category='narrative',
+    ))
+    spells.append(Spell(
+        name="Foresight",
+        header=Header("You grant a creature the ability to see fractions of a second into the future."),
+        targeting=Targeting(
+            target="One willing creature",
+            rng="close",
+        ),
+        effects=Effects(
+            effect="""
+                The target gains a \plus2 bonus to \\glossterm<accuracy> with physical attacks.
+            """,
+            tags=['Enhancement'],
+            duration='attune',
+        ),
+        schools=['Divination'],
+        lists=['Arcane', 'Divine', 'Nature'],
+        cantrip="The spell's duration becomes Sustain (swift).",
+        custom_augments=[
+            Augment(
+                level=6,
+                name="Foresee Actions",
+                description="""
+                    The target can learn what actions all creatures it can observe intend to take during each phase before it decides its actions for that phase.
+                    It learns this information in the instant before it acts, and normally does not have time to communicate it to other creatures.
+                """,
+            ),
+        ],
+        category='buff, offense',
+    ))
+    spells.append(Spell(
+        name="Telekinesis",
+        # header=Header("description"),
+        targeting=Targeting(
+            target="One Medium or smaller creature or object",
+            rng="close",
+        ),
+        effects=Effects(
+            attack=Attack(
+                defense='Mental',
+                success="""
+                    You move the target up five feet per spellpower. Moving the target upwards costs twice the normal movement cost.
+                """,
+                critical="""
+                    As above, but you move the target ten feet per spellpower instead of five feet per spellpower.
+                """,
+            ),
+            tags=['Telekinesis'],
+        ),
+        schools=['Evocation'],
+        lists=['Arcane'],
+        cantrip="If your attack succeeds, you move the target one foot per spellpower. In addition, this has no additional effects on a critical success.",
+        custom_augments=[
+            Augment.giant(),
+            Augment(
+                level=1,
+                name="Precise",
+                effects=Effects(
+                    attack=Attack(
+                        defense='Mental',
+                        success="""
+                            You move the target up to five feet in any direction.
+                            In addition, you can make a check to manipulate the target as if you were using your hands.
+                            The check's result has a maximum equal to your attack result.
+                        """,
+                    ),
+                    tags=['Telekinesis'],
+                ),
+            ),
+            Augment(
+                level=2,
+                name="Binding",
+                description="""
+                    If your attack roll beat both the target's Fortitude and Mental defenses, it is \\immobilized after the forced movement is finished.
+                    This is a \\glossterm<condition>, and lasts until removed.
+                """,
+            ),
+            Augment(
+                level=2,
+                name="Levitate",
+                targeting=Targeting(
+                    target="One Medium or smaller unattended object or willing creature",
+                    rng="close",
+                ),
+                effects=Effects(
+                    effect="""
+                        The target floats in midair, unaffected by gravity.
+                        During the movement phase, you can move the target up to ten feet in any direction.
+                    """,
+                    duration="sustain (swift)",
+                ),
+            ),
+        ],
+        category='debuff, combat',
     ))
     return sorted(spells, key=lambda spell: spell.name)
 
