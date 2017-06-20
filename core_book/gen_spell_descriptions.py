@@ -12,6 +12,7 @@ def warn(*args):
 
 duration_mapping = {
     'attune': 'Attunement',
+    'attunement': 'Attunement',
     'condition': 'Condition',
     'sustain (swift)': 'Sustain (swift)',
 }
@@ -1845,6 +1846,176 @@ def generate_spells():
                     """,
                     duration="sustain (swift)",
                 ),
+            ),
+        ],
+        category='debuff, combat',
+    ))
+    spells.append(Spell(
+        name="Distort Image",
+        # header=Header("description"),
+        targeting=Targeting(
+            target='One willing creature',
+            rng='medium',
+        ),
+        effects=Effects(
+            effect="""
+                The target's physical outline is distorted so it appears blurred, shifting, and wavering.
+                Targeted physical attacks against the target have a 20\% miss chance.
+                Spells and other non-physical attacks suffer no miss chance.
+            """,
+            duration='attune',
+            tags=['Glamer', 'Visual'],
+        ),
+        schools=['Illusion'],
+        lists=['Arcane'],
+        cantrip="The spell's duration becomes Sustain (swift).",
+        custom_augments=[
+            Augment(
+                level=2,
+                name="Disguise Image",
+                effects=Effects(
+                    effect="""
+                        You make a Disguise check to disguise the target as another creature (see \\pcref<Disguise Creature>).
+                        You gain a +5 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form.
+                        However, this effect is unable to alter the sound, smell, texture, or temperature of the target or its clothes and equipment.
+                    """,
+                    duration='attunement',
+                    tags=['Glamer', 'Visual'],
+                ),
+            ),
+            Augment(
+                level=2,
+                name="Mirror Image",
+                effects=Effects(
+                    effect="""
+                        Four illusory duplicates appear around the target that mirror its every move.
+                        The duplicates shift chaotically in its space, making it difficult to identify the real creature.
+
+                        All targeted attacks against the target have a 50% miss chance.
+                        Whenever an attack misses in this way, it affects an image, destroying it.
+
+                        This augment can be applied multiple times.
+                        The spell creates an additional illusory duplicate for each additional time this augment is applied.
+                    """,
+                    duration='sustain (swift)',
+                    tags=['Figment', 'Visual'],
+                ),
+            ),
+            Augment(
+                level=3,
+                name="Shadow Mantle",
+                description="""
+                    The spell's deceptive nature extends beyond merely altering light to affect the nature of reality itself.
+                    The spell's miss chance changes to a failure chance, and applies to non-physical attacks as well as physical attacks.
+                    In addition, it loses the \\glossterm<Visual> tag, allowing it to affect creatures who do not rely on sight to affect the target.
+                """,
+            ),
+            Augment(
+                level=4,
+                name="Displacement",
+                description="""
+                    The target's image is futher distorted, and appears to be two to three feet from its real location.
+                    The spell's miss chance increases to 50\\%.
+                """,
+            ),
+        ],
+        category='buff, defense',
+    ))
+    spells.append(Spell(
+        name="Flare",
+        # header=Header("description"),
+        targeting=Targeting(
+            area='5 foot radius',
+            targets='All creatures in the area',
+            rng='medium',
+        ),
+        effects=Effects(
+            effect="""
+                A brilliant light appears in the area until the end of the round.
+                It illuminates a 100 foot radius around the area with bright light.
+            """,
+            attack=Attack(
+                defense='Reflex',
+                success="""
+                    The target is \\partiallyblinded.
+                """,
+                critical="""
+                    As above, and the target is \\blinded for 1 round.
+                """,
+            ),
+            duration='condition',
+            tags=['Figment', 'Light', 'Visual'],
+        ),
+        schools=['Illusion'],
+        lists=['Arcane', 'Divine', 'Nature'],
+        cantrip="The spell affects a single creature, rather than an area. In addition, it has no additional effects on a critical hit",
+        custom_augments=[
+            Augment(
+                level=1,
+                name="Dancing Lights",
+                effects=Effects(
+                    effect="""
+                        Up to four glowing lights appear in the area.
+                        The lights resemble lanterns or torches, and shed bright light in the same 20 foot radius.
+                        However, you can freely choose the color of the lights when you cast the spell.
+
+                        During each movement phase, you can move the lights up to 100 feet in any direction.
+                        If one of the lights ever goes out of range from you, it immediately winks out.
+                    """,
+                    duration="sustain (swift)",
+                    tags=['Figment', 'Light', 'Visual'],
+                ),
+            ),
+            Augment(
+                level=2,
+                name="Faerie Fire",
+                description="""
+                    Each target is surrounded with a pale glow made of hundreds of ephemeral points of lights, causing it to bright light in a 5 foot radius as a candle.
+                    The lights impose a -10 penalty to Stealth checks.
+                    In addition, they reveal the outline of the creatures if they become \\glossterm<invisible>.
+                    This allows observers to see their location, though not to see them perfectly.
+                """,
+            ),
+            Augment(
+                level=2,
+                name="Illuminating",
+                description="""
+                    The brilliant light persists as long as you spend a \\glossterm<swift action> each round to sustain it.
+                    The light has no additional effects on creatures in the area.
+                """,
+            ),
+            Augment(
+                level=1,
+                name="Expanded",
+                description="""
+                    The spell's area increases to \\areasmall.
+                    This allows the standard Widened augment to be used to expand the spell's area further.
+                """,
+            ),
+            Augment(
+                level=4,
+                name="Universal",
+                description="""
+                    The light radiates from every point in the area simultaneously, making it impossible to avoid.
+                    The spell's attack is made against Fortitude instead of Reflex.
+                """,
+            ),
+            Augment(
+                level=4,
+                name="Blinding",
+                description="""
+                    The spell's critical effect makes the target \\blind as a condition, rather than just for one round.
+                    In addition, the blindness replaces the spell's normal success effect, rather than being applied in addition to it.
+                """,
+            ),
+            Augment(
+                level=3,
+                name="Flashbang",
+                description="""
+                    An intense sound accompanies the flash of light caused by the spell.
+                    If the spell's attack is successful, the target is also \\deafened as a condition.
+                    This is an \\glossterm<Auditory>, \\glossterm<Figment> effect.
+                """,
             ),
         ],
         category='debuff, combat',

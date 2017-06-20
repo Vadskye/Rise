@@ -523,6 +523,62 @@ Its effects stack.
 If the spell's attack succeeds, at the end of each round, the target takes life damage equal to your spellpower.
 The target's maximum hit points are reduced by the amount of damage it takes in this way.
 When the spell ends, the target's maximum hit points are restored.
+\begin{spellsection}{Distort Image}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{\spelltgt{One willing creature}}{\spellrng{\rngmed}}
+\end{spelltargetinginfo}
+\begin{spelleffects}
+\spelleffect
+The target's physical outline is distorted so it appears blurred, shifting, and wavering.
+Targeted physical attacks against the target have a 20\% miss chance.
+Spells and other non-physical attacks suffer no miss chance.
+\spelldur Attunement
+\spelltags{\glossterm{Glamer}, \glossterm{Visual}}
+\end{spelleffects}
+\end{spellcontent}
+\begin{spellfooter}
+\spellinfo{Illusion}{Arcane}
+\miscastexplode
+\end{spellfooter}
+\begin{spellcantrip}
+The spell's duration becomes Sustain (swift).
+\end{spellcantrip}
+\end{spellsection}
+\subsubsection{Augments}
+\parhead{Standard Augments} Extended.
+\augment{2}{Disguise Image}
+Replace
+the spell's effects with the following:
+\begin{augmenteffects}
+\spelleffect
+You make a Disguise check to disguise the target as another creature (see \pcref{Disguise Creature}).
+You gain a \plus5 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form.
+However, this effect is unable to alter the sound, smell, texture, or temperature of the target or its clothes and equipment.
+\spelldur Attunement
+\spelltags{\glossterm{Glamer}, \glossterm{Visual}}
+\end{augmenteffects}
+\augment{2}{Mirror Image}
+Replace
+the spell's effects with the following:
+\begin{augmenteffects}
+\spelleffect
+Four illusory duplicates appear around the target that mirror its every move.
+The duplicates shift chaotically in its space, making it difficult to identify the real creature.
+All targeted attacks against the target have a 50% miss chance.
+Whenever an attack misses in this way, it affects an image, destroying it.
+This augment can be applied multiple times.
+The spell creates an additional illusory duplicate for each additional time this augment is applied.
+\spelldur Sustain (swift)
+\spelltags{\glossterm{Figment}, \glossterm{Visual}}
+\end{augmenteffects}
+\augment{3}{Shadow Mantle}
+The spell's deceptive nature extends beyond merely altering light to affect the nature of reality itself.
+The spell's miss chance changes to a failure chance, and applies to non-physical attacks as well as physical attacks.
+In addition, it loses the \glossterm{Visual} tag, allowing it to affect creatures who do not rely on sight to affect the target.
+\augment{4}{Displacement}
+The target's image is futher distorted, and appears to be two to three feet from its real location.
+The spell's miss chance increases to 50\%.
 \begin{spellsection}{Elemental Blade}
 \begin{spellheader}
 \spelldesc{You transform the active part of a weapon into water, weakening its blows but allowing it penetrate defenses more easily.}
@@ -641,6 +697,70 @@ the spell's targets with the following:
 \spellburst{\arealarge cone}
 \spelltgts{Everything in the area}
 \end{augmenttargetinginfo}
+\begin{spellsection}{Flare}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{\spellburst{5 foot radius}}{\spellrng{\rngmed}}
+\spelltgts{All creatures in the area}
+\end{spelltargetinginfo}
+\begin{spelleffects}
+\spelleffect
+A brilliant light appears in the area until the end of the round.
+It illuminates a 100 foot radius around the area with bright light.
+\begin{spellattack}{Spellpower vs. Reflex}
+\spellsuccess
+The target is \partiallyblinded.
+\spellcritical
+As above, and the target is \blinded for 1 round.
+\end{spellattack}
+\spelldur Condition
+\spelltags{\glossterm{Figment}, \glossterm{Light}, \glossterm{Visual}}
+\end{spelleffects}
+\end{spellcontent}
+\begin{spellfooter}
+\spellinfo{Illusion}{Arcane, Divine, Nature}
+\miscastexplode
+\end{spellfooter}
+\begin{spellcantrip}
+The spell affects a single creature, rather than an area. In addition, it has no additional effects on a critical hit
+\end{spellcantrip}
+\end{spellsection}
+\subsubsection{Augments}
+\parhead{Standard Augments} Extended, Widened.
+\augment{1}{Dancing Lights}
+Replace
+the spell's effects with the following:
+\begin{augmenteffects}
+\spelleffect
+Up to four glowing lights appear in the area.
+The lights resemble lanterns or torches, and shed bright light in the same 20 foot radius.
+However, you can freely choose the color of the lights when you cast the spell.
+During each movement phase, you can move the lights up to 100 feet in any direction.
+If one of the lights ever goes out of range from you, it immediately winks out.
+\spelldur Sustain (swift)
+\spelltags{\glossterm{Figment}, \glossterm{Light}, \glossterm{Visual}}
+\end{augmenteffects}
+\augment{1}{Expanded}
+The spell's area increases to \areasmall.
+This allows the standard Widened augment to be used to expand the spell's area further.
+\augment{2}{Faerie Fire}
+Each target is surrounded with a pale glow made of hundreds of ephemeral points of lights, causing it to bright light in a 5 foot radius as a candle.
+The lights impose a \minus10 penalty to Stealth checks.
+In addition, they reveal the outline of the creatures if they become \glossterm{invisible}.
+This allows observers to see their location, though not to see them perfectly.
+\augment{2}{Illuminating}
+The brilliant light persists as long as you spend a \glossterm{swift action} each round to sustain it.
+The light has no additional effects on creatures in the area.
+\augment{3}{Flashbang}
+An intense sound accompanies the flash of light caused by the spell.
+If the spell's attack is successful, the target is also \deafened as a condition.
+This is an \glossterm{Auditory}, \glossterm{Figment} effect.
+\augment{4}{Blinding}
+The spell's critical effect makes the target \blind as a condition, rather than just for one round.
+In addition, the blindness replaces the spell's normal success effect, rather than being applied in addition to it.
+\augment{4}{Universal}
+The light radiates from every point in the area simultaneously, making it impossible to avoid.
+The spell's attack is made against Fortitude instead of Reflex.
 \begin{spellsection}{Foresight}
 \begin{spellheader}
 \spelldesc{You grant a creature the ability to see fractions of a second into the future.}
