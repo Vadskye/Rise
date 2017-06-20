@@ -499,7 +499,7 @@ def generate_spells():
         ),
         schools=['Evocation'],
         lists=['Air, Nature'],
-        cantrip='The spell deals -1d damage and has no additional effects on a critical success.',
+        cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
         custom_augments=[
             Augment(
                 level=1,
@@ -650,7 +650,7 @@ def generate_spells():
         ),
         schools=['Conjuration'],
         lists=['Arcane'],
-        cantrip="The spell deals -1d damage and has no additional effects on a critical success.",
+        cantrip="The spell deals -1d damage and has no additional effects on a critical hit.",
         custom_augments=[
             Augment(
                 level=2,
@@ -703,7 +703,7 @@ def generate_spells():
         lists=['Arcane', 'Divine'],
         notes="This damage increase applies before other effects that modify the total damage dealt, such as \glossterm<damage reduction>.",
         cantrip="""
-            The spell has no additional effects on a critical success.
+            The spell has no additional effects on a critical hit.
             In addition, its duration becomes Sustain (swift).
             Its effect is still a condition, and can be removed by abilites that remove conditions.
         """,
@@ -861,7 +861,7 @@ def generate_spells():
         ),
         schools=['Evocation'],
         lists=['Arcane', 'Fire', 'Nature'],
-        cantrip="The spell deals -1d damage and has no additional effects on a critical success.",
+        cantrip="The spell deals -1d damage and has no additional effects on a critical hit.",
         custom_augments=[
             Augment(
                 level=1,
@@ -896,7 +896,7 @@ def generate_spells():
             tags=['Delusion', 'Mind', 'Subtle'],
         ),
         cantrip="""
-            The spell has no additional effects on a critical success.
+            The spell has no additional effects on a critical hit.
             In addition, its duration becomes Sustain (standard).
         """,
         schools=['Enchantment'],
@@ -965,7 +965,7 @@ def generate_spells():
         ),
         schools=['Conjuration'],
         lists=['Nature', 'Water'],
-        cantrip='The spell deals -1d damage and has no additional effects on a critical success.',
+        cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
         custom_augments=[
             Augment(
                 level=1,
@@ -1076,7 +1076,7 @@ def generate_spells():
         schools=['Enchantment'],
         lists=['Arcane'],
         cantrip="""
-            The spell has no additional effects on a critical success.
+            The spell has no additional effects on a critical hit.
             In addition, its duration becomes Sustain (swift).
         """,
         custom_augments=[
@@ -1173,7 +1173,7 @@ def generate_spells():
         ),
         schools=['Channeling'],
         lists=['Divine'],
-        cantrip='The spell deals -1d damage and has no additional effects on a critical success.',
+        cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
         custom_augments=[
         ],
         category='damage',
@@ -1191,7 +1191,7 @@ def generate_spells():
         ),
         schools=['Channeling'],
         lists=['Divine'],
-        cantrip='The spell deals -1d damage and has no additional effects on a critical success.',
+        cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
         category='damage',
         custom_augments=[
             Augment(
@@ -1306,7 +1306,7 @@ def generate_spells():
         cantrip="""
             The spell's duration becomes Sustain (swift).
             Its effect is still a condition, and can be removed by abilites that remove conditions.
-            In addition, it has no additional effects on a critical success.
+            In addition, it has no additional effects on a critical hit.
         """,
         custom_augments=[
             Augment(
@@ -1385,7 +1385,7 @@ def generate_spells():
         ),
         schools=['Evocation'],
         lists=['Arcane', 'Nature'],
-        cantrip='The spell deals -1d damage and has no additional effects on a critical success.',
+        cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
         custom_augments=[
         ],
         category='damage',
@@ -1411,7 +1411,7 @@ def generate_spells():
         ),
         schools=['Evocation'],
         lists=['Arcane', 'Nature'],
-        cantrip='The spell deals -1d damage and has no additional effects on a critical success.',
+        cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
         custom_augments=[
             Augment(
                 level=3,
@@ -1483,7 +1483,7 @@ def generate_spells():
         ),
         schools=['Vivimancy'],
         lists=['Arcane', 'Divine', 'Nature'],
-        cantrip='The spell deals -1d damage and has no additional effects on a critical success.',
+        cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
         custom_augments=[
             Augment(
                 level=2,
@@ -1525,7 +1525,7 @@ def generate_spells():
         ),
         schools=['Conjuration'],
         lists=['Arcane', 'Divine'],
-        cantrip='The spell deals -1d damage and has no additional effects on a critical success.',
+        cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
         custom_augments=[
         ],
         category='damage',
@@ -1562,7 +1562,7 @@ def generate_spells():
                 level=1,
                 name="Undead Bane",
                 description="""
-                    If the target is undead, the spell gains a +2 bonus to accuracy and deals double damage on a critical success.
+                    If the target is undead, the spell gains a +2 bonus to accuracy and deals double damage on a critical hit.
                 """,
             ),
             Augment(
@@ -1806,7 +1806,7 @@ def generate_spells():
         ),
         schools=['Evocation'],
         lists=['Arcane'],
-        cantrip="If your attack succeeds, you move the target one foot per spellpower. In addition, this has no additional effects on a critical success.",
+        cantrip="If your attack succeeds, you move the target one foot per spellpower. In addition, this has no additional effects on a critical hit.",
         custom_augments=[
             Augment.giant(),
             Augment(
