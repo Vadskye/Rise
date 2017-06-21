@@ -56,21 +56,6 @@ Feats can be used to specialize your character particular area, to grant your ch
         Many feats are not entirely magical, but have specific effects that are magical.
         These effects are indicated by the \magical tag.
 
-        \parhead{Performance Feats}\label{Performance Feats}
-        Performance feats allow a character to use the Perform skill to create magical effects.
-        All Performance feats are also Skill feats.
-
-        Every Performance feat grants one or more abilities which can be used by making a successful Perform check.
-        Unless otherwise noted, if the Perform check fails, the ability has no effect.
-
-        Each performance has an effect when it is used.
-        Most performances continue their effects if you continue performing.
-
-        All performance feats are \glossterm{Auditory}, \glossterm{Speech}, or \glossterm{Visual} effects, depending on the nature of the performance used to activate the feat.
-
-        You can use any combination of performance feats you possess a number of times per day equal to half the number of ranks you have in your highest Perform skill.
-        If you fail the Perform check, the use of the ability is wasted.
-
         \parhead{Style Feats}\label{Style Feats}
         Style feats grant a character the ability to fight or cast spells in a particular style, granting them bonuses while in that style.
         A character can only be in one style at once.
@@ -716,16 +701,6 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[14]{Rapid Parry} Once per round, you can \textit{parry} an attack without spending an immediate action.
     \end{feat}
 
-    \feat{Covering Fire}{Combat, Style}
-    \featpres Perception 3.
-    \featben While in this style, if you hit a creature with a physical ranged attack, it is \impaired with physical attacks for 2 rounds.
-
-    At 7th level, if you have 6 Perception, the target is \impaired with all attacks and checks for 2 rounds, not just physical attacks.
-
-    At 11th level, if you have 9 Perception, all creatures you attack are impaired in this way, not just creatures you hit.
-    \stylereq Make a physical ranged attack each round.
-    \parhead{Special} This is a Style feat, and all of its effects only apply while you are in this style.
-
     \begin{feat}{Craft Specialization}{Skill}
         \featpre Craft (any) as a mastered skill.
         \featben
@@ -1181,7 +1156,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     \end{feat}
 
     \begin{feat}{Executioner}{Combat}
-        \featpre Starting Strength and Dexterity of 1.
+        \featpres Starting Strength of 1, starting Perception of 2.
         \featben
 
         \ff[1]{Strip the Flesh} As a standard action, you can spend an \glossterm{action point} to use this ability.
@@ -1214,163 +1189,342 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[18]{Purge the Weak, Greater} The accuracy bonus against \glossterm{bloodied} creatures increases to \plus3.
     \end{feat}
 
-    \feat{Eye of the Storm}{Combat, Style}
-    \featpres Dexterity 3.
-    \featben You reduce your \glossterm{overwhelm penalties} by 2.
-    If your overwhelm penalty is reduced to 0, you are not considered to be overwhelmed.
+    \begin{feat}{Whirlwind Warrior}{Combat}
+        \featpres Starting Dexterity of 2, starting Perception of 1.
+        \featben
 
-    At 7th level, if you have 6 Dexterity, this penalty reduction increases to 3.
+        \ff[1]{Whirlwind Strike} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelleffects}
+                \spelleffect You make a melee \glossterm{strike} against any number of creatures and objects you \glossterm{threaten}.
+                You must use the same weapon to make each strike.
+                Use the same attack result and damage against each target.
+                You take a \minus2d penalty to damage on the strike.
+            \end{spelleffects}
+        \end{ability}
 
-    At 11th level, if you have 9 Dexterity, this penalty reduction increases to 4.
+        \ff[2]{Eye of the Storm, Lesser} You reduce your \glossterm{overwhelm penalties} by 1.
+        If your overwhelm penalty is reduced to 0, you are not considered to be \glossterm{overwhelmed}.
 
-    At 15th level, if you have 12 Dexterity, this penalty reduction increases to 5.
-    \stylereq Wield a melee weapon. You must make a physical melee attack or take the total defense action each round.
-    \parhead{Special} This is a Style feat, and all of its effects only apply while you are in this style.
-    For details, see \pcref{Style Feats}.
+        \ff[8]{Eye of the Storm} The penalty reduction increases to 2.
 
-    \feat{Far Shot}{Combat}
-    \featpre Strength 3.
-    \featben When you use a projectile weapon, such as a bow, its range increment increases by one-half (multiply by 1-1/2).
-    When you use a thrown weapon, its range increment is doubled.
+        \ff[14]{Eye of the Storm, Greater} The penalty reduction increases to 3.
+    \end{feat}
 
-    At 3rd level, you gain a \plus2 bonus to damage with physical ranged attacks against targets more than 50 feet away from you.
+    \begin{feat}{Intimidate Specialization}{Skill}
+        \featpre Intimidate as a mastered skill.
+        \featben
 
-    At 7th level, if you have 6 Strength, the range increment of projectile weapons is doubled, and the range increment of thrown weapons is tripled.
+        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Intimidate.
 
-    At 11th level, if you have 9 Strength, the damage bonus increases to \plus3.
+        \ff[2]{Critical Demoralization} If you get a \glossterm{critical hit} when you take the \textit{demoralize} action, the target is \frightened by you instead of being shaken.
+        See \pcref{Demoralize}, for details.
 
-    \feat{Fearsome}{Combat, Magical, Skill}
-    \spelldesc{You inspire fear in your foes in combat.}
-    \featpres 5th level, Intimidate 6 ranks.
-    \featben When you damage a creature with a physical melee attack, you can take an immediate action to inspire fear in the struck creature.
-    You make an Intimidate vs. Mental attack against the struck creature.
-    Success means the struck creature is \shaken by you for 2 rounds.
-    Critical success means the struck creature is \frightened by you for 2 rounds instead.
-    This is a \glossterm{Delusion}, \glossterm{Mind} effect.
+        \ff[6]{Demoralizing Blow} Whenever you deal damage to a creature, you can spend an \glossterm{action point} to use the \textit{demoralize} ability as an \glossterm{immediate action}.
 
-    At 11th level, if you have 8 ranks in Intimidate, you can inspire fear in this way once per round without spending an action.
+        \ff[8]{Specialization} The bonus to Intimidate increases to \plus3.
 
-    At 15th level, \tdash.
+        \ff[16]{Specialization, Greater} The bonus to Intimidate increases to \plus4.
+    \end{feat}
 
-    \feat{Frenzied Assault}{General, Style}
-    \featpre 13th level, Willpower 12.
-    \featben While in this style, you push your body beyond its normal limits through a heroic effort of will.
-    You gain a bonus to damage with \glossterm{strikes} equal to half your Willpower.
-    In exchange, you increase all physical damage dealt to you by the same amount.
-    In addition, you take damage equal to your Willpower at the end of each round.
+    \begin{feat}{Guardian}{Combat}
+        \featpre Starting Perception and Willpower of 1.
+        \featben
 
-    \feat{Guardian}{Combat}
-    \featben Allies adjacent to you reduce their \glossterm{overwhelm penalties} by 1.
-    If this effect reduces an ally's overwhelm penalty to 0, the ally is not considered to be overwhelmed.
+        \ff[1]{Redirection} Whenever an ally adjacent to you is hit by a \glossterm{strike}, you may use this ability as an \glossterm{immediate action}.
+        If you do, you suffer all effects of the attack in place of the target.
+        Any abilities you have that would make the strike miss or fail have no effect, but your abilities that allow you to reduce or ignore its effects work normally.
+        You can learn which strikes hit the target in the current phase before deciding which strike to redirect, but not how much damage they would do.
 
-    At 3rd, 7th, 11th, and 15th level, this penalty reduction increases by 1.
+        \ff[2]{Defend the Weak, Lesser} You reduce the \glossterm{overwhelm penalties} of allies adjacent to you by 1.
+        If an ally's overwhelm penalty is reduced to 0, it not considered to be \glossterm{overwhelmed}.
 
-    \feat{Heal Mastery}{Skill}
-    \featpre Heal 6 ranks.
-    \featben Whenever you make a Heal check, you may roll twice and take the higher result.
+        \ff[4]{Binding Strike} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{One creature}{5 feet}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spelleffect You make a \glossterm{strike} against the target.
+                If the target takes damage from this strike, it is \immobilized.
+                This effect is immediately broken if you stop being adjacent to the target.
+                \spelldur Condition
+            \end{spelleffects}
+        \end{ability}
 
-    At 3rd level, you gain a \plus10 bonus to Heal checks to stabilize dying creatures (see \pcref{Dying}).
+        \ff[6]{Expanded Redirection} You can use your \textit{redirection} ability to redirect the effects of any \glossterm{mundane} attack, not just \glossterm{strikes}.
 
-    At 7th level, if you have 10 ranks in Heal, you gain a \plus5 bonus to Heal checks.
+        \ff[8]{Defend the Weak} The penalty reduction increases to 2.
 
-    At 11th level, if you have 14 ranks in Heal, you can heal wounds with incredible speed.
-    As a standard action, you can touch a creature to heal it for 1d6 points of damage per skill rank you have in the Heal skill.
-    For every two hit points you would restore, you can instead cure one point of vital damage.
-    After you have used this ability on a creature twice, you cannot use it again on that creature until it rests for half an hour.
-    \magical
+        \ff[10]{Certain Bind} You gain a \plus1 bonus to accuracy with your \textit{binding strike} ability.
 
-    \feat{Heavy Weapon Fighting}{Combat}
-    \featpre Strength 3.
-    \featben When making a melee attack with a weapon held in two hands, you increase the damage die of the weapon by one increment (see \pcref{Weapon Size}).
+        \ff[12]{Martyr's Boon}[Magical] You can use an \glossterm{action point} to use your \textit{intercession} ability on any ally within \rnglong range of you.
 
-    At 7th level, if you have 6 Strength, you gain a \plus2 bonus to damage while making a physical melee attack with a weapon held in two hands.
+        \ff[14]{Defend the Weak, Greater} The penalty reduction increases to 3.
 
-    At 11th level, if you have 9 Strength, the damage bonus increases to \plus4.
+        \ff[16]{Inescapable} Enemies you threaten must pay four times the normal movement cost to move out of squares you threaten.
+        This replaces the normal penalties for moving through threatened squares (see \pcref{Moving Near Foes}).
 
-    \feat{Hidden Magic}{Magical, Spell}
-    \featpre 5th level, 2nd level spells.
-    \featben If you cast a spell using a spell slot one level higher than normal, you can omit the verbal or somatic components of the spell (see \pcref{Components}).
+        \ff[18]{Expanded Redirection, Greater}[Magical] You can use your \textit{redirection} ability to redirect the effects of any attack, not just \glossterm{mundane} attacks. 
+    \end{feat}
 
-    At 7th level, you can cast a spell using a spell slot two levels higher than normal to omit both verbal and somatic components.
+    \begin{feat}{Heal Specialization}{Skill}
+        \featpre Heal as a mastered skill.
+        \featben
 
-    At 11th level, you can omit either the verbal or somatic components of all spells you cast.
-    In addition, the spell slot cost to omit both verbal and somatic components with this feat is reduced to one spell level.
+        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Heal.
 
-    \feat{Illusionist}{Magical, Spell}
-    \featpre 1st level or higher Illusion spell known.
-    \featben You gain a \plus2 bonus to Bluff, Disguise, and Stealth attacks and checks.
+        \ff[2]{Healing Touch}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{One willing creature}{\rngtouch}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spelleffect Make a Heal check. The target is healed for an amount equal to the Heal check result.
+                % 10th level: 1d8 +1d per two levels is 4d6, or avg of 14 healing.
+                % heal check average is 5 + 10 + 2 + 3 = 20 healing
+                % 20th level: 1d8 +1d per two levels is 7d10, or avg of 38 healing.
+                % heal check average is 5 + 20 + 2 + 4 = 31 healing
+            \end{spelleffects}
+        \end{ability}
 
-    At 3rd level, the DR to recognize your illusions as false with the Awareness skill increases to 10 (see the \spell{create image} spell).
+        \ff[4]{Lifesaver} You gain a \plus5 bonus to Heal checks to stabilize dying creatures (see \pcref{Dying}).
 
-    At 7th level, if you know a 2nd level or higher Illusion spell, your Illusion spells are more powerful.
-    You can cast Illusion spells as if they were one level lower than their actual level (minimum 1).
-    This does not stack with spell level reductions from other feats.
+        \ff[6]{Vital Healing} For every five points of healing you would restore with your \textit{healing touch}, you can instead heal a point of \glossterm{vital damage}.
 
-    At 11th level, if you know a 4th level or higher Illusion spell, you no longer need verbal components to cast Illusion spells (see \pcref{Components}).
+        \ff[8]{Specialization} The bonus to Heal increases to \plus3.
 
-    \feat{Inspiring Performer}{Magical, Performance, Skill}
-    \featpre Perform 4 ranks.
-    \featben You can create inspiring performances, starting with the ability to inspire competence.
-    You can use any combination of performance abilities a number of times per day equal to half the ranks you have in your highest Perform skill.
-    For details on how performances work, see \pcref{Performance Feats}.
-    \parhead{Inspire Competence}
-    As a standard action, you can make a DR 12 Perform check to inspire competence in another willing creature within \rngmed range of you.
-    Success means the target gains a bonus offensive \glossterm{legend point} which lasts as long as you sustain the performance.
-    Failure means the use of this ability is wasted.
-    If the legend point has not been used when you end the performance, it is wasted.
-    This is a \glossterm{Mind} effect.
+        \ff[10]{Purging Touch}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{One willing creature}{\rngtouch}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \begin{spellattack}{Heal vs. Special}
+                    \spellspecial The attack result is applied to every poison and disease on the target.
+                    The DR for each effect is equal to 10 \add the \glossterm{power} of the effect.
+                    \spellsuccess Success against a poison or disease causes it to be removed from the target, along with all of its lingering effects.
+                \end{spellattack}
+            \end{spelleffects}
+        \end{ability}
 
-    At 3rd level, you learn how to inspire courage.
-    \parhead{Inspire Courage} As a standard action, you can make a DR 14 Perform check to inspire courage in another willing creature within \rngmed range of you.
-    Success means the target gains temporary hit points equal to twice your Perform ranks.
-    Failure means the use of this ability is wasted.
-    This is a \glossterm{Mind} effect.
+        \ff[12]{Empowered Healing} When you use your \textit{healing touch} ability, you can heal additional hit points equal to your level.
 
-    At 7th level, you can affect a number of creatures with \textit{inspire competence} equal to one fifth of your Perform check result.
-    In addition, you learn how to inspire resilience.
-    \parhead{Inspire Resilience} As a standard action, you can make a DR 18 Perform check to inspire resilience in another willing creature within \rngmed range of you.
-    Success means the target gains damage reduction against all damage equal to your Perform ranks.
+        \ff[14]{Lifesaver, Greater} You can stabilize dying creatures as a \glossterm{swift action}.
 
-    At 11th level, you can affect a number of creatures with \textit{inspire courage} equal to one fifth of your Perform check result.
+        \ff[16]{Specialization, Greater} The bonus to Heal increases to \plus4.
 
-    At 15th level, you can affect a number of creatures with \textit{inspire resilience} equal to one fifth of your Perform check result.
+        \ff[18]{Wellspring of Life} You do not have to spend an \glossterm{action point} to use your \textit{healing touch} ability.
+    \end{feat}
 
-    \feat{Improvised Fighting}{Combat}
-    \featben When making a physical attack with an improvised weapon, you gain a \plus2 bonus to accuracy and you increase the damage die of the weapon by one die size (see \pcref{Weapon Size}).
+    \begin{feat}{Illusionist}{Magical, Spell}
+        \featpre \glossterm{Illusion} spell known.
+        \featben
 
-    At 3rd level, the die size modifier increases to two increments.
+        \ff[1]{Create Image} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellrng{\rngmed}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spelleffect This ability creates the visual illusion of an object, creature, or force, as determined by you.
+                The figment's size must be no smaller than Tiny, and no larger than Large.
+                The figment does not create sound, smell, or temperature.
 
-    At 7th level, the accuracy bonus increases to \plus4.
+                During the movement phase, you can move the figment anywhere within the range, with appropriate motions to simulate natural movement.
+                For example, if you created the illusion of a squad of human guards, you could cause them to walk realistically across a room.
+                The figments otherwise remain motionless, except for minor motions that simulate signs of life (if appropriate).
+                If the figment ever leaves this ability's range, the effect immediately ends.
 
-    At 11th level, the die size modifier increases to three increments.
+                The maximum intensity of a sensation created by this ability is not enough to have any significant detrimental effects on a human experiencing the sensation.
+                For example, it can create a bright light, but not so bright that it would be physically painful to view.
+                % should the light be visible outside the size of the illusion? If so, how to clarify?
 
-    \feat{Inescapable}{Combat, Style}
-    \featpre 9th level.
-    \featben While in this style, whenever you hit with a physical melee attack against a creature, you can take an \glossterm{immediate action} to impede its movement.
-    If you do, it is \immobilized for 2 rounds.
+                When you use this ability, you make a check with a bonus equal to your spellpower \add 5.
+                Creatures can recognize the figment is created by illusory magic by interacting with it physically, or by making an Awareness check against a DR equal to your check result when using this ability.
+                A creature gets a \plus10 bonus on this Awareness check when using senses which should be present in the figment, but which are missing.
+                \spelldur Sustain (swift)
+                \spelltags{Figment}
+            \end{spelleffects}
+        \end{ability}
 
-    At 11th level, your enemies must pay four times the normal movement cost to move out of squares you threaten.
-    This replaces the normal penalties for moving through threatened squares (see \pcref{Moving Near Foes}).
+        \ff[3]{Reflexive Illusion, Lesser} You gain a \plus1 bonus to Disguise, Sleight of Hand, and Stealth.
 
-    At 15th level, you can immobilize one creature each round without spending an action.
+        \ff[5]{Controlled Image} While your \textit{create image} ability is active, you can concentrate on the figment as a standard action.
+        If you do, you can directly control the figment's movement for the rest of the round, including their actions during the action phase.
+        You cannot alter the fundamental shape of the figment, but you can have it perform complex actions, such as pretending to fight other creatures or engaging in a vigorous dance.
+        The figment's ability to simulate physical tasks that require dexterity or training, such as juggling, is limited by your own.
+        You may need to make relevant checks to make the figment perform complex actions.
 
-    At 19th level, all enemies within spaces you threaten are immobilized until you stop threatening them.
-    \stylereq Wield a melee weapon.
-    You must make a melee attack each round.
-    \parhead{Special} This is a Style feat, and all of its effects only apply while you are in this style.
-    For details, see \pcref{Style Feats}.
+        \ff[7]{Muffled Illusions} The level cost to apply the Silent standard augment to Illusion spells you cast is reduced by 1, to a minimum of 0 (see \pcref{Standard Augments}).
+        In addition, choose a sense: sound, smell, or temperature.
+        Your \textit{create image} ability can create sensations with the chosen sense.
+        % How loud is the sound? How pungent is the smell? etc.
 
-    \feat{Infuriating}{Combat, Style}
-    \spelldesc{You can goad your foes into attacking you with rude gestures, insults, and mocking behavior.}
-    \featpre 5th level.
-    \featben Whenever you hit with a physical attack against a creature, you can take an \glossterm{immediate action} to make it angry.
-    If you do, it is \goaded by you for 2 rounds.
+        \ff[9]{Flexible Image} Your \textit{create image} ability can create figments between Diminuitive and Huge size.
 
-    At 11th level, you can goad one creature per round without spending an action.
+        \ff[11]{Reflexive Illusion} The bonus to skill checks increases to \plus2.
 
-    At 15th level, the struck creature is \taunted instead of goaded.
-    \parhead{Special} This is a Style feat, and all of its effects only apply while you are in this style.
-    For details, see \pcref{Style Feats}.
+        \ff[13]{Subtle Illusions} The level cost to apply the Stilled standard augment to Illusion spells you cast is reduced by 1, to a minimum of 0 (see \pcref{Standard Augments}).
+        In addition, choose a sense: sound, smell, or temperature.
+        Your \textit{create image} ability can create sensations with the chosen sense.
+
+        \ff[15]{Flexible Image, Greater} Your \textit{create image} ability can create figments between Fine and Gargantian size.
+
+        \ff[17]{Reflexive Illusion} The bonus to skill checks increases to \plus3.
+        In addition, choose a sense: sound, smell, or temperature.
+        Your \textit{create image} ability can create sensations with the chosen sense.
+    \end{feat}
+
+    \begin{feat}{Perform Specialization}{Skill}
+        \featpre Perform as a mastered skill.
+        \featben
+
+        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Perform.
+
+        \ff[2]{Inspiring Performance}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
+        When you do, you begin a performance using one of your Perform skills.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{One creature}{\rngmed}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spelleffect Make a Perform check to create an performance that can inspire the target.
+                The target gains temporary hit points equal to your check result.
+                \spelldur Sustain (swift). Sustaining this ability requires continuing the performance you started when you used this ability. If the target can neither see nor hear your performance, the effect immediately ends.
+                \spelltags{\glossterm{Delusion}, \glossterm{Mind}. In addition, this may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of the performance.}
+            \end{spelleffects}
+        \end{ability}
+
+        \ff[4]{Mesmerizing Performance}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
+        When you do, you begin a performance using one of your Perform skills.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{Up to five creatures}{\rngmed}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \begin{spellattack}{Perform vs. Mental}
+                    \spellspecial If the target thinks that you or your allies are threatening it, you take a \minus5 penalty to accuracy on the attack.
+                    \spellsuccess The target is \fascinated by you.
+                    Any act by you or your apparent allies that threatens or damages the target breaks the effect.
+                    An observant target may interpret overt threats to its allies as a threat to itself.
+                \end{spellattack}
+                \spelldur Sustain (swift). Sustaining this ability requires continuing the performance you started when you used this ability. If the target can neither see nor hear your performance, the effect immediately ends.
+                \spelltags{\glossterm{Compulsion}, \glossterm{Mind}. In addition, this may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of the performance.}
+            \end{spelleffects}
+        \end{ability}
+
+        \ff[6]{Inspire Courage}[Magical] A target affected by your \textit{inspiring performance} is immune to \glossterm{Fear} abilities as long as the effect lasts.
+
+        \ff[8]{Mass Performance}[Magical] You can target up to two creatures with your \textit{inspiring performance} ability.
+        In addition, you can target any number of creatures with your \textit{mesmerizing performance} ability.
+
+        \ff[8]{Specialization} The bonus to Perform increases to \plus3.
+
+        \ff[10]{Mesmeric Suggestion}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{One creature}{\rngmed}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spellspecial When you use this ability, you make a verbal suggestion of a particular course of action to the target.
+                You can work this suggestion into an active performance without penalty.
+                \begin{spellattack}{Perform vs. Mental}
+                    \spellspecial If the target is not currently \fascinated by your \textit{fascinating performance} ability, this attack automatically fails.
+                    If your suggestion does not seem reasonable, you take a \minus5 penalty to accuracy on this attack.
+                    Exceptionally unreasonable suggestions can impose even greater penalties, and exceptionally reasonable suggestions can give accuracy bonuses.
+                    \spellsuccess The target thinks your suggestion is a good idea and will try to follow it to the best of its abilities.
+                    Any act by you or your apparent allies that threatens or damages the target breaks the effect.
+                \end{spellattack}
+                \spelldur Sustain (swift). Sustaining this ability requires continuing the performance you started when you used this ability. If the target can neither see nor hear your performance, the effect immediately ends.
+                \spelltags{\glossterm{Compulsion}, \glossterm{Mind}. In addition, this may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of the performance.}
+            \end{spelleffects}
+        \end{ability}
+
+        \ff[12]{Endless Fascination}[Magical] You can use your \textit{mesmerizing performance} ability without spending an action point.
+
+        \ff[14]{Irresistible Dance} You ignore all failure chances on Perform attacks and checks you make.
+
+        \ff[16]{Mass Performance, Greater}[Magical] When you use your \textit{inspiring performance} ability, you can target any number of creatures.
+        In addition, the range of your \textit{mesmerizing performance} ability is increased to \rnglong.
+
+        \ff[16]{Specialization, Greater} The bonus to Perform increases to \plus4.
+
+        % maybe add ability to remove combat penalty for fascination ability
+
+        \ff[18]{Inspire Heroism} Each creature affected by your \textit{inspiring performance} gains additional temporary hit points equal to your level.
+    \end{feat}
+
+    \begin{feat}{Bardic Exemplar}{Magical, Skill}
+        \featpre Perform Specialization feat.
+        \featben
+
+        \ff[1]{Mocking Performance} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        When you do, you begin a performance using one of your Perform skills.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{One creature}{\rngmed}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \begin{spellattack}{Perform vs. Mental}
+                    \spellsuccess The target is \taunted by a willing creature of your choice within range of you.
+                \end{spellattack}
+                \spelldur Sustain (swift). Sustaining this ability requires continuing the performance you started when you used this ability. If the target can neither see nor hear your performance, the effect immediately ends.
+                \spelltags{\glossterm{Delusion}, \glossterm{Mind}. In addition, this may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of the performance.}
+            \end{spelleffects}
+        \end{ability}
+
+        \ff[3]{Perform Point} You gain a perform point.
+        A perform point can be spent to use \glossterm{magical} abilities from this feat and the Perform Specialization feat in place of an action point.
+        You recover all spent perform points after a \glossterm{short rest}.
+
+        \ff[5]{Song of Serenity} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        When you do, you begin a performance using one of your Perform skills.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{One creature}{\rngmed}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spelleffect The target is immune to hostile \glossterm{Mind} effects.
+                \spelldur Sustain (swift). Sustaining this ability requires continuing the performance you started when you used this ability. If the target can neither see nor hear your performance, the effect immediately ends.
+                \spelltags{\glossterm{Delusion}, \glossterm{Mind}. In addition, this may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of the performance.}
+            \end{spelleffects}
+        \end{ability}
+
+        \ff[7]{Demoralizing Mockery} A creature affected by your \textit{mocking performance} ability takes a \minus2 penalty to Mental defense as long as the effect lasts.
+
+        \ff[9]{Hybrid Performance} You can sustain two different \glossterm{magical} abilities from this feat or the Perform Specialization feat as part of the same \glossterm{swift action}.
+
+        \ff[11]{Mass Performance} When you use your \textit{mocking performance} ability, you can target up to five creatures.
+        Each affected creature is taunted to attack the same creature.
+        In addition, when you use your \textit{song of serenity} ability, you can target up to two creatures.
+
+        \ff[13]{Battle Cry} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        When you do, you begin a performance using one of your Perform skills.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting*{Any number of creatures}{\rngmed}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spelleffect The target gains a \plus2 bonus to accuracy with all attacks.
+                \spelldur Sustain (swift). Sustaining this ability requires continuing the performance you started when you used this ability. If the target can neither see nor hear your performance, the effect immediately ends.
+                \spelltags{\glossterm{Delusion}, \glossterm{Mind}. In addition, this may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of the performance.}
+            \end{spelleffects}
+        \end{ability}
+
+        \ff[15]{Serene Bliss} A creature affected by your \textit{song of serenity} ability is not \glossterm{bloodied} as long as the effect lasts and it has hit points remaining.
+        It suffers the normal penalties for becoming bloodied if the effect ends or it has no hit points remaining.
+
+        \ff[17]{Mass Performance, Greater} When you use your \textit{mocking performance} ability, you can target any number of creatures.
+        Each affected creature is taunted to attack the same creature.
+        In addition, when you use your \textit{song of serenity} ability, you can target up to five creatures.
+        Finally, the range of your \textit{battle cry} ability is increased to \rnglong.
+
+        \ff[19]{Champion's Anthem} A creature affected by your \textit{battle cry} ability may use your level in place of its accuracy with any attack.
+
+        \ff[19]{Hideous Laughter} If you get a \glossterm{critical hit} against a creature with your \textit{mocking performance} ability, it laughs uncontrollably until the end of the next round.
+        During this time, it can take no other actions.
+    \end{feat}
 
     \feat{Iron Will}{General}
     \featpre Willpower 3.
@@ -1562,30 +1716,6 @@ Feats can be used to specialize your character particular area, to grant your ch
     A character who is wearing armor with which she is not proficient applies its \glossterm{encumbrance penalty} to accuracy with physical attacks.
     The character also suffers double the normal arcane spell failure chance for wearing the armor.
 
-    \feat{Mesmerizing Performer}{Magical, Performance, Skill}
-    \featpre Perform (any) 4 ranks.
-    \featben You can create mesmerizing performances, starting with the ability to fascinate observers.
-    You can use any combination of performance abilities a number of times per day equal to half the ranks you have in your highest Perform skill.
-    For details on how performances work, see \pcref{Performance Feats}.
-    \parhead{Fascinating Performance}
-    \featben As a standard action, you can make a DR 12 Perform check to fascinate another creature within \rngmed range of you.
-    If the check succeeds, treat the roll as an attack against the target's Mental defense.
-    Success means the target is \fascinated by you as long as you sustain the performance.
-    Otherwise, it is unaffected.
-    This is a \glossterm{Compulsion}, \glossterm{Mind} effect.
-
-    At 7th level, you learn how to suggest actions to creatures you have fascinated.
-    \parhead{Suggestive Performance}
-    As a standard action, you can make a DR 18 Perform check to suggest an course of action to a creature within \rngmed range of you.
-    The target must be already fascinated by you using the \textit{fascinating performance} ability.
-    If the check succeeds, treat the roll as an attack against the target's Mental defense.
-    Success means the target thinks your suggestion is a good idea and will try to follow it as long as you sustain the performance.
-    Otherwise, it is unaffected, though it remains fascinated.
-    Using this ability is considered to continue your performance for the \textit{fascinating performance} ability, and does not free creatures you have fascinated from that effect.
-    This is a \glossterm{Delusion}, \glossterm{Mind}, \glossterm{Speech} effect.
-
-    At 11th level, you can affect a number of creatures with \textit{fascinating performance} equal to one fifth of your Perform check result.
-
     \feat{Miscaster}{Magical, Spell}
     \featpre 1st level spells.
     \featben Your explosive miscasts do not affect your allies.
@@ -1600,37 +1730,6 @@ Feats can be used to specialize your character particular area, to grant your ch
     At 11th level, if you know 4th level spells, you are immune to the effects of all miscast spells, both by you and by other spellcasters.
     They are unable to damage you or affect you in any way.
     You may still choose to be affected by miscast effects, if desired.
-
-    \feat{Mocking Performer}{Magical, Performance, Skill}
-    \featpre Perform (any) 4 ranks.
-    \featben You can create performances to mock your foes, starting with the ability to impair a foe.
-    You can use any combination of performance abilities a number of times per day equal to half the ranks you have in your highest Perform skill.
-    For details on how performances work, see \pcref{Performance Feats}.
-    \parhead{Mocking Performance} As a standard action, you can make a DR 12 Perform check to make fun of a creature within \rngmed range of you.
-    If the check succeeds, treat the roll as an attack against the target's Mental defense.
-    Success means the target is \impaired with attacks and checks as long as you sustain the performance.
-    Otherwise, it is unaffected.
-    This is a \glossterm{Delusion}, \glossterm{Mind} effect.
-
-    At 3rd level, you learn how to belittle a foe and make it feel as if it is already doomed to fail.
-    \parhead{Demoralizing Performance} As a standard action, you can make a DR 14 Perform check to demoralize a creature within \rngmed range of you.
-    If the check succeeds, treat the roll as an attack against the target's Mental defense.
-    Success means the target is treated as \bloodied as long as you sustain the performance.
-    Otherwise, it is unaffected.
-    This is a \glossterm{Delusion}, \glossterm{Mind} effect.
-
-    At 7th level, you can affect a number of creatures with \textit{mocking performance} equal to one fifth of your Perform check result.
-    In addition, you learn how to taunt your foes to attack a creature of your choice.
-    \parhead{Taunting Performance} As a standard action, you can make a DR 18 Perform check to taunt a creature within \rngmed range of you on behalf of one of your allies.
-    If the check succeeds, treat the roll as an attack against the target's Mental defense.
-    Success means the target is \taunted by a willing creature of your choice within \rngmed range of you.
-    Otherwise, it is unaffected.
-    This is a \glossterm{Delusion}, \glossterm{Mind} effect.
-
-    At 11th level, you can affect a number of creatures with \textit{demoralizing performance} equal to one fifth of your Perform check result.
-
-    At 15th level, you can affect a number of creatures with \textit{taunting performance} equal to one fifth of your Perform check result.
-    All targets must be taunted by a single willing ally of your choice.
 
     \feat{Mounted Combat}{Combat}
     \featpre Ride 4 ranks.
@@ -1694,19 +1793,6 @@ Feats can be used to specialize your character particular area, to grant your ch
     Success means the target it is compelled to obey your suggestion, as the effect of the \spell{suggestion} spell.
     You can use this ability three times per day.
     \magical
-
-    \feat{Perform Mastery}{Skill}
-    \featpre Perform (any) 6 ranks.
-    \featben Whenever you make a Perform check, you may roll twice and take the higher result.
-
-    At 3rd level, as long as you have mastered one Perform skill, you treat all Perform skills you were trained in as if you had mastered them.
-    This grants you additional skill ranks and increases your check modifier as normal for mastering a skill.
-    However, you cannot use these additional ranks to qualify for any feats or abilities.
-
-    At 7th level, if you have 10 ranks in any Perform skill, you gain a \plus5 bonus to Disguise checks.
-
-    At 11th level, you can use two Performance abilities as part of the same performance (see \pcref{Performance Feats}).
-    You can activate them both as part of the same action (if they require the same action to activate), and sustain both feats with a single performance.
 
     \feat{Point Blank Shot}{Combat}
     \featben You gain a \plus2 bonus to damage with physical ranged attacks against targets within 50 feet of you.
@@ -1993,17 +2079,6 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     At 15th level, you can spend a spell slot of the spell's level to gain the benefits of this feat, rather than a spell slot one level higher than normal.
 
-    \feat{Spellwoven Performance}{Magical, Skill, Spell}
-    \featpres 5th level, 1st level spells, any Performance feat.
-    \featben You can cast spells while sustaining a performance, including for performance abilities (see \pcref{Performance Feats}).
-    This does not remove the need for verbal and somatic components, though you may attempt to incorporate those into your performance (see \pcref{Components}).
-    The Spellcraft DR to identify those spells as they are cast increases by 10, as the performance disguises the magic.
-
-    At 7th level, you can spend a spell slot to use a performance ability in place of a use of your performance abilities.
-
-    At 11th level, you can spend a use of your performance abilities in place of a spell slot.
-    The spell slot must be of a spell level you have access to, and its level cannot exceed half your Perform ranks.
-
     \feat{Sprint Mastery}{Skill}
     \featpre Sprint 6 ranks.
     \featben Whenever you make a Sprint check, you may roll twice and take the higher result.
@@ -2036,27 +2111,6 @@ Feats can be used to specialize your character particular area, to grant your ch
     You may only do this for a number of rounds per day equal to your Intelligence.
 
     At 15th level, if you have 12 Intelligence, there is no limit on the number of rounds you can use this feat each day.
-
-    \feat{Supreme Inspiration}{Magical, Performance, Skill}
-    \featpres 9th level, Perform 9 ranks.
-    \featben You can create performances with staggering inspirational power, starting with the ability to inspire serenity.
-    You can use any combination of performance abilities a number of times per day equal to half the ranks you have in your highest Perform skill.
-    For details on how performances work, see \pcref{Performance Feats}.
-    \parhead{Inspire Serenity} As a standard action, you can make a DR 20 Perform check to clear the mind of a willing creature within \rngmed range of you.
-    The target is immune to all hostile \glossterm{Mind} effects as long as you sustain the performance.
-    This is a Mind effect.
-
-    At 15th level, you learn how to inspire mastery.
-    \parhead{Inspire Mastery} As a standard action, you can make a DR 22 Perform check to inspire mastery in another willing creature within \rngmed range of you.
-    As long as you sustain the performance, at the start of each round, the target gains a bonus general \glossterm{legend point} which it can spend during that round.
-    If the target's legend point has not yet been used when the round ends, it is wasted.
-
-    At 19th level, you can affect a number of creatures with \textit{inspire serenity} equal to one fifth of your Perform check result.
-    In addition, you learn how to inspire perfection.
-    \parhead{Inspire Perfection} As a standard action, you can make a DR 34 Perform check to inspire perfection in another willing creature within \rngmed range of you.
-    Once during the performance's duration, the target can spend a general legend point to treat any attack or check it attempts as if it had rolled a 20, ignoring its actual roll.
-    This decision is made in the same way as the creature would spend a normal legend point.
-    This performance is extraordinarily draining, and you can only perform it once per day.
 
     \feat{Survival Mastery}{Skill}
     \featpre Survival 6 ranks.
