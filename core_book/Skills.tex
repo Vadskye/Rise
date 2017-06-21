@@ -830,7 +830,19 @@ A character's skills describe the myriad of talents that people have.
         You can make an Intimidate check to convince a creature to do what you want. This functions like a Persuasion check to form an agreement with a group, except that you do not apply a relationship modifier. In addition, the DR is up to 10 lower if the group thinks your group is significantly stronger than them, or up to 10 higher if the group thinks your group is significantly weaker.
 
     \subsection{Demoralize}\label{Demoralize}
-        As a standard action, you can make an Intimidate vs. Mental attack against a creature within \rngmed range of you. Success means the creature is \shaken by you for 2 rounds.
+        As a standard action, you can use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{One creature}{\rngmed}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \begin{spellattack}{Intimidate vs. Mental}
+                    \spellsuccess The target is \shaken by you.
+                \end{spellattack}
+                \spelldur Condition
+                \spelltags{\glossterm{Delusion}, \glossterm{Mind}}
+            \end{spelleffects}
+        \end{ability}
 
     \skill{Jump}{Str}
         The Jump skill represents your ability to jump. All Jump checks are made as part of movement, so they take no special action to perform. Distance moved with Jump checks is counted against your normal maximum movement in a round.
@@ -838,6 +850,7 @@ A character's skills describe the myriad of talents that people have.
         Several modifiers apply to all Jump checks, which are described below.
 
         \parhead{Running Start}\label{Running Start} If you move at least twenty feet before jumping, you have a running start.
+        % TODO: This makes no sense for people with +0; what does a negative Jump result mean? Do you have a 50% chance to fall over? Halving makes more sense, but makes rebounding too difficult.
         Jumping without a running start is difficult, and you take a \minus5 penalty to all Jump checks.
 
     \subsection{Hop Up}
