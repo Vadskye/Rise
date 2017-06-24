@@ -730,7 +730,7 @@ A character's skills describe the myriad of talents that people have.
     \subsection{Conceal Object}
         As a standard action, you can make a Disguise check to conceal an item on your person. The object must be at least two size categories smaller than you are. Your Disguise check is opposed by the Awareness check of anyone observing you. Success means they fail to notice the item. A creature directly interacting you to search for the object, such as by frisking you, gains a \plus5 bonus to its Awareness check.
 
-    \subsection{Disguise Creature}
+    \subsection{Disguise Creature}\label{Disguise Creature}
         You can make a Disguise check to change the appearance of a creature using makeup, costumes, and so forth. An observer can perceive the presence of a disguise with a Disguise or Awareness check to identify a disguise that is higher than your Disguise check. The effectiveness of a disguise depends in part on how much you're attempting to change the creature's appearance, as shown on the table below. The modifiers are cumulative; use any that apply.
 
         Creating a disguise takes 1d4 \x 10 minutes. You can take a \minus5 penalty to reduce the time to 1d4 minutes, or a \minus10 penalty to reduce the time to 1d4 rounds.
@@ -845,13 +845,13 @@ A character's skills describe the myriad of talents that people have.
         \end{ability}
 
     \skill{Jump}{Str}
-        The Jump skill represents your ability to jump. All Jump checks are made as part of movement, so they take no special action to perform. Distance moved with Jump checks is counted against your normal maximum movement in a round.
+        The Jump skill represents your ability to jump. All Jump checks are made as part of movement, so they take no special action to perform. Distance moved with Jump checks is counted against your normal maximum movement in a phase.
 
         Several modifiers apply to all Jump checks, which are described below.
 
         \parhead{Running Start}\label{Running Start} If you move at least twenty feet before jumping, you have a running start.
-        % TODO: This makes no sense for people with +0; what does a negative Jump result mean? Do you have a 50% chance to fall over? Halving makes more sense, but makes rebounding too difficult.
-        Jumping without a running start is difficult, and you take a \minus5 penalty to all Jump checks.
+        Jumping without a running start is difficult.
+        If you make a Jump attack or check without a running start, you roll twice and take the lower result.
 
     \subsection{Hop Up}
         You can make a DR 5 Jump check while moving to jump up onto an object as tall as your waist, such as a table or small boulder. Doing so counts as 5 feet of movement. Success means you land on top of the object and can continue your movement. Failure indicates you stop your movement where you are. You do not need to get a running start to hop up.
@@ -877,7 +877,7 @@ A character's skills describe the myriad of talents that people have.
         If an insufficiently long jump would cause you to fall into a gap, you can attempt to stop your fall (see \pcref{Stop Fall}) if you can reach the wall.
 
     \subsection{Rebounding Leap}\label{Rebounding Leap}
-        While in midair, if you make contact with a solid object that can support your weight, you can jump off of that object.
+        While in midair, if you make contact with a solid object that can support your weight, you can jump off of that object, as the \textit{leap} ability.
         You are not considered to have a running start.
         In addition, you take a \minus5 penalty to the check (in addition to the penalty for not having a running start), because rebounding off of an object in midair is difficult.
         You must travel at least 10 feet in the air between each rebounding jump.
