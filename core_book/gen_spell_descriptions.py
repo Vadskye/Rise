@@ -16,9 +16,6 @@ duration_mapping = {
     'condition': 'Condition',
     'sustain (swift)': 'Sustain (swift)',
 }
-miscast_mapping = {
-    'random': r'\miscastexplode',
-}
 rng_mapping = {
     'close': r'\rngclose',
     'medium': r'\rngmed',
@@ -106,7 +103,6 @@ class Spell(object):
             effects=None,
             header=None,
             lists=None,
-            miscast='random',
             name=None,
             schools=None,
             targeting=None,
@@ -122,7 +118,6 @@ class Spell(object):
         self.header = header
         self.name = name
         self.lists = lists
-        self.miscast = miscast
         self.notes = notes
         self.schools = schools
         self.short_description = short_description or 'TODO'
@@ -188,7 +183,6 @@ class Spell(object):
             """, f"""
                         \\spellnotes {self.notes}
             """ if self.notes else None, f"""
-                        {miscast_mapping[self.miscast]}
                     \\end<spellfooter>
             """, f"""
                     \\begin<spellcantrip>
