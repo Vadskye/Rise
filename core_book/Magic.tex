@@ -49,7 +49,20 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
     \subsection{Miscasting}\label{Miscasting}
 
         If you start casting a spell and fail to complete it, such as if your concentration is broken or your armor interferes with your spellcasting, you miscast the spell.
-        When you miscast a spell, you and all creatures adjacent to you take 1d4 physical damage \plus1d per two spellpower for the spell that was miscast.
+        When you miscast a spell, the spell does not have its normal effect.
+        Instead, a wave of magical energy causes a \glossterm{miscast backlash}, as described below.
+        This is a \glossterm{magical} effect.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellarea{5 foot radius burst centered on you}
+                \spelltgts{Everything in the area}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spelleffect The target takes 1d4 physical damage \plus1d per two spellpower with the spell that was miscast.
+            \end{spelleffects}
+        \end{ability}
+
+        At the start of each phase while you are casting a spell, you can choose to stop casting the spell, causing you to \glossterm{miscast} it instead.
 
     \subsection{Augments}\label{Augments}
         Every spell has a number of \glossterm{augments} that can be applied to it.
