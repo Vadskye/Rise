@@ -76,10 +76,19 @@ It defines how attributes work and explains how to make physical attacks in comb
 
     \subsection{Strikes}
         A \glossterm{strike} is the most common type of attack.
-        A strike is a single \glossterm{physical} attack with a weapon.
-        All strikes are compared to the target's Armor defense unless otherwise specified.
-        Every creature can make a strike with its fists or some other part of its body if necessary.
-        All strikes are \glossterm{mundane}.
+        It is a \glossterm{physical}, \glossterm{mundane} ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellspecial Choose a weapon you wield, or your \glossterm{unarmed attack}.
+                \spellquicktargeting{One creature or object}{As weapon}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \begin{spellattack}{Physical vs. Armor}
+                    \spellsuccess The target takes \glossterm{strike damage} with the chosen weapon (see \pcref{Strike Damage}).
+                    \spellcritical As above, but the target takes double damage.
+                \end{spellattack}
+            \end{spelleffects}
+        \end{ability}
 
 \section{Combat Overview}
     The world of Rise can be a harsh one, and not all disagreements can be resolved peacefully.
@@ -292,9 +301,9 @@ It defines how attributes work and explains how to make physical attacks in comb
 
     \subsection{Special Actions}
 
-        \parhead{Charge}\label{Charge} As a \glossterm{standard action}, you can move up to your speed in the action phase and make a \glossterm{strike}.
-        Your strike is delayed (see \pcref{Delaying}).
-        However, if you charge, you take a \minus5 penalty to \glossterm{physical defenses} during that phase.
+        \parhead{Charge}\label{Charge} As a \glossterm{standard action}, you can move up to your speed in the action phase.
+        During the \glossterm{delayed action phase}, you can make a \glossterm{strike} from your new location.
+        If you charge, you take a \minus5 penalty to \glossterm{physical defenses} until the end of the round, including during the \glossterm{action phase}.
 
         \par Your movement while charging has special limitations.
         First, you must move entirely in a single straight line.
@@ -343,7 +352,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
             If you have a high Strength, you can use it to determine several statistics:
             \begin{itemize}
-                \item Your \glossterm{accuracy} with \glossterm{strikes} using \glossterm{light weapons} (see \pcref{Strike Accuracy}).
+                \item Your \glossterm{accuracy} with \glossterm{strikes} using \glossterm{light weapons} (see \pcref{Physical Accuracy}).
                 \item Your damage with \glossterm{strikes} (see \pcref{Strike Damage}).
                 \item Your Fortitude defense (see \pcref{Defenses}).
             \end{itemize}
@@ -359,7 +368,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
             If you have a high Dexterity, you can use it to determine several statistics:
             \begin{itemize}
-                \item Your \glossterm{accuracy} with \glossterm{strikes} using melee and thrown weapons (see \pcref{Strike Accuracy}).
+                \item Your \glossterm{accuracy} with \glossterm{strikes} using melee and thrown weapons (see \pcref{Physical Accuracy}).
                 \item Your Armor and Reflex defenses (see \pcref{Defenses}).
             \end{itemize}
 
@@ -402,7 +411,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
             If you have a high Perception, you can use it to determine several statistics:
             \begin{itemize}
-                \item Your \glossterm{accuracy} with \glossterm{strikes} (see \pcref{Strike Accuracy}).
+                \item Your \glossterm{accuracy} with \glossterm{strikes} (see \pcref{Physical Accuracy}).
                 \item Your Reflex defense (see \pcref{Defenses}).
             \end{itemize}
 
@@ -496,8 +505,8 @@ It defines how attributes work and explains how to make physical attacks in comb
         You will have multiple different attacks you can make.
         The accuracy for an attack depends on the type of attack it is.
 
-        \subsubsection{Strike Accuracy}\label{Strike Accuracy}
-            Your accuracy with a \glossterm{strike} is normally equal to the higher of your level and your Perception.
+        \subsubsection{Physical Accuracy}\label{Physical Accuracy}
+            Your accuracy with a \glossterm{physical} attack, such as a \glossterm{strike}, is normally equal to the higher of your level and your Perception.
             If you are using a \glossterm{light weapon}, you may use your Dexterity instead.
             In addition to this base number, your accuracy can include any number of bonuses and penalties from other sources.
 
@@ -1067,7 +1076,6 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \parhead{Heavy Maneuvers} You can use a heavy maneuver as a standard action.
         Before applying bonuses and penalties, your accuracy with a heavy maneuver is equal to your Strength.
-        You take a \minus2 penalty to accuracy with heavy maneuvers for each size category you are smaller than your target, or a \plus2 bonus for each size category you are larger.
 
         \parhead{Light Maneuvers} You can use a light maneuver as a standard action.
         Before applying bonuses and penalties, your accuracy with a light maneuver is equal to your normal accuracy with strikes (see \pcref{Strike Accuracy}).
@@ -1090,60 +1098,109 @@ It defines how attributes work and explains how to make physical attacks in comb
         \subsubsection{Maneuver Descriptions}
 
             \parhead{Dirty Trick}\label{Dirty Trick} You strike your foe in a sensitive spot, pull its pants down, or creatively use your environment to attack.
-            Depending on the nature of your dirty trick, you can target Fortitude, Reflex, or Mental defense.
-            You must use a free hand to perform a dirty trick.
-            Success means the target is \impaired with actions relevant to the nature of your trick for 2 rounds.
-            Critical success means the target is \severelyimpaired instead.
-            Critical failure means you are \impaired with relevant actions instead.
-            Unusual dirty tricks using the environment may impose other effects of similar strength.
-            Dirty tricks are a light maneuver.
+            You must use a free hand to use this ability.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellquicktargeting{One creature}{Adjacent}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \begin{spellattack}{Physical vs. Special}
+                        \spellspecial Depending on the nature of your dirty trick, this attack can target Fortitude or Reflex defense.
+                        \spellsuccess The target suffers a \minus2 penalty to one of the following statistics:
+                        \glossterm{accuracy} with \glossterm{physical} attacks, \glossterm{physical} checks, Armor defense, Fortitude defense, Reflex defense, or Mental defense.
+
+                        \spellcritical As above, except that the penalty is increased to \minus5.
+                    \end{spellattack}
+                \end{spelleffects}
+            \end{ability}
 
             \parhead{Disarm}\label{Disarm} You can strike an item your foe is wearing or holding to knock it out of their hands or damage it.
-            You can perform a disarm with a free hand or any weapon.
-            You make a physical attack against the target's Reflex defense.
-            Success means you hit the object, and can choose whether or not to deal damage to it.
-            In addition, if the creature is not holding the item in its hands, it falls to the ground in the foe's square.
-            Critical success means you can also knock an item held directly in a creature's hands to the ground.
-            Critical failure means you drop the weapon you used to attack (if any).
-
-            If you disarm a foe using a free hand, you can hold a disarmed item rather than letting it fall to the ground.
-            Items that are very well secured, such as worn rings, cannot be knocked to the ground or grabbed.
-            Disarming is a light maneuver.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellspecial Choose a weapon you wield, or your \glossterm{unarmed attack}.
+                    \spellquicktargeting{One object}{As weapon}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \begin{spellattack}{Physical vs. Special}
+                        \spellspecial If the target is \glossterm{unattended}, this attack is made against its Armor defense.
+                        If the target is \glossterm{attended}, this attack is also made against the attending creature's Reflex defense.
+                        \spellsuccess You choose whether or not the target takes \glossterm{strike damage} from the chosen weapon.
+                        In addition, if the target is \glossterm{attended} and not held in two hands or extraordinarily well secured (such as a ring), it falls to the ground in the closest square to you occupied by the attending creature.
+                        \spellcritical As above, but you deal double damage if you choose to deal damage.
+                        In addition, the target falls to the ground even if it is held in two hands.
+                    \end{spellattack}
+                \end{spelleffects}
+            \end{ability}
 
             \parhead{Feint}\label{Feint} You can make a fake attack to leave your foe off-balance.
-            You can perform a feint with a free hand or any weapon.
-            You make a physical attack against the target's Reflex defense.
-            Success means the target takes a \minus5 penalty to physical defenses against your next attack.
-            Critical success means the target takes a \minus5 penalty to physical defenses against all of your attacks.
-            Critical failure means you take a \minus5 penalty to physical defenses against the next attack by the target.
-            In either case, if you stop threatening the target, the effect of the feint immediately ends.
-            Feinting is a light maneuver.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellspecial Choose a weapon you wield, or your \glossterm{unarmed attack}.
+                    \spellquicktargeting{One creature}{As weapon}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \spelleffect During the \glossterm{delayed action phase}, you make a \glossterm{strike} with the weapon.
+                    You can make the strike against any creature within range of your weapon, including the creature this ability targets.
+                    \begin{spellattack}{Physical vs. Reflex}
+                        \spellsuccess The target takes a \minus2 penalty to Armor defense against the strike.
+                        \spellcritical As above, but the penalty is increased to \minus5.
+                        \spellfailure You take a \minus2 penalty to accuracy with the strike.
+                    \end{spellattack}
+                \end{spelleffects}
+            \end{ability}
 
             \parhead{Grapple}\label{Grapple} You physically grab and restrain your foe.
-            You must use a free hand to perform a grapple.
-            You make a physical attack against the target's Reflex and Fortitude defenses.
-            Success against both defenses means you and the creature become \grappled.
-            See \pcref{Grappling} for more details.
-            Grapping is a heavy maneuver.
+            You must use a free hand to use this ability.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellquicktargeting{One creature}{Adjacent}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \begin{spellattack}{Physical vs. Fortitude and Reflex}
+                        \spellsuccess You and the target are \grappled.
+                        For details, see \pcref{Grappling}.
+                    \end{spellattack}
+                \end{spelleffects}
+            \end{ability}
 
             \parhead{Shove}\label{Shove} You shove your foe where you want it to go.
-            You must use a free hand to perform a shove.
-            You make a physical attack against the target's Fortitude defense.
-            Success means you move the creature 5 feet in a direction of your choice.
-            For every 5 points by which you succeed, you can move it an additional 5 feet.
-            You cannot normally move the creature further after moving it outside of your reach.
-            If you have movement remaining in the round, you can move with the creature in order to shove it farther.
-            If the creature encounters a solid object or creature, you must stop shoving it.
-            Shoving is a heavy maneuver.
+            You must use a free hand to use this ability.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellquicktargeting{One creature}{Adjacent}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \begin{spellattack}{Strength vs. Fortitude}
+                        \spellsuccess You move the target up to 10 feet in a direction of your choice.
+                        Effects that limit movement speed, such as \glossterm{difficult terrain}, similarly limit the distance you can move the target.
+                        You can move the same distance that you push the target, up to a maximum distance equal to half your land speed.
+
+                        You cannot normally keep moving the target if it stops being adjacent to you.
+                        If the target encounters a creature or solid object, you must stop moving it.
+                        \spellcritical As above, except that you can move the target up to five feet per point of Strength you have.
+                        This does not change the maximum distance you can move.
+                        In addition, you can move the target through creatures, but not solid objects.
+                        Each five feet of movement through a creature costs 10 feet of movement.
+                        You cannot leave the target inside another creature's space.
+                        If that occurs inadvertently, you and the target return to the last open space you both occupied.
+                    \end{spellattack}
+                \end{spelleffects}
+            \end{ability}
 
             \parhead{Trip}\label{Trip} You try to trip your foe.
-            You must use a free hand to perform a trip.
-            You make a physical attack against the target's Reflex defense.
-            Success means the target falls \prone.
-            Critical failure means you fall prone instead.
-            As with other effects, the target does not suffer penalties for being prone against your other attacks within the same round.
-            It is still in the process of falling as you make the subsequent attacks.
-            Tripping is a light maneuver.
+            You must use a free hand to use this ability.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellquicktargeting{One creature}{Adjacent}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \begin{spellattack}{Physical vs. Reflex}
+                        \spellsuccess The target becomes \prone.
+                        \spellcritical As above. In addition, during the \glossterm{delayed action phase}, you can make a \glossterm{strike} with a weapon you wield.
+                        You take a \minus2d penalty to damage with the strike.
+                    \end{spellattack}
+                \end{spelleffects}
+            \end{ability}
 
     \subsection{Grappling}\label{Grappling}
         Grappling creatures are physically struggling with each other. While grappled, you suffer certain penalties and restrictions, as described below.
