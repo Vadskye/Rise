@@ -833,13 +833,13 @@
     \IfValueTF{#1}
     {
         \IfValueTF{#3}
-        { \subparhead{\nth{#1}~--~#2~(#3)} }
-        { \subparhead{\nth{#1}~--~#2} }
+        { \nth{#1}~--~\textbf{#2:}~(#3) }
+        { \nth{#1}~--~\textbf{#2:} }
     }
     {
         \IfValueTF{#3}
-        { \subparhead{#2~(#3)} }
-        { \subparhead{#2} }
+        { \parhead{#2~(#3)} }
+        { \parhead{#2} }
     }
 }
 
