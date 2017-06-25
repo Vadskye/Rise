@@ -375,7 +375,6 @@ This is a \glossterm{Shielding} effect from the \glossterm{Evocation} school.
 \begin{spellattack}{Spellpower vs. Fortitude}
 \spellsuccess
 The target takes a \minus2 penalty to \glossterm{accuracy}, \glossterm{checks}, and \glossterm{defenses}.
-This effect lasts until the target removes this \glossterm{condition}.
 \spellcritical
 As above, but the penalty is increased by 2.
 \end{spellattack}
@@ -394,11 +393,25 @@ Its effect is still a condition, and can be removed by abilites that remove cond
 \subsubsection{Augments}
 \parhead{Standard Augments} Extended, Mass.
 \augment{2}{Eyebite}
-If the spell's attack succeeds, the target is also \partiallyblinded. If it critically succeeds, the target is \blinded instead of partially blinded.
+If the spell's attack succeeds, the target is also \partiallyblinded. If it critically hits, the target is \blinded instead of partially blinded.
 \augment{2}{Finger of Death}
-If the spell's attack critically succeeds, the target immediately dies.
+If the spell's attack critically hits, the target immediately dies.
 \par
 This is a \glossterm{Death} effect.
+\augment{3}{Cursed}
+If the spell's attack critically hits, the spell's effect becomes a curse.
+It is no longer a condition, and cannot be removed by abilities that remove conditions.
+\par
+This is a \glossterm{Curse} effect.
+\augment{3}{Empowered}
+The penalty increases by 1.
+\par
+This augment can be applied multiple times.
+Its effects stack.
+\augment{4}{Corruption of Blood and Bone}
+If the spell's attack succeeds, at the end of each round, the target takes life damage equal to your spellpower.
+The target's maximum hit points are reduced by the amount of damage it takes in this way.
+When the spell ends, the target's maximum hit points are restored.
 \begin{spellsection}{Create Acid}
 \begin{spellheader}
 \spelldesc{You create a magical orb of acid in your hand that speeds to its target.}
@@ -461,55 +474,6 @@ If the target is undead, the spell gains a \plus2 bonus to accuracy and deals do
 For every 2 points of healing, this spell can instead cure 1 vital damage.
 \augment{3}{Critical Wounds}
 For every point of healing, this spell can instead cure 1 vital damage.
-\begin{spellsection}{Curse}
-\begin{spellheader}
-\spelldesc{You lay a dreadful curse on your foe.}
-\end{spellheader}
-\begin{spellcontent}
-\begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
-\end{spelltargetinginfo}
-\begin{spelleffects}
-\begin{spellattack}{Spellpower vs. Mental}
-\spellsuccess
-The target takes a \minus2 penalty to \glossterm{accuracy}, \glossterm{checks}, and \glossterm{defenses}.
-\spellcritical
-As above, but the effect becomes permanent.
-It is no longer a condition, and cannot be removed by abilities that remove conditions.
-\end{spellattack}
-\spelldur Condition
-\spelltags{\glossterm{Curse}}
-\end{spelleffects}
-\end{spellcontent}
-\begin{spellfooter}
-\spellinfo{Vivimancy}{Arcane, Divine}
-\spellnotes \cursespellnotes
-\end{spellfooter}
-\begin{spellcantrip}
-The spell's duration becomes Sustain (swift).
-Its effect is still a condition, and can be removed by abilites that remove conditions.
-In addition, it has no additional effects on a critical hit.
-\end{spellcantrip}
-\end{spellsection}
-\subsubsection{Augments}
-\parhead{Standard Augments} Extended, Mass.
-\augment{1}{Curse of the Wayward Mind}
-Replace
-the spell's effects with the following:
-\begin{augmenteffects}
-\spelleffect The target is \disoriented.
-\spelldur Condition
-\spelltags{\glossterm{Curse}}
-\end{augmenteffects}
-\augment{3}{Empowered}
-The penalty increases by 1.
-\par
-This augment can be applied multiple times.
-Its effects stack.
-\augment{4}{Curse of Blood and Bone}
-If the spell's attack succeeds, at the end of each round, the target takes life damage equal to your spellpower.
-The target's maximum hit points are reduced by the amount of damage it takes in this way.
-When the spell ends, the target's maximum hit points are restored.
 \begin{spellsection}{Distort Image}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
@@ -538,7 +502,7 @@ Replace
 the spell's effects with the following:
 \begin{augmenteffects}
 \spelleffect
-You make a Disguise check to disguise the target as another creature (see \pcref{Disguise Creature}).
+You make a Disguise check to alter the target's appearance (see \pcref{Disguise Creature}).
 You gain a \plus5 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form.
 However, this effect is unable to alter the sound, smell, texture, or temperature of the target or its clothes and equipment.
 \spelldur Attunement

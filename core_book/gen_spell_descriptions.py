@@ -1274,65 +1274,6 @@ def generate_spells():
         category='debuff, mobility',
     ))
     spells.append(Spell(
-        name="Curse",
-        header=Header("You lay a dreadful curse on your foe."),
-        targeting=Targeting(
-            target='One creature',
-            rng='close',
-        ),
-        effects=Effects(
-            attack=Attack(
-                defense='Mental',
-                success="""
-                    The target takes a -2 penalty to \\glossterm<accuracy>, \\glossterm<checks>, and \\glossterm<defenses>.
-                """,
-                critical="""
-                    As above, but the effect becomes permanent.
-                    It is no longer a condition, and cannot be removed by abilities that remove conditions.
-                """,
-            ),
-            duration='condition',
-            tags=['Curse'],
-        ),
-        notes='\\cursespellnotes',
-        schools=['Vivimancy'],
-        lists=['Arcane', 'Divine'],
-        cantrip="""
-            The spell's duration becomes Sustain (swift).
-            Its effect is still a condition, and can be removed by abilites that remove conditions.
-            In addition, it has no additional effects on a critical hit.
-        """,
-        custom_augments=[
-            Augment(
-                level=1,
-                name="Curse of the Wayward Mind",
-                effects=Effects(
-                    effect="The target is \\disoriented.",
-                    duration='condition',
-                    tags=['Curse'],
-                ),
-            ),
-            Augment(
-                level=3,
-                name="Empowered",
-                description="""
-                    The penalty increases by 1.
-                """,
-                stackable=True,
-            ),
-            Augment(
-                level=4,
-                name="Curse of Blood and Bone",
-                description="""
-                    If the spell's attack succeeds, at the end of each round, the target takes life damage equal to your spellpower.
-                    The target's maximum hit points are reduced by the amount of damage it takes in this way.
-                    When the spell ends, the target's maximum hit points are restored.
-                """,
-            ),
-        ],
-        category='debuff, combat',
-    ))
-    spells.append(Spell(
         name="Poison",
         header=Header("You weaken your foe with a potent poison."),
         targeting=Targeting(
@@ -1430,7 +1371,6 @@ def generate_spells():
                 defense='Fortitude',
                 success="""
                     The target takes a -2 penalty to \\glossterm<accuracy>, \\glossterm<checks>, and \\glossterm<defenses>.
-                    This effect lasts until the target removes this \\glossterm<condition>.
                 """,
                 critical="""
                     As above, but the penalty is increased by 2.
@@ -1450,16 +1390,42 @@ def generate_spells():
                 level=2,
                 name="Eyebite",
                 description="""
-                    If the spell's attack succeeds, the target is also \\partiallyblinded. If it critically succeeds, the target is \\blinded instead of partially blinded.
+                    If the spell's attack succeeds, the target is also \\partiallyblinded. If it critically hits, the target is \\blinded instead of partially blinded.
                 """,
             ),
             Augment(
                 level=2,
                 name="Finger of Death",
                 description="""
-                    If the spell's attack critically succeeds, the target immediately dies.
+                    If the spell's attack critically hits, the target immediately dies.
                 """,
                 tags=['Death'],
+            ),
+            Augment(
+                level=4,
+                name="Corruption of Blood and Bone",
+                description="""
+                    If the spell's attack succeeds, at the end of each round, the target takes life damage equal to your spellpower.
+                    The target's maximum hit points are reduced by the amount of damage it takes in this way.
+                    When the spell ends, the target's maximum hit points are restored.
+                """,
+            ),
+            Augment(
+                level=3,
+                name="Cursed",
+                description="""
+                    If the spell's attack critically hits, the spell's effect becomes a curse.
+                    It is no longer a condition, and cannot be removed by abilities that remove conditions.
+                """,
+                tags=['Curse'],
+            ),
+            Augment(
+                level=3,
+                name="Empowered",
+                description="""
+                    The penalty increases by 1.
+                """,
+                stackable=True,
             ),
         ],
         category='debuff, combat',
@@ -1869,7 +1835,7 @@ def generate_spells():
                 name="Disguise Image",
                 effects=Effects(
                     effect="""
-                        You make a Disguise check to disguise the target as another creature (see \\pcref<Disguise Creature>).
+                        You make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).
                         You gain a +5 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form.
                         However, this effect is unable to alter the sound, smell, texture, or temperature of the target or its clothes and equipment.
                     """,
