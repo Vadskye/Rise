@@ -4,12 +4,15 @@ Feats are special abilities that every character has.
 Feats can be used to specialize your character particular area, to grant your character new abilities, or to change the way your character does certain things.
 
 \section{Gaining Feats}
-    Your character gains a feat at 1st level and every 4 levels thereafter: 1st, 5th, 9th, and so on.
+    Your character gains two feats at 1st level, a third at 5th level, and a fourth at 10th level.
+    % TODO: are there any bonus fetas
     Classes can sometimes grant bonus feats as well, which are in addition to these feats which every character gets.
+    A character cannot gain the same feat twice.
 
     \subsection{Prerequisites}
         Some feats have prerequisites.
-        Your character must have the indicated attribute score, ability, feat, skill, or other quality designated in order to select or use that feat.
+        Unless your character has all of the prerequisites, they cannot take the feat.
+        Prerequisites can include a minimum starting attribute score, another feat or feats, a minimum level of training in a skill, or some other property of a character.
         A character can gain a feat at the same level at which he or she gains the prerequisite.
 
         A character can't use a feat if he or she has lost a prerequisite.
@@ -218,19 +221,11 @@ Feats can be used to specialize your character particular area, to grant your ch
     Here is the format for feat descriptions.
 
     \ssecfake{Feat Name [Type of Feat]}
-    \featpre A minimum attribute score, another feat or feats, a minimum number of ranks in one or more skills, or a class level that a character must have in order to acquire this feat.
-    This entry is absent if a feat has no prerequisite.
-    A feat may have more than one prerequisite.
+    \featpre Requirements a character must meet before taking the feat.
+    This entry is absent if a feat has no prerequisites.
     \featben What the feat enables the character (``you'' in the feat description) to do.
-    If a character has the same feat more than once, its benefits do not stack unless indicated otherwise in the description.
-    \par In general, characters cannot gain the same feat twice.
-    \parhead{Normal}
-    What a character who does not have this feat is limited to or restricted from doing.
-    If not having the feat causes no particular drawback, this entry is absent.
-    \parhead{Special}
-    Additional facts about the feat that may be helpful when you decide whether to acquire the feat.
 
-    \begin{feat}{Abjurer}{Magical, Spell}
+    \begin{feat}{Abjurer}{Magical}
         \spelldesc{You have great talent with Abjuration spells.}
         \featpre \glossterm{Abjuration} spell known.
         \featben
@@ -268,7 +263,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         This does not stack with spell level reductions from other feats.
     \end{feat}
 
-    \begin{feat}{Skill Specialization, Acrobatics}{Skill}
+    \begin{feat}{Acrobatics Specialization}{Skill}
         \featpre Acrobatics as a mastered skill.
         \parhead{Benefits}
         
@@ -334,7 +329,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         You cannot use it twice to affect the same attack.
     \end{feat}
 
-    \begin{feat}{Skill Specialization, Awareness}{Skill}
+    \begin{feat}{Awareness Specialization}{Skill}
         \featpre Awareness as a mastered skill.
         \parhead{Benefits}
 
@@ -364,8 +359,8 @@ Feats can be used to specialize your character particular area, to grant your ch
         Its range is doubled.
     \end{feat}
 
-    \begin{feat}{Battlecaster}{Spell}
-        \featpre Ability to cast spells.
+    \begin{feat}{Eldritch Knight}{Spell}
+        \featpre Ability to cast a spell.
         \featben
 
         \ff[1]{Combat Concentration, Lesser} You gain a \plus2 bonus to Concentration checks made to cast spells.
@@ -613,25 +608,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         In addition, the size category decrease for the purpose of climbing on creatures improves to two size categories smaller than normal.
     \end{feat}
 
-    \begin{feat}{Combat Mobility}{Combat, Mobility}
-        \featpre Starting Dexterity of 2.
-        \featben
-
-        \ff[1]{Unfettered Movement, Lesser} During each phase, you may move through one creature's space during movement.
-        You move at half speed while in its space.
-        After moving through that creature's space, other creatures block you as normal for the remainder of your movement.
-        Certain unusual creatures that occupy their entire space, such as gelatinous cubes, may be immune to this ability.
-
-        \ff[2]{Spring Attack} As a standard action, you can spend an \glossterm{action point} to use this ability.
-        If you do, move up to your movement speed and make a \glossterm{strike}.
-        As a \glossterm{delayed action}, you may continue moving if you have remaining movement available in the phase.
-
-        \ff[8]{Unfettered Movement} Moving through spaces occupied by creatures does not reduce your movement speed.
-
-        \ff[14]{Unfettered Movement, Greater} You can move through the spaces of any number of creatures in the same phase, rather than just one creature.
-    \end{feat}
-
-    \begin{feat}{Conjurer}{Magical, Spell}
+    \begin{feat}{Conjurer}{Magical}
         \featpre \glossterm{Conjuration} spell known.
         \featben
 
@@ -715,7 +692,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         Doing so costs a tenth of the raw materials and a quarter of the time it would take to craft that item in the first place.
         You cannot mend a \glossterm{destroyed} magic item.
 
-        \ff[4]{Crafting Savant} You gain two additional \glossterm{skill points} which must be spent on Craft skills.
+        \ff[4]{Crafting Savant} You gain two additional \glossterm{skill points} which can only be spent on Craft skills.
 
         \ff[6]{Rapid Creation} Crafting magic items takes you one hour per 100 gp of material components.
 
@@ -723,7 +700,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[10]{Rapid Creation} Crafting magic items takes you one hour per 500 gp of material components.
 
-        \ff[12]{Crafting Savant, Greater} You gain two additional \glossterm{skill points} which must be spent on Craft skills.
+        \ff[12]{Crafting Savant, Greater} The number of extra skill points increases to four.
 
         \ff[14]{Rapid Creation} Crafting magic items takes you one hour per 2,500 gp of material components.
 
@@ -784,7 +761,7 @@ Feats can be used to specialize your character particular area, to grant your ch
                 \spellquicktargeting{One creature or object}{Line of sight}
             \end{spelltargetinginfo}
             \begin{spelleffects}
-                \spelleffect You gain a \plus2 bonus to accuracy on \glossterm{strikes} against that target.
+                \spelleffect You gain a \plus2 bonus to accuracy on \glossterm{strikes} against the target.
                 \spelldur Sustain (swift). If you lose sight of the target for a full round, this effect ends.
             \end{spelleffects}
         \end{ability}
@@ -877,7 +854,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[16]{Specialization, Greater} The bonus to Disguise increases to \plus4.
     \end{feat}
 
-    \begin{feat}{Diviner}{Magical, Spell}
+    \begin{feat}{Diviner}{Magical}
         \featpre \glossterm{Divination} spell known.
         \featben
 
@@ -997,7 +974,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \end{dtabularx}
     \end{dtable}
 
-    \begin{feat}{Enchanter}{Magical, Spell}
+    \begin{feat}{Enchanter}{Magical}
         \featpre \glossterm{Enchantment} spell known.
         \featben
 
@@ -1058,7 +1035,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         This ability does not allow you to ignore this fatigue.
 
         \ff[6]{Injury Tolerance} You take a \minus2 penalty for being \glossterm{bloodied} instead of a \minus5 penalty.
-        In addition, having \glossterm{vital damage} imposes half the normal penalties.
+        In addition, having \glossterm{vital damage} causes you to sufffer a penalty to accuracy, checks, and defenses equal to half the amount of vital damage you have.
 
         \ff[8]{Great Fortitude} The bonus to Fortitude defense increases to \plus2.
 
@@ -1113,7 +1090,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[18]{Escape Magic, Greater}[Magical] You can use your \textit{escape magic} ability as a \glossterm{swift action}.
     \end{feat}
 
-    \begin{feat}{Evoker}{Magical, Spell}
+    \begin{feat}{Evoker}{Magical}
         \featpre \glossterm{Evocation} spell known.
         \featben
 
@@ -1196,7 +1173,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[1]{Whirlwind Strike} As a standard action, you can spend an \glossterm{action point} to use this ability.
         \begin{ability}
             \begin{spelleffects}
-                \spelleffect You make a melee \glossterm{strike} against any number of creatures and objects you \glossterm{threaten}.
+                \spelleffect You make a melee \glossterm{strike} against any number of creatures and objects adjacent to you that you \glossterm{threaten}.
                 You must use the same weapon to make each strike.
                 Use the same attack result and damage against each target.
                 You take a \minus2d penalty to damage on the strike.
@@ -1206,9 +1183,27 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[2]{Eye of the Storm, Lesser} You reduce your \glossterm{overwhelm penalties} by 1.
         If your overwhelm penalty is reduced to 0, you are not considered to be \glossterm{overwhelmed}.
 
+        \ff[4]{Unfettered Movement} During each phase, you may move through one creature's space during movement.
+        You move at half speed while in its space.
+        After moving through that creature's space, other creatures block you as normal for the remainder of your movement.
+        Certain unusual creatures that occupy their entire space, such as gelatinous cubes, may be immune to this ability.
+
+        \ff[6]{Spring Attack} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        If you do, move up to your movement speed and make a \glossterm{strike}.
+        During the \glossterm{delayed action phase}, you may continue moving if you have remaining movement available in the phase.
+
         \ff[8]{Eye of the Storm} The penalty reduction increases to 2.
 
+        \ff[10]{Hurricane Strike} The damage penalty on the strike you make with your \textit{whirlwind strike} ability is reduced to \minus1d.
+
+        \ff[12]{Unfettered Movement, Greater} Moving through spaces occupied by creatures with your \textit{unfettered movement} ability does not reduce your movement speed.
+
         \ff[14]{Eye of the Storm, Greater} The penalty reduction increases to 3.
+
+        \ff[16]{Spring Attack, Greater} When you use your \textit{spring attack} ability, you can make two \glossterm{strikes} instead of one.
+        The two strikes cannot be made against the same creature.
+
+        \ff[18]{Hurricane Defense} When you use your \textit{hurricane strike} ability, you ignore all \glossterm{overwhelm penalties} until the end of the round, including during the same phase.
     \end{feat}
 
     \begin{feat}{Intimidate Specialization}{Skill}
@@ -1242,7 +1237,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[4]{Binding Strike} As a standard action, you can spend an \glossterm{action point} to use this ability.
         \begin{ability}
             \begin{spelltargetinginfo}
-                \spellquicktargeting{One creature}{5 feet}
+                \spellquicktargeting{One creature}{Adjacent}
             \end{spelltargetinginfo}
             \begin{spelleffects}
                 \spelleffect You make a \glossterm{strike} against the target.
@@ -1317,7 +1312,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[18]{Wellspring of Life} You do not have to spend an \glossterm{action point} to use your \textit{healing touch} ability.
     \end{feat}
 
-    \begin{feat}{Illusionist}{Magical, Spell}
+    \begin{feat}{Illusionist}{Magical}
         \featpre \glossterm{Illusion} spell known.
         \featben
 
@@ -1526,762 +1521,436 @@ Feats can be used to specialize your character particular area, to grant your ch
         During this time, it can take no other actions.
     \end{feat}
 
-    \feat{Iron Will}{General}
-    \featpre Willpower 3.
-    \featben You gain a \plus2 bonus to your Mental defense.
-    This bonus can increase your hit points (see \pcref{Hit Points}).
+    \begin{feat}{Iron Will}{General}
+        \featpre Starting Willpower of 2.
+        \featben
 
-    At 3rd level, you become immune to hostile \glossterm{Compulsion} effects.
+        \ff[1]{Resilient} You gain additional hit points equal to your Willpower.
 
-    At 7th level, if you have 6 Willpower, the defense bonus increases to \plus4.
+        \ff[2]{Mental Discipline, Lesser} You gain a \plus1 bonus to Mental defense.
 
-    At 11th level, if you have 9 Willpower, you become immune to hostile \glossterm{Mind} effects.
+        \ff[4]{Unbending Will} You are immune to \glossterm{Compulsion} effects.
 
-    \feat{Item Conduit}{General, Magical}
-    \featpre 5th level.
-    \featben You gain two additional daily item uses.
+        \ff[6]{Mind over Matter} You take a \minus2 penalty for being \glossterm{bloodied} instead of a \minus5 penalty.
+        In addition, having \glossterm{vital damage} causes you to sufffer a penalty to accuracy, checks, and defenses equal to half the amount of vital damage you have.
 
-    At 7th level, you gain a third additional daily item use.
+        \ff[8]{Mental Discipline} The bonus to Mental defense increases to \plus2.
 
-    At 11th level, you recover one spent item use per hour.
+        \ff[10]{Mental Fortress} You are immune to hostile \glossterm{Mind} effects.
 
-    At 15th level, you gain a fourth additional daily item use.
+        \ff[12]{Resilient, Greater} The increase to hit points increases to twice your Willpower.
 
-    \feat{Intimidate Mastery}{Skill}
-    \featpre Intimidate 6 ranks.
-    \featben Whenever you make a Intimidate check, you may roll twice and take the higher result.
+        \ff[14]{Mental Discipline, Greater} The bonus to Mental defense increases to \plus3.
 
-    At 3rd level, critical success when you demoralize a foe means the target is \frightened by you for 2 rounds instead of being shaken.
+        \ff[16]{Mind over Matter, Greater} You do not take penalties for being \glossterm{bloodied}.
+        In addition, having \glossterm{vital damage} imposes one quarter of the normal penalties, rather than half.
 
-    At 7th level, if you have 10 ranks in Intimidate, you gain a \plus5 bonus to Intimidate checks.
+        \ff[18]{Soulbound} When you die, your soul does not depart your body for an hour, during which time your body is treated as alive.
+        If your body is healed of all of its \glossterm{vital damage} during that time, you immediately return to life.
+        In addition, you are immune to \glossterm{Death} effects.
+    \end{feat}
 
-    At 11th level, if you have 14 ranks in Intimidate, you can demoralize creatures as a \glossterm{swift action}.
+    \begin{feat}{Jump Specialization}{Skill}
+        \featpre Jump as a mastered skill.
+        \featben
 
-    \feat{Jump Mastery}{Skill}
-    \featpre Jump 6 ranks.
-    \featben Whenever you make a Jump check, you may roll twice and take the higher result.
+        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Jump.
 
-    At 3rd level, you are always treated as if you had a running start when jumping.
+        \ff[2]{Instant Leap} You must move at least five feet before jumping to have a running start, rather than twenty feet.
 
-    At 7th level, if you have 10 ranks in Jump, you gain a \plus5 bonus to Jump checks.
+        \ff[4]{Leaping Strike} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelleffects}
+                \spelleffect You make a Jump check to leap (see \pcref{Leap}), and move as normal for the leap, up to a maximum distance equal to your land speed.
+                During the \glossterm{delayed action phase}, you can make a \glossterm{strike} from your new location.
+            \end{spelleffects}
+        \end{ability}
 
-    At 11th level, if you have 14 ranks in Jump, your maximum horizontal distance when leaping is equal to twice your check result, rather than being equal to your check result.
-    In addition, your maximum height is equal to your check result, rather than a quarter of your check result.
+        \ff[6]{Featherlight Jump} When you jump, you can spend an \glossterm{action point} as a \glossterm{free action}.
+        If you do, your maximum height for that jump is equal to your Jump check result, rather than half your Jump check result.
 
-    \feat{Knowledge Mastery}{Skill}
-    \featpre Knowledge (any) 6 ranks.
-    \featben Whenever you make a Knowledge check, you may roll twice and take the higher result.
+        \ff[8]{Specialization} The bonus to Jump increases to \plus3.
 
-    At 3rd level, as long as you have mastered one Knowledge skill, you treat all Knowledge skills you were trained in as if you had mastered them.
-    This grants you additional skill ranks and increases your check modifier as normal for mastering a skill.
-    However, you cannot use these additional ranks to qualify for any feats or abilities.
+        \ff[10]{Death from Above} When you use your \textit{leap strike} ability, you can make the strike during the \glossterm{action phase} instead of the \glossterm{delayed action phase}.
+        In addition, when you make the strike, you can be in any location along your jump's path.
+        If you are above your target when you make the strike, you gain a \plus1d bonus to damage.
 
-    At 7th level, if you have 10 ranks in any Knowledge skill, you gain a \plus5 bonus to all Knowledge checks.
+        \ff[12]{Featherlight} You do not need to spend an \glossterm{action point} to use your \textit{featherlight jump} ability.
 
-    At 11th level, if you have 14 ranks in any Knowledge skill, you can gain the effect of the \spell{legend lore} ritual as a standard action.
-    You can use this ability once per day.
+        \ff[14]{Instant Leap, Greater} You are always considered to have a running start when jumping, even when rebounding off of objects (see \pcref{Rebounding Leap}).
 
-    \feat{Legendary Celerity}{General}
-    \featpre 13th level, Dexterity 12.
-    \featben You may take an additional \glossterm{swift action} or \glossterm{immediate action} each round.
+        \ff[16]{Specialization, Greater} The bonus to Jump increases to \plus4.
 
-    \feat{Legendary Combat Awareness}{Combat}
-    \featpre 13th level, Perception 12.
-    \featben In each phase, you may decide your actions after all other creatures have decided their actions.
-    This can allow you to observe and react to the actions that other creatures will take.
-    You must decide your actions simultaneously with any other creatures with equivalent abilities.
+        \ff[18]{Death from Above, Greater} The bonus to damage for being above your target increases to \plus2d.
+    \end{feat}
 
-    \feat{Legendary Combat Reaction}{Combat}
-    \featpre 13th level, Dexterity 12.
-    \featben You reduce your \glossterm{overwhelm penalties} by 2.
-    If your overwhelm penalty is reduced to 0, you are not considered to be overwhelmed.
-    As long as you are not overwhelmed, your movement is not impeded by enemies threatening you (see \pcref{Moving Near Foes}).
+    \begin{feat}{Knowledge Specialization}{Skill}
+        \featpre Knowledge as a mastered skill.
+        \featben
 
-    \feat{Legendary Combat Tactics}{Combat}
-    \featpre 13th level, Intelligence 12.
-    \featben As a \glossterm{swift action}, you can predict the action that a target creature within \rngmed range intends to take during the current phase.
-    You can attempt to inform other creatures of this information to help them choose their actions, though the target may change its action if it notices this.
+        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Knowledge.
 
-    \feat{Legendary Mental Fortitude}{General}
-    \featpre 13th level, Willpower 12.
-    \featben You gain a \plus5 bonus to Fortitude defense.
-    In addition, you gain \glossterm{damage reduction} against all damage equal to your Willpower.
+        \ff[4]{Knowledge Savant} You gain two additional \glossterm{skill points} which can only be spent on Knowledge skills.
 
-    \feat{Legendary Might}{General}
-    \featpre 13th level, Strength 12.
-    \featben Your weight limits are five times their normal values (see \tref{Weight Limits}).
-    In addition, you increase the damage of weapons you wield by one die increment (see \pcref{Weapon Size}).
+        \ff[8]{Specialization} The bonus to Knowledge increases to \plus3.
 
-    At 19th level, you increase the damage of weapons you wield by two die increments.
+        \ff[12]{Knowledge Savant, Greater} The number of extra skill points increases to four.
 
-    \feat{Legendary Precision}{Combat}
-    \featpre 13th level, Perception 12.
-    \featben You ignore all miss chances and failure chances on your physical attacks.
+        \ff[16]{Specialization, Greater} The bonus to Knowledge increases to \plus4.
+    \end{feat}
 
-    \feat{Legendary Skill Savant}{Skill}
-    \featpre 13th level.
-    \featben You gain ten skill points.
+    \begin{feat}{Agility}{types}
+        \featpre Starting Dexterity of 2.
+        \featben
 
-    \feat{Legendary Speed}{Combat, Style}
-    \featpres 13th level, Dexterity 12.
-    \featben You can make an additional \glossterm{strike} whenever you make a \glossterm{standard attack} .
-    This does not stack with other effects that grant extra strikes.
+        \ff[1]{Dodge} At the start of each phase, you can choose a creature you can see.
+        You gain a \plus1 bonus to Armor defense against attacks by that target during that phase.
 
-    At 19th level, if you have 15 Dexterity, you can make a strike as a \glossterm{swift action}.
-    \stylereq None.
-    \parhead{Special} This is a Style feat, and all of its effects only apply while you are in this style.
-    For details, see \pcref{Style Feats}.
+        \ff[2]{Lightning Reflexes, Lesser} You gain a \plus1 bonus to Reflex defense.
 
-    \feat{Legendary Spell Alacrity}{Magical}
-    \featpre 13th level, 6th level spells.
-    \featben The effects of your spells are no longer \glossterm{delayed}.
-    This makes it impossible for simultaneous attacks against you to break your concentration, and allows you to cast spells after delaying your action.
-    In addition, you gain a \plus1 bonus to spellpower.
+        \ff[4]{Rapid Reaction} You gain a \plus2 bonus to \glossterm{initiative} checks.
 
-    \feat{Legendary Well of Magic}{Magical}
-    \featpres 13th level, 6th level spells known.
-    \featben You may cast spells without spending spell slots, up to a maximum spell slot level.
-    The maximum is equal to two less than the level of your highest level spell known.
-    In addition, you gain a \plus1 bonus to spellpower.
+        \ff[6]{Mobility} Your movement is not impeded by being threatened by the target of your \textit{dodge} ability (see \pcref{Moving Near Foes}).
 
-    \feat{Lightning Reflexes}{General}
-    \featpre Dexterity 3.
-    \featben You gain a \plus2 bonus to your Reflex defense.
+        \ff[8]{Lightning Reflexes} The bonus to Reflex defense increases to \plus2.
 
-    At 3rd level, you gain a \plus5 bonus to initiative checks.
+        \ff[10]{Rapid Reaction, Greater} The bonus to initiative checks increases to \plus5.
 
-    At 7th level, if you have 6 Dexterity, the defense bonus increases to \plus4.
+        \ff[12]{Focused Dodge} You do not suffer \glossterm{overwhelm penalties} against attacks by the target of your \textit{dodge} ability.
+        In addition, when counting the number of creatures threatening you to determine your overwhelm penalties, you ignore that creature.
 
-    At 11th level, if you have 9 Dexterity, the initiative check bonus increases to \plus10.
+        \ff[14]{Lightning Reflexes, Greater} The bonus to Reflex defense increases to \plus3.
 
-    \feat{Linguistic Mastery}{Skill}
-    \featpre Linguistics 6 ranks.
-    \featben Whenever you make a Linguistics check, you may roll twice and take the higher result.
+        \ff[16]{Evasion} Your \glossterm{overwhelm penalties} do not affect your Reflex defense.
 
-    At 3rd level, \tdash.
+        \ff[18]{Supreme Dodge} The bonus to Armor defense granted by your \textit{dodge} ability increases to \plus2.
+    \end{feat}
 
-    At 7th level, if you have 10 ranks in Linguistics, you gain a \plus5 bonus to Linguistics checks.
+    \begin{feat}{Linguistics Specialization}{Skill}
+        \featpre Linguistics as a mastered skill.
+        \featben
 
-    At 11th level, if you have 14 ranks in Linguistics, you can speak, read, and understand all languages.
-    This does not allow you to speak with creatures that lack a language.
-    Certain extremely obscure languages may be beyond your knowledge.
+        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Linguistics.
 
-    \feat{Mage Slayer}{Combat, Style}
-    \featpre 5th level.
-    \featben While in this style, if you hit a creature with a physical melee attack, that creature automatically fails Concentration checks it makes that round.
+        \ff[2]{Linguistic Savant} You learn two additional \glossterm{common languages}, or one additional \glossterm{rare language}.
 
-    At 7th level, all foes you threaten take a \minus4 penalty to Concentration checks.
+        \ff[8]{Specialization} The bonus to Linguistics increases to \plus3.
 
-    At 11th level, you gain \glossterm{magic resistance} equal to 10 \add your level.
+        \ff[12]{Linguistic Savant, Greater} You learn two additional \glossterm{common languages}, or one additional \glossterm{rare language}.
 
-    At 15th level, if you attack a creature with a physical melee attack, that creature automatically fails Concentration checks it makes that round.
-    \stylereq Wield a melee weapon. You must make a physical melee attack each round.
+        \ff[16]{Specialization, Greater} The bonus to Linguistics increases to \plus4.
+    \end{feat}
 
-    \feat{Magical Perception}{Combat}
-    \featpre 5th level, Perception 6.
-    \featben You can use your Perception to increase your accuracy with magical attacks other than spells in the same way that it increases your accuracy with physical attacks.
+    \begin{feat}{Miscaster}{Magical}
+        \featpre Ability to cast a spell.
+        \featben
 
-    \feat{Maneuver Focus}{Combat}
-    Choose one \glossterm{combat maneuver}.
-    \featben You gain an ability based on the maneuver chosen.
-    \begin{itemize}
-        \item Dirty trick: When you successfully perform a dirty trick, the target is \impaired for 1d4 rounds, rather than 1 round.
-        \item Disarm: When you successfully perform a disarm, you can make the disarmed item land up to 15 feet away in a random direction.
-        \item Feint: When you critically succeed at a feint, you deal damage with your weapon normally.
-        \item Grapple: Grappling does not cause you to be \defenseless.
-        \item Shove: When you successfully perform a shove, you can move the target the full distance without needing to move with it.
-        \item Trip: When you successfully perform a trip, you can make a \glossterm{strike} against the target as an \glossterm{immediate action}. The target does not suffer prone penalties for the trip against the free attack.
-    \end{itemize}
+        \ff[1]{Selective Backlash} Your \glossterm{miscast backlash} does not hurt your allies, though it still hurts you.
 
-    At 3rd level, you a \plus1 bonus to accuracy with the chosen maneuver.
+        \ff[3]{Overchannel} Whenever you cast a spell, you can use this ability as an \glossterm{immediate action}.
+        Your concentration on the spell cannot be disrupted, and you cannot \glossterm{miscast} the spell for any other reason.
+        Effects that prevent the spell from having any effect, such as the \textit{counterspell} ability from the Abjurer feat, work normally (see \pcref{Abjurer}).
+        In addition, you cause a \glossterm{miscast backlash} when the spell resolves.
 
-    At 7th level, the accuracy bonus increases to \plus2.
+        However, using this ability causes a mystic backlash from channeling excess magical energy.
+        During the next round, you cannot cast spells other than \glossterm{cantrips}, and you take a \minus2 penalty to all defenses.
 
-    At 11th level, whenever you perform the chosen maneuver, if your attack result also beats the target's Armor defense, you deal normal damage to the target with the weapon used to perform the maneuver.
-    This damage is in addition to the maneuver's normal effects.
-    If the maneuver was performed with a free hand, you deal damage with your unarmed attack (see \pcref{Unarmed Combat}).
-    \parhead{Special} This feat can be taken multiple times.
-    Each time, you choose a different combat maneuver.
+        \ff[5]{Widened Backlash} The area affected by your \glossterm{miscast backlash} increases to a \areasmall radius burst centered on you.
 
-    \feat{Martial Training}{General}
-    \featben You are proficient in light and medium body armor, as well as shields.
-    In addition, you become proficient in one additional weapon group of your choice.
+        \ff[7]{Suppressed Backlash} Whenever you miscast a spell, you can suppress the \glossterm{miscast backlash}.
+        If you do, you regain the action point spent to cast the spell (if any).
 
-    At 3rd level, you become proficient in heavy body armor.
+        \ff[9]{Selective Backlash, Greater} Your \glossterm{miscast backlash} does not hurt you.
 
-    At 7th level, you gain a \plus1 bonus to damage with all physical attacks.
+        \ff[11]{Resilient Channeler} Using your \textit{overchannel} ability does not impose a penalty to your defenses.
 
-    At 11th level, you gain a \plus1 bonus to \glossterm{physical defenses}.
-    \parhead{Normal}
-    A character who is wearing armor with which she is not proficient applies its \glossterm{encumbrance penalty} to accuracy with physical attacks.
-    The character also suffers double the normal arcane spell failure chance for wearing the armor.
+        \ff[13]{Widened Backlash, Greater} The area increases to a \areamed radius burst centered on you.
 
-    \feat{Miscaster}{Magical, Spell}
-    \featpre 1st level spells.
-    \featben Your explosive miscasts do not affect your allies.
+        \ff[15]{Magical Resilience} You gain \glossterm{magic resistance} equal to 5 \add your level.
 
-    At 3rd level, your explosive miscasts no longer hurt you.
-    Instead, they target all enemies in a \areasmall radius burst centered on you.
+        \ff[19]{Empowered Channeler} When you use your \textit{overchannel} ability, you gain a \plus2 bonus to spellpower with the spell.
+    \end{feat}
 
-    At 7th level, if you know 2nd level spells, when you target a random creature with a spell's miscast effect, roll twice to determine which creature is affected.
-    You choose which result is used.
-    In addition, your explosive miscasts target all enemies in a \areamed radius burst centered on you.
+    \begin{feat}{Ride Specialization}{Skill}
+        \featpre Ride as a mastered skill.
+        \featben
 
-    At 11th level, if you know 4th level spells, you are immune to the effects of all miscast spells, both by you and by other spellcasters.
-    They are unable to damage you or affect you in any way.
-    You may still choose to be affected by miscast effects, if desired.
+        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Ride.
 
-    \feat{Mounted Combat}{Combat}
-    \featpre Ride 4 ranks.
-    \featben Whenever your mount is hit by a physical attack, you can take an \glossterm{immediate action} to made a Ride check.
-    Your mount can use your check result in place of its physical defenses against the attack, potentially causing the attack to miss.
+        \ff[2]{Mounted Warrior} Your mount gains a \plus2 bonus to \glossterm{physical defenses}, up to a maximum of your own defenses.
 
-    At 3rd level, the penalty you take when using a ranged weapon while mounted is decreased by 4: \minus0 instead of \minus4 if your mount moves during the action phase, and \minus4 instead of \minus8 if your mount is sprinting.
-    In addition, whenever you charge a creature while mounted, you increase your weapon damage die by one size increment (see \pcref{Weapon Size}).
+        \ff[4]{Mounted Archer} The penalty you take when using a ranged weapon while mounted is decreased by 4: \minus0 instead of \minus4 if your mount moves during the same phase, and \minus4 instead of \minus8 if your mount is sprinting during the same phase.
 
-    At 7th level, you can make a Ride check to negate one attack per round without spending an action.
+        \ff[6]{Knight's Charge} When you \glossterm{charge} a creature while mounted, you gain a \plus1d bonus to damage with the strike.
 
-    At 11th level, you take no penalties for firing a ranged weapon while mounted.
-    In addition, the die size modifier for charging a creature while mounted increases to two increments.
+        \ff[8]{Specialization} The bonus to Ride increases to \plus3.
 
-    \feat{Overwhelming Fire}{Combat, Style}
-    \featben While wielding a ranged weapon, you contribute to overwhelm penalties against all creatures you declare a physical ranged attack against in that phase.
-    You do not contribute to overwhelm penalties against creatures with cover from you, or who are more than one range increment away from you with the weapon you use.
+        \ff[10]{Mounted Warrior, Greater} The bonus to defenses increases to \plus3.
 
-    At 7th level, overwhelmed creatures you are overwhelming with this feat increase their \glossterm{overwhelm penalties} by 1.
-    In addition, you can help overwhelm creatures up to two range increments away from you.
+        \ff[12]{Mounted Archer, Greater} The penalty reduction increases to \minus8.
 
-    At 11th level, the additional overwhelm penalty increases to 2.
-    In addition, you can help overwhelm creatures up to three range increments away from you.
-    \stylereq Wield a ranged weapon.
-    You must make a physical ranged attack each round.
-    \parhead{Special} This is a Style feat, and all of its effects only apply while you are in this style.
-    For details, see \pcref{Style Feats}.
+        \ff[14]{Knight's Charge, Greater} The damage bonus increases to \plus2d.
 
-    \feat{Parry}{Combat, Style}
-    \featpre Dexterity 3.
-    \featben While in this style, whenever you are hit by a \glossterm{strike}, you may attempt to parry it as an \glossterm{immediate action}.
-    If you do, you make an attack roll with a weapon you wield.
-    You may use your attack result in place of your physical defenses against the attack.
-    This can cause the attack to miss.
+        \ff[16]{Specialization, Greater} The bonus to Ride increases to \plus4.
 
-    At 3rd level, if you have a free hand and are not wielding a shield, you gain a \plus2 bonus to your parry attacks.
-    If you are wielding a shield, you can add your shield's defense bonus to the attack you make to parry.
+        \ff[18]{Loyal Rider} Whenever your mount takes \glossterm{physical} damage, you may choose to take half that damage, rounded down.
+        The mount takes the other half.
+    \end{feat}
 
-    At 7th level, if you have 6 Dexterity, you can parry one strike per round without spending an action.
+    \begin{feat}{Persuasion Specialization}{Skill}
+        \featpre Persuasion as a mastered skill.
+        \featben
 
-    At 11th level, if you have 9 Dexterity, you can counterattack more effectively after parrying.
-    When you successfully parry an attack from a foe you threaten, if your parry attempt exceeds your foe's attack roll by 10 or more, it is \defenseless against you for 1 round.
+        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Persuasion.
 
-    At 15th level, if you have 12 Dexterity, you can parry two strikes per round without spending an action.
+        \ff[2]{}
 
-    \stylereq Wield a melee weapon.
-    You must make a melee attack or take the total defense action each round.
-    \parhead{Special} This is a Style feat, and all of its effects only apply while you are in this style.
-    For details, see \pcref{Style Feats}.
+        \ff[8]{Specialization} The bonus to Persuasion increases to \plus3.
 
-    \feat{Persuasion Mastery}{Skill}
-    \featpre Persuasion 6 ranks.
-    \featben Whenever you make a Persuasion check, you may roll twice and take the higher result.
+        \ff[10]{Suggestion} As a standard action, you can spend an \glossterm{action point} to use this ability.
 
-    At 3rd level, \tdash.
+        \ff[16]{Specialization, Greater} The bonus to Persuasion increases to \plus4.
+    \end{feat}
 
-    At 7th level, if you have 10 ranks in Persuasion, you gain a \plus5 bonus to Persuasion checks.
+    \begin{feat}{Sense Motive Specialization}{Skill}
+        \featpre Sense Motive as a mastered skill.
+        \featben
 
-    At 11th level, if you have 14 ranks in Persuasion, you can compel creatures to obey your suggestions.
-    As an immediate action, when you speak a suggestion aloud, you can make a Persuasion vs. Mental attack against a creature within \rngmed range of you.
-    Success means the target it is compelled to obey your suggestion, as the effect of the \spell{suggestion} spell.
-    You can use this ability three times per day.
-    \magical
+        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Sense Motive.
 
-    \feat{Point Blank Shot}{Combat}
-    \featben You gain a \plus2 bonus to damage with physical ranged attacks against targets within 50 feet of you.
+        \ff[6]{Read Mind}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{One creature}{\rngclose}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \begin{spellattack}{Sense Motive vs. Mental}
+                    \spellsuccess You know the target's surface thoughts.
+                    You gain a \plus2 bonus to Bluff, Persuasion, and Intimidate checks against a creature whose mind you are reading.
+                \end{spellattack}
+                \spelldur Sustain (swift)
+                \spelltags{\glossterm{Mind}}
+            \end{spelleffects}
+        \end{ability}
 
-    At 3rd level, you reduce your penalty for firing medium and large ranged weapons at adjacent creatures to \minus2.
+        \ff[8]{Specialization} The bonus to Sense Motive increases to \plus3.
 
-    At 7th level, you suffer no penalty for firing ranged weapons at adjacent creatures.
+        \ff[16]{Specialization, Greater} The bonus to Sense Motive increases to \plus4.
+    \end{feat}
 
-    At 11th level, you are not treated as \defenseless while wielding a ranged weapon you are proficient with.
-    In addition, the damage bonus increases to \plus3.
-    \stylereq Wield a ranged weapon.
+    \begin{feat}{Sleight of Hand Specialization}{Skill}
+        \featpre Sleight of Hand as a mastered skill.
+        \featben
 
-    \feat{Power Attack}{Combat, Style}
-    \featpres 5th level, Strength 6.
-    \featben You gain a \plus2 bonus to damage with physical melee attacks.
+        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Sleight of Hand.
 
-    At 7th level, this bonus increases to \plus3.
+        \ff[2]{}
 
-    At 11th level, if you have 9 Strength, this bonus increases to \plus4.
+        \ff[8]{Specialization} The bonus to Sleight of Hand increases to \plus3.
 
-    At 15th level, if you have 12 Strength, this bonus increases to \plus5.
+        \ff[10]{Extradimensional Concealment}[Magical] Whenever you take the \textit{conceal object} action, you can spend an \glossterm{action point}.
+        If you do, you conceal the object in a pocket dimension that cannot be accessed by nonmagical means.
+        This pocket dimension can only hold one object at a time.
 
-    At 19th level, if you have 15 Strength, this bonus increases to \plus6.
-    \stylereq Wield a melee weapon.
-    \parhead{Special} This is a Style feat, and all of its effects only apply while you are in this style.
-    For details, see \pcref{Style Feats}.
+        \ff[10]{Extradimensional Retrieval}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
+        You reach into your pocket dimension to retrieve the object you stored there previously.
 
-    \feat{Precise Attack}{Combat, Style}
-    \featpres Perception 3.
-    \featben You gain a \plus2 bonus to accuracy with \glossterm{physical attacks}.
-    In exchange, you take a \minus2 penalty to damage with physical attacks (to a minimum of 1).
+        Alternately, you can reach into the pocket dimension belonging to a creature you are touching to retrieve the object stored there.
+        If that creature does not have the \textit{extradimensional concealment} ability, or does not have an object in their pocket dimension, this ability fails.
 
-    At 3rd level, the accuracy bonus increases to \plus3.
+        \ff[16]{Specialization, Greater} The bonus to Sleight of Hand increases to \plus4.
+    \end{feat}
 
-    At 7th level, if you have 6 Perception, the damage penalty is reduced to \minus1.
+    \begin{feat}{Spellcraft Specialization}{Skill}
+        \featpre Spellcraft as a mastered skill.
+        \featben
 
-    At 11th level, if you have 9 Perception, the damage penalty is removed.
-    \parhead{Special} This is a Style feat, and all of its effects only apply while you are in this style.
-    For details, see \pcref{Style Feats}.
+        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Spellcraft.
+    
+        \ff[8]{Specialization} The bonus to Spellcraft increases to \plus3.
+    
+        \ff[16]{Specialization, Greater} The bonus to Spellcraft increases to \plus4.
+    \end{feat}
 
-    \feat{Precise Shot}{Combat}
-    \featpres 5th level, Perception 6.
-    \featben Your ranged attacks ignore cover and concealment, except total cover and total concealment.
+    \begin{feat}{Sprint Specialization}{Skill}
+        \featpre Sprint as a mastered skill.
+        \featben
+    
+        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Sprint.
+    
+        \ff[2]{Swift, Lesser} You gain a \plus10 foot bonus to speed in all your movement modes.
 
-    At 7th level, when you attack a grappling opponent with a physical ranged attack, you do not have a chance to attack the wrong creature in the grapple.
+        \ff[6]{Endurance Runner} You can sprint for a number of rounds equal to 5 \add half your Constitution, instead of 2 \add half your Constitution.
+    
+        \ff[8]{Specialization} The bonus to Sprint increases to \plus3.
 
-    At 11th level, if you have 9 Perception, you ignore any effects which would give you a 20\% failure chance with your physical ranged attacks.
-    This includes being \impaired.
+        \ff[10]{Swift, Lesser} The speed bonus increases to \plus20 feet.
 
-    \feat{Armor-Piercing Attack}{Combat, Style}
-    \featpre 5th level, Perception 6.
-    \featben Whenever you make a \glossterm{strike}, you compare your result against the target's Armor and Reflex defenses.
-    If you miss the target's Armor defense, but hit its Reflex defense, the strike hits and deals half damage.
+        \ff[14]{Endurance Runner, Greater} You can sprint for a number of minutes equal to 2 \add half your Constitution.
+    
+        \ff[16]{Specialization, Greater} The bonus to Sprint increases to \plus4.
+    \end{feat}
 
-    At 11th level, if you hit with a strike in this way, it deals full damage.
+    \begin{feat}{Stealth Specialization}{Skill}
+        \featpre Stealth as a mastered skill.
+        \featben
 
-    \feat{Quick Draw}{Combat}
-    \featben You can draw light and medium weapons as a \glossterm{free action}.
-    In addition, you can draw heavy weapons and hidden weapons of any type (see the Sleight of Hand skill) as a move action.
-    This allows you to throw light weapons at your full normal rate of attacks (much like a character with a bow).
+        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Stealth.
 
-    At 3rd level, you can draw any item of similar size to a light or medium weapon as a free action.
+        \ff[2]{}
 
-    At 7th level, you can also draw any item of similar size to a heavy weapon as a free action.
-    In addition, you can sheathe or similarly put away items of similar size to light and medium weapons as a free action.
+        \ff[6]{Movement Tolerance} Your penalties for moving while hiding are reduced by 2. 
 
-    At 11th level, you can also sheathe or similarly put away items of similar size to heavy weapons as a free action.
+        \ff[8]{Specialization} The bonus to Stealth increases to \plus3.
 
-    \feat{Quickened Magic}{Magical, Spell}
-    \featpre 9th level, 4th level spells.
-    \featben As a \glossterm{swift action}, you can cast a spell using a spell slot two levels higher than normal.
-    The spell must have a casting time of one standard action.
-    This is mentally draining, and if you cast a spell in this way, you cannot act during the next action phase.
-    You can only cast one spell in this way per round, even if you can take multiple swift actions.
-    In addition, you gain a \plus1 bonus to spellpower.
+        \ff[10]{Hide in Plain Sight} You can use the \textit{hide} ability even while observed.
+        You take take a \minus10 penalty to the Stealth check when hiding in this way, and you still need passive cover or concealment to hide.
 
-    At 15th level, if you know 6th level spells, you are less draining by casting a quickened spell.
-    When you cast a spell with this feat, you cannot cast spells in the next action phase, but you can take other actions normally.
+        \ff[14]{Movement Tolerance, Greater} The reduction of penalties for moving increases to 5.
+        This allows you to move at half speed without penalty.
 
-    \feat{Rapid Recovery}{General}
-    \featpre Con 3.
-    \featben You naturally heal in half the normal time, allowing you to recover a quarter of your hit points with fifteen minutes of rest.
-    Likewise, you heal \glossterm{vital damage} after four hours, rather than eight.
-    This stacks with the benefits of accelerating recovery with the Heal skill (see \pcref{Accelerate Recovery}).
+        \ff[16]{Specialization, Greater} The bonus to Stealth increases to \plus4.
 
-    At 3rd level, you only need one successfully resisted \glossterm{stabilization roll} to stabilize while dying.
+        \ff[18]{Hide in Plain Sight, Greater} The penalty for hiding while observed is reduced to \minus5.
+    \end{feat}
 
-    At 7th level, if you have 6 Constitution, magical healing is more effective on you.
-    Whenever you receive magical healing, you increase the healing by an amount equal to your Constitution, up to a maximum of the original healing provided.
+    \begin{feat}{Survival Specialization}{Skill}
+        \featpre Survival as a mastered skill.
+        \featben
 
-    At 11th level, if you have 9 Constitution, you heal hit points equal to your Constitution at the end of every round.
-    In addition, you heal \glossterm{vital damage} at a rate of one vital damage per 5 minutes.
-    \magical
+        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Survival.
 
-    \feat{Reflexive Dodge}{Combat}
-    \featpres 13th level, Dexterity 12.
-    \featben Whenever you are hit by a \glossterm{strike}, you can take an \glossterm{immediate action} to dodge it.
-    If you do, the attack misses.
-    You must be aware of an attack to dodge it in this way.
+        \ff[2]{Terrain Tolerance} You ignore \glossterm{difficult terrain} and harmful natural terrain of any kind.
+        If a skill check, such as Climb or Swim, would normally be required to move through the terrain, this ability does not help.
 
-    At 19th level, if you have 15 Dexterity, you can dodge one attack per round in this way without spending an action.
+        \ff[4]{Trackless} You can choose to leave no trace of your passage as you move.
+        If you do, tracking you is impossible by any \glossterm{mundane} means.
 
-    \feat{Ride Mastery}{Skill}
-    \featpre Ride 6 ranks.
-    \featben Whenever you make a Ride check, you may roll twice and take the higher result.
+        \ff[8]{Specialization} The bonus to Survival increases to \plus3.
 
-    At 3rd level, \tdash.
+        \ff[10]{Planar Tolerance} You are immune to harmful planar effects.
 
-    At 7th level, if you have 10 ranks in Ride, you gain a \plus5 bonus to Ride checks.
+        \ff[16]{Specialization, Greater} The bonus to Survival increases to \plus4.
+    \end{feat}
 
-    At 11th level, if you have 14 ranks in Ride, you can attempt to ride unwilling creatures.
-    As a standard action, you can make a Ride vs. Fortitude and Reflex attack against a creature adjacent to you.
-    The creature must be at least one size category larger than you.
-    Success means you ride the creature.
-    Riding a creature is like grappling the creature, with the following changes.
-    \begin{itemize}
-        \item You share space with the creature you ride, just like riding a normal mount.
-            If your mount breaks the grapple, you move to an adjacent unoccupied square of your choice.
-            If there are no adjacent unoccupied squares, you in the same space as your mount, squeezing as necessary.
-        \item You make Ride checks instead of grapple attacks to remain in the grapple and take actions in the grapple.
-        \item You cannot pin the creature.
-    \end{itemize}
+    \begin{feat}{Swim Specialization}{Skill}
+        \featpre Swim as a mastered skill.
+        \featben
 
-    \feat{Ritual Caster}{Spell}
-    \featpre Intelligence 3.
-    \featben You can learn and perform rituals as if you were an arcane caster with a spellpower equal to your level.
-    The maximum level of ritual that you can learn or perform is equal to half your level or your Intelligence, whichever is lower.
+        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Swim.
 
-    \feat{Sense Motive Mastery}{Skill}
-    \featpre Sense Motive 6 ranks.
-    \featben Whenever you make a Sense Motive check, you may roll twice and take the higher result.
+        \ff[2]{}
 
-    At 3rd level, \tdash.
+        \ff[4]{Swim Speed} You gain a \glossterm{swim speed} equal to your land speed.
+        A successful Swim check to move allows you to move a distance equal to your swim speed.
 
-    At 7th level, if you have 10 ranks in Sense Motive, you gain a \plus5 bonus to Sense Motive checks.
+        \ff[8]{Specialization} The bonus to Swim increases to \plus3.
 
-    At 11th level, if you have 14 ranks in Sense Motive, you can read the minds of creatures.
-    As a standard action, you can make a Sense Motive vs. Mental attack against a creature within \rngmed range of you.
-    Success means you read the target's surface thoughts.
-    You gain a \plus4 bonus to Bluff, Persuasion, and Intimidate checks against a creature whose mind you are reading.
-    You can use this ability three times per day.
-    \magical
+        \ff[10]{Underwater Tolerance} You do not suffer any penalties to physical melee attacks, checks, or physical defenses for being underwater.
+        You still suffer the normal penalty with underwater ranged attacks.
 
-    \feat{Shaped Magic}{Magical, Spell}
-    \featpre 5th level, 2nd level spells.
-    \featben If you cast a spell with an area using a spell slot one level higher than normal, you can change its area.
-    The spell's area becomes a \areasmall, \areamed, \arealarge, or \areahuge \glossterm{burst}, as described in \trefnp{Shaped Areas}.
-    The spell's range does not change.
-    A radius burst without a range originates from you, and you may choose whether or not you are affected by it.
+        \ff[16]{Specialization, Greater} The bonus to Swim increases to \plus4.
+    \end{feat}
 
-    \begin{dtable}
-        \lcaption{Shaped Areas}
-        \begin{dtabularx}{\columnwidth}{l >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Initial Shape} & \tb{Line} & \tb{Cone} & \tb{Radius} \\
-            Line & \tdash & One size smaller & Two sizes smaller \\
-            Cone & 5 ft.\ wide, same size & \tdash & One size smaller \\
-            Radius & 5 ft.\ wide, one size larger & Same size & \tdash \\
-        \end{dtabularx}
-    \end{dtable}
+    \begin{feat}{Transmuter}{Magical}
+        \featpre \glossterm{Transmutation} spell known.
+        \featben
 
-    At 11th level, you can cast a spell with an area using a spell slot two levels higher than normal.
-    If you do, you can exclude any number of 5-foot cubes within the spell's area from its effect.
-    This allows you to prevent the spell from affecting your allies, while still allowing it to affect your enemies.
-    The area affected by the spell, ignoring all removed cubes, must be contiguous.
+        \ff[1]{Fortify Body} You gain a \plus1 bonus to Armor defense.
 
-    At 15th level, you can change the area of all area spells you cast without spending a spell slot of a higher level.
+        \ff[3]{Alter Self} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelleffects}
+                \spelleffect You make a Disguise check to alter your appearance (see \pcref{Disguise creature}), except that you can use your spellpower in place of your Disguise skill.
+                You can only alter your physical body, not your clothes or equipment.
+            \end{spelleffects}
+            \spelldur Permanent; if you use this ability again, any the effects of any previous use immediately ends.
+            \spelltags{\glossterm{Alteration}}
+        \end{ability}
 
-    \feat{Shielded Fighting}{Combat}
-    \featpre Proficiency with shields.
-    \featben While wielding a shield, you gain a \plus1 bonus to \glossterm{physical defenses}.
+        \ff[5]{Alter Object} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{One unattended, nonmagical object}{Adjacent}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spelleffect You make a Craft check to alter the target (see \pcref{Craft}), except that you can use your spellpower in place of your Craft skill.
+                In addition, you do not need any special tools to make the check (such as an anvil and furnace).
+                However, the maximum hardness of a material you can affect with this ability is equal to your spellpower.
 
-    At 3rd level, you gain a \plus5 bonus to defenses against physical ranged attacks while wielding a shield.
+                Each time you use this ability, you can accomplish work that would take up to five minutes with a normal Craft check.
+                % too short?
+            \end{spelleffects}
+            \spelldur Instantaneous
+            \spelltags{\glossterm{Alteration}}
+        \end{ability}
 
-    At 7th level, the bonus to physical defenses increases to \plus2.
+        \ff[7]{Enhance Body} You gain a \plus1 bonus to Strength-based checks.
 
-    At 11th level, when you are hit by a ranged \glossterm{strike} while wielding a shield, you can make the strike miss automatically as an \glossterm{immediate action}.
-    You must be aware of an attack to negate it in this way.
+        \ff[9]{Alter Poison} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{One creature}{\rngclose}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \begin{spellattack}{Spellpower vs. Fortitude}
+                    \spellsuccess Any poison in the target's system is neutralized.
+                    It stops suffering any additional effects from poisons in its system.
+                    As long as the effect lasts, it is immune to all poisons.
+                    In addition, the target's \glossterm{mundane} poisons, including natural attacks that inflict poison, have no effect.
+                \end{spellattack}
+                \spelldur Sustain (swift).
+                \spelldur{\glossterm{Alteration}}
+            \end{spelleffects}
+        \end{ability}
 
-    \feat{Skill Savant}{Skill}
-    \featben You gain two skill points.
-    You may spend these skill points immediately.
+        \ff[11]{Alter Object, Greater} When you use your \textit{alter object} ability, you can accomplish work that would take up to an hour with a normal Craft check.
 
-    At 7th level, you gain a third additional skill point.
+        \ff[13]{Enhance Body, Greater} The bonus to Strength-based checks increases to \plus2.
+    \end{feat}
 
-    At 11th level, you gain a fourth additional skill point.
-    % make this better? pretty lame
+    \begin{feat}{Vivimancer}{Magical}
+        \featpre \glossterm{Transmutation} spell known.
+        \featben
 
-    \feat{Sleight of Hand Mastery}{Skill}
-    \featpre Sleight of Hand 6 ranks.
-    \featben Whenever you make a Sleight of Hand check, you may roll twice and take the higher result.
+        \ff[1]{Restore Life} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{One creature}{\rngclose}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spelleffect The target is healed for \spelldamage{}.
+                \spelltags{\glossterm{Life}}
+            \end{spelleffects}
+        \end{ability}
 
-    At 3rd level, \tdash.
+        \ff[3]{Unliving Resilience, Lesser} You are immune to \glossterm{disease}.
 
-    At 7th level, if you have 10 ranks in Sleight of Hand, you gain a \plus5 bonus to Sleight of Hand checks.
+        \ff[5]{Lifebound Resilience, Lesser} You are immune to hostile \glossterm{Death} effects.
 
-    At 11th level, if you have 14 ranks in Sleight of Hand, you can hide objects in impossible ways.
-    Whenever you make a Sleight of Hand check to conceal or pickpocket an object, if the result is 30 or higher, you can hide the object into a pocket dimension.
-    You can retrieve the item later as a move action.
-    You may only have up to three items hidden in this way, none of which can be larger than one size category smaller than you.
-    \magical
+        \ff[7]{Restore Vitality} When you use your \textit{restore life} ability, for every 2 points of healing, you can instead heal 1 \glossterm{vital damage}.
 
-    \feat{Somatic Strike}{Magical, Spell}
-    \featpres 9th level, 4th level spells.
-    \featben When you cast spells, you can make a single \glossterm{strike} with a melee weapon in place of the somatic components for the spell.
-    The target of the strike does not matter, and you can even attack thin air.
-    The spell is otherwise cast as normal, regardless of whether the strike hits or misses.
-    In addition, you gain a \plus1 bonus to spellpower.
+        \ff[9]{Unliving Resilience} You are immune to life damage and hostile \glossterm{Life} effects.
 
-    At 11th level, you gain a bonus to damage with this strike equal to the spell level of the spell being cast.
+        % Too small? Should this be full spellpower?
+        \ff[11]{Lifebound Resilience} At the end of each round, you heal hit points equal to half your spellpower.
 
-    At 15th level, if you know 6th level spells, you can make two strikes instead of one.
-    The damage bonus applies to both strikes.
+        \ff[15]{Unliving Resilience, Greater} You are healed by life damage instead of being immune to it.
+        This healing applies before immunity, allowing you to heal from life damage dealt by \glossterm{Life} effects without suffering any other effects..
 
-    At 19th level, the bonus to damage increases to be equal to half your spellpower with the spell being cast.
-
-    \feat{Spellbreaker}{General, Magical}
-    \featpres 9th level, Willpower 9.
-    \featben You gain \glossterm{magic resistance} equal to 10 \add your Willpower.
-
-    At 15th level, if you have 12 Willpower, you can reflect spells.
-    When you resist a \glossterm{targeted spell} with this magic resistance, you can choose for the spell to be reflected back at the caster.
-    The spell otherise functions normally, including effects on other targets of the spell, except that the caster is treated as a target of the spell instead of you.
-    A spell reflected in this way cannot be reflected back at you.
-
-    At 19th level, if you have 15 Willpower, you can completely negate spells cast on you.
-    When you resist a spell with this magic resistance, you can choose to negate the spell's effects entirely.
-    The spell has no effect, even if it was an area spell or a spell that targeted other creatures.
-    If the spell had a duration, it is immediately dispelled, even if resisting it would not normally end or negate the spell's effects.
-    This happens before any other magic resistance effects, preventing other creatures from resisting or reflecting it.
-
-    \feat{Spellcasting Versatility}{Spell}
-    Choose a spellcasting class you have.
-    \featpres 5th level, 1st level spells from the chosen class.
-    \featben You gain a bonus when determining your class level for the purpose of spells per day (if any), spells known, and maximum available spell level in your chosen class.
-    The bonus is equal to half your class level in your chosen class.
-    This cannot increase your effective class level above your character level, and does not improve the power of class abilities or grant you additional class abilities from your chosen class.
-
-    For example, a character with 4 levels in wizard and 4 levels in fighter would have the spells per day and spells known of a 6th level wizard, and she would be able to cast 3rd level spells.
-    \parhead{Special} This feat can be taken multiple times.
-    Each time, you choose a different spellcasting class you possess.
-
-    \feat{Spellcraft Mastery}{Skill}
-    \featpre Spellcraft 6 ranks.
-    \featben Whenever you make a Spellcraft check, you may roll twice and take the higher result.
-
-    At 3rd level, \tdash.
-
-    At 7th level, if you have 10 ranks in Spellcraft, you gain a \plus5 bonus to Spellcraft checks.
-
-    At 11th level, if you have 14 ranks in Spellcraft, you gain a \plus2 bonus on accuracy, checks, and defenses against spells and \glossterm{magical} effects you identify with a successful Spellcraft check.
-
-    \feat{Spellgift}{General, Magical}
-    \featpres 5 levels in classes without spellcasting, Willpower 6.
-    \featben You have inherent magic in your body, granting you magical power.
-    When you gain this feat, you choose a \glossterm{spell source}: arcane, divine, or nature.
-    You also choose a 1st level spell from the \glossterm{spell list} for that source.
-    You can spend a spellgift point to use that spell as a magical ability.
-    You have a maximum number of spellgift points equal half your Willpower.
-    Your spellpower with spellgifts is equal to your Willpower or your level, whichever is higher.
-
-    At 7 levels in non-spellcasting classes, you can choose a spell of up to 2nd level from the same source. You can also spend a spellgift point to use that spell.
-
-    At 11 levels in non-spellcasting classes, if you have 9 Willpower, you can choose a spell of up to 4th level from the same source. You can also spend a spellgift point to use that spell.
-
-    At 15 levels in non-spellcasting classes, if you have 12 Willpower, you can choose a spell of up to 6th level from the same source. You can also spend a spellgift point to use that spell.
-
-    \feat{Spellstrike}{Magical, Spell}
-    \featpre 5th level, 2nd level spells.
-    \featben If you cast a \glossterm{targeted spell} using a spell slot one level higher than normal, you can make a single \glossterm{strike} with a weapon you wield as part of casting the spell.
-    The spell must have a casting time of a standard action.
-    The strike is made at the same time as other physical attacks in the action phase.
-    If the strike hits a creature or object, you can spend an \glossterm{immediate action} to activate the spell.
-    If you do, the target suffers the effects of the spell.
-
-    If the strike misses, the spell is imbued into the weapon used to make the strike for 2 rounds.
-    If the weapon hits a creature or object during that time, you can spend an immediate action to activate the spell, just as if the initial strike had succeeded.
-    If you activate the spell, the duration runs out, or if you cast another spell, the spell in the weapon dissipates without effect.
-
-    At 7th level, the imbuement lasts for 5 minutes before fading away.
-    This can give you enough time to imbue a spell into a weapon and give the weapon to another creature.
-
-    At 11th level, if you know 4th level spells, casting spells does not cause the imbuement to fade.
-    You can still only have one spell imbued into a weapon with this feat at once.
-
-    At 15th level, you can spend a spell slot of the spell's level to gain the benefits of this feat, rather than a spell slot one level higher than normal.
-
-    \feat{Sprint Mastery}{Skill}
-    \featpre Sprint 6 ranks.
-    \featben Whenever you make a Sprint check, you may roll twice and take the higher result.
-
-    At 3rd level, you gain a \plus10 foot bonus to speed in all your movement modes.
-
-    At 7th level, if you have 10 ranks in Sprint, you gain a \plus5 bonus to Sprint checks.
-
-    At 11th level, if you have 14 ranks in Sprint, you can sprint for a number of minutes equal to twice your Constitution (minimum 2).
-    After that time, you must rest for 5 minutes before you can sprint again.
-
-    \feat{Stealth Mastery}{Skill}
-    \featpre Stealth 6 ranks.
-    \featben Whenever you make a Stealth check, you may roll twice and take the higher result.
-
-    At 3rd level, your penalties for moving while hiding are reduced by 5.
-    This means you can move at up to half speed with no penalty, and you can move at full speed with a \minus5 penalty.
-
-    At 7th level, if you have 10 ranks in Stealth, you gain a \plus5 bonus to Stealth checks.
-
-    At 11th level, if you have 14 ranks in Stealth, you can use the Stealth skill to hide even while being observed.
-    You take take a \minus10 penalty to the Stealth check when hiding in this way, and you still need passive cover or concealment to hide.
-
-    At 15th level, if you have 11 ranks in Stealth, the penalty for hiding while observed is reduced to \minus5.
-
-    \feat{Style Fusion}{Class, Combat}
-    \featpre Fighter level 9, Intelligence 9.
-    \featben You can use two styles at once, gaining the benefits of both styles (see \pcref{Style Feats}).
-    This allows you to use a single \glossterm{free action} to initiate two styles at once, or change which two styles you are using.
-    You may only do this for a number of rounds per day equal to your Intelligence.
-
-    At 15th level, if you have 12 Intelligence, there is no limit on the number of rounds you can use this feat each day.
-
-    \feat{Survival Mastery}{Skill}
-    \featpre Survival 6 ranks.
-    \featben Whenever you make a Survival check, you may roll twice and take the higher result.
-
-    At 3rd level, you ignore \glossterm{difficult terrain} and harmful natural terrain of any kind.
-    If a skill check, such as Climb or Swim, would normally be required to move through the terrain, this ability does not help.
-    In addition, you can choose to leave no trace of your passage as you move.
-    If you do, tracking you is impossible by any physical means.
-
-    At 7th level, if you have 10 ranks in Survival, you gain a \plus5 bonus to Survival checks.
-
-    At 11th level, if you have 14 ranks in Survival, you are immune to harmful planar effects.
-    In addition, as a standard action, you can find your way to any location, as the effect of the \spell{find the path} ritual.
-    You may use this ability once per day.
-    Finding locations in this way is a \glossterm{magical} ability.
-
-    \feat{Swift}{General}
-    \featben You increase your land speed by 5 feet.
-
-    At 3rd level, the speed bonus increases to 10 feet.
-
-    At 7th level, the speed bonus increases to 20 feet.
-
-    At 11th level, the speed bonus increases to 30 feet.
-
-    \feat{Swim Mastery}{Skill}
-    \featpre Swim 6 ranks.
-    \featben Whenever you make a Swim check, you may roll twice and take the higher result.
-
-    At 3rd level, you gain a \glossterm{swim speed} equal to your land speed.
-    This grants several benefits.
-    \begin{itemize}
-        \item A successful Swim check to move allows you to move a distance equal to your swim speed.
-        \item You gain a \plus10 bonus to Swim checks.
-    \end{itemize}
-
-    At 7th level, if you have 10 ranks in Swim, you gain a \plus5 bonus to Swim checks.
-
-    At 11th level, if you have 14 ranks in Swim, you do not suffer any penalties to physical melee attacks, checks, or physical defenses for being underwater.
-    You still suffer the normal penalty with underwater ranged attacks.
-
-    \feat{Tactical Prediction}{Combat}
-    \featpres 5th level, Intelligence 6.
-    \featben As a swift action, you can make an Intelligence vs. Mental attack against a creature within \rngmed range of you.
-    Success means you learn in general terms what the creature is planning to do during the next phase.
-    Of course, it can change its plans, particularly if it hears you tell your allies what it will do.
-
-    At 11th level, if you have 9 Intelligence, you gain a \plus2 bonus to this attack per round you have seen the creature fight.
-
-    At 15th level, if you have 12 Intelligence, once per round you can attempt to predict a creature's actions as a \glossterm{free action}.
-
-    \feat{Transmuter}{Magical, Spell}
-    \featpre 1st level or higher Transmutation spell known.
-    \featben You gain \glossterm{damage reduction} against \glossterm{physical damage} equal to half your spellpower with the \glossterm{spell source} used to qualify for this feat.
-    Adamantine weapons ignore this damage reduction and negate it for 1 round.
-
-    At 7th level, if you know a 2nd level or higher Transmutation spell, your Transmutation spells are more powerful.
-    You can cast Transmutation spells as if they were one level lower than their actual level (minimum 1).
-    This does not stack with spell level reductions from other feats.
-
-    At 11th level, if you know a 4th level or higher Transmutation spell, your damage reduction increases to be equal to your spellpower, and applies against all damage.
-
-    \feat{Trapfinder}{Skill}
-    \spelldesc{You have honed your senses to recognize traps quickly and effectively.}
-    \featpre Awareness 4 ranks.
-    \featben As a full-round action, you can move up to 10 feet while searching every square within 10 feet of you for traps with the Awareness skill (see \pcref{Awareness}).
-    If you detect a trap partway through your movement, you may immediately stop moving.
-
-    At 3rd level, you gain a \plus5 bonus to Awareness checks to find traps.
-
-    At 7th level, whenever you come within 10 feet of a trap, you can immediately make an Awareness check to notice the trap.
-    This check should be made secretly, so you do not know whether you failed to notice a trap.
-    In addition, when you take a full-round action to search for traps with this feat, the range at which you can notice traps increases to 50 feet.
-
-    At 11th level, the bonus to Awareness checks to find traps increases to \plus10.
-    In addition, you can immediately make an Awareness check to notice any traps within 20 feet of you.
-
-    \feat{Two-Weapon Fighting}{Combat}
-    \featpre Dexterity 3.
-    \featben When making a \glossterm{dual attack} with two weapons at once, you gain a \plus1 bonus to accuracy with physical attacks.
-
-    At 3rd level, you gain a \plus1 bonus to damage while making a dual attack with two weapons at once.
-
-    At 7th level, if you have 6 Dexterity, the accuracy bonus increases to \plus2.
-
-    At 11th level, if you have 9 Dexterity, the damage bonus increases to \plus2.
-
-    \stylereq Wield two weapons at once.
-    \parhead{Special} This is a Style feat, and all of its effects only apply while you are in this style.
-    For details, see \pcref{Style Feats}.
-
-    \feat{Unarmed Fighting}{Combat}
-    \featben You gain proficiency with your unarmed attack.
-    This grants you a \plus4 bonus to accuracy with the weapon and allows you to defend yourself with it, just as if you were using another melee weapon you are proficient with.
-    In addition, your unarmed attacks can deal lethal or nonlethal damage as you choose.
-
-    At 3rd level, you can attack with multiple parts of your body simultaneously.
-    This allows you to make dual attacks with your unarmed strike (see \pcref{Dual Attacking}).
-
-    At 7th level, you gain a \plus1 bonus to damage with unarmed attacks.
-
-    At 11th level, the damage bonus increases to \plus2.
-
-    \feat{Versatile Wild Speech}{Class, Magical}
-    \featpres Druid or ranger level 1, wild speech ability.
-    \featben You can use your wild speech ability to communicate with animates, such as oozes and animated plants, and ordinary plants. A regular plant's sense of its surroundings is limited, so it won't be able to give (or recognize) detailed descriptions of creatures or answer questions about events outside its immediate vicinity.
-
-    At druid or ranger level 7, you can use your wild speech ability to communicate with magical beasts.
-
-    At druid or ranger level 11, you can use your wild speech ability to communicate with one element of the natural world: air, earth, fire or water.
-    You choose which element when you gain this ability.
-    A element's sense of its surroundings is limited like a plant's.
-    This also allows you to communicate with extraplanar elementals of your chosen element, which are much more intelligent.
-
-    At druid or ranger level 15, you can use your wild speech to communicate with any living creature, even with creatures that do not have languages.
-
-    \feat{Vivimancer}{Magical, Spell}
-    \featpres 1st level or higher \glossterm{Vivimancy} spell known.
-    \featben You are immune to hostile \glossterm{Life} and \glossterm{Death} effects.
-
-    At 7th level, if you know a 2nd level or higher Vivimancy spell, your Vivimancy spells are more powerful.
-    You can cast Vivimancy spells as if they were one level lower than their actual level (minimum 1).
-    This does not stack with spell level reductions from other feats.
-
-    At 11th level, if you know a 4th level or higher Vivimancy spell, you heal hit points equal to your spellpower with Vivimancy spells at the end of every round.
-
-    \feat{Weapon Focus}{Combat}
-    Choose one weapon group.
-    \featpre Proficiency with selected weapon group.
-    \featben You gain an ability based on the weapon group chosen.
-    \begin{itemize}
-        \item Armor weapons: When you perform a shield bash, you still benefit from the shield's defense bonus.
-            In addition, armor spikes no longer impose a penalty to your physical defenses.
-        \item Axes: You increase your \glossterm{critical multiplier} by 1 when attacking with axes.
-        \item Blades, heavy: You increase your \glossterm{critical range} by 1 when attacking with heavy blades.
-        \item Blades, light: You increase your critical range by 1 when attacking with light blades.
-        \item Blunt weapons: When you deal damage to a creature with a blunt weapon, it takes a \minus2 penalty to Mental defense for 2 rounds.
-            This penalty is not cumulative with itself.
-        \item Bows: You can arc your shots with bows, allowing you to ignore cover and treat total cover as total concealment (50\% failure chance) if you can shoot above the obstacle to reach your target.
-        \item Crossbows: The time required for you to reload crossbows is reduced to a free action (for a hand or light crossbow) or a move action (for a heavy crossbow).
-        \item Flexible weapons: You gain a \plus2 accuracy bonus with \glossterm{combat maneuvers} that you perform with flexible weapons.
-        \item Headed weapons: You increase your critical multiplier by 1 when attacking with headed weapons.
-        \item Monk weapons: You gain a \plus2 accuracy bonus with combat maneuvers that you perform with monk weapons.
-        \item Polearms: You can switch grips to short haft or stop short hafting a polearm as a swift action, and you take no penalty while short hafting it.
-        \item Spears: When you are charged by a creature, you can brace a spear you wield as an \glossterm{immediate action}. The spear must have the Bracing property (see \pcref{Weapon Properties}).
-        \item Thrown weapons: You can defend yourself with thrown weapons as you throw them, preventing you from being \defenseless (see \pcref{Thrown Weapons in Melee}).
-    \end{itemize}
-
-    At 3rd level, you gain proficiency with exotic weapons from your chosen weapon group.
-
-    At 7th level, you gain a \plus1 bonus to damage on physical attacks with weapons from your chosen weapon group.
-
-    At 11th level, the damage bonus increases to \plus2.
-
-    \parhead{Special} This feat can be taken multiple times.
-    Its effects do not stack.
-    Each time, you choose a different weapon group.
+        \ff[17]{Lifebound Resilience, Greater} You heal hit points equal to your spellpower each round, instead of half your spellpower.
+    \end{feat}
 
 \section{Other Feat Rules}
 
+    % TODO: are there any abilities left that grant bonus feats?
     \subsection{Bonus Feats}
         Some abilities grant a character bonus feats.
         Unless otherwise specified, the character must still meet any prerequisites for the feat.
         If the character does not meet the prerequisites at the time the bonus feat is granted, the character does not gain the feat.
         If the character later meets the prerequisites, the character immediately gains the benefit of the bonus feat.
 
-        If a character gains a feat as a bonus feat that he or she has already acquired through other means, the character may select instead any other feat for which she qualifies.
+        If a character gains a feat as a bonus feat that he or she has already acquired through other means, the character may instead select any other feat for which she qualifies.
 
     \subsection{Retraining Feats}
         At every level, your character can choose to retrain an old feat in exchange for a new feat.
-        You can only retrain feats for other feats you could have acquired at the time you took the original feat.
-        For example, a 6th level fighter can retrain his 2nd level fighter bonus feat for any other combat feat that he qualified for at his 2nd fighter level.
-        This also means you cannot retrain feats gained through class abilities which give you a specific feat, since there were no other feats you could have taken.
