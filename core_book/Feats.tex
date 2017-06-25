@@ -4,7 +4,7 @@ Feats are special abilities that every character has.
 Feats can be used to specialize your character particular area, to grant your character new abilities, or to change the way your character does certain things.
 
 \section{Gaining Feats}
-    Your character gains two feats at 1st level, a third at 5th level, and a fourth at 10th level.
+    Your character gains two feats at 1st level, a third at 3rd level, a fourth at 6th level, and a fifth at 10th level.
     % TODO: are there any bonus fetas
     Classes can sometimes grant bonus feats as well, which are in addition to these feats which every character gets.
     A character cannot gain the same feat twice.
@@ -72,160 +72,79 @@ Feats can be used to specialize your character particular area, to grant your ch
     \newpage\onecolumn
 
 % Feat names must follow ``have'', ``are (a)'', or ``can''.
-        \begin{longtabuwrapper}
-            \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{8em} >{\lcol}p{3em}}
-                \lcaption{Feats}\\
-                \tb{General Feats}\label{General Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
-                \featref{Celestial Heritage} & Non-evil & Gain holy abilities & Bloodline & \featpref{Celestial Heritage} \\
-                \tind \featref{Celestial Apotheosis} & 9th level, Celestial Heritage, non-evil & Gain wings and holy judgment & Bloodline & \featpref{Celestial Apotheosis} \\
-                \featref{Celestial Spell Conduit} & 5th level, 2nd level spells, Celestial Heritage, non-evil & Heal allies when you cast spells & Bloodline & \featpref{Celestial Spell Conduit} \\
-                \featref{Draconic Heritage} & \tdash & Gain draconic abilities & Bloodline & \featpref{Draconic Heritage} \\
-                \tind \featref{Draconic Apotheosis} & 9th level, Draconic Heritage & Gain wings, improved draconic abilities & Bloodline & \featpref{Draconic Apotheosis} \\
-                \featref{Endurance} & Con 3 & Resist fatigue and exhaustion & \tdash & \featpref{Endurance} \\
-                \featref{Iron Will} & Wil 3 & Improve Mental defenses & \tdash & \featpref{Iron Will} \\
-                \featref{Item Conduit} & 5th level & Improve magic item usage & \tdash & \featpref{Item Conduit} \\
-                \featref{Legendary Celerity} & 13th level, Dex 12 & Gain additional swift or immediate action & \tdash & \featpref{Legendary Celerity} \\
-                \featref{Legendary Mental Fortitude} & 13th level, Wil 12 & Gain \plus5 Fortitude, damage reduction & \tdash & \featpref{Legendary Mental Fortitude} \\
-                \featref{Legendary Might} & 13th level, Str 12 & Increase weight limits and weapon damage & \tdash & \featpref{Legendary Might} \\
-                \featref{Lightning Reflexes} & Dex 3 & Improve Reflex defense, initiative & \tdash & \featpref{Lightning Reflexes} \\
-                \featref{Rapid Recovery} & Con 3 & Heal damage very quickly & \tdash & \featpref{Rapid Recovery} \\
-                \featref{Spellbreaker} & 9th level, Wil 9 & Gain magic resistance & \tdash & \featpref{Spellbreaker} \\
-                \featref{Spellgift} & 5 non-spellcaster levels, Wil 6 & Gain spell-like abilities & \tdash & \featpref{Spellgift} \\
-                \featref{Swift} & \tdash & Gain speed bonus & \tdash & \featpref{Swift} \\
-                \featref{Toughness} & Con 3 & Improve Fortitude defenses & \tdash & \featpref{Toughness} \\
+\begin{longtabuwrapper}
+    \begin{longtabu}{>{\lcol}p{10em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{8em} >{\lcol}p{3em}}
+        \lcaption{Feats}\\
+        \tb{General Feats}\label{General Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
+        \featref{Celestial Heritage} & Non-evil & Gain aspects of celestial beings & Bloodline, Magical & \featpref{Celestial Heritage} \\
+        \featref{Draconic Heritage} & Gain aspects of draconic power & \tdash & Bloodline & \featpref{Draconic Heritage} \\
+        \featref{Iron Will} & Wil 2 & Increase mental resilience & \tdash & \featpref{Iron Will} \\
+        \featref{Toughness} & Con 2 & Increase physical fortitude & \tdash & \featpref{Toughness} \\
 
-                \tb{Class Feats}\label{Class Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
-                \featref{All Energy Becomes One} & Monk 5, Con 6, manifest \ki & Instantly absorb energy attacks & \tdash & \featpref{All Energy Becomes One} \\
-                \featref{Arcane Resilience} & Mage 1 & Reduce damage from spells & \tdash & \featpref{Arcane Resilience} \\
-                \featref{Chaotic Rage} & Paladin 5 & Gain ability to rage & \tdash & \featpref{Chaotic Rage} \\
-                \featref{Combat Leader} & Fighter 9, Int 9 & Grant feats to allies & \tdash & \featpref{Combat Leader} \\
-                \featref{Controlling Wild Speech} & Druid or ranger 5, wild speech & Control animals and objects with wild speech & \tdash & \featpref{Controlling Wild Speech} \\
-                \featref{Extra Domain} & Cleric 5 & Gain additional domain & \tdash & \featpref{Extra Domain} \\
-                \featref{Style Fusion} & Fighter 9, Int 9 & Use multiple style feats at once & \tdash & \featpref{Style Fusion} \\
-                \featref{Versatile Wild Speech} & Druid or ranger 1, wild speech & Improve communication with wild speech & \tdash & \featpref{Versatile Wild Speech} \\
+        \tb{Class Feats}\label{Class Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
+        \featref{All Energy Becomes One} & Monk base class, Con 2 & Absorb and redirect damage & Magical & \featpref{All Energy Becomes One} \\
 
-                \tb{Spell Feats}\label{Spell Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
-                \featref{Abjurer} & 1st level Abjuration spell & Improve Abjuration spells you cast & \tdash & \featpref{Abjurer} \\
-                \featref{Battlecaster} & 1st level spells & Improve spellcasting in combat & \tdash & \featpref{Battlecaster} \\
-                \featref{Conjurer} & 1st level Conjuration spell & Improve Conjuration spells you cast & \tdash & \featpref{Conjurer} \\
-                \featref{Counterspell} & 5th level, 2nd level spells, Spellcraft 6 & Force foes to miscast spells & \tdash & \featpref{Counterspell} \\
-                \featref{Devastating Magic} & 13th level, 6th level spells & Spells deal more damage & \tdash & \featpref{Devastating Magic} \\
-                \featref{Distant Magic} & 5th level, 2nd level spells & Cast spells at greater distances & \tdash & \featpref{Distant Magic} \\
-                \featref{Diviner} & 1st level Divination spell & Improve Divination spells you cast & \tdash & \featpref{Diviner} \\
-                \featref{Energetic Magic} & 9th level, 4th level \glossterm{energy} spell & Improve energy spells you cast & \tdash & \featpref{Energetic Magic} \\
-                \featref{Empowered Magic} & 9th level, 4th level spells & Empower effects of your spells & \tdash & \featpref{Empowered Magic} \\
-                \featref{Enchant Item} & 1st level spells & Gain ability to create magic items & \tdash & \featpref{Enchant Item} \\
-                \featref{Enchanter} & 1st level Enchantment spell & Improve Enchantment spells you cast & \tdash & \featpref{Enchanter} \\
-                \featref{Evoker} & 1st level Evocation spell & Improve Evocation spells you cast & \tdash & \featpref{Evoker} \\
-                \featref{Hidden Magic} & 5th level, 2nd level spells & Cast spells without components & \tdash & \featpref{Hidden Magic} \\
-                \featref{Illusionist} & 1st level Illusion spell & Improve Illusion spells you cast & \tdash & \featpref{Illusionist} \\
-                \featref{Legendary Spell Alacrity} & 13th level, 6th level spells & Spells take effect more quickly & \tdash & \featpref{Legendary Spell Alacrity} \\
-                \featref{Legendary Well of Magic} & 13th level, 6th level spells & Cast spells without spending spell slots & \tdash & \featpref{Legendary Well of Magic} \\
-                \featref{Miscaster} & 1st level spells & Improve your miscast spells & \tdash & \featpref{Miscaster} \\
-                \featref{Quickened Magic} & 9th level, 4th level spells & Cast spells quickly & \tdash & \featpref{Quickened Magic} \\
-                \featref{Ritual Caster} & Int 3 & Gain ability to perform rituals & \tdash & \featpref{Ritual Caster} \\
-                \featref{Shaped Magic} & 5th level, 2nd level spells & Control area of spells & \tdash & \featpref{Shaped Magic} \\
-                \featref{Somatic Strike} & 9th level, 4th level spells & Attack in place of somatic components & \tdash & \featpref{Somatic Strike} \\
-                \featref{Spellwoven Performance} & 5th level, 1st level spells, any Performance feat & Blend spells and performances & Skill & \featpref{Spellwoven Performance} \\
-                \featref{Spellcasting Versatility} & 5th level, 1st level spells & Improve spellcasting when multiclassing & \tdash & \featpref{Spellcasting Versatility} \\
-                \featref{Spellstrike} & 5th level, 2nd level spells & Channel spell through physical attack  & \tdash & \featpref{Spellstrike} \\
-                \featref{Transmuter} & 1st level Transmutation spell & Improve Transmutation spells you cast & \tdash & \featpref{Transmuter} \\
-                \featref{Vivimancer} & 1st level Vivimancy spell & Improve Vivimancy spells you cast & \tdash & \featpref{Vivimancer} \\
+        \tb{Skill Feats}\label{Skill Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
+        \featref{Acrobatics Specialization} & Mastered Acrobatics & \tdash & \tdash & \featpref{Acrobatics Specialization} \\
+        \featref{Awareness Specialization} & Mastered Awareness & \tdash & \tdash & \featpref{Awareness Specialization} \\
+        \featref{Bardic Exemplar} & Perform Specialization & Mock foes and bolster allies with performances & Magical & \featpref{Bardic Exemplar} \\
+        \featref{Bluff Specialization} & Mastered Bluff & \tdash & \tdash & \featpref{Bluff Specialization} \\
+        \featref{Climb Specialization} & Mastered Climb & \tdash & \tdash & \featpref{Climb Specialization} \\
+        \featref{Craft Specialization} & prerequisites & \tdash & \tdash & \featpref{Craft Specialization} \\
+        \featref{Creature Handling Specialization} & Mastered Creature Handling & \tdash & \tdash & \featpref{Creature Handling Specialization} \\
+        \featref{Devices Specialization} & Mastered Devices & \tdash & \tdash & \featpref{Devices Specialization} \\
+        \featref{Disguise Specialization} & Mastered Disguise & \tdash & \tdash & \featpref{Disguise Specialization} \\
+        \featref{Escape Artist Specialization} & Mastered Escape Artist & \tdash & \tdash & \featpref{Escape Artist Specialization} \\
+        \featref{Intimidate Specialization} & Mastered Intimidate & \tdash & \tdash & \featpref{Intimidate Specialization} \\
+        \featref{Heal Specialization} & Mastered Heal & \tdash & \tdash & \featpref{Heal Specialization} \\
+        \featref{Jump Specialization} & Mastered Jump & \tdash & \tdash & \featpref{Jump Specialization} \\
+        \featref{Knowledge Specialization} & Mastered Knowledge & \tdash & \tdash & \featpref{Knowledge Specialization} \\
+        \featref{Linguistics Specialization} & Mastered Linguistics & \tdash & \tdash & \featpref{Linguistics Specialization} \\
+        \featref{Perform Specialization} & Mastered Perform & \tdash & \tdash & \featpref{Perform Specialization} \\
+        \featref{Persuasion Specialization} & Mastered Persuasion & \tdash & \tdash & \featpref{Persuasion Specialization} \\
+        \featref{Ride Specialization} & Mastered Ride & \tdash & \tdash & \featpref{Ride Specialization} \\
+        \featref{Sense Motive Specialization} & Mastered Sense Motive & \tdash & \tdash & \featpref{Sense Motive Specialization} \\
+        \featref{Sleight of Hand Specialization} & Mastered Sleight of Hand & \tdash & \tdash & \featpref{Sleight of Hand Specialization} \\
+        \featref{Spellcraft Specialization} & Mastered Spellcraft & \tdash & \tdash & \featpref{Spellcraft Specialization} \\
+        \featref{Sprint Specialization} & Mastered Sprint & \tdash & \tdash & \featpref{Sprint Specialization} \\
+        \featref{Stealth Specialization} & Mastered Stealth & \tdash & \tdash & \featpref{Stealth Specialization} \\
+        \featref{Survival Specialization} & Mastered Survival & \tdash & \tdash & \featpref{Survival Specialization} \\
+        \featref{Swim Specialization} & Mastered Swim & \tdash & \tdash & \featpref{Swim Specialization} \\
 
-                \tb{Skill Feats}\label{Skill Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
-                \featref{Acrobatics Mastery} & Acrobatics 6 & Improve Acrobatics checks & \tdash & \featpref{Acrobatics Mastery} \\
-                \featref{Awareness Mastery} & Awareness 6 & Improve Awareness checks & \tdash & \featpref{Awareness Mastery} \\
-                \featref{Bluff Mastery} & Bluff 6 & Improve Bluff checks & \tdash & \featpref{Bluff Mastery} \\
-                \featref{Climb Mastery} & Climb 6 & Improve Climb checks & \tdash & \featpref{Climb Mastery} \\
-                \featref{Craft Magic Item} & Craft (any) 4 & Gain ability to craft magic items & \tdash & \featpref{Craft Magic Item} \\
-                \featref{Craft Mastery} & Craft 6 & Improve Craft checks & \tdash & \featpref{Craft Mastery} \\
-                \featref{Creature Handling Mastery} & Creature Handling 6 & Improve Creature Handling checks & \tdash & \featpref{Creature Handling Mastery} \\
-                \featref{Device Mastery} & Devices 6 & Improve Devices checks & \tdash & \featpref{Device Mastery} \\
-                \featref{Disguise Mastery} & Disguise 6 & Improve Disguise checks & \tdash & \featpref{Disguise Mastery} \\
-                \featref{Escape Artist Mastery} & Escape Artist 6 & Improve Escape Artist checks & \tdash & \featpref{Escape Artist Mastery} \\
-                \featref{Heal Mastery} & Heal 6 & Improve Heal checks & \tdash & \featpref{Heal Mastery} \\
-                \featref{Inspiring Performer} & Perform 4 & Perform to improve abilities of allies & Performance & \featpref{Inspiring Performer} \\
-                \featref{Intimidate Mastery} & Intimidate 6 & Improve Intimidate checks & \tdash & \featpref{Intimidate Mastery} \\
-                \featref{Jump Mastery} & Jump 6 & Improve Jump checks & \tdash & \featpref{Jump Mastery} \\
-                \featref{Knowledge Mastery} & Knowledge (any) 6 & Improve Knowledge checks & \tdash & \featpref{Knowledge Mastery} \\
-                \featref{Legendary Skill Savant} & 13th level & Gain ten skill points & \tdash & \featpref{Legendary Skill Savant} \\
-                \featref{Linguistic Mastery} & Linguistics 6 & Improve Linguistics checks & \tdash & \featpref{Linguistic Mastery} \\
-                \featref{Mesmerizing Performer} & Perform (any) 4 & Perform to influence and distract foes & Performance & \featpref{Mesmerizing Performer} \\
-                \featref{Mocking Performer} & Perform (any) 4 & Perform to impair foes & Performance & \featpref{Mocking Performer} \\
-                \featref{Persuasion Mastery} & Persuasion 6 & Improve Persuasion checks & \tdash & \featpref{Persuasion Mastery} \\
-                \featref{Perform Mastery} & Perform 6 & Improve Perform checks & \tdash & \featpref{Perform Mastery} \\
-                \featref{Ride Mastery} & Ride 6 & Improve Ride checks & \tdash & \featpref{Ride Mastery} \\
-                \featref{Sense Motive Mastery} & Sense Motive 6 & Improve Sense Motive checks & \tdash & \featpref{Sense Motive Mastery} \\
-                \featref{Skill Savant} & \tdash & Gain skill points & \tdash & \featpref{Skill Savant} \\
-                \featref{Sleight of Hand Mastery} & Sleight of Hand 6 & Improve Sleight of Hand checks & \tdash & \featpref{Sleight of Hand Mastery} \\
-                \featref{Spellcraft Mastery} & Spellcraft 6 & Improve Spellcraft checks & \tdash & \featpref{Spellcraft Mastery} \\
-                \featref{Sprint Mastery} & Sprint 6 & Improve Sprint checks & \tdash & \featpref{Sprint Mastery} \\
-                \featref{Stealth Mastery} & Stealth 6 & Improve Stealth checks & \tdash & \featpref{Stealth Mastery} \\
-                \featref{Sprint Mastery} & Sprint 6 & Improve Sprint checks & \tdash & \featpref{Sprint Mastery} \\
-                \featref{Supreme Inspiration} & 9th level, Perform 9 & Perform to greatly inspire allies & \tdash & \featpref{Supreme Inspiration} \\
-                \featref{Survival Mastery} & Survival 6 & Improve Survival checks & \tdash & \featpref{Survival Mastery} \\
-                \featref{Swim Mastery} & Swim 6 & Improve Swim checks & \tdash & \featpref{Swim Mastery} \\
-                \featref{Trapfinder} & Awareness 4 & Improve ability to notice traps & \tdash & \featpref{Trapfinder} \\
+        \tb{Spell Feats}\label{Spell Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
+        \featref{Abjurer} & Abjuration spell & \tdash & Magical & \featpref{Abjurer} \\
+        \featref{Conjurer} & Conjuration spell & \tdash & Magical & \featpref{Conjurer} \\
+        \featref{Diviner} & Divination spell & \tdash & Magical & \featpref{Diviner} \\
+        \featref{Eldritch Knight} & Any spell & \tdash & \tdash & \featpref{Eldritch Knight} \\
+        \featref{Enchanter} & Enchantment spell & \tdash & Magical & \featpref{Enchanter} \\
+        \featref{Evoker} & Evocation spell & \tdash & Magical & \featpref{Evoker} \\
+        \featref{Illusionist} & Illusion spell & \tdash & Magical & \featpref{Illusionist} \\
+        \featref{Miscaster} & Any spell & \tdash & Magical & \featpref{Miscaster} \\
+        \featref{Transmuter} & Transmutation spell & \tdash & Magical & \featpref{Transmuter} \\
+        \featref{Vivimancer} & Vivimancy spell & \tdash & Magical & \featpref{Vivimancer} \\
 
-                \tb{Combat Feats}\label{Combat Feats} & \tb{Prerequisites} & \tb{Benefit} & \tb{Feat Types} & \tb{Page} \\
-                \featref{Armor-Piercing Attack} & 5th level, Per 6 & Gain precision-based special attacks & \tdash & \featpref{Armor-Piercing Attack} \\
-                \featref{Battlerage} & 5th level, Wil 6 & Gain ability to rage & \tdash & \featpref{Battlerage} \\
-                \featref{Blindfighter} & Per 3 & Fight better while unable to see & \tdash & \featpref{Blindfighter} \\
-                \featref{Cleave} & Str 3 & Gain bonus strike after defeating foes & \tdash & \featpref{Cleave} \\
-                \featref{Close-Quarters Fighting} & Dex 3 & Fight better while squeezing and grappling & \tdash & \featpref{Close-Quarters Fighting} \\
-                \featref{Combat Mobility} & Dex 3 & Move through creatures, even while attacking & \tdash & \featpref{Combat Mobility} \\
-                \featref{Counterattack} & 5th level, Dex 6 & Make free attacks when missed & Style & \featpref{Counterattack} \\
-                \featref{Covering Fire} & Per 3 & Impair foes with ranged attacks & Style & \featpref{Covering Fire} \\
-                \featref{Deadly Aim} & 5th level, Per 6 & Bonus damage with ranged attacks & Style & \featpref{Deadly Aim} \\
-                \featref{Defensive Fighting} & \tdash & Trade damage for defense bonus & Style & \featpref{Defensive Fighting} \\
-                \featref{Deflect Arrows} & Dex 3 & Instantly deflect ranged attacks & \tdash & \featpref{Deflect Arrows} \\
-                \featref{Destructive} & Str 3 & Ignore damage reduction and hardness & \tdash & \featpref{Destructive} \\
-                \featref{Executioner} & 5th level & Make free attacks against weakened foes & \tdash & \featpref{Executioner} \\
-                \featref{Eye of the Storm} & Dex 3 & Reduce overwhelm penalties & Style & \featpref{Eye of the Storm} \\
-                \featref{Far Shot} & Str 3 & Fight better at long range & \tdash & \featpref{Far Shot} \\
-                \featref{Fearsome} & 5th level, Intimidate 10 & Intimidate struck foes & Skill & \featpref{Fearsome} \\
-                \featref{Frenzied Assault} & 13th level, Wil 12 & Deal and take more physical damage & Style & \featpref{Frenzied Assault} \\
-                \featref{Guardian} & \tdash & Reduce overwhelm penalties of allies & \tdash & \featpref{Guardian} \\
-                \featref{Heavy Weapon Fighting} & Str 3 & Bonus damage with two-handed attacks & \tdash & \featpref{Heavy Weapon Fighting} \\
-                \featref{Improvised Fighting} & \tdash & Fight better with improvised weapons & \tdash & \featpref{Improvised Fighting} \\
-                \featref{Inescapable} & 9th level & Immobilize struck foes & Style & \featpref{Inescapable} \\
-                \featref{Infuriating} & 5th level & Goad struck foes into attacking you & Style & \featpref{Infuriating} \\
-                \featref{Legendary Combat Awareness} & 13th level, Per 12 & Choose actions after other creatures & \tdash & \featpref{Legendary Combat Awareness} \\
-                \featref{Legendary Combat Reaction} & 13th level, Dex 12 & Reduce overwhelm penalties & \tdash & \featpref{Legendary Combat Reaction} \\
-                \featref{Legendary Combat Tactics} & 13th level, Int 12 & Predict action a creature will take & \tdash & \featpref{Legendary Combat Tactics} \\
-                \featref{Legendary Speed} & 13th level, Dex 12 & Make free attacks & Style & \featpref{Legendary Speed} \\
-                \featref{Mage Slayer} & 5th level & Fight better against spellcasters & Style & \featpref{Mage Slayer} \\
-                \featref{Magical Perception} & 9th level, Per 9 & Improve accuracy of magical attacks & \tdash & \featpref{Magical Perception} \\
-                \featref{Maneuver Focus} & \tdash & Improve chosen combat maneuver & \tdash & \featpref{Maneuver Focus} \\
-                \featref{Martial Training} & \tdash & Gain armor, weapon proficiencies & \tdash & \featpref{Martial Training} \\
-                \featref{Mounted Combat} & Ride 4 & Fight better while mounted & \tdash & \featpref{Mounted Combat} \\
-                \featref{Overwhelming Fire} & \tdash & Overwhelm foes with ranged weapons & Style & \featpref{Overwhelming Fire} \\
-                \featref{Parry} & Dex 3 & Deflect strikes with martial skill & Style & \featpref{Parry} \\
-                \featref{Point Blank Shot} & \tdash & Fight better with ranged weapons at close range & \tdash & \featpref{Point Blank Shot} \\
-                \featref{Power Attack} & 5th level, Str 6 & Gain bonus to damage & Style & \featpref{Power Attack} \\
-                \featref{Precise Attack} & Per 3 & Trade damage for accuracy bonus & Style & \featpref{Precise Attack} \\
-                \featref{Precise Shot} & 5th level, Per 6 & Ignore cover, concealment, miss chances & \tdash & \featpref{Precise Shot} \\
-                \featref{Quick Draw} & \tdash & Draw and stow items more quickly & \tdash & \featpref{Quick Draw} \\
-                \featref{Reflexive Dodge} & 13th level, Dex 12 & Automatically dodge strikes & \tdash & \featpref{Reflexive Dodge} \\
-                \featref{Shielded Fighting} & Shield proficiency & Gain defense bonuses with shields & \tdash & \featpref{Shielded Fighting} \\
-                \featref{Tactical Prediction} & 5th level, Int 6 & Predict foe's next action & \tdash & \featpref{Tactical Prediction} \\
-                \featref{Two-Weapon Fighting} & Dex 3 & Bonus accuracy, damage while dual wielding & \tdash & \featpref{Two-Weapon Fighting} \\
-                \featref{Unarmed Fighting} & \tdash & Fight better with unarmed attacks & \tdash & \featpref{Unarmed Fighting} \\
-                \featref{Weapon Focus} & \tdash & Fight better with chosen weapons & \tdash & \featpref{Weapon Focus} \\
-            \end{longtabu}
-            1. You can gain this feat multiple times. Each time you do, it has a different effect. \\
-        \end{longtabuwrapper}
-        \twocolumn
+        \tb{Combat Feats}\label{Combat Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
+        \featref{Agility} & Dex 2 & Increase reaction speed & \tdash & \featpref{Agility} \\
+        \featref{Blindfighter} & Per 2 & Fight unseen foes better & \tdash & \featpref{Blindfighter} \\
+        \featref{Duelist} & Dex 1, Int 1 & Fight one-on-one better & \tdash & \featpref{Duelist} \\
+        \featref{Executioner} & Str 1, Per 2 & Kill weakened foes more easily & \tdash & \featpref{Executioner} \\
+        \featref{Guardian} & Per 1, Wil 1 & Protect nearby allies & \tdash & \featpref{Guardian} \\
+        \featref{Reaper} & Str 2 & \tdash & Cleave through foes with sweeping strikes & \featpref{Reaper} \\
+        \featref{Sniper} & Per 2 & \tdash & Aim precisely at distant foes & \featpref{Sniper} \\
+        \featref{Whirlwind Warrior} & Dex 2, Per 1 & Fight hordes with agile ease & \tdash & \featpref{Whirlwind Warrior} \\
+    \end{longtabu}
+\end{longtabuwrapper}
+    \twocolumn
 
-\section{Feat Descriptions}
-    Here is the format for feat descriptions.
+    \section{Feat Descriptions}
+        Here is the format for feat descriptions.
 
     \ssecfake{Feat Name [Type of Feat]}
     \featpre Requirements a character must meet before taking the feat.
     This entry is absent if a feat has no prerequisites.
     \featben What the feat enables the character (``you'' in the feat description) to do.
 
-    \begin{feat}{Abjurer}{Magical}
+    \begin{feat}{Abjurer}{Magical, Spell}
         \spelldesc{You have great talent with Abjuration spells.}
         \featpre \glossterm{Abjuration} spell known.
         \featben
@@ -359,33 +278,44 @@ Feats can be used to specialize your character particular area, to grant your ch
         Its range is doubled.
     \end{feat}
 
-    \begin{feat}{Eldritch Knight}{Spell}
+    \begin{feat}{Eldritch Knight}{General, Spell}
         \featpre Ability to cast a spell.
         \featben
 
         \ff[1]{Combat Concentration, Lesser} You gain a \plus2 bonus to Concentration checks made to cast spells.
-        In addition, you reduce your chance of arcane spell failure from wearing armor by 10\%.
 
-        \ff[3]{Spellstrike} As a standard action, you can spend an \glossterm{action point} to imbue magical power into your weapon.
-        This requires concentration as if casting a spell.
-        Whether or not your concentration was broken, you may make a \glossterm{strike} with the weapon as a \glossterm{delayed action}.
-        If you maintained your concentration, the strike gains a \plus2d bonus to damage.
+        \ff[1]{Armor Tolerance, Lesser} You reduce your chance of arcane spell failure from wearing armor by 10\%.
+
+        \ff[3]{Spellstrike}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellspecial Choose a weapon you wield, or your \glossterm{unarmed attack}.
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spelleffect You imbue magical power into the weapon.
+                This requires concentration as if casting a spell.
+                Breaking your concentration does not cause a \glossterm{miscast backlash}, however.
+                During the \glossterm{delayed action phase}, you may make a \glossterm{strike} with the weapon.
+                If you maintained your concentration, the strike gains a \plus2d bonus to damage.
+            \end{spelleffects}
+        \end{ability}
 
         \ff[5]{Combat Concentration} The bonus to Concentration checks increases to \plus5.
 
         \ff[7]{Armor Tolerance} The reduction of arcane spell failure increases to 20\%.
 
-        \ff[9]{Martial Spell} You gain a \plus1 bonus to \glossterm{accuracy} with spells against creatures you \glossterm{threaten}.
+        \ff[9]{Seeking Spellstrike}[Magical] When you use your \textit{spellstrike} ability, if you maintained your concentration, you gain a \plus1 bonus to accuracy with the \glossterm{strike}.
 
-        \ff[11]{Defensive Caster} You gain a \plus1 bonus to physical defenses.
+        \ff[11]{Spellsword Rhythm}[Magical] Whenever you hit a creature with a \glossterm{strike}, you gain a \plus1 bonus to \glossterm{accuracy} with spells against that creature during the next round.
+        In addition, whenever you hit a creature with a \glossterm{spell}, you gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{strikes} against that creature during the next round.
 
         \ff[13]{Combat Concentration, Greater} The bonus to Concentration checks increases to \plus10.
 
-        \ff[15]{Martial Spell, Greater} The accuracy bonus with spells against threatened creatures increases to \plus2.
+        \ff[15]{Spellstrike, Greater}[Magical] When you use your \textit{spellstrike} ability, the damage bonus if you maintained your concentration increases to \plus3d.
 
         \ff[17]{Armor Tolerance, Greater} The reduction of arcane spell failure increases to 30\%. 
 
-        \ff[19]{Spellstrike, Greater} The damage bonus if you maintained your concentration increases to \plus3d.
+        \ff[19]{Spellsword Rhythm, Greater}[Magical] The accuracy bonus increases to \plus2.
     \end{feat}
 
     \begin{feat}{Blindfighter}{Combat}
@@ -416,12 +346,6 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[18]{Supreme Sight} The range of your blindsight improves to 200 feet.
         In addition, the range of your blindsense improves to 1,000 feet.
     \end{feat}
-
-    % move this into power attack?
-    % \feat{Blows of Legendary Force}{Combat, Style}
-    % \featpre 13th level, Strength 12.
-    % \featben Whenever you make a \glossterm{strike}, you compare your result against the target's Armor and Fortitude defenses.
-    % If you hit either defense, the strike hits and deals full damage.
 
     \begin{feat}{Bluff Specialization}{Skill}
         \featpre Bluff as a mastered skill.
@@ -472,6 +396,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     \begin{feat}{Celestial Heritage}{Bloodline, Magical}
         \featpre Non-evil alignment
+        \parhead{Special} You can only have one Bloodline feat.
         \featben
 
         \ff[1]{Celestial Power} Your \glossterm{power} with abilities from this feat is equal to your Willpower or your level, whichever is higher.
@@ -608,7 +533,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         In addition, the size category decrease for the purpose of climbing on creatures improves to two size categories smaller than normal.
     \end{feat}
 
-    \begin{feat}{Conjurer}{Magical}
+    \begin{feat}{Conjurer}{Magical, Spell}
         \featpre \glossterm{Conjuration} spell known.
         \featben
 
@@ -681,9 +606,9 @@ Feats can be used to specialize your character particular area, to grant your ch
     \begin{feat}{Craft Specialization}{Skill}
         \featpre Craft (any) as a mastered skill.
         \featben
-    
+
         \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to all Craft skills.
-    
+
         \ff[2]{Craft Magic Item}[Magical] You can imbue items with magic using your crafting skill.
         Imbuing an item with magic takes material components, as described in \pcref{Magic Item Creation}.
         It takes you one hour per 10 gp of material components to create a item.
@@ -854,7 +779,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[16]{Specialization, Greater} The bonus to Disguise increases to \plus4.
     \end{feat}
 
-    \begin{feat}{Diviner}{Magical}
+    \begin{feat}{Diviner}{Magical, Spell}
         \featpre \glossterm{Divination} spell known.
         \featben
 
@@ -902,6 +827,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     \end{feat}
 
     \begin{feat}{Draconic Heritage}{Bloodline}
+        \parhead{Special} You can only have one Bloodline feat.
         \featben
 
         \ff[1]{Draconic Power} Your \glossterm{power} with abilities from this feat is equal to your level or your Constitution, whichever is higher.
@@ -974,7 +900,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \end{dtabularx}
     \end{dtable}
 
-    \begin{feat}{Enchanter}{Magical}
+    \begin{feat}{Enchanter}{Magical, Spell}
         \featpre \glossterm{Enchantment} spell known.
         \featben
 
@@ -1090,7 +1016,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[18]{Escape Magic, Greater}[Magical] You can use your \textit{escape magic} ability as a \glossterm{swift action}.
     \end{feat}
 
-    \begin{feat}{Evoker}{Magical}
+    \begin{feat}{Evoker}{Magical, Spell}
         \featpre \glossterm{Evocation} spell known.
         \featben
 
@@ -1312,7 +1238,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[18]{Wellspring of Life} You do not have to spend an \glossterm{action point} to use your \textit{healing touch} ability.
     \end{feat}
 
-    \begin{feat}{Illusionist}{Magical}
+    \begin{feat}{Illusionist}{Magical, Spell}
         \featpre \glossterm{Illusion} spell known.
         \featben
 
@@ -1599,7 +1525,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[16]{Specialization, Greater} The bonus to Knowledge increases to \plus4.
     \end{feat}
 
-    \begin{feat}{Agility}{types}
+    \begin{feat}{Agility}{Combat}
         \featpre Starting Dexterity of 2.
         \featben
 
@@ -1641,7 +1567,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[16]{Specialization, Greater} The bonus to Linguistics increases to \plus4.
     \end{feat}
 
-    \begin{feat}{Miscaster}{Magical}
+    \begin{feat}{Miscaster}{Magical, Spell}
         \featpre Ability to cast a spell.
         \featben
 
@@ -1766,28 +1692,28 @@ Feats can be used to specialize your character particular area, to grant your ch
         \featben
 
         \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Spellcraft.
-    
+
         \ff[8]{Specialization} The bonus to Spellcraft increases to \plus3.
-    
+
         \ff[16]{Specialization, Greater} The bonus to Spellcraft increases to \plus4.
     \end{feat}
 
     \begin{feat}{Sprint Specialization}{Skill}
         \featpre Sprint as a mastered skill.
         \featben
-    
+
         \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Sprint.
-    
+
         \ff[2]{Swift, Lesser} You gain a \plus10 foot bonus to speed in all your movement modes.
 
         \ff[6]{Endurance Runner} You can sprint for a number of rounds equal to 5 \add half your Constitution, instead of 2 \add half your Constitution.
-    
+
         \ff[8]{Specialization} The bonus to Sprint increases to \plus3.
 
         \ff[10]{Swift, Lesser} The speed bonus increases to \plus20 feet.
 
         \ff[14]{Endurance Runner, Greater} You can sprint for a number of minutes equal to 2 \add half your Constitution.
-    
+
         \ff[16]{Specialization, Greater} The bonus to Sprint increases to \plus4.
     \end{feat}
 
@@ -1852,7 +1778,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[16]{Specialization, Greater} The bonus to Swim increases to \plus4.
     \end{feat}
 
-    \begin{feat}{Transmuter}{Magical}
+    \begin{feat}{Transmuter}{Magical, Spell}
         \featpre \glossterm{Transmutation} spell known.
         \featben
 
@@ -1909,8 +1835,8 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[13]{Enhance Body, Greater} The bonus to Strength-based checks increases to \plus2.
     \end{feat}
 
-    \begin{feat}{Vivimancer}{Magical}
-        \featpre \glossterm{Transmutation} spell known.
+    \begin{feat}{Vivimancer}{Magical, Spell}
+        \featpre \glossterm{Vivimancy} spell known.
         \featben
 
         \ff[1]{Restore Life} As a standard action, you can spend an \glossterm{action point} to use this ability.
