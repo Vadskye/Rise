@@ -809,13 +809,13 @@
     \IfValueTF{#3}
     {
         \IfValueTF{#5}
-        { \parhead{#3~--~#4~(#5)} }
-        { \parhead{#3~--~#4} }
+        { \par #3~--~\textbf{#4}~(#5): }
+        { \par #3~--~\textbf{#4}: }
     }
     {
         \IfValueTF{#5}
-        { \parhead{#4~(#5)} }
-        { \parhead{#4} }
+        { \par \textbf{#4}~(#5): }
+        { \par \textbf{#4}: }
     }
     \IfBooleanF{#1}
     {
