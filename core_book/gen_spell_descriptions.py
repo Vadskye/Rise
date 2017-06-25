@@ -1411,13 +1411,14 @@ def generate_spells():
                 """,
             ),
             Augment(
-                level=3,
-                name="Cursed",
+                level=5,
+                name="Corrupting Curse",
                 description="""
-                    If the spell's attack critically hits, the spell's effect becomes a curse.
+                    The spell's attack is made against Mental defense instead of Fortitude defense.
+                    In addition, if it critically hits, the spell's effect becomes a permanent curse.
                     It is no longer a condition, and cannot be removed by abilities that remove conditions.
+                    This is a \\glossterm<Curse> effect.
                 """,
-                tags=['Curse'],
             ),
             Augment(
                 level=3,

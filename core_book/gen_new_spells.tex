@@ -398,11 +398,6 @@ If the spell's attack succeeds, the target is also \partiallyblinded. If it crit
 If the spell's attack critically hits, the target immediately dies.
 \par
 This is a \glossterm{Death} effect.
-\augment{3}{Cursed}
-If the spell's attack critically hits, the spell's effect becomes a curse.
-It is no longer a condition, and cannot be removed by abilities that remove conditions.
-\par
-This is a \glossterm{Curse} effect.
 \augment{3}{Empowered}
 The penalty increases by 1.
 \par
@@ -412,6 +407,11 @@ Its effects stack.
 If the spell's attack succeeds, at the end of each round, the target takes life damage equal to your spellpower.
 The target's maximum hit points are reduced by the amount of damage it takes in this way.
 When the spell ends, the target's maximum hit points are restored.
+\augment{5}{Corrupting Curse}
+The spell's attack is made against Mental defense instead of Fortitude defense.
+In addition, if it critically hits, the spell's effect becomes a permanent curse.
+It is no longer a condition, and cannot be removed by abilities that remove conditions.
+This is a \glossterm{Curse} effect.
 \begin{spellsection}{Create Acid}
 \begin{spellheader}
 \spelldesc{You create a magical orb of acid in your hand that speeds to its target.}
