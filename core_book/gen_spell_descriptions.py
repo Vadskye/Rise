@@ -659,11 +659,6 @@ def generate_spells():
                     However, it deals damage to the target again at the end of each round for 2 rounds, including the initial round.
                 """,
             ),
-            Augment(
-                level=6,
-                name='Staggering',
-                description=r'The target is \glossterm<staggered> for 2 rounds.'
-            ),
         ],
         category='damage',
     ))
@@ -707,11 +702,6 @@ def generate_spells():
                 name='Complete',
                 description="The damage increase applies to all damage, not just physical damage.",
             ),
-            Augment(
-                level=4,
-                name='Staggering',
-                description="Whenever the target takes damage increased by this spell, it is \\glossterm<staggered> for 1 round.",
-            )
         ],
         category='debuff, combat',
     ))
