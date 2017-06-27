@@ -67,28 +67,28 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable}
         \lcaption{Barbarian Progression}
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\lcol}X}
-            \tb{Level} & \tb{Special}              \\
+            \tb{Level} & \tb{Special}                      \\
             \bottomrule
-            \nth{1}  & Rage                      \\
-            \nth{2}  & Battle-scarred            \\
-            \nth{3}  & Athletic prowess          \\
-            \nth{4}  & Uncontrollable rage       \\
-            \nth{5}  & Uncanny dodge             \\
-            \nth{6}  & Titanic might             \\
-            \nth{7}  & Unstoppable rage          \\
-            \nth{8}  & Deep scars                \\
-            \nth{9}  & Improvised combat         \\
-            \nth{10} & Mindless rage             \\
-            \nth{11} & Greater uncanny dodge     \\
-            \nth{12} & Greater athletic prowess  \\
-            \nth{13} & Mighty rage               \\
-            \nth{14} & Rapid recovery            \\
-            \nth{15} & Greater improvised combat \\
-            \nth{16} & Endless rage              \\
-            \nth{17} & Fury of the storm         \\
-            \nth{18} & Greater titanic might     \\
-            \nth{19} & Blood frenzy              \\
-            \nth{20} & Deathless rage            \\
+            \nth{1}    & Rage                              \\
+            \nth{2}    & Battle-scarred                    \\
+            \nth{3}    & Athletic prowess                  \\
+            \nth{4}    & Uncontrollable rage               \\
+            \nth{5}    & Uncanny dodge                     \\
+            \nth{6}    & Titanic might                     \\
+            \nth{7}    & Unstoppable rage                  \\
+            \nth{8}    & Deep scars                        \\
+            \nth{9}    & Improvised combat                 \\
+            \nth{10}   & Mindless rage                     \\
+            \nth{11}   & Greater uncanny dodge             \\
+            \nth{12}   & Greater athletic prowess          \\
+            \nth{13}   & Mighty rage                       \\
+            \nth{14}   & Rapid recovery                    \\
+            \nth{15}   & Greater improvised combat         \\
+            \nth{16}   & Endless rage                      \\
+            \nth{17}   & Soulscarred                       \\
+            \nth{18}   & Greater titanic might             \\
+            \nth{19}   & Blood frenzy                      \\
+            \nth{20}   & Deathless rage, fury of the sotrm \\
         \end{dtabularx}
     \end{dtable}
 
@@ -159,20 +159,25 @@ This choice determines a great deal about your character's abilities.
             \cf{Bbn}[2]{Battle-Scarred} You gain \glossterm{damage reduction} against physical damage equal to your level.
 
             \cf{Bbn}[5]{Uncanny Dodge} You can react to danger before your senses would normally allow you to do so.
-            You reduce your \glossterm{overwhelm penalties} by 1.
+            You reduce your \glossterm{overwhelm penalties} by 2.
             If your overwhelm penalty is reduced to 0, you are not considered to be overwhelmed.
             In addition, you is not \unaware when attacked by surprise.
 
             \cf{Bbn}[8]{Deep Scars} Your \glossterm{damage reduction} from your \textit{battle-scarred} ability applies against all damage, not just physical damage.
 
             \cf{Bbn}[11]{Greater Uncanny Dodge}
-            Your reduction of \glossterm{overwhelm penalties} increases to 2.
+            Your reduction of \glossterm{overwhelm penalties} increases to 4.
 
             \cf{Bbn}[14]{Rapid Recovery}
             At the end of each round, you heal hit points equal to your level.
 
-            \cf{Bbn}[17]{Fury of the Storm}
-            Your reduction of \glossterm{overwhelm penalties} increases to 4.
+            \cf{Bbn}[17]{Soulscarred}
+            Your \glossterm{damage reduction} from your \textit{battle-scarred} ability increases to twice your level.
+
+            \cf{Bbn}[20]{Fury of the Storm}
+            You gain a \plus1d bonus to damage with \glossterm{strikes} against all creatures who \glossterm{threaten} you.
+            In addition, you are immune to being \glossterm{overwhelmed}, and never suffer \glossterm{overwhelm penalties}.
+
 
         \subsection{Primal Warrior}
             \cf{Bbn}[3]{Athletic Prowess} You gain two additional skill points that must be spent on Strength or Dexterity-based skills.
@@ -225,7 +230,7 @@ This choice determines a great deal about your character's abilities.
         \end{dtabularx}
     \end{dtable}
 
-    \classbasics{Alignment} The cleric's alignment must be within one step of your deity's (that is, it may be one step away on either the lawful-chaotic axis or the good-evil axis, but not both).
+    \classbasics{Alignment} Your alignment must be within one step of your deity's (that is, it may be one step away on either the lawful-chaotic axis or the good-evil axis, but not both).
 
     \classbasics{Class Skills}
     \subparhead{Intelligence} Heal, Knowledge (arcana, local, religion, the planes), Linguistics.
@@ -233,7 +238,7 @@ This choice determines a great deal about your character's abilities.
     \subparhead{Other} Bluff, Intimidate, Persuasion.
 
     \subsection{Base Class Abilities}
-        A character with cleric as a base class gains the following abilities.
+        If you choose cleric as a base class, you gain the following abilities.
 
         \classbasics{Skill Points} 5.
 
@@ -245,7 +250,7 @@ This choice determines a great deal about your character's abilities.
         You are proficient with simple weapons, any two other weapon groups, light and medium armor, and shields.
 
         \cf{Clr}{Domain Gifts}[Mag]
-        A cleric's abilities are shaped by your domains.
+        Your abilities are shaped by your domains.
         He gains the domain gifts of both of your domains.
         Domain gifts are not activated.
         The gifts offered by each domain are listed at \pcref{Domain Gifts}.
@@ -256,7 +261,7 @@ This choice determines a great deal about your character's abilities.
         He recovers all spent spell points after a \glossterm{short rest}.
 
     \subsection{Class Abilities}
-        All clerics have the following abilities.
+        If you are a cleric, you have the following abilities.
 
         \cf{Clr}{Domains}
         A cleric chooses two domains which represent your personal spiritual inclinations.
