@@ -117,7 +117,9 @@ This choice determines a great deal about your character's abilities.
     \subsection{Class Abilities}
         If you are a barbarian, you have the following abilities.
 
-        \subsubsection{Rage}\label{Rage}
+        \subsubsection{Battlerager}\label{Rage}
+
+            \cf{Bbn}{Rage} 
             As a \glossterm{free action}, you can spend an \glossterm{action point} to use this ability.
             \begin{ability}
                 \begin{spelleffects}
@@ -155,7 +157,7 @@ This choice determines a great deal about your character's abilities.
             While raging, the you ignore all penalties from \glossterm{vital damage}.
             However, if your vital damage exceeds your maximum hit points, you immediately die.
 
-        \subsection{Battleforged Resilience}
+        \subsubsection{Battleforged Resilience}
             \cf{Bbn}[2]{Battle-Scarred} You gain \glossterm{damage reduction} against physical damage equal to your level.
 
             \cf{Bbn}[5]{Uncanny Dodge} You can react to danger before your senses would normally allow you to do so.
@@ -178,8 +180,7 @@ This choice determines a great deal about your character's abilities.
             You gain a \plus1d bonus to damage with \glossterm{strikes} against all creatures who \glossterm{threaten} you.
             In addition, you are immune to being \glossterm{overwhelmed}, and never suffer \glossterm{overwhelm penalties}.
 
-
-        \subsection{Primal Warrior}
+        \subsubsection{Primal Warrior}
             \cf{Bbn}[3]{Athletic Prowess} You gain two additional skill points that must be spent on Strength or Dexterity-based skills.
 
             \cf{Bbn}[6]{Titanic Might}
@@ -204,30 +205,31 @@ This choice determines a great deal about your character's abilities.
 \section{Cleric}\label{Cleric}
     \begin{dtable}
         \lcaption{Cleric Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{2em} c >{\lcol}X}
-            \tb{Level} & \tb{Spells} & \tb{Special} \\
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{2em} c c >{\lcol}X}
+            \tb{Level} & \tb{Spells} & \tb{Augments}\fn{1} & \tb{Special} \\
             \bottomrule
-            \nth{1}  & 2  & Domain gifts, rituals, spells \\
-            \nth{2}  & 3  & Devotion, domain invocation   \\
-            \nth{3}  & 3  & Domain invocation             \\
-            \nth{4}  & 4  & \tdash                        \\
-            \nth{5}  & 4  & Domain aspect                 \\
-            \nth{6}  & 5  & \tdash                        \\
-            \nth{7}  & 5  & Domain aspect                 \\
-            \nth{8}  & 6  & \tdash                        \\
-            \nth{9}  & 6  & Intercession                  \\
-            \nth{10} & 7  & \tdash                        \\
-            \nth{11} & 7  & Greater domain invocation     \\
-            \nth{12} & 8  & \tdash                        \\
-            \nth{13} & 8  & Greater domain invocation     \\
-            \nth{14} & 9  & \tdash                        \\
-            \nth{15} & 9  & Domain mastery                \\
-            \nth{16} & 10 & \tdash                        \\
-            \nth{17} & 10 & Domain mastery                \\
-            \nth{18} & 11 & \tdash                        \\
-            \nth{19} & 11 & Endless devotion              \\
-            \nth{20} & 12 & Miracle                       \\
+            \nth{1}  & 2 & \tdash   & Domain gift, rituals, spells   \\
+            \nth{2}  & 2 & \tdash   & Spell point                    \\
+            \nth{3}  & 2 & \tdash   & Domain gift                    \\
+            \nth{4}  & 2 & 1        & \tdash                         \\
+            \nth{5}  & 3 & 1        & Domain spell                   \\
+            \nth{6}  & 3 & 2 \add 1 & \tdash                         \\
+            \nth{7}  & 3 & 2 \add 1 & Domain aspect         \\
+            \nth{8}  & 4 & 3 \add 1 & Expanded spell knowledge       \\
+            \nth{9}  & 4 & 3 \add 1 & Domain aspect                  \\
+            \nth{10} & 4 & 4 \add 2 & \tdash                         \\
+            \nth{11} & 4 & 4 \add 2 & Domain essence                  \\
+            \nth{12} & 4 & 5 \add 2 & \tdash                         \\
+            \nth{13} & 4 & 5 \add 2 & Domain essence \\
+            \nth{14} & 4 & 6 \add 3 & \tdash                         \\
+            \nth{15} & 4 & 6 \add 3 & Domain mastery                 \\
+            \nth{16} & 4 & 7 \add 3 & \tdash                         \\
+            \nth{17} & 4 & 7 \add 3 & Domain mastery                 \\
+            \nth{18} & 4 & 8 \add 3 & Spell point                    \\
+            \nth{19} & 4 & 8 \add 3 & ???                            \\
+            \nth{20} & 4 & 9 \add 3 & ???                            \\
         \end{dtabularx}
+        1. Custom augments \add standard augments; see \pcref{Augments}.
     \end{dtable}
 
     \classbasics{Alignment} Your alignment must be within one step of your deity's (that is, it may be one step away on either the lawful-chaotic axis or the good-evil axis, but not both).
@@ -249,70 +251,16 @@ This choice determines a great deal about your character's abilities.
         \cf{Clr}{Weapon and Armor Proficiency}
         You are proficient with simple weapons, any two other weapon groups, light and medium armor, and shields.
 
-        \cf{Clr}{Domain Gifts}[Mag]
-        Your abilities are shaped by your domains.
-        He gains the domain gifts of both of your domains.
-        Domain gifts are not activated.
-        The gifts offered by each domain are listed at \pcref{Domain Gifts}.
-
-        \cf{Clr}{Spell Point}
-        The cleric gains a spell point.
-        A spell point can be spent to cast spells in place of an action point.
-        He recovers all spent spell points after a \glossterm{short rest}.
-
     \subsection{Class Abilities}
         If you are a cleric, you have the following abilities.
 
-        \cf{Clr}{Domains}
-        A cleric chooses two domains which represent your personal spiritual inclinations.
-        He must choose your domains from among those your deity offers.
-        A cleric's choice of domains has broad effects on the cleric's spellcasting and abilities.
-        The domains are listed below.
-
-        \begin{itemize}
-            \item{Air}
-            \item{Chaos}
-            \item{Death}
-            \item{Destruction}
-            \item{Earth}
-            \item{Evil}
-            \item{Fire}
-            \item{Good}
-            \item{Knowledge}
-            \item{Law}
-            \item{Life}
-            \item{Magic}
-            \item{Protection}
-            \item{Strength}
-            \item{Travel}
-            \item{Trickery}
-            \item{War}
-            \item{Water}
-            \item{Wild}
-        \end{itemize}
-
         \cf{Clr}{Divine Power}
-        The strength of a cleric's spells and abilities are determined by your divine power.
-        Your divine power is equal to your character level or your Willpower, whichever is higher.
+        The \glossterm{power} of your cleric spells and abilities is determined by your \textit{divine power}.
+        Your \textit{divine power} is equal to your level or your Willpower, whichever is higher.
 
-        \cf{Clr}{Spells}
-        A cleric casts divine spells using your devotion.
-        The maximum spell level a cleric can cast is equal to half your cleric level.
-        A cleric's \glossterm{spellpower} with divine spells is equal to your divine power.
-
-        A 1st-level cleric knows two spells.
-        Every even level, he learns an additional spell.
-        In addition, each time he gains a level, he may trade one of your existing spells for a different spell known.
-        He may learn spells from the divine \glossterm{spell list} (see \pcref{Divine Spells}).
-        In addition, he adds the spells from your domains to your divine spell list (see \pcref{Cleric Domains}).
-        Sometimes these domain spells are spells that are normally available to divine spellcasters, but often they are only accessible with the domain.
-
-        To cast a spell, a cleric must normally spend an \glossterm{action point}.
-        Every spell can also be cast as a cantrip.
-        Cantrips are weaker, but do not require action points to cast.
-
-        A cleric can't cast spells of an alignment opposed to your own or your deity's.
-        Spells associated with particular alignments are indicated by the chaos, evil, good, and law descriptors in their spell descriptions.
+        \cf{Clr}{Deity}
+        You must worship a specific deity to be a cleric.
+        Deities and their associated \glossterm{domains} are listed in \trefnp{Deities}.
 
         \begin{dtable!*}
             \lcaption{Deities}
@@ -346,429 +294,476 @@ This choice determines a great deal about your character's abilities.
             \end{dtabularx}
         \end{dtable!*}
 
-        \cf{Clr}{Rituals}
-        Clerics can perform divine rituals to create unique magical effects (see \pcref{Rituals}).
-        A cleric begins play with a ritual book containing two divine rituals of your choice (see \pcref{Divine Rituals}).
+        \subsubsection{Spellcasting}
 
-        \cf{Clr}[2nd]{Domain Invocation}[Mag]
-        As a standard action, a cleric can spend an action point to invoke divine power.
-        He gains the domain invocations offered by one of your domains.
+            \cf{Clr}{Divine Spells} 
+            You can cast divine spells using your devotion to your deity.
+            You learn two divine spells from the divine \glossterm{spell list} (see \pcref{Divine Spells}).
+            Your \glossterm{spellpower} with divine spells is equal to your \glossterm{divine power}.
 
-        All domain invocations affect a single creature within \rngmed range and require a special attack against a defense.
-        The cleric's accuracy with domain invocations is equal to your divine power.
-        If the attack succeeds, a domain invocation heals or inflicts 1d6 damage per divine power.
-        If the attack fails, the invocation heals or inflicts half damage.
+            To cast a spell, you must normally spend an \glossterm{action point}.
+            Every spell can also be cast as a cantrip.
+            Cantrips are weaker, but do not require action points to cast.
 
-        At 3rd level, the cleric gains another domain invocation from one of your domains.
+            You can't cast spells of an alignment opposed to your own or your deity's.
+            Spells associated with particular alignments are indicated by the \glossterm{Chaos}, \glossterm{Good}, \glossterm{Evil}, and \glossterm{Law} tags in their spell descriptions.
 
-        \cf{Clr}[5th]{Domain Aspect}[Mag]
-        The cleric gains a domain aspect from one of your domains.
-        Domain aspects do not require an action to activate.
-        Options for domain aspects are listed at \pcref{Domain Aspects}.
+            \cf{Clr}{Rituals} 
+            You can perform divine rituals to create unique magical effects (see \pcref{Rituals}).
+            You have a ritual book containing two divine rituals of your choice (see \pcref{Divine Rituals}).
 
-        At your 7th cleric level, the cleric gains an additional domain aspect from one of your domains.
+            \cf{Clr}[6]{Standard Augment}
+            You learn how to use one of the \glossterm{standard augments} (see \pcref{Standard Augments}).
 
-        \cf{Clr}[9th]{Intercession}[Mag]
-        Once per day, the cleric can request a divine intercession as a standard action.
-        He mentally specifies your request, and your deity fulfills that request in the manner it sees fit.
-        This can emulate the effects of a spell from one of the cleric's domains.
-        The spell's level, including augments, must be no greater than half of your level.
-        Divine intercessions tend to reflect the personality of the cleric's deity, not the cleric's personal preferences.
+            \cf{Clr}[10]{Standard Augment}
+            You learn how to use one of the \glossterm{standard augments} (see \pcref{Standard Augments}).
 
-        If the cleric performs a significant service for your deity, he can gain the ability to request an additional intercession that day.
+            \cf{Clr}[14]{Standard Augment}
+            You learn how to use one of the \glossterm{standard augments} (see \pcref{Standard Augments}).
 
-        \cf{Clr}[11th]{Greater Domain Invocations}[Mag]
-        The cleric gains the ability to invoke the power of one of your domains even more effectively.
-        Greater domain invocations are described at \pcref{Greater Domain Invocations}.
+            \cf{Clr}[18]{Spell Point} 
+            You gain a spell point.
+            A spell point can be spent to cast spells in place of an action point.
+            You recover all spent spell points after a \glossterm{short rest}.
 
-        At your 13th cleric level, the cleric gains an additional greater domain invocation from one of your domains.
+        \subsubsection{Domain Influence}
+            All \textit{domain influence} abilities are \glossterm{Magical}.
 
-        \cf{Clr}[15th]{Domain Mastery}[Mag]
-        The cleric gains a domain mastery from one of your domains.
-        Options for domain masteries are listed at \pcref{Domain Masteries}.
+            \cf{Clr}{Domains}
+            You choose two domains which represent your personal spiritual inclinations.
+            You must choose your domains from among those your deity offers.
+            The domains are listed below.
 
-        At your 17th cleric level, the cleric gains an additional domain mastery from one of your domains.
+            \begin{itemize}
+                \item{Air}
+                \item{Chaos}
+                \item{Death}
+                \item{Destruction}
+                \item{Earth}
+                \item{Evil}
+                \item{Fire}
+                \item{Good}
+                \item{Knowledge}
+                \item{Law}
+                \item{Life}
+                \item{Magic}
+                \item{Protection}
+                \item{Strength}
+                \item{Travel}
+                \item{Trickery}
+                \item{War}
+                \item{Water}
+                \item{Wild}
+            \end{itemize}
 
-        \cf{Clr}[19th]{Endless Devotion}[Mag]
-        Whenever the cleric casts a spell from one of your domains, if he did not spend any devotion points that round, he regains a spent devotion point.
+            \cf{Clr}{Domain Gift}
+            Each domain has a corresponding \textit{domain gift}.
+            You gain the \textit{domain gift} for one of your domains (see \pcref{Domain Gifts}).
 
-        \cf{Clr}[20th]{Miracle}[Mag]
-        Once per week, the cleric can request a miracle as a standard action.
-        He mentally specifies your request, and your deity fulfills that request in the manner it sees fit.
-        This can emulate the effects of any spell or ritual, or have any other effect of a similar power level.
-        If the deity has a direct interest in the cleric's situation, the miracle may be of even greater power.
+            \cf{Clr}[3]{Domain Gift}
+            You gain the \textit{domain gift} for another one of your domains.
 
-        If the cleric performs an extraordinary service for your deity, he can gain the ability to request an additional miracle that week.
+            \cf{Clr}[5]{Domain Spell}
+            You learn one of the two spells offered by your domains (see \pcref{Domain Spells}).
+
+            \cf{Clr}[7]{Domain Aspect}
+            Each domain has a corresponding \textit{domain aspect}.
+            You gain the \textit{domain aspect} for one of your domains (see \pcref{Domain Gifts}).
+
+            \cf{Clr}[9]{Domain Aspect} 
+            You gain the \textit{domain aspect} for another one of your domains.
+
+            \cf{Clr}[11]{Domain Essence}
+            Each domain has a corresponding \textit{domain essence}.
+            You gain the \textit{domain essence} for one of your domains (see \pcref{Domain Gifts}).
+
+            \cf{Clr}[13]{Domain Essence} 
+            You gain the \textit{domain essence} for another one of your domains.
+
+            \cf{Clr}[15]{Domain Mastery}
+            Each domain has a corresponding \textit{domain mastery}.
+            You gain the \textit{domain mastery} for one of your domains (see \pcref{Domain Gifts}).
+
+            \cf{Clr}[17]{Domain Mastery} 
+            You gain the \textit{domain mastery} for another one of your domains.
+
+            \cf{Clr}[20th]{Miracle}
+            Once per week, you can request a miracle as a standard action.
+            You mentally specify your request, and your deity fulfills that request in the manner it sees fit.
+            This can emulate the effects of any spell or ritual, or have any other effect of a similar power level.
+            If the deity has a direct interest in your situation, the miracle may be of even greater power.
+
+            If you perform an extraordinary service for your deity, you can gain the ability to request an additional miracle that week.
+
+        \subsubsection{Divine Spell Mastery}
+            You must have the ability to cast divine spells to gain these abilities.
+
+            \cf{Clr}[2]{Spell Point}
+            You gain a spell point.
+            A spell point can be spent to cast spells in place of an action point.
+            You recover all spent spell points after a \glossterm{short rest}.
+
+            \cf{Clr}[4]{Custom Augments}
+            Choose a \glossterm{custom augment} for a spell you know.
+            You can apply that augment to that spell (see \pcref{Augments}).
+            At 6th level, and every two levels thereafter, you learn an additional custom augment for a spell you know.
+
+            \cf{Clr}[8]{Expanded Spell Knowledge}
+            You learn an additional spell from the divine \glossterm{spell list}.
 
     \subsection{Cleric Domain Abilities}
         All cleric domain abilities are \glossterm{magical} unless otherwise specified.
 
-        \subsubsection{Domain Gifts}\label{Domain Gifts}
-            % If a domain gift involves an attack, the accuracy is equal to the cleric's divine power.
+        \subsubsection{Air}
+            \parhead{Gift} You add the Jump skill to your class skill list and gain a \plus5 bonus to Jump checks (see \pcref{Jump}).
+            \parhead{Aspect} You gain a \glossterm{glide speed} equal to your land speed (see \pcref{Gliding}).
+            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellrng{\rnglong}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \spelleffect You can speak with and command air within range.
+                    You can ask the air simple questions and understand its responses.
+                    If you command the air to perform a task, it will do so do the best of its ability until this effect ends.
+                    You cannot compel the air to move faster than 50 mph.
+                    \spelldur Sustain (swift)
+                    \spellspecial After you use this ability on a particular area of air, you cannot use it again on that same area for 24 hours.
+                \end{spelleffects}
+            \end{ability}
+            \parhead{Mastery} You gain a \glossterm{fly speed} with \glossterm{good maneuverability} equal to your land speed (see \pcref{Flying}).
 
-            \subcf{Air}
-            The cleric adds the Jump skill (see \pcref{Jump}) to your cleric class skill list, and gains a \plus5 bonus to Jump checks.
-            \subcf{Chaos}
-            The cleric rolls twice for all \glossterm{random effects} and chooses your preferred result.
-            \subcf{Death}
-            The cleric halves your penalties from \glossterm{vital damage}.
-            In addition, he is immune to \glossterm{Death} effects.
-            \subcf{Destruction}
-            When making physical attacks, the cleric ignores an amount of \glossterm{hardness} and \glossterm{damage reduction} equal to half your divine power.
-            \subcf{Earth}
-            The cleric gains the \glossterm{tremorsense} ability with a range of 50 feet.
-            If he is touching a surface, he can automatically pinpoint the location of anything within 50 feet that is in contact with the surface, including inanimate objects.
-            \subcf{Evil}
-            The cleric gains \glossterm{damage reduction} against physical damage from non-evil sources equal to half your divine power.
-            \subcf{Fire}
-            The cleric gains \glossterm{damage reduction} against fire and cold damage equal to your divine power.
-            \subcf{Good}
-            The cleric gains \glossterm{damage reduction} against physical damage from non-good sources equal to half your divine power.
-            \subcf{Knowledge}
-            The cleric adds all Knowledge skills to your cleric class skill list.
-            In addition, he gains two skill points which must be spent on Knowledge skills.
-            \subcf{Law}
-            The cleric gains a \plus2 bonus to Mental defense.
-            \subcf{Life}
-            The cleric gains a \plus2 bonus to Fortitude defense.
-            \subcf{Magic}
-            The cleric gains \glossterm{damage reduction} against \glossterm{magical} damage equal to half your divine power.
-            \subcf{Protection}
-            As an \glossterm{immediate action}, when an ally adjacent to the cleric takes damage, the cleric can take half that damage instead of the ally.
-            \subcf{Strength}
-            The cleric adds Climb, Jump, Sprint, and Swim to your cleric class skill list.
-            In addition, he gains two skill points which must be spent on Strength-based skills.
-            \subcf{Travel}
-            The cleric adds Knowledge (geography), Sprint, and Survival to your cleric class skill list.
-            In addition, he gains two skill points which must be spent on any combination of those skills.
-            \subcf{Trickery}
-            The cleric adds Bluff, Disguise, and Stealth to your cleric class skill list.
-            In addition, he gains two skill points which must be spent on any combination of those skills.
-            \subcf{War}
-            The cleric gains a \plus1 bonus to damage with physical attacks.
-            \subcf{Water}
-            The cleric adds Swim to your cleric class skill list, gains a \plus5 bonus to Swim checks, and suffers no penalties for fighting underwater.
-            \subcf{Wild}
-            The cleric adds Creature Handling, Knowledge (nature), and Survival to your cleric class skill list.
-            In addition, he gains two skill points which must be spent on any combination of those skills.
+        \subsubsection{Chaos}
+            \parhead{Gift} Whenever you roll a 10 on a check on your first attempt, you gain a \plus5 bonus to the check.
+            \parhead{Aspect} Your attack rolls explode on a 9 or a 10 (see \pcref{Exploding Attacks}).
+            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellrng{\rnglong}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \spelleffect An improbable event occurs.
+                    You can specify in general terms what you want to happen, such as ``Make the bartender leave the bar''.
+                    You cannot control the exact nature of the event, though it always beneficial for you in some way.
+                    \spellspecial After using this ability, you cannot use it again for an hour.
+                \end{spelleffects}
+            \end{ability}
+            \parhead{Mastery} Your attack rolls explode on a 1 (see \pcref{Exploding Attacks}).
 
-        \subsubsection{Domain Invocations}\label{Domain Invocations}
-            All domain invocations affect a single creature within \rngmed range and require a special attack against a defense.
-            If the attack succeeds, a domain invocation heals or inflicts 1d6 damage per divine power.
-            If the attack fails, the invocation heals or inflicts half damage.
+        \subsection{Death}
+            \parhead{Gift} Whenever you deal damage to a creature with no hit points remaining, it immediately dies.
+            This is a \glossterm{Death} effect.
+            % Needs wording to clarify interaction with simultaneous damage
+            \parhead{Aspect} Whenever you deal damage to a creature, any of your damage in excess of that creature's hit points is dealt as \glossterm{vital damage}.
+            In addition, you are immune to \glossterm{Death} effects.
+            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellquicktargeting{One living creature}{\rngmed}
+                    \spellspecial When you use this ability, you choose whether to summon the essence of Death or banish it.
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \spelleffect If you summoned the essence of Death, the target draws closer to the brink.
+                    If it takes \glossterm{vital damage}, it immediately dies.
 
-            \subcf{Air -- Reflex}
-            The target takes electricity damage.
-            \subcf{Chaos -- Mental}
-            This invocation randomly heals or inflicts divine damage.
-            The cleric chooses the target after rolling to determine the effect.
-            \subcf{Death -- Fortitude}
-            The target takes divine damage.
-            If this attack deals vital damage, the target is instantly killed.
-            This is a death effect.
-            \subcf{Destruction -- Fortitude}
-            The target takes sonic damage.
-            \subcf{Earth -- Reflex}
-            The target takes bludgeoning damage if it is on the ground.
-            \subcf{Evil -- Mental}
-            This invocation does not heal or inflict damage.
-            If the attack succeeds, and the target is non-evil, it is \staggered for 2 rounds.
-            \subcf{Fire -- Reflex}
-            The target takes fire damage.
-            \subcf{Good -- Mental}
-            This invocation does not heal or inflict damage.
-            If the attack succeeds, and the target is non-good, it is \dazed for 2 rounds.
-            \subcf{Knowledge -- Special}
-            The target must make a Knowledge check.
-            If its check result beats your attack result, you can choose to heal it.
-            If it fails, you can choose to deal divine damage to it.
-            This invocation heals or inflicts 1d10 damage per two divine power instead of the normal value.
-            \subcf{Law -- Mental}
-            This invocation does not heal or inflict damage.
-            If the attack succeeds, and the target is non-lawful, it is \immobilized for 2 rounds.
-            \subcf{Life -- Fortitude}
-            The target is healed.
-            This invocation heals 1d8 damage per divine power instead of the normal value.
-            \subcf{Magic -- Mental}
-            If the target can cast spells, it is healed.
-            Otherwise, it takes divine damage.
-            This invocation heals or inflicts 1d10 damage per two divine power instead of the normal value.
-            \subcf{Protection -- None}
-            This invocation does not heal or inflict damage, and no attack is required.
-            The target gains 1d10 \glossterm{temporary hit points} per two divine power.
-            \subcf{Strength -- Special}
-            The target must make a Strength check.
-            If its check result beats your attack result, you can choose to heal it.
-            If it fails, you can choose to deal divine damage to it.
-            This invocation heals or inflicts 1d10 damage per two divine power instead of the normal value.
-            \subcf{Travel -- None}
-            This invocation does not heal or inflict damage, and no attack is required.
-            The target gains a \plus30 foot bonus to its speed in all its movement modes, up to a maximum of double its original speed.
-            This effect lasts for 5 rounds.
-            \subcf{Trickery -- Mental}
-            The target takes divine damage.
-            This is a \glossterm{Subtle} effect, making it hard to notice.
-            This invocation heals or inflicts 1d10 damage per two divine power instead of the normal value.
-            \subcf{War -- Fortitude}
-            This invocation affects all enemies within a \areasmall radius of you instead of the normal target.
-            The targets take divine damage.
-            This invocation deals 1d8 damage per two divine power instead of the normal value.
-            \subcf{Water -- Fortitude}
-            The target takes physical \glossterm{nonlethal damage} from water in its mouth and lungs.
-            In addition, if the attack succeeds, the target is unable to speak for 1 round.
-            \subcf{Wild -- Fortitude}
-            The target takes divine damage.
-            If the target is an animal or plant, the cleric may choose to heal it instead.
+                    If you banished the essence of Death, the target draws closer to life.
+                    It is immune to \glossterm{Death} effects and gains a bonus to \glossterm{stabilization rolls} equal to your \textit{divine power}.
+                    \spelldur Attunement
+                    \spelltags{\glossterm{Death}}
+                \end{spelleffects}
+            \end{ability}
+            \parhead{Mastery} You constantly radiate an emanation of death, described below.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellarea{\areahuge radius emanation from you}
+                    \spelltgts{All living enemies in the area}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \spelleffect If the target takes \glossterm{vital damage}, it immediately dies.
+                \end{spelleffects}
+            \end{ability}
 
-        \subsubsection{Domain Aspects}\label{Domain Aspects}
+        \subsubsection{Destruction}
+            \parhead{Gift} You gain a \plus1d bonus to damage with \glossterm{strikes}.
+            \parhead{Aspect} Your attacks ignore an amount of \glossterm{hardness} and \glossterm{damage reduction} equal to your \textit{divine power}.
+            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellarea{\arealarge radius burst}
+                    \spelltgts{All unattended objects in the area}
+                    \spellspecial You may freely exclude any number of 5-ft\. cubes from the area, as long as the resulting area is still contiguous.
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \begin{spellattack}{Divine power vs. Fortitude}
+                        \spellspecial Nonmagical objects do not have a Fortitude defense, so this attack automatically succeeds against such objects.
+                        \spellsuccess The target crumbles into a fine powder and is irreparably \glossterm{broken}.
+                    \end{spellattack}
+                \end{spelleffects}
+            \end{ability}
+            \parhead{Mastery} Whenever you deal damage to a creature or object, its damage reduction and hardness (if any) are reduced by an amount equal to your \textit{divine power}.
+            In addition, Fortitude defense is reduced by 2.
+            This is a \glossterm{condition}, and lasts until it is removed.
+            This effect stacks with itself, but can only be applied to a target once per round.
+            % how do you remove a condition from an object???
 
-            \subcf{Air -- Limited Flight}
-            The cleric gains a glide speed equal to your land speed.
-            See \pcref{Gliding}, for more details.
-            In addition, as a swift action, he can spend a devotion point to treat air as if it was solid ground until the end of the round.
-            He can only do this once before touching solid ground again.
-            \subcf{Chaos -- Chaotic Retribution}
-            Whenever a non-chaotic creature within 30 feet of you attacks you, it takes 1d6 damage per two divine power.
-            A creature can only be dealt damage by this effect once per round.
-            \subcf{Death -- Deathcaller}
-            Whenever the cleric damages a creature, any of your damage in excess of that creature's hit points is dealt as \glossterm{vital damage}.
-            \subcf{Destruction -- Ruinbringer}
-            The cleric's attacks ignore an amount of \glossterm{damage reduction} and \glossterm{hardness} equal to your divine power.
-            \subcf{Earth -- Hardened Skin}
-            The cleric gains \glossterm{damage reduction} against physical damage equal to your divine power.
-            Adamantine weapons ignore this damage reduction and negate it for 1 round.
-            \subcf{Evil -- Unholy Retribution}
-            Whenever a non-evil creature within 30 feet of you attacks you, it takes 1d6 damage per two divine power.
-            A creature can only be dealt damage by this effect once per round.
-            \subcf{Fire -- Friendly Fire}
-            All of the cleric's fire spells and abilities do not deal fire damage to your allies.
-            In addition, whenever the cleric would take fire damage, he may heal that many hit points instead.
-            He may use this ability before applying damage reduction, damage immunity, and similar effects.
-            \subcf{Good -- Holy Retribution}
-            Whenever a non-good creature within 30 feet of you attacks you, it takes 1d6 damage per two divine power.
-            A creature can only be dealt damage by this effect once per round.
-            \subcf{Knowledge -- Knowledge Mastery}
-            The cleric gains the Knowledge Mastery feat (see page \featpref{Knowledge Mastery}).
-            \subcf{Law -- Certain Retribution}
-            Whenever a non-lawful creature within 30 feet of you attacks you, it takes 1d6 damage per two divine power.
-            A creature can only be dealt damage by this effect once per round.
-            \subcf{Life -- Critical Healer}
-            All of the cleric's healing spells and abilities cure vital damage as easily as they cure hit points.
-            \subcf{Magic -- Improved Spellpower}
-            The cleric gains a \plus1 bonus to spellpower with divine spells.
-            \subcf{Protection -- Faithful Shield}
-            The cleric may maintain concentration on \glossterm{Shielding} spells as a swift action.
-            \subcf{Strength -- Mighty Devotion}
-            The cleric may use your Strength in place of your divine power for the purpose of invocations he uses.
-            In addition, he may use your Strength in place of your Willpower to determine the number of devotion points he has.
-            \subcf{Travel -- Rapid Traveller}
-            The cleric gains a \plus30 foot bonus to your speed in all movement modes, up to a maximum of double your normal speed.
-            \subcf{Trickery -- Trick Master}
-            The cleric gains your choice of Bluff Mastery, Disguise Mastery, or Stealth Mastery as a bonus feat, even if he does not meet the prerequisites.
-            \subcf{War -- Warpriest}
-            The cleric gains a \plus2 bonus to damage with physical attacks.
-            \subcf{Water -- Water Breathing} The cleric can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
-            He also gains a \glossterm{swim speed} equal to your land speed.
-            \subcf{Wild -- Wild Aspect}
-            When the cleric gains this ability, he chooses one wild aspect ability, as if he were a were a druid of a level equal to your cleric level (see Wild Aspect, \pref{Drd:Wild Aspect}).
-            He can spend a devotion point as a standard action to embody that wild aspect for 1 hour.
+        \subsubsection{Earth}
+            \parhead{Gift} You gain a \plus2 bonus to Fortitude defense.
+            \parhead{Aspect} You gain \glossterm{damage reduction} against physical damage equal to your \textit{divine power}.
+            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellrng{\rnglong}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \spelleffect You can speak with and command earth within range.
+                    You can ask the earth simple questions and understand its responses.
+                    If you command the earth to perform a task, it will do so do the best of its ability until this effect ends.
+                    You cannot compel the earth to move faster than 10 feet per round.
+                    \spelldur Sustain (swift)
+                    \spellspecial After you use this ability on a particular area of earth, you cannot use it again on that same area for 24 hours.
+                \end{spelleffects}
+            \end{ability}
+            \parhead{Mastery} You gain the \glossterm{earth glide} ability, as an earth elemental.
 
-        \subsubsection{Greater Domain Invocations}\label{Greater Domain Invocations}
+        \subsubsection{Evil}
+            \parhead{Gift} Whenever you take damage, you may choose an adjacent willing creature.
+            If you do, that creature takes half of that damage (rounded down) instead of you.
+            Any abilities it has that would make the attack miss or fail have no effect, but its abilities that allow it to reduce or ignore the attack's effects work normally.
+            You take the remaining half of the damage, and suffer any non-damaging effects of the attack normally.
+            \par You may learn which attacks hit you in the current phase before deciding which attacks to redirect damage from, but not how much damage they would do (or any other effects they might have).
+            \parhead{Aspect} You can use this domain's domain gift to redirect damage to any willing creature within \rngclose range.
+            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellquicktargeting{One creature}{\rngmed}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \begin{spellattack}{Divine power vs. Mental}
+                        \spellspecial Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this attack.
+                        \spellsuccess The target takes an evil action as soon as it can.
+                        You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
+                    \end{spellattack}
+                    \spelltags{\glossterm{Compulsion}, \glossterm{Mind}}
+                \end{spelleffects}
+            \end{ability}
+            \parhead{Mastery} Whenever you take damage, you may use this ability as an \glossterm{immediate action}.
+            If you do, you can use this domain's domain gift to redirect damage to an unwilling creature within \rngmed range.
 
-            \subcf{Air -- Command Air}
-            As a standard action, the cleric can spend a devotion point to speak with and command air for 5 minutes.
-            He can ask the air simple questions and understand its responses.
-            If he commands the air to perform a task, it will do so do the best of its ability until the end of the effect's duration.
-            The cleric cannot compel the air to go faster than 50 mph, and cannot affect air farther than 500 feet from you.
+        \subsubsection{Fire}
+            \parhead{Gift} All of your \glossterm{Fire} spells and abilities do not deal damage to your allies.
+            \parhead{Aspect} Whenever you would take fire damage, you heal that many hit points instead.
+            This applies damage reduction, damage immunity, and similar effects.
+            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellrng{\rnglong}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \spelleffect You can speak with and command fire within range.
+                    You can ask the fire simple questions and understand its responses.
+                    If you command the fire to perform a task, it will do so do the best of its ability until this effect ends.
+                    You cannot compel the fire to move farther than 30 feet in a single round.
+                    Fire that ends the round on non-combustable materials usually goes out, depending on the circumstances.
+                    \spelldur Sustain (swift)
+                    \spellspecial After you use this ability on a particular area of fire, you cannot use it again on that same area for 24 hours.
+                    % What does an ``area of fire'' mean?
+                \end{spelleffects}
+            \end{ability}
+            \parhead{Mastery} Whenever you deal fire damage to a creature, that creature becomes \ignited.
+            This is a \glossterm{condition}, and lasts until removed.
 
-            \subcf{Chaos -- Sow Chaos}
-            As a standard action, the cleric can spend a devotion point to cause an improbable event to occur.
-            He can visualize in general terms what he wants to happen, such as ``Make the bartender leave the bar''.
-            He cannot control exact nature of the event, though it always beneficial for you in some way.
+        \subsubsection{Good}
+            \parhead{Gift} Whenever an adjacent creature takes damage, you may use this ability.
+            If you do, you take half of that damage (rounded down) instead of the creature.
+            Any abilities you have that would make the attack miss or fail have no effect, but your abilities that allow you to reduce or ignore its effects work normally.
+            The creature takes the remaining half of the damage, and suffers any non-damaging effects of the attack normally.
+            \par You may learn which attacks hit you and your allies in the current phase before deciding which attacks to redirect damage from, but not how much damage they would do (or any other effects they might have).
+            \parhead{Aspect} You can use this domain's domain gift to redirect damage from any creature within \rngclose range.
+            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellquicktargeting{One creature}{\rngmed}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \begin{spellattack}{Divine power vs. Mental}
+                        \spellspecial Creatures who have strict codes prohibiting them from taking good actions, such as paladins devoted to Evil, are immune to this attack.
+                        \spellsuccess The target takes an good action as soon as it can.
+                        You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
+                    \end{spellattack}
+                    \spelltags{\glossterm{Compulsion}, \glossterm{Mind}}
+                \end{spelleffects}
+            \end{ability}
+            \parhead{Mastery} Whenever you redirect damage with this domain's domain gift, you can redirect all effects of the attack instead of only half the damage.
 
-            \subcf{Death -- Reaper's Boon}
-            As a standard action, the cleric can spend a devotion point to summon or banish Death.
-            In either case, it affects a living creature within 100 feet of you for 5 rounds.
-            If he summons Death, the target immediately dies if it takes vital damage.
-            If he banishes Death, the target is immune to Death effects and does not make \glossterm{stabilization rolls} if it takes vital damage.
-            This does not prevent the target from taking vital damage, and it begins dying after the effect ends if it has took vital damage and has not been stabilized.
+        \subsubsection{Knowledge}
+            \parhead{Gift} You add all Knowledge skills to your cleric class skill list.
+            In addition, you gain two skill points which must be spent on Knowledge skills.
+            \parhead{Aspect} Your extensive knowledge of all methods of attack and defense grants you a \plus1 bonus to all defenses.
+            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellarea{\arealarge radius burst}
+                    \spelltgts{All willing creatures in the area}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \spelleffect You make a Knowledge check of any kind.
+                    You gain a bonus to the Knowledge check equal to your \textit{divine power}.
+                    The target also learns the results of your check.
+                    It believes the information gained in this way to be true as if it had seen it with its own eyes.
+                    \par You cannot alter the knowledge you gain with this check in any way, such as by adding or withholding information.
+                \end{spelleffects}
+            \end{ability}
+            \parhead{Mastery} You gain a \plus1 bonus to accuracy with all attacks.
 
-            \subcf{Destruction -- Dust to Dust}
-            As a standard action, the cleric can spend a devotion point to destroy objects within a \arealarge radius burst centered on you.
-            He makes a Divine power vs. Mental attack against all objects in the area.
-            Success against an object means it crumbles into dust, and is irreparably broken.
-            Unattended nonmagical objects do not have a Mental defense, and are automatically broken.
-            The cleric may freely exclude any objects or squares from the effect.
+        \subsubsection{Law}
+            \parhead{Gift} You gain a \plus2 bonus to Mental defense.
+            % Clarify - does this apply to exploding dice?
+            \parhead{Aspect} Whenever you roll a 1 on an \glossterm{attack roll}, it is treated as if you had rolled a 5.
+            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellarea{\arealarge radius burst}
+                    \spelltgts{All creatures in the area}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \begin{spellattack}{Divine power vs. Mental}
+                        \spellspecial This attack automatically succeeds against you.
+                        \spellsuccess The target is unable to break the laws that apply in the area, and any attempt to do so simply fails.
+                        The laws which are applied are those which are most appropriate for the area, regardless of whether the cleric or any other creature know those laws.
+                        In areas under ambiguous or nonexistent government, this ability may have unexpected effects, or it may have no effect at all.
+                    \end{spellattack}
+                    \spelldur Condition
+                    \spelltags{\glossterm{Compulsion}, \glossterm{Mind}}
+                \end{spelleffects}
+            \end{ability}
+            \parhead{Mastery} Whenever you roll less than a 5 on an \glossterm{attack roll}, it is treated as if you had rolled a 5.
 
-            \subcf{Earth -- Command Earth}
-            As a standard action, the cleric can spend a devotion point to speak with and command earth for 5 minutes.
-            He can ask the earth simple questions and understand its responses.
-            If he commands the earth to perform a task, it will do so do the best of its ability until the end of the effect's duration.
-            The cleric cannot compel the earth to move faster than 10 feet per round, and cannot effect earth farther than 500 feet from you.
+        \subsubsection{Life}
+            \parhead{Gift} You gain additional hit points equal to your \glossterm{divine power}.
+            \parhead{Aspect} All of your healing spells and abilities can cure \glossterm{vital damage} as easily as they cure hit points.
+            \parhead{Essence} As a standard action, you can spend all of your remaining \glossterm{action points} (minimum 1) to use this ability.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellquicktargeting{One dead creature}{Adjacent}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \spelleffect If the target was dead for no more than 5 minutes, it is restored to life, as the \spell{resurrection} ritual.
+                \end{spelleffects}
+            \end{ability}
+            % Need special text to clarify that it is affected by the Aspect?
+            \parhead{Mastery} At the end of each round, you heal hit points equal to your \glossterm{divine power}.
 
-            \subcf{Evil -- Temptation}
-            As a standard action, the cleric can spend a devotion point to compel a creature to commit an evil act.
-            He makes a Divine power vs. Mental attack against the creature.
-            Success means the target takes an evil action as soon as it can.
-            The cleric has no control over the act the creature takes, but circumstances can make the target more likely to take an action the cleric desires.
-            Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this effect.
-            This is a [\glossterm{Compulsion}, \glossterm{Mind}] effect.
+        \subsubsection{Magic}
+            \parhead{Gift} You gain a \plus1 bonus to spellpower with divine spells.
+            \parhead{Aspect} The maximum spell level you can cast is increased by 1.
+            \parhead{Essence} You gain \glossterm{magic resistance} equal to 5 \add your \textit{divine power}.
+            If you already have \glossterm{magic resistance}, you can instead increase it by 2.
+            \parhead{Mastery} You gain a \plus2 bonus to your \glossterm{magic resistance}.
+            If you resist an ability with your magic resistance, you heal hit points equal to your \textit{divine power}.
 
-            \subcf{Fire -- Command Flames}
-            As a standard action, the cleric can spend a devotion point to speak with and command fire for 5 minutes.
-            He can ask the fire simple questions and understand its responses.
-            If he commands the fire to perform a task, it will do so do the best of its ability until the end of the effect's duration.
-            The fire can move up to 30 feet in a single round between combustible materials.
-            The cleric cannot effect fire farther than 500 feet from you.
+        \subsubsection{Strength}
+            \parhead{Gift} You add Climb, Jump, Sprint, and Swim to your cleric class skill list.
+            In addition, you gain two skill points which must be spent on any combination of those skills.
+            \parhead{Aspect} You may use your Strength to determine your \textit{divine power} in place of your Willpower.
+            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
+            \begin{ability}
+                \begin{spelleffects}
+                    \spelleffect You gain a \plus2d bonus to damage with \glossterm{strikes}.
+                    In addition, you gain a \plus5 bonus to Strength for the purpose of checks and determining your carrying capacity.
+                    \spelldur{Sustain (swift)}
+                \end{spelleffects}
+            \end{ability}
+            \parhead{Mastery} You gain a \plus2 bonus to Strength.
 
-            \subcf{Good -- Salvation}
-            As a standard action, the cleric can spend a devotion point to compel a creature to do a good deed.
-            He makes a Divine power vs. Mental attack against the creature.
-            Success means the target takes a good action as soon as it can.
-            The cleric has no control over the act the creature takes, but circumstances can make the target more likely to take an action the cleric desires.
-            Creatures who have strict codes prohibiting them from taking good actions, such as paladins devoted to Evil, are immune to this effect.
-            This is a [\glossterm{Compulsion}, \glossterm{Mind}] effect.
+        \subsubsection{Travel}
+            \parhead{Gift} You add Knowledge (geography), Sprint, and Survival to your cleric class skill list.
+            In addition, you gain two skill points which must be spent on any combination of those skills.
+            \parhead{Aspect} You gain a \plus30 foot bonus to your speed in all movement modes, up to a maximum of double your normal speed.
+            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
+            \begin{ability}
+                \begin{spelleffects}
+                    \spelleffect You teleport yourself up to 1 mile in any direction.
+                    You do not need \glossterm{line of sight} or \glossterm{line of effect} to your destination, but you must be able to clearly visualize it.
+                \end{spelleffects}
+            \end{ability}
+            \parhead{Mastery} Whenever you move, you can teleport the same distance instead.
+            You can teleport in any direction.
 
-            \subcf{Knowledge -- Impart Truth}
-            As a standard action, the cleric can spend a devotion point to grant knowledge.
-            He may make a Knowledge check of any kind with a \plus20 bonus to the check.
-            He may also cause any number of creatures within a \arealarge radius around you to learn the results of your check.
-            Creatures granted knowledge in this way believe the information to be true as if they had seen it with their own eyes.
-            Exceptionally stubborn or untrusting creatures may still not be convinced of its truth, however.
+        \subsubsection{Trickery}
+            \parhead{Gift} You add Bluff, Disguise, and Stealth to your cleric class skill list.
+            In addition, you gain two skill points which must be spent on any combination of those skills.
+            \parhead{Aspect} You gain a \plus2 bonus to Bluff, Disguise, and Stealth.
+            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellquicktargeting{One creature}{\rngmed}
+                    \spellspecial Choose a belief the target has.
+                    The belief may be a lie that you told it, or even a simple misunderstanding (such as believing a hidden creature is not present in a room).
+                    If the creature does not already hold the chosen belief, this ability automatically fails.
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \begin{spellattack}{Divine power vs. Mental}
+                        \spellsuccess The target continues to maintain the chosen belief, regardless of any evidence to the contrary.
+                        It will interpret any evidence that the falsehood is incorrect to be somehow wrong -- an illusion, a conspiracy to decieve it, or any other reason it can think of to continue believing the falsehood.
+                        At the end of the effect, the creature can decide whether it believes the falsehood or not, as normal.
+                    \end{spellattack}
+                    \spelldur Sustain (Swift)
+                    \spelltags{\glossterm{Delusion}, \glossterm{Mind}}
+                \end{spelleffects}
+            \end{ability}
+            \parhead{Mastery} You are undetectable by Divination spells and effects.
+            They cannot detect your presence, sounds you make, or any actions you take.
 
-            \subcf{Law -- Infallible Enforcement}
-            As a standard action, the cleric can spend a devotion point to enforce the law in a \arealarge radius \glossterm{zone} centered on you.
-            He makes a Divine power vs. Mental attack against all creatures in the area.
-            Success means the target is unable to break the law, and any attempt to do so simply fails.
-            Failure means the target feels a compulsion not to break the law, but is able to overcome the compulsion if it desires.
-            The laws which are applied are those which are most appropriate for the area, regardless of whether the cleric or any other creature know those laws.
-            If the rightful laws are inconsistent or impossible to understand, those laws may not be enforced.
-            This is a [\glossterm{Compulsion}, \glossterm{Mind}] effect.
-
-            \subcf{Life -- Prayer of Resurrection}
-            As a standard action, the cleric can resurrect a touched creature, as the effect of the \spell{resurrection} ritual.
-            The target must have been dead for no more than 5 minutes.
-            He must spend a number of devotion points equal to the target's level.
-            He does not know the cost before resurrecting the target.
-            If the cost exceeds your remaining devotion points, all your devotion points are spent, but the resurrection still succeeds as long as he spent at least one devotion point in this way.
-
-            \subcf{Magic -- Manipulate Spell}
-            As a standard action, the cleric can spend a devotion point to manipulate a currently active spell within \rngmed range.
-            He must make a Divine power check against a DR equal to 10 \add the spell's spellpower.
-            Success means he identifies the spell perfectly, if he had not already done so, and can take one of the following four actions on the spell.
-            \begin{itemize}
-                \item Control: If the spell can be focused on to gain an effect or extend its duration, the cleric gains the ability to focus on the spell as if he was the one who originally cast it.
-                    Its original caster loses the ability to focus on the spell.
-                \item Dispel: The spell is dispelled, if it can be dispelled by \spell{dispel magic}.
-                \item Persist: The spell's remaining duration increases by 5 minutes, up to a maximum of its starting duration (ignoring any duration increase from focusing on the spell).
-                \item Suppress: The spell is suppressed for 5 rounds, if it can be dispelled by \spell{dispel magic}.
-                    At the end of that time, the spell's effect resumes, if it still has duration remaining.
-            \end{itemize}
-
-            \subcf{Protection -- Divine Shield}
-            As a standard action, the cleric can create a powerful protective shield around a creature or object within \rngclose range for 5 rounds.
-            The target takes half damage from all attacks.
-            In addition, whenever the target takes damage, the cleric can spend a devotion point as an immediate action to negate that damage.
-
-            \subcf{Strength -- Might of the Gods}
-            As a standard action, the cleric can spend a devotion point to gain titanic strength for 5 minutes.
-            For the purpose of checks and determining carrying capacity, the cleric's Strength becomes equal to 10 \add your divine power.
-            If he takes damage, the effect ends.
-
-            \subcf{Travel -- Transcend Movement}
-            As a standard action, the cleric can spend a devotion point to teleport himself, as the effect of the \spell{teleport} ritual.
-
-            \subcf{Trickery -- Enduring Falsehood}
-            As a standard action, the cleric can delude a creature within \rngmed range into believing a lie, regardless of evidence.
-            He chooses a falsehood and makes a Divine power vs. Mental attack against the creature.
-            The falsehood may be a lie, or a simple misunderstanding (such as believing a hidden creature is not present in a room).
-            If the creature does not already believe the falsehood, the attack automatically fails.
-
-            Success means that the target continues to believe the falsehood for 5 minutes, regardless of any evidence to the contrary.
-            It will interpret any evidence that the falsehood is incorrect to be somehow wrong -- an illusion, a conspiracy to decieve it, or any other reason it can think of to continue believing the falsehood.
-            At the end of the effect, the creature can decide whether it believes the falsehood or not, as normal.
-            This is a [\glossterm{Delusion}, \glossterm{Mind}] effect.
-
-            \subcf{War -- Mass Combat}
-            As an immediate action, the cleric can spend a devotion point to augment a spell he casts with one of the following effects.
+        \subsubsection{War}
+            \parhead{Gift} You gain proficiency with heavy armor, tower shields, and an additional weapon group of your choice.
+            \parhead{Aspect} You gain a \plus1d bonus to damage with \glossterm{strikes}.
+            \parhead{Essence} Whenever you cast a spell, you can use this ability as an \glossterm{immediate action} by spending an \glossterm{action point}.
+            If you do, the spell gains one of the following effects:
             \begin{itemize}
                 \item Legion: If the spell would normally affect five or more specific targets, its range is doubled and it instead affects five times that many targets.
                 \item Selective: If the spell has an area, it has no effect on your allies in the area.
                 \item Widened: If the spell has an area, the size of the area is doubled.
             \end{itemize}
+            \parhead{Mastery} You and all allies within a \arealarge radius emanation of you gain a \plus1d bonus to damage with \glossterm{strikes}.
 
-            \subcf{Water -- Command Water}
-            As a standard action, the cleric can spend a devotion point to speak with and command water for 5 minutes.
-            He can ask the water simple questions and understand its responses.
-            If he commands the water to perform a task, it will do so do the best of its ability until the end of the effect's duration.
-            The cleric cannot compel the earth to move faster than 30 feet per round, and cannot effect water farther than 500 feet from you.
+        \subsubsection{Water}
+            \parhead{Gift} You add Swim to your cleric class skill list and gain a \plus5 bonus to Swim checks.
+            \parhead{Aspect} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
+            You also gain a \glossterm{swim speed} equal to your land speed.
+            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellrng{\rnglong}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \spelleffect You can speak with and command water within range.
+                    You can ask the water simple questions and understand its responses.
+                    If you command the water to perform a task, it will do so do the best of its ability until this effect ends.
+                    You cannot compel the water to move faster than 30 feet per round.
+                    \spelldur Sustain (swift)
+                    \spellspecial After you use this ability on a particular area of water, you cannot use it again on that same area for 24 hours.
+                \end{spelleffects}
+            \end{ability}
+            \parhead{Mastery}
+            Whenever you move, you can transform yourself into a rushing flow of water with a volume roughly equal to your normal volume until your movement is complete
+            In this form, you may move wherever water could go, you cannot take other actions, such as jumping, attacking, or casting spells.
+            You may move through squares occupied by creatures or threatened by blocking enemies without penalty.
+            \par Your speed is halved when moving uphill and doubled when moving downhill.
+            Unusually steep inclines may cause greater movement differences while in this form.
+            \par If the water is split, you may reform from anywhere the water has reached, to as little as a single ounce of water.
+            If not even an ounce of water exists contiguously, your body reforms from all of the largest available sections of water, cut into pieces of appropriate size.
+            This usually causes you to die.
 
-        \subsubsection{Domain Masteries}\label{Domain Masteries}
-
-            \subcf{Air -- Flight}
-            The cleric gains a fly speed with good maneuverability equal to your land speed.
-            While \unencumbered, he can fly.
-            See \pcref{Flying}, for more details.
-            \subcf{Chaos -- Avatar of Luck}
-            Once per round, the cleric can gain a \plus1d6 bonus to any check or physical attack.
-            He may declare the use of the ability after failing the roll, but before any additional effects are resolved, potentially making it succeed where it would have failed.
-            \subcf{Death -- Deathfeeder}
-            The cleric constantly radiates a \arealarge radius emanation of death.
-            Whenever an enemy takes damage in the area, all damage in excess of its hit points is dealt as \glossterm{vital damage}.
-            In addition, whenever a creature dies within the area, the cleric gains temporary hit points equal to twice your divine power.
-            \subcf{Destruction -- Beacon of Destruction}
-            The cleric constantly radiates a \arealarge radius emanation of destruction.
-            All enemies and objects in the area have their \glossterm{damage reduction} and \glossterm{hardness} reduced by an amount equal to twice the cleric's divine power.
-            \subcf{Earth -- Earth Glide}
-            The cleric gains the earth glide ability, as an earth elemental.
-            \subcf{Evil -- Avatar of Evil} The cleric continuously gains the benefits of the \spell{protection from good}
-            spell, with a spellpower equal to your divine power.
-            If the effect is dispelled or suppressed, he can resume it as a swift action.
-            \subcf{Fire -- Flaming Soul}
-            The cleric becomes immune to fire damage.
-            In addition, whenever he deals fire damage to a creature, that creature is \ignited for 5 rounds.
-            \subcf{Good -- Avatar of Good} The cleric continuously gains the benefits of the \spell{protection from evil}
-            spell, with a spellpower equal to your divine power.
-            If the effect is dispelled or suppressed, he can resume it as a swift action.
-            \subcf{Knowledge -- Combat Insight}
-            The cleric gains a \plus2 bonus to accuracy, checks, and defenses against non-humanoid creatures he has identified with a successful Knowledge check.
-            \subcf{Law -- Avatar of Order}
-            Once per round, if the cleric rolls less than a 10 on a d20, he may treat the result as if it were a 10, potentially causing you to succeed where he would have failed.
-            You must declare the use of this ability before any additional effects from the roll are resolved.
-            \subcf{Life -- }
-            \subcf{Magic -- Spellfeeder}
-            The cleric gains \glossterm{magic resistance} equal to 10 \add divine power.
-            Whenever the cleric resists a spell with this magic resistance, he regains hit points equal to your divine power.
-            \subcf{Protection -- Martyr's Boon}
-            The cleric constantly radiates a \areamed radius emanation of protective energy.
-            Whenever a creature within the area would lose hit points, the cleric can choose to protect it.
-            If he does, the protected creature instead loses half that many hit points (rounded down), and he loses the other half (rounded up).
-            This effect applies after damage reduction and all other similar effects, and hit point loss caused by this effect cannot be reduced in any way.
-            If he takes damage in excess of your hit points in this way, the excess damage is dealt directly as vital damage.
-            \subcf{Strength -- Might of the Gods}
-            The cleric gains the larger than life ability, as the barbarian class ability (see Larger than Life, \pref{Bbn:Larger than Life}).
-            \subcf{Travel -- Perfect Stride}
-            You are immune to effects that restrict its mobility. In addition, he gains a \plus20 bonus to Reflex defense against grapple attacks, as well as on grapple attacks or Escape Artist checks made to escape a grapple or a pin.
-            \subcf{Trickery -- Exemplar of Deceit} The cleric continuously gains the benefits of the \spell{nondetection}
-            spell, with a spellpower equal to your divine power, except that it also protects you from any spells or effects which would prevent you from lying or reveal your lies.
-            If the effect is dispelled or suppressed, he can resume it as a swift action.
-            \subcf{War -- Warmaster's Favor} The cleric continuously gains the benefits of the \spell{divine favor}
-            spell, with a spellpower equal to your divine power.
-            If the effect is dispelled or suppressed, he can resume it as a swift action.
-            \subcf{Water -- Water's Flow}
-            As a swift action, the cleric can transform himself into a rushing flow of water with a volume roughly equal to your normal volume until the end of your turn.
-            In this form, he may move wherever water could go, but he cannot take other actions, such as jumping, attacking, or casting spells.
-            Your speed is halved when moving uphill and doubled when moving downhill.
-            He may move through squares occupied by creatures or threatened by blocking enemies without penalty.
-            He may return to your normal form as a free action.
-            \par If the water is split, he may reform from anywhere the water has reached, to as little as a single ounce of water.
-            If not even an ounce of water exists contiguously, your body reforms from the largest available parts of water, cut into pieces of appropriate size.
-            This usually causes the cleric to die.
-            \subcf{Wild -- \tdash}
+        \subsubsection{Wild}
+            \parhead{Gift} You add Creature Handling, Knowledge (nature), and Survival to your cleric class skill list.
+            In addition, you gain two skill points which must be spent on any combination of those skills.
+            % Does this even make sense?
+            \parhead{Aspect} When you gain this ability, you choose one wild aspect ability, as if you were a druid of a level equal to your cleric level (see Wild Aspect, \pref{Drd:Wild Aspect}).
+            As a standard action, you can spend an \glossterm{action point} to embody that wild aspect for 1 hour.
 
         \subsubsection{Ex-Clerics}
-            A cleric who grossly violates the code of conduct required by your deity loses all spells and magical cleric class abilities.
-            He cannot thereafter gain levels as a cleric of that god until he atones (see the \spell{atonement} spell description).
+            If you grossly violate the code of conduct required by your deity, you lose all spells and magical cleric class abilities.
+            You cannot regain those abilities until you atone (see the \spell{atonement} ritual).
 
 \section{Druid}\label{Druid}
     \begin{dtable}
@@ -830,7 +825,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Drd}{Wild Speech}[Mag]
         Druids can communicate with animals.
         As a standard action, the druid can spend an action point and choose a type of animal, such as owl or wolf.
-        She gains the ability to speak to and understand animals of that type for 5 minutes.
+        You gain the ability to speak to and understand animals of that type for 5 minutes.
 
         This ability doesn't make the animals any more friendly or cooperative than normal.
         Furthermore, wary and cunning animals are likely to be terse and evasive, while the more stupid ones make inane comments.
@@ -914,7 +909,7 @@ This choice determines a great deal about your character's abilities.
         The druid gains a \glossterm{climb speed} equal to your land speed.
         \subcf{5th -- Constrict}
         The druid's body transforms, improving your grappling abilities.
-        She gains a \plus5 bonus to accuracy with grapple attacks.
+        You gain a \plus5 bonus to accuracy with grapple attacks.
         In addition, you gain a constrict attack.
         This attack deals 1d10 damage for a Medium druid, but it can only be used against a foe you i grappling with.
         \subcf{5th -- Gore}
@@ -1122,7 +1117,7 @@ This choice determines a great deal about your character's abilities.
             Instead, she must meditate for 8 hours to slowly draw power from your surroundings, as a normal druid.
 
             \altcf[2nd]{Wild Speech} The rotbringer gains the ability to speak with plants at 2nd level.
-            She gains the ability to speak with animals at 6th level, instead of at 2nd level.
+            You gain the ability to speak with animals at 6th level, instead of at 2nd level.
 
             \altcf[3rd]{Wild Aspect} The rotbringer does not gain this ability.
 
@@ -1145,7 +1140,7 @@ This choice determines a great deal about your character's abilities.
                 \end{dtabularx}
             \end{dtable}
 
-            \altcf[7th]{Fungal Armor} The rotbringer becomes covered in fungus that protects your from attacks. She gains a \plus1 bonus to Armor and Fortitude defense.
+            \altcf[7th]{Fungal Armor} The rotbringer becomes covered in fungus that protects your from attacks. You gain a \plus1 bonus to Armor and Fortitude defense.
 
             This bonus increases by 1 at your 7th druid level, and every 4 druid levels thereafter.
 
@@ -1200,7 +1195,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Ftr}{Martial Excellence}
         A fighter gains a \plus1 bonus to accuracy and damage with physical attacks.
-        In addition, he gains a \plus1 bonus to physical defenses.
+        In addition, you gain a \plus1 bonus to physical defenses.
 
     \subsection{Class Abilities}
         All fighters have the following abilities.
@@ -1214,15 +1209,15 @@ This choice determines a great deal about your character's abilities.
         \cf{Ftr}[2nd]{Weapon Discipline}
         The fighter's training grants you additional capability when using your weapons.
         He may choose a weapon group, or he may choose to train equally with all weapons.
-        If he chooses a weapon group, he gains a \plus1 bonus to damage on attacks with weapons from that group.
+        If he chooses a weapon group, you gain a \plus1 bonus to damage on attacks with weapons from that group.
 
-        If he chooses not to focus on a specific group of weapons, he gains the ability to become proficient with any weapon group if he spends 1 hour training with a weapon from that group.
+        If he chooses not to focus on a specific group of weapons, you gain the ability to become proficient with any weapon group if he spends 1 hour training with a weapon from that group.
         He may only keep this proficiency with one weapon group at a time; if he trains with a new weapon group, you lose your proficiency in the previous group.
 
         \cf{Ftr}[3rd]{Combat Feat}
         The fighter gets a bonus Combat feat (see \pcref{Combat Feats}).
         He must use your fighter level in place of your character level to meet level prerequisites for the feat.
-        He gains an additional bonus feat at your 7th fighter level and every four fighter levels thereafter.
+        You gain an additional bonus feat at your 7th fighter level and every four fighter levels thereafter.
 
         \cf{Ftr}[4th]{Combat Discipline}
         The fighter can use your superior training and focus to keep fighting in the face of debilitating effects.
@@ -1280,7 +1275,7 @@ This choice determines a great deal about your character's abilities.
         Heavy armor is treated as medium armor, medium armor is treated as light armor, and light armor is treated as being unarmored.
         This can remove the speed reduction and reduced Dexterity associated with the armor's encumbrance, as appropriate for the new encumbrance of the fighter's armor.
 
-        If you improve your resilience, he gains damage reduction against physical damage equal to your character level. This allows you to ignore the first points of damage he would take each round.
+        If you improve your resilience, you gain damage reduction against physical damage equal to your character level. This allows you to ignore the first points of damage he would take each round.
 
         \cf{Ftr}[8th]{Improved Weapon Discipline}
         The fighter's training in your chosen weapons improves.
@@ -1307,7 +1302,7 @@ This choice determines a great deal about your character's abilities.
         This does not stack with the benefit of the armor discipline ability.
 
         If he chose resilience, he may apply your damage reduction from the armor discipline ability against all damage, including from magical attacks.
-        In addition, he gains a \plus1 bonus to Armor defense while wearing armor.
+        In addition, you gain a \plus1 bonus to Armor defense while wearing armor.
 
         \cf{Ftr}[13th]{Swift Warrior}
         The fighter can take an additional \glossterm{swift action} or \glossterm{immediate action} each round (see \pcref{Swift and Immediate Actions}).
@@ -1334,18 +1329,18 @@ This choice determines a great deal about your character's abilities.
         If he chose agility, he ignores all encumbrance penalties and arcane spell failure from body armor he wears.
         In addition, he treats body armor he wears as if it were three encumbrance categories lighter than it actually is whenever doing so would be beneficial to you.
         This does not stack with the benefits of armor discipline or improved armor discipline.
-        In addition, he gains a \plus4 bonus to Reflex defense.
+        In addition, you gain a \plus4 bonus to Reflex defense.
 
-        If he chose resilience, he gains a \plus4 bonus to Fortitude defense.
+        If he chose resilience, you gain a \plus4 bonus to Fortitude defense.
 
         \cf{Ftr}[20th]{Supreme Discipline}
         The fighter's discipline in your chosen area is beyond equal.
         He must choose either weapon discipline, armor discipline, or combat discipline.
-        Depending on which discipline he chooses, he gains a different bonus.
+        Depending on which discipline he chooses, you gain a different bonus.
         \subcf{Supreme Weapon Discipline}
         Whenever the fighter deals damage to a creature with a physical attack, the struck creature is \severelyimpaired with attacks and checks for 2 rounds.
         \subcf{Supreme Armor Discipline}
-        If the fighter chose agility, he gains a \plus2 bonus to physical defenses.
+        If the fighter chose agility, you gain a \plus2 bonus to physical defenses.
 
         If the fighter chose resilience, he doubles the damage reduction granted by your armor discipline ability.
         \subcf{Supreme Combat Discipline}
@@ -1462,7 +1457,7 @@ This choice determines a great deal about your character's abilities.
                 In addition, she automatically succeeds at all Concentration checks you make to cast the spell.
                 \par If the mage chooses this insight multiple times, she must choose a different spell each time.
             \item Specialization: The mage chooses a school of magic.
-                She gains an additional spell known that can only be used to learn a spell from that school.
+                You gain an additional spell known that can only be used to learn a spell from that school.
                 In exchange, she must ban a school of magic.
                 She can never learn or cast spells or rituals from your banned schools.
                 If you know spells from a banned school, she must immediately learn different spells from unbanned schools in their place.
@@ -1627,7 +1622,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Mnk}{Unarmed Warrior}
         A monk's unarmed attacks are exceptionally deadly.
-        She gains Unarmed Fighting as a bonus feat, making your proficient with your unarmed attack (see \featpcref{Unarmed Fighting}).
+        You gain Unarmed Fighting as a bonus feat, making your proficient with your unarmed attack (see \featpcref{Unarmed Fighting}).
         In addition, you increase the damage of your unarmed attacks by two increments (see \pcref{Weapon Size}).
         For example, a Medium monk would deal 1d6 damage with your unarmed attack.
         For details about how to fight while unarmed, see \pcref{Unarmed Combat}.
@@ -1840,7 +1835,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Pal}{Divine Invocation}[Mag]
         A paladin can invoke the power of your alignment to achieve incredible effects.
         This ability can be used a number of times per day equal to your Willpower or your paladin level, whichever is higher.
-        She gains the smite divine invocation.
+        You gain the smite divine invocation.
 
         At 2nd level, and every even level thereafter, the paladin gains an additional divine invocation.
         Most divine invocations have minimum paladin levels, as indicated in the title of the ability.
@@ -1954,7 +1949,7 @@ This choice determines a great deal about your character's abilities.
 
         At 19th level, the paladin can discern thoughts.
         She knows the surface thoughts of all creatures in the area.
-        She gains a \plus4 bonus to Bluff, Persuasion, and Intimidate attacks and checks against a creature whose thoughts she can read.
+        You gain a \plus4 bonus to Bluff, Persuasion, and Intimidate attacks and checks against a creature whose thoughts she can read.
 
         \cf{Pal}[4th]{Divine Presence}[Mag]
         The paladin's presence alters the world around your.
@@ -2114,7 +2109,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rgr}{Weapon and Armor Proficiency}
         A ranger is proficient with simple weapons, any two weapon groups, light and medium armor, and shields.
-        He is also proficient with your choice of bows, crossbows, or thrown weapons.
+        You are also proficient with your choice of bows, crossbows, or thrown weapons.
 
         \cf{Rgr}{Tenacious Hunter}
         The ranger adds your quarry bonus to your defenses against attacks that your quarry makes.
@@ -2136,7 +2131,7 @@ This choice determines a great deal about your character's abilities.
         A ranger may not normally have more than one quarry at once.
         He may not designate a new quarry until you defeat your old quarry, or until he gives up on the quarry.
         He may give up pursuing a quarry as a free action.
-        If he does, he is unable to designate a new quarry until he rests for 5 minutes.
+        If he does, you are unable to designate a new quarry until he rests for 5 minutes.
 
         Some abilities allow the ranger to designate multiple creatures as a quarry.
         Abilities which designate multiple creatures as a quarry always last for a specific amount of time.
@@ -2150,7 +2145,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Rgr}[2nd]{Hunting Skill}
         The ranger gains any Skill feat with prerequisites that include one of the ranger class skills as a bonus feat.
         He must use your ranger level in place of your character level to meet level prerequisites for the feat.
-        At your 6th ranger level, and every 4 ranger levels thereafter, he gains an additional feat.
+        At your 6th ranger level, and every 4 ranger levels thereafter, you gain an additional feat.
 
         \cf{Rgr}[2nd]{Tracker}
         The ranger gains a \plus5 bonus to checks made to follow tracks.
@@ -2166,7 +2161,7 @@ This choice determines a great deal about your character's abilities.
 
         \subcf{Dual Quarry}
         The ranger may designate up to two targets whenever he chooses a quarry.
-        He gains your quarry benefits against both targets.
+        You gain your quarry benefits against both targets.
         Whenever he designates new quarries, he may choose which previous quarry to give up (if any).
 
         \subcf{Endurance}
@@ -2214,9 +2209,9 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rgr}[3rd]{Keen Vision}
         The ranger's sight improves, allowing you to see more easily.
-        He gains \glossterm{low-light vision}, allowing you to treat sources of light as if they had double their normal illumination range.
+        You gain \glossterm{low-light vision}, allowing you to treat sources of light as if they had double their normal illumination range.
         If he already has low-light vision, he doubles its benefit, allowing you to treat sources of light as if they had four times their normal illumination range.
-        In addition, he gains \glossterm{darkvision} out to 50 feet, allowing you to see in complete darkness.
+        In addition, you gain \glossterm{darkvision} out to 50 feet, allowing you to see in complete darkness.
         If he already has darkvision, he increases its range by 50 feet.
 
         \cf{Rgr}[5th]{Rapid Tracker}
@@ -2226,7 +2221,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rgr}[7th]{Blindsense}
         The ranger's perceptions are so finely honed that he can sense your enemies without seeing them.
-        He gains the blindsense ability out to 50 feet.
+        You gain the blindsense ability out to 50 feet.
         This ability allows you to sense the presence and location of objects and foes within 50 feet without seeing them.
         If he already has the blindsense ability, he increases its range by 50 feet.
 
@@ -2339,7 +2334,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rog}[2nd]{Skill Talent}
         The rogue's skills improve.
-        She gains an additional skill point, which she can place in any skill, and a bonus Skill feat for which you qualifie (see \pcref{Skill Feats}).
+        You gain an additional skill point, which she can place in any skill, and a bonus Skill feat for which you qualifie (see \pcref{Skill Feats}).
         She must use your rogue level in place of your character level to meet level prerequisites for the feat.
         At your 6th rogue level, and every four rogue levels thereafter, you gain an additional skill point and Skill feat.
 
@@ -2577,7 +2572,7 @@ This choice determines a great deal about your character's abilities.
         He chooses a single invocation at 1st level from those available based on your choice of innate magic.
         Using an invocation inflicts \glossterm{warp damage} to the spellwarped equal to half the minimum spellwarped level required to learn the invocation (minimum 1).
 
-        At your 4th spellwarped level, and every two spellwarped levels thereafter, he gains an additional invocation.
+        At your 4th spellwarped level, and every two spellwarped levels thereafter, you gain an additional invocation.
         Some invocations have minimum spellwarped levels, as indicated in the title of the ability.
         The list of invocations is given at \pcref{Invocations}.
 
@@ -2632,7 +2627,7 @@ This choice determines a great deal about your character's abilities.
         The spellwarped increases the defense improved by your choice of innate magic by 2.
         This can increase your hit points, if appropriate.
         \subcf{Spellwarped Ritualist} The spellwarped can learn and perform rituals as if he were an arcane caster with a spellpower equal to your spellwarped spellpower.  The maximum level of ritual that he can learn or perform is equal to half your spellwarped level or half your spellwarped key attribute, whichever is lower.
-        In addition, he gains an ability based on which type of spellwarped he is.
+        In addition, you gain an ability based on which type of spellwarped you are.
         \begin{itemize}
             \itemhead{Alteration} If a ritual requires a specific component with a value, the spellwarped can substitute its equivalent value in ritual components instead.
                 This cannot be used to replace components without a value or components with special properties that alter the ritual's effect, such as the body for a \spell{resurrection} ritual.
@@ -2647,7 +2642,7 @@ This choice determines a great deal about your character's abilities.
         \end{itemize}
         \subcf{7th -- Warp Overload}
         The spellwarped can voluntarily take \glossterm{warp damage}, even if that would exceed half your maximum hit points.
-        He is only unable to voluntarily take warp damage if the total warp damage would exceed your maximum hit points.
+        You are only unable to voluntarily take warp damage if the total warp damage would exceed your maximum hit points.
         \subcf{11th -- Persistent Senses}
         The spellwarped can constantly gain the benefit of your magical senses ability.
         He can toggle your enhanced senses on or off as a swift action.
@@ -2656,10 +2651,10 @@ This choice determines a great deal about your character's abilities.
         \cf{Spl}[2nd]{Surge of Power}[Mag]
         \subcf{Telekinesis -- Kinetic Deflection}
         The spellwarped reflexively deflects attacks away with your mind.
-        He gains a \plus2 bonus to your \glossterm{physical defenses}.
+        You gain a \plus2 bonus to your \glossterm{physical defenses}.
         \subcf{Temporal -- Accelerate Movement}
         The spellwarped accelerates your movement and reactions.
-        He gains a \plus2 bonus to your Reflex defense and a \plus10 foot bonus to your movement speed.
+        You gain a \plus2 bonus to your Reflex defense and a \plus10 foot bonus to your movement speed.
         At spellpower 8, 14, and 20, the defense bonus increases by 1 and the speed bonus increases by 10 feet.
 
         \parhead{Alteration}
@@ -2703,7 +2698,7 @@ This choice determines a great deal about your character's abilities.
         \subcf{7th -- Shieldbearer}
         The spellwarped may wield shields, except tower shields, telekinetically.
         The shield floats in your square, granting you its bonus to your physical defenses just as if he were wielding it.
-        He does not need a free hand to wield the shield, and suffers no arcane spell failure for its use, though he is still affected by its \glossterm{encumbrance penalty}.
+        He does not need a free hand to wield the shield, and suffers no arcane spell failure for its use, though you are still affected by its \glossterm{encumbrance penalty}.
         The shield follows you as he moves.
         If it is forcibly removed from your square, he loses control over it and it falls to the ground.
         \subcf{11th -- Mind Armory}
@@ -2721,11 +2716,11 @@ This choice determines a great deal about your character's abilities.
         \subcf{Uncanny Dodge}
         The spellwarped can react to danger before your senses would normally allow you to do so.
         He reduces your overwhelm penalties by 1.
-        If your overwhelm penalty is reduced to 0, he is not considered to be overwhelmed.
-        In addition, he is not \unaware when attacked by surprise.
+        If your overwhelm penalty is reduced to 0, you are not considered to be overwhelmed.
+        In addition, you are not \unaware when attacked by surprise.
         \subcf{7th -- Improved Uncanny Dodge}
         The spellwarped reduces your overwhelm penalties by 2.
-        If your overwhelm penalty is reduced to 0, he is not considered to be overwhelmed.
+        If your overwhelm penalty is reduced to 0, you are not considered to be overwhelmed.
         \subcf{15th -- Accelerate Attack}
         Whenever the spellwarped makes a \glossterm{standard attack}, he can make an additional \glossterm{strike} at a \minus5 penalty.
         This does not stack with any other effects which grant extra strikes.
@@ -2780,8 +2775,8 @@ This choice determines a great deal about your character's abilities.
 
             \subcf{6th -- Amorphous Body}
             The spellwarped transforms your body into an amorphous form for \durshort duration.
-            In this form, he gains several benefits.
-            He gains a \plus20 bonus to Reflex defense against grapple attacks, is immune to critical hits, and can move through spaces that are no more than two inches in width without \glossterm{squeezing}.
+            In this form, you gain several benefits.
+            You gain a \plus20 bonus to Reflex defense against grapple attacks, is immune to critical hits, and can move through spaces that are no more than two inches in width without \glossterm{squeezing}.
             While moving through spaces smaller than he could normally move through, he moves at half speed.
             \subcf{6th -- Healing Transformation}
             As a standard action, the spellwarped can heal a creature within \rngclose range by transforming it into a healthier version of its normal body.
@@ -2815,7 +2810,7 @@ This choice determines a great deal about your character's abilities.
             \par At your 4th spellwarped level, this damage increases to \spelldamage{fire}.
             \subcf{1st -- Flame Weapon}
             As a swift action, the spellwarped can create a weapon made of flame that lasts for 5 rounds.
-            The weapon is sized appropriately for you, and may take the form of any weapon he is proficient with.
+            The weapon is sized appropriately for you, and may take the form of any weapon you are proficient with.
             He can attack with the weapon as if it were a normal weapon of its type, except that you use your spellpower to determine your damage in place of your level or Strength, and all damage dealt with the weapon is fire damage.
             All other damage modifiers apply normally.
             \par If the flame weapon leaves your hand, it is extinguished 1 round later.
@@ -2848,7 +2843,7 @@ This choice determines a great deal about your character's abilities.
             An ordinary torch is sufficient flame to teleport to, but not a candle.
             \subcf{8th -- Flameheart}
             As a standard action, the spellwarped can become a being of pure fire for \durshort duration.
-            In this form, he is immune to physical damage and can pass through openings as small as one inch at no movement penalty.
+            In this form, you are immune to physical damage and can pass through openings as small as one inch at no movement penalty.
             However, he cannot attack normally or use any of your items, as they meld into your body.
             He may use any of your invocations normally.
             In addition, as a standard action, he can make a Spellpower vs. Reflex attack to touch a creature.
@@ -2877,7 +2872,7 @@ This choice determines a great deal about your character's abilities.
             He has no hit points remaining, and warp damage equal to half your maximum hit points, but is healed of all vital damage.
             However, if the pile of ash is dispersed, the spellwarped dies.
             The ash cannot be harmed by fire damage, and if the pile of ash would take at least 50 points of fire damage during a round, the spellwarped returns one round sooner.
-            The spellwarped may take your normal actions in the round after he is restored.
+            You may take your normal actions in the round after you are restored.
             \par After using this ability, the spellwarped cannot use it again for 1 hour.
 
             \subcf{20th -- Immolate}
