@@ -53,6 +53,27 @@ SPELL_SOURCES = [
     'Divine',
     'Nature',
 ]
+DOMAINS = [
+    'Air',
+    'Chaos',
+    'Death',
+    'Destruction',
+    'Earth',
+    'Evil',
+    'Fire',
+    'Good',
+    'Knowledge',
+    'Law',
+    'Life',
+    'Magic',
+    'Protection',
+    'Strength',
+    'Travel',
+    'Trickery',
+    'War',
+    'Water',
+    'Wild',
+]
 
 
 def join(*args):
@@ -492,7 +513,7 @@ def generate_spells():
             tags=['Air'],
         ),
         schools=['Evocation'],
-        lists=['Air, Nature'],
+        lists=['Nature'],
         cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
         custom_augments=[
             Augment(
