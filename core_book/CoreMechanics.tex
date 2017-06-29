@@ -76,7 +76,12 @@ It defines how attributes work and explains how to make physical attacks in comb
 
     \subsection{Strikes}
         A \glossterm{strike} is the most common type of attack.
-        It is a \glossterm{physical}, \glossterm{mundane} ability.
+        There are two kinds of strikes: a single strike, with a single weapon, and a dual strike, with two weapons.
+        Many abilities allow you to make one or more strikes.
+        Whenever you make a strike, you can choose which kind of strike to make.
+        All strikes are \glossterm{physical}, \glossterm{mundane} abilities.
+
+        \parhead{Single Strike}
         \begin{ability}
             \begin{spelltargetinginfo}
                 \spellspecial Choose a weapon you wield, or your \glossterm{unarmed attack}.
@@ -86,6 +91,27 @@ It defines how attributes work and explains how to make physical attacks in comb
                 \begin{spellattack}{Physical vs. Armor}
                     \spellsuccess The target takes \glossterm{strike damage} with the chosen weapon (see \pcref{Strike Damage}).
                     \spellcritical As above, but the target takes double damage.
+                \end{spellattack}
+            \end{spelleffects}
+        \end{ability}
+
+        \parhead{Dual Strike}\label{Dual Strike}
+        You can only make a \glossterm{dual strike} if you are wielding two weapons at once.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellspecial Choose two weapons you wield.
+                % clarify - lower range of both weapons?
+                \spellquicktargeting{One creature or object}{As weapons}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \begin{spellattack}{Physical vs. Armor}
+                    \spellspecial You roll this attack roll twice, once for each weapon.
+                    Roll any miss chances or failure chances independently for each weapon.
+                    You take a \minus1 penalty to accuracy on both attack rolls for each non-light weapon you choose when you use this ability.
+                    \spellsuccess The target takes \glossterm{strike damage} with one weapon you hit with (see \pcref{Strike Damage}).
+                    If you hit with both weapons, you choose which weapon to deal damage with.
+                    \spellcritical The target takes \glossterm{strike damage} from both weapons.
+                    There is no advantage to getting a \glossterm{critical hit} with both weapons, rather than just one.
                 \end{spellattack}
             \end{spelleffects}
         \end{ability}
@@ -325,8 +351,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         \begin{ability}
             \begin{spelleffects}
                 \spelleffect You heal 1d4 damage \add 1d per two levels.
-                In addition, you may choose one \glossterm{condition} affecting you.
-                The condition's effects end.
+                In addition, you may remove one \glossterm{condition} affecting you.
             \end{spelleffects}
         \end{ability}
 
@@ -1269,32 +1294,6 @@ It defines how attributes work and explains how to make physical attacks in comb
         \parhead{If Your Mount Falls in Battle} If your mount falls, you have to succeed on a DR 15 Ride check to make a soft fall and take no damage. If the check fails, you take 1d6 points of damage.
 
         \parhead{If You Are Dropped} If you are knocked unconscious, you have a 50\% chance to stay in the saddle (or 75\% if you're in a military saddle). Otherwise you fall and take 1d6 points of damage. Without you to guide it, most mounts avoid combat.
-
-    \subsection{Dual Strikes}\label{Dual Strikes}
-        If you are wielding two weapons at once, you can attack with both weapons whenever you make a \glossterm{strike}.
-        This is called a \glossterm{dual strike}.
-        When you make a dual strike, roll the attack roll twice, once for each weapon.
-        Roll any miss chances or failure chances independently for each weapon.
-        If you hit with one of the weapons, you deal damage with that weapon.
-        If you hit with both, you choose which weapon to deal damage with.
-        If you get a \glossterm{critical hit} with either weapon, you deal damage with both weapons, including all modifiers.
-        This replaces the normal doubling of damage for critical hits.
-
-        \parhead{Critical Hits} Normally, when you score a critical hit, you roll damage separately for each weapon and use the higher of the two results when dealing the bonus damage. If your weapons have different \glossterm{critical ranges}, it is possible to only score a critical hit with one of the two weapons. In that case, only use that weapon's damage when dealing extra damage.
-
-        \parhead{Weapon Size} Making dual strikes is easiest with light weapons. You take a \minus1 penalty to accuracy if you use a non-light weapon while fighting with two weapons, or a \minus2 penalty if neither weapon is light. This penalty does not apply if you alternate attacks between your weapons, instead of attacking with both at once.
-
-        \parhead{Unarmed Attacks} Normally, you can't make unarmed attacks as if fighting with two weapons. However, a character with the Unarmed Fighting feat gains the ability to make dual strikes with their unarmed attacks (see \featpcref{Unarmed Fighting}).
-
-        \parhead{Example} Felix the 1st-level fighter is wielding two short swords against an evil goblin.
-        The goblin has an Armor defense of 5.
-        Felix has a Dexterity of 2, and is proficient with his swords, so his accuracy is \plus2.
-        If he attacks with both weapons at once, he takes no penalty to his accuracy, because both weapons are light.
-        He makes one attack roll for his left short sword, and one for his right short sword.
-        If he rolls a 3 or higher with either attack roll, he hits the goblin.
-        Since both of his weapons are identical, there is usually no need to track exactly which short sword hits the goblin.
-        His Strength is 2, so he rolls 1d8 damage for either weapon.
-        If he rolled a 5, he would deal 5 damage.
 
     \subsection{Drowning}\label{Drowning}
         You can hold your breath for a number of rounds equal to 5 \add your Constitution.
