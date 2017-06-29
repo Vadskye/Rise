@@ -69,21 +69,21 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\lcol}X}
             \tb{Level} & \tb{Special}                      \\
             \bottomrule
-            \nth{1}    & Rage                              \\
+            \nth{1}    & Athletic prowess, rage            \\
             \nth{2}    & Battle-scarred                    \\
-            \nth{3}    & Athletic prowess                  \\
+            \nth{3}    & Improvised combat                 \\
             \nth{4}    & Uncontrollable rage               \\
             \nth{5}    & Uncanny dodge                     \\
             \nth{6}    & Titanic might                     \\
             \nth{7}    & Unstoppable rage                  \\
             \nth{8}    & Deep scars                        \\
-            \nth{9}    & Improvised combat                 \\
+            \nth{9}    & Athletic prowess                  \\
             \nth{10}   & Mindless rage                     \\
             \nth{11}   & Greater uncanny dodge             \\
-            \nth{12}   & Greater athletic prowess          \\
+            \nth{12}   & Greater improvised combat         \\
             \nth{13}   & Mighty rage                       \\
             \nth{14}   & Rapid recovery                    \\
-            \nth{15}   & Greater improvised combat         \\
+            \nth{15}   & Athletic champion                 \\
             \nth{16}   & Endless rage                      \\
             \nth{17}   & Soulscarred                       \\
             \nth{18}   & Greater titanic might             \\
@@ -157,6 +157,25 @@ This choice determines a great deal about your character's abilities.
             While raging, the you ignore all penalties from \glossterm{vital damage}.
             However, if your vital damage exceeds your maximum hit points, you immediately die.
 
+        \subsubsection{Primal Warrior}
+            \cf{Bbn}{Athletic Prowess} You gain two additional skill points that must be spent on Strength or Dexterity-based skills.
+
+            \cf{Bbn}[3]{Improvised Combat} You gain a \plus1 bonus to accuracy with \glossterm{combat maneuvers}.
+
+            \cf{Bbn}[6]{Titanic Might}
+            You gain a \plus1d bonus to damage with \glossterm{strikes}.
+
+            \cf{Bbn}[9]{Athletic Prowess} You gain two additional skill points that must be spent on Strength or Dexterity-based skills.
+
+            \cf{Bbn}[12]{Greater Improvised Combat} 
+            The accuracy bonus from your \textit{improvised combat} ability increases to \plus2.
+
+            \cf{Bbn}[15]{Athletic Champion}
+            You gain a \plus1 bonus to all Strength and Dexterity-based skills.
+
+            \cf{Bbn}[18]{Greater Titanic Might}
+            The damage bonus from your \textit{titanic might} ability increases to \plus2d.
+
         \subsubsection{Battleforged Resilience}
             \cf{Bbn}[2]{Battle-Scarred} You gain \glossterm{damage reduction} against physical damage equal to your level.
 
@@ -179,23 +198,6 @@ This choice determines a great deal about your character's abilities.
             \cf{Bbn}[20]{Fury of the Storm}
             You gain a \plus1d bonus to damage with \glossterm{strikes} against all creatures who \glossterm{threaten} you.
             In addition, you are immune to being \glossterm{overwhelmed}, and never suffer \glossterm{overwhelm penalties}.
-
-        \subsubsection{Primal Warrior}
-            \cf{Bbn}[3]{Athletic Prowess} You gain two additional skill points that must be spent on Strength or Dexterity-based skills.
-
-            \cf{Bbn}[6]{Titanic Might}
-            You gain a \plus1d bonus to damage with \glossterm{strikes}.
-
-            \cf{Bbn}[9]{Improvised Combat} 
-            You gain a \plus2 bonus to accuracy with \glossterm{combat maneuvers}.
-
-            \cf{Bbn}[12]{Greater Athletic Prowess} You gain two additional skill points that must be spent on Strength or Dexterity-based skills.
-
-            \cf{Bbn}[15]{Greater Improvised Combat} 
-            The accuracy bonus from your \textit{improvised combat} ability increases to \plus4.
-
-            \cf{Bbn}[18]{Greater Titanic Might}
-            The damage bonus from your \textit{titanic might} ability increases to \plus2d.
 
         \subsubsection{Ex-Barbarians}
             If you become lawful, you cannot use your \textit{rage} ability.
@@ -438,7 +440,8 @@ This choice determines a great deal about your character's abilities.
 
         \subsubsection{Chaos}
             \parhead{Gift} Whenever you roll a 10 on a check on your first attempt, you gain a \plus5 bonus to the check.
-            \parhead{Aspect} Your attack rolls explode on a 9 or a 10 (see \pcref{Exploding Attacks}).
+            \parhead{Aspect} If you roll a 1 on an attack roll, it explodes (see \pcref{Exploding Attacks}).
+            This does not affect additional dice rolled if the attack roll explodes.
             \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
             \begin{ability}
                 \begin{spelltargetinginfo}
@@ -451,7 +454,8 @@ This choice determines a great deal about your character's abilities.
                     \spellspecial After using this ability, you cannot use it again for an hour.
                 \end{spelleffects}
             \end{ability}
-            \parhead{Mastery} Your attack rolls explode on a 1 (see \pcref{Exploding Attacks}).
+            \parhead{Mastery} Whenever you make an attack roll, if it misses, you can reroll.
+            You must accept the second result.
 
         \subsection{Death}
             \parhead{Gift} Whenever you deal damage to a creature with no hit points remaining, it immediately dies.
@@ -1182,28 +1186,28 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable}
         \lcaption{Fighter Progression}
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\lcol}X}
-            \tb{Level} & \tb{Special} \\
+            \tb{Level} & \tb{Special}                             \\
             \bottomrule
-            \nth{1}  & Combat supremacy, martial excellence \\
-            \nth{2}  & Weapon discipline                    \\
-            \nth{3}  & Combat feat                          \\
-            \nth{4}  & Combat discipline                    \\
-            \nth{5}  & Battlemaster                         \\
-            \nth{6}  & Armor discipline                     \\
-            \nth{7}  & Combat feat                          \\
-            \nth{8}  & Improved weapon discipline           \\
-            \nth{9}  & Combat mastery                       \\
-            \nth{10} & Improved combat discipline           \\
-            \nth{11} & Combat feat                          \\
-            \nth{12} & Improved armor discipline            \\
-            \nth{13} & Swift warrior                        \\
-            \nth{14} & Greater weapon discipline            \\
-            \nth{15} & Combat feat                          \\
-            \nth{16} & Greater combat discipline            \\
-            \nth{17} & Supreme battlemaster                 \\
-            \nth{18} & Greater armor discipline             \\
-            \nth{19} & Combat feat                          \\
-            \nth{20} & Supreme discipline                   \\
+            \nth{1}    & Consummate warrior, weapon adaptation    \\
+            \nth{2}    & Armored agility                          \\
+            \nth{3}    & Discipline                               \\
+            \nth{4}    & Daunting strike                          \\
+            \nth{5}    & Weapon focus                             \\
+            \nth{6}    & Focused recovery                         \\
+            \nth{7}    & Twinstrike                               \\
+            \nth{8}    & Greater armored agility                  \\
+            \nth{9}    & Swift warrior                            \\
+            \nth{10}   & Superior strike                          \\
+            \nth{11}   & Weapon master                            \\
+            \nth{12}   & Greater discipline                       \\
+            \nth{13}   & Heartseeking strike                      \\
+            \nth{14}   & Armor expertise                          \\
+            \nth{15}   & Greater focused recovery                 \\
+            \nth{16}   & Greater daunting strike                  \\
+            \nth{17}   & Greater weapon focus                     \\
+            \nth{18}   & Supreme discipline                       \\
+            \nth{19}   & Warrior of legend                        \\
+            \nth{20}   & Armored juggernaut, legendary discipline \\
         \end{dtabularx}
     \end{dtable}
 
@@ -1218,7 +1222,7 @@ This choice determines a great deal about your character's abilities.
     \subsection{Base Class Abilities}
         A character with fighter as a base class gains the following abilities.
 
-        \classbasics{Skill Points} 10.
+        \classbasics{Skill Points} 6.
 
         \classbasics{Defenses} \plus4 Fortitude, \plus2 Mental.
 
@@ -1234,152 +1238,109 @@ This choice determines a great deal about your character's abilities.
     \subsection{Class Abilities}
         All fighters have the following abilities.
 
-        \cf{Ftr}{Combat Supremacy}
-        A fighter is a consummate warrior, and can stand toe to toe with even the toughest foes.
-        Whenever the fighter deals damage to a creature with a physical attack, he may impede its fighting ability as an \glossterm{immediate action}.
-        If you do, the struck creature is \impaired on attacks and checks against the fighter for 2 rounds, or until he uses this ability on that creature again.
-        He may use this ability a number of times per day equal to your Intelligence or your fighter level, whichever is higher.
+        \subsubsection{Martial Supremacy}
+            \cf{Ftr}{Consummate Warrior} You gain a \plus1d bonus to damage with \glossterm{strikes}.
 
-        \cf{Ftr}[2nd]{Weapon Discipline}
-        The fighter's training grants you additional capability when using your weapons.
-        He may choose a weapon group, or he may choose to train equally with all weapons.
-        If he chooses a weapon group, you gain a \plus1 bonus to damage on attacks with weapons from that group.
+            \cf{Ftr}[4]{Daunting Strike} As a standard action, you can use this ability.
+            \begin{ability}
+                \begin{spelleffects}
+                    \spelleffect You make a \glossterm{strike} against one creature.
+                    If that strike deals damage, the target suffers a \minus2 penalty to \glossterm{accuracy} on strikes against you.
+                    This effect does not stack with itself.
+                    \spelldur Condition
+                \end{spelleffects}
+            \end{ability}
 
-        If he chooses not to focus on a specific group of weapons, you gain the ability to become proficient with any weapon group if he spends 1 hour training with a weapon from that group.
-        He may only keep this proficiency with one weapon group at a time; if he trains with a new weapon group, you lose your proficiency in the previous group.
+            \cf{Ftr}[7]{Twinstrike} As a standard action, you can use this ability.
+            \begin{ability}
+                \begin{spelleffects}
+                    \spelleffect You make a \glossterm{strike} against up to two different creatures.
+                    Both strikes must be made with the same weapon or weapons.
+                \end{spelleffects}
+            \end{ability}
 
-        \cf{Ftr}[3rd]{Combat Feat}
-        The fighter gets a bonus Combat feat (see \pcref{Combat Feats}).
-        He must use your fighter level in place of your character level to meet level prerequisites for the feat.
-        You gain an additional bonus feat at your 7th fighter level and every four fighter levels thereafter.
+            \cf{Ftr}[10]{Superior Strike} As a standard action, you can use this ability.
+            \begin{ability}
+                \begin{spelleffects}
+                    \spelleffect You make a \glossterm{strike} against one creature.
+                    You gain a \plus1d bonus to damage with the strike.
+                \end{spelleffects}
+            \end{ability}
 
-        \cf{Ftr}[4th]{Combat Discipline}
-        The fighter can use your superior training and focus to keep fighting in the face of debilitating effects.
-        When a fighter is initially affected by one of the conditions listed on \trefnp{Combat Discipline Conditions}, he may use your combat discipline ability to instead suffer the mitigated condition one column to the right.
-        He can suppress the condition up to 5 rounds.
+            \cf{Ftr}[13]{Heartseeking Strike} As a standard action, you can use this ability.
+            \begin{ability}
+                \begin{spelleffects}
+                    \spelleffect You make a \glossterm{strike} against one creature.
+                    Your attack roll \glossterm{explodes} on an 8, 9, or 10 (see \pcref{Exploding Attacks}).
+                    This does not affect additional dice rolled if the attack roll explodes.
+                \end{spelleffects}
+            \end{ability}
 
-        \par Using combat discipline takes no action, and can be done at any time, even when it isn't the fighter's turn.
-        A fighter may use this ability a number of times per day equal to your Willpower or half your fighter level, whichever is higher.
-        However, he cannot mitigate more than one condition at a time.
-        If the fighter attempts to mitigate a new condition, the old condition resumes its normal effect immediately.
+            \cf{Ftr}[16]{Greater Daunting Strike}
+            When you deal damage to a creature with your \textit{daunting strike} ability, the target also suffers a \minus2 penalty to defenses against \glossterm{strikes} you make.
 
-        \begin{dtable}
-            \lcaption{Combat Discipline Conditions}
-            \begin{dtabularx}{\columnwidth}{l *{3}{>{\lcol}X}}
-                \tb{Original Condition} & \tb{Mitigated Condition} & \tb{Mitigated Condition} & \tb{Mitigated Condition} \\
-                \bottomrule
-                Panicked              & Frightened        & Shaken & None \\
-                Petrified             & Paralyzed         & Slowed & None \\
-                Blinded               & Visually impaired & None   & \tdash   \\
-                Confused              & Disoriented       & None   & \tdash   \\
-                Exhausted             & Fatigued          & None   & \tdash   \\
-                Nauseated             & Sickened          & None   & \tdash   \\
-                Severely impaired     & Impaired          & None   & \tdash   \\
-                Stunned               & Dazed             & None   & \tdash   \\
-                %Entangled             & None              & \tdash     & \tdash   \\
-                Deafened              & None              & \tdash     & \tdash   \\
-                Fascinated            & None              & \tdash     & \tdash   \\
-                Ignited\fn{1}         & None              & \tdash     & \tdash   \\
-                Immobilized           & None              & \tdash     & \tdash   \\
-                Negative level\fn{2}  & None              & \tdash     & \tdash   \\
-                Slowed                & None              & \tdash     & \tdash   \\
-                Vulnerable            & None              & \tdash     & \tdash   \\
-            \end{dtabularx}
-            1.  Mitigates the impairment, but does not prevent the fighter from taking 1d6 fire damage per round until the fire is put out.  \\
-            2.  Mitigate a single negative level. \\
-        \end{dtable}
+            \cf{Ftr}[19]{Warrior of Legend}
+            The damage bonus from your \textit{consummate warrior} ability increases to \plus2d.
 
-        \par A fighter can never use this ability more than once against a single source.
-        For example, if a fighter is confused by a \spell{confusion} spell, he can use this ability to become disoriented instead of confused, but he can't then expend a second use to stop being disoriented.
-        The lesser condition that this ability imposes may be cured or removed normally, but doing so does not affect the resurgence of the condition the fighter was originally afflicted with.
-        If a fighter uses this ability to mitigate or negate a condition which he must suffer as a sacrifice or cost to gain some benefit, he automatically forfeits the benefit he would have gained.
+        \subsubsection{Equipment Training}
+            \cf{Ftr}{Weapon Adaptation}
+            If you spend an hour training with a weapon, you become proficient with that weapon's weapon group.
+            You can only be proficient with one additional weapon group in this way at a time.
 
-        \cf{Ftr}[5th]{Battlemaster}
-        The fighter becomes a master of controlling the ebb and flow of battle.
-        When he use your combat supremacy ability, he may choose for the struck creature to be \goaded by you or \shaken by you instead of impaired.
+            \cf{Ftr}[2]{Armored Agility}
+            You treat body armor you wear as less encumbering.
+            You reduce its \glossterm{encumbrance penalty} by 2, and its arcane spell failure by 10\%.
+            In addition, you treat it were one encumbrance category lighter than it is whenever doing so would be beneficial for you.
 
-        \cf{Ftr}[6th]{Armor Discipline}
-        The fighter's training grants you additional capability in armor.
-        He must choose to improve your agility or your resilience in armor.
-        This applies to all armor discipline abilities the fighter has.
+            \cf{Ftr}[5]{Weapon Focus} 
+            When you use your \textit{weapon adaptation} ability to gain proficiency with a weapon group, you gain a \plus1 bonus to \glossterm{accuracy} with attacks using weapons from that group.
+            You can train with a weapon from a weapon group you are already proficient with to apply this ability to weapons from that group.
 
-        If you improve your agility, he treats body armor he wears as less encumbering.
-        He reduces its \glossterm{encumbrance penalty} by 2 its arcane spell failure by 10\%.
-        In addition, he treats it were one encumbrance category lighter than it is whenever doing so would be beneficial for you.
-        Heavy armor is treated as medium armor, medium armor is treated as light armor, and light armor is treated as being unarmored.
-        This can remove the speed reduction and reduced Dexterity associated with the armor's encumbrance, as appropriate for the new encumbrance of the fighter's armor.
+            \cf{Ftr}[8]{Greater Armored Agility}
+            Your reduction of body armor's encumbrance penalty with your \textit{armored agility} ability increases to 4, and your reduction of its arcane spell failure increases to 20\%.
+            In addition, the reduction of its encumbrance category increases to two encumbrance categories lighter.
 
-        If you improve your resilience, you gain damage reduction against physical damage equal to your character level. This allows you to ignore the first points of damage he would take each round.
+            \cf{Ftr}[11]{Weapon Master} 
+            You gain a \plus1d bonus to damage with \glossterm{strikes}.
 
-        \cf{Ftr}[8th]{Improved Weapon Discipline}
-        The fighter's training in your chosen weapons improves.
-        He increases the \glossterm{critical multiplier} of your chosen weapons by 1.
-        In addition, if he chose a specific weapon group, you increase your damage bonus to \plus2.
-        If he did not, he becomes proficient with all weapon groups and all exotic weapons.
-        He retains this benefit for one week after the training.
+            \cf{Ftr}[14]{Armor Expertise}
+            You gain a \plus1 bonus to Armor defense while you are wearing body armor.
 
-        \cf{Ftr}[9th]{Combat Mastery}
-        The fighter may use your combat supremacy ability any number of times per day.
+            \cf{Ftr}[17]{Greater Weapon Focus} 
+            Your bonus to accuracy from your \textit{weapon focus} ability increases to \plus2.
 
-        \cf{Ftr}[10th]{Improved Combat Discipline}
-        The fighter's ability to keep fighting despite negative influence improves.
-        He can reduce conditions by two steps instead of one when using combat discipline.
-        For example, a stunned fighter who used combat discipline would instead be staggered.
-        \par In addition, a fighter may use combat discipline to reduce any penalties he suffers to your accuracy, damage, checks, or defenses by 2, even if the source of the penalty is not listed on the combat discipline chart.
-        \par The fighter may also mitigate up to two conditions at once.
+            \cf{Ftr}[20]{Armored Juggernaut}
+            You gain a \plus1 bonus to all defenses while you are wearing body armor.
 
-        \cf{Ftr}[12th]{Improved Armor Discipline}
-        The fighter's training with your armor improves.
-        If he chose agility, he treats body armor he wears as even less encumbering.
-        He reduces its \glossterm{encumbrance penalty} by 4 and decreases its arcane spell failure by 20\%.
-        In addition, he treats all it as if it were two encumbrance categories lighter than it is whenever doing so is beneficial for you.
-        This does not stack with the benefit of the armor discipline ability.
+        \subsubsection{Combat Discipline}
 
-        If he chose resilience, he may apply your damage reduction from the armor discipline ability against all damage, including from magical attacks.
-        In addition, you gain a \plus1 bonus to Armor defense while wearing armor.
+            \cf{Ftr}[3]{Discipline} As a \glossterm{swift action}, you can spend an \glossterm{action point} to use this ability.
+            \begin{ability}
+                \begin{spelleffects}
+                    \spelleffect Remove one \glossterm{condition} affecting you.
+                \end{spelleffects}
+            \end{ability}
 
-        \cf{Ftr}[13th]{Swift Warrior}
-        The fighter can take an additional \glossterm{swift action} or \glossterm{immediate action} each round (see \pcref{Swift and Immediate Actions}).
+            \cf{Ftr}[6]{Focused Recovery}
+            When you use the \textit{recover} action, you heal \plus1d additional hit points.
+            In addition, instead of removing a condition, you can remove any \glossterm{sustained} effect on you.
 
-        \cf{Ftr}[14th]{Greater Weapon Discipline}
-        The fighter's training in your chosen weapons becomes still greater.
-        He increases the \glossterm{critical range} of your chosen weapons by 1.
-        This increase stacks with any other effects that affect critical range.
-        For example, a fighter using heavy blades with the Weapon Focus feat (see \featpcref{Weapon Focus}) would have a critical range of 18-20.
+            \cf{Ftr}[9]{Swift Warrior}
+            If you use only \glossterm{mundane} abilities in a given round, you can take an additional \glossterm{swift action} or \glossterm{immediate action} that round.
+            After using this ability in a round, you are unable to use any \glossterm{magical} abilities until the next round.
 
-        \cf{Ftr}[16th]{Greater Combat Discipline}
-        The fighter's ability to keep fighting despite influence becomes still greater.
-        When using combat discipline, he may ignore any condition listed on the combat discipline chart.
-        In addition, he may use combat discipline to be \severelyimpaired with attacks and checks rather than suffer any non-damaging condition not listed on the chart.
+            \cf{Ftr}[12]{Greater Discipline}
+            When you use the \textit{discipline} action, you can remove any number of conditions.
 
-        \par The fighter may also mitigate up to three conditions at once.
+            \cf{Ftr}[15]{Greater Focused Recovery}
+            The additional hit points you gain from the \textit{focused recovery} increases to \plus2d.
+            In addition, you can remove any number of \glossterm{sustained} effects on you.
 
-        \cf{Ftr}[17th]{Supreme Battlemaster}
-        The fighter's ability to control the battle improves.
-        Whenever you use your combat supremacy ability, he may choose for the struck creature to be \taunted or \frightened instead of impaired.
+            \cf{Ftr}[18]{Supreme Discipline}
+            You do not need to spend an action point to use your \textit{discipline} ability.
 
-        \cf{Ftr}[18th]{Greater Armor Discipline}
-        The fighter's training in your chosen armor becomes still greater.
-        If he chose agility, he ignores all encumbrance penalties and arcane spell failure from body armor he wears.
-        In addition, he treats body armor he wears as if it were three encumbrance categories lighter than it actually is whenever doing so would be beneficial to you.
-        This does not stack with the benefits of armor discipline or improved armor discipline.
-        In addition, you gain a \plus4 bonus to Reflex defense.
-
-        If he chose resilience, you gain a \plus4 bonus to Fortitude defense.
-
-        \cf{Ftr}[20th]{Supreme Discipline}
-        The fighter's discipline in your chosen area is beyond equal.
-        He must choose either weapon discipline, armor discipline, or combat discipline.
-        Depending on which discipline he chooses, you gain a different bonus.
-        \subcf{Supreme Weapon Discipline}
-        Whenever the fighter deals damage to a creature with a physical attack, the struck creature is \severelyimpaired with attacks and checks for 2 rounds.
-        \subcf{Supreme Armor Discipline}
-        If the fighter chose agility, you gain a \plus2 bonus to physical defenses.
-
-        If the fighter chose resilience, he doubles the damage reduction granted by your armor discipline ability.
-        \subcf{Supreme Combat Discipline}
-        The fighter can use combat discipline to be \impaired with attacks and checks instead of suffering any nondamaging negative effect with a duration.
-        He may also mitigate up to four conditions at once.
+            \cf{Ftr}[20]{Legendary Discipline} 
+            You are immune to all \glossterm{conditions}.
 
 \section{Mage}\label{Mage}
     \begin{dtable}
