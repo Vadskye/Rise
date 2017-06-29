@@ -105,7 +105,7 @@ This choice determines a great deal about your character's abilities.
     \subsection{Base Class Abilities}
         If you choose barbarian as a base class, you gain the following abilities.
 
-        \classbasics{Skill Points} 10.
+        \classbasics{Skill Points} 6.
 
         \classbasics{Defenses} \plus4 Fortitude, \plus2 Reflex.
 
@@ -210,13 +210,13 @@ This choice determines a great deal about your character's abilities.
             \bottomrule
             \nth{1}  & 2 & \tdash   & Domain gift, rituals, spells \\
             \nth{2}  & 2 & \tdash   & Spell point                  \\
-            \nth{3}  & 2 & \tdash   & Domain gift                  \\
-            \nth{4}  & 2 & 1        & \tdash                       \\
-            \nth{5}  & 3 & 1        & Domain spell                 \\
+            \nth{3}  & 3 & \tdash   & Domain gift, spell knowledge \\
+            \nth{4}  & 3 & 1        & \tdash                       \\
+            \nth{5}  & 3 & 1        & Domain aspect                \\
             \nth{6}  & 3 & 2 \add 1 & \tdash                       \\
             \nth{7}  & 3 & 2 \add 1 & Domain aspect                \\
-            \nth{8}  & 4 & 3 \add 1 & Expanded spell knowledge     \\
-            \nth{9}  & 4 & 3 \add 1 & Domain aspect                \\
+            \nth{8}  & 3 & 3 \add 1 & \tdash                       \\
+            \nth{9}  & 4 & 3 \add 1 & Domain spell                 \\
             \nth{10} & 4 & 4 \add 2 & \tdash                       \\
             \nth{11} & 4 & 4 \add 2 & Domain essence               \\
             \nth{12} & 4 & 5 \add 2 & \tdash                       \\
@@ -242,7 +242,7 @@ This choice determines a great deal about your character's abilities.
     \subsection{Base Class Abilities}
         If you choose cleric as a base class, you gain the following abilities.
 
-        \classbasics{Skill Points} 5.
+        \classbasics{Skill Points} 4.
 
         \classbasics{Defenses} \plus2 Fortitude, \plus4 Mental.
 
@@ -366,15 +366,15 @@ This choice determines a great deal about your character's abilities.
             \cf{Clr}[3]{Domain Gift}
             You gain the \textit{domain gift} for another one of your domains.
 
-            \cf{Clr}[5]{Domain Spell}
-            You learn one of the two spells offered by your domains (see \pcref{Domain Spells}).
-
-            \cf{Clr}[7]{Domain Aspect}
+            \cf{Clr}[5]{Domain Aspect}
             Each domain has a corresponding \textit{domain aspect}.
             You gain the \textit{domain aspect} for one of your domains (see \pcref{Domain Gifts}).
 
-            \cf{Clr}[9]{Domain Aspect} 
+            \cf{Clr}[7]{Domain Aspect} 
             You gain the \textit{domain aspect} for another one of your domains.
+
+            \cf{Clr}[9]{Domain Spell}
+            You learn one of the two spells offered by your domains (see \pcref{Domain Spells}).
 
             \cf{Clr}[11]{Domain Essence}
             Each domain has a corresponding \textit{domain essence}.
@@ -406,13 +406,13 @@ This choice determines a great deal about your character's abilities.
             A spell point can be spent to cast spells in place of an action point.
             You recover all spent spell points after a \glossterm{short rest}.
 
+            \cf{Clr}[3]{Spell Knowledge} 
+            You learn an additional spell from the divine \glossterm{spell list} (see \pcref{Divine Spells}).
+
             \cf{Clr}[4]{Custom Augments}
             Choose a \glossterm{custom augment} for a divine spell you know.
             You can apply that augment to that spell (see \pcref{Augments}).
             At 6th level, and every two levels thereafter, you learn an additional custom augment for a divine spell you know.
-
-            \cf{Clr}[8]{Expanded Spell Knowledge}
-            You learn an additional spell from the divine \glossterm{spell list} (see \pcref{Divine Spells}).
 
     \subsection{Cleric Domain Abilities}
         All cleric domain abilities are \glossterm{magical} unless otherwise specified.
@@ -776,29 +776,30 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable}
         \lcaption{Druid Progression}
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{3.5em} c >{\lcol}X}
-            \tb{Level} & \tb{Active Aspects} & \tb{Spells} & \tb{Special} \\
+            \tb{Level} & \tb{Spells} & \tb{Augments}\fn{1} & \tb{Special} \\
             \bottomrule
-            \nth{1}  & \tdash & 2  & Spells, rituals, wild speech \\
-            \nth{2}  & 1      & 3  & Wild aspect                  \\
-            \nth{3}  & 1      & 3  & Wild aspect                  \\
-            \nth{4}  & 1      & 4  & \tdash                       \\
-            \nth{5}  & 2      & 4  & Wild aspect                  \\
-            \nth{6}  & 2      & 5  & \tdash                       \\
-            \nth{7}  & 2      & 5  & Wild aspect                  \\
-            \nth{8}  & 2      & 6  & \tdash                       \\
-            \nth{9}  & 3      & 6  & Wild aspect                  \\
-            \nth{10} & 3      & 7  & \tdash                       \\
-            \nth{11} & 3      & 7  & Wild aspect                  \\
-            \nth{12} & 3      & 8  & \tdash                       \\
-            \nth{13} & 4      & 8  & Wild aspect                  \\
-            \nth{14} & 4      & 9  & \tdash                       \\
-            \nth{15} & 4      & 9  & Wild aspect                  \\
-            \nth{16} & 4      & 10 & \tdash                       \\
-            \nth{17} & 5      & 10 & Wild aspect                  \\
-            \nth{18} & 5      & 11 & \tdash                       \\
-            \nth{19} & 5      & 11 & Wild aspect                  \\
-            \nth{20} & 5      & 12 & Avatar of nature             \\
+            \nth{1}  & 2 & \tdash   & Rituals, spells, wild speech \\
+            \nth{2}  & 2 & \tdash   & Spell point                  \\
+            \nth{3}  & 2 & \tdash   & Spell knowledge, wild aspect \\
+            \nth{4}  & 2 & 1        & \tdash                       \\
+            \nth{5}  & 3 & 1        & Nature's servant             \\
+            \nth{6}  & 3 & 2 \add 1 & \tdash                       \\
+            \nth{7}  & 3 & 2 \add 1 & Wild aspect                  \\
+            \nth{8}  & 4 & 3 \add 1 & \tdash                       \\
+            \nth{9}  & 4 & 3 \add 1 & Spell knowledge              \\
+            \nth{10} & 4 & 4 \add 2 & \tdash                       \\
+            \nth{11} & 4 & 4 \add 2 & Wild aspect                  \\
+            \nth{12} & 4 & 5 \add 2 & \tdash                       \\
+            \nth{13} & 4 & 5 \add 2 & Nature's champion            \\
+            \nth{14} & 4 & 6 \add 3 & \tdash                       \\
+            \nth{15} & 4 & 6 \add 3 & Wild aspect                  \\
+            \nth{16} & 4 & 7 \add 3 & \tdash                       \\
+            \nth{17} & 4 & 7 \add 3 &                              \\
+            \nth{18} & 4 & 8 \add 3 &                              \\
+            \nth{19} & 4 & 8 \add 3 & Wild aspect                  \\
+            \nth{20} & 4 & 9 \add 3 & Avatar of nature             \\
         \end{dtabularx}
+        1. Custom augments \add standard augments; see \pcref{Augments}.
     \end{dtable}
 
     \classbasics{Alignment} Neutral good, lawful neutral, neutral, chaotic neutral, or neutral evil.
@@ -813,7 +814,7 @@ This choice determines a great deal about your character's abilities.
     \subsection{Base Class Abilities}
         A character with druid as a base class gains the following abilities.
 
-        \classbasics{Skill Points} 10.
+        \classbasics{Skill Points} 6.
 
         \classbasics{Defenses} \plus4 Fortitude, \plus2 Mental.
 
@@ -879,9 +880,8 @@ This choice determines a great deal about your character's abilities.
             You recover all spent spell points after a \glossterm{short rest}.
 
         \subsubsection{Natural Influence}
-            All of these abilities are \glossterm{Magical}.
 
-            \cf{Drd}{Wild Speech} As a standard action, you can spend an \glossterm{action point} to use this ability.
+            \cf{Drd}{Wild Speech}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
             \begin{ability}
                 \begin{spelltargetinginfo}
                     \spellquicktargeting{One animal}{\rngmed}
@@ -894,7 +894,7 @@ This choice determines a great deal about your character's abilities.
                 \end{spelleffects}
             \end{ability}
 
-            \cf{Drd}[3]{Wild Aspect}[Mag]
+            \cf{Drd}[3]{Wild Aspect}[Magical]
             You gain the ability to embody an aspect of an animal or of nature itself.
             Choose a single wild aspect from the list below.
             Many wild aspects have a minimum level prerequisite, as indicated in the title of the ability.
@@ -910,11 +910,19 @@ This choice determines a great deal about your character's abilities.
 
             Many wild aspects grant natural weapons.
             See \pcref{Natural Weapons}, for details about natural weapons.
-            At 5th level, and every two levels thereafter, you gain an additional wild aspect.
+            At 7th level, and every four levels thereafter, you gain an additional wild aspect.
 
+            \subcf{Animal Affinity}
+            You gain a \plus2 bonus to Creature Handling and Ride checks.
             \subcf{Armaments of the Bear}
             Your mouth and hands transform, allowing you to perform bite and claw attacks.
             The bite attack deals 1d8 damage for a Medium creature, and the claws deal 1d6 damage.
+            \subcf{Gore}
+            Your head transforms, allowing you to perform a gore attack.
+            The attack deals 1d8 damage for a Medium druid.
+            In addition, you gain a \plus2 bonus to accuracy with shove attacks (see \pcref{Shove}).
+            \subcf{Monkey Climb}
+            You gain a \glossterm{climb speed} equal to your land speed.
             \subcf{Senses}
             You gain low-light vision.
             You treat sources of light as if they had double their normal illumination range.
@@ -926,22 +934,13 @@ This choice determines a great deal about your character's abilities.
             The plants bend of their own volition to allow the druid to pass.
             However, plants magically manipulated to impede motion still affect your.
 
-            \subcf{5th -- Animal Affinity}
-            You gain a \plus5 bonus to Creature Handling and Ride checks.
-            \subcf{5th -- Climb}
-            You gain a \glossterm{climb speed} equal to your land speed.
-            \subcf{5th -- Constrict}
+            \subcf{7th -- A Thousand Faces}
+            You may use your spellpower in place of your Disguise skill when making Disguise checks to alter your own appearance.
+            \subcf{7th -- Constrict}
             Your body transforms, improving your grappling abilities.
             You gain a \plus2 bonus to accuracy with grapple attacks (see \pcref{Grapple}).
             In addition, you gain a constrict attack.
             This attack deals 1d10 damage for a Medium druid, but it can only be used against a foe you aregrappling with.
-            \subcf{5th -- Gore}
-            Your head transforms, allowing you to perform a gore attack.
-            The attack deals 1d8 damage for a Medium druid.
-            In addition, if you hit with a natural attack, you may attempt to shove your foe as an \glossterm{immediate action}.
-
-            \subcf{7th -- A Thousand Faces}
-            You may use your spellpower in place of your Disguise skill when making Disguise checks to alter your own appearance.
             \subcf{7th -- Hawk}
             You grow wings, granting your a glide speed equal to your land speed.
             See \pcref{Gliding}, for more details.
@@ -965,42 +964,37 @@ This choice determines a great deal about your character's abilities.
             % Whenever a creature adjacent to the druid makes a physical attack against you, the attacking creature takes 1d4 piercing damage \plus1d per two nature power.
             % A creature can only be dealt damage by this effect once per round.
 
-            \subcf{9th -- Barkskin} You gain \glossterm{damage reduction} against physical damage equal to your \textit{nature power}.
-            Fire damage ignores this damage reduction and negates it for 1 round.
-            \subcf{9th -- Natural Grab}
-            If you hit with a natural attack, you may attempt to grapple your foe as an immediate action.
-            \subcf{9th -- Natural Trip}
-            If you hit with a natural attack, you may attempt to trip your foe as an immediate action.
             % Is this how poison actually works?
-            \subcf{9th -- Venom}
-            If you hit with a natural attack, you may inject poison into your foe as an immediate action.
-            At the end of each round, you make a \textit{nature power} vs. Fortitude attack against all creatures you have poisoned.
-            The effects of the poison are described below.
-            \begin{itemize}
-                \item First success: the target is \sickened.
-                \item Second success: the target is \staggered.
-                \item Third success: the target is \nauseated.
-                \item Third failure: the target is no longer poisoned, and any lingering effects from the poison end.
-            \end{itemize}
-            % TODO poison stacking rules
-            \par In addition, you gains a bite attack that deals 1d8 damage for a Medium druid.
 
             % \subcf{11th -- Elemental Retribution}
             % Whenever a creature within \rngmed range of you attacks you, the attacking creature takes 1d6 damage per two nature power of either cold, electricity, or fire damage.
             % You may choose the damage type independently for each attacking creature.
             % A creature can only be dealt damage by this effect once per round.
+            \subcf{11th -- Beetle's Carapace} You gain a \plus1 bonus to Armor defense.
             \subcf{11th -- Fluid Motion} You are immune to effects that restrict your mobility, and you suffer no penalties for acting underwater.
             In addition, you gain a \plus10 bonus to Reflex defense against grapple attacks, as well as on grapple attacks or Escape Artist checks made to escape a grapple or a pin.
             \subcf{11th -- Grow}
             You increase in size by one size category (see \pcref{Size in Combat}).
             This is a \glossterm{Sizing} effect.
+            \subcf{11th -- Natural Grab}
+            If you hit with a natural attack, you may attempt to grapple your foe as an immediate action.
+            \subcf{11th -- Natural Trip}
+            If you hit with a natural attack, you may attempt to trip your foe as an immediate action.
             \subcf{11th -- Wolfpack}
-            Overwhelmed foes you threaten increase their overwhelm penalties by 1.
-
-            \subcf{13th -- Wings}
-            You grow wings, granting you a \glossterm{fly speed} equal to your land speed.
-            While \unencumbered, you can fly (see \pcref{Flying}).
-            % TODO: flight limitation
+            Overwhelmed foes you threaten increase their \glossterm{overwhelm penalties} by 1.
+            \subcf{11th -- Venom}
+            If you hit with a natural attack, you may inject poison into your foe as an immediate action.
+            This is a \glossterm{condition}, and lasts until removed.
+            At the end of each round, you make a \textit{nature power} vs. Fortitude attack against all creatures you have poisoned.
+            The effects of the poison are described below.
+            \begin{itemize}
+                \item First success: the target is \sickened until the effect ends.
+                \item Second success: the target is \staggered until the end of the next round.
+                \item Third success: the target is \nauseated until the effect ends.
+                \item Third failure: the target is no longer poisoned, and any lingering effects from the poison end.
+            \end{itemize}
+            % TODO poison stacking rules
+            \par In addition, you gains a bite attack that deals 1d8 damage for a Medium druid.
 
             \subcf{15th -- Earth Glide}
             You gain the earth glide ability, as an earth elemental.
@@ -1010,30 +1004,46 @@ This choice determines a great deal about your character's abilities.
             While gliding, you can remain partially within the earth, granting you cover.
             \subcf{15th -- Natural Renewal}
             At the end of each round, you heal hit points equal to your \textit{nature power}.
+            \subcf{15th -- Wings}
+            You grow wings, granting you a \glossterm{fly speed} equal to your land speed.
+            While \unencumbered, you can fly (see \pcref{Flying}).
+            % TODO: standard flight limitation
 
             \subcf{19th -- Solar Radiance}
             The druid continuously radiates bright light out to a 500 foot radius (and shadowy illumination for an additional 500 feet).
             The illumination is so bright that you become hard to look at.
             Any creature attacking your from within the radius of bright light becomes \partiallyblinded for 2 rounds after the attack.
 
-        \cf{Drd}[20th]{Avatar of Nature}[Mag]
-        If you die, except if by old age, you may choose to have your body and soul become an instrument of nature's will.
-        Your body immediately decomposes or otherwise disappears, and your soul does not travel to an afterlife.
-        You has no physical form, and cannot use any of your normal abilities.
-        Instead, you have a fly speed of 100 feet, with special maneuverability.
-        As a standard action, you can temporarily possess any living plants or animals within a 10 mile radius of the place of your death.
+            \cf{Drd}[5]{Nature's Servant}
+            You gain two extra skill points which must be spent on the Creature Handling, Knowledge (geography), Knowledge (nature), or Survival skills.
 
-        While possessing a living plant or animal, you can see through its senses and control its actions completely.
-        In addition, you may cast spells, and the spells take effect as if the plant or animal had cast them.
-        You use the plant or animal's position to determine range, visible targets, and so on.
-        You do not require verbal or somatic components to cast your spells in this form, but are unable to cast spells or perform rituals that require material components or focus objects.
+            \cf{Drd}[9]{Spell Knowledge}
+            You learn an additional spell from the nature \glossterm{spell list} (see \pcref{Nature Spells}).
 
-        While not possessing a plant or animal, you can rest, or you can focus on reincarnating your physical form.
-        Creating a new body in this way takes 12 consecutive hours of concentration.
-        At the end of that time, you are reincarnated in a new body in your location, as the effect of the \spell{reincarnate} ritual, except that you can choose your race from among the races listed (not including the ``Other'' race).
+            \cf{Drd}[13]{Nature's Champion}
+            You gain two extra skill points which must be spent on the Creature Handling, Knowledge (geography), Knowledge (nature), or Survival skills.
+            In addition, you gain a \plus1 bonus to those skills.
 
-        While you are an avatar of nature, you do not age and you cannot die of old age.
-        You can continue to exist in this form indefinitely.
+            \cf{Drd}[17]{}
+
+            \cf{Drd}[20]{Avatar of Nature}[Magical]
+            If you die, except if by old age, you may choose to have your body and soul become an instrument of nature's will.
+            Your body immediately decomposes or otherwise disappears, and your soul does not travel to an afterlife.
+            You has no physical form, and cannot use any of your normal abilities.
+            Instead, you have a fly speed of 100 feet, with special maneuverability.
+            As a standard action, you can temporarily possess any living plants or animals within a 10 mile radius of the place of your death.
+
+            While possessing a living plant or animal, you can see through its senses and control its actions completely.
+            In addition, you may cast spells, and the spells take effect as if the plant or animal had cast them.
+            You use the plant or animal's position to determine range, visible targets, and so on.
+            You do not require verbal or somatic components to cast your spells in this form, but are unable to cast spells or perform rituals that require material components or focus objects.
+
+            While not possessing a plant or animal, you can rest, or you can focus on reincarnating your physical form.
+            Creating a new body in this way takes 12 consecutive hours of concentration.
+            At the end of that time, you are reincarnated in a new body in your location, as the effect of the \spell{reincarnate} ritual, except that you can choose your race from among the races listed (not including the ``Other'' race).
+
+            While you are an avatar of nature, you do not age and you cannot die of old age.
+            You can continue to exist in this form indefinitely.
 
         \subsubsection{Nature Spell Mastery}
             You must have the ability to cast nature spells to gain these abilities.
@@ -1043,13 +1053,13 @@ This choice determines a great deal about your character's abilities.
             A spell point can be spent to cast spells in place of an action point.
             You recover all spent spell points after a \glossterm{short rest}.
 
+            \cf{Drd}[3]{Spell Knowledge} 
+            You learn an additional spell from the nature \glossterm{spell list} (see \pcref{Nature Spells}).
+
             \cf{Drd}[4]{Custom Augments}
             Choose a \glossterm{custom augment} for a nature spell you know.
             You can apply that augment to that spell (see \pcref{Augments}).
             At 6th level, and every two levels thereafter, you learn an additional custom augment for a nature spell you know.
-
-            \cf{Drd}[8]{Expanded Spell Knowledge}
-            You learn an additional spell from the nature \glossterm{spell list} (see \pcref{Nature Spells}).
 
     % \subcf{15th -- Air Mantle}
     % You are surrounded by a mantle of air.
@@ -1092,78 +1102,78 @@ This choice determines a great deal about your character's abilities.
         A druid who ceases to revere nature, changes to a prohibited alignment, or teaches the Druidic language to a nondruid loses all spells and magical druid class abilities.
         She cannot thereafter gain levels as a druid until you atone (see the \spell{atonement} ritual).
 
-    \subsection{Variant Druids}
+    % \subsection{Variant Druids}
 
-        \subsubsection{Blighter}
+    %     \subsubsection{Blighter}
 
-            Blighters draw power from nature, as do other druids. However, while other druids revere nature and draw power from it gently, blighters steal power from nature forcefully. Wherever a blighter goes, destruction and death surely follows.
+    %         Blighters draw power from nature, as do other druids. However, while other druids revere nature and draw power from it gently, blighters steal power from nature forcefully. Wherever a blighter goes, destruction and death surely follows.
 
-            \altcf{Blight} Instead of meditating to regain spell slots, a blighter draws power from your environment forcefully.
-            This affects a \areahuge radius zone centered on your, and the process takes 1 minute of concentration.
-            At the end of every round, every living thing in the area other than the blighter takes damage equal to your nature power.
-            All inanimate plants of Huge size or smaller immediately wither and die.
-            The earth becomes cracked and infertile, and any nutrients from the soil are destroyed.
-            This ability has no effect on artificial environments or materials, such as metal or worked stone.
-            At the end of the minute, the blighter regains your spent nature spell slots.
+    %         \altcf{Blight} Instead of meditating to regain spell slots, a blighter draws power from your environment forcefully.
+    %         This affects a \areahuge radius zone centered on your, and the process takes 1 minute of concentration.
+    %         At the end of every round, every living thing in the area other than the blighter takes damage equal to your nature power.
+    %         All inanimate plants of Huge size or smaller immediately wither and die.
+    %         The earth becomes cracked and infertile, and any nutrients from the soil are destroyed.
+    %         This ability has no effect on artificial environments or materials, such as metal or worked stone.
+    %         At the end of the minute, the blighter regains your spent nature spell slots.
 
-            A blighter can only blight your surroundings in this way once per hour.
-            If your surroundings are already blighted or are not natural terrain, she cannot use this ability to regain your spells.
-            Instead, she must meditate for 8 hours to slowly draw power from your surroundings, as a normal druid.
+    %         A blighter can only blight your surroundings in this way once per hour.
+    %         If your surroundings are already blighted or are not natural terrain, she cannot use this ability to regain your spells.
+    %         Instead, she must meditate for 8 hours to slowly draw power from your surroundings, as a normal druid.
 
-            \altcf{Spells} As normal, except that a blighter adds all Vivimancy arcane spells to your spell list.
+    %         \altcf{Spells} As normal, except that a blighter adds all Vivimancy arcane spells to your spell list.
 
-            \altcf[2nd]{Wild Speech} As normal, except that a blighter gains a \plus5 bonus to Intimidate against your wild speech targets, and a \minus5 penalty to Persuasion.
+    %         \altcf[2nd]{Wild Speech} As normal, except that a blighter gains a \plus5 bonus to Intimidate against your wild speech targets, and a \minus5 penalty to Persuasion.
 
-            \altcf[10th]{Blightcasting}
+    %         \altcf[10th]{Blightcasting}
 
-            \altcf[20th]{Improved Blightcasting}
+    %         \altcf[20th]{Improved Blightcasting}
 
-        \subsubsection{Rotbringer}
+        % \subsubsection{Rotbringer}
 
-            While most druids seek to emulate and interact with animals, rotbringers focus on the power of fungi, decay, and regeneration.
+        %     While most druids seek to emulate and interact with animals, rotbringers focus on the power of fungi, decay, and regeneration.
 
-            \altcf{Invoke Rot} Instead of meditating to regain spell slots, a rotbringer accelerates the natural forces of decomposition and decay on your environment.
-            This affects a \areahuge radius zone centered on your, and the process takes 1 minute of concentration.
-            All organic objects of Huge size or smaller, such as plants and corpses, decompose.
-            This decomposition kills inanimate, living plants.
-            All organic objects, regardless of size, are covered with various fungi.
-            This ability has no effect on artificial environments or materials, such as metal or worked stone.
-            At the end of the minute, the rotbringer regains your spent nature spell slots.
+        %     \altcf{Invoke Rot} Instead of meditating to regain spell slots, a rotbringer accelerates the natural forces of decomposition and decay on your environment.
+        %     This affects a \areahuge radius zone centered on your, and the process takes 1 minute of concentration.
+        %     All organic objects of Huge size or smaller, such as plants and corpses, decompose.
+        %     This decomposition kills inanimate, living plants.
+        %     All organic objects, regardless of size, are covered with various fungi.
+        %     This ability has no effect on artificial environments or materials, such as metal or worked stone.
+        %     At the end of the minute, the rotbringer regains your spent nature spell slots.
 
-            If the rotbringer decomposes a Huge object with this ability, or a combination of smaller objects equivalent in size to a Huge object, you gain an bonus nature spell slot of your highest available spell level.
-            This extra spell slot lasts until it is used, or until you regain your spell slots again.
+        %     If the rotbringer decomposes a Huge object with this ability, or a combination of smaller objects equivalent in size to a Huge object, you gain an bonus nature spell slot of your highest available spell level.
+        %     This extra spell slot lasts until it is used, or until you regain your spell slots again.
 
-            A rotbringer can only invoke rot on your surroundings in this way once per hour.
-            If your surroundings are already decomposed or are not natural terrain, she cannot use this ability to regain your spells.
-            Instead, she must meditate for 8 hours to slowly draw power from your surroundings, as a normal druid.
+        %     A rotbringer can only invoke rot on your surroundings in this way once per hour.
+        %     If your surroundings are already decomposed or are not natural terrain, she cannot use this ability to regain your spells.
+        %     Instead, she must meditate for 8 hours to slowly draw power from your surroundings, as a normal druid.
 
-            \altcf[2nd]{Wild Speech} The rotbringer gains the ability to speak with plants at 2nd level.
-            You gain the ability to speak with animals at 6th level, instead of at 2nd level.
+        %     \altcf[2nd]{Wild Speech} The rotbringer gains the ability to speak with plants at 2nd level.
+        %     You gain the ability to speak with animals at 6th level, instead of at 2nd level.
 
-            \altcf[3rd]{Wild Aspect} The rotbringer does not gain this ability.
+        %     \altcf[3rd]{Wild Aspect} The rotbringer does not gain this ability.
 
-            \altcf[3rd]{Rot Spell} The druid learns an additional spell slot and spell known.
-            The spell must be taken from the following list of spells.
-            The spell's level cannot exceed half your druid level.
-            If she already knows a spell from the list at every spell level you ha access to, she may instead learn any nature spell (see \pcref{Nature Spells}).
+        %     \altcf[3rd]{Rot Spell} The druid learns an additional spell slot and spell known.
+        %     The spell must be taken from the following list of spells.
+        %     The spell's level cannot exceed half your druid level.
+        %     If she already knows a spell from the list at every spell level you ha access to, she may instead learn any nature spell (see \pcref{Nature Spells}).
 
-            At 5th level, and every odd level, the druid may learn a new spell.
+        %     At 5th level, and every odd level, the druid may learn a new spell.
 
-            \begin{dtable}
-                \begin{dtabularx}{\columnwidth}{l X}
-                    \tb{Spell level} & \tb{Rotbringer Spells} \\
-                    1st & \spell{excrete slime}, \spell{lesser regeneration} \\
-                    2nd & \spell{fungal growth} \\
-                    3rd & \spell{rotburst} \\
-                    4th & \spell{poison} \\
-                    6th & \spell{regeneration} \\
-                    7th & \spell{greater rotburst} \\
-                \end{dtabularx}
-            \end{dtable}
+        %     \begin{dtable}
+        %         \begin{dtabularx}{\columnwidth}{l X}
+        %             \tb{Spell level} & \tb{Rotbringer Spells} \\
+        %             1st & \spell{excrete slime}, \spell{lesser regeneration} \\
+        %             2nd & \spell{fungal growth} \\
+        %             3rd & \spell{rotburst} \\
+        %             4th & \spell{poison} \\
+        %             6th & \spell{regeneration} \\
+        %             7th & \spell{greater rotburst} \\
+        %         \end{dtabularx}
+        %     \end{dtable}
 
-            \altcf[7th]{Fungal Armor} The rotbringer becomes covered in fungus that protects your from attacks. You gain a \plus1 bonus to Armor and Fortitude defense.
+        %     \altcf[7th]{Fungal Armor} The rotbringer becomes covered in fungus that protects your from attacks. You gain a \plus1 bonus to Armor and Fortitude defense.
 
-            This bonus increases by 1 at your 7th druid level, and every 4 druid levels thereafter.
+        %     This bonus increases by 1 at your 7th druid level, and every 4 druid levels thereafter.
 
 \section{Fighter}\label{Fighter}
     \begin{dtable}
