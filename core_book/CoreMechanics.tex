@@ -321,10 +321,14 @@ It defines how attributes work and explains how to make physical attacks in comb
         For example, if you charge after delaying, you would not be able to attack after the charge, making it generally pointless.
 
         \parhead{Recover}\label{Recover}
-        As a standard action, you can spend an \glossterm{action point} to revitalize yourself.
-        You heal 1d4 damage \add 1d per two levels.
-        In addition, you may choose one ability affecting you with a duration.
-        You reduce the remaining duration of that ability by 5 rounds, which can cause it to end.
+        As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelleffects}
+                \spelleffect You heal 1d4 damage \add 1d per two levels.
+                In addition, you may choose one \glossterm{condition} affecting you.
+                The condition's effects end.
+            \end{spelleffects}
+        \end{ability}
 
         \parhead{Total Defense}\label{Total Defense}
         As a standard action, you can focus entirely on defense, granting you a \plus2 bonus to your defenses until the end of the round.
