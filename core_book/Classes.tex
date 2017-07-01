@@ -107,7 +107,7 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 6.
 
-        \classbasics{Defenses} \plus4 Fortitude, \plus2 Reflex.
+        \classbasics{Defenses} \plus3 Fortitude, \plus2 Reflex, \plus1 Mental.
 
         \classbasics{Action Points} \plus1.
 
@@ -180,14 +180,14 @@ This choice determines a great deal about your character's abilities.
             \cf{Bbn}[2]{Battle-Scarred} You gain \glossterm{damage reduction} against physical damage equal to your level.
 
             \cf{Bbn}[5]{Uncanny Dodge} You can react to danger before your senses would normally allow you to do so.
-            You reduce your \glossterm{overwhelm penalties} by 2.
+            You reduce your \glossterm{overwhelm penalties} by 1.
             If your overwhelm penalty is reduced to 0, you are not considered to be overwhelmed.
-            In addition, you is not \unaware when attacked by surprise.
+            In addition, you are not \unaware when attacked by surprise.
 
             \cf{Bbn}[8]{Deep Scars} Your \glossterm{damage reduction} from your \textit{battle-scarred} ability applies against all damage, not just physical damage.
 
             \cf{Bbn}[11]{Greater Uncanny Dodge}
-            Your reduction of \glossterm{overwhelm penalties} increases to 4.
+            Your reduction of \glossterm{overwhelm penalties} from the \textit{uncanny dodge} ability increases to 2.
 
             \cf{Bbn}[14]{Rapid Recovery}
             At the end of each round, you heal hit points equal to your level.
@@ -197,7 +197,7 @@ This choice determines a great deal about your character's abilities.
 
             \cf{Bbn}[20]{Fury of the Storm}
             You gain a \plus1d bonus to damage with \glossterm{strikes} against all creatures who \glossterm{threaten} you.
-            In addition, you are immune to being \glossterm{overwhelmed}, and never suffer \glossterm{overwhelm penalties}.
+            In addition, your reduction of overwhelm penalties from the \textit{uncanny dodge} ability increases to 4.
 
         \subsubsection{Ex-Barbarians}
             If you become lawful, you cannot use your \textit{rage} ability.
@@ -246,7 +246,7 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 4.
 
-        \classbasics{Defenses} \plus2 Fortitude, \plus4 Mental.
+        \classbasics{Defenses} \plus3 Mental, \plus2 Fortitude, \plus1 Reflex.
 
         \classbasics{Action Points} \plus3.
 
@@ -257,7 +257,7 @@ This choice determines a great deal about your character's abilities.
         If you are a cleric, you have the following abilities.
 
         \cf{Clr}{Divine Power}
-        The \glossterm{power} of your cleric spells and abilities is determined by your \textit{divine power}.
+        The \glossterm{power} of many cleric spells and abilities is determined by your \textit{divine power}.
         Your \textit{divine power} is equal to your level or your Willpower, whichever is higher.
 
         \cf{Clr}{Deity}
@@ -698,7 +698,7 @@ This choice determines a great deal about your character's abilities.
                 \end{spelleffects}
             \end{ability}
             \parhead{Mastery} Whenever you move, you can teleport the same distance instead.
-            You can teleport in any direction.
+            This does not change the total distance you can move, but you can teleport in any direction, even vertically.
 
         \subsubsection{Trickery}
             \parhead{Gift} You add Bluff, Disguise, and Stealth to your cleric class skill list.
@@ -820,7 +820,7 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 6.
 
-        \classbasics{Defenses} \plus4 Fortitude, \plus2 Mental.
+        \classbasics{Defenses} \plus3 Fortitude, \plus2 Mental, \plus1 Reflex.
 
         \classbasics{Action Points} \plus3.
 
@@ -845,7 +845,7 @@ This choice determines a great deal about your character's abilities.
         Such wood is as strong as steel.
 
         \cf{Drd}{Nature Power}
-        The \glossterm{power} of your druid spells and abilities is determined by your \textit{nature power}.
+        The \glossterm{power} of many druid spells and abilities is determined by your \textit{nature power}.
         Your \textit{nature power} is equal to your level or your Perception, whichever is higher.
 
         \subsubsection{Spellcasting}
@@ -1224,7 +1224,7 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 6.
 
-        \classbasics{Defenses} \plus4 Fortitude, \plus2 Mental.
+        \classbasics{Defenses} \plus3 Fortitude, \plus2 Mental, \plus1 Reflex.
 
         \classbasics{Action Points} \plus2.
 
@@ -1322,7 +1322,7 @@ This choice determines a great deal about your character's abilities.
             \end{ability}
 
             \cf{Ftr}[6]{Focused Recovery}
-            When you use the \textit{recover} action, you heal \plus1d additional hit points.
+            When you use the \textit{recover} action, you heal \plus1d hit points.
             In addition, instead of removing a condition, you can remove any \glossterm{sustained} effect on you.
 
             \cf{Ftr}[9]{Swift Warrior}
@@ -1333,7 +1333,7 @@ This choice determines a great deal about your character's abilities.
             When you use the \textit{discipline} action, you can remove any number of conditions.
 
             \cf{Ftr}[15]{Greater Focused Recovery}
-            The additional hit points you gain from the \textit{focused recovery} increases to \plus2d.
+            The bonus to the hit points you gain from the \textit{focused recovery} ability increases to \plus2d.
             In addition, you can remove any number of \glossterm{sustained} effects on you.
 
             \cf{Ftr}[18]{Supreme Discipline}
@@ -1345,7 +1345,7 @@ This choice determines a great deal about your character's abilities.
 \section{Mage}\label{Mage}
     \begin{dtable}
         \lcaption{Mage Progression}
-        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} c >{\lcol}X}
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{2em} c c >{\lcol}X}
             \tb{Level} & \tb{Spells} & \tb{Augments}\fn{1} & \tb{Special} \\
             \bottomrule
             \nth{1}  & 2 & \tdash   & Arcane essence, rituals, spells \\
@@ -1383,7 +1383,7 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 4.
 
-        \classbasics{Defenses} \plus4 Mental.
+        \classbasics{Defenses} \plus3 Mental, \plus2 Reflex, \plus1 Fortitude.
 
         \classbasics{Action Points} \plus3.
 
@@ -1398,7 +1398,7 @@ This choice determines a great deal about your character's abilities.
         She recovers all spent spell points after a \glossterm{short rest}.
 
     \subsection{Class Abilities}
-        If you are a fighter, you have the following abilities.
+        If you are a mage, you have the following abilities.
 
         \cf{Mge}{Arcane Essence}
         All mages have access to great arcane power.
@@ -1408,7 +1408,6 @@ This choice determines a great deal about your character's abilities.
         \parhead{Sorcerer} Sorcerers have an intuitive connection to magic that allows them to cast spells without preparation or training.
         \parhead{Wizard} Wizards studied arcane mysteries for years to learn the secret ways of magic.
         A wizard casts spells with your Intelligence.
-
 
         \subsubsection{Spellcasting}
 
@@ -1518,7 +1517,7 @@ This choice determines a great deal about your character's abilities.
             You can have only one spell with this augment active at a time.
             If you use the augment again with a different spell, the new spell.
 
-            \cf{Mge}[17th]{Greater Essence Lore}[Magical]
+            \cf{Mge}[17]{Greater Essence Lore}[Magical]
             You gain an ability based on your choice of arcane essence.
 
             \subparhead{Sorcerer} Whenever you resist a spell with your \glossterm{magic resistance}, you gain the ability to cast that spell once.
@@ -1535,7 +1534,7 @@ This choice determines a great deal about your character's abilities.
             If both would trigger simultaneously, only the first spell cast triggers.
             The second spell cast does not trigger that round.
 
-            \cf{Mge}[20th]{Archmage}
+            \cf{Mge}[20]{Archmage}
             You no longer need to spend action points to cast spells.
             If you have any spell points, you lose those spell points and gain the same number of legend points instead.
 
@@ -1561,26 +1560,26 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} c >{\lcol}X}
             \tb{Level} & \tb{\Ki Strike} & \tb{Special} \\
             \bottomrule
-            \nth{1}  & \plus1 & Enlightened defenses, unarmed warrior     \\
-            \nth{2}  & \plus1 & Manifest \ki                              \\
-            \nth{3}  & \plus1 & Wholeness of body, uncanny dodge \\
-            \nth{4}  & \plus2 & Manifest \ki                              \\
-            \nth{5}  & \plus2 & Flurry of blows                           \\
-            \nth{6}  & \plus2 & Manifest \ki                              \\
-            \nth{7}  & \plus3 & Perfect motion                            \\
-            \nth{8}  & \plus3 & Manifest \ki                              \\
-            \nth{9}  & \plus3 & Improved uncanny dodge, perfect soul      \\
-            \nth{10} & \plus4 & Manifest \ki                              \\
-            \nth{11} & \plus4 & Flow of life                              \\
-            \nth{12} & \plus4 & Manifest \ki                              \\
-            \nth{13} & \plus5 & Perfect mind                              \\
-            \nth{14} & \plus5 & Manifest \ki                              \\
-            \nth{15} & \plus5 & Perfect body                              \\
-            \nth{16} & \plus6 & Manifest \ki                              \\
-            \nth{17} & \plus6 & Perfect life                              \\
-            \nth{18} & \plus6 & Manifest \ki                              \\
-            \nth{19} & \plus7 & True perfection                           \\
-            \nth{20} & \plus7 & Manifest \ki, transcend mortality         \\
+            \nth{1}  & \plus1 & Manifest ki, unarmed warrior, unfettered defense \\
+            \nth{2}  & \plus1 & Flurry of blows                                  \\
+            \nth{3}  & \plus1 & Mental reserves                                  \\
+            \nth{4}  & \plus2 & Manifest ki                                      \\
+            \nth{5}  & \plus2 & Intuitive reaction                               \\
+            \nth{6}  & \plus2 & Transcend frailty                                \\
+            \nth{7}  & \plus3 & Manifest ki                                      \\
+            \nth{8}  & \plus3 & Stunning fist                                    \\
+            \nth{9}  & \plus3 & Serenity                                         \\
+            \nth{10} & \plus4 & Manifest ki                                      \\
+            \nth{11} & \plus4 & Greater intuitive reaction                       \\
+            \nth{12} & \plus4 & Transcend flesh                                  \\
+            \nth{13} & \plus5 & Manifest ki                                      \\
+            \nth{14} & \plus5 & Greater flurry of blows                          \\
+            \nth{15} & \plus5 & Inner peace                                      \\
+            \nth{16} & \plus6 & Manifest ki                                      \\
+            \nth{17} & \plus6 & Greater unfettered defense                       \\
+            \nth{18} & \plus6 & Transcend limits                                 \\
+            \nth{19} & \plus7 & Manifest ki                                      \\
+            \nth{20} & \plus7 & Transcend mortality                              \\
         \end{dtabularx}
     \end{dtable}
 
@@ -1594,11 +1593,11 @@ This choice determines a great deal about your character's abilities.
     \subparhead{Other} Bluff, Intimidate, Perform, Persuasion.
 
     \subsection{Base Class Abilities}
-        A character with monk as a base class gains the following abilities.
+        If you choose monk as a base class, you gain the following abilities.
 
-        \classbasics{Skill Points} 10.
+        \classbasics{Skill Points} 6.
 
-        \classbasics{Defenses} \plus2 Fortitude, \plus4 Reflex, \plus4 Mental.
+        \classbasics{Defenses} \plus3 Reflex, \plus2 Mental, \plus1 Fortitude.
 
         \classbasics{Action Points} \plus3.
 
@@ -1607,166 +1606,143 @@ This choice determines a great deal about your character's abilities.
         Monks are not proficient with any armor or shields.
         When wearing armor, using a shield, or carrying a medium or heavy load, a monk loses the benefit of your enlightened defense, fast movement, and \ki abilities.
 
-        \cf{Mnk}{Ki Strike}[Mag] A monk's fists, and all weapons you use, gain a \plus1 \glossterm{enhancement bonus}.
-        This functions like an enhancement bonus on a weapon, increasing your damage and offensive legend points per day (see \pcref{Weapon Enhancement Bonuses}).
-        In addition, you are always treated as if you wa wearing \plus1 armor, granting your temporary hit points and defensive legend points (see \pcref{Armor Enhancement Bonuses}).
-        This bonus increases by \plus1 at 4th level and every 3 levels thereafter.
-
     \subsection{Class Abilities}
-        All monks have the following abilities.
+        If you are a monk, you have the following abilities.
 
-        \cf{Mnk}{Enlightened Defense}[Mag]
-        A monk's \ki shields your body from attacks.
-        When \monkunencumbered, you gain a \plus2 bonus to Armor defense.
-        She loses this bonus when you are helpless.
+        \subsubsection{Ki}
+            \cf{Mnk}{Ki Power}
+            The \glossterm{power} of your ki abilities is determined by your \textit{ki power}.
+            Your \textit{ki power} is equal to your level or your Willpower, whichever is higher.
 
-        \cf{Mnk}{Ki Power}
-        Many monk abilities depend on your \ki power.
-        A monk's \ki power is equal to your Willpower or your character level, whichever is higher.
+            \cf{Mnk}{Manifest Ki} 
+            You gain the ability to channel your ki to temporarily enhance your abilities.
+            Choose a single ki manifestation from the list below.
+            Many ki manifestations have a minimum level prerequisite, as indicated in the title of the ability.
+            At the start of each round, you can spend an \glossterm{action point} to use a ki manifestation.
+            This does not take an action, but you can only use one ki manifestation per round.
 
-        \cf{Mnk}{Unarmed Warrior}
-        A monk's unarmed attacks are exceptionally deadly.
-        You gain Unarmed Fighting as a bonus feat, making your proficient with your unarmed attack (see \featpcref{Unarmed Fighting}).
-        In addition, you increase the damage of your unarmed attacks by two increments (see \pcref{Weapon Size}).
-        For example, a Medium monk would deal 1d6 damage with your unarmed attack.
-        For details about how to fight while unarmed, see \pcref{Unarmed Combat}.
+            At 4th level, and every three levels thereafter, you gain an additional ki manifestation.
 
-        \cf{Mnk}[2nd]{Manifest Ki}[Mag]
-        The monk gains the ability to channel your \ki energy to temporarily enhance your abilities.
-        She chooses one \ki manifestation from the list below.
+            \subcf{Elegant Whirl of Fluid Motion}
+            You gain a \plus10 bonus to Acrobatics checks until the end of the round.
+            \subcf{Leap of the Heavens}
+            You gain a \plus10 bonus to Jump checks until the end of the round.
+            \subcf{Scale the Highest Tower}
+            You gain a \plus10 bonus to Climb checks until the end of the round.
 
-        Using a \ki manifestation costs a \ki point.
-        The monk has a number of \ki points equal to your Willpower or your monk level, whichever is higher.
-        \Ki points can be recovered by meditation.
-        If the monk meditates for 1 hour, you recover all spent \ki points.
+            \subcf{4th -- Dance of Falling Feathers}
+            If you are in free-fall, your fall is dramatically slowed.
+            You fall only 60 feet this round, and take no falling damage if you hit the ground.
+            \subcf{4th -- Fists of Distant Force}
+            You empower your unarmed attacks with \ki, allowing you to strike distant foes.
+            Until the end of the round, you gain an additional ten feet of \glossterm{reach} with your unarmed attacks, extending your \textit{threatened area}.
 
-        Some \ki manifestations have minimum monk levels, as indicated in the title of the power.
-        At your 4th monk level, and every even monk level thereafter, the monk learns an additional \ki manifestation.
+            \subcf{7th -- Burst of Blinding Speed}
+            You gain a \plus30 foot bonus to your land speed, up to a maximum of double your original speed, until the end of the round.
+            In addition, you cannot be followed until the end of the round (see \pcref{Follow}).
+            \subcf{7th -- See the Flow of Life}
+            You gain the ability to see the \ki of living creatures until the end of the round.
+            You can ``see'' any living creatures and their equipment within 50 feet perfectly, regardless of lighting conditions, invisibility, or any other means of concealment.
+            This cannot detect living creatures through solid walls, however.
+            \subcf{7th -- Surpass the Mortal Limits}
+            Until the end of the round, you may use your \textit{ki power} in place of your Strength, Dexterity, and Constitution when making checks.
 
-        Some \ki manifestations have the effects of spells.
-        Unless otherwise noted, the monk's effective spellpower with these abilities is equal to your \ki power.
+            \subcf{11th -- Diamond Fists}
+            You gain a \plus2d bonus to damage with your unarmed attacks until the end of the round.
+            In addition, you treat your unarmed strike as if it were an adamantine weapon for the purpose of overcoming damage reduction and hardness.
+            \subcf{11th -- Flash Step}
+            Until the end of the round, whenever you move, you teleport directly to your destination instead.
+            This does not change the total distance you can move, but you can teleport in any direction, even vertically.
+            If your \glossterm{line of effect} to your destination is blocked, or if this would somehow place you inside a solid object, your movement is cancelled and you remain where you are.
+            You can teleport in multiple steps within the same movement to get around obstacles you see.
 
-        \subcf{Elegant Whirl of Fluid Motion}
-        As a swift action, the monk can gain a \plus20 bonus to Acrobatics checks until the end of the round.
-        \subcf{Leap of the Heavens}
-        As a swift action, the monk can gain a \plus20 bonus to Jump checks until the end of the round.
-        \subcf{Scale the Highest Tower}
-        As a swift action, the monk can gain a \plus20 bonus to Climb checks until the end of the round.
-        \subcf{4th -- Dance of Falling Feathers}
-        As an immediate action, when the monk begins falling, she can gain the benefits of the \spell{feather fall} spell.
-        \subcf{4th -- Fists of Distant Force}
-        As a swift action, the monk can empower your unarmed attacks with \ki, allowing you to strike distant foes.
-        Until the end of the round, you gain an additional ten feet of reach with your unarmed attacks, extending your threatened area.
-        \subcf{6th -- Burst of Blinding Speed}
-        As a swift action, the monk can gain a \plus30 foot bonus to your land speed, up to a maximum of double your original speed.
-        In addition, she cannot be followed until the end of the round.
-        \subcf{6th -- Dance of the Wayward Strike}
-        As an immediate action, when a foe misses the monk with a melee strike, the monk can redirect the strike.
-        Both the foe and the monk must threaten a third creature.
-        If the monk redirects the strike, the foe rolls the same attack against the third creature.
-        \subcf{6th -- Surpass the Mortal Limits}
-        As a swift action, the monk can surpass the physical limitations of your body.
-        Until the end of the round, she may use your \ki power in place of your Strength, Dexterity, and Constitution when making checks.
-        \subcf{8th -- Flash Step}
-        As a swift action during the movement phase, the monk can teleport to anywhere she can see within 30 feet.
-        If your line of effect is blocked, even by an invisible barrier, or if this would somehow place your inside a solid object, the ability fails.
-        \subcf{8th -- Focus the Wayward Mind}
-        As a swift action, the monk can dispel all \glossterm{Mind} effects that are affecting your.
-        This has no effect on Mind effects that cannot be dispelled.
-        \subcf{8th -- Ki-Disrupting Strike}
-        As an immediate action, when the monk hits with a melee strike, she can make the struck creature \impaired with attacks and checks for 2 rounds.
-        \subcf{8th -- See the Flow of Life}
-        As a swift action, the monk can gain the ability to see the \ki of living creatures until the end of the round.
-        She can ``see'' any living creatures and their equipment within 50 feet perfectly, regardless of lighting conditions, invisibility, or any other means of concealment.
-        This cannot detect living creatures through solid walls, however.
-        \subcf{10th -- Dance of the Foolish Blow}
-        This \ki manifestation functions as the \textit{dance of the wayward strike} manifestation, except that it can affect any melee attack, not just a single strike.
-        The monk must have the \textit{dance of the wayward strike} \ki manifestation to learn this manifestation.
-        \subcf{12th -- Diamond Fists}
-        As a swift action, the monk can empower your unarmed attacks with incredible force.
-        Until the end of the round, she may use your \ki power in place of your normal modifiers to physical damage with your unarmed attacks.
-        In addition, you treat your unarmed strike as if it were an adamantine weapon for the purpose of overcoming damage reduction and hardness.
-        \subcf{12th -- Stunning Fist}
-        As an immediate action, when the monk deals damage with an unarmed melee strike, she can make a \Ki power vs. Fortitude attack against the struck creature.
-        Success means the target is \staggered for 2 rounds.
-        Critical success means the target is \stunned for 2 rounds.
-        \norepeatnotes
-        \subcf{14th -- Awaken the Pacifist Heart}
-        As an immediate action, when the monk hits with a melee strike, she can make a \Ki power vs. Mental attack against the struck creature.
-        Success means the target is unable to take violent actions, such as attacking, for 2 rounds.
-        If the target takes damage after the current round, the effect is broken.
-        \subcf{16th -- Flash Burst}
-        As a swift action during the movement phase, the monk can teleport to anywhere within 1,000 feet.
-        She must clearly visualize the destination, but you doe not need line of sight or line of effect.
-        If the destination is occupied, or dramatically different from how she visualized it, the effect fails.
-        \subcf{20th -- Ki-Shattering Strike}
-        As an immediate action, when the monk hits with a melee strike, she can disrupt your foe's \ki.
-        The target is \severelyimpaired with attacks and checks for 2 rounds.
+            \subcf{14th -- Awaken the Pacifist Heart}
+            As an immediate action, when you hit with a melee strike, she can make a \Ki power vs. Mental attack against the struck creature.
+            Success means the target is unable to take violent actions, such as attacking, for 2 rounds.
+            If the target takes damage after the current round, the effect is broken.
 
-        \cf{Mnk}[3rd]{Wholeness of Body}[Mag]
-        With concentration and focus, the monk can correct the flow of energy within your body.
-        She can use this ability as a standard action by spending a \ki point, or with one minute of meditation otherwise.
-        If you doe, you heal 1d6 hit points per \ki power.
+            \subcf{17th -- Flash Burst}
+            This ability functions like this \textit{flash step} ability, except that your movement speed is also increased tenfold.
 
-        \cf{Mnk}[3rd]{Uncanny Dodge}
-        The monk can react to danger before your senses would normally allow your to do so.
-        The monk reduces your overwhelm penalties by 1.
-        If your overwhelm penalty is reduced to 0, you are not considered to be overwhelmed.
-        In addition, you are not \unaware when attacked by surprise.
+        \subsubsection{Unfettered Warrior}
+            \cf{Mnk}{Unarmed Warrior}
+            You are \glossterm{proficient} with your \glossterm{unarmed attack}.
+            In addition, you gain a \plus2d bonus to damage with your unarmed attack.
+            For details about how to fight while unarmed, see \pcref{Unarmed Combat}.
 
-        \cf{Mnk}[5th]{Flurry of Blows}\label{Flurry of Blows}
-        As a standard action, the monk can spend a \ki point to unleash a furious barrage of blows.
-        She can make a \glossterm{standard attack} with an extra \glossterm{strike}.
-        Alternately, she can choose to make one \glossterm{strike} against all foes you threaten.
+            \cf{Mnk}{Unfettered Defense}[Mag]
+            When \monkunencumbered, you gain a \plus2 bonus to Armor defense.
+            You lose this bonus when you are \helpless.
 
-        \cf{Mnk}[7th]{Perfect Motion}[Mag]
-        The monk becomes immune to effects that restrict your mobility.
-        She suffers no penalties for acting underwater.
-        In addition, you gain a \plus20 bonus to Reflex defense against grapple attacks, as well as on grapple attacks or Escape Artist checks made to escape a grapple or a pin.
+            \cf{Mnk}[2]{Flurry of Blows} As a standard action, you can use this ability.
+            \begin{ability}
+                \begin{spelleffects}
+                    \spelleffect Make an unarmed \glossterm{strike}.
+                    You may roll the attack roll twice and take the result you prefer.
+                \end{spelleffects}
+            \end{ability}
 
-        \cf{Mnk}[9th]{Improved Uncanny Dodge}
-        The monk reduces your overwhelm penalties by 2.
-        This does not stack with the effects of uncanny dodge.
-        If your overwhelm penalty is reduced to 0, you are not considered to be overwhelmed.
+            \cf{Mnk}[5]{Intuitive Reaction} You can react to danger before your senses would normally allow you to do so.
+            You reduce your \glossterm{overwhelm penalties} by 1.
+            If your overwhelm penalty is reduced to 0, you are not considered to be overwhelmed.
+            In addition, you are not \unaware when attacked by surprise.
 
-        \cf{Mnk}[9th]{Perfect Soul}[Mag]
-        The monk gains \glossterm{magic resistance} equal to 10 \add your \ki power.
+            \cf{Mnk}[8]{Stunning Fist} As a standard action, you can spend an \glossterm{action point} to use this ability.
+            \begin{ability}
+                \begin{spelleffects}
+                    % TODO this wording is ugly
+                    \spelleffect Make an unarmed \glossterm{strike}.
+                    If you deal damage to the creature, it is \dazed.
+                    If you deal damage with a \glossterm{critical hit}, the target is \stunned instead.
+                    \spelldur Condition
+                \end{spelleffects}
+            \end{ability}
 
-        \cf{Mnk}[11th]{Flow of Life}[Mag]
-        At the end of each round, the monk heals hit points equal to your \ki power.
+            \cf{Mnk}[11]{Greater Intuitive Reaction}
+            Your reduction of \glossterm{overwhelm penalties} from the \textit{uncanny dodge} ability increases to 2.
 
-        \cf{Mnk}[13th]{Perfect Mind}[Mag]
-        The monk becomes immune to hostile \glossterm{Mind} effects.
+            \cf{Mnk}[14]{Greater Flurry of Blows}
+            When you use your \textit{flurry of blows} ability, you may make the \glossterm{strike} with any melee weapon you wield, rather than only your unarmed attack.
 
-        \cf{Mnk}[15th]{Perfect Body}[Mag]
-        The monk becomes immune to being blinded, deafened, fatigued, exhausted, nauseated, sickened, and staggered.
-        In addition, she no longer takes penalties to your attribute scores for aging, and cannot be magically aged.
-        The monk still dies of old age when your time is up.
+            \cf{Mnk}[17]{Greater Unfettered Defense}
+            Your bonus to Armor defense from your \textit{unfettered defense} ability improves to \plus3.
 
-        \cf{Mnk}[17th]{Perfect Life}[Mag]
-        At the end of each round, the monk heals hit points equal to twice your \ki power.
-        This replaces the benefit from your flow of life ability.
-        If you ha taken vital damage, she instead heals vital damage equal to half your \ki power.
-        In addition, you become immune to \glossterm{Death} effects.
+        \subsubsection{Transcendent Sage}
+            \cf{Mnk}[3]{Mental Reserves} You gain an additional \glossterm{action point}.
+            As long as you have at least one action point remaining, you gain a \plus2 bonus to Mental defense.
 
-        \cf{Mnk}[19th]{True Perfection}[Mag]
-        The monk becomes inhumanly perfect.
-        If you roll less than a 5 on any d20 roll, it is treated as a 5.
+            \cf{Mnk}[6]{Transcend Frailty}
+            You are immune to being \glossterm{deafened}, \glossterm{fatigued}, and \glossterm{sickened}.
 
-        \cf{Mnk}[20th]{Transcend Mortality}[Mag]
-        If the monk dies, she may choose to retain control of your body and soul through sheer force of will.
-        Your body immediately disappears, and your soul does not travel to an afterlife.
-        Instead, your body reforms with no trace of its injuries 24 hours later.
-        The reformed body is in perfect health and can be any age the monk chooses, to a minimum of the age of adulthood for your race.
-        She can reform your body at the place where she died, or in any place on the same plane that is deeply familiar to your.
+            \cf{Mnk}[9]{Serenity}[Mag]
+            You are immune to \glossterm{Mind} \glossterm{conditions}.
 
-        After each time the monk reforms herself this way, it takes 24 additional hours to reform the next time she ``dies''.
-        A monk with this ability can only be permanently killed by the direct intervention of a deity.
+            \cf{Mnk}[12]{Transcend Flesh}
+            You are immune to being \glossterm{blinded}, \glossterm{exhausted}, and \glossterm{nauseated}.
+            % TODO: do you still take aging penalties?
+            In addition, you no longer take penalties to your attributes for aging, and cannot be magically aged.
+            You still die of old age when your time is up.
+
+            \cf{Mnk}[15]{Inner Peace}
+            You are immune to all hostile \glossterm{Mind} effects.
+
+            \cf{Mnk}[18]{Transcend Limits}
+            Whenever you spend your last \glossterm{action point}, you regain a spent action point at the end of the next round.
+
+            \cf{Mnk}[20]{Transcend Mortality}[Mag]
+            If you die, you may choose to retain control of your body and soul through sheer force of will.
+            Your body immediately disappears, and your soul does not travel to an afterlife.
+            Instead, your body reforms with no trace of its injuries 24 hours later.
+            The reformed body is in perfect health and can be any age you choose, to a minimum of the age of adulthood for your race.
+            You can reform your body at the place where you died, or in any place on the same plane that is deeply familiar to you.
+
+            After each time you reform herself this way, it takes 24 additional hours to reform the next time she ``dies''.
+            A monk with this ability can only be permanently killed by the direct intervention of a deity.
 
         \subsubsection{Ex-Monks}
-            A monk who becomes chaotic loses your \ki powers, and cannot gain more levels as a monk.
-            She retains all your other class abilities.
-            If you stop being chaotic, you regain your \ki powers and ability to take monk levels.
+            % TODO: this wording is repetitive
+            If you become chaotic, you lose all of your \glossterm{magical} monk abilities.
+            If you stop being chaotic, you regain your magical monk abilities.
 
 \section{Paladin}\label{Paladin}
     \begin{dtable}
@@ -1810,7 +1786,7 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 5.
 
-        \classbasics{Defenses} \plus4 Fortitude, \plus4 Mental.
+        \classbasics{Defenses} \plus3 Fortitude, \plus2 Mental, \plus1 Reflex.
 
         \classbasics{Action Points} \plus2.
 
@@ -2107,7 +2083,7 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 15.
 
-        \classbasics{Defenses} \plus4 Fortitude, \plus4 Reflex, \plus2 Mental.
+        \classbasics{Defenses} \plus3 Reflex, \plus2 Fortitude, \plus1 Mental.
 
         \classbasics{Action Points} \plus1.
 
@@ -2304,7 +2280,7 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 15.
 
-        \classbasics{Defenses} \plus4 Reflex, \plus2 Mental.
+        \classbasics{Defenses} \plus3 Reflex, \plus2 Mental, \plus1 Fortitude.
 
         \classbasics{Action Points} \plus2.
 
@@ -2511,7 +2487,7 @@ This choice determines a great deal about your character's abilities.
 
         \classbasics{Skill Points} 5.
 
-        \classbasics{Defenses} \plus4 to one defense, \plus2 to other defenses (see the Innate Magic ability, below).
+        \classbasics{Defenses} See the Innate Magic ability below.
 
         \classbasics{Action Points} \plus3.
 
