@@ -888,10 +888,12 @@
 {
     \IfValueTF{#1}
     {
-        \hyperlink{gloss:#1}{\textbf{#2}}
+        % TODO: remove \mbox before making major releases;
+        % it fixes bizarre page break errors but makes text uglier
+        \hyperlink{gloss:#1}{\textbf{\mbox{#2}}}
     }
     {
-        \hyperlink{gloss:#2}{\textbf{#2}}
+        \hyperlink{gloss:#2}{\textbf{\mbox{#2}}}
     }
 }
 
