@@ -1976,7 +1976,7 @@ def generate_spells():
                 level=4,
                 name="Blinding",
                 description="""
-                    The spell's critical effect makes the target \\blind as a condition, rather than just for one round.
+                    The spell's critical effect makes the target \\blinded as a condition, rather than just for one round.
                     In addition, the blindness replaces the spell's normal success effect, rather than being applied in addition to it.
                 """,
             ),
