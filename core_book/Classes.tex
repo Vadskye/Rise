@@ -144,7 +144,7 @@ This choice determines a great deal about your character's abilities.
             You are immune to \glossterm{Mind} \glossterm{conditions} while raging.
 
             \cf{Bbn}[13]{Mighty Rage}
-            Your damage bonus while raging increases to \plus2d.
+            Your damage bonus from the \textit{rage} ability increases to \plus2d.
 
             \cf{Bbn}[16]{Mindless Rage} 
             You are immune to all hostile \glossterm{Mind} effects while raging.
@@ -157,14 +157,14 @@ This choice determines a great deal about your character's abilities.
             However, if your vital damage exceeds your maximum hit points, you immediately die.
 
         \subsubsection{Primal Warrior}
-            \cf{Bbn}{Athletic Prowess} You gain two additional skill points that must be spent on Strength or Dexterity-based skills.
+            \cf{Bbn}{Athletic Prowess} You gain two additional skill points that must be spent on Strength or Dexterity-based barbarian class skills.
 
             \cf{Bbn}[3]{Improvised Combat} You gain a \plus1 bonus to accuracy with \glossterm{combat maneuvers}.
 
             \cf{Bbn}[6]{Titanic Might}
             You gain a \plus1d bonus to damage with \glossterm{strikes}.
 
-            \cf{Bbn}[9]{Athletic Prowess} You gain two additional skill points that must be spent on Strength or Dexterity-based skills.
+            \cf{Bbn}[9]{Athletic Prowess} You gain two additional skill points that must be spent on Strength or Dexterity-based barbarian class skills.
 
             \cf{Bbn}[12]{Greater Improvised Combat} 
             The accuracy bonus from your \textit{improvised combat} ability increases to \plus2.
@@ -893,7 +893,7 @@ This choice determines a great deal about your character's abilities.
             \end{ability}
 
             \cf{Drd}[2]{Natural Lore}
-            You gain two extra skill points which must be spent on the Creature Handling, Heal, Knowledge (geography), Knowledge (nature), Ride, Survival skills.
+            You gain two extra skill points which must be spent on the Creature Handling, Heal, Knowledge (geography), Knowledge (nature), Ride, or Survival skills.
 
             \cf{Drd}[3]{Wild Aspect}[Magical]
             You gain the ability to embody an aspect of an animal or of nature itself.
@@ -1760,7 +1760,7 @@ This choice determines a great deal about your character's abilities.
     \subsection{Base Class Abilities}
         If you choose paladin as a base class, you gain the following abilities.
 
-        \classbasics{Skill Points} 5.
+        \classbasics{Skill Points} 4.
 
         \classbasics{Defenses} \plus3 Fortitude, \plus2 Mental, \plus1 Reflex.
 
@@ -1936,6 +1936,30 @@ This choice determines a great deal about your character's abilities.
 \section{Ranger}\label{Ranger}
     \begin{dtable}
         \lcaption{Ranger Progression}
+        \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\lcol}X}
+            \tb{Level} & \tb{Special} \\\bottomrule
+            \nth{1}     & Keen vision, quarry
+            \\ \nth{2}  & Learned perception, tracker
+            \\ \nth{3}  & Wilderness lore
+            \\ \nth{4}  & Hunting style
+            \\ \nth{5}  & Blindsense
+            \\ \nth{6}  & Survival of the fittest
+            \\ \nth{7}  & Learned pursuit
+            \\ \nth{8}  & Farsight
+            \\ \nth{9}  & Wilderness lore
+            \\ \nth{10} & Hunting style
+            \\ \nth{11} & Blindsight
+            \\ \nth{12} & 
+            \\ \nth{13} & Lethal quarry
+            \\ \nth{14} & Greater farsight
+            \\ \nth{15} & 
+            \\ \nth{16} & Hunting style
+            \\ \nth{17} & Truesight
+            \\ \nth{18} & 
+            \\ \nth{19} & 
+            \\ \nth{20} & 
+        \end{dtabularx}
+
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} c >{\lcol}X}
             \tb{Level} & \tb{Quarry} & \tb{Special} \\
             \bottomrule
@@ -1972,9 +1996,9 @@ This choice determines a great deal about your character's abilities.
     \subparhead{Other} Bluff, Intimidate, Persuasion.
 
     \subsection{Base Class Abilities}
-        A character with ranger as a base class gains the following abilities.
+        If you choose ranger as a base class, you gain the following abilities.
 
-        \classbasics{Skill Points} 15.
+        \classbasics{Skill Points} 8.
 
         \classbasics{Defenses} \plus3 Reflex, \plus2 Fortitude, \plus1 Mental.
 
@@ -1994,141 +2018,137 @@ This choice determines a great deal about your character's abilities.
         A ranger can use this ability a number of times per day equal to your Perception or half your ranger level, whichever is higher.
 
     \subsection{Class Abilities}
-        All rangers have the following abilities.
+        If you are a ranger, you have the following abilities.
 
-        \cf{Rgr}{Quarry}
-        As a swift action, a ranger may designate any foe he sees as your quarry.
-        A ranger gains a \plus2 bonus to damage with physical attacks and Awareness, Stealth, and Survival checks against your quarry.
-        However, while a ranger has designated a quarry, he takes a \minus2 penalty on the same rolls against any target other than your quarry.
+        \subsubsection{Keen Senses}
+            \cf{Rgr}{Keen Vision}
+            Your sight improves, allowing you to see more easily.
+            You gain \glossterm{low-light vision}, allowing you to treat sources of light as if they had double their normal illumination range.
+            If you already have low-light vision, he double its benefit, allowing you to treat sources of light as if they had four times their normal illumination range.
 
-        A ranger may not normally have more than one quarry at once.
-        He may not designate a new quarry until you defeat your old quarry, or until he gives up on the quarry.
-        He may give up pursuing a quarry as a free action.
-        If you do, you are unable to designate a new quarry until he rests for 5 minutes.
+            In addition, you gain \glossterm{darkvision} out to 50 feet, allowing you to see in complete darkness.
+            If you already have darkvision, you increase its range by 50 feet.
 
-        Some abilities allow the ranger to designate multiple creatures as a quarry.
-        Abilities which designate multiple creatures as a quarry always last for a specific amount of time.
+            \cf{Rgr}[2]{Learned Perception} You gain two skill points that must be spent on Perception-based ranger class skills.
 
-        If the ranger does not see your quarry for more than a week, it is no longer considered your quarry.
+            \cf{Rgr}[5]{Blindsense}
+            Your perceptions are so finely honed that you can sense your enemies without seeing them.
+            You gain the \glossterm{blindsense} ability out to 50 feet.
+            This ability allows you to sense the presence and location of objects and foes within 50 feet without seeing them.
+            If you already have the blindsense ability, you increase its range by 50 feet.
 
-        The amount by which a ranger's damage and skill checks increase against your quarry is called your quarry bonus.
-        The ranger's quarry bonus improves by \plus1 at your 5th ranger level and every 5 ranger levels thereafter.
-        Your penalties against targets other than your quarry remains the same.
+            \cf{Rgr}[8]{Farsight}
+            You increase the range of your \glossterm{darkvision} by 150 feet, and your \glossterm{blindsense} by 50 feet.
+            In addition, you reduce your \glossterm{range increment penalties} for attacking at long range by 2.
 
-        \cf{Rgr}[2]{Hunting Skill}
-        The ranger gains any Skill feat with prerequisites that include one of the ranger class skills as a bonus feat.
-        He must use your ranger level in place of your character level to meet level prerequisites for the feat.
-        At your 6th ranger level, and every 4 ranger levels thereafter, you gain an additional feat.
+            \cf{Rgr}[11]{Blindsight}
+            You gain the \glossterm{blindsight} ability, allowing you to ``see'' perfectly without your eyes in a 50 foot radius around you.
+            With this ability, you can fight just as well with your eyes closed as with them open.
 
-        \cf{Rgr}[2]{Tracker}
-        The ranger gains a \plus5 bonus to checks made to follow tracks.
-        In addition, he may use your ranger level in place of the Survival skill to follow tracks (see \pcref{Survival}).
+            \cf{Rgr}[14]{Greater Farsight}
+            You increase the range of your \glossterm{darkvision} by 500 feet, your \glossterm{blindsense} by 200 feet, and your \glossterm{blindsight} by 50 feet.
+            In addition, the penalty reduction for \glossterm{range increment penalties} from your \textit{farsight} ability increases to 5.
 
-        \cf{Rgr}[4]{Hunting Lore}
-        The ranger gains an ability drawn from ancient hunting lore.
-        He chooses a single hunting lore from the list below.
-        Some hunting lores have minimum ranger levels, as indicated in the title of the ability.
-        At your 8th ranger level, and every four ranger levels thereafter, the ranger gains an additional hunting lore.
+            \cf{Rgr}[17]{Truesight} 
+            Your perceptions are accurate enough to defeat even powerful magic.
+            You can see through normal and magical darkness, see the truth behind visual figments and glamers, and see the true form of creatures and objects affected by \glossterm{Shaping} abilities.
+            This ability works at any range.
 
-        If a hunting lore grants the ranger a bonus feat, he must still meet any prerequisites for the feat to gain its effect.
+        \subsubsection{Wilderness Warrior}
+            \cf{Rgr}[3]{Wilderness Lore} You gain two extra skill points which must be spent on the Creature Handling, Heal, Knowledge (geography), Knowledge (nature), Ride, or Survival skills.
 
-        \subcf{Dual Quarry}
-        The ranger may designate up to two targets whenever he chooses a quarry.
-        You gain your quarry benefits against both targets.
-        Whenever he designates new quarries, he may choose which previous quarry to give up (if any).
+            \cf{Rgr}[6]{Survival of the Fittest}
+            You gain a \plus1d bonus to damage with \glossterm{strikes}.
 
-        \subcf{Endurance}
-        The ranger gains the Endurance feat as a bonus feat (see \featpcref{Endurance}).
+            \cf{Rgr}[9]{Wilderness Lore} You gain two extra skill points which must be spent on the Creature Handling, Heal, Knowledge (geography), Knowledge (nature), Ride, or Survival skills.
 
-        \subcf{Goading Hunter}
-        Whenever the ranger damages your quarry with a physical attack, it is \goaded by you for 2 rounds.
+            \cf{Rgr}[12]{} 
 
-        \subcf{No Escape}
-        Whenever the ranger damages your quarry with a physical attack, it moves at half speed for 2 rounds.
+        \subsubsection{Focused Hunter}
 
-        \subcf{Swift Hunter}
-        The ranger gains the Swift feat as a bonus feat (see \featpcref{Swift}).
+            \cf{Rgr}{Quarry}
+            As a \glossterm{swift action}, you can use this ability.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellquicktargeting{One creature}{\rnglong}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \spelleffect You gain a \plus2 bonus to checks made to follow the target's tracks, and a \plus1d bonus to damage on \glossterm{strikes} against the target.
+                    This ability lasts the target is \glossterm{defeated}, or until you use this ability again.
+                \end{spelleffects}
+            \end{ability}
 
-        \subcf{8th -- Anchored Quarry}
-        Whenever the ranger damages your quarry with a physical attack, it cannot travel extradimensionally for 2 rounds.
-        This blocks teleportation and all planar travel abilities except planar rifts.
+            \cf{Rgr}[2]{Tracker}
+            You gain a \plus5 bonus to checks made to follow tracks.
+            In addition, you may use your level in place of the Survival skill to follow tracks (see \pcref{Survival}).
 
-        \subcf{8th -- Flexible Quarry}
-        After giving up on a quarry, the ranger does not need to wait before designating a new quarry.
+            \cf{Rgr}[4]{Hunting Style}
+            You learn specific hunting styles to defeat particular quarries.
+            Choose two hunting styles from the list below.
+            Many hunting styles have a minimum level prerequisite, as indicated in the title of the ability.
 
-        \subcf{8th -- Impaired Quarry}
-        Whenever the ranger damages your quarry with a physical attack, it is \impaired with attacks and checks for 2 rounds.
+            Whenever you use your \textit{quarry} ability, you can also gain the benefit of one hunting style you know.
 
-        \subcf{12th -- Inescapable}
-        Whenever the ranger damages your quarry with a physical attack, it moves at one-quarter speed as long as it remains your quarry.
+            \subcf{Executioner}
+            % TODO: clarify timing
+            Whenever you deal damage to your quarry, any damage in excess of its remaining hit points is dealt as \glossterm{vital damage}.
 
-        \subcf{12th -- Inevitable Hunter}
-        The ranger ignores all miss chances and failure chances that would affect attacks and checks he makes against your quarry.
+            \subcf{Fearsome}
+            Your quarry is \shaken by you as long as it remains your quarry.
+            This is a \glossterm{Delusion}, \glossterm{Mind} effect.
 
-        \subcf{12th -- Punishing Presence}
-        At the end of each round, if the ranger's quarry is within \rnglong range of you, it takes life damage equal to your ranger level.
+            \subcf{Goading}
+            Your quarry is \goaded by you as long as it remains your quarry.
+            This is a \glossterm{Delusion}, \glossterm{Mind} effect.
 
-        \subcf{16th -- Legendary Hunter}
-        The ranger may always use legend points on attacks or checks he makes against your quarry, even when fighting monsters that normally prevent legend points from being used.
+            \subcf{Inescapable}
+            Whenever you deal damage to your quarry, its movement speed is halved until the end of the next round.
 
-        \subcf{16th -- Master of the Hunt}
-        When the ranger uses your quarry ability, he may also designate up to five willing creatures within \rnglong range of you.
-        As long as they stay within \rnglong range of you, they also gain the damage bonus from the ranger's quarry ability against your quarry.
-        Your allies do not suffer penalties against targets other than the quarry.
+            \subcf{Persistent}
+            Your quarry remains your quarry even after you use the \textit{quarry} ability again.
+            It remains your quarry until you use this ability again.
 
-        \cf{Rgr}[3]{Free Stride}
-        The ranger can move through any sort of natural terrain that slows or impedes movement at your normal speed without suffering any sort of impairment.
-        If a skill check, such as Climb or Swim, would normally be required to move through the terrain, this ability does not help.
+            \subcf{10th -- Anchored}[Magical]
+            Whenever you deal damage to your quarry, it cannot travel extradimensionally until the end of the next round.
+            This blocks teleportation and all planar travel abilities except planar rifts.
 
-        \cf{Rgr}[3]{Keen Vision}
-        The ranger's sight improves, allowing you to see more easily.
-        You gain \glossterm{low-light vision}, allowing you to treat sources of light as if they had double their normal illumination range.
-        If he already has low-light vision, he doubles its benefit, allowing you to treat sources of light as if they had four times their normal illumination range.
-        In addition, you gain \glossterm{darkvision} out to 50 feet, allowing you to see in complete darkness.
-        If he already has darkvision, he increases its range by 50 feet.
+            \subcf{10th -- Leeching}
+            Whenever you deal damage to your quarry, you heal hit points equal to your level.
 
-        \cf{Rgr}[5]{Rapid Tracker}
-        The ranger's ability to track your foes improves.
-        He can move at your normal speed while following tracks without taking the normal \minus5 penalty.
-        He takes only a \minus10 penalty (instead of the normal \minus20) when moving at up to twice normal speed while tracking.
+            \subcf{10th -- Punishing}[Magical]
+            At the end of each round, if your quarry is within \rnglong range of you, it takes life damage equal to your level.
 
-        \cf{Rgr}[7]{Blindsense}
-        The ranger's perceptions are so finely honed that he can sense your enemies without seeing them.
-        You gain the blindsense ability out to 50 feet.
-        This ability allows you to sense the presence and location of objects and foes within 50 feet without seeing them.
-        If he already has the blindsense ability, he increases its range by 50 feet.
+            \subcf{10th -- Unerring}
+            You ignore all miss chances and failure chances that would affect attacks and checks you make against your quarry.
 
-        In addition, he increases the range of your darkvision by 150 feet.
+            \subcf{10th -- Wolfpack}
+            If your quarry is \glossterm{overwhelmed}, it increases its \glossterm{overwhelm penalties} by 1.
 
-        \cf{Rgr}[9]{Perfect Stride}[Mag]
-        The ranger's ability to surpass obstacles becomes unparalleled.
-        He constantly acts as if he were under the effect of a \spell{freedom} spell, except that it does not allow you to act normally underwater.
+            \subcf{16th -- Greater Anchored}[Magical]
+            Your quarry cannot travel extradimensionally.
+            This blocks teleportation and all planar travel abilities except planar rifts.
 
-        \cf{Rgr}[11]{Blindsight}
-        The ranger gains the \glossterm{blindsight} ability, allowing you to ``see'' perfectly without your eyes in a 50 foot radius around you.
-        With this ability, he can fight just as well with your eyes closed as with them open.
-        If he already has the blindsight ability, he increases its range by 50 feet.
+            \subcf{16th -- Master of the Hunt}
+            Your quarry takes a \minus2 penalty to defenses against attacks from creatures other than you.
 
-        In addition, he increases the range of your darkvision by 300 feet, and your blindsense by 150 feet.
+            \subcf{16th -- Taunting}
+            Your quarry is \taunted by you as long as it remains your quarry.
+            This is a \glossterm{Delusion}, \glossterm{Mind} effect.
 
-        \cf{Rgr}[13]{Implacable Hunter}[Mag]
-        The ranger cannot be blocked from pursuing your quarry.
-        Your movement is not slowed by enemies threatening you (see \pcref{Moving Near Foes}).
-        In addition, he may move at half speed through spaces occupied by foes.
+            \subcf{16th -- Terrifying}
+            Your quarry is \frightened by you as long as it remains your quarry.
+            This is a \glossterm{Delusion}, \glossterm{Mind} effect.
 
-        \cf{Rgr}[15]{Farsight}
-        The ranger increases the range of your darkvision by 500 feet, your blindsense by 300 feet, and your blindsight by 50 feet.
-        In addition, you halve your \glossterm{range increment penalties} for attacking at long range.
+            \cf{Rgr}[7]{Learned Pursuit} You gain two extra skill points which must be spent on Strength or Dexterity-based ranger class skills.
 
-        \cf{Rgr}[17]{Eternal Quarry}
-        The ranger's quarry never stops being your quarry until he chooses a different creature.
-        In addition, once he has designated a creature as a quarry, he can always designate it as a quarry again, even if it is not in your sight.
-        This only applies to creatures that he designates as a quarry after acquiring this ability.
+            \cf{Rgr}[10]{Hunting Style}
+            You learn an additional \textit{hunting style}.
 
-        \cf{Rgr}[19]{Truesight}[Mag]
-        The ranger's perceptions are accurate enough to defeat even powerful magic.
-        He can see through normal and magical darkness, see the truth behind visual figments and glamers, and see the true form of creatures and objects affected by \glossterm{Shaping} abilities.
-        This ability works at any range.
+            \cf{Rgr}[13]{Lethal Quarry}
+            Your damage bonus from the \textit{quarry} ability increases to \plus2d.
+
+            \cf{Rgr}[16]{Hunting Style}
+            You learn an additional \textit{hunting style}.
 
 \section{Rogue}\label{Rogue}
     \begin{dtable}
