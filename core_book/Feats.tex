@@ -433,8 +433,10 @@ Feats can be used to specialize your character particular area, to grant your ch
                 \spellspecial Choose one or two melee weapons you are wielding that deal slashing or bludgeoning damage.
             \end{spelltargetinginfo}
             \begin{spelleffects}
-                \spelleffect You make a melee \glossterm{strike} against the target with the chosen weapon or weapons.
-                You take a \minus1d penalty to damage with the strike.
+                \begin{spellattack}{Physical vs. Armor}
+                    \spellsuccess The target takes \glossterm{strike damage} from the chosen weapon with a \minus1d penalty (see \pcref{Strike Damage}).
+                    \spellcritical As above, but the target takes double damage.
+                \end{spellattack}
             \end{spelleffects}
         \end{ability}
 
@@ -1725,6 +1727,11 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[4]{Trackless} You can choose to leave no trace of your passage as you move.
         If you do, tracking you is impossible by any \glossterm{mundane} means.
+
+        \ff[6]{Rapid Tracker} 
+        Your ability to track your foes improves.
+        You can move at your normal speed while following tracks without taking the normal \minus5 penalty.
+        In addition, you take only a \minus10 penalty (instead of the normal \minus20) when moving at up to twice normal speed while tracking.
 
         \ff[8]{Specialization} The bonus to Survival increases to \plus3.
 
