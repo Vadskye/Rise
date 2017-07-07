@@ -56,7 +56,9 @@ Feats can be used to specialize your character particular area, to grant your ch
         \featref{Toughness} & Con 2 & Increase physical fortitude & \tdash & \featpref{Toughness} \\
 
         \tb{Class Feats}\label{Class Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
-        \featref{All Energy Becomes One} & Monk base class, Con 2 & Absorb and redirect damage & Magical & \featpref{All Energy Becomes One} \\
+        \featref{All Energy Becomes One} & Monk class, Con 2 & Absorb and redirect damage & Magical & \featpref{All Energy Becomes One} \\
+        \featref{Class Versatility} & \tdash & Swap for abilities from additional class & \featpref{Class VersatilityClass Versatility} \\
+        \tind \featref{Class Dedication} & Class Versatility feat & Gain archetype from additional class & \featpref{} \\
 
         \tb{Skill Feats}\label{Skill Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
         \featref{Acrobatics Specialization} & Mastered Acrobatics & \tdash & \tdash & \featpref{Acrobatics Specialization} \\
@@ -64,7 +66,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \featref{Bardic Exemplar} & Perform Specialization & Mock foes and bolster allies with performances & Magical & \featpref{Bardic Exemplar} \\
         \featref{Bluff Specialization} & Mastered Bluff & \tdash & \tdash & \featpref{Bluff Specialization} \\
         \featref{Climb Specialization} & Mastered Climb & \tdash & \tdash & \featpref{Climb Specialization} \\
-        \featref{Craft Specialization} & prerequisites & \tdash & \tdash & \featpref{Craft Specialization} \\
+        \featref{Craft Specialization} & Mastered Creaft & \tdash & \tdash & \featpref{Craft Specialization} \\
         \featref{Creature Handling Specialization} & Mastered Creature Handling & \tdash & \tdash & \featpref{Creature Handling Specialization} \\
         \featref{Devices Specialization} & Mastered Devices & \tdash & \tdash & \featpref{Devices Specialization} \\
         \featref{Disguise Specialization} & Mastered Disguise & \tdash & \tdash & \featpref{Disguise Specialization} \\
@@ -192,7 +194,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     \end{feat}
 
     \begin{feat}{All Energy Becomes One}{Class, Magical}
-        \featpre Monk as a \glossterm{base class}, starting Constitution of 2.
+        \featpre Monk, starting Constitution of 2.
         \parhead{Benefits}
 
         \ff{Absorb Energy} Whenever you would take \glossterm{energy damage}, you can take an \glossterm{immediate action} to channel the energy into your body.
@@ -474,7 +476,28 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[16]{Whirlwind Sweep} When you use your \textit{sweeping strike} ability, you can target any number of contiguous squares you threaten.
 
         \ff[18]{Reap the Harvest} When you use your \textit{reaping charge} or and \textit{sweeping strike} abilities, if every creature you attacked is dead at the end of the round, you regain the action point spent to use the ability.
+    \end{feat}
 
+    \begin{feat}{Class Dedication}{Class}
+        \featpre Class Versatility feat.
+        \featben
+
+        \ff[1]{Additional Archetype} Choose an archetype from a class you have chosen with the \textit{additional class} ability of the Class Versatility feat (see \pcref{Class Versatility}).
+        You gain all abilities from that archetype.
+
+    \end{feat}
+
+    \begin{feat}{Class Versatility}{Class}
+        \featben
+
+        \ff[1]{Additional Class} Choose a class.
+        You gain the \glossterm{class skills} of that class in addition to your existing class skills.
+        You can exchange one class archetype from your class with one class archetype from that class.
+        You can also exchange any number of your basic class abilities, such as skill points or weapon proficiencies, for the corresponding abilities of that class.
+        If that class has any abilities which are not part of an archetype and do not have abilities of the same on other classes, such as a cleric's \textit{divine power}, you gain those abilities.
+
+        \ff[10]{Extraordinary Versatility} You can choose a third class with your \textit{additional class} ability.
+        
     \end{feat}
 
     \begin{feat}{Climb Specialization}{Skill}
