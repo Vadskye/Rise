@@ -10,12 +10,9 @@ This choice determines a great deal about your character's abilities.
     Each time your character gains a level, you can choose to increase your level in your original class or gain a level in a new class.
     This grants your character all of the abilities your chosen class grants at the level your character just gained in it.
 
-    \subsection{Base Classes}
-        Every character has one \glossterm{base class}.
-        You may choose any class your character has at least one level in as a base class.
-        Whenever your character gain a level, you can change its base class to a different class it has.
-        Your choice of base class affects your character's \glossterm{defenses}, \glossterm{skill points}, and \glossterm{class skills}.
-        In addition, every class grants additional abilities if it is chosen as a base class, as given in the class description.
+    \subsection{Archetypes}
+        Each class has three \glossterm{archetypes}.
+        Each archetype 
 
 \section{Class Introductions}
 
@@ -43,25 +40,23 @@ This choice determines a great deal about your character's abilities.
         Some classes require specific alignments (see \pcref{Alignment}).
         Most classes allow characters of any alignment.
 
+        \parhead{Skill Points}
+        This is the number of skill points that members of this class get.
+
         \parhead{Class Skills}
         These are skills that members of this class are typically good at (see \pcref{Skills}).
 
-        \subsubsection{Base Class Abilities}
-            Abilities contained within this heading only apply to characters with the current class as a \glossterm{base class}.
+        \parhead{Defenses}
+        Each class grants bonuses to specific defenses.
 
-            \parhead{Skill Points}
-            This is the number of skill points that members of this class get.
+        \parhead{Weapon and Armor Proficiencies}
+        These are the types of equipment that members of this class are trained in using.
 
-            \parhead{Defenses}
-            Each class grants bonuses to specific defenses.
-            These bonuses do not stack with other defense bonuses granted by base classes.
-            If a character has multiple base classes, use the highest bonuses that apply to each defense.
+        \parhead{Other Special Abilities}
+        Some classes have abilities shared by all members of the class that are not part of an archetype, such as a cleric's \textit{divine power}.
 
-            \parhead{Weapon and Armor Proficiencies}
-            These are the types of equipment that members of this class are trained in using.
-
-        \subsubsection{Class Abilities}
-            The class abilities that a character gets for being a member of the class.
+        \parhead{Archetypes}
+        The abilities associated with each of the three archetypes the class has.
 
 \section{Barbarian}\label{Barbarian}
     \begin{dtable}
@@ -93,28 +88,25 @@ This choice determines a great deal about your character's abilities.
 
     \classbasics{Alignment} Any nonlawful.
 
-    \classbasics{Class Skills}
-    \begin{itemize}
-        \item \subparhead{Strength} Climb, Jump, Sprint, Swim.
-        \item \subparhead{Dexterity} Acrobatics, Ride.
-        \item \subparhead{Perception} Awareness, Creature Handling, Survival.
-        \item \subparhead{Other} Bluff, Intimidate, Persuasion.
-    \end{itemize}
-
-    \subsection{Base Class Abilities}
-        If you choose barbarian as a base class, you gain the following abilities.
+    \subsection{Class Abilities}
+        If you are a barbarian, you gain the following abilities.
 
         \classbasics{Skill Points} 6.
+
+        \classbasics{Class Skills}
+        \begin{itemize}
+            \item \subparhead{Strength} Climb, Jump, Sprint, Swim.
+            \item \subparhead{Dexterity} Acrobatics, Ride.
+            \item \subparhead{Perception} Awareness, Creature Handling, Survival.
+            \item \subparhead{Other} Bluff, Intimidate, Persuasion.
+        \end{itemize}
 
         \classbasics{Defenses} \plus3 Fortitude, \plus2 Reflex, \plus1 Mental.
 
         \classbasics{Action Points} \plus1.
 
-        \cf{Bbn}{Weapon and Armor Proficiency}
+        \classbasics{Weapon and Armor Proficiency}
         You are proficient with simple weapons, any four other weapon groups, light armor, medium armor, and shields.
-
-    \subsection{Class Abilities}
-        If you are a barbarian, you have the following abilities.
 
         \subsubsection{Battlerager}\label{Rage}
 
@@ -234,15 +226,15 @@ This choice determines a great deal about your character's abilities.
 
     \classbasics{Alignment} Your alignment must be within one step of your deity's (that is, it may be one step away on either the lawful-chaotic axis or the good-evil axis, but not both).
 
-    \classbasics{Class Skills}
-    \subparhead{Intelligence} Heal, Knowledge (arcana, local, religion, the planes), Linguistics.
-    \subparhead{Perception} Awareness, Sense Motive, Spellcraft.
-    \subparhead{Other} Bluff, Intimidate, Persuasion.
-
-    \subsection{Base Class Abilities}
-        If you choose cleric as a base class, you gain the following abilities.
+    \subsection{Class Abilities}
+        If you are a cleric, you gain the following abilities.
 
         \classbasics{Skill Points} 4.
+
+        \classbasics{Class Skills}
+        \subparhead{Intelligence} Heal, Knowledge (arcana, local, religion, the planes), Linguistics.
+        \subparhead{Perception} Awareness, Sense Motive, Spellcraft.
+        \subparhead{Other} Bluff, Intimidate, Persuasion.
 
         \classbasics{Defenses} \plus3 Mental, \plus2 Fortitude, \plus1 Reflex.
 
@@ -250,9 +242,6 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Clr}{Weapon and Armor Proficiency}
         You are proficient with simple weapons, any two other weapon groups, light and medium armor, and shields.
-
-    \subsection{Class Abilities}
-        If you are a cleric, you have the following abilities.
 
         \cf{Clr}{Divine Power}
         The \glossterm{power} of many cleric spells and abilities is determined by your \textit{divine power}.
@@ -806,17 +795,17 @@ This choice determines a great deal about your character's abilities.
 
     \classbasics{Alignment} Neutral good, lawful neutral, neutral, chaotic neutral, or neutral evil.
 
-    \classbasics{Class Skills}
-    \subparhead{Strength} Climb, Jump, Sprint, Swim.
-    \subparhead{Dexterity} Acrobatics, Ride, Stealth.
-    \subparhead{Intelligence} Heal, Knowledge (geography, nature).
-    \subparhead{Perception} Awareness, Creature Handling, Survival.
-    \subparhead{Other} Bluff, Intimidate, Persuasion.
-
-    \subsection{Base Class Abilities}
-        If you choose druid as a base class, you gain the following abilities.
+    \subsection{Class Abilities}
+        If you are a druid, you gain the following abilities.
 
         \classbasics{Skill Points} 6.
+
+        \classbasics{Class Skills}
+        \subparhead{Strength} Climb, Jump, Sprint, Swim.
+        \subparhead{Dexterity} Acrobatics, Ride, Stealth.
+        \subparhead{Intelligence} Heal, Knowledge (geography, nature).
+        \subparhead{Perception} Awareness, Creature Handling, Survival.
+        \subparhead{Other} Bluff, Intimidate, Persuasion.
 
         \classbasics{Defenses} \plus3 Fortitude, \plus2 Mental, \plus1 Reflex.
 
@@ -826,9 +815,6 @@ This choice determines a great deal about your character's abilities.
         Druids are proficient with simple weapons, any one other weapon group, scimitars, sickles, and slings.
         In addition, druids are proficient with light armor, medium armor, and shields.
         However, a druid cannot use metal armor; see the Metal Abhorrence ability, below.
-
-    \subsection{Class Abilities}
-        If you are a druid, you have the following abilities.
 
         \cf{Drd}{Druidic Language}
         You know Druidic, a secret language known only to druids, in addition to your normal languages.
@@ -1206,16 +1192,16 @@ This choice determines a great deal about your character's abilities.
 
     \classbasics{Alignment} Any.
 
-    \classbasics{Class Skills}
-    \subparhead{Strength} Climb, Jump, Sprint, Swim.
-    \subparhead{Dexterity} Acrobatics, Escape Artist, Ride.
-    \subparhead{Perception} Awareness.
-    \subparhead{Other} Bluff, Intimidate, Persuasion.
-
-    \subsection{Base Class Abilities}
-        If you choose fighter as a base class, you gain the following abilities.
+    \subsection{Class Abilities}
+        If you are a fighter, you gain the following abilities.
 
         \classbasics{Skill Points} 6.
+
+        \classbasics{Class Skills}
+        \subparhead{Strength} Climb, Jump, Sprint, Swim.
+        \subparhead{Dexterity} Acrobatics, Escape Artist, Ride.
+        \subparhead{Perception} Awareness.
+        \subparhead{Other} Bluff, Intimidate, Persuasion.
 
         \classbasics{Defenses} \plus3 Fortitude, \plus2 Mental, \plus1 Reflex.
 
@@ -1224,8 +1210,6 @@ This choice determines a great deal about your character's abilities.
         \cf{Ftr}{Weapon and Armor Proficiency}
         A fighter is proficient with simple weapons, any four other weapon groups,  all armor (heavy, medium, and light), and shields.
 
-    \subsection{Class Abilities}
-        If you are a fighter, you have the following abilities.
 
         \subsubsection{Martial Supremacy}
             \cf{Ftr}{Consummate Warrior} You gain a \plus1d bonus to \glossterm{strike damage}.
@@ -1362,15 +1346,15 @@ This choice determines a great deal about your character's abilities.
 
     \classbasics{Alignment} Any.
 
-    \classbasics{Class Skills}
-    \subparhead{Intelligence} Knowledge (all kinds, taken individually), Linguistics.
-    \subparhead{Perception} Awareness, Spellcraft.
-    \subparhead{Other} Bluff, Intimidate, Persuasion.
-
-    \subsection{Base Class Abilities}
-        If you choose mage as a base class, you gain the following abilities.
+    \subsection{Class Abilities}
+        If you are a mage, you gain the following abilities.
 
         \classbasics{Skill Points} 4.
+
+        \classbasics{Class Skills}
+        \subparhead{Intelligence} Knowledge (all kinds, taken individually), Linguistics.
+        \subparhead{Perception} Awareness, Spellcraft.
+        \subparhead{Other} Bluff, Intimidate, Persuasion.
 
         \classbasics{Defenses} \plus3 Mental, \plus2 Reflex, \plus1 Fortitude.
 
@@ -1380,9 +1364,6 @@ This choice determines a great deal about your character's abilities.
         Mages are proficient with simple weapons and one other weapon group.
         They are not proficient with any type of armor or shield.
         Armor of any type interferes with a mage's arcane gestures, which can cause your spells with somatic components to fail.
-
-    \subsection{Class Abilities}
-        If you are a mage, you have the following abilities.
 
         \cf{Mge}{Arcane Essence}
         All mages have access to great arcane power.
@@ -1561,17 +1542,17 @@ This choice determines a great deal about your character's abilities.
 
     \classbasics{Alignment} Any nonchaotic.
 
-    \classbasics{Class Skills}
-    \subparhead{Strength} Climb, Jump, Sprint, Swim.
-    \subparhead{Dexterity} Acrobatics, Escape Artist, Ride, Stealth.
-    \subparhead{Intelligence} Heal.
-    \subparhead{Perception} Awareness, Spellcraft, Survival.
-    \subparhead{Other} Bluff, Intimidate, Perform, Persuasion.
-
-    \subsection{Base Class Abilities}
-        If you choose monk as a base class, you gain the following abilities.
+    \subsection{Class Abilities}
+        If you are a monk, you gain the following abilities.
 
         \classbasics{Skill Points} 6.
+
+        \classbasics{Class Skills}
+        \subparhead{Strength} Climb, Jump, Sprint, Swim.
+        \subparhead{Dexterity} Acrobatics, Escape Artist, Ride, Stealth.
+        \subparhead{Intelligence} Heal.
+        \subparhead{Perception} Awareness, Spellcraft, Survival.
+        \subparhead{Other} Bluff, Intimidate, Perform, Persuasion.
 
         \classbasics{Defenses} \plus3 Reflex, \plus2 Mental, \plus1 Fortitude.
 
@@ -1582,8 +1563,6 @@ This choice determines a great deal about your character's abilities.
         Monks are not proficient with any armor or shields.
         When wearing armor, using a shield, or carrying a medium or heavy load, a monk loses the benefit of your enlightened defense, fast movement, and \ki abilities.
 
-    \subsection{Class Abilities}
-        If you are a monk, you have the following abilities.
 
         \subsubsection{Ki}
             \cf{Mnk}{Ki Power}
@@ -1752,16 +1731,16 @@ This choice determines a great deal about your character's abilities.
 
     \classbasics{Alignment} Any other than true neutral.
 
-    \classbasics{Class Skills}
-    \subparhead{Dexterity} Ride.
-    \subparhead{Intelligence} Heal, Knowledge (local, religion).
-    \subparhead{Perception} Awareness, Intimidate, Sense Motive.
-    \subparhead{Other} Bluff, Intimidate, Persuasion.
-
-    \subsection{Base Class Abilities}
-        If you choose paladin as a base class, you gain the following abilities.
+    \subsection{Class Abilities}
+        If you are a paladin, you gain the following abilities.
 
         \classbasics{Skill Points} 4.
+
+        \classbasics{Class Skills}
+        \subparhead{Dexterity} Ride.
+        \subparhead{Intelligence} Heal, Knowledge (local, religion).
+        \subparhead{Perception} Awareness, Intimidate, Sense Motive.
+        \subparhead{Other} Bluff, Intimidate, Persuasion.
 
         \classbasics{Defenses} \plus3 Fortitude, \plus2 Mental, \plus1 Reflex.
 
@@ -1769,13 +1748,6 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Pal}{Weapon and Armor Proficiency}
         Paladins are proficient with simple weapons, any three other weapon groups, all types of armor (heavy, medium, and light), and shields.
-
-        \cf{Pal}{Divine Protection}[Magical]
-        The paladin's force of belief manifests a divine protection around your.
-        You may add your Willpower to your Armor defense in place of Dexterity or Constitution (see \pcref{Defenses}).
-
-    \subsection{Class Abilities}
-        If you are a paladin, you have the following abilities.
 
         \cf{Pal}{Devoted Alignment} 
         You are devoted to a specific alignment.
@@ -1989,17 +1961,17 @@ This choice determines a great deal about your character's abilities.
 
     \classbasics{Alignment} Any.
 
-    \classbasics{Class Skills}
-    \subparhead{Strength} Climb, Jump, Sprint, Swim.
-    \subparhead{Dexterity} Acrobatics, Escape Artist, Ride, Stealth.
-    \subparhead{Intelligence} Heal, Knowledge (dungeoneering, geography, nature).
-    \subparhead{Perception} Awareness, Creature Handling, Survival.
-    \subparhead{Other} Bluff, Intimidate, Persuasion.
-
-    \subsection{Base Class Abilities}
-        If you choose ranger as a base class, you gain the following abilities.
+    \subsection{Class Abilities}
+        If you are a ranger, you gain the following abilities.
 
         \classbasics{Skill Points} 8.
+
+        \classbasics{Class Skills}
+        \subparhead{Strength} Climb, Jump, Sprint, Swim.
+        \subparhead{Dexterity} Acrobatics, Escape Artist, Ride, Stealth.
+        \subparhead{Intelligence} Heal, Knowledge (dungeoneering, geography, nature).
+        \subparhead{Perception} Awareness, Creature Handling, Survival.
+        \subparhead{Other} Bluff, Intimidate, Persuasion.
 
         \classbasics{Defenses} \plus3 Reflex, \plus2 Fortitude, \plus1 Mental.
 
@@ -2008,9 +1980,6 @@ This choice determines a great deal about your character's abilities.
         \cf{Rgr}{Weapon and Armor Proficiency}
         A ranger is proficient with simple weapons, any two weapon groups, light and medium armor, and shields.
         You are also proficient with your choice of bows, crossbows, or thrown weapons.
-
-    \subsection{Class Abilities}
-        If you are a ranger, you have the following abilities.
 
         \subsubsection{Keen Senses}
             \cf{Rgr}{Keen Vision}
@@ -2836,55 +2805,3 @@ This choice determines a great deal about your character's abilities.
             He can act for 1d3\plus1 rounds of apparent time.
             During this time, all objects and creatures are frozen in place and are completely invulnerable to the spellwarped, though he may affect them with invocations normally.
             After using this ability, he must wait 5 rounds before he can use it again.
-
-\section{Multiclass Characters}\label{Multiclass Characters}
-    A character may add new classes as he or you progress in level, thus becoming a multiclass character.
-    The class abilities from a character's different classes combine to determine a multiclass character's overall abilities.
-    Multiclassing improves a character's versatility at the expense of focus.
-
-    \subsection{Class And Level Features}
-        As a general rule, the abilities of a multiclass character are the sum
-        of the abilities of each of the character's classes.
-
-        \parhead{Level}
-        ``Character level'' is a character's total number of levels.
-        It is used to determine when feats and attribute score boosts are gained, as noted on \tref{Character Advancement}.
-        Whenever a creature's ``level'' is specified, without reference to a particular class, the character level is used.
-
-        \par ``Class level'' is a character's level in a particular class.
-        For a character whose levels are all in the same class, character level and class level are the same.
-
-        \parhead{Hit Points}
-        The normal rules for determining hit points apply to multiclass characters.
-
-        \parhead{Defenses}
-        The normal rules for determining defenses apply to multiclass characters.
-
-        \parhead{Skills}
-        A multiclass character gains all class skills from all of your classes.
-        However, only the character's base class grants skill points.
-        If a character has multiple base classes, he must choose which base class grants skill points.
-        When a character gains new class skills, he may redistribute your skill points to gain training or mastery in your new class skills.
-
-        \parhead{Class Abilities}
-        A multiclass character gets all the class abilities of all your or your classes, but must also suffer the consequences of the special restrictions of all your or your classes.
-
-        \par In some cases, two classes can have virtually identical abilities.
-        Use the following guidelines to determine how abilities stack.
-        \begin{itemize}
-            \item If two identical class abilities are not based on level and are not gained following a specific pattern, they do not stack.
-            \item If two identical class abilities are not explicitly based on level, but both classes gain them in a predictable pattern, the levels of the two classes stack for determining when the next improvement to the class ability will be gained.
-            \item If two identical class abilities are explicitly based on level, the levels of the two classes stack for determining the power of the ability.
-            \item If two identical class abilities say how they stack, those rules trump any other rules.
-        \end{itemize}
-        These are some examples of how to use these guidelines.
-        \begin{itemize}
-            \item Both a druid and a ranger gain wild speech.
-                A druid/ranger who has wild speech from both classes has the same wild speech ability as a druid or ranger would.
-            \item Both a barbarian and a rogue get uncanny dodge and improved uncanny dodge at the same level.
-                A barbarian/rogue adds your barbarian and rogue levels together to determine when he acquires improved uncanny dodge.
-        \end{itemize}
-
-        \parhead{Weapon and Armor Proficiency}
-        Only a character's base class grants weapon and armor proficiencies.
-        If a character has multiple base classes, she must choose which base class grants weapon and armor profiencies.
