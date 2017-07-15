@@ -133,13 +133,13 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[3]{Counterspell} While you are casting a spell, at any time before it resolves, you can take an \glossterm{immediate action} to turn that spell into a counterspell.
         If you do, your spell has no effect when it resolves.
         Instead, choose a creature within \rngmed range of you.
-        If that creature is casting a spell, and your spell's level, including all augments, is at least as high as their spell's level, their spell also has no effect when it resolves.
+        If that creature is casting a spell, and your maximum spell level is at least as high as their spell's level, their spell has no effect when it resolves.
 
         \ff[5]{Ablative Shield} The shielded creature also gains damage reduction against physical damage equal to your spellpower.
         % which spellpower?
 
         \ff[7]{Magic Against Magic} You gain a \plus2 bonus to accuracy with the \spell{antimagic} spell.
-        In addition, when you use your \textit{counterspell} ability with the \spell{antimagic} spell, it is treated as being two spell levels higher than its actual level for the purpose of determining which spells it can counter.
+        In addition, your maximum spell level is increased by two for the purpose of determining which spells you can counter with your \textit{counterspell} ability.
 
         \ff[9]{Versatile Shield} The shielded creature's damage reduction applies against all damage, not just physical damage.
 
@@ -149,13 +149,12 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[13]{Punishing Counterspell} When you use your \textit{counterspell} ability, you can make the target \glossterm{miscast} their spell instead of negating the spell's effects.
         In addition, the range of your \textit{counterspell} ability increases to \rnglong.
 
-        \ff[15]{Empowered Shield} The shielded creature's defense bonus increases to \plus2.
+        \ff[15]{Greater Abjurant Shield} The defense bonus granted by your \textit{abjurant shield} ability increases to \plus2.
 
         \ff[17]{Mass Counterspell} When you use your \textit{counterspell} ability, you may target up to five creatures.
+        % Alternately, this could take control of the countered spell instead of negating it?
 
-        \ff[19]{Abjuration Master} Your Abjuration spells are easier to cast.
-        You can cast Abjuration spells as if they were one level lower than their actual level.
-        This does not stack with spell level reductions from other feats.
+        \ff[19]{Abjuration Master} Your maximum spell level is increased by one for the purpose of casting Aburation spells.
     \end{feat}
 
     \begin{feat}{Acrobatics Specialization}{Skill}
@@ -171,7 +170,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[6]{Surface Tolerance} You reduce DR modifiers for surface conditions on Acrobatics checks to balance by 2.
         This allows you to ignore minor surface conditions, such as slippery surfaces, when balancing.
 
-        \ff[8]{Specialization} The bonus to Acrobatics increases to \plus3.
+        \ff[8]{Specialization} The bonus to Acrobatics increases to \plus4.
 
          % modifier at 10th: 12dex + 2mst + 2ft = 16
         \ff[10]{Legendary Airwalker}[Mag] You can attempt to move on surfaces that cannot support your weight.
@@ -183,14 +182,14 @@ Feats can be used to specialize your character particular area, to grant your ch
         Failure means you fall through the surface.
         The DR increases by 2 for each consecutive round that you spend moving in this way.
 
-        \ff[12]{Fall Tolerance} You take half damage from \glossterm{falling damage}.
-
-        \ff[14]{Surface Tolerance, Greater} The reduction of DR modifiers for surface conditions increases to 5.
+        \ff[12]{Surface Tolerance, Greater} The reduction of DR modifiers for surface conditions increases to 5.
         This allows you to ignore almost all surface conditions when balancing.
 
-        \ff[16]{Specialization, Greater} The bonus to Acrobatics increases to \plus4.
+        \ff[14]{Rapid Airwalker} You can move at full speed with the \textit{legendary airwalker} ability.
 
-        \ff[18]{Rapid Airwalker} You can move at full speed with the \textit{legendary airwalker} ability.
+        \ff[16]{Specialization, Greater} The bonus to Acrobatics increases to \plus6.
+
+        \ff[18]{} 
     \end{feat}
 
     \begin{feat}{All Energy Becomes One}{Class, Magical}
@@ -239,7 +238,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         % \ff[6]{Attentive} You can pay \glossterm{active attention} to your surroundings for any length of time without becoming fatigued.
 
-        \ff[8]{Specialization} The bonus to Awareness increases to \plus3.
+        \ff[8]{Specialization} The bonus to Awareness increases to \plus4.
 
         \ff[10]{Legendary Senses} You gain one of the following senses: \glossterm{blindsense} (200 ft.), \glossterm{blindsight} (50 ft.), \glossterm{darkvision} (500 ft.), \glossterm{tremorsense} (200 ft.), or \glossterm{tremorsight} (50 ft.).
 
@@ -248,7 +247,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[14]{Distance Tolerance, Greater} The reduction of DR modifiers for distance increases to 5.
         This usually allows you to ignore up to 500 feet of distance.
 
-        \ff[16]{Specialization, Greater} The bonus to Awareness increases to \plus4.
+        \ff[16]{Specialization, Greater} The bonus to Awareness increases to \plus6.
 
         \ff[18]{Supreme Senses} You can choose an additional sense from the \textit{legendary senses} ability.
         Its range is doubled.
@@ -329,17 +328,18 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Bluff.
 
-        \ff[2]{Sustained Distraction} If you successfully distract a creature, you can sustain that distraction on that creature with a \glossterm{swift action} as long as you continue to be distracting.
+        \ff[2]{Sustained Distraction} If you successfully distract a creature with the \textit{distract ability} of the Bluff skill, you can sustain that distraction on that creature with a \glossterm{swift action} as long as you continue to be distracting.
         You must make a new check each round, and the DR increases by 2 for each round you have distracted them.
         For details, see \pcref{Distract}.
 
         \ff[4]{Deceive Magic} Any magical abilities which detect lies are unable to detect lies you speak.
 
-        % You can make a Bluff attack to \glossterm{feint} instead of using your normal accuracy (see \pcref{Feint}).
+        \ff[6]{Quick Change} You reduce your penalties for using the \textit{disguise creature} ability of the Bluff skill by 5.
+        This means you can create a disguise in 5 minutes at no penalty.
 
-        \ff[6]{Impersonation Tolerance} You reduce DR modifiers for details you cannot replicate when impersonating creatures 2 (see \pcref{Impersonate}).
+        % \ff[6]{Deceptive Feint} When you use the \textit{feint} combat maneuver, you can use Bluff in place of your physical accuracy (see \pcref{Feint}).
 
-        \ff[8]{Specialization} The bonus to Bluff increases to \plus3.
+        \ff[8]{Specialization} The bonus to Bluff increases to \plus4.
 
         \ff[10]{Dual Speech}[Mag] Whenever you speak, you can make a Bluff check to speak in two voices at once.
         The base DR is 15.
@@ -358,9 +358,10 @@ Feats can be used to specialize your character particular area, to grant your ch
         For example, if you impersonate an undead creature, the \spell{inflict light wounds} spell would heal you.
         This does not grant you any abilities associated with creatures you impersonate.
 
-        \ff[14]{Impersonation Tolerance, Greater} The reduction of DR modifiers for impersonating details you cannot replicate increases to 5.
+        \ff[14]{Greater Quick Change} Your penalty reduction for using the \textit{disguise creature} ability of the Bluff skill increases to 10.
+        This means you can create a disguise in 5 rounds at no penalty.
 
-        \ff[16]{Specialization, Greater} The bonus to Bluff increases to \plus4.
+        \ff[16]{Specialization, Greater} The bonus to Bluff increases to \plus6.
 
         \ff[18]{Deceive Reality} Whenever you are attacked, after learning whether the attack succeeded or failed, you can spend an \glossterm{action point} as an immediate action.
         If you do, you can make a Bluff check to pretend the attack affected you differently.
@@ -515,7 +516,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         You gain a \plus2 bonus to Climb attacks you make to climb on other creatures (see \pcref{Creature Climb}).
         In addition, you gain a \plus1 bonus to accuracy with physical attacks against creatures you are climbing on.
 
-        \ff[8]{Specialization} The bonus to Climb increases to \plus3.
+        \ff[8]{Specialization} The bonus to Climb increases to \plus4.
 
         \ff[10]{Climb Speed, Greater} Your climb speed increases to be equal to your land speed.
 
@@ -526,7 +527,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[14]{Scale the Beast, Greater} The bonus to Climb attack to climb on creatures increases to \plus4.
         In addition, the bonus to physical accuracy against creatures you are climbing on increases to \plus2.
 
-        \ff[16]{Specialization, Greater} The bonus to Climb increases to \plus4.
+        \ff[16]{Specialization, Greater} The bonus to Climb increases to \plus6.
 
         \ff[18]{Impossible Climber, Greater} You can wallrun on ceilings in the same way you wallrun on walls.
         In addition, the size category decrease for the purpose of climbing on creatures improves to two size categories smaller than normal.
@@ -620,7 +621,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[6]{Rapid Creation} Crafting magic items takes you one hour per 100 gp of material components.
 
-        \ff[8]{Specialization} The bonus to Craft skills increases to \plus3.
+        \ff[8]{Specialization} The bonus to Craft skills increases to \plus4.
 
         \ff[10]{Rapid Creation} Crafting magic items takes you one hour per 500 gp of material components.
 
@@ -628,7 +629,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[14]{Rapid Creation} Crafting magic items takes you one hour per 2,500 gp of material components.
 
-        \ff[16]{Specialization, Greater} The bonus to Craft skills increases to \plus4.
+        \ff[16]{Specialization, Greater} The bonus to Craft skills increases to \plus6.
 
         \ff[18]{Rapid Creation} Crafting magic items takes you one hour per 12,500 gp of material components.
     \end{feat}
@@ -645,7 +646,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[6]{Species Tolerance} You reduce Creature Handling DR modifiers for handling non-animals by 2.
 
-        \ff[8]{Specialization} The bonus to Creature Handling increases to \plus3.
+        \ff[8]{Specialization} The bonus to Creature Handling increases to \plus4.
         In addition, you can train creatures to learn one bonus trick beyond their normal maximum (see \pcref{Bonus Tricks}).
 
         \ff[10]{Battleforged Training} You can teach a creature the Battleforged trick.
@@ -662,7 +663,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[14]{Species Tolerance, Greater} The reduction of DR modifiers for handling non-animals increases to 5.
         This usually allows you to ignore penalties for working with non-animals.
 
-        \ff[16]{Specialization, Greater} The bonus to Creature Handling increases to \plus4.
+        \ff[16]{Specialization, Greater} The bonus to Creature Handling increases to \plus6.
         In addition, the number of bonus tricks you can train creatures to learn increases to two.
 
         \ff[18]{Battleforged Training, Greater} You can teach a creature that has learned the Battleforged trick the Greater Battleforged trick.
@@ -727,7 +728,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         Success means the spell is \glossterm{dispelled}.
         This has no effect on abilities that cannot be dispelled.
 
-        \ff[8]{Specialization} The bonus to Devices increases to \plus3.
+        \ff[8]{Specialization} The bonus to Devices increases to \plus4.
 
         \ff[10]{Improbable Improvisation} You reduce the DR for using the \textit{improvise} ability to make devices from unsuitable materials by 5.
 
@@ -735,7 +736,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[14]{Durable Improvization} Devices you create with the \textit{improvise} ability last for twice as many uses before they break.
 
-        \ff[16]{Specialization, Greater} The bonus to Devices increases to \plus4.
+        \ff[16]{Specialization, Greater} The bonus to Devices increases to \plus6.
 
         \ff[18]{Disable Arcana, Greater}[Magical] You can disable all magical effects on objects or areas, not just spell effects.
     \end{feat}
@@ -759,7 +760,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[6]{Mismatch Tolerance} You reduce Disguise penalties for differences between the target's normal appearance and its intended appearance by 2.
         This allows you to ignore minor mismatches, such as if the target is a different gender than its intended appearance.
 
-        \ff[8]{Specialization} The bonus to Disguise increases to \plus3.
+        \ff[8]{Specialization} The bonus to Disguise increases to \plus4.
 
         \ff[10]{Disguise Size}[Magical] As a \glossterm{standard action}, you can spend an action point to use this ability.
         \begin{ability}
@@ -775,7 +776,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[14]{Mismatch Tolerance, Greater} The reduction of Disguise penalties for appearance differences increases to 5.
         This can allow you to ignore significant appearance differences.
 
-        \ff[16]{Specialization, Greater} The bonus to Disguise increases to \plus4.
+        \ff[16]{Specialization, Greater} The bonus to Disguise increases to \plus6.
     \end{feat}
 
     \begin{feat}{Diviner}{Magical, Spell}
@@ -992,7 +993,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[6]{Accelerated Squeeze} Your movement speed is not reduced while squeezing.
 
-        \ff[8]{Specialization} The bonus to Escape Artist increases to \plus3.
+        \ff[8]{Specialization} The bonus to Escape Artist increases to \plus4.
 
         \ff[10]{Escape Magic}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
         \begin{ability}
@@ -1010,7 +1011,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[14]{Rapid Escape, Greater} You can escape bindings and grapples as a \glossterm{swift action}.
 
-        \ff[16]{Specialization, Greater} The bonus to Escape Artist increases to \plus4.
+        \ff[16]{Specialization, Greater} The bonus to Escape Artist increases to \plus6.
 
         \ff[18]{Escape Magic, Greater}[Magical] You can use your \textit{escape magic} ability as a \glossterm{swift action}.
     \end{feat}
@@ -1142,9 +1143,9 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[6]{Demoralizing Blow} Whenever you deal damage to a creature, you can spend an \glossterm{action point} to use the \textit{demoralize} ability as an \glossterm{immediate action}.
 
-        \ff[8]{Specialization} The bonus to Intimidate increases to \plus3.
+        \ff[8]{Specialization} The bonus to Intimidate increases to \plus4.
 
-        \ff[16]{Specialization, Greater} The bonus to Intimidate increases to \plus4.
+        \ff[16]{Specialization, Greater} The bonus to Intimidate increases to \plus6.
     \end{feat}
 
     \begin{feat}{Guardian}{Combat}
@@ -1212,7 +1213,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[6]{Vital Healing} For every five points of healing you would restore with your \textit{healing touch}, you can instead heal a point of \glossterm{vital damage}.
 
-        \ff[8]{Specialization} The bonus to Heal increases to \plus3.
+        \ff[8]{Specialization} The bonus to Heal increases to \plus4.
 
         \ff[10]{Purging Touch}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
         \begin{ability}
@@ -1232,7 +1233,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[14]{Lifesaver, Greater} You can stabilize dying creatures as a \glossterm{swift action}.
 
-        \ff[16]{Specialization, Greater} The bonus to Heal increases to \plus4.
+        \ff[16]{Specialization, Greater} The bonus to Heal increases to \plus6.
 
         \ff[18]{Wellspring of Life} You do not have to spend an \glossterm{action point} to use your \textit{healing touch} ability.
     \end{feat}
@@ -1339,7 +1340,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[8]{Mass Performance}[Magical] You can target up to two creatures with your \textit{inspiring performance} ability.
         In addition, you can target any number of creatures with your \textit{mesmerizing performance} ability.
 
-        \ff[8]{Specialization} The bonus to Perform increases to \plus3.
+        \ff[8]{Specialization} The bonus to Perform increases to \plus4.
 
         \ff[10]{Mesmeric Suggestion}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
         \begin{ability}
@@ -1368,7 +1369,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[16]{Mass Performance, Greater}[Magical] When you use your \textit{inspiring performance} ability, you can target any number of creatures.
         In addition, the range of your \textit{mesmerizing performance} ability is increased to \rnglong.
 
-        \ff[16]{Specialization, Greater} The bonus to Perform increases to \plus4.
+        \ff[16]{Specialization, Greater} The bonus to Perform increases to \plus6.
 
         % maybe add ability to remove combat penalty for fascination ability
 
@@ -1494,7 +1495,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[6]{Featherlight Jump} When you jump, you can spend an \glossterm{action point} as a \glossterm{free action}.
         If you do, your maximum height for that jump is equal to your Jump check result, rather than half your Jump check result.
 
-        \ff[8]{Specialization} The bonus to Jump increases to \plus3.
+        \ff[8]{Specialization} The bonus to Jump increases to \plus4.
 
         \ff[10]{Death from Above} When you use your \textit{leap strike} ability, you can make the strike during the \glossterm{action phase} instead of the \glossterm{delayed action phase}.
         In addition, when you make the strike, you can be in any location along your jump's path.
@@ -1504,7 +1505,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[14]{Instant Leap, Greater} You are always considered to have a running start when jumping, even when rebounding off of objects (see \pcref{Rebounding Leap}).
 
-        \ff[16]{Specialization, Greater} The bonus to Jump increases to \plus4.
+        \ff[16]{Specialization, Greater} The bonus to Jump increases to \plus6.
 
         \ff[18]{Death from Above, Greater} The bonus to damage for being above your target increases to \plus2d.
     \end{feat}
@@ -1517,11 +1518,11 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[4]{Knowledge Savant} You gain two additional \glossterm{skill points} which can only be spent on Knowledge skills.
 
-        \ff[8]{Specialization} The bonus to Knowledge increases to \plus3.
+        \ff[8]{Specialization} The bonus to Knowledge increases to \plus4.
 
         \ff[12]{Knowledge Savant, Greater} The number of extra skill points increases to four.
 
-        \ff[16]{Specialization, Greater} The bonus to Knowledge increases to \plus4.
+        \ff[16]{Specialization, Greater} The bonus to Knowledge increases to \plus6.
     \end{feat}
 
     \begin{feat}{Agility}{Combat}
@@ -1559,11 +1560,11 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[2]{Linguistic Savant} You learn two additional \glossterm{common languages}, or one additional \glossterm{rare language}.
 
-        \ff[8]{Specialization} The bonus to Linguistics increases to \plus3.
+        \ff[8]{Specialization} The bonus to Linguistics increases to \plus4.
 
         \ff[12]{Linguistic Savant, Greater} You learn two additional \glossterm{common languages}, or one additional \glossterm{rare language}.
 
-        \ff[16]{Specialization, Greater} The bonus to Linguistics increases to \plus4.
+        \ff[16]{Specialization, Greater} The bonus to Linguistics increases to \plus6.
     \end{feat}
 
     \begin{feat}{Miscaster}{Magical, Spell}
@@ -1608,7 +1609,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[6]{Knight's Charge} When you \glossterm{charge} a creature while mounted, you gain a \plus1d bonus to damage with the strike.
 
-        \ff[8]{Specialization} The bonus to Ride increases to \plus3.
+        \ff[8]{Specialization} The bonus to Ride increases to \plus4.
 
         \ff[10]{Mounted Warrior, Greater} The bonus to defenses increases to \plus3.
 
@@ -1616,7 +1617,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[14]{Knight's Charge, Greater} The damage bonus increases to \plus2d.
 
-        \ff[16]{Specialization, Greater} The bonus to Ride increases to \plus4.
+        \ff[16]{Specialization, Greater} The bonus to Ride increases to \plus6.
 
         \ff[18]{Loyal Rider} Whenever your mount takes \glossterm{physical} damage, you may choose to take half that damage, rounded down.
         The mount takes the other half.
@@ -1630,11 +1631,11 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[2]{}
 
-        \ff[8]{Specialization} The bonus to Persuasion increases to \plus3.
+        \ff[8]{Specialization} The bonus to Persuasion increases to \plus4.
 
         \ff[10]{Suggestion} As a standard action, you can spend an \glossterm{action point} to use this ability.
 
-        \ff[16]{Specialization, Greater} The bonus to Persuasion increases to \plus4.
+        \ff[16]{Specialization, Greater} The bonus to Persuasion increases to \plus6.
     \end{feat}
 
     \begin{feat}{Sense Motive Specialization}{Skill}
@@ -1658,9 +1659,9 @@ Feats can be used to specialize your character particular area, to grant your ch
             \end{spelleffects}
         \end{ability}
 
-        \ff[8]{Specialization} The bonus to Sense Motive increases to \plus3.
+        \ff[8]{Specialization} The bonus to Sense Motive increases to \plus4.
 
-        \ff[16]{Specialization, Greater} The bonus to Sense Motive increases to \plus4.
+        \ff[16]{Specialization, Greater} The bonus to Sense Motive increases to \plus6.
     \end{feat}
 
     \begin{feat}{Sleight of Hand Specialization}{Skill}
@@ -1671,7 +1672,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[2]{}
 
-        \ff[8]{Specialization} The bonus to Sleight of Hand increases to \plus3.
+        \ff[8]{Specialization} The bonus to Sleight of Hand increases to \plus4.
 
         \ff[10]{Extradimensional Concealment}[Magical] Whenever you take the \textit{conceal object} action, you can spend an \glossterm{action point}.
         If you do, you conceal the object in a pocket dimension that cannot be accessed by nonmagical means.
@@ -1683,7 +1684,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         Alternately, you can reach into the pocket dimension belonging to a creature you are touching to retrieve the object stored there.
         If that creature does not have the \textit{extradimensional concealment} ability, or does not have an object in their pocket dimension, this ability fails.
 
-        \ff[16]{Specialization, Greater} The bonus to Sleight of Hand increases to \plus4.
+        \ff[16]{Specialization, Greater} The bonus to Sleight of Hand increases to \plus6.
     \end{feat}
 
     \begin{feat}{Spellcraft Specialization}{Skill}
@@ -1692,9 +1693,9 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Spellcraft.
 
-        \ff[8]{Specialization} The bonus to Spellcraft increases to \plus3.
+        \ff[8]{Specialization} The bonus to Spellcraft increases to \plus4.
 
-        \ff[16]{Specialization, Greater} The bonus to Spellcraft increases to \plus4.
+        \ff[16]{Specialization, Greater} The bonus to Spellcraft increases to \plus6.
     \end{feat}
 
     \begin{feat}{Sprint Specialization}{Skill}
@@ -1707,13 +1708,13 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[6]{Endurance Runner} You can sprint for a number of rounds equal to 5 \add half your Constitution, instead of 2 \add half your Constitution.
 
-        \ff[8]{Specialization} The bonus to Sprint increases to \plus3.
+        \ff[8]{Specialization} The bonus to Sprint increases to \plus4.
 
         \ff[10]{Swift, Lesser} The speed bonus increases to \plus20 feet.
 
         \ff[14]{Endurance Runner, Greater} You can sprint for a number of minutes equal to 2 \add half your Constitution.
 
-        \ff[16]{Specialization, Greater} The bonus to Sprint increases to \plus4.
+        \ff[16]{Specialization, Greater} The bonus to Sprint increases to \plus6.
     \end{feat}
 
     \begin{feat}{Stealth Specialization}{Skill}
@@ -1726,7 +1727,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[6]{Movement Tolerance} Your penalties for moving while hiding are reduced by 2. 
 
-        \ff[8]{Specialization} The bonus to Stealth increases to \plus3.
+        \ff[8]{Specialization} The bonus to Stealth increases to \plus4.
 
         \ff[10]{Hide in Plain Sight} You can use the \textit{hide} ability even while observed.
         You take take a \minus10 penalty to the Stealth check when hiding in this way, and you still need passive cover or concealment to hide.
@@ -1734,7 +1735,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[14]{Movement Tolerance, Greater} The reduction of penalties for moving increases to 5.
         This allows you to move at half speed without penalty.
 
-        \ff[16]{Specialization, Greater} The bonus to Stealth increases to \plus4.
+        \ff[16]{Specialization, Greater} The bonus to Stealth increases to \plus6.
 
         \ff[18]{Hide in Plain Sight, Greater} The penalty for hiding while observed is reduced to \minus5.
     \end{feat}
@@ -1756,11 +1757,11 @@ Feats can be used to specialize your character particular area, to grant your ch
         You can move at your normal speed while following tracks without taking the normal \minus5 penalty.
         In addition, you take only a \minus10 penalty (instead of the normal \minus20) when moving at up to twice normal speed while tracking.
 
-        \ff[8]{Specialization} The bonus to Survival increases to \plus3.
+        \ff[8]{Specialization} The bonus to Survival increases to \plus4.
 
         \ff[10]{Planar Tolerance} You are immune to harmful planar effects.
 
-        \ff[16]{Specialization, Greater} The bonus to Survival increases to \plus4.
+        \ff[16]{Specialization, Greater} The bonus to Survival increases to \plus6.
     \end{feat}
 
     \begin{feat}{Swim Specialization}{Skill}
@@ -1774,12 +1775,12 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[4]{Swim Speed} You gain a \glossterm{swim speed} equal to your land speed.
         A successful Swim check to move allows you to move a distance equal to your swim speed.
 
-        \ff[8]{Specialization} The bonus to Swim increases to \plus3.
+        \ff[8]{Specialization} The bonus to Swim increases to \plus4.
 
         \ff[10]{Underwater Tolerance} You do not suffer any penalties to physical melee attacks, checks, or physical defenses for being underwater.
         You still suffer the normal penalty with underwater ranged attacks.
 
-        \ff[16]{Specialization, Greater} The bonus to Swim increases to \plus4.
+        \ff[16]{Specialization, Greater} The bonus to Swim increases to \plus6.
     \end{feat}
 
     \begin{feat}{Transmuter}{Magical, Spell}
