@@ -1118,26 +1118,18 @@ It defines how attributes work and explains how to make physical attacks in comb
     \subsection{Combat Maneuvers}\label{Combat Maneuvers}
         A combat maneuver is an attempt to physically hinder your foe with your body, such as by shoving or tripping it.
         Unless otherwise noted, combat maneuvers do not deal damage.
-        There are two kinds of combat maneuvers: heavy maneuvers and light maneuvers.
-
-        \parhead{Heavy Maneuvers} You can use a heavy maneuver as a standard action.
-        Before applying bonuses and penalties, your accuracy with a heavy maneuver is equal to your Strength.
-
-        \parhead{Light Maneuvers} You can use a light maneuver as a standard action.
-        Before applying bonuses and penalties, your accuracy with a light maneuver is equal to your normal accuracy with strikes (see \pcref{Strike Accuracy}).
-        A light maneuver is treated as a \glossterm{light weapon} for the purpose of determining your accuracy.
 
         \begin{dtable}
             \lcaption{Combat Maneuvers}
-            \begin{dtabularx}{\columnwidth}{l l l X}
-                \tb{Maneuver}  & \tb{Type} & \tb{Defense} & \tb{Brief Description} \\
+            \begin{dtabularx}{\columnwidth}{l l X}
+                \tb{Maneuver}  & \tb{Defense} & \tb{Brief Description} \\
                 \bottomrule
-                Dirty Trick & Light & Any       & Impose penalty on a foe         \\
-                Disarm      & Light & Reflex    & Force foe to drop item          \\
-                Feint       & Light & Reflex    & Leave foe vulnerable to attacks \\
-                Grapple     & Heavy & Special   & Wrestle with a foe              \\
-                Shove       & Heavy & Fortitude & Move a foe                      \\
-                Trip        & Light & Reflex    & Trip a foe                      \\
+                Dirty Trick & Any                  & Impose penalty on a foe         \\
+                Disarm      & Reflex               & Force foe to drop item          \\
+                Feint       & Reflex               & Leave foe vulnerable to attacks \\
+                Grapple     & Fortitude and Reflex & Wrestle with a foe              \\
+                Shove       & Fortitude            & Move a foe                      \\
+                Trip        & Reflex               & Trip a foe                      \\
             \end{dtabularx}
         \end{dtable}
 
@@ -1202,7 +1194,7 @@ It defines how attributes work and explains how to make physical attacks in comb
                     \spellquicktargeting{One creature}{Adjacent}
                 \end{spelltargetinginfo}
                 \begin{spelleffects}
-                    \begin{spellattack}{Physical vs. Fortitude and Reflex}
+                    \begin{spellattack}{Strength vs. Fortitude and Reflex}
                         \spellsuccess You and the target are \grappled.
                         For details, see \pcref{Grappling}.
                     \end{spellattack}
