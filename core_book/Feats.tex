@@ -192,6 +192,33 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[18]{} 
     \end{feat}
 
+    \begin{feat}{Agility}{Combat}
+        \featpre Starting Dexterity of 2.
+        \featben
+
+        \ff[1]{Dodge} At the start of each phase, you can choose a creature you can see.
+        You gain a \plus1 bonus to Armor defense against attacks by that target during that phase.
+
+        \ff[2]{Lightning Reflexes, Lesser} You gain a \plus1 bonus to Reflex defense.
+
+        \ff[4]{Rapid Reaction} You gain a \plus2 bonus to \glossterm{initiative} checks.
+
+        \ff[6]{Mobility} Your movement is not impeded by being threatened by the target of your \textit{dodge} ability (see \pcref{Moving Near Foes}).
+
+        \ff[8]{Lightning Reflexes} The bonus to Reflex defense increases to \plus2.
+
+        \ff[10]{Rapid Reaction, Greater} The bonus to initiative checks increases to \plus5.
+
+        \ff[12]{Focused Dodge} You do not suffer \glossterm{overwhelm penalties} against attacks by the target of your \textit{dodge} ability.
+        In addition, when counting the number of creatures threatening you to determine your overwhelm penalties, you ignore that creature.
+
+        \ff[14]{Lightning Reflexes, Greater} The bonus to Reflex defense increases to \plus3.
+
+        \ff[16]{Evasion} Your \glossterm{overwhelm penalties} do not affect your Reflex defense.
+
+        \ff[18]{Supreme Dodge} The bonus to Armor defense granted by your \textit{dodge} ability increases to \plus2.
+    \end{feat}
+
     \begin{feat}{All Energy Becomes One}{Class, Magical}
         \featpre Monk, starting Constitution of 2.
         \parhead{Benefits}
@@ -253,44 +280,75 @@ Feats can be used to specialize your character particular area, to grant your ch
         Its range is doubled.
     \end{feat}
 
-    \begin{feat}{Eldritch Knight}{General, Spell}
-        \featpre Ability to cast a spell.
+    \begin{feat}{Bardic Exemplar}{Magical, Skill}
+        \featpre Perform Specialization feat.
         \featben
 
-        \ff[1]{Combat Concentration, Lesser} You gain a \plus2 bonus to Concentration checks made to cast spells.
-
-        \ff[1]{Armor Tolerance, Lesser} You reduce your chance of arcane spell failure from wearing armor by 10\%.
-
-        \ff[2]{Spellstrike}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \ff[1]{Mocking Performance} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        When you do, you begin a performance using one of your Perform skills.
         \begin{ability}
             \begin{spelltargetinginfo}
-                \spellspecial Choose a weapon you wield, or your \glossterm{unarmed attack}.
+                \spellquicktargeting{One creature}{\rngmed}
             \end{spelltargetinginfo}
             \begin{spelleffects}
-                \spelleffect You imbue magical power into the weapon.
-                This requires concentration as if casting a spell.
-                Breaking your concentration does not cause a \glossterm{miscast backlash}, however.
-                During the \glossterm{delayed action phase}, you may make a \glossterm{strike} with the weapon.
-                If you maintained your concentration, the strike gains a \plus2d bonus to damage.
+                \begin{spellattack}{Perform vs. Mental}
+                    \spellsuccess The target is \taunted by a willing creature of your choice within range of you.
+                \end{spellattack}
+                \spelldur Sustain (swift). Sustaining this ability requires continuing the performance you started when you used this ability. If the target can neither see nor hear your performance, the effect immediately ends.
+                \spelltags{\glossterm{Delusion}, \glossterm{Mind}. In addition, this may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of the performance.}
             \end{spelleffects}
         \end{ability}
 
-        \ff[4]{Combat Concentration} The bonus to Concentration checks increases to \plus5.
+        \ff[3]{Perform Point} You gain a perform point.
+        A perform point can be spent to use \glossterm{magical} abilities from this feat and the Perform Specialization feat in place of an action point.
+        You recover all spent perform points after a \glossterm{short rest}.
 
-        \ff[6]{Armor Tolerance} The reduction of arcane spell failure increases to 20\%.
+        \ff[5]{Song of Serenity} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        When you do, you begin a performance using one of your Perform skills.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{One creature}{\rngmed}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spelleffect The target is immune to hostile \glossterm{Mind} effects.
+                \spelldur Sustain (swift). Sustaining this ability requires continuing the performance you started when you used this ability. If the target can neither see nor hear your performance, the effect immediately ends.
+                \spelltags{\glossterm{Delusion}, \glossterm{Mind}. In addition, this may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of the performance.}
+            \end{spelleffects}
+        \end{ability}
 
-        \ff[8]{Seeking Spellstrike}[Magical] When you use your \textit{spellstrike} ability, if you maintained your concentration, you gain a \plus1 bonus to accuracy with the \glossterm{strike}.
+        \ff[7]{Demoralizing Mockery} A creature affected by your \textit{mocking performance} ability takes a \minus2 penalty to Mental defense as long as the effect lasts.
 
-        \ff[10]{Spellsword Rhythm}[Magical] Whenever you hit a creature with a \glossterm{strike}, you gain a \plus1 bonus to \glossterm{accuracy} with spells against that creature during the next round.
-        In addition, whenever you hit a creature with a \glossterm{spell}, you gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{strikes} against that creature during the next round.
+        \ff[9]{Hybrid Performance} You can sustain two different \glossterm{magical} abilities from this feat or the Perform Specialization feat as part of the same \glossterm{swift action}.
 
-        \ff[12]{Combat Concentration, Greater} The bonus to Concentration checks increases to \plus10.
+        \ff[11]{Mass Performance} When you use your \textit{mocking performance} ability, you can target up to five creatures.
+        Each affected creature is taunted to attack the same creature.
+        In addition, when you use your \textit{song of serenity} ability, you can target up to two creatures.
 
-        \ff[14]{Spellstrike, Greater}[Magical] When you use your \textit{spellstrike} ability, the damage bonus if you maintained your concentration increases to \plus3d.
+        \ff[13]{Battle Cry} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        When you do, you begin a performance using one of your Perform skills.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting*{Any number of creatures}{\rngmed}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spelleffect The target gains a \plus2 bonus to accuracy with all attacks.
+                \spelldur Sustain (swift). Sustaining this ability requires continuing the performance you started when you used this ability. If the target can neither see nor hear your performance, the effect immediately ends.
+                \spelltags{\glossterm{Delusion}, \glossterm{Mind}. In addition, this may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of the performance.}
+            \end{spelleffects}
+        \end{ability}
 
-        \ff[16]{Armor Tolerance, Greater} The reduction of arcane spell failure increases to 30\%. 
+        \ff[15]{Serene Bliss} A creature affected by your \textit{song of serenity} ability is not \glossterm{bloodied} as long as the effect lasts and it has hit points remaining.
+        It suffers the normal penalties for becoming bloodied if the effect ends or it has no hit points remaining.
 
-        \ff[18]{Spellsword Rhythm, Greater}[Magical] The accuracy bonus increases to \plus2.
+        \ff[17]{Mass Performance, Greater} When you use your \textit{mocking performance} ability, you can target any number of creatures.
+        Each affected creature is taunted to attack the same creature.
+        In addition, when you use your \textit{song of serenity} ability, you can target up to five creatures.
+        Finally, the range of your \textit{battle cry} ability is increased to \rnglong.
+
+        \ff[19]{Champion's Anthem} A creature affected by your \textit{battle cry} ability may use your level in place of its accuracy with any attack.
+
+        \ff[19]{Hideous Laughter} If you get a \glossterm{critical hit} against a creature with your \textit{mocking performance} ability, it laughs uncontrollably until the end of the next round.
+        During this time, it can take no other actions.
     \end{feat}
 
     \begin{feat}{Blindfighter}{Combat}
@@ -424,61 +482,6 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[19]{Angelic Flight, Greater} You no longer have a limit on how long you can fly with your \textit{angelic flight} ability.
     \end{feat}
 
-    \begin{feat}{Reaper}{Combat}
-        \spelldesc{You can attack with such force that you cleave through your foes.}
-        \featpre Starting Strength of 2.
-
-        \ff[1]{Sweeping Strike} As a standard action, you can spend an \glossterm{action point} to use this ability.
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spelltwocol{\spellarea{Up to three contiguous squares}}{\spellrng{Threatened}}
-                \spelltgts{Everything in the area}
-                \spellspecial Choose one or two melee weapons you are wielding that deal slashing or bludgeoning damage.
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \begin{spellattack}{Physical vs. Armor}
-                    \spellsuccess The target takes \glossterm{strike damage} from the chosen weapon with a \minus1d penalty (see \pcref{Strike Damage}).
-                    \spellcritical As above, but the target takes double damage.
-                \end{spellattack}
-            \end{spelleffects}
-        \end{ability}
-
-        \ff[2]{Cleave} Whenever you get a \glossterm{critical hit} with a strike using a slashing or bludgeoning weapon, you can take an \glossterm{immediate action} to make another strike with the same weapon.
-        The target of the new strike must be adjacent to the struck creature.
-        You may continue making additional strikes as long as you keep getting critical hits.
-        However, you may not attack the same creature more than once.
-
-        \ff[4]{Reaping Charge} As a standard action, you can spend an \glossterm{action point} to use this ability.
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spelltgts{Special; see below}
-                \spellspecial Choose one or two melee weapons you are wielding that deal slashing or bludgeoning damage.
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \spelleffect You move up to half your movement speed in a straight line.
-                Choose either the right or left side of the line.
-                You can make a \glossterm{strike} against each creature and object on that side of the line that you threaten at any point during your movement.
-                You take a \minus2d penalty to damage on the strike.
-            \end{spelleffects}
-        \end{ability}
-
-        \ff[6]{Spinning Cleave} When you use your \textit{cleave} ability, the target of your additional attack does not have to be adjacent to the struck creature.
-
-        \ff[8]{Wide Sweep} When you use your \textit{sweeping strike} ability, you can target up to five contiguous squares you threaten.
-
-        \ff[10]{Reaping Whirlwind} When you use your \textit{reaping charge} ability, you do not have to choose a side of the line.
-        You can attack any creatures and objects that you threaten at any point during your movement.
-
-        \ff[12]{Mobile Cleave} When you use your \textit{cleave} ability, you can move up to half your movement speed before making the strike.
-        This movement counts against your normal movement limit in that phase.
-
-        \ff[14]{Reaping Charge, Greater} You can move up to your full movement speed when you use your \textit{reaping charge} ability, rather than half your movement speed.
-
-        \ff[16]{Whirlwind Sweep} When you use your \textit{sweeping strike} ability, you can target any number of contiguous squares you threaten.
-
-        \ff[18]{Reap the Harvest} When you use your \textit{reaping charge} or and \textit{sweeping strike} abilities, if every creature you attacked is dead at the end of the round, you regain the action point spent to use the ability.
-    \end{feat}
-
     \begin{feat}{Class Dedication}{Class}
         \featpre Class Versatility feat.
         \featben
@@ -572,37 +575,6 @@ Feats can be used to specialize your character particular area, to grant your ch
         During this time, all attacks against you have a 50\% failure chance.
     \end{feat}
 
-    \begin{feat}{Duelist}{Combat}
-        \featpre Starting Dexterity of 1, starting Intelligence of 1.
-        \featben
-
-        \ff[1]{Parry} Whenever a creature \glossterm{initiates} a \glossterm{strike} against you, you can take an \glossterm{immediate action} to attempt to parry its attack.
-        If you do, you gain a \plus2 bonus to physical defenses against the attack.
-
-        \ff[2]{Defensive Stance} As a \glossterm{swift action}, you can spend an \glossterm{action point} to use this ability.
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spellquicktargeting{One creature}{\rngmed}
-                \spellspecial You can change the target of this ability to a new creature within range as a \glossterm{swift action}.
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \spelleffect You gain a \plus2 bonus to physical defenses against the target.
-                \spelldur Attunement
-            \end{spelleffects}
-        \end{ability}
-
-        \ff[4]{} 
-
-        \ff[6]{Overwhelm Tolerance} Your \textit{defensive stance} ability prevents you from suffering \glossterm{overwhelm penalties} against attacks from the target creature.
-
-        \ff[8]{Riposte} Whenever you use your \textit{parry} ability, you can spend an \glossterm{action point}.
-        If you do, you \glossterm{initiate} a \glossterm{strike} against the attacking creature.
-
-        \ff[10]{Focused Defense} You gain a \plus1 bonus to physical defenses against attacks you do not suffer \glossterm{overwhelm penalties} on.
-
-        \ff[14]{Rapid Parry} Once per round, you can \textit{parry} an attack without spending an immediate action.
-    \end{feat}
-
     \begin{feat}{Craft Specialization}{Skill}
         \featpre Craft (any) as a mastered skill.
         \featben
@@ -674,40 +646,6 @@ Feats can be used to specialize your character particular area, to grant your ch
             \item It gains a \plus2 bonus to accuracy with all attacks.
             \item It gains a \plus2d bonus to damage with \glossterm{strikes}.
         \end{itemize}
-    \end{feat}
-
-    \begin{feat}{Sniper}{Combat}
-        \featpre Starting Perception of 2.
-        \featben
-
-        \ff[1]{Aim} As a standard action, you can use this ability.
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spellquicktargeting{One creature or object}{Line of sight}
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \spelleffect You gain a \plus2 bonus to accuracy on \glossterm{strikes} against the target.
-                \spelldur Sustain (swift). If you lose sight of the target for a full round, this effect ends.
-            \end{spelleffects}
-        \end{ability}
-
-        \ff[2]{Penetrating Aim} Your physical ranged attacks ignore \glossterm{cover}, except total cover.
-
-        \ff[4]{Distance Tolerance, Lesser} You reduce your accuracy penalties from \glossterm{range increments} by 2.
-
-        \ff[6]{Sniper Shot} You gain a \plus2d bonus to damage on \glossterm{strikes} against \unaware creatures that are affected by your \textit{aim} ability.
-
-        \ff[8]{Failure Tolerance} You ignore effects that give you a 20\% miss chance or failure chance with physical ranged attacks, such as \glossterm{concealment}.
-
-        \ff[10]{Distance Tolerance} The reduction in accuracy penalties for range increments increases to 4.
-
-        \ff[12]{Sustained Aim} You can sustain your \textit{aim} ability as a \glossterm{free action}.
-
-        \ff[14]{Sniper Shot, Greater} The bonus to damage increases to \plus4d.
-
-        \ff[16]{Distance Tolerance, Greater} The reduction in accuracy penalties for range increments increases to 6.
-
-        \ff[18]{Rapid Aim} You can spend a \glossterm{action point} to use your \textit{aim} ability as a \glossterm{swift action}.
     \end{feat}
 
     \begin{feat}{Devices Specialization}{Skill}
@@ -900,6 +838,77 @@ Feats can be used to specialize your character particular area, to grant your ch
         \end{dtabularx}
     \end{dtable}
 
+    \begin{feat}{Duelist}{Combat}
+        \featpre Starting Dexterity of 1, starting Intelligence of 1.
+        \featben
+
+        \ff[1]{Parry} Whenever a creature \glossterm{initiates} a \glossterm{strike} against you, you can take an \glossterm{immediate action} to attempt to parry its attack.
+        If you do, you gain a \plus2 bonus to physical defenses against the attack.
+
+        \ff[2]{Defensive Stance} As a \glossterm{swift action}, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{One creature}{\rngmed}
+                \spellspecial You can change the target of this ability to a new creature within range as a \glossterm{swift action}.
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spelleffect You gain a \plus2 bonus to physical defenses against the target.
+                \spelldur Attunement
+            \end{spelleffects}
+        \end{ability}
+
+        \ff[4]{} 
+
+        \ff[6]{Overwhelm Tolerance} Your \textit{defensive stance} ability prevents you from suffering \glossterm{overwhelm penalties} against attacks from the target creature.
+
+        \ff[8]{Riposte} Whenever you use your \textit{parry} ability, you can spend an \glossterm{action point}.
+        If you do, you \glossterm{initiate} a \glossterm{strike} against the attacking creature.
+
+        \ff[10]{Focused Defense} You gain a \plus1 bonus to physical defenses against attacks you do not suffer \glossterm{overwhelm penalties} on.
+
+        \ff[14]{Rapid Parry} Once per round, you can \textit{parry} an attack without spending an immediate action.
+    \end{feat}
+
+    \begin{feat}{Eldritch Knight}{General, Spell}
+        \featpre Ability to cast a spell.
+        \featben
+
+        \ff[1]{Combat Concentration, Lesser} You gain a \plus2 bonus to Concentration checks made to cast spells.
+
+        \ff[1]{Armor Tolerance, Lesser} You reduce your chance of arcane spell failure from wearing armor by 10\%.
+
+        \ff[2]{Spellstrike}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellspecial Choose a weapon you wield, or your \glossterm{unarmed attack}.
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spelleffect You imbue magical power into the weapon.
+                This requires concentration as if casting a spell.
+                Breaking your concentration does not cause a \glossterm{miscast backlash}, however.
+                During the \glossterm{delayed action phase}, you may make a \glossterm{strike} with the weapon.
+                If you maintained your concentration, the strike gains a \plus2d bonus to damage.
+            \end{spelleffects}
+        \end{ability}
+
+        \ff[4]{Combat Concentration} The bonus to Concentration checks increases to \plus5.
+
+        \ff[6]{Armor Tolerance} The reduction of arcane spell failure increases to 20\%.
+
+        \ff[8]{Seeking Spellstrike}[Magical] When you use your \textit{spellstrike} ability, if you maintained your concentration, you gain a \plus1 bonus to accuracy with the \glossterm{strike}.
+
+        \ff[10]{Spellsword Rhythm}[Magical] Whenever you hit a creature with a \glossterm{strike}, you gain a \plus1 bonus to \glossterm{accuracy} with spells against that creature during the next round.
+        In addition, whenever you hit a creature with a \glossterm{spell}, you gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{strikes} against that creature during the next round.
+
+        \ff[12]{Combat Concentration, Greater} The bonus to Concentration checks increases to \plus10.
+
+        \ff[14]{Spellstrike, Greater}[Magical] When you use your \textit{spellstrike} ability, the damage bonus if you maintained your concentration increases to \plus3d.
+
+        \ff[16]{Armor Tolerance, Greater} The reduction of arcane spell failure increases to 30\%. 
+
+        \ff[18]{Spellsword Rhythm, Greater}[Magical] The accuracy bonus increases to \plus2.
+    \end{feat}
+
     \begin{feat}{Enchanter}{Magical, Spell}
         \featpre \glossterm{Enchantment} spell known.
         \featben
@@ -945,40 +954,6 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[19]{Mental Torment} Whenever you target a creature with a Mind ability, that creature takes a \minus1 penalty to Mental defense.
         This is a \glossterm{condition}, and lasts until it is removed.
         This penalty stacks with itself if you target the same creature multiple times.
-    \end{feat}
-
-    \begin{feat}{Toughness}{General}
-        \featpre Starting Constitution of 2.
-        \featben
-
-        \ff[1]{Durable} You gain additional hit points equal to your Constitution.
-
-        \ff[2]{Great Fortitude, Lesser} You gain a \plus1 bonus to Fortitude defense.
-
-        \ff[4]{Fatigue Tolerance} You ignore effects which would make you \fatigued.
-        This allows you to sleep in heavy or medium armor without penalty.
-        In addition, any effect which would make you \exhausted makes you \fatigued instead.
-        This ability does not allow you to ignore this fatigue.
-
-        \ff[6]{Injury Tolerance} You take a \minus2 penalty for being \glossterm{bloodied} instead of a \minus5 penalty.
-        In addition, having \glossterm{vital damage} causes you to sufffer a penalty to accuracy, checks, and defenses equal to half the amount of vital damage you have.
-
-        \ff[8]{Great Fortitude} The bonus to Fortitude defense increases to \plus2.
-
-        \ff[10]{Fatigue Tolerance, Greater} You ignore effects which would make you \exhausted, and which compel you to sleep.
-        In addition, you need half the normal amount of rest and sleep each day to function normally.
-        For example, a human would only need four hours of sleep per night.
-
-        \ff[12]{Durable, Greater} The increase to hit points increases to twice your Constitution.
-
-        \ff[14]{Great Fortitude, Greater} The bonus to Fortitude defense increases to \plus3.
-
-        \ff[16]{Injury Tolerance, Greater} You do not take penalties for being \glossterm{bloodied}.
-        In addition, having \glossterm{vital damage} imposes one quarter of the normal penalties, rather than half.
-
-        \ff[18]{Deathless} You cannot take more than ten damage per level during a single round.
-        Any excess damage is ignored.
-        In addition, you are immune to \glossterm{Death} effects.
     \end{feat}
 
     \begin{feat}{Escape Artist Specialization}{Skill}
@@ -1090,62 +1065,6 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[14]{Bloodfeeder, Greater}[Life, Magical] Whenever a creature dies, if you used your \textit{strip the flesh} ability on it since the last time it took a \glossterm{short rest}, you regain an \glossterm{action point}.
 
         \ff[18]{Purge the Weak, Greater} The accuracy bonus against \glossterm{bloodied} creatures increases to \plus3.
-    \end{feat}
-
-    \begin{feat}{Whirlwind Warrior}{Combat}
-        \featpres Starting Dexterity of 2, starting Perception of 1.
-        \featben
-
-        \ff[1]{Whirlwind Strike} As a standard action, you can spend an \glossterm{action point} to use this ability.
-        \begin{ability}
-            \begin{spelleffects}
-                \spelleffect You make a melee \glossterm{strike} against any number of creatures and objects adjacent to you that you \glossterm{threaten}.
-                You must use the same weapon to make each strike.
-                Use the same attack result and damage against each target.
-                You take a \minus2d penalty to damage on the strike.
-            \end{spelleffects}
-        \end{ability}
-
-        \ff[2]{Eye of the Storm, Lesser} You reduce your \glossterm{overwhelm penalties} by 1.
-        If your overwhelm penalty is reduced to 0, you are not considered to be \glossterm{overwhelmed}.
-
-        \ff[4]{Unfettered Movement} During each phase, you may move through one creature's space during movement.
-        You move at half speed while in its space.
-        After moving through that creature's space, other creatures block you as normal for the remainder of your movement.
-        Certain unusual creatures that occupy their entire space, such as gelatinous cubes, may be immune to this ability.
-
-        \ff[6]{Spring Attack} As a standard action, you can spend an \glossterm{action point} to use this ability.
-        If you do, move up to your movement speed and make a \glossterm{strike}.
-        During the \glossterm{delayed action phase}, you may continue moving if you have remaining movement available in the phase.
-
-        \ff[8]{Eye of the Storm} The penalty reduction increases to 2.
-
-        \ff[10]{Hurricane Strike} The damage penalty on the strike you make with your \textit{whirlwind strike} ability is reduced to \minus1d.
-
-        \ff[12]{Unfettered Movement, Greater} Moving through spaces occupied by creatures with your \textit{unfettered movement} ability does not reduce your movement speed.
-
-        \ff[14]{Eye of the Storm, Greater} The penalty reduction increases to 3.
-
-        \ff[16]{Spring Attack, Greater} When you use your \textit{spring attack} ability, you can make two \glossterm{strikes} instead of one.
-        The two strikes cannot be made against the same creature.
-
-        \ff[18]{Hurricane Defense} When you use your \textit{hurricane strike} ability, you ignore all \glossterm{overwhelm penalties} until the end of the round, including during the same phase.
-    \end{feat}
-
-    \begin{feat}{Intimidate Specialization}{Skill}
-        \featpre Intimidate as a mastered skill.
-        \featben
-
-        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Intimidate.
-
-        \ff[2]{Critical Demoralization} If you get a \glossterm{critical hit} when you take the \textit{demoralize} action, the target is \frightened by you instead of being shaken.
-        See \pcref{Demoralize}, for details.
-
-        \ff[6]{Demoralizing Blow} Whenever you deal damage to a creature, you can spend an \glossterm{action point} to use the \textit{demoralize} ability as an \glossterm{immediate action}.
-
-        \ff[8]{Specialization} The bonus to Intimidate increases to \plus4.
-
-        \ff[16]{Specialization, Greater} The bonus to Intimidate increases to \plus6.
     \end{feat}
 
     \begin{feat}{Guardian}{Combat}
@@ -1297,154 +1216,20 @@ Feats can be used to specialize your character particular area, to grant your ch
         Your \textit{create image} ability can create sensations with the chosen sense.
     \end{feat}
 
-    \begin{feat}{Perform Specialization}{Skill}
-        \featpre Perform as a mastered skill.
+    \begin{feat}{Intimidate Specialization}{Skill}
+        \featpre Intimidate as a mastered skill.
         \featben
 
-        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Perform.
+        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Intimidate.
 
-        \ff[2]{Inspiring Performance}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
-        When you do, you begin a performance using one of your Perform skills.
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spellquicktargeting{One creature}{\rngmed}
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \spelleffect Make a Perform check to create an performance that can inspire the target.
-                The target gains temporary hit points equal to your check result.
-                \spelldur Sustain (swift). Sustaining this ability requires continuing the performance you started when you used this ability. If the target can neither see nor hear your performance, the effect immediately ends.
-                \spelltags{\glossterm{Delusion}, \glossterm{Mind}. In addition, this may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of the performance.}
-            \end{spelleffects}
-        \end{ability}
+        \ff[2]{Critical Demoralization} If you get a \glossterm{critical hit} when you take the \textit{demoralize} action, the target is \frightened by you instead of being shaken.
+        See \pcref{Demoralize}, for details.
 
-        \ff[4]{Mesmerizing Performance}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
-        When you do, you begin a performance using one of your Perform skills.
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spellquicktargeting{Up to five creatures}{\rngmed}
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \begin{spellattack}{Perform vs. Mental}
-                    \spellspecial If the target thinks that you or your allies are threatening it, you take a \minus5 penalty to accuracy on the attack.
-                    \spellsuccess The target is \fascinated by you.
-                    Any act by you or your apparent allies that threatens or damages the target breaks the effect.
-                    An observant target may interpret overt threats to its allies as a threat to itself.
-                \end{spellattack}
-                \spelldur Sustain (swift). Sustaining this ability requires continuing the performance you started when you used this ability. If the target can neither see nor hear your performance, the effect immediately ends.
-                \spelltags{\glossterm{Compulsion}, \glossterm{Mind}. In addition, this may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of the performance.}
-            \end{spelleffects}
-        \end{ability}
+        \ff[6]{Demoralizing Blow} Whenever you deal damage to a creature, you can spend an \glossterm{action point} to use the \textit{demoralize} ability as an \glossterm{immediate action}.
 
-        \ff[6]{Inspire Courage}[Magical] A target affected by your \textit{inspiring performance} is immune to \glossterm{Fear} abilities as long as the effect lasts.
+        \ff[8]{Specialization} The bonus to Intimidate increases to \plus4.
 
-        \ff[8]{Mass Performance}[Magical] You can target up to two creatures with your \textit{inspiring performance} ability.
-        In addition, you can target any number of creatures with your \textit{mesmerizing performance} ability.
-
-        \ff[8]{Specialization} The bonus to Perform increases to \plus4.
-
-        \ff[10]{Mesmeric Suggestion}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spellquicktargeting{One creature}{\rngmed}
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \spellspecial When you use this ability, you make a verbal suggestion of a particular course of action to the target.
-                You can work this suggestion into an active performance without penalty.
-                \begin{spellattack}{Perform vs. Mental}
-                    \spellspecial If the target is not currently \fascinated by your \textit{fascinating performance} ability, this attack automatically fails.
-                    If your suggestion does not seem reasonable, you take a \minus5 penalty to accuracy on this attack.
-                    Exceptionally unreasonable suggestions can impose even greater penalties, and exceptionally reasonable suggestions can give accuracy bonuses.
-                    \spellsuccess The target thinks your suggestion is a good idea and will try to follow it to the best of its abilities.
-                    Any act by you or your apparent allies that threatens or damages the target breaks the effect.
-                \end{spellattack}
-                \spelldur Sustain (swift). Sustaining this ability requires continuing the performance you started when you used this ability. If the target can neither see nor hear your performance, the effect immediately ends.
-                \spelltags{\glossterm{Compulsion}, \glossterm{Mind}. In addition, this may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of the performance.}
-            \end{spelleffects}
-        \end{ability}
-
-        \ff[12]{Endless Fascination}[Magical] You can use your \textit{mesmerizing performance} ability without spending an action point.
-
-        \ff[14]{Irresistible Dance} You ignore all failure chances on Perform attacks and checks you make.
-
-        \ff[16]{Mass Performance, Greater}[Magical] When you use your \textit{inspiring performance} ability, you can target any number of creatures.
-        In addition, the range of your \textit{mesmerizing performance} ability is increased to \rnglong.
-
-        \ff[16]{Specialization, Greater} The bonus to Perform increases to \plus6.
-
-        % maybe add ability to remove combat penalty for fascination ability
-
-        \ff[18]{Inspire Heroism} Each creature affected by your \textit{inspiring performance} gains additional temporary hit points equal to your level.
-    \end{feat}
-
-    \begin{feat}{Bardic Exemplar}{Magical, Skill}
-        \featpre Perform Specialization feat.
-        \featben
-
-        \ff[1]{Mocking Performance} As a standard action, you can spend an \glossterm{action point} to use this ability.
-        When you do, you begin a performance using one of your Perform skills.
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spellquicktargeting{One creature}{\rngmed}
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \begin{spellattack}{Perform vs. Mental}
-                    \spellsuccess The target is \taunted by a willing creature of your choice within range of you.
-                \end{spellattack}
-                \spelldur Sustain (swift). Sustaining this ability requires continuing the performance you started when you used this ability. If the target can neither see nor hear your performance, the effect immediately ends.
-                \spelltags{\glossterm{Delusion}, \glossterm{Mind}. In addition, this may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of the performance.}
-            \end{spelleffects}
-        \end{ability}
-
-        \ff[3]{Perform Point} You gain a perform point.
-        A perform point can be spent to use \glossterm{magical} abilities from this feat and the Perform Specialization feat in place of an action point.
-        You recover all spent perform points after a \glossterm{short rest}.
-
-        \ff[5]{Song of Serenity} As a standard action, you can spend an \glossterm{action point} to use this ability.
-        When you do, you begin a performance using one of your Perform skills.
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spellquicktargeting{One creature}{\rngmed}
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \spelleffect The target is immune to hostile \glossterm{Mind} effects.
-                \spelldur Sustain (swift). Sustaining this ability requires continuing the performance you started when you used this ability. If the target can neither see nor hear your performance, the effect immediately ends.
-                \spelltags{\glossterm{Delusion}, \glossterm{Mind}. In addition, this may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of the performance.}
-            \end{spelleffects}
-        \end{ability}
-
-        \ff[7]{Demoralizing Mockery} A creature affected by your \textit{mocking performance} ability takes a \minus2 penalty to Mental defense as long as the effect lasts.
-
-        \ff[9]{Hybrid Performance} You can sustain two different \glossterm{magical} abilities from this feat or the Perform Specialization feat as part of the same \glossterm{swift action}.
-
-        \ff[11]{Mass Performance} When you use your \textit{mocking performance} ability, you can target up to five creatures.
-        Each affected creature is taunted to attack the same creature.
-        In addition, when you use your \textit{song of serenity} ability, you can target up to two creatures.
-
-        \ff[13]{Battle Cry} As a standard action, you can spend an \glossterm{action point} to use this ability.
-        When you do, you begin a performance using one of your Perform skills.
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spellquicktargeting*{Any number of creatures}{\rngmed}
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \spelleffect The target gains a \plus2 bonus to accuracy with all attacks.
-                \spelldur Sustain (swift). Sustaining this ability requires continuing the performance you started when you used this ability. If the target can neither see nor hear your performance, the effect immediately ends.
-                \spelltags{\glossterm{Delusion}, \glossterm{Mind}. In addition, this may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of the performance.}
-            \end{spelleffects}
-        \end{ability}
-
-        \ff[15]{Serene Bliss} A creature affected by your \textit{song of serenity} ability is not \glossterm{bloodied} as long as the effect lasts and it has hit points remaining.
-        It suffers the normal penalties for becoming bloodied if the effect ends or it has no hit points remaining.
-
-        \ff[17]{Mass Performance, Greater} When you use your \textit{mocking performance} ability, you can target any number of creatures.
-        Each affected creature is taunted to attack the same creature.
-        In addition, when you use your \textit{song of serenity} ability, you can target up to five creatures.
-        Finally, the range of your \textit{battle cry} ability is increased to \rnglong.
-
-        \ff[19]{Champion's Anthem} A creature affected by your \textit{battle cry} ability may use your level in place of its accuracy with any attack.
-
-        \ff[19]{Hideous Laughter} If you get a \glossterm{critical hit} against a creature with your \textit{mocking performance} ability, it laughs uncontrollably until the end of the next round.
-        During this time, it can take no other actions.
+        \ff[16]{Specialization, Greater} The bonus to Intimidate increases to \plus6.
     \end{feat}
 
     \begin{feat}{Iron Will}{General}
@@ -1525,33 +1310,6 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[16]{Specialization, Greater} The bonus to Knowledge increases to \plus6.
     \end{feat}
 
-    \begin{feat}{Agility}{Combat}
-        \featpre Starting Dexterity of 2.
-        \featben
-
-        \ff[1]{Dodge} At the start of each phase, you can choose a creature you can see.
-        You gain a \plus1 bonus to Armor defense against attacks by that target during that phase.
-
-        \ff[2]{Lightning Reflexes, Lesser} You gain a \plus1 bonus to Reflex defense.
-
-        \ff[4]{Rapid Reaction} You gain a \plus2 bonus to \glossterm{initiative} checks.
-
-        \ff[6]{Mobility} Your movement is not impeded by being threatened by the target of your \textit{dodge} ability (see \pcref{Moving Near Foes}).
-
-        \ff[8]{Lightning Reflexes} The bonus to Reflex defense increases to \plus2.
-
-        \ff[10]{Rapid Reaction, Greater} The bonus to initiative checks increases to \plus5.
-
-        \ff[12]{Focused Dodge} You do not suffer \glossterm{overwhelm penalties} against attacks by the target of your \textit{dodge} ability.
-        In addition, when counting the number of creatures threatening you to determine your overwhelm penalties, you ignore that creature.
-
-        \ff[14]{Lightning Reflexes, Greater} The bonus to Reflex defense increases to \plus3.
-
-        \ff[16]{Evasion} Your \glossterm{overwhelm penalties} do not affect your Reflex defense.
-
-        \ff[18]{Supreme Dodge} The bonus to Armor defense granted by your \textit{dodge} ability increases to \plus2.
-    \end{feat}
-
     \begin{feat}{Linguistics Specialization}{Skill}
         \featpre Linguistics as a mastered skill.
         \featben
@@ -1597,6 +1355,155 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[19]{Empowered Channeler} When you use your \textit{overchannel} ability, you gain a \plus2 bonus to spellpower with the spell.
     \end{feat}
 
+    \begin{feat}{Perform Specialization}{Skill}
+        \featpre Perform as a mastered skill.
+        \featben
+
+        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Perform.
+
+        \ff[2]{Inspiring Performance}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
+        When you do, you begin a performance using one of your Perform skills.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{One creature}{\rngmed}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spelleffect Make a Perform check to create an performance that can inspire the target.
+                The target gains temporary hit points equal to your check result.
+                \spelldur Sustain (swift). Sustaining this ability requires continuing the performance you started when you used this ability. If the target can neither see nor hear your performance, the effect immediately ends.
+                \spelltags{\glossterm{Delusion}, \glossterm{Mind}. In addition, this may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of the performance.}
+            \end{spelleffects}
+        \end{ability}
+
+        \ff[4]{Mesmerizing Performance}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
+        When you do, you begin a performance using one of your Perform skills.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{Up to five creatures}{\rngmed}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \begin{spellattack}{Perform vs. Mental}
+                    \spellspecial If the target thinks that you or your allies are threatening it, you take a \minus5 penalty to accuracy on the attack.
+                    \spellsuccess The target is \fascinated by you.
+                    Any act by you or your apparent allies that threatens or damages the target breaks the effect.
+                    An observant target may interpret overt threats to its allies as a threat to itself.
+                \end{spellattack}
+                \spelldur Sustain (swift). Sustaining this ability requires continuing the performance you started when you used this ability. If the target can neither see nor hear your performance, the effect immediately ends.
+                \spelltags{\glossterm{Compulsion}, \glossterm{Mind}. In addition, this may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of the performance.}
+            \end{spelleffects}
+        \end{ability}
+
+        \ff[6]{Inspire Courage}[Magical] A target affected by your \textit{inspiring performance} is immune to \glossterm{Fear} abilities as long as the effect lasts.
+
+        \ff[8]{Mass Performance}[Magical] You can target up to two creatures with your \textit{inspiring performance} ability.
+        In addition, you can target any number of creatures with your \textit{mesmerizing performance} ability.
+
+        \ff[8]{Specialization} The bonus to Perform increases to \plus4.
+
+        \ff[10]{Mesmeric Suggestion}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{One creature}{\rngmed}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spellspecial When you use this ability, you make a verbal suggestion of a particular course of action to the target.
+                You can work this suggestion into an active performance without penalty.
+                \begin{spellattack}{Perform vs. Mental}
+                    \spellspecial If the target is not currently \fascinated by your \textit{fascinating performance} ability, this attack automatically fails.
+                    If your suggestion does not seem reasonable, you take a \minus5 penalty to accuracy on this attack.
+                    Exceptionally unreasonable suggestions can impose even greater penalties, and exceptionally reasonable suggestions can give accuracy bonuses.
+                    \spellsuccess The target thinks your suggestion is a good idea and will try to follow it to the best of its abilities.
+                    Any act by you or your apparent allies that threatens or damages the target breaks the effect.
+                \end{spellattack}
+                \spelldur Sustain (swift). Sustaining this ability requires continuing the performance you started when you used this ability. If the target can neither see nor hear your performance, the effect immediately ends.
+                \spelltags{\glossterm{Compulsion}, \glossterm{Mind}. In addition, this may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of the performance.}
+            \end{spelleffects}
+        \end{ability}
+
+        \ff[12]{Endless Fascination}[Magical] You can use your \textit{mesmerizing performance} ability without spending an action point.
+
+        \ff[14]{Irresistible Dance} You ignore all failure chances on Perform attacks and checks you make.
+
+        \ff[16]{Mass Performance, Greater}[Magical] When you use your \textit{inspiring performance} ability, you can target any number of creatures.
+        In addition, the range of your \textit{mesmerizing performance} ability is increased to \rnglong.
+
+        \ff[16]{Specialization, Greater} The bonus to Perform increases to \plus6.
+
+        % maybe add ability to remove combat penalty for fascination ability
+
+        \ff[18]{Inspire Heroism} Each creature affected by your \textit{inspiring performance} gains additional temporary hit points equal to your level.
+    \end{feat}
+
+    \begin{feat}{Persuasion Specialization}{Skill}
+        \featpre Persuasion as a mastered skill.
+        \featben
+
+        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Persuasion.
+
+        \ff[2]{}
+
+        \ff[8]{Specialization} The bonus to Persuasion increases to \plus4.
+
+        \ff[10]{Suggestion} As a standard action, you can spend an \glossterm{action point} to use this ability.
+
+        \ff[16]{Specialization, Greater} The bonus to Persuasion increases to \plus6.
+    \end{feat}
+
+    \begin{feat}{Reaper}{Combat}
+        \spelldesc{You can attack with such force that you cleave through your foes.}
+        \featpre Starting Strength of 2.
+
+        \ff[1]{Sweeping Strike} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spelltwocol{\spellarea{Up to three contiguous squares}}{\spellrng{Threatened}}
+                \spelltgts{Everything in the area}
+                \spellspecial Choose one or two melee weapons you are wielding that deal slashing or bludgeoning damage.
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \begin{spellattack}{Physical vs. Armor}
+                    \spellsuccess The target takes \glossterm{strike damage} from the chosen weapon with a \minus1d penalty (see \pcref{Strike Damage}).
+                    \spellcritical As above, but the target takes double damage.
+                \end{spellattack}
+            \end{spelleffects}
+        \end{ability}
+
+        \ff[2]{Cleave} Whenever you get a \glossterm{critical hit} with a strike using a slashing or bludgeoning weapon, you can take an \glossterm{immediate action} to make another strike with the same weapon.
+        The target of the new strike must be adjacent to the struck creature.
+        You may continue making additional strikes as long as you keep getting critical hits.
+        However, you may not attack the same creature more than once.
+
+        \ff[4]{Reaping Charge} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spelltgts{Special; see below}
+                \spellspecial Choose one or two melee weapons you are wielding that deal slashing or bludgeoning damage.
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spelleffect You move up to half your movement speed in a straight line.
+                Choose either the right or left side of the line.
+                You can make a \glossterm{strike} against each creature and object on that side of the line that you threaten at any point during your movement.
+                You take a \minus2d penalty to damage on the strike.
+            \end{spelleffects}
+        \end{ability}
+
+        \ff[6]{Spinning Cleave} When you use your \textit{cleave} ability, the target of your additional attack does not have to be adjacent to the struck creature.
+
+        \ff[8]{Wide Sweep} When you use your \textit{sweeping strike} ability, you can target up to five contiguous squares you threaten.
+
+        \ff[10]{Reaping Whirlwind} When you use your \textit{reaping charge} ability, you do not have to choose a side of the line.
+        You can attack any creatures and objects that you threaten at any point during your movement.
+
+        \ff[12]{Mobile Cleave} When you use your \textit{cleave} ability, you can move up to half your movement speed before making the strike.
+        This movement counts against your normal movement limit in that phase.
+
+        \ff[14]{Reaping Charge, Greater} You can move up to your full movement speed when you use your \textit{reaping charge} ability, rather than half your movement speed.
+
+        \ff[16]{Whirlwind Sweep} When you use your \textit{sweeping strike} ability, you can target any number of contiguous squares you threaten.
+
+        \ff[18]{Reap the Harvest} When you use your \textit{reaping charge} or and \textit{sweeping strike} abilities, if every creature you attacked is dead at the end of the round, you regain the action point spent to use the ability.
+    \end{feat}
+
     \begin{feat}{Ride Specialization}{Skill}
         \featpre Ride as a mastered skill.
         \featben
@@ -1621,21 +1528,6 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[18]{Loyal Rider} Whenever your mount takes \glossterm{physical} damage, you may choose to take half that damage, rounded down.
         The mount takes the other half.
-    \end{feat}
-
-    \begin{feat}{Persuasion Specialization}{Skill}
-        \featpre Persuasion as a mastered skill.
-        \featben
-
-        \ff[1]{Specialization, Lesser} You gain a \plus2 bonus to Persuasion.
-
-        \ff[2]{}
-
-        \ff[8]{Specialization} The bonus to Persuasion increases to \plus4.
-
-        \ff[10]{Suggestion} As a standard action, you can spend an \glossterm{action point} to use this ability.
-
-        \ff[16]{Specialization, Greater} The bonus to Persuasion increases to \plus6.
     \end{feat}
 
     \begin{feat}{Sense Motive Specialization}{Skill}
@@ -1685,6 +1577,40 @@ Feats can be used to specialize your character particular area, to grant your ch
         If that creature does not have the \textit{extradimensional concealment} ability, or does not have an object in their pocket dimension, this ability fails.
 
         \ff[16]{Specialization, Greater} The bonus to Sleight of Hand increases to \plus6.
+    \end{feat}
+
+    \begin{feat}{Sniper}{Combat}
+        \featpre Starting Perception of 2.
+        \featben
+
+        \ff[1]{Aim} As a standard action, you can use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{One creature or object}{Line of sight}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \spelleffect You gain a \plus2 bonus to accuracy on \glossterm{strikes} against the target.
+                \spelldur Sustain (swift). If you lose sight of the target for a full round, this effect ends.
+            \end{spelleffects}
+        \end{ability}
+
+        \ff[2]{Penetrating Aim} Your physical ranged attacks ignore \glossterm{cover}, except total cover.
+
+        \ff[4]{Distance Tolerance, Lesser} You reduce your accuracy penalties from \glossterm{range increments} by 2.
+
+        \ff[6]{Sniper Shot} You gain a \plus2d bonus to damage on \glossterm{strikes} against \unaware creatures that are affected by your \textit{aim} ability.
+
+        \ff[8]{Failure Tolerance} You ignore effects that give you a 20\% miss chance or failure chance with physical ranged attacks, such as \glossterm{concealment}.
+
+        \ff[10]{Distance Tolerance} The reduction in accuracy penalties for range increments increases to 4.
+
+        \ff[12]{Sustained Aim} You can sustain your \textit{aim} ability as a \glossterm{free action}.
+
+        \ff[14]{Sniper Shot, Greater} The bonus to damage increases to \plus4d.
+
+        \ff[16]{Distance Tolerance, Greater} The reduction in accuracy penalties for range increments increases to 6.
+
+        \ff[18]{Rapid Aim} You can spend a \glossterm{action point} to use your \textit{aim} ability as a \glossterm{swift action}.
     \end{feat}
 
     \begin{feat}{Spellcraft Specialization}{Skill}
@@ -1783,6 +1709,40 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[16]{Specialization, Greater} The bonus to Swim increases to \plus6.
     \end{feat}
 
+    \begin{feat}{Toughness}{General}
+        \featpre Starting Constitution of 2.
+        \featben
+
+        \ff[1]{Durable} You gain additional hit points equal to your Constitution.
+
+        \ff[2]{Great Fortitude, Lesser} You gain a \plus1 bonus to Fortitude defense.
+
+        \ff[4]{Fatigue Tolerance} You ignore effects which would make you \fatigued.
+        This allows you to sleep in heavy or medium armor without penalty.
+        In addition, any effect which would make you \exhausted makes you \fatigued instead.
+        This ability does not allow you to ignore this fatigue.
+
+        \ff[6]{Injury Tolerance} You take a \minus2 penalty for being \glossterm{bloodied} instead of a \minus5 penalty.
+        In addition, having \glossterm{vital damage} causes you to sufffer a penalty to accuracy, checks, and defenses equal to half the amount of vital damage you have.
+
+        \ff[8]{Great Fortitude} The bonus to Fortitude defense increases to \plus2.
+
+        \ff[10]{Fatigue Tolerance, Greater} You ignore effects which would make you \exhausted, and which compel you to sleep.
+        In addition, you need half the normal amount of rest and sleep each day to function normally.
+        For example, a human would only need four hours of sleep per night.
+
+        \ff[12]{Durable, Greater} The increase to hit points increases to twice your Constitution.
+
+        \ff[14]{Great Fortitude, Greater} The bonus to Fortitude defense increases to \plus3.
+
+        \ff[16]{Injury Tolerance, Greater} You do not take penalties for being \glossterm{bloodied}.
+        In addition, having \glossterm{vital damage} imposes one quarter of the normal penalties, rather than half.
+
+        \ff[18]{Deathless} You cannot take more than ten damage per level during a single round.
+        Any excess damage is ignored.
+        In addition, you are immune to \glossterm{Death} effects.
+    \end{feat}
+
     \begin{feat}{Transmuter}{Magical, Spell}
         \featpre \glossterm{Transmutation} spell known.
         \featben
@@ -1871,6 +1831,47 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[17]{Lifebound Resilience, Greater} You heal hit points equal to your spellpower each round, instead of half your spellpower.
     \end{feat}
+
+    \begin{feat}{Whirlwind Warrior}{Combat}
+        \featpres Starting Dexterity of 2, starting Perception of 1.
+        \featben
+
+        \ff[1]{Whirlwind Strike} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelleffects}
+                \spelleffect You make a melee \glossterm{strike} against any number of creatures and objects adjacent to you that you \glossterm{threaten}.
+                You must use the same weapon to make each strike.
+                Use the same attack result and damage against each target.
+                You take a \minus2d penalty to damage on the strike.
+            \end{spelleffects}
+        \end{ability}
+
+        \ff[2]{Eye of the Storm, Lesser} You reduce your \glossterm{overwhelm penalties} by 1.
+        If your overwhelm penalty is reduced to 0, you are not considered to be \glossterm{overwhelmed}.
+
+        \ff[4]{Unfettered Movement} During each phase, you may move through one creature's space during movement.
+        You move at half speed while in its space.
+        After moving through that creature's space, other creatures block you as normal for the remainder of your movement.
+        Certain unusual creatures that occupy their entire space, such as gelatinous cubes, may be immune to this ability.
+
+        \ff[6]{Spring Attack} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        If you do, move up to your movement speed and make a \glossterm{strike}.
+        During the \glossterm{delayed action phase}, you may continue moving if you have remaining movement available in the phase.
+
+        \ff[8]{Eye of the Storm} The penalty reduction increases to 2.
+
+        \ff[10]{Hurricane Strike} The damage penalty on the strike you make with your \textit{whirlwind strike} ability is reduced to \minus1d.
+
+        \ff[12]{Unfettered Movement, Greater} Moving through spaces occupied by creatures with your \textit{unfettered movement} ability does not reduce your movement speed.
+
+        \ff[14]{Eye of the Storm, Greater} The penalty reduction increases to 3.
+
+        \ff[16]{Spring Attack, Greater} When you use your \textit{spring attack} ability, you can make two \glossterm{strikes} instead of one.
+        The two strikes cannot be made against the same creature.
+
+        \ff[18]{Hurricane Defense} When you use your \textit{hurricane strike} ability, you ignore all \glossterm{overwhelm penalties} until the end of the round, including during the same phase.
+    \end{feat}
+
 
 \section{Other Feat Rules}
 
