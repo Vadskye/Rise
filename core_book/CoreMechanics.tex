@@ -74,49 +74,6 @@ It defines how attributes work and explains how to make physical attacks in comb
             Some checks have a special effect on a critical failure, which is usually bad for the character making the check.
             For example, a critical failure while climbing means you fall (see \pcref{Climb}).
 
-    \subsection{Strikes}
-        A \glossterm{strike} is the most common type of attack.
-        There are two kinds of strikes: a single strike, with a single weapon, and a dual strike, with two weapons.
-        Many abilities allow you to make one or more strikes.
-        Whenever you make a strike, you can choose which kind of strike to make.
-        All strikes are \glossterm{physical}, \glossterm{mundane} abilities.
-
-        \parhead{Single Strike}
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spellspecial Choose a weapon you wield, or your \glossterm{unarmed attack}.
-                \spellquicktargeting{One creature or object}{As weapon}
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \begin{spellattack}{Physical vs. Armor}
-                    \spellsuccess The target takes \glossterm{strike damage} from the chosen weapon (see \pcref{Strike Damage}).
-                    \spellcritical As above, but the target takes double damage.
-                \end{spellattack}
-            \end{spelleffects}
-        \end{ability}
-
-        \parhead{Dual Strike}\label{Dual Strike}
-        You can only make a \glossterm{dual strike} if you are wielding two weapons at once.
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spellspecial Choose two weapons you wield.
-                % clarify - lower range of both weapons?
-                \spellquicktargeting{One creature or object}{As weapons}
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \begin{spellattack}{Physical vs. Armor}
-                    \spellspecial You roll this attack roll twice, once for each weapon.
-                    Roll any miss chances or failure chances independently for each weapon.
-                    You take a \minus1 penalty to accuracy on both attack rolls for each non-light weapon you choose when you use this ability.
-                    \spellsuccess The target takes \glossterm{strike damage} from one weapon you hit with (see \pcref{Strike Damage}).
-                    If you hit with both weapons, you choose which weapon to deal damage from.
-                    \spellcritical The target takes \glossterm{strike damage} from both weapons.
-                    % is this necessary or just wordy?
-                    There is no advantage to getting a \glossterm{critical hit} with both weapons, rather than just one.
-                \end{spellattack}
-            \end{spelleffects}
-        \end{ability}
-
 \section{Combat Overview}
     The world of Rise can be a harsh one, and not all disagreements can be resolved peacefully.
     At some point, you will be forced to enter combat.
@@ -179,46 +136,6 @@ It defines how attributes work and explains how to make physical attacks in comb
         \subsubsection{Moving Near Foes}\label{Moving Near Foes}
             All squares threatened by any foes cost double the normal movement cost to move out of.
 
-        \subsubsection{Reactive Movements}
-
-            It is possible to declare movement that reacts automatically to the movement of an opponent.
-            For example, you can try to follow a creature wherever it goes that round.
-            If you declare a reactive movement at the start of the movement phase, you automatically move accordingly.
-            In all cases, if you run out of movement speed before accomplishing your intended task, you simply stop where you ran out of movement.
-            The two most common types of reactive movements are \glossterm{blocking}, \glossterm{following}, and \glossterm{withdrawing}, but you can come up with other reactive movements.
-            The only requirement is that a reactive movement must have a simple criteria for determining how you move.
-
-            \parhead{Blocking}\label{Blocking} You can designate a target creature or object to block, and the area you want to block it from entering.
-            When you do, you automatically move to intercept the target as it approaches the blocked area.
-            Usually, blocking a target requires an opposed \glossterm{initiative} check against the target.
-            Success means you successfully keep ahead of the target as it moves, preventing it from entering the area (unless it can move through you).
-            Failure means the target moves around you (if there is room) to enter the area.
-
-            Multiple creatures can coordinate to block a single creature.
-            The blocked creature must beat the initiative of all blocking creatures to enter the blocked area.
-
-            \parhead{Following}\label{Following} You can designate a target creature or object to follow, and the maximum distance you want to follow at. When you do, you automatically move such that your distance to the target is no greater than your desired follow distance. For the rest of the round, whenever that creature or object moves, you move with it to stay within that follow distance.
-
-            If the target takes an action that makes it impossible to follow with movement, such as teleporting, you cannot follow it for the rest of the round.
-
-            \parhead{Withdrawing}\label{Withdrawing} Withdrawing functions the same way as following, except that you specify a minimum distance between you and the target instead of a maximum distance.
-            In addition, you can specify multiple targets and try to keep away from all of them.
-
-        \subsubsection{Special Movements}
-
-            Every character can take some special movement-related actions which are described below.
-
-            \parhead{Struggle} As a full-round action, you can move five feet, regardless of movement penalties.
-            This does not allow you to pass obstacles unrelated to movement speed penalties, such as walls.
-            You can only use this action with a land speed, and not with any other type of speed (see \pcref{Special Movement Modes}).
-
-            \parhead{Overrun}\label{Overrun} As part of movement, you can try to move directly through creatures in your way.
-            Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered.
-            If a creature does not attempt to avoid you, you make a Strength vs. Fortitude attack against it.
-            Success means you move through the creature's space, though you treat it as \glossterm{difficult terrain}.
-            Critical success means the creature is knocked prone, and you do not treat its space as difficult terrain.
-            Failure means you end your movement immediately.
-            Critical failure means you end your movement and fall \prone.
 
         \subsubsection{Movement Impediments}
 
@@ -328,6 +245,179 @@ It defines how attributes work and explains how to make physical attacks in comb
 
     \subsection{Special Actions}
 
+\section{Universal Abilities}
+    All creatures can use the following abilities.
+
+    \subsection{Strikes}\label{Strikes}
+        A \glossterm{strike} is the most common type of attack.
+        There are two kinds of strikes: a single strike, with a single weapon, and a dual strike, with two weapons.
+        Many abilities allow you to make one or more strikes.
+        Whenever you make a strike, you can choose which kind of strike to make.
+        All strikes are \glossterm{physical}, \glossterm{mundane} abilities.
+
+        \parhead{Single Strike}
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellspecial Choose a weapon you wield, or your \glossterm{unarmed attack}.
+                \spellquicktargeting{One creature or object}{As weapon}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \begin{spellattack}{Physical vs. Armor}
+                    \spellsuccess The target takes \glossterm{strike damage} from the chosen weapon (see \pcref{Strike Damage}).
+                    \spellcritical As above, but the target takes double damage.
+                \end{spellattack}
+            \end{spelleffects}
+        \end{ability}
+
+        \parhead{Dual Strike}\label{Dual Strike}
+        You can only make a \glossterm{dual strike} if you are wielding two weapons at once.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellspecial Choose two weapons you wield.
+                % clarify - lower range of both weapons?
+                \spellquicktargeting{One creature or object}{As weapons}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \begin{spellattack}{Physical vs. Armor}
+                    \spellspecial You roll this attack roll twice, once for each weapon.
+                    Roll any miss chances or failure chances independently for each weapon.
+                    You take a \minus1 penalty to accuracy on both attack rolls for each non-light weapon you choose when you use this ability.
+                    \spellsuccess The target takes \glossterm{strike damage} from one weapon you hit with (see \pcref{Strike Damage}).
+                    If you hit with both weapons, you choose which weapon to deal damage from.
+                    \spellcritical The target takes \glossterm{strike damage} from both weapons.
+                    % is this necessary or just wordy?
+                    There is no advantage to getting a \glossterm{critical hit} with both weapons, rather than just one.
+                \end{spellattack}
+            \end{spelleffects}
+        \end{ability}
+
+    \subsection{Combat Maneuvers}\label{Combat Maneuvers}
+        A combat maneuver is an attempt to physically hinder your foe with your body, such as by shoving or tripping it.
+        Unless otherwise noted, combat maneuvers do not deal damage.
+
+        \begin{dtable}
+            \lcaption{Combat Maneuvers}
+            \begin{dtabularx}{\columnwidth}{l l X}
+                \tb{Maneuver}  & \tb{Defense} & \tb{Brief Description} \\
+                \bottomrule
+                Dirty Trick & Any                  & Impose penalty on a foe         \\
+                Disarm      & Reflex               & Force foe to drop item          \\
+                Feint       & Reflex               & Leave foe vulnerable to attacks \\
+                Grapple     & Fortitude and Reflex & Wrestle with a foe              \\
+                Shove       & Fortitude            & Move a foe                      \\
+                Trip        & Reflex               & Trip a foe                      \\
+            \end{dtabularx}
+        \end{dtable}
+
+        \subsubsection{Maneuver Descriptions}
+
+            \parhead{Dirty Trick}\label{Dirty Trick} You strike your foe in a sensitive spot, pull its pants down, or creatively use your environment to attack.
+            You must use a free hand to use this ability.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellquicktargeting{One creature}{Adjacent}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \begin{spellattack}{Physical vs. Special}
+                        \spellspecial Depending on the nature of your dirty trick, this attack can target Fortitude or Reflex defense.
+                        \spellsuccess The target suffers a \minus2 penalty to one of the following statistics:
+                        \glossterm{accuracy} with \glossterm{physical} attacks, \glossterm{physical} checks, Armor defense, Fortitude defense, Reflex defense, or Mental defense.
+
+                        \spellcritical As above, except that the penalty is increased to \minus5.
+                    \end{spellattack}
+                \end{spelleffects}
+            \end{ability}
+
+            \parhead{Disarm}\label{Disarm} You can strike an item your foe is wearing or holding to knock it out of their hands or damage it.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellspecial Choose a weapon you wield, or your \glossterm{unarmed attack}.
+                    \spellquicktargeting{One object}{As weapon}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \begin{spellattack}{Physical vs. Special}
+                        \spellspecial If the target is \glossterm{unattended}, this attack is made against its Armor defense.
+                        If the target is \glossterm{attended}, this attack is also made against the attending creature's Reflex defense.
+                        \spellsuccess You choose whether or not the target takes \glossterm{strike damage} from the chosen weapon.
+                        In addition, if the target is \glossterm{attended} and not held in two hands or extraordinarily well secured (such as a ring), it falls to the ground in the closest square to you occupied by the attending creature.
+                        \spellcritical As above, but you deal double damage if you choose to deal damage.
+                        In addition, the target falls to the ground even if it is held in two hands.
+                    \end{spellattack}
+                \end{spelleffects}
+            \end{ability}
+
+            \parhead{Feint}\label{Feint} You can make a fake attack to leave your foe off-balance.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellspecial Choose a weapon you wield, or your \glossterm{unarmed attack}.
+                    \spellquicktargeting{One creature}{As weapon}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \spelleffect During the \glossterm{delayed action phase}, you make a \glossterm{strike} with the weapon.
+                    You can make the strike against any creature within range of your weapon, including the creature this ability targets.
+                    \begin{spellattack}{Physical vs. Reflex}
+                        \spellsuccess The target takes a \minus2 penalty to Armor defense against the strike.
+                        \spellcritical As above, but the penalty is increased to \minus5.
+                        \spellfailure You take a \minus2 penalty to accuracy with the strike.
+                    \end{spellattack}
+                \end{spelleffects}
+            \end{ability}
+
+            \parhead{Grapple}\label{Grapple} You physically grab and restrain your foe.
+            You must use a free hand to use this ability.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellquicktargeting{One creature}{Adjacent}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \begin{spellattack}{Strength vs. Fortitude and Reflex}
+                        \spellsuccess You and the target are \grappled.
+                        For details, see \pcref{Grappling}.
+                    \end{spellattack}
+                \end{spelleffects}
+            \end{ability}
+
+            \parhead{Shove}\label{Shove} You shove your foe where you want it to go.
+            You must use a free hand to use this ability.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellquicktargeting{One creature}{Adjacent}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \begin{spellattack}{Strength vs. Fortitude}
+                        \spellsuccess You move the target up to 10 feet in a direction of your choice.
+                        Effects that limit movement speed, such as \glossterm{difficult terrain}, similarly limit the distance you can move the target.
+                        You can move the same distance that you push the target, up to a maximum distance equal to half your land speed.
+
+                        You cannot normally keep moving the target if it stops being adjacent to you.
+                        If the target encounters a creature or solid object, you must stop moving it.
+                        \spellcritical As above, except that you can move the target up to five feet per point of Strength you have.
+                        This does not change the maximum distance you can move.
+                        In addition, you can move the target through creatures, but not solid objects.
+                        Each five feet of movement through a creature costs 10 feet of movement.
+                        You cannot leave the target inside another creature's space.
+                        If that occurs inadvertently, you and the target return to the last open space you both occupied.
+                    \end{spellattack}
+                \end{spelleffects}
+            \end{ability}
+
+            \parhead{Trip}\label{Trip} You try to trip your foe.
+            You must use a free hand to use this ability.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellquicktargeting{One creature}{Adjacent}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \begin{spellattack}{Physical vs. Reflex}
+                        \spellsuccess The target becomes \prone.
+                        \spellcritical As above. In addition, during the \glossterm{delayed action phase}, you can make a \glossterm{strike} with a weapon you wield.
+                        You take a \minus2d penalty to damage with the strike.
+                    \end{spellattack}
+                \end{spelleffects}
+            \end{ability}
+
+    \subsection{Special Combat Actions}
+
         \parhead{Charge}\label{Charge} As a \glossterm{standard action}, you can move up to your speed in the action phase.
         During the \glossterm{delayed action phase}, you can make a \glossterm{strike} from your new location.
         If you charge, you take a \minus5 penalty to \glossterm{physical defenses} until the end of the round, including during the \glossterm{action phase}.
@@ -347,15 +437,6 @@ It defines how attributes work and explains how to make physical attacks in comb
         If you use an ability that causes actions to be delayed after you have already delayed, any actions which would be delayed are ignored.
         For example, if you charge after delaying, you would not be able to attack after the charge, making it generally pointless.
 
-        \parhead{Recover}\label{Recover}
-        As a standard action, you can spend an \glossterm{action point} to use this ability.
-        \begin{ability}
-            \begin{spelleffects}
-                \spelleffect You heal 1d4 damage \add 1d per two levels.
-                In addition, you may remove one \glossterm{condition} affecting you.
-            \end{spelleffects}
-        \end{ability}
-
         \parhead{Desperate Recovery}\label{Desperate Recovery}
         As a standard action, if you have no action points remaining, you can use this ability.
         Creatures without action points can also use this ability.
@@ -365,10 +446,58 @@ It defines how attributes work and explains how to make physical attacks in comb
             \end{spelleffects}
         \end{ability}
 
+        \parhead{Recover}\label{Recover}
+        As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \begin{ability}
+            \begin{spelleffects}
+                \spelleffect You heal 1d4 damage \add 1d per two levels.
+                In addition, you may remove one \glossterm{condition} affecting you.
+            \end{spelleffects}
+        \end{ability}
+
         \parhead{Total Defense}\label{Total Defense}
         As a standard action, you can focus entirely on defense, granting you a \plus2 bonus to your defenses until the end of the round.
         If you take the total defense action, you increase your defenses even against other attacks that occur simultaneously.
         This is an exception to the normal way actions resolve (see \pcref{Resolving Actions}).
+
+    \subsection{Special Movements}
+
+        \parhead{Struggle} As a standard action action, you can move five feet, regardless of movement penalties.
+        This does not allow you to pass obstacles unrelated to movement speed penalties, such as walls.
+        You can only use this action with a land speed, and not with any other type of speed (see \pcref{Special Movement Modes}).
+
+        \parhead{Overrun}\label{Overrun} As part of movement, you can try to move directly through creatures in your way.
+        Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered.
+        If a creature does not attempt to avoid you, you make a Strength vs. Fortitude attack against it.
+        Success means you move through the creature's space, though you treat it as \glossterm{difficult terrain}.
+        Critical success means the creature is knocked prone, and you do not treat its space as difficult terrain.
+        Failure means you end your movement immediately.
+        Critical failure means you end your movement and fall \prone.
+
+    \subsection{Reactive Movements}
+
+        It is possible to declare movement that reacts automatically to the movement of an opponent.
+        For example, you can try to follow a creature wherever it goes that round.
+        If you declare a reactive movement at the start of the movement phase, you automatically move accordingly.
+        In all cases, if you run out of movement speed before accomplishing your intended task, you simply stop where you ran out of movement.
+        The two most common types of reactive movements are \glossterm{blocking}, \glossterm{following}, and \glossterm{withdrawing}, but you can come up with other reactive movements.
+        The only requirement is that a reactive movement must have a simple criteria for determining how you move.
+
+        \parhead{Blocking}\label{Blocking} You can designate a target creature or object to block, and the area you want to block it from entering.
+        When you do, you automatically move to intercept the target as it approaches the blocked area.
+        Usually, blocking a target requires an opposed \glossterm{initiative} check against the target.
+        Success means you successfully keep ahead of the target as it moves, preventing it from entering the area (unless it can move through you).
+        Failure means the target moves around you (if there is room) to enter the area.
+
+        Multiple creatures can coordinate to block a single creature.
+        The blocked creature must beat the initiative of all blocking creatures to enter the blocked area.
+
+        \parhead{Following}\label{Following} You can designate a target creature or object to follow, and the maximum distance you want to follow at. When you do, you automatically move such that your distance to the target is no greater than your desired follow distance. For the rest of the round, whenever that creature or object moves, you move with it to stay within that follow distance.
+
+        If the target takes an action that makes it impossible to follow with movement, such as teleporting, you cannot follow it for the rest of the round.
+
+        \parhead{Withdrawing}\label{Withdrawing} Withdrawing functions the same way as following, except that you specify a minimum distance between you and the target instead of a maximum distance.
+        In addition, you can specify multiple targets and try to keep away from all of them.
 
 \section{Attributes}
 
@@ -1113,132 +1242,8 @@ It defines how attributes work and explains how to make physical attacks in comb
         1. All races also grant a bonus feat at 1st level. The feat must be chosen from a specific list of racial bonus feats (see \pcref{Races}). \\
     \end{dtable}
 
+% TODO: This is a bad name; organize these better
 \section{Special Rules}
-
-    \subsection{Combat Maneuvers}\label{Combat Maneuvers}
-        A combat maneuver is an attempt to physically hinder your foe with your body, such as by shoving or tripping it.
-        Unless otherwise noted, combat maneuvers do not deal damage.
-
-        \begin{dtable}
-            \lcaption{Combat Maneuvers}
-            \begin{dtabularx}{\columnwidth}{l l X}
-                \tb{Maneuver}  & \tb{Defense} & \tb{Brief Description} \\
-                \bottomrule
-                Dirty Trick & Any                  & Impose penalty on a foe         \\
-                Disarm      & Reflex               & Force foe to drop item          \\
-                Feint       & Reflex               & Leave foe vulnerable to attacks \\
-                Grapple     & Fortitude and Reflex & Wrestle with a foe              \\
-                Shove       & Fortitude            & Move a foe                      \\
-                Trip        & Reflex               & Trip a foe                      \\
-            \end{dtabularx}
-        \end{dtable}
-
-        \subsubsection{Maneuver Descriptions}
-
-            \parhead{Dirty Trick}\label{Dirty Trick} You strike your foe in a sensitive spot, pull its pants down, or creatively use your environment to attack.
-            You must use a free hand to use this ability.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellquicktargeting{One creature}{Adjacent}
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \begin{spellattack}{Physical vs. Special}
-                        \spellspecial Depending on the nature of your dirty trick, this attack can target Fortitude or Reflex defense.
-                        \spellsuccess The target suffers a \minus2 penalty to one of the following statistics:
-                        \glossterm{accuracy} with \glossterm{physical} attacks, \glossterm{physical} checks, Armor defense, Fortitude defense, Reflex defense, or Mental defense.
-
-                        \spellcritical As above, except that the penalty is increased to \minus5.
-                    \end{spellattack}
-                \end{spelleffects}
-            \end{ability}
-
-            \parhead{Disarm}\label{Disarm} You can strike an item your foe is wearing or holding to knock it out of their hands or damage it.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellspecial Choose a weapon you wield, or your \glossterm{unarmed attack}.
-                    \spellquicktargeting{One object}{As weapon}
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \begin{spellattack}{Physical vs. Special}
-                        \spellspecial If the target is \glossterm{unattended}, this attack is made against its Armor defense.
-                        If the target is \glossterm{attended}, this attack is also made against the attending creature's Reflex defense.
-                        \spellsuccess You choose whether or not the target takes \glossterm{strike damage} from the chosen weapon.
-                        In addition, if the target is \glossterm{attended} and not held in two hands or extraordinarily well secured (such as a ring), it falls to the ground in the closest square to you occupied by the attending creature.
-                        \spellcritical As above, but you deal double damage if you choose to deal damage.
-                        In addition, the target falls to the ground even if it is held in two hands.
-                    \end{spellattack}
-                \end{spelleffects}
-            \end{ability}
-
-            \parhead{Feint}\label{Feint} You can make a fake attack to leave your foe off-balance.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellspecial Choose a weapon you wield, or your \glossterm{unarmed attack}.
-                    \spellquicktargeting{One creature}{As weapon}
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \spelleffect During the \glossterm{delayed action phase}, you make a \glossterm{strike} with the weapon.
-                    You can make the strike against any creature within range of your weapon, including the creature this ability targets.
-                    \begin{spellattack}{Physical vs. Reflex}
-                        \spellsuccess The target takes a \minus2 penalty to Armor defense against the strike.
-                        \spellcritical As above, but the penalty is increased to \minus5.
-                        \spellfailure You take a \minus2 penalty to accuracy with the strike.
-                    \end{spellattack}
-                \end{spelleffects}
-            \end{ability}
-
-            \parhead{Grapple}\label{Grapple} You physically grab and restrain your foe.
-            You must use a free hand to use this ability.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellquicktargeting{One creature}{Adjacent}
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \begin{spellattack}{Strength vs. Fortitude and Reflex}
-                        \spellsuccess You and the target are \grappled.
-                        For details, see \pcref{Grappling}.
-                    \end{spellattack}
-                \end{spelleffects}
-            \end{ability}
-
-            \parhead{Shove}\label{Shove} You shove your foe where you want it to go.
-            You must use a free hand to use this ability.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellquicktargeting{One creature}{Adjacent}
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \begin{spellattack}{Strength vs. Fortitude}
-                        \spellsuccess You move the target up to 10 feet in a direction of your choice.
-                        Effects that limit movement speed, such as \glossterm{difficult terrain}, similarly limit the distance you can move the target.
-                        You can move the same distance that you push the target, up to a maximum distance equal to half your land speed.
-
-                        You cannot normally keep moving the target if it stops being adjacent to you.
-                        If the target encounters a creature or solid object, you must stop moving it.
-                        \spellcritical As above, except that you can move the target up to five feet per point of Strength you have.
-                        This does not change the maximum distance you can move.
-                        In addition, you can move the target through creatures, but not solid objects.
-                        Each five feet of movement through a creature costs 10 feet of movement.
-                        You cannot leave the target inside another creature's space.
-                        If that occurs inadvertently, you and the target return to the last open space you both occupied.
-                    \end{spellattack}
-                \end{spelleffects}
-            \end{ability}
-
-            \parhead{Trip}\label{Trip} You try to trip your foe.
-            You must use a free hand to use this ability.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellquicktargeting{One creature}{Adjacent}
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \begin{spellattack}{Physical vs. Reflex}
-                        \spellsuccess The target becomes \prone.
-                        \spellcritical As above. In addition, during the \glossterm{delayed action phase}, you can make a \glossterm{strike} with a weapon you wield.
-                        You take a \minus2d penalty to damage with the strike.
-                    \end{spellattack}
-                \end{spelleffects}
-            \end{ability}
 
     \subsection{Grappling}\label{Grappling}
         Grappling creatures are physically struggling with each other. While grappled, you suffer certain penalties and restrictions, as described below.
