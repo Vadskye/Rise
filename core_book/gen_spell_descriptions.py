@@ -120,21 +120,19 @@ class Spell(object):
             augments=None,
             cantrip=None,
             category=None,
-            custom_augments=None,
             effects=None,
             header=None,
             lists=None,
             name=None,
             schools=None,
+            subspells=None,
             targeting=None,
             notes=None,
             short_description=None,
-            standard_augments=None,
     ):
-        self.augments = augments
         self.cantrip = cantrip
         self.category = category
-        self.custom_augments = custom_augments
+        self.subspells = subspells
         self.effects = effects
         self.header = header
         self.name = name
@@ -142,15 +140,15 @@ class Spell(object):
         self.notes = notes
         self.schools = schools
         self.short_description = short_description or 'TODO'
-        self.standard_augments = standard_augments
+        self.augments = augments
         self.targeting = targeting
 
         for arg in ['cantrip', 'effects', 'lists', 'name', 'schools', 'targeting']:
             if getattr(self, arg) is None:
                 print(f"Warning: {self} is missing required property '{arg}'")
 
-        if self.standard_augments is None:
-            self.standard_augments = self.calculate_standard_augments()
+        if self.augments is None:
+            self.augments = self.calculate_standard_augments()
 
         for school in self.schools:
             if school not in SCHOOLS:
@@ -162,7 +160,7 @@ class Spell(object):
             warn(f"{self} has unrecognized category '{self.category}'")
 
     def calculate_standard_augments(self):
-        augments = []
+        augments = ['Quickened', 'Silent', 'Stilled']
         if self.targeting.rng is not None:
             augments.append('Extended')
         if self.targeting.area is not None:
@@ -183,13 +181,13 @@ class Spell(object):
 
     def to_latex(self):
         # Sort by level as primary, name as secondary
-        sorted_custom_augments = sorted(
+        sorted_subspells = sorted(
             sorted(
-                self.custom_augments,
+                self.subspells,
                 key=lambda augment: augment.name
             ),
             key=lambda augment: augment.level
-        ) if self.custom_augments else None
+        ) if self.subspells else None
 
         return join(
             f"""
@@ -201,25 +199,29 @@ class Spell(object):
                     \\end<spellcontent>
                     \\begin<spellfooter>
                         \\spellinfo<{', '.join(self.schools)}><{', '.join(self.lists)}>
-            """, f"""
+                        \\parhead*<Augments> {', '.join(sorted(self.augments))}
+            """,
+            f"""
                         \\spellnotes {self.notes}
-            """ if self.notes else None, f"""
+            """ if self.notes else None,
+            f"""
                     \\end<spellfooter>
-            """, f"""
+            """,
+            f"""
                     \\begin<spellcantrip>
                         {self.cantrip}
                     \\end<spellcantrip>
-            """ if self.cantrip else None, f"""
+            """ if self.cantrip else None,
+            f"""
                 \\end<spellsection>
-            """, f"""
-                \\subsubsection<Augments>
-            """ if self.custom_augments or self.standard_augments else None, f"""
-                    \\parhead<Standard Augments> {', '.join(sorted(self.standard_augments))}.
-            """ if self.standard_augments else None,
+            """,
+            f"""
+                \\subsubsection<Subspells>
+            """ if self.subspells or self.augments else None,
             '\n'.join([
-                str(augment)
-                for augment in sorted_custom_augments
-            ]) if self.custom_augments else None,
+                str(subspell)
+                for subspell in sorted_subspells
+            ]) if self.subspells else None,
         )
 
     def __repr__(self):
@@ -283,18 +285,7 @@ class Attack(object):
         )
 
 
-class Augment(object):
-
-    @classmethod
-    def giant(cls):
-        return cls(
-            level=1,
-            name='Giant',
-            description="""
-                The spell can affect a target one size category larger.
-            """,
-            stackable=True,
-        )
+class Subspell(object):
 
     def __init__(
             self,
@@ -304,17 +295,16 @@ class Augment(object):
             effects=None,
             only_one=None,
             school=None,
-            stackable=False,
             tags=None,
             targeting=None,
     ):
-        self.level = level
+        # TODO: fix this hack caused by changing custom augments to subspells
+        self.level = level + 1
         self.name = name
         self.description = description
         self.effects = effects
         self.only_one = only_one
         self.school = school
-        self.stackable = stackable
         self.tags = tags
         self.targeting = targeting
 
@@ -358,12 +348,9 @@ class Augment(object):
                 the spell's effects with the following: {self.effects}
             """ if self.effects else None, """
                 \\par
-            """ if self.tags or self.school or self.stackable or self.only_one else None, f"""
+            """ if self.tags or self.school or self.only_one else None, f"""
                 {self.tag_text()}
             """, f"""
-                This augment can be applied multiple times.
-                Its effects stack.
-            """ if self.stackable else None, f"""
                 This augment can only be applied to one casting of this spell at a time.
             """ if self.only_one else None,
         ))
@@ -515,13 +502,13 @@ def generate_spells():
         schools=['Evocation'],
         lists=['Nature'],
         cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=1,
                 name='Forceful',
                 description='If the attack succeeds, the target is moved up to 10 feet in any direction -- even vertically.',
             ),
-            Augment(
+            Subspell(
                 level=1,
                 name='Gust of Wind',
                 description="The spell deals -2d damage.",
@@ -552,8 +539,8 @@ def generate_spells():
         schools=['Transmutation'],
         lists=['Air', 'Nature'],
         cantrip="The spell's duration becomes Sustain (swift).",
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=1,
                 name="Gentle Descent",
                 description="""
@@ -561,18 +548,17 @@ def generate_spells():
                     A creature with a glide speed can glide through the air at the indicated speed (see \pcref{Gliding}).
                 """,
             ),
-            Augment(
+            Subspell(
                 level=3,
                 name='Wind Screen',
                 description="The miss chance for ranged strikes against the target increases to 50\%.",
             ),
-            Augment.giant(),
-            Augment(
+            Subspell(
                 level=2,
                 name='Accelerated',
                 description='The glide speed granted by this spell increases to 60 feet.',
             ),
-            Augment(
+            Subspell(
                 level=3,
                 name='Air Walk',
                 description="""
@@ -581,7 +567,7 @@ def generate_spells():
                     By choosing when to treat the air as solid, it can traverse the air with ease.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=4,
                 name='Stormlord',
                 description=r"""
@@ -613,13 +599,13 @@ def generate_spells():
         schools=['Abjuration'],
         lists=['Arcane'],
         cantrip="The spell's duration becomes Sustain (swift).",
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=2,
                 name='Complete',
                 description='The damage reduction applies against all damage, not just physical damage.',
             ),
-            Augment(
+            Subspell(
                 level=3,
                 name='Immunity',
                 effects=Effects(
@@ -630,7 +616,7 @@ def generate_spells():
                     """,
                 ),
             ),
-            Augment(
+            Subspell(
                 level=3,
                 name='Retributive',
                 description=r"""
@@ -641,13 +627,12 @@ def generate_spells():
                 tags=['Life'],
                 school='Vivimancy',
             ),
-            Augment(
+            Subspell(
                 level=4,
                 name='Empowered',
                 description=r"""
                     The damage reduction increases by an amount equal to your spellpower.
                 """,
-                stackable=True,
             ),
         ],
         category='buff, defense',
@@ -666,13 +651,13 @@ def generate_spells():
         schools=['Conjuration'],
         lists=['Arcane'],
         cantrip="The spell deals -1d damage and has no additional effects on a critical hit.",
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=2,
                 name='Corrosive',
                 description='The spell deals double damage to objects.'
             ),
-            Augment(
+            Subspell(
                 level=3,
                 name='Lingering',
                 description="""
@@ -717,8 +702,8 @@ def generate_spells():
             In addition, its duration becomes Sustain (swift).
             Its effect is still a condition, and can be removed by abilites that remove conditions.
         """,
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=2,
                 name='Complete',
                 description="The damage increase applies to all damage, not just physical damage.",
@@ -745,8 +730,8 @@ def generate_spells():
         schools=['Abjuration'],
         lists=['Divine', 'Nature'],
         cantrip="The spell's duration becomes Sustain (standard)",
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=3,
                 name='Selective',
                 description="""
@@ -754,7 +739,7 @@ def generate_spells():
                     You must be aware of a creature attempting to pass through the barrier to allow it through.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=6,
                 name='Antilife Shell',
                 description="""
@@ -790,8 +775,8 @@ def generate_spells():
         schools=['Abjuration'],
         lists=['Arcane', 'Divine', 'Magic', 'Nature'],
         cantrip="The spell's duration becomes Sustain (standard).",
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=1,
                 name='Suppress Item',
                 targeting=Targeting(
@@ -812,7 +797,7 @@ def generate_spells():
                     tags=['Thaumaturgy'],
                 ),
             ),
-            Augment(
+            Subspell(
                 level=2,
                 name='Banishing',
                 effects=Effects(
@@ -830,7 +815,7 @@ def generate_spells():
                     tags=['Thaumaturgy'],
                 ),
             ),
-            Augment(
+            Subspell(
                 level=6,
                 name='Antimagic Field',
                 targeting=Targeting(
@@ -867,8 +852,8 @@ def generate_spells():
         schools=['Evocation'],
         lists=['Arcane', 'Fire', 'Nature'],
         cantrip="The spell deals -1d damage and has no additional effects on a critical hit.",
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=1,
                 name="Burning Hands",
                 targeting=Targeting(
@@ -906,22 +891,22 @@ def generate_spells():
         """,
         schools=['Enchantment'],
         lists=["Arcane"],
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=1,
                 name="Silent",
                 description="""
                     The spell does not require verbal components to cast.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=2,
                 name="Monstrous",
                 description="""
                     The spell can target creatures of any creature type.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=3,
                 name="Attuned",
                 description="""
@@ -929,7 +914,7 @@ def generate_spells():
                     A critical sucess still makes the effect permanent.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=4,
                 name="Dominating",
                 effects=Effects(
@@ -944,7 +929,7 @@ def generate_spells():
                     tags=['Compulsion, Mind'],
                 ),
             ),
-            Augment(
+            Subspell(
                 level=4,
                 name="Amnesia",
                 description="""
@@ -971,8 +956,8 @@ def generate_spells():
         schools=['Conjuration'],
         lists=['Nature', 'Water'],
         cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=1,
                 name="Aqueuous Sphere",
                 targeting=Targeting(
@@ -982,7 +967,7 @@ def generate_spells():
                     targets='Everything in the area',
                 ),
             ),
-            Augment(
+            Subspell(
                 level=3,
                 name="Sustained",
                 description="""
@@ -1013,8 +998,8 @@ def generate_spells():
         schools=['Evocation', 'Transmutation'],
         lists=['Arcane', 'Nature', 'War', 'Water'],
         cantrip="The spell's duration becomes Sustain (swift).",
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=1,
                 name="Aqueous Blade, Lesser",
                 effects=Effects(
@@ -1026,7 +1011,7 @@ def generate_spells():
                     tags=['Shaping', 'Water'],
                 ),
             ),
-            Augment(
+            Subspell(
                 level=2,
                 name="Zephyr Blade",
                 description="""
@@ -1035,22 +1020,14 @@ def generate_spells():
                 """,
                 tags=['Air'],
             ),
-            Augment(
-                level=3,
-                name="Empowered",
-                description="""
-                    The spell's damage bonus increases by +1d.
-                """,
-                stackable=True,
-            ),
-            Augment(
+            Subspell(
                 level=5,
                 name="Zephyr Blade, Greater",
                 description="""
                     This augment functions like the Zephyr Blade augment, except that it increases the weapon's reach by ten feet.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=6,
                 name="Aqueous Blade",
                 description="""
@@ -1084,8 +1061,8 @@ def generate_spells():
             The spell has no additional effects on a critical hit.
             In addition, its duration becomes Sustain (swift).
         """,
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=1,
                 name="Redirected",
                 description="""
@@ -1109,21 +1086,13 @@ def generate_spells():
         cantrip="The spell's duration becomes Sustain (swift).",
         schools=['Channeling'],
         lists=['Divine'],
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=5,
                 name="Protection",
                 description="""
                     The target gains \\glossterm<damage reduction> against all damage equal to your spellpower.
                 """,
-            ),
-            Augment(
-                level=3,
-                name="Empowered",
-                description="""
-                    The spell's damage bonus increases by +1d.
-                """,
-                stackable=True,
             ),
         ],
         category='buff, offense',
@@ -1146,8 +1115,8 @@ def generate_spells():
         schools=['Transmutation'],
         lists=['Nature'],
         cantrip="The spell's duration becomes Sustain (swift).",
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=2,
                 name="Stoneskin",
                 description="""
@@ -1155,13 +1124,12 @@ def generate_spells():
                     Instead, it makes the target \\glossterm<vulnerable> to damage from adamantine weapons.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=4,
                 name="Empowered",
                 description="""
                     The damage reduction granted by this spell increases by an amount equal to your spellpower.
                 """,
-                stackable=True,
             ),
         ],
         category='buff, defense',
@@ -1179,7 +1147,7 @@ def generate_spells():
         schools=['Channeling'],
         lists=['Divine'],
         cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
-        custom_augments=[
+        subspells=[
         ],
         category='damage',
     ))
@@ -1198,8 +1166,8 @@ def generate_spells():
         lists=['Divine'],
         cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
         category='damage',
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=3,
                 name="Bolstering",
                 description="""
@@ -1229,8 +1197,8 @@ def generate_spells():
         schools=['Transmutation'],
         lists=['Arcane', 'Divine', 'Nature'],
         cantrip="The spell's duration becomes Sustain (swift).",
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=3,
                 name="Myriad",
                 description="""
@@ -1270,8 +1238,8 @@ def generate_spells():
         schools=['Conjuration'],
         lists=['Arcane', 'Nature'],
         cantrip="The spell's duration becomes Sustain (standard).",
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=2,
                 name="Reinforced",
                 description="""
@@ -1306,7 +1274,7 @@ def generate_spells():
         cantrip="""
             The spell does not have additional effects other than damage.
         """,
-        custom_augments=[
+        subspells=[
         ],
         category='debuff, combat',
     ))
@@ -1332,7 +1300,7 @@ def generate_spells():
         schools=['Evocation'],
         lists=['Arcane', 'Nature'],
         cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
-        custom_augments=[
+        subspells=[
         ],
         category='damage',
     ))
@@ -1358,8 +1326,8 @@ def generate_spells():
         schools=['Evocation'],
         lists=['Arcane', 'Nature'],
         cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=3,
                 name="Instantaneous",
                 description="""
@@ -1396,15 +1364,15 @@ def generate_spells():
             The spell's duration becomes Sustain (swift).
             Its effect is still a condition, and can be removed by abilites that remove conditions.
         """,
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=2,
                 name="Eyebite",
                 description="""
                     If the spell's attack succeeds, the target is also \\partiallyblinded. If it critically hits, the target is \\blinded instead of partially blinded.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=2,
                 name="Finger of Death",
                 description="""
@@ -1412,7 +1380,7 @@ def generate_spells():
                 """,
                 tags=['Death'],
             ),
-            Augment(
+            Subspell(
                 level=4,
                 name="Corruption of Blood and Bone",
                 description="""
@@ -1421,7 +1389,7 @@ def generate_spells():
                     When the spell ends, the target's maximum hit points are restored.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=5,
                 name="Corrupting Curse",
                 description="""
@@ -1431,13 +1399,12 @@ def generate_spells():
                     This is a \\glossterm<Curse> effect.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=3,
                 name="Empowered",
                 description="""
                     The penalty increases by 1.
                 """,
-                stackable=True,
             ),
         ],
         category='debuff, combat',
@@ -1456,15 +1423,15 @@ def generate_spells():
         schools=['Vivimancy'],
         lists=['Arcane', 'Divine', 'Nature'],
         cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=2,
                 name="Drain Life",
                 description="""
                     You gain temporary hit points equal to half the damage you deal with this spell.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=3,
                 name="Death Knell",
                 description="""
@@ -1498,7 +1465,7 @@ def generate_spells():
         schools=['Conjuration'],
         lists=['Arcane', 'Divine'],
         cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
-        custom_augments=[
+        subspells=[
         ],
         category='damage',
     ))
@@ -1522,29 +1489,29 @@ def generate_spells():
             Instead of healing, the spell grants \\glossterm<temporary hit points> equal to twice your spellpower.
             The duration of the temporary hit points is Sustain (swift).
         """,
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=1,
                 name="Moderate Wounds",
                 description="""
                     For every 5 points of healing, this spell can instead cure 1 vital damage.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=1,
                 name="Undead Bane",
                 description="""
                     If the target is undead, the spell gains a +2 bonus to accuracy and deals double damage on a critical hit.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=2,
                 name="Serious Wounds",
                 description="""
                     For every 2 points of healing, this spell can instead cure 1 vital damage.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=3,
                 name="Critical Wounds",
                 description="""
@@ -1574,15 +1541,15 @@ def generate_spells():
         schools=['Abjuration'],
         lists=['Arcane', 'Chaos', 'Divine', 'Evil', 'Good', 'Law'],
         cantrip="The spell's duration becomes Sustain (swift).",
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=2,
                 name="Complete",
                 description="""
                     The damage reduction also applies against non-physical effects.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=3,
                 name="Retributive",
                 description="""
@@ -1622,8 +1589,8 @@ def generate_spells():
         schools=['Conjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
         cantrip="The spell's duration becomes Sustain (standard).",
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=1,
                 name="Summon Bear",
                 description="""
@@ -1663,8 +1630,8 @@ def generate_spells():
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
         cantrip="The sensor cannot be moved after it is originally created.",
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=1,
                 name="Auditory",
                 description="""
@@ -1673,37 +1640,36 @@ def generate_spells():
                     The sensor's auditory acuity is the same as your own, except that it does not share the benefits of any \\glossterm<magical> effects that improve your hearing.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=2,
                 name="Accelerated",
                 description="""
                     When you move the sensor, you can move it up to 100 feet, instead of up to 30 feet.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=2,
-                name="Myriad",
+                name="Dual",
                 description="""
                     You create an additional sensor in the same location.
                     Whenever you see or hear from the perspective of a sensor, you choose which sensor to see or hear from.
                 """,
-                stackable=True,
             ),
-            Augment(
+            Subspell(
                 level=2,
                 name="Penetrating",
                 description="""
                     The spell's range becomes \\rngunrestricted, allowing you to cast it into areas where you do not have \\glossterm<line of sight> or \\glossterm<line of effect>.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=3,
                 name="Autonomous",
                 description="""
                     You can move the sensor as part of the action you take to sustain the spell, rather than as a standard action.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=4,
                 name="Scry Creature",
                 targeting=Targeting(
@@ -1717,7 +1683,7 @@ def generate_spells():
                     Failure means the sensor does not appear at all.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=5,
                 name="Split Senses",
                 description="""
@@ -1745,8 +1711,8 @@ def generate_spells():
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
         cantrip="The spell's duration becomes Sustain (swift).",
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=6,
                 name="Foresee Actions",
                 description="""
@@ -1779,9 +1745,8 @@ def generate_spells():
         schools=['Evocation'],
         lists=['Arcane'],
         cantrip="If your attack succeeds, you move the target one foot per spellpower. In addition, this has no additional effects on a critical hit.",
-        custom_augments=[
-            Augment.giant(),
-            Augment(
+        subspells=[
+            Subspell(
                 level=1,
                 name="Precise",
                 effects=Effects(
@@ -1796,7 +1761,7 @@ def generate_spells():
                     tags=['Telekinesis'],
                 ),
             ),
-            Augment(
+            Subspell(
                 level=2,
                 name="Binding",
                 description="""
@@ -1804,7 +1769,7 @@ def generate_spells():
                     This is a \\glossterm<condition>, and lasts until removed.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=2,
                 name="Levitate",
                 targeting=Targeting(
@@ -1841,8 +1806,8 @@ def generate_spells():
         schools=['Illusion'],
         lists=['Arcane'],
         cantrip="The spell's duration becomes Sustain (swift).",
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=2,
                 name="Disguise Image",
                 effects=Effects(
@@ -1855,7 +1820,7 @@ def generate_spells():
                     tags=['Glamer', 'Visual'],
                 ),
             ),
-            Augment(
+            Subspell(
                 level=2,
                 name="Mirror Image",
                 effects=Effects(
@@ -1873,7 +1838,7 @@ def generate_spells():
                     tags=['Figment', 'Visual'],
                 ),
             ),
-            Augment(
+            Subspell(
                 level=3,
                 name="Shadow Mantle",
                 description="""
@@ -1882,7 +1847,7 @@ def generate_spells():
                     In addition, it loses the \\glossterm<Visual> tag, allowing it to affect creatures who do not rely on sight to affect the target.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=4,
                 name="Displacement",
                 description="""
@@ -1921,8 +1886,8 @@ def generate_spells():
         schools=['Illusion'],
         lists=['Arcane', 'Divine', 'Nature'],
         cantrip="The spell affects a single creature, rather than an area. In addition, it has no additional effects on a critical hit",
-        custom_augments=[
-            Augment(
+        subspells=[
+            Subspell(
                 level=1,
                 name="Dancing Lights",
                 effects=Effects(
@@ -1938,7 +1903,7 @@ def generate_spells():
                     tags=['Figment', 'Light', 'Visual'],
                 ),
             ),
-            Augment(
+            Subspell(
                 level=2,
                 name="Faerie Fire",
                 description="""
@@ -1948,7 +1913,7 @@ def generate_spells():
                     This allows observers to see their location, though not to see them perfectly.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=2,
                 name="Illuminating",
                 description="""
@@ -1956,7 +1921,7 @@ def generate_spells():
                     The light has no additional effects on creatures in the area.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=1,
                 name="Expanded",
                 description="""
@@ -1964,7 +1929,7 @@ def generate_spells():
                     This allows the standard Widened augment to be used to expand the spell's area further.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=4,
                 name="Universal",
                 description="""
@@ -1972,7 +1937,7 @@ def generate_spells():
                     The spell's attack is made against Fortitude instead of Reflex.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=4,
                 name="Blinding",
                 description="""
@@ -1980,7 +1945,7 @@ def generate_spells():
                     In addition, the blindness replaces the spell's normal success effect, rather than being applied in addition to it.
                 """,
             ),
-            Augment(
+            Subspell(
                 level=3,
                 name="Flashbang",
                 description="""
