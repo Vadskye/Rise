@@ -35,7 +35,8 @@ It defines how attributes work and explains how to make physical attacks in comb
         \subsubsection{Critical Miss}
             if your attack result is at least 10 lower than your target's defense, your attack is a \glossterm{critical miss}.
             Some attacks have a special effect on a critical miss, which is usually bad for the attacker.
-            Some attacks also have special effects on a non-critical miss, where you fail to beat your target's defense by 9 or less.
+            % TODO: Is this ever true?
+            % Some attacks also have special effects on a non-critical miss, where you fail to beat your target's defense by 9 or less.
 
     \subsection{Checks}
         Checks are required to perform actions that have a chance of failure that are not attacks.
@@ -146,8 +147,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             An obstacle is anything that gets in your way. Enemies and large solid objects like walls are blocking obstacles: they completely block your movement. If you can get past an obstacle, like a low wall, that square is treated as difficult terrain. Some obstacles require a \glossterm{check} to bypass, such as an Acrobatics check (see \pcref{Acrobatics}).
 
             \parhead{Squeezing}\label{Squeezing}
-
-            In some cases, you may have to squeeze into or through an area that isn't as wide as the space you take up. You can squeeze through or into a space that is at least half as wide as your normal space. While squeezing, you move half as fast, and you take a \minus4 penalty to physical accuracy, physical checks, and physical defenses. You can squeeze into tighter spaces with the Escape Artist skill.
+            In some cases, you may have to squeeze into or through an area that isn't as wide as the space you take up. You can squeeze through or into a space that is at least half as wide as your normal space. While squeezing, you move half as fast, and you take a \minus2 penalty to physical accuracy, physical checks, and physical defenses. You can squeeze into tighter spaces with the Escape Artist skill.
 
             Creatures that take up multiple squares take up half their normal number of squares while squeezing. For example, a Large creature who normally takes up four spaces takes up two spaces while squeezing.
 
