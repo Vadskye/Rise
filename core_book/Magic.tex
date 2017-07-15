@@ -8,8 +8,10 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
     \subsection{Casting Process}
 
         \begin{itemize}
-            \itemhead{Choose spell}: You must choose which spell to cast from among the spells you know. If a spell has multiple versions, you choose which version to use when you cast it. Similarly, if a spell has \glossterm{augments}, you must choose which augments to use when you cast it.
-            \itemhead{Choose augments}: If the spell has \glossterm{augments}, you can add the level of any number of augments to the spell's level. If you do, the spell gains the effects of those augments. For details, see \pcref{Augments}.
+            \itemhead{Choose spell}: You must choose which spell to cast from among the spells you know. If a spell has \glossterm{subspells}, you must choose which subspell to use when you cast it.
+            \itemhead{Choose augments}: If you know any \glossterm{augments}, you can apply any number of augments to the spell.
+                If you apply an augment, you increase the spell's level by an amount equal to that augment's level.
+                For details, see \pcref{Augments}.
             \itemhead{Pay action point}: If necessary, you must expend an action point to cast the spell. If you do not have an action point to spend, your attempt to cast the spell fails. Effects that replace action point costs also happen at this time.
             \itemhead{Perform spell components}: All spells have verbal and somatic components unless their description indicates otherwise (see \pcref{Components}).
             \itemhead{Choose effects}: You make choices about the spell's effects as you finish casting the spell. This includes deciding which creatures to target, where the spell takes effect, and so on.
@@ -64,27 +66,45 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
 
         At the start of each phase while you are casting a spell, you can choose to stop casting the spell, causing you to \glossterm{miscast} it instead.
 
+    \subsection{Subspells}\label{Subspells}
+        % TODO: some of this wording is weird
+        All spells have a number of \glossterm{subspells}.
+        Each subspell has a name, a level, and an effect.
+        Whenever you cast a spell, you can choose to apply a single subspell you know from that spell.
+        If you do, the spell's level becomes equal to the subspell's level.
+        In exchange, the spell gains the effects of the subspell.
+        You cannot learn or cast subspells whose spell level exceeds your maximum spell level.
+
+        Some subspells simply add additional properties to a spell's normal effect.
+        Others change the targets or effects of the spell significantly.
+        After choosing whether to cast a subspell, you can apply any number of \glossterm{augments}, described below.
+
     \subsection{Augments}\label{Augments}
-        Every spell has a number of \glossterm{augments} that can be applied to it.
+        There are a number of \glossterm{augments} that can be applied to spells to increase their power.
         Each augment has a name, a level, and an effect.
-        Whenever you cast a spell with an augment, you can choose to apply the augment to the spell.
-        If you do, you increase the spell's level by an amount equal to the augment's level.
-        In exchange, the spell gains the effects of the augment.
+        Whenever you cast a spell, you can choose to apply any number of augments you know to the spell.
+        For each augment you apply, you increase the spell's level by an amount equal to the augment's level.
+        In exchange, the spell gains the effects of that augment.
+        If an augment would increase the spell's level beyond the maximum spell level you can cast, you cannot apply the augment to that spell.
 
-        Most augments increase the power or effect of the spell in some way.
-        Some augments alter fundamental aspects of the spell, such as removing the damage it would deal and replacing that with a stronger effect.
+        \parhead{Augments and Subspells}
+        If a spell changes its properties with a subspell, it may become eligible for different augments.
+        For example, if you apply the Fireball subspell to the \glossterm{fireburst} spell, it changes to affect an area.
+        You would then be able to apply the Widened augment to increase its area.
 
-        \subsubsection{Standard Augments}\label{Standard Augments}
-            The following augments can be applied to many spells.
-            If a spell changes its properties with an augment, it may become eligible for different standard augments.
-            For example, if you apply the Fireball augment to the \glossterm{fireburst} spell, it changes to affect an area.
-            You would then be able to apply the Widened augment to increase its area.
+        \subsubsection{Augment Descriptions}\label{Augment Descriptions}
 
             \augment{1}{Extended} The spell's range increases by one step, to a maximum of \rngext.
             The steps are, in order: \rngtouch, \rngclose, \rngmed, \rnglong, and \rngext.
             This augment can be applied multiple times.
             Each time, the spell's range increases by an additional step.
             \par This augment can be applied to any spell with a range that is one of the above ranges.
+
+            \augment{1}{Giant} The spell can affect a target one size category larger.
+            This augment can be applied multiple times.
+            Its effects stack.
+            \par This augment can be applied to any spell that has a maximum size category of its targets.
+            % TODO: 
 
             \augment{2}{Quickened} You can cast the spell as a \glossterm{swift action}.
             In exchange, you cannot take any actions during the next round.
@@ -182,7 +202,6 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
             \subparhead{Preventing Revivification} Enemies can take steps to make it more difficult for a character to be returned from the dead. Except for \spell{true resurrection}, every ritual to raise the dead requires a body, so keeping or destroying the body is an effective deterrent. The \spell{soul bind} ritual prevents any sort of revivification unless the soul is first released.
 
             \subparhead{Revivification against One's Will} A soul cannot be returned to life if it does not wish to be. A soul infallibly knows the name, alignment, and patron deity (if any) of the character attempting to revive it and may refuse to return on that basis.
-
 
     \subsection{Combining Effects}
         Spells or magical effects usually work as described, no matter how many other spells or magical effects happen to be operating in the same area or on the same recipient. Except in special cases, a spell does not affect the way another spell operates. Whenever a spell has a specific effect on other spells, the spell description explains that effect.
@@ -579,6 +598,7 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
                 14th-level & 360,000 & \tdash & \tdash \\
                 15th-level & 780,000 & \tdash & \tdash \\
             \end{dtabularx}
+            % TODO: how do ritual augments work
             1. There are no rituals that are naturally 10th level or higher, but some rituals can be augmented above 9th level.
         \end{dtable}
 
