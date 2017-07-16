@@ -530,6 +530,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             It has the following effects:
             \begin{itemize}
                 \item Dexterity affects Dexterity-based skills: Acrobatics, Escape Artist, Ride, Sleight of Hand, and Stealth (see \pcref{Skills}).
+                \item You gain a bonus (or penalty) to your Reflex defense equal to your starting Dexterity.
                 \item If your Dexterity is negative, you take a penalty to all Dexterity-based skills equal to your Dexterity.
                 \item If your Dexterity is negative, you take a penalty to Reflex and Armor defense equal to half your Dexterity.
             \end{itemize}
@@ -545,6 +546,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             It has the following efects:
             \begin{itemize}
                 \item You gain bonus hit points equal to your Constitution.
+                \item You gain a bonus (or penalty) to your Fortitude defense equal to your starting Constitution.
                 \item Your ability to perform many feats of physical endurance is limited by your Constitution.
                 \item If your Constitution is negative, you take a penalty to Fortitude defense equal to your Constitution.
             \end{itemize}
@@ -588,6 +590,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             It has the following effects:
             \begin{itemize}
                 \item You gain additional \glossterm{action points} equal to your starting Willpower.
+                \item You gain a bonus (or penalty) to your Mental defense equal to your starting Willpower.
                 \item If your starting Willpower is negative, you lose action points equal to your starting Willpower.
             \end{itemize}
 
@@ -786,13 +789,13 @@ It defines how attributes work and explains how to make physical attacks in comb
 
             \begin{dtable!*}
                 \lcaption{Defense Calculations}
-                \begin{dtabularx}{\textwidth}{l l l l >{\lcol}X}
-                    \tb{Defense Name} & \tb{Attributes} & \tb{Body Armor Modifier} & \tb{Shield Modifier} & \tb{Size Modifier} \\
+                \begin{dtabularx}{\textwidth}{l l l l l >{\lcol}X}
+                    \tb{Defense Name} & \tb{Attributes} & \tb{Starting Attribute Modifier} & \tb{Body Armor Modifier} & \tb{Shield Modifier} & \tb{Size Modifier} \\
                     \midrule
-                    Armor defense     & Dex or Con & Yes & Yes & No  \\
-                    Fortitude defense & Con or Str & No  & No  & Yes \\
-                    Reflex defense    & Dex or Per & No  & Yes & Yes \\
-                    Mental defense    & Wil or Int & No  & No  & No  \\
+                    Armor defense     & Dex or Con & \tdash & Yes & Yes & No  \\
+                    Fortitude defense & Con or Str & Con & No  & No  & Yes \\
+                    Reflex defense    & Dex or Per & Dex & No  & Yes & Yes \\
+                    Mental defense    & Wil or Int & Wil & No  & No  & No  \\
                 \end{dtabularx}
             \end{dtable!*}
 
