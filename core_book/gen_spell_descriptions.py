@@ -13,6 +13,7 @@ def warn(*args):
 duration_mapping = {
     'attune': 'Attunement',
     'attunement': 'Attunement',
+    'Attunement': 'Attunement',
     'condition': 'Condition',
     'sustain (swift)': 'Sustain (swift)',
 }
@@ -774,6 +775,26 @@ def generate_spells():
         lists=['Arcane', 'Divine', 'Magic', 'Nature'],
         cantrip="The spell's duration becomes Sustain (standard).",
         subspells=[
+            Subspell(
+                level=2,
+                name='Alter Magic Aura',
+                targeting=Targeting(
+                    target='One magical object (Large or smaller)',
+                    rng='medium',
+                ),
+                effects=Effects(
+                    attack=Attack(
+                        defense='Mental',
+                        success="""
+                            One of the target's magic auras is altered (see \pcref{Spellcraft}).
+                            You can change the school and descriptors of the aura.
+                            In addition, you can decrease the spellpower of the aura by up to half your spellpower, or increase the spellpower of the aura up to a maximum of your spellpower.
+                        """,
+                    ),
+                    duration='attunement',
+                    tags=['Thaumaturgy'],
+                ),
+            ),
             Subspell(
                 level=2,
                 name='Suppress Item',
@@ -1620,14 +1641,27 @@ def generate_spells():
 
                 If undisturbed, the sensor floats in the air in its position.
                 As a standard action, you can concentrate to move the sensor up to 30 feet in any direction, even vertically.
+
+                You can only have one casting of this spell active at once.
+                If you cast it again, any previous castings of the spell are dismissed.
             """,
-            duration='sustain (swift)',
+            duration='Attunement',
             tags=['Scrying'],
         ),
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
         cantrip="The sensor cannot be moved after it is originally created.",
         subspells=[
+            Subspell(
+                level=2,
+                name="Alarm",
+                description="""
+                    The sensor continues to observe its surroundings while you are not sensing through it.
+                    If it sees a creature or object of Tiny size or larger moving within 50 feet of it, it will trigger a mental "ping" that only you can notice.
+                    You must be within 1 mile of the sensor to receive this mental alarm.
+                    This mental sensation is strong enough to wake you from normal sleep, but does not otherwise disturb concentration.
+                """,
+            ),
             Subspell(
                 level=2,
                 name="Auditory",
@@ -1649,7 +1683,7 @@ def generate_spells():
                 name="Dual",
                 description="""
                     You create an additional sensor in the same location.
-                    Whenever you see or hear from the perspective of a sensor, you choose which sensor to see or hear from.
+                    You must move and see through each sensor individually.
                 """,
             ),
             Subspell(
@@ -1661,9 +1695,9 @@ def generate_spells():
             ),
             Subspell(
                 level=4,
-                name="Autonomous",
+                name="Semi-Autonomous",
                 description="""
-                    You can move the sensor as part of the action you take to sustain the spell, rather than as a standard action.
+                    You can move the sensor as a \\glossterm<swift action> rather than as a standard action.
                 """,
             ),
             Subspell(
@@ -1684,8 +1718,8 @@ def generate_spells():
                 level=6,
                 name="Split Senses",
                 description="""
-                    You do not have to choose whether to sense from the perspective of a sensor or from the perspective of your own body.
-                    You constantly receive sensory input from your body and all sensors you have created with this spell.
+                    You do not have to choose whether to sense from the perspective of the sensor or from the perspective of your own body.
+                    You constantly receive sensory input from both your body and the sensor.
                 """,
             ),
         ],
