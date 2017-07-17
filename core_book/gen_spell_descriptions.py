@@ -500,7 +500,7 @@ def generate_spells():
         ),
         schools=['Evocation'],
         lists=['Nature'],
-        cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
+        cantrip='The spell deals -1d damage.',
         subspells=[
             Subspell(
                 level=2,
@@ -649,7 +649,7 @@ def generate_spells():
         ),
         schools=['Conjuration'],
         lists=['Arcane'],
-        cantrip="The spell deals -1d damage and has no additional effects on a critical hit.",
+        cantrip="The spell deals -1d damage.",
         subspells=[
             Subspell(
                 level=3,
@@ -697,9 +697,8 @@ def generate_spells():
         lists=['Arcane', 'Divine'],
         notes="This damage increase applies before other effects that modify the total damage dealt, such as \glossterm<damage reduction>.",
         cantrip="""
-            The spell has no additional effects on a critical hit.
-            In addition, its duration becomes Sustain (swift).
-            Its effect is still a condition, and can be removed by abilites that remove conditions.
+            The spell's duration becomes Sustain (swift).
+            Its effect is still a \\glossterm<condition>, and can be removed by abilites that remove conditions.
         """,
         subspells=[
             Subspell(
@@ -850,7 +849,7 @@ def generate_spells():
         ),
         schools=['Evocation'],
         lists=['Arcane', 'Fire', 'Nature'],
-        cantrip="The spell deals -1d damage and has no additional effects on a critical hit.",
+        cantrip="The spell deals -1d damage.",
         subspells=[
             Subspell(
                 level=2,
@@ -954,7 +953,7 @@ def generate_spells():
         ),
         schools=['Conjuration'],
         lists=['Nature', 'Water'],
-        cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
+        cantrip='The spell deals -1d damage',
         subspells=[
             Subspell(
                 level=2,
@@ -1057,8 +1056,7 @@ def generate_spells():
         schools=['Enchantment'],
         lists=['Arcane'],
         cantrip="""
-            The spell has no additional effects on a critical hit.
-            In addition, its duration becomes Sustain (swift).
+            The spell's duration becomes Sustain (swift).
         """,
         subspells=[
             Subspell(
@@ -1145,7 +1143,7 @@ def generate_spells():
         ),
         schools=['Channeling'],
         lists=['Divine'],
-        cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
+        cantrip='The spell deals -1d damage',
         subspells=[
         ],
         category='damage',
@@ -1163,7 +1161,7 @@ def generate_spells():
         ),
         schools=['Channeling'],
         lists=['Divine'],
-        cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
+        cantrip='The spell deals -1d damage',
         category='damage',
         subspells=[
             Subspell(
@@ -1298,7 +1296,7 @@ def generate_spells():
         ),
         schools=['Evocation'],
         lists=['Arcane', 'Nature'],
-        cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
+        cantrip='The spell deals -1d damage',
         subspells=[
         ],
         category='damage',
@@ -1324,7 +1322,7 @@ def generate_spells():
         ),
         schools=['Evocation'],
         lists=['Arcane', 'Nature'],
-        cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
+        cantrip='The spell deals -1d damage',
         subspells=[
             Subspell(
                 level=4,
@@ -1421,7 +1419,7 @@ def generate_spells():
         ),
         schools=['Vivimancy'],
         lists=['Arcane', 'Divine', 'Nature'],
-        cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
+        cantrip='The spell deals -1d damage',
         subspells=[
             Subspell(
                 level=3,
@@ -1463,7 +1461,7 @@ def generate_spells():
         ),
         schools=['Conjuration'],
         lists=['Arcane', 'Divine'],
-        cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
+        cantrip='The spell deals -1d damage',
         subspells=[
         ],
         category='damage',
@@ -1743,7 +1741,7 @@ def generate_spells():
         ),
         schools=['Evocation'],
         lists=['Arcane'],
-        cantrip="If your attack succeeds, you move the target one foot per spellpower. In addition, this has no additional effects on a critical hit.",
+        cantrip="If your attack succeeds, you move the target one foot per spellpower. In addition, the spell has no additional effects on a critical hit.",
         subspells=[
             Subspell(
                 level=2,
@@ -1876,7 +1874,7 @@ def generate_spells():
                     The target is \\partiallyblinded.
                 """,
                 critical="""
-                    As above, and the target is \\blinded for 1 round.
+                    The target is \\blinded instead.
                 """,
             ),
             duration='condition',
@@ -1884,7 +1882,7 @@ def generate_spells():
         ),
         schools=['Illusion'],
         lists=['Arcane', 'Divine', 'Nature'],
-        cantrip="The spell affects a single creature, rather than an area. In addition, it has no additional effects on a critical hit",
+        cantrip="The spell affects a single creature, rather than an area.",
         subspells=[
             Subspell(
                 level=2,
