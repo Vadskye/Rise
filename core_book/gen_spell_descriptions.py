@@ -298,8 +298,7 @@ class Subspell(object):
             tags=None,
             targeting=None,
     ):
-        # TODO: fix this hack caused by changing custom augments to subspells
-        self.level = level + 1
+        self.level = level
         self.name = name
         self.description = description
         self.effects = effects
@@ -504,12 +503,12 @@ def generate_spells():
         cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
         subspells=[
             Subspell(
-                level=1,
+                level=2,
                 name='Forceful',
                 description='If the attack succeeds, the target is moved up to 10 feet in any direction -- even vertically.',
             ),
             Subspell(
-                level=1,
+                level=2,
                 name='Gust of Wind',
                 description="The spell deals -2d damage.",
                 targeting=Targeting(
@@ -541,7 +540,7 @@ def generate_spells():
         cantrip="The spell's duration becomes Sustain (swift).",
         subspells=[
             Subspell(
-                level=1,
+                level=2,
                 name="Gentle Descent",
                 description="""
                     The target gains a 30 foot glide speed.
@@ -549,17 +548,17 @@ def generate_spells():
                 """,
             ),
             Subspell(
-                level=3,
+                level=4,
                 name='Wind Screen',
                 description="The miss chance for ranged strikes against the target increases to 50\%.",
             ),
             Subspell(
-                level=2,
+                level=3,
                 name='Accelerated',
                 description='The glide speed granted by this spell increases to 60 feet.',
             ),
             Subspell(
-                level=3,
+                level=4,
                 name='Air Walk',
                 description="""
                     The target can walk on air as if it were solid ground.
@@ -568,7 +567,7 @@ def generate_spells():
                 """,
             ),
             Subspell(
-                level=4,
+                level=5,
                 name='Stormlord',
                 description=r"""
                     Whenever a creature within \rngclose range of the target attacks it, wind strikes the attacking creature.
@@ -601,12 +600,12 @@ def generate_spells():
         cantrip="The spell's duration becomes Sustain (swift).",
         subspells=[
             Subspell(
-                level=2,
+                level=3,
                 name='Complete',
                 description='The damage reduction applies against all damage, not just physical damage.',
             ),
             Subspell(
-                level=3,
+                level=4,
                 name='Immunity',
                 effects=Effects(
                     effect="""
@@ -617,7 +616,7 @@ def generate_spells():
                 ),
             ),
             Subspell(
-                level=3,
+                level=4,
                 name='Retributive',
                 description=r"""
                     Damage resisted by this spell is reflected back to the attacker as life damage.
@@ -628,7 +627,7 @@ def generate_spells():
                 school='Vivimancy',
             ),
             Subspell(
-                level=4,
+                level=5,
                 name='Empowered',
                 description=r"""
                     The damage reduction increases by an amount equal to your spellpower.
@@ -653,12 +652,12 @@ def generate_spells():
         cantrip="The spell deals -1d damage and has no additional effects on a critical hit.",
         subspells=[
             Subspell(
-                level=2,
+                level=3,
                 name='Corrosive',
                 description='The spell deals double damage to objects.'
             ),
             Subspell(
-                level=3,
+                level=4,
                 name='Lingering',
                 description="""
                     The acid deals half damage on initial impact.
@@ -704,7 +703,7 @@ def generate_spells():
         """,
         subspells=[
             Subspell(
-                level=2,
+                level=3,
                 name='Complete',
                 description="The damage increase applies to all damage, not just physical damage.",
             ),
@@ -732,7 +731,7 @@ def generate_spells():
         cantrip="The spell's duration becomes Sustain (standard)",
         subspells=[
             Subspell(
-                level=3,
+                level=4,
                 name='Selective',
                 description="""
                     Whenever a creature attempts to pass through the barrier for the first time, you can allow it to pass through unimpeded.
@@ -740,7 +739,7 @@ def generate_spells():
                 """,
             ),
             Subspell(
-                level=6,
+                level=7,
                 name='Antilife Shell',
                 description="""
                     The spell only affects living creatures.
@@ -777,7 +776,7 @@ def generate_spells():
         cantrip="The spell's duration becomes Sustain (standard).",
         subspells=[
             Subspell(
-                level=1,
+                level=2,
                 name='Suppress Item',
                 targeting=Targeting(
                     target='One object',
@@ -798,7 +797,7 @@ def generate_spells():
                 ),
             ),
             Subspell(
-                level=2,
+                level=3,
                 name='Banishing',
                 effects=Effects(
                     attack=Attack(
@@ -816,7 +815,7 @@ def generate_spells():
                 ),
             ),
             Subspell(
-                level=6,
+                level=7,
                 name='Antimagic Field',
                 targeting=Targeting(
                     area='\\areasmall radius centered on you',
@@ -854,7 +853,7 @@ def generate_spells():
         cantrip="The spell deals -1d damage and has no additional effects on a critical hit.",
         subspells=[
             Subspell(
-                level=1,
+                level=2,
                 name="Burning Hands",
                 targeting=Targeting(
                     area='\\arealarge cone',
@@ -893,21 +892,21 @@ def generate_spells():
         lists=["Arcane"],
         subspells=[
             Subspell(
-                level=1,
+                level=2,
                 name="Silent",
                 description="""
                     The spell does not require verbal components to cast.
                 """,
             ),
             Subspell(
-                level=2,
+                level=3,
                 name="Monstrous",
                 description="""
                     The spell can target creatures of any creature type.
                 """,
             ),
             Subspell(
-                level=3,
+                level=4,
                 name="Attuned",
                 description="""
                     The spell's duration becomes Attunement.
@@ -915,7 +914,7 @@ def generate_spells():
                 """,
             ),
             Subspell(
-                level=4,
+                level=5,
                 name="Dominating",
                 effects=Effects(
                     attack=Attack(
@@ -930,7 +929,7 @@ def generate_spells():
                 ),
             ),
             Subspell(
-                level=4,
+                level=5,
                 name="Amnesia",
                 description="""
                     When the spell ends, the target forgets all events that transpired during the spell's duration.
@@ -958,7 +957,7 @@ def generate_spells():
         cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
         subspells=[
             Subspell(
-                level=1,
+                level=2,
                 name="Aqueuous Sphere",
                 targeting=Targeting(
                     area='\\areasmall radius',
@@ -968,7 +967,7 @@ def generate_spells():
                 ),
             ),
             Subspell(
-                level=3,
+                level=4,
                 name="Sustained",
                 description="""
                     The area affected by this spell becomes completely filled with water.
@@ -1000,7 +999,7 @@ def generate_spells():
         cantrip="The spell's duration becomes Sustain (swift).",
         subspells=[
             Subspell(
-                level=1,
+                level=2,
                 name="Aqueous Blade, Lesser",
                 effects=Effects(
                     effect="""
@@ -1012,7 +1011,7 @@ def generate_spells():
                 ),
             ),
             Subspell(
-                level=2,
+                level=3,
                 name="Zephyr Blade",
                 description="""
                     The target weapon gains an additional five feet of reach, extending the wielder's threatened area.
@@ -1021,14 +1020,14 @@ def generate_spells():
                 tags=['Air'],
             ),
             Subspell(
-                level=5,
+                level=6,
                 name="Zephyr Blade, Greater",
                 description="""
                     This augment functions like the Zephyr Blade augment, except that it increases the weapon's reach by ten feet.
                 """,
             ),
             Subspell(
-                level=6,
+                level=7,
                 name="Aqueous Blade",
                 description="""
                     \\glossterm<Strikes> with the affected weapon are made against Reflex defense instead of Armor defense.
@@ -1063,7 +1062,7 @@ def generate_spells():
         """,
         subspells=[
             Subspell(
-                level=1,
+                level=2,
                 name="Redirected",
                 description="""
                     The target is afraid of a willing ally within the spell's range instead of being afraid of you.
@@ -1088,7 +1087,7 @@ def generate_spells():
         lists=['Divine'],
         subspells=[
             Subspell(
-                level=5,
+                level=6,
                 name="Protection",
                 description="""
                     The target gains \\glossterm<damage reduction> against all damage equal to your spellpower.
@@ -1117,7 +1116,7 @@ def generate_spells():
         cantrip="The spell's duration becomes Sustain (swift).",
         subspells=[
             Subspell(
-                level=2,
+                level=3,
                 name="Stoneskin",
                 description="""
                     The spell does not make the target vulnerable to fire damage.
@@ -1125,7 +1124,7 @@ def generate_spells():
                 """,
             ),
             Subspell(
-                level=4,
+                level=5,
                 name="Empowered",
                 description="""
                     The damage reduction granted by this spell increases by an amount equal to your spellpower.
@@ -1168,7 +1167,7 @@ def generate_spells():
         category='damage',
         subspells=[
             Subspell(
-                level=3,
+                level=4,
                 name="Bolstering",
                 description="""
                     Creatures in the spell's area that worship your deity heal 1d4 damage +1d per two spellpower.
@@ -1199,7 +1198,7 @@ def generate_spells():
         cantrip="The spell's duration becomes Sustain (swift).",
         subspells=[
             Subspell(
-                level=3,
+                level=4,
                 name="Myriad",
                 description="""
                     You may choose an additional skill that you have mastered as you cast the spell.
@@ -1240,7 +1239,7 @@ def generate_spells():
         cantrip="The spell's duration becomes Sustain (standard).",
         subspells=[
             Subspell(
-                level=2,
+                level=3,
                 name="Reinforced",
                 description="""
                     Each 5-ft.\\ square of webbing gains additional hit points equal to your spellpower.
@@ -1328,7 +1327,7 @@ def generate_spells():
         cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
         subspells=[
             Subspell(
-                level=3,
+                level=4,
                 name="Instantaneous",
                 description="""
                     The lightning bolt created by the spell is faster, but less penetrating.
@@ -1366,14 +1365,14 @@ def generate_spells():
         """,
         subspells=[
             Subspell(
-                level=2,
+                level=3,
                 name="Eyebite",
                 description="""
                     If the spell's attack succeeds, the target is also \\partiallyblinded. If it critically hits, the target is \\blinded instead of partially blinded.
                 """,
             ),
             Subspell(
-                level=2,
+                level=3,
                 name="Finger of Death",
                 description="""
                     If the spell's attack critically hits, the target immediately dies.
@@ -1381,7 +1380,7 @@ def generate_spells():
                 tags=['Death'],
             ),
             Subspell(
-                level=4,
+                level=5,
                 name="Corruption of Blood and Bone",
                 description="""
                     If the spell's attack succeeds, at the end of each round, the target takes life damage equal to your spellpower.
@@ -1390,7 +1389,7 @@ def generate_spells():
                 """,
             ),
             Subspell(
-                level=5,
+                level=6,
                 name="Corrupting Curse",
                 description="""
                     The spell's attack is made against Mental defense instead of Fortitude defense.
@@ -1400,7 +1399,7 @@ def generate_spells():
                 """,
             ),
             Subspell(
-                level=3,
+                level=4,
                 name="Empowered",
                 description="""
                     The penalty increases by 1.
@@ -1425,14 +1424,14 @@ def generate_spells():
         cantrip='The spell deals -1d damage and has no additional effects on a critical hit.',
         subspells=[
             Subspell(
-                level=2,
+                level=3,
                 name="Drain Life",
                 description="""
                     You gain temporary hit points equal to half the damage you deal with this spell.
                 """,
             ),
             Subspell(
-                level=3,
+                level=4,
                 name="Death Knell",
                 description="""
                     If the spell's attack succeeds, the target suffers a death knell.
@@ -1491,28 +1490,28 @@ def generate_spells():
         """,
         subspells=[
             Subspell(
-                level=1,
+                level=2,
                 name="Moderate Wounds",
                 description="""
                     For every 5 points of healing, this spell can instead cure 1 vital damage.
                 """,
             ),
             Subspell(
-                level=1,
+                level=2,
                 name="Undead Bane",
                 description="""
                     If the target is undead, the spell gains a +2 bonus to accuracy and deals double damage on a critical hit.
                 """,
             ),
             Subspell(
-                level=2,
+                level=3,
                 name="Serious Wounds",
                 description="""
                     For every 2 points of healing, this spell can instead cure 1 vital damage.
                 """,
             ),
             Subspell(
-                level=3,
+                level=4,
                 name="Critical Wounds",
                 description="""
                     For every point of healing, this spell can instead cure 1 vital damage.
@@ -1543,14 +1542,14 @@ def generate_spells():
         cantrip="The spell's duration becomes Sustain (swift).",
         subspells=[
             Subspell(
-                level=2,
+                level=3,
                 name="Complete",
                 description="""
                     The damage reduction also applies against non-physical effects.
                 """,
             ),
             Subspell(
-                level=3,
+                level=4,
                 name="Retributive",
                 description="""
                     Whenever a creature with the chosen alignment makes a physical melee attack against the target, you make a Spellpower vs. Mental attack against the attacking creature.
@@ -1591,7 +1590,7 @@ def generate_spells():
         cantrip="The spell's duration becomes Sustain (standard).",
         subspells=[
             Subspell(
-                level=1,
+                level=2,
                 name="Summon Bear",
                 description="""
                     The creature appears to be a Medium bear.
@@ -1632,7 +1631,7 @@ def generate_spells():
         cantrip="The sensor cannot be moved after it is originally created.",
         subspells=[
             Subspell(
-                level=1,
+                level=2,
                 name="Auditory",
                 description="""
                     At the start of each round, you can choose whether you hear from the sensor or from your body.
@@ -1641,14 +1640,14 @@ def generate_spells():
                 """,
             ),
             Subspell(
-                level=2,
+                level=3,
                 name="Accelerated",
                 description="""
                     When you move the sensor, you can move it up to 100 feet, instead of up to 30 feet.
                 """,
             ),
             Subspell(
-                level=2,
+                level=3,
                 name="Dual",
                 description="""
                     You create an additional sensor in the same location.
@@ -1656,21 +1655,21 @@ def generate_spells():
                 """,
             ),
             Subspell(
-                level=2,
+                level=3,
                 name="Penetrating",
                 description="""
                     The spell's range becomes \\rngunrestricted, allowing you to cast it into areas where you do not have \\glossterm<line of sight> or \\glossterm<line of effect>.
                 """,
             ),
             Subspell(
-                level=3,
+                level=4,
                 name="Autonomous",
                 description="""
                     You can move the sensor as part of the action you take to sustain the spell, rather than as a standard action.
                 """,
             ),
             Subspell(
-                level=4,
+                level=5,
                 name="Scry Creature",
                 targeting=Targeting(
                     target="One creature",
@@ -1684,7 +1683,7 @@ def generate_spells():
                 """,
             ),
             Subspell(
-                level=5,
+                level=6,
                 name="Split Senses",
                 description="""
                     You do not have to choose whether to sense from the perspective of a sensor or from the perspective of your own body.
@@ -1713,7 +1712,7 @@ def generate_spells():
         cantrip="The spell's duration becomes Sustain (swift).",
         subspells=[
             Subspell(
-                level=6,
+                level=7,
                 name="Foresee Actions",
                 description="""
                     The target can learn what actions all creatures it can observe intend to take during each phase before it decides its actions for that phase.
@@ -1747,7 +1746,7 @@ def generate_spells():
         cantrip="If your attack succeeds, you move the target one foot per spellpower. In addition, this has no additional effects on a critical hit.",
         subspells=[
             Subspell(
-                level=1,
+                level=2,
                 name="Precise",
                 effects=Effects(
                     attack=Attack(
@@ -1762,7 +1761,7 @@ def generate_spells():
                 ),
             ),
             Subspell(
-                level=2,
+                level=3,
                 name="Binding",
                 description="""
                     If your attack roll beat both the target's Fortitude and Mental defenses, it is \\immobilized after the forced movement is finished.
@@ -1770,7 +1769,7 @@ def generate_spells():
                 """,
             ),
             Subspell(
-                level=2,
+                level=3,
                 name="Levitate",
                 targeting=Targeting(
                     target="One Medium or smaller unattended object or willing creature",
@@ -1808,7 +1807,7 @@ def generate_spells():
         cantrip="The spell's duration becomes Sustain (swift).",
         subspells=[
             Subspell(
-                level=2,
+                level=3,
                 name="Disguise Image",
                 effects=Effects(
                     effect="""
@@ -1821,7 +1820,7 @@ def generate_spells():
                 ),
             ),
             Subspell(
-                level=2,
+                level=3,
                 name="Mirror Image",
                 effects=Effects(
                     effect="""
@@ -1839,7 +1838,7 @@ def generate_spells():
                 ),
             ),
             Subspell(
-                level=3,
+                level=4,
                 name="Shadow Mantle",
                 description="""
                     The spell's deceptive nature extends beyond merely altering light to affect the nature of reality itself.
@@ -1848,7 +1847,7 @@ def generate_spells():
                 """,
             ),
             Subspell(
-                level=4,
+                level=5,
                 name="Displacement",
                 description="""
                     The target's image is futher distorted, and appears to be two to three feet from its real location.
@@ -1888,7 +1887,7 @@ def generate_spells():
         cantrip="The spell affects a single creature, rather than an area. In addition, it has no additional effects on a critical hit",
         subspells=[
             Subspell(
-                level=1,
+                level=2,
                 name="Dancing Lights",
                 effects=Effects(
                     effect="""
@@ -1904,7 +1903,7 @@ def generate_spells():
                 ),
             ),
             Subspell(
-                level=2,
+                level=3,
                 name="Faerie Fire",
                 description="""
                     Each target is surrounded with a pale glow made of hundreds of ephemeral points of lights, causing it to bright light in a 5 foot radius as a candle.
@@ -1914,7 +1913,7 @@ def generate_spells():
                 """,
             ),
             Subspell(
-                level=2,
+                level=3,
                 name="Illuminating",
                 description="""
                     The brilliant light persists as long as you spend a \\glossterm<swift action> each round to sustain it.
@@ -1922,7 +1921,7 @@ def generate_spells():
                 """,
             ),
             Subspell(
-                level=1,
+                level=2,
                 name="Expanded",
                 description="""
                     The spell's area increases to \\areasmall.
@@ -1930,7 +1929,7 @@ def generate_spells():
                 """,
             ),
             Subspell(
-                level=4,
+                level=5,
                 name="Universal",
                 description="""
                     The light radiates from every point in the area simultaneously, making it impossible to avoid.
@@ -1938,7 +1937,7 @@ def generate_spells():
                 """,
             ),
             Subspell(
-                level=4,
+                level=5,
                 name="Blinding",
                 description="""
                     The spell's critical effect makes the target \\blinded as a condition, rather than just for one round.
@@ -1946,7 +1945,7 @@ def generate_spells():
                 """,
             ),
             Subspell(
-                level=3,
+                level=4,
                 name="Flashbang",
                 description="""
                     An intense sound accompanies the flash of light caused by the spell.
