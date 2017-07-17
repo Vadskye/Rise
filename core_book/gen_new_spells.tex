@@ -16,16 +16,17 @@
 \spelltags{\glossterm{Delusion}, \glossterm{Mind}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Enchantment}{Arcane, Divine}
 \parhead*{Augments} Extended, Mass, Quickened, Silent, Stilled
 \spellnotes This damage increase applies before other effects that modify the total damage dealt, such as \glossterm{damage reduction}.
 \end{spellfooter}
 \begin{spellcantrip}
-The spell has no additional effects on a critical hit.
-In addition, its duration becomes Sustain (swift).
-Its effect is still a condition, and can be removed by abilites that remove conditions.
+The spell's duration becomes Sustain (swift).
+Its effect is still a \glossterm{condition}, and can be removed by abilites that remove conditions.
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{3}{Complete}
@@ -47,6 +48,7 @@ Success against a magical effect causes that effect to be \glossterm{suppressed}
 \spelltags{\glossterm{Thaumaturgy}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Abjuration}{Arcane, Divine, Magic, Nature}
 \parhead*{Augments} Extended, Mass, Quickened, Silent, Stilled
@@ -54,16 +56,32 @@ Success against a magical effect causes that effect to be \glossterm{suppressed}
 \begin{spellcantrip}
 The spell's duration becomes Sustain (standard).
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
+\augment{2}{Alter Magic Aura}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgt{One magical object (Large or smaller)}}{\spellrng{\rngmed}}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\begin{spellattack}{Spellpower vs. Mental}
+\spellsuccess
+One of the target's magic auras is altered (see \pcref{Spellcraft}).
+You can change the school and descriptors of the aura.
+In addition, you can decrease the spellpower of the aura by up to half your spellpower, or increase the spellpower of the aura up to a maximum of your spellpower.
+\end{spellattack}
+\spelldur Attunement
+\spelltags{\glossterm{Thaumaturgy}}
+\end{augmenteffects}
+\end{spellcontent}
 \augment{2}{Suppress Item}
-Replace
-the spell's targets with the following:
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
 \begin{augmenttargetinginfo}
 \spelltwocol{\spelltgt{One object}}{\spellrng{\rngmed}}
 \end{augmenttargetinginfo}
-Replace
-the spell's effects with the following:
 \begin{augmenteffects}
 \begin{spellattack}{Spellpower vs. Special}
 \spellspecial
@@ -74,9 +92,10 @@ The target object is \glossterm{suppressed}.
 \spelldur Sustain (swift)
 \spelltags{\glossterm{Thaumaturgy}}
 \end{augmenteffects}
+\end{spellcontent}
 \augment{3}{Banishing}
-Replace
-the spell's effects with the following:
+Replace the spell's effects with the following:
+\begin{spellcontent}
 \begin{augmenteffects}
 \begin{spellattack}{Spellpower vs. Special}
 \spellspecial
@@ -88,15 +107,14 @@ This usually causes the target to disappear.
 \end{spellattack}
 \spelltags{\glossterm{Thaumaturgy}}
 \end{augmenteffects}
+\end{spellcontent}
 \augment{7}{Antimagic Field}
-Replace
-the spell's targets with the following:
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
 \begin{augmenttargetinginfo}
 \spellspecial This emanation always includes you in its area
 \spellemanation{\areasmall radius centered on you}
 \end{augmenttargetinginfo}
-Replace
-the spell's effects with the following:
 \begin{augmenteffects}
 \spelleffect
 All magical abilities and objects are \glossterm{suppressed} in the area.
@@ -105,6 +123,7 @@ In addition, magical abilities and objects cannot be activated within the area.
 \spelldur Sustain (swift)
 \spelltags{\glossterm{Thaumaturgy}}
 \end{augmenteffects}
+\end{spellcontent}
 \begin{spellsection}{Barkskin}
 \begin{spellheader}
 \spelldesc{You toughen a creature's skin, giving it the appearance of tree bark.}
@@ -121,6 +140,7 @@ In addition, it is \glossterm{vulnerable} to fire damage.
 \spelltags{\glossterm{Enhancement}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Transmutation}{Nature}
 \parhead*{Augments} Extended, Quickened, Silent, Stilled
@@ -128,6 +148,7 @@ In addition, it is \glossterm{vulnerable} to fire damage.
 \begin{spellcantrip}
 The spell's duration becomes Sustain (swift).
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{3}{Stoneskin}
@@ -150,6 +171,7 @@ Creatures in the area at the time that the spell is cast are unaffected by the s
 \spelldur Sustain (swift)
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Abjuration}{Divine, Nature}
 \parhead*{Augments} Quickened, Silent, Stilled, Widened
@@ -157,6 +179,7 @@ Creatures in the area at the time that the spell is cast are unaffected by the s
 \begin{spellcantrip}
 The spell's duration becomes Sustain (standard)
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{4}{Selective}
@@ -180,6 +203,7 @@ This is a \glossterm{Life} effect from the \glossterm{Vivimancy} school.
 \spelldur Attunement
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Channeling}{Divine}
 \parhead*{Augments} Extended, Quickened, Silent, Stilled
@@ -187,6 +211,7 @@ This is a \glossterm{Life} effect from the \glossterm{Vivimancy} school.
 \begin{spellcantrip}
 The spell's duration becomes Sustain (swift).
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{6}{Protection}
@@ -209,6 +234,7 @@ The target gains a \plus5 bonus to the chosen skill.
 \spelltags{\glossterm{Enhancement}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Transmutation}{Arcane, Divine, Nature}
 \parhead*{Augments} Extended, Quickened, Silent, Stilled
@@ -216,6 +242,7 @@ The target gains a \plus5 bonus to the chosen skill.
 \begin{spellcantrip}
 The spell's duration becomes Sustain (swift).
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{4}{Myriad}
@@ -243,6 +270,7 @@ Any act by you or your apparent allies that threatens or damages the \spell{char
 \spelltags{\glossterm{Delusion}, \glossterm{Mind}, \glossterm{Subtle}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Enchantment}{Arcane}
 \parhead*{Augments} Extended, Mass, Quickened, Silent, Stilled
@@ -251,6 +279,7 @@ Any act by you or your apparent allies that threatens or damages the \spell{char
 The spell has no additional effects on a critical hit.
 In addition, its duration becomes Sustain (standard).
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{2}{Silent}
@@ -265,8 +294,8 @@ When the spell ends, the target forgets all events that transpired during the sp
 It becomes aware of its surroundings as if waking up from a daydream.
 It is not directly aware of any magical influence on its mind, though unusually paranoid or perceptive creatures may deduce that their minds were affected.
 \augment{5}{Dominating}
-Replace
-the spell's effects with the following:
+Replace the spell's effects with the following:
+\begin{spellcontent}
 \begin{augmenteffects}
 \begin{spellattack}{Spellpower vs. Mental}
 \spellsuccess The target is \confused for 2 rounds.
@@ -276,6 +305,7 @@ If the target was already dominated by you, this effect lasts for 24 hours inste
 \end{spellattack}
 \spelltags{\glossterm{Compulsion, Mind}}
 \end{augmenteffects}
+\end{spellcontent}
 \begin{spellsection}{Cone of Cold}
 \begin{spellheader}
 \spelldesc{You drain the heat from an area, creating a field of extreme cold.}
@@ -295,13 +325,15 @@ In addition, the target moves at half speed until it removes this condition.
 \spelltags{\glossterm{Cold}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Evocation}{Arcane, Nature}
 \parhead*{Augments} Intensified, Quickened, Silent, Stilled, Widened
 \end{spellfooter}
 \begin{spellcantrip}
-The spell deals \minus1d damage and has no additional effects on a critical hit.
+The spell deals \minus1d damage
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \begin{spellsection}{Control Air}
@@ -321,6 +353,7 @@ Any effect which increases the size of creature this spell can affect also incre
 \spelltags{\glossterm{Air}, \glossterm{Imbuement}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Transmutation}{Air, Nature}
 \parhead*{Augments} Extended, Quickened, Silent, Stilled
@@ -328,6 +361,7 @@ Any effect which increases the size of creature this spell can affect also incre
 \begin{spellcantrip}
 The spell's duration becomes Sustain (swift).
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{2}{Gentle Descent}
@@ -367,6 +401,7 @@ As above, but the penalty is increased by 2.
 \spelltags{\glossterm{Life}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Vivimancy}{Arcane, Divine, Nature}
 \parhead*{Augments} Extended, Mass, Quickened, Silent, Stilled
@@ -375,6 +410,7 @@ As above, but the penalty is increased by 2.
 The spell's duration becomes Sustain (swift).
 Its effect is still a condition, and can be removed by abilites that remove conditions.
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{3}{Eyebite}
@@ -410,13 +446,15 @@ This is a \glossterm{Curse} effect.
 \spelltags{\glossterm{Acid}, \glossterm{Manifestation}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Conjuration}{Arcane}
 \parhead*{Augments} Extended, Intensified, Mass, Quickened, Silent, Stilled
 \end{spellfooter}
 \begin{spellcantrip}
-The spell deals \minus1d damage and has no additional effects on a critical hit.
+The spell deals \minus1d damage.
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{3}{Corrosive}
@@ -436,6 +474,7 @@ However, it deals damage to the target again at the end of each round for 2 roun
 \spelltags{\glossterm{Life}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Vivimancy}{Divine, Life, Nature}
 \parhead*{Augments} Extended, Intensified, Mass, Quickened, Silent, Stilled
@@ -444,6 +483,7 @@ However, it deals damage to the target again at the end of each round for 2 roun
 Instead of healing, the spell grants \glossterm{temporary hit points} equal to twice your spellpower.
 The duration of the temporary hit points is Sustain (swift).
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{2}{Moderate Wounds}
@@ -468,6 +508,7 @@ Spells and other non-physical attacks suffer no miss chance.
 \spelltags{\glossterm{Glamer}, \glossterm{Visual}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Illusion}{Arcane}
 \parhead*{Augments} Extended, Quickened, Silent, Stilled
@@ -475,11 +516,12 @@ Spells and other non-physical attacks suffer no miss chance.
 \begin{spellcantrip}
 The spell's duration becomes Sustain (swift).
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{3}{Disguise Image}
-Replace
-the spell's effects with the following:
+Replace the spell's effects with the following:
+\begin{spellcontent}
 \begin{augmenteffects}
 \spelleffect
 You make a Disguise check to alter the target's appearance (see \pcref{Disguise Creature}).
@@ -488,9 +530,10 @@ However, this effect is unable to alter the sound, smell, texture, or temperatur
 \spelldur Attunement
 \spelltags{\glossterm{Glamer}, \glossterm{Visual}}
 \end{augmenteffects}
+\end{spellcontent}
 \augment{3}{Mirror Image}
-Replace
-the spell's effects with the following:
+Replace the spell's effects with the following:
+\begin{spellcontent}
 \begin{augmenteffects}
 \spelleffect
 Four illusory duplicates appear around the target that mirror its every move.
@@ -502,6 +545,7 @@ The spell creates an additional illusory duplicate for each additional time this
 \spelldur Sustain (swift)
 \spelltags{\glossterm{Figment}, \glossterm{Visual}}
 \end{augmenteffects}
+\end{spellcontent}
 \augment{4}{Shadow Mantle}
 The spell's deceptive nature extends beyond merely altering light to affect the nature of reality itself.
 The spell's miss chance changes to a failure chance, and applies to non-physical attacks as well as physical attacks.
@@ -526,6 +570,7 @@ This suppresses any existing spell effects active on the weapon.
 \spelltags{\glossterm{Fire}, \glossterm{Shaping}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Evocation, Transmutation}{Arcane, Nature, War, Water}
 \parhead*{Augments} Extended, Quickened, Silent, Stilled
@@ -533,11 +578,12 @@ This suppresses any existing spell effects active on the weapon.
 \begin{spellcantrip}
 The spell's duration becomes Sustain (swift).
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{2}{Aqueous Blade, Lesser}
-Replace
-the spell's effects with the following:
+Replace the spell's effects with the following:
+\begin{spellcontent}
 \begin{augmenteffects}
 \spelleffect
 \glossterm{Strikes} with the affected weapon are made against Reflex defense instead of Armor defense.
@@ -545,6 +591,7 @@ However, damage with the weapon is halved, including any bonuses to damage.
 \spelldur Attunement
 \spelltags{\glossterm{Shaping}, \glossterm{Water}}
 \end{augmenteffects}
+\end{spellcontent}
 \augment{3}{Zephyr Blade}
 The target weapon gains an additional five feet of reach, extending the wielder's threatened area.
 This has no effect on ranged attacks with the weapon.
@@ -574,14 +621,15 @@ This is a \glossterm{Water} effect.
 \spelltags{\glossterm{Delusion}, \glossterm{Mind}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Enchantment}{Arcane}
 \parhead*{Augments} Extended, Mass, Quickened, Silent, Stilled
 \end{spellfooter}
 \begin{spellcantrip}
-The spell has no additional effects on a critical hit.
-In addition, its duration becomes Sustain (swift).
+The spell's duration becomes Sustain (swift).
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{2}{Redirected}
@@ -603,22 +651,25 @@ The target is afraid of a willing ally within the spell's range instead of being
 \spelltags{\glossterm{Fire}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Evocation}{Arcane, Fire, Nature}
 \parhead*{Augments} Extended, Intensified, Quickened, Silent, Stilled, Widened
 \end{spellfooter}
 \begin{spellcantrip}
-The spell deals \minus1d damage and has no additional effects on a critical hit.
+The spell deals \minus1d damage.
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{2}{Burning Hands}
-Replace
-the spell's targets with the following:
+Replace the spell's targets with the following:
+\begin{spellcontent}
 \begin{augmenttargetinginfo}
 \spellburst{\arealarge cone}
 \spelltgts{Everything in the area}
 \end{augmenttargetinginfo}
+\end{spellcontent}
 \begin{spellsection}{Flare}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
@@ -633,24 +684,26 @@ It illuminates a 100 foot radius around the area with bright light.
 \spellsuccess
 The target is \partiallyblinded.
 \spellcritical
-As above, and the target is \blinded for 1 round.
+The target is \blinded instead.
 \end{spellattack}
 \spelldur Condition
 \spelltags{\glossterm{Figment}, \glossterm{Light}, \glossterm{Visual}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Illusion}{Arcane, Divine, Nature}
 \parhead*{Augments} Extended, Quickened, Silent, Stilled, Widened
 \end{spellfooter}
 \begin{spellcantrip}
-The spell affects a single creature, rather than an area. In addition, it has no additional effects on a critical hit
+The spell affects a single creature, rather than an area.
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{2}{Dancing Lights}
-Replace
-the spell's effects with the following:
+Replace the spell's effects with the following:
+\begin{spellcontent}
 \begin{augmenteffects}
 \spelleffect
 Up to four glowing lights appear in the area.
@@ -661,6 +714,7 @@ If one of the lights ever goes out of range from you, it immediately winks out.
 \spelldur Sustain (swift)
 \spelltags{\glossterm{Figment}, \glossterm{Light}, \glossterm{Visual}}
 \end{augmenteffects}
+\end{spellcontent}
 \augment{2}{Expanded}
 The spell's area increases to \areasmall.
 This allows the standard Widened augment to be used to expand the spell's area further.
@@ -697,6 +751,7 @@ The target gains a \plus2 bonus to \glossterm{accuracy} with physical attacks.
 \spelltags{\glossterm{Enhancement}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Divination}{Arcane, Divine, Nature}
 \parhead*{Augments} Extended, Quickened, Silent, Stilled
@@ -704,6 +759,7 @@ The target gains a \plus2 bonus to \glossterm{accuracy} with physical attacks.
 \begin{spellcantrip}
 The spell's duration becomes Sustain (swift).
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{7}{Foresee Actions}
@@ -725,6 +781,7 @@ In addition, it is \glossterm{vulnerable} to arcane damage.
 \spelltags{\glossterm{Shielding}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Abjuration}{Arcane}
 \parhead*{Augments} Extended, Quickened, Silent, Stilled
@@ -732,19 +789,21 @@ In addition, it is \glossterm{vulnerable} to arcane damage.
 \begin{spellcantrip}
 The spell's duration becomes Sustain (swift).
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{3}{Complete}
 The damage reduction applies against all damage, not just physical damage.
 \augment{4}{Immunity}
-Replace
-the spell's effects with the following:
+Replace the spell's effects with the following:
+\begin{spellcontent}
 \begin{augmenteffects}
 \spelleffect
 Choose a type of damage.
 The target becomes immune to damage of the chosen type.
 Attacks that deal damage of multiple types still inflict damage normally unless the target is immune to all types of damage dealt.
 \end{augmenteffects}
+\end{spellcontent}
 \augment{4}{Retributive}
 Damage resisted by this spell is reflected back to the attacker as life damage.
 If the attacker is beyond \rngclose range of the target, this reflection fails.
@@ -766,13 +825,15 @@ The damage reduction increases by an amount equal to your spellpower.
 \spelltags{\glossterm{Life}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Vivimancy}{Arcane, Divine, Nature}
 \parhead*{Augments} Extended, Intensified, Mass, Quickened, Silent, Stilled
 \end{spellfooter}
 \begin{spellcantrip}
-The spell deals \minus1d damage and has no additional effects on a critical hit.
+The spell deals \minus1d damage
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{3}{Drain Life}
@@ -802,13 +863,15 @@ This is a \glossterm{Death} effect.
 \spelltags{\glossterm{Electricity}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Evocation}{Arcane, Nature}
 \parhead*{Augments} Intensified, Quickened, Silent, Stilled, Widened
 \end{spellfooter}
 \begin{spellcantrip}
-The spell deals \minus1d damage and has no additional effects on a critical hit.
+The spell deals \minus1d damage
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{4}{Instantaneous}
@@ -832,13 +895,15 @@ In addition, if the creature is an \glossterm{outsider} native to another plane,
 \spelltags{\glossterm{Planar}, \glossterm{Teleportation}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Conjuration}{Arcane, Divine}
 \parhead*{Augments} Extended, Intensified, Mass, Quickened, Silent, Stilled
 \end{spellfooter}
 \begin{spellcantrip}
-The spell deals \minus1d damage and has no additional effects on a critical hit.
+The spell deals \minus1d damage
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \begin{spellsection}{Poison}
@@ -859,6 +924,7 @@ If this is the third successful attack, the penalty increases to \minus5.
 \spelltags{\glossterm{Poison}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Transmutation}{Destruction, Divine, Nature}
 \parhead*{Augments} Extended, Mass, Quickened, Silent, Stilled
@@ -866,6 +932,7 @@ If this is the third successful attack, the penalty increases to \minus5.
 \begin{spellcantrip}
 The spell does not have additional effects other than damage.
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \begin{spellsection}{Protection from Alignment}
@@ -882,6 +949,7 @@ The target gains damage reduction equal to your spellpower against physical effe
 \spelltags{\glossterm{Shielding}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Abjuration}{Arcane, Chaos, Divine, Evil, Good, Law}
 \parhead*{Augments} Extended, Quickened, Silent, Stilled
@@ -889,6 +957,7 @@ The target gains damage reduction equal to your spellpower against physical effe
 \begin{spellcantrip}
 The spell's duration becomes Sustain (swift).
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{3}{Complete}
@@ -913,10 +982,13 @@ The sensor's visual acuity is the same as your own, except that it does not shar
 You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \blinded.
 If undisturbed, the sensor floats in the air in its position.
 As a standard action, you can concentrate to move the sensor up to 30 feet in any direction, even vertically.
-\spelldur Sustain (swift)
+You can only have one casting of this spell active at once.
+If you cast it again, any previous castings of the spell are dismissed.
+\spelldur Attunement
 \spelltags{\glossterm{Scrying}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Divination}{Arcane, Divine, Nature}
 \parhead*{Augments} Extended, Mass, Quickened, Silent, Stilled
@@ -924,8 +996,14 @@ As a standard action, you can concentrate to move the sensor up to 30 feet in an
 \begin{spellcantrip}
 The sensor cannot be moved after it is originally created.
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
+\augment{2}{Alarm}
+The sensor continues to observe its surroundings while you are not sensing through it.
+If it sees a creature or object of Tiny size or larger moving within 50 feet of it, it will trigger a mental "ping" that only you can notice.
+You must be within 1 mile of the sensor to receive this mental alarm.
+This mental sensation is strong enough to wake you from normal sleep, but does not otherwise disturb concentration.
 \augment{2}{Auditory}
 At the start of each round, you can choose whether you hear from the sensor or from your body.
 This choice is made independently from your sight.
@@ -934,23 +1012,24 @@ The sensor's auditory acuity is the same as your own, except that it does not sh
 When you move the sensor, you can move it up to 100 feet, instead of up to 30 feet.
 \augment{3}{Dual}
 You create an additional sensor in the same location.
-Whenever you see or hear from the perspective of a sensor, you choose which sensor to see or hear from.
+You must move and see through each sensor individually.
 \augment{3}{Penetrating}
 The spell's range becomes \rngunrestricted, allowing you to cast it into areas where you do not have \glossterm{line of sight} or \glossterm{line of effect}.
-\augment{4}{Autonomous}
-You can move the sensor as part of the action you take to sustain the spell, rather than as a standard action.
+\augment{4}{Semi-Autonomous}
+You can move the sensor as a \glossterm{swift action} rather than as a standard action.
 \augment{5}{Scry Creature}
 You must make a Spellpower vs. Mental attack against the target.
 Success means the sensor appears in the creature's space.
 Failure means the sensor does not appear at all.
-In addition, replace
-the spell's targets with the following:
+Replace the spell's targets with the following:
+\begin{spellcontent}
 \begin{augmenttargetinginfo}
 \spelltwocol{\spelltgt{One creature}}{\spellrng{Unlimited (Unrestricted)}}
 \end{augmenttargetinginfo}
+\end{spellcontent}
 \augment{6}{Split Senses}
-You do not have to choose whether to sense from the perspective of a sensor or from the perspective of your own body.
-You constantly receive sensory input from your body and all sensors you have created with this spell.
+You do not have to choose whether to sense from the perspective of the sensor or from the perspective of your own body.
+You constantly receive sensory input from both your body and the sensor.
 \begin{spellsection}{Smite}
 \begin{spellheader}
 \spelldesc{You smite a foe with holy (or unholy) power.}
@@ -966,13 +1045,15 @@ You constantly receive sensory input from your body and all sensors you have cre
 \end{spellattack}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Channeling}{Divine}
 \parhead*{Augments} Extended, Intensified, Mass, Quickened, Silent, Stilled
 \end{spellfooter}
 \begin{spellcantrip}
-The spell deals \minus1d damage and has no additional effects on a critical hit.
+The spell deals \minus1d damage
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \begin{spellsection}{Summon Monster}
@@ -1001,6 +1082,7 @@ Most animals bite or claw their foes, which deals bludgeoning and slashing damag
 \spelltags{\glossterm{Manifestation}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Conjuration}{Arcane, Divine, Nature}
 \parhead*{Augments} Extended, Quickened, Silent, Stilled
@@ -1008,6 +1090,7 @@ Most animals bite or claw their foes, which deals bludgeoning and slashing damag
 \begin{spellcantrip}
 The spell's duration becomes Sustain (standard).
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{2}{Summon Bear}
@@ -1031,18 +1114,20 @@ As above, but you move the target ten feet per spellpower instead of five feet p
 \spelltags{\glossterm{Telekinesis}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Evocation}{Arcane}
 \parhead*{Augments} Extended, Mass, Quickened, Silent, Stilled
 \end{spellfooter}
 \begin{spellcantrip}
-If your attack succeeds, you move the target one foot per spellpower. In addition, this has no additional effects on a critical hit.
+If your attack succeeds, you move the target one foot per spellpower. In addition, the spell has no additional effects on a critical hit.
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{2}{Precise}
-Replace
-the spell's effects with the following:
+Replace the spell's effects with the following:
+\begin{spellcontent}
 \begin{augmenteffects}
 \begin{spellattack}{Spellpower vs. Mental}
 \spellsuccess
@@ -1052,23 +1137,23 @@ The check's result has a maximum equal to your attack result.
 \end{spellattack}
 \spelltags{\glossterm{Telekinesis}}
 \end{augmenteffects}
+\end{spellcontent}
 \augment{3}{Binding}
 If your attack roll beat both the target's Fortitude and Mental defenses, it is \immobilized after the forced movement is finished.
 This is a \glossterm{condition}, and lasts until removed.
 \augment{3}{Levitate}
-Replace
-the spell's targets with the following:
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
 \begin{augmenttargetinginfo}
 \spelltwocol{\spelltgt{One Medium or smaller unattended object or willing creature}}{\spellrng{\rngclose}}
 \end{augmenttargetinginfo}
-Replace
-the spell's effects with the following:
 \begin{augmenteffects}
 \spelleffect
 The target floats in midair, unaffected by gravity.
 During the movement phase, you can move the target up to ten feet in any direction.
 \spelldur Sustain (swift)
 \end{augmenteffects}
+\end{spellcontent}
 \begin{spellsection}{Water Mastery}
 \begin{spellheader}
 \spelldesc{You create a wave of water to crush your foes.}
@@ -1086,22 +1171,25 @@ During the movement phase, you can move the target up to ten feet in any directi
 \spelltags{\glossterm{Manifestation}, \glossterm{Water}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Conjuration}{Nature, Water}
 \parhead*{Augments} Intensified, Quickened, Silent, Stilled, Widened
 \end{spellfooter}
 \begin{spellcantrip}
-The spell deals \minus1d damage and has no additional effects on a critical hit.
+The spell deals \minus1d damage
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{2}{Aqueuous Sphere}
-Replace
-the spell's targets with the following:
+Replace the spell's targets with the following:
+\begin{spellcontent}
 \begin{augmenttargetinginfo}
 \spelltwocol{\spellburst{\areasmall radius}}{\spellrng{\rngclose}}
 \spelltgts{Everything in the area}
 \end{augmenttargetinginfo}
+\end{spellcontent}
 \augment{4}{Sustained}
 The area affected by this spell becomes completely filled with water.
 You can sustain the water as a swift action.
@@ -1129,6 +1217,7 @@ Each 5-ft.\ square of webbing has hit points equal to your spellpower, and is \g
 \spelltags{\glossterm{Manifestation}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Conjuration}{Arcane, Nature}
 \parhead*{Augments} Extended, Quickened, Silent, Stilled, Widened
@@ -1136,6 +1225,7 @@ Each 5-ft.\ square of webbing has hit points equal to your spellpower, and is \g
 \begin{spellcantrip}
 The spell's duration becomes Sustain (standard).
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{3}{Reinforced}
@@ -1159,25 +1249,28 @@ The hit point increase stacks.
 \spelltags{\glossterm{Air}}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Evocation}{Nature}
 \parhead*{Augments} Extended, Intensified, Mass, Quickened, Silent, Stilled
 \end{spellfooter}
 \begin{spellcantrip}
-The spell deals \minus1d damage and has no additional effects on a critical hit.
+The spell deals \minus1d damage.
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{2}{Forceful}
 If the attack succeeds, the target is moved up to 10 feet in any direction -- even vertically.
 \augment{2}{Gust of Wind}
 The spell deals \minus2d damage.
-In addition, replace
-the spell's targets with the following:
+Replace the spell's targets with the following:
+\begin{spellcontent}
 \begin{augmenttargetinginfo}
 \spellburst{\arealarge line, 10 ft. wide}
 \spelltgts{Everything in the area}
 \end{augmenttargetinginfo}
+\end{spellcontent}
 \begin{spellsection}{Word of Faith}
 \begin{spellheader}
 \spelldesc{You speak an utterance that rebukes those who do not share your faith.}
@@ -1194,13 +1287,15 @@ the spell's targets with the following:
 \end{spellattack}
 \end{spelleffects}
 \end{spellcontent}
+\begin{spellsubcontent}
 \begin{spellfooter}
 \spellinfo{Channeling}{Divine}
 \parhead*{Augments} Intensified, Quickened, Silent, Stilled, Widened
 \end{spellfooter}
 \begin{spellcantrip}
-The spell deals \minus1d damage and has no additional effects on a critical hit.
+The spell deals \minus1d damage
 \end{spellcantrip}
+\end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{4}{Bolstering}
