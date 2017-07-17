@@ -215,7 +215,6 @@
     rightline=false,
     bottomline=true,
     skipabove=0,
-    linecolor=black,
 ]{spellsubcontent}
 
 \newmdenv[
@@ -225,7 +224,6 @@
 
 \newmdenv[
     style=colorenv,
-    leftmargin=1em,
     backgroundcolor=LightCyan,
 ]{augmenttargetinginfo}
 
@@ -243,16 +241,13 @@
 
 \DeclareDocumentEnvironment{augmenteffects}{}
 {
-    \begin{thesamepage}
     \begin{fakehang}
 }
 {
     \end{fakehang}
-    \end{thesamepage}
 }
 \surroundwithmdframed[
     style=colorenv,
-    leftmargin=1em,
     backgroundcolor=Lavender,
 ]{augmenteffects}
 
@@ -307,7 +302,7 @@
         {
             \lowercase{\hypertarget{spell:#2}{}}\label{spell:#2}
             \hypertarget{spell:#2}
-                {\subsubsection{#2}}
+                {\subsection{#2}}
         }
         \IfValueTF{#3}
         {

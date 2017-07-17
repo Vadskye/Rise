@@ -203,17 +203,19 @@ class Spell(object):
                         \\parhead*<Augments> {', '.join(sorted(self.augments))}
             """,
             f"""
-                        \\spellnotes {self.notes}
+                            \\spellnotes {self.notes}
             """ if self.notes else None,
             f"""
                     \\end<spellfooter>
+                    \\begin<spellsubcontent>
             """,
             f"""
-                    \\begin<spellcantrip>
-                        {self.cantrip}
-                    \\end<spellcantrip>
+                        \\begin<spellcantrip>
+                            {self.cantrip}
+                        \\end<spellcantrip>
             """ if self.cantrip else None,
             f"""
+                    \\end<spellsubcontent>
                 \\end<spellsection>
             """,
             f"""
@@ -335,25 +337,49 @@ class Subspell(object):
             return ""
 
     def __str__(self):
-        return self.augmentify(join(
+        text = [
             f"""
                 \\augment<{self.level}><{self.name}>
                 {self.description or ""}
-            """, f"""
-                {"In addition, replace" if self.description else "Replace"}
-                the spell's targets with the following: {self.targeting}
-            """ if self.targeting else None, f"""
-            """, f"""
-                {"In addition, replace" if self.description else "Replace"}
-                the spell's effects with the following: {self.effects}
-            """ if self.effects else None, """
+            """,
+        ]
+
+        if self.targeting and self.effects:
+            text.append(f"""
+                Replace the spell's targets and effects with the following:
+                \\begin<spellcontent>
+                    {self.targeting}
+                    {self.effects}
+                \\end<spellcontent>
+            """)
+        elif self.targeting:
+            text.append(f"""
+                Replace the spell's targets with the following:
+                \\begin<spellcontent>
+                    {self.targeting}
+                \\end<spellcontent>
+            """)
+        elif self.effects:
+            text.append(f"""
+                Replace the spell's effects with the following:
+                \\begin<spellcontent>
+                    {self.effects}
+                \\end<spellcontent>
+            """)
+
+        text += [
+            """
                 \\par
-            """ if self.tags or self.school or self.only_one else None, f"""
+            """ if self.tags or self.school or self.only_one else None,
+            f"""
                 {self.tag_text()}
-            """, f"""
+            """,
+            f"""
                 This augment can only be applied to one casting of this spell at a time.
             """ if self.only_one else None,
-        ))
+        ]
+
+        return self.augmentify(join(*text))
 
 
 class Effects(object):
