@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
 
 import click
+from generation.attack import Attack
+from generation.effects import Effects
+from generation.header import Header
+from generation.spell import Spell
+from generation.subspell import Subspell
+from generation.targeting import Targeting
+import generation.rise_data as rise_data
 from logging import getLogger, WARNING
 # from pprint import pformat
 import re
@@ -9,77 +16,6 @@ def log(*args):
     logger.log(*args)
 def warn(*args):
     logger.log(WARNING, *args)
-
-duration_mapping = {
-    'attune': 'Attunement',
-    'attunement': 'Attunement',
-    'Attunement': 'Attunement',
-    'condition': 'Condition',
-    'sustain (swift)': 'Sustain (swift)',
-}
-rng_mapping = {
-    'close': r'\rngclose',
-    'medium': r'\rngmed',
-    'long': r'\rnglong',
-    'extreme': r'\rngext',
-}
-DEFENSES = [
-    'Fortitude',
-    'Mental',
-    'Reflex',
-    'Special',
-]
-SCHOOLS = [
-    'Abjuration',
-    'Channeling',
-    'Conjuration',
-    'Divination',
-    'Enchantment',
-    'Evocation',
-    'Illusion',
-    'Transmutation',
-    'Vivimancy',
-]
-SPELL_CATEGORIES = set([
-    'buff, offense',
-    'buff, defense',
-    'buff, utility',
-    'damage',
-    'debuff, combat',
-    'debuff, mobility',
-    'narrative',
-])
-SPELL_SOURCES = [
-    'Arcane',
-    'Divine',
-    'Nature',
-]
-DOMAINS = [
-    'Air',
-    'Chaos',
-    'Death',
-    'Destruction',
-    'Earth',
-    'Evil',
-    'Fire',
-    'Good',
-    'Knowledge',
-    'Law',
-    'Life',
-    'Magic',
-    'Protection',
-    'Strength',
-    'Travel',
-    'Trickery',
-    'War',
-    'Water',
-    'Wild',
-]
-
-
-def join(*args):
-    return '\n'.join(filter(None, args))
-
 
 newline_pattern = re.compile(r'[\r\n]+')
 add_pattern = re.compile(r'[+] (\d)')
@@ -113,403 +49,6 @@ def latexify(text):
         line for line in stripped_lines if line != ""
     ])
     return text
-
-
-class Spell(object):
-    def __init__(
-            self,
-            augments=None,
-            cantrip=None,
-            category=None,
-            effects=None,
-            header=None,
-            lists=None,
-            name=None,
-            schools=None,
-            subspells=None,
-            targeting=None,
-            notes=None,
-            short_description=None,
-    ):
-        self.cantrip = cantrip
-        self.category = category
-        self.subspells = subspells
-        self.effects = effects
-        self.header = header
-        self.name = name
-        self.lists = lists
-        self.notes = notes
-        self.schools = schools
-        self.short_description = short_description or 'TODO'
-        self.augments = augments
-        self.targeting = targeting
-
-        for arg in ['cantrip', 'effects', 'lists', 'name', 'schools', 'targeting']:
-            if getattr(self, arg) is None:
-                print(f"Warning: {self} is missing required property '{arg}'")
-
-        if self.augments is None:
-            self.augments = self.calculate_standard_augments()
-
-        for school in self.schools:
-            if school not in SCHOOLS:
-                warn(f"{self} has unrecognized school '{school}'")
-
-        if self.category is None:
-            warn(f"{self} has no category")
-        elif self.category not in SPELL_CATEGORIES:
-            warn(f"{self} has unrecognized category '{self.category}'")
-
-    def calculate_standard_augments(self):
-        augments = ['Quickened', 'Silent', 'Stilled']
-        if self.targeting.rng is not None:
-            augments.append('Extended')
-        if self.targeting.area is not None:
-            augments.append('Widened')
-        if (
-                self.targeting.target is not None
-                and self.targeting.area is None
-                and self.category[:4] != 'buff'
-        ):
-            augments.append('Mass')
-        if (
-                self.effects.attack
-                and self.effects.attack.success
-                and '\\spelldamage' in self.effects.attack.success
-        ):
-            augments.append('Intensified')
-        return sorted(augments)
-
-    def to_latex(self):
-        # Sort by level as primary, name as secondary
-        sorted_subspells = sorted(
-            sorted(
-                self.subspells,
-                key=lambda augment: augment.name
-            ),
-            key=lambda augment: augment.level
-        ) if self.subspells else None
-
-        return join(
-            f"""
-                \\begin<spellsection><{self.name}>
-                    {str(self.header or "")}
-                    \\begin<spellcontent>
-                        {str(self.targeting)}
-                        {str(self.effects)}
-                    \\end<spellcontent>
-                    \\begin<spellfooter>
-                        \\spellinfo<{', '.join(self.schools)}><{', '.join(self.lists)}>
-                        \\parhead*<Augments> {', '.join(sorted(self.augments))}
-            """,
-            f"""
-                            \\spellnotes {self.notes}
-            """ if self.notes else None,
-            f"""
-                    \\end<spellfooter>
-                    \\begin<spellsubcontent>
-            """,
-            f"""
-                        \\begin<spellcantrip>
-                            {self.cantrip}
-                        \\end<spellcantrip>
-            """ if self.cantrip else None,
-            f"""
-                    \\end<spellsubcontent>
-                \\end<spellsection>
-            """,
-            f"""
-                \\subsubsection<Subspells>
-            """ if self.subspells or self.augments else None,
-            '\n'.join([
-                str(subspell)
-                for subspell in sorted_subspells
-            ]) if self.subspells else None,
-        )
-
-    def __repr__(self):
-        return f"Spell({self.name})"
-
-
-class Attack(object):
-
-    @classmethod
-    def damage(cls, defense, damage_type):
-        return cls(
-            defense=defense,
-            success=f"\\spelldamage<{damage_type}>.",
-            critical='As above, but double damage.',
-        )
-
-    @classmethod
-    def multi_damage(cls, defense, damage_type):
-        return cls(
-            defense=defense,
-            success=f"\\spelldamage<{damage_type}>[1d4].",
-            critical='As above, but double damage.',
-        )
-
-    def __init__(
-            self,
-            defense,
-            accuracy='Spellpower',
-            critical=None,
-            failure=None,
-            special=None,
-            success=None,
-    ):
-        if not (special or success):
-            raise Exception("Attack must have `success` or `special`")
-        self.defense = defense
-        self.accuracy = accuracy
-        self.critical = critical
-        self.failure = failure
-        self.special = special
-        self.success = success
-
-        if defense not in DEFENSES:
-            raise Exception(f"Attack has unrecognized defense '{defense}'")
-
-    def __str__(self):
-        return join(
-            f"""
-                \\begin<spellattack><{self.accuracy} vs. {self.defense.capitalize()}>
-            """, f"""
-                    \\spellspecial {self.special}
-            """ if self.special else None, f"""
-                    \\spellsuccess {self.success}
-            """ if self.success else None, f"""
-                    \\spellcritical {self.critical}
-            """ if self.critical else None, f"""
-                    \\spellfailure {self.failure}
-            """ if self.failure else None, f"""
-                \\end<spellattack>
-            """,
-        )
-
-
-class Subspell(object):
-
-    def __init__(
-            self,
-            level,
-            name,
-            description=None,
-            effects=None,
-            only_one=None,
-            school=None,
-            tags=None,
-            targeting=None,
-    ):
-        self.level = level
-        self.name = name
-        self.description = description
-        self.effects = effects
-        self.only_one = only_one
-        self.school = school
-        self.tags = tags
-        self.targeting = targeting
-
-    def augmentify(self, text):
-        """Replace \\spelleffects and \\spelltargetinginfo
-        with their augment equivalents
-        """
-        return (text.replace('spelleffects', 'augmenteffects')
-                .replace('spelltargetinginfo', 'augmenttargetinginfo'))
-
-    def tag_text(self):
-        """Get the text for this effect's tags and schools"""
-        if self.tags:
-            return "This is a {glossary_tags} effect{school_text}.".format(
-                glossary_tags=', '.join([
-                    f"\\glossterm<{tag}>"
-                    for tag in sorted(self.tags)
-                ]),
-                school_text=(
-                    f" from the \\glossterm<{self.school}> school"
-                    if self.school
-                    else ""
-                ),
-            )
-        elif self.school:
-            return f"This effect is from the \\glossterm<{self.school}> school."
-        else:
-            return ""
-
-    def __str__(self):
-        text = [
-            f"""
-                \\augment<{self.level}><{self.name}>
-                {self.description or ""}
-            """,
-        ]
-
-        if self.targeting and self.effects:
-            text.append(f"""
-                Replace the spell's targets and effects with the following:
-                \\begin<spellcontent>
-                    {self.targeting}
-                    {self.effects}
-                \\end<spellcontent>
-            """)
-        elif self.targeting:
-            text.append(f"""
-                Replace the spell's targets with the following:
-                \\begin<spellcontent>
-                    {self.targeting}
-                \\end<spellcontent>
-            """)
-        elif self.effects:
-            text.append(f"""
-                Replace the spell's effects with the following:
-                \\begin<spellcontent>
-                    {self.effects}
-                \\end<spellcontent>
-            """)
-
-        text += [
-            """
-                \\par
-            """ if self.tags or self.school or self.only_one else None,
-            f"""
-                {self.tag_text()}
-            """,
-            f"""
-                This augment can only be applied to one casting of this spell at a time.
-            """ if self.only_one else None,
-        ]
-
-        return self.augmentify(join(*text))
-
-
-class Effects(object):
-    def __init__(
-            self,
-            attack=None,
-            duration=None,
-            effect=None,
-            special=None,
-            tags=None,
-    ):
-        self.attack = attack
-        self.effect = effect
-        self.duration = duration
-        self.special = special
-        self.tags = tags
-
-    def __str__(self):
-        tag_text = ', '.join([
-            f"\\glossterm<{tag}>"
-            for tag in sorted(self.tags)
-        ]) if self.tags else ""
-
-        return join(
-            f"""
-                \\begin<spelleffects>
-            """, f"""
-                    \\spellspecial {self.special}
-            """ if self.special else None, f"""
-            """, f"""
-                    \\spelleffect {self.effect}
-            """ if self.effect else None, f"""
-                    {self.attack if self.attack else ""}
-            """, f"""
-                    \\spelldur {duration_mapping[self.duration]}
-            """ if self.duration else None, f"""
-                \\spelltags<{tag_text}>
-            """ if self.tags else None, f"""
-                \\end<spelleffects>
-            """
-        )
-
-
-class Header(object):
-    def __init__(self, description=None):
-        self.description = description
-
-    def __str__(self):
-        if self.description is not None:
-            return f"""
-                \\begin<spellheader>
-                    \\spelldesc<{self.description}>
-                \\end<spellheader>
-            """
-
-
-class Targeting(object):
-    area_prefix = {
-        'burst': r'\spellburst',
-        'emanation': r'\spellemanation',
-        'zone': r'\spellzone',
-    }
-
-    def __init__(
-            self,
-            area=None,
-            area_type='burst',
-            target=None,
-            targets=None,
-            rng=None,
-            special=None,
-            unrestricted_range=False,
-    ):
-        self.area = area
-        self.area_type = area_type
-        self.rng = rng
-        self.special = special
-        self.target = target
-        self.targets = targets
-        self.unrestricted_range = unrestricted_range
-
-    def area_text(self):
-        """Return the text corresponding to this spell's area, if any."""
-        if self.area is not None:
-            prefix = Targeting.area_prefix[self.area_type]
-            return f"{prefix}<{self.area}>"
-        else:
-            return ""
-
-    def target_text(self):
-        """Return the text corresponding to this spell's targets, if any."""
-        if self.target:
-            return f"\\spelltgt<{self.target}>"
-        elif self.targets:
-            return f"\\spelltgts<{self.targets}>"
-        else:
-            return ""
-
-    def __str__(self):
-        special_text = f'\\spellspecial {self.special}' if self.special else ""
-        if self.rng:
-            col2 = "\\spellrng<{rng}{unrestricted}>".format(
-                rng=rng_mapping.get(self.rng, self.rng),
-                unrestricted=" (Unrestricted)" if self.unrestricted_range else "",
-            )
-            col1 = self.area_text()
-            included_target_text = False
-            if not col1:
-                col1 = self.target_text()
-                included_target_text = True
-            if not col1:
-                raise Exception("Invalid targeting")
-            twocol_text = f"\\spelltwocol<{col1}><{col2}>"
-
-            # if we included the target_text above, don't include it again
-            return f"""
-                \\begin<spelltargetinginfo>
-                    {special_text}
-                    {twocol_text}
-                    {self.target_text() if not included_target_text else ""}
-                \\end<spelltargetinginfo>
-            """
-        else:
-            return f"""
-                \\begin<spelltargetinginfo>
-                    {special_text}
-                    {self.area_text()}
-                    {self.target_text()}
-                \\end<spelltargetinginfo>
-            """
 
 
 def generate_spells():
@@ -907,6 +446,23 @@ def generate_spells():
                     targets='Everything in the area',
                 ),
             ),
+            Subspell(
+                level=2,
+                name="Flame Blade",
+                targeting=Targeting(
+                    # TODO: unattended or wielded by a willing creature?
+                    target='One unattended weapon',
+                    rng='close',
+                ),
+                effects=Effects(
+                    effect="""
+                        The target weapon deals +2d damage with \\glossterm<strikes>.
+                        In addition, all damage dealt with the weapon with strikes becomes fire damage in addition to its normal damage types.
+                    """,
+                    duration='attune',
+                    tags=['Fire'],
+                ),
+            ),
         ],
         category='damage',
     ))
@@ -1024,29 +580,32 @@ def generate_spells():
         ],
         category='damage',
     ))
+    # The school here is complicated; the top-level is pure Evocation, and the
+    # Aqueuous Blade subspell is pure Transmutation. This should be split up
+    # into separate spells.
     spells.append(Spell(
         name="Elemental Blade",
-        header=Header("You transform the active part of a weapon into water, weakening its blows but allowing it penetrate defenses more easily."),
+        header=Header("You transform the active part of a weapon into air, increasing its reach."),
         targeting=Targeting(
+            # TODO: unattended or wielded by a willing creature?
             target='One unattended weapon',
             rng='close',
         ),
         effects=Effects(
             effect="""
-                The target weapon deals +2d damage with \\glossterm<strikes>.
-                In addition, all damage dealt with the weapon with strikes becomes fire damage in addition to its normal damage types.
-                This suppresses any existing spell effects active on the weapon.
+                The target weapon gains an additional five feet of reach, extending the wielder's threatened area.
+                This has no effect on ranged attacks with the weapon.
             """,
             duration='attune',
-            tags=['Fire', 'Shaping'],
+            tags=['Air', 'Shaping'],
         ),
-        schools=['Evocation', 'Transmutation'],
+        schools=['Transmutation'],
         lists=['Arcane', 'Nature', 'War', 'Water'],
         cantrip="The spell's duration becomes Sustain (swift).",
         subspells=[
             Subspell(
                 level=2,
-                name="Aqueous Blade, Lesser",
+                name="Aqueous Blade",
                 effects=Effects(
                     effect="""
                         \glossterm<Strikes> with the affected weapon are made against Reflex defense instead of Armor defense.
@@ -1057,28 +616,22 @@ def generate_spells():
                 ),
             ),
             Subspell(
-                level=3,
+                level=4,
                 name="Zephyr Blade",
                 description="""
-                    The target weapon gains an additional five feet of reach, extending the wielder's threatened area.
-                    This has no effect on ranged attacks with the weapon.
-                """,
-                tags=['Air'],
-            ),
-            Subspell(
-                level=6,
-                name="Zephyr Blade, Greater",
-                description="""
-                    This augment functions like the Zephyr Blade augment, except that it increases the weapon's reach by ten feet.
+                    The weapon's reach is increased by ten feet instead of five feet.
                 """,
             ),
             Subspell(
                 level=7,
-                name="Aqueous Blade",
-                description="""
-                    \\glossterm<Strikes> with the affected weapon are made against Reflex defense instead of Armor defense.
-                """,
-                tags=['Water'],
+                name="Greater Aqueous Blade",
+                effects=Effects(
+                    effect="""
+                        \\glossterm<Strikes> with the affected weapon are made against Reflex defense instead of Armor defense.
+                    """,
+                    duration='attune',
+                    tags=['Shaping', 'Water'],
+                ),
             ),
         ],
         category='buff, offense',
@@ -1248,8 +801,6 @@ def generate_spells():
                 description="""
                     You may choose an additional skill that you have mastered as you cast the spell.
                     The target gains the same bonus to all chosen skills.
-                    \\par You can apply this augment multiple times.
-                    Each time, you may choose an additional skill that you have mastered.
                 """,
             ),
         ],
@@ -1289,8 +840,6 @@ def generate_spells():
                 description="""
                     Each 5-ft.\\ square of webbing gains additional hit points equal to your spellpower.
                     In addition, the webs are no longer vulnerable to fire.
-                    \\par You can apply this augment multiple times.
-                    The hit point increase stacks.
                 """,
             ),
         ],
@@ -1887,9 +1436,6 @@ def generate_spells():
 
                         All targeted attacks against the target have a 50% miss chance.
                         Whenever an attack misses in this way, it affects an image, destroying it.
-
-                        This augment can be applied multiple times.
-                        The spell creates an additional illusory duplicate for each additional time this augment is applied.
                     """,
                     duration='sustain (swift)',
                     tags=['Figment', 'Visual'],
@@ -1915,6 +1461,7 @@ def generate_spells():
         ],
         category='buff, defense',
     ))
+
     spells.append(Spell(
         name="Flare",
         # header=Header("description"),
@@ -2014,6 +1561,39 @@ def generate_spells():
         ],
         category='debuff, combat',
     ))
+
+    spells.append(Spell(
+        name="Polymorph",
+        header=Header("You change the target's physical form."),
+        targeting=Targeting(
+            target='One willing creature',
+            rng='medium',
+        ),
+        effects=Effects(
+            # TODO: more explanation of what this means
+            effect="""
+                You increase or decrease the target's size by one size category.
+            """,
+            duration='Attunement',
+            tags=['Shaping', 'Sizing'],
+        ),
+        schools=['Transmutation'],
+        lists=['Arcane', 'Nature'],
+        cantrip="The spell's duration becomes Sustain (swift).",
+        subspells=[
+            Subspell(
+                level=3,
+                name="Alter Appearance",
+                description="""
+                    You can also make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).
+                    You gain a +5 bonus on the check, and you ignore penalties for changing the target's gender, race, subtype, or age.
+                    However, this effect is unable to alter the target's clothes or equipment in any way.
+                """,
+            ),
+        ],
+        category='buff, offense',
+    ))
+
     return sorted(spells, key=lambda spell: spell.name)
 
 
@@ -2021,35 +1601,35 @@ def sanity_check(spells):
     # Make sure that the right kinds of spells exist
 
     # Every spell source should have one spell of each category
-    for category in SPELL_CATEGORIES:
-        has_spell = {source: False for source in SPELL_SOURCES}
+    for category in rise_data.categories:
+        has_spell = {source: False for source in rise_data.spell_sources}
         for spell in spells:
             if spell.category == category:
                 for source in spell.lists:
                     if source in has_spell:
                         has_spell[source] = True
-        for source in SPELL_SOURCES:
+        for source in rise_data.spell_sources:
             if not has_spell[source]:
                 warn(f"Source {source} has no spell for {category}")
 
     # Every spell source should have both single target and multi damage spells
     # that target every defense
-    for defense in DEFENSES:
-        has_damage = {source: False for source in SPELL_SOURCES}
+    for defense in rise_data.defenses:
+        has_damage = {source: False for source in rise_data.spell_sources}
         # Every source should also have debuffs against every defense
-        has_debuff = {source: False for source in SPELL_SOURCES}
+        has_debuff = {source: False for source in rise_data.spell_sources}
         for spell in spells:
             if spell.effects.attack and spell.effects.attack.defense == defense:
                 if spell.category == 'damage':
                     for source in spell.lists:
-                        if source in SPELL_SOURCES:
+                        if source in rise_data.spell_sources:
                             has_damage[source] = True
                 elif spell.category[:6] == 'debuff':
                     for source in spell.lists:
-                        if source in SPELL_SOURCES:
+                        if source in rise_data.spell_sources:
                             has_debuff[source] = True
 
-        for source in SPELL_SOURCES:
+        for source in rise_data.spell_sources:
             if not has_damage[source]:
                 warn(f"Source {source} has no damage spell against {defense}")
             if not has_debuff[source]:
@@ -2057,11 +1637,11 @@ def sanity_check(spells):
 
     # Every spell school should have at least two unique categories of
     # spells
-    categories_in_school = {school: {} for school in SCHOOLS}
+    categories_in_school = {school: {} for school in rise_data.schools}
     for spell in spells:
         for school in spell.schools:
             categories_in_school[school][spell.category] = True
-    for school in SCHOOLS:
+    for school in rise_data.schools:
         if len(categories_in_school[school]) < 2:
             warn(f"School {school} has only {len(categories_in_school[school])} spell categories")
 
