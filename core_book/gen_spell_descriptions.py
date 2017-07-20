@@ -7,48 +7,15 @@ from generation.header import Header
 from generation.spell import Spell
 from generation.subspell import Subspell
 from generation.targeting import Targeting
+from generation.util import latexify
 import generation.rise_data as rise_data
 from logging import getLogger, WARNING
 # from pprint import pformat
-import re
 logger = getLogger(__name__)
 def log(*args):
     logger.log(*args)
 def warn(*args):
     logger.log(WARNING, *args)
-
-newline_pattern = re.compile(r'[\r\n]+')
-add_pattern = re.compile(r'[+] (\d)')
-plus_pattern = re.compile(r'[+](\d)')
-sub_pattern = re.compile(r'[-] (\d)')
-minus_pattern = re.compile(r'[-](\d)')
-def latexify(text):
-    """Convert the given text into relatively idiomatic LaTeX.
-    This converts <> to {} and + to \\plus or \\add.
-    This strips all SOL and EOL whitespace and removes blank lines.
-
-    Args:
-        text (string): The text to transform
-
-    Yields:
-        string: LaTeX code
-    """
-
-    text = text.replace('<', '{').replace('>', '}')
-    text = add_pattern.sub(r'\\add \1', text)
-    text = plus_pattern.sub(r'\\plus\1', text)
-    text = sub_pattern.sub(r'\\sub \1', text)
-    text = minus_pattern.sub(r'\\minus\1', text)
-
-    stripped_lines = [
-        line.strip()
-        for line in newline_pattern.split(text)
-    ]
-    # strip blank lines
-    text = '\n'.join([
-        line for line in stripped_lines if line != ""
-    ])
-    return text
 
 
 def generate_spells():
@@ -142,6 +109,34 @@ def generate_spells():
                     \par Any effect which increases this spell's range increases the range of this effect by the same amount.""",
                 tags=['Shielding'],
                 school='Evocation',
+            ),
+            Subspell(
+                level=7,
+                name="Control Weather",
+                targeting=Targeting(
+                    area='2 mile radius cylinder from your location',
+                    area_type='zone',
+                ),
+                effects=Effects(
+                    effect="""
+                        When you cast this spell, you choose a new weather pattern.
+                        You can only choose weather which would be possible in the climate and season of the area you are in.
+                        For example, you can normally create a thunderstorm, but not if you are in a desert.
+
+                        The weather begins to take effect in the area when you complete the spell.
+                        After five minutes, your chosen weather pattern fully takes effect.
+
+                        You can control the general tendencies of the weather, such as the direction and intensity of the wind.
+                        You cannot control specific applications of the weather -- where lightning strikes, for example, or the exact path of a tornado.
+                        Contradictory weather conditions are not possible simultaneously.
+
+                        After the spell's duration ends, the weather continues on its natural course, which may cause your chosen weather pattern to end.
+                        % TODO: This should be redundant with generic spell mechanics
+                        If another ability would magically manipulate the weather in the same area, the most recently used ability takes precedence.
+                    """,
+                    duration='Attunement',
+                    tags=['Air'],
+                ),
             ),
         ],
         category='buff, defense',
@@ -560,6 +555,20 @@ def generate_spells():
         subspells=[
             Subspell(
                 level=2,
+                name="Create Water",
+                targeting=Targeting(
+                    rng='close',
+                ),
+                effects=Effects(
+                    effect="""
+                        You create up to one gallon of wholesome, drinkable water.
+                        The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
+                    """,
+                    tags=['Creation', 'Water'],
+                ),
+            ),
+            Subspell(
+                level=2,
                 name="Aqueuous Sphere",
                 targeting=Targeting(
                     area='\\areasmall radius',
@@ -573,7 +582,7 @@ def generate_spells():
                 name="Sustained",
                 description="""
                     The area affected by this spell becomes completely filled with water.
-                    You can sustain the water as a swift action.
+                    You can sustain the water as a \\glossterm<swift action>.
                     Creatures in this \\glossterm<zone> suffer penalties appropriate for fighting underwater, and may be unable to breathe.
                 """,
             ),
@@ -1318,6 +1327,30 @@ def generate_spells():
         lists=['Arcane', 'Divine', 'Nature'],
         cantrip="The spell's duration becomes Sustain (swift).",
         subspells=[
+            Subspell(
+                level=2,
+                name="Augury",
+                effects=Effects(
+                    effect="""
+                        Choose an action that the target could take.
+                        You learn whether the stated action is likely to bring good or bad results for it within the next hour.
+                        This spell provides one of four results:
+                        \\begin<itemize>
+                            \\item Weal (if the action will probably bring good results).
+                            \\item Woe (for bad results).
+                            \\item Weal and woe (for both).
+                            \\item No response (for actions that don't have especially good or bad results).
+                        \\end<itemize>
+
+                        This spell does not describe the future with certainty.
+                        It describes which result is most probable.
+                        The more unambiguous the action's effects, the more likely the spell is to be correct.
+
+                        % TODO: inconsistent wording; this spell vs. this subspell
+                        After using this subspell, you cannot cast it again until the hour affected by the previous casting is over, regardless of whether the action was taken.
+                    """,
+                ),
+            ),
             Subspell(
                 level=7,
                 name="Foresee Actions",

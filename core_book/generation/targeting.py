@@ -18,6 +18,7 @@ class Targeting(object):
             area_type='burst',
             target=None,
             targets=None,
+            time=None,  # for rituals
             rng=None,
             special=None,
             unrestricted_range=False,
@@ -28,6 +29,7 @@ class Targeting(object):
         self.special = special
         self.target = target
         self.targets = targets
+        self.time = time
         self.unrestricted_range = unrestricted_range
 
     def area_text(self):
@@ -48,6 +50,7 @@ class Targeting(object):
             return ""
 
     def __str__(self):
+        time_text = f'\\spelltime<{self.time}>' if self.time else ""
         special_text = f'\\spellspecial {self.special}' if self.special else ""
         if self.rng:
             col2 = "\\spellrng<{rng}{unrestricted}>".format(
@@ -69,6 +72,7 @@ class Targeting(object):
                     {special_text}
                     {twocol_text}
                     {self.target_text() if not included_target_text else ""}
+                    {time_text}
                 \\end<spelltargetinginfo>
             """
         else:
