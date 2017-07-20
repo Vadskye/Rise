@@ -231,6 +231,7 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
 
         You may choose to automatically succeed or fail on your attack against any spell that you cast yourself.
 
+% TODO: make this whole section refer to abilities instead of spells
 \section{Spell Descriptions}
     The description of each spell is presented in a standard format. Each category of information is explained and defined below.
 
@@ -380,46 +381,50 @@ Magic comes in many forms, but it is most commonly wielded with spells. A spell 
 
     \subsection{Duration}
 
-        A spell's duration entry tells you how long the magical energy of the spell lasts.
+        An ability's duration entry tells you how long the magical energy of the spell lasts.
 
-        \parhead{Sustain} The spell lasts as long as you take an action to sustain it.
+        \parhead{Sustain} The ability lasts as long as you take an action to sustain it.
         A Sustain duration always specifies an action type, such as Sustain (standard).
-        At the end of each round, the spell is dismissed unless you cast the spell that round or the action to sustain the spell.
-        Anything that could break your concentration when casting a spell can also break your concentration while you're sustaining one.
+        At the end of each round, the ability is dismissed unless you used the ability that round or took the action to sustain the ability that round.
+        Sustaining spells does not take concentration, and cannot be disrupted in the same way that casting spells can.
 
-        Taking an action to sustain a spell only allows you to sustain a single casting of that spell.
-        However, you can sustain multiple spells at once if you have available actions.
+        Taking an action to sustain an ability only allows you to sustain a single use of that ability.
+        However, you can sustain multiple abilities at once if you have available actions.
 
-        You can only sustain a spell for up to 5 minutes.
-        After that time, the spell is dismissed.
+        You can only sustain an ability for up to 5 minutes.
+        After that time, the ability's effect is dismissed.
 
-        % TODO: make this refer to abilities rather than spells
-        \parhead{Attunement}\label{Attunement} The spell lasts as long as you stay attuned to it.
-        Attuning to a spell reduces your maximum action points by 1.
-        If you cast that spell again, even as a \glossterm{cantrip}, all previous castings of the spell are dismissed at the end of the round.
-        If the spell is dismissed or dispelled, you are no longer attuned to it, and your maximum (but not current) action points increase appropriately.
+        \parhead{Attunement}\label{Attunement} The ability lasts as long as you stay attuned to it.
+        Attuning to an ability reduces your maximum action points by 1.
+        If ability's effect is dismissed or otherwise cancelled, you are no longer attuned to it, and your maximum (but not current) action points increase appropriately.
 
-        \parhead{Condition} The spell lasts until its target removes it, such as by taking the Recover action (see \pcref{Recover}).
-        Only spells that affect creatures can have the Condition duration.
+        Unless otherwise noted, you can only attune to one activation of a particular ability at once.
+        If you use the ability again, the effect of the previous use of the ability immediately ends.
 
-        \parhead{Timed Durations} Some durations are measured in rounds, minutes, hours, or some other increment. When the time is up, the magic goes away and the spell ends at the end of your turn.
+        Attuned abilities remaining working across any distance, but not across planes.
+        At the end of each round, your attunement to all abilities active on a different plane than your current plane ends.
+        Planar travel that does not last a full round, such as teleportation, does not interrupt your attunement.
 
-        Spells end after the given length of time has completely elapsed. For example, a spell that lasts 1 round ends at the end of the next round after it is cast, not at the end of the round in which it is cast.
+        \subparhead{Multiple Attunement} Some abilities have durations of ``Attunement (multiple)''.
+        You can attune to multiple uses of that ability at once.
+        Using that ability again does not cause the effects of previous uses to end.
+        Each separate attunement decreases your maximum action points by 1.
+        % clarify that cantrips and subspells are considered the same ability
 
-        \subparhead{Short} The spell lasts for as long as you focus, plus 5 additional rounds.
-        \subparhead{Medium} The spell lasts for 5 minutes.
-        \subparhead{Long} The spell lasts for 1 hour.
-        \subparhead{Extreme} The spell lasts for 12 hours.
-        \subparhead{Other} Some spells, such as long-lasting rituals, last for a specific amount of time specified in the spell description.
-        If a spell's duration is variable, the duration is rolled secretly (the caster doesn't know how long the spell will last).
+        \parhead{Condition} The ability lasts until its target removes it, such as by taking the Recover action (see \pcref{Recover}).
+        Only abilities that affect creatures can have the Condition duration.
 
-        \parhead{Permanent} The energy remains as long as the effect does. This means the spell is vulnerable to \spell{dispel magic}.
+        \parhead{Permanent} The ability lasts until it is somehow cancelled or removed, such as with the \spell{antimagic} spell.
 
-        \parhead{Instantaneous} Spells without a listed duration are instantaneous. Spell energy comes and goes the instant the spell is cast, though the consequences might be long-lasting.
+        \parhead{Instantaneous} Abilities without a listed duration are instantaneous.
 
-        \parhead{Targets, Effects, and Areas} If the spell affects creatures directly, the result travels with the targets for the spell's duration. If the spell creates or summons objects or creatures, they last for the duration, and are capable of moving outside the spell's initial area. Such effects can sometimes be destroyed prior to when its duration ends. If the spell creates an emanation, then the spell stays with that area for its duration. Creatures become subject to the spell when they enter the emanation and are no longer subject to it when they leave.
+        \parhead{Targets, Effects, and Areas} If an ability affects creatures directly, the effects travel with the targets for the ability's duration.
+        If an ability creates or summons objects or creatures, they last for the duration, and are capable of moving outside the ability's initial range.
+        Such effects can sometimes be destroyed prior to when their duration ends.
+        % Seems redundant with the definition of emanations elsewhere
+        % If an ability creates an emanation, then the spell stays with that area for its duration. Creatures become subject to the spell when they enter the emanation and are no longer subject to it when they leave.
 
-        \parhead{Discharge} Occasionally a spells lasts for a set duration or until triggered or discharged.
+        % \parhead{Discharge} Occasionally a spells lasts for a set duration or until triggered or discharged.
 
     \subsection{Magic Resistance}\label{Magic Resistance}
         Magic resistance is an additional defense against \glossterm{magical} abilities such as spells.
