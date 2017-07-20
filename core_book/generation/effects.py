@@ -4,8 +4,10 @@ duration_mapping = {
     'attune': 'Attunement',
     'attunement': 'Attunement',
     'Attunement': 'Attunement',
+    'Attunement (multiple)': 'Attunement (multiple)',
     'condition': 'Condition',
     'sustain (swift)': 'Sustain (swift)',
+    'Permanent': 'Permanent',
 }
 
 class Effects(object):
