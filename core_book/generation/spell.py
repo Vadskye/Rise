@@ -7,6 +7,7 @@ class Spell(object):
     def __init__(
             self,
             augments=None,
+            base_level=None,
             cantrip=None,
             category=None,
             effects=None,
@@ -19,9 +20,10 @@ class Spell(object):
             notes=None,
             short_description=None,
     ):
+        self.augments = augments
+        self.base_level = base_level
         self.cantrip = cantrip
         self.category = category
-        self.subspells = subspells
         self.effects = effects
         self.header = header
         self.name = name
@@ -29,7 +31,7 @@ class Spell(object):
         self.notes = notes
         self.schools = schools
         self.short_description = short_description or 'TODO'
-        self.augments = augments
+        self.subspells = subspells
         self.targeting = targeting
 
         for arg in ['cantrip', 'effects', 'lists', 'name', 'schools', 'targeting']:
@@ -57,7 +59,7 @@ class Spell(object):
         if (
                 self.targeting.target is not None
                 and self.targeting.area is None
-                and self.category[:4] != 'buff'
+                and (self.category and self.category[:4] != 'buff')
         ):
             augments.append('Mass')
         if (
@@ -80,7 +82,7 @@ class Spell(object):
 
         return join(
             f"""
-                \\begin<spellsection><{self.name}>
+                \\begin<spellsection><{self.name}>{'[self.base_level]' if self.base_level else ""}
                     {str(self.header or "")}
                     \\begin<spellcontent>
                         {str(self.targeting)}
