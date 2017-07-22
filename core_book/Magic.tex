@@ -58,7 +58,6 @@ Each of the nine schools represents a different type of mastery over the world, 
         \parhead{Performing Rituals} You must focus to perform rituals.
         At the end of every round, if you took any damage, make a Concentration check.
         Failure means the ritual fails and has no effect.
-        When a ritual fails, half of the ritual components are usually consumed during the ritual, the but remainder can be salvaged.
 
         \parhead{Distracting Circumstances} In some circumstances, you need to Concentration make a concentration check to cast spells or take other actions even if you haven't taken damage.
         Examples include being on a galloping horse, in a storm-tossed ship, or in an earthquake.
@@ -755,71 +754,79 @@ Each of the nine schools represents a different type of mastery over the world, 
 
 \section{Rituals}\label{Rituals}
     Rituals are ceremonies that create magical effects.
-    Spellcasting characters, or characters with the Ritual Caster feat, can learn and perform rituals.
-    You don't memorize a ritual as you would a normal spell; rituals are too complex for all but the mightiest mages to commit to memory.
+    Spellcasting characters can learn and perform rituals.
+    You don't memorize a ritual as you would a normal spell; rituals are too complex for all but the most knowledgeable sages to commit to memory.
     To perform a ritual, you need to read from a book or a scroll containing it.
-    Rituals are considered to be spells for many purposes, such as for \glossterm{magic resistance} and for effects related to spells, but they are learned and cast in very different ways.
+    Rituals are similar to spells, but they are not considered spells.
     \subsection{Ritual Descriptions}
         \par Like a spell, each ritual has a school, a level, and a magical effect.
-        Rituals are described in Chapter 13. The description of each ritual follows the same format as the description of spells in Chapter 12, except for the description of ritual levels.
-        Unlike spells, which have levels based on class, rituals have levels based on the source of magic: arcane, divine, or nature.
+        % TODO: proper chapter references
+        Rituals are described in Chapter 13. The description of each ritual follows the same format as the description of spells in Chapter 12, except that every ritual has a level, like \glossterm{subspells} do.
+
+        \subparhead{Ritual Sources}
         A ritual always matches the magic source of the person performing the ritual.
         For example, \spell{scrying} is an arcane ritual when performed by a wizard, but a divine ritual when performed by a cleric.
-    \subsection{Ritual Requirements} In order to learn and perform a ritual, you must be able to cast at least one spell of the same level as the ritual.
+    \subsection{Ritual Requirements}
+        In order to learn and perform a ritual, you must be able to cast at least one spell of the same level as the ritual.
     \subsection{Ritual Books}
-        A ritual book contains one or more rituals that you can use as frequently as you like, as long as you can spare the time and the components to perform the ritual.
+        A ritual book contains one or more rituals that you can use as frequently as you want, as long as you can spend the time and \glossterm{action point} to perform the ritual.
         Scribing a ritual in a ritual book costs an amount of precious inks.
-    \subsection{Ritual Components}
-        Every ritual has a material component cost.
-        This cost can be paid with precious metals or gems, or with special materials designed to perform rituals.
-        Some rituals have unique costs and may require specific material components.
     \subsection{Ritual Costs}\label{Ritual Costs}
-        The costs to scribe and perform rituals are described on \trefnp{Ritual Costs}.
+        The costs to scribe rituals are described on \trefnp{Ritual Costs}.
         \begin{dtable}
             \lcaption{Ritual Costs}
-            \begin{dtabularx}{\columnwidth}{X l l l}
-                \tb{Ritual Level} & \tb{Cost to Perform} & \tb{Cost to Scribe} & \tb{Item Level} \\
+            \begin{dtabularx}{\columnwidth}{X l l}
+                \tb{Ritual Level} & \tb{Cost to Scribe} & \tb{Item Level} \\
                 \bottomrule
-                1st-Level & 5 gp & 50 gp & 1st \\
-                2nd-Level & 20 gp & 200 gp & 3rd \\
-                3rd-Level & 50 gp & 500 gp & 4th \\
-                4th-Level & 125 gp & 1,250 gp & 7th \\
-                5th-Level & 300 gp & 3,000 gp & 9th \\
-                6th-Level & 750 gp & 7,500 gp & 11th \\
-                7th-Level & 1500 gp & 15,000 gp & 12th \\
-                8th-Level & 3,500 gp & 35,000 gp & 14th \\
-                9th-Level & 7,500 gp & 75,000 gp & 16th \\
-                10th-level\fn{1} & 17,000 gp & \tdash & \tdash \\
-                11th-level & 36,000 & \tdash & \tdash \\
-                12th-level & 80,000 & \tdash & \tdash \\
-                13th-level & 170,000 & \tdash & \tdash \\
-                14th-level & 360,000 & \tdash & \tdash \\
-                15th-level & 780,000 & \tdash & \tdash \\
+                1st-Level & 50 gp & 1st \\
+                2nd-Level & 200 gp & 3rd \\
+                3rd-Level & 500 gp & 4th \\
+                4th-Level & 1,250 gp & 7th \\
+                5th-Level & 3,000 gp & 9th \\
+                6th-Level & 7,500 gp & 11th \\
+                7th-Level & 15,000 gp & 12th \\
+                8th-Level & 35,000 gp & 14th \\
+                9th-Level & 75,000 gp & 16th \\
             \end{dtabularx}
-            % TODO: how do ritual augments work
-            1. There are no rituals that are naturally 10th level or higher, but some rituals can be augmented above 9th level.
         \end{dtable}
 
     \subsection{Performing Rituals}
-        \par To perform a ritual, you must have a ritual book containing the ritual and the material components required for the ritual.
+        To perform a ritual, you must have a ritual book containing the ritual and the material components required for the ritual.
+        Unless otherwise specified, performing a ritual requires spending a single \glossterm{action point}.
+        Some rituals require multiple action points to complete.
+        Other creatures can supply action points to help you perform rituals; see Ritual Participants, below.
+
         If you are distracted during the ritual, you must make a Concentration check, just as if you were casting a spell of the ritual's level.
         If you fail, the ritual is ruined and you must start from the beginning.
-        You can generally recover half the material components from an interrupted ritual.
+        % TODO: can we remove the ``casting a ritual'' wording?
         \par Performing a ritual and casting a ritual mean the same thing.
+
+        \subsubsection{Ritual Participants}
+            Creatures can assist in the performance of rituals even if they are unable to perform rituals themselves.
+            Ritual participants must be given specific instructions for the actions they must perform during a ritual by a creature who knows how to perform the ritual.
+            This instruction generally takes half the time required to perform the ritual.
+
+            The steps required to participate in rituals can be complex.
+            A creature cannot participate in rituals unless it has an Intelligence of at least 0, can speak at least one language, and has the fine motor control required to perform the somatic components of spells.
+
+            A creature that participates in a ritual may spend an action point in place of or in addition to the action point spent by the creature performing the ritual.
+            It may also \glossterm{attune} to the effect of the ritual in place of the creature performing the ritual.
+            Only one creature may attune to the ritual's effect in this way.
+            If multiple creatures are willing to spend action points or attune to effects, the creature performing the ritual decides which creatures spend action points or attune to the ritual's effects.
+
     \subsection{Magical Writings}
         To record a spell in written form, a character uses complex notation that describes the magical forces involved in the spell.
         The notation constitutes a universal language that spellcasters have discovered, not invented.
-        The writer uses the same system no matter what her native language or culture.
-        However, each character uses the system in her own way.
-        Another person's magical writing remains incomprehensible to even the most powerful spellcaster until she takes time to study and decipher it.
+        Each writer uses this universal system regardless of their native language or culture.
+        However, each character uses the system in their own way.
+        Another person's magical writing remains incomprehensible to even the most powerful spellcaster until they take the time to study and decipher it.
 
-        To decipher an magical writing (such as a single spell in written form on a scroll), a character must make a Spellcraft check (DR 20 \add the spell's level). If the skill check fails, the character cannot attempt to read that particular spell again until the next day.
-        A \spell{read magic} spell automatically deciphers a magical writing without a skill check.
+        To decipher an magical writing (such as a single spell in written form on a scroll), you must make a Spellcraft check (DR 10 \add the spell's level). If the skill check fails, you cannot attempt to read that particular spell again until the next day.
+        A \ritual{read magic} ritual automatically deciphers a magical writing without a skill check.
         If the person who created the magical writing is on hand to help the reader, success is also automatic.
 
-        Once a character deciphers a particular magical writing, she does not need to decipher it again.
-        Deciphering a magical writing allows the reader to identify the spell and gives some idea of its effects (as explained in the spell description). If the magical writing was a scroll and the reader can cast spells of the appropriate type, she can attempt to use
-        the scroll.
+        Once a character deciphers a particular magical writing, they do not need to decipher it again.
+        Deciphering a magical writing allows the reader to identify the spell and gives some idea of its effects (as explained in the spell or ritual description).
 
 \section{Types of Abilities}
 
