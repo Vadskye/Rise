@@ -1,70 +1,59 @@
 #!/usr/bin/env python3
 
 import click
-from gen_spell_descriptions import DOMAINS, generate_spells, latexify, SPELL_SOURCES
+from gen_spell_descriptions import generate_spells
+from generation.rise_data import spell_sources
+from generation.util import latexify
+from gen_ritual_descriptions import generate_rituals
 
-def spells_by_source(spells):
-    spells_by_source = {source: [] for source in SPELL_SOURCES}
+def by_source(spells):
+    spells_by_source = {source: [] for source in spell_sources}
     for spell in spells:
-        for source in SPELL_SOURCES:
+        for source in spell_sources:
             if source in spell.lists:
                 spells_by_source[source].append(spell)
     return spells_by_source
 
 
-def spells_by_domain(spells):
-    by_domain = {}
-    for spell in spells:
-        for domain in DOMAINS:
-            if domain in spell.lists:
-                if (domain in by_domain):
-                    print(f"Domain {domain} has too many spells")
-                by_domain[domain] = spell
-    return by_domain
-
-def latex_for_source(source, spells):
+def latex_for_source(source, spells, rituals):
     spell_headers = []
     for spell in sorted(spells, key=lambda s: s.name):
         spell_headers.append(f"\\spellhead<{spell.name}> {spell.short_description}")
 
+    ritual_headers = []
+    # Sort by base_level as primary, name as secondary
+    for ritual in sorted(sorted(rituals, key=lambda s: s.name), key=lambda s: s.base_level):
+        ritual_headers.append(
+            f"\\spellhead[{ritual.base_level}]<{ritual.name}> {ritual.short_description}"
+        )
+
     spell_latex = "\n".join(spell_headers)
+    ritual_latex = "\n".join(ritual_headers)
     return f"""
         \\small
         \\section<{source} Magic>\\label<{source} Magic>
             \\subsection<{source} Spells>\\label<{source} Spells>
-            \\begin<spelllist>
-                {spell_latex}
-            \\end<spelllist>
+                \\begin<spelllist>
+                    {spell_latex}
+                \\end<spelllist>
+            \\subsection<{source} Rituals>\\label<{source} Rituals>
+                \\begin<spelllist>
+                    {ritual_latex}
+                \\end<spelllist>
+
     """
 
 
-def latex_for_domains(spells):
-    by_domain = spells_by_domain(spells)
-    domain_spell_headers = []
-    for domain in sorted(DOMAINS):
-        spell = by_domain.get(domain, None)
-        if spell is None:
-            domain_spell_headers.append(f"\\item {domain} -- \\spellhead*<missing> \\tdash")
-        else:
-            domain_spell_headers.append(f"\\item {domain} -- \\spellhead*<{spell.name}> {spell.short_description}")
-    domain_spell_latex = "\n".join(domain_spell_headers)
-    return f"""
-        \\subsection<Domain Spells>\\label<Domain Spells>
-        \\begin<spelllist>
-            {domain_spell_latex}
-        \\end<spelllist>
-    """
-
-
-def generate_spell_lists(spells):
-    by_source = spells_by_source(spells)
+def generate_spell_lists():
+    spells = generate_spells()
+    spells_by_source = by_source(spells)
+    rituals = generate_rituals()
+    rituals_by_source = by_source(rituals)
 
     return latexify(
         "\n\n".join([
-            latex_for_source('Arcane', by_source['Arcane']),
-            latex_for_source('Divine', by_source['Divine']),
-            latex_for_domains(spells),
-            latex_for_source('Nature', by_source['Nature']),
+            latex_for_source(source, spells_by_source[source], rituals_by_source[source])
+            for source in spell_sources
         ])
     )
 
@@ -72,12 +61,11 @@ def generate_spell_lists(spells):
 @click.command()
 @click.option('-o', '--output')
 def main(output):
-    spells = generate_spells()
     if output is None:
-        print(generate_spell_lists(spells))
+        print(generate_spell_lists())
     else:
         with open(output, 'w') as of:
-            of.write(generate_spell_lists(spells))
+            of.write(generate_spell_lists())
 
 
 if __name__ == "__main__":
