@@ -34,7 +34,7 @@ The damage increase applies to all damage, not just physical damage.
 \begin{spellsection}{Antimagic}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One creature, object, or location}}{\spellrng{\rngmed}}
+\spelltwocol{\spelltgt{One creature, object, or active magical effect}}{\spellrng{\rngmed}}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Special}
@@ -76,6 +76,19 @@ In addition, you can decrease the spellpower of the aura by up to half your spel
 \spelltags{\glossterm{Thaumaturgy}}
 \end{augmenteffects}
 \end{spellcontent}
+\augment{2}{Dimensional Anchor}
+Replace the spell's effects with the following:
+\begin{spellcontent}
+\begin{augmenteffects}
+\begin{spellattack}{Spellpower vs. Mental}
+\spellsuccess
+The target cannot travel extradimensionally.
+This prevents all \glossterm{Manifestation}, \glossterm{Planar}, and \glossterm{Translocation} effects.
+\end{spellattack}
+\spelldur Condition
+\spelltags{\glossterm{T}, \glossterm{a}, \glossterm{a}, \glossterm{g}, \glossterm{h}, \glossterm{m}, \glossterm{r}, \glossterm{t}, \glossterm{u}, \glossterm{u}, \glossterm{y}}
+\end{augmenteffects}
+\end{spellcontent}
 \augment{2}{Suppress Item}
 Replace the spell's targets and effects with the following:
 \begin{spellcontent}
@@ -106,6 +119,21 @@ The target is treated as if the spell that created it was \glossterm{dispelled}.
 This usually causes the target to disappear.
 \end{spellattack}
 \spelltags{\glossterm{Thaumaturgy}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{5}{Dimensional Lock}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spellburst{\arealarge radius}}{\spellrng{\rngmed}}
+\spelltgts{Everything in the area}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+Extradimensional travel into or out of the spell's area is impossible.
+This prevents all \glossterm{Manifestation}, \glossterm{Planar}, and \glossterm{Translocation} effects.
+\spelldur Attunement
+\spelltags{\glossterm{T}, \glossterm{a}, \glossterm{a}, \glossterm{g}, \glossterm{h}, \glossterm{m}, \glossterm{r}, \glossterm{t}, \glossterm{u}, \glossterm{u}, \glossterm{y}}
 \end{augmenteffects}
 \end{spellcontent}
 \augment{7}{Antimagic Field}
@@ -333,7 +361,6 @@ The spell deals \minus1d damage
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
-\subsubsection{Subspells}
 \begin{spellsection}{Control Air}
 \begin{spellheader}
 \spelldesc{You shield your ally with a barrier of wind, protecting them from harm.}
@@ -365,8 +392,37 @@ The spell's duration becomes Sustain (swift).
 \augment{2}{Gentle Descent}
 The target gains a 30 foot glide speed.
 A creature with a glide speed can glide through the air at the indicated speed (see \pcref{Gliding}).
+\augment{2}{Windstrike}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\begin{spellattack}{Spellpower vs. Fortitude}
+\spellsuccess \spelldamage{bludgeoning}.
+\spellcritical As above, but double damage.
+\end{spellattack}
+\spelltags{\glossterm{Air}}
+\end{augmenteffects}
+\end{spellcontent}
 \augment{3}{Accelerated}
 The glide speed granted by this spell increases to 60 feet.
+\augment{3}{Gust of Wind}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spellburst{\arealarge line, 10 ft. wide}
+\spelltgts{Everything in the area}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\begin{spellattack}{Spellpower vs. Fortitude}
+\spellsuccess \spelldamage{bludgeoning}[1d4].
+\spellcritical As above, but double damage.
+\end{spellattack}
+\spelltags{\glossterm{Air}}
+\end{augmenteffects}
+\end{spellcontent}
 \augment{4}{Air Walk}
 The target can walk on air as if it were solid ground.
 The magic only affects the target's legs and feet.
@@ -380,6 +436,29 @@ Any individual creature can only be dealt damage in this way once per round.
 \par Any effect which increases this spell's range increases the range of this effect by the same amount.
 \par
 This is a \glossterm{Shielding} effect from the \glossterm{Evocation} school.
+\augment{7}{Control Weather}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spellzone{2 mile radius cylinder from your location}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+When you cast this spell, you choose a new weather pattern.
+You can only choose weather which would be possible in the climate and season of the area you are in.
+For example, you can normally create a thunderstorm, but not if you are in a desert.
+The weather begins to take effect in the area when you complete the spell.
+After five minutes, your chosen weather pattern fully takes effect.
+You can control the general tendencies of the weather, such as the direction and intensity of the wind.
+You cannot control specific applications of the weather -- where lightning strikes, for example, or the exact path of a tornado.
+Contradictory weather conditions are not possible simultaneously.
+After the spell's duration ends, the weather continues on its natural course, which may cause your chosen weather pattern to end.
+% TODO: This should be redundant with generic spell mechanics
+If another ability would magically manipulate the weather in the same area, the most recently used ability takes precedence.
+\spelldur Attunement
+\spelltags{\glossterm{Air}}
+\end{augmenteffects}
+\end{spellcontent}
 \begin{spellsection}{Corruption}
 \begin{spellheader}
 \spelldesc{You corrupt your foe's life force, weakening them.}
@@ -486,8 +565,27 @@ The duration of the temporary hit points is Sustain (swift).
 \subsubsection{Subspells}
 \augment{2}{Moderate Wounds}
 For every 5 points of healing, this spell can instead cure 1 vital damage.
+\augment{2}{Restore Senses}
+Replace the spell's effects with the following:
+\begin{spellcontent}
+\begin{augmenteffects}
+\spelleffect
+One of the target's physical senses, such as sight or hearing, is restored to full capacity.
+This can heal both magical and mundane conditions, but it cannot completely replace missing body parts required for a sense to function (such as missing eyes).
+\spelltags{\glossterm{Flesh}}
+\end{augmenteffects}
+\end{spellcontent}
 \augment{2}{Undead Bane}
 If the target is undead, the spell gains a \plus2 bonus to accuracy and deals double damage on a critical hit.
+\augment{3}{Remove Disease}
+Replace the spell's effects with the following:
+\begin{spellcontent}
+\begin{augmenteffects}
+\spelleffect
+All diseases affecting the target are removed.
+\spelltags{\glossterm{Flesh}}
+\end{augmenteffects}
+\end{spellcontent}
 \augment{3}{Serious Wounds}
 For every 2 points of healing, this spell can instead cure 1 vital damage.
 \augment{4}{Critical Wounds}
@@ -517,6 +615,21 @@ The spell's duration becomes Sustain (swift).
 \end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
+\augment{2}{Distort Light}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spellemanation{\areamed radius from the target}}{\spellrng{\rngclose}}
+\spelltgt{One object (Small or smaller)}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+Light within or passing through the area is dimmed to be no brighter than shadowy illumination.
+Any effect or object which blocks light also blocks this spell's emanation.
+\spelldur Attunement (multiple)
+\spelltags{\glossterm{Glamer}, \glossterm{Light}}
+\end{augmenteffects}
+\end{spellcontent}
 \augment{3}{Disguise Image}
 Replace the spell's effects with the following:
 \begin{spellcontent}
@@ -680,6 +793,25 @@ In addition, all damage dealt with the weapon with strikes becomes fire damage i
 \spelltags{\glossterm{Fire}}
 \end{augmenteffects}
 \end{spellcontent}
+\augment{3}{Fire Trap}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgt{One openable object (Large or smaller)}}{\spellrng{\rngclose}}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+If a creature opens the target object, it explodes.
+You make an attack against everything within an \areamed radius burst centered on the target.
+After the object explodes in this way, the spell ends.
+\begin{spellattack}{Spellpower vs. Reflex}
+\spellsuccess \spelldamage{fire}[1d4].
+\spellcritical As above, but double damage.
+\end{spellattack}
+\spelldur Attunement
+\spelltags{\glossterm{Fire}, \glossterm{Trap}}
+\end{augmenteffects}
+\end{spellcontent}
 \begin{spellsection}{Flare}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
@@ -772,6 +904,27 @@ The spell's duration becomes Sustain (swift).
 \end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
+\augment{2}{Augury}
+Replace the spell's effects with the following:
+\begin{spellcontent}
+\begin{augmenteffects}
+\spelleffect
+Choose an action that the target could take.
+You learn whether the stated action is likely to bring good or bad results for it within the next hour.
+This spell provides one of four results:
+\begin{itemize}
+\item Weal (if the action will probably bring good results).
+\item Woe (for bad results).
+\item Weal and woe (for both).
+\item No response (for actions that don't have especially good or bad results).
+\end{itemize}
+This spell does not describe the future with certainty.
+It describes which result is most probable.
+The more unambiguous the action's effects, the more likely the spell is to be correct.
+% TODO: inconsistent wording; this spell vs. this subspell
+After using this subspell, you cannot cast it again until the hour affected by the previous casting is over, regardless of whether the action was taken.
+\end{augmenteffects}
+\end{spellcontent}
 \augment{7}{Foresee Actions}
 The target can learn what actions all creatures it can observe intend to take during each phase before it decides its actions for that phase.
 It learns this information in the instant before it acts, and normally does not have time to communicate it to other creatures.
@@ -915,7 +1068,6 @@ The spell deals \minus1d damage
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
-\subsubsection{Subspells}
 \begin{spellsection}{Poison}
 \begin{spellheader}
 \spelldesc{You weaken your foe with a potent poison.}
@@ -944,7 +1096,6 @@ The spell does not have additional effects other than damage.
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
-\subsubsection{Subspells}
 \begin{spellsection}{Polymorph}
 \begin{spellheader}
 \spelldesc{You change the target's physical form.}
@@ -975,6 +1126,20 @@ The spell's duration becomes Sustain (swift).
 You can also make a Disguise check to alter the target's appearance (see \pcref{Disguise Creature}).
 You gain a \plus5 bonus on the check, and you ignore penalties for changing the target's gender, race, subtype, or age.
 However, this effect is unable to alter the target's clothes or equipment in any way.
+\augment{4}{Fabricate}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgts{One or more unattended, nonmagical objects (Large or smaller); see text}}{\spellrng{\rngclose}}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+You make a Craft check to transform the targets into a new item (or items) made of the same materials.
+You require none of the tools or time expenditure that would normally be necessary.
+The total size of all targets combined must be Large size or smaller.
+\spelltags{\glossterm{Shaping}}
+\end{augmenteffects}
+\end{spellcontent}
 \begin{spellsection}{Protection from Alignment}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
@@ -1055,16 +1220,29 @@ You create an additional sensor in the same location.
 You must move and see through each sensor individually.
 \augment{3}{Penetrating}
 The spell's range becomes \rngunrestricted, allowing you to cast it into areas where you do not have \glossterm{line of sight} or \glossterm{line of effect}.
+\augment{4}{Reverse Scrying}
+% TODO: wording
+The sensor created by this spell appears at the location of the source of the ability that created the target sensor.
+Replace the spell's targets with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgt{One magical sensor}}{\spellrng{\rngmed}}
+\end{augmenttargetinginfo}
+\end{spellcontent}
 \augment{4}{Semi-Autonomous}
 You can move the sensor as a \glossterm{swift action} rather than as a standard action.
 \augment{5}{Scry Creature}
 You must make a Spellpower vs. Mental attack against the target.
-Success means the sensor appears in the creature's space.
+Success means the sensor appears in the target's space.
 Failure means the sensor does not appear at all.
 Replace the spell's targets with the following:
 \begin{spellcontent}
 \begin{augmenttargetinginfo}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{Unlimited (Unrestricted)}}
+\spellspecial
+You must specify your target with a precise mental image of its appearance.
+The image does not have to be perfect, but it must unambiguously identify the target.
+If you specify its appearance incorrectly, or if the target has changed its appearance, you may accidentally target a different creature, or the spell may simply fail.
+\spelltwocol{\spelltgt{One creature}}{\spellrng{Same plane (Unrestricted)}}
 \end{augmenttargetinginfo}
 \end{spellcontent}
 \augment{6}{Split Senses}
@@ -1095,7 +1273,6 @@ The spell deals \minus1d damage
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
-\subsubsection{Subspells}
 \begin{spellsection}{Summon Monster}
 \begin{spellheader}
 \spelldesc{You summon a creature to fight by your side.}
@@ -1165,6 +1342,17 @@ If your attack succeeds, you move the target one foot per spellpower. In additio
 \end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
+\augment{2}{Mending}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgt{One unattended object}}{\spellrng{\rngclose}}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+The target is healed for \spelldamage{}.
+\end{augmenteffects}
+\end{spellcontent}
 \augment{2}{Precise}
 Replace the spell's effects with the following:
 \begin{spellcontent}
@@ -1185,7 +1373,7 @@ This is a \glossterm{condition}, and lasts until removed.
 Replace the spell's targets and effects with the following:
 \begin{spellcontent}
 \begin{augmenttargetinginfo}
-\spelltwocol{\spelltgt{One Medium or smaller unattended object or willing creature}}{\spellrng{\rngclose}}
+\spelltwocol{\spelltgt{One unattended object or willing creature (Medium or smaller)}}{\spellrng{\rngclose}}
 \end{augmenttargetinginfo}
 \begin{augmenteffects}
 \spelleffect
@@ -1230,9 +1418,22 @@ Replace the spell's targets with the following:
 \spelltgts{Everything in the area}
 \end{augmenttargetinginfo}
 \end{spellcontent}
+\augment{2}{Create Water}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spellrng{\rngclose}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+You create up to one gallon of wholesome, drinkable water.
+The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
+\spelltags{\glossterm{Creation}, \glossterm{Water}}
+\end{augmenteffects}
+\end{spellcontent}
 \augment{4}{Sustained}
 The area affected by this spell becomes completely filled with water.
-You can sustain the water as a swift action.
+You can sustain the water as a \glossterm{swift action}.
 Creatures in this \glossterm{zone} suffer penalties appropriate for fighting underwater, and may be unable to breathe.
 \begin{spellsection}{Web}
 \begin{spellheader}
@@ -1271,44 +1472,6 @@ The spell's duration becomes Sustain (standard).
 \augment{3}{Reinforced}
 Each 5-ft.\ square of webbing gains additional hit points equal to your spellpower.
 In addition, the webs are no longer vulnerable to fire.
-\begin{spellsection}{Windstrike}
-\begin{spellheader}
-\spelldesc{You command the air to bludgeon the target, sending it flying.}
-\end{spellheader}
-\begin{spellcontent}
-\begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
-\end{spelltargetinginfo}
-\begin{spelleffects}
-\begin{spellattack}{Spellpower vs. Fortitude}
-\spellsuccess \spelldamage{bludgeoning}.
-\spellcritical As above, but double damage.
-\end{spellattack}
-\spelltags{\glossterm{Air}}
-\end{spelleffects}
-\end{spellcontent}
-\begin{spellfooter}
-\spellinfo{Evocation}{Nature}
-\parhead*{Augments} Extended, Intensified, Mass, Quickened, Silent, Stilled
-\end{spellfooter}
-\begin{spellsubcontent}
-\begin{spellcantrip}
-The spell deals \minus1d damage.
-\end{spellcantrip}
-\end{spellsubcontent}
-\end{spellsection}
-\subsubsection{Subspells}
-\augment{2}{Forceful}
-If the attack succeeds, the target is moved up to 10 feet in any direction -- even vertically.
-\augment{2}{Gust of Wind}
-The spell deals \minus2d damage.
-Replace the spell's targets with the following:
-\begin{spellcontent}
-\begin{augmenttargetinginfo}
-\spellburst{\arealarge line, 10 ft. wide}
-\spelltgts{Everything in the area}
-\end{augmenttargetinginfo}
-\end{spellcontent}
 \begin{spellsection}{Word of Faith}
 \begin{spellheader}
 \spelldesc{You speak an utterance that rebukes those who do not share your faith.}

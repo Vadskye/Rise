@@ -6,17 +6,18 @@ logger = getLogger(__name__)
 class Spell(object):
     def __init__(
             self,
+            targeting,
             augments=None,
             base_level=None,
             cantrip=None,
             category=None,
             effects=None,
+            extra_table=None,
             header=None,
             lists=None,
             name=None,
             schools=None,
             subspells=None,
-            targeting=None,
             notes=None,
             short_description=None,
     ):
@@ -25,6 +26,7 @@ class Spell(object):
         self.cantrip = cantrip
         self.category = category
         self.effects = effects
+        self.extra_table = extra_table
         self.header = header
         self.name = name
         self.lists = lists
@@ -109,12 +111,13 @@ class Spell(object):
                 \\end<spellsection>
             """,
             f"""
-                \\subsubsection<Subspells>
-            """ if self.subspells or self.augments else None,
+                \\subsubsection<{"Subrituals" if self.base_level else "Subspells"}>
+            """ if self.subspells else None,
             '\n'.join([
                 str(subspell)
                 for subspell in sorted_subspells
             ]) if self.subspells else None,
+            self.extra_table if self.extra_table else None,
         )
 
     def __repr__(self):

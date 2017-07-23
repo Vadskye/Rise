@@ -1,14 +1,15 @@
 from generation.util import join
 
-duration_mapping = {
-    'attune': 'Attunement',
-    'attunement': 'Attunement',
-    'Attunement': 'Attunement',
-    'Attunement (multiple)': 'Attunement (multiple)',
-    'condition': 'Condition',
-    'sustain (swift)': 'Sustain (swift)',
-    'Permanent': 'Permanent',
-}
+valid_durations = set([
+    'Attunement',
+    'Attunement (multiple)',
+    'Attunement (multiple); see text',
+    'Condition',
+    'Sustain (swift)',
+    'Sustain (standard)',
+    'Sustain (standard); maximum 5 rounds',
+    'Permanent',
+])
 
 class Effects(object):
     def __init__(
@@ -24,6 +25,9 @@ class Effects(object):
         self.duration = duration
         self.special = special
         self.tags = tags
+
+        if self.duration and self.duration not in valid_durations:
+            raise Exception(f"Duration '{self.duration}' not recognized")
 
     def __str__(self):
         tag_text = ', '.join([
@@ -41,9 +45,11 @@ class Effects(object):
                     \\spelleffect {self.effect}
             """ if self.effect else None, f"""
                     {self.attack if self.attack else ""}
-            """, f"""
-                    \\spelldur {duration_mapping[self.duration]}
-            """ if self.duration else None, f"""
+            """,
+            f"""
+                    \\spelldur {self.duration}
+            """ if self.duration else None,
+            f"""
                 \\spelltags<{tag_text}>
             """ if self.tags else None, f"""
                 \\end<spelleffects>
