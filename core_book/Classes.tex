@@ -297,7 +297,7 @@ This choice determines a great deal about your character's abilities.
 
             \cf{Clr}{Rituals} 
             You can perform divine rituals to create unique magical effects (see \pcref{Rituals}).
-            You have a ritual book containing two divine rituals of your choice (see \pcref{Divine Rituals}).
+            You have a ritual book containing one divine ritual of your choice (see \pcref{Divine Rituals}).
 
             \cf{Clr}[6]{Augment}
             Choose an \glossterm{augment} (see \pcref{Augments}).
@@ -644,7 +644,7 @@ This choice determines a great deal about your character's abilities.
                     \spellquicktargeting{One dead creature}{Adjacent}
                 \end{spelltargetinginfo}
                 \begin{spelleffects}
-                    \spelleffect If the target was dead for no more than 5 minutes, it is restored to life, as the \spell{resurrection} ritual.
+                    \spelleffect If the target was dead for no more than 5 minutes, it is restored to life, as the \ritual{resurrection} ritual.
                 \end{spelleffects}
             \end{ability}
             % Need special text to clarify that it is affected by the Aspect?
@@ -760,7 +760,7 @@ This choice determines a great deal about your character's abilities.
 
         \subsubsection{Ex-Clerics}
             If you grossly violate the code of conduct required by your deity, you lose all spells and magical cleric class abilities.
-            You cannot regain those abilities until you atone (see the \spell{atonement} ritual).
+            You cannot regain those abilities until you atone for your transgressions to your deity.
 
 \section{Druid}\label{Druid}
     \begin{dtable}
@@ -820,7 +820,7 @@ This choice determines a great deal about your character's abilities.
         The oaths that you swear as part of your druidic initiation prohibit you from wearing armor made of metal.
         If you wear prohibited armor or carry a prohibited shield, you are unable to cast druid spells or use any of your \glossterm{magical} druid abilities while doing so and for 24 hours thereafter.
         
-        You can avoid this penalty by using armor made of wood altered with the \spell{ironwood} ritual.
+        You can avoid this penalty by using armor made of wood altered with the \ritual{ironwood} ritual.
         Such wood is as strong as steel.
 
         \cf{Drd}{Nature Power}
@@ -843,7 +843,7 @@ This choice determines a great deal about your character's abilities.
 
             \cf{Drd}{Rituals} 
             You can perform nature rituals to create unique magical effects (see \pcref{Rituals}).
-            You have a ritual book containing two nature rituals of your choice (see \pcref{Nature Rituals}).
+            You have a ritual book containing one nature ritual of your choice (see \pcref{Nature Rituals}).
 
             \cf{Drd}[6]{Augment}
             Choose an \glossterm{augment} (see \pcref{Augments}).
@@ -1018,11 +1018,13 @@ This choice determines a great deal about your character's abilities.
             While possessing a living plant or animal, you can see through its senses and control its actions completely.
             In addition, you may cast spells, and the spells take effect as if the plant or animal had cast them.
             You use the plant or animal's position to determine range, visible targets, and so on.
-            You do not require verbal or somatic components to cast your spells in this form, but are unable to cast spells or perform rituals that require material components or focus objects.
+            You do not require verbal or somatic components to cast your spells in this form.
+            % TODO: are there any spells or rituals that have material components or focus objects?
+            % but are unable to cast spells or perform rituals that require material components or focus objects.
 
             While not possessing a plant or animal, you can rest, or you can focus on reincarnating your physical form.
             Creating a new body in this way takes 12 consecutive hours of concentration.
-            At the end of that time, you are reincarnated in a new body in your location, as the effect of the \spell{reincarnate} ritual, except that you can choose your race from among the races listed (not including the ``Other'' race).
+            At the end of that time, you are reincarnated in a new body in your location, as the effect of the \ritual{reincarnation} ritual, except that you can choose your race from among the races listed (not including the ``Other'' race).
 
             While you are an avatar of nature, you do not age and you cannot die of old age.
             You can continue to exist in this form indefinitely.
@@ -1082,7 +1084,7 @@ This choice determines a great deal about your character's abilities.
 
     \subsection{Ex-Druids}
         A druid who ceases to revere nature, changes to a prohibited alignment, or teaches the Druidic language to a nondruid loses all spells and magical druid class abilities.
-        She cannot thereafter gain levels as a druid until you atone (see the \spell{atonement} ritual).
+        She cannot thereafter gain levels as a druid until you atone for your transgressions.
 
     % \subsection{Variant Druids}
 
@@ -1381,7 +1383,7 @@ This choice determines a great deal about your character's abilities.
             \cf{Mge}{Rituals}
             \subparhead{Sorcerer} You cannot perform arcane rituals.
             \subparhead{Wizard} You can perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
-            You have a ritual book containing two arcane rituals of your choice (see \pcref{Arcane Rituals}).
+            You have a ritual book containing one arcane ritual of your choice (see \pcref{Arcane Rituals}).
 
             \cf{Mge}[6]{Augment}
             Choose an \glossterm{augments} (see \pcref{Augments}).
@@ -1428,10 +1430,9 @@ This choice determines a great deal about your character's abilities.
 
             \subparhead{Wizard} You may also choose the Ritual Spell insight.
             You scribe an arcane spell you know into your ritual book.
-            The spell is treated as a ritual, and you can perform a one minute ritual to gain the spell's effect.
-            Performing the ritual costs the normal amount of material components for a ritual of its level (see \pcref{Ritual Costs}).
-            % TODO: how do rituals work?
-            You can apply \glossterm{augments} or \glossterm{subspells} to the spell normally, increasing the ritual's level and material component cost appropriately.
+            The spell is treated as a ritual, and you can perform a one minute ritual to cause the spell's effect.
+            Other creatures may not participate in this ritual.
+            You can apply \glossterm{augments} or \glossterm{subspells} to the spell normally, increasing the ritual's level appropriately.
 
             \cf{Mge}[5]{Lesser Essence Lore}[Magical]
             You gain an ability based on your choice of arcane essence.
@@ -1807,7 +1808,7 @@ This choice determines a great deal about your character's abilities.
             While you are dead, you may approach the deity or governing figure of your afterlife and request to be returned to life to continue your mission.
             Travelling to the relevant figure and making the request takes 12 hours.
             Unless there are extenuating circumstances, this request is almost always granted, and you are resurrected in a new body at a location of the entity's choice.
-            This functions like the \spell{resurrection} ritual, except that no part of the body is required, and a new body is created by the entity.
+            This functions like the \ritual{resurrection} ritual, except that no part of the body is required, and a new body is created by the entity.
             You can be resurrected in this way regardless of the condition of your body, but not if your soul has been trapped or otherwise prevented from going to the correct afterlife.
 
         % TODO: clarify interaction between this ability and cleric spellcasting;
