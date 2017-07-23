@@ -21,38 +21,6 @@ def warn(*args):
 def generate_spells():
     spells = []
     spells.append(Spell(
-        name='Windstrike',
-        header=Header('You command the air to bludgeon the target, sending it flying.'),
-        targeting=Targeting(
-            target='One creature or object',
-            rng='medium',
-        ),
-        effects=Effects(
-            attack=Attack.damage('Fortitude', 'bludgeoning'),
-            tags=['Air'],
-        ),
-        schools=['Evocation'],
-        lists=['Nature'],
-        cantrip='The spell deals -1d damage.',
-        subspells=[
-            Subspell(
-                level=2,
-                name='Forceful',
-                description='If the attack succeeds, the target is moved up to 10 feet in any direction -- even vertically.',
-            ),
-            Subspell(
-                level=2,
-                name='Gust of Wind',
-                description="The spell deals -2d damage.",
-                targeting=Targeting(
-                    area=r'\arealarge line, 10 ft. wide',
-                    targets='Everything in the area',
-                )
-            ),
-        ],
-        category='damage',
-    ))
-    spells.append(Spell(
         name='Control Air',
         header=Header('You shield your ally with a barrier of wind, protecting them from harm.'),
         targeting=Targeting(
@@ -65,7 +33,7 @@ def generate_spells():
                 This bonus is increased to +5 against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
                 Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
             """,
-            duration='attune',
+            duration='Attunement',
             tags=['Air', 'Imbuement'],
         ),
         schools=['Transmutation'],
@@ -79,6 +47,30 @@ def generate_spells():
                     The target gains a 30 foot glide speed.
                     A creature with a glide speed can glide through the air at the indicated speed (see \pcref{Gliding}).
                 """,
+            ),
+            Subspell(
+                level=2,
+                name="Windstrike",
+                targeting=Targeting(
+                    target='One creature or object',
+                    rng='medium',
+                ),
+                effects=Effects(
+                    attack=Attack.damage('Fortitude', 'bludgeoning'),
+                    tags=['Air'],
+                ),
+            ),
+            Subspell(
+                level=3,
+                name="Gust of Wind",
+                targeting=Targeting(
+                    area=r'\arealarge line, 10 ft. wide',
+                    targets='Everything in the area',
+                ),
+                effects=Effects(
+                    attack=Attack.multi_damage('Fortitude', 'bludgeoning'),
+                    tags=['Air'],
+                ),
             ),
             Subspell(
                 level=4,
@@ -153,7 +145,7 @@ def generate_spells():
                 The target gains \\glossterm<damage reduction> against \\glossterm<physical damage> equal to your spellpower.
                 In addition, it is \\glossterm<vulnerable> to arcane damage.
             """,
-            duration='attune',
+            duration='Attunement',
             tags=['Shielding'],
         ),
         schools=['Abjuration'],
@@ -251,7 +243,7 @@ def generate_spells():
                 success="Physical damage dealt to the target is increased by +2d.",
                 critical="Physical damage dealt to the target is increased by +4d.",
             ),
-            duration='condition',
+            duration='Condition',
             tags=['Delusion', 'Mind'],
         ),
         schools=['Enchantment'],
@@ -284,7 +276,7 @@ def generate_spells():
                 Failure means the creature can enter the area unimpeded.
                 Creatures in the area at the time that the spell is cast are unaffected by the spell.
             """,
-            duration='sustain (swift)',
+            duration='Sustain (swift)',
         ),
         schools=['Abjuration'],
         lists=['Divine', 'Nature'],
@@ -314,7 +306,7 @@ def generate_spells():
     spells.append(Spell(
         name='Antimagic',
         targeting=Targeting(
-            target='One creature, object, or location',
+            target='One creature, object, or active magical effect',
             rng='medium',
         ),
         effects=Effects(
@@ -328,7 +320,7 @@ def generate_spells():
                     Success against a magical effect causes that effect to be \\glossterm<suppressed>.
                 """,
             ),
-            duration='sustain (swift)',
+            duration='Sustain (swift)',
             tags=['Thaumaturgy'],
         ),
         schools=['Abjuration'],
@@ -351,7 +343,7 @@ def generate_spells():
                             In addition, you can decrease the spellpower of the aura by up to half your spellpower, or increase the spellpower of the aura up to a maximum of your spellpower.
                         """,
                     ),
-                    duration='attunement',
+                    duration='Attunement',
                     tags=['Thaumaturgy'],
                 ),
             ),
@@ -372,7 +364,7 @@ def generate_spells():
                             The target object is \\glossterm<suppressed>.
                         """,
                     ),
-                    duration='sustain (swift)',
+                    duration='Sustain (swift)',
                     tags=['Thaumaturgy'],
                 ),
             ),
@@ -408,8 +400,40 @@ def generate_spells():
                         In addition, magical abilities and objects cannot be activated within the area.
                         \\par Creatures within the area cannot concentrate on or dismiss spells. However, you can concentrate on and dismiss your own \\spell{antimagic field}.
                     """,
-                    duration='sustain (swift)',
+                    duration='Sustain (swift)',
                     tags=['Thaumaturgy'],
+                ),
+            ),
+            Subspell(
+                level=2,
+                name="Dimensional Anchor",
+                effects=Effects(
+                    attack=Attack(
+                        defense='Mental',
+                        success="""
+                            The target cannot travel extradimensionally.
+                            This prevents all \\glossterm<Manifestation>, \\glossterm<Planar>, and \\glossterm<Translocation> effects.
+                        """,
+                    ),
+                    duration='Condition',
+                    tags='Thaumaturgy',
+                ),
+            ),
+            Subspell(
+                level=5,
+                name="Dimensional Lock",
+                targeting=Targeting(
+                    area='\\arealarge radius',
+                    rng='medium',
+                    targets='Everything in the area',
+                ),
+                effects=Effects(
+                    effect="""
+                        Extradimensional travel into or out of the spell's area is impossible.
+                        This prevents all \\glossterm<Manifestation>, \\glossterm<Planar>, and \\glossterm<Translocation> effects.
+                    """,
+                    duration='Attunement',
+                    tags='Thaumaturgy',
                 ),
             ),
         ],
@@ -454,8 +478,26 @@ def generate_spells():
                         The target weapon deals +2d damage with \\glossterm<strikes>.
                         In addition, all damage dealt with the weapon with strikes becomes fire damage in addition to its normal damage types.
                     """,
-                    duration='attune',
+                    duration='Attunement',
                     tags=['Fire'],
+                ),
+            ),
+            Subspell(
+                level=3,
+                name="Fire Trap",
+                targeting=Targeting(
+                    target='One openable object (Large or smaller)',
+                    rng='close',
+                ),
+                effects=Effects(
+                    effect="""
+                        If a creature opens the target object, it explodes.
+                        You make an attack against everything within an \\areamed radius burst centered on the target.
+                        After the object explodes in this way, the spell ends.
+                    """,
+                    attack=Attack.multi_damage('Reflex', 'fire'),
+                    duration='Attunement',
+                    tags=['Fire', 'Trap'],
                 ),
             ),
         ],
@@ -478,7 +520,7 @@ def generate_spells():
                 """,
                 critical="As above, but the effect's duration becomes permanent.",
             ),
-            duration='sustain (swift)',
+            duration='Sustain (swift)',
             tags=['Delusion', 'Mind', 'Subtle'],
         ),
         cantrip="""
@@ -605,7 +647,7 @@ def generate_spells():
                 The target weapon gains an additional five feet of reach, extending the wielder's threatened area.
                 This has no effect on ranged attacks with the weapon.
             """,
-            duration='attune',
+            duration='Attunement',
             tags=['Air', 'Shaping'],
         ),
         schools=['Transmutation'],
@@ -620,7 +662,7 @@ def generate_spells():
                         \glossterm<Strikes> with the affected weapon are made against Reflex defense instead of Armor defense.
                         However, damage with the weapon is halved, including any bonuses to damage.
                     """,
-                    duration='attune',
+                    duration='Attunement',
                     tags=['Shaping', 'Water'],
                 ),
             ),
@@ -638,7 +680,7 @@ def generate_spells():
                     effect="""
                         \\glossterm<Strikes> with the affected weapon are made against Reflex defense instead of Armor defense.
                     """,
-                    duration='attune',
+                    duration='Attunement',
                     tags=['Shaping', 'Water'],
                 ),
             ),
@@ -659,7 +701,7 @@ def generate_spells():
                 critical="The target is \\panicked by you.",
                 failure="The target is \\shaken by you.",
             ),
-            duration='condition',
+            duration='Condition',
             tags=['Delusion', 'Mind'],
         ),
         schools=['Enchantment'],
@@ -687,7 +729,7 @@ def generate_spells():
         ),
         effects=Effects(
             effect='The target gains a +2d bonus to damage with all attacks.',
-            duration='attune',
+            duration='Attunement',
         ),
         cantrip="The spell's duration becomes Sustain (swift).",
         schools=['Channeling'],
@@ -715,7 +757,7 @@ def generate_spells():
                 The target gains \\glossterm{damage reduction} against physical damage equal to your spellpower.
                 In addition, it is \\glossterm<vulnerable> to fire damage.
             """,
-            duration='attune',
+            duration='Attunement',
             tags=['Enhancement'],
         ),
         schools=['Transmutation'],
@@ -797,7 +839,7 @@ def generate_spells():
             effect="""
                 The target gains a +5 bonus to the chosen skill.
             """,
-            duration='attune',
+            duration='Attunement',
             tags=['Enhancement'],
         ),
         schools=['Transmutation'],
@@ -836,7 +878,7 @@ def generate_spells():
                 defense='Reflex',
                 success="The target is \\immobilized as long as it has webbing from this spell in its space."
             ),
-            duration='sustain (swift)',
+            duration='Sustain (swift)',
             tags=['Manifestation'],
         ),
         schools=['Conjuration'],
@@ -868,7 +910,7 @@ def generate_spells():
                 If this is the second successful attack, the target takes a -2 penalty to \\glossterm<accuracy>, \\glossterm<checks>, and \\glossterm<defenses>.
                 If this is the third successful attack, the penalty increases to -5.
             """,
-            duration='condition',
+            duration='Condition',
             tags=['Poison'],
         ),
         schools=['Transmutation'],
@@ -957,7 +999,7 @@ def generate_spells():
                     As above, but the penalty is increased by 2.
                 """,
             ),
-            duration='condition',
+            duration='Condition',
             tags=['Life'],
         ),
         schools=['Vivimancy'],
@@ -1120,6 +1162,27 @@ def generate_spells():
                     For every point of healing, this spell can instead cure 1 vital damage.
                 """,
             ),
+            Subspell(
+                level=3,
+                name="Remove Disease",
+                effects=Effects(
+                    effect="""
+                        All diseases affecting the target are removed.
+                    """,
+                    tags=['Flesh'],
+                ),
+            ),
+            Subspell(
+                level=2,
+                name="Restore Senses",
+                effects=Effects(
+                    effect="""
+                        One of the target's physical senses, such as sight or hearing, is restored to full capacity.
+                        This can heal both magical and mundane conditions, but it cannot completely replace missing body parts required for a sense to function (such as missing eyes).
+                    """,
+                    tags=['Flesh'],
+                ),
+            ),
         ],
         category='damage',  # kinda
     ))
@@ -1185,7 +1248,7 @@ def generate_spells():
                 The type of damage dealt by this attack depends on the creature's appearance.
                 Most animals bite or claw their foes, which deals bludgeoning and slashing damage.
             """,
-            duration="sustain (swift)",
+            duration="Sustain (swift)",
             tags=["Manifestation"],
         ),
         schools=['Conjuration'],
@@ -1289,12 +1352,17 @@ def generate_spells():
                 name="Scry Creature",
                 targeting=Targeting(
                     target="One creature",
-                    rng="Unlimited",
+                    rng="Same plane",
                     unrestricted_range=True,
+                    special="""
+                        You must specify your target with a precise mental image of its appearance.
+                        The image does not have to be perfect, but it must unambiguously identify the target.
+                        If you specify its appearance incorrectly, or if the target has changed its appearance, you may accidentally target a different creature, or the spell may simply fail.
+                    """,
                 ),
                 description="""
                     You must make a Spellpower vs. Mental attack against the target.
-                    Success means the sensor appears in the creature's space.
+                    Success means the sensor appears in the target's space.
                     Failure means the sensor does not appear at all.
                 """,
             ),
@@ -1304,6 +1372,18 @@ def generate_spells():
                 description="""
                     You do not have to choose whether to sense from the perspective of the sensor or from the perspective of your own body.
                     You constantly receive sensory input from both your body and the sensor.
+                """,
+            ),
+            Subspell(
+                level=4,
+                name="Reverse Scrying",
+                targeting=Targeting(
+                    target='One magical sensor',
+                    rng='medium',
+                ),
+                description="""
+                    % TODO: wording
+                    The sensor created by this spell appears at the location of the source of the ability that created the target sensor.
                 """,
             ),
         ],
@@ -1321,7 +1401,7 @@ def generate_spells():
                 The target gains a \plus2 bonus to \\glossterm<accuracy> with physical attacks.
             """,
             tags=['Enhancement'],
-            duration='attune',
+            duration='Attunement',
         ),
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
@@ -1412,7 +1492,7 @@ def generate_spells():
                 level=3,
                 name="Levitate",
                 targeting=Targeting(
-                    target="One Medium or smaller unattended object or willing creature",
+                    target="One unattended object or willing creature (Medium or smaller)",
                     rng="close",
                 ),
                 effects=Effects(
@@ -1420,7 +1500,21 @@ def generate_spells():
                         The target floats in midair, unaffected by gravity.
                         During the movement phase, you can move the target up to ten feet in any direction.
                     """,
-                    duration="sustain (swift)",
+                    duration="Sustain (swift)",
+                ),
+            ),
+            Subspell(
+                level=2,
+                name="Mending",
+                targeting=Targeting(
+                    # TODO: unattended or attended by a willing creature
+                    target="One unattended object",
+                    rng="close",
+                ),
+                effects=Effects(
+                    effect="""
+                        The target is healed for \\spelldamage<>.
+                    """,
                 ),
             ),
         ],
@@ -1439,13 +1533,31 @@ def generate_spells():
                 Targeted physical attacks against the target have a 20\% miss chance.
                 Spells and other non-physical attacks suffer no miss chance.
             """,
-            duration='attune',
+            duration='Attunement',
             tags=['Glamer', 'Visual'],
         ),
         schools=['Illusion'],
         lists=['Arcane'],
         cantrip="The spell's duration becomes Sustain (swift).",
         subspells=[
+            Subspell(
+                level=2,
+                name="Distort Light",
+                targeting=Targeting(
+                    target='One object (Small or smaller)',
+                    rng='close',
+                    area='\\areamed radius from the target',
+                    area_type='emanation',
+                ),
+                effects=Effects(
+                    effect="""
+                        Light within or passing through the area is dimmed to be no brighter than shadowy illumination.
+                        Any effect or object which blocks light also blocks this spell's emanation.
+                    """,
+                    duration='Attunement (multiple)',
+                    tags=['Glamer', 'Light'],
+                ),
+            ),
             Subspell(
                 level=3,
                 name="Disguise Image",
@@ -1455,7 +1567,7 @@ def generate_spells():
                         You gain a +5 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form.
                         However, this effect is unable to alter the sound, smell, texture, or temperature of the target or its clothes and equipment.
                     """,
-                    duration='attunement',
+                    duration='Attunement',
                     tags=['Glamer', 'Visual'],
                 ),
             ),
@@ -1470,7 +1582,7 @@ def generate_spells():
                         All targeted attacks against the target have a 50% miss chance.
                         Whenever an attack misses in this way, it affects an image, destroying it.
                     """,
-                    duration='sustain (swift)',
+                    duration='Sustain (swift)',
                     tags=['Figment', 'Visual'],
                 ),
             ),
@@ -1517,7 +1629,7 @@ def generate_spells():
                     The target is \\blinded instead.
                 """,
             ),
-            duration='condition',
+            duration='Condition',
             tags=['Figment', 'Light', 'Visual'],
         ),
         schools=['Illusion'],
@@ -1536,7 +1648,7 @@ def generate_spells():
                         During each movement phase, you can move the lights up to 100 feet in any direction.
                         If one of the lights ever goes out of range from you, it immediately winks out.
                     """,
-                    duration="sustain (swift)",
+                    duration="Sustain (swift)",
                     tags=['Figment', 'Light', 'Visual'],
                 ),
             ),
@@ -1622,6 +1734,23 @@ def generate_spells():
                     You gain a +5 bonus on the check, and you ignore penalties for changing the target's gender, race, subtype, or age.
                     However, this effect is unable to alter the target's clothes or equipment in any way.
                 """,
+            ),
+            Subspell(
+                level=4,
+                name="Fabricate",
+                targeting=Targeting(
+                    targets='One or more unattended, nonmagical objects (Large or smaller); see text',
+                    rng='close',
+                ),
+                effects=Effects(
+                    effect="""
+                        You make a Craft check to transform the targets into a new item (or items) made of the same materials.
+                        You require none of the tools or time expenditure that would normally be necessary.
+
+                        The total size of all targets combined must be Large size or smaller.
+                    """,
+                    tags=['Shaping'],
+                ),
             ),
         ],
         category='buff, offense',
