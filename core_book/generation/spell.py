@@ -81,10 +81,11 @@ class Spell(object):
             ),
             key=lambda augment: augment.level
         ) if self.subspells else None
+        base_level_text = f"[{self.base_level}]" if self.base_level else ""
 
         return join(
             f"""
-                \\begin<spellsection><{self.name}>{'[self.base_level]' if self.base_level else ""}
+                \\begin<spellsection><{self.name}>{base_level_text}
                     {str(self.header or "")}
                     \\begin<spellcontent>
                         {str(self.targeting)}
