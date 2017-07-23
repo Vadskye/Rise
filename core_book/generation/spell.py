@@ -36,6 +36,9 @@ class Spell(object):
         self.subspells = subspells
         self.targeting = targeting
 
+        # This may need to be an argument later
+        self.ability_type = 'ritual' if self.base_level is not None else 'spell'
+
         for arg in ['cantrip', 'effects', 'lists', 'name', 'schools', 'targeting']:
             if getattr(self, arg) is None:
                 print(f"Warning: {self} is missing required property '{arg}'")
@@ -53,13 +56,19 @@ class Spell(object):
             logger.warning(f"{self} has unrecognized category '{self.category}'")
 
     def calculate_standard_augments(self):
-        augments = ['Quickened', 'Silent', 'Stilled']
+        augments = []
+        if self.ability_type == 'spell':
+            augments += ['Quickened', 'Silent', 'Stilled']
+        elif self.ability_type == 'ritual':
+            augments += ['Accelerated']
+
         if self.targeting.rng is not None:
             augments.append('Extended')
         if self.targeting.area is not None:
             augments.append('Widened')
         if (
-                self.targeting.target is not None
+                self.ability_type == 'spell'
+                and self.targeting.target is not None
                 and self.targeting.area is None
                 and (self.category and self.category[:4] != 'buff')
         ):
@@ -112,7 +121,7 @@ class Spell(object):
                 \\end<spellsection>
             """,
             f"""
-                \\subsubsection<{"Subrituals" if self.base_level else "Subspells"}>
+                \\subsubsection<{"Subspells" if self.ability_type == 'spell' else "Subrituals"}>
             """ if self.subspells else None,
             '\n'.join([
                 str(subspell)
