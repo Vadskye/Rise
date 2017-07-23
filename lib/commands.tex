@@ -530,38 +530,21 @@
 }
 
 % args:
-%   whether the text should include a \\item prefix,
-%   spell name, spell name modifier (Greater, etc.)
-\DeclareDocumentCommand{\spellhead}{s m o}
+%   pre-spell header spell name, spell name modifier (Greater, etc.)
+\DeclareDocumentCommand{\spellhead}{o m o}
 {
-    \IfBooleanTF{#1}
-    {}
+    \IfValueTF{#1}
+    {\item[#1]}
     {\item}
-    \IfBooleanTF{#1}
-    {
-        \textbf{
-            \IfValueTF{#3}
-            {
-                \hyperlink{spell:#3~#2}{#2,~#3}
-                %\pageref{spell:#3~#2}
-            }
-            {
-                \hyperlink{spell:#2}{#2}
-                %\pageref{spell:#2}
-            }
+    \textbf{
+        \IfValueTF{#3}
+        {
+            \hyperlink{spell:#3~#2}{#2,~#3}
+            %\pageref{spell:#3~#2}
         }
-    }
-    {
-        \textbf{
-            \IfValueTF{#3}
-            {
-                \hyperlink{spell:#3~#2}{#2,~#3}
-                %\pageref{spell:#3~#2}
-            }
-            {
-                \hyperlink{spell:#2}{#2}
-                %\pageref{spell:#2}
-            }
+        {
+            \hyperlink{spell:#2}{#2}
+            %\pageref{spell:#2}
         }
     }:
 }
