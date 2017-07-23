@@ -669,7 +669,7 @@ def generate_rituals():
         extra_table=r"""
             \begin{dtable}
                 \lcaption{Humanoid Reincarnations}
-                \begin{dtabularx}{\columnwidth}{l >{\lcol}X}
+                \begin{dtabularx}{\columnwidth}{l X}
                     d\% & Incarnation \\
                     \bottomrule
                     01 & Bugbear \\
