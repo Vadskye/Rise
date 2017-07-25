@@ -1,0 +1,95 @@
+\chapter{Magic Items}
+
+Magic items are objects that have been imbued with magical energy. They can take almost any form, and their potential uses are only as limited as the magic that created them.
+
+\section{Magic Item Types}
+    Magic items are divided into four broad categories:
+    \begin{itemize}
+        \item Weapons are used to make physical attacks. They provide access to their abilities when wielded.
+            A \mitem{flaming longsword} and a \mitem{vampiric scythe} are weapons.
+        \item Implements are used to cast spells. They provide access to their abilities when wielded.
+            A \mitem{staff of fire} and a \mitem{staff of time} are implements.
+        \item Apparel items are usually not used individually. They provide access to their abilities when worn.
+            A \mitem{flaming burst full plate} and a \mitem{ring of protection} are apparel items.
+        \item Tools provide access to their abilities when used in some way.
+            A \mitem{bag of carrying} is a tool.
+    \end{itemize}
+
+\section{Using Magic Items}
+
+    \subsection{Item Activation}
+
+        Some magic items have to be explicitly activated to have unusual effects.
+        For example, a \mitem{healing belt} can be activated to heal you.
+        Other magic items constantly have magical effects.
+        For example, a \mitem{flaming longsword} is on fire.
+
+        The description of a magic item effect will specify what mechanical actions must be taken, if any, to activate the effects of the item.
+        For example, a healing belt requires spending an \glossterm{action point} as a \glossterm{standard action}.
+        However, the item description will not specify the exact nature of the action.
+        Different items, even if they have the same effect, can have different physical actions that are required to activate the item.
+        These minor actions can come in one of the following forms:
+        \begin{itemize}
+           \item Command word: You must speak a specific word that the item will hear and react to.
+                For example, you may need to say the word ``healing'' in Elven to activate a \mitem{belt of healing}.
+            \item Mental command: You must mentally direct the item to activate, such as by visualizing the item or thinking a particular word.
+                % TODO: does this item exist
+                For example, you may need to imagine a warm blanket around you to activate a \mitem{ring of elemental endurance}.
+            \item Physical motion: You must perform a specific physical motion, usually involving the item in some way.
+                For example, you may need to rapidly stomp one foot on the ground to activate \mitem{boots of speed}.
+        \end{itemize}
+
+        % TODO: table of random item activations?
+
+    \subsection{Item Limitations}
+
+        There are two restrictions on your ability to use magic items.
+        First, you cannot equip two apparel items that take up the same physical location on your body.
+        For example, you cannot equip two different gauntlet sets and gain the effects of both, but you could equip several amulets or up to ten rings.
+        Second, most magic items other than tools require you to attune to them to gain their effect.
+        You can attune to a magic item with the \textit{item attunement} ability, below.
+
+        \subsubsection{Item Slots}
+            Normally, attuning to an ability or magic item reduces your maximum action points by one.
+            However, you can attune to a certain number of items without penalizing your action points.
+            You start with two \glossterm{item slots}, and acquire more as you gain levels (see \tref{Character Advancement}).
+
+            When you attune to a magic item, you can spend an \glossterm{item slot} instead of an \glossterm{action point}.
+            If you do, your maximum action points are not affected by your attunement.
+            This is summarized in the description of the \textit{item attunement} ability.
+
+            Dismissing your attunement to an item does not restore the spent item slot.
+            You regain all spent \glossterm{item slots} from dismissed attunements after a \glossterm{long rest}.
+
+        \subsubsection{Item Attunement}
+            As a standard action, you can spend an \glossterm{action point} or an \glossterm{item slot} to use this ability.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellquicktargeting{One magic item}{\rngtouch}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \spelleffect Any abilities the target has that require attunement become active, allowing you to use its full potential.
+                    \spelldur Attunement. If you spent an \glossterm{item slot} to use this ability, attuning to this ability does not reduce your maximum \glossterm{action points}.
+                \end{spelleffects}
+            \end{ability}
+
+    \subsubsection{Item Power}
+        The \glossterm{power} of an item depends on its level.
+        If the item is not being attuned to by a creature, its power is equal to its level.
+        If it is being attuned to, its power is equal to its level or the level of the attuning creature, whichever is higher.
+
+        An item's \glossterm{power} also affects its defenses.
+        Its Fortitude and Mental defenses are equal to 10 \add its \glossterm{power}.
+        Its Armor defense and Reflex defense are not affected by its \glossterm{power}, and are solely determined by its size and shape.
+
+    \subsection{Removing Magic Items}
+        Unless otherwise noted, magic items that have effects on the creature using the item must continue to be worn or held as long as the effect lasts.
+        If a magic item is removed before its duration ends the effect ends.
+        Items which are consumed when used or which do not affect their user are unaffected by this rule.
+
+\section{Item Description Format}
+    TODO
+
+\section{Apparel}
+
+    \input{apparel.tex}
