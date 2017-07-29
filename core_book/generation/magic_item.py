@@ -59,15 +59,8 @@ class MagicItem(object):
     def latex(self):
         return join(
             f"""
-                \\begin<multicols><2>
-                    \\lowercase<\\hypertarget<item:{self.name}><>>\\label<item:{self.name}>
-                    \\hypertarget<item:{self.name}><\\subsection<{self.name}>>
-                    \\columnbreak%
-                    \\begin<flushright>
-                        \\large\\textbf<\\nth<{self.level}> Level>
-                    \\end<flushright>
-                \\end<multicols>
-                \\vspace<-1.5em>  % Correct weird spacing from multicols
+                \\lowercase<\\hypertarget<item:{self.name}><>>\\label<item:{self.name}>
+                \\hypertarget<item:{self.name}><\\subsubsection<{self.name}\\hfill\\nth<{self.level}>>>
                 {self.description}
             """,
             self.latex_ability(),
@@ -75,7 +68,7 @@ class MagicItem(object):
                 \\parhead*<Tags> {self.latex_tags()}
                 \\parhead*<Materials> {', '.join(sorted(self.materials))}
             """,
-            """
+            f"""
                 \\parhead*<Armor Type> {self.armor_type}
             """ if self.armor_type else None,
         )
