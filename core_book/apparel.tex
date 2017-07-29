@@ -1,3 +1,4 @@
+\subsection{Armor}
 \begin{multicols}{2}
 \lowercase{\hypertarget{item:Arrow Catching}{}}\label{item:Arrow Catching}
 \hypertarget{item:Arrow Catching}{\subsection{Arrow Catching}}
@@ -49,7 +50,7 @@ This ability functions like the \mitem{arrow catching} ability, except that it c
 \end{flushright}
 \end{multicols}
 \vspace{-1.5em}  % Correct weird spacing from multicols
-As an \glossterm{immediate action} when you are attacked by a ranged \glossterm{strike}, you can spend an \glossterm{action point} to deflect the attack.
+As an \glossterm{immediate action} when you are attacked by a ranged \glossterm{strike}, you can use this ability.
 If you do, you gain a \plus5 bonus to Armor defense against the attack.
 You must be aware of the attack to deflect it in this way.
 This ability can only affect projectiles and thrown objects that are Small or smaller.
@@ -129,7 +130,7 @@ The color of the light depends on the energy damage resisted: blue for cold, yel
 \hypertarget{item:Energy Resistant, Greater}{\subsection{Energy Resistant, Greater}}
 \columnbreak%
 \begin{flushright}
-\large\textbf{\nth{14} Level}
+\large\textbf{\nth{12} Level}
 \end{flushright}
 \end{multicols}
 \vspace{-1.5em}  % Correct weird spacing from multicols
@@ -198,7 +199,638 @@ This ability functions like the \mitem{fortification} ability, except that the b
 \end{flushright}
 \end{multicols}
 \vspace{-1.5em}  % Correct weird spacing from multicols
-This ability functions like the \mitem{fortification} ability, except that it applies against all attacks instead of only against \glossterm{strikes}.
+This ability functions like the \mitem{fortification} ability, except that it applies against all attacks instead of only against; \glossterm{strikes}.
 \parhead*{Tags} \glossterm{Imbuement}
 \parhead*{Materials} as armor
 \parhead*{Armor Type} {self.armor_type}
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Hidden}{}}\label{item:Hidden}
+\hypertarget{item:Hidden}{\subsection{Hidden}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{4} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+As a standard action, you can use this ability.
+\begin{spellcontent}
+\begin{spelleffects}
+\spelleffect
+The item appears to change shape and form to assume the shape of a normal set of clothing.
+You may choose the design of the clothing.
+The item retains all of its properties, including weight and sound, while disguised in this way.
+Only its visual appearance is altered.
+Alternately, you may return the armor to its original appearance.
+\spelldur While item is attuned
+\end{spelleffects}
+\end{spellcontent}
+\parhead*{Tags} \glossterm{Glamer}
+\parhead*{Materials} as armor
+\parhead*{Armor Type} {self.armor_type}
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Invulnerability}{}}\label{item:Invulnerability}
+\hypertarget{item:Invulnerability}{\subsection{Invulnerability}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{8} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+You have \glossterm{damage reduction} against \glossterm{physical} damage equal to the item's \glossterm{power}.
+\parhead*{Tags} \glossterm{Shielding}
+\parhead*{Materials} as armor
+\parhead*{Armor Type} {self.armor_type}
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Invulnerability, Greater}{}}\label{item:Invulnerability, Greater}
+\hypertarget{item:Invulnerability, Greater}{\subsection{Invulnerability, Greater}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{16} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+This ability functions like the \mitem{invulnerability} ability, except that the damage reduction is equal to twice the item's \glossterm{power}.
+You have \glossterm{damage reduction} against \glossterm{physical} damage equal to the item's \glossterm{power}.
+\parhead*{Tags} \glossterm{Shielding}
+\parhead*{Materials} as armor
+\parhead*{Armor Type} {self.armor_type}
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Magic Resistant}{}}\label{item:Magic Resistant}
+\hypertarget{item:Magic Resistant}{\subsection{Magic Resistant}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{14} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+You have \glossterm{magic resistance} equal to 5 + the item's \glossterm{power}.
+\parhead*{Tags} \glossterm{Shielding}
+\parhead*{Materials} as armor
+\parhead*{Armor Type} {self.armor_type}
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Mystic Reflection}{}}\label{item:Mystic Reflection}
+\hypertarget{item:Mystic Reflection}{\subsection{Mystic Reflection}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{12} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+As an \glossterm{immediate action} when you are targeted by a \glossterm{targeted} \glossterm{magical} ability, you can spend an \glossterm{action point} to use this ability.
+If you do, the ability targets the creature using the ability instead of you.
+Any other targets of the ability are affected normally.
+\parhead*{Tags} \glossterm{Thaumaturgy}
+\parhead*{Materials} as armor
+\parhead*{Armor Type} {self.armor_type}
+\subsection{Other Apparel}
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Bracers of Archery}{}}\label{item:Bracers of Archery}
+\hypertarget{item:Bracers of Archery}{\subsection{Bracers of Archery}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{1} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+You are proficient with bows.
+\parhead*{Tags} \glossterm{Enhancement}
+\parhead*{Materials} bone, leather, metal, wood
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Bracers of Armor}{}}\label{item:Bracers of Armor}
+\hypertarget{item:Bracers of Armor}{\subsection{Bracers of Armor}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{2} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+You gain a \plus2 bonus to Armor defense.
+The protection from these bracers is treated as body armor, and it does not stack with any other body armor you wear.
+\parhead*{Tags} \glossterm{Shielding}
+\parhead*{Materials} bone, leather, metal, wood
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Bracers of Repulsion}{}}\label{item:Bracers of Repulsion}
+\hypertarget{item:Bracers of Repulsion}{\subsection{Bracers of Repulsion}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{4} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+Whenever a creature hits you with a melee \glossterm{strike}, you gain a \plus5 bonus to \glossterm{shove} attacks against that creature until the end of the next round.
+\parhead*{Tags} \glossterm{Telekinesis}
+\parhead*{Materials} bone, leather, metal, wood
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Torchlight Gloves}{}}\label{item:Torchlight Gloves}
+\hypertarget{item:Torchlight Gloves}{\subsection{Torchlight Gloves}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{2} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+These gloves shed light as a torch.
+As a \glossterm{standard action}, you may choose to suppress or resume the light from either or both gloves.
+\parhead*{Tags} \glossterm{Figment}, \glossterm{Light}
+\parhead*{Materials} leather
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Gauntlets of Improvisation}{}}\label{item:Gauntlets of Improvisation}
+\hypertarget{item:Gauntlets of Improvisation}{\subsection{Gauntlets of Improvisation}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{2} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+You gain a \plus1d bonus to damage with \glossterm{improvised weapons}.
+\parhead*{Tags} \glossterm{Enhancement}
+\parhead*{Materials} bone, metal, wood
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Gauntlets of Improvisation, Greater}{}}\label{item:Gauntlets of Improvisation, Greater}
+\hypertarget{item:Gauntlets of Improvisation, Greater}{\subsection{Gauntlets of Improvisation, Greater}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{7} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+This item functions like the \mitem{gauntlets of improvisation}, except that the damage bonus is increased to \plus2d.
+\parhead*{Tags} \glossterm{Enhancement}
+\parhead*{Materials} bone, metal, wood
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Gauntlet of the Ram}{}}\label{item:Gauntlet of the Ram}
+\hypertarget{item:Gauntlet of the Ram}{\subsection{Gauntlet of the Ram}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{2} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+If you hit on an \glossterm{unarmed} \glossterm{strike} with this gauntlet, you can attempt to \glossterm{shove} your foe during the \glossterm{delayed action phase}.
+\parhead*{Tags} \glossterm{Telekinesis}
+\parhead*{Materials} bone, metal, wood
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Gauntlet of the Ram, Greater}{}}\label{item:Gauntlet of the Ram, Greater}
+\hypertarget{item:Gauntlet of the Ram, Greater}{\subsection{Gauntlet of the Ram, Greater}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{6} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+This item functions like the \mitem{gauntlet of the ram}, except that you gain a bonus to the \glossterm{shove} attack equal to the damage you dealt with the \glossterm{strike}.
+\parhead*{Tags} \glossterm{Telekinesis}
+\parhead*{Materials} bone, metal, wood
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Greatreach Bracers}{}}\label{item:Greatreach Bracers}
+\hypertarget{item:Greatreach Bracers}{\subsection{Greatreach Bracers}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{9} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+Your \glossterm{reach} is increased by 5 feet.
+\parhead*{Tags} \glossterm{Imbuement}
+\parhead*{Materials} bone, leather, metal, wood
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Throwing Gloves}{}}\label{item:Throwing Gloves}
+\hypertarget{item:Throwing Gloves}{\subsection{Throwing Gloves}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{4} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+% TODO: reference basic "not designed to be thrown" mechanics?
+You can throw any item as if it was designed to be thrown.
+This does not improve your ability to throw items designed to be thrown, such as darts.
+\parhead*{Tags} \glossterm{Enhancement}
+\parhead*{Materials} leather
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Mask of Water Breathing}{}}\label{item:Mask of Water Breathing}
+\hypertarget{item:Mask of Water Breathing}{\subsection{Mask of Water Breathing}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{4} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+You can breathe water through this mask as easily as a human breaths air.
+This does not grant you the ability to breathe other liquids.
+\parhead*{Tags} \glossterm{Imbuement}
+\parhead*{Materials} textiles
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Mask of Air}{}}\label{item:Mask of Air}
+\hypertarget{item:Mask of Air}{\subsection{Mask of Air}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{9} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+If you breathe through this mask, you breathe in clean, fresh air, regardless of your environment.
+This can protect you from inhaled poisons and similar effects.
+\parhead*{Tags} \glossterm{Imbuement}
+\parhead*{Materials} textiles
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Crown of Flame}{}}\label{item:Crown of Flame}
+\hypertarget{item:Crown of Flame}{\subsection{Crown of Flame}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{5} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+This crown is continuously on fire.
+The flame sheds light as a torch.
+You and all allies within an \arealarge radius emanation from you are immune to fire damage.
+\parhead*{Tags} \glossterm{Fire}
+\parhead*{Materials} bone, metal
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Crown of Lightning}{}}\label{item:Crown of Lightning}
+\hypertarget{item:Crown of Lightning}{\subsection{Crown of Lightning}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{7} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+This crown continuously crackles with electricity.
+The constant sparks shed light as a torch.
+At the end of each round, all enemies within an \areamed radius emanation from you take electricity damage equal to the item's \glossterm{power}.
+\parhead*{Tags} \glossterm{Electricity}
+\parhead*{Materials} bone, metal
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Crown of Frost}{}}\label{item:Crown of Frost}
+\hypertarget{item:Crown of Frost}{\subsection{Crown of Frost}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{11} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+At the end of each round, all enemies within an \areamed radius emanation from you take cold damage equal to the item's \glossterm{power}.
+% TODO: wording
+Each creature that takes damage in this way is \fatigued until the end of the next round.
+\parhead*{Tags} \glossterm{Cold}
+\parhead*{Materials} bone, metal
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Crown of Thunder}{}}\label{item:Crown of Thunder}
+\hypertarget{item:Crown of Thunder}{\subsection{Crown of Thunder}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{9} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+The crown constantly emits a low-pitched rumbling.
+To you and your allies, the sound is barely perceptible.
+However, all enemies within an \arealarge radius emanation from you hear the sound as a deafening, continuous roll of thunder.
+The noise blocks out all other sounds quieter than thunder, causing them to be \deafened while they remain in the area and until the end of the next round after they leave.
+\parhead*{Tags} \glossterm{Sonic}
+\parhead*{Materials} bone, metal
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Boots of Earth's Embrace}{}}\label{item:Boots of Earth's Embrace}
+\hypertarget{item:Boots of Earth's Embrace}{\subsection{Boots of Earth's Embrace}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{4} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+While you are standing on solid ground, you are immune to effects that would force you to move.
+This does not protect you from other effects of those attacks, such as damage.
+\parhead*{Tags} \glossterm{Earth}, \glossterm{Enhancement}
+\parhead*{Materials} bone, leather, metal
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Boots of Freedom}{}}\label{item:Boots of Freedom}
+\hypertarget{item:Boots of Freedom}{\subsection{Boots of Freedom}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{6} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+You are immune to effects that restrict your mobility.
+This removes all penalties you would suffer for acting underwater, except for those relating to using ranged weapons.
+This does not prevent you from being \grappled, but you gain a \plus10 bonus to your defense against \glossterm{grapple} attacks.
+\parhead*{Tags} \glossterm{Imbuement}
+\parhead*{Materials} bone, leather, metal
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Boots of Freedom, Greater}{}}\label{item:Boots of Freedom, Greater}
+\hypertarget{item:Boots of Freedom, Greater}{\subsection{Boots of Freedom, Greater}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{12} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+These boots function like \mitem{boots of freedom}, except that you are also immune to being \grappled.
+\parhead*{Tags} \glossterm{Imbuement}
+\parhead*{Materials} bone, leather, metal
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Boots of Gravitation}{}}\label{item:Boots of Gravitation}
+\hypertarget{item:Boots of Gravitation}{\subsection{Boots of Gravitation}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{8} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+While these boots are within 5 feet of a solid surface, gravity pulls you towards the solid surface closest to your boots rather than in the normal direction.
+This can allow you to walk easily on walls or even ceilings.
+\parhead*{Tags} \glossterm{Imbuement}
+\parhead*{Materials} bone, leather, metal
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Boots of Speed}{}}\label{item:Boots of Speed}
+\hypertarget{item:Boots of Speed}{\subsection{Boots of Speed}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{7} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+You gain a \plus30 foot bonus to your speed in all your movement modes, up to a maximum of double your normal speed.
+\parhead*{Tags} \glossterm{Temporal}
+\parhead*{Materials} bone, leather, metal
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Astral Boots}{}}\label{item:Astral Boots}
+\hypertarget{item:Astral Boots}{\subsection{Astral Boots}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{16} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+Whenever you move, you can teleport the same distance instead.
+This does not change the total distance you can move, but you can teleport in any direction, even vertically.
+You cannot teleport to locations you do not have \glossterm{line of sight} and \glossterm{line of effect} to.
+\parhead*{Tags} \glossterm{Translocation}
+\parhead*{Materials} bone, leather, metal
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Boots of Water Walking}{}}\label{item:Boots of Water Walking}
+\hypertarget{item:Boots of Water Walking}{\subsection{Boots of Water Walking}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{7} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+You treat the surface of all liquids as if they were firm ground.
+Your feet hover about an inch above the liquid's surface, allowing you to traverse dangerous liquids without harm as long as the surface is calm.
+If you are below the surface of the liquid, you rise towards the surface at a rate of 60 feet per round.
+Thick liquids, such as mud and lava, may cause you to rise more slowly.
+\parhead*{Tags} \glossterm{Imbuement}
+\parhead*{Materials} bone, leather, metal
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Boots of the Winterlands}{}}\label{item:Boots of the Winterlands}
+\hypertarget{item:Boots of the Winterlands}{\subsection{Boots of the Winterlands}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{2} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+You can travel across snow and ice without slipping or suffering movement penalties for the terrain.
+% TODO: degree symbol?
+In addition, the boots keep you warn, protecting you in environments as cold as \minus50 Fahrenheit.
+\parhead*{Tags} \glossterm{Enhancement}
+\parhead*{Materials} bone, leather, metal
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Seven League Boots}{}}\label{item:Seven League Boots}
+\hypertarget{item:Seven League Boots}{\subsection{Seven League Boots}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{12} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+As a standard action, you can spend an \glossterm{action point} to use this item.
+If you do, you teleport exactly 25 miles in a direction you specify.
+If this would place you within a solid object or otherwise impossible space, the boots will shunt you up to 1,000 feet in any direction to the closest available space.
+If there is no available space within 1,000 feet of your intended destination, the effect fails and you take 1d4 damage \plus1d per two \glossterm{power}.
+\parhead*{Tags} \glossterm{Translocation}
+\parhead*{Materials} bone, leather, metal
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Winged Boots}{}}\label{item:Winged Boots}
+\hypertarget{item:Winged Boots}{\subsection{Winged Boots}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{10} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+You gain a \glossterm{fly speed} equal to your land speed.
+However, the boots are not strong enough to keep you aloft indefinitely.
+At the end of each round, if you are not standing on solid ground, the magic of the boots fails and you fall normally.
+The boots begin working again at the end of the next round, even if you have not yet hit the ground.
+\parhead*{Tags} \glossterm{Imbuement}
+\parhead*{Materials} bone, leather, metal
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Ring of Energy Resistance}{}}\label{item:Ring of Energy Resistance}
+\hypertarget{item:Ring of Energy Resistance}{\subsection{Ring of Energy Resistance}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{4} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+You have \glossterm{damage reduction} against \glossterm{energy damage} equal to the ring's \glossterm{power}.
+Whenever you resist energy with this ability, the ring sheds light as a torch until the end of the next round.
+The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, red for fire, and brown for sonic.
+\parhead*{Tags} \glossterm{Shielding}
+\parhead*{Materials} bone, jewelry, metal, wood
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Ring of Energy Resistance}{}}\label{item:Ring of Energy Resistance}
+\hypertarget{item:Ring of Energy Resistance}{\subsection{Ring of Energy Resistance}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{12} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+This item functions like the \mitem{ring of energy resistance}, except that the damage reduction is equal to twice the item's \glossterm{power}.
+\parhead*{Tags} \glossterm{Shielding}
+\parhead*{Materials} bone, jewelry, metal, wood
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Ring of Nourishment}{}}\label{item:Ring of Nourishment}
+\hypertarget{item:Ring of Nourishment}{\subsection{Ring of Nourishment}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{2} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+You continuously gain nourishment, and no longer need to eat or drink.
+This ring must be worn for 24 hours before it begins to work.
+\parhead*{Tags} \glossterm{Creation}
+\parhead*{Materials} bone, jewelry, metal, wood
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Ring of Sustenance}{}}\label{item:Ring of Sustenance}
+\hypertarget{item:Ring of Sustenance}{\subsection{Ring of Sustenance}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{7} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+You continuously gain nourishment, and no longer need to eat or drink.
+In addition, you need only one-quarter your normal amount of sleep (or similar activity, such as elven trance) each day.
+The ring must be worn for 24 hours before it begins to work.
+\parhead*{Tags} \glossterm{Creation}, \glossterm{Temporal}
+\parhead*{Materials} bone, jewelry, metal, wood
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Ring of Protection}{}}\label{item:Ring of Protection}
+\hypertarget{item:Ring of Protection}{\subsection{Ring of Protection}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{8} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+You gain a \plus1 bonus to Armor defense.
+\parhead*{Tags} \glossterm{Shielding}
+\parhead*{Materials} bone, jewelry, metal, wood
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Ring of Regeneration}{}}\label{item:Ring of Regeneration}
+\hypertarget{item:Ring of Regeneration}{\subsection{Ring of Regeneration}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{11} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+At the end of each round, you heal hit points equal to this item's \glossterm{power}.
+Only damage taken while wearing the ring can be healed in this way.
+\parhead*{Tags} \glossterm{Life}
+\parhead*{Materials} bone, jewelry, metal, wood
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Amulet of Mighty Fists}{}}\label{item:Amulet of Mighty Fists}
+\hypertarget{item:Amulet of Mighty Fists}{\subsection{Amulet of Mighty Fists}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{6} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+You gain a \plus1d bonus to \glossterm{strike damage} with unarmed attacks and natural weapons.
+\parhead*{Tags} \glossterm{Enhancement}
+\parhead*{Materials} jewelry
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Amulet of Mighty Fists, Greater}{}}\label{item:Amulet of Mighty Fists, Greater}
+\hypertarget{item:Amulet of Mighty Fists, Greater}{\subsection{Amulet of Mighty Fists, Greater}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{14} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+You gain a \plus2d bonus to \glossterm{strike damage} with unarmed attacks and natural weapons.
+\parhead*{Tags} \glossterm{Enhancement}
+\parhead*{Materials} jewelry
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Assassin's Cloak}{}}\label{item:Assassin's Cloak}
+\hypertarget{item:Assassin's Cloak}{\subsection{Assassin's Cloak}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{7} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+At the end of each round, if you took no actions that round, you become \glossterm{invisible} until the end of the next round.
+\parhead*{Tags} \glossterm{Glamer}
+\parhead*{Materials} textiles
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Assassin's Cloak, Greater}{}}\label{item:Assassin's Cloak, Greater}
+\hypertarget{item:Assassin's Cloak, Greater}{\subsection{Assassin's Cloak, Greater}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{17} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+At the end of each round, if you did not attack a creature that round, you become \glossterm{invisible} until the end of the next round.
+\parhead*{Tags} \glossterm{Glamer}
+\parhead*{Materials} textiles
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Belt of Healing}{}}\label{item:Belt of Healing}
+\hypertarget{item:Belt of Healing}{\subsection{Belt of Healing}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{1} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+When you use the \textit{recover} action, you heal \plus1d hit points.
+\parhead*{Tags} \glossterm{Life}
+\parhead*{Materials} leather, textiles
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Belt of Healing, Greater}{}}\label{item:Belt of Healing, Greater}
+\hypertarget{item:Belt of Healing, Greater}{\subsection{Belt of Healing, Greater}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{8} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+When you use the \textit{recover} action, you heal \plus2d hit points.
+\parhead*{Tags} \glossterm{Life}
+\parhead*{Materials} leather, textiles
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Belt of Heroic Recovery}{}}\label{item:Belt of Heroic Recovery}
+\hypertarget{item:Belt of Heroic Recovery}{\subsection{Belt of Heroic Recovery}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{6} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+% TODO: timing?
+As an \glossterm{immediate action} when you get a \glossterm{critical hit}, you can take the \textit{recover} action.
+\parhead*{Tags} \glossterm{Life}
+\parhead*{Materials} leather, textiles
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Cloak of Mist}{}}\label{item:Cloak of Mist}
+\hypertarget{item:Cloak of Mist}{\subsection{Cloak of Mist}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{8} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+Fog constantly fills an \areamed radius emanation from you.
+This fog does not fully block sight, but it provides \concealment.
+If a 5-foot square of fog takes fire damage equal to half this item's \glossterm{power}, the fog disappears from that area until the end of the next round.
+\parhead*{Tags} \glossterm{Fog}, \glossterm{Manifestation}
+\parhead*{Materials} textiles
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Cloak of Mist, Greater}{}}\label{item:Cloak of Mist, Greater}
+\hypertarget{item:Cloak of Mist, Greater}{\subsection{Cloak of Mist, Greater}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{16} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+A thick fog constantly fills an \areamed radius emanation from you.
+This fog completely blocks sight beyond 10 feet.
+Within that range, it still provides \concealment.
+If a 5-foot square of fog takes fire damage equal to this item's \glossterm{power}, the fog disappears from that area until the end of the next round.
+\parhead*{Tags} \glossterm{Fog}, \glossterm{Manifestation}
+\parhead*{Materials} textiles
+\begin{multicols}{2}
+\lowercase{\hypertarget{item:Vanishing Cloak}{}}\label{item:Vanishing Cloak}
+\hypertarget{item:Vanishing Cloak}{\subsection{Vanishing Cloak}}
+\columnbreak%
+\begin{flushright}
+\large\textbf{\nth{8} Level}
+\end{flushright}
+\end{multicols}
+\vspace{-1.5em}  % Correct weird spacing from multicols
+As a standard action, you can spend an \glossterm{action point} to use this item.
+If you do, you teleport to an unoccupied location within \rngmed range of your original location.
+In addition, you become \glossterm{invisible} unitl the end of the next round.
+If your intended destination is invalid, or if your teleportation otherwise fails, you still become invisible.
+\parhead*{Tags} \glossterm{Glamer}, \glossterm{Teleportation}
+\parhead*{Materials} textiles
