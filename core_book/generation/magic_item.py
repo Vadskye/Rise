@@ -1,21 +1,57 @@
 from generation.util import join
 
 class MagicItem(object):
+
+    @classmethod
+    def automatic_materials(cls, material_type):
+        return {
+            'amulet': ['jewelry'],
+            'belt': ['leather', 'textiles'],
+            'boot': ['bone', 'leather', 'metal'],
+            'bracer': ['bone', 'leather', 'metal', 'wood'],
+            'cloak': ['textiles'],
+            'crown': ['bone', 'metal'],
+            'gauntlet': ['bone', 'metal', 'wood'],
+            'glove': ['leather'],
+            'mask': ['textiles'],
+            'ring': ['bone', 'jewelry', 'metal', 'wood'],
+        }[material_type]
+
     def __init__(
             self,
-            effect,
+            description,
             level,
-            materials,
             name,
             tags,
             armor_type=None,
+            effects=None,
+            material_type=None,
+            materials=None,
+            targeting=None,
     ):
-        self.effect = effect
+        self.description = description
         self.level = level
-        self.materials = materials
         self.name = name
         self.tags = tags
+
         self.armor_type = armor_type
+        self.effects = effects
+        try:
+            self.materials = materials or MagicItem.automatic_materials(material_type)
+        except KeyError:
+            raise Exception(f"Item '{self.name}' has unknown material_type {material_type}")
+        self.targeting = targeting
+
+    def latex_ability(self):
+        if self.effects or self.targeting:
+            return f"""
+                \\begin<spellcontent>
+                    {self.targeting or ""}
+                    {self.effects or ""}
+                \\end<spellcontent>
+            """
+        else:
+            return None
 
     def latex_tags(self):
         return ', '.join([f"\\glossterm<{tag}>" for tag in sorted(self.tags)])
@@ -32,7 +68,10 @@ class MagicItem(object):
                     \\end<flushright>
                 \\end<multicols>
                 \\vspace<-1.5em>  % Correct weird spacing from multicols
-                {self.effect}
+                {self.description}
+            """,
+            self.latex_ability(),
+            f"""
                 \\parhead*<Tags> {self.latex_tags()}
                 \\parhead*<Materials> {', '.join(sorted(self.materials))}
             """,

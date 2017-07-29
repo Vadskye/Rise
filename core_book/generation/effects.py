@@ -9,6 +9,7 @@ valid_durations = set([
     'Sustain (standard)',
     'Sustain (standard); maximum 5 rounds',
     'Permanent',
+    'While item is attuned',
 ])
 
 class Effects(object):
