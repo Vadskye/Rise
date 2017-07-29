@@ -16,8 +16,8 @@ It treats the creature that charmed it as a friend (a \plus10 relationship modif
 
 \condition{confused} A confused creature is unable to independently control its actions. \confusionexplanation
 
-\condition{crouching} A crouching creature gains a \plus2 bonus to physical defenses against ranged attacks.
-However, it takes a \minus2 penalty to physical accuracy with melee attacks and physical defenses against melee attacks, and moves at half speed.
+\condition{crouching} A crouching creature gains a \plus1 bonus to physical defenses against ranged attacks.
+However, it takes a \minus1 penalty to physical accuracy with melee attacks and physical defenses against melee attacks, and moves at half speed.
 
 \condition{dazed} A dazed creature cannot act during the movement phase.
 
@@ -34,7 +34,8 @@ However, it takes a \minus2 penalty to physical accuracy with melee attacks and 
 \condition{disabled} A disabled creature has no hit points remaining.
 It is \staggered.
 
-\condition{disoriented} During each movement phase, a disoriented creature is forced to
+\condition{disoriented} During each movement phase, a disoriented creature is compelled to move its full speed in a random direction.
+It moves as far as it can, but will not sprint or take similar strenuous actions to increase its speed.
 
 \condition{dominated} A charmed creature is mentally compelled to obey another creature.
 It obeys the commands of the creature of the dominated it unquestioningly, as an automaton.
@@ -47,16 +48,16 @@ If it does not understand the language of the creature that dominated it, it sti
 \condition{entangled} An entangled creature is ensnared in a net or other physical restraint.
 It moves at half speed, cannot sprint or charge, and is \impaired with physical attacks and checks.
 
-\condition{exhausted} An exhausted creature cannot sprint or charge, moves at half speed, and is \impaired with attacks and checks. After 1 hour of complete rest, an exhausted creature becomes fatigued. A fatigued creature becomes exhausted by doing something else that would normally cause fatigue.
+\condition{exhausted} An exhausted creature cannot sprint or charge, moves at half speed, and takes a \minus2 penalty to attacks, checks, and defenses. After 1 hour of complete rest, an exhausted creature becomes fatigued. A fatigued creature becomes exhausted by doing something else that would normally cause fatigue.
 
 \condition{fascinated} A fascinated creature can take no actions. It remains in place, giving its total attention to some object, creature, or effect. It takes a \minus5 penalty to skill checks made as reactions, such as Awareness checks. If the creature notices any threat against it, such as an approaching enemy, it is no longer fascinated.
 
 \condition{fatigued} A fatigued creature can neither sprint nor charge, and moves at half speed. If the fatigue does not have a set duration, doing anything that would normally cause fatigue causes the fatigued creature to become exhausted. After 8 hours of complete rest, fatigued creatures are no longer fatigued.
 
-\condition{frightened} A frightened creature is \severelyimpaired with attacks and checks as long as it is within 100 feet of the source of its fear.
+\condition{frightened} A frightened creature takes a \minus5 penalty to attacks and checks as long as it is within 100 feet of the source of its fear.
 
 \condition{goaded} A goaded creature wants to attack the creature that it is goaded by.
-If it is within \rngmed range of the taunting creature, it is \impaired with all attacks that do not directly affect that creature.
+If it is within \rngmed range of the taunting creature, it is takes a \minus2 to all attacks that do not directly affect that creature.
 If that creature is rendered \helpless, surrenders, or is otherwise unable to fight, this effect immediately ends.
 The \conditionlink{taunted} condition is a more severe version of this effect.
 
@@ -74,26 +75,25 @@ Other than the restrictions listed above, you can act normally. You can also try
 
 \condition{helpless} A helpless creature is completely at an opponent's mercy. Its physical defenses are equal to 10 \add its size modifier. Paralyzed, bound, and unconscious creatures are helpless. Helpless creatures can be killed instantly by a coup de grace (see \pcref{Coup de Grace}).
 
-\condition{ignited} An ignited creature has been set on fire. It takes 1d6 fire damage at the end of each round, and is \impaired with attacks and checks. As a move action, an ignited creature can make a DR 15 Dexterity check to put out the flames. This action requires a free hand. Dropping prone as part of the action gives a \plus5 bonus on this check.
+\condition{ignited} An ignited creature has been set on fire. It takes 1d6 fire damage at the end of each round, and takes a \minus2 penalty to attacks, checks, and defenses. As a move action, an ignited creature can make a DR 15 Dexterity check to put out the flames. This action requires a free hand. Dropping prone as part of the action gives a \plus5 bonus on this check.
 
 \condition{immobilized} An immobilized creature can't move out of the space it was in when it became immobilized. Immobilized flying creatures that have the ability to hover can maintain their initial altitude. All other flying creatures subjected to this condition descend at a rate of 20 feet per round until they reach the ground, taking no falling damage.
 
-\condition{impaired} An impaired creature has a 20\% chance to fail when it attempts some actions. The actions that are impaired are defined in the ability which impairs the creature. For example, a creature affected by the \spell{bane} spell suffers a 20\% chance of failure with all attacks and checks.
+\condition{impaired} An impaired creature has a 20\% chance to fail when it attempts some actions. The actions that are impaired are defined in the ability which impairs the creature.
 
 \condition{invisible} An invisible creature or object cannot be seen. Creatures unable to see an invisible creature are \defenseless against its attacks. Attackers suffer a 50\% miss chance even if they know the location of the invisible creature. See \pcref{Awareness}, and \pcref{Stealth}, for how to identify invisible creatures.
 
 %\condition{knocked Down} Depending on their size, creatures can be knocked down by winds of high velocity. Creatures on the ground are knocked prone by the force of the wind. Flying creatures are instead blown back 1d6 \x 10 feet.
 
 \condition{nauseated} A nauseated creature moves at half speed, and is unable to act during the action phase.
-
-\condition{negative levels}[negative level] A creature with a negative level takes a \minus1 penalty to accuracy, defenses, and checks. Additionally, the creature's maximum and current hit points are reduced by an amount equal to its level. If the creature has at least as many negative levels as it has levels, it dies.
+This speed reduction does not stack with the speed reduction from being \sickened.
 
 \condition{panicked} A panicked creature must flee by any means necessary from the source of its fear as long as it is within 100 feet of it. If unable to flee, it must do nothing other than take the total defense action every round.
 If the panicked creature believes the source of its fear is unable to find or affect it, such as if the source is visibly dead, this penalty may be removed.
 
-\condition{paralyzed} A paralyzed creature is unable to take physical actions. It has effective Dexterity and Strength scores of \minus10 and is helpless, but can take purely mental actions. This can cause flying creatures to crash, swimming creatures to drown, and so on. A creature can move through a space occupied by a paralyzed creature -- ally or otherwise. Each square occupied by a paralyzed creature, however, counts as 2 squares.
+\condition{paralyzed} A paralyzed creature is unable to take physical actions. It has effective Dexterity and Strength scores of \minus10 and is \helpless, but can take purely mental actions. This can cause flying creatures to crash, swimming creatures to drown, and so on. A creature can move through a space occupied by a paralyzed creature -- ally or otherwise. Each square occupied by a paralyzed creature, however, counts as 2 squares.
 
-\condition{partially blinded} A partially blinded creature has difficulty seeing. It loses any special vision properties it has, such as darkvision or low-light vision. It is \impaired at any vision-related attacks and checks.
+\condition{partially blinded} A partially blinded creature has difficulty seeing. It loses any special vision properties it has, such as darkvision or low-light vision. In addition, it takes a \minus2 penalty to any vision-related attacks and checks.
 
 \condition{petrified} A petrified creature has been turned to stone. It is neither alive nor dead, but is unable to take actions, and its body is an inanimate statue. If the statue is broken or damaged before the creature is restored to its original state, the creature has equivalent damage or deformities.
 
@@ -102,7 +102,7 @@ The only physical actions it can make are to escape the grapple (see \pcref{Grap
 Like a \glossterm{helpless} creature, its physical defenses are equal to 10 \add its size modifier.
 Unlike a helpless creature, a pinned creature cannot be killed instantly by a coup de grace.
 
-\condition{prone} The creature is lying on the ground, rather than standing normally. A prone creature takes a \minus4 penalty to accuracy with physical melee attacks and physical defenses. It gains a \minus4 bonus to physical defenses against ranged attacks.
+\condition{prone} The creature is lying on the ground, rather than standing normally. A prone creature takes a \minus2 penalty to accuracy with physical melee attacks and physical defenses. It gains a \minus2 bonus to physical defenses against ranged attacks.
 A creature can stand up from being prone instead of moving during the movement phase.
 This generally requires one free hand.
 
@@ -119,7 +119,7 @@ If the source of fear is a creature and is rendered \helpless, surrenders, or is
 \condition{slowed} A slowed creature cannot act during the movement phase, and moves at half speed.
 
 \condition{squeezing} A squeezing creature is trying to move though an area too small for it to fight in normally.
-While squeezing, a creature moves at half speed and takes a \minus4 penalty to physical accuracy, physical checks, and physical defenses.
+While squeezing, a creature moves at half speed and takes a \minus2 penalty to physical accuracy, physical checks, and physical defenses.
 For details, see \pcref{Squeezing}.
 
 \parhead{Stable} A creature who was dying but who has stopped losing hit points and still has vital damage is stable. The creature is no longer dying, but is still unconscious. See \pcref{Stable}.
@@ -132,7 +132,7 @@ In addition, you are \glossterm{staggered} if you have no hit points remaining.
 \condition{stunned} A stunned creature cannot take actions.
 
 \condition{taunted} A taunted creature is compelled to attack the creature that it is taunted by.
-If it is within \rngmed range of the taunting creature, it is \severelyimpaired with all attacks that do not directly affect that creature.
+If it is within \rngmed range of the taunting creature, it takes a \minus5 penalty to all attacks that do not directly affect that creature.
 If that creature is rendered \helpless, surrenders, or is otherwise unable to fight, this effect immediately ends.
 The \conditionlink{goaded} condition is a less severe version of this effect.
 
