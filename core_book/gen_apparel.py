@@ -2,7 +2,6 @@
 
 import click
 # from generation.effects import Attack
-from generation.effects import Effects
 # from generation.targeting import Targeting
 from generation.magic_item import MagicItem
 from generation.util import latexify
@@ -11,83 +10,76 @@ def generate_armor():
     apparel = []
 
     apparel.append(MagicItem(
-        name='Arrow Catching',
+        name='Shield of Arrow Catching',
         level=5,
-        materials=['as armor'],
+        material_type='shield',
         tags=['Telekinesis'],
-        armor_type='shield',
         description="""
             Whenever a creature within a \\areamed radius emanation from you would be attacked by a ranged weapon, the attack is redirected to target you instead.
             Resolve the attack as if it had initially targeted you, except that the attack is not affected by cover or concealment.
-            This ability can only affect projectiles and thrown objects that are Small or smaller.
+            This item can only affect projectiles and thrown objects that are Small or smaller.
         """,
     ))
 
     apparel.append(MagicItem(
-        name='Arrow Catching, Greater',
+        name='Shield of Arrow Catching, Greater',
         level=10,
-        materials=['as armor'],
         tags=['Telekinesis'],
-        armor_type='shield',
+        material_type='shield',
         description="""
-            This ability functions like the \\mitem<arrow catching> ability, except that it affects a \\arealarge radius from you.
-            In addition, you may choose to exclude creature from this ability's effect, allowing projectiles to target nearby foes normally.
+            This item functions like the \\mitem<shield of arrow catching> item, except that it affects a \\arealarge radius from you.
+            In addition, you may choose to exclude creature from this item's effect, allowing projectiles to target nearby foes normally.
         """,
     ))
 
     apparel.append(MagicItem(
-        name='Boulder Catching',
+        name='Shield of Boulder Catching',
         level=8,
-        materials=['as armor'],
         tags=['Telekinesis'],
-        armor_type='shield',
+        material_type='shield',
         description="""
-            This ability functions like the \\mitem<arrow catching> ability, except that it can affect projectile and thrown objects of up to Large size.
+            This item functions like the \\mitem<shield of arrow catching> item, except that it can affect projectile and thrown objects of up to Large size.
         """,
     ))
 
     apparel.append(MagicItem(
-        name="Arrow Deflection",
+        name="Shield of Arrow Deflection",
         level=2,
-        materials=["as armor"],
         tags=['Telekinesis'],
-        armor_type='shield',
+        material_type='shield',
         description="""
-            As an \\glossterm<immediate action> when you are attacked by a ranged \\glossterm<strike>, you can use this ability.
+            As an \\glossterm<immediate action> when you are attacked by a ranged \\glossterm<strike>, you can use this item.
             If you do, you gain a +5 bonus to Armor defense against the attack.
             You must be aware of the attack to deflect it in this way.
-            This ability can only affect projectiles and thrown objects that are Small or smaller.
+            This item can only affect projectiles and thrown objects that are Small or smaller.
         """,
     ))
 
     apparel.append(MagicItem(
-        name="Arrow Deflection, Greater",
+        name="Shield of Arrow Deflection, Greater",
         level=12,
-        materials=["as armor"],
         tags=['Telekinesis'],
-        armor_type='shield',
+        material_type='shield',
         description="""
-            This ability functions like the \\mitem<arrow deflection> ability, except that the defense bonus increases to +10.
+            This item functions like the \\mitem<shield of arrow deflection> item, except that the defense bonus increases to +10.
         """,
     ))
 
     apparel.append(MagicItem(
-        name="Arrow Deflection, Greater",
+        name="Shield of Boulder Deflection",
         level=6,
-        materials=["as armor"],
         tags=['Telekinesis'],
-        armor_type='shield',
+        material_type='shield',
         description="""
-            This ability functions like the \\mitem<arrow deflection> ability, except that it can affect projectiles and thrown objects of up to Large size.
+            This item functions like the \\mitem<shield of arrow deflection> item, except that it can affect projectiles and thrown objects of up to Large size.
         """,
     ))
 
     apparel.append(MagicItem(
-        name="Bashing",
+        name="Shield of Bashing",
         level=2,
-        materials=["as armor"],
         tags=['Enhancement'],
-        armor_type='shield',
+        material_type='shield',
         description="""
             % Should this be strike damage?
             You gain a +2d bonus to damage with physical attacks using this shield.
@@ -95,157 +87,139 @@ def generate_armor():
     ))
 
     apparel.append(MagicItem(
-        name="Bashing, Greater",
+        name="Shield of Bashing, Greater",
         level=11,
-        materials=["as armor"],
         tags=['Enhancement'],
-        armor_type='shield',
+        material_type='shield',
         description="""
-            This ability functions like the \\mitem<bashing> ability, except that the damage bonus increases to +3.
+            This item functions like the \\mitem<shield of bashing> item, except that the damage bonus increases to +3d.
         """,
     ))
 
     apparel.append(MagicItem(
-        name="Energy Resistant",
+        name="Armor of Energy Resistance",
         level=4,
-        materials=["as armor"],
         tags=['Shielding'],
-        armor_type='body',
+        material_type='body armor',
         description="""
             You have \\glossterm<damage reduction> against \\glossterm<energy damage> equal to the item's \\glossterm<power>.
-            Whenever you resist energy with this ability, the armor sheds light as a torch until the end of the next round.
+            Whenever you resist energy with this item, it sheds light as a torch until the end of the next round.
             The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, red for fire, and brown for sonic.
         """,
     ))
 
     apparel.append(MagicItem(
-        name="Energy Resistant, Greater",
+        name="Armor of Energy Resistance, Greater",
         level=12,
-        materials=["as armor"],
         tags=['Shielding'],
-        armor_type='body',
+        material_type='body armor',
         description="""
-            This ability functions like the \\mitem<energy resistant> ability, except that the damage reduction is equal to twice the item's \\glossterm<power>.
+            This item functions like the \\mitem<armor of energy resistance> item, except that the damage reduction is equal to twice the item's \\glossterm<power>.
         """,
     ))
 
     apparel.append(MagicItem(
-        name="Feather",
+        name="Featherlight Armor",
         level=4,
-        materials=["as armor"],
         tags=['Enhancement'],
-        armor_type='any',
+        material_type='body armor',
         description="""
             This armor's \\glossterm<encumbrance penalty> is reduced by 2.
         """,
     ))
 
     apparel.append(MagicItem(
-        name="Feather, Greater",
+        name="Featherlight Armor, Greater",
         level=10,
-        materials=["as armor"],
         tags=['Enhancement'],
-        armor_type='any',
+        material_type='body armor',
         description="""
             This armor's \\glossterm<encumbrance penalty> is reduced by 4.
         """,
     ))
 
     apparel.append(MagicItem(
-        name="Fortification",
+        name="Armor of Fortification",
         level=7,
-        materials=["as armor"],
         tags=['Imbuement'],
-        armor_type='body',
+        material_type='body armor',
         description="""
             You gain a +5 bonus to defenses when determining whether a \\glossterm<strike> gets a \\glossterm<critical hit> against you instead of a normal hit.
         """,
     ))
 
     apparel.append(MagicItem(
-        name="Fortification, Greater",
+        name="Armor of Fortification, Greater",
         level=15,
-        materials=["as armor"],
         tags=['Imbuement'],
-        armor_type='body',
+        material_type='body armor',
         description="""
-            This ability functions like the \\mitem<fortification> ability, except that the bonus increases to +10.
+            This item functions like the \\mitem<armor of fortification> item, except that the bonus increases to +10.
         """,
     ))
 
     apparel.append(MagicItem(
-        name="Fortification, Mystic",
+        name="Armor of Fortification, Mystic",
         level=12,
-        materials=["as armor"],
         tags=['Imbuement'],
-        armor_type='body',
+        material_type='body armor',
         description="""
-            This ability functions like the \\mitem<fortification> ability, except that it applies against all attacks instead of only against; \\glossterm<strikes>.
+            This item functions like the \\mitem<armor of fortification> item, except that it applies against all attacks instead of only against; \\glossterm<strikes>.
         """,
     ))
 
     apparel.append(MagicItem(
-        name="Hidden",
+        name="Hidden Armor",
         level=4,
-        materials=["as armor"],
         tags=['Glamer'],
-        armor_type='body',
+        material_type='body armor',
         description="""
-             As a standard action, you can use this ability.
-        """,
-        effects=Effects(
-            effect="""
-                The item appears to change shape and form to assume the shape of a normal set of clothing.
-                You may choose the design of the clothing.
-                The item retains all of its properties, including weight and sound, while disguised in this way.
-                Only its visual appearance is altered.
+             As a standard action, you can use this item.
+             If you do, it appears to change shape and form to assume the shape of a normal set of clothing.
+             You may choose the design of the clothing.
+             The item retains all of its properties, including weight and sound, while disguised in this way.
+             Only its visual appearance is altered.
 
-                Alternately, you may return the armor to its original appearance.
-            """,
-            duration='While item is attuned',
-        ),
+             Alternately, you may return the armor to its original appearance.
+        """,
     ))
 
     apparel.append(MagicItem(
-        name="Invulnerability",
+        name="Armor of Invulnerability",
         level=8,
-        materials=["as armor"],
         tags=['Shielding'],
-        armor_type='body',
+        material_type='body armor',
         description="""
-            You have \\glossterm<damage reduction> against \\glossterm<physical> damage equal to the item's \\glossterm<power>.
+            You have \\glossterm<damage reduction> against \\glossterm<physical> damage equal to this item's \\glossterm<power>.
         """,
     ))
 
     apparel.append(MagicItem(
-        name="Invulnerability, Greater",
+        name="Armor of Invulnerability, Greater",
         level=16,
-        materials=["as armor"],
         tags=['Shielding'],
-        armor_type='body',
+        material_type='body armor',
         description="""
-            This ability functions like the \\mitem<invulnerability> ability, except that the damage reduction is equal to twice the item's \\glossterm<power>.
+            This item functions like the \\mitem<armor of invulnerability> item, except that the damage reduction is equal to twice the item's \\glossterm<power>.
             You have \\glossterm<damage reduction> against \\glossterm<physical> damage equal to the item's \\glossterm<power>.
         """,
     ))
 
     apparel.append(MagicItem(
-        name="Magic Resistant",
+        name="Armor of Magic Resistance",
         level=14,
-        materials=["as armor"],
         tags=['Shielding'],
-        armor_type='body',
+        material_type='body armor',
         description="""
             You have \\glossterm<magic resistance> equal to 5 + the item's \\glossterm<power>.
         """,
     ))
 
     apparel.append(MagicItem(
-        name="Mystic Reflection",
+        name="Shield of Mystic Reflection",
         level=12,
-        materials=["as armor"],
         tags=['Thaumaturgy'],
-        armor_type='shield',
+        material_type='shield',
         description="""
             As an \\glossterm<immediate action> when you are targeted by a \\glossterm<targeted> \\glossterm<magical> ability, you can spend an \\glossterm<action point> to use this ability.
             If you do, the ability targets the creature using the ability instead of you.
@@ -536,7 +510,7 @@ def generate_worn():
             As a standard action, you can spend an \glossterm{action point} to use this item.
             If you do, you teleport exactly 25 miles in a direction you specify.
             If this would place you within a solid object or otherwise impossible space, the boots will shunt you up to 1,000 feet in any direction to the closest available space.
-            If there is no available space within 1,000 feet of your intended destination, the effect fails and you take 1d4 damage +1d per two \\glossterm<power>.
+            If there is no available space within 1,000 feet of your intended destination, the effect fails and you take 1d4 damage +1d per two \\glossterm<power> of the item.
         """,
     ))
 
@@ -736,33 +710,19 @@ def generate_worn():
 
 
 def generate_apparel(check=False):
-    armor = generate_armor()
-    worn = generate_worn()
+    apparel = sorted(generate_armor() + generate_worn(), key=lambda apparel: apparel.name)
     if check:
-        sanity_check(armor, worn)
+        sanity_check(apparel)
 
-    armor_texts = []
-    for item in armor:
+    texts = []
+    for item in apparel:
         try:
-            armor_texts.append(item.latex())
+            texts.append(item.latex())
         except Exception as e:
             raise Exception(f"Error converting item '{item.name}' to LaTeX") from e
 
-    worn_texts = []
-    for item in worn:
-        try:
-            worn_texts.append(item.latex())
-        except Exception as e:
-            raise Exception(f"Error converting item '{item.name}' to LaTeX") from e
-
-    armor_text = '\n'.join(armor_texts)
-    worn_text = '\n'.join(worn_texts)
-    return latexify(f"""
-        \\subsection<Armor>
-            {armor_text}
-        \\subsection<Other Apparel>
-            {worn_text}
-    """)
+    text = '\n'.join(texts)
+    return latexify(text)
 
 def sanity_check(armor, worn):
     pass
