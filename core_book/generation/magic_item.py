@@ -66,6 +66,6 @@ class MagicItem(object):
             self.latex_ability(),
             f"""
                 \\parhead*<Tags> {self.latex_tags()}
-                \\parhead*<Materials> {', '.join(sorted(self.materials))}
+                \\parhead*<Materials> {', '.join(sorted(self.materials)).capitalize()}
             """,
         )
