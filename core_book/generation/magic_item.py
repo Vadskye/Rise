@@ -7,6 +7,7 @@ class MagicItem(object):
         return {
             'amulet': ['jewelry'],
             'belt': ['leather', 'textiles'],
+            'body armor': ['bone', 'metal'],
             'boot': ['bone', 'leather', 'metal'],
             'bracer': ['bone', 'leather', 'metal', 'wood'],
             'cloak': ['textiles'],
@@ -15,6 +16,7 @@ class MagicItem(object):
             'glove': ['leather'],
             'mask': ['textiles'],
             'ring': ['bone', 'jewelry', 'metal', 'wood'],
+            'shield': ['bone', 'metal', 'wood'],
         }[material_type]
 
     def __init__(
@@ -23,7 +25,6 @@ class MagicItem(object):
             level,
             name,
             tags,
-            armor_type=None,
             effects=None,
             material_type=None,
             materials=None,
@@ -34,7 +35,6 @@ class MagicItem(object):
         self.name = name
         self.tags = tags
 
-        self.armor_type = armor_type
         self.effects = effects
         try:
             self.materials = materials or MagicItem.automatic_materials(material_type)
@@ -68,7 +68,4 @@ class MagicItem(object):
                 \\parhead*<Tags> {self.latex_tags()}
                 \\parhead*<Materials> {', '.join(sorted(self.materials))}
             """,
-            f"""
-                \\parhead*<Armor Type> {self.armor_type}
-            """ if self.armor_type else None,
         )
