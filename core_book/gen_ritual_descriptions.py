@@ -990,6 +990,42 @@ def generate_rituals():
         lists=['Arcane', 'Divine', 'Nature'],
     ))
 
+    rituals.append(Spell(
+        name="Seek Legacy",
+        base_level=2,
+        # header=Header("description"),
+        targeting=Targeting(
+            target='One willing creature',
+            rng='close',
+        ),
+        effects=Effects(
+            effect="""
+                The target learns the precise distance and direction to their \\glossterm<legacy item>, if it is on the same plane.
+            """,
+            tags=['Knowledge'],
+        ),
+        schools=['Divination'],
+        lists=['Arcane', 'Divine', 'Nature'],
+    ))
+
+    rituals.append(Spell(
+        name="Retrieve Legacy",
+        base_level=4,
+        # header=Header("description"),
+        targeting=Targeting(
+            target='One willing creature',
+            rng='close',
+        ),
+        effects=Effects(
+            effect="""
+                If the target's \\glossterm<legacy item> is on the same plane and \\glossterm<unattended>, it is teleported into the target's hand.
+            """,
+            tags=['Teleportation'],
+        ),
+        schools=['Conjuration', 'Divination'],
+        lists=['Arcane', 'Divine', 'Nature'],
+    ))
+
     return sorted(rituals, key=lambda ritual: ritual.name)
 
 @click.command()
