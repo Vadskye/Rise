@@ -529,7 +529,7 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Ring of Energy Resistance",
-        level=4,
+        level=6,
         material_type='ring',
         tags=['Shielding'],
         description="""
@@ -540,12 +540,23 @@ def generate_worn():
     ))
 
     apparel.append(MagicItem(
-        name="Ring of Energy Resistance",
-        level=12,
+        name="Ring of Energy Resistance, Greater",
+        level=14,
         material_type='ring',
         tags=['Shielding'],
         description="""
             This item functions like the \\mitem<ring of energy resistance>, except that the damage reduction is equal to twice the item's \\glossterm<power>.
+        """,
+    ))
+
+    apparel.append(MagicItem(
+        name="Ring of Elemental Endurance",
+        level=2,
+        material_type='ring',
+        tags=['Shielding'],
+        description="""
+            You can exist comfortably in conditions between -50 and 140 degrees Fahrenheit without any ill effects.
+            You suffer the normal penalties in temperatures outside of that range.
         """,
     ))
 
