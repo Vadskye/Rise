@@ -96,12 +96,58 @@ Magic items are objects that have been imbued with magical energy. They can take
     \input{apparel.tex}
 
 \section{Weapons} % or implements?
+    Magic weapons improve a character's combat abilities.
+    They must be wielded to gain their effects.
 
-    TODO
+    \parhead{Ranged Weapons and Ammunition} Any magical properties of a projectile weapon also apply to all ammunition fired from that weapon.
+
+    \subsection{Weapon Description}
+
+        \input{weapons.tex}
 
 \section{Implements}
 
-    TODO
+    Implements can take many forms: staffs, wands, holy symbols, and more.
+    Like magic weapons, magic implements must be wielded to gain their effects.
+    However, while weapons are used to deal physical damage to enemies, implements are used to cast spells.
+
+    \parhead{Somatic Components} While wielding an implement, you may gesture with it and channel magic through it.
+    These qualify as somatic components for the purpose of casting spells.
+
+    \subsection{Implement Types}
+
+        \subsubsection{Holy Symbols}
+
+            \parhead{Physical Description} A typical holy symbol is a no larger than 4 inches in each dimension and can be easily held in the palm of a hand.
+            Most holy symbols are metal, but they can be made from wood, bone, or even more exotic materials, depending on the deity they symbolize.
+
+            \parhead{Special Rules} All holy symbols are implements for divine spells.
+            Most holy symbols are designed to be worn as an amulet in addition to being held in the hand.
+            A holy symbol worn on the body cannot be used to perform somatic components for spellcasting.
+            However, it still grants its magical abilities as if it was being actively wielded.
+
+        \subsubsection{Staffs}
+
+            \parhead{Physical Description} A typical staff is 4 feet to 7 feet long and 2 inches to 3 inches thick, weighing about 5 pounds.
+            Most staffs are wood, but a rare few are bone, metal, or even glass.
+            (These are extremely exotic.)
+            Staffs often have a gem or some device at their tip or are shod in metal at one or both ends.
+
+            Staffs are often decorated with carvings or runes.
+            A typical staff is like a walking stick, quarterstaff, or cudgel.
+            It has AD 7, 10 hit points, hardness 5, and a break DR of 24.
+
+        \subsubsection{Wands}
+
+            \parhead{Physical Description} A typical wand is 6 inches to 12 inches long and about 1/4 inch thick, and usually weighs no more than 1 ounce.
+            Most wands are wood, but some are bone.
+            A rare few are metal, glass, or even ceramic, but these are quite exotic.
+            Occasionally, a wand has a gem or some device at its tip, and most are decorated with carvings or runes.
+            A typical wand has AD 7, 5 hit points, hardness 5, and a break DR of 16.
+
+    \subsection{Implement Descriptions}
+
+        \input{implements.tex}
 
 \section{Tools}
 
@@ -112,46 +158,21 @@ Magic items are objects that have been imbued with magical energy. They can take
     Over time, items associated with places and people of great power gain magical properties.
     This process takes place for you as you gain levels in addition to in the world as a whole.
 
-    At 4th level, you choose a legacy item archetype and an item you own of the appropriate type.
-    That item becomes a \glossterm{legacy item}, and gains a special ability.
+    At 4th level, you choose an item you own.
+    That item becomes a \glossterm{legacy item}, and gains a magic item ability you choose.
+    The ability's level must be no greater than 4th level.
+    If you choose a weapon or implement, you may choose any weapon or implement ability.
+    If you choose any other item, you may choose any other ability.
+
     At 8th level, and every 4 levels thereafter, your legacy item increases in power again.
+    You choose an ability of the appropriate type with a level no greater than your level when you choose the ability.
 
     If you lose your legacy item, you must retrieve it to regain its power.
     There are rituals to facilitate this retrieval such as \ritual{seek legacy} and \ritual{retrieve legacy}.
     If your legacy item is \glossterm{destroyed}, you can designate a new item of the same type to be your legacy item, causing it to gain all of your legacy item abilities.
     Designating a new item in this way requires spending an \glossterm{action point} as a standard action while holding the replacement item.
 
-    Legacy items are fundamentally a reflection of the character who wields them.
-    Their effects can be more unusual and complex than abilities on normal magic items, and they can have a larger effect on the way that character interacts with the world.
-    % TODO: something about customization
-
-    \subsection{Legacies}\label{Legacies}
-
-        \subsubsection{Avenger}
-
-            This legacy can be applied to any weapon.
-
-            \parhead{4th -- Mark of Vengeance} Whenever a creature resolves an attack against you, it becomes marked by this ability until the end of the next round.
-            You gain a \plus1 bonus to accuracy and damage with \glossterm{strikes} using this weapon against creatures marked by this ability.
-
-            \parhead{8th -- Seek Vengeance} During the \glossterm{movement phase}, you may spend an \glossterm{action point} to use this ability instead of moving.
-            If you do, you teleport into the closest unoccupied square within \rnglong range that is adjacent to one target creature marked with the item's \textit{mark of vengeance} ability.
-            If no such space exists, this ability fails.
-
-            \parhead{12th -- Retributive Mark} Whenever a creature becomes marked by the item's \textit{mark of vengeance} ability, it takes life damage equal to twice your level.
-
-            \parhead{16th -- No Escape} You do not need to spend an \glossterm{action point} to use the item's \textit{seek vengeance} ability.
-
-            \parhead{20th -- } 
-
-        \subsubsection{Peacekeeper}
-
-            This legacy can be applied to any item.
-
-            \parhead{4th -- Merciful} All damage you deal is \glossterm{nonlethal damage}, including \glossterm{strikes} and \glossterm{magical} abilities.
-            Whenever you deal damage to a \disabled creature, the struck creature immediately falls unconscious until it has hit points again, ignoring the normal rules for falling unconscious from taking damage.
-
-            \parhead{8th -- Lifesaver} As an \glossterm{immediate action}, when a creature within \rngmed range of you takes \glossterm{critical damage}, you may spend an \glossterm{action point} to use this ability.
-            If you do, the creature does not take that damage, and you take it as nonlethal damage instead.
-
-            \parhead{12th -- Geas of Peace} Whenever you knock a creature unconscious,
+    \parhead{Unique Legacy Items}
+        Legacy items are fundamentally a reflection of the character who wields them.
+        Their effects can be more unusual and complex than abilities on normal magic items, and they can have a larger effect on the way that character interacts with the world.
+        You can work with your GM to create custom magical effects of an appropriate power that are a better reflection of your character's personality and powers than the magic item abilities that exist.
