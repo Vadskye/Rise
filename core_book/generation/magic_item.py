@@ -17,6 +17,9 @@ class MagicItem(object):
             'mask': ['textiles'],
             'ring': ['bone', 'jewelry', 'metal', 'wood'],
             'shield': ['bone', 'metal', 'wood'],
+            'staff': ['bone', 'wood'],
+            'wand': ['bone', 'wood'],
+            'weapon': ['as weapon'],
         }[material_type]
 
     def __init__(
