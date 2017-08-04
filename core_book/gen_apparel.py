@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 
 import click
-# from generation.effects import Attack
-# from generation.targeting import Targeting
 from generation.magic_item import MagicItem
 from generation.util import latexify
 
@@ -714,6 +712,28 @@ def generate_worn():
             In addition, you become \\glossterm<invisible> unitl the end of the next round.
 
             If your intended destination is invalid, or if your teleportation otherwise fails, you still become invisible.
+        """,
+    ))
+
+    apparel.append(MagicItem(
+        name="Hexward Cloak",
+        level=10,
+        material_type='cloak',
+        tags=['Thaumaturgy'],
+        description="""
+            You gain a +5 bonus to defenses against \\glossterm<magical> abilities that target you directly.
+            This does not protect you from abilities that affect an area.
+        """,
+    ))
+
+    apparel.append(MagicItem(
+        name="Hexproof Cloak",
+        level=18,
+        material_type='cloak',
+        tags=['Thaumaturgy'],
+        description="""
+            All \\glossterm<magical> abilities that target you directly fail to affect you.
+            This does not protect you from abilities that affect an area.
         """,
     ))
 
