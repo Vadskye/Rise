@@ -20,7 +20,7 @@ Magic items are objects that have been imbued with magical energy. They can take
     \subsection{Item Activation}
 
         Some magic items have to be explicitly activated to have unusual effects.
-        For example, a \mitem{healing belt} can be activated to heal you.
+        For example, the \mitem{seven league boots} can be activated to teleport you across great distances.
         Other magic items constantly have magical effects.
         For example, a \mitem{flaming longsword} is on fire.
 
@@ -85,7 +85,7 @@ Magic items are objects that have been imbued with magical energy. They can take
 
     \subsection{Removing Magic Items}
         Unless otherwise noted, magic items that have effects on the creature using the item must continue to be worn or held as long as the effect lasts.
-        If a magic item is removed before its duration ends the effect ends.
+        If a magic item is removed before its duration ends, the effect ends.
         Items which are consumed when used or which do not affect their user are unaffected by this rule.
 
 \section{Item Description Format}
@@ -94,3 +94,64 @@ Magic items are objects that have been imbued with magical energy. They can take
 \section{Apparel}
 
     \input{apparel.tex}
+
+\section{Weapons} % or implements?
+
+    TODO
+
+\section{Implements}
+
+    TODO
+
+\section{Tools}
+
+    TODO
+
+\section{Legacy Items}\label{Legacy Items}
+
+    Over time, items associated with places and people of great power gain magical properties.
+    This process takes place for you as you gain levels in addition to in the world as a whole.
+
+    At 4th level, you choose a legacy item archetype and an item you own of the appropriate type.
+    That item becomes a \glossterm{legacy item}, and gains a special ability.
+    At 8th level, and every 4 levels thereafter, your legacy item increases in power again.
+
+    If you lose your legacy item, you must retrieve it to regain its power.
+    There are rituals to facilitate this retrieval such as \ritual{seek legacy} and \ritual{retrieve legacy}.
+    If your legacy item is \glossterm{destroyed}, you can designate a new item of the same type to be your legacy item, causing it to gain all of your legacy item abilities.
+    Designating a new item in this way requires spending an \glossterm{action point} as a standard action while holding the replacement item.
+
+    Legacy items are fundamentally a reflection of the character who wields them.
+    Their effects can be more unusual and complex than abilities on normal magic items, and they can have a larger effect on the way that character interacts with the world.
+    % TODO: something about customization
+
+    \subsection{Legacies}\label{Legacies}
+
+        \subsubsection{Avenger}
+
+            This legacy can be applied to any weapon.
+
+            \parhead{4th -- Mark of Vengeance} Whenever a creature resolves an attack against you, it becomes marked by this ability until the end of the next round.
+            You gain a \plus1 bonus to accuracy and damage with \glossterm{strikes} using this weapon against creatures marked by this ability.
+
+            \parhead{8th -- Seek Vengeance} During the \glossterm{movement phase}, you may spend an \glossterm{action point} to use this ability instead of moving.
+            If you do, you teleport into the closest unoccupied square within \rnglong range that is adjacent to one target creature marked with the item's \textit{mark of vengeance} ability.
+            If no such space exists, this ability fails.
+
+            \parhead{12th -- Retributive Mark} Whenever a creature becomes marked by the item's \textit{mark of vengeance} ability, it takes life damage equal to twice your level.
+
+            \parhead{16th -- No Escape} You do not need to spend an \glossterm{action point} to use the item's \textit{seek vengeance} ability.
+
+            \parhead{20th -- } 
+
+        \subsubsection{Peacekeeper}
+
+            This legacy can be applied to any item.
+
+            \parhead{4th -- Merciful} All damage you deal is \glossterm{nonlethal damage}, including \glossterm{strikes} and \glossterm{magical} abilities.
+            Whenever you deal damage to a \disabled creature, the struck creature immediately falls unconscious until it has hit points again, ignoring the normal rules for falling unconscious from taking damage.
+
+            \parhead{8th -- Lifesaver} As an \glossterm{immediate action}, when a creature within \rngmed range of you takes \glossterm{critical damage}, you may spend an \glossterm{action point} to use this ability.
+            If you do, the creature does not take that damage, and you take it as nonlethal damage instead.
+
+            \parhead{12th -- Geas of Peace} Whenever you knock a creature unconscious,
