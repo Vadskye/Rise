@@ -1160,6 +1160,82 @@ It defines how attributes work and explains how to make physical attacks in comb
         Temporary hit points are not ``real'' hit points, and cannot be healed.
         If a character has temporary hit points from multiple effects, only the highest value is used.
 
+% TODO: This is a bad name; organize these better
+\section{Special Rules}
+
+    \subsection{Grappling}\label{Grappling}
+        Grappling creatures are physically struggling with each other. While grappled, you suffer certain penalties and restrictions, as described below.
+
+        \subsubsection{Being In A Grapple}
+            While grappling, you suffer certain penalties and restrictions, as described below. Other than these restrictions, you can act normally. You can also take certain actions in a grapple, as described in \pcref{Grapple Actions}
+            \begin{itemize}
+                \item You must use a free hand (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands. If you cannot free a hand, you suffer a \minus10 penalty to accuracy on all physical attacks, including grapple attacks, until you have a free hand.
+                \item You are \defenseless against creatures you are not grappling with.
+                \item You take a \minus4 penalty to accuracy with weapons that are not light, since they are too large and cumbersome to be used effectively in a grapple.
+                \item Spellcasting is extremely difficult. You cannot cast spells with somatic components. Casting a spell without somatic components requires a Concentration check with a DR equal to 20 \add double spell level.
+                \item You cannot move normally (but see Move the Grapple, below).
+            \end{itemize}
+
+        \subsubsection{Grapple Actions}\label{Grapple Actions}
+            While grappled, you can take four special actions to try to affect the grapple.
+
+            \parhead{Bind Foe} As a standard action, you can make a grapple attack to bind your foe with ropes or other restraints. You must have the restraints in hand (in addition to the free hand required to grapple). Apply the result against the Fortitude and Reflex defenses of a creature grappling you. Success against both defenses means the creature is bound, rendering it helpless and effectively paralyzed. The only physical actions a bound creature can take are to esccape or break the bindings. Escaping the bindings requires a grapple attack or Escape Artist check which beats the grapple attack made to bind the creature. Breaking the bindings requires making a Strength check sufficient to break the item used to bind the creature. If you have the time, you can \glossterm{take 10} on your grapple attack to secure bindings on a helpless foe, including a foe rendered helpless through this attack.
+            \parhead{Escape the Grapple} As a standard action, you can make a grapple attack or Escape Artist check to escape from the grapple. Apply the result against the Reflex defense of each creature grappling you. Success against an individual creature means you are no longer grappling that creature.
+            \parhead{Move the Grapple} As a move action, you can make a grapple attack to move the grapple. Apply the result against the Fortitude defense of each creature grappling you. If you beat every creature's Fortitude defense, you can move yourself and all other creatures in the grapple up to half your speed. At the end of your movement, you choose which spaces creatures grappling you are in, as long as they stay adjacent to you.
+            \parhead{Pin} As a standard action, you can make a grapple attack against the Fortitude and Reflex defenses of a creature you are grappling with. Success against both defenses means the creature becomes \glossterm{pinned} (in addition to being grappled), while you remain only grappled. The only physical action a pinned creature can take is to escape the grapple, though it can take mental actions. At your discretion, you can cover the mouth of a pinned creature to prevent it from speaking.
+
+    \subsection{Unarmed Combat}\label{Unarmed Combat}
+        Every creature can attack with its body using an unarmed attack.
+        You are not proficient with your unarmed attack, so you are usually \defenseless while unarmed.
+        In addition, an unarmed attack always deals nonlethal damage.
+        You may use any appropriate part of your body to make an unarmed attack -- fists, feet, elbows, and so on.
+        However, you only have one unarmed attack.
+        You cannot dual-wield unarmed attacks as if you were fighting with two weapons at once (see \pcref{feat:Two-Weapon Fighting}).
+
+        An unarmed attack is a type of natural weapon.
+        Spells and abilities that affect natural weapons can affect your unarmed attack.
+        Gauntlets can also be worn to increase the power of an unarmed attack (see \pcref{Unarmed Weapons}).
+
+        If you have the Unarmed Fighting feat, you become proficient with your unarmed attack, and can deal lethal damage with it (see \featpcref{Unarmed Fighting}).
+
+    \subsection{Mounted Combat}\label{Mounted Combat}
+        \parhead{Horses in Combat} Warhorses and warponies can serve readily as combat steeds. Light horses, ponies, and heavy horses, however, are frightened by combat. If you don't dismount, you must make a DR 20 Ride check each round as a move action to control such a horse. If you succeed, you can perform a standard action after the move action. If you fail, you can't do anything else until your next turn.
+
+        Your mount acts on your initiative count as you direct it. You move at its speed, but the mount uses its action to move.
+
+        \parhead{Space} A horse (not a pony) is a Large creature, and thus takes up a space 10 feet (2 squares) across. While mounted, you share your mount's space completely. Anyone threatening your mount can attack either you or your mount. However, your reach is still that of a creature of your normal size. Thus, a Medium paladin would threaten all squares adjacent to his Large horse with a longsword, and all squares 10 feet away from his mount with a lance.
+
+        In the case of abnormally large mounts (two or more size categories larger than you), you may not completely share space. Such situations should be handled on a case-by-case basis, depending on the nature of the mount.
+
+        \parhead{Combat while Mounted} With a DR 5 Ride check, you can guide your mount with your knees so as to use both hands to attack or defend yourself. This is a free action.
+
+        If your mount moves more than its normal speed when charging, you also take the physical defense penalty associated with a charge. If you make an attack at the end of such a charge, you receive the bonus gained from the charge. When charging on horse-back, you deal double damage with a lance (see \pcref{Charge}).
+
+        You can use ranged weapons while your mount is moving in the same phase, but at a \minus2 penalty to accuracy.
+        If your mount is also sprinting (see \pcref{Sprint}), this penalty increases to \minus4.
+
+        \parhead{Casting Spells while Mounted} You can cast a spell normally if your mount moves up to a normal move (its speed) either before or after you cast. If you have your mount move both before and after you cast a spell, then you're casting the spell while the mount is moving, and you have to make a Concentration check due to the vigorous motion (DR 10 \add double spell level) or lose the spell. If the mount is sprinting, your Concentration check is more difficult due to the violent motion (DR 15 \add double spell level).
+
+        \parhead{If Your Mount Falls in Battle} If your mount falls, you have to succeed on a DR 15 Ride check to make a soft fall and take no damage. If the check fails, you take 1d6 points of damage.
+
+        \parhead{If You Are Dropped} If you are knocked unconscious, you have a 50\% chance to stay in the saddle (or 75\% if you're in a military saddle). Otherwise you fall and take 1d6 points of damage. Without you to guide it, most mounts avoid combat.
+
+    \subsection{Drowning}\label{Drowning}
+        You can hold your breath for a number of rounds equal to 5 \add your Constitution.
+        After that time, you must roll 1d10.
+        This attack gains a \plus5 bonus for each round you hold your breath beyond your limit.
+        If the result exceeds your Fortitude defense, you take \glossterm{vital damage} equal to the difference.
+
+    \subsection{Ability Timing}
+        % TODO: add more content here as necessary
+        Some reactive abilities can be used at times where actions can't normally be taken.
+        For example, many abilities specify that you can use them ``when you are hit''.
+        This section defines more precisely when such abilities can be used.
+
+        \parhead{When You Are Hit} These abilities are used after the success or failure of all attacks within that phase has been declared, but before any effects of those attacks are declared.
+        That means you can activate the ability after you know all of the attacks that hit you during that phase.
+        You would also know which attacks were critical hits, allowing you to use the ability to affect those attacks specifically.
+
 \section{Daily Resources}
 
     \subsection{Action Points}\label{Action Points}
@@ -1246,79 +1322,3 @@ It defines how attributes work and explains how to make physical attacks in comb
         1. This is the number of abilities you gain with your \glossterm{legacy item} (see \pcref{Legacy Items}). \\
         2. All races also grant a bonus feat at 1st level. The feat must be chosen from a specific list of racial bonus feats (see \pcref{Races}). \\
     \end{dtable}
-
-% TODO: This is a bad name; organize these better
-\section{Special Rules}
-
-    \subsection{Grappling}\label{Grappling}
-        Grappling creatures are physically struggling with each other. While grappled, you suffer certain penalties and restrictions, as described below.
-
-        \subsubsection{Being In A Grapple}
-            While grappling, you suffer certain penalties and restrictions, as described below. Other than these restrictions, you can act normally. You can also take certain actions in a grapple, as described in \pcref{Grapple Actions}
-            \begin{itemize}
-                \item You must use a free hand (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands. If you cannot free a hand, you suffer a \minus10 penalty to accuracy on all physical attacks, including grapple attacks, until you have a free hand.
-                \item You are \defenseless against creatures you are not grappling with.
-                \item You take a \minus4 penalty to accuracy with weapons that are not light, since they are too large and cumbersome to be used effectively in a grapple.
-                \item Spellcasting is extremely difficult. You cannot cast spells with somatic components. Casting a spell without somatic components requires a Concentration check with a DR equal to 20 \add double spell level.
-                \item You cannot move normally (but see Move the Grapple, below).
-            \end{itemize}
-
-        \subsubsection{Grapple Actions}\label{Grapple Actions}
-            While grappled, you can take four special actions to try to affect the grapple.
-
-            \parhead{Bind Foe} As a standard action, you can make a grapple attack to bind your foe with ropes or other restraints. You must have the restraints in hand (in addition to the free hand required to grapple). Apply the result against the Fortitude and Reflex defenses of a creature grappling you. Success against both defenses means the creature is bound, rendering it helpless and effectively paralyzed. The only physical actions a bound creature can take are to esccape or break the bindings. Escaping the bindings requires a grapple attack or Escape Artist check which beats the grapple attack made to bind the creature. Breaking the bindings requires making a Strength check sufficient to break the item used to bind the creature. If you have the time, you can \glossterm{take 10} on your grapple attack to secure bindings on a helpless foe, including a foe rendered helpless through this attack.
-            \parhead{Escape the Grapple} As a standard action, you can make a grapple attack or Escape Artist check to escape from the grapple. Apply the result against the Reflex defense of each creature grappling you. Success against an individual creature means you are no longer grappling that creature.
-            \parhead{Move the Grapple} As a move action, you can make a grapple attack to move the grapple. Apply the result against the Fortitude defense of each creature grappling you. If you beat every creature's Fortitude defense, you can move yourself and all other creatures in the grapple up to half your speed. At the end of your movement, you choose which spaces creatures grappling you are in, as long as they stay adjacent to you.
-            \parhead{Pin} As a standard action, you can make a grapple attack against the Fortitude and Reflex defenses of a creature you are grappling with. Success against both defenses means the creature becomes \glossterm{pinned} (in addition to being grappled), while you remain only grappled. The only physical action a pinned creature can take is to escape the grapple, though it can take mental actions. At your discretion, you can cover the mouth of a pinned creature to prevent it from speaking.
-
-    \subsection{Unarmed Combat}\label{Unarmed Combat}
-        Every creature can attack with its body using an unarmed attack.
-        You are not proficient with your unarmed attack, so you are usually \defenseless while unarmed.
-        In addition, an unarmed attack always deals nonlethal damage.
-        You may use any appropriate part of your body to make an unarmed attack -- fists, feet, elbows, and so on.
-        However, you only have one unarmed attack.
-        You cannot dual-wield unarmed attacks as if you were fighting with two weapons at once (see \pcref{feat:Two-Weapon Fighting}).
-
-        An unarmed attack is a type of natural weapon.
-        Spells and abilities that affect natural weapons can affect your unarmed attack.
-        Gauntlets can also be worn to increase the power of an unarmed attack (see \pcref{Unarmed Weapons}).
-
-        If you have the Unarmed Fighting feat, you become proficient with your unarmed attack, and can deal lethal damage with it (see \featpcref{Unarmed Fighting}).
-
-    \subsection{Mounted Combat}\label{Mounted Combat}
-        \parhead{Horses in Combat} Warhorses and warponies can serve readily as combat steeds. Light horses, ponies, and heavy horses, however, are frightened by combat. If you don't dismount, you must make a DR 20 Ride check each round as a move action to control such a horse. If you succeed, you can perform a standard action after the move action. If you fail, you can't do anything else until your next turn.
-
-        Your mount acts on your initiative count as you direct it. You move at its speed, but the mount uses its action to move.
-
-        \parhead{Space} A horse (not a pony) is a Large creature, and thus takes up a space 10 feet (2 squares) across. While mounted, you share your mount's space completely. Anyone threatening your mount can attack either you or your mount. However, your reach is still that of a creature of your normal size. Thus, a Medium paladin would threaten all squares adjacent to his Large horse with a longsword, and all squares 10 feet away from his mount with a lance.
-
-        In the case of abnormally large mounts (two or more size categories larger than you), you may not completely share space. Such situations should be handled on a case-by-case basis, depending on the nature of the mount.
-
-        \parhead{Combat while Mounted} With a DR 5 Ride check, you can guide your mount with your knees so as to use both hands to attack or defend yourself. This is a free action.
-
-        If your mount moves more than its normal speed when charging, you also take the physical defense penalty associated with a charge. If you make an attack at the end of such a charge, you receive the bonus gained from the charge. When charging on horse-back, you deal double damage with a lance (see \pcref{Charge}).
-
-        You can use ranged weapons while your mount is moving in the same phase, but at a \minus2 penalty to accuracy.
-        If your mount is also sprinting (see \pcref{Sprint}), this penalty increases to \minus4.
-
-        \parhead{Casting Spells while Mounted} You can cast a spell normally if your mount moves up to a normal move (its speed) either before or after you cast. If you have your mount move both before and after you cast a spell, then you're casting the spell while the mount is moving, and you have to make a Concentration check due to the vigorous motion (DR 10 \add double spell level) or lose the spell. If the mount is sprinting, your Concentration check is more difficult due to the violent motion (DR 15 \add double spell level).
-
-        \parhead{If Your Mount Falls in Battle} If your mount falls, you have to succeed on a DR 15 Ride check to make a soft fall and take no damage. If the check fails, you take 1d6 points of damage.
-
-        \parhead{If You Are Dropped} If you are knocked unconscious, you have a 50\% chance to stay in the saddle (or 75\% if you're in a military saddle). Otherwise you fall and take 1d6 points of damage. Without you to guide it, most mounts avoid combat.
-
-    \subsection{Drowning}\label{Drowning}
-        You can hold your breath for a number of rounds equal to 5 \add your Constitution.
-        After that time, you must roll 1d10.
-        This attack gains a \plus5 bonus for each round you hold your breath beyond your limit.
-        If the result exceeds your Fortitude defense, you take \glossterm{vital damage} equal to the difference.
-
-    \subsection{Ability Timing}
-        % TODO: add more content here as necessary
-        Some reactive abilities can be used at times where actions can't normally be taken.
-        For example, many abilities specify that you can use them ``when you are hit''.
-        This section defines more precisely when such abilities can be used.
-
-        \parhead{When You Are Hit} These abilities are used after the success or failure of all attacks within that phase has been declared, but before any effects of those attacks are declared.
-        That means you can activate the ability after you know all of the attacks that hit you during that phase.
-        You would also know which attacks were critical hits, allowing you to use the ability to affect those attacks specifically.
