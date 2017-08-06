@@ -1270,12 +1270,8 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[2]{Instant Leap} You must move at least five feet before jumping to have a running start, rather than twenty feet.
 
         \ff[4]{Leaping Strike} As a standard action, you can spend an \glossterm{action point} to use this ability.
-        \begin{ability}
-            \begin{spelleffects}
-                \spelleffect You make a Jump check to leap (see \pcref{Leap}), and move as normal for the leap, up to a maximum distance equal to your land speed.
-                During the \glossterm{delayed action phase}, you can make a \glossterm{strike} from your new location.
-            \end{spelleffects}
-        \end{ability}
+        If you do, make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to your land speed (see \pcref{Leap}).
+        If you use this ability during the \glossterm{action phase}, you can also make a \glossterm{strike} from your new location during the \glossterm{delayed action phase}.
 
         \ff[6]{Featherlight Jump} When you jump, you can spend an \glossterm{action point} as a \glossterm{free action}.
         If you do, your maximum height for that jump is equal to your Jump check result, rather than half your Jump check result.
@@ -1454,42 +1450,24 @@ Feats can be used to specialize your character particular area, to grant your ch
         \featpre Starting Strength of 2.
 
         \ff[1]{Sweeping Strike} As a standard action, you can spend an \glossterm{action point} to use this ability.
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spelltwocol{\spellarea{Up to three contiguous squares}}{\spellrng{Threatened}}
-                \spelltgts{Everything in the area}
-                \spellspecial Choose one or two melee weapons you are wielding that deal slashing or bludgeoning damage.
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \begin{spellattack}{Physical vs. Armor}
-                    \spellsuccess The target takes \glossterm{strike damage} from the chosen weapon with a \minus1d penalty (see \pcref{Strike Damage}).
-                    \spellcritical As above, but the target takes double damage.
-                \end{spellattack}
-            \end{spelleffects}
-        \end{ability}
+        If you do, you can make a melee \glossterm{strike} against each of up to three adjacent creatures.
+        You take a \minus1d penalty to \glossterm{strike damage} with each strike.
 
+        % TODO: this timing doesn't make sense
         \ff[2]{Cleave} Whenever you get a \glossterm{critical hit} with a strike using a slashing or bludgeoning weapon, you can take an \glossterm{immediate action} to make another strike with the same weapon.
         The target of the new strike must be adjacent to the struck creature.
         You may continue making additional strikes as long as you keep getting critical hits.
         However, you may not attack the same creature more than once.
 
         \ff[4]{Reaping Charge} As a standard action, you can spend an \glossterm{action point} to use this ability.
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spelltgts{Special; see below}
-                \spellspecial Choose one or two melee weapons you are wielding that deal slashing or bludgeoning damage.
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \spelleffect You move up to half your movement speed in a straight line.
-                Choose either the right or left side of the line.
-                You can make a \glossterm{strike} against each creature and object on that side of the line that you threaten at any point during your movement.
-                You take a \minus2d penalty to damage on the strike.
-            \end{spelleffects}
-        \end{ability}
+        If you do, you can move up to half your movement speed in a straight line.
+        Choose either the right or left side of the line.
+        You can make a melee \glossterm{strike} against each creature and object on that side of the line that you threaten at any point during your movement.
+        You take a \minus2d penalty to damage on the strike.
 
         \ff[6]{Spinning Cleave} When you use your \textit{cleave} ability, the target of your additional attack does not have to be adjacent to the struck creature.
 
-        \ff[8]{Wide Sweep} When you use your \textit{sweeping strike} ability, you can target up to five contiguous squares you threaten.
+        \ff[8]{Wide Sweep} When you use your \textit{sweeping strike} ability, you can target up to five adjacent creatures.
 
         \ff[10]{Reaping Whirlwind} When you use your \textit{reaping charge} ability, you do not have to choose a side of the line.
         You can attack any creatures and objects that you threaten at any point during your movement.

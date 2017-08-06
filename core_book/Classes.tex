@@ -68,24 +68,24 @@ This choice determines a great deal about your character's abilities.
             \tb{Level} & \tb{Abilities} \\\bottomrule
             \nth{1}     & Athletic prowess, rage
             \\ \nth{2}  & Battle-scarred
-            \\ \nth{3}  & Improvised combat
-            \\ \nth{4}  & Uncontrollable rage
+            \\ \nth{3}  & Primal exertion
+            \\ \nth{4}  & Blood frenzy
             \\ \nth{5}  & Uncanny dodge
-            \\ \nth{6}  & Titanic might
+            \\ \nth{6}  & Athletic prowess
             \\ \nth{7}  & Unstoppable rage
             \\ \nth{8}  & Deep scars
-            \\ \nth{9}  & Athletic prowess
-            \\ \nth{10} & Mindless rage
+            \\ \nth{9}  & Primal exertion
+            \\ \nth{10} & Unstoppable rage
             \\ \nth{11} & Greater uncanny dodge
-            \\ \nth{12} & Greater improvised combat
-            \\ \nth{13} & Mighty rage
+            \\ \nth{12} & Primal prowess
+            \\ \nth{13} & Frenzied assault
             \\ \nth{14} & Rapid recovery
-            \\ \nth{15} & Athletic champion
-            \\ \nth{16} & Endless rage
-            \\ \nth{17} & Soulscarred
-            \\ \nth{18} & Greater titanic might
+            \\ \nth{15} & Primal exertion
+            \\ \nth{16} & Mindless rage
+            \\ \nth{17} & Uncanny whirlwind
+            \\ \nth{18} & Primal supremacy
             \\ \nth{19} & Blood frenzy
-            \\ \nth{20} & Deathless rage, fury of the storm
+            \\ \nth{20} & Deathless rage, primal soul, soulscarred
         \end{dtabularx}
     \end{dtable}
 
@@ -119,54 +119,122 @@ This choice determines a great deal about your character's abilities.
                     \begin{itemize}
                         \item You gain a \plus1d bonus to \glossterm{strike damage}.
                         \item You are unable to take any action that requires patience or concentration, such as casting spells.
-                        \item At the end of each round if you did not attack a creature or object, you take \glossterm{nonlethal damage} equal to your level.
-                            This damage ignores your damage reduction from this ability.
+                        \item At the end of each round, if you did not attack a creature or object, you take \glossterm{nonlethal damage} equal to your level.
+                            This damage ignores damage reduction and any similar abilities.
                     \end{itemize}
                     \spellspecial When this ability ends, you become \fatigued and unable to use it again until you take a \glossterm{short rest}.
                     \spelldur Attunement
                 \end{spelleffects}
             \end{ability}
 
-            \cf{Bbn}[4]{Uncontrollable Rage}
-            You are immune to \glossterm{Compulsion} effects while raging.
+            \cf{Bbn}[4]{Blood Frenzy}
+            You are immune to being \glossterm{bloodied} while raging
 
-            \cf{Bbn}[7]{Unstoppable Rage}
+            \cf{Bbn}[7]{Senseless Rage}
             You are immune to being \glossterm{staggered} while raging.
 
-            \cf{Bbn}[10]{Senseless Rage}
+            \cf{Bbn}[10]{Unstoppable Rage}
             You are immune to \glossterm{Mind} \glossterm{conditions} while raging.
 
             \cf{Bbn}[13]{Frenzied Assault}
-            You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{strikes}.
+            You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{strikes} while raging.
 
             \cf{Bbn}[16]{Mindless Rage} 
             You are immune to all hostile \glossterm{Mind} effects while raging.
 
-            \cf{Bbn}[19]{Blood Frenzy} 
-            You are immune to being \glossterm{bloodied} while raging.
-
-            \cf{Bbn}[20]{Deathless Rage} 
+            \cf{Bbn}[19]{Deathless Rage} 
             While raging, the you ignore all penalties from \glossterm{vital damage}.
             However, if your vital damage exceeds your maximum hit points, you immediately die.
 
         \subsubsection{Primal Warrior}
             \cf{Bbn}{Athletic Prowess} You gain two additional skill points that must be spent on Strength or Dexterity-based barbarian class skills.
 
-            \cf{Bbn}[3]{Improvised Combat} You gain a \plus1 bonus to accuracy with \glossterm{combat maneuvers}.
+            \cf{Bbn}[3]{Primal Exertion}
+            You gain the ability to channel your primal energy into ferocious attacks.
+            Choose a single \textit{primal exertion} from the list below.
+            As a standard action, you can spend an \glossterm{action point} to use a \textit{primal exertion} ability.
+            {
+                \subcf{Battle Cry} You and all allies within an \arealarge radius burst from you gain \glossterm{temporary hit points} equal to twice your Willpower.
+                This lasts as long as you \glossterm{sustain} this ability as a \glossterm{swift action}.
 
-            \cf{Bbn}[6]{Primal Precision}
-            You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{strikes}.
+                \subcf{Demoralizing Shout}
+                Make a Willpower vs. Mental attack against all enemies within an \arealarge radius burst from you.
+                Success against a target means it is \shaken by you as a \glossterm{condition}.
 
-            \cf{Bbn}[9]{Athletic Prowess} You gain two additional skill points that must be spent on Strength or Dexterity-based barbarian class skills.
+                \subcf{Gut Punch} Make a \glossterm{strike}.
+                If your attack result beats the target's Fortitude defense, the target is \sickened as a condition.
 
-            \cf{Bbn}[12]{Greater Improvised Combat} 
-            The accuracy bonus from your \textit{improvised combat} ability increases to \plus2.
+                \subcf{Leaping Strike} You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to your land speed (see \pcref{Leap}).
+                If you use this ability during the \glossterm{action phase}, you can also make a \glossterm{strike} from your new location during the \glossterm{delayed action phase}.
 
-            \cf{Bbn}[15]{Athletic Champion}
-            You gain a \plus1 bonus to all Strength and Dexterity-based skills.
+                \subcf{Primal Maneuver} You can use a \glossterm{combat maneuver} with a \plus2 bonus to accuracy.
 
-            \cf{Bbn}[18]{Greater Primal Precision}
-            The accuracy bonus from your \textit{primal precision} ability increases to \plus2.
+                \subcf{Sweeping Strike} Make a melee \glossterm{strike} against each of up to three adjacent creatures.
+                You take a \minus1d penalty to \glossterm{strike damage} with each strike.
+
+                \subcf{Whirlwind Spin} Make a melee \glossterm{strike} against all creatures you threaten.
+                You take a \minus3d penalty to \glossterm{strike damage} with each strike.
+            }
+
+            \cf{Bbn}[6]{Athletic Prowess} You gain two additional skill points that must be spent on Strength or Dexterity-based barbarian class skills.
+
+            \cf{Bbn}[9]{Primal Exertion}
+            You learn an additional \textit{primal exertion} from the list below.
+            As a standard action, you can spend an \glossterm{action point} to use a \textit{primal exertion} ability.
+            {
+                \subcf{Certain Strike} You can make a \glossterm{strike} with a \plus2 bonus to accuracy.
+
+                \subcf{Ground Pound} Make a Strength vs. Reflex attack against all enemies standing on solid ground within an \areamed radius burst from you.
+                Success against a target means it is knocked \prone.
+                You can only use this ability while standing on solid ground.
+                If you use this ability during the \glossterm{action phase}, you can also make a \glossterm{strike} during the \glossterm{delayed action phase}.
+
+                \subcf{Mighty Smash} Make a \glossterm{strike} with a \plus2d bonus to damage.
+
+                \subcf{Penetrating Strike} Make a \glossterm{strike}.
+                The attack is made against the target's Reflex defense instead of its Armor defense.
+
+                \subcf{Sickening Sweep} This ability functions like the \textit{sweeping strike} \textit{primal exertion}, except that if your attack result beats a target's Fortitude defense, the target is \sickened as a condition.
+
+                \subcf{Threatening Shout} 
+                Make a Willpower vs. Mental attack against all enemies within an \arealarge radius burst from you.
+                Success against a target means it is \frightened by you as a \glossterm{condition}.
+
+                \subcf{War Cry} You and all allies within an \arealarge radius burst from you gain \glossterm{damage reduction} against all damage equal to your Willpower.
+                This lasts as long as you \glossterm{sustain} this ability as a \glossterm{swift action}.
+            }
+
+            \cf{Bbn}[12]{Primal Prowess}
+            You gain a \plus2 bonus to Strength-based and Dexterity-based checks.
+            In addition, you may replace your 3rd-level \textit{primal exertion} with a 9th-level \textit{primal exertion}.
+
+            \cf{Bbn}[15]{Primal Exertion}
+            You learn an additional \textit{primal exertion} from the list below.
+            As a standard action, you can spend an \glossterm{action point} to use a \textit{primal exertion} ability.
+            {
+                \subcf{Earthshattering Stomp} Make a Strength vs. Reflex attack against all enemies standing on solid ground within an \areamed radius burst from you.
+                Success against a target means it is \stunned as a \glossterm{condition}.
+                You can only use this ability while standing on solid ground.
+
+                \subcf{Fated Strike} Make a \glossterm{strike} with a \plus3 bonus to accuracy.
+
+                \subcf{Meteor Slam} You make a \glossterm{Jump} to leap and move as normal for the leap, up to a maximum distance equal to your land speed (see \pcref{Leap}).
+                If you use this ability during the \glossterm{action phase}, you can also make a \glossterm{strike} during the \glossterm{delayed action phase}, using your downward momentum to slam into your foe.
+                % TODO: wording
+                You gain a \plus1d bonus to damage on this strike for every 10 feet of height you travelled downward towards your foe during the leap, up to a maximum of \plus4d.
+
+                \subcf{Stunning Blow} Make a \glossterm{strike}.
+                If your attack result beats the target's Fortitude defense, it is \stunned as a condition.
+
+                \subcf{Titanic Smash} Make a \glossterm{strike} with a \plus3d bonus to damage.
+            }
+
+            \cf{Bbn}[18]{Primal Supremacy}
+            You gain a \plus1 bonus to your choice of Strength, Dexterity, or Constitution.
+            In addition, you may replace a 9th-level \textit{primal exertion} with a 15th-level \textit{primal exertion}.
+
+            \cf{Bbn}[20]{Primal Soul} You do not need to spend an \glossterm{action point} to use your \textit{primal exertion} abilities.
+            In addition, you may replace a 9th-level \textit{primal exertion} with a 15th-level \textit{primal exertion}.
 
         \subsubsection{Battleforged Resilience}
             \cf{Bbn}[2]{Battle-Scarred} You gain \glossterm{damage reduction} against physical damage equal to your level.
