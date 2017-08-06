@@ -240,8 +240,8 @@ def generate_spells():
         effects=Effects(
             attack=Attack(
                 defense='Mental',
-                success="Physical damage dealt to the target is increased by +2d.",
-                critical="Physical damage dealt to the target is increased by +4d.",
+                success="Physical damage dealt to the target is increased by +1d. Damage not measured in dice is unaffected.",
+                critical="As above, but damage is increased by +3d instead.",
             ),
             duration='Condition',
             tags=['Delusion', 'Mind'],
