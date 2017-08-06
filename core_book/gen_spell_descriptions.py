@@ -202,7 +202,7 @@ def generate_spells():
         ),
         schools=['Conjuration'],
         lists=['Arcane'],
-        cantrip="The spell deals -1d damage.",
+        cantrip="The spell's range becomes \\rngclose, and it deals -1d damage.",
         subspells=[
             Subspell(
                 level=3,
@@ -454,7 +454,7 @@ def generate_spells():
         ),
         schools=['Evocation'],
         lists=['Arcane', 'Fire', 'Nature'],
-        cantrip="The spell deals -1d damage.",
+        cantrip="The spell affects a 5 foot radius, and it deals -1d damage.",
         subspells=[
             Subspell(
                 level=2,
@@ -583,7 +583,7 @@ def generate_spells():
         name="Water Mastery",
         header=Header("You create a wave of water to crush your foes."),
         targeting=Targeting(
-            area='\\areamed line, 10 ft\. wide',
+            area='\\arealarge line, 10 ft\. wide',
             area_type='burst',
             targets='Everything in the area',
         ),
@@ -593,7 +593,7 @@ def generate_spells():
         ),
         schools=['Conjuration'],
         lists=['Nature', 'Water'],
-        cantrip='The spell deals -1d damage',
+        cantrip="The spell's area becomes a 5 ft.\ wide, \\areamed line.",
         subspells=[
             Subspell(
                 level=2,
@@ -794,7 +794,7 @@ def generate_spells():
         ),
         schools=['Channeling'],
         lists=['Divine'],
-        cantrip='The spell deals -1d damage',
+        cantrip="The spell's range becomes \\rngclose, and it deals -1d damage.",
         subspells=[
         ],
         category='damage',
@@ -812,7 +812,7 @@ def generate_spells():
         ),
         schools=['Channeling'],
         lists=['Divine'],
-        cantrip='The spell deals -1d damage',
+        cantrip="The spell's area becomes an \\areasmall radius.",
         category='damage',
         subspells=[
             Subspell(
@@ -935,7 +935,7 @@ def generate_spells():
                 defense='Fortitude',
                 success="""
                     \\spelldamage<cold>[1d4].
-                    In addition, the target moves at half speed until it removes this condition.
+                    In addition, the target is \\fatigued as a condition.
                 """,
                 critical='As above, but double damage.',
             ),
@@ -943,7 +943,7 @@ def generate_spells():
         ),
         schools=['Evocation'],
         lists=['Arcane', 'Nature'],
-        cantrip='The spell deals -1d damage',
+        cantrip="The spell deals no damage.",
         subspells=[
         ],
         category='damage',
@@ -952,7 +952,7 @@ def generate_spells():
         name="Lightning Bolt",
         header=Header("You create a bolt of electricity that fries your foes."),
         targeting=Targeting(
-            area='\\areamed line',
+            area='\\arealarge line, 10 ft\\. wide',
             area_type='burst',
             targets='Everything in the area',
         ),
@@ -969,7 +969,7 @@ def generate_spells():
         ),
         schools=['Evocation'],
         lists=['Arcane', 'Nature'],
-        cantrip='The spell deals -1d damage',
+        cantrip="The spell's area becomes a 5 ft\\. wide \\areamed line.",
         subspells=[
             Subspell(
                 level=4,
@@ -1066,7 +1066,7 @@ def generate_spells():
         ),
         schools=['Vivimancy'],
         lists=['Arcane', 'Divine', 'Nature'],
-        cantrip='The spell deals -1d damage',
+        cantrip="The spell's range becomes \\rngclose, and it deals -1d damage.",
         subspells=[
             Subspell(
                 level=3,
@@ -1108,7 +1108,7 @@ def generate_spells():
         ),
         schools=['Conjuration'],
         lists=['Arcane', 'Divine'],
-        cantrip='The spell deals -1d damage',
+        cantrip="The spell's range becomes \\rngclose, and it deals -1d damage.",
         subspells=[
         ],
         category='damage',
@@ -1297,7 +1297,7 @@ def generate_spells():
         ),
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
-        cantrip="The sensor cannot be moved after it is originally created.",
+        cantrip="The sensor cannot be moved after it is originally created, and the spell's duration becomes Sustain (swift).",
         subspells=[
             Subspell(
                 level=2,
