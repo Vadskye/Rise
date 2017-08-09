@@ -151,7 +151,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Bbn}[3]{Primal Exertion}
         You gain the ability to channel your primal energy into ferocious attacks.
-        Choose a single \textit{primal exertion} from the list below.
+        Choose two \textit{primal exertions} from the list below.
         As a standard action, you can spend an \glossterm{action point} to use a \textit{primal exertion} ability.
         {
             \subcf{Battle Cry} You and all allies within an \arealarge radius burst from you gain \glossterm{temporary hit points} equal to twice your Willpower.
@@ -1314,7 +1314,7 @@ This choice determines a great deal about your character's abilities.
 
             \cf{Ftr}[3]{Martial Exertion}
             You gain the ability to channel your martial prowess into devastating attacks.
-            Choose a single \textit{martial exertion} from the list below.
+            Choose two \textit{martial exertions} from the list below.
             As a standard action, you can spend an \glossterm{action point} to use a \textit{martial exertion} ability.
             {
                 \subcf{Challenge} Make a \glossterm{strike}.
@@ -1412,7 +1412,6 @@ This choice determines a great deal about your character's abilities.
             You learn an additional \textit{martial exertion} from the list below.
             As a standard action, you can spend an \glossterm{action point} to use a \textit{martial exertion} ability.
             {
-
                 \subcf{Swordbreaker} Make a \glossterm{disarm} attack.
                 You gain a \plus10 bonus to accuracy.
             }
@@ -2172,14 +2171,83 @@ This choice determines a great deal about your character's abilities.
             This ability works at any range.
 
         \subsection{Wilderness Warrior}
-            \cf{Rgr}[3]{Wilderness Lore} You gain two extra skill points which must be spent on the Creature Handling, Heal, Knowledge (geography), Knowledge (nature), Ride, or Survival skills.
+            \cf{Rgr}[3]{Wild Exertion} 
+            You gain the ability to channel your martial prowess into devastating attacks.
+            Choose two \textit{wild exertions} from the list below.
+            As a standard action, you can spend an \glossterm{action point} to use a \textit{wild exertion} ability.
+            {
+                \subcf{Gut Punch} Make a \glossterm{strike}.
+                If your attack result hits the target's Fortitude defense, the target is \sickened as a condition.
 
-            \cf{Rgr}[6]{Survival of the Fittest}
-            You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{strikes}.
+                At 9th level, a \glossterm{critical hit} against the target's Fortitude defense makes it \nauseated instead of \sickened.
+                At 15th level, any hit against the target's Fortitude defense makes it \nauseated instead of \sickened.
 
-            \cf{Rgr}[9]{Wilderness Lore} You gain two extra skill points which must be spent on the Creature Handling, Heal, Knowledge (geography), Knowledge (nature), Ride, or Survival skills.
+                \subcf{Potent Maneuver} You can use a \glossterm{combat maneuver} with a \plus2 bonus to accuracy.
+
+                At 9th level, the accuracy bonus increases to \plus3.
+                At 15th level, the accuracy bonus increases to \plus4.
+
+                \subcf{Reaping Charge} You can move up to half your movement speed in a straight line.
+                Choose either the right or left side of the line.
+                You can make a melee \glossterm{strike} against each creature and object on that side of the line that you \glossterm{threaten} at any point during your movement.
+                You take a \minus2d penalty to damage on each strike.
+
+                At 9th level, you do not have to choose a side of the line.
+                Instead, you can attack creatures and objects that you threaten at any point during your movement.
+                At 15th level, you can move up to your full movement speed instead of half your movement speed.
+
+                \subcf{Sweeping Strike} Make a melee \glossterm{strike} against each of up to three adjacent creatures.
+                You take a \minus1d penalty to \glossterm{strike damage} with each strike.
+
+                At 9th level, the damage penalty is removed.
+                At 15th level, you gain a \plus1d bonus to damage with each strike.
+
+                \subcf{Whirlwind Spin} Make a melee \glossterm{strike} against all creatures you threaten.
+                You take a \minus3d penalty to \glossterm{strike damage} with each strike.
+
+                At 9th level, you gain a \plus1 bonus to accuracy with each strike.
+                At 15th level, the accuracy bonus increases to \plus2.
+            }
+
+            \cf{Rgr}[6]{Wilderness Lore} You gain two extra skill points which must be spent on the Creature Handling, Heal, Knowledge (geography), Knowledge (nature), Ride, or Survival skills.
+
+            \cf{Rgr}[9]{Wild Exertion}
+            You learn an additional \textit{wild exertion} from the list below.
+            As a standard action, you can spend an \glossterm{action point} to use a \textit{wild exertion} ability.
+            {
+                \subcf{Certain Strike} You can make a \glossterm{strike} with a \plus2 bonus to accuracy.
+
+                At 15th level, the accuracy bonus increases to \plus3.
+
+                \subcf{Distracting Blow} Make a \glossterm{strike}.
+                If it hits, the target automatically fails all Concentration checks it makes that phase.
+                In addition, if it took the \textit{recover} or \textit{desperate recovery} actions during the current phase, those actions fail with no effect.
+
+                At 15th level, the effects occur even if the strike misses.
+
+                \subcf{Heartseeking Strike} Make a \glossterm{strike}.
+                The strike is considered a \glossterm{critical hit} if it hits the target's Armor defense by 5, instead of by 10.
+
+                At 15th level, you regain the action point spent if the attack hits without being a \glossterm{critical hit}.
+
+                \subcf{Mighty Smash} Make a \glossterm{strike} with a \plus2d bonus to damage.
+
+                At 15th level, the damage bonus increases to \plus3d.
+
+                \subcf{Penetrating Strike} Make a \glossterm{strike}.
+                The attack is made against the target's Reflex defense instead of its Armor defense.
+
+                At 15th level, you gain a \plus1d bonus to damage if you hit both the target's Reflex defense and Armor defense.
+            }
 
             \cf{Rgr}[12]{} 
+
+            \cf{Rgr}[15]{Martial Exertion} 
+            You learn an additional \textit{wild exertion} from the list below.
+            As a standard action, you can spend an \glossterm{action point} to use a \textit{wild exertion} ability.
+            {
+                % TODO
+            }
 
         \subsection{Focused Hunter}
 
@@ -2202,69 +2270,73 @@ This choice determines a great deal about your character's abilities.
             \cf{Rgr}[4]{Hunting Style}
             You learn specific hunting styles to defeat particular quarries.
             Choose two hunting styles from the list below.
-            Many hunting styles have a minimum level prerequisite, as indicated in the title of the ability.
             Whenever you use your \textit{quarry} ability, you can also gain the benefit of one hunting style you know.
+            {
+                \subcf{Executioner}
+                % TODO: clarify timing
+                Whenever you deal damage to your quarry, any damage in excess of its remaining hit points is dealt as \glossterm{vital damage}.
 
-            \subcf{Executioner}
-            % TODO: clarify timing
-            Whenever you deal damage to your quarry, any damage in excess of its remaining hit points is dealt as \glossterm{vital damage}.
+                \subcf{Fearsome}
+                Your quarry is \shaken by you as long as it remains your quarry.
+                This is a \glossterm{Delusion}, \glossterm{Mind} effect.
 
-            \subcf{Fearsome}
-            Your quarry is \shaken by you as long as it remains your quarry.
-            This is a \glossterm{Delusion}, \glossterm{Mind} effect.
+                \subcf{Goading}
+                Your quarry is \goaded by you as long as it remains your quarry.
+                This is a \glossterm{Delusion}, \glossterm{Mind} effect.
 
-            \subcf{Goading}
-            Your quarry is \goaded by you as long as it remains your quarry.
-            This is a \glossterm{Delusion}, \glossterm{Mind} effect.
+                \subcf{Inescapable}
+                Whenever you deal damage to your quarry, its movement speed is halved until the end of the next round.
 
-            \subcf{Inescapable}
-            Whenever you deal damage to your quarry, its movement speed is halved until the end of the next round.
-
-            \subcf{Persistent}
-            Your quarry remains your quarry even after you use the \textit{quarry} ability again.
-            It remains your quarry until you use this ability again.
-
-            \subcf{10th -- Anchored}[Magical]
-            Whenever you deal damage to your quarry, it cannot travel extradimensionally until the end of the next round.
-            This blocks teleportation and all planar travel abilities except planar rifts.
-
-            \subcf{10th -- Leeching}
-            Whenever you deal damage to your quarry, you heal hit points equal to your level.
-
-            \subcf{10th -- Punishing}[Magical]
-            At the end of each round, if your quarry is within \rnglong range of you, it takes life damage equal to your level.
-
-            \subcf{10th -- Unerring}
-            You ignore all miss chances and failure chances that would affect attacks and checks you make against your quarry.
-
-            \subcf{10th -- Wolfpack}
-            If your quarry is \glossterm{overwhelmed}, it increases its \glossterm{overwhelm penalties} by 1.
-
-            \subcf{16th -- Greater Anchored}[Magical]
-            Your quarry cannot travel extradimensionally.
-            This blocks teleportation and all planar travel abilities except planar rifts.
-
-            \subcf{16th -- Master of the Hunt}
-            Your quarry takes a \minus2 penalty to defenses against attacks from creatures other than you.
-
-            \subcf{16th -- Taunting}
-            Your quarry is \taunted by you as long as it remains your quarry.
-            This is a \glossterm{Delusion}, \glossterm{Mind} effect.
-
-            \subcf{16th -- Terrifying}
-            Your quarry is \frightened by you as long as it remains your quarry.
-            This is a \glossterm{Delusion}, \glossterm{Mind} effect.
+                \subcf{Persistent}
+                Your quarry remains your quarry even after you use the \textit{quarry} ability again.
+                It remains your quarry until you use this ability again.
+            }
 
             \cf{Rgr}[7]{Learned Pursuit} You gain two extra skill points which must be spent on Strength or Dexterity-based ranger class skills.
 
             \cf{Rgr}[10]{Hunting Style}
-            You learn an additional \textit{hunting style}.
+            You learn an additional \textit{hunting style} from the list below.
+            Whenever you use your \textit{quarry} ability, you can also gain the benefit of one hunting style you know.
+            {
+                \subcf{Anchored}[Magical]
+                Whenever you deal damage to your quarry, it cannot travel extradimensionally until the end of the next round.
+                This blocks teleportation and all planar travel abilities except planar rifts.
+
+                \subcf{Leeching}
+                Whenever you deal damage to your quarry, you heal hit points equal to your level.
+
+                \subcf{Punishing}[Magical]
+                At the end of each round, if your quarry is within \rnglong range of you, it takes life damage equal to your level.
+
+                \subcf{Unerring}
+                You ignore all miss chances and failure chances that would affect attacks and checks you make against your quarry.
+
+                \subcf{Wolfpack}
+                If your quarry is \glossterm{overwhelmed}, it increases its \glossterm{overwhelm penalties} by 1.
+            }
 
             \cf{Rgr}[13]{Lethal Quarry}
             Your accuracy bonus from the \textit{quarry} ability increases to \plus2.
 
             \cf{Rgr}[16]{Hunting Style}
-            You learn an additional \textit{hunting style}.
+            You learn an additional \textit{hunting style} from the list below.
+            Whenever you use your \textit{quarry} ability, you can also gain the benefit of one hunting style you know.
+            {
+                \subcf{16th -- Greater Anchored}[Magical]
+                Your quarry cannot travel extradimensionally.
+                This blocks teleportation and all planar travel abilities except planar rifts.
+
+                \subcf{16th -- Master of the Hunt}
+                Your quarry takes a \minus2 penalty to defenses against attacks from creatures other than you.
+
+                \subcf{16th -- Taunting}
+                Your quarry is \taunted by you as long as it remains your quarry.
+                This is a \glossterm{Delusion}, \glossterm{Mind} effect.
+
+                \subcf{16th -- Terrifying}
+                Your quarry is \frightened by you as long as it remains your quarry.
+                This is a \glossterm{Delusion}, \glossterm{Mind} effect.
+            }
 
 \section{Rogue}\label{Rogue}
     \begin{dtable}
