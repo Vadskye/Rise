@@ -30,7 +30,7 @@
 \newcommand{\spellindirect}[2]{\emph{\hyperlink{spell:#1}{#2}}}
 \newcommand{\ritual}[1]{\emph{#1}}    %Italicize spells
 \newcommand{\cd}[1]{\par \textbf{#1}:}    %Bold class fluff description headers
-\newcommand{\subcf}[1]{\par \emph{#1}:}    %Italicize sub-class-feature headers
+\newcommand{\subcf}[1]{\parhead{#1}}    %Bold sub-class-feature headers
 \newcommand{\subsk}[1]{\par \emph{#1}:}    %Italicize sub-skill headers
 
 \newcommand{\subparhead}[1]{\par\emph{#1}:}
@@ -790,13 +790,13 @@
     \IfValueTF{#3}
     {
         \IfValueTF{#5}
-        { \par \nth{#3}~--~\textbf{#4}~(#5): }
-        { \par \nth{#3}~--~\textbf{#4}: }
+        { \subsubsection{\nth{#3}~--~\textbf{#4}~(#5)} }
+        { \subsubsection{\nth{#3}~--~\textbf{#4}} }
     }
     {
         \IfValueTF{#5}
-        { \par \textbf{#4}~(#5): }
-        { \par \textbf{#4}: }
+        { \subsubsection{\textbf{#4}~(#5)} }
+        { \subsubsection{\textbf{#4}} }
     }
     \IfBooleanF{#1}
     {
