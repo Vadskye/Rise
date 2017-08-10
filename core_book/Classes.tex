@@ -2095,23 +2095,23 @@ This choice determines a great deal about your character's abilities.
             \tb{Level} & \tb{Abilities} \\\bottomrule
             \nth{1}     & Keen vision, quarry
             \\ \nth{2}  & Learned perception, tracker
-            \\ \nth{3}  & Wilderness lore
+            \\ \nth{3}  & Wild exertion
             \\ \nth{4}  & Hunting style
             \\ \nth{5}  & Blindsense
-            \\ \nth{6}  & Survival of the fittest
-            \\ \nth{7}  & Learned pursuit
+            \\ \nth{6}  & Wilderness lore
+            \\ \nth{7}  & Hunting lore
             \\ \nth{8}  & Farsight
-            \\ \nth{9}  & Wilderness lore
+            \\ \nth{9}  & Wild exertion
             \\ \nth{10} & Hunting style
             \\ \nth{11} & Blindsight
             \\ \nth{12} & 
-            \\ \nth{13} & Lethal quarry
+            \\ \nth{13} & Fluid style
             \\ \nth{14} & Greater farsight
-            \\ \nth{15} & 
+            \\ \nth{15} & Wild exertion
             \\ \nth{16} & Hunting style
             \\ \nth{17} & Truesight
             \\ \nth{18} & 
-            \\ \nth{19} & 
+            \\ \nth{19} & Dual quarry
             \\ \nth{20} & 
         \end{dtabularx}
     \end{dtable}
@@ -2242,24 +2242,29 @@ This choice determines a great deal about your character's abilities.
 
             \cf{Rgr}[12]{} 
 
-            \cf{Rgr}[15]{Martial Exertion} 
+            \cf{Rgr}[15]{Wild Exertion} 
             You learn an additional \textit{wild exertion} from the list below.
             As a standard action, you can spend an \glossterm{action point} to use a \textit{wild exertion} ability.
             {
                 % TODO
             }
 
-        \subsection{Focused Hunter}
+        \subsection{Master of the Hunt}
 
-            \cf{Rgr}{Quarry}
-            As a \glossterm{swift action}, you can use this ability.
+            \cf{Rgr}{Quarry}\label{Quarry}
+            At the start of each round, you can spend an \glossterm{action point} to choose a \glossterm{quarry}.
+            This does not take an action, but you can only choose a quarry once per round.
             \begin{ability}
                 \begin{spelltargetinginfo}
                     \spellquicktargeting{One creature}{\rnglong}
                 \end{spelltargetinginfo}
                 \begin{spelleffects}
-                    \spelleffect You gain a \plus5 bonus to checks made to follow the target's tracks, and a \plus1 bonus to \glossterm{accuracy} with \glossterm{strikes} against the target.
+                    \spelleffect You and any allies within range gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{strikes} against the target.
+                    You and your allies affected by this ability are called your \glossterm{hunting party}.
+                    In addition, you gain a \plus5 bonus to checks made to follow the target's tracks.
+
                     This ability lasts the target is \glossterm{defeated}, or until you use this ability again.
+                    If the target is \glossterm{defeated}, you regain the action point spent to use this ability.
                 \end{spelleffects}
             \end{ability}
 
@@ -2270,73 +2275,106 @@ This choice determines a great deal about your character's abilities.
             \cf{Rgr}[4]{Hunting Style}
             You learn specific hunting styles to defeat particular quarries.
             Choose two hunting styles from the list below.
-            Whenever you use your \textit{quarry} ability, you can also gain the benefit of one hunting style you know.
+            Whenever you use your \textit{quarry} ability, you may also use one of your \textit{hunting styles}.
             {
-                \subcf{Executioner}
-                % TODO: clarify timing
-                Whenever you deal damage to your quarry, any damage in excess of its remaining hit points is dealt as \glossterm{vital damage}.
+                \subcf{Brutal Assault}
+                The accuracy bonus from your \textit{quarry} ability is replaced with a \plus1 bonus to \glossterm{strike damage} against the quarry.
 
-                \subcf{Fearsome}
-                Your quarry is \shaken by you as long as it remains your quarry.
-                This is a \glossterm{Delusion}, \glossterm{Mind} effect.
+                At 10th level, the damage bonus applies to all attacks against the target, not just \glossterm{strikes}.
+                At 16th level, the damage bonus is increased to \plus2d.
 
-                \subcf{Goading}
-                Your quarry is \goaded by you as long as it remains your quarry.
-                This is a \glossterm{Delusion}, \glossterm{Mind} effect.
+                \subcf{Coordinated Stealth}
+                The quarry takes a \minus5 penalty to Awareness checks to notice members of your \glossterm{hunting party}.
 
-                \subcf{Inescapable}
-                Whenever you deal damage to your quarry, its movement speed is halved until the end of the next round.
+                At 10th level, your \glossterm{hunting party} gains a \plus2d bonus to damage against the quarry if it is \unaware of every member of the hunting party.
+                At 16th level, the penalty to Awareness checks increases to \minus10.
 
-                \subcf{Persistent}
-                Your quarry remains your quarry even after you use the \textit{quarry} ability again.
-                It remains your quarry until you use this ability again.
+                \subcf{Cover Weaknesses}
+                The accuracy bonus from your \textit{quarry} ability is replaced with a \plus1 bonus to defenses against the quarry's attacks.
+
+                At 10th level, your hunting party gains \glossterm{damage reduction} equal to half your level against the quarry's attacks.
+                At 16th level, the damage reduction increases to be equal to your level.
+
+                \subcf{Merciless}
+                Whenever your \glossterm{hunting party} deals damage to the quarry, any damage in excess of its remaining hit points is dealt as \glossterm{vital damage}.
+
+                At 10th level, you can target two different creatures with your \textit{quarry} ability when you use this hunting style.
+                You regain the action point spent to use the \textit{quarry} ability whenever any quarry is defeated. 
+                At 16th level, you can target up to five creatures instead.
+
+                \subcf{Mystic Guidance}
+                The accuracy bonus from your \textit{quarry} ability applies to all attacks your \glossterm{hunting party} makes against the quarry, instead of only to \glossterm{strikes}.
+
+                At 10th level, whenever your hunting party uses both a \glossterm{strike} and a non-strike attack on the target in the same phase, the accuracy bonus is increased to \plus2 until the end of the round.
+                At 16th level, the accuracy bonus is increased to \plus2 at all times.
+
+                \subcf{Unerring}
+                Your \glossterm{hunting party} ignores any effects that would impose a 20\% miss chance on attacks against the target, such as \glossterm{active cover}.
+
+                At 10th level, the accuracy bonus from your \textit{quarry} ability increases to \plus2.
+                At 16th level, your hunting party ignores any effects that would any miss chance on attacks against the target.
+
+                \subcf{Wolfpack}
+                The quarry moves at half speed if it is threatened by at least two members of your \glossterm{hunting party}.
+
+                At 10th level, the accuracy bonus from your \textit{quarry} ability is increased to \plus2 if the quarry is threatened by at least two members of your \glossterm{hunting party}.
+                At 16th level, the quarry is \immobilized instead of moving at half speed.
             }
 
-            \cf{Rgr}[7]{Learned Pursuit} You gain two extra skill points which must be spent on Strength or Dexterity-based ranger class skills.
+            \cf{Rgr}[7]{Hunting Lore} You gain two extra skill points which must be spent on Strength or Dexterity-based ranger class skills.
 
             \cf{Rgr}[10]{Hunting Style}
             You learn an additional \textit{hunting style} from the list below.
-            Whenever you use your \textit{quarry} ability, you can also gain the benefit of one hunting style you know.
+            Whenever you use your \textit{quarry} ability, you may also use one of your \textit{hunting styles}.
             {
-                \subcf{Anchored}[Magical]
-                Whenever you deal damage to your quarry, it cannot travel extradimensionally until the end of the next round.
-                This blocks teleportation and all planar travel abilities except planar rifts.
+                \subcf{Anchoring}[Magical]
+                As long as your quarry is threatened by at least two members of your \glossterm{hunting party}, it cannot travel extradimensionally.
+                This prevents all \glossterm{Manifestation}, \glossterm{Planar}, and \glossterm{Translocation} effects.
 
-                \subcf{Leeching}
-                Whenever you deal damage to your quarry, you heal hit points equal to your level.
+                At 16th level, this effect instead applies if the target is within \rngmed range of at two members of your hunting party.
 
-                \subcf{Punishing}[Magical]
-                At the end of each round, if your quarry is within \rnglong range of you, it takes life damage equal to your level.
+                \subcf{Decoy}
+                The quarry takes a \minus2 penalty to accuracy on attacks against members of your \glossterm{hunting party} other than you.
 
-                \subcf{Unerring}
-                You ignore all miss chances and failure chances that would affect attacks and checks you make against your quarry.
+                At 16th level, this penalty increases to \minus3.
 
-                \subcf{Wolfpack}
-                If your quarry is \glossterm{overwhelmed}, it increases its \glossterm{overwhelm penalties} by 1.
+                \subcf{Inevitable}[Magical]
+                At the end of each round, the quarry takes life damage equal to your level if at least two members of your \glossterm{hunting party} are within \rngmed range of it.
+
+                At 16th level, this damage is increased to twice your level.
+
+                \subcf{Lifeseal}[Magical]
+                As long as your quarry is threatened by at least two members of your \glossterm{hunting party}, it cannot regain hit points.
+
+                At 16th level, this effect instead applies if the target is within \rngmed range of at two members of your hunting party.
             }
 
-            \cf{Rgr}[13]{Lethal Quarry}
-            Your accuracy bonus from the \textit{quarry} ability increases to \plus2.
+            \cf{Rgr}[13]{Fluid Style}
+            At the start of each round, instead of using your \textit{quarry} ability, you can change which \textit{hunting style} you are using.
+            This does not cost an \glossterm{action point}.
 
             \cf{Rgr}[16]{Hunting Style}
             You learn an additional \textit{hunting style} from the list below.
             Whenever you use your \textit{quarry} ability, you can also gain the benefit of one hunting style you know.
             {
-                \subcf{16th -- Greater Anchored}[Magical]
-                Your quarry cannot travel extradimensionally.
-                This blocks teleportation and all planar travel abilities except planar rifts.
+                \subcf{Astral Convergence}[Magical]
+                During the movement phase, each member of your \glossterm{hunting party} can teleport into a square adjacent within \rngmed range that is adjacent to the quarry instead of moving normally.
 
-                \subcf{16th -- Master of the Hunt}
-                Your quarry takes a \minus2 penalty to defenses against attacks from creatures other than you.
+                \subcf{Martial Suppression}
+                Your \textit{quarry} ability does not grant a bonus to accuracy.
+                Instead, the quarry takes a penalty to accuracy with \glossterm{strikes} equal to the number of members of your \glossterm{hunting party} threatening it.
 
-                \subcf{16th -- Taunting}
-                Your quarry is \taunted by you as long as it remains your quarry.
-                This is a \glossterm{Delusion}, \glossterm{Mind} effect.
+                \subcf{Mystic Suppression}[Magical]
+                Your \textit{quarry} ability does not grant a bonus to accuracy.
+                Instead, the quarry takes a penalty to accuracy with \glossterm{magical} attacks equal to the number of members of your \glossterm{hunting party} threatening it.
 
-                \subcf{16th -- Terrifying}
-                Your quarry is \frightened by you as long as it remains your quarry.
-                This is a \glossterm{Delusion}, \glossterm{Mind} effect.
+                \subcf{Pack Leader}
+                Your \textit{quarry} ability does not grant a bonus to accuracy.
+                Instead, gain a bonus to accuracy with \glossterm{strikes} against the quarry equal to the number of members of your \glossterm{hunting party} threatening it.
             }
+
+            \cf{Rgr}[19]{Dual Quarry} You may use your \textit{quarry} ability twice per round.
+            You may not choose the same target with both quarry abilities.
 
 \section{Rogue}\label{Rogue}
     \begin{dtable}
