@@ -222,54 +222,45 @@
 \newcommand{\conditionlink}[1]{\hyperlink{condition:#1}{#1}\xspace}
 
 %\newcommand{\bewildered}{\conditionlink{bewildered} \reminder{\vulneffect}\xspace}
-\newcommand{\blinded}{\conditionlink{blinded} \reminder{unable to see, defenseless}\xspace}
-\newcommand{\bloodied}{\conditionlink{bloodied} \reminder{half hit points}\xspace}
-\newcommand{\charmed}{\conditionlink{charmed} \reminder{deluded into liking its charmer}\xspace}
-\newcommand{\confused}{\conditionlink{confused} \reminder{randomly babbles, flees, attacks nearest, or acts normally}\xspace}
-\newcommand{\dazzled}{\conditionlink{dazzled} \reminder{20\% miss chance, \minus4 to visual Perception}\xspace}
-\newcommand{\defenseless}{\conditionlink{defenseless} \reminder{\minus5 defense vs. melee}\xspace}
+\newcommand{\blinded}{\conditionlink{blinded} \reminder{unable to see}\xspace}
+\newcommand{\bloodied}{\conditionlink{bloodied} \reminder{\minus4 Fort, Ment}\xspace}
+\newcommand{\charmed}{\conditionlink{charmed} \reminder{likes its charmer}\xspace}
+\newcommand{\confused}{\conditionlink{confused} \reminder{acts randomly}\xspace}
+\newcommand{\defenseless}{\conditionlink{defenseless} \reminder{\minus2 defense vs.\ melee}\xspace}
 \newcommand{\disoriented}{\conditionlink{disoriented} \reminder{moves randomly}\xspace}
-\newcommand{\dominated}{\conditionlink{dominated} \reminder{compelled to obey its dominator}\xspace}
-%\newcommand{\dominated}{\conditionlink{dominated} \reminder{under total mental control}\xspace}
-\newcommand{\exhausted}{\conditionlink{exhausted} \reminder{move at half speed, unable to sprint or charge, impaired}}
-\newcommand{\entangled}{\conditionlink{entangled} \reminder{move at half speed, unable to sprint or charge, impaired}\xspace}
-\newcommand{\fascinated}{\conditionlink{fascinated} \reminder{unable to act unless threatened}}
-\newcommand{\fatigued}{\conditionlink{fatigued} \reminder{move at half speed, unable to sprint or charge}\xspace}
-\newcommand{\frightened}{\conditionlink{frightened} \reminder{50\% failure near its fear}\xspace}
-\newcommand{\dazed}{\conditionlink{dazed} \reminder{unable to act in movement phase}\xspace}
+\newcommand{\dominated}{\conditionlink{dominated} \reminder{obeys its dominator}\xspace}
+\newcommand{\exhausted}{\conditionlink{exhausted} \reminder{half speed, can't sprint, \minus2 to all}}
+\newcommand{\fascinated}{\conditionlink{fascinated} \reminder{can't act until threatened}}
+\newcommand{\fatigued}{\conditionlink{fatigued} \reminder{half speed, can't sprint}\xspace}
+\newcommand{\frightened}{\conditionlink{frightened} \reminder{\minus4 to all while near its fear}\xspace}
+\newcommand{\dazed}{\conditionlink{dazed} \reminder{actions are delayed}\xspace}
+\newcommand{\partiallyblinded}{\conditionlink{dazzled} \reminder{\minus2 to strikes, loses special vision}\xspace}
 \newcommand{\deafened}{\conditionlink{deafened} \reminder{unable to hear}\xspace}
 \newcommand{\disabled}{\conditionlink{disabled} \reminder{at 0 hit points}\xspace}
-\newcommand{\grappled}{\conditionlink{grappled} \reminder{physically wrestling with a foe}\xspace}
-\newcommand{\goaded}{\conditionlink{goaded} \reminder{20\% failure on attacks not against goading creature}\xspace}
-\newcommand{\helpless}{\conditionlink{helpless} \reminder{physical defenses are 10, vulnerable to coup de grace}\xspace}
-\newcommand{\ignited}{\conditionlink{ignited} \reminder{1d6 damage/round, 20\% failure, Dex DR 15 to extinguish}\xspace}
-\newcommand{\immobilized}{\conditionlink{immobilized} \reminder{Unable to leave its location}\xspace}
-\newcommand{\nauseated}{\conditionlink{nauseated} \reminder{unable to act in action phase, move at half speed}\xspace}
-\newcommand{\negativelevel}{\conditionlink{negative level} \reminder{\minus1 to accuracy, defenses, and checks, \minus5 hit points}}
-\newcommand{\negativelevels}{\conditionlink{negative levels} \reminder{\minus1 to accuracy, defenses, and checks, \minus5 hit points}}
+\newcommand{\grappled}{\conditionlink{grappled} \reminder{physically wrestling}\xspace}
+\newcommand{\goaded}{\conditionlink{goaded} \reminder{\minus2 to attacks not against goading creature}\xspace}
+\newcommand{\helpless}{\conditionlink{helpless}\xspace}
+\newcommand{\ignited}{\conditionlink{ignited} \reminder{1d6 damage/round, \minus2 all}\xspace}
+\newcommand{\immobilized}{\conditionlink{immobilized} \reminder{can't leave its location}\xspace}
+\newcommand{\nauseated}{\conditionlink{nauseated} \reminder{\minus4 all}\xspace}
 \newcommand{\panicked}{\conditionlink{panicked} \reminder{flees or cowers from its fear}\xspace}
-\newcommand{\paralyzed}{\conditionlink{paralyzed} \reminder{helpless, unable to move}\xspace}
-\newcommand{\partiallyblinded}{\conditionlink{partially blinded} \reminder{impaired, lose special vision abilities}\xspace}
+\newcommand{\paralyzed}{\conditionlink{paralyzed} \reminder{can't move}\xspace}
 \newcommand{\petrified}{\conditionlink{petrified} \reminder{turned to stone}\xspace}
-\newcommand{\impaired}{\conditionlink{impaired} \reminder{20\% failure}\xspace}
-\newcommand{\prone}{\conditionlink{prone} \reminder{\minus4 to melee accuracy and defense, \plus4 defense vs ranged attacks}}
-\newcommand{\severelyimpaired}{\conditionlink{severely impaired} \reminder{50\% failure}\xspace}
-\newcommand{\shaken}{\conditionlink{shaken} \reminder{20\% failure near its fear}\xspace}
-\newcommand{\sickened}{\conditionlink{sickened} \reminder{moves at half speed}\xspace}
-\newcommand{\slowed}{\conditionlink{slowed} \reminder{unable to act in movement phase, move at half speed}\xspace}
-\newcommand{\staggered}{\conditionlink{staggered} \reminder{unable to act in movement phase}\xspace}
-\newcommand{\stunned}{\conditionlink{stunned} \reminder{unable to take actions}\xspace}
-\newcommand{\taunted}{\conditionlink{taunted} \reminder{50\% failure on attacks not against taunting creature}\xspace}
-\newcommand{\unaware}{\conditionlink{unaware} \reminder{critically hit on every attack}\xspace}
-\newcommand{\unencumbered}{\conditionlink{unencumbered} \reminder{not carrying a heavy load or wearing medium or heavy armor}\xspace}
-\newcommand{\monkunencumbered}{not wearing armor or encumbered by weight (see \pcref{Encumbrance})\xspace}
+\newcommand{\prone}{\conditionlink{prone} \reminder{\minus2 in melee, \plus2 vs ranged}}
+\newcommand{\shaken}{\conditionlink{shaken} \reminder{\minus2 to all while near its fear}\xspace}
+\newcommand{\sickened}{\conditionlink{sickened} \reminder{\minus2 to all}\xspace}
+\newcommand{\slowed}{\conditionlink{slowed} \reminder{moves at half speed}\xspace}
+\newcommand{\staggered}{\conditionlink{staggered} \reminder{\minus4 to all}\xspace}
+\newcommand{\stunned}{\conditionlink{stunned} \reminder{can't take actions}\xspace}
+\newcommand{\taunted}{\conditionlink{taunted} \reminder{\minus4 to attacks not against taunting creature}\xspace}
+\newcommand{\unaware}{\conditionlink{unaware} \reminder{critically hit on every hit}\xspace}
 %\newcommand{\vulnerable}{\conditionlink{vulnerable} \reminder{\vulneffect}\xspace}
 
 \newcommand{\difficultterrain}{\glossterm{difficult terrain} \reminder{half movement speed}\xspace}
 
 \newcommand{\condition}[1]{\parhead{#1}\label{#1}\hypertarget{condition:#1}{}}
 
-\newcommand{\concealment}{concealment \reminder{\plus4 to physical defenses}}
+\newcommand{\concealment}{concealment \reminder{\plus2 to physical defenses}}
 
 \newcommand{\destructivespellnotes}{If a destructive spell deals enough damage to an interposing barrier to shatter or breaks through it, its effects may continue beyond the barrier if the area permits; otherwise, it stops at the barrier just as any other spell effect does.\xspace}
 \newcommand{\cursespellnotes}{Curses cannot be dispelled with \spell{dispel magic}, but can be removed with \spell{break enchantment} or \spell{remove curse}.\xspace}

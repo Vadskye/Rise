@@ -1013,7 +1013,7 @@ def generate_spells():
                 level=3,
                 name="Eyebite",
                 description="""
-                    If the spell's attack succeeds, the target is also \\partiallyblinded. If it critically hits, the target is \\blinded instead of partially blinded.
+                    If the spell's attack hits, the target is also \\dazzled. If it critically hits, the target is \\blinded instead of dazzled.
                 """,
             ),
             Subspell(
@@ -1623,7 +1623,7 @@ def generate_spells():
             attack=Attack(
                 defense='Reflex',
                 success="""
-                    The target is \\partiallyblinded.
+                    The target is \\dazzled.
                 """,
                 critical="""
                     The target is \\blinded instead.

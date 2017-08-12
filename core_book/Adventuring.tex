@@ -203,7 +203,7 @@ In areas of darkness, creatures without darkvision are effectively \blinded.
 
 Characters with low-light vision (elves, gnomes, and half-elves) treat sources of light as if they had double their normal illumination range.
 
-Characters with darkvision (dwarves and half-orcs) can see lit areas normally as well as dark areas within a radius defined by the ability -- usually, 50 feet. A creature can't hide within that range of a character using darkvision unless it is invisible or has cover. Darkvision does not function if the character is in bright light or is dazzled, and does not resume functioning until 1 round the character leaves the area of bright light or stops being dazzled.
+Characters with darkvision (dwarves and half-orcs) can see lit areas normally as well as dark areas within a radius defined by the ability -- usually, 50 feet. A creature can't hide within that range of a character using darkvision unless it is invisible or has cover. Darkvision does not function if the character is in bright light, and does not resume functioning until 1 round the character leaves the area of bright light.
 
 A character with darkvision can see dimly in totally dark areas beyond the range indicated by their ability. They can see in such areas as if the areas were in shadowy illumination.
 
@@ -431,11 +431,17 @@ Any of these substances except for the everburning torch and holy water can be m
 \par Temples to good deities sell holy water at cost (making no profit).
 \parhead{Smokestick} This alchemically treated wooden stick instantly creates thick, opaque smoke when ignited. The smoke fills a 10 foot cube (treat the effect as a fog cloud spell, except that a moderate or stronger wind dissipates the smoke in 1 round). The stick is consumed after 1 round, and the smoke dissipates naturally.
 \parhead{Sunrod} This 1 foot long, gold-tipped, iron rod glows brightly when struck. It clearly illuminates a 20 foot radius and provides shadowy illumination in a 40 foot radius. It glows for 6 hours, after which the gold tip is burned out and worthless.
-\parhead{Tanglefoot Bag} When you throw a tanglefoot bag at a creature (as a ranged touch attack with a \glossterm{range increment} of 10 feet), the bag comes apart and the goo bursts out, causing the target to become \entangled.
-\par The goo becomes tough and resilient upon exposure to air, making it difficult to escape. A creature can break the effect by making a DR 15 Strength check or by dealing 5 points of damage to the goo. Unless the attacker uses a slashing weapon, damage dealt to the goo is also dealt to the creature the goo is on. The goo does not have an Armor defense, and can be hit automatically.
-\par The goo becomes brittle and fragile after 2d4 rounds, cracking apart and losing its effectiveness. An application of universal solvent to a stuck creature dissolves the goo immediately.
-\parhead{Thunderstone} You can throw this stone as a ranged attack with a \glossterm{range increment} of 20 feet. When it strikes a hard surface (or is struck hard), it creates a deafening bang that is treated as a sonic attack. You make a Fortitude attack against each creature within a \areasmall radius spread to deafen them for 5 minutes. Your accuracy on this attack is \plus5. A deafened creature automatically fails Listen checks, takes a \minus2 penalty to any checks which involve hearing, and has a 20\% chance of spell failure when casting spells with verbal components.
-\par Since you don't need to hit a specific target, you can simply aim at a particular 5 foot square. Treat the target square as if its physical defense was 5.
+\parhead{Tanglefoot Bag} When you throw a tanglefoot bag at a creature, make a ranged attack against the target's Reflex defense.
+The bag has a \glossterm{range increment} of 10 feet.
+A hit means the target is \slowed as a \glossterm{condition}.
+A critical hit means the target is \immobilized instead of slowed.
+\par In addition to being removed as a condition, this effect can be broken by dealing 5 points of damage to the goo on the target.
+Unless the attacker uses a slashing weapon, damage dealt to the goo is also dealt to the creature the goo is on.
+The goo does not have an Armor defense, and can be hit automatically.  % that doesn't make sense
+\parhead{Thunderstone} You can throw this stone as a ranged attack with a \glossterm{range increment} of 20 feet.
+When it strikes a hard surface (or is struck hard), it creates a deafening bang that is treated as a sonic attack.
+The creature detonating the stone makes an attack with a \plus5 \glossterm{accuracy} against the Fortitude defense of all creatures within an \areasmall radius burst from the stone.
+A hit against a target means it is \deafened as a \glossterm{condition}.
 \parhead{Tindertwig} The alchemical substance on the end of this small, wooden stick ignites when struck against a rough surface. Creating a flame with a tindertwig is much faster than creating a flame with flint and steel (or a magnifying glass) and tinder. Lighting a torch with a tindertwig is a standard action (rather than a full-round action), and lighting any other fire with one is at least a standard action.
 
 \subsection{Tools and Skill Kits}
