@@ -468,7 +468,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[9]{Empowered Blessing} The damage bonus from your \glossterm{holy blessing} ability increases to \plus3d.
 
         \ff[11]{Angelic Flight} Your \textit{angel wings} grant you a fly speed equal to your land speed.
-        While \unencumbered, you can fly (see \pcref{Flying}).
+        While \glossterm{unencumbered}, you can fly (see \pcref{Flying}).
         You can only fly for a number of rounds equal to half your celestial power.
         After that limit is reached, you must take a \glossterm{short rest} before flying again.
 
@@ -805,7 +805,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \end{ability}
 
         \ff[8]{Lesser Draconic Flight}[Magical] 
-        As a standard action, if you are \unencumbered, you can use your draconic wings to fly with a \glossterm{fly speed} equal to your land speed.
+        As a standard action, if you are \glossterm{unencumbered}, you can use your draconic wings to fly with a \glossterm{fly speed} equal to your land speed.
 
         \ff[10]{Widened Breath} The area affected by of your \textit{breath weapon} increases.
         A line breath weapon becomes a \areahuge, 10 ft.\ wide line.
@@ -1017,11 +1017,13 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[5]{Mighty Telekinesis} You gain a \plus1 bonus to accuracy with the \spell{telekinesis} spell.
 
-        \ff[7]{Residual Energy Burst} When your attack succeeds with your \textit{energy burst} ability, the target suffers an additional effect depending on the energy type chosen.
+        \ff[7]{Residual Energy Burst} When your \textit{energy burst} attack hits, the target suffers an additional effect depending on the energy type chosen.
         These effects are \glossterm{conditions}, and last until they are removed.
         \begin{itemize}
             \item Cold: If target is a creature, it is \fatigued.
-            \item Electricity: If the target is a creature, it is \impaired with attacks and checks.
+                A \glossterm{critical hit} makes the target \exhausted instead.
+            \item Electricity: If the target is a creature, it is \dazed.
+                A \glossterm{critical hit} makes the target \stunned instead.
             \item Fire: The target is \ignited.
             \item Sonic: If the target has \glossterm{hardness}, its hardness is reduced by an amount equal to half your spellpower. Otherwise, if it has \glossterm{damage reduction}, its damage reduction is reduced by amount equal to your spellpower.
         \end{itemize}
