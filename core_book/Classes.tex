@@ -161,11 +161,11 @@ This choice determines a great deal about your character's abilities.
             At 15th level, the temporary hit points increase to four times your Willpower.
 
             \subcf{Demoralizing Shout}
-            Make a Willpower vs. Mental attack against all enemies within an \arealarge radius burst from you.
-            A hit against a target means it is \shaken by you as a \glossterm{condition}.
-            A \glossterm{critical hit} means it is \frightened instead of \shaken.
+            Make a Willpower vs. Mental attack against all enemies within an \areamed radius burst from you.
+            \subparhead{Hit} The target is \shaken by you as a \glossterm{condition}.
+            \subparhead{Critical hit} The target is \frightened by you as a \glossterm{condition}.
 
-            At 9th level, a \glossterm{critical hit} against a target means it is \frightened by you instead of \shaken.
+            At 9th level, the area becomes an \arealarge radius.
             At 15th level, any hit against a target means it is \frightened by you instead of shaken, and a \glossterm{critical hit} against a target means it is \panicked by you instead of frightened.
 
             \subcf{Gut Punch} Make a \glossterm{strike}.
@@ -1092,13 +1092,13 @@ This choice determines a great deal about your character's abilities.
             At the end of each round, you heal hit points equal to your \textit{nature power}.
             \subcf{15th -- Wings}
             You grow wings, granting you a \glossterm{fly speed} equal to your land speed.
-            While \unencumbered, you can fly (see \pcref{Flying}).
+            While \glossterm{unencumbered}, you can fly (see \pcref{Flying}).
             % TODO: standard flight limitation
 
             \subcf{19th -- Solar Radiance}
             The druid continuously radiates bright light out to a 500 foot radius (and shadowy illumination for an additional 500 feet).
             The illumination is so bright that you become hard to look at.
-            Any creature attacking your from within the radius of bright light becomes \partiallyblinded for 2 rounds after the attack.
+            Any creature making a \glossterm{strike} against you from within the radius of bright light becomes \dazzled as a \glossterm{condition} after the attack.
 
             \cf{Drd}[5]{Natural Vigor}
             At the end of each round, you heal hit points equal to half your \textit{nature power}.
@@ -1823,7 +1823,7 @@ This choice determines a great deal about your character's abilities.
             For details about how to fight while unarmed, see \pcref{Unarmed Combat}.
 
             \cf{Mnk}{Unfettered Defense}[Magical]
-            When \monkunencumbered, you gain a \plus2 bonus to Armor defense.
+            When not wearing armor or encumbered by weight (see \pcref{Encumbrance}), you gain a \plus2 bonus to Armor defense.
             You lose this bonus when you are \helpless.
 
             \cf{Mnk}[2]{Unfettered Athletics} You gain two additional skill points that must be spent on Strength or Dexterity-based monk class skills.
@@ -2432,7 +2432,7 @@ This choice determines a great deal about your character's abilities.
             You must be within \rngclose range of a creature to gain this damage bonus.
             In addition, you do not gain this damage bonus against creatures who are immune to \glossterm{critical hits} or who lack a discernible body structure, such as oozes.
 
-            \cf{Rog}[2]{Stealth Lore} You gain two extra skill points which must be spent on the Acrobatics, Awareness, Disguise, Sleight of Hand, or Stealth skills.
+            \cf{Rog}[2]{Stealth Lore} You gain three extra skill points which must be spent on the Acrobatics, Awareness, Disguise, Sleight of Hand, or Stealth skills.
 
             \cf{Rog}[5]{Uncanny Dodge} You can react to danger before your senses would normally allow you to do so.
             You reduce your \glossterm{overwhelm penalties} by 1.
@@ -2457,7 +2457,7 @@ This choice determines a great deal about your character's abilities.
             \cf{Rog}[14]{Greater Sneak Attack}
             The damage bonus from your \textit{sneak attack} ability increases to \plus2d.
 
-            \cf{Rog}[17]{} 
+            \cf{Rog}[17]{Swift Assassination} You can use your \textit{assassinate} ability as a \glossterm{swift action}.
 
         \subsection{Jack of All Trades}
 
@@ -2474,64 +2474,72 @@ This choice determines a great deal about your character's abilities.
 
             \cf{Rog}[16]{Supreme Skill Exemplar} The skill bonus from your \textit{skill exemplar} ability increases to \plus3.
 
+            \cf{Rog}[19]{Legendary Fortune} Whenever you take a \glossterm{short rest}, you also regain one \glossterm{legend point} if you spent one since your last short rest.
+
         \subsection{Scoundrel}
 
             \cf{Rog}[3]{Combat Trick}
             You learn how to confuse and confound your foes in combat.
-            Choose a two combat tricks from the list below.
-            Many combat tricks have a minimum level prerequisite, as indicated in the title of the ability.
+            Choose two \textit{combat tricks} from the list below.
+            As a standard action, you can spend an \glossterm{action point} to use a \textit{combat trick} ability.
+            {
+                \subcf{Bewildering Blow} Make a \glossterm{strike}.
+                If your attack result hits the target's Mental defense, the target is \dazed as a \glossterm{condition}.
+                A \glossterm{critical hit} against Mental defense means the target is \stunned instead of dazed.
 
-            \subparhead{Bewildering Blow} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            \begin{ability}
-                \begin{spelleffects}
-                    % TODO this wording is ugly
-                    \spelleffect Make a \glossterm{strike} against a creature.
-                    If you deal damage to the creature, it is \disoriented.
-                    If you deal damage with a \glossterm{critical hit}, the creature is \stunned instead.
-                    \spelldur Condition
-                \end{spelleffects}
-            \end{ability}
+                \subcf{Gut Punch} Make a \glossterm{strike}.
+                If your attack result hits the target's Fortitude defense, the target is \sickened as a condition.
 
-            \subparhead{Distant Precision} If you have the \textit{sneak attack} ability, the maximum range at which you can use that ability increases to \rnglong.
+                At 9th level, a \glossterm{critical hit} against the target's Fortitude defense makes it \nauseated instead of \sickened.
+                At 15th level, any hit against the target's Fortitude defense makes it \nauseated instead of \sickened.
 
-            \subparhead{Distracting Blow} As a standard action, you can use this ability.
-            \begin{ability}
-                \begin{spelleffects}
-                    % TODO this wording is ugly
-                    \spelleffect Make a \glossterm{strike} against a creature.
-                    If you deal damage to the creature, it automatically fails any Concentration checks it makes until the end of the round (see \pcref{Concentration}).
-                \end{spelleffects}
-            \end{ability}
+                \subcf{Hamstring} Make a \glossterm{strike}.
+                If your attack result hits the target's Fortitude defense, the target is \slowed as a condition.
+                A \glossterm{critical hit} against Fortitude defense means the target is \immobilized instead of slowed.
+            }
 
-            \subparhead{Hamstring} As a standard action, you can use this ability.
-            \begin{ability}
-                \begin{spelleffects}
-                    % TODO this wording is ugly
-                    \spelleffect Make a \glossterm{strike} against a creature.
-                    If you deal damage to the creature, it moves at half speed.
-                    If you deal damage with a \glossterm{critical hit}, the creature is \immobilized instead.
-                    \spelldur Condition
-                \end{spelleffects}
-            \end{ability}
+            % \parhead{Distant Precision} If you have the \textit{sneak attack} ability, the maximum range at which you can use that ability increases to \rnglong.
 
-            \subparhead{Merciful} You take no penalties when using weapons to deal \glossterm{nonlethal damage}.
+            % \parhead{Merciful} You take no penalties when using weapons to deal \glossterm{nonlethal damage}.
 
             %TODO: make poison work
             %\subcf{Swift Poisoner}
             %The rogue can apply poison to a weapon you are holding as a swift action.
 
-            \subparhead{Tricky Maneuvers} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{combat maneuvers}.
+            % \parhead{Tricky Maneuvers} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{combat maneuvers}.
 
             \cf{Rog}[6]{Ambush Attack}
             You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{strikes} against creatures who did not \glossterm{threaten} you at the start of the round.
 
-            \cf{Rog}[9]{Lucky Slip} Once per round, when you are hit by a \glossterm{strike}, you can spend an \glossterm{action point} to use this ability.
+            \cf{Rog}[9]{Combat Trick}
+            You learn an additional \textit{combat trick} from the list below.
+            As a standard action, you can spend an \glossterm{action point} to use a \textit{combat trick} ability.
+            {
+                \subcf{Certain Strike} You can make a \glossterm{strike} with a \plus2 bonus to accuracy.
+
+                At 15th level, the accuracy bonus increases to \plus3.
+
+                \subcf{Distracting Blow} Make a \glossterm{strike}.
+                If it hits, the target automatically fails all Concentration checks it makes that phase.
+                In addition, if it took the \textit{recover} or \textit{desperate recovery} actions during the current phase, those actions fail with no effect.
+
+                At 15th level, the effects occur even if the strike misses.
+
+                \subcf{Penetrating Strike} Make a \glossterm{strike}.
+                The attack is made against the target's Reflex defense instead of its Armor defense.
+
+                At 15th level, you gain a \plus1d bonus to damage if you hit both the target's Reflex defense and Armor defense.
+            }
+
+            \cf{Rog}[12]{Lucky Slip}
+            Once per round, when you are hit by an attack, you can spend an \glossterm{action point} to use this ability.
             If you do, the attacking creature rerolls the attack roll.
 
-            \cf{Rog}[12]{Combat Trick}
-            You learn an additional \textit{combat trick}.
-
-            \cf{Rog}[15]{Twist of Fate} You can use your \textit{lucky slip} ability against any successful attack, not just a \glossterm{strike}.
+            \cf{Rog}[15]{Combat Trick}
+            You learn an additional \textit{combat trick} from the list below.
+            As a standard action, you can spend an \glossterm{action point} to use a \textit{combat trick} ability.
+            {
+            }
 
             \cf{Rog}[18]{Greater Ambush Attack}
             The accuracy bonus from your \textit{ambush attack} ability increases to \plus2.
