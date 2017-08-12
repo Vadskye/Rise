@@ -18,7 +18,7 @@ For details, see \pcref{Action Points}.
 \glossdef{Air} See \pcref{Ability Tags}.
 
 \glossdef{ally}[allies] Many abilities affect allies.
-An ally is any creature you designate who is willing to be considered an ally, including yourself.
+An ally is any creature you designate who is willing to be considered an ally, not including yourself.
 
 \glossdef{attack}[attacks] Anything that affects another creature in a potentially harmful way. There are two kinds of attacks: \glossterm{physical} attacks and \glossterm{magical} attacks.
 
@@ -42,6 +42,8 @@ You can apply any number of augments to a spell in this way, increasing the spel
 
 \glossdef{base bonus} A base bonus is the value of a bonus before any temporary modifiers or effects. For example, your base Fortitude defense bonus is equal to the Fortitude defense bonus granted by your class.
 
+\condition{blinded} A blinded creature cannot see. It automatically fails at actions which depend on vision, including simply seeing the locations of other objects and creatures (but see \pcref{Awareness}). It has a 50\% miss chance with \glossterm{strikes} and vision-related checks, even if it knows the location of its target. Finally, it is \defenseless.
+
 \glossdef{blindsense} A creature with blindsense can sense its surroundings without any light, regardless of concealment or invisiblity.
 It knows the location of everything around it, but it still takes normal failure chances for concealment, invisibility, and so on.
 It still needs line of effect to see its surroundings.
@@ -50,6 +52,8 @@ Blindsense always has a range, and grants no benefits beyond that range.
 \glossdef{blindsight} A creature with blindsight can ``see'' its surroundings perfectly without any light, regardless of concealment or invisibility.
 It still needs line of effect to see its surroundings.
 Blindsight always has a range, and grants no benefits beyond that range.
+
+\condition{bloodied} At or below half hit points. Bloodied creatures take a \minus4 penalty to Fortitude and Mental defense.
 
 \glossdef{broken} A broken object is damaged and unsuitable for use, though it retains its general structure. Both magical and mundane objects can be repaired for a cost equal to 10\% of their value. You must be able to craft the item originally to repair it.
 
@@ -67,6 +71,11 @@ It is described at \pcref{Charge}.
 
 \glossdef{character level} Your character level is your total level, including levels from all of your classes.
 Whenever text refers to your ``level'', without specifying a particular kind of level, it means your character level.
+
+\condition{charmed} A charmed creature is mentally influenced to like another creature.
+It always sees the words and actions of the creature that charmed it in the most favorable way, as a close friend or trusted ally.
+A charmed creature cannot be controlled like an automaton, but can be persuaded to take particular actions with the Persuasion skill (see \pcref{Persuasion}).
+It treats the creature that charmed it as a friend (a \plus10 relationship modifier) for the purpose of Persuasion checks.
 
 \glossdef{class skill}[class skills] A class skill is a skill which you can train with using \glossterm{skill points} from your class. For details, see \pcref{Skill Training}.
 
@@ -86,6 +95,8 @@ They are described in \tref{Common Languages}.
 \glossdef{concealment} Concealment represents effects which make a target harder to see, such as shadowy lighting.
 You take a \minus4 penalty to accuracy with physical attacks against creatures and objects that have concealment from you.
 
+\condition{confused} A confused creature is unable to independently control its actions. \confusionexplanation
+
 \glossdef{coup de grace} A coup de grace is a powerful attack that you can use on \helpless creatures.
 It requires a full-round action, but can instantly kill the target.
 For details, see \pcref{Coup de Grace}.
@@ -95,6 +106,9 @@ There are three kinds of cover: \glossterm{active cover}, \glossterm{passive cov
 For details, see \pcref{Cover}.
 
 \glossdef{Creation} See \pcref{Ability Tags}.
+
+\condition{crouching} A crouching creature gains a \plus1 bonus to physical defenses against ranged attacks.
+However, it takes a \minus1 penalty to physical \glossterm{accuracy} with melee attacks and physical defenses against melee attacks, and moves at half speed.
 
 \glossdef{Curse} See \pcref{Ability Tags}.
 
@@ -137,6 +151,18 @@ However, if you were instead hit by a club and a \spell{fireball} spell (fire da
 Beyond that, it can see dimly, treating areas of darkness as shadowy illumination.
 Darkvision does not function if a creature is in a brightly lit area, and does not resume functioning until 1 round after the creature leaves the brightly lit area.
 
+\condition{dazed} A dazed creature acts during the \glossterm{delayed action phase} instead of the \glossterm{action phase}.
+
+\condition{dazzled} A dazzled creature has difficulty seeing.
+It loses any special vision abilities it has, such as \glossterm{darkvision} or \glossterm{low-light vision}.
+In addition, it takes a \minus2 penalty to \glossterm{accuracy} with \glossterm{strikes} and vision-related checks.
+
+\condition{dead} A dead creature's soul leaves its body. Dead creatures cannot benefit from normal or magical healing, but they can be restored to life via magic (see \pcref{Resurrecting the Dead}). A dead body decays normally unless magically preserved.
+
+\condition{deafened} A deafened creature cannot hear. It automatically fails at actions which depend on hearing. In addition, it has a 20\% failure chance when casting any spell with verbal components.
+
+\condition{defenseless} A defenseless creature is unable to defend itself in melee combat. It takes a \minus2 penalty to physical defenses against melee attacks. Any creature not capable of using a weapon or shield to defend itself, such as most unarmed creatures, is defenseless.
+
 \glossdef{Death} See \pcref{Ability Tags}.
 
 \glossdef{defeated} An enemy is defeated if it dies, surrenders or is incapacitated for an extended period of time (such as by being knocked unconscious).
@@ -164,10 +190,22 @@ In general, attacks are rolled to beat \glossterm{defenses}, and checks are roll
 \glossdef{dirty trick} A dirty trick is a light \glossterm{combat maneuver} that allows you to impair a foe with your environment.
 For details, see \pcref{Dirty Trick}.
 
+\condition{disabled} A disabled creature has no hit points remaining.
+It takes a \minus4 penalty to \glossterm{accuracy} and checks.
+
 \glossdef{disarm} A disarm is a light \glossterm{combat maneuver} that allows you to strike items held or worn by a creature.
 For details, see \pcref{Disarm}.
 
 \glossdef{disease} An affliction of the body, causing a steady deterioration over time. For the Disease spell tag, see \pcref{Ability Tags}.
+
+\condition{disoriented} During each movement phase, a disoriented creature is compelled to move its full speed in a random direction.
+It moves as far as it can, but will not sprint or take similar strenuous actions to increase its speed.
+
+\condition{dominated} A charmed creature is mentally compelled to obey another creature.
+It obeys the commands of the creature of the dominated it unquestioningly, as an automaton.
+If it does not understand the language of the creature that dominated it, it still attempts to obey as much as possible, and simple commmands (such as ``attack'' or ``follow'') can usually be communicated successfully.
+
+\condition{dying} A dying creature is unconscious and near death. See \pcref{Dying}.
 
 \glossdef{Earth} See \pcref{Ability Tags}.
 
@@ -179,6 +217,8 @@ For details, see \pcref{Disarm}.
 An emanation ability has effects within an area for the duration of the ability.
 It emanates from a specific creature or object, rather than a location.
 If that creature or object moves, the emanation moves with it.
+
+\condition{encumbered} An encumbered creature has its motion restricted by armor or weight. It may be unable to use certain class ability and abilities which require free motion. See \pcref{Encumbrance} for details.
 
 \glossdef{encumbrance penalty} A character's encumbrance penalty applies to all Strength and Dexterity-based skill checks the character makes.
 A character can acquire an encumbrance penalty by wearing armor or by carrying an excessive weight (see \tref{Weight Limits}).
@@ -197,11 +237,17 @@ See \pcref{Armor Enhancement Bonuses} and \pcref{Weapon Enhancement Bonuses} for
 
 \glossdef{evil}[Evil] One of the four \glossterm{alignment} components. For the Evil spell tag, see \pcref{Ability Tags}.
 
+\condition{exhausted} An exhausted creature moves at half speed, cannot sprint (see \pcref{Sprint}), and takes a \minus2 penalty to \glossterm{accuracy}, checks, and defenses.
+
 \glossdef{falling damage} For every 10 feet you fall, you take 1d6 bludgeoning damage, to a maximum of 20d6 damage.
 If you control your fall with a successful Acrobatics or Jump check, you can reduce the falling damage you take (see \pcref{Acrobatics}, and \pcref{Jump}).
 
+\condition{fascinated} A fascinated creature can take no actions. It remains in place, giving its total attention to some object, creature, or effect. It takes a \minus4 penalty to skill checks made as reactions, such as Awareness checks. If the creature notices any threat against it, such as an approaching enemy, it is no longer fascinated.
+
 \glossdef{fast healing} A creature with fast healing automatically heals hit points at the end of every round.
 Like other healing, this healing offsets damage taken during the round for the purposes of taking \glossterm{vital damage} and becoming \disabled.
+
+\condition{fatigued} A fatigued creature moves at half speed and cannot sprint (see \pcref{Sprint}).
 
 \glossdef{feint} A feint is a light \glossterm{combat maneuver} that allows you to trick a creature into lowering its defenses.
 For details, see \pcref{Feint}.
@@ -224,15 +270,39 @@ For details, see \pcref{Flying}.
 Free actions can be taken in any phase.
 For details, see \pcref{Free Actions}.
 
+\condition{frightened} A frightened creature takes a \minus4 penalty to \glossterm{accuracy} and checks as long as it is within \rngmed range of the source of its fear.
+These penalties do not stack with the penalties for being \shaken or \panicked.
+
+If the source of a frightened creature's fear is a creature and is \glossterm{defeated}, this effect is broken.
+
 \glossdef{Glamer} See \pcref{Ability Tags}.
+
+\condition{goaded} A goaded creature wants to attack the creature that it is goaded by.
+If it is within \rngmed range of the taunting creature, it is takes a \minus2 to all attacks that do not directly affect that creature.
+If that creature is rendered \helpless, surrenders, or is otherwise unable to fight, this effect immediately ends.
+The \conditionlink{taunted} condition is a more severe version of this effect.
 
 \glossdef{good}[Good] One of the four \glossterm{alignment} components. For the Evil spell tag, see \pcref{Ability Tags}.
 
 \glossdef{grapple} A grapple is a heavy \glossterm{combat maneuver} that allows you to physically restrain a creature.
 For details, see \pcref{Grapple}.
 
+\condition{grappled} A grappled creature is in wrestling or some other form of hand-to-hand struggle with one or more attackers. While grappled, you suffer certain penalties and restrictions, as described below.
+
+\begin{itemize}
+    \item You must use a free hand (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands. If you cannot free a hand, you suffer a \minus10 penalty to accuracy with all physical attacks, including grapple attacks, until you have a free hand.
+    \item You take a \minus4 penalty to physical defenses against creatures you are not grappling with.
+    \item You take a \minus4 penalty to accuracy with weapons that are not light, since they are too large and cumbersome to be used effectively in a grapple.
+    \item Spellcasting is extremely difficult. You cannot cast spells with somatic components. Casting a spell without somatic components requires a Concentration check with a DR equal to 20 \add double spell level (see \pcref{Concentration}).
+    \item You cannot move normally (but see Move the Grapple, below).
+\end{itemize}
+
+Other than the restrictions listed above, you can act normally. You can also try to move the grapple, escape the grapple, or pin your opponent. See \pref{Grapple} for more information.
+
 \glossdef{hardness} An object's hardness indicates how durable it is.
 Whenever a creature or object with hardness takes damage, it reduces that damage by an amount equal to its hardness.
+
+\condition{helpless} A helpless creature is completely at an opponent's mercy. Its physical defenses are equal to 10 \add its size modifier. Paralyzed, bound, and unconscious creatures are helpless. Helpless creatures can be killed instantly by a coup de grace (see \pcref{Coup de Grace}).
 
 \glossdef{hidden task}[hidden tasks] Any checks for a hidden \glossterm{task} should be rolled secretly by the GM.\@
 You should not know the result of your character's check, or even that a check was made.
@@ -247,12 +317,20 @@ For details, see \pcref{Combat Maneuvers}.
 
 \glossdef{hunting party} A hunting party is the group of allies affected by a ranger's \textit{quarry} ability (see \pcref{Quarry}).
 
+\condition{ignited} An ignited creature has been set on fire.
+It takes 1d6 fire damage at the end of each round, and takes a \minus2 penalty to \glossterm{accuracy}, checks, and defenses.
+As a move action, an ignited creature can make a DR 10 Dexterity check to put out the flames.
+This action requires a free hand.
+Dropping prone as part of the action gives a \plus5 bonus on this check.
+
 \glossdef{Imbuement} See \pcref{Ability Tags}.
 
 \glossdef{immediate action}[immediate actions] Each round, you can take a single swift or immmediate action.
 You can take immediate actions at any time, even in the middle of another creature's action.
 All immediate actions have a specific triggering condition which allows you to take the action.
 For details, see \pcref{Swift and Immediate Actions}.
+
+\condition{immobilized} An immobilized creature can't move out of the space it was in when it became immobilized. Immobilized flying creatures that have the ability to hover can maintain their initial altitude. All other flying creatures subjected to this condition descend at a rate of 20 feet per round until they reach the ground, taking no falling damage.
 
 \glossdef{incorporeal} An incorporeal creature does not have a body.
 It has no Strength or Constitution attributes.
@@ -273,6 +351,8 @@ In that case, immediately take all steps necessary to ``catch up'' to the curren
 For example, the Counterattack feat (see \featpref{Counterattack}) allows you to initiate a strike as an immediate action if another creature initiates a strike aginst you.
 
 \glossdef{Instantaneous} See \pcref{Ability Tags}.
+
+\condition{invisible} An invisible creature or object cannot be seen. Creatures unable to see an invisible creature are \defenseless against its attacks. Attackers suffer a 50\% miss chance even if they know the location of the invisible creature. See \pcref{Awareness}, and \pcref{Stealth}, for how to identify invisible creatures.
 
 \glossdef{key attribute} The key attribute for a skill is the attribute associated with that skill.
 For example, Sprint is a Strength-based skill.
@@ -312,6 +392,8 @@ For details, see \pcref{Magical Abilities}.
 
 \glossdef{Manifestation} See \pcref{Ability Tags}.
 
+\glossdef{melee attack} A melee attack is a physical \glossterm{attack} against a creature within your \glossterm{reach}.
+
 \glossdef{miscast} If your concentration is disrupted while casting a \glossterm{spell}, you miscast the spell instead.
 The spell does not have its normal effect.
 Instead, a damaging \glossterm{miscast backlash} occurs.
@@ -320,8 +402,6 @@ Instead, a damaging \glossterm{miscast backlash} occurs.
 For details, see \pcref{Miscasting}.
 
 \glossdef{Mind} See \pcref{Ability Tags}.
-
-\glossdef{melee attack} A melee attack is a physical \glossterm{attack} against a creature within your \glossterm{reach}.
 
 \glossdef{Morale} See \pcref{Ability Tags}.
 
@@ -336,6 +416,9 @@ For the act of moving from one place to another, see \glossterm{move}.
 \glossdef{movement phase} The movement phase is the first of two \glossterm{phases} in a combat \glossterm{round}.
 During the movement phase, creatures can \glossterm{move} and take \glossterm{move actions}.
 The movement phase is followed by the \glossterm{action phase}.
+
+\condition{nauseated} A nauseated creature takes a \minus4 penalty to \glossterm{accuracy}, checks, and defenses.
+These penalties do not stack with the penalties for being \sickened.
 
 \glossdef{Negative} See \pcref{Ability Tags}.
 
@@ -360,6 +443,17 @@ A creature suffering overwhelm penalties is \glossterm{overwhelmed}.
 \glossdef{outsider} An outsider is a type of creature.
 Outsiders are composed of planar material from a plane other than the Material Plane.
 
+\condition{panicked} A panicked creature takes a \minus4 penalty to \glossterm{accuracy} and checks as long as it is within \rngmed range of the source of its fear.
+In addition, it must flee from the source of its fear by any means necessary if it is within that range.
+If unable to flee, it must do nothing other than take the \glossterm{total defense} action every round (see \pcref{Total Defense}).
+These penalties do not stack with the penalties for being \shaken or \panicked.
+
+If the source of a panicked creature's fear is a creature and is \glossterm{defeated}, this effect is broken.
+
+\condition{paralyzed} A paralyzed creature is unable to take physical actions. It has effective Dexterity and Strength scores of \minus10 and is \helpless, but can take purely mental actions. This can cause flying creatures to crash, swimming creatures to drown, and so on. A creature can move through a space occupied by a paralyzed creature -- ally or otherwise. Each square occupied by a paralyzed creature, however, counts as 2 squares.
+
+\condition{petrified} A petrified creature has been turned to stone. It is neither alive nor dead, but is unconscious and unable to take actions, and its body is an inanimate statue. If the statue is broken or damaged before the creature is restored to its original state, the creature has equivalent damage or deformities.
+
 \glossdef{phase}[phases] A phase is part of the combat \glossterm{round}.
 There are two phases: the \glossterm{movement phase} and the \glossterm{action phase}.
 A phase does not represent a fixed span of time.
@@ -375,6 +469,11 @@ For details, see \pcref{Physical Abilities}.
 
 \glossdef{physical defenses}[physical defense] Your physical defenses are your Armor and Reflex defenses.
 For details, see \pcref{Defenses}.
+
+\condition{pinned} A pinned creature is held completely immobile in a grapple.
+The only physical actions it can make are to escape the grapple (see \pcref{Grappling}).
+Like a \glossterm{helpless} creature, its physical defenses are equal to 10 \add its size modifier.
+Unlike a helpless creature, a pinned creature cannot be killed instantly by a coup de grace.
 
 \glossdef{Planar} See \pcref{Ability Tags}.
 
@@ -392,6 +491,12 @@ In addition, points of origin are used to calculate \glossterm{cover} and \gloss
 \glossdef{power} The power of an \glossterm{ability} represents how strong the ability is.
 Each ability uses a particular kind of power, which is usually calculated in a unique way.
 For example, spells use \glossterm{spellpower}, and class abilities typically use a power specified in the class description.
+
+\condition{prone} A prone creature is lying on the ground, rather than standing normally.
+It takes a \minus2 penalty to \glossterm{accuracy} with physical melee attacks and physical defenses.
+It gains a \minus2 bonus to physical defenses against ranged attacks.
+A creature can stand up from being prone instead of moving during the movement phase.
+This generally requires one free hand.
 
 \glossdef{random effect}[random effects] Random effects change what they do based on a specific die roll.
 This does not include effects which require a successful attack or similar roll.
@@ -424,10 +529,18 @@ It gains a \plus10 bonus to scent-based Awareness checks (see \pcref{Senses}).
 
 \glossdef{Scrying} See \pcref{Ability Tags}.
 
+\condition{shaken} A shaken creature takes a \minus2 penalty to \glossterm{accuracy}, checks, and defenses as long as it is within 100 feet of the source of its fear.
+These penalties do not stack with the penalties for being \frightened or \panicked.
+
+If the source of a shaken creature's fear is a creature and is \glossterm{defeated}, this effect is broken.
+
 \glossdef{Shielding} See \pcref{Ability Tags}.
 
 \glossdef{shove} A shove is a heavy \glossterm{combat maneuver} that allows you to move a creature.
 For details, see \pcref{Shove}.
+
+\condition{sickened} A sickened creature takes a \minus2 penalty to \glossterm{accuracy}, checks, and defenses.
+These penalties do not stack with the penalties for being \nauseated.
 
 \glossdef{Sizing} See \pcref{Ability Tags}.
 
@@ -438,6 +551,8 @@ For details, see \pcref{Skill Points}.
 
 \glossdef{skill training modifier} A skill training modifier is the base modifier used to make attacks and checks with a skill.
 For details, see \pcref{Skill Training}.
+
+\condition{slowed} A slowed creature cannot act during the movement phase, and moves at half speed.
 
 \glossdef{somatic components}[somatic] Somatic components are hand motions required to cast most spells.
 For details, see \pcref{Components}.
@@ -458,7 +573,17 @@ Mages cast arcane spells, clerics cast divine spells, and druids cast nature spe
 \glossdef{square} A square represents a single 5-ft.\ by 5-ft.\ space.
 A typical Medium creature occupies a single square in combat.
 
+\condition{squeezing} A squeezing creature is trying to move though an area too small for it to fight in normally.
+While squeezing, a creature moves at half speed and takes a \minus2 penalty to physical accuracy, physical checks, and physical defenses.
+For details, see \pcref{Squeezing}.
+
 \glossdef{stabilization roll}[stabilization rolls] A roll made when a creature is \conditionlink{dying} to see if it stabilizes or dies. For details, see \pcref{Injury, Death, and Healing}.
+
+\parhead{Stable} A creature who was dying but who has stopped losing hit points and still has vital damage is stable. The creature is no longer dying, but is still unconscious. See \pcref{Stable}.
+
+\condition{staggered} A staggered creature is temporarily overwhelmed by physical trauma.
+It takes a \minus4 penalty to attack, checks, and defenses.
+The first time you become \glossterm{bloodied} in an encounter, you become staggered until the end of the next round.
 
 \glossdef{standard action} You can use a standard action to attack with a weapon, cast a spell, drink a potion, and do most other things that take concentration and effort.
 
@@ -474,6 +599,8 @@ For details, see \pcref{Strike Accuracy}, and \pcref{Strike Damage}.
 \glossdef{strike damage} The damage you deal with a single \glossterm{strike} from a weapon is called your \glossterm{strike damage}.
 For details on calculating your strike damage, see \pcref{Strike Damage}.
 Some abilities other than \glossterm{strikes} deal damage based on your \glossterm{strike damage}.
+
+\condition{stunned} A stunned creature cannot take any actions during the \glossterm{action phase} or \glossterm{delayed action phase} except the \textit{recover} and \textit{desperate recovery} actions (see \pcref{Recover}, and \pcref{Desperate Recovery}).
 
 \glossdef{Subtle} See \pcref{Ability Tags}.
 
@@ -499,6 +626,11 @@ For example, \spell{acid splash} and \spell{magic missile} are targeted spells, 
 \glossdef{task} A task is a particular way to use a \glossterm{skill}.
 For example, balancing on slippery ground is a task that you can use the Acrobatics skill for (see \pcref{Balance}).
 For details, see \pcref{Tasks}.
+
+\condition{taunted} A taunted creature is compelled to attack the creature that it is taunted by.
+If it is within \rngmed range of the taunting creature, it takes a \minus4 penalty to \glossterm{accuracy} with all attacks that do not directly affect that creature.
+If that creature is rendered \helpless, surrenders, or is otherwise unable to fight, this effect immediately ends.
+The \conditionlink{goaded} condition is a less severe version of this effect.
 
 \glossdef{Teleportation} See \pcref{Ability Tags}.
 
@@ -529,6 +661,10 @@ Tremorsense always has a range, and grants no benefits beyond that range.
 
 \glossdef{unarmed attack} Every corporeal creature is capable of making an attack using its bare fists (or similar appendages).
 For details, see \pcref{Unarmed Combat}.
+
+\condition{unaware} An unaware creature does not know that it is being attacked. Successful physical attacks against an unaware creature automatically threaten critical hits. After being attacked, an unaware creature typically stops being unaware of future attacks, even if cannot see or identify its attacker.
+
+\condition{unencumbered} An unencumbered creature does not have its motion restricted by armor or weight. See \pcref{Encumbrance} for details.
 
 \glossdef{verbal components}[verbal] Verbal components are words required to cast most spells.
 For details, see \pcref{Components}.
