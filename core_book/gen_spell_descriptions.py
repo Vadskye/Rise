@@ -1792,6 +1792,17 @@ def generate_spells():
                     The maximum distance the target can teleport is increased to one mile.
                 """,
             ),
+            Subspell(
+                level=3,
+                name="Dimension Door",
+                targeting=Targeting(
+                    target='You',
+                ),
+                description="""
+                    You teleport to a location within \\rngext range of you.
+                    You must clearly visualize the destination, but you do not need \\glossterm<line of sight> or \\glossterm<line of effect> to your destination.
+                """,
+            ),
         ],
         category='narrative',
     ))
