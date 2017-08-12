@@ -491,7 +491,7 @@ Its effect is still a condition, and can be removed by abilites that remove cond
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{3}{Eyebite}
-If the spell's attack succeeds, the target is also \partiallyblinded. If it critically hits, the target is \blinded instead of partially blinded.
+If the spell's attack hits, the target is also \dazzled. If it critically hits, the target is \blinded instead of dazzled.
 \augment{3}{Finger of Death}
 If the spell's attack critically hits, the target immediately dies.
 \par
@@ -824,7 +824,7 @@ A brilliant light appears in the area until the end of the round.
 It illuminates a 100 foot radius around the area with bright light.
 \begin{spellattack}{Spellpower vs. Reflex}
 \spellsuccess
-The target is \partiallyblinded.
+The target is \dazzled.
 \spellcritical
 The target is \blinded instead.
 \end{spellattack}
@@ -1381,6 +1381,39 @@ The target floats in midair, unaffected by gravity.
 During the movement phase, you can move the target up to ten feet in any direction.
 \spelldur Sustain (swift)
 \end{augmenteffects}
+\end{spellcontent}
+\begin{spellsection}{Teleport}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{\spelltgt{One willing creature (Medium or smaller)}}{\spellrng{\rngclose}}
+\end{spelltargetinginfo}
+\begin{spelleffects}
+\spelleffect
+The target teleports into an unoccupied destination within \rngmed range of its original location.
+If the destination is invalid, the spell fails.
+\spelltags{\glossterm{Teleportation}}
+\end{spelleffects}
+\end{spellcontent}
+\begin{spellfooter}
+\spellinfo{Conjuration}{Arcane}
+\parhead*{Augments} Extended, Mass, Quickened, Silent, Stilled
+\end{spellfooter}
+\begin{spellsubcontent}
+\begin{spellcantrip}
+cantripeffect
+\end{spellcantrip}
+\end{spellsubcontent}
+\end{spellsection}
+\subsubsection{Subspells}
+\augment{2}{Distant}
+The maximum distance the target can teleport is increased to \rnglong.
+\augment{5}{Overland Transit}
+The maximum distance the target can teleport is increased to one mile.
+Replace the spell's targets with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgts{Up to five willing creatures (Medium or smaller)}}{\spellrng{\rngclose}}
+\end{augmenttargetinginfo}
 \end{spellcontent}
 \begin{spellsection}{Water Mastery}
 \begin{spellheader}

@@ -1756,6 +1756,46 @@ def generate_spells():
         category='buff, offense',
     ))
 
+    spells.append(Spell(
+        name="Teleport",
+        # header=Header("description"),
+        targeting=Targeting(
+            target='One willing creature (Medium or smaller)',
+            rng='close',
+        ),
+        effects=Effects(
+            effect="""
+                The target teleports into an unoccupied destination within \\rngmed range of its original location.
+                If the destination is invalid, the spell fails.
+            """,
+            tags=['Teleportation'],
+        ),
+        schools=['Conjuration'],
+        lists=['Arcane'],
+        cantrip="cantripeffect",
+        subspells=[
+            Subspell(
+                level=2,
+                name="Distant",
+                description="""
+                    The maximum distance the target can teleport is increased to \\rnglong.
+                """,
+            ),
+            Subspell(
+                level=5,
+                name="Overland Transit",
+                targeting=Targeting(
+                    targets='Up to five willing creatures (Medium or smaller)',
+                    rng='close',
+                ),
+                description="""
+                    The maximum distance the target can teleport is increased to one mile.
+                """,
+            ),
+        ],
+        category='narrative',
+    ))
+
     return sorted(spells, key=lambda spell: spell.name)
 
 
