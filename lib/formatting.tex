@@ -8,14 +8,13 @@
 
 %make bigger section headers
 \titleformat*{\section}{\LARGE\bfseries}
-%\titleformat*{\subsection}{\Large}
-\titleformat*{\subsubsection}{\large\bfseries}
+\titleformat*{\subsubsection}{\large}
 
 \titleformat{\subsection}
   {\Large\bfseries}   % The style of the section title
-  {}                             % a prefix
+  {}                             % a label prefix
   {0pt}                          % How much space exists between the prefix and the title
-  {}    % How the section is represented
+  {}    % A code representing the section
 
 %Format the page margins
 \addtolength{\voffset}{-1in}
