@@ -1778,18 +1778,7 @@ def generate_spells():
                 level=2,
                 name="Distant",
                 description="""
-                    The maximum distance the target can teleport is increased to \\rnglong.
-                """,
-            ),
-            Subspell(
-                level=5,
-                name="Overland Transit",
-                targeting=Targeting(
-                    targets='Up to five willing creatures (Medium or smaller)',
-                    rng='close',
-                ),
-                description="""
-                    The maximum distance the target can teleport is increased to one mile.
+                    The maximum distance the target can teleport is increased to \\rngext.
                 """,
             ),
             Subspell(
@@ -1800,7 +1789,7 @@ def generate_spells():
                 ),
                 description="""
                     You teleport to a location within \\rngext range of you.
-                    You must clearly visualize the destination, but you do not need \\glossterm<line of sight> or \\glossterm<line of effect> to your destination.
+                    You must clearly visualize the destination's appearance, but you do not need \\glossterm<line of sight> or \\glossterm<line of effect> to your destination.
                 """,
             ),
         ],
