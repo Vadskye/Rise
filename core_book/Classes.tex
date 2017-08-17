@@ -113,19 +113,15 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Bbn}{Rage} 
         As a \glossterm{free action}, you can spend an \glossterm{action point} to use this ability.
-        \begin{ability}
-            \begin{spelleffects}
-                \spelleffect You have the following benefits and drawbacks:
-                \begin{itemize}
-                    \item You gain a \plus1d bonus to \glossterm{strike damage}.
-                    \item You are unable to take any action that requires patience or concentration, such as casting spells.
-                    \item At the end of each round, if you did not attack a creature or object, you take \glossterm{nonlethal damage} equal to your level.
-                        This damage ignores damage reduction and any similar abilities.
-                \end{itemize}
-                \spellspecial When this ability ends, you become \fatigued and unable to use it again until you take a \glossterm{short rest}.
-                \spelldur Attunement
-            \end{spelleffects}
-        \end{ability}
+        If you do, you gain the following benefits and drawbacks:
+        \begin{itemize}
+            \item You gain a \plus1d bonus to \glossterm{strike damage}.
+            \item You are unable to take any action that requires patience or concentration, such as casting spells.
+            \item At the end of each round, if you did not attack a creature or object, you take \glossterm{nonlethal damage} equal to your level.
+                This damage ignores damage reduction and any similar abilities.
+        \end{itemize}
+        Your rage lasts as long as you \glossterm{attune} to it.
+        When it ends, you become \fatigued and unable to use this ability again until you take a \glossterm{short rest}.
 
         \cf{Bbn}[4]{Blood Frenzy}
         You are immune to being \glossterm{bloodied} while raging
@@ -154,36 +150,37 @@ This choice determines a great deal about your character's abilities.
         Choose two \textit{primal exertions} from the list below.
         As a standard action, you can spend an \glossterm{action point} to use a \textit{primal exertion} ability.
         {
-            \subcf{Battle Cry} You and all allies within an \arealarge radius burst from you gain \glossterm{temporary hit points} equal to twice your Willpower.
+            \subcf{Battle Cry} You and all allies within a \arealarge radius burst from you gain \glossterm{temporary hit points} equal to twice your Willpower.
             This lasts as long as you \glossterm{sustain} this ability as a \glossterm{swift action}.
 
             At 9th level, the temporary hit points increase to three times your Willpower.
-            At 15th level, the temporary hit points increase to four times your Willpower.
+            \par At 15th level, the temporary hit points increase to four times your Willpower.
 
             \subcf{Demoralizing Shout}
             Make a Willpower vs. Mental attack against all enemies within an \areamed radius burst from you.
             \subparhead{Hit} The target is \shaken by you as a \glossterm{condition}.
-            \subparhead{Critical hit} The target is \frightened by you as a \glossterm{condition}.
+            \subparhead{Critical Hit} The target is \frightened by you as a \glossterm{condition}.
 
-            At 9th level, the area becomes an \arealarge radius.
-            At 15th level, any hit against a target means it is \frightened by you instead of shaken, and a \glossterm{critical hit} against a target means it is \panicked by you instead of frightened.
+            At 9th level, the area becomes a \areahuge radius.
+            \par At 15th level, any hit against a target means it is \frightened by you instead of shaken, and a \glossterm{critical hit} against a target means it is \panicked by you instead of frightened.
 
-            \subcf{Gut Punch} Make a \glossterm{strike}.
-            If your attack result hits the target's Fortitude defense, the target is \sickened as a condition.
+            \subcf{Gut Punch} Make a \glossterm{strike} and compare its attack result against the target's Fortitude defense.
+            \subparhead{Hit (Fortitude)} The target is \sickened as a \glossterm{condition}.
+            \subparhead{Critical Hit (Fortitude)} The target is \nauseated as a \glossterm{condition}.
 
-            At 9th level, a \glossterm{critical hit} against the target's Fortitude defense makes it \nauseated instead of \sickened.
-            At 15th level, any hit against the target's Fortitude defense makes it \nauseated instead of \sickened.
+            At 9th level, if you hit the target's Fortitude defense but miss its Armor defense, it takes half damage from the strike.
+            \par At 15th level, if you hit the target's Fortitude defense but miss its Armor defense, it takes full damage from the strike.
 
             \subcf{Leaping Strike} You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to your land speed (see \pcref{Leap}).
             If you use this ability during the \glossterm{action phase}, you can also make a \glossterm{strike} from your new location during the \glossterm{delayed action phase}.
 
             At 9th level, you gain a \plus1d bonus to damage with the strike per 10 feet of height you travelled downward towards your foe during the leap, up to a maximum of \plus2d.
-            At 15th level, the maximum damage bonus increases to \plus4d.
+            \par At 15th level, the maximum damage bonus increases to \plus4d.
 
             \subcf{Potent Maneuver} You can use a \glossterm{combat maneuver} with a \plus2 bonus to accuracy.
 
             At 9th level, the accuracy bonus increases to \plus3.
-            At 15th level, the accuracy bonus increases to \plus4.
+            \par At 15th level, the accuracy bonus increases to \plus4.
 
             \subcf{Reaping Charge} You can move up to half your movement speed in a straight line.
             Choose either the right or left side of the line.
@@ -192,19 +189,19 @@ This choice determines a great deal about your character's abilities.
 
             At 9th level, you do not have to choose a side of the line.
             Instead, you can attack creatures and objects that you threaten at any point during your movement.
-            At 15th level, you can move up to your full movement speed instead of half your movement speed.
+            \par At 15th level, you can move up to your full movement speed instead of half your movement speed.
 
             \subcf{Sweeping Strike} Make a melee \glossterm{strike} against each of up to three adjacent creatures.
             You take a \minus1d penalty to \glossterm{strike damage} with each strike.
 
             At 9th level, the damage penalty is removed.
-            At 15th level, you gain a \plus1d bonus to damage with each strike.
+            \par At 15th level, you gain a \plus1d bonus to damage with each strike.
 
             \subcf{Whirlwind Spin} Make a melee \glossterm{strike} against all creatures you threaten.
             You take a \minus3d penalty to \glossterm{strike damage} with each strike.
 
             At 9th level, you gain a \plus1 bonus to accuracy with each strike.
-            At 15th level, the accuracy bonus increases to \plus2.
+            \par At 15th level, the accuracy bonus increases to \plus2.
         }
 
         \cf{Bbn}[6]{Athletic Prowess} You gain two additional skill points that must be spent on Strength or Dexterity-based barbarian class skills.
@@ -217,38 +214,38 @@ This choice determines a great deal about your character's abilities.
             This halving is applied before damage reduction and similar abilities.
             This ability's duration is Sustain (standard).
 
-            At 15th level, you also gain damage reduction equal to your level.
+            \par At 15th level, you also gain damage reduction equal to your level.
 
             \subcf{Certain Strike} You can make a \glossterm{strike} with a \plus2 bonus to accuracy.
 
-            At 15th level, the accuracy bonus increases to \plus3.
+            \par At 15th level, the accuracy bonus increases to \plus3.
 
             \subcf{Ground Pound} Make a Strength vs. Reflex attack against all enemies standing on solid ground within an \areamed radius burst from you.
             Success against a target means it is knocked \prone.
             You can only use this ability while standing on solid ground.
             If you use this ability during the \glossterm{action phase}, you can also make a \glossterm{strike} during the \glossterm{delayed action phase}.
 
-            At 15th level, the area increases to \arealarge.
+            \par At 15th level, the area increases to \arealarge.
 
             \subcf{Mighty Smash} Make a \glossterm{strike} with a \plus2d bonus to damage.
 
-            At 15th level, the damage bonus increases to \plus3d.
+            \par At 15th level, the damage bonus increases to \plus3d.
 
             \subcf{Penetrating Strike} Make a \glossterm{strike}.
             The attack is made against the target's Reflex defense instead of its Armor defense.
 
-            At 15th level, you gain a \plus1d bonus to damage if you hit both the target's Reflex defense and Armor defense.
+            \par At 15th level, you gain a \plus1d bonus to damage if you hit both the target's Reflex defense and Armor defense.
 
             \subcf{Thunderous Shout} Make a Constitution vs. Fortitude attack against all creatures and objects in an \arealarge cone-shaped burst from you.
             Success against a target means it takes 1d8 sonic damage \plus1d per two Constitution.
             A \glossterm{critical hit} deals double damage.
 
-            At 15th level, a successful hit also causes a target to be \deafened as a condition.
+            \par At 15th level, a successful hit also causes a target to be \deafened as a condition.
 
             \subcf{War Cry} You and all allies within an \arealarge radius burst from you gain \glossterm{damage reduction} against physical damage equal to your Willpower.
             This lasts as long as you \glossterm{sustain} this ability as a \glossterm{swift action}.
 
-            At 15th level, the damage reduction applies against all damage.
+            \par At 15th level, the damage reduction applies against all damage.
         }
 
         \cf{Bbn}[12]{Primal Prowess}
@@ -1336,36 +1333,36 @@ This choice determines a great deal about your character's abilities.
                 This effect immediately ends if you are \glossterm{defeated}.
 
                 At 9th level, a \glossterm{critical hit} increases the penalty to \minus5.
-                At 15th level, the penalty is increased to \minus5 for any hit, and a \glossterm{critical hit} increases the penalty to \minus10.
+                \par At 15th level, the penalty is increased to \minus5 for any hit, and a \glossterm{critical hit} increases the penalty to \minus10.
 
                 \subcf{Counterattack} Make a \glossterm{strike}.
                 If your target attacked you in the same phase, you gain a \plus2d bonus to damage.
                 Otherwise, you regain the action point spent to use this ability.
 
                 At 9th level, the damage bonus increases to \plus3d.
-                At 15th level, the damage bonus increases to \plus4d.
+                \par At 15th level, the damage bonus increases to \plus4d.
 
                 \subcf{Daunting Blow} Make a \glossterm{strike}.
                 If your attack result hits the target's Mental defense, it suffers a \minus2 penalty to accuracy on attacks against you and on defenses against your attacks as a \glossterm{condition}.
 
                 At 9th level, a \glossterm{critical hit} increases the penalties to \minus5.
-                At 15th level, the penalties are increased to \minus5 for any hit, and a \glossterm{critical hit} increases the penalties to \minus10.
+                \par At 15th level, the penalties are increased to \minus5 for any hit, and a \glossterm{critical hit} increases the penalties to \minus10.
 
                 \subcf{Gut Punch} Make a \glossterm{strike}.
                 If your attack result hits the target's Fortitude defense, the target is \sickened as a condition.
 
                 At 9th level, a \glossterm{critical hit} against the target's Fortitude defense makes it \nauseated instead of \sickened.
-                At 15th level, any hit against the target's Fortitude defense makes it \nauseated instead of \sickened.
+                \par At 15th level, any hit against the target's Fortitude defense makes it \nauseated instead of \sickened.
 
                 \subcf{Potent Maneuver} You can use a \glossterm{combat maneuver} with a \plus2 bonus to accuracy.
 
                 At 9th level, the accuracy bonus increases to \plus3.
-                At 15th level, the accuracy bonus increases to \plus4.
+                \par At 15th level, the accuracy bonus increases to \plus4.
 
                 \subcf{Rally the Troops} You and all allies within an \arealarge radius can each remove one \glossterm{condition}.
 
                 At 9th level, each target can instead remove two conditions.
-                At 15th level, each target can instead remove all conditions.
+                \par At 15th level, each target can instead remove all conditions.
 
                 \subcf{Reaping Charge} You can move up to half your movement speed in a straight line.
                 Choose either the right or left side of the line.
@@ -1374,19 +1371,19 @@ This choice determines a great deal about your character's abilities.
 
                 At 9th level, you do not have to choose a side of the line.
                 Instead, you can attack creatures and objects that you threaten at any point during your movement.
-                At 15th level, you can move up to your full movement speed instead of half your movement speed.
+                \par At 15th level, you can move up to your full movement speed instead of half your movement speed.
 
                 \subcf{Sweeping Strike} Make a melee \glossterm{strike} against each of up to three adjacent creatures.
                 You take a \minus1d penalty to \glossterm{strike damage} with each strike.
 
                 At 9th level, the damage penalty is removed.
-                At 15th level, you gain a \plus1d bonus to damage with each strike.
+                \par At 15th level, you gain a \plus1d bonus to damage with each strike.
 
                 \subcf{Whirlwind Spin} Make a melee \glossterm{strike} against all creatures you threaten.
                 You take a \minus3d penalty to \glossterm{strike damage} with each strike.
 
                 At 9th level, you gain a \plus1 bonus to accuracy with each strike.
-                At 15th level, the accuracy bonus increases to \plus2.
+                \par At 15th level, the accuracy bonus increases to \plus2.
             }
 
             \cf{Ftr}[6]{Maneuver Supremacy} You gain a \plus1 bonus to \glossterm{accuracy} with combat maneuvers.
@@ -1397,27 +1394,27 @@ This choice determines a great deal about your character's abilities.
             {
                 \subcf{Certain Strike} You can make a \glossterm{strike} with a \plus2 bonus to accuracy.
 
-                At 15th level, the accuracy bonus increases to \plus3.
+                \par At 15th level, the accuracy bonus increases to \plus3.
 
                 \subcf{Distracting Blow} Make a \glossterm{strike}.
                 If it hits, the target automatically fails all Concentration checks it makes that phase.
                 In addition, if it took the \textit{recover} or \textit{desperate recovery} actions during the current phase, those actions fail with no effect.
 
-                At 15th level, the effects occur even if the strike misses.
+                \par At 15th level, the effects occur even if the strike misses.
 
                 \subcf{Heartseeking Strike} Make a \glossterm{strike}.
                 The strike is considered a \glossterm{critical hit} if it hits the target's Armor defense by 5, instead of by 10.
 
-                At 15th level, you regain the action point spent if the attack hits without being a \glossterm{critical hit}.
+                \par At 15th level, you regain the action point spent if the attack hits without being a \glossterm{critical hit}.
 
                 \subcf{Mighty Smash} Make a \glossterm{strike} with a \plus2d bonus to damage.
 
-                At 15th level, the damage bonus increases to \plus3d.
+                \par At 15th level, the damage bonus increases to \plus3d.
 
                 \subcf{Penetrating Strike} Make a \glossterm{strike}.
                 The attack is made against the target's Reflex defense instead of its Armor defense.
 
-                At 15th level, you gain a \plus1d bonus to damage if you hit both the target's Reflex defense and Armor defense.
+                \par At 15th level, you gain a \plus1d bonus to damage if you hit both the target's Reflex defense and Armor defense.
             }
 
             \cf{Ftr}[12]{Greater Maneuver Supremacy} The accuracy bonus from your \textit{maneuver supremacy} ability increases to \plus2.
@@ -2214,12 +2211,12 @@ This choice determines a great deal about your character's abilities.
                 If your attack result hits the target's Fortitude defense, the target is \sickened as a condition.
 
                 At 9th level, a \glossterm{critical hit} against the target's Fortitude defense makes it \nauseated instead of \sickened.
-                At 15th level, any hit against the target's Fortitude defense makes it \nauseated instead of \sickened.
+                \par At 15th level, any hit against the target's Fortitude defense makes it \nauseated instead of \sickened.
 
                 \subcf{Potent Maneuver} You can use a \glossterm{combat maneuver} with a \plus2 bonus to accuracy.
 
                 At 9th level, the accuracy bonus increases to \plus3.
-                At 15th level, the accuracy bonus increases to \plus4.
+                \par At 15th level, the accuracy bonus increases to \plus4.
 
                 \subcf{Reaping Charge} You can move up to half your movement speed in a straight line.
                 Choose either the right or left side of the line.
@@ -2228,19 +2225,19 @@ This choice determines a great deal about your character's abilities.
 
                 At 9th level, you do not have to choose a side of the line.
                 Instead, you can attack creatures and objects that you threaten at any point during your movement.
-                At 15th level, you can move up to your full movement speed instead of half your movement speed.
+                \par At 15th level, you can move up to your full movement speed instead of half your movement speed.
 
                 \subcf{Sweeping Strike} Make a melee \glossterm{strike} against each of up to three adjacent creatures.
                 You take a \minus1d penalty to \glossterm{strike damage} with each strike.
 
                 At 9th level, the damage penalty is removed.
-                At 15th level, you gain a \plus1d bonus to damage with each strike.
+                \par At 15th level, you gain a \plus1d bonus to damage with each strike.
 
                 \subcf{Whirlwind Spin} Make a melee \glossterm{strike} against all creatures you threaten.
                 You take a \minus3d penalty to \glossterm{strike damage} with each strike.
 
                 At 9th level, you gain a \plus1 bonus to accuracy with each strike.
-                At 15th level, the accuracy bonus increases to \plus2.
+                \par At 15th level, the accuracy bonus increases to \plus2.
             }
 
             \cf{Rgr}[6]{Wilderness Lore} You gain two extra skill points which must be spent on the Creature Handling, Heal, Knowledge (geography), Knowledge (nature), Ride, or Survival skills.
@@ -2251,27 +2248,27 @@ This choice determines a great deal about your character's abilities.
             {
                 \subcf{Certain Strike} You can make a \glossterm{strike} with a \plus2 bonus to accuracy.
 
-                At 15th level, the accuracy bonus increases to \plus3.
+                \par At 15th level, the accuracy bonus increases to \plus3.
 
                 \subcf{Distracting Blow} Make a \glossterm{strike}.
                 If it hits, the target automatically fails all Concentration checks it makes that phase.
                 In addition, if it took the \textit{recover} or \textit{desperate recovery} actions during the current phase, those actions fail with no effect.
 
-                At 15th level, the effects occur even if the strike misses.
+                \par At 15th level, the effects occur even if the strike misses.
 
                 \subcf{Heartseeking Strike} Make a \glossterm{strike}.
                 The strike is considered a \glossterm{critical hit} if it hits the target's Armor defense by 5, instead of by 10.
 
-                At 15th level, you regain the action point spent if the attack hits without being a \glossterm{critical hit}.
+                \par At 15th level, you regain the action point spent if the attack hits without being a \glossterm{critical hit}.
 
                 \subcf{Mighty Smash} Make a \glossterm{strike} with a \plus2d bonus to damage.
 
-                At 15th level, the damage bonus increases to \plus3d.
+                \par At 15th level, the damage bonus increases to \plus3d.
 
                 \subcf{Penetrating Strike} Make a \glossterm{strike}.
                 The attack is made against the target's Reflex defense instead of its Armor defense.
 
-                At 15th level, you gain a \plus1d bonus to damage if you hit both the target's Reflex defense and Armor defense.
+                \par At 15th level, you gain a \plus1d bonus to damage if you hit both the target's Reflex defense and Armor defense.
             }
 
             \cf{Rgr}[12]{} 
@@ -2424,13 +2421,13 @@ This choice determines a great deal about your character's abilities.
             \\ \nth{6}  & Ambush attack
             \\ \nth{7}  & Skill lore
             \\ \nth{8}  & Assassinate
-            \\ \nth{9}  & Lucky slip
+            \\ \nth{9}  & Combat trick
             \\ \nth{10} & Greater skill exemplar
             \\ \nth{11} & Greater uncanny dodge
-            \\ \nth{12} & Combat trick
+            \\ \nth{12} & Lucky slip
             \\ \nth{13} & Lucky break
             \\ \nth{14} & Greater sneak attack
-            \\ \nth{15} & Twist of fate
+            \\ \nth{15} & Combat trick
             \\ \nth{16} & Supreme skill exemplar
             \\ \nth{17} & 
             \\ \nth{18} & Greater ambush attack
@@ -2530,7 +2527,7 @@ This choice determines a great deal about your character's abilities.
                 If your attack result hits the target's Fortitude defense, the target is \sickened as a condition.
 
                 At 9th level, a \glossterm{critical hit} against the target's Fortitude defense makes it \nauseated instead of \sickened.
-                At 15th level, any hit against the target's Fortitude defense makes it \nauseated instead of \sickened.
+                \par At 15th level, any hit against the target's Fortitude defense makes it \nauseated instead of \sickened.
 
                 \subcf{Hamstring} Make a \glossterm{strike}.
                 If your attack result hits the target's Fortitude defense, the target is \slowed as a condition.
@@ -2556,18 +2553,18 @@ This choice determines a great deal about your character's abilities.
             {
                 \subcf{Certain Strike} You can make a \glossterm{strike} with a \plus2 bonus to accuracy.
 
-                At 15th level, the accuracy bonus increases to \plus3.
+                \par At 15th level, the accuracy bonus increases to \plus3.
 
                 \subcf{Distracting Blow} Make a \glossterm{strike}.
                 If it hits, the target automatically fails all Concentration checks it makes that phase.
                 In addition, if it took the \textit{recover} or \textit{desperate recovery} actions during the current phase, those actions fail with no effect.
 
-                At 15th level, the effects occur even if the strike misses.
+                \par At 15th level, the effects occur even if the strike misses.
 
                 \subcf{Penetrating Strike} Make a \glossterm{strike}.
                 The attack is made against the target's Reflex defense instead of its Armor defense.
 
-                At 15th level, you gain a \plus1d bonus to damage if you hit both the target's Reflex defense and Armor defense.
+                \par At 15th level, you gain a \plus1d bonus to damage if you hit both the target's Reflex defense and Armor defense.
             }
 
             \cf{Rog}[12]{Lucky Slip}
