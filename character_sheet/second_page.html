@@ -647,29 +647,9 @@ Total
 =
 </div>
 </div>
-<div class="flex-row two-choices">
-<div class="flex-col underlabeled-number-input">
-<input disabled="true" name="hp-fort" type="number" value="floor((10+ceil(floor(((@{constitution-base}+@{constitution-level}+@{constitution-misc})+floor((@{strength-base}+@{strength-level}+@{strength-misc})/2)-0.1+100)/(@{fort-base}+100))/200)*((@{constitution-base}+@{constitution-level}+@{constitution-misc})+floor((@{strength-base}+@{strength-level}+@{strength-misc})/2)+100)  + ceil(floor((@{fort-base}+100)/((@{constitution-base}+@{constitution-level}+@{constitution-misc})+floor((@{strength-base}+@{strength-level}+@{strength-misc})/2)+100))/(200))*(@{fort-base}+100)-100+@{fort-misc})/2)">
+<input disabled="true" type="number" value="5">
 
-</input>
-<div class="under-label">
-<span class="half">
-&frac12 
-</span>Fort
-</div>
-</div><div class="flex-col equation-glue">
-or
-</div><div class="flex-col underlabeled-number-input">
-<input disabled="true" name="hp-ment" type="number" value="floor((10+ceil(floor(((@{willpower-base}+@{willpower-level}+@{willpower-misc})+floor((@{intelligence-base}+@{intelligence-level}+@{intelligence-misc})/2)-0.1+100)/(@{ment-base}+100))/200)*((@{willpower-base}+@{willpower-level}+@{willpower-misc})+floor((@{intelligence-base}+@{intelligence-level}+@{intelligence-misc})/2)+100)  + ceil(floor((@{ment-base}+100)/((@{willpower-base}+@{willpower-level}+@{willpower-misc})+floor((@{intelligence-base}+@{intelligence-level}+@{intelligence-misc})/2)+100))/(200))*(@{ment-base}+100)-100+@{ment-misc})/2)">
-
-</input>
-<div class="under-label">
-<span class="half">
-&frac12 
-</span>Ment
-</div>
-</div>
-</div><div class="flex-col equation-glue">
+</input><div class="flex-col equation-glue">
 <div class="equation-math">
 x
 </div>
@@ -679,6 +659,39 @@ x
 </input>
 <div class="under-label">
 Level
+</div>
+</div><div class="flex-col equation-glue">
+<div class="equation-math">
++
+</div>
+</div><div class="flex-col underlabeled-number-input">
+<input type="number">
+
+</input>
+<div class="under-label">
+Con
+</div>
+</div><div class="flex-col equation-glue">
+<div class="equation-math">
++
+</div>
+</div><div class="flex-row two-choices">
+<div class="flex-col underlabeled-number-input">
+<input type="number">
+
+</input>
+<div class="under-label">
+Fort
+</div>
+</div><div class="flex-col equation-glue">
+or
+</div><div class="flex-col underlabeled-number-input">
+<input type="number">
+
+</input>
+<div class="under-label">
+Ment
+</div>
 </div>
 </div><div class="misc-spacer">
 
@@ -698,7 +711,7 @@ Misc
 </div>
 <div class="flex-row">
 <div class="calc-header">
-Melee
+Strike Accuracy
 </div>
 <div class="flex-row equation">
 <div class="flex-col underlabeled-number-input">
@@ -714,24 +727,13 @@ Total
 =
 </div>
 </div>
-<div class="flex-col underlabeled-number-input eq-optional">
-<input disabled="true" name="proficiency" type="number" value="">
-
-</input>
-<div class="under-label">
-Prof
-</div>
-</div><div class="flex-col equation-glue">
-<div class="equation-math">
-+
-</div>
-</div><div class="flex-row two-choices">
+<div class="flex-row two-choices">
 <div class="flex-col underlabeled-number-input">
-<input disabled="true" name="melee-calc-bab" type="number" value="(@{bab-good}+@{bab-avg}+@{bab-poor})">
+<input type="number">
 
 </input>
 <div class="under-label">
-Prow
+Lvl
 </div>
 </div><div class="flex-col equation-glue">
 or
@@ -740,19 +742,8 @@ or
 
 </input>
 <div class="under-label">
-Str/Dex
+Dex/Per
 </div>
-</div>
-</div><div class="flex-col equation-glue">
-<div class="equation-math">
-+
-</div>
-</div><div class="flex-col underlabeled-number-input">
-<input type="number">
-
-</input>
-<div class="under-label">
-1/5 Per
 </div>
 </div><div class="misc-spacer">
 
@@ -771,7 +762,7 @@ Misc
 </div>
 </div><div class="flex-row">
 <div class="calc-header">
-Ranged
+Strike Damage
 </div>
 <div class="flex-row equation">
 <div class="flex-col underlabeled-number-input">
@@ -787,45 +778,23 @@ Total
 =
 </div>
 </div>
-<div class="flex-col underlabeled-number-input eq-optional">
-<input disabled="true" name="proficiency" type="number" value="">
-
-</input>
-<div class="under-label">
-Prof
-</div>
-</div><div class="flex-col equation-glue">
-<div class="equation-math">
-+
-</div>
-</div><div class="flex-row two-choices">
+<div class="flex-row two-choices">
 <div class="flex-col underlabeled-number-input">
-<input disabled="true" name="ranged-calc-bab" type="number" value="(@{bab-good}+@{bab-avg}+@{bab-poor})">
+<input type="number">
 
 </input>
 <div class="under-label">
-Prow
+Lvl
 </div>
 </div><div class="flex-col equation-glue">
 or
-</div><div class="flex-col underlabeled-number-input">
-<input disabled="true" name="ranged-calc-perception" type="number" value="(@{perception-base}+@{perception-level}+@{perception-misc})">
-
-</input>
-<div class="under-label">
-Per
-</div>
-</div>
-</div><div class="flex-col equation-glue">
-<div class="equation-math">
-+
-</div>
 </div><div class="flex-col underlabeled-number-input">
 <input type="number">
 
 </input>
 <div class="under-label">
-1/5 Per
+Dex/Per
+</div>
 </div>
 </div><div class="misc-spacer">
 
