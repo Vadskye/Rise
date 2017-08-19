@@ -3,7 +3,7 @@ from cgi_simple import value_sum
 ATTRIBUTES = 'Strength Dexterity Constitution Intelligence Perception Willpower'.split()
 DEFENSES = 'Armor Fortitude Reflex Mental'.split()
 ATTRIBUTE_SKILLS = {
-    'strength':  'Climb Jump Sprint Swim'.split(),
+    'strength': 'Climb Jump Sprint Swim'.split(),
     'dexterity': ['Acrobatics', 'Escape Artist', 'Ride', 'Sleight of Hand', 'Stealth'],
     'constitution': [],
     'intelligence': ['Craft ______', 'Devices', 'Disguise', 'Heal', 'Knowledge ______', 'Knowledge ______', 'Linguistics'],
@@ -30,12 +30,12 @@ ALL_SKILLS = ['Awareness', 'Balance', 'Bluff', 'Climb', 'Craft', 'Creature Handl
 
 def attribute_roll20_text(attribute_name):
     return value_sum([
-        attribute_name+'-base',
-        attribute_name+'-level',
-        attribute_name+'-misc',
+        attribute_name + '-base',
+        attribute_name + '-level',
+        attribute_name + '-misc',
     ])
 
-def roll20_max_text (x, y):
+def roll20_max_text(x, y):
     return 'ceil(floor(({0}-0.1+100)/({1}+100))/200)*({0}+100)  + ceil(floor(({1}+100)/({0}+100))/(200))*({1}+100)-100'.format(
         x,
         y,
@@ -83,7 +83,7 @@ ROLL20_CALC = {
     ]),
 }
 
-#these have dependencies and should be added second
+# these have dependencies and should be added second
 ROLL20_CALC['armor'] = '+'.join([
     '10',
     roll20_max_text(
@@ -110,9 +110,9 @@ ROLL20_CALC['maneuver'] = '+'.join([
     '@{maneuver-misc}',
 ]),
 ROLL20_CALC['hit_points'] = '(' + '+'.join([
-        'floor((' + roll20_max_text(
-            ROLL20_CALC['fortitude'],
-            ROLL20_CALC['mental'],
-        ) + ')/2)',
-        'floor(' + ROLL20_CALC['attribute']('constitution') + '/2)',
-    ]) + ') * @{level}',
+    'floor((' + roll20_max_text(
+        ROLL20_CALC['fortitude'],
+        ROLL20_CALC['mental'],
+    ) + ')/2)',
+    'floor(' + ROLL20_CALC['attribute']('constitution') + '/2)',
+]) + ') * @{level}',
