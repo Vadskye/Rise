@@ -226,7 +226,7 @@ def calc_defenses():
 
 def calc_melee():
     return flex_row([
-        div({'class': 'calc-header'}, 'Strike'),
+        div({'class': 'calc-header'}, 'Strike Accuracy'),
         equation(
             [
                 this_or_that([
@@ -256,7 +256,7 @@ def calc_melee():
 
 def calc_ranged():
     return flex_row([
-        div({'class': 'calc-header'}, 'Ranged'),
+        div({'class': 'calc-header'}, 'Strike Damage'),
         equation(
             [
                 this_or_that([
