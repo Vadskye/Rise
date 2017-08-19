@@ -137,10 +137,10 @@
 \newcommand{\wilditemplus}{\addtocounter{enumi}{3} \item}
 
 \newcommand{\spelldesc}[1]{\par\noindent \textit{#1}}
-\newcommand{\spelldmg}[1]{\parhead*{Damage} #1}
-\newcommand{\spellheal}[1]{\parhead*{Healing} #1}
-\newcommand{\spellatk}[1]{\parhead*{Attack} #1}
-\newcommand{\spelltgr}[1]{\parhead*{Trigger} #1}
+\newcommand{\spelldmg}[1]{\fieldhead{Damage} #1}
+\newcommand{\spellheal}[1]{\fieldhead{Healing} #1}
+\newcommand{\spellatk}[1]{\fieldhead{Attack} #1}
+\newcommand{\spelltgr}[1]{\fieldhead{Trigger} #1}
 
 %\newcommand{\spellfocus}[1]{\par\noindent \textit{Focus:} #1}
 \newcommand{\spellmat}[1]{\par\noindent \textit{Material Components:} #1}
@@ -148,28 +148,28 @@
 \newcommand{\spelltwocol}[2]{\spelltabularcompressed #1 & #2\end{tabularx}}
 
 \newcommand{\spellschool}[1]{\noindent#1}
-\newcommand{\spelllists}[1]{\parhead*{Lists} #1}
-\newcommand{\spellcmp}[1]{\parhead*{Components} #1}
-\newcommand{\spelltime}[1]{\parhead*{Casting Time} #1}
-\newcommand{\spellrng}[1]{\parhead*{Range} #1}
+\newcommand{\spelllists}[1]{\fieldhead{Lists} #1}
+\newcommand{\spellcmp}[1]{\fieldhead{Components} #1}
+\newcommand{\spelltime}[1]{\fieldhead{Casting Time} #1}
+\newcommand{\spellrng}[1]{\fieldhead{Range} #1}
 
-\newcommand{\spellarea}[1]{\parhead*{Area} #1}
-\newcommand{\spellburst}[1]{\parhead*{Burst} #1}
-\newcommand{\spellemanation}[1]{\parhead*{Emanation} #1}
-\newcommand{\spelllimit}[1]{\parhead*{Limit} #1}
-\newcommand{\spellzone}[1]{\parhead*{Zone} #1}
-\newcommand{\spellzoneandburst}[1]{\parhead*{Zone and Burst} #1}
+\newcommand{\spellarea}[1]{\fieldhead{Area} #1}
+\newcommand{\spellburst}[1]{\fieldhead{Burst} #1}
+\newcommand{\spellemanation}[1]{\fieldhead{Emanation} #1}
+\newcommand{\spelllimit}[1]{\fieldhead{Limit} #1}
+\newcommand{\spellzone}[1]{\fieldhead{Zone} #1}
+\newcommand{\spellzoneandburst}[1]{\fieldhead{Zone and Burst} #1}
 
-%\newcommand{\spelltgt}[1]{\parhead*{Target} #1}
-%\newcommand{\spelltgts}[1]{\parhead*{Targets} #1}
-\newcommand{\spelltgtortgts}[1]{\parhead*{Target or Targets} #1}
-\newcommand{\spelltgtorarea}[1]{\parhead*{Target or Area} #1}
-\newcommand{\spelltgteffarea}[1]{\parhead*{Target or Area} #1}
+%\newcommand{\spelltgt}[1]{\fieldhead{Target} #1}
+%\newcommand{\spelltgts}[1]{\fieldhead{Targets} #1}
+\newcommand{\spelltgtortgts}[1]{\fieldhead{Target or Targets} #1}
+\newcommand{\spelltgtorarea}[1]{\fieldhead{Target or Area} #1}
+\newcommand{\spelltgteffarea}[1]{\fieldhead{Target or Area} #1}
 
-\newcommand{\spelldur}{\parhead*{Duration}}
-\newcommand{\spelltgrdur}[1]{\parhead*{Trigger Duration} #1}
-\newcommand{\spellfocus}[1]{\parhead*{Focus} #1}
-\newcommand{\spellsr}[1]{\parhead*{Spell Resistance} #1}
+\newcommand{\spelldur}{\fieldhead{Duration}}
+\newcommand{\spelltgrdur}[1]{\fieldhead{Trigger Duration} #1}
+\newcommand{\spellfocus}[1]{\fieldhead{Focus} #1}
+\newcommand{\spellsr}[1]{\fieldhead{Spell Resistance} #1}
 
 \newcommand{\rngpers}{Personal}
 \newcommand{\rngtouch}{Touch}
@@ -289,12 +289,12 @@
 % weird spacing before twocol
 \newcommand{\spelllinespaced}{\spellline\vspace{0.5\medskipamount}}
 
-%\newcommand{\spelleffect}{\parhead*{Effect}}
-%\newcommand{\spellsuccess}{\parhead*{Success}}
-%\newcommand{\spellfailure}{\parhead*{Failure}\xspace}
+%\newcommand{\spelleffect}{\fieldhead{Effect}}
+%\newcommand{\spellsuccess}{\fieldhead{Success}}
+%\newcommand{\spellfailure}{\fieldhead{Failure}\xspace}
 \newcommand{\spellnotes}{\par\noindent\textit{Notes}:\xspace}
-\newcommand{\spellspecial}{\parhead*{Special}}
-\newcommand{\spellcheck}[1]{\parhead*{Check} #1}
+\newcommand{\spellspecial}{\fieldhead{Special}}
+\newcommand{\spellcheck}[1]{\fieldhead{Check} #1}
 
 \ExplSyntaxOn
 
@@ -323,47 +323,57 @@
 \newcommand{\TempVarTwo}{0}
 
 \DeclareDocumentCommand{\parhead}{s m o}
-{\par \IfBooleanT{#1}{\noindent}
+{
+    \vspace{0.5em}    
+    \par \IfBooleanT{#1}{\noindent}
     \IfNoValueTF{#3}
     {\textbf{#2}:}
     {\textbf{#2}~[#3]:}\xspace
 }
 
+\DeclareDocumentCommand{\fieldhead}{m o}
+{
+    \par\noindent
+    \IfNoValueTF{#2}
+    {\textbf{#1}:}
+    {\textbf{#1}~[#2]:}\xspace
+}
+
 \DeclareDocumentCommand{\spellfailure}{o}
 {
     \IfNoValueTF{#1}
-    {\parhead*{Failure}}
-    {\parhead*{Failure}[#1]}
+    {\fieldhead{Failure}}
+    {\fieldhead{Failure}[#1]}
 }
 \DeclareDocumentCommand{\spellsuccess}{o}
 {
     \IfNoValueTF{#1}
-    {\parhead*{Success}}
-    {\parhead*{Success}[#1]}
+    {\fieldhead{Success}}
+    {\fieldhead{Success}[#1]}
 }
 \DeclareDocumentCommand{\spellcritical}{o}
 {
     \IfNoValueTF{#1}
-    {\parhead*{Critical~Success}}
-    {\parhead*{Critical~Success}[#1]}
+    {\fieldhead{Critical~Success}}
+    {\fieldhead{Critical~Success}[#1]}
 }
 \DeclareDocumentCommand{\spelleffect}{o}
 {
     \IfNoValueTF{#1}
-    {\parhead*{Effect}}
-    {\parhead*{Effect}[#1]}
+    {\fieldhead{Effect}}
+    {\fieldhead{Effect}[#1]}
 }
 \DeclareDocumentCommand{\spelltgt}{m o}
 {
     \IfNoValueTF{#2}
-    {\parhead*{Target} #1}
-    {\parhead*{#2~Target} #1}
+    {\fieldhead{Target} #1}
+    {\fieldhead{#2~Target} #1}
 }
 \DeclareDocumentCommand{\spelltgts}{m o}
 {
     \IfNoValueTF{#2}
-    {\parhead*{Targets} #1}
-    {\parhead*{#2~Targets} #1}
+    {\fieldhead{Targets} #1}
+    {\fieldhead{#2~Targets} #1}
 }
 
 \DeclareDocumentCommand{\ritualcostparser}{m}
@@ -416,12 +426,12 @@
     \pgfmathparse{\TempVar > 4}
     \ifcase\pgfmathresult
         % handle normal magic items
-        \parhead*{Price~(Level)} \num{\TempVarTwo}~gp~(\cheapitemlevel{\TempVarTwo})
+        \fieldhead{Price~(Level)} \num{\TempVarTwo}~gp~(\cheapitemlevel{\TempVarTwo})
     \or
         % handle very expensive magic items
         % by passing the number with the right three digits removed
         \StrGobbleRight{\TempVarTwo}{3}[\TempVar]
-        \parhead*{Price~(Level)} \num{\TempVarTwo}~gp~(
+        \fieldhead{Price~(Level)} \num{\TempVarTwo}~gp~(
             \magicitemexpensiveitemlevel{\TempVar}
         )
     \fi
@@ -539,16 +549,16 @@
     \IfBooleanTF{#2}
     {
         \noindent#1
-        \parhead*{Lists} #3
+        \fieldhead{Lists} #3
     }
     {
-        \spelltwocol{\parhead*{Schools}~#1}{\parhead*{Lists}~#3}
+        \spelltwocol{\fieldhead{Schools}~#1}{\fieldhead{Lists}~#3}
     }
 }
 
 \DeclareDocumentCommand{\spelltags}{m}
 {
-    \parhead*{Tags} #1
+    \fieldhead{Tags} #1
 }
 
 \DeclareDocumentCommand{\imath}{m}
@@ -989,7 +999,7 @@
 
 \DeclareDocumentCommand{\magicitemability}{m o}
 {
-    \parhead*{#1~Ability}[#2]
+    \fieldhead{#1~Ability}[#2]
 }
 
 \DeclareDocumentCommand{\spellaugment}{m m m o}
