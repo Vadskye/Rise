@@ -1,6 +1,10 @@
-from cgi_simple import *
+from cgi_simple import (
+    DESTINATION,
+    div, equation, flex_col, flex_row, flex_wrapper, labeled_number_input, number_input,
+    plus, text_input, this_or_that, times, underlabeled_number_input,
+)
 
-from sheet_data import ATTRIBUTE_SKILLS, ALL_SKILLS_BY_ATTRIBUTE, ATTRIBUTES, ROLL20_CALC, roll20_max_text
+from sheet_data import ATTRIBUTE_SKILLS, ATTRIBUTES, ROLL20_CALC, roll20_max_text
 
 def create_page():
     return flex_row({'class': 'second-page'}, [
@@ -74,25 +78,19 @@ def calc_attribute(attribute_name):
     calc_name = attribute_name.lower()
     return ''.join([
         div({'class': 'calc-attribute-header'}, attribute_name),
-        #labeled_number_input(
-        #    attribute_name,
-        #    'calc-attribute-' + attribute_name.lower(),
-        #    {'class': 'calc-attribute-header'}
-        #),
-        #flex_row({'class': 'equation'}, [
         equation(
             [
                 underlabeled_number_input(
                     'Base',
-                    calc_name+'-base',
-                    attributes = {'class': 'eq-base'},
+                    calc_name + '-base',
+                    attributes={'class': 'eq-base'},
                     # input_attributes = {'value': '0'},
                 ),
                 plus(),
                 underlabeled_number_input(
                     'Level',
-                    calc_name+'-level',
-                    attributes = {'class': 'eq-level'},
+                    calc_name + '-level',
+                    attributes={'class': 'eq-level'},
                     # input_attributes = {'value': '0'},
                 ),
                 misc_spacer(),
@@ -104,7 +102,7 @@ def calc_attribute(attribute_name):
                     # input_attributes = {'value': '0'}
                 ),
             ],
-            result_attributes = {
+            result_attributes={
                 'disabled': 'true',
                 'name': calc_name.lower(),
                 'value': ROLL20_CALC['attribute'](calc_name),
@@ -114,11 +112,10 @@ def calc_attribute(attribute_name):
 
 def level_numbers(name_prefix):
     return flex_col({'class': 'level-numbers'}, [
-        flex_wrapper(div({'class': 'level-number-header', 'class': 'chart-header'}, 'Lvl')),
+        flex_wrapper(div({'class': 'chart-header'}, 'Lvl')),
         ''.join([
             text_input({'name': 'ability-level-' + name_prefix + '-' + str(level)})
-            #flex_row({'class': 'level-number-wrapper level'+str(level)}, div({'class': 'level-number'}, str(level)))
-            for level in range(1,14)
+            for level in range(1, 14)
         ]),
     ])
 
@@ -150,20 +147,23 @@ def level_row(level):
 
 def level_chart_column(title, html_name, contents):
     return flex_col({'class': html_name}, [
-        flex_wrapper(div({'class': html_name+'-header', 'class': 'chart-header'}, title)),
+        flex_wrapper(div({'class': html_name + '-header chart-header'}, title)),
         contents
     ])
 
 def attribute_bonuses():
     return flex_col({'class': 'attribute-bonuses'}, [
-        flex_wrapper(div({'class': 'attribute-bonus-header', 'class': 'chart-header'}, 'Attributes')),
-        ''.join([text_input({'class': 'level'+str(level)}) for level in range(1,21)]),
+        flex_wrapper(div({'class': 'attribute-bonus-header chart-header'}, 'Attributes')),
+        ''.join([text_input({'class': 'level' + str(level)}) for level in range(1, 21)]),
     ])
 
 def abilities(name_prefix):
     return flex_col({'class': 'abilities'}, [
-        flex_wrapper(div({'class': 'ability-header', 'class': 'chart-header'}, 'Feats and Abilities')),
-        ''.join([text_input({'class': 'level'+str(level), 'name': 'ability-name-'+name_prefix+'-'+str(level)}) for level in range(1, 14)]),
+        flex_wrapper(div({'class': 'ability-header chart-header'}, 'Feats and Abilities')),
+        ''.join([text_input({
+            'class': 'level' + str(level),
+            'name': 'ability-name-' + name_prefix + '-' + str(level)
+        }) for level in range(1, 14)]),
     ])
 
 def calc_hit_points():
@@ -171,31 +171,24 @@ def calc_hit_points():
         div({'class': 'calc-header'}, 'Hit Points'),
         equation(
             [
-                this_or_that([
-                    underlabeled_number_input(
-                        half('Fort'),
-                        input_attributes = {
-                            'disabled': 'true',
-                            'name': 'hp-fort',
-                            'value': 'floor(('+ROLL20_CALC['fortitude']+')/2)',
-                        },
-                    ),
-                    underlabeled_number_input(
-                        half('Ment'),
-                        input_attributes = {
-                            'disabled': 'true',
-                            'name': 'hp-ment',
-                            'value': 'floor(('+ROLL20_CALC['mental']+')/2)',
-                        },
-                    ),
-                ]),
+                number_input({
+                    'disabled': 'true',
+                    'value': '5'
+                }),
                 times(),
                 underlabeled_number_input('Level', 'hp-level', {'class': 'eq-level'}),
+                plus(),
+                underlabeled_number_input('Con'),
+                plus(),
+                this_or_that([
+                    underlabeled_number_input('Fort'),
+                    underlabeled_number_input('Ment'),
+                ]),
                 misc_spacer(),
                 plus(),
                 underlabeled_number_input('Misc', 'hp-misc', {'class': 'eq-optional'}),
             ],
-            result_attributes = {
+            result_attributes={
                 'disabled': 'true',
                 'name': 'hit-points',
                 'value': ROLL20_CALC['hit_points'],
@@ -233,39 +226,18 @@ def calc_defenses():
 
 def calc_melee():
     return flex_row([
-        div({'class': 'calc-header'}, 'Melee'),
+        div({'class': 'calc-header'}, 'Strike'),
         equation(
             [
-                underlabeled_number_input(
-                    'Prof',
-                    attributes = {
-                        'class': 'eq-optional',
-                    },
-                    input_attributes = {
-                        'disabled': 'true',
-                        'name': 'proficiency',
-                        'value': '4' if DESTINATION == 'roll20' else "",
-                    },
-                ),
-                plus(),
                 this_or_that([
-                    underlabeled_number_input(
-                        'Prow',
-                        input_attributes = {
-                            'disabled': 'true',
-                            'name': 'melee-calc-bab',
-                            'value': ROLL20_CALC['base_attack_bonus'],
-                        },
-                    ),
-                    underlabeled_number_input('Str/Dex'),
+                    underlabeled_number_input('Lvl'),
+                    underlabeled_number_input('Dex/Per'),
                 ]),
-                plus(),
-                underlabeled_number_input('1/5 Per'),
                 misc_spacer(),
                 plus(),
                 underlabeled_number_input('Misc', 'melee-misc', {'class': 'eq-optional'}),
             ],
-            result_attributes = {
+            result_attributes={
                 'disabled': 'true',
                 'name': 'melee',
                 'value': '+'.join([
@@ -287,43 +259,15 @@ def calc_ranged():
         div({'class': 'calc-header'}, 'Ranged'),
         equation(
             [
-                underlabeled_number_input(
-                    'Prof',
-                    attributes = {
-                        'class': 'eq-optional',
-                    },
-                    input_attributes = {
-                        'disabled': 'true',
-                        'name': 'proficiency',
-                        'value': '4' if DESTINATION == 'roll20' else "",
-                    },
-                ),
-                plus(),
                 this_or_that([
-                    underlabeled_number_input(
-                        'Prow',
-                        input_attributes = {
-                            'disabled': 'true',
-                            'name': 'ranged-calc-bab',
-                            'value': ROLL20_CALC['base_attack_bonus']
-                        },
-                    ),
-                    underlabeled_number_input(
-                        'Per',
-                        input_attributes = {
-                            'disabled': 'true',
-                            'name': 'ranged-calc-perception',
-                            'value': ROLL20_CALC['attribute']('perception')
-                        },
-                    ),
+                    underlabeled_number_input('Lvl'),
+                    underlabeled_number_input('Dex/Per'),
                 ]),
-                plus(),
-                underlabeled_number_input('1/5 Per'),
                 misc_spacer(),
                 plus(),
                 underlabeled_number_input('Misc', 'ranged-misc', {'class': 'eq-optional'}),
             ],
-            result_attributes = {
+            result_attributes={
                 'disabled': 'true',
                 'name': 'ranged',
                 'value': '+'.join([
@@ -344,10 +288,10 @@ def calc_spellpower():
             [
                 underlabeled_number_input(
                     'Class',
-                    attributes = {
+                    attributes={
                         'class': 'eq-optional',
                     },
-                    input_attributes = {
+                    input_attributes={
                         'disabled': 'true',
                         'name': 'spellpower-class',
                         'value': '2' if DESTINATION == 'roll20' else "",
@@ -356,7 +300,7 @@ def calc_spellpower():
                 plus(),
                 underlabeled_number_input(
                     'Level',
-                    input_attributes = {
+                    input_attributes={
                         'disabled': 'true',
                         'name': 'spellpower-level',
                         'value': '2' if DESTINATION == 'roll20' else "",
@@ -366,7 +310,7 @@ def calc_spellpower():
                 plus(),
                 underlabeled_number_input('Misc', 'melee-misc', {'class': 'eq-optional'}),
             ],
-            result_attributes = {
+            result_attributes={
                 'disabled': 'true',
                 'name': 'melee',
                 'value': '+'.join([
@@ -393,7 +337,7 @@ def calc_special_attack():
                 this_or_that([
                     underlabeled_number_input(
                         'Level',
-                        input_attributes = {
+                        input_attributes={
                             'disabled': 'true',
                             'name': 'special-calc-level',
                             'value': ROLL20_CALC['base_attack_bonus']
@@ -401,7 +345,7 @@ def calc_special_attack():
                     ),
                     underlabeled_number_input(
                         'Attr',
-                        input_attributes = {
+                        input_attributes={
                             'disabled': 'true',
                             'name': 'special-calc-attr',
                             'value': ROLL20_CALC['attribute']('perception')
@@ -412,7 +356,7 @@ def calc_special_attack():
                 plus(),
                 underlabeled_number_input('Misc', 'special-misc', {'class': 'eq-optional'}),
             ],
-            result_attributes = {
+            result_attributes={
                 'disabled': 'true',
                 'name': 'special-attack',
             },
@@ -435,7 +379,7 @@ def calc_armor():
                 this_or_that([
                     underlabeled_number_input(
                         'Prow',
-                        input_attributes = {
+                        input_attributes={
                             'disabled': 'true',
                             'name': 'armor-calc-bab',
                             'value': ROLL20_CALC['base_attack_bonus']
@@ -452,7 +396,7 @@ def calc_armor():
                 plus(),
                 underlabeled_number_input('Misc', 'armor-misc', {'class': 'eq-optional'}),
             ],
-            result_attributes = {
+            result_attributes={
                 'disabled': 'true',
                 'name': 'armor',
                 'value': ROLL20_CALC['armor'],
@@ -482,7 +426,7 @@ def calc_fort():
                 plus(),
                 underlabeled_number_input('Misc', 'fort-misc', {'class': 'eq-optional'}),
             ],
-            result_attributes = {
+            result_attributes={
                 'disabled': 'true',
                 'name': 'fortitude',
                 'value': ROLL20_CALC['fortitude'],
@@ -511,7 +455,7 @@ def calc_ref():
                 plus(),
                 underlabeled_number_input('Misc', 'ref-misc', {'class': 'eq-optional'}),
             ],
-            result_attributes = {
+            result_attributes={
                 'disabled': 'true',
                 'name': 'reflex',
                 'value': ROLL20_CALC['reflex'],
@@ -538,7 +482,7 @@ def calc_mental():
                 plus(),
                 underlabeled_number_input('Misc', 'ment-misc', {'class': 'eq-optional'}),
             ],
-            result_attributes = {
+            result_attributes={
                 'disabled': 'true',
                 'name': 'mental',
                 'value': ROLL20_CALC['mental'],
