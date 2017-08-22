@@ -451,7 +451,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         As long as you are conscious, no effect can prevent you from taking this action, even effects that prohibit all other actions.
         \begin{ability}
             \begin{spelleffects}
-                \spelleffect You heal 1d4 damage \add 1d per two levels.
+                \spelleffect You heal hit points equal to your \glossterm{standard damage} \minus1d.
                 In addition, you may remove one \glossterm{condition} affecting you.
             \end{spelleffects}
         \end{ability}
@@ -521,8 +521,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
             If you have a high Strength, you can use it to determine several statistics:
             \begin{itemize}
-                % \item Your \glossterm{accuracy} with \glossterm{strikes} using \glossterm{light weapons} (see \pcref{Physical Accuracy}).
-                \item Your damage with \glossterm{strikes} (see \pcref{Strike Damage}).
+                \item Your \glossterm{strike damage} (see \pcref{Strike Damage}).
                 \item Your Fortitude defense (see \pcref{Defenses}).
             \end{itemize}
 
@@ -691,11 +690,17 @@ It defines how attributes work and explains how to make physical attacks in comb
 
     \subsection{Damage}\label{Damage}
         Some attacks deal damage when they hit.
-        Each damaging attack has a set of \glossterm{damage dice} that represents how much damage it deals.
-        For example, the damage dice for a longsword are 1d8.
-        In addition, many abilities increase the size of damage dice.
-        These abilities are written in the form ``\plus1d'', which increases the damage dice of an attack by one \glossterm{die increment}.
-        Some abilities simply add a numerical bonus to damage.
+        Almost all damaging effects use your \glossterm{standard damage} as a baseline to determine the damage they deal.
+        At 1st level, your standard damage is equal to 1d6.
+
+        Many abilities can increase or decrease your standard damage.
+        These modifiers always increase or decrease your damage by one \glossterm{die increment}.
+        Increasing by one die increment is written as \plus1d, and decreasing by one die increment is written as \minus1d.
+        For example, using a longsword increases your damage by \plus1d, so you would deal 1d8 damage with a longsword at 1st level (if you were a Medium creature).
+        
+        As you gain levels, your \glossterm{standard damage} increases.
+        Your standard damage is equal to 1d6 \plus1d per two levels.
+        For a summary of standard damage at different levels, see \trefnp{Standard Damage}.
 
         \subsubsection{Die Increments}\label{Die Increments}
             A set of damage dice can increase in size in \glossterm{die increments}.
@@ -722,10 +727,29 @@ It defines how attributes work and explains how to make physical attacks in comb
             Likewise, for each die increment that decreases the damage, move one space up the list.
             After the damage dice reach 4d10, each additional die increment simply adds an extra 1d10 of damage.
 
+        \begin{dtable}
+            \lcaption{Standard Damage}
+            \begin{dtabularx}{\columnwidth}{l X}
+                \tb{Level} & \tb{Damage} \\
+                0--1   & 1d6  \\
+                2--3   & 1d8  \\
+                4--5   & 1d10 \\
+                6--7   & 2d6  \\
+                8--9   & 2d8  \\
+                10--11 & 2d10 \\
+                12--13 & 4d6  \\
+                14--15 & 4d8  \\
+                16--17 & 4d10 \\
+                18--19 & 5d10 \\
+                20     & 6d10 \\
+            \end{dtabularx}
+        \end{dtable}
+
         \subsubsection{Strike Damage}\label{Strike Damage}
             The damage you deal with a single \glossterm{strike} from a weapon is called your \glossterm{strike damage}.
-            Your \glossterm{strike damage} with a weapon is equal to the weapon's base damage die \plus1d for every 2 levels or Strength you have, whichever is higher.
-            For example, if you have a Strength of 4, your damage dice with a strike using a longsword, which has a 1d8 damage die, would be 2d6.
+            Your base \glossterm{strike damage} is equal to 1d6 \plus1d per two levels or per two Strength, whichever is higher.
+            For example, if you have a Strength of 4, your base \glossterm{strike damage} would be equal to 1d10.
+            When you make a strike with a weapon, you also apply that weapon's damage modifier, if any.
             Some abilities other than \glossterm{strikes} deal damage based on your \glossterm{strike damage}.
 
             \parhead{Creature Size and Damage}\label{Creature Size and Damage}
@@ -737,30 +761,6 @@ It defines how attributes work and explains how to make physical attacks in comb
         \subsubsection{Ability Damage}
             Your damage dice with an \glossterm{ability} are based on the damage dice defined in the ability's description.
             Most abilities gain a \plus1d bonus to damage for every 2 \glossterm{power} you have with the ability.
-
-        \subsubsection{Standard Damage}\label{Standard Damage}
-            Many abilities deal \glossterm{standard damage} based on your level, an attribute, or some other statistic.
-            Standard damage is equal to 1d8 \add 1d per two points in the statistic.
-            This is summarized in \trefnp{Standard Damage}.
-            \begin{dtable}
-                \lcaption{Standard Damage}
-                \begin{dtabularx}{\columnwidth}{l X}
-                    \tb{Statistic Value} & \tb{Damage} \\
-                    0--1 & 1d8 \\
-                    2--3 & 1d10 \\
-                    4--5 & 2d6 \\
-                    6--7 & 2d8 \\
-                    8--9 & 2d10 \\
-                    10--11 & 4d6 \\
-                    12--13 & 4d8 \\
-                    14--15 & 4d10 \\
-                    16--17 & 5d10 \\
-                    18--19 & 6d10 \\
-                    20--21 & 7d10 \\
-                    22\plus\fn{1} & \tdash \\
-                \end{dtabularx}
-                1 To calculate standard damage for a statistic beyond 20, add 1d10 per 2 points in the statistic. \\
-            \end{dtable}
 
     \subsection{Defenses}\label{Defenses}
         Usually, when you are attacked, the attacker has to make an \glossterm{attack roll} against a specific defense.
@@ -965,7 +965,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             1 Creatures can vary in space and reach.  These are simply typical values.  \\
             2 Applies to Reflex defense.  The same value is applied in reverse to Fortitude defense.
             For example, a Huge creature has a \minus4 penalty to Reflex and a \plus4 bonus to Fortitude defense. \\
-            3. This damage modifier applies to \glossterm{strikes}.
+            3. This modifier applies to \glossterm{strike damage}.
         \end{dtable*}
 
         \parhead{Other Effects}
