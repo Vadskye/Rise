@@ -75,7 +75,7 @@ def generate_spells():
             Subspell(
                 level=4,
                 name='Wind Screen',
-                description="The miss chance for ranged strikes against the target increases to 50\%.",
+                description="The miss chance for ranged strikes against the target increases to 50\\%.",
             ),
             Subspell(
                 level=3,
@@ -1530,7 +1530,7 @@ def generate_spells():
         effects=Effects(
             effect="""
                 The target's physical outline is distorted so it appears blurred, shifting, and wavering.
-                Targeted physical attacks against the target have a 20\% miss chance.
+                Targeted physical attacks against the target have a 20\\% miss chance.
                 Spells and other non-physical attacks suffer no miss chance.
             """,
             duration='Attunement',
@@ -1579,7 +1579,7 @@ def generate_spells():
                         Four illusory duplicates appear around the target that mirror its every move.
                         The duplicates shift chaotically in its space, making it difficult to identify the real creature.
 
-                        All targeted attacks against the target have a 50% miss chance.
+                        All targeted attacks against the target have a 50\\% miss chance.
                         Whenever an attack misses in this way, it affects an image, destroying it.
                     """,
                     duration='Sustain (swift)',
