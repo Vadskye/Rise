@@ -102,7 +102,7 @@ class Spell(object):
                     \\end<spellcontent>
                     \\begin<spellfooter>
                         \\spellinfo<{', '.join(self.schools)}><{', '.join(self.lists)}>
-                        \\parhead*<Augments> {', '.join(sorted(self.augments))}
+                        \\fieldhead<Augments> {', '.join(sorted(self.augments))}
             """,
             f"""
                             \\spellnotes {self.notes}
