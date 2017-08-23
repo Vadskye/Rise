@@ -728,7 +728,7 @@ def generate_spells():
             rng='close',
         ),
         effects=Effects(
-            effect='The target gains a +2d bonus to damage with all attacks.',
+            effect='The target gains a +2 bonus to \\glossterm<accuracy>.',
             duration='Attunement',
         ),
         cantrip="The spell's duration becomes Sustain (swift).",
