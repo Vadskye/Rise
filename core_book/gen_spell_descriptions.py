@@ -96,7 +96,7 @@ def generate_spells():
                 name='Stormlord',
                 description=r"""
                     Whenever a creature within \rngclose range of the target attacks it, wind strikes the attacking creature.
-                    The wind deals 1d4 bludgeoning damage \add 1d per two spellpower.
+                    The wind deals \\glossterm<standard damage> -1d.
                     Any individual creature can only be dealt damage in this way once per round.
                     \par Any effect which increases this spell's range increases the range of this effect by the same amount.""",
                 tags=['Shielding'],
@@ -819,7 +819,7 @@ def generate_spells():
                 level=4,
                 name="Bolstering",
                 description="""
-                    Creatures in the spell's area that worship your deity heal 1d4 damage +1d per two spellpower.
+                    Creatures in the spell's area that worship your deity heal hit points equal to \\glossterm<standard damage> -1d.
                 """,
             ),
         ],
@@ -934,7 +934,7 @@ def generate_spells():
             attack=Attack(
                 defense='Fortitude',
                 success="""
-                    \\spelldamage<cold>[1d4].
+                    \\Cold glossterm<standard damage> \minus1d.
                     In addition, the target is \\fatigued as a condition.
                 """,
                 critical='As above, but double damage.',
@@ -961,7 +961,7 @@ def generate_spells():
                 special="You gain a +2 bonus to accuracy against creatures wearing metal armor or otherwise carrying a significant amount of metal.",
                 defense='Reflex',
                 success="""
-                    \\spelldamage<electricity>[1d4].
+                    Electricity \\glossterm<standard damage> -1d.
                 """,
                 critical='As above, but double damage.',
             ),
@@ -1098,7 +1098,7 @@ def generate_spells():
         effects=Effects(
             attack=Attack(
                 defense='Mental',
-                success="\\spelldamage<physical>.",
+                success="Physical \\glossterm<standard damage> +1d.",
                 critical="""
                     As above, but double damage.
                     In addition, if the creature is an \\glossterm<outsider> native to another plane, it is sent back to its home plane.
@@ -1123,7 +1123,7 @@ def generate_spells():
         effects=Effects(
             attack=Attack(
                 defense='Fortitude',
-                success="The target is healed for \\spelldamage<>.",
+                success="The target is healed for hit points equal to \\glossterm<standard damage> +1d.",
             ),
             tags=['Life'],
         ),
@@ -1219,7 +1219,7 @@ def generate_spells():
                 name="Retributive",
                 description="""
                     Whenever a creature with the chosen alignment makes a physical melee attack against the target, you make a Spellpower vs. Mental attack against the attacking creature.
-                    Success means the attacker takes \\spelldamage<divine>[d4].
+                    Success means the attacker takes divine \\glossterm<standard damage> -1d.
                 """,
             ),
         ],
@@ -1244,7 +1244,7 @@ def generate_spells():
                 As a move action, it can move as you direct.
                 As a standard action, it can make a melee \glossterm{strike} against a creature it threatens.
                 Its accuracy is equal to your spellpower.
-                If it hits, it deals 1d3 damage \plus1d per two spellpower.
+                If it hits, it deals \\glossterm<standard damage> \minus2d.
                 The type of damage dealt by this attack depends on the creature's appearance.
                 Most animals bite or claw their foes, which deals bludgeoning and slashing damage.
             """,
@@ -1513,7 +1513,7 @@ def generate_spells():
                 ),
                 effects=Effects(
                     effect="""
-                        The target is healed for \\spelldamage<>.
+                        The target is healed for hit points equal to \\glossterm<standard damage> +1d.
                     """,
                 ),
             ),
