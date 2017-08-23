@@ -164,7 +164,7 @@ In addition, magical abilities and objects cannot be activated within the area.
 \spelleffect
 The target gains \glossterm{damage reduction} against physical damage equal to your spellpower.
 In addition, it is \glossterm{vulnerable} to fire damage.
-\spelldur Attunement
+\spelldur Attunement (shared)
 \spelltags{\glossterm{Enhancement}}
 \end{spelleffects}
 \end{spellcontent}
@@ -228,7 +228,7 @@ This is a \glossterm{Life} effect from the \glossterm{Vivimancy} school.
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \spelleffect The target gains a \plus2 bonus to \glossterm{accuracy}.
-\spelldur Attunement
+\spelldur Attunement (shared)
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -258,7 +258,7 @@ When you cast this spell, choose a skill.
 You must have mastered the chosen skill.
 \spelleffect
 The target gains a \plus5 bonus to the chosen skill.
-\spelldur Attunement
+\spelldur Attunement (shared)
 \spelltags{\glossterm{Enhancement}}
 \end{spelleffects}
 \end{spellcontent}
@@ -312,7 +312,7 @@ In addition, its duration becomes Sustain (standard).
 The spell does not require verbal components to cast.
 \augment{3}{Monstrous}
 The spell can target creatures of any creature type.
-\augment{4}{Attuned}
+\augment{4}{Endless}
 The spell's duration becomes Attunement.
 A critical sucess still makes the effect permanent.
 \augment{5}{Amnesia}
@@ -374,7 +374,7 @@ The spell deals no damage.
 The target gains a \plus2 bonus to \glossterm{physical defenses}.
 This bonus is increased to \plus5 against ranged \glossterm{strikes} from weapons or projectiles that are Small or smaller.
 Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
-\spelldur Attunement
+\spelldur Attunement (shared)
 \spelltags{\glossterm{Air}, \glossterm{Imbuement}}
 \end{spelleffects}
 \end{spellcontent}
@@ -421,6 +421,20 @@ Replace the spell's targets and effects with the following:
 \spellcritical As above, but double damage.
 \end{spellattack}
 \spelltags{\glossterm{Air}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{3}{Windblade}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgt{One unattended weapon}}{\spellrng{\rngclose}}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+The target weapon gains an additional ten feet of reach, extending the wielder's threatened area.
+This has no effect on ranged attacks with the weapon.
+\spelldur Sustain (swift)
+\spelltags{\glossterm{Air}, \glossterm{Shaping}}
 \end{augmenteffects}
 \end{spellcontent}
 \augment{4}{Air Walk}
@@ -600,7 +614,7 @@ For every point of healing, this spell can instead cure 1 vital damage.
 The target's physical outline is distorted so it appears blurred, shifting, and wavering.
 Targeted physical attacks against the target have a 20\% miss chance.
 Spells and other non-physical attacks suffer no miss chance.
-\spelldur Attunement
+\spelldur Attunement (shared)
 \spelltags{\glossterm{Glamer}, \glossterm{Visual}}
 \end{spelleffects}
 \end{spellcontent}
@@ -638,7 +652,7 @@ Replace the spell's effects with the following:
 You make a Disguise check to alter the target's appearance (see \pcref{Disguise Creature}).
 You gain a \plus5 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form.
 However, this effect is unable to alter the sound, smell, texture, or temperature of the target or its clothes and equipment.
-\spelldur Attunement
+\spelldur Attunement (shared)
 \spelltags{\glossterm{Glamer}, \glossterm{Visual}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -662,56 +676,6 @@ In addition, it loses the \glossterm{Visual} tag, allowing it to affect creature
 \augment{5}{Displacement}
 The target's image is futher distorted, and appears to be two to three feet from its real location.
 The spell's miss chance increases to 50\%.
-\begin{spellsection}{Elemental Blade}
-\begin{spellheader}
-\spelldesc{You transform the active part of a weapon into air, increasing its reach.}
-\end{spellheader}
-\begin{spellcontent}
-\begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One unattended weapon}}{\spellrng{\rngclose}}
-\end{spelltargetinginfo}
-\begin{spelleffects}
-\spelleffect
-The target weapon gains an additional five feet of reach, extending the wielder's threatened area.
-This has no effect on ranged attacks with the weapon.
-\spelldur Attunement
-\spelltags{\glossterm{Air}, \glossterm{Shaping}}
-\end{spelleffects}
-\end{spellcontent}
-\begin{spellfooter}
-\spellinfo{Transmutation}{Arcane, Nature, War, Water}
-\fieldhead{Augments} Extended, Quickened, Silent, Stilled
-\end{spellfooter}
-\begin{spellsubcontent}
-\begin{spellcantrip}
-The spell's duration becomes Sustain (swift).
-\end{spellcantrip}
-\end{spellsubcontent}
-\end{spellsection}
-\subsubsection{Subspells}
-\augment{2}{Aqueous Blade}
-Replace the spell's effects with the following:
-\begin{spellcontent}
-\begin{augmenteffects}
-\spelleffect
-\glossterm{Strikes} with the affected weapon are made against Reflex defense instead of Armor defense.
-However, damage with the weapon is halved, including any bonuses to damage.
-\spelldur Attunement
-\spelltags{\glossterm{Shaping}, \glossterm{Water}}
-\end{augmenteffects}
-\end{spellcontent}
-\augment{4}{Zephyr Blade}
-The weapon's reach is increased by ten feet instead of five feet.
-\augment{7}{Greater Aqueous Blade}
-Replace the spell's effects with the following:
-\begin{spellcontent}
-\begin{augmenteffects}
-\spelleffect
-\glossterm{Strikes} with the affected weapon are made against Reflex defense instead of Armor defense.
-\spelldur Attunement
-\spelltags{\glossterm{Shaping}, \glossterm{Water}}
-\end{augmenteffects}
-\end{spellcontent}
 \begin{spellsection}{Fear}
 \begin{spellheader}
 \spelldesc{You terrify your foe.}
@@ -787,9 +751,9 @@ Replace the spell's targets and effects with the following:
 \end{augmenttargetinginfo}
 \begin{augmenteffects}
 \spelleffect
-The target weapon deals \plus2d damage with \glossterm{strikes}.
+The target weapon gains a \plus2d bonus to \glossterm{strike damage}.
 In addition, all damage dealt with the weapon with strikes becomes fire damage in addition to its normal damage types.
-\spelldur Attunement
+\spelldur Sustain (swift)
 \spelltags{\glossterm{Fire}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -889,7 +853,7 @@ The spell's attack is made against Fortitude instead of Reflex.
 \begin{spelleffects}
 \spelleffect
 The target gains a \plus2 bonus to \glossterm{accuracy} with physical attacks.
-\spelldur Attunement
+\spelldur Attunement (shared)
 \spelltags{\glossterm{Enhancement}}
 \end{spelleffects}
 \end{spellcontent}
@@ -940,7 +904,7 @@ It learns this information in the instant before it acts, and normally does not 
 \spelleffect
 The target gains \glossterm{damage reduction} against \glossterm{physical damage} equal to your spellpower.
 In addition, it is \glossterm{vulnerable} to arcane damage.
-\spelldur Attunement
+\spelldur Attunement (shared)
 \spelltags{\glossterm{Shielding}}
 \end{spelleffects}
 \end{spellcontent}
@@ -1107,7 +1071,7 @@ The spell does not have additional effects other than damage.
 \begin{spelleffects}
 \spelleffect
 You increase or decrease the target's size by one size category.
-\spelldur Attunement
+\spelldur Attunement (shared)
 \spelltags{\glossterm{Shaping}, \glossterm{Sizing}}
 \end{spelleffects}
 \end{spellcontent}
@@ -1465,10 +1429,37 @@ The water can be created at multiple locations within the ritual's range, allowi
 \spelltags{\glossterm{Creation}, \glossterm{Water}}
 \end{augmenteffects}
 \end{spellcontent}
+\augment{3}{Aqueous Blade}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgt{One unattended weapon}}{\spellrng{\rngclose}}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+\glossterm{Strikes} with the affected weapon are made against Reflex defense instead of Armor defense.
+However, attacks with the weapon take a \minus2d penalty to \glossterm{strike damage}.
+\spelldur Sustain (swift)
+\spelltags{\glossterm{Shaping}, \glossterm{Water}}
+\end{augmenteffects}
+\end{spellcontent}
 \augment{4}{Sustained}
 The area affected by this spell becomes completely filled with water.
 You can sustain the water as a \glossterm{swift action}.
 Creatures in this \glossterm{zone} suffer penalties appropriate for fighting underwater, and may be unable to breathe.
+\augment{8}{Greater Aqueous Blade}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgt{One unattended weapon}}{\spellrng{\rngclose}}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+\glossterm{Strikes} with the affected weapon are made against Reflex defense instead of Armor defense.
+\spelldur Sustain (swift)
+\spelltags{\glossterm{Shaping}, \glossterm{Water}}
+\end{augmenteffects}
+\end{spellcontent}
 \begin{spellsection}{Web}
 \begin{spellheader}
 \spelldesc{
