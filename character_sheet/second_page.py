@@ -39,10 +39,10 @@ def calc_skills():
         *[calc_skill(skill_name) for skill_name in ATTRIBUTE_SKILLS['willpower']],
         skill_labels('Other'),
         *[calc_skill(skill_name) for skill_name in ['Bluff', 'Intimidate', 'Perform ______', 'Persuasion']],
-        calc_skill('____________'),
-        calc_skill('____________'),
-        calc_skill('____________'),
-        calc_skill('____________'),
+        calc_skill('____________', blank_input=True),
+        calc_skill('____________', blank_input=True),
+        calc_skill('____________', blank_input=True),
+        calc_skill('____________', blank_input=True),
     ])
 
 def skill_labels(attribute):
@@ -54,9 +54,9 @@ def skill_labels(attribute):
         div({'class': 'skill-label'}, 'Misc'),
     ])
 
-def calc_skill(skill_name):
+def calc_skill(skill_name, blank_input=False):
     return flex_row({'class': 'skill-row'}, [
-        div({'class': 'skill-name'}, skill_name),
+        div({'class': f'skill-name{" blank-input" if blank_input else ""}'}, skill_name),
         number_input({'class': 'skill-training'}),
         number_input({'class': 'skill-ranks'}),
         number_input({'class': 'skill-attr'}),
@@ -76,7 +76,7 @@ def calc_attribute(attribute_name):
         equation(
             [
                 underlabeled_number_input(
-                    'Base',
+                    'Base*',
                     calc_name + '-base',
                     attributes={'class': 'eq-base'},
                     # input_attributes = {'value': '0'},
@@ -85,7 +85,7 @@ def calc_attribute(attribute_name):
                 underlabeled_number_input(
                     'Level',
                     calc_name + '-level',
-                    attributes={'class': 'eq-level'},
+                    attributes={'class': 'eq-level eq-optional'},
                     # input_attributes = {'value': '0'},
                 ),
                 misc_spacer(),
@@ -103,15 +103,6 @@ def calc_attribute(attribute_name):
                 'value': ROLL20_CALC['attribute'](calc_name),
             },
         )
-    ])
-
-def level_numbers(name_prefix):
-    return flex_col({'class': 'level-numbers'}, [
-        flex_wrapper(div({'class': 'chart-header'}, 'Lvl')),
-        ''.join([
-            text_input({'name': 'ability-level-' + name_prefix + '-' + str(level)})
-            for level in range(1, 14)
-        ]),
     ])
 
 def level_chart():
@@ -190,9 +181,10 @@ def calc_attacks():
     return ''.join([
         calc_strike_accuracy(),
         calc_spellpower(),
-        calc_special_attack(),
+        # calc_special_attack(),
         calc_standard_damage(),
         calc_strike_damage(),
+        calc_other_damage(),
     ])
 
 def calc_speed():
@@ -240,7 +232,7 @@ def calc_strike_accuracy():
         equation(
             [
                 this_or_that([
-                    underlabeled_number_input('Lvl'),
+                    underlabeled_number_input('Level'),
                     underlabeled_number_input('Dex/Per'),
                 ]),
                 misc_spacer(),
@@ -262,6 +254,25 @@ def calc_strike_damage():
                 }),
                 flex_col({'class': 'equation-text'}, '+1d per two'),
                 underlabeled_number_input('Level/Str'),
+                misc_spacer(),
+                plus(),
+                underlabeled_number_input('Misc', 'strike-damage-misc', {'class': 'eq-optional'}),
+            ],
+        ),
+    ])
+
+def calc_other_damage():
+    return flex_row([
+        div({'class': 'calc-header blank-input'}, '____________'),
+        equation(
+            [
+                text_input({
+                    'class': 'fake-number',
+                    'disabled': 'true',
+                    'value': '1d6'
+                }),
+                flex_col({'class': 'equation-text'}, '+1d per two'),
+                underlabeled_number_input('Level/Attr'),
                 misc_spacer(),
                 plus(),
                 underlabeled_number_input('Misc', 'strike-damage-misc', {'class': 'eq-optional'}),
@@ -326,25 +337,17 @@ def calc_armor():
         div({'class': 'calc-header'}, 'Armor'),
         equation(
             [
-                base_10(),
-                plus(),
                 this_or_that([
                     underlabeled_number_input(
-                        'Prow',
-                        input_attributes={
-                            'disabled': 'true',
-                            'name': 'armor-calc-bab',
-                            'value': ROLL20_CALC['base_attack_bonus']
-                        },
+                        'Level',
                     ),
                     underlabeled_number_input('Dex/Con'),
                 ]),
                 plus(),
-                underlabeled_number_input('1/5 Dex'),
-                plus(),
                 underlabeled_number_input('Armor', 'armor-body'),
                 plus(),
                 underlabeled_number_input('Shield', 'shield'),
+                misc_spacer(),
                 plus(),
                 underlabeled_number_input('Misc', 'armor-misc', {'class': 'eq-optional'}),
             ],
@@ -364,14 +367,14 @@ def calc_fort():
         div({'class': 'calc-header'}, 'Fort'),
         equation(
             [
-                base_10(),
-                plus(),
                 this_or_that([
                     underlabeled_number_input('Level', 'fort-level'),
                     underlabeled_number_input('Str/Con'),
                 ]),
                 plus(),
-                underlabeled_number_input('1/2 Con'),
+                underlabeled_number_input('Con*'),
+                plus(),
+                underlabeled_number_input('Race'),
                 plus(),
                 underlabeled_number_input('Class'),
                 misc_spacer(),
@@ -391,14 +394,14 @@ def calc_ref():
         div({'class': 'calc-header'}, 'Ref'),
         equation(
             [
-                base_10(),
-                plus(),
                 this_or_that([
                     underlabeled_number_input('Level', 'ref-level'),
                     underlabeled_number_input('Dex/Per'),
                 ]),
                 plus(),
-                underlabeled_number_input('1/5 Dex'),
+                underlabeled_number_input('Dex*'),
+                plus(),
+                underlabeled_number_input('Race'),
                 plus(),
                 underlabeled_number_input('Class'),
                 plus(),
@@ -420,14 +423,14 @@ def calc_mental():
         div({'class': 'calc-header'}, 'Ment'),
         equation(
             [
-                base_10(),
-                plus(),
                 this_or_that([
                     underlabeled_number_input('Level', 'ment-level'),
                     underlabeled_number_input('Int/Wil'),
                 ]),
                 plus(),
-                underlabeled_number_input('1/2 Wil'),
+                underlabeled_number_input('Wil*'),
+                plus(),
+                underlabeled_number_input('Race'),
                 plus(),
                 underlabeled_number_input('Class'),
                 misc_spacer(),
