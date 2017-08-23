@@ -14,14 +14,9 @@ def create_page():
         flex_col({'class': 'main-body'}, [
             flex_col({'class': 'statistics'}, [
                 flex_wrapper(div({'class': 'section-header'}, 'Core Statistics')),
-                flex_row({'class': 'core-statistics'}, [
-                    labeled_number_input('Combat Prowess'),
-                    labeled_number_input('Strikes/Round'),
-                    labeled_number_input('Legend Points'),
-                ]),
-                calc_hit_points(),
-                calc_attacks(),
                 calc_speed(),
+                calc_attacks(),
+                calc_hit_points(),
                 flex_wrapper(div({'class': 'section-header'}, 'Defenses')),
                 calc_defenses(),
             ]),
@@ -171,19 +166,14 @@ def calc_hit_points():
         div({'class': 'calc-header'}, 'Hit Points'),
         equation(
             [
+                underlabeled_number_input('Level', 'hp-level', {'class': 'eq-level'}),
+                flex_col({'class': 'equation-text'}, 'times the total of'),
                 number_input({
                     'disabled': 'true',
                     'value': '5'
                 }),
-                times(),
-                underlabeled_number_input('Level', 'hp-level', {'class': 'eq-level'}),
                 plus(),
-                underlabeled_number_input('Con'),
-                plus(),
-                this_or_that([
-                    underlabeled_number_input('Fort'),
-                    underlabeled_number_input('Ment'),
-                ]),
+                underlabeled_number_input('Con*'),
                 misc_spacer(),
                 plus(),
                 underlabeled_number_input('Misc', 'hp-misc', {'class': 'eq-optional'}),
@@ -198,10 +188,11 @@ def calc_hit_points():
 
 def calc_attacks():
     return ''.join([
-        calc_melee(),
-        calc_ranged(),
+        calc_strike_accuracy(),
         calc_spellpower(),
         calc_special_attack(),
+        calc_standard_damage(),
+        calc_strike_damage(),
     ])
 
 def calc_speed():
@@ -224,7 +215,26 @@ def calc_defenses():
         calc_mental(),
     ])
 
-def calc_melee():
+def calc_standard_damage():
+    return flex_row([
+        div({'class': 'calc-header'}, 'Standard Dmg'),
+        equation(
+            [
+                text_input({
+                    'class': 'fake-number',
+                    'disabled': 'true',
+                    'value': '1d6'
+                }),
+                flex_col({'class': 'equation-text'}, '+1d per two'),
+                underlabeled_number_input('Level'),
+                misc_spacer(),
+                plus(),
+                underlabeled_number_input('Misc', 'standard-damage-misc', {'class': 'eq-optional'}),
+            ],
+        ),
+    ])
+
+def calc_strike_accuracy():
     return flex_row([
         div({'class': 'calc-header'}, 'Strike Accuracy'),
         equation(
@@ -237,47 +247,25 @@ def calc_melee():
                 plus(),
                 underlabeled_number_input('Misc', 'melee-misc', {'class': 'eq-optional'}),
             ],
-            result_attributes={
-                'disabled': 'true',
-                'name': 'melee',
-                'value': '+'.join([
-                    roll20_max_text(
-                        ROLL20_CALC['base_attack_bonus'],
-                        roll20_max_text(
-                            ROLL20_CALC['attribute']('strength'),
-                            ROLL20_CALC['attribute']('dexterity'),
-                        ),
-                    ),
-                    '@{proficiency}',
-                ]),
-            },
         ),
     ])
 
-def calc_ranged():
+def calc_strike_damage():
     return flex_row([
-        div({'class': 'calc-header'}, 'Strike Damage'),
+        div({'class': 'calc-header'}, 'Strike Dmg'),
         equation(
             [
-                this_or_that([
-                    underlabeled_number_input('Lvl'),
-                    underlabeled_number_input('Dex/Per'),
-                ]),
+                text_input({
+                    'class': 'fake-number',
+                    'disabled': 'true',
+                    'value': '1d6'
+                }),
+                flex_col({'class': 'equation-text'}, '+1d per two'),
+                underlabeled_number_input('Level/Str'),
                 misc_spacer(),
                 plus(),
-                underlabeled_number_input('Misc', 'ranged-misc', {'class': 'eq-optional'}),
+                underlabeled_number_input('Misc', 'strike-damage-misc', {'class': 'eq-optional'}),
             ],
-            result_attributes={
-                'disabled': 'true',
-                'name': 'ranged',
-                'value': '+'.join([
-                    roll20_max_text(
-                        ROLL20_CALC['base_attack_bonus'],
-                        ROLL20_CALC['attribute']('perception'),
-                    ),
-                    '@{proficiency}',
-                ]),
-            },
         ),
     ])
 
@@ -286,26 +274,7 @@ def calc_spellpower():
         div({'class': 'calc-header'}, 'Spellpower'),
         equation(
             [
-                underlabeled_number_input(
-                    'Class',
-                    attributes={
-                        'class': 'eq-optional',
-                    },
-                    input_attributes={
-                        'disabled': 'true',
-                        'name': 'spellpower-class',
-                        'value': '2' if DESTINATION == 'roll20' else "",
-                    },
-                ),
-                plus(),
-                underlabeled_number_input(
-                    'Level',
-                    input_attributes={
-                        'disabled': 'true',
-                        'name': 'spellpower-level',
-                        'value': '2' if DESTINATION == 'roll20' else "",
-                    },
-                ),
+                underlabeled_number_input('Level/Attr'),
                 misc_spacer(),
                 plus(),
                 underlabeled_number_input('Misc', 'melee-misc', {'class': 'eq-optional'}),
@@ -334,24 +303,7 @@ def calc_special_attack():
         ]),
         equation(
             [
-                this_or_that([
-                    underlabeled_number_input(
-                        'Level',
-                        input_attributes={
-                            'disabled': 'true',
-                            'name': 'special-calc-level',
-                            'value': ROLL20_CALC['base_attack_bonus']
-                        },
-                    ),
-                    underlabeled_number_input(
-                        'Attr',
-                        input_attributes={
-                            'disabled': 'true',
-                            'name': 'special-calc-attr',
-                            'value': ROLL20_CALC['attribute']('perception')
-                        },
-                    ),
-                ]),
+                underlabeled_number_input('Level/Attr'),
                 misc_spacer(),
                 plus(),
                 underlabeled_number_input('Misc', 'special-misc', {'class': 'eq-optional'}),
