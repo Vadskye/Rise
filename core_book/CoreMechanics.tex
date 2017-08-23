@@ -690,19 +690,12 @@ It defines how attributes work and explains how to make physical attacks in comb
 
     \subsection{Damage}\label{Damage}
         Some attacks deal damage when they hit.
-        Almost all damaging effects use your \glossterm{standard damage} as a baseline to determine the damage they deal.
-        At 1st level, your standard damage is equal to 1d6.
-
-        Many abilities can increase or decrease your standard damage.
-        These modifiers always increase or decrease your damage by one \glossterm{die increment}.
-        Increasing by one die increment is written as \plus1d, and decreasing by one die increment is written as \minus1d.
-        For example, using a longsword increases your damage by \plus1d, so you would deal 1d8 damage with a longsword at 1st level (if you were a Medium creature).
-        
-        As you gain levels, your \glossterm{standard damage} increases.
-        Your standard damage is equal to 1d6 \plus1d per two levels.
-        For a summary of standard damage at different levels, see \trefnp{Standard Damage}.
+        Damage is measured in damage dice.
 
         \subsubsection{Die Increments}\label{Die Increments}
+            Many abilities can increase or decrease your damage with abilities.
+            These modifiers always increase or decrease your damage by one \glossterm{die increment}.
+            Increasing by one die increment is written as \plus1d, and decreasing by one die increment is written as \minus1d.
             A set of damage dice can increase in size in \glossterm{die increments}.
             Damage dice change in size using the following pattern:
             \begin{itemize}
@@ -727,10 +720,17 @@ It defines how attributes work and explains how to make physical attacks in comb
             Likewise, for each die increment that decreases the damage, move one space up the list.
             After the damage dice reach 4d10, each additional die increment simply adds an extra 1d10 of damage.
 
+        \subsubsection{Standard Damage}
+            Most damaging effects use \glossterm{standard damage} as a baseline to determine the damage they deal.
+            Your \glossterm{standard damage} with an ability is based on that ability's \glossterm{power}, if it has one (see \pcref{Power}).
+            Otherwise, it is based on your level.
+            In either case, it starts at 1d6 and increases by \plus1d per two power or per two levels.
+            This is summarized on \trefnp{Standard Damage}.
+
         \begin{dtable}
             \lcaption{Standard Damage}
             \begin{dtabularx}{\columnwidth}{l X}
-                \tb{Level} & \tb{Damage} \\
+                \tb{Power} & \tb{Damage} \\
                 0--1   & 1d6  \\
                 2--3   & 1d8  \\
                 4--5   & 1d10 \\
@@ -741,14 +741,17 @@ It defines how attributes work and explains how to make physical attacks in comb
                 14--15 & 4d8  \\
                 16--17 & 4d10 \\
                 18--19 & 5d10 \\
-                20     & 6d10 \\
+                20--21 & 6d10 \\
+                22--23 & 7d10 \\
+                24--25\fn{1} & 8d10 \\
             \end{dtabularx}
+            1. For values above 25, increase by \plus1d at every even value.
         \end{dtable}
 
         \subsubsection{Strike Damage}\label{Strike Damage}
             The damage you deal with a single \glossterm{strike} from a weapon is called your \glossterm{strike damage}.
-            Your base \glossterm{strike damage} is equal to 1d6 \plus1d per two levels or per two Strength, whichever is higher.
-            For example, if you have a Strength of 4, your base \glossterm{strike damage} would be equal to 1d10.
+            Your base \glossterm{strike damage} is equal to \glossterm{standard damage} based on your level or your Strength, whichever is higher.
+            For example, if you have a Strength of 4, your base \glossterm{strike damage} would be equal to 1d10 (1d6 \plus2d).
             When you make a strike with a weapon, you also apply that weapon's damage modifier, if any.
             Some abilities other than \glossterm{strikes} deal damage based on your \glossterm{strike damage}.
 
@@ -757,10 +760,6 @@ It defines how attributes work and explains how to make physical attacks in comb
             Each creature size above Medium grants a \plus2d bonus to damage with strikes.
             Likewise, each creature size below Medium imposes a \minus1d penalty to damage with strikes.
             This is described in \tref{Size in Combat}.
-
-        \subsubsection{Ability Damage}
-            Your damage dice with an \glossterm{ability} are based on the damage dice defined in the ability's description.
-            Most abilities gain a \plus1d bonus to damage for every 2 \glossterm{power} you have with the ability.
 
     \subsection{Defenses}\label{Defenses}
         Usually, when you are attacked, the attacker has to make an \glossterm{attack roll} against a specific defense.
@@ -1163,6 +1162,14 @@ It defines how attributes work and explains how to make physical attacks in comb
 
 % TODO: This is a bad name; organize these better
 \section{Special Rules}
+
+    \subsection{Power}\label{Power}
+        Many abilities have a \glossterm{power} which represents the overall strength of the ability.
+        For example, your \glossterm{power} with \glossterm{spells} is called your \glossterm{spellpower}.
+        Your \glossterm{power} with an ability usually determines your \glossterm{accuracy} and \glossterm{damage} with that ability, if applicable.
+
+        Most abilities explicitly specify how to calculate their power.
+        If an ability does not have an explicitly stated power, use your level as its power when necessary.
 
     \subsection{Grappling}\label{Grappling}
         Grappling creatures are physically struggling with each other. While grappled, you suffer certain penalties and restrictions, as described below.
