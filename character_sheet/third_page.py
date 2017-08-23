@@ -1,13 +1,15 @@
-from cgi_simple import *
-
-from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS
+from cgi_simple import (
+    div, ensure_valid_attributes_and_contents, flex_col, flex_row, flex_wrapper,
+    labeled_text_input, text_input,
+)
 
 def create_page():
     return flex_row({'class': 'third-page'}, [
         flex_col({'class': 'sidebar'}, [
             feats_summary(),
-            abilities_summary(),
             proficiencies(),
+            inventory(),
+            adventuring(),
             flex_col([
                 flex_wrapper(div({'class': 'section-header'}, 'Experience')),
                 div(text_input()),
@@ -19,8 +21,7 @@ def create_page():
         ]),
         flex_col({'class': 'main-body'}, [
             equipment(),
-            inventory(),
-            adventuring(),
+            abilities_summary(),
             description(),
         ]),
     ])
@@ -31,19 +32,22 @@ def feats_summary():
             div({'class': 'summary-header-level section-header'}, 'Lvl'),
             div({'class': 'summary-header-name section-header'}, 'Feats'),
         ]),
-        "".join([summary_row(i) for i in [1, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19]]),
+        "".join([summary_row(i) for i in [1, 1, 3, 6, 10]]),
     ])
 
 def abilities_summary():
-    return flex_col({'class': 'abilities-summary'}, [
-        flex_row({'class': 'summary-header'}, [
-            div({'class': 'summary-header-level section-header'}, 'Lvl'),
-            div({'class': 'summary-header-name section-header'}, 'Abilities'),
-        ]),
-        "".join([summary_row() for i in range(1, 15)]),
+    return flex_col({'class': 'abilities'}, [
+        flex_wrapper(div({'class': 'section-header'}, 'Abilities')),
+        *[
+            flex_row([
+                labeled_text_input('Name', f'ability-name-{i}', {'class': 'ability-name'}),
+                labeled_text_input('Effects', f'ability-effects-{i}', {'class': 'ability-effects'}),
+            ])
+            for i in range(12)
+        ],
     ])
 
-def summary_row(level = None):
+def summary_row(level=None):
     return flex_row({'class': 'summary-row'}, [
         div({'class': 'summary-row-level'}, text_input({
             'value': level,
@@ -60,7 +64,7 @@ def proficiencies():
         labeled_text_input('Languages', 'prof-languages'),
     ])
 
-def subsection_header(attributes = None, contents = None):
+def subsection_header(attributes=None, contents=None):
     attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
     attributes['class'] = 'subsection-header ' + attributes.get('class', '')
     return flex_col(attributes, contents)
@@ -68,46 +72,24 @@ def subsection_header(attributes = None, contents = None):
 def equipment():
     return flex_col({'class': 'equipment'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Equipment')),
-        flex_row({'class': 'armor'}, [
-            subsection_header('Armor'),
-            labeled_text_input('Name', 'armor-name', {'class': 'equipment-name'}),
-            underlabeled_number_input('Bonus', 'armor-bonus'),
-            underlabeled_number_input('Encumb', 'armor-encumb'),
-            labeled_text_input('Special', 'armor-special', {'class': 'equipment-special'}),
-        ]),
-        flex_row({'class': 'shield'}, [
-            subsection_header('Shield'),
-            labeled_text_input('Name', 'shield-name', {'class': 'equipment-name'}),
-            underlabeled_number_input('Bonus', 'shield-bonus'),
-            underlabeled_number_input('Encumb', 'shield-encumb'),
-            labeled_text_input('Special', 'shield-special', {'class': 'equipment-special'}),
-        ]),
-        misc_equipment('Weapon'),
-        misc_equipment('Weapon'),
-        misc_equipment('Arms'),
-        misc_equipment('Head'),
-        misc_equipment('Legs'),
-        misc_equipment('Torso', 'torso1'),
-        misc_equipment('Torso', 'torso2'),
-        misc_equipment('Ring', 'ring1'),
-        misc_equipment('Ring', 'ring2'),
+        *[
+            flex_row([
+                labeled_text_input('Name', f'equipment-name-{i}', {'class': 'equipment-name'}),
+                labeled_text_input('Effects', f'equipment-effects-{i}', {'class': 'equipment-effects'}),
+            ])
+            for i in range(6)
+        ],
     ])
 
 def inventory():
     return div({'class': 'inventory'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Inventory')),
-        flex_row({'class': 'inventory-items'}, [
-            inventory_col(),
-            inventory_col(),
-        ]),
+        *[
+            text_input() for i in range(14)
+        ]
     ])
 
-def inventory_col():
-    return flex_col({'class': 'inventory-col'}, [
-        text_input() for i in range(6)
-    ])
-
-def misc_equipment(body_slot, body_slot_html = None):
+def misc_equipment(body_slot, body_slot_html=None):
     if body_slot_html is None:
         body_slot_html = body_slot.lower()
     return flex_row({'class': body_slot_html}, [
@@ -123,10 +105,10 @@ def adventuring():
             flex_row({'class': 'weight-limits'}, [
                 labeled_text_input('Normal', 'weight-normal'),
                 labeled_text_input('Overloaded', 'weight-overloaded'),
+            ]),
+            flex_row({'class': 'weight-limits'}, [
                 labeled_text_input('Max', 'weight-max'),
                 labeled_text_input('Push/Drag', 'weight-push-drag'),
-            ]),
-            flex_row({'class': 'wealth-and-xp'}, [
             ]),
         ]),
     ])
@@ -135,6 +117,6 @@ def description():
     return flex_col({'class': 'description'}, [
         div({'class': 'section-header'}, 'Personality and Description'),
         "".join([
-            div({'class': 'description-row'}, text_input()) for i in range(7)
+            div({'class': 'description-row'}, text_input()) for i in range(5)
         ]),
     ])
