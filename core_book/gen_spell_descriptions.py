@@ -33,7 +33,7 @@ def generate_spells():
                 This bonus is increased to +5 against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
                 Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
             """,
-            duration='Attunement',
+            duration='Attunement (shared)',
             tags=['Air', 'Imbuement'],
         ),
         schools=['Transmutation'],
@@ -70,6 +70,23 @@ def generate_spells():
                 effects=Effects(
                     attack=Attack.multi_damage('Fortitude', 'bludgeoning'),
                     tags=['Air'],
+                ),
+            ),
+            Subspell(
+                level=3,
+                name="Windblade",
+                targeting=Targeting(
+                    # TODO: unattended or wielded by a willing creature?
+                    target='One unattended weapon',
+                    rng='close',
+                ),
+                effects=Effects(
+                    effect="""
+                        The target weapon gains an additional ten feet of reach, extending the wielder's threatened area.
+                        This has no effect on ranged attacks with the weapon.
+                    """,
+                    duration='Sustain (swift)',
+                    tags=['Air', 'Shaping'],
                 ),
             ),
             Subspell(
@@ -145,7 +162,7 @@ def generate_spells():
                 The target gains \\glossterm<damage reduction> against \\glossterm<physical damage> equal to your spellpower.
                 In addition, it is \\glossterm<vulnerable> to arcane damage.
             """,
-            duration='Attunement',
+            duration='Attunement (shared)',
             tags=['Shielding'],
         ),
         schools=['Abjuration'],
@@ -475,10 +492,10 @@ def generate_spells():
                 ),
                 effects=Effects(
                     effect="""
-                        The target weapon deals +2d damage with \\glossterm<strikes>.
+                        The target weapon gains a +2d bonus to \\glossterm<strike damage>.
                         In addition, all damage dealt with the weapon with strikes becomes fire damage in addition to its normal damage types.
                     """,
-                    duration='Attunement',
+                    duration='Sustain (swift)',
                     tags=['Fire'],
                 ),
             ),
@@ -546,7 +563,7 @@ def generate_spells():
             ),
             Subspell(
                 level=4,
-                name="Attuned",
+                name="Endless",
                 description="""
                     The spell's duration becomes Attunement.
                     A critical sucess still makes the effect permanent.
@@ -620,6 +637,23 @@ def generate_spells():
                 ),
             ),
             Subspell(
+                level=3,
+                name="Aqueous Blade",
+                targeting=Targeting(
+                    # TODO: unattended or wielded by a willing creature?
+                    target='One unattended weapon',
+                    rng='close',
+                ),
+                effects=Effects(
+                    effect="""
+                        \glossterm<Strikes> with the affected weapon are made against Reflex defense instead of Armor defense.
+                        However, attacks with the weapon take a -2d penalty to \\glossterm<strike damage>.
+                    """,
+                    duration='Sustain (swift)',
+                    tags=['Shaping', 'Water'],
+                ),
+            ),
+            Subspell(
                 level=4,
                 name="Sustained",
                 description="""
@@ -628,64 +662,24 @@ def generate_spells():
                     Creatures in this \\glossterm<zone> suffer penalties appropriate for fighting underwater, and may be unable to breathe.
                 """,
             ),
-        ],
-        category='damage',
-    ))
-    # The school here is complicated; the top-level is pure Evocation, and the
-    # Aqueuous Blade subspell is pure Transmutation. This should be split up
-    # into separate spells.
-    spells.append(Spell(
-        name="Elemental Blade",
-        header=Header("You transform the active part of a weapon into air, increasing its reach."),
-        targeting=Targeting(
-            # TODO: unattended or wielded by a willing creature?
-            target='One unattended weapon',
-            rng='close',
-        ),
-        effects=Effects(
-            effect="""
-                The target weapon gains an additional five feet of reach, extending the wielder's threatened area.
-                This has no effect on ranged attacks with the weapon.
-            """,
-            duration='Attunement',
-            tags=['Air', 'Shaping'],
-        ),
-        schools=['Transmutation'],
-        lists=['Arcane', 'Nature', 'War', 'Water'],
-        cantrip="The spell's duration becomes Sustain (swift).",
-        subspells=[
             Subspell(
-                level=2,
-                name="Aqueous Blade",
+                level=8,
+                name="Greater Aqueous Blade",
+                targeting=Targeting(
+                    # TODO: unattended or wielded by a willing creature?
+                    target='One unattended weapon',
+                    rng='close',
+                ),
                 effects=Effects(
                     effect="""
                         \glossterm<Strikes> with the affected weapon are made against Reflex defense instead of Armor defense.
-                        However, damage with the weapon is halved, including any bonuses to damage.
                     """,
-                    duration='Attunement',
-                    tags=['Shaping', 'Water'],
-                ),
-            ),
-            Subspell(
-                level=4,
-                name="Zephyr Blade",
-                description="""
-                    The weapon's reach is increased by ten feet instead of five feet.
-                """,
-            ),
-            Subspell(
-                level=7,
-                name="Greater Aqueous Blade",
-                effects=Effects(
-                    effect="""
-                        \\glossterm<Strikes> with the affected weapon are made against Reflex defense instead of Armor defense.
-                    """,
-                    duration='Attunement',
+                    duration='Sustain (swift)',
                     tags=['Shaping', 'Water'],
                 ),
             ),
         ],
-        category='buff, offense',
+        category='damage',
     ))
     spells.append(Spell(
         name="Fear",
@@ -729,7 +723,7 @@ def generate_spells():
         ),
         effects=Effects(
             effect='The target gains a +2 bonus to \\glossterm<accuracy>.',
-            duration='Attunement',
+            duration='Attunement (shared)',
         ),
         cantrip="The spell's duration becomes Sustain (swift).",
         schools=['Channeling'],
@@ -757,7 +751,7 @@ def generate_spells():
                 The target gains \\glossterm{damage reduction} against physical damage equal to your spellpower.
                 In addition, it is \\glossterm<vulnerable> to fire damage.
             """,
-            duration='Attunement',
+            duration='Attunement (shared)',
             tags=['Enhancement'],
         ),
         schools=['Transmutation'],
@@ -839,7 +833,7 @@ def generate_spells():
             effect="""
                 The target gains a +5 bonus to the chosen skill.
             """,
-            duration='Attunement',
+            duration='Attunement (shared)',
             tags=['Enhancement'],
         ),
         schools=['Transmutation'],
@@ -1401,7 +1395,7 @@ def generate_spells():
                 The target gains a \plus2 bonus to \\glossterm<accuracy> with physical attacks.
             """,
             tags=['Enhancement'],
-            duration='Attunement',
+            duration='Attunement (shared)',
         ),
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
@@ -1533,7 +1527,7 @@ def generate_spells():
                 Targeted physical attacks against the target have a 20\\% miss chance.
                 Spells and other non-physical attacks suffer no miss chance.
             """,
-            duration='Attunement',
+            duration='Attunement (shared)',
             tags=['Glamer', 'Visual'],
         ),
         schools=['Illusion'],
@@ -1567,7 +1561,7 @@ def generate_spells():
                         You gain a +5 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form.
                         However, this effect is unable to alter the sound, smell, texture, or temperature of the target or its clothes and equipment.
                     """,
-                    duration='Attunement',
+                    duration='Attunement (shared)',
                     tags=['Glamer', 'Visual'],
                 ),
             ),
@@ -1719,7 +1713,7 @@ def generate_spells():
             effect="""
                 You increase or decrease the target's size by one size category.
             """,
-            duration='Attunement',
+            duration='Attunement (shared)',
             tags=['Shaping', 'Sizing'],
         ),
         schools=['Transmutation'],
