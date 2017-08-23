@@ -18,8 +18,9 @@ body {
     height: 100%;
 }
 
-input[type=text] {
+input[type=text], .eq-optional > input[type=number] {
     box-shadow: none !important;
+    border: 0;
     border-bottom: 1px solid black;
 }
 
@@ -28,7 +29,8 @@ input[type=number], input[type=text].fake-number {
     box-shadow: none !important;
 }
 
-.skill-box input[type=number], #level-chart input[type=number], .eq-optional input[type=number], input[type=number].skill-training, input[type=number].skill-ranks, input[type=number].skill-misc  {
+
+.skill-box input[type=number], #level-chart input[type=number], input[type=number].skill-training, input[type=number].skill-ranks, input[type=number].skill-misc  {
     border: 1px solid #AAA;
 }
 

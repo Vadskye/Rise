@@ -1,7 +1,6 @@
 from cgi_simple import (
-    DESTINATION,
-    div, equation, flex_col, flex_row, flex_wrapper, labeled_number_input, number_input,
-    plus, text_input, this_or_that, times, underlabeled_number_input,
+    div, equation, flex_col, flex_row, flex_wrapper, number_input,
+    plus, text_input, this_or_that, underlabeled_number_input,
 )
 
 from sheet_data import ATTRIBUTE_SKILLS, ATTRIBUTES, ROLL20_CALC, roll20_max_text
