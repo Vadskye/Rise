@@ -527,7 +527,7 @@ Persuasion
 </input>
 </div>
 <div class="flex-row skill-row">
-<div class="skill-name">
+<div class="skill-name blank-input">
 ____________
 </div>
 <input class="skill-training" type="number">
@@ -544,7 +544,7 @@ ____________
 </input>
 </div>
 <div class="flex-row skill-row">
-<div class="skill-name">
+<div class="skill-name blank-input">
 ____________
 </div>
 <input class="skill-training" type="number">
@@ -561,7 +561,7 @@ ____________
 </input>
 </div>
 <div class="flex-row skill-row">
-<div class="skill-name">
+<div class="skill-name blank-input">
 ____________
 </div>
 <input class="skill-training" type="number">
@@ -578,7 +578,7 @@ ____________
 </input>
 </div>
 <div class="flex-row skill-row">
-<div class="skill-name">
+<div class="skill-name blank-input">
 ____________
 </div>
 <input class="skill-training" type="number">
@@ -677,7 +677,7 @@ Total
 
 </input>
 <div class="under-label">
-Lvl
+Level
 </div>
 </div><div class="flex-col equation-glue">
 or
@@ -737,48 +737,6 @@ Level/Attr
 </div>
 </div><div class="flex-col underlabeled-number-input eq-optional">
 <input name="melee-misc" type="number">
-
-</input>
-<div class="under-label">
-Misc
-</div>
-</div>
-</div>
-</div><div class="flex-row">
-<div class="flex-wrapper calc-header">
-<input class="calc-header" size="1" type="text">
-
-</input>
-</div>
-<div class="flex-row equation">
-<div class="flex-col underlabeled-number-input">
-<input disabled="true" name="special-attack" type="number">
-
-</input>
-<div class="under-label">
-Total
-</div>
-</div>
-<div class="flex-col equation-glue">
-<div class="equation-math">
-=
-</div>
-</div>
-<div class="flex-col underlabeled-number-input">
-<input type="number">
-
-</input>
-<div class="under-label">
-Level/Attr
-</div>
-</div><div class="misc-spacer">
-
-</div><div class="flex-col equation-glue">
-<div class="equation-math">
-+
-</div>
-</div><div class="flex-col underlabeled-number-input eq-optional">
-<input name="special-misc" type="number">
 
 </input>
 <div class="under-label">
@@ -858,6 +816,50 @@ Total
 </input>
 <div class="under-label">
 Level/Str
+</div>
+</div><div class="misc-spacer">
+
+</div><div class="flex-col equation-glue">
+<div class="equation-math">
++
+</div>
+</div><div class="flex-col underlabeled-number-input eq-optional">
+<input name="strike-damage-misc" type="number">
+
+</input>
+<div class="under-label">
+Misc
+</div>
+</div>
+</div>
+</div><div class="flex-row">
+<div class="calc-header blank-input">
+____________
+</div>
+<div class="flex-row equation">
+<div class="flex-col underlabeled-number-input">
+<input name="eq-total" type="number">
+
+</input>
+<div class="under-label">
+Total
+</div>
+</div>
+<div class="flex-col equation-glue">
+<div class="equation-math">
+=
+</div>
+</div>
+<input class="fake-number" disabled="true" size="1" type="text" value="1d6">
+
+</input><div class="flex-col equation-text">
++1d per two
+</div><div class="flex-col underlabeled-number-input">
+<input type="number">
+
+</input>
+<div class="under-label">
+Level/Attr
 </div>
 </div><div class="misc-spacer">
 
@@ -954,19 +956,13 @@ Total
 =
 </div>
 </div>
-<input disabled="true" type="number" value="10">
-
-</input><div class="flex-col equation-glue">
-<div class="equation-math">
-+
-</div>
-</div><div class="flex-row two-choices">
+<div class="flex-row two-choices">
 <div class="flex-col underlabeled-number-input">
-<input disabled="true" name="armor-calc-bab" type="number" value="(@{bab-good}+@{bab-avg}+@{bab-poor})">
+<input type="number">
 
 </input>
 <div class="under-label">
-Prow
+Level
 </div>
 </div><div class="flex-col equation-glue">
 or
@@ -977,17 +973,6 @@ or
 <div class="under-label">
 Dex/Con
 </div>
-</div>
-</div><div class="flex-col equation-glue">
-<div class="equation-math">
-+
-</div>
-</div><div class="flex-col underlabeled-number-input">
-<input type="number">
-
-</input>
-<div class="under-label">
-1/5 Dex
 </div>
 </div><div class="flex-col equation-glue">
 <div class="equation-math">
@@ -1011,6 +996,8 @@ Armor
 <div class="under-label">
 Shield
 </div>
+</div><div class="misc-spacer">
+
 </div><div class="flex-col equation-glue">
 <div class="equation-math">
 +
@@ -1042,13 +1029,7 @@ Total
 =
 </div>
 </div>
-<input disabled="true" type="number" value="10">
-
-</input><div class="flex-col equation-glue">
-<div class="equation-math">
-+
-</div>
-</div><div class="flex-row two-choices">
+<div class="flex-row two-choices">
 <div class="flex-col underlabeled-number-input">
 <input name="fort-level" type="number">
 
@@ -1075,7 +1056,18 @@ Str/Con
 
 </input>
 <div class="under-label">
-1/2 Con
+Con*
+</div>
+</div><div class="flex-col equation-glue">
+<div class="equation-math">
++
+</div>
+</div><div class="flex-col underlabeled-number-input">
+<input type="number">
+
+</input>
+<div class="under-label">
+Race
 </div>
 </div><div class="flex-col equation-glue">
 <div class="equation-math">
@@ -1121,13 +1113,7 @@ Total
 =
 </div>
 </div>
-<input disabled="true" type="number" value="10">
-
-</input><div class="flex-col equation-glue">
-<div class="equation-math">
-+
-</div>
-</div><div class="flex-row two-choices">
+<div class="flex-row two-choices">
 <div class="flex-col underlabeled-number-input">
 <input name="ref-level" type="number">
 
@@ -1154,7 +1140,18 @@ Dex/Per
 
 </input>
 <div class="under-label">
-1/5 Dex
+Dex*
+</div>
+</div><div class="flex-col equation-glue">
+<div class="equation-math">
++
+</div>
+</div><div class="flex-col underlabeled-number-input">
+<input type="number">
+
+</input>
+<div class="under-label">
+Race
 </div>
 </div><div class="flex-col equation-glue">
 <div class="equation-math">
@@ -1211,13 +1208,7 @@ Total
 =
 </div>
 </div>
-<input disabled="true" type="number" value="10">
-
-</input><div class="flex-col equation-glue">
-<div class="equation-math">
-+
-</div>
-</div><div class="flex-row two-choices">
+<div class="flex-row two-choices">
 <div class="flex-col underlabeled-number-input">
 <input name="ment-level" type="number">
 
@@ -1244,7 +1235,18 @@ Int/Wil
 
 </input>
 <div class="under-label">
-1/2 Wil
+Wil*
+</div>
+</div><div class="flex-col equation-glue">
+<div class="equation-math">
++
+</div>
+</div><div class="flex-col underlabeled-number-input">
+<input type="number">
+
+</input>
+<div class="under-label">
+Race
 </div>
 </div><div class="flex-col equation-glue">
 <div class="equation-math">
@@ -1302,13 +1304,13 @@ Total
 
 </input>
 <div class="under-label">
-Base
+Base*
 </div>
 </div><div class="flex-col equation-glue">
 <div class="equation-math">
 +
 </div>
-</div><div class="flex-col underlabeled-number-input eq-level">
+</div><div class="flex-col underlabeled-number-input eq-level eq-optional">
 <input name="strength-level" type="number">
 
 </input>
@@ -1350,13 +1352,13 @@ Total
 
 </input>
 <div class="under-label">
-Base
+Base*
 </div>
 </div><div class="flex-col equation-glue">
 <div class="equation-math">
 +
 </div>
-</div><div class="flex-col underlabeled-number-input eq-level">
+</div><div class="flex-col underlabeled-number-input eq-level eq-optional">
 <input name="dexterity-level" type="number">
 
 </input>
@@ -1398,13 +1400,13 @@ Total
 
 </input>
 <div class="under-label">
-Base
+Base*
 </div>
 </div><div class="flex-col equation-glue">
 <div class="equation-math">
 +
 </div>
-</div><div class="flex-col underlabeled-number-input eq-level">
+</div><div class="flex-col underlabeled-number-input eq-level eq-optional">
 <input name="constitution-level" type="number">
 
 </input>
@@ -1446,13 +1448,13 @@ Total
 
 </input>
 <div class="under-label">
-Base
+Base*
 </div>
 </div><div class="flex-col equation-glue">
 <div class="equation-math">
 +
 </div>
-</div><div class="flex-col underlabeled-number-input eq-level">
+</div><div class="flex-col underlabeled-number-input eq-level eq-optional">
 <input name="intelligence-level" type="number">
 
 </input>
@@ -1494,13 +1496,13 @@ Total
 
 </input>
 <div class="under-label">
-Base
+Base*
 </div>
 </div><div class="flex-col equation-glue">
 <div class="equation-math">
 +
 </div>
-</div><div class="flex-col underlabeled-number-input eq-level">
+</div><div class="flex-col underlabeled-number-input eq-level eq-optional">
 <input name="perception-level" type="number">
 
 </input>
@@ -1542,13 +1544,13 @@ Total
 
 </input>
 <div class="under-label">
-Base
+Base*
 </div>
 </div><div class="flex-col equation-glue">
 <div class="equation-math">
 +
 </div>
-</div><div class="flex-col underlabeled-number-input eq-level">
+</div><div class="flex-col underlabeled-number-input eq-level eq-optional">
 <input name="willpower-level" type="number">
 
 </input>
