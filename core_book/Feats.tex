@@ -937,7 +937,7 @@ Feats can be used to specialize your character particular area, to grant your ch
             \begin{spelleffects}
                 \begin{spellattack}{Spellpower vs. Mental} % Which spellpower?
                     % No good damage type for this yet
-                    \spellsuccess The target takes \spelldamage{physical}[d6].
+                    \spellsuccess The target takes physical \glossterm{standard damage}.
                     In addition, its Mental defense is lowered by 2.
                     This is a \glossterm{condition}, and lasts until it is removed.
                     \spellcritical As above, but double damage, and its Mental defense is lowered by 5 instead of 2.
@@ -1812,12 +1812,13 @@ Feats can be used to specialize your character particular area, to grant your ch
         \featben
 
         \ff[1]{Restore Life} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        Your \glossterm{power} with this ability is equal to your highest \glossterm{spellpower}.
         \begin{ability}
             \begin{spelltargetinginfo}
                 \spellquicktargeting{One creature}{\rngclose}
             \end{spelltargetinginfo}
             \begin{spelleffects}
-                \spelleffect The target is healed for \spelldamage{}.
+                \spelleffect The target is healed for hit points equal to your \glossterm{standard damage}.
                 \spelltags{\glossterm{Life}}
             \end{spelleffects}
         \end{ability}

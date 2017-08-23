@@ -344,7 +344,7 @@ If the target was already dominated by you, this effect lasts for 24 hours inste
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Fortitude}
 \spellsuccess
-\spelldamage{cold}[1d4].
+\Cold glossterm{standard damage} \minus1d.
 In addition, the target is \fatigued as a condition.
 \spellcritical As above, but double damage.
 \end{spellattack}
@@ -400,7 +400,7 @@ Replace the spell's targets and effects with the following:
 \end{augmenttargetinginfo}
 \begin{augmenteffects}
 \begin{spellattack}{Spellpower vs. Fortitude}
-\spellsuccess \spelldamage{bludgeoning}.
+\spellsuccess Bludgeoning \glossterm{standard damage} \plus1d.
 \spellcritical As above, but double damage.
 \end{spellattack}
 \spelltags{\glossterm{Air}}
@@ -417,7 +417,7 @@ Replace the spell's targets and effects with the following:
 \end{augmenttargetinginfo}
 \begin{augmenteffects}
 \begin{spellattack}{Spellpower vs. Fortitude}
-\spellsuccess \spelldamage{bludgeoning}[1d4].
+\spellsuccess Bludgeoning \glossterm{standard damage} \minus1d.
 \spellcritical As above, but double damage.
 \end{spellattack}
 \spelltags{\glossterm{Air}}
@@ -431,7 +431,7 @@ By choosing when to treat the air as solid, it can traverse the air with ease.
 The miss chance for ranged strikes against the target increases to 50\%.
 \augment{5}{Stormlord}
 Whenever a creature within \rngclose range of the target attacks it, wind strikes the attacking creature.
-The wind deals 1d4 bludgeoning damage \add 1d per two spellpower.
+The wind deals \\glossterm{standard damage} \minus1d.
 Any individual creature can only be dealt damage in this way once per round.
 \par Any effect which increases this spell's range increases the range of this effect by the same amount.
 \par
@@ -517,7 +517,7 @@ This is a \glossterm{Curse} effect.
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Reflex}
-\spellsuccess \spelldamage{acid}.
+\spellsuccess Acid \glossterm{standard damage} \plus1d.
 \spellcritical As above, but double damage.
 \end{spellattack}
 \spelltags{\glossterm{Acid}, \glossterm{Manifestation}}
@@ -546,7 +546,7 @@ However, it deals damage to the target again at the end of each round for 2 roun
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Fortitude}
-\spellsuccess The target is healed for \spelldamage{}.
+\spellsuccess The target is healed for hit points equal to \glossterm{standard damage} \plus1d.
 \end{spellattack}
 \spelltags{\glossterm{Life}}
 \end{spelleffects}
@@ -754,7 +754,7 @@ The target is afraid of a willing ally within the spell's range instead of being
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Reflex}
-\spellsuccess \spelldamage{fire}[1d4].
+\spellsuccess Fire \glossterm{standard damage} \minus1d.
 \spellcritical As above, but double damage.
 \end{spellattack}
 \spelltags{\glossterm{Fire}}
@@ -805,7 +805,7 @@ If a creature opens the target object, it explodes.
 You make an attack against everything within an \areamed radius burst centered on the target.
 After the object explodes in this way, the spell ends.
 \begin{spellattack}{Spellpower vs. Reflex}
-\spellsuccess \spelldamage{fire}[1d4].
+\spellsuccess Fire \glossterm{standard damage} \minus1d.
 \spellcritical As above, but double damage.
 \end{spellattack}
 \spelldur Attunement
@@ -982,7 +982,7 @@ The damage reduction increases by an amount equal to your spellpower.
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Fortitude}
-\spellsuccess \spelldamage{life}.
+\spellsuccess Life \glossterm{standard damage} \plus1d.
 \spellcritical As above, but double damage.
 \end{spellattack}
 \spelltags{\glossterm{Life}}
@@ -1020,7 +1020,7 @@ This is a \glossterm{Death} effect.
 \begin{spellattack}{Spellpower vs. Reflex}
 \spellspecial You gain a \plus2 bonus to accuracy against creatures wearing metal armor or otherwise carrying a significant amount of metal.
 \spellsuccess
-\spelldamage{electricity}[1d4].
+Electricity \glossterm{standard damage} \minus1d.
 \spellcritical As above, but double damage.
 \end{spellattack}
 \spelltags{\glossterm{Electricity}}
@@ -1050,7 +1050,7 @@ The spell's attack is made against Fortitude defense instead of Reflex defense.
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Mental}
-\spellsuccess \spelldamage{physical}.
+\spellsuccess Physical \glossterm{standard damage} \plus1d.
 \spellcritical
 As above, but double damage.
 In addition, if the creature is an \glossterm{outsider} native to another plane, it is sent back to its home plane.
@@ -1169,7 +1169,7 @@ The spell's duration becomes Sustain (swift).
 The damage reduction also applies against non-physical effects.
 \augment{4}{Retributive}
 Whenever a creature with the chosen alignment makes a physical melee attack against the target, you make a Spellpower vs. Mental attack against the attacking creature.
-Success means the attacker takes \spelldamage{divine}[d4].
+Success means the attacker takes divine \glossterm{standard damage} \minus1d.
 \begin{spellsection}{Scry}
 \begin{spellheader}
 \spelldesc{You create a scrying sensor that allows you to see at a distance.}
@@ -1258,7 +1258,7 @@ You constantly receive sensory input from both your body and the sensor.
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Mental}
-\spellsuccess \spelldamage{divine}.
+\spellsuccess Divine \glossterm{standard damage} \plus1d.
 \spellcritical As above, but double damage.
 \end{spellattack}
 \end{spelleffects}
@@ -1292,7 +1292,7 @@ There are only two actions it can take.
 As a move action, it can move as you direct.
 As a standard action, it can make a melee \glossterm{strike} against a creature it threatens.
 Its accuracy is equal to your spellpower.
-If it hits, it deals 1d3 damage \plus1d per two spellpower.
+If it hits, it deals \glossterm{standard damage} \minus2d.
 The type of damage dealt by this attack depends on the creature's appearance.
 Most animals bite or claw their foes, which deals bludgeoning and slashing damage.
 \spelldur Sustain (swift)
@@ -1350,7 +1350,7 @@ Replace the spell's targets and effects with the following:
 \end{augmenttargetinginfo}
 \begin{augmenteffects}
 \spelleffect
-The target is healed for \spelldamage{}.
+The target is healed for hit points equal to \glossterm{standard damage} \plus1d.
 \end{augmenteffects}
 \end{spellcontent}
 \augment{2}{Precise}
@@ -1427,7 +1427,7 @@ Replace the spell's targets with the following:
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Fortitude}
-\spellsuccess \spelldamage{bludgeoning}[1d4].
+\spellsuccess Bludgeoning \glossterm{standard damage} \minus1d.
 \spellcritical As above, but double damage.
 \end{spellattack}
 \spelltags{\glossterm{Manifestation}, \glossterm{Water}}
@@ -1517,7 +1517,7 @@ In addition, the webs are no longer vulnerable to fire.
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Mental}
-\spellsuccess \spelldamage{divine}.
+\spellsuccess Divine \glossterm{standard damage} \plus1d.
 \spellcritical As above, but double damage.
 \end{spellattack}
 \end{spelleffects}
@@ -1534,4 +1534,4 @@ The spell's area becomes an \areasmall radius.
 \end{spellsection}
 \subsubsection{Subspells}
 \augment{4}{Bolstering}
-Creatures in the spell's area that worship your deity heal 1d4 damage \plus1d per two spellpower.
+Creatures in the spell's area that worship your deity heal hit points equal to \glossterm{standard damage} \minus1d.

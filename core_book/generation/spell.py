@@ -76,7 +76,7 @@ class Spell(object):
         if (
                 self.effects.attack
                 and self.effects.attack.success
-                and '\\spelldamage' in self.effects.attack.success
+                and 'standard damage' in self.effects.attack.success
         ):
             augments.append('Intensified')
         return sorted(augments)

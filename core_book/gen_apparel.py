@@ -508,7 +508,7 @@ def generate_worn():
             As a standard action, you can spend an \glossterm{action point} to use this item.
             If you do, you teleport exactly 25 miles in a direction you specify.
             If this would place you within a solid object or otherwise impossible space, the boots will shunt you up to 1,000 feet in any direction to the closest available space.
-            If there is no available space within 1,000 feet of your intended destination, the effect fails and you take 1d4 damage +1d per two \\glossterm<power> of the item.
+            If there is no available space within 1,000 feet of your intended destination, the effect fails and you take \\glossterm<standard damage> -1d.
         """,
     ))
 

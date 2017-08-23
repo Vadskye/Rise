@@ -7,7 +7,7 @@ class Attack(object):
     def damage(cls, defense, damage_type):
         return cls(
             defense=defense,
-            success=f"\\spelldamage<{damage_type}>.",
+            success=f"{damage_type.capitalize()} \\glossterm<standard damage> +1d.",
             critical='As above, but double damage.',
         )
 
@@ -15,7 +15,7 @@ class Attack(object):
     def multi_damage(cls, defense, damage_type):
         return cls(
             defense=defense,
-            success=f"\\spelldamage<{damage_type}>[1d4].",
+            success=f"{damage_type.capitalize()} \\glossterm<standard damage> -1d.",
             critical='As above, but double damage.',
         )
 
