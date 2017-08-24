@@ -1,4 +1,116 @@
 \section{Spell Descriptions}
+\begin{spellsection}{Aeromancy}
+\begin{spellheader}
+\spelldesc{You shield your ally with a barrier of wind, protecting them from harm.}
+\end{spellheader}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{\spelltgt{One willing creature (Medium or smaller)}}{\spellrng{\rngclose}}
+\end{spelltargetinginfo}
+\begin{spelleffects}
+\spelleffect
+The target gains a \plus2 bonus to \glossterm{physical defenses}.
+This bonus is increased to \plus5 against ranged \glossterm{strikes} from weapons or projectiles that are Small or smaller.
+Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
+\spelldur Attunement (shared)
+\spelltags{\glossterm{Air}, \glossterm{Imbuement}}
+\end{spelleffects}
+\end{spellcontent}
+\begin{spellfooter}
+\spellinfo{Transmutation}{Air, Nature}
+\fieldhead{Augments} Extended, Quickened, Silent, Stilled
+\end{spellfooter}
+\begin{spellsubcontent}
+\begin{spellcantrip}
+The spell's duration becomes Sustain (swift).
+\end{spellcantrip}
+\end{spellsubcontent}
+\end{spellsection}
+\subsubsection{Subspells}
+\augment{2}{Gentle Descent}
+The target gains a 30 foot glide speed.
+A creature with a glide speed can glide through the air at the indicated speed (see \pcref{Gliding}).
+\augment{2}{Windstrike}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\begin{spellattack}{Spellpower vs. Fortitude}
+\spellsuccess Bludgeoning \glossterm{standard damage} \plus1d.
+\spellcritical As above, but double damage.
+\end{spellattack}
+\spelltags{\glossterm{Air}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{3}{Accelerated}
+The glide speed granted by this spell increases to 60 feet.
+\augment{3}{Gust of Wind}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spellburst{\arealarge line, 10 ft. wide}
+\spelltgts{Everything in the area}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\begin{spellattack}{Spellpower vs. Fortitude}
+\spellsuccess Bludgeoning \glossterm{standard damage} \minus1d.
+\spellcritical As above, but double damage.
+\end{spellattack}
+\spelltags{\glossterm{Air}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{3}{Windblade}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgt{One unattended weapon}}{\spellrng{\rngclose}}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+The target weapon gains an additional ten feet of reach, extending the wielder's threatened area.
+This has no effect on ranged attacks with the weapon.
+\spelldur Sustain (swift)
+\spelltags{\glossterm{Air}, \glossterm{Shaping}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{4}{Air Walk}
+The target can walk on air as if it were solid ground.
+The magic only affects the target's legs and feet.
+By choosing when to treat the air as solid, it can traverse the air with ease.
+\augment{4}{Wind Screen}
+The miss chance for ranged strikes against the target increases to 50\%.
+\augment{5}{Stormlord}
+Whenever a creature within \rngclose range of the target attacks it, wind strikes the attacking creature.
+The wind deals \\glossterm{standard damage} \minus1d.
+Any individual creature can only be dealt damage in this way once per round.
+\par Any effect which increases this spell's range increases the range of this effect by the same amount.
+\par
+This is a \glossterm{Shielding} effect from the \glossterm{Evocation} school.
+\augment{7}{Control Weather}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spellzone{2 mile radius cylinder from your location}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+When you cast this spell, you choose a new weather pattern.
+You can only choose weather which would be possible in the climate and season of the area you are in.
+For example, you can normally create a thunderstorm, but not if you are in a desert.
+The weather begins to take effect in the area when you complete the spell.
+After five minutes, your chosen weather pattern fully takes effect.
+You can control the general tendencies of the weather, such as the direction and intensity of the wind.
+You cannot control specific applications of the weather -- where lightning strikes, for example, or the exact path of a tornado.
+Contradictory weather conditions are not possible simultaneously.
+After the spell's duration ends, the weather continues on its natural course, which may cause your chosen weather pattern to end.
+% TODO: This should be redundant with generic spell mechanics
+If another ability would magically manipulate the weather in the same area, the most recently used ability takes precedence.
+\spelldur Attunement
+\spelltags{\glossterm{Air}}
+\end{augmenteffects}
+\end{spellcontent}
 \begin{spellsection}{Agony}
 \begin{spellheader}
 \spelldesc{You inflict debilitating pain on your foe}
@@ -152,6 +264,137 @@ In addition, magical abilities and objects cannot be activated within the area.
 \spelltags{\glossterm{Thaumaturgy}}
 \end{augmenteffects}
 \end{spellcontent}
+\begin{spellsection}{Aquamancy}
+\begin{spellheader}
+\spelldesc{You create a wave of water to crush your foes.}
+\end{spellheader}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spellburst{\arealarge line, 10 ft\. wide}
+\spelltgts{Everything in the area}
+\end{spelltargetinginfo}
+\begin{spelleffects}
+\begin{spellattack}{Spellpower vs. Fortitude}
+\spellsuccess Bludgeoning \glossterm{standard damage} \minus1d.
+\spellcritical As above, but double damage.
+\end{spellattack}
+\spelltags{\glossterm{Manifestation}, \glossterm{Water}}
+\end{spelleffects}
+\end{spellcontent}
+\begin{spellfooter}
+\spellinfo{Conjuration}{Nature, Water}
+\fieldhead{Augments} Intensified, Quickened, Silent, Stilled, Widened
+\end{spellfooter}
+\begin{spellsubcontent}
+\begin{spellcantrip}
+The spell's area becomes a 5 ft.\ wide, \areamed line.
+\end{spellcantrip}
+\end{spellsubcontent}
+\end{spellsection}
+\subsubsection{Subspells}
+\augment{2}{Aqueuous Sphere}
+Replace the spell's targets with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spellburst{\areasmall radius}}{\spellrng{\rngclose}}
+\spelltgts{Everything in the area}
+\end{augmenttargetinginfo}
+\end{spellcontent}
+\augment{2}{Create Water}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spellrng{\rngclose}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+You create up to one gallon of wholesome, drinkable water.
+The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
+\spelltags{\glossterm{Creation}, \glossterm{Water}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{3}{Aqueous Blade}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgt{One unattended weapon}}{\spellrng{\rngclose}}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+\glossterm{Strikes} with the affected weapon are made against Reflex defense instead of Armor defense.
+However, attacks with the weapon take a \minus2d penalty to \glossterm{strike damage}.
+\spelldur Sustain (swift)
+\spelltags{\glossterm{Shaping}, \glossterm{Water}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{4}{Sustained}
+The area affected by this spell becomes completely filled with water.
+You can sustain the water as a \glossterm{swift action}.
+Creatures in this \glossterm{zone} suffer penalties appropriate for fighting underwater, and may be unable to breathe.
+\augment{8}{Greater Aqueous Blade}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgt{One unattended weapon}}{\spellrng{\rngclose}}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+\glossterm{Strikes} with the affected weapon are made against Reflex defense instead of Armor defense.
+\spelldur Sustain (swift)
+\spelltags{\glossterm{Shaping}, \glossterm{Water}}
+\end{augmenteffects}
+\end{spellcontent}
+\begin{spellsection}{Astromancy}
+\begin{spellheader}
+\spelldesc{You disrupt a creature's body by partially thrusting it into another plane.}
+\end{spellheader}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
+\end{spelltargetinginfo}
+\begin{spelleffects}
+\begin{spellattack}{Spellpower vs. Mental}
+\spellsuccess Physical \glossterm{standard damage} \plus1d.
+\spellcritical
+As above, but double damage.
+In addition, if the creature is an \glossterm{outsider} native to another plane, it is sent back to its home plane.
+\end{spellattack}
+\spelltags{\glossterm{Planar}, \glossterm{Teleportation}}
+\end{spelleffects}
+\end{spellcontent}
+\begin{spellfooter}
+\spellinfo{Conjuration}{Arcane}
+\fieldhead{Augments} Extended, Intensified, Mass, Quickened, Silent, Stilled
+\end{spellfooter}
+\begin{spellsubcontent}
+\begin{spellcantrip}
+The spell's range becomes \rngclose, and it deals \minus1d damage.
+\end{spellcantrip}
+\end{spellsubcontent}
+\end{spellsection}
+\subsubsection{Subspells}
+\augment{2}{Teleport}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgt{One willing creature (Medium or smaller)}}{\spellrng{\rngclose}}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+The target teleports into an unoccupied destination within \rngmed range of its original location.
+If the destination is invalid, the spell fails.
+\spelltags{\glossterm{Teleportation}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{4}{Dimension Door}
+You teleport to a location within \rngext range of you.
+You must clearly visualize the destination's appearance, but you do not need \glossterm{line of sight} or \glossterm{line of effect} to your destination.
+Replace the spell's targets with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltgt{You}
+\end{augmenttargetinginfo}
+\end{spellcontent}
 \begin{spellsection}{Barkskin}
 \begin{spellheader}
 \spelldesc{You toughen a creature's skin, giving it the appearance of tree bark.}
@@ -185,11 +428,39 @@ Instead, it makes the target \glossterm{vulnerable} to damage from adamantine we
 \augment{5}{Empowered}
 The damage reduction granted by this spell increases by an amount equal to your spellpower.
 \begin{spellsection}{Barrier}
+\begin{spellheader}
+\spelldesc{You create a barrier around your ally that resists physical intrusion.}
+\end{spellheader}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spellzone{\areamed radius centered on you}
+\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
 \end{spelltargetinginfo}
 \begin{spelleffects}
+\spelleffect
+The target gains \glossterm{damage reduction} against \glossterm{physical damage} equal to your spellpower.
+In addition, it is \glossterm{vulnerable} to arcane damage.
+\spelldur Attunement (shared)
+\spelltags{\glossterm{Shielding}}
+\end{spelleffects}
+\end{spellcontent}
+\begin{spellfooter}
+\spellinfo{Abjuration}{Arcane}
+\fieldhead{Augments} Extended, Quickened, Silent, Stilled
+\end{spellfooter}
+\begin{spellsubcontent}
+\begin{spellcantrip}
+The spell's duration becomes Sustain (swift).
+\end{spellcantrip}
+\end{spellsubcontent}
+\end{spellsection}
+\subsubsection{Subspells}
+\augment{2}{Repulsion}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spellzone{\areamed radius centered on your location}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
 \spelleffect
 Whenever a creature makes physical contact with the spell's area for the first time, you make a Spellpower vs. Mental attack against it.
 Success means the creature is unable to enter the spell's area with any part of its body.
@@ -197,27 +468,41 @@ The rest of its movement in the current phase is cancelled.
 Failure means the creature can enter the area unimpeded.
 Creatures in the area at the time that the spell is cast are unaffected by the spell.
 \spelldur Sustain (swift)
-\end{spelleffects}
+\end{augmenteffects}
 \end{spellcontent}
-\begin{spellfooter}
-\spellinfo{Abjuration}{Divine, Nature}
-\fieldhead{Augments} Quickened, Silent, Stilled, Widened
-\end{spellfooter}
-\begin{spellsubcontent}
-\begin{spellcantrip}
-The spell's duration becomes Sustain (standard)
-\end{spellcantrip}
-\end{spellsubcontent}
-\end{spellsection}
-\subsubsection{Subspells}
-\augment{4}{Selective}
-Whenever a creature attempts to pass through the barrier for the first time, you can allow it to pass through unimpeded.
-You must be aware of a creature attempting to pass through the barrier to allow it through.
-\augment{7}{Antilife Shell}
-The spell only affects living creatures.
-However, it affects them automatically, without requiring an attack.
+\augment{3}{Complete}
+The damage reduction applies against all damage, not just physical damage.
+\augment{4}{Immunity}
+Replace the spell's effects with the following:
+\begin{spellcontent}
+\begin{augmenteffects}
+\spelleffect
+Choose a type of damage.
+The target becomes immune to damage of the chosen type.
+Attacks that deal damage of multiple types still inflict damage normally unless the target is immune to all types of damage dealt.
+\end{augmenteffects}
+\end{spellcontent}
+\augment{4}{Retributive}
+Damage resisted by this spell is reflected back to the attacker as life damage.
+If the attacker is beyond \rngclose range of the target, this reflection fails.
+\par Any effect which increases this spell's range increases the range of this effect by the same amount.
 \par
 This is a \glossterm{Life} effect from the \glossterm{Vivimancy} school.
+\augment{5}{Empowered}
+The damage reduction increases by an amount equal to your spellpower.
+\augment{7}{Antilife Shell}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spellzone{\areamed radius centered on your location}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+Living creatures are unable to enter the spell's area.
+Creatures in the area at the time that the spell is cast are unaffected by the spell.
+\spelldur Sustain (swift)
+\end{augmenteffects}
+\end{spellcontent}
 \begin{spellsection}{Bless}
 \begin{spellheader}
 \spelldesc{You invoke a divine blessing to aid your ally.}
@@ -332,147 +617,6 @@ If the target was already dominated by you, this effect lasts for 24 hours inste
 \spelltags{\glossterm{Compulsion, Mind}}
 \end{augmenteffects}
 \end{spellcontent}
-\begin{spellsection}{Cone of Cold}
-\begin{spellheader}
-\spelldesc{You drain the heat from an area, creating a field of extreme cold.}
-\end{spellheader}
-\begin{spellcontent}
-\begin{spelltargetinginfo}
-\spellburst{\areamed cone}
-\spelltgts{Everything in the area}
-\end{spelltargetinginfo}
-\begin{spelleffects}
-\begin{spellattack}{Spellpower vs. Fortitude}
-\spellsuccess
-\Cold glossterm{standard damage} \minus1d.
-In addition, the target is \fatigued as a condition.
-\spellcritical As above, but double damage.
-\end{spellattack}
-\spelltags{\glossterm{Cold}}
-\end{spelleffects}
-\end{spellcontent}
-\begin{spellfooter}
-\spellinfo{Evocation}{Arcane, Nature}
-\fieldhead{Augments} Intensified, Quickened, Silent, Stilled, Widened
-\end{spellfooter}
-\begin{spellsubcontent}
-\begin{spellcantrip}
-The spell deals no damage.
-\end{spellcantrip}
-\end{spellsubcontent}
-\end{spellsection}
-\begin{spellsection}{Control Air}
-\begin{spellheader}
-\spelldesc{You shield your ally with a barrier of wind, protecting them from harm.}
-\end{spellheader}
-\begin{spellcontent}
-\begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One willing creature (Medium or smaller)}}{\spellrng{\rngclose}}
-\end{spelltargetinginfo}
-\begin{spelleffects}
-\spelleffect
-The target gains a \plus2 bonus to \glossterm{physical defenses}.
-This bonus is increased to \plus5 against ranged \glossterm{strikes} from weapons or projectiles that are Small or smaller.
-Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
-\spelldur Attunement (shared)
-\spelltags{\glossterm{Air}, \glossterm{Imbuement}}
-\end{spelleffects}
-\end{spellcontent}
-\begin{spellfooter}
-\spellinfo{Transmutation}{Air, Nature}
-\fieldhead{Augments} Extended, Quickened, Silent, Stilled
-\end{spellfooter}
-\begin{spellsubcontent}
-\begin{spellcantrip}
-The spell's duration becomes Sustain (swift).
-\end{spellcantrip}
-\end{spellsubcontent}
-\end{spellsection}
-\subsubsection{Subspells}
-\augment{2}{Gentle Descent}
-The target gains a 30 foot glide speed.
-A creature with a glide speed can glide through the air at the indicated speed (see \pcref{Gliding}).
-\augment{2}{Windstrike}
-Replace the spell's targets and effects with the following:
-\begin{spellcontent}
-\begin{augmenttargetinginfo}
-\spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
-\end{augmenttargetinginfo}
-\begin{augmenteffects}
-\begin{spellattack}{Spellpower vs. Fortitude}
-\spellsuccess Bludgeoning \glossterm{standard damage} \plus1d.
-\spellcritical As above, but double damage.
-\end{spellattack}
-\spelltags{\glossterm{Air}}
-\end{augmenteffects}
-\end{spellcontent}
-\augment{3}{Accelerated}
-The glide speed granted by this spell increases to 60 feet.
-\augment{3}{Gust of Wind}
-Replace the spell's targets and effects with the following:
-\begin{spellcontent}
-\begin{augmenttargetinginfo}
-\spellburst{\arealarge line, 10 ft. wide}
-\spelltgts{Everything in the area}
-\end{augmenttargetinginfo}
-\begin{augmenteffects}
-\begin{spellattack}{Spellpower vs. Fortitude}
-\spellsuccess Bludgeoning \glossterm{standard damage} \minus1d.
-\spellcritical As above, but double damage.
-\end{spellattack}
-\spelltags{\glossterm{Air}}
-\end{augmenteffects}
-\end{spellcontent}
-\augment{3}{Windblade}
-Replace the spell's targets and effects with the following:
-\begin{spellcontent}
-\begin{augmenttargetinginfo}
-\spelltwocol{\spelltgt{One unattended weapon}}{\spellrng{\rngclose}}
-\end{augmenttargetinginfo}
-\begin{augmenteffects}
-\spelleffect
-The target weapon gains an additional ten feet of reach, extending the wielder's threatened area.
-This has no effect on ranged attacks with the weapon.
-\spelldur Sustain (swift)
-\spelltags{\glossterm{Air}, \glossterm{Shaping}}
-\end{augmenteffects}
-\end{spellcontent}
-\augment{4}{Air Walk}
-The target can walk on air as if it were solid ground.
-The magic only affects the target's legs and feet.
-By choosing when to treat the air as solid, it can traverse the air with ease.
-\augment{4}{Wind Screen}
-The miss chance for ranged strikes against the target increases to 50\%.
-\augment{5}{Stormlord}
-Whenever a creature within \rngclose range of the target attacks it, wind strikes the attacking creature.
-The wind deals \\glossterm{standard damage} \minus1d.
-Any individual creature can only be dealt damage in this way once per round.
-\par Any effect which increases this spell's range increases the range of this effect by the same amount.
-\par
-This is a \glossterm{Shielding} effect from the \glossterm{Evocation} school.
-\augment{7}{Control Weather}
-Replace the spell's targets and effects with the following:
-\begin{spellcontent}
-\begin{augmenttargetinginfo}
-\spellzone{2 mile radius cylinder from your location}
-\end{augmenttargetinginfo}
-\begin{augmenteffects}
-\spelleffect
-When you cast this spell, you choose a new weather pattern.
-You can only choose weather which would be possible in the climate and season of the area you are in.
-For example, you can normally create a thunderstorm, but not if you are in a desert.
-The weather begins to take effect in the area when you complete the spell.
-After five minutes, your chosen weather pattern fully takes effect.
-You can control the general tendencies of the weather, such as the direction and intensity of the wind.
-You cannot control specific applications of the weather -- where lightning strikes, for example, or the exact path of a tornado.
-Contradictory weather conditions are not possible simultaneously.
-After the spell's duration ends, the weather continues on its natural course, which may cause your chosen weather pattern to end.
-% TODO: This should be redundant with generic spell mechanics
-If another ability would magically manipulate the weather in the same area, the most recently used ability takes precedence.
-\spelldur Attunement
-\spelltags{\glossterm{Air}}
-\end{augmenteffects}
-\end{spellcontent}
 \begin{spellsection}{Corruption}
 \begin{spellheader}
 \spelldesc{You corrupt your foe's life force, weakening them.}
@@ -553,6 +697,35 @@ The spell deals double damage to objects.
 \augment{4}{Lingering}
 The acid deals half damage on initial impact.
 However, it deals damage to the target again at the end of each round for 2 rounds, including the initial round.
+\begin{spellsection}{Cryomancy}
+\begin{spellheader}
+\spelldesc{You drain the heat from an area, creating a field of extreme cold.}
+\end{spellheader}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spellburst{\areamed cone}
+\spelltgts{Everything in the area}
+\end{spelltargetinginfo}
+\begin{spelleffects}
+\begin{spellattack}{Spellpower vs. Fortitude}
+\spellsuccess
+\Cold glossterm{standard damage} \minus1d.
+In addition, the target is \fatigued as a condition.
+\spellcritical As above, but double damage.
+\end{spellattack}
+\spelltags{\glossterm{Cold}}
+\end{spelleffects}
+\end{spellcontent}
+\begin{spellfooter}
+\spellinfo{Evocation}{Arcane, Nature}
+\fieldhead{Augments} Intensified, Quickened, Silent, Stilled, Widened
+\end{spellfooter}
+\begin{spellsubcontent}
+\begin{spellcantrip}
+The spell deals no damage.
+\end{spellcantrip}
+\end{spellsubcontent}
+\end{spellsection}
 \begin{spellsection}{Cure Wounds}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
@@ -676,6 +849,39 @@ In addition, it loses the \glossterm{Visual} tag, allowing it to affect creature
 \augment{5}{Displacement}
 The target's image is futher distorted, and appears to be two to three feet from its real location.
 The spell's miss chance increases to 50\%.
+\begin{spellsection}{Electromancy}
+\begin{spellheader}
+\spelldesc{You create a bolt of electricity that fries your foes.}
+\end{spellheader}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spellburst{\arealarge line, 10 ft\. wide}
+\spelltgts{Everything in the area}
+\end{spelltargetinginfo}
+\begin{spelleffects}
+\begin{spellattack}{Spellpower vs. Reflex}
+\spellspecial You gain a \plus2 bonus to accuracy against creatures wearing metal armor or otherwise carrying a significant amount of metal.
+\spellsuccess
+Electricity \glossterm{standard damage} \minus1d.
+\spellcritical As above, but double damage.
+\end{spellattack}
+\spelltags{\glossterm{Electricity}}
+\end{spelleffects}
+\end{spellcontent}
+\begin{spellfooter}
+\spellinfo{Evocation}{Arcane, Nature}
+\fieldhead{Augments} Intensified, Quickened, Silent, Stilled, Widened
+\end{spellfooter}
+\begin{spellsubcontent}
+\begin{spellcantrip}
+The spell's area becomes a 5 ft\. wide \areamed line.
+\end{spellcantrip}
+\end{spellsubcontent}
+\end{spellsection}
+\subsubsection{Subspells}
+\augment{4}{Instantaneous}
+The lightning bolt created by the spell is faster, but less penetrating.
+The spell's attack is made against Fortitude defense instead of Reflex defense.
 \begin{spellsection}{Fear}
 \begin{spellheader}
 \spelldesc{You terrify your foe.}
@@ -707,75 +913,6 @@ The spell's duration becomes Sustain (swift).
 \subsubsection{Subspells}
 \augment{2}{Redirected}
 The target is afraid of a willing ally within the spell's range instead of being afraid of you.
-\begin{spellsection}{Fireball}
-\begin{spellheader}
-\spelldesc{You create a small burst of flame.}
-\end{spellheader}
-\begin{spellcontent}
-\begin{spelltargetinginfo}
-\spelltwocol{\spellburst{\areasmall radius}}{\spellrng{\rngclose}}
-\spelltgts{Everything in the area}
-\end{spelltargetinginfo}
-\begin{spelleffects}
-\begin{spellattack}{Spellpower vs. Reflex}
-\spellsuccess Fire \glossterm{standard damage} \minus1d.
-\spellcritical As above, but double damage.
-\end{spellattack}
-\spelltags{\glossterm{Fire}}
-\end{spelleffects}
-\end{spellcontent}
-\begin{spellfooter}
-\spellinfo{Evocation}{Arcane, Fire, Nature}
-\fieldhead{Augments} Extended, Intensified, Quickened, Silent, Stilled, Widened
-\end{spellfooter}
-\begin{spellsubcontent}
-\begin{spellcantrip}
-The spell affects a 5 foot radius, and it deals \minus1d damage.
-\end{spellcantrip}
-\end{spellsubcontent}
-\end{spellsection}
-\subsubsection{Subspells}
-\augment{2}{Burning Hands}
-Replace the spell's targets with the following:
-\begin{spellcontent}
-\begin{augmenttargetinginfo}
-\spellburst{\arealarge cone}
-\spelltgts{Everything in the area}
-\end{augmenttargetinginfo}
-\end{spellcontent}
-\augment{2}{Flame Blade}
-Replace the spell's targets and effects with the following:
-\begin{spellcontent}
-\begin{augmenttargetinginfo}
-\spelltwocol{\spelltgt{One unattended weapon}}{\spellrng{\rngclose}}
-\end{augmenttargetinginfo}
-\begin{augmenteffects}
-\spelleffect
-The target weapon gains a \plus2d bonus to \glossterm{strike damage}.
-In addition, all damage dealt with the weapon with strikes becomes fire damage in addition to its normal damage types.
-\spelldur Sustain (swift)
-\spelltags{\glossterm{Fire}}
-\end{augmenteffects}
-\end{spellcontent}
-\augment{3}{Fire Trap}
-Replace the spell's targets and effects with the following:
-\begin{spellcontent}
-\begin{augmenttargetinginfo}
-\spelltwocol{\spelltgt{One openable object (Large or smaller)}}{\spellrng{\rngclose}}
-\end{augmenttargetinginfo}
-\begin{augmenteffects}
-\spelleffect
-If a creature opens the target object, it explodes.
-You make an attack against everything within an \areamed radius burst centered on the target.
-After the object explodes in this way, the spell ends.
-\begin{spellattack}{Spellpower vs. Reflex}
-\spellsuccess Fire \glossterm{standard damage} \minus1d.
-\spellcritical As above, but double damage.
-\end{spellattack}
-\spelldur Attunement
-\spelltags{\glossterm{Fire}, \glossterm{Trap}}
-\end{augmenteffects}
-\end{spellcontent}
 \begin{spellsection}{Flare}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
@@ -892,53 +1029,6 @@ After using this subspell, you cannot cast it again until the hour affected by t
 \augment{7}{Foresee Actions}
 The target can learn what actions all creatures it can observe intend to take during each phase before it decides its actions for that phase.
 It learns this information in the instant before it acts, and normally does not have time to communicate it to other creatures.
-\begin{spellsection}{Inertial Shield}
-\begin{spellheader}
-\spelldesc{You create a barrier around your ally that resists physical intrusion.}
-\end{spellheader}
-\begin{spellcontent}
-\begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
-\end{spelltargetinginfo}
-\begin{spelleffects}
-\spelleffect
-The target gains \glossterm{damage reduction} against \glossterm{physical damage} equal to your spellpower.
-In addition, it is \glossterm{vulnerable} to arcane damage.
-\spelldur Attunement (shared)
-\spelltags{\glossterm{Shielding}}
-\end{spelleffects}
-\end{spellcontent}
-\begin{spellfooter}
-\spellinfo{Abjuration}{Arcane}
-\fieldhead{Augments} Extended, Quickened, Silent, Stilled
-\end{spellfooter}
-\begin{spellsubcontent}
-\begin{spellcantrip}
-The spell's duration becomes Sustain (swift).
-\end{spellcantrip}
-\end{spellsubcontent}
-\end{spellsection}
-\subsubsection{Subspells}
-\augment{3}{Complete}
-The damage reduction applies against all damage, not just physical damage.
-\augment{4}{Immunity}
-Replace the spell's effects with the following:
-\begin{spellcontent}
-\begin{augmenteffects}
-\spelleffect
-Choose a type of damage.
-The target becomes immune to damage of the chosen type.
-Attacks that deal damage of multiple types still inflict damage normally unless the target is immune to all types of damage dealt.
-\end{augmenteffects}
-\end{spellcontent}
-\augment{4}{Retributive}
-Damage resisted by this spell is reflected back to the attacker as life damage.
-If the attacker is beyond \rngclose range of the target, this reflection fails.
-\par Any effect which increases this spell's range increases the range of this effect by the same amount.
-\par
-This is a \glossterm{Life} effect from the \glossterm{Vivimancy} school.
-\augment{5}{Empowered}
-The damage reduction increases by an amount equal to your spellpower.
 \begin{spellsection}{Inflict Wounds}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
@@ -971,67 +1061,6 @@ At the end of each round, if the target has 0 hit points, it immediately dies.
 This effect lasts until the target removes this condition.
 \par
 This is a \glossterm{Death} effect.
-\begin{spellsection}{Lightning Bolt}
-\begin{spellheader}
-\spelldesc{You create a bolt of electricity that fries your foes.}
-\end{spellheader}
-\begin{spellcontent}
-\begin{spelltargetinginfo}
-\spellburst{\arealarge line, 10 ft\. wide}
-\spelltgts{Everything in the area}
-\end{spelltargetinginfo}
-\begin{spelleffects}
-\begin{spellattack}{Spellpower vs. Reflex}
-\spellspecial You gain a \plus2 bonus to accuracy against creatures wearing metal armor or otherwise carrying a significant amount of metal.
-\spellsuccess
-Electricity \glossterm{standard damage} \minus1d.
-\spellcritical As above, but double damage.
-\end{spellattack}
-\spelltags{\glossterm{Electricity}}
-\end{spelleffects}
-\end{spellcontent}
-\begin{spellfooter}
-\spellinfo{Evocation}{Arcane, Nature}
-\fieldhead{Augments} Intensified, Quickened, Silent, Stilled, Widened
-\end{spellfooter}
-\begin{spellsubcontent}
-\begin{spellcantrip}
-The spell's area becomes a 5 ft\. wide \areamed line.
-\end{spellcantrip}
-\end{spellsubcontent}
-\end{spellsection}
-\subsubsection{Subspells}
-\augment{4}{Instantaneous}
-The lightning bolt created by the spell is faster, but less penetrating.
-The spell's attack is made against Fortitude defense instead of Reflex defense.
-\begin{spellsection}{Planar Disruption}
-\begin{spellheader}
-\spelldesc{You disrupt a creature's body by partially thrusting it into another plane.}
-\end{spellheader}
-\begin{spellcontent}
-\begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
-\end{spelltargetinginfo}
-\begin{spelleffects}
-\begin{spellattack}{Spellpower vs. Mental}
-\spellsuccess Physical \glossterm{standard damage} \plus1d.
-\spellcritical
-As above, but double damage.
-In addition, if the creature is an \glossterm{outsider} native to another plane, it is sent back to its home plane.
-\end{spellattack}
-\spelltags{\glossterm{Planar}, \glossterm{Teleportation}}
-\end{spelleffects}
-\end{spellcontent}
-\begin{spellfooter}
-\spellinfo{Conjuration}{Arcane, Divine}
-\fieldhead{Augments} Extended, Intensified, Mass, Quickened, Silent, Stilled
-\end{spellfooter}
-\begin{spellsubcontent}
-\begin{spellcantrip}
-The spell's range becomes \rngclose, and it deals \minus1d damage.
-\end{spellcantrip}
-\end{spellsubcontent}
-\end{spellsection}
 \begin{spellsection}{Poison}
 \begin{spellheader}
 \spelldesc{You weaken your foe with a potent poison.}
@@ -1134,6 +1163,75 @@ The damage reduction also applies against non-physical effects.
 \augment{4}{Retributive}
 Whenever a creature with the chosen alignment makes a physical melee attack against the target, you make a Spellpower vs. Mental attack against the attacking creature.
 Success means the attacker takes divine \glossterm{standard damage} \minus1d.
+\begin{spellsection}{Pyromancy}
+\begin{spellheader}
+\spelldesc{You create a small burst of flame.}
+\end{spellheader}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{\spellburst{\areasmall radius}}{\spellrng{\rngclose}}
+\spelltgts{Everything in the area}
+\end{spelltargetinginfo}
+\begin{spelleffects}
+\begin{spellattack}{Spellpower vs. Reflex}
+\spellsuccess Fire \glossterm{standard damage} \minus1d.
+\spellcritical As above, but double damage.
+\end{spellattack}
+\spelltags{\glossterm{Fire}}
+\end{spelleffects}
+\end{spellcontent}
+\begin{spellfooter}
+\spellinfo{Evocation}{Arcane, Fire, Nature}
+\fieldhead{Augments} Extended, Intensified, Quickened, Silent, Stilled, Widened
+\end{spellfooter}
+\begin{spellsubcontent}
+\begin{spellcantrip}
+The spell affects a 5 foot radius, and it deals \minus1d damage.
+\end{spellcantrip}
+\end{spellsubcontent}
+\end{spellsection}
+\subsubsection{Subspells}
+\augment{2}{Burning Hands}
+Replace the spell's targets with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spellburst{\arealarge cone}
+\spelltgts{Everything in the area}
+\end{augmenttargetinginfo}
+\end{spellcontent}
+\augment{2}{Flame Blade}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgt{One unattended weapon}}{\spellrng{\rngclose}}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+The target weapon gains a \plus2d bonus to \glossterm{strike damage}.
+In addition, all damage dealt with the weapon with strikes becomes fire damage in addition to its normal damage types.
+\spelldur Sustain (swift)
+\spelltags{\glossterm{Fire}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{3}{Fire Trap}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgt{One openable object (Large or smaller)}}{\spellrng{\rngclose}}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+If a creature opens the target object, it explodes.
+You make an attack against everything within an \areamed radius burst centered on the target.
+After the object explodes in this way, the spell ends.
+\begin{spellattack}{Spellpower vs. Reflex}
+\spellsuccess Fire \glossterm{standard damage} \minus1d.
+\spellcritical As above, but double damage.
+\end{spellattack}
+\spelldur Attunement
+\spelltags{\glossterm{Fire}, \glossterm{Trap}}
+\end{augmenteffects}
+\end{spellcontent}
 \begin{spellsection}{Scry}
 \begin{spellheader}
 \spelldesc{You create a scrying sensor that allows you to see at a distance.}
@@ -1237,6 +1335,21 @@ The spell's range becomes \rngclose, and it deals \minus1d damage.
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
+\subsubsection{Subspells}
+\augment{2}{Word of Faith}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spellburst{\areamed radius from your location}
+\spelltgts{Creatures in the area that do not worship your deity}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\begin{spellattack}{Spellpower vs. Mental}
+\spellsuccess Divine \glossterm{standard damage} \plus1d.
+\spellcritical As above, but double damage.
+\end{spellattack}
+\end{augmenteffects}
+\end{spellcontent}
 \begin{spellsection}{Summon Monster}
 \begin{spellheader}
 \spelldesc{You summon a creature to fight by your side.}
@@ -1346,120 +1459,6 @@ During the movement phase, you can move the target up to ten feet in any directi
 \spelldur Sustain (swift)
 \end{augmenteffects}
 \end{spellcontent}
-\begin{spellsection}{Teleport}
-\begin{spellcontent}
-\begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One willing creature (Medium or smaller)}}{\spellrng{\rngclose}}
-\end{spelltargetinginfo}
-\begin{spelleffects}
-\spelleffect
-The target teleports into an unoccupied destination within \rngmed range of its original location.
-If the destination is invalid, the spell fails.
-\spelltags{\glossterm{Teleportation}}
-\end{spelleffects}
-\end{spellcontent}
-\begin{spellfooter}
-\spellinfo{Conjuration}{Arcane}
-\fieldhead{Augments} Extended, Mass, Quickened, Silent, Stilled
-\end{spellfooter}
-\begin{spellsubcontent}
-\begin{spellcantrip}
-cantripeffect
-\end{spellcantrip}
-\end{spellsubcontent}
-\end{spellsection}
-\subsubsection{Subspells}
-\augment{2}{Distant}
-The maximum distance the target can teleport is increased to \rngext.
-\augment{3}{Dimension Door}
-You teleport to a location within \rngext range of you.
-You must clearly visualize the destination's appearance, but you do not need \glossterm{line of sight} or \glossterm{line of effect} to your destination.
-Replace the spell's targets with the following:
-\begin{spellcontent}
-\begin{augmenttargetinginfo}
-\spelltgt{You}
-\end{augmenttargetinginfo}
-\end{spellcontent}
-\begin{spellsection}{Water Mastery}
-\begin{spellheader}
-\spelldesc{You create a wave of water to crush your foes.}
-\end{spellheader}
-\begin{spellcontent}
-\begin{spelltargetinginfo}
-\spellburst{\arealarge line, 10 ft\. wide}
-\spelltgts{Everything in the area}
-\end{spelltargetinginfo}
-\begin{spelleffects}
-\begin{spellattack}{Spellpower vs. Fortitude}
-\spellsuccess Bludgeoning \glossterm{standard damage} \minus1d.
-\spellcritical As above, but double damage.
-\end{spellattack}
-\spelltags{\glossterm{Manifestation}, \glossterm{Water}}
-\end{spelleffects}
-\end{spellcontent}
-\begin{spellfooter}
-\spellinfo{Conjuration}{Nature, Water}
-\fieldhead{Augments} Intensified, Quickened, Silent, Stilled, Widened
-\end{spellfooter}
-\begin{spellsubcontent}
-\begin{spellcantrip}
-The spell's area becomes a 5 ft.\ wide, \areamed line.
-\end{spellcantrip}
-\end{spellsubcontent}
-\end{spellsection}
-\subsubsection{Subspells}
-\augment{2}{Aqueuous Sphere}
-Replace the spell's targets with the following:
-\begin{spellcontent}
-\begin{augmenttargetinginfo}
-\spelltwocol{\spellburst{\areasmall radius}}{\spellrng{\rngclose}}
-\spelltgts{Everything in the area}
-\end{augmenttargetinginfo}
-\end{spellcontent}
-\augment{2}{Create Water}
-Replace the spell's targets and effects with the following:
-\begin{spellcontent}
-\begin{augmenttargetinginfo}
-\spellrng{\rngclose}
-\end{augmenttargetinginfo}
-\begin{augmenteffects}
-\spelleffect
-You create up to one gallon of wholesome, drinkable water.
-The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
-\spelltags{\glossterm{Creation}, \glossterm{Water}}
-\end{augmenteffects}
-\end{spellcontent}
-\augment{3}{Aqueous Blade}
-Replace the spell's targets and effects with the following:
-\begin{spellcontent}
-\begin{augmenttargetinginfo}
-\spelltwocol{\spelltgt{One unattended weapon}}{\spellrng{\rngclose}}
-\end{augmenttargetinginfo}
-\begin{augmenteffects}
-\spelleffect
-\glossterm{Strikes} with the affected weapon are made against Reflex defense instead of Armor defense.
-However, attacks with the weapon take a \minus2d penalty to \glossterm{strike damage}.
-\spelldur Sustain (swift)
-\spelltags{\glossterm{Shaping}, \glossterm{Water}}
-\end{augmenteffects}
-\end{spellcontent}
-\augment{4}{Sustained}
-The area affected by this spell becomes completely filled with water.
-You can sustain the water as a \glossterm{swift action}.
-Creatures in this \glossterm{zone} suffer penalties appropriate for fighting underwater, and may be unable to breathe.
-\augment{8}{Greater Aqueous Blade}
-Replace the spell's targets and effects with the following:
-\begin{spellcontent}
-\begin{augmenttargetinginfo}
-\spelltwocol{\spelltgt{One unattended weapon}}{\spellrng{\rngclose}}
-\end{augmenttargetinginfo}
-\begin{augmenteffects}
-\spelleffect
-\glossterm{Strikes} with the affected weapon are made against Reflex defense instead of Armor defense.
-\spelldur Sustain (swift)
-\spelltags{\glossterm{Shaping}, \glossterm{Water}}
-\end{augmenteffects}
-\end{spellcontent}
 \begin{spellsection}{Web}
 \begin{spellheader}
 \spelldesc{
@@ -1497,32 +1496,3 @@ The spell's duration becomes Sustain (standard).
 \augment{3}{Reinforced}
 Each 5-ft.\ square of webbing gains additional hit points equal to your spellpower.
 In addition, the webs are no longer vulnerable to fire.
-\begin{spellsection}{Word of Faith}
-\begin{spellheader}
-\spelldesc{You speak an utterance that rebukes those who do not share your faith.}
-\end{spellheader}
-\begin{spellcontent}
-\begin{spelltargetinginfo}
-\spellburst{\areamed radius from you}
-\spelltgts{Creatures in the area that do not worship your deity}
-\end{spelltargetinginfo}
-\begin{spelleffects}
-\begin{spellattack}{Spellpower vs. Mental}
-\spellsuccess Divine \glossterm{standard damage} \plus1d.
-\spellcritical As above, but double damage.
-\end{spellattack}
-\end{spelleffects}
-\end{spellcontent}
-\begin{spellfooter}
-\spellinfo{Channeling}{Divine}
-\fieldhead{Augments} Intensified, Quickened, Silent, Stilled, Widened
-\end{spellfooter}
-\begin{spellsubcontent}
-\begin{spellcantrip}
-The spell's area becomes an \areasmall radius.
-\end{spellcantrip}
-\end{spellsubcontent}
-\end{spellsection}
-\subsubsection{Subspells}
-\augment{4}{Bolstering}
-Creatures in the spell's area that worship your deity heal hit points equal to \glossterm{standard damage} \minus1d.

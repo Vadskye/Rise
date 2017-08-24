@@ -21,7 +21,8 @@ def warn(*args):
 def generate_spells():
     spells = []
     spells.append(Spell(
-        name='Control Air',
+        name='Aeromancy',
+        short_description="Command air to protect allies and blast foes",
         header=Header('You shield your ally with a barrier of wind, protecting them from harm.'),
         targeting=Targeting(
             target='One willing creature (Medium or smaller)',
@@ -151,7 +152,8 @@ def generate_spells():
         category='buff, defense',
     ))
     spells.append(Spell(
-        name='Inertial Shield',
+        name='Barrier',
+        short_description="Shield allies from hostile forces",
         header=Header('You create a barrier around your ally that resists physical intrusion.'),
         targeting=Targeting(
             target='One creature',
@@ -169,6 +171,24 @@ def generate_spells():
         lists=['Arcane'],
         cantrip="The spell's duration becomes Sustain (swift).",
         subspells=[
+            Subspell(
+                level=2,
+                name="Repulsion",
+                targeting=Targeting(
+                    area=r'\areamed radius centered on your location',
+                    area_type='zone',
+                ),
+                effects=Effects(
+                    effect="""
+                        Whenever a creature makes physical contact with the spell's area for the first time, you make a Spellpower vs. Mental attack against it.
+                        Success means the creature is unable to enter the spell's area with any part of its body.
+                        The rest of its movement in the current phase is cancelled.
+                        Failure means the creature can enter the area unimpeded.
+                        Creatures in the area at the time that the spell is cast are unaffected by the spell.
+                    """,
+                    duration='Sustain (swift)',
+                ),
+            ),
             Subspell(
                 level=3,
                 name='Complete',
@@ -203,11 +223,27 @@ def generate_spells():
                     The damage reduction increases by an amount equal to your spellpower.
                 """,
             ),
+            Subspell(
+                level=7,
+                name="Antilife Shell",
+                targeting=Targeting(
+                    area=r'\areamed radius centered on your location',
+                    area_type='zone',
+                ),
+                effects=Effects(
+                    effect="""
+                        Living creatures are unable to enter the spell's area.
+                        Creatures in the area at the time that the spell is cast are unaffected by the spell.
+                    """,
+                    duration='Sustain (swift)',
+                ),
+            ),
         ],
         category='buff, defense',
     ))
     spells.append(Spell(
         name='Create Acid',
+        short_description="Create acid to damage foes",
         header=Header('You create a magical orb of acid in your hand that speeds to its target.'),
         targeting=Targeting(
             target='One creature or object',
@@ -249,6 +285,7 @@ def generate_spells():
     # So this should be +3 per Intensified
     spells.append(Spell(
         name='Agony',
+        short_description="Inflict debilitating pain on foes",
         header=Header('You inflict debilitating pain on your foe'),
         targeting=Targeting(
             target='One creature',
@@ -280,48 +317,8 @@ def generate_spells():
         category='debuff, combat',
     ))
     spells.append(Spell(
-        name='Barrier',
-        targeting=Targeting(
-            area=r'\areamed radius centered on you',
-            area_type='zone',
-        ),
-        effects=Effects(
-            effect="""
-                Whenever a creature makes physical contact with the spell's area for the first time, you make a Spellpower vs. Mental attack against it.
-                Success means the creature is unable to enter the spell's area with any part of its body.
-                The rest of its movement in the current phase is cancelled.
-                Failure means the creature can enter the area unimpeded.
-                Creatures in the area at the time that the spell is cast are unaffected by the spell.
-            """,
-            duration='Sustain (swift)',
-        ),
-        schools=['Abjuration'],
-        lists=['Divine', 'Nature'],
-        cantrip="The spell's duration becomes Sustain (standard)",
-        subspells=[
-            Subspell(
-                level=4,
-                name='Selective',
-                description="""
-                    Whenever a creature attempts to pass through the barrier for the first time, you can allow it to pass through unimpeded.
-                    You must be aware of a creature attempting to pass through the barrier to allow it through.
-                """,
-            ),
-            Subspell(
-                level=7,
-                name='Antilife Shell',
-                description="""
-                    The spell only affects living creatures.
-                    However, it affects them automatically, without requiring an attack.
-                """,
-                school='Vivimancy',
-                tags=['Life'],
-            ),
-        ],
-        category='debuff, mobility',
-    ))
-    spells.append(Spell(
         name='Antimagic',
+        short_description="Suppress and manipulate magical effects",
         targeting=Targeting(
             target='One creature, object, or active magical effect',
             rng='medium',
@@ -457,7 +454,8 @@ def generate_spells():
         category='debuff, combat',
     ))
     spells.append(Spell(
-        name='Fireball',
+        name='Pyromancy',
+        short_description="Create fire to incinerate foes",
         header=Header('You create a small burst of flame.'),
         targeting=Targeting(
             area='\\areasmall radius',
@@ -522,6 +520,7 @@ def generate_spells():
     ))
     spells.append(Spell(
         name="Charm Person",
+        short_description="Manipulate minds so creatures think fondly of you",
         header=Header("You manipulate a person's mind so they think of you as a trusted friend and ally."),
         targeting=Targeting(
             target='One humanoid creature',
@@ -597,7 +596,8 @@ def generate_spells():
         category='narrative',
     ))
     spells.append(Spell(
-        name="Water Mastery",
+        name="Aquamancy",
+        short_description="Command water to crush and drown foes",
         header=Header("You create a wave of water to crush your foes."),
         targeting=Targeting(
             area='\\arealarge line, 10 ft\. wide',
@@ -683,6 +683,7 @@ def generate_spells():
     ))
     spells.append(Spell(
         name="Fear",
+        short_description="Terrify foes",
         header=Header("You terrify your foe."),
         targeting=Targeting(
             target='One creature',
@@ -716,6 +717,7 @@ def generate_spells():
     ))
     spells.append(Spell(
         name='Bless',
+        short_description="Grant divine blessings to improve combat prowess",
         header=Header('You invoke a divine blessing to aid your ally.'),
         targeting=Targeting(
             target='One creature',
@@ -741,6 +743,7 @@ def generate_spells():
     ))
     spells.append(Spell(
         name="Barkskin",
+        short_description="Toughen the skin of allies to improve defenses",
         header=Header("You toughen a creature's skin, giving it the appearance of tree bark."),
         targeting=Targeting(
             target='One living creature',
@@ -778,6 +781,7 @@ def generate_spells():
     ))
     spells.append(Spell(
         name="Smite",
+        short_description="Smite foes with divine power",
         header=Header("You smite a foe with holy (or unholy) power."),
         targeting=Targeting(
             target='One creature',
@@ -790,36 +794,24 @@ def generate_spells():
         lists=['Divine'],
         cantrip="The spell's range becomes \\rngclose, and it deals -1d damage.",
         subspells=[
-        ],
-        category='damage',
-    ))
-    spells.append(Spell(
-        name="Word of Faith",
-        header=Header("You speak an utterance that rebukes those who do not share your faith."),
-        targeting=Targeting(
-            area='\\areamed radius from you',
-            area_type='burst',
-            targets='Creatures in the area that do not worship your deity',
-        ),
-        effects=Effects(
-            attack=Attack.damage('Mental', 'divine')
-        ),
-        schools=['Channeling'],
-        lists=['Divine'],
-        cantrip="The spell's area becomes an \\areasmall radius.",
-        category='damage',
-        subspells=[
             Subspell(
-                level=4,
-                name="Bolstering",
-                description="""
-                    Creatures in the spell's area that worship your deity heal hit points equal to \\glossterm<standard damage> -1d.
-                """,
+                level=2,
+                name="Word of Faith",
+                targeting=Targeting(
+                    area='\\areamed radius from your location',
+                    area_type='burst',
+                    targets='Creatures in the area that do not worship your deity',
+                ),
+                effects=Effects(
+                    attack=Attack.damage('Mental', 'divine')
+                ),
             ),
         ],
+        category='damage',
     ))
     spells.append(Spell(
         name="Boon of Mastery",
+        short_description="Grant skill bonuses",
         header=Header("You grant your ally great mastery over a particular domain."),
         targeting=Targeting(
             target='One willing creature',
@@ -853,6 +845,7 @@ def generate_spells():
     ))
     spells.append(Spell(
         name="Web",
+        short_description="Create thick webs to ensnare foes",
         header=Header("""
             You create a many-layered mass of strong, stricky strands that trap creatures caught within them.
             The strands are similar to spider webs, but larger and tougher.
@@ -892,6 +885,7 @@ def generate_spells():
     ))
     spells.append(Spell(
         name="Poison",
+        short_description="Create poison to debilitate foes",
         header=Header("You weaken your foe with a potent poison."),
         targeting=Targeting(
             target='One living creature',
@@ -917,7 +911,8 @@ def generate_spells():
         category='debuff, combat',
     ))
     spells.append(Spell(
-        name='Cone of Cold',
+        name='Cryomancy',
+        short_description='Drain heat to injure and freeze foes',
         header=Header('You drain the heat from an area, creating a field of extreme cold.'),
         targeting=Targeting(
             area='\\areamed cone',
@@ -943,7 +938,8 @@ def generate_spells():
         category='damage',
     ))
     spells.append(Spell(
-        name="Lightning Bolt",
+        name="Electromancy",
+        short_description='Create electricity to injure and stun foes',
         header=Header("You create a bolt of electricity that fries your foes."),
         targeting=Targeting(
             area='\\arealarge line, 10 ft\\. wide',
@@ -978,6 +974,7 @@ def generate_spells():
     ))
     spells.append(Spell(
         name="Corruption",
+        short_description="Weaken the life force of foes, reducing their combat prowess",
         header=Header("You corrupt your foe's life force, weakening them."),
         targeting=Targeting(
             target='One living creature',
@@ -1049,6 +1046,7 @@ def generate_spells():
     ))
     spells.append(Spell(
         name="Inflict Wounds",
+        short_description="Cause injuries to appear from nowhere",
         # header=Header("description"),
         targeting=Targeting(
             target='One creature',
@@ -1083,32 +1081,8 @@ def generate_spells():
         category='damage',
     ))
     spells.append(Spell(
-        name="Planar Disruption",
-        header=Header("You disrupt a creature's body by partially thrusting it into another plane."),
-        targeting=Targeting(
-            target='One creature',
-            rng='medium',
-        ),
-        effects=Effects(
-            attack=Attack(
-                defense='Mental',
-                success="Physical \\glossterm<standard damage> +1d.",
-                critical="""
-                    As above, but double damage.
-                    In addition, if the creature is an \\glossterm<outsider> native to another plane, it is sent back to its home plane.
-                """,
-            ),
-            tags=['Planar', 'Teleportation'],
-        ),
-        schools=['Conjuration'],
-        lists=['Arcane', 'Divine'],
-        cantrip="The spell's range becomes \\rngclose, and it deals -1d damage.",
-        subspells=[
-        ],
-        category='damage',
-    ))
-    spells.append(Spell(
         name="Cure Wounds",
+        short_description="Heal the wounds of allies",
         # header=Header("description"),
         targeting=Targeting(
             target='One creature',
@@ -1182,6 +1156,7 @@ def generate_spells():
     ))
     spells.append(Spell(
         name="Protection from Alignment",
+        short_description="Protect allies from aligned foes",
         # header=Header("description"),
         targeting=Targeting(
             target='One creature',
@@ -1221,6 +1196,7 @@ def generate_spells():
     ))
     spells.append(Spell(
         name="Summon Monster",
+        short_description="Summon creatures to fight with you",
         header=Header("You summon a creature to fight by your side."),
         targeting=Targeting(
             target="One unoccupied square",
@@ -1267,6 +1243,7 @@ def generate_spells():
     ))
     spells.append(Spell(
         name="Scry",
+        short_description="See and hear at great distances",
         header=Header("You create a scrying sensor that allows you to see at a distance."),
         targeting=Targeting(
             target='One square',
@@ -1385,6 +1362,7 @@ def generate_spells():
     ))
     spells.append(Spell(
         name="Foresight",
+        short_description="Grant visions of the future, improving combat prowess",
         header=Header("You grant a creature the ability to see fractions of a second into the future."),
         targeting=Targeting(
             target="One willing creature",
@@ -1438,6 +1416,7 @@ def generate_spells():
     ))
     spells.append(Spell(
         name="Telekinesis",
+        short_description="Manipulate creatures and objects at a distance",
         # header=Header("description"),
         targeting=Targeting(
             target="One Medium or smaller creature or object",
@@ -1516,6 +1495,7 @@ def generate_spells():
     ))
     spells.append(Spell(
         name="Distort Image",
+        short_description="Change how creatures and objects appear",
         # header=Header("description"),
         targeting=Targeting(
             target='One willing creature',
@@ -1603,6 +1583,7 @@ def generate_spells():
 
     spells.append(Spell(
         name="Flare",
+        short_description="Create bright light to blind foes and illuminate",
         # header=Header("description"),
         targeting=Targeting(
             area='5 foot radius',
@@ -1703,6 +1684,7 @@ def generate_spells():
 
     spells.append(Spell(
         name="Polymorph",
+        short_description="Change the physical forms of objects and creatures",
         header=Header("You change the target's physical form."),
         targeting=Targeting(
             target='One willing creature',
@@ -1751,32 +1733,45 @@ def generate_spells():
     ))
 
     spells.append(Spell(
-        name="Teleport",
-        # header=Header("description"),
+        name="Astromancy",
+        short_description="Transport creatures through the Astral Plane",
+        header=Header("You disrupt a creature's body by partially thrusting it into another plane."),
         targeting=Targeting(
-            target='One willing creature (Medium or smaller)',
-            rng='close',
+            target='One creature',
+            rng='medium',
         ),
         effects=Effects(
-            effect="""
-                The target teleports into an unoccupied destination within \\rngmed range of its original location.
-                If the destination is invalid, the spell fails.
-            """,
-            tags=['Teleportation'],
+            attack=Attack(
+                defense='Mental',
+                success="Physical \\glossterm<standard damage> +1d.",
+                critical="""
+                    As above, but double damage.
+                    In addition, if the creature is an \\glossterm<outsider> native to another plane, it is sent back to its home plane.
+                """,
+            ),
+            tags=['Planar', 'Teleportation'],
         ),
         schools=['Conjuration'],
         lists=['Arcane'],
-        cantrip="cantripeffect",
+        cantrip="The spell's range becomes \\rngclose, and it deals -1d damage.",
         subspells=[
             Subspell(
                 level=2,
-                name="Distant",
-                description="""
-                    The maximum distance the target can teleport is increased to \\rngext.
-                """,
+                name="Teleport",
+                targeting=Targeting(
+                    target='One willing creature (Medium or smaller)',
+                    rng='close',
+                ),
+                effects=Effects(
+                    effect="""
+                        The target teleports into an unoccupied destination within \\rngmed range of its original location.
+                        If the destination is invalid, the spell fails.
+                    """,
+                    tags=['Teleportation'],
+                ),
             ),
             Subspell(
-                level=3,
+                level=4,
                 name="Dimension Door",
                 targeting=Targeting(
                     target='You',
@@ -1787,7 +1782,7 @@ def generate_spells():
                 """,
             ),
         ],
-        category='narrative',
+        category='damage',
     ))
 
     return sorted(spells, key=lambda spell: spell.name)
