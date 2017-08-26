@@ -866,11 +866,15 @@
 {
     \IfValueTF{#1}
     {
+        % Enable this to test glossary links
+        % \pref{#1}
         % TODO: remove \mbox before making major releases;
         % it fixes bizarre page break errors but makes text uglier
         \hyperlink{gloss:#1}{\textbf{\mbox{#2}}}
     }
     {
+        % Enable this to test glossary links
+        % \pref{#2}
         \hyperlink{gloss:#2}{\textbf{\mbox{#2}}}
     }
 }
@@ -882,10 +886,12 @@
 {
     \IfValueT{#2}
     {
-        \label{#2}
+        % Enable this to test glossary links
+        % \label{#2}
         \hypertarget{gloss:#2}{}
     }
-    \label{#1}
+    % Enable this to test glossary links
+    % \label{#1}
     \hypertarget{gloss:#1}{}
     \parhead{#1}
 }
