@@ -161,7 +161,7 @@ def generate_spells():
         ),
         effects=Effects(
             effect="""
-                The target gains \\glossterm<damage reduction> against \\glossterm<physical damage> equal to your spellpower.
+                The target gains \\glossterm<damage reduction> equal to your spellpower against damage from \\glossterm<physical attacks>.
                 In addition, it is \\glossterm<vulnerable> to arcane damage.
             """,
             duration='Attunement (shared)',
@@ -192,7 +192,7 @@ def generate_spells():
             Subspell(
                 level=3,
                 name='Complete',
-                description='The damage reduction applies against all damage, not just physical damage.',
+                description='The damage reduction applies against all damage, not just damage from physical attacks.',
             ),
             Subspell(
                 level=4,
@@ -294,7 +294,7 @@ def generate_spells():
         effects=Effects(
             attack=Attack(
                 defense='Mental',
-                success="Physical damage dealt to the target is increased by +1d. Damage not measured in dice is unaffected.",
+                success="Damage dealt to the target by \\glossterm<physical attacks> is increased by +1d. Damage not measured in dice is unaffected.",
                 critical="As above, but damage is increased by +3d instead.",
             ),
             duration='Condition',
@@ -311,7 +311,7 @@ def generate_spells():
             Subspell(
                 level=3,
                 name='Complete',
-                description="The damage increase applies to all damage, not just physical damage.",
+                description="The damage increase applies to all damage, not just damage dealt by \\glossterm<physical attacks>.",
             ),
         ],
         category='debuff, combat',
@@ -735,7 +735,7 @@ def generate_spells():
                 level=6,
                 name="Protection",
                 description="""
-                    The target gains \\glossterm<damage reduction> against all damage equal to your spellpower.
+                    The target gains \\glossterm<damage reduction> equal to your spellpower against all damage.
                 """,
             ),
         ],
@@ -751,7 +751,7 @@ def generate_spells():
         ),
         effects=Effects(
             effect="""
-                The target gains \\glossterm{damage reduction} against physical damage equal to your spellpower.
+                The target gains \\glossterm{damage reduction} equal to your spellpower against damage dealt by \\glossterm<physical attacks>.
                 In addition, it is \\glossterm<vulnerable> to fire damage.
             """,
             duration='Attunement (shared)',
