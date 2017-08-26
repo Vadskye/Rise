@@ -923,7 +923,7 @@ def generate_spells():
             attack=Attack(
                 defense='Fortitude',
                 success="""
-                    \\Cold glossterm<standard damage> \minus1d.
+                    Cold \\glossterm<standard damage> \minus1d.
                     In addition, the target is \\fatigued as a condition.
                 """,
                 critical='As above, but double damage.',
