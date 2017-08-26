@@ -27,18 +27,18 @@ It defines how attributes work and explains how to make physical attacks in comb
             You roll again and add the second result to the original 10 before applying your \glossterm{accuracy}.
             If you roll a 10 on the extra roll, you keep rolling until you stop rolling a 10 and add all of the rolls together.
 
-        \subsubsection{Critical Hit}
+        \subsubsection{Critical Hit}\label{Critical Hit}
             If your attack result is at least 10 higher than your target's defense, your attack is a \glossterm{critical hit}.
             Many attacks have a special effect on a critical hit.
             For example, \glossterm{strikes} deal double damage when you get a critical hit.
 
-        \subsubsection{Critical Miss}
+        \subsubsection{Critical Miss}\label{Critical Miss}
             if your attack result is at least 10 lower than your target's defense, your attack is a \glossterm{critical miss}.
             Some attacks have a special effect on a critical miss, which is usually bad for the attacker.
             % TODO: Is this ever true?
             % Some attacks also have special effects on a non-critical miss, where you fail to beat your target's defense by 9 or less.
 
-    \subsection{Checks}
+    \subsection{Checks}\label{Checks}
         Checks are required to perform actions that have a chance of failure that are not attacks.
         For example, climbing a wall or remembering an obscure piece of trivia may require a check.
 
@@ -114,7 +114,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             Any creature can also take the Delay action (see \pcref{Delay}), which causes them to act during the delayed action phase instead of the action phase.
             If there are no delayed actions, this phase is skipped.
 
-    \subsection{Movement and Positioning}
+    \subsection{Movement and Positioning}\label{Movement and Positioning}
 
         \subsubsection{Measuring Movement}
 
@@ -254,6 +254,8 @@ It defines how attributes work and explains how to make physical attacks in comb
         Many abilities allow you to make one or more strikes.
         Whenever you make a strike, you can choose which kind of strike to make.
         All strikes are \glossterm{physical}, \glossterm{mundane} abilities.
+        Your \glossterm{accuracy} with a strike is equal to your accuracy with \glossterm{physical} attacks (see \pcref{Physical Accuracy}).
+        Your \glossterm{damage} with a strike has special rules (see \pcref{Strike Damage}).
 
         \parhead{Single Strike}
         \begin{ability}
@@ -500,7 +502,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         \parhead{Withdrawing}\label{Withdrawing} Withdrawing functions the same way as following, except that you specify a minimum distance between you and the target instead of a maximum distance.
         In addition, you can specify multiple targets and try to keep away from all of them.
 
-\section{Attributes}
+    \section{Attributes}\label{Attributes}
 
     Each character has six \glossterm[attribute]{attributes}: Strength (Str), Dexterity (Dex), Constitution (Con), Intelligence (Int), Perception (Per), and Willpower (Wil).
     Each attribute represents a character's raw talent in that area.
@@ -717,7 +719,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             Likewise, for each die increment that decreases the damage, move one space up the list.
             After the damage dice reach 4d10, each additional die increment simply adds an extra 1d10 of damage.
 
-        \subsubsection{Standard Damage}
+        \subsubsection{Standard Damage}\label{Standard Damage}
             Most damaging effects use \glossterm{standard damage} as a baseline to determine the damage they deal.
             Your \glossterm{standard damage} with an ability is based on that ability's \glossterm{power}, if it has one (see \pcref{Power}).
             Otherwise, it is based on your level.
@@ -969,7 +971,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         The effects of extraordinary size are described in those skills and abilities.
 
         Unusually large or small creatures also have other special rules apply to them, as described below.
-        In addition, larger creatures deal more damage with weapons, and smaller creatures deal less damage with weapons, as described in \tref{Weapon Damage and Creature Size}.
+        In addition, larger creatures deal more damage with weapons, and smaller creatures deal less damage with weapons, as described in \tref{Size in Combat}.
 
         \subsubsection{Very Small Creatures}
             \parhead{Space} If a creature takes up less than a single square of space, you can fit multiple creatures in that square. You can fit four Tiny creatures in a square, twenty-five Diminuitive creatures, or 100 Fine creatures.
@@ -1029,7 +1031,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         For example, if a barbarian enters a rage, his damage and defenses are all adjusted immediately.
 
         \parhead{Ability Prerequisites} Changes to prerequisites for abilities always take effect immmediately.
-        For example, if a paladin's Strength is reduced to 0 by a ghost, she immediately loses the benefits of all feats she has that require a high Strength, such as Power Attack (see \featpcref{Power Attack}).
+        For example, if a paladin's Strength is reduced to 0 by a ghost, she immediately loses the benefits of all feats she has that require a high Strength, such as Reaper (see \featpcref{Reaper}).
 
         \parhead{Ability Use Limits} Effects that change a character's maximum uses of an ability take effect immediately.
         However, increasing a character's maximum uses does not immediately grant the character additional uses.
@@ -1223,13 +1225,11 @@ It defines how attributes work and explains how to make physical attacks in comb
         In addition, an unarmed attack always deals nonlethal damage.
         You may use any appropriate part of your body to make an unarmed attack -- fists, feet, elbows, and so on.
         However, you only have one unarmed attack.
-        You cannot dual-wield unarmed attacks as if you were fighting with two weapons at once (see \pcref{feat:Two-Weapon Fighting}).
+        You cannot dual-wield unarmed attacks as if you were fighting with two weapons at once (see \pcref{Dual Strike}).
 
         An unarmed attack is a type of natural weapon.
         Spells and abilities that affect natural weapons can affect your unarmed attack.
         Gauntlets can also be worn to increase the power of an unarmed attack (see \pcref{Unarmed Weapons}).
-
-        If you have the Unarmed Fighting feat, you become proficient with your unarmed attack, and can deal lethal damage with it (see \featpcref{Unarmed Fighting}).
 
     \subsection{Mounted Combat}\label{Mounted Combat}
         \parhead{Horses in Combat} Warhorses and warponies can serve readily as combat steeds. Light horses, ponies, and heavy horses, however, are frightened by combat. If you don't dismount, you must make a DR 20 Ride check each round as a move action to control such a horse. If you succeed, you can perform a standard action after the move action. If you fail, you can't do anything else until your next turn.

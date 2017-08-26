@@ -27,7 +27,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     They can increase the damage you deal, grant you new combat abilities, or improve your defenses.
 
     \parhead{Spell} Spell feats improve your spellcasting abilities.
-    All Spell feats except for the Ritual Caster feat are useless to characters who cannot cast spells (see \featpcref{Ritual Caster}).
+    Spell feats are useless to characters who cannot cast spells.
 
     \parhead{Skill} Skill feats improve your skills.
     They can make you more likely to succeed with skill checks and grant you new abilities based on your skills.
@@ -105,6 +105,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \featref{Duelist} & Dex 1, Int 1 & Fight one-on-one better & \tdash & \featpref{Duelist} \\
         \featref{Executioner} & Str 1, Per 2 & Kill weakened foes more easily & \tdash & \featpref{Executioner} \\
         \featref{Guardian} & Per 1, Wil 1 & Protect nearby allies & \tdash & \featpref{Guardian} \\
+        \featref{Martial Training} & \tdash & Improve combat abilities & \tdash & \featpref{Martial Training} \\
         \featref{Reaper} & Str 2 & \tdash & Cleave through foes with sweeping strikes & \featpref{Reaper} \\
         \featref{Sniper} & Per 2 & \tdash & Aim precisely at distant foes & \featpref{Sniper} \\
         \featref{Whirlwind Warrior} & Dex 2, Per 1 & Fight hordes with agile ease & \tdash & \featpref{Whirlwind Warrior} \\
@@ -488,7 +489,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \featpre Class Versatility feat.
         \featben
 
-        \ff[1]{Additional Archetype} Choose an archetype from a class you have chosen with the \textit{additional class} ability of the Class Versatility feat (see \pcref{Class Versatility}).
+        \ff[1]{Additional Archetype} Choose an archetype from a class you have chosen with the \textit{additional class} ability of the Class Versatility feat (see \featpref{Class Versatility}).
         You gain all abilities from that archetype.
 
     \end{feat}
@@ -530,9 +531,9 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[4]{Climb Speed} You gain a \glossterm{climb speed} equal to half your land speed.
         A successful Climb check to move allows you to travel a distance equal to your climb speed.
 
-        \ff[6]{Scale the Beast}
-        You gain a \plus2 bonus to Climb attacks you make to climb on other creatures (see \pcref{Creature Climb}).
-        In addition, you gain a \plus1 bonus to accuracy with physical attacks against creatures you are climbing on.
+        % \ff[6]{Scale the Beast}
+        % You gain a \plus2 bonus to Climb attacks you make to climb on other creatures (see \pcref{Creature Climb}).
+        % In addition, you gain a \plus1 bonus to accuracy with physical attacks against creatures you are climbing on.
 
         \ff[8]{Specialization} The bonus to Climb increases to \plus4.
 
@@ -1338,6 +1339,35 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[16]{Greater Specialization} The bonus to Linguistics increases to \plus6.
     \end{feat}
 
+    \begin{feat}{Martial Training}{Combat}
+        \featben
+
+        \ff[1]{Equipment Training} You choose one of the following benefits.
+        \begin{itemize}
+            \item Proficiency with a category of \glossterm{armor}: light, medium, heavy body armor, or shields.
+                You must be proficient with light armor to gain proficiency with medium armor, and you must be proficient with medium armor to gain proficiency with heavy armor.
+            \item You reduce the \glossterm{encumbrance penalty} of \glossterm{body armor} you wear by 1, and the \glossterm{arcane spell failure} chance by 5\%.
+                If you choose this ability multiple times, its effects stack.
+            \item Proficiency with an additional \glossterm{weapon group} of your choice.
+            \item Proficiency with \glossterm{exotic weapons} from a weapon group of your choice that you are already proficient with.
+        \end{itemize}
+
+        \ff[2]{Honed Strike} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        If you do, you make a \glossterm{strike} with a \plus1d bonus to accuracy.
+        If the strike misses, you regain the \glossterm{action point} spent to use this ability.
+
+        \ff[4]{Equipment Training} You gain an additional \textit{equipment training} ability of your choice.
+
+        \ff[6]{Combat Prowess} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical} attacks.
+
+        \ff[8]{Equipment Training} You gain an additional \textit{equipment training} ability of your choice.
+    
+        \ff[12]{Equipment Training} You gain an additional \textit{equipment training} ability of your choice.
+
+        \ff[16]{Equipment Training} You gain an additional \textit{equipment training} ability of your choice.
+        
+    \end{feat}
+
     \begin{feat}{Miscaster}{Magical, Spell}
         \featpre Ability to cast a spell.
         \featben
@@ -1346,7 +1376,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[3]{Overchannel} Whenever you cast a spell, you can use this ability as an \glossterm{immediate action}.
         Your concentration on the spell cannot be disrupted, and you cannot \glossterm{miscast} the spell for any other reason.
-        Effects that prevent the spell from having any effect, such as the \textit{counterspell} ability from the Abjurer feat, work normally (see \pcref{Abjurer}).
+        Effects that prevent the spell from having any effect, such as the \textit{counterspell} ability from the Abjurer feat, work normally (see \featpref{Abjurer}).
         In addition, you cause a \glossterm{miscast backlash} when the spell resolves.
 
         However, using this ability causes a mystic backlash from channeling excess magical energy.
@@ -1761,7 +1791,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[3]{Alter Self} As a standard action, you can spend an \glossterm{action point} to use this ability.
         \begin{ability}
             \begin{spelleffects}
-                \spelleffect You make a Disguise check to alter your appearance (see \pcref{Disguise creature}), except that you can use your spellpower in place of your Disguise skill.
+                \spelleffect You make a Disguise check to alter your appearance (see \pcref{Disguise Creature}), except that you can use your spellpower in place of your Disguise skill.
                 You can only alter your physical body, not your clothes or equipment.
             \end{spelleffects}
             \spelldur Permanent; if you use this ability again, any the effects of any previous use immediately ends.
