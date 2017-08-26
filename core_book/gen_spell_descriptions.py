@@ -1231,7 +1231,7 @@ def generate_spells():
                 description="""
                     The creature appears to be a Medium bear.
                     As a standard action, it can make a \\glossterm<grapple> attack against a creature it threatens.
-                    Its accuracy is the same as its accuracy with strikes.
+                    Its accuracy is the same as its accuracy with \\glossterm<physical attacks>.
                     While grappling, the manifested creature can either make a strike or attempt to escape the grapple.
 
                     This augment replaces the effects of any other augments that change the appearance of the creature.
