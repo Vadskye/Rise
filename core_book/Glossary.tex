@@ -10,7 +10,7 @@ For details, see \pcref{Ability Tags}.
 \glossdef{action phase} The action phase is the second of two \glossterm{phases} in a combat \glossterm{round}.
 During the action phase, creatures can \glossterm{attack}, cast \glossterm{spells}, and take other major combat actions.
 
-\glossdef{action point} Action points allow you to perform special actions that your character has access to.
+\glossdef{action point}[action points] Action points allow you to perform special actions that your character has access to.
 For details, see \pcref{Action Points}.
 
 \glossdef{accuracy} The bonus added to a \glossterm{attack roll}.
@@ -20,12 +20,17 @@ For details, see \pcref{Action Points}.
 \glossdef{ally}[allies] Many abilities affect allies.
 An ally is any creature you designate who is willing to be considered an ally, not including yourself.
 
-\glossdef{attack}[attacks] Anything that affects another creature in a potentially harmful way. There are two kinds of attacks: \glossterm{physical} attacks and \glossterm{magical} attacks.
+\glossdef{attack}[attacks] Anything that affects another creature in a potentially harmful way. There are two kinds of attacks: \glossterm{physical attacks} and \glossterm{magical} attacks.
+
+\glossdef{attack result} An attack result is the total you get on an \glossterm{attack roll}, after taking to account any \glossterm{modifiers} that apply to the roll.
 
 \glossdef{attack roll}[attack rolls] A roll required to succeed with an attack.
 To make an attack roll, roll 1d10 \add your \glossterm{accuracy} with the attack.
 If the result of the attack roll equals or exceeds the target's \glossterm{defense}, the attack succeeds.
 Some attacks, especially magical attacks, have effects even if the attack roll fails.
+
+\glossdef{attended} An attended item is an item currently being held or carried by a creature.
+Some abilities can only affect \glossterm{unattended} items.
 
 \glossdef{attribute} A core representation of a character's capacity in a wide range of areas. There are six attributes: \glossterm{Strength}, \glossterm{Dexterity}, \glossterm{Constitution}, \glossterm{Intelligence}, \glossterm{Perception}, and \glossterm{Willpower}.
 
@@ -57,6 +62,9 @@ Blindsense always has a range, and grants no benefits beyond that range.
 It still needs line of effect to see its surroundings.
 Blindsight always has a range, and grants no benefits beyond that range.
 
+\glossdef{block}[blocking] The \textit{block} ability allows you to try to prevent other creatures from entering an area.
+For details, see \pcref{Block}.
+
 \glossdef{bloodied} At or below half hit points. Bloodied creatures take a \minus4 penalty to Fortitude and Mental defense.
 
 \glossdef{broken} A broken object is damaged and unsuitable for use, though it retains its general structure. Both magical and mundane objects can be repaired for a cost equal to 10\% of their value. You must be able to craft the item originally to repair it.
@@ -81,6 +89,14 @@ It always sees the words and actions of the creature that charmed it in the most
 A charmed creature cannot be controlled like an automaton, but can be persuaded to take particular actions with the Persuasion skill (see \pcref{Persuasion}).
 It treats the creature that charmed it as a friend (a \plus10 relationship modifier) for the purpose of Persuasion checks.
 
+\glossdef{check}[checks] A check is a d10 \glossterm{roll} required to accomplish an action that has a chance of failure that is not an attack.
+If the result of your roll, including your \glossterm{check modifier}, is high enough, you succeed.
+Otherwise, you fail.
+For details, see \pcref{Checks}.
+
+\glossdef{check modifier}[check modifiers] A check modifier is a number that you add to or subtract from your d10 \glossterm{roll} when you make a \glossterm{check}.
+For details, see \pcref{Checks}.
+
 \glossdef{class skill}[class skills] A class skill is a skill which you can train with using \glossterm{skill points} from your class. For details, see \pcref{Skill Training}.
 
 \glossdef{climb speed} A creature with a climb speed can climb as easily as a human walks on land.
@@ -97,7 +113,10 @@ They are described in \tref{Common Languages}.
 \glossdef{Compulsion}[Compulsions] See \pcref{Ability Tags}.
 
 \glossdef{concealment} Concealment represents effects which make a target harder to see, such as shadowy lighting.
-You take a \minus4 penalty to accuracy with physical attacks against creatures and objects that have concealment from you.
+You take a \minus4 penalty to accuracy with \glossterm{physical attacks} against creatures and objects that have concealment from you.
+
+\glossdef{condition} A condition is a negative effect on a creature.
+Conditions last until they are removed, such as by the \textit{recover} ability (see \pcref{Recover}).
 
 \glossdef{confused} A confused creature is unable to independently control its actions. \confusionexplanation
 
@@ -134,13 +153,18 @@ Some skills and abilities have special effects on critical misses.
 \glossdef{critical success} When you make a check, if your result beat the DR by 10 or more, you get a critical success.
 Some skills and abilities have special effects on critical successes.
 
+\glossdef{damage} Some attacks deal damage to you when they hit.
+When you take damage, you reduce your \glossterm{hit points} by that amount.
+If you have no hit points remaining, you may take that damage as \glossterm{vital damage} instead, which represents potentially life-threatening injuries.
+For details, see \pcref{Damage}.
+
 \glossdef{damage reduction} Damage reduction allows you to ignore a certain amount of incoming damage.
 Each \glossterm{round}, you ignore the first points of damage you would take.
 Damage reduction always specifies an amount of damage it reduces.
 Once it reduces that much damage, it stops functioning until the end of the round.
 
 Most sources of damage reduction only apply against a specific type of attack.
-For example, a barbarian's damage reduction only applies against physical damage.
+For example, a barbarian's damage reduction only applies against damage dealt by \glossterm{physical attacks}.
 If an attack deals multiple types of damage, you must have damage reduction against every type of damage dealt.
 For example, damage reduction against piercing damage would not help if you are struck by a morningstar, since it deals both bludgeoning and piercing damage.
 
@@ -175,7 +199,7 @@ If there is ambiguity about whether a surrendering or seemingly incapacitated en
 
 \glossdef{defense}[defenses] A defense is a static number which represents how difficult you are to affect with attacks. See \glossterm{attack rolls}.
 
-\glossdef{delayed action} A delayed action takes place during the \glossterm{delayed action phase} instead of the \glossterm{action phase}.
+\glossdef{delayed action}[delayed actions] A delayed action takes place during the \glossterm{delayed action phase} instead of the \glossterm{action phase}.
 
 \glossdef{delayed action phase} The delayed action phase is a \glossterm{phase} that occurs after the \glossterm{action phase}.
 It is not always necessary, because most actions are not delayed.
@@ -184,6 +208,11 @@ For details, see \pcref{The Delayed Action Phase}.
 \glossdef{Delusion} See \pcref{Ability Tags}.
 
 \glossdef{Detection} See \pcref{Ability Tags}.
+
+\glossdef{die increment}[die increments] A die increment is a single increase or decrease of the die size of a pool of dice.
+For example, a 1d8 that is increased by one die increment becomes a 1d10 die.
+Similarly, a 2d6 dice pool that is decreased by one die increment also becomes a 1d10 die.
+For details, see \pcref{Die Increments}.
 
 \glossdef{difficult terrain} Difficult terrain costs double the normal movement cost to move out of.
 For details, see \pcref{Difficult Terrain}.
@@ -208,6 +237,13 @@ It moves as far as it can, but will not sprint or take similar strenuous actions
 \glossdef{dominated} A charmed creature is mentally compelled to obey another creature.
 It obeys the commands of the creature of the dominated it unquestioningly, as an automaton.
 If it does not understand the language of the creature that dominated it, it still attempts to obey as much as possible, and simple commmands (such as ``attack'' or ``follow'') can usually be communicated successfully.
+
+\glossdef{dual action}[dual actions] A dual action has some effects in both the \glossterm{action phase} and the \glossterm{delayed action phase}.
+You can only start a dual action during the action phase.
+The most common dual action is casting a \glossterm{spell}, which must be started during the action phase and do not have their effects until the delayed action phase.
+
+\glossdef{dual strike}[dual strikes] A \glossterm{dual strike} is a \glossterm{strike} made with two different weapons simultaneously.
+For details, see \pcref{Dual Strike}.
 
 \glossdef{dying} A dying creature is unconscious and near death. See \pcref{Dying}.
 
@@ -260,6 +296,9 @@ For details, see \pcref{Flying}.
 
 \glossdef{Fog} See \pcref{Ability Tags}.
 
+\glossdef{follow} The \textit{follow} ability allows you to follow another creature to match their movements during the \glossterm{movement phase}.
+For details, see \pcref{Follow}.
+
 \glossdef{Force} See \pcref{Ability Tags}.
 
 \glossdef{free action}[free actions] Each round, you can any number of free actions.
@@ -286,7 +325,7 @@ For details, see \pcref{Grapple}.
 \glossdef{grappled} A grappled creature is in wrestling or some other form of hand-to-hand struggle with one or more attackers. While grappled, you suffer certain penalties and restrictions, as described below.
 
 \begin{itemize}
-    \item You must use a free hand (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands. If you cannot free a hand, you suffer a \minus10 penalty to accuracy with all physical attacks, including grapple attacks, until you have a free hand.
+    \item You must use a free hand (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands. If you cannot free a hand, you suffer a \minus10 penalty to accuracy with all \glossterm{physical attacks}, including grapple attacks, until you have a free hand.
     \item You take a \minus4 penalty to physical defenses against creatures you are not grappling with.
     \item You take a \minus4 penalty to accuracy with weapons that are not light, since they are too large and cumbersome to be used effectively in a grapple.
     \item Spellcasting is extremely difficult. You cannot cast spells with somatic components. Casting a spell without somatic components requires a Concentration check with a DR equal to 20 \add double spell level (see \pcref{Concentration}).
@@ -303,6 +342,10 @@ Whenever a creature or object with hardness takes damage, it reduces that damage
 \glossdef{hidden task}[hidden tasks] Any checks for a hidden \glossterm{task} should be rolled secretly by the GM.\@
 You should not know the result of your character's check, or even that a check was made.
 For details, see \pcref{Hidden Tasks}.
+
+\glossdef{hit point}[hit points] Your hit points measure how hard you are to kill.
+When you take damage, you subtract that damage from your hit points.
+For details, see \pcref{Hit Points}.
 
 \glossdef{hit value} Your hit value is the number of hit points you gain per level.
 Your hit value is normally equal to half your Fortitude defense or half your Mental defense, whichever is higher.
@@ -340,8 +383,11 @@ An incorporeal creature can enter or pass through solid objects, but it must rem
 If it is completely inside an object, it cannot see out or attack.
 It can fight while partially inside an object, which grants it passive \glossterm{cover} and allows it to attack and see normallly.
 
-\glossdef{initiate}[initiates] After all creatures chose their actions for a particular phase, those actions are initiated.
+\glossdef{initiate}[initiated] After all creatures chose their actions for a particular phase, those actions are initiated.
 Once they are initiated, they begin resolving (see \pcref{Resolving Actions}).
+
+\glossdef{initiative} When multiple creatures take mutually impossible actions simultaneously, such as racing to be the first one to a door, they must roll initiative checks to determine who completes the action first.
+For details, see \pcref{Initiative}.
 
 \glossdef{Instantaneous} See \pcref{Ability Tags}.
 
@@ -365,6 +411,10 @@ See \pcref{Item Power}, for details.
 \glossdef{light maneuver} A light maneuver is a type of \glossterm{combat maneuver}.
 You can perform a light maneuver in place of a \glossterm{strike}, and you can use your Dexterity to determine its accuracy.
 For details, see \pcref{Combat Maneuvers}.
+
+\glossdef{light weapon} A light weapon is a type of \glossterm{weapon} that is relatively small and easy to use.
+You can use your Dexterity to determine your \glossterm{accuracy} when making \glossterm{physical attacks} with light weapons.
+For details, see \pcref{Light Weapons}.
 
 \glossdef{low-light vision} A creature with low-light vision can see more clearly in conditions of dim light.
 It treats sources of light as if they had double their normal illumination range.
@@ -460,10 +510,13 @@ Examples include \glossterm{strikes}, \glossterm{combat maneuvers}, a dragon's b
 Unless otherwise indicated, all abilities are mundane in nature.
 For details, see \pcref{Mundane Abilities}.
 
-\glossdef{physical attack}[physical attacks] A physical attack is an \glossterm{attack} using a creature's body.
+\glossdef{physical attack}[physical attacks] A physical attack is an \glossterm{attack} made with a creature's body.
 The most common type of physical attack is a \glossterm{strike}, but there are other physical attacks, such as \glossterm{combat maneuvers}.
 All physical attacks share a common way of determining their \glossterm{accuracy} (see \pcref{Physical Accuracy}).
 Most physical attacks target Armor defense.
+
+% TODO: physical attack vs. physical check inconsistency
+\glossdef{physical check}[physical checks] A physical check is a \glossterm{check} based on Strength, Dexterity, or Constitution.
 
 \glossdef{physical defenses}[physical defense] Your physical defenses are your Armor and Reflex defenses.
 For details, see \pcref{Defenses}.
@@ -489,6 +542,10 @@ In addition, points of origin are used to calculate \glossterm{cover} and \gloss
 \glossdef{power} The power of an \glossterm{ability} represents how strong the ability is.
 Each ability uses a particular kind of power, which is usually calculated in a unique way.
 For example, spells use \glossterm{spellpower}, and class abilities typically use a power specified in the class description.
+
+\glossdef{proficient}[proficiency] A creature can be proficient with weapons and armor.
+If you try to attack with a weapon you are not proficient with, you take a \minus2 penalty to accuracy (see \pcref{Weapon Proficiency}).
+If you try to use armor you are not proficient with, it is less effective and your \glossterm{accuracy} with \glossterm{physical attacks} is reduced (see \pcref{Armor Proficiency}).
 
 \glossdef{prone} A prone creature is lying on the ground, rather than standing normally.
 It takes a \minus2 penalty to \glossterm{accuracy} with physical melee attacks and physical defenses.
@@ -519,7 +576,7 @@ They are described in \tref{Rare Languages}.
 \glossdef{reach} Your reach is how far away from your body you can make melee attacks.
 A typical Medium creature has a five-foot reach.
 
-\glossdef{round} Combat takes place in a series of rounds, which represent about six seconds of action.
+\glossdef{round}[rounds] Combat takes place in a series of rounds, which represent about six seconds of action.
 Rounds are divided into two \glossterm{phases}: the \glossterm{movement phase}, and the \glossterm{action phase}.
 
 \glossdef{scent} A creature with the scent ability has an unusually good sense of smell.
@@ -556,6 +613,8 @@ For details, see \pcref{Skill Training}.
 For details, see \pcref{Components}.
 
 \glossdef{Speech} See \pcref{Ability Tags}.
+
+\glossdef{speed} Your speed represents the number of feet you can move with a single movement (see \pcref{The Movement Phase}).
 
 \glossdef{spell list} The list of spells you can cast from a particular \glossterm{spell source}.
 Each spell source has a specific spell list which is described at \pcref{Spells}.
@@ -614,6 +673,9 @@ For details, see \pcref{Swift and Immediate Actions}.
 \glossdef{swim speed} A creature with a swim speed can swim as easily as a human walks on land.
 The effects of a swim speed are described at \pcref{Swim Speed}.
 
+\glossdef{target}[targets] A target is a creature or object directly affected by an ability.
+Many abilities only affect a single target, and some affect a specific number of targets.
+
 \glossdef{target square} A target square is a particular \glossterm{square} that an attack is made against.
 A target square is chosen to determine \glossterm{cover} and \glossterm{concealment} (see \pcref{Cover}).
 
@@ -659,6 +721,11 @@ Tremorsense always has a range, and grants no benefits beyond that range.
 \glossdef{unarmed attack} Every corporeal creature is capable of making an attack using its bare fists (or similar appendages).
 For details, see \pcref{Unarmed Combat}.
 
+% TODO: expand definition to include ``attended by a willing creature''
+% Or just expand ``willing'' to include objects
+\glossdef{unattended} An unattended item is an item not being held or carried by a creature.
+Some abilities can only affect unattended items.
+
 \glossdef{unaware} An unaware creature does not know that it is being attacked. Successful physical attacks against an unaware creature automatically threaten critical hits. After being attacked, an unaware creature typically stops being unaware of future attacks, even if cannot see or identify its attacker.
 
 \glossdef{unencumbered} An unencumbered creature does not have its motion restricted by armor or weight. For details, see \pcref{Encumbrance}.
@@ -681,6 +748,9 @@ Vulnerability is calculated before applying \glossterm{damage reduction}.
 \glossdef{Water} See \pcref{Ability Tags}.
 
 \glossdef{willing} Some abilities can only affect willing targets. You can choose to be a willing target at any time. Unconscious creatures and objects are automatically considered willing, but a character who is conscious but immobile or helpless (such as one who is bound or paralyzed) is not automatically willing.
+
+\glossdef{withdraw} The \textit{withdraw} ability allows you to stay away from a creature, preventing it from coming too close to you.
+For details, see \pcref{Withdraw}.
 
 \glossdef{zone} A zone is a type of area that an ability can have (see \pcref{Area Types}).
 A zone ability has effects within an area for the duration of the ability.
