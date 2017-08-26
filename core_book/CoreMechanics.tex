@@ -323,7 +323,7 @@ It defines how attributes work and explains how to make physical attacks in comb
                     \begin{spellattack}{Physical vs. Special}
                         \spellspecial Depending on the nature of your dirty trick, this attack can target Fortitude or Reflex defense.
                         \spellsuccess The target suffers a \minus2 penalty to one of the following statistics:
-                        \glossterm{accuracy} with \glossterm{physical} attacks, \glossterm{physical} checks, Armor defense, Fortitude defense, Reflex defense, or Mental defense.
+                        \glossterm{accuracy} with \glossterm{physical attacks}, \glossterm{physical checks}, Armor defense, Fortitude defense, Reflex defense, or Mental defense.
 
                         \spellcritical As above, except that the penalty is increased to \minus5.
                     \end{spellattack}
@@ -483,10 +483,10 @@ It defines how attributes work and explains how to make physical attacks in comb
         For example, you can try to follow a creature wherever it goes that round.
         If you declare a reactive movement at the start of the movement phase, you automatically move accordingly.
         In all cases, if you run out of movement speed before accomplishing your intended task, you simply stop where you ran out of movement.
-        The two most common types of reactive movements are \glossterm{blocking}, \glossterm{following}, and \glossterm{withdrawing}, but you can come up with other reactive movements.
+        The two most common types of reactive movements are the \textit{block}, \textit{follow}, and \textit{withdraw} abilities, but you can come up with other reactive movements.
         The only requirement is that a reactive movement must have a simple criteria for determining how you move.
 
-        \parhead{Blocking}\label{Blocking} You can designate a target creature or object to block, and the area you want to block it from entering.
+        \parhead{Block}\label{Block} You can designate a target creature or object to block, and the area you want to block it from entering.
         When you do, you automatically move to intercept the target as it approaches the blocked area.
         Usually, blocking a target requires an opposed \glossterm{initiative} check against the target.
         Success means you successfully keep ahead of the target as it moves, preventing it from entering the area (unless it can move through you).
@@ -495,11 +495,11 @@ It defines how attributes work and explains how to make physical attacks in comb
         Multiple creatures can coordinate to block a single creature.
         The blocked creature must beat the initiative of all blocking creatures to enter the blocked area.
 
-        \parhead{Following}\label{Following} You can designate a target creature or object to follow, and the maximum distance you want to follow at. When you do, you automatically move such that your distance to the target is no greater than your desired follow distance. For the rest of the round, whenever that creature or object moves, you move with it to stay within that follow distance.
+        \parhead{Follow}\label{Follow} You can designate a target creature or object to follow, and the maximum distance you want to follow at. When you do, you automatically move such that your distance to the target is no greater than your desired follow distance. For the rest of the round, whenever that creature or object moves, you move with it to stay within that follow distance.
 
         If the target takes an action that makes it impossible to follow with movement, such as teleporting, you cannot follow it for the rest of the round.
 
-        \parhead{Withdrawing}\label{Withdrawing} Withdrawing functions the same way as following, except that you specify a minimum distance between you and the target instead of a maximum distance.
+        \parhead{Withdraw}\label{Withdraw} Withdrawing functions the same way as following, except that you specify a minimum distance between you and the target instead of a maximum distance.
         In addition, you can specify multiple targets and try to keep away from all of them.
 
     \section{Attributes}\label{Attributes}
@@ -682,14 +682,19 @@ It defines how attributes work and explains how to make physical attacks in comb
             If you are using a \glossterm{light weapon}, you may use your Dexterity instead.
             In addition to this base number, your accuracy can include any number of bonuses and penalties from other sources.
 
-            \parhead{Proficiency} Each creature has \glossterm{proficiency} with a number of weapons.
+            \parhead{Proficiency} Each creature is \glossterm{proficient} with a number of weapons.
             For details about the weapons you can be proficient with, see \pcref{Weapons}.
             Your proficiencies are primarily determined by your class, but some abilities also grant proficiency with additional weapons.
             If you make a strike with a weapon you are not proficient with, you take a \minus2 penalty to accuracy.
 
     \subsection{Damage}\label{Damage}
         Some attacks deal damage when they hit.
-        Damage is measured in damage dice.
+        Damage does not represent serious physical injury to your body.
+        Instead, it represents a depletion of some combination of endurance, luck, or even divine providence that prevents you from suffering more serious injury
+        When you take damage, you reduce your \glossterm{hit points} by that amount (see \pcref{Hit Points}).
+        If you have no hit points remaining, you may take that damage as \glossterm{vital damage} instead, which represents potentially life-threatening injuries (see \pcref{Vital Damage}).
+
+        Most attacks deal damage equal to the result rolled from a pool of dice.
 
         \subsubsection{Die Increments}\label{Die Increments}
             Many abilities can increase or decrease your damage with abilities.
@@ -805,6 +810,8 @@ It defines how attributes work and explains how to make physical attacks in comb
             For details, see \tref{Size in Combat}.
 
     \subsection{Initiative}\label{Initiative}
+        When multiple creatures take mutually impossible actions simultaneously, such as racing to be the first one to a door, they must roll initiative checks.
+        The winner completes the action first, and any other creatures complete as much of the action as possible in order from highest to lowest result.
 
         Your initiative check is calculated as follows:
 
@@ -1051,7 +1058,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
     \subsection{Hit Points}\label{Hit Points}
         Your hit points measure how hard you are to kill.
-        When you take lethal damage, you subtract that damage from your hit points.
+        When you take damage, you subtract that damage from your hit points.
         No matter how many hit points you lose, your character isn't significantly hindered until your hit points drop to 0.
         When you run out of hit points, your actions are limited and you might die.
 
