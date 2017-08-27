@@ -31,7 +31,7 @@ def generate_rituals():
                 If a skeleton is made from an intact corpse, the flesh quickly falls off the animated bones.
             """,
             duration='Attunement (multiple)',
-            tags=['Evil', 'Negative', 'Soul'],
+            tags=['Evil', 'Negative'],
         ),
         schools=['Vivimancy'],
         lists=['Arcane', 'Divine'],
@@ -128,7 +128,7 @@ def generate_rituals():
                 name="Dimension Lock",
                 description="""
                     Creatures trapped in the circle with a successful attack also cannot travel extradimensionally.
-                    This prevents all \\glossterm<Manifestation>, \\glossterm<Planar>, and \\glossterm<Translocation> effects.
+                    This prevents all \\glossterm<Manifestation>, \\glossterm<Planar>, and \\glossterm<Teleportation> effects.
                 """,
             ),
         ),
@@ -367,7 +367,7 @@ def generate_rituals():
                 % A \\ritual<gate> spell functions much like a \\ritual<plane shift> spell, except that the gate opens precisely at the point you desire.
             """,
             duration='Sustain (standard); maximum 5 rounds',
-            tags=['Planar', 'Translocation'],
+            tags=['Planar', 'Teleportation'],
         ),
         schools=['Conjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
@@ -520,7 +520,7 @@ def generate_rituals():
                 % TODO: Is this planar cosmology correct?
                 The Astral Plane connects to every plane, but transit from other planes is usually more limited. From the Material Plane, you can only reach the Astral Plane.
             """,
-            tags=['Planar', 'Translocation'],
+            tags=['Planar', 'Teleportation'],
         ),
         schools=['Conjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
@@ -662,7 +662,7 @@ def generate_rituals():
                 This penalty lasts for thirty days, or until the creature gains a level.
                 If this would reduce a creature's maximum action points below 0, the creature cannot be resurrected.
             """,
-            tags=['Creation', 'Life', 'Soul'],
+            tags=['Creation', 'Life'],
         ),
         schools=['Conjuration', 'Vivimancy'],
         lists=['Nature'],
@@ -769,7 +769,7 @@ def generate_rituals():
                 This penalty lasts for thirty days, or until the creature gains a level.
                 If this would reduce a creature's maximum action points below 0, the creature cannot be resurrected.
             """,
-            tags=['Creation', 'Life', 'Soul'],
+            tags=['Creation', 'Life'],
         ),
         schools=['Conjuration', 'Vivimancy'],
         lists=['Nature'],
@@ -814,7 +814,6 @@ def generate_rituals():
                 Once it speaks twenty-five words, or you stop sustaining the effect, the ritual's effect ends.
             """,
             duration='Sustain (standard); maximum 5 rounds',
-            tags=['Communication'],
         ),
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
@@ -859,7 +858,6 @@ def generate_rituals():
                 A creature holding the gem may still resurrect or reanimate the creature.
             """,
             duration='Attunement',
-            tags=['Soul'],
         ),
         schools=['Vivimancy'],
         lists=['Arcane', 'Divine'],
@@ -884,7 +882,6 @@ def generate_rituals():
                 However, the effect continues as long as at least two different targets are attuned to it.
             """,
             duration='Attunement (multiple); see text',
-            tags=['Communication'],
         ),
         schools=['Divination'],
         lists=['Arcane'],
@@ -922,7 +919,7 @@ def generate_rituals():
             effect="""
                 Each target is teleported to the chosen destination.
             """,
-            tags=['Translocation'],
+            tags=['Teleportation'],
         ),
         schools=['Conjuration'],
         lists=['Arcane'],
@@ -945,7 +942,7 @@ def generate_rituals():
                 In addition, instead of specifying a destination with a mental image, you can specify a distance and direction from your current location.
                 If you do, the targets will arrive at the closest sufficiently large living plant to that destination.
             """,
-            tags=['Translocation'],
+            tags=['Teleportation'],
         ),
         schools=['Conjuration'],
         lists=['Nature'],
@@ -964,10 +961,10 @@ def generate_rituals():
             effect="""
                 This ritual functions like the \\ritual<overland teleporation> ritual, except that the destination must be a temple or equivalent holy site to your deity.
             """,
-            tags=['Translocation'],
+            tags=['Teleportation'],
         ),
         schools=['Conjuration'],
-        lists=['Dviine'],
+        lists=['divine'],
     ))
 
     rituals.append(Spell(

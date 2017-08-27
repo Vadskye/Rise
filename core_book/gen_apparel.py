@@ -188,7 +188,7 @@ def generate_armor():
         tags=['Shielding'],
         material_type='body armor',
         description="""
-            You have \\glossterm<damage reduction> equal to this item's \\glossterm<power> against \\glossterm<physical> damage.
+            You have \\glossterm<damage reduction> equal to this item's \\glossterm<power> against damage from \\glossterm<physical attacks>.
         """,
     ))
 
@@ -199,7 +199,7 @@ def generate_armor():
         material_type='body armor',
         description="""
             This item functions like the \\mitem<armor of invulnerability> item, except that the damage reduction is equal to twice the item's \\glossterm<power>.
-            You have \\glossterm<damage reduction> equal to the item's \\glossterm<power> against \\glossterm<physical> damage.
+            You have \\glossterm<damage reduction> equal to the item's \\glossterm<power> against damage from \\glossterm<physical attacks>.
         """,
     ))
 
@@ -219,7 +219,7 @@ def generate_armor():
         tags=['Thaumaturgy'],
         material_type='shield',
         description="""
-            As an \\glossterm<immediate action> when you are targeted by a \\glossterm<targeted> \\glossterm<magical> ability, you can spend an \\glossterm<action point> to use this ability.
+            As an \\glossterm<immediate action> when you are targeted by a targeted \\glossterm<magical> ability, you can spend an \\glossterm<action point> to use this ability.
             If you do, the ability targets the creature using the ability instead of you.
             Any other targets of the ability are affected normally.
         """,
@@ -298,7 +298,8 @@ def generate_worn():
         material_type='gauntlet',
         tags=['Telekinesis'],
         description="""
-            If you hit on an \\glossterm<unarmed> \\glossterm<strike> with this gauntlet, you can attempt to \\glossterm<shove> your foe during the \\glossterm<delayed action phase>.
+            If you hit on a \\glossterm<strike> with this gauntlet, you can attempt to \\glossterm<shove> your foe during the \\glossterm<delayed action phase>.
+            Making a strike with this gauntlet is equivalent to an \\glossterm<unarmed attack>.
         """,
     ))
 
@@ -465,7 +466,7 @@ def generate_worn():
         name="Astral Boots",
         level=16,
         material_type='boot',
-        tags=['Translocation'],
+        tags=['Teleportation'],
         description="""
             Whenever you move, you can teleport the same distance instead.
             This does not change the total distance you can move, but you can teleport in any direction, even vertically.
@@ -503,7 +504,7 @@ def generate_worn():
         name="Seven League Boots",
         level=12,
         material_type='boot',
-        tags=['Translocation'],
+        tags=['Teleportation'],
         description="""
             As a standard action, you can spend an \glossterm{action point} to use this item.
             If you do, you teleport exactly 25 miles in a direction you specify.
@@ -609,7 +610,7 @@ def generate_worn():
         material_type='amulet',
         tags=['Enhancement'],
         description="""
-            You gain a +1d bonus to \\glossterm<strike damage> with unarmed attacks and natural weapons.
+            You gain a +1d bonus to \\glossterm<strike damage> with \\glossterm<unarmed attacks> and natural weapons.
         """,
     ))
 
@@ -619,7 +620,7 @@ def generate_worn():
         material_type='amulet',
         tags=['Enhancement'],
         description="""
-            You gain a +2d bonus to \\glossterm<strike damage> with unarmed attacks and natural weapons.
+            You gain a +2d bonus to \\glossterm<strike damage> with \\glossterm<unarmed attacks> and natural weapons.
         """,
     ))
 

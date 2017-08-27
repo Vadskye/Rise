@@ -28,7 +28,7 @@ def generate_weapons():
             This weapon continuously crackles with electricity.
             The constant sparks shed light as a torch, and all damage dealt with it is electricity damage in addition to its other types.
             When you make a successful \\glossterm<strike> with this weapon, you can activate it as an \\glossterm<immediate action>.
-            If you do, the target takes a -5 penalty to \\glossterm<concentration> checks until the end of the round.
+            If you do, the target takes a -5 penalty to concentration checks until the end of the round (see \\pcref<Concentration>).
         """,
     ))
 
@@ -172,8 +172,8 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Soulreaving",
         level=13,
+        tags=[],
         material_type='weapon',
-        tags=['Soul'],
         description="""
             This weapon is transluscent and has no physical presence for anyone except you.
             It has no effect on objects or constructs, and creatures do not feel any pain or even notice attacks from it.
@@ -254,7 +254,7 @@ def generate_weapons():
         material_type='weapon',
         tags=['Enhancement'],
         description="""
-            \\glossterm<Critical hits>  on \\glossterm<strikes> with this weapon deal maximum damage.
+            Critical hits on \\glossterm<strikes> with this weapon deal maximum damage.
         """,
     ))
 

@@ -43,7 +43,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         For example, climbing a wall or remembering an obscure piece of trivia may require a check.
 
         To make a check, roll 1d10 and add your \glossterm{check modifier} with the check.
-        You compare the die result, including your check modifier, to a \glossterm{Difficulty Rating} (DR) that represents the difficulty of the task.
+        You compare the die result, including your check modifier, to a \glossterm{difficulty rating} (DR) that represents the difficulty of the task.
         The more difficult the task, the higher the DR will be.
         If your result is at least equal to the DR, the check succeeds.
         This usually means you accomplish a task successfully.
@@ -180,7 +180,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             \parhead{Falling} If a flying creature loses control, usually by failing to maintain its minimum forward speed, or loses the ability to fly, it falls just like any other creature would in midair. As long as it still has the ability to fly, it can regain control of its fall as a standard action, causing it to resume flying normally.
 
             \parhead{Gliding}\label{Gliding}
-            A creature with a glide speed can glide through the air at the indicated speed. It must be unencumbered (see \pcref{Encumbrance}).
+            A creature with a glide speed can glide through the air at the indicated speed. It must be \glossterm{unencumbered} (see \pcref{Encumbrance}).
 
             While in the air, a creature with a glide speed can control its fall as a move action. This allows it to move up to its speed horizontally in a direction of its choice while moving only five feet down. If it desires, it can move half as far horizontally and fall down twice as fast. It takes no falling damage if it touches the ground while gliding.
 
@@ -937,7 +937,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             Paralyzed, bound, and unconscious creatures are helpless.
 
             \parhead{Coup de Grace}\label{Coup de Grace} As a full-round action, you can deliver a coup de grace to a helpless opponent within your \glossterm{reach} that you can see.
-            You automatically hit with your weapon and score a \glossterm{critical success}. If the damage exceeds the struck creature's \glossterm{bloodied value}, it immediately dies.
+            You automatically hit with your weapon and score a \glossterm{critical success}. If the creature takes damage equal to or higher than half its maximum hit points, it immediately dies.
 
             Delivering a coup de grace requires focused concentration and methodical action. This leaves you \defenseless. If you take damage in excess of your Fortitude defense while delivering a coup de grace, your attempt fails.
             If your target stops being helpless during your coup de grace attempt for any reason, the attempt fails.
@@ -981,7 +981,8 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \parhead{Other Effects}
         A creature's size affects a number of additional skills and abilities.
-        The effects of extraordinary size are described in those skills and abilities.
+        For example, larger creatures have a penalty to Stealth checks (see \pcref{Size and Stealth}).
+        The effects of unusual size are described in those skills and abilities.
 
         Unusually large or small creatures also have other special rules apply to them, as described below.
         In addition, larger creatures deal more damage with weapons, and smaller creatures deal less damage with weapons, as described in \tref{Size in Combat}.
@@ -1098,7 +1099,6 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \parhead{Bloodied} When you drop to half your hit points or below, you are \bloodied.
         The first time you become \glossterm{bloodied} in an encounter, you become \glossterm{staggered} until the end of the next round.
-        Some abilities have effects based on your \glossterm{bloodied value}, which is equal to half your maximum hit points.
         If you take additional damage, you can become disabled (see Disabled, below).
 
         \parhead{Staggered}
@@ -1188,6 +1188,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         As long as you are attuned to an ability, you cannot regain the \glossterm{action point} spent to use that ability.
         If the ability does not normally require spending an action point to use, you can spend an action point to attune to it.
         That spent action point still counts against the number of action points you recover with a \glossterm{short rest} or \glossterm{long rest}.
+        You must release your attunement to abilities before beginning to rest in order to recover the spent action points.
         Attuning to multiple abilities can prevent you from regaining any action points when you rest.
 
         You can choose to stop attuning to an ability as a \glossterm{free action}.
@@ -1285,7 +1286,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 \section{Daily Resources}
 
     \subsection{Action Points}\label{Action Points}
-        \glossterm{Action points} allow you to perform special actions that your character has access to.
+        You can perform a wide variety of special actions by spending \glossterm{action points}.
         You have four action points at 1st level.
         At 3rd level, and every 4 levels thereafter, you gain an additional action point.
         You can gain additional action points from your class, from your Willpower, and from some special abilities.
@@ -1324,6 +1325,35 @@ It defines how attributes work and explains how to make physical attacks in comb
         \subsubsection{Legendary Foes}
             Some monsters and humanoid enemies you encounter may have their own legend points.
             In addition, some monsters have such legendary might that they can prevent characters from using legend points near them.
+
+    \subsection{Resting}
+        When you have a moment to relax, you can rest to regain some of your expended abilities.
+        There are two main types of rests: a \glossterm{short rest} and a \glossterm{long rest}.
+
+        \subsubsection{Short Rest}\label{Short Rest}
+            Resting for five minutes is considered a \glossterm{short rest}.
+            When you take a short rest, you gain the following benefits.
+            \begin{itemize}
+                \item You heal hit points equal to half your level (minimum 1).
+                    The Heal skill can increase this healing (see \pcref{Heal}).
+                    You can also continue resting to heal additional hit points.
+                \item You regain all action points you spent since your last rest, up to a maximum equal to half of your maximum action points.
+                    Being \glossterm{attuned} to effects at the start of your rest can reduce the number of action points you recover in this way (see \pcref{Attunement}).
+                \item You remove all \glossterm{conditions} affecting you (unless they cannot be removed normally).
+                \item Some other abilities have specific effects that last until you take a short rest.
+                    For example, a barbarian cannot use her \textit{rage} ability again after raging until after she takes a short rest (see Rage, page \pref{Bbn:Rage}.
+            \end{itemize}
+
+        \subsubsection{Long Rest}\label{Long Rest}
+            Resting for eight hours is considered a \glossterm{long rest}.
+            When you take a long rest, you gain the following benefits.
+            \begin{itemize}
+                \item You regain all spent \glossterm{action points}.
+                    Being \glossterm{attuned} to effects at the start of your rest can reduce the number of action points you recover in this way (see \pcref{Attunement}).
+                \item You regain all spent \glossterm{legend points}.
+                \item You regain all spent \glossterm{item slots}.
+                \item Some other abilities have specific effects that last until you take a long rest.
+            \end{itemize}
 
 \section{Character Advancement}\label{Character Advancement}
 

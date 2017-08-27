@@ -40,7 +40,6 @@ Feats can be used to specialize your character particular area, to grant your ch
     \parhead{Magical Feats}
     Magical feats are \glossterm{magical} in nature.
     Many feats are not entirely magical, but have specific effects that are magical.
-    These effects are indicated by the \magical tag.
 
 \section{Feat Tables}
     \newpage\onecolumn
@@ -57,8 +56,8 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \tb{Class Feats}\label{Class Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
         \featref{All Energy Becomes One} & Monk class, Con 2 & Absorb and redirect damage & Magical & \featpref{All Energy Becomes One} \\
-        \featref{Class Versatility} & \tdash & Swap for abilities from additional class & \featpref{Class Versatility} \\
-        \tind \featref{Class Dedication} & Class Versatility feat & Gain archetype from additional class & \featpref{Class Dedication} \\
+        \featref{Class Versatility} & \tdash & Swap for abilities from additional class & \tdash & \featpref{Class Versatility} \\
+        \tind \featref{Class Dedication} & Class Versatility feat & Gain archetype from additional class & \tdash & \featpref{Class Dedication} \\
 
         \tb{Skill Feats}\label{Skill Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
         \featref{Acrobatics Specialization} & Mastered Acrobatics & \tdash & \tdash & \featpref{Acrobatics Specialization} \\
@@ -123,11 +122,11 @@ Feats can be used to specialize your character particular area, to grant your ch
 
     \begin{feat}{Abjurer}{Magical, Spell}
         \spelldesc{You have great talent with Abjuration spells.}
-        \featpre \glossterm{Abjuration} spell known.
+        \featpre Abjuration spell known.
         \featben
         \ff{Abjurant Shield} Whenever you cast an Abjuration spell with a duration, you can give one willing creature targeted by the spell a deflective shield.
         The shielded creature gains a \plus1 bonus to \glossterm{physical defenses} as long as the spell lasts.
-        This is a \glossterm{Magical}, \glossterm{Shielding} effect.
+        This is a \glossterm{magical} \glossterm{Shielding} effect.
         You can only shield one creature in this way at a time.
         If you shield another creature, all previous shields are dismissed when the new shield takes effect.
 
@@ -375,7 +374,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[14]{Greater Blindsight} The range of your blindsight improves to 100 feet.
         In addition, the range of your blindsense improves to 500 feet.
 
-        \ff[16]{Greater Blind Feint} When you use your \glossterm{blind feint} ability, the target is \glossterm{unaware} of the attack.
+        \ff[16]{Greater Blind Feint} When you use your \textit{blind feint} ability, the target is \glossterm{unaware} of the attack.
 
         \ff[18]{Supreme Sight} The range of your blindsight improves to 200 feet.
         In addition, the range of your blindsense improves to 1,000 feet.
@@ -426,7 +425,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         If you do, you can make a Bluff check to pretend the attack affected you differently.
         The DR is equal to the result of the attack roll.
         Success means you can choose the result of the attack roll, potentially causing it to miss instead of hitting, or to hit instead of missing.
-        However, you cannot make the attack critically fail.
+        However, you cannot make the attack get a \glossterm{critical miss}.
         After using this ability, you cannot use it again until you take a \glossterm{short rest}.
     \end{feat}
 
@@ -457,7 +456,7 @@ Feats can be used to specialize your character particular area, to grant your ch
             \begin{spelleffects}
                 \spelleffect The target gains damage reduction equal to your celestial power against damage from \glossterm{Evil} attacks and from physical attacks made by evil creatures.
                 \spelldur Attunement (shared)
-                \spelltags{\glossterm{Good}, \glossterm{Magical}}
+                \spelltags{\glossterm{Good}}
             \end{spelleffects}
         \end{ability}
 
@@ -478,7 +477,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[13]{Holy Retribution} Whenever an evil creature makes a \glossterm{strike} against the creature protected by your \textit{holy protection} ability, you make a \textit{celestial power} vs. Mental attack against the attacking creature.
         Success means the attacker takes \glossterm{standard damage} \minus1d.
 
-        \ff[15]{Empowered Blessing} The accuracy bonus from your \glossterm{holy blessing} ability increases to \plus3.
+        \ff[15]{Empowered Blessing} The accuracy bonus from your \textit{holy blessing} ability increases to \plus3.
 
         \ff[17]{} % another augment?
 
@@ -553,10 +552,10 @@ Feats can be used to specialize your character particular area, to grant your ch
     \end{feat}
 
     \begin{feat}{Conjurer}{Magical, Spell}
-        \featpre \glossterm{Conjuration} spell known.
+        \featpre Conjuration spell known.
         \featben
 
-        \ff[1]{Astral Spirit} When you cast the \glossterm{summon monster} spell, you can manifest an astral spirit instead of an animal.
+        \ff[1]{Astral Spirit} When you cast the \spell{summon monster} spell, you can manifest an astral spirit instead of an animal.
         An astral spirit is a floating, spirit-like creature with a translucent body.
         Its size is Medium, and it is vaguely humanoid in shape.
         It has a physical form, and occupies space like any other creature.
@@ -671,15 +670,15 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[2]{Rapid Improvisation} As a standard action, you can spend an \glossterm{action point} to use the \textit{improvise} ability to create a device (see \pcref{Improvise}).
 
-        \ff[4]{Steady Hands} You cannot \glossterm{critically fail} on Devices checks.
-        If you would critically fail, you simply fail instead, and suffer the normal penalties for non-critical failure.
+        \ff[4]{Steady Hands} You cannot get a \glossterm{critical failure} on Devices checks.
+        If you would get a \glossterm{critical failure}, you simply fail instead, and suffer the normal penalties for non-critical failure.
 
         \ff[6]{Lesser Disable Arcana}[Magical] You can disable arcane spell effects on objects or areas as if they were merely complex devices.
         You must be aware of an effect to disable it, either through the Spellcraft skill or because the effect is noticeable.
         You cannot disable effects on creatures.
         The DR to disable an effect is equal to 15 \add the effect's \glossterm{power}.
-        Success means the spell is \glossterm{dispelled}.
-        This has no effect on abilities that cannot be dispelled.
+        Success means the spell is \glossterm{dismissed}, and its effects end.
+        This has no effect on abilities that cannot be dismissed.
 
         \ff[8]{Specialization} The bonus to Devices increases to \plus4.
 
@@ -702,7 +701,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[2]{Quick Change} As a standard action, you can spend an \glossterm{action point} to use the \textit{disguise creature} or \textit{emulate creature} ability.
 
-        \ff[4]{Disguise Aura}[Magical] Whenever you use the \textit{disguise creature} or \textit{emulate creature} abilities, you can decide how the target and any items on the target appear when examined by \glossterm{Divination} spells.
+        \ff[4]{Disguise Aura}[Magical] Whenever you use the \textit{disguise creature} or \textit{emulate creature} abilities, you can decide how the target and any items on the target appear when examined by Divination spells.
         For example, you could cause all of their equipment to appear nonmagical, or you could cause them to have a strong aura of good when examined with the \spell{detect alignment} spell.
         % Will this spell still exist?
         The maximum \glossterm{power} you can emulate is equal to your Disguise check result \minus15.
@@ -733,7 +732,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     \end{feat}
 
     \begin{feat}{Diviner}{Magical, Spell}
-        \featpre \glossterm{Divination} spell known.
+        \featpre Divination spell known.
         \featben
 
         \ff[1]{Prophesy} As a \glossterm{standard action}, you can spend an \glossterm{action point} to use this ability.
@@ -773,7 +772,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[17]{Greater Precognitive Reaction} The bonus to Reflex defense increases to \plus2, and the bonus to initiative checks increases to \plus6.
         In addition, you can never be surprised in combat.
-        Whenever there are \glossterm{surprise phases}, you can act in them.
+        % Whenever there are \glossterm{surprise phases}, you can act in them.
 
         \ff[19]{Oracle} When you use your \textit{prophesy} ability, the maximum \textit{time of prophesy} you can choose is increased to one week.
         In addition, you may have three active \textit{times of prophecy}, rather than two.
@@ -826,7 +825,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         A line breath weapon becomes a \areahuge, 10 ft.\ wide line.
         A cone breath weapon becomes a \arealarge cone.
 
-        \ff[12]{Greater Draconic Weapons}[Magical] The natural weapons gain an \glossterm{enhancement bonus} equal to one quarter of your \textit{draconic power}.
+        % \ff[12]{Greater Draconic Weapons}[Magical] The natural weapons gain an \glossterm{enhancement bonus} equal to one quarter of your \textit{draconic power}.
 
         \ff[14]{Draconic Flight}[Magical] You can use your \textit{draconic flight} ability to fly as a \glossterm{swift action}.
 
@@ -877,7 +876,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[6]{Overwhelm Tolerance} Your \textit{defensive stance} ability prevents you from suffering \glossterm{overwhelm penalties} against attacks from the target creature.
 
         \ff[8]{Riposte} Whenever you use your \textit{parry} ability, you can spend an \glossterm{action point}.
-        If you do, you \glossterm{initiate} a \glossterm{strike} against the attacking creature.
+        If you do, you make a \glossterm{strike} against the attacking creature during the same phase.
 
         \ff[10]{Focused Defense} You gain a \plus1 bonus to physical defenses against attacks you do not suffer \glossterm{overwhelm penalties} on.
 
@@ -890,7 +889,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[1]{Lesser Combat Concentration} You gain a \plus2 bonus to Concentration checks made to cast spells.
 
-        \ff[1]{Lesser Armor Tolerance} You reduce your chance of arcane spell failure from wearing armor by 10\%.
+        \ff[1]{Lesser Armor Tolerance} You reduce your \glossterm{encumbrance penalty} from \glossterm{armor} by 1.
 
         \ff[2]{Spellstrike}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
         \begin{ability}
@@ -908,7 +907,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[4]{Combat Concentration} The bonus to Concentration checks increases to \plus5.
 
-        \ff[6]{Armor Tolerance} The reduction of arcane spell failure increases to 20\%.
+        \ff[6]{Armor Tolerance} The reduction of \glossterm{encumbrance penalty} increases to 2.
 
         \ff[8]{Seeking Spellstrike}[Magical] When you use your \textit{spellstrike} ability, if you maintained your concentration, you gain a \plus1 bonus to accuracy with the \glossterm{strike}.
 
@@ -919,13 +918,13 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[14]{Greater Spellstrike}[Magical] When you use your \textit{spellstrike} ability, the damage bonus if you maintained your concentration increases to \plus3d.
 
-        \ff[16]{Greater Armor Tolerance} The reduction of arcane spell failure increases to 30\%. 
+        \ff[16]{Greater Armor Tolerance} The reduction of \glossterm{encumbrance penalty} increases to 3.
 
         \ff[18]{Greater Spellsword Rhythm}[Magical] The accuracy bonus increases to \plus2.
     \end{feat}
 
     \begin{feat}{Enchanter}{Magical, Spell}
-        \featpre \glossterm{Enchantment} spell known.
+        \featpre Enchantment spell known.
         \featben
 
         \ff[1]{Mind Fragments} When you use \glossterm{Mind} abilities, you can affect creatures with a \glossterm{mundane} immunity to \glossterm{Mind} abilities.
@@ -990,8 +989,8 @@ Feats can be used to specialize your character particular area, to grant your ch
             \begin{spelleffects}
                 \spelleffect You make an Escape Artist attack against all \glossterm{magical} effects on you.
                 The DR for each effect is equal to 10 \add the effect's \glossterm{power}.
-                Success means the effect is \glossterm{dispelled}, if it is an effect that can be dispelled.
-                \par You can only dispel effects which target you directly, not area effects which include you as a target.
+                Success means the effect is \glossterm{dismissed}, if it is an effect that can be dismissed.
+                \par You can only dismiss effects with this ability which target you directly, not area effects which include you as a target.
                 If an ability targets multiple creatures, you can only remove its effects on you.
             \end{spelleffects}
         \end{ability}
@@ -1007,7 +1006,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     \end{feat}
 
     \begin{feat}{Evoker}{Magical, Spell}
-        \featpre \glossterm{Evocation} spell known.
+        \featpre Evocation spell known.
         \featben
 
         \ff[1]{Energy Burst} As a standard action, you can spend an \glossterm{action point} to use this ability.
@@ -1044,7 +1043,7 @@ Feats can be used to specialize your character particular area, to grant your ch
             \item Sonic: If the target has \glossterm{hardness}, its hardness is reduced by an amount equal to half your spellpower. Otherwise, if it has \glossterm{damage reduction}, its damage reduction is reduced by amount equal to your spellpower.
         \end{itemize}
 
-        \ff[9]{Potent Evocation} You gain a \plus1d bonus to damage with \glossterm{Evocation} abilities that deal damage measured in a dice pool, as well as with the \textit{energy burst} ability.
+        \ff[9]{Potent Evocation} You gain a \plus1d bonus to damage with Evocation abilities that deal damage measured in a dice pool, as well as with the \textit{energy burst} ability.
 
         \ff[11]{Greater Energy Resistance} The damage reduction against \glossterm{energy damage} increases to twice your spellpower.
 
@@ -1176,7 +1175,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     \end{feat}
 
     \begin{feat}{Illusionist}{Magical, Spell}
-        \featpre \glossterm{Illusion} spell known.
+        \featpre Illusion spell known.
         \featben
 
         \ff[1]{Create Image} As a standard action, you can spend an \glossterm{action point} to use this ability.
@@ -1346,7 +1345,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \begin{itemize}
             \item Proficiency with a category of \glossterm{armor}: light, medium, heavy body armor, or shields.
                 You must be proficient with light armor to gain proficiency with medium armor, and you must be proficient with medium armor to gain proficiency with heavy armor.
-            \item You reduce the \glossterm{encumbrance penalty} of \glossterm{body armor} you wear by 1, and the \glossterm{arcane spell failure} chance by 5\%.
+            \item You reduce the \glossterm{encumbrance penalty} of \glossterm{body armor} you wear by 1.
                 If you choose this ability multiple times, its effects stack.
             \item Proficiency with an additional \glossterm{weapon group} of your choice.
             \item Proficiency with \glossterm{exotic weapons} from a weapon group of your choice that you are already proficient with.
@@ -1789,7 +1788,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     \end{feat}
 
     \begin{feat}{Transmuter}{Magical, Spell}
-        \featpre \glossterm{Transmutation} spell known.
+        \featpre Transmutation spell known.
         \featben
 
         \ff[1]{Fortify Body} You gain a \plus1 bonus to Armor defense.
@@ -1801,7 +1800,7 @@ Feats can be used to specialize your character particular area, to grant your ch
                 You can only alter your physical body, not your clothes or equipment.
             \end{spelleffects}
             \spelldur Permanent; if you use this ability again, any the effects of any previous use immediately ends.
-            \spelltags{\glossterm{Alteration}}
+            \spelltags{\glossterm{Shaping}}
         \end{ability}
 
         \ff[5]{Alter Object} As a standard action, you can spend an \glossterm{action point} to use this ability.
@@ -1818,7 +1817,7 @@ Feats can be used to specialize your character particular area, to grant your ch
                 % too short?
             \end{spelleffects}
             \spelldur Instantaneous
-            \spelltags{\glossterm{Alteration}}
+            \spelltags{\glossterm{Shaping}}
         \end{ability}
 
         \ff[7]{Enhance Body} You gain a \plus1 bonus to Strength-based checks.
@@ -1836,7 +1835,7 @@ Feats can be used to specialize your character particular area, to grant your ch
                     In addition, the target's \glossterm{mundane} poisons, including natural attacks that inflict poison, have no effect.
                 \end{spellattack}
                 \spelldur Sustain (swift).
-                \spelldur{\glossterm{Alteration}}
+                \spelldur{\glossterm{Shaping}}
             \end{spelleffects}
         \end{ability}
 
@@ -1846,7 +1845,7 @@ Feats can be used to specialize your character particular area, to grant your ch
     \end{feat}
 
     \begin{feat}{Vivimancer}{Magical, Spell}
-        \featpre \glossterm{Vivimancy} spell known.
+        \featpre Vivimancy spell known.
         \featben
 
         \ff[1]{Restore Life} As a standard action, you can spend an \glossterm{action point} to use this ability.

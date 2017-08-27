@@ -393,7 +393,7 @@ def generate_spells():
                             Otherwise, this ability has no effect.
                         """,
                         success="""
-                            The target is treated as if the spell that created it was \\glossterm<dispelled>.
+                            The target is treated as if the spell that created it was \\glossterm<dismissed>.
                             This usually causes the target to disappear.
                         """,
                     ),
@@ -426,11 +426,11 @@ def generate_spells():
                         defense='Mental',
                         success="""
                             The target cannot travel extradimensionally.
-                            This prevents all \\glossterm<Manifestation>, \\glossterm<Planar>, and \\glossterm<Translocation> effects.
+                            This prevents all \\glossterm<Manifestation>, \\glossterm<Planar>, and \\glossterm<Teleportation> effects.
                         """,
                     ),
                     duration='Condition',
-                    tags='Thaumaturgy',
+                    tags=['Thaumaturgy'],
                 ),
             ),
             Subspell(
@@ -444,10 +444,10 @@ def generate_spells():
                 effects=Effects(
                     effect="""
                         Extradimensional travel into or out of the spell's area is impossible.
-                        This prevents all \\glossterm<Manifestation>, \\glossterm<Planar>, and \\glossterm<Translocation> effects.
+                        This prevents all \\glossterm<Manifestation>, \\glossterm<Planar>, and \\glossterm<Teleportation> effects.
                     """,
                     duration='Attunement',
-                    tags='Thaumaturgy',
+                    tags=['Thaumaturgy'],
                 ),
             ),
         ],
@@ -580,7 +580,7 @@ def generate_spells():
                             If the target was already dominated by you, this effect lasts for 24 hours instead.
                         """,
                     ),
-                    tags=['Compulsion, Mind'],
+                    tags=['Compulsion', 'Mind'],
                 ),
             ),
             Subspell(

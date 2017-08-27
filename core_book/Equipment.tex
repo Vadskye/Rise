@@ -4,7 +4,7 @@
 
 Weapons are grouped into several interlocking sets of categories. These categories pertain to what weapon group the weapon belongs to (axes, bows, and so on), the weapon's usefulness either in close combat (melee) or at a distance (ranged, which includes both thrown and projectile weapons), and its relative encumbrance (light, medium, or heavy).
 
-\subsection{Weapon Groups}
+\subsection{Weapon Groups}\label{Weapon Groups}
 
 Weapons are organized into thematically related categories called weapon groups. They are described in \trefnp{Weapon Groups}. For example, all axes belong to the ``axes'' weapon group. Some weapons can be found in multiple weapon groups. For example, a dagger is a simple weapon, a light blade, and a thrown weapon.
 
@@ -74,7 +74,7 @@ You take a \minus4 penalty to accuracy with medium and large ranged weapons agai
 
 \parhead{Inappropriately Sized Weapons} A weapon's encumbrance is altered by one step for each size category of difference between the wielder's size and the size of the creature for which the weapon was designed. For example, a light weapon sized for a Large creature can be used by a Medium creature as if it had medium encumbrance. In addition, the wielder takes a \minus2 penalty to accuracy on physical attacks per size difference. If a weapon's encumbrance would be changed to something other than light, medium, or heavy by this alteration, the creature can't wield the weapon at all.
 
-\subsection{Improvised Weapons} Sometimes objects not crafted to be weapons nonetheless see use in combat. Because such objects are not designed for this use, any creature that uses one in combat is considered to be nonproficient with it.
+\subsection{Improvised Weapons}\label{Improvised Weapons} Sometimes objects not crafted to be weapons nonetheless see use in combat. Because such objects are not designed for this use, any creature that uses one in combat is considered to be nonproficient with it.
 
 To determine the size category and appropriate damage for an improvised weapon, compare its relative size and damage potential to the weapon list to find a reasonable match. An improvised weapon will generally deal damage as if it were one size category smaller than a similar manufactured weapon. An improvised thrown weapon has a range increment of 10 feet.
 
@@ -299,7 +299,7 @@ Reach weapons can held using a different grip to strike nearby foes. This is cal
 \parhead{Throwing} This weapon is designed to be thrown. Throwing weapons have a range increment listed in their description, which indicates the distance they can be easily thrown. See \pcref{Thrown Weapons}.
 \parhead{Tripping} You can use this weapon to make trip attacks, allowing you to use your accuracy with your weapon (including the \plus4 proficiency bonus) in place of your unarmed accuracy.
 \parhead{Unarmed} This weapon is used as part of an unarmed strike. It cannot be disarmed. Unless you have the Unarmed Fighting feat (see \featref{Unarmed Fighting}), you can't defend yourself with this weapon, which usually makes you \defenseless.
-\parhead{Unbalanced} If you roll either a 1 or 2 when attacking this weapon, you \glossterm{critically miss} (see \pcref{Critical Miss}).
+\parhead{Unbalanced} If you roll either a 1 or 2 when attacking this weapon, you get a \glossterm{critical miss} (see \pcref{Critical Miss}).
 
 \subsection{Weapon Descriptions}
 Some weapons in \trefnp{Weapons} have additional abilities which are described below.
@@ -334,9 +334,9 @@ Some weapons in \trefnp{Weapons} have additional abilities which are described b
 \parhead{Urgrosh, Dwarven} This weapon has an axe head which deals 1d8 points of damage, and a spear which deals 1d6 points of damage. The spear is a bracing weapon. You must be proficient with axes to use the axe head, and proficient with spears to use the spear head.
 \parhead{Whip} A whip is treated as a light melee weapon with 15 foot reach. However, you can't defend yourself with a whip, which can make you \defenseless, and you don't threaten the area into which you can make an attack. In addition, unlike most other weapons with reach, you can use it against foes anywhere within your reach (including adjacent foes).
 
-\section{Armor}
+\section{Armor}\label{Armor}
 
-Most characters use armor to protect themselves. There are two kinds of armor: body armor, such as full plate armor, and shields.
+    Most characters use armor to protect themselves. There are two kinds of armor: \glossterm{body armor}, such as full plate armor, and \glossterm{shields}.
 
 \subsection{Armor Qualities}
 \par Here is the format for armor entries (given as column headings on \trefnp{Armor and Shields}, below).
@@ -357,11 +357,6 @@ A character's encumbrance (the amount of gear carried, including armor) may also
 \subparhead{Shields} If a character is wearing armor and using a shield, both armor check penalties apply.
 
 \subparhead{Sleeping in Armor} A character who sleeps overnight in medium or heavy body armor is automatically \fatigued the next day. Sleeping in light armor does not cause fatigue.
-\parhead{Arcane Spell Failure} Armor interferes with the gestures that a spellcaster must make to cast an arcane spell that has a somatic component. Arcane spellcasters face the possibility of arcane spell failure if they're wearing armor.
-
-\subparhead{Casting an Arcane Spell in Armor} A character who casts an arcane spell while wearing armor must usually make an arcane spell failure roll. The number in the Arcane Spell Failure Chance column on Table: Armor and Shields is the chance that the spell fails and is ruined. If the spell lacks a somatic component, however, it can be cast with no chance of arcane spell failure.
-
-\subparhead{Shields} If a character is wearing armor and using a shield, add the two numbers together to get a single arcane spell failure chance.
 
 \parhead{Weight} This column gives the weight of the armor sized for a Medium wearer. Armor fitted for Small characters weighs half as much, and armor for Large characters weighs twice as much.
 
@@ -395,32 +390,32 @@ The time required to don armor depends on its type; see \trefnp{Donning Armor}. 
 
 \begin{dtable!*}
     \lcaption{Armor and Shields}
-    \begin{dtabularx}{\textwidth}{>{\lcol}X >{\ccol}p{6em} >{\ccol}p{5em} >{\ccol}p{6em} >{\ccol}p{7em} c c c}
+    \begin{dtabularx}{\textwidth}{>{\lcol}X c c c c c c}
+        \tb{Armor} & \tb{Defense Bonus} & \tb{Dex Multiplier} & \tb{Encumbrance Penalty} & \tb{Material} & \tb{Cost} & \tb{Weight\fn{1}} \\
         \bottomrule
-        \tb{Armor} & \tb{Armor/Shield Bonus} & \tb{Dex Modifier} & \tb{Encumbrance Penalty} & \tb{Arcane Spell Failure Chance} & \tb{Material} & \tb{Cost} & \tb{Weight\fn{1}} \\
-        Light armor &  &  &  &  &  &  &  \\
-        \tind Leather          & \plus1        & 1\x    & \minus1  & 10\%         & Leather       & 10 gp      & 15 lb.      \\
-        \tind Studded leather  & \plus2        & 1\x    & \minus2  & 15\%         & Leather       & 25 gp      & 20 lb.      \\
-        \tind Chain shirt      & \plus2        & 1\x    & \minus2  & 20\%         & Metal         & 40 gp      & 25 lb.      \\
-        Medium armor           &               &        &          &              &               &            &             \\
-        \tind Hide             & \plus3        & 1\x    & \minus3  & 20\%         & Leather       & 15 gp      & 25 lb.      \\
-        \tind Scale mail       & \plus3        & 1\x    & \minus4  & 25\%         & Metal         & 50 gp      & 30 lb.      \\
-        \tind Breastplate      & \plus4        & 1\x    & \minus4  & 25\%         & Metal         & 150 gp     & 30 lb.      \\
-        Heavy armor            &               &        &          &              &               &            &             \\
-        \tind Half-plate       & \plus5        & 1/2\x  & \minus6  & 40\%         & Metal         & 200 gp     & 50 lb.      \\
-        \tind Full plate       & \plus6        & 1/2\x  & \minus6  & 35\%         & Metal         & 500 gp     & 50 lb.      \\
-        Shields                &               &        &          &              &               &            &             \\
-        \tind Buckler          & \plus1        & \tdash & \minus1  & 5\%          & Metal         & 15 gp      & 5 lb.       \\
-        \tind Shield, light    & \plus2        & \tdash & \minus2  & 5\%\fn{2}    & Metal or wood & 5 gp       & 5 lb.       \\
-        \tind Shield, heavy    & \plus3        & \tdash & \minus3  & 15\%\fn{2}   & Metal or wood & 15 gp      & 10 lb.      \\
-        \tind Shield, tower    & \plus4\fn{3}  & 1/2\x  & \minus10 & 50\%\fn{2}   & Metal         & 30 gp      & 45 lb.      \\
-        Extras                 &               &        &          &              &               &            &             \\
-        \tind Armor spikes     & \minus1\fn{4} & \tdash & \minus2  & \tdash       & Metal         & \plus50 gp & \plus10 lb. \\
-        \tind Gauntlet, locked & \tdash        & \tdash & Special  & \tdash\fn{2} & Metal         & 8 gp       & \plus5 lb.  \\
-        \tind Shield spikes    & \tdash        & \tdash & \minus1  & \tdash       & Metal         & \plus10 gp & \plus5 lb.  \\
+        Light armor &  &  &  &  &  &  \\
+        \tind Leather          & \plus1        & 1\x    & \minus1        & Leather       & 10 gp      & 15 lb.      \\
+        \tind Studded leather  & \plus2        & 1\x    & \minus2        & Leather       & 25 gp      & 20 lb.      \\
+        \tind Chain shirt      & \plus2        & 1\x    & \minus2        & Metal         & 40 gp      & 25 lb.      \\
+        Medium armor           &               &        &                &               &            &             \\
+        \tind Hide             & \plus3        & 1\x    & \minus3        & Leather       & 15 gp      & 25 lb.      \\
+        \tind Scale mail       & \plus3        & 1\x    & \minus4        & Metal         & 50 gp      & 30 lb.      \\
+        \tind Breastplate      & \plus4        & 1\x    & \minus4        & Metal         & 150 gp     & 30 lb.      \\
+        Heavy armor            &               &        &                &               &            &             \\
+        \tind Half-plate       & \plus5        & 1/2\x  & \minus6        & Metal         & 200 gp     & 50 lb.      \\
+        \tind Full plate       & \plus6        & 1/2\x  & \minus6        & Metal         & 500 gp     & 50 lb.      \\
+        Shields                &               &        &                &               &            &             \\
+        \tind Buckler          & \plus1        & \tdash & \minus1        & Metal         & 15 gp      & 5 lb.       \\
+        \tind Shield, light    & \plus2        & \tdash & \minus2\fn{2}  & Metal or wood & 5 gp       & 5 lb.       \\
+        \tind Shield, heavy    & \plus3        & \tdash & \minus3\fn{2}  & Metal or wood & 15 gp      & 10 lb.      \\
+        \tind Shield, tower    & \plus4\fn{3}  & 1/2\x  & \minus5\fn{2} & Metal         & 30 gp      & 45 lb.      \\
+        Extras                 &               &        &                &               &            &             \\
+        \tind Armor spikes     & \minus1\fn{4} & \tdash & \minus2        & Metal         & \plus50 gp & \plus10 lb. \\
+        \tind Gauntlet, locked & \tdash        & \tdash & Special        & Metal         & 8 gp       & \plus5 lb.  \\
+        \tind Shield spikes    & \tdash        & \tdash & \minus1        & Metal         & \plus10 gp & \plus5 lb.  \\
     \end{dtabularx}
     1 Weight figures are for armor sized to fit Medium characters. Armor fitted for Small characters weighs half as much, and armor fitted for Large characters weighs twice as much. \\
-    2 Hand not free to cast spells. \\
+    2 The hand holding the shield is not free, which may limit your actions. \\
     3 Tower shields can grant you cover. See the description. \\
     4 Armor spikes reduce the defense bonus granted by the armor they are put on by 1. \\
 \end{dtable!*}

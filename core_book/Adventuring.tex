@@ -234,15 +234,28 @@ Very large objects may have separate hit point totals for different sections.
 
 \subparhead{Vulnerability to Certain Attacks} Certain attacks are especially successful against some objects. In such cases, attacks deal double their normal damage and may ignore the object's hardness.
 
-\subparhead{Damaged Objects} A damaged object remains fully functional until the item's hit points are reduced to 0, at which point it is broken. Further damage applies as negative hit points. If an item has more negative hit points than its maximum hit points, it is destroyed.
-
-Broken objects cannot be used for their intended purpose, but still retain enough of their original form to be repaired without too much work. For example, a broken wall lies in pieces on the ground and no longer blocks passage, but can be repaired with no more effort than damaged items. Magic items that are broken retain their magical properties once fixed. Damaged and broken (but not destroyed) objects can be repaired with the Craft skill.
-
 \parhead{Saving Throws} Nonmagical, unattended items never make saving throws. They are considered to have failed their saving throws, so they always are affected by spells. An item attended by a character (being grasped, touched, or worn) makes saving throws as the character (that is, using the character's saving throw bonus).
 
 \par Magic items always get saving throws. A magic item's Fortitude, Reflex, and Mental defenses are equal to 10 \add one-half its spellpower. An attended magic item either makes saving throws as its owner or uses its own saving throw bonus, whichever is better.
 
 \subparhead{Animated Objects} Animated objects count as creatures for purposes of determining their Armor Defense (do not treat them as inanimate objects).
+
+
+\subsubsection{Damaged Objects}
+    A object that has taken damage remains fully functional until its hit points are reduced to 0, at which point it is \glossterm{broken}.
+    Any additional damage is applied as \glossterm{vital damage}.
+    If an object has more vital damage than its maximum hit points, it is \glossterm{destroyed}.
+
+    Both magical and mundane objects that are damaged or broken can be repaired to full hit points for a cost equal to 10\% of their value.
+    You must be able to craft the item originally to repair it.
+
+    \parhead{Broken Objects}\label{Broken Objects}
+        Broken objects cannot be used for their intended purpose, but still retain enough of their original form to be repaired without too much work. For example, a broken wall lies in pieces on the ground and no longer blocks passage, but can be repaired with no more effort than damaged items. Magic items that are broken retain their magical properties once fixed. Damaged and broken (but not destroyed) objects can be repaired with the Craft skill.
+
+    \parhead{Destroyed Objects}\label{Destroyed Objects}
+        Destroyed object have been damaged beyond hope of any sort of repair short of crafting the object again from raw materials.
+        For example, a destroyed wall is reduced to dust or small, useless chunks of rubble.
+        Magic items that are destroyed irrevocably lose their magical properties.
 
 \subsubsection{Breaking Items}
 When a character tries to break something with sudden force rather than by dealing damage, use a Strength check (rather than an attack roll and damage roll, as with the disarm special attack) to see whether he or she succeeds. The DR depends more on the

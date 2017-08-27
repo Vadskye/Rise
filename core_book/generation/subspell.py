@@ -38,13 +38,13 @@ class Subspell(object):
                     for tag in sorted(self.tags)
                 ]),
                 school_text=(
-                    f" from the \\glossterm<{self.school}> school"
+                    f" from the {self.school} school"
                     if self.school
                     else ""
                 ),
             )
         elif self.school:
-            return f"This effect is from the \\glossterm<{self.school}> school."
+            return f"This effect is from the {self.school} school."
         else:
             return ""
 
