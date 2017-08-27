@@ -111,7 +111,7 @@ Each of the nine schools represents a different type of mastery over the world, 
         \parhead{Augments and Subspells}
         If a spell or ritual changes its properties with a subspell or subritual, it may become eligible for different augments.
         % TODO: fix example
-        For example, if you apply the Fireball subspell to the \glossterm{fireburst} spell, it changes to affect an area.
+        For example, if you apply the Fireball subspell to the \spell{pyromancy} spell, it changes to affect an area.
         You would then be able to apply the Widened augment to increase its area.
 
         \subsubsection{Augment Descriptions}\label{Augment Descriptions}
@@ -289,7 +289,7 @@ Each of the nine schools represents a different type of mastery over the world, 
 
             \parhead{Same Effect with Differing Results} The same spell can sometimes produce varying effects if applied to the same recipient more than once.
             Usually, the last spell in the series trumps the others.
-            None of the previous spells are actually removed or dispelled, but their effects become irrelevant while the final spell in the series lasts.
+            None of the previous spells are actually removed or \glossterm{dismissed}, but their effects become irrelevant while the final spell in the series lasts.
 
             \parhead{One Effect Makes Another Irrelevant} Sometimes, one spell can render a later spell irrelevant.
             Both spells are still active, but one has rendered the other useless in some fashion.
@@ -303,15 +303,19 @@ Each of the nine schools represents a different type of mastery over the world, 
 
             \parhead{Instantaneous Effects} Two or more spells with instantaneous durations work cumulatively when they affect the same target.
 
-        \subsubsection{Dispelling Spells}\label{Dispelling Spells}
-            Spells can be dispelled by effects such as the \glossterm{dispel magic} spell.
-            When a spell is dispelled, all its effects with a duration end.
-            Unless otherwise specified, any spell with a lasting effect can be dispelled.
+        % TODO: pull these out into generic descriptions of suppressing/dismissing spells and abilities
+        \subsubsection{Suppressing Spells}\label{Suppressing Spells}
+            Spells can be \glossterm{suppressed} by effects such as the \spell{antimagic} spell.
+            While a spell is suppressed, it has no effect.
+            However, if it stops being suppressed, its effects continue as if they had not been interrupted.
 
-            If a spell affects multiple targets, it must be dispelled individually on each target.
-            Dispelling the effect on one target does not affect the other targets of the spell.
+        \subsubsection{Dismissing Spells}\label{Dismissing Spells}
+            When a spell is \glossterm{dismissed}, all of its effects with a duration end.
+            Unless otherwise specified, any spell with a duration can be dismissed.
 
-            You may choose to automatically succeed or fail on your attack against any spell that you cast yourself.
+            If a spell affects multiple targets, it must be dismissed individually on each target.
+            Dismissing the effect on one target does not affect the other targets of the spell.
+            When you voluntarily dismiss a spell, you can choose to dismiss it for any number of targets with no more effort than dismissing it for a single target.
 
 % TODO: make this whole section refer to abilities instead of spells
 \section{Spell Descriptions}
@@ -540,7 +544,8 @@ Each of the nine schools represents a different type of mastery over the world, 
 
         An ability's duration entry tells you how long the magical energy of the spell lasts.
 
-        \parhead{Sustain} The ability lasts as long as you take an action to sustain it.
+        % TODO: pull this out into a better section
+        \parhead{Sustain}\label{Sustain} The ability lasts as long as you take an action to sustain it.
         A Sustain duration always specifies an action type, such as Sustain (standard).
         At the end of each round, the ability is dismissed unless you used the ability that round or took the action to sustain the ability that round.
         Sustaining spells does not take concentration, and cannot be disrupted in the same way that casting spells can.
@@ -642,7 +647,7 @@ Each of the nine schools represents a different type of mastery over the world, 
     Unless otherwise specified, magical Creation abilities do not allow \glossterm{magic resistance}. 
 
     \parhead{Curse} Curse abilities lay supernatural curses on their targets.
-    They cannot be dispelled, but can be removed with the \spell{break enchantment} or \spell{remove curse} spells.
+    They cannot be dismissed, but can be removed with the \spell{break enchantment} or \spell{remove curse} spells.
 
     \parhead{Death} Death abilities only affect living creatures.
     A creature killed by a death effect cannot be returned to life by \spell{resurrection} or similar abilities that depend on an intact corpse.
@@ -707,12 +712,14 @@ Each of the nine schools represents a different type of mastery over the world, 
 
     \parhead{Planar} Planar abilities transport matter or information between planes.
 
+    \parhead{Poison} Poison abilities use substances to weaken the foe's body.
+
     \parhead{Scrying} Scrying abilities create one or more invisible magical sensors that send you information.
     Unless otherwise noted, the sensor created has the same powers of sensory acuity that you possess.
     This includes the effect of any abilities which target you personally, such as spells to increase your visual acuity, but not abilities which affect an area around you.
     However, the sensor is treated as a separate, independent sensory organ, and it functions normally even if you have been blinded, deafened, or otherwise suffered sensory impairment.
     \par Any creature trained in Spellcraft can notice the sensor by making a DR 20 Spellcraft check.
-    The sensor can be dispelled as if it were an active spell.
+    The sensor can be dismissed as if it were an active spell.
     You cannot create a sensor in a location with lead sheeting between you and the location, and you sense that the effect is blocked in this way.
     \\
 
@@ -750,7 +757,7 @@ Each of the nine schools represents a different type of mastery over the world, 
     The DR to detect and disable the effect is equal to 20 \add the \glossterm{power} of the effect.
     \par No more than one Trap ability can be placed on the same object or in the same area.
     Only the first trap placed has any effect.
-    It must be dispelled or discharged before any new traps can be placed.
+    It must be dismissed before any new traps can be placed.
 
     \parhead{Visual} Visual abilities use visible objects or forces to cause their effects.
     Creatures and objects that cannot see the effect are immune to it.
@@ -759,7 +766,7 @@ Each of the nine schools represents a different type of mastery over the world, 
 
 \section{Cantrips}\label{Cantrips}
     Cantrips are special spells that arcane casters can use at will.
-    Like other spells, they have verbal and somatic components and are subject to arcane spell failure.
+    Like other spells, they have verbal and somatic components.
     All cantrips take a standard action to cast unless specified otherwise in the description.
     Cantrips are considered to be 0th level for the purpose of spells and abilities which reference spell level.
     They are described at the end of Chapter 12.
@@ -802,7 +809,7 @@ Each of the nine schools represents a different type of mastery over the world, 
             \end{dtabularx}
         \end{dtable}
 
-    \subsection{Subrituals}
+    \subsection{Subrituals}\label{Subrituals}
         Many rituals have \glossterm{subrituals}, just like many spells have \glossterm{subspells} (see \pcref{Subspells}).
         Subrituals work in the same way as subspells, except that they are applied to rituals instead of spells.
 
@@ -870,7 +877,7 @@ Each of the nine schools represents a different type of mastery over the world, 
 
     Many abilities which fundamentally concern magical effects are not themselves magical in nature.
     This is most commmon with abilities that represent choices the character makes or knowledge the character has.
-    For example, although all spells are magical abilities, the ability to cast spells is not itself a magical ability, and would not be lost inside a \glossterm{antimagic field}.
+    For example, although all spells are magical abilities, the ability to cast spells is not itself a magical ability.
     It is simply knowledge that the creature possesses.
     Of course, that knowledge would be useless if the creature had no access to magic.
 

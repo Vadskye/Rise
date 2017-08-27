@@ -356,7 +356,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Clr}{Deity}
         You must worship a specific deity to be a cleric.
-        Deities and their associated \glossterm{domains} are listed in \trefnp{Deities}.
+        Deities and their associated domains are listed in \trefnp{Deities}.
 
         \begin{dtable!*}
             \lcaption{Deities}
@@ -395,7 +395,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Clr}{Divine Spells} 
         Your deity grants you the ability to cast divine spells.
         You learn two divine spells from the divine \glossterm{spell list} (see \pcref{Divine Spells}).
-        Your \glossterm{spellpower} with divine spells is equal to your \glossterm{divine power}.
+        Your \glossterm{spellpower} with divine spells is equal to your \textit{divine power}.
 
         To cast a spell, you must normally spend an \glossterm{action point}.
         Every spell can also be cast as a cantrip.
@@ -422,7 +422,7 @@ This choice determines a great deal about your character's abilities.
         You recover all spent spell points after a \glossterm{short rest}.
 
     \subsection{Domain Influence}
-        All \textit{domain influence} abilities are \glossterm{Magical}.
+        All \textit{domain influence} abilities are \glossterm{magical}.
 
         \cf{Clr}{Domains}
         You choose two domains which represent your personal spiritual inclinations.
@@ -532,7 +532,7 @@ This choice determines a great deal about your character's abilities.
                     \spellspecial After you use this ability on a particular area of air, you cannot use it again on that same area for 24 hours.
                 \end{spelleffects}
             \end{ability}
-            \parhead{Mastery} You gain a \glossterm{fly speed} with \glossterm{good maneuverability} equal to your land speed (see \pcref{Flying}).
+            \parhead{Mastery} You gain a \glossterm{fly speed} with good \glossterm{maneuverability} equal to your land speed (see \pcref{Flying}).
 
         \subsubsection{Chaos}
             \parhead{Gift} Whenever you roll a 10 on a check on your first attempt, you gain a \plus5 bonus to the check.
@@ -626,11 +626,8 @@ This choice determines a great deal about your character's abilities.
                     \spellspecial After you use this ability on a particular area of earth, you cannot use it again on that same area for 24 hours.
                 \end{spelleffects}
             \end{ability}
-            \parhead{Mastery} You gain the \glossterm{earth glide} ability, as an earth elemental.
-            This allows you to glide through stone, dirt, or almost any other sort of earth as if it were air.
-            You can walk or climb at any angle in the earth.
-            However, you cannot breathe, speak, or hear while gliding in this way.
-            While gliding, you can remain partially within the earth, granting you cover.
+            \parhead{Mastery} As long as you are on solid ground, you gain a \plus1 bonus to all defenses.
+            In addition, your damage reduction from this domain's aspect protects you against all damage, rather than only against damage from physical attacks.
 
         \subsubsection{Evil}
             \parhead{Gift} Whenever you take damage, you may choose an adjacent willing creature.
@@ -746,7 +743,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Mastery} Whenever you roll less than a 5 on an \glossterm{attack roll}, it is treated as if you had rolled a 5.
 
         \subsubsection{Life}
-            \parhead{Gift} You gain additional hit points equal to your \glossterm{divine power}.
+            \parhead{Gift} You gain additional hit points equal to your \textit{divine power}.
             \parhead{Aspect} All of your healing spells and abilities can cure \glossterm{vital damage} as easily as they cure hit points.
             \parhead{Essence} As a standard action, you can spend all of your remaining \glossterm{action points} (minimum 1) to use this ability.
             \begin{ability}
@@ -758,7 +755,7 @@ This choice determines a great deal about your character's abilities.
                 \end{spelleffects}
             \end{ability}
             % Need special text to clarify that it is affected by the Aspect?
-            \parhead{Mastery} At the end of each round, you heal hit points equal to your \glossterm{divine power}.
+            \parhead{Mastery} At the end of each round, you heal hit points equal to your \textit{divine power}.
 
         \subsubsection{Magic}
             \parhead{Gift} You gain a \plus1 bonus to spellpower with divine spells.
@@ -944,7 +941,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Drd}{Nature Spells} 
         Your worship of nature grants you the ability to cast nature spells.
         You learn two nature spells from the nature \glossterm{spell list} (see \pcref{Nature Spells}).
-        Your \glossterm{spellpower} with nature spells is equal to your \glossterm{nature power}.
+        Your \glossterm{spellpower} with nature spells is equal to your \textit{nature power}.
 
         To cast a spell, you must normally spend an \glossterm{action point}.
         Every spell can also be cast as a cantrip.
@@ -1090,14 +1087,9 @@ This choice determines a great deal about your character's abilities.
         % TODO poison stacking rules
         \par In addition, you gains a bite attack that deals 1d8 damage for a Medium druid.
 
-        \subcf{15th -- Earth Glide}
-        You gain the earth glide ability, as an earth elemental.
-        This allows you to glide through stone, dirt, or almost any other sort of earth as if it were air.
-        You can walk or climb at any angle in the earth.
-        However, you cannot breathe, speak, or hear while gliding in this way.
-        While gliding, you can remain partially within the earth, granting you cover.
         \subcf{15th -- Natural Renewal}
         At the end of each round, you heal hit points equal to your \textit{nature power}.
+        \subcf{15th -- Stable Foundation} As long as you are on solid ground, you gain a \plus1 bonus to all defenses.
         \subcf{15th -- Wings}
         You grow wings, granting you a \glossterm{fly speed} equal to your land speed.
         While \glossterm{unencumbered}, you can fly (see \pcref{Flying}).
@@ -1439,21 +1431,21 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Ftr}[2]{Armored Agility}
         You treat body armor you wear as less encumbering.
-        You reduce its \glossterm{encumbrance penalty} by 2, and its arcane spell failure by 10\%.
+        You reduce its \glossterm{encumbrance penalty} by 2.
 
         \cf{Ftr}[5]{Weapon Focus} 
         When you use your \textit{weapon adaptation} ability to gain proficiency with a weapon group, you gain a \plus1 bonus to \glossterm{accuracy} with attacks using weapons from that group.
         You can train with a weapon from a weapon group you are already proficient with to apply this ability to weapons from that group.
 
         \cf{Ftr}[8]{Greater Armored Agility}
-        The reduction of body armor's encumbrance penalty from your \textit{armored agility} ability increases to 4, and your reduction of its arcane spell failure increases to 20\%.
+        The reduction of body armor's encumbrance penalty from your \textit{armored agility} ability increases to 4.
         In addition, you treat it were one encumbrance category lighter than normal whenever doing so would be beneficial for you.
 
         \cf{Ftr}[11]{Weapon Master} 
         You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks}.
 
         \cf{Ftr}[14]{Supreme Armored Expertise}
-        The reduction of body armor's encumbrance penalty from your \textit{armored agility} ability increases to 6, and your reduction of its arcane spell failure increases to 30\%.
+        The reduction of body armor's encumbrance penalty from your \textit{armored agility} ability increases to 6.
         In addition, you treat it as if it were an additional encumbrance category lighter than normal whenever doing so would be beneficical for you.
 
         \cf{Ftr}[17]{Greater Weapon Focus} 
@@ -1544,8 +1536,12 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Mge}{Weapon and Armor Proficiencies}
         You are proficient with simple weapons and one other weapon group.
-        They are not proficient with any type of armor or shield.
-        Armor of any type interferes with your's arcane gestures, which can cause your spells with somatic components to fail.
+        You are not proficient with any type of armor or shield.
+        Armor of any type interferes with your arcane gestures, which can cause your spells with somatic components to fail.
+
+        \cf{Mge}{Arcane Spell Failure}
+        Whenever you cast a spell while using \glossterm{armor}, you must roll 1d10.
+        If your result is less than or equal to the \glossterm{encumbrance penalty} of the armor you wear, you \glossterm{miscast} your spell.
 
         \cf{Mge}{Arcane Essence}
         All mages have access to great arcane power.
@@ -2036,7 +2032,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Pal}{Divine Spells}
         Your devotion to your alignment grants you the ability to cast divine spells.
         You learn two divine spells from the divine \glossterm{spell list} (see \pcref{Divine Spells}).
-        Your \glossterm{spellpower} with divine spells is equal to your \glossterm{devotion power}.
+        Your \glossterm{spellpower} with divine spells is equal to your \textit{devotion power}.
 
         To cast a spell, you must normally spend an \glossterm{action point}.
         Every spell can also be cast as a cantrip.
@@ -2189,7 +2185,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rgr}[8]{Farsight}
         You increase the range of your \glossterm{darkvision} by 150 feet, and your \glossterm{blindsense} by 50 feet.
-        In addition, you reduce your \glossterm{range increment penalties} for attacking at long range by 2.
+        In addition, you reduce your \glossterm{range increment} penalties for attacking at long range by 2.
 
         \cf{Rgr}[11]{Blindsight}
         You gain the \glossterm{blindsight} ability, allowing you to ``see'' perfectly without your eyes in a 50 foot radius around you.
@@ -2197,7 +2193,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rgr}[14]{Greater Farsight}
         You increase the range of your \glossterm{darkvision} by 500 feet, your \glossterm{blindsense} by 200 feet, and your \glossterm{blindsight} by 50 feet.
-        In addition, the penalty reduction for \glossterm{range increment penalties} from your \textit{farsight} ability increases to 5.
+        In addition, the penalty reduction of \glossterm{range increment} penalties from your \textit{farsight} ability increases to 5.
 
         \cf{Rgr}[17]{Truesight} 
         Your perceptions are accurate enough to defeat even powerful magic.
@@ -2287,7 +2283,7 @@ This choice determines a great deal about your character's abilities.
     \subsection{Master of the Hunt}
 
         \cf{Rgr}{Quarry}\label{Quarry}
-        At the start of each round, you can spend an \glossterm{action point} to choose a \glossterm{quarry}.
+        At the start of each round, you can spend an \glossterm{action point} to choose a quarry.
         This does not take an action, but you can only choose a quarry once per round.
         \begin{ability}
             \begin{spelltargetinginfo}
@@ -2364,7 +2360,7 @@ This choice determines a great deal about your character's abilities.
         {
             \subcf{Anchoring}[Magical]
             As long as your quarry is threatened by at least two members of your \glossterm{hunting party}, it cannot travel extradimensionally.
-            This prevents all \glossterm{Manifestation}, \glossterm{Planar}, and \glossterm{Translocation} effects.
+            This prevents all \glossterm{Manifestation}, \glossterm{Planar}, and \glossterm{Teleportation} effects.
 
             At 16th level, this effect instead applies if the target is within \rngmed range of at two members of your hunting party.
 
