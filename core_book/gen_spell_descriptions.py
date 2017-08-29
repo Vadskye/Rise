@@ -31,7 +31,7 @@ def generate_spells():
         effects=Effects(
             effect="""
                 The target gains a +2 bonus to \\glossterm<physical defenses>.
-                This bonus is increased to +5 against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
+                This bonus is increased to +5 against ranged \\glossterm<physical attacks> from weapons or projectiles that are Small or smaller.
                 Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
             """,
             duration='Attunement (shared)',
@@ -39,7 +39,7 @@ def generate_spells():
         ),
         schools=['Transmutation'],
         lists=['Air', 'Nature'],
-        cantrip="The spell's duration becomes Sustain (swift).",
+        cantrip="The spell's duration becomes Sustain (shared, swift).",
         subspells=[
             Subspell(
                 level=2,
@@ -169,7 +169,7 @@ def generate_spells():
         ),
         schools=['Abjuration'],
         lists=['Arcane'],
-        cantrip="The spell's duration becomes Sustain (swift).",
+        cantrip="The spell's duration becomes Sustain (shared, swift).",
         subspells=[
             Subspell(
                 level=2,
@@ -727,7 +727,7 @@ def generate_spells():
             effect='The target gains a +2 bonus to \\glossterm<accuracy>.',
             duration='Attunement (shared)',
         ),
-        cantrip="The spell's duration becomes Sustain (swift).",
+        cantrip="The spell's duration becomes Sustain (shared, swift).",
         schools=['Channeling'],
         lists=['Divine'],
         subspells=[
@@ -759,7 +759,7 @@ def generate_spells():
         ),
         schools=['Transmutation'],
         lists=['Nature'],
-        cantrip="The spell's duration becomes Sustain (swift).",
+        cantrip="The spell's duration becomes Sustain (shared, swift).",
         subspells=[
             Subspell(
                 level=3,
@@ -830,7 +830,7 @@ def generate_spells():
         ),
         schools=['Transmutation'],
         lists=['Arcane', 'Divine', 'Nature'],
-        cantrip="The spell's duration becomes Sustain (swift).",
+        cantrip="The spell's duration becomes Sustain (shared, swift).",
         subspells=[
             Subspell(
                 level=4,
@@ -870,7 +870,7 @@ def generate_spells():
         ),
         schools=['Conjuration'],
         lists=['Arcane', 'Nature'],
-        cantrip="The spell's duration becomes Sustain (standard).",
+        cantrip="The spell's duration becomes Sustain (shared, standard).",
         subspells=[
             Subspell(
                 level=3,
@@ -1170,11 +1170,12 @@ def generate_spells():
             effect="""
                 The target gains damage reduction equal to your spellpower against physical effects that have the chosen alignment, and physical attacks made by creatures with the chosen alignment.
             """,
+            duration='Attunement (shared)',
             tags=['Shielding'],
         ),
         schools=['Abjuration'],
         lists=['Arcane', 'Chaos', 'Divine', 'Evil', 'Good', 'Law'],
-        cantrip="The spell's duration becomes Sustain (swift).",
+        cantrip="The spell's duration becomes Sustain (shared, swift).",
         subspells=[
             Subspell(
                 level=3,
