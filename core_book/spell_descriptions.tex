@@ -6,6 +6,7 @@
 \begin{spellcontent}
 \begin{spelltargetinginfo}
 \spelltwocol{\spelltgt{One willing creature (Medium or smaller)}}{\spellrng{\rngclose}}
+\spelltime{minor action}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \spelleffect
@@ -22,7 +23,7 @@ Any effect which increases the size of creature this spell can affect also incre
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (shared, swift).
+The spell's duration becomes Sustain (minor, shared).
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -35,6 +36,7 @@ Replace the spell's targets and effects with the following:
 \begin{spellcontent}
 \begin{augmenttargetinginfo}
 \spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
+\spelltime{standard action}
 \end{augmenttargetinginfo}
 \begin{augmenteffects}
 \begin{spellattack}{Spellpower vs. Fortitude}
@@ -44,8 +46,6 @@ Replace the spell's targets and effects with the following:
 \spelltags{\glossterm{Air}}
 \end{augmenteffects}
 \end{spellcontent}
-\augment{3}{Accelerated}
-The glide speed granted by this spell increases to 60 feet.
 \augment{3}{Gust of Wind}
 Replace the spell's targets and effects with the following:
 \begin{spellcontent}
@@ -66,12 +66,13 @@ Replace the spell's targets and effects with the following:
 \begin{spellcontent}
 \begin{augmenttargetinginfo}
 \spelltwocol{\spelltgt{One unattended weapon}}{\spellrng{\rngclose}}
+\spelltime{standard action}
 \end{augmenttargetinginfo}
 \begin{augmenteffects}
 \spelleffect
 The target weapon gains an additional ten feet of reach, extending the wielder's threatened area.
 This has no effect on ranged attacks with the weapon.
-\spelldur Sustain (swift)
+\spelldur Sustain (minor)
 \spelltags{\glossterm{Air}, \glossterm{Shaping}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -80,7 +81,7 @@ The target can walk on air as if it were solid ground.
 The magic only affects the target's legs and feet.
 By choosing when to treat the air as solid, it can traverse the air with ease.
 \augment{4}{Wind Screen}
-The miss chance for ranged strikes against the target increases to 50\%.
+The defense bonus against ranged attacks increases to \plus10.
 \augment{5}{Stormlord}
 Whenever a creature within \rngclose range of the target attacks it, wind strikes the attacking creature.
 The wind deals \\glossterm{standard damage} \minus1d.
@@ -135,7 +136,7 @@ If another ability would magically manipulate the weather in the same area, the 
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (swift).
+The spell's duration becomes Sustain (minor).
 Its effect is still a \glossterm{condition}, and can be removed by abilites that remove conditions.
 \end{spellcantrip}
 \end{spellsubcontent}
@@ -156,7 +157,7 @@ The DR for each effect is equal to 10 + the \glossterm{power} of that effect.
 \spellsuccess
 Success against a magical effect causes that effect to be \glossterm{suppressed}.
 \end{spellattack}
-\spelldur Sustain (swift)
+\spelldur Sustain (minor)
 \spelltags{\glossterm{Thaumaturgy}}
 \end{spelleffects}
 \end{spellcontent}
@@ -214,7 +215,7 @@ The DR is equal to 10 + the target's spellpower.
 \spellsuccess
 The target object is \glossterm{suppressed}.
 \end{spellattack}
-\spelldur Sustain (swift)
+\spelldur Sustain (minor)
 \spelltags{\glossterm{Thaumaturgy}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -260,7 +261,7 @@ Replace the spell's targets and effects with the following:
 All magical abilities and objects are \glossterm{suppressed} in the area.
 In addition, magical abilities and objects cannot be activated within the area.
 \par Creatures within the area cannot concentrate on or dismiss spells. However, you can concentrate on and dismiss your own \spell{antimagic field}.
-\spelldur Sustain (swift)
+\spelldur Sustain (minor)
 \spelltags{\glossterm{Thaumaturgy}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -323,13 +324,13 @@ Replace the spell's targets and effects with the following:
 \spelleffect
 \glossterm{Strikes} with the affected weapon are made against Reflex defense instead of Armor defense.
 However, attacks with the weapon take a \minus2d penalty to \glossterm{strike damage}.
-\spelldur Sustain (swift)
+\spelldur Sustain (minor)
 \spelltags{\glossterm{Shaping}, \glossterm{Water}}
 \end{augmenteffects}
 \end{spellcontent}
 \augment{4}{Sustained}
 The area affected by this spell becomes completely filled with water.
-You can sustain the water as a \glossterm{swift action}.
+You can sustain the water as a \glossterm{minor action}.
 Creatures in this \glossterm{zone} suffer penalties appropriate for fighting underwater, and may be unable to breathe.
 \augment{8}{Greater Aqueous Blade}
 Replace the spell's targets and effects with the following:
@@ -340,7 +341,7 @@ Replace the spell's targets and effects with the following:
 \begin{augmenteffects}
 \spelleffect
 \glossterm{Strikes} with the affected weapon are made against Reflex defense instead of Armor defense.
-\spelldur Sustain (swift)
+\spelldur Sustain (minor)
 \spelltags{\glossterm{Shaping}, \glossterm{Water}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -395,38 +396,6 @@ Replace the spell's targets with the following:
 \spelltgt{You}
 \end{augmenttargetinginfo}
 \end{spellcontent}
-\begin{spellsection}{Barkskin}
-\begin{spellheader}
-\spelldesc{You toughen a creature's skin, giving it the appearance of tree bark.}
-\end{spellheader}
-\begin{spellcontent}
-\begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngclose}}
-\end{spelltargetinginfo}
-\begin{spelleffects}
-\spelleffect
-The target gains \glossterm{damage reduction} equal to your spellpower against damage dealt by \glossterm{physical attacks}.
-In addition, it is \glossterm{vulnerable} to fire damage.
-\spelldur Attunement (shared)
-\spelltags{\glossterm{Enhancement}}
-\end{spelleffects}
-\end{spellcontent}
-\begin{spellfooter}
-\spellinfo{Transmutation}{Nature}
-\fieldhead{Augments} Extended, Quickened, Silent, Stilled
-\end{spellfooter}
-\begin{spellsubcontent}
-\begin{spellcantrip}
-The spell's duration becomes Sustain (shared, swift).
-\end{spellcantrip}
-\end{spellsubcontent}
-\end{spellsection}
-\subsubsection{Subspells}
-\augment{3}{Stoneskin}
-The spell does not make the target vulnerable to fire damage.
-Instead, it makes the target \glossterm{vulnerable} to damage from adamantine weapons.
-\augment{5}{Empowered}
-The damage reduction granted by this spell increases by an amount equal to your spellpower.
 \begin{spellsection}{Barrier}
 \begin{spellheader}
 \spelldesc{You create a barrier around your ally that resists physical intrusion.}
@@ -434,6 +403,7 @@ The damage reduction granted by this spell increases by an amount equal to your 
 \begin{spellcontent}
 \begin{spelltargetinginfo}
 \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+\spelltime{minor action}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \spelleffect
@@ -449,7 +419,7 @@ In addition, it is \glossterm{vulnerable} to arcane damage.
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (shared, swift).
+The spell's duration becomes Sustain (minor, shared).
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -467,7 +437,7 @@ Success means the creature is unable to enter the spell's area with any part of 
 The rest of its movement in the current phase is cancelled.
 Failure means the creature can enter the area unimpeded.
 Creatures in the area at the time that the spell is cast are unaffected by the spell.
-\spelldur Sustain (swift)
+\spelldur Sustain (minor)
 \end{augmenteffects}
 \end{spellcontent}
 \augment{3}{Complete}
@@ -500,7 +470,7 @@ Replace the spell's targets and effects with the following:
 \spelleffect
 Living creatures are unable to enter the spell's area.
 Creatures in the area at the time that the spell is cast are unaffected by the spell.
-\spelldur Sustain (swift)
+\spelldur Sustain (minor)
 \end{augmenteffects}
 \end{spellcontent}
 \begin{spellsection}{Bless}
@@ -510,6 +480,7 @@ Creatures in the area at the time that the spell is cast are unaffected by the s
 \begin{spellcontent}
 \begin{spelltargetinginfo}
 \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+\spelltime{minor action}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \spelleffect The target gains a \plus2 bonus to \glossterm{accuracy}.
@@ -522,7 +493,7 @@ Creatures in the area at the time that the spell is cast are unaffected by the s
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (shared, swift).
+The spell's duration becomes Sustain (minor, shared).
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -536,6 +507,7 @@ The target gains \glossterm{damage reduction} equal to your spellpower against a
 \begin{spellcontent}
 \begin{spelltargetinginfo}
 \spelltwocol{\spelltgt{One willing creature}}{\spellrng{\rngclose}}
+\spelltime{minor action}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \spellspecial
@@ -553,7 +525,7 @@ The target gains a \plus5 bonus to the chosen skill.
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (shared, swift).
+The spell's duration becomes Sustain (minor, shared).
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -577,7 +549,7 @@ The target is \charmed by you.
 Any act by you or your apparent allies that threatens or damages the \spell{charmed} person breaks the effect.
 \spellcritical As above, but the effect's duration becomes permanent.
 \end{spellattack}
-\spelldur Sustain (swift)
+\spelldur Sustain (minor)
 \spelltags{\glossterm{Delusion}, \glossterm{Mind}, \glossterm{Subtle}}
 \end{spelleffects}
 \end{spellcontent}
@@ -642,7 +614,7 @@ As above, but the penalty is increased by 2.
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (swift).
+The spell's duration becomes Sustain (minor).
 Its effect is still a condition, and can be removed by abilites that remove conditions.
 \end{spellcantrip}
 \end{spellsubcontent}
@@ -745,7 +717,7 @@ The spell deals no damage.
 \begin{spellsubcontent}
 \begin{spellcantrip}
 Instead of healing, the spell grants \glossterm{temporary hit points} equal to twice your spellpower.
-The duration of the temporary hit points is Sustain (swift).
+The duration of the temporary hit points is Sustain (minor).
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -781,6 +753,7 @@ For every point of healing, this spell can instead cure 1 vital damage.
 \begin{spellcontent}
 \begin{spelltargetinginfo}
 \spelltwocol{\spelltgt{One willing creature}}{\spellrng{\rngmed}}
+\spelltime{minor action}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \spelleffect
@@ -797,7 +770,7 @@ Spells and other non-physical attacks suffer no miss chance.
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (swift).
+The spell's duration becomes Sustain (minor).
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -808,6 +781,7 @@ Replace the spell's targets and effects with the following:
 \begin{augmenttargetinginfo}
 \spelltwocol{\spellemanation{\areamed radius from the target}}{\spellrng{\rngclose}}
 \spelltgt{One object (Small or smaller)}
+\spelltime{standard action}
 \end{augmenttargetinginfo}
 \begin{augmenteffects}
 \spelleffect
@@ -838,7 +812,7 @@ Four illusory duplicates appear around the target that mirror its every move.
 The duplicates shift chaotically in its space, making it difficult to identify the real creature.
 All targeted attacks against the target have a 50\% miss chance.
 Whenever an attack misses in this way, it affects an image, destroying it.
-\spelldur Sustain (swift)
+\spelldur Sustain (minor)
 \spelltags{\glossterm{Figment}, \glossterm{Visual}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -906,7 +880,7 @@ The spell's attack is made against Fortitude defense instead of Reflex defense.
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (swift).
+The spell's duration becomes Sustain (minor).
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -954,7 +928,7 @@ The lights resemble lanterns or torches, and shed bright light in the same 20 fo
 However, you can freely choose the color of the lights when you cast the spell.
 During each movement phase, you can move the lights up to 100 feet in any direction.
 If one of the lights ever goes out of range from you, it immediately winks out.
-\spelldur Sustain (swift)
+\spelldur Sustain (minor)
 \spelltags{\glossterm{Figment}, \glossterm{Light}, \glossterm{Visual}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -967,7 +941,7 @@ The lights impose a \minus10 penalty to Stealth checks.
 In addition, they reveal the outline of the creatures if they become \glossterm{invisible}.
 This allows observers to see their location, though not to see them perfectly.
 \augment{3}{Illuminating}
-The brilliant light persists as long as you spend a \glossterm{swift action} each round to sustain it.
+The brilliant light persists as long as you spend a \glossterm{minor action} each round to sustain it.
 The light has no additional effects on creatures in the area.
 \augment{4}{Flashbang}
 An intense sound accompanies the flash of light caused by the spell.
@@ -986,6 +960,7 @@ The spell's attack is made against Fortitude instead of Reflex.
 \begin{spellcontent}
 \begin{spelltargetinginfo}
 \spelltwocol{\spelltgt{One willing creature}}{\spellrng{\rngclose}}
+\spelltime{minor action}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \spelleffect
@@ -1000,14 +975,18 @@ The target gains a \plus2 bonus to \glossterm{accuracy} with physical attacks.
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (swift).
+The spell's duration becomes Sustain (minor).
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
-\augment{2}{Augury}
-Replace the spell's effects with the following:
+\augment{3}{Augury}
+Replace the spell's targets and effects with the following:
 \begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgt{One willing creature}}{\spellrng{\rngclose}}
+\spelltime{standard action}
+\end{augmenttargetinginfo}
 \begin{augmenteffects}
 \spelleffect
 Choose an action that the target could take.
@@ -1096,6 +1075,7 @@ The spell does not have additional effects other than damage.
 \begin{spellcontent}
 \begin{spelltargetinginfo}
 \spelltwocol{\spelltgt{One willing creature}}{\spellrng{\rngmed}}
+\spelltime{minor action}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \spelleffect
@@ -1110,20 +1090,34 @@ You increase or decrease the target's size by one size category.
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (swift).
+The spell's duration becomes Sustain (minor).
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
+\augment{2}{Barkskin}
+Replace the spell's effects with the following:
+\begin{spellcontent}
+\begin{augmenteffects}
+\spelleffect
+The target gains \glossterm{damage reduction} equal to your spellpower against damage dealt by \glossterm{physical attacks}.
+In addition, it is \glossterm{vulnerable} to fire damage.
+\spelldur Attunement (shared)
+\spelltags{\glossterm{Shaping}}
+\end{augmenteffects}
+\end{spellcontent}
 \augment{3}{Alter Appearance}
 You can also make a Disguise check to alter the target's appearance (see \pcref{Disguise Creature}).
 You gain a \plus5 bonus on the check, and you ignore penalties for changing the target's gender, race, subtype, or age.
 However, this effect is unable to alter the target's clothes or equipment in any way.
+\augment{3}{Stoneskin}
+This subspell functions like the \textit{barkskin} subspell, except that the target is \glossterm{vulnerable} to damage from adamantine weapons instead of fire damage.
 \augment{4}{Fabricate}
 Replace the spell's targets and effects with the following:
 \begin{spellcontent}
 \begin{augmenttargetinginfo}
 \spelltwocol{\spelltgts{One or more unattended, nonmagical objects (Large or smaller); see text}}{\spellrng{\rngclose}}
+\spelltime{standard action}
 \end{augmenttargetinginfo}
 \begin{augmenteffects}
 \spelleffect
@@ -1133,10 +1127,21 @@ The total size of all targets combined must be Large size or smaller.
 \spelltags{\glossterm{Shaping}}
 \end{augmenteffects}
 \end{spellcontent}
+\augment{7}{Ironskin}
+Replace the spell's effects with the following:
+\begin{spellcontent}
+\begin{augmenteffects}
+\spelleffect
+The target gains \glossterm{damage reduction} equal to twice your spellpower against damage dealt by \glossterm{physical attacks}.
+\spelldur Attunement (shared)
+\spelltags{\glossterm{Shaping}}
+\end{augmenteffects}
+\end{spellcontent}
 \begin{spellsection}{Protection from Alignment}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
 \spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
+\spelltime{minor action}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \spellspecial
@@ -1154,7 +1159,7 @@ The target gains damage reduction equal to your spellpower against physical effe
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (shared, swift).
+The spell's duration becomes Sustain (minor, shared).
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -1210,7 +1215,7 @@ Replace the spell's targets and effects with the following:
 \spelleffect
 The target weapon gains a \plus2d bonus to \glossterm{strike damage}.
 In addition, all damage dealt with the weapon with strikes becomes fire damage in addition to its normal damage types.
-\spelldur Sustain (swift)
+\spelldur Sustain (minor)
 \spelltags{\glossterm{Fire}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -1262,7 +1267,7 @@ If you cast it again, any previous castings of the spell are dismissed.
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The sensor cannot be moved after it is originally created, and the spell's duration becomes Sustain (swift).
+The sensor cannot be moved after it is originally created, and the spell's duration becomes Sustain (minor).
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -1293,7 +1298,7 @@ Replace the spell's targets with the following:
 \end{augmenttargetinginfo}
 \end{spellcontent}
 \augment{4}{Semi-Autonomous}
-You can move the sensor as a \glossterm{swift action} rather than as a standard action.
+You can move the sensor as a \glossterm{minor action} rather than as a standard action.
 \augment{5}{Scry Creature}
 You must make a Spellpower vs. Mental attack against the target.
 Success means the sensor appears in the target's space.
@@ -1373,7 +1378,7 @@ Its accuracy is equal to your spellpower.
 If it hits, it deals \glossterm{standard damage} \minus2d.
 The type of damage dealt by this attack depends on the creature's appearance.
 Most animals bite or claw their foes, which deals bludgeoning and slashing damage.
-\spelldur Sustain (swift)
+\spelldur Sustain (minor)
 \spelltags{\glossterm{Manifestation}}
 \end{spelleffects}
 \end{spellcontent}
@@ -1457,7 +1462,7 @@ Replace the spell's targets and effects with the following:
 \spelleffect
 The target floats in midair, unaffected by gravity.
 During the movement phase, you can move the target up to ten feet in any direction.
-\spelldur Sustain (swift)
+\spelldur Sustain (minor)
 \end{augmenteffects}
 \end{spellcontent}
 \begin{spellsection}{Web}
@@ -1471,6 +1476,7 @@ The strands are similar to spider webs, but larger and tougher.
 \begin{spelltargetinginfo}
 \spelltwocol{\spellzone{\areasmall radius}}{\spellrng{\rngclose}}
 \spelltgts{Everything in the area}
+\spelltime{minor action}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \spelleffect
@@ -1479,7 +1485,7 @@ Each 5-ft.\ square of webbing has hit points equal to your spellpower, and is \g
 \begin{spellattack}{Spellpower vs. Reflex}
 \spellsuccess The target is \immobilized as long as it has webbing from this spell in its space.
 \end{spellattack}
-\spelldur Sustain (swift)
+\spelldur Sustain (minor)
 \spelltags{\glossterm{Manifestation}}
 \end{spelleffects}
 \end{spellcontent}
@@ -1489,7 +1495,7 @@ Each 5-ft.\ square of webbing has hit points equal to your spellpower, and is \g
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (shared, standard).
+The spell's duration becomes Sustain (standard).
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}

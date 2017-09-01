@@ -27,6 +27,7 @@ def generate_spells():
         targeting=Targeting(
             target='One willing creature (Medium or smaller)',
             rng='close',
+            time='minor action',
         ),
         effects=Effects(
             effect="""
@@ -39,7 +40,7 @@ def generate_spells():
         ),
         schools=['Transmutation'],
         lists=['Air', 'Nature'],
-        cantrip="The spell's duration becomes Sustain (shared, swift).",
+        cantrip="The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).",
         subspells=[
             Subspell(
                 level=2,
@@ -55,6 +56,7 @@ def generate_spells():
                 targeting=Targeting(
                     target='One creature or object',
                     rng='medium',
+                    time='standard action',
                 ),
                 effects=Effects(
                     attack=Attack.damage('Fortitude', 'bludgeoning'),
@@ -67,6 +69,7 @@ def generate_spells():
                 targeting=Targeting(
                     area=r'\arealarge line, 10 ft. wide',
                     targets='Everything in the area',
+                    time='standard action',
                 ),
                 effects=Effects(
                     attack=Attack.multi_damage('Fortitude', 'bludgeoning'),
@@ -80,25 +83,21 @@ def generate_spells():
                     # TODO: unattended or wielded by a willing creature?
                     target='One unattended weapon',
                     rng='close',
+                    time='standard action',
                 ),
                 effects=Effects(
                     effect="""
                         The target weapon gains an additional ten feet of reach, extending the wielder's threatened area.
                         This has no effect on ranged attacks with the weapon.
                     """,
-                    duration='Sustain (swift)',
+                    duration='Sustain (minor)',
                     tags=['Air', 'Shaping'],
                 ),
             ),
             Subspell(
                 level=4,
                 name='Wind Screen',
-                description="The miss chance for ranged strikes against the target increases to 50\\%.",
-            ),
-            Subspell(
-                level=3,
-                name='Accelerated',
-                description='The glide speed granted by this spell increases to 60 feet.',
+                description="The defense bonus against ranged attacks increases to \plus10.",
             ),
             Subspell(
                 level=4,
@@ -126,6 +125,7 @@ def generate_spells():
                 targeting=Targeting(
                     area='2 mile radius cylinder from your location',
                     area_type='zone',
+                    time='standard action',
                 ),
                 effects=Effects(
                     effect="""
@@ -158,6 +158,7 @@ def generate_spells():
         targeting=Targeting(
             target='One creature',
             rng='close',
+            time='minor action',
         ),
         effects=Effects(
             effect="""
@@ -169,7 +170,7 @@ def generate_spells():
         ),
         schools=['Abjuration'],
         lists=['Arcane'],
-        cantrip="The spell's duration becomes Sustain (shared, swift).",
+        cantrip="The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).",
         subspells=[
             Subspell(
                 level=2,
@@ -177,6 +178,7 @@ def generate_spells():
                 targeting=Targeting(
                     area=r'\areamed radius centered on your location',
                     area_type='zone',
+                    time='standard action',
                 ),
                 effects=Effects(
                     effect="""
@@ -186,7 +188,7 @@ def generate_spells():
                         Failure means the creature can enter the area unimpeded.
                         Creatures in the area at the time that the spell is cast are unaffected by the spell.
                     """,
-                    duration='Sustain (swift)',
+                    duration='Sustain (minor)',
                 ),
             ),
             Subspell(
@@ -229,13 +231,14 @@ def generate_spells():
                 targeting=Targeting(
                     area=r'\areamed radius centered on your location',
                     area_type='zone',
+                    time='standard action',
                 ),
                 effects=Effects(
                     effect="""
                         Living creatures are unable to enter the spell's area.
                         Creatures in the area at the time that the spell is cast are unaffected by the spell.
                     """,
-                    duration='Sustain (swift)',
+                    duration='Sustain (minor)',
                 ),
             ),
         ],
@@ -255,7 +258,7 @@ def generate_spells():
         ),
         schools=['Conjuration'],
         lists=['Arcane'],
-        cantrip="The spell's range becomes \\rngclose, and it deals -1d damage.",
+        cantrip="The spell deals -2d damage.",
         subspells=[
             Subspell(
                 level=3,
@@ -273,9 +276,9 @@ def generate_spells():
         ],
         category='damage',
     ))
-    # Math: at 1st level, spellpower is probably ~2, so standard damage is probably 1d10.
+    # Math: at 1st level, spellpower is probably ~2, so standard damage is probably 2d6.
     # Casting this spell and then two standard damage spells deals 4d8 = 18 damage
-    # casting three standard damage spells deals 3d10 = 15 damage
+    # casting three standard damage spells deals 6d6 = 15 damage
     # So this is better even if fighting alone against a sufficiently strong enemy
 
     # At 20th level, spellpower is ~22, so standard damage is 8d10
@@ -304,7 +307,7 @@ def generate_spells():
         lists=['Arcane', 'Divine'],
         notes="This damage increase applies before other effects that modify the total damage dealt, such as \glossterm<damage reduction>.",
         cantrip="""
-            The spell's duration becomes Sustain (swift).
+            The spell's duration becomes Sustain (minor).
             Its effect is still a \\glossterm<condition>, and can be removed by abilites that remove conditions.
         """,
         subspells=[
@@ -334,7 +337,7 @@ def generate_spells():
                     Success against a magical effect causes that effect to be \\glossterm<suppressed>.
                 """,
             ),
-            duration='Sustain (swift)',
+            duration='Sustain (minor)',
             tags=['Thaumaturgy'],
         ),
         schools=['Abjuration'],
@@ -378,7 +381,7 @@ def generate_spells():
                             The target object is \\glossterm<suppressed>.
                         """,
                     ),
-                    duration='Sustain (swift)',
+                    duration='Sustain (minor)',
                     tags=['Thaumaturgy'],
                 ),
             ),
@@ -414,7 +417,7 @@ def generate_spells():
                         In addition, magical abilities and objects cannot be activated within the area.
                         \\par Creatures within the area cannot concentrate on or dismiss spells. However, you can concentrate on and dismiss your own \\spell{antimagic field}.
                     """,
-                    duration='Sustain (swift)',
+                    duration='Sustain (minor)',
                     tags=['Thaumaturgy'],
                 ),
             ),
@@ -493,7 +496,7 @@ def generate_spells():
                         The target weapon gains a +2d bonus to \\glossterm<strike damage>.
                         In addition, all damage dealt with the weapon with strikes becomes fire damage in addition to its normal damage types.
                     """,
-                    duration='Sustain (swift)',
+                    duration='Sustain (minor)',
                     tags=['Fire'],
                 ),
             ),
@@ -536,7 +539,7 @@ def generate_spells():
                 """,
                 critical="As above, but the effect's duration becomes permanent.",
             ),
-            duration='Sustain (swift)',
+            duration='Sustain (minor)',
             tags=['Delusion', 'Mind', 'Subtle'],
         ),
         cantrip="""
@@ -649,7 +652,7 @@ def generate_spells():
                         \glossterm<Strikes> with the affected weapon are made against Reflex defense instead of Armor defense.
                         However, attacks with the weapon take a -2d penalty to \\glossterm<strike damage>.
                     """,
-                    duration='Sustain (swift)',
+                    duration='Sustain (minor)',
                     tags=['Shaping', 'Water'],
                 ),
             ),
@@ -658,7 +661,7 @@ def generate_spells():
                 name="Sustained",
                 description="""
                     The area affected by this spell becomes completely filled with water.
-                    You can sustain the water as a \\glossterm<swift action>.
+                    You can sustain the water as a \\glossterm<minor action>.
                     Creatures in this \\glossterm<zone> suffer penalties appropriate for fighting underwater, and may be unable to breathe.
                 """,
             ),
@@ -674,7 +677,7 @@ def generate_spells():
                     effect="""
                         \glossterm<Strikes> with the affected weapon are made against Reflex defense instead of Armor defense.
                     """,
-                    duration='Sustain (swift)',
+                    duration='Sustain (minor)',
                     tags=['Shaping', 'Water'],
                 ),
             ),
@@ -702,7 +705,7 @@ def generate_spells():
         schools=['Enchantment'],
         lists=['Arcane'],
         cantrip="""
-            The spell's duration becomes Sustain (swift).
+            The spell's duration becomes Sustain (minor), and you take a -2 penalty to accuracy with the attack.
         """,
         subspells=[
             Subspell(
@@ -722,12 +725,13 @@ def generate_spells():
         targeting=Targeting(
             target='One creature',
             rng='close',
+            time='minor action',
         ),
         effects=Effects(
             effect='The target gains a +2 bonus to \\glossterm<accuracy>.',
             duration='Attunement (shared)',
         ),
-        cantrip="The spell's duration becomes Sustain (shared, swift).",
+        cantrip="The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).",
         schools=['Channeling'],
         lists=['Divine'],
         subspells=[
@@ -740,44 +744,6 @@ def generate_spells():
             ),
         ],
         category='buff, offense',
-    ))
-    spells.append(Spell(
-        name="Barkskin",
-        short_description="Toughen the skin of allies to improve defenses",
-        header=Header("You toughen a creature's skin, giving it the appearance of tree bark."),
-        targeting=Targeting(
-            target='One living creature',
-            rng='close',
-        ),
-        effects=Effects(
-            effect="""
-                The target gains \\glossterm{damage reduction} equal to your spellpower against damage dealt by \\glossterm<physical attacks>.
-                In addition, it is \\glossterm<vulnerable> to fire damage.
-            """,
-            duration='Attunement (shared)',
-            tags=['Enhancement'],
-        ),
-        schools=['Transmutation'],
-        lists=['Nature'],
-        cantrip="The spell's duration becomes Sustain (shared, swift).",
-        subspells=[
-            Subspell(
-                level=3,
-                name="Stoneskin",
-                description="""
-                    The spell does not make the target vulnerable to fire damage.
-                    Instead, it makes the target \\glossterm<vulnerable> to damage from adamantine weapons.
-                """,
-            ),
-            Subspell(
-                level=5,
-                name="Empowered",
-                description="""
-                    The damage reduction granted by this spell increases by an amount equal to your spellpower.
-                """,
-            ),
-        ],
-        category='buff, defense',
     ))
     spells.append(Spell(
         name="Smite",
@@ -816,6 +782,7 @@ def generate_spells():
         targeting=Targeting(
             target='One willing creature',
             rng='close',
+            time='minor action',
         ),
         effects=Effects(
             special="""
@@ -830,7 +797,7 @@ def generate_spells():
         ),
         schools=['Transmutation'],
         lists=['Arcane', 'Divine', 'Nature'],
-        cantrip="The spell's duration becomes Sustain (shared, swift).",
+        cantrip="The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).",
         subspells=[
             Subspell(
                 level=4,
@@ -855,6 +822,7 @@ def generate_spells():
             area_type='zone',
             rng='close',
             targets='Everything in the area',
+            time='minor action',
         ),
         effects=Effects(
             effect="""
@@ -865,12 +833,12 @@ def generate_spells():
                 defense='Reflex',
                 success="The target is \\immobilized as long as it has webbing from this spell in its space."
             ),
-            duration='Sustain (swift)',
+            duration='Sustain (minor)',
             tags=['Manifestation'],
         ),
         schools=['Conjuration'],
         lists=['Arcane', 'Nature'],
-        cantrip="The spell's duration becomes Sustain (shared, standard).",
+        cantrip="The spell's duration becomes Sustain (standard).",
         subspells=[
             Subspell(
                 level=3,
@@ -996,7 +964,7 @@ def generate_spells():
         schools=['Vivimancy'],
         lists=['Arcane', 'Divine', 'Nature'],
         cantrip="""
-            The spell's duration becomes Sustain (swift).
+            The spell's duration becomes Sustain (minor).
             Its effect is still a condition, and can be removed by abilites that remove conditions.
         """,
         subspells=[
@@ -1099,7 +1067,7 @@ def generate_spells():
         lists=['Divine', 'Life', 'Nature'],
         cantrip="""
             Instead of healing, the spell grants \\glossterm<temporary hit points> equal to twice your spellpower.
-            The duration of the temporary hit points is Sustain (swift).
+            The duration of the temporary hit points is Sustain (minor).
         """,
         subspells=[
             Subspell(
@@ -1161,6 +1129,7 @@ def generate_spells():
         targeting=Targeting(
             target='One creature',
             rng='close',
+            time='minor action',
         ),
         effects=Effects(
             special="""
@@ -1175,7 +1144,7 @@ def generate_spells():
         ),
         schools=['Abjuration'],
         lists=['Arcane', 'Chaos', 'Divine', 'Evil', 'Good', 'Law'],
-        cantrip="The spell's duration becomes Sustain (shared, swift).",
+        cantrip="The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).",
         subspells=[
             Subspell(
                 level=3,
@@ -1219,7 +1188,7 @@ def generate_spells():
                 The type of damage dealt by this attack depends on the creature's appearance.
                 Most animals bite or claw their foes, which deals bludgeoning and slashing damage.
             """,
-            duration="Sustain (swift)",
+            duration="Sustain (minor)",
             tags=["Manifestation"],
         ),
         schools=['Conjuration'],
@@ -1269,7 +1238,7 @@ def generate_spells():
         ),
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
-        cantrip="The sensor cannot be moved after it is originally created, and the spell's duration becomes Sustain (swift).",
+        cantrip="The sensor cannot be moved after it is originally created, and the spell's duration becomes Sustain (minor).",
         subspells=[
             Subspell(
                 level=2,
@@ -1316,7 +1285,7 @@ def generate_spells():
                 level=4,
                 name="Semi-Autonomous",
                 description="""
-                    You can move the sensor as a \\glossterm<swift action> rather than as a standard action.
+                    You can move the sensor as a \\glossterm<minor action> rather than as a standard action.
                 """,
             ),
             Subspell(
@@ -1368,6 +1337,7 @@ def generate_spells():
         targeting=Targeting(
             target="One willing creature",
             rng="close",
+            time='minor action',
         ),
         effects=Effects(
             effect="""
@@ -1378,11 +1348,16 @@ def generate_spells():
         ),
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
-        cantrip="The spell's duration becomes Sustain (swift).",
+        cantrip="The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).",
         subspells=[
             Subspell(
-                level=2,
+                level=3,
                 name="Augury",
+                targeting=Targeting(
+                    target="One willing creature",
+                    rng="close",
+                    time='standard action',
+                ),
                 effects=Effects(
                     effect="""
                         Choose an action that the target could take.
@@ -1474,7 +1449,7 @@ def generate_spells():
                         The target floats in midair, unaffected by gravity.
                         During the movement phase, you can move the target up to ten feet in any direction.
                     """,
-                    duration="Sustain (swift)",
+                    duration="Sustain (minor)",
                 ),
             ),
             Subspell(
@@ -1501,6 +1476,7 @@ def generate_spells():
         targeting=Targeting(
             target='One willing creature',
             rng='medium',
+            time='minor action',
         ),
         effects=Effects(
             effect="""
@@ -1513,7 +1489,7 @@ def generate_spells():
         ),
         schools=['Illusion'],
         lists=['Arcane'],
-        cantrip="The spell's duration becomes Sustain (swift).",
+        cantrip="The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).",
         subspells=[
             Subspell(
                 level=2,
@@ -1523,6 +1499,7 @@ def generate_spells():
                     rng='close',
                     area='\\areamed radius from the target',
                     area_type='emanation',
+                    time='standard action',
                 ),
                 effects=Effects(
                     effect="""
@@ -1557,7 +1534,7 @@ def generate_spells():
                         All targeted attacks against the target have a 50\\% miss chance.
                         Whenever an attack misses in this way, it affects an image, destroying it.
                     """,
-                    duration='Sustain (swift)',
+                    duration='Sustain (minor)',
                     tags=['Figment', 'Visual'],
                 ),
             ),
@@ -1624,7 +1601,7 @@ def generate_spells():
                         During each movement phase, you can move the lights up to 100 feet in any direction.
                         If one of the lights ever goes out of range from you, it immediately winks out.
                     """,
-                    duration="Sustain (swift)",
+                    duration="Sustain (minor)",
                     tags=['Figment', 'Light', 'Visual'],
                 ),
             ),
@@ -1642,7 +1619,7 @@ def generate_spells():
                 level=3,
                 name="Illuminating",
                 description="""
-                    The brilliant light persists as long as you spend a \\glossterm<swift action> each round to sustain it.
+                    The brilliant light persists as long as you spend a \\glossterm<minor action> each round to sustain it.
                     The light has no additional effects on creatures in the area.
                 """,
             ),
@@ -1690,6 +1667,7 @@ def generate_spells():
         targeting=Targeting(
             target='One willing creature',
             rng='medium',
+            time='minor action',
         ),
         effects=Effects(
             # TODO: more explanation of what this means
@@ -1701,8 +1679,20 @@ def generate_spells():
         ),
         schools=['Transmutation'],
         lists=['Arcane', 'Nature'],
-        cantrip="The spell's duration becomes Sustain (swift).",
+        cantrip="The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).",
         subspells=[
+            Subspell(
+                level=2,
+                name="Barkskin",
+                effects=Effects(
+                    effect="""
+                        The target gains \\glossterm{damage reduction} equal to your spellpower against damage dealt by \\glossterm<physical attacks>.
+                        In addition, it is \\glossterm<vulnerable> to fire damage.
+                    """,
+                    duration='Attunement (shared)',
+                    tags=['Shaping'],
+                ),
+            ),
             Subspell(
                 level=3,
                 name="Alter Appearance",
@@ -1713,11 +1703,19 @@ def generate_spells():
                 """,
             ),
             Subspell(
+                level=3,
+                name="Stoneskin",
+                description="""
+                    This subspell functions like the \\textit<barkskin> subspell, except that the target is \\glossterm<vulnerable> to damage from adamantine weapons instead of fire damage.
+                """,
+            ),
+            Subspell(
                 level=4,
                 name="Fabricate",
                 targeting=Targeting(
                     targets='One or more unattended, nonmagical objects (Large or smaller); see text',
                     rng='close',
+                    time='standard action',
                 ),
                 effects=Effects(
                     effect="""
@@ -1726,6 +1724,17 @@ def generate_spells():
 
                         The total size of all targets combined must be Large size or smaller.
                     """,
+                    tags=['Shaping'],
+                ),
+            ),
+            Subspell(
+                level=7,
+                name="Ironskin",
+                effects=Effects(
+                    effect="""
+                        The target gains \\glossterm{damage reduction} equal to twice your spellpower against damage dealt by \\glossterm<physical attacks>.
+                    """,
+                    duration='Attunement (shared)',
                     tags=['Shaping'],
                 ),
             ),
