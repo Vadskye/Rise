@@ -137,14 +137,13 @@ It defines how attributes work and explains how to make physical attacks in comb
         \subsubsection{Moving Near Foes}\label{Moving Near Foes}
             All squares threatened by any foes cost double the normal movement cost to move out of.
 
-
         \subsubsection{Movement Impediments}
 
             \parhead{Difficult Terrain}\label{Difficult Terrain}
             Some terrain is hard to move through, like thick bushes or a swamp. If a square is difficult terrain, it doubles the movement cost required to move out of the square. That generally means it takes ten feet of movement, or fifteen feet if you are moving diagonally. If a square is considered difficult terrain for multiple reasons, the cost increases stack. For example, a square in a swamp that also has thick bushes blocking your passage would take twenty feet of movement, or thirty feet to move diagonally.
 
             \parhead{Obstacles}
-            An obstacle is anything that gets in your way. Enemies and large solid objects like walls are blocking obstacles: they completely block your movement. If you can get past an obstacle, like a low wall, that square is treated as difficult terrain. Some obstacles require a \glossterm{check} to bypass, such as an Acrobatics check (see \pcref{Acrobatics}).
+            An obstacle is anything that gets in your way. Enemies and large solid objects like walls completely block your movement. If you can get past an obstacle, like a low wall, that square is treated as difficult terrain. Some obstacles require a \glossterm{check} to bypass, such as an Acrobatics check (see \pcref{Acrobatics}).
 
             \parhead{Squeezing}\label{Squeezing}
             In some cases, you may have to squeeze into or through an area that isn't as wide as the space you take up. You can squeeze through or into a space that is at least half as wide as your normal space. While squeezing, you move half as fast, and you take a \minus2 penalty to physical accuracy, physical checks, and physical defenses. You can squeeze into tighter spaces with the Escape Artist skill.
@@ -189,19 +188,22 @@ It defines how attributes work and explains how to make physical attacks in comb
         \parhead{Standard Action} Most common activities require a single standard action, such as attacking with a weapon, casting a spell, and using most special abilities.
         You can only take one standard action per action phase.
 
-        \parhead{Swift and Immediate Actions}\label{Swift and Immediate Actions} Each round, you can take a single swift or immediate action, but not both.
-        Swift and immediate actions can be taken in either the movement or action phase.
-        Swift actions must be declared along with any other actions you intend to take during that phase.
-        They are resolved early in the phase, before other actions resolve.
+        \parhead{Minor and Immediate Actions}\label{Minor and Immediate Actions} Each round, you can take a single \glossterm{minor action} or \glossterm{immediate action}, but not both.
+        Minor actions can be taken in either the \glossterm{action phase} or the \glossterm{delayed action phase}.
+        They are declared and resolved simultaneously with any other actions you take during that phase.
+        This can allow you to perform multiple tasks during the same phase.
 
-        Immediate actions do not need to be declared ahead of time.
+        Immediate actions do not need to be declared ahead of time, and can be taken in any phase.
         Instead, abilities that can be used as immediate actions specify triggering conditions that allow the action to be taken.
         Immediate actions are resolved immediately, before the triggering action resolves.
-        If multiple swift or immediate actions are taken simultaneously, they are resolved using the normal rules for resolving simultaneous actions.
+        If multiple minor actions or immediate actions are taken simultaneously, they are resolved using the normal rules for resolving simultaneous actions.
 
+        \subparhead{Minor Actions and Standard Action} Any action that normally requires a minor action to complete can also be done as a \glossterm{standard action}.
+
+        % TODO: should free actions resolve early?
         \parhead{Free Actions}\label{Free Actions} Each round, you can take any number of free actions.
-        Free actions can be taken in either the movement or action phase.
-        Like swift actions, free actions must be declared along with any other actions you intend to take during that phase.
+        Free actions can be taken in any phase.
+        Like minor actions, free actions are declared and resolved simultaneously with other actions you intend to take during that phase.
 
         \parhead{Full-Round Actions} A full-round action requires your full attention.
         Unless otherwise specified, you perform any movement required for the action during the movement phase, and the rest of the action during the action phase.
@@ -215,8 +217,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         Allies with the ability to communicate can freely coordinate their actions with each other, within reasonable limits.
 
         \begin{enumerate*}
-            \item \textit{Choose swift actions.}
-            \item Choose standard actions.
+            \item Choose actions.
             \item All actions are \glossterm{initiated}.
             \item Determine targets affected by actions.
             \item Check action success.
@@ -224,7 +225,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             \item Determine action results.
                 Example: Making damage rolls.
             \item Apply action results.
-                Examples: Reducing hit points, moving character locations, and applying penalties.
+                Examples: Reducing hit points, moving creature locations, and applying penalties.
                 Effects that trigger when damage is dealt, such as Concentration checks (see \pcref{Concentration}), are resolved now.
         \end{enumerate*}
 
@@ -465,7 +466,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
     \subsection{Special Movements}
 
-        \parhead{Struggle} As a standard action action, you can move five feet, regardless of movement penalties.
+        \parhead{Struggle} As a standard action, you can move five feet regardless of movement penalties.
         This does not allow you to pass obstacles unrelated to movement speed penalties, such as walls.
         You can only use this action with a land speed, and not with any other type of speed (see \pcref{Special Movement Modes}).
 
