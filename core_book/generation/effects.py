@@ -6,7 +6,7 @@ valid_durations = set([
     'Attunement (multiple); see text',
     'Attunement (shared)',
     'Condition',
-    'Sustain (swift)',
+    'Sustain (minor)',
     'Sustain (standard)',
     'Sustain (standard); maximum 5 rounds',
     'Permanent',

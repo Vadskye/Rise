@@ -181,7 +181,7 @@ def generate_weapons():
             Damage that would be dealt by the weapon can be delayed indefinitely.
             While the damage is delayed, it cannot be removed by any means short of the destruction of this weapon or the creature's death.
 
-            As a \\glossterm<swift action>, you can cut yourself with this weapon to activate it.
+            As a \\glossterm<minor action>, you can cut yourself with this weapon to activate it.
             This deals no damage to you.
             If you do, all delayed damage dealt by this weapon is converted into real damage.
             Any such damage dealt in excess of a creature's hit points is dealt immediately as \\glossterm<vital damage>.
