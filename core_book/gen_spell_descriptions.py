@@ -277,15 +277,14 @@ def generate_spells():
         category='damage',
     ))
     # Math: at 1st level, spellpower is probably ~2, so standard damage is probably 2d6.
-    # Casting this spell and then two standard damage spells deals 4d8 = 18 damage
-    # casting three standard damage spells deals 6d6 = 15 damage
-    # So this is better even if fighting alone against a sufficiently strong enemy
+    # Casting this spell and then two standard damage spells deals 4d6+2d8 = 23 damage
+    # casting three standard damage spells deals 6d6 = 21 damage
+    # So when fighting alone, this takes 3 rounds of effectiveness to be equal
+    # in power to a simple damage spell.
 
-    # At 20th level, spellpower is ~22, so standard damage is 8d10
-    # Casting this spell and then two standard damage spells deals 20d10
-    # But as a 7th level, with two Intensified augments, deals 24d10
-    # Casting three standard damage spells deals 24d10
-    # So this should be +3 per Intensified
+    # At 20th level, spellpower is ~22, so standard damage is 9d10
+    # Casting this spell and then two standard damage spells deals 18d10+7d10=25d10
+    # Casting three standard damage spells deals 27d10
     spells.append(Spell(
         name='Agony',
         short_description="Inflict debilitating pain on foes",
@@ -297,25 +296,18 @@ def generate_spells():
         effects=Effects(
             attack=Attack(
                 defense='Mental',
-                success="Damage dealt to the target by \\glossterm<physical attacks> is increased by +1d. Damage not measured in dice is unaffected.",
-                critical="As above, but damage is increased by +3d instead.",
+                success="At the end of each round, if the target took damage that round, it takes mental \\glossterm<standard damage> -2d.",
+                critical="As above, but double damage.",
             ),
             duration='Condition',
             tags=['Delusion', 'Mind'],
         ),
         schools=['Enchantment'],
         lists=['Arcane', 'Divine'],
-        notes="This damage increase applies before other effects that modify the total damage dealt, such as \glossterm<damage reduction>.",
         cantrip="""
-            The spell's duration becomes Sustain (minor).
-            Its effect is still a \\glossterm<condition>, and can be removed by abilites that remove conditions.
+            You take a -2 penalty to accuracy with the spell.
         """,
         subspells=[
-            Subspell(
-                level=3,
-                name='Complete',
-                description="The damage increase applies to all damage, not just damage dealt by \\glossterm<physical attacks>.",
-            ),
         ],
         category='debuff, combat',
     ))
@@ -472,7 +464,7 @@ def generate_spells():
         ),
         schools=['Evocation'],
         lists=['Arcane', 'Fire', 'Nature'],
-        cantrip="The spell affects a 5 foot radius, and it deals -1d damage.",
+        cantrip="The spell affects a single target within range instead of creating a burst.",
         subspells=[
             Subspell(
                 level=2,
@@ -537,14 +529,14 @@ def generate_spells():
                     The target is \\charmed by you.
                     Any act by you or your apparent allies that threatens or damages the \\spell<charmed> person breaks the effect.
                 """,
-                critical="As above, but the effect's duration becomes permanent.",
+                critical="As above, but the effect's duration becomes permanent, and it does not need to be sustained.",
             ),
             duration='Sustain (minor)',
             tags=['Delusion', 'Mind', 'Subtle'],
         ),
         cantrip="""
             The spell has no additional effects on a critical hit.
-            In addition, its duration becomes Sustain (standard).
+            In addition, it loses the Subtle tag, allowing the target to know that it is being magically influenced.
         """,
         schools=['Enchantment'],
         lists=["Arcane"],
@@ -705,7 +697,7 @@ def generate_spells():
         schools=['Enchantment'],
         lists=['Arcane'],
         cantrip="""
-            The spell's duration becomes Sustain (minor), and you take a -2 penalty to accuracy with the attack.
+            You take a -2 penalty to accuracy with the spell.
         """,
         subspells=[
             Subspell(
@@ -758,7 +750,7 @@ def generate_spells():
         ),
         schools=['Channeling'],
         lists=['Divine'],
-        cantrip="The spell's range becomes \\rngclose, and it deals -1d damage.",
+        cantrip="The spell deals -2d damage.",
         subspells=[
             Subspell(
                 level=2,
@@ -964,8 +956,7 @@ def generate_spells():
         schools=['Vivimancy'],
         lists=['Arcane', 'Divine', 'Nature'],
         cantrip="""
-            The spell's duration becomes Sustain (minor).
-            Its effect is still a condition, and can be removed by abilites that remove conditions.
+            You take a \minus2 penalty to accuracy with the spell.
         """,
         subspells=[
             Subspell(
@@ -1026,7 +1017,7 @@ def generate_spells():
         ),
         schools=['Vivimancy'],
         lists=['Arcane', 'Divine', 'Nature'],
-        cantrip="The spell's range becomes \\rngclose, and it deals -1d damage.",
+        cantrip="The spell deals -2d damage.",
         subspells=[
             Subspell(
                 level=3,
@@ -1067,7 +1058,7 @@ def generate_spells():
         lists=['Divine', 'Life', 'Nature'],
         cantrip="""
             Instead of healing, the spell grants \\glossterm<temporary hit points> equal to twice your spellpower.
-            The duration of the temporary hit points is Sustain (minor).
+            The duration of the temporary hit points is Sustain (minor, shared).
         """,
         subspells=[
             Subspell(
@@ -1412,7 +1403,7 @@ def generate_spells():
         ),
         schools=['Evocation'],
         lists=['Arcane'],
-        cantrip="If your attack succeeds, you move the target one foot per spellpower. In addition, the spell has no additional effects on a critical hit.",
+        cantrip="You take a -2 penalty to accuracy with the spell.",
         subspells=[
             Subspell(
                 level=2,
@@ -1564,7 +1555,7 @@ def generate_spells():
         short_description="Create bright light to blind foes and illuminate",
         # header=Header("description"),
         targeting=Targeting(
-            area='5 foot radius',
+            area='\\areamed radius',
             targets='All creatures in the area',
             rng='medium',
         ),
@@ -1587,7 +1578,7 @@ def generate_spells():
         ),
         schools=['Illusion'],
         lists=['Arcane', 'Divine', 'Nature'],
-        cantrip="The spell affects a single creature, rather than an area.",
+        cantrip="The spell affects a single target within range instead of creating a burst.",
         subspells=[
             Subspell(
                 level=2,
@@ -1763,7 +1754,7 @@ def generate_spells():
         ),
         schools=['Conjuration'],
         lists=['Arcane'],
-        cantrip="The spell's range becomes \\rngclose, and it deals -1d damage.",
+        cantrip="The spell deals -2d damage.",
         subspells=[
             Subspell(
                 level=2,
