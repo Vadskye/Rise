@@ -23,7 +23,7 @@ Any effect which increases the size of creature this spell can affect also incre
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (minor, shared).
+The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -122,8 +122,8 @@ If another ability would magically manipulate the weather in the same area, the 
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Mental}
-\spellsuccess Damage dealt to the target by \glossterm{physical attacks} is increased by \plus1d. Damage not measured in dice is unaffected.
-\spellcritical As above, but damage is increased by \plus3d instead.
+\spellsuccess At the end of each round, if the target took damage that round, it takes mental \glossterm{standard damage} \minus2d.
+\spellcritical As above, but double damage.
 \end{spellattack}
 \spelldur Condition
 \spelltags{\glossterm{Delusion}, \glossterm{Mind}}
@@ -131,19 +131,14 @@ If another ability would magically manipulate the weather in the same area, the 
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Enchantment}{Arcane, Divine}
-\fieldhead{Augments} Extended, Mass, Quickened, Silent, Stilled
-\spellnotes This damage increase applies before other effects that modify the total damage dealt, such as \glossterm{damage reduction}.
+\fieldhead{Augments} Extended, Intensified, Mass, Quickened, Silent, Stilled
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (minor).
-Its effect is still a \glossterm{condition}, and can be removed by abilites that remove conditions.
+You take a \minus2 penalty to accuracy with the spell.
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
-\subsubsection{Subspells}
-\augment{3}{Complete}
-The damage increase applies to all damage, not just damage dealt by \glossterm{physical attacks}.
 \begin{spellsection}{Antimagic}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
@@ -369,7 +364,7 @@ In addition, if the creature is an \glossterm{outsider} native to another plane,
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's range becomes \rngclose, and it deals \minus1d damage.
+The spell deals \minus2d damage.
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -419,7 +414,7 @@ In addition, it is \glossterm{vulnerable} to arcane damage.
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (minor, shared).
+The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -493,7 +488,7 @@ Creatures in the area at the time that the spell is cast are unaffected by the s
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (minor, shared).
+The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -525,7 +520,7 @@ The target gains a \plus5 bonus to the chosen skill.
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (minor, shared).
+The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -547,7 +542,7 @@ The target gains the same bonus to all chosen skills.
 \spellsuccess
 The target is \charmed by you.
 Any act by you or your apparent allies that threatens or damages the \spell{charmed} person breaks the effect.
-\spellcritical As above, but the effect's duration becomes permanent.
+\spellcritical As above, but the effect's duration becomes permanent, and it does not need to be sustained.
 \end{spellattack}
 \spelldur Sustain (minor)
 \spelltags{\glossterm{Delusion}, \glossterm{Mind}, \glossterm{Subtle}}
@@ -560,7 +555,7 @@ Any act by you or your apparent allies that threatens or damages the \spell{char
 \begin{spellsubcontent}
 \begin{spellcantrip}
 The spell has no additional effects on a critical hit.
-In addition, its duration becomes Sustain (standard).
+In addition, it loses the Subtle tag, allowing the target to know that it is being magically influenced.
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -614,8 +609,7 @@ As above, but the penalty is increased by 2.
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (minor).
-Its effect is still a condition, and can be removed by abilites that remove conditions.
+You take a \minus2 penalty to accuracy with the spell.
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -659,7 +653,7 @@ This is a \glossterm{Curse} effect.
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's range becomes \rngclose, and it deals \minus1d damage.
+The spell deals \minus2d damage.
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -717,7 +711,7 @@ The spell deals no damage.
 \begin{spellsubcontent}
 \begin{spellcantrip}
 Instead of healing, the spell grants \glossterm{temporary hit points} equal to twice your spellpower.
-The duration of the temporary hit points is Sustain (minor).
+The duration of the temporary hit points is Sustain (minor, shared).
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -770,7 +764,7 @@ Spells and other non-physical attacks suffer no miss chance.
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (minor).
+The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -880,7 +874,7 @@ The spell's attack is made against Fortitude defense instead of Reflex defense.
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (minor).
+You take a \minus2 penalty to accuracy with the spell.
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -890,7 +884,7 @@ The target is afraid of a willing ally within the spell's range instead of being
 \begin{spellsection}{Flare}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spellburst{5 foot radius}}{\spellrng{\rngmed}}
+\spelltwocol{\spellburst{\areamed radius}}{\spellrng{\rngmed}}
 \spelltgts{All creatures in the area}
 \end{spelltargetinginfo}
 \begin{spelleffects}
@@ -913,7 +907,7 @@ The target is \blinded instead.
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell affects a single creature, rather than an area.
+The spell affects a single target within range instead of creating a burst.
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -975,7 +969,7 @@ The target gains a \plus2 bonus to \glossterm{accuracy} with physical attacks.
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (minor).
+The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -1027,7 +1021,7 @@ It learns this information in the instant before it acts, and normally does not 
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's range becomes \rngclose, and it deals \minus1d damage.
+The spell deals \minus2d damage.
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -1090,7 +1084,7 @@ You increase or decrease the target's size by one size category.
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (minor).
+The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -1159,7 +1153,7 @@ The target gains damage reduction equal to your spellpower against physical effe
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (minor, shared).
+The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -1192,7 +1186,7 @@ Success means the attacker takes divine \glossterm{standard damage} \minus1d.
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell affects a 5 foot radius, and it deals \minus1d damage.
+The spell affects a single target within range instead of creating a burst.
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -1337,7 +1331,7 @@ You constantly receive sensory input from both your body and the sensor.
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's range becomes \rngclose, and it deals \minus1d damage.
+The spell deals \minus2d damage.
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -1420,7 +1414,7 @@ As above, but you move the target ten feet per spellpower instead of five feet p
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-If your attack succeeds, you move the target one foot per spellpower. In addition, the spell has no additional effects on a critical hit.
+You take a \minus2 penalty to accuracy with the spell.
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
