@@ -18,7 +18,7 @@ def by_source(spells):
 def latex_for_source(source, spells, rituals):
     spell_headers = []
     for spell in sorted(spells, key=lambda s: s.name):
-        spell_headers.append(f"\\spellhead<{spell.name}> {spell.short_description}")
+        spell_headers.append(f"\\spellhead<{spell.name}> {spell.short_description}.")
 
     ritual_headers = []
     # Sort by base_level as primary, name as secondary
