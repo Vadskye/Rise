@@ -289,10 +289,13 @@ Feats can be used to specialize your character particular area, to grant your ch
         \begin{ability}
             \begin{spelltargetinginfo}
                 \spellquicktargeting{One creature}{\rngmed}
+                \spellspecial Choose a willing creature within range of you.
             \end{spelltargetinginfo}
             \begin{spelleffects}
                 \begin{spellattack}{Perform vs. Mental}
-                    \spellsuccess The target is \taunted by a willing creature of your choice within range of you.
+                    \spellsuccess The target suffers a \minus3 penalty to \glossterm{accuracy} with attacks that do not include the chosen creature as a target.
+                    This effect immediately ends if the chosen creature is \glossterm{defeated}.
+                    \spellcritical As above, except that the penalty is increased to \minus6.
                 \end{spellattack}
                 \spelldur Sustain (minor). Sustaining this ability requires continuing the performance you started when you used this ability. If the target can neither see nor hear your performance, the effect immediately ends.
                 \spelltags{\glossterm{Delusion}, \glossterm{Mind}. In addition, this may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of the performance.}
@@ -321,7 +324,6 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[9]{Hybrid Performance} You can sustain two different \glossterm{magical} abilities from this feat or the Perform Specialization feat as part of the same \glossterm{minor action}.
 
         \ff[11]{Mass Performance} When you use your \textit{mocking performance} ability, you can target up to five creatures.
-        Each affected creature is taunted to attack the same creature.
         In addition, when you use your \textit{song of serenity} ability, you can target up to two creatures.
 
         \ff[13]{Battle Cry} As a standard action, you can spend an \glossterm{action point} to use this ability.
@@ -341,7 +343,6 @@ Feats can be used to specialize your character particular area, to grant your ch
         It suffers the normal penalties for becoming bloodied if the effect ends or it has no hit points remaining.
 
         \ff[17]{Greater Mass Performance} When you use your \textit{mocking performance} ability, you can target any number of creatures.
-        Each affected creature is taunted to attack the same creature.
         In addition, when you use your \textit{song of serenity} ability, you can target up to five creatures.
         Finally, the range of your \textit{battle cry} ability is increased to \rnglong.
 
