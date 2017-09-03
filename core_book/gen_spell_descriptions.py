@@ -814,7 +814,6 @@ def generate_spells():
             area_type='zone',
             rng='close',
             targets='Everything in the area',
-            time='minor action',
         ),
         effects=Effects(
             effect="""
