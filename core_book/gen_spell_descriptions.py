@@ -162,7 +162,7 @@ def generate_spells():
         ),
         effects=Effects(
             effect="""
-                The target gains \\glossterm<damage reduction> equal to your spellpower against damage from \\glossterm<physical attacks>.
+                The target gains \\glossterm<damage reduction> equal to your spellpower.
                 In addition, it is \\glossterm<vulnerable> to arcane damage.
             """,
             duration='Attunement (shared)',
@@ -190,11 +190,6 @@ def generate_spells():
                     """,
                     duration='Sustain (minor)',
                 ),
-            ),
-            Subspell(
-                level=3,
-                name='Complete',
-                description='The damage reduction applies against all damage, not just damage from physical attacks.',
             ),
             Subspell(
                 level=4,
@@ -1123,7 +1118,7 @@ def generate_spells():
         ),
         effects=Effects(
             special="""
-                Choose an alignment other than neutral (chaotic, good, evil, lawful).
+                Choose an alignment other than neutral (chaotic, good, evil, or lawful).
                 This spell gains the tag for that alignment's \\glossterm<opposed alignment>.
             """,
             effect="""
@@ -1331,7 +1326,7 @@ def generate_spells():
         ),
         effects=Effects(
             effect="""
-                The target gains a \plus2 bonus to \\glossterm<accuracy> with physical attacks.
+                The target gains a \plus2 bonus to \\glossterm<accuracy>.
             """,
             tags=['Enhancement'],
             duration='Attunement (shared)',
