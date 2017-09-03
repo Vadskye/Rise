@@ -1555,7 +1555,7 @@ def generate_spells():
         short_description="Create bright light to blind foes and illuminate",
         # header=Header("description"),
         targeting=Targeting(
-            area='\\areamed radius',
+            area='\\areasmall radius',
             targets='All creatures in the area',
             rng='medium',
         ),
@@ -1612,14 +1612,6 @@ def generate_spells():
                 description="""
                     The brilliant light persists as long as you spend a \\glossterm<minor action> each round to sustain it.
                     The light has no additional effects on creatures in the area.
-                """,
-            ),
-            Subspell(
-                level=2,
-                name="Expanded",
-                description="""
-                    The spell's area increases to \\areasmall.
-                    This allows the standard Widened augment to be used to expand the spell's area further.
                 """,
             ),
             Subspell(
