@@ -805,12 +805,19 @@ A character's skills describe the myriad of talents that people have.
         The Heal skill allows you to tend the wounds of others. In order to heal a creature, you must be able to see and touch it.
 
     \subsection{Accelerate Recovery}\label{Accelerate Recovery}
-        If you spend a minute tending to a character, you can make a DR 10 Heal check to accelerate its recovery.
-        Success means it recovers a quarter of its hit points, as if it had rested for half an hour.
-        For every 5 points by which you beat the DR, you increase the effective rest time by half an hour, to a maximum of two hours of rest at DR 25.
-        A character can only be treated in this way once until it rests for half an hour.
+        If you tend to a creature during a \glossterm{short rest}, you can make a DR 10 Heal check to accelerate its recovery.
+        Success means it heals hit points equal to its level instead of half its level.
+        For every 5 points by which you beat the DR, the target heals additional hit points equal to its level.
+        % For a normal creature with 5 * level HP,
+        % normal rest fully heals in 10 rests, or 50 minutes
+        % DR 10 = 1x level per rest, so 5 rests, or 25 minutes
+        % DR 15 = 2x level per rest, so 2.5 rests, or 15 minutes
+        % DR 20 = 3x level per rest, so 2 rests, or 10 minutes
+        % DR 30 = 5x level per rest, so 1 rest, or 5 minutes
 
         To accelerate a creature's recovery, you need a few items and supplies (bandages, salves, and so on) that are easy to come by in civilized areas.
+        You can tend to up to four creatures, including yourself, without penalty.
+        For every creature beyond that, you take a cumulative \minus2 penalty to your Heal check for all creatures.
 
     \subsection{First Aid}
         As a standard action, you can make a DR Heal check to stabilize a dying character (see \pcref{Dying}). The target can use your Heal check in place of its Fortitude defense to avoid dying. In addition, if your check result is at least 10, the target is partially stabilized, causing it to only make stabilization rolls once per minute.
