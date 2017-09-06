@@ -1786,6 +1786,29 @@ def generate_spells():
                     You must clearly visualize the destination's appearance, but you do not need \\glossterm<line of sight> or \\glossterm<line of effect> to your destination.
                 """,
             ),
+            Subspell(
+                level=2,
+                name="Dimensional Jaunt -- Plane of Fire",
+                description="""
+                    The spell's damage becomes fire damage.
+                    In addition, if the attack succeeds, the target is \\glossterm<ignited> as a \\glossterm<condition>.
+                """,
+            ),
+            Subspell(
+                level=4,
+                name="Dimensional Jaunt -- Plane of Earth",
+                description="""
+                    The spell's damage becomes bludgeoning damage.
+                    In addition, if the attack succeeds, the target is \\glossterm<immobilized> as a \\glossterm<condition>.
+                """,
+            ),
+            Subspell(
+                level=8,
+                name="Dimensional Jaunt -- Deep Astral Plane",
+                description="""
+                    If the attack succeeds, the target is \\glossterm<stunned> as a \\glossterm<condition>.
+                """,
+            ),
         ],
         category='damage',
     ))
