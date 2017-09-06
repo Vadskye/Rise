@@ -52,6 +52,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \featref{Celestial Heritage} & Non-evil & Gain aspects of celestial beings & Bloodline, Magical & \featpref{Celestial Heritage} \\
         \featref{Draconic Heritage} & Gain aspects of draconic power & \tdash & Bloodline & \featpref{Draconic Heritage} \\
         \featref{Iron Will} & Wil 2 & Increase mental resilience & \tdash & \featpref{Iron Will} \\
+        \featref{Regenerator} & Con 2 & Heal from wounds with inhuman speed & \tdash & \featpref{Regenerator} \\
         \featref{Toughness} & Con 2 & Increase physical fortitude & \tdash & \featpref{Toughness} \\
 
         \tb{Class Feats}\label{Class Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
@@ -1505,7 +1506,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \featpre Starting Strength of 2.
 
         \ff[1]{Sweeping Strike} As a standard action, you can spend an \glossterm{action point} to use this ability.
-        If you do, you can make a melee \glossterm{strike} against each of up to three adjacent creatures.
+        If you do, you can make a melee \glossterm{strike} against each of up to three creatures you \glossterm{threaten}.
         You take a \minus1d penalty to \glossterm{strike damage} with each strike.
 
         % TODO: this timing doesn't make sense
@@ -1535,6 +1536,31 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[16]{Whirlwind Sweep} When you use your \textit{sweeping strike} ability, you can target any number of contiguous squares you threaten.
 
         \ff[18]{Reap the Harvest} When you use your \textit{reaping charge} or and \textit{sweeping strike} abilities, if every creature you attacked is dead at the end of the round, you regain the action point spent to use the ability.
+    \end{feat}
+
+    \begin{feat}{Regenerator}{General}
+        \featpre Starting Constitution of 2.
+        \featben
+
+        \ff[1]{Fast Healing} At the end of each round, you heal hit points equal to half your Constitution.
+
+        \ff[2]{Regeneration} Whenever you take a \glossterm{short rest}, you can heal \glossterm{vital damage} equal to half your Constitution in addition to your normal healing.
+
+        \ff[4]{Diehard} You reduce your penalties from \glossterm{vital damage} by an amount equal to one quarter of your maximum hit points.
+
+        \ff[6]{Blood Tolerance} You reduce your penalties from being \glossterm{staggered} and \glossterm{bloodied} by 2.
+
+        \ff[8]{Rapid Regeneration} The healing from your \textit{regeneration} ability is applied at the end of each round, instead of when you take a short rest.
+
+        \ff[10]{Unkillable} The penalty reduction from your \textit{diehard} ability increases to be equal to half your maximum hit points.
+
+        \ff[12]{Greater Fast Healing} The healing from your \textit{fast healing} ability increases to be equal to your Constitution.
+
+        \ff[14]{Greater Blood Tolerance} You take no penalties for being \glossterm{staggered} or \glossterm{bloodied}.
+
+        \ff[16]{Greater Regeneration} The healing from your \textit{regeneration} ability increases to be equal to your Constitution.
+
+        \ff[18]{Deathless} The penalty reduction from your \textit{diehard} ability increases to be equal to three quarters of your maximum hit points.
     \end{feat}
 
     \begin{feat}{Ride Specialization}{Skill}
