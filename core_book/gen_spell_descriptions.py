@@ -1640,19 +1640,19 @@ def generate_spells():
     spells.append(Spell(
         name="Polymorph",
         short_description="Change the physical forms of objects and creatures",
-        header=Header("You change the target's physical form."),
+        header=Header("You change an ally's skin into a barklike substance, increasing its durability."),
         targeting=Targeting(
             target='One willing creature',
             rng='medium',
             time='minor action',
         ),
         effects=Effects(
-            # TODO: more explanation of what this means
             effect="""
-                You increase or decrease the target's size by one size category.
+                The target gains \\glossterm{damage reduction} equal to your spellpower against damage dealt by \\glossterm<physical attacks>.
+                In addition, it is \\glossterm<vulnerable> to fire damage.
             """,
             duration='Attunement (shared)',
-            tags=['Shaping', 'Sizing'],
+            tags=['Shaping'],
         ),
         schools=['Transmutation'],
         lists=['Arcane', 'Nature'],
@@ -1660,30 +1660,48 @@ def generate_spells():
         subspells=[
             Subspell(
                 level=2,
-                name="Barkskin",
+                name="Shrink",
+                effects=Effects(
+                    # TODO: more explanation of what this means
+                    effect="""
+                        You decrease the target's size by one size category.
+                        This decreases its \\glossterm<strike damage> and usually decreases its \\glossterm<reach> (see \\pcref<Size in Combat>).
+                    """,
+                    duration='Attunement (shared)',
+                    tags=['Shaping', 'Sizing'],
+                ),
+            ),
+            Subspell(
+                level=3,
+                name="Grow",
+                effects=Effects(
+                    # TODO: more explanation of what this means
+                    effect="""
+                        You increase the target's size by one size category.
+                        This increases its \\glossterm<strike damage> and usually increases its \\glossterm<reach> (see \\pcref<Size in Combat>).
+                    """,
+                    duration='Attunement (shared)',
+                    tags=['Shaping', 'Sizing'],
+                ),
+            ),
+            Subspell(
+                level=3,
+                name="Alter Appearance",
                 effects=Effects(
                     effect="""
-                        The target gains \\glossterm{damage reduction} equal to your spellpower against damage dealt by \\glossterm<physical attacks>.
-                        In addition, it is \\glossterm<vulnerable> to fire damage.
+                        You can also make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).
+                        You gain a +5 bonus on the check, and you ignore penalties for changing the target's gender, race, subtype, or age.
+                        However, this effect is unable to alter the target's clothes or equipment in any way.
                     """,
                     duration='Attunement (shared)',
                     tags=['Shaping'],
                 ),
             ),
             Subspell(
-                level=3,
-                name="Alter Appearance",
-                description="""
-                    You can also make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).
-                    You gain a +5 bonus on the check, and you ignore penalties for changing the target's gender, race, subtype, or age.
-                    However, this effect is unable to alter the target's clothes or equipment in any way.
-                """,
-            ),
-            Subspell(
-                level=3,
+                level=2,
                 name="Stoneskin",
                 description="""
-                    This subspell functions like the \\textit<barkskin> subspell, except that the target is \\glossterm<vulnerable> to damage from adamantine weapons instead of fire damage.
+                    The target is \\glossterm<vulnerable> to damage from adamantine weapons instead of fire damage.
                 """,
             ),
             Subspell(
