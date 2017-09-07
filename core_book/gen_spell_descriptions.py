@@ -240,15 +240,24 @@ def generate_spells():
         category='buff, defense',
     ))
     spells.append(Spell(
-        name='Create Acid',
-        short_description="Create acid to damage foes",
-        header=Header('You create a magical orb of acid in your hand that speeds to its target.'),
+        name='Fabrication',
+        short_description="Create objects to damage and impair foes",
+        header=Header("You conjure acid from thin air onto a foe's flesh"),
         targeting=Targeting(
             target='One creature or object',
             rng='medium',
         ),
         effects=Effects(
-            attack=Attack.damage('Reflex', 'acid'),
+            attack=Attack(
+                defense='Fortitude',
+                success="""
+                    Acid \\glossterm<standard damage> +1d.
+                """,
+                critical="""
+                    As above, but double damage.
+                    In addition, the target is \\glossterm<sickened> as a \\glossterm<condition>.
+                """,
+            ),
             tags=['Acid', 'Manifestation'],
         ),
         schools=['Conjuration'],
@@ -261,12 +270,57 @@ def generate_spells():
                 description='The spell deals double damage to objects.'
             ),
             Subspell(
-                level=4,
+                level=5,
                 name='Lingering',
                 description="""
-                    The acid deals half damage on initial impact.
-                    However, it deals damage to the target again at the end of each round for 2 rounds, including the initial round.
+                    The spell deals -3d damage.
+                    However, the damage deals its damage again at the end of every round after the first.
+                    This is a \\glossterm<condition>, and lasts until removed.
                 """,
+            ),
+            Subspell(
+                level=2,
+                name="Web",
+                targeting=Targeting(
+                    area='\\areasmall radius',
+                    area_type='zone',
+                    rng='close',
+                    targets='Everything in the area',
+                ),
+                effects=Effects(
+                    effect="""
+                        The area becomes filled with webs, making it \\glossterm<difficult terrain>.
+                        Each 5-ft.\\ square of webbing has hit points equal to your spellpower, and is \\glossterm<vulnerable> to fire.
+                    """,
+                    attack=Attack(
+                        defense='Reflex',
+                        success="The target is \\immobilized as long as it has webbing from this spell in its space."
+                    ),
+                    duration='Sustain (minor)',
+                    tags=['Manifestation'],
+                ),
+            ),
+            Subspell(
+                level=4,
+                name="Reinforced Webbing",
+                description="""
+                    This subspell functions like the \\textit<web> subspell, except that each 5-ft.\\ square of webbing gains additional hit points equal to your spellpower.
+                    In addition, the webs are no longer \\glossterm<vulnerable> to fire damage.
+                """,
+            ),
+            Subspell(
+                level=2,
+                name="Poison",
+                effects=Effects(
+                    effect="""
+                        At the end of each round, you make a Spellpower vs. Fortitude attack against the target.
+                        Success means the target takes poison damage equal to your spellpower.
+                        If this is the second successful attack, the target also becomes \\glossterm<sickened>.
+                        If this is the third successful attack, the target becomes \\glossterm<nauseated> instead of sickened.
+                    """,
+                    duration='Condition',
+                    tags=['Manifestation', 'Poison'],
+                ),
             ),
         ],
         category='damage',
@@ -613,7 +667,7 @@ def generate_spells():
                         You create up to one gallon of wholesome, drinkable water.
                         The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
                     """,
-                    tags=['Creation', 'Water'],
+                    tags=['Manifestation', 'Water'],
                 ),
             ),
             Subspell(
@@ -796,73 +850,6 @@ def generate_spells():
             ),
         ],
         category='buff, utility',
-    ))
-    spells.append(Spell(
-        name="Web",
-        short_description="Create thick webs to ensnare foes",
-        header=Header("""
-            You create a many-layered mass of strong, stricky strands that trap creatures caught within them.
-            The strands are similar to spider webs, but larger and tougher.
-        """),
-        targeting=Targeting(
-            area='\\areasmall radius',
-            area_type='zone',
-            rng='close',
-            targets='Everything in the area',
-        ),
-        effects=Effects(
-            effect="""
-                The area becomes filled with webs, making it \\glossterm<difficult terrain>.
-                Each 5-ft.\\ square of webbing has hit points equal to your spellpower, and is \\glossterm<vulnerable> to fire.
-            """,
-            attack=Attack(
-                defense='Reflex',
-                success="The target is \\immobilized as long as it has webbing from this spell in its space."
-            ),
-            duration='Sustain (minor)',
-            tags=['Manifestation'],
-        ),
-        schools=['Conjuration'],
-        lists=['Arcane', 'Nature'],
-        cantrip="The spell's duration becomes Sustain (standard).",
-        subspells=[
-            Subspell(
-                level=3,
-                name="Reinforced",
-                description="""
-                    Each 5-ft.\\ square of webbing gains additional hit points equal to your spellpower.
-                    In addition, the webs are no longer vulnerable to fire.
-                """,
-            ),
-        ],
-        category='debuff, mobility',
-    ))
-    spells.append(Spell(
-        name="Poison",
-        short_description="Create poison to debilitate foes",
-        header=Header("You weaken your foe with a potent poison."),
-        targeting=Targeting(
-            target='One living creature',
-            rng='close',
-        ),
-        effects=Effects(
-            effect="""
-                At the end of each round, you make a Spellpower vs. Fortitude attack against the target.
-                Success means the target takes poison damage equal to your spellpower.
-                If this is the second successful attack, the target takes a -2 penalty to \\glossterm<accuracy>, \\glossterm<checks>, and \\glossterm<defenses>.
-                If this is the third successful attack, the penalty increases to -5.
-            """,
-            duration='Condition',
-            tags=['Poison'],
-        ),
-        schools=['Transmutation'],
-        lists=['Destruction', 'Divine', 'Nature'],
-        cantrip="""
-            The spell does not have additional effects other than damage.
-        """,
-        subspells=[
-        ],
-        category='debuff, combat',
     ))
     spells.append(Spell(
         name='Cryomancy',
@@ -1640,29 +1627,62 @@ def generate_spells():
     spells.append(Spell(
         name="Polymorph",
         short_description="Change the physical forms of objects and creatures",
-        header=Header("You change an ally's skin into a barklike substance, increasing its durability."),
+        header=Header("You shape the ground into an animated spike that drives into a foe."),
         targeting=Targeting(
-            target='One willing creature',
+            target='One creature or object',
             rng='medium',
-            time='minor action',
         ),
         effects=Effects(
-            effect="""
-                The target gains \\glossterm{damage reduction} equal to your spellpower against damage dealt by \\glossterm<physical attacks>.
-                In addition, it is \\glossterm<vulnerable> to fire damage.
-            """,
-            duration='Attunement (shared)',
-            tags=['Shaping'],
+            attack=Attack(
+                defense='Reflex',
+                success='Piercing \\glossterm<standard damage> +1d.',
+                critical='As above, but double damage.',
+            ),
+            tags=['Physical', 'Shaping'],
         ),
         schools=['Transmutation'],
         lists=['Arcane', 'Nature'],
-        cantrip="The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).",
+        cantrip="The spell deals -2d damage.",
         subspells=[
             Subspell(
                 level=2,
-                name="Shrink",
+                name="Barkskin",
+                targeting=Targeting(
+                    target='One willing creature',
+                    rng='medium',
+                    time='minor action',
+                ),
                 effects=Effects(
-                    # TODO: more explanation of what this means
+                    effect="""
+                        The target gains \\glossterm{damage reduction} equal to your spellpower against damage dealt by \\glossterm<physical attacks>.
+                        In addition, it is \\glossterm<vulnerable> to fire damage.
+                    """,
+                    duration='Attunement (shared)',
+                ),
+            ),
+            Subspell(
+                level=3,
+                name="Stoneskin",
+                description="""
+                    This subspell functions like the \\textit<barkskin> subspell, except that the target is \\glossterm<vulnerable> to damage from adamantine weapons instead of fire damage.
+                """,
+            ),
+            Subspell(
+                level=7,
+                name="Ironskin",
+                description="""
+                    This subspell functions like the \\textit<stoneskin> subspell, except that the damage reduction is equal to twice your spellpower.
+                """,
+            ),
+            Subspell(
+                level=2,
+                name="Shrink",
+                targeting=Targeting(
+                    target='One willing creature (Small or larger)',
+                    rng='medium',
+                    time='minor action',
+                ),
+                effects=Effects(
                     effect="""
                         You decrease the target's size by one size category.
                         This decreases its \\glossterm<strike damage> and usually decreases its \\glossterm<reach> (see \\pcref<Size in Combat>).
@@ -1673,9 +1693,13 @@ def generate_spells():
             ),
             Subspell(
                 level=3,
-                name="Grow",
+                name="Enlarge",
+                targeting=Targeting(
+                    target='One willing creature (Large or smaller)',
+                    rng='medium',
+                    time='minor action',
+                ),
                 effects=Effects(
-                    # TODO: more explanation of what this means
                     effect="""
                         You increase the target's size by one size category.
                         This increases its \\glossterm<strike damage> and usually increases its \\glossterm<reach> (see \\pcref<Size in Combat>).
@@ -1687,9 +1711,14 @@ def generate_spells():
             Subspell(
                 level=3,
                 name="Alter Appearance",
+                targeting=Targeting(
+                    target='One willing creature (Large or smaller)',
+                    rng='medium',
+                    time='minor action',
+                ),
                 effects=Effects(
                     effect="""
-                        You can also make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).
+                        You make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).
                         You gain a +5 bonus on the check, and you ignore penalties for changing the target's gender, race, subtype, or age.
                         However, this effect is unable to alter the target's clothes or equipment in any way.
                     """,
@@ -1698,15 +1727,8 @@ def generate_spells():
                 ),
             ),
             Subspell(
-                level=2,
-                name="Stoneskin",
-                description="""
-                    The target is \\glossterm<vulnerable> to damage from adamantine weapons instead of fire damage.
-                """,
-            ),
-            Subspell(
                 level=4,
-                name="Fabricate",
+                name="Craft Object",
                 targeting=Targeting(
                     targets='One or more unattended, nonmagical objects (Large or smaller); see text',
                     rng='close',
@@ -1723,18 +1745,33 @@ def generate_spells():
                 ),
             ),
             Subspell(
-                level=7,
-                name="Ironskin",
+                level=4,
+                name="Impaling",
+                description="""
+                    If the attack succeeds, the target is \\glossterm<immobilized> as a \\glossterm<condition>.
+                """,
+            ),
+            Subspell(
+                level=6,
+                name="Disintegrate",
                 effects=Effects(
-                    effect="""
-                        The target gains \\glossterm{damage reduction} equal to twice your spellpower against damage dealt by \\glossterm<physical attacks>.
-                    """,
-                    duration='Attunement (shared)',
+                    attack=Attack(
+                        defense='Fortitude',
+                        success="""
+                            Physical \\glossterm<standard damage> +1d.
+                            In addition, if the target has no hit points remaining, it dies.
+                            Its body is completely disintegrated, leaving behind only a pinch of fine dust.
+                            Its equipment is unaffected.
+                        """,
+                        critical="""
+                            As above, but double damage.
+                        """,
+                    ),
                     tags=['Shaping'],
                 ),
             ),
         ],
-        category='buff, offense',
+        category='damage',
     ))
 
     spells.append(Spell(
