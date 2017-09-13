@@ -271,6 +271,34 @@ def generate_spells():
             ),
             Subspell(
                 level=5,
+                name="Meteor",
+                targeting=Targeting(
+                    rng='long',
+                    area='\\areamed radius cylinder, 100 ft\. high',
+                    targets='Everything in the area',
+                ),
+                effects=Effects(
+                    effect="""
+                        A meteor appears in midair at the top of the area and slams through the area, striking everything in it before disappearing.
+                        The meteor is a sphere with the same radius as the area.
+                        The distance that the meteor falls does not affect the damage dealt, but it must not share space with any creature or object when it is created.
+                        If it does, this ability fails without effect.
+                    """,
+                    attack=Attack.multi_damage('Reflex', 'bludgeoning and fire'),
+                    tags=['Manifestation'],
+                ),
+            ),
+            Subspell(
+                level=8,
+                name="Meteor Swarm",
+                description="""
+                    This subspell functions like the \\textit<meteor> subspell, except that you can target up to five different areas within range with separate meteors.
+                    The areas affected by two different meteors cannot overlap.
+                    If one of the meteors is created in an invalid area, that meteor is not created, but the others are created and dealt their damage normally.
+                """,
+            ),
+            Subspell(
+                level=5,
                 name='Lingering',
                 description="""
                     The spell deals -3d damage.
@@ -324,41 +352,6 @@ def generate_spells():
             ),
         ],
         category='damage',
-    ))
-    # Math: at 1st level, spellpower is probably ~2, so standard damage is probably 2d6.
-    # Casting this spell and then two standard damage spells deals 4d6+2d8 = 23 damage
-    # casting three standard damage spells deals 6d6 = 21 damage
-    # So when fighting alone, this takes 3 rounds of effectiveness to be equal
-    # in power to a simple damage spell.
-
-    # At 20th level, spellpower is ~22, so standard damage is 9d10
-    # Casting this spell and then two standard damage spells deals 18d10+7d10=25d10
-    # Casting three standard damage spells deals 27d10
-    spells.append(Spell(
-        name='Agony',
-        short_description="Inflict debilitating pain on foes",
-        header=Header('You inflict debilitating pain on your foe'),
-        targeting=Targeting(
-            target='One creature',
-            rng='close',
-        ),
-        effects=Effects(
-            attack=Attack(
-                defense='Mental',
-                success="At the end of each round, if the target took damage that round, it takes mental \\glossterm<standard damage> -2d.",
-                critical="As above, but double damage.",
-            ),
-            duration='Condition',
-            tags=['Delusion', 'Mind'],
-        ),
-        schools=['Enchantment'],
-        lists=['Arcane', 'Divine'],
-        cantrip="""
-            You take a -2 penalty to accuracy with the spell.
-        """,
-        subspells=[
-        ],
-        category='debuff, combat',
     ))
     spells.append(Spell(
         name='Antimagic',
@@ -563,83 +556,6 @@ def generate_spells():
         category='damage',
     ))
     spells.append(Spell(
-        name="Charm Person",
-        short_description="Manipulate minds so creatures think fondly of you",
-        header=Header("You manipulate a person's mind so they think of you as a trusted friend and ally."),
-        targeting=Targeting(
-            target='One humanoid creature',
-            rng='close',
-        ),
-        effects=Effects(
-            attack=Attack(
-                defense='Mental',
-                special="If the target thinks that you or your allies are threatening it, you take a -5 penalty to accuracy on the attack.",
-                success="""
-                    The target is \\charmed by you.
-                    Any act by you or your apparent allies that threatens or damages the \\spell<charmed> person breaks the effect.
-                """,
-                critical="As above, but the effect's duration becomes permanent, and it does not need to be sustained.",
-            ),
-            duration='Sustain (minor)',
-            tags=['Delusion', 'Mind', 'Subtle'],
-        ),
-        cantrip="""
-            The spell has no additional effects on a critical hit.
-            In addition, it loses the Subtle tag, allowing the target to know that it is being magically influenced.
-        """,
-        schools=['Enchantment'],
-        lists=["Arcane"],
-        subspells=[
-            Subspell(
-                level=2,
-                name="Silent",
-                description="""
-                    The spell does not require verbal components to cast.
-                """,
-            ),
-            Subspell(
-                level=3,
-                name="Monstrous",
-                description="""
-                    The spell can target creatures of any creature type.
-                """,
-            ),
-            Subspell(
-                level=4,
-                name="Endless",
-                description="""
-                    The spell's duration becomes Attunement.
-                    A critical sucess still makes the effect permanent.
-                """,
-            ),
-            Subspell(
-                level=5,
-                name="Dominating",
-                effects=Effects(
-                    attack=Attack(
-                        defense='Mental',
-                        success='The target is \\confused for 2 rounds.',
-                        critical="""
-                            The target is \\dominated for 2 rounds.
-                            If the target was already dominated by you, this effect lasts for 24 hours instead.
-                        """,
-                    ),
-                    tags=['Compulsion', 'Mind'],
-                ),
-            ),
-            Subspell(
-                level=5,
-                name="Amnesia",
-                description="""
-                    When the spell ends, the target forgets all events that transpired during the spell's duration.
-                    It becomes aware of its surroundings as if waking up from a daydream.
-                    It is not directly aware of any magical influence on its mind, though unusually paranoid or perceptive creatures may deduce that their minds were affected.
-                """,
-            ),
-        ],
-        category='narrative',
-    ))
-    spells.append(Spell(
         name="Aquamancy",
         short_description="Command water to crush and drown foes",
         header=Header("You create a wave of water to crush your foes."),
@@ -726,8 +642,8 @@ def generate_spells():
         category='damage',
     ))
     spells.append(Spell(
-        name="Fear",
-        short_description="Terrify foes",
+        name="Emotion",
+        short_description="Instill false emotions to influence creatures",
         header=Header("You terrify your foe."),
         targeting=Targeting(
             target='One creature',
@@ -755,6 +671,159 @@ def generate_spells():
                 description="""
                     The target is afraid of a willing ally within the spell's range instead of being afraid of you.
                 """,
+            ),
+            # Math: at 1st level, spellpower is probably ~2, so standard damage is probably 2d6.
+            # Casting this spell and then two standard damage spells deals 4d6+2d8 = 23 damage
+            # casting three standard damage spells deals 6d6 = 21 damage
+            # So when fighting alone, this takes 3 rounds of effectiveness to be equal
+            # in power to a simple damage spell.
+
+            # At 20th level, spellpower is ~22, so standard damage is 9d10
+            # Casting this spell and then two standard damage spells deals 18d10+7d10=25d10
+            # Casting three standard damage spells deals 27d10
+            Subspell(
+                level=2,
+                name="Agony",
+                effects=Effects(
+                    attack=Attack(
+                        defense='Mental',
+                        success="At the end of each round, if the target took damage that round, it takes mental \\glossterm<standard damage> -2d.",
+                        critical="As above, but double damage.",
+                    ),
+                    duration='Condition',
+                    tags=['Delusion', 'Mind'],
+                ),
+            ),
+            Subspell(
+                level=3,
+                name="Charm",
+                effects=Effects(
+                    attack=Attack(
+                        defense='Mental',
+                        special="If the target thinks that you or your allies are threatening it, you take a -5 penalty to accuracy on the attack.",
+                        success="""
+                            The target is \\charmed by you.
+                            Any act by you or your apparent allies that threatens or damages the \\spell<charmed> person breaks the effect.
+                        """,
+                        critical="As above, but this ability's duration becomes Attunement instead of Sustain (swift).",
+                    ),
+                    duration='Attunement',
+                    tags=['Delusion', 'Mind', 'Subtle'],
+                ),
+            ),
+            Subspell(
+                level=7,
+                name="Amnesiac Charm",
+                description="""
+                    This subspell functions like the \\textit<charm> subspell, except that when the spell ends, the target forgets all events that transpired during the spell's duration.
+                    It becomes aware of its surroundings as if waking up from a daydream.
+                    The target is not directly aware of any magical influence on its mind, though unusually paranoid or perceptive creatures may deduce that their minds were affected.
+                """,
+            ),
+        ],
+        category='debuff, combat',
+    ))
+    spells.append(Spell(
+        name="Compel",
+        short_description="Bend creatures to your will by controlling their actions",
+        header=Header("Compel a foe to freeze in place."),
+        targeting=Targeting(
+            target='One creature',
+            rng='medium',
+        ),
+        effects=Effects(
+            attack=Attack(
+                defense='Mental',
+                success="The target is \\immobilized.",
+                critical="""
+                    The target is \\immobilized twice by two separate conditions.
+                    Each condition must be removed independently.
+                """,
+            ),
+            tags=['Compulsion', 'Mind'],
+            duration='Condition',
+        ),
+        schools=['Enchantment'],
+        lists=['Arcane', 'Divine'],
+        cantrip="""
+            You take a -2 penalty to accuracy with the spell.
+        """,
+        subspells=[
+            Subspell(
+                level=4,
+                name="Sleep",
+                effects=Effects(
+                    attack=Attack(
+                        defense='Mental',
+                        success="The target is \\blinded.",
+                        critical="""
+                            The target falls asleep.
+                            It cannot be awakened by any means while the spell lasts.
+                            After that time, it can wake up normally, though it continues to sleep until it would wake up naturally.
+                        """,
+                        special="This ability's effect can be removed by effects which remove \\glossterm<conditions>.",
+                    ),
+                    tags=['Compulsion', 'Mind'],
+                    duration='Sustain (minor)',
+                ),
+            ),
+            Subspell(
+                level=2,
+                name="Confusion",
+                effects=Effects(
+                    attack=Attack(
+                        defense='Mental',
+                        success="The target is \\disoriented.",
+                        critical="The target is \\confused.",
+                    ),
+                    tags=['Compulsion', 'Mind'],
+                    duration='Condition',
+                ),
+            ),
+            Subspell(
+                level=3,
+                name="Dance",
+                effects=Effects(
+                    attack=Attack(
+                        defense='Mental',
+                        success="""
+                            The target is compelled to dance.
+                            It can spend a \\glossterm<minor action> or standard action to dance, if it is physically capable of dancing.
+                            Whenever it takes a minor action or standard action in a round where it has not danced, it takes mental \\glossterm<standard damage> +1d.
+
+                            Regardless of whether the target dances, it takes a -2 penalty to \\glossterm<physical defenses> due to its limited control over its limbs.
+                        """,
+                        critical="""
+                            As above, except that dancing as a minor action does not prevent the target from taking damage.
+                            Only dancing as a standard action can prevent the target from taking damage.
+                        """,
+                    ),
+                    tags=['Compulsion', 'Mind'],
+                    duration='Condition',
+                ),
+            ),
+            Subspell(
+                level=9,
+                name="Irresistible Dance",
+                description="""
+                    This subspell functions like the \\textit<dance> subspell, except that you gain a +4 bonus to accuracy on the attack.
+                """,
+            ),
+            Subspell(
+                level=5,
+                name="Dominate",
+                effects=Effects(
+                    attack=Attack(
+                        defense='Mental',
+                        success='The target is \\glossterm<confused>.',
+                        critical="""
+                            The target is \\glossterm<dominated> by you.
+                            If the target was already dominated by you, this ability's duration becomes Attunement instead of Sustain (minor).
+                        """,
+                    ),
+                    duration='Sustain (minor)',
+                    tags=['Compulsion', 'Mind'],
+                ),
             ),
         ],
         category='debuff, combat',
@@ -810,46 +879,11 @@ def generate_spells():
                     targets='Creatures in the area that do not worship your deity',
                 ),
                 effects=Effects(
-                    attack=Attack.damage('Mental', 'divine')
+                    attack=Attack.multi_damage('Mental', 'divine')
                 ),
             ),
         ],
         category='damage',
-    ))
-    spells.append(Spell(
-        name="Boon of Mastery",
-        short_description="Grant skill bonuses",
-        header=Header("You grant your ally great mastery over a particular domain."),
-        targeting=Targeting(
-            target='One willing creature',
-            rng='close',
-            time='minor action',
-        ),
-        effects=Effects(
-            special="""
-                When you cast this spell, choose a skill.
-                You must have mastered the chosen skill.
-            """,
-            effect="""
-                The target gains a +5 bonus to the chosen skill.
-            """,
-            duration='Attunement (shared)',
-            tags=['Enhancement'],
-        ),
-        schools=['Transmutation'],
-        lists=['Arcane', 'Divine', 'Nature'],
-        cantrip="The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).",
-        subspells=[
-            Subspell(
-                level=4,
-                name="Myriad",
-                description="""
-                    You may choose an additional skill that you have mastered as you cast the spell.
-                    The target gains the same bonus to all chosen skills.
-                """,
-            ),
-        ],
-        category='buff, utility',
     ))
     spells.append(Spell(
         name='Cryomancy',
@@ -903,6 +937,22 @@ def generate_spells():
         cantrip="The spell's area becomes a 5 ft\\. wide \\areamed line.",
         subspells=[
             Subspell(
+                level=3,
+                name="Forked Lightning",
+                description="""
+                    You create two separate areas instead of one.
+                    The two areas can overlap, but targets in the overlapping area are only affected once.
+                """,
+            ),
+            Subspell(
+                level=5,
+                name="Shocking",
+                description="""
+                    On a hit, the target is \\glossterm<dazed> as a \\glossterm<condition>.
+                    On a critical hit, the target is \\glossterm<stunned> instead of dazed.
+                """,
+            ),
+            Subspell(
                 level=4,
                 name="Instantaneous",
                 description="""
@@ -916,7 +966,7 @@ def generate_spells():
     spells.append(Spell(
         name="Corruption",
         short_description="Weaken the life force of foes, reducing their combat prowess",
-        header=Header("You corrupt your foe's life force, weakening them."),
+        header=Header("You corrupt your foe's life force, weakening it."),
         targeting=Targeting(
             target='One living creature',
             rng='close',
@@ -925,10 +975,12 @@ def generate_spells():
             attack=Attack(
                 defense='Fortitude',
                 success="""
-                    The target takes a -2 penalty to \\glossterm<accuracy>, \\glossterm<checks>, and \\glossterm<defenses>.
+                    The target is \\glossterm<sickened>.
+                    In addition, it takes life \\glossterm<standard damage> -3d whenever it takes a \\glossterm<standard action>.
                 """,
                 critical="""
-                    As above, but the penalty is increased by 2.
+                    The target is \\glossterm<nauseated>.
+                    In addition, it takes life \\glossterm<standard damage> whenever it takes a \\glossterm<standard action>.
                 """,
             ),
             duration='Condition',
@@ -937,7 +989,7 @@ def generate_spells():
         schools=['Vivimancy'],
         lists=['Arcane', 'Divine', 'Nature'],
         cantrip="""
-            You take a \minus2 penalty to accuracy with the spell.
+            You take a -2 penalty to accuracy with the spell.
         """,
         subspells=[
             Subspell(
@@ -948,7 +1000,7 @@ def generate_spells():
                 """,
             ),
             Subspell(
-                level=3,
+                level=4,
                 name="Finger of Death",
                 description="""
                     If the spell's attack critically hits, the target immediately dies.
@@ -956,12 +1008,19 @@ def generate_spells():
                 tags=['Death'],
             ),
             Subspell(
-                level=5,
+                level=3,
                 name="Corruption of Blood and Bone",
                 description="""
-                    If the spell's attack succeeds, at the end of each round, the target takes life damage equal to your spellpower.
-                    The target's maximum hit points are reduced by the amount of damage it takes in this way.
+                    Whenever the target takes damage from this spell, its maximum hit points are reduced by the same amount.
                     When the spell ends, the target's maximum hit points are restored.
+                """,
+            ),
+            Subspell(
+                level=5,
+                name="Cripple",
+                description="""
+                    On a hit, the target is also \\glossterm<immobilized> as part of the same condition.
+                    On a \\glossterm<critical hit>, the target is \\glossterm<paralyzed> instead of immobilized.
                 """,
             ),
             Subspell(
@@ -974,32 +1033,61 @@ def generate_spells():
                     This is a \\glossterm<Curse> effect.
                 """,
             ),
-            Subspell(
-                level=4,
-                name="Empowered",
-                description="""
-                    The penalty increases by 1.
-                """,
-            ),
         ],
         category='debuff, combat',
     ))
     spells.append(Spell(
-        name="Inflict Wounds",
-        short_description="Cause injuries to appear from nowhere",
+        name="Vital Surge",
+        short_description="Alter life energy to cure or inflict wounds",
         # header=Header("description"),
         targeting=Targeting(
             target='One creature',
             rng='medium',
         ),
         effects=Effects(
-            attack=Attack.damage('Fortitude', 'life'),
+            special="""
+                When you cast this spell, you choose whether the target is healed or takes damage.
+            """,
+            attack=Attack(
+                defense='Fortitude',
+                success="The target heals hit points or takes life damage equal to \\glossterm<standard damage> +1d.",
+                critical="As above, except that if you chose damage, the spell deals double damage.",
+            ),
             tags=['Life'],
         ),
         schools=['Vivimancy'],
         lists=['Arcane', 'Divine', 'Nature'],
-        cantrip="The spell deals -2d damage.",
+        cantrip="You cannot choose for the spell to heal the target, and the spell deals -2d damage.",
         subspells=[
+            Subspell(
+                level=2,
+                name="Undead Bane",
+                description="""
+                    If the target is undead, the spell gains a +2 bonus to accuracy.
+                """,
+            ),
+            Subspell(
+                level=2,
+                name="Cure Wounds",
+                description="""
+                    You cannot choose for the spell to deal damage.
+                    In addition, for every 10 points of healing you provide, you can also heal one point of \\glossterm<vital damage>.
+                """,
+            ),
+            Subspell(
+                level=3,
+                name="Cure Serious Wounds",
+                description="""
+                    This subspell functions like the \\textit<cure wounds> subspell, except that it heals one point of vital damage for every 5 points of healing instead of for every 10.
+                """,
+            ),
+            Subspell(
+                level=4,
+                name="Cure Critical Wounds",
+                description="""
+                    This subspell functions like the \\textit<cure wounds> subspell, except that it heals one point of vital damage for every 2 points of healing instead of for every 10.
+                """,
+            ),
             Subspell(
                 level=3,
                 name="Drain Life",
@@ -1017,58 +1105,49 @@ def generate_spells():
                 """,
                 tags=['Death'],
             ),
-        ],
-        category='damage',
-    ))
-    spells.append(Spell(
-        name="Cure Wounds",
-        short_description="Heal the wounds of allies",
-        # header=Header("description"),
-        targeting=Targeting(
-            target='One creature',
-            rng='medium',
-        ),
-        effects=Effects(
-            attack=Attack(
-                defense='Fortitude',
-                success="The target is healed for hit points equal to \\glossterm<standard damage> +1d.",
-            ),
-            tags=['Life'],
-        ),
-        schools=['Vivimancy'],
-        lists=['Divine', 'Life', 'Nature'],
-        cantrip="""
-            Instead of healing, the spell grants \\glossterm<temporary hit points> equal to twice your spellpower.
-            The duration of the temporary hit points is Sustain (minor, shared).
-        """,
-        subspells=[
-            Subspell(
-                level=2,
-                name="Moderate Wounds",
-                description="""
-                    For every 5 points of healing, this spell can instead cure 1 vital damage.
-                """,
-            ),
-            Subspell(
-                level=2,
-                name="Undead Bane",
-                description="""
-                    If the target is undead, the spell gains a +2 bonus to accuracy and deals double damage on a critical hit.
-                """,
-            ),
             Subspell(
                 level=3,
-                name="Serious Wounds",
-                description="""
-                    For every 2 points of healing, this spell can instead cure 1 vital damage.
-                """,
+                name="Circle of Death",
+                targeting=Targeting(
+                    area='\\areamed radius from you',
+                    area_type='emanation',
+                    targets='Enemies in the area',
+                ),
+                effects=Effects(
+                    effect="""
+                        At the end of each round, you make an attack against all targets to deal damage.
+                    """,
+                    attack=Attack(
+                        defense='Mental',
+                        success="""
+                            The target takes life \\glossterm<standard damage> -3d.
+                        """,
+                    ),
+                    duration='Sustain (minor)',
+                    tags=['Life'],
+                ),
             ),
             Subspell(
                 level=4,
-                name="Critical Wounds",
-                description="""
-                    For every point of healing, this spell can instead cure 1 vital damage.
-                """,
+                name="Circle of Healing",
+                targeting=Targeting(
+                    area='\\areamed radius from you',
+                    area_type='emanation',
+                    targets='Allies in the area',
+                ),
+                effects=Effects(
+                    effect="""
+                        At the end of each round, you make an attack against all targets to heal them.
+                    """,
+                    attack=Attack(
+                        defense='Mental',
+                        success="""
+                            The target heals hit points equal to \\glossterm<standard damage> -3d.
+                        """,
+                    ),
+                    duration='Sustain (minor)',
+                    tags=['Life'],
+                ),
             ),
             Subspell(
                 level=3,
@@ -1092,7 +1171,7 @@ def generate_spells():
                 ),
             ),
         ],
-        category='damage',  # kinda
+        category='damage',
     ))
     spells.append(Spell(
         name="Protection from Alignment",
@@ -1156,7 +1235,7 @@ def generate_spells():
                 As a move action, it can move as you direct.
                 As a standard action, it can make a melee \glossterm{strike} against a creature it threatens.
                 Its accuracy is equal to your spellpower.
-                If it hits, it deals \\glossterm<standard damage> \minus2d.
+                If it hits, it deals \\glossterm<standard damage> -2d.
                 The type of damage dealt by this attack depends on the creature's appearance.
                 Most animals bite or claw their foes, which deals bludgeoning and slashing damage.
             """,
@@ -1303,8 +1382,8 @@ def generate_spells():
         category='narrative',
     ))
     spells.append(Spell(
-        name="Foresight",
-        short_description="Grant visions of the future, improving combat prowess",
+        name="Revelation",
+        short_description="Share visions of the present and future, granting insight or combat prowess",
         header=Header("You grant a creature the ability to see fractions of a second into the future."),
         targeting=Targeting(
             target="One willing creature",
@@ -1322,6 +1401,44 @@ def generate_spells():
         lists=['Arcane', 'Divine', 'Nature'],
         cantrip="The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).",
         subspells=[
+            Subspell(
+                level=2,
+                name="Discern Lies",
+                targeting=Targeting(
+                    area='\\areamed radius from you',
+                    area_type='emanation',
+                    targets='All creatures in the area',
+                ),
+                effects=Effects(
+                    effect="""
+                        You know when the target deliberately and knowingly speaks a lie.
+                        This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
+                    """,
+                    tags='Detection',
+                    duration='Attunement',
+                ),
+            ),
+            Subspell(
+                level=3,
+                name="Boon of Mastery",
+                description="""
+                    The target also gains a +2 bonus to all skills.
+                """,
+            ),
+            Subspell(
+                level=7,
+                name="Greater Boon of Mastery",
+                description="""
+                    This subspell functions like the \\textit<boon of mastery> subspell, except that the skill bonus is increased to +5.
+                """,
+            ),
+            Subspell(
+                level=4,
+                name="Boon of Knowledge",
+                description="""
+                    The target also gains a +5 bonus to all Knowledge skills (see \\pcref<Knowledge>).
+                """,
+            ),
             Subspell(
                 level=3,
                 name="Augury",
@@ -1350,6 +1467,13 @@ def generate_spells():
                         After using this subspell, you cannot cast it again until the hour affected by the previous casting is over, regardless of whether the action was taken.
                     """,
                 ),
+            ),
+            Subspell(
+                level=5,
+                name="Third Eye",
+                description="""
+                    The target also gains \\glossterm<blindsight> out to a 100 foot range, allowing it to see perfectly without any light, regardless of concealment or invisibility.
+                """,
             ),
             Subspell(
                 level=7,
@@ -1453,8 +1577,8 @@ def generate_spells():
         effects=Effects(
             effect="""
                 The target's physical outline is distorted so it appears blurred, shifting, and wavering.
-                Targeted physical attacks against the target have a 20\\% miss chance.
-                Spells and other non-physical attacks suffer no miss chance.
+                It gains a +2 bonus to \\glossterm<physical defenses> and Stealth (see \\pcref<Stealth>).
+                This provides no defensive benefit against creatures immune to \\glossterm<Visual> abilities.
             """,
             duration='Attunement (shared)',
             tags=['Glamer', 'Visual'],
@@ -1496,7 +1620,7 @@ def generate_spells():
                 ),
             ),
             Subspell(
-                level=3,
+                level=2,
                 name="Mirror Image",
                 effects=Effects(
                     effect="""
@@ -1505,26 +1629,34 @@ def generate_spells():
 
                         All targeted attacks against the target have a 50\\% miss chance.
                         Whenever an attack misses in this way, it affects an image, destroying it.
+                        This ability provides no defensive benefit against creatures immune to \\glossterm<Visual> abilities.
                     """,
-                    duration='Sustain (minor)',
+                    duration='Attunement (shared)',
                     tags=['Figment', 'Visual'],
                 ),
             ),
             Subspell(
-                level=4,
-                name="Shadow Mantle",
+                level=5,
+                name="Greater Mirror Image",
                 description="""
-                    The spell's deceptive nature extends beyond merely altering light to affect the nature of reality itself.
-                    The spell's miss chance changes to a failure chance, and applies to non-physical attacks as well as physical attacks.
-                    In addition, it loses the \\glossterm<Visual> tag, allowing it to affect creatures who do not rely on sight to affect the target.
+                    This subspell functions like the \\textit<mirror image> subspell, except that you regain a destroyed mirror image at the end of every round, to a maximum of four images.
                 """,
             ),
             Subspell(
-                level=5,
+                level=3,
+                name="Shadow Mantle",
+                description="""
+                    The spell's deceptive nature extends beyond merely altering light to affect the nature of reality itself.
+                    The defense bonus applies to all defenses, not just physical defenses.
+                    In addition, the spell loses the \\glossterm<Visual> tag, and can protect against attacks from creatures immune to Visual abilities.
+                """,
+            ),
+            Subspell(
+                level=7,
                 name="Displacement",
                 description="""
                     The target's image is futher distorted, and appears to be two to three feet from its real location.
-                    The spell's miss chance increases to 50\\%.
+                    Targeted \\glossterm<physical attacks> against the target suffer a 50\\% miss chance.
                 """,
             ),
         ],
@@ -1551,7 +1683,7 @@ def generate_spells():
                     The target is \\dazzled.
                 """,
                 critical="""
-                    The target is \\blinded instead.
+                    The target is \\blinded.
                 """,
             ),
             duration='Condition',
@@ -1561,6 +1693,27 @@ def generate_spells():
         lists=['Arcane', 'Divine', 'Nature'],
         cantrip="The spell affects a single target within range instead of creating a burst.",
         subspells=[
+            Subspell(
+                level=3,
+                name="Kaleidoscopic",
+                effects=Effects(
+                    effect="""
+                        A brilliant, rapidly shifting rainbow of lights appear in the area until the end of the round.
+                        They illuminate a 100 foot radius around the area with bright light.
+                    """,
+                    attack=Attack(
+                        defense='Mental',
+                        success="""
+                            The target is \\disoriented.
+                        """,
+                        critical="""
+                            The target is \\confused.
+                        """,
+                    ),
+                    duration='Condition',
+                    tags=['Figment', 'Light', 'Mind', 'Visual'],
+                ),
+            ),
             Subspell(
                 level=2,
                 name="Dancing Lights",
@@ -1593,22 +1746,6 @@ def generate_spells():
                 description="""
                     The brilliant light persists as long as you spend a \\glossterm<minor action> each round to sustain it.
                     The light has no additional effects on creatures in the area.
-                """,
-            ),
-            Subspell(
-                level=5,
-                name="Universal",
-                description="""
-                    The light radiates from every point in the area simultaneously, making it impossible to avoid.
-                    The spell's attack is made against Fortitude instead of Reflex.
-                """,
-            ),
-            Subspell(
-                level=5,
-                name="Blinding",
-                description="""
-                    The spell's critical effect makes the target \\blinded as a condition, rather than just for one round.
-                    In addition, the blindness replaces the spell's normal success effect, rather than being applied in addition to it.
                 """,
             ),
             Subspell(
@@ -1848,6 +1985,87 @@ def generate_spells():
             ),
         ],
         category='damage',
+    ))
+    spells.append(Spell(
+        name="Chronomancy",
+        short_description="Manipulate the passage of time to inhibit foes and aid allies",
+        header=Header("You slow a foe's passage through time, inhibiting its actions."),
+        targeting=Targeting(
+            target='One creature',
+            rng='medium',
+        ),
+        effects=Effects(
+            attack=Attack(
+                defense='Mental',
+                success="""
+                    The target is \\glossterm<slowed> and \\glossterm<dazed>.
+                """,
+                critical="""
+                    the target is \\glossterm<immobilized> and \\glossterm<dazed>.
+                """,
+            ),
+            tags=['Temporal'],
+            duration='Condition',
+        ),
+        schools=['Transmutation'],
+        lists=['Arcane'],
+        cantrip="""
+            You take a -2 penalty to accuracy with the spell.
+        """,
+        subspells=[
+            Subspell(
+                level=2,
+                name="Haste",
+                targeting=Targeting(
+                    target='One willing creature',
+                    rng='medium',
+                    time='minor action',
+                ),
+                effects=Effects(
+                    effect="""
+                        The target gains a +30 foot bonus to its speed in all its movement modes, up to a maximum of double its original speed.
+                    """,
+                    tags=['Temporal'],
+                    duration='Attunement',
+                ),
+            ),
+            Subspell(
+                level=4,
+                name="Delay Damage",
+                targeting=Targeting(
+                    target='You',
+                    time='minor action',
+                ),
+                effects=Effects(
+                    effect="""
+                        Whenever you take damage, half of the damage (rounded down) is not dealt to you immediately.
+                        This damage is tracked separately.
+                        When the ends, you take all of the delayed damage at once.
+                        When this happens, any damage in excess of your hit points is dealt as \\glossterm<vital damage>.
+                    """,
+                    tags=['Temporal'],
+                    duration='Sustain (minor)',
+                ),
+            ),
+            Subspell(
+                level=9,
+                name="Time Stop",
+                targeting=Targeting(
+                    target='You',
+                ),
+                effects=Effects(
+                    effect="""
+                        You can take two full rounds of actions immediately.
+                        During this time, all other creatures and objects are fixed in time, and cannot be moved or altered by any effect.
+                        You can still affect yourself and create areas or new effects.
+
+                        You are still vulnerable to danger, such as from heat or dangerous gases. However, you cannot be detected by any means while you travel.
+                    """,
+                    tags=['Temporal'],
+                ),
+            ),
+        ],
+        category='debuff, combat',
     ))
 
     return sorted(spells, key=lambda spell: spell.name)

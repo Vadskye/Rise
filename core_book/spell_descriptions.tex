@@ -112,33 +112,6 @@ If another ability would magically manipulate the weather in the same area, the 
 \spelltags{\glossterm{Air}}
 \end{augmenteffects}
 \end{spellcontent}
-\begin{spellsection}{Agony}
-\begin{spellheader}
-\spelldesc{You inflict debilitating pain on your foe}
-\end{spellheader}
-\begin{spellcontent}
-\begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngclose}}
-\end{spelltargetinginfo}
-\begin{spelleffects}
-\begin{spellattack}{Spellpower vs. Mental}
-\spellsuccess At the end of each round, if the target took damage that round, it takes mental \glossterm{standard damage} \minus2d.
-\spellcritical As above, but double damage.
-\end{spellattack}
-\spelldur Condition
-\spelltags{\glossterm{Delusion}, \glossterm{Mind}}
-\end{spelleffects}
-\end{spellcontent}
-\begin{spellfooter}
-\spellinfo{Enchantment}{Arcane, Divine}
-\fieldhead{Augments} Extended, Intensified, Mass, Quickened, Silent, Stilled
-\end{spellfooter}
-\begin{spellsubcontent}
-\begin{spellcantrip}
-You take a \minus2 penalty to accuracy with the spell.
-\end{spellcantrip}
-\end{spellsubcontent}
-\end{spellsection}
 \begin{spellsection}{Antimagic}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
@@ -306,7 +279,7 @@ Replace the spell's targets and effects with the following:
 \spelleffect
 You create up to one gallon of wholesome, drinkable water.
 The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
-\spelltags{\glossterm{Creation}, \glossterm{Water}}
+\spelltags{\glossterm{Manifestation}, \glossterm{Water}}
 \end{augmenteffects}
 \end{spellcontent}
 \augment{3}{Aqueous Blade}
@@ -369,6 +342,9 @@ The spell deals \minus2d damage.
 \end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
+\augment{2}{Dimensional Jaunt -- Plane of Fire}
+The spell's damage becomes fire damage.
+In addition, if the attack succeeds, the target is \glossterm{ignited} as a \glossterm{condition}.
 \augment{2}{Teleport}
 Replace the spell's targets and effects with the following:
 \begin{spellcontent}
@@ -391,6 +367,11 @@ Replace the spell's targets with the following:
 \spelltgt{You}
 \end{augmenttargetinginfo}
 \end{spellcontent}
+\augment{4}{Dimensional Jaunt -- Plane of Earth}
+The spell's damage becomes bludgeoning damage.
+In addition, if the attack succeeds, the target is \glossterm{immobilized} as a \glossterm{condition}.
+\augment{8}{Dimensional Jaunt -- Deep Astral Plane}
+If the attack succeeds, the target is \glossterm{stunned} as a \glossterm{condition}.
 \begin{spellsection}{Barrier}
 \begin{spellheader}
 \spelldesc{You create a barrier around your ally that resists physical intrusion.}
@@ -493,116 +474,27 @@ The spell's casting time becomes a standard action, and its duration becomes Sus
 \subsubsection{Subspells}
 \augment{6}{Protection}
 The target gains \glossterm{damage reduction} equal to your spellpower against all damage.
-\begin{spellsection}{Boon of Mastery}
+\begin{spellsection}{Chronomancy}
 \begin{spellheader}
-\spelldesc{You grant your ally great mastery over a particular domain.}
+\spelldesc{You slow a foe's passage through time, inhibiting its actions.}
 \end{spellheader}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One willing creature}}{\spellrng{\rngclose}}
-\spelltime{minor action}
-\end{spelltargetinginfo}
-\begin{spelleffects}
-\spellspecial
-When you cast this spell, choose a skill.
-You must have mastered the chosen skill.
-\spelleffect
-The target gains a \plus5 bonus to the chosen skill.
-\spelldur Attunement (shared)
-\spelltags{\glossterm{Enhancement}}
-\end{spelleffects}
-\end{spellcontent}
-\begin{spellfooter}
-\spellinfo{Transmutation}{Arcane, Divine, Nature}
-\fieldhead{Augments} Extended, Quickened, Silent, Stilled
-\end{spellfooter}
-\begin{spellsubcontent}
-\begin{spellcantrip}
-The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).
-\end{spellcantrip}
-\end{spellsubcontent}
-\end{spellsection}
-\subsubsection{Subspells}
-\augment{4}{Myriad}
-You may choose an additional skill that you have mastered as you cast the spell.
-The target gains the same bonus to all chosen skills.
-\begin{spellsection}{Charm Person}
-\begin{spellheader}
-\spelldesc{You manipulate a person's mind so they think of you as a trusted friend and ally.}
-\end{spellheader}
-\begin{spellcontent}
-\begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One humanoid creature}}{\spellrng{\rngclose}}
+\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Mental}
-\spellspecial If the target thinks that you or your allies are threatening it, you take a \minus5 penalty to accuracy on the attack.
 \spellsuccess
-The target is \charmed by you.
-Any act by you or your apparent allies that threatens or damages the \spell{charmed} person breaks the effect.
-\spellcritical As above, but the effect's duration becomes permanent, and it does not need to be sustained.
-\end{spellattack}
-\spelldur Sustain (minor)
-\spelltags{\glossterm{Delusion}, \glossterm{Mind}, \glossterm{Subtle}}
-\end{spelleffects}
-\end{spellcontent}
-\begin{spellfooter}
-\spellinfo{Enchantment}{Arcane}
-\fieldhead{Augments} Extended, Mass, Quickened, Silent, Stilled
-\end{spellfooter}
-\begin{spellsubcontent}
-\begin{spellcantrip}
-The spell has no additional effects on a critical hit.
-In addition, it loses the Subtle tag, allowing the target to know that it is being magically influenced.
-\end{spellcantrip}
-\end{spellsubcontent}
-\end{spellsection}
-\subsubsection{Subspells}
-\augment{2}{Silent}
-The spell does not require verbal components to cast.
-\augment{3}{Monstrous}
-The spell can target creatures of any creature type.
-\augment{4}{Endless}
-The spell's duration becomes Attunement.
-A critical sucess still makes the effect permanent.
-\augment{5}{Amnesia}
-When the spell ends, the target forgets all events that transpired during the spell's duration.
-It becomes aware of its surroundings as if waking up from a daydream.
-It is not directly aware of any magical influence on its mind, though unusually paranoid or perceptive creatures may deduce that their minds were affected.
-\augment{5}{Dominating}
-Replace the spell's effects with the following:
-\begin{spellcontent}
-\begin{augmenteffects}
-\begin{spellattack}{Spellpower vs. Mental}
-\spellsuccess The target is \confused for 2 rounds.
+The target is \glossterm{slowed} and \glossterm{dazed}.
 \spellcritical
-The target is \dominated for 2 rounds.
-If the target was already dominated by you, this effect lasts for 24 hours instead.
-\end{spellattack}
-\spelltags{\glossterm{Compulsion}, \glossterm{Mind}}
-\end{augmenteffects}
-\end{spellcontent}
-\begin{spellsection}{Corruption}
-\begin{spellheader}
-\spelldesc{You corrupt your foe's life force, weakening them.}
-\end{spellheader}
-\begin{spellcontent}
-\begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngclose}}
-\end{spelltargetinginfo}
-\begin{spelleffects}
-\begin{spellattack}{Spellpower vs. Fortitude}
-\spellsuccess
-The target takes a \minus2 penalty to \glossterm{accuracy}, \glossterm{checks}, and \glossterm{defenses}.
-\spellcritical
-As above, but the penalty is increased by 2.
+the target is \glossterm{immobilized} and \glossterm{dazed}.
 \end{spellattack}
 \spelldur Condition
-\spelltags{\glossterm{Life}}
+\spelltags{\glossterm{Temporal}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
-\spellinfo{Vivimancy}{Arcane, Divine, Nature}
+\spellinfo{Transmutation}{Arcane}
 \fieldhead{Augments} Extended, Mass, Quickened, Silent, Stilled
 \end{spellfooter}
 \begin{spellsubcontent}
@@ -612,55 +504,192 @@ You take a \minus2 penalty to accuracy with the spell.
 \end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
+\augment{2}{Haste}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgt{One willing creature}}{\spellrng{\rngmed}}
+\spelltime{minor action}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+The target gains a \plus30 foot bonus to its speed in all its movement modes, up to a maximum of double its original speed.
+\spelldur Attunement
+\spelltags{\glossterm{Temporal}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{4}{Delay Damage}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltgt{You}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+Whenever you take damage, half of the damage (rounded down) is not dealt to you immediately.
+This damage is tracked separately.
+When the ends, you take all of the delayed damage at once.
+When this happens, any damage in excess of your hit points is dealt as \glossterm{vital damage}.
+\spelldur Sustain (minor)
+\spelltags{\glossterm{Temporal}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{9}{Time Stop}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltgt{You}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+You can take two full rounds of actions immediately.
+During this time, all other creatures and objects are fixed in time, and cannot be moved or altered by any effect.
+You can still affect yourself and create areas or new effects.
+You are still vulnerable to danger, such as from heat or dangerous gases. However, you cannot be detected by any means while you travel.
+\spelltags{\glossterm{Temporal}}
+\end{augmenteffects}
+\end{spellcontent}
+\begin{spellsection}{Compel}
+\begin{spellheader}
+\spelldesc{Compel a foe to freeze in place.}
+\end{spellheader}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
+\end{spelltargetinginfo}
+\begin{spelleffects}
+\begin{spellattack}{Spellpower vs. Mental}
+\spellsuccess The target is \immobilized.
+\spellcritical
+The target is \immobilized twice by two separate conditions.
+Each condition must be removed independently.
+\end{spellattack}
+\spelldur Condition
+\spelltags{\glossterm{Compulsion}, \glossterm{Mind}}
+\end{spelleffects}
+\end{spellcontent}
+\begin{spellfooter}
+\spellinfo{Enchantment}{Arcane, Divine}
+\fieldhead{Augments} Extended, Mass, Quickened, Silent, Stilled
+\end{spellfooter}
+\begin{spellsubcontent}
+\begin{spellcantrip}
+You take a \minus2 penalty to accuracy with the spell.
+\end{spellcantrip}
+\end{spellsubcontent}
+\end{spellsection}
+\subsubsection{Subspells}
+\augment{2}{Confusion}
+Replace the spell's effects with the following:
+\begin{spellcontent}
+\begin{augmenteffects}
+\begin{spellattack}{Spellpower vs. Mental}
+\spellsuccess The target is \disoriented.
+\spellcritical The target is \confused.
+\end{spellattack}
+\spelldur Condition
+\spelltags{\glossterm{Compulsion}, \glossterm{Mind}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{3}{Dance}
+Replace the spell's effects with the following:
+\begin{spellcontent}
+\begin{augmenteffects}
+\begin{spellattack}{Spellpower vs. Mental}
+\spellsuccess
+The target is compelled to dance.
+It can spend a \glossterm{minor action} or standard action to dance, if it is physically capable of dancing.
+Whenever it takes a minor action or standard action in a round where it has not danced, it takes mental \glossterm{standard damage} \plus1d.
+Regardless of whether the target dances, it takes a \minus2 penalty to \glossterm{physical defenses} due to its limited control over its limbs.
+\spellcritical
+As above, except that dancing as a minor action does not prevent the target from taking damage.
+Only dancing as a standard action can prevent the target from taking damage.
+\end{spellattack}
+\spelldur Condition
+\spelltags{\glossterm{Compulsion}, \glossterm{Mind}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{4}{Sleep}
+Replace the spell's effects with the following:
+\begin{spellcontent}
+\begin{augmenteffects}
+\begin{spellattack}{Spellpower vs. Mental}
+\spellspecial This ability's effect can be removed by effects which remove \glossterm{conditions}.
+\spellsuccess The target is \blinded.
+\spellcritical
+The target falls asleep.
+It cannot be awakened by any means while the spell lasts.
+After that time, it can wake up normally, though it continues to sleep until it would wake up naturally.
+\end{spellattack}
+\spelldur Sustain (minor)
+\spelltags{\glossterm{Compulsion}, \glossterm{Mind}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{5}{Dominate}
+Replace the spell's effects with the following:
+\begin{spellcontent}
+\begin{augmenteffects}
+\begin{spellattack}{Spellpower vs. Mental}
+\spellsuccess The target is \glossterm{confused}.
+\spellcritical
+The target is \glossterm{dominated} by you.
+If the target was already dominated by you, this ability's duration becomes Attunement instead of Sustain (minor).
+\end{spellattack}
+\spelldur Sustain (minor)
+\spelltags{\glossterm{Compulsion}, \glossterm{Mind}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{9}{Irresistible Dance}
+This subspell functions like the \textit{dance} subspell, except that you gain a \plus4 bonus to accuracy on the attack.
+\begin{spellsection}{Corruption}
+\begin{spellheader}
+\spelldesc{You corrupt your foe's life force, weakening it.}
+\end{spellheader}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngclose}}
+\end{spelltargetinginfo}
+\begin{spelleffects}
+\begin{spellattack}{Spellpower vs. Fortitude}
+\spellsuccess
+The target is \glossterm{sickened}.
+In addition, it takes life \glossterm{standard damage} \minus3d whenever it takes a \glossterm{standard action}.
+\spellcritical
+The target is \glossterm{nauseated}.
+In addition, it takes life \glossterm{standard damage} whenever it takes a \glossterm{standard action}.
+\end{spellattack}
+\spelldur Condition
+\spelltags{\glossterm{Life}}
+\end{spelleffects}
+\end{spellcontent}
+\begin{spellfooter}
+\spellinfo{Vivimancy}{Arcane, Divine, Nature}
+\fieldhead{Augments} Extended, Intensified, Mass, Quickened, Silent, Stilled
+\end{spellfooter}
+\begin{spellsubcontent}
+\begin{spellcantrip}
+You take a \minus2 penalty to accuracy with the spell.
+\end{spellcantrip}
+\end{spellsubcontent}
+\end{spellsection}
+\subsubsection{Subspells}
+\augment{3}{Corruption of Blood and Bone}
+Whenever the target takes damage from this spell, its maximum hit points are reduced by the same amount.
+When the spell ends, the target's maximum hit points are restored.
 \augment{3}{Eyebite}
 If the spell's attack hits, the target is also \dazzled. If it critically hits, the target is \blinded instead of dazzled.
-\augment{3}{Finger of Death}
+\augment{4}{Finger of Death}
 If the spell's attack critically hits, the target immediately dies.
 \par
 This is a \glossterm{Death} effect.
-\augment{4}{Empowered}
-The penalty increases by 1.
-\augment{5}{Corruption of Blood and Bone}
-If the spell's attack succeeds, at the end of each round, the target takes life damage equal to your spellpower.
-The target's maximum hit points are reduced by the amount of damage it takes in this way.
-When the spell ends, the target's maximum hit points are restored.
+\augment{5}{Cripple}
+On a hit, the target is also \glossterm{immobilized} as part of the same condition.
+On a \glossterm{critical hit}, the target is \glossterm{paralyzed} instead of immobilized.
 \augment{6}{Corrupting Curse}
 The spell's attack is made against Mental defense instead of Fortitude defense.
 In addition, if it critically hits, the spell's effect becomes a permanent curse.
 It is no longer a condition, and cannot be removed by abilities that remove conditions.
 This is a \glossterm{Curse} effect.
-\begin{spellsection}{Create Acid}
-\begin{spellheader}
-\spelldesc{You create a magical orb of acid in your hand that speeds to its target.}
-\end{spellheader}
-\begin{spellcontent}
-\begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
-\end{spelltargetinginfo}
-\begin{spelleffects}
-\begin{spellattack}{Spellpower vs. Reflex}
-\spellsuccess Acid \glossterm{standard damage} \plus1d.
-\spellcritical As above, but double damage.
-\end{spellattack}
-\spelltags{\glossterm{Acid}, \glossterm{Manifestation}}
-\end{spelleffects}
-\end{spellcontent}
-\begin{spellfooter}
-\spellinfo{Conjuration}{Arcane}
-\fieldhead{Augments} Extended, Intensified, Mass, Quickened, Silent, Stilled
-\end{spellfooter}
-\begin{spellsubcontent}
-\begin{spellcantrip}
-The spell deals \minus2d damage.
-\end{spellcantrip}
-\end{spellsubcontent}
-\end{spellsection}
-\subsubsection{Subspells}
-\augment{3}{Corrosive}
-The spell deals double damage to objects.
-\augment{4}{Lingering}
-The acid deals half damage on initial impact.
-However, it deals damage to the target again at the end of each round for 2 rounds, including the initial round.
 \begin{spellsection}{Cryomancy}
 \begin{spellheader}
 \spelldesc{You drain the heat from an area, creating a field of extreme cold.}
@@ -690,57 +719,6 @@ The spell deals no damage.
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
-\begin{spellsection}{Cure Wounds}
-\begin{spellcontent}
-\begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
-\end{spelltargetinginfo}
-\begin{spelleffects}
-\begin{spellattack}{Spellpower vs. Fortitude}
-\spellsuccess The target is healed for hit points equal to \glossterm{standard damage} \plus1d.
-\end{spellattack}
-\spelltags{\glossterm{Life}}
-\end{spelleffects}
-\end{spellcontent}
-\begin{spellfooter}
-\spellinfo{Vivimancy}{Divine, Life, Nature}
-\fieldhead{Augments} Extended, Intensified, Mass, Quickened, Silent, Stilled
-\end{spellfooter}
-\begin{spellsubcontent}
-\begin{spellcantrip}
-Instead of healing, the spell grants \glossterm{temporary hit points} equal to twice your spellpower.
-The duration of the temporary hit points is Sustain (minor, shared).
-\end{spellcantrip}
-\end{spellsubcontent}
-\end{spellsection}
-\subsubsection{Subspells}
-\augment{2}{Moderate Wounds}
-For every 5 points of healing, this spell can instead cure 1 vital damage.
-\augment{2}{Restore Senses}
-Replace the spell's effects with the following:
-\begin{spellcontent}
-\begin{augmenteffects}
-\spelleffect
-One of the target's physical senses, such as sight or hearing, is restored to full capacity.
-This can heal both magical and mundane conditions, but it cannot completely replace missing body parts required for a sense to function (such as missing eyes).
-\spelltags{\glossterm{Flesh}}
-\end{augmenteffects}
-\end{spellcontent}
-\augment{2}{Undead Bane}
-If the target is undead, the spell gains a \plus2 bonus to accuracy and deals double damage on a critical hit.
-\augment{3}{Remove Disease}
-Replace the spell's effects with the following:
-\begin{spellcontent}
-\begin{augmenteffects}
-\spelleffect
-All diseases affecting the target are removed.
-\spelltags{\glossterm{Flesh}}
-\end{augmenteffects}
-\end{spellcontent}
-\augment{3}{Serious Wounds}
-For every 2 points of healing, this spell can instead cure 1 vital damage.
-\augment{4}{Critical Wounds}
-For every point of healing, this spell can instead cure 1 vital damage.
 \begin{spellsection}{Distort Image}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
@@ -750,8 +728,8 @@ For every point of healing, this spell can instead cure 1 vital damage.
 \begin{spelleffects}
 \spelleffect
 The target's physical outline is distorted so it appears blurred, shifting, and wavering.
-Targeted physical attacks against the target have a 20\% miss chance.
-Spells and other non-physical attacks suffer no miss chance.
+It gains a \plus2 bonus to \glossterm{physical defenses} and Stealth (see \pcref{Stealth}).
+This provides no defensive benefit against creatures immune to \glossterm{Visual} abilities.
 \spelldur Attunement (shared)
 \spelltags{\glossterm{Glamer}, \glossterm{Visual}}
 \end{spelleffects}
@@ -783,6 +761,20 @@ Any effect or object which blocks light also blocks this spell's emanation.
 \spelltags{\glossterm{Glamer}, \glossterm{Light}}
 \end{augmenteffects}
 \end{spellcontent}
+\augment{2}{Mirror Image}
+Replace the spell's effects with the following:
+\begin{spellcontent}
+\begin{augmenteffects}
+\spelleffect
+Four illusory duplicates appear around the target that mirror its every move.
+The duplicates shift chaotically in its space, making it difficult to identify the real creature.
+All targeted attacks against the target have a 50\% miss chance.
+Whenever an attack misses in this way, it affects an image, destroying it.
+This ability provides no defensive benefit against creatures immune to \glossterm{Visual} abilities.
+\spelldur Attunement (shared)
+\spelltags{\glossterm{Figment}, \glossterm{Visual}}
+\end{augmenteffects}
+\end{spellcontent}
 \augment{3}{Disguise Image}
 Replace the spell's effects with the following:
 \begin{spellcontent}
@@ -795,26 +787,15 @@ However, this effect is unable to alter the sound, smell, texture, or temperatur
 \spelltags{\glossterm{Glamer}, \glossterm{Visual}}
 \end{augmenteffects}
 \end{spellcontent}
-\augment{3}{Mirror Image}
-Replace the spell's effects with the following:
-\begin{spellcontent}
-\begin{augmenteffects}
-\spelleffect
-Four illusory duplicates appear around the target that mirror its every move.
-The duplicates shift chaotically in its space, making it difficult to identify the real creature.
-All targeted attacks against the target have a 50\% miss chance.
-Whenever an attack misses in this way, it affects an image, destroying it.
-\spelldur Sustain (minor)
-\spelltags{\glossterm{Figment}, \glossterm{Visual}}
-\end{augmenteffects}
-\end{spellcontent}
-\augment{4}{Shadow Mantle}
+\augment{3}{Shadow Mantle}
 The spell's deceptive nature extends beyond merely altering light to affect the nature of reality itself.
-The spell's miss chance changes to a failure chance, and applies to non-physical attacks as well as physical attacks.
-In addition, it loses the \glossterm{Visual} tag, allowing it to affect creatures who do not rely on sight to affect the target.
-\augment{5}{Displacement}
+The defense bonus applies to all defenses, not just physical defenses.
+In addition, the spell loses the \glossterm{Visual} tag, and can protect against attacks from creatures immune to Visual abilities.
+\augment{5}{Greater Mirror Image}
+This subspell functions like the \textit{mirror image} subspell, except that you regain a destroyed mirror image at the end of every round, to a maximum of four images.
+\augment{7}{Displacement}
 The target's image is futher distorted, and appears to be two to three feet from its real location.
-The spell's miss chance increases to 50\%.
+Targeted \glossterm{physical attacks} against the target suffer a 50\% miss chance.
 \begin{spellsection}{Electromancy}
 \begin{spellheader}
 \spelldesc{You create a bolt of electricity that fries your foes.}
@@ -845,10 +826,16 @@ The spell's area becomes a 5 ft\. wide \areamed line.
 \end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
+\augment{3}{Forked Lightning}
+You create two separate areas instead of one.
+The two areas can overlap, but targets in the overlapping area are only affected once.
 \augment{4}{Instantaneous}
 The lightning bolt created by the spell is faster, but less penetrating.
 The spell's attack is made against Fortitude defense instead of Reflex defense.
-\begin{spellsection}{Fear}
+\augment{5}{Shocking}
+On a hit, the target is \glossterm{dazed} as a \glossterm{condition}.
+On a critical hit, the target is \glossterm{stunned} instead of dazed.
+\begin{spellsection}{Emotion}
 \begin{spellheader}
 \spelldesc{You terrify your foe.}
 \end{spellheader}
@@ -877,8 +864,133 @@ You take a \minus2 penalty to accuracy with the spell.
 \end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
+\augment{2}{Agony}
+Replace the spell's effects with the following:
+\begin{spellcontent}
+\begin{augmenteffects}
+\begin{spellattack}{Spellpower vs. Mental}
+\spellsuccess At the end of each round, if the target took damage that round, it takes mental \glossterm{standard damage} \minus2d.
+\spellcritical As above, but double damage.
+\end{spellattack}
+\spelldur Condition
+\spelltags{\glossterm{Delusion}, \glossterm{Mind}}
+\end{augmenteffects}
+\end{spellcontent}
 \augment{2}{Redirected}
 The target is afraid of a willing ally within the spell's range instead of being afraid of you.
+\augment{3}{Charm}
+Replace the spell's effects with the following:
+\begin{spellcontent}
+\begin{augmenteffects}
+\begin{spellattack}{Spellpower vs. Mental}
+\spellspecial If the target thinks that you or your allies are threatening it, you take a \minus5 penalty to accuracy on the attack.
+\spellsuccess
+The target is \charmed by you.
+Any act by you or your apparent allies that threatens or damages the \spell{charmed} person breaks the effect.
+\spellcritical As above, but this ability's duration becomes Attunement instead of Sustain (swift).
+\end{spellattack}
+\spelldur Attunement
+\spelltags{\glossterm{Delusion}, \glossterm{Mind}, \glossterm{Subtle}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{7}{Amnesiac Charm}
+This subspell functions like the \textit{charm} subspell, except that when the spell ends, the target forgets all events that transpired during the spell's duration.
+It becomes aware of its surroundings as if waking up from a daydream.
+The target is not directly aware of any magical influence on its mind, though unusually paranoid or perceptive creatures may deduce that their minds were affected.
+\begin{spellsection}{Fabrication}
+\begin{spellheader}
+\spelldesc{You conjure acid from thin air onto a foe's flesh}
+\end{spellheader}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
+\end{spelltargetinginfo}
+\begin{spelleffects}
+\begin{spellattack}{Spellpower vs. Fortitude}
+\spellsuccess
+Acid \glossterm{standard damage} \plus1d.
+\spellcritical
+As above, but double damage.
+In addition, the target is \glossterm{sickened} as a \glossterm{condition}.
+\end{spellattack}
+\spelltags{\glossterm{Acid}, \glossterm{Manifestation}}
+\end{spelleffects}
+\end{spellcontent}
+\begin{spellfooter}
+\spellinfo{Conjuration}{Arcane}
+\fieldhead{Augments} Extended, Intensified, Mass, Quickened, Silent, Stilled
+\end{spellfooter}
+\begin{spellsubcontent}
+\begin{spellcantrip}
+The spell deals \minus2d damage.
+\end{spellcantrip}
+\end{spellsubcontent}
+\end{spellsection}
+\subsubsection{Subspells}
+\augment{2}{Poison}
+Replace the spell's effects with the following:
+\begin{spellcontent}
+\begin{augmenteffects}
+\spelleffect
+At the end of each round, you make a Spellpower vs. Fortitude attack against the target.
+Success means the target takes poison damage equal to your spellpower.
+If this is the second successful attack, the target also becomes \glossterm{sickened}.
+If this is the third successful attack, the target becomes \glossterm{nauseated} instead of sickened.
+\spelldur Condition
+\spelltags{\glossterm{Manifestation}, \glossterm{Poison}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{2}{Web}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spellzone{\areasmall radius}}{\spellrng{\rngclose}}
+\spelltgts{Everything in the area}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+The area becomes filled with webs, making it \glossterm{difficult terrain}.
+Each 5-ft.\ square of webbing has hit points equal to your spellpower, and is \glossterm{vulnerable} to fire.
+\begin{spellattack}{Spellpower vs. Reflex}
+\spellsuccess The target is \immobilized as long as it has webbing from this spell in its space.
+\end{spellattack}
+\spelldur Sustain (minor)
+\spelltags{\glossterm{Manifestation}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{3}{Corrosive}
+The spell deals double damage to objects.
+\augment{4}{Reinforced Webbing}
+This subspell functions like the \textit{web} subspell, except that each 5-ft.\ square of webbing gains additional hit points equal to your spellpower.
+In addition, the webs are no longer \glossterm{vulnerable} to fire damage.
+\augment{5}{Lingering}
+The spell deals \minus3d damage.
+However, the damage deals its damage again at the end of every round after the first.
+This is a \glossterm{condition}, and lasts until removed.
+\augment{5}{Meteor}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spellburst{\areamed radius cylinder, 100 ft\. high}}{\spellrng{\rnglong}}
+\spelltgts{Everything in the area}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+A meteor appears in midair at the top of the area and slams through the area, striking everything in it before disappearing.
+The meteor is a sphere with the same radius as the area.
+The distance that the meteor falls does not affect the damage dealt, but it must not share space with any creature or object when it is created.
+If it does, this ability fails without effect.
+\begin{spellattack}{Spellpower vs. Reflex}
+\spellsuccess Bludgeoning and fire \glossterm{standard damage} \minus1d.
+\spellcritical As above, but double damage.
+\end{spellattack}
+\spelltags{\glossterm{Manifestation}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{8}{Meteor Swarm}
+This subspell functions like the \textit{meteor} subspell, except that you can target up to five different areas within range with separate meteors.
+The areas affected by two different meteors cannot overlap.
+If one of the meteors is created in an invalid area, that meteor is not created, but the others are created and dealt their damage normally.
 \begin{spellsection}{Flare}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
@@ -893,7 +1005,7 @@ It illuminates a 100 foot radius around the area with bright light.
 \spellsuccess
 The target is \dazzled.
 \spellcritical
-The target is \blinded instead.
+The target is \blinded.
 \end{spellattack}
 \spelldur Condition
 \spelltags{\glossterm{Figment}, \glossterm{Light}, \glossterm{Visual}}
@@ -932,86 +1044,45 @@ This allows observers to see their location, though not to see them perfectly.
 \augment{3}{Illuminating}
 The brilliant light persists as long as you spend a \glossterm{minor action} each round to sustain it.
 The light has no additional effects on creatures in the area.
+\augment{3}{Kaleidoscopic}
+Replace the spell's effects with the following:
+\begin{spellcontent}
+\begin{augmenteffects}
+\spelleffect
+A brilliant, rapidly shifting rainbow of lights appear in the area until the end of the round.
+They illuminate a 100 foot radius around the area with bright light.
+\begin{spellattack}{Spellpower vs. Mental}
+\spellsuccess
+The target is \disoriented.
+\spellcritical
+The target is \confused.
+\end{spellattack}
+\spelldur Condition
+\spelltags{\glossterm{Figment}, \glossterm{Light}, \glossterm{Mind}, \glossterm{Visual}}
+\end{augmenteffects}
+\end{spellcontent}
 \augment{4}{Flashbang}
 An intense sound accompanies the flash of light caused by the spell.
 If the spell's attack is successful, the target is also \deafened as a condition.
 This is an \glossterm{Auditory}, \glossterm{Figment} effect.
-\augment{5}{Blinding}
-The spell's critical effect makes the target \blinded as a condition, rather than just for one round.
-In addition, the blindness replaces the spell's normal success effect, rather than being applied in addition to it.
-\augment{5}{Universal}
-The light radiates from every point in the area simultaneously, making it impossible to avoid.
-The spell's attack is made against Fortitude instead of Reflex.
-\begin{spellsection}{Foresight}
+\begin{spellsection}{Polymorph}
 \begin{spellheader}
-\spelldesc{You grant a creature the ability to see fractions of a second into the future.}
+\spelldesc{You shape the ground into an animated spike that drives into a foe.}
 \end{spellheader}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One willing creature}}{\spellrng{\rngclose}}
-\spelltime{minor action}
+\spelltwocol{\spelltgt{One creature or object}}{\spellrng{\rngmed}}
 \end{spelltargetinginfo}
 \begin{spelleffects}
-\spelleffect
-The target gains a \plus2 bonus to \glossterm{accuracy}.
-\spelldur Attunement (shared)
-\spelltags{\glossterm{Enhancement}}
-\end{spelleffects}
-\end{spellcontent}
-\begin{spellfooter}
-\spellinfo{Divination}{Arcane, Divine, Nature}
-\fieldhead{Augments} Extended, Quickened, Silent, Stilled
-\end{spellfooter}
-\begin{spellsubcontent}
-\begin{spellcantrip}
-The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).
-\end{spellcantrip}
-\end{spellsubcontent}
-\end{spellsection}
-\subsubsection{Subspells}
-\augment{3}{Augury}
-Replace the spell's targets and effects with the following:
-\begin{spellcontent}
-\begin{augmenttargetinginfo}
-\spelltwocol{\spelltgt{One willing creature}}{\spellrng{\rngclose}}
-\spelltime{standard action}
-\end{augmenttargetinginfo}
-\begin{augmenteffects}
-\spelleffect
-Choose an action that the target could take.
-You learn whether the stated action is likely to bring good or bad results for it within the next hour.
-This spell provides one of four results:
-\begin{itemize}
-\item Weal (if the action will probably bring good results).
-\item Woe (for bad results).
-\item Weal and woe (for both).
-\item No response (for actions that don't have especially good or bad results).
-\end{itemize}
-This spell does not describe the future with certainty.
-It describes which result is most probable.
-The more unambiguous the action's effects, the more likely the spell is to be correct.
-% TODO: inconsistent wording; this spell vs. this subspell
-After using this subspell, you cannot cast it again until the hour affected by the previous casting is over, regardless of whether the action was taken.
-\end{augmenteffects}
-\end{spellcontent}
-\augment{7}{Foresee Actions}
-The target can learn what actions all creatures it can observe intend to take during each phase before it decides its actions for that phase.
-It learns this information in the instant before it acts, and normally does not have time to communicate it to other creatures.
-\begin{spellsection}{Inflict Wounds}
-\begin{spellcontent}
-\begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
-\end{spelltargetinginfo}
-\begin{spelleffects}
-\begin{spellattack}{Spellpower vs. Fortitude}
-\spellsuccess Life \glossterm{standard damage} \plus1d.
+\begin{spellattack}{Spellpower vs. Reflex}
+\spellsuccess Piercing \glossterm{standard damage} \plus1d.
 \spellcritical As above, but double damage.
 \end{spellattack}
-\spelltags{\glossterm{Life}}
+\spelltags{\glossterm{Physical}, \glossterm{Shaping}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
-\spellinfo{Vivimancy}{Arcane, Divine, Nature}
+\spellinfo{Transmutation}{Arcane, Nature}
 \fieldhead{Augments} Extended, Intensified, Mass, Quickened, Silent, Stilled
 \end{spellfooter}
 \begin{spellsubcontent}
@@ -1021,87 +1092,69 @@ The spell deals \minus2d damage.
 \end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
-\augment{3}{Drain Life}
-You gain temporary hit points equal to half the damage you deal with this spell.
-\augment{4}{Death Knell}
-If the spell's attack succeeds, the target suffers a death knell.
-At the end of each round, if the target has 0 hit points, it immediately dies.
-This effect lasts until the target removes this condition.
-\par
-This is a \glossterm{Death} effect.
-\begin{spellsection}{Poison}
-\begin{spellheader}
-\spelldesc{You weaken your foe with a potent poison.}
-\end{spellheader}
+\augment{2}{Barkskin}
+Replace the spell's targets and effects with the following:
 \begin{spellcontent}
-\begin{spelltargetinginfo}
-\spelltwocol{\spelltgt{One living creature}}{\spellrng{\rngclose}}
-\end{spelltargetinginfo}
-\begin{spelleffects}
-\spelleffect
-At the end of each round, you make a Spellpower vs. Fortitude attack against the target.
-Success means the target takes poison damage equal to your spellpower.
-If this is the second successful attack, the target takes a \minus2 penalty to \glossterm{accuracy}, \glossterm{checks}, and \glossterm{defenses}.
-If this is the third successful attack, the penalty increases to -5.
-\spelldur Condition
-\spelltags{\glossterm{Poison}}
-\end{spelleffects}
-\end{spellcontent}
-\begin{spellfooter}
-\spellinfo{Transmutation}{Destruction, Divine, Nature}
-\fieldhead{Augments} Extended, Mass, Quickened, Silent, Stilled
-\end{spellfooter}
-\begin{spellsubcontent}
-\begin{spellcantrip}
-The spell does not have additional effects other than damage.
-\end{spellcantrip}
-\end{spellsubcontent}
-\end{spellsection}
-\begin{spellsection}{Polymorph}
-\begin{spellheader}
-\spelldesc{You change the target's physical form.}
-\end{spellheader}
-\begin{spellcontent}
-\begin{spelltargetinginfo}
+\begin{augmenttargetinginfo}
 \spelltwocol{\spelltgt{One willing creature}}{\spellrng{\rngmed}}
 \spelltime{minor action}
-\end{spelltargetinginfo}
-\begin{spelleffects}
-\spelleffect
-You increase or decrease the target's size by one size category.
-\spelldur Attunement (shared)
-\spelltags{\glossterm{Shaping}, \glossterm{Sizing}}
-\end{spelleffects}
-\end{spellcontent}
-\begin{spellfooter}
-\spellinfo{Transmutation}{Arcane, Nature}
-\fieldhead{Augments} Extended, Quickened, Silent, Stilled
-\end{spellfooter}
-\begin{spellsubcontent}
-\begin{spellcantrip}
-The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).
-\end{spellcantrip}
-\end{spellsubcontent}
-\end{spellsection}
-\subsubsection{Subspells}
-\augment{2}{Barkskin}
-Replace the spell's effects with the following:
-\begin{spellcontent}
+\end{augmenttargetinginfo}
 \begin{augmenteffects}
 \spelleffect
 The target gains \glossterm{damage reduction} equal to your spellpower against damage dealt by \glossterm{physical attacks}.
 In addition, it is \glossterm{vulnerable} to fire damage.
 \spelldur Attunement (shared)
-\spelltags{\glossterm{Shaping}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{2}{Shrink}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgt{One willing creature (Small or larger)}}{\spellrng{\rngmed}}
+\spelltime{minor action}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+You decrease the target's size by one size category.
+This decreases its \glossterm{strike damage} and usually decreases its \glossterm{reach} (see \pcref{Size in Combat}).
+\spelldur Attunement (shared)
+\spelltags{\glossterm{Shaping}, \glossterm{Sizing}}
 \end{augmenteffects}
 \end{spellcontent}
 \augment{3}{Alter Appearance}
-You can also make a Disguise check to alter the target's appearance (see \pcref{Disguise Creature}).
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgt{One willing creature (Large or smaller)}}{\spellrng{\rngmed}}
+\spelltime{minor action}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+You make a Disguise check to alter the target's appearance (see \pcref{Disguise Creature}).
 You gain a \plus5 bonus on the check, and you ignore penalties for changing the target's gender, race, subtype, or age.
 However, this effect is unable to alter the target's clothes or equipment in any way.
+\spelldur Attunement (shared)
+\spelltags{\glossterm{Shaping}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{3}{Enlarge}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgt{One willing creature (Large or smaller)}}{\spellrng{\rngmed}}
+\spelltime{minor action}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+You increase the target's size by one size category.
+This increases its \glossterm{strike damage} and usually increases its \glossterm{reach} (see \pcref{Size in Combat}).
+\spelldur Attunement (shared)
+\spelltags{\glossterm{Shaping}, \glossterm{Sizing}}
+\end{augmenteffects}
+\end{spellcontent}
 \augment{3}{Stoneskin}
 This subspell functions like the \textit{barkskin} subspell, except that the target is \glossterm{vulnerable} to damage from adamantine weapons instead of fire damage.
-\augment{4}{Fabricate}
+\augment{4}{Craft Object}
 Replace the spell's targets and effects with the following:
 \begin{spellcontent}
 \begin{augmenttargetinginfo}
@@ -1116,16 +1169,26 @@ The total size of all targets combined must be Large size or smaller.
 \spelltags{\glossterm{Shaping}}
 \end{augmenteffects}
 \end{spellcontent}
-\augment{7}{Ironskin}
+\augment{4}{Impaling}
+If the attack succeeds, the target is \glossterm{immobilized} as a \glossterm{condition}.
+\augment{6}{Disintegrate}
 Replace the spell's effects with the following:
 \begin{spellcontent}
 \begin{augmenteffects}
-\spelleffect
-The target gains \glossterm{damage reduction} equal to twice your spellpower against damage dealt by \glossterm{physical attacks}.
-\spelldur Attunement (shared)
+\begin{spellattack}{Spellpower vs. Fortitude}
+\spellsuccess
+Physical \glossterm{standard damage} \plus1d.
+In addition, if the target has no hit points remaining, it dies.
+Its body is completely disintegrated, leaving behind only a pinch of fine dust.
+Its equipment is unaffected.
+\spellcritical
+As above, but double damage.
+\end{spellattack}
 \spelltags{\glossterm{Shaping}}
 \end{augmenteffects}
 \end{spellcontent}
+\augment{7}{Ironskin}
+This subspell functions like the \textit{stoneskin} subspell, except that the damage reduction is equal to twice your spellpower.
 \begin{spellsection}{Protection from Alignment}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
@@ -1227,6 +1290,84 @@ After the object explodes in this way, the spell ends.
 \spelltags{\glossterm{Fire}, \glossterm{Trap}}
 \end{augmenteffects}
 \end{spellcontent}
+\begin{spellsection}{Revelation}
+\begin{spellheader}
+\spelldesc{You grant a creature the ability to see fractions of a second into the future.}
+\end{spellheader}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{\spelltgt{One willing creature}}{\spellrng{\rngclose}}
+\spelltime{minor action}
+\end{spelltargetinginfo}
+\begin{spelleffects}
+\spelleffect
+The target gains a \plus2 bonus to \glossterm{accuracy}.
+\spelldur Attunement (shared)
+\spelltags{\glossterm{Enhancement}}
+\end{spelleffects}
+\end{spellcontent}
+\begin{spellfooter}
+\spellinfo{Divination}{Arcane, Divine, Nature}
+\fieldhead{Augments} Extended, Quickened, Silent, Stilled
+\end{spellfooter}
+\begin{spellsubcontent}
+\begin{spellcantrip}
+The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).
+\end{spellcantrip}
+\end{spellsubcontent}
+\end{spellsection}
+\subsubsection{Subspells}
+\augment{2}{Discern Lies}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spellemanation{\areamed radius from you}
+\spelltgts{All creatures in the area}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+You know when the target deliberately and knowingly speaks a lie.
+This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
+\spelldur Attunement
+\spelltags{\glossterm{D}, \glossterm{c}, \glossterm{e}, \glossterm{e}, \glossterm{i}, \glossterm{n}, \glossterm{o}, \glossterm{t}, \glossterm{t}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{3}{Augury}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltwocol{\spelltgt{One willing creature}}{\spellrng{\rngclose}}
+\spelltime{standard action}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+Choose an action that the target could take.
+You learn whether the stated action is likely to bring good or bad results for it within the next hour.
+This spell provides one of four results:
+\begin{itemize}
+\item Weal (if the action will probably bring good results).
+\item Woe (for bad results).
+\item Weal and woe (for both).
+\item No response (for actions that don't have especially good or bad results).
+\end{itemize}
+This spell does not describe the future with certainty.
+It describes which result is most probable.
+The more unambiguous the action's effects, the more likely the spell is to be correct.
+% TODO: inconsistent wording; this spell vs. this subspell
+After using this subspell, you cannot cast it again until the hour affected by the previous casting is over, regardless of whether the action was taken.
+\end{augmenteffects}
+\end{spellcontent}
+\augment{3}{Boon of Mastery}
+The target also gains a \plus2 bonus to all skills.
+\augment{4}{Boon of Knowledge}
+The target also gains a \plus5 bonus to all Knowledge skills (see \pcref{Knowledge}).
+\augment{5}{Third Eye}
+The target also gains \glossterm{blindsight} out to a 100 foot range, allowing it to see perfectly without any light, regardless of concealment or invisibility.
+\augment{7}{Foresee Actions}
+The target can learn what actions all creatures it can observe intend to take during each phase before it decides its actions for that phase.
+It learns this information in the instant before it acts, and normally does not have time to communicate it to other creatures.
+\augment{7}{Greater Boon of Mastery}
+This subspell functions like the \textit{boon of mastery} subspell, except that the skill bonus is increased to \plus5.
 \begin{spellsection}{Scry}
 \begin{spellheader}
 \spelldesc{You create a scrying sensor that allows you to see at a distance.}
@@ -1340,7 +1481,7 @@ Replace the spell's targets and effects with the following:
 \end{augmenttargetinginfo}
 \begin{augmenteffects}
 \begin{spellattack}{Spellpower vs. Mental}
-\spellsuccess Divine \glossterm{standard damage} \plus1d.
+\spellsuccess Divine \glossterm{standard damage} \minus1d.
 \spellcritical As above, but double damage.
 \end{spellattack}
 \end{augmenteffects}
@@ -1454,40 +1595,101 @@ During the movement phase, you can move the target up to ten feet in any directi
 \spelldur Sustain (minor)
 \end{augmenteffects}
 \end{spellcontent}
-\begin{spellsection}{Web}
-\begin{spellheader}
-\spelldesc{
-You create a many-layered mass of strong, stricky strands that trap creatures caught within them.
-The strands are similar to spider webs, but larger and tougher.
-}
-\end{spellheader}
+\begin{spellsection}{Vital Surge}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltwocol{\spellzone{\areasmall radius}}{\spellrng{\rngclose}}
-\spelltgts{Everything in the area}
+\spelltwocol{\spelltgt{One creature}}{\spellrng{\rngmed}}
 \end{spelltargetinginfo}
 \begin{spelleffects}
-\spelleffect
-The area becomes filled with webs, making it \glossterm{difficult terrain}.
-Each 5-ft.\ square of webbing has hit points equal to your spellpower, and is \glossterm{vulnerable} to fire.
-\begin{spellattack}{Spellpower vs. Reflex}
-\spellsuccess The target is \immobilized as long as it has webbing from this spell in its space.
+\spellspecial
+When you cast this spell, you choose whether the target is healed or takes damage.
+\begin{spellattack}{Spellpower vs. Fortitude}
+\spellsuccess The target heals hit points or takes life damage equal to \glossterm{standard damage} \plus1d.
+\spellcritical As above, except that if you chose damage, the spell deals double damage.
 \end{spellattack}
-\spelldur Sustain (minor)
-\spelltags{\glossterm{Manifestation}}
+\spelltags{\glossterm{Life}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
-\spellinfo{Conjuration}{Arcane, Nature}
-\fieldhead{Augments} Extended, Quickened, Silent, Stilled, Widened
+\spellinfo{Vivimancy}{Arcane, Divine, Nature}
+\fieldhead{Augments} Extended, Intensified, Mass, Quickened, Silent, Stilled
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (standard).
+You cannot choose for the spell to heal the target, and the spell deals \minus2d damage.
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
-\augment{3}{Reinforced}
-Each 5-ft.\ square of webbing gains additional hit points equal to your spellpower.
-In addition, the webs are no longer vulnerable to fire.
+\augment{2}{Cure Wounds}
+You cannot choose for the spell to deal damage.
+In addition, for every 10 points of healing you provide, you can also heal one point of \glossterm{vital damage}.
+\augment{2}{Restore Senses}
+Replace the spell's effects with the following:
+\begin{spellcontent}
+\begin{augmenteffects}
+\spelleffect
+One of the target's physical senses, such as sight or hearing, is restored to full capacity.
+This can heal both magical and mundane conditions, but it cannot completely replace missing body parts required for a sense to function (such as missing eyes).
+\spelltags{\glossterm{Flesh}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{2}{Undead Bane}
+If the target is undead, the spell gains a \plus2 bonus to accuracy.
+\augment{3}{Circle of Death}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spellemanation{\areamed radius from you}
+\spelltgts{Enemies in the area}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+At the end of each round, you make an attack against all targets to deal damage.
+\begin{spellattack}{Spellpower vs. Mental}
+\spellsuccess
+The target takes life \glossterm{standard damage} \minus3d.
+\end{spellattack}
+\spelldur Sustain (minor)
+\spelltags{\glossterm{Life}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{3}{Cure Serious Wounds}
+This subspell functions like the \textit{cure wounds} subspell, except that it heals one point of vital damage for every 5 points of healing instead of for every 10.
+\augment{3}{Drain Life}
+You gain temporary hit points equal to half the damage you deal with this spell.
+\augment{3}{Remove Disease}
+Replace the spell's effects with the following:
+\begin{spellcontent}
+\begin{augmenteffects}
+\spelleffect
+All diseases affecting the target are removed.
+\spelltags{\glossterm{Flesh}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{4}{Circle of Healing}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spellemanation{\areamed radius from you}
+\spelltgts{Allies in the area}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+At the end of each round, you make an attack against all targets to heal them.
+\begin{spellattack}{Spellpower vs. Mental}
+\spellsuccess
+The target heals hit points equal to \glossterm{standard damage} \minus3d.
+\end{spellattack}
+\spelldur Sustain (minor)
+\spelltags{\glossterm{Life}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{4}{Cure Critical Wounds}
+This subspell functions like the \textit{cure wounds} subspell, except that it heals one point of vital damage for every 2 points of healing instead of for every 10.
+\augment{4}{Death Knell}
+If the spell's attack succeeds, the target suffers a death knell.
+At the end of each round, if the target has 0 hit points, it immediately dies.
+This effect lasts until the target removes this condition.
+\par
+This is a \glossterm{Death} effect.
