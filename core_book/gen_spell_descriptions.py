@@ -838,7 +838,7 @@ def generate_spells():
             time='minor action',
         ),
         effects=Effects(
-            effect='The target gains a +2 bonus to \\glossterm<accuracy>.',
+            effect='The target gains a +1d bonus to damage with all attacks that deal damage measured in dice.',
             duration='Attunement (shared)',
         ),
         cantrip="The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).",
