@@ -31,7 +31,7 @@ def generate_spells():
         ),
         effects=Effects(
             effect="""
-                The target gains a +2 bonus to \\glossterm<physical defenses>.
+                The target gains a +1 bonus to \\glossterm<physical defenses>.
                 This bonus is increased to +5 against ranged \\glossterm<physical attacks> from weapons or projectiles that are Small or smaller.
                 Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
             """,
@@ -527,7 +527,7 @@ def generate_spells():
                 ),
                 effects=Effects(
                     effect="""
-                        The target weapon gains a +2d bonus to \\glossterm<strike damage>.
+                        The target weapon gains a +1d bonus to \\glossterm<strike damage>.
                         In addition, all damage dealt with the weapon with strikes becomes fire damage in addition to its normal damage types.
                     """,
                     duration='Sustain (minor)',
@@ -1577,7 +1577,7 @@ def generate_spells():
         effects=Effects(
             effect="""
                 The target's physical outline is distorted so it appears blurred, shifting, and wavering.
-                It gains a +2 bonus to \\glossterm<physical defenses> and Stealth (see \\pcref<Stealth>).
+                It gains a +1 bonus to \\glossterm<physical defenses> and Stealth (see \\pcref<Stealth>).
                 This provides no defensive benefit against creatures immune to \\glossterm<Visual> abilities.
             """,
             duration='Attunement (shared)',
