@@ -1392,7 +1392,7 @@ def generate_spells():
         ),
         effects=Effects(
             effect="""
-                The target gains a \plus2 bonus to \\glossterm<accuracy>.
+                The target gains a \plus1 bonus to \\glossterm<accuracy> with all attacks.
             """,
             tags=['Enhancement'],
             duration='Attunement (shared)',
@@ -1840,10 +1840,18 @@ def generate_spells():
                     effect="""
                         You increase the target's size by one size category.
                         This increases its \\glossterm<strike damage> and usually increases its \\glossterm<reach> (see \\pcref<Size in Combat>).
+                        However, the target takes a -1d penalty to \\glossterm<strike damage>, as its muscles are not increased fully to match its new size.
                     """,
                     duration='Attunement (shared)',
                     tags=['Shaping', 'Sizing'],
                 ),
+            ),
+            Subspell(
+                level=7,
+                name="Greater Enlarge",
+                description="""
+                    This subspell functions like the \\textit<enlarge> subspell, except that the target does not take a penalty to strike damage.
+                """,
             ),
             Subspell(
                 level=3,
