@@ -17,6 +17,7 @@ def generate_weapons():
             It sheds light as a torch, and all damage dealt with it is fire damage in addition to its other types.
             You gain a +1d bonus to \\glossterm<strike damage> with this weapon.
         """,
+        short_description="Deals +1d fire damage",
     ))
 
     weapons.append(MagicItem(
@@ -30,6 +31,7 @@ def generate_weapons():
             When you make a successful \\glossterm<strike> with this weapon, you can activate it as an \\glossterm<immediate action>.
             If you do, the target takes a -5 penalty to concentration checks until the end of the round (see \\pcref<Concentration>).
         """,
+        short_description="Deals distracting electicity damage",
     ))
 
     weapons.append(MagicItem(
@@ -42,6 +44,7 @@ def generate_weapons():
             When you make a successful \\glossterm<strike> with this weapon, you can activate it as an \\glossterm<immediate action>.
             If you do, and your attack result beats the target's Fortitude defense, it is \\fatigued as a \\glossterm<condition>.
         """,
+        short_description="Deals fatiguing cold damage",
     ))
 
     weapons.append(MagicItem(
@@ -55,6 +58,7 @@ def generate_weapons():
             When you make a successful \\glossterm<strike> with this weapon, you can activate it as an \\glossterm<immediate action>.
             If you do, and your attack result beats the target's Fortitude defense, it is \\deafened as a \\glossterm<condition>.
         """,
+        short_description="Deals deafening sonic damage",
     ))
 
     weapons.append(MagicItem(
@@ -65,6 +69,7 @@ def generate_weapons():
         description="""
             You gain a +1 bonus to Armor defense.
         """,
+        short_description="Grants +1 Armor defense",
     ))
 
     weapons.append(MagicItem(
@@ -76,6 +81,7 @@ def generate_weapons():
             When you make a successful \\glossterm<strike> with this weapon, you can activate it as an \\glossterm<immediate action>.
             If you do, and your attack result beats the target's Mental defense, it is \\disoriented as a \\glossterm<condition>.
         """,
+        short_description="Disorients struck foes",
     ))
 
     weapons.append(MagicItem(
@@ -86,6 +92,7 @@ def generate_weapons():
         description="""
             Ranged attacks with this weapon have twice the normal \\glossterm<range increment>.
         """,
+        short_description="Has twice the normal range increment",
     ))
 
     weapons.append(MagicItem(
@@ -98,6 +105,7 @@ def generate_weapons():
             If you do, you also use your attack result as a \\glossterm<shove> attack against the target.
             You do not need to move with your foe to move it the full distance of the shove.
         """,
+        short_description="Shoves struck foes",
     ))
 
     weapons.append(MagicItem(
@@ -110,6 +118,7 @@ def generate_weapons():
             If you do, you gain a +1 bonus to accuracy against the target until you use this ability on a different target.
             This bonus can stack with itself, up to a maximum of +5.
         """,
+        short_description="Grants accuracy bonus against struck foe",
     ))
 
     weapons.append(MagicItem(
@@ -120,6 +129,7 @@ def generate_weapons():
         description="""
             This weapon deals \\glossterm<nonlethal damage> instead of lethal damage.
         """,
+        short_description="Deals nonlethal damage",
     ))
 
     weapons.append(MagicItem(
@@ -128,9 +138,10 @@ def generate_weapons():
         material_type='weapon',
         tags=['Shaping'],
         description="""
-             As a standard action, you can activate this item.
+             As a standard action, you can spend an \\glossterm<action point> to activate this item.
              If you do, it changes shape into a new weapon of your choice from the same weapon group.
         """,
+        short_description="Can change into similar weapon",
     ))
 
     weapons.append(MagicItem(
@@ -139,10 +150,11 @@ def generate_weapons():
         material_type='weapon',
         tags=['Shaping'],
         description="""
-             As a standard action, you can activate this item.
-             If you do, it changes shape into a new weapon of your choice.
+             As a standard action, you can spend an \\glossterm<action point> to activate this item.
+             If you do, it changes shape into a new weapon of your choice that you are proficient with.
              This can only change into existing manufactured weapons, not improvised weapons (see \\pcref<Weapons>).
         """,
+        short_description="Can change into any weapon",
     ))
 
     weapons.append(MagicItem(
@@ -155,6 +167,7 @@ def generate_weapons():
             Catching a rebounding weapon when it comes back is a free action.
             If you can't catch it, the weapon drops to the ground in the square from which it was thrown.
         """,
+        short_description="Teleports back to you after being thrown",
     ))
 
     weapons.append(MagicItem(
@@ -167,6 +180,7 @@ def generate_weapons():
             \\glossterm<Strikes> with this weapon that would suffer a 50\\% miss chance instead suffer a 20\\% miss chance.
             In addition, attacks that would otherwise suffer a 20\\% miss chance instead suffer no miss chance.
         """,
+        short_description="Reduces miss chances",
     ))
 
     weapons.append(MagicItem(
@@ -186,18 +200,20 @@ def generate_weapons():
             If you do, all delayed damage dealt by this weapon is converted into real damage.
             Any such damage dealt in excess of a creature's hit points is dealt immediately as \\glossterm<vital damage>.
         """,
+        short_description="Deals delayed damage",
     ))
 
     weapons.append(MagicItem(
         name="Surestrike",
-        level=4,
+        level=7,
         material_type='weapon',
         tags=['Knowledge'],
         description="""
-            When you miss a \\glossterm<strike> with this weapon, you can activate it as an \\glossterm<immediate action>.
+            When you hit or miss a \\glossterm<strike> with this weapon, you can activate it as an \\glossterm<immediate action>.
             If you do, you can reroll the attack roll.
             You must take the second result.
         """,
+        short_description="React to reroll missed attacks",
     ))
 
     weapons.append(MagicItem(
@@ -208,6 +224,7 @@ def generate_weapons():
         description="""
             Whenever you make a \\glossterm<strike> with this weapon, you can roll twice and take the higher result.
         """,
+        short_description="Rolls attacks twice",
     ))
 
     weapons.append(MagicItem(
@@ -216,8 +233,8 @@ def generate_weapons():
         material_type='weapon',
         tags=['Shaping'],
         description="""
-            When you make a successful \\glossterm<strike> with this weapon against an unattended object, you can activate it as an \\glossterm<immediate action>.
-            Alternately, when you make a successful \\glossterm<disarm> attack with this weapon, you can activate it as an \\glossterm<immediate action>.
+            When you make a successful \\glossterm<strike> with this weapon against an unattended object, you can spend an \\glossterm<action point> to activate it as an \\glossterm<immediate action>.
+            Alternately, when you make a successful \\glossterm<disarm> attack with this weapon, you can spend an \\glossterm<action point> to activate it as an \\glossterm<immediate action>.
             If you do, and the struck object is at least one size category smaller than the weapon, it is absorbed into the weapon, leaving no trace.
 
             This weapon can hold no more than three objects at once.
@@ -226,6 +243,18 @@ def generate_weapons():
             As a standard action, you can retrieve the last item absorbed by the weapon.
             The item appears in your hand, or falls to the ground if your hand is occupied.
         """,
+        short_description="Can absorb small items",
+    ))
+
+    weapons.append(MagicItem(
+        name="Thieving, Greater",
+        level=13,
+        material_type='weapon',
+        tags=['Shaping'],
+        description="""
+            This item functions like the \\mitem<thieving> item, except that the maximum size category of object it can absorb is one size category larger than the weapon.
+        """,
+        short_description="Can absorb large items",
     ))
 
     weapons.append(MagicItem(
@@ -236,6 +265,7 @@ def generate_weapons():
         description="""
             When you deal damage to a living creature with a \\glossterm<strike> with this weapon, you heal hit points equal to your level.
         """,
+        short_description="Heals you when dealing damage",
     ))
 
     weapons.append(MagicItem(
@@ -246,6 +276,7 @@ def generate_weapons():
         description="""
             When you deal damage to a living creature with a \\glossterm<strike> with this weapon, you heal hit points equal to twice your level.
         """,
+        short_description="Drastically heals you when dealing damage",
     ))
 
     weapons.append(MagicItem(
@@ -256,6 +287,7 @@ def generate_weapons():
         description="""
             Critical hits on \\glossterm<strikes> with this weapon deal maximum damage.
         """,
+        short_description="Inflicts lethal critical hits",
     ))
 
     weapons.append(MagicItem(
@@ -268,6 +300,7 @@ def generate_weapons():
             This can allow you to ignore \\glossterm<cover>, or even attack through solid walls.
             It does not allow you to ignore armor, shields, or or similar items used by the target of your attacks.
         """,
+        short_description="Can ignore obstacles when attacking",
     ))
 
     return weapons
@@ -290,16 +323,39 @@ def generate_weapon_latex(check=False):
     text = '\n'.join(texts)
     return latexify(text)
 
+def generate_weapon_table():
+    weapons = sorted(
+        sorted(generate_weapons(), key=lambda item: item.name),
+        key=lambda item: item.level
+    )
+    rows = [
+        f"{item.name} & \\nth<{item.level}> & {item.short_description} & \\pageref<item:{item.name}> \\\\"
+        for item in weapons
+    ]
+    row_text = '\n'.join(rows)
+    return latexify(f"""
+        \\begin<longtabuwrapper>
+            \\begin<longtabu><l l X l>
+                \\lcaption<Weapon Items> \\\\
+                \\tb<Name> & \\tb<Level> & \\tb<Description> & \\tb<Page> \\\\
+                \\bottomrule
+                {row_text}
+            \\end<longtabu>
+        \\end<longtabuwrapper>
+    """)
+
 @click.command()
 @click.option('-c', '--check/--no-check', default=False)
-@click.option('-o', '--output')
+@click.option('-o', '--output/--no-output', default=False)
 def main(output, check):
-    text = generate_weapon_latex()
+    weapon_latex = generate_weapon_latex()
     if output is None:
-        print(text)
+        print(weapon_latex)
     else:
-        with open(output, 'w') as of:
-            of.write(text)
+        with open('weapons.tex', 'w') as weapon_description_file:
+            weapon_description_file.write(weapon_latex)
+        with open('weapons_table.tex', 'w') as weapon_table_file:
+            weapon_table_file.write(generate_weapon_table())
 
 
 if __name__ == "__main__":
