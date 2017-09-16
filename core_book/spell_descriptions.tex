@@ -344,7 +344,7 @@ The spell deals \minus2d damage.
 \subsubsection{Subspells}
 \augment{2}{Dimensional Jaunt -- Plane of Fire}
 The spell's damage becomes fire damage.
-In addition, if the attack succeeds, the target is \glossterm{ignited} as a \glossterm{condition}.
+In addition, if the attack hits, the target is \glossterm{ignited} as a \glossterm{condition}.
 \augment{2}{Teleport}
 Replace the spell's targets and effects with the following:
 \begin{spellcontent}
@@ -369,9 +369,9 @@ Replace the spell's targets with the following:
 \end{spellcontent}
 \augment{4}{Dimensional Jaunt -- Plane of Earth}
 The spell's damage becomes bludgeoning damage.
-In addition, if the attack succeeds, the target is \glossterm{immobilized} as a \glossterm{condition}.
+In addition, if the attack hits, the target is \glossterm{immobilized} as a \glossterm{condition}.
 \augment{8}{Dimensional Jaunt -- Deep Astral Plane}
-If the attack succeeds, the target is \glossterm{stunned} as a \glossterm{condition}.
+If the attack hits, the target is \glossterm{stunned} as a \glossterm{condition}.
 \begin{spellsection}{Barrier}
 \begin{spellheader}
 \spelldesc{You create a barrier around your ally that resists physical intrusion.}
@@ -683,7 +683,7 @@ If the spell's attack critically hits, the target immediately dies.
 \par
 This is a \glossterm{Death} effect.
 \augment{5}{Cripple}
-On a hit, the target is also \glossterm{immobilized} as part of the same condition.
+If the attack hits, the target is also \glossterm{immobilized} as part of the same condition.
 On a \glossterm{critical hit}, the target is \glossterm{paralyzed} instead of immobilized.
 \augment{6}{Corrupting Curse}
 The spell's attack is made against Mental defense instead of Fortitude defense.
@@ -833,8 +833,8 @@ The two areas can overlap, but targets in the overlapping area are only affected
 The lightning bolt created by the spell is faster, but less penetrating.
 The spell's attack is made against Fortitude defense instead of Reflex defense.
 \augment{5}{Shocking}
-On a hit, the target is \glossterm{dazed} as a \glossterm{condition}.
-On a critical hit, the target is \glossterm{stunned} instead of dazed.
+If the attack hits, the target is \glossterm{dazed} as a \glossterm{condition}.
+On a \glossterm{critical hit}, the target is \glossterm{stunned} instead of dazed.
 \begin{spellsection}{Emotion}
 \begin{spellheader}
 \spelldesc{You terrify your foe.}
@@ -1170,7 +1170,7 @@ The total size of all targets combined must be Large size or smaller.
 \end{augmenteffects}
 \end{spellcontent}
 \augment{4}{Impaling}
-If the attack succeeds, the target is \glossterm{immobilized} as a \glossterm{condition}.
+If the attack hits, the target is \glossterm{immobilized} as a \glossterm{condition}.
 \augment{6}{Disintegrate}
 Replace the spell's effects with the following:
 \begin{spellcontent}
@@ -1688,7 +1688,7 @@ The target heals hit points equal to \glossterm{standard damage} \minus3d.
 \augment{4}{Cure Critical Wounds}
 This subspell functions like the \textit{cure wounds} subspell, except that it heals one point of vital damage for every 2 points of healing instead of for every 10.
 \augment{4}{Death Knell}
-If the spell's attack succeeds, the target suffers a death knell.
+If the attack hits, the target suffers a death knell.
 At the end of each round, if the target has 0 hit points, it immediately dies.
 This effect lasts until the target removes this condition.
 \par
