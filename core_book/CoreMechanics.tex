@@ -1083,12 +1083,9 @@ It defines how attributes work and explains how to make physical attacks in comb
         Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow fatigued you, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
 
     \subsection{Vital Damage}\label{Vital Damage}
-        When you take damage while you are disabled (see \pcref{Disabled}), that damage represents serious physical injury to your body.
+        When you take damage in excess of your hit points while \glossterm{wounded}, that damage represents serious physical injury to your body.
         This is called \glossterm{vital damage}.
-        You suffer a penalty to \glossterm{accuracy}, \glossterm{checks}, and \glossterm{defenses} equal to the amount of vital damage you have.
-
-        You can still receive healing that restores your hit points while you have taken vital damage.
-        If you take damage in excess of your hit points while you have any vital damage, any excess damage from the attack is dealt directly as vital damage.
+        For every 4 points of \glossterm{vital damage} you have, you take a \minus1 penalty to \glossterm{accuracy}, \glossterm{checks}, and \glossterm{defenses}.
 
     \subsection{Overkill Damage}\label{Overkill Damage}
         Normally, when you take damage that would reduce your hit points to 0, any excess damage from the attack is wasted.
@@ -1101,21 +1098,25 @@ It defines how attributes work and explains how to make physical attacks in comb
         If you take damage, you can become bloodied (see Bloodied, below).
 
         \parhead{Bloodied} When you drop to half your hit points or below, you are \bloodied.
+        A bloodied creature takes a \minus4 penalty to Fortitude and Mental defense.
         The first time you become \glossterm{bloodied} in an encounter, you become \glossterm{staggered} until the end of the next round.
-        If you take additional damage, you can become disabled (see Disabled, below).
+        If you take additional damage, you can become \glossterm{wounded} (see Wounded, below).
 
-        \parhead{Staggered}
-        While \glossterm{staggered}, you take a \minus5 penalty to attacks, checks, and defenses.
-        These penalties replace the penalties for being \glossterm{bloodied}.
-        You become staggered briefly the first time you become \glossterm{bloodied} in an encounter.
-        In addition, you are \glossterm{staggered} if you have no hit points remaining.
+        \parhead{Staggered}\label{Staggered}
+        While \glossterm{staggered}, you take a \minus4 penalty to attacks, checks, and defenses.
+        These penalties do not stack with the penalties for being \glossterm{bloodied}.
+        % TODO: clarify when this ``resets''
+        The first time you become bloodied in an encounter, you become staggered until the end of the next round.
+        In addition, whenever you become \glossterm{wounded}, you become staggered until the end of the next round.
 
-        \parhead{Disabled}\label{Disabled} At the end of each round, if you have no hit points remaining after resolving all other effects in the round, you become \disabled.
-        While disabled, you are \staggered, and you are vulnerable to taking vital damage.
+        \parhead{Wounded}\label{Wounded} At the end of each round, if you have no hit points remaining after resolving all other effects in the round, you become \wounded.
+        If you have any \glossterm{vital damage}, you are also wounded.
+        If you take additional damage while wounded, that damage can become \glossterm{vital damage}.
 
-        At the end of each round you are disabled, if you have received more damage than healing, that damage becomes vital damage.
-        This causes you to begin dying (see Dying, below).
-        If you have received more healing than damage, you stop being disabled.
+        At the end of each round that you are \glossterm{wounded}, if you have taken damage in excess of your hit points, you take that damage as \glossterm{vital damage}.
+        When determining whether your damage exceeds your hit points, count all healing and any other effects that modify your hit points, even if they occurred after you took damage.
+        If you take \glossterm{vital damage}, you begin dying (see Dying, below).
+        If you instead have hit points remaining at the end of the round, you stop being wounded.
 
         \parhead{Dying}\label{Dying} While you are dying, you must make an attack against your own Fortitude defense at the end of every round.
         This is called a \glossterm{stabilization roll}.
@@ -1147,9 +1148,6 @@ It defines how attributes work and explains how to make physical attacks in comb
         However, only certain spells can heal vital damage, as specified in the spell description.
         Unless a spell says it can cure vital damage, it cannot -- though it can still stabilize dying characters.
         Magical healing has no effect on the hit points of creatures with vital damage.
-
-        \parhead{Healing While Disabled} While you are disabled, any healing you receive cancels out damage you receive in the same phase on a one-for-one basis.
-        This can prevent you from taking vital damage if you are damaged while disabled.
 
         \parhead{Healing Vital Damage} Vital damage takes much longer to heal than hit point damage.
         Resting for 8 hours restores an amount of vital damage equal to 1 \add half the character's Constitution (minimum 1).
