@@ -27,6 +27,7 @@ class MagicItem(object):
             description,
             level,
             name,
+            short_description,
             tags,
             effects=None,
             material_type=None,
@@ -37,6 +38,7 @@ class MagicItem(object):
         self.level = level
         self.name = name
         self.tags = tags
+        self.short_description = short_description
 
         self.effects = effects
         try:
