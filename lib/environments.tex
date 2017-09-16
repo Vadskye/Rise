@@ -44,10 +44,11 @@
 % small text for the feats table
 \newenvironment{longtabuwrapper}
 {
+    \onecolumn
     \small
     \taburowcolors [2] 2{tbrown .. white}
 }
-{}
+{\twocolumn}
 
 \newenvironment{spelltable}
 {\begin{table}[htb!]}
