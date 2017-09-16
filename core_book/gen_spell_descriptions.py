@@ -948,8 +948,8 @@ def generate_spells():
                 level=5,
                 name="Shocking",
                 description="""
-                    On a hit, the target is \\glossterm<dazed> as a \\glossterm<condition>.
-                    On a critical hit, the target is \\glossterm<stunned> instead of dazed.
+                    If the attack hits, the target is \\glossterm<dazed> as a \\glossterm<condition>.
+                    On a \\glossterm<critical hit>, the target is \\glossterm<stunned> instead of dazed.
                 """,
             ),
             Subspell(
@@ -1019,7 +1019,7 @@ def generate_spells():
                 level=5,
                 name="Cripple",
                 description="""
-                    On a hit, the target is also \\glossterm<immobilized> as part of the same condition.
+                    If the attack hits, the target is also \\glossterm<immobilized> as part of the same condition.
                     On a \\glossterm<critical hit>, the target is \\glossterm<paralyzed> instead of immobilized.
                 """,
             ),
@@ -1099,7 +1099,7 @@ def generate_spells():
                 level=4,
                 name="Death Knell",
                 description="""
-                    If the spell's attack succeeds, the target suffers a death knell.
+                    If the attack hits, the target suffers a death knell.
                     At the end of each round, if the target has 0 hit points, it immediately dies.
                     This effect lasts until the target removes this condition.
                 """,
@@ -1885,7 +1885,7 @@ def generate_spells():
                 level=4,
                 name="Impaling",
                 description="""
-                    If the attack succeeds, the target is \\glossterm<immobilized> as a \\glossterm<condition>.
+                    If the attack hits, the target is \\glossterm<immobilized> as a \\glossterm<condition>.
                 """,
             ),
             Subspell(
@@ -1965,7 +1965,7 @@ def generate_spells():
                 name="Dimensional Jaunt -- Plane of Fire",
                 description="""
                     The spell's damage becomes fire damage.
-                    In addition, if the attack succeeds, the target is \\glossterm<ignited> as a \\glossterm<condition>.
+                    In addition, if the attack hits, the target is \\glossterm<ignited> as a \\glossterm<condition>.
                 """,
             ),
             Subspell(
@@ -1973,14 +1973,14 @@ def generate_spells():
                 name="Dimensional Jaunt -- Plane of Earth",
                 description="""
                     The spell's damage becomes bludgeoning damage.
-                    In addition, if the attack succeeds, the target is \\glossterm<immobilized> as a \\glossterm<condition>.
+                    In addition, if the attack hits, the target is \\glossterm<immobilized> as a \\glossterm<condition>.
                 """,
             ),
             Subspell(
                 level=8,
                 name="Dimensional Jaunt -- Deep Astral Plane",
                 description="""
-                    If the attack succeeds, the target is \\glossterm<stunned> as a \\glossterm<condition>.
+                    If the attack hits, the target is \\glossterm<stunned> as a \\glossterm<condition>.
                 """,
             ),
         ],
