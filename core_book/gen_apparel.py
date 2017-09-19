@@ -86,9 +86,9 @@ def generate_armor():
         material_type='shield',
         description="""
             % Should this be strike damage?
-            You gain a +2d bonus to damage with \\glossterm<physical attacks> using this shield.
+            You gain a +1d bonus to damage with \\glossterm<physical attacks> using this shield.
         """,
-        short_description="Deals +2d damage",
+        short_description="Deals +1d damage",
     ))
 
     apparel.append(MagicItem(
@@ -97,9 +97,10 @@ def generate_armor():
         tags=['Enhancement'],
         material_type='shield',
         description="""
-            This item functions like the \\mitem<shield of bashing> item, except that the damage bonus increases to +3d.
+            % Should this be strike damage?
+            You gain a +2d bonus to damage with \\glossterm<physical attacks> using this shield.
         """,
-        short_description="Deals +3d damage",
+        short_description="Deals +2d damage",
     ))
 
     apparel.append(MagicItem(
