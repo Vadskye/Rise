@@ -449,7 +449,7 @@ def generate_worn():
             This crown continuously crackles with electricity.
             The constant sparks shed light as a torch.
 
-            At the end of each round, you make a Power vs. Reflex attack against all enemies within an \\areamed radius emanation from you.
+            At the end of each \\glossterm<action phase>, you make a Power vs. Reflex attack against all enemies within an \\areamed radius emanation from you.
             A hit deals electricity \\glossterm<standard damage> -3d.
         """,
         short_description="Continuously damages nearby enemies",
@@ -461,7 +461,7 @@ def generate_worn():
         material_type='crown',
         tags=['Cold'],
         description="""
-            At the end of each round, you make a Power vs. Fortitude attack against all enemies within an \\areamed radius emanation from you.
+            At the end of each \\glossterm<action phase>, you make a Power vs. Fortitude attack against all enemies within an \\areamed radius emanation from you.
             A hit deals cold \\glossterm<standard damage> -3d.
             Each creature that takes damage in this way is \\fatigued until the end of the next round.
         """,
@@ -700,7 +700,7 @@ def generate_worn():
         material_type='ring',
         tags=['Life'],
         description="""
-            At the end of each round, you heal hit points equal to this item's \\glossterm<power>.
+            At the end of each \\glossterm<action phase>, you heal hit points equal to this item's \\glossterm<power>.
             Only damage taken while wearing the ring can be healed in this way.
         """,
         short_description="Grants fast healing",

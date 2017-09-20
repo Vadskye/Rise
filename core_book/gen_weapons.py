@@ -163,7 +163,7 @@ def generate_weapons():
         material_type='weapon',
         tags=['Teleportation'],
         description="""
-            After being thrown, a rebounding weapon teleports back into your hand at the end of the round.
+            After being thrown, a rebounding weapon teleports back into your hand at the end of the current phase.
             Catching a rebounding weapon when it comes back is a free action.
             If you can't catch it, the weapon drops to the ground in the square from which it was thrown.
         """,
