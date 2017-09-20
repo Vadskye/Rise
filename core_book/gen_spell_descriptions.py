@@ -1602,7 +1602,7 @@ def generate_spells():
                         Light within or passing through the area is dimmed to be no brighter than shadowy illumination.
                         Any effect or object which blocks light also blocks this spell's emanation.
                     """,
-                    duration='Attunement (multiple)',
+                    duration='Attunement',
                     tags=['Glamer', 'Light'],
                 ),
             ),
