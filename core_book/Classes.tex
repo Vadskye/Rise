@@ -117,7 +117,7 @@ This choice determines a great deal about your character's abilities.
         \begin{itemize}
             \item You gain a \plus1d bonus to \glossterm{strike damage}.
             \item You are unable to take any action that requires patience or concentration, such as casting spells.
-            \item At the end of each round, if you did not attack a creature or object, you take \glossterm{nonlethal damage} equal to your level.
+            \item At the end of each round, if you did not attack a creature or object that round, you take \glossterm{nonlethal damage} equal to your level.
                 This damage ignores damage reduction and any similar abilities.
         \end{itemize}
         Your rage lasts as long as you \glossterm{attune} to it.
@@ -268,7 +268,7 @@ This choice determines a great deal about your character's abilities.
         Your reduction of \glossterm{overwhelm penalties} from the \textit{uncanny dodge} ability increases to 2.
 
         \cf{Bbn}[14]{Rapid Recovery}
-        At the end of each round, you heal hit points equal to your level.
+        At the end of each \glossterm{action phase}, you heal hit points equal to your level.
 
         \cf{Bbn}[17]{Uncanny Whirlwind}
         Your reduction of overwhelm penalties from the \textit{uncanny dodge} ability increases to 4.
@@ -725,7 +725,7 @@ This choice determines a great deal about your character's abilities.
 
         \subsubsection{Life}
             \parhead{Gift} You gain additional hit points equal to your \textit{divine power}.
-            \parhead{Aspect} All of your healing spells and abilities can cure \glossterm{vital damage} as easily as they cure hit points.
+            \parhead{Aspect} All of your \glossterm{magical} spells and abilities can heal \glossterm{vital damage} as easily as they heal hit points.
             \parhead{Essence} As a standard action, you can spend all of your remaining \glossterm{action points} (minimum 1) to use this ability.
             \begin{ability}
                 \begin{spelltargetinginfo}
@@ -736,7 +736,7 @@ This choice determines a great deal about your character's abilities.
                 \end{spelleffects}
             \end{ability}
             % Need special text to clarify that it is affected by the Aspect?
-            \parhead{Mastery} At the end of each round, you heal hit points equal to your \textit{divine power}.
+            \parhead{Mastery} At the end of each \glossterm{action phase}, you heal hit points equal to your \textit{divine power}.
 
         \subsubsection{Magic}
             \parhead{Gift} You gain a \plus1 bonus to spellpower with divine spells.
@@ -1057,7 +1057,7 @@ This choice determines a great deal about your character's abilities.
         \subcf{11th -- Venom}
         If you hit with a natural attack, you may inject poison into your foe as an immediate action.
         This is a \glossterm{condition}, and lasts until removed.
-        At the end of each round, you make a \textit{nature power} vs. Fortitude attack against all creatures you have poisoned.
+        At the end of each \glossterm{action phase}, you make a \textit{nature power} vs. Fortitude attack against all creatures you have poisoned.
         The effects of the poison are described below.
         \begin{itemize}
             \item First success: the target is \sickened until the effect ends.
@@ -1069,7 +1069,7 @@ This choice determines a great deal about your character's abilities.
         \par In addition, you gains a bite attack that deals \plus0d damage for a Medium druid.
 
         \subcf{15th -- Natural Renewal}
-        At the end of each round, you heal hit points equal to your \textit{nature power}.
+        At the end of each \glossterm{action phase}, you heal hit points equal to your \textit{nature power}.
         \subcf{15th -- Stable Foundation} As long as you are on solid ground, you gain a \plus1 bonus to all defenses.
         \subcf{15th -- Wings}
         You grow wings, granting you a \glossterm{fly speed} equal to your land speed.
@@ -1082,7 +1082,7 @@ This choice determines a great deal about your character's abilities.
         Any creature making a \glossterm{strike} against you from within the radius of bright light becomes \dazzled as a \glossterm{condition} after the attack.
 
         \cf{Drd}[5]{Natural Vigor}
-        At the end of each round, you heal hit points equal to half your \textit{nature power}.
+        At the end of each \glossterm{action phase}, you heal hit points equal to half your \textit{nature power}.
 
         \cf*{Drd}[9]{Natural Lore}
         You gain two extra skill points which must be spent on the Creature Handling, Heal, Knowledge (geography), Knowledge (nature), Ride, or Survival skills.
@@ -2313,7 +2313,7 @@ This choice determines a great deal about your character's abilities.
             \subcf{Mystic Guidance}
             The accuracy bonus from your \textit{quarry} ability applies to all attacks your \glossterm{hunting party} makes against the quarry, instead of only to \glossterm{physical attacks}.
 
-            At 10th level, whenever your hunting party uses both a \glossterm{strike} and a non-strike attack on the target in the same phase, the accuracy bonus is increased to \plus2 until the end of the round.
+            At 10th level, whenever your hunting party uses both a \glossterm{strike} and a non-strike attack on the target in the same phase, the accuracy bonus is increased to \plus2 until the end of the round, including on the triggering attacks.
             At 16th level, the accuracy bonus is increased to \plus2 at all times.
 
             \subcf{Unerring}
@@ -2347,7 +2347,7 @@ This choice determines a great deal about your character's abilities.
             At 16th level, this penalty increases to \minus3.
 
             \subcf{Inevitable}[Magical]
-            At the end of each round, the quarry takes life damage equal to your level if at least two members of your \glossterm{hunting party} are within \rngmed range of it.
+            At the end of each \glossterm{action phase}, if at least two members of your \glossterm{hunting party} are within \rngmed range of the quarry, it takes life damage equal to your level.
 
             At 16th level, this damage is increased to twice your level.
 

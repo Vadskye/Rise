@@ -341,10 +341,10 @@ def generate_spells():
                 name="Poison",
                 effects=Effects(
                     effect="""
-                        At the end of each round, you make a Spellpower vs. Fortitude attack against the target.
-                        Success means the target takes poison damage equal to your spellpower.
-                        If this is the second successful attack, the target also becomes \\glossterm<sickened>.
-                        If this is the third successful attack, the target becomes \\glossterm<nauseated> instead of sickened.
+                        When this spell resolves, and at the end of each \\glossterm<action phase>, you make a Spellpower vs. Fortitude attack against the target.
+                        A hit means the target takes poison \\glossterm<standard damage> -3d.
+                        If this is the second hit, the target also becomes \\glossterm<sickened>.
+                        If this is the third hit, the target becomes \\glossterm<nauseated> instead of sickened.
                     """,
                     duration='Condition',
                     tags=['Manifestation', 'Poison'],
@@ -687,7 +687,7 @@ def generate_spells():
                 effects=Effects(
                     attack=Attack(
                         defense='Mental',
-                        success="At the end of each round, if the target took damage that round, it takes mental \\glossterm<standard damage> -2d.",
+                        success="At the end of each \\glossterm<delayed action phase>, if the target took damage that round, it takes mental \\glossterm<standard damage> -2d.",
                         critical="As above, but double damage.",
                     ),
                     duration='Condition',
@@ -1115,7 +1115,7 @@ def generate_spells():
                 ),
                 effects=Effects(
                     effect="""
-                        At the end of each round, you make an attack against all targets to deal damage.
+                        When this spell resolves, and the end of each \\glossterm<action phase>, you make an attack against all targets to deal damage.
                     """,
                     attack=Attack(
                         defense='Mental',
@@ -1137,7 +1137,7 @@ def generate_spells():
                 ),
                 effects=Effects(
                     effect="""
-                        At the end of each round, you make an attack against all targets to heal them.
+                        When this spell resolves, and the end of each \\glossterm<action phase>, you make an attack against all targets to heal them.
                     """,
                     attack=Attack(
                         defense='Mental',
