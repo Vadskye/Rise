@@ -195,27 +195,27 @@ Feats can be used to specialize your character particular area, to grant your ch
         \featpre Starting Dexterity of 2.
         \featben
 
-        \ff[1]{Dodge} At the start of each phase, you can choose a creature you can see.
-        You gain a \plus1 bonus to Armor defense against attacks by that target during that phase.
+        \ff[1]{Lightning Reflexes} You gain a \plus2 bonus to Reflex defense.
 
-        \ff[2]{Lesser Lightning Reflexes} You gain a \plus1 bonus to Reflex defense.
+        \ff[2]{Dodge} At the start of each phase, you can choose a creature you can see.
+        You gain a \plus1 bonus to Armor defense against attacks by that target during that phase.
 
         \ff[4]{Rapid Reaction} You gain a \plus2 bonus to \glossterm{initiative} checks.
 
         \ff[6]{Mobility} Your movement is not impeded by being threatened by the target of your \textit{dodge} ability (see \pcref{Moving Near Foes}).
 
-        \ff[8]{Lightning Reflexes} The bonus to Reflex defense increases to \plus2.
-
-        \ff[10]{Greater Rapid Reaction} The bonus to initiative checks increases to \plus5.
-
-        \ff[12]{Focused Dodge} You do not suffer \glossterm{overwhelm penalties} against attacks by the target of your \textit{dodge} ability.
+        \ff[8]{Focused Dodge} You do not suffer \glossterm{overwhelm penalties} against attacks by the target of your \textit{dodge} ability.
         In addition, when counting the number of creatures threatening you to determine your overwhelm penalties, you ignore that creature.
 
-        \ff[14]{Greater Lightning Reflexes} The bonus to Reflex defense increases to \plus3.
+        \ff[10]{Greater Rapid Reaction} The bonus to initiative from your \textit{rapid reaction} ability increases to \plus5.
 
-        \ff[16]{Evasion} Your \glossterm{overwhelm penalties} do not affect your Reflex defense.
+        \ff[12]{Greater Lightning Reflexes} The bonus to Reflex defense from your \textit{lightning reflexes} ability increases to \plus4.
 
-        \ff[18]{Supreme Dodge} The bonus to Armor defense granted by your \textit{dodge} ability increases to \plus2.
+        \ff[14]{Greater Dodge} The bonus to Armor defense from your \textit{dodge} ability increases to \plus2.
+
+        \ff[16]{Tumble} You can move through the space occupied by the target of your \textit{dodge} ability at half speed.
+
+        \ff[18]{Evasion} Your \glossterm{overwhelm penalties} do not affect your Reflex defense.
     \end{feat}
 
     \begin{feat}{All Energy Becomes One}{Class, Magical}
@@ -1065,27 +1065,26 @@ Feats can be used to specialize your character particular area, to grant your ch
             \end{spelltargetinginfo}
             \begin{spelleffects}
                 \spelleffect You make a \glossterm{strike} against the target.
-                At the end of the round, if the target is not \glossterm{bloodied}, it takes additional damage equal to the damage you dealt to it with your strike.
+                At the end of the current phase, if the target is not \glossterm{bloodied}, it takes additional damage equal to the damage you dealt to it with your strike.
             \end{spelleffects}
         \end{ability}
 
-        \ff[2]{Lesser Purge the Weak} You gain a \plus1 bonus to accuracy with physical attacks against \glossterm{bloodied} creatures.
+        \ff[2]{Purge the Weak} You gain a \plus1 bonus to accuracy with physical attacks against \glossterm{bloodied} creatures.
 
-        \ff[4]{Final Blow} Whenever you deal \glossterm{vital damage} to a creature with a \glossterm{strike}, the creature immediately dies.
+        \ff[4]{Final Blow}[Death, Magical] At the end of each round, if you dealt \glossterm{vital damage} to a creature with a \glossterm{strike} that round, the creature immediately dies.
 
         \ff[6]{Bloodfeeder}[Life, Magical] Whenever a creature dies, if you dealt damage to it that round, you heal hit points equal to its level.
 
-        \ff[8]{Salt the Wound} When you use your \textit{strip the flesh} ability, the target continues taking damage at the end of each round until it becomes \glossterm{bloodied}.
+        \ff[8]{Salt the Wound} When you use your \textit{strip the flesh} ability, the target continues taking damage at the end of each \glossterm{action phase} until it becomes \glossterm{bloodied}.
         This is a \glossterm{condition}, and can be removed by abilities that remove conditions.
 
-        \ff[10]{Purge the Weak} The accuracy bonus against \glossterm{bloodied} creatures increases to \plus2.
+        \ff[10]{Greater Purge the Weak} The accuracy bonus from your \textit{purge the weak} ability increases to \plus2.
 
-        \ff[12]{Greater Final Blow} Whenever a creature's hit points drop to zero, if you dealt damage to it that round with a \glossterm{strike}, it immediately dies.
-        In addition, whenever you deal damage to a creature that has no hit points remaining with a \glossterm{strike}, it immediately dies.
+        \ff[12]{Greater Final Blow}[Death, Magical] At the end of each round, if a creature has no hit points remaining and you damaged it with a \glossterm{strike} that round, the creature immediately dies.
 
         \ff[14]{Greater Bloodfeeder}[Life, Magical] Whenever a creature dies, if you dealt damage to it that round and you used your \textit{strip the flesh} ability on it since the last time it took a \glossterm{short rest}, you regain an \glossterm{action point}.
 
-        \ff[18]{Greater Purge the Weak} The accuracy bonus against \glossterm{bloodied} creatures increases to \plus3.
+        \ff[18]{Supreme Purge the Weak} The accuracy bonus from your \textit{purge the weak} ability increases to \plus3.
     \end{feat}
 
     \begin{feat}{Guardian}{Combat}
@@ -1543,7 +1542,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[4]{Regenerative Recovery} When you use the \textit{recover} action, you heal \plus1d hit points.
         In addition, if you have taken \glossterm{vital damage}, the healing from the \textit{recovery} ability heals vital damage instead of hit points until you have no vital damage remaining.
 
-        \ff[6]{Fast Healing} At the end of each round, you heal hit points equal to half your Constitution.
+        \ff[6]{Fast Healing} At the end of each \glossterm{action phase}, you heal hit points equal to half your Constitution.
 
         \ff[8]{Regeneration} If you have taken \glossterm{vital damage}, the healing from your \textit{fast healing} ability heals vital damage instead of hit points until you have no vital damage remaining.
 
@@ -1889,7 +1888,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[9]{Unliving Resilience} You are immune to life damage and hostile \glossterm{Life} effects.
 
         % Too small? Should this be full spellpower?
-        \ff[11]{Lifebound Resilience} At the end of each round, you heal hit points equal to half your spellpower.
+        \ff[11]{Lifebound Resilience} At the end of each \glossterm{action phase}, you heal hit points equal to half your spellpower.
 
         \ff[15]{Greater Unliving Resilience} You are healed by life damage instead of being immune to it.
         This healing applies before immunity, allowing you to heal from life damage dealt by \glossterm{Life} effects without suffering any other effects..
