@@ -136,7 +136,7 @@ This choice determines a great deal about your character's abilities.
         You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks} while raging.
 
         \cf{Bbn}[16]{Mindless Rage} 
-        You are immune to all hostile \glossterm{Mind} effects while raging.
+        You are immune to all hostile \glossterm{Mind} abilities while raging.
 
         \cf{Bbn}[19]{Deathless Rage} 
         While raging, the you ignore all penalties from \glossterm{vital damage}.
@@ -1678,26 +1678,26 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Monk Progression}
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\lcol}X}
             \tb{Level} & \tb{Abilities} \\\bottomrule
-            \nth{1}     & Ki strike, unarmed warrior, unfettered defense
-            \\ \nth{2}  & Unfettered athletics
-            \\ \nth{3}  & Meditate
-            \\ \nth{4}  & Ki manifestation
+            \nth{1}     & Ki manifestation, unarmed warrior, unfettered defense
+            \\ \nth{2}  & Meditate, unfettered athletics
+            \\ \nth{3}  & Ki vessel
+            \\ \nth{4}  & Sage lore
             \\ \nth{5}  & Intuitive reaction
-            \\ \nth{6}  & Sage lore
-            \\ \nth{7}  & Distant ki
+            \\ \nth{6}  & Ki manifestation
+            \\ \nth{7}  & Transcend frailty
             \\ \nth{8}  & Unfettered athletics
-            \\ \nth{9}  & Transcend frailty
-            \\ \nth{10} & Ki manifestation
+            \\ \nth{9}  & Dual manifestation
+            \\ \nth{10} & Meditative strike
             \\ \nth{11} & Greater intuitive reaction
-            \\ \nth{12} & Meditative strike
-            \\ \nth{13} & Greater distant ki
+            \\ \nth{12} & Ki manifestation
+            \\ \nth{13} & Transcend flesh
             \\ \nth{14} & Greater unfettered defense
-            \\ \nth{15} & Transcend flesh
-            \\ \nth{16} & Ki manifestation
+            \\ \nth{15} & Ki wellspring
+            \\ \nth{16} & Inner peace
             \\ \nth{17} & Eye of the storm
-            \\ \nth{18} & Inner peace
-            \\ \nth{19} & Ki vessel
-            \\ \nth{20} & Transcend mortality
+            \\ \nth{18} & Myriad manifestation
+            \\ \nth{19} & Transcend mortality
+            \\ \nth{20} & \tdash
         \end{dtabularx}
     \end{dtable}
 
@@ -1734,89 +1734,134 @@ This choice determines a great deal about your character's abilities.
         The \glossterm{power} of your ki abilities is determined by your \textit{ki power}.
         Your \textit{ki power} is equal to your level or your Willpower, whichever is higher.
 
-        \cf{Mnk}{Ki Strike}
-        As a standard action, you can spend an \glossterm{action point} to use this ability.
-        If you do, you make a \glossterm{strike}.
-        You may use your \textit{ki power} in place of your Perception to determine your \glossterm{accuracy} with the strike, and in place of your Strength to determine your \glossterm{strike damage} with the strike.
-        If the strike misses, you regain the action point spent to use this ability.
-
-        % TODO: change this to choose two for the initial, have alternating non-choice abilities
-        \cf{Mnk}[4]{Ki Manifestation}
-        You gain the ability to channel your ki to temporarily enhance your abilities.
-        Choose a single ki manifestation from the list below.
-        At the start of each round, you can spend an \glossterm{action point} to use a ki manifestation.
-        This does not take an action, but you can only use one ki manifestation per round.
+        \cf{Mnk}{Ki Manifestation}
+        You can channel your ki to temporarily enhance your abilities.
+        Choose two \textit{ki manifestations} from the list below.
+        You can spend an \glossterm{action point} to use a \textit{ki manifestation}, using the type of action indicated in the ability's description.
+        You cannot use more than one \textit{ki manifestation} per round.
         {
-            \subcf{Burst of Blinding Speed}
-            You gain a \plus30 foot bonus to your land speed, up to a maximum of double your original speed, until the end of the round.
+            \subcf{Abandon the Fragile Self}
+            At the start of the round, you can use this ability.
+            It lasts until the end of the round.
+            You are immune to all \glossterm{conditions}.
+            \par At 6th level, this ability lasts until the end of the next round.
+            \par At 12th level, you can also remove one condition affecting you when you use this ability.
+            \par At 18th level, you can remove two conditions instead of one.
 
-            At 10th level, you also cannot be followed until the end of the round (see \pcref{Follow}).
-            At 16th level, the speed bonus increases to \plus50 feet.
+            \subcf{Burst of Blinding Speed}
+            At the start of the round, you can use this ability.
+            It lasts until the end of the round.
+            You gain a \plus30 foot bonus to your land speed, up to a maximum of double your original speed.
+            \par At 6th level, you can also ignore \glossterm{difficult terrain}.
+            \par At 12th level, you can also move or stand on liquids as if they were solid.
+            \par At 18th level, the speed bonus increases to \plus60 feet, up to a maximum of triple your original speed.
 
             \subcf{Dance of Falling Feathers}
+            At the start of the round, you can use this ability.
+            It lasts until the end of the round.
             If you are in free-fall, your fall is dramatically slowed.
             You fall only 60 feet this round, and take no falling damage if you hit the ground.
-
-            At 10th level, this ability's duration becomes Sustain (minor).
-            At 16th level, this ability's duration becomes Attunement.
+            \par At 6th level, this ability's duration becomes Sustain (minor).
+            \par At 12th level, you can control the speed of your fall, up to a maximum of 120 feet per round and a minimum of 30 feet per round.
+            \par At 18th level, your maximum falling speed becomes 180 feet per round and your minimum falling speed becomes 10 feet per round.
 
             \subcf{Elegant Whirl of Fluid Motion}
-            You gain a \plus10 bonus to Acrobatics checks until the end of the round.
-            \subcf{Leap of the Heavens}
-            You gain a \plus10 bonus to Jump checks until the end of the round.
-            \subcf{Scale the Highest Tower}
-            You gain a \plus10 bonus to Climb checks until the end of the round.
-
-            \subcf{See the Flow of Life}
-            You gain the ability to see the ki of living creatures until the end of the round.
-            You can ``see'' any living creatures and their equipment within 50 feet perfectly, regardless of lighting conditions, blindness, invisibility, or any other means of concealment.
-            This cannot detect living creatures through solid walls, however.
-
-            At 10th level, this ability's duration becomes Sustain (minor).
-            At 16th level, this ability's duration becomes Attunment.
-        }
-
-        \cf{Mnk}[7]{Distant Ki} When you use your \textit{ki strike} ability, your \glossterm{reach} is increased by 5 feet for the strike.
-
-        \cf*{Mnk}[10]{Ki Manifestation}
-        You learn an additional \textit{ki manifestation} from the list below.
-        At the start of each round, you can spend an \glossterm{action point} to use a \textit{ki manifestation}.
-        This does not take an action, but you can only use one \textit{ki manifestation} per round.
-        {
+            At the start of the round, you can use this ability.
+            It lasts until the end of the round.
+            You gain a \plus5 bonus to Acrobatics (see \pcref{Acrobatics}).
+            \par At 6th level, you also gain a \plus1 bonus to \glossterm{physical defenses}.
+            \par At 12th level, the Acrobatics bonus increases to \plus10.
+            \par At 18th level, the bonus to physical defenses increases to \plus2.
 
             \subcf{Flash Step}
-            Until the end of the round, whenever you move, you can teleport the same distance instead.
-            This does not change the total distance you can move, but you can teleport in any direction, even vertically.
-            If your \glossterm{line of effect} to your destination is blocked, or if this would somehow place you inside a solid object, your movement is cancelled and you remain where you are.
-            You can teleport in multiple steps within the same movement to get around obstacles you see.
+            At the start of the round, you can use this ability.
+            It lasts until the end of the round.
+            % TODO: is 'horizontally' the correct word?
+            Whenever you move, you can teleport horizontally up to ten feet instead.
+            This replaces the entire distance you would have moved that phase.
+            If your \glossterm{line of effect} to your destination is blocked, or if this teleportaiton would somehow place you inside a solid object, your movement is cancelled and you remain where you are.
+            \par At 6th level, the distance you can teleport is increased to half your movement speed.
+            \par At 12th level, you can teleport in multiple steps within the same phase.
+            Each step costs movement equal to twice the distance you teleport.
+            \par At 18th level, you can attempt to teleport to locations outside of \glossterm{line of sight} and \glossterm{line of effect}.
+            If your intended destination is invalid, the distance you spent teleporting is wasted, but you suffer no other ill effects.
 
-            At 16th level, you can even attempt to move to locations outside of \glossterm{line of sight} and \glossterm{line of effect}, up to the limit of your remaining movement speed.
-            If your intended destination is invalid, the distance you tried to teleport is taken from your remaining movement, but you suffer no other ill effects.
+            \subcf{Ki Strike}
+            You can use this ability as a standard action.
+            If you do, you make a \glossterm{strike}.
+            You may use your \textit{ki power} in place of your Perception to determine your \glossterm{accuracy} with the strike, and in place of your Strength to determine your \glossterm{strike damage} with the strike.
+            If the strike misses, you regain the action point spent to use this ability.
+            \par At 6th level, your \glossterm{reach} is increased by 5 feet for the strike.
+            \par At 12th level, the bonus to your reach increases to 10 feet. 
+            \par At 18th level, this ability does not cost an action point to use.
+
+            \subcf{Leap of the Heavens}
+            At the start of the round, you can use this ability.
+            It lasts until the end of the round.
+            You gain a \plus5 bonus to Jump (see \pcref{Jump}).
+            \par At 6th level, the Jump bonus increases to \plus10.
+            \par At 12th level, the Jump bonus increases to \plus15.
+            \par At 18th level, the Jump bonus increases to \plus20.
+
+            \subcf{Scale the Highest Tower}
+            At the start of the round, you can use this ability.
+            It lasts until the end of the round.
+            You gain a \plus5 bonus to Climb (see \pcref{Climb}).
+            % TODO: is this wording correct?
+            \par At 6th level, you also take no penalty for climbing without using your hands.
+            \par At 12th level, the Climb bonus increases to \plus10.
+            \par At 18th level, you also take no penalty for climbing with only one limb, such as an arm or leg.
+
+            \subcf{See the Flow of Life}
+            At the start of the round, you can use this ability.
+            It lasts until the end of the round.
+            You gain the ability to see the ki of living creatures.
+            You can ``see'' any living creatures and their equipment within 50 feet perfectly, regardless of lighting conditions, blindness, invisibility, or any other means of concealment.
+            This cannot detect living creatures through solid walls, however.
+            \par At 6th level, range is increased to 100 feet.
+            \par At 12th level, duration becomes Sustain (minor).
+            \par At 18th level, the duration becomes Attunement.
+
+            \subcf{Step Between the Mystic Worlds}
+            At the start of the round, you can use this ability.
+            It lasts until the end of the round.
+            You gain a \plus2 bonus to defenses against \glossterm{magical} abilities that directly target you.
+            This does not protect you from abilities that affect an area.
+            \par At 6th level, the defense bonus is increased to \plus4.
+            \par At 12th level, the defense bonus is increased to \plus6.
+            \par At 18th level, you cannot be directly targeted by \glossterm{magical} abilities.
 
             \subcf{Surpass the Mortal Limits}
-            Until the end of the round, you may use your \textit{ki power} in place of your Strength, Dexterity, and Constitution when making checks.
+            At the start of the round, you can use this ability.
+            It lasts until the end of the round.
+            You can use your \textit{ki power} in place of your Strength, Dexterity, and Constitution when making checks.
+            \par At 6th level, you also gain a \plus2 bonus to checks based on Strength, Dexterity, and Constitution.
+            \par At 12th level, the bonus increases to \plus4.
+            \par At 16th level, the bonus increases to \plus6.
 
-            At 16th level, this ability's duration becomes Sustain (minor).
+            \subcf{Tranquil Ward of Unshakeable Peace}
+            You can use this ability as a standard action.
+            It lasts until the end of the round.
+            You take half damage from all attacks.
+            This halving is applied before damage reduction and similar abilties.
+            \par At 6th level, you can \glossterm{sustain} this ability as a standard action.
+            \par At 12th level, you also gain damage reduction equal to your level.
+            \par At 18th level, the damage reduction increases to twice your level.
         }
 
-        \cf{Mnk}[13]{Greater Distant Ki} Your \textit{distant ki} ability increases your \glossterm{reach} by 10 feet instead of by 5 feet.
+        \cf*{Mnk}[3]{Ki Vessel} You gain an additional \glossterm{action point}.
 
-        \cf*{Mnk}[16]{Ki Manifestation}
-        You learn an additional \textit{ki manifestation} from the list below.
-        At the start of each round, you can spend an \glossterm{action point} to use a \textit{ki manifestation}.
-        This does not take an action, but you can only use one \textit{ki manifestation} per round.
-        {
-            \subcf{Abandon the Fragile Self} You remove all \glossterm{conditions} affecting you.
-            In addition, you are immune to all conditions until the end of the round.
+        \cf*{Mnk}[6]{Ki Manifestation}
+        You learn an additional \textit{ki manifestation}.
 
-            \subcf{Sevenfold Ward of True Perception} You take half damage from all attacks until the end of the round.
-            However, you also take a \minus2 penalty to all defenses until the end of the round.
+        \cf{Mnk}[9]{Dual Manifestation} You can use up to two \textit{ki manifestation} abilities per round.
 
-            \subcf{Step Between the Mystic Worlds} Until the end of the round, you cannot be directly targeted by \glossterm{magical} abilities.
-            This does not protect you from abilities that affect an area.
-        }
+        \cf*{Mnk}[12]{Ki Manifestation}
+        You learn an additional \textit{ki manifestation}.
 
-        \cf{Mnk}[19]{Ki Vessel} Your \textit{ki strike} ability does not cost an \glossterm{action point} to use.
+        \cf{Mnk}[15]{Ki Wellspring} You gain two additional \glossterm{action points}.
+
+        \cf{Mnk}[18]{Myriad Manifestation} You can use up to three \textit{ki manifestation} abilities per round.
 
     \subsection{Unfettered Warrior}
         \cf{Mnk}{Unarmed Warrior}
@@ -1848,26 +1893,26 @@ This choice determines a great deal about your character's abilities.
 
     \subsection{Transcendent Sage}
 
-        \cf{Mnk}[3]{Meditate} As a standard action, you can use this ability.
+        \cf{Mnk}[2]{Meditate} As a standard action, you can use this ability.
         If you do, you may remove all \glossterm{conditions} affecting you.
 
-        \cf{Mnk}[6]{Sage Lore} You gain two additional skill points that must be spent on monk class skills.
+        \cf{Mnk}[4]{Sage Lore} You gain two additional skill points that must be spent on monk class skills.
 
-        \cf{Mnk}[9]{Transcend Frailty}
+        \cf{Mnk}[7]{Transcend Frailty}
         You are immune to being \glossterm{deafened}, \glossterm{fatigued}, and \glossterm{sickened}.
 
-        \cf{Mnk}[12]{Meditative Strike} If you use your \textit{medidate} ability during the \glossterm{action phase}, you may also make a \glossterm{strike} during the \glossterm{delayed action phase}.
+        \cf{Mnk}[10]{Meditative Strike} If you use your \textit{meditate} ability during the \glossterm{action phase}, you may also make a \glossterm{strike} during the \glossterm{delayed action phase}.
 
-        \cf{Mnk}[15]{Transcend Flesh}
+        \cf{Mnk}[13]{Transcend Flesh}
         You are immune to being \glossterm{blinded}, \glossterm{exhausted}, and \glossterm{nauseated}.
         % TODO: do you still take aging penalties?
         In addition, you no longer take penalties to your attributes for aging, and cannot be magically aged.
         You still die of old age when your time is up.
 
-        \cf{Mnk}[18]{Inner Peace}
-        You are immune to \glossterm{Mind} \glossterm{conditions}.
+        \cf{Mnk}[16]{Inner Peace}
+        You are immune to hostile \glossterm{Mind} abilities.
 
-        \cf{Mnk}[20]{Transcend Mortality}[Magical]
+        \cf{Mnk}[19]{Transcend Mortality}[Magical]
         If you die, you may choose to retain control of your body and soul through sheer force of will.
         Your body immediately disappears, and your soul does not travel to an afterlife.
         Instead, your body reforms with no trace of its injuries 8 hours later.
