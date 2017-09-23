@@ -1,5 +1,5 @@
 from cgi_simple import (
-    div, equation, flex_col, flex_row, flex_wrapper, number_input,
+    div, equation, flex_col, flex_row, flex_wrapper, minus, number_input,
     plus, text_input, this_or_that, underlabeled_number_input,
 )
 
@@ -191,7 +191,7 @@ def calc_speed():
         div({'class': 'calc-header'}, 'Speed'),
         equation([
             underlabeled_number_input('Base'),
-            plus(),
+            minus(),
             underlabeled_number_input('Armor'),
             plus(),
             underlabeled_number_input('Misc', attributes={'class': 'eq-optional'}),
@@ -214,7 +214,7 @@ def calc_standard_damage():
                 text_input({
                     'class': 'fake-number',
                     'disabled': 'true',
-                    'value': '1d6'
+                    'value': '1d8'
                 }),
                 flex_col({'class': 'equation-text'}, '+1d per two'),
                 underlabeled_number_input('Level'),
@@ -249,7 +249,7 @@ def calc_strike_damage():
                 text_input({
                     'class': 'fake-number',
                     'disabled': 'true',
-                    'value': '1d6'
+                    'value': '1d8'
                 }),
                 flex_col({'class': 'equation-text'}, '+1d per two'),
                 underlabeled_number_input('Level/Str'),
@@ -268,7 +268,7 @@ def calc_other_damage():
                 text_input({
                     'class': 'fake-number',
                     'disabled': 'true',
-                    'value': '1d6'
+                    'value': '1d8'
                 }),
                 flex_col({'class': 'equation-text'}, '+1d per two'),
                 underlabeled_number_input('Level/Attr'),
