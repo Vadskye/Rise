@@ -909,6 +909,22 @@ def generate_spells():
         lists=['Arcane', 'Nature'],
         cantrip="The spell deals no damage.",
         subspells=[
+            Subspell(
+                level=4,
+                name="Freezing",
+                description="""
+                    If the attack hits against a target, it is also \\glossterm<immobilized> as a \\glossterm<condition>.
+                """,
+            ),
+            Subspell(
+                level=2,
+                name="Slick",
+                description="""
+                    The spell's area is covered with a film of slick ice.
+                    Creatures moving across the area must make Acrobatics checks to balance (see \pcref{Balance}).
+                    This ice lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
+                """,
+            ),
         ],
         category='damage',
     ))
