@@ -126,7 +126,7 @@ def core_statistics():
                     # TODO: roll20 value
                 },
             )
-            for offense in ['Strike accuracy', 'Strike +dmg', 'Land speed', '______ speed']
+            for offense in ['Strike accuracy', 'Strike damage', 'Land speed', '______ speed']
         ]),
     ])
 
