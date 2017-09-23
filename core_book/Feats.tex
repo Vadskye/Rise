@@ -52,6 +52,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \featref{Draconic Heritage} & \tdash & Gain aspects of draconic power & Bloodline & \featpref{Draconic Heritage} \\
         \featref{Iron Will} & Wil 2 & Increase mental resilience & \tdash & \featpref{Iron Will} \\
         \featref{Regenerator} & Con 2 & Heal from wounds with inhuman speed & \tdash & \featpref{Regenerator} \\
+        \featref{Spellwarped} & \tdash & Use one spell & \tdash & \featpref{Spellwarped} \\
         \featref{Toughness} & Con 2 & Increase physical fortitude & \tdash & \featpref{Toughness} \\
 
         \tb{Class Feats}\label{Class Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
@@ -1579,27 +1580,26 @@ Feats can be used to specialize your character particular area, to grant your ch
         \featpre Starting Constitution of 2.
         \featben
 
-        \ff[1]{Regenerative Rest} Whenever you take a \glossterm{short rest}, you can heal \glossterm{vital damage} equal to half your Constitution in addition to your normal healing.
+        \ff[1]{Diehard} You reduce your penalties from \glossterm{vital damage} by an amount equal to half your Constitution.
 
-        \ff[2]{Diehard} You reduce your penalties from \glossterm{vital damage} by an amount equal to your Constitution.
+        \ff[2]{Regenerative Rest} Whenever you take a \glossterm{short rest}, you can heal vital damage equal to half your Constitution in addition to your normal healing.
 
-        \ff[4]{Regenerative Recovery} When you use the \textit{recover} action, you heal \plus1d hit points.
-        In addition, if you have taken \glossterm{vital damage}, the healing from the \textit{recovery} ability heals vital damage instead of hit points until you have no vital damage remaining.
+        \ff[4]{Potent Recovery} When you use the \textit{recover} ability, you heal \plus1d hit points.
 
         \ff[6]{Fast Healing} At the end of each \glossterm{action phase}, you heal hit points equal to half your Constitution.
 
-        \ff[8]{Regeneration} If you have taken \glossterm{vital damage}, the healing from your \textit{fast healing} ability heals vital damage instead of hit points until you have no vital damage remaining.
+        \ff[8]{Unkillable} The penalty reduction from your \textit{diehard} ability increases to be equal to your Constitution.
 
-        \ff[10]{Unkillable} The penalty reduction from your \textit{diehard} ability increases to be equal to twice your Constitution.
+        \ff[10]{Regeneration} If you have taken \glossterm{vital damage}, the healing from your \textit{fast healing} ability heals vital damage instead of hit points until you have no vital damage remaining.
 
         \ff[12]{Greater Fast Healing} The healing from your \textit{fast healing} ability increases to be equal to your Constitution.
 
-        \ff[14]{Greater Regenerative Recovery} The bonus to healing from your \textit{regenerative recovery} ability increases to \plus2d.
+        \ff[14]{Regenerative Recovery} If you have taken \glossterm{vital damage}, the healing from the \textit{recovery} ability heals vital damage instead of hit points until you have no vital damage remaining.
 
-        \ff[16]{Regenerative Burst} As a \glossterm{minor action}, you can spend an \glossterm{action point} to use this ability.
+        \ff[16]{Healing Burst} As a \glossterm{minor action}, you can spend an \glossterm{action point} to use this ability.
         If you do, you heal hit points equal to your \glossterm{standard damage} \minus1d.
 
-        \ff[18]{Indestructible} The penalty reduction from your \textit{diehard} ability increases to be equal to three times your Constitution.
+        \ff[18]{Indestructible} The penalty reduction from your \textit{diehard} ability increases to be equal to twice your Constitution.
     \end{feat}
 
     \begin{feat}{Ride Specialization}{Skill}
@@ -1720,6 +1720,15 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[8]{Specialization} The bonus to Spellcraft increases to \plus4.
 
         \ff[16]{Greater Specialization} The bonus to Spellcraft increases to \plus6.
+    \end{feat}
+
+    \begin{feat}{Spellwarped}{types}
+        \featben
+
+        \ff[1]{Spellgift} Choose a spell from the arcane spell list (see \pcref{Arcane Spells}).
+        You can cast that spell as a \glossterm{standard action}.
+        This works exactly like casting a spell normally,
+
     \end{feat}
 
     \begin{feat}{Sprint Specialization}{Skill}
