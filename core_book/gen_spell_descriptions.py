@@ -838,13 +838,20 @@ def generate_spells():
             time='minor action',
         ),
         effects=Effects(
-            effect='The target gains a +1d bonus to damage with all attacks that deal damage measured in dice.',
+            effect='The target gains \\glossterm<temporary hit points> equal to twice your spellpower.',
             duration='Attunement (shared)',
         ),
         cantrip="The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).",
         schools=['Channeling'],
         lists=['Divine'],
         subspells=[
+            Subspell(
+                level=4,
+                name="Battle Blessing",
+                description="""
+                    The target gains a +1d bonus to damage with all attacks that deal damage measured in dice.
+                """,
+            ),
             Subspell(
                 level=6,
                 name="Protection",
@@ -1594,7 +1601,8 @@ def generate_spells():
             effect="""
                 The target's physical outline is distorted so it appears blurred, shifting, and wavering.
                 It gains a +1 bonus to \\glossterm<physical defenses> and Stealth (see \\pcref<Stealth>).
-                This provides no defensive benefit against creatures immune to \\glossterm<Visual> abilities.
+                This bonus is increases to +2 while in \\glossterm<shadowy illumination>.
+                This effect provides no defensive benefit against creatures immune to \\glossterm<Visual> abilities.
             """,
             duration='Attunement (shared)',
             tags=['Glamer', 'Visual'],
