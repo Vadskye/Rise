@@ -1086,6 +1086,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \begin{itemize}
             \item Cold: If target is a creature, it is \fatigued.
                 A \glossterm{critical hit} makes the target \exhausted instead.
+            % TODO: dazed/stunned is too strong now
             \item Electricity: If the target is a creature, it is \dazed.
                 A \glossterm{critical hit} makes the target \stunned instead.
             \item Fire: The target is \ignited.
@@ -1103,16 +1104,9 @@ Feats can be used to specialize your character particular area, to grant your ch
         \featpres Starting Strength of 1, starting Perception of 2.
         \featben
 
-        \ff[1]{Strip the Flesh} As a standard action, you can spend an \glossterm{action point} to use this ability.
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spellquicktargeting{One creature or object}{As weapon}
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \spelleffect You make a \glossterm{strike} against the target.
-                At the end of the current phase, if the target is not \glossterm{bloodied}, it takes additional damage equal to the damage you dealt to it with your strike.
-            \end{spelleffects}
-        \end{ability}
+        \ff[1]{Execution} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        If you do, make a \glossterm{strike}.
+        At the end of the current phase, if the target is \glossterm{bloodied}, it takes additional damage equal to the damage you dealt to it with your strike.
 
         \ff[2]{Purge the Weak} You gain a \plus1 bonus to accuracy with physical attacks against \glossterm{bloodied} creatures.
 
@@ -1120,14 +1114,15 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[6]{Bloodfeeder}[Life, Magical] Whenever a creature dies, if you dealt damage to it that round, you heal hit points equal to its level.
 
-        \ff[8]{Salt the Wound} When you use your \textit{strip the flesh} ability, the target continues taking damage at the end of each \glossterm{action phase} until it becomes \glossterm{bloodied}.
-        This is a \glossterm{condition}, and can be removed by abilities that remove conditions.
+        \ff[8]{Greater Execution} When you use your \textit{execution} ability, you gain a \plus1d bonus to damage with the strike.
 
         \ff[10]{Greater Purge the Weak} The accuracy bonus from your \textit{purge the weak} ability increases to \plus2.
 
         \ff[12]{Greater Final Blow}[Death, Magical] At the end of each round, if a creature has no hit points remaining and you damaged it with a \glossterm{strike} that round, the creature immediately dies.
 
         \ff[14]{Greater Bloodfeeder}[Life, Magical] Whenever a creature dies, if you dealt damage to it that round and you used your \textit{strip the flesh} ability on it since the last time it took a \glossterm{short rest}, you regain an \glossterm{action point}.
+
+        \ff[16]{Supreme Execution} The damage bonus with your \textit{execution} ability increases to \plus2d.
 
         \ff[18]{Supreme Purge the Weak} The accuracy bonus from your \textit{purge the weak} ability increases to \plus3.
     \end{feat}
@@ -1136,41 +1131,35 @@ Feats can be used to specialize your character particular area, to grant your ch
         \featpre Starting Perception and Willpower of 1.
         \featben
 
-        \ff[1]{Redirection} Whenever an ally adjacent to you is hit by a \glossterm{strike}, you may use this ability as an \glossterm{immediate action}.
+        \ff[1]{Binding Strike} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        If you do, you make a melee \glossterm{strike} against an adjacent creature.
+        In addition to the strike's normal effects, you also compare the attack result against the target's Mental defense.
+        \subparhead{Hit (Mental)} The target is \glossterm{immobilized} as a \glossterm{condition}.
+        This effet immediately ends if you are \glossterm{defeated} or if you stop being adjacent to the target.
+        \subparhead{Critical Hit (Mental)} As above, but the effect does not end if you stop being adjacent to the target.
+
+        \ff[2]{Redirection} Whenever an ally adjacent to you is hit by a \glossterm{strike}, you may use this ability as an \glossterm{immediate action}.
         If you do, you suffer all effects of the attack in place of the target.
-        Any abilities you have that would make the strike miss or fail have no effect, but your abilities that allow you to reduce or ignore its effects work normally.
-        You can learn which strikes hit the target in the current phase before deciding which strike to redirect, but not how much damage they would do (or any other effects they might have).
+        Any abilities you have that would make the attack miss or fail have no effect, but your abilities that allow you to reduce or ignore its effects work normally.
 
-        \ff[2]{Lesser Defend the Weak} You reduce the \glossterm{overwhelm penalties} of allies adjacent to you by 1.
+        You can learn which attacks hit the target in the current phase before deciding which attack to redirect, but not how much damage they would do (or any other effects they might have).
+
+        \ff[4]{Defend the Weak} You reduce the \glossterm{overwhelm penalties} of allies adjacent to you by 1.
         If an ally's overwhelm penalty is reduced to 0, it not considered to be \glossterm{overwhelmed}.
-
-        \ff[4]{Binding Strike} As a standard action, you can spend an \glossterm{action point} to use this ability.
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spellquicktargeting{One creature}{Adjacent}
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \spelleffect You make a \glossterm{strike} against the target.
-                If the target takes damage from this strike, it is \immobilized.
-                This effect is immediately broken if you stop being adjacent to the target.
-                \spelldur Condition
-            \end{spelleffects}
-        \end{ability}
 
         \ff[6]{Expanded Redirection} You can use your \textit{redirection} ability to redirect the effects of any \glossterm{mundane} attack, not just \glossterm{strikes}.
 
-        \ff[8]{Defend the Weak} The penalty reduction increases to 2.
+        \ff[8]{Certain Bind} You gain a \plus1 bonus to accuracy with your \textit{binding strike} ability.
 
-        \ff[10]{Certain Bind} If you miss with your \textit{binding strike} ability, you regain the action point spent to use the ability.
+        \ff[10]{Greater Defend the Weak} The penalty reduction from your \textit{defend the weak} ability increases to 2.
 
         \ff[12]{Martyr's Boon}[Magical] You can use an \glossterm{action point} to use your \textit{redirection} ability on any ally within \rnglong range of you.
 
-        \ff[14]{Greater Defend the Weak} The penalty reduction increases to 3.
+        \ff[14]{Greater Certain Bind} The accuracy bonus with your \textit{binding strike} ability increases to \plus2.
 
-        \ff[16]{Inescapable} Enemies you threaten must pay four times the normal movement cost to move out of squares you threaten.
-        This replaces the normal penalties for moving through threatened squares (see \pcref{Moving Near Foes}).
+        \ff[16]{Supreme Defend the Weak} The penalty reduction from your \textit{defend the weak} ability increases to 3.
 
-        \ff[18]{Greater Expanded Redirection}[Magical] You can use your \textit{redirection} ability to redirect the effects of any attack, not just \glossterm{mundane} attacks. 
+        \ff[18]{Mystic Redirection}[Magical] You can use your \textit{redirection} ability to redirect the effects of any attack, not just \glossterm{mundane} attacks. 
     \end{feat}
 
     \begin{feat}{Heal Specialization}{Skill}
