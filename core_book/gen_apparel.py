@@ -353,7 +353,7 @@ def generate_worn():
             Making a strike with this gauntlet is equivalent to an \\glossterm<unarmed attack>.
             You do not need to move with your foe to push it back the full distance.
         """,
-        short_description="Shoves foe when use to strike",
+        short_description="Shoves foe when used to strike",
     ))
 
     apparel.append(MagicItem(
