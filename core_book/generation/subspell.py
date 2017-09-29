@@ -87,7 +87,7 @@ class Subspell(object):
                 {self.tag_text()}
             """,
             f"""
-                This augment can only be applied to one casting of this spell at a time.
+                This subspell can only be applied to one casting of this spell at a time.
             """ if self.only_one else None,
         ]
 

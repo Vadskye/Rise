@@ -1,6 +1,7 @@
 from logging import getLogger
 import generation.rise_data as rise_data
 from generation.util import join
+from generation.subspell import Subspell
 logger = getLogger(__name__)
 
 class Spell(object):
@@ -31,11 +32,18 @@ class Spell(object):
         self.notes = notes
         self.schools = schools
         self.short_description = short_description or 'TODO'
-        self.subspells = subspells
+        self.subspells = subspells or []
         self.targeting = targeting
 
         # This may need to be an argument later
         self.ability_type = 'ritual' if self.base_level is not None else 'spell'
+
+        # Add default subspell
+        subspells.append(Subspell(
+            level=6,
+            name='Innate',
+            description='You can cast the spell without spending an action point.',
+        ))
 
         for arg in ['cantrip', 'effects', 'lists', 'name', 'schools', 'targeting']:
             if getattr(self, arg) is None:
@@ -58,7 +66,7 @@ class Spell(object):
                 key=lambda augment: augment.name
             ),
             key=lambda augment: augment.level
-        ) if self.subspells else None
+        )
         base_level_text = f"[{self.base_level}]" if self.base_level else ""
 
         return join(
