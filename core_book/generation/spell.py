@@ -7,7 +7,6 @@ class Spell(object):
     def __init__(
             self,
             targeting,
-            augments=None,
             base_level=None,
             cantrip=None,
             category=None,
@@ -21,7 +20,6 @@ class Spell(object):
             notes=None,
             short_description=None,
     ):
-        self.augments = augments
         self.base_level = base_level
         self.cantrip = cantrip
         self.category = category
@@ -43,9 +41,6 @@ class Spell(object):
             if getattr(self, arg) is None:
                 print(f"Warning: {self} is missing required property '{arg}'")
 
-        if self.augments is None:
-            self.augments = self.calculate_standard_augments()
-
         for school in self.schools:
             if school not in rise_data.schools:
                 logger.warning(f"{self} has unrecognized school '{school}'")
@@ -54,32 +49,6 @@ class Spell(object):
             logger.warning(f"{self} has no category")
         elif self.category not in rise_data.categories:
             logger.warning(f"{self} has unrecognized category '{self.category}'")
-
-    def calculate_standard_augments(self):
-        augments = []
-        if self.ability_type == 'spell':
-            augments += ['Quickened', 'Silent', 'Stilled']
-        elif self.ability_type == 'ritual':
-            augments += ['Accelerated']
-
-        if self.targeting.rng is not None:
-            augments.append('Extended')
-        if self.targeting.area is not None:
-            augments.append('Widened')
-        if (
-                self.ability_type == 'spell'
-                and self.targeting.target is not None
-                and self.targeting.area is None
-                and (self.category and self.category[:4] != 'buff')
-        ):
-            augments.append('Mass')
-        if (
-                self.effects.attack
-                and self.effects.attack.success
-                and 'standard damage' in self.effects.attack.success
-        ):
-            augments.append('Intensified')
-        return sorted(augments)
 
     def to_latex(self):
         # Sort by level as primary, name as secondary
@@ -102,7 +71,6 @@ class Spell(object):
                     \\end<spellcontent>
                     \\begin<spellfooter>
                         \\spellinfo<{', '.join(self.schools)}><{', '.join(self.lists)}>
-                        \\fieldhead<Augments> {', '.join(sorted(self.augments))}
             """,
             f"""
                             \\spellnotes {self.notes}
