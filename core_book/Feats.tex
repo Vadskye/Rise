@@ -1080,14 +1080,14 @@ Feats can be used to specialize your character particular area, to grant your ch
         % Which spellpower?
         \ff[3]{Energy Resistance} You gain damage reduction equal to your spellpower against \glossterm{energy damage}.
 
-        \ff[5]{Mighty Telekinesis} You gain a \plus1 bonus to accuracy with the \spell{telekinesis} spell.
+        \ff[5]{Energy Affinity} Choose an energy type cold, electricity, fire, or sonic.
+        You gain a \plus1 bonus to accuracy with attacks that deal damage of that type.
 
         \ff[7]{Residual Energy Burst} When your \textit{energy burst} attack hits, the target suffers an additional effect depending on the energy type chosen.
         These effects are \glossterm{conditions}, and last until they are removed.
         \begin{itemize}
             \item Cold: If target is a creature, it is \fatigued.
                 A \glossterm{critical hit} makes the target \exhausted instead.
-            % TODO: dazed/stunned is too strong now
             \item Electricity: If the target is a creature, it is \dazed.
                 A \glossterm{critical hit} makes the target \stunned instead.
             \item Fire: The target is \ignited.
@@ -1096,7 +1096,9 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[9]{Potent Evocation} You gain a \plus1d bonus to damage with Evocation abilities that deal damage measured in a dice pool, as well as with the \textit{energy burst} ability.
 
-        \ff[11]{Greater Energy Resistance} The damage reduction against \glossterm{energy damage} increases to twice your spellpower.
+        \ff[11]{Greater Energy Resistance} The damage reduction from your \textit{energy resistance} ability increases to twice your spellpower.
+
+        \ff[13]{Greater Energy Affinity} The accuracy bonus from your \textit{energy affinity} ability increases to \plus2.
 
         \ff[15]{Devastating Evocation} The area affected by your Evocation spells that affect areas doubles.
     \end{feat}
