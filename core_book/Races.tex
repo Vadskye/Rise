@@ -13,6 +13,7 @@ All characters know how to speak Common. A dwarf, elf, gnome, half-elf, half-orc
 \subsection{Small Characters}\label{Small Characters}
 A Small character has the following effects based on their size.
   \begin{itemize}
+    \item \minus1d penalty to \glossterm{strike damage}.
     \item \minus2 penalty to Fortitude defense.
     \item \plus2 bonus to Reflex defense.
     \item \plus4 bonus to Stealth.
@@ -29,14 +30,15 @@ In addition, a Small character generally has a move speed five feet slower than 
 \parhead{Speed} 30 feet.
 \parhead{Special Abilities}
 \begin{itemize}
-    \itemhead*{Skilled}: Humans get 2 bonus skill points at 1st level. They can spend those skill points on any skills.
+    \itemhead*{Skilled}: Humans gain 4 bonus \glossterm{skill points}. They can spend those skill points on any skills.
 \end{itemize}
+\parhead{Racial Defense Bonus} \plus2 Fortitude, Reflex, and Mental.
 \parhead{Racial Bonus Feat} A human may choose any feat as a bonus feat.
 \parhead{Automatic Language} Common.
 
 \subsection{Dwarves}
 \parhead{Size} Medium.
-\parhead{Attributes} \plus1 Constitution, \minus1 Dexterity.
+\parhead{Attributes} \plus1 starting Constitution, \minus1 starting Dexterity.
 \parhead{Speed} 25 feet.
 \parhead{Special Abilities}
 \begin{itemize}
@@ -44,12 +46,13 @@ In addition, a Small character generally has a move speed five feet slower than 
     \itemhead*{Dwarven Endurance}: Dwarves do not move slower in heavy armor, and can run normally in both medium and heavy armor.
     \itemhead*{Stability}: While standing on solid ground, dwarves gain a \plus2 bonus to Fortitude defense against attacks that would move them.
 \end{itemize}
-\parhead{Racial Bonus Feat} Any from the following list: \featref*{Blindfighter}, \featref*{Craft Mastery}, \featref*{Destructive}, \featref*{Endurance}, \featref*{Martial Training}, \featref*{Rapid Recovery}, \featref*{Shielded Fighting}, \featref*{Toughness}, \featref*{Weapon Focus} (axes or headed weapons only).
+\parhead{Racial Defense Bonus} \plus3 Fortitude, \plus2 Mental, \plus1 Reflex.
+\parhead{Racial Bonus Feat} Any from the following list: \featref*{Blindfighter}, \featref*{Craft Specialization}, \featref*{Iron Will}, \featref*{Toughness}.
 \parhead{Automatic Languages} Common, Dwarven.
 
 \subsection{Elves}
 \parhead{Size} Medium.
-\parhead{Attributes} \plus1 Dexterity, \minus1 Constitution.
+\parhead{Attributes} \plus1 starting Dexterity, \minus1 starting Constitution.
 \parhead{Speed} 30 feet.
 \parhead{Special Abilities}
 \begin{itemize}
@@ -57,19 +60,22 @@ In addition, a Small character generally has a move speed five feet slower than 
     \itemhead*{Low-light Vision}: Elves treat sources of light as if they had double their normal illumination range.
     \itemhead*{Trance}: Elves do not sleep, and are immune to sleep effects. Instead of sleeping, elves can trance for 4 hours. An elf in trance may make Perception-based checks at a \minus5 penalty. Elves must still avoid strenuous activity for 8 hours to heal, avoid fatigue, and gain other benefits of resting.
 \end{itemize}
-\parhead{Racial Bonus Feat} Any from the following list: Any Spell feat (see \pcref{Spell Feats}), \featref*{Awareness Mastery}, \featref*{Far Shot}, \featref*{Lightning Reflexes}, \featref*{Martial Training}, \featref*{Overwhelming Fire}, \featref*{Point Blank Shot}, \featref*{Survival Mastery}, \featref*{Swift}, \featref*{Weapon Focus} (bows, heavy blades, or light blades only).
+\parhead{Racial Defense Bonus} \plus3 Reflex, \plus2 Mental, \plus1 Fortitude.
+\parhead{Racial Bonus Feat} Any from the following list: Any Spell feat (see \pcref{Spell Feats}), \featref*{Agility}, \featref*{Awareness Specialization}, \featref*{Sniper}.
 \parhead{Automatic Languages} Common, Elven.
 
 \subsection{Gnomes}
 \parhead{Size} Small. This gives several benefits and penalties, as described at \pcref{Small Characters}.
-\parhead{Attributes} \plus1 Constitution.
+\parhead{Attributes} \plus1 starting Constitution.
 \parhead{Speed} 25 feet.
 \parhead{Special Abilities}
 \begin{itemize}
     \itemhead*{Earthen Resilience}: Gnomes gain a \plus2 bonus to Fortitude defense.
     \itemhead*{Low-light Vision}: Gnomes treat sources of light as if they had double their normal illumination range.
+    \itemhead*{Mystic Essence}: Gnomes gain an additional \glossterm{action point}.
 \end{itemize}
-\parhead{Racial Bonus Feat} Any Spell feat (see \pcref{Spell Feats}), or any from the following list: \featref*{Blindfighter}, \featref*{Close-Quarters Fighting}, \featref*{Craft Mastery}, \featref*{Stealth Mastery}, \featref*{Toughness}.
+\parhead{Racial Defense Bonus} \plus3 Fortitude, \plus2 Mental, \plus1 Reflex.
+\parhead{Racial Bonus Feat} Any Spell feat (see \pcref{Spell Feats}), or any from the following list: \featref*{Blindfighter}, \featref*{Craft Specialization}, \featref*{Stealth Specialization}, \featref*{Toughness}.
 \parhead{Automatic Languages} Common, Gnome.
 
 \subsection{Half-Elves}
@@ -79,31 +85,37 @@ In addition, a Small character generally has a move speed five feet slower than 
 \parhead{Special Abilities}
 \begin{itemize}
     \itemhead*{Dual Heritage}: For all effects related to race, a half-elf is considered both a human and an elf.
+    \itemhead*{Hybrid Training}: Choose a class.
+        You gain the \glossterm{class skills} of that class in addition to your existing class skills.
+        In addition, you can exchange one class archetype from your class with one class archetype from that class.
+        If that class has any basic class abilities which are not part of an archetype and do not have abilities of the same on other classes, such as a cleric's \textit{divine power}, you gain those abilities.
     \itemhead*{Low-light Vision}: Half-elves treat sources of light as if they had double their normal illumination range.
-    \itemhead*{Skill Affinity}: Half-elves treat all skills as class skills.
 \end{itemize}
-\parhead{Racial Bonus Feat} Any Skill feat.
+\parhead{Racial Defense Bonus} \plus2 Fortitude, Reflex, Mental.
+\parhead{Racial Bonus Feat} Any Skill feat (see \pcref{Skill Feats}), or \featref*{Class Versatility}.
 \parhead{Automatic Languages} Common, Elven.
 
 \subsection{Half-Orcs}
 \parhead{Size} Medium.
-\parhead{Attributes} \plus1 Strength, \minus1 Intelligence, \minus1 Perception.
+\parhead{Attributes} \plus1 starting Strength, \minus1 starting Intelligence.
 \parhead{Speed} 30 feet.
 \parhead{Special Abilities}
 \begin{itemize}
     \itemhead*{Darkvision}: Half-orcs can see in the dark clearly up to 50 feet.   Beyond that, they can see dimly, treating areas of darkness as shadowy illumination. Darkvision does not function if a half-orc is in a brightly lit area, and does not resume functioning until 1 round after the half-orc leaves the brightly lit area.
     \itemhead*{Dual Heritage}: For all effects related to race, a half-orc is considered both a human and an orc.
 \end{itemize}
-\parhead{Racial Bonus Feat} Any Combat feat (see \pcref{Combat Feats}), or any from the following list: \featref*{Endurance}, \featref*{Rapid Recovery}, \featref*{Survival Mastery}, \featref*{Swift}, \featref*{Toughness}.
+\parhead{Racial Defense Bonus} \plus3 Fortitude, \plus2 Reflex, \plus1 Mental.
+\parhead{Racial Bonus Feat} Any Combat feat (see \pcref{Combat Feats}), or \featref*{Toughness}.
 \parhead{Automatic Languages} Common, Orc.
 
 \subsection{Halflings}
-\parhead{Size} Small.
-\parhead{Attributes} \plus1 Dexterity.
-\parhead{Speed} 25 feet. This gives several benefits and penalties, as described at \pcref{Small Characters}.
+\parhead{Size} Small. This gives several benefits and penalties, as described at \pcref{Small Characters}.
+\parhead{Attributes} \plus1 starting Dexterity.
+\parhead{Speed} 25 feet.
 \parhead{Special Abilities}
 \begin{itemize}
-    \itemhead*{Halfling Luck}: \plus1 to Fortitude, Reflex, and Mental defenses.
+    \itemhead*{Halfling Luck}: \plus1 to all defenses.
 \end{itemize}
-\parhead{Racial Bonus Feat} Any from the following list: \featref*{Climb Mastery}, \featref*{Close-Quarters Fighting}, \featref*{Combat Mobility}, \featref*{Iron Will}, \featref*{Jump Mastery}, \featref*{Lightning Reflexes}, \featref*{Quick Draw}, \featref*{Stealth Mastery}, \featref*{Swift}, \featref*{Weapon Focus} (thrown only).
+\parhead{Racial Defense Bonus} \plus3 Reflex, \plus2 Fortitude, \plus1 Mental.
+\parhead{Racial Bonus Feat} Any from the following list: \featref*{Agility}, \featref*{Climb Specialization}, \featref*{Iron Will}, \featref*{Jump Specialization}, \featref*{Stealth Specialization}.
 \parhead{Automatic Languages} Common, Halfling.

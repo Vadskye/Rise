@@ -10,7 +10,7 @@ def create_page():
         ]),
         flex_col({'class': 'main-body'}, [
             boring_stuff(),
-            core_statistics(),
+            statistics_header(),
             attacks(),
             abilities(),
         ]),
@@ -77,19 +77,21 @@ def skill_box(name):
 def resources():
     return flex_col({'class': 'resources'}, [
         flex_wrapper({'class': 'section-header'}, 'Resources'),
-        ''.join([
-            unlabeled_number_input(
-                text_input_attributes = {'name': 'resource-name-'+str(i)},
-                number_input_attributes = {'name': 'resource-number-'+str(i)},
-            ) for i in range(4)
+        flex_wrapper({'class': 'action-point-header'}, 'Action points'),
+        flex_row({'class': 'action-point-wrapper'}, [
+            underlabeled_number_input('Maximum'),
+            underlabeled_number_input('Attuned'),
+            underlabeled_number_input('Recovery'),
         ]),
+        labeled_number_input('Legend points'),
+        labeled_number_input('Item slots'),
     ])
 
-def core_statistics():
+def statistics_header():
     return ''.join([
         flex_row({'class': 'core-statistics'}, [
             defenses(),
-            offenses(),
+            core_statistics(),
             hit_points(),
             resources()
             #labeled_number_input('Hit Points', 'hit-points')
@@ -112,15 +114,9 @@ def defenses():
         ]),
     ])
 
-def offenses():
+def core_statistics():
     return flex_col({'class': 'offense'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Core Statistics')),
-        flex_wrapper({'class': 'legend-point-header'}, 'Legend points'),
-        flex_row({'class': 'legend-point-wrapper'}, [
-            underlabeled_number_input('General'),
-            underlabeled_number_input('Offense'),
-            underlabeled_number_input('Defense'),
-        ]),
         "".join([
             labeled_number_input(
                 offense,
@@ -130,7 +126,7 @@ def offenses():
                     # TODO: roll20 value
                 },
             )
-            for offense in ['Strikes/round', 'Land speed']
+            for offense in ['Strike accuracy', 'Strike damage', 'Land speed', '______ speed']
         ]),
     ])
 
@@ -139,7 +135,7 @@ def hit_points():
         flex_wrapper(div({'class': 'section-header'}, 'Hit Points')),
         "".join([
             labeled_number_input(hp_type, input_name = 'hit-points-'+hp_type)
-            for hp_type in 'Max Bloodied Temp Critical'.split()
+            for hp_type in 'Max Bloodied Temp Vital'.split()
         ]),
     ])
 

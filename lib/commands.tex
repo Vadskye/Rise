@@ -7,8 +7,8 @@
 \newcommand{\lsssec}[1]{#1\label{#1}}
 
 \newcommand{\ssecfake}[1]{\par \vspace{1em}{\Large\bfseries\raggedright #1} \vspace{1em} \par}
-\newcommand{\sssecfake}[1]{\par \vspace{0.5em}{}{\large\bfseries\raggedright #1} \vspace{0.5em} \par}
-\newcommand{\sssecfakehref}[2]{\par \vspace{0.5em}{}{\large\bfseries\raggedright \hyperlink{#1}{#2}} \vspace{0.5em} \par}
+\newcommand{\sssecfake}[1]{\par \vspace{0.5em}{}{\large\raggedright #1} \vspace{0.5em} \par}
+\newcommand{\sssecfakehref}[2]{\par \vspace{0.5em}{}{\large\raggedright \hyperlink{#1}{#2}} \vspace{0.5em} \par}
 \newcommand{\pref}[1]{page \pageref{#1}}
 \newcommand{\pdref}[1]{#1 (page \pageref{#1})}
 \newcommand{\tref}[1]{Table \ref{cap:#1}: #1 (\pref{cap:#1})}
@@ -30,7 +30,7 @@
 \newcommand{\spellindirect}[2]{\emph{\hyperlink{spell:#1}{#2}}}
 \newcommand{\ritual}[1]{\emph{#1}}    %Italicize spells
 \newcommand{\cd}[1]{\par \textbf{#1}:}    %Bold class fluff description headers
-\newcommand{\subcf}[1]{\par \emph{#1}:}    %Italicize sub-class-feature headers
+\newcommand{\subcf}[1]{\parhead{#1}}    %Bold sub-class-feature headers
 \newcommand{\subsk}[1]{\par \emph{#1}:}    %Italicize sub-skill headers
 
 \newcommand{\subparhead}[1]{\par\emph{#1}:}
@@ -137,10 +137,10 @@
 \newcommand{\wilditemplus}{\addtocounter{enumi}{3} \item}
 
 \newcommand{\spelldesc}[1]{\par\noindent \textit{#1}}
-\newcommand{\spelldmg}[1]{\parhead*{Damage} #1}
-\newcommand{\spellheal}[1]{\parhead*{Healing} #1}
-\newcommand{\spellatk}[1]{\parhead*{Attack} #1}
-\newcommand{\spelltgr}[1]{\parhead*{Trigger} #1}
+\newcommand{\spelldmg}[1]{\fieldhead{Damage} #1}
+\newcommand{\spellheal}[1]{\fieldhead{Healing} #1}
+\newcommand{\spellatk}[1]{\fieldhead{Attack} #1}
+\newcommand{\spelltgr}[1]{\fieldhead{Trigger} #1}
 
 %\newcommand{\spellfocus}[1]{\par\noindent \textit{Focus:} #1}
 \newcommand{\spellmat}[1]{\par\noindent \textit{Material Components:} #1}
@@ -148,28 +148,28 @@
 \newcommand{\spelltwocol}[2]{\spelltabularcompressed #1 & #2\end{tabularx}}
 
 \newcommand{\spellschool}[1]{\noindent#1}
-\newcommand{\spelllists}[1]{\parhead*{Lists} #1}
-\newcommand{\spellcmp}[1]{\parhead*{Components} #1}
-\newcommand{\spelltime}[1]{\parhead*{Casting Time} #1}
-\newcommand{\spellrng}[1]{\parhead*{Range} #1}
+\newcommand{\spelllists}[1]{\fieldhead{Lists} #1}
+\newcommand{\spellcmp}[1]{\fieldhead{Components} #1}
+\newcommand{\spelltime}[1]{\fieldhead{Casting Time} #1}
+\newcommand{\spellrng}[1]{\fieldhead{Range} #1}
 
-\newcommand{\spellarea}[1]{\parhead*{Area} #1}
-\newcommand{\spellburst}[1]{\parhead*{Burst} #1}
-\newcommand{\spellemanation}[1]{\parhead*{Emanation} #1}
-\newcommand{\spelllimit}[1]{\parhead*{Limit} #1}
-\newcommand{\spellzone}[1]{\parhead*{Zone} #1}
-\newcommand{\spellzoneandburst}[1]{\parhead*{Zone and Burst} #1}
+\newcommand{\spellarea}[1]{\fieldhead{Area} #1}
+\newcommand{\spellburst}[1]{\fieldhead{Burst} #1}
+\newcommand{\spellemanation}[1]{\fieldhead{Emanation} #1}
+\newcommand{\spelllimit}[1]{\fieldhead{Limit} #1}
+\newcommand{\spellzone}[1]{\fieldhead{Zone} #1}
+\newcommand{\spellzoneandburst}[1]{\fieldhead{Zone and Burst} #1}
 
-%\newcommand{\spelltgt}[1]{\parhead*{Target} #1}
-%\newcommand{\spelltgts}[1]{\parhead*{Targets} #1}
-\newcommand{\spelltgtortgts}[1]{\parhead*{Target or Targets} #1}
-\newcommand{\spelltgtorarea}[1]{\parhead*{Target or Area} #1}
-\newcommand{\spelltgteffarea}[1]{\parhead*{Target or Area} #1}
+%\newcommand{\spelltgt}[1]{\fieldhead{Target} #1}
+%\newcommand{\spelltgts}[1]{\fieldhead{Targets} #1}
+\newcommand{\spelltgtortgts}[1]{\fieldhead{Target or Targets} #1}
+\newcommand{\spelltgtorarea}[1]{\fieldhead{Target or Area} #1}
+\newcommand{\spelltgteffarea}[1]{\fieldhead{Target or Area} #1}
 
-\newcommand{\spelldur}{\parhead*{Duration}}
-\newcommand{\spelltgrdur}[1]{\parhead*{Trigger Duration} #1}
-\newcommand{\spellfocus}[1]{\parhead*{Focus} #1}
-\newcommand{\spellsr}[1]{\parhead*{Spell Resistance} #1}
+\newcommand{\spelldur}{\fieldhead{Duration}}
+\newcommand{\spelltgrdur}[1]{\fieldhead{Trigger Duration} #1}
+\newcommand{\spellfocus}[1]{\fieldhead{Focus} #1}
+\newcommand{\spellsr}[1]{\fieldhead{Spell Resistance} #1}
 
 \newcommand{\rngpers}{Personal}
 \newcommand{\rngtouch}{Touch}
@@ -219,57 +219,42 @@
 %\newcommand{\vulnerableexplanation}{A vulnerable creature takes a \minus2 penalty to attacks, defenses, and checks.\xspace}
 %\newcommand{\vulneffect}{\minus2 to attacks, defenses, and checks\xspace}
 
-\newcommand{\conditionlink}[1]{\hyperlink{condition:#1}{#1}\xspace}
+\newcommand{\blinded}{\glossterm{blinded}\xspace}
+\newcommand{\bloodied}{\glossterm{bloodied}\xspace}
+\newcommand{\charmed}{\glossterm{charmed}\xspace}
+\newcommand{\confused}{\glossterm{confused}\xspace}
+\newcommand{\defenseless}{\glossterm{defenseless}\xspace}
+\newcommand{\disoriented}{\glossterm{disoriented}\xspace}
+\newcommand{\dominated}{\glossterm{dominated}\xspace}
+\newcommand{\exhausted}{\glossterm{exhausted}\xspace}
+\newcommand{\fascinated}{\glossterm{fascinated}\xspace}
+\newcommand{\fatigued}{\glossterm{fatigued}\xspace}
+\newcommand{\frightened}{\glossterm{frightened}\xspace}
+\newcommand{\dazed}{\glossterm{dazed}\xspace}
+\newcommand{\dazzled}{\glossterm{dazzled}\xspace}
+\newcommand{\deafened}{\glossterm{deafened}\xspace}
+\newcommand{\grappled}{\glossterm{grappled}\xspace}
+\newcommand{\goaded}{\glossterm{goaded}\xspace}
+\newcommand{\helpless}{\glossterm{helpless}\xspace}
+\newcommand{\ignited}{\glossterm{ignited}\xspace}
+\newcommand{\immobilized}{\glossterm{immobilized}\xspace}
+\newcommand{\nauseated}{\glossterm{nauseated}\xspace}
+\newcommand{\panicked}{\glossterm{panicked}\xspace}
+\newcommand{\paralyzed}{\glossterm{paralyzed}\xspace}
+\newcommand{\petrified}{\glossterm{petrified}\xspace}
+\newcommand{\prone}{\glossterm{prone}\xspace}
+\newcommand{\shaken}{\glossterm{shaken}\xspace}
+\newcommand{\sickened}{\glossterm{sickened}\xspace}
+\newcommand{\slowed}{\glossterm{slowed}\xspace}
+\newcommand{\staggered}{\glossterm{staggered}\xspace}
+\newcommand{\stunned}{\glossterm{stunned}\xspace}
+\newcommand{\taunted}{\glossterm{taunted}\xspace}
+\newcommand{\wounded}{\glossterm{wounded}\xspace}
+\newcommand{\unaware}{\glossterm{unaware}\xspace}
 
-%\newcommand{\bewildered}{\conditionlink{bewildered} \reminder{\vulneffect}\xspace}
-\newcommand{\blinded}{\conditionlink{blinded} \reminder{unable to see, defenseless}\xspace}
-\newcommand{\bloodied}{\conditionlink{bloodied} \reminder{half hit points}\xspace}
-\newcommand{\charmed}{\conditionlink{charmed} \reminder{deluded into liking its charmer}\xspace}
-\newcommand{\confused}{\conditionlink{confused} \reminder{randomly babbles, flees, attacks nearest, or acts normally}\xspace}
-\newcommand{\dazzled}{\conditionlink{dazzled} \reminder{20\% miss chance, \minus4 to visual Perception}\xspace}
-\newcommand{\defenseless}{\conditionlink{defenseless} \reminder{\minus5 defense vs. melee}\xspace}
-\newcommand{\disoriented}{\conditionlink{disoriented} \reminder{moves randomly}\xspace}
-\newcommand{\dominated}{\conditionlink{dominated} \reminder{compelled to obey its dominator}\xspace}
-%\newcommand{\dominated}{\conditionlink{dominated} \reminder{under total mental control}\xspace}
-\newcommand{\exhausted}{\conditionlink{exhausted} \reminder{move at half speed, unable to sprint or charge, impaired}}
-\newcommand{\entangled}{\conditionlink{entangled} \reminder{move at half speed, unable to sprint or charge, impaired}\xspace}
-\newcommand{\fascinated}{\conditionlink{fascinated} \reminder{unable to act unless threatened}}
-\newcommand{\fatigued}{\conditionlink{fatigued} \reminder{move at half speed, unable to sprint or charge}\xspace}
-\newcommand{\frightened}{\conditionlink{frightened} \reminder{50\% failure near its fear}\xspace}
-\newcommand{\dazed}{\conditionlink{dazed} \reminder{unable to act in movement phase}\xspace}
-\newcommand{\deafened}{\conditionlink{deafened} \reminder{unable to hear}\xspace}
-\newcommand{\disabled}{\conditionlink{disabled} \reminder{at 0 hit points}\xspace}
-\newcommand{\grappled}{\conditionlink{grappled} \reminder{physically wrestling with a foe}\xspace}
-\newcommand{\goaded}{\conditionlink{goaded} \reminder{20\% failure on attacks not against goading creature}\xspace}
-\newcommand{\helpless}{\conditionlink{helpless} \reminder{physical defenses are 10, vulnerable to coup de grace}\xspace}
-\newcommand{\ignited}{\conditionlink{ignited} \reminder{1d6 damage/round, 20\% failure, Dex DR 15 to extinguish}\xspace}
-\newcommand{\immobilized}{\conditionlink{immobilized} \reminder{Unable to leave its location}\xspace}
-\newcommand{\nauseated}{\conditionlink{nauseated} \reminder{unable to act in action phase, move at half speed}\xspace}
-\newcommand{\negativelevel}{\conditionlink{negative level} \reminder{\minus1 to accuracy, defenses, and checks, \minus5 hit points}}
-\newcommand{\negativelevels}{\conditionlink{negative levels} \reminder{\minus1 to accuracy, defenses, and checks, \minus5 hit points}}
-\newcommand{\panicked}{\conditionlink{panicked} \reminder{flees or cowers from its fear}\xspace}
-\newcommand{\paralyzed}{\conditionlink{paralyzed} \reminder{helpless, unable to move}\xspace}
-\newcommand{\partiallyblinded}{\conditionlink{partially blinded} \reminder{impaired, lose special vision abilities}\xspace}
-\newcommand{\petrified}{\conditionlink{petrified} \reminder{turned to stone}\xspace}
-\newcommand{\impaired}{\conditionlink{impaired} \reminder{20\% failure}\xspace}
-\newcommand{\prone}{\conditionlink{prone} \reminder{\minus4 to melee accuracy and defense, \plus4 defense vs ranged attacks}}
-\newcommand{\severelyimpaired}{\conditionlink{severely impaired} \reminder{50\% failure}\xspace}
-\newcommand{\shaken}{\conditionlink{shaken} \reminder{20\% failure near its fear}\xspace}
-\newcommand{\sickened}{\conditionlink{sickened} \reminder{moves at half speed}\xspace}
-\newcommand{\slowed}{\conditionlink{slowed} \reminder{unable to act in movement phase, move at half speed}\xspace}
-\newcommand{\staggered}{\conditionlink{staggered} \reminder{unable to act in movement phase}\xspace}
-\newcommand{\stunned}{\conditionlink{stunned} \reminder{unable to take actions}\xspace}
-\newcommand{\taunted}{\conditionlink{taunted} \reminder{50\% failure on attacks not against taunting creature}\xspace}
-\newcommand{\unaware}{\conditionlink{unaware} \reminder{critically hit on every attack}\xspace}
-\newcommand{\unencumbered}{\conditionlink{unencumbered} \reminder{not carrying a heavy load or wearing medium or heavy armor}\xspace}
-\newcommand{\monkunencumbered}{not wearing armor or encumbered by weight (see \pcref{Encumbrance})\xspace}
-%\newcommand{\vulnerable}{\conditionlink{vulnerable} \reminder{\vulneffect}\xspace}
+\newcommand{\difficultterrain}{\glossterm{difficult terrain}\xspace}
 
-\newcommand{\difficultterrain}{\glossterm{difficult terrain} \reminder{half movement speed}\xspace}
-
-\newcommand{\condition}[1]{\parhead{#1}\label{#1}\hypertarget{condition:#1}{}}
-
-\newcommand{\concealment}{concealment \reminder{\plus4 to physical defenses}}
+\newcommand{\concealment}{concealment\xspace}
 
 \newcommand{\destructivespellnotes}{If a destructive spell deals enough damage to an interposing barrier to shatter or breaks through it, its effects may continue beyond the barrier if the area permits; otherwise, it stops at the barrier just as any other spell effect does.\xspace}
 \newcommand{\cursespellnotes}{Curses cannot be dispelled with \spell{dispel magic}, but can be removed with \spell{break enchantment} or \spell{remove curse}.\xspace}
@@ -304,12 +289,12 @@
 % weird spacing before twocol
 \newcommand{\spelllinespaced}{\spellline\vspace{0.5\medskipamount}}
 
-%\newcommand{\spelleffect}{\parhead*{Effect}}
-%\newcommand{\spellsuccess}{\parhead*{Success}}
-%\newcommand{\spellfailure}{\parhead*{Failure}\xspace}
+%\newcommand{\spelleffect}{\fieldhead{Effect}}
+%\newcommand{\spellsuccess}{\fieldhead{Success}}
+%\newcommand{\spellfailure}{\fieldhead{Failure}\xspace}
 \newcommand{\spellnotes}{\par\noindent\textit{Notes}:\xspace}
-\newcommand{\spellspecial}{\parhead*{Special}}
-\newcommand{\spellcheck}[1]{\parhead*{Check} #1}
+\newcommand{\spellspecial}{\fieldhead{Special}}
+\newcommand{\spellcheck}[1]{\fieldhead{Check} #1}
 
 \ExplSyntaxOn
 
@@ -338,47 +323,57 @@
 \newcommand{\TempVarTwo}{0}
 
 \DeclareDocumentCommand{\parhead}{s m o}
-{\par \IfBooleanT{#1}{\noindent}
+{
+    \vspace{0.5em}    
+    \par \IfBooleanT{#1}{\noindent}
     \IfNoValueTF{#3}
     {\textbf{#2}:}
     {\textbf{#2}~[#3]:}\xspace
 }
 
+\DeclareDocumentCommand{\fieldhead}{m o}
+{
+    \par\noindent
+    \IfNoValueTF{#2}
+    {\textbf{#1}:}
+    {\textbf{#1}~[#2]:}\xspace
+}
+
 \DeclareDocumentCommand{\spellfailure}{o}
 {
     \IfNoValueTF{#1}
-    {\parhead*{Failure}}
-    {\parhead*{Failure}[#1]}
+    {\fieldhead{Failure}}
+    {\fieldhead{Failure}[#1]}
 }
 \DeclareDocumentCommand{\spellsuccess}{o}
 {
     \IfNoValueTF{#1}
-    {\parhead*{Success}}
-    {\parhead*{Success}[#1]}
+    {\fieldhead{Success}}
+    {\fieldhead{Success}[#1]}
 }
 \DeclareDocumentCommand{\spellcritical}{o}
 {
     \IfNoValueTF{#1}
-    {\parhead*{Critical~Success}}
-    {\parhead*{Critical~Success}[#1]}
+    {\fieldhead{Critical~Success}}
+    {\fieldhead{Critical~Success}[#1]}
 }
 \DeclareDocumentCommand{\spelleffect}{o}
 {
     \IfNoValueTF{#1}
-    {\parhead*{Effect}}
-    {\parhead*{Effect}[#1]}
+    {\fieldhead{Effect}}
+    {\fieldhead{Effect}[#1]}
 }
 \DeclareDocumentCommand{\spelltgt}{m o}
 {
     \IfNoValueTF{#2}
-    {\parhead*{Target} #1}
-    {\parhead*{#2~Target} #1}
+    {\fieldhead{Target} #1}
+    {\fieldhead{#2~Target} #1}
 }
 \DeclareDocumentCommand{\spelltgts}{m o}
 {
     \IfNoValueTF{#2}
-    {\parhead*{Targets} #1}
-    {\parhead*{#2~Targets} #1}
+    {\fieldhead{Targets} #1}
+    {\fieldhead{#2~Targets} #1}
 }
 
 \DeclareDocumentCommand{\ritualcostparser}{m}
@@ -393,7 +388,7 @@
     \or 1,500~gp %7
     \or 3,000~gp %8
     \or 7,500~gp %9
-    \else ???
+    \else???
     \fi
 }
 
@@ -431,12 +426,12 @@
     \pgfmathparse{\TempVar > 4}
     \ifcase\pgfmathresult
         % handle normal magic items
-        \parhead*{Price~(Level)} \num{\TempVarTwo}~gp~(\cheapitemlevel{\TempVarTwo})
+        \fieldhead{Price~(Level)} \num{\TempVarTwo}~gp~(\cheapitemlevel{\TempVarTwo})
     \or
         % handle very expensive magic items
         % by passing the number with the right three digits removed
         \StrGobbleRight{\TempVarTwo}{3}[\TempVar]
-        \parhead*{Price~(Level)} \num{\TempVarTwo}~gp~(
+        \fieldhead{Price~(Level)} \num{\TempVarTwo}~gp~(
             \magicitemexpensiveitemlevel{\TempVar}
         )
     \fi
@@ -530,40 +525,21 @@
 }
 
 % args:
-%   pre-spell header, whether spell is restricted,
-%   spell name, spell name modifier (Greater, etc.)
-\DeclareDocumentCommand{\spellhead}{o s m o}
+%   pre-spell header spell name, spell name modifier (Greater, etc.)
+\DeclareDocumentCommand{\spellhead}{o m o}
 {
     \IfValueTF{#1}
     {\item[#1]}
     {\item}
-    \IfBooleanTF{#2}
-    {
-        \textit{
-            \textbf{
-                \IfValueTF{#4}
-                {
-                    \hyperlink{spell:#4~#3}{#3,~#4}
-                    %\pageref{spell:#4~#3}
-                }
-                {
-                    \hyperlink{spell:#3}{#3}
-                    %\pageref{spell:#3}
-                }
-            }
+    \textbf{
+        \IfValueTF{#3}
+        {
+            \hyperlink{spell:#3~#2}{#2,~#3}
+            %\pageref{spell:#3~#2}
         }
-    }
-    {
-        \textbf{
-            \IfValueTF{#4}
-            {
-                \hyperlink{spell:#4~#3}{#3,~#4}
-                %\pageref{spell:#4~#3}
-            }
-            {
-                \hyperlink{spell:#3}{#3}
-                %\pageref{spell:#3}
-            }
+        {
+            \hyperlink{spell:#2}{#2}
+            %\pageref{spell:#2}
         }
     }:
 }
@@ -573,11 +549,16 @@
     \IfBooleanTF{#2}
     {
         \noindent#1
-        \parhead*{Lists} #3
+        \fieldhead{Lists} #3
     }
     {
-        \spelltwocol{#1}{\tb{Lists}:~#3}
+        \spelltwocol{\fieldhead{Schools}~#1}{\fieldhead{Lists}~#3}
     }
+}
+
+\DeclareDocumentCommand{\spelltags}{m}
+{
+    \fieldhead{Tags} #1
 }
 
 \DeclareDocumentCommand{\imath}{m}
@@ -727,17 +708,12 @@
     \nth{#1} & \avgbab{#1}
 }
 
-\DeclareDocumentCommand{\sorcererprogressionrow}{m}
-{
-    \nth{#1} & \poorbab{#1}
-}
-
 \DeclareDocumentCommand{\spellwarpedprogressionrow}{m}
 {
     \nth{#1} & \goodbab{#1}
 }
 
-\DeclareDocumentCommand{\wizardprogressionrow}{m}
+\DeclareDocumentCommand{\mageprogressionrow}{m}
 {
     \nth{#1} & \poorbab{#1}
 }
@@ -749,17 +725,10 @@
 
 \DeclareDocumentCommand{\spelldamage}{m o}
 {
-    \ifstr{#1}{}
-    {
-        \IfValueTF{#2}
-        {1#2~damage~per~two~spellpower}
-        {1d6~damage~per~spellpower}
-    }
-    {
-        \IfValueTF{#2}
-        {1#2~#1~damage~per~two~spellpower}
-        {1d6~#1~damage~per~spellpower}
-    }
+    \IfValueTF{#2}{#2}{1d8}~
+    \ifstr{#1}{#1~}{}
+    damage~\plus1d~per~two~spellpower.
+    % or alternately: standard damage based on your spellpower \add 2, etc.
 }
 
 \DeclareDocumentCommand{\spelldamageemp}{m o}
@@ -816,17 +785,37 @@
     \IfValueTF{#3}
     {
         \IfValueTF{#5}
-        { \parhead{#3~--~#4~(#5)} }
-        { \parhead{#3~--~#4} }
+        { \subsubsection{\nth{#3}~--~#4~(#5)} }
+        { \subsubsection{\nth{#3}~--~#4} }
     }
     {
         \IfValueTF{#5}
-        { \parhead{#4~(#5)} }
-        { \parhead{#4} }
+        { \subsubsection{#4~(#5)} }
+        { \subsubsection{#4} }
     }
     \IfBooleanF{#1}
     {
         \label{#2:#4}
+    }
+}
+
+% feat level
+% args:
+%   level
+%   name
+%   ability type, if any
+\DeclareDocumentCommand{\ff}{o m o}
+{
+    \IfValueTF{#1}
+    {
+        \IfValueTF{#3}
+        { \nth{#1}~--~\textbf{#2}~(#3): }
+        { \nth{#1}~--~\textbf{#2}: }
+    }
+    {
+        \IfValueTF{#3}
+        { \parhead{#2~(#3)} }
+        { \parhead{#2} }
     }
 }
 
@@ -877,9 +866,15 @@
 {
     \IfValueTF{#1}
     {
+        % Enable this to test glossary links
+        % \pref{#1}
+        % TODO: remove \mbox before making major releases;
+        % it fixes bizarre page break errors but makes text uglier
         \hyperlink{gloss:#1}{\textbf{\mbox{#2}}}
     }
     {
+        % Enable this to test glossary links
+        % \pref{#2}
         \hyperlink{gloss:#2}{\textbf{\mbox{#2}}}
     }
 }
@@ -891,10 +886,12 @@
 {
     \IfValueT{#2}
     {
-        \label{#2}
+        % Enable this to test glossary links
+        % \label{#2}
         \hypertarget{gloss:#2}{}
     }
-    \label{#1}
+    % Enable this to test glossary links
+    % \label{#1}
     \hypertarget{gloss:#1}{}
     \parhead{#1}
 }
@@ -1008,13 +1005,19 @@
 
 \DeclareDocumentCommand{\magicitemability}{m o}
 {
-    \parhead*{#1~Ability}[#2]
+    \fieldhead{#1~Ability}[#2]
 }
 
 \DeclareDocumentCommand{\spellaugment}{m m m o}
 {
     \par\textbf{#1}~--~\textit{#2}:~#3
     \IfValueT{#4}{~This~is~a~#4~effect.}
+}
+
+\DeclareDocumentCommand{\augment}{m m}
+{
+    \vspace{0.5em}
+    \par \nth{#1}~--~\textbf{#2}:\xspace
 }
 
 \ExplSyntaxOff

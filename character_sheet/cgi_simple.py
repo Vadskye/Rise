@@ -254,6 +254,9 @@ def equals():
 def plus():
     return flex_col({'class': 'equation-glue'}, div({'class': 'equation-math'}, '+'))
 
+def minus():
+    return flex_col({'class': 'equation-glue'}, div({'class': 'equation-math'}, '-'))
+
 def times():
     return flex_col({'class': 'equation-glue'}, div({'class': 'equation-math'}, 'x'))
 

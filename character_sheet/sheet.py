@@ -1,7 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-import cgi_simple
-from cgi_simple import *
+import cgi_simple as cgi
 import first_page
 import second_page
 import third_page
@@ -12,12 +11,12 @@ DESTINATION = 'paper'
 
 try:
     if sys.argv[1] == 'pretty':
-        cgi_simple.is_pretty = True
+        cgi.is_pretty = True
 except IndexError:
     pass
 
 if DESTINATION == 'roll20':
-    cgi_simple.input_name_prefix = 'attr_'
+    cgi.input_name_prefix = 'attr_'
 
 def main():
     with open('first_page.html', 'w') as fh:
@@ -47,24 +46,16 @@ def main():
 def debug_stylesheets(page_name):
 
     if DESTINATION == 'paper':
-        return '<!DOCTYPE html>' + head([
-            #link({
-            #    'rel': 'stylesheet',
-            #    'href': 'roll20.css',
-            #}),
-            #link({
-                #'rel': 'stylesheet',
-                #'href': 'roll20_editor.css',
-            #}),
-            link({
+        return '<!DOCTYPE html>' + cgi.head([
+            cgi.link({
                 'rel': 'stylesheet',
                 'href': 'sheet.css',
             }),
-            link({
+            cgi.link({
                 'rel': 'stylesheet',
                 'href': page_name + '.css',
             }),
-            link({
+            cgi.link({
                 'rel': 'stylesheet',
                 'href': DESTINATION + '_sheet.css',
             }),
@@ -76,11 +67,11 @@ def debug_stylesheets(page_name):
 
 def debug_html_wrapper(html):
     if DESTINATION == 'paper':
-        return div(
+        return cgi.div(
             {
                 'class': 'dialog characterdialog ui-dialog ui-dialog-content ui-widget-content',
             },
-            div(
+            cgi.div(
                 {'id': 'root', 'class': 'charsheet tab-pane'},
                 html
             )

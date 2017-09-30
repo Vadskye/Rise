@@ -25,17 +25,17 @@
     margin-bottom: 0.25em;
 }
 
-.legend-point-header {
+.action-point-header {
     margin-bottom: 0 !important;
     text-align: center;
 }
 
 /* make resources the same height as other columns */
-.core-statistics div.legend-point-wrapper {
+.core-statistics div.action-point-wrapper {
     margin-bottom: 0.1em;
 }
 
-.legend-point-wrapper {
+.action-point-wrapper {
     justify-content: space-around;
 }
 

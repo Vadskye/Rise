@@ -44,10 +44,11 @@
 % small text for the feats table
 \newenvironment{longtabuwrapper}
 {
+    \onecolumn
     \small
     \taburowcolors [2] 2{tbrown .. white}
 }
-{}
+{\twocolumn}
 
 \newenvironment{spelltable}
 {\begin{table}[htb!]}
@@ -205,15 +206,27 @@
     leftline=false,
     topline=false,
     rightline=false,
+    bottomline=false,
+]{ability}
+
+\newmdenv[
+    style=spellcontent,
+    leftline=false,
+    topline=false,
+    rightline=false,
     bottomline=true,
     skipabove=0,
-    linecolor=black,
 ]{spellsubcontent}
 
 \newmdenv[
     style=colorenv,
     backgroundcolor=LightCyan,
 ]{spelltargetinginfo}
+
+\newmdenv[
+    style=colorenv,
+    backgroundcolor=LightCyan,
+]{augmenttargetinginfo}
 
 \DeclareDocumentEnvironment{spelleffects}{}
 {
@@ -222,11 +235,22 @@
 {
     \end{fakehang}
 }
-
 \surroundwithmdframed[
     style=colorenv,
     backgroundcolor=Lavender,
 ]{spelleffects}
+
+\DeclareDocumentEnvironment{augmenteffects}{}
+{
+    \begin{fakehang}
+}
+{
+    \end{fakehang}
+}
+\surroundwithmdframed[
+    style=colorenv,
+    backgroundcolor=Lavender,
+]{augmenteffects}
 
 \DeclareDocumentEnvironment{spellfooter}{}
 {
@@ -268,20 +292,18 @@
 {
     \vspace{1em}
     \begin{thesamepage}
-    \setlength\multicolsep{0pt}
+    \setlength{\multicolsep}{0pt}
     \begin{multicols}{2}
         \IfValueTF{#1}
         {
-            \lowercase{\hypertarget{spell:#1~#2}{}}
-            \label{spell:#1~#2}
+            \lowercase{\hypertarget{spell:#1~#2}{}}\label{spell:#1~#2}
             \hypertarget{spell:#1~#2}
                 {\subsubsection{#2,~#1}}
         }
         {
-            \lowercase{\hypertarget{spell:#2}{}}
-            \label{spell:#2}
+            \lowercase{\hypertarget{spell:#2}{}}\label{spell:#2}
             \hypertarget{spell:#2}
-                {\subsubsection{#2}}
+                {\subsection{#2}}
         }
         \IfValueTF{#3}
         {
@@ -360,10 +382,10 @@
 \DeclareDocumentEnvironment{thesamepage}{}
 {
     \par\nobreak\vfil\penalty0\vfilneg
-    \vtop\bgroup
+    \vtop{}
 }
 {
-    \par\xdef\tpd{\the\prevdepth}\egroup
+    \par\xdef\tpd{\the\prevdepth}
     \prevdepth=\tpd
 }
 
@@ -379,5 +401,26 @@
     style=colorenv,
     backgroundcolor=MistyRose,
 ]{spellaugments}
+
+\DeclareDocumentEnvironment{spellcantrip}{}
+{
+    \fieldhead{Cantrip}
+    \begin{fakehang}
+}
+{
+    \par~If~you~cast~this~spell~as~a~cantrip,~you~do~not~need~to~spend~an~\glossterm{action~point}~to~cast~it,~but~you~cannot~apply~any~augments~to~it.
+    \end{fakehang}
+}
+\surroundwithmdframed[
+    style=colorenv,
+    backgroundcolor=MistyRose,
+]{spellcantrip}
+
+\DeclareDocumentEnvironment{feat}{m m}
+{
+    \hypertarget{feat:#1}{\sssecfakehref{ft:#1}{#1~[#2]}}
+    \label{feat:#1}
+}
+{}
 
 \ExplSyntaxOff

@@ -252,7 +252,6 @@ UserWarnRegex
   # POSIX:([^[:alnum:]]|^)intro([^[:alnum:]]|$)
 
   # Pretty tables--see http://texdoc.net/texmf-dist/doc/latex/booktabs/booktabs.pdf
-  (?!#-2:Use! \toprule,! midrule,! or! \bottomrule! from! booktabs)\\hline
   # This relies on it being on a single line, and not having anything
   # else on that line.  With PCRE we could match balanced [] and {},
   # but I wonder if it's worth the complexity...
@@ -383,6 +382,8 @@ Silent
 
     \xspace \tdash
 
+    \or
+
     \addlinespace \cr \fill \frontmatter
     \toprule \midrule \bottomrule
 
@@ -398,7 +399,7 @@ Silent
     \miscastyou \miscastrandom \miscastretarget \miscastexplode
     \taburowcolors
     \monlinerule \pari
-    \itempath
+    \itempath \magical
 
 }[
 # Here you can put regular expressions to match Silent macros.  It was
