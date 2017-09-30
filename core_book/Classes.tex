@@ -2350,18 +2350,20 @@ This choice determines a great deal about your character's abilities.
     \subsection{Master of the Hunt}
 
         \cf{Rgr}{Quarry}\label{Quarry}
-        At the start of each round, you can spend an \glossterm{action point} to choose a quarry.
-        This does not take an action, but you can only choose a quarry once per round.
+        As a \glossterm{minor action}, you can spend an \glossterm{action point} to use this ability.
+        % TODO: wording
+        It resolves immediately, before other actions in the phase.
         \begin{ability}
             \begin{spelltargetinginfo}
                 \spellquicktargeting{One creature}{\rnglong}
             \end{spelltargetinginfo}
             \begin{spelleffects}
-                \spelleffect You and any allies within range gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks} against the target.
+                \spelleffect The target becomes your quarry.
+                You and any allies within range gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks} against your quarry.
                 You and your allies affected by this ability are called your \glossterm{hunting party}.
                 In addition, you gain a \plus5 bonus to checks made to follow the target's tracks.
 
-                This ability lasts the target is \glossterm{defeated}, or until you use this ability again.
+                This ability lasts until the target is \glossterm{defeated}, or until you use this ability again.
                 If the target is \glossterm{defeated}, you regain the action point spent to use this ability.
             \end{spelleffects}
         \end{ability}
