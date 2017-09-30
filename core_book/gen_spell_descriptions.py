@@ -1864,17 +1864,24 @@ def generate_spells():
                     effect="""
                         You increase the target's size by one size category.
                         This increases its \\glossterm<strike damage> and usually increases its \\glossterm<reach> (see \\pcref<Size in Combat>).
-                        However, the target takes a -1d penalty to \\glossterm<strike damage>, as its muscles are not increased fully to match its new size.
+                        However, the target takes a -2d penalty to \\glossterm<strike damage>, as its muscles are not increased fully to match its new size.
                     """,
                     duration='Attunement (shared)',
                     tags=['Shaping', 'Sizing'],
                 ),
             ),
             Subspell(
-                level=7,
+                level=6,
                 name="Greater Enlarge",
                 description="""
-                    This subspell functions like the \\textit<enlarge> subspell, except that the target does not take a penalty to strike damage.
+                    This subspell functions like the \\textit<enlarge> subspell, except that the penalty to \\glossterm<strike damage> is reduced to -1d.
+                """,
+            ),
+            Subspell(
+                level=9,
+                name="Supreme Enlarge",
+                description="""
+                    This subspell functions like the \\textit<enlarge> subspell, except that the penalty to \\glossterm<strike damage> is removed.
                 """,
             ),
             Subspell(
