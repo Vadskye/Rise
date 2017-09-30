@@ -1,0 +1,188 @@
+\chapter{Magic Items}
+
+Magic items are objects that have been imbued with magical energy. They can take almost any form, and their potential uses are only as limited as the magic that created them.
+
+\section{Magic Item Types}
+    Magic items are divided into four broad categories:
+    \begin{itemize}
+        \item Weapons are used to make physical attacks. They provide access to their abilities when wielded.
+            A \mitem{flaming longsword} and a \mitem{vampiric scythe} are weapons.
+        \item Implements are used to cast spells. They provide access to their abilities when wielded.
+            A \mitem{staff of fire} and a \mitem{staff of time} are implements.
+        \item Apparel items are usually not used individually. They provide access to their abilities when worn.
+            A \mitem{flaming burst full plate} and a \mitem{ring of protection} are apparel items.
+        \item Tools provide access to their abilities when used in some way.
+            A \mitem{bag of carrying} is a tool.
+    \end{itemize}
+
+\section{Using Magic Items}
+
+    \subsection{Item Activation}
+
+        Some magic items have to be explicitly activated to have unusual effects.
+        For example, the \mitem{seven league boots} can be activated to teleport you across great distances.
+        Other magic items constantly have magical effects.
+        For example, a \mitem{flaming} sword is on fire.
+
+        The description of a magic item effect will specify what mechanical actions must be taken, if any, to activate the effects of the item.
+        For example, a healing belt requires spending an \glossterm{action point} as a \glossterm{standard action}.
+        However, the item description will not specify the exact nature of the action.
+        Different items, even if they have the same effect, can have different physical actions that are required to activate the item.
+        These minor actions can come in one of the following forms:
+        \begin{itemize}
+           \item Command word: You must speak a specific word that the item will hear and react to.
+                For example, you may need to say the word ``healing'' in Elven to activate an item that heals you.
+            \item Mental command: You must mentally direct the item to activate, such as by visualizing the item or thinking a particular word.
+                % TODO: does this item exist
+                For example, you may need to imagine a warm blanket around you to activate an item that protects you from cold damage or environmental effects.
+            \item Physical motion: You must perform a specific physical motion, usually involving the item in some way.
+                For example, you may need to rapidly stomp one foot on the ground to activate an item that allows you to move faster.
+        \end{itemize}
+
+        % TODO: table of random item activations?
+
+    \subsection{Item Limitations}
+
+        There are three restrictions on your ability to use magic items.
+        First, you cannot equip two apparel items that take up the same physical location on your body.
+        For example, you cannot equip two different gauntlet sets and gain the effects of both, but you could equip several amulets or up to ten rings.
+        Second, most magic items other than tools require you to attune to them to gain their effect.
+        You can attune to a magic item with the \textit{item attunement} ability, below.
+        Third, you cannot attune to two items with the same name, or if one is simply a Greater or Lesser version of the other.
+
+        \subsubsection{Item Slots}\label{Item Slots}
+            Normally, attuning to an ability or magic item reduces your maximum action points by one.
+            However, you can attune to a certain number of items without penalizing your action points.
+            You start with one \glossterm{item slot}, and acquire more as you gain levels (see \tref{Character Advancement}).
+
+            When you attune to a magic item, you can spend an \glossterm{item slot} instead of an \glossterm{action point}.
+            This is summarized in the description of the \textit{item attunement} ability.
+
+            Dismissing your attunement to an item does not restore the spent item slot.
+            You regain all spent \glossterm{item slots} from dismissed attunements after a \glossterm{long rest}.
+
+        \subsubsection{Item Attunement}
+            As a standard action, you can spend an \glossterm{action point} or an \glossterm{item slot} to use this ability.
+            \begin{ability}
+                \begin{spelltargetinginfo}
+                    \spellquicktargeting{One magic item}{\rngtouch}
+                \end{spelltargetinginfo}
+                \begin{spelleffects}
+                    \spelleffect Any abilities the target has that require attunement become active, allowing you to use its full potential.
+                    \spelldur Attunement. If you spent an \glossterm{item slot} to use this ability, attuning to this ability does not prevent you from recovering any action points.
+                \end{spelleffects}
+            \end{ability}
+
+    \subsubsection{Item Power}\label{Item Power}
+        The \glossterm{power} of an item depends on its level.
+        If the item is not being attuned to by a creature, its power is equal to its level.
+        If a creature is attuning to the item, its power is equal to its level or the level of the attuning creature, whichever is higher.
+
+        An item's \glossterm{power} also affects its defenses.
+        Its Fortitude and Mental defenses are equal to 10 \add its \glossterm{power}.
+        Its Armor defense and Reflex defense are not affected by its \glossterm{power}, and are solely determined by its size and shape.
+
+    \subsection{Removing Magic Items}
+        Unless otherwise noted, magic items that have effects on the creature using the item must continue to be worn or held as long as the effect lasts.
+        If a magic item is removed before its duration ends, the effect ends.
+        Items which are consumed when used or which do not affect their user are unaffected by this rule.
+
+\section{Item Description Format}
+    TODO
+
+\section{Apparel}
+
+    \input{apparel_table.tex}
+
+    \input{apparel.tex}
+
+\section{Weapons} % or implements?
+    Magic weapons improve a character's combat abilities.
+    They must be wielded to gain their effects.
+
+    \parhead{Ranged Weapons and Ammunition} Any magical properties of a projectile weapon also apply to all ammunition fired from that weapon.
+
+    \subsection{Weapon Description}
+
+        \input{weapons_table.tex}
+
+        \input{weapons.tex}
+
+\section{Implements}
+
+    Implements can take many forms: staffs, wands, holy symbols, and more.
+    Like magic weapons, magic implements must be wielded to gain their effects.
+    However, while weapons are used to deal damage to enemies, implements are used to cast spells.
+
+    \parhead{Somatic Components} While wielding an implement, you may gesture with it and channel magic through it.
+    These qualify as somatic components for the purpose of casting spells.
+
+    \subsection{Implement Types}
+
+        \subsubsection{Holy Symbols}
+
+            \parhead{Physical Description} A typical holy symbol is a no larger than 4 inches in each dimension and can be easily held in the palm of a hand.
+            Most holy symbols are metal, but they can be made from wood, bone, or even more exotic materials, depending on the deity they symbolize.
+
+            \parhead{Special Rules} All holy symbols are implements for divine spells.
+            Most holy symbols are designed to be worn as an amulet in addition to being held in the hand.
+            A holy symbol worn on the body cannot be used to perform somatic components for spellcasting.
+            However, it still grants its magical abilities as if it was being actively wielded.
+
+        \subsubsection{Staffs}
+
+            \parhead{Physical Description} A typical staff is 4 feet to 7 feet long and 2 inches to 3 inches thick, weighing about 5 pounds.
+            Most staffs are wood, but a rare few are bone, metal, or even glass.
+            (These are extremely exotic.)
+            Staffs often have a gem or some device at their tip or are shod in metal at one or both ends.
+
+            Staffs are often decorated with carvings or runes.
+            A typical staff is like a walking stick, quarterstaff, or cudgel.
+            It has AD 7, 10 hit points, hardness 5, and a break DR of 24.
+
+        \subsubsection{Wands}
+
+            \parhead{Physical Description} A typical wand is 6 inches to 12 inches long and about 1/4 inch thick, and usually weighs no more than 1 ounce.
+            Most wands are wood, but some are bone.
+            A rare few are metal, glass, or even ceramic, but these are quite exotic.
+            Occasionally, a wand has a gem or some device at its tip, and most are decorated with carvings or runes.
+            A typical wand has AD 7, 5 hit points, hardness 5, and a break DR of 16.
+
+    \subsection{Implement Descriptions}
+
+        \input{implements.tex}
+
+\section{Tools}
+
+    TODO
+
+\section{Legacy Items}\label{Legacy Items}
+
+    Over time, items associated with places and people of great power gain magical properties.
+    This process takes place for you as you gain levels in addition to in the world as a whole.
+
+    At 4th level, you choose a nonmagical item you own.
+    That item becomes a \glossterm{legacy item}, and gains a magic item ability you choose.
+    The ability's level must be no greater than 4th level.
+    If you choose a weapon or implement, you may choose any weapon or implement ability.
+    If you choose any other item, you may choose any other ability.
+
+    At 8th level, and every 4 levels thereafter, your legacy item increases in power again.
+    You choose an ability of the appropriate type with a level no greater than your level when you choose the ability.
+    You can choose a modified version of an existing ability on the item, such as the \textit{greater armor of invulnerability} ability if your legacy item already has the \textit{armor of invulnerability} ability.
+    However, if you do so, you must change the lower level ability to be a different magic item ability.
+    The new ability must meet the same maximum level requirement that it had when you first chose it.
+
+    If you lose your legacy item, you must retrieve it to regain its power.
+    There are rituals to facilitate this retrieval such as \ritual{seek legacy} and \ritual{retrieve legacy}.
+    If your legacy item is \glossterm{destroyed}, you can designate a new item of the same type to be your legacy item, causing it to gain all of your legacy item abilities.
+    Designating a new item in this way requires spending an \glossterm{action point} as a standard action while holding the replacement item.
+
+    \parhead{Unique Legacy Items}
+        Legacy items are fundamentally a reflection of the character who wields them.
+        Their effects can be more unusual and complex than abilities on normal magic items, and they can have a larger effect on the way that character interacts with the world.
+        You can work with your GM to create custom magical effects of an appropriate power that are a better reflection of your character's personality and powers than the magic item abilities that exist.
+
+\section{Magic Item Creation}\label{Magic Item Creation}
+
+    TODO

@@ -70,8 +70,22 @@
     align-items: center;
 }
 
+.equation-text {
+    display: flex;
+    justify-content: center;
+    height: 1.6em;
+    text-align: center;
+    align-items: center;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+}
+
 .equation-math {
     font-size: 1em;
+}
+
+.equation-misc {
+    width: 2.5em;
 }
 
 .calc-attribute-header {
@@ -84,7 +98,7 @@
 
 .calc-header {
     font-weight: bold;
-    width: 5em;
+    width: 6.5em;
     display: flex;
     align-content: center;
     align-items: center;
