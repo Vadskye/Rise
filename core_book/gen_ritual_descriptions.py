@@ -30,11 +30,12 @@ def generate_rituals():
                 Creating a skeleton only requires a mostly intact skeleton.
                 If a skeleton is made from an intact corpse, the flesh quickly falls off the animated bones.
             """,
-            duration='Attunement',
+            duration='Attunement (multiple)',
             tags=['Evil', 'Negative'],
         ),
         schools=['Vivimancy'],
         lists=['Arcane', 'Divine'],
+        subspells=[],
     ))
 
     rituals.append(Spell(
@@ -53,12 +54,12 @@ def generate_rituals():
 
                 You can freely pass your own \\ritual<arcane lock> as if the object were not locked.
             """,
-            duration='Attunement',
+            duration='Attunement (multiple)',
             tags=['Imbuement'],
         ),
         schools=['Transmutation'],
         lists=['Arcane', 'Divine', 'Nature'],
-        subspells=(
+        subspells=[
             Subspell(
                 level=5,
                 name="Resilient",
@@ -67,7 +68,7 @@ def generate_rituals():
                     In addition, the DR to break it open increases by 20 instead of by 10.
                 """,
             ),
-        ),
+        ],
     ))
 
     rituals.append(Spell(
@@ -92,6 +93,7 @@ def generate_rituals():
         ),
         schools=['Transmutation'],
         lists=['Nature'],
+        subspells=[],
     ))
 
     rituals.append(Spell(
@@ -118,11 +120,11 @@ def generate_rituals():
                     It treats the circle and the area above it as an impassable barrier, preventing the effects of any of its abilities from extending outside that area.
                 """,
             ),
-            duration='Attunement',
+            duration='Attunement (multiple)',
         ),
         schools=['Abjuration'],
         lists=['Arcane', 'Divine'],
-        subspells=(
+        subspells=[
             Subspell(
                 level=5,
                 name="Dimension Lock",
@@ -131,7 +133,7 @@ def generate_rituals():
                     This prevents all \\glossterm<Manifestation>, \\glossterm<Planar>, and \\glossterm<Teleportation> effects.
                 """,
             ),
-        ),
+        ],
     ))
 
     rituals.append(Spell(
@@ -152,6 +154,7 @@ def generate_rituals():
         ),
         schools=['Channeling'],
         lists=['Divine'],
+        subspells=[],
     ))
 
     rituals.append(Spell(
@@ -172,6 +175,7 @@ def generate_rituals():
         ),
         schools=['Channeling'],
         lists=['Divine'],
+        subspells=[],
     ))
 
     rituals.append(Spell(
@@ -189,11 +193,12 @@ def generate_rituals():
                 The object appears out of thin air, without any raw materials.
                 It must be made of nonliving, nonreactive vegetable matter, such as wood or cloth.
             """,
-            duration='Attunement',
+            duration='Attunement (multiple)',
             tags=['Manifestation'],
         ),
         schools=['Conjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
+        subspells=[],
     ))
 
     rituals.append(Spell(
@@ -269,7 +274,7 @@ def generate_rituals():
                 Its equipment, if any, is also protected.
                 This does not protect the target from fire or cold damage.
             """,
-            duration='Attunement',
+            duration='Attunement (multiple)',
             tags=['Shielding'],
         ),
         schools=['Abjuration'],
@@ -294,7 +299,7 @@ def generate_rituals():
                 If the target object is destroyed or rendered illegible, the spell ends without exploding.
             """,
             attack=Attack.multi_damage('Reflex', 'arcane'),
-            duration='Attunement',
+            duration='Attunement (multiple)',
             tags=['Trap'],
         ),
         schools=['Evocation'],
@@ -389,7 +394,7 @@ def generate_rituals():
                 If used on a corpse, this effectively extends the time limit on raising that creature from the dead (see \\ritual<resurrection>) and similar effects that require a fresh body.
                 Additionally, this can make transporting a fallen comrade more pleasant.
             """,
-            duration='Attunement',
+            duration='Attunement (multiple)',
             tags=['Temporal'],
         ),
         schools=['Transmutation'],
@@ -430,7 +435,7 @@ def generate_rituals():
             effect="""
                 The target glows like a torch, shedding bright light in an \\areamed radius (and dim light for an additional 20 feet).
             """,
-            duration='Attunement',
+            duration='Attunement (multiple)',
             tags=['Figment', 'Light'],
         ),
         schools=['Illusion'],
@@ -476,7 +481,7 @@ def generate_rituals():
                 The steed serves willingly and well.
                 The mount comes with a bit and bridle and a riding saddle.
             """,
-            duration='Attunement',
+            duration='Attunement (multiple)',
             tags=['Manifestation'],
         ),
         schools=['Conjuration'],
@@ -497,7 +502,7 @@ def generate_rituals():
     #             The target gains \\glossterm<magic resistance> against Awareness and Scrying abilities equal to 5 + your spellpower.
     #             In addition, Awareness and Scrying abilities that do not directly affect the target simply treat it as if it did not exist.
     #         """,
-    #         duration='Attunement',
+    #         duration='Attunement (multiple)',
     #         tags=['Thaumaturgy'],
     #     ),
     #     schools=['Abjuration'],
@@ -881,7 +886,7 @@ def generate_rituals():
                 If a target breaks its attunement, it stops being able to send and receive mental messages with other targets.
                 However, the effect continues as long as at least two different targets are attuned to it.
             """,
-            duration='Attunement',
+            duration='Attunement (multiple); see text',
         ),
         schools=['Divination'],
         lists=['Arcane'],
@@ -980,7 +985,7 @@ def generate_rituals():
             effect="""
                 The target can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
             """,
-            duration='Attunement',
+            duration='Attunement (multiple)',
             tags=['Imbuement'],
         ),
         schools=['Transmutation'],
