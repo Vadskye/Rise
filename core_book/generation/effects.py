@@ -2,6 +2,8 @@ from generation.util import join
 
 valid_durations = set([
     'Attunement',
+    'Attunement (multiple)',
+    'Attunement (multiple); see text',
     'Attunement (shared)',
     'Condition',
     'Sustain (minor)',
