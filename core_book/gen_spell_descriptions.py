@@ -838,7 +838,7 @@ def generate_spells():
             time='minor action',
         ),
         effects=Effects(
-            effect='The target gains \\glossterm<temporary hit points> equal to twice your spellpower.',
+            effect='The target gains a +1d bonus to \\glossterm<strike damage>.',
             duration='Attunement (shared)',
         ),
         cantrip="The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).",
@@ -846,10 +846,10 @@ def generate_spells():
         lists=['Divine'],
         subspells=[
             Subspell(
-                level=4,
-                name="Battle Blessing",
+                level=3,
+                name="Mystic Blessing",
                 description="""
-                    The target gains a +1d bonus to damage with all attacks that deal damage measured in dice.
+                    The damage bonus applies to all attacks that deal damage measured in dice.
                 """,
             ),
             Subspell(
