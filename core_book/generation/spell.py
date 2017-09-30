@@ -39,11 +39,12 @@ class Spell(object):
         self.ability_type = 'ritual' if self.base_level is not None else 'spell'
 
         # Add default subspell
-        subspells.append(Subspell(
-            level=6,
-            name='Innate',
-            description='You can cast the spell without spending an action point.',
-        ))
+        if self.ability_type == 'spell':
+            subspells.append(Subspell(
+                level=6,
+                name='Innate',
+                description='You can cast the spell without spending an action point.',
+            ))
 
         for arg in ['cantrip', 'effects', 'lists', 'name', 'schools', 'targeting']:
             if getattr(self, arg) is None:
