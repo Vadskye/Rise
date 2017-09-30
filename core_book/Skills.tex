@@ -6,38 +6,38 @@ A character's skills describe the myriad of talents that people have.
 
     \subsection{Skill Points}\label{Skill Points}
 
-        At 1st level, you gain a certain number of skill points. Skill points can be spent to improve your abilities with particular skills (see \pcref{Skill Training}).
+        At 1st level, you gain a certain number of skill points. Skill points can be spent to improve your abilities with particular skills (see Skill Training, below).
 
         \subsubsection{Class Skill Points}
 
-            You get a base allotment of 5, 10, or 15 skill points, depending on your character's class. These skill points can only be spent on skills associated with your class, called \glossterm{class skills}.
-
-            \parhead{Taking Multiple Classes} If you take a level in a class that grants more skill points than your previous class, you immediately gain skill points equal to the difference between the skill points provided by the two classes. You may combine the class skill lists from both classes to determine the list of skills which are class skills for you.
+            You get a base allotment of 4, 6, or 8 skill points, depending on your character's class.
+            These skill points can only be spent on the \glossterm{class skills} associated with your class.
 
         \subsubsection{Other Skill Points}
 
-            You gain additional skill points equal to half your Intelligence (minimum 0).  Some other abilities, such as the Skill Savant feat (see \featpcref{Skill Savant}), can also grant additional skill points. Unless otherwise noted, these skill points can be spent on any skills.
+            You gain additional skill points equal to twice your starting Intelligence.
+            If your Intelligence is negative, you instead lose skill points equal to your Intelligence, starting with normal skill points before removing class skill points.
+            Some other abilities, such as the rogue \textit{skill lore} ability, can grant additional skill points (see Skill Lore, page \pref{Rog:Skill Lore}).
+            Unless otherwise noted, all skill points other than skill points from your class can be spent on any skills.
 
-            \parhead{Intelligence Penalties} If your Intelligence is negative, you lose class skill points equal to your Intelligence.
+    \subsection{Skill Training}\label{Skill Training}
 
-            \parhead{Changing Intelligence} If your Intelligence permanently increases or decreases, you gain or lose skill points when you level up. If you gain additional skill points, you may immediately spend them to improve your skill training. If you lose skill points, you must reduce your skill training in skills you possess. You must lose training from free skill points before removing training from class skill points.
+        You can spend one skill point to become trained in a skill, or two skill points to master a skill.
+        Your training determines your base modifier for attacks and checks using that skill, as described below.
+        This is called your \glossterm{skill training modifier}.
 
-    \subsection{Skill Training and Ranks}\label{Skill Training}\label{Skill Ranks}\label{Skill Training and Ranks}
-
-        You can spend one skill point to become trained in a skill, or two skill points to master a skill. Your training determines your skill ranks, as well as your attribute modifier for that skill. See \trefnp{Skill Training and Ranks}, below, for details.
-
-        %\parhead{Mastery Limits} The number of skills you can master is limited by your attributes. You can master a number of skills with a particular key attribute equal to that attribute. If an attribute is 0 or negative, you cannot master any skills from that attribute. This does not prevent you from training skills with that attribute. This also does not restrict your ability to master skills that do not have a specific key attribute.
-
-        \begin{dtable}
-            \lcaption{Skill Training and Ranks}
-            \begin{dtabularx}{\columnwidth}{>{\lcol}p{4.5em} >{\lcol}p{3em} >{\lcol}X l}
-                \tb{Skill Training Level} & \tb{Skill Points Spent} & \tb{Skill Ranks} & \tb{Attribute Modifier} \\
-                \hline
-                Untrained & 0 & 0                          & Half attribute        \\
-                Trained   & 1 & 1/2 character level \add 2 & Full attribute        \\
-                Mastered  & 2 & Character level \add 5     & Full attribute \add 5 \\
-            \end{dtabularx}
-        \end{dtable}
+        \begin{itemize}
+            \itemhead{Untrained} Becoming untrained in a skill costs no skill points.
+                You are untrained in all skills by default.
+                Your modifier with an untrained skill is equal to half the skill's \glossterm{key attribute}.
+                If the skill does not have a key attribute, your modifier is \plus0.
+            \itemhead{Trained} Becoming trained in a skill costs one skill point.
+                Your modifier with a trained skill is equal to the skill's \glossterm{key attribute} or half your level \add 1, whichever is higher.
+                If the skill does not have a key attribute, your modifier is equal to half your level \add 1.
+            \itemhead{Mastered} Mastering a skill costs two skill points.
+                Your modifier with a mastered skill is equal to 3 \add either the skill's key attribute or your level, whichever is higher.
+                If the skill does not have a key attribute, your modifier is equal to your level \add 3.
+        \end{itemize}
 
     \subsection{Class Skills}
 
@@ -46,7 +46,7 @@ A character's skills describe the myriad of talents that people have.
             \lcaption{Class Skills}
             \begin{dtabularx}{\textwidth}{>{\lcol}p{12em} *{11}{>{\ccol}X} >{\ccol}p{4em}}
                 \tb{Skill}   & \tb{Bbn} & \tb{Clr} & \tb{Drd} & \tb{Ftr} & \tb{Mnk} & \tb{Pal} & \tb{Rgr} & \tb{Rog} & \tb{Sor} & \tb{Spl} & \tb{Wiz} & \tb{Key Ability} \\
-                \hline
+                \bottomrule
                 Climb             & C  & \tdash & C  & C  & C  & \tdash & C  & C  & \tdash & \tdash & \tdash & Str    \\
                 Jump              & C  & \tdash & C  & C  & C  & \tdash & C  & C  & \tdash & \tdash & \tdash & Str    \\
                 Sprint            & C  & \tdash & C  & C  & C  & \tdash & C  & C  & \tdash & \tdash & \tdash & Str    \\
@@ -57,7 +57,7 @@ A character's skills describe the myriad of talents that people have.
                 Sleight of Hand   & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & C  & \tdash & \tdash & \tdash & Dex    \\
                 Stealth           & \tdash & \tdash & \tdash & \tdash & C  & \tdash & C  & C  & \tdash & \tdash & \tdash & Dex    \\
                 \tb{Skill}   & \tb{Bbn} & \tb{Clr} & \tb{Drd} & \tb{Ftr} & \tb{Mnk} & \tb{Pal} & \tb{Rgr} & \tb{Rog} & \tb{Sor} & \tb{Spl} & \tb{Wiz} & \tb{Key Ability} \\
-                \hline
+                \bottomrule
                 Craft\fn{1}       & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & Int          \\
                 Devices           & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & C  & \tdash & \tdash & \tdash & Int          \\
                 Disguise          & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & C  & \tdash & \tdash & \tdash & Int          \\
@@ -83,69 +83,18 @@ A character's skills describe the myriad of talents that people have.
 
 \section{Using Skills}
 
-    When your character uses a skill, you make a skill check to see how well he or she does. A skill check means rolling 1d20 and adding your bonus with the relevant skill. If the result is high enough, you succeed. Otherwise, you fail. The consequences of success and failure are defined in the individual descriptions of each skill.
+    Most uses of skills are \glossterm{checks} (see \pcref{Checks}).
+    The consequences of success and failure on skill checks and attacks are defined in the individual descriptions of each skill.
 
-    \subsection{Skill Check Bonus}
+    \subsection{Skill Bonus}
 
-        Your bonus with skill checks is calculated as follows:
+        Your bonus with a skill is calculated as follows:
 
         \begin{figure}[h]
-            \centering Skill ranks or key attribute modifier \add other bonuses and penalties
+            \centering Training modifier (see \pcref{Skill Training}) \add other bonuses and penalties
         \end{figure}
 
-        \subparhead{Key Attribute} The attribute used in a skill check is noted in its description.
-        Training can affect the attribute modifier you add to skill checks, as noted in \trefnp{Skill Training and Ranks}.
-        You add half your attribute if you are untrained, your full attribute if you are trained, or your full attribute \add 5 if you have mastered the skill.
-
         \subparhead{Bonuses and Penalties} Miscellaneous modifiers include racial bonuses, armor check penalties, bonuses provided by feats, and more.
-
-    \subsection{Difficulty Ratings}
-
-        Usually, your skill check result is compared to a static number that represents the difficulty of the task you are trying to accomplish.
-        This is called a Difficulty Rating (DR).
-        If your check result equals or exceeds the DR, you succeed.
-        If the check result is lower than the DR, you fail.
-        Normal Difficulty Ratings are described in \tref{Difficulty Ratings}.
-
-        \begin{dtable}
-            \lcaption{Difficulty Ratings}
-            \begin{dtabularx}{\columnwidth}{p{8em} X}
-                \tb{Difficulty (DR)} & \tb{Example (Skill Used)} \\
-                \hline
-                Trivial (0) & Notice something in plain sight (Awareness) \\
-                Easy (5) & Hear a conversation from 50 feet away (Awareness) \\
-                Average (10) & Palm a coin-sided object (Sleight of Hand) \\
-                Challenging (15) & Rig a wagon wheel to fall off (Disable Device) \\
-                Tough (20) & Swim in stormy water (Swim) \\
-                Formidable (25) & Climb a natural rock wall with no equipment (Climb) \\
-                Heroic (30) & Leap across a 30-foot chasm with a running start (Jump) \\
-                Legendary (40) & Track a squad of orcs across hard ground after 24 hours of rainfall (Survival) \\
-                Godlike (50) & Swim up a waterfall (Swim) \\
-            \end{dtabularx}
-        \end{dtable}
-
-    \subsection{Degrees of Success and Failure}
-        When you make a skill check, as with other checks, there are four possible outcomes: critical success, success, failure, and critical failure.
-        \begin{enumerate}
-            \item If your result is at least 10 higher than the DR, you critically succeed.
-            \item If your result is at least as high as the DR, but not 10 higher, you succeed.
-            \item If your result is lower than the DR, but not 10 lower, you fail.
-            \item If your result is at least 10 lower than the DR, you critically fail.
-        \end{enumerate}
-
-        With some skill uses, only success or failure matters.
-        However, many skill uses have consequences for critical failure, and a few have benefits for critical success.
-
-    \subsection{Circumstance Modifiers}
-
-        Circumstances frequently modify your odds of success when using skills.
-        Minor circumstances, such as balancing on wet ground, modify the DR or skill check result by 2.
-        Major circumstances, such as balancing on grease, modify the DR or skill check result by up to 5.
-        Extraordinary circumstances can potentially have greater modifiers.
-
-        \parhead{DR Modifiers} Circumstances can make tasks more or less difficult. For example, it is more difficult to balance on ice than on a typical solid surface. Circumstances that change the difficulty of the task change the DR of the skill check.
-
-        \parhead{Check Modifiers} Circumstances can also make skills easier or harder to use. For example, delivering a stirring speech to rally the city militia is more difficult if your voice is hoarse. Circumstances that change the difficulty of using the skill provide bonuses or penalties on the skill check.
 
     \subsection{Trying Again}
         In general, you can try a skill check again if you fail, and you can keep trying indefinitely. Some skills, however, have consequences of failure that must be taken into account. A few skills are virtually useless once a check has failed on an attempt to accomplish a particular task. For most skills, when a character has succeeded once at a given task, additional successes are meaningless.
@@ -161,15 +110,15 @@ A character's skills describe the myriad of talents that people have.
                 \lcaption{Example Opposed Checks}
                 \begin{dtabularx}{\columnwidth}{*{3}{>{\lcol}X}}
                     \tb{Task} & \tb{Skill (Key Ability)} & \tb{Opposing Skill (Key Ability)} \\
-                    \hline
-                    Lie & Bluff (\tdash) & Sense Motive (Per) \\
-                    Create a forged artwork & Craft (Int) & Craft (Int) or Awareness (Per) \\
-                    Create a false map & Craft (Int) & Craft (Int) or Knowledge (geography) \\
-                    Make a bully back down & Intimidate (varies) & Special\fn{1} \\
-                    Make someone look like someone else & Disguise (Int) & Awareness (Per) \\
-                    Sneak up on someone & Stealth (Dex) & Awareness (Per) \\
-                    Steal a coin pouch & Sleight of Hand (Dex) & Awareness (Per) \\
-                    Tie a prisoner securely & Devices (Int)\fn{2} & Escape Artist (Dex) \\
+                    \bottomrule
+                    Lie                                 & Bluff (\tdash)        & Sense Motive (Per)                   \\
+                    Create a forged artwork             & Craft (Int)           & Craft (Int) or Awareness (Per)       \\
+                    Create a false map                  & Craft (Int)           & Craft (Int) or Knowledge (geography) \\
+                    Make a bully back down              & Intimidate (varies)   & Special\fn{1}                        \\
+                    Make someone look like someone else & Disguise (Int)        & Awareness (Per)                      \\
+                    Sneak up on someone                 & Stealth (Dex)         & Awareness (Per)                      \\
+                    Steal a coin pouch                  & Sleight of Hand (Dex) & Awareness (Per)                      \\
+                    Tie a prisoner securely             & Devices (Int)\fn{2}   & Escape Artist (Dex)                  \\
                 \end{dtabularx}
                 1 An Intimidate check can be opposed by the target's Mental defense, not a skill check. See the Intimidate skill description for more information. \\
                 2 You can also tie a prisoner with a grapple attack. See \pcref{Grapple}. \\
@@ -180,9 +129,10 @@ A character's skills describe the myriad of talents that people have.
 
             \parhead{Collaborative Checks} When making a collaborative skill check, each member of the group gets their own result. Collaborative checks might include a group of scouts sneaking up on an enemy camp, a group of adventurers climbing a cliff, or a group of spies lying about their true allegiances.
 
-            When making a collaborative check, the group must choose a leader before making the check. Each member of the group can make the check using the higher of their skill ranks and half the leader's skill ranks. Other modifiers apply normally.
+            When making a collaborative check, the group must choose a leader before making the check.
+            Each member of the group can make the check using the higher of their skill modifier and half the leader's skill modifier. Other modifiers apply normally.
 
-            The group leader must remain in a position to help the other members of the group for the group members to gain this benefit. For example, if a group is making a collaborative check to leap across a chasm, the leader must jump last. If the group is making a collaborative Stealth check, the leader must remain adjacent to the other members of the group to correct their mistakes quietly. The exact circumstances depend on the situation.
+            The group leader must remain in a position to help the other members of the group for the group members to gain this benefit. For example, if a group is making a collaborative check to leap across a chasm, the leader must jump last. If the group is making a collaborative Stealth check, the leader must remain adjacent to the other members of the group to prevent their mistakes quietly. The exact circumstances depend on the situation.
 
             \parhead{Collective Checks} The group works together to get a single result. Collective checks might include a group of diplomats persuading a noble to go to war, a group of medics tending to a dying warrior, or a group of scouts keeping watch for enemy attacks.
 
@@ -207,25 +157,27 @@ A character's skills describe the myriad of talents that people have.
 
     \parhead{Special} Any extra facts that apply to the skill, such as special effects deriving from its use or bonuses that certain characters receive because of class, feat choices, or race.
 
-    \sssecfake{Skill Use} A particular task the skill can be used to accomplish.
-    These skill uses are simply examples of what the skill can be used to do, and do not list everything that the feat can be used to do.
-    You should be creative with your skills, rather than only using abilities listed here.
+    \sssecfake{Tasks}\label{Tasks} A task is a particular way to use a skill.
+    Each skill has a number of tasks listed.
+    These tasks are simply examples, and do not list everything the skill can be used for.
+    You should be creative with your skills, rather than only using the tasks written here.
 
-    \subsection{Using Skills Passively}\label{Using Skills Passively}
-    Some uses for skills can be done passively, without requiring an action.
-    These skill uses are noted with a [Passive] tag in the name of the skill use.
-    Most passive skill uses are related to perception or movement.
+    \subsection{Hidden Tasks}\label{Hidden Tasks}
+        Some tasks are called \glossterm{hidden tasks}, and are marked with a [Hidden] tag in the task name.
+        These tasks rely on hidden information that your character should not have access to.
+        For example, you can make a Sense Motive check to identify whether a creature is lying.
+        If you are told to make a Sense Motive check when a creature talks, you can deduce that it is probably lying regardless of the success or failure of the check.
+        To solve this issue, any checks for hidden tasks should be made secretly by the GM.\@
+        Usually, you should not even know that your character made a check unless you learn a result from it.
 
-    At all times, you are considered to be ``taking 0'' for the purpose of passive skill uses.
-    Treat your check modifier as your check result.
-    If the result is high enough to succeed at a task, you succeed without needing to take an action.
-    For example, you don't need to take an action to notice the floor you're standing on.
+        If you are suspicious of a situation, you can ask the GM to make a relevant check for your character.
+        This usually should not grant a bonus to the check, but it can ensure that the GM did not forget to make the check!
 
     \skill{Acrobatics}{Dex}
         The Acrobatics skill represents your ability to balance, tumble, and perform similar feats of agility and poise.
 
     \subsection{Agile Charge}
-        You can make a DR 20 Acrobatics check while \glossterm{charging} to change directions while charging.
+        You can make a DR 10 Acrobatics check while \glossterm{charging} to change directions while charging.
         Success means you can make a single turn of up to 90 degrees during the movement.
         Failure means you can't change direction, though you can continue your movement or stop.
         Critical failure means you stop where you tried to change direction and fall \prone.
@@ -240,36 +192,37 @@ A character's skills describe the myriad of talents that people have.
         If you do not have enough room to fall prone, you may fall off of the edge you are balancing on.
 
         The DR of Acrobatics checks to balance varies with the surface, as described in \trefnp{Balancing DRs}.
-        In addition, if you are forcibly moved while on a slippery or narrow surface, you must make an Acrobatics check against the same DR.
+        In addition, if you are forcibly moved while on a slippery or narrow surface, you must make an Acrobatics check against the same DR.\@
         Success means you stay standing.
         Failure means you fall prone.
 
         \begin{dtable}
             \lcaption{Balancing DRs}
             \begin{dtabularx}{\columnwidth}{l X}
-                \tb{Narrow Surface} & \tb{DR} \\
-                \hline
-                At least one foot wide        & 5               \\
-                At least six inches wide      & 10              \\
-                At least two inches wide      & 15              \\
-                At least one inch wide        & 20              \\
-                Less than than one inch wide  & 25              \\
-                \tb{Precarious Surface}    & \tb{DR} \\
-                Water covered                 & 10              \\
-                Slightly mobile (rope bridge) & 10              \\
-                Ice or oil covered            & 15              \\
-                Very mobile (slack rope)      & 20              \\
+                \tb{Narrow Surface}           & \tb{DR} \\
+                \bottomrule
+                At least one foot wide        & 0       \\
+                At least six inches wide      & 5      \\
+                At least two inches wide      & 10      \\
+                At least one inch wide        & 15      \\
+                Less than than one inch wide  & 20      \\
+                \tb{Surface Condition}       & \tb{DR Modifier} \\
+                Water covered                 & \plus2      \\
+                Slightly mobile (rope bridge) & \plus2      \\
+                Ice or oil covered            & \plus5      \\
+                Very mobile (slack rope)      & \plus5      \\
             \end{dtabularx}
         \end{dtable}
 
     \subsection{Mitigate Fall}
         As you hit the ground after a fall, you can make an Acrobatics check to reduce falling damage.
-        A DR 15 check allows you to treat a fall as if it were 10 feet shorter.
-        For every 10 by which you beat that DR, you can reduce the falling damage by 10 additional feet.
+        A DR 5 check allows you to treat a fall as if it were 10 feet shorter.
+        For every 10 points by which you beat that DR, you can reduce the falling damage by 10 additional feet.
 
     \subsection{Rapid Stand}
-        You can make a DR 20 Acrobatics check to stand up as a swift action.
-        Success means you regain your feet.
+        You can make a DR 10 Acrobatics check to stand up from a prone position more quickly.
+        Success means you stand up as a \glossterm{minor action}.
+        Critical success means you stand up as a \glossterm{free action}.
         Failure means you must spend a move action to stand up.
         Critical failure means you spend a move action and are unable to stand up.
         You cannot attempt this check unless you can spend a move action to stand up.
@@ -281,34 +234,53 @@ A character's skills describe the myriad of talents that people have.
 
     While sleeping, you take a \minus10 penalty to Awareness.
 
-    \parhead{Passive and Active Attention}\label{Awareness-Passive and Active Attention}
-    Most Awareness skill uses can be done passively (see \pcref{Using Skills Passively}).
-    You can make a conscious effort to pay attention to events around you. This allows you to make Awareness checks to notice events, rather than simply using your modifier, without spending an action. This is tiring to do over long periods of time: if the number of hours you have spent being actively attentive exceeds your Constitution (minimum 0), you become \fatigued.
+    \subsection{Discern Illusion [Hidden]}
+        Whenever you observe a \glossterm{Figment} or \glossterm{Glamer}, you can make an Awarenss check to notice its unreal nature.
+        The DR is specified in the description of the ability creating the illusion, but is usually equal to a check result made when using the ability.
+        Success means you recognize the effect as an illusion, and can see through it as if it was almost entirely transparent.
+        Failure means you don't notice anything amiss.
 
-        In most combat situations, characters are always paying active attention, and should make Awareness checks to notice events rather than using their passive modifier.
+        If the illusion is completely missing a sense that should logically be present, such as a \spell{silent image} of people marching in heavy armor, the DR to interact with the illusion with that sense is lowered by 5.
 
-    \subsection{Discern Illusion [Passive]}
-        As a free action, you can notice inconsistencies in illusion spells. The DR is specified in the description of the spell or effect, but is usually equal to a check result made when creating the illusion. Success means you recognize the effect as an illusion, and can see through it as if it was not there. Failure means you don't notice anything amiss.
+        You cannot retry this check until you gain meaningful new information that would help you identify the illusion.
 
-        If the illusion is completely missing a sense that should logically be present, such as a \spell{silent image} of people marching in heavy armor, the DR to interact with the illusion with that sense is lowered by 10.
+    \subsection{Identify Disguise [Hidden]}\label{Identify Disguise}
+        Whenever you observe a disguised creature or object, you can make an Awareness check to identify the disguise.
+        The DR is equal to the Disguise check result used to create the disguise (see \pcref{Disguise}).
+        Success means you know that the creature or object is disguised.
+        Critical success means you can also discern its true appearance beneath the disguise.
+        Failure means you don't notice anything unusual.
 
-    \subsection{Identify Disguise [Passive]}
-        As a free action, you can make an Awarness check to identify a disguise on another creature. The DR is equal to the Disguise check result used to create the disguise. Success means you know that the creature is disguised. Critical success means you can also discern the creature's true appearance beneath the disguise. After making a check to identify a disguise on a particular creature, you cannot make another check to identify the same disguise on that creature for one hour.
+        You cannot retry this check until you gain meaningful new information that would help you identify the disguise.
 
     \subsection{Identify Forgery}
-        As a standard action, you can identify forgeries. The DR to identify a forgery is equal to the Craft check result used to make the item. Success means you correctly identify whether the item is a forgery or not. Failure means you are unsure. Critical failure means you incorrectly identify the item, concluding that a forgery is genuine or a genuine item is a forgery. The check is made secretly, so you can't be sure how good the result is.
+        As a standard action, you can make an Awareness check to identify forgeries.
+        The DR to identify a forgery is equal to the Craft check result used to make the item (see \pcref{Craft}).
+        Success means you correctly identify whether the item is a forgery or not.
+        Failure means you don't notice anything indicating the item is a forgery.
 
-    \subsection{Notice Creatures and Events [Passive]}
-        As a free action, you can notice creatures and events around you. The DR depends on the sense used and the obviousness of the event, as described on tables below. Success means you notice something, but you don't know any details -- only its general direction. For every 5 points by which you beat the DR, you learn an additional piece of information, such as what caused the event or the location of the creature. Failure means you don't notice anything.
+        You cannot retry this check until you gain meaningful new information that would help you identify the forgery.
+
+    \subsection{Notice Creatures and Events}
+        As a free action, you can notice creatures and events around you.
+        The DR depends on the sense used and the obviousness of the event, as described on tables below.
+        Success means you notice something, but you don't know any details -- only its general direction.
+        For every 5 points by which you beat the DR, you learn an additional piece of information, such as what caused the event or the location of the creature.
+        Failure means you don't notice anything.
 
         This can be used to determine the precise location of a creature or object, even if you can't see it. The DR to identify the location is equal to the DR to notice the creature or object using the appropriate sense \add 5 (since you need to learn an additional piece of information).
 
-    \subsection{Read Lips [Passive]}
-        As a free action, you can make a DR 15 sight-based Awareness check to read a creature's lips. You must be able to understand the language spoken. Success means you can understand the general content of the message, but not the exact words. Critical success means you understand the exact words. Failure means you don't understand the message. Critical failure means you draw an incorrect conclusion about the message.
+    \subsection{Read Lips}
+        Whenever you see a creature speaking, you can make an sight-based Awareness check to read its lips.
+        The DR is 10 for ordinary conversation, or up to 20 if the speaking creature makes an effort to avoid moving its lips.
+        You must be able to understand the language spoken.
+        Success means you can understand the general content of the message, but not the exact words.
+        Critical success means you understand the exact words.
+        Failure means you don't understand the message.
 
     \subsection{Search}\label{Search}
         As a standard action, you can make a Awareness check to notice things in a single 5-ft.\ square within 10 feet of you.
-        If you do, you gain a \plus10 bonus to the check.
+        If you do, you gain a \plus5 bonus to the check.
 
     \subsection{Senses}\label{Senses}
 
@@ -318,11 +290,11 @@ A character's skills describe the myriad of talents that people have.
             \lcaption{Sight-based DRs}
             \begin{dtabularx}{\columnwidth}{X l}
                 \tb{Situation} & \tb{Base DR\fn{1}} \\
-                \hline
+                \bottomrule
                 Creature or object & 0 \\
                 Creature trying to hide & Stealth check result\fn{2} \\
                 Hidden trap, secret door, or mechanism & Craft or Devices check result \\
-                Magic trap & 25 \add double level of spell used to create trap \\
+                Magic trap & 15 \add double level of spell used to create trap \\
             \end{dtabularx}
             1 Always add any appropriate modifiers from \tref{Awareness DR Modifiers} \\
             2 Don't add size-based DR modifiers to the Awareness check.
@@ -334,11 +306,11 @@ A character's skills describe the myriad of talents that people have.
             \lcaption{Sound-based DRs}
             \begin{dtabularx}{\columnwidth}{X l}
                 \tb{Situation} & \tb{Base DR\fn{1}} \\
-                \hline
+                \bottomrule
                 Creature shouting & \minus5\fn{1} \\
                 Creature talking normally or fighting & 0 \\
-                Creature whispering & 10 \\
-                Creature standing still & 15 \\
+                Creature whispering & 5 \\
+                Creature standing still & 10 \\
                 Creature trying to be quiet & Stealth check result\fn{2} \\
             \end{dtabularx}
             1 Always add any appropriate modifiers from \tref{Awareness DR Modifiers} \\
@@ -353,13 +325,13 @@ A character's skills describe the myriad of talents that people have.
 
         Smells dissipate quickly with distance. Double the normal distance modifiers for scent-based perception checks.
 
-        \subparhead{Scent Ability}\label{Scent} Some creatures have an unusually good sense of smell. Creatures with the scent ability gain a \plus10 bonus to scent-based Awareness checks.
+        \subparhead{Scent Ability}\label{Scent} Some creatures have an unusually good sense of smell. Creatures with the scent ability gain a \plus5 bonus to scent-based Awareness checks.
 
         \begin{dtable}
             \lcaption{Scent-based DRs}
             \begin{dtabularx}{\columnwidth}{X l}
                 \tb{Situation} & \tb{Base DR\fn{1}} \\
-                \hline
+                \bottomrule
                 Strong scent (rotting flesh, pungent spices) & 0 \\
                 Moderate scent (fresh food) & 5 \\
                 Living creature & 10 \\
@@ -378,24 +350,22 @@ A character's skills describe the myriad of talents that people have.
             \lcaption{Awareness DR Modifiers}
             \begin{dtabularx}{\columnwidth}{X l}
                 \tb{Distance} & \tb{DR Modifier\fn{1}} \\
-                \hline
-                Up to 10 feet away & \plus0 \\
-                11-30 feet away & \plus2 \\
-                31-100 feet away & \plus5 \\
-                101-500 feet away & \plus10 \\
-                501-2500 feet away & \plus15 \\
-                2500-10000 feet away & \plus20 \\
-                \tb{Number} & \tb{DR Modifier} \\
-                One creature or object & \plus0 \\
-                Two creatures or objects & \plus2 \\
-                Five creatures or objects & \plus5 \\
-                Twenty creatures or objects & \plus10 \\
-                A hundred creatures or objects & \plus15 \\
-                Five hundred creatures or objects & \plus20 \\
-                \tb{Background} & \tb{DR Modifier} \\
-                Nothing similar  & 0 \\
-                Many similar sensations & \plus5 \\
-                Many more intense sensations & \plus10 \\
+                \bottomrule
+                Up to 20 feet away             & \plus0           \\
+                21--100 feet away              & \plus2           \\
+                101--500 feet away             & \plus5           \\
+                501--2500 feet away            & \plus10          \\
+                2500--10000 feet away          & \plus15          \\
+                \tb{Number}                    & \tb{DR Modifier} \\
+                1--4 creatures or objects      & \plus0           \\
+                5--20 creatures or objects     & \minus2          \\
+                21--100 creatures or objects   & \minus5          \\
+                101--500 creatures or objects  & \minus10         \\
+                501--2500 creatures or objects & \minus15         \\
+                \tb{Background}                & \tb{DR Modifier} \\
+                Nothing similar                & 0                \\
+                Many similar sensations        & \plus5           \\
+                Many more intense sensations   & \plus10           \\
             \end{dtabularx}
             1 Doubled for scent-based Awareness checks.
         \end{dtable}
@@ -408,20 +378,52 @@ A character's skills describe the myriad of talents that people have.
 
         If you act differently from the crowd you are trying to blend in with, anyone observing you gets a \plus5 bonus to find you. You may need to make Awareness or Sense Motive checks to figure out how to act, depending on the situation. If you are extremely dissimilar from the crowd, such as a naked person in a temple or a human among halflings, anyone observing you may gain a \plus10 or greater bonus to find you.
 
-    \subsection{Distract}
-        As a standard action, you can make a Bluff check to distract a creature or group of creatures you are talking with. Your Bluff check is opposed by your target's Sense Motive check. Success means they take a \minus10 penalty to Awareness and Sense Motive checks against targets other than you for 1 round. Failure means they take no penalty. Critical failure means they realize you were trying to distract them.
+    \subsection{Distract}\label{Distract}
+        As a standard action, you can make a Bluff check to distract a creature you are interacting with.
+        Your Bluff check is opposed by your target's Sense Motive check.
+        Success means they take a \minus5 penalty to Awareness and Sense Motive checks against targets other than you for 1 round.
+        Failure means they take no penalty, and realize you were trying to distract them.
+
+        Normally, distracting a creature requires both visible motion and sound.
+        If you take a \minus5 penalty to the Bluff check, you can distract a creature without moving, or without making sound, but not without both.
+        In addition, you can take a \minus5 penalty to your Bluff check to distract everyone who can see or hear you.
 
         If you successfully distract a creature, you can attempt to hide from that creature as if you were not being observed (see \pcref{Stealth}, for details).
 
-    \subsection{Lie}
-        As a free action, when you say something which you know is untrue, you can make a Bluff check to avoid revealing your deception. Anyone witnessing you lie can oppose your check with a Sense Motive check. If you succeed, they do not realize you are lying. If they succeed, they realize that you are lying.
+    \subsection{Impersonate}\label{Impersonate}
+        When you are pretending to be another creature, you can assume the mannerisms and speech patterns of the creature you are impersonating.
+        To do so, you must make a Bluff check.
+        Anyone observing you can oppose your check with a Sense Motive check to identify the impersonation (see the \textit{identify disguise} ability, page \pref{Identify Disguise}).
+        If you succeed, the observer thinks your impersonation is accurate.
+        If you critically succeed, they also take a \minus5 penalty to any other check to see through your impersonation, such as to notice a flawed disguise.
+        If they succeed, they notice inconsistencies or mistakes in your impersonation, and may realize you are not what you seem.
 
-        A creature that fails its Sense Motive check may choose not to believe you for other reasons. This check only prevents a creature from recognizing the lie based on your body language and behavior. To convince creatures to believe lies, you need the Persuasion skill (see \pcref{Compel Belief}).
+        % Technically these should be bonuses to the checks observers make, but that's confusing
+        If you do not know how you are supposed to act, or are physically unable to perform necessary actions, impersonation is more difficult.
+        You take a \minus2 penalty if you cannot replicate minor details of an impersonation, such as a deep voice beyond your vocal range.
+        You take a \minus5 penalty if you cannot replicate significant details of an impersonation, such as the singing voice of a famous bard or the noble manners of a crown prince.
+        You take a \minus10 or greater penalty if you cannot replicate fundamental aspects of the impersonation, such as the actions required to lead a complex ritual as an archmage.
+        Observers who do not know your impersonation is inaccurate can take similar penalties; see the \textit{identify disguise} ability for details.
+
+        A creature may not believe your impersonation even if you make a successful Bluff check.
+        For example, a halfling can impersonate an orc's voice perfectly with a Bluff check, but without a disguise anyone who sees the halfling will immediately realize it is not an orc (see \pcref{Disguise}).
+
+    \subsection{Lie}
+        As a free action, when you say something which you know is untrue, you can make a Bluff check to avoid revealing your deception.
+        Anyone observing you lie can oppose your check with a Sense Motive check.
+        If you succeed, the observer does not notice any indication that you are lying.
+        If they succeed, they realize that you are lying.
+
+        A creature that fails its Sense Motive check may choose not to believe you for other reasons.
+        This check only prevents a creature from recognizing the lie based on your body language and behavior.
+        To convince creatures to believe or take actions based on lies, you need the Persuasion skill (see \pcref{Compel Belief}).
 
     \subsection{Secret Message}
-        As part of normal speech, you can make a Bluff check to attempt to convey a hidden message to another character without others understanding it using codes, metaphors, and similar misdirection tools. The DR is 20 for simple messages and 30 for complex messages. If the message contains completely new information, the DR increases by 5. You can freely increase the DR to make the message more difficult to intercept, but doing so also makes it more difficult for the intended recipient to interpret.
+        As part of normal speech, you can make a Bluff check to attempt to convey a hidden message to another character without others understanding it using codes, metaphors, and similar misdirection tools. The DR is 10 for simple messages and 15 for complex messages. If the message contains completely new information, the DR increases by 5. You can freely increase the DR to make the message more difficult to intercept, but doing so also makes it more difficult for the intended recipient to interpret.
 
-        Anyone witnessing the exchange may make a Sense Motive check against the same DR to identify the hidden message. Creatures who know in advance that the message will be conveyed -- normally, the intended recipient -- receive a \plus10 bonus on this check. Creatures who know your system for conveying hidden messages also receive a \plus10 bonus.
+        Anyone witnessing the exchange may make a Sense Motive check against the same DR to identify the hidden message.
+        Creatures who know your system for conveying hidden messages -- normally, the intended recipient -- receive a \plus10 bonus.
+        Creatures who know in advance that a message will be conveyed also receive a \plus5 bonus on this check.
 
     \skill{Climb}{Str}
     The Climb skill represents your ability to climb obstacles.
@@ -435,12 +437,12 @@ A character's skills describe the myriad of talents that people have.
             \lcaption{Climb Speeds}
             \begin{dtabularx}{\columnwidth}{l X l X}
                 \tb{Size} & \tb{Speed} & \tb{Size} & \tb{Speed} \\
-                \hline
-                Medium & 5 ft. && \\
-                Small & 5 ft. & Large & 10 ft. \\
-                Tiny & 2-1/2 ft. & Huge & 15 ft. \\
-                Diminuitive & 1 ft. & Gargantuan & 20 ft. \\
-                Fine & 1/2 ft. & Colossal & 40 ft. \\
+                \bottomrule
+                Medium      & 5 ft.     &            &        \\
+                Small       & 5 ft.     & Large      & 10 ft. \\
+                Tiny        & 2-1/2 ft. & Huge       & 15 ft. \\
+                Diminuitive & 1 ft.     & Gargantuan & 20 ft. \\
+                Fine        & 1/2 ft.   & Colossal   & 40 ft. \\
             \end{dtabularx}
         \end{dtable}
 
@@ -450,17 +452,16 @@ A character's skills describe the myriad of talents that people have.
             \lcaption{Climb DRs}
             \begin{dtabularx}{\textwidth}{l X l}
                 \tb{Climb DR} & \tb{Surface or Activity} & \tb{Example} \\
-                \hline
+                \bottomrule
                 0 & Steep slope & A hill too steep to walk up \\
-                10 & Surface with large hand and foot holds & Knotted rope, Very rough rocks, ship's rigging \\
-                15 & Surface with some hand and foot holds & Surface with pitons or carved holes, rough wall \\
-                15 & Surface with only large hand holds & Pulling yourself up by your hands while dangling \\
-                20 & Uneven surface with narrow hand and foot holds & Unknotted rope, unweathered natural rock, typical ruin wall, brick wall \\
-                20 & Overhang or ceiling with only handholds & Tree limbs, butcher's ceiling with meat hooks \\
-                25 & Rough surface with no holds & Weathered natural rock, well-made stone wall \\
-                30 & Bracing between two smooth surfaces (chimney) & Parallel \spellindirect{wall of force}{walls of force} \\
-                35 & Bracing in a corner between two smooth surfaces & \spell{forcecage} \\
-                40 & Smooth surface & Glass window, \spell{wall of force} \\
+                5 & Surface with large hand and foot holds & Knotted rope, Very rough rocks, ship's rigging \\
+                10 & Surface with some hand and foot holds & Surface with pitons or carved holes, rough wall \\
+                10 & Surface with only large hand holds & Pulling yourself up by your hands while dangling \\
+                15 & Uneven surface with narrow hand and foot holds & Unknotted rope, unweathered natural rock, typical ruin wall, brick wall \\
+                15 & Overhang or ceiling with large handholds & Tree limbs, butcher's ceiling with meat hooks \\
+                20 & Rough surface with no holds & Weathered natural rock, well-made stone wall \\
+                30 & Bracing between two opposite smooth surfaces & Parallel glass windows \\
+                35 & Smooth surface & Glass window, \spell{wall of force} \\
             \end{dtabularx}
         \end{dtable*}
 
@@ -468,11 +469,11 @@ A character's skills describe the myriad of talents that people have.
             \lcaption{Climb DR Modifiers}
             \begin{dtabularx}{\columnwidth}{l X}
                 \tb{DR Modifier\fn{1}} & \tb{Description} \\
-                \hline
-                \minus10 & Climbing a chimney (artificial or natural) or other location where you can brace against two opposite walls \\
-                \minus5 & Inclined surface (between 45 and 60 degrees) \\
-                \minus5 & Climbing a corner where you can brace against perpendicular walls \\
-                \minus5 & Climbing a free-hanging object, such as a rope, where you can brace against a nearby wall \\
+                \bottomrule
+                \minus5 & Climbing a chimney (artificial or natural) or other location where you can brace against two opposite walls \\
+                \minus2 & Climbing a corner where you can brace against perpendicular walls \\
+                \minus2 & Inclined surface (between 45 and 60 degrees) \\
+                \minus2 & Climbing a free-hanging object, such as a rope, where you can brace against a nearby wall \\
                 \plus2 & Surface is slightly slippery, such as damp stone \\
                 \plus5 & Surface is very slippery, such as ice or oil-covered stone \\
             \end{dtabularx}
@@ -485,12 +486,11 @@ A character's skills describe the myriad of talents that people have.
         \parhead{Climb Speed}\label{Climb Speed}
             A creature with a climb speed can move a distance equal to its climb speed with a successful Climb check.
             However, it does not move double its speed if it gets a critical success on a Climb check.
-            In addition, it gains a \plus10 bonus to all Climb checks.
 
     \subsubsection{Grab Edge}\label{Grab Edge}
         If you are next to the edge of a wall or cliff, you can grab it.
         Grabbing an edge is done as part of other movement, and does not take an action in itself.
-        The DR of the check depends on the nature of the edge, but a typical stone or similarly solid edge has a DR of 10.
+        The DR of the check depends on the nature of the edge, but a typical stone or similarly solid edge has a DR of 5.
         You can pull yourself up from a grabbed edge as a move action that requires a Climb check against the edge's DR\@.
 
         Your ability to grab an edge depends on your reach. The maximum vertical reach (height the creature can reach without jumping) for an average creature of a given size is shown on the table below. (As a Medium creature, a typical human can reach 8 feet without jumping.) The maximum vertical reach for an individual creature is usually given by the 1 and 1/2 times the creature's height. Quadrupedal creatures don't have the same vertical reach as a bipedal creature; treat them as being one size category smaller.
@@ -498,16 +498,16 @@ A character's skills describe the myriad of talents that people have.
         \begin{dtable}
             \begin{dtabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
                 \tb{Creature Size}  & \tb{Vertical Reach} \\
-                \hline
-                Colossal  & 128 ft. \\
-                Gargantuan  & 64 ft. \\
-                Huge  & 32 ft. \\
-                Large  & 16 ft. \\
-                Medium  & 8 ft. \\
-                Small  & 4 ft. \\
-                Tiny  & 2 ft. \\
-                Diminutive  & 1 ft. \\
-                Fine  & 1/2 ft.
+                \bottomrule
+                Colossal   & 128 ft. \\
+                Gargantuan & 64 ft.  \\
+                Huge       & 32 ft.  \\
+                Large      & 16 ft.  \\
+                Medium     & 8 ft.   \\
+                Small      & 4 ft.   \\
+                Tiny       & 2 ft.   \\
+                Diminutive & 1 ft.   \\
+                Fine       & 1/2 ft.
             \end{dtabularx}
         \end{dtable}
 
@@ -517,12 +517,21 @@ A character's skills describe the myriad of talents that people have.
         It is possible, but difficult, to make a Climb check to stop yourself from falling when near a wall. To catch yourself while falling, make a Climb check against a DR equal to the wall's DR \add 10.
 
     \subsection{Wallrun}
-        As part of movement, you can make a Climb check to run along a wall rather than climbing it. The DR is 10 higher than normal for the wall, but this does not require free hands. Success means you move up to half your land speed horizontally, or up to a quarter of your land speed vertically. Failure means you fall. Critical failure means you are prone when you land. For every round you spend running on a wall, the DR increases by 10.
+        As part of movement, you can make a Climb check to run along a wall rather than climbing it. The DR is 5 higher than normal for the wall, but this does not require free hands. Success means you move up to half your land speed horizontally, or up to a quarter of your land speed vertically. Failure means you fall. Critical failure means you are prone when you land. For every round you spend running on a wall, the DR increases by 5.
 
         Wallrunning on a ceiling is impossible.
 
+    \subsection{Creature Climb}
+        As a standard action, you can make a Climb vs. Reflex attack against a creature adjacent to you.
+        The creature must be three or more size categories larger than you.
+        Success means you can climb the creature as if it were a solid object with a Climb DR equal to its Reflex defense.
+        The creature takes a \minus4 penalty to accuracy on physical attacks against you, but is not otherwise encumbered by your presence unless it cannot support your weight.
+        It can attempt to remove you by attacking you, or with an appropriate \glossterm{combat maneuver}, such as grappling or shoving.
+
     \skill{Craft}{Int}
-        Like Knowledge, Perform, and Profession, Craft is actually a number of separate skills. You could have several Craft skills, each with its own ranks, each purchased as a separate skill. Common Craft skills are listed below, with additional description for some skills.
+        Like Knowledge, Perform, and Profession, Craft is actually a number of separate skills.
+        You could have several Craft skills, each with a separate degree of training.
+        Common Craft skills are listed below, with additional description for some skills.
 
         \begin{itemize}
             \item Alchemy (Alchemist's fire, tanglefoot bags, potions)
@@ -539,6 +548,8 @@ A character's skills describe the myriad of talents that people have.
             \item Wood
         \end{itemize}
 
+        % TODO: note which skills often have magic items?
+
         A Craft skill is specifically focused on physical objects. If nothing can be created by an endeavor, it probably falls under the heading of a Profession skill. Complex structures, such as buildings or siege engines, may require Knowledge (engineering) in addition to an appropriate Craft skill.
 
         \parhead{Craft Skill} Craft is always treated as a class skill, regardless of your classes.
@@ -548,18 +559,18 @@ A character's skills describe the myriad of talents that people have.
 
         Each item takes a certain amount of working time to craft, as shown on \tref{Crafting Time}, and the expenditure of one quarter of the item's price in raw materials. In order to craft an item, you must make a Craft check against the item's Craft DR, as shown on \trefnp{Craft DRs}. If you succeed, you make progress on the item based on how long you spend crafting. For every 5 points by which you beat the Craft check, you accomplish twice as much work in the same amount of time. Once your total effective working time exceeds the time required to craft the item, you have finished the item.
 
-        All crafts require artisan's tools to give the best chance of success. If improvised tools are used, the check may be made with a penalty, or may be impossible, depending on the tools available and the item to be crafted. For example, crafting a bow with improvised woodworking tools would impose a \minus2 penalty, but cutting a diamond without specialized tools is impossible. Note that raw materials for some items, particularly alchemical items, may be hard to come by in some areas. A typical day's work consists of 8 hours of work.
+        All crafts require artisan's tools to give the best chance of success. If improvised tools are used, the check may be made with a penalty, or may be impossible, depending on the tools available and the item to be crafted. For example, crafting a bow with improvised woodworking tools would impose a \minus5 penalty, but cutting a diamond without specialized tools is impossible. Note that raw materials for some items, particularly alchemical items, may be hard to come by in some areas. A typical day's work consists of 8 hours of work.
 
         To determine the time required to craft an item, consult the table below.
         \begin{dtable}
             \lcaption{Crafting Time}
             \begin{dtabularx}{\columnwidth}{l X}
                 \tb{Item Price} & \tb{Crafting Time} \\
-                \hline
-                1gp or less & One hour \\
-                10gp or less & Eight hours \\
-                100gp or less & One week\fn{1} \\
-                500gp or less & One month\fn{1} \\
+                \bottomrule
+                1gp or less    & One hour         \\
+                10gp or less   & Eight hours      \\
+                100gp or less  & One week\fn{1}   \\
+                500gp or less  & One month\fn{1}  \\
                 1000gp or less & Two months\fn{1} \\
             \end{dtabularx}
             1 Assuming 8 hours of work each day.
@@ -569,21 +580,20 @@ A character's skills describe the myriad of talents that people have.
             \lcaption{Craft DRs}
             \begin{dtabularx}{\columnwidth}{>{\lcol}X l >{\lcol}p{4em}}
                 \tb{Item} & \tb{Craft Skill} & \tb{Craft DR} \\
-                \hline
-                Acid & Alchemy\fn{1} & 15 \\
-                Alchemist's fire, smokestick, or tindertwig & Alchemy & 20 \\
-                Antitoxin, sunrod, tanglefoot bag, or thunderstone & Alchemy & 25 \\
-                Armor or shield & Metal or wood & 10 \add AD bonus \\
-                Longbow or shortbow & Wood & 15 \\
-                Crossbow & Wood & 15 \\
-                Simple melee or thrown weapon & Metal or wood & 12 \\
-                Martial melee or thrown weapon & Metal or wood & 15 \\
-                Exotic melee or thrown weapon & Metal or wood & 18 \\
+                \bottomrule
+                Acid & Alchemy & 5 \\
+                Alchemist's fire, smokestick, or tindertwig & Alchemy & 10 \\
+                Antitoxin, sunrod, tanglefoot bag, or thunderstone & Alchemy & 15 \\
+                Armor or shield & Metal or wood & 5 \add AD bonus \\
+                Longbow or shortbow & Wood & 10 \\
+                Crossbow & Wood & 10 \\
+                Simple melee or thrown weapon & Metal or wood & 5 \\
+                Martial or exotic melee or thrown weapon & Metal or wood & 10 \\
                 Mechanical trap & Traps & Varies\fn{1} \\
-                Very simple item (wooden spoon) & Varies & 5 \\
-                Typical item (iron pot) & Varies & 10 \\
-                High-quality item (bell, average lock) & Varies & 15 \\
-                Complex or superior item (fine china, document with official seal)  & Varies & 20\add \\
+                Very simple item (wooden spoon) & Varies & 2 \\
+                Typical item (iron pot) & Varies & 5 \\
+                High-quality item (bell, average lock) & Varies & 10 \\
+                Complex or superior item (fine china, document with official seal)  & Varies & 15\add \\
             \end{dtabularx}
             1 Traps have their own rules for construction.
         \end{dtable}
@@ -591,7 +601,7 @@ A character's skills describe the myriad of talents that people have.
     \subsection{Appraise Item}
         You can make a Craft check to estimate the value of an item with 1 minute of careful study. The Craft skill used must be related to the item.
 
-        The DR depends on the rarity of the item. Common items, such as nonmagical equipment and utensils, are DR 10. Rare items, such as valuable gems and magic items worth less than 100,000 gp, are DR 20. Extraordinarily rare items, such as unique gems and magic items worth at least 100,000 gp, are DR 30.
+        The DR depends on the rarity of the item. Common items, such as nonmagical equipment and utensils, are DR 5. Rare items, such as valuable gems and magic items worth less than 100,000 gp, are DR 10. Extraordinarily rare items, such as unique gems and magic items worth at least 100,000 gp, are DR 20.
 
         Success means you know the value of the item. Failure means you think the item is worth (d10+5)/10 \x the item's actual value. (The d10 roll is made secretly, so you don't know how close you are.) Critical failure means you can't estimate the item's value at all.
 
@@ -603,7 +613,7 @@ A character's skills describe the myriad of talents that people have.
         Forgeries which have a function, such as a weapon, are always defective in some way which makes them unsuitable for use. A forgery can be detected with the Identify Forgery uses of the Craft and Awareness skills.
 
     \subsection{Identify Forgery}
-        As a standard action, you can make a Craft check to evaluate whether an item is a forgery. The DR to identify a forgery is equal to the Craft check used to make the item. Success means you correctly identify whether the item is a forgery or not. Failure means you are unsure. Failure by more than 10 means you randomly identify the item as genuine or forged. The check is made secretly, so you can't be sure how good the result is.
+        As a standard action, you can make a Craft check to evaluate whether an item is a forgery. The DR to identify a forgery is equal to the Craft check used to make the item. Success means you correctly identify whether the item is a forgery or not. Failure means you are unsure. Critical failure means you randomly identify the item as genuine or forged. The check is made secretly, so you can't be sure how good the result is.
 
     \subsection{Repair Item}
         You can make a Craft check to repair a broken item. This functions like crafting the item from scratch, except that you use one-tenth of the item's price to determine the price of raw materials and the crafting time.
@@ -614,33 +624,60 @@ A character's skills describe the myriad of talents that people have.
     \skill{Creature Handling}{Per}
     The Creature Handling skill represents your ability to handle creatures without being able to speak with them. With it, you can convince them to do what you want or train them to follow commands. This skill can only be used with creatures with an Intelligence of \minus6 or lower.
 
-        Animals are easier to handle than other kinds of creatures. The DRs listed are for animals; the DRs to handle other kinds of creatures are 5 higher.
+        Animals are easier to handle than other kinds of creatures.
+        The DRs listed are for animals; the DRs to handle other kinds of creatures are 5 higher.
 
     \subsection{Handling Creatures}
         You can use Creature Handling to control a creature's actions. Critical failure with these checks may make the target hostile, depending on the circumstances.
-        \parhead{Pacify} As a standard action, you can make a Creature Handling vs. Mental attack against a creature within \rngmed range. Success means the creature does nothing for 2 rounds. You take a \minus10 penalty to accuracy on this attack against actively hostile creatures. If the creature is threatened or damaged, this effect is automatically broken. If you interfere with an action the creature is trained to perform while it is pacified, such as entering a room it is trained to guard, you must make another attack against it. Failure means the effect is broken.
-        \parhead{Perform Trained Action} As a free action, you can make a DR 10 check to convince a creature to perform an action it is trained to perform. Generally, wild animals are not trained in any actions, so this is not effective on them.
-        \parhead{Push} As a standard action, you can make a DR 25 check to convince a willing creature to perform an action it is not trained to perform, but which it is physically capable of performing. This also covers making a creature perform a forced march and similar activities.
+        \parhead{Pacify}\label{Pacify} As a standard action, you can use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{One creature}{\rngmed}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \begin{spellattack}{Creature Handling vs. Mental}
+                    \spellspecial The target's defense is increased as normal for Creature Handling attacks and checks if it is not an animal.
+                    You take a \minus10 penalty to accuracy against an actively hostile target.
+                    \spellsuccess The target takes no actions.
+                    If it is threatened or damaged, this effect is automatically broken.
+                    \spelldur Sustain (standard)
+                    \spelltags{Compulsion, Mind}
+                \end{spellattack}
+            \end{spelleffects}
+        \end{ability}
+        \parhead{Perform Trained Action} As a free action, you can make a DR 5 check to convince a creature to perform an action it is trained to perform. Generally, wild animals are not trained in any actions, so this is not effective on them.
+        \parhead{Push} As a standard action, you can make a DR 15 check to convince a willing creature to perform an action it is not trained to perform, but which it is physically capable of performing. This also covers making a creature perform a forced march and similar activities.
 
     \subsection{Training Creatures}\label{Training Creatures}
         You can use Creature Handling to train a creature. Success means the creature learns a trick or becomes domesticated. Failure means your time is wasted, and you must try again. Exceptional failure may indicate that the animal becomes unable to learn the trick, becomes hostile, or other consequences depending on the situation. Training a creature takes a week or more; this requires spending at least four hours each day with the creature. It is not generally possible to accelerate the process by spending more time each day; the creature must take time to learn the new behavior. If the training is interrupted for a week or more, the attempt automatically fails.
 
         \parhead{Teach a Trick} You can teach a creature a specific trick with one week of work and a successful Creature Handling check against the indicated DR\@. A creature can learn a number of tricks equal to its Intelligence \add 10. Thus, a creature with an Intelligence of \minus9 can learn a single trick, while a creature with an Intelligence of \minus5 can learn five tricks. Possible tricks (and their associated DRs) include, but are not necessarily limited to, the following.
 
-        \subsk{Attack (DR 20)} The creature attacks apparent enemies. You may point to a particular creature that you wish the creature to attack, and it will comply if able. Normally, a creature will attack only humanoids, monstrous humanoids, giants, or other creatures. Teaching a creature to attack all creatures (including such unnatural creatures as undead and aberrations) counts as two tricks.
-        \subsk{Come (DR 15)} The creature comes to you, even if it normally would not do so.
-        \subsk{Defend (DR 20)} The creature defends you (or is ready to defend you if no threat is present), even without any command being given. Alternatively, you can command the creature to defend a specific other character.
-        \subsk{Down (DR 15)} The creature breaks off from combat or otherwise backs down. A creature that doesn't know this trick continues to fight until it must flee (due to injury, a fear effect, or the like) or its opponent is defeated.
-        \subsk{Fetch (DR 15)} The creature goes and gets something. If you do not point out a specific item, the creature fetches some random object.
-        \subsk{Guard (DR 20)} The creature stays in place and prevents others from approaching.
-        \subsk{Heel (DR 15)} The creature follows you closely, even to places where it normally wouldn't go.
-        \subsk{Perform (DR 15)} The creature performs a variety of simple tricks, such as sitting up, rolling over, roaring or barking, and so on.
-        \subsk{Seek (DR 15)} The creature moves into an area and looks around for anything that is obviously alive or animate.
-        \subsk{Stay (DR 15)} The creature stays in place, waiting for you to return. It does not challenge other creatures that come by, though it still defends itself if it needs to.
-        \subsk{Track (DR 20)} The creature tracks the scent presented to it. (This requires the creature to have the scent ability)
-        \subsk{Work (DR 15)} The creature pulls or pushes a medium or heavy load.
+        \subsk{Attack (DR 10)} The creature attacks apparent enemies. You may point to a particular creature that you wish the creature to attack, and it will comply if able. Normally, a creature will attack only humanoids, monstrous humanoids, giants, or other creatures. Teaching a creature to attack all creatures (including such unnatural creatures as undead and aberrations) counts as two tricks.
+        \subsk{Come (DR 5)} The creature comes to you, even if it normally would not do so.
+        \subsk{Defend (DR 10)} The creature defends you (or is ready to defend you if no threat is present), even without any command being given. Alternatively, you can command the creature to defend a specific other character.
+        \subsk{Down (DR 5)} The creature breaks off from combat or otherwise backs down. A creature that doesn't know this trick continues to fight until it must flee (due to injury, a fear effect, or the like) or its opponent is defeated.
+        \subsk{Fetch (DR 5)} The creature goes and gets something. If you do not point out a specific item, the creature fetches some random object.
+        \subsk{Guard (DR 10)} The creature stays in place and prevents others from approaching.
+        \subsk{Heel (DR 5)} The creature follows you closely, even to places where it normally wouldn't go.
+        \subsk{Messenger (DR 15)} The creature carries a small item to a destination.
+        Once it arrives, it waits for up to 24 hours for someone to take the item from it.
+        The destination must be known to the creature.
+        \par When you instruct the creature to deliver the item, you must communicate the destination to the creature.
+        This normally requires a DR 20 Creature Handling check as a standard action.
+        The DR of this check is lowered to 15 for locations the creature is extremely familiar with, such as its home.
+        If you have other means of communicating the destination to the creature, such as the \textit{wild speech} druid ability (see Wild Speech, page \pref{Drd:Wild Speech}), that check is unnecessary.
+        \subsk{Perform (DR 10)} The creature performs a variety of simple tricks, such as sitting up, rolling over, roaring or barking, and so on.
+        \subsk{Seek (DR 5)} The creature moves into an area and looks around for anything that is obviously alive or animate.
+        \subsk{Stay (DR 5)} The creature stays in place, waiting for you to return. It does not challenge other creatures that come by, though it still defends itself if it needs to.
+        \subsk{Track (DR 10)} The creature tracks the scent presented to it. (This requires the creature to have the scent ability)
+        \subsk{Work (DR 5)} The creature pulls or pushes a medium or heavy load.
 
-        \parhead{Rear a Wild Creature} To rear a creature means to raise a wild creature from infancy so that it becomes domesticated. The time required depends on the creature in question. The DR for this check is equal to 15 \add the number of levels the creature has. You can rear as many as three creatures of the same kind at once without penalty. You can rear additional creatures, but you take a cumulative \minus2 penalty to checks you make to rear all of the animals. A successfully domesticated creature can be taught tricks at the same time it's being raised, or it can be taught as a domesticated creature later.
+        \parhead{Rear a Wild Creature} To rear a creature means to raise a wild creature from infancy so that it becomes domesticated. The time required depends on the creature in question. The DR for this check is equal to 5 \add the number of levels the creature has. You can rear as many as three creatures of the same kind at once without penalty. You can rear additional creatures, but you take a cumulative \minus2 penalty to checks you make to rear all of the animals. A successfully domesticated creature can be taught tricks at the same time it's being raised, or it can be taught as a domesticated creature later.
+
+        \parhead{Bonus Tricks}\label{Bonus Tricks} Some trainers can teach creatures bonus tricks in addition to their normal maximum number of tricks known.
+        Once a creature has learned a bonus trick, that trick may not be retrained into a different trick by any trainer without the same ability to grant bonus tricks.
+        However, any trainer may untrain the trick.
 
     \skill{Devices}{Int}
         You can use the Devices skill to manipulate mechanical devices such as locks, traps, and other contraptions. With enough skill, you can even manipulate magical devices.
@@ -651,13 +688,13 @@ A character's skills describe the myriad of talents that people have.
             \lcaption{Devices DRs}
             \begin{dtabularx}{\columnwidth}{>{\lcol}X c}
                 \tb{Device Type} & \tb{Base DR} \\
-                \hline
-                Simple device (wagon wheel, typical knot) & 10 \\
-                Average device (door hinge, complex knot) & 15 \\
-                Challenging device (typical lock or trap) & 20 \\
-                Difficult device (good lock) & 25 \\
-                Magic trap & 25 \add double spell level \\
-                Extraordinary device (masterwork lock, complex trap) & 30 \\
+                \bottomrule
+                Simple device (wagon wheel, typical knot) & 5 \\
+                Average device (door hinge, complex knot) & 10 \\
+                Challenging device (typical lock or trap) & 15 \\
+                Difficult device (good lock, complex trap) & 20 \\
+                Magic trap & 15 \add double spell level \\
+                Extraordinary device (extraordinary lock) & 25 \\
             \end{dtabularx}
         \end{dtable}
 
@@ -666,7 +703,7 @@ A character's skills describe the myriad of talents that people have.
         You can attempt to leave no trace of your tampering while making a Devices check to activate or subvert a device. This increases the Devices DR by 5, but increases the Awareness DR to notice the tampering by 10.
 
     \subsection{Activate Device}
-        As a standard action, you can make a Devices check to make a device perform a function it was designed to do, even if you lack the normal requirements. For example, you could tie a knot, apply a poison, lock or unlock a lock without its key, or activate a trap without using its normal triggering mechanism (hopefully without being in its line of fire).
+        As a standard action, you can make a Devices check to make a device perform a function it was designed to do, even if you lack the normal requirements. For example, you could tie or untie a knot, apply a poison, lock or unlock a lock without its key, or activate a trap without using its normal triggering mechanism (hopefully without being in its line of fire).
 
     \subsection{Analyze Device}
         As a standard action, you can evaluate a device to understand how it functions. The DR is 10 lower than normal. Success grants you an insight into the device's mechanisms. For every 5 points by which you succeed, you glean additional information about the device, which can also help you estimate the device's true difficulty. Failure means you learn nothing about the device.
@@ -676,6 +713,20 @@ A character's skills describe the myriad of talents that people have.
 
     \subsection{Create Bindings}
         As a standard action, you can make a Devices check to tie a knot or create a binding, including binding a helpless foe. The DR to escape the binding is equal to your check result.
+
+    \subsection{Improvise}\label{Improvise}
+        You can construct ad-hoc devices from available materials.
+        It takes five minutes to make a device of up to Tiny size.
+        You can make a Small device in the time required to make two Tiny devices, a Medium device in the time required to make two Small devices, and so on.
+        You make a Devices check against the DR required to craft the item normally.
+        Success means you create a device that lasts long enough for a single use before breaking.
+        For every 5 points by which you succeed, the device lasts for an additional use.
+
+        Normally, you must have materials at hand which are designed for the construction of the device.
+        You can jury-rig devices together from inappropriate materials by increasing the DR by 10.
+        The materials do not have to be well-suited to the device's construction, but they must be physically capable of performing any necessary actions.
+        For example, you could construct a simple arrow-throwing trap from bent sticks or creatively strung rope, but not from sand.
+        Especially appropriate or inappropriate materials may decrease or further increase the DR.\
 
     \subsection{Subvert Device}
         As a standard action, you can make a Devices check to subvert the normal functionality of a device. The DR is 5 higher than normal. This could allow you to sabotage a hinge or lock so it breaks once it is used, disable a trap without triggering it, or disable a lock so it is perpetually closed or open. Failure means you were unsuccessful, and your action was wasted. Critical failure means you break the device immediately, think you sabotaged the device when you did not, or activate the trap, depending on the circumstances.
@@ -688,35 +739,41 @@ A character's skills describe the myriad of talents that people have.
     \subsection{Conceal Object}
         As a standard action, you can make a Disguise check to conceal an item on your person. The object must be at least two size categories smaller than you are. Your Disguise check is opposed by the Awareness check of anyone observing you. Success means they fail to notice the item. A creature directly interacting you to search for the object, such as by frisking you, gains a \plus5 bonus to its Awareness check.
 
-    \subsection{Disguise Creature}
+    \subsection{Disguise Creature}\label{Disguise Creature}
         You can make a Disguise check to change the appearance of a creature using makeup, costumes, and so forth. An observer can perceive the presence of a disguise with a Disguise or Awareness check to identify a disguise that is higher than your Disguise check. The effectiveness of a disguise depends in part on how much you're attempting to change the creature's appearance, as shown on the table below. The modifiers are cumulative; use any that apply.
 
-        Creating a disguise takes 1d4 \x 10 minutes. You can take a \minus10 penalty to reduce the time to 1d4 minutes, or a \minus20 penalty to reduce the time to 1d4 rounds.
-
         The Disguise check is made secretly, so that you can't be sure how good the result is. However, you can attempt to judge its effectiveness with an identify disguise check using either Disguise or Awareness.
+
+        \parhead{Creation Time} Creating a disguise takes 30 minutes. You can take a \minus5 penalty to reduce the time to 5 minutes, a \minus10 penalty to reduce the time to 5 rounds, or a \minus15 penalty to reduce the time to 1 round.
 
         \begin{dtable}
             \begin{dtabularx}{\columnwidth}{l >{\ccol}X}
                 \tb{Characteristic} & \tb{Disguise Check Modifier} \\
-                \hline
-                Different gender & \minus2 \\
-                Different race or subtype & \minus2 \\
-                Different age category & \minus2\fn{1} \\
-                Different creature type & \minus5 \\
-                Additional limb & \minus5\fn{2} \\
-                Different size category & \tdash\fn{3} \\
+                \bottomrule
+                Different gender          & \minus2       \\
+                Different race or subtype & \minus2       \\
+                Different age category    & \minus2\fn{1} \\
+                Different creature type   & \minus5       \\
+                Additional limb           & \minus5\fn{2} \\
+                Different size category   & \tdash\fn{3}  \\
             \end{dtabularx}
             1 Per step of difference between your actual age category and your
             disguised age category. The steps are: young, adulthood, middle age, old, and venerable. \\
             2 Per limb. You must have suitable disguise materials available. \\
-            3 You cannot disguise yourself as a different size category without the Disguise Mastery feat (see page \featpref{Disguise Mastery}).
+            3 You cannot disguise yourself as a different size category without the Disguise Specialization feat (see page \featpref{Disguise Specialization}).
         \end{dtable}
 
     \subsection{Emulate Creature}
-        You can make a Disguise check to make a creature look like another creature you have previously observed. This functions like a disguise creature check, but the result of your Disguise check can't exceed the result of a Awareness check you have made to observe the creature. People viewing the disguise who know what that person looks like get a \plus5 bonus on their checks to identify the disguise.
+        You can make a Disguise check to make a creature look like another creature you have previously observed. This functions like the \textit{disguise creature} ability, but the result of your Disguise check can't exceed the result of a Awareness check you have made to observe the creature. People viewing the disguise who know what that person looks like get a \plus5 bonus on their checks to identify the disguise.
 
-    \subsection{Identify Disguise [Passive]}
-        As a free action, you can make a Disguise check to identify a disguise on another creature. The DR is equal to the Disguise check used to create the disguise. Success means you know that the creature is disguised. Critical success means you can also discern the creature's true appearance beneath the disguise. After making a check to identify a disguise on a particular creature, you cannot make another check to identify the same disguise on that creature for one hour.
+    \subsection{Identify Disguise [Hidden]}
+        Whenever you observe a disguised creature or object, you can make an Disguise check to identify the disguise.
+        The DR is equal to the Disguise check result used to create the disguise.
+        Success means you know that the creature or object is disguised.
+        Critical success means you can also discern its true appearance beneath the disguise.
+        Failure means you don't notice anything unusual.
+
+        You cannot retry this check until you gain meaningful new information that would help you identify the disguise.
 
     \skill{Escape Artist}{Dex}
         The Escape Artist skill represents your ability to escape bindings and move through small areas by contorting your body.
@@ -727,20 +784,20 @@ A character's skills describe the myriad of talents that people have.
         \begin{dtable}
             \begin{dtabularx}{\columnwidth}{>{\lcol}X l}
                 \tb{Restraint}  & \tb{Escape Artist DR} \\
-                \hline
-                Ropes & Binder's grapple or Devices check \\
-                Net & 20 \\
-                Manacles  & 30 \\
-                Masterwork manacles  & 35 \\
-                Grappler & Grappler's grapple attack result	 \\
-                \spell{Entangle}, \spell{web}, or similar spells & Spellcaster's attack result \\
+                \bottomrule
+                Ropes                               & Binder's grapple or Devices check \\
+                Net                                 & 10                                \\
+                Manacles                            & 20                                \\
+                Masterwork manacles                 & 30                                \\
+                Grappler                            & Grappler's grapple attack result  \\
+                \spell{Entangle} and similar spells & Spellcaster's attack result       \\
             \end{dtabularx}
         \end{dtable}
 
     \subsection{Squeeze}
-        As a standard action, you can make an Escape Artist check to move one foot forward in a space too small to normally fit you. A DR 20 check allows you to move in a space that can fit your head and shoulders, but which is too tight to allow normal crawling. A DR 30 check allows you to move in a space that can fit your head, but not your shoulders. Success means you make progress through the space, while failure means your action is wasted.
+        As a standard action, you can make an Escape Artist check to move one foot forward in a space too small to normally fit you. A DR 15 check allows you to move in a space that can fit your head and shoulders, but which is too tight to allow normal crawling. A DR 20 check allows you to move in a space that can fit your head, but not your shoulders. Success means you make progress through the space, while failure means your action is wasted.
 
-        While using Escape Artist to squeeze into otherwise impossible spaces, you cannot take any physical actions other than squeezing until you escape. If you are squeezing in a space that can only fit your head and shoulders, the normal penalty to physical defenses for squeezing is doubled to \minus8. You are treated as \helpless while squeezing in a space that cannot fit your shoulders.
+        While using Escape Artist to squeeze into otherwise impossible spaces, you cannot take any physical actions other than squeezing until you escape. If you are squeezing in a space that can only fit your head and shoulders, the normal penalty to physical defenses for squeezing is doubled to \minus4. You are treated as \helpless while squeezing in a space that cannot fit your shoulders.
 
         If you take a \minus10 penalty to your Escape Artist check, you can squeeze as a move action, rather than as a standard action.
 
@@ -748,15 +805,23 @@ A character's skills describe the myriad of talents that people have.
         The Heal skill allows you to tend the wounds of others. In order to heal a creature, you must be able to see and touch it.
 
     \subsection{Accelerate Recovery}\label{Accelerate Recovery}
-        If you spend a minute tending to a character, you can make a DR 15 Heal check to accelerate its recovery.
-        Success means it recovers a quarter of its hit points, as if it had rested for half an hour.
-        For every 10 points by which you beat the DR, you double the effective rest time, to a maximum of two hours of rest at DR 45.
-        A character can only be treated in this way once until it rests for half an hour.
+        If you tend to a creature during a \glossterm{short rest}, you can make a DR 10 Heal check to accelerate its recovery.
+        Success means it heals hit points equal to its level instead of half its level.
+        For every 5 points by which you beat the DR, the target heals additional hit points equal to its level.
+        % For a normal creature with 5 * level HP,
+        % normal rest fully heals in 10 rests, or 50 minutes
+        % DR 10 = 1x level per rest, so 5 rests, or 25 minutes
+        % DR 15 = 2x level per rest, so 2.5 rests, or 15 minutes
+        % DR 20 = 3x level per rest, so 2 rests, or 10 minutes
+        % DR 30 = 5x level per rest, so 1 rest, or 5 minutes
 
         To accelerate a creature's recovery, you need a few items and supplies (bandages, salves, and so on) that are easy to come by in civilized areas.
+        You can tend to up to four creatures, including yourself, without penalty.
+        For every creature beyond that, you take a cumulative \minus2 penalty to your Heal check for all creatures.
 
     \subsection{First Aid}
-        As a standard action, you can make a DR Heal check to stabilize a dying character (see \pcref{Dying}). The target can use your Heal check in place of its Fortitude defense to avoid dying. In addition, if your check result is at least 15, the target is partially stabilized, causing it to only make stabilization rolls once per minute.
+        As a standard action, you can make a DR Heal check to stabilize a dying character (see \pcref{Dying}). The target can use your Heal check in place of its Fortitude defense to avoid dying. In addition, if your check result is at least 10, the target is partially stabilized, causing it to only make stabilization rolls once per minute.
+        For details, see \pcref{Dying}.
 
     \subsection{Treat Poison or Disease}
         You can make a Heal check to treat poison or disease in a character.
@@ -781,34 +846,46 @@ A character's skills describe the myriad of talents that people have.
         You can make an Intimidate check to convince a creature to do what you want. This functions like a Persuasion check to form an agreement with a group, except that you do not apply a relationship modifier. In addition, the DR is up to 10 lower if the group thinks your group is significantly stronger than them, or up to 10 higher if the group thinks your group is significantly weaker.
 
     \subsection{Demoralize}\label{Demoralize}
-        As a standard action, you can make an Intimidate vs. Mental attack against a creature within \rngmed range of you. Success means the creature is \shaken by you for 2 rounds.
+        As a standard action, you can use this ability.
+        \begin{ability}
+            \begin{spelltargetinginfo}
+                \spellquicktargeting{One creature}{\rngmed}
+            \end{spelltargetinginfo}
+            \begin{spelleffects}
+                \begin{spellattack}{Intimidate vs. Mental}
+                    \spellsuccess The target is \shaken by you.
+                \end{spellattack}
+                \spelldur Condition
+                \spelltags{\glossterm{Delusion}, \glossterm{Mind}}
+            \end{spelleffects}
+        \end{ability}
 
     \skill{Jump}{Str}
-        The Jump skill represents your ability to jump. All Jump checks are made as part of movement, so they take no special action to perform. Distance moved with Jump checks is counted against your normal maximum movement in a round.
+        The Jump skill represents your ability to jump. All Jump checks are made as part of movement, so they take no special action to perform. Distance moved with Jump checks is counted against your normal maximum movement in a phase.
 
         Several modifiers apply to all Jump checks, which are described below.
 
         \parhead{Running Start}\label{Running Start} If you move at least twenty feet before jumping, you have a running start.
-        Jumping without a running start is difficult, and you take a \minus10 penalty to all Jump checks.
-
-        \parhead{Land Speed} For every 5 feet by which your land speed is slower than 30 feet, you take a \minus4 penalty to Jump checks. If you jump with a running start, for every 5 feet by which your land speed exceeds 30 feet, you gain a \plus2 bonus to your Jump checks.
+        Jumping without a running start is difficult.
+        If you make a Jump attack or check without a running start, you roll twice and take the lower result.
 
     \subsection{Hop Up}
-        You can make a DR 10 Jump check while moving to jump up onto an object as tall as your waist, such as a table or small boulder. Doing so counts as 5 feet of movement. Success means you land on top of the object and can continue your movement. Failure indicates you stop your movement where you are. You do not need to get a running start to hop up.
+        You can make a DR 5 Jump check while moving to jump up onto an object as tall as your waist, such as a table or small boulder. Doing so counts as 5 feet of movement. Success means you land on top of the object and can continue your movement. Failure indicates you stop your movement where you are. You do not need to get a running start to hop up.
 
     \subsection{Jump Down}
-        You can make a DR 10 Jump check while moving to intentionally jump down from a height to reduce your falling damage. Success means you take damage as if you had dropped 10 fewer feet than you actually did. Failure means you take the normal falling damage. You do not need to get a running start to hop up.
+        You can make a DR 5 Jump check while moving to intentionally jump down from a height to reduce your falling damage. Success means you take damage as if you had dropped 10 fewer feet than you actually did. Failure means you take the normal falling damage. You do not need to get a running start to hop up.
 
     \subsection{Leap}\label{Leap}
         As part of movement, you can make a Jump check to jump.
-        You move forward any number of feet, up to a maximum equal to your Jump check result.
-        Your maximum height must be no greater than a quarter of your Jump check result, and at least equal to a quarter of your forward distance travelled.
-        For example, if you jump forward twenty feet with a Jump check result of 40, your maximum height must be between 5 and 10 feet.
+        You move forward any number of feet, up to a maximum equal to one quarter of your land speed \add your Jump check result.
+        Your maximum height must be no greater than half of your Jump check result, and at least equal to a quarter of your forward distance travelled.
+        For example, if you have a land speed of 30 feet and you get a Jump check result of 20, you can move forward a maximum of 25 feet.
+        If you instead jump forward twenty feet, your maximum height must be between 5 and 10 feet.
 
         You always reach your maximum height at the midpoint of the jump.
         However, you can interrupt your leap before travelling the full horizontal distance.
         For example, if you need to travel five feet forward and five feet vertically to reach a rope, you can start a leap which would take you ten feet forward and reach a maximum height of five feet.
-        Making such a leap would require a Jump check of 20.
+        Making such a leap would require a Jump check result of 10.
         When you reach the rope, you can stop your movement there, ignoring the forward motion which would make you travel the full ten feet.
 
         When leaping, your movement may not stopped by hitting the ground after travelling the normal distance, such as if you jump off of a ledge.
@@ -816,10 +893,10 @@ A character's skills describe the myriad of talents that people have.
         If an insufficiently long jump would cause you to fall into a gap, you can attempt to stop your fall (see \pcref{Stop Fall}) if you can reach the wall.
 
     \subsection{Rebounding Leap}\label{Rebounding Leap}
-        While in midair, if you make contact with a solid object that can support your weight, you can jump off of that object.
+        While in midair, if you make contact with a solid object that can support your weight, you can jump off of that object, as the \textit{leap} ability.
         You are not considered to have a running start.
-        In addition, you take a \minus10 penalty to the check (after the halving), because rebounding off of an object in midair is difficult.
-        You must travel at least 10 feet between each rebounding jump.
+        In addition, you take a \minus5 penalty to the check (in addition to the penalty for not having a running start), because rebounding off of an object in midair is difficult.
+        You must travel at least 10 feet in the air between each rebounding jump.
 
     \skill{Knowledge}{Int}
         Like the Craft, Profession, and Perform skills, Knowledge actually encompasses a number of separate skills. Knowledge represents a study of some body of lore, possibly an academic or even scientific discipline. Below are listed typical fields of study.
@@ -836,46 +913,54 @@ A character's skills describe the myriad of talents that people have.
             \item Religion (gods and goddesses, mythic history, ecclesiastic tradition, holy symbols, undead)
         \end{itemize}
 
-        You cannot retry Knowledge checks unless you are presented with significant new information about the subject that could jog your memory.
+        You cannot retry Knowledge checks until you are presented with significant new information about the subject that could jog your memory.
 
     \subsection{Identify Monster}
-        You can make a Knowledge check reactively to identify a monster and recall its special powers or vulnerabilities. In general, the DR is equal to 10 \add the monster's level. Success allows you to remember the monster's name and its most well-known features. For every 5 points by which you beat the DR, you remember an additional piece of useful information. Failure indicates you don't remember anything important about the monster. Failure by more than 10 means you remember incorrect information.
+        You can make a Knowledge check reactively to identify a monster and recall its special powers or vulnerabilities. In general, the DR is equal to 5 \add the monster's level. Success allows you to remember the monster's name and its most well-known features. For every 5 points by which you beat the DR, you remember an additional piece of useful information. Failure indicates you don't remember anything important about the monster. Critical failure means you remember incorrect information.
 
     \subsection{Answer Question/Recall Information}
-        You can make a Knowledge check reactively to remember information related to your field of study. The DR varies depending on the difficulty of the question. Answering a simple or trivial question that most students would be familiar with is DR 10. Answering a challenging question which would be beyond the reach of most initiates is DR 20. Answering a deeply complex or obscure question which might require information known only by the most learned masters in the field would be DR 30 or higher.
+        You can make a Knowledge check reactively to remember information related to your field of study. The DR varies depending on the difficulty of the question. Answering a simple or trivial question that most students would be familiar with is DR 5. Answering a challenging question which would be beyond the reach of most initiates is DR 15. Answering a deeply complex or obscure question which might require information known only by the most learned masters in the field would be DR 20 or higher.
 
     \subsection{Appraise Item}
         You can make a Knowledge check to estimate the value of an item with 1 minute of careful study. The Knowledge skill used must be related to the item.
 
-        The DR depends on the rarity of the item. Common items, such as nonmagical equipment and utensils, are DR 10. Rare items, such as valuable gems and magic items worth less than 100,000 gp, are DR 20. Extraordinarily rare items, such as unique gems and magic items worth at least 100,000 gp, are DR 30.
+        The DR depends on the rarity of the item. Common items, such as nonmagical equipment and utensils, are DR 5. Rare items, such as valuable gems and magic items worth less than 100,000 gp, are DR 10. Extraordinarily rare items, such as unique gems and magic items worth at least 100,000 gp, are DR 20.
 
         Success means you know the value of the item. Failure means you think the item is worth (d10+5)/10 \x the item's actual value. (The d10 roll is made secretly, so you don't know how close you are.) Critical failure means you can't estimate the item's value at all.
 
         After you appraise an item, you can't appraise it again with any skill until you gain a level.
 
     \skill{Linguistics}{Int}
-        The Linguistics skill represents your mastery of spoken and written languages.
+        The Linguistics skill represents your mastery of spoken and written languages (see \pcref{Languages}).
         Normally, you don't make Linguistics checks to speak or understand languages.
         You either know a language or you don't.
         However, training in Linguistics causes you to learn additional languages, and you can use Linguistics to attempt to decipher unfamiliar languages.
 
         \parhead{Learning Languages}\label{Learning Languages}
-        For every two ranks in Linguistics that you have, you may learn a new \glossterm{common language}, in addition to your starting languages (see \tref{Common Languages}). In place of two common languages, you may learn a \glossterm{rare language} (see \tref{Rare Languages}). Rare languages are more difficult to learn, and are usually only spoken by unusual creatures.
+        If you are trained in Linguistics, you learn additional \glossterm{common languages} equal to one plus one quarter of your level.
+        If you have mastered Linguistics, you instead learn additional common languages equal to two plus half your level.
+        In place of two common languages, you may instead learn a \glossterm{rare language}.
+        Rare languages are more difficult to learn, and are usually only spoken by unusual creatures.
 
-        Druidic is a special language. Druids learn Druidic as part of their initation as druids, and are forbidden from teaching it to non-druids. As a result, it cannot be learned through ordinary means. Druidic uses its own alphabet.
+        Druidic is a special language.
+        Druids learn Druidic as part of their initation as druids, and are forbidden from teaching it to non-druids.
+        As a result, it cannot be learned through ordinary means.
+        Druidic uses its own alphabet.
 
     \subsection{Decipher Script}
-        You can make a Linguistics check to decipher writing in an unfamiliar language or a message written in an incomplete or archaic form. The base DR is 20 for the simplest messages, 25 for standard texts, and 30 or higher for intricate, exotic, or very old writing. In addition, the DR increases by 5 if you do not know any languages that use the same alphabet as the writing being deciphered. Deciphering the equivalent of a single page of script takes 1 minute (ten consecutive full-round actions).
+        You can make a Linguistics check to decipher writing in an unfamiliar language or a message written in an incomplete or archaic form. The base DR is 10 for the simplest messages, 15 for standard texts, and 20 or higher for intricate, exotic, or very old writing. In addition, the DR increases by 5 if you do not know any languages that use the same alphabet as the writing being deciphered. Deciphering the equivalent of a single page of script takes 1 minute (ten consecutive full-round actions).
 
         Success means you understand the general content of a piece of writing about one page long (or the equivalent). Failure means you fail to understand the writing. Critical failure means you to draw a false conclusion about the text. The check to decipher the writing is made secretly, so that you can't tell whether the conclusion you draw is true or false.
 
     \subsection{Identify Language}
-        You make a DR 15 Linguistics check to identify the language used in speech or writing, even if you can't understand the language.
+        You make a DR 10 Linguistics check to identify the language used in speech or writing, even if you can't understand the language.
+        For details about languages, see \pcref{Languages}.
 
     \skill{Perform}{Varies}
-        \par Like Craft, Knowledge, and Profession, Perform is actually a number of separate skills. You could have several Perform skills, each with its own ranks, each purchased as a separate skill.
-
+        \par Like Craft, Knowledge, and Profession, Perform is actually a number of separate skills.
+        You could have several Perform skills, each with a separate degree of training.
         Each of the nine categories of the Perform skill includes a variety of methods, instruments, or techniques, a small list of which is provided for each category below.
+
         \begin{itemize}
             \item Acting (drama, impersonation, mime)
             \item Comedy (buffoonery, limericks, joke-telling)
@@ -907,7 +992,7 @@ A character's skills describe the myriad of talents that people have.
         You cannot cast spells or take other actions requiring similar levels of focus and concentration.
         In addition, you take a \minus10 penalty to Perform checks for any other performances.
         This penalty stacks.
-        For example, if you were playing a lyre, singing, and juggling balls with your feet, you could take a \minus10 penalty to your singing and a \minus20 penalty to your juggling.
+        For example, if you were playing a lyre, singing, and juggling balls with your feet, you would take a \minus10 penalty to your singing and a \minus20 penalty to your juggling.
         These limitations are in addition to any restrictions imposed by your method of performing, such as your hands being occupied playing an instrument.
 
         You can otherwise act normally while performing, including attacking in combat, if doing so is physically possible.
@@ -927,7 +1012,7 @@ A character's skills describe the myriad of talents that people have.
 
         Persuasion checks are usually made against a group. For the purposes of a Persuasion check, a ``group'' consists of creatures who consider themselves to be allies. For example, in a king's court, you cannot simply influence the king alone; his trusted advisors are also part of the same group. It is possible to influence one group without influencing another. For example, the king and his advisors may be unpersuaded, but the prince may find your arguments compelling. Groups can also consist of a single creature. The game master decides what the groups are.
 
-        The base DR for a Persuasion check against a group is equal to 10 \add the highest level of any character in the group or the highest Sense Motive of any character in the group, whichever is higher.
+        The base DR for a Persuasion check against a group is equal to 5 \add the highest level of any character in the group or the highest Sense Motive of any character in the group, whichever is higher.
 
         Not all social interactions require Persuasion checks. Much of the time, being extraordinarily persuasive is unnecessary, and creatures can be convinced with normal, inartful conversation and good reasoning. Persuasion checks should only be used when your personal persuasiveness matters.
 
@@ -940,22 +1025,22 @@ A character's skills describe the myriad of talents that people have.
             \lcaption{Believability Modifiers}
             \begin{dtabularx}{\columnwidth}{X l}
                 \tb{Description} & \tb{DR Modifier}  \\
-                \hline
-                Expected to be true (``Nothing interesting happened while I was on patrol'') & \minus5  \\
-                Plausible (``The mayor is too busy to see you now.'')                        & \plus0   \\
-                Unlikely (``The north gate is under attack!'')                               & \plus5   \\
-                Extremely unlikely (``The mayor is secretly a vampire.'')                    & \plus10  \\
-                Virtually impossible (``You are secretly a werewolf.'')                       & \plus20 or more  \\
-                Demonstratably untrue (``You are a frog.'')                                  & \tdash\fn{1} \\
+                \bottomrule
+                Expected to be true (``Nothing interesting happened while I was on patrol'') & \minus5         \\
+                Plausible (``The mayor is too busy to see you now.'')                        & \plus0          \\
+                Unlikely (``The north gate is under attack!'')                               & \plus5          \\
+                Extremely unlikely (``The mayor is secretly a werewolf.'')                   & \plus10         \\
+                Virtually impossible (``Your husband is secretly a werewolf.'')              & \plus15 or more \\
+                Demonstratably untrue (``You are secretly a werewolf.'')                     & \tdash\fn{1}    \\
             \end{dtabularx}
-            1 You cannot convince someone of something that is proven to be false.
+            1 You cannot convince someone of something that is proven to be false.  \\
         \end{dtable}
 
         \begin{dtable}
             \lcaption{Motivation Modifiers}
             \begin{dtabularx}{\columnwidth}{X l}
                 \tb{Description}                                                           & \tb{DR Modifier} \\
-                \hline
+                \bottomrule
                 Target wants to believe (``That dress looks lovely on you.'')              & \minus5          \\
                 Target does not have strong feelings (``I'm busy.'')                       & \plus0           \\
                 Target doesn't want the story to be true (``Your brother is a murderer.'') & \plus5           \\
@@ -972,7 +1057,7 @@ A character's skills describe the myriad of talents that people have.
         \begin{dtable}
             \begin{dtabularx}{\columnwidth}{>{\lcol}X r}
                 \tb{Relationship} & \tb{Modifier} \\
-                \hline
+                \bottomrule
                 Intimate: Someone who with whom you have an implicit trust.
                 Example: A lover or spouse. & \minus15 \\
                 Friend: Someone with whom you have a regularly positive personal relationship.
@@ -993,9 +1078,9 @@ A character's skills describe the myriad of talents that people have.
         \begin{dtable*}
             \begin{dtabularx}{\textwidth}{>{\lcol}X r}
                 \tb{Risk vs. Reward Judgement (Persuasion)} & \tb{Modifier} \\
-                \hline
+                \bottomrule
                 Fantastic: The reward for accepting the deal is very worthwhile; the risk is either acceptable or extremely unlikely. The best-case scenario is a virtual guarantee. Example: An offer to pay a lot of gold for information that isn't important to the character. & \minus15 or more \\
-                Good: The reward is good and the risk is minimal. The subject is very likely to profit from the deal. Example: An offer to pay someone twice their normal daily wage to spend their evening in a seedy tavern with a reputation for vicious brawls and later report on everyone they saw there. & \minus10\\
+                Good: The reward is good and the risk is minimal. The subject is very likely to profit from the deal. Example: An offer to pay someone twice their normal daily wage to spend their evening in a seedy tavern with a reputation for vicious brawls and later report on everyone they saw there. & \minus10 \\
                 Favorable: The reward is appealing, but there's risk involved. If all goes according to plan, though, the deal will end up benefiting the subject. Example: A request for a mercenary to aid the party in battle against a weak goblin tribe in return for a cut of the money and first pick of the magic items. & \minus5\\
                 Even: The reward and risk more of less even out; or the deal involves neither reward nor risk. Example: A request for directions to a place that isn't a secret. & \plus0 \\
                 Unfavorable: The reward is not enough compared to the risk involved. Even if all goes according to plan, chances are it will end badly for the subject. Example: A request to free a prisoner the target is guarding for a small amount of money. & \plus5\\
@@ -1005,12 +1090,16 @@ A character's skills describe the myriad of talents that people have.
         \end{dtable*}
 
     \subsection{Gather Information}
-        An evening's time, a few gold pieces for buying drinks and making friends, and a DR 10 Persuasion check get you a general idea of a city's major news items, assuming there are no obvious reasons why the information would be withheld. The higher your check result, the better the information.
+        An evening's time, a few gold pieces for buying drinks and making friends, and a DR 5 Persuasion check get you a general idea of a city's major news items, assuming there are no obvious reasons why the information would be withheld. The higher your check result, the better the information.
 
-        If you want to find out about a specific rumor, or a specific item, or obtain a map, or do something else along those lines, the DR for the check is 15 to 25, or even higher.
+        If you want to find out about a specific rumor, or a specific item, or obtain a map, or do something else along those lines, the DR for the check is generally 5 or higher.
+        The difficulty depends on how widely known and shared the information you seek is.
 
     \skill{Profession}{Varies}
-        Like Craft, Knowledge, and Perform, Profession is actually a number of separate skills. You could have several Profession skills, each with its own ranks, each purchased as a separate skill. While a Craft skill represents ability in creating or making an item, a Profession skill represents an aptitude in a vocation requiring a broader range of less specific knowledge. Most commoners have some training in a Profession skill.
+        Like Craft, Knowledge, and Perform, Profession is actually a number of separate skills.
+        You could have several Profession skills, each with a separate degree of training.
+        While a Craft skill represents ability in creating or making an item, a Profession skill represents an aptitude in a vocation requiring a broader range of less specific knowledge.
+        Most commoners have some training in a Profession skill.
 
         Profession is always treated as a class skill, regardless of your classes.
 
@@ -1021,7 +1110,7 @@ A character's skills describe the myriad of talents that people have.
         You can make a Profession check to estimate the value of an item with 1 minute of careful study. The Profession skill used must be related to the item.
         This check is always Intelligence-based, regardless of your profession.
 
-        The DR depends on the rarity of the item. Common items, such as nonmagical equipment and utensils, are DR 10. Rare items, such as valuable gems and magic items worth less than 100,000 gp, are DR 20. Extraordinarily rare items, such as unique gems and magic items worth at least 100,000 gp, are DR 30.
+        The DR depends on the rarity of the item. Common items, such as nonmagical equipment and utensils, are DR 5. Rare items, such as valuable gems and magic items worth less than 100,000 gp, are DR 10. Extraordinarily rare items, such as unique gems and magic items worth at least 100,000 gp, are DR 20.
 
         Success means you know the value of the item. Failure means you think the item is worth (d10+5)/10 \x the item's actual value. (The d10 roll is made secretly, so you don't know how close you are.) Critical failure means you can't estimate the item's value at all.
 
@@ -1037,52 +1126,66 @@ A character's skills describe the myriad of talents that people have.
         The Ride skill allows you to ride horses and other mounts. Typical riding actions don't require checks. You can saddle, mount, ride, and dismount from a mount without a problem. However, some special actions require Ride checks. Some modifiers apply to all Ride checks, as described at \pcref{Ride Modifiers}.
 
     \subsection{Control Mount}
-        When riding a willing creature in combat that is not trained for battle, you must a DR 20 Ride check as a move action to control it. Success means it obeys your commands that round. Failure means it remains still and refuses to obey your commands until you make a successful check to control it. Critical failure means the mount acts of its own volition.
+        When riding a willing creature in combat that is not trained for battle, you must a DR 10 Ride check as a move action to control it. Success means it obeys your commands that round. Failure means it remains still and refuses to obey your commands until you make a successful check to control it. Critical failure means the mount acts of its own volition.
 
     \subsection{Fall}
-        If you fall off your mount, or if your mount is downed in battle, you take damage from the fall. Falling off of a typical Large creature, such as a horse, deals 1d6 bludgeoning damage, while falling from larger creatures deals damage appropriate to the distance fallen. As an immediate action while falling, you can make a DR 15 Ride check. Success means you reduce the effective height of the fall by 10 feet. Failure means you take damage normally.
+        If you fall off your mount, or if your mount is downed in battle, you take damage from the fall. Falling off of a typical Large creature, such as a horse, deals 1d6 bludgeoning damage, while falling from larger creatures deals damage appropriate to the distance fallen. As an immediate action while falling, you can make a DR 6 Ride check. Success means you reduce the effective height of the fall by 10 feet. Failure means you take damage normally.
 
     \subsection{Guide Mount}
-        While riding a willing creature, you must make a DR 5 Ride check at the start of your turn to guide it with your knees. Success means it obeys your commands, and you can have both hands free to take other actions. Failure means you must use a hand to control the mount that round. Critical failure means the mount acts of its own volition. If you cannot use a hand to control the mount, you fall off the mount if it moves during your turn.
+        While riding a willing creature, you must make a DR 0 Ride check at the start of your turn to guide it with your knees. Success means it obeys your commands, and you can have both hands free to take other actions. Failure means you must use a hand to control the mount that round. Critical failure means the mount acts of its own volition. If you cannot use a hand to control the mount, you fall off the mount if it moves during your turn.
 
     \subsection{Leap}
-        You can make a DR 15 Ride check to stay on your mount as it jumps. This check is made as part of your mount's movement. Success means that you stay on the mount. Failure means you fall off your mount as it starts to jump.
+        You can make a DR 5 Ride check to stay on your mount as it jumps. This check is made as part of your mount's movement. Success means that you stay on the mount. Failure means you fall off your mount as it starts to jump.
 
     \subsection{Spur Mount}
-        You can make a DR 15 Ride check as a move action to get your mount to move faster. Success means it makes an Sprint check to move faster. Failure means your action was wasted.
+        You can make a DR 5 Ride check as a move action to get your mount to move faster. Success means it makes an Sprint check to move faster. Failure means your action was wasted.
 
     \subsection{Stay in Saddle}
         If you take damage or your mount rears or bolts unexpectedly, you must make a DR 5 Ride check to stay in your saddle. This does not take an action. Success means you stay in your saddle. Failure means you fall off your mount.
 
     \subsection{Take Cover}
-        You can make a DR 15 Ride check as a move action to drop low and take cover behind your mount. This requires the use of both your hands. Success means you gain the benefits of active cover. Failure means you can't get low enough and gain no benefit from the action. Critical failure means you fall off your mount. You can leave this cover and resume your normal position as a move action that does not require a Ride check.
+        You can make a DR 10 Ride check as a move action to drop low and take cover behind your mount. This requires the use of both your hands. Success means you gain the benefits of active cover. Failure means you can't get low enough and gain no benefit from the action. Critical failure means you fall off your mount. You can leave this cover and resume your normal position as a move action that does not require a Ride check.
 
     \subsection{Ride Modifiers}\label{Ride Modifiers}
-        If a mount lacks a saddle and other riding gear, the DR to ride it increases by 5. If a mount takes a standard action other than movement, such as attacking, the DR to ride it that round increases by 5. If a mount is not trained as a mount, the DR to ride it increases by 10.
+        If a mount is not trained as a mount, the DR to ride it increases by 10.
+        If it lacks a saddle and other riding gear, the DR to ride it increases by 5. If it takes a standard action other than movement, such as attacking, the DR to ride it that round increases by 5.
 
     \skill{Sense Motive}{Per}
         The Sense Motive skill represents your ability to read body language and emotion.
+        Most Sense Motive tasks are \glossterm{hidden tasks}.
 
-    \subsection{Discern Enchantment [Passive]}
-        As a swift action, you can try to tell whether a creature is affected by mind-controlling magic -- including yourself. The DR to identify a \glossterm{Delusion} effect such as the \spell{charm person} spell is 25, while the DR to identify a \glossterm{Compulsion} effect such as \spell{dominate person} is 15. Success means you recognize that the creature is affected by mind-affecting magic. Failure means you don't notice anything amiss.
+    \subsection{Discern Enchantment [Hidden]}
+        Whenever you interact with a creature, you can try to notice whether it is affected by mind-affecting abilities with a Sense Motive check.
+        If the creature is not affected by any such abilities, the check automatically fails.
+        If the creature is affected by Compulsion or Delusion effects that are not currently altering its behavior, the check also automatically fails.
+        If the creature's behavior is currently being altered by a \glossterm{Compulsion} effect, the DR is 10, and success means you identify the presence of a Compulsion.
+        If the creature's behavior is currently being altered by a \glossterm{Delusion} effect, the DR is 20, and success means you identify the presence of a Delusion.
+        Failure means you do not notice any such effects on the creature.
 
-        This can only be used if the effect in question is actually affecting the creature's behavior at the time. For example, a person who has been given an unnatural aversion to cheese by the \spell{aversion} spell would generally not be affected by the enchantment unless it was presented with cheese. Therefore, you could not discern the enchantment on the creature simply by talking to it about the weather.
+        You can also use this ability to identify \glossterm{Subtle} effects on yourself, using the same DRs.
 
-        Identifying mind-controlling magic affecting you gives you no special ability to resist the magic, but it may help you mitigate its effects.
-
-    \subsection{Discern Lies [Passive]}
-        As a free action, you can make a Sense Motive check to notice when creatures lie to you. The DR is equal to the lying creature's Bluff check result. Success means you notice that the creature was lying. Failure means you do not.
+    \subsection{Discern Lies [Hidden]}
+        Whenever you observe a creature speak, you can make a Sense Motive check.
+        The DR is equal to the speaking creature's Bluff check result.
+        Success means you identify whether the creature was lying.
+        Failure means you do not notice any indication that the creature is lying.
 
     \subsection{Discern Secret Message}
-        You can automatically identify hidden messages conveyed with the Bluff skill. Treat your Sense Motive modifier as your check result. The DR is equal to DR of the secret message. Success means you recognize that a hidden message is present, but not its contents. Critical success means you can understand the message. Failure means you don't notice the hidden message.
-
-    \subsection{Focus Attention}
-        You can make a Sense Motive check as a move action to focus on a particular creature. If you do, you can use your check result to discern enchantments, lies, and hidden messages from that creature. This applies to any actions it took or things it said during the last round, and to actions it takes or things it says for the next 5 rounds. If you focus on a different creature, you lose your focus on the first creature.
+        Whenever you observe a hidden message being conveyed, you can make a Sense Motive check.
+        The DR is equal to the DR of the secret message (see \pcref{Bluff}).
+        Success means you recognize that a hidden message is present, but not its contents.
+        Critical success means you can understand the message.
+        Failure means you don't notice the hidden message.
 
     \subsection{Social Assessment}
-        You can make a DR 15 Sense Motive check to get a general assessment of a social situation. This does not take an action by itself, but you must observe the group for at least a minute. Success means you have an idea of behaviors that are expected or inappropriate, who outranks whom, or another piece of useful information. For every 5 points by which you beat the DR, you gain an additional insight into the social environment.
+        You can make a DR 5 Sense Motive check to get a general assessment of a social situation.
+        This does not take an action by itself, but you must observe the group for at least a minute.
+        Success means you learn a piece of useful information about the situation, such as a general understanding of expected behaviors or a rough understanding of the social hierarchy.
+        For every 5 points by which you beat the DR, you gain an additional insight into the situation.
 
-        You can make a social assessment after only a single round of observation, but you take a \minus10 penalty on the check. If you don't understand the language the group is using, you take a \minus10 penalty on the check. The information gained at a given DR may vary in usefulness depending on how obvious or subtle the group is.
+        You can make a social assessment after only a single round of observation, but you take a \minus10 penalty on the check.
+        If you don't understand the language the group is using, you take a \minus10 penalty on the check.
+        The information gained at a given DR may vary in usefulness depending on how obvious or subtle the situation is.
 
     \skill{Sleight of Hand}{Dex}
 
@@ -1094,16 +1197,16 @@ A character's skills describe the myriad of talents that people have.
             \lcaption{Sleight of Hand Modifiers}
             \begin{dtabularx}{\columnwidth}{X l}
                 \tb{Size} & {Check Modifier} \\
-                \hline
-                Fine & \plus8 \\
-                Diminuitive & \plus4 \\
-                Tiny & \plus0 \\
-                Small & \minus4 \\
-                Medium & \minus8 \\
-                Large & \minus12 \\
-                Huge & \minus16 \\
-                Gargantuan & \minus20 \\
-                Colossal & \minus24 \\
+                \bottomrule
+                Fine        & \plus8   \\
+                Diminuitive & \plus4   \\
+                Tiny        & \plus0   \\
+                Small       & \minus4  \\
+                Medium      & \minus8  \\
+                Large       & \minus12 \\
+                Huge        & \minus16 \\
+                Gargantuan  & \minus20 \\
+                Colossal    & \minus24 \\
             \end{dtabularx}
         \end{dtable}
 
@@ -1122,52 +1225,57 @@ A character's skills describe the myriad of talents that people have.
         You can make a Sleight of Hand check as a standard action to conceal an item on your person. The object must be at least two size categories smaller than you are. Your Sleight of Hand check is opposed by the Awareness check of anyone observing you. Success means they fail to notice the item. A creature directly interacting you to search for the object, such as by frisking you, gains a \plus5 bonus to its Awareness check.
 
     \subsection{Pickpocket}
-        You can make a Sleight of Hand check as a standard action to steal an object from another creature. The object must be loose and accessible, such as in a pocket. The DR depends on whether the creature notices your attempt using Awareness. If the creature's Awareness check exceeds your Sleight of Hand check, the creature notices your attempt and the DR is equal to the creature's Reflex Defense. Otherwise, the creature does not notice your attempt, and the DR is 20. Success means you successfully steal the object. Failure means you do not steal the object.
+        You can make a Sleight of Hand check as a standard action to steal an object from another creature. The object must be loose and accessible, such as in a pocket. The DR depends on whether the creature notices your attempt using Awareness. If the creature's Awareness check exceeds your Sleight of Hand check, the creature notices your attempt and the DR is equal to the creature's Reflex Defense. Otherwise, the creature does not notice your attempt, and the DR is 10. Success means you successfully steal the object. Failure means you do not steal the object.
 
     \skill{Spellcraft}{Per}
         The Spellcraft skill represents your ability to notice and understand spells and magical effects.
 
         While sleeping, you take a \minus10 penalty to Spellcraft.
 
-    \subsection{Passive and Active Attention}\label{Spellcraft-Passive and Active Attention}
-        Like the Awareness skill, Spellcraft allows you to automatically notice spells and magical effects in your environment, even when you're distracted or focusing on other tasks. At all times, you are considered to be ``taking 0'' on a Spellcraft check, allowing you to notice anything with a DR up to your Spellcraft modifier, including all applicable bonuses and penalties. You can only passively perform tasks which do not require a specific action to perform.
+        % TODO: add ability to identify that a creature is attuned to active effects.
 
-        As a swift action, you can make a conscious effort to pay attention to spells and magical effects around you. This allows you to make Spellcraft checks to notice events, rather than simply using your modifier. This is mentally tiring to do over long periods of time: if (10 \add twice the number of hours you have spent being actively attentive) exceeds your Mental defense, you become fatigued.
+    \subsection{Identify Magical Effect}
+        Whenever you observe a magical effect, you can make a Spellcraft check to identify its nature.
+        This grants you no special ability to notice hidden magical effects, but can allow you to understand magical effects you have already noticed.
+        The DR is equal to 5 \add the \glossterm{power} of the effect.
+        Success means you know in general terms what the effect does.
+        Critical success means you know exactly what the effect does, and if it is a common effect, what ability caused it.
+        Failure means you do not recognize the effect.
 
-    \subsection{Notice Magic Auras}
-        You can notice the presence of magic within 100 feet of you with a DR 15 Spellcraft check. Success means you notice that magic exists. Critical success means you know the number of magical auras, and the strength and direction to each aura. Critical success means you notice the location of each aura and their precise nature, including strength, school, and descriptors. Failure means you don't notice any magic.
+        If the effect has obvious visual or other cues to its true nature, such as a wall of fire, the DR is lowered by 5.
+        If the effect has obvious cues that are misleading, such as a wall of fire that heals creatures that pass through it, the DR is increased by 5.
 
-        Aura strengths are described in \trefnp{Aura Strengths}. With practice, you can ignore auras that you are commonly surrounded by, such as magic items on you and your companions. In general, it takes a day of frequent exposure to become accustomed to an aura. Once you are accustomed to an aura, you can freely choose to notice or ignore it.
-
-        A magical aura can linger after its original source dissipates (in the case of a spell or other magical ability) or is destroyed (in the case of a magic item). The strength of such an aura is ``dim'' (even weaker than a faint aura). Most auras linger for a number of minutes equal to the spellpower of the effect, but unusually powerful auras may linger for hours or days intead.
-
-        \begin{dtable*}
-            \lcaption{Aura Strengths}
-            \begin{dtabularx}{\textwidth}{>{\lcol}X *{4}{>{\lcol}p{9em}}}
-                & \multicolumn{4}{c}{\tb{---{}---{}---Aura Power---{}---{}---}} \\
-                \hline
-                \tb{Spell or Object} & \tb{Faint} & \tb{Moderate} & \tb{Strong} & \tb{Overwhelming} \\
-                Functioning spell (spell level) & 3rd or lower & 4th--6th & 7th--9th & 10th\add (deity-level) \\
-                Magic item (spellpower) & 6th or lower & 7th--12th & 13th--20th & 21st\add (artifact) \\
-            \end{dtabularx}
-        \end{dtable*}
-
-    \subsection{Identify Active Spell}
-        You can make a Spellcraft check to identify an active spell based on its magical aura. You must spend a move action to focus on a particular aura you have identified. The DR to identify a spell is equal to 15 \add the spell level of the spell.  If the effect has obvious visual or other cues to its true nature, the DR is lowered by 5. Success means you know the spell that produced the effect. Failure means you do not know the spell.
-
-        If a spell emulates another spell, such as the \spell{transmute any object} spell, success allows you to identify the spell being emulated. Critical success allows you to also identify the original spell.
+        You cannot retry this check until you gain meaningful new information that would help you identify the effect.
 
     \subsection{Identify Spellcasting}
-        You can identify spells being cast within 100 feet of you. The DR is equal to 15 \add the spell level of the spell. Success means you know what spell is being cast.
+        You can identify spells being cast within 100 foot \glossterm{range} of you.
+        The DR is equal to 5 \add the spell level of the spell.
+        Success means you know what spell is being cast.
+        Failure means you do not.
 
     \subsection{Identify Potion}
-        You can make a DR 25 Spellcraft check to identify a potion. This takes a minute of careful evaluation. Success means you know what spell the potion contains.
+        You can make a DR Spellcraft check to identify a potion.
+        This takes a minute of careful evaluation.
+        For most potions, the DR is 15, and success means you identify what spell the potion contains.
+        Failure means you do not learn anything about the potion's nature.
+
+        Potions can be crafted to conceal their true nature.
+        The DR to identify such potions is usually 25.
+        Success means you know what spell the potion contains.
+        Failure means you identify the potion as whatever spell the potion is intended to resemble.
+        Critical failure means you do not learn anything about the potion's nature.
 
     \subsection{Identify Written Spell}
-        You can make a Spellcraft check as a standard action to identify a scroll or similar piece of magical writing. The DR is equal to 20 \add the spell level of the spell. Success means you know what spell is written.
+        You can make a Spellcraft check as a standard action to identify a scroll or similar piece of magical writing.
+        The DR is equal to 10 \add the spell level of the spell.
+        Success means you know what spell is written.
 
     \subsection{Teleport Trace}
-        You can make a DR 20 Spellcraft check as a move action to learn information about a teleportation that happened recently. You must have noticed the magic aura left by the teleportation effect. Success means you identify the direction of the teleportation. Critical success means you also identify the distance. Failure means you learn no information about the teleportation. The DR of this check increases by 5 for every minute that has passed since the teleportation happened.
+        As a standard action, you can make a Spellcraft check to learn information about a teleportation within \rngmed range of you.
+        The DR is equal to 10 \add 1 per round since the teleportation occurred.
+        Success means you identify the direction of the teleportation.
+        Critical success means you also identify the distance.
+        Failure means you learn no information about the teleportation.
 
     \skill{Sprint}{Str}
         The Sprint skill represents your ability to move more quickly and take movement-related actions.
@@ -1176,10 +1284,10 @@ A character's skills describe the myriad of talents that people have.
         They gain a \plus10 bonus to Sprint checks.
 
     \subsection{Sprint}
-        As part of movement, you can make an Sprint check to move faster. For every 10 points by which you beat DR 0, you double your speed during that action: 2x speed at DR 10, 3x speed at DR 20, and so on.
+        As part of movement, you can make an Sprint check to move faster. If you beat DR 5, you double your speed during that action. For every 10 points by which you beat that DR, you double your speed again: 3x speed at DR 15, 4x speed at DR 25, and so on.
         
-        You can sprint for a number of rounds equal to twice your Constitution (minimum 1).
-        After that time, you must rest for 5 minutes before you can sprint again. You can sprint in any movement mode that you have a speed for.
+        You can sprint for a number of rounds equal to 2 \add half your Constitution.
+        After that time, you must take a \glossterm{short rest} before you can sprint again. You can sprint in any movement mode that you have a speed for.
 
     \subsection{Wallrun}
         As part of movement, you can make a Sprint check to run along a wall rather than climbing. The DR is 10 higher than normal for the wall (see \pcref{Climb}, for typical wall DRs), but this does not require free hands. Success means you move up to half your land speed horizontally, or up to a quarter of your land speed vertically. Failure means you fall. Critical failure means you are prone when you land. For every round you spend running on a wall, the DR increases by 10.
@@ -1189,19 +1297,23 @@ A character's skills describe the myriad of talents that people have.
     \skill{Stealth}{Dex}
         The Stealth skill represents your ability to escape detection while moving or hiding. All Stealth checks are made as part of movement or other actions, so they require no special action to perform. If you have been noticed by a creature, you automatically fail all Stealth checks against that creature until you can escape its notice, such as by disappearing out of sight.
 
+        \parhead{Size and Stealth}\label{Size and Stealth} A creature larger or smaller than Medium gains an bonus or penalty on Stealth checks to hide equal to \plus4 per size larger than Medium, or \minus4 for per size smaller than Medium: Fine \plus16, Diminutive \plus12, Tiny \plus8, Small \plus4, Large \minus4, Huge \minus8, Gargantuan \minus12, Colossal \minus16.
+
     \subsection{Blend In}
         You can make a Stealth check to blend in with a crowd. Your Stealth check is opposed by the Awareness checks of anyone looking for you. Success means you remain unobserved. Failure means the person looking for you found you.
 
         If you act differently from the crowd you are trying to blend in with, anyone observing you gets a \plus5 bonus to find you. You may need to make Awareness or Sense Motive checks to figure out how to act, depending on the situation. If you are extremely dissimilar from the crowd, such as a naked person in church or a human among halflings, anyone observing you may gain a \plus10 or greater bonus to find you.
 
-    \subsection{Hide [Passive]}
-        As a move action, or as part of movement, you can make a Stealth check to hide so people can't see you. Your Stealth check is opposed by the Awareness checks of any observers. Success means that you can't be seen, heard, or detected in any way, effectively making you invisible. Failure means that the observer notices you. The more senses the observer notices you with, the more they learn about your location, as appropriate to the sense.
+    \subsection{Hide [Hidden]}
+        As a move action, or as part of movement, you can make a Stealth check to hide so people can't see you.
+        Your Stealth check is opposed by the Awareness checks of any observers.
+        Success means that you can't be seen, heard, or detected in any way.
+        Failure means that the observer can observe you using any senses they detected you with.
 
-        If you do not have passive cover or concealment from a creature (see \pcref{Cover} and \pcref{Concealment}), your Stealth check is automatically treated as a 0 against sight-based Awareness checks that creature makes, regardless of your modifiers. For this purpose, do not consider any cover that would be hidden as a result of a successful check, such as a shield you hold in front of you.
+        If you do not have passive cover or concealment from a creature (see \pcref{Cover} and \pcref{Concealment}), your Stealth check is automatically treated as a 0 against sight-based Awareness checks that creature makes, regardless of your modifiers.
+        For this purpose, do not consider any cover that would be hidden as a result of a successful check, such as a shield you hold in front of you.
 
         If you move at up to half your speed during your turn, you take a \minus5 penalty to Stealth checks. If you move at up to your full speed during your turn, you take a \minus10 penalty to Stealth checks. It's practically impossible (\minus20 penalty) to remain unobserved while attacking, sprinting, or charging.
-
-        A creature larger or smaller than Medium gains an bonus or penalty on Stealth checks to hide depending on its size category: Fine \plus16, Diminutive \plus12, Tiny \plus8, Small \plus4, Large \minus4, Huge \minus8, Gargantuan \minus12, Colossal \minus16.
 
     \skill{Survival}{Per}
         The Survival skill represents your ability to take care of yourself and others in the wilderness, as well as your mastery of various survival-related tasks.
@@ -1222,27 +1334,27 @@ A character's skills describe the myriad of talents that people have.
             \lcaption{Terrain DRs}
             \begin{dtabularx}{\columnwidth}{X l l}
                 \tb{Terrain} & \tb{Navigation DR} & \tb{Sustenance DR} \\
-                \hline
-                Desert & 20 & 30 \\
-                Forest & 15 & 15 \\
-                Jungle & 15 & 10 \\
-                Mountains & 15 & 20 \\
-                Hills & 10 & 20 \\
-                Plains & 10 & 20 \\
-                Swamp & 20 & 25 \\
+                \bottomrule
+                Desert    & 15 & 20 \\
+                Forest    & 10 & 15 \\
+                Jungle    & 10 & 10 \\
+                Mountains & 10 & 15 \\
+                Hills     & 5  & 10 \\
+                Plains    & 5  & 10 \\
+                Swamp     & 15 & 15 \\
             \end{dtabularx}
         \end{dtable}
 
     \subsection{Predict Weather}
-        You can make a DR 15 Survival check to predict the weather. This requires a minute of observation. Success means you know what the weather will be like up to 24 hours in advance. For every 5 points by which you succeed, you can predict the weather one additional day in advance.
+        You can make a DR 10 Survival check to predict the weather. This requires a minute of observation. Success means you know what the weather will be like up to 24 hours in advance. For every 5 points by which you succeed, you can predict the weather one additional day in advance.
 
     \subsection{Track}\label{Track}
         You can make a Survival check to follow tracks.
         The DR of the check depends on how easy the tracks are to notice, as shown on \trefnp{Track DRs} and \trefnp{Track Modifiers}.
         You must make another Survival check after following the trail for 1 mile, or if it becomes especially difficult to follow.
-        While tracking, you move at half your normal speed (or at your normal speed with a \minus5 penalty on the check, or at up to twice your normal speed with a \minus20 penalty on the check).
+        While tracking, you move at half your normal speed (or at your normal speed with a \minus2 penalty on the check, or at up to twice your normal speed with a \minus10 penalty on the check).
         The DR depends on the surface and the prevailing conditions, as given on the table below:
-        The base DR to follow tracks is 10 if you use scent to track, regardless of the condition of the ground.
+        The base DR to follow tracks is 5 if you use scent to track, regardless of the condition of the ground.
 
         A creature can use the Awareness skill to notice signs of passage, but the Survival skill is necessary to follow tracks for any distance.
 
@@ -1250,11 +1362,11 @@ A character's skills describe the myriad of talents that people have.
             \lcaption{Track DRs}
             \begin{dtabularx}{\columnwidth}{l >{\lcol}X l}
                 \tb{Surface} & \tb{Description} & \tb{Survival DR} \\
-                \hline
-                Very soft ground & Any surface (fresh snow, thick dust, wet mud) that holds deep, clear impressions of footprints. & 5 \\
-                Soft ground & Any surface soft enough to yield to pressure, but firmer than wet mud or fresh snow, in which a creature leaves frequent but shallow footprints & 10 \\
-                Firm ground & Most normal outdoor surfaces (such as lawns, fields, woods, and the like) or exceptionally soft or dirty indoor surfaces (thick rugs and very dirty or dusty floors) & 15 \\
-                Hard ground & Any surface that doesn't hold footprints at all, such as bare rock or a streambed & 20
+                \bottomrule
+                Very soft ground & Any surface (fresh snow, thick dust, wet mud) that holds deep, clear impressions of footprints. & 0 \\
+                Soft ground & Any surface soft enough to yield to pressure, but firmer than wet mud or fresh snow, in which a creature leaves frequent but shallow footprints & 5 \\
+                Firm ground & Most normal outdoor surfaces (such as lawns, fields, woods, and the like) or exceptionally soft or dirty indoor surfaces (thick rugs and very dirty or dusty floors) & 10 \\
+                Hard ground & Any surface that doesn't hold footprints at all, such as bare rock or a streambed & 15 \\
             \end{dtabularx}
         \end{dtable}
 
@@ -1262,33 +1374,33 @@ A character's skills describe the myriad of talents that people have.
             \lcaption{Track Modifiers}
             \begin{dtabularx}{\columnwidth}{>{\lcol}X l}
                 \tb{Condition} & \tb{DR Modifier} \\
-                \hline
-                Every three creatures in the group being tracked  & \minus1 \\
-                Size of creature or creatures being tracked:\fn{1} &  \\
-                Fine  & \plus16 \\
-                Diminutive  & \plus12 \\
-                Tiny  & \plus8 \\
-                Small  & \plus4 \\
-                Medium  & \plus0 \\
-                Large  & \minus4 \\
-                Huge  & \minus8 \\
-                Gargantuan  & \minus12 \\
-                Colossal  & \minus16 \\
-                Every 24 hours since the trail was made  & \plus1\fn{3} \\
-                Every hour of rain since the trail was made  & \plus1 \\
-                Fresh snow cover since the trail was made  & \plus10 \\
-                \tb{Poor visibility:\fn{2}} &  \\
-                Overcast or moonless night  & \plus6 \\
-                Moonlight  & \plus3 \\
-                Fog or precipitation  & \plus3 \\
-                Tracked party hides trail (and moves at half speed)  & \plus5
+                \bottomrule
+                Every three creatures in the group being tracked    & \minus1      \\
+                Size of creature or creatures being tracked:\fn{1}  &              \\
+                Fine                                                & \plus16      \\
+                Diminutive                                          & \plus12      \\
+                Tiny                                                & \plus8       \\
+                Small                                               & \plus4       \\
+                Medium                                              & \plus0       \\
+                Large                                               & \minus4      \\
+                Huge                                                & \minus8      \\
+                Gargantuan                                          & \minus12     \\
+                Colossal                                            & \minus16     \\
+                Every 24 hours since the trail was made             & \plus1\fn{3} \\
+                Every hour of rain since the trail was made         & \plus1       \\
+                Fresh snow cover since the trail was made           & \plus10      \\
+                \tb{Poor visibility:\fn{2}}                         &              \\
+                Overcast or moonless night                          & \plus6       \\
+                Moonlight                                           & \plus3       \\
+                Fog or precipitation                                & \plus3       \\
+                Tracked party hides trail (and moves at half speed) & \plus5
             \end{dtabularx}
             1 For a group of mixed sizes, apply only the modifier for the largest size category. \\
             2 Apply only the largest modifier from this category. \\
             3 With scent-based tracking, apply this modifier per hour since the trail was made. \\
         \end{dtable}
 
-        If you fail a Survival check to track, you can retry after 1 hour (outdoors) or 10 minutes (indoors) of searching.
+        If you fail a Survival check to track, you can retry after 5 minutes of searching.
 
     \subsection{Use Rope}
         You can make a Survival check as a standard action to tie knots. Success means you tie the knot successfully. Failure means your action is wasted, but you can try again. Tying a typical knot is DR 10. Tying a special knot, such as one that slips, slides slowly, or loosens with a tug is DR 15. Knots can also be tied with the Devices skill.
@@ -1305,10 +1417,10 @@ A character's skills describe the myriad of talents that people have.
             \lcaption{Swim DRs}
             \begin{dtabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
                 \tb{Water} & \tb{Swim DR} \\
-                \hline
+                \bottomrule
                 Calm water   & 5 \\
                 Rough water  & 10 \\
-                Stormy water & 20 \\
+                Stormy water & 15 \\
             \end{dtabularx}
         \end{dtable}
 

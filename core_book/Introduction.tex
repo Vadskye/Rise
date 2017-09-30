@@ -15,26 +15,53 @@
     In many cases, your character will simply take the action --- you don't need to roll or check your character's abilities to walk downstairs and order a dwarven ale.
 
     However, sometimes you'll want to take a dramatic action with a chance of failure, such as picking a lock or swinging from a chandelier.
-    In that case, you roll a a twenty-sided die, or d20, and add a number to the number on the die.
-    This result is compared to a number representing how difficult the action is, or \glossterm{Difficulty Rating} (DR).
+    In that case, you roll a a ten-sided die, or d10, and add a number to the number on the die.
+    This result is compared to a number representing how difficult the action is, or \glossterm{difficulty rating} (DR).
     If your result is at least as high as the DR, your character's action succeeds.
     If it is lower, your character's action fails.
 
-    The number you add to the d20 roll represents how likely your character is to succeed at the action.
+    The number you add to the d10 roll represents how likely your character is to succeed at the action.
     If your character is very strong, she will probably succeed at breaking down a door --- but if she is not very perceptive, she will probably not notice the trap! Your character's abilities can be modified in many ways, but they are most affected by three things: attributes, skills, and classes.
+
+    \subsection{Attacks and Checks}
+        In Rise, each character has many different actions they can take.
+        How likely you are to succeed at a particular action depends on your character's numerical statistics.
+        Most abilities require either an \glossterm{attack roll} or a \glossterm{check}.
+        In general, abilities that affect unwilling creatures in some potentially harmful way require attack rolls.
+        For example, hitting something with your sword is an attack, and requires an attack roll to succeed.
+        In contrast, abilities that affect yourself, the environment, or willing creatures usually require checks instead.
+        For example, climbing a cliff requires a check using the Climb skill (see \pcref{Climb}).
 
     \subsection{Opposed Actions}
         Sometimes, you're competing with another creature, such as when you are trying to hold a door closed and a ferocious ogre is trying to shove it open.
-        In that case, you both roll a d20 and add your modifiers, and the creature with the higher result wins.
+        In that case, you both roll a d10 and add your modifiers, and the creature with the higher result wins.
         This is called an opposed check.
         If you get the same result, the creature with the higher modifier wins.
         If you have the same modifier, roll again to break the tie.
 
-    \subsection{Turns}
-        Normally, you can just say that your character is going to do something, and the GM will take care of what happens and when.
-        Sometimes, particularly during combat, it's important to keep track of exactly what order things are happening in.
-        When that happens, your character will get a ``turn'', where she can take actions.
-        The specific actions you can take during a combat turn are covered in more detail in \pcref{Combat Overview}.
+\section{Narrative Pacing}
+    A typical game of Rise is broken up into two distinct concepts.
+    Sometimes, you will interact with the world in broad, sweeping descriptions, as you describe in general terms what your character does.
+    For example, you and your group may decide to travel overland for seven days to reach a distant city.
+    Just like you don't need to mention every time your character breathes or takes a step, you don't need to track every second of time spent on that journey.
+    Until something of dramatic significance happens, the GM should narrate the events of the journey in general terms to avoid spending time on irrelevant details.
+
+    If something important happens, the pace of the game should change to focus on the current events.
+    For example, if your group is ambushed by roaming bandits, the exact actions you take become important.
+    This is called an encounter.
+    During an encounter, the GM should ask each player to describe their character's actions more precisely.
+    If the encounter is time-sensitive, such as combat, the GM should track the flow of time in \glossterm{rounds}.
+    A round represents six seconds of time, so there are ten rounds per minute.
+
+    Not all encounters require tracking time precisely.
+    For example, if you and your party encounter a broken-down caravan carrying an angry prince, your exact actions can be important.
+    Whether you show appropriate deference and fix his caravan, ignore him, or kill him to steal his jewelry can have important repurcussions in the game world.
+    However, the exact time it takes to make that decision and execute on it is not usually important.
+
+    Not every challenge needs to be handled with the narrative pacing of an encounter, especially if the outcome of the challenge is uninteresting or predetermined.
+    Even combat can be described in broad terms, such as if you are significantly more powerful than your foes and your victory is assured.
+    In all cases, the GM decides how to handle the flow of time and the narrative pacing.
+    They may have information you don't about what is important and what is irrelevant.
 
 \section{Principles of Rise}
 
@@ -64,20 +91,21 @@
             A check represents an attempt to accomplish a dramatically significant goal, usually while under some sort of time pressure or distraction.
             When there is no dramatic significance to the task, a check should not be rolled.
 
+            \parhead{Taking 5}\label{Taking 5}
+            Normally, if a check would be required but there is no dramatic significance to the check, assume the character rolled a 5 when determining whether the check is successful.
+            This is called ``taking 5''.
+
             \parhead{Taking 10}\label{Taking 10}
-            Normally, if a check would be required but there is no dramatic significance to the check, assume the character rolled a 10 when determining whether the check is successful.
-            This is called ``taking 10''.
-
-            \parhead{Taking 20}\label{Taking 20}
-            If a character would not succeed when taking 10, the character can try to ``take 20'' instead.
-            Taking 20 requires spending twenty times the amount of time normally required to accomplish the task.
+            If a character would not succeed when taking 5, the character can try to ``take 10'' instead.
+            Taking 10 requires spending ten times the amount of time normally required to accomplish the task.
             If a task takes a variable amount of time, assume it took the average amount of time required to make a check.
-            In exchange, the character calculates her check result if she had rolled a 20.
+            In exchange, the character calculates her check result if she had rolled a 10.
 
-            Essentially, taking 20 means the character repeatedly attempts the task until he succeeds.
-            It is possible to take 20 on a task that has consequences for failure, but taking 20 guarantees that those consequences occur.
+            Essentially, taking 10 means the character repeatedly attempts the task until he succeeds.
+            It is possible to take 10 on a task that has consequences for failure, but taking 10 guarantees that those consequences occur.
 
-        \subsubsection{Narrative Time} In most cases, the exact time of day, and exactly how long an action takes, is not very important.
+        \subsubsection{Narrative Time}
+            In most cases, the exact time of day and exactly how long an action takes is not very important.
             No one really cares whether the orc horde broke through the town gates at the crack of dawn, or at 6:55 AM\@.
             Likewise, travelling from a tavern in a city to the blacksmith probably takes a few minutes, depending on the size of the city, but it's not usually important.
 
@@ -138,8 +166,9 @@
         However, having a general sense of how your character behaves is helpful.
 
         For most games, it's important to have a personality that can tolerate working with others in a group.
-        Your character doesn't have to be the team mascot or give speeches about the important of friendship.
-        However, a character that is excessively aloof, moody, or obnoxious can make the game more difficult to enjoy for everyone.
+        A character that is excessively aloof, moody, or obnoxious can make the game more difficult to enjoy for everyone.
+        Likewise, a character who tries to speak for everyone or who repeatedly steals the spotlight from others can be frustrating to work with.
+        You should figure out the right balance with your fellow players and your GM.\@
 
     \subsection{Motivation}
 
