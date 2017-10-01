@@ -350,6 +350,94 @@ def generate_spells():
                     tags=['Manifestation', 'Poison'],
                 ),
             ),
+            Subspell(
+                level=3,
+                name="Bladestorm",
+                targeting=Targeting(
+                    area='\\areasmall radius from you',
+                    targets='Enemies in the area',
+                ),
+                effects=Effects(
+                    attack=Attack.multi_damage('Reflex', 'slashing'),
+                    tags=['Manifestation'],
+                ),
+            ),
+            Subspell(
+                level=2,
+                name="Blade Barrier",
+                targeting=Targeting(
+                    area='20 ft.\\ high wall: \\arealarge line or \\areasmall radius',
+                    area_type='zone',
+                    rng='medium',
+                ),
+                effects=Effects(
+                    effect="""
+                        A wall of whirling blades appears in the area.
+                        The wall provides \\glossterm<active cover> (20\\% miss chance) against attacks made through it.
+                        Attacks that miss in this way harmlessly strike the wall.
+
+                        Whenever a creature passes through the wall, make a Spellpower vs. Reflex attack against it.
+                        A hit means the target takes slashing \\glossterm<standard damage> -1d.
+                        A critical hit means it takes double damage.
+                    """,
+                    duration='Sustain (minor)',
+                ),
+            ),
+            Subspell(
+                level=4,
+                name="Blade Barrier, Contracting",
+                description="""
+                    This subspell functions like the \\spell<blade barrier> subspell, except that the area must be a radius.
+                    In addition, the wall's radius shrinks by 5 feet at the end of every \\glossterm<action phase>, dealing damage to all creatures it moves through.
+                """,
+            ),
+            Subspell(
+                level=4,
+                name="Blade Barrier, Dual",
+                description="""
+                    This subspell functions like the \\spell<blade barrier> subspell, except that the area must be a line.
+                    In addition, the spell creatures two parallel walls of the same length, five feet apart.
+                """,
+            ),
+            # TODO: blend with Transmutation school?
+            Subspell(
+                level=3,
+                name="Create Ballista",
+                targeting=Targeting(
+                    target='Location',
+                    rng='close',
+                ),
+                effects=Effects(
+                    effect="""
+                        This spell creates a fully functional Large ballista.
+                        When initially created, the ballista fires at a foe of your choice within \\rnglong range.
+                        It automatically reloads itself during the movement phase.
+
+                        As a \\glossterm<minor action>, you can mentally command the ballista.
+                        If you do, it fires at a target you designate within \\rnglong range.
+                        Otherwise, another creature may spend a standard action action to manually fire the ballista.
+
+                        When the ballista fires, you make a Spellpower vs. Armor attack against the target.
+                        A hit means the target takes piercing \\glossterm<standard damage> -1d.
+                        A critical hit means the target takes double damage.
+                        This is a \glossterm{Physical} effect, and does not allow \glossterm{magic resistance}.
+
+                        The ballista has hit points equal to three times your spellpower.
+                        In all other respects, it is treated as an ordinary ballista.
+                    """,
+                    duration='Attunement',
+                    tags=['Manifestation'],
+                ),
+            ),
+            Subspell(
+                level=6,
+                name="Create Ballista, Dual Track",
+                description="""
+                    This subspell functions like the \\spell<create ballista> subspell, except that the ballista is created with two separate bolt tracks.
+                    This allows it to fire at two different targets in the same round whenever you command it to fire.
+                    It cannot fire at the same target twice.
+                """,
+            ),
         ],
         category='damage',
     ))
@@ -642,7 +730,7 @@ def generate_spells():
         category='damage',
     ))
     spells.append(Spell(
-        name="Emotion",
+        name="Delusion",
         short_description="Instill false emotions to influence creatures",
         header=Header("You terrify your foe."),
         targeting=Targeting(
@@ -657,7 +745,7 @@ def generate_spells():
                 failure="The target is \\shaken by you.",
             ),
             duration='Condition',
-            tags=['Delusion', 'Mind'],
+            tags=['Emotion', 'Mind'],
         ),
         schools=['Enchantment'],
         lists=['Arcane'],
@@ -691,7 +779,7 @@ def generate_spells():
                         critical="As above, but double damage.",
                     ),
                     duration='Condition',
-                    tags=['Delusion', 'Mind'],
+                    tags=['Emotion', 'Mind'],
                 ),
             ),
             Subspell(
@@ -708,17 +796,61 @@ def generate_spells():
                         critical="As above, but this ability's duration becomes Attunement instead of Sustain (swift).",
                     ),
                     duration='Attunement',
-                    tags=['Delusion', 'Mind', 'Subtle'],
+                    tags=['Emotion', 'Mind', 'Subtle'],
                 ),
             ),
             Subspell(
                 level=7,
                 name="Amnesiac Charm",
                 description="""
-                    This subspell functions like the \\textit<charm> subspell, except that when the spell ends, the target forgets all events that transpired during the spell's duration.
+                    This subspell functions like the \\spell<charm> subspell, except that when the spell ends, the target forgets all events that transpired during the spell's duration.
                     It becomes aware of its surroundings as if waking up from a daydream.
                     The target is not directly aware of any magical influence on its mind, though unusually paranoid or perceptive creatures may deduce that their minds were affected.
                 """,
+            ),
+            Subspell(
+                level=3,
+                name="Calm Emotions",
+                targeting=Targeting(
+                    area='\\areamed radius',
+                    targets='All creatures in the area',
+                ),
+                effects=Effects(
+                    attack=Attack(
+                        defense='Mental',
+                        success="""
+                            The target has its emotions calmed.
+                            The effects of all other \\glossterm<Emotion> abilties are \\glossterm<suppressed>.
+                            It cannot take violent actions (although it can defend itself) or do anything destructive.
+                            If an aggressive action is taken against a nearby creature, this effect is broken.
+                        """,
+                        critical="""
+                            As above, except that nearby violence does not break the effect.
+                        """,
+                    ),
+                    duration='Sustain (standard)',
+                    tags=['Emotion', 'Mind'],
+                ),
+            ),
+            Subspell(
+                level=4,
+                name="Enrage",
+                effects=Effects(
+                    attack=Attack(
+                        defense='Mental',
+                        success="""
+                            The target cannot take any \\glossterm<standard actions> that do not cause it to make an attack.
+                            For example, it could make a \\glossterm<strike> or cast an offensive spell, but it could not heal itself or summon an ally.
+                            This cannot prevent it from taking the \\textit<recover> or \\textit<desperate recovery> actions.
+                        """,
+                        critical="""
+                            The target cannot take any \\glossterm<standard actions> that do not cause it to make a \\glossterm<strike>.
+                            This cannot prevent it from taking the \\textit<recover> or \\textit<desperate recovery> actions.
+                        """,
+                    ),
+                    duration='Condition',
+                    tags=['Emotion', 'Mind'],
+                ),
             ),
         ],
         category='debuff, combat',
@@ -781,6 +913,23 @@ def generate_spells():
                 ),
             ),
             Subspell(
+                level=4,
+                name="Discordant Song",
+                targeting=Targeting(
+                    area='\\areamed radius from you',
+                    targets='All enemies in the area',
+                ),
+                effects=Effects(
+                    attack=Attack(
+                        defense='Mental',
+                        success="The target is \\disoriented.",
+                        critical="The target is \\confused.",
+                    ),
+                    tags=['Compulsion', 'Mind'],
+                    duration='Condition',
+                ),
+            ),
+            Subspell(
                 level=3,
                 name="Dance",
                 effects=Effects(
@@ -825,6 +974,26 @@ def generate_spells():
                     tags=['Compulsion', 'Mind'],
                 ),
             ),
+            Subspell(
+                level=3,
+                name="Divine Might",
+                description="""
+                    description
+                """,
+                targeting=Targeting(
+                    target='You',
+                    time='minor action',
+                ),
+                effects=Effects(
+                    effect="""
+                        You increase your size by one size category.
+                        This increases your \\glossterm<strike damage> and usually increases your \\glossterm<reach> (see \\pcref<Size in Combat>).
+                        However, you take a -2d penalty to \\glossterm<strike damage>, as your muscles are not increased fully to match your new size.
+                    """,
+                    duration='Attunement',
+                    tags=['Shaping', 'Sizing'],
+                ),
+            ),
         ],
         category='debuff, combat',
     ))
@@ -853,8 +1022,24 @@ def generate_spells():
                 """,
             ),
             Subspell(
+                level=5,
+                name="Blessed Blade",
+                targeting=Targeting(
+                    # TODO: unattended or wielded by a willing creature?
+                    target='One unattended weapon',
+                    rng='close',
+                ),
+                effects=Effects(
+                    effect="""
+                        All \\glossterm<strikes> with the target weapon are made against Mental defense instead of Armor defense.
+                    """,
+                    duration='Sustain (minor)',
+                    tags=['Fire'],
+                ),
+            ),
+            Subspell(
                 level=6,
-                name="Protection",
+                name="Divine Shield",
                 description="""
                     The target gains \\glossterm<damage reduction> equal to your spellpower against all damage.
                 """,
@@ -881,8 +1066,7 @@ def generate_spells():
                 level=2,
                 name="Word of Faith",
                 targeting=Targeting(
-                    area='\\areamed radius from your location',
-                    area_type='burst',
+                    area='\\areamed radius from you',
                     targets='Creatures in the area that do not worship your deity',
                 ),
                 effects=Effects(
@@ -983,6 +1167,27 @@ def generate_spells():
                     The spell's attack is made against Fortitude defense instead of Reflex defense.
                 """,
             ),
+            Subspell(
+                level=3,
+                name="Call Lightning",
+                targeting=Targeting(
+                    area='\\arealarge vertical line, 5 ft\\. wide',
+                    area_type='burst',
+                    targets='Everything in the area',
+                ),
+                effects=Effects(
+                    attack=Attack(
+                        defense='Reflex',
+                        success="""
+                            The target takes takes electricity \\glossterm<standard damage> +1d.
+                        """,
+                        critical='As above, but double damage.',
+                        special="""
+                            If you are outdoors in cloudy or stormy weather, you gain a +2 bonus to \\glossterm<accuracy> with the attack.
+                        """,
+                    ),
+                ),
+            ),
         ],
         category='damage',
     ))
@@ -1023,10 +1228,11 @@ def generate_spells():
                 """,
             ),
             Subspell(
-                level=4,
+                level=7,
                 name="Finger of Death",
                 description="""
-                    If the spell's attack critically hits, the target immediately dies.
+                    If the attack hits, the target also takes life \\glossterm<standard damage> +1d.
+                    If the attack critically hits, the target immediately dies.
                 """,
                 tags=['Death'],
             ),
@@ -1039,10 +1245,18 @@ def generate_spells():
                 """,
             ),
             Subspell(
+                level=4,
+                name="Bleed",
+                description="""
+                    If the attack hits, the target also takes slashing \\glossterm<standard damage> -3d immediately and at the end of each \\glossterm<action phase>.
+                    This is a separate \\glossterm<condition>.
+                """,
+            ),
+            Subspell(
                 level=5,
                 name="Cripple",
                 description="""
-                    If the attack hits, the target is also \\glossterm<immobilized> as part of the same condition.
+                    If the attack hits, the target is also \\glossterm<immobilized> as a separate \\glossterm<condition>.
                     On a \\glossterm<critical hit>, the target is \\glossterm<paralyzed> instead of immobilized.
                 """,
             ),
@@ -1446,6 +1660,13 @@ def generate_spells():
                 name="Boon of Mastery",
                 description="""
                     The target also gains a +2 bonus to all skills.
+                """,
+            ),
+            Subspell(
+                level=5,
+                name="Boon of Many Eyes",
+                description="""
+                    The target also gains a +1 bonus to \\glossterm<overwhelm resistance>.
                 """,
             ),
             Subspell(
@@ -1872,16 +2093,16 @@ def generate_spells():
             ),
             Subspell(
                 level=6,
-                name="Greater Enlarge",
+                name="Enlarge, Potent",
                 description="""
                     This subspell functions like the \\textit<enlarge> subspell, except that the penalty to \\glossterm<strike damage> is reduced to -1d.
                 """,
             ),
             Subspell(
                 level=9,
-                name="Supreme Enlarge",
+                name="Enlarge, Greater",
                 description="""
-                    This subspell functions like the \\textit<enlarge> subspell, except that the penalty to \\glossterm<strike damage> is removed.
+                    This subspell functions like the \\spell<enlarge> subspell, except that the target's size is increased by two size categories.
                 """,
             ),
             Subspell(
