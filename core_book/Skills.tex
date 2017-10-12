@@ -49,7 +49,6 @@ A character's skills describe the myriad of talents that people have.
                 \bottomrule
                 Climb             & C  & \tdash & C  & C  & C  & \tdash & C  & C  & \tdash & \tdash & \tdash & Str    \\
                 Jump              & C  & \tdash & C  & C  & C  & \tdash & C  & C  & \tdash & \tdash & \tdash & Str    \\
-                Sprint            & C  & \tdash & C  & C  & C  & \tdash & C  & C  & \tdash & \tdash & \tdash & Str    \\
                 Swim              & C  & \tdash & C  & C  & C  & \tdash & C  & C  & \tdash & C  & \tdash & Str    \\
                 Acrobatics        & C  & \tdash & C  & C  & C  & \tdash & C  & C  & \tdash & \tdash & \tdash & Dex    \\
                 Escape Artist     & \tdash & \tdash & \tdash & C  & C  & \tdash & \tdash & C  & \tdash & \tdash & \tdash & Dex    \\
@@ -1138,7 +1137,8 @@ A character's skills describe the myriad of talents that people have.
         You can make a DR 5 Ride check to stay on your mount as it jumps. This check is made as part of your mount's movement. Success means that you stay on the mount. Failure means you fall off your mount as it starts to jump.
 
     \subsection{Spur Mount}
-        You can make a DR 5 Ride check as a move action to get your mount to move faster. Success means it makes an Sprint check to move faster. Failure means your action was wasted.
+        You can make a DR 5 Ride check as a move action to get your mount to move faster. Success means it takes the \textit{sprint} action to move faster (see \pcref{Sprint}).
+        Failure means your action was wasted.
 
     \subsection{Stay in Saddle}
         If you take damage or your mount rears or bolts unexpectedly, you must make a DR 5 Ride check to stay in your saddle. This does not take an action. Success means you stay in your saddle. Failure means you fall off your mount.
@@ -1276,23 +1276,6 @@ A character's skills describe the myriad of talents that people have.
         Success means you identify the direction of the teleportation.
         Critical success means you also identify the distance.
         Failure means you learn no information about the teleportation.
-
-    \skill{Sprint}{Str}
-        The Sprint skill represents your ability to move more quickly and take movement-related actions.
-
-        \parhead{Multi-Legged Sprinting} Creatures with four or more legs can sprint more easily.
-        They gain a \plus10 bonus to Sprint checks.
-
-    \subsection{Sprint}
-        As part of movement, you can make an Sprint check to move faster. If you beat DR 5, you double your speed during that action. For every 10 points by which you beat that DR, you double your speed again: 3x speed at DR 15, 4x speed at DR 25, and so on.
-        
-        You can sprint for a number of rounds equal to 2 \add half your Constitution.
-        After that time, you must take a \glossterm{short rest} before you can sprint again. You can sprint in any movement mode that you have a speed for.
-
-    \subsection{Wallrun}
-        As part of movement, you can make a Sprint check to run along a wall rather than climbing. The DR is 10 higher than normal for the wall (see \pcref{Climb}, for typical wall DRs), but this does not require free hands. Success means you move up to half your land speed horizontally, or up to a quarter of your land speed vertically. Failure means you fall. Critical failure means you are prone when you land. For every round you spend running on a wall, the DR increases by 10.
-
-        Wallrunning on a ceiling is impossible.
 
     \skill{Stealth}{Dex}
         The Stealth skill represents your ability to escape detection while moving or hiding. All Stealth checks are made as part of movement or other actions, so they require no special action to perform. If you have been noticed by a creature, you automatically fail all Stealth checks against that creature until you can escape its notice, such as by disappearing out of sight.
