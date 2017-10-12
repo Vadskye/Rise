@@ -127,9 +127,9 @@ def generate_weapons():
         material_type='weapon',
         tags=['Imbuement'],
         description="""
-            This weapon deals \\glossterm<nonlethal damage> instead of lethal damage.
+            This weapon deals \\glossterm<subdual damage> instead of lethal damage.
         """,
-        short_description="Deals nonlethal damage",
+        short_description="Deals subdual damage",
     ))
 
     weapons.append(MagicItem(
