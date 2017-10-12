@@ -52,6 +52,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \featref{Draconic Heritage} & \tdash & Gain aspects of draconic power & Bloodline & \featpref{Draconic Heritage} \\
         \featref{Iron Will} & Wil 2 & Increase mental resilience & \tdash & \featpref{Iron Will} \\
         \featref{Regenerator} & Con 2 & Heal from wounds with inhuman speed & \tdash & \featpref{Regenerator} \\
+        \featref{Swift} & Dex 2 & \tdash & \tdash & \featpref{Swift} \\
         \featref{Toughness} & Con 2 & Increase physical fortitude & \tdash & \featpref{Toughness} \\
 
         \tb{Class Feats}\label{Class Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
@@ -81,7 +82,6 @@ Feats can be used to specialize your character particular area, to grant your ch
         \featref{Sense Motive Specialization} & Mastered Sense Motive & \tdash & \tdash & \featpref{Sense Motive Specialization} \\
         \featref{Sleight of Hand Specialization} & Mastered Sleight of Hand & \tdash & \tdash & \featpref{Sleight of Hand Specialization} \\
         \featref{Spellcraft Specialization} & Mastered Spellcraft & \tdash & \tdash & \featpref{Spellcraft Specialization} \\
-        \featref{Sprint Specialization} & Mastered Sprint & \tdash & \tdash & \featpref{Sprint Specialization} \\
         \featref{Stealth Specialization} & Mastered Stealth & \tdash & \tdash & \featpref{Stealth Specialization} \\
         \featref{Survival Specialization} & Mastered Survival & \tdash & \tdash & \featpref{Survival Specialization} \\
         \featref{Swim Specialization} & Mastered Swim & \tdash & \tdash & \featpref{Swim Specialization} \\
@@ -105,7 +105,9 @@ Feats can be used to specialize your character particular area, to grant your ch
         \featref{Duelist} & Dex 1, Int 1 & Fight one-on-one better & \tdash & \featpref{Duelist} \\
         \featref{Executioner} & Str 1, Per 2 & Kill weakened foes more easily & \tdash & \featpref{Executioner} \\
         \featref{Guardian} & Per 1, Wil 1 & Protect nearby allies & \tdash & \featpref{Guardian} \\
+        \featref{Leadership} & Wil 2 & Inspire nearby allies & \tdash & \featpref{Leadership} \\
         \featref{Martial Training} & \tdash & Improve combat abilities & \tdash & \featpref{Martial Training} \\
+        \featref{Precognition} & Int 2 & React to future events & \tdash & \featpref{Precognition} \\
         \featref{Reaper} & Str 2 & \tdash & Cleave through foes with sweeping strikes & \featpref{Reaper} \\
         \featref{Sniper} & Per 2 & \tdash & Aim precisely at distant foes & \featpref{Sniper} \\
         \featref{Whirlwind Warrior} & Dex 2, Per 1 & Fight hordes with agile ease & \tdash & \featpref{Whirlwind Warrior} \\
@@ -204,7 +206,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[4]{Rapid Reaction} You gain a \plus2 bonus to \glossterm{initiative} checks.
 
-        \ff[6]{Mobility} Your movement is not impeded by being threatened by the target of your \textit{dodge} ability (see \pcref{Moving Near Foes}).
+        \ff[6]{} 
 
         \ff[8]{Focused Dodge} You do not suffer \glossterm{overwhelm penalties} against attacks by the target of your \textit{dodge} ability.
         In addition, when counting the number of creatures threatening you to determine your overwhelm penalties, you ignore that creature.
@@ -1358,6 +1360,39 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[16]{Greater Specialization} The bonus to Knowledge increases to \plus6.
     \end{feat}
 
+    \begin{feat}{Leadership}{Combat}
+        \featpre Willpower 2.
+        \featben
+
+        \ff[1]{Bolster} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        If you do, all allies other than yourself within a \arealarge radius burst from you can remove one \glossterm{condition}.
+        In addition, each target gains \glossterm{temporary hit points} equal to your Willpower.
+        This lasts as long as you \glossterm{sustain} this ability as a \glossterm{minor action}.
+        This is a \glossterm{Mind} ability.
+
+        \ff[2]{Battle Command} As a standard action, you can use this ability.
+        It resolves immediately, before other actions in the phase.
+        If you do, choose an ally within \rngmed range of you.
+        Until the end of the round, whenever it makes a \glossterm{physical attack}, it can roll the \glossterm{attack roll} twice and take the higher result.
+
+        \ff[4]{Inspiring Presence} All allies other than yourself within a \arealarge radius emanation from you gain a \plus1 bonus to Mental defense.
+        This ability is \glossterm{suppressed} if you are \glossterm{defeated}.
+
+        \ff[6]{Potent Bolster} The temporary hit points provided by your \textit{bolster} ability increase to twice your Willpower.
+
+        \ff[8]{Potent Command} The target of your \textit{battle command} also gains a \plus1d bonus to \glossterm{strike damage}.
+
+        \ff[10]{Greater Inspiring Presence} The defense bonus from your \textit{inspiring presence} ability increases to \plus2.
+
+        \ff[12]{Greater Potent Bolster} The temporary hit points provided by your \textit{bolster} ability increase to three times your Willpower.
+
+        \ff[14]{Greater Potent Command} The damage bonus from your \textit{potent command} ability increases to \plus2d.
+
+        \ff[16]{Supreme Inspiring Presence} The defense bonus from your \textit{inspiring presence} ability increases to \plus3.
+
+        \ff[18]{War Leader} The area affected by your \textit{bolster} and \textit{inspiring presence} abilities increases to an \areahuge radius.
+    \end{feat}
+
     \begin{feat}{Linguistics Specialization}{Skill}
         \featpre Linguistics as a mastered skill.
         \featben
@@ -1397,7 +1432,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[8]{Equipment Training} You gain an additional \textit{equipment training} ability of your choice.
 
         \ff[10]{Practiced Precision} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks}.
-    
+
         \ff[12]{Equipment Training} You gain an additional \textit{equipment training} ability of your choice.
 
         \ff[14]{Greater Honed Strike} The damage bonus from your \textit{honed strike} ability increases to \plus2d.
@@ -1405,7 +1440,6 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[16]{Equipment Training} You gain an additional \textit{equipment training} ability of your choice.
 
         \ff[18]{Practiced Killer} You gain a \plus1d bonus to \glossterm{strike damage}.
-        
     \end{feat}
 
     \begin{feat}{Miscaster}{Magical, Spell}
@@ -1532,37 +1566,73 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[16]{Greater Specialization} The bonus to Persuasion increases to \plus6.
     \end{feat}
 
+    \begin{feat}{Precognition}{Combat}
+        \featpre Starting Intelligence of 2.
+        \featben
+
+        \ff[1]{Precognitive Strike} As a standard action, you can use this ability.
+        If you do, make a \glossterm{strike}.
+        You can use your Intelligence in place of your Perception to determine your accuracy with this strike.
+
+        \ff[2]{Combat Prediction} At the start of each phase, you can spend an \glossterm{action point} to use this ability.
+        If you do, make an Intelligence vs. Mental attack against a creature within \rngmed range of you.
+        A hit means you gain insight into the actions that creature intends to take during that phase.
+        It may change its actions based on your interference if you communicate this information in a way it understands.
+        A miss means you regain the action point spent to use this ability.
+
+        This insight allows you to see and hear what actions that creature intends to take.
+        You do not gain any knowledge of actions that have no obvious signs, such as purely mental actions, or actions which you are not observant enough to notice.
+        In addition, you do not know the results of actions with a chance of failure, such as attacks.
+
+        \ff[4]{Danger Sense} You receive brief flashes of insight into immediate danger.
+        As a result, you are not \glossterm{unaware} when attacked by surprise.
+
+        \ff[6]{Precognitive Reaction} You can use your Intelligence to determine your Reflex defense in place of your Perception.
+
+        \ff[8]{Foresight} During the \glossterm{movement phase}, you choose your action after all other creatures have chosen their actions.
+        When you choose your action, you have insight into the actions chosen by any creatures within \rngclose range of you that you can see.
+        This insight gives you the same information as the insight from your \textit{combat prediction} ability.
+        You choose your actions simultaneously with any other creatures who have a similar ability.
+
+        \ff[10]{Rapid Reaction} You gain a \plus2 bonus to \glossterm{initiative} checks.
+
+        \ff[12]{Precognitive Defense} You can use your Intelligence to determine your Armor defense in place of your Dexterity.
+
+        \ff[14]{Certain Combat Prediction} You gain a \plus2 bonus to accuracy with your \textit{combat prediction} ability.
+
+        \ff[16]{Greater Rapid Reaction} The bonus to initiative checks from your \textit{rapid reaction} ability increases to \plus5.
+
+        \ff[18]{Greater Precognitive Strike} When you use your \textit{precognitive strike} ability, you can also use your Intelligence to determine your damage with the strike in place of your Strength.
+    \end{feat}
+
     \begin{feat}{Reaper}{Combat}
         \spelldesc{You can attack with such force that you cleave through your foes.}
         \featpre Starting Strength of 2.
 
-        \ff[1]{Sweeping Blow} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \ff[1]{Cleave} For each \glossterm{critical hit} you get with a melee strike using a slashing or bludgeoning weapon during the \glossterm{action phase}, you can make an additional strike during the \glossterm{delayed action phase}.
+        Each additional strike must target a different creature adjacent to the original strike's target.
+
+        \ff[2]{Sweeping Blow} As a standard action, you can spend an \glossterm{action point} to use this ability.
         If you do, you can make a melee \glossterm{strike} against each of up to three creatures you \glossterm{threaten}.
-        You take a \minus1d penalty to \glossterm{strike damage} with each strike.
 
-        % TODO: this timing doesn't make sense
-        \ff[2]{Cleave} Whenever you get a \glossterm{critical hit} with a melee strike using a slashing or bludgeoning weapon, you can take an \glossterm{immediate action} to make another melee strike with the same weapon.
-        You may continue making additional strikes as long as you keep getting critical hits.
-        However, you may not attack the same creature more than once.
-
-        \ff[4]{Wide Sweep} When you use your \textit{sweeping blow} ability, you can target up to five creatures.
-
-        \ff[6]{Reaping Assault} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \ff[4]{Reaping Assault} As a standard action, you can spend an \glossterm{action point} to use this ability.
         If you do, you can move up to your movement speed in a straight line.
         You can make a melee \glossterm{strike} against each creature and object that you \glossterm{threaten} at any point during your movement, except for the space you start in and the space you end in.
         You take a \minus2d penalty to damage on each strike.
 
-        \ff[8]{Mobile Cleave} When you use your \textit{cleave} ability, you can move up to ten feet before making the strike.
+        \ff[6]{Mobile Cleave} When you use your \textit{cleave} ability, you can move up to ten feet before making the strike.
         This movement counts against your normal movement limit in that phase.
-        When you use your \textit{cleave} ability, the target of your additional attack does not have to be adjacent to the struck creature.
+        In addition, the target of the additional strike does not have to be adjacent to the struck creature.
 
-        \ff[10]{Powerful Sweep} You do not take a penalty to damage on strikes from your  \textit{sweeping blow} ability.
+        \ff[8]{Powerful Sweep} You gain a \plus1d bonus to damage on strikes with your \textit{sweeping blow} ability.
 
-        \ff[12]{Powerful Reap} The damage penalty with strikes from your \textit{reaping assault} ability is reduced to \minus1d.
+        \ff[10]{Powerful Reap} The damage penalty with strikes from your \textit{reaping assault} ability is reduced to \minus1d.
 
-        \ff[14]{Greater Mobile Cleave} The maximum distance you can move with your \textit{mobile cleave} ability increases to be equal to your movement speed.
+        \ff[12]{Greater Mobile Cleave} The maximum distance you can move with your \textit{mobile cleave} ability increases to be equal to your movement speed.
 
-        \ff[16]{Greater Powerful Sweep} You gain a \plus1d bonus to damage with strikes from your \textit{sweeping blow} ability.
+        \ff[14]{Greater Powerful Sweep} You gain a \plus1d bonus to damage with strikes from your \textit{sweeping blow} ability.
+
+        \ff[16]{Greater Powerful Reap} The damage penalty with strikes from your \textit{reaping assault} ability is removed.
 
         \ff[18]{Reap the Harvest} When you use your \textit{reaping charge} or and \textit{sweeping blow} abilities, if every creature you attacked is dead at the end of the round, you regain the action point spent to use the ability.
     \end{feat}
@@ -1603,7 +1673,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[2]{Mounted Warrior} Your mount gains a \plus2 bonus to \glossterm{physical defenses}, up to a maximum of your own defenses.
 
-        \ff[4]{Mounted Archer} The penalty you take when using a ranged weapon while mounted is decreased by 4: \minus0 instead of \minus4 if your mount moves during the same phase, and \minus4 instead of \minus8 if your mount is sprinting during the same phase.
+        \ff[4]{Mounted Archer} The penalty you take when using a ranged weapon while mounted is decreased by 4: \minus0 instead of \minus4 if your mount moves during the same phase, and \minus4 instead of \minus8 if your mount is \glossterm{sprinting} during the same phase.
 
         \ff[6]{Knight's Charge} When you \glossterm{charge} a creature while mounted, you gain a \plus1d bonus to damage with the strike.
 
@@ -1715,25 +1785,6 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[16]{Greater Specialization} The bonus to Spellcraft increases to \plus6.
     \end{feat}
 
-    \begin{feat}{Sprint Specialization}{Skill}
-        \featpre Sprint as a mastered skill.
-        \featben
-
-        \ff[1]{Lesser Specialization} You gain a \plus2 bonus to Sprint.
-
-        \ff[2]{Swiftness} You gain a \plus10 foot bonus to speed in all your movement modes.
-
-        \ff[6]{Endurance Runner} You can sprint for a number of rounds equal to 5 \add half your Constitution, instead of 2 \add half your Constitution.
-
-        \ff[8]{Specialization} The bonus to Sprint increases to \plus4.
-
-        \ff[10]{Greater Swiftness} The speed bonus from your \textit{swiftness} ability increases to \plus20 feet.
-
-        \ff[14]{Greater Endurance Runner} You can sprint for a number of minutes equal to 2 \add half your Constitution.
-
-        \ff[16]{Greater Specialization} The bonus to Sprint increases to \plus6.
-    \end{feat}
-
     \begin{feat}{Stealth Specialization}{Skill}
         \featpre Stealth as a mastered skill.
         \featben
@@ -1793,6 +1844,33 @@ Feats can be used to specialize your character particular area, to grant your ch
         \end{ability}
 
         \ff[16]{Greater Specialization} The bonus to Survival increases to \plus6.
+    \end{feat}
+
+    \begin{feat}{Swift}{General}
+        \featpre Starting Dexterity of 2.
+        \featben
+
+        \ff[1]{Rapid Movement} You gain a \plus10 foot bonus to speed in all your movement modes.
+
+        \ff[2]{Endurance Runner} You can use the \textit{sprint} ability as a \glossterm{standard action}.
+        If you do, it does not cost an \glossterm{action point}.
+
+        \ff[4]{Wall Runner} You gain a \plus5 bonus to checks with the \textit{wallrun} ability (see \pcref{Wallrun}).
+        In addition, you can make a Dexterity check in place of a Climb check to use that ability.
+
+        \ff[6]{Greater Rapid Movement} The speed bonus from your \textit{rapid movement} ability increases to \plus20 feet.
+
+        \ff[8]{Sprinter} When you use the \textit{sprint} ability, you move at triple your movement speed.
+
+        \ff[10]{Water Runner} When you use the \textit{sprint} ability, you can move on water and similar liquids as if they were solid ground.
+
+        \ff[12]{Supreme Rapid Movement} The speed bonus from your \textit{rapid movement} ability increases to \plus30 feet.
+
+        \ff[14]{Greater Sprinter} When you ues the \textit{sprint} ability, you move at quadruple your movement speed.
+
+        \ff[16]{Cloud Runner} When you use the \textit{sprint} ability, you can move on dense fog and similar gaseous substances as if they were solid ground.
+
+        \ff[18]{Endless Endurance} You can use the \textit{sprint} ability without spending an action point.
     \end{feat}
 
     \begin{feat}{Swim Specialization}{Skill}
