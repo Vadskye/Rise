@@ -134,8 +134,15 @@ It defines how attributes work and explains how to make physical attacks in comb
             Sometimes, movement and distance are represented in squares.
             A 30-ft.\ movement is the same thing as moving six squares.
 
-        \subsubsection{Moving Near Foes}\label{Moving Near Foes}
-            All squares threatened by any foes cost double the normal movement cost to move out of.
+        \subsubsection{Sprint}\label{Sprint}
+
+            At the start of each \glossterm{phase}, you can spend an \glossterm{action point} to use this ability.
+            If you do, you make a Dexterity check.
+            If you beat DR 5, you double your speed during that phase.
+            For every 10 points by which you beat that DR, you double your speed again: 3x speed at DR 15, 4x speed at DR 25, and so on.
+
+            \parhead{Multi-Legged Sprinting} Creatures with four or more legs can sprint more easily.
+            They gain a \plus10 bonus to Sprint checks.
 
         \subsubsection{Movement Impediments}
 
@@ -1075,11 +1082,6 @@ It defines how attributes work and explains how to make physical attacks in comb
         \parhead{Ability Prerequisites} Changes to prerequisites for abilities always take effect immmediately.
         For example, if a paladin's Strength is reduced to 0 by a ghost, she immediately loses the benefits of all feats she has that require a high Strength, such as Reaper (see \featpcref{Reaper}).
 
-        \parhead{Ability Use Limits} Effects that change a character's maximum uses of an ability take effect immediately.
-        However, increasing a character's maximum uses does not immediately grant the character additional uses.
-        They must recovered in the normal fashion, such as by resting.
-        If a character's maximum uses is decreased below their currently available uses, they immediately lose ability uses until their current value is equal to their maximum value.
-
         \parhead{Skill Points} Effects that change a character's skill points take effect immediately.
         However, the character cannot spend additional skill points on new skills until they level up.
         If a character's total skill points are decreased below their currently spent skill points, they immediately lose training from skills until their spent skill points are equal to their total skill points.
@@ -1100,7 +1102,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         Your hit points are calculated as follows:
 
         \begin{figure}[h]
-            \centering Level \x (5 \add starting Constitution)
+            \centering (Level \add 1) \x (5 \add starting Constitution)
         \end{figure}
 
         \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of your character.
@@ -1174,17 +1176,10 @@ It defines how attributes work and explains how to make physical attacks in comb
         A character can have both hit points and vital damage.
         As long as a character has vital damage, he is staggered, even if he is at full hit points.
 
-    \subsection{Nonlethal Damage}\label{Nonlethal Damage}
-        Some attacks and environmental effects deal nonlethal damage.
-        Nonlethal damage is not subtracted from your hit points.
-        Instead, it is tracked separately.
-        If your nonlethal damage exceeds your hit points, you become staggered, just as if you were at 0 hit points.
-        If you take additional damage while staggered, you fall unconscious.
-        However, you do not begin dying unless your hit points are actually below 0.
-
-        \parhead{Healing Nonlethal Damage}
-        You heal half your hit points in nonlethal damage with 1 hour of rest.
-        When a spell or a magical ability cures hit point damage, it also removes an equal amount of nonlethal damage.
+    \subsection{Subdual Damage}\label{Subdual Damage}
+        Some attacks and environmental effects deal subdual damage.
+        Subdual damage works in the same way as normal damage, except that it cannot turn into \glossterm{vital damage}.
+        Instead, if you deal subdual damage to a \glossterm{wounded} creature, it immediately falls unconscious.
 
     \subsection{Temporary Hit Points}\label{Temporary Hit Points}
         Certain effects give a character temporary hit points which act as a protection against damage.
@@ -1258,7 +1253,7 @@ It defines how attributes work and explains how to make physical attacks in comb
     \subsection{Unarmed Combat}\label{Unarmed Combat}
         Every creature can attack with its body using an unarmed attack.
         You are not proficient with your unarmed attack, so you are usually \defenseless while unarmed.
-        In addition, an unarmed attack always deals nonlethal damage.
+        In addition, an unarmed attack always deals \glossterm{subdual damage}.
         You may use any appropriate part of your body to make an unarmed attack -- fists, feet, elbows, and so on.
         However, you only have one unarmed attack.
         You cannot dual-wield unarmed attacks as if you were fighting with two weapons at once (see \pcref{Dual Strike}).
