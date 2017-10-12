@@ -488,21 +488,28 @@ It defines how attributes work and explains how to make physical attacks in comb
         The most common types of reactive movements are the \textit{block}, \textit{follow}, and \textit{withdraw} abilities, but you can come up with other reactive movements.
         The only requirement is that a reactive movement must have a simple criteria for determining how you move.
 
-        \parhead{Block}\label{Block} You can designate a target creature or object to block, and the area you want to block it from entering.
-        When you do, you automatically move to intercept the target as it approaches the blocked area.
-        Usually, blocking a target requires an opposed \glossterm{initiative} check against the target.
-        Success means you successfully keep ahead of the target as it moves, preventing it from entering the area (unless it can move through you).
-        Failure means the target moves around you (if there is room) to enter the area.
+        \parhead{Movement-Based Initiative}\label{Movement-Based Initiative} When making \glossterm{initiative} checks to determine the success of reactive movements, having a faster movement speed is helpful.
+        For every 5 feet of movement you would have available after completing your movement, you gain a \plus2 bonus to any initiative checks necessary to determine whether your movement succeeds.
+        Regardless of whether your initiative check succeeds or fails, you cannot use that ``excess'' movement to move after making such an initiative check.
 
-        Multiple creatures can coordinate to block a single creature.
-        The blocked creature must beat the initiative of all blocking creatures to enter the blocked area.
+        \subsubsection{Block}\label{Block}
+            You can designate a target creature or object to block, and the area you want to block it from entering.
+            When you do, you automatically move to intercept the target as it approaches the blocked area.
+            Usually, blocking a target requires an opposed \glossterm{initiative} check against the target.
+            Success means you successfully keep ahead of the target as it moves, preventing it from entering the area (unless it can move through you).
+            Failure means the target moves around you (if there is room) to enter the area.
 
-        \parhead{Follow}\label{Follow} You can designate a target creature or object to follow, and the maximum distance you want to follow at. When you do, you automatically move such that your distance to the target is no greater than your desired follow distance. For the rest of the round, whenever that creature or object moves, you move with it to stay within that follow distance.
+            Multiple creatures can coordinate to block a single creature.
+            The blocked creature must beat the initiative of all blocking creatures to enter the blocked area.
 
-        If the target takes an action that makes it impossible to follow with movement, such as teleporting, you cannot follow it for the rest of the round.
+        \subsubsection{Follow}\label{Follow}
+            You can designate a target creature or object to follow, and the maximum distance you want to follow at. When you do, you automatically move such that your distance to the target is no greater than your desired follow distance. For the rest of the round, whenever that creature or object moves, you move with it to stay within that follow distance.
 
-        \parhead{Withdraw}\label{Withdraw} Withdrawing functions the same way as following, except that you specify a minimum distance between you and the target instead of a maximum distance.
-        In addition, you can specify multiple targets and try to keep away from all of them.
+            If the target takes an action that makes it impossible to follow with movement, such as teleporting, you cannot follow it for the rest of the round.
+
+        \subsubsection{Withdraw}\label{Withdraw}
+            Withdrawing functions the same way as following, except that you specify a minimum distance between you and the target instead of a maximum distance.
+            In addition, you can specify multiple targets and try to keep away from all of them.
 
     \section{Attributes}\label{Attributes}
 
