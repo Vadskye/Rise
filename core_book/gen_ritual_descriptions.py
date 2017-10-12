@@ -739,7 +739,7 @@ def generate_rituals():
         ),
         effects=Effects(
             effect="""
-                All of the target's hit points, \\glossterm<nonlethal damage>, and \\glossterm<vital damage> are healed.
+                All of the target's hit points, \\glossterm<subdual damage>, and \\glossterm<vital damage> are healed.
                 In addition, any of the target's severed body parts or missing organs grow back by the end of the next round.
             """,
             tags=['Flesh'],
