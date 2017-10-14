@@ -1264,11 +1264,11 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Fighter Progression}
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\lcol}X}
             \tb{Level} & \tb{Abilities} \\\bottomrule
-            \nth{1}     & Disciplined warrior, martial exertion, weapon adaptation
-            \\ \nth{2}  & Armored agility
+            \nth{1}     & Armored agility, disciplined warrior, martial exertion
+            \\ \nth{2}  & Weapon focus
             \\ \nth{3}  & Martial lore
             \\ \nth{4}  & Discipline
-            \\ \nth{5}  & Weapon focus
+            \\ \nth{5}  & Armored juggernaut
             \\ \nth{6}  & Martial exertion
             \\ \nth{7}  & Focused recovery
             \\ \nth{8}  & Greater armored agility
@@ -1283,7 +1283,7 @@ This choice determines a great deal about your character's abilities.
             \\ \nth{17} & Greater weapon focus
             \\ \nth{18} & Martial exertion
             \\ \nth{19} & Greater disciplined warrior
-            \\ \nth{20} & Armored juggernaut, legendary discipline
+            \\ \nth{20} & Greater armored juggernaut, legendary discipline
         \end{dtabularx}
     \end{dtable}
 
@@ -1435,33 +1435,36 @@ This choice determines a great deal about your character's abilities.
         You learn an additional \textit{martial exertion}.
 
     \subsection{Equipment Training}
-        \cf{Ftr}{Weapon Adaptation}
-        If you spend an hour training with a weapon, you become proficient with that weapon's weapon group.
-        You can only be proficient with one additional weapon group in this way at a time.
+        \cf{Ftr}{Armored Agility}
+        You reduce the \glossterm{encumbrance penalty} of body armor you wear by 1.
+
+        \cf{Ftr}[2]{Weapon Focus}
+        If you spend an hour training with a weapon, you can use this ability.
+        If you do, you gain a \plus1 bonus to \glossterm{accuracy} with attacks using weapons from that group.
+        In addition, you gain proficinecy with one \glossterm{weapon group} that weapon belongs to.
         This does not grant you proficiency with \glossterm{exotic weapons} from that group.
 
-        \cf{Ftr}[2]{Armored Agility}
-        You reduce the \glossterm{encumbrance penalty} of body armor you wear by 2.
+        You may only use this ability to focus on one weapon group at a time.
+        If you use this ability again, you lose its benefits with the other weapon group.
 
-        \cf{Ftr}[5]{Weapon Focus} 
-        When you use your \textit{weapon adaptation} ability to gain proficiency with a weapon group, you gain a \plus1 bonus to \glossterm{accuracy} with attacks using weapons from that group.
-        You can train with a weapon from a weapon group you are already proficient with to apply this ability to weapons from that group.
+        \cf{Ftr}[5]{Armored Juggernaut}
+        You gain a \plus1 bonus to Armor defense while wearing \glossterm{body armor}.
 
         \cf{Ftr}[8]{Greater Armored Agility}
-        The reduction of body armor's encumbrance penalty from your \textit{armored agility} ability increases to 3.
-        In addition, you treat it were one encumbrance category lighter than normal whenever doing so would be beneficial for you.
+        The penalty reduction from your \textit{armored agility} ability increases to 2.
+        In addition, you treat body armor were one encumbrance category lighter than normal whenever doing so would be beneficial for you.
 
         \cf{Ftr}[11]{Weapon Master} 
         You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks}.
 
-        \cf{Ftr}[14]{Supreme Armored Expertise}
-        The reduction of body armor's encumbrance penalty from your \textit{armored agility} ability increases to 4.
-        In addition, you treat it as if it were an additional encumbrance category lighter than normal whenever doing so would be beneficical for you.
+        \cf{Ftr}[14]{Supreme Armored Agility}
+        The penalty reduction from your \textit{armored agility} ability increases to 3.
+        In addition, you treat body armor as if it were an additional encumbrance category lighter than normal whenever doing so would be beneficical for you.
 
         \cf{Ftr}[17]{Greater Weapon Focus} 
         Your bonus to accuracy from your \textit{weapon focus} ability increases to \plus2.
 
-        \cf{Ftr}[20]{Armored Juggernaut}
+        \cf{Ftr}[20]{Greater Armored Juggernaut}
         You gain a \plus1 bonus to all defenses while you are wearing body armor.
 
     \subsection{Combat Discipline}
