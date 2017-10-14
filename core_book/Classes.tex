@@ -63,20 +63,20 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Barbarian Progression}
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\lcol}X}
             \tb{Level} & \tb{Abilities} \\\bottomrule
-            \nth{1}     & Rage, primal exertion
+            \nth{1}     & Agile defense, primal exertion, rage
             \\ \nth{2}  & Battle-scarred
             \\ \nth{3}  & Athletic prowess
             \\ \nth{4}  & Blood frenzy
             \\ \nth{5}  & Uncanny dodge
             \\ \nth{6}  & Primal exertion
             \\ \nth{7}  & Frenzied assault
-            \\ \nth{8}  & Deep scars
+            \\ \nth{8}  & Soulscarred
             \\ \nth{9}  & Athletic prowess
             \\ \nth{10} & Mindless rage
             \\ \nth{11} & Greater uncanny dodge
             \\ \nth{12} & Primal exertion
             \\ \nth{13} & Greater blood frenzy
-            \\ \nth{14} & Rapid recovery
+            \\ \nth{14} & Greater agile defense
             \\ \nth{15} & Primal prowess
             \\ \nth{16} & Greater mindless rage
             \\ \nth{17} & Uncanny whirlwind
@@ -269,6 +269,8 @@ This choice determines a great deal about your character's abilities.
         You learn an additional \textit{primal exertion}.
 
     \subsection{Battleforged Resilience}
+        \cf{Bbn}{Agile Defense} You gain a \plus1 bonus to Armor defense while not \glossterm{encumbered}.
+
         \cf{Bbn}[2]{Battle-Scarred} You gain \glossterm{damage reduction} equal to your level against damage from \glossterm{physical attacks}.
 
         \cf{Bbn}[5]{Uncanny Dodge} You can react to danger before your senses would normally allow you to do so.
@@ -276,13 +278,13 @@ This choice determines a great deal about your character's abilities.
         If your overwhelm penalties are reduced to 0, you are not considered to be overwhelmed.
         In addition, you are not \unaware when attacked by surprise.
 
-        \cf{Bbn}[8]{Deep Scars} Your \glossterm{damage reduction} from your \textit{battle-scarred} ability applies against all damage, not just damage from physical attacks.
+        \cf{Bbn}[8]{Soulscarred} The \glossterm{damage reduction} from your \textit{battle-scarred} ability applies against all damage, not just damage from physical attacks.
 
         \cf{Bbn}[11]{Greater Uncanny Dodge}
         Your reduction of \glossterm{overwhelm penalties} from the \textit{uncanny dodge} ability increases to 2.
 
-        \cf{Bbn}[14]{Rapid Recovery}
-        At the end of each \glossterm{action phase}, you heal hit points equal to your level.
+        \cf{Bbn}[14]{Greater Agile Defense}
+        The defense bonus from your \textit{agile defense} ability increases to \plus2.
 
         \cf{Bbn}[17]{Uncanny Whirlwind}
         Your reduction of overwhelm penalties from the \textit{uncanny dodge} ability increases to 4.
@@ -300,9 +302,9 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Cleric Progression}
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{2em} c c >{\lcol}X}
             \tb{Level} & \tb{Spells} & \tb{Subspells} & \tb{Abilities} \\\bottomrule
-            \nth{1}     & 2 & \tdash   & Domain gift, rituals, spells
-            \\ \nth{2}  & 2 & \tdash   & Spell point
-            \\ \nth{3}  & 3 & \tdash   & Domain gift, spell knowledge
+            \nth{1}     & 2 & \tdash   & Domain gift, rituals, spell point, spells
+            \\ \nth{2}  & 2 & \tdash   & Spell knowledge
+            \\ \nth{3}  & 3 & \tdash   & Domain gift
             \\ \nth{4}  & 3 & 2        & \tdash
             \\ \nth{5}  & 3 & 2        & Domain aspect
             \\ \nth{6}  & 3 & 3        & Augments
@@ -493,12 +495,12 @@ This choice determines a great deal about your character's abilities.
     \subsection{Divine Spell Mastery}
         You must have the ability to cast divine spells to gain these abilities.
 
-        \cf{Clr}[2]{Spell Point}
+        \cf{Clr}{Spell Point}
         You gain a spell point.
         A spell point can be spent to cast spells in place of an action point.
         You recover all spent spell points after a \glossterm{short rest}.
 
-        \cf{Clr}[3]{Spell Knowledge}
+        \cf{Clr}[2]{Spell Knowledge}
         You learn an additional divine spell (see \pcref{Divine Spells}).
 
         \cf{Clr}[4]{Subspells}
@@ -763,10 +765,9 @@ This choice determines a great deal about your character's abilities.
         \subsubsection{Strength}
             \parhead{Gift} You add Climb, Jump, and Swim to your cleric class skill list.
             In addition, you gain two skill points which must be spent on any combination of those skills.
-            \parhead{Aspect} You may use your Strength to determine your \textit{divine power} in place of your Willpower.
+            \parhead{Aspect} You reduce the \glossterm{encumbrance penalty} of body armor you wear by 2.
             \parhead{Essence} You gain a \plus5 bonus to Strength for the purpose of checks and determining your carrying capacity.
             \parhead{Mastery} You gain a \plus1 bonus to your starting Strength.
-            If this would increase your starting Strength above 4, you simply gain a \plus1 bonus to your Strength.
 
         \subsubsection{Travel}
             \parhead{Gift} You add Knowledge (geography), Survival, and Swim to your cleric class skill list.
@@ -866,9 +867,9 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Druid Progression}
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\ccol}p{3.5em} c >{\lcol}X}
             \tb{Level} & \tb{Spells} & \tb{Subspells} & \tb{Abilities} \\\bottomrule
-            \nth{1}     & 2 & \tdash   & Rituals, spells, wild speech
-            \\ \nth{2}  & 2 & \tdash   & Natural lore, spell point
-            \\ \nth{3}  & 2 & \tdash   & Spell knowledge, wild aspect
+            \nth{1}     & 2 & \tdash   & Rituals, spell point, spells, wild speech
+            \\ \nth{2}  & 2 & \tdash   & Natural lore, spell knowledge
+            \\ \nth{3}  & 2 & \tdash   & Wild aspect
             \\ \nth{4}  & 2 & 2        & \tdash
             \\ \nth{5}  & 3 & 2        & Natural vigor
             \\ \nth{6}  & 3 & 3        & Augment
@@ -1131,12 +1132,12 @@ This choice determines a great deal about your character's abilities.
     \subsection{Nature Spell Mastery}
         You must have the ability to cast nature spells to gain these abilities.
 
-        \cf{Drd}[2]{Spell Point}
+        \cf{Drd}{Spell Point}
         You gain a spell point.
         A spell point can be spent to cast spells in place of an action point.
         You recover all spent spell points after a \glossterm{short rest}.
 
-        \cf{Drd}[3]{Spell Knowledge} 
+        \cf{Drd}[2]{Spell Knowledge} 
         You learn an additional nature spell (see \pcref{Nature Spells}).
 
         \cf{Drd}[4]{Subspells}
@@ -1439,22 +1440,21 @@ This choice determines a great deal about your character's abilities.
         You can only be proficient with one additional weapon group in this way at a time.
 
         \cf{Ftr}[2]{Armored Agility}
-        You treat body armor you wear as less encumbering.
-        You reduce its \glossterm{encumbrance penalty} by 2.
+        You reduce the \glossterm{encumbrance penalty} of body armor you wear by 2.
 
         \cf{Ftr}[5]{Weapon Focus} 
         When you use your \textit{weapon adaptation} ability to gain proficiency with a weapon group, you gain a \plus1 bonus to \glossterm{accuracy} with attacks using weapons from that group.
         You can train with a weapon from a weapon group you are already proficient with to apply this ability to weapons from that group.
 
         \cf{Ftr}[8]{Greater Armored Agility}
-        The reduction of body armor's encumbrance penalty from your \textit{armored agility} ability increases to 4.
+        The reduction of body armor's encumbrance penalty from your \textit{armored agility} ability increases to 3.
         In addition, you treat it were one encumbrance category lighter than normal whenever doing so would be beneficial for you.
 
         \cf{Ftr}[11]{Weapon Master} 
         You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks}.
 
         \cf{Ftr}[14]{Supreme Armored Expertise}
-        The reduction of body armor's encumbrance penalty from your \textit{armored agility} ability increases to 6.
+        The reduction of body armor's encumbrance penalty from your \textit{armored agility} ability increases to 4.
         In addition, you treat it as if it were an additional encumbrance category lighter than normal whenever doing so would be beneficical for you.
 
         \cf{Ftr}[17]{Greater Weapon Focus} 
@@ -1501,7 +1501,7 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Mage Progression}
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{2em} c c >{\lcol}X}
             \tb{Level} & \tb{Spells} & \tb{Subspells} & \tb{Abilities} \\\bottomrule
-            \nth{1}     & 2 & \tdash   & Arcane essence, rituals, spells
+            \nth{1}     & 2 & \tdash   & Mage armor, rituals, spell point, spells
             \\ \nth{2}  & 3 & \tdash   & Spell knowledge, spell point
             \\ \nth{3}  & 4 & \tdash   & Arcane insight, spell knowledge
             \\ \nth{4}  & 4 & 2        & \tdash
@@ -1593,8 +1593,11 @@ This choice determines a great deal about your character's abilities.
     \subsection{Arcane Lore}
         You must have the ability to cast arcane spells to gain these abilities.
 
-        \cf*{Mge}[2]{Spell Knowledge} 
-        You learn an additional spell from the arcane \glossterm{spell list} (see \pcref{Arcane Spells}).
+        \cf{Mge}{Mage Armor} As a standard action, you can use this ability.
+        If you do, you create a translucent suit of magical armor on your body.
+        This functions like body armor that provides a \plus2 bonus to Armor defense and has no \glossterm{encumbrance penalty}.
+        You cannot wear it alongside other armor.
+        This ability lasts until you \glossterm{dismiss} it as a free action.
 
         \cf{Mge}[3]{Arcane Insight} 
         You gain a greater understanding of magic.
@@ -1610,7 +1613,7 @@ This choice determines a great deal about your character's abilities.
                 If you would miscast it, the spell simply fails without effect.
                 In addition, you automatically succeeds at all Concentration checks you make to cast the spell.
                 \par If you choose this insight multiple times, you must choose a different spell each time.
-            \item Specialization: Choose a school of magic.
+            \item Specialization: Choose a school of magic that you know a spell from.
                 You learn an additional spell from that school of magic.
                 In exchange, you must ban two other schools of magic.
                 You can never learn or cast spells or rituals from your banned schools.
@@ -1686,12 +1689,12 @@ This choice determines a great deal about your character's abilities.
     \subsection{Arcane Spell Mastery}
         You must have the ability to cast arcane spells to gain these abilities.
 
-        \cf{Mge}[2]{Spell Point}
+        \cf{Mge}{Spell Point}
         You gain a spell point.
         A spell point can be spent to cast spells in place of an action point.
         You recover all spent spell points after a \glossterm{short rest}.
 
-        \cf{Mge}[3]{Spell Knowledge} 
+        \cf{Mge}[2]{Spell Knowledge} 
         You learn an additional spell from the arcane \glossterm{spell list} (see \pcref{Arcane Spells}).
 
         \cf{Mge}[4]{Subspells}
@@ -1699,14 +1702,13 @@ This choice determines a great deal about your character's abilities.
         You can use those subspells when you cast those spells (see \pcref{Subspells}).
         At 6th level, and every two levels thereafter, you learn an additional subspell for an arcane spell you know.
 
-
 \section{Monk}\label{Monk}
     \begin{dtable}
         \lcaption{Monk Progression}
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\lcol}X}
             \tb{Level} & \tb{Abilities} \\\bottomrule
-            \nth{1}     & Ki manifestation, unarmed warrior, unfettered defense
-            \\ \nth{2}  & Meditate, unfettered athletics
+            \nth{1}     & Ki manifestation, meditate, unarmed warrior, unfettered defense
+            \\ \nth{2}  & Unfettered athletics
             \\ \nth{3}  & Ki vessel
             \\ \nth{4}  & Sage lore
             \\ \nth{5}  & Intuitive reaction
@@ -1921,7 +1923,7 @@ This choice determines a great deal about your character's abilities.
 
     \subsection{Transcendent Sage}
 
-        \cf{Mnk}[2]{Meditate} As a standard action, you can use this ability.
+        \cf{Mnk}{Meditate} As a standard action, you can use this ability.
         If you do, you may remove all \glossterm{conditions} affecting you.
 
         \cf{Mnk}[4]{Sage Lore} You gain two additional skill points that must be spent on monk class skills.
@@ -1961,25 +1963,25 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} c >{\lcol}X}
             \tb{Level} & \tb{Spells} & \tb{Abilities} \\
             \bottomrule
-            \nth{1}     & 2 & Smite, spells
-            \\ \nth{2}  & 2 & Spell point
-            \\ \nth{3}  & 2 & Enduring smite
-            \\ \nth{4}  & 2 & Lay on hands
+            \nth{1}     & 2 & Lay on hands, smite, spells
+            \\ \nth{2}  & 2 & Unfaltering zeal
+            \\ \nth{3}  & 2 & Cleansing touch
+            \\ \nth{4}  & 2 & Zealous offense
             \\ \nth{5}  & 2 & Aligned aura
             \\ \nth{6}  & 2 & Augments
-            \\ \nth{7}  & 2 & Unfaltering zeal
-            \\ \nth{8}  & 3 & Unbending devotion
+            \\ \nth{7}  & 2 & Unbending devotion
+            \\ \nth{8}  & 3 & Unfaltering warrior
             \\ \nth{9}  & 3 & Expanded aura
-            \\ \nth{10} & 3 & Augment
-            \\ \nth{11} & 3 & Pass judgment
-            \\ \nth{12} & 3 & Greater lay on hands
+            \\ \nth{10} & 3 & Augment, pass judgment
+            \\ \nth{11} & 3 & Greater lay on hands
+            \\ \nth{12} & 3 & Greater smite
             \\ \nth{13} & 3 & Greater aligned aura
             \\ \nth{14} & 3 & Augment
-            \\ \nth{15} & 3 & Greater enduring smite
-            \\ \nth{16} & 3 & Spell point
+            \\ \nth{15} & 3 & Greater cleansing touch
+            \\ \nth{16} & 3 & Greater zealous offense, spell point
             \\ \nth{17} & 3 & Greater unbending devotion
-            \\ \nth{18} & 3 &
-            \\ \nth{19} & 3 & Greater unfaltering zeal
+            \\ \nth{18} & 3 & Stalwart champion
+            \\ \nth{19} & 3 & Greater expanded aura
             \\ \nth{20} & 3 & Aligned soul
         \end{dtabularx}
     \end{dtable}
@@ -2022,12 +2024,7 @@ This choice determines a great deal about your character's abilities.
 
     \subsection{Devoted Paragon}
 
-        \cf{Pal}[2]{Spell Point}
-        You gain a spell point.
-        A spell point can be spent to cast spells in place of an action point.
-        You recover all spent spell points after a \glossterm{short rest}.
-
-        \cf{Pal}[4]{Lay on Hands}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
+        \cf{Pal}{Lay on Hands}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
         Your \glossterm{power} with this ability is equal to your \textit{devotion power}.
         \begin{ability}
             \begin{spelltargetinginfo}
@@ -2035,9 +2032,10 @@ This choice determines a great deal about your character's abilities.
             \end{spelltargetinginfo}
             \begin{spelleffects}
                 \spelleffect The target is healed for hit points equal to \glossterm{standard damage} \plus1d.
-                In addition, you may remove one \glossterm{condition} from the target.
             \end{spelleffects}
         \end{ability}
+
+        \cf{Pal}[3]{Cleansing Touch} When you use your \textit{lay on hands} ability, the target can also remove one \glossterm{condition}.
 
         \cf{Pal}[5]{Aligned Aura}[Magical]
         Your devotion to your alignment affects the world around you, bringing it closer to your ideals.
@@ -2053,15 +2051,14 @@ This choice determines a great deal about your character's abilities.
         The protected creature takes the remaining half of the damage, and suffers any non-damaging effects of the attack normally.
         \subparhead{Law} Whenever you or an ally in the area rolls a 1 on an attack roll when making a \glossterm{strike}, the attack roll is treated as a 6.
 
-        \cf{Pal}[8]{Unbending Devotion}[Magical]
+        \cf{Pal}[7]{Unbending Devotion}[Magical]
         You are immune to \glossterm{Mind} \glossterm{conditions}.
 
         \cf{Pal}[9]{Expanded Aura}
-        The area of your \textit{aligned aura} becomes a \arealarge radius \glossterm{emanation} from you.
+        The area of your \textit{aligned aura} ability increases to \arealarge.
 
-        \cf{Pal}[12]{Greater Lay on Hands} 
+        \cf{Pal}[11]{Greater Lay on Hands} 
         You gain a \plus1d bonus to the healing from your \textit{lay on hands} ability.
-        In addition, you can remove any number of conditions with that ability, rather than only one.
 
         \cf{Pal}[13]{Greater Aligned Aura}[Magical]
         The effect of your \textit{aligned aura} becomes stronger based on your devoted alignment.
@@ -2071,8 +2068,12 @@ This choice determines a great deal about your character's abilities.
         \subparhead{Good} When you redirect damage from an ally with this aura, you can redirect all effects of the attack to you instead of only half the damage.
         \subparhead{Law} Whenever an enemy in the area rolls a 10 on an attack roll when making a \glossterm{strike}, the attack roll is treated as a 6.
 
+        \cf{Pal}[15]{Greater Cleansing Touch} When you use your \textit{lay on hands} ability, the target can remove any number of conditions, not just one.
+
         \cf{Pal}[17]{Greater Unbending Devotion}
         You are immune to all hostile \glossterm{Mind} effects.
+
+        \cf{Pal}[19]{Greater Expanded Aura} The area of your \textit{aligned aura} ability increases to \areahuge.
 
         \cf{Pal}[20]{Aligned Soul}[Magical]
         While you are dead, you may approach the deity or governing figure of your afterlife and request to be returned to life to continue your mission.
@@ -2116,43 +2117,34 @@ This choice determines a great deal about your character's abilities.
 
     \subsection{Zealous Warrior}
         \cf{Pal}{Smite}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
-        \begin{ability}
-            \begin{spelleffects}
-                \spelleffect You make a \glossterm{strike}.
-                If your target shares your devoted alignment, the strike deals no damage.
-                Otherwise, the strike gains a \plus1d bonus to \glossterm{strike damage}, and you regain the action point spent to use this ability.
-            \end{spelleffects}
-        \end{ability}
+        If you do, make a \glossterm{strike}.
+        If your target shares your devoted alignment, the strike deals no damage.
+        Otherwise, the strike gains a \plus1d bonus to \glossterm{strike damage}, and you regain the action point spent to use this ability.
 
-        \cf{Pal}[3]{Zealous Offense}[Magical]
-        If you deal damage to a creature with your \textit{smite} ability, you gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks} against that creature.
-        This effect lasts until you take a \glossterm{short rest}.
+        \cf{Pal}[2]{Unfaltering Zeal}
+        You gain a \plus1 bonus to Fortitude and Mental defense.
 
-        \cf{Pal}[7]{Unfaltering Zeal}
-        You gain a \plus1 bonus to Fortitude, Reflex, and Mental defense.
+        \cf{Pal}[4]{Zealous Offense}[Magical]
+        You gain a \plus1 bonus to \glossterm{accuracy} against creatures with an alignment opposed to your \textit{devoted alignment}.
 
-        \cf{Pal}[11]{Pass Judgment}[Magical] As a \glossterm{minor action}, you can spend an \glossterm{action point} to use this ability.
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spellquicktargeting{One creature}{\rngmed}
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \spelleffect For the purpose of all spells and effects, the target is treated as if it had the alignment opposed to your devoted alignment.
-                This only affects its alignment along the alignment axis your devoted alignment is on.
-                For example, if your devoted alignment was evil, a chaotic neutral target would be treated as chaotic good.
-                In addition, the target is treated as if you had smited it for the purpose of the \textit{zealous offense} ability and similar effects.
+        \cf{Pal}[8]{Unfaltering Warrior} You gain a \plus1 bonus to Armor defense.
 
-                You can use this ability to do battle against foes who share your alignment, but you should exercise caution in doing so.
-                Persecution of allies can lead you to fall and become an ex-paladin.
-                \spelldur{Attunement}
-            \end{spelleffects}
-        \end{ability}
+        \cf{Pal}[10]{Pass Judgment}[Magical] Whenever you use your \textit{smite} ability, you can spend an additional \glossterm{action point} to use this ability.
+        If you do, the target of your strike the target is treated as if it had the alignment opposed to your devoted alignment for all spells and effects, including for your \textit{smite}.
+        This only affects its alignment along the alignment axis your devoted alignment is on.
+        For example, if your devoted alignment was evil, a chaotic neutral target would be treated as chaotic good.
+        This effect lasts as long as you \glossterm{attune} to it.
 
-        \cf{Pal}[15]{Greater Zealous Offense}[Magical]
+        You can use this ability to do battle against foes who share your alignment, but you should exercise caution in doing so.
+        Persecution of allies can lead you to fall and become an ex-paladin.
+
+        \cf{Pal}[12]{Greater Smite} The damage bonus from your \textit{smite} ability increases to \plus2d.
+
+        \cf{Pal}[16]{Greater Zealous Offense}[Magical]
         The accuracy bonus from your \textit{zealous offense} ability increases to \plus2.
 
-        \cf{Pal}[19]{Greater Unfaltering Zeal}
-        The bonus to defenses from your \textit{unfaltering zeal} ability increases to \plus2.
+        \cf{Pal}[18]{Stalwart Champion}
+        The bonus to defenses from your \textit{unfaltering zeal} and \textit{unfaltering warrior} abilities increase to \plus2.
 
         % TODO: Doesn't work with new spell system
         % \cf{Pal}[20]{Martyr's Retribution}[Mag]
