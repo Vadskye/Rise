@@ -1438,7 +1438,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Ftr}[2]{Weapon Focus}
         If you spend an hour training with a weapon, you can use this ability.
         If you do, you gain a \plus1 bonus to \glossterm{accuracy} with attacks using weapons from that group.
-        In addition, you gain proficinecy with one \glossterm{weapon group} that weapon belongs to.
+        In addition, you gain proficiency with one \glossterm{weapon group} that weapon belongs to.
         This does not grant you proficiency with \glossterm{exotic weapons} from that group.
 
         You may only use this ability to focus on one weapon group at a time.
@@ -1463,8 +1463,8 @@ This choice determines a great deal about your character's abilities.
 
     \subsection{Combat Discipline}
 
-        \cf{Ftr}{Disciplined Warrior}
-        You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks}.
+        \cf{Ftr}{Disciplined Defense}
+        You gain a \plus1 bonus to Armor defense.
 
         \cf{Ftr}[4]{Discipline} As a \glossterm{minor action}, you can spend an \glossterm{action point} to use this ability.
         \begin{ability}
@@ -1488,8 +1488,8 @@ This choice determines a great deal about your character's abilities.
         The bonus to healing from your \textit{focused recovery} ability increases to \plus2d.
         In addition, when you use the \textit{recover} ability, you can remove any number of \glossterm{sustained} effects on you instead of removing a condition.
 
-        \cf{Ftr}[19]{Greater Disciplined Warrior}
-        The accuracy bonus from your \textit{disciplined warrior} ability increases to \plus2.
+        \cf{Ftr}[19]{Greater Disciplined Defense}
+        The defense bonus from your \textit{disciplined defense} ability increases to \plus2.
 
         \cf{Ftr}[20]{Legendary Discipline} 
         You are immune to all \glossterm{conditions}.
@@ -1705,7 +1705,7 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Monk Progression}
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\lcol}X}
             \tb{Level} & \tb{Abilities} \\\bottomrule
-            \nth{1}     & Ki manifestation, meditate, unarmed warrior, unfettered defense
+            \nth{1}     & Ki manifestation, serene strike, unarmed warrior, unfettered defense
             \\ \nth{2}  & Unfettered athletics
             \\ \nth{3}  & Ki vessel
             \\ \nth{4}  & Sage lore
@@ -1714,7 +1714,7 @@ This choice determines a great deal about your character's abilities.
             \\ \nth{7}  & Transcend frailty
             \\ \nth{8}  & Unfettered athletics
             \\ \nth{9}  & Dual manifestation
-            \\ \nth{10} & Meditative strike
+            \\ \nth{10} & Greater serene strike
             \\ \nth{11} & Greater intuitive reaction
             \\ \nth{12} & Ki manifestation
             \\ \nth{13} & Transcend flesh
@@ -1920,15 +1920,16 @@ This choice determines a great deal about your character's abilities.
 
     \subsection{Transcendent Sage}
 
-        \cf{Mnk}{Meditate} As a standard action, you can use this ability.
-        If you do, you may remove all \glossterm{conditions} affecting you.
+        \cf{Mnk}{Serene Strike} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        If you do, you may remove one \glossterm{condition} affecting you.
+        If you use this ability during the \glossterm{action phase}, you may also make a \glossterm{strike} during the \glossterm{delayed action phase}.
 
         \cf{Mnk}[4]{Sage Lore} You gain two additional skill points that must be spent on monk class skills.
 
         \cf{Mnk}[7]{Transcend Frailty}
         You are immune to being \glossterm{deafened}, \glossterm{fatigued}, and \glossterm{sickened}.
 
-        \cf{Mnk}[10]{Meditative Strike} If you use your \textit{meditate} ability during the \glossterm{action phase}, you may also make a \glossterm{strike} during the \glossterm{delayed action phase}.
+        \cf{Mnk}[10]{Greater Serene Strike} You gain a \plus1d bonus to damage with the strike from your \textit{serene strike} ability.
 
         \cf{Mnk}[13]{Transcend Flesh}
         You are immune to being \glossterm{blinded}, \glossterm{exhausted}, and \glossterm{nauseated}.
@@ -2389,7 +2390,8 @@ This choice determines a great deal about your character's abilities.
             \par At 16th level, the damage reduction increases to be equal to your level.
 
             \subcf{Decoy}
-            If you \glossterm{threaten} the quarry, it takes a \minus2 penalty to accuracy on attacks against members of your \glossterm{hunting party} other than you.
+            Your \textit{quarry} ability does not grant a bonus to accuracy.
+            Instead, if you \glossterm{threaten} the quarry, it takes a \minus2 penalty to accuracy on attacks against members of your \glossterm{hunting party} other than you.
             \par At 10th level, this penalty increases to \minus3.
             \par At 16th level, this penalty increases to \minus4.
 
