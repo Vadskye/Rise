@@ -1,6 +1,22 @@
 #!/usr/bin/env python3
 
 import click
+from generation.monster import Monster
+from generation.util import latexify
+
+def generate_monsters():
+    monsters = []
+    monsters.append(Monster(
+        name='Bear',
+        level=3,
+        name_suffix='Black',
+    ))
+
+    return monsters
+
+
+def sanity_check(monsters):
+    pass
 
 
 @click.command()
@@ -10,21 +26,22 @@ def main(output, check):
     monsters = generate_monsters()
     if check:
         sanity_check(monsters)
-    spell_texts = []
-    for spell in spells:
+    monster_texts = []
+    for monster in monsters:
         try:
-            spell_texts.append(spell.to_latex())
+            monster_texts.append(monster.to_latex())
         except Exception as e:
-            raise Exception(f"Error converting spell '{spell.name}' to LaTeX") from e
-    spell_text = latexify("""
-        \\section<Spell Descriptions>
+            raise Exception(f"Error converting monster '{monster.name}' to LaTeX") from e
+    monster_texts = latexify("""
+        \\chapter<Monsters>
+        \\section<Monster Descriptions>
         {}
-    """.format('\n'.join(spell_texts)))
+    """.format('\n'.join(monster_texts)))
     if output is None:
-        print(spell_text)
+        print(monster_texts)
     else:
         with open(output, 'w') as of:
-            of.write(spell_text)
+            of.write(monster_texts)
 
 
 if __name__ == "__main__":
