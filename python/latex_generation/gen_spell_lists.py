@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
 import click
-from gen_spell_descriptions import generate_spells
+from latex_generation.gen_spell_descriptions import generate_spells
 from latex.rise_data import spell_sources
 from latex.util import latexify
-from gen_ritual_descriptions import generate_rituals
+from latex_generation.gen_ritual_descriptions import generate_rituals
 
 def by_source(spells):
     spells_by_source = {source: [] for source in spell_sources}
