@@ -132,7 +132,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         You can only shield one creature in this way at a time.
         If you shield another creature, all previous shields are dismissed when the new shield takes effect.
 
-        \ff[3]{Counterspell} Whenever you cast a spell, you can choose to cast it as a counterspell instead.
+        \ff[3]{Counterspell} Whenever you cast a spell, you can use this ability.
         If you do, your spell has no effect when it resolves.
         Instead, choose a creature within \rngmed range of you when you use this ability.
         If that creature is casting a spell, and your maximum spell level with abjuration spells at least as high as their spell's level, their spell has no effect when it resolves.
@@ -143,7 +143,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[7]{Magic Against Magic} You gain a \plus2 bonus to accuracy with the \spell{antimagic} spell.
         In addition, your maximum spell level is increased by one for the purpose of determining which spells you can counter with your \textit{counterspell} ability.
 
-        \ff[9]{Reactive Counterspell} While you are casting a spell, at any time before it resolves, you can take an \glossterm{immediate action} to turn that spell into a counterspell.
+        \ff[9]{Delayed Counterspell} At the start of the \glossterm{delayed action phase}, if you are casting a spell, you can use your \textit{counterspell} ability on that spell.
 
         \ff[11]{Potent Shield} The damage reduction granted by your \textit{ablative shield} ability increases to be equal to your spellpower.
 
@@ -226,31 +226,30 @@ Feats can be used to specialize your character particular area, to grant your ch
         \featpre Monk, starting Constitution of 2.
         \parhead{Benefits}
 
-        \ff{Absorb Energy} Whenever you would take \glossterm{energy damage}, you can take an \glossterm{immediate action} to channel the energy into your body.
-        If you do, you gain damage reduction equal to your \ki power against that attack.
+        \ff{Resist Energy} You gain \glossterm{damage reduction} against \glossterm{energy damage} equal to your monk \textit{ki power}.
 
-        \ff[3]{Channel Energy} At the end of each round, if you reduced damage with your \textit{absorb energy} ability, you can channel that energy into your weapons.
+        \ff[3]{Channel Energy} At the end of each round, if you reduced damage with your \textit{resist energy} ability that round, you can channel that energy into your weapons.
         If you do, choose a damage type that you reduced this round with that ability.
-        All damage you deal with your weapons gains that damage type until the end of the next round.
+        All damage you deal with \glossterm{strikes} gains that damage type until the end of the next round.
 
-        \ff[5]{Energetic Unity} You can use \textit{absorb energy} to reduce any damage you take that is not from a \glossterm{physical attack}, instead of only energy damage.
+        \ff[5]{Energetic Might} Choose a type of \glossterm{energy}: cold, electricity, fire, or sonic.
+        You gain a \plus1d bonus to damage with attacks that deal damage of that type that is measured in dice.
 
-        \ff[7]{Channel Power} While you are channeling energy with your \textit{channel energy} ability, you deal \plus1d damage with your weapons.
+        \ff[7]{Energetic Unity} The damage reduction from your \textit{resist energy} ability applies against all damage from all \glossterm{magical} attacks.
 
-        \ff[9]{Sustained Channeling} You can sustain your \textit{channel energy} ability as a minor action.
+        \ff[9]{Sustained Channeling} You can sustain your \textit{channel energy} ability as a \glossterm{minor action}.
 
-        \ff[11]{Greater Absorb Energy} You increase the damage reduction to twice your \ki power.
+        \ff[11]{Myriad Energetic Might} The damage bonus from your \textit{energetic might} ability applies to damage from all energy types.
 
-        \ff[13]{Kinetic Absorption} You can use \textit{absorb energy} to reduce any damage you take.
+        \ff[13]{Greater Resist Energy} The damage reduction from your \textit{resist energy} ability increases to be equal to twice your \ki power.
 
-        \ff[15]{Greater Channel Power} You increase your damage bonus with your weapons to \plus2d.
-
-        \ff[17]{Attuned Channeling} When you use your \textit{channel energy} ability, you can spend an \glossterm{action point}.
+        \ff[15]{Attuned Channeling} When you use your \textit{channel energy} ability, you can spend an \glossterm{action point}.
         If you do, you \glossterm{attune} to the ability, causing it to last as long as you stay attuned to it.
         For details, see \pcref{Attunement}.
 
-        \ff[19]{Reflexive Absorption} You can use your \textit{greater absorb energy} ability once per round without spending an action.
-        You cannot use it twice to affect the same attack.
+        \ff[17]{Greater Energetic Might} The damage bonus from your \textit{energetic might} ability increases to \plus2d.
+
+        \ff[19]{Kinetic Absorption} The damage reduction from your \textit{resist energy} ability applies to all damage.
     \end{feat}
 
     \begin{feat}{Awareness Specialization}{Skill}
@@ -367,8 +366,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[6]{Attack the Unseen} If you know the location of a creature you cannot see, and you have \glossterm{line of effect} to that creature, you can target it with targeted abilities.
 
-        \ff[8]{Blind Feint} If you are attacked by a creature who incorrectly thinks you are \glossterm{unaware} of the attack, you can take an \glossterm{immediate action} to spend an \glossterm{action point}.
-        If you do, you can immediately make a \glossterm{strike} against that creature.
+        \ff[8]{Blind Feint} Whenever you are attacked by a creature who incorrectly thinks you are \glossterm{unaware} of the attack, you gain a \plus1d bonus to \glossterm{strike damage} against that creature until the end of the next round, including during the current phase.
 
         \ff[10]{Blindsight} You gain \glossterm{blindsight} (50 ft.).
         In addition, the range of your blindsense improves to 200 feet. 
@@ -378,7 +376,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[14]{Greater Blindsight} The range of your blindsight improves to 100 feet.
         In addition, the range of your blindsense improves to 500 feet.
 
-        \ff[16]{Greater Blind Feint} When you use your \textit{blind feint} ability, the target is \glossterm{unaware} of the attack.
+        \ff[16]{Greater Blind Feint} The damage bonus from your \textit{blind feint} ability increases to \plus2d.
 
         \ff[18]{Supreme Sight} The range of your blindsight improves to 200 feet.
         In addition, the range of your blindsense improves to 1,000 feet.
@@ -396,22 +394,18 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[4]{Deceive Magic} Any magical abilities which detect lies are unable to detect lies you speak.
 
-        \ff[6]{Quick Change} You reduce your penalties for using the \textit{disguise creature} ability of the Bluff skill by 5.
-        This means you can create a disguise in 5 minutes at no penalty.
+        \ff[6]{Intuitive Impersonation} When you use the \textit{impersonate} ability of the Bluff skill, you reduce your penalties for not knowing how to act by 2.
 
         % \ff[6]{Deceptive Feint} When you use the \textit{feint} combat maneuver, you can use Bluff in place of your physical accuracy (see \pcref{Feint}).
 
         \ff[8]{Specialization} The bonus to Bluff increases to \plus4.
 
-        \ff[10]{Dual Speech}[Mag] Whenever you speak, you can make a Bluff check to speak in two voices at once.
-        The base DR is 15.
-        Success means you speak the same words with two different vocal patterns, such as tone or accent, though you cannot significantly change the volume.
+        \ff[10]{Dual Speech}[Mag] Whenever you speak, you can spend an \glossterm{action point} to use this ability.
+        If you do, you speak the same words with two different vocal patterns, such as tone or accent, though you cannot significantly change the volume.
         You can freely choose which creatures hear which pattern, treating all creatures you are not aware of as a single group.
-        Failure means you choose one of the vocal patterns and speak in that pattern.
-        Critical failure means the words come out garbled and incomprehensible.
-
-        If you increase the DR by 5, your vocal patterns can be in different languages.
-        If you increase the DR by 10, your vocal patterns can use entirely different words.
+        % TODO: wording
+        This ability has a duration of Sustain (minor).
+        You can freely choose different vocal patterns each round that you sustain this ability.
 
         \ff[12]{Greater Deceive Magic} Whenever you impersonate a creature, if your Bluff check is high enough, magical abilities treat you as if you were that creature.
         % is this DR high enough?
@@ -420,17 +414,11 @@ Feats can be used to specialize your character particular area, to grant your ch
         For example, if you impersonate an undead creature, the \spell{inflict light wounds} spell would heal you.
         This does not grant you any abilities associated with creatures you impersonate.
 
-        \ff[14]{Greater Quick Change} Your penalty reduction for using the \textit{disguise creature} ability of the Bluff skill increases to 10.
-        This means you can create a disguise in 5 rounds at no penalty.
+        \ff[14]{Greater Intuitive Impersonation} The penalty reduction from your \textit{intuitive impersonation} ability increases to 5.
 
         \ff[16]{Greater Specialization} The bonus to Bluff increases to \plus6.
 
-        \ff[18]{Deceive Reality} Whenever you are attacked, after learning whether the attack succeeded or failed, you can spend an \glossterm{action point} as an immediate action.
-        If you do, you can make a Bluff check to pretend the attack affected you differently.
-        The DR is equal to the result of the attack roll.
-        Success means you can choose the result of the attack roll, potentially causing it to miss instead of hitting, or to hit instead of missing.
-        However, you cannot make the attack get a \glossterm{critical miss}.
-        After using this ability, you cannot use it again until you take a \glossterm{short rest}.
+        \ff[18]{Greater Dual Speech} When you use your \textit{dual speech} ability, you can speak entirely different words with your two voices.
     \end{feat}
 
     \begin{feat}{Boongiver}{types}
@@ -677,12 +665,12 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[2]{Sustained Pacify} You can sustain the \textit{pacify} ability from the Creature Handling skill as a minor action, rather than as a standard action (see \pcref{Pacify}).
 
-        \ff[4]{Compressed Training} You can teach a creature a trick with 12 hours of work, split as you choose, rather than in a week of 4 hour sessions (see \pcref{Training Creatures}).
+        \ff[4]{Efficient Training} You can teach a creature a trick with 12 hours of work, split as you choose, rather than in a week of 4 hour sessions (see \pcref{Training Creatures}).
+        In addition, you can train creatures to learn two bonus tricks beyond their normal maximum (see \pcref{Bonus Tricks}).
 
         \ff[6]{Species Tolerance} You reduce Creature Handling DR modifiers for handling non-animals by 2.
 
         \ff[8]{Specialization} The bonus to Creature Handling increases to \plus4.
-        In addition, you can train creatures to learn one bonus trick beyond their normal maximum (see \pcref{Bonus Tricks}).
 
         \ff[10]{Battleforged Training} You can teach a creature the Battleforged trick.
         The DR to train the trick is 20.
@@ -692,6 +680,7 @@ Feats can be used to specialize your character particular area, to grant your ch
             \item It gains a \plus1 bonus to accuracy with all attacks.
             \item It gains a \plus1d bonus to damage with \glossterm{strikes}.
         \end{itemize}
+        In addition, the number of bonus tricks you can teach from your \textit{efficient training} ability increases to four.
 
         \ff[12]{Rapid Pacify} You can use the \textit{pacify} ability from the Creature Handling skill as a minor action, rather than as a standard action.
 
@@ -699,7 +688,6 @@ Feats can be used to specialize your character particular area, to grant your ch
         This usually allows you to ignore penalties for working with non-animals.
 
         \ff[16]{Greater Specialization} The bonus to Creature Handling increases to \plus6.
-        In addition, the number of bonus tricks you can train creatures to learn increases to two.
 
         \ff[18]{Greater Battleforged Training} You can teach a creature that has learned the Battleforged trick the Greater Battleforged trick.
         The DR to train the trick is 30.
@@ -709,6 +697,7 @@ Feats can be used to specialize your character particular area, to grant your ch
             \item It gains a \plus2 bonus to accuracy with all attacks.
             \item It gains a \plus2d bonus to damage with \glossterm{strikes}.
         \end{itemize}
+        In addition, the number of bonus tricks you can teach from your \textit{efficient training} ability increases to six.
     \end{feat}
 
     \begin{feat}{Devices Specialization}{Skill}
@@ -905,33 +894,31 @@ Feats can be used to specialize your character particular area, to grant your ch
         \featpre Starting Dexterity of 1, starting Intelligence of 1.
         \featben
 
-        \ff[1]{Parry} Whenever a creature \glossterm{initiates} a \glossterm{strike} against you, you can take an \glossterm{immediate action} to attempt to parry its attack.
-        If you do, you gain a \plus2 bonus to physical defenses against the attack.
+        \ff[1]{Focused Strike} As a standard action, you can spend an \glossterm{action point} to use this ability.
+        If you do, make a melee \glossterm{strike}.
+        If you are not \glossterm{overwhelmed}, you gain a \plus2d bonus to damage with the strike.
+        If your target is not \glossterm{overwhelmed}, you gain a \plus1d bonus to damage with the strike.
+        These bonuses stack.
 
-        \ff[2]{Defensive Stance} As a \glossterm{minor action}, you can spend an \glossterm{action point} to use this ability.
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spellquicktargeting{One creature}{\rngmed}
-                \spellspecial You can change the target of this ability to a new creature within range as a \glossterm{minor action}.
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \spelleffect You gain a \plus2 bonus to physical defenses against the target.
-                \spelldur Attunement
-                \spellspecial You can remain attuned to this ability after the target becomes invalid (such as if it dies).
-                It provides no benefit without a target, but you can change its target as a minor action without having to use the ability again.
-            \end{spelleffects}
-        \end{ability}
+        \ff[2]{Parry} At the start of each phase, you can choose a creature you can see.
+        If you are wielding a melee weapon, you gain a \plus1 bonus to Armor defense against attacks by that target during that phase.
 
-        \ff[4]{} 
+        \ff[4]{Duel Expertise} You gain a \plus1 bonus to \glossterm{accuracy} with the \textit{disarm} and \textit{feint} abilities (see \pcref{Disarm}).
 
-        \ff[6]{Overwhelm Tolerance} Your \textit{defensive stance} ability prevents you from suffering \glossterm{overwhelm penalties} against attacks from the target creature.
+        \ff[6]{Greater Focused Strike} You gain a \plus1 bonus to \glossterm{accuracy} with your \textit{focused strike} ability.
 
-        \ff[8]{Riposte} Whenever you use your \textit{parry} ability, you can spend an \glossterm{action point}.
-        If you do, you make a \glossterm{strike} against the attacking creature during the same phase.
+        \ff[8]{Focused Parry} You do not suffer \glossterm{overwhelm penalties} against attacks from the target of your \textit{parry} ability.
+        In addition, when you use your \textit{focused strike} ability against that creature, you are not considered to be \glossterm{overwhelmed}.
 
-        \ff[10]{Focused Defense} You gain a \plus1 bonus to physical defenses against attacks you do not suffer \glossterm{overwhelm penalties} on.
+        \ff[10]{Greater Duel Expertise} The accuracy bonus from your \textit{duel expertise} ability increases to \plus2. 
 
-        \ff[14]{Rapid Parry} Once per round, you can \textit{parry} an attack without spending an immediate action.
+        \ff[12]{Supreme Focused Strike} The accuracy bonus from your \textit{greater focused strike} ability increases to \plus2.
+
+        \ff[14]{Riposte} When the target of your \textit{parry} ability attacks you, you gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks} against that creature until the end of the next round.
+
+        \ff[16]{Supreme Duel Expertise} The accuracy bonus from your \textit{duel expertise} ability increases to \plus3. 
+
+        \ff[18]{}
     \end{feat}
 
     \begin{feat}{Eldritch Knight}{General, Spell}
@@ -1142,27 +1129,25 @@ Feats can be used to specialize your character particular area, to grant your ch
         This effet immediately ends if you are \glossterm{defeated} or if you stop being adjacent to the target.
         \subparhead{Critical Hit (Mental)} As above, but the effect does not end if you stop being adjacent to the target.
 
-        \ff[2]{Redirection} Whenever an ally adjacent to you is hit by a \glossterm{strike}, you may use this ability as an \glossterm{immediate action}.
-        If you do, you suffer all effects of the attack in place of the target.
-        Any abilities you have that would make the attack miss or fail have no effect, but your abilities that allow you to reduce or ignore its effects work normally.
-
-        You can learn which attacks hit the target in the current phase before deciding which attack to redirect, but not how much damage they would do (or any other effects they might have).
+        \ff[2]{Protective Strike} If you use the \textit{protect} ability during the \glossterm{action phase}, you can make a \glossterm{strike} during the \glossterm{delayed action phase} (see \pcref{Protect}).
 
         \ff[4]{Defend the Weak} Allies adjacent to you gain a \plus1 bonus to \glossterm{overwhelm resistance}.
 
-        \ff[6]{Expanded Redirection} You can use your \textit{redirection} ability to redirect the effects of any \glossterm{mundane} attack, not just \glossterm{strikes}.
+        \ff[6]{Certain Bind} You gain a \plus1 bonus to accuracy with your \textit{binding strike} ability.
 
-        \ff[8]{Certain Bind} You gain a \plus1 bonus to accuracy with your \textit{binding strike} ability.
+        \ff[8]{Redirection} When you use the \textit{protect} ability, you can spend an \glossterm{action point} to use this ability.
+        If you do, you suffer all effects from \glossterm{strikes} that hit the target in place of the target.
+        Any abilities you have that would make the attack miss or fail have no effect, but your abilities that allow you to reduce or ignore its effects work normally.
 
         \ff[10]{Greater Defend the Weak} The bonus from your \textit{defend the weak} ability increases to \plus2.
 
-        \ff[12]{Martyr's Boon}[Magical] You can use an \glossterm{action point} to use your \textit{redirection} ability on any ally within \rnglong range of you.
+        \ff[12]{Greater Certain Bind} The accuracy bonus with your \textit{binding strike} ability increases to \plus2.
 
-        \ff[14]{Greater Certain Bind} The accuracy bonus with your \textit{binding strike} ability increases to \plus2.
+        \ff[14]{Expanded Redirection} When you use your \textit{redirection} ability, you redirect the effects of all attacks, not just \glossterm{strikes}.
 
         \ff[16]{Supreme Defend the Weak} The bonus from your \textit{defend the weak} ability increases to \plus3.
 
-        \ff[18]{Mystic Redirection}[Magical] You can use your \textit{redirection} ability to redirect the effects of any attack, not just \glossterm{mundane} attacks. 
+        \ff[18]{Supreme Protector}[Magical] When you use the \textit{protect} ability, you may target any number of allies adjacent to you.
     \end{feat}
 
     \begin{feat}{Heal Specialization}{Skill}
@@ -1279,10 +1264,12 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[1]{Lesser Specialization} You gain a \plus2 bonus to Intimidate.
 
-        \ff[2]{Critical Demoralization} If you get a \glossterm{critical hit} when you take the \textit{demoralize} action, the target is \frightened by you instead of being shaken.
-        See \pcref{Demoralize}, for details.
+        \ff[2]{Demoralizing Blow} As a standard action, you can use this ability.
+        If you do, make a \glossterm{strike}.
+        If you deal damage to the target, you can immediately use the \textit{demoralize} ability on the target (see \pcref{Demoralize}).
 
-        \ff[6]{Demoralizing Blow} Whenever you deal damage to a creature, you can spend an \glossterm{action point} to use the \textit{demoralize} ability as an \glossterm{immediate action}.
+        \ff[6]{Critical Demoralization} If you get a \glossterm{critical hit} when you take the \textit{demoralize} action, the target is \frightened by you instead of being shaken.
+        See \pcref{Demoralize}, for details.
 
         \ff[8]{Specialization} The bonus to Intimidate increases to \plus4.
 
@@ -1447,7 +1434,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[1]{Selective Backlash} Your \glossterm{miscast backlash} does not hurt your allies, though it still hurts you.
 
-        \ff[3]{Overchannel} Whenever you cast a spell, you can use this ability as an \glossterm{immediate action}.
+        \ff[3]{Overchannel} Whenever you cast a spell, you can use this ability.
         Your concentration on the spell cannot be disrupted, and you cannot \glossterm{miscast} the spell for any other reason.
         Effects that prevent the spell from having any effect, such as the \textit{counterspell} ability from the Abjurer feat, work normally (see \featpref{Abjurer}).
         In addition, you cause a \glossterm{miscast backlash} when the spell resolves.
