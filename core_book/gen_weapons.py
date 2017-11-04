@@ -9,7 +9,22 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Flaming",
-        level=8,
+        level=5,
+        material_type='weapon',
+        tags=['Fire'],
+        description="""
+            This weapon is on fire.
+            It sheds light as a torch, and all damage dealt with it is fire damage in addition to its other types.
+            As a \\glossterm<minor action>, you can kindle the flames.
+            This ability takes effect during the current phase and lasts until the end of the round.
+            If you do, you gain a +1d bonus to \\glossterm<strike damage> with this weapon.
+        """,
+        short_description="Can deal +1d fire damage",
+    ))
+
+    weapons.append(MagicItem(
+        name="Flaming, Greater",
+        level=11,
         material_type='weapon',
         tags=['Fire'],
         description="""
@@ -22,41 +37,82 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Shocking",
-        level=6,
+        level=7,
         material_type='weapon',
         tags=['Electricity'],
         description="""
             This weapon continuously crackles with electricity.
             The constant sparks shed light as a torch, and all damage dealt with it is electricity damage in addition to its other types.
-            When you make a successful \\glossterm<strike> with this weapon, you can activate it as an \\glossterm<immediate action>.
-            If you do, the target takes a -5 penalty to concentration checks until the end of the round (see \\pcref<Concentration>).
+            As a \\glossterm<minor action>, you can intensify the electricity.
+            This ability takes effect during the current phase and lasts until the end of the round.
+            If you do, when you make a \\glossterm<strike> with this weapon and your attack result beats the target's Fortitude defense, the target is \\dazed as a \\glossterm<condition>.
         """,
-        short_description="Deals distracting electicity damage",
+        short_description="Deals electicity damage, can daze",
+    ))
+
+    weapons.append(MagicItem(
+        name="Shocking, Greater",
+        level=13,
+        material_type='weapon',
+        tags=['Electricity'],
+        description="""
+            This weapon continuously crackles with electricity.
+            The constant sparks shed light as a torch, and all damage dealt with it is electricity damage in addition to its other types.
+            When you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Fortitude defense, it is \\dazed as a \\glossterm<condition>.
+        """,
+        short_description="Deals dazing electicity damage",
     ))
 
     weapons.append(MagicItem(
         name="Freezing",
+        level=4,
+        material_type='weapon',
+        tags=['Cold'],
+        description="""
+            This weapon is bitterly cold, and all damage dealt with it is cold damage in addition to its other types.
+            As a \\glossterm<minor action>, you can intensify the cold.
+            This ability takes effect during the current phase and lasts until the end of the round.
+            If you do, when you make a \\glossterm<strike> with this weapon and your attack result beats the target's Fortitude defense, the target is \\fatigued as a \\glossterm<condition>.
+        """,
+        short_description="Deals cold damage, can fatigue",
+    ))
+
+    weapons.append(MagicItem(
+        name="Freezing, Greater",
         level=10,
         material_type='weapon',
         tags=['Cold'],
         description="""
             This weapon is bitterly cold, and all damage dealt with it is cold damage in addition to its other types.
-            When you make a successful \\glossterm<strike> with this weapon, you can activate it as an \\glossterm<immediate action>.
-            If you do, and your attack result beats the target's Fortitude defense, it is \\fatigued as a \\glossterm<condition>.
+            When you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Fortitude defense, the target is \\fatigued as a \\glossterm<condition>.
         """,
         short_description="Deals fatiguing cold damage",
     ))
 
     weapons.append(MagicItem(
         name="Thundering",
-        level=12,
+        level=5,
         material_type='weapon',
         tags=['Sonic'],
         description="""
             This weapon constantly emits a low-pitched rumbling noise and vibrates slightly in your hand.
             All damage dealt with it is sonic damage in addition to its other types.
-            When you make a successful \\glossterm<strike> with this weapon, you can activate it as an \\glossterm<immediate action>.
-            If you do, and your attack result beats the target's Fortitude defense, it is \\deafened as a \\glossterm<condition>.
+            As a \\glossterm<minor action>, you can intensify the vibration.
+            This ability takes effect during the current phase and lasts until the end of the round.
+            If you do, when you make a \\glossterm<strike> with this weapon and your attack result beats the target's Fortitude defense, the target is \\deafened as a \\glossterm<condition>.
+        """,
+        short_description="Deals sonic damage, can deafen",
+    ))
+
+    weapons.append(MagicItem(
+        name="Thundering, Greater",
+        level=11,
+        material_type='weapon',
+        tags=['Sonic'],
+        description="""
+            This weapon constantly emits a low-pitched rumbling noise and vibrates slightly in your hand.
+            All damage dealt with it is sonic damage in addition to its other types.
+            When you make a \\glossterm<strike> with this weapon and your attack result beats the target's Fortitude defense, the target is \\deafened as a \\glossterm<condition>.
         """,
         short_description="Deals deafening sonic damage",
     ))
@@ -74,12 +130,26 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Disorienting",
-        level=14,
+        level=9,
         material_type='weapon',
         tags=['Compulsion', 'Mind'],
         description="""
-            When you make a successful \\glossterm<strike> with this weapon, you can activate it as an \\glossterm<immediate action>.
-            If you do, and your attack result beats the target's Mental defense, it is \\disoriented as a \\glossterm<condition>.
+            This weapon shimmers with a chaotic pattern of colors.
+            As a \\glossterm<minor action>, you can intensify the shimmering.
+            This ability takes effect during the current phase and lasts until the end of the round.
+            If you do, when you make a \\glossterm<strike>  with this weapon and your attack result beats the target's Mental defense, it is \\disoriented as a \\glossterm<condition>.
+        """,
+        short_description="Can disorient struck foes",
+    ))
+
+    weapons.append(MagicItem(
+        name="Disorienting, Greater",
+        level=15,
+        material_type='weapon',
+        tags=['Compulsion', 'Mind'],
+        description="""
+            This weapon shimmers with a chaotic pattern of colors.
+            When you make a \\glossterm<strike> with this weapon and your attack result beats the target's Mental defense, it is \\disoriented as a \\glossterm<condition>.
         """,
         short_description="Disorients struck foes",
     ))
@@ -96,13 +166,39 @@ def generate_weapons():
     ))
 
     weapons.append(MagicItem(
+        name="Longshot, Greater",
+        level=10,
+        material_type='weapon',
+        tags=['Enhancement'],
+        description="""
+            Ranged attacks with this weapon have three times the normal \\glossterm<range increment>.
+        """,
+        short_description="Has three times the normal range increment",
+    ))
+
+    weapons.append(MagicItem(
         name="Forceful",
         level=6,
         material_type='weapon',
         tags=['Telekinesis'],
         description="""
-            When you make a successful \\glossterm<strike> with this weapon, you can activate it as an \\glossterm<immediate action>.
-            If you do, you also use your attack result as a \\glossterm<shove> attack against the target.
+            This weapon feels heavy in the hand.
+            As a \\glossterm<minor action>, you can intensify the weapon's heft.
+            This ability takes effect during the current phase and lasts until the end of the round.
+            If you do, when you make a \\glossterm<strike> with this weapon, you can also use your attack result as a \\glossterm<shove> attack agsint the target.
+            You do not need to move with your foe to move it the full distance of the shove.
+        """,
+        short_description="Can shove struck foes",
+    ))
+
+    weapons.append(MagicItem(
+        name="Forceful, Greater",
+        level=12,
+        material_type='weapon',
+        tags=['Telekinesis'],
+        description="""
+            This weapon feels heavy in the hand.
+            When you make a \\glossterm<strike> with this weapon, you can also use your attack result as a \\glossterm<shove> attack agsint the target.
             You do not need to move with your foe to move it the full distance of the shove.
         """,
         short_description="Shoves struck foes",
@@ -110,12 +206,12 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Fixating",
-        level=8,
+        level=13,
         material_type='weapon',
         tags=['Enhancement'],
         description="""
-            When you make a successful \\glossterm<strike> with this weapon, you can activate it as an \\glossterm<immediate action>.
-            If you do, you gain a +1 bonus to accuracy against the target until you use this ability on a different target.
+            When you make a \\glossterm<strike> with this weapon, you gain a +1 bonus to accuracy against the target.
+            This bonus lasts until you make a strike with this weapon against a different target.
             This bonus can stack with itself, up to a maximum of +5.
         """,
         short_description="Grants accuracy bonus against struck foe",
@@ -159,11 +255,11 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Returning",
-        level=2,
+        level=3,
         material_type='weapon',
         tags=['Teleportation'],
         description="""
-            After being thrown, a rebounding weapon teleports back into your hand at the end of the current phase.
+            After being thrown, this weapon teleports back into your hand at the end of the current phase.
             Catching a rebounding weapon when it comes back is a free action.
             If you can't catch it, the weapon drops to the ground in the square from which it was thrown.
         """,
@@ -205,13 +301,11 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Surestrike",
-        level=7,
+        level=10,
         material_type='weapon',
         tags=['Knowledge'],
         description="""
-            When you hit or miss a \\glossterm<strike> with this weapon, you can activate it as an \\glossterm<immediate action>.
-            If you do, you can reroll the attack roll.
-            You must take the second result.
+            You gain a +1 bonus to accuracy with \\glossterm<strikes> with this weapon.
         """,
         short_description="React to reroll missed attacks",
     ))
@@ -233,9 +327,11 @@ def generate_weapons():
         material_type='weapon',
         tags=['Shaping'],
         description="""
-            When you make a successful \\glossterm<strike> with this weapon against an unattended object, you can spend an \\glossterm<action point> to activate it as an \\glossterm<immediate action>.
-            Alternately, when you make a successful \\glossterm<disarm> attack with this weapon, you can spend an \\glossterm<action point> to activate it as an \\glossterm<immediate action>.
-            If you do, and the struck object is at least one size category smaller than the weapon, it is absorbed into the weapon, leaving no trace.
+            As a \\glossterm<standard action>, you can spend an \\glossterm<action point> to activate this weapon.
+            If you do, make a \\glossterm<strike> or a \\glossterm<disarm> attack.
+            If your disarm succeeds, or if your strike hit an unattended object, this weapon can absorb the struck object.
+            The object must be at least one size category smaller than the weapon.
+            An absorbed object leaves no trace that it ever existed.
 
             This weapon can hold no more than three objects at once.
             If you attempt to absorb an object while the weapon is full, the attempt fails.
