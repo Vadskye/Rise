@@ -2,8 +2,8 @@
 
 import click
 from gen_spell_descriptions import generate_spells
-from generation.rise_data import spell_sources
-from generation.util import latexify
+from latex.rise_data import spell_sources
+from latex.util import latexify
 from gen_ritual_descriptions import generate_rituals
 
 def by_source(spells):
