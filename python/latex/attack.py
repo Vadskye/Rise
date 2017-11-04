@@ -1,5 +1,5 @@
-import generation.rise_data as rise_data
-from generation.util import join
+import latex.rise_data as rise_data
+from latex.util import join
 
 class Attack(object):
 

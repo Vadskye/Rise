@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 import click
-from generation.magic_item import MagicItem
-from generation.util import latexify
+from latex.magic_item import MagicItem
+from latex.util import latexify
 
 def generate_implements():
     implements = []

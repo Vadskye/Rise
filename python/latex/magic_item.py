@@ -1,4 +1,4 @@
-from generation.util import join
+from latex.util import join
 
 class MagicItem(object):
 

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 import click
-from generation.monster import Monster
-from generation.util import latexify
+from latex.monster import Monster
+from latex.util import latexify
 
 def generate_monsters():
     monsters = []
