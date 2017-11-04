@@ -1,4 +1,4 @@
-from latex.util import join
+from rise.latex.util import join
 
 valid_durations = set([
     'Attunement',

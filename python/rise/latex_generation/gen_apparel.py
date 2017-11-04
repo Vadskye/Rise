@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 import click
-from latex.magic_item import MagicItem
-from latex.util import latexify
+from rise.latex.magic_item import MagicItem
+from rise.latex.util import latexify
 
 def generate_armor():
     apparel = []

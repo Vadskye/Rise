@@ -1,7 +1,7 @@
 from logging import getLogger
-import latex.rise_data as rise_data
-from latex.util import join
-from latex.subspell import Subspell
+import rise.latex.rise_data as rise_data
+from rise.latex.util import join
+from rise.latex.subspell import Subspell
 logger = getLogger(__name__)
 
 class Spell(object):

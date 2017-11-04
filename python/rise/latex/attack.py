@@ -1,5 +1,5 @@
-import latex.rise_data as rise_data
-from latex.util import join
+import rise.latex.rise_data as rise_data
+from rise.latex.util import join
 
 class Attack(object):
 
