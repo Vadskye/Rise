@@ -610,7 +610,7 @@ def generate_spells():
                 name="Flame Blade",
                 targeting=Targeting(
                     # TODO: unattended or wielded by a willing creature?
-                    target='One unattended weapon',
+                    target='One unattended melee weapon',
                     rng='close',
                 ),
                 effects=Effects(
@@ -689,7 +689,7 @@ def generate_spells():
                 name="Aqueous Blade",
                 targeting=Targeting(
                     # TODO: unattended or wielded by a willing creature?
-                    target='One unattended weapon',
+                    target='One unattended melee weapon',
                     rng='close',
                 ),
                 effects=Effects(
@@ -715,7 +715,7 @@ def generate_spells():
                 name="Greater Aqueous Blade",
                 targeting=Targeting(
                     # TODO: unattended or wielded by a willing creature?
-                    target='One unattended weapon',
+                    target='One unattended melee weapon',
                     rng='close',
                 ),
                 effects=Effects(
@@ -1026,7 +1026,7 @@ def generate_spells():
                 name="Blessed Blade",
                 targeting=Targeting(
                     # TODO: unattended or wielded by a willing creature?
-                    target='One unattended weapon',
+                    target='One unattended melee weapon',
                     rng='close',
                 ),
                 effects=Effects(
