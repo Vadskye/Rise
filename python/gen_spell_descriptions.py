@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 
 import click
-from generation.attack import Attack
-from generation.effects import Effects
-from generation.header import Header
-from generation.spell import Spell
-from generation.subspell import Subspell
-from generation.targeting import Targeting
-from generation.util import latexify
-import generation.rise_data as rise_data
+from latex.attack import Attack
+from latex.effects import Effects
+from latex.header import Header
+from latex.spell import Spell
+from latex.subspell import Subspell
+from latex.targeting import Targeting
+from latex.util import latexify
+import latex.rise_data as rise_data
 from logging import getLogger, WARNING
 # from pprint import pformat
 logger = getLogger(__name__)
