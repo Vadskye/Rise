@@ -1,4 +1,4 @@
-from latex.util import join
+from rise.latex.util import join
 
 class Monster(object):
     def __init__(

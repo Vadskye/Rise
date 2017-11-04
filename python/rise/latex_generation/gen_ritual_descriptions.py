@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
 import click
-from latex.attack import Attack
-from latex.effects import Effects
-from latex.header import Header
-from latex.spell import Spell
-from latex.subspell import Subspell
-from latex.targeting import Targeting
-from latex.util import latexify
+from rise.latex.attack import Attack
+from rise.latex.effects import Effects
+from rise.latex.header import Header
+from rise.latex.spell import Spell
+from rise.latex.subspell import Subspell
+from rise.latex.targeting import Targeting
+from rise.latex.util import latexify
 
 def generate_rituals():
     rituals = []
