@@ -1,3 +1,8 @@
+from rise.statistics.armor import Armor
+from rise.statistics.dice_pool import DicePool
+from rise.statistics.strike import Strike
+from rise.statistics.weapon import Weapon
+
 def calculate_attribute(starting_value, level):
     if (starting_value > 0):
         return starting_value + (level - 1)
@@ -11,9 +16,10 @@ class Creature(object):
             level,
             name,
             race,
-            # For brevity, take an array of starting attributes.
+            # For brevity, take an array of starting attributes as ints.
             # The order is str, dex, con, int, per, wil
             starting_attributes,
+            weapons,  # Array of Weapon objects
             armor=None,
             name_suffix=None,
             natural_armor=0,
@@ -29,6 +35,7 @@ class Creature(object):
         self.starting_intelligence = starting_attributes[3]
         self.starting_perception = starting_attributes[4]
         self.starting_willpower = starting_attributes[5]
+        self.weapons = weapons
 
         self.armor = armor
         self.name_suffix = name_suffix
@@ -51,7 +58,7 @@ class Creature(object):
     @property
     def dexterity(self):
         dex = calculate_attribute(self.starting_dexterity, self.level)
-        if (self.armor and self.armor.encumbrance_category == 'heavy'):
+        if (self.armor and self.armor.encumbrance_category == Armor.HEAVY):
             dex = dex // 2
         return dex
 
@@ -99,5 +106,38 @@ class Creature(object):
         return calculate_attribute(self.starting_strength, self.level)
 
     @property
+    def strikes(self):
+        strikes = {}
+        for weapon in self.weapons:
+            strikes[weapon.name] = Strike(
+                name=weapon.name,
+                accuracy=self.calculate_accuracy(weapon),
+                damage=self.calculate_damage(weapon),
+            )
+        return strikes
+
+    @property
     def willpower(self):
         return calculate_attribute(self.starting_willpower, self.level)
+
+    def calculate_accuracy(self, weapon):
+        """Return the accuracy with the given weapon"""
+        return max(
+            self.level,
+            self.perception,
+            self.dexterity if weapon.encumbrance_category == Weapon.LIGHT else 0,
+            getattr(self, weapon.attribute) if weapon.attribute else 0,
+        )
+
+    def calculate_damage(self, weapon):
+        """Return the DicePool for damage with the given weapon"""
+        standard = DicePool(8)
+        standard += sum([
+            max(
+                self.level,
+                self.strength,
+                getattr(self, weapon.attribute) if weapon.attribute else 0,
+            ) // 2,
+            weapon.damage_modifier,
+        ])
+        return standard
