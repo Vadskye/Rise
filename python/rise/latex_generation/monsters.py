@@ -2,15 +2,26 @@
 
 import click
 from rise.latex.monster import Monster
+from rise.statistics.character_class import CharacterClass
+from rise.statistics.creature import Creature
+from rise.statistics.race import Race
 from rise.latex.util import latexify
 
 def generate_monsters():
-    monsters = []
-    monsters.append(Monster(
-        name='Bear',
+    creatures = []
+    creatures.append(Creature(
+        character_class=CharacterClass('behemoth'),
         level=3,
+        name='Bear',
         name_suffix='Black',
+        natural_armor=4,
+        race=Race('animal'),
+        starting_attributes=[3, 1, 2, -7, 1, 0],
     ))
+
+    monsters = []
+    for creature in creatures:
+        monsters.append(Monster.from_creature(creature))
 
     return monsters
 
