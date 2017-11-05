@@ -12,6 +12,7 @@ def properties_from_weapon_name(name):
         # Natural weapons
         'bite': [0, Weapon.MEDIUM, None],
         'claw': [-1, Weapon.LIGHT, None],
+        'tentacle': [0, Weapon.MEDIUM, None],
 
         # Special "weapons"
         # TODO: is this the correct representation?

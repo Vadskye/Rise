@@ -21,6 +21,27 @@ def generate_monsters():
         weapons=[Weapon('bite'), Weapon('claw')],
     ))
 
+    creatures.append(Creature(
+        character_class=CharacterClass('behemoth'),
+        level=6,
+        name='Bear',
+        natural_armor=4,
+        name_suffix='Brown',
+        race=Race('animal'),
+        starting_attributes=[3, 1, 2, -7, 1, 0],
+        weapons=[Weapon('bite'), Weapon('claw')],
+    ))
+
+    creatures.append(Creature(
+        character_class=CharacterClass('adept'),
+        level=12,
+        name='Aboleth',
+        natural_armor=6,
+        race=Race('aberration'),
+        starting_attributes=[2, 0, 3, 2, 1, 3],
+        weapons=[Weapon('tentacle')],
+    ))
+
     monsters = []
     for creature in creatures:
         monsters.append(Monster.from_creature(creature))
