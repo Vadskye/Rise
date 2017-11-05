@@ -5,6 +5,7 @@ from rise.latex.monster import Monster
 from rise.statistics.character_class import CharacterClass
 from rise.statistics.creature import Creature
 from rise.statistics.race import Race
+from rise.statistics.weapon import Weapon
 from rise.latex.util import latexify
 
 def generate_monsters():
@@ -17,6 +18,7 @@ def generate_monsters():
         natural_armor=4,
         race=Race('animal'),
         starting_attributes=[3, 1, 2, -7, 1, 0],
+        weapons=[Weapon('bite'), Weapon('claw')],
     ))
 
     monsters = []

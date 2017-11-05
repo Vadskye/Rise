@@ -2,12 +2,16 @@
 # The order is [Defense bonus, encumbrance penalty, encumbrance category].
 def properties_from_armor_name(name):
     return {
-        'breastplate': [4, 4, 'medium'],
-        'full plate': [6, 6, 'heavy'],
-        'studded leather': [2, 1, 'light'],
+        'breastplate': [4, 4, Armor.MEDIUM],
+        'full plate': [6, 6, Armor.HEAVY],
+        'studded leather': [2, 1, Armor.LIGHT],
     }[name]
 
 class Armor(object):
+    LIGHT = 'light'
+    MEDIUM = 'medium'
+    HEAVY = 'heavy'
+
     def __init__(self, name):
         self.name = name
         properties = properties_from_armor_name(name)
