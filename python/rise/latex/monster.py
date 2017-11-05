@@ -1,30 +1,6 @@
 from rise.latex.util import join
 
 class Monster(object):
-    def __init__(
-            self,
-            armor_defense,
-            fortitude_defense,
-            hit_points,
-            level,
-            mental_defense,
-            name,
-            reflex_defense,
-            action_points=2,
-            challenge_rating=1,
-            name_suffix=None,
-    ):
-        self.armor_defense = armor_defense
-        self.fortitude_defense = fortitude_defense
-        self.hit_points = hit_points
-        self.level = level
-        self.mental_defense = mental_defense
-        self.name = name
-        self.reflex_defense = reflex_defense
-
-        self.action_points = action_points
-        self.challenge_rating = challenge_rating
-        self.name_suffix = name_suffix
 
     # from rise.statistics.creature
     @classmethod
@@ -38,7 +14,43 @@ class Monster(object):
             name=creature.name,
             name_suffix=creature.name_suffix,
             reflex_defense=creature.reflex_defense,
+            strikes=creature.strikes,
         )
+
+    def __init__(
+            self,
+            armor_defense,
+            fortitude_defense,
+            hit_points,
+            level,
+            mental_defense,
+            name,
+            strikes,
+            reflex_defense,
+            action_points=2,
+            challenge_rating=1,
+            name_suffix=None,
+    ):
+        self.armor_defense = armor_defense
+        self.fortitude_defense = fortitude_defense
+        self.hit_points = hit_points
+        self.level = level
+        self.mental_defense = mental_defense
+        self.name = name
+        self.reflex_defense = reflex_defense
+        self.strikes = strikes
+
+        self.action_points = action_points
+        self.challenge_rating = challenge_rating
+        self.name_suffix = name_suffix
+
+    def strike_text(self):
+        strikes = []
+        for strike_name in self.strikes:
+            strike = self.strikes[strike_name]
+            strikes.append(f"{strike.name} +{strike.accuracy} ({strike.damage})")
+        text = " or ".join(strikes)
+        return text[0].upper() + text[1:]
 
     def to_latex(self):
         name_suffix_text = f"[{self.name_suffix}]" if self.name_suffix else ""
@@ -49,7 +61,7 @@ class Monster(object):
                         \\begin<spelltargetinginfo>
                             \\spelltwocol<\\textbf<HP> {self.hit_points}; \\textbf<Bloodied> {self.hit_points // 2}><\\textbf<AP> {self.action_points}>
                             \\pari \\textbf<Armor> {self.armor_defense}; \\textbf<Fort> {self.fortitude_defense}; \\textbf<Ref> {self.reflex_defense}; \\textbf<Ment> {self.mental_defense}
-                            \\pari \\textbf<Strike> Bite +7 (2d8) or claw +7 (2d6)
+                            \\pari \\textbf<Strike> {self.strike_text()}
                             \\pari \\textbf<Immune> staggered
                         \\end<spelltargetinginfo>
                         \\begin<spelleffects>
