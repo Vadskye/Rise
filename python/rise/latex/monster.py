@@ -56,7 +56,7 @@ class Monster(object):
         name_suffix_text = f"[{self.name_suffix}]" if self.name_suffix else ""
         return join(
             f"""
-                \\begin<monsection>{name_suffix_text}<{self.name}>{self.level}[{self.challenge_rating}]
+                \\begin<monsection>{name_suffix_text}<{self.name}><{self.level}>[{self.challenge_rating}]
                     \\begin<spellcontent>
                         \\begin<spelltargetinginfo>
                             \\spelltwocol<\\textbf<HP> {self.hit_points}; \\textbf<Bloodied> {self.hit_points // 2}><\\textbf<AP> {self.action_points}>
