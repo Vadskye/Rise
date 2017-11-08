@@ -16,9 +16,13 @@ def get_latex_from_creature(
         mental_defense=creature.mental_defense,
         name=creature.name,
         name_suffix=creature.name_suffix,
+        reach=creature.reach,
         reflex_defense=creature.reflex_defense,
+        size=creature.size,
+        space=creature.space,
+        speed=creature.speed,
         strikes=creature.strikes,
-        # optional args
+        # extra args
         action_points=action_points,
         challenge_rating=challenge_rating,
         immunities=immunities,
@@ -39,6 +43,10 @@ def get_latex(
         immunities=None,
         name_suffix=None,
         resistances=None,
+        size='medium',
+        space=5,
+        speed=30,
+        reach=5,
 ):
     return join(
         f"""
@@ -58,7 +66,7 @@ def get_latex(
                 \\end<spellcontent>
                 \\begin<spellfooter>
                     \\pari \\textbf<Awareness> +6
-                    \\pari \\textbf<Speed> 30 ft.; \\textbf<Space> 5 ft.; \\textbf<Reach> 5 ft.
+                    \\pari \\textbf<Speed> {speed} ft.; \\textbf<Space> {space} ft.; \\textbf<Reach> {reach} ft.
                 \\end<spellfooter>
             \\end<monsection>
         """
@@ -74,9 +82,9 @@ def resistance_text(resistances):
     return f"\\pari \\textbf<Resist> {', '.join(resistances)}" if resistances else ""
 
 def strike_text(strikes):
-    strikes = []
+    strike_texts = []
     for strike_name in strikes:
         strike = strikes[strike_name]
-        strikes.append(f"{strike.name} +{strike.accuracy} ({strike.damage})")
-    text = " or ".join(strikes)
+        strike_texts.append(f"{strike.name} +{strike.accuracy} ({strike.damage})")
+    text = " or ".join(strike_texts)
     return text[0].upper() + text[1:]

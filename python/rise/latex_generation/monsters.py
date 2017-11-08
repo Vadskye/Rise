@@ -6,6 +6,7 @@ from rise.statistics.armor import Armor
 from rise.statistics.character_class import CharacterClass
 from rise.statistics.creature import Creature
 from rise.statistics.race import Race
+from rise.statistics.size import Size
 from rise.statistics.weapon import Weapon
 from rise.latex.util import latexify
 
@@ -21,8 +22,8 @@ def generate_monsters():
             race=Race('animal'),
             starting_attributes=[3, 1, 2, -7, 1, 0],
             weapons=[Weapon('bite'), Weapon('claw')],
-            immunities=['staggered'],
         ),
+        immunities=['staggered'],
     ))
 
     monsters.append(get_latex_from_creature(
@@ -33,10 +34,11 @@ def generate_monsters():
             natural_armor=4,
             name_suffix='Brown',
             race=Race('animal'),
+            size=Size('large'),
             starting_attributes=[3, 1, 2, -7, 1, 0],
             weapons=[Weapon('bite'), Weapon('claw')],
-            immunities=['staggered'],
         ),
+        immunities=['staggered'],
     ))
 
     monsters.append(get_latex_from_creature(
@@ -46,6 +48,7 @@ def generate_monsters():
             name='Aboleth',
             natural_armor=6,
             race=Race('aberration'),
+            size=Size('huge'),
             starting_attributes=[2, 0, 3, 2, 1, 3],
             weapons=[Weapon('tentacle')],
         ),
@@ -53,7 +56,7 @@ def generate_monsters():
 
     monsters.append(get_latex_from_creature(
         Creature(
-            armor=[Armor('breastplate')],
+            armor=Armor('breastplate'),
             character_class=CharacterClass('adept'),
             level=1,
             name='Cultist',
@@ -70,6 +73,7 @@ def generate_monsters():
             name='Ankheg',
             natural_armor=6,
             race=Race('magical beast'),
+            size=Size('large'),
             starting_attributes=[3, 2, 1, -7, 1, 0],
             weapons=[Weapon('club')],
         ),
@@ -120,6 +124,7 @@ def generate_monsters():
             name_suffix='Bebelith',
             natural_armor=6,
             race=Race('outsider'),
+            size=Size('huge'),
             starting_attributes=[2, 3, 2, 0, 1, 0],
             weapons=[Weapon('bite')],
         ),
@@ -148,25 +153,17 @@ def sanity_check(monsters):
 @click.option('-c', '--check/--no-check', default=False)
 @click.option('-o', '--output')
 def main(output, check):
-    monsters = generate_monsters()
-    if check:
-        sanity_check(monsters)
-    monster_texts = []
-    for monster in monsters:
-        try:
-            monster_texts.append(monster.to_latex())
-        except Exception as e:
-            raise Exception(f"Error converting monster '{monster.name}' to LaTeX") from e
-    monster_texts = latexify("""
+    monster_texts = generate_monsters()
+    text = latexify("""
         \\chapter<Monsters>
         \\section<Monster Descriptions>
         {}
     """.format('\n'.join(monster_texts)))
     if output is None:
-        print(monster_texts)
+        print(text)
     else:
         with open(output, 'w') as of:
-            of.write(monster_texts)
+            of.write(text)
 
 
 if __name__ == "__main__":
