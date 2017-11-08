@@ -1,5 +1,6 @@
 from rise.statistics.armor import Armor
 from rise.statistics.dice_pool import DicePool
+from rise.statistics.size import Size
 from rise.statistics.strike import Strike
 from rise.statistics.weapon import Weapon
 
@@ -24,6 +25,7 @@ class Creature(object):
             name_suffix=None,
             natural_armor=0,
             shield=None,
+            size=None,
     ):
         self.character_class = character_class
         self.level = level
@@ -41,6 +43,7 @@ class Creature(object):
         self.name_suffix = name_suffix
         self.natural_armor = natural_armor
         self.shield = shield
+        self.size = size or Size(Size.MEDIUM)
 
     @property
     def armor_defense(self):
@@ -69,6 +72,7 @@ class Creature(object):
             max(self.level, self.strength, self.constitution),
             self.character_class.fortitude_defense_bonus,
             self.race.fortitude_defense_bonus,
+            self.size.fortitude_defense_modifier,
         ])
 
     @property
@@ -93,12 +97,17 @@ class Creature(object):
         return calculate_attribute(self.starting_perception, self.level)
 
     @property
+    def reach(self):
+        return self.size.reach
+
+    @property
     def reflex_defense(self):
         return sum([
             self.starting_dexterity,
             max(self.level, self.dexterity, self.perception),
             self.character_class.reflex_defense_bonus,
             self.race.reflex_defense_bonus,
+            self.size.reflex_defense_modifier,
         ])
 
     @property
@@ -115,6 +124,14 @@ class Creature(object):
                 damage=self.calculate_damage(weapon),
             )
         return strikes
+
+    @property
+    def space(self):
+        return self.size.space
+
+    @property
+    def speed(self):
+        return self.size.speed
 
     @property
     def willpower(self):
@@ -139,5 +156,6 @@ class Creature(object):
                 getattr(self, weapon.attribute) if weapon.attribute else 0,
             ) // 2,
             weapon.damage_modifier,
+            self.size.damage_modifier,
         ])
         return standard
