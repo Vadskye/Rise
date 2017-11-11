@@ -127,7 +127,7 @@ def actions_text(challenge_rating):
     }[challenge_rating]
 
 def active_abilities_text(active_abilities):
-    return '\n'.join(active_abilities) if active_abilities else ""
+    return '\n\\vspace<0.5em>'.join(active_abilities) if active_abilities else ""
 
 def immunity_text(immunities):
     return f"\\pari \\textbf<Immune> {', '.join(immunities)}" if immunities else ""
