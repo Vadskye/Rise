@@ -20,6 +20,7 @@ def latexify(text):
         string: LaTeX code
     """
 
+    text = text.replace('|', '\\')
     text = text.replace('<', '{').replace('>', '}')
     text = add_pattern.sub(r'\\add \1', text)
     text = plus_pattern.sub(r'\\plus\1', text)
