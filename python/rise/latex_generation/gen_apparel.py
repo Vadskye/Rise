@@ -133,9 +133,9 @@ def generate_armor():
         tags=['Enhancement'],
         material_type='body armor',
         description="""
-            This armor's \\glossterm<encumbrance penalty> is reduced by 2.
+            This armor's \\glossterm<encumbrance penalty> is reduced by 1.
         """,
-        short_description="Reduces encumbrance penalty by 2",
+        short_description="Reduces encumbrance penalty by 1",
     ))
 
     apparel.append(MagicItem(
@@ -144,9 +144,9 @@ def generate_armor():
         tags=['Enhancement'],
         material_type='body armor',
         description="""
-            This armor's \\glossterm<encumbrance penalty> is reduced by 4.
+            This armor's \\glossterm<encumbrance penalty> is reduced by 2.
         """,
-        short_description="Reduces encumbrance penalty by 4",
+        short_description="Reduces encumbrance penalty by 2",
     ))
 
     apparel.append(MagicItem(
@@ -908,9 +908,9 @@ def main(output, check):
     if output is None:
         print(apparel_latex)
     else:
-        with open('apparel.tex', 'w') as apparel_description_file:
+        with open('../../core_book/apparel.tex', 'w') as apparel_description_file:
             apparel_description_file.write(apparel_latex)
-        with open('apparel_table.tex', 'w') as apparel_table_file:
+        with open('../../core_book/apparel_table.tex', 'w') as apparel_table_file:
             apparel_table_file.write(generate_apparel_table())
 
 

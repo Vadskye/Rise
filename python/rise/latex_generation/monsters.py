@@ -7,6 +7,7 @@ from rise.statistics.armor import Armor
 from rise.statistics.character_class import CharacterClass
 from rise.statistics.creature import Creature
 from rise.statistics.race import Race
+from rise.statistics.shield import Shield
 from rise.statistics.size import Size
 from rise.statistics.weapon import Weapon
 from rise.latex.util import latexify
@@ -218,6 +219,7 @@ def monstrous_humanoids():
                 """,
             ),
         ],
+        challenge_rating=2,
         immunities=['deafened'],
     ))
 
@@ -227,17 +229,35 @@ def monstrous_humanoids():
 def outsiders():
     monsters = []
 
+    astral_deva = Creature(
+        character_class=CharacterClass('adept'),
+        level=14,
+        name='Angel',
+        name_suffix='Astral Deva',
+        natural_armor=6,
+        race=Race('outsider'),
+        shield=Shield('heavy'),
+        starting_attributes=[2, 2, 2, 2, 2, 2],
+        weapons=[Weapon('mace')],
+    )
     monsters.append(get_latex_from_creature(
-        Creature(
-            character_class=CharacterClass('adept'),
-            level=14,
-            name='Angel',
-            name_suffix='Astral Deva',
-            natural_armor=6,
-            race=Race('outsider'),
-            starting_attributes=[2, 2, 2, 2, 2, 2],
-            weapons=[Weapon('greatsword')],
-        ),
+        astral_deva,
+        active_abilities=[
+            active_ability(
+                'Smite',
+                effect="""
+                    The angel makes a mace strike.
+                    If its target is evil, it gains a +2 bonus to accuracy and a +2d bonus to damage on the strike.
+                """,
+            ),
+            active_ability(
+                "Angel's Grace",
+                effect=f"""
+                    The target heals {astral_deva.standard_damage(astral_deva.willpower) + 1} hit points.
+                """,
+                targeting="One other creature within reach",
+            ),
+        ]
     ))
 
     monsters.append(get_latex_from_creature(
