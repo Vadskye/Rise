@@ -782,7 +782,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
             \parhead{Creature Size and Damage}\label{Creature Size and Damage}
             Larger creatures deal more damage with their weapons.
-            Each creature size above Medium grants a \plus2d bonus to damage with strikes.
+            Each creature size above Medium grants a \plus1d bonus to \glossterm{strike damage}.
             Likewise, each creature size below Medium imposes a \minus1d penalty to damage with strikes.
             This is described in \tref{Size in Combat}.
 
@@ -814,20 +814,20 @@ It defines how attributes work and explains how to make physical attacks in comb
 
             \begin{dtable!*}
                 \lcaption{Defense Calculations}
-                \begin{dtabularx}{\textwidth}{l l l l l >{\lcol}X}
-                    \tb{Defense Name} & \tb{Attributes} & \tb{Starting Attribute Modifier} & \tb{Body Armor Modifier} & \tb{Shield Modifier} & \tb{Size Modifier} \\
+                \begin{dtabularx}{\textwidth}{l l l l >{\lcol}X}
+                    \tb{Defense Name} & \tb{Attributes} & \tb{Starting Attribute Modifier} & \tb{Body Armor Modifier} & \tb{Shield Modifier} \\
                     \midrule
-                    Armor defense     & Dex & \tdash & Yes & Yes & No  \\
-                    Fortitude defense & Con or Str & Con & No  & No  & Yes \\
-                    Reflex defense    & Dex or Per & Dex & No  & Yes & Yes \\
-                    Mental defense    & Wil or Int & Wil & No  & No  & No  \\
+                    Armor defense     & Dex & \tdash & Yes & Yes \\
+                    Fortitude defense & Con or Str & Con & No  & No  \\
+                    Reflex defense    & Dex or Per & Dex & No  & Yes \\
+                    Mental defense    & Wil or Int & Wil & No  & No  \\
                 \end{dtabularx}
             \end{dtable!*}
 
             \parhead{Class and Racial Bonuses} Each class and race provides bonuses to some combination of Fortitude, Reflex, and Mental defense.
             \parhead{Natural Armor} Creatures with unusually tough skin or thick hide, including most monsters, gain bonuses to their Armor defense.
             These bonuses stack with any armor such creatures might wear.
-            \parhead{Size Modifier} Large creatures have a bonus to Fortitude defense and a penalty to Reflex defense and Stealth.
+            \parhead{Size Modifier} Large creatures have a penalty to Reflex defense.
             For details, see \tref{Size in Combat}.
 
     \subsection{Initiative}\label{Initiative}
@@ -995,35 +995,32 @@ It defines how attributes work and explains how to make physical attacks in comb
             Sometimes, creatures are not aware that combat is taking place when the combat starts. This most commonly happens with ambushes. Any creature that is not aware of the combat continues taking whatever actions it would normally be taking until it becomes aware of the combat. It is \unaware until that point.
 
     \subsection{Size in Combat}\label{Size in Combat}
-        Size affects your space and reach in combat.
-        In addition, your Fortitude and Reflex defenses are affected by your size modifier.
+        Size affects your space and reach in combat, your Reflex defense, your \glossterm{strike damage}, and how easily you overwhelm creatures and are overwhelmed yourself.
         These effects are shown on \trefnp{Size in Combat}.
 
         \begin{dtable*}
             \lcaption{Size in Combat}
             \begin{dtabularx}{\textwidth}{l l l l l l p{5.5em} X}
-                \tb{Size} & \tb{Space}\fn{1} & \tb{Reach}\fn{1} & \tb{Size Modifier}\fn{2} & \tb{Damage Modifier}\fn{3} & \tb{Threat Value}\fn{4} & \tb{Overwhelm Resistance}\fn{5} & \tb{Example Creature} \\
+                \tb{Size} & \tb{Space}\fn{1} & \tb{Reach}\fn{1} & \tb{Reflex Modifier} & \tb{Damage Modifier}\fn{2} & \tb{Threat Value}\fn{3} & \tb{Overwhelm Resistance}\fn{4} & \tb{Example Creature} \\
                 \bottomrule
                 Fine              & 1/2 ft.    & 0          & \plus8  & \minus4d & 1/4 & \tdash & Fly                      \\
                 Diminutive        & 1 ft.      & 0          & \plus6  & \minus3d & 1/2 & \tdash & Toad                     \\
                 Tiny              & 2-1/2 ft.  & 0          & \plus4  & \minus2d & 1/2 & \tdash & Cat                      \\
                 Small             & 5 ft.      & 5 ft.      & \plus2  & \minus1d & 1 & \tdash & Halfling                 \\
                 Medium            & 5 ft.      & 5 ft.      & \tdash  & \tdash   & 1 & \tdash & Human                    \\
-                Large (tall)      & 10 ft.     & 10 ft.     & \minus2 & \plus2d  & 2 & 1 & Ogre                     \\
-                Large (long)      & 10 ft.     & 5 ft.      & \minus2 & \plus2d  & 2 & 1 & Horse                    \\
-                Huge (tall)       & 15 ft.     & 15 ft.     & \minus4 & \plus4d  & 3 & 2 & Cloud giant              \\
-                Huge (long)       & 15 ft.     & 10 ft.     & \minus4 & \plus4d  & 3 & 2 & Bulette                  \\
-                Gargantuan (tall) & 20 ft.     & 20 ft.     & \minus6 & \plus6d  & 4 & 3 & 50-ft.\ animated statue  \\
-                Gargantuan (long) & 20 ft.     & 15 ft.     & \minus6 & \plus6d  & 4 & 3 & Kraken                   \\
-                Colossal (tall)   & 25\add ft. & 25\add ft. & \minus8 & \plus8d  & 5 & 4 & Colossal animated object \\
-                Colossal (long)   & 25\add ft. & 25\add ft. & \minus8 & \plus8d  & 5 & 4 & Great wyrm red dragon    \\
+                Large (tall)      & 10 ft.     & 10 ft.     & \minus2 & \plus1d  & 2 & 1 & Ogre                     \\
+                Large (long)      & 10 ft.     & 5 ft.      & \minus2 & \plus1d  & 2 & 1 & Horse                    \\
+                Huge (tall)       & 15 ft.     & 15 ft.     & \minus4 & \plus2d  & 3 & 2 & Cloud giant              \\
+                Huge (long)       & 15 ft.     & 10 ft.     & \minus4 & \plus2d  & 3 & 2 & Bulette                  \\
+                Gargantuan (tall) & 20 ft.     & 20 ft.     & \minus6 & \plus3d  & 4 & 3 & 50-ft.\ animated statue  \\
+                Gargantuan (long) & 20 ft.     & 15 ft.     & \minus6 & \plus3d  & 4 & 3 & Kraken                   \\
+                Colossal (tall)   & 25\add ft. & 25\add ft. & \minus8 & \plus4d  & 5 & 4 & Colossal animated object \\
+                Colossal (long)   & 25\add ft. & 25\add ft. & \minus8 & \plus4d  & 5 & 4 & Great wyrm red dragon    \\
             \end{dtabularx}
             1 Creatures can vary in space and reach.  These are simply typical values.  \\
-            2 Applies to Reflex defense.  The same value is applied in reverse to Fortitude defense.
-            For example, a Huge creature has a \minus4 penalty to Reflex and a \plus4 bonus to Fortitude defense. \\
-            3. This modifier applies to \glossterm{strike damage}. \\
-            4. See \pcref{Threat Value}. \\
-            5. See \pcref{Overwhelm Resistance}. \\
+            2. This modifier applies to \glossterm{strike damage}. \\
+            3. See \pcref{Threat Value}. \\
+            4. See \pcref{Overwhelm Resistance}. \\
         \end{dtable*}
 
         \parhead{Other Effects}
