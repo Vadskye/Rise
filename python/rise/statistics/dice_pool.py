@@ -52,7 +52,9 @@ class DicePool(object):
 
     def decrease_size(self, increments=1):
         for i in range(increments):
-            if self.size <= 1:
+            if self.count > 4:
+                self.count -= 1
+            elif self.size <= 1:
                 pass
             elif self.size <= 4 and self.count == 1:
                 self.size -= 1
@@ -94,3 +96,6 @@ class DicePool(object):
 
     def __eq__(self, die):
         return self.size == die.size and self.count == die.count
+
+def standard_damage(statistic):
+    return DicePool(8) + statistic // 2
