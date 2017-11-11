@@ -10,8 +10,29 @@ from rise.statistics.size import Size
 from rise.statistics.weapon import Weapon
 from rise.latex.util import latexify
 
-def generate_monsters():
+
+def aberrations():
     monsters = []
+
+    monsters.append(get_latex_from_creature(
+        Creature(
+            character_class=CharacterClass('adept'),
+            level=12,
+            name='Aboleth',
+            natural_armor=6,
+            race=Race('aberration'),
+            size=Size('huge'),
+            starting_attributes=[2, 0, 3, 2, 1, 3],
+            weapons=[Weapon('tentacle')],
+        ),
+    ))
+
+    return '\n\n'.join(monsters)
+
+
+def animals():
+    monsters = []
+
     monsters.append(get_latex_from_creature(
         Creature(
             character_class=CharacterClass('behemoth'),
@@ -43,16 +64,22 @@ def generate_monsters():
 
     monsters.append(get_latex_from_creature(
         Creature(
-            character_class=CharacterClass('adept'),
-            level=12,
-            name='Aboleth',
-            natural_armor=6,
-            race=Race('aberration'),
-            size=Size('huge'),
-            starting_attributes=[2, 0, 3, 2, 1, 3],
-            weapons=[Weapon('tentacle')],
+            character_class=CharacterClass('slayer'),
+            level=5,
+            name='Dire Wolf',
+            natural_armor=4,
+            race=Race('animal'),
+            size=Size('large'),
+            starting_attributes=[3, 3, 1, -6, 2, 0],
+            weapons=[Weapon('bite')],
         ),
     ))
+
+    return '\n\n'.join(monsters)
+
+
+def humanoids():
+    monsters = []
 
     monsters.append(get_latex_from_creature(
         Creature(
@@ -66,6 +93,12 @@ def generate_monsters():
         ),
     ))
 
+    return '\n\n'.join(monsters)
+
+
+def magical_beasts():
+    monsters = []
+
     monsters.append(get_latex_from_creature(
         Creature(
             character_class=CharacterClass('slayer'),
@@ -75,7 +108,7 @@ def generate_monsters():
             race=Race('magical beast'),
             size=Size('large'),
             starting_attributes=[3, 2, 1, -7, 1, 0],
-            weapons=[Weapon('club')],
+            weapons=[Weapon('bite')],
         ),
     ))
 
@@ -90,6 +123,33 @@ def generate_monsters():
             weapons=[Weapon('bite')],
         ),
     ))
+
+    return '\n\n'.join(monsters)
+
+
+def monstrous_humanoids():
+    monsters = []
+
+    monsters.append(get_latex_from_creature(
+        Creature(
+            armor=Armor('breastplate'),
+            character_class=CharacterClass('slayer'),
+            level=15,
+            name='Giant',
+            name_suffix='Storm',
+            natural_armor=4,
+            race=Race('monstrous humanoid'),
+            size=Size('gargantuan'),
+            starting_attributes=[3, 0, 2, 1, 2, 1],
+            weapons=[Weapon('greatsword')],
+        ),
+    ))
+
+    return '\n\n'.join(monsters)
+
+
+def outsiders():
+    monsters = []
 
     monsters.append(get_latex_from_creature(
         Creature(
@@ -130,6 +190,12 @@ def generate_monsters():
         ),
     ))
 
+    return '\n\n'.join(monsters)
+
+
+def undead():
+    monsters = []
+
     monsters.append(get_latex_from_creature(
         Creature(
             character_class=CharacterClass('adept'),
@@ -142,6 +208,34 @@ def generate_monsters():
         ),
     ))
 
+    return '\n\n'.join(monsters)
+
+
+def generate_monsters():
+    monsters = f"""
+        \\section<Aberrations>
+        {aberrations()}
+
+
+        \\section<Animals>
+        {animals()}
+
+        \\section<Humanoids>
+        {humanoids()}
+
+        \\section<Magical Beasts>
+        {magical_beasts()}
+
+        \\section<Monstrous Humanoids>
+        {monstrous_humanoids()}
+
+        \\section<Outsiders>
+        {outsiders()}
+
+        \\section<Undead>
+        {undead()}
+    """
+
     return monsters
 
 
@@ -153,12 +247,11 @@ def sanity_check(monsters):
 @click.option('-c', '--check/--no-check', default=False)
 @click.option('-o', '--output')
 def main(output, check):
-    monster_texts = generate_monsters()
-    text = latexify("""
+    monster_text = generate_monsters()
+    text = latexify(f"""
         \\chapter<Monsters>
-        \\section<Monster Descriptions>
-        {}
-    """.format('\n'.join(monster_texts)))
+        {monster_text}
+    """)
     if output is None:
         print(text)
     else:
