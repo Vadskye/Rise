@@ -2,6 +2,7 @@
 
 import click
 from rise.latex.monster import get_latex_from_creature
+from rise.latex.active_ability import active_ability
 from rise.statistics.armor import Armor
 from rise.statistics.character_class import CharacterClass
 from rise.statistics.creature import Creature
@@ -33,46 +34,70 @@ def aberrations():
 def animals():
     monsters = []
 
+    black_bear = Creature(
+        character_class=CharacterClass('behemoth'),
+        level=3,
+        name='Bear',
+        name_suffix='Black',
+        natural_armor=4,
+        race=Race('animal'),
+        starting_attributes=[3, 1, 2, -7, 1, 0],
+        weapons=[Weapon('bite'), Weapon('claw')],
+    )
     monsters.append(get_latex_from_creature(
-        Creature(
-            character_class=CharacterClass('behemoth'),
-            level=3,
-            name='Bear',
-            name_suffix='Black',
-            natural_armor=4,
-            race=Race('animal'),
-            starting_attributes=[3, 1, 2, -7, 1, 0],
-            weapons=[Weapon('bite'), Weapon('claw')],
-        ),
+        black_bear,
+        active_abilities=[
+            active_ability(
+                'Rend',
+                effect='The bear makes a claw strike against two targets within reach.',
+            ),
+        ],
         immunities=['staggered'],
     ))
 
+    brown_bear = Creature(
+        character_class=CharacterClass('behemoth'),
+        level=6,
+        name='Bear',
+        natural_armor=4,
+        name_suffix='Brown',
+        race=Race('animal'),
+        size=Size('large'),
+        starting_attributes=[3, 1, 2, -7, 1, 0],
+        weapons=[Weapon('bite'), Weapon('claw')],
+    )
     monsters.append(get_latex_from_creature(
-        Creature(
-            character_class=CharacterClass('behemoth'),
-            level=6,
-            name='Bear',
-            natural_armor=4,
-            name_suffix='Brown',
-            race=Race('animal'),
-            size=Size('large'),
-            starting_attributes=[3, 1, 2, -7, 1, 0],
-            weapons=[Weapon('bite'), Weapon('claw')],
-        ),
+        brown_bear,
+        active_abilities=[
+            active_ability(
+                'Rend',
+                effect='The bear makes a claw strike against two targets within reach.',
+            ),
+        ],
         immunities=['staggered'],
     ))
 
+    dire_wolf = Creature(
+        character_class=CharacterClass('slayer'),
+        level=5,
+        name='Dire Wolf',
+        natural_armor=4,
+        race=Race('animal'),
+        size=Size('large'),
+        starting_attributes=[3, 3, 1, -6, 2, 0],
+        weapons=[Weapon('bite')],
+    )
     monsters.append(get_latex_from_creature(
-        Creature(
-            character_class=CharacterClass('slayer'),
-            level=5,
-            name='Dire Wolf',
-            natural_armor=4,
-            race=Race('animal'),
-            size=Size('large'),
-            starting_attributes=[3, 3, 1, -6, 2, 0],
-            weapons=[Weapon('bite')],
-        ),
+        dire_wolf,
+        active_abilities=[
+            active_ability(
+                'Pounce',
+                effect="""
+                    The dire wolf moves up to its movement speed.
+                    If it uses this ability during the action phase, it can make a strike during the delayed action phase.
+                """,
+            ),
+        ],
     ))
 
     return '\n\n'.join(monsters)
@@ -81,16 +106,26 @@ def animals():
 def humanoids():
     monsters = []
 
+    cultist = Creature(
+        armor=Armor('breastplate'),
+        character_class=CharacterClass('adept'),
+        level=1,
+        name='Cultist',
+        race=Race('humanoid'),
+        starting_attributes=[0, 0, 0, -1, -1, 3],
+        weapons=[Weapon('club')],
+    )
     monsters.append(get_latex_from_creature(
-        Creature(
-            armor=Armor('breastplate'),
-            character_class=CharacterClass('adept'),
-            level=1,
-            name='Cultist',
-            race=Race('humanoid'),
-            starting_attributes=[0, 0, 0, -1, -1, 3],
-            weapons=[Weapon('club')],
-        ),
+        cultist,
+        active_abilities=[
+            active_ability(
+                'Hex',
+                accuracy=cultist.accuracy(cultist.willpower),
+                defense='Mental',
+                hit=f"{cultist.standard_damage(cultist.willpower)} life damage, and the target is sickened as a condition.",
+                targeting='One target within \\rngmed range',
+            ),
+        ],
     ))
 
     return '\n\n'.join(monsters)
@@ -99,29 +134,50 @@ def humanoids():
 def magical_beasts():
     monsters = []
 
+    ankheg = Creature(
+        character_class=CharacterClass('slayer'),
+        level=6,
+        name='Ankheg',
+        natural_armor=6,
+        race=Race('magical beast'),
+        size=Size('large'),
+        starting_attributes=[3, 2, 1, -7, 1, 0],
+        weapons=[Weapon('bite')],
+    )
     monsters.append(get_latex_from_creature(
-        Creature(
-            character_class=CharacterClass('slayer'),
-            level=6,
-            name='Ankheg',
-            natural_armor=6,
-            race=Race('magical beast'),
-            size=Size('large'),
-            starting_attributes=[3, 2, 1, -7, 1, 0],
-            weapons=[Weapon('bite')],
-        ),
+        ankheg,
+        active_abilities=[
+            active_ability(
+                'Acid Spit',
+                accuracy=ankheg.accuracy(),
+                defense='Reflex',
+                hit=f"{ankheg.standard_damage(ankheg.constitution) + 1} acid damage, and the target is sickened as a condition.",
+                targeting='One target within \\rngclose range',
+            ),
+        ]
     ))
 
+    aranea = Creature(
+        character_class=CharacterClass('adept'),
+        level=5,
+        name='Aranea',
+        natural_armor=4,
+        race=Race('magical beast'),
+        starting_attributes=[0, 2, 0, 2, 1, 3],
+        weapons=[Weapon('bite')],
+    )
     monsters.append(get_latex_from_creature(
-        Creature(
-            character_class=CharacterClass('adept'),
-            level=5,
-            name='Aranea',
-            natural_armor=4,
-            race=Race('magical beast'),
-            starting_attributes=[0, 2, 0, 2, 1, 3],
-            weapons=[Weapon('bite')],
-        ),
+        aranea,
+        active_abilities=[
+            active_ability(
+                'Shapeshift',
+                # Is this how shapeshifting should work?
+                effect="""
+                    The aranea makes a Disguise check to change its appearance.
+                    It ignores all penalties for differences between its natural appearance and its intended appearance.
+                """,
+            ),
+        ]
     ))
 
     return '\n\n'.join(monsters)
@@ -130,19 +186,39 @@ def magical_beasts():
 def monstrous_humanoids():
     monsters = []
 
+    storm_giant = Creature(
+        armor=Armor('breastplate'),
+        character_class=CharacterClass('slayer'),
+        level=15,
+        name='Giant',
+        name_suffix='Storm',
+        natural_armor=4,
+        race=Race('monstrous humanoid'),
+        size=Size('gargantuan'),
+        starting_attributes=[3, 0, 2, 1, 2, 2],
+        weapons=[Weapon('greatsword')],
+    )
     monsters.append(get_latex_from_creature(
-        Creature(
-            armor=Armor('breastplate'),
-            character_class=CharacterClass('slayer'),
-            level=15,
-            name='Giant',
-            name_suffix='Storm',
-            natural_armor=4,
-            race=Race('monstrous humanoid'),
-            size=Size('gargantuan'),
-            starting_attributes=[3, 0, 2, 1, 2, 1],
-            weapons=[Weapon('greatsword')],
-        ),
+        storm_giant,
+        active_abilities=[
+            active_ability(
+                'Lightning Javelin',
+                accuracy=storm_giant.accuracy(),
+                defense='Reflex',
+                hit=f"{storm_giant.standard_damage(storm_giant.willpower)} electricity damage.",
+                targeting='All in a \\arealarge line',
+            ),
+            active_ability(
+                'Thunderstrike',
+                effect=f"""
+                    The storm giant makes a greatsword strike against a target.
+                    If its attack result beats the target's Fortitude defense,
+                        the target also takes {storm_giant.standard_damage(storm_giant.strength) - 1} sonic damage
+                        and is deafened as a condition.
+                """,
+            ),
+        ],
+        immunities=['deafened'],
     ))
 
     return '\n\n'.join(monsters)
