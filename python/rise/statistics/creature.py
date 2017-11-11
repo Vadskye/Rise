@@ -1,5 +1,5 @@
 from rise.statistics.armor import Armor
-from rise.statistics.dice_pool import DicePool
+from rise.statistics.dice_pool import DicePool, standard_damage
 from rise.statistics.size import Size
 from rise.statistics.strike import Strike
 from rise.statistics.weapon import Weapon
@@ -103,6 +103,10 @@ class Creature(object):
         return self.size.reach
 
     @property
+    def recovery_dice(self):
+        return DicePool(6) + self.level // 2
+
+    @property
     def reflex_defense(self):
         return sum([
             self.starting_dexterity,
@@ -122,8 +126,8 @@ class Creature(object):
         for weapon in self.weapons:
             strikes[weapon.name] = Strike(
                 name=weapon.name,
-                accuracy=self.calculate_accuracy(weapon),
-                damage=self.calculate_damage(weapon),
+                accuracy=self.weapon_accuracy(weapon),
+                damage=self.weapon_damage(weapon),
             )
         return strikes
 
@@ -139,7 +143,11 @@ class Creature(object):
     def willpower(self):
         return calculate_attribute(self.starting_willpower, self.level)
 
-    def calculate_accuracy(self, weapon):
+    def accuracy(self, statistic=None):
+        # Assume that Perception is used by default
+        return max(self.level, statistic if statistic is not None else self.perception)
+
+    def weapon_accuracy(self, weapon):
         """Return the accuracy with the given weapon"""
         return max(
             self.level,
@@ -148,7 +156,7 @@ class Creature(object):
             getattr(self, weapon.attribute) if weapon.attribute else 0,
         )
 
-    def calculate_damage(self, weapon):
+    def weapon_damage(self, weapon):
         """Return the DicePool for damage with the given weapon"""
         standard = DicePool(8)
         standard += sum([
@@ -161,3 +169,6 @@ class Creature(object):
             self.size.damage_modifier,
         ])
         return standard
+
+    def standard_damage(self, statistic=None):
+        return standard_damage(max(self.level, statistic) if statistic is not None else self.level)
