@@ -68,7 +68,7 @@ def generate_spells():
                 name="Gust of Wind",
                 targeting=Targeting(
                     area=r'\arealarge line, 10 ft. wide',
-                    targets='Everything in the area',
+                    targets='All in the area',
                     time='standard action',
                 ),
                 effects=Effects(
@@ -275,7 +275,7 @@ def generate_spells():
                 targeting=Targeting(
                     rng='long',
                     area='\\areamed radius cylinder, 100 ft\. high',
-                    targets='Everything in the area',
+                    targets='All in the area',
                 ),
                 effects=Effects(
                     effect="""
@@ -313,7 +313,7 @@ def generate_spells():
                     area='\\areasmall radius',
                     area_type='zone',
                     rng='close',
-                    targets='Everything in the area',
+                    targets='All in the area',
                 ),
                 effects=Effects(
                     effect="""
@@ -564,7 +564,7 @@ def generate_spells():
                 targeting=Targeting(
                     area='\\arealarge radius',
                     rng='medium',
-                    targets='Everything in the area',
+                    targets='All in the area',
                 ),
                 effects=Effects(
                     effect="""
@@ -586,7 +586,7 @@ def generate_spells():
             area='\\areasmall radius',
             area_type='burst',
             rng='close',
-            targets='Everything in the area',
+            targets='All in the area',
         ),
         effects=Effects(
             attack=Attack.multi_damage('Reflex', 'fire'),
@@ -602,7 +602,7 @@ def generate_spells():
                 targeting=Targeting(
                     area='\\arealarge cone',
                     area_type='burst',
-                    targets='Everything in the area',
+                    targets='All in the area',
                 ),
             ),
             Subspell(
@@ -650,7 +650,7 @@ def generate_spells():
         targeting=Targeting(
             area='\\arealarge line, 10 ft\. wide',
             area_type='burst',
-            targets='Everything in the area',
+            targets='All in the area',
         ),
         effects=Effects(
             attack=Attack.multi_damage('Fortitude', 'bludgeoning'),
@@ -681,7 +681,7 @@ def generate_spells():
                     area='\\areasmall radius',
                     area_type='burst',
                     rng='close',
-                    targets='Everything in the area',
+                    targets='All in the area',
                 ),
             ),
             Subspell(
@@ -1083,7 +1083,7 @@ def generate_spells():
         targeting=Targeting(
             area='\\areamed cone',
             area_type='burst',
-            targets='Everything in the area',
+            targets='All in the area',
         ),
         effects=Effects(
             attack=Attack(
@@ -1126,7 +1126,7 @@ def generate_spells():
         targeting=Targeting(
             area='\\arealarge line, 10 ft\\. wide',
             area_type='burst',
-            targets='Everything in the area',
+            targets='All in the area',
         ),
         effects=Effects(
             attack=Attack(
@@ -1173,7 +1173,7 @@ def generate_spells():
                 targeting=Targeting(
                     area='\\arealarge vertical line, 5 ft\\. wide',
                     area_type='burst',
-                    targets='Everything in the area',
+                    targets='All in the area',
                 ),
                 effects=Effects(
                     attack=Attack(
