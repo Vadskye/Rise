@@ -7,6 +7,7 @@ def properties_from_weapon_name(name):
         # Manufactured weapons
         'greatsword': [1, Weapon.HEAVY, None],
         'longsword': [0, Weapon.MEDIUM, None],
+        'mace': [0, Weapon.MEDIUM, None],
         'club': [-1, Weapon.MEDIUM, None],
         'draining touch': [-1, Weapon.LIGHT, None],
         'shortsword': [-1, Weapon.LIGHT, None],

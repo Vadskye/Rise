@@ -52,8 +52,9 @@ Wil 14
 \pari \textbf{Immune} staggered
 \end{spelltargetinginfo}
 \begin{spelleffects}
-\pari \spelltwocol{\textbf{Rend} }{Two targets within reach}
-\par The bear makes a claw strike against both targets.
+\pari
+\textbf{Rend}:
+The bear makes a claw strike against two targets within reach.
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellsubcontent}
@@ -90,8 +91,9 @@ Wil 0
 \pari \textbf{Immune} staggered
 \end{spelltargetinginfo}
 \begin{spelleffects}
-\pari \spelltwocol{\textbf{Rend} }{Two targets within reach}
-\par The bear makes a claw strike against both targets.
+\pari
+\textbf{Rend}:
+The bear makes a claw strike against two targets within reach.
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellsubcontent}
@@ -127,8 +129,8 @@ Wil 0
 \pari \textbf{Strike} Bite \plus6 (2d10)
 \end{spelltargetinginfo}
 \begin{spelleffects}
-\pari \spelltwocol{\textbf{Pounce} }{}
-\par
+\pari
+\textbf{Pounce}:
 The dire wolf moves up to its movement speed.
 If it uses this ability during the action phase, it can make a strike during the delayed action phase.
 \end{spelleffects}
@@ -167,7 +169,9 @@ Wil 0
 \pari \textbf{Strike} Club \plus1 (1d6)
 \end{spelltargetinginfo}
 \begin{spelleffects}
-\pari \spelltwocol{\textbf{Hex} \plus3 vs Mental}{One target within \rngmed range}
+\pari
+\spelltwocol{\textbf{Hex}: \plus3 vs Mental}{One target within \rngmed range}
+\par
 \par \textit{Hit}: 1d10 life damage, and the target is sickened as a condition.
 \end{spelleffects}
 \end{spellcontent}
@@ -205,7 +209,9 @@ Wil 3
 \pari \textbf{Strike} Bite \plus6 (4d6)
 \end{spelltargetinginfo}
 \begin{spelleffects}
-\pari \spelltwocol{\textbf{Acid Spit} \plus6 vs Reflex}{One target within \rngclose range}
+\pari
+\spelltwocol{\textbf{Acid Spit}: \plus6 vs Reflex}{One target within \rngclose range}
+\par
 \par \textit{Hit}: 2d10 acid damage, and the target is sickened as a condition.
 \end{spelleffects}
 \end{spellcontent}
@@ -242,8 +248,8 @@ Wil 0
 \pari \textbf{Strike} Bite \plus5 (2d6)
 \end{spelltargetinginfo}
 \begin{spelleffects}
-\pari \spelltwocol{\textbf{Shapeshift} }{}
-\par
+\pari
+\textbf{Shapeshift}:
 The aranea makes a Disguise check to change its appearance.
 It ignores all penalties for differences between its natural appearance and its intended appearance.
 \end{spelleffects}
@@ -265,7 +271,7 @@ Wil 7
 \end{spellsubcontent}
 \end{monsection}
 \section{Monstrous Humanoids}
-\begin{monsection}[Storm]{Giant}{15}[1]
+\begin{monsection}[Storm]{Giant}{15}[2]
 \vspace{-1em}\spelltwocol{}{Gargantuan monstrous humanoid}\vspace{-1em}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
@@ -274,19 +280,23 @@ Wil 7
 \textbf{Bloodied} 56;
 \textbf{Recovery} 4d8
 }
-{\textbf{AP} 1}
+{\textbf{AP} 2}
 \pari \textbf{Armor} 23;
 \textbf{Fort} 23;
 \textbf{Ref} 14;
 \textbf{Ment} 22
 \pari \textbf{Strike} Greatsword \plus16 (9d10)
 \pari \textbf{Immune} deafened
+\pari One in action phase and delayed action phase
 \end{spelltargetinginfo}
 \begin{spelleffects}
-\pari \spelltwocol{\textbf{Lightning Javelin} \plus16 vs Reflex}{All in a \arealarge line}
-\par \textit{Hit}: 5d10 electricity damage.
-\pari \spelltwocol{\textbf{Thunderstrike} }{}
+\pari
+\spelltwocol{\textbf{Lightning Javelin}: \plus16 vs Reflex}{All in a \arealarge line}
 \par
+\par \textit{Hit}: 5d10 electricity damage.
+\vspace{0.5em}
+\pari
+\textbf{Thunderstrike}:
 The storm giant makes a greatsword strike against a target.
 If its attack result beats the target's Fortitude defense,
 the target also takes 4d10 sonic damage
@@ -320,12 +330,23 @@ Wil 16
 \textbf{Recovery} 4d8
 }
 {\textbf{AP} 1}
-\pari \textbf{Armor} 21;
+\pari \textbf{Armor} 23;
 \textbf{Fort} 19;
 \textbf{Ref} 21;
 \textbf{Ment} 23
-\pari \textbf{Strike} Greatsword \plus15 (5d10)
+\pari \textbf{Strike} Mace \plus15 (4d10)
 \end{spelltargetinginfo}
+\begin{spelleffects}
+\pari
+\textbf{Smite}:
+The angel makes a mace strike.
+If its target is evil, it gains a \plus2 bonus to accuracy and a \plus2d bonus to damage on the strike.
+\vspace{0.5em}
+\pari
+\spelltwocol{\textbf{Angel's Grace}: }{One other creature within reach}
+\par
+The target heals 5d10 hit points.
+\end{spelleffects}
 \end{spellcontent}
 \begin{spellsubcontent}
 \begin{spellfooter}

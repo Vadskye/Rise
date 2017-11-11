@@ -7,13 +7,17 @@ def active_ability(
         targeting=None,
 ):
     return f"""
-        \\pari \\spelltwocol<\\textbf<{name}> {accuracy_text(accuracy, defense)}><{targeting if targeting else ""}>
-        {f'''
-        |par {effect}
-        ''' if effect else ""}
-        {f'''
-        |par |textit<Hit>: {hit}
-        ''' if hit else ""}
+        \\pari
+        {
+            f'''
+            |spelltwocol<|textbf<{name}>: {accuracy_text(accuracy, defense)}><{targeting if targeting else ""}>
+                |par
+            '''
+            if accuracy or targeting
+            else f"|textbf<{name}>:"
+        }
+        {effect if effect else ""}
+        {f"|par |textit<Hit>: {hit}" if hit else ""}
     """
 
 

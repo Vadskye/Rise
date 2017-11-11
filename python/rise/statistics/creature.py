@@ -154,6 +154,7 @@ class Creature(object):
             self.perception,
             self.dexterity if weapon.encumbrance_category == Weapon.LIGHT else 0,
             getattr(self, weapon.attribute) if weapon.attribute else 0,
+            self.shield.accuracy_modifier if self.shield else 0,
         )
 
     def weapon_damage(self, weapon):
