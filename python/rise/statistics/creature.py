@@ -5,7 +5,10 @@ from rise.statistics.strike import Strike
 from rise.statistics.weapon import Weapon
 
 def calculate_attribute(starting_value, level):
-    if (starting_value > 0):
+    # Doesn't match PC growth, but looks better and shouldn't matter
+    if starting_value == 1:
+        return level // 2 + 1
+    elif starting_value > 0:
         return starting_value + (level - 1)
     else:
         return starting_value
@@ -72,7 +75,6 @@ class Creature(object):
             max(self.level, self.strength, self.constitution),
             self.character_class.fortitude_defense_bonus,
             self.race.fortitude_defense_bonus,
-            self.size.fortitude_defense_modifier,
         ])
 
     @property
