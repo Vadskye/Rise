@@ -49,23 +49,22 @@ def generate_armor():
         tags=['Telekinesis'],
         material_type='shield',
         description="""
-            As an \\glossterm<immediate action> when you are attacked by a ranged \\glossterm<strike>, you can use this item.
-            If you do, you gain a +5 bonus to Armor defense against the attack.
-            You must be aware of the attack to deflect it in this way.
-            This item can only affect projectiles and thrown objects that are Small or smaller.
+            As a \\glossterm<minor action>, you can activate this shield.
+            If you do, you gain a +5 bonus to Armor defense against ranged \\glossterm<physical attacks> from weapons or projectiles that are Small or smaller.
+            This ability takes effect during the current phase and lasts until the end of the round.
         """,
-        short_description="React to block small projectiles",
+        short_description="Can block small projectiles",
     ))
 
     apparel.append(MagicItem(
         name="Shield of Arrow Deflection, Greater",
-        level=12,
+        level=8,
         tags=['Telekinesis'],
         material_type='shield',
         description="""
-            This item functions like the \\mitem<shield of arrow deflection> item, except that the defense bonus increases to +10.
+            You gain a +5 bonus to Armor defense against ranged \\glossterm<physical attacks> from weapons or projectiles that are Small or smaller.
         """,
-        short_description="React to completely block small projectiles",
+        short_description="Blocks small projectiles",
     ))
 
     apparel.append(MagicItem(
@@ -74,9 +73,20 @@ def generate_armor():
         tags=['Telekinesis'],
         material_type='shield',
         description="""
-            This item functions like the \\mitem<shield of arrow deflection> item, except that it can affect projectiles and thrown objects of up to Large size.
+            This item functions like the \\mitem<shield of arrow deflection> item, except that it can affect weapons and projectiles of up to Large size.
         """,
-        short_description="React to block large projectiles",
+        short_description="Can block large projectiles",
+    ))
+
+    apparel.append(MagicItem(
+        name="Shield of Boulder Deflection, Greater",
+        level=12,
+        tags=['Telekinesis'],
+        material_type='shield',
+        description="""
+            This item functions like the \\mitem<greater shield of arrow deflection> item, except that it can affect weapons and projectiles of up to Large size.
+        """,
+        short_description="Blocks large projectiles",
     ))
 
     apparel.append(MagicItem(
@@ -85,20 +95,18 @@ def generate_armor():
         tags=['Enhancement'],
         material_type='shield',
         description="""
-            % Should this be strike damage?
-            You gain a +1d bonus to damage with \\glossterm<physical attacks> using this shield.
+            You gain a +1d bonus to \\glossterm<strike damage> with this shield.
         """,
         short_description="Deals +1d damage",
     ))
 
     apparel.append(MagicItem(
         name="Shield of Bashing, Greater",
-        level=11,
+        level=12,
         tags=['Enhancement'],
         material_type='shield',
         description="""
-            % Should this be strike damage?
-            You gain a +2d bonus to damage with \\glossterm<physical attacks> using this shield.
+            You gain a +2d bonus to \\glossterm<strike damage> with this shield.
         """,
         short_description="Deals +2d damage",
     ))
@@ -250,9 +258,10 @@ def generate_armor():
         tags=['Thaumaturgy'],
         material_type='shield',
         description="""
-            As an \\glossterm<immediate action> when you are targeted by a targeted \\glossterm<magical> ability, you can spend an \\glossterm<action point> to use this ability.
-            If you do, the ability targets the creature using the ability instead of you.
+            As a \\glossterm<minor action>, you can spend an \\glossterm<action point> to activate this item.
+            If you do, any \\glossterm<targeted> \\glossterm<magical> abiliites that would target you are redirected to target the creature using the ability instead of you.
             Any other targets of the ability are affected normally.
+            This ability takes effect during the current phase and lasts until the end of the round.
         """,
         short_description="React to reflect magical attacks",
     ))
@@ -291,22 +300,25 @@ def generate_worn():
         material_type='bracer',
         tags=['Telekinesis'],
         description="""
-            Whenever a creature hits you with a melee \\glossterm<strike> during the \\glossterm<action phase>,
-                you can spend an \\glossterm<action point> to use this item as an \\glossterm<immediate action>.
-            If you do, you make a \\glossterm<shove> attack against that creature during the \\glossterm<delayed action phase>, using this item's power in place of your Strength.
+            As a standard action during the \\glossterm<action phase>, you can spend an \\glossterm<action point> to activate these bracers.
+            If you do, they emit a telekinetic burst of force during the \\glossterm<delayed action phase> that targets everything within a \\areamed radius burst from you.
+            You make a \\glossterm<shove> attack against all targets to push them away from you, using this item's \\glossterm<power> in place of your Strength.
+            You gain a +5 bonus to this attack against any creature that attacked you during the action phase,
+                and an additional +5 bonus against any creature that damaged you during the action phase.
+            You do not have to move with any targets to push them the full distance of the shove.
         """,
-        short_description="React to shove a foe that struck you",
+        short_description="Can shove nearby creatures back",
     ))
 
     apparel.append(MagicItem(
         name="Bracers of Repulsion, Greater",
-        level=11,
+        level=8,
         material_type='bracer',
         tags=['Telekinesis'],
         description="""
-            This item functions like the \\mitem<bracers of repulsion> item, except that it does not cost an action point to use.
+            This item functions like the \\mitem<bracers of repulsion> item, except that it targets everything within a \\arealarge radius burst.
         """,
-        short_description="React freely to shove a foe that struck you",
+        short_description="Can shove foes back",
     ))
 
     apparel.append(MagicItem(
@@ -778,8 +790,9 @@ def generate_worn():
         material_type='belt',
         tags=['Life'],
         description="""
-            % TODO: timing?
-            As an \\glossterm<immediate action> when you get a \\glossterm<critical hit>, you can take the \\textit<recover> action.
+            As a \\glossterm<minor action>, you can activate this item.
+            If you do, you heal 1d6 damage +1d per two \\glossterm<power>.
+            If you were hit by a \\glossterm<critical hit> during the previous phase, this healing is increased by +2d.
         """,
         short_description="React to heal after getting a critical hit",
     ))
