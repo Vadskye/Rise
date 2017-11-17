@@ -644,8 +644,8 @@ This choice determines a great deal about your character's abilities.
                     \spelltags{\glossterm{Compulsion}, \glossterm{Mind}}
                 \end{spelleffects}
             \end{ability}
-            \parhead{Mastery} Whenever you take damage, you may use this ability as an \glossterm{immediate action}.
-            If you do, you can use this domain's domain gift to redirect damage to an unwilling creature within \rngmed range.
+            \parhead{Mastery} You can use your domain gift to redirect damage to unwilling creatures.
+            You cannot use this ability to redirect damage to the same unwilling creature more than once between \glossterm{short rests}.
 
         \subsubsection{Fire}
             \parhead{Gift} All of your \glossterm{Fire} spells and abilities do not deal damage to your allies.
@@ -811,8 +811,9 @@ This choice determines a great deal about your character's abilities.
         \subsubsection{War}
             \parhead{Gift} You gain proficiency with heavy armor, tower shields, and an additional weapon group of your choice.
             \parhead{Aspect} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks}.
-            \parhead{Essence} Whenever you cast a spell, you can use this ability as an \glossterm{immediate action} by spending an \glossterm{action point}.
-            If you do, the spell gains one of the following effects:
+            \parhead{Essence} As a \glossterm{minor action}, you can spend an \glossterm{action point} to use this ability.
+            % TODO: wording
+            If you do, one spell you cast this phase gains one of the following effects:
             \begin{itemize}
                 \item Legion: If the spell would normally affect five or more specific targets it instead affects five times that many targets.
                 \item Selective: If the spell has an area, it has no effect on your allies in the area.
@@ -1060,22 +1061,20 @@ This choice determines a great deal about your character's abilities.
         \subcf{11th -- Grow}
         You increase in size by one size category (see \pcref{Size in Combat}).
         This is a \glossterm{Sizing} effect.
-        \subcf{11th -- Natural Grab}
-        If you hit with a natural attack, you may attempt to grapple your foe as an immediate action.
-        \subcf{11th -- Natural Trip}
-        If you hit with a natural attack, you may attempt to trip your foe as an immediate action.
         \subcf{11th -- Wolfpack}
         You increase your \glossterm{threat value} by 1.
         \subcf{11th -- Venom}
-        If you hit with a natural attack, you may inject poison into your foe as an immediate action.
+        As a \glossterm{minor action}, you can secrete venom from your natural weapons.
+        This effect begins during the current phase and lasts until the end of the round.
+        When you deal damage with a \glossterm{strike} using a natural weapon, the target is poisoned.
         This is a \glossterm{condition}, and lasts until removed.
-        At the end of each \glossterm{action phase}, you make a \textit{nature power} vs. Fortitude attack against all creatures you have poisoned.
+        At the end of each \glossterm{action phase}, you make a \textit{nature power} vs. Fortitude attack against all creatures you have poisoned in this way.
         The effects of the poison are described below.
         \begin{itemize}
-            \item First success: the target is \sickened until the effect ends.
-            \item Second success: the target is \staggered until the end of the next round.
-            \item Third success: the target is \nauseated until the effect ends.
-            \item Third failure: the target is no longer poisoned, and any lingering effects from the poison end.
+            \item First success: the target is \sickened.
+            \item Second success: the target is \nauseated.
+            \item Third success: the target is \paralyzed.
+            \item Third failure: the the condition is removed, causing any lingering effects from the poison to end.
         \end{itemize}
         % TODO poison stacking rules
         \par In addition, you gains a bite attack that deals \plus0d damage for a Medium druid.
@@ -1478,7 +1477,7 @@ This choice determines a great deal about your character's abilities.
         In addition, instead of removing a condition, you can remove any \glossterm{sustained} effect on you.
 
         \cf{Ftr}[10]{Swift Warrior}
-        If you use only \glossterm{mundane} abilities in a given round, you can take an additional \glossterm{minor action} or \glossterm{immediate action} that round.
+        If you use only \glossterm{mundane} abilities in a given round, you can take an additional \glossterm{minor action} that round.
         After using this ability in a round, you are unable to use any \glossterm{magical} abilities until the next round.
 
         \cf{Ftr}[13]{Greater Discipline}
