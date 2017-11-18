@@ -378,7 +378,6 @@ def generate_spells():
 
                         Whenever a creature passes through the wall, make a Spellpower vs. Reflex attack against it.
                         A hit means the target takes slashing \\glossterm<standard damage> -1d.
-                        A critical hit means it takes double damage.
                     """,
                     duration='Sustain (minor)',
                 ),
@@ -419,7 +418,6 @@ def generate_spells():
 
                         When the ballista fires, you make a Spellpower vs. Armor attack against the target.
                         A hit means the target takes piercing \\glossterm<standard damage> -1d.
-                        A critical hit means the target takes double damage.
                         This is a \glossterm{Physical} effect, and does not allow \glossterm{magic resistance}.
 
                         The ballista has hit points equal to three times your spellpower.
@@ -776,7 +774,6 @@ def generate_spells():
                     attack=Attack(
                         defense='Mental',
                         success="At the end of each \\glossterm<delayed action phase>, if the target took damage that round, it takes mental \\glossterm<standard damage> -2d.",
-                        critical="As above, but double damage.",
                     ),
                     duration='Condition',
                     tags=['Emotion', 'Mind'],
@@ -1092,7 +1089,6 @@ def generate_spells():
                     Cold \\glossterm<standard damage> \minus1d.
                     In addition, the target is \\fatigued as a condition.
                 """,
-                critical='As above, but double damage.',
             ),
             tags=['Cold'],
         ),
@@ -1135,7 +1131,6 @@ def generate_spells():
                 success="""
                     Electricity \\glossterm<standard damage> -1d.
                 """,
-                critical='As above, but double damage.',
             ),
             tags=['Electricity'],
         ),
@@ -1181,7 +1176,6 @@ def generate_spells():
                         success="""
                             The target takes takes electricity \\glossterm<standard damage> +1d.
                         """,
-                        critical='As above, but double damage.',
                         special="""
                             If you are outdoors in cloudy or stormy weather, you gain a +2 bonus to \\glossterm<accuracy> with the attack.
                         """,
@@ -1320,7 +1314,7 @@ def generate_spells():
             ),
             Subspell(
                 level=4,
-                name="Cure Critical Wounds",
+                name="Cure Serious Wounds",
                 description="""
                     This subspell functions like the \\textit<cure wounds> subspell, except that it heals one point of vital damage for every 2 points of healing instead of for every 10.
                 """,
@@ -2018,7 +2012,6 @@ def generate_spells():
             attack=Attack(
                 defense='Reflex',
                 success='Piercing \\glossterm<standard damage> +1d.',
-                critical='As above, but double damage.',
             ),
             tags=['Physical', 'Shaping'],
         ),
@@ -2159,9 +2152,6 @@ def generate_spells():
                             In addition, if the target has no hit points remaining, it dies.
                             Its body is completely disintegrated, leaving behind only a pinch of fine dust.
                             Its equipment is unaffected.
-                        """,
-                        critical="""
-                            As above, but double damage.
                         """,
                     ),
                     tags=['Shaping'],
