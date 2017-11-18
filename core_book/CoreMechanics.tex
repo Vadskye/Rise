@@ -29,8 +29,8 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \subsubsection{Critical Hit}\label{Critical Hit}
             If your attack result is at least 10 higher than your target's defense, your attack is a \glossterm{critical hit}.
-            Many attacks have a special effect on a critical hit.
-            For example, \glossterm{strikes} deal double damage when you get a critical hit.
+            Many attacks have special effects on critical hits.
+            Unless its critical hit effects are otherwise noted, any attack that deals damage deals double that damage on a critical hit.
 
         \subsubsection{Critical Miss}\label{Critical Miss}
             if your attack result is at least 10 lower than your target's defense, your attack is a \glossterm{critical miss}.
@@ -67,7 +67,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \subsubsection{Critical Success}
             If your check result is at least 10 higher than the DR, your check is a \glossterm{critical success}.
-            Many checks have a special effect on a critical success.
+            Some checks have a special effect on a critical success.
             For example, a critical success while climbing means you move twice as quickly (see \pcref{Climb}).
 
         \subsubsection{Critical Failure}
@@ -267,7 +267,6 @@ It defines how attributes work and explains how to make physical attacks in comb
             \begin{spelleffects}
                 \begin{spellattack}{Physical vs. Armor}
                     \spellsuccess The target takes \glossterm{strike damage} from the chosen weapon (see \pcref{Strike Damage}).
-                    \spellcritical As above, but the target takes double damage.
                 \end{spellattack}
             \end{spelleffects}
         \end{ability}
@@ -344,7 +343,6 @@ It defines how attributes work and explains how to make physical attacks in comb
                         If the target is \glossterm{attended}, this attack is also made against the attending creature's Reflex defense.
                         \spellsuccess You choose whether or not the target takes \glossterm{strike damage} from the chosen weapon.
                         In addition, if the target is \glossterm{attended} and not held in two hands or extraordinarily well secured (such as a ring), it falls to the ground in the closest square to you occupied by the attending creature.
-                        \spellcritical As above, but you deal double damage if you choose to deal damage.
                         In addition, the target falls to the ground even if it is held in two hands.
                     \end{spellattack}
                 \end{spelleffects}
@@ -414,7 +412,8 @@ It defines how attributes work and explains how to make physical attacks in comb
                 \begin{spelleffects}
                     \begin{spellattack}{Physical vs. Reflex}
                         \spellsuccess The target becomes \prone.
-                        \spellcritical As above. In addition, during the \glossterm{delayed action phase}, you can make a \glossterm{strike} with a weapon you wield.
+                        \spellcritical As above.
+                        In addition, during the \glossterm{delayed action phase}, you can make a \glossterm{strike} with a weapon you wield.
                         You take a \minus2d penalty to damage with the strike.
                     \end{spellattack}
                 \end{spelleffects}
@@ -966,7 +965,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             Paralyzed, bound, and unconscious creatures are helpless.
 
             \parhead{Coup de Grace}\label{Coup de Grace} As a full-round action, you can deliver a coup de grace to a helpless opponent within your \glossterm{reach} that you can see.
-            You automatically hit with your weapon and score a \glossterm{critical success}. If the creature takes damage equal to or higher than half its maximum hit points, it immediately dies.
+            You automatically hit with your weapon and score a \glossterm{critical hit}. If the creature takes damage equal to or higher than half its maximum hit points, it immediately dies.
 
             Delivering a coup de grace requires focused concentration and methodical action. This leaves you \defenseless. If you take damage in excess of your Fortitude defense while delivering a coup de grace, your attempt fails.
             If your target stops being helpless during your coup de grace attempt for any reason, the attempt fails.
@@ -1033,7 +1032,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
             \parhead{Movement} Creatures three size categories larger than you are not considered obstacles and do not hinder your movement.
 
-            \parhead{Immunities} Creatures at least three size categories larger than you are difficult to fight. You cannot get a \glossterm{critical success} with \glossterm{strikes} or contribute to overwhelm penalties against such creatures. If you can reach a vulnerable point on the creature, such as by flying or by using ranged weapons, you can get critical successes and contribute to overwhelm penalties normally.
+            \parhead{Immunities} Creatures at least three size categories larger than you are difficult to fight. You cannot get a \glossterm{critical hit} with \glossterm{strikes} or contribute to overwhelm penalties against such creatures. If you can reach a vulnerable point on the creature, such as by flying or by using ranged weapons, you can get critical hits and contribute to overwhelm penalties normally.
 
     \subsection{Stacking Rules}\label{Stacking Rules}
         Usually, modifiers stack with each other, meaning that you add or subtract all of the modifiers to get the final result. However, some modifiers do not stack with each other, as described below. When bonuses don't stack with each other, you only apply the largest bonus. Likewise, when penalties don't stack with each ather, you only apply the largest penalty.
@@ -1292,6 +1291,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         For example, some abilities specify that you can use them ``when you are hit''.
         This section defines more precisely when such abilities can be used.
 
+        % TODO: are there any such abilities left?
         \parhead{When You Are Hit} These abilities are used after the success or failure of all attacks within that phase has been declared, but before any effects of those attacks are declared.
         That means you can activate the ability after you know all of the attacks that hit you during that phase.
         You would also know which attacks were critical hits, allowing you to use the ability to affect those attacks specifically.
