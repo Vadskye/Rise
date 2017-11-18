@@ -5,12 +5,12 @@ def get_latex_from_creature(
         creature,
         action_points=None,
         active_abilities=None,
-        challenge_rating=1,
         immunities=None,
         resistances=None,
 ):
     return get_latex(
         armor_defense=creature.armor_defense,
+        challenge_rating=creature.challenge_rating,
         constitution=creature.constitution,
         dexterity=creature.dexterity,
         fortitude_defense=creature.fortitude_defense,
@@ -32,9 +32,8 @@ def get_latex_from_creature(
         strikes=creature.strikes,
         willpower=creature.willpower,
         # extra args
-        action_points=action_points if action_points is not None else challenge_rating,
+        action_points=action_points if action_points is not None else creature.challenge_rating,
         active_abilities=active_abilities,
-        challenge_rating=challenge_rating,
         immunities=immunities,
         resistances=resistances,
     )
@@ -121,9 +120,9 @@ def get_latex(
 def actions_text(challenge_rating):
     return {
         1: "",
-        2: "\\pari One in action phase and delayed action phase",
-        3: "\\pari Two in action phase, one in delayed action phase",
-        4: "\\pari Two in action phase and delayed action phase",
+        2: "\\pari \\textbf<Actions> One in action phase, one in delayed action phase",
+        3: "\\pari \\textbf<Actions> Two in action phase, one in delayed action phase",
+        4: "\\pari \\textbf<Actions> Two in action phase, two in delayed action phase",
     }[challenge_rating]
 
 def active_abilities_text(active_abilities):
