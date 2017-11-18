@@ -25,6 +25,7 @@ class Creature(object):
             starting_attributes,
             weapons,  # Array of Weapon objects
             armor=None,
+            challenge_rating=1,
             name_suffix=None,
             natural_armor=0,
             shield=None,
@@ -43,6 +44,7 @@ class Creature(object):
         self.weapons = weapons
 
         self.armor = armor
+        self.challenge_rating = challenge_rating
         self.name_suffix = name_suffix
         self.natural_armor = natural_armor
         self.shield = shield
@@ -79,7 +81,7 @@ class Creature(object):
 
     @property
     def hit_points(self):
-        return (self.level + 1) * (5 + self.starting_constitution)
+        return ((self.level + 1) * (5 + self.starting_constitution)) * self.challenge_rating
 
     @property
     def intelligence(self):
