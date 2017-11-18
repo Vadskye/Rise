@@ -105,14 +105,13 @@ It defines how attributes work and explains how to make physical attacks in comb
             When all creatures have resolved their movement, the action phase begins.
 
         \subsubsection{The Action Phase}\label{The Action Phase}
-            During the action phase, each creature can take actions.
+            During the \glossterm{action phase}, each creature can take actions.
             Usually, you will simply take a \glossterm{standard action}.
 
         \subsubsection{The Delayed Action Phase}\label{The Delayed Action Phase}
-            Some abilities cause creatures to take \glossterm{delayed actions}, which are initiated and resolved after other actions in the round.
-            For example, spellcasting is a \glossterm{dual action}, which has a component in both the action phase and the delayed action phase.
-            Any creature can also take the Delay action (see \pcref{Delay}), which causes them to act during the delayed action phase instead of the action phase.
-            If there are no delayed actions, this phase can usually be skipped.
+            Some abilities cause creatures to take actions during the \glossterm{delayed action phase}, which are initiated and resolved after other actions in the round.
+            For example, you can use the \textit{delay} ability to take your normal actions during the delayed action phase (see \pcref{Delay}).
+            In addition, some abilities have effects in both the action phase and the delayed action phase, such as casting spells (see \pcref{Casting Spells}).
 
     \subsection{Movement and Positioning}\label{Movement and Positioning}
 
@@ -423,24 +422,14 @@ It defines how attributes work and explains how to make physical attacks in comb
 
     \subsection{Special Combat Actions}
 
-        \parhead{Charge}\label{Charge} As a \glossterm{standard action}, you can move up to your speed in the action phase.
-        If you use this ability during the \glossterm{action phase}, during the \glossterm{delayed action phase}, you can make a \glossterm{strike} from your new location.
-        If you charge, you take a \minus5 penalty to \glossterm{physical defenses} until the end of the round, including during the phase when you first use this ability.
-
-        \par Your movement while charging has special limitations.
-        First, you must move entirely in a single straight line.
-        Your path must be clear of all obstacles and movement impediments, including \glossterm{difficult terrain}.
-        If your movement becomes impeded while charging, you stop moving immediately, though you still suffer the defense penalty for charging and can still attack from your new location.
+        \parhead{Charge}\label{Charge} As a \glossterm{standard action} during the \glossterm{action phase}, you can use this ability.
+        If you do, you move up to your speed in a single straight line.
+        During the \glossterm{delayed action phase}, you can make a melee \glossterm{strike} from your new location.
+        If you use this ability, you take a \minus4 penalty to \glossterm{physical defenses} until the end of the round, including during the current phase.
 
         \parhead{Delay}\label{Delay}
-        During the action phase, you can delay your action instead of acting immediately.
-        If you delay, you do nothing until after the actions of all other creatures have been resolved.
-        At that point, you can declare and resolve your actions for the action phase, as described in \pcref{Resolving Actions}.
-        You cannot delay during the movement phase.
-
-        Some abilities cause actions to be delayed, such as charging (see \pcref{Charge}).
-        If you use an ability that causes actions to be delayed after you have already delayed, any actions which would be delayed are ignored.
-        For example, if you charge after delaying, you would not be able to attack after the charge, making it generally pointless.
+        As a \glossterm{standard action} during the \glossterm{action phase}, you can use this ability.
+        If you do, you can take a standard action during the \glossterm{delayed action phase}.
 
         \parhead{Desperate Recovery}\label{Desperate Recovery}
         As a standard action, you can use this ability.
@@ -462,21 +451,22 @@ It defines how attributes work and explains how to make physical attacks in comb
         \end{ability}
 
         \parhead{Total Defense}\label{Total Defense}
-        As a standard action, you can use this ability to focus entirely on defense.
-        If you do, you gain a \plus2 bonus to your defenses until the end of the round, including in the phase that you use this ability.
+        As a \glossterm{standard action}, you can use this ability to focus entirely on defense.
+        If you do, you gain a \plus2 bonus to your defenses until the end of the round, including during the current phase.
 
     \subsection{Special Movements}
 
-        \parhead{Struggle} As a standard action, you can move five feet regardless of movement penalties.
+        \parhead{Struggle} As a \glossterm{standard action}, you can use this ability.
+        If you do, your land speed becomes five feet regardless of movement speed penalties until the end of the phase, and you can move up to your land speed.
         This does not allow you to pass obstacles unrelated to movement speed penalties, such as walls.
-        You can only use this action with a land speed, and not with any other type of speed (see \pcref{Special Movement Modes}).
 
-        \parhead{Overrun}\label{Overrun} As part of movement, you can try to move directly through creatures in your way.
+        \parhead{Overrun}\label{Overrun} At the start of the \glossterm{movement phase}, you can spend an \glossterm{action point} to use this ability.
+        If you do, you can try to move directly through creatures in your way during the current phase.
         Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered.
         If a creature does not attempt to avoid you, you make a Strength vs. Fortitude attack against it.
         Success means you can move through the creature's space, though you treat it as \glossterm{difficult terrain}.
-        Critical success means the creature is knocked prone, and you do not treat its space as difficult terrain.
-        Failure means you end your movement immediately and fall \prone.
+        Critical success also means the creature is knocked prone, and you do not treat its space as difficult terrain.
+        Failure means you end your movement immediately.
 
     \subsection{Reactive Movements}
 
