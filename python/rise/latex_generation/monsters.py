@@ -95,10 +95,34 @@ def animals():
                 'Pounce',
                 effect="""
                     The dire wolf moves up to its movement speed.
-                    If it uses this ability during the action phase, it can make a strike during the delayed action phase.
+                    If it uses this ability during the action phase, it can make a bite strike during the delayed action phase.
                 """,
             ),
         ],
+    ))
+
+    roc = Creature(
+        challenge_rating=2,
+        character_class=CharacterClass('slayer'),
+        level=9,
+        name='Roc',
+        natural_armor=6,
+        race=Race('animal'),
+        size=Size('gargantuan'),
+        starting_attributes=[4, 2, 1, -7, 1, 0],
+        weapons=[Weapon('talon')],
+    )
+    monsters.append(get_latex_from_creature(
+        roc,
+        active_abilities=[
+            active_ability(
+                'Flyby Attack',
+                effect="""
+                    The roc flies up to its flying movement speed.
+                    It can make a talon strike or grapple attack at any point during this movement.
+                """
+            ),
+        ]
     ))
 
     return '\n\n'.join(monsters)
@@ -124,7 +148,7 @@ def humanoids():
                 accuracy=cultist.accuracy(cultist.willpower),
                 defense='Mental',
                 hit=f"{cultist.standard_damage(cultist.willpower)} life damage, and the target is sickened as a condition.",
-                targeting='One target within \\rngmed range',
+                targeting='One target in \\rngmed range',
             ),
         ],
     ))
@@ -153,7 +177,7 @@ def magical_beasts():
                 accuracy=ankheg.accuracy(),
                 defense='Reflex',
                 hit=f"{ankheg.standard_damage(ankheg.constitution) + 1} acid damage, and the target is sickened as a condition.",
-                targeting='One target within \\rngclose range',
+                targeting='One target in \\rngclose range',
             ),
         ]
     ))
@@ -219,7 +243,6 @@ def monstrous_humanoids():
                 """,
             ),
         ],
-        challenge_rating=2,
         immunities=['deafened'],
     ))
 
@@ -260,30 +283,41 @@ def outsiders():
         ]
     ))
 
+    arrowhawk = Creature(
+        character_class=CharacterClass('slayer'),
+        level=3,
+        name='Arrowhawk',
+        natural_armor=4,
+        race=Race('outsider'),
+        starting_attributes=[1, 4, -1, 0, 3, 0],
+        weapons=[Weapon('bite')],
+    )
     monsters.append(get_latex_from_creature(
-        Creature(
-            character_class=CharacterClass('slayer'),
-            level=3,
-            name='Arrowhawk',
-            natural_armor=4,
-            race=Race('outsider'),
-            starting_attributes=[1, 4, -1, 0, 3, 0],
-            weapons=[Weapon('bite')],
-        ),
+        arrowhawk,
+        active_abilities=[
+            active_ability(
+                'Electrobolt',
+                accuracy=arrowhawk.accuracy(),
+                defense='Reflex',
+                hit=f"{arrowhawk.standard_damage(arrowhawk.constitution) + 1} electricity damage.",
+                targeting='One target in \\rngmed range',
+            ),
+        ]
     ))
 
+    bebelith = Creature(
+        character_class=CharacterClass('slayer'),
+        level=11,
+        name='Demon',
+        name_suffix='Bebelith',
+        natural_armor=6,
+        race=Race('outsider'),
+        size=Size('huge'),
+        starting_attributes=[2, 3, 2, 0, 1, 0],
+        weapons=[Weapon('bite')],
+    )
     monsters.append(get_latex_from_creature(
-        Creature(
-            character_class=CharacterClass('slayer'),
-            level=11,
-            name='Demon',
-            name_suffix='Bebelith',
-            natural_armor=6,
-            race=Race('outsider'),
-            size=Size('huge'),
-            starting_attributes=[2, 3, 2, 0, 1, 0],
-            weapons=[Weapon('bite')],
-        ),
+        bebelith,
     ))
 
     return '\n\n'.join(monsters)

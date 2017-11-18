@@ -132,7 +132,7 @@ Wil 0
 \pari
 \textbf{Pounce}:
 The dire wolf moves up to its movement speed.
-If it uses this ability during the action phase, it can make a strike during the delayed action phase.
+If it uses this ability during the action phase, it can make a bite strike during the delayed action phase.
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellsubcontent}
@@ -147,6 +147,46 @@ Dex 7,
 Con 3,
 Int \minus6,
 Per 6,
+Wil 0
+\end{spellfooter}
+\end{spellsubcontent}
+\end{monsection}
+\begin{monsection}{Roc}{9}[2]
+\vspace{-1em}\spelltwocol{}{Gargantuan animal}\vspace{-1em}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{
+\textbf{HP} 120;
+\textbf{Bloodied} 60;
+\textbf{Recovery} 2d8
+}
+{\textbf{AP} 2}
+\pari \textbf{Armor} 16;
+\textbf{Fort} 18;
+\textbf{Ref} 10;
+\textbf{Ment} 12
+\pari \textbf{Strike} Talon \plus10 (5d10)
+\pari \textbf{Actions} One in action phase, one in delayed action phase
+\end{spelltargetinginfo}
+\begin{spelleffects}
+\pari
+\textbf{Flyby Attack}:
+The roc flies up to its flying movement speed.
+It can make a talon strike or grapple attack at any point during this movement.
+\end{spelleffects}
+\end{spellcontent}
+\begin{spellsubcontent}
+\begin{spellfooter}
+\pari \textbf{Awareness} \plus6
+\pari \textbf{Speed} 60 ft.;
+\textbf{Space} 20 ft.;
+\textbf{Reach} 20 ft.
+\pari \textbf{Attributes}
+Str 12,
+Dex 10,
+Con 5,
+Int \minus7,
+Per 5,
 Wil 0
 \end{spellfooter}
 \end{spellsubcontent}
@@ -170,7 +210,7 @@ Wil 0
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \pari
-\spelltwocol{\textbf{Hex}: \plus3 vs Mental}{One target within \rngmed range}
+\spelltwocol{\textbf{Hex}: \plus3 vs Mental}{One target in \rngmed range}
 \par
 \par \textit{Hit}: 1d10 life damage, and the target is sickened as a condition.
 \end{spelleffects}
@@ -210,7 +250,7 @@ Wil 3
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \pari
-\spelltwocol{\textbf{Acid Spit}: \plus6 vs Reflex}{One target within \rngclose range}
+\spelltwocol{\textbf{Acid Spit}: \plus6 vs Reflex}{One target in \rngclose range}
 \par
 \par \textit{Hit}: 2d10 acid damage, and the target is sickened as a condition.
 \end{spelleffects}
@@ -271,7 +311,7 @@ Wil 7
 \end{spellsubcontent}
 \end{monsection}
 \section{Monstrous Humanoids}
-\begin{monsection}[Storm]{Giant}{15}[2]
+\begin{monsection}[Storm]{Giant}{15}[1]
 \vspace{-1em}\spelltwocol{}{Gargantuan monstrous humanoid}\vspace{-1em}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
@@ -280,14 +320,13 @@ Wil 7
 \textbf{Bloodied} 56;
 \textbf{Recovery} 4d8
 }
-{\textbf{AP} 2}
+{\textbf{AP} 1}
 \pari \textbf{Armor} 23;
 \textbf{Fort} 23;
 \textbf{Ref} 14;
 \textbf{Ment} 22
 \pari \textbf{Strike} Greatsword \plus16 (9d10)
 \pari \textbf{Immune} deafened
-\pari One in action phase and delayed action phase
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \pari
@@ -380,6 +419,12 @@ Wil 15
 \textbf{Ment} 8
 \pari \textbf{Strike} Bite \plus5 (1d10)
 \end{spelltargetinginfo}
+\begin{spelleffects}
+\pari
+\spelltwocol{\textbf{Electrobolt}: \plus5 vs Reflex}{One target in \rngmed range}
+\par
+\par \textit{Hit}: 2d6 electricity damage.
+\end{spelleffects}
 \end{spellcontent}
 \begin{spellsubcontent}
 \begin{spellfooter}
