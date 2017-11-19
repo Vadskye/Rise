@@ -1,12 +1,12 @@
 # For brevity, return a three-item array instead of a dict.
-# The order is [Fort, Ref, strike damage, space, reach, speed].
+# The order is [Ref, strike damage, space, reach, speed].
 def properties_from_size_name(name):
     return {
         'fine': [8, -4, 1, 1, 10],
         'diminuitive': [6, -3, 1, 1, 15],
         'tiny': [4, -2, 2.5, 2.5, 20],
         'small': [2, -1, 5, 5, 25],
-        'medium': [0, 0, 0, 5, 5, 30],
+        'medium': [0, 0, 5, 5, 30],
         'large': [-2, 1, 10, 10, 40],
         'huge': [-4, 2, 15, 15, 50],
         'gargantuan': [-6, 3, 20, 20, 60],
