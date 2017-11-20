@@ -16,17 +16,56 @@ from rise.latex.util import latexify
 def aberrations():
     monsters = []
 
+    aboleth = Creature(
+        challenge_rating=4,
+        character_class=CharacterClass('adept'),
+        level=12,
+        name='Aboleth',
+        natural_armor=6,
+        race=Race('aberration'),
+        size=Size('huge'),
+        starting_attributes=[2, 0, 3, 2, 1, 3],
+        weapons=[Weapon('tentacle')],
+    )
     monsters.append(get_latex_from_creature(
-        Creature(
-            character_class=CharacterClass('adept'),
-            level=12,
-            name='Aboleth',
-            natural_armor=6,
-            race=Race('aberration'),
-            size=Size('huge'),
-            starting_attributes=[2, 0, 3, 2, 1, 3],
-            weapons=[Weapon('tentacle')],
-        ),
+        aboleth,
+        active_abilities=[
+            active_ability(
+                'Confusion',
+                accuracy=aboleth.accuracy(aboleth.willpower),
+                defense='Mental',
+                hit="The target is confused as a condition.",
+                targeting='One creature in Medium range',
+            ),
+            active_ability(
+                'Enslave',
+                accuracy=aboleth.accuracy(aboleth.willpower),
+                defense='Mental',
+                effect="This ability costs an action point to use.",
+                hit="The target is stunned as a condition.",
+                critical="""
+                    The target is dominated by the aboleth.
+                    This effect lasts as long as the aboleth attunes to it.
+                """,
+                targeting='One creature in Medium range',
+            ),
+            active_ability(
+                'Mind Crush',
+                accuracy=aboleth.accuracy(aboleth.willpower),
+                defense='Mental',
+                # TODO: better damage type?
+                hit=f"{aboleth.standard_damage(aboleth.willpower) + 2} life damage",
+                targeting='One creature in Long range',
+            ),
+            active_ability(
+                'Psionic Blast',
+                accuracy=aboleth.accuracy(aboleth.willpower),
+                defense='Mental',
+                # TODO: better damage type?
+                hit=f"{aboleth.standard_damage(aboleth.willpower)} life damage",
+                targeting='Enemies in Large cone',
+            ),
+        ],
     ))
 
     return '\n\n'.join(monsters)
@@ -36,8 +75,9 @@ def animals():
     monsters = []
 
     black_bear = Creature(
+        challenge_rating=2,
         character_class=CharacterClass('behemoth'),
-        level=3,
+        level=2,
         name='Bear',
         name_suffix='Black',
         natural_armor=4,
@@ -57,8 +97,9 @@ def animals():
     ))
 
     brown_bear = Creature(
+        challenge_rating=2,
         character_class=CharacterClass('behemoth'),
-        level=6,
+        level=4,
         name='Bear',
         natural_armor=4,
         name_suffix='Brown',
@@ -79,6 +120,7 @@ def animals():
     ))
 
     dire_wolf = Creature(
+        challenge_rating=2,
         character_class=CharacterClass('slayer'),
         level=5,
         name='Dire Wolf',
@@ -102,8 +144,8 @@ def animals():
     ))
 
     roc = Creature(
-        challenge_rating=2,
-        character_class=CharacterClass('slayer'),
+        challenge_rating=4,
+        character_class=CharacterClass('behemoth'),
         level=9,
         name='Roc',
         natural_armor=6,
@@ -122,7 +164,8 @@ def animals():
                     It can make a talon strike or grapple attack at any point during this movement.
                 """
             ),
-        ]
+        ],
+        speed="80 ft. fly",
     ))
 
     return '\n\n'.join(monsters)
@@ -148,7 +191,7 @@ def humanoids():
                 accuracy=cultist.accuracy(cultist.willpower),
                 defense='Mental',
                 hit=f"{cultist.standard_damage(cultist.willpower)} life damage, and the target is sickened as a condition.",
-                targeting='One target in \\rngmed range',
+                targeting='One target in Medium range',
             ),
         ],
     ))
@@ -173,11 +216,18 @@ def magical_beasts():
         ankheg,
         active_abilities=[
             active_ability(
-                'Acid Spit',
+                'Drag Prey',
+                effect=f"""
+                    The ankheg makes a shove attack with an accuracy of +{ankheg.accuracy(ankheg.strength) + 5}.
+                    It can move with the target up to a maximum distance equal to its land speed.
+                """,
+            ),
+            active_ability(
+                'Spit Acid',
                 accuracy=ankheg.accuracy(),
                 defense='Reflex',
-                hit=f"{ankheg.standard_damage(ankheg.constitution) + 1} acid damage, and the target is sickened as a condition.",
-                targeting='One target in \\rngclose range',
+                hit=f"{ankheg.standard_damage(ankheg.constitution) - 1} acid damage, and each target is sickened as a condition.",
+                targeting='Everything in 5 ft. wide Medium line',
             ),
         ]
     ))
@@ -205,11 +255,102 @@ def magical_beasts():
         ]
     ))
 
+    basilisk = Creature(
+        challenge_rating=2,
+        character_class=CharacterClass('behemoth'),
+        level=5,
+        name='Basilisk',
+        natural_armor=6,
+        race=Race('magical beast'),
+        size=Size('medium'),
+        starting_attributes=[2, -1, 2, -6, 1, 0],
+        weapons=[Weapon('bite')],
+    )
+    monsters.append(get_latex_from_creature(
+        basilisk,
+        active_abilities=[
+            active_ability(
+                'Petrifying Gaze',
+                accuracy=basilisk.accuracy(),
+                defense='Fortitude',
+                hit="The target is nauseated as a condition.",
+                critical=f"""
+                    As above, and the target takes {basilisk.standard_damage(basilisk.constitution) - 2} life damage at the end of each action phase.
+                    If it takes vital damage in this way, it is petrified permanently.
+                """,
+                targeting="One creature in Close range",
+            ),
+        ],
+    ))
+
+    centaur = Creature(
+        armor=Armor('leather'),
+        character_class=CharacterClass('slayer'),
+        level=3,
+        name='Centaur',
+        natural_armor=4,
+        race=Race('magical beast'),
+        size=Size('large'),
+        starting_attributes=[1, 2, 2, 0, 2, 0],
+        weapons=[Weapon('longsword'), Weapon('longbow'), Weapon('hoof')],
+    )
+    monsters.append(get_latex_from_creature(
+        centaur,
+    ))
+
+    griffin = Creature(
+        challenge_rating=2,
+        character_class=CharacterClass('slayer'),
+        level=4,
+        name='Griffon',
+        natural_armor=6,
+        race=Race('magical beast'),
+        size=Size('large'),
+        starting_attributes=[2, 3, 2, -4, 1, 0],
+        weapons=[Weapon('talon')],
+    )
+    monsters.append(get_latex_from_creature(
+        griffin,
+        active_abilities=[
+            active_ability(
+                'Flyby Attack',
+                effect="""
+                    The griffin flies up to its flying movement speed.
+                    It can make a talon strike at any point during this movement.
+                """
+            ),
+        ],
+        speed="80 ft. fly",
+    ))
+
     return '\n\n'.join(monsters)
 
 
 def monstrous_humanoids():
     monsters = []
+
+    banshee = Creature(
+        character_class=CharacterClass('adept'),
+        level=3,
+        name='Banshee',
+        natural_armor=4,
+        race=Race('monstrous humanoid'),
+        size=Size('medium'),
+        starting_attributes=[1, 2, 0, 0, 1, 2],
+        weapons=[Weapon('claw')],
+    )
+    monsters.append(get_latex_from_creature(
+        banshee,
+        active_abilities=[
+            active_ability(
+                'Wail',
+                accuracy=banshee.accuracy(banshee.willpower),
+                defense='Fortitude',
+                hit=f"{banshee.standard_damage(banshee.willpower) - 1} sonic damage, and each target is sickened as a condition.",
+                targeting='Everything in a Large radius',
+            ),
+        ],
+    ))
 
     storm_giant = Creature(
         armor=Armor('breastplate'),
@@ -231,7 +372,7 @@ def monstrous_humanoids():
                 accuracy=storm_giant.accuracy(),
                 defense='Reflex',
                 hit=f"{storm_giant.standard_damage(storm_giant.willpower)} electricity damage.",
-                targeting='All in a \\arealarge line',
+                targeting='All in a 10 ft. wide Large line',
             ),
             active_ability(
                 'Thunderstrike',
@@ -244,6 +385,34 @@ def monstrous_humanoids():
             ),
         ],
         immunities=['deafened'],
+    ))
+
+    medusa = Creature(
+        challenge_rating=2,
+        character_class=CharacterClass('adept'),
+        level=7,
+        name='Medusa',
+        natural_armor=4,
+        race=Race('monstrous humanoid'),
+        size=Size('medium'),
+        starting_attributes=[0, 2, 0, 1, 1, 2],
+        weapons=[Weapon('longbow'), Weapon('snakes')],
+    )
+    monsters.append(get_latex_from_creature(
+        medusa,
+        active_abilities=[
+            active_ability(
+                'Petrifying Gaze',
+                accuracy=medusa.accuracy(),
+                defense='Fortitude',
+                hit="The target is nauseated as a condition.",
+                critical=f"""
+                    As above, and the target takes {medusa.standard_damage(medusa.constitution) - 2} life damage at the end of each action phase.
+                    If it takes vital damage in this way, it is petrified permanently.
+                """,
+                targeting="One creature in Close range",
+            ),
+        ],
     ))
 
     return '\n\n'.join(monsters)
@@ -276,11 +445,10 @@ def outsiders():
             active_ability(
                 "Angel's Grace",
                 effect=f"""
-                    The target heals {astral_deva.standard_damage(astral_deva.willpower) + 1} hit points.
+                    One ally within reach heals {astral_deva.standard_damage(astral_deva.willpower) + 1} hit points.
                 """,
-                targeting="One other creature within reach",
             ),
-        ]
+        ],
     ))
 
     arrowhawk = Creature(
@@ -300,9 +468,10 @@ def outsiders():
                 accuracy=arrowhawk.accuracy(),
                 defense='Reflex',
                 hit=f"{arrowhawk.standard_damage(arrowhawk.constitution) + 1} electricity damage.",
-                targeting='One target in \\rngmed range',
+                targeting='One target in Medium range',
             ),
-        ]
+        ],
+        speed="60 ft. fly (good)",
     ))
 
     bebelith = Creature(
