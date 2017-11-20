@@ -1,6 +1,7 @@
 def active_ability(
         name,
         accuracy=None,
+        critical=None,
         defense=None,
         effect=None,
         hit=None,
@@ -18,6 +19,7 @@ def active_ability(
         }
         {effect if effect else ""}
         {f"|par |textit<Hit>: {hit}" if hit else ""}
+        {f"|par |textit<Critical>: {critical}" if critical else ""}
     """
 
 

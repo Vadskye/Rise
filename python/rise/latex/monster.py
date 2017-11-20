@@ -3,12 +3,13 @@ from rise.latex.util import join
 # from rise.statistics.creature
 def get_latex_from_creature(
         creature,
-        action_points=None,
         active_abilities=None,
         immunities=None,
         resistances=None,
+        speed=None,
 ):
     return get_latex(
+        action_points=max(1, creature.challenge_rating + creature.starting_willpower),
         armor_defense=creature.armor_defense,
         challenge_rating=creature.challenge_rating,
         constitution=creature.constitution,
@@ -27,12 +28,11 @@ def get_latex_from_creature(
         reflex_defense=creature.reflex_defense,
         size=creature.size.name,
         space=creature.space,
-        speed=creature.speed,
+        speed=speed if speed is not None else creature.speed,
         strength=creature.strength,
         strikes=creature.strikes,
         willpower=creature.willpower,
         # extra args
-        action_points=action_points if action_points is not None else creature.challenge_rating,
         active_abilities=active_abilities,
         immunities=immunities,
         resistances=resistances,
@@ -126,7 +126,10 @@ def actions_text(challenge_rating):
     }[challenge_rating]
 
 def active_abilities_text(active_abilities):
-    return '\n\\vspace<0.5em>'.join(active_abilities) if active_abilities else ""
+    return (
+        '\n\\vspace<0.5em>'.join(active_abilities)
+        if active_abilities else ""
+    )
 
 def immunity_text(immunities):
     return f"\\pari \\textbf<Immune> {', '.join(immunities)}" if immunities else ""
