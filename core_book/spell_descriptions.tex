@@ -64,7 +64,7 @@ Replace the spell's targets and effects with the following:
 Replace the spell's targets and effects with the following:
 \begin{spellcontent}
 \begin{augmenttargetinginfo}
-\spelltwocol{\spelltgt{One unattended weapon}}{\spellrng{\rngclose}}
+\spelltwocol{\spelltgt{One unattended melee weapon}}{\spellrng{\rngclose}}
 \spelltime{standard action}
 \end{augmenttargetinginfo}
 \begin{augmenteffects}
@@ -207,7 +207,6 @@ Replace the spell's targets and effects with the following:
 \begin{spellcontent}
 \begin{augmenttargetinginfo}
 \spelltwocol{\spellburst{\arealarge radius}}{\spellrng{\rngmed}}
-\spelltgts{All in the area}
 \end{augmenttargetinginfo}
 \begin{augmenteffects}
 \spelleffect
@@ -655,8 +654,8 @@ Replace the spell's targets and effects with the following:
 \end{augmenttargetinginfo}
 \begin{augmenteffects}
 \begin{spellattack}{Spellpower vs. Mental}
-\spellsuccess The target is \disoriented.
-\spellcritical The target is \confused.
+\spellsuccess Each target is \disoriented.
+\spellcritical Each target is \confused.
 \end{spellattack}
 \spelldur Condition
 \spelltags{\glossterm{Compulsion}, \glossterm{Mind}}
@@ -763,7 +762,7 @@ This is a \glossterm{Death} effect.
 \begin{spellattack}{Spellpower vs. Fortitude}
 \spellsuccess
 Cold \glossterm{standard damage} \minus1d.
-In addition, the target is \fatigued as a condition.
+In addition, each target is \fatigued as a condition.
 \end{spellattack}
 \spelltags{\glossterm{Cold}}
 \end{spelleffects}
@@ -837,7 +836,7 @@ Replace the spell's targets and effects with the following:
 \begin{augmenteffects}
 \begin{spellattack}{Spellpower vs. Mental}
 \spellsuccess
-The target has its emotions calmed.
+Each target has its emotions calmed.
 The effects of all other \glossterm{Emotion} abilties are \glossterm{suppressed}.
 It cannot take violent actions (although it can defend itself) or do anything destructive.
 If an aggressive action is taken against a nearby creature, this effect is broken.
@@ -1005,7 +1004,7 @@ Replace the spell's targets and effects with the following:
 \spellspecial
 If you are outdoors in cloudy or stormy weather, you gain a \plus2 bonus to \glossterm{accuracy} with the attack.
 \spellsuccess
-The target takes takes electricity \glossterm{standard damage} \plus1d.
+Each target takes takes electricity \glossterm{standard damage} \plus1d.
 \end{spellattack}
 \end{augmenteffects}
 \end{spellcontent}
@@ -1016,8 +1015,8 @@ The two areas can overlap, but targets in the overlapping area are only affected
 The lightning bolt created by the spell is faster, but less penetrating.
 The spell's attack is made against Fortitude defense instead of Reflex defense.
 \augment{5}{Shocking}
-If the attack hits, the target is \glossterm{dazed} as a \glossterm{condition}.
-On a \glossterm{critical hit}, the target is \glossterm{stunned} instead of dazed.
+If the attack hits, each target is \glossterm{dazed} as a \glossterm{condition}.
+On a \glossterm{critical hit}, each target is \glossterm{stunned} instead of dazed.
 \augment{6}{Innate}
 You can cast the spell without spending an action point.
 \begin{spellsection}{Fabrication}
@@ -1060,7 +1059,7 @@ Replace the spell's targets and effects with the following:
 A wall of whirling blades appears in the area.
 The wall provides \glossterm{active cover} (20\% miss chance) against attacks made through it.
 Attacks that miss in this way harmlessly strike the wall.
-Whenever a creature passes through the wall, make a Spellpower vs. Reflex attack against it.
+Whenever a creature or object passes through the wall, make a Spellpower vs. Reflex attack against it.
 A hit means the target takes slashing \glossterm{standard damage} \minus1d.
 \spelldur Sustain (minor)
 \end{augmenteffects}
@@ -1090,7 +1089,7 @@ Replace the spell's targets and effects with the following:
 The area becomes filled with webs, making it \glossterm{difficult terrain}.
 Each 5-ft.\ square of webbing has hit points equal to your spellpower, and is \glossterm{vulnerable} to fire.
 \begin{spellattack}{Spellpower vs. Reflex}
-\spellsuccess The target is \immobilized as long as it has webbing from this spell in its space.
+\spellsuccess Each target is \immobilized as long as it has webbing from this spell in its space.
 \end{spellattack}
 \spelldur Sustain (minor)
 \spelltags{\glossterm{Manifestation}}
@@ -1191,9 +1190,9 @@ A brilliant light appears in the area until the end of the round.
 It illuminates a 100 foot radius around the area with bright light.
 \begin{spellattack}{Spellpower vs. Reflex}
 \spellsuccess
-The target is \dazzled.
+Each target is \dazzled.
 \spellcritical
-The target is \blinded.
+Each target is \blinded.
 \end{spellattack}
 \spelldur Condition
 \spelltags{\glossterm{Figment}, \glossterm{Light}, \glossterm{Visual}}
@@ -1240,9 +1239,9 @@ A brilliant, rapidly shifting rainbow of lights appear in the area until the end
 They illuminate a 100 foot radius around the area with bright light.
 \begin{spellattack}{Spellpower vs. Mental}
 \spellsuccess
-The target is \disoriented.
+Each target is \disoriented.
 \spellcritical
-The target is \confused.
+Each target is \confused.
 \end{spellattack}
 \spelldur Condition
 \spelltags{\glossterm{Figment}, \glossterm{Light}, \glossterm{Mind}, \glossterm{Visual}}
@@ -1250,7 +1249,7 @@ The target is \confused.
 \end{spellcontent}
 \augment{4}{Flashbang}
 An intense sound accompanies the flash of light caused by the spell.
-If the spell's attack is successful, the target is also \deafened as a condition.
+If the spell's attack is successful, each target is also \deafened as a condition.
 This is an \glossterm{Auditory}, \glossterm{Figment} effect.
 \augment{6}{Innate}
 You can cast the spell without spending an action point.
@@ -1472,12 +1471,9 @@ Replace the spell's targets and effects with the following:
 \begin{augmenteffects}
 \spelleffect
 If a creature opens the target object, it explodes.
-You make an attack against everything within an \areamed radius burst centered on the target.
+You make an Spellpower vs. Reflex attack against everything within an \areamed radius burst centered on the target.
+A hit deals fire \glossterm{standard damage} \minus1d.
 After the object explodes in this way, the spell ends.
-\begin{spellattack}{Spellpower vs. Reflex}
-\spellsuccess Fire \glossterm{standard damage} \minus1d.
-\spellcritical As above, but double damage.
-\end{spellattack}
 \spelldur Attunement
 \spelltags{\glossterm{Fire}, \glossterm{Trap}}
 \end{augmenteffects}
@@ -1519,7 +1515,7 @@ Replace the spell's targets and effects with the following:
 \end{augmenttargetinginfo}
 \begin{augmenteffects}
 \spelleffect
-You know when the target deliberately and knowingly speaks a lie.
+You know when each target deliberately and knowingly speaks a lie.
 This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
 \spelldur Attunement
 \spelltags{\glossterm{D}, \glossterm{c}, \glossterm{e}, \glossterm{e}, \glossterm{i}, \glossterm{n}, \glossterm{o}, \glossterm{t}, \glossterm{t}}
@@ -1848,7 +1844,7 @@ Replace the spell's targets and effects with the following:
 When this spell resolves, and the end of each \glossterm{action phase}, you make an attack against all targets to deal damage.
 \begin{spellattack}{Spellpower vs. Mental}
 \spellsuccess
-The target takes life \glossterm{standard damage} \minus3d.
+Each target takes life \glossterm{standard damage} \minus3d.
 \end{spellattack}
 \spelldur Sustain (minor)
 \spelltags{\glossterm{Life}}
@@ -1879,7 +1875,7 @@ Replace the spell's targets and effects with the following:
 When this spell resolves, and the end of each \glossterm{action phase}, you make an attack against all targets to heal them.
 \begin{spellattack}{Spellpower vs. Mental}
 \spellsuccess
-The target heals hit points equal to \glossterm{standard damage} \minus3d.
+Each target heals hit points equal to \glossterm{standard damage} \minus3d.
 \end{spellattack}
 \spelldur Sustain (minor)
 \spelltags{\glossterm{Life}}
