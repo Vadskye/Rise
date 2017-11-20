@@ -230,10 +230,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         \subsubsection{Conflicting Actions}\label{Conflicting Actions}
 
             Sometimes, actions that occur within the same resolution step can conflict with each other.
-            There are two main methods for resolving these conflicts.
-
-            \parhead{Mutually Exclusive Actions} Sometimes, actions that should take place at the same time directly conflict with each other.
-            This most commonly happens when two creatures move to the same place.
+            For example, two characters may attempt to move into the same place.
             In this case, each involved character rolls \glossterm{initiative} (see \pcref{Initiative}).
             The creature with the highest initiative result succeeds.
             All other creatures come as close as possible to completing their intended action.
@@ -381,6 +378,7 @@ It defines how attributes work and explains how to make physical attacks in comb
                 \end{spelltargetinginfo}
                 \begin{spelleffects}
                     \begin{spellattack}{Strength vs. Fortitude}
+                        % TODO: this should somehow scale with size
                         \spellsuccess You move the target up to 10 feet in a direction of your choice.
                         Effects that limit movement speed, such as \glossterm{difficult terrain}, similarly limit the distance you can move the target.
                         You can move the same distance that you push the target, up to a maximum distance equal to half your land speed.
