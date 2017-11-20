@@ -81,7 +81,7 @@ def generate_spells():
                 name="Windblade",
                 targeting=Targeting(
                     # TODO: unattended or wielded by a willing creature?
-                    target='One unattended weapon',
+                    target='One unattended melee weapon',
                     rng='close',
                     time='standard action',
                 ),
@@ -322,7 +322,7 @@ def generate_spells():
                     """,
                     attack=Attack(
                         defense='Reflex',
-                        success="The target is \\immobilized as long as it has webbing from this spell in its space."
+                        success="Each target is \\immobilized as long as it has webbing from this spell in its space."
                     ),
                     duration='Sustain (minor)',
                     tags=['Manifestation'],
@@ -376,7 +376,7 @@ def generate_spells():
                         The wall provides \\glossterm<active cover> (20\\% miss chance) against attacks made through it.
                         Attacks that miss in this way harmlessly strike the wall.
 
-                        Whenever a creature passes through the wall, make a Spellpower vs. Reflex attack against it.
+                        Whenever a creature or object passes through the wall, make a Spellpower vs. Reflex attack against it.
                         A hit means the target takes slashing \\glossterm<standard damage> -1d.
                     """,
                     duration='Sustain (minor)',
@@ -562,7 +562,6 @@ def generate_spells():
                 targeting=Targeting(
                     area='\\arealarge radius',
                     rng='medium',
-                    targets='All in the area',
                 ),
                 effects=Effects(
                     effect="""
@@ -630,10 +629,10 @@ def generate_spells():
                 effects=Effects(
                     effect="""
                         If a creature opens the target object, it explodes.
-                        You make an attack against everything within an \\areamed radius burst centered on the target.
+                        You make an Spellpower vs. Reflex attack against everything within an \\areamed radius burst centered on the target.
+                        A hit deals fire \\glossterm<standard damage> -1d.
                         After the object explodes in this way, the spell ends.
                     """,
-                    attack=Attack.multi_damage('Reflex', 'fire'),
                     duration='Attunement',
                     tags=['Fire', 'Trap'],
                 ),
@@ -816,7 +815,7 @@ def generate_spells():
                     attack=Attack(
                         defense='Mental',
                         success="""
-                            The target has its emotions calmed.
+                            Each target has its emotions calmed.
                             The effects of all other \\glossterm<Emotion> abilties are \\glossterm<suppressed>.
                             It cannot take violent actions (although it can defend itself) or do anything destructive.
                             If an aggressive action is taken against a nearby creature, this effect is broken.
@@ -919,8 +918,8 @@ def generate_spells():
                 effects=Effects(
                     attack=Attack(
                         defense='Mental',
-                        success="The target is \\disoriented.",
-                        critical="The target is \\confused.",
+                        success="Each target is \\disoriented.",
+                        critical="Each target is \\confused.",
                     ),
                     tags=['Compulsion', 'Mind'],
                     duration='Condition',
@@ -1087,7 +1086,7 @@ def generate_spells():
                 defense='Fortitude',
                 success="""
                     Cold \\glossterm<standard damage> \minus1d.
-                    In addition, the target is \\fatigued as a condition.
+                    In addition, each target is \\fatigued as a condition.
                 """,
             ),
             tags=['Cold'],
@@ -1150,8 +1149,8 @@ def generate_spells():
                 level=5,
                 name="Shocking",
                 description="""
-                    If the attack hits, the target is \\glossterm<dazed> as a \\glossterm<condition>.
-                    On a \\glossterm<critical hit>, the target is \\glossterm<stunned> instead of dazed.
+                    If the attack hits, each target is \\glossterm<dazed> as a \\glossterm<condition>.
+                    On a \\glossterm<critical hit>, each target is \\glossterm<stunned> instead of dazed.
                 """,
             ),
             Subspell(
@@ -1174,7 +1173,7 @@ def generate_spells():
                     attack=Attack(
                         defense='Reflex',
                         success="""
-                            The target takes takes electricity \\glossterm<standard damage> +1d.
+                            Each target takes takes electricity \\glossterm<standard damage> +1d.
                         """,
                         special="""
                             If you are outdoors in cloudy or stormy weather, you gain a +2 bonus to \\glossterm<accuracy> with the attack.
@@ -1351,7 +1350,7 @@ def generate_spells():
                     attack=Attack(
                         defense='Mental',
                         success="""
-                            The target takes life \\glossterm<standard damage> -3d.
+                            Each target takes life \\glossterm<standard damage> -3d.
                         """,
                     ),
                     duration='Sustain (minor)',
@@ -1373,7 +1372,7 @@ def generate_spells():
                     attack=Attack(
                         defense='Mental',
                         success="""
-                            The target heals hit points equal to \\glossterm<standard damage> -3d.
+                            Each target heals hit points equal to \\glossterm<standard damage> -3d.
                         """,
                     ),
                     duration='Sustain (minor)',
@@ -1642,7 +1641,7 @@ def generate_spells():
                 ),
                 effects=Effects(
                     effect="""
-                        You know when the target deliberately and knowingly speaks a lie.
+                        You know when each target deliberately and knowingly speaks a lie.
                         This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
                     """,
                     tags='Detection',
@@ -1919,10 +1918,10 @@ def generate_spells():
             attack=Attack(
                 defense='Reflex',
                 success="""
-                    The target is \\dazzled.
+                    Each target is \\dazzled.
                 """,
                 critical="""
-                    The target is \\blinded.
+                    Each target is \\blinded.
                 """,
             ),
             duration='Condition',
@@ -1943,10 +1942,10 @@ def generate_spells():
                     attack=Attack(
                         defense='Mental',
                         success="""
-                            The target is \\disoriented.
+                            Each target is \\disoriented.
                         """,
                         critical="""
-                            The target is \\confused.
+                            Each target is \\confused.
                         """,
                     ),
                     duration='Condition',
@@ -1992,7 +1991,7 @@ def generate_spells():
                 name="Flashbang",
                 description="""
                     An intense sound accompanies the flash of light caused by the spell.
-                    If the spell's attack is successful, the target is also \\deafened as a condition.
+                    If the spell's attack is successful, each target is also \\deafened as a condition.
                     This is an \\glossterm<Auditory>, \\glossterm<Figment> effect.
                 """,
             ),
