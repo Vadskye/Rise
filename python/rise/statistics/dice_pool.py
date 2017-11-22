@@ -60,7 +60,7 @@ class DicePool(object):
                 self.size -= 1
             elif self.size == 6 and self.count > 1:
                 self.size = 10
-                self.count /= 2
+                self.count //= 2
             elif self.size <= 10:
                 self.size -= 2
             else:
