@@ -5,12 +5,14 @@
 def properties_from_weapon_name(name):
     return {
         # Manufactured weapons
+        'club': [-1, Weapon.MEDIUM, None],
+        'draining touch': [-1, Weapon.LIGHT, None],
+        'greataxe': [1, Weapon.HEAVY, None],
+        'greatstaff': [0, Weapon.HEAVY, None],
         'greatsword': [1, Weapon.HEAVY, None],
         'longbow': [0, Weapon.MEDIUM, None],
         'longsword': [0, Weapon.MEDIUM, None],
         'mace': [0, Weapon.MEDIUM, None],
-        'club': [-1, Weapon.MEDIUM, None],
-        'draining touch': [-1, Weapon.LIGHT, None],
         'shortsword': [-1, Weapon.LIGHT, None],
 
         # Natural weapons

@@ -196,6 +196,155 @@ def humanoids():
         ],
     ))
 
+    orc_chieftain = Creature(
+        armor=Armor('breastplate'),
+        challenge_rating=3,
+        character_class=CharacterClass('slayer'),
+        level=5,
+        name='Orc Chieftain',
+        natural_armor=2,
+        race=Race('humanoid'),
+        size=Size('medium'),
+        starting_attributes=[4, 0, 1, -1, 2, 2],
+        weapons=[Weapon('greataxe')],
+    )
+    monsters.append(get_latex_from_creature(
+        orc_chieftain,
+        active_abilities=[
+            active_ability(
+                'Hit Everyone Else',
+                effect="""
+                    All other willing allies who can see and hear the chieftain gain a +2 bonus to accuracy with strikes.
+                    This effect lasts as long as the chieftain sustains it as a standard action.
+                """,
+            ),
+            active_ability(
+                'Hit Hardest',
+                effect=f"""
+                    The chieftain makes a greataxe strike.
+                    The strike deals {orc_chieftain.weapon_damage(Weapon('greataxe')) + 2} damage.
+                """,
+            ),
+            active_ability(
+                'Hit Fast',
+                effect=f"""
+                    The chieftain makes a greataxe strike.
+                    Its accuracy is increased to {orc_chieftain.accuracy() + 2}.
+                """,
+            ),
+        ],
+    ))
+
+    orc_grunt = Creature(
+        armor=Armor('breastplate'),
+        character_class=CharacterClass('slayer'),
+        level=2,
+        name='Orc Grunt',
+        natural_armor=0,
+        race=Race('humanoid'),
+        size=Size('medium'),
+        starting_attributes=[3, 0, 1, -2, 0, 0],
+        weapons=[Weapon('greataxe')],
+    )
+    monsters.append(get_latex_from_creature(
+        orc_chieftain,
+        active_abilities=[
+            active_ability(
+                'Hit Harder',
+                effect=f"""
+                    The grunt makes a greataxe strike.
+                    Its accuracy is reduced to {orc_grunt.accuracy() - 2}, but the strike deals {orc_grunt.weapon_damage(Weapon('greataxe')) + 2} damage.
+                """,
+            ),
+        ],
+    ))
+
+    orc_loudmouth = Creature(
+        armor=Armor('breastplate'),
+        challenge_rating=2,
+        character_class=CharacterClass('slayer'),
+        level=3,
+        name='Orc Loudmouth',
+        natural_armor=0,
+        race=Race('humanoid'),
+        size=Size('medium'),
+        starting_attributes=[3, 0, 1, -1, 0, 2],
+        weapons=[Weapon('greataxe')],
+    )
+    monsters.append(get_latex_from_creature(
+        orc_loudmouth,
+        active_abilities=[
+            active_ability(
+                'Hit Harder',
+                effect=f"""
+                    The loudmouth makes a greataxe strike.
+                    Its accuracy is reduced to {orc_loudmouth.accuracy() - 2}, but the strike deals {orc_loudmouth.weapon_damage(Weapon('greataxe')) + 2} damage.
+                """,
+            ),
+            active_ability(
+                'Hit That One Over There',
+                effect="""
+                    All other willing allies who can see and hear the loudmouth gain a +2 bonus to accuracy with strikes against one creature within Long range.
+                    This effect lasts as long as the loudmouth sustains it as a standard action.
+                """,
+            ),
+        ],
+    ))
+
+    orc_shaman = Creature(
+        armor=Armor('breastplate'),
+        challenge_rating=2,
+        character_class=CharacterClass('adept'),
+        level=3,
+        name='Orc Shaman',
+        natural_armor=0,
+        race=Race('humanoid'),
+        size=Size('medium'),
+        starting_attributes=[2, 0, 1, -2, 0, 2],
+        weapons=[Weapon('greatstaff')],
+    )
+    monsters.append(get_latex_from_creature(
+        orc_shaman,
+        active_abilities=[
+            active_ability(
+                'Hit Worse',
+                accuracy=orc_shaman.accuracy(orc_shaman.willpower),
+                defense='Mental',
+                hit="As a condition, the target takes a -3 penalty to accuracy with strikes.",
+                critical="As above, except that the penalty is increased to -6.",
+                targeting='One target in Close range',
+            ),
+            active_ability(
+                'Hurt Less',
+                effect=f"One other willing creature in Close range heals {orc_shaman.standard_damage(orc_shaman.willpower) + 1} hit points",
+            ),
+        ],
+    ))
+
+    orc_savage = Creature(
+        armor=Armor('breastplate'),
+        character_class=CharacterClass('slayer'),
+        level=4,
+        name='Orc Savage',
+        natural_armor=2,
+        race=Race('humanoid'),
+        size=Size('medium'),
+        starting_attributes=[4, 2, 1, -2, 0, 0],
+        weapons=[Weapon('greataxe')],
+    )
+    monsters.append(get_latex_from_creature(
+        orc_savage,
+        active_abilities=[
+            active_ability(
+                'Hit Fast',
+                effect=f"""
+                    The savage makes a greataxe strike.
+                    Its accuracy is {orc_savage.accuracy() + 2}.
+                """,
+            ),
+        ],
+    ))
+
     return '\n\n'.join(monsters)
 
 
@@ -446,7 +595,7 @@ def outsiders():
             active_ability(
                 "Angel's Grace",
                 effect=f"""
-                    One ally within reach heals {astral_deva.standard_damage(astral_deva.willpower) + 1} hit points.
+                    One willing creature within reach heals {astral_deva.standard_damage(astral_deva.willpower) + 1} hit points.
                 """,
             ),
         ],
