@@ -34,13 +34,14 @@ def generate_spells():
                 The target gains a +1 bonus to \\glossterm<physical defenses>.
                 This bonus is increased to +5 against ranged \\glossterm<physical attacks> from weapons or projectiles that are Small or smaller.
                 Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
+
+                This effect lasts as long as you and the target \\glossterm<attune> to it.
             """,
-            duration='Attunement (shared)',
             tags=['Air', 'Imbuement'],
         ),
         schools=['Transmutation'],
         lists=['Air', 'Nature'],
-        cantrip="The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).",
+        cantrip="The spell's casting time becomes a standard action, and its effect lasts as long as you and the target \\glossterm<sustain> it as a \\glossterm<minor action>.",
         subspells=[
             Subspell(
                 level=2,
@@ -89,8 +90,9 @@ def generate_spells():
                     effect="""
                         The target weapon gains an additional ten feet of reach, extending the wielder's threatened area.
                         This has no effect on ranged attacks with the weapon.
+
+                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>
                     """,
-                    duration='Sustain (minor)',
                     tags=['Air', 'Shaping'],
                 ),
             ),
@@ -140,11 +142,12 @@ def generate_spells():
                         You cannot control specific applications of the weather -- where lightning strikes, for example, or the exact path of a tornado.
                         Contradictory weather conditions are not possible simultaneously.
 
-                        After the spell's duration ends, the weather continues on its natural course, which may cause your chosen weather pattern to end.
+                        After the spell's effect ends, the weather continues on its natural course, which may cause your chosen weather pattern to end.
                         % TODO: This should be redundant with generic spell mechanics
                         If another ability would magically manipulate the weather in the same area, the most recently used ability takes precedence.
+
+                        This effect lasts as long as you \\glossterm<attune> to it.
                     """,
-                    duration='Attunement',
                     tags=['Air'],
                 ),
             ),
@@ -164,13 +167,14 @@ def generate_spells():
             effect="""
                 The target gains \\glossterm<damage reduction> equal to your spellpower.
                 In addition, it is \\glossterm<vulnerable> to arcane damage.
+
+                This effect lasts as long as you \\glossterm<attune> to it.
             """,
-            duration='Attunement (shared)',
             tags=['Shielding'],
         ),
         schools=['Abjuration'],
         lists=['Arcane'],
-        cantrip="The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).",
+        cantrip="The spell's casting time becomes a standard action, and its effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor> action.",
         subspells=[
             Subspell(
                 level=2,
@@ -187,8 +191,9 @@ def generate_spells():
                         The rest of its movement in the current phase is cancelled.
                         Failure means the creature can enter the area unimpeded.
                         Creatures in the area at the time that the spell is cast are unaffected by the spell.
+
+                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                     """,
-                    duration='Sustain (minor)',
                 ),
             ),
             Subspell(
@@ -230,10 +235,11 @@ def generate_spells():
                 ),
                 effects=Effects(
                     effect="""
-                        Living creatures are unable to enter the spell's area.
-                        Creatures in the area at the time that the spell is cast are unaffected by the spell.
+                        Living creatures are unable to enter the area.
+                        Creatures in the area at the time that the spell is cast are unaffected by this effect.
+
+                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                     """,
-                    duration='Sustain (minor)',
                 ),
             ),
         ],
@@ -319,12 +325,14 @@ def generate_spells():
                     effect="""
                         The area becomes filled with webs, making it \\glossterm<difficult terrain>.
                         Each 5-ft.\\ square of webbing has hit points equal to your spellpower, and is \\glossterm<vulnerable> to fire.
+                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                     """,
                     attack=Attack(
                         defense='Reflex',
-                        success="Each target is \\immobilized as long as it has webbing from this spell in its space."
+                        success="""
+                            Each target is \\immobilized as long as it has webbing from this ability in its space.
+                        """
                     ),
-                    duration='Sustain (minor)',
                     tags=['Manifestation'],
                 ),
             ),
@@ -340,13 +348,15 @@ def generate_spells():
                 level=2,
                 name="Poison",
                 effects=Effects(
-                    effect="""
-                        When this spell resolves, and at the end of each \\glossterm<action phase>, you make a Spellpower vs. Fortitude attack against the target.
-                        A hit means the target takes poison \\glossterm<standard damage> -3d.
-                        If this is the second hit, the target also becomes \\glossterm<sickened>.
-                        If this is the third hit, the target becomes \\glossterm<nauseated> instead of sickened.
-                    """,
-                    duration='Condition',
+                    attack=Attack(
+                        defense='Fortitude',
+                        success="""
+                            \\glossterm<standard damage> -3d, and the target is poisoned as a \\glossterm<condition>.
+                            If the target is poisoned, repeat this attack at the end of each \\glossterm<action phase>.
+                            On the second hit, the target also becomes \\glossterm<sickened>.
+                            On the third hit, the target becomes \\glossterm<nauseated> instead of sickened.
+                        """,
+                    ),
                     tags=['Manifestation', 'Poison'],
                 ),
             ),
@@ -375,11 +385,11 @@ def generate_spells():
                         A wall of whirling blades appears in the area.
                         The wall provides \\glossterm<active cover> (20\\% miss chance) against attacks made through it.
                         Attacks that miss in this way harmlessly strike the wall.
+                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
 
                         Whenever a creature or object passes through the wall, make a Spellpower vs. Reflex attack against it.
                         A hit means the target takes slashing \\glossterm<standard damage> -1d.
                     """,
-                    duration='Sustain (minor)',
                 ),
             ),
             Subspell(
@@ -422,8 +432,9 @@ def generate_spells():
 
                         The ballista has hit points equal to three times your spellpower.
                         In all other respects, it is treated as an ordinary ballista.
+
+                        This effect lasts as long as you \\glossterm<attune> to it.
                     """,
-                    duration='Attunement',
                     tags=['Manifestation'],
                 ),
             ),
@@ -454,15 +465,16 @@ def generate_spells():
                     The DR for each effect is equal to 10 + the \\glossterm<power> of that effect.
                 """,
                 success="""
+                    The effect is \\glossterm<suppressed>.
                     Success against a magical effect causes that effect to be \\glossterm<suppressed>.
+                    This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                 """,
             ),
-            duration='Sustain (minor)',
             tags=['Thaumaturgy'],
         ),
         schools=['Abjuration'],
         lists=['Arcane', 'Divine', 'Magic', 'Nature'],
-        cantrip="The spell's duration becomes Sustain (standard).",
+        cantrip="The spell's effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<standard action>.",
         subspells=[
             Subspell(
                 level=2,
@@ -478,9 +490,10 @@ def generate_spells():
                             One of the target's magic auras is altered (see \pcref{Spellcraft}).
                             You can change the school and descriptors of the aura.
                             In addition, you can decrease the spellpower of the aura by up to half your spellpower, or increase the spellpower of the aura up to a maximum of your spellpower.
+
+                            This effect lasts as long as you \\glossterm<attune> to it.
                         """,
                     ),
-                    duration='Attunement',
                     tags=['Thaumaturgy'],
                 ),
             ),
@@ -499,9 +512,9 @@ def generate_spells():
                         """,
                         success="""
                             The target object is \\glossterm<suppressed>.
+                            This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                         """,
                     ),
-                    duration='Sustain (minor)',
                     tags=['Thaumaturgy'],
                 ),
             ),
@@ -535,9 +548,11 @@ def generate_spells():
                     effect="""
                         All magical abilities and objects are \glossterm{suppressed} in the area.
                         In addition, magical abilities and objects cannot be activated within the area.
-                        \\par Creatures within the area cannot concentrate on or dismiss spells. However, you can concentrate on and dismiss your own \\spell{antimagic field}.
+                        Creatures within the area cannot concentrate on or dismiss spells.
+                        However, you can concentrate on and dismiss your own \\spell<antimagic field>.
+
+                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                     """,
-                    duration='Sustain (minor)',
                     tags=['Thaumaturgy'],
                 ),
             ),
@@ -548,11 +563,10 @@ def generate_spells():
                     attack=Attack(
                         defense='Mental',
                         success="""
-                            The target cannot travel extradimensionally.
+                            As a \\glossterm<condition>, the target is unable to travel extradimensionally.
                             This prevents all \\glossterm<Manifestation>, \\glossterm<Planar>, and \\glossterm<Teleportation> effects.
                         """,
                     ),
-                    duration='Condition',
                     tags=['Thaumaturgy'],
                 ),
             ),
@@ -567,8 +581,9 @@ def generate_spells():
                     effect="""
                         Extradimensional travel into or out of the spell's area is impossible.
                         This prevents all \\glossterm<Manifestation>, \\glossterm<Planar>, and \\glossterm<Teleportation> effects.
+
+                        This effect lasts as long as you \\glossterm<attune> to it.
                     """,
-                    duration='Attunement',
                     tags=['Thaumaturgy'],
                 ),
             ),
@@ -614,8 +629,9 @@ def generate_spells():
                     effect="""
                         The target weapon gains a +1d bonus to \\glossterm<strike damage>.
                         In addition, all damage dealt with the weapon with strikes becomes fire damage in addition to its normal damage types.
+
+                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                     """,
-                    duration='Sustain (minor)',
                     tags=['Fire'],
                 ),
             ),
@@ -632,8 +648,9 @@ def generate_spells():
                         You make an Spellpower vs. Reflex attack against everything within an \\areamed radius burst centered on the target.
                         A hit deals fire \\glossterm<standard damage> -1d.
                         After the object explodes in this way, the spell ends.
+
+                        This effect lasts as long as you \\glossterm<attune> to it.
                     """,
-                    duration='Attunement',
                     tags=['Fire', 'Trap'],
                 ),
             ),
@@ -693,8 +710,9 @@ def generate_spells():
                     effect="""
                         \glossterm<Strikes> with the affected weapon are made against Reflex defense instead of Armor defense.
                         However, attacks with the weapon take a -2d penalty to \\glossterm<strike damage>.
+
+                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                     """,
-                    duration='Sustain (minor)',
                     tags=['Shaping', 'Water'],
                 ),
             ),
@@ -717,9 +735,9 @@ def generate_spells():
                 ),
                 effects=Effects(
                     effect="""
-                        \glossterm<Strikes> with the affected weapon are made against Reflex defense instead of Armor defense.
+                        \\glossterm<Strikes> with the affected weapon are made against Reflex defense instead of Armor defense.
+                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                     """,
-                    duration='Sustain (minor)',
                     tags=['Shaping', 'Water'],
                 ),
             ),
@@ -737,11 +755,10 @@ def generate_spells():
         effects=Effects(
             attack=Attack(
                 defense='Mental',
-                success="The target is \\frightened by you.",
-                critical="The target is \\panicked by you.",
-                failure="The target is \\shaken by you.",
+                success="The target is \\frightened by you as a \\glossterm<condition>.",
+                critical="The target is \\panicked by you as a \\glossterm<condition>.",
+                failure="The target is \\shaken by you as a \\glossterm<condition>.",
             ),
-            duration='Condition',
             tags=['Emotion', 'Mind'],
         ),
         schools=['Enchantment'],
@@ -772,9 +789,11 @@ def generate_spells():
                 effects=Effects(
                     attack=Attack(
                         defense='Mental',
-                        success="At the end of each \\glossterm<delayed action phase>, if the target took damage that round, it takes mental \\glossterm<standard damage> -2d.",
+                        success="""
+                            The target is inflicted with agonizing pain as a \\glossterm<condition>.
+                            At the end of each \\glossterm<delayed action phase>, if the target took damage that round, it takes mental \\glossterm<standard damage> -2d.
+                        """,
                     ),
-                    duration='Condition',
                     tags=['Emotion', 'Mind'],
                 ),
             ),
@@ -788,10 +807,12 @@ def generate_spells():
                         success="""
                             The target is \\charmed by you.
                             Any act by you or your apparent allies that threatens or damages the \\spell<charmed> person breaks the effect.
+                            This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                         """,
-                        critical="As above, but this ability's duration becomes Attunement instead of Sustain (swift).",
+                        critical="""
+                            As above, except that the effect lasts as long as you \\glossterm<attune> to it.
+                        """,
                     ),
-                    duration='Attunement',
                     tags=['Emotion', 'Mind', 'Subtle'],
                 ),
             ),
@@ -819,12 +840,12 @@ def generate_spells():
                             The effects of all other \\glossterm<Emotion> abilties are \\glossterm<suppressed>.
                             It cannot take violent actions (although it can defend itself) or do anything destructive.
                             If an aggressive action is taken against a nearby creature, this effect is broken.
+                            This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<standard action>.
                         """,
                         critical="""
                             As above, except that nearby violence does not break the effect.
                         """,
                     ),
-                    duration='Sustain (standard)',
                     tags=['Emotion', 'Mind'],
                 ),
             ),
@@ -835,16 +856,15 @@ def generate_spells():
                     attack=Attack(
                         defense='Mental',
                         success="""
-                            The target cannot take any \\glossterm<standard actions> that do not cause it to make an attack.
+                            As a \\glossterm<condition>, the target cannot take any \\glossterm<standard actions> that do not cause it to make an attack.
                             For example, it could make a \\glossterm<strike> or cast an offensive spell, but it could not heal itself or summon an ally.
                             This cannot prevent it from taking the \\textit<recover> or \\textit<desperate recovery> actions.
                         """,
                         critical="""
-                            The target cannot take any \\glossterm<standard actions> that do not cause it to make a \\glossterm<strike>.
+                            As a \\glossterm<condition>, the target cannot take any \\glossterm<standard actions> that do not cause it to make a \\glossterm<strike>.
                             This cannot prevent it from taking the \\textit<recover> or \\textit<desperate recovery> actions.
                         """,
                     ),
-                    duration='Condition',
                     tags=['Emotion', 'Mind'],
                 ),
             ),
@@ -862,14 +882,13 @@ def generate_spells():
         effects=Effects(
             attack=Attack(
                 defense='Mental',
-                success="The target is \\immobilized.",
+                success="The target is \\immobilized as a \\glossterm<condition>.",
                 critical="""
-                    The target is \\immobilized twice by two separate conditions.
+                    The target is \\immobilized twice by two separate \\glossterm<condition>.
                     Each condition must be removed independently.
                 """,
             ),
             tags=['Compulsion', 'Mind'],
-            duration='Condition',
         ),
         schools=['Enchantment'],
         lists=['Arcane', 'Divine'],
@@ -883,16 +902,16 @@ def generate_spells():
                 effects=Effects(
                     attack=Attack(
                         defense='Mental',
-                        success="The target is \\blinded.",
+                        success="The target is \\blinded as a \\glossterm<condition>.",
                         critical="""
                             The target falls asleep.
                             It cannot be awakened by any means while the spell lasts.
                             After that time, it can wake up normally, though it continues to sleep until it would wake up naturally.
+                            This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
+                            However, it is a \\glossterm<condition>, and can be removed by effects which remove conditions.
                         """,
-                        special="This ability's effect can be removed by effects which remove \\glossterm<conditions>.",
                     ),
                     tags=['Compulsion', 'Mind'],
-                    duration='Sustain (minor)',
                 ),
             ),
             Subspell(
@@ -901,11 +920,10 @@ def generate_spells():
                 effects=Effects(
                     attack=Attack(
                         defense='Mental',
-                        success="The target is \\disoriented.",
-                        critical="The target is \\confused.",
+                        success="The target is \\disoriented as a \\glossterm<condition>.",
+                        critical="The target is \\confused as a \\glossterm<condition>.",
                     ),
                     tags=['Compulsion', 'Mind'],
-                    duration='Condition',
                 ),
             ),
             Subspell(
@@ -918,11 +936,10 @@ def generate_spells():
                 effects=Effects(
                     attack=Attack(
                         defense='Mental',
-                        success="Each target is \\disoriented.",
-                        critical="Each target is \\confused.",
+                        success="Each target is \\disoriented as a \\glossterm<condition>.",
+                        critical="Each target is \\confused as a \\glossterm<condition>.",
                     ),
                     tags=['Compulsion', 'Mind'],
-                    duration='Condition',
                 ),
             ),
             Subspell(
@@ -932,7 +949,7 @@ def generate_spells():
                     attack=Attack(
                         defense='Mental',
                         success="""
-                            The target is compelled to dance.
+                            As a \\glossterm<condition>, the target is compelled to dance.
                             It can spend a \\glossterm<minor action> or standard action to dance, if it is physically capable of dancing.
                             Whenever it takes a minor action or standard action in a round where it has not danced, it takes mental \\glossterm<standard damage> +1d.
 
@@ -944,7 +961,6 @@ def generate_spells():
                         """,
                     ),
                     tags=['Compulsion', 'Mind'],
-                    duration='Condition',
                 ),
             ),
             Subspell(
@@ -960,13 +976,15 @@ def generate_spells():
                 effects=Effects(
                     attack=Attack(
                         defense='Mental',
-                        success='The target is \\glossterm<confused>.',
+                        success="""
+                            The target is \\glossterm<confused> as a \\glossterm<condition>.
+                        """,
                         critical="""
                             The target is \\glossterm<dominated> by you.
-                            If the target was already dominated by you, this ability's duration becomes Attunement instead of Sustain (minor).
+                            This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
+                            If the target was already dominated by you, including from a previous use of this ability, this effect instead lasts as long as you \\glossterm<attune> to it.
                         """,
                     ),
-                    duration='Sustain (minor)',
                     tags=['Compulsion', 'Mind'],
                 ),
             ),
@@ -985,8 +1003,9 @@ def generate_spells():
                         You increase your size by one size category.
                         This increases your \\glossterm<strike damage> and usually increases your \\glossterm<reach> (see \\pcref<Size in Combat>).
                         However, you take a -2d penalty to \\glossterm<strike damage>, as your muscles are not increased fully to match your new size.
+
+                        This effect lasts as long as you \\glossterm<attune> to it.
                     """,
-                    duration='Attunement',
                     tags=['Shaping', 'Sizing'],
                 ),
             ),
@@ -1003,10 +1022,12 @@ def generate_spells():
             time='minor action',
         ),
         effects=Effects(
-            effect='The target gains a +1d bonus to \\glossterm<strike damage>.',
-            duration='Attunement (shared)',
+            effect="""
+                The target gains a +1d bonus to \\glossterm<strike damage>.
+                This effect lasts as long as you and the target \\glossterm<attune> to it.
+            """,
         ),
-        cantrip="The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).",
+        cantrip="The spell's casting time becomes a standard action, and its effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.",
         schools=['Channeling'],
         lists=['Divine'],
         subspells=[
@@ -1028,8 +1049,8 @@ def generate_spells():
                 effects=Effects(
                     effect="""
                         All \\glossterm<strikes> with the target weapon are made against Mental defense instead of Armor defense.
+                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                     """,
-                    duration='Sustain (minor)',
                     tags=['Fire'],
                 ),
             ),
@@ -1086,7 +1107,7 @@ def generate_spells():
                 defense='Fortitude',
                 success="""
                     Cold \\glossterm<standard damage> \minus1d.
-                    In addition, each target is \\fatigued as a condition.
+                    In addition, each target is \\fatigued as a \\glossterm<condition>.
                 """,
             ),
             tags=['Cold'],
@@ -1196,15 +1217,14 @@ def generate_spells():
             attack=Attack(
                 defense='Fortitude',
                 success="""
-                    The target is \\glossterm<sickened>.
+                    The target is \\glossterm<sickened> as a \\glossterm<condition>.
                     In addition, it takes life \\glossterm<standard damage> -3d whenever it takes a \\glossterm<standard action>.
                 """,
                 critical="""
-                    The target is \\glossterm<nauseated>.
+                    The target is \\glossterm<nauseated> as a \\glossterm<condition>.
                     In addition, it takes life \\glossterm<standard damage> whenever it takes a \\glossterm<standard action>.
                 """,
             ),
-            duration='Condition',
             tags=['Life'],
         ),
         schools=['Vivimancy'],
@@ -1346,6 +1366,7 @@ def generate_spells():
                 effects=Effects(
                     effect="""
                         When this spell resolves, and the end of each \\glossterm<action phase>, you make an attack against all targets to deal damage.
+                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                     """,
                     attack=Attack(
                         defense='Mental',
@@ -1353,7 +1374,6 @@ def generate_spells():
                             Each target takes life \\glossterm<standard damage> -3d.
                         """,
                     ),
-                    duration='Sustain (minor)',
                     tags=['Life'],
                 ),
             ),
@@ -1368,6 +1388,7 @@ def generate_spells():
                 effects=Effects(
                     effect="""
                         When this spell resolves, and the end of each \\glossterm<action phase>, you make an attack against all targets to heal them.
+                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                     """,
                     attack=Attack(
                         defense='Mental',
@@ -1375,7 +1396,6 @@ def generate_spells():
                             Each target heals hit points equal to \\glossterm<standard damage> -3d.
                         """,
                     ),
-                    duration='Sustain (minor)',
                     tags=['Life'],
                 ),
             ),
@@ -1419,13 +1439,13 @@ def generate_spells():
             """,
             effect="""
                 The target gains damage reduction equal to your spellpower against physical effects that have the chosen alignment, and physical attacks made by creatures with the chosen alignment.
+                This effect lasts as long as you and the target \\glossterm<attune> to it.
             """,
-            duration='Attunement (shared)',
             tags=['Shielding'],
         ),
         schools=['Abjuration'],
         lists=['Arcane', 'Chaos', 'Divine', 'Evil', 'Good', 'Law'],
-        cantrip="The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).",
+        cantrip="The spell's casting time becomes a standard action, and its effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.",
         subspells=[
             Subspell(
                 level=3,
@@ -1468,13 +1488,14 @@ def generate_spells():
                 If it hits, it deals \\glossterm<standard damage> -2d.
                 The type of damage dealt by this attack depends on the creature's appearance.
                 Most animals bite or claw their foes, which deals bludgeoning and slashing damage.
+
+                This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
             """,
-            duration="Sustain (minor)",
             tags=["Manifestation"],
         ),
         schools=['Conjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
-        cantrip="The spell's duration becomes Sustain (standard).",
+        cantrip="The spell's effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<standard action>.",
         subspells=[
             Subspell(
                 level=2,
@@ -1482,7 +1503,7 @@ def generate_spells():
                 description="""
                     The creature appears to be a Medium bear.
                     As a standard action, it can make a \\glossterm<grapple> attack against a creature it threatens.
-                    Its accuracy is the same as its accuracy with \\glossterm<physical attacks>.
+                    Its accuracy is the same as its accuracy with \\glossterm<strikes>.
                     While grappling, the manifested creature can either make a strike or attempt to escape the grapple.
 
                     This augment replaces the effects of any other augments that change the appearance of the creature.
@@ -1513,13 +1534,17 @@ def generate_spells():
 
                 You can only have one casting of this spell active at once.
                 If you cast it again, any previous castings of the spell are dismissed.
+
+                This effect lasts as long as you \\glossterm<attune> to it.
             """,
-            duration='Attunement',
             tags=['Scrying'],
         ),
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
-        cantrip="The sensor cannot be moved after it is originally created, and the spell's duration becomes Sustain (minor).",
+        cantrip="""
+            The sensor cannot be moved after it is originally created.
+            In addition, the spell's effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
+        """,
         subspells=[
             Subspell(
                 level=2,
@@ -1623,13 +1648,13 @@ def generate_spells():
         effects=Effects(
             effect="""
                 The target gains a \plus1 bonus to \\glossterm<accuracy> with all attacks.
+                This effect lasts as long as you and the target \\glossterm<attune> to it.
             """,
             tags=['Enhancement'],
-            duration='Attunement (shared)',
         ),
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
-        cantrip="The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).",
+        cantrip="The spell's casting time becomes a standard action, and its effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.",
         subspells=[
             Subspell(
                 level=2,
@@ -1643,9 +1668,10 @@ def generate_spells():
                     effect="""
                         You know when each target deliberately and knowingly speaks a lie.
                         This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
+
+                        This effect lasts as long as you \\glossterm<attune> to it.
                     """,
                     tags='Detection',
-                    duration='Attunement',
                 ),
             ),
             Subspell(
@@ -1781,8 +1807,9 @@ def generate_spells():
                     effect="""
                         The target floats in midair, unaffected by gravity.
                         During the movement phase, you can move the target up to ten feet in any direction.
+
+                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                     """,
-                    duration="Sustain (minor)",
                 ),
             ),
             Subspell(
@@ -1817,13 +1844,14 @@ def generate_spells():
                 It gains a +1 bonus to \\glossterm<physical defenses> and Stealth (see \\pcref<Stealth>).
                 This bonus is increases to +2 while in \\glossterm<shadowy illumination>.
                 This effect provides no defensive benefit against creatures immune to \\glossterm<Visual> abilities.
+
+                This effect lasts as long as you and the target \\glossterm<attune> to it.
             """,
-            duration='Attunement (shared)',
             tags=['Glamer', 'Visual'],
         ),
         schools=['Illusion'],
         lists=['Arcane'],
-        cantrip="The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).",
+        cantrip="The spell's casting time becomes a standard action, and its effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.",
         subspells=[
             Subspell(
                 level=2,
@@ -1839,8 +1867,10 @@ def generate_spells():
                     effect="""
                         Light within or passing through the area is dimmed to be no brighter than shadowy illumination.
                         Any effect or object which blocks light also blocks this spell's emanation.
+
+                        This effect lasts as long as you \\glossterm<attune> to it.
+                        If you use this ability multiple times, you can attune to it each time.
                     """,
-                    duration='Attunement (multiple)',
                     tags=['Glamer', 'Light'],
                 ),
             ),
@@ -1852,8 +1882,9 @@ def generate_spells():
                         You make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).
                         You gain a +5 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form.
                         However, this effect is unable to alter the sound, smell, texture, or temperature of the target or its clothes and equipment.
+
+                        This effect lasts as long as you and the target \\glossterm<attune> to it.
                     """,
-                    duration='Attunement (shared)',
                     tags=['Glamer', 'Visual'],
                 ),
             ),
@@ -1868,8 +1899,9 @@ def generate_spells():
                         All targeted attacks against the target have a 50\\% miss chance.
                         Whenever an attack misses in this way, it affects an image, destroying it.
                         This ability provides no defensive benefit against creatures immune to \\glossterm<Visual> abilities.
+
+                        This effect lasts as long as you and the target \\glossterm<attune> to it.
                     """,
-                    duration='Attunement (shared)',
                     tags=['Figment', 'Visual'],
                 ),
             ),
@@ -1918,13 +1950,12 @@ def generate_spells():
             attack=Attack(
                 defense='Reflex',
                 success="""
-                    Each target is \\dazzled.
+                    Each target is \\dazzled as a \\glossterm<condition>.
                 """,
                 critical="""
-                    Each target is \\blinded.
+                    Each target is \\blinded as a \\glossterm<condition>.
                 """,
             ),
-            duration='Condition',
             tags=['Figment', 'Light', 'Visual'],
         ),
         schools=['Illusion'],
@@ -1942,13 +1973,12 @@ def generate_spells():
                     attack=Attack(
                         defense='Mental',
                         success="""
-                            Each target is \\disoriented.
+                            Each target is \\disoriented as a \\glossterm<condition>.
                         """,
                         critical="""
-                            Each target is \\confused.
+                            Each target is \\confused as a \\glossterm<condition>.
                         """,
                     ),
-                    duration='Condition',
                     tags=['Figment', 'Light', 'Mind', 'Visual'],
                 ),
             ),
@@ -1963,8 +1993,9 @@ def generate_spells():
 
                         During each movement phase, you can move the lights up to 100 feet in any direction.
                         If one of the lights ever goes out of range from you, it immediately winks out.
+
+                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                     """,
-                    duration="Sustain (minor)",
                     tags=['Figment', 'Light', 'Visual'],
                 ),
             ),
@@ -1991,7 +2022,7 @@ def generate_spells():
                 name="Flashbang",
                 description="""
                     An intense sound accompanies the flash of light caused by the spell.
-                    If the spell's attack is successful, each target is also \\deafened as a condition.
+                    If the spell's attack is successful, each target is also \\deafened as a \\glossterm<condition>.
                     This is an \\glossterm<Auditory>, \\glossterm<Figment> effect.
                 """,
             ),
@@ -2030,8 +2061,9 @@ def generate_spells():
                     effect="""
                         The target gains \\glossterm{damage reduction} equal to your spellpower against damage dealt by \\glossterm<physical attacks>.
                         In addition, it is \\glossterm<vulnerable> to fire damage.
+
+                        This effect lasts as long as you and the target \\glossterm<attune> to it.
                     """,
-                    duration='Attunement (shared)',
                 ),
             ),
             Subspell(
@@ -2060,8 +2092,9 @@ def generate_spells():
                     effect="""
                         You decrease the target's size by one size category.
                         This decreases its \\glossterm<strike damage> and usually decreases its \\glossterm<reach> (see \\pcref<Size in Combat>).
+
+                        This effect lasts as long as you and the target \\glossterm<attune> to it.
                     """,
-                    duration='Attunement (shared)',
                     tags=['Shaping', 'Sizing'],
                 ),
             ),
@@ -2078,8 +2111,9 @@ def generate_spells():
                         You increase the target's size by one size category.
                         This increases its \\glossterm<strike damage> and usually increases its \\glossterm<reach> (see \\pcref<Size in Combat>).
                         However, the target takes a -1d penalty to \\glossterm<strike damage>, as its muscles are not increased fully to match its new size.
+
+                        This effect lasts as long as you and the target \\glossterm<attune> to it.
                     """,
-                    duration='Attunement (shared)',
                     tags=['Shaping', 'Sizing'],
                 ),
             ),
@@ -2110,8 +2144,9 @@ def generate_spells():
                         You make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).
                         You gain a +5 bonus on the check, and you ignore penalties for changing the target's gender, race, subtype, or age.
                         However, this effect is unable to alter the target's clothes or equipment in any way.
+
+                        This effect lasts as long as you and the target \\glossterm<attune> to it.
                     """,
-                    duration='Attunement (shared)',
                     tags=['Shaping'],
                 ),
             ),
@@ -2247,14 +2282,13 @@ def generate_spells():
             attack=Attack(
                 defense='Mental',
                 success="""
-                    The target is \\glossterm<slowed> and \\glossterm<dazed>.
+                    The target is \\glossterm<slowed> and \\glossterm<dazed> as a single \\glossterm<condition>.
                 """,
                 critical="""
-                    the target is \\glossterm<immobilized> and \\glossterm<dazed>.
+                    the target is \\glossterm<immobilized> and \\glossterm<dazed> as a single \\glossterm<condition>.
                 """,
             ),
             tags=['Temporal'],
-            duration='Condition',
         ),
         schools=['Transmutation'],
         lists=['Arcane'],
@@ -2273,9 +2307,9 @@ def generate_spells():
                 effects=Effects(
                     effect="""
                         The target gains a +30 foot bonus to its speed in all its movement modes, up to a maximum of double its original speed.
+                        This effect lasts as long as you \\glossterm<attune> to it.
                     """,
                     tags=['Temporal'],
-                    duration='Attunement',
                 ),
             ),
             Subspell(
@@ -2291,9 +2325,10 @@ def generate_spells():
                         This damage is tracked separately.
                         When the ends, you take all of the delayed damage at once.
                         When this happens, any damage in excess of your hit points is dealt as \\glossterm<vital damage>.
+
+                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                     """,
                     tags=['Temporal'],
-                    duration='Sustain (minor)',
                 ),
             ),
             Subspell(
