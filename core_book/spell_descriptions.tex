@@ -13,7 +13,7 @@
 The target gains a \plus1 bonus to \glossterm{physical defenses}.
 This bonus is increased to \plus5 against ranged \glossterm{physical attacks} from weapons or projectiles that are Small or smaller.
 Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
-\spelldur Attunement (shared)
+This effect lasts as long as you and the target \glossterm{attune} to it.
 \spelltags{\glossterm{Air}, \glossterm{Imbuement}}
 \end{spelleffects}
 \end{spellcontent}
@@ -22,7 +22,7 @@ Any effect which increases the size of creature this spell can affect also incre
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).
+The spell's casting time becomes a standard action, and its effect lasts as long as you and the target \glossterm{sustain} it as a \glossterm{minor action}.
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -71,7 +71,7 @@ Replace the spell's targets and effects with the following:
 \spelleffect
 The target weapon gains an additional ten feet of reach, extending the wielder's threatened area.
 This has no effect on ranged attacks with the weapon.
-\spelldur Sustain (minor)
+This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}
 \spelltags{\glossterm{Air}, \glossterm{Shaping}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -106,10 +106,10 @@ After five minutes, your chosen weather pattern fully takes effect.
 You can control the general tendencies of the weather, such as the direction and intensity of the wind.
 You cannot control specific applications of the weather -- where lightning strikes, for example, or the exact path of a tornado.
 Contradictory weather conditions are not possible simultaneously.
-After the spell's duration ends, the weather continues on its natural course, which may cause your chosen weather pattern to end.
+After the spell's effect ends, the weather continues on its natural course, which may cause your chosen weather pattern to end.
 % TODO: This should be redundant with generic spell mechanics
 If another ability would magically manipulate the weather in the same area, the most recently used ability takes precedence.
-\spelldur Attunement
+This effect lasts as long as you \glossterm{attune} to it.
 \spelltags{\glossterm{Air}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -124,9 +124,10 @@ If another ability would magically manipulate the weather in the same area, the 
 The attack result is applied to every \glossterm{magical} effect on the target.
 The DR for each effect is equal to 10 + the \glossterm{power} of that effect.
 \spellsuccess
+The effect is \glossterm{suppressed}.
 Success against a magical effect causes that effect to be \glossterm{suppressed}.
+This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
 \end{spellattack}
-\spelldur Sustain (minor)
 \spelltags{\glossterm{Thaumaturgy}}
 \end{spelleffects}
 \end{spellcontent}
@@ -135,7 +136,7 @@ Success against a magical effect causes that effect to be \glossterm{suppressed}
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (standard).
+The spell's effect lasts as long as you \glossterm{sustain} it as a \glossterm{standard action}.
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -152,8 +153,8 @@ Replace the spell's targets and effects with the following:
 One of the target's magic auras is altered (see \pcref{Spellcraft}).
 You can change the school and descriptors of the aura.
 In addition, you can decrease the spellpower of the aura by up to half your spellpower, or increase the spellpower of the aura up to a maximum of your spellpower.
+This effect lasts as long as you \glossterm{attune} to it.
 \end{spellattack}
-\spelldur Attunement
 \spelltags{\glossterm{Thaumaturgy}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -163,10 +164,9 @@ Replace the spell's effects with the following:
 \begin{augmenteffects}
 \begin{spellattack}{Spellpower vs. Mental}
 \spellsuccess
-The target cannot travel extradimensionally.
+As a \glossterm{condition}, the target is unable to travel extradimensionally.
 This prevents all \glossterm{Manifestation}, \glossterm{Planar}, and \glossterm{Teleportation} effects.
 \end{spellattack}
-\spelldur Condition
 \spelltags{\glossterm{Thaumaturgy}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -182,8 +182,8 @@ Replace the spell's targets and effects with the following:
 The DR is equal to 10 + the target's spellpower.
 \spellsuccess
 The target object is \glossterm{suppressed}.
+This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
 \end{spellattack}
-\spelldur Sustain (minor)
 \spelltags{\glossterm{Thaumaturgy}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -212,7 +212,7 @@ Replace the spell's targets and effects with the following:
 \spelleffect
 Extradimensional travel into or out of the spell's area is impossible.
 This prevents all \glossterm{Manifestation}, \glossterm{Planar}, and \glossterm{Teleportation} effects.
-\spelldur Attunement
+This effect lasts as long as you \glossterm{attune} to it.
 \spelltags{\glossterm{Thaumaturgy}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -229,8 +229,9 @@ Replace the spell's targets and effects with the following:
 \spelleffect
 All magical abilities and objects are \glossterm{suppressed} in the area.
 In addition, magical abilities and objects cannot be activated within the area.
-\par Creatures within the area cannot concentrate on or dismiss spells. However, you can concentrate on and dismiss your own \spell{antimagic field}.
-\spelldur Sustain (minor)
+Creatures within the area cannot concentrate on or dismiss spells.
+However, you can concentrate on and dismiss your own \spell{antimagic field}.
+This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
 \spelltags{\glossterm{Thaumaturgy}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -292,7 +293,7 @@ Replace the spell's targets and effects with the following:
 \spelleffect
 \glossterm{Strikes} with the affected weapon are made against Reflex defense instead of Armor defense.
 However, attacks with the weapon take a \minus2d penalty to \glossterm{strike damage}.
-\spelldur Sustain (minor)
+This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
 \spelltags{\glossterm{Shaping}, \glossterm{Water}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -311,7 +312,7 @@ Replace the spell's targets and effects with the following:
 \begin{augmenteffects}
 \spelleffect
 \glossterm{Strikes} with the affected weapon are made against Reflex defense instead of Armor defense.
-\spelldur Sustain (minor)
+This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
 \spelltags{\glossterm{Shaping}, \glossterm{Water}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -388,7 +389,7 @@ If the attack hits, the target is \glossterm{stunned} as a \glossterm{condition}
 \spelleffect
 The target gains \glossterm{damage reduction} equal to your spellpower.
 In addition, it is \glossterm{vulnerable} to arcane damage.
-\spelldur Attunement (shared)
+This effect lasts as long as you \glossterm{attune} to it.
 \spelltags{\glossterm{Shielding}}
 \end{spelleffects}
 \end{spellcontent}
@@ -397,7 +398,7 @@ In addition, it is \glossterm{vulnerable} to arcane damage.
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).
+The spell's casting time becomes a standard action, and its effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor} action.
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -415,7 +416,7 @@ Success means the creature is unable to enter the spell's area with any part of 
 The rest of its movement in the current phase is cancelled.
 Failure means the creature can enter the area unimpeded.
 Creatures in the area at the time that the spell is cast are unaffected by the spell.
-\spelldur Sustain (minor)
+This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
 \end{augmenteffects}
 \end{spellcontent}
 \augment{4}{Immunity}
@@ -446,9 +447,9 @@ Replace the spell's targets and effects with the following:
 \end{augmenttargetinginfo}
 \begin{augmenteffects}
 \spelleffect
-Living creatures are unable to enter the spell's area.
-Creatures in the area at the time that the spell is cast are unaffected by the spell.
-\spelldur Sustain (minor)
+Living creatures are unable to enter the area.
+Creatures in the area at the time that the spell is cast are unaffected by this effect.
+This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
 \end{augmenteffects}
 \end{spellcontent}
 \begin{spellsection}{Bless}
@@ -461,8 +462,9 @@ Creatures in the area at the time that the spell is cast are unaffected by the s
 \spelltime{minor action}
 \end{spelltargetinginfo}
 \begin{spelleffects}
-\spelleffect The target gains a \plus1d bonus to \glossterm{strike damage}.
-\spelldur Attunement (shared)
+\spelleffect
+The target gains a \plus1d bonus to \glossterm{strike damage}.
+This effect lasts as long as you and the target \glossterm{attune} to it.
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -470,7 +472,7 @@ Creatures in the area at the time that the spell is cast are unaffected by the s
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).
+The spell's casting time becomes a standard action, and its effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -486,7 +488,7 @@ Replace the spell's targets and effects with the following:
 \begin{augmenteffects}
 \spelleffect
 All \glossterm{strikes} with the target weapon are made against Mental defense instead of Armor defense.
-\spelldur Sustain (minor)
+This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
 \spelltags{\glossterm{Fire}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -505,11 +507,10 @@ You can cast the spell without spending an action point.
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Mental}
 \spellsuccess
-The target is \glossterm{slowed} and \glossterm{dazed}.
+The target is \glossterm{slowed} and \glossterm{dazed} as a single \glossterm{condition}.
 \spellcritical
-the target is \glossterm{immobilized} and \glossterm{dazed}.
+the target is \glossterm{immobilized} and \glossterm{dazed} as a single \glossterm{condition}.
 \end{spellattack}
-\spelldur Condition
 \spelltags{\glossterm{Temporal}}
 \end{spelleffects}
 \end{spellcontent}
@@ -533,7 +534,7 @@ Replace the spell's targets and effects with the following:
 \begin{augmenteffects}
 \spelleffect
 The target gains a \plus30 foot bonus to its speed in all its movement modes, up to a maximum of double its original speed.
-\spelldur Attunement
+This effect lasts as long as you \glossterm{attune} to it.
 \spelltags{\glossterm{Temporal}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -549,7 +550,7 @@ Whenever you take damage, half of the damage (rounded down) is not dealt to you 
 This damage is tracked separately.
 When the ends, you take all of the delayed damage at once.
 When this happens, any damage in excess of your hit points is dealt as \glossterm{vital damage}.
-\spelldur Sustain (minor)
+This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
 \spelltags{\glossterm{Temporal}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -580,12 +581,11 @@ You are still vulnerable to danger, such as from heat or dangerous gases. Howeve
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Mental}
-\spellsuccess The target is \immobilized.
+\spellsuccess The target is \immobilized as a \glossterm{condition}.
 \spellcritical
-The target is \immobilized twice by two separate conditions.
+The target is \immobilized twice by two separate \glossterm{condition}.
 Each condition must be removed independently.
 \end{spellattack}
-\spelldur Condition
 \spelltags{\glossterm{Compulsion}, \glossterm{Mind}}
 \end{spelleffects}
 \end{spellcontent}
@@ -604,10 +604,9 @@ Replace the spell's effects with the following:
 \begin{spellcontent}
 \begin{augmenteffects}
 \begin{spellattack}{Spellpower vs. Mental}
-\spellsuccess The target is \disoriented.
-\spellcritical The target is \confused.
+\spellsuccess The target is \disoriented as a \glossterm{condition}.
+\spellcritical The target is \confused as a \glossterm{condition}.
 \end{spellattack}
-\spelldur Condition
 \spelltags{\glossterm{Compulsion}, \glossterm{Mind}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -617,7 +616,7 @@ Replace the spell's effects with the following:
 \begin{augmenteffects}
 \begin{spellattack}{Spellpower vs. Mental}
 \spellsuccess
-The target is compelled to dance.
+As a \glossterm{condition}, the target is compelled to dance.
 It can spend a \glossterm{minor action} or standard action to dance, if it is physically capable of dancing.
 Whenever it takes a minor action or standard action in a round where it has not danced, it takes mental \glossterm{standard damage} \plus1d.
 Regardless of whether the target dances, it takes a \minus2 penalty to \glossterm{physical defenses} due to its limited control over its limbs.
@@ -625,7 +624,6 @@ Regardless of whether the target dances, it takes a \minus2 penalty to \glosster
 As above, except that dancing as a minor action does not prevent the target from taking damage.
 Only dancing as a standard action can prevent the target from taking damage.
 \end{spellattack}
-\spelldur Condition
 \spelltags{\glossterm{Compulsion}, \glossterm{Mind}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -641,7 +639,7 @@ Replace the spell's targets and effects with the following:
 You increase your size by one size category.
 This increases your \glossterm{strike damage} and usually increases your \glossterm{reach} (see \pcref{Size in Combat}).
 However, you take a \minus2d penalty to \glossterm{strike damage}, as your muscles are not increased fully to match your new size.
-\spelldur Attunement
+This effect lasts as long as you \glossterm{attune} to it.
 \spelltags{\glossterm{Shaping}, \glossterm{Sizing}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -654,10 +652,9 @@ Replace the spell's targets and effects with the following:
 \end{augmenttargetinginfo}
 \begin{augmenteffects}
 \begin{spellattack}{Spellpower vs. Mental}
-\spellsuccess Each target is \disoriented.
-\spellcritical Each target is \confused.
+\spellsuccess Each target is \disoriented as a \glossterm{condition}.
+\spellcritical Each target is \confused as a \glossterm{condition}.
 \end{spellattack}
-\spelldur Condition
 \spelltags{\glossterm{Compulsion}, \glossterm{Mind}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -666,14 +663,14 @@ Replace the spell's effects with the following:
 \begin{spellcontent}
 \begin{augmenteffects}
 \begin{spellattack}{Spellpower vs. Mental}
-\spellspecial This ability's effect can be removed by effects which remove \glossterm{conditions}.
-\spellsuccess The target is \blinded.
+\spellsuccess The target is \blinded as a \glossterm{condition}.
 \spellcritical
 The target falls asleep.
 It cannot be awakened by any means while the spell lasts.
 After that time, it can wake up normally, though it continues to sleep until it would wake up naturally.
+This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
+However, it is a \glossterm{condition}, and can be removed by effects which remove conditions.
 \end{spellattack}
-\spelldur Sustain (minor)
 \spelltags{\glossterm{Compulsion}, \glossterm{Mind}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -682,12 +679,13 @@ Replace the spell's effects with the following:
 \begin{spellcontent}
 \begin{augmenteffects}
 \begin{spellattack}{Spellpower vs. Mental}
-\spellsuccess The target is \glossterm{confused}.
+\spellsuccess
+The target is \glossterm{confused} as a \glossterm{condition}.
 \spellcritical
 The target is \glossterm{dominated} by you.
-If the target was already dominated by you, this ability's duration becomes Attunement instead of Sustain (minor).
+This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
+If the target was already dominated by you, including from a previous use of this ability, this effect instead lasts as long as you \glossterm{attune} to it.
 \end{spellattack}
-\spelldur Sustain (minor)
 \spelltags{\glossterm{Compulsion}, \glossterm{Mind}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -706,13 +704,12 @@ This subspell functions like the \textit{dance} subspell, except that you gain a
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Fortitude}
 \spellsuccess
-The target is \glossterm{sickened}.
+The target is \glossterm{sickened} as a \glossterm{condition}.
 In addition, it takes life \glossterm{standard damage} \minus3d whenever it takes a \glossterm{standard action}.
 \spellcritical
-The target is \glossterm{nauseated}.
+The target is \glossterm{nauseated} as a \glossterm{condition}.
 In addition, it takes life \glossterm{standard damage} whenever it takes a \glossterm{standard action}.
 \end{spellattack}
-\spelldur Condition
 \spelltags{\glossterm{Life}}
 \end{spelleffects}
 \end{spellcontent}
@@ -762,7 +759,7 @@ This is a \glossterm{Death} effect.
 \begin{spellattack}{Spellpower vs. Fortitude}
 \spellsuccess
 Cold \glossterm{standard damage} \minus1d.
-In addition, each target is \fatigued as a condition.
+In addition, each target is \fatigued as a \glossterm{condition}.
 \end{spellattack}
 \spelltags{\glossterm{Cold}}
 \end{spelleffects}
@@ -795,11 +792,10 @@ You can cast the spell without spending an action point.
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \begin{spellattack}{Spellpower vs. Mental}
-\spellsuccess The target is \frightened by you.
-\spellcritical The target is \panicked by you.
-\spellfailure The target is \shaken by you.
+\spellsuccess The target is \frightened by you as a \glossterm{condition}.
+\spellcritical The target is \panicked by you as a \glossterm{condition}.
+\spellfailure The target is \shaken by you as a \glossterm{condition}.
 \end{spellattack}
-\spelldur Condition
 \spelltags{\glossterm{Emotion}, \glossterm{Mind}}
 \end{spelleffects}
 \end{spellcontent}
@@ -818,9 +814,10 @@ Replace the spell's effects with the following:
 \begin{spellcontent}
 \begin{augmenteffects}
 \begin{spellattack}{Spellpower vs. Mental}
-\spellsuccess At the end of each \glossterm{delayed action phase}, if the target took damage that round, it takes mental \glossterm{standard damage} \minus2d.
+\spellsuccess
+The target is inflicted with agonizing pain as a \glossterm{condition}.
+At the end of each \glossterm{delayed action phase}, if the target took damage that round, it takes mental \glossterm{standard damage} \minus2d.
 \end{spellattack}
-\spelldur Condition
 \spelltags{\glossterm{Emotion}, \glossterm{Mind}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -840,10 +837,10 @@ Each target has its emotions calmed.
 The effects of all other \glossterm{Emotion} abilties are \glossterm{suppressed}.
 It cannot take violent actions (although it can defend itself) or do anything destructive.
 If an aggressive action is taken against a nearby creature, this effect is broken.
+This effect lasts as long as you \glossterm{sustain} it as a \glossterm{standard action}.
 \spellcritical
 As above, except that nearby violence does not break the effect.
 \end{spellattack}
-\spelldur Sustain (standard)
 \spelltags{\glossterm{Emotion}, \glossterm{Mind}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -856,9 +853,10 @@ Replace the spell's effects with the following:
 \spellsuccess
 The target is \charmed by you.
 Any act by you or your apparent allies that threatens or damages the \spell{charmed} person breaks the effect.
-\spellcritical As above, but this ability's duration becomes Attunement instead of Sustain (swift).
+This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
+\spellcritical
+As above, except that the effect lasts as long as you \glossterm{attune} to it.
 \end{spellattack}
-\spelldur Attunement
 \spelltags{\glossterm{Emotion}, \glossterm{Mind}, \glossterm{Subtle}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -868,14 +866,13 @@ Replace the spell's effects with the following:
 \begin{augmenteffects}
 \begin{spellattack}{Spellpower vs. Mental}
 \spellsuccess
-The target cannot take any \glossterm{standard actions} that do not cause it to make an attack.
+As a \glossterm{condition}, the target cannot take any \glossterm{standard actions} that do not cause it to make an attack.
 For example, it could make a \glossterm{strike} or cast an offensive spell, but it could not heal itself or summon an ally.
 This cannot prevent it from taking the \textit{recover} or \textit{desperate recovery} actions.
 \spellcritical
-The target cannot take any \glossterm{standard actions} that do not cause it to make a \glossterm{strike}.
+As a \glossterm{condition}, the target cannot take any \glossterm{standard actions} that do not cause it to make a \glossterm{strike}.
 This cannot prevent it from taking the \textit{recover} or \textit{desperate recovery} actions.
 \end{spellattack}
-\spelldur Condition
 \spelltags{\glossterm{Emotion}, \glossterm{Mind}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -897,7 +894,7 @@ The target's physical outline is distorted so it appears blurred, shifting, and 
 It gains a \plus1 bonus to \glossterm{physical defenses} and Stealth (see \pcref{Stealth}).
 This bonus is increases to \plus2 while in \glossterm{shadowy illumination}.
 This effect provides no defensive benefit against creatures immune to \glossterm{Visual} abilities.
-\spelldur Attunement (shared)
+This effect lasts as long as you and the target \glossterm{attune} to it.
 \spelltags{\glossterm{Glamer}, \glossterm{Visual}}
 \end{spelleffects}
 \end{spellcontent}
@@ -906,7 +903,7 @@ This effect provides no defensive benefit against creatures immune to \glossterm
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).
+The spell's casting time becomes a standard action, and its effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -923,7 +920,8 @@ Replace the spell's targets and effects with the following:
 \spelleffect
 Light within or passing through the area is dimmed to be no brighter than shadowy illumination.
 Any effect or object which blocks light also blocks this spell's emanation.
-\spelldur Attunement (multiple)
+This effect lasts as long as you \glossterm{attune} to it.
+If you use this ability multiple times, you can attune to it each time.
 \spelltags{\glossterm{Glamer}, \glossterm{Light}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -937,7 +935,7 @@ The duplicates shift chaotically in its space, making it difficult to identify t
 All targeted attacks against the target have a 50\% miss chance.
 Whenever an attack misses in this way, it affects an image, destroying it.
 This ability provides no defensive benefit against creatures immune to \glossterm{Visual} abilities.
-\spelldur Attunement (shared)
+This effect lasts as long as you and the target \glossterm{attune} to it.
 \spelltags{\glossterm{Figment}, \glossterm{Visual}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -949,7 +947,7 @@ Replace the spell's effects with the following:
 You make a Disguise check to alter the target's appearance (see \pcref{Disguise Creature}).
 You gain a \plus5 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form.
 However, this effect is unable to alter the sound, smell, texture, or temperature of the target or its clothes and equipment.
-\spelldur Attunement (shared)
+This effect lasts as long as you and the target \glossterm{attune} to it.
 \spelltags{\glossterm{Glamer}, \glossterm{Visual}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -1059,21 +1057,22 @@ Replace the spell's targets and effects with the following:
 A wall of whirling blades appears in the area.
 The wall provides \glossterm{active cover} (20\% miss chance) against attacks made through it.
 Attacks that miss in this way harmlessly strike the wall.
+This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
 Whenever a creature or object passes through the wall, make a Spellpower vs. Reflex attack against it.
 A hit means the target takes slashing \glossterm{standard damage} \minus1d.
-\spelldur Sustain (minor)
 \end{augmenteffects}
 \end{spellcontent}
 \augment{2}{Poison}
 Replace the spell's effects with the following:
 \begin{spellcontent}
 \begin{augmenteffects}
-\spelleffect
-When this spell resolves, and at the end of each \glossterm{action phase}, you make a Spellpower vs. Fortitude attack against the target.
-A hit means the target takes poison \glossterm{standard damage} \minus3d.
-If this is the second hit, the target also becomes \glossterm{sickened}.
-If this is the third hit, the target becomes \glossterm{nauseated} instead of sickened.
-\spelldur Condition
+\begin{spellattack}{Spellpower vs. Fortitude}
+\spellsuccess
+\glossterm{standard damage} \minus3d, and the target is poisoned as a \glossterm{condition}.
+If the target is poisoned, repeat this attack at the end of each \glossterm{action phase}.
+On the second hit, the target also becomes \glossterm{sickened}.
+On the third hit, the target becomes \glossterm{nauseated} instead of sickened.
+\end{spellattack}
 \spelltags{\glossterm{Manifestation}, \glossterm{Poison}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -1088,10 +1087,11 @@ Replace the spell's targets and effects with the following:
 \spelleffect
 The area becomes filled with webs, making it \glossterm{difficult terrain}.
 Each 5-ft.\ square of webbing has hit points equal to your spellpower, and is \glossterm{vulnerable} to fire.
+This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
 \begin{spellattack}{Spellpower vs. Reflex}
-\spellsuccess Each target is \immobilized as long as it has webbing from this spell in its space.
+\spellsuccess
+Each target is \immobilized as long as it has webbing from this ability in its space.
 \end{spellattack}
-\spelldur Sustain (minor)
 \spelltags{\glossterm{Manifestation}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -1131,7 +1131,7 @@ A hit means the target takes piercing \glossterm{standard damage} \minus1d.
 This is a \glossterm{Physical} effect, and does not allow \glossterm{magic resistance}.
 The ballista has hit points equal to three times your spellpower.
 In all other respects, it is treated as an ordinary ballista.
-\spelldur Attunement
+This effect lasts as long as you \glossterm{attune} to it.
 \spelltags{\glossterm{Manifestation}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -1190,11 +1190,10 @@ A brilliant light appears in the area until the end of the round.
 It illuminates a 100 foot radius around the area with bright light.
 \begin{spellattack}{Spellpower vs. Reflex}
 \spellsuccess
-Each target is \dazzled.
+Each target is \dazzled as a \glossterm{condition}.
 \spellcritical
-Each target is \blinded.
+Each target is \blinded as a \glossterm{condition}.
 \end{spellattack}
-\spelldur Condition
 \spelltags{\glossterm{Figment}, \glossterm{Light}, \glossterm{Visual}}
 \end{spelleffects}
 \end{spellcontent}
@@ -1218,7 +1217,7 @@ The lights resemble lanterns or torches, and shed bright light in the same 20 fo
 However, you can freely choose the color of the lights when you cast the spell.
 During each movement phase, you can move the lights up to 100 feet in any direction.
 If one of the lights ever goes out of range from you, it immediately winks out.
-\spelldur Sustain (minor)
+This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
 \spelltags{\glossterm{Figment}, \glossterm{Light}, \glossterm{Visual}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -1239,17 +1238,16 @@ A brilliant, rapidly shifting rainbow of lights appear in the area until the end
 They illuminate a 100 foot radius around the area with bright light.
 \begin{spellattack}{Spellpower vs. Mental}
 \spellsuccess
-Each target is \disoriented.
+Each target is \disoriented as a \glossterm{condition}.
 \spellcritical
-Each target is \confused.
+Each target is \confused as a \glossterm{condition}.
 \end{spellattack}
-\spelldur Condition
 \spelltags{\glossterm{Figment}, \glossterm{Light}, \glossterm{Mind}, \glossterm{Visual}}
 \end{augmenteffects}
 \end{spellcontent}
 \augment{4}{Flashbang}
 An intense sound accompanies the flash of light caused by the spell.
-If the spell's attack is successful, each target is also \deafened as a condition.
+If the spell's attack is successful, each target is also \deafened as a \glossterm{condition}.
 This is an \glossterm{Auditory}, \glossterm{Figment} effect.
 \augment{6}{Innate}
 You can cast the spell without spending an action point.
@@ -1289,7 +1287,7 @@ Replace the spell's targets and effects with the following:
 \spelleffect
 The target gains \glossterm{damage reduction} equal to your spellpower against damage dealt by \glossterm{physical attacks}.
 In addition, it is \glossterm{vulnerable} to fire damage.
-\spelldur Attunement (shared)
+This effect lasts as long as you and the target \glossterm{attune} to it.
 \end{augmenteffects}
 \end{spellcontent}
 \augment{2}{Shrink}
@@ -1303,7 +1301,7 @@ Replace the spell's targets and effects with the following:
 \spelleffect
 You decrease the target's size by one size category.
 This decreases its \glossterm{strike damage} and usually decreases its \glossterm{reach} (see \pcref{Size in Combat}).
-\spelldur Attunement (shared)
+This effect lasts as long as you and the target \glossterm{attune} to it.
 \spelltags{\glossterm{Shaping}, \glossterm{Sizing}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -1319,7 +1317,7 @@ Replace the spell's targets and effects with the following:
 You make a Disguise check to alter the target's appearance (see \pcref{Disguise Creature}).
 You gain a \plus5 bonus on the check, and you ignore penalties for changing the target's gender, race, subtype, or age.
 However, this effect is unable to alter the target's clothes or equipment in any way.
-\spelldur Attunement (shared)
+This effect lasts as long as you and the target \glossterm{attune} to it.
 \spelltags{\glossterm{Shaping}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -1335,7 +1333,7 @@ Replace the spell's targets and effects with the following:
 You increase the target's size by one size category.
 This increases its \glossterm{strike damage} and usually increases its \glossterm{reach} (see \pcref{Size in Combat}).
 However, the target takes a \minus1d penalty to \glossterm{strike damage}, as its muscles are not increased fully to match its new size.
-\spelldur Attunement (shared)
+This effect lasts as long as you and the target \glossterm{attune} to it.
 \spelltags{\glossterm{Shaping}, \glossterm{Sizing}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -1392,7 +1390,7 @@ Choose an alignment other than neutral (chaotic, good, evil, or lawful).
 This spell gains the tag for that alignment's \glossterm{opposed alignment}.
 \spelleffect
 The target gains damage reduction equal to your spellpower against physical effects that have the chosen alignment, and physical attacks made by creatures with the chosen alignment.
-\spelldur Attunement (shared)
+This effect lasts as long as you and the target \glossterm{attune} to it.
 \spelltags{\glossterm{Shielding}}
 \end{spelleffects}
 \end{spellcontent}
@@ -1401,7 +1399,7 @@ The target gains damage reduction equal to your spellpower against physical effe
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).
+The spell's casting time becomes a standard action, and its effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -1458,7 +1456,7 @@ Replace the spell's targets and effects with the following:
 \spelleffect
 The target weapon gains a \plus1d bonus to \glossterm{strike damage}.
 In addition, all damage dealt with the weapon with strikes becomes fire damage in addition to its normal damage types.
-\spelldur Sustain (minor)
+This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
 \spelltags{\glossterm{Fire}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -1474,7 +1472,7 @@ If a creature opens the target object, it explodes.
 You make an Spellpower vs. Reflex attack against everything within an \areamed radius burst centered on the target.
 A hit deals fire \glossterm{standard damage} \minus1d.
 After the object explodes in this way, the spell ends.
-\spelldur Attunement
+This effect lasts as long as you \glossterm{attune} to it.
 \spelltags{\glossterm{Fire}, \glossterm{Trap}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -1492,7 +1490,7 @@ You can cast the spell without spending an action point.
 \begin{spelleffects}
 \spelleffect
 The target gains a \plus1 bonus to \glossterm{accuracy} with all attacks.
-\spelldur Attunement (shared)
+This effect lasts as long as you and the target \glossterm{attune} to it.
 \spelltags{\glossterm{Enhancement}}
 \end{spelleffects}
 \end{spellcontent}
@@ -1501,7 +1499,7 @@ The target gains a \plus1 bonus to \glossterm{accuracy} with all attacks.
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's casting time becomes a standard action, and its duration becomes Sustain (minor, shared).
+The spell's casting time becomes a standard action, and its effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -1517,7 +1515,7 @@ Replace the spell's targets and effects with the following:
 \spelleffect
 You know when each target deliberately and knowingly speaks a lie.
 This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
-\spelldur Attunement
+This effect lasts as long as you \glossterm{attune} to it.
 \spelltags{\glossterm{D}, \glossterm{c}, \glossterm{e}, \glossterm{e}, \glossterm{i}, \glossterm{n}, \glossterm{o}, \glossterm{t}, \glossterm{t}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -1580,7 +1578,7 @@ If undisturbed, the sensor floats in the air in its position.
 As a standard action, you can concentrate to move the sensor up to 30 feet in any direction, even vertically.
 You can only have one casting of this spell active at once.
 If you cast it again, any previous castings of the spell are dismissed.
-\spelldur Attunement
+This effect lasts as long as you \glossterm{attune} to it.
 \spelltags{\glossterm{Scrying}}
 \end{spelleffects}
 \end{spellcontent}
@@ -1589,7 +1587,8 @@ If you cast it again, any previous castings of the spell are dismissed.
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The sensor cannot be moved after it is originally created, and the spell's duration becomes Sustain (minor).
+The sensor cannot be moved after it is originally created.
+In addition, the spell's effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -1703,7 +1702,7 @@ Its accuracy is equal to your spellpower.
 If it hits, it deals \glossterm{standard damage} \minus2d.
 The type of damage dealt by this attack depends on the creature's appearance.
 Most animals bite or claw their foes, which deals bludgeoning and slashing damage.
-\spelldur Sustain (minor)
+This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
 \spelltags{\glossterm{Manifestation}}
 \end{spelleffects}
 \end{spellcontent}
@@ -1712,7 +1711,7 @@ Most animals bite or claw their foes, which deals bludgeoning and slashing damag
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
-The spell's duration becomes Sustain (standard).
+The spell's effect lasts as long as you \glossterm{sustain} it as a \glossterm{standard action}.
 \end{spellcantrip}
 \end{spellsubcontent}
 \end{spellsection}
@@ -1720,7 +1719,7 @@ The spell's duration becomes Sustain (standard).
 \augment{2}{Summon Bear}
 The creature appears to be a Medium bear.
 As a standard action, it can make a \glossterm{grapple} attack against a creature it threatens.
-Its accuracy is the same as its accuracy with \glossterm{physical attacks}.
+Its accuracy is the same as its accuracy with \glossterm{strikes}.
 While grappling, the manifested creature can either make a strike or attempt to escape the grapple.
 This augment replaces the effects of any other augments that change the appearance of the creature.
 \augment{6}{Innate}
@@ -1787,7 +1786,7 @@ Replace the spell's targets and effects with the following:
 \spelleffect
 The target floats in midair, unaffected by gravity.
 During the movement phase, you can move the target up to ten feet in any direction.
-\spelldur Sustain (minor)
+This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
 \end{augmenteffects}
 \end{spellcontent}
 \augment{6}{Innate}
@@ -1842,11 +1841,11 @@ Replace the spell's targets and effects with the following:
 \begin{augmenteffects}
 \spelleffect
 When this spell resolves, and the end of each \glossterm{action phase}, you make an attack against all targets to deal damage.
+This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
 \begin{spellattack}{Spellpower vs. Mental}
 \spellsuccess
 Each target takes life \glossterm{standard damage} \minus3d.
 \end{spellattack}
-\spelldur Sustain (minor)
 \spelltags{\glossterm{Life}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -1873,11 +1872,11 @@ Replace the spell's targets and effects with the following:
 \begin{augmenteffects}
 \spelleffect
 When this spell resolves, and the end of each \glossterm{action phase}, you make an attack against all targets to heal them.
+This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
 \begin{spellattack}{Spellpower vs. Mental}
 \spellsuccess
 Each target heals hit points equal to \glossterm{standard damage} \minus3d.
 \end{spellattack}
-\spelldur Sustain (minor)
 \spelltags{\glossterm{Life}}
 \end{augmenteffects}
 \end{spellcontent}

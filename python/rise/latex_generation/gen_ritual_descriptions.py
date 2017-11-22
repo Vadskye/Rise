@@ -29,8 +29,10 @@ def generate_rituals():
                 Creating a zombie require a mostly intact corpse, including most of the flesh.
                 Creating a skeleton only requires a mostly intact skeleton.
                 If a skeleton is made from an intact corpse, the flesh quickly falls off the animated bones.
+
+                This effect lasts as long as you \\glossterm<attune> to it.
+                If you use this ability multiple times, you can attune to it each time.
             """,
-            duration='Attunement (multiple)',
             tags=['Evil', 'Negative'],
         ),
         schools=['Vivimancy'],
@@ -53,8 +55,9 @@ def generate_rituals():
                 The DR to break it open forcibly increases by 10.
 
                 You can freely pass your own \\ritual<arcane lock> as if the object were not locked.
+                This effect lasts as long as you \\glossterm<attune> to it.
+                If you use this ability multiple times, you can attune to it each time.
             """,
-            duration='Attunement (multiple)',
             tags=['Imbuement'],
         ),
         schools=['Transmutation'],
@@ -87,8 +90,9 @@ def generate_rituals():
                 Its Intelligence becomes 1d6 - 5.
                 Its type changes from animal to magical beast.
                 It gains the ability to speak and understand one language that you know of your choice.
+
+                This effect is permanent.
             """,
-            duration='Permanent',
             tags=['Imbuement'],
         ),
         schools=['Transmutation'],
@@ -112,6 +116,9 @@ def generate_rituals():
                 The circle is obvious, but a DR 16 Perception or Spellcraft check is required to verify that the circle belongs to a \\ritual<binding> ritual.
                 If the circle is broken, the ritual's effects end immediately.
                 If a creature enters the area, you make an attack against it, as described below.
+
+                This effect lasts as long as you \\glossterm<attune> to it.
+                If you use this ability multiple times, you can attune to it each time.
             """,
             attack=Attack(
                 defense='Mental',
@@ -120,7 +127,6 @@ def generate_rituals():
                     It treats the circle and the area above it as an impassable barrier, preventing the effects of any of its abilities from extending outside that area.
                 """,
             ),
-            duration='Attunement (multiple)',
         ),
         schools=['Abjuration'],
         lists=['Arcane', 'Divine'],
@@ -192,8 +198,10 @@ def generate_rituals():
                 When you perform this ritual, you make a Craft check to craft an object of no greater than Small size.
                 The object appears out of thin air, without any raw materials.
                 It must be made of nonliving, nonreactive vegetable matter, such as wood or cloth.
+
+                This effect lasts as long as you \\glossterm<attune> to it.
+                If you use this ability multiple times, you can attune to it each time.
             """,
-            duration='Attunement (multiple)',
             tags=['Manifestation'],
         ),
         schools=['Conjuration'],
@@ -273,8 +281,10 @@ def generate_rituals():
                 It can exist comfortably in conditions between \minus50 and 140 degrees Fahrenheit.
                 Its equipment, if any, is also protected.
                 This does not protect the target from fire or cold damage.
+
+                This effect lasts as long as you \\glossterm<attune> to it.
+                If you use this ability multiple times, you can attune to it each time.
             """,
-            duration='Attunement (multiple)',
             tags=['Shielding'],
         ),
         schools=['Abjuration'],
@@ -295,11 +305,12 @@ def generate_rituals():
                 If a creature reads the target object, it explodes.
                 You make an attack against everything within an \\areamed radius burst centered on the target.
                 After the object explodes in this way, the spell ends.
-
                 If the target object is destroyed or rendered illegible, the spell ends without exploding.
+
+                This effect lasts as long as you \\glossterm<attune> to it.
+                If you use this ability multiple times, you can attune to it each time.
             """,
             attack=Attack.multi_damage('Reflex', 'arcane'),
-            duration='Attunement (multiple)',
             tags=['Trap'],
         ),
         schools=['Evocation'],
@@ -370,8 +381,9 @@ def generate_rituals():
                 The \\ritual<gate> has a front and a back. Creatures moving through the gate from the front are transported to the other plane; creatures moving through it from the back are not.
 
                 % A \\ritual<gate> spell functions much like a \\ritual<plane shift> spell, except that the gate opens precisely at the point you desire.
+
+                This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<standard action>, up to a maximum of 5 rounds.
             """,
-            duration='Sustain (standard); maximum 5 rounds',
             tags=['Planar', 'Teleportation'],
         ),
         schools=['Conjuration'],
@@ -393,8 +405,10 @@ def generate_rituals():
                 This can extend the time a poison or similar item lasts before becoming inert.
                 If used on a corpse, this effectively extends the time limit on raising that creature from the dead (see \\ritual<resurrection>) and similar effects that require a fresh body.
                 Additionally, this can make transporting a fallen comrade more pleasant.
+
+                This effect lasts as long as you \\glossterm<attune> to it.
+                If you use this ability multiple times, you can attune to it each time.
             """,
-            duration='Attunement (multiple)',
             tags=['Temporal'],
         ),
         schools=['Transmutation'],
@@ -434,8 +448,9 @@ def generate_rituals():
         effects=Effects(
             effect="""
                 The target glows like a torch, shedding bright light in an \\areamed radius (and dim light for an additional 20 feet).
+                This effect lasts as long as you \\glossterm<attune> to it.
+                If you use this ability multiple times, you can attune to it each time.
             """,
-            duration='Attunement (multiple)',
             tags=['Figment', 'Light'],
         ),
         schools=['Illusion'],
@@ -458,10 +473,10 @@ def generate_rituals():
                 You must also specify a message of twenty-five words or less.
             """,
             effect="""
-                When the triggering condition occurs, the target appears to grow an enchanted mouth, and it speaks the chosen message aloud.
+                This effect lasts until the triggering condition occurs.
+                When that happens, the target appears to grow an enchanted mouth, and it speaks the chosen message aloud.
                 After this happens, the spell ends.
             """,
-            duration='Permanent',
             tags=['Figment'],
         ),
         schools=['Illusion'],
@@ -480,8 +495,10 @@ def generate_rituals():
                 You create a light horse or a pony (your choice) to serve you as a mount.
                 The steed serves willingly and well.
                 The mount comes with a bit and bridle and a riding saddle.
+
+                This effect lasts as long as you \\glossterm<attune> to it.
+                If you use this ability multiple times, you can attune to it each time.
             """,
-            duration='Attunement (multiple)',
             tags=['Manifestation'],
         ),
         schools=['Conjuration'],
@@ -501,8 +518,10 @@ def generate_rituals():
     #         effect="""
     #             The target gains \\glossterm<magic resistance> against Awareness and Scrying abilities equal to 5 + your spellpower.
     #             In addition, Awareness and Scrying abilities that do not directly affect the target simply treat it as if it did not exist.
+    #
+    #             This effect lasts as long as you \\glossterm<attune> to it.
+    #             If you use this ability multiple times, you can attune to it each time.
     #         """,
-    #         duration='Attunement (multiple)',
     #         tags=['Thaumaturgy'],
     #     ),
     #     schools=['Abjuration'],
@@ -554,8 +573,8 @@ def generate_rituals():
         effects=Effects(
             effect="""
                 All \\glossterm<Scrying> effects fail to function in the area.
+                This effect is permanent.
             """,
-            duration='Permanent',
             tags=['Thaumaturgy'],
         ),
         schools=['Abjuration'],
@@ -623,8 +642,9 @@ def generate_rituals():
                 You gain the ability to decipher magical inscriptions that would otherwise be unintelligible.
                 This can allow you to read ritual books and similar objects created by other creatures.
                 After you have read an inscription in this way, you are able to read that particular writing without the use of this ritual.
+
+                This effect lasts as long as you \\glossterm<attune> to it.
             """,
-            duration='Attunement',
             tags=['Knowledge'],
         ),
         schools=['Divination'],
@@ -818,7 +838,6 @@ def generate_rituals():
                 After the the target receives the message, it may reply with a message of the same length as long as the ritual's effect continues.
                 Once it speaks twenty-five words, or you stop sustaining the effect, the ritual's effect ends.
             """,
-            duration='Sustain (standard); maximum 5 rounds',
         ),
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
@@ -861,8 +880,9 @@ def generate_rituals():
                 The soul of the creature the target corpse belongs to is imprisoned in the chosen gem.
                 This prevents the creature from being resurrected, and prevents the corpse from being used to create undead creatures, as long as the gem is intact.
                 A creature holding the gem may still resurrect or reanimate the creature.
+
+                This effect lasts as long as you \\glossterm<attune> to it.
             """,
-            duration='Attunement',
         ),
         schools=['Vivimancy'],
         lists=['Arcane', 'Divine'],
@@ -881,12 +901,14 @@ def generate_rituals():
             effect="""
                 Each target can communicate mentally through telepathy with each other target.
                 This communication is instantaneous across any distance, but cannot reach across planes.
+                % Is this grammatically correct?
+                This effect lasts as long as you and each target \\glossterm<attune> to it.
+                If you use this ability multiple times, you can attune to it each time.
 
                 Each target must attune to this ritual independently.
                 If a target breaks its attunement, it stops being able to send and receive mental messages with other targets.
                 However, the effect continues as long as at least two different targets are attuned to it.
             """,
-            duration='Attunement (multiple); see text',
         ),
         schools=['Divination'],
         lists=['Arcane'],
@@ -984,8 +1006,9 @@ def generate_rituals():
         effects=Effects(
             effect="""
                 The target can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
+                This effect lasts as long as you \\glossterm<attune> to it.
+                If you use this ability multiple times, you can attune to it each time.
             """,
-            duration='Attunement (multiple)',
             tags=['Imbuement'],
         ),
         schools=['Transmutation'],
