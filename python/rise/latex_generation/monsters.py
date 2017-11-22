@@ -203,6 +203,7 @@ def magical_beasts():
     monsters = []
 
     ankheg = Creature(
+        challenge_rating=2,
         character_class=CharacterClass('slayer'),
         level=6,
         name='Ankheg',
