@@ -307,7 +307,7 @@ Each of the nine schools represents a different type of mastery over the world, 
 
             \parhead{Spells with Opposite Effects} Spells with opposite effects apply normally, with all bonuses, penalties, or changes accruing in the order that they apply.
 
-            \parhead{Instantaneous Effects} Two or more spells with instantaneous durations work cumulatively when they affect the same target.
+            \parhead{Instantaneous Effects} Two or more spells with instantaneous effects work cumulatively when they affect the same target.
 
         % TODO: pull these out into generic descriptions of suppressing/dismissing spells and abilities
         \subsubsection{Suppressing Spells}\label{Suppressing Spells}
@@ -316,8 +316,8 @@ Each of the nine schools represents a different type of mastery over the world, 
             However, if it stops being suppressed, its effects continue as if they had not been interrupted.
 
         \subsubsection{Dismissing Spells}\label{Dismissing Spells}
-            When a spell is \glossterm{dismissed}, all of its effects with a duration end.
-            Unless otherwise specified, any spell with a duration can be dismissed.
+            When a spell is \glossterm{dismissed}, all of its effects end.
+            Unless otherwise specified, any spell with a \glossterm{duration} can be dismissed.
 
             If a spell affects multiple targets, it must be dismissed individually on each target.
             Dismissing the effect on one target does not affect the other targets of the spell.
@@ -545,11 +545,10 @@ Each of the nine schools represents a different type of mastery over the world, 
 
     \subsection{Duration}
 
-        An ability's duration entry tells you how long the magical energy of the spell lasts.
+        Many abilities have lingering effects that last for some \glossterm{duration}.
 
-        % TODO: pull this out into a better section
-        \parhead{Sustain}\label{Sustain} The ability lasts as long as you take an action to sustain it.
-        A Sustain duration always specifies an action type, such as Sustain (standard).
+        \parhead{Sustain} Some abilities last as long as you take an action to sustain them.
+        The type of action required is always specified in the ability.
         At the end of each round, the ability is dismissed unless you used the ability that round or took the action to sustain the ability that round.
         Sustaining spells does not take concentration, and cannot be disrupted in the same way that casting spells can.
 
@@ -559,15 +558,16 @@ Each of the nine schools represents a different type of mastery over the world, 
         You can only sustain an ability for up to 5 minutes.
         After that time, the ability's effect is dismissed.
 
-        \subparhead{Sustain (shared)} The ability lasts as long as you and all targets sustain the ability each round.
-        If you use a an ability with a Sustain (shared) ability on yourself, you only need to sustain the ability once per round, not twice.
+        \subparhead{Shared Sustain} Some abilities last as long as ``you and the target'' or ``you and each target'' sustain the ability.
+        If you are a target, you only need to sustain the ability once, not twice.
 
         \parhead{Attunement} The ability lasts as long as you \glossterm{attune} to it (see \pcref{Attunement}).
 
-        \subparhead{Attunement (multiple)} The ability lasts as long as you \glossterm{attune} to it.
-        In addition, you can attune to multiple activations of the same ability at once (see \pcref{Multiple Attunement}).
+        \subparhead{Multiple Attunement} Normally, you can only attune to one copy of a given ability at once.
+        Some abilities allow you to attune to them multiple times.
 
-        \subparhead{Attunement (shared)} The ability lasts as long as you and all targets \glossterm{attune} to it (see \pcref{Shared Attunement}).
+        \subparhead{Shared Attunement} Some abilities last as long as ``you and the target'' or ``you and each target'' attune to the ability.
+        If you are a target, you only need to attune to the ability once, not twice.
 
         \parhead{Condition} The ability lasts until its target removes it, such as by taking the Recover action (see \pcref{Recover}).
         Only abilities that affect creatures can have the Condition duration.
@@ -579,9 +579,10 @@ Each of the nine schools represents a different type of mastery over the world, 
         \parhead{Targets, Effects, and Areas} If an ability affects creatures directly, the effects travel with the targets for the ability's duration.
         If an ability creates or summons objects or creatures, they last for the duration, and are capable of moving outside the ability's initial range.
         Such effects can sometimes be destroyed prior to when their duration ends.
-        % Seems redundant with the definition of emanations elsewhere
+
+        % This redundant with the definition of emanations elsewhere
         % If an ability creates an emanation, then the spell stays with that area for its duration.
-        Creatures become subject to the spell when they enter the emanation and are no longer subject to it when they leave.
+        % Creatures become subject to the spell when they enter the emanation and are no longer subject to it when they leave.
 
         % \parhead{Discharge} Occasionally a spells lasts for a set duration or until triggered or discharged.
 
@@ -706,7 +707,7 @@ Each of the nine schools represents a different type of mastery over the world, 
 
     \parhead{Manifestation} Manifestation abilities create temporary constructs formed from raw magical energy.
     Objects and creatures created with manifestation abilities seem real on the surface, but they have no internal structure.
-    When an object or creature created by a Manifestation ability is destroyed or killed, or when the duration of the ability that created it expires, it disappears without a trace.
+    When an object or creature created by a Manifestation ability is destroyed or killed, or when the duration of the ability that created it ends, it disappears without a trace.
     Unlike \glossterm{Creation} abilities, magical Manifestation abilities allow \glossterm{magic resistance}.
 
     \parhead{Mind} Mind abilities manipulate the minds of creatures.
