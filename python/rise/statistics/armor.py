@@ -4,6 +4,7 @@ def properties_from_armor_name(name):
     return {
         'breastplate': [4, 4, Armor.MEDIUM],
         'full plate': [6, 6, Armor.HEAVY],
+        'hide': [3, 3, Armor.LIGHT],
         'leather': [1, 0, Armor.LIGHT],
         'studded leather': [2, 1, Armor.LIGHT],
     }[name]
