@@ -260,6 +260,90 @@ Wil 3
 \end{spellfooter}
 \end{spellsubcontent}
 \end{monsection}
+\begin{monsection}{Goblin Shouter}{2}[2]
+\vspace{-1em}\spelltwocol{}{Small humanoid}\vspace{-1em}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{
+\textbf{HP} 24;
+\textbf{Bloodied} 12;
+\textbf{Recovery} 1d8
+}
+{\textbf{AP} 3}
+\pari \textbf{Armor} 6;
+\textbf{Fort} 5;
+\textbf{Ref} 11;
+\textbf{Ment} 7
+\pari \textbf{Strike} Club \plus3 (1d6) or sling \plus3 (1d6)
+\pari \textbf{Actions} One in action phase, one in delayed action phase
+\end{spelltargetinginfo}
+\begin{spelleffects}
+\pari
+\textbf{Shout of Running}:
+All other willing allies who can hear the shouter can use the sprint ability without spending action points.
+This effect lasts as long as the shouter sustains it as a standard action.
+\vspace{0.5em}
+\pari
+\textbf{Shout of Stabbing}:
+All other willing allies who can hear the shouter gain a \plus1d bonus to strike damage.
+This effect lasts as long as the shouter sustains it as a standard action.
+\end{spelleffects}
+\end{spellcontent}
+\begin{spellsubcontent}
+\begin{spellfooter}
+\pari \textbf{Awareness} \plus6
+\pari \textbf{Speed} 25 ft.;
+\textbf{Space} 5 ft.;
+\textbf{Reach} 5 ft.
+\pari \textbf{Attributes}
+Str 0,
+Dex 3,
+Con \minus1,
+Int \minus2,
+Per 3,
+Wil 2
+\end{spellfooter}
+\end{spellsubcontent}
+\end{monsection}
+\begin{monsection}{Goblin Stabber}{1}[1]
+\vspace{-1em}\spelltwocol{}{Small humanoid}\vspace{-1em}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{
+\textbf{HP} 8;
+\textbf{Bloodied} 4;
+\textbf{Recovery} 1d6
+}
+{\textbf{AP} 1}
+\pari \textbf{Armor} 6;
+\textbf{Fort} 4;
+\textbf{Ref} 12;
+\textbf{Ment} 5
+\pari \textbf{Strike} Shortsword \plus3 (1d4) or sling \plus2 (1d4)
+\end{spelltargetinginfo}
+\begin{spelleffects}
+\pari
+\textbf{Sneeky Stab}:
+The stabber makes a shortsword strike.
+If the target is defenseless, overwhelmed, or unaware, the damage becomes 1d8.
+\end{spelleffects}
+\end{spellcontent}
+\begin{spellsubcontent}
+\begin{spellfooter}
+\pari \textbf{Awareness} \plus6
+\pari \textbf{Speed} 25 ft.;
+\textbf{Space} 5 ft.;
+\textbf{Reach} 5 ft.
+\pari \textbf{Attributes}
+Str 0,
+Dex 3,
+Con \minus1,
+Int \minus2,
+Per 2,
+Wil 0
+\end{spellfooter}
+\end{spellsubcontent}
+\end{monsection}
 \begin{monsection}{Orc Chieftain}{5}[3]
 \vspace{-1em}\spelltwocol{}{Medium humanoid}\vspace{-1em}
 \begin{spellcontent}
@@ -280,7 +364,7 @@ Wil 3
 \begin{spelleffects}
 \pari
 \textbf{Hit Everyone Else}:
-All other willing allies who can see and hear the chieftain gain a \plus2 bonus to accuracy with strikes.
+All other willing allies who can hear the chieftain gain a \plus2 bonus to accuracy with strikes.
 This effect lasts as long as the chieftain sustains it as a standard action.
 \vspace{0.5em}
 \pari
@@ -289,7 +373,7 @@ The chieftain makes a greataxe strike.
 The strike deals 4d10 damage.
 \vspace{0.5em}
 \pari
-\textbf{Hit Smartest}:
+\textbf{Hit Fast}:
 The chieftain makes a greataxe strike.
 Its accuracy is increased to 8.
 \end{spelleffects}
@@ -304,7 +388,7 @@ Its accuracy is increased to 8.
 Str 8,
 Dex 0,
 Con 3,
-Int \minus1,
+Int 0,
 Per 6,
 Wil 6
 \end{spellfooter}
@@ -331,7 +415,7 @@ Wil 6
 \pari
 \textbf{Hit Harder}:
 The grunt makes a greataxe strike.
-Its accuracy is reduced to \minus1, but the strike deals 2d10 damage.
+Its accuracy is reduced to 0, but the strike deals 4d6 damage.
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellsubcontent}
@@ -344,44 +428,84 @@ Its accuracy is reduced to \minus1, but the strike deals 2d10 damage.
 Str 8,
 Dex 0,
 Con 3,
-Int \minus1,
+Int 0,
 Per 6,
 Wil 6
 \end{spellfooter}
 \end{spellsubcontent}
 \end{monsection}
-\begin{monsection}{Orc Loudmouth}{2}[3]
+\begin{monsection}{Orc Loudmouth}{3}[2]
 \vspace{-1em}\spelltwocol{}{Medium humanoid}\vspace{-1em}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
 \spelltwocol{
-\textbf{HP} 54;
-\textbf{Bloodied} 27;
+\textbf{HP} 48;
+\textbf{Bloodied} 24;
 \textbf{Recovery} 1d8
 }
-{\textbf{AP} 5}
-\pari \textbf{Armor} 6;
-\textbf{Fort} 9;
-\textbf{Ref} 6;
-\textbf{Ment} 9
-\pari \textbf{Strike} Greataxe \plus2 (2d8)
-\pari \textbf{Actions} Two in action phase, one in delayed action phase
+{\textbf{AP} 4}
+\pari \textbf{Armor} 7;
+\textbf{Fort} 10;
+\textbf{Ref} 7;
+\textbf{Ment} 10
+\pari \textbf{Strike} Greataxe \plus3 (2d8)
+\pari \textbf{Actions} One in action phase, one in delayed action phase
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \pari
 \textbf{Hit Harder}:
 The loudmouth makes a greataxe strike.
-Its accuracy is reduced to 0, but the strike deals 4d6 damage.
-\vspace{0.5em}
-\pari
-\textbf{Hit Smarter}:
-The loudmouth makes a greataxe strike.
-Its accuracy is increased to 4, but the strike deals 2d6 damage.
+Its accuracy is reduced to 1, but the strike deals 4d6 damage.
 \vspace{0.5em}
 \pari
 \textbf{Hit That One Over There}:
-All other willing allies who can see and hear the loudmouth gain a \plus2 bonus to accuracy with strikes against one creature within Long range.
+All other willing allies who can hear the loudmouth gain a \plus2 bonus to accuracy with strikes against one creature within Long range.
 This effect lasts as long as the loudmouth sustains it as a standard action.
+\end{spelleffects}
+\end{spellcontent}
+\begin{spellsubcontent}
+\begin{spellfooter}
+\pari \textbf{Awareness} \plus6
+\pari \textbf{Speed} 30 ft.;
+\textbf{Space} 5 ft.;
+\textbf{Reach} 5 ft.
+\pari \textbf{Attributes}
+Str 5,
+Dex 0,
+Con 2,
+Int \minus1,
+Per 0,
+Wil 4
+\end{spellfooter}
+\end{spellsubcontent}
+\end{monsection}
+\begin{monsection}{Orc Shaman}{3}[2]
+\vspace{-1em}\spelltwocol{}{Medium humanoid}\vspace{-1em}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{
+\textbf{HP} 48;
+\textbf{Bloodied} 24;
+\textbf{Recovery} 1d8
+}
+{\textbf{AP} 4}
+\pari \textbf{Armor} 7;
+\textbf{Fort} 8;
+\textbf{Ref} 7;
+\textbf{Ment} 11
+\pari \textbf{Strike} Greatstaff \plus3 (2d6)
+\pari \textbf{Actions} One in action phase, one in delayed action phase
+\end{spelltargetinginfo}
+\begin{spelleffects}
+\pari
+\spelltwocol{\textbf{Hit Worse}: \plus4 vs Mental}{One target in Close range}
+\par
+\par \textit{Hit}: As a condition, the target takes a \minus3 penalty to accuracy with strikes.
+\par \textit{Critical}: As above, except that the penalty is increased to -6.
+\vspace{0.5em}
+\pari
+\textbf{Hurt Less}:
+One other willing creature in Close range heals 2d8 hit points
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellsubcontent}
@@ -396,56 +520,11 @@ Dex 0,
 Con 2,
 Int \minus1,
 Per 0,
-Wil 3
+Wil 4
 \end{spellfooter}
 \end{spellsubcontent}
 \end{monsection}
-\begin{monsection}{Orc Shaman}{2}[2]
-\vspace{-1em}\spelltwocol{}{Medium humanoid}\vspace{-1em}
-\begin{spellcontent}
-\begin{spelltargetinginfo}
-\spelltwocol{
-\textbf{HP} 36;
-\textbf{Bloodied} 18;
-\textbf{Recovery} 1d8
-}
-{\textbf{AP} 4}
-\pari \textbf{Armor} 6;
-\textbf{Fort} 7;
-\textbf{Ref} 6;
-\textbf{Ment} 10
-\pari \textbf{Strike} Greatstaff \plus2 (1d10)
-\pari \textbf{Actions} One in action phase, one in delayed action phase
-\end{spelltargetinginfo}
-\begin{spelleffects}
-\pari
-\spelltwocol{\textbf{Hit Worse}: \plus3 vs Mental}{One target in Close range}
-\par
-\par \textit{Hit}: As a condition, the target takes a \minus3 penalty to accuracy with strikes.
-\par \textit{Critical}: As above, except that the penalty is increased to -6.
-\vspace{0.5em}
-\pari
-\textbf{Hurt Less}:
-One other willing creature in Close range heals 2d6 hit points
-\end{spelleffects}
-\end{spellcontent}
-\begin{spellsubcontent}
-\begin{spellfooter}
-\pari \textbf{Awareness} \plus6
-\pari \textbf{Speed} 30 ft.;
-\textbf{Space} 5 ft.;
-\textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
-Str 3,
-Dex 0,
-Con 2,
-Int \minus2,
-Per 0,
-Wil 3
-\end{spellfooter}
-\end{spellsubcontent}
-\end{monsection}
-\begin{monsection}{Orc Grunt}{4}[1]
+\begin{monsection}{Orc Savage}{4}[1]
 \vspace{-1em}\spelltwocol{}{Medium humanoid}\vspace{-1em}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
@@ -478,7 +557,7 @@ Its accuracy is 6.
 Str 7,
 Dex 5,
 Con 3,
-Int \minus2,
+Int \minus1,
 Per 0,
 Wil 0
 \end{spellfooter}

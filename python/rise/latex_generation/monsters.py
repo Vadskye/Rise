@@ -196,6 +196,62 @@ def humanoids():
         ],
     ))
 
+    goblin_shouter = Creature(
+        armor=Armor('hide'),
+        challenge_rating=2,
+        character_class=CharacterClass('slayer'),
+        level=2,
+        name='Goblin Shouter',
+        natural_armor=0,
+        race=Race('humanoid'),
+        size=Size('small'),
+        starting_attributes=[0, 2, -1, -2, 2, 1],
+        weapons=[Weapon('club'), Weapon('sling')],
+    )
+    monsters.append(get_latex_from_creature(
+        goblin_shouter,
+        active_abilities=[
+            active_ability(
+                'Shout of Running',
+                effect="""
+                    All other willing allies who can hear the shouter can use the sprint ability without spending action points.
+                    This effect lasts as long as the shouter sustains it as a standard action.
+                """,
+            ),
+            active_ability(
+                'Shout of Stabbing',
+                effect="""
+                    All other willing allies who can hear the shouter gain a +1d bonus to strike damage.
+                    This effect lasts as long as the shouter sustains it as a standard action.
+                """,
+            ),
+        ],
+    ))
+
+    goblin_stabber = Creature(
+        armor=Armor('hide'),
+        character_class=CharacterClass('slayer'),
+        level=1,
+        name='Goblin Stabber',
+        natural_armor=0,
+        race=Race('humanoid'),
+        size=Size('small'),
+        starting_attributes=[0, 3, -1, -2, 2, 0],
+        weapons=[Weapon('shortsword'), Weapon('sling')],
+    )
+    monsters.append(get_latex_from_creature(
+        goblin_stabber,
+        active_abilities=[
+            active_ability(
+                'Sneeky Stab',
+                effect=f"""
+                    The stabber makes a shortsword strike.
+                    If the target is defenseless, overwhelmed, or unaware, the damage becomes {goblin_stabber.weapon_damage(Weapon('shortsword')) + 2}.
+                """,
+            ),
+        ],
+    ))
+
     orc_chieftain = Creature(
         armor=Armor('breastplate'),
         challenge_rating=3,
@@ -205,7 +261,7 @@ def humanoids():
         natural_armor=2,
         race=Race('humanoid'),
         size=Size('medium'),
-        starting_attributes=[4, 0, 1, -1, 2, 2],
+        starting_attributes=[4, 0, 1, 0, 2, 2],
         weapons=[Weapon('greataxe')],
     )
     monsters.append(get_latex_from_creature(
@@ -214,7 +270,7 @@ def humanoids():
             active_ability(
                 'Hit Everyone Else',
                 effect="""
-                    All other willing allies who can see and hear the chieftain gain a +2 bonus to accuracy with strikes.
+                    All other willing allies who can hear the chieftain gain a +2 bonus to accuracy with strikes.
                     This effect lasts as long as the chieftain sustains it as a standard action.
                 """,
             ),
@@ -243,7 +299,7 @@ def humanoids():
         natural_armor=0,
         race=Race('humanoid'),
         size=Size('medium'),
-        starting_attributes=[3, 0, 1, -2, 0, 0],
+        starting_attributes=[3, 0, 1, -1, 0, 0],
         weapons=[Weapon('greataxe')],
     )
     monsters.append(get_latex_from_creature(
@@ -284,7 +340,7 @@ def humanoids():
             active_ability(
                 'Hit That One Over There',
                 effect="""
-                    All other willing allies who can see and hear the loudmouth gain a +2 bonus to accuracy with strikes against one creature within Long range.
+                    All other willing allies who can hear the loudmouth gain a +2 bonus to accuracy with strikes against one creature within Long range.
                     This effect lasts as long as the loudmouth sustains it as a standard action.
                 """,
             ),
@@ -300,7 +356,7 @@ def humanoids():
         natural_armor=0,
         race=Race('humanoid'),
         size=Size('medium'),
-        starting_attributes=[2, 0, 1, -2, 0, 2],
+        starting_attributes=[2, 0, 1, -1, 0, 2],
         weapons=[Weapon('greatstaff')],
     )
     monsters.append(get_latex_from_creature(
@@ -329,7 +385,7 @@ def humanoids():
         natural_armor=2,
         race=Race('humanoid'),
         size=Size('medium'),
-        starting_attributes=[4, 2, 1, -2, 0, 0],
+        starting_attributes=[4, 2, 1, -1, 0, 0],
         weapons=[Weapon('greataxe')],
     )
     monsters.append(get_latex_from_creature(

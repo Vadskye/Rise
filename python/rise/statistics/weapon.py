@@ -14,6 +14,8 @@ def properties_from_weapon_name(name):
         'longsword': [0, Weapon.MEDIUM, None],
         'mace': [0, Weapon.MEDIUM, None],
         'shortsword': [-1, Weapon.LIGHT, None],
+        # Is 'medium' the correct category for a sling?
+        'sling': [-1, Weapon.MEDIUM, None],
 
         # Natural weapons
         'bite': [0, Weapon.MEDIUM, None],
