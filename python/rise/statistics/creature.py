@@ -106,7 +106,7 @@ class Creature(object):
 
     @property
     def recovery_dice(self):
-        return DicePool(6) + self.level // 2
+        return DicePool(6) + self.level // 2 + self.challenge_rating
 
     @property
     def reflex_defense(self):
