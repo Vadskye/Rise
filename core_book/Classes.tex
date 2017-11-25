@@ -659,7 +659,8 @@ This choice determines a great deal about your character's abilities.
         \subsubsection{Fire}
             \parhead{Gift} All of your \glossterm{Fire} spells and abilities do not deal damage to your allies.
             \parhead{Aspect} Whenever you would take fire damage, you heal that many hit points instead.
-            This applies damage reduction, damage immunity, and similar effects.
+            % TODO: define those terms?
+            This applies before any damage reduction and damage immunity abilities you have.
             \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
             \begin{ability}
                 \begin{spelltargetinginfo}
@@ -749,20 +750,14 @@ This choice determines a great deal about your character's abilities.
             \parhead{Gift} You gain additional hit points equal to your \textit{divine power}.
             \parhead{Aspect} All of your \glossterm{magical} spells and abilities can heal \glossterm{vital damage} as easily as they heal hit points.
             \parhead{Essence} As a standard action, you can spend all of your remaining \glossterm{action points} (minimum 1) to use this ability.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellquicktargeting{One dead creature}{Adjacent}
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \spelleffect If the target was dead for no more than 5 minutes, it is restored to life, as the \ritual{resurrection} ritual.
-                \end{spelleffects}
-            \end{ability}
+            If you do, choose a dead creature adjacent to you.
+            If it was dead for no more than 5 minutes, it is restored to life, as the \ritual{resurrection} ritual.
             % Need special text to clarify that it is affected by the Aspect?
             \parhead{Mastery} At the end of each \glossterm{action phase}, you heal hit points equal to your \textit{divine power}.
 
         \subsubsection{Magic}
-            \parhead{Gift} You gain a \plus1 bonus to spellpower with divine spells.
-            \parhead{Aspect} The maximum spell level you can cast is increased by 1.
+            \parhead{Gift} You learn an additional divine spell.
+            \parhead{Aspect} You learn two additional subspells for divine spells you know.
             \parhead{Essence} You gain \glossterm{magic resistance} equal to 5 \add your \textit{divine power}.
             If you already have \glossterm{magic resistance}, you can instead increase it by 2.
             \parhead{Mastery} You gain a \plus2 bonus to your \glossterm{magic resistance}.
@@ -771,7 +766,7 @@ This choice determines a great deal about your character's abilities.
         \subsubsection{Strength}
             \parhead{Gift} You add Climb, Jump, and Swim to your cleric class skill list.
             In addition, you gain two skill points which must be spent on any combination of those skills.
-            \parhead{Aspect} You reduce the \glossterm{encumbrance penalty} of body armor you wear by 2.
+            \parhead{Aspect} You reduce the \glossterm{encumbrance penalty} of body armor you wear by 1.
             \parhead{Essence} You gain a \plus5 bonus to Strength for the purpose of checks and determining your carrying capacity.
             \parhead{Mastery} You gain a \plus1 bonus to your starting Strength.
 
@@ -780,12 +775,8 @@ This choice determines a great deal about your character's abilities.
             In addition, you gain two skill points which must be spent on any combination of those skills.
             \parhead{Aspect} You gain a \plus30 foot bonus to your speed in all movement modes, up to a maximum of double your normal speed.
             \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            \begin{ability}
-                \begin{spelleffects}
-                    \spelleffect You teleport yourself up to 1 mile in any direction.
-                    You do not need \glossterm{line of sight} or \glossterm{line of effect} to your destination, but you must be able to clearly visualize it.
-                \end{spelleffects}
-            \end{ability}
+            If you do, you teleport up to 1 mile in any direction.
+            You do not need \glossterm{line of sight} or \glossterm{line of effect} to your destination, but you must be able to clearly visualize it.
             \parhead{Mastery} Whenever you move, you can teleport the same distance instead.
             This does not change the total distance you can move, but you can teleport in any direction, including vertically.
 
