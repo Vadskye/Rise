@@ -16,14 +16,17 @@ def properties_from_weapon_name(name):
         'shortsword': [-1, Weapon.LIGHT, None],
         # Is 'medium' the correct category for a sling?
         'sling': [-1, Weapon.MEDIUM, None],
+        'spear': [0, Weapon.MEDIUM, None],
 
         # Natural weapons
         'bite': [0, Weapon.MEDIUM, None],
         'claw': [-1, Weapon.LIGHT, None],
         'hoof': [-1, Weapon.LIGHT, None],
         'snakes': [-1, Weapon.LIGHT, None],
+        'tail slam': [0, Weapon.HEAVY, None],
         'talon': [-1, Weapon.LIGHT, None],
         'tentacle': [0, Weapon.MEDIUM, None],
+        'slam': [0, Weapon.HEAVY, None],
 
         # Special "weapons"
         # TODO: is this the correct representation?
