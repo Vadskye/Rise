@@ -81,17 +81,15 @@ def generate_spells():
                 level=3,
                 name="Windblade",
                 targeting=Targeting(
-                    # TODO: unattended or wielded by a willing creature?
-                    target='One unattended melee weapon',
+                    target='One willing creature',
                     rng='close',
-                    time='standard action',
+                    time='minor action',
                 ),
                 effects=Effects(
                     effect="""
-                        The target weapon gains an additional ten feet of reach, extending the wielder's threatened area.
+                        Melee weapons wielded by the target gain an additional ten feet of reach, extending the wielder's threatened area.
                         This has no effect on ranged attacks with the weapon.
-
-                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>
+                        This effect lasts as long as you and the target \\glossterm<attune> to it.
                     """,
                     tags=['Air', 'Shaping'],
                 ),
@@ -352,7 +350,7 @@ def generate_spells():
                         defense='Fortitude',
                         success="""
                             \\glossterm<standard damage> -3d, and the target is poisoned as a \\glossterm<condition>.
-                            If the target is poisoned, repeat this attack at the end of each \\glossterm<action phase>.
+                            If the target is poisoned, repeat this attack at the end of each \\glossterm<action phase> after the first round.
                             On the second hit, the target also becomes \\glossterm<sickened>.
                             On the third hit, the target becomes \\glossterm<nauseated> instead of sickened.
                         """,
@@ -621,16 +619,15 @@ def generate_spells():
                 level=2,
                 name="Flame Blade",
                 targeting=Targeting(
-                    # TODO: unattended or wielded by a willing creature?
-                    target='One unattended melee weapon',
                     rng='close',
+                    target='One willing creature',
+                    time='minor action',
                 ),
                 effects=Effects(
                     effect="""
-                        The target weapon gains a +1d bonus to \\glossterm<strike damage>.
-                        In addition, all damage dealt with the weapon with strikes becomes fire damage in addition to its normal damage types.
-
-                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
+                        Melee weapons wielded by the target gain a +1d bonus to \\glossterm<strike damage>.
+                        In addition, all \\glossterm<strike damage> dealt with the its weapons becomes fire damage in addition to the attack's normal damage types.
+                        This effect lasts as long as you and the target \\glossterm<attune> to it.
                     """,
                     tags=['Fire'],
                 ),
@@ -690,7 +687,7 @@ def generate_spells():
             ),
             Subspell(
                 level=2,
-                name="Aqueuous Sphere",
+                name="Aqueous Sphere",
                 targeting=Targeting(
                     area='\\areasmall radius',
                     area_type='burst',
@@ -702,16 +699,15 @@ def generate_spells():
                 level=3,
                 name="Aqueous Blade",
                 targeting=Targeting(
-                    # TODO: unattended or wielded by a willing creature?
-                    target='One unattended melee weapon',
+                    target='One willing creature',
                     rng='close',
+                    time='minor action',
                 ),
                 effects=Effects(
                     effect="""
-                        \glossterm<Strikes> with the affected weapon are made against Reflex defense instead of Armor defense.
-                        However, attacks with the weapon take a -2d penalty to \\glossterm<strike damage>.
-
-                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
+                        When the target makes a \\glossterm<strike> with a melee weapon, the attack is made against Reflex defense instead of Armor defense.
+                        However, the target takes a -2d penalty to \\glossterm<strike damage>.
+                        This effect lasts as long as you and the target \\glossterm<attune> to it.
                     """,
                     tags=['Shaping', 'Water'],
                 ),
@@ -726,20 +722,18 @@ def generate_spells():
                 """,
             ),
             Subspell(
-                level=8,
-                name="Greater Aqueous Blade",
-                targeting=Targeting(
-                    # TODO: unattended or wielded by a willing creature?
-                    target='One unattended melee weapon',
-                    rng='close',
-                ),
-                effects=Effects(
-                    effect="""
-                        \\glossterm<Strikes> with the affected weapon are made against Reflex defense instead of Armor defense.
-                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
-                    """,
-                    tags=['Shaping', 'Water'],
-                ),
+                level=6,
+                name='Greater Aqueous Blade',
+                description="""
+                    This subspell functions like the \\spell<aqueous blade> subspell, except that the penalty to strike damage is reduced to \minus1d.
+                """,
+            ),
+            Subspell(
+                level=9,
+                name='Supreme Aqueous Blade',
+                description="""
+                    This subspell functions like the \\spell<aqueous blade> subspell, except that the penalty to strike damage is removed.
+                """,
             ),
         ],
         category='damage',
@@ -1039,17 +1033,18 @@ def generate_spells():
                 """,
             ),
             Subspell(
-                level=5,
+                level=3,
                 name="Blessed Blade",
                 targeting=Targeting(
-                    # TODO: unattended or wielded by a willing creature?
-                    target='One unattended melee weapon',
+                    target='One willing creature',
                     rng='close',
+                    time='minor',
                 ),
                 effects=Effects(
                     effect="""
-                        All \\glossterm<strikes> with the target weapon are made against Mental defense instead of Armor defense.
-                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
+                        \\glossterm<Strikes> made with melee weapons wielded by the target are made against Mental defense instead of Armor defense.
+                        However, the target takes a -2d penalty to \\glossterm<strike damage>.
+                        This effect lasts as long as you and the target \\glossterm<attune> to it.
                     """,
                     tags=['Fire'],
                 ),
@@ -1059,6 +1054,20 @@ def generate_spells():
                 name="Divine Shield",
                 description="""
                     The target gains \\glossterm<damage reduction> equal to your spellpower against all damage.
+                """,
+            ),
+            Subspell(
+                level=6,
+                name='Greater Blessed Blade',
+                description="""
+                    This subspell functions like the \\spell<blessed blade> subspell, except that the penalty to strike damage is reduced to \minus1d.
+                """,
+            ),
+            Subspell(
+                level=9,
+                name='Supreme Blessed Blade',
+                description="""
+                    This subspell functions like the \\spell<blessed blade> subspell, except that the penalty to strike damage is removed.
                 """,
             ),
         ],
@@ -1306,7 +1315,7 @@ def generate_spells():
             tags=['Life'],
         ),
         schools=['Vivimancy'],
-        lists=['Arcane', 'Divine', 'Nature'],
+        lists=['Divine', 'Nature'],
         cantrip="You cannot choose for the spell to heal the target, and the spell deals -2d damage.",
         subspells=[
             Subspell(
@@ -1811,6 +1820,13 @@ def generate_spells():
                         This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                     """,
                 ),
+            ),
+            Subspell(
+                level=6,
+                name="Accelerated Levitate",
+                description="""
+                    This subspell functions like the \\spell<levitate> subspell, except that you can move the target up to fifty feet instead of up to ten feet.
+                """,
             ),
             Subspell(
                 level=2,

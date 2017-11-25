@@ -64,14 +64,14 @@ Replace the spell's targets and effects with the following:
 Replace the spell's targets and effects with the following:
 \begin{spellcontent}
 \begin{augmenttargetinginfo}
-\spelltwocol{\spelltgt{One unattended melee weapon}}{\spellrng{\rngclose}}
-\spelltime{standard action}
+\spelltwocol{\spelltgt{One willing creature}}{\spellrng{\rngclose}}
+\spelltime{minor action}
 \end{augmenttargetinginfo}
 \begin{augmenteffects}
 \spelleffect
-The target weapon gains an additional ten feet of reach, extending the wielder's threatened area.
+Melee weapons wielded by the target gain an additional ten feet of reach, extending the wielder's threatened area.
 This has no effect on ranged attacks with the weapon.
-This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}
+This effect lasts as long as you and the target \glossterm{attune} to it.
 \spelltags{\glossterm{Air}, \glossterm{Shaping}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -262,7 +262,7 @@ The spell's area becomes a 5 ft.\ wide, \areamed line.
 \end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
-\augment{2}{Aqueuous Sphere}
+\augment{2}{Aqueous Sphere}
 Replace the spell's targets with the following:
 \begin{spellcontent}
 \begin{augmenttargetinginfo}
@@ -287,13 +287,14 @@ The water can be created at multiple locations within the ritual's range, allowi
 Replace the spell's targets and effects with the following:
 \begin{spellcontent}
 \begin{augmenttargetinginfo}
-\spelltwocol{\spelltgt{One unattended melee weapon}}{\spellrng{\rngclose}}
+\spelltwocol{\spelltgt{One willing creature}}{\spellrng{\rngclose}}
+\spelltime{minor action}
 \end{augmenttargetinginfo}
 \begin{augmenteffects}
 \spelleffect
-\glossterm{Strikes} with the affected weapon are made against Reflex defense instead of Armor defense.
-However, attacks with the weapon take a \minus2d penalty to \glossterm{strike damage}.
-This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
+When the target makes a \glossterm{strike} with a melee weapon, the attack is made against Reflex defense instead of Armor defense.
+However, the target takes a \minus2d penalty to \glossterm{strike damage}.
+This effect lasts as long as you and the target \glossterm{attune} to it.
 \spelltags{\glossterm{Shaping}, \glossterm{Water}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -301,21 +302,12 @@ This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor ac
 The area affected by this spell becomes completely filled with water.
 You can sustain the water as a \glossterm{minor action}.
 Creatures in this \glossterm{zone} suffer penalties appropriate for fighting underwater, and may be unable to breathe.
+\augment{6}{Greater Aqueous Blade}
+This subspell functions like the \spell{aqueous blade} subspell, except that the penalty to strike damage is reduced to \minus1d.
 \augment{6}{Innate}
 You can cast the spell without spending an action point.
-\augment{8}{Greater Aqueous Blade}
-Replace the spell's targets and effects with the following:
-\begin{spellcontent}
-\begin{augmenttargetinginfo}
-\spelltwocol{\spelltgt{One unattended melee weapon}}{\spellrng{\rngclose}}
-\end{augmenttargetinginfo}
-\begin{augmenteffects}
-\spelleffect
-\glossterm{Strikes} with the affected weapon are made against Reflex defense instead of Armor defense.
-This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
-\spelltags{\glossterm{Shaping}, \glossterm{Water}}
-\end{augmenteffects}
-\end{spellcontent}
+\augment{9}{Supreme Aqueous Blade}
+This subspell functions like the \spell{aqueous blade} subspell, except that the penalty to strike damage is removed.
 \begin{spellsection}{Astromancy}
 \begin{spellheader}
 \spelldesc{You disrupt a creature's body by partially thrusting it into another plane.}
@@ -477,25 +469,31 @@ The spell's casting time becomes a standard action, and its effect lasts as long
 \end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
-\augment{3}{Mystic Blessing}
-The damage bonus applies to all attacks that deal damage measured in dice.
-\augment{5}{Blessed Blade}
+\augment{3}{Blessed Blade}
 Replace the spell's targets and effects with the following:
 \begin{spellcontent}
 \begin{augmenttargetinginfo}
-\spelltwocol{\spelltgt{One unattended melee weapon}}{\spellrng{\rngclose}}
+\spelltwocol{\spelltgt{One willing creature}}{\spellrng{\rngclose}}
+\spelltime{minor}
 \end{augmenttargetinginfo}
 \begin{augmenteffects}
 \spelleffect
-All \glossterm{strikes} with the target weapon are made against Mental defense instead of Armor defense.
-This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
+\glossterm{Strikes} made with melee weapons wielded by the target are made against Mental defense instead of Armor defense.
+However, the target takes a \minus2d penalty to \glossterm{strike damage}.
+This effect lasts as long as you and the target \glossterm{attune} to it.
 \spelltags{\glossterm{Fire}}
 \end{augmenteffects}
 \end{spellcontent}
+\augment{3}{Mystic Blessing}
+The damage bonus applies to all attacks that deal damage measured in dice.
 \augment{6}{Divine Shield}
 The target gains \glossterm{damage reduction} equal to your spellpower against all damage.
+\augment{6}{Greater Blessed Blade}
+This subspell functions like the \spell{blessed blade} subspell, except that the penalty to strike damage is reduced to \minus1d.
 \augment{6}{Innate}
 You can cast the spell without spending an action point.
+\augment{9}{Supreme Blessed Blade}
+This subspell functions like the \spell{blessed blade} subspell, except that the penalty to strike damage is removed.
 \begin{spellsection}{Chronomancy}
 \begin{spellheader}
 \spelldesc{You slow a foe's passage through time, inhibiting its actions.}
@@ -1069,7 +1067,7 @@ Replace the spell's effects with the following:
 \begin{spellattack}{Spellpower vs. Fortitude}
 \spellsuccess
 \glossterm{standard damage} \minus3d, and the target is poisoned as a \glossterm{condition}.
-If the target is poisoned, repeat this attack at the end of each \glossterm{action phase}.
+If the target is poisoned, repeat this attack at the end of each \glossterm{action phase} after the first round.
 On the second hit, the target also becomes \glossterm{sickened}.
 On the third hit, the target becomes \glossterm{nauseated} instead of sickened.
 \end{spellattack}
@@ -1450,13 +1448,14 @@ Replace the spell's targets with the following:
 Replace the spell's targets and effects with the following:
 \begin{spellcontent}
 \begin{augmenttargetinginfo}
-\spelltwocol{\spelltgt{One unattended melee weapon}}{\spellrng{\rngclose}}
+\spelltwocol{\spelltgt{One willing creature}}{\spellrng{\rngclose}}
+\spelltime{minor action}
 \end{augmenttargetinginfo}
 \begin{augmenteffects}
 \spelleffect
-The target weapon gains a \plus1d bonus to \glossterm{strike damage}.
-In addition, all damage dealt with the weapon with strikes becomes fire damage in addition to its normal damage types.
-This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
+Melee weapons wielded by the target gain a \plus1d bonus to \glossterm{strike damage}.
+In addition, all \glossterm{strike damage} dealt with the its weapons becomes fire damage in addition to the attack's normal damage types.
+This effect lasts as long as you and the target \glossterm{attune} to it.
 \spelltags{\glossterm{Fire}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -1789,6 +1788,8 @@ During the movement phase, you can move the target up to ten feet in any directi
 This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
 \end{augmenteffects}
 \end{spellcontent}
+\augment{6}{Accelerated Levitate}
+This subspell functions like the \spell{levitate} subspell, except that you can move the target up to fifty feet instead of up to ten feet.
 \augment{6}{Innate}
 You can cast the spell without spending an action point.
 \begin{spellsection}{Vital Surge}
@@ -1807,7 +1808,7 @@ When you cast this spell, you choose whether the target is healed or takes damag
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
-\spellinfo{Vivimancy}{Arcane, Divine, Nature}
+\spellinfo{Vivimancy}{Divine, Nature}
 \end{spellfooter}
 \begin{spellsubcontent}
 \begin{spellcantrip}
