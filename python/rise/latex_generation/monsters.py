@@ -143,6 +143,20 @@ def animals():
         ],
     ))
 
+    ferret = Creature(
+        character_class=CharacterClass('slayer'),
+        level=1,
+        name='Ferret',
+        natural_armor=2,
+        race=Race('animal'),
+        size=Size('tiny'),
+        starting_attributes=[-6, 1, -4, -7, 1, -2],
+        weapons=[Weapon('bite')],
+    )
+    monsters.append(get_latex_from_creature(
+        ferret,
+    ))
+
     roc = Creature(
         challenge_rating=4,
         character_class=CharacterClass('behemoth'),
@@ -170,6 +184,37 @@ def animals():
 
     return '\n\n'.join(monsters)
 
+
+def animates():
+    monsters = []
+
+    ram_animus = Creature(
+        challenge_rating=4,
+        character_class=CharacterClass('behemoth'),
+        level=6,
+        name='Animus',
+        name_suffix='Ram',
+        natural_armor=6,
+        race=Race('animate'),
+        size=Size('huge'),
+        starting_attributes=[3, 0, 2, 0, 3, 0],
+        weapons=[Weapon('slam'), Weapon('hoof')],
+    )
+    monsters.append(get_latex_from_creature(
+        ram_animus,
+        active_abilities=[
+            active_ability(
+                'Forceful Smash',
+                effect=f"""
+                    The ram makes a slam strike.
+                    Treat the attack result as a shove attack against the target in addition to the strike.
+                    The ram does not have to move with the target to push it back.
+                """,
+            ),
+        ],
+    ))
+
+    return '\n\n'.join(monsters)
 
 def humanoids():
     monsters = []
@@ -504,6 +549,21 @@ def magical_beasts():
         centaur,
     ))
 
+    girallon = Creature(
+        challenge_rating=4,
+        character_class=CharacterClass('slayer'),
+        level=5,
+        name='Girallon',
+        natural_armor=6,
+        race=Race('magical beast'),
+        size=Size('large'),
+        starting_attributes=[3, 3, 0, -8, 2, -1],
+        weapons=[Weapon('claw')],
+    )
+    monsters.append(get_latex_from_creature(
+        girallon,
+    ))
+
     griffin = Creature(
         challenge_rating=2,
         character_class=CharacterClass('slayer'),
@@ -527,6 +587,20 @@ def magical_beasts():
             ),
         ],
         speed="80 ft. fly",
+    ))
+
+    thaumavore = Creature(
+        character_class=CharacterClass('slayer'),
+        level=3,
+        name='Thaumavore',
+        natural_armor=6,
+        race=Race('magical beast'),
+        size=Size('small'),
+        starting_attributes=[2, 3, 0, -7, 1, 0],
+        weapons=[Weapon('bite')],
+    )
+    monsters.append(get_latex_from_creature(
+        thaumavore,
     ))
 
     return '\n\n'.join(monsters)
@@ -693,6 +767,89 @@ def outsiders():
     )
     monsters.append(get_latex_from_creature(
         bebelith,
+        active_abilities=[
+            active_ability(
+                'Venomous Bite',
+                effect=f"""
+                    The bebelith makes a bite strike.
+                    If it hits, and the attack result beats the target's Fortitude defense, the target is also poisoned as a condition.
+                    If the target is poisoned, it takes {bebelith.standard_damage(bebelith.constitution) - 1} life damage at the end of each action phase after the first round.
+                """,
+            ),
+        ],
+    ))
+
+    salamander = Creature(
+        character_class=CharacterClass('slayer'),
+        level=3,
+        name='Salamander',
+        natural_armor=6,
+        race=Race('outsider'),
+        size=Size('medium'),
+        starting_attributes=[4, 2, 0, 1, 1, 0],
+        # TODO: weapons deal fire damage, and its strength is lower
+        weapons=[Weapon('spear'), Weapon('tail slam')],
+    )
+    monsters.append(get_latex_from_creature(
+        salamander,
+        active_abilities=[
+            active_ability(
+                'Tail Grab',
+                effect=f"""
+                    The salamander makes a tail slam strike.
+                    If the attack result beats the target's Fortitude defense, it is grappled.
+                """,
+            ),
+            active_ability(
+                'Flame Aura',
+                effect=f"""
+                    The salamander intensifies its natural body heat, creating a burning aura around it.
+                    At the end of each action phase, the salamander makes a {salamander.accuracy(salamander.constitution)} attack
+                        against everything within a Medium radius emanation of it.
+                    A hit deals {salamander.standard_damage(salamander.constitution) - 1} fire damage to each target.
+
+                    This ability costs an action point to use.
+                    It lasts as long as the salamander sustains it as a standard action.
+                """,
+            ),
+        ],
+    ))
+
+    salamander_battlemaster = Creature(
+        challenge_rating=3,
+        character_class=CharacterClass('slayer'),
+        level=4,
+        name='Salamander Battlemaster',
+        natural_armor=6,
+        race=Race('outsider'),
+        size=Size('medium'),
+        starting_attributes=[4, 2, 0, 1, 2, 1],
+        # TODO: weapons deal fire damage, and its strength is lower
+        weapons=[Weapon('spear'), Weapon('tail slam')],
+    )
+    monsters.append(get_latex_from_creature(
+        salamander_battlemaster,
+        active_abilities=[
+            active_ability(
+                'Tail Grab',
+                effect=f"""
+                    The salamander makes a tail slam strike.
+                    If the attack result beats the target's Fortitude defense, it is grappled.
+                """,
+            ),
+            active_ability(
+                'Flame Aura',
+                effect=f"""
+                    The salamander intensifies its natural body heat, creating a burning aura around it.
+                    At the end of each action phase, the salamander makes a {salamander_battlemaster.accuracy(salamander_battlemaster.constitution)} attack
+                        against everything within a Medium radius emanation of it.
+                    A hit deals {salamander_battlemaster.standard_damage(salamander_battlemaster.constitution) - 1} fire damage to each target.
+
+                    This ability costs an action point to use.
+                    It lasts as long as the salamander sustains it as a standard action.
+                """,
+            ),
+        ],
     ))
 
     return '\n\n'.join(monsters)
@@ -701,16 +858,79 @@ def outsiders():
 def undead():
     monsters = []
 
+    allip = Creature(
+        character_class=CharacterClass('adept'),
+        level=4,
+        name='Allip',
+        natural_armor=4,  # How does this interact with being incorporeal?
+        race=Race('undead'),
+        starting_attributes=[0, 3, 0, 0, 0, 3],
+        weapons=[Weapon('draining touch')],
+    )
     monsters.append(get_latex_from_creature(
-        Creature(
-            character_class=CharacterClass('adept'),
-            level=4,
-            name='Allip',
-            natural_armor=4,  # How does this interact with being incorporeal?
-            race=Race('undead'),
-            starting_attributes=[0, 3, 0, 0, 0, 3],
-            weapons=[Weapon('draining touch')],
-        ),
+        allip,
+    ))
+
+    dirgewalker = Creature(
+        challenge_rating=4,
+        character_class=CharacterClass('adept'),
+        level=4,
+        name='Dirgewalker',
+        natural_armor=6,
+        race=Race('undead'),
+        size=Size('medium'),
+        starting_attributes=[0, 3, 0, 1, 3, 2],
+        weapons=[Weapon('claw')],
+    )
+    monsters.append(get_latex_from_creature(
+        dirgewalker,
+        active_abilities=[
+            active_ability(
+                'Animating Caper',
+                effect="""
+                    One corpse within Close range is animated as a skeleton under the dirgewalker's control.
+                    This ability costs an action point to use.
+                    It lasts as long as the dirgewalker attunes to it.
+                """,
+            ),
+            active_ability(
+                'Mournful Dirge',
+                accuracy=dirgewalker.accuracy(),
+                defense='Mental',
+                hit="Each target is dazed as a condition.",
+                critical="Each target is stunned as a condition.",
+                targeting='All creatures in a Medium radius',
+            ),
+        ],
+    ))
+
+    skeleton = Creature(
+        character_class=CharacterClass('slayer'),
+        level=1,
+        name='Skeleton',
+        natural_armor=6,
+        race=Race('undead'),
+        size=Size('medium'),
+        starting_attributes=[2, 2, 0, 0, 0, 0],
+        weapons=[Weapon('claw')],
+    )
+    monsters.append(get_latex_from_creature(
+        skeleton,
+    ))
+
+    zombie = Creature(
+        character_class=CharacterClass('behemoth'),
+        level=1,
+        name='Zombie',
+        natural_armor=6,
+        race=Race('undead'),
+        size=Size('medium'),
+        starting_attributes=[2, 0, 3, 0, 0, 0],
+        weapons=[Weapon('slam')],
+    )
+    monsters.append(get_latex_from_creature(
+        zombie,
+        # TODO: this creature acts during the delayed action phase
     ))
 
     return '\n\n'.join(monsters)
@@ -721,6 +941,8 @@ def generate_monsters():
         \\section<Aberrations>
         {aberrations()}
 
+        \\section<Animates>
+        {animates()}
 
         \\section<Animals>
         {animals()}
@@ -755,6 +977,11 @@ def main(output, check):
     monster_text = generate_monsters()
     text = latexify(f"""
         \\chapter<Monsters>
+
+        Monsters are all of the various non-humanoid creatures that exist in the world of Rise.
+        Many of them are dangerous, and adventurers may need to fight them.
+        This chapter describes the rules for monsters, and the combat statistics for a variety of monsters.
+
         {monster_text}
     """)
     if output is None:
