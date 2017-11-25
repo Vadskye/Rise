@@ -2361,12 +2361,12 @@ This choice determines a great deal about your character's abilities.
             \par At 18th level, you gain a \plus1d bonus to damage with the strike.
         }
 
-        \cf{Rgr}[3]{Wilderness Lore} You gain two extra skill points which must be spent on the Creature Handling, Heal, Knowledge (geography), Knowledge (nature), Ride, or Survival skills.
+        \cf{Rgr}[3]{Wilderness Lore} You gain two extra skill points which must be spent on Strength or Intelligence-based ranger class skills.
 
         \cf*{Rgr}[6]{Wild Exertion}
         You learn an additional \textit{wild exertion}.
 
-        \cf*{Rgr}[9]{Wilderness Lore} You gain two extra skill points which must be spent on the Creature Handling, Heal, Knowledge (geography), Knowledge (nature), Ride, or Survival skills.
+        \cf*{Rgr}[9]{Wilderness Lore} You gain two extra skill points which must be spent on Strength or Intelligence-based ranger class skills.
 
         \cf*{Rgr}[12]{Wild Exertion} 
         You learn an additional \textit{wild exertion}.
@@ -2381,8 +2381,6 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rgr}{Quarry}\label{Quarry}
         As a \glossterm{minor action}, you can spend an \glossterm{action point} to use this ability.
-        % TODO: wording
-        It resolves immediately, before other actions in the phase.
         \begin{ability}
             \begin{spelltargetinginfo}
                 \spellquicktargeting{One creature}{\rnglong}
@@ -2393,14 +2391,13 @@ This choice determines a great deal about your character's abilities.
                 You and your allies affected by this ability are called your \glossterm{hunting party}.
                 In addition, you gain a \plus5 bonus to checks made to follow the target's tracks.
 
-                This ability lasts until the target is \glossterm{defeated}, or until you use this ability again.
-                If the target is \glossterm{defeated}, you regain the action point spent to use this ability.
+                This ability lasts as long as you \glossterm{attune} to it.
             \end{spelleffects}
         \end{ability}
 
         \cf{Rgr}[2]{Tracker}
         You gain a \plus2 bonus to checks made to follow tracks.
-        In addition, you may use your level in place of the Survival skill to follow tracks (see \pcref{Survival}).
+        In addition, you may use your \textit{quarry} ability on any creature whose tracks you are following, regardless of the creature's current location.
 
         \cf{Rgr}[4]{Hunting Style}
         You learn specific hunting styles to defeat particular quarries.
@@ -2411,81 +2408,83 @@ This choice determines a great deal about your character's abilities.
             As long as your quarry is threatened by at least two members of your \glossterm{hunting party}, it cannot travel extradimensionally.
             This prevents all \glossterm{Manifestation}, \glossterm{Planar}, and \glossterm{Teleportation} effects.
             \par At 10th level, this effect instead applies if your quarry is within \rngmed range of at two members of your hunting party.
-            \par At 16th level, this effect instead applies at all times.
+            \par At 16th level, this effect instead applies if your quarry is within \rnglong range of any member of your hunting party.
 
             \subcf{Brutal Assault}
-            The accuracy bonus from your \textit{quarry} ability is replaced with a \minus1 penalty to accuracy against the quarry.
-            In exchange, your hunting party gains a \plus1d bonus to \glossterm{strike damage} against the quarry.
+            The accuracy bonus from your \textit{quarry} ability is replaced with a \minus1 penalty to accuracy with \glossterm{strikes} against your quarry.
+            In exchange, your hunting party gains a \plus1d bonus to \glossterm{strike damage} against your quarry.
             \par At 10th level, the accuracy penalty is removed.
             \par At 16th level, the damage bonus is increased to \plus2d.
 
             \subcf{Coordinated Stealth}
-            The quarry takes a \minus5 penalty to Awareness checks to notice members of your \glossterm{hunting party}.
-            \par At 10th level, your \glossterm{hunting party} gains a \plus2d bonus to damage against the quarry if it is \unaware of every member of the hunting party.
-            \par At 16th level, the penalty to Awareness checks increases to \minus10.
+            Your quarry takes a \minus5 penalty to Awareness checks to notice members of your \glossterm{hunting party}.
+            \par At 10th level, your hunting party gains a \plus1d bonus to damage against your quarry if it is \unaware of every member of the hunting party.
+            \par At 16th level, the damage bonus increases to \plus2d.
 
             \subcf{Cover Weaknesses}
-            The accuracy bonus from your \textit{quarry} ability is replaced with a \plus1 bonus to defenses against the quarry's attacks.
-            \par At 10th level, your hunting party gains \glossterm{damage reduction} equal to half your level against the quarry's attacks.
+            The accuracy bonus against your quarry is replaced with a \plus1 bonus to defenses against your quarry's attacks.
+            \par At 10th level, your hunting party gains \glossterm{damage reduction} equal to half your level against your quarry's attacks.
             \par At 16th level, the damage reduction increases to be equal to your level.
 
             \subcf{Decoy}
-            Your \textit{quarry} ability does not grant a bonus to accuracy.
-            Instead, if you \glossterm{threaten} the quarry, it takes a \minus2 penalty to accuracy on attacks against members of your \glossterm{hunting party} other than you.
+            If you \glossterm{threaten} your quarry, it takes a \minus2 penalty to accuracy on attacks against members of your \glossterm{hunting party} other than you.
             \par At 10th level, this penalty increases to \minus3.
             \par At 16th level, this penalty increases to \minus4.
 
             \subcf{Inevitable}[Magical]
-            At the end of each \glossterm{action phase}, if your quarry is \glossterm{threatened} by at least two members of your \glossterm{hunting party}, it takes life \glossterm{standard damage} \minus3d.
-            \par At 10th level, this damage is instead dealt if at least two members of your \glossterm{hunting party} are within \rngmed range of the quarry.
-            \par At 16th level, the damage increases by \plus1d.
+            At the end of each \glossterm{action phase}, if your quarry is \glossterm{threatened} by at least two members of your \glossterm{hunting party}, you make a Perception vs. Mental attack against it.
+            A hit deals life \glossterm{standard damage} \minus2d.
+            \par At 10th level, this damage is instead dealt if at least two members of your \glossterm{hunting party} are within \rngmed range of your quarry.
+            \par At 16th level, this effect instead applies if your quarry is within \rnglong range of any member of your hunting party.
 
             \subcf{Lifeseal}[Magical]
             As long as your quarry is threatened by at least two members of your \glossterm{hunting party}, it cannot regain hit points.
             \par At 10th level, this effect instead applies if the target is within \rngmed range of at two members of your hunting party.
-            \par At 16th level, this effect instead applies at all times.
+            \par At 16th level, this effect instead applies if your quarry is within \rnglong range of any member of your hunting party.
 
             \subcf{Martial Suppression}
-            Your \textit{quarry} ability does not grant a bonus to accuracy.
-            Instead, the quarry takes a \minus1 penalty to accuracy with \glossterm{physical attacks} if it is threatened by at least one member of your \glossterm{hunting party}.
-            \par At 10th level, the penalty increases to \minus2 if the quarry is threatened by at least two members of your hunting party.
-            \par At 16th level, the penalty increases to \minus3 if the quarry is threatened by at least three members of your hunting party.
+            As long as your quarry is threatened by at least two members of your \glossterm{hunting party}, it takes a \minus1 penalty to accuracy with \glossterm{physical attacks}.
+            \par At 10th level, the penalty increases to \minus2 if your quarry is threatened by at least two members of your hunting party.
+            \par At 16th level, the penalty increases to \minus3 if your quarry is threatened by at least three members of your hunting party.
 
             \subcf{Merciless}
-            Whenever your \glossterm{hunting party} deals damage to the quarry, any damage in excess of its remaining hit points is dealt as \glossterm{vital damage}.
-            \par At 10th level, you can target two different creatures with your \textit{quarry} ability when you use this hunting style.
-            You regain the action point spent to use the \textit{quarry} ability whenever any quarry is defeated. 
-            \par At 16th level, you can target up to five creatures instead.
+            Whenever your \glossterm{hunting party} deals damage to your quarry, any damage in excess of its remaining hit points is dealt as \glossterm{vital damage}.
+            \par At 10th level, any vital damage dealt in this way is doubled.
+            \par At 16th level, the accuracy bonus against your quarry is increased to \plus2 if it is \glossterm{bloodied}.
 
             \subcf{Mystic Guidance}
-            The accuracy bonus from your \textit{quarry} ability applies to all attacks your \glossterm{hunting party} makes against the quarry, instead of only to \glossterm{physical attacks}.
-            \par At 10th level, whenever your hunting party uses both a \glossterm{strike} and a non-strike attack on the target in the same phase, the accuracy bonus is increased to \plus2 until the end of the round, including on the triggering attacks.
-            \par At 16th level, the accuracy bonus is increased to \plus2 at all times.
+            The accuracy bonus from your \textit{quarry} ability applies to all attacks your \glossterm{hunting party} makes against your quarry, instead of only to \glossterm{physical attacks}.
+            \par At 10th level, your hunting party gains a \plus1 bonus to Fortitude, Reflex, and Mental defenses against attacks from your quarry.
+            \par At 16th level, the accuracy bonus against your quarry is increased to \plus2.
 
             \subcf{Mystic Suppression}
-            Your \textit{quarry} ability does not grant a bonus to accuracy.
-            Instead, the quarry takes a \minus1 penalty to accuracy with \glossterm{magical attacks} if it is threatened by at least one member of your \glossterm{hunting party}.
-            \par At 10th level, the penalty increases to \minus2 if the quarry is threatened by at least two members of your hunting party.
-            \par At 16th level, the penalty increases to \minus3 if the quarry is threatened by at least three members of your hunting party.
+            As long as your quarry is threatened by at least two members of your \glossterm{hunting party}, it takes a \minus1 penalty to accuracy with \glossterm{magical attacks}.
+            \par At 10th level, the penalty increases to \minus2 if your quarry is threatened by at least two members of your hunting party.
+            \par At 16th level, the penalty increases to \minus3 if your quarry is threatened by at least three members of your hunting party.
 
-            \subcf{Pack Leader}
+            \subcf{Solo Hunter}
             Your hunting party other than you gains no benefit from your \textit{quarry} ability.
-            In exchange, you gain a \plus1d bonus to \glossterm{strike damage} against your quarry.
-            \par At 10th level, the accuracy bonus from your \textit{quarry} ability increases to \plus2.
-            \par At 16th level, the damage bonus increases to \plus2d.
+            In exchange, you gain a \plus1 bonus to defenses against your quarry.
+            \par At 10th level, the accuracy bonus against your quarry increases to \plus2.
+            \par At 16th level, the defense bonus increases to \plus2.
+
+            \subcf{Swarm Hunter}
+            When you use your \textit{quarry} ability, you can target any number of creatures.
+            \par At 10th level, you gain a \plus1 bonus to \glossterm{overwhelm resistance}.
+            \par At 16th level, the bonus to overwhelm resistance applies to all members of your \glossterm{hunting party}.
 
             \subcf{Unerring}
             Your \glossterm{hunting party} ignores any effects that would impose a 20\% miss chance on attacks against the target, such as \glossterm{active cover}.
-            \par At 10th level, the accuracy bonus from your \textit{quarry} ability increases to \plus2.
-            \par At 16th level, your hunting party ignores any effects that would any miss chance on attacks against the target.
+            \par At 10th level, the accuracy bonus against your quarry increases to \plus2.
+            \par At 16th level, your hunting party ignores any effects that would any miss chance on attacks against your quarry.
 
             \subcf{Wolfpack}
-            The quarry moves at half speed if it is threatened by at least two members of your \glossterm{hunting party}.
-            \par At 10th level, the accuracy bonus from your \textit{quarry} ability is increased to \plus2 if the quarry is threatened by at least two members of your \glossterm{hunting party}.
-            \par At 16th level, the quarry is \immobilized instead of moving at half speed.
+            As long as your quarry is threatened by at least two members of your \glossterm{hunting party}, it moves at half speed.
+            \par At 10th level, the quarry is \immobilized instead of moving at half speed.
+            \par At 16th level, the accuracy bonus against your quarry increases to \plus2 if it is threatened by at least two members of your hunting party.
         }
 
-        \cf{Rgr}[7]{Hunting Lore} You gain two extra skill points which must be spent on Strength or Dexterity-based ranger class skills.
+        \cf{Rgr}[7]{Hunting Lore} You gain two extra skill points which must be spent on Dexterity or Perception-based ranger class skills.
 
         \cf*{Rgr}[10]{Hunting Style}
         You learn an additional \textit{hunting style}.
