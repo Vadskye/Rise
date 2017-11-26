@@ -525,7 +525,7 @@ def magical_beasts():
                 defense='Fortitude',
                 hit="The target is nauseated as a condition.",
                 critical=f"""
-                    As above, and as an additional condition, the target takes {basilisk.standard_damage(basilisk.constitution) - 2} life damage at the end of each action phase.
+                    As above, and as an additional condition, the target takes {basilisk.standard_damage(basilisk.constitution) - 2} physical damage at the end of each action phase.
                     If it takes vital damage in this way, it is petrified permanently.
                 """,
                 targeting="One creature in Medium range",
@@ -775,7 +775,7 @@ def monstrous_humanoids():
                 defense='Fortitude',
                 hit="The target is nauseated as a condition.",
                 critical=f"""
-                    As above, and as an additional condition, the target takes {medusa.standard_damage(medusa.constitution) - 2} life damage at the end of each action phase.
+                    As above, and as an additional condition, the target takes {medusa.standard_damage(medusa.constitution) - 2} physical damage at the end of each action phase.
                     If it takes vital damage in this way, it is petrified permanently.
                 """,
                 targeting="One creature in Medium range",
@@ -861,7 +861,7 @@ def outsiders():
                 effect=f"""
                     The bebelith makes a bite strike.
                     If it hits, and the attack result beats the target's Fortitude defense, the target is also poisoned as a condition.
-                    If the target is poisoned, it takes {bebelith.standard_damage(bebelith.constitution) - 1} life damage at the end of each action phase after the first round.
+                    If the target is poisoned, it takes {bebelith.standard_damage(bebelith.constitution) - 1} poison damage at the end of each action phase after the first round.
                 """,
             ),
         ],
