@@ -8,6 +8,7 @@ def properties_from_weapon_name(name):
         'club': [-1, Weapon.MEDIUM, None],
         'draining touch': [-1, Weapon.LIGHT, None],
         'greataxe': [1, Weapon.HEAVY, None],
+        'greatclub': [1, Weapon.HEAVY, None],
         'greatstaff': [0, Weapon.HEAVY, None],
         'greatsword': [1, Weapon.HEAVY, None],
         'longbow': [0, Weapon.MEDIUM, None],
@@ -29,8 +30,7 @@ def properties_from_weapon_name(name):
         'slam': [0, Weapon.HEAVY, None],
 
         # Special "weapons"
-        # TODO: is this the correct representation?
-        'fire breath': [-2, None, 'constitution'],
+        'boulder': [0, Weapon.HEAVY, None],
     }[name]
 
 class Weapon(object):
