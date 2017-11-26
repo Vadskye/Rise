@@ -91,7 +91,6 @@ This prevents all \glossterm{Manifestation}, \glossterm{Planar}, and \glossterm{
 \spelleffect
 The target becomes holy water.
 Holy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck undead creature or an evil outsider.
-\spelltags{\glossterm{Good}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -240,6 +239,9 @@ If you use this ability multiple times, you can attune to it each time.
 \spelltime{One hour}
 \end{spelltargetinginfo}
 \begin{spelleffects}
+\spellspecial
+When you perform this ritual, choose a type of \glossterm{energy damage} (cold, electricity, fire, or sonic).
+It gains the tag appropriate to the chosen energy type.
 \spelleffect
 If a creature reads the target object, it explodes.
 You make an attack against everything within an \areamed radius burst centered on the target.
@@ -248,8 +250,7 @@ If the target object is destroyed or rendered illegible, the spell ends without 
 This effect lasts as long as you \glossterm{attune} to it.
 If you use this ability multiple times, you can attune to it each time.
 \begin{spellattack}{Spellpower vs. Reflex}
-\spellsuccess Arcane \glossterm{standard damage} \minus1d.
-\spellcritical As above, but double damage.
+\spellsuccess \glossterm{Standard damage} \minus1d of the damage type chosen
 \end{spellattack}
 \spelltags{\glossterm{Trap}}
 \end{spelleffects}

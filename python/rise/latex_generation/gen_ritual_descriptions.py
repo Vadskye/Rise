@@ -300,6 +300,10 @@ def generate_rituals():
             time='One hour',
         ),
         effects=Effects(
+            special="""
+                When you perform this ritual, choose a type of \\glossterm<energy damage> (cold, electricity, fire, or sonic).
+                It gains the tag appropriate to the chosen energy type.
+            """,
             effect="""
                 If a creature reads the target object, it explodes.
                 You make an attack against everything within an \\areamed radius burst centered on the target.
@@ -309,7 +313,10 @@ def generate_rituals():
                 This effect lasts as long as you \\glossterm<attune> to it.
                 If you use this ability multiple times, you can attune to it each time.
             """,
-            attack=Attack.multi_damage('Reflex', 'arcane'),
+            attack=Attack(
+                defense='Reflex',
+                success='\\glossterm<Standard damage> -1d of the damage type chosen',
+            ),
             tags=['Trap'],
         ),
         schools=['Evocation'],
