@@ -8,7 +8,6 @@ class Attack(object):
         return cls(
             defense=defense,
             success=f"{damage_type.capitalize()} \\glossterm<standard damage> +1d.",
-            critical='As above, but double damage.',
         )
 
     @classmethod
@@ -16,7 +15,6 @@ class Attack(object):
         return cls(
             defense=defense,
             success=f"{damage_type.capitalize()} \\glossterm<standard damage> -1d.",
-            critical='As above, but double damage.',
         )
 
     def __init__(
