@@ -1228,10 +1228,12 @@ def generate_spells():
                 success="""
                     The target is \\glossterm<sickened> as a \\glossterm<condition>.
                     In addition, it takes life \\glossterm<standard damage> -3d whenever it takes a \\glossterm<standard action>.
+                    It can only take damage in this way once per round.
                 """,
                 critical="""
                     The target is \\glossterm<nauseated> as a \\glossterm<condition>.
                     In addition, it takes life \\glossterm<standard damage> whenever it takes a \\glossterm<standard action>.
+                    It can only take damage in this way once per round.
                 """,
             ),
             tags=['Life'],
