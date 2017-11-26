@@ -53,8 +53,7 @@ def aberrations():
                 'Mind Crush',
                 accuracy=aboleth.accuracy(aboleth.willpower),
                 defense='Mental',
-                # TODO: better damage type?
-                hit=f"{aboleth.standard_damage(aboleth.willpower) + 2} life damage",
+                hit=f"{aboleth.standard_damage(aboleth.willpower) + 2} psionic damage",
                 targeting='One creature in Long range',
             ),
             active_ability(
@@ -62,7 +61,7 @@ def aberrations():
                 accuracy=aboleth.accuracy(aboleth.willpower),
                 defense='Mental',
                 # TODO: better damage type?
-                hit=f"{aboleth.standard_damage(aboleth.willpower)} life damage",
+                hit=f"{aboleth.standard_damage(aboleth.willpower)} psionic damage",
                 targeting='Enemies in Large cone',
             ),
         ],
@@ -234,7 +233,7 @@ def humanoids():
             active_ability(
                 'Hex',
                 accuracy=cultist.accuracy(cultist.willpower),
-                defense='Mental',
+                defense='Fortitude',
                 hit=f"{cultist.standard_damage(cultist.willpower)} life damage, and the target is sickened as a condition.",
                 targeting='One target in Medium range',
             ),
@@ -526,10 +525,10 @@ def magical_beasts():
                 defense='Fortitude',
                 hit="The target is nauseated as a condition.",
                 critical=f"""
-                    As above, and the target takes {basilisk.standard_damage(basilisk.constitution) - 2} life damage at the end of each action phase.
+                    As above, and as an additional condition, the target takes {basilisk.standard_damage(basilisk.constitution) - 2} life damage at the end of each action phase.
                     If it takes vital damage in this way, it is petrified permanently.
                 """,
-                targeting="One creature in Close range",
+                targeting="One creature in Medium range",
             ),
         ],
     ))
