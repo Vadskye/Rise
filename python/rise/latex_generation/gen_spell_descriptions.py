@@ -164,7 +164,7 @@ def generate_spells():
         effects=Effects(
             effect="""
                 The target gains \\glossterm<damage reduction> equal to your spellpower.
-                In addition, it is \\glossterm<vulnerable> to arcane damage.
+                In addition, it is \\glossterm<vulnerable> to \\glossterm<energy damage>.
 
                 This effect lasts as long as you \\glossterm<attune> to it.
             """,
@@ -174,6 +174,13 @@ def generate_spells():
         lists=['Arcane'],
         cantrip="The spell's casting time becomes a standard action, and its effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor> action.",
         subspells=[
+            Subspell(
+                level=2,
+                name="Complete",
+                description="""
+                    The spell no longer makes the target vulnerable to energy damage.
+                """,
+            ),
             Subspell(
                 level=2,
                 name="Repulsion",
