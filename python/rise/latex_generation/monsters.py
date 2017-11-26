@@ -632,6 +632,54 @@ def monstrous_humanoids():
         ],
     ))
 
+    hill_giant = Creature(
+        armor=Armor('breastplate'),
+        character_class=CharacterClass('behemoth'),
+        level=5,
+        name='Giant',
+        name_suffix='Hill',
+        natural_armor=4,
+        race=Race('monstrous humanoid'),
+        size=Size('large'),
+        starting_attributes=[3, -2, 1, -2, 0, 0],
+        weapons=[Weapon('greatclub'), Weapon('boulder')],
+    )
+    monsters.append(get_latex_from_creature(
+        hill_giant,
+        active_abilities=[
+            active_ability(
+                'Boulder Toss',
+                effect="""
+                    The giant makes a ranged boulder strike, treating it as a thrown weapon with a 100 ft.\\ range increment.
+                """,
+            ),
+        ],
+    ))
+
+    stone_giant = Creature(
+        armor=Armor('breastplate'),
+        character_class=CharacterClass('behemoth'),
+        level=9,
+        name='Giant',
+        name_suffix='Stone',
+        natural_armor=6,
+        race=Race('monstrous humanoid'),
+        size=Size('huge'),
+        starting_attributes=[3, -2, 3, -1, 2, 0],
+        weapons=[Weapon('greatclub'), Weapon('boulder')],
+    )
+    monsters.append(get_latex_from_creature(
+        stone_giant,
+        active_abilities=[
+            active_ability(
+                'Boulder Toss',
+                effect="""
+                    The giant makes a ranged boulder strike, treating it as a thrown weapon with a 100 ft.\\ range increment.
+                """,
+            ),
+        ],
+    ))
+
     storm_giant = Creature(
         armor=Armor('breastplate'),
         character_class=CharacterClass('slayer'),
@@ -641,7 +689,7 @@ def monstrous_humanoids():
         natural_armor=4,
         race=Race('monstrous humanoid'),
         size=Size('gargantuan'),
-        starting_attributes=[3, 0, 2, 1, 2, 2],
+        starting_attributes=[3, -1, 1, 1, 2, 2],
         weapons=[Weapon('greatsword')],
     )
     monsters.append(get_latex_from_creature(
@@ -667,6 +715,47 @@ def monstrous_humanoids():
         immunities=['deafened'],
     ))
 
+    green_hag = Creature(
+        challenge_rating=2,
+        character_class=CharacterClass('adept'),
+        level=5,
+        name='Hag',
+        name_suffix='Green',
+        natural_armor=6,
+        race=Race('monstrous humanoid'),
+        size=Size('medium'),
+        starting_attributes=[0, 2, 0, 2, 3, 2],
+        weapons=[Weapon('claw')],
+    )
+    monsters.append(get_latex_from_creature(
+        green_hag,
+        active_abilities=[
+            active_ability(
+                'Vital Surge',
+                accuracy=green_hag.accuracy(green_hag.perception),
+                defense='Fortitude',
+                hit=f"{green_hag.standard_damage(green_hag.perception) + 1} life damage.",
+            ),
+            active_ability(
+                "Green Hag's Curse",
+                accuracy=green_hag.accuracy(green_hag.perception),
+                defense='Mental',
+                hit="""
+                    As a condition, the target is either dazed, fatigued, or sickened, as the hag chooses.
+                """,
+                critical="As three separate conditions, the target is dazed, fatigued, and sickened.",
+            ),
+            active_ability(
+                'Coven Rituals',
+                effect="""
+                    Whenever three or more hags work together, they form a coven.
+                    All members of the coven gain the ability to perform nature rituals as long as they work together.
+                    Hags of any type can form a coven together.
+                """,
+            ),
+        ],
+    ))
+
     medusa = Creature(
         challenge_rating=2,
         character_class=CharacterClass('adept'),
@@ -675,7 +764,7 @@ def monstrous_humanoids():
         natural_armor=4,
         race=Race('monstrous humanoid'),
         size=Size('medium'),
-        starting_attributes=[0, 2, 0, 1, 1, 2],
+        starting_attributes=[0, 1, 0, 1, 2, 2],
         weapons=[Weapon('longbow'), Weapon('snakes')],
     )
     monsters.append(get_latex_from_creature(
@@ -687,10 +776,10 @@ def monstrous_humanoids():
                 defense='Fortitude',
                 hit="The target is nauseated as a condition.",
                 critical=f"""
-                    As above, and the target takes {medusa.standard_damage(medusa.constitution) - 2} life damage at the end of each action phase.
+                    As above, and as an additional condition, the target takes {medusa.standard_damage(medusa.constitution) - 2} life damage at the end of each action phase.
                     If it takes vital damage in this way, it is petrified permanently.
                 """,
-                targeting="One creature in Close range",
+                targeting="One creature in Medium range",
             ),
         ],
     ))
@@ -779,6 +868,29 @@ def outsiders():
         ],
     ))
 
+    hell_hound = Creature(
+        character_class=CharacterClass('slayer'),
+        level=4,
+        name='Hell Hound',
+        natural_armor=4,
+        race=Race('outsider'),
+        size=Size('medium'),
+        starting_attributes=[1, 3, 0, -3, 2, 0],
+        weapons=[Weapon('bite')],
+    )
+    monsters.append(get_latex_from_creature(
+        hell_hound,
+        active_abilities=[
+            active_ability(
+                'Fire Breath',
+                accuracy=hell_hound.accuracy(),
+                defense='Reflex',
+                hit=f"${hell_hound.standard_damage(hell_hound.constitution)} fire damage",
+            ),
+        ],
+        immunities=['fire damage'],
+    ))
+
     salamander = Creature(
         character_class=CharacterClass('slayer'),
         level=3,
@@ -813,6 +925,7 @@ def outsiders():
                 """,
             ),
         ],
+        immunities=['fire damage'],
     ))
 
     salamander_battlemaster = Creature(
