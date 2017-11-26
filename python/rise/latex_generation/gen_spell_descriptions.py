@@ -1682,7 +1682,7 @@ def generate_spells():
 
                         This effect lasts as long as you \\glossterm<attune> to it.
                     """,
-                    tags='Detection',
+                    tags=['Detection'],
                 ),
             ),
             Subspell(
