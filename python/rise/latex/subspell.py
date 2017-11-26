@@ -1,4 +1,7 @@
+from logging import getLogger, WARNING
+from rise.latex.tags import is_valid_tag
 from rise.latex.util import join
+logger = getLogger(__name__)
 
 class Subspell(object):
 
@@ -21,6 +24,11 @@ class Subspell(object):
         self.school = school
         self.tags = tags
         self.targeting = targeting
+
+        if (self.tags):
+            for tag in self.tags:
+                if not is_valid_tag(tag):
+                    logger.log(WARNING, f"Subspell {self.name} has invalid tag {tag}")
 
     def augmentify(self, text):
         """Replace \\spelleffects and \\spelltargetinginfo

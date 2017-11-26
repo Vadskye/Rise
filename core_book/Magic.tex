@@ -388,18 +388,8 @@ Each of the nine schools represents a different type of mastery over the world, 
             They can be used to heal or inflict wounds, resurrect the dead, create undead monsters, and cripple the bodies of creatures.
 
     \subsection{[Tags]}
-        Appearing on the same line as the school, when applicable, are tags which further categorizes the spell in some way.
-        Some spells have more than one tag.
+        Appearing on the same line as the school, when applicable, are tags which further categorize the spell in some way.
         Ability tags are described at \pcref{Ability Tags}.
-
-    \subsection{Level}
-        The next line of a spell description gives the spell's level, a number between 1 and 9 that defines the spell's relative power.
-        This number is preceded by an abbreviation for the class whose members can cast the spell.
-        The Level entry also indicates whether a spell is a domain spell and, if so, what its domain and its level as a domain spell are.
-
-        Names of spellcasting classes are abbreviated as follows: cleric Clr; druid Drd; mage Mge.
-
-        The domains a spell can be associated with include Air, Chaos, Death, Destruction, Earth, Evil, Fire, Good, Knowledge, Law, Leadership, Magic, Nature, Protection, Strength, Travel, Trickery, Vitality, War, and Water.
 
     \subsection{Components}\label{Components}
         A spell's components are what you must do or possess to cast it.
@@ -445,7 +435,7 @@ Each of the nine schools represents a different type of mastery over the world, 
         \parhead{Medium} The spell reaches as far as 100 feet.
         \parhead{Far} The spell reaches as far as 300 feet.
         \parhead{Unlimited} The spell reaches anywhere on the same plane of existence.
-        \parhead{Range Expressed in Feet} Some spells have no standard range category, just a range expressed in feet.
+        \parhead{Arbitrary} Some spells have no standard range category, just a range expressed in feet.
 
         \subsubsection{Unrestricted Ranges}
 
@@ -614,7 +604,7 @@ Each of the nine schools represents a different type of mastery over the world, 
             A spell without this entry is not, even if it could be used to deal damage.
 
             Spells can inflict many kinds of damage.
-            Common damage types include acid, arcane, bludgeoning, cold, divine, electricity, fire, life, physical, piercing, slashing, solar, and sonic.
+            Damage types are described in \tref{Damage Types}.
 
             \parhead{Damaging Items} Unless the descriptive text for the spell specifies otherwise, all items carried or worn by a creature are assumed to survive a magical attack.
             If an item is not carried or worn and is not magical, it does not get any defenses.
@@ -637,12 +627,8 @@ Each of the nine schools represents a different type of mastery over the world, 
     \parhead{Air} Air abilities control the surrounding air.
     They do not function in environments without air.
 
-    \parhead{Animation} Animation abilities grant a semblance of life to objects.
-
     \parhead{Auditory} Auditory abilities use sound to cause their effects.
     Creatures and objects that cannot hear the effect are immune to it.
-
-    \parhead{Chaotic} Chaotic abilities channel the essence of chaos.
 
     \parhead{Cold} Cold abilities use cold \glossterm{energy}. It is possible to freeze liquids and perform similar feats with cold abilities.
 
@@ -651,7 +637,7 @@ Each of the nine schools represents a different type of mastery over the world, 
 
     \parhead{Creation} Creation abilities create permanent physical objects.
     Objects created with Creation abilities are identical to objects created through more mundane means.
-    Unless otherwise specified, magical Creation abilities do not allow \glossterm{magic resistance}. 
+    Unless otherwise specified, magical Creation abilities do not allow \glossterm{magic resistance}.
 
     \parhead{Curse} Curse abilities lay supernatural curses on their targets.
     They cannot be \glossterm{dismissed}, but can be removed with the \spell{break enchantment} or \spell{remove curse} spells.
@@ -673,8 +659,6 @@ Each of the nine schools represents a different type of mastery over the world, 
 
     \parhead{Enhancement} Enhancement abilities enhance the existing abilities of their targets.
 
-    \parhead{Evil} Evil abilities channel the essence of evil.
-
     \parhead{Figment} Figment abilities create light, sound, or other sensations.
     Figments cannot remove real sensations present in their area, but they can add additional sensations.
     You can only create figments of sensations you understand; for example, you cannot create a figment which speaks in a language you do not understand.
@@ -690,11 +674,7 @@ Each of the nine schools represents a different type of mastery over the world, 
     \parhead{Glamer} Glamer abilities alter sensations present in an area or on a target.
     They can be used to change how something real appears, or to remove it from perception entirely.
 
-    \parhead{Good} Good abilities channel the essence of good.
-
     \parhead{Imbuement} Imbuement abilities imbue their targets with magic, granting them new abilities.
-
-    \parhead{Lawful} Good abilities channel the essence of law.
 
     \parhead{Life} Life abilities attack, restore, or manipulate the life force of creatures.
     They have no effect on objects and creatures that are not alive.
@@ -738,8 +718,6 @@ Each of the nine schools represents a different type of mastery over the world, 
     Unless otherwise stated, multiple effects which increase or decrease size do not stack.
     Opposing size modifications cancel each other out on a one for one basis, and any remaining effects occur normally.
 
-    \parhead{Sonic} Sonic abilities use sonic \glossterm{energy}.
-
     \parhead{Speech} Speech abilities use words to achieve their ends.
     You must specify a language when using a Speech effect, and the language must be one you know (or have memorized the correct words to say). They have no effect on objects or creatures that do not understand the chosen language.
 
@@ -770,6 +748,32 @@ Each of the nine schools represents a different type of mastery over the world, 
     Creatures and objects that cannot see the effect are immune to it.
 
     \parhead{Water} Water abilities use water to cause their effects.
+
+    % TODO: different section?
+    \subsection{Damage Types}\label{Damage Types}
+        Abilities can deal many kinds of damage.
+        The damage types are listed below, along with any special properties that type of damage has.
+
+        \begin{dtable}
+            \lcaption{Damage Types}
+            \begin{dtabularx}{\columnwidth}{l X}
+                \tb{Name} & \tb{Special Effects} \\
+                \bottomrule
+                Acid & Effective against many objects \\
+                Arcane & \\
+                Bludgeoning & A type of physical damage \\
+                Cold & \\
+                Divine & \\
+                Electricity & \\
+                Fire & \\
+                Life & Heals undead creatures instead of damaging them \\
+                Physical & \\
+                Piercing & A type of physical damage \\
+                Slashing & A type of physical damage \\
+                Solar & \\  % Does this need to exist?
+                Sonic & Effective against many objects \\
+            \end{dtabularx}
+        \end{dtable}
 
 \section{Cantrips}\label{Cantrips}
     Cantrips are special spells that arcane casters can use at will.

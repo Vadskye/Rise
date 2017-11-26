@@ -156,7 +156,6 @@ def generate_rituals():
                 The target becomes holy water.
                 Holy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck undead creature or an evil outsider.
             """,
-            tags=['Good'],
         ),
         schools=['Channeling'],
         lists=['Divine'],

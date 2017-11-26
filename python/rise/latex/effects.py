@@ -1,4 +1,7 @@
+from logging import getLogger, WARNING
+from rise.latex.tags import is_valid_tag
 from rise.latex.util import join
+logger = getLogger(__name__)
 
 class Effects(object):
     def __init__(
@@ -12,6 +15,11 @@ class Effects(object):
         self.effect = effect
         self.special = special
         self.tags = tags
+
+        if (self.tags):
+            for tag in self.tags:
+                if not is_valid_tag(tag):
+                    logger.log(WARNING, f"Effect has invalid tag {tag}")
 
     def __str__(self):
         tag_text = ', '.join([
