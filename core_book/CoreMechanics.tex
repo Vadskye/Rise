@@ -1292,9 +1292,8 @@ It defines how attributes work and explains how to make physical attacks in comb
 
     \subsection{Action Points}\label{Action Points}
         You can perform a wide variety of special actions by spending \glossterm{action points}.
-        You have four action points at 1st level.
-        At 5th level, and every 4 levels thereafter, you gain an additional action point.
-        You can gain additional action points from your class, from your Willpower, and from some special abilities.
+        You normally have five action points.
+        You gain a bonus or penalty to the number of action points you have equal to your starting Willpower, and some abilities can grant you additional action points.
 
         After a \glossterm{short rest}, you regain all action points you spent since your last rest, up to a maximum equal to half of your maximum action points.
         After a \glossterm{long rest}, you recover all spent action points.
@@ -1371,37 +1370,36 @@ It defines how attributes work and explains how to make physical attacks in comb
     A character that increases in level gains additional benefits.
     \begin{itemize}
         \item At 1st, 3rd, 6th, and 10th level, you gain a feat (see \pcref{Feats}).
-        \item At 2nd level, and every 4 levels thereafter, you gain an additional \glossterm{item slot}.
-        \item At 3rd level, and every 4 levels thereafter, you gain a \glossterm{legend point} (see \pcref{Legend Points}).
+        \item At 1st, 3rd, 5th, 7th, and 9th level, you gain an \glossterm{item slot}.
+        \item At 2nd level, and every 4 levels thereafter, you gain a \glossterm{legend point} (see \pcref{Legend Points}).
         \item At 4th level, and every 4 levels thereafter, you gain a \glossterm{legacy item} upgrade (see \pcref{Legacy Items}).
-        \item At 5th level, and every 4 levels thereafter, you gain an \glossterm{action point} (see \pcref{Action Points}).
     \end{itemize}
 
     \begin{dtable}
         \lcaption{Character Advancement}
         \begin{dtabularx}{\columnwidth}{*{3}{>{\lcol}l} *{4}{>{\lcol}X}}
-            \tb{Level} & \tb{XP} & \tb{Feats} & \tb{Action Points} & \tb{Legend Points} & \tb{Legacy Item}\fn{1} & \tb{Item Slots}
+            \tb{Level} & \tb{XP} & \tb{Feats} & \tb{Item Slots} & \tb{Legend Points} & \tb{Legacy Item}\fn{1}
             \\\bottomrule
-            1st     & 0      & 1\fn{2}& 4      & \tdash & \tdash & 1
-            \\ 2nd  & 20     & \tdash & \tdash & \tdash & \tdash & 2
-            \\ 3rd  & 50     & 2      & \tdash & 1      & \tdash & \tdash
-            \\ 4th  & 90     & \tdash & \tdash & \tdash & 1      & \tdash
-            \\ 5th  & 150    & \tdash & 5      & \tdash & \tdash & \tdash
-            \\ 6th  & 230    & 3      & \tdash & \tdash & \tdash & 3
-            \\ 7th  & 350    & \tdash & \tdash & 2      & \tdash & \tdash
-            \\ 8th  & 510    & \tdash & \tdash & \tdash & 2      & \tdash
-            \\ 9th  & 750    & \tdash & 6      & \tdash & \tdash & \tdash
-            \\ 10th & 1,050  & 4      & \tdash & \tdash & \tdash & 4
-            \\ 11th & 1,550  & \tdash & \tdash & 3      & \tdash & \tdash
-            \\ 12th & 2,200  & \tdash & \tdash & \tdash & 3      & \tdash
-            \\ 13th & 3,150  & \tdash & 7      & \tdash & \tdash & \tdash
-            \\ 14th & 4,450  & \tdash & \tdash & \tdash & \tdash & 5
-            \\ 15th & 6,350  & \tdash & \tdash & 4      & \tdash & \tdash
-            \\ 16th & 8,900  & \tdash & \tdash & \tdash & 4      & \tdash
-            \\ 17th & 13,000 & \tdash & 8      & \tdash & \tdash & \tdash
-            \\ 18th & 18,000 & \tdash & \tdash & \tdash & \tdash & 6
-            \\ 19th & 25,500 & \tdash & \tdash & 5      & \tdash & \tdash
-            \\ 20th & 36,000 & \tdash & \tdash & \tdash & 5      & \tdash
+            1st     & 0      & 1\fn{2}& 1      & \tdash & \tdash
+            \\ 2nd  & 20     & \tdash & \tdash & 1      & \tdash
+            \\ 3rd  & 50     & 2      & 2      & \tdash & \tdash
+            \\ 4th  & 90     & \tdash & \tdash & \tdash & 1
+            \\ 5th  & 150    & \tdash & 3      & \tdash & \tdash
+            \\ 6th  & 230    & 3      & \tdash & 2      & \tdash
+            \\ 7th  & 350    & \tdash & 4      & \tdash & \tdash
+            \\ 8th  & 510    & \tdash & \tdash & \tdash & 2
+            \\ 9th  & 750    & \tdash & 5      & \tdash & \tdash
+            \\ 10th & 1,050  & 4      & \tdash & 3      & \tdash
+            \\ 11th & 1,550  & \tdash & \tdash & \tdash & \tdash
+            \\ 12th & 2,200  & \tdash & \tdash & \tdash & 3
+            \\ 13th & 3,150  & \tdash & \tdash & \tdash & \tdash
+            \\ 14th & 4,450  & \tdash & \tdash & 4      & \tdash
+            \\ 15th & 6,350  & \tdash & \tdash & \tdash & \tdash
+            \\ 16th & 8,900  & \tdash & \tdash & \tdash & 4
+            \\ 17th & 13,000 & \tdash & \tdash & \tdash & \tdash
+            \\ 18th & 18,000 & \tdash & \tdash & 5      & \tdash
+            \\ 19th & 25,500 & \tdash & \tdash & \tdash & \tdash
+            \\ 20th & 36,000 & \tdash & \tdash & \tdash & 5
         \end{dtabularx}
         1. This is the number of abilities you gain with your \glossterm{legacy item} (see \pcref{Legacy Items}). \\
         2. All races also grant a bonus feat at 1st level. The feat must be chosen from a specific list of racial bonus feats (see \pcref{Races}). \\
