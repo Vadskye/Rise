@@ -347,7 +347,7 @@ def humanoids():
         weapons=[Weapon('greataxe')],
     )
     monsters.append(get_latex_from_creature(
-        orc_chieftain,
+        orc_grunt,
         active_abilities=[
             active_ability(
                 'Hit Harder',
@@ -884,7 +884,7 @@ def outsiders():
                 'Fire Breath',
                 accuracy=hell_hound.accuracy(),
                 defense='Reflex',
-                hit=f"${hell_hound.standard_damage(hell_hound.constitution)} fire damage",
+                hit=f"{hell_hound.standard_damage(hell_hound.constitution)} fire damage",
             ),
         ],
         immunities=['fire damage'],
