@@ -635,21 +635,14 @@ A character's skills describe the myriad of talents that people have.
     \subsection{Handling Creatures}
         You can use Creature Handling to control a creature's actions. Critical failure with these checks may make the target hostile, depending on the circumstances.
         \parhead{Pacify}\label{Pacify} As a standard action, you can use this ability.
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spellquicktargeting{One creature}{\rngmed}
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \begin{spellattack}{Creature Handling vs. Mental}
-                    \spellspecial The target's defense is increased as normal for Creature Handling attacks and checks if it is not an animal.
-                    You take a \minus10 penalty to accuracy against an actively hostile target.
-                    \spellsuccess The target takes no actions.
-                    If it is threatened or damaged, this effect is automatically broken.
-                    \spelldur Sustain (standard)
-                    \spelltags{Compulsion, Mind}
-                \end{spellattack}
-            \end{spelleffects}
-        \end{ability}
+        If you do, make a Creature Handling vs. Mental attack against a creature within \rngmed range.
+        On a hit, the target is unable to take any actions except the \textit{recover} and \textit{desperate recovery} actions.
+        If it is threatened or damaged, this effect is automatically broken.
+        This ability lasts as long as you \glossterm{sustain} it as a \glossterm{standard action}.
+
+        The target's defense is increased if it is not an animal, as normal for Creature Handling attacks and checks.
+        You take a \minus10 penalty to accuracy against an actively hostile target.
+        This is a \glossterm{Compulsion}, \glossterm{Mind} ability.
         \parhead{Perform Trained Action} As a free action, you can make a DR 5 check to convince a creature to perform an action it is trained to perform. Generally, wild animals are not trained in any actions, so this is not effective on them.
         \parhead{Push} As a standard action, you can make a DR 15 check to convince a willing creature to perform an action it is not trained to perform, but which it is physically capable of performing. This also covers making a creature perform a forced march and similar activities.
 
@@ -857,18 +850,8 @@ A character's skills describe the myriad of talents that people have.
 
     \subsection{Demoralize}\label{Demoralize}
         As a standard action, you can use this ability.
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spellquicktargeting{One creature}{\rngmed}
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \begin{spellattack}{Intimidate vs. Mental}
-                    \spellsuccess The target is \shaken by you.
-                \end{spellattack}
-                \spelldur Condition
-                \spelltags{\glossterm{Delusion}, \glossterm{Mind}}
-            \end{spelleffects}
-        \end{ability}
+        If you do, make an Intimidate vs. Mental attack against a creature within \rngmed range.
+        On a hit, the target is \shaken by you as a \glossterm{condition}.
 
 \newpage
 \skill{Jump}{Str}
