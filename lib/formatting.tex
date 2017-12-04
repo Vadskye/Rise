@@ -7,21 +7,33 @@
 %\titleformat{\subsubsection}{\bfseries\raggedright}{}{0.5em}{\lsssec}
 
 %make bigger section headers
-\titleformat*{\section}{\LARGE\bfseries}
-% \titleformat{\subsection}
-%   {\Large}   % The style of the section title
-%   {}                             % a label prefix
-%   {0pt}                          % How much space exists between the prefix and the title
-%   {}    % A code representing the section
-% \titleformat*{\subsubsection}{}
+% \titleformat*{\section}{\hspace*{-0.5em}\LARGE\bfseries}
+\titleformat{\section}
+    {\LARGE\bfseries}   % The style of the section title
+    {}                             % a label prefix
+    {0pt}                          % How much space exists between the prefix and the title
+    {\hspace{-0.5em}}    % A code representing the section
+\titleformat{\subsection}
+    {\large\bfseries}   % The style of the section title
+    {}                             % a label prefix
+    {0pt}                          % How much space exists between the prefix and the title
+    {\hspace{-0.5em}}    % A code representing the section
+\titleformat{\subsubsection}
+    {\bfseries}
+    {}
+    {0pt}
+    {\hspace{-0.5em}}
 
 %Format the page margins
-\addtolength{\voffset}{-1in}
-\addtolength{\textheight}{2in}
-\addtolength{\hoffset}{-0.75in}
-\addtolength{\textwidth}{1in}
+\addtolength{\voffset}{-0.8in}
+\addtolength{\textheight}{1.5in}
+\addtolength{\hoffset}{-0.6in}
+\addtolength{\textwidth}{0.8in}
 \setlength{\oddsidemargin}{15.5pt}
 \setlength{\evensidemargin}{15.5pt}
+% widen middle gap width
+\setlength{\columnsep}{2em}
+
 %Leave little extra space between tables and the surrounding text
 \setlength{\intextsep}{1em}
 %Or between paragraphs
