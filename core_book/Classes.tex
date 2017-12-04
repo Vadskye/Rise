@@ -516,19 +516,13 @@ This choice determines a great deal about your character's abilities.
             \parhead{Gift} You add the Jump skill to your class skill list and gain a \plus5 bonus to Jump checks (see \pcref{Jump}).
             \parhead{Aspect} You gain a \glossterm{glide speed} equal to your land speed (see \pcref{Gliding}).
             \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellrng{\rnglong}
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \spelleffect You can speak with and command air within range.
-                    You can ask the air simple questions and understand its responses.
-                    If you command the air to perform a task, it will do so do the best of its ability until this effect ends.
-                    You cannot compel the air to move faster than 50 mph.
-                    \spelldur Sustain (minor)
-                    \spellspecial After you use this ability on a particular area of air, you cannot use it again on that same area for 24 hours.
-                \end{spelleffects}
-            \end{ability}
+            If you do, you can speak with and command air within \rnglong range.
+            You can ask the air simple questions and understand its responses.
+            If you command the air to perform a task, it will do so do the best of its ability until this effect ends.
+            You cannot compel the air to move faster than 50 mph.
+
+            This ability lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
+            After you use this ability on a particular area of air, you cannot use it again on that same area for 24 hours.
             \parhead{Mastery} You gain a \glossterm{fly speed} with good \glossterm{maneuverability} equal to your land speed (see \pcref{Flying}).
 
         \subsubsection{Chaos}
@@ -536,17 +530,10 @@ This choice determines a great deal about your character's abilities.
             \parhead{Aspect} If you roll a 1 on an attack roll, it explodes (see \pcref{Exploding Attacks}).
             This does not affect additional dice rolled if the attack roll explodes.
             \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellrng{\rnglong}
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \spelleffect An improbable event occurs.
-                    You can specify in general terms what you want to happen, such as ``Make the bartender leave the bar''.
-                    You cannot control the exact nature of the event, though it always beneficial for you in some way.
-                    \spellspecial After using this ability, you cannot use it again for an hour.
-                \end{spelleffects}
-            \end{ability}
+            If you do, an improbable event occurs within \rnglong range.
+            You can specify in general terms what you want to happen, such as ``Make the bartender leave the bar''.
+            You cannot control the exact nature of the event, though it always beneficial for you in some way.
+            After using this ability, you cannot use it again for an hour.
             \parhead{Mastery} Whenever you make an attack roll, if it misses, you can reroll.
             You must accept the second result.
 
@@ -557,49 +544,19 @@ This choice determines a great deal about your character's abilities.
             \parhead{Aspect} Whenever you deal damage to a creature, any of your damage in excess of that creature's hit points is dealt as \glossterm{vital damage}.
             In addition, you are immune to \glossterm{Death} effects.
             \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellquicktargeting{One living creature}{\rngmed}
-                    \spellspecial When you use this ability, you choose whether to summon the essence of Death or banish it.
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \spelleffect If you summoned the essence of Death, the target draws closer to the brink.
-                    If it takes \glossterm{vital damage}, it immediately dies.
-
-                    If you banished the essence of Death, the target draws closer to life.
-                    It is immune to \glossterm{Death} effects and gains a bonus to \glossterm{stabilization rolls} equal to your \textit{divine power}.
-                    \spelldur Sustain (minor)
-                    \spelltags{\glossterm{Death}}
-                \end{spelleffects}
-            \end{ability}
-            \parhead{Mastery} You constantly radiate an emanation of death, described below.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellarea{\areahuge radius emanation from you}
-                    \spelltgts{All living enemies in the area}
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \spelleffect If each target takes \glossterm{vital damage}, it immediately dies.
-                \end{spelleffects}
-            \end{ability}
+            If you do, you make a \textit{divine power} vs. Fortitude attack against a creature within \rngmed range.
+            On a hit, the target takes life \glossterm{standard damage} \plus2d.
+            You gain a \plus2d bonus to damage with this ability if the target is \glossterm{bloodied}.
+            \parhead{Mastery} You constantly radiate an aura of death in a \areahuge radius emanation from you.
+            If a living enemy in the area takes \glossterm{vital damage}, it immediately dies.
 
         \subsubsection{Destruction}
             \parhead{Gift} Your attacks ignore an amount of \glossterm{hardness} and \glossterm{damage reduction} equal to your \textit{divine power}.
             \parhead{Aspect} You gain a \plus1d bonus to \glossterm{strike damage}.
             \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellarea{\arealarge radius burst}
-                    \spelltgts{All unattended objects in the area}
-                    \spellspecial You may freely exclude any number of 5-ft\. cubes from the area, as long as the resulting area is still contiguous.
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \begin{spellattack}{Divine power vs. Fortitude}
-                        \spellspecial Nonmagical objects do not have a Fortitude defense, so this attack automatically succeeds against such objects.
-                        \spellsuccess Each target crumbles into a fine powder and is irreparably \glossterm{broken}.
-                    \end{spellattack}
-                \end{spelleffects}
-            \end{ability}
+            If you do, you make a \textit{divine power} vs. Fortitude attack against all unattended objects in a \arealarge radius.
+            You may freely exclude any number of 5-ft\. cubes from the area, as long as the resulting area is still contiguous.
+            On a hit, if a target's \glossterm{hardness} is lower than your divine power, it crumbles into a fine power and is irreperably \glossterm{broken}.
             \parhead{Mastery} Whenever you deal damage to a creature or object, its damage reduction and hardness (if any) are reduced by an amount equal to your \textit{divine power}.
             In addition, Fortitude defense is reduced by 2.
             This is a \glossterm{condition}, and lasts until it is removed.
@@ -610,19 +567,13 @@ This choice determines a great deal about your character's abilities.
             \parhead{Gift} You gain a \plus2 bonus to Fortitude defense.
             \parhead{Aspect} You gain \glossterm{damage reduction} equal to your \textit{divine power} against damage from \glossterm{physical attacks}.
             \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellrng{\rnglong}
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \spelleffect You can speak with and command earth within range.
-                    You can ask the earth simple questions and understand its responses.
-                    If you command the earth to perform a task, it will do so do the best of its ability until this effect ends.
-                    You cannot compel the earth to move faster than 10 feet per round.
-                    \spelldur Sustain (minor)
-                    \spellspecial After you use this ability on a particular area of earth, you cannot use it again on that same area for 24 hours.
-                \end{spelleffects}
-            \end{ability}
+            If you do, you can speak with and command earth within \rnglong range.
+            You can ask the earth simple questions and understand its responses.
+            If you command the earth to perform a task, it will do so do the best of its ability until this effect ends.
+            You cannot compel the earth to move faster than 10 feet per round.
+
+            This ability lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
+            After you use this ability on a particular area of earth, you cannot use it again on that same area for 24 hours.
             \parhead{Mastery} As long as you are on solid ground, you gain a \plus1 bonus to all defenses.
             In addition, your damage reduction from this domain's aspect protects you against all damage, rather than only against damage from physical attacks.
 
@@ -634,19 +585,12 @@ This choice determines a great deal about your character's abilities.
             \par You may learn which attacks hit you in the current phase before deciding which attacks to redirect damage from, but not how much damage they would do (or any other effects they might have).
             \parhead{Aspect} You can use this domain's domain gift to redirect damage to any willing creature within \rngclose range.
             \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellquicktargeting{One creature}{\rngmed}
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \begin{spellattack}{Divine power vs. Mental}
-                        \spellspecial Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this attack.
-                        \spellsuccess The target takes an evil action as soon as it can.
-                        You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
-                    \end{spellattack}
-                    \spelltags{\glossterm{Compulsion}, \glossterm{Mind}}
-                \end{spelleffects}
-            \end{ability}
+            If you do, make a \textit{divine power} vs. Mental attack against a creature within \rngmed range.
+            On a hit, the target takes an evil action as soon as it can.
+            You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
+
+            Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
+            This is a \glossterm{Compulsion}, \glossterm{Mind} ability.
             \parhead{Mastery} You can use your domain gift to redirect damage to unwilling creatures.
             You cannot use this ability to redirect damage to the same unwilling creature more than once between \glossterm{short rests}.
 
@@ -656,23 +600,16 @@ This choice determines a great deal about your character's abilities.
             % TODO: define those terms?
             This applies before any damage reduction and damage immunity abilities you have.
             \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellrng{\rnglong}
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \spelleffect You can speak with and command fire within range.
-                    You can ask the fire simple questions and understand its responses.
-                    If you command the fire to perform a task, it will do so do the best of its ability until this effect ends.
-                    You cannot compel the fire to move farther than 30 feet in a single round.
-                    Fire that ends the round on non-combustable materials usually goes out, depending on the circumstances.
-                    \spelldur Sustain (minor)
-                    \spellspecial After you use this ability on a particular area of fire, you cannot use it again on that same area for 24 hours.
-                    % TODO: What does an ``area of fire'' mean?
-                \end{spelleffects}
-            \end{ability}
-            \parhead{Mastery} Whenever you deal fire damage to a creature, that creature becomes \ignited.
-            This is a \glossterm{condition}, and lasts until removed.
+            If you do, you can speak with and command fire within \rnglong range.
+            You can ask the fire simple questions and understand its responses.
+            If you command the fire to perform a task, it will do so do the best of its ability until this effect ends.
+            You cannot compel the fire to move farther than 30 feet in a single round.
+            Fire that ends the round on non-combustable materials usually goes out, depending on the circumstances.
+
+            This ability lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
+            After you use this ability on a particular area of fire, you cannot use it again on that same area for 24 hours.
+            % TODO: What does an ``area of fire'' mean?
+            \parhead{Mastery} Whenever you deal fire damage to a creature, that creature becomes \ignited as a \glossterm{condition}.
 
         \subsubsection{Good}
             \parhead{Gift} Whenever an adjacent creature takes damage, you may use this ability.
@@ -682,19 +619,12 @@ This choice determines a great deal about your character's abilities.
             \par You may learn which attacks hit you and your allies in the current phase before deciding which attacks to redirect damage from, but not how much damage they would do (or any other effects they might have).
             \parhead{Aspect} You can use this domain's domain gift to redirect damage from any creature within \rngclose range.
             \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellquicktargeting{One creature}{\rngmed}
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \begin{spellattack}{Divine power vs. Mental}
-                        \spellspecial Creatures who have strict codes prohibiting them from taking good actions, such as paladins devoted to Evil, are immune to this attack.
-                        \spellsuccess The target takes an good action as soon as it can.
-                        You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
-                    \end{spellattack}
-                    \spelltags{\glossterm{Compulsion}, \glossterm{Mind}}
-                \end{spelleffects}
-            \end{ability}
+            If you do, make a \textit{divine power} vs. Mental attack against a creature within \rngmed range.
+            On a hit, the target takes an good action as soon as it can.
+            You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
+
+            Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
+            This is a \glossterm{Compulsion}, \glossterm{Mind} ability.
             \parhead{Mastery} Whenever you redirect damage with this domain's domain gift, you can redirect all effects of the attack to you instead of only half the damage.
 
         \subsubsection{Knowledge}
@@ -702,19 +632,11 @@ This choice determines a great deal about your character's abilities.
             In addition, you gain two skill points which must be spent on Knowledge skills.
             \parhead{Aspect} Your extensive knowledge of all methods of attack and defense grants you a \plus1 bonus to all defenses.
             \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellarea{\arealarge radius burst}
-                    \spelltgts{All willing creatures in the area}
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \spelleffect You make a Knowledge check of any kind.
-                    You gain a bonus to the Knowledge check equal to your \textit{divine power}.
-                    Each target also learns the results of your check.
-                    It believes the information gained in this way to be true as if it had seen it with its own eyes.
-                    \par You cannot alter the knowledge you gain with this check in any way, such as by adding or withholding information.
-                \end{spelleffects}
-            \end{ability}
+            If you do, you make a Knowledge check of any kind with a bonus equal to your \textit{divine power}.
+            You and all willing creatures within a \arealarge radius learn the results of your check.
+            Creatures believe the information gained in this way to be true as if they it had seen it with their own eyes.
+
+            You cannot alter the knowledge you gain with this check in any way, such as by adding or withholding information.
             \parhead{Mastery} You gain a \plus1 bonus to accuracy with all attacks.
 
         \subsubsection{Law}
@@ -722,22 +644,15 @@ This choice determines a great deal about your character's abilities.
             % Clarify - does this apply to exploding dice?
             \parhead{Aspect} Whenever you roll a 1 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
             \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellarea{\arealarge radius burst}
-                    \spelltgts{All creatures in the area}
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \begin{spellattack}{Divine power vs. Mental}
-                        \spellspecial This attack automatically succeeds against you.
-                        \spellsuccess Each target is unable to break the laws that apply in the area, and any attempt to do so simply fails.
-                        The laws which are applied are those which are most appropriate for the area, regardless of whether the cleric or any other creature know those laws.
-                        In areas under ambiguous or nonexistent government, this ability may have unexpected effects, or it may have no effect at all.
-                    \end{spellattack}
-                    \spelldur Condition
-                    \spelltags{\glossterm{Compulsion}, \glossterm{Mind}}
-                \end{spelleffects}
-            \end{ability}
+            If you do, make a \textit{divine power} vs. Mental attack against all creatures within a \arealarge radius.
+            On a hit, as a \glossterm{condition}, each target is unable to break the laws that apply in the area, and any attempt to do so simply fails.
+            The laws which are applied are those which are most appropriate for the area, regardless of whether you or any other creature know those laws.
+            In areas under ambiguous or nonexistent government, this ability may have unexpected effects, or it may have no effect at all.
+
+            When you use this ability, you also gain the condition.
+            If this condition is removed from you, it is also removed from all other affected creatures.
+            This is a \glossterm{Compulsion}, \glossterm{Mind} ability.
+
             \parhead{Mastery} Whenever you roll less than a 5 on an \glossterm{attack roll}, it is treated as if you had rolled a 5.
 
         \subsubsection{Life}
@@ -782,23 +697,16 @@ This choice determines a great deal about your character's abilities.
             In addition, you gain two skill points which must be spent on any combination of those skills.
             \parhead{Aspect} You gain a \plus2 bonus to Bluff, Disguise, and Stealth.
             \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellquicktargeting{One creature}{\rngmed}
-                    \spellspecial Choose a belief the target has.
-                    The belief may be a lie that you told it, or even a simple misunderstanding (such as believing a hidden creature is not present in a room).
-                    If the creature does not already hold the chosen belief, this ability automatically fails.
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \begin{spellattack}{Divine power vs. Mental}
-                        \spellsuccess The target continues to maintain the chosen belief, regardless of any evidence to the contrary.
-                        It will interpret any evidence that the falsehood is incorrect to be somehow wrong -- an illusion, a conspiracy to decieve it, or any other reason it can think of to continue believing the falsehood.
-                        At the end of the effect, the creature can decide whether it believes the falsehood or not, as normal.
-                    \end{spellattack}
-                    \spelldur Sustain (minor)
-                    \spelltags{\glossterm{Delusion}, \glossterm{Mind}}
-                \end{spelleffects}
-            \end{ability}
+            If you do, make a \textit{divine power} vs. Mental attack against a creature within \rngmed range.
+            You must also choose a belief that the target has.
+            The belief may be a lie that you told it, or even a simple misunderstanding (such as believing a hidden creature is not present in a room).
+            If the creature does not already hold the chosen belief, this ability automatically fails.
+
+            On a hit, the target continues to maintain the chosen belief, regardless of any evidence to the contrary.
+            It will interpret any evidence that the falsehood is incorrect to be somehow wrong -- an illusion, a conspiracy to decieve it, or any other reason it can think of to continue believing the falsehood.
+            At the end of the effect, the creature can decide whether it believes the falsehood or not, as normal.
+            This ability lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
+            It is a \glossterm{Delusion}, \glossterm{Mind} ability.
             \parhead{Mastery} You are undetectable by Divination spells and effects.
             They cannot detect your presence, sounds you make, or any actions you take.
 
@@ -820,21 +728,15 @@ This choice determines a great deal about your character's abilities.
             \parhead{Aspect} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
             You also gain a \glossterm{swim speed} equal to your land speed.
             \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellrng{\rnglong}
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \spelleffect You can speak with and command water within range.
-                    You can ask the water simple questions and understand its responses.
-                    If you command the water to perform a task, it will do so do the best of its ability until this effect ends.
-                    You cannot compel the water to move faster than 30 feet per round.
-                    \spelldur Sustain (minor)
-                    \spellspecial After you use this ability on a particular area of water, you cannot use it again on that same area for 24 hours.
-                \end{spelleffects}
-            \end{ability}
+            If you do, you can speak with and command water within range.
+            You can ask the water simple questions and understand its responses.
+            If you command the water to perform a task, it will do so do the best of its ability until this effect ends.
+            You cannot compel the water to move faster than 30 feet per round.
+
+            This ability lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
+            After you use this ability on a particular area of water, you cannot use it again on that same area for 24 hours.
             \parhead{Mastery}
-            Whenever you move, you can transform yourself into a rushing flow of water with a volume roughly equal to your normal volume until your movement is complete
+            Whenever you move, you can transform yourself into a rushing flow of water with a volume roughly equal to your normal volume until your movement is complete.
             In this form, you may move wherever water could go, you cannot take other actions, such as jumping, attacking, or casting spells.
             You may move through squares occupied by creatures or threatened by blocking enemies without penalty.
             \par Your speed is halved when moving uphill and doubled when moving downhill.
@@ -958,17 +860,12 @@ This choice determines a great deal about your character's abilities.
         This archetype grants you influence over the natural world, and the ability to embody aspects the natural world in your own form.
 
         \cf{Drd}{Wild Speech}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spellquicktargeting{One animal}{\rngmed}
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \spelleffect You can speak to and understand the speech of the target animal, and any other animals of the same species.
-                This ability doesn't make the target any more friendly or cooperative than normal.
-                Wary and cunning animals are likely to be terse and evasive, while stupid ones tend to make inane comments and are unlikely to say or understand anything of use.
-                \spelldur Sustain (minor)
-            \end{spelleffects}
-        \end{ability}
+        If you do, choose an animal within \rnglong range.
+        You can speak to and understand the speech of the target animal, and any other animals of the same species.
+        This ability does not make the target any more friendly or cooperative than normal.
+        Wary and cunning animals are likely to be terse and evasive, while stupid ones tend to make inane comments and are unlikely to say or understand anything of use.
+
+        This ability lasts as long as you \glossterm{attune} to it.
 
         \cf{Drd}[2]{Natural Lore}
         You gain two extra skill points which must be spent on the Creature Handling, Heal, Knowledge (geography), Knowledge (nature), Ride, or Survival skills.
@@ -1463,11 +1360,7 @@ This choice determines a great deal about your character's abilities.
         You gain a \plus1 bonus to Armor defense.
 
         \cf{Ftr}[4]{Discipline} As a \glossterm{minor action}, you can spend an \glossterm{action point} to use this ability.
-        \begin{ability}
-            \begin{spelleffects}
-                \spelleffect Remove one \glossterm{condition} affecting you.
-            \end{spelleffects}
-        \end{ability}
+        If you do, remove one \glossterm{condition} affecting you.
 
         \cf{Ftr}[7]{Focused Recovery}
         When you use the \textit{recover} action, you heal \plus1d hit points.
@@ -2031,15 +1924,9 @@ This choice determines a great deal about your character's abilities.
         This archetype grants you healing abiliies and an aura reflecting your alignment.
 
         \cf{Pal}{Lay on Hands}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
+        If you do, choose an adjacent willing creature.
+        The target is healed for hit points equal to your \glossterm{standard damage} \plus1d.
         Your \glossterm{power} with this ability is equal to your \textit{devotion power}.
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spellquicktargeting{One willing creature}{Adjacent}
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \spelleffect The target is healed for hit points equal to \glossterm{standard damage} \plus1d.
-            \end{spelleffects}
-        \end{ability}
 
         \cf{Pal}[3]{Cleansing Touch} When you use your \textit{lay on hands} ability, the target can also remove one \glossterm{condition}.
 
@@ -2357,19 +2244,13 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rgr}{Quarry}\label{Quarry}
         As a \glossterm{minor action}, you can spend an \glossterm{action point} to use this ability.
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spellquicktargeting{One creature}{\rnglong}
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \spelleffect The target becomes your quarry.
-                You and any allies within range gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks} against your quarry.
-                You and your allies affected by this ability are called your \glossterm{hunting party}.
-                In addition, you gain a \plus5 bonus to checks made to follow the target's tracks.
+        If you do, choose a creature within \rnglong range.
+        The target becomes your quarry.
+        You and any allies within range gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks} against your quarry.
+        You and your allies affected by this ability are called your \glossterm{hunting party}.
+        In addition, you gain a \plus5 bonus to checks made to follow the target's tracks.
 
-                This ability lasts as long as you \glossterm{attune} to it.
-            \end{spelleffects}
-        \end{ability}
+        This ability lasts as long as you \glossterm{attune} to it.
 
         \cf{Rgr}[2]{Tracker}
         You gain a \plus2 bonus to checks made to follow tracks.
@@ -2540,15 +2421,8 @@ This choice determines a great deal about your character's abilities.
         In addition, you gain a \plus2 bonus to \glossterm{initiative}.
 
         \cf{Rog}[8]{Assassinate} As a standard action, you can use this ability.
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spellquicktargeting{One creature}{\rngmed}
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \spelleffect You study the target, finding weak points you can take advantage of.
-                Until the end of the next round, if you make a melee \glossterm{strike} against the target while it is \unaware, your attack deals maximum damage.
-            \end{spelleffects}
-        \end{ability}
+        If you do, you study a creature within \rngmed range, finding weak points you can take advantage of.
+        Until the end of the next round, if you make a melee \glossterm{strike} against the target while it is \unaware, your attack deals maximum damage.
 
         \cf{Rog}[11]{Greater Uncanny Dodge}
         The initiative bonus from your \textit{intuitive reaction} ability increases to \plus5.
