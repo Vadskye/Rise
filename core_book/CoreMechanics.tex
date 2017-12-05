@@ -242,47 +242,45 @@ It defines how attributes work and explains how to make physical attacks in comb
 
     \subsection{Strikes}\label{Strikes}
         A \glossterm{strike} is the most common type of attack.
-        There are two kinds of strikes: a single strike, with a single weapon, and a dual strike, with two weapons.
+        There are three kinds of strikes: melee, projectile, and thrown.
         Many abilities allow you to make one or more strikes.
         Whenever you make a strike, you can choose which kind of strike to make.
+
         All strikes are \glossterm{mundane} abilities.
         Your \glossterm{accuracy} with a strike is equal to your accuracy with \glossterm{physical attacks} (see \pcref{Physical Accuracy}).
         Your \glossterm{damage} with a strike has special rules (see \pcref{Strike Damage}).
 
-        \parhead{Single Strike}
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spellspecial Choose a weapon you wield, or your \glossterm{unarmed attack}.
-                \spellquicktargeting{One creature or object}{As weapon}
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \begin{spellattack}{Physical vs. Armor}
-                    \spellsuccess The target takes \glossterm{strike damage} from the chosen weapon (see \pcref{Strike Damage}).
-                \end{spellattack}
-            \end{spelleffects}
-        \end{ability}
+        \parhead{Attacking with Multiple Weapons}
+        All strike abilities allow you to attack with either one or two weapons.
+        If you make a strike with two weapons, you take a \minus1 penalty to \glossterm{accuracy} with both attacks for each non-light weapon you attack with.
 
-        \parhead{Dual Strike}\label{Dual Strike}
-        You can only make a \glossterm{dual strike} if you are wielding two weapons at once.
-        \begin{ability}
-            \begin{spelltargetinginfo}
-                \spellspecial Choose two weapons you wield.
-                % clarify - lower range of both weapons?
-                \spellquicktargeting{One creature or object}{As weapons}
-            \end{spelltargetinginfo}
-            \begin{spelleffects}
-                \begin{spellattack}{Physical vs. Armor}
-                    \spellspecial You roll this attack roll twice, once for each weapon.
-                    Roll any miss chances or failure chances independently for each weapon.
-                    You take a \minus1 penalty to accuracy on both attack rolls for each non-light weapon you choose when you use this ability.
-                    \spellsuccess The target takes \glossterm{strike damage} from one weapon you hit with (see \pcref{Strike Damage}).
-                    If you hit with both weapons, you choose which weapon to deal damage from.
-                    \spellcritical The target takes \glossterm{strike damage} from both weapons.
-                    % is this necessary or just wordy?
-                    There is no advantage to getting a \glossterm{critical hit} with both weapons, rather than just one.
-                \end{spellattack}
-            \end{spelleffects}
-        \end{ability}
+        \subsubsection{Melee Strike}
+        As a \glossterm{standard action}, you can use this ability.
+        When you do, choose a creature you \glossterm{threaten} and one or two \glossterm{melee} weapons that you can attack with.
+        For each weapon, make a \glossterm{physical attack} with that weapon against the Armor defense of the target.
+
+        On a hit with any weapon, the target takes \glossterm{strike damage} from one weapon you hit with (see \pcref{Strike Damage}).
+        On a critical hit with any weapon, the target takes double damage from one weapon you hit with, as normal for critical hits.
+
+        \subsubsection{Projectile Strike}
+        As a \glossterm{standard action}, you can use this ability.
+        When you do, choose a creature you can target and one or two \glossterm{projectile} weapons you can attack with, and a creature you can see.
+        The creature must be within ten \glossterm{range increments} of you with all weapons.
+        For each weapon, make a \glossterm{physical attack} with that weapon against the Armor defense of the target.
+        The attack takes a \minus1 penalty to accuracy for for each full range increment between you and the target with that weapon.
+
+        On a hit with any weapon, the target takes \glossterm{strike damage} from one weapon you hit with.
+        On a critical hit with any weapon, the target takes double damage from one weapon you hit with, as normal for critical hits.
+
+        \subsubsection{Thrown Strike}
+        As a \glossterm{standard action}, you can use this ability.
+        When you do, choose a creature you can target and one or two \glossterm{thrown} weapons you can attack with.
+        The creature must be within five \glossterm{range increments} of you with all weapons.
+        For each weapon, make a \glossterm{physical attack} with that weapon against the Armor defense of the target.
+        The attack takes a \minus1 penalty to accuracy for for each full range increment between you and the target with that weapon.
+
+        On a hit with any weapon, the target takes \glossterm{strike damage} from one weapon you hit with.
+        On a critical hit with any weapon, the target takes double damage from one weapon you hit with, as normal for critical hits.
 
     \subsection{Combat Maneuvers}\label{Combat Maneuvers}
         A combat maneuver is an attempt to physically hinder your foe with your body, such as by shoving or tripping it.
