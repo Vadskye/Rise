@@ -285,7 +285,7 @@ def generate_spells():
                 name="Meteor",
                 targeting=Targeting(
                     rng='long',
-                    area='\\areamed radius cylinder, 100 ft\. high',
+                    area='\\areamed radius cylinder, 100 ft.\\ high',
                     targets='All in the area',
                 ),
                 effects=Effects(
@@ -666,7 +666,7 @@ def generate_spells():
         short_description="Command water to crush and drown foes",
         header=Header("You create a wave of water to crush your foes."),
         targeting=Targeting(
-            area='\\arealarge line, 10 ft\. wide',
+            area='\\arealarge line, 10 ft.\\ wide',
             area_type='burst',
             targets='All in the area',
         ),
@@ -1156,7 +1156,7 @@ def generate_spells():
         short_description='Create electricity to injure and stun foes',
         header=Header("You create a bolt of electricity that fries your foes."),
         targeting=Targeting(
-            area='\\arealarge line, 10 ft\\. wide',
+            area='\\arealarge line, 10 ft.\\ wide',
             area_type='burst',
             targets='All in the area',
         ),
@@ -1172,7 +1172,7 @@ def generate_spells():
         ),
         schools=['Evocation'],
         lists=['Arcane', 'Nature'],
-        cantrip="The spell's area becomes a 5 ft\\. wide \\areamed line.",
+        cantrip="The spell's area becomes a 5 ft.\\ wide \\areamed line.",
         subspells=[
             Subspell(
                 level=3,
@@ -1202,7 +1202,7 @@ def generate_spells():
                 level=3,
                 name="Call Lightning",
                 targeting=Targeting(
-                    area='\\arealarge vertical line, 5 ft\\. wide',
+                    area='\\arealarge vertical line, 5 ft.\\ wide',
                     area_type='burst',
                     targets='All in the area',
                 ),
