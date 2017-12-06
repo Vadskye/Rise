@@ -68,8 +68,7 @@ def generate_spells():
                 level=3,
                 name="Gust of Wind",
                 targeting=Targeting(
-                    area=r'\arealarge line, 10 ft. wide',
-                    targets='All in the area',
+                    targets='All in \\arealarge, 10 ft. wide line',
                     time='standard action',
                 ),
                 effects=Effects(
@@ -185,7 +184,7 @@ def generate_spells():
                 level=2,
                 name="Repulsion",
                 targeting=Targeting(
-                    area=r'\areamed radius centered on your location',
+                    area=r'\areamed radius from your location',
                     area_type='zone',
                     time='standard action',
                 ),
@@ -285,8 +284,7 @@ def generate_spells():
                 name="Meteor",
                 targeting=Targeting(
                     rng='long',
-                    area='\\areamed radius cylinder, 100 ft.\\ high',
-                    targets='All in the area',
+                    targets='All in \\areamed radius, 100 ft.\\ high cylinder',
                 ),
                 effects=Effects(
                     effect="""
@@ -324,20 +322,16 @@ def generate_spells():
                     area='\\areasmall radius',
                     area_type='zone',
                     rng='close',
-                    targets='All in the area',
                 ),
                 effects=Effects(
                     effect="""
                         The area becomes filled with webs, making it \\glossterm<difficult terrain>.
                         Each 5-ft.\\ square of webbing has hit points equal to your spellpower, and is \\glossterm<vulnerable> to fire.
                         This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
+
+                        In addition, you make a Spellpower vs. Reflex attack against all creatures in the area when the spell is cast.
+                        On a hit, each target is \\immobilized as long as it has webbing from this ability in its space.
                     """,
-                    attack=Attack(
-                        defense='Reflex',
-                        success="""
-                            Each target is \\immobilized as long as it has webbing from this ability in its space.
-                        """
-                    ),
                     tags=['Manifestation'],
                 ),
             ),
@@ -369,8 +363,7 @@ def generate_spells():
                 level=3,
                 name="Bladestorm",
                 targeting=Targeting(
-                    area='\\areasmall radius from you',
-                    targets='Enemies in the area',
+                    targets='Enemies in an \\areasmall radius from you',
                 ),
                 effects=Effects(
                     attack=Attack.multi_damage('Reflex', 'slashing'),
@@ -551,7 +544,7 @@ def generate_spells():
                 ),
                 effects=Effects(
                     effect="""
-                        All magical abilities and objects are \glossterm{suppressed} in the area.
+                        All magical abilities and objects are \\glossterm<suppressed> in the area.
                         In addition, magical abilities and objects cannot be activated within the area.
                         Creatures within the area cannot concentrate on or dismiss spells.
                         However, you can concentrate on and dismiss your own \\spell<antimagic field>.
@@ -600,10 +593,8 @@ def generate_spells():
         short_description="Create fire to incinerate foes",
         header=Header('You create a small burst of flame.'),
         targeting=Targeting(
-            area='\\areasmall radius',
-            area_type='burst',
             rng='close',
-            targets='All in the area',
+            targets='All in \\areasmall radius',
         ),
         effects=Effects(
             attack=Attack.multi_damage('Reflex', 'fire'),
@@ -617,9 +608,7 @@ def generate_spells():
                 level=2,
                 name="Burning Hands",
                 targeting=Targeting(
-                    area='\\arealarge cone',
-                    area_type='burst',
-                    targets='All in the area',
+                    targets='All in \\arealarge cone',
                 ),
             ),
             Subspell(
@@ -666,9 +655,7 @@ def generate_spells():
         short_description="Command water to crush and drown foes",
         header=Header("You create a wave of water to crush your foes."),
         targeting=Targeting(
-            area='\\arealarge line, 10 ft.\\ wide',
-            area_type='burst',
-            targets='All in the area',
+            targets='All in \\arealarge, 10 ft.\\ wide line',
         ),
         effects=Effects(
             attack=Attack.multi_damage('Fortitude', 'bludgeoning'),
@@ -683,6 +670,7 @@ def generate_spells():
                 name="Create Water",
                 targeting=Targeting(
                     rng='close',
+                    target='Location',
                 ),
                 effects=Effects(
                     effect="""
@@ -696,10 +684,8 @@ def generate_spells():
                 level=2,
                 name="Aqueous Sphere",
                 targeting=Targeting(
-                    area='\\areasmall radius',
-                    area_type='burst',
                     rng='close',
-                    targets='All in the area',
+                    targets='All in \\areasmall radius',
                 ),
             ),
             Subspell(
@@ -830,8 +816,7 @@ def generate_spells():
                 level=3,
                 name="Calm Emotions",
                 targeting=Targeting(
-                    area='\\areamed radius',
-                    targets='All creatures in the area',
+                    targets='All creatures in \\areamed radius',
                 ),
                 effects=Effects(
                     attack=Attack(
@@ -931,8 +916,7 @@ def generate_spells():
                 level=4,
                 name="Discordant Song",
                 targeting=Targeting(
-                    area='\\areamed radius from you',
-                    targets='All enemies in the area',
+                    targets='All enemies in \\areamed radius from you',
                 ),
                 effects=Effects(
                     attack=Attack(
@@ -1099,8 +1083,7 @@ def generate_spells():
                 level=2,
                 name="Word of Faith",
                 targeting=Targeting(
-                    area='\\areamed radius from you',
-                    targets='Creatures in the area that do not worship your deity',
+                    targets='Creatures in \\areamed radius from you that do not worship your deity',
                 ),
                 effects=Effects(
                     attack=Attack.multi_damage('Mental', 'divine')
@@ -1114,9 +1097,7 @@ def generate_spells():
         short_description='Drain heat to injure and freeze foes',
         header=Header('You drain the heat from an area, creating a field of extreme cold.'),
         targeting=Targeting(
-            area='\\areamed cone',
-            area_type='burst',
-            targets='All in the area',
+            targets='All in \\areamed cone',
         ),
         effects=Effects(
             attack=Attack(
@@ -1156,9 +1137,7 @@ def generate_spells():
         short_description='Create electricity to injure and stun foes',
         header=Header("You create a bolt of electricity that fries your foes."),
         targeting=Targeting(
-            area='\\arealarge line, 10 ft.\\ wide',
-            area_type='burst',
-            targets='All in the area',
+            targets='All in \\arealarge, 10 ft.\\ wide line',
         ),
         effects=Effects(
             attack=Attack(
@@ -1202,9 +1181,7 @@ def generate_spells():
                 level=3,
                 name="Call Lightning",
                 targeting=Targeting(
-                    area='\\arealarge vertical line, 5 ft.\\ wide',
-                    area_type='burst',
-                    targets='All in the area',
+                    targets='All in \\arealarge, 5 ft.\\ wide vertical line',
                 ),
                 effects=Effects(
                     attack=Attack(
@@ -1377,9 +1354,7 @@ def generate_spells():
                 level=3,
                 name="Circle of Death",
                 targeting=Targeting(
-                    area='\\areamed radius from you',
-                    area_type='emanation',
-                    targets='Enemies in the area',
+                    targets='Enemies in the \\areamed radius emanation from you',
                 ),
                 effects=Effects(
                     effect="""
@@ -1399,9 +1374,7 @@ def generate_spells():
                 level=4,
                 name="Circle of Healing",
                 targeting=Targeting(
-                    area='\\areamed radius from you',
-                    area_type='emanation',
-                    targets='Allies in the area',
+                    targets='Allies in \\areamed radius emanation from you',
                 ),
                 effects=Effects(
                     effect="""
@@ -1678,9 +1651,7 @@ def generate_spells():
                 level=2,
                 name="Discern Lies",
                 targeting=Targeting(
-                    area='\\areamed radius from you',
-                    area_type='emanation',
-                    targets='All creatures in the area',
+                    targets='All creatures in \\areamed radius emanation from you',
                 ),
                 effects=Effects(
                     effect="""
@@ -1963,9 +1934,8 @@ def generate_spells():
         short_description="Create bright light to blind foes and illuminate",
         # header=Header("description"),
         targeting=Targeting(
-            area='\\areasmall radius',
-            targets='All creatures in the area',
             rng='medium',
+            targets='All creatures in \\areasmall radius',
         ),
         effects=Effects(
             effect="""
