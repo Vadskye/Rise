@@ -976,9 +976,6 @@ def generate_spells():
             Subspell(
                 level=3,
                 name="Divine Might",
-                description="""
-                    description
-                """,
                 targeting=Targeting(
                     target='You',
                     time='minor action',
