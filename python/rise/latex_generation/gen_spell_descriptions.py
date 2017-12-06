@@ -973,24 +973,6 @@ def generate_spells():
                     tags=['Compulsion', 'Mind'],
                 ),
             ),
-            Subspell(
-                level=3,
-                name="Divine Might",
-                targeting=Targeting(
-                    target='You',
-                    time='minor action',
-                ),
-                effects=Effects(
-                    effect="""
-                        You increase your size by one size category.
-                        This increases your \\glossterm<strike damage> and usually increases your \\glossterm<reach> (see \\pcref<Size in Combat>).
-                        However, you take a -2d penalty to \\glossterm<strike damage>, as your muscles are not increased fully to match your new size.
-
-                        This effect lasts as long as you \\glossterm<attune> to it.
-                    """,
-                    tags=['Shaping', 'Sizing'],
-                ),
-            ),
         ],
         category='debuff, combat',
     ))
@@ -1056,6 +1038,38 @@ def generate_spells():
                 name='Supreme Blessed Blade',
                 description="""
                     This subspell functions like the \\spell<blessed blade> subspell, except that the penalty to strike damage is removed.
+                """,
+            ),
+            Subspell(
+                level=3,
+                name="Divine Might",
+                targeting=Targeting(
+                    target='You',
+                    time='minor action',
+                ),
+                effects=Effects(
+                    effect="""
+                        You increase your size by one size category.
+                        This increases your \\glossterm<strike damage> and usually increases your \\glossterm<reach> (see \\pcref<Size in Combat>).
+                        However, you take a -1d penalty to \\glossterm<strike damage>, as your muscles are not increased fully to match your new size.
+
+                        This effect lasts as long as you \\glossterm<attune> to it.
+                    """,
+                    tags=['Shaping', 'Sizing'],
+                ),
+            ),
+            Subspell(
+                level=6,
+                name="Divine Might, Greater",
+                description="""
+                    This subspell functions like the \\textit<divine might> subspell, except that the penalty to \\glossterm<strike damage> is removed.
+                """,
+            ),
+            Subspell(
+                level=9,
+                name="Divine Might, Supreme",
+                description="""
+                    This subspell functions like the \\spell<divine might> subspell, except that your size is increased by two size categories.
                 """,
             ),
         ],
@@ -2111,14 +2125,14 @@ def generate_spells():
             ),
             Subspell(
                 level=6,
-                name="Enlarge, Potent",
+                name="Enlarge, Greater",
                 description="""
                     This subspell functions like the \\textit<enlarge> subspell, except that the penalty to \\glossterm<strike damage> is removed.
                 """,
             ),
             Subspell(
                 level=9,
-                name="Enlarge, Greater",
+                name="Enlarge, Supreme",
                 description="""
                     This subspell functions like the \\spell<enlarge> subspell, except that the target's size is increased by two size categories.
                 """,
