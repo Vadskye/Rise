@@ -64,7 +64,7 @@ class Targeting(object):
 
     def __str__(self):
         action_point_text = f'\\parhead*<Action Points> {self.action_points}' if self.action_points else ""
-        time_text = f'\\spelltime<{self.time}>' if self.time else ""
+        time_text = f'\\spelltime<{self.time.capitalize()}>' if self.time else ""
         special_text = f'\\spellspecial {self.special}' if self.special else ""
 
         return f"""
