@@ -114,7 +114,7 @@ This choice determines a great deal about your character's abilities.
         This archetype grants you a devastating rage, improving your combat prowess.
 
         \cf{Bbn}{Rage}
-        \begin{ability}{Rage}[\glossterm{Attune}]
+        \begin{ability}{Rage}[\glossterm{Attune}, \glossterm{Swift}]
             As a \glossterm{free action}, you can spend an \glossterm{action point} to use this ability.
             If you do, you gain the following benefits and drawbacks:
             \begin{itemize}
@@ -160,10 +160,10 @@ This choice determines a great deal about your character's abilities.
                 At 18th level, the area increases to a \areahuge radius.
             \end{ability}
 
-            \begin{ability}{Brace for Impact}
+            \begin{ability}{Brace for Impact}[\glossterm{Swift}]
                 You take half damage from all attacks.
                 This halving is applied before damage reduction and similar abilities.
-                This ability lasts until the end of the next round.
+                This ability lasts until the end of the round.
 
                 At 6th level, you can \glossterm{sustain} this ability as a standard action.
                 At 12th level, you also gain damage reduction equal to your level.
@@ -631,11 +631,10 @@ This choice determines a great deal about your character's abilities.
             In addition, your damage reduction from this domain's aspect protects you against all damage, rather than only against damage from physical attacks.
 
         \subsubsection{Evil}
-            \parhead{Gift} Whenever you take damage, you may choose an adjacent willing creature.
-            If you do, that creature takes half of that damage (rounded down) instead of you.
-            Any abilities it has that would make the attack miss or fail have no effect, but its abilities that allow it to reduce or ignore the attack's effects work normally.
-            You take the remaining half of the damage, and suffer any non-damaging effects of the attack normally.
-            \par You may learn which attacks hit you in the current phase before deciding which attacks to redirect damage from, but not how much damage they would do (or any other effects they might have).
+            \parhead{Gift} At the start of each phase, you may choose an adjacent willing creature.
+            If you do, that creature takes half of all damage you take that phase (rounded down) instead of you.
+            Any abilities it has that would make attacks miss or fail have no effect, but its abilities that allow it to reduce or ignore the effects of attacks work normally.
+            You take the remaining half of the damage, and suffer any non-damaging effects of all attacks normally.
             \parhead{Aspect} You can use this domain's domain gift to redirect damage to any willing creature within \rngclose range.
             \parhead{Essence} You gain the \textit{compel evil} ability.
             \begin{ability}{Compel Evil}[\glossterm{Compulsion}, \glossterm{Mind}]
@@ -646,7 +645,8 @@ This choice determines a great deal about your character's abilities.
 
                 Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
             \end{ability}
-            \parhead{Mastery} You can use your domain gift to redirect damage to unwilling creatures.
+            \parhead{Mastery} When you use your Evil domain gift, you can spend an \glossterm{action point}.
+            If you do, you can redirect your damage to an unwilling creature that phase.
             You cannot use this ability to redirect damage to the same unwilling creature more than once between \glossterm{short rests}.
 
         \subsubsection{Fire}
@@ -670,11 +670,10 @@ This choice determines a great deal about your character's abilities.
             \parhead{Mastery} Whenever you deal fire damage to a creature, that creature becomes \ignited as a \glossterm{condition}.
 
         \subsubsection{Good}
-            \parhead{Gift} Whenever an adjacent creature takes damage, you may use this ability.
-            If you do, you take half of that damage (rounded down) instead of the creature.
-            Any abilities you have that would make the attack miss or fail have no effect, but your abilities that allow you to reduce or ignore its effects work normally.
-            The protected creature takes the remaining half of the damage, and suffers any non-damaging effects of the attack normally.
-            \par You may learn which attacks hit you and your allies in the current phase before deciding which attacks to redirect damage from, but not how much damage they would do (or any other effects they might have).
+            \parhead{Gift} At the start of each phase, you may choose an adjacent willing creature.
+            If you do, you take half of all damage that creature would take that phase (rounded down) instead of the creature.
+            Any abilities you have that would make attacks miss or fail have no effect, but your abilities that allow you to reduce or ignore the effects of attacks work normally.
+            The protected creature takes the remaining half of the damage, and suffers any non-damaging effects of attacks normally.
             \parhead{Aspect} You can use this domain's domain gift to redirect damage from any creature within \rngclose range.
             \parhead{Essence} You gain the \textit{compel good} ability.
             \begin{ability}{Compel Good}[\glossterm{Compulsion}, \glossterm{Mind}]
@@ -685,7 +684,7 @@ This choice determines a great deal about your character's abilities.
 
                 Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
             \end{ability}
-            \parhead{Mastery} Whenever you redirect damage with this domain's domain gift, you can redirect all effects of the attack to you instead of only half the damage.
+            \parhead{Mastery} Whenever you use your Good domain gift, you can redirect all damage to you instead of only half.
 
         \subsubsection{Knowledge}
             \parhead{Gift} You add all Knowledge skills to your cleric class skill list.
@@ -1033,7 +1032,7 @@ This choice determines a great deal about your character's abilities.
         You increase your \glossterm{threat value} by 1.
         \subcf{11th -- Venom}
         As a \glossterm{minor action}, you can secrete venom from your natural weapons.
-        This effect begins during the current phase and lasts until the end of the round.
+        This is a \glossterm{swift ability}, and it lasts until the end of the round.
         When you deal damage with a \glossterm{strike} using a natural weapon, the target is poisoned.
         This is a \glossterm{condition}, and lasts until removed.
         At the end of each \glossterm{action phase}, you make a \textit{nature power} vs. Fortitude attack against all creatures you have poisoned in this way.
@@ -1239,7 +1238,7 @@ This choice determines a great deal about your character's abilities.
             \\ \nth{7}  & Focused recovery
             \\ \nth{8}  & Greater armored agility
             \\ \nth{9}  & Maneuver tolerance
-            \\ \nth{10} & Swift warrior
+            \\ \nth{10} & Rapid warrior
             \\ \nth{11} & Weapon master
             \\ \nth{12} & Martial exertion
             \\ \nth{13} & Greater discipline
@@ -1284,10 +1283,10 @@ This choice determines a great deal about your character's abilities.
         Choose two \textit{martial exertions} from the list below.
         As a standard action, you can spend an \glossterm{action point} to use a \textit{martial exertion} ability.
         {
-            \begin{ability}{Brace for Impact}
+            \begin{ability}{Brace for Impact}[\glossterm{Swift}]
                 You take half damage from all attacks.
                 This halving is applied before damage reduction and similar abilities.
-                This ability lasts until the end of the next round.
+                This ability lasts until the end of the round.
 
                 At 6th level, you can \glossterm{sustain} this ability as a standard action.
                 At 12th level, you also gain damage reduction equal to your level.
@@ -1491,10 +1490,10 @@ This choice determines a great deal about your character's abilities.
         When you use the \textit{recover} action, you heal \plus1d hit points.
         In addition, you can remove any \glossterm{sustained} effect on you.
 
-        \cf{Ftr}[10]{Swift Warrior}
+        \cf{Ftr}[10]{Rapid Warrior}
         If you use only \glossterm{mundane} abilities in a given round, you can take an additional \glossterm{minor action} that round.
         After using this ability in a round, you are unable to use any \glossterm{magical} abilities until the next round.
-        This does not prevent you from benefiting from magical abilities that do not have to be used.
+        This does not prevent you from benefiting from magical abilities that do not have to be activated.
 
         \cf{Ftr}[13]{Greater Discipline}
         When you use the \textit{discipline} ability, you can remove any number of conditions.
@@ -1791,8 +1790,8 @@ This choice determines a great deal about your character's abilities.
         You can spend an \glossterm{action point} to use a \textit{ki manifestation}, using the type of action indicated in the ability's description.
         You cannot use more than one \textit{ki manifestation} per round.
         {
-            \begin{ability}{Abandon the Fragile Self}
-                At the start of the round, you can use this ability.
+            \begin{ability}{Abandon the Fragile Self}[\glossterm{Swift}]
+                As a \glossterm{minor action}, you can use this ability.
                 It lasts until the end of the round.
                 You are immune to all \glossterm{conditions}.
 
@@ -1832,7 +1831,7 @@ This choice determines a great deal about your character's abilities.
                 At 18th level, the bonus to physical defenses increases to \plus2.
             \end{ability}
 
-            \begin{ability}{Flash Step}
+            \begin{ability}{Flash Step}[\glossterm{Teleportation}]
                 At the start of the round, you can use this ability.
                 It lasts until the end of the round.
                 % TODO: is 'horizontally' the correct word?
@@ -1863,9 +1862,9 @@ This choice determines a great deal about your character's abilities.
                 It lasts until the end of the round.
                 You gain a \plus5 bonus to Jump (see \pcref{Jump}).
 
-                At 6th level, the Jump bonus increases to \plus10.
-                At 12th level, the Jump bonus increases to \plus15.
-                At 18th level, the Jump bonus increases to \plus20.
+                At 6th level, the bonus increases to \plus10.
+                At 12th level, the bonus increases to \plus15.
+                At 18th level, the bonus increases to \plus20.
             \end{ability}
 
             \begin{ability}{Scale the Highest Tower}
@@ -1891,8 +1890,8 @@ This choice determines a great deal about your character's abilities.
                 At 18th level, the effect lasts as long as you \glossterm{attune} to it.
             \end{ability}
 
-            \begin{ability}{Step Between the Mystic Worlds}
-                At the start of the round, you can use this ability.
+            \begin{ability}{Step Between the Mystic Worlds}[\glossterm{Swift}]
+                As a \glossterm{minor action}, you can use this ability.
                 It lasts until the end of the round.
                 You gain a \plus2 bonus to defenses against \glossterm{magical} abilities that directly target you.
                 This does not protect you from abilities that affect an area.
@@ -1912,8 +1911,8 @@ This choice determines a great deal about your character's abilities.
                 At 16th level, the bonus increases to \plus6.
             \end{ability}
 
-            \begin{ability}{Tranquil Ward of Unshakeable Peace}
-                You can use this ability as a standard action.
+            \begin{ability}{Tranquil Ward of Unshakeable Peace}[\glossterm{Swift}]
+                As a standard action, you can use this ability.
                 It lasts until the end of the round.
                 You take half damage from all attacks.
                 This halving is applied before damage reduction and similar abilties.
@@ -2317,10 +2316,10 @@ This choice determines a great deal about your character's abilities.
         Choose two \textit{wild exertions} from the list below.
         As a standard action, you can spend an \glossterm{action point} to use a \textit{wild exertion} ability.
         {
-            \begin{ability}{Brace for Impact}
+            \begin{ability}{Brace for Impact}[\glossterm{Swift}]
                 You take half damage from all attacks.
                 This halving is applied before damage reduction and similar abilities.
-                This ability lasts until the end of the next round.
+                This ability lasts until the end of the round.
 
                 At 6th level, you can \glossterm{sustain} this ability as a standard action.
                 At 12th level, you also gain damage reduction equal to your level.
