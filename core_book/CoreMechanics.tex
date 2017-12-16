@@ -302,112 +302,51 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \subsubsection{Maneuver Descriptions}
 
-            \parhead{Dirty Trick}\label{Dirty Trick} You strike your foe in a sensitive spot, pull its pants down, or creatively use your environment to attack.
-            You must use a free hand to use this ability.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellquicktargeting{One creature}{Adjacent}
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \begin{spellattack}{Physical vs. Special}
-                        \spellspecial Depending on the nature of your dirty trick, this attack can target Fortitude or Reflex defense.
-                        \spellsuccess The target suffers a \minus2 penalty to one of the following statistics:
-                        \glossterm{accuracy} with \glossterm{physical attacks}, \glossterm{physical checks}, Armor defense, Fortitude defense, Reflex defense, or Mental defense.
+            \parhead{Dirty Trick}\label{Dirty Trick} You can use this ability to strike your foe in a sensitive spot, pull its pants down, or creatively use your environment to attack.
+            If you do, make a melee \glossterm{physical attack} with a free hand against the Fortitude or Reflex defense of a creature.
+            The target uses whichever defense is appropriate to the nature of the trick you describe.
+            On a hit, it suffers a \minus2 penalty to one of the following statistics as a \glossterm{condition}:
+                \glossterm{accuracy} with \glossterm{physical attacks}, \glossterm{physical checks}, Armor defense, Fortitude defense, Reflex defense, or Mental defense.
+            On a critical hit, the penalty is increased to \minus5.
 
-                        \spellcritical As above, except that the penalty is increased to \minus5.
-                    \end{spellattack}
-                    \spelldur Condition
-                \end{spelleffects}
-            \end{ability}
+            \parhead{Disarm}\label{Disarm} You can use this ability to strike an item your foe is wearing or holding to knock it out of their hands or damage it.
+            If you do, make a melee \glossterm{physical attack} with a weapon you wield against an object.
+            This attack must beat the target's Armor defense.
+            If the target is \glossterm{attended} by a creature, the attack must also beat the attending creature's Reflex defense.
+            On a hit, you choose whether the target takes \glossterm{strike damage} from the weapon you hit it with.
+            In addition, if the target is \glossterm{attended} and is not held in two hands or extraordinarily well secured (such as a ring), you can choose to knock it loose.
+            If you do, it falls to the ground in the square occupied by the attending creature that is closest to you.
+            On a critical hit, you can knock the target loose even if it is held in two hands.
 
-            \parhead{Disarm}\label{Disarm} You can strike an item your foe is wearing or holding to knock it out of their hands or damage it.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellspecial Choose a weapon you wield, or your \glossterm{unarmed attack}.
-                    \spellquicktargeting{One object}{As weapon}
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \begin{spellattack}{Physical vs. Special}
-                        \spellspecial If the target is \glossterm{unattended}, this attack is made against its Armor defense.
-                        If the target is \glossterm{attended}, this attack is also made against the attending creature's Reflex defense.
-                        \spellsuccess You choose whether or not the target takes \glossterm{strike damage} from the chosen weapon.
-                        In addition, if the target is \glossterm{attended} and not held in two hands or extraordinarily well secured (such as a ring), it falls to the ground in the closest square to you occupied by the attending creature.
-                        In addition, the target falls to the ground even if it is held in two hands.
-                    \end{spellattack}
-                \end{spelleffects}
-            \end{ability}
+            \parhead{Feint}\label{Feint} You can use this ability during the \glossterm{action phase} to make a fake attack to leave your foe off-balance.
+            If you do, make a melee \glossterm{physical attack} with a weapon you wield against a creature's Reflex defense.
+            During the \glossterm{delayed action phase}, you can also make a melee \glossterm{strike} with the same weapon.
+            % Is this order clear enough?
+            On a hit, the target takes a \minus2 penalty to defenses against the delayed strike.
+            On a critical hit, the the penalty is increased to \minus5.
+            On a miss, you take a \minus2 penalty to accuracy with the strike.
 
-            \parhead{Feint}\label{Feint} You can make a fake attack to leave your foe off-balance.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellspecial Choose a weapon you wield, or your \glossterm{unarmed attack}.
-                    \spellquicktargeting{One creature}{As weapon}
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \spelleffect During the \glossterm{delayed action phase}, you make a \glossterm{strike} with the weapon.
-                    You can make the strike against any creature within range of your weapon, including the creature this ability targets.
-                    \begin{spellattack}{Physical vs. Reflex}
-                        \spellsuccess The target takes a \minus2 penalty to Armor defense against the strike.
-                        \spellcritical As above, but the penalty is increased to \minus5.
-                        \spellfailure You take a \minus2 penalty to accuracy with the strike.
-                    \end{spellattack}
-                \end{spelleffects}
-            \end{ability}
+            \parhead{Grapple}\label{Grapple} You can use this ability to physically grab and restrain your foe.
+            If you do, make a melee \glossterm{physical attack} with a free hand against a creature's Fortitude and Reflex defenses.
+            If you hit both defenses, you and the target are \grappled.
+            For details, see \pcref{Grappling}.
 
-            \parhead{Grapple}\label{Grapple} You physically grab and restrain your foe.
-            You must use a free hand to use this ability.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellquicktargeting{One creature}{Adjacent}
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \begin{spellattack}{Strength vs. Fortitude and Reflex}
-                        \spellsuccess You and the target are \grappled.
-                        For details, see \pcref{Grappling}.
-                    \end{spellattack}
-                \end{spelleffects}
-            \end{ability}
+            \parhead{Shove}\label{Shove} You can use this ability to shove your foe where you want it to go.
+            If you do, make a melee \glossterm{physical attack} with a free hand against a creature's Fortitude defense.
+            For each size category larger or smaller than the target that you are, you gain a \plus4 bonus or penalty to \glossterm{accuracy}.
+            On a hit, you move the target up to 10 feet in a direction of your choice.
+            Effects that limit movement speed, such as \glossterm{difficult terrain}, similarly limit the distance you can move the target.
+            You can move the same distance that you push the target, up to a maximum distance equal to half your land speed.
+            You cannot normally keep moving the target if it stops being adjacent to you.
+            If the target encounters a creature or solid object, you must stop moving it.
 
-            \parhead{Shove}\label{Shove} You shove your foe where you want it to go.
-            You must use a free hand to use this ability.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellquicktargeting{One creature}{Adjacent}
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \begin{spellattack}{Strength vs. Fortitude}
-                        % TODO: this should somehow scale with size
-                        \spellsuccess You move the target up to 10 feet in a direction of your choice.
-                        Effects that limit movement speed, such as \glossterm{difficult terrain}, similarly limit the distance you can move the target.
-                        You can move the same distance that you push the target, up to a maximum distance equal to half your land speed.
+            On a critical hit, you can move the target up to your full movement speed.
 
-                        You cannot normally keep moving the target if it stops being adjacent to you.
-                        If the target encounters a creature or solid object, you must stop moving it.
-                        \spellcritical As above, except that you can move the target up to five feet per point of Strength you have.
-                        This does not change the maximum distance you can move.
-                        In addition, you can move the target through creatures, but not solid objects.
-                        Each five feet of movement through a creature costs 10 feet of movement.
-                        You cannot leave the target inside another creature's space.
-                        If that occurs inadvertently, you and the target return to the last open space you both occupied.
-                    \end{spellattack}
-                \end{spelleffects}
-            \end{ability}
-
-            \parhead{Trip}\label{Trip} You try to trip your foe.
-            You must use a free hand to use this ability.
-            \begin{ability}
-                \begin{spelltargetinginfo}
-                    \spellquicktargeting{One creature}{Adjacent}
-                \end{spelltargetinginfo}
-                \begin{spelleffects}
-                    \begin{spellattack}{Physical vs. Reflex}
-                        \spellsuccess The target becomes \prone.
-                        \spellcritical As above.
-                        In addition, during the \glossterm{delayed action phase}, you can make a \glossterm{strike} with a weapon you wield.
-                        You take a \minus2d penalty to damage with the strike.
-                    \end{spellattack}
-                \end{spelleffects}
-            \end{ability}
+            \parhead{Trip}\label{Trip} You use this ability to trip your foe.
+            If you do, make a melee \glossterm{physical attack} with a free hand against a creature's Reflex defense.
+            On a hit, the target becomes \prone.
+            On a critical hit, if you used this ability during the \glossterm{action phase}, you can also make a melee \glossterm{strike} with a weapon you wield against the target during the \glossterm{delayed action phase}.
+            You take a \minus2d penalty to damage with the strike.
 
     \subsection{Special Combat Actions}
 
@@ -423,21 +362,13 @@ It defines how attributes work and explains how to make physical attacks in comb
         \parhead{Desperate Recovery}\label{Desperate Recovery}
         As a standard action, you can use this ability.
         As long as you are conscious, no effect can prevent you from taking this action, even effects that prohibit all other actions.
-        \begin{ability}
-            \begin{spelleffects}
-                \spelleffect At the end of the round, if you did not take damage this round, you may remove one \glossterm{condition} affecting you.
-            \end{spelleffects}
-        \end{ability}
+        If you do, at the end of the round, if you did not take damage this round, you may remove one \glossterm{condition} affecting you.
 
         \parhead{Recover}\label{Recover}
         As a standard action, you can spend an \glossterm{action point} to use this ability.
         As long as you are conscious, no effect can prevent you from taking this action, even effects that prohibit all other actions.
-        \begin{ability}
-            \begin{spelleffects}
-                \spelleffect You heal hit points equal to your \glossterm{standard damage} \minus1d.
-                In addition, you may remove one \glossterm{condition} affecting you.
-            \end{spelleffects}
-        \end{ability}
+        If you do, you heal hit points equal to your \glossterm{standard damage} \minus1d.
+        In addition, you may remove one \glossterm{condition} affecting you.
 
         \parhead{Total Defense}\label{Total Defense}
         As a \glossterm{standard action}, you can use this ability to focus entirely on defense.
