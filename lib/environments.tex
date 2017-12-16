@@ -201,12 +201,28 @@
     bottomline=true,
 ]{spellcontent}
 
-\newmdenv[
-    style=spellcontent,
-    leftline=false,
+\DeclareDocumentEnvironment{ability}{m o}
+{
+    \begin{thesamepage}
+    \spelltwocol{\textbf{#1}}{
+        \IfValueTF{#2}{#2}{}
+    }
+}
+{
+    \end{thesamepage}
+}
+
+\surroundwithmdframed[
+    leftline=true,
     topline=true,
-    rightline=false,
+    rightline=true,
     bottomline=true,
+    skipabove=0.5em,
+    skipbelow=0.5em,
+    innerleftmargin=0.25em,
+    innerrightmargin=0.5em,
+    innertopmargin=-0.1em,  % using thesamepage gives it a top margin
+    innerbottommargin=0.25em,
 ]{ability}
 
 \newmdenv[
