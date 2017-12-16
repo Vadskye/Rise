@@ -1020,6 +1020,11 @@
     \par \nth{#1}~--~\textbf{#2}:\xspace
 }
 
+\DeclareDocumentCommand{\labeltext}{m}
+{
+    #1\label{#1}
+}
+
 \ExplSyntaxOff
 
 \newcommand{\miscastexplode}{\spellmiscast{Explosive} The spell does not have its normal effect. Instead, the magical energy explodes, dealing 1d6 damage per two spellpower to you and all creatures adjacent to you.}
