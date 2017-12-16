@@ -214,6 +214,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             \item Choose actions.
             \item All actions are \glossterm{initiated}.
             \item Determine targets affected by actions.
+            \item Resolve \glossterm{swift abilities}.
             \item Check action success.
                 Example: Making attack rolls.
             \item Determine action results.
@@ -224,8 +225,15 @@ It defines how attributes work and explains how to make physical attacks in comb
         \end{enumerate*}
 
         In the vast majority of cases, there is no need to go through this order explicitly.
-        Combats will run much faster if attack and damage rolls are generally made and announced at the same time as the actions are chosen, even before all characters have explicitly stated their actions.
+        Combats will run much faster if attack and damage rolls are generally made and announced at the same time as those actions are chosen, even before all characters have explicitly stated their actions.
         The order of resolution matters when creatures take actions that directly conflict with each other.
+
+        \subsubsection{Swift Abilities}\label{Swift Abilities}
+            Some abilities resolve before other actions in the same phase.
+            These are called \glossterm{swift abilities}.
+            They resolve after targets are determined, but before attack rolls are made.
+            Swift abilities never require attack rolls, and almost always affect only the creature using the ability.
+            For example, the \textit{total defense} ability is a swift ability, and it protects you from attacks made during the same phase.
 
         \subsubsection{Conflicting Actions}\label{Conflicting Actions}
 
@@ -350,10 +358,9 @@ It defines how attributes work and explains how to make physical attacks in comb
 
     \subsection{Special Combat Actions}
 
-        \parhead{Charge}\label{Charge} As a \glossterm{standard action} during the \glossterm{action phase}, you can use this ability.
+        \parhead{Charge}\label{Charge} As a \glossterm{standard action} during the \glossterm{action phase}, you can spend an \glossterm{action point} to use this ability.
         If you do, you move up to your speed in a single straight line.
         During the \glossterm{delayed action phase}, you can make a melee \glossterm{strike} from your new location.
-        If you use this ability, you take a \minus4 penalty to \glossterm{physical defenses} until the end of the round, including during the current phase.
 
         \parhead{Delay}\label{Delay}
         As a \glossterm{standard action} during the \glossterm{action phase}, you can use this ability.
@@ -372,7 +379,8 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \parhead{Total Defense}\label{Total Defense}
         As a \glossterm{standard action}, you can use this ability to focus entirely on defense.
-        If you do, you gain a \plus2 bonus to your defenses until the end of the round, including during the current phase.
+        If you do, you gain a \plus2 bonus to your defenses until the end of the round.
+        This is a \glossterm{swift ability}.
 
     \subsection{Special Movements}
 
