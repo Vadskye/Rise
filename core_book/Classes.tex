@@ -114,16 +114,17 @@ This choice determines a great deal about your character's abilities.
         This archetype grants you a devastating rage, improving your combat prowess.
 
         \cf{Bbn}{Rage}
-        As a \glossterm{free action}, you can spend an \glossterm{action point} to use this ability.
-        If you do, you gain the following benefits and drawbacks:
-        \begin{itemize}
-            \item You gain a \plus1d bonus to \glossterm{strike damage}.
-            \item You are unable to take any action that requires patience or concentration, such as casting spells.
-            \item At the end of each round, if you did not attack a creature or object that round, you take \glossterm{subdual damage} equal to your level.
-                This damage ignores damage reduction and any similar abilities.
-        \end{itemize}
-        This effect lasts as long as you \glossterm{attune} to it.
-        When it ends, you become \fatigued and unable to use it again until you take a \glossterm{short rest}.
+        \begin{ability}{Rage}[\glossterm{Attune}]
+            As a \glossterm{free action}, you can spend an \glossterm{action point} to use this ability.
+            If you do, you gain the following benefits and drawbacks:
+            \begin{itemize}
+                \item You gain a \plus1d bonus to \glossterm{strike damage}.
+                \item You are unable to take any action that requires patience or concentration, such as casting spells.
+                \item At the end of each round, if you did not attack a creature or object that round, you take \glossterm{subdual damage} equal to your level.
+                    This damage ignores damage reduction and any similar abilities.
+            \end{itemize}
+            When this ability ends, you become \fatigued and unable to use it again until you take a \glossterm{short rest}.
+        \end{ability}
 
         \cf{Bbn}[4]{Blood Frenzy}
         You reduce your penalties for being \glossterm{bloodied} by 2 while raging.
@@ -151,105 +152,147 @@ This choice determines a great deal about your character's abilities.
         Choose two \textit{primal exertions} from the list below.
         As a standard action, you can spend an \glossterm{action point} to use a \textit{primal exertion} ability.
         {
-            \subcf{Battle Cry} You and all allies within a \arealarge radius burst from you gain \glossterm{temporary hit points} equal to your Willpower.
-            This lasts as long as you \glossterm{sustain} this ability as a \glossterm{minor action}.
-            This is a \glossterm{Mind} ability.
-            \par At 6th level, the temporary hit points increase to twice your Willpower.
-            At 12th level, they increase to three times your Willpower.
-            At 18th level, the area increases to a \areahuge radius.
+            \begin{ability}{Battle Cry}[\glossterm{Mind}, \glossterm{Sustain} (minor)]
+                You and all allies within a \arealarge radius burst from you gain \glossterm{temporary hit points} equal to your Willpower.
 
-            \subcf{Brace for Impact} You take half damage from all attacks.
-            This halving is applied before damage reduction and similar abilities.
-            This ability lasts until the end of the next round.
-            \par At 6th level, you can \glossterm{sustain} this ability as a standard action.
-            At 12th level, you also gain damage reduction equal to your level.
-            At 18th level, the damage reduction increases to twice your level.
+                At 6th level, the temporary hit points increase to twice your Willpower.
+                At 12th level, they increase to three times your Willpower.
+                At 18th level, the area increases to a \areahuge radius.
+            \end{ability}
 
-            \subcf{Certain Strike} You make a \glossterm{strike} with a \plus2 bonus to accuracy.
-            At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, the accuracy bonus increases to \plus3.
+            \begin{ability}{Brace for Impact}
+                You take half damage from all attacks.
+                This halving is applied before damage reduction and similar abilities.
+                This ability lasts until the end of the next round.
 
-            \subcf{Demoralizing Shout}
-            Make a Willpower vs. Mental attack against all enemies within an \arealarge radius burst from you.
-            As a \glossterm{condition}, each target is \shaken by you on a hit or \frightened by you on a critical hit.
-            \par At 6th level, if you do not hit any targets with the attack, you regain the action point spent to use this ability.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, a critical hit makes each target \panicked instead of frightened.
-            In addition, a hit makes each target frightened instead of shaken.
+                At 6th level, you can \glossterm{sustain} this ability as a standard action.
+                At 12th level, you also gain damage reduction equal to your level.
+                At 18th level, the damage reduction increases to twice your level.
+            \end{ability}
 
-            \subcf{Ground Pound} Make a Strength vs. Reflex attack against all enemies standing on solid ground adjacent to you.
-            You can only use this ability while standing on solid ground.
-            If you use this ability during the \glossterm{action phase}, you can also make a \glossterm{strike} during the \glossterm{delayed action phase}.
-            Each target is knocked \prone on a hit or \immobilized as a \glossterm{condition} on a critical hit.
-            \par At 6th level, the area increases to an \areamed radius burst.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, a critical hit makes each target \stunned instead of immobilized.
+            \begin{ability}{Certain Strike}
+                You make a \glossterm{strike} with a \plus2 bonus to accuracy.
 
-            \subcf{Gut Punch} Make a \glossterm{strike} with a bludgeoning weapon.
-            In addition to the strike's normal effects, you also compare the attack result against the target's Fortitude defense.
-            As a \glossterm{condition}, the target is \sickened on a hit or \nauseated on a critical hit.
-            \par At 6th level, you gain a \plus1 bonus to accuracy on the strike.
-            At 12th level, the accuracy bonus increases to \plus2.
-            At 18th level, the accuracy bonus increases to \plus3.
+                At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, the accuracy bonus increases to \plus3.
+            \end{ability}
 
-            \subcf{Leaping Strike} You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to your land speed (see \pcref{Leap}).
-            If you use this ability during the \glossterm{action phase}, you can also make a \glossterm{strike} from your new location during the \glossterm{delayed action phase}.
-            \par At 6th level, you gain a \plus1d bonus to damage with the strike per 10 feet of height you travelled downward towards your foe during the leap, up to a maximum of \plus2d.
-            At 12th level, the maximum damage bonus increases to \plus4d.
-            At 18th level, the maximum damage bonus increases to \plus6d.
+            \begin{ability}{Demoralizing Shout}[\glossterm{Mind}]
+                Make a Willpower vs. Mental attack against all enemies within an \arealarge radius burst from you.
+                As a \glossterm{condition}, each target is \shaken by you on a hit or \frightened by you on a critical hit.
 
-            \subcf{Potent Maneuver} You use a \glossterm{combat maneuver} with a \plus3 bonus to accuracy.
-            \par At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, the accuracy bonus increases to \plus4.
+                At 6th level, if you do not hit any targets with the attack, you regain the action point spent to use this ability.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, a critical hit makes each target \panicked instead of frightened.
+                In addition, a hit makes each target frightened instead of shaken.
+            \end{ability}
 
-            \subcf{Power Attack} Make a \glossterm{strike} with a \plus2d bonus to damage.
-            \par At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, the damage bonus increases to \plus3d.
+            \begin{ability}{Ground Pound}
+                Make a Strength vs. Reflex attack against all enemies standing on solid ground adjacent to you.
+                You can only use this ability while standing on solid ground.
+                If you use this ability during the \glossterm{action phase}, you can also make a \glossterm{strike} during the \glossterm{delayed action phase}.
+                Each target is knocked \prone on a hit or \immobilized as a \glossterm{condition} on a critical hit.
 
-            \subcf{Rapid Assault} Make a \glossterm{strike} against a creature.
-            If you use this ability during the \glossterm{action phase}, you can make another strike during the \glossterm{delayed action phase}.
-            You take a \minus2 penalty to accuracy on both strikes.
-            \par At 6th level, if you missed all of your targets, you regain the action point spent to use this ability.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, the accuracy penalty is reduced to \minus1.
+                At 6th level, the area increases to an \areamed radius burst.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, a critical hit makes each target \stunned instead of immobilized.
+            \end{ability}
 
-            \subcf{Reaping Charge} You can move up to your movement speed in a straight line.
-            Choose either the right or left side of the line.
-            You can make a melee \glossterm{strike} with a slashing or bludgeoning weapon against each creature and object on that side of the line that you \glossterm{threaten} at any point during your movement, except for the space you start in and the space you end in.
-            You take a \minus2d penalty to damage on each strike.
-            \par At 6th level, you do not have to choose a side of the line.
-            Instead, you can attack creatures and objects that you threaten at any point during your movement.
-            At 12th level, the damage penalty is reduced to \minus1d.
-            At 18th level, the damage penalty is removed.
+            \begin{ability}{Gut Punch}
+                Make a \glossterm{strike} with a bludgeoning weapon.
+                In addition to the strike's normal effects, you also compare the attack result against the target's Fortitude defense.
+                As a \glossterm{condition}, the target is \sickened on a hit or \nauseated on a critical hit.
 
-            \subcf{Strip the Flesh} Make a \glossterm{strike} with a slashing weapon.
-            At the end of the current phase, if you hit with the strike and the target is not \glossterm{bloodied}, it takes additional damage equal to the damage you dealt with the strike.
-            \par At 6th level, if you hit with the strike, the target continues taking the same damage at the end of each \glossterm{action phase} until it becomes \glossterm{bloodied}.
-            This is a \glossterm{condition}, and can be removed by abilities that remove conditions.
-            At 12th level, you gain a \plus1d bonus to damage with the strike.
-            At 18th level, the damage bonus increases to \plus2d.
+                At 6th level, you gain a \plus1 bonus to accuracy on the strike.
+                At 12th level, the accuracy bonus increases to \plus2.
+                At 18th level, the accuracy bonus increases to \plus3.
+            \end{ability}
 
-            \subcf{Sweeping Strike} Make a melee \glossterm{strike} with a slashing or bludgeoning weapon against each of up to three creatures you \glossterm{threaten}.
-            You take a \minus1d penalty to \glossterm{strike damage} with each strike.
-            \par At 6th level, if you missed all of your targets, you regain the action point spent to use this ability.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, the damage penalty is removed.
+            \begin{ability}{Leaping Strike}
+                You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to your land speed (see \pcref{Leap}).
+                If you use this ability during the \glossterm{action phase}, you can also make a \glossterm{strike} from your new location during the \glossterm{delayed action phase}.
 
-            \subcf{Thunderous Shout} Make a Constitution vs. Fortitude attack against all creatures and objects in an \areamed cone-shaped burst from you.
-            Your \glossterm{power} with this ability is equal to your Constitution.
-            Each target takes sonic \glossterm{standard damage} -1d on a hit.
-            \par At 6th level, a hit also makes each target \glossterm{deafened} as a \glossterm{condition}.
-            At 12th level, the area increases to \arealarge.
-            At 18th level, the damage increases by \plus1d.
+                At 6th level, you gain a \plus1d bonus to damage with the strike per 10 feet of height you travelled downward towards your foe during the leap, up to a maximum of \plus2d.
+                At 12th level, the maximum damage bonus increases to \plus4d.
+                At 18th level, the maximum damage bonus increases to \plus6d.
+            \end{ability}
 
-            \subcf{Whirlwind Spin} Make a melee \glossterm{strike} with a slashing weapon against all creatures you \glossterm{threaten}.
-            You take a \minus2d penalty to \glossterm{strike damage} with each strike.
-            \par At 6th level, the damage penalty is reduced to \minus1d.
-            At 12th level, the damage penalty is removed.
-            At 18th level, you gain a \plus1d bonus to damage with the strike.
+            \begin{ability}{Potent Maneuver}
+                You use a \glossterm{combat maneuver} with a \plus3 bonus to accuracy.
+
+                At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, the accuracy bonus increases to \plus4.
+            \end{ability}
+
+            \begin{ability}{Power Attack}
+                Make a \glossterm{strike} with a \plus2d bonus to damage.
+
+                At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, the damage bonus increases to \plus3d.
+            \end{ability}
+
+            \begin{ability}{Rapid Assault}
+                Make a \glossterm{strike} against a creature.
+                If you use this ability during the \glossterm{action phase}, you can make another strike during the \glossterm{delayed action phase}.
+                You take a \minus2 penalty to accuracy on both strikes.
+
+                At 6th level, if you missed all of your targets, you regain the action point spent to use this ability.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, the accuracy penalty is reduced to \minus1.
+            \end{ability}
+
+            \begin{ability}{Reaping Charge}
+                You can move up to your movement speed in a straight line.
+                Choose either the right or left side of the line.
+                You can make a melee \glossterm{strike} with a slashing or bludgeoning weapon against each creature and object on that side of the line that you \glossterm{threaten} at any point during your movement, except for the space you start in and the space you end in.
+                You take a \minus2d penalty to damage on each strike.
+
+                At 6th level, you do not have to choose a side of the line.
+                Instead, you can attack creatures and objects that you threaten at any point during your movement.
+                At 12th level, the damage penalty is reduced to \minus1d.
+                At 18th level, the damage penalty is removed.
+            \end{ability}
+
+            \begin{ability}{Strip the Flesh}
+                Make a \glossterm{strike} with a slashing weapon.
+                At the end of the current phase, if you hit with the strike and the target is not \glossterm{bloodied}, it takes additional damage equal to the damage you dealt with the strike.
+
+                At 6th level, if you hit with the strike, the target continues taking the same damage at the end of each \glossterm{action phase} until it becomes \glossterm{bloodied}.
+                This is a \glossterm{condition}, and can be removed by abilities that remove conditions.
+                At 12th level, you gain a \plus1d bonus to damage with the strike.
+                At 18th level, the damage bonus increases to \plus2d.
+            \end{ability}
+
+            \begin{ability}{Sweeping Strike}
+                Make a melee \glossterm{strike} with a slashing or bludgeoning weapon against each of up to three creatures you \glossterm{threaten}.
+                You take a \minus1d penalty to \glossterm{strike damage} with each strike.
+
+                At 6th level, if you missed all of your targets, you regain the action point spent to use this ability.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, the damage penalty is removed.
+            \end{ability}
+
+            \begin{ability}{Thunderous Shout}[\glossterm{Sonic}]
+                Make a Constitution vs. Fortitude attack against all creatures and objects in an \areamed cone-shaped burst from you.
+                Your \glossterm{power} with this ability is equal to your Constitution.
+                Each target takes sonic \glossterm{standard damage} -1d on a hit.
+
+                At 6th level, a hit also makes each target \glossterm{deafened} as a \glossterm{condition}.
+                At 12th level, the area increases to \arealarge.
+                At 18th level, the damage increases by \plus1d.
+            \end{ability}
+
+            \begin{ability}{Whirlwind Spin}
+                Make a melee \glossterm{strike} with a slashing weapon against all creatures you \glossterm{threaten}.
+                You take a \minus2d penalty to \glossterm{strike damage} with each strike.
+
+                At 6th level, the damage penalty is reduced to \minus1d.
+                At 12th level, the damage penalty is removed.
+                At 18th level, you gain a \plus1d bonus to damage with the strike.
+            \end{ability}
         }
 
         \cf{Bbn}[3]{Athletic Prowess} You gain two additional skill points that must be spent on Strength or Dexterity-based barbarian class skills.
@@ -515,25 +558,30 @@ This choice determines a great deal about your character's abilities.
         \subsubsection{Air}
             \parhead{Gift} You add the Jump skill to your class skill list and gain a \plus5 bonus to Jump checks (see \pcref{Jump}).
             \parhead{Aspect} You gain a \glossterm{glide speed} equal to your land speed (see \pcref{Gliding}).
-            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            If you do, you can speak with and command air within \rnglong range.
-            You can ask the air simple questions and understand its responses.
-            If you command the air to perform a task, it will do so do the best of its ability until this effect ends.
-            You cannot compel the air to move faster than 50 mph.
+            \parhead{Essence} You gain the \textit{speak with air} ability.
+            \begin{ability}{Speak with Air}[\glossterm{Sustain} (minor)]
+                As a standard action, you can spend an \glossterm{action point} to use this ability.
+                If you do, you can speak with and command air within \rnglong range.
+                You can ask the air simple questions and understand its responses.
+                If you command the air to perform a task, it will do so do the best of its ability until this effect ends.
+                You cannot compel the air to move faster than 50 mph.
 
-            This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
-            After you use this ability on a particular area of air, you cannot use it again on that same area for 24 hours.
+                After you use this ability on a particular area of air, you cannot use it again on that same area for 24 hours.
+            \end{ability}
             \parhead{Mastery} You gain a \glossterm{fly speed} with good \glossterm{maneuverability} equal to your land speed (see \pcref{Flying}).
 
         \subsubsection{Chaos}
             \parhead{Gift} Whenever you roll a 10 on a check on your first attempt, you gain a \plus5 bonus to the check.
             \parhead{Aspect} If you roll a 1 on an attack roll, it explodes (see \pcref{Exploding Attacks}).
             This does not affect additional dice rolled if the attack roll explodes.
-            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            If you do, an improbable event occurs within \rnglong range.
-            You can specify in general terms what you want to happen, such as ``Make the bartender leave the bar''.
-            You cannot control the exact nature of the event, though it always beneficial for you in some way.
-            After using this ability, you cannot use it again for an hour.
+            \parhead{Essence} You gain the \textit{twist of fate} ability.
+            \begin{ability}{Twist of Fate}
+                As a standard action, you can spend an \glossterm{action point} to use this ability.
+                If you do, an improbable event occurs within \rnglong range.
+                You can specify in general terms what you want to happen, such as ``Make the bartender leave the bar''.
+                You cannot control the exact nature of the event, though it always beneficial for you in some way.
+                After using this ability, you cannot use it again for an hour.
+            \end{ability}
             \parhead{Mastery} Whenever you make an attack roll, if it misses, you can reroll.
             You must accept the second result.
 
@@ -553,10 +601,13 @@ This choice determines a great deal about your character's abilities.
         \subsubsection{Destruction}
             \parhead{Gift} Your attacks ignore an amount of \glossterm{hardness} and \glossterm{damage reduction} equal to your \textit{divine power}.
             \parhead{Aspect} You gain a \plus1d bonus to \glossterm{strike damage}.
-            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            If you do, you make a \textit{divine power} vs. Fortitude attack against all unattended objects in a \arealarge radius.
-            You may freely exclude any number of 5-ft\. cubes from the area, as long as the resulting area is still contiguous.
-            On a hit, if a target's \glossterm{hardness} is lower than your divine power, it crumbles into a fine power and is irreperably \glossterm{broken}.
+            \parhead{Essence} You gain the \textit{lay waste} ability.
+            \begin{ability}{Lay Waste}
+                As a standard action, you can spend an \glossterm{action point} to use this ability.
+                If you do, you make a \textit{divine power} vs. Fortitude attack against all unattended objects in a \arealarge radius.
+                You may freely exclude any number of 5-ft\. cubes from the area, as long as the resulting area is still contiguous.
+                On a hit, if a target's \glossterm{hardness} is lower than your divine power, it crumbles into a fine power and is irreperably \glossterm{broken}.
+            \end{ability}
             \parhead{Mastery} Whenever you deal damage to a creature or object, its damage reduction and hardness (if any) are reduced by an amount equal to your \textit{divine power}.
             In addition, Fortitude defense is reduced by 2.
             This is a \glossterm{condition}, and lasts until it is removed.
@@ -566,14 +617,16 @@ This choice determines a great deal about your character's abilities.
         \subsubsection{Earth}
             \parhead{Gift} You gain a \plus2 bonus to Fortitude defense.
             \parhead{Aspect} You gain \glossterm{damage reduction} equal to your \textit{divine power} against damage from \glossterm{physical attacks}.
-            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            If you do, you can speak with and command earth within \rnglong range.
-            You can ask the earth simple questions and understand its responses.
-            If you command the earth to perform a task, it will do so do the best of its ability until this effect ends.
-            You cannot compel the earth to move faster than 10 feet per round.
+            \parhead{Essence} You gain the \textit{speak with earth} ability.
+            \begin{ability}{Speak with Earth}[\glossterm{Sustain} (minor)]
+                As a standard action, you can spend an \glossterm{action point} to use this ability.
+                If you do, you can speak with and command earth within \rnglong range.
+                You can ask the earth simple questions and understand its responses.
+                If you command the earth to perform a task, it will do so do the best of its ability until this effect ends.
+                You cannot compel the earth to move faster than 10 feet per round.
 
-            This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
-            After you use this ability on a particular area of earth, you cannot use it again on that same area for 24 hours.
+                After you use this ability on a particular area of earth, you cannot use it again on that same area for 24 hours.
+            \end{ability}
             \parhead{Mastery} As long as you are on solid ground, you gain a \plus1 bonus to all defenses.
             In addition, your damage reduction from this domain's aspect protects you against all damage, rather than only against damage from physical attacks.
 
@@ -584,13 +637,15 @@ This choice determines a great deal about your character's abilities.
             You take the remaining half of the damage, and suffer any non-damaging effects of the attack normally.
             \par You may learn which attacks hit you in the current phase before deciding which attacks to redirect damage from, but not how much damage they would do (or any other effects they might have).
             \parhead{Aspect} You can use this domain's domain gift to redirect damage to any willing creature within \rngclose range.
-            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            If you do, make a \textit{divine power} vs. Mental attack against a creature within \rngmed range.
-            On a hit, the target takes an evil action as soon as it can.
-            You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
+            \parhead{Essence} You gain the \textit{compel evil} ability.
+            \begin{ability}{Compel Evil}[\glossterm{Compulsion}, \glossterm{Mind}]
+                As a standard action, you can spend an \glossterm{action point} to use this ability.
+                If you do, make a \textit{divine power} vs. Mental attack against a creature within \rngmed range.
+                On a hit, the target takes an evil action as soon as it can.
+                You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
 
-            Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
-            This is a \glossterm{Compulsion}, \glossterm{Mind} ability.
+                Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
+            \end{ability}
             \parhead{Mastery} You can use your domain gift to redirect damage to unwilling creatures.
             You cannot use this ability to redirect damage to the same unwilling creature more than once between \glossterm{short rests}.
 
@@ -599,16 +654,19 @@ This choice determines a great deal about your character's abilities.
             \parhead{Aspect} Whenever you would take fire damage, you heal that many hit points instead.
             % TODO: define those terms?
             This applies before any damage reduction and damage immunity abilities you have.
-            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            If you do, you can speak with and command fire within \rnglong range.
-            You can ask the fire simple questions and understand its responses.
-            If you command the fire to perform a task, it will do so do the best of its ability until this effect ends.
-            You cannot compel the fire to move farther than 30 feet in a single round.
-            Fire that ends the round on non-combustable materials usually goes out, depending on the circumstances.
+            \parhead{Essence} You gain the \textit{speak with fire} ability.
+            \begin{ability}{Speak with Fire}
+                As a standard action, you can spend an \glossterm{action point} to use this ability.
+                If you do, you can speak with and command fire within \rnglong range.
+                You can ask the fire simple questions and understand its responses.
+                If you command the fire to perform a task, it will do so do the best of its ability until this effect ends.
+                You cannot compel the fire to move farther than 30 feet in a single round.
+                Fire that ends the round on non-combustable materials usually goes out, depending on the circumstances.
 
-            This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
-            After you use this ability on a particular area of fire, you cannot use it again on that same area for 24 hours.
-            % TODO: What does an ``area of fire'' mean?
+                This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
+                After you use this ability on a particular area of fire, you cannot use it again on that same area for 24 hours.
+                % TODO: What does an ``area of fire'' mean?
+            \end{ability}
             \parhead{Mastery} Whenever you deal fire damage to a creature, that creature becomes \ignited as a \glossterm{condition}.
 
         \subsubsection{Good}
@@ -618,49 +676,58 @@ This choice determines a great deal about your character's abilities.
             The protected creature takes the remaining half of the damage, and suffers any non-damaging effects of the attack normally.
             \par You may learn which attacks hit you and your allies in the current phase before deciding which attacks to redirect damage from, but not how much damage they would do (or any other effects they might have).
             \parhead{Aspect} You can use this domain's domain gift to redirect damage from any creature within \rngclose range.
-            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            If you do, make a \textit{divine power} vs. Mental attack against a creature within \rngmed range.
-            On a hit, the target takes an good action as soon as it can.
-            You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
+            \parhead{Essence} You gain the \textit{compel good} ability.
+            \begin{ability}{Compel Good}[\glossterm{Compulsion}, \glossterm{Mind}]
+                As a standard action, you can spend an \glossterm{action point} to use this ability.
+                If you do, make a \textit{divine power} vs. Mental attack against a creature within \rngmed range.
+                On a hit, the target takes an good action as soon as it can.
+                You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
 
-            Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
-            This is a \glossterm{Compulsion}, \glossterm{Mind} ability.
+                Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
+            \end{ability}
             \parhead{Mastery} Whenever you redirect damage with this domain's domain gift, you can redirect all effects of the attack to you instead of only half the damage.
 
         \subsubsection{Knowledge}
             \parhead{Gift} You add all Knowledge skills to your cleric class skill list.
             In addition, you gain two skill points which must be spent on Knowledge skills.
             \parhead{Aspect} Your extensive knowledge of all methods of attack and defense grants you a \plus1 bonus to all defenses.
-            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            If you do, you make a Knowledge check of any kind with a bonus equal to your \textit{divine power}.
-            You and all willing creatures within a \arealarge radius learn the results of your check.
-            Creatures believe the information gained in this way to be true as if they it had seen it with their own eyes.
+            \parhead{Essence} You gain the \textit{share knowledge} ability.
+            \begin{ability}{Share Knowledge}
+                As a standard action, you can spend an \glossterm{action point} to use this ability.
+                If you do, you make a Knowledge check of any kind with a bonus equal to your \textit{divine power}.
+                You and all willing creatures within a \arealarge radius learn the results of your check.
+                Creatures believe the information gained in this way to be true as if they it had seen it with their own eyes.
 
-            You cannot alter the knowledge you gain with this check in any way, such as by adding or withholding information.
+                You cannot alter the knowledge you gain with this check in any way, such as by adding or withholding information.
+            \end{ability}
             \parhead{Mastery} You gain a \plus1 bonus to accuracy with all attacks.
 
         \subsubsection{Law}
             \parhead{Gift} You gain a \plus2 bonus to Mental defense.
             % Clarify - does this apply to exploding dice?
             \parhead{Aspect} Whenever you roll a 1 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
-            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            If you do, make a \textit{divine power} vs. Mental attack against all creatures within a \arealarge radius.
-            On a hit, as a \glossterm{condition}, each target is unable to break the laws that apply in the area, and any attempt to do so simply fails.
-            The laws which are applied are those which are most appropriate for the area, regardless of whether you or any other creature know those laws.
-            In areas under ambiguous or nonexistent government, this ability may have unexpected effects, or it may have no effect at all.
+            \parhead{Essence} You gain the \textit{compel law} ability.
+            \begin{ability}{Compel Law}[\glossterm{Compulsion}, \glossterm{Mind}]
+                As a standard action, you can spend an \glossterm{action point} to use this ability.
+                If you do, make a \textit{divine power} vs. Mental attack against all creatures within a \arealarge radius.
+                On a hit, as a \glossterm{condition}, each target is unable to break the laws that apply in the area, and any attempt to do so simply fails.
+                The laws which are applied are those which are most appropriate for the area, regardless of whether you or any other creature know those laws.
+                In areas under ambiguous or nonexistent government, this ability may have unexpected effects, or it may have no effect at all.
 
-            When you use this ability, you also gain the condition.
-            If this condition is removed from you, it is also removed from all other affected creatures.
-            This is a \glossterm{Compulsion}, \glossterm{Mind} ability.
-
+                When you use this ability, you also gain the condition.
+                If this condition is removed from you, it is also removed from all other affected creatures.
+            \end{ability}
             \parhead{Mastery} Whenever you roll less than a 5 on an \glossterm{attack roll}, it is treated as if you had rolled a 5.
 
         \subsubsection{Life}
             \parhead{Gift} You gain additional hit points equal to your \textit{divine power}.
             \parhead{Aspect} All of your \glossterm{magical} spells and abilities can heal \glossterm{vital damage} as easily as they heal hit points.
-            \parhead{Essence} As a standard action, you can spend all of your remaining \glossterm{action points} (minimum 1) to use this ability.
-            If you do, choose a dead creature adjacent to you.
-            If it was dead for no more than 5 minutes, it is restored to life, as the \ritual{resurrection} ritual.
+            \parhead{Essence} You gain the \textit{revivify} ability.
+            \begin{ability}{Revivify}
+                As a standard action, you can spend all of your remaining \glossterm{action points} (minimum 1) to use this ability.
+                If you do, choose a dead creature adjacent to you.
+                If it was dead for no more than 5 minutes, it is restored to life, as the \ritual{resurrection} ritual.
+            \end{ability}
             % Need special text to clarify that it is affected by the Aspect?
             \parhead{Mastery} At the end of each \glossterm{action phase}, you heal hit points equal to your \textit{divine power}.
 
@@ -683,9 +750,12 @@ This choice determines a great deal about your character's abilities.
             \parhead{Gift} You add Knowledge (geography), Survival, and Swim to your cleric class skill list.
             In addition, you gain two skill points which must be spent on any combination of those skills.
             \parhead{Aspect} You gain a \plus30 foot bonus to your speed in all movement modes, up to a maximum of double your normal speed.
-            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            If you do, you teleport up to 1 mile in any direction.
-            You do not need \glossterm{line of sight} or \glossterm{line of effect} to your destination, but you must be able to clearly visualize it.
+            \parhead{Essence} You gain the \textit{dimensional jaunt} ability.
+            \begin{ability}{Dimensional Jaunt}[\glossterm{Teleportation}]
+                As a standard action, you can spend an \glossterm{action point} to use this ability.
+                If you do, you teleport up to 1 mile in any direction.
+                You do not need \glossterm{line of sight} or \glossterm{line of effect} to your destination, but you must be able to clearly visualize it.
+            \end{ability}
             \parhead{Mastery} Whenever you move, you can teleport the same distance instead.
             This does not change the total distance you can move, but you can teleport in any direction, including vertically.
 
@@ -696,46 +766,51 @@ This choice determines a great deal about your character's abilities.
             \parhead{Gift} You add Bluff, Disguise, and Stealth to your cleric class skill list.
             In addition, you gain two skill points which must be spent on any combination of those skills.
             \parhead{Aspect} You gain a \plus2 bonus to Bluff, Disguise, and Stealth.
-            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            If you do, make a \textit{divine power} vs. Mental attack against a creature within \rngmed range.
-            You must also choose a belief that the target has.
-            The belief may be a lie that you told it, or even a simple misunderstanding (such as believing a hidden creature is not present in a room).
-            If the creature does not already hold the chosen belief, this ability automatically fails.
+            \parhead{Essence} You gain the \textit{compel belief} ability.
+            \begin{ability}{Compel Belief}[\glossterm{Compulsion}, \glossterm{Mind}, \glossterm{Sustain} (minor)]
+                As a standard action, you can spend an \glossterm{action point} to use this ability.
+                If you do, make a \textit{divine power} vs. Mental attack against a creature within \rngmed range.
+                You must also choose a belief that the target has.
+                The belief may be a lie that you told it, or even a simple misunderstanding (such as believing a hidden creature is not present in a room).
+                If the creature does not already hold the chosen belief, this ability automatically fails.
 
-            On a hit, the target continues to maintain the chosen belief, regardless of any evidence to the contrary.
-            It will interpret any evidence that the falsehood is incorrect to be somehow wrong -- an illusion, a conspiracy to decieve it, or any other reason it can think of to continue believing the falsehood.
-            At the end of the effect, the creature can decide whether it believes the falsehood or not, as normal.
-
-            This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
-            This ability is a \glossterm{Delusion}, \glossterm{Mind} ability.
+                On a hit, the target continues to maintain the chosen belief, regardless of any evidence to the contrary.
+                It will interpret any evidence that the falsehood is incorrect to be somehow wrong -- an illusion, a conspiracy to decieve it, or any other reason it can think of to continue believing the falsehood.
+                At the end of the effect, the creature can decide whether it believes the falsehood or not, as normal.
+            \end{ability}
             \parhead{Mastery} You are undetectable by Divination spells and effects.
             They cannot detect your presence, sounds you make, or any actions you take.
 
         \subsubsection{War}
             \parhead{Gift} You gain proficiency with heavy armor, tower shields, and an additional weapon group of your choice.
             \parhead{Aspect} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks}.
-            \parhead{Essence} As a \glossterm{minor action}, you can spend an \glossterm{action point} to use this ability.
-            % TODO: wording
-            If you do, one spell you cast this phase gains one of the following effects:
-            \begin{itemize}
-                \item Legion: If the spell would normally affect five or more specific targets it instead affects five times that many targets.
-                \item Selective: If the spell has an area, it has no effect on your allies in the area.
-                \item Widened: If the spell has an area, the size of the area is doubled.
-            \end{itemize}
+            \parhead{Essence} You gain the \textit{battlefield magic} ability.
+            \begin{ability}{Battlefield Magic}
+                As a \glossterm{minor action}, you can spend an \glossterm{action point} to use this ability.
+                % TODO: wording
+                If you do, one spell you cast this phase gains one of the following effects:
+                \begin{itemize}
+                    \item Legion: If the spell would normally affect five or more specific targets it instead affects five times that many targets.
+                    \item Selective: If the spell has an area, it has no effect on your allies in the area.
+                    \item Widened: If the spell has an area, the size of the area is doubled.
+                \end{itemize}
+            \end{ability}
             \parhead{Mastery} You and all allies within a \arealarge radius emanation of you gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks}.
 
         \subsubsection{Water}
             \parhead{Gift} You add Swim to your cleric class skill list and gain a \plus5 bonus to Swim checks.
             \parhead{Aspect} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
             You also gain a \glossterm{swim speed} equal to your land speed.
-            \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            If you do, you can speak with and command water within range.
-            You can ask the water simple questions and understand its responses.
-            If you command the water to perform a task, it will do so do the best of its ability until this effect ends.
-            You cannot compel the water to move faster than 30 feet per round.
+            \parhead{Essence} You gain the \textit{speak with water} ability.
+            \begin{ability}{Speak with Water}[\glossterm{Sustain} (minor)]
+                As a standard action, you can spend an \glossterm{action point} to use this ability.
+                If you do, you can speak with and command water within range.
+                You can ask the water simple questions and understand its responses.
+                If you command the water to perform a task, it will do so do the best of its ability until this effect ends.
+                You cannot compel the water to move faster than 30 feet per round.
 
-            This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
-            After you use this ability on a particular area of water, you cannot use it again on that same area for 24 hours.
+                After you use this ability on a particular area of water, you cannot use it again on that same area for 24 hours.
+            \end{ability}
             \parhead{Mastery}
             Whenever you move, you can transform yourself into a rushing flow of water with a volume roughly equal to your normal volume until your movement is complete.
             In this form, you may move wherever water could go, you cannot take other actions, such as jumping, attacking, or casting spells.
@@ -752,6 +827,7 @@ This choice determines a great deal about your character's abilities.
             % Does this even make sense?
             \parhead{Aspect} When you gain this ability, you choose one wild aspect ability, as if you were a druid of a level equal to your cleric level (see Wild Aspect, \pref{Drd:Wild Aspect}).
             As a standard action, you can spend an \glossterm{action point} to embody that wild aspect for 1 hour.
+            % TODO: essence, mastery
 
         \subsubsection{Ex-Clerics}
             If you grossly violate the code of conduct required by your deity, you lose all spells and magical cleric class abilities.
@@ -892,11 +968,11 @@ This choice determines a great deal about your character's abilities.
         \subcf{Animal Affinity}
         You gain a \plus2 bonus to Creature Handling and Ride checks.
         \subcf{Armaments of the Bear}
-        Your mouth and hands transform, allowing you to perform bite and claw attacks.
-        The bite attack deals \plus0d damage for a Medium creature, and the claws deal \minus1d damage.
+        Your mouth and hands transform, granting you bite and claw \glossterm{natural weapons}.
+        The bite deals \plus0d damage for a Medium creature, and the claws deal \minus1d damage.
         \subcf{Gore}
-        Your head transforms, allowing you to perform a gore attack.
-        The attack deals \plus0d damage for a Medium druid.
+        Your head transforms, granting you a gore \glossterm{natural weapon}.
+        The weapon deals \plus0d damage for a Medium druid.
         In addition, you gain a \plus2 bonus to accuracy with shove attacks (see \pcref{Shove}).
         \subcf{Monkey Climb}
         You gain a \glossterm{climb speed} equal to your land speed.
@@ -908,7 +984,7 @@ This choice determines a great deal about your character's abilities.
         If you already have darkvision, you increase its range by 50 feet.
         \subcf{Woodland Stride}
         You may move through any sort of undergrowth (such as natural thorns, briars, overgrown areas, and similar terrain) at your normal speed and without taking damage or suffering any other impairment.
-        The plants bend of their own volition to allow the druid to pass.
+        The plants bend of their own volition to allow you to pass.
         However, plants magically manipulated to impede motion still affect your movement.
 
         \subcf{7th -- A Thousand Faces}
@@ -916,13 +992,13 @@ This choice determines a great deal about your character's abilities.
         \subcf{7th -- Constrict}
         Your body transforms, improving your grappling prowess.
         You gain a \plus2 bonus to accuracy with grapple attacks (see \pcref{Grapple}).
-        In addition, you gain a constrict attack.
-        This attack deals \plus1d damage for a Medium druid, but it can only be used against a foe you aregrappling with.
+        In addition, you gain a constrict weapon.
+        This weapon deals \plus1d damage for a Medium druid, but it can only be used against a foe you aregrappling with.
         \subcf{7th -- Hawk}
         You grow wings, granting your a glide speed equal to your land speed.
         See \pcref{Gliding}, for more details.
-        In addition, your feet transform, allowing you to perform a talon attack.
-        The attack deals \minus1d damage for a Medium creature.
+        In addition, your feet transform, granting you a talon \glossterm{natural weapon}.
+        The weapon deals \minus1d damage for a Medium creature.
         \subcf{7th -- Lope}
         You gain the ability to move on all four limbs.
         When doing so, you gain a \plus30 foot bonus to your land speed, up to a maximum of double your original speed.
@@ -936,7 +1012,7 @@ This choice determines a great deal about your character's abilities.
         \subcf{7th -- Slither}
         You gain a \glossterm{climb speed} equal to your land speed.
         You do not need to use your hands to climb in this way.
-        In addition, you gain a bite attack that deals \plus0d damage for a Medium druid.
+        In addition, you gain a bite \glossterm{natural weapon} that deals \plus0d damage for a Medium druid.
         % \subcf{7th -- Spikes}
         % Whenever a creature adjacent to the druid makes a physical attack against you, the attacking creature takes 1d4 piercing damage \plus1d per two nature power.
         % A creature can only be dealt damage by this effect once per round.
@@ -969,7 +1045,7 @@ This choice determines a great deal about your character's abilities.
             \item Third failure: the the condition is removed, causing any lingering effects from the poison to end.
         \end{itemize}
         % TODO poison stacking rules
-        \par In addition, you gains a bite attack that deals \plus0d damage for a Medium druid.
+        \par In addition, you gains a bite \glossterm{natural weapon} that deals \plus0d damage for a Medium druid.
 
         \subcf{15th -- Natural Renewal}
         At the end of each \glossterm{action phase}, you heal hit points equal to your \textit{nature power}.
@@ -980,7 +1056,7 @@ This choice determines a great deal about your character's abilities.
         % TODO: standard flight limitation
 
         \subcf{19th -- Solar Radiance}
-        The druid continuously radiates bright light out to a 500 foot radius (and shadowy illumination for an additional 500 feet).
+        You continuously radiate bright light out to a 500 foot radius (and shadowy illumination for an additional 500 feet).
         The illumination is so bright that you become hard to look at.
         Any creature making a \glossterm{strike} against you from within the radius of bright light becomes \dazzled as a \glossterm{condition} after the attack.
 
@@ -1208,103 +1284,146 @@ This choice determines a great deal about your character's abilities.
         Choose two \textit{martial exertions} from the list below.
         As a standard action, you can spend an \glossterm{action point} to use a \textit{martial exertion} ability.
         {
-            \subcf{Brace for Impact} You take half damage from all attacks.
-            This halving is applied before damage reduction and similar abilities.
-            This ability lasts until the end of the next round.
-            \par At 6th level, you can \glossterm{sustain} this ability as a standard action.
-            At 12th level, you also gain damage reduction equal to your level.
-            At 18th level, the damage reduction increases to twice your level.
+            \begin{ability}{Brace for Impact}
+                You take half damage from all attacks.
+                This halving is applied before damage reduction and similar abilities.
+                This ability lasts until the end of the next round.
 
-            \subcf{Certain Strike} You make a \glossterm{strike} with a \plus2 bonus to accuracy.
-            \par At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, the accuracy bonus increases to \plus3.
+                At 6th level, you can \glossterm{sustain} this ability as a standard action.
+                At 12th level, you also gain damage reduction equal to your level.
+                At 18th level, the damage reduction increases to twice your level.
+            \end{ability}
 
-            \subcf{Challenge} Make a \glossterm{strike}.
-            In addition to the strike's normal effects, you also compare the attack result against the target's Mental defense.
-            This is a \glossterm{Mind} ability.
-            As a \glossterm{condition}, the target suffers a \minus3 penalty to accuracy on all attacks that do not include you as a target, or a \minus6 penalty on a critical hit.
-            This condition is removed if you are \glossterm{defeated}.
-            \par At 6th level, you gain a \plus1 bonus to accuracy on the strike.
-            At 12th level, the accuracy bonus increases to \plus2.
-            At 18th level, the accuracy bonus increases to \plus3.
+            \begin{ability}{Certain Strike}
+                You make a \glossterm{strike} with a \plus2 bonus to accuracy.
 
-            \subcf{Counterattack} Make a \glossterm{strike}.
-            If the target attacked you in the same phase, you gain a \plus3d bonus to damage.
-            \par At 6th level, if the target did not attack you in the same phase, you regain the action point spent to use this ability.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, the damage bonus increases to \plus4d.
+                At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, the accuracy bonus increases to \plus3.
+            \end{ability}
 
-            \subcf{Daunting Blow} Make a \glossterm{strike}.
-            In addition to the strike's normal effects, you also compare the attack result against the target's Mental defense.
-            This is a \glossterm{Mind} ability.
-            As a \glossterm{condition}, the target suffers a \minus3 penalty to defenses against your attacks, or a \minus6 penalty on a critical hit.
-            \par At 6th level, you gain a \plus1 bonus to accuracy on the strike.
-            At 12th level, the accuracy bonus increases to \plus2.
-            At 18th level, the accuracy bonus increases to \plus3.
+            \begin{ability}{Challenge}[\glossterm{Mind}]
+                Make a \glossterm{strike}.
+                In addition to the strike's normal effects, you also compare the attack result against the target's Mental defense.
+                As a \glossterm{condition}, the target suffers a \minus3 penalty to accuracy on all attacks that do not include you as a target, or a \minus6 penalty on a critical hit.
+                This condition is removed if you are \glossterm{defeated}.
 
-            \subcf{Gut Punch} Make a \glossterm{strike} with a bludgeoning weapon.
-            In addition to the strike's normal effects, you also compare the attack result against the target's Fortitude defense.
-            As a \glossterm{condition}, the target is \sickened on a hit or \nauseated on a critical hit.
-            \par At 6th level, you gain a \plus1 bonus to accuracy on the strike.
-            At 12th level, the accuracy bonus increases to \plus2.
-            At 18th level, the accuracy bonus increases to \plus3.
+                At 6th level, you gain a \plus1 bonus to accuracy on the strike.
+                At 12th level, the accuracy bonus increases to \plus2.
+                At 18th level, the accuracy bonus increases to \plus3.
+            \end{ability}
 
-            \subcf{Penetrating Strike} Make a \glossterm{strike} with a piercing weapon.
-            The attack is made against the target's Reflex defense instead of its Armor defense.
-            \par At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, you gain a \plus1d bonus to damage with the strike.
+            \begin{ability}{Counterattack}
+                Make a \glossterm{strike}.
+                If the target attacked you in the same phase, you gain a \plus3d bonus to damage.
 
-            \subcf{Potent Maneuver} You use a \glossterm{combat maneuver} with a \plus3 bonus to accuracy.
-            \par At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, the accuracy bonus increases to \plus4.
+                At 6th level, if the target did not attack you in the same phase, you regain the action point spent to use this ability.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, the damage bonus increases to \plus4d.
+            \end{ability}
 
-            \subcf{Power Attack} Make a \glossterm{strike} with a \plus2d bonus to damage.
-            \par At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, the damage bonus increases to \plus3d.
+            \begin{ability}{Daunting Blow}[\glossterm{Mind}]
+                Make a \glossterm{strike}.
+                In addition to the strike's normal effects, you also compare the attack result against the target's Mental defense.
+                As a \glossterm{condition}, the target suffers a \minus3 penalty to defenses against your attacks, or a \minus6 penalty on a critical hit.
 
-            \subcf{Rally the Troops} You and all allies within an \areamed radius can each remove one \glossterm{condition}.
-            \par At 6th level, the area increases to \arealarge.
-            At 12th level, each target can instead remove two conditions.
-            At 18th level, each target can instead remove any number of conditions.
+                At 6th level, you gain a \plus1 bonus to accuracy on the strike.
+                At 12th level, the accuracy bonus increases to \plus2.
+                At 18th level, the accuracy bonus increases to \plus3.
+            \end{ability}
 
-            \subcf{Rapid Assault} Make a \glossterm{strike} against a creature.
-            If you use this ability during the \glossterm{action phase}, you can make another strike during the \glossterm{delayed action phase}.
-            You take a \minus2 penalty to accuracy on both strikes.
-            \par At 6th level, if you missed all of your targets, you regain the action point spent to use this ability.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, the accuracy penalty is reduced to \minus1.
+            \begin{ability}{Gut Punch}
+                Make a \glossterm{strike} with a bludgeoning weapon.
+                In addition to the strike's normal effects, you also compare the attack result against the target's Fortitude defense.
+                As a \glossterm{condition}, the target is \sickened on a hit or \nauseated on a critical hit.
 
-            \subcf{Reaping Charge} You can move up to your movement speed in a straight line.
-            Choose either the right or left side of the line.
-            You can make a melee \glossterm{strike} with a slashing or bludgeoning weapon against each creature and object on that side of the line that you \glossterm{threaten} at any point during your movement, except for the space you start in and the space you end in.
-            You take a \minus2d penalty to damage on each strike.
-            \par At 6th level, you do not have to choose a side of the line.
-            Instead, you can attack creatures and objects that you threaten at any point during your movement.
-            At 12th level, the damage penalty is reduced to \minus1d.
-            At 18th level, the damage penalty is removed.
+                At 6th level, you gain a \plus1 bonus to accuracy on the strike.
+                At 12th level, the accuracy bonus increases to \plus2.
+                At 18th level, the accuracy bonus increases to \plus3.
+            \end{ability}
 
-            \subcf{Strip the Flesh} Make a \glossterm{strike} with a slashing weapon.
-            At the end of the current phase, if you hit with the strike and the target is not \glossterm{bloodied}, it takes additional damage equal to the damage you dealt with the strike.
-            \par At 6th level, if you hit with the strike, the target continues taking the same damage at the end of each \glossterm{action phase} until it becomes \glossterm{bloodied}.
-            This is a \glossterm{condition}, and can be removed by abilities that remove conditions.
-            At 12th level, you gain a \plus1d bonus to damage with the strike.
-            At 18th level, the damage bonus increases to \plus2d.
+            \begin{ability}{Penetrating Strike}
+                Make a \glossterm{strike} with a piercing weapon.
+                The attack is made against the target's Reflex defense instead of its Armor defense.
 
-            \subcf{Sweeping Strike} Make a melee \glossterm{strike} with a slashing or bludgeoning weapon against each of up to three creatures you \glossterm{threaten}.
-            You take a \minus1d penalty to \glossterm{strike damage} with each strike.
-            \par At 6th level, if you missed all of your targets, you regain the action point spent to use this ability.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, the damage penalty is removed.
+                At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, you gain a \plus1d bonus to damage with the strike.
+            \end{ability}
 
-            \subcf{Whirlwind Spin} Make a melee \glossterm{strike} with a slashing weapon against all creatures you \glossterm{threaten}.
-            You take a \minus2d penalty to \glossterm{strike damage} with each strike.
-            \par At 6th level, the damage penalty is reduced to \minus1d.
-            At 12th level, the damage penalty is removed.
-            At 18th level, you gain a \plus1d bonus to damage with the strike.
+            \begin{ability}{Potent Maneuver}
+                You use a \glossterm{combat maneuver} with a \plus3 bonus to accuracy.
+
+                At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, the accuracy bonus increases to \plus4.
+            \end{ability}
+
+            \begin{ability}{Power Attack}
+                Make a \glossterm{strike} with a \plus2d bonus to damage.
+
+                At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, the damage bonus increases to \plus3d.
+            \end{ability}
+
+            \begin{ability}{Rally the Troops}
+                You and all allies within an \areamed radius can each remove one \glossterm{condition}.
+
+                At 6th level, the area increases to \arealarge.
+                At 12th level, each target can instead remove two conditions.
+                At 18th level, each target can instead remove any number of conditions.
+            \end{ability}
+
+            \begin{ability}{Rapid Assault}
+                Make a \glossterm{strike} against a creature.
+                If you use this ability during the \glossterm{action phase}, you can make another strike during the \glossterm{delayed action phase}.
+                You take a \minus2 penalty to accuracy on both strikes.
+
+                At 6th level, if you missed all of your targets, you regain the action point spent to use this ability.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, the accuracy penalty is reduced to \minus1.
+            \end{ability}
+
+            \begin{ability}{Reaping Charge}
+                You can move up to your movement speed in a straight line.
+                Choose either the right or left side of the line.
+                You can make a melee \glossterm{strike} with a slashing or bludgeoning weapon against each creature and object on that side of the line that you \glossterm{threaten} at any point during your movement, except for the space you start in and the space you end in.
+                You take a \minus2d penalty to damage on each strike.
+
+                At 6th level, you do not have to choose a side of the line.
+                Instead, you can attack creatures and objects that you threaten at any point during your movement.
+                At 12th level, the damage penalty is reduced to \minus1d.
+                At 18th level, the damage penalty is removed.
+            \end{ability}
+
+            \begin{ability}{Strip the Flesh}
+                Make a \glossterm{strike} with a slashing weapon.
+                At the end of the current phase, if you hit with the strike and the target is not \glossterm{bloodied}, it takes additional damage equal to the damage you dealt with the strike.
+
+                At 6th level, if you hit with the strike, the target continues taking the same damage at the end of each \glossterm{action phase} until it becomes \glossterm{bloodied}.
+                This is a \glossterm{condition}, and can be removed by abilities that remove conditions.
+                At 12th level, you gain a \plus1d bonus to damage with the strike.
+                At 18th level, the damage bonus increases to \plus2d.
+            \end{ability}
+
+            \begin{ability}{Sweeping Strike}
+                Make a melee \glossterm{strike} with a slashing or bludgeoning weapon against each of up to three creatures you \glossterm{threaten}.
+                You take a \minus1d penalty to \glossterm{strike damage} with each strike.
+
+                At 6th level, if you missed all of your targets, you regain the action point spent to use this ability.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, the damage penalty is removed.
+            \end{ability}
+
+            \begin{ability}{Whirlwind Spin}
+                Make a melee \glossterm{strike} with a slashing weapon against all creatures you \glossterm{threaten}.
+                You take a \minus2d penalty to \glossterm{strike damage} with each strike.
+
+                At 6th level, the damage penalty is reduced to \minus1d.
+                At 12th level, the damage penalty is removed.
+                At 18th level, you gain a \plus1d bonus to damage with the strike.
+            \end{ability}
         }
 
         \cf{Ftr}[3]{Martial Lore} You gain two additional skill points that must be spent on fighter class skills.
@@ -1329,13 +1448,15 @@ This choice determines a great deal about your character's abilities.
         You reduce the \glossterm{encumbrance penalty} of body armor you wear by 1.
 
         \cf{Ftr}[2]{Weapon Focus}
-        If you spend an hour training with a weapon, you can use this ability.
-        If you do, you gain a \plus1 bonus to \glossterm{accuracy} with attacks using weapons from that group.
-        In addition, you gain proficiency with one \glossterm{weapon group} that weapon belongs to.
-        This does not grant you proficiency with \glossterm{exotic weapons} from that group.
+        \begin{ability}{Weapon Focus}
+            If you spend an hour training with a weapon, you can use this ability.
+            If you do, you gain a \plus1 bonus to \glossterm{accuracy} with attacks using weapons from that group.
+            In addition, you gain proficiency with one \glossterm{weapon group} that weapon belongs to.
+            This does not grant you proficiency with \glossterm{exotic weapons} from that group.
 
-        You may only use this ability to focus on one weapon group at a time.
-        If you use this ability again, you lose its benefits with the other weapon group.
+            You may only use this ability to focus on one weapon group at a time.
+            If you use this ability again, you lose its benefits with the other weapon group.
+        \end{ability}
 
         \cf{Ftr}[5]{Combat Awareness}
         You gain a \plus1 bonus to \glossterm{overwhelm resistance}.
@@ -1360,8 +1481,11 @@ This choice determines a great deal about your character's abilities.
         \cf{Ftr}{Disciplined Defense}
         You gain a \plus1 bonus to Armor defense.
 
-        \cf{Ftr}[4]{Discipline} As a \glossterm{minor action}, you can spend an \glossterm{action point} to use this ability.
-        If you do, remove one \glossterm{condition} affecting you.
+        \cf{Ftr}[4]{Discipline}
+        \begin{ability}{Discipline}
+            As a \glossterm{minor action}, you can spend an \glossterm{action point} to use this ability.
+            If you do, remove one \glossterm{condition} affecting you.
+        \end{ability}
 
         \cf{Ftr}[7]{Focused Recovery}
         When you use the \textit{recover} action, you heal \plus1d hit points.
@@ -1485,11 +1609,14 @@ This choice determines a great deal about your character's abilities.
         This archetype grants you esoteric abilities relating to arcane magic.
         You must be able to cast arcane spells to gain the abilities from this archetype.
 
-        \cf{Mge}{Mage Armor} As a standard action, you can use this ability.
-        If you do, you create a translucent suit of magical armor on your body.
-        This functions like body armor that provides a \plus2 bonus to Armor defense and has no \glossterm{encumbrance penalty}.
-        You cannot wear it alongside other armor.
-        This ability lasts until you \glossterm{dismiss} it as a free action.
+        \cf{Mge}{Mage Armor}
+        \begin{ability}{Mage Armor}
+            As a standard action, you can use this ability.
+            If you do, you create a translucent suit of magical armor on your body.
+            This functions like body armor that provides a \plus2 bonus to Armor defense and has no \glossterm{encumbrance penalty}.
+            You cannot wear it alongside other armor.
+            This ability lasts until you \glossterm{dismiss} it as a free action.
+        \end{ability}
 
         \cf{Mge}[3]{Arcane Insight} 
         You gain a greater understanding of magic.
@@ -1664,113 +1791,137 @@ This choice determines a great deal about your character's abilities.
         You can spend an \glossterm{action point} to use a \textit{ki manifestation}, using the type of action indicated in the ability's description.
         You cannot use more than one \textit{ki manifestation} per round.
         {
-            \subcf{Abandon the Fragile Self}
-            At the start of the round, you can use this ability.
-            It lasts until the end of the round.
-            You are immune to all \glossterm{conditions}.
-            \par At 6th level, this ability lasts until the end of the next round.
-            At 12th level, you can also remove one condition affecting you when you use this ability.
-            At 18th level, you can remove two conditions instead of one.
+            \begin{ability}{Abandon the Fragile Self}
+                At the start of the round, you can use this ability.
+                It lasts until the end of the round.
+                You are immune to all \glossterm{conditions}.
 
-            \subcf{Burst of Blinding Speed}
-            At the start of the round, you can use this ability.
-            It lasts until the end of the round.
-            You gain a \plus30 foot bonus to your land speed, up to a maximum of double your original speed.
-            \par At 6th level, you can also ignore \glossterm{difficult terrain}.
-            At 12th level, you can also move or stand on liquids as if they were solid.
-            At 18th level, the speed bonus increases to \plus60 feet, up to a maximum of triple your original speed.
+                At 6th level, this ability lasts until the end of the next round.
+                At 12th level, you can also remove one condition affecting you when you use this ability.
+                At 18th level, you can remove two conditions instead of one.
+            \end{ability}
 
-            \subcf{Dance of Falling Feathers}
-            At the start of the round, you can use this ability.
-            It lasts until the end of the round.
-            If you are in free-fall, your fall is dramatically slowed.
-            You fall only 60 feet this round, and take no falling damage if you hit the ground.
-            \par At 6th level, this ability's effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
-            At 12th level, you can control the speed of your fall, up to a maximum of 120 feet per round and a minimum of 30 feet per round.
-            At 18th level, your maximum falling speed becomes 180 feet per round and your minimum falling speed becomes 10 feet per round.
+            \begin{ability}{Burst of Blinding Speed}
+                At the start of the round, you can use this ability.
+                It lasts until the end of the round.
+                You gain a \plus30 foot bonus to your land speed, up to a maximum of double your original speed.
 
-            \subcf{Elegant Whirl of Fluid Motion}
-            At the start of the round, you can use this ability.
-            It lasts until the end of the round.
-            You gain a \plus5 bonus to Acrobatics (see \pcref{Acrobatics}).
-            \par At 6th level, you also gain a \plus1 bonus to \glossterm{physical defenses}.
-            At 12th level, the Acrobatics bonus increases to \plus10.
-            At 18th level, the bonus to physical defenses increases to \plus2.
+                At 6th level, you can also ignore \glossterm{difficult terrain}.
+                At 12th level, you can also move or stand on liquids as if they were solid.
+                At 18th level, the speed bonus increases to \plus60 feet, up to a maximum of triple your original speed.
+            \end{ability}
 
-            \subcf{Flash Step}
-            At the start of the round, you can use this ability.
-            It lasts until the end of the round.
-            % TODO: is 'horizontally' the correct word?
-            Whenever you move, you can teleport horizontally up to ten feet instead.
-            This replaces the entire distance you would have moved that phase.
-            If your \glossterm{line of effect} to your destination is blocked, or if this teleportaiton would somehow place you inside a solid object, your movement is cancelled and you remain where you are.
-            \par At 6th level, the distance you can teleport is increased to half your movement speed.
-            At 12th level, you can teleport in multiple steps within the same phase.
-            Each step costs movement equal to twice the distance you teleport.
-            At 18th level, you can attempt to teleport to locations outside of \glossterm{line of sight} and \glossterm{line of effect}.
-            If your intended destination is invalid, the distance you spent teleporting is wasted, but you suffer no other ill effects.
+            \begin{ability}{Dance of Falling Feathers}
+                At the start of the round, you can use this ability.
+                It lasts until the end of the round.
+                If you are in free-fall, your fall is dramatically slowed.
+                You fall only 60 feet this round, and take no falling damage if you hit the ground.
 
-            \subcf{Ki Strike}
-            You can use this ability as a standard action.
-            If you do, you make a \glossterm{strike}.
-            You may use your \textit{ki power} in place of your Perception to determine your \glossterm{accuracy} with the strike, and in place of your Strength to determine your \glossterm{strike damage} with the strike.
-            If the strike misses, you regain the action point spent to use this ability.
-            \par At 6th level, your \glossterm{reach} is increased by 5 feet for the strike.
-            At 12th level, the bonus to your reach increases to 10 feet. 
-            At 18th level, this ability does not cost an action point to use.
+                At 6th level, this ability's effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
+                At 12th level, you can control the speed of your fall, up to a maximum of 120 feet per round and a minimum of 30 feet per round.
+                At 18th level, your maximum falling speed becomes 180 feet per round and your minimum falling speed becomes 10 feet per round.
+            \end{ability}
 
-            \subcf{Leap of the Heavens}
-            At the start of the round, you can use this ability.
-            It lasts until the end of the round.
-            You gain a \plus5 bonus to Jump (see \pcref{Jump}).
-            \par At 6th level, the Jump bonus increases to \plus10.
-            At 12th level, the Jump bonus increases to \plus15.
-            At 18th level, the Jump bonus increases to \plus20.
+            \begin{ability}{Elegant Whirl of Fluid Motion}
+                At the start of the round, you can use this ability.
+                It lasts until the end of the round.
+                You gain a \plus5 bonus to Acrobatics (see \pcref{Acrobatics}).
 
-            \subcf{Scale the Highest Tower}
-            At the start of the round, you can use this ability.
-            It lasts until the end of the round.
-            You gain a \plus5 bonus to Climb (see \pcref{Climb}).
-            % TODO: is this wording correct?
-            \par At 6th level, you also take no penalty for climbing without using your hands.
-            At 12th level, the Climb bonus increases to \plus10.
-            At 18th level, you also take no penalty for climbing with only one limb, such as an arm or leg.
+                At 6th level, you also gain a \plus1 bonus to \glossterm{physical defenses}.
+                At 12th level, the Acrobatics bonus increases to \plus10.
+                At 18th level, the bonus to physical defenses increases to \plus2.
+            \end{ability}
 
-            \subcf{See the Flow of Life}
-            At the start of the round, you can use this ability.
-            It lasts until the end of the round.
-            You gain the ability to see the ki of living creatures.
-            You can ``see'' any living creatures and their equipment within 50 feet perfectly, regardless of lighting conditions, blindness, invisibility, or any other means of concealment.
-            This cannot detect living creatures through solid walls, however.
-            \par At 6th level, range is increased to 100 feet.
-            At 12th level, the effect lasts as long as you \glossterm{sustain} it as a \glossterm{swift action}.
-            At 18th level, the effect lasts as long as you \glossterm{attune} to it.
+            \begin{ability}{Flash Step}
+                At the start of the round, you can use this ability.
+                It lasts until the end of the round.
+                % TODO: is 'horizontally' the correct word?
+                Whenever you move, you can teleport horizontally up to ten feet instead.
+                This replaces the entire distance you would have moved that phase.
+                If your \glossterm{line of effect} to your destination is blocked, or if this teleportaiton would somehow place you inside a solid object, your movement is cancelled and you remain where you are.
 
-            \subcf{Step Between the Mystic Worlds}
-            At the start of the round, you can use this ability.
-            It lasts until the end of the round.
-            You gain a \plus2 bonus to defenses against \glossterm{magical} abilities that directly target you.
-            This does not protect you from abilities that affect an area.
-            \par At 6th level, the defense bonus is increased to \plus4.
-            At 12th level, the defense bonus is increased to \plus6.
-            At 18th level, you cannot be directly targeted by \glossterm{magical} abilities.
+                At 6th level, the distance you can teleport is increased to half your movement speed.
+                At 12th level, you can teleport in multiple steps within the same phase.
+                Each step costs movement equal to twice the distance you teleport.
+                At 18th level, you can attempt to teleport to locations outside of \glossterm{line of sight} and \glossterm{line of effect}.
+                If your intended destination is invalid, the distance you spent teleporting is wasted, but you suffer no other ill effects.
+            \end{ability}
 
-            \subcf{Surpass the Mortal Limits}
-            At the start of the round, you can use this ability.
-            It lasts until the end of the round.
-            You can use your \textit{ki power} in place of your Strength, Dexterity, and Constitution when making checks.
-            \par At 6th level, you also gain a \plus2 bonus to checks based on Strength, Dexterity, and Constitution.
-            At 12th level, the bonus increases to \plus4.
-            At 16th level, the bonus increases to \plus6.
+            \begin{ability}{Ki Strike}
+                You can use this ability as a standard action.
+                If you do, you make a \glossterm{strike}.
+                You may use your \textit{ki power} in place of your Perception to determine your \glossterm{accuracy} with the strike, and in place of your Strength to determine your \glossterm{strike damage} with the strike.
+                If the strike misses, you regain the action point spent to use this ability.
 
-            \subcf{Tranquil Ward of Unshakeable Peace}
-            You can use this ability as a standard action.
-            It lasts until the end of the round.
-            You take half damage from all attacks.
-            This halving is applied before damage reduction and similar abilties.
-            \par At 6th level, you can \glossterm{sustain} this ability as a standard action.
-            At 12th level, you also gain damage reduction equal to your level.
-            At 18th level, the damage reduction increases to twice your level.
+                At 6th level, your \glossterm{reach} is increased by 5 feet for the strike.
+                At 12th level, the bonus to your reach increases to 10 feet. 
+                At 18th level, this ability does not cost an action point to use.
+            \end{ability}
+
+            \begin{ability}{Leap of the Heavens}
+                At the start of the round, you can use this ability.
+                It lasts until the end of the round.
+                You gain a \plus5 bonus to Jump (see \pcref{Jump}).
+
+                At 6th level, the Jump bonus increases to \plus10.
+                At 12th level, the Jump bonus increases to \plus15.
+                At 18th level, the Jump bonus increases to \plus20.
+            \end{ability}
+
+            \begin{ability}{Scale the Highest Tower}
+                At the start of the round, you can use this ability.
+                It lasts until the end of the round.
+                You gain a \plus5 bonus to Climb (see \pcref{Climb}).
+                % TODO: is this wording correct?
+
+                At 6th level, you also take no penalty for climbing without using your hands.
+                At 12th level, the Climb bonus increases to \plus10.
+                At 18th level, you also take no penalty for climbing with only one limb, such as an arm or leg.
+            \end{ability}
+
+            \begin{ability}{See the Flow of Life}
+                At the start of the round, you can use this ability.
+                It lasts until the end of the round.
+                You gain the ability to see the ki of living creatures.
+                You can ``see'' any living creatures and their equipment within 50 feet perfectly, regardless of lighting conditions, blindness, invisibility, or any other means of concealment.
+                This cannot detect living creatures through solid walls, however.
+
+                At 6th level, range is increased to 100 feet.
+                At 12th level, the effect lasts as long as you \glossterm{sustain} it as a \glossterm{swift action}.
+                At 18th level, the effect lasts as long as you \glossterm{attune} to it.
+            \end{ability}
+
+            \begin{ability}{Step Between the Mystic Worlds}
+                At the start of the round, you can use this ability.
+                It lasts until the end of the round.
+                You gain a \plus2 bonus to defenses against \glossterm{magical} abilities that directly target you.
+                This does not protect you from abilities that affect an area.
+
+                At 6th level, the defense bonus is increased to \plus4.
+                At 12th level, the defense bonus is increased to \plus6.
+                At 18th level, you cannot be directly targeted by \glossterm{magical} abilities.
+            \end{ability}
+
+            \begin{ability}{Surpass the Mortal Limits}
+                At the start of the round, you can use this ability.
+                It lasts until the end of the round.
+                You can use your \textit{ki power} in place of your Strength, Dexterity, and Constitution when making checks.
+
+                At 6th level, you also gain a \plus2 bonus to checks based on Strength, Dexterity, and Constitution.
+                At 12th level, the bonus increases to \plus4.
+                At 16th level, the bonus increases to \plus6.
+            \end{ability}
+
+            \begin{ability}{Tranquil Ward of Unshakeable Peace}
+                You can use this ability as a standard action.
+                It lasts until the end of the round.
+                You take half damage from all attacks.
+                This halving is applied before damage reduction and similar abilties.
+
+                At 6th level, you can \glossterm{sustain} this ability as a standard action.
+                At 12th level, you also gain damage reduction equal to your level.
+                At 18th level, the damage reduction increases to twice your level.
+            \end{ability}
         }
 
         \cf*{Mnk}[3]{Ki Vessel} You gain an additional \glossterm{action point}.
@@ -1820,9 +1971,12 @@ This choice determines a great deal about your character's abilities.
     \subsection{Transcendent Sage}
         This archetype grants you abilities to resist or remove conditions.
 
-        \cf{Mnk}{Serene Strike} As a standard action, you can spend an \glossterm{action point} to use this ability.
-        If you do, you may remove one \glossterm{condition} affecting you.
-        If you use this ability during the \glossterm{action phase}, you may also make a \glossterm{strike} during the \glossterm{delayed action phase}.
+        \cf{Mnk}{Serene Strike}
+        \begin{ability}{Serene Strike}
+            As a standard action, you can spend an \glossterm{action point} to use this ability.
+            If you do, you may remove one \glossterm{condition} affecting you.
+            If you use this ability during the \glossterm{action phase}, you may also make a \glossterm{strike} during the \glossterm{delayed action phase}.
+        \end{ability}
 
         \cf{Mnk}[4]{Sage Lore} You gain two additional skill points that must be spent on monk class skills.
 
@@ -1924,10 +2078,13 @@ This choice determines a great deal about your character's abilities.
     \subsection{Devoted Paragon}
         This archetype grants you healing abiliies and an aura reflecting your alignment.
 
-        \cf{Pal}{Lay on Hands}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
-        If you do, choose an adjacent willing creature.
-        The target is healed for hit points equal to your \glossterm{standard damage} \plus1d.
-        Your \glossterm{power} with this ability is equal to your \textit{devotion power}.
+        \cf{Pal}{Lay on Hands}[Magical]
+        \begin{ability}{Lay on Hands}
+            As a standard action, you can spend an \glossterm{action point} to use this ability.
+            If you do, choose an adjacent willing creature.
+            The target is healed for hit points equal to your \glossterm{standard damage} \plus1d.
+            Your \glossterm{power} with this ability is equal to your \textit{devotion power}.
+        \end{ability}
 
         \cf{Pal}[3]{Cleansing Touch} When you use your \textit{lay on hands} ability, the target can also remove one \glossterm{condition}.
 
@@ -2010,10 +2167,13 @@ This choice determines a great deal about your character's abilities.
     \subsection{Zealous Warrior}
         This archetype improves your combat prowess, especially against foes who do not share your devoted alignment.
 
-        \cf{Pal}{Smite}[Magical] As a standard action, you can spend an \glossterm{action point} to use this ability.
-        If you do, make a \glossterm{strike}.
-        If your target shares your devoted alignment, the strike deals no damage.
-        Otherwise, the strike gains a \plus1d bonus to \glossterm{strike damage}, and you regain the action point spent to use this ability.
+        \cf{Pal}{Smite}[Magical]
+        \begin{ability}{Smite}
+            As a standard action, you can spend an \glossterm{action point} to use this ability.
+            If you do, make a \glossterm{strike}.
+            If your target shares your devoted alignment, the strike deals no damage.
+            Otherwise, the strike gains a \plus1d bonus to \glossterm{strike damage}, and you regain the action point spent to use this ability.
+        \end{ability}
 
         \cf{Pal}[2]{Unfaltering Warrior}
         You gain a \plus1 bonus to Armor defense.
@@ -2024,14 +2184,17 @@ This choice determines a great deal about your character's abilities.
         \cf{Pal}[8]{Unfaltering Zeal}
         You gain a \plus1 bonus to Fortitude and Mental defense.
 
-        \cf{Pal}[10]{Pass Judgment}[Magical] Whenever you use your \textit{smite} ability, you can spend an additional \glossterm{action point} to use this ability.
-        If you do, the target of your strike is treated as if it had the alignment opposed to your devoted alignment for all spells and effects, including for your \textit{smite}.
-        This only affects its alignment along the alignment axis your devoted alignment is on.
-        For example, if your devoted alignment was evil, a chaotic neutral target would be treated as chaotic good.
-        This effect lasts as long as you \glossterm{attune} to it.
+        \cf{Pal}[10]{Pass Judgment}[Magical]
+        \begin{ability}{Pass Judgment}
+            Whenever you use your \textit{smite} ability, you can spend an additional \glossterm{action point} to use this ability.
+            If you do, the target of your strike is treated as if it had the alignment opposed to your devoted alignment for all spells and effects, including for your \textit{smite}.
+            This only affects its alignment along the alignment axis your devoted alignment is on.
+            For example, if your devoted alignment was evil, a chaotic neutral target would be treated as chaotic good.
+            This effect lasts as long as you \glossterm{attune} to it.
 
-        You can use this ability to do battle against foes who share your alignment, but you should exercise caution in doing so.
-        Persecution of allies can lead you to fall and become an ex-paladin.
+            You can use this ability to do battle against foes who share your alignment, but you should exercise caution in doing so.
+            Persecution of allies can lead you to fall and become an ex-paladin.
+        \end{ability}
 
         \cf{Pal}[12]{Greater Smite} The damage bonus from your \textit{smite} ability increases to \plus2d.
 
@@ -2154,75 +2317,108 @@ This choice determines a great deal about your character's abilities.
         Choose two \textit{wild exertions} from the list below.
         As a standard action, you can spend an \glossterm{action point} to use a \textit{wild exertion} ability.
         {
-            \subcf{Brace for Impact} You take half damage from all attacks.
-            This halving is applied before damage reduction and similar abilities.
-            This ability lasts until the end of the next round.
-            \par At 6th level, you can \glossterm{sustain} this ability as a standard action.
-            At 12th level, you also gain damage reduction equal to your level.
-            At 18th level, the damage reduction increases to twice your level.
+            \begin{ability}{Brace for Impact}
+                You take half damage from all attacks.
+                This halving is applied before damage reduction and similar abilities.
+                This ability lasts until the end of the next round.
 
-            \subcf{Certain Strike} You make a \glossterm{strike} with a \plus2 bonus to accuracy.
-            \par At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, the accuracy bonus increases to \plus3.
+                At 6th level, you can \glossterm{sustain} this ability as a standard action.
+                At 12th level, you also gain damage reduction equal to your level.
+                At 18th level, the damage reduction increases to twice your level.
+            \end{ability}
 
-            \subcf{Gut Punch} Make a \glossterm{strike} with a bludgeoning weapon.
-            In addition to the strike's normal effects, you also compare the attack result against the target's Fortitude defense.
-            As a \glossterm{condition}, the target is \sickened on a hit or \nauseated on a critical hit.
-            \par At 6th level, you gain a \plus1 bonus to accuracy on the strike.
-            At 12th level, the accuracy bonus increases to \plus2.
-            At 18th level, the accuracy bonus increases to \plus3.
+            \begin{ability}{Certain Strike}
+                You make a \glossterm{strike} with a \plus2 bonus to accuracy.
 
-            \subcf{Penetrating Strike} Make a \glossterm{strike} with a piercing weapon.
-            The attack is made against the target's Reflex defense instead of its Armor defense.
-            \par At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, you gain a \plus1d bonus to damage with the strike.
+                At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, the accuracy bonus increases to \plus3.
+            \end{ability}
 
-            \subcf{Potent Maneuver} You use a \glossterm{combat maneuver} with a \plus3 bonus to accuracy.
-            \par At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, the accuracy bonus increases to \plus4.
+            \begin{ability}{Gut Punch}
+                Make a \glossterm{strike} with a bludgeoning weapon.
+                In addition to the strike's normal effects, you also compare the attack result against the target's Fortitude defense.
+                As a \glossterm{condition}, the target is \sickened on a hit or \nauseated on a critical hit.
 
-            \subcf{Power Attack} Make a \glossterm{strike} with a \plus2d bonus to damage.
-            \par At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, the damage bonus increases to \plus3d.
+                At 6th level, you gain a \plus1 bonus to accuracy on the strike.
+                At 12th level, the accuracy bonus increases to \plus2.
+                At 18th level, the accuracy bonus increases to \plus3.
+            \end{ability}
 
-            \subcf{Rapid Assault} Make a \glossterm{strike} against a creature.
-            If you use this ability during the \glossterm{action phase}, you can make another strike during the \glossterm{delayed action phase}.
-            You take a \minus2 penalty to accuracy on both strikes.
-            \par At 6th level, if you missed all of your targets, you regain the action point spent to use this ability.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, the accuracy penalty is reduced to \minus1.
+            \begin{ability}{Penetrating Strike}
+                Make a \glossterm{strike} with a piercing weapon.
+                The attack is made against the target's Reflex defense instead of its Armor defense.
 
-            \subcf{Reaping Charge} You can move up to your movement speed in a straight line.
-            Choose either the right or left side of the line.
-            You can make a melee \glossterm{strike} with a slashing or bludgeoning weapon against each creature and object on that side of the line that you \glossterm{threaten} at any point during your movement, except for the space you start in and the space you end in.
-            You take a \minus2d penalty to damage on each strike.
-            \par At 6th level, you do not have to choose a side of the line.
-            Instead, you can attack creatures and objects that you threaten at any point during your movement.
-            At 12th level, the damage penalty is reduced to \minus1d.
-            At 18th level, the damage penalty is removed.
+                At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, you gain a \plus1d bonus to damage with the strike.
+            \end{ability}
 
-            \subcf{Strip the Flesh} Make a \glossterm{strike} with a slashing weapon.
-            At the end of the current phase, if you hit with the strike and the target is not \glossterm{bloodied}, it takes additional damage equal to the damage you dealt with the strike.
-            \par At 6th level, if you hit with the strike, the target continues taking the same damage at the end of each \glossterm{action phase} until it becomes \glossterm{bloodied}.
-            This is a \glossterm{condition}, and can be removed by abilities that remove conditions.
-            At 12th level, you gain a \plus1d bonus to damage with the strike.
-            At 18th level, the damage bonus increases to \plus2d.
+            \begin{ability}{Potent Maneuver}
+                You use a \glossterm{combat maneuver} with a \plus3 bonus to accuracy.
 
-            \subcf{Sweeping Strike} Make a melee \glossterm{strike} with a slashing or bludgeoning weapon against each of up to three creatures you \glossterm{threaten}.
-            You take a \minus1d penalty to \glossterm{strike damage} with each strike.
-            \par At 6th level, if you missed all of your targets, you regain the action point spent to use this ability.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, the damage penalty is removed.
+                At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, the accuracy bonus increases to \plus4.
+            \end{ability}
 
-            \subcf{Whirlwind Spin} Make a melee \glossterm{strike} with a slashing weapon against all creatures you \glossterm{threaten}.
-            You take a \minus2d penalty to \glossterm{strike damage} with each strike.
-            \par At 6th level, the damage penalty is reduced to \minus1d.
-            At 12th level, the damage penalty is removed.
-            At 18th level, you gain a \plus1d bonus to damage with the strike.
+            \begin{ability}{Power Attack}
+                Make a \glossterm{strike} with a \plus2d bonus to damage.
+
+                At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, the damage bonus increases to \plus3d.
+            \end{ability}
+
+            \begin{ability}{Rapid Assault}
+                Make a \glossterm{strike} against a creature.
+                If you use this ability during the \glossterm{action phase}, you can make another strike during the \glossterm{delayed action phase}.
+                You take a \minus2 penalty to accuracy on both strikes.
+
+                At 6th level, if you missed all of your targets, you regain the action point spent to use this ability.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, the accuracy penalty is reduced to \minus1.
+            \end{ability}
+
+            \begin{ability}{Reaping Charge}
+                You can move up to your movement speed in a straight line.
+                Choose either the right or left side of the line.
+                You can make a melee \glossterm{strike} with a slashing or bludgeoning weapon against each creature and object on that side of the line that you \glossterm{threaten} at any point during your movement, except for the space you start in and the space you end in.
+                You take a \minus2d penalty to damage on each strike.
+
+                At 6th level, you do not have to choose a side of the line.
+                Instead, you can attack creatures and objects that you threaten at any point during your movement.
+                At 12th level, the damage penalty is reduced to \minus1d.
+                At 18th level, the damage penalty is removed.
+            \end{ability}
+
+            \begin{ability}{Strip the Flesh}
+                Make a \glossterm{strike} with a slashing weapon.
+                At the end of the current phase, if you hit with the strike and the target is not \glossterm{bloodied}, it takes additional damage equal to the damage you dealt with the strike.
+
+                At 6th level, if you hit with the strike, the target continues taking the same damage at the end of each \glossterm{action phase} until it becomes \glossterm{bloodied}.
+                This is a \glossterm{condition}, and can be removed by abilities that remove conditions.
+                At 12th level, you gain a \plus1d bonus to damage with the strike.
+                At 18th level, the damage bonus increases to \plus2d.
+            \end{ability}
+
+            \begin{ability}{Sweeping Strike}
+                Make a melee \glossterm{strike} with a slashing or bludgeoning weapon against each of up to three creatures you \glossterm{threaten}.
+                You take a \minus1d penalty to \glossterm{strike damage} with each strike.
+
+                At 6th level, if you missed all of your targets, you regain the action point spent to use this ability.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, the damage penalty is removed.
+            \end{ability}
+
+            \begin{ability}{Whirlwind Spin}
+                Make a melee \glossterm{strike} with a slashing weapon against all creatures you \glossterm{threaten}.
+                You take a \minus2d penalty to \glossterm{strike damage} with each strike.
+
+                At 6th level, the damage penalty is reduced to \minus1d.
+                At 12th level, the damage penalty is removed.
+                At 18th level, you gain a \plus1d bonus to damage with the strike.
+            \end{ability}
         }
 
         \cf{Rgr}[3]{Wilderness Lore} You gain two extra skill points which must be spent on Strength or Intelligence-based ranger class skills.
@@ -2244,14 +2440,16 @@ This choice determines a great deal about your character's abilities.
         This archetype grants you and your allies abilities to hunt down specific foes.
 
         \cf{Rgr}{Quarry}\label{Quarry}
-        As a \glossterm{minor action}, you can spend an \glossterm{action point} to use this ability.
-        If you do, choose a creature within \rnglong range.
-        The target becomes your quarry.
-        You and any allies within range gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks} against your quarry.
-        You and your allies affected by this ability are called your \glossterm{hunting party}.
-        In addition, you gain a \plus5 bonus to checks made to follow the target's tracks.
+        \begin{ability}
+            As a \glossterm{minor action}, you can spend an \glossterm{action point} to use this ability.
+            If you do, choose a creature within \rnglong range.
+            The target becomes your quarry.
+            You and any allies within range gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks} against your quarry.
+            You and your allies affected by this ability are called your \glossterm{hunting party}.
+            In addition, you gain a \plus5 bonus to checks made to follow the target's tracks.
 
-        This effect lasts as long as you \glossterm{attune} to it.
+            This effect lasts as long as you \glossterm{attune} to it.
+        \end{ability}
 
         \cf{Rgr}[2]{Tracker}
         You gain a \plus2 bonus to checks made to follow tracks.
@@ -2421,9 +2619,12 @@ This choice determines a great deal about your character's abilities.
         You are not \unaware when attacked by surprise.
         In addition, you gain a \plus2 bonus to \glossterm{initiative}.
 
-        \cf{Rog}[8]{Assassinate} As a standard action, you can use this ability.
-        If you do, you study a creature within \rngmed range, finding weak points you can take advantage of.
-        Until the end of the next round, if you make a melee \glossterm{strike} against the target while it is \unaware, your attack deals maximum damage.
+        \cf{Rog}[8]{Assassinate}
+        \begin{ability}
+            As a standard action, you can use this ability.
+            If you do, you study a creature within \rngmed range, finding weak points you can take advantage of.
+            Until the end of the next round, if you make a melee \glossterm{strike} against the target while it is \unaware, your attack deals maximum damage.
+        \end{ability}
 
         \cf{Rog}[11]{Greater Uncanny Dodge}
         The initiative bonus from your \textit{intuitive reaction} ability increases to \plus5.
@@ -2444,8 +2645,11 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rog}[10]{Greater Skill Exemplar} The skill bonus from your \textit{skill exemplar} ability increases to \plus2.
 
-        \cf{Rog}[13]{Lucky Break} Once per round, when you make a \glossterm{check}, you can spend an \glossterm{action point} to use this ability.
-        If you do, you treat your roll as a 10.
+        \cf{Rog}[13]{Lucky Break}
+        \begin{ability}
+            Once per round, when you make a \glossterm{check}, you can spend an \glossterm{action point} to use this ability.
+            If you do, you treat your roll as a 10.
+        \end{ability}
 
         \cf{Rog}[16]{Supreme Skill Exemplar} The skill bonus from your \textit{skill exemplar} ability increases to \plus3.
 
@@ -2459,78 +2663,108 @@ This choice determines a great deal about your character's abilities.
         Choose two \textit{combat tricks} from the list below.
         As a standard action, you can spend an \glossterm{action point} to use a \textit{combat trick} ability.
         {
-            \subcf{Certain Strike} You make a \glossterm{strike} with a \plus2 bonus to accuracy.
-            \par At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, the accuracy bonus increases to \plus3.
+            \begin{ability}{Certain Strike}
+                You make a \glossterm{strike} with a \plus2 bonus to accuracy.
 
-            \subcf{Counterattack} Make a \glossterm{strike}.
-            If the target attacked you in the same phase, you gain a \plus3d bonus to damage.
-            \par At 6th level, if the target did not attack you in the same phase, you regain the action point spent to use this ability.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, the damage bonus increases to \plus4d.
+                At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, the accuracy bonus increases to \plus3.
+            \end{ability}
 
-            \subcf{Daunting Blow} Make a \glossterm{strike}.
-            In addition to the strike's normal effects, you also compare the attack result against the target's Mental defense.
-            This is a \glossterm{Mind} ability.
-            As a \glossterm{condition}, the target suffers a \minus3 penalty to defenses against your attacks, or a \minus6 penalty on a critical hit.
-            \par At 6th level, you gain a \plus1 bonus to accuracy with the strike.
-            At 12th level, the accuracy bonus increases to \plus2.
-            At 18th level, the accuracy bonus increases to \plus3.
+            \begin{ability}{Counterattack}
+                Make a \glossterm{strike}.
+                If the target attacked you in the same phase, you gain a \plus3d bonus to damage.
 
-            \subcf{Gut Punch} Make a \glossterm{strike} with a bludgeoning weapon.
-            In addition to the strike's normal effects, you also compare the attack result against the target's Fortitude defense.
-            As a \glossterm{condition}, the target is \sickened on a hit or \nauseated on a critical hit.
-            \par At 6th level, you gain a \plus1 bonus to accuracy on the strike.
-            At 12th level, the accuracy bonus increases to \plus2.
-            At 18th level, the accuracy bonus increases to \plus3.
+                At 6th level, if the target did not attack you in the same phase, you regain the action point spent to use this ability.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, the damage bonus increases to \plus4d.
+            \end{ability}
 
-            \subcf{Hamstring} Make a \glossterm{strike} with a slashing or piercing weapon.
-            In addition to the strike's normal effects, you also compare the attack result against the target's Reflex defense.
-            This is a \glossterm{Mind} ability.
-            As a \glossterm{condition}, the target is \slowed on a hit, or \immobilized on a critical hit.
-            \par At 6th level, you gain a \plus1 bonus to accuracy on the strike.
-            At 12th level, the accuracy bonus increases to \plus2.
-            At 18th level, the accuracy bonus increases to \plus3.
+            \begin{ability}{Daunting Blow}[\glossterm{Mind}]
+                Make a \glossterm{strike}.
+                In addition to the strike's normal effects, you also compare the attack result against the target's Mental defense.
+                As a \glossterm{condition}, the target suffers a \minus3 penalty to defenses against your attacks, or a \minus6 penalty on a critical hit.
 
-            \subcf{Head Shot} Make a \glossterm{strike} with a bludgeoning weapon.
-            In addition to the strike's normal effects, you also compare the attack result against the target's Mental defense.
-            This is a \glossterm{Mind} ability.
-            As a \glossterm{condition}, the target is \dazed on a hit, or \stunned on a critical hit.
-            \par At 6th level, you gain a \plus1 bonus to accuracy on the strike.
-            At 12th level, the accuracy bonus increases to \plus2.
-            At 18th level, the accuracy bonus increases to \plus3.
+                At 6th level, you gain a \plus1 bonus to accuracy with the strike.
+                At 12th level, the accuracy bonus increases to \plus2.
+                At 18th level, the accuracy bonus increases to \plus3.
+            \end{ability}
 
-            \subcf{Penetrating Strike} Make a \glossterm{strike} with a piercing weapon.
-            The attack is made against the target's Reflex defense instead of its Armor defense.
-            \par At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, you gain a \plus1d bonus to damage with the strike.
+            \begin{ability}{Gut Punch}
+                Make a \glossterm{strike} with a bludgeoning weapon.
+                In addition to the strike's normal effects, you also compare the attack result against the target's Fortitude defense.
+                As a \glossterm{condition}, the target is \sickened on a hit or \nauseated on a critical hit.
 
-            \subcf{Potent Maneuver} You use a \glossterm{combat maneuver} with a \plus3 bonus to accuracy.
-            \par At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, the accuracy bonus increases to \plus4.
+                At 6th level, you gain a \plus1 bonus to accuracy on the strike.
+                At 12th level, the accuracy bonus increases to \plus2.
+                At 18th level, the accuracy bonus increases to \plus3.
+            \end{ability}
 
-            \subcf{Rapid Assault} Make a \glossterm{strike} against a creature.
-            If you use this ability during the \glossterm{action phase}, you can make another strike during the \glossterm{delayed action phase}.
-            You take a \minus2 penalty to accuracy on both strikes.
-            \par At 6th level, if you missed all of your targets, you regain the action point spent to use this ability.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, the accuracy penalty is reduced to \minus1.
+            \begin{ability}{Hamstring}
+                Make a \glossterm{strike} with a slashing or piercing weapon.
+                In addition to the strike's normal effects, you also compare the attack result against the target's Reflex defense.
+                As a \glossterm{condition}, the target is \slowed on a hit, or \immobilized on a critical hit.
 
-            \subcf{Strip the Flesh} Make a \glossterm{strike} with a slashing weapon.
-            At the end of the current phase, if you hit with the strike and the target is not \glossterm{bloodied}, it takes additional damage equal to the damage you dealt with the strike.
-            \par At 6th level, if you hit with the strike, the target continues taking the same damage at the end of each \glossterm{action phase} until it becomes \glossterm{bloodied}.
-            This is a \glossterm{condition}, and can be removed by abilities that remove conditions.
-            At 12th level, you gain a \plus1d bonus to damage with the strike.
-            At 18th level, the damage bonus increases to \plus2d.
+                At 6th level, you gain a \plus1 bonus to accuracy on the strike.
+                At 12th level, the accuracy bonus increases to \plus2.
+                At 18th level, the accuracy bonus increases to \plus3.
+            \end{ability}
 
-            \subcf{Sweeping Strike} Make a melee \glossterm{strike} with a slashing or bludgeoning weapon against each of up to three creatures you \glossterm{threaten}.
-            You take a \minus1d penalty to \glossterm{strike damage} with each strike.
-            \par At 6th level, if you missed all of your targets, you regain the action point spent to use this ability.
-            At 12th level, you can use this ability without spending an action point.
-            At 18th level, the damage penalty is removed.
+            \begin{ability}{Head Shot}[\glossterm{Mind}]
+                Make a \glossterm{strike} with a bludgeoning weapon.
+                In addition to the strike's normal effects, you also compare the attack result against the target's Mental defense.
+                As a \glossterm{condition}, the target is \dazed on a hit, or \stunned on a critical hit.
+
+                At 6th level, you gain a \plus1 bonus to accuracy on the strike.
+                At 12th level, the accuracy bonus increases to \plus2.
+                At 18th level, the accuracy bonus increases to \plus3.
+            \end{ability}
+
+            \begin{ability}{Penetrating Strike}
+                Make a \glossterm{strike} with a piercing weapon.
+                The attack is made against the target's Reflex defense instead of its Armor defense.
+
+                At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, you gain a \plus1d bonus to damage with the strike.
+            \end{ability}
+
+            \begin{ability}{Potent Maneuver}
+                You use a \glossterm{combat maneuver} with a \plus3 bonus to accuracy.
+
+                At 6th level, if you miss with the strike, you regain the action point spent to use this ability.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, the accuracy bonus increases to \plus4.
+            \end{ability}
+
+            \begin{ability}{Rapid Assault}
+                Make a \glossterm{strike} against a creature.
+                If you use this ability during the \glossterm{action phase}, you can make another strike during the \glossterm{delayed action phase}.
+                You take a \minus2 penalty to accuracy on both strikes.
+
+                At 6th level, if you missed all of your targets, you regain the action point spent to use this ability.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, the accuracy penalty is reduced to \minus1.
+            \end{ability}
+
+            \begin{ability}{Strip the Flesh}
+                Make a \glossterm{strike} with a slashing weapon.
+                At the end of the current phase, if you hit with the strike and the target is not \glossterm{bloodied}, it takes additional damage equal to the damage you dealt with the strike.
+
+                At 6th level, if you hit with the strike, the target continues taking the same damage at the end of each \glossterm{action phase} until it becomes \glossterm{bloodied}.
+                This is a \glossterm{condition}, and can be removed by abilities that remove conditions.
+                At 12th level, you gain a \plus1d bonus to damage with the strike.
+                At 18th level, the damage bonus increases to \plus2d.
+            \end{ability}
+
+            \begin{ability}{Sweeping Strike}
+                Make a melee \glossterm{strike} with a slashing or bludgeoning weapon against each of up to three creatures you \glossterm{threaten}.
+                You take a \minus1d penalty to \glossterm{strike damage} with each strike.
+
+                At 6th level, if you missed all of your targets, you regain the action point spent to use this ability.
+                At 12th level, you can use this ability without spending an action point.
+                At 18th level, the damage penalty is removed.
+            \end{ability}
         }
 
         \cf{Rog}[3]{Ambush Attack}
@@ -2540,8 +2774,10 @@ This choice determines a great deal about your character's abilities.
         You learn an additional \textit{combat trick}.
 
         \cf{Rog}[9]{Lucky Slip}
-        Once per round, when you are hit by an attack, you can spend an \glossterm{action point} to use this ability.
-        If you do, the attacking creature rerolls the attack roll.
+        \begin{ability}
+            Once per round, when you are hit by an attack, you can spend an \glossterm{action point} to use this ability.
+            If you do, the attacking creature rerolls the attack roll.
+        \end{ability}
 
         \cf*{Rog}[12]{Combat Trick}
         You learn an additional \textit{combat trick}.
