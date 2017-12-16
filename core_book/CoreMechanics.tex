@@ -127,11 +127,6 @@ It defines how attributes work and explains how to make physical attacks in comb
             Sometimes, movement and distance are represented in squares.
             A 30-ft.\ movement is the same thing as moving six squares.
 
-        \subsubsection{Sprint}\label{Sprint}
-
-            At the start of each \glossterm{phase}, you can spend an \glossterm{action point} to use this ability.
-            If you do, you double your movement speed during that phase.
-
         \subsubsection{Movement Impediments}
 
             \parhead{Difficult Terrain}\label{Difficult Terrain}
@@ -262,33 +257,36 @@ It defines how attributes work and explains how to make physical attacks in comb
         All strike abilities allow you to attack with either one or two weapons.
         If you make a strike with two weapons, you take a \minus1 penalty to \glossterm{accuracy} with both attacks for each non-light weapon you attack with.
 
-        \subsubsection{Melee Strike}
-        As a \glossterm{standard action}, you can use this ability.
-        When you do, choose a creature you \glossterm{threaten} and one or two \glossterm{melee} weapons that you can attack with.
-        For each weapon, make a \glossterm{physical attack} with that weapon against the Armor defense of the target.
+        \begin{ability}{\labeltext{Melee Strike}}
+            As a \glossterm{standard action}, you can use this ability.
+            When you do, choose a creature you \glossterm{threaten} and one or two \glossterm{melee} weapons that you can attack with.
+            For each weapon, make a \glossterm{physical attack} with that weapon against the Armor defense of the target.
 
-        On a hit with any weapon, the target takes \glossterm{strike damage} from one weapon you hit with (see \pcref{Strike Damage}).
-        On a critical hit with any weapon, the target takes double damage from one weapon you hit with, as normal for critical hits.
+            On a hit with any weapon, the target takes \glossterm{strike damage} from one weapon you hit with (see \pcref{Strike Damage}).
+            On a critical hit with any weapon, the target takes double damage from one weapon you hit with, as normal for critical hits.
+        \end{ability}
 
-        \subsubsection{Projectile Strike}
-        As a \glossterm{standard action}, you can use this ability.
-        When you do, choose a creature you can target and one or two \glossterm{projectile} weapons you can attack with, and a creature you can see.
-        The creature must be within ten \glossterm{range increments} of you with all weapons.
-        For each weapon, make a \glossterm{physical attack} with that weapon against the Armor defense of the target.
-        The attack takes a \minus1 penalty to accuracy for for each full range increment between you and the target with that weapon.
+        \begin{ability}{\labeltext{Projectile Strike}}
+            As a \glossterm{standard action}, you can use this ability.
+            When you do, choose a creature you can target and one or two \glossterm{projectile} weapons you can attack with, and a creature you can see.
+            The creature must be within ten \glossterm{range increments} of you with all weapons.
+            For each weapon, make a \glossterm{physical attack} with that weapon against the Armor defense of the target.
+            The attack takes a \minus1 penalty to accuracy for for each full range increment between you and the target with that weapon.
 
-        On a hit with any weapon, the target takes \glossterm{strike damage} from one weapon you hit with.
-        On a critical hit with any weapon, the target takes double damage from one weapon you hit with, as normal for critical hits.
+            On a hit with any weapon, the target takes \glossterm{strike damage} from one weapon you hit with.
+            On a critical hit with any weapon, the target takes double damage from one weapon you hit with, as normal for critical hits.
+        \end{ability}
 
-        \subsubsection{Thrown Strike}
-        As a \glossterm{standard action}, you can use this ability.
-        When you do, choose a creature you can target and one or two \glossterm{thrown} weapons you can attack with.
-        The creature must be within five \glossterm{range increments} of you with all weapons.
-        For each weapon, make a \glossterm{physical attack} with that weapon against the Armor defense of the target.
-        The attack takes a \minus1 penalty to accuracy for for each full range increment between you and the target with that weapon.
+        \begin{ability}{\labeltext{Thrown Strike}}
+            As a \glossterm{standard action}, you can use this ability.
+            When you do, choose a creature you can target and one or two \glossterm{thrown} weapons you can attack with.
+            The creature must be within five \glossterm{range increments} of you with all weapons.
+            For each weapon, make a \glossterm{physical attack} with that weapon against the Armor defense of the target.
+            The attack takes a \minus1 penalty to accuracy for for each full range increment between you and the target with that weapon.
 
-        On a hit with any weapon, the target takes \glossterm{strike damage} from one weapon you hit with.
-        On a critical hit with any weapon, the target takes double damage from one weapon you hit with, as normal for critical hits.
+            On a hit with any weapon, the target takes \glossterm{strike damage} from one weapon you hit with.
+            On a critical hit with any weapon, the target takes double damage from one weapon you hit with, as normal for critical hits.
+        \end{ability}
 
     \subsection{Combat Maneuvers}\label{Combat Maneuvers}
         A combat maneuver is an attempt to physically hinder your foe with your body, such as by shoving or tripping it.
@@ -310,97 +308,134 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \subsubsection{Maneuver Descriptions}
 
-            \parhead{Dirty Trick}\label{Dirty Trick} You can use this ability to strike your foe in a sensitive spot, pull its pants down, or creatively use your environment to attack.
-            If you do, make a melee \glossterm{physical attack} with a free hand against the Fortitude or Reflex defense of a creature.
-            The target uses whichever defense is appropriate to the nature of the trick you describe.
-            On a hit, it suffers a \minus2 penalty to one of the following statistics as a \glossterm{condition}:
+            \begin{ability}{Dirty Trick}\label{Dirty Trick}
+                You can use this ability to strike your foe in a sensitive spot, pull its pants down, or creatively use your environment to attack.
+                If you do, make a melee \glossterm{physical attack} with a free hand against the Fortitude or Reflex defense of a creature.
+                The target uses whichever defense is appropriate to the nature of the trick you describe.
+
+                On a hit, as a \glossterm{condition}, the target suffers a \minus2 penalty to one of the following statistics:
                 \glossterm{accuracy} with \glossterm{physical attacks}, \glossterm{physical checks}, Armor defense, Fortitude defense, Reflex defense, or Mental defense.
-            On a critical hit, the penalty is increased to \minus5.
 
-            \parhead{Disarm}\label{Disarm} You can use this ability to strike an item your foe is wearing or holding to knock it out of their hands or damage it.
-            If you do, make a melee \glossterm{physical attack} with a weapon you wield against an object.
-            This attack must beat the target's Armor defense.
-            If the target is \glossterm{attended} by a creature, the attack must also beat the attending creature's Reflex defense.
-            On a hit, you choose whether the target takes \glossterm{strike damage} from the weapon you hit it with.
-            In addition, if the target is \glossterm{attended} and is not held in two hands or extraordinarily well secured (such as a ring), you can choose to knock it loose.
-            If you do, it falls to the ground in the square occupied by the attending creature that is closest to you.
-            On a critical hit, you can knock the target loose even if it is held in two hands.
+                On a critical hit, the penalty is increased to \minus5.
+            \end{ability}
 
-            \parhead{Feint}\label{Feint} You can use this ability during the \glossterm{action phase} to make a fake attack to leave your foe off-balance.
-            If you do, make a melee \glossterm{physical attack} with a weapon you wield against a creature's Reflex defense.
-            During the \glossterm{delayed action phase}, you can also make a melee \glossterm{strike} with the same weapon.
-            % Is this order clear enough?
-            On a hit, the target takes a \minus2 penalty to defenses against the delayed strike.
-            On a critical hit, the the penalty is increased to \minus5.
-            On a miss, you take a \minus2 penalty to accuracy with the strike.
+            \begin{ability}{Disarm}\label{Disarm}
+                You can use this ability to strike an item your foe is wearing or holding to knock it out of their hands or damage it.
+                If you do, make a melee \glossterm{physical attack} with a weapon you wield against an object.
+                This attack must beat the target's Armor defense.
+                If the target is \glossterm{attended} by a creature, the attack must also beat the attending creature's Reflex defense.
 
-            \parhead{Grapple}\label{Grapple} You can use this ability to physically grab and restrain your foe.
-            If you do, make a melee \glossterm{physical attack} with a free hand against a creature's Fortitude and Reflex defenses.
-            If you hit both defenses, you and the target are \grappled.
-            For details, see \pcref{Grappling}.
+                On a hit, you choose whether the target takes \glossterm{strike damage} from the weapon you hit it with.
+                In addition, if the target is \glossterm{attended} and is not held in two hands or extraordinarily well secured (such as a ring), you can choose to knock it loose.
+                If you do, it falls to the ground in the square occupied by the attending creature that is closest to you.
 
-            \parhead{Shove}\label{Shove} You can use this ability to shove your foe where you want it to go.
-            If you do, make a melee \glossterm{physical attack} with a free hand against a creature's Fortitude defense.
-            For each size category larger or smaller than the target that you are, you gain a \plus4 bonus or penalty to \glossterm{accuracy}.
-            On a hit, you move the target up to 10 feet in a direction of your choice.
-            Effects that limit movement speed, such as \glossterm{difficult terrain}, similarly limit the distance you can move the target.
-            You can move the same distance that you push the target, up to a maximum distance equal to half your land speed.
-            You cannot normally keep moving the target if it stops being adjacent to you.
-            If the target encounters a creature or solid object, you must stop moving it.
+                On a critical hit, you can knock the target loose even if it is held in two hands.
+            \end{ability}
 
-            On a critical hit, you can move the target up to your full movement speed.
+            \begin{ability}{Feint}\label{Feint}
+                You can use this ability during the \glossterm{action phase} to make a fake attack to leave your foe off-balance.
+                If you do, make a melee \glossterm{physical attack} with a weapon you wield against a creature's Reflex defense.
+                During the \glossterm{delayed action phase}, you can also make a melee \glossterm{strike} with the same weapon.
 
-            \parhead{Trip}\label{Trip} You use this ability to trip your foe.
-            If you do, make a melee \glossterm{physical attack} with a free hand against a creature's Reflex defense.
-            On a hit, the target becomes \prone.
-            On a critical hit, if you used this ability during the \glossterm{action phase}, you can also make a melee \glossterm{strike} with a weapon you wield against the target during the \glossterm{delayed action phase}.
-            You take a \minus2d penalty to damage with the strike.
+                % Is this order clear enough?
+                On a hit, the target takes a \minus2 penalty to defenses against the delayed strike.
+                On a critical hit, the the penalty is increased to \minus5.
+                On a miss, you take a \minus2 penalty to accuracy with the strike.
+            \end{ability}
 
-    \subsection{Special Combat Actions}
+            \begin{ability}{Grapple}\label{Grapple}
+                You can use this ability to physically grab and restrain your foe.
+                If you do, make a melee \glossterm{physical attack} with a free hand against a creature's Fortitude and Reflex defenses.
 
-        \parhead{Charge}\label{Charge} As a \glossterm{standard action} during the \glossterm{action phase}, you can spend an \glossterm{action point} to use this ability.
-        If you do, you move up to your speed in a single straight line.
-        During the \glossterm{delayed action phase}, you can make a melee \glossterm{strike} from your new location.
+                On a hit against both defenses, you and the target are \grappled.
+                For details, see \pcref{Grappling}.
+            \end{ability}
 
-        \parhead{Delay}\label{Delay}
-        As a \glossterm{standard action} during the \glossterm{action phase}, you can use this ability.
-        If you do, you can take a standard action during the \glossterm{delayed action phase}.
+            \begin{ability}{Shove}\label{Shove}
+                You can use this ability to shove your foe where you want it to go.
+                If you do, make a melee \glossterm{physical attack} with a free hand against a creature's Fortitude defense.
+                For each size category larger or smaller than the target that you are, you gain a \plus4 bonus or penalty to \glossterm{accuracy}.
 
-        \parhead{Desperate Recovery}\label{Desperate Recovery}
-        As a standard action, you can use this ability.
-        As long as you are conscious, no effect can prevent you from taking this action, even effects that prohibit all other actions.
-        If you do, at the end of the round, if you did not take damage this round, you may remove one \glossterm{condition} affecting you.
+                On a hit, you move the target up to 10 feet in a direction of your choice.
+                Effects that limit movement speed, such as \glossterm{difficult terrain}, similarly limit the distance you can move the target.
+                You can move the same distance that you push the target, up to a maximum distance equal to half your land speed.
+                You cannot normally keep moving the target if it stops being adjacent to you.
+                If the target encounters a creature or solid object, you must stop moving it.
 
-        \parhead{Recover}\label{Recover}
-        As a standard action, you can spend an \glossterm{action point} to use this ability.
-        As long as you are conscious, no effect can prevent you from taking this action, even effects that prohibit all other actions.
-        If you do, you heal hit points equal to your \glossterm{standard damage} \minus1d.
-        In addition, you may remove one \glossterm{condition} affecting you.
+                On a critical hit, you can move the target up to your full movement speed.
+            \end{ability}
 
-        \parhead{Total Defense}\label{Total Defense}
-        As a \glossterm{standard action}, you can use this ability to focus entirely on defense.
-        If you do, you gain a \plus2 bonus to your defenses until the end of the round.
-        This is a \glossterm{swift ability}.
+            \begin{ability}{\labeltext{Trip}}
+                You use this ability to trip your foe.
+                If you do, make a melee \glossterm{physical attack} with a free hand against a creature's Reflex defense.
 
-    \subsection{Special Movements}
+                On a hit, the target becomes \prone.
+                On a critical hit, if you used this ability during the \glossterm{action phase}, you can also make a melee \glossterm{strike} with a weapon you wield against the target during the \glossterm{delayed action phase}.
+                You take a \minus2d penalty to damage with the strike.
+            \end{ability}
 
-        \parhead{Struggle} As a \glossterm{standard action}, you can use this ability.
-        If you do, your land speed becomes five feet regardless of movement speed penalties until the end of the phase, and you can move up to your land speed.
-        This does not allow you to pass obstacles unrelated to movement speed penalties, such as walls.
+    \subsection{Special Combat Abilities}
 
-        \parhead{Overrun}\label{Overrun} At the start of the \glossterm{movement phase}, you can spend an \glossterm{action point} to use this ability.
-        If you do, you can try to move directly through creatures in your way during the current phase.
-        Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered.
-        If a creature does not attempt to avoid you, you make a Strength vs. Fortitude attack against it.
-        Success means you can move through the creature's space, though you treat it as \glossterm{difficult terrain}.
-        Critical success also means the creature is knocked prone, and you do not treat its space as difficult terrain.
-        Failure means you end your movement immediately.
+        \begin{ability}{\labeltext{Charge}}
+            As a \glossterm{standard action} during the \glossterm{action phase}, you can spend an \glossterm{action point} to use this ability.
+            If you do, you move up to your speed in a single straight line.
+            During the \glossterm{delayed action phase}, you can make a melee \glossterm{strike} from your new location.
+        \end{ability}
 
-    \subsection{Reactive Movements}
+        \begin{ability}{\labeltext{Delay}}
+            As a \glossterm{standard action} during the \glossterm{action phase}, you can use this ability.
+            If you do, you can take a standard action during the \glossterm{delayed action phase}.
+        \end{ability}
 
-        It is possible to declare movement that reacts automatically to the movement of an opponent.
+        \begin{ability}{\labeltext{Desperate Recovery}}
+            As a standard action, you can use this ability.
+            As long as you are conscious, no effect can prevent you from taking this action, even effects that prohibit all other actions.
+            If you do, at the end of the round, if you did not take damage this round, you may remove one \glossterm{condition} affecting you.
+        \end{ability}
+
+        \begin{ability}{\labeltext{Recover}}
+            As a standard action, you can spend an \glossterm{action point} to use this ability.
+            As long as you are conscious, no effect can prevent you from taking this action, even effects that prohibit all other actions.
+            If you do, you heal hit points equal to your \glossterm{standard damage} \minus1d.
+            In addition, you may remove one \glossterm{condition} affecting you.
+        \end{ability}
+
+        \begin{ability}{\labeltext{Total Defense}}[\glossterm{Swift}]
+            As a \glossterm{standard action}, you can use this ability to focus entirely on defense.
+            If you do, you gain a \plus2 bonus to your defenses until the end of the round.
+            This is a \glossterm{swift ability}.
+        \end{ability}
+
+    \subsection{Special Movement Abilities}
+
+        All creatures can use these abilities to affect their movement.
+
+        \begin{ability}{Sprint}
+            At the start of each \glossterm{phase}, you can spend an \glossterm{action point} to use this ability.
+            If you do, you double your movement speed during that phase.
+        \end{ability}
+
+        \begin{ability}{Struggle}
+            As a \glossterm{standard action}, you can use this ability.
+            If you do, your land speed becomes five feet regardless of movement speed penalties until the end of the phase, and you can move up to your land speed.
+            This does not allow you to pass obstacles unrelated to movement speed penalties, such as walls.
+        \end{ability}
+
+        \begin{ability}{\labeltext{Overrun}}
+            At the start of the \glossterm{movement phase}, you can spend an \glossterm{action point} to use this ability.
+            If you do, you can try to move directly through creatures in your way during the current phase.
+            Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered.
+            If a creature does not attempt to avoid you, you make a Strength vs. Fortitude attack against it.
+
+            On a hit, you can move through the creature's space, though you treat it as \glossterm{difficult terrain}.
+            On a critical hit, the creature is also knocked prone, and you do not treat its space as difficult terrain.
+            On a miss, you end your movement immediately.
+        \end{ability}
+
+    \subsection{Reactive Movement Abilities}
+
+        All creatures can use reactive movement abilities to move automatically in response to the movement of other creatures.
         For example, you can try to follow a creature wherever it goes that round.
-        If you declare a reactive movement at the start of the movement phase, you automatically move accordingly.
         In all cases, if you run out of movement speed before accomplishing your intended task, you simply stop where you ran out of movement.
         The most common types of reactive movements are the \textit{block}, \textit{follow}, and \textit{withdraw} abilities, but you can come up with other reactive movements.
         The only requirement is that a reactive movement must have a simple criteria for determining how you move.
@@ -409,8 +444,9 @@ It defines how attributes work and explains how to make physical attacks in comb
         For every 5 feet of movement you would have available after completing your movement, you gain a \plus2 bonus to any initiative checks necessary to determine whether your movement succeeds.
         Regardless of whether your initiative check succeeds or fails, you cannot use that ``excess'' movement to move after making such an initiative check.
 
-        \subsubsection{Block}\label{Block}
-            You can designate a target creature or object to block, and the area you want to block it from entering.
+        \begin{ability}{\labeltext{Block}}
+            At the start of each phase, you can use this ability.
+            If you do, choose a creature or object to block, and the area you want to block it from entering.
             When you do, you automatically move to intercept the target as it approaches the blocked area.
             Usually, blocking a target requires an opposed \glossterm{initiative} check against the target.
             Success means you successfully keep ahead of the target as it moves, preventing it from entering the area (unless it can move through you).
@@ -418,15 +454,19 @@ It defines how attributes work and explains how to make physical attacks in comb
 
             Multiple creatures can coordinate to block a single creature.
             The blocked creature must beat the initiative of all blocking creatures to enter the blocked area.
+        \end{ability}
 
-        \subsubsection{Follow}\label{Follow}
-            You can designate a target creature or object to follow, and the maximum distance you want to follow at. When you do, you automatically move such that your distance to the target is no greater than your desired follow distance. For the rest of the round, whenever that creature or object moves, you move with it to stay within that follow distance.
+        \begin{ability}{\labeltext{Follow}}
+            At the start of each phase, you can use this ability.
+            If you do, choose a creature or object to follow, and the maximum distance you want to follow at.
+            When you do, you automatically move such that your distance to the target is no greater than your desired follow distance. For the rest of the round, whenever that creature or object moves, you move with it to stay within that follow distance.
+            If the target takes an action that makes it impossible to follow with movement, such as teleporting, you cannot follow it for the rest of the current phase.
+        \end{ability}
 
-            If the target takes an action that makes it impossible to follow with movement, such as teleporting, you cannot follow it for the rest of the round.
-
-        \subsubsection{Withdraw}\label{Withdraw}
-            Withdrawing functions the same way as following, except that you specify a minimum distance between you and the target instead of a maximum distance.
+        \begin{ability}{\labeltext{Withdraw}}
+            This ability functions like the \textit{follow} ability, except that you specify a minimum distance between you and the target instead of a maximum distance.
             In addition, you can specify multiple targets and try to keep away from all of them.
+        \end{ability}
 
     \section{Attributes}\label{Attributes}
 
@@ -598,7 +638,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \subsubsection{Extraordinary Attributes}
             Some abilities can increase your starting attributes above 4.
-            For each point of startinga attribute beyond 4, you increase your current attribute by the same amount.
+            For each point of starting attribute beyond 4, you increase your current attribute by the same amount.
             For example, a 20th level half-orc cleric with the Strength domain who spent 5 points on her starting Strength would have a total starting Strength of 6.
             Her Strength would be two higher than it would be with a starting attribute of 4, for a total of 25.
 
@@ -1176,7 +1216,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         In addition, an unarmed attack always deals \glossterm{subdual damage}.
         You may use any appropriate part of your body to make an unarmed attack -- fists, feet, elbows, and so on.
         However, you only have one unarmed attack.
-        You cannot dual-wield unarmed attacks as if you were fighting with two weapons at once (see \pcref{Dual Strike}).
+        You cannot dual-wield unarmed attacks as if you were fighting with two weapons at once (see \pcref{Strikes}).
 
         An unarmed attack is a type of natural weapon.
         Spells and abilities that affect natural weapons can affect your unarmed attack.
