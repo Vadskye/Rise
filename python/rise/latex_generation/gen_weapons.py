@@ -16,8 +16,8 @@ def generate_weapons():
             This weapon is on fire.
             It sheds light as a torch, and all damage dealt with it is fire damage in addition to its other types.
             As a \\glossterm<minor action>, you can kindle the flames.
-            This ability takes effect during the current phase and lasts until the end of the round.
             If you do, you gain a +1d bonus to \\glossterm<strike damage> with this weapon.
+            This is a \\glossterm<swift ability>, and it lasts until the end of the round.
         """,
         short_description="Can deal +1d fire damage",
     ))
@@ -44,8 +44,8 @@ def generate_weapons():
             This weapon continuously crackles with electricity.
             The constant sparks shed light as a torch, and all damage dealt with it is electricity damage in addition to its other types.
             As a \\glossterm<minor action>, you can intensify the electricity.
-            This ability takes effect during the current phase and lasts until the end of the round.
             If you do, when you make a \\glossterm<strike> with this weapon and your attack result beats the target's Fortitude defense, the target is \\dazed as a \\glossterm<condition>.
+            This is a \\glossterm<swift ability>, and it lasts until the end of the round.
         """,
         short_description="Deals electicity damage, can daze",
     ))
@@ -71,8 +71,8 @@ def generate_weapons():
         description="""
             This weapon is bitterly cold, and all damage dealt with it is cold damage in addition to its other types.
             As a \\glossterm<minor action>, you can intensify the cold.
-            This ability takes effect during the current phase and lasts until the end of the round.
             If you do, when you make a \\glossterm<strike> with this weapon and your attack result beats the target's Fortitude defense, the target is \\fatigued as a \\glossterm<condition>.
+            This is a \\glossterm<swift ability>, and it lasts until the end of the round.
         """,
         short_description="Deals cold damage, can fatigue",
     ))
@@ -98,8 +98,8 @@ def generate_weapons():
             This weapon constantly emits a low-pitched rumbling noise and vibrates slightly in your hand.
             All damage dealt with it is sonic damage in addition to its other types.
             As a \\glossterm<minor action>, you can intensify the vibration.
-            This ability takes effect during the current phase and lasts until the end of the round.
             If you do, when you make a \\glossterm<strike> with this weapon and your attack result beats the target's Fortitude defense, the target is \\deafened as a \\glossterm<condition>.
+            This is a \\glossterm<swift ability>, and it lasts until the end of the round.
         """,
         short_description="Deals sonic damage, can deafen",
     ))
@@ -136,8 +136,8 @@ def generate_weapons():
         description="""
             This weapon shimmers with a chaotic pattern of colors.
             As a \\glossterm<minor action>, you can intensify the shimmering.
-            This ability takes effect during the current phase and lasts until the end of the round.
             If you do, when you make a \\glossterm<strike>  with this weapon and your attack result beats the target's Mental defense, it is \\disoriented as a \\glossterm<condition>.
+            This is a \\glossterm<swift ability>, and it lasts until the end of the round.
         """,
         short_description="Can disorient struck foes",
     ))
@@ -184,9 +184,9 @@ def generate_weapons():
         description="""
             This weapon feels heavy in the hand.
             As a \\glossterm<minor action>, you can intensify the weapon's heft.
-            This ability takes effect during the current phase and lasts until the end of the round.
             If you do, when you make a \\glossterm<strike> with this weapon, you can also use your attack result as a \\glossterm<shove> attack agsint the target.
             You do not need to move with your foe to move it the full distance of the shove.
+            This is a \\glossterm<swift ability>, and it lasts until the end of the round.
         """,
         short_description="Can shove struck foes",
     ))
@@ -448,9 +448,9 @@ def main(output, check):
     if output is None:
         print(weapon_latex)
     else:
-        with open('weapons.tex', 'w') as weapon_description_file:
+        with open('../../core_book/weapons.tex', 'w') as weapon_description_file:
             weapon_description_file.write(weapon_latex)
-        with open('weapons_table.tex', 'w') as weapon_table_file:
+        with open('../../core_book/weapons_table.tex', 'w') as weapon_table_file:
             weapon_table_file.write(generate_weapon_table())
 
 
