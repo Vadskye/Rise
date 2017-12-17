@@ -633,18 +633,27 @@ A character's skills describe the myriad of talents that people have.
         The DRs listed are for animals; the DRs to handle other kinds of creatures are 5 higher.
 
     \subsection{Handling Creatures}
-        You can use Creature Handling to control a creature's actions. Critical failure with these checks may make the target hostile, depending on the circumstances.
-        \parhead{Pacify}\label{Pacify} As a standard action, you can use this ability.
-        If you do, make a Creature Handling vs. Mental attack against a creature within \rngmed range.
-        On a hit, the target is unable to take any actions except the \textit{recover} and \textit{desperate recovery} actions.
-        If it is threatened or damaged, this effect is automatically broken.
-        This effect lasts as long as you \glossterm{sustain} it as a \glossterm{standard action}.
+        You can use Creature Handling to control a creature's actions using these abilities.
+        Critical failure with these abilities may make the target hostile, depending on the circumstances.
 
-        The target's defense is increased if it is not an animal, as normal for Creature Handling attacks and checks.
-        You take a \minus10 penalty to accuracy against an actively hostile target.
-        This is a \glossterm{Compulsion}, \glossterm{Mind} ability.
-        \parhead{Perform Trained Action} As a free action, you can make a DR 5 check to convince a creature to perform an action it is trained to perform. Generally, wild animals are not trained in any actions, so this is not effective on them.
-        \parhead{Push} As a standard action, you can make a DR 15 check to convince a willing creature to perform an action it is not trained to perform, but which it is physically capable of performing. This also covers making a creature perform a forced march and similar activities.
+        \begin{ability}{Pacify}[\glossterm{Compulsion}, \glossterm{Mind}]
+            As a standard action, you can use this ability.
+            If you do, make a Creature Handling vs. Mental attack against a creature within \rngmed range.
+            On a hit, the target is unable to take any actions except the \textit{recover} and \textit{desperate recovery} actions.
+            If it is threatened or damaged, this effect is automatically broken.
+            This effect lasts as long as you \glossterm{sustain} it as a \glossterm{standard action}.
+
+            The target's defense is increased if it is not an animal, as normal for Creature Handling attacks and checks.
+            You take a \minus10 penalty to accuracy against an actively hostile target.
+        \end{ability}
+
+        \begin{ability}{Perform Trained Action}
+            As a free action, you can make a DR 5 check to convince a creature to perform an action it is trained to perform. Generally, wild animals are not trained in any actions, so this is not effective on them.
+        \end{ability}
+
+        \begin{ability}{Push}
+            As a standard action, you can make a DR 15 check to convince a willing creature to perform an action it is not trained to perform, but which it is physically capable of performing. This also covers making a creature perform a forced march and similar activities.
+        \end{ability}
 
     \subsection{Training Creatures}\label{Training Creatures}
         You can use Creature Handling to train a creature. Success means the creature learns a trick or becomes domesticated. Failure means your time is wasted, and you must try again. Exceptional failure may indicate that the animal becomes unable to learn the trick, becomes hostile, or other consequences depending on the situation. Training a creature takes a week or more; this requires spending at least four hours each day with the creature. It is not generally possible to accelerate the process by spending more time each day; the creature must take time to learn the new behavior. If the training is interrupted for a week or more, the attempt automatically fails.
@@ -849,9 +858,14 @@ A character's skills describe the myriad of talents that people have.
         You can make an Intimidate check to convince a creature to do what you want. This functions like a Persuasion check to form an agreement with a group, except that you do not apply a relationship modifier. In addition, the DR is up to 10 lower if the group thinks your group is significantly stronger than them, or up to 10 higher if the group thinks your group is significantly weaker.
 
     \subsection{Demoralize}\label{Demoralize}
-        As a standard action, you can use this ability.
-        If you do, make an Intimidate vs. Mental attack against a creature within \rngmed range.
-        On a hit, the target is \shaken by you as a \glossterm{condition}.
+
+        You can use the \textit{demoralize} ability to intimidate creatures in combat.
+
+        \begin{ability}{Demoralize}
+            As a standard action, you can use this ability.
+            If you do, make an Intimidate vs. Mental attack against a creature within \rngmed range.
+            On a hit, the target is \shaken by you as a \glossterm{condition}.
+        \end{ability}
 
 \newpage
 \skill{Jump}{Str}
@@ -1165,7 +1179,7 @@ A character's skills describe the myriad of talents that people have.
         If the creature's behavior is currently being altered by a \glossterm{Delusion} effect, the DR is 20, and success means you identify the presence of a Delusion.
         Failure means you do not notice any such effects on the creature.
 
-        You can also use this ability to identify \glossterm{Subtle} effects on yourself, using the same DRs.
+        You can also make this check to identify \glossterm{Subtle} effects on yourself, using the same DRs.
 
     \subsection{Discern Lies [Hidden]}
         Whenever you observe a creature speak, you can make a Sense Motive check.
