@@ -460,7 +460,7 @@ def generate_spells():
                 defense='Special',
                 special="""
                     The attack result is applied to every \\glossterm<magical> effect on the target.
-                    The DR for each effect is equal to 10 + the \\glossterm<power> of that effect.
+                    The DR for each effect is equal to 5 + the \\glossterm<power> of that effect.
                 """,
                 success="""
                     The effect is \\glossterm<suppressed>.
@@ -506,7 +506,7 @@ def generate_spells():
                     attack=Attack(
                         defense='Special',
                         special="""
-                            The DR is equal to 10 + the target's spellpower.
+                            The DR is equal to 5 + the target's spellpower.
                         """,
                         success="""
                             The target object is \\glossterm<suppressed>.
@@ -523,7 +523,7 @@ def generate_spells():
                     attack=Attack(
                         defense='Special',
                         special="""
-                            If the target is an effect of an ongoing \\glossterm<magical> ability, such as a summoned monster, the DR is equal to 10 + the target's spellpower.
+                            If the target is an effect of an ongoing \\glossterm<magical> ability, such as a summoned monster, the DR is equal to 5 + the target's spellpower.
                             Otherwise, this ability has no effect.
                         """,
                         success="""
