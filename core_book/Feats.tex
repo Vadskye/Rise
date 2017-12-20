@@ -582,7 +582,9 @@ Feats can be used to specialize your character particular area, to grant your ch
         \featpre Conjuration spell known.
         \featben
 
-        \ff[1]{Astral Spirit} When you cast the \spell{summon monster} spell, you can manifest an astral spirit instead of an animal.
+        \ff[1]{Fortified Manifestation} Objects and creatures you create with \glossterm{Manifestation} abilities have additional hit points equal to your spellpower, and gain a \plus1d bonus to damage with all attacks.
+
+        \ff[3]{Astral Spirit} When you cast the \spell{summon monster} spell, you can manifest an astral spirit instead of an animal.
         An astral spirit is a floating, spirit-like creature with a translucent body.
         Its size is Medium, and it is vaguely humanoid in shape.
         It has a physical form, and occupies space like any other creature.
@@ -591,9 +593,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         In addition, it can teleport any distance as a move action as long as its destination is within \rngmed range of you.
         If an astral spirit hits with its strike, it deals physical damage.
 
-        \ff[3]{Astral Spell Transit} Your attacks with spells ignore \glossterm{cover}, but not \glossterm{total cover}.
-
-        \ff[5]{Fortified Manifestations} Objects and creatures you create with \glossterm{Manifestation} abilities have additional hit points equal to your spellpower.
+        \ff[5]{Astral Spell Transit} Your attacks with spells ignore \glossterm{cover}, but not \glossterm{total cover}.
 
         \ff[7]{Distant Spells} You double the range of all spells you cast.
         In addition, all \glossterm{Teleportation} spells you cast can teleport twice their normal distance.
@@ -605,7 +605,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[13]{Greater Astral Spell Transit} When determining whether you have \glossterm{line of effect} to a particular location with a spell, you can ignore a single solid obstacle up to five feet thick.
         This can allow you to cast spells through solid walls, though it does not grant you the ability to see through the wall.
 
-        \ff[15]{Greater Fortified Manifestations} Objects and creatures you create with \glossterm{Manifestation} abilities have \glossterm{damage reduction} equal to your spellpower.
+        \ff[15]{Greater Fortified Manifestation} The hit point bonus from your \textit{fortified manifestation} ability increases to twice your spellpower, and the damage bonus increases to \plus2d.
 
         \ff[17]{} 
 
@@ -942,30 +942,23 @@ Feats can be used to specialize your character particular area, to grant your ch
         You take a \minus5 penalty to accuracy on attacks against such creatures.
         This does not allow you to affect creatures with a \glossterm{magical} immunity to \glossterm{Mind} abilities.
 
-        \ff[3]{Mind Scour} You gain the \textit{mind scour} ability.
-        \begin{ability}{Mind Scour}[\glossterm{Mind}]
-            As a \glossterm{standard action}, you can spend an \glossterm{action point} to use this ability.
-            If you do, make a \glossterm{spellpower} vs. Mental attack against a creature within \rngmed range.
-            On a hit, the target takes physical \glossterm{standard damage}, and its Mental defense is lowered by 3 as a \glossterm{condition}.
-            On a critical hit, the target takes double damage and the penalty is increased to \minus6.
-        \end{ability}
-
-        \ff[5]{Subtle Influence} The DR to identify your \glossterm{Mind} abilities with Spellcraft, and to identify their effects with Sense Motive, increases by 5.
-
-        \ff[7]{Enchanting Presence} You gain a \plus1 bonus to Intimidate and Persuasion.
+        \ff[3]{Enchanting Presence} You gain a \plus1 bonus to Intimidate and Persuasion.
         In addition, creatures within a 50-foot radius \glossterm{emanation} of you take a \minus1 penalty to Mental defense.
         You may freely exclude creatures you are aware of from this effect.
 
-        \ff[9]{Brutal Scouring} You gain a \plus1d bonus to damage with your \textit{mind scour} ability. 
+        \ff[5]{Subtle Influence} You gain a \plus1 bonus to accuracy with \glossterm{Mind} abilities.
+        In addition, the DR to identify your \glossterm{Mind} abilities with Spellcraft, and to identify their effects with Sense Motive, increases by 5.
 
-        \ff[11]{Greater Mind Fragments} The penalty to accuracy against creatures with \glossterm{mundane} immunity to \glossterm{Mind} effects decreases to \minus2.
+        \ff[7]{Greater Mind Fragments} The accuracy penalty from your \textit{mind fragments} ability decreases to \minus2.
 
-        \ff[13]{Greater Enchanting Presence} The bonus to Intimidate and Persuasion increases to \plus2.
-        In addition, the penalty to Mental defense against creatures near you is increased to \minus2.
+        \ff[9]{Greater Enchanting Presence} The bonuses and penalties from your \textit{enchanting presence} ability increase to \plus2 and \minus2.
 
-        \ff[15]{Mental Breach} You gain a \plus1 bonus to accuracy with your \textit{mind scour} ability.
+        \ff[11]{Greater Subtle Influence} The accuracy bonus from your \textit{subtle influence} ability increases to \plus2.
+        In addition, the DR increase from that ability increases to 10.
 
-        \ff[17]{Greater Subtle Influence} The DR increase to identify your \glossterm{Mind} abilities increases to 10.
+        \ff[15]{Supreme Mind Fragments} The accuracy penalty from your \textit{mind fragments} ability is removed.
+
+        \ff[17]{Supreme Enchanting Presence} The bonuses and penalties from your \textit{enchanting presence} increase to \plus2 and \minus2.
 
         \ff[19]{Mental Torment} Whenever you target a creature with a Mind ability, that creature takes a \minus1 penalty to Mental defense.
         This is a \glossterm{condition}, and lasts until it is removed.
@@ -1023,8 +1016,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         % Which spellpower?
         \ff[3]{Energy Resistance} You gain damage reduction equal to your spellpower against \glossterm{energy damage}.
 
-        \ff[5]{Energy Affinity} Choose an energy type cold, electricity, fire, or sonic.
-        You gain a \plus1 bonus to accuracy with attacks that deal damage of that type.
+        \ff[5]{Energy Affinity} You gain a \plus1d bonus to damage with attacks that deal \glossterm{energy damage} measured in dice.
 
         \ff[7]{Residual Energy Burst} When your \textit{energy burst} attack hits, the target suffers an additional effect depending on the energy type chosen.
         These effects are \glossterm{conditions}, and last until they are removed.
@@ -1181,32 +1173,35 @@ Feats can be used to specialize your character particular area, to grant your ch
             A creature gets a \plus10 bonus on this Awareness check when using senses which should be present in the figment, but which are missing.
         \end{ability}
 
-        \ff[3]{Reflexive Illusion} You gain a \plus1 bonus to Disguise, Sleight of Hand, and Stealth.
+        \ff[3]{Reflexive Illusion} You gain a \plus1 bonus to Armor defense, Disguise, Sleight of Hand, and Stealth.
 
-        \ff[5]{Controlled Image} While your \textit{create image} ability is active, you can concentrate on the figment as a standard action.
-        If you do, you can directly control the figment's movement for the rest of the round, including their actions during the action phase.
-        You cannot alter the fundamental shape of the figment, but you can have it perform complex actions, such as pretending to fight other creatures or engaging in a vigorous dance.
-        The figment's ability to simulate physical tasks that require dexterity or training, such as juggling, is limited by your own.
-        You may need to make relevant checks to make the figment perform complex actions.
-
-        \ff[7]{Muffled Illusions} The level cost to apply the Silent \glossterm{augment} to Illusion spells you cast is reduced by 1, to a minimum of 0 (see \pcref{Augments}).
-        In addition, choose a sense: sound, smell, or temperature.
-        Your \textit{create image} ability can create sensations with the chosen sense.
+        \ff[5]{Muffled Illusions} You learn the Silent \glossterm{augment}.
+        In addition, the level cost to apply the Silent \glossterm{augment} to Illusion spells you cast is reduced by 1, to a minimum of 0 (see \pcref{Augments}).
         % How loud is the sound? How pungent is the smell? etc.
 
-        \ff[9]{Flexible Image} Your \textit{create image} ability can create figments between Diminuitive and Huge size.
+        \ff[7]{Control Image} You gain the \textit{control image} ability.
+        \begin{ability}{Control Image}{\glossterm{Swift}}
+            While your \textit{create image} ability is active, you can use this ability as a standard action.
+            If you do, you can directly control the figment's movement for the rest of the round.
+            You cannot alter the fundamental shape of the figment, but you can have it perform complex actions, such as pretending to fight other creatures or dancing.
+            The figment's ability to simulate physical tasks that require dexterity or training, such as juggling, is limited by your own.
+            You may need to make relevant checks to make the figment perform complex actions.
+        \end{ability}
 
-        \ff[11]{Greater Reflexive Illusion} The bonus from your \textit{reflexive illusion} ability increases to \plus2.
+        \ff[9]{Greater Reflexive Illusion} The bonuses to skills from your \textit{reflexive illusion} ability increase to \plus2.
 
-        \ff[13]{Subtle Illusions} The level cost to apply the Stilled \glossterm{augment} to Illusion spells you cast is reduced by 1, to a minimum of 0 (see \pcref{Augments}).
+        \ff[11]{Hidden Illusions} You learn the Stilled \glossterm{augment}.
+        In addition, the level cost to apply the Stilled augment to Illusion spells you cast is reduced by 1, to a minimum of 0 (see \pcref{Augments}).
+
+        \ff[13]{Flexible Image} Your \textit{create image} ability can create figments between Diminuitive and Huge size.
         In addition, choose a sense: sound, smell, or temperature.
         Your \textit{create image} ability can create sensations with the chosen sense.
 
-        \ff[15]{Greater Flexible Image} Your \textit{create image} ability can create figments between Fine and Gargantian size.
+        \ff[15]{Supreme Reflexive Illusion} The bonus to Armor defense from your \textit{reflexive illusion} ability increases to \plus2, and the bonuses to skills increase to \plus3.
 
-        \ff[17]{Reflexive Illusion} The bonus to skill checks increases to \plus3.
-        In addition, choose a sense: sound, smell, or temperature.
-        Your \textit{create image} ability can create sensations with the chosen sense.
+        \ff[17]{Innate Illusions} The level cost to apply both the Silent and Stilled \glossterm{augments} to Illusion spells is removed.
+
+        \ff[19]{Greater Control Image} You can use your \textit{control image} ability as part of the same action you use to sustain your \textit{create image} ability. 
     \end{feat}
 
     \begin{feat}{Intimidate Specialization}{Skill}
@@ -1243,7 +1238,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[6]{Mind over Matter} You reduce your penalties for being \glossterm{staggered} by 2.
 
-        \ff[8]{Greater Resilience} The bonus hit points from your \textit{resilience} ability increase to twice your Constitution.
+        \ff[8]{Greater Resilience} The bonus hit points from your \textit{resilience} ability increase to twice your Willpower.
 
         \ff[10]{Greater Unclouded Mind} You are immune to being \glossterm{stunned}.
 
@@ -1560,21 +1555,22 @@ Feats can be used to specialize your character particular area, to grant your ch
         \spelldesc{You can attack with such force that you cleave through your foes.}
         \featpre Starting Strength of 2.
 
-        \ff[1]{Cleave} For each \glossterm{critical hit} you get with a melee strike using a slashing or bludgeoning weapon during the \glossterm{action phase}, you can make an additional strike during the \glossterm{delayed action phase}.
-        Each additional strike must target a different creature adjacent to the original strike's target.
+        \ff[1]{Cleave} If you get a \glossterm{critical hit} with a melee strike using a slashing or bludgeoning weapon during the \glossterm{action phase}, you can make an additional strike during the \glossterm{delayed action phase}.
+        This additional strike must target a creature adjacent to a target of the original strike.
 
         \ff[2]{Sweeping Blow} You gain the \textit{sweeping blow} ability.
         \begin{ability}{Sweeping Blow}
             As a standard action, you can spend an \glossterm{action point} to use this ability.
-            If you do, you can make a melee \glossterm{strike} with a slashing or bludgeoning weapon against each of up to three creatures you \glossterm{threaten}.
+            If you do, you can make a melee \glossterm{strike} with a slashing or bludgeoning weapon.
+            You apply the strike against each of up to three creatures you \glossterm{threaten}.
             You take a \minus1 penalty to \glossterm{accuracy} on each strike.
         \end{ability}
 
         \ff[4]{Reaping Assault} You gain the \textit{reaping assault} ability.
         \begin{ability}{Reaping Assault}
             As a standard action, you can spend an \glossterm{action point} to use this ability.
-            If you do, you can move up to your movement speed in a straight line.
-            You can make a melee \glossterm{strike} with a slashing or bludgeoning weapon against each creature and object that you \glossterm{threaten} at any point during your movement, except for the space you start in and the space you end in.
+            If you do, you can move up to your movement speed in a straight line and make a \glossterm{strike} with a slashing or bludgeoning weapon.
+            You apply the strike against each creature and object that you \glossterm{threaten} at any point during your movement, except for the space you start in and the space you end in.
             You take a \minus2 penalty to \glossterm{accuracy} on each strike.
         \end{ability}
 
@@ -1907,9 +1903,9 @@ Feats can be used to specialize your character particular area, to grant your ch
         \featpre Transmutation spell known.
         \featben
 
-        \ff[1]{Fortify Body} You gain a \plus1 bonus to Armor defense.
+        \ff[1]{Enhance Body} You gain a \plus1 bonus to Armor defense and Strength-based \glossterm{checks}.
 
-        \ff[3]{Alter Self} You gain the \textit{alter self} ability.
+        \ff[3]{Reshaper} You gain the \textit{alter self} and \textit{alter object} abilities.
         \begin{ability}{Alter Self}[\glossterm{Shaping}]
             As a standard action, you can spend an \glossterm{action point} to use this ability.
             If you do, you make a Disguise check to alter your appearance (see \pcref{Disguise Creature}), except that you can use your spellpower in place of your Disguise skill.
@@ -1918,7 +1914,6 @@ Feats can be used to specialize your character particular area, to grant your ch
             This ability lasts until you use it again.
         \end{ability}
 
-        \ff[5]{Alter Object} You gain the \textit{alter object} ability.
         \begin{ability}{Alter Object}[\glossterm{Shaping}]
             As a standard action, you can spend an \glossterm{action point} to use this ability.
             If you do, choose an unattended, nonmagical object you can touch.
@@ -1930,9 +1925,12 @@ Feats can be used to specialize your character particular area, to grant your ch
             Each time you use this ability, you can accomplish work that would take up to five minutes with a normal Craft check.
         \end{ability}
 
-        \ff[7]{Enhance Body} You gain a \plus1 bonus to Strength-based checks.
+        \ff[5]{Transmutive Vigor} At the end of each \glossterm{action phase}, you heal hit points equal to half your highest \glossterm{spellpower}.
 
-        \ff[9]{Alter Poison} You gain the \textit{alter poison} ability.
+        \ff[7]{Greater Enhance Body} The bonus to checks from your \textit{enhance body} ability increases to \plus2.
+
+        \ff[9]{Greater Reshaper} When you use your \textit{alter object} ability, you can accomplish work that would take up to an hour with a normal Craft check.
+        In addition, you gain the \textit{alter poison} ability.
         \begin{ability}{Alter Poison}[\glossterm{Shaping}, \glossterm{Sustain} (minor)]
             As a standard action, you can spend an \glossterm{action point} to use this ability.
             If you do, make a \glossterm{spellpower} vs. Fortitude attack against a creature within \rngclose range.
@@ -1942,9 +1940,16 @@ Feats can be used to specialize your character particular area, to grant your ch
             In addition, the target's \glossterm{mundane} poisons, including natural attacks that inflict poison, have no effect.
         \end{ability}
 
-        \ff[11]{Greater Alter Object} When you use your \textit{alter object} ability, you can accomplish work that would take up to an hour with a normal Craft check.
+        \ff[11]{Greater Transmutive Vigor} The healing from your \textit{transmutive vigor} ability increases to be equal to your highest \glossterm{spellpower}.
 
-        \ff[13]{Greater Enhance Body} The bonus to Strength-based checks increases to \plus2.
+        \ff[13]{Supreme Enhance Body} The bonus to Armor defense from your \textit{enhance body} ability increases to \plus2, and the bonus to checks increases to \plus3.
+
+        \ff[15]{Supreme Reshaper} You do not need to spend action points to use your \textit{alter self}, \textit{alter object}, or \textit{alter poison} abilities.
+
+        \ff[17]{Supreme Transmutive Vigor} The healing from your \textit{transmutive vigro} ability increases to be equal to twice your highest \glossterm{spellpower}.
+
+        \ff[19]{Malleable Body} You are immune to \glossterm{critical hits} from \glossterm{strikes}.
+        You suffer only the effects of a normal hit instead.
     \end{feat}
 
     \begin{feat}{Vivimancer}{Magical, Spell}
@@ -1954,26 +1959,33 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[1]{Restore Life} You gain the \textit{restore life} ability.
         \begin{ability}{Restore Life}[\glossterm{Life}]
             As a standard action, you can spend an \glossterm{action point} to use this ability.
-            If you do, choose a willing creature within \rngclose range.
+            If you do, choose a willing creature within \rngmed range.
             The target is healed for hit points equal to your \glossterm{standard damage} \plus1d.
             Your \glossterm{power} with this ability is equal to your highest \glossterm{spellpower}.
         \end{ability}
 
-        \ff[3]{Lesser Unliving Resilience} You are immune to \glossterm{disease}.
+        \ff[3]{Unliving Resilience} You are immune to \glossterm{disease} and hostile \glossterm{Death} effects.
 
-        \ff[5]{Lesser Lifebound Resilience} You are immune to hostile \glossterm{Death} effects.
+        \ff[5]{Vivimantic Surge} Whenever you cast a Vivimancy spell, you can heal any number of willing targets for hit points equal to your \glossterm{spellpower} with that spell.
+        In addition, you gain a \plus1d bonus to damage with attacks that deal life damage.
 
-        \ff[7]{Restore Vitality} When you use your \textit{restore life} ability, for every 2 points of healing, you can instead heal 1 \glossterm{vital damage}.
+        \ff[7]{Greater Restore Life} The healing granted by your \textit{restore life} ability increases by \plus1d.
+        In addition, for every 2 points of healing, you can instead heal 1 \glossterm{vital damage}.
 
-        \ff[9]{Unliving Resilience} You are immune to life damage and hostile \glossterm{Life} effects.
+        \ff[9]{Greater Unliving Resilience} You are immune to life damage and hostile \glossterm{Life} effects.
 
-        % Too small? Should this be full spellpower?
-        \ff[11]{Lifebound Resilience} At the end of each \glossterm{action phase}, you heal hit points equal to half your spellpower.
+        \ff[11]{Greater Vivimantic Surge} The healing granted by your \textit{vivimantic surge} ability increases to twice your \glossterm{spellpower} with the spell.
 
-        \ff[15]{Greater Unliving Resilience} You are healed by life damage instead of being immune to it.
-        This healing applies before immunity, allowing you to heal from life damage dealt by \glossterm{Life} effects without suffering any other effects..
+        \ff[13]{Supreme Restore Life} The healing granted by your \textit{restore life} ability increases by an additional \plus1d.
+        In addition, it no longer costs an action point to use.
 
-        \ff[17]{Greater Lifebound Resilience} You heal hit points equal to your spellpower each round, instead of half your spellpower.
+        \ff[15]{Supreme Unliving Resilience} You are healed by life damage instead of being immune to it.
+        This healing applies before immunity, allowing you to heal from life damage dealt by \glossterm{Life} effects without suffering any other effects.
+
+        \ff[17]{Supreme Vivimantic Surge} The healing granted by your \textit{vivimantic surge} ability increases to three times your \glossterm{spellpower} with the spell.
+        In addition, the damage bonus increases to \plus2d.
+
+        \ff[19]{} 
     \end{feat}
 
     \begin{feat}{Whirlwind Warrior}{Combat}
@@ -2016,7 +2028,8 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[16]{Greater Eye of the Storm} The bonus from your \textit{eye of the storm} ability increases to \plus2.
 
-        \ff[18]{Hurricane Defense} When you use your \textit{hurricane strike} ability, you ignore all \glossterm{overwhelm penalties} until the end of the round, including during the same phase.
+        \ff[18]{Hurricane Defense} When you use your \textit{whirlwind strike} ability, you ignore all \glossterm{overwhelm penalties} until the end of the round.
+        This is a \glossterm{swift ability}.
     \end{feat}
 
 \section{Other Feat Rules}
