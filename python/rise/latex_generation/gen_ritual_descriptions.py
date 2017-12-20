@@ -190,6 +190,7 @@ def generate_rituals():
         targeting=Targeting(
             rng='close',
             time='One hour',
+            target='Location',
         ),
         effects=Effects(
             effect="""
@@ -215,6 +216,7 @@ def generate_rituals():
         targeting=Targeting(
             rng='close',
             time='One hour',
+            target='Location',
         ),
         effects=Effects(
             effect="""
@@ -376,6 +378,7 @@ def generate_rituals():
             rng='close',
             time='One week',
             action_points=81,
+            target='Location',
         ),
         effects=Effects(
             effect="""
@@ -495,6 +498,7 @@ def generate_rituals():
         # header=Header("description"),
         targeting=Targeting(
             rng='close',
+            target='Location',
         ),
         effects=Effects(
             effect="""
