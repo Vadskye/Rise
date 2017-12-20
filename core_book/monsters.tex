@@ -258,6 +258,39 @@ Wil \minus2
 \end{spellfooter}
 \end{spellsubcontent}
 \end{monsection}
+\begin{monsection}{Raven}{1}[1]
+\vspace{-1em}\spelltwocol{}{Tiny animal}\vspace{-1em}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{
+\textbf{HP} 2;
+\textbf{Bloodied} 1;
+\textbf{Recovery} 1d8
+}
+{\textbf{AP} 1}
+\pari \textbf{Armor} 5;
+\textbf{Fort} 2;
+\textbf{Ref} 14;
+\textbf{Ment} 4
+\pari \textbf{Strike} Talon \plus3 (1d3)
+\end{spelltargetinginfo}
+\end{spellcontent}
+\begin{spellsubcontent}
+\begin{spellfooter}
+\pari \textbf{Awareness} \plus6
+\pari \textbf{Speed} 20 ft.;
+\textbf{Space} 2.5 ft.;
+\textbf{Reach} 2.5 ft.
+\pari \textbf{Attributes}
+Str \minus9,
+Dex 3,
+Con \minus4,
+Int \minus6,
+Per 2,
+Wil 0
+\end{spellfooter}
+\end{spellsubcontent}
+\end{monsection}
 \begin{monsection}{Roc}{9}[4]
 \vspace{-1em}\spelltwocol{}{Gargantuan animal}\vspace{-1em}
 \begin{spellcontent}
@@ -294,6 +327,39 @@ Dex 10,
 Con 5,
 Int \minus7,
 Per 5,
+Wil 0
+\end{spellfooter}
+\end{spellsubcontent}
+\end{monsection}
+\begin{monsection}{Wolf}{1}[1]
+\vspace{-1em}\spelltwocol{}{Large animal}\vspace{-1em}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{
+\textbf{HP} 12;
+\textbf{Bloodied} 6;
+\textbf{Recovery} 1d8
+}
+{\textbf{AP} 1}
+\pari \textbf{Armor} 7;
+\textbf{Fort} 7;
+\textbf{Ref} 8;
+\textbf{Ment} 4
+\pari \textbf{Strike} Bite \plus2 (1d10)
+\end{spelltargetinginfo}
+\end{spellcontent}
+\begin{spellsubcontent}
+\begin{spellfooter}
+\pari \textbf{Awareness} \plus6
+\pari \textbf{Speed} 40 ft.;
+\textbf{Space} 10 ft.;
+\textbf{Reach} 10 ft.
+\pari \textbf{Attributes}
+Str 1,
+Dex 3,
+Con 1,
+Int \minus6,
+Per 2,
 Wil 0
 \end{spellfooter}
 \end{spellsubcontent}
@@ -908,6 +974,40 @@ Wil 0
 \end{spellfooter}
 \end{spellsubcontent}
 \end{monsection}
+\begin{monsection}{Banehound}{5}[4]
+\vspace{-1em}\spelltwocol{}{Huge magical beast}\vspace{-1em}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{
+\textbf{HP} 120;
+\textbf{Bloodied} 60;
+\textbf{Recovery} 4d6
+}
+{\textbf{AP} 4}
+\pari \textbf{Armor} 13;
+\textbf{Fort} 10;
+\textbf{Ref} 10;
+\textbf{Ment} 8
+\pari \textbf{Strike} Bite \plus7 (2d10)
+\pari \textbf{Actions} Two in action phase, two in delayed action phase
+\end{spelltargetinginfo}
+\end{spellcontent}
+\begin{spellsubcontent}
+\begin{spellfooter}
+\pari \textbf{Awareness} \plus6
+\pari \textbf{Speed} 50 ft.;
+\textbf{Space} 15 ft.;
+\textbf{Reach} 15 ft.
+\pari \textbf{Attributes}
+Str 3,
+Dex 7,
+Con 0,
+Int 3,
+Per 7,
+Wil 0
+\end{spellfooter}
+\end{spellsubcontent}
+\end{monsection}
 \section{Monstrous Humanoids}
 \begin{monsection}{Banshee}{3}[1]
 \vspace{-1em}\spelltwocol{}{Medium monstrous humanoid}\vspace{-1em}
@@ -1330,71 +1430,22 @@ Wil 0
 \end{spellfooter}
 \end{spellsubcontent}
 \end{monsection}
-\begin{monsection}{Salamander}{3}[1]
+\begin{monsection}[Flamebrother]{Salamander}{4}[1]
 \vspace{-1em}\spelltwocol{}{Medium outsider}\vspace{-1em}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
 \spelltwocol{
-\textbf{HP} 20;
-\textbf{Bloodied} 10;
-\textbf{Recovery} 1d10
+\textbf{HP} 25;
+\textbf{Bloodied} 12;
+\textbf{Recovery} 2d6
 }
 {\textbf{AP} 1}
-\pari \textbf{Armor} 10;
-\textbf{Fort} 9;
-\textbf{Ref} 10;
-\textbf{Ment} 8
-\pari \textbf{Strike} Spear \plus3 (2d8) or tail slam \plus3 (2d8)
-\pari \textbf{Immune} fire damage
-\end{spelltargetinginfo}
-\begin{spelleffects}
-\pari
-\textbf{Tail Grab}:
-The salamander makes a tail slam strike.
-If the attack result beats the target's Fortitude defense, it is grappled.
-\vspace{0.5em}
-\pari
-\textbf{Flame Aura}:
-The salamander intensifies its natural body heat, creating a burning aura around it.
-At the end of each action phase, the salamander makes a 3 attack
-against everything within a Medium radius emanation of it.
-A hit deals 1d8 fire damage to each target.
-This ability costs an action point to use.
-It lasts as long as the salamander sustains it as a standard action.
-\end{spelleffects}
-\end{spellcontent}
-\begin{spellsubcontent}
-\begin{spellfooter}
-\pari \textbf{Awareness} \plus6
-\pari \textbf{Speed} 30 ft.;
-\textbf{Space} 5 ft.;
-\textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
-Str 6,
-Dex 4,
-Con 0,
-Int 2,
-Per 2,
-Wil 0
-\end{spellfooter}
-\end{spellsubcontent}
-\end{monsection}
-\begin{monsection}{Salamander Battlemaster}{4}[3]
-\vspace{-1em}\spelltwocol{}{Medium outsider}\vspace{-1em}
-\begin{spellcontent}
-\begin{spelltargetinginfo}
-\spelltwocol{
-\textbf{HP} 75;
-\textbf{Bloodied} 37;
-\textbf{Recovery} 2d10
-}
-{\textbf{AP} 4}
 \pari \textbf{Armor} 11;
 \textbf{Fort} 10;
 \textbf{Ref} 11;
-\textbf{Ment} 10
-\pari \textbf{Strike} Spear \plus5 (2d8) or tail slam \plus5 (2d8)
-\pari \textbf{Actions} Two in action phase, one in delayed action phase
+\textbf{Ment} 9
+\pari \textbf{Strike} Spear \plus4 (2d8) or tail slam \plus4 (2d8)
+\pari \textbf{Immune} fire damage
 \end{spelltargetinginfo}
 \begin{spelleffects}
 \pari
@@ -1423,7 +1474,56 @@ Str 7,
 Dex 5,
 Con 0,
 Int 3,
-Per 5,
+Per 3,
+Wil 0
+\end{spellfooter}
+\end{spellsubcontent}
+\end{monsection}
+\begin{monsection}[Battlemaster]{Salamander}{5}[3]
+\vspace{-1em}\spelltwocol{}{Medium outsider}\vspace{-1em}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{
+\textbf{HP} 90;
+\textbf{Bloodied} 45;
+\textbf{Recovery} 2d10
+}
+{\textbf{AP} 4}
+\pari \textbf{Armor} 12;
+\textbf{Fort} 11;
+\textbf{Ref} 12;
+\textbf{Ment} 11
+\pari \textbf{Strike} Spear \plus6 (2d10) or tail slam \plus6 (2d10)
+\pari \textbf{Actions} Two in action phase, one in delayed action phase
+\end{spelltargetinginfo}
+\begin{spelleffects}
+\pari
+\textbf{Tail Grab}:
+The salamander makes a tail slam strike.
+If the attack result beats the target's Fortitude defense, it is grappled.
+\vspace{0.5em}
+\pari
+\textbf{Flame Aura}:
+The salamander intensifies its natural body heat, creating a burning aura around it.
+At the end of each action phase, the salamander makes a 5 attack
+against everything within a Medium radius emanation of it.
+A hit deals 1d10 fire damage to each target.
+This ability costs an action point to use.
+It lasts as long as the salamander sustains it as a standard action.
+\end{spelleffects}
+\end{spellcontent}
+\begin{spellsubcontent}
+\begin{spellfooter}
+\pari \textbf{Awareness} \plus6
+\pari \textbf{Speed} 30 ft.;
+\textbf{Space} 5 ft.;
+\textbf{Reach} 5 ft.
+\pari \textbf{Attributes}
+Str 8,
+Dex 6,
+Con 0,
+Int 3,
+Per 6,
 Wil 3
 \end{spellfooter}
 \end{spellsubcontent}

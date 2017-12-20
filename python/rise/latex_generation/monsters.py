@@ -156,6 +156,20 @@ def animals():
         ferret,
     ))
 
+    raven = Creature(
+        character_class=CharacterClass('slayer'),
+        level=1,
+        name='Raven',
+        natural_armor=2,
+        race=Race('animal'),
+        size=Size('tiny'),
+        starting_attributes=[-9, 3, -4, -6, 2, 0],
+        weapons=[Weapon('talon')],
+    )
+    monsters.append(get_latex_from_creature(
+        raven,
+    ))
+
     roc = Creature(
         challenge_rating=4,
         character_class=CharacterClass('behemoth'),
@@ -179,6 +193,20 @@ def animals():
             ),
         ],
         speed="80 ft. fly",
+    ))
+
+    wolf = Creature(
+        character_class=CharacterClass('slayer'),
+        level=1,
+        name='Wolf',
+        natural_armor=4,
+        race=Race('animal'),
+        size=Size('large'),
+        starting_attributes=[1, 3, 1, -6, 2, 0],
+        weapons=[Weapon('bite')],
+    )
+    monsters.append(get_latex_from_creature(
+        wolf,
     ))
 
     return '\n\n'.join(monsters)
@@ -602,6 +630,21 @@ def magical_beasts():
         thaumavore,
     ))
 
+    banehound = Creature(
+        challenge_rating=4,
+        character_class=CharacterClass('slayer'),
+        level=5,
+        name='Banehound',
+        natural_armor=6,
+        race=Race('magical beast'),
+        size=Size('huge'),
+        starting_attributes=[1, 3, 0, 1, 3, 0],
+        weapons=[Weapon('bite')],
+    )
+    monsters.append(get_latex_from_creature(
+        banehound,
+    ))
+
     return '\n\n'.join(monsters)
 
 
@@ -890,10 +933,11 @@ def outsiders():
         immunities=['fire damage'],
     ))
 
-    salamander = Creature(
+    flamebrother_salamander = Creature(
         character_class=CharacterClass('slayer'),
-        level=3,
+        level=4,
         name='Salamander',
+        name_suffix='Flamebrother',
         natural_armor=6,
         race=Race('outsider'),
         size=Size('medium'),
@@ -902,7 +946,7 @@ def outsiders():
         weapons=[Weapon('spear'), Weapon('tail slam')],
     )
     monsters.append(get_latex_from_creature(
-        salamander,
+        flamebrother_salamander,
         active_abilities=[
             active_ability(
                 'Tail Grab',
@@ -915,9 +959,9 @@ def outsiders():
                 'Flame Aura',
                 effect=f"""
                     The salamander intensifies its natural body heat, creating a burning aura around it.
-                    At the end of each action phase, the salamander makes a {salamander.accuracy(salamander.constitution)} attack
+                    At the end of each action phase, the salamander makes a {flamebrother_salamander.accuracy(flamebrother_salamander.constitution)} attack
                         against everything within a Medium radius emanation of it.
-                    A hit deals {salamander.standard_damage(salamander.constitution) - 1} fire damage to each target.
+                    A hit deals {flamebrother_salamander.standard_damage(flamebrother_salamander.constitution) - 1} fire damage to each target.
 
                     This ability costs an action point to use.
                     It lasts as long as the salamander sustains it as a standard action.
@@ -930,8 +974,9 @@ def outsiders():
     salamander_battlemaster = Creature(
         challenge_rating=3,
         character_class=CharacterClass('slayer'),
-        level=4,
-        name='Salamander Battlemaster',
+        level=5,
+        name='Salamander',
+        name_suffix='Battlemaster',
         natural_armor=6,
         race=Race('outsider'),
         size=Size('medium'),
