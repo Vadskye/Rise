@@ -9,7 +9,7 @@ def get_latex_from_creature(
         speed=None,
 ):
     return get_latex(
-        action_points=max(1, creature.challenge_rating + creature.starting_willpower),
+        action_points=max(1, 1 + creature.challenge_rating + creature.starting_willpower),
         armor_defense=creature.armor_defense,
         challenge_rating=creature.challenge_rating,
         constitution=creature.constitution,
