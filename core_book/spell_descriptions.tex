@@ -270,7 +270,7 @@ Replace the spell's targets with the following:
 Replace the spell's targets and effects with the following:
 \begin{spellcontent}
 \begin{augmenttargetinginfo}
-\spelltgt{Location within \rngclose range}
+\spelltgt{Location or locations within \rngclose range}
 \end{augmenttargetinginfo}
 \begin{augmenteffects}
 \spelleffect
@@ -410,6 +410,8 @@ Creatures in the area at the time that the spell is cast are unaffected by the s
 This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
 \end{augmenteffects}
 \end{spellcontent}
+\augment{4}{Armored}
+The target also gains a \plus1 bonus to Armor defense.
 \augment{4}{Immunity}
 Replace the spell's effects with the following:
 \begin{spellcontent}
@@ -556,6 +558,64 @@ This effect lasts as long as you \glossterm{attune} to it.
 \spelltags{\glossterm{Temporal}}
 \end{augmenteffects}
 \end{spellcontent}
+\augment{2}{Time Hop}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltgt{One willing creature within \rngmed range}
+\spelltime{Minor action}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+You send the target into the future, causing it to temporarily cease to exist.
+When you cast this subspell, you choose how many rounds the target ceases to exist for, up to a maximum of five rounds.
+At the end of the last round, it reappears in the same location where it disappeared.
+If that location is occupied, it appears in the closest unoccupied space.
+\spelltags{\glossterm{Temporal}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{3}{Accelerate Magic}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltgt{One willing creature within \rngmed range}
+\spelltime{Minor action}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+The target's spells resolve during the \glossterm{action phase} instead of during the \glossterm{delayed action phase}.
+This prevents its spells from being disrupted by taking damage and similar effects.
+This effect lasts as long as you and the target \glossterm{attune} to it.
+\spelltags{\glossterm{Temporal}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{3}{Temporal Shunt}
+Replace the spell's effects with the following:
+\begin{spellcontent}
+\begin{augmenteffects}
+\begin{spellattack}{Spellpower vs. Mental}
+\spellsuccess Physical \glossterm{standard damage} \plus1d.
+\end{spellattack}
+\spelltags{\glossterm{Temporal}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{3}{Temporal Stasis}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltgt{One willing creature within \rngmed range}
+\spelltime{Minor action}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+The target is placed into stasis, rendering it unconscious.
+While in stasis, it cannot take any actions and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
+% TODO: wording
+This effect lasts as long as you \glossterm{attune} to it, and until the end of the round when you release the attunement.
+If you use this ability on yourself, it instead lasts until the end of the next round.
+\spelltags{\glossterm{Temporal}}
+\end{augmenteffects}
+\end{spellcontent}
 \augment{4}{Delay Damage}
 Replace the spell's targets and effects with the following:
 \begin{spellcontent}
@@ -573,8 +633,50 @@ This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor ac
 \spelltags{\glossterm{Temporal}}
 \end{augmenteffects}
 \end{spellcontent}
+\augment{5}{Temporal Duplicate}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltgt{One willing creature within \rngmed range}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+You reach into a possible future and create a duplicate of the target.
+The duplicate is identical in all ways to the target when the spell resolves, except that it has no \glossterm{legend points}.
+The target and its duplicate can act during the next round.
+At the end of that round, the target and its duplicate cease to exist.
+At the end of the following round, the target reappears in the place where it ceased to exist.
+If that space is occupied, it appears in the closest unoccupied space.
+When the target reappears, its condition is unchanged from when it left, except that it loses all action points, spell points, and all similar resources equal to the amount used by its duplicate.
+Its hit points, conditions, and all other statistics are unaffected, regardless of any damage or other negative effects suffered by the duplicate.
+If this would reduce any of the target's resources below 0, it takes \glossterm{standard damage} \plus3d from the paradox and becomes \glossterm{stunned} as a \glossterm{condition}.
+\spelltags{\glossterm{Temporal}}
+\end{augmenteffects}
+\end{spellcontent}
 \augment{6}{Innate}
 You can cast the spell without spending an action point.
+\augment{6}{Time Lock}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltgt{One willing creature within \rngmed range}
+\spelltime{Minor action}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+You lock the state of the target's body in time.
+Note the target's hit points, vital damage, and active conditions.
+This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
+In addition, if the target dies, this effect ends immediately.
+As a \glossterm{standard action}, you can reach through time to restore the target's state.
+If you do, the target's hit points, vital damage, and active conditions become identical to what they were when you cast this subspell.
+This does not affect any other properties of the target, such as any resources expended.
+\spelltags{\glossterm{Temporal}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{9}{Greater Time Lock}
+This subspell functions like the \textit{time lock} subspell, except that the effect is not ended if the target dies, and restoring the target's state can also restore it to life.
+If the target is restored to life in this way, all of its properties not locked by this subspell, such as any resources expended, are identical to what they were when the target died.
 \augment{9}{Time Stop}
 Replace the spell's targets and effects with the following:
 \begin{spellcontent}
@@ -584,9 +686,10 @@ Replace the spell's targets and effects with the following:
 \begin{augmenteffects}
 \spelleffect
 You can take two full rounds of actions immediately.
-During this time, all other creatures and objects are fixed in time, and cannot be moved or altered by any effect.
+During this time, all other creatures and objects are fixed in time, and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
 You can still affect yourself and create areas or new effects.
-You are still vulnerable to danger, such as from heat or dangerous gases. However, you cannot be detected by any means while you travel.
+You are still vulnerable to danger, such as from heat or dangerous gases.
+However, you cannot be detected by any means while you travel.
 \spelltags{\glossterm{Temporal}}
 \end{augmenteffects}
 \end{spellcontent}
@@ -602,8 +705,7 @@ You are still vulnerable to danger, such as from heat or dangerous gases. Howeve
 \begin{spellattack}{Spellpower vs. Mental}
 \spellsuccess The target is \immobilized as a \glossterm{condition}.
 \spellcritical
-The target is \immobilized twice by two separate \glossterm{condition}.
-Each condition must be removed independently.
+As above, except that the condition must be removed twice before the effect ends.
 \end{spellattack}
 \spelltags{\glossterm{Compulsion}, \glossterm{Mind}}
 \end{spelleffects}
@@ -964,6 +1066,44 @@ You can cast the spell without spending an action point.
 \augment{7}{Displacement}
 The target's image is futher distorted, and appears to be two to three feet from its real location.
 Targeted \glossterm{physical attacks} against the target suffer a 50\% miss chance.
+\begin{spellsection}{Divine Judgment}
+\begin{spellheader}
+\spelldesc{You smite a foe with holy (or unholy) power.}
+\end{spellheader}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltgt{One creature within \rngmed range}
+\end{spelltargetinginfo}
+\begin{spelleffects}
+\begin{spellattack}{Spellpower vs. Mental}
+\spellsuccess Divine \glossterm{standard damage} \plus1d.
+\end{spellattack}
+\end{spelleffects}
+\end{spellcontent}
+\begin{spellfooter}
+\spellinfo{Channeling}{Divine}
+\end{spellfooter}
+\begin{spellsubcontent}
+\begin{spellcantrip}
+The spell deals \minus2d damage.
+\end{spellcantrip}
+\end{spellsubcontent}
+\end{spellsection}
+\subsubsection{Subspells}
+\augment{2}{Word of Faith}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltgts{Enemies in \areamed radius}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\begin{spellattack}{Spellpower vs. Mental}
+\spellsuccess Divine \glossterm{standard damage} \minus1d.
+\end{spellattack}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{6}{Innate}
+You can cast the spell without spending an action point.
 \begin{spellsection}{Electromancy}
 \begin{spellheader}
 \spelldesc{You create a bolt of electricity that fries your foes.}
@@ -1213,6 +1353,14 @@ This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor ac
 \spelltags{\glossterm{Figment}, \glossterm{Light}, \glossterm{Visual}}
 \end{augmenteffects}
 \end{spellcontent}
+\augment{2}{Pinpoint}
+You gain a \plus2 bonus to accuracy on the attack.
+Replace the spell's targets with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltgt{One creature within \rngmed range}
+\end{augmenttargetinginfo}
+\end{spellcontent}
 \augment{3}{Faerie Fire}
 Each target is surrounded with a pale glow made of hundreds of ephemeral points of lights, causing it to bright light in a 5 foot radius as a candle.
 The lights impose a \minus10 penalty to Stealth checks.
@@ -1428,12 +1576,27 @@ The spell affects a single target within range instead of creating a burst.
 \end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
+\augment{2}{Blast Furnace}
+The area becomes continuously engulfed in flames.
+The spell lasts as long as you \glossterm{sustain} it as a standard action, repeating the attack during each \glossterm{action phase}.
 \augment{2}{Burning Hands}
 Replace the spell's targets with the following:
 \begin{spellcontent}
 \begin{augmenttargetinginfo}
 \spelltgts{All in \arealarge cone}
 \end{augmenttargetinginfo}
+\end{spellcontent}
+\augment{2}{Firebolt}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltgt{One creature within \rngmed range}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\begin{spellattack}{Spellpower vs. Reflex}
+\spellsuccess Fire \glossterm{standard damage} \plus1d.
+\end{spellattack}
+\end{augmenteffects}
 \end{spellcontent}
 \augment{2}{Flame Blade}
 Replace the spell's targets and effects with the following:
@@ -1466,8 +1629,46 @@ This effect lasts as long as you \glossterm{attune} to it.
 \spelltags{\glossterm{Fire}, \glossterm{Trap}}
 \end{augmenteffects}
 \end{spellcontent}
+\augment{3}{Ignition}
+On a hit, each target is \glossterm{ignited} until it puts out the fire.
+\augment{4}{Fearsome Flame}
+If the attack result also beats a target's Mental defense, it is \glossterm{shaken} as a \glossterm{condition}.
+\augment{4}{Flame Serpent}
+Replace the spell's targets with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltgts{All in \arealarge, 10 ft.\ wide shapeable line within \rngmed range}
+\end{augmenttargetinginfo}
+\end{spellcontent}
+\augment{5}{Flame Aura}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spelltgt{One willing creature within \rngclose range}
+\spelltime{Minor action}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+The target continuously radiates fiery energy.
+At the end of each \glossterm{action phase}, make a Spellpower vs. Reflex attack against all creatures within a \areamed radius emanation from the target.
+A hit deals \glossterm{standard damage} \minus1d.
+This effect lasts as long as you and the target \glossterm{attune} to it.
+You can apply the Widened \glossterm{augment} to this subspell.
+If you do, it increases the area of the emanation.
+\spelltags{\glossterm{Fire}}
+\end{augmenteffects}
+\end{spellcontent}
+\augment{6}{Greater Blast Furnace}
+The area becomes continuously engulfed in flames.
+The spell lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}, repeating the attack during each \glossterm{action phase}.
+\augment{6}{Greater Ignition}
+On a hit, each target is \glossterm{ignited} as a \glossterm{condition}.
+Unlike the normal ignited effect, this condition cannot be removed by putting out the fire.
+In addition, the ignited effect deals \glossterm{standard damage} \minus3d instead of the normal 1d6 damage each round.
 \augment{6}{Innate}
 You can cast the spell without spending an action point.
+\augment{9}{Supreme Ignition}
+This subspell functions like the \textit{greater ignition} subspell, except that the condition must be removed twice before the effect ends.
 \begin{spellsection}{Revelation}
 \begin{spellheader}
 \spelldesc{You grant a creature the ability to see fractions of a second into the future.}
@@ -1628,44 +1829,6 @@ You can cast the spell without spending an action point.
 \augment{6}{Split Senses}
 You do not have to choose whether to sense from the perspective of the sensor or from the perspective of your own body.
 You constantly receive sensory input from both your body and the sensor.
-\begin{spellsection}{Smite}
-\begin{spellheader}
-\spelldesc{You smite a foe with holy (or unholy) power.}
-\end{spellheader}
-\begin{spellcontent}
-\begin{spelltargetinginfo}
-\spelltgt{One creature within \rngmed range}
-\end{spelltargetinginfo}
-\begin{spelleffects}
-\begin{spellattack}{Spellpower vs. Mental}
-\spellsuccess Divine \glossterm{standard damage} \plus1d.
-\end{spellattack}
-\end{spelleffects}
-\end{spellcontent}
-\begin{spellfooter}
-\spellinfo{Channeling}{Divine}
-\end{spellfooter}
-\begin{spellsubcontent}
-\begin{spellcantrip}
-The spell deals \minus2d damage.
-\end{spellcantrip}
-\end{spellsubcontent}
-\end{spellsection}
-\subsubsection{Subspells}
-\augment{2}{Word of Faith}
-Replace the spell's targets and effects with the following:
-\begin{spellcontent}
-\begin{augmenttargetinginfo}
-\spelltgts{Creatures in \areamed radius from you that do not worship your deity}
-\end{augmenttargetinginfo}
-\begin{augmenteffects}
-\begin{spellattack}{Spellpower vs. Mental}
-\spellsuccess Divine \glossterm{standard damage} \minus1d.
-\end{spellattack}
-\end{augmenteffects}
-\end{spellcontent}
-\augment{6}{Innate}
-You can cast the spell without spending an action point.
 \begin{spellsection}{Summon Monster}
 \begin{spellheader}
 \spelldesc{You summon a creature to fight by your side.}

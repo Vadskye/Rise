@@ -230,6 +230,13 @@ def generate_spells():
                 """,
             ),
             Subspell(
+                level=4,
+                name="Armored",
+                description="""
+                    The target also gains a +1 bonus to Armor defense.
+                """,
+            ),
+            Subspell(
                 level=7,
                 name="Antilife Shell",
                 targeting=Targeting(
@@ -613,6 +620,92 @@ def generate_spells():
             ),
             Subspell(
                 level=2,
+                name="Blast Furnace",
+                description="""
+                    The area becomes continuously engulfed in flames.
+                    The spell lasts as long as you \\glossterm<sustain> it as a standard action, repeating the attack during each \\glossterm<action phase>.
+                """,
+            ),
+            Subspell(
+                level=6,
+                name="Greater Blast Furnace",
+                description="""
+                    The area becomes continuously engulfed in flames.
+                    The spell lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>, repeating the attack during each \\glossterm<action phase>.
+                """,
+            ),
+            Subspell(
+                level=3,
+                name="Ignition",
+                description="""
+                    On a hit, each target is \\glossterm<ignited> until it puts out the fire.
+                """,
+            ),
+            Subspell(
+                level=6,
+                name="Greater Ignition",
+                description="""
+                    On a hit, each target is \\glossterm<ignited> as a \\glossterm<condition>.
+                    Unlike the normal ignited effect, this condition cannot be removed by putting out the fire.
+                    In addition, the ignited effect deals \\glossterm<standard damage> -3d instead of the normal 1d6 damage each round.
+                """,
+            ),
+            Subspell(
+                level=9,
+                name="Supreme Ignition",
+                description="""
+                    This subspell functions like the \\textit<greater ignition> subspell, except that the condition must be removed twice before the effect ends.
+                """,
+            ),
+            Subspell(
+                level=4,
+                name="Fearsome Flame",
+                description="""
+                    If the attack result also beats a target's Mental defense, it is \\glossterm<shaken> as a \\glossterm<condition>.
+                """,
+            ),
+            Subspell(
+                level=4,
+                name="Flame Serpent",
+                targeting=Targeting(
+                    rng='medium',
+                    targets='All in \\arealarge, 10 ft.\\ wide shapeable line',
+                ),
+            ),
+            Subspell(
+                level=5,
+                name="Flame Aura",
+                targeting=Targeting(
+                    rng='close',
+                    target='One willing creature',
+                    time='minor action',
+                ),
+                effects=Effects(
+                    effect="""
+                        The target continuously radiates fiery energy.
+                        At the end of each \\glossterm<action phase>, make a Spellpower vs. Reflex attack against all creatures within a \\areamed radius emanation from the target.
+                        A hit deals \\glossterm<standard damage> -1d.
+
+                        This effect lasts as long as you and the target \\glossterm<attune> to it.
+                        You can apply the Widened \\glossterm<augment> to this subspell.
+                        If you do, it increases the area of the emanation.
+                    """,
+                    tags=['Fire'],
+                ),
+            ),
+            Subspell(
+                level=2,
+                name="Firebolt",
+                targeting=Targeting(
+                    rng='medium',
+                    target='One creature',
+                ),
+                effects=Effects(
+                    attack=Attack.damage('Reflex', 'fire'),
+                ),
+            ),
+            Subspell(
+                level=2,
                 name="Flame Blade",
                 targeting=Targeting(
                     rng='close',
@@ -670,7 +763,7 @@ def generate_spells():
                 name="Create Water",
                 targeting=Targeting(
                     rng='close',
-                    target='Location',
+                    target='Location or locations',
                 ),
                 effects=Effects(
                     effect="""
@@ -870,8 +963,7 @@ def generate_spells():
                 defense='Mental',
                 success="The target is \\immobilized as a \\glossterm<condition>.",
                 critical="""
-                    The target is \\immobilized twice by two separate \\glossterm<condition>.
-                    Each condition must be removed independently.
+                    As above, except that the condition must be removed twice before the effect ends.
                 """,
             ),
             tags=['Compulsion', 'Mind'],
@@ -1076,7 +1168,7 @@ def generate_spells():
         category='buff, offense',
     ))
     spells.append(Spell(
-        name="Smite",
+        name="Divine Judgment",
         short_description="Smite foes with divine power",
         header=Header("You smite a foe with holy (or unholy) power."),
         targeting=Targeting(
@@ -1094,7 +1186,7 @@ def generate_spells():
                 level=2,
                 name="Word of Faith",
                 targeting=Targeting(
-                    targets='Creatures in \\areamed radius from you that do not worship your deity',
+                    targets='Enemies in \\areamed radius'
                 ),
                 effects=Effects(
                     attack=Attack.multi_damage('Mental', 'divine')
@@ -1969,6 +2061,15 @@ def generate_spells():
         cantrip="The spell affects a single target within range instead of creating a burst.",
         subspells=[
             Subspell(
+                level=2,
+                name="Pinpoint",
+                targeting=Targeting(
+                    target='One creature',
+                    rng='medium',
+                ),
+                description="You gain a +2 bonus to accuracy on the attack.",
+            ),
+            Subspell(
                 level=3,
                 name="Kaleidoscopic",
                 effects=Effects(
@@ -2319,6 +2420,92 @@ def generate_spells():
                 ),
             ),
             Subspell(
+                level=3,
+                name="Temporal Shunt",
+                effects=Effects(
+                    attack=Attack.damage('Mental', 'physical'),
+                    tags=['Temporal'],
+                ),
+            ),
+            Subspell(
+                level=3,
+                name="Accelerate Magic",
+                targeting=Targeting(
+                    target='One willing creature',
+                    rng='medium',
+                    time='minor action',
+                ),
+                effects=Effects(
+                    effect="""
+                        The target's spells resolve during the \\glossterm<action phase> instead of during the \\glossterm<delayed action phase>.
+                        This prevents its spells from being disrupted by taking damage and similar effects.
+                        This effect lasts as long as you and the target \\glossterm<attune> to it.
+                    """,
+                    tags=['Temporal'],
+                ),
+            ),
+            Subspell(
+                level=5,
+                name="Temporal Duplicate",
+                targeting=Targeting(
+                    target='One willing creature',
+                    rng='medium',
+                ),
+                effects=Effects(
+                    effect="""
+                        You reach into a possible future and create a duplicate of the target.
+                        The duplicate is identical in all ways to the target when the spell resolves, except that it has no \\glossterm<legend points>.
+                        The target and its duplicate can act during the next round.
+                        At the end of that round, the target and its duplicate cease to exist.
+                        At the end of the following round, the target reappears in the place where it ceased to exist.
+                        If that space is occupied, it appears in the closest unoccupied space.
+
+                        When the target reappears, its condition is unchanged from when it left, except that it loses all action points, spell points, and all similar resources equal to the amount used by its duplicate.
+                        Its hit points, conditions, and all other statistics are unaffected, regardless of any damage or other negative effects suffered by the duplicate.
+                        If this would reduce any of the target's resources below 0, it takes \\glossterm<standard damage> +3d from the paradox and becomes \\glossterm<stunned> as a \\glossterm<condition>.
+                    """,
+                    tags=['Temporal'],
+                ),
+            ),
+            Subspell(
+                level=2,
+                name="Time Hop",
+                targeting=Targeting(
+                    target='One willing creature',
+                    rng='medium',
+                    time='minor action',
+                ),
+                effects=Effects(
+                    effect="""
+                        You send the target into the future, causing it to temporarily cease to exist.
+                        When you cast this subspell, you choose how many rounds the target ceases to exist for, up to a maximum of five rounds.
+                        At the end of the last round, it reappears in the same location where it disappeared.
+                        If that location is occupied, it appears in the closest unoccupied space.
+                    """,
+                    tags=['Temporal'],
+                ),
+            ),
+            Subspell(
+                level=3,
+                name="Temporal Stasis",
+                targeting=Targeting(
+                    target='One willing creature',
+                    rng='medium',
+                    time='minor action',
+                ),
+                effects=Effects(
+                    effect="""
+                        The target is placed into stasis, rendering it unconscious.
+                        While in stasis, it cannot take any actions and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
+
+                        % TODO: wording
+                        This effect lasts as long as you \\glossterm<attune> to it, and until the end of the round when you release the attunement.
+                        If you use this ability on yourself, it instead lasts until the end of the next round.
+                    """,
+                    tags=['Temporal'],
+                ),
+            ),
+            Subspell(
                 level=4,
                 name="Delay Damage",
                 targeting=Targeting(
@@ -2338,6 +2525,36 @@ def generate_spells():
                 ),
             ),
             Subspell(
+                level=6,
+                name="Time Lock",
+                targeting=Targeting(
+                    target='One willing creature',
+                    rng='medium',
+                    time='minor action',
+                ),
+                effects=Effects(
+                    effect="""
+                        You lock the state of the target's body in time.
+                        Note the target's hit points, vital damage, and active conditions.
+                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
+                        In addition, if the target dies, this effect ends immediately.
+
+                        As a \\glossterm<standard action>, you can reach through time to restore the target's state.
+                        If you do, the target's hit points, vital damage, and active conditions become identical to what they were when you cast this subspell.
+                        This does not affect any other properties of the target, such as any resources expended.
+                    """,
+                    tags=['Temporal'],
+                ),
+            ),
+            Subspell(
+                level=9,
+                name="Greater Time Lock",
+                description="""
+                    This subspell functions like the \\textit<time lock> subspell, except that the effect is not ended if the target dies, and restoring the target's state can also restore it to life.
+                    If the target is restored to life in this way, all of its properties not locked by this subspell, such as any resources expended, are identical to what they were when the target died.
+                """,
+            ),
+            Subspell(
                 level=9,
                 name="Time Stop",
                 targeting=Targeting(
@@ -2346,10 +2563,11 @@ def generate_spells():
                 effects=Effects(
                     effect="""
                         You can take two full rounds of actions immediately.
-                        During this time, all other creatures and objects are fixed in time, and cannot be moved or altered by any effect.
+                        During this time, all other creatures and objects are fixed in time, and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
                         You can still affect yourself and create areas or new effects.
 
-                        You are still vulnerable to danger, such as from heat or dangerous gases. However, you cannot be detected by any means while you travel.
+                        You are still vulnerable to danger, such as from heat or dangerous gases.
+                        However, you cannot be detected by any means while you travel.
                     """,
                     tags=['Temporal'],
                 ),
