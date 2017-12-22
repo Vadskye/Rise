@@ -110,11 +110,11 @@ def generate_spells():
             Subspell(
                 level=5,
                 name='Stormlord',
-                description=r"""
-                    Whenever a creature within \rngclose range of the target attacks it, wind strikes the attacking creature.
+                description="""
+                    Whenever a creature within \\rngclose range of the target attacks it, wind strikes the attacking creature.
                     The wind deals \\glossterm<standard damage> -1d.
                     Any individual creature can only be dealt damage in this way once per round.
-                    \par Any effect which increases this spell's range increases the range of this effect by the same amount.""",
+                    \\par Any effect which increases this spell's range increases the range of this effect by the same amount.""",
                 tags=['Shielding'],
                 school='Evocation',
             ),
@@ -2644,7 +2644,7 @@ def main(output, check):
     spell_text = latexify("""
         \\section<Spell Descriptions>
         {}
-    """.format('\n'.join(spell_texts)))
+    """.format('\n\\newpage'.join(spell_texts)))
     if output is None:
         print(spell_text)
     else:
