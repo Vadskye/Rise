@@ -193,11 +193,19 @@
     %\IfBooleanF{#1}{\spellline}
 }
 
-\newmdenv[
+\DeclareDocumentEnvironment{spellcontent}{}
+{
+    \begin{thesamepage}
+}
+{
+    \end{thesamepage}
+}
+
+\surroundwithmdframed[
     style=spellcontent,
-    leftline=false,
+    leftline=true,
     topline=true,
-    rightline=false,
+    rightline=true,
     bottomline=true,
 ]{spellcontent}
 
@@ -227,9 +235,9 @@
 
 \newmdenv[
     style=spellcontent,
-    leftline=false,
+    leftline=true,
     topline=false,
-    rightline=false,
+    rightline=true,
     bottomline=true,
     skipabove=0,
 ]{spellsubcontent}
@@ -279,6 +287,8 @@
 \surroundwithmdframed[
     style=colorenv,
     backgroundcolor=Gainsboro,
+    leftline=true,
+    rightline=true,
 ]{spellfooter}
 
 \DeclareDocumentEnvironment{spelltriggercolor}{}
