@@ -1091,7 +1091,7 @@ def generate_spells():
                 level=3,
                 name="Mystic Blessing",
                 description="""
-                    The damage bonus applies to all attacks that deal damage measured in dice.
+                    The damage bonus applies to all abilities that deal damage or grant healing measured in dice.
                 """,
             ),
             Subspell(
