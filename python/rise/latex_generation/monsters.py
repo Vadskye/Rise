@@ -156,6 +156,20 @@ def animals():
         ferret,
     ))
 
+    pony = Creature(
+        character_class=CharacterClass('behemoth'),
+        level=2,
+        name='Pony',
+        natural_armor=4,
+        race=Race('animal'),
+        size=Size('medium'),
+        starting_attributes=[1, 1, 1, -7, 1, 0],
+        weapons=[Weapon('bite')],
+    )
+    monsters.append(get_latex_from_creature(
+        pony,
+    ))
+
     raven = Creature(
         character_class=CharacterClass('slayer'),
         level=1,
@@ -195,6 +209,22 @@ def animals():
         speed="80 ft. fly",
     ))
 
+    wasp = Creature(
+        character_class=CharacterClass('slayer'),
+        level=6,
+        name='Wasp',
+        name_suffix='Giant',
+        natural_armor=6,
+        race=Race('animal'),
+        size=Size('large'),
+        starting_attributes=[2, 4, 0, -8, 3, -1],
+        weapons=[Weapon('bite')],
+    )
+    monsters.append(get_latex_from_creature(
+        wasp,
+        speed="50 ft. fly (good)",
+    ))
+
     wolf = Creature(
         character_class=CharacterClass('slayer'),
         level=1,
@@ -207,6 +237,38 @@ def animals():
     )
     monsters.append(get_latex_from_creature(
         wolf,
+    ))
+
+    dire_beetle = Creature(
+        challenge_rating=2,
+        character_class=CharacterClass('behemoth'),
+        level=7,
+        name='Beetle',
+        name_suffix='Dire',
+        natural_armor=6,
+        race=Race('animal'),
+        size=Size('large'),
+        starting_attributes=[3, 0, 3, -9, 2, 0],
+        weapons=[Weapon('bite')],
+    )
+    monsters.append(get_latex_from_creature(
+        dire_beetle,
+    ))
+
+    huge_centipede = Creature(
+        challenge_rating=4,
+        character_class=CharacterClass('behemoth'),
+        level=8,
+        name='Centipede',
+        name_suffix='Huge',
+        natural_armor=6,
+        race=Race('animal'),
+        size=Size('huge'),
+        starting_attributes=[3, 0, 3, -9, 2, 0],
+        weapons=[Weapon('bite')],
+    )
+    monsters.append(get_latex_from_creature(
+        huge_centipede,
     ))
 
     return '\n\n'.join(monsters)
@@ -482,7 +544,7 @@ def magical_beasts():
     ankheg = Creature(
         challenge_rating=2,
         character_class=CharacterClass('slayer'),
-        level=6,
+        level=7,
         name='Ankheg',
         natural_armor=6,
         race=Race('magical beast'),
@@ -971,6 +1033,21 @@ def outsiders():
         immunities=['fire damage'],
     ))
 
+    janni = Creature(
+        armor=Armor('studded leather'),
+        character_class=CharacterClass('adept'),
+        level=7,
+        name='Janni',
+        natural_armor=6,
+        race=Race('outsider'),
+        size=Size('medium'),
+        starting_attributes=[2, 3, 0, 1, 2, 1],
+        weapons=[Weapon('shortsword')],
+    )
+    monsters.append(get_latex_from_creature(
+        janni,
+    ))
+
     salamander_battlemaster = Creature(
         challenge_rating=3,
         character_class=CharacterClass('slayer'),
@@ -1028,6 +1105,20 @@ def undead():
         allip,
     ))
 
+    spectre = Creature(
+        challenge_rating=2,
+        character_class=CharacterClass('adept'),
+        level=7,
+        name='Spectre',
+        natural_armor=4,  # How does this interact with being incorporeal?
+        race=Race('undead'),
+        starting_attributes=[0, 3, 0, 0, 0, 3],
+        weapons=[Weapon('draining touch')],
+    )
+    monsters.append(get_latex_from_creature(
+        spectre,
+    ))
+
     dirgewalker = Creature(
         challenge_rating=4,
         character_class=CharacterClass('adept'),
@@ -1073,6 +1164,21 @@ def undead():
     )
     monsters.append(get_latex_from_creature(
         skeleton,
+    ))
+
+    skeleton_warrior = Creature(
+        character_class=CharacterClass('slayer'),
+        level=3,
+        name='Skeleton',
+        name_suffix='Warrior',
+        natural_armor=6,
+        race=Race('undead'),
+        size=Size('medium'),
+        starting_attributes=[2, 2, 0, 0, 0, 0],
+        weapons=[Weapon('claw')],
+    )
+    monsters.append(get_latex_from_creature(
+        skeleton_warrior,
     ))
 
     zombie = Creature(
