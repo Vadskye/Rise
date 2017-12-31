@@ -1180,12 +1180,9 @@ You can cast the spell without spending an action point.
 \spelltgt{One creature or object within \rngmed range}
 \end{spelltargetinginfo}
 \begin{spelleffects}
-\begin{spellattack}{Spellpower vs. Fortitude}
+\begin{spellattack}{Spellpower vs. Reflex}
 \spellsuccess
 Acid \glossterm{standard damage} \plus1d.
-\spellcritical
-As above, but double damage.
-In addition, the target is \glossterm{sickened} as a \glossterm{condition}.
 \end{spellattack}
 \spelltags{\glossterm{Acid}, \glossterm{Manifestation}}
 \end{spelleffects}
@@ -1200,20 +1197,16 @@ The spell deals \minus2d damage.
 \end{spellsubcontent}
 \end{spellsection}
 \subsubsection{Subspells}
-\augment{2}{Blade Barrier}
+\augment{2}{Arrow}
 Replace the spell's targets and effects with the following:
 \begin{spellcontent}
 \begin{augmenttargetinginfo}
-\spellzone{20 ft.\ high wall: \arealarge line or \areasmall radius within \rngmed range}
+\spelltgt{One creature or object within \rnglong range}
 \end{augmenttargetinginfo}
 \begin{augmenteffects}
-\spelleffect
-A wall of whirling blades appears in the area.
-The wall provides \glossterm{active cover} (20\% miss chance) against attacks made through it.
-Attacks that miss in this way harmlessly strike the wall.
-This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
-Whenever a creature or object passes through the wall, make a Spellpower vs. Reflex attack against it.
-A hit means the target takes slashing \glossterm{standard damage} \minus1d.
+\begin{spellattack}{Spellpower vs. Reflex}
+\spellsuccess Piercing \glossterm{standard damage} \plus1d.
+\end{spellattack}
 \end{augmenteffects}
 \end{spellcontent}
 \augment{2}{Poison}
@@ -1261,40 +1254,11 @@ Replace the spell's targets and effects with the following:
 \end{spellcontent}
 \augment{3}{Corrosive}
 The spell deals double damage to objects.
-\augment{3}{Create Ballista}
-Replace the spell's targets and effects with the following:
-\begin{spellcontent}
-\begin{augmenttargetinginfo}
-\spelltgt{Location within \rngclose range}
-\end{augmenttargetinginfo}
-\begin{augmenteffects}
-\spelleffect
-This spell creates a fully functional Large ballista.
-When initially created, the ballista fires at a foe of your choice within \rnglong range.
-It automatically reloads itself during the movement phase.
-As a \glossterm{minor action}, you can mentally command the ballista.
-If you do, it fires at a target you designate within \rnglong range.
-Otherwise, another creature may spend a standard action action to manually fire the ballista.
-When the ballista fires, you make a Spellpower vs. Armor attack against the target.
-A hit means the target takes piercing \glossterm{standard damage} \minus1d.
-This is a \glossterm{Physical} effect, and does not allow \glossterm{magic resistance}.
-The ballista has hit points equal to three times your spellpower.
-In all other respects, it is treated as an ordinary ballista.
-This effect lasts as long as you \glossterm{attune} to it.
-\spelltags{\glossterm{Manifestation}}
-\end{augmenteffects}
-\end{spellcontent}
-\augment{4}{Blade Barrier, Contracting}
-This subspell functions like the \spell{blade barrier} subspell, except that the area must be a radius.
-In addition, the wall's radius shrinks by 5 feet at the end of every \glossterm{action phase}, dealing damage to all creatures it moves through.
-\augment{4}{Blade Barrier, Dual}
-This subspell functions like the \spell{blade barrier} subspell, except that the area must be a line.
-In addition, the spell creatures two parallel walls of the same length, five feet apart.
 \augment{4}{Reinforced Webbing}
 This subspell functions like the \textit{web} subspell, except that each 5-ft.\ square of webbing gains additional hit points equal to your spellpower.
 In addition, the webs are no longer \glossterm{vulnerable} to fire damage.
 \augment{5}{Lingering}
-The spell deals \minus3d damage.
+The spell deals \minus2d damage.
 However, the damage deals its damage again at the end of every round after the first.
 This is a \glossterm{condition}, and lasts until removed.
 \augment{5}{Meteor}
@@ -1315,10 +1279,6 @@ If it does, this ability fails without effect.
 \spelltags{\glossterm{Manifestation}}
 \end{augmenteffects}
 \end{spellcontent}
-\augment{6}{Create Ballista, Dual Track}
-This subspell functions like the \spell{create ballista} subspell, except that the ballista is created with two separate bolt tracks.
-This allows it to fire at two different targets in the same round whenever you command it to fire.
-It cannot fire at the same target twice.
 \augment{6}{Innate}
 You can cast the spell without spending an action point.
 \augment{8}{Meteor Swarm}
@@ -1409,17 +1369,17 @@ You can cast the spell without spending an action point.
 \newpage
 \begin{spellsection}{Polymorph}
 \begin{spellheader}
-\spelldesc{You shape the ground into an animated spike that drives into a foe.}
+\spelldesc{You transform a foe's body into a more broken state.}
 \end{spellheader}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
-\spelltgt{One creature or object within \rngmed range}
+\spelltgt{One creature within \rngmed range}
 \end{spelltargetinginfo}
 \begin{spelleffects}
-\begin{spellattack}{Spellpower vs. Reflex}
-\spellsuccess Piercing \glossterm{standard damage} \plus1d.
+\begin{spellattack}{Spellpower vs. Fortitude}
+\spellsuccess Physical \glossterm{standard damage} \plus1d.
 \end{spellattack}
-\spelltags{\glossterm{Physical}, \glossterm{Shaping}}
+\spelltags{\glossterm{Shaping}}
 \end{spelleffects}
 \end{spellcontent}
 \begin{spellfooter}
@@ -1658,7 +1618,10 @@ Replace the spell's targets with the following:
 \spelltgts{All in \arealarge, 10 ft.\ wide shapeable line within \rngmed range}
 \end{augmenttargetinginfo}
 \end{spellcontent}
-\augment{5}{Flame Aura}
+\augment{5}{Greater Blast Furnace}
+The area becomes continuously engulfed in flames.
+The spell lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}, repeating the attack during each \glossterm{action phase}.
+\augment{6}{Flame Aura}
 Replace the spell's targets and effects with the following:
 \begin{spellcontent}
 \begin{augmenttargetinginfo}
@@ -1669,16 +1632,13 @@ Replace the spell's targets and effects with the following:
 \spelleffect
 The target continuously radiates fiery energy.
 At the end of each \glossterm{action phase}, make a Spellpower vs. Reflex attack against all creatures within a \areamed radius emanation from the target.
-A hit deals \glossterm{standard damage} \minus1d.
+A hit deals \glossterm{standard damage} \minus2d.
 This effect lasts as long as you and the target \glossterm{attune} to it.
 You can apply the Widened \glossterm{augment} to this subspell.
 If you do, it increases the area of the emanation.
 \spelltags{\glossterm{Fire}}
 \end{augmenteffects}
 \end{spellcontent}
-\augment{6}{Greater Blast Furnace}
-The area becomes continuously engulfed in flames.
-The spell lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}, repeating the attack during each \glossterm{action phase}.
 \augment{6}{Greater Ignition}
 On a hit, each target is \glossterm{ignited} as a \glossterm{condition}.
 Unlike the normal ignited effect, this condition cannot be removed by putting out the fire.
@@ -1992,7 +1952,7 @@ You cannot choose for the spell to heal the target, and the spell deals \minus2d
 \subsubsection{Subspells}
 \augment{2}{Cure Wounds}
 You cannot choose for the spell to deal damage.
-In addition, for every 10 points of healing you provide, you can also heal one point of \glossterm{vital damage}.
+In addition, for every 5 points of healing you provide, you can instead heal one point of \glossterm{vital damage}.
 \augment{2}{Restore Senses}
 Replace the spell's effects with the following:
 \begin{spellcontent}
@@ -2022,8 +1982,6 @@ Each target takes life \glossterm{standard damage} \minus3d.
 \spelltags{\glossterm{Life}}
 \end{augmenteffects}
 \end{spellcontent}
-\augment{3}{Cure Serious Wounds}
-This subspell functions like the \textit{cure wounds} subspell, except that it heals one point of vital damage for every 5 points of healing instead of for every 10.
 \augment{3}{Drain Life}
 You gain temporary hit points equal to half the damage you deal with this spell.
 \augment{3}{Remove Disease}
@@ -2052,13 +2010,85 @@ Each target heals hit points equal to \glossterm{standard damage} \minus3d.
 \spelltags{\glossterm{Life}}
 \end{augmenteffects}
 \end{spellcontent}
-\augment{4}{Cure Serious Wounds}
-This subspell functions like the \textit{cure wounds} subspell, except that it heals one point of vital damage for every 2 points of healing instead of for every 10.
+\augment{4}{Cure Critical Wounds}
+You cannot choose for the spell to deal damage.
+In addition, it heals \glossterm{vital damage} as easily as it heals it points.
 \augment{4}{Death Knell}
 If the attack hits, the target suffers a death knell.
 At the end of each round, if the target has 0 hit points, it immediately dies.
 This effect lasts until the target removes this condition.
 \par
 This is a \glossterm{Death} effect.
+\augment{6}{Innate}
+You can cast the spell without spending an action point.
+\newpage
+\begin{spellsection}{Weaponcraft}
+\begin{spellheader}
+\spelldesc{You create a dancing blade that attacks nearby foes}
+\end{spellheader}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltgt{Location within \rngmed range}
+\end{spelltargetinginfo}
+\begin{spelleffects}
+\spelleffect
+A melee weapon you are proficient with appears in the target location.
+The weapon floats about three feet off the ground, and is sized appropriately for a creature of your size.
+The specific weapon you choose affects the type of damage it deals.
+Regardless of the weapon chosen, it has hit points equal to twice your spellpower.
+All of its defenses are equal to 5 \add your spellpower, and it has a 30 foot fly speed with good maneuverability, though it cannot travel farther than five feet above the ground.
+Each round, the weapon automatically moves towards the creature closest to it during the \glossterm{movement phase}.
+During the \glossterm{action phase}, it makes a melee \glossterm{strike} against a random creature adjacent to it.
+Its accuracy is equal to your spellpower.
+If it hits, it deals \glossterm{standard damage} \minus1d.
+This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
+\spelltags{\glossterm{Manifestation}}
+\end{spelleffects}
+\end{spellcontent}
+\begin{spellfooter}
+\spellinfo{Conjuration, Transmutation}{Arcane}
+\end{spellfooter}
+\begin{spellsubcontent}
+\begin{spellcantrip}
+The spell's effect lasts as long as you \glossterm{sustain} it as a \glossterm{standard action}.
+\end{spellcantrip}
+\end{spellsubcontent}
+\end{spellsection}
+\subsubsection{Subspells}
+\augment{2}{Blade Barrier}
+Replace the spell's targets and effects with the following:
+\begin{spellcontent}
+\begin{augmenttargetinginfo}
+\spellzone{20 ft.\ high wall: \arealarge line or \areasmall radius within \rngmed range}
+\end{augmenttargetinginfo}
+\begin{augmenteffects}
+\spelleffect
+A wall of whirling blades appears in the area.
+The wall provides \glossterm{active cover} (20\% miss chance) against attacks made through it.
+Attacks that miss in this way harmlessly strike the wall.
+This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
+Whenever a creature or object passes through the wall, make a Spellpower vs. Reflex attack against it.
+A hit means the target takes slashing \glossterm{standard damage} \minus1d.
+\end{augmenteffects}
+\end{spellcontent}
+\augment{3}{Aerial}
+The weapon's height above the ground is not limited, allowing it to fly into the air.
+\augment{3}{Create Ballista}
+The spell creates a fully functional Large ballista instead of a weapon of your choice.
+The ballista functions like any other weapon, with the following exceptions.
+It cannot move, and makes ranged \glossterm{strikes} instead of melee strikes.
+Its attacks deal piercing damage, and its hit points are equal to three times your spellpower.
+In addition, the ballista attacks the creature farthest from it, instead of the creature closest to it.
+\augment{4}{Blade Barrier, Contracting}
+This subspell functions like the \spell{blade barrier} subspell, except that the area must be a radius.
+In addition, the wall's radius shrinks by 5 feet at the end of every \glossterm{action phase}, dealing damage to all creatures it moves through.
+\augment{4}{Blade Barrier, Dual}
+This subspell functions like the \spell{blade barrier} subspell, except that the area must be a line.
+In addition, the spell creatures two parallel walls of the same length, five feet apart.
+\augment{6}{Create Ballista, Dual Track}
+This subspell functions like the \spell{create ballista} subspell, except that the ballista is created with two separate bolt tracks.
+This allows it to fire at two different targets in the same round whenever you command it to fire.
+It cannot fire at the same target twice.
+Each round, it attacks the two creatures farthest from it.
 \augment{6}{Innate}
 You can cast the spell without spending an action point.
