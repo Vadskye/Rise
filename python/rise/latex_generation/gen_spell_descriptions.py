@@ -39,7 +39,7 @@ def generate_spells():
         ),
         schools=['Transmutation'],
         lists=['Air', 'Nature'],
-        cantrip="The spell's casting time becomes a standard action, and its effect lasts as long as you and the target \\glossterm<sustain> it as a \\glossterm<minor action>.",
+        cantrip="The spell's casting time becomes a standard action, and it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> tag.",
         subspells=[
             Subspell(
                 level=2,
@@ -164,7 +164,7 @@ def generate_spells():
         ),
         schools=['Abjuration'],
         lists=['Arcane'],
-        cantrip="The spell's casting time becomes a standard action, and its effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor> action.",
+        cantrip="The spell's casting time becomes a standard action, and it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> tag.",
         subspells=[
             Subspell(
                 level=2,
@@ -188,9 +188,8 @@ def generate_spells():
                         The rest of its movement in the current phase is cancelled.
                         Failure means the creature can enter the area unimpeded.
                         Creatures in the area at the time that the spell is cast are unaffected by the spell.
-
-                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                     """,
+                    tags=['Sustain (minor)'],
                 ),
             ),
             Subspell(
@@ -241,9 +240,8 @@ def generate_spells():
                     effect="""
                         Living creatures are unable to enter the area.
                         Creatures in the area at the time that the spell is cast are unaffected by this effect.
-
-                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                     """,
+                    tags=['Sustain (minor)'],
                 ),
             ),
         ],
@@ -338,12 +336,11 @@ def generate_spells():
                     effect="""
                         The area becomes filled with webs, making it \\glossterm<difficult terrain>.
                         Each 5-ft.\\ square of webbing has hit points equal to your spellpower, and is \\glossterm<vulnerable> to fire.
-                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
 
                         In addition, you make a Spellpower vs. Reflex attack against all creatures in the area when the spell is cast.
                         On a hit, each target is \\immobilized as long as it has webbing from this ability in its space.
                     """,
-                    tags=['Manifestation'],
+                    tags=['Manifestation', 'Sustain (minor)'],
                 ),
             ),
             Subspell(
@@ -401,14 +398,13 @@ def generate_spells():
                 success="""
                     The effect is \\glossterm<suppressed>.
                     Success against a magical effect causes that effect to be \\glossterm<suppressed>.
-                    This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                 """,
             ),
-            tags=['Thaumaturgy'],
+            tags=['Sustain (minor)', 'Thaumaturgy'],
         ),
         schools=['Abjuration'],
         lists=['Arcane', 'Divine', 'Magic', 'Nature'],
-        cantrip="The spell's effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<standard action>.",
+        cantrip="The spell gains the \\glossterm<Sustain> (standard) tag in place of the \\glossterm<Sustain> (minor) tag.",
         subspells=[
             Subspell(
                 level=2,
@@ -444,10 +440,9 @@ def generate_spells():
                         """,
                         success="""
                             The target object is \\glossterm<suppressed>.
-                            This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                         """,
                     ),
-                    tags=['Thaumaturgy'],
+                    tags=['Sustain (minor)', 'Thaumaturgy'],
                 ),
             ),
             Subspell(
@@ -482,10 +477,8 @@ def generate_spells():
                         In addition, magical abilities and objects cannot be activated within the area.
                         Creatures within the area cannot concentrate on or dismiss spells.
                         However, you can concentrate on and dismiss your own \\spell<antimagic field>.
-
-                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                     """,
-                    tags=['Thaumaturgy'],
+                    tags=['Sustain (minor)', 'Thaumaturgy'],
                 ),
             ),
             Subspell(
@@ -547,16 +540,16 @@ def generate_spells():
                 level=2,
                 name="Blast Furnace",
                 description="""
-                    The area becomes continuously engulfed in flames.
-                    The spell lasts as long as you \\glossterm<sustain> it as a standard action, repeating the attack during each \\glossterm<action phase>.
+                    The spell gains the \\glossterm<Sustain> (standard) tag.
+                    The area affected by the spell becomes a \\glossterm<zone> that is continuously engulfed in flames.
+                    At the end of each \\glossterm<action phase>, the attack is repeated in that area.
                 """,
             ),
             Subspell(
                 level=5,
                 name="Greater Blast Furnace",
                 description="""
-                    The area becomes continuously engulfed in flames.
-                    The spell lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>, repeating the attack during each \\glossterm<action phase>.
+                    This subspell functions like the \\textit<blast furnace> subspell, except that the spell gains the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Sustain> (standard) tag.
                 """,
             ),
             Subspell(
@@ -722,9 +715,9 @@ def generate_spells():
                 level=4,
                 name="Sustained",
                 description="""
-                    The area affected by this spell becomes completely filled with water.
-                    You can sustain the water as a \\glossterm<minor action>.
-                    Creatures in this \\glossterm<zone> suffer penalties appropriate for fighting underwater, and may be unable to breathe.
+                    The spell gains the \\glossterm<Sustain> (minor) tag.
+                    The area affected by the spell becomes a \\glossterm<zone> that is completely filled with water.
+                    Creatures in area suffer penalties appropriate for fighting underwater, and may be unable to breathe.
                 """,
             ),
             Subspell(
@@ -839,13 +832,12 @@ def generate_spells():
                             The effects of all other \\glossterm<Emotion> abilties are \\glossterm<suppressed>.
                             It cannot take violent actions (although it can defend itself) or do anything destructive.
                             If an aggressive action is taken against a nearby creature, this effect is broken.
-                            This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<standard action>.
                         """,
                         critical="""
                             As above, except that nearby violence does not break the effect.
                         """,
                     ),
-                    tags=['Emotion', 'Mind'],
+                    tags=['Emotion', 'Mind', 'Sustain (standard)'],
                 ),
             ),
             Subspell(
@@ -1003,7 +995,8 @@ def generate_spells():
             """,
             tags=['Attune (shared)'],
         ),
-        cantrip="The spell's casting time becomes a standard action, and its effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.",
+        # hmmm don't like one-sided cost here
+        cantrip="The spell's casting time becomes a standard action, and it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> (shared) tag.",
         schools=['Channeling'],
         lists=['Divine'],
         subspells=[
@@ -1144,9 +1137,9 @@ def generate_spells():
                 level=2,
                 name="Slick",
                 description="""
-                    The spell's area is covered with a film of slick ice.
+                    The spell gains the \\glossterm<Sustain> (minor) tag.
+                    The area affected by the spell becomes covered with a film of slick ice.
                     Creatures moving across the area must make Acrobatics checks to balance (see \pcref{Balance}).
-                    This ice lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                 """,
             ),
         ],
@@ -1373,7 +1366,6 @@ def generate_spells():
                 effects=Effects(
                     effect="""
                         When this spell resolves, and the end of each \\glossterm<action phase>, you make an attack against all targets to deal damage.
-                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                     """,
                     attack=Attack(
                         defense='Mental',
@@ -1381,7 +1373,7 @@ def generate_spells():
                             Each target takes life \\glossterm<standard damage> -3d.
                         """,
                     ),
-                    tags=['Life'],
+                    tags=['Life', 'Sustain (minor)'],
                 ),
             ),
             Subspell(
@@ -1393,7 +1385,6 @@ def generate_spells():
                 effects=Effects(
                     effect="""
                         When this spell resolves, and the end of each \\glossterm<action phase>, you make an attack against all targets to heal them.
-                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                     """,
                     attack=Attack(
                         defense='Mental',
@@ -1401,7 +1392,7 @@ def generate_spells():
                             Each target heals hit points equal to \\glossterm<standard damage> -3d.
                         """,
                     ),
-                    tags=['Life'],
+                    tags=['Life', 'Sustain (minor)'],
                 ),
             ),
             Subspell(
@@ -1449,7 +1440,7 @@ def generate_spells():
         ),
         schools=['Abjuration'],
         lists=['Arcane', 'Chaos', 'Divine', 'Evil', 'Good', 'Law'],
-        cantrip="The spell's casting time becomes a standard action, and its effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.",
+        cantrip="The spell's casting time becomes a standard action, and it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune (shared)> tag.",
         subspells=[
             Subspell(
                 level=3,
@@ -1492,14 +1483,12 @@ def generate_spells():
                 If it hits, it deals \\glossterm<standard damage> -2d.
                 The type of damage dealt by this attack depends on the creature's appearance.
                 Most animals bite or claw their foes, which deals bludgeoning and slashing damage.
-
-                This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
             """,
-            tags=["Manifestation"],
+            tags=["Manifestation", 'Sustain (minor)'],
         ),
         schools=['Conjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
-        cantrip="The spell's effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<standard action>.",
+        cantrip="The spell gains the \\glossterm<Sustain> (standard) tag in place of the \\glossterm<Sustain> (minor) tag.",
         subspells=[
             Subspell(
                 level=2,
@@ -1545,7 +1534,7 @@ def generate_spells():
         lists=['Arcane', 'Divine', 'Nature'],
         cantrip="""
             The sensor cannot be moved after it is originally created.
-            In addition, the spell's effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
+            In addition, the spell gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> tag.",
         """,
         subspells=[
             Subspell(
@@ -1655,7 +1644,7 @@ def generate_spells():
         ),
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
-        cantrip="The spell's casting time becomes a standard action, and its effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.",
+        cantrip="The spell's casting time becomes a standard action, and it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune (shared)> tag.",
         subspells=[
             Subspell(
                 level=2,
@@ -1804,9 +1793,8 @@ def generate_spells():
                     effect="""
                         The target floats in midair, unaffected by gravity.
                         During the movement phase, you can move the target up to ten feet in any direction.
-
-                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                     """,
+                    tags=['Attune (shared)'],
                 ),
             ),
             Subspell(
@@ -1853,7 +1841,7 @@ def generate_spells():
         ),
         schools=['Illusion'],
         lists=['Arcane'],
-        cantrip="The spell's casting time becomes a standard action, and its effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.",
+        cantrip="The spell's casting time becomes a standard action, and it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> tag.",
         subspells=[
             Subspell(
                 level=2,
@@ -1996,10 +1984,8 @@ def generate_spells():
 
                         During each movement phase, you can move the lights up to 100 feet in any direction.
                         If one of the lights ever goes out of range from you, it immediately winks out.
-
-                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                     """,
-                    tags=['Figment', 'Light', 'Visual'],
+                    tags=['Figment', 'Light', 'Sustain (minor)', 'Visual'],
                 ),
             ),
             Subspell(
@@ -2016,7 +2002,8 @@ def generate_spells():
                 level=3,
                 name="Illuminating",
                 description="""
-                    The brilliant light persists as long as you spend a \\glossterm<minor action> each round to sustain it.
+                    The spell gains the \\glossterm<Sustain> (minor) tag.
+                    The area affected by the spell becomes an illuminated \\glossterm<zone>.
                     The light has no additional effects on creatures in the area.
                 """,
             ),
@@ -2402,10 +2389,8 @@ def generate_spells():
                         This damage is tracked separately.
                         When the ends, you take all of the delayed damage at once.
                         When this happens, any damage in excess of your hit points is dealt as \\glossterm<vital damage>.
-
-                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                     """,
-                    tags=['Temporal'],
+                    tags=['Sustain (minor)', 'Temporal'],
                 ),
             ),
             Subspell(
@@ -2420,14 +2405,13 @@ def generate_spells():
                     effect="""
                         You lock the state of the target's body in time.
                         Note the target's hit points, vital damage, and active conditions.
-                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
-                        In addition, if the target dies, this effect ends immediately.
+                        If the target dies, this effect ends immediately.
 
                         As a \\glossterm<standard action>, you can reach through time to restore the target's state.
                         If you do, the target's hit points, vital damage, and active conditions become identical to what they were when you cast this subspell.
                         This does not affect any other properties of the target, such as any resources expended.
                     """,
-                    tags=['Temporal'],
+                    tags=['Sustain (minor)', 'Temporal'],
                 ),
             ),
             Subspell(
@@ -2483,14 +2467,12 @@ def generate_spells():
                 During the \\glossterm<action phase>, it makes a melee \\glossterm<strike> against a random creature adjacent to it.
                 Its accuracy is equal to your spellpower.
                 If it hits, it deals \\glossterm<standard damage> -1d.
-
-                This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
             """,
-            tags=['Manifestation'],
+            tags=['Manifestation', 'Sustain (minor)'],
         ),
         schools=['Conjuration', 'Transmutation'],
         lists=['Arcane'],
-        cantrip="The spell's effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<standard action>.",
+        cantrip="The spell gains the \\glossterm<Sustain> (standard) tag in place of the \\glossterm<Sustain> (minor) tag.",
         subspells=[
             Subspell(
                 level=2,
@@ -2505,11 +2487,11 @@ def generate_spells():
                         A wall of whirling blades appears in the area.
                         The wall provides \\glossterm<active cover> (20\\% miss chance) against attacks made through it.
                         Attacks that miss in this way harmlessly strike the wall.
-                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
 
                         Whenever a creature or object passes through the wall, make a Spellpower vs. Reflex attack against it.
                         A hit means the target takes slashing \\glossterm<standard damage> -1d.
                     """,
+                    tags=['Sustain (minor)'],
                 ),
             ),
             Subspell(
