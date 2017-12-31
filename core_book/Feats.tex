@@ -51,6 +51,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \featref{Celestial Heritage} & Non-evil & Gain aspects of celestial beings & Bloodline, Magical & \featpref{Celestial Heritage} \\
         \featref{Draconic Heritage} & \tdash & Gain aspects of draconic power & Bloodline & \featpref{Draconic Heritage} \\
         \featref{Iron Will} & Wil 2 & Increase mental resilience & \tdash & \featpref{Iron Will} \\
+        \featref{Null} & Wil 2 & Become immune to magic & \tdash & \featpref{Null} \\
         \featref{Regenerator} & Con 2 & Heal from wounds with inhuman speed & \tdash & \featpref{Regenerator} \\
         \featref{Swift} & Dex 2 & \tdash & \tdash & \featpref{Swift} \\
         \featref{Toughness} & Con 2 & Increase physical fortitude & \tdash & \featpref{Toughness} \\
@@ -1468,6 +1469,43 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[17]{Greater Phasing Projectiles}[Teleportation] Your \textit{phasing projectiles} ability improves, allowing you to ignore obstacles in two separate five-foot spans or one ten-foot span.
 
         \ff[19]{Unbound Imbuement} When you cast a spell and use your \textit{imbue projectile} or \textit{greater imbue projectile} abilities, you regain the action point spent to cast the spell, if any.
+    \end{feat}
+
+    \begin{feat}{Null}{General}
+        \featpre Starting Willpower of 2.
+        \featben
+
+        \ff[1]{Nullify Magic} You gain \glossterm{magic resistance} equal to 5 \add your Willpower.
+        You cannot lower this magic resistance voluntarily, which can prevent you from being affected by non-hostile magical effects.
+        In exchange, you lose the benefits of all \glossterm{magical} abilities you possess.
+        In addition, you are unable to \glossterm{attune} to any \glossterm{magical} abilities, such as spells cast by other creatures.
+
+        \ff[2]{Null Severance} You gain the \textit{null severance} ability.
+        \begin{ability}{Null Severance}
+            As a standard action, you can spend an \glossterm{action point} to use this ability.
+            If you do, make a \glossterm{strike}.
+            In addition to the strike's normal effects, you also compare the attack result against the target's Mental defense.
+            On a hit, the target breaks its \glossterm{attunement} to a random ability that it is currently attuned to.
+            On a critical hit, the target breaks its attunement to all abilities that it is attuned to.
+            This ability does not affect attunement to magic items.
+        \end{ability}
+
+        % clarify that it does not affect spells already in progress?
+        \ff[4]{Disruptive Presence} All creatures that you are adjacent to have a 20\% chance to \glossterm{miscast} any spell they cast.
+
+        \ff[6]{Greater Nullify Magic} You gain a \plus2 bonus to the \glossterm{magic resistance} from your \textit{nullify magic} ability.
+
+        \ff[8]{Greater Null Severance} You gain a \plus1 bonus to \glossterm{accuracy} with your \textit{null severance} ability.
+
+        \ff[10]{Greater Disruptive Presence} The failure chance from your \textit{disruptive presence} ability increases to 50\%.
+
+        \ff[12]{Supreme Nullify Magic} The bonus from your \textit{greater nullify magic} ability increases to \plus4.
+
+        \ff[14]{Supreme Null Severance} The accuracy bonus from your \textit{greater null severance} ability increases to \plus2.
+
+        \ff[16]{Supreme Disruptive Presence} Your \textit{disruptive presence} ability affects all creatures in a \areamed radius \glossterm{emanation} from you.
+
+        \ff[18]{True Null} You are unaffected by all \glossterm{magical} abilities.
     \end{feat}
 
     \begin{feat}{Perform Specialization}{Skill}
