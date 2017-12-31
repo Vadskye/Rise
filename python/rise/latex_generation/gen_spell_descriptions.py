@@ -256,6 +256,10 @@ def generate_spells():
         ],
         category='buff, defense',
     ))
+
+    # To restrict the narrative scope of Fabrication, it should be able to
+    # create any kind of object, but it can't manipulate objects in specific
+    # ways after their creation.
     spells.append(Spell(
         name='Fabrication',
         short_description="Create objects to damage and impair foes",
@@ -266,13 +270,9 @@ def generate_spells():
         ),
         effects=Effects(
             attack=Attack(
-                defense='Fortitude',
+                defense='Reflex',
                 success="""
                     Acid \\glossterm<standard damage> +1d.
-                """,
-                critical="""
-                    As above, but double damage.
-                    In addition, the target is \\glossterm<sickened> as a \\glossterm<condition>.
                 """,
             ),
             tags=['Acid', 'Manifestation'],
@@ -281,6 +281,17 @@ def generate_spells():
         lists=['Arcane'],
         cantrip="The spell deals -2d damage.",
         subspells=[
+            Subspell(
+                level=2,
+                name="Arrow",
+                targeting=Targeting(
+                    target='One creature or object',
+                    rng='long',
+                ),
+                effects=Effects(
+                    attack=Attack.damage('Reflex', 'piercing'),
+                ),
+            ),
             Subspell(
                 level=3,
                 name='Corrosive',
@@ -317,7 +328,7 @@ def generate_spells():
                 level=5,
                 name='Lingering',
                 description="""
-                    The spell deals -3d damage.
+                    The spell deals -2d damage.
                     However, the damage deals its damage again at the end of every round after the first.
                     This is a \\glossterm<condition>, and lasts until removed.
                 """,
@@ -376,81 +387,6 @@ def generate_spells():
                     attack=Attack.multi_damage('Reflex', 'slashing'),
                     tags=['Manifestation'],
                 ),
-            ),
-            Subspell(
-                level=2,
-                name="Blade Barrier",
-                targeting=Targeting(
-                    area='20 ft.\\ high wall: \\arealarge line or \\areasmall radius',
-                    area_type='zone',
-                    rng='medium',
-                ),
-                effects=Effects(
-                    effect="""
-                        A wall of whirling blades appears in the area.
-                        The wall provides \\glossterm<active cover> (20\\% miss chance) against attacks made through it.
-                        Attacks that miss in this way harmlessly strike the wall.
-                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
-
-                        Whenever a creature or object passes through the wall, make a Spellpower vs. Reflex attack against it.
-                        A hit means the target takes slashing \\glossterm<standard damage> -1d.
-                    """,
-                ),
-            ),
-            Subspell(
-                level=4,
-                name="Blade Barrier, Contracting",
-                description="""
-                    This subspell functions like the \\spell<blade barrier> subspell, except that the area must be a radius.
-                    In addition, the wall's radius shrinks by 5 feet at the end of every \\glossterm<action phase>, dealing damage to all creatures it moves through.
-                """,
-            ),
-            Subspell(
-                level=4,
-                name="Blade Barrier, Dual",
-                description="""
-                    This subspell functions like the \\spell<blade barrier> subspell, except that the area must be a line.
-                    In addition, the spell creatures two parallel walls of the same length, five feet apart.
-                """,
-            ),
-            # TODO: blend with Transmutation school?
-            Subspell(
-                level=3,
-                name="Create Ballista",
-                targeting=Targeting(
-                    target='Location',
-                    rng='close',
-                ),
-                effects=Effects(
-                    effect="""
-                        This spell creates a fully functional Large ballista.
-                        When initially created, the ballista fires at a foe of your choice within \\rnglong range.
-                        It automatically reloads itself during the movement phase.
-
-                        As a \\glossterm<minor action>, you can mentally command the ballista.
-                        If you do, it fires at a target you designate within \\rnglong range.
-                        Otherwise, another creature may spend a standard action action to manually fire the ballista.
-
-                        When the ballista fires, you make a Spellpower vs. Armor attack against the target.
-                        A hit means the target takes piercing \\glossterm<standard damage> -1d.
-                        This is a \glossterm{Physical} effect, and does not allow \glossterm{magic resistance}.
-
-                        The ballista has hit points equal to three times your spellpower.
-                        In all other respects, it is treated as an ordinary ballista.
-
-                        This effect lasts as long as you \\glossterm<attune> to it.
-                    """,
-                    tags=['Manifestation'],
-                ),
-            ),
-            Subspell(
-                level=6,
-                name="Create Ballista, Dual Track",
-                description="""
-                    This subspell functions like the \\spell<create ballista> subspell, except that the ballista is created with two separate bolt tracks.
-                    This allows it to fire at two different targets in the same round whenever you command it to fire.
-                    It cannot fire at the same target twice.
-                """,
             ),
         ],
         category='damage',
@@ -627,7 +563,7 @@ def generate_spells():
                 """,
             ),
             Subspell(
-                level=6,
+                level=5,
                 name="Greater Blast Furnace",
                 description="""
                     The area becomes continuously engulfed in flames.
@@ -673,7 +609,7 @@ def generate_spells():
                 ),
             ),
             Subspell(
-                level=5,
+                level=6,
                 name="Flame Aura",
                 targeting=Targeting(
                     rng='close',
@@ -684,7 +620,7 @@ def generate_spells():
                     effect="""
                         The target continuously radiates fiery energy.
                         At the end of each \\glossterm<action phase>, make a Spellpower vs. Reflex attack against all creatures within a \\areamed radius emanation from the target.
-                        A hit deals \\glossterm<standard damage> -1d.
+                        A hit deals \\glossterm<standard damage> -2d.
 
                         This effect lasts as long as you and the target \\glossterm<attune> to it.
                         You can apply the Widened \\glossterm<augment> to this subspell.
@@ -1206,7 +1142,7 @@ def generate_spells():
             attack=Attack(
                 defense='Fortitude',
                 success="""
-                    Cold \\glossterm<standard damage> \minus1d.
+                    Cold \\glossterm<standard damage> -1d.
                     In addition, each target is \\fatigued as a \\glossterm<condition>.
                 """,
             ),
@@ -1419,21 +1355,15 @@ def generate_spells():
                 name="Cure Wounds",
                 description="""
                     You cannot choose for the spell to deal damage.
-                    In addition, for every 10 points of healing you provide, you can also heal one point of \\glossterm<vital damage>.
-                """,
-            ),
-            Subspell(
-                level=3,
-                name="Cure Serious Wounds",
-                description="""
-                    This subspell functions like the \\textit<cure wounds> subspell, except that it heals one point of vital damage for every 5 points of healing instead of for every 10.
+                    In addition, for every 5 points of healing you provide, you can instead heal one point of \\glossterm<vital damage>.
                 """,
             ),
             Subspell(
                 level=4,
-                name="Cure Serious Wounds",
+                name="Cure Critical Wounds",
                 description="""
-                    This subspell functions like the \\textit<cure wounds> subspell, except that it heals one point of vital damage for every 2 points of healing instead of for every 10.
+                    You cannot choose for the spell to deal damage.
+                    In addition, it heals \\glossterm<vital damage> as easily as it heals it points.
                 """,
             ),
             Subspell(
@@ -1577,7 +1507,7 @@ def generate_spells():
                 Each round, you choose the creature's actions.
                 There are only two actions it can take.
                 As a move action, it can move as you direct.
-                As a standard action, it can make a melee \glossterm{strike} against a creature it threatens.
+                As a standard action, it can make a melee \\glossterm{strike} against a creature it threatens.
                 Its accuracy is equal to your spellpower.
                 If it hits, it deals \\glossterm<standard damage> -2d.
                 The type of damage dealt by this attack depends on the creature's appearance.
@@ -2140,17 +2070,14 @@ def generate_spells():
     spells.append(Spell(
         name="Polymorph",
         short_description="Change the physical forms of objects and creatures",
-        header=Header("You shape the ground into an animated spike that drives into a foe."),
+        header=Header("You transform a foe's body into a more broken state."),
         targeting=Targeting(
-            target='One creature or object',
+            target='One creature',
             rng='medium',
         ),
         effects=Effects(
-            attack=Attack(
-                defense='Reflex',
-                success='Piercing \\glossterm<standard damage> +1d.',
-            ),
-            tags=['Physical', 'Shaping'],
+            attack=Attack.damage('Fortitude', 'physical'),
+            tags=['Shaping'],
         ),
         schools=['Transmutation'],
         lists=['Arcane', 'Nature'],
@@ -2574,6 +2501,107 @@ def generate_spells():
             ),
         ],
         category='debuff, combat',
+    ))
+
+    # Weaponcraft can create and manipulate weapons of all varieties; all of it
+    # subspells should involve a mixture of creating a weapon and manipulating
+    # it after it is created.
+    spells.append(Spell(
+        name="Weaponcraft",
+        short_description="Create and manipulate weapons to attack foes",
+        header=Header("You create a dancing blade that attacks nearby foes"),
+        targeting=Targeting(
+            target='Location',
+            rng='medium',
+        ),
+        effects=Effects(
+            effect="""
+                A melee weapon you are proficient with appears in the target location.
+                The weapon floats about three feet off the ground, and is sized appropriately for a creature of your size.
+                The specific weapon you choose affects the type of damage it deals.
+                Regardless of the weapon chosen, it has hit points equal to twice your spellpower.
+                All of its defenses are equal to 5 \\add your spellpower, and it has a 30 foot fly speed with good maneuverability, though it cannot travel farther than five feet above the ground.
+
+                Each round, the weapon automatically moves towards the creature closest to it during the \\glossterm<movement phase>.
+                During the \\glossterm<action phase>, it makes a melee \\glossterm<strike> against a random creature adjacent to it.
+                Its accuracy is equal to your spellpower.
+                If it hits, it deals \\glossterm<standard damage> -1d.
+
+                This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
+            """,
+            tags=['Manifestation'],
+        ),
+        schools=['Conjuration', 'Transmutation'],
+        lists=['Arcane'],
+        cantrip="The spell's effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<standard action>.",
+        subspells=[
+            Subspell(
+                level=2,
+                name="Blade Barrier",
+                targeting=Targeting(
+                    area='20 ft.\\ high wall: \\arealarge line or \\areasmall radius',
+                    area_type='zone',
+                    rng='medium',
+                ),
+                effects=Effects(
+                    effect="""
+                        A wall of whirling blades appears in the area.
+                        The wall provides \\glossterm<active cover> (20\\% miss chance) against attacks made through it.
+                        Attacks that miss in this way harmlessly strike the wall.
+                        This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
+
+                        Whenever a creature or object passes through the wall, make a Spellpower vs. Reflex attack against it.
+                        A hit means the target takes slashing \\glossterm<standard damage> -1d.
+                    """,
+                ),
+            ),
+            Subspell(
+                level=3,
+                name="Aerial",
+                description="""
+                    The weapon's height above the ground is not limited, allowing it to fly into the air.
+                """,
+            ),
+            Subspell(
+                level=4,
+                name="Blade Barrier, Contracting",
+                description="""
+                    This subspell functions like the \\spell<blade barrier> subspell, except that the area must be a radius.
+                    In addition, the wall's radius shrinks by 5 feet at the end of every \\glossterm<action phase>, dealing damage to all creatures it moves through.
+                """,
+            ),
+            Subspell(
+                level=4,
+                name="Blade Barrier, Dual",
+                description="""
+                    This subspell functions like the \\spell<blade barrier> subspell, except that the area must be a line.
+                    In addition, the spell creatures two parallel walls of the same length, five feet apart.
+                """,
+            ),
+            Subspell(
+                level=3,
+                name="Create Ballista",
+                description="""
+                    The spell creates a fully functional Large ballista instead of a weapon of your choice.
+                    The ballista functions like any other weapon, with the following exceptions.
+
+                    It cannot move, and makes ranged \\glossterm<strikes> instead of melee strikes.
+                    Its attacks deal piercing damage, and its hit points are equal to three times your spellpower.
+                    In addition, the ballista attacks the creature farthest from it, instead of the creature closest to it.
+                """,
+            ),
+            Subspell(
+                level=6,
+                name="Create Ballista, Dual Track",
+                description="""
+                    This subspell functions like the \\spell<create ballista> subspell, except that the ballista is created with two separate bolt tracks.
+                    This allows it to fire at two different targets in the same round whenever you command it to fire.
+                    It cannot fire at the same target twice.
+                    Each round, it attacks the two creatures farthest from it.
+                """,
+            ),
+        ],
+        category='buff, offense',
     ))
 
     return sorted(spells, key=lambda spell: spell.name)
