@@ -1,6 +1,8 @@
 valid_tags = set([
     'Acid',
     'Air',
+    'Attune',
+    'Attune (shared)',
     'Auditory',
     'Cold',
     'Compulsion',
@@ -30,6 +32,8 @@ valid_tags = set([
     'Sizing',
     'Speech',
     'Subtle',
+    'Sustain (standard)',
+    'Sustain (minor)',
     'Telekinesis',
     'Teleportation',
     'Temporal',

@@ -34,10 +34,8 @@ def generate_spells():
                 The target gains a +1 bonus to \\glossterm<physical defenses>.
                 This bonus is increased to +5 against ranged \\glossterm<physical attacks> from weapons or projectiles that are Small or smaller.
                 Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
-
-                This effect lasts as long as you and the target \\glossterm<attune> to it.
             """,
-            tags=['Air', 'Imbuement'],
+            tags=['Air', 'Attune (shared)', 'Imbuement'],
         ),
         schools=['Transmutation'],
         lists=['Air', 'Nature'],
@@ -88,9 +86,8 @@ def generate_spells():
                     effect="""
                         Melee weapons wielded by the target gain an additional ten feet of reach, extending the wielder's threatened area.
                         This has no effect on ranged attacks with the weapon.
-                        This effect lasts as long as you and the target \\glossterm<attune> to it.
                     """,
-                    tags=['Air', 'Shaping'],
+                    tags=['Air', 'Attune (shared)', 'Shaping'],
                 ),
             ),
             Subspell(
@@ -142,10 +139,8 @@ def generate_spells():
                         After the spell's effect ends, the weather continues on its natural course, which may cause your chosen weather pattern to end.
                         % TODO: This should be redundant with generic spell mechanics
                         If another ability would magically manipulate the weather in the same area, the most recently used ability takes precedence.
-
-                        This effect lasts as long as you \\glossterm<attune> to it.
                     """,
-                    tags=['Air'],
+                    tags=['Air', 'Attune (shared)'],
                 ),
             ),
         ],
@@ -164,10 +159,8 @@ def generate_spells():
             effect="""
                 The target gains \\glossterm<damage reduction> equal to your spellpower.
                 In addition, it is \\glossterm<vulnerable> to \\glossterm<energy damage>.
-
-                This effect lasts as long as you \\glossterm<attune> to it.
             """,
-            tags=['Shielding'],
+            tags=['Attune (shared)', 'Shielding'],
         ),
         schools=['Abjuration'],
         lists=['Arcane'],
@@ -431,11 +424,9 @@ def generate_spells():
                             One of the target's magic auras is altered (see \pcref{Spellcraft}).
                             You can change the school and descriptors of the aura.
                             In addition, you can decrease the spellpower of the aura by up to half your spellpower, or increase the spellpower of the aura up to a maximum of your spellpower.
-
-                            This effect lasts as long as you \\glossterm<attune> to it.
                         """,
                     ),
-                    tags=['Thaumaturgy'],
+                    tags=['Attune', 'Thaumaturgy'],
                 ),
             ),
             Subspell(
@@ -522,10 +513,8 @@ def generate_spells():
                     effect="""
                         Extradimensional travel into or out of the spell's area is impossible.
                         This prevents all \\glossterm<Manifestation>, \\glossterm<Planar>, and \\glossterm<Teleportation> effects.
-
-                        This effect lasts as long as you \\glossterm<attune> to it.
                     """,
-                    tags=['Thaumaturgy'],
+                    tags=['Attune', 'Thaumaturgy'],
                 ),
             ),
         ],
@@ -622,11 +611,10 @@ def generate_spells():
                         At the end of each \\glossterm<action phase>, make a Spellpower vs. Reflex attack against all creatures within a \\areamed radius emanation from the target.
                         A hit deals \\glossterm<standard damage> -2d.
 
-                        This effect lasts as long as you and the target \\glossterm<attune> to it.
                         You can apply the Widened \\glossterm<augment> to this subspell.
                         If you do, it increases the area of the emanation.
                     """,
-                    tags=['Fire'],
+                    tags=['Attune (shared)', 'Fire'],
                 ),
             ),
             Subspell(
@@ -652,9 +640,8 @@ def generate_spells():
                     effect="""
                         Melee weapons wielded by the target gain a +1d bonus to \\glossterm<strike damage>.
                         In addition, all \\glossterm<strike damage> dealt with the its weapons becomes fire damage in addition to the attack's normal damage types.
-                        This effect lasts as long as you and the target \\glossterm<attune> to it.
                     """,
-                    tags=['Fire'],
+                    tags=['Attune (shared)', 'Fire'],
                 ),
             ),
             Subspell(
@@ -670,10 +657,8 @@ def generate_spells():
                         You make an Spellpower vs. Reflex attack against everything within an \\areamed radius burst centered on the target.
                         A hit deals fire \\glossterm<standard damage> -1d.
                         After the object explodes in this way, the spell ends.
-
-                        This effect lasts as long as you \\glossterm<attune> to it.
                     """,
-                    tags=['Fire', 'Trap'],
+                    tags=['Attune', 'Fire', 'Trap'],
                 ),
             ),
         ],
@@ -729,9 +714,8 @@ def generate_spells():
                     effect="""
                         When the target makes a \\glossterm<strike> with a melee weapon, the attack is made against Reflex defense instead of Armor defense.
                         However, the target takes a -2d penalty to \\glossterm<strike damage>.
-                        This effect lasts as long as you and the target \\glossterm<attune> to it.
                     """,
-                    tags=['Shaping', 'Water'],
+                    tags=['Attune (shared)', 'Shaping', 'Water'],
                 ),
             ),
             Subspell(
@@ -823,13 +807,13 @@ def generate_spells():
                         success="""
                             The target is \\charmed by you.
                             Any act by you or your apparent allies that threatens or damages the \\spell<charmed> person breaks the effect.
-                            This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
+                            This effect is automatically ended after one hour.
                         """,
                         critical="""
-                            As above, except that the effect lasts as long as you \\glossterm<attune> to it.
+                            As above, except that the effect is not automatically ended.
                         """,
                     ),
-                    tags=['Emotion', 'Mind', 'Subtle'],
+                    tags=['Attune', 'Emotion', 'Mind', 'Subtle'],
                 ),
             ),
             Subspell(
@@ -1016,8 +1000,8 @@ def generate_spells():
         effects=Effects(
             effect="""
                 The target gains a +1d bonus to \\glossterm<strike damage>.
-                This effect lasts as long as you and the target \\glossterm<attune> to it.
             """,
+            tags=['Attune (shared)'],
         ),
         cantrip="The spell's casting time becomes a standard action, and its effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.",
         schools=['Channeling'],
@@ -1042,9 +1026,8 @@ def generate_spells():
                     effect="""
                         \\glossterm<Strikes> made with melee weapons wielded by the target are made against Mental defense instead of Armor defense.
                         However, the target takes a -2d penalty to \\glossterm<strike damage>.
-                        This effect lasts as long as you and the target \\glossterm<attune> to it.
                     """,
-                    tags=['Fire'],
+                    tags=['Attune (shared)', 'Fire'],
                 ),
             ),
             Subspell(
@@ -1080,10 +1063,8 @@ def generate_spells():
                         You increase your size by one size category.
                         This increases your \\glossterm<strike damage> and usually increases your \\glossterm<reach> (see \\pcref<Size in Combat>).
                         However, you take a -1d penalty to \\glossterm<strike damage>, as your muscles are not increased fully to match your new size.
-
-                        This effect lasts as long as you \\glossterm<attune> to it.
                     """,
-                    tags=['Shaping', 'Sizing'],
+                    tags=['Attune', 'Shaping', 'Sizing'],
                 ),
             ),
             Subspell(
@@ -1463,9 +1444,8 @@ def generate_spells():
             """,
             effect="""
                 The target gains damage reduction equal to your spellpower against physical effects that have the chosen alignment, and physical attacks made by creatures with the chosen alignment.
-                This effect lasts as long as you and the target \\glossterm<attune> to it.
             """,
-            tags=['Shielding'],
+            tags=['Attune (shared)', 'Shielding'],
         ),
         schools=['Abjuration'],
         lists=['Arcane', 'Chaos', 'Divine', 'Evil', 'Good', 'Law'],
@@ -1558,10 +1538,8 @@ def generate_spells():
 
                 You can only have one casting of this spell active at once.
                 If you cast it again, any previous castings of the spell are dismissed.
-
-                This effect lasts as long as you \\glossterm<attune> to it.
             """,
-            tags=['Scrying'],
+            tags=['Attune', 'Scrying'],
         ),
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
@@ -1672,9 +1650,8 @@ def generate_spells():
         effects=Effects(
             effect="""
                 The target gains a \plus1 bonus to \\glossterm<accuracy> with all attacks.
-                This effect lasts as long as you and the target \\glossterm<attune> to it.
             """,
-            tags=['Enhancement'],
+            tags=['Attune (shared)', 'Enhancement'],
         ),
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
@@ -1690,10 +1667,8 @@ def generate_spells():
                     effect="""
                         You know when each target deliberately and knowingly speaks a lie.
                         This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
-
-                        This effect lasts as long as you \\glossterm<attune> to it.
                     """,
-                    tags=['Detection'],
+                    tags=['Attune', 'Detection'],
                 ),
             ),
             Subspell(
@@ -1873,10 +1848,8 @@ def generate_spells():
                 It gains a +1 bonus to \\glossterm<physical defenses> and Stealth (see \\pcref<Stealth>).
                 This bonus is increases to +2 while in \\glossterm<shadowy illumination>.
                 This effect provides no defensive benefit against creatures immune to \\glossterm<Visual> abilities.
-
-                This effect lasts as long as you and the target \\glossterm<attune> to it.
             """,
-            tags=['Glamer', 'Visual'],
+            tags=['Attune (shared)', 'Glamer', 'Visual'],
         ),
         schools=['Illusion'],
         lists=['Arcane'],
@@ -1896,11 +1869,8 @@ def generate_spells():
                     effect="""
                         Light within or passing through the area is dimmed to be no brighter than shadowy illumination.
                         Any effect or object which blocks light also blocks this spell's emanation.
-
-                        This effect lasts as long as you \\glossterm<attune> to it.
-                        If you use this ability multiple times, you can attune to it each time.
                     """,
-                    tags=['Glamer', 'Light'],
+                    tags=['Attune', 'Glamer', 'Light'],
                 ),
             ),
             Subspell(
@@ -1911,10 +1881,8 @@ def generate_spells():
                         You make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).
                         You gain a +5 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form.
                         However, this effect is unable to alter the sound, smell, texture, or temperature of the target or its clothes and equipment.
-
-                        This effect lasts as long as you and the target \\glossterm<attune> to it.
                     """,
-                    tags=['Glamer', 'Visual'],
+                    tags=['Attune (shared)', 'Glamer', 'Visual'],
                 ),
             ),
             Subspell(
@@ -1928,10 +1896,8 @@ def generate_spells():
                         All targeted attacks against the target have a 50\\% miss chance.
                         Whenever an attack misses in this way, it affects an image, destroying it.
                         This ability provides no defensive benefit against creatures immune to \\glossterm<Visual> abilities.
-
-                        This effect lasts as long as you and the target \\glossterm<attune> to it.
                     """,
-                    tags=['Figment', 'Visual'],
+                    tags=['Attune (shared)', 'Figment', 'Visual'],
                 ),
             ),
             Subspell(
@@ -2095,9 +2061,8 @@ def generate_spells():
                     effect="""
                         The target gains \\glossterm{damage reduction} equal to your spellpower against damage dealt by \\glossterm<physical attacks>.
                         In addition, it is \\glossterm<vulnerable> to fire damage.
-
-                        This effect lasts as long as you and the target \\glossterm<attune> to it.
                     """,
+                    tags=['Attune (shared)'],
                 ),
             ),
             Subspell(
@@ -2126,10 +2091,8 @@ def generate_spells():
                     effect="""
                         You decrease the target's size by one size category.
                         This decreases its \\glossterm<strike damage> and usually decreases its \\glossterm<reach> (see \\pcref<Size in Combat>).
-
-                        This effect lasts as long as you and the target \\glossterm<attune> to it.
                     """,
-                    tags=['Shaping', 'Sizing'],
+                    tags=['Attune (shared)', 'Shaping', 'Sizing'],
                 ),
             ),
             Subspell(
@@ -2145,10 +2108,8 @@ def generate_spells():
                         You increase the target's size by one size category.
                         This increases its \\glossterm<strike damage> and usually increases its \\glossterm<reach> (see \\pcref<Size in Combat>).
                         However, the target takes a -1d penalty to \\glossterm<strike damage>, as its muscles are not increased fully to match its new size.
-
-                        This effect lasts as long as you and the target \\glossterm<attune> to it.
                     """,
-                    tags=['Shaping', 'Sizing'],
+                    tags=['Attune (shared)', 'Shaping', 'Sizing'],
                 ),
             ),
             Subspell(
@@ -2178,10 +2139,8 @@ def generate_spells():
                         You make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).
                         You gain a +5 bonus on the check, and you ignore penalties for changing the target's gender, race, subtype, or age.
                         However, this effect is unable to alter the target's clothes or equipment in any way.
-
-                        This effect lasts as long as you and the target \\glossterm<attune> to it.
                     """,
-                    tags=['Shaping'],
+                    tags=['Attune (shared)', 'Shaping'],
                 ),
             ),
             Subspell(
@@ -2341,9 +2300,8 @@ def generate_spells():
                 effects=Effects(
                     effect="""
                         The target gains a +30 foot bonus to its speed in all its movement modes, up to a maximum of double its original speed.
-                        This effect lasts as long as you \\glossterm<attune> to it.
                     """,
-                    tags=['Temporal'],
+                    tags=['Attune (shared)', 'Temporal'],
                 ),
             ),
             Subspell(
@@ -2366,9 +2324,8 @@ def generate_spells():
                     effect="""
                         The target's spells resolve during the \\glossterm<action phase> instead of during the \\glossterm<delayed action phase>.
                         This prevents its spells from being disrupted by taking damage and similar effects.
-                        This effect lasts as long as you and the target \\glossterm<attune> to it.
                     """,
-                    tags=['Temporal'],
+                    tags=['Attune (shared)', 'Temporal'],
                 ),
             ),
             Subspell(
