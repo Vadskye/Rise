@@ -1,493 +1,1076 @@
 \section{Ritual Descriptions}
+
 \begin{spellsection}{Animate Dead}[3]
+
 \begin{spellheader}
 \spelldesc{You bind a fragment of a dead creature's soul to its corpse, reanimating it as an undead skeleton or zombie.}
 \end{spellheader}
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
 \spellspecial The combined levels of all targets cannot exceed your spellpower.
 \spelltgt{One or more corpses within \rngclose range}
+
 \spelltime{One hour}
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 The target becomes an undead creature that obeys your spoken commands.
 You choose whether to create a skeleton or a zombie.
 Creating a zombie require a mostly intact corpse, including most of the flesh.
 Creating a skeleton only requires a mostly intact skeleton.
 If a skeleton is made from an intact corpse, the flesh quickly falls off the animated bones.
+
 This effect lasts as long as you \glossterm{attune} to it.
 If you use this ability multiple times, you can attune to it each time.
+
+
+
+
+
+
 \spelltags{\glossterm{Evil}, \glossterm{Negative}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Vivimancy}{Arcane, Divine}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Awaken}[7]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgt{One animal within \rngclose range}
+
 \spelltime{24 hours}
 \parhead*{Action Points} 49
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 The target becomes sentient.
 Its Intelligence becomes 1d6 \sub 5.
 Its type changes from animal to magical beast.
 It gains the ability to speak and understand one language that you know of your choice.
+
 This effect is permanent.
+
+
+
+
+
+
 \spelltags{\glossterm{Imbuement}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Transmutation}{Nature}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Binding}[3]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
+
 \spellzone{small radius within \rngclose range}
 \spelltime{One hour}
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 This ritual inscribes a magic circle on the ground, denoting the edges of the area.
 The circle is obvious, but a DR 16 Perception or Spellcraft check is required to verify that the circle belongs to a \ritual{binding} ritual.
 If the circle is broken, the ritual's effects end immediately.
 If a creature enters the area, you make an attack against it, as described below.
+
 This effect lasts as long as you \glossterm{attune} to it.
 If you use this ability multiple times, you can attune to it each time.
+
+
+
+
 \begin{spellattack}{Spellpower vs. Mental}
+
+
 \spellsuccess
 The target is unable to escape the area physically or alter the circle in any way.
 It treats the circle and the area above it as an impassable barrier, preventing the effects of any of its abilities from extending outside that area.
+
+
+
 \end{spellattack}
+
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Abjuration}{Arcane, Divine}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \subsubsection{Subrituals}
+
+
 \augment{5}{Dimension Lock}
+
 Creatures trapped in the circle with a successful attack also cannot travel extradimensionally.
 This prevents all \glossterm{Manifestation}, \glossterm{Planar}, and \glossterm{Teleportation} effects.
+
+
+
+
+
+
 \begin{spellsection}{Bless Water}[1]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgt{One pint of unattended, nonmagical water within \rngclose range}
+
 \spelltime{One minute}
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 The target becomes holy water.
 Holy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck undead creature or an evil outsider.
+
+
+
+
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Channeling}{Divine}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Blessed Transit}[6]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgts{Up to five willing ritual participants (Medium or smaller) within \rngmed range}
+
 \spelltime{One minute}
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 This ritual functions like the \ritual{overland teleporation} ritual, except that the destination must be a temple or equivalent holy site to your deity.
+
+
+
+
+
+
 \spelltags{\glossterm{Teleportation}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Conjuration}{divine}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Create Object}[3]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgt{Location within \rngclose range}
+
 \spelltime{One hour}
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 % TODO: add ability to create objects of other sizes/materials
 When you perform this ritual, you make a Craft check to craft an object of no greater than Small size.
 The object appears out of thin air, without any raw materials.
 It must be made of nonliving, nonreactive vegetable matter, such as wood or cloth.
+
 This effect lasts as long as you \glossterm{attune} to it.
 If you use this ability multiple times, you can attune to it each time.
+
+
+
+
+
+
 \spelltags{\glossterm{Manifestation}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Conjuration}{Arcane, Divine, Nature}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Create Sustenance}[3]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgt{Location within \rngclose range}
+
 \spelltime{One hour}
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 This ritual creates food and drink that is sufficient to sustain two Medium creatures per spellpower for 24 hours.
 The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland.
+
+
+
+
+
+
 \spelltags{\glossterm{Creation}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Conjuration}{Arcane, Divine, Nature}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Curse Water}[1]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgt{One pint of unattended, nonmagical water within \rngclose range}
+
 \spelltime{One minute}
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 The target becomes unholy water.
 Unholy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck good outsider.
+
+
+
+
+
+
 \spelltags{\glossterm{Evil}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Channeling}{Divine}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Discern Location}[5]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgt{One creature or object within Same plane range (Unrestricted)}
+
 \spelltime{24 hours}
 \parhead*{Action Points} 25
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 You learn the location (place, name, business name, or the like), community, country, and continent where the target lies.
+
+
+
+
+
+
 \spelltags{\glossterm{Knowledge}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Divination}{Arcane, Divine, Nature}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \subsubsection{Subrituals}
+
+
 \augment{7}{Interplanar}
+
 You also learn the plane of existence where the target lies.
 This is a \glossterm{Planar} effect.
+
+
+
 Replace the spell's targets with the following:
 \begin{spellcontent}
+
 \begin{augmenttargetinginfo}
+
 \spelltgt{One creature or object within Any plane range (Unrestricted)}
+
 \spelltime{24 hours}
 \parhead*{Action Points} 49
 \end{augmenttargetinginfo}
+
 \end{spellcontent}
+
+
+
+
+
 \begin{spellsection}{Endure Elements}[1]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgt{One creature or object within \rngclose range}
+
 \spelltime{One minute}
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 The target suffers no harm from being in a hot or cold environment.
 It can exist comfortably in conditions between \minus50 and 140 degrees Fahrenheit.
 Its equipment, if any, is also protected.
 This does not protect the target from fire or cold damage.
+
 This effect lasts as long as you \glossterm{attune} to it.
 If you use this ability multiple times, you can attune to it each time.
+
+
+
+
+
+
 \spelltags{\glossterm{Shielding}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Abjuration}{Arcane, Divine, Nature}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Explosive Runes}[3]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgt{One object with writing on it (Small or smaller) within \rngclose range}
+
 \spelltime{One hour}
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
 \spellspecial
 When you perform this ritual, choose a type of \glossterm{energy damage} (cold, electricity, fire, or sonic).
 It gains the tag appropriate to the chosen energy type.
+
+
+
 \spelleffect
 If a creature reads the target object, it explodes.
 You make an attack against everything within an \areamed radius burst centered on the target.
 After the object explodes in this way, the spell ends.
 If the target object is destroyed or rendered illegible, the spell ends without exploding.
+
 This effect lasts as long as you \glossterm{attune} to it.
 If you use this ability multiple times, you can attune to it each time.
+
+
+
+
 \begin{spellattack}{Spellpower vs. Reflex}
+
+
 \spellsuccess \glossterm{Standard damage} \minus1d of the damage type chosen
+
+
 \end{spellattack}
+
+
+
 \spelltags{\glossterm{Trap}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Evocation}{Arcane}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Fertility}[3]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
+
 \spellzone{One mile radius from your location}
 \spelltime{24 hours}
 \parhead*{Action Points} 9
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 Normal plants within the area become twice as productive as normal for the next year.
 This ritual does not stack with itself.
 If the \ritual{infertility} ritual is also applied to the same area, the most recently performed ritual takes precedence.
+
+
+
+
+
+
 \spelltags{\glossterm{Imbuement}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Transmutation}{Nature}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Gate}[9]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgt{Location within \rngclose range}
+
 \spelltime{One week}
 \parhead*{Action Points} 81
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 This ritual creates an interdimensional connection between your plane of existence and a different plane you specify, allowing travel between those two planes in either direction.
+
 The gate itself is a circular disk between 5 and 20 feet in diameter, oriented in the direction you desire when it comes into existence (typically vertical and facing you).
 It is a two-dimensional window looking into the plane you specified when casting the spell, and anyone or anything that moves through is shunted instantly to the other side.
+
 The \ritual{gate} has a front and a back. Creatures moving through the gate from the front are transported to the other plane; creatures moving through it from the back are not.
+
 % A \ritual{gate} spell functions much like a \ritual{plane shift} spell, except that the gate opens precisely at the point you desire.
+
 This effect lasts as long as you \glossterm{sustain} it as a \glossterm{standard action}, up to a maximum of 5 rounds.
+
+
+
+
+
+
 \spelltags{\glossterm{Planar}, \glossterm{Teleportation}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Conjuration}{Arcane, Divine, Nature}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Gentle Repose}[2]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgt{One unattended nonmagical object within \rngclose range}
+
 \spelltime{One minute}
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 Time does not pass for the target, preventing it from decaying or spoiling.
 This can extend the time a poison or similar item lasts before becoming inert.
 If used on a corpse, this effectively extends the time limit on raising that creature from the dead (see \ritual{resurrection}) and similar effects that require a fresh body.
 Additionally, this can make transporting a fallen comrade more pleasant.
+
 This effect lasts as long as you \glossterm{attune} to it.
 If you use this ability multiple times, you can attune to it each time.
+
+
+
+
+
+
 \spelltags{\glossterm{Temporal}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Transmutation}{Arcane, Divine, Nature}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Infertility}[3]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
+
 \spellzone{One mile radius from your location}
 \spelltime{24 hours}
 \parhead*{Action Points} 9
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 Normal plants within the area become half as productive as normal for the next year.
 This ritual does not stack with itself.
 If the \ritual{fertility} ritual is also applied to the same area, the most recently performed ritual takes precedence.
+
+
+
+
+
+
 \spelltags{\glossterm{Imbuement}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Transmutation}{Nature}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Ironwood}[3]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgt{One wooden object (Small or smaller)}
+
 \spelltime{24 hours}
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 The target is transformed into ironwood.
 While remaining natural wood in almost every way, ironwood is as strong, heavy, and resistant to fire as iron.
+
+
+
+
+
+
 \spelltags{\glossterm{Shaping}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Transmutation}{Nature}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Lifeweb Transit}[6]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgts{Up to five willing ritual participants (Medium or smaller) within \rngmed range}
+
 \spelltime{One hour}
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 This ritual functions like the \ritual{overland teleporation} ritual, except that both the starting and ending points must be living plants.
 The plants must be larger than the largest creature being teleported in this way.
+
 In addition, instead of specifying a destination with a mental image, you can specify a distance and direction from your current location.
 If you do, the targets will arrive at the closest sufficiently large living plant to that destination.
+
+
+
+
+
+
 \spelltags{\glossterm{Teleportation}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Conjuration}{Nature}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Light}[1]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgt{One creature or object (Medium or smaller) within \rngclose range}
+
 \spelltime{One minute}
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 The target glows like a torch, shedding bright light in an \areamed radius (and dim light for an additional 20 feet).
 This effect lasts as long as you \glossterm{attune} to it.
 If you use this ability multiple times, you can attune to it each time.
+
+
+
+
+
+
 \spelltags{\glossterm{Figment}, \glossterm{Light}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Illusion}{Arcane, Divine, Nature}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Magic Mouth}[1]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgt{one creature or object within \rngclose range}
+
 \spelltime{24 hours}
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
 \spellspecial
 When you perform this ritual, you must specify a triggering condition.
 The condition must be something that a typical human in the target's place could detect.
 You must also specify a message of twenty-five words or less.
+
+
+
 \spelleffect
 This effect lasts until the triggering condition occurs.
 When that happens, the target appears to grow an enchanted mouth, and it speaks the chosen message aloud.
 After this happens, the spell ends.
+
+
+
+
+
+
 \spelltags{\glossterm{Figment}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Illusion}{Arcane}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Mount}[3]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgt{Location within \rngclose range}
+
+
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 You create a light horse or a pony (your choice) to serve you as a mount.
 The steed serves willingly and well.
 The mount comes with a bit and bridle and a riding saddle.
+
 This effect lasts as long as you \glossterm{attune} to it.
 If you use this ability multiple times, you can attune to it each time.
+
+
+
+
+
+
 \spelltags{\glossterm{Manifestation}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Conjuration}{Arcane}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Mystic Lock}[2]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgt{One Large or smaller closable, nonmagical object, such as a door or box within \rngclose range}
+
 \spelltime{One minute}
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 The target object is magically locked.
 It can be unlocked with a Devices check against a DR equal to 20 \add your spellpower.
 The DR to break it open forcibly increases by 10.
+
 You can freely pass your own \ritual{arcane lock} as if the object were not locked.
 This effect lasts as long as you \glossterm{attune} to it.
 If you use this ability multiple times, you can attune to it each time.
+
+
+
+
+
+
 \spelltags{\glossterm{Imbuement}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Transmutation}{Arcane, Divine, Nature}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \subsubsection{Subrituals}
+
+
 \augment{5}{Resilient}
+
 The DR to unlock the target with a Devices check is instead equal to 30 + your spellpower.
 In addition, the DR to break it open increases by 20 instead of by 10.
+
+
+
+
+
+
 \begin{spellsection}{Overland Teleportation}[6]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgts{Up to five willing ritual participants (Medium or smaller) within \rngmed range}
+
 \spelltime{One hour}
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
 \spellspecial
 Choose a destination up to 100 miles away on your current plane.
@@ -497,186 +1080,398 @@ If you specify its appearance incorrectly, or if the area has changed its appear
 The new destination will be one that more closely resembles your mental image.
 If no such area exists, the ritual simply fails.
 % TODO: does this need more clarity about what teleportation works?
+
+
+
 \spelleffect
 Each target is teleported to the chosen destination.
+
+
+
+
+
+
 \spelltags{\glossterm{Teleportation}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Conjuration}{Arcane}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Plane Shift}[5]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgts{Up to five willing ritual participants (Medium or smaller) within \rngclose range}
+
 \spelltime{24 hours}
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 The targets teleport to a destination of your choice on another plane connected to your current plane.
 Precise accuracy is nigh impossible, and the actual destination is usually 1d100 miles away from the intended destination.
 % TODO: Is this planar cosmology correct?
 The Astral Plane connects to every plane, but transit from other planes is usually more limited. From the Material Plane, you can only reach the Astral Plane.
+
+
+
+
+
+
 \spelltags{\glossterm{Planar}, \glossterm{Teleportation}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Conjuration}{Arcane, Divine, Nature}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \subsubsection{Subrituals}
+
+
 \augment{8}{Precise}
+
 The actual destination is the same as the intended destination, rather than being a random distance away.
+
+
+
+
+
+
 \begin{spellsection}{Private Sanctum}[5]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
+
 \spellzone{\arealarge radius within \rngclose range}
 \spelltime{24 hours}
 \parhead*{Action Points} 25
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 Everything in the area is completely imperceptible from outside the area.
 Anyone looking into the area from outside sees only a dark, foggy mass.
 Darkvision and similar abilities cannot penetrate into the area.
 No sounds, no matter how loud, can escape the area, so nobody can eavesdrop from outside.
 In addition, all \glossterm{Scrying} effects fail to function in the area.
+
 Creatures inside the area can see within the area and outside of it without any encumbrance.
+
+
+
+
+
+
 \spelltags{\glossterm{Thaumaturgy}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Abjuration}{Arcane}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Purge Curse}[3]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgt{One willing creature within \rngclose range}
+
 \spelltime{24 hours}
 \parhead*{Action Points} 9
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 All curses affecting the target are removed.
 This ritual cannot remove a curse that is part of the effect of an item the target has equipped.
 However, it can allow the target to remove any cursed items it has equipped.
+
+
+
+
+
+
 \spelltags{\glossterm{Thaumaturgy}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Abjuration}{Arcane, Divine, Nature}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Purify Sustenance}[1]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgts{All food and water in the area within \rngclose range}
 \spellburst{Five cubic feet within \rngclose range}
 \spelltime{One hour}
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 Spoiled, rotten, poisonous, or otherwise contaminated food and water in the area becomes pure and suitable for eating and drinking.
 This does not prevent subsequent natural decay or spoiling.
+
+
+
+
+
+
 \spelltags{\glossterm{Shaping}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Transmutation}{Arcane, Divine, Nature}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Read Magic}[1]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
+
+
 \spelltime{One minute}
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 You gain the ability to decipher magical inscriptions that would otherwise be unintelligible.
 This can allow you to read ritual books and similar objects created by other creatures.
 After you have read an inscription in this way, you are able to read that particular writing without the use of this ritual.
+
 This effect lasts as long as you \glossterm{attune} to it.
+
+
+
+
+
+
 \spelltags{\glossterm{Knowledge}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Divination}{Arcane, Divine, Nature}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Regeneration}[4]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgt{One willing creature within \rngclose range}
+
 \spelltime{24 hours}
 \parhead*{Action Points} 16
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 All of the target's hit points, \glossterm{subdual damage}, and \glossterm{vital damage} are healed.
 In addition, any of the target's severed body parts or missing organs grow back by the end of the next round.
+
+
+
+
+
+
 \spelltags{\glossterm{Flesh}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Vivimancy}{Divine, Nature}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Reincarnation}[5]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
 \spellspecial The target must have been part of the original creature's body at the time of death.
 \spelltgt{One piece of a humanoid corpse (Diminuitive or larger) within \rngclose range}
+
 \spelltime{24 hours}
 \parhead*{Action Points} 25
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 The creature the target corpse belongs to returns to life in a new body.
 It must not have died due to old age.
+
 This ritual creates an entirely new body for the creature's soul to inhabit from the natural elements at hand.
 During the ritual, the body ages to match the age of the original creature at the time it died.
 The creature has 0 hit points when it returns to life.
+
 A reincarnated creature is identical to the original creature in all respects, except for its race.
 The creature's race is replaced with a random race from \tref{Humanoid Reincarnations}.
 Its appearance changes as necessary to match its new race, though it retains the general shape and distinguishing features of its original appearance.
 The creature loses all attribute modifiers and abilities from its old race, and gains those of its new race.
 However, its racial bonus feat and languages are unchanged.
+
 A creature's soul naturally rejects being placed into a different body than its original home.
 Until the creature is restored to its initial race, its maximum action points are reduced by 1.
 This penalty does not stack if the creature is reincarnated multiple times.
+
 Coming back from the dead is an ordeal.
 All of the creature's action points and other daily abilities are expended when it returns to life.
 In addition, its maximum action points are reduced by 1.
 This penalty lasts for thirty days, or until the creature gains a level.
 If this would reduce a creature's maximum action points below 0, the creature cannot be resurrected.
+
+
+
+
+
+
 \spelltags{\glossterm{Creation}, \glossterm{Life}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Conjuration, Vivimancy}{Nature}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \subsubsection{Subrituals}
+
+
 \augment{7}{Fated}
+
 The target is reincarnated as its original race instead of as a random race.
+
+
+
+
+
+
 \begin{dtable}
 \lcaption{Humanoid Reincarnations}
 \begin{dtabularx}{\columnwidth}{l X}
@@ -698,205 +1493,446 @@ d\% & Incarnation \\
 100 & Other
 \end{dtabularx}
 \end{dtable}
+
+
 \begin{spellsection}{Resurrection}[4]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgt{One intact humanoid corpse within \rngclose range}
+
 \spelltime{24 hours}
 \parhead*{Action Points} 16
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 The target returns to life.
 It must not have died due to old age.
+
 The creature has 0 hit points when it returns to life.
 It is cured of all \glossterm{vital damage} and other negative effects, but the body's shape is unchanged.
 Any missing or irreparably damaged limbs or organs remain missing or damaged.
 The creature may therefore die shortly after being resurrected if its body is excessively damaged.
+
 Coming back from the dead is an ordeal.
 All of the creature's action points and other daily abilities are expended when it returns to life.
 In addition, its maximum action points are reduced by 1.
 This penalty lasts for thirty days, or until the creature gains a level.
 If this would reduce a creature's maximum action points below 0, the creature cannot be resurrected.
+
+
+
+
+
+
 \spelltags{\glossterm{Creation}, \glossterm{Life}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Conjuration, Vivimancy}{Nature}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \subsubsection{Subrituals}
+
+
 \augment{7}{Complete}
+
 The target is complely restored to health, including any missing or irreparably damaged limbs or organs.
+
+
+
 Replace the spell's targets with the following:
 \begin{spellcontent}
+
 \begin{augmenttargetinginfo}
+
 \spelltgt{One piece of a humanoid corpse (Diminuitive or larger) within \rngclose range}
+
 \spelltime{24 hours}
 \parhead*{Action Points} 49
 \end{augmenttargetinginfo}
+
 \end{spellcontent}
+
+
+
+
+
 \begin{spellsection}{Retrieve Legacy}[4]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgt{One willing creature within \rngclose range}
+
+
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 If the target's \glossterm{legacy item} is on the same plane and \glossterm{unattended}, it is teleported into the target's hand.
+
+
+
+
+
+
 \spelltags{\glossterm{Teleportation}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Conjuration, Divination}{Arcane, Divine, Nature}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Scryward}[3]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
+
 \spellzone{\arealarge radius within \rngclose range}
 \spelltime{24 hours}
 \parhead*{Action Points} 9
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 All \glossterm{Scrying} effects fail to function in the area.
 This effect is permanent.
+
+
+
+
+
+
 \spelltags{\glossterm{Thaumaturgy}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Abjuration}{Arcane, Divine, Nature}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Seek Legacy}[2]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgt{One willing creature within \rngclose range}
+
+
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 The target learns the precise distance and direction to their \glossterm{legacy item}, if it is on the same plane.
+
+
+
+
+
+
 \spelltags{\glossterm{Knowledge}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Divination}{Arcane, Divine, Nature}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Sending}[4]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
 \spellspecial
 You must specify your target with a precise mental image of its appearance.
 The image does not have to be perfect, but it must unambiguously identify the target.
 If you specify its appearance incorrectly, or if the target has changed its appearance, you may accidentally target a different creature, or the ritual may simply fail.
+
 \spelltgt{One creature within Same plane range (Unrestricted)}
+
 \spelltime{One hour}
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 You send the target a short verbal message.
 The message must be twenty-five words or less, and speaking the message must not take longer than five rounds.
+
 After the the target receives the message, it may reply with a message of the same length as long as the ritual's effect continues.
 Once it speaks twenty-five words, or you stop sustaining the effect, the ritual's effect ends.
+
+
+
+
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Divination}{Arcane, Divine, Nature}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \subsubsection{Subrituals}
+
+
 \augment{6}{Interplanar}
+
 This is a \glossterm{Planar} effect.
+
+
+
 Replace the spell's targets with the following:
 \begin{spellcontent}
+
 \begin{augmenttargetinginfo}
 \spellspecial
 You must specify your target with a precise mental image of its appearance.
 The image does not have to be perfect, but it must unambiguously identify the target.
 If you specify its appearance incorrectly, or if the target has changed its appearance, you may accidentally target a different creature, or the ritual may simply fail.
+
 \spelltgt{One creature within Any plane range (Unrestricted)}
+
 \spelltime{One hour}
+
 \end{augmenttargetinginfo}
+
 \end{spellcontent}
+
+
+
+
+
 \begin{spellsection}{Soul Bind}[8]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgt{One intact corpse within \rngclose range}
+
 \spelltime{One hour}
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
 \spellspecial
 You must choose a gem you hold that is worth at least 1,000 gp to perform this ritual.
+
+
+
 \spelleffect
 The soul of the creature the target corpse belongs to is imprisoned in the chosen gem.
 This prevents the creature from being resurrected, and prevents the corpse from being used to create undead creatures, as long as the gem is intact.
 A creature holding the gem may still resurrect or reanimate the creature.
+
 This effect lasts as long as you \glossterm{attune} to it.
+
+
+
+
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Vivimancy}{Arcane, Divine}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \begin{spellsection}{Telepathic Bond}[4]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgts{Up to five willing ritual participants within \rngmed range}
+
 \spelltime{24 hours}
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 Each target can communicate mentally through telepathy with each other target.
 This communication is instantaneous across any distance, but cannot reach across planes.
 % Is this grammatically correct?
 This effect lasts as long as you and each target \glossterm{attune} to it.
 If you use this ability multiple times, you can attune to it each time.
+
 Each target must attune to this ritual independently.
 If a target breaks its attunement, it stops being able to send and receive mental messages with other targets.
 However, the effect continues as long as at least two different targets are attuned to it.
+
+
+
+
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Divination}{Arcane}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+
 \subsubsection{Subrituals}
+
+
 \augment{8}{Interplanar}
+
 The targets can communicate telepathically even across different planes.
 This is a \glossterm{Planar} effect.
+
+
+
+
+
+
 \begin{spellsection}{Water Breathing}[2]
+
 \begin{spellcontent}
+
 \begin{spelltargetinginfo}
+
 \spelltgts{One willing creature (Medium or smaller) within \rngmed range}
+
 \spelltime{One minute}
+
 \end{spelltargetinginfo}
+
+
 \begin{spelleffects}
+
+
+
 \spelleffect
 The target can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
 This effect lasts as long as you \glossterm{attune} to it.
 If you use this ability multiple times, you can attune to it each time.
+
+
+
+
+
+
 \spelltags{\glossterm{Imbuement}}
+
+
 \end{spelleffects}
+
 \end{spellcontent}
 \begin{spellfooter}
 \spellinfo{Transmutation}{Arcane, Divine, Nature}
+
+
 \end{spellfooter}
 \begin{spellsubcontent}
+
+
 \end{spellsubcontent}
 \end{spellsection}
+
+

@@ -3,7 +3,7 @@ import re
 def join(*args):
     return '\n'.join(filter(None, args))
 
-newline_pattern = re.compile(r'[\r\n]+')
+newline_pattern = re.compile(r'\r?\n')
 add_pattern = re.compile(r'[+] (\d)')
 plus_pattern = re.compile(r'[+](\d)')
 sub_pattern = re.compile(r'[-] (\d)')
@@ -31,8 +31,7 @@ def latexify(text):
         line.strip()
         for line in newline_pattern.split(text)
     ]
-    # strip blank lines
     text = '\n'.join([
-        line for line in stripped_lines if line != ""
+        line for line in stripped_lines
     ])
     return text
