@@ -22,9 +22,17 @@ class Effects(object):
                     logger.log(WARNING, f"Effect has invalid tag {tag}")
 
     def __str__(self):
+        def glosstermify(tag):
+            if ' ' in tag:
+                split_tag = tag.split()
+                if len(split_tag) != 2:
+                    raise Exception(f"Unable to parse tag {tag}")
+                return f"\\glossterm<{split_tag[0]}> {split_tag[1]}"
+            else:
+                return f"\\glossterm<{tag}>"
+
         tag_text = ', '.join([
-            f"\\glossterm<{tag}>"
-            for tag in sorted(self.tags)
+            glosstermify(tag) for tag in sorted(self.tags)
         ]) if self.tags else ""
 
         return join(
