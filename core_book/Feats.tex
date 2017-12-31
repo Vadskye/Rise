@@ -96,6 +96,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \featref{Evoker} & Evocation spell & \tdash & Magical & \featpref{Evoker} \\
         \featref{Illusionist} & Illusion spell & \tdash & Magical & \featpref{Illusionist} \\
         \featref{Miscaster} & Any spell & \tdash & Magical & \featpref{Miscaster} \\
+        \featref{Mystic Archer} & Any spell & Imbue projectiles with magic & Magical & \featpref{Mystic Archer} \\
         \featref{Transmuter} & Transmutation spell & \tdash & Magical & \featpref{Transmuter} \\
         \featref{Vivimancer} & Vivimancy spell & \tdash & Magical & \featpref{Vivimancer} \\
 
@@ -599,7 +600,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[11]{Sustained Manifestations} Once per round, when you cast or sustain a spell, you can also sustain a \glossterm{Manifestation} spell as a \glossterm{free action}.
 
-        \ff[13]{Greater Astral Spell Transit} When determining whether you have \glossterm{line of effect} to a particular location with a spell, you can ignore a single solid obstacle up to five feet thick.
+        \ff[13]{Greater Astral Spell Transit} When determining whether you have \glossterm{line of effect} to a particular location with a spell, you can ignore all physical obstacles in a single five-foot span.
         This can allow you to cast spells through solid walls, though it does not grant you the ability to see through the wall.
 
         \ff[15]{Greater Fortified Manifestation} The hit point bonus from your \textit{fortified manifestation} ability increases to twice your spellpower, and the damage bonus increases to \plus2d.
@@ -896,7 +897,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[18]{}
     \end{feat}
 
-    \begin{feat}{Eldritch Knight}{General, Spell}
+    \begin{feat}{Eldritch Knight}{Spell}
         \featpre Ability to cast a spell.
         \featben
 
@@ -1416,6 +1417,56 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[15]{Magical Resilience} You gain \glossterm{magic resistance} equal to 5 \add your level.
 
         \ff[19]{Empowered Channeler} When you use your \textit{overchannel} ability, you gain a \plus2 bonus to spellpower with the spell.
+    \end{feat}
+
+    \begin{feat}{Mystic Archer}{Magical, Spell}
+        \featpre Ability to cast a spell.
+        \featben
+
+        \ff[1]{Imbue Projectile} You gain the \textit{imbue projectile} ability.
+        \begin{ability}{Imbue Projectile}[\glossterm{Attune}]
+            Whenever you cast a spell that affects a single target, you can spend an \glossterm{action point} to use this ability.
+            If you do, the spell does not have its effect immediately.
+            Instead, its power is imbued in a \glossterm{projectile} you hold. 
+
+            When you make a \glossterm{strike} using that projectile, the spell affects a target of the strike.
+            After the spell takes effect, this ability's duration ends.
+        \end{ability}
+
+        \ff[3]{Missile Storm} You gain the \textit{missile storm} ability.
+        \begin{ability}{Missile Storm}
+            As a standard action, you can spend an \glossterm{action point} to use this ability.
+            If you do, you make a ranged \glossterm{strike} with a \glossterm{projectile weapon} you wield.
+            The strike targets up to five creatures and objects within one \glossterm{range increment} of you with that weapon, except for creatures adjacent to you.
+            You take a \minus1d penalty to damage with the strike.
+        \end{ability}
+
+        \ff[5]{Guided Projectiles} Your attacks with projectiles ignore \glossterm{cover}, but not \glossterm{total cover}.
+
+        \ff[7]{Greater Imbue Projectile} You gain the \textit{greater imbue projectile} ability.
+        \begin{ability}{Greater Imbue Projectile}[\glossterm{Attune}]
+            Whenever you cast a spell that affects an area, you can spend an \glossterm{action point} to use this ability.
+            If you do, the spell does not have its effect immediately.
+            Instead, its power is imbued in a \glossterm{projectile} you hold. 
+
+            When you make a \glossterm{strike} using that projectile, the spell takes effect in addition to the normal effects of the strike.
+            The spell's \glossterm{point of origin} can be anywhere within the \glossterm{space} of a target of the strike.
+            It affects targets within the area as if it had just been cast in that area.
+            After the spell takes effect, this ability's duration ends.
+        \end{ability}
+
+        \ff[9]{Greater Missile Storm} When you use your \textit{missile storm} ability, you may target any number of creatures.
+
+        \ff[11]{Phasing Projectiles}[Teleportation] When attacking with projectiles, you can ignore all physical obstacles in single five-foot span.
+        This can allow you to fire projectiles through solid walls, though it does not grant you the ability to see through the wall.
+
+        \ff[13]{Imbue Precision} You gain a \plus1 bonus to accuracy with projectiles that you have used your \textit{imbue projectile} or \textit{greater imbue projectile} abilities on.
+
+        \ff[15]{Supreme Missile Storm} The damage penalty with your \textit{missile storm} ability is removed.
+
+        \ff[17]{Greater Phasing Projectiles}[Teleportation] Your \textit{phasing projectiles} ability improves, allowing you to ignore obstacles in two separate five-foot spans or one ten-foot span.
+
+        \ff[19]{Unbound Imbuement} When you cast a spell and use your \textit{imbue projectile} or \textit{greater imbue projectile} abilities, you regain the action point spent to cast the spell, if any.
     \end{feat}
 
     \begin{feat}{Perform Specialization}{Skill}
