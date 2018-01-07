@@ -12,7 +12,7 @@ It defines how attributes work and explains how to make physical attacks in comb
     \subsection{Attack Rolls}
         Attack rolls are required to make \glossterm{attacks}.
         Anything that affects another creature in a potentially harmful way, such as striking a creature with a sword, is an attack.
-        Some abilities are always considered attacks, even if you use them in a way that you believe cannot be harmful.
+        Many abilities are always considered attacks, even if you use them in a way that you believe is not harmful.
 
         To make an attack roll, roll 1d10 and add your \glossterm{accuracy} with the attack.
         The sum of your die roll and your accuracy is called your \glossterm{attack result}.
@@ -69,154 +69,85 @@ It defines how attributes work and explains how to make physical attacks in comb
             Some checks have a special effect on a critical failure, which is usually bad for the character making the check.
             For example, a critical failure while climbing means you fall (see \pcref{Climb}).
 
-\section{Combat Overview}
+\section{Combat Time}\label{Actions}
     The world of Rise can be a harsh one, and not all disagreements can be resolved peacefully.
     At some point, you will be forced to enter combat.
-    This section explains how combat works, including how to take actions during a round and how attacks and defenses are calculated.
+    This section explains how time passes in combat.
 
-    \subsection{Combat Time}
+    \subsection{Rounds}\label{Rounds}
+
         Combat takes place in a series of \glossterm{rounds}, which represent about six seconds of time.
-        Each round of a combat is divided into three phases: a \glossterm{movement phase}, an \glossterm{action phase}, and sometimes a \glossterm{delayed action phase}.
-        After both phases are complete, the round ends and the next round begins.
+        Each round of a combat is divided into three \glossterm{phases} (see \pcref{Phases}).
+        After all phases are complete, the round ends and the next round begins.
+
+    \subsection{Actions}\label{Actions}
+
+        You can take \glossterm{actions} in combat to defeat your foes.
+        There are four types of actions: \glossterm{standard actions}, \glossterm{minor actions}, \glossterm{move actions}, and \glossterm{free actions}.
+        % TODO: define conflicting action limits (drawing a sword and sheathing a shield?)
+
+        \subsubsection{Standard Actions}\label{Standard Actions}
+            Most common activities require a \glossterm{standard action}, such as attacking with a weapon, casting a spell, and using many special abilities.
+            Using a standard action generally takes about three seconds of time within the game, and it requires most of your attention during that time.
+
+            You can take one standard action per round.
+
+        \subsubsection{Minor Actions}\label{Minor Actions}
+            Some special abilities require a \glossterm{minor action}.
+            Using a minor action does not take much time or attention, and it can be done at the same time as any other actions.
+
+            You can normally take one minor action per round.
+            However, you can choose to take an additional minor action in place of a \glossterm{standard action}.
+
+        \subsubsection{Move Actions}\label{Move Actions}
+            You can move around a battlefield as a \glossterm{move action}.
+            Using a move action generally takes about three seconds of time within the game, and it requires most of your attention during that time.
+
+            You can normally take one move action per round.
+            However, you can choose to take an additional move action in place of a \glossterm{standard action}.
+
+        \subsubsection{Free Actions}\label{Free Actions}
+            Many minor activities require a \glossterm{free action}, such as drawing or sheathing a weapon.
+            Using a free action does not take much time or attention, and it can be done at the same time as any other actions.
+
+            You can take any number of free actions per round.
+
+    \subsection{Phases}\label{Phases}
+
+        There are three \glossterm{phases} in each round: a \glossterm{movement phase}, an \glossterm{action phase}, and sometimes a \glossterm{delayed action phase}.
+        Each phase specifies the types of actions that can be taken during that phase.
+        As a special case, \glossterm{free actions} may be taken during any phase.
 
         \subsubsection{The Movement Phase}\label{The Movement Phase}
-            Almost all creatures have a \glossterm{speed} measured in feet.
-            For example, a typical human has a speed of thirty feet.
-            During the movement phase, you can move a maximum distance equal to your speed.
-            You can sprint to temporarily increase your speed (see \pcref{Sprint}).
-            Some creatures have special forms of movement, such as the ability to fly.
-            A creature has a listed speed for any special form of movement it has.
-
-            At the start of the movement phase, all creatures designate a location they attempt to move to, or some other type of movement they attempt to make (see \pcref{Movement and Positioning}).
-            Once everyone has chosen their actions, those actions are \glossterm{initiated}, and begin resolving.
-            Normally, you will simply arrive in the destination you are trying to reach.
-            For details about resolving conflicting movements, see \pcref{Resolving Actions}.
-
-            In addition to this movement, you can take other minor actions that require motion, such as drawing a weapon.
-            There is no specific limit on the number of minor actions you can perform in this way, but you must be able to perform all of them simultaneously.
-            For example, you could move a distance equal to your speed and draw a sword.
-            However, you could not put on a cloak and equip a shield in the same movement phase, because you cannot take those actions at the same time.
-            When all creatures have resolved their movement, the action phase begins.
+            During the \glossterm{movement phase}, you can take one \glossterm{move action}.
+            The most common move action is the \textit{hustle} ability, which allows you to move a distance equal to your \glossterm{speed}.
+            For details, see \pcref{Movement and Positioning}.
 
         \subsubsection{The Action Phase}\label{The Action Phase}
-            During the \glossterm{action phase}, each creature can take actions.
-            Usually, you will simply take a \glossterm{standard action}.
+            During the \glossterm{action phase}, you can take one \glossterm{minor action} and your choice of a \glossterm{standard action}, a \glossterm{move action}, or an additional \glossterm{minor action}.
+            Most of the time, you will simply take a single standard action.
 
         \subsubsection{The Delayed Action Phase}\label{The Delayed Action Phase}
-            Some abilities cause creatures to take actions during the \glossterm{delayed action phase}, which are initiated and resolved after other actions in the round.
-            For example, you can use the \textit{delay} ability to take your normal actions during the delayed action phase (see \pcref{Delay}).
-            In addition, some abilities have effects in both the action phase and the delayed action phase, such as casting spells (see \pcref{Casting Spells}).
-
-    \subsection{Movement and Positioning}\label{Movement and Positioning}
-
-        \subsubsection{Measuring Movement}
-
-            For simplicity, all movement is measured in five-foot increments.
-            While it is possible to be more precise than that, it's generally not worth the complexity.
-
-            \parhead{Diagonals} When measuring distance, the first diagonal counts as five feet of movement, and the second counds as ten feet of movement.
-            The third costs five feet, the fourth costs ten feet, and so on.
-            You can move diagonally past corners and enemies.
-
-        \subsubsection{Taking up Space}
-            A typical human takes up a 5-ft.\ by 5-ft.\ space in combat.
-            For convenience, this is often called a \glossterm{square}.
-            Differently sized creatures can take up more or less space, as indicated on \tref{Size in Combat}.
-            Normally, other creatures can't be in any squares you occupy.
-
-            Sometimes, movement and distance are represented in squares.
-            A 30-ft.\ movement is the same thing as moving six squares.
-
-        \subsubsection{Movement Impediments}
-
-            \parhead{Difficult Terrain}\label{Difficult Terrain}
-            Some terrain is hard to move through, like thick bushes or a swamp.
-            If a square is \glossterm{difficult terrain}, it doubles the movement cost required to move out of the square.
-            That generally means it takes ten feet of movement, or fifteen feet if you are moving diagonally.
-
-            If a square is considered difficult terrain for multiple reasons, the cost increases stack.
-            For example, a square in a swamp that also has thick bushes blocking your passage would take twenty feet of movement, or thirty feet to move diagonally.
-
-            \parhead{Obstacles}
-            An obstacle is anything that gets in your way. Enemies and large solid objects like walls completely block your movement. If you can get past an obstacle, like a low wall, that square is treated as difficult terrain. Some obstacles require a \glossterm{check} to bypass, such as an Acrobatics check (see \pcref{Acrobatics}).
-
-            \parhead{Squeezing}\label{Squeezing}
-            In some cases, you may have to squeeze into or through an area that isn't as wide as the space you take up. You can squeeze through or into a space that is at least half as wide as your normal space. While squeezing, you move half as fast, and you take a \minus2 penalty to physical accuracy, physical checks, and physical defenses. You can squeeze into tighter spaces with the Escape Artist skill.
-
-            Creatures that take up multiple squares take up half their normal number of squares while squeezing. For example, a Large creature who normally takes up four spaces takes up two spaces while squeezing.
-
-            \parhead{Accidentally Squeezing} Sometimes a character ends its movement while moving through a space where it's not normally allowed to stop. When that happens, the character is squeezing in the space until it can move. If squeezing is impossible, the creature immediately moves to the closest available space. Try not to do this.
-
-        \subsubsection{Special Movement Modes}\label{Special Movement Modes}
-            Some spells and abilities grant creatures the ability to move in unusual ways. These forms of movement are described here.
-
-            \parhead{Burrowing}
-            A creature with a burrow speed can move through the ground at the indicated speed in any direction, even vertically. Unless otherwise noted, the creature can only burrow through dirt and loose earth, not rock or harder substances. It does not leave behind a usable tunnel for other creatures.
-
-            \parhead{Climbing}
-            A creature with a \glossterm{climb speed} can move a distance equal to its climb speed with a successful Climb check (see \pcref{Climb}).
-            In addition, it gains a \plus10 bonus to any Climb checks it makes.
-
-            \parhead{Flying}\label{Flying}
-            A creature with a fly speed can fly through the air at the indicated speed. It must be \glossterm{unencumbered} (see \pcref{Encumbrance}). If a creature with a fly speed is encumbered, it is treated as having a glide speed instead (see \pcref{Gliding}), which it can use to glide even though it is encumbered.
-
-            Each creature with a fly speed also has a maneuverability: good, average, poor, or special. Normally, a flying creature must move forward by at least half its fly speed each round. If it does not, it falls. Turning by 90 degrees costs 5 feet of movement, and it can't turn in the same place by more than 90 degrees. It can move up by only one square vertically per square traveled horizontally, but it can fly directly down if it chooses. The creature can fly up at half speed, but can fly down twice as fast.
-
-            \parhead{Maneuverability}\label{Maneuverability} Some creatures have fly speeds with special maneuverability rules.
-
-            \subparhead{Good Maneuverability} If a creature has good maneuverability while flying, it gains three benefits while flying.
-            First, it not need to move forward to maintain its flight, allowing it to hover.
-            Second, it can turn in place without spending movement.
-            Third, it can move up at the same speed as it moves horizontally.
-
-            \parhead{Poor Maneuverability} If a creature has poor maneuverability while flying, it must spend five feet of movement to turn by 45 degrees, and it can't turn in the same place by more than 45 degrees. In addition, it can only descend by up to one square vertically per square traveled horizontally without falling.
-
-            \parhead{Falling} If a flying creature loses control, usually by failing to maintain its minimum forward speed, or loses the ability to fly, it falls just like any other creature would in midair. As long as it still has the ability to fly, it can regain control of its fall as a standard action, causing it to resume flying normally.
-
-            \parhead{Gliding}\label{Gliding}
-            A creature with a glide speed can glide through the air at the indicated speed. It must be \glossterm{unencumbered} (see \pcref{Encumbrance}).
-
-            While in the air, a creature with a glide speed can control its fall as a move action. This allows it to move up to its speed horizontally in a direction of its choice while moving only five feet down. If it desires, it can move half as far horizontally and fall down twice as fast. It takes no falling damage if it touches the ground while gliding.
-
-    \subsection{Action Types}
-
-        \parhead{Standard Actions} Most common activities require a single \glossterm{standard action}, such as attacking with a weapon, casting a spell, and using most special abilities.
-        You can only take one standard action per action phase.
-
-        \parhead{Minor Actions}\label{Minor Actions} Each round, you can take a single \glossterm{minor action} during the \glossterm{action phase} or \glossterm{delayed action phase}.
-        Minor actions are declared and resolved simultaneously with any other actions you take during that phase.
-        This can allow you to do multiple things during the same phase.
-
-        \subparhead{Minor Actions and Standard Actions} Any action that normally requires a minor action to complete can also be done as a standard action.
-
-        % TODO: should free actions resolve early?
-        \parhead{Free Actions}\label{Free Actions} Each round, you can take any number of free actions.
-        Free actions can be taken in any phase.
-        Like minor actions, free actions are declared and resolved simultaneously with other actions you intend to take during that phase.
-
-        \parhead{Full-Round Actions} A full-round action requires your full attention.
-        Unless otherwise specified, you perform any movement required for the action during the movement phase, and the rest of the action during the action phase.
-
-        \parhead{Partial Actions} If you are restricted to only taking a move or standard action, but not both, you can spend a standard action to perform a partial version of a full-round action. For most actions, you spend the first round starting the action, and use a second standard action to complete it. Some full-round actions have specific partial versions described below which you take instead. You can only take these partial actions when you cannot take full-round actions.
+            During the \glossterm{delayed action phase}, you can take any actions that you delayed with the \textit{delay} ability (see \pcref{Delay}).
+            In addition, some abilities have effects during the delayed action phase instead of or in addition to their effects in the action phase.
+            For example, \glossterm{spells} normally have no effect during the action phase, and have their full effect during the delayed action phase.
 
     \subsection{Resolving Actions}\label{Resolving Actions}
 
         Within each phase, actions of all creatures are simultaneously resolved in the following order.
-        Italicized steps are less common, and can usually be skipped.
         Allies with the ability to communicate can freely coordinate their actions with each other, within reasonable limits.
 
         \begin{enumerate*}
             \item Choose actions.
-            \item All actions are \glossterm{initiated}.
             \item Determine targets affected by actions.
-            \item Resolve \glossterm{swift abilities}.
+            \item Apply the effects of \glossterm{swift abilities}.
             \item Check action success.
                 Example: Making attack rolls.
             \item Determine action results.
                 Example: Making damage rolls.
             \item Apply action results.
                 Examples: Reducing hit points, moving creature locations, and applying penalties.
-                Effects that trigger when damage is dealt, such as Concentration checks (see \pcref{Concentration}), are resolved now.
+                % Effects that trigger when damage is dealt, such as Concentration checks (see \pcref{Concentration}), are resolved now.
         \end{enumerate*}
 
         In the vast majority of cases, there is no need to go through this order explicitly.
@@ -228,15 +159,649 @@ It defines how attributes work and explains how to make physical attacks in comb
             These are called \glossterm{swift abilities}.
             They resolve after targets are determined, but before attack rolls are made.
             Swift abilities never require attack rolls, and almost always affect only the creature using the ability.
-            For example, the \textit{total defense} ability is a swift ability, and it protects you from attacks made during the same phase.
+            For example, the \textit{total defense} ability is a swift ability.
+            It increases your defenses against attacks made during the same phase (see \pcref{Total Defense}).
 
         \subsubsection{Conflicting Actions}\label{Conflicting Actions}
 
             Sometimes, actions that occur within the same resolution step can conflict with each other.
-            For example, two characters may attempt to move into the same place.
-            In this case, each involved character rolls \glossterm{initiative} (see \pcref{Initiative}).
-            The creature with the highest initiative result succeeds.
+            In this case, each involved character rolls an \glossterm{initiative} check (see \pcref{Initiative}).
+            The creature with the highest check result succeeds.
             All other creatures come as close as possible to completing their intended action.
+
+            For example, if two creatures were racing to reach a door, they would both roll initiative.
+            The winner would reach the door and stop in their intended square, and the loser would stop adjacent to their intended square.
+
+\section{Character Statistics}
+    This section explains how character statistics, such as how strong you are or how accurate your attacks are, should be calculated.
+
+    \subsection{Attributes}\label{Attributes}
+
+        Each character has six \glossterm{attributes}: Strength (Str), Dexterity (Dex), Constitution (Con), Intelligence (Int), Perception (Per), and Willpower (Wil).
+        Each attribute represents a character's raw talent in that area.
+        A 0 in an attribute represents average human capacity.
+        That doesn't mean that every commoner has a 0 in every attribute; not everyone is average, after all.
+
+        \subsubsection{Strength (Str)}\label{Strength}
+            Strength measures muscle and physical power.
+            It has the following effects:
+            \begin{itemize}
+                \item Strength determines how much a character can carry (see \tref{Weight Limits}).
+                \item Strength affects Strength-based skills: Climb, Jump, Sprint, and Swim (see \pcref{Skills}).
+                \item If your Strength is negative, you take a penalty to all Strength-based skills equal to your Strength.
+                \item If your Strength is negative, you take a penalty to \glossterm{strike damage} equal to half your Strength in \glossterm{die increments}.
+            \end{itemize}
+
+            If you have a high Strength, you can use it to determine several statistics:
+            \begin{itemize}
+                \item Your \glossterm{strike damage} (see \pcref{Strike Damage}).
+                \item Your Fortitude defense (see \pcref{Defenses}).
+            \end{itemize}
+
+        \subsubsection{Dexterity (Dex)}\label{Dexterity}
+            Dexterity measures hand-eye coordination, agility, and reflexes.
+            It has the following effects:
+            \begin{itemize}
+                \item Dexterity affects Dexterity-based skills: Acrobatics, Escape Artist, Ride, Sleight of Hand, and Stealth (see \pcref{Skills}).
+                \item You gain a bonus (or penalty) to your Reflex defense equal to your starting Dexterity.
+                \item If your Dexterity is negative, you take a penalty to all Dexterity-based skills equal to your Dexterity.
+            \end{itemize}
+
+            If you have a high Dexterity, you can use it to determine several statistics:
+            \begin{itemize}
+                \item Your \glossterm{accuracy} with \glossterm{physical attacks} using light melee and thrown weapons (see \pcref{Physical Accuracy}).
+                \item Your Armor and Reflex defenses (see \pcref{Defenses}).
+            \end{itemize}
+
+        \subsubsection{Constitution (Con)}\label{Constitution}
+            Constitution represents your character's health and stamina.
+            It has the following efects:
+            \begin{itemize}
+                \item You gain bonus hit points based on your starting Constitution (see \pcref{Hit Points}).
+                \item You heal additional hit points when you take a \glossterm{short rest} based on your starting Constitution (see \pcref{Short Rest}).
+                \item You gain a bonus (or penalty) to your Fortitude defense equal to your starting Constitution.
+                \item You reduce your \textit{encumbrance penalties} for weight or heavy armor by an amount equal to your starting Constitution.
+            \end{itemize}
+
+            If you have a high Constitution, you can use it to determine your Fortitude defense (see \pcref{Defenses}).
+
+        \subsubsection{Intelligence (Int)}\label{Intelligence}
+            Intelligence determines how well your character learns and reasons.
+            It has the following effects:
+
+            \begin{itemize}
+                \item You gain bonus languages equal to your starting Intelligence (see \pcref{Languages}).
+                \item You gain extra skill points equal to twice your starting Intelligence (see \pcref{Skill Points}).
+                \item Your Intelligence affects Intelligence-based skills: Craft, Disguise, Heal, Knowledge, and Linguistics (see \pcref{Skills}).
+                \item If your starting Intelligence is negative, you lose skill points equal to twice your starting Intelligence.
+                \item If your Intelligence is negative, you take a penalty to all Intelligence-based skills equal to your Intelligence.
+            \end{itemize}
+
+            If you have a high Intelligence, you can use it to determine your Mental defense (see \pcref{Defenses}).
+
+            \par An animal has an Intelligence score of \minus6 or lower.
+            A creature of humanlike intelligence has a score of at least a \minus5 Intelligence.
+
+        \subsubsection{Perception (Per)}\label{Perception}
+            Perception describes a character's ability to observe and be aware of one's surroundings.
+            It has the following effects:
+            \begin{itemize}
+                \item Your Perception affects Perception-based skills: Awareness, Creature Handling, Sense Motive, Spellcraft, and Survival (see \pcref{Skills}).
+                \item If your Perception is negative, you take a penalty to all Perception-based skills equal to your Perception.
+                \item If your Perception is negative, you take a penalty to accuracy with all attacks equal to half your Perception.
+            \end{itemize}
+
+            If you have a high Perception, you can use it to determine several statistics:
+            \begin{itemize}
+                \item Your \glossterm{accuracy} with \glossterm{physical attacks} (see \pcref{Physical Accuracy}).
+                \item Your Reflex defense (see \pcref{Defenses}).
+            \end{itemize}
+
+        \subsubsection{Willpower (Wil)}\label{Willpower}
+            Willpower measures a character's ability to endure mental hardships.
+            It has the following effects:
+            \begin{itemize}
+                \item You gain a bonus (or penalty) to the number of \glossterm{action points} you have equal to your starting Willpower.
+                \item You gain a bonus (or penalty) to your Mental defense equal to your starting Willpower.
+            \end{itemize}
+
+            If you have a high Willpower, you can use it to determine your Mental defense (see \pcref{Defenses}).
+
+    \subsection{Accuracy}\label{Accuracy}
+        Your accuracy with an \glossterm{attack} is the number that you add to the \glossterm{attack roll}.
+        You will have multiple different attacks you can make.
+        The accuracy for an attack depends on the type of attack it is.
+
+        \subsubsection{Physical Accuracy}\label{Physical Accuracy}
+            Your accuracy with a \glossterm{physical attack}, such as a \glossterm{strike}, is normally equal to the higher of your level and your Perception.
+            If you are using a \glossterm{light weapon}, you may use your Dexterity instead.
+            In addition to this base number, your accuracy can include any number of bonuses and penalties from other sources.
+
+            \parhead{Proficiency} Each creature is \glossterm{proficient} with a number of weapons.
+            For details about the weapons you can be proficient with, see \pcref{Weapons}.
+            Your proficiencies are primarily determined by your class, but some abilities also grant proficiency with additional weapons.
+            If you make a \glossterm{physical attack} with a weapon you are not proficient with, you take a \minus2 penalty to accuracy.
+
+    \subsection{Damage}\label{Damage}
+        Some attacks deal damage when they hit.
+        Damage does not represent serious physical injury to your body.
+        Instead, it represents a depletion of some combination of endurance, luck, or even divine providence that prevents you from suffering more serious injury
+        When you take damage, you reduce your \glossterm{hit points} by that amount (see \pcref{Hit Points}).
+        If you have no hit points remaining, you may take that damage as \glossterm{vital damage} instead, which represents potentially life-threatening injuries (see \pcref{Vital Damage}).
+
+        Most attacks deal damage equal to the result rolled from a pool of dice.
+
+        \subsubsection{Die Increments}\label{Die Increments}
+            Many abilities can increase or decrease your damage with abilities.
+            These modifiers always increase or decrease your damage by one \glossterm{die increment}.
+            Increasing by one die increment is written as \plus1d, and decreasing by one die increment is written as \minus1d.
+            A set of damage dice can increase in size in \glossterm{die increments}.
+            Damage dice change in size using the following pattern:
+            \begin{itemize}
+                \item 1 damage (minimum)
+                \item 1d2
+                \item 1d3
+                \item 1d4
+                \item 1d6
+                \item 1d8
+                \item 1d10
+                \item 2d6
+                \item 2d8
+                \item 2d10
+                \item 4d6
+                \item 4d8
+                \item 4d10
+                \item 5d10
+                \item 6d10
+            \end{itemize}
+
+            For each die increment that increases the damage, move one space down the list.
+            Likewise, for each die increment that decreases the damage, move one space up the list.
+            After the damage dice reach 4d10, each additional die increment simply adds an extra 1d10 of damage.
+
+        \subsubsection{Standard Damage}\label{Standard Damage}
+            Most damaging effects use \glossterm{standard damage} as a baseline to determine the damage they deal.
+            Your \glossterm{standard damage} with an ability is based on that ability's \glossterm{power}, if it has one (see \pcref{Power}).
+            Otherwise, it is based on your level.
+            In either case, it starts at 1d8 and increases by \plus1d per two power or per two levels.
+            This is summarized on \trefnp{Standard Damage}.
+
+        \begin{dtable}
+            \lcaption{Standard Damage}
+            \begin{dtabularx}{\columnwidth}{l X}
+                \tb{Power} & \tb{Damage} \\
+                0--1   & 1d8  \\
+                2--3   & 1d10 \\
+                4--5   & 2d6  \\
+                6--7   & 2d8  \\
+                8--9   & 2d10 \\
+                10--11 & 4d6  \\
+                12--13 & 4d8  \\
+                14--15 & 4d10 \\
+                16--17 & 5d10 \\
+                18--19 & 6d10 \\
+                20--21 & 7d10 \\
+                22--23 & 8d10 \\
+                24--25\fn{1} & 9d10 \\
+            \end{dtabularx}
+            1. For values above 25, increase by 1d10 at every even value.
+        \end{dtable}
+
+        \subsubsection{Strike Damage}\label{Strike Damage}
+            The damage you deal with a single \glossterm{strike} from a weapon is called your \glossterm{strike damage}.
+            Your base \glossterm{strike damage} is equal to \glossterm{standard damage} based on your level or your Strength, whichever is higher.
+            For example, if you have a Strength of 4, your base \glossterm{strike damage} would be equal to 2d6 (1d8 \plus2d).
+            When you make a strike with a weapon, you also apply that weapon's damage modifier, if any.
+            Some abilities other than \glossterm{strikes} deal damage based on your \glossterm{strike damage}.
+
+            \parhead{Creature Size and Damage}\label{Creature Size and Damage}
+            Larger creatures deal more damage with their weapons.
+            Each creature size above Medium grants a \plus1d bonus to \glossterm{strike damage}.
+            Likewise, each creature size below Medium imposes a \minus1d penalty to damage with strikes.
+            This is described in \tref{Size in Combat}.
+
+    \subsection{Defenses}\label{Defenses}
+        Usually, when you are attacked, the attacker has to make an \glossterm{attack roll} against a specific defense.
+        If the attack roll is at least as high as that defense, the attack succeeds.
+        There are two physical defenses and two non-physical defenses.
+        \begin{itemize}
+            \item Armor defense (AD): Your Armor defense protects you from normal physical attacks, such as attempts to hit you with a sword.
+                It is the most commonly used defense.
+                Armor defense is a physical defense.
+            \item Reflex defense: Your Reflex protects you from attacks you have to avoid, such as explosions or falling rocks.
+                Reflex defense is a physical defense.
+            \item Fortitude defense: Your Fortitude defense protects you from attacks you have to physically endure or resist, such as poisons and deadly spells.
+                Fortitude defense is not a physical defense.
+            \item Mental defense: Your Mental defense protects you from attacks you have to mentally endure or resist, such as terrifying creatures and magical manipulation.
+                Mental defense is not a physical defense.
+        \end{itemize}
+
+        \subsubsection{Defense Values}\label{Defense Values}
+
+            Each of your defenses is calculated in the following way:
+
+            \begin{figure}[h]
+                \centering Level or defense attribute \add racial defense bonus \add class defense bonus \add other bonuses and penalties
+            \end{figure}
+
+            The attributes and relevant bonuses which apply to each defense are described in \trefnp{Defense Calculations}.
+
+            \begin{dtable!*}
+                \lcaption{Defense Calculations}
+                \begin{dtabularx}{\textwidth}{l l l l >{\lcol}X}
+                    \tb{Defense Name} & \tb{Attributes} & \tb{Starting Attribute Modifier} & \tb{Body Armor Modifier} & \tb{Shield Modifier} \\
+                    \midrule
+                    Armor defense     & Dex & \tdash & Yes & Yes \\
+                    Fortitude defense & Con or Str & Con & No  & No  \\
+                    Reflex defense    & Dex or Per & Dex & No  & Yes \\
+                    Mental defense    & Wil or Int & Wil & No  & No  \\
+                \end{dtabularx}
+            \end{dtable!*}
+
+            \parhead{Class and Racial Bonuses} Each class and race provides bonuses to some combination of Fortitude, Reflex, and Mental defense.
+            \parhead{Natural Armor} Creatures with unusually tough skin or thick hide, including most monsters, gain bonuses to their Armor defense.
+            These bonuses stack with any armor such creatures might wear.
+            \parhead{Size Modifier} Large creatures have a penalty to Reflex defense.
+            For details, see \tref{Size in Combat}.
+
+    \subsection{Initiative}\label{Initiative}
+        When multiple creatures take mutually impossible actions simultaneously, such as racing to be the first one to a door, they must roll initiative checks.
+        For details, see \pcref{Conflicting Actions}.
+        Your initiative check is calculated as follows:
+
+        \begin{figure}[h]
+            \centering Dexterity or Perception \add other bonuses and penalties
+        \end{figure}
+
+        \parhead{Movement-Based Initiative}\label{Movement-Based Initiative}
+        When making \glossterm{initiative} checks to determine the success of movement, having a faster movement speed is helpful (see \pcref{Movement and Positioning}).
+        For every 5 feet of movement you would have available after completing your movement, you gain a \plus2 bonus to any initiative checks necessary to determine whether your movement succeeds.
+        Regardless of whether your initiative check succeeds or fails, you cannot use that ``excess'' movement to move after making such an initiative check.
+
+    \subsection{Size in Combat}\label{Size in Combat}
+        Size affects your \glossterm{space} and \glossterm{reach} in combat, your Reflex defense, your \glossterm{strike damage}, and how easily you overwhelm creatures and are overwhelmed yourself.
+        These effects are shown on \trefnp{Size in Combat}.
+
+        \begin{dtable*}
+            \lcaption{Size in Combat}
+            \begin{dtabularx}{\textwidth}{l l l l l l p{5.5em} X}
+                \tb{Size} & \tb{Space}\fn{1} & \tb{Reach}\fn{1} & \tb{Base Speed} & \tb{Reflex Modifier} & \tb{Damage Modifier}\fn{2} & \tb{Threat Value}\fn{3} & \tb{Overwhelm Resistance}\fn{4} & \tb{Example Creature} \\
+                \bottomrule
+                Fine              & 1/2 ft.    & 0          & 10 ft. & \plus8  & \minus4d & 1/4 & \tdash & Fly                      \\
+                Diminutive        & 1 ft.      & 0          & 15 ft. & \plus6  & \minus3d & 1/2 & \tdash & Toad                     \\
+                Tiny              & 2-1/2 ft.  & 0          & 20 ft. & \plus4  & \minus2d & 1/2 & \tdash & Cat                      \\
+                Small             & 5 ft.      & 5 ft.      & 25 ft. & \plus2  & \minus1d & 1 & \tdash & Halfling                 \\
+                Medium            & 5 ft.      & 5 ft.      & 30 ft. & \tdash  & \tdash   & 1 & \tdash & Human                    \\
+                Large (tall)      & 10 ft.     & 10 ft.     & 40 ft. & \minus2 & \plus1d  & 2 & 1 & Ogre                     \\
+                Large (long)      & 10 ft.     & 5 ft.      & 40 ft. & \minus2 & \plus1d  & 2 & 1 & Horse                    \\
+                Huge (tall)       & 15 ft.     & 15 ft.     & 50 ft. & \minus4 & \plus2d  & 3 & 2 & Cloud giant              \\
+                Huge (long)       & 15 ft.     & 10 ft.     & 50 ft. & \minus4 & \plus2d  & 3 & 2 & Bulette                  \\
+                Gargantuan (tall) & 20 ft.     & 20 ft.     & 60 ft. & \minus6 & \plus3d  & 4 & 3 & 50-ft.\ animated statue  \\
+                Gargantuan (long) & 20 ft.     & 15 ft.     & 60 ft. & \minus6 & \plus3d  & 4 & 3 & Kraken                   \\
+                Colossal (tall)   & 25\add ft. & 25\add ft. & 70 ft. & \minus8 & \plus4d  & 5 & 4 & Colossal animated object \\
+                Colossal (long)   & 25\add ft. & 25\add ft. & 70 ft. & \minus8 & \plus4d  & 5 & 4 & Great wyrm red dragon    \\
+            \end{dtabularx}
+            1 Creatures can vary in space and reach.  These are simply typical values.  \\
+            2. This modifier applies to \glossterm{strike damage}. \\
+            3. See \pcref{Threat Value}. \\
+            4. See \pcref{Overwhelm Resistance}. \\
+        \end{dtable*}
+
+        \subsubsection{Space}\label{Space}
+            A creature's \glossterm{space} is the area its body occupies while fighting.
+            All humanoid races take up a 5-ft.\ by 5-ft.\ space in combat, which is a single \glossterm{square}.
+            Normally, other creatures can't be in the space you occupy.
+            Most creatures have a space significantly larger than the physical space their body occupies because they need room to maneuver in combat.
+
+        \subsubsection{Reach}\label{Reach}
+            A creature's \glossterm{reach} is the distance that its \glossterm{melee} attacks can reach.
+            The area within a creature's reach is called its \glossterm{threatened area}, and creatures within that area are considered \glossterm{threatened}.
+
+        \subsubsection{Base Speed}\label{Base Speed}
+            A creature's \glossterm{base speed} is the distance that it can usually move.
+            In addition to a base speed, most creatures have specific \glossterm{movement modes} that allow them to move in particular ways.
+            The most common movement mode is a \glossterm{land speed}, which allows creatures to move across the ground.
+            Most creatures, including all humanoid races, have a land speed equal to their base speed.
+            There are other movement modes that can allow creatures to move in different ways.
+            For example, most birds have a \glossterm{fly speed}, which allows them to move through the air.
+            For details about other speeds, see \pcref{Movement Modes}.
+
+        \subsubsection{Other Effects}
+            A creature's size affects a number of additional skills and abilities.
+            For example, larger creatures have a penalty to Stealth checks (see \pcref{Size and Stealth}).
+            The effects of unusual size are described in those skills and abilities.
+            Unusually large or small creatures also have other special rules apply to them, as described below.
+
+        \subsubsection{Very Small Creatures}
+            \parhead{Space} If a creature takes up less than a single square of space, you can fit multiple creatures in that square. You can fit four Tiny creatures in a square, twenty-five Diminuitive creatures, or 100 Fine creatures.
+
+            \parhead{Reach} Creatures that take up less than 1 square of space typically have a natural reach of 0 feet, meaning they can't reach into adjacent squares. They must enter an opponent's square to attack in melee. You can attack into your own square if you need to, so you can attack such creatures normally. Since they have no natural reach, they do not threaten the squares around them.
+
+            If a creature without a natural reach uses a reach weapon, it gains no benefits or penalties (see \pcref{Reach Weapon}).
+
+            \parhead{Movement} Creatures three size categories smaller than you are not considered obstacles and do not hinder your movement.
+
+        \subsubsection{Very Large Creatures}
+            \parhead{Space} Very large creatures take up multiple squares. Anything which affects a single square the creature occupies affects the creature.
+
+            \parhead{Reach} Creatures that take up more than 1 square typically have a natural reach of 10 feet or more, meaning that they can reach targets even if they aren't in adjacent squares. Creatures with a large natural reach can attack anyone within their reach, including adjacent foes.
+
+            Creatures with a large natural reach using reach weapons can strike at up to double their natural reach but can't strike at their natural reach or less, just like Medium sized creatures.
+
+            \parhead{Movement} Creatures three size categories larger than you are not considered obstacles and do not hinder your movement.
+
+            \parhead{Immunities} Creatures at least three size categories larger than you are difficult to fight. You cannot get a \glossterm{critical hit} with \glossterm{strikes} or contribute to overwhelm penalties against such creatures. If you can reach a vulnerable point on the creature, such as by flying or by using ranged weapons, you can get critical hits and contribute to overwhelm penalties normally.
+
+    \subsection{Circumstances, Bonuses, and Penalties}
+
+        Many effects can grant bonuses or penalties to actions you take.
+
+        \subsubsection{Arbitrary Modifiers}
+
+            Circumstances frequently modify your odds of success when making attacks and checks, or when defending yourself from attacks.
+            There are two kinds of circumstantial modifiers.
+            Circumstances that make you better or worse at your task give you a bonus or penalty to your attack or check.
+            Circumstnaces that make the task easier or harder increase or decrease the \glossterm{difficulty rating} of the task, or the defense of the attacked creature.
+
+            Most circumstances grant a \plus2 bonus or impose a \minus2 penalty.
+            Extraordinary circumstances can potentially have greater modifiers.
+            All circumstantial modifiers should be used at the discretion of the GM.\@
+
+        \subsubsection{Overwhelm}\label{Overwhelm}
+            When you are being attacked by multiple foes at once, or by a massive foe that can attack from many directions, you are less able to defend yourself.
+            You take penalties to your \glossterm{physical defenses} equal to half the combined \glossterm{threat value} of all creatures threatening you, rounded down.
+            Among equal sized creatures, this usually means you take a penalty equal to half the number of creatures threatening you.
+            These penalties are called \glossterm{overwhelm penalties}.
+            If you are suffering at least a \minus1 overwhelm penalty, you are \glossterm{overwhelmed}.
+
+            \parhead{Threat Value}\label{Threat Value} Your \glossterm{threat value} determines how much of a penalty you impose on creatures you threaten.
+            For example, Medium creatures have a threat value of 1, and larger creatures have a higher threat value (see \pcref{Size in Combat}).
+            Some abilities can affect your threat value.
+
+            Some creatures have fractional threat values.
+            For example, a Tiny creature has a threat value of 1/2.
+            Fractional threat values are not rounded down until after being added with the threat values from other threatening creatures.
+            For example, if five Tiny creatures were threatening a single creature, their combined threat value would be 2 and 1/2.
+            That value is rounded down to 2 when determining whether the creature is overwhelmed, and how large that creature's overwhelm penalties are.
+
+            If your \glossterm{threat value} would be reduced below 1, special rules apply.
+            The first -1 penalty reduces your threat value to 1/2.
+            An additional -1 penalty reduces your threat value to 1/4.
+            Your threat value cannot be reduced below 1/4.
+
+            \parhead{Overwhelm Resistance}\label{Overwhelm Resistance} Some abilities grant \glossterm{overwhelm resistance}.
+            For example, Large and larger creatures automatically gain overwhelm resistance (see \pcref{Size in Combat}).
+            A creature with overwhelm resistance reduces the \glossterm{threat value} of all creatures threatening it by an amount equal to its overwhelm resistance.
+            Some abilities can increase or decrease overwhelm resistance, such as the \spell{boon of many eyes} subspell.
+            Creatures without overwhelm resistance are considered to have an overwhelm resistance of 0.
+
+            For example, Felix the fighter has an \glossterm{overwhelm resistance} of 1.
+            If he was threatened by a giant with a \glossterm{threat value} of 2, he would reduce the giant's threat value to 1.
+            As a result, Felix would not be overwhelmed.
+
+            \parhead{Ignoring Attackers} At the start of each phase, you can choose to ignore up to one creature threatening you.
+            If you do, you are treated as being \unaware against that creature.
+            In exchange, it does not contribute to the number of creatures overwhelming you.
+
+        \subsubsection{Range Increments}\label{Range Increments}
+            Physical ranged attacks often have a specific \glossterm{range increment}.
+            A range increment is always measured in feet.
+            You take a \minus1 penalty to accuracy with the ranged attack for each full range increment between you and your target.
+            For example, when using a longbow with a range increment of 100 feet against a target 170 feet away, you take a \minus1 penalty to accuracy.
+            You cannot make a ranged attack beyond 10 range increments away from you.
+
+        \subsubsection{Cover}\label{Cover}
+
+            Cover represents any obstacle that physically prevents you from striking your target, such as a tree or intervening creature.
+            A creature behind cover is more difficult to attack.
+            There are three kinds of cover: \glossterm{active cover}, \glossterm{passive cover}, and \glossterm{total cover}.
+            All three types of cover are determined by the presence or absence of physical obstacles.
+
+            \parhead{Active Cover}\label{Active Cover} Active cover is provided by mobile obstacles between you and your target, such as creatures or tree branches blowing in the wind.
+            Physical attacks against creatures with active cover suffer a 20\% miss chance.
+            If an attack misses due to active cover, the attack is made against the intervening obstacle rather than being negated like normal for miss chances.
+            The obstacle takes any damage from a successful attack normally.
+
+            \parhead{Passive Cover}\label{Passive Cover} Passive cover is provided by immobile obstacles between you and your target, such as trees and walls.
+            Creatures with passive cover gain a \plus2 bonus to \glossterm{physical defenses}.
+            In addition, creatures with passive cover can hide (see \pcref{Stealth}).
+
+            \parhead{Measuring Cover}
+
+            When you make an attack, choose a single square within your \glossterm{space} and a single \glossterm{target square} within your target's space.
+            If you are making a ranged attack, choose one corner of your space.
+            If you are making a melee attack, choose any two corners of your square.
+            These corners are called the \glossterm{points of origin} for your attack.
+            For the purpose of determining cover, your attack originates from your chosen \glossterm{points of origin} and travels to the \glossterm{target square}.
+
+            % TODO: pull out ``line of sight'' and ``line of effect'' from this text
+            First, check if you can attack the target at all.
+            For each \glossterm{point of origin} of your attack, you must be able to draw two lines to any two corners of your attack's \glossterm{target square}.
+            These two lines must not overlap each other.
+            In addition, each line must not be blocked by solid objects, though they can touch the edges of spaces blocked by solid objects.
+            The lines can pass through obstacles that do not take up the entire area within their space (such as most creatures).
+            Finally, the line must not be blocked by other squares within the target's space, preventing you from targeting the ``inside'' of large creatures.
+            If you cannot draw such a line, the target has \glossterm{total cover} from you.
+            This makes all targeted attacks impossible.
+
+            Second, draw a line from the \glossterm{points of origin} of your attack to the center of your attack's target square.
+            If any such line touches a square with an obstacle that grants active or passive cover, even at an edge or corner, the target has the appropriate cover from you.
+            Otherwise, if the line is uninterrupted, the target does not have cover from you.
+
+            \parhead{Partial Obstacles} Many obstacles, such as trees and low walls, can provide passive cover without normally blocking \glossterm{line of sight} or providing \glossterm{total cover}.
+            Unusually small creatures, or creatures who intentionally take cover behind such obstacles, may be able to gain total cover from them.
+
+            \parhead{Improved Cover}
+            A creature can benefit from both passive and active cover.
+            Cover of the same type generally doesn't stack; a creature behind two trees is not substantially more protected than a creature behind a single tree.
+            However, exceptionally well covered creatures, such as a creature behind an arrow slit in a castle, may receive additional benefits.
+            In that case, each additional major obstacle increases the miss chance by 10\% or grants an additional \plus1 bonus to physical defenses, as appropriate.
+
+            \parhead{Total Cover}\label{Total Cover}
+            If a creature is completely behind an physical object that blocks sight, it has \glossterm{total cover} from attacks.
+            A creature with total cover cannot be targeted by any attacks.
+            Total cover is the only kind of cover that also affects attacks other than \glossterm{physical attacks}.
+
+        \subsubsection{Concealment}\label{Concealment}
+            Concealment represents anything which makes it more difficult to see your target, such as dim lighting. A creature with concealment from you gains a \plus2 bonus to \glossterm{physical defenses}. The concealment bonus does not apply if you can't see your opponent (such as if you close your eyes).
+            Determining concealment works similarly to determining cover.
+            You must use the same \glossterm{points of origin} and \glossterm{target square} when determining concealment that you would use to determine cover.
+
+            \parhead{Determining Concealment} There are two things that can cause a creature to be concealed: poor lighting, and intervening obstacles that block sight.
+            Determining concealment from obstacles that block sight works the same way as determining cover.
+
+            Determining concealment from lighting conditions is simpler, since it ignores lighting conditions between you and the target.
+            If your \glossterm{target square} square is in lighting that provides concealment, the target has concealment.
+            Otherwise, it does not.
+
+        \subsubsection{Helpless Defenders}
+            A helpless creature is completely at an opponent's mercy.
+            Its physical defenses are calculated as if it had a Dexterity of \minus10.
+            Paralyzed, bound, and unconscious creatures are helpless.
+
+            \parhead{Coup de Grace}\label{Coup de Grace} As a full-round action, you can deliver a coup de grace to a helpless opponent within your \glossterm{reach} that you can see.
+            You automatically hit with your weapon and score a \glossterm{critical hit}. If the creature takes damage equal to or higher than half its maximum hit points, it immediately dies.
+
+            Delivering a coup de grace requires focused concentration and methodical action. This leaves you \defenseless. If you take damage in excess of your Fortitude defense while delivering a coup de grace, your attempt fails.
+            If your target stops being helpless during your coup de grace attempt for any reason, the attempt fails.
+            You can't deliver a coup de grace against a creature that is immune to critical hits.
+
+        \subsubsection{Invisibility}\label{Invisibility}
+            If it is impossible to see your target, you can't attack him normally. However, you can attack a square that you think he occupies. An attack into a square occupied by an invisible enemy has a 50\% miss chance. If an adjacent invisible creature strikes you, you can automatically identify the square he occupied when he struck you.
+
+        \subsubsection{Surprise Attacks}\label{Surprise Attacks}
+            Sometimes, creatures are not aware that combat is taking place when the combat starts. This most commonly happens with ambushes. Any creature that is not aware of the combat continues taking whatever actions it would normally be taking until it becomes aware of the combat. It is \unaware until that point.
+
+    \subsection{Stacking Rules}\label{Stacking Rules}
+        Usually, modifiers stack with each other, meaning that you add or subtract all of the modifiers to get the final result. However, some modifiers do not stack with each other, as described below. When bonuses don't stack with each other, you only apply the largest bonus. Likewise, when penalties don't stack with each ather, you only apply the largest penalty.
+
+        \parhead{Special Exceptions}
+
+        \begin{itemize}
+            \item Effects from the same source do not stack. Any spell or ability with the same name has the same source.
+            \item \glossterm{Sizing} effects do not stack.
+                If multiple effects both increase and decrease size, size increases offset size decreases on a one-for-one basis to determine the creature's final size.
+            \item Effects that grant extra \glossterm{strikes} (such as the \spell{haste} spell with the Empowered augment) do not stack.
+            \item Temporary hit points do not stack.
+            \item If a character has two separate abilities which let them add the same attribute to a given roll or statistic, the attribute is still only added once.
+        \end{itemize}
+
+        \subsubsection{Maximum Bonuses}\label{Ability Limits}
+            Some bonuses specify that they cannot increase the value beyond a given point.
+            For example, the \spell{totemic power} spell cannot increase a physical attribute to be higher than the caster's spellpower.
+            These bonuses must always be applied last, and cannot be combined with other bonuses to exceed the maximum value.
+            If multiple bonuses specify different maximum values, use the lower maximum value.
+            If a bonus with a maximum value is applied to a value that already exceeds the maximum value the bonus can provide, simply ignore the bonus and its maximum value.
+
+    \subsection{Doubling}\label{Doubling}
+        If you double any in-game value twice, it becomes three times as large. An additional doubling would make it four times as large, and so on. For example, if you make an attack that deals double damage and you get a critical hit, you deal triple damage.
+
+        \parhead{Real-World Values} Values that are ``real'', such as movement and distance, are an exception.
+        Any real value has a unit that it measures, such as feet.
+        Abstract values, such as bonuses and penalties to attacks and checks, do not have units.
+        If you double a real-world value twice, it becomes four times as large.
+
+    \subsection{Changing Statistics}
+
+        Your modifiers and defenses can change for many reasons.
+        In general, all changes take effect immediately, though some side effects of those changes may not happen until you rest or level up.
+
+        \parhead{Numerical Modifiers} Changes to numerical modifiers always take effect immediately.
+        For example, if a barbarian enters a rage, his damage and defenses are all adjusted immediately.
+
+        \parhead{Ability Prerequisites} Changes to prerequisites for abilities always take effect immmediately.
+        For example, if a paladin's Strength is reduced to 0 by a ghost, she immediately loses the benefits of all feats she has that require a high Strength, such as Reaper (see \featpcref{Reaper}).
+
+        \parhead{Skill Points} Effects that change a character's skill points take effect immediately.
+        However, the character cannot spend additional skill points on new skills until they level up.
+        If a character's total skill points are decreased below their currently spent skill points, they immediately lose training from skills until their spent skill points are equal to their total skill points.
+
+        \parhead{Hit Points} Effects that change a character's maximum hit points take effect immediately.
+        However, increasing a character's maximum hit points does not immediately grant the character additional hit points.
+        They must be recovered in the normal fashion, such as by resting.
+        If a character's maximum hit points are decreased below their current hit points, they immediately lose hit points until their current hit points are equal to their maximum hit points.
+
+\section{Movement and Positioning}\label{Movement and Positioning}
+
+    This section describes in more detail how creatures move and position themselves on a battlefield.
+
+    \subsection{Measuring Movement}
+
+        For simplicity, all movement is measured in five-foot increments.
+        While it is possible to be more precise than that, it's generally not worth the complexity.
+
+        \parhead{Squares}\label{Squares} Area is commonly measured in 5-ft.\ by 5-ft.\ spaces called \glossterm{squares}.
+        A single square represents the area occupied by a single humanoid creature in combat.
+        Sometimes, movement and distance are represented by the number of squares travelled.
+        A 30-ft.\ movement is the same thing as moving six squares.
+
+        \parhead{Diagonals}\label{Diagonals} When measuring distance, the first diagonal counts as five feet of movement, and the second counds as ten feet of movement.
+        The third costs five feet, the fourth costs ten feet, and so on.
+        You can move diagonally past corners and enemies.
+
+    \subsection{Movement Abilities}
+
+        Almost all creatures can use these abilities to move around a battlefield.
+        Many movement abilities are reactive, allowing you to move automatically in response to the movement of other creatures.
+        For example, you can try to follow a creature wherever it goes that round.
+        In all cases, if you run out of movement speed before accomplishing your intended task, you simply stop where you ran out of movement.
+
+        The most common types of reactive movements are the \textit{block}, \textit{follow}, and \textit{withdraw} abilities, which are described below.
+        However, you can can come up with other reactive movements.
+        The only requirement is that a reactive movement must have a simple criteria for determining how you move.
+
+        Unless otherwise noted, all movement abilities 
+            to your maximum distance with any \glossterm{movement mode} you have towards that location.
+
+        \begin{ability}{Hustle}
+            As a \glossterm{move action}, you can use this ability.
+            If you do, choose a path that you want to travel.
+            You travel that path, up to the limit of your movement speed.
+        \end{ability}
+
+        \begin{ability}{\labeltext{Block}}
+            As a \glossterm{move action}, you can use this ability.
+            If you do, choose a creature or object to block, and the area you want to block it from entering.
+            During the current phase, you automatically move to intercept the target as it approaches the blocked area, up to the limit of your movement speed.
+            Usually, blocking a target requires an opposed \glossterm{initiative} check against the target.
+            Success means you successfully keep ahead of the target as it moves, preventing it from entering the area (unless it can move through you).
+            Failure means the target moves around you (if there is room) to enter the area.
+
+            Multiple creatures can coordinate to block a single creature.
+            The blocked creature must beat the initiative of all blocking creatures to enter the blocked area.
+        \end{ability}
+
+        \begin{ability}{\labeltext{Follow}}
+            As a \glossterm{move action}, you can use this ability.
+            If you do, choose a creature or object to follow, and the maximum distance you want to follow at.
+            During the current phase, you automatically move such that your distance to the target is no greater than your desired follow distance, up to the limit of your movement speed.
+            If the target uses an ability that makes it impossible to follow with movement, such as teleporting, you stop moving when you reach the position where it used that ability.
+        \end{ability}
+
+        \begin{ability}{\labeltext{Withdraw}}
+            This ability functions like the \textit{follow} ability, except that you specify a minimum distance between you and the target instead of a maximum distance.
+            In addition, you can specify multiple targets and try to keep away from all of them.
+        \end{ability}
+
+        \begin{ability}{\labeltext{Sprint}}[\glossterm{Swift}]
+            As a \glossterm{free action}, you can spend an \glossterm{action point} to use this ability.
+            If you do, you double your movement speed until the end of the current phase.
+        \end{ability}
+
+    \subsection{Movement Impediments}
+
+        \parhead{Difficult Terrain}\label{Difficult Terrain}
+        Some terrain is hard to move through, like thick bushes or a swamp.
+        If a square is \glossterm{difficult terrain}, it doubles the movement cost required to move out of the square.
+        That generally means it takes ten feet of movement, or fifteen feet if you are moving diagonally.
+
+        If a square is considered difficult terrain for multiple reasons, the cost increases stack.
+        For example, a square in a swamp that also has thick bushes blocking your passage would take twenty feet of movement, or thirty feet to move diagonally.
+
+        \parhead{Obstacles}
+        An obstacle is anything that gets in your way. Enemies and large solid objects like walls completely block your movement. If you can get past an obstacle, like a low wall, that square is treated as difficult terrain. Some obstacles require a \glossterm{check} to bypass, such as an Acrobatics check (see \pcref{Acrobatics}).
+
+        \parhead{Squeezing}\label{Squeezing}
+        In some cases, you may have to squeeze into or through an area that isn't as wide as the space you take up. You can squeeze through or into a space that is at least half as wide as your normal space. While squeezing, you move half as fast, and you take a \minus2 penalty to physical accuracy, physical checks, and physical defenses. You can squeeze into tighter spaces with the Escape Artist skill.
+
+        Creatures that take up multiple squares take up half their normal number of squares while squeezing. For example, a Large creature who normally takes up four spaces takes up two spaces while squeezing.
+
+        \parhead{Accidentally Squeezing} Sometimes a character ends its movement while moving through a space where it's not normally allowed to stop. When that happens, the character is squeezing in the space until it can move. If squeezing is impossible, the creature immediately moves to the closest available space. Try not to do this.
+
+    \subsection{Movement Modes}\label{Movement Modes}
+        Some spells and abilities grant creatures the ability to move in unusual ways. These forms of movement are described here.
+
+        \parhead{Burrowing}
+        A creature with a burrow speed can move through the ground at the indicated speed in any direction, even vertically. Unless otherwise noted, the creature can only burrow through dirt and loose earth, not rock or harder substances. It does not leave behind a usable tunnel for other creatures.
+
+        \parhead{Climbing}
+        A creature with a \glossterm{climb speed} can move a distance equal to its climb speed with a successful Climb check (see \pcref{Climb}).
+        In addition, it gains a \plus10 bonus to any Climb checks it makes.
+
+        \parhead{Flying}\label{Flying}
+        A creature with a fly speed can fly through the air at the indicated speed. It must be \glossterm{unencumbered} (see \pcref{Encumbrance}). If a creature with a fly speed is encumbered, it is treated as having a glide speed instead (see \pcref{Gliding}), which it can use to glide even though it is encumbered.
+
+        Each creature with a fly speed also has a maneuverability: good, average, poor, or special. Normally, a flying creature must move forward by at least half its fly speed each round. If it does not, it falls. Turning by 90 degrees costs 5 feet of movement, and it can't turn in the same place by more than 90 degrees. It can move up by only one square vertically per square traveled horizontally, but it can fly directly down if it chooses. The creature can fly up at half speed, but can fly down twice as fast.
+
+        \parhead{Maneuverability}\label{Maneuverability} Some creatures have fly speeds with special maneuverability rules.
+
+        \subparhead{Good Maneuverability} If a creature has good maneuverability while flying, it gains three benefits while flying.
+        First, it not need to move forward to maintain its flight, allowing it to hover.
+        Second, it can turn in place without spending movement.
+        Third, it can move up at the same speed as it moves horizontally.
+
+        \parhead{Poor Maneuverability} If a creature has poor maneuverability while flying, it must spend five feet of movement to turn by 45 degrees, and it can't turn in the same place by more than 45 degrees. In addition, it can only descend by up to one square vertically per square traveled horizontally without falling.
+
+        \parhead{Falling} If a flying creature loses control, usually by failing to maintain its minimum forward speed, or loses the ability to fly, it falls just like any other creature would in midair. As long as it still has the ability to fly, it can regain control of its fall as a standard action, causing it to resume flying normally.
+
+        \parhead{Gliding}\label{Gliding}
+        A creature with a glide speed can glide through the air at the indicated speed. It must be \glossterm{unencumbered} (see \pcref{Encumbrance}).
+
+        While in the air, a creature with a glide speed can control its fall as a move action. This allows it to move up to its speed horizontally in a direction of its choice while moving only five feet down. If it desires, it can move half as far horizontally and fall down twice as fast. It takes no falling damage if it touches the ground while gliding.
+
+        \parhead{Land}
+        A creature with a land speed can move across the ground at the indicated speed.
+        Most creatures have a land speed.
 
 \section{Universal Abilities}
     All creatures can use the following abilities.
@@ -381,8 +946,8 @@ It defines how attributes work and explains how to make physical attacks in comb
         \end{ability}
 
         \begin{ability}{\labeltext{Delay}}
-            As a \glossterm{standard action} during the \glossterm{action phase}, you can use this ability.
-            If you do, you can take a standard action during the \glossterm{delayed action phase}.
+            As a \glossterm{minor action} or \glossterm{standard action} during the \glossterm{action phase}, you can use this ability.
+            If you do, you can take an action of the same type during the \glossterm{delayed action phase}.
         \end{ability}
 
         \begin{ability}{\labeltext{Desperate Recovery}}
@@ -408,11 +973,6 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         All creatures can use these abilities to affect their movement.
 
-        \begin{ability}{\labeltext{Sprint}}
-            At the start of each \glossterm{phase}, you can spend an \glossterm{action point} to use this ability.
-            If you do, you double your movement speed during that phase.
-        \end{ability}
-
         \begin{ability}{\labeltext{Struggle}}
             As a \glossterm{standard action}, you can use this ability.
             If you do, your land speed becomes five feet regardless of movement speed penalties until the end of the phase, and you can move up to your land speed.
@@ -429,626 +989,6 @@ It defines how attributes work and explains how to make physical attacks in comb
             On a critical hit, the creature is also knocked prone, and you do not treat its space as difficult terrain.
             On a miss, you end your movement immediately.
         \end{ability}
-
-    \subsection{Reactive Movement Abilities}
-
-        All creatures can use reactive movement abilities to move automatically in response to the movement of other creatures.
-        For example, you can try to follow a creature wherever it goes that round.
-        In all cases, if you run out of movement speed before accomplishing your intended task, you simply stop where you ran out of movement.
-        The most common types of reactive movements are the \textit{block}, \textit{follow}, and \textit{withdraw} abilities, but you can come up with other reactive movements.
-        The only requirement is that a reactive movement must have a simple criteria for determining how you move.
-
-        \parhead{Movement-Based Initiative}\label{Movement-Based Initiative} When making \glossterm{initiative} checks to determine the success of reactive movements, having a faster movement speed is helpful.
-        For every 5 feet of movement you would have available after completing your movement, you gain a \plus2 bonus to any initiative checks necessary to determine whether your movement succeeds.
-        Regardless of whether your initiative check succeeds or fails, you cannot use that ``excess'' movement to move after making such an initiative check.
-
-        \begin{ability}{\labeltext{Block}}
-            At the start of each phase, you can use this ability.
-            If you do, choose a creature or object to block, and the area you want to block it from entering.
-            When you do, you automatically move to intercept the target as it approaches the blocked area.
-            Usually, blocking a target requires an opposed \glossterm{initiative} check against the target.
-            Success means you successfully keep ahead of the target as it moves, preventing it from entering the area (unless it can move through you).
-            Failure means the target moves around you (if there is room) to enter the area.
-
-            Multiple creatures can coordinate to block a single creature.
-            The blocked creature must beat the initiative of all blocking creatures to enter the blocked area.
-        \end{ability}
-
-        \begin{ability}{\labeltext{Follow}}
-            At the start of each phase, you can use this ability.
-            If you do, choose a creature or object to follow, and the maximum distance you want to follow at.
-            When you do, you automatically move such that your distance to the target is no greater than your desired follow distance. For the rest of the round, whenever that creature or object moves, you move with it to stay within that follow distance.
-            If the target takes an action that makes it impossible to follow with movement, such as teleporting, you cannot follow it for the rest of the current phase.
-        \end{ability}
-
-        \begin{ability}{\labeltext{Withdraw}}
-            This ability functions like the \textit{follow} ability, except that you specify a minimum distance between you and the target instead of a maximum distance.
-            In addition, you can specify multiple targets and try to keep away from all of them.
-        \end{ability}
-
-    \section{Attributes}\label{Attributes}
-
-    Each character has six \glossterm[attribute]{attributes}: Strength (Str), Dexterity (Dex), Constitution (Con), Intelligence (Int), Perception (Per), and Willpower (Wil).
-    Each attribute represents a character's raw talent in that area.
-    A 0 in an attribute represents average human capacity.
-    That doesn't mean that every commoner has a 0 in every attribute; not everyone is average, after all.
-
-    \subsection{Attribute Descriptions}
-
-        \subsubsection{Strength (Str)}\label{Strength}
-            Strength measures muscle and physical power.
-            It has the following effects:
-            \begin{itemize}
-                \item Strength determines how much a character can carry (see \tref{Weight Limits}).
-                \item Strength affects Strength-based skills: Climb, Jump, Sprint, and Swim (see \pcref{Skills}).
-                \item If your Strength is negative, you take a penalty to all Strength-based skills equal to your Strength.
-                \item If your Strength is negative, you take a penalty to damage with \glossterm{strikes} equal to half your Strength in \glossterm{die increments}.
-            \end{itemize}
-
-            If you have a high Strength, you can use it to determine several statistics:
-            \begin{itemize}
-                \item Your \glossterm{strike damage} (see \pcref{Strike Damage}).
-                \item Your Fortitude defense (see \pcref{Defenses}).
-            \end{itemize}
-
-        \subsubsection{Dexterity (Dex)}\label{Dexterity}
-            Dexterity measures hand-eye coordination, agility, and reflexes.
-            It has the following effects:
-            \begin{itemize}
-                \item Dexterity affects Dexterity-based skills: Acrobatics, Escape Artist, Ride, Sleight of Hand, and Stealth (see \pcref{Skills}).
-                \item You gain a bonus (or penalty) to your Reflex defense equal to your starting Dexterity.
-                \item If your Dexterity is negative, you take a penalty to all Dexterity-based skills equal to your Dexterity.
-            \end{itemize}
-
-            If you have a high Dexterity, you can use it to determine several statistics:
-            \begin{itemize}
-                \item Your \glossterm{accuracy} with \glossterm{physical attacks} using light melee and thrown weapons (see \pcref{Physical Accuracy}).
-                \item Your Armor and Reflex defenses (see \pcref{Defenses}).
-            \end{itemize}
-
-        \subsubsection{Constitution (Con)}\label{Constitution}
-            Constitution represents your character's health and stamina.
-            It has the following efects:
-            \begin{itemize}
-                \item You gain bonus hit points based on your starting Constitution (see \pcref{Hit Points}).
-                \item You heal additional hit points when you take a \glossterm{short rest} based on your starting Constitution (see \pcref{Short Rest}).
-                \item You gain a bonus (or penalty) to your Fortitude defense equal to your starting Constitution.
-                \item You reduce your \textit{encumbrance penalties} for weight or heavy armor by an amount equal to your starting Constitution.
-            \end{itemize}
-
-            If you have a high Constitution, you can use it to determine your Fortitude defense (see \pcref{Defenses}).
-
-        \subsubsection{Intelligence (Int)}\label{Intelligence}
-            Intelligence determines how well your character learns and reasons.
-            It has the following effects:
-
-            \begin{itemize}
-                \item You gain bonus languages equal to your starting Intelligence (see \pcref{Languages}).
-                \item You gain extra skill points equal to twice your starting Intelligence (see \pcref{Skill Points}).
-                \item Your Intelligence affects Intelligence-based skills: Craft, Disguise, Heal, Knowledge, and Linguistics (see \pcref{Skills}).
-                \item If your starting Intelligence is negative, you lose skill points equal to twice your starting Intelligence.
-                \item If your Intelligence is negative, you take a penalty to all Intelligence-based skills equal to your Intelligence.
-            \end{itemize}
-
-            If you have a high Intelligence, you can use it to determine your Mental defense (see \pcref{Defenses}).
-
-            \par An animal has an Intelligence score of \minus6 or lower.
-            A creature of humanlike intelligence has a score of at least a \minus5 Intelligence.
-
-        \subsubsection{Perception (Per)}\label{Perception}
-            Perception describes a character's ability to observe and be aware of one's surroundings.
-            It has the following effects:
-            \begin{itemize}
-                \item Your Perception affects Perception-based skills: Awareness, Creature Handling, Sense Motive, Spellcraft, and Survival (see \pcref{Skills}).
-                \item If your Perception is negative, you take a penalty to all Perception-based skills equal to your Perception.
-                \item If your Perception is negative, you take a penalty to accuracy with all attacks equal to half your Perception.
-            \end{itemize}
-
-            If you have a high Perception, you can use it to determine several statistics:
-            \begin{itemize}
-                \item Your \glossterm{accuracy} with \glossterm{physical attacks} (see \pcref{Physical Accuracy}).
-                \item Your Reflex defense (see \pcref{Defenses}).
-            \end{itemize}
-
-        \subsubsection{Willpower (Wil)}\label{Willpower}
-            Willpower measures a character's ability to endure mental hardships.
-            It has the following effects:
-            \begin{itemize}
-                \item You gain a bonus (or penalty) to the number of \glossterm{action points} you have equal to your starting Willpower.
-                \item You gain a bonus (or penalty) to your Mental defense equal to your starting Willpower.
-            \end{itemize}
-
-            If you have a high Willpower, you can use it to determine your Mental defense (see \pcref{Defenses}).
-
-    % TODO: this section is too small
-    \subsection{Using Attributes}
-
-        \subsubsection{Choosing Attributes to Use}
-            In many cases, multiple attributes can be used for the same thing.
-            Whenever more than one attribute could be used, you must choose which one to use (usually, the higher attribute).
-
-    \subsection{Determining Attributes}
-        There are several options for how to determine attribute scores.
-
-        \subsubsection{Predefined Attribute Scores}
-            This is the simplest method.
-            Simply take the following set of attribute scores and distribute them as you choose among your character's abilities:
-
-            3, 2, 1, 1, 0, 0
-
-            This set of attribute scores is called the ``elite array''.
-            For more extreme characters, you may use the ``savant array'':
-
-            4, 1, 1, 0, 0, 0.
-
-            Finally, for more well-balanced characters, you may use the ``balanced array'':
-
-            2, 2, 2, 1, 0, 0
-
-            Any of these distributions can be altered by taking penalties to any attributes given as 0.
-            For each penalty you take, you gain two additional \glossterm{skill points} (see \pcref{Skills}).
-
-        \subsubsection{Increasing Attributes}
-            As your level increases, your attributes increase as well, as shown on \trefnp{Increasing Attributes with Level}.
-
-            \begin{dtable}
-                \lcaption{Increasing Attributes with Level}
-                \begin{dtabularx}{\columnwidth}{X X}
-                    \tb{Starting Attribute} & \tb{Bonus}   \\
-                    0 or lower              & 0            \\
-                    1                       & \plus1 per level after 1st \\
-                    2                       & \plus1 per level after 1st \\
-                    3                       & \plus1 per level after 1st \\
-                    4                       & \plus1 per level after 1st \\
-                \end{dtabularx}
-            \end{dtable}
-
-        \subsubsection{Point Buy}
-            With this method, you can fully control your character's attribute scores to match what you want your character to be.
-            All your character's attribute scores start at 0.
-            You get seven points to distribute among your character's attributes.
-            Attributes can be bought according to the costs on \trefnp{Attribute Score Point Costs}.
-            The listed cost is the total cost required to gain the listed starting attribute.
-            A starting character is 1st level, which adds appropriately to the character's total attribute score.
-
-            \parhead{Impaired Attributes}\label{Impaired Attributes}
-            You can start with up to two attributes below 0.
-            If you do, you compensate for your impairment in that area with additional talents in other areas.
-            For each point below 0, you gain an additional \glossterm{skill point}.
-
-            \begin{dtable}
-                \lcaption{Attribute Score Point Costs}
-                \begin{dtabularx}{\columnwidth}{X X l}
-                    \tb{Starting Attribute Score} & \tb{Total Attribute Score} & \tb{Cumulative Point Cost} \\
-                    \bottomrule
-                    \minus2\fn{1} & \minus2      & 0\fn{2} \\
-                    \minus1\fn{1} & \minus1      & 0\fn{3} \\
-                    0             & 0            & 0       \\
-                    1             & Level        & 1       \\
-                    2             & 1 \add level & 2       \\
-                    3             & 2 \add level & 3       \\
-                    4             & 3 \add level & 5       \\
-                \end{dtabularx}
-                1 You cannot reduce more than two attributes below 0 in this way. \\
-                2 You gain four \glossterm{skill points}. \\
-                3 You gain two skill points. \\
-            \end{dtable}
-
-        \subsubsection{Extraordinary Attributes}
-            Some abilities can increase your starting attributes above 4.
-            For each point of starting attribute beyond 4, you increase your current attribute by the same amount.
-            For example, a 20th level half-orc cleric with the Strength domain who spent 5 points on her starting Strength would have a total starting Strength of 6.
-            Her Strength would be two higher than it would be with a starting attribute of 4, for a total of 25.
-
-\section{Character Statistics}
-    This section explains how to calculate commonly used statistics about your character.
-
-    \subsection{Accuracy}\label{Accuracy}
-        Your accuracy with an \glossterm{attack} is the number that you add to the \glossterm{attack roll}.
-        You will have multiple different attacks you can make.
-        The accuracy for an attack depends on the type of attack it is.
-
-        \subsubsection{Physical Accuracy}\label{Physical Accuracy}
-            Your accuracy with a \glossterm{physical attack}, such as a \glossterm{strike}, is normally equal to the higher of your level and your Perception.
-            If you are using a \glossterm{light weapon}, you may use your Dexterity instead.
-            In addition to this base number, your accuracy can include any number of bonuses and penalties from other sources.
-
-            \parhead{Proficiency} Each creature is \glossterm{proficient} with a number of weapons.
-            For details about the weapons you can be proficient with, see \pcref{Weapons}.
-            Your proficiencies are primarily determined by your class, but some abilities also grant proficiency with additional weapons.
-            If you make a strike with a weapon you are not proficient with, you take a \minus2 penalty to accuracy.
-
-    \subsection{Damage}\label{Damage}
-        Some attacks deal damage when they hit.
-        Damage does not represent serious physical injury to your body.
-        Instead, it represents a depletion of some combination of endurance, luck, or even divine providence that prevents you from suffering more serious injury
-        When you take damage, you reduce your \glossterm{hit points} by that amount (see \pcref{Hit Points}).
-        If you have no hit points remaining, you may take that damage as \glossterm{vital damage} instead, which represents potentially life-threatening injuries (see \pcref{Vital Damage}).
-
-        Most attacks deal damage equal to the result rolled from a pool of dice.
-
-        \subsubsection{Die Increments}\label{Die Increments}
-            Many abilities can increase or decrease your damage with abilities.
-            These modifiers always increase or decrease your damage by one \glossterm{die increment}.
-            Increasing by one die increment is written as \plus1d, and decreasing by one die increment is written as \minus1d.
-            A set of damage dice can increase in size in \glossterm{die increments}.
-            Damage dice change in size using the following pattern:
-            \begin{itemize}
-                \item 1 damage (minimum)
-                \item 1d2
-                \item 1d3
-                \item 1d4
-                \item 1d6
-                \item 1d8
-                \item 1d10
-                \item 2d6
-                \item 2d8
-                \item 2d10
-                \item 4d6
-                \item 4d8
-                \item 4d10
-                \item 5d10
-                \item 6d10
-            \end{itemize}
-
-            For each die increment that increases the damage, move one space down the list.
-            Likewise, for each die increment that decreases the damage, move one space up the list.
-            After the damage dice reach 4d10, each additional die increment simply adds an extra 1d10 of damage.
-
-        \subsubsection{Standard Damage}\label{Standard Damage}
-            Most damaging effects use \glossterm{standard damage} as a baseline to determine the damage they deal.
-            Your \glossterm{standard damage} with an ability is based on that ability's \glossterm{power}, if it has one (see \pcref{Power}).
-            Otherwise, it is based on your level.
-            In either case, it starts at 1d8 and increases by \plus1d per two power or per two levels.
-            This is summarized on \trefnp{Standard Damage}.
-
-        \begin{dtable}
-            \lcaption{Standard Damage}
-            \begin{dtabularx}{\columnwidth}{l X}
-                \tb{Power} & \tb{Damage} \\
-                0--1   & 1d8  \\
-                2--3   & 1d10 \\
-                4--5   & 2d6  \\
-                6--7   & 2d8  \\
-                8--9   & 2d10 \\
-                10--11 & 4d6  \\
-                12--13 & 4d8  \\
-                14--15 & 4d10 \\
-                16--17 & 5d10 \\
-                18--19 & 6d10 \\
-                20--21 & 7d10 \\
-                22--23 & 8d10 \\
-                24--25\fn{1} & 9d10 \\
-            \end{dtabularx}
-            1. For values above 25, increase by 1d10 at every even value.
-        \end{dtable}
-
-        \subsubsection{Strike Damage}\label{Strike Damage}
-            The damage you deal with a single \glossterm{strike} from a weapon is called your \glossterm{strike damage}.
-            Your base \glossterm{strike damage} is equal to \glossterm{standard damage} based on your level or your Strength, whichever is higher.
-            For example, if you have a Strength of 4, your base \glossterm{strike damage} would be equal to 2d6 (1d8 \plus2d).
-            When you make a strike with a weapon, you also apply that weapon's damage modifier, if any.
-            Some abilities other than \glossterm{strikes} deal damage based on your \glossterm{strike damage}.
-
-            \parhead{Creature Size and Damage}\label{Creature Size and Damage}
-            Larger creatures deal more damage with their weapons.
-            Each creature size above Medium grants a \plus1d bonus to \glossterm{strike damage}.
-            Likewise, each creature size below Medium imposes a \minus1d penalty to damage with strikes.
-            This is described in \tref{Size in Combat}.
-
-    \subsection{Defenses}\label{Defenses}
-        Usually, when you are attacked, the attacker has to make an \glossterm{attack roll} against a specific defense.
-        If the attack roll is at least as high as that defense, the attack succeeds.
-        There are two physical defenses and two non-physical defenses.
-        \begin{itemize}
-            \item Armor defense (AD): Your Armor defense protects you from normal physical attacks, such as attempts to hit you with a sword.
-                It is the most commonly used defense.
-                Armor defense is a physical defense.
-            \item Reflex defense: Your Reflex protects you from attacks you have to avoid, such as explosions or falling rocks.
-                Reflex defense is a physical defense.
-            \item Fortitude defense: Your Fortitude defense protects you from attacks you have to physically endure or resist, such as poisons and deadly spells.
-                Fortitude defense is not a physical defense.
-            \item Mental defense: Your Mental defense protects you from attacks you have to mentally endure or resist, such as terrifying creatures and magical manipulation.
-                Mental defense is not a physical defense.
-        \end{itemize}
-
-        \subsubsection{Defense Values}\label{Defense Values}
-
-            Each of your defenses is calculated in the following way:
-
-            \begin{figure}[h]
-                \centering Level or defense attribute \add racial defense bonus \add class defense bonus \add other bonuses and penalties
-            \end{figure}
-
-            The attributes and relevant bonuses which apply to each defense are described in \trefnp{Defense Calculations}.
-
-            \begin{dtable!*}
-                \lcaption{Defense Calculations}
-                \begin{dtabularx}{\textwidth}{l l l l >{\lcol}X}
-                    \tb{Defense Name} & \tb{Attributes} & \tb{Starting Attribute Modifier} & \tb{Body Armor Modifier} & \tb{Shield Modifier} \\
-                    \midrule
-                    Armor defense     & Dex & \tdash & Yes & Yes \\
-                    Fortitude defense & Con or Str & Con & No  & No  \\
-                    Reflex defense    & Dex or Per & Dex & No  & Yes \\
-                    Mental defense    & Wil or Int & Wil & No  & No  \\
-                \end{dtabularx}
-            \end{dtable!*}
-
-            \parhead{Class and Racial Bonuses} Each class and race provides bonuses to some combination of Fortitude, Reflex, and Mental defense.
-            \parhead{Natural Armor} Creatures with unusually tough skin or thick hide, including most monsters, gain bonuses to their Armor defense.
-            These bonuses stack with any armor such creatures might wear.
-            \parhead{Size Modifier} Large creatures have a penalty to Reflex defense.
-            For details, see \tref{Size in Combat}.
-
-    \subsection{Initiative}\label{Initiative}
-        When multiple creatures take mutually impossible actions simultaneously, such as racing to be the first one to a door, they must roll initiative checks.
-        The winner completes the action first, and any other creatures complete as much of the action as possible in order from highest to lowest result.
-
-        Your initiative check is calculated as follows:
-
-        \begin{figure}[h]
-            \centering Dexterity or Perception \add other bonuses and penalties
-        \end{figure}
-
-        For example, if two creatures were racing to reach a door, they would both roll initiative.
-        The winner would reach the door and stop in their intended square, and the loser would stop adjacent to their intended square.
-
-        \parhead{Conditionally Impossible Actions} In rare cases, one action may make another action impossible if the first action succeeds.
-        However, unlike with mutually exclusive actions, the second action would not make the first action impossible.
-        This usually happens if a creature moves during the action phase while being attacked.
-        If the attack trips or deals enough damage to kill the moving creature, its movement becomes impossible.
-        In this case, the second action is negated, and the creature takes no action during that action phase.
-
-        \subsubsection{Reach}\label{Reach}
-            Normally, you can make melee attacks against anyone within five feet of you.
-            The range at which you can make melee attacks is called your \glossterm{reach}, and the area that you can attack into is called your \glossterm{threatened area}.
-            Reach for larger and smaller creatures is determined by size, as shown on \trefnp{Size in Combat}.
-
-    \subsection{Circumstances, Bonuses, and Penalties}
-
-        Many effects can grant bonuses or penalties to actions you take.
-
-        \subsubsection{Arbitrary Modifiers}
-
-            Circumstances frequently modify your odds of success when making attacks and checks, or when defending yourself from attacks.
-            There are two kinds of circumstantial modifiers.
-            Circumstances that make you better or worse at your task give you a bonus or penalty to your attack or check.
-            Circumstnaces that make the task easier or harder increase or decrease the \glossterm{difficulty rating} of the task, or the defense of the attacked creature.
-
-            Most circumstances grant a \plus2 bonus or impose a \minus2 penalty.
-            Extraordinary circumstances can potentially have greater modifiers.
-            All circumstantial modifiers should be used at the discretion of the GM.\@
-
-        \subsubsection{Overwhelm}\label{Overwhelm}
-            When you are being attacked by multiple foes at once, or by a massive foe that can attack from many directions, you are less able to defend yourself.
-            You take penalties to your \glossterm{physical defenses} equal to half the combined \glossterm{threat value} of all creatures threatening you, rounded down.
-            Among equal sized creatures, this usually means you take a penalty equal to half the number of creatures threatening you.
-            These penalties are called \glossterm{overwhelm penalties}.
-            If you are suffering at least a \minus1 overwhelm penalty, you are \glossterm{overwhelmed}.
-
-            \parhead{Threat Value}\label{Threat Value} Your \glossterm{threat value} determines how much of a penalty you impose on creatures you threaten.
-            For example, Medium creatures have a threat value of 1, and larger creatures have a higher threat value (see \pcref{Size in Combat}).
-            Some abilities can affect your threat value.
-
-            Some creatures have fractional threat values.
-            For example, a Tiny creature has a threat value of 1/2.
-            Fractional threat values are not rounded down until after being added with the threat values from other threatening creatures.
-            For example, if five Tiny creatures were threatening a single creature, their combined threat value would be 2 and 1/2.
-            That value is rounded down to 2 when determining whether the creature is overwhelmed, and how large that creature's overwhelm penalties are.
-
-            If your \glossterm{threat value} would be reduced below 1, special rules apply.
-            The first -1 penalty reduces your threat value to 1/2.
-            An additional -1 penalty reduces your threat value to 1/4.
-            Your threat value cannot be reduced below 1/4.
-
-            \parhead{Overwhelm Resistance}\label{Overwhelm Resistance} Some abilities grant \glossterm{overwhelm resistance}.
-            For example, Large and larger creatures automatically gain overwhelm resistance (see \pcref{Size in Combat}).
-            A creature with overwhelm resistance reduces the \glossterm{threat value} of all creatures threatening it by an amount equal to its overwhelm resistance.
-            Some abilities can increase or decrease overwhelm resistance, such as the \spell{boon of many eyes} subspell.
-            Creatures without overwhelm resistance are considered to have an overwhelm resistance of 0.
-
-            For example, Felix the fighter has an \glossterm{overwhelm resistance} of 1.
-            If he was threatened by a giant with a \glossterm{threat value} of 2, he would reduce the giant's threat value to 1.
-            As a result, Felix would not be overwhelmed.
-
-            \parhead{Ignoring Attackers} At the start of each phase, you can choose to ignore up to one creature threatening you.
-            If you do, you are treated as being \unaware against that creature.
-            In exchange, it does not contribute to the number of creatures overwhelming you.
-
-        \subsubsection{Range Increments}\label{Range Increments}
-            Physical ranged attacks often have a specific \glossterm{range increment}.
-            A range increment is always measured in feet.
-            You take a \minus1 penalty to accuracy with the ranged attack for each full range increment between you and your target.
-            For example, when using a longbow with a range increment of 100 feet against a target 170 feet away, you take a \minus1 penalty to accuracy.
-            You cannot make a ranged attack beyond 10 range increments away from you.
-
-        \subsubsection{Cover}\label{Cover}
-
-            Cover represents any obstacle that physically prevents you from striking your target, such as a tree or intervening creature.
-            A creature behind cover is more difficult to attack.
-            There are three kinds of cover: \glossterm{active cover}, \glossterm{passive cover}, and \glossterm{total cover}.
-            All three types of cover are determined by the presence or absence of physical obstacles.
-
-            \parhead{Active Cover}\label{Active Cover} Active cover is provided by mobile obstacles between you and your target, such as creatures or tree branches blowing in the wind.
-            Physical attacks against creatures with active cover suffer a 20\% miss chance.
-            If an attack misses due to active cover, the attack is made against the intervening obstacle rather than being negated like normal for miss chances.
-            The obstacle takes any damage from a successful attack normally.
-
-            \parhead{Passive Cover}\label{Passive Cover} Passive cover is provided by immobile obstacles between you and your target, such as trees and walls.
-            Creatures with passive cover gain a \plus2 bonus to \glossterm{physical defenses}.
-            In addition, creatures with passive cover can hide (see \pcref{Stealth}).
-
-            \parhead{Measuring Cover}
-
-            When you make an attack, choose a single square within your \glossterm{space} and a single \glossterm{target square} within your target's space.
-            If you are making a ranged attack, choose one corner of your space.
-            If you are making a melee attack, choose any two corners of your square.
-            These corners are called the \glossterm{points of origin} for your attack.
-            For the purpose of determining cover, your attack originates from your chosen \glossterm{points of origin} and travels to the \glossterm{target square}.
-
-            % TODO: pull out ``line of sight'' and ``line of effect'' from this text
-            First, check if you can attack the target at all.
-            For each \glossterm{point of origin} of your attack, you must be able to draw two lines to any two corners of your attack's \glossterm{target square}.
-            These two lines must not overlap each other.
-            In addition, each line must not be blocked by solid objects, though they can touch the edges of spaces blocked by solid objects.
-            The lines can pass through obstacles that do not take up the entire area within their space (such as most creatures).
-            Finally, the line must not be blocked by other squares within the target's space, preventing you from targeting the ``inside'' of large creatures.
-            If you cannot draw such a line, the target has \glossterm{total cover} from you.
-            This makes all targeted attacks impossible.
-
-            Second, draw a line from the \glossterm{points of origin} of your attack to the center of your attack's target square.
-            If any such line touches a square with an obstacle that grants active or passive cover, even at an edge or corner, the target has the appropriate cover from you.
-            Otherwise, if the line is uninterrupted, the target does not have cover from you.
-
-            \parhead{Partial Obstacles} Many obstacles, such as trees and low walls, can provide passive cover without normally blocking \glossterm{line of sight} or providing \glossterm{total cover}.
-            Unusually small creatures, or creatures who intentionally take cover behind such obstacles, may be able to gain total cover from them.
-
-            \parhead{Improved Cover}
-            A creature can benefit from both passive and active cover.
-            Cover of the same type generally doesn't stack; a creature behind two trees is not substantially more protected than a creature behind a single tree.
-            However, exceptionally well covered creatures, such as a creature behind an arrow slit in a castle, may receive additional benefits.
-            In that case, each additional major obstacle increases the miss chance by 10\% or grants an additional \plus1 bonus to physical defenses, as appropriate.
-
-            \parhead{Total Cover}\label{Total Cover}
-            If a creature is completely behind an physical object that blocks sight, it has \glossterm{total cover} from attacks.
-            A creature with total cover cannot be targeted by any attacks.
-            Total cover is the only kind of cover that also affects attacks other than \glossterm{physical attacks}.
-
-        \subsubsection{Concealment}\label{Concealment}
-            Concealment represents anything which makes it more difficult to see your target, such as dim lighting. A creature with concealment from you gains a \plus2 bonus to \glossterm{physical defenses}. The concealment bonus does not apply if you can't see your opponent (such as if you close your eyes).
-            Determining concealment works similarly to determining cover.
-            You must use the same \glossterm{points of origin} and \glossterm{target square} when determining concealment that you would use to determine cover.
-
-            \parhead{Determining Concealment} There are two things that can cause a creature to be concealed: poor lighting, and intervening obstacles that block sight.
-            Determining concealment from obstacles that block sight works the same way as determining cover.
-
-            Determining concealment from lighting conditions is simpler, since it ignores lighting conditions between you and the target.
-            If your \glossterm{target square} square is in lighting that provides concealment, the target has concealment.
-            Otherwise, it does not.
-
-        \subsubsection{Helpless Defenders}
-            A helpless creature is completely at an opponent's mercy.
-            Its physical defenses are calculated as if it had a Dexterity of \minus10.
-            Paralyzed, bound, and unconscious creatures are helpless.
-
-            \parhead{Coup de Grace}\label{Coup de Grace} As a full-round action, you can deliver a coup de grace to a helpless opponent within your \glossterm{reach} that you can see.
-            You automatically hit with your weapon and score a \glossterm{critical hit}. If the creature takes damage equal to or higher than half its maximum hit points, it immediately dies.
-
-            Delivering a coup de grace requires focused concentration and methodical action. This leaves you \defenseless. If you take damage in excess of your Fortitude defense while delivering a coup de grace, your attempt fails.
-            If your target stops being helpless during your coup de grace attempt for any reason, the attempt fails.
-            You can't deliver a coup de grace against a creature that is immune to critical hits.
-
-        \subsubsection{Invisibility}\label{Invisibility}
-            If it is impossible to see your target, you can't attack him normally. However, you can attack a square that you think he occupies. An attack into a square occupied by an invisible enemy has a 50\% miss chance. If an adjacent invisible creature strikes you, you can automatically identify the square he occupied when he struck you.
-
-        \subsubsection{Surprise Attacks}\label{Surprise Attacks}
-            Sometimes, creatures are not aware that combat is taking place when the combat starts. This most commonly happens with ambushes. Any creature that is not aware of the combat continues taking whatever actions it would normally be taking until it becomes aware of the combat. It is \unaware until that point.
-
-    \subsection{Size in Combat}\label{Size in Combat}
-        Size affects your space and reach in combat, your Reflex defense, your \glossterm{strike damage}, and how easily you overwhelm creatures and are overwhelmed yourself.
-        These effects are shown on \trefnp{Size in Combat}.
-
-        \begin{dtable*}
-            \lcaption{Size in Combat}
-            \begin{dtabularx}{\textwidth}{l l l l l l p{5.5em} X}
-                \tb{Size} & \tb{Space}\fn{1} & \tb{Reach}\fn{1} & \tb{Reflex Modifier} & \tb{Damage Modifier}\fn{2} & \tb{Threat Value}\fn{3} & \tb{Overwhelm Resistance}\fn{4} & \tb{Example Creature} \\
-                \bottomrule
-                Fine              & 1/2 ft.    & 0          & \plus8  & \minus4d & 1/4 & \tdash & Fly                      \\
-                Diminutive        & 1 ft.      & 0          & \plus6  & \minus3d & 1/2 & \tdash & Toad                     \\
-                Tiny              & 2-1/2 ft.  & 0          & \plus4  & \minus2d & 1/2 & \tdash & Cat                      \\
-                Small             & 5 ft.      & 5 ft.      & \plus2  & \minus1d & 1 & \tdash & Halfling                 \\
-                Medium            & 5 ft.      & 5 ft.      & \tdash  & \tdash   & 1 & \tdash & Human                    \\
-                Large (tall)      & 10 ft.     & 10 ft.     & \minus2 & \plus1d  & 2 & 1 & Ogre                     \\
-                Large (long)      & 10 ft.     & 5 ft.      & \minus2 & \plus1d  & 2 & 1 & Horse                    \\
-                Huge (tall)       & 15 ft.     & 15 ft.     & \minus4 & \plus2d  & 3 & 2 & Cloud giant              \\
-                Huge (long)       & 15 ft.     & 10 ft.     & \minus4 & \plus2d  & 3 & 2 & Bulette                  \\
-                Gargantuan (tall) & 20 ft.     & 20 ft.     & \minus6 & \plus3d  & 4 & 3 & 50-ft.\ animated statue  \\
-                Gargantuan (long) & 20 ft.     & 15 ft.     & \minus6 & \plus3d  & 4 & 3 & Kraken                   \\
-                Colossal (tall)   & 25\add ft. & 25\add ft. & \minus8 & \plus4d  & 5 & 4 & Colossal animated object \\
-                Colossal (long)   & 25\add ft. & 25\add ft. & \minus8 & \plus4d  & 5 & 4 & Great wyrm red dragon    \\
-            \end{dtabularx}
-            1 Creatures can vary in space and reach.  These are simply typical values.  \\
-            2. This modifier applies to \glossterm{strike damage}. \\
-            3. See \pcref{Threat Value}. \\
-            4. See \pcref{Overwhelm Resistance}. \\
-        \end{dtable*}
-
-        \parhead{Other Effects}
-        A creature's size affects a number of additional skills and abilities.
-        For example, larger creatures have a penalty to Stealth checks (see \pcref{Size and Stealth}).
-        The effects of unusual size are described in those skills and abilities.
-
-        Unusually large or small creatures also have other special rules apply to them, as described below.
-        In addition, larger creatures deal more damage with weapons, and smaller creatures deal less damage with weapons, as described in \tref{Size in Combat}.
-
-        \subsubsection{Very Small Creatures}
-            \parhead{Space} If a creature takes up less than a single square of space, you can fit multiple creatures in that square. You can fit four Tiny creatures in a square, twenty-five Diminuitive creatures, or 100 Fine creatures.
-
-            \parhead{Reach} Creatures that take up less than 1 square of space typically have a natural reach of 0 feet, meaning they can't reach into adjacent squares. They must enter an opponent's square to attack in melee. You can attack into your own square if you need to, so you can attack such creatures normally. Since they have no natural reach, they do not threaten the squares around them.
-
-            If a creature without a natural reach uses a reach weapon, it gains no benefits or penalties (see \pcref{Reach Weapon}).
-
-            \parhead{Movement} Creatures three size categories smaller than you are not considered obstacles and do not hinder your movement.
-
-        \subsubsection{Very Large Creatures}
-            \parhead{Space} Very large creatures take up multiple squares. Anything which affects a single square the creature occupies affects the creature.
-
-            \parhead{Reach} Creatures that take up more than 1 square typically have a natural reach of 10 feet or more, meaning that they can reach targets even if they aren't in adjacent squares. Creatures with a large natural reach can attack anyone within their reach, including adjacent foes.
-
-            Creatures with a large natural reach using reach weapons can strike at up to double their natural reach but can't strike at their natural reach or less, just like Medium sized creatures.
-
-            \parhead{Movement} Creatures three size categories larger than you are not considered obstacles and do not hinder your movement.
-
-            \parhead{Immunities} Creatures at least three size categories larger than you are difficult to fight. You cannot get a \glossterm{critical hit} with \glossterm{strikes} or contribute to overwhelm penalties against such creatures. If you can reach a vulnerable point on the creature, such as by flying or by using ranged weapons, you can get critical hits and contribute to overwhelm penalties normally.
-
-    \subsection{Stacking Rules}\label{Stacking Rules}
-        Usually, modifiers stack with each other, meaning that you add or subtract all of the modifiers to get the final result. However, some modifiers do not stack with each other, as described below. When bonuses don't stack with each other, you only apply the largest bonus. Likewise, when penalties don't stack with each ather, you only apply the largest penalty.
-
-        \parhead{Special Exceptions}
-
-        \begin{itemize}
-            \item Effects from the same source do not stack. Any spell or ability with the same name has the same source.
-            \item \glossterm{Sizing} effects do not stack.
-                If multiple effects both increase and decrease size, size increases offset size decreases on a one-for-one basis to determine the creature's final size.
-            \item Effects that grant extra \glossterm{strikes} (such as the \spell{haste} spell with the Empowered augment) do not stack.
-            \item Temporary hit points do not stack.
-            \item If a character has two separate abilities which let them add the same attribute to a given roll or statistic, the attribute is still only added once.
-        \end{itemize}
-
-        \subsubsection{Maximum Bonuses}\label{Ability Limits}
-            Some bonuses specify that they cannot increase the value beyond a given point.
-            For example, the \spell{totemic power} spell cannot increase a physical attribute to be higher than the caster's spellpower.
-            These bonuses must always be applied last, and cannot be combined with other bonuses to exceed the maximum value.
-            If multiple bonuses specify different maximum values, use the lower maximum value.
-            If a bonus with a maximum value is applied to a value that already exceeds the maximum value the bonus can provide, simply ignore the bonus and its maximum value.
-
-    \subsection{Doubling}\label{Doubling}
-        If you double any in-game value twice, it becomes three times as large. An additional doubling would make it four times as large, and so on. For example, if you make an attack that deals double damage and you get a critical hit, you deal triple damage.
-
-        \parhead{Real-World Values} Values that are ``real'', such as movement and distance, are an exception.
-        Any real value has a unit that it measures, such as feet.
-        Abstract values, such as bonuses and penalties to attacks and checks, do not have units.
-        If you double a real-world value twice, it becomes four times as large.
-
-    \subsection{Changing Statistics}
-
-        Your modifiers and defenses can change for many reasons.
-        In general, all changes take effect immediately, though some side effects of those changes may not happen until you rest or level up.
-
-        \parhead{Numerical Modifiers} Changes to numerical modifiers always take effect immediately.
-        For example, if a barbarian enters a rage, his damage and defenses are all adjusted immediately.
-
-        \parhead{Ability Prerequisites} Changes to prerequisites for abilities always take effect immmediately.
-        For example, if a paladin's Strength is reduced to 0 by a ghost, she immediately loses the benefits of all feats she has that require a high Strength, such as Reaper (see \featpcref{Reaper}).
-
-        \parhead{Skill Points} Effects that change a character's skill points take effect immediately.
-        However, the character cannot spend additional skill points on new skills until they level up.
-        If a character's total skill points are decreased below their currently spent skill points, they immediately lose training from skills until their spent skill points are equal to their total skill points.
-
-        \parhead{Hit Points} Effects that change a character's maximum hit points take effect immediately.
-        However, increasing a character's maximum hit points does not immediately grant the character additional hit points.
-        They must be recovered in the normal fashion, such as by resting.
-        If a character's maximum hit points are decreased below their current hit points, they immediately lose hit points until their current hit points are equal to their maximum hit points.
 
 \section{Injury, Death, and Healing}\label{Injury, Death, and Healing}
 
@@ -1379,3 +1319,75 @@ It defines how attributes work and explains how to make physical attacks in comb
         1. This is the number of abilities you gain with your \glossterm{legacy item} (see \pcref{Legacy Items}). \\
         2. All races also grant a bonus feat at 1st level. The feat must be chosen from a specific list of racial bonus feats (see \pcref{Races}). \\
     \end{dtable}
+
+    \subsection{Increasing Attributes}
+        As your level increases, your attributes increase as well, as shown on \trefnp{Increasing Attributes with Level}.
+
+        \begin{dtable}
+            \lcaption{Increasing Attributes with Level}
+            \begin{dtabularx}{\columnwidth}{X X}
+                \tb{Starting Attribute} & \tb{Bonus}   \\
+                0 or lower              & 0            \\
+                1                       & \plus1 per level after 1st \\
+                2                       & \plus1 per level after 1st \\
+                3                       & \plus1 per level after 1st \\
+                4                       & \plus1 per level after 1st \\
+            \end{dtabularx}
+        \end{dtable}
+
+    \subsection{Determining Attributes}
+        There are several options for how to determine attribute scores.
+
+        \subsubsection{Predefined Attribute Scores} This is the simplest method.
+        Simply take the following set of attribute scores and distribute them as you choose among your character's abilities:
+
+        3, 2, 1, 1, 0, 0
+
+        This set of attribute scores is called the ``elite array''.
+        For more extreme characters, you may use the ``savant array'':
+
+        4, 1, 1, 0, 0, 0.
+
+        Finally, for more well-balanced characters, you may use the ``balanced array'':
+
+        2, 2, 2, 1, 0, 0
+
+        Any of these distributions can be altered by taking penalties to any attributes given as 0.
+        For each penalty you take, you gain two additional \glossterm{skill points} (see \pcref{Skills}).
+
+        \subsubsection{Point Buy}
+            With this method, you can fully control your character's attribute scores to match what you want your character to be.
+            All your character's attribute scores start at 0.
+            You get seven points to distribute among your character's attributes.
+            Attributes can be bought according to the costs on \trefnp{Attribute Score Point Costs}.
+            The listed cost is the total cost required to gain the listed starting attribute.
+            A starting character is 1st level, which adds appropriately to the character's total attribute score.
+
+            \parhead{Impaired Attributes}\label{Impaired Attributes}
+            You can start with up to two attributes below 0.
+            If you do, you compensate for your impairment in that area with additional talents in other areas.
+            For each point below 0, you gain an additional \glossterm{skill point}.
+
+            \begin{dtable}
+                \lcaption{Attribute Score Point Costs}
+                \begin{dtabularx}{\columnwidth}{X X l}
+                    \tb{Starting Attribute Score} & \tb{Total Attribute Score} & \tb{Cumulative Point Cost} \\
+                    \bottomrule
+                    \minus2\fn{1} & \minus2      & 0\fn{2} \\
+                    \minus1\fn{1} & \minus1      & 0\fn{3} \\
+                    0             & 0            & 0       \\
+                    1             & Level        & 1       \\
+                    2             & 1 \add level & 2       \\
+                    3             & 2 \add level & 3       \\
+                    4             & 3 \add level & 5       \\
+                \end{dtabularx}
+                1 You cannot reduce more than two attributes below 0 in this way. \\
+                2 You gain four \glossterm{skill points}. \\
+                3 You gain two skill points. \\
+            \end{dtable}
+
+        \subsubsection{Extraordinary Attributes}
+            Some abilities can increase your starting attributes above 4.
+            For each point of starting attribute beyond 4, you increase your current attribute by the same amount.
+            For example, a 20th level half-orc cleric with the Strength domain who spent 5 points on her starting Strength would have a total starting Strength of 6.
+            Her Strength would be two higher than it would be with a starting attribute of 4, for a total of 25.
