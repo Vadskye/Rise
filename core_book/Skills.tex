@@ -45,39 +45,36 @@ A character's skills describe the myriad of talents that people have.
         \begin{dtable!*}
             \lcaption{Class Skills}
             \begin{dtabularx}{\textwidth}{>{\lcol}p{12em} *{11}{>{\ccol}X} >{\ccol}p{4em}}
-                \tb{Skill}   & \tb{Bbn} & \tb{Clr} & \tb{Drd} & \tb{Ftr} & \tb{Mnk} & \tb{Pal} & \tb{Rgr} & \tb{Rog} & \tb{Sor} & \tb{Spl} & \tb{Wiz} & \tb{Key Ability} \\
-                \bottomrule
-                Climb             & C  & \tdash & C  & C  & C  & \tdash & C  & C  & \tdash & \tdash & \tdash & Str    \\
-                Jump              & C  & \tdash & C  & C  & C  & \tdash & C  & C  & \tdash & \tdash & \tdash & Str    \\
-                Swim              & C  & \tdash & C  & C  & C  & \tdash & C  & C  & \tdash & C  & \tdash & Str    \\
-                Acrobatics        & C  & \tdash & C  & C  & C  & \tdash & C  & C  & \tdash & \tdash & \tdash & Dex    \\
-                Escape Artist     & \tdash & \tdash & \tdash & C  & C  & \tdash & \tdash & C  & \tdash & \tdash & \tdash & Dex    \\
-                Ride              & \tdash & \tdash & \tdash & C  & \tdash & C  & \tdash & \tdash & \tdash & C  & \tdash & Dex          \\
-                Sleight of Hand   & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & C  & \tdash & \tdash & \tdash & Dex    \\
-                Stealth           & \tdash & \tdash & \tdash & \tdash & C  & \tdash & C  & C  & \tdash & \tdash & \tdash & Dex    \\
-                \tb{Skill}   & \tb{Bbn} & \tb{Clr} & \tb{Drd} & \tb{Ftr} & \tb{Mnk} & \tb{Pal} & \tb{Rgr} & \tb{Rog} & \tb{Sor} & \tb{Spl} & \tb{Wiz} & \tb{Key Ability} \\
-                \bottomrule
-                Craft\fn{1}       & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & Int          \\
-                Devices           & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & C  & \tdash & \tdash & \tdash & Int          \\
-                Disguise          & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & \tdash & C  & \tdash & \tdash & \tdash & Int          \\
-                Heal              & \tdash & C  & C  & \tdash & C  & C  & C  & \tdash & \tdash & \tdash & \tdash & Int          \\
-                Knowledge         & \tdash & C  & \tdash & \tdash & C  & \tdash & \tdash & \tdash & C  & C  & C  & Int          \\
-                Linguistics       & \tdash & C  & \tdash & \tdash & \tdash & \tdash & \tdash & C  & \tdash & \tdash & C  & Int          \\
-                Awareness         & C  & C & C  & C  & C  & C  & C  & C  & C & C & C & Per          \\
-                Creature Handling & C  & \tdash & C  & \tdash & \tdash & C  & C  & \tdash & \tdash & \tdash & \tdash & Per          \\
-                Sense Motive      & \tdash & C  & \tdash & \tdash & \tdash & C  & \tdash & C  & \tdash & \tdash & \tdash & Per          \\
-                Spellcraft        & \tdash & C  & C  & \tdash & C  & \tdash & \tdash & \tdash & C  & C  & C  & Per          \\
-                Survival          & C  & \tdash & C  & \tdash & C  & \tdash & C  & \tdash & \tdash & \tdash & \tdash & Per          \\
-                Intimidate        & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & \tdash & Varies\fn{2} \\
-                Perform           & \tdash & \tdash & \tdash & \tdash & C  & \tdash & \tdash & C  & \tdash & \tdash & \tdash & Varies\fn{2} \\
-                Profession\fn{1}  & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & C  & Varies\fn{2} \\
-                Bluff             & C & C  & C & C  & C  & C  & C  & C  & C  & C  & \tdash & \tdash\fn{3}     \\
-                Persuasion        & C & C  & C  & C  & C  & C  & C  & C  & C  & C  & \tdash & \tdash\fn{3}     \\
+                \tb{Skill}        & \tb{Bbn} & \tb{Clr} & \tb{Drd} & \tb{Ftr} & \tb{Mge} & \tb{Mnk} & \tb{Pal} & \tb{Rgr} & \tb{Rog} & \tb{Sor} & \tb{War} & \tb{Key Ability} \\
+                \bottomrule                                                                
+                Climb             & C        & \tdash   & C        & C        & \tdash   & C        & \tdash   & C        & C        & \tdash   & \tdash   & Str              \\
+                Jump              & C        & \tdash   & C        & C        & \tdash   & C        & \tdash   & C        & C        & \tdash   & \tdash   & Str              \\
+                Swim              & C        & \tdash   & C        & C        & \tdash   & C        & \tdash   & C        & C        & \tdash   & \tdash   & Str              \\
+                Acrobatics        & C        & \tdash   & C        & C        & \tdash   & C        & \tdash   & C        & C        & \tdash   & \tdash   & Dex              \\
+                Escape Artist     & \tdash   & \tdash   & \tdash   & C        & \tdash   & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & Dex              \\
+                Ride              & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & C        & Dex              \\
+                Sleight of Hand   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & Dex              \\
+                Stealth           & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & C        & C        & \tdash   & \tdash   & Dex              \\
+                Craft             & \tdash   & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Int              \\
+                Devices           & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & Int              \\
+                Disguise          & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & Int              \\
+                Heal              & \tdash   & C        & C        & \tdash   & \tdash   & C        & C        & C        & \tdash   & \tdash   & \tdash   & Int              \\
+                Knowledge         & \tdash   & C        & \tdash   & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & C        & C        & Int              \\
+                Linguistics       & \tdash   & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & C        & \tdash   & C        & Int              \\
+                Awareness         & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Per              \\
+                Creature Handling & C        & \tdash   & C        & \tdash   & \tdash   & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Per              \\
+                Sense Motive      & \tdash   & C        & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & C        & \tdash   & C        & Per              \\
+                Spellcraft        & \tdash   & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & C        & C        & Per              \\
+                Survival          & C        & \tdash   & C        & \tdash   & \tdash   & C        & \tdash   & C        & \tdash   & \tdash   & \tdash   & Per              \\
+                Intimidate        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Varies\fn{1}     \\
+                Perform           & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & Varies\fn{1}     \\
+                Profession        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Varies\fn{1}     \\
+                Bluff             & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & \tdash\fn{2}     \\
+                Persuasion        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & \tdash\fn{2}     \\
             \end{dtabularx}
             C\@: class skill \\
-            1. Always treated as a class skill \\
-            2. Attribute varies depending on skill usage \\
-            3. No attribute applies \\
+            1. Attribute varies depending on skill usage \\
+            2. No attribute applies \\
         \end{dtable!*}
 
 \section{Using Skills}
