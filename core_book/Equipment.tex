@@ -121,10 +121,10 @@
             \begin{longtabu}{p{12em} c c >{\ccol}p{10em} c c >{\ccol}X}
                 \lcaption{Weapons}\\
                 \tb{Name} & \tb{Encumbrance} & \tb{Damage\fn{1}} & \tb{Damage Type\fn{2}} & \tb{Cost} & \tb{Weight\fn{3}} & \tb{Special} \\
-                Armor weapons &&&&&& \\
+                Armor weapons\label{Armor Weapons} &&&&&& \\
                 \tind Shield, heavy\fn{4} & Medium & \minus2d & Bludgeoning & special & special & Forceful \\
                 \tind Shield, light\fn{4} & Light & \minus3d & Bludgeoning & special & special & Forceful \\
-                \tind Spiked armor\fn{4} & Light & \minus1d & Piercing & special & special & Grappling \\
+                \tind Spiked armor\fn{4} & Medium & \minus1d & Piercing & special & special & Grappling \\
                 \tind Spiked shield, heavy\fn{4} & Medium & \minus1d & Piercing & special & special & Forceful \\
                 \tind Spiked shield, light\fn{4} & Light & \minus2d & Piercing & special & special & Forceful \\
 
@@ -335,7 +335,10 @@
         \par When attacking with a bow, you take a \minus4 penalty to accuracy against creatures that threaten you.
         \parhead{Sling} You can fire, but not load, a sling with one hand. Loading a sling is a free action that requires both hands.
         \par You can hurl ordinary stones with a sling, but stones are not as dense or as round as bullets. You take a \minus1d penalty to damage with ordinary stones.
-        \parhead{Spiked Armor} You can outfit your armor with spikes, which can deal damage in a grapple. See Armor for details.
+        \parhead{Spiked Armor} Any \glossterm{body armor} can be spiked.
+        You cannot normally attack with spiked armor.
+        However, if your armor is spiked and you are proficient with it, you deal damage with it whenever you make a successful \glossterm{grapple} or \glossterm{shove} attack.
+        Magical abilities on a suit of armor does not improve the spikes' effectiveness, but the spikes can be made into magic weapons in their own right.
         \parhead{Spiked Shield, Heavy or Light} You can bash with a spiked shield instead of using it for defense. See Armor for details.
 
         \parhead{Unarmed Strike} Anyone can attack unarmed, but it is more dangerous than attacking with a weapon. See \pcref{Unarmed Combat}, for details.
@@ -433,8 +436,10 @@
 
     \subsection{Armor Descriptions}
         Any special benefits or accessories to the types of armor found on \trefnp{Armor and Shields} are described below.
-        \parhead{Armor Spikes} You can have spikes added to your armor, which allow you to deal extra piercing damage (see \tref{Weapons}) on a successful grapple or overrun attack. If you are not proficient with the spikes, you only deal the damage if you succeed at the attack by 10 or more.
-        \par Magical abilities on a suit of armor does not improve the spikes' effectiveness, but the spikes can be made into magic weapons in their own right.
+        \parhead{Armor Spikes} You can add armor spikes to any \glossterm{body armor}.
+        Spiked armor is a \glossterm{weapon} that you can deal damage with (see \pcref{Armor Weapons}).
+        If your armor is spiked, you deal damage with it whenever you make a successful \glossterm{grapple} or \glossterm{shove} attack.
+        Magical abilities on a suit of armor does not improve the spikes' effectiveness, but the spikes can be made into magic weapons in their own right.
         \parhead{Breastplate} It comes with a helmet and greaves.
         \parhead{Buckler} This small metal shield is worn strapped to your forearm.
         You can hold items in a hand holding a buckler.
