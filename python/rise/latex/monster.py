@@ -97,21 +97,19 @@ def get_latex(
                     ''' if active_abilities else ""}
                 \\end<spellcontent>
 
-                \\begin<spellsubcontent>
-                    \\begin<spellfooter>
-                        \\pari \\textbf<Awareness> +6
-                        \\pari \\textbf<Speed> {speed} ft.;
-                            \\textbf<Space> {space} ft.;
-                            \\textbf<Reach> {reach} ft.
-                        \\pari \\textbf<Attributes>
-                            Str {strength},
-                            Dex {dexterity},
-                            Con {constitution},
-                            Int {intelligence},
-                            Per {perception},
-                            Wil {willpower}
-                    \\end<spellfooter>
-                \\end<spellsubcontent>
+                \\begin<monsterfooter>
+                    \\pari \\textbf<Awareness> +6
+                    \\pari \\textbf<Speed> {speed} ft.;
+                        \\textbf<Space> {space} ft.;
+                        \\textbf<Reach> {reach} ft.
+                    \\pari \\textbf<Attributes>
+                        Str {strength},
+                        Dex {dexterity},
+                        Con {constitution},
+                        Int {intelligence},
+                        Per {perception},
+                        Wil {willpower}
+                \\end<monsterfooter>
             \\end<monsection>
         """
     )
