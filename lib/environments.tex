@@ -200,7 +200,6 @@
 {
     \end{thesamepage}
 }
-
 \surroundwithmdframed[
     style=spellcontent,
     leftline=true,
@@ -283,13 +282,27 @@
 {
     \end{fakehang}
 }
-
 \surroundwithmdframed[
     style=colorenv,
     backgroundcolor=Gainsboro,
     leftline=true,
     rightline=true,
 ]{spellfooter}
+
+\DeclareDocumentEnvironment{monsterfooter}{}
+{
+    \begin{fakehang}
+}
+{
+    \end{fakehang}
+}
+\surroundwithmdframed[
+    style=colorenv,
+    backgroundcolor=Gainsboro,
+    leftline=true,
+    rightline=true,
+    bottomline=true,
+]{monsterfooter}
 
 \DeclareDocumentEnvironment{spelltriggercolor}{}
 {
