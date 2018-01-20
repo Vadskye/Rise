@@ -45,11 +45,11 @@ class Attack(object):
             """, f"""
                     \\spellspecial {self.special}
             """ if self.special else None, f"""
-                    \\spellsuccess {self.success}
+                    \\hit {self.success}
             """ if self.success else None, f"""
-                    \\spellcritical {self.critical}
+                    \\crit {self.critical}
             """ if self.critical else None, f"""
-                    \\spellfailure {self.failure}
+                    \\miss {self.failure}
             """ if self.failure else None, f"""
                 \\end<spellattack>
             """,
