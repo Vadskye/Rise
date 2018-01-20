@@ -31,38 +31,26 @@ def aberrations():
         aboleth,
         active_abilities=[
             active_ability(
-                'Confusion',
-                accuracy=aboleth.accuracy(aboleth.willpower),
-                defense='Mental',
-                hit="The target is confused as a condition.",
-                targeting='One creature in Medium range',
-            ),
-            active_ability(
                 'Enslave',
-                accuracy=aboleth.accuracy(aboleth.willpower),
-                defense='Mental',
-                effect="This ability costs an action point to use.",
-                hit="The target is stunned as a condition.",
-                critical="""
-                    The target is dominated by the aboleth.
-                    This effect lasts as long as the aboleth attunes to it.
+                effect=f"""
+                    The aboleth spends an action point and makes a +{aboleth.accuracy(aboleth.willpower)} vs. Mental attack against a creature in Medium range.
+                    \\hit The target is \\glossterm<stunned> as a \\glossterm<condition>.
+                    \\crit The target is \\glossterm<dominated> by the aboleth for as long as the aboleth \\glossterm<attunes> to this ability.
                 """,
-                targeting='One creature in Medium range',
             ),
             active_ability(
                 'Mind Crush',
-                accuracy=aboleth.accuracy(aboleth.willpower),
-                defense='Mental',
-                hit=f"{aboleth.standard_damage(aboleth.willpower) + 2} psionic damage",
-                targeting='One creature in Long range',
+                effect=f"""
+                    The aboleth makes a +{aboleth.accuracy(aboleth.willpower)} vs. Mental attack against a creature in Long range.
+                    \\hit The target takes {aboleth.standard_damage(aboleth.willpower) + 2} psionic damage.
+                """,
             ),
             active_ability(
                 'Psionic Blast',
-                accuracy=aboleth.accuracy(aboleth.willpower),
-                defense='Mental',
-                # TODO: better damage type?
-                hit=f"{aboleth.standard_damage(aboleth.willpower)} psionic damage",
-                targeting='Enemies in Large cone',
+                effect=f"""
+                    The aboleth makes a +{aboleth.accuracy(aboleth.willpower)} vs. Mental attack against enemies in a Large cone.
+                    \\hit Each target takes {aboleth.standard_damage(aboleth.willpower)} psionic damage.
+                """,
             ),
         ],
     ))
@@ -322,10 +310,10 @@ def humanoids():
         active_abilities=[
             active_ability(
                 'Hex',
-                accuracy=cultist.accuracy(cultist.willpower),
-                defense='Fortitude',
-                hit=f"{cultist.standard_damage(cultist.willpower)} life damage, and the target is sickened as a condition.",
-                targeting='One target in Medium range',
+                effect=f"""
+                    The cultist makes a +{cultist.accuracy(cultist.willpower)} vs. Fortitude attack against one creature in Medium range.
+                    \hit The target takes {cultist.standard_damage(cultist.willpower)} life damage and is \\glossterm<sickened> as a \\glossterm<condition>.",
+                """,
             ),
         ],
     ))
@@ -498,11 +486,11 @@ def humanoids():
         active_abilities=[
             active_ability(
                 'Hit Worse',
-                accuracy=orc_shaman.accuracy(orc_shaman.willpower),
-                defense='Mental',
-                hit="As a condition, the target takes a -3 penalty to accuracy with strikes.",
-                critical="As above, except that the penalty is increased to -6.",
-                targeting='One target in Close range',
+                effect=f"""
+                    The shaman makes a +{orc_shaman.accuracy(orc_shaman.willpower)} vs. Mental attack against one creature in Close range.
+                    \\hit The target takes a -3 penalty to accuracy with strikes as a \\glossterm<condition>.
+                    \\crit As above, except that the penalty is increased to -6.
+                """,
             ),
             active_ability(
                 'Hurt Less',
@@ -564,10 +552,10 @@ def magical_beasts():
             ),
             active_ability(
                 'Spit Acid',
-                accuracy=ankheg.accuracy(),
-                defense='Reflex',
-                hit=f"{ankheg.standard_damage(ankheg.constitution) - 1} acid damage, and each target is sickened as a condition.",
-                targeting='Everything in 5 ft. wide Medium line',
+                effect=f"""
+                    The ankheg makes a +{ankheg.accuracy()} vs. Reflex attack against everything in a 5 ft. wide Medium line.
+                    \\hit Each target takes {ankheg.standard_damage(ankheg.constitution) - 1} acid damage, and creatures are \\glossterm<sickened> as a \\glossterm<condition>.
+                """,
             ),
         ]
     ))
@@ -611,14 +599,12 @@ def magical_beasts():
         active_abilities=[
             active_ability(
                 'Petrifying Gaze',
-                accuracy=basilisk.accuracy(),
-                defense='Fortitude',
-                hit="The target is nauseated as a condition.",
-                critical=f"""
-                    As above, and as an additional condition, the target takes {basilisk.standard_damage(basilisk.constitution) - 2} physical damage at the end of each action phase.
+                effect=f"""
+                    The basilisk makes a +{basilisk.accuracy()} vs. Fortitude attack against one creature in Medium range.
+                    \\hit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
+                    \\crit As above, and as an additional condition, the target takes {basilisk.standard_damage(basilisk.constitution) - 2} physical damage at the end of each action phase.
                     If it takes vital damage in this way, it is petrified permanently.
                 """,
-                targeting="One creature in Medium range",
             ),
         ],
     ))
@@ -728,10 +714,10 @@ def monstrous_humanoids():
         active_abilities=[
             active_ability(
                 'Wail',
-                accuracy=banshee.accuracy(banshee.willpower),
-                defense='Fortitude',
-                hit=f"{banshee.standard_damage(banshee.willpower) - 1} sonic damage, and each target is sickened as a condition.",
-                targeting='Everything in a Large radius',
+                effect=f"""
+                    The banshee makes a +{banshee.accuracy(banshee.willpower)} vs. Fortitude attack against everything in a Large radius.
+                    \\hit Each target takes {banshee.standard_damage(banshee.willpower) - 1} sonic damage, and creatures are sickened as a condition.
+                """,
             ),
         ],
     ))
@@ -801,10 +787,10 @@ def monstrous_humanoids():
         active_abilities=[
             active_ability(
                 'Lightning Javelin',
-                accuracy=storm_giant.accuracy(),
-                defense='Reflex',
-                hit=f"{storm_giant.standard_damage(storm_giant.willpower)} electricity damage.",
-                targeting='All in a 10 ft. wide Large line',
+                effect=f"""
+                    The storm giant makes a +{storm_giant.accuracy()} vs. Reflex attack against everything in a 10 ft. wide Large line.
+                    \\hit Each target takes {storm_giant.standard_damage(storm_giant.willpower)} electricity damage.
+                """,
             ),
             active_ability(
                 'Thunderstrike',
@@ -836,18 +822,18 @@ def monstrous_humanoids():
         active_abilities=[
             active_ability(
                 'Vital Surge',
-                accuracy=green_hag.accuracy(green_hag.perception),
-                defense='Fortitude',
-                hit=f"{green_hag.standard_damage(green_hag.perception) + 1} life damage.",
+                effect=f"""
+                    The hag makes a +{green_hag.accuracy(green_hag.perception)} vs. Fortitude attack against one creature within Medium range.
+                    \\hit The target takes {green_hag.standard_damage(green_hag.perception) + 1} life damage.
+                """,
             ),
             active_ability(
                 "Green Hag's Curse",
-                accuracy=green_hag.accuracy(green_hag.perception),
-                defense='Mental',
-                hit="""
-                    As a condition, the target is either dazed, fatigued, or sickened, as the hag chooses.
+                effect=f"""
+                    The hag makes a +{green_hag.accuracy(green_hag.perception)} vs. Mental atack aginst one creature within Medium range.
+                    \\hit As a condition, the target is either dazed, fatigued, or sickened, as the hag chooses.
+                    \\crit As three separate conditions, the target is dazed, fatigued, and sickened.
                 """,
-                critical="As three separate conditions, the target is dazed, fatigued, and sickened.",
             ),
             active_ability(
                 'Coven Rituals',
@@ -876,14 +862,12 @@ def monstrous_humanoids():
         active_abilities=[
             active_ability(
                 'Petrifying Gaze',
-                accuracy=medusa.accuracy(),
-                defense='Fortitude',
-                hit="The target is nauseated as a condition.",
-                critical=f"""
-                    As above, and as an additional condition, the target takes {medusa.standard_damage(medusa.constitution) - 2} physical damage at the end of each action phase.
+                effect=f"""
+                    The medusa makes a +{medusa.accuracy()} vs. Fortitude attack against one creature in Medium range.
+                    \\hit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
+                    \\crit As above, and as an additional condition, the target takes {medusa.standard_damage(medusa.constitution) - 2} physical damage at the end of each action phase.
                     If it takes vital damage in this way, it is petrified permanently.
                 """,
-                targeting="One creature in Medium range",
             ),
         ],
     ))
@@ -938,10 +922,10 @@ def outsiders():
         active_abilities=[
             active_ability(
                 'Electrobolt',
-                accuracy=arrowhawk.accuracy(),
-                defense='Reflex',
-                hit=f"{arrowhawk.standard_damage(arrowhawk.constitution) + 1} electricity damage.",
-                targeting='One target in Medium range',
+                effect=f"""
+                    The arrowhawk makes a +{arrowhawk.accuracy()} vs. Reflex attack against one creature or object in Medium range.
+                    \\hit The target takes {arrowhawk.standard_damage(arrowhawk.constitution) + 1} electricity damage.
+                """,
             ),
         ],
         speed="60 ft. fly (good)",
@@ -987,9 +971,10 @@ def outsiders():
         active_abilities=[
             active_ability(
                 'Fire Breath',
-                accuracy=hell_hound.accuracy(),
-                defense='Reflex',
-                hit=f"{hell_hound.standard_damage(hell_hound.constitution)} fire damage",
+                effect=f"""
+                    The hell hound makes a +{hell_hound.accuracy()} vs. Reflex attack against everything in a Medium cone.
+                    \\hit Each target takes {hell_hound.standard_damage(hell_hound.constitution)} fire damage.
+                """,
             ),
         ],
         immunities=['fire damage'],
@@ -1014,19 +999,18 @@ def outsiders():
                 'Tail Grab',
                 effect=f"""
                     The salamander makes a tail slam strike.
-                    If the attack result beats the target's Fortitude defense, it is grappled.
+                    % wording with defenses vs. grappling?
+                    If the attack result beats the target's Fortitude defense, the salamander begins grappling the target.
                 """,
             ),
             active_ability(
                 'Flame Aura',
                 effect=f"""
-                    The salamander intensifies its natural body heat, creating a burning aura around it.
-                    At the end of each action phase, the salamander makes a {flamebrother_salamander.accuracy(flamebrother_salamander.constitution)} attack
-                        against everything within a Medium radius emanation of it.
-                    A hit deals {flamebrother_salamander.standard_damage(flamebrother_salamander.constitution) - 1} fire damage to each target.
-
-                    This ability costs an action point to use.
-                    It lasts as long as the salamander sustains it as a standard action.
+                    The salamander spends an action point to intensify its natural body heat, creating a burning aura around it.
+                    This ability lasts as long as the salamander sustains it as a standard action.
+                    At the end of each action phase, the salamander makes a +{flamebrother_salamander.accuracy(flamebrother_salamander.constitution)} vs. Reflex
+                        attack against everything within a Medium radius emanation of it.
+                    \\hit Each target takes {flamebrother_salamander.standard_damage(flamebrother_salamander.constitution) - 1} fire damage.
                 """,
             ),
         ],
@@ -1074,13 +1058,11 @@ def outsiders():
             active_ability(
                 'Flame Aura',
                 effect=f"""
-                    The salamander intensifies its natural body heat, creating a burning aura around it.
-                    At the end of each action phase, the salamander makes a {salamander_battlemaster.accuracy(salamander_battlemaster.constitution)} attack
-                        against everything within a Medium radius emanation of it.
-                    A hit deals {salamander_battlemaster.standard_damage(salamander_battlemaster.constitution) - 1} fire damage to each target.
-
-                    This ability costs an action point to use.
-                    It lasts as long as the salamander sustains it as a standard action.
+                    The salamander spends an action point to intensify its natural body heat, creating a burning aura around it.
+                    This ability lasts as long as the salamander sustains it as a standard action.
+                    At the end of each action phase, the salamander makes a +{flamebrother_salamander.accuracy(flamebrother_salamander.constitution)} vs. Reflex
+                        attack against everything within a Medium radius emanation of it.
+                    \\hit Each target takes {flamebrother_salamander.standard_damage(flamebrother_salamander.constitution) - 1} fire damage.
                 """,
             ),
         ],
@@ -1143,11 +1125,11 @@ def undead():
             ),
             active_ability(
                 'Mournful Dirge',
-                accuracy=dirgewalker.accuracy(),
-                defense='Mental',
-                hit="Each target is dazed as a condition.",
-                critical="Each target is stunned as a condition.",
-                targeting='All creatures in a Medium radius',
+                effect=f"""
+                    The dirgewalker makes a +{dirgewalker.accuracy()} vs. Mental attack against all creatures in a Medium radius.
+                    \\hit Each target is dazed as a condition.
+                    \\crit Each target is stunned as a condition.
+                """,
             ),
         ],
     ))
