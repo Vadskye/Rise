@@ -1304,11 +1304,10 @@ Feats can be used to specialize your character particular area, to grant your ch
         \featben
 
         \ff[1]{Bolster} You gain the \textit{bolster} ability.
-        \begin{ability}{Bolster}[\glossterm{Mind}, \glossterm{Sustain} (minor)]
+        \begin{ability}{Bolster}[\glossterm{Mind}]
             As a standard action, you can spend an \glossterm{action point} to use this ability.
             If you do, all allies other than yourself within a \arealarge radius burst from you can remove one \glossterm{condition}.
-            In addition, each target gains \glossterm{temporary hit points} equal to your Willpower.
-            The temporary hit points last as long as you \glossterm{sustain} this ability.
+            In addition, each target heals hit points equal to your Willpower.
         \end{ability}
 
         \ff[2]{Battle Command} You gain the \textit{battle command} ability.
@@ -1321,13 +1320,13 @@ Feats can be used to specialize your character particular area, to grant your ch
         \ff[4]{Inspiring Presence} All allies other than yourself within a \arealarge radius emanation from you gain a \plus1 bonus to Mental defense.
         This ability is \glossterm{suppressed} if you are \glossterm{defeated}.
 
-        \ff[6]{Potent Bolster} The temporary hit points provided by your \textit{bolster} ability increase to twice your Willpower.
+        \ff[6]{Greater Bolster} The healing from your \textit{bolster} ability increases to twice your Willpower.
 
         \ff[8]{Potent Command} The target of your \textit{battle command} also gains a \plus1d bonus to \glossterm{strike damage}.
 
         \ff[10]{Greater Inspiring Presence} The defense bonus from your \textit{inspiring presence} ability increases to \plus2.
 
-        \ff[12]{Greater Potent Bolster} The temporary hit points provided by your \textit{bolster} ability increase to three times your Willpower.
+        \ff[12]{Supreme Bolster} The healing from your \textit{bolster} ability increases to three times your Willpower.
 
         \ff[14]{Greater Potent Command} The damage bonus from your \textit{potent command} ability increases to \plus2d.
 
@@ -1518,8 +1517,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \begin{ability}{Inspiring Performance}[\glossterm{Delusion}, \glossterm{Mind}, \glossterm{Sustain} (minor)]
             As a standard action, you can spend an \glossterm{action point} to use this ability.
             When you do, you begin a performance using one of your Perform skills.
-            Make a Perform check on a creature within \rngmed range.
-            The target gains temporary hit points equal to your check result.
+            One other willing creature within \rngmed range gains a \plus2 bonus to \glossterm{checks}.
 
             If the target can neither see nor hear your performance, the effect immediately ends.
             This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
@@ -1530,16 +1528,15 @@ Feats can be used to specialize your character particular area, to grant your ch
             As a standard action, you can spend an \glossterm{action point} to use this ability.
             When you do, you begin a performance using one of your Perform skills.
             Make a Perform vs. Mental attack against up to five creatures within \rngmed range.
-            If a target thinks that you or your allies are threatening it, you take a \minus5 penalty to accuracy against it on this attack.
             On a hit, each target is \fascinated by you.
-            Any act by you or your apparent allies that threatens or damages a target breaks the effect for that creature.
+            Any act by you or your apparent allies that damages a target or that causes it to feel threatened breaks the effect for that creature.
             An observant target may interpret overt threats to its allies as a threat to itself.
 
             If a target can neither see nor hear your performance, the effect immediately ends for that target.
             This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
         \end{ability}
 
-        \ff[6]{Inspire Courage}[Magical] A target affected by your \textit{inspiring performance} is immune to \glossterm{Fear} abilities as long as the effect lasts.
+        \ff[6]{Greater Inspirating Performance}[Magical] The bonus from your \textit{inspiring performance} ability increases to \plus3.
 
         \ff[8]{Mass Performance}[Magical] You can target up to two creatures with your \textit{inspiring performance} ability.
         In addition, you can target any number of creatures with your \textit{mesmerizing performance} ability.
@@ -1561,7 +1558,7 @@ Feats can be used to specialize your character particular area, to grant your ch
             Exceptionally unreasonable suggestions can impose even greater penalties, and exceptionally reasonable suggestions can give accuracy bonuses.
         \end{ability}
 
-        \ff[12]{Persistent Fascination}[Magical] Targets affected by your \textit{mesmerizing performance} ability remain \glossterm{fascinated} for one minute after your performance ends.
+        \ff[12]{Supreme Inspirating Performance}[Magical] The bonus from your \textit{inspiring performance} ability increases to \plus4.
 
         \ff[14]{Irresistible Dance} You ignore all failure chances on Perform attacks and checks you make.
 
@@ -1570,9 +1567,7 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[16]{Greater Specialization} The bonus to Perform increases to \plus6.
 
-        % maybe add ability to remove combat penalty for fascination ability
-
-        \ff[18]{Inspire Heroism} Each creature affected by your \textit{inspiring performance} gains additional temporary hit points equal to your level.
+        \ff[18]{Greater Mesmeric Suggestion} You gain a \plus2 bonus to accuracy with your \textit{mesmeric suggestion} ability.
     \end{feat}
 
     \begin{feat}{Persuasion Specialization}{Skill}
