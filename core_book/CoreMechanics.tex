@@ -994,6 +994,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         When you take damage, you subtract that damage from your hit points.
         No matter how many hit points you lose, your character isn't significantly hindered until your hit points drop to 0.
         When you run out of hit points, your actions are limited and you might die.
+        You can't normally exceed your maximum hit points, even with magical healing.
 
         Your hit points are calculated as follows:
 
@@ -1009,6 +1010,10 @@ It defines how attributes work and explains how to make physical attacks in comb
         When you take damage in excess of your hit points while \glossterm{wounded}, that damage represents serious physical injury to your body.
         This is called \glossterm{vital damage}.
         For every 4 points of \glossterm{vital damage} you have, you take a \minus1 penalty to \glossterm{accuracy}, \glossterm{checks}, and \glossterm{defenses}.
+
+        \parhead{Healing Vital Damage} Vital damage is much more difficult to heal than lost hit points.
+        If you take a \glossterm{long rest}, you heal vital damage equal to your starting Constitution \add half your level, to a minimum of 1 vital damage.
+        Abilities that heal hit points cannot heal vital damage unless they explicitly say they can.
 
     \subsection{Overkill Damage}\label{Overkill Damage}
         Normally, when you take damage that would reduce your hit points to 0, any excess damage from the attack is wasted.
@@ -1052,24 +1057,6 @@ It defines how attributes work and explains how to make physical attacks in comb
         An ally can make a Heal check to tend to you while you are dying.
         The Heal check result can be used in place of your Fortitude defense.
         However, any \glossterm{vital damage penalties} you suffer apply to the Heal check in the same way that they apply to your Fortitude defense.
-
-    \subsection{Healing}
-        After taking damage, you can recover hit points through natural healing or through magical healing.
-        In any case, you can't regain hit points past your full normal hit point total.
-
-        \parhead{Natural Healing} With half an hour of rest, you recover one quarter of your hit points.
-        Any significant interruption (such as combat or the like) during your rest prevents you from healing.
-        If you rest for two hours, you recover all your hit points.
-
-        \parhead{Magical Healing} Various abilities and spells can restore hit points.
-        However, only certain spells can heal vital damage, as specified in the spell description.
-        Unless a spell says it can cure vital damage, it cannot -- though it can still stabilize dying characters.
-        Magical healing has no effect on the hit points of creatures with vital damage.
-
-        \parhead{Healing Vital Damage} Vital damage takes much longer to heal than hit point damage.
-        Resting for 8 hours restores an amount of vital damage equal to 1 \add half the character's Constitution (minimum 1).
-        A character can have both hit points and vital damage.
-        As long as a character has vital damage, he is staggered, even if he is at full hit points.
 
     \subsection{Subdual Damage}\label{Subdual Damage}
         Some attacks and environmental effects deal subdual damage.
