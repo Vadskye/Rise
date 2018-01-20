@@ -157,10 +157,8 @@
 {
     \IfBooleanT{#1}{\spellline}
     \spellatk{#2}
-    \begin{spellmargin}
 }
 {
-    \end{spellmargin}
 }
 
 % with a star, include \spellline
@@ -252,36 +250,24 @@
 ]{augmenttargetinginfo}
 
 \DeclareDocumentEnvironment{spelleffects}{}
-{
-    \begin{fakehang}
-}
-{
-    \end{fakehang}
-}
+{}
+{}
 \surroundwithmdframed[
     style=colorenv,
     backgroundcolor=Lavender,
 ]{spelleffects}
 
 \DeclareDocumentEnvironment{augmenteffects}{}
-{
-    \begin{fakehang}
-}
-{
-    \end{fakehang}
-}
+{}
+{}
 \surroundwithmdframed[
     style=colorenv,
     backgroundcolor=Lavender,
 ]{augmenteffects}
 
 \DeclareDocumentEnvironment{spellfooter}{}
-{
-    \begin{fakehang}
-}
-{
-    \end{fakehang}
-}
+{}
+{}
 \surroundwithmdframed[
     style=colorenv,
     backgroundcolor=Gainsboro,
