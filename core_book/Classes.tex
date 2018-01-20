@@ -183,7 +183,8 @@ This choice determines a great deal about your character's abilities.
 
             \begin{ability}{Demoralizing Shout}[\glossterm{Mind}]
                 Make a Willpower vs. Mental attack against all enemies within an \arealarge radius burst from you.
-                As a \glossterm{condition}, each target is \shaken by you on a hit or \frightened by you on a critical hit.
+                \hit Each target is \glossterm{shaken} by you as a \glossterm{condition}.
+                \crit Each target is \glossterm{frightened} by you as a \glossterm{condition}.
 
                 At 6th level, if you do not hit any targets with the attack, you regain the action point spent to use this ability.
                 At 12th level, the area increases to an \areahuge radius.
@@ -195,7 +196,7 @@ This choice determines a great deal about your character's abilities.
                 Make a Strength vs. Reflex attack against all enemies standing on solid ground adjacent to you.
                 You can only use this ability while standing on solid ground.
                 If you use this ability during the \glossterm{action phase}, you can also make a \glossterm{strike} during the \glossterm{delayed action phase}.
-                Each target is knocked \prone on a hit.
+                \hit Each target is knocked \prone.
 
                 At 6th level, the area increases to an \areamed radius burst.
                 At 12th level, you gain a \plus1d bonus to damage with the strike.
@@ -282,7 +283,7 @@ This choice determines a great deal about your character's abilities.
             \begin{ability}{Thunderous Shout}[\glossterm{Sonic}]
                 Make a Constitution vs. Fortitude attack against all creatures and objects in an \areamed cone-shaped burst from you.
                 Your \glossterm{power} with this ability is equal to your Constitution.
-                Each target takes sonic \glossterm{standard damage} -1d on a hit.
+                \hit Each target takes sonic \glossterm{standard damage} -1d.
 
                 At 6th level, a hit also makes each target \glossterm{deafened} as a \glossterm{condition}.
                 At 12th level, the area increases to \arealarge.
@@ -598,8 +599,8 @@ This choice determines a great deal about your character's abilities.
             In addition, you are immune to \glossterm{Death} effects.
             \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
             If you do, you make a \textit{divine power} vs. Fortitude attack against a creature within \rngmed range.
-            On a hit, the target takes life \glossterm{standard damage} \plus2d.
-            You gain a \plus2d bonus to damage with this ability if the target is \glossterm{bloodied}.
+            \hit The target takes life \glossterm{standard damage} \plus2d.
+            This damage is increased by \plus2d if the target is \glossterm{bloodied}.
             \parhead{Mastery} You constantly radiate an aura of death in a \areahuge radius emanation from you.
             If a living enemy in the area takes \glossterm{vital damage}, it immediately dies.
 
@@ -613,7 +614,7 @@ This choice determines a great deal about your character's abilities.
                 As a standard action, you can spend an \glossterm{action point} to use this ability.
                 If you do, you make a \textit{divine power} vs. Fortitude attack against all unattended objects in a \arealarge radius.
                 You may freely exclude any number of 5-ft\. cubes from the area, as long as the resulting area is still contiguous.
-                On a hit, if a target's \glossterm{hardness} is lower than your divine power, it crumbles into a fine power and is irreparably \glossterm{broken}.
+                \hit For each target, if its \glossterm{hardness} is lower than your divine power, it crumbles into a fine power and is irreparably \glossterm{broken}.
             \end{ability}
             \parhead{Mastery} Whenever you deal damage to a creature or object, its damage reduction and hardness (if any) are reduced by an amount equal to your \textit{divine power}.
             In addition, its Fortitude defense is reduced by 2.
@@ -648,10 +649,9 @@ This choice determines a great deal about your character's abilities.
             \begin{ability}{Compel Evil}[\glossterm{Compulsion}, \glossterm{Mind}]
                 As a standard action, you can spend an \glossterm{action point} to use this ability.
                 If you do, make a \textit{divine power} vs. Mental attack against a creature within \rngmed range.
-                On a hit, the target takes an evil action as soon as it can.
-                You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
-
                 Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
+                \hit The target takes an evil action as soon as it can.
+                You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
             \end{ability}
             \parhead{Mastery} When you use your Evil domain gift, you can spend an \glossterm{action point}.
             If you do, you can redirect your damage to an unwilling creature that phase.
@@ -687,10 +687,9 @@ This choice determines a great deal about your character's abilities.
             \begin{ability}{Compel Good}[\glossterm{Compulsion}, \glossterm{Mind}]
                 As a standard action, you can spend an \glossterm{action point} to use this ability.
                 If you do, make a \textit{divine power} vs. Mental attack against a creature within \rngmed range.
-                On a hit, the target takes an good action as soon as it can.
-                You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
-
                 Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
+                \hit The target takes an good action as soon as it can.
+                You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
             \end{ability}
             \parhead{Mastery} Whenever you use your Good domain gift, you can redirect all damage to you instead of only half.
 
@@ -717,12 +716,13 @@ This choice determines a great deal about your character's abilities.
             \begin{ability}{Compel Law}[\glossterm{Compulsion}, \glossterm{Mind}]
                 As a standard action, you can spend an \glossterm{action point} to use this ability.
                 If you do, make a \textit{divine power} vs. Mental attack against all creatures within a \arealarge radius.
-                On a hit, as a \glossterm{condition}, each target is unable to break the laws that apply in the area, and any attempt to do so simply fails.
+                \hit Each target is unable to break the laws that apply in the area, and any attempt to do so simply fails.
                 The laws which are applied are those which are most appropriate for the area, regardless of whether you or any other creature know those laws.
-                In areas under ambiguous or nonexistent government, this ability may have unexpected effects, or it may have no effect at all.
 
+                % Sufficiently clear that this isn't part of the hit effect?
                 When you use this ability, you also gain the condition.
                 If this condition is removed from you, it is also removed from all other affected creatures.
+                In areas under ambiguous or nonexistent government, this ability may have unexpected effects, or it may have no effect at all.
             \end{ability}
             \parhead{Mastery} Whenever you roll less than a 5 on an \glossterm{attack roll}, it is treated as if you had rolled a 5.
 
@@ -780,8 +780,7 @@ This choice determines a great deal about your character's abilities.
                 You must also choose a belief that the target has.
                 The belief may be a lie that you told it, or even a simple misunderstanding (such as believing a hidden creature is not present in a room).
                 If the creature does not already hold the chosen belief, this ability automatically fails.
-
-                On a hit, the target continues to maintain the chosen belief, regardless of any evidence to the contrary.
+                \hit The target continues to maintain the chosen belief, regardless of any evidence to the contrary.
                 It will interpret any evidence that the falsehood is incorrect to be somehow wrong -- an illusion, a conspiracy to decieve it, or any other reason it can think of to continue believing the falsehood.
                 At the end of the effect, the creature can decide whether it believes the falsehood or not, as normal.
             \end{ability}
@@ -1314,8 +1313,9 @@ This choice determines a great deal about your character's abilities.
             \begin{ability}{Challenge}[\glossterm{Mind}]
                 Make a \glossterm{strike}.
                 In addition to the strike's normal effects, you also compare the attack result against the target's Mental defense.
-                As a \glossterm{condition}, on a hit, the target suffers a \minus3 penalty to accuracy on all attacks that do not include you as a target, or a \minus6 penalty on a critical hit.
+                \hit As a \glossterm{condition}, the target suffers a \minus3 penalty to accuracy on all attacks that do not include you as a target.
                 This condition is removed if you are \glossterm{defeated}.
+                \crit As above, except that the penalty is increased to \minus6.
 
                 At 6th level, you gain a \plus1 bonus to accuracy on the strike.
                 At 12th level, the accuracy bonus increases to \plus2.
@@ -1334,7 +1334,8 @@ This choice determines a great deal about your character's abilities.
             \begin{ability}{Daunting Blow}[\glossterm{Mind}]
                 Make a \glossterm{strike}.
                 In addition to the strike's normal effects, you also compare the attack result against the target's Mental defense.
-                As a \glossterm{condition}, on a hit, the target suffers a \minus3 penalty to defenses against your attacks, or a \minus6 penalty on a critical hit.
+                \hit As a \glossterm{condition}, the target suffers a \minus3 penalty to defenses against your attacks.
+                \crit As above, except that the penalty is increased to \minus6.
 
                 At 6th level, you gain a \plus1 bonus to accuracy on the strike.
                 At 12th level, the accuracy bonus increases to \plus2.
@@ -2696,9 +2697,10 @@ This choice determines a great deal about your character's abilities.
             \begin{ability}{Daunting Blow}[\glossterm{Mind}]
                 Make a \glossterm{strike}.
                 In addition to the strike's normal effects, you also compare the attack result against the target's Mental defense.
-                As a \glossterm{condition}, on a hit, the target suffers a \minus3 penalty to defenses against your attacks, or a \minus6 penalty on a critical hit.
+                \hit As a \glossterm{condition}, the target suffers a \minus3 penalty to defenses against your attacks.
+                \crit As above, except that the penalty is increased to \minus6.
 
-                At 6th level, you gain a \plus1 bonus to accuracy with the strike.
+                At 6th level, you gain a \plus1 bonus to accuracy on the strike.
                 At 12th level, the accuracy bonus increases to \plus2.
                 At 18th level, the accuracy bonus increases to \plus3.
             \end{ability}
@@ -2716,7 +2718,8 @@ This choice determines a great deal about your character's abilities.
             \begin{ability}{Hamstring}
                 Make a \glossterm{strike} with a slashing or piercing weapon.
                 In addition to the strike's normal effects, you also compare the attack result against the target's Reflex defense.
-                As a \glossterm{condition}, the target is \slowed on a hit, or \immobilized on a critical hit.
+                \hit The target is \glossterm{slowed} as a \glossterm{condition}.
+                \crit The target is \glossterm{immobilized} as a \glossterm{condition}.
 
                 At 6th level, you gain a \plus1 bonus to accuracy on the strike.
                 At 12th level, the accuracy bonus increases to \plus2.
@@ -2726,7 +2729,8 @@ This choice determines a great deal about your character's abilities.
             \begin{ability}{Head Shot}[\glossterm{Mind}]
                 Make a \glossterm{strike} with a bludgeoning weapon.
                 In addition to the strike's normal effects, you also compare the attack result against the target's Mental defense.
-                As a \glossterm{condition}, the target is \dazed on a hit, or \stunned on a critical hit.
+                \hit The target is \glossterm{dazed} as a \glossterm{condition}.
+                \crit The target is \glossterm{stunned} as a \glossterm{condition}.
 
                 At 6th level, you gain a \plus1 bonus to accuracy on the strike.
                 At 12th level, the accuracy bonus increases to \plus2.

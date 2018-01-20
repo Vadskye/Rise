@@ -297,8 +297,8 @@ Feats can be used to specialize your character particular area, to grant your ch
             As a standard action, you can spend an \glossterm{action point} to use this ability.
             When you do, you begin a performance using one of your Perform skills.
             Make a Perform vs. Mental attack against a creature within \rngmed range, and choose a willing creature within the same range.
-            As a \glossterm{condition}, the target suffers a \minus3 penalty to \glossterm{accuracy} with attacks that do not include your chosen creature as a target.
-            The penalty is increased to \minus6 on a critical hit.
+            \hit As a \glossterm{condition}, the target suffers a \minus3 penalty to \glossterm{accuracy} with attacks that do not include your chosen creature as a target.
+            \crit As above, except that the penalty is increased to \minus6.
 
             If the target can neither see nor hear your performance, the effect immediately ends.
             This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
@@ -984,7 +984,7 @@ Feats can be used to specialize your character particular area, to grant your ch
             As a standard action, you can spend an \glossterm{action point} to use this ability.
             If you do, you make an Escape Artist attack against all \glossterm{magical} effects on you.
             The DR for each effect is equal to 10 \add the effect's \glossterm{power}.
-            On a hit, each effect is \glossterm{dismissed}, if it is an effect that can be dismissed.
+            \hit Each effect is \glossterm{dismissed}, if it is an effect that can be dismissed.
         \end{ability}
 
         You can only dismiss effects with this ability which target you directly, not area effects which include you as a target.
@@ -1005,11 +1005,12 @@ Feats can be used to specialize your character particular area, to grant your ch
         \featben
 
         \ff[1]{Energy Burst} You gain the \textit{energy burst} ability.
-        \begin{ability}{Energy Burst}
+        \begin{ability}{Energy Burst}[(see text)]
             As a standard action, you can spend an \glossterm{action point} to use this ability.
             If you do, choose a creature or object within \rngclose range and a type of \glossterm{energy}: cold, electricity, fire, or sonic.
             You make a \glossterm{spellpower} attack against the target's Reflex defense if you chose electricity or fire, or against the target's Fortitude defense if you chose cold or sonic.
-            On a hit, the target takes \glossterm{standard damage} \plus1d of the chosen damage type.
+            \hit The target takes \glossterm{standard damage} \plus1d of the chosen damage type.
+
             This ability has the \glossterm{ability tag} corresponding to the type of energy chosen.
         \end{ability}
 
@@ -1078,9 +1079,9 @@ Feats can be used to specialize your character particular area, to grant your ch
             If you do, you make a melee \glossterm{strike} against an adjacent creature.
             In addition to the strike's normal effects, you also compare the attack result against the target's Mental defense.
 
-            On a hit, the target is \glossterm{immobilized} as a \glossterm{condition}.
+            \hit The target is \glossterm{immobilized} as a \glossterm{condition}.
             This effect immediately ends if you are \glossterm{defeated} or if you stop being adjacent to the target.
-            On a critical hit, the immobilization does not end if you stop being adjacent to the target.
+            \crit The target is \glossterm{immobilized} as a \glossterm{condition}.
         \end{ability}
 
         \ff[2]{Protect} You gain the \textit{protect} ability.
@@ -1484,9 +1485,10 @@ Feats can be used to specialize your character particular area, to grant your ch
             As a standard action, you can spend an \glossterm{action point} to use this ability.
             If you do, make a \glossterm{strike}.
             In addition to the strike's normal effects, you also compare the attack result against the target's Mental defense.
-            On a hit, the target breaks its \glossterm{attunement} to a random ability that it is currently attuned to.
-            On a critical hit, the target breaks its attunement to all abilities that it is attuned to.
+
+            \hit The target breaks its \glossterm{attunement} to a random ability that it is currently attuned to.
             This ability does not affect attunement to magic items.
+            \crit The target breaks its attunement to all abilities that it is attuned to.
         \end{ability}
 
         % clarify that it does not affect spells already in progress?
@@ -1528,7 +1530,7 @@ Feats can be used to specialize your character particular area, to grant your ch
             As a standard action, you can spend an \glossterm{action point} to use this ability.
             When you do, you begin a performance using one of your Perform skills.
             Make a Perform vs. Mental attack against up to five creatures within \rngmed range.
-            On a hit, each target is \fascinated by you.
+            \hit Each target is \fascinated by you.
             Any act by you or your apparent allies that damages a target or that causes it to feel threatened breaks the effect for that creature.
             An observant target may interpret overt threats to its allies as a threat to itself.
 
@@ -1549,7 +1551,8 @@ Feats can be used to specialize your character particular area, to grant your ch
             When you do, make a Perform vs. Mental attack against target within \rngmed range.
             You must also make a verbal suggestion of a particular course of action to the target.
             You can work this suggestion into an active performance without penalty.
-            On a hit, the target thinks your suggestion is a good idea and will try to follow it to the best of its abilities.
+
+            \hit The target thinks your suggestion is a good idea and will try to follow it to the best of its abilities.
             Any act by you or your apparent allies that threatens or damages the target breaks the effect.
 
             If the target is not currently \fascinated by your \textit{fascinating performance} ability, this attack automatically fails.
@@ -1768,8 +1771,8 @@ Feats can be used to specialize your character particular area, to grant your ch
         \begin{ability}{Read Mind}[\glossterm{Mind}, \glossterm{Sustain} (minor)]
             As a standard action, you can spend an \glossterm{action point} to use this ability.
             If you do, make a Sense Motive vs. Mental attack against a creature within \rngclose range.
-            On a hit, you know the target's surface thoughts.
-            You gain a \plus2 bonus to Bluff, Persuasion, and Intimidate checks against a creature whose mind you are reading.
+            \hit You know the target's surface thoughts.
+            This grants you a \plus2 bonus to Bluff, Persuasion, and Intimidate attacks and checks against the target.
         \end{ability}
 
         \ff[8]{Specialization} The bonus to Sense Motive increases to \plus4.
@@ -1845,12 +1848,12 @@ Feats can be used to specialize your character particular area, to grant your ch
         \begin{ability}{Detect Spellcasting}[\glossterm{Knowledge}, \glossterm{Subtle}]
             As a standard action, you can spend an \glossterm{action point} to use this ability.
             If you do, make a Spellcraft attack against the Mental defense of a creature within \rngmed range.
-            On a hit, you know whether the target is capable of casting spells.
+            \hit You know whether the target is capable of casting spells.
             If the target can cast spells, you know what sources the target can cast spells from.
-            On a critical hit, you also know all spells the target is capable of casting.
+            \crit As above, except that you also know all spells the target is capable of casting.
             This does not grant you knowledge of any subspells or augments the target knows.
 
-            After using this ability on a target, you cannot use it again on the same target for 24 hours.
+            After using this ability on a target, you cannot use it again on the same target for 24 hours regardless of whether you hit or miss.
         \end{ability}
 
         \ff[4]{Unweave Magic} You gain the \textit{unweave magic} ability.
@@ -2044,7 +2047,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \begin{ability}{Alter Poison}[\glossterm{Shaping}, \glossterm{Sustain} (minor)]
             As a standard action, you can spend an \glossterm{action point} to use this ability.
             If you do, make a \glossterm{spellpower} vs. Fortitude attack against a creature within \rngclose range.
-            On a hit, any poison in the target's system is neutralized.
+            \hit Any poison in the target's system is neutralized.
             It stops suffering any additional effects from poisons in its system.
             As long as the effect lasts, it is immune to all poisons.
             In addition, the target's \glossterm{mundane} poisons, including natural attacks that inflict poison, have no effect.
