@@ -221,7 +221,6 @@ def generate_weapons():
         name="Merciful",
         level=3,
         material_type='weapon',
-        tags=['Imbuement'],
         description="""
             This weapon deals \\glossterm<subdual damage> instead of lethal damage.
         """,

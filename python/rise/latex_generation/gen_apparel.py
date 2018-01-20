@@ -160,7 +160,6 @@ def generate_armor():
     apparel.append(MagicItem(
         name="Armor of Fortification",
         level=7,
-        tags=['Imbuement'],
         material_type='body armor',
         description="""
             You gain a +5 bonus to defenses when determining whether a \\glossterm<strike> gets a \\glossterm<critical hit> against you instead of a normal hit.
@@ -171,7 +170,6 @@ def generate_armor():
     apparel.append(MagicItem(
         name="Armor of Fortification, Greater",
         level=15,
-        tags=['Imbuement'],
         material_type='body armor',
         description="""
             This item functions like the \\mitem<armor of fortification> item, except that the bonus increases to +10.
@@ -182,7 +180,6 @@ def generate_armor():
     apparel.append(MagicItem(
         name="Armor of Fortification, Mystic",
         level=12,
-        tags=['Imbuement'],
         material_type='body armor',
         description="""
             This item functions like the \\mitem<armor of fortification> item, except that it applies against all attacks instead of only against; \\glossterm<strikes>.
@@ -383,7 +380,6 @@ def generate_worn():
         name="Greatreach Bracers",
         level=9,
         material_type='bracer',
-        tags=['Imbuement'],
         description="""
             Your \\glossterm<reach> is increased by 5 feet.
         """,
@@ -394,7 +390,6 @@ def generate_worn():
         name="Greatreach Bracers, Greater",
         level=17,
         material_type='bracer',
-        tags=['Imbuement'],
         description="""
             Your \\glossterm<reach> is increased by 10 feet.
         """,
@@ -418,7 +413,6 @@ def generate_worn():
         name="Mask of Water Breathing",
         level=4,
         material_type='mask',
-        tags=['Imbuement'],
         description="""
             You can breathe water through this mask as easily as a human breaths air.
             This does not grant you the ability to breathe other liquids.
@@ -430,7 +424,6 @@ def generate_worn():
         name="Mask of Air",
         level=9,
         material_type='mask',
-        tags=['Imbuement'],
         description="""
             If you breathe through this mask, you breathe in clean, fresh air, regardless of your environment.
             This can protect you from inhaled poisons and similar effects.
@@ -510,7 +503,6 @@ def generate_worn():
         name="Boots of Freedom",
         level=6,
         material_type='boot',
-        tags=['Imbuement'],
         description="""
             You are immune to effects that restrict your mobility.
             This removes all penalties you would suffer for acting underwater, except for those relating to using ranged weapons.
@@ -523,7 +515,6 @@ def generate_worn():
         name="Boots of Freedom, Greater",
         level=12,
         material_type='boot',
-        tags=['Imbuement'],
         description="""
             These boots function like \\mitem<boots of freedom>, except that you are also immune to being \\grappled.
         """,
@@ -534,7 +525,6 @@ def generate_worn():
         name="Boots of Gravitation",
         level=8,
         material_type='boot',
-        tags=['Imbuement'],
         description="""
             While these boots are within 5 feet of a solid surface, gravity pulls you towards the solid surface closest to your boots rather than in the normal direction.
             This can allow you to walk easily on walls or even ceilings.
@@ -581,7 +571,6 @@ def generate_worn():
         name="Boots of Water Walking",
         level=7,
         material_type='boot',
-        tags=['Imbuement'],
         description="""
             You treat the surface of all liquids as if they were firm ground.
             Your feet hover about an inch above the liquid's surface, allowing you to traverse dangerous liquids without harm as long as the surface is calm.
@@ -623,7 +612,6 @@ def generate_worn():
         name="Winged Boots",
         level=10,
         material_type='boot',
-        tags=['Imbuement'],
         description="""
             You gain a \\glossterm<fly speed> equal to your land speed.
             However, the boots are not strong enough to keep you aloft indefinitely.
