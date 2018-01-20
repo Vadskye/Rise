@@ -59,7 +59,7 @@ class Subspell(object):
     def __str__(self):
         text = [
             f"""
-                \\augment<{self.level}><{self.name}>
+                \\subspell<{self.level}><{self.name}>
                 {self.description or ""}
             """,
         ]
