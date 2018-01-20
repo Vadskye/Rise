@@ -17,7 +17,7 @@ def active_ability(
             if accuracy or targeting
             else f"|textbf<{name}>:"
         }
-        {effect if effect else ""}
+        {effect.strip() if effect else ""}
         {f"|par |textit<Hit>: {hit}" if hit else ""}
         {f"|par |textit<Critical>: {critical}" if critical else ""}
     """
