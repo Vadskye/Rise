@@ -48,7 +48,7 @@ class Spell(object):
 
         for arg in ['cantrip', 'effects', 'lists', 'name', 'schools', 'targeting']:
             if getattr(self, arg) is None:
-                print(f"Warning: {self} is missing required property '{arg}'")
+                logger.warning(f"Warning: {self} is missing required property '{arg}'")
 
         for school in self.schools:
             if school not in rise_data.schools:
