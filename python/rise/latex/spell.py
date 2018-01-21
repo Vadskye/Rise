@@ -1,7 +1,6 @@
 from logging import getLogger
 import rise.latex.rise_data as rise_data
 from rise.latex.util import join
-from rise.latex.subspell import Subspell
 logger = getLogger(__name__)
 
 class Spell(object):
@@ -35,12 +34,6 @@ class Spell(object):
 
         # This may need to be an argument later
         self.ability_type = 'spell' if self.base_level is None else 'ritual'
-
-        # Add default subspell
-        if self.ability_type == 'spell':
-            subspells.append(Subspell('Innate', 6, f"""
-                This subspell functions like the \\spell<{self.name.lower()}> spell, except that you can cast it without spending an action point.
-            """))
 
         for arg in ['effects', 'lists', 'name', 'schools']:
             if getattr(self, arg) is None:
