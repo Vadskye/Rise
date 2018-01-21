@@ -206,17 +206,16 @@
     bottomline=true,
 ]{spellcontent}
 
-\DeclareDocumentEnvironment{ability}{m o}
+\DeclareDocumentEnvironment{ability}{o m o}
 {
     \begin{thesamepage}
-    \spelltwocol{\textbf{#1}}{
-        \IfValueTF{#2}{#2}{}
+        \spelltwocol{\IfValueTF{#1}{#1~--~}{}\textbf{#2}}{
+        \IfValueTF{#3}{#3}{}
     }
 }
 {
     \end{thesamepage}
 }
-
 \surroundwithmdframed[
     leftline=true,
     topline=true,

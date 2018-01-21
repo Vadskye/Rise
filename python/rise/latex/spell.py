@@ -7,7 +7,6 @@ logger = getLogger(__name__)
 class Spell(object):
     def __init__(
             self,
-            targeting,
             base_level=None,
             cantrip=None,
             category=None,
@@ -33,31 +32,26 @@ class Spell(object):
         self.schools = schools
         self.short_description = short_description or 'TODO'
         self.subspells = subspells or []
-        self.targeting = targeting
 
         # This may need to be an argument later
-        self.ability_type = 'ritual' if self.base_level is not None else 'spell'
+        self.ability_type = 'spell' if self.base_level is None else 'ritual'
 
         # Add default subspell
         if self.ability_type == 'spell':
-            subspells.append(Subspell(
-                level=6,
-                name='Innate',
-                description='You can cast the spell without spending an action point.',
-            ))
+            subspells.append(Subspell('Innate', 6, f"""
+                This subspell functions like the \\spell<{self.name.lower()}> spell, except that you can cast it without spending an action point.
+            """))
 
-        for arg in ['cantrip', 'effects', 'lists', 'name', 'schools', 'targeting']:
+        for arg in ['effects', 'lists', 'name', 'schools']:
             if getattr(self, arg) is None:
                 logger.warning(f"Warning: {self} is missing required property '{arg}'")
+
+        if self.ability_type == 'spell' and getattr(self, 'cantrip') is None:
+            logger.warning(f"Warning: {self} is missing required property 'cantrip'")
 
         for school in self.schools:
             if school not in rise_data.schools:
                 logger.warning(f"{self} has unrecognized school '{school}'")
-
-        if self.category is None:
-            logger.warning(f"{self} has no category")
-        elif self.category not in rise_data.categories:
-            logger.warning(f"{self} has unrecognized category '{self.category}'")
 
     def to_latex(self):
         # Sort by level as primary, name as secondary
@@ -73,28 +67,14 @@ class Spell(object):
         return join(
             f"""
                 \\begin<spellsection><{self.name}>{base_level_text}
-                    {str(self.header or "")}
-                    \\begin<spellcontent>
-                        {str(self.targeting)}
-                        {str(self.effects)}
-                    \\end<spellcontent>
-                    \\begin<spellfooter>
-                        \\spellinfo<{', '.join(self.schools)}><{', '.join(self.lists)}>
-            """,
-            f"""
-                            \\spellnotes {self.notes}
-            """ if self.notes else None,
-            f"""
-                    \\end<spellfooter>
-                    \\begin<spellsubcontent>
-            """,
-            f"""
-                        \\begin<spellcantrip>
-                            {self.cantrip}
-                        \\end<spellcantrip>
-            """ if self.cantrip else None,
-            f"""
-                    \\end<spellsubcontent>
+                    {self.header or ""}
+                    {self.effects}
+
+                    \\parhead<Cantrip> {self.cantrip}
+
+                    \\parhead<Schools> {', '.join(self.schools)}
+
+                    \\parhead<Spell Lists> {', '.join(self.lists)}
                 \\end<spellsection>
             """,
             f"""

@@ -28,10 +28,10 @@ class MagicItem(object):
             level,
             name,
             short_description,
-            tags,
             effects=None,
             material_type=None,
             materials=None,
+            tags=None,
             targeting=None,
     ):
         self.description = description
@@ -59,7 +59,7 @@ class MagicItem(object):
             return None
 
     def latex_tags(self):
-        return ', '.join([f"\\glossterm<{tag}>" for tag in sorted(self.tags)])
+        return ', '.join([f"\\glossterm<{tag}>" for tag in sorted(self.tags)]) if self.tags else ""
 
     def latex(self):
         return join(
@@ -71,6 +71,8 @@ class MagicItem(object):
             self.latex_ability(),
             f"""
                 \\parhead*<Tags> {self.latex_tags()}
+            """ if self.tags else "",
+            f"""
                 \\parhead*<Materials> {', '.join(sorted(self.materials)).capitalize()}
             """,
         )
