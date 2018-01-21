@@ -2,31 +2,21 @@
 %\newcommand{\storevalue}[1]{\renewcommand{\Variable}{#1}}
 
 \newcommand{\lcaption}[1]{\caption{#1}\label{cap:#1}}
-\newcommand{\lsec}[1]{\MakeUppercase{#1}\label{#1}}
-\newcommand{\lssec}[1]{\MakeUppercase{#1}\label{#1}}
-\newcommand{\lsssec}[1]{#1\label{#1}}
 
 \newcommand{\pref}[1]{page \pageref{#1}}
-\newcommand{\pdref}[1]{#1 (page \pageref{#1})}
 \newcommand{\tref}[1]{Table \ref{cap:#1}: #1 (\pref{cap:#1})}
 \newcommand{\trefnp}[1]{Table \ref{cap:#1}: #1}
-\newcommand{\trefcp}[1]{Table \ref{cap:#1}: #1, \pref{cap:#1}}
-\newcommand{\trefnum}[1]{Table \ref{cap:#1}}
 
 \newcommand{\minus}{\texttt{-{}}}
 \newcommand{\plus}{\texttt{+}}    %Use a smaller positive marker for use directly adjacent to numbers
 \newcommand{\add}{\texttt{+}\xspace}    %Use a smaller plus sign
 \newcommand{\sub}{\texttt{-}\xspace}
 \newcommand{\mult}{x}
-\newcommand{\mtimes}{x }
 \newcommand{\x}{x\xspace}
-\newcommand{\ki}{\emph{ki}\xspace}
-\newcommand{\Ki}{\emph{Ki}\xspace}
 %NOTED BUG: Spell names with mixed capitalization (Dispel magic) will not work properly.
 \newcommand{\spell}[1]{\emph{\mbox{\hyperlink{spell:#1}{#1}}}}    %Italicize spells
 \newcommand{\spellindirect}[2]{\emph{\hyperlink{spell:#1}{#2}}}
 \newcommand{\ritual}[1]{\emph{#1}}    %Italicize spells
-\newcommand{\cd}[1]{\par \textbf{#1}:}    %Bold class fluff description headers
 \newcommand{\subcf}[1]{\parhead{#1}}    %Bold sub-class-feature headers
 \newcommand{\subsk}[1]{\par \emph{#1}:}    %Italicize sub-skill headers
 
@@ -37,173 +27,36 @@
 \newcommand{\ccol}{\centering\arraybackslash}    %Center columns
 \newcommand{\lcol}{\raggedright\arraybackslash}
 \newcommand{\rcol}{\raggedleft\arraybackslash}
-\newcommand{\booktitle}[1]{\emph{#1}}
-%\newcommand{\footnotetemp}[1]{\tiny{[#1]}}    %I don't actually know how to make footnotes yet, so placeholder
-%\newcommand{\footnotetemp}[1]{\textsuperscript{#1}}
+
 \newcommand{\fn}[1]{\textsuperscript{#1}}
-\newcommand{\M}{\textsuperscript{M}}
-\newcommand{\F}{\textsuperscript{F}}
-\newcommand{\mfx}[1]{\emph{#1}}    % For material components, focuses, and XP costs for spells
 \newcommand{\subspell}[1]{\emph{#1}}    %For parts of spells
 \newcommand{\magicitem}[1]{\emph{#1}}    %For the names of items
 \newcommand{\mitem}[1]{\emph{#1}}
-\newcommand{\shead}[1]{\> \textbf{#1}}    %For the headers of spells in spell lists
-%\newcommand{\spellhead}[2][]{\item[#1] \textbf{\hyperlink{spell:#2}{#2}:}}    %Spell in a spell list
-%\newcommand{\spellheadc}[3][]{\item[#1] \textbf{\hyperlink{spell:#3 #2}{#2, #3}:}}
-%\newcommand{\spellheadrestricted}[1]{\item \textit{\textbf{\hyperlink{spell:#1}{#1}:}}}  %Restricted spell in a spell list
-%\newcommand{\spellheadrestrictedc}[2]{\item \textit{\textbf{\hyperlink{spell:#2 #1}{#1, #2}:}}}  %Restricted spell in a spell list
-\newcommand{\spellsectionderp}[2]{\vspace{1em}\setlength\multicolsep{0pt}\begin{multicols}{2}
-    \lowercase{\hypertarget{spell:#1}{}}\hypertarget{spell:#1}{\subsubsection{#1}}\columnbreak
-    \begin{flushright}\large\textbf{\nth{#2} Level}\end{flushright}\end{multicols}
-}
-\newcommand{\spellsectioncomma}[3]{\vspace{1em}\setlength\multicolsep{0pt}\begin{multicols}{2}
-    \lowercase{\hypertarget{spell:#2 #1}{}}\hypertarget{spell:#2 #1}{\subsubsection{#1, #2}}\columnbreak
-    \begin{flushright}\large\textbf{\nth{#3} Level}\end{flushright}\end{multicols}
-}
-%\newcommand{\invocationsection}[1]{\lowercase{\hypertarget{spell:#1}{}}\hypertarget{spell:#1}{\subsubsection{#1}}}
-%\newcommand{\invocationsectioncomma}[2]{\lowercase{\hypertarget{spell:#2 #1}{}}\hypertarget{spell:#2 #1}{\subsubsection{#1, #2}}}
 
 \newcommand{\tind}{\hspace{1em}}
 
-\newcommand{\appdescription}[7]{\subsubsection{#1} \parhead{Price (Level)} #2 gp (#3) \parhead{Body Location} #4 \parhead{Aura, Spellpower} #5, #6 \parhead{Activation} #7 \par}
-\newcommand{\appdescriptiondc}[8]{\appdescription{#1}{#2}{#3}{#4}{#5}{#6}{#7} \parhead{Special Attack (Attack Bonus)} #8 \par}
-\newcommand{\impdescription}[6]{\subsubsection{#1} \parhead{Price (Level)} #2 gp (#3) \parhead{Aura, Spellpower} #4, #5 \parhead{Activation} #6 \par}
-\newcommand{\impdescriptionnoact}[5]{\subsubsection{#1} \parhead{Price (Level)} #2 gp (#3) \parhead{Aura, Spellpower} #4, #5 \par}
-\newcommand{\impdescriptiondc}[7]{\impdescription{#1}{#2}{#3}{#4}{#5}{#6} \parhead{Special Attack (Attack Bonus)} #7 \par}
-\newcommand{\impdescriptiondcnoact}[6]{\impdescription{#1}{#2}{#3}{#4}{#5} \parhead{Special Attack (Attack Bonus)} #6 \par}
-%Spell creation requirements, without descriptors
-%School, subschool, spell level, Spellpower, craft skill
-\newcommand{\mitemreq}[5]{\par \textit{Creation Requirements:} #1 (#2) #3; spellpower #4 or #5}
-\newcommand{\mitemreqdesc}[6]{\par \textit{Creation Requirements:} #1 (#2) [#3] #4; spellpower #5 or #6}
-%Legacy
-\newcommand{\tooldescription}[6]{\subsubsection{#1} \parhead{Price (Level)} #2 gp (#3) \parhead{Spellpower} #4 \parhead{Aura} #5 \parhead{Activation} #6 \par}
-%one shot items should not have scaling DRs
-\newcommand{\tooldescriptiondcos}[7]{\tooldescription{#1}{#2}{#3}{#4}{#5}{#6} \parhead{Special Attack (Attack Bonus)} #7\par}
-\newcommand{\tooldescriptiondc}[7]{\tooldescription{#1}{#2}{#3}{#4}{#5}{#6} \parhead{Special Attack (Attack Bonus)} #7\par}
-
-\newcommand{\prereq}[1]{\subparhead{Prerequisites:} #1}
-\newcommand{\bpl}[3]{(\plus #1) #2 gp (#3)}
-\newcommand{\bcl}[2]{(\plus #1) #2}
-
-%Monster commands for format consistency
-%Starting with \\ instead of \par yields an indent
-\newcommand{\montypes}[5]{\begin{mstatblock}\par #1 #2 #3 \hfill \textbf{CR} #4 [#5]}
-\newcommand{\montypessubtypes}[6]{\begin{mstatblock}\par #1 #2 #3 (#4) \hfill \textbf{CR} #5 [#6]}
-\newcommand{\monsenses}[2]{\par \textbf{Init} #1; Perception #2}
-\newcommand{\monsensesspellcraft}[3]{\par \textbf{Init} #1; Perception #2, Spellcraft #3}
-\newcommand{\monsensesspecial}[3]{\par \textbf{Init} #1; Perception #2; \textbf{Senses} #3}
-\newcommand{\monsensesfull}[4]{\par \textbf{Init} #1; Perception #2, Spellcraft #3; \textbf{Senses} #4}
-\newcommand{\monaura}[1]{\par \textbf{Aura} #1}
-\newcommand{\monlanguages}[1]{\par \textbf{Languages} #1}
-%\newcommand{\monac}[5]{\par \textbf{AC} #1, touch #2, flat-footed #3; \textbf{CMD} #4 \\ (#5)}
-%\newcommand{\monacspecial}[6]{\par \textbf{AC} #1, touch #2, flat-footed #3; \textbf{CMD} #4; #5 \\ (#6)}
-\newcommand{\monhp}[2]{\par \textbf{HP} #1 (#2 HV)}
-\newcommand{\mondr}[1]{\textbf{DR} #1}
-\newcommand{\monhpdr}[3]{\mhp{#1}{#2}; \mdr{#3}}
-\newcommand{\monimmune}[1]{\par \textbf{Immune} #1}
-\newcommand{\monresist}[1]{\par \textbf{Resist} #1}
-\newcommand{\monsr}[1]{\textbf{SR} #1}
-\newcommand{\monresistsr}[2]{\mres{#1}; \msr{#2}}
-\newcommand{\monsaves}[3]{\par \textbf{Fort} \plus #1, \textbf{Ref} \plus #2, \textbf{Will} \plus #3}
-\newcommand{\monsavesnegative}[3]{\par \textbf{Fort} #1, \textbf{Ref} #2, \textbf{Will} #3}
-\newcommand{\monspeed}[1]{\textbf{Speed} #1}
-\newcommand{\monmelee}[1]{\par \textbf{Melee} #1}
-\newcommand{\monrange}[1]{\par \textbf{Ranged} #1}
-\newcommand{\monspace}[2]{\par \textbf{Space} #1 ft.; \textbf{Reach} #2 ft.}
-\newcommand{\monspacenofeet}[2]{\par \textbf{Space} #1; \textbf{Reach} #2}
-\newcommand{\moncmb}[2]{\par \textbf{BAB} \plus #1; \textbf{CMB} \plus #2}
-\newcommand{\moncmbnegative}[2]{\par \textbf{BAB} \plus #1; \textbf{CMB} #2}
-\newcommand{\monspecialact}[1]{\par \textbf{Special Actions} #1}
-\newcommand{\monsla}[5]{\par \textbf{Spell-Like Abilities (Sp)} (CL #1, DR #2, #3/day, #4--based): \\ #5}
-\newcommand{\monpsi}[5]{\par \textbf{Psionics (Sp)} (CL #1, DR #2, #3/day, #4--based): \\ #5}
-\newcommand{\monslamore}[1]{\\ #1}
-\newcommand{\monattributes}[6]{\par \textbf{Attributes} Str #1, Dex #2, Con #3, Int #4, Per #5, Wil #6}
-\newcommand{\monsa}[1]{\par \textbf{SA} #1}
-\newcommand{\monsq}[1]{\par \textbf{SQ} #1}
-\newcommand{\monfeats}[1]{\par \textbf{Feats} #1}
-\newcommand{\monskills}[1]{\par \textbf{Skills} #1}
-\newcommand{\monitems}[1]{\par \textbf{Items} #1}
-\newcommand{\monability}[2]{\par \textbf{#1} #2}
-%http://tex.stackexchange.com/questions/128636/center-hrule-in-the-middle-of-the-page
-\newcommand{\monlinerule}{\par\noindent\hfil\rule[0.5em]{0.9\columnwidth}{0.5pt}\hfil\par}
-
-\newcommand{\wilditem}{\addtocounter{enumi}{1} \item}
-\newcommand{\wilditemplus}{\addtocounter{enumi}{3} \item}
-
 \newcommand{\spelldesc}[1]{\par\noindent \textit{#1}}
-\newcommand{\spelldmg}[1]{\fieldhead{Damage} #1}
-\newcommand{\spellheal}[1]{\fieldhead{Healing} #1}
-\newcommand{\spellatk}[1]{\fieldhead{Attack} #1}
-\newcommand{\spelltgr}[1]{\fieldhead{Trigger} #1}
-
-%\newcommand{\spellfocus}[1]{\par\noindent \textit{Focus:} #1}
-\newcommand{\spellmat}[1]{\par\noindent \textit{Material Components:} #1}
-
 \newcommand{\spelltwocol}[2]{\spelltabularcompressed #1 & #2\end{tabularx}}
-
-\newcommand{\spellschool}[1]{\noindent#1}
-\newcommand{\spelllists}[1]{\fieldhead{Lists} #1}
-\newcommand{\spellcmp}[1]{\fieldhead{Components} #1}
-\newcommand{\spelltime}[1]{\fieldhead{Casting Time} #1}
-\newcommand{\spellrng}[1]{\fieldhead{Range} #1}
-
-\newcommand{\spellarea}[1]{\fieldhead{Area} #1}
-\newcommand{\spellburst}[1]{\fieldhead{Burst} #1}
-\newcommand{\spellemanation}[1]{\fieldhead{Emanation} #1}
-\newcommand{\spelllimit}[1]{\fieldhead{Limit} #1}
-\newcommand{\spellzone}[1]{\fieldhead{Zone} #1}
-\newcommand{\spellzoneandburst}[1]{\fieldhead{Zone and Burst} #1}
-
-%\newcommand{\spelltgt}[1]{\fieldhead{Target} #1}
-%\newcommand{\spelltgts}[1]{\fieldhead{Targets} #1}
-\newcommand{\spelltgtortgts}[1]{\fieldhead{Target or Targets} #1}
-\newcommand{\spelltgtorarea}[1]{\fieldhead{Target or Area} #1}
-\newcommand{\spelltgteffarea}[1]{\fieldhead{Target or Area} #1}
-
-\newcommand{\spelldur}{\fieldhead{Duration}}
-\newcommand{\spelltgrdur}[1]{\fieldhead{Trigger Duration} #1}
-\newcommand{\spellfocus}[1]{\fieldhead{Focus} #1}
-\newcommand{\spellsr}[1]{\fieldhead{Spell Resistance} #1}
 
 \newcommand{\rngpers}{Personal}
 \newcommand{\rngtouch}{Touch}
 \newcommand{\rngclose}{Close \reminder{30 ft.}\xspace}
 \newcommand{\rngmed}{Medium \reminder{100 ft.}\xspace}
 \newcommand{\rnglong}{Long \reminder{300 ft.}\xspace}
-\newcommand{\rngfar}{Long \reminder{300 ft.}\xspace}
 \newcommand{\rngext}{Extreme \reminder{1,000 ft.}\xspace}
 \newcommand{\areasmall}{Small \reminder{10 ft.}\xspace}
 \newcommand{\areamed}{Medium \reminder{20 ft.}\xspace}
 \newcommand{\arealarge}{Large \reminder{50 ft.}\xspace}
 \newcommand{\areahuge}{Huge \reminder{100 ft.}\xspace}
-\newcommand{\durbrief}{Brief \reminder{2 rounds}\xspace}
-\newcommand{\durshort}{Short \reminder{Focus \add 5 rounds}\xspace}
-\newcommand{\durmed}{Medium \reminder{5 minutes}\xspace}
-\newcommand{\durlong}{Long \reminder{1 hour}\xspace}
-\newcommand{\durext}{Extreme \reminder{12 hours}\xspace}
-\newcommand{\durperm}{Permanent\xspace}
-\newcommand{\durpersonallong}{\durshort}
 
 \newcommand{\confusionexplanation}{A confused creature cannot take actions normally. If it is attacked, it automatically attacks a random attacker. Otherwise, at the beginning of each round, it randomly decides to take one of four actions that round: babble incoherently, flee from the caster as if panicked, attack the nearest creature, or act normally. A confused character who can't carry out the indicated action does nothing but babble incoherently.\xspace}
 
-\newcommand{\bonusscalingdescription}{This bonus increases to \plus3 at 8th level, to \plus4 at 14th level, and finally to \plus5 at 20th level.\xspace}
-\newcommand{\spellbonusscalingdescription}{This bonus increases to \plus3 at spellpower 8, to \plus4 at spellpower 14, and finally to \plus5 at spellpower 20.\xspace}
-\newcommand{\babscalingdescription}{This bonus increases to \plus3 at combat prowess 8, to \plus4 at combat prowess 12, and finally to \plus5 at combat prowess 16.\xspace}
-
 \newcommand{\featpre}{\parhead{Prerequisite} }
 \newcommand{\featpres}{\parhead{Prerequisites} }
-\newcommand{\featben}{\parhead{Benefit} }
-\newcommand{\featspecial}{\parhead{Special} }
 %featref no target
-\newcommand{\featrefnt}[1]{\hyperlink{feat:#1}{#1}}
 \newcommand{\featpref}[1]{\pageref{feat:#1}}
 \newcommand{\mitempref}[1]{\pageref{item:#1}}
 \newcommand{\featpcref}[1]{#1, page \pageref{feat:#1}}
-\newcommand{\featpdref}[1]{#1 (page \pageref{feat:#1})}
-%\newcommand{\featref}[1]{}
-\newcommand{\stylereq}{\parhead{Style Requirement}}
-
-\newcommand{\featbanenotes}{You can only apply the benefits of a single Bane feat against a particular foe.}
 
 \newcommand{\skill}[2]{\section{#1 (#2)}\label{#1}}
 
@@ -245,32 +98,13 @@
 \newcommand{\wounded}{\glossterm{wounded}\xspace}
 \newcommand{\unaware}{\glossterm{unaware}\xspace}
 
-\newcommand{\difficultterrain}{\glossterm{difficult terrain}\xspace}
-
 \newcommand{\concealment}{concealment\xspace}
-
-\newcommand{\destructivespellnotes}{If a destructive spell deals enough damage to an interposing barrier to shatter or breaks through it, its effects may continue beyond the barrier if the area permits; otherwise, it stops at the barrier just as any other spell effect does.\xspace}
-\newcommand{\cursespellnotes}{Curses cannot be dispelled with \spell{dispel magic}, but can be removed with \spell{break enchantment} or \spell{remove curse}.\xspace}
-\newcommand{\firespellnotes}{Fire spells shed light equivalent to a torch. They do not function underwater. They can ignite combustable materials, such as dry wood and cloth.\xspace}
-\newcommand{\forcespellnotes}{Force spells also affect the Ethereal Plane.}
-\newcommand{\fogspellnotes}{Fog spells do not function underwater and can be dispersed by wind. Localized wind, such as from a \spell{gust of wind} spell, only disperses the fog where it overlaps the fog. A fire spell burns away the fog in the area into which it deals damage.\xspace}
-\newcommand{\fogwindspellnotes}{A moderate wind (11\add mph) disperses the fog in 5 rounds; a strong wind (21\add mph) disperses the fog in 1 round.\xspace}
-\newcommand{\sensorspellnotes}{A magic sensor is a floating, invisible sphere approximately one inch in diameter. It has 1 hit point and an Armor defense of 8. Its special defenses are the same as yours.\xspace}
-\newcommand{\subtlespellnotes}{Subtle spells have no obvious effects. A creature affected by a subtle spell is usually unaware that it is under magical influence. The DR to identify a subtle spell with the Spellcraft skill is 10 higher than normal (see \pcref{Spellcraft}).}
-\newcommand{\mobilesensorspellnotes}[1]{\sensorspellnotes The sensor has a #1 foot fly speed with perfect maneuverability. It is unable to enter another plane of existence, even through a \spell{gate} or similar magical portal.}
-\newcommand{\norepeatspellnotes}{You can only affect any individual creature with this spell once per 24 hours.\xspace}
-\newcommand{\norepeatnotes}{You can only affect any individual creature with this ability once per 24 hours.\xspace}
-\newcommand{\physicalspellnotes}{Physical spells cannot be dismissed or dispelled, and do not allow spell resistance.}
-\newcommand{\sizingspellnotes}{Multiple magical effects which change size do not stack. Size increases offset size decreases on a one-for-one basis.}
 
 \newcommand{\spelltablecolumns}{>{\lcol}X l}
 \newcommand{\spelllevelschool}[2]{\spelllvl{#1} & #2 \\}
 \newcommand{\spelllevelnew}[3]{\tb{\nth{#1} level} #2 & #3 \\}
 
 \newcommand{\dismissable}{}
-\newcommand{\shapeable}{(S)}
-\newcommand{\rngunrestricted}{(Unrestricted)}
-\newcommand{\undispellable}{(Undispellable)}
 
 % http://tex.stackexchange.com/questions/135617/how-to-i-reduce-space-before-and-after-hrule
 \newcommand{\HRule}[2][\medskipamount]{\par
