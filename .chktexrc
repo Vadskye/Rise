@@ -387,12 +387,12 @@ Silent
     \addlinespace \cr \fill \frontmatter
     \toprule \midrule \bottomrule
 
-    \add \mtimes \sub \tind \concealment
+    \add \sub \tind \concealment
     \areasmall \areamed \arealarge \areahuge
     \spellsuccess \spellfailure \spelleffect \spelldur \spellcritical \spellspecial
     \spellnotes \norepeatspellnotes \physicalspellnotes \forcespellnotes \dismissable \norepeatnotes \destructivespellnotes \subtlespellnotes \cursespellnotes \spelltime \sizingspellnotes \firespellnotes \fogspellnotes \fogwindspellnotes \sensorspellnotes
     \fatigued \exhausted \frightened \shaken \sickened \nauseated \panicked \ignited \impaired \unaware \defenseless \staggered \dazed \immobilized \disoriented  \stunned \severelyimpaired \goaded \taunted \confused \slowed \partiallyblinded \confusionexplanation \deafened \charmed \dominated \fascinated \helpless \blinded \grappled \petrified \disabled \unencumbered \paralyzed \prone
-    \Ki \ki \degree
+    \degree
     \durshort \durmed \durlong \durext \durbrief \durpersonallong
     \rngclose \rngmed \rnglong \rngext
     \featpre \featpres \featben \stylereq
