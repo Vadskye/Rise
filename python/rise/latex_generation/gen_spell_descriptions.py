@@ -835,8 +835,10 @@ def generate_spells():
                 You must move and see through each sensor individually.
             """),
             Subspell("Penetrating", 3, """
-                This subspell functions like the \\spell<scry> spell, except that the spell's range becomes \\rngunrestricted.
-                This can allow you to cast the spell into areas where you do not have \\glossterm<line of sight> or \\glossterm<line of effect>.
+                This subspell functions like the \\spell<scry> spell, except that you do not need \\glossterm<line of sight> or \\glossterm<line of effect> to target a location.
+                You must specify a distance and direction to target a location you cannot see.
+                This can allow you to cast the spell beyond walls and similar obstacles.
+                As normal, if the intended location is occupied or otherwise impossible, the spell simply fails.
             """),
             Subspell("Semi-Autonomous", 4, """
                 This subspell functions like the \\spell<scry> spell, except that you can move the sensor as a \\glossterm<minor action> rather than as a standard action.
