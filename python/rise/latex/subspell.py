@@ -1,5 +1,5 @@
 from logging import getLogger, WARNING
-from rise.latex.tags import is_valid_tag
+from rise.latex.tags import glosstermify, is_valid_tag
 logger = getLogger(__name__)
 
 class Subspell(object):
@@ -39,8 +39,7 @@ class Subspell(object):
     def __str__(self):
         tag_text = (
             '[' + ', '.join([
-                f"\\glossterm<{tag}>"
-                for tag in sorted(self.tags)
+                glosstermify(tag) for tag in sorted(self.tags)
             ]) + ']'
         ) if self.tags else ""
 

@@ -1,5 +1,5 @@
 from logging import getLogger, WARNING
-from rise.latex.tags import is_valid_tag
+from rise.latex.tags import glosstermify, is_valid_tag
 from rise.latex.util import join
 logger = getLogger(__name__)
 
@@ -20,16 +20,6 @@ class Effects(object):
                     logger.log(WARNING, f"Effect has invalid tag {tag}")
 
     def __str__(self):
-        def glosstermify(tag):
-            if tag == '(see text)':
-                return tag
-            elif ' ' in tag:
-                split_tag = tag.split()
-                if len(split_tag) != 2:
-                    raise Exception(f"Unable to parse tag {tag}")
-                return f"\\glossterm<{split_tag[0]}> {split_tag[1]}"
-            else:
-                return f"\\glossterm<{tag}>"
 
         tag_text = ', '.join([
             glosstermify(tag) for tag in sorted(self.tags)
