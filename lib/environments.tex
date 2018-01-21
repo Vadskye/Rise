@@ -442,7 +442,11 @@
 
 \DeclareDocumentEnvironment{feat}{m m}
 {
-    \hypertarget{feat:#1}{\sssecfakehref{ft:#1}{#1~[#2]}}
+    \hypertarget{feat:#1}{
+        \subsection*{
+            \hyperlink{ft:#1}{#1~[#2]}
+        }
+    }
     \label{feat:#1}
 }
 {}

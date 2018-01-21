@@ -6,9 +6,6 @@
 \newcommand{\lssec}[1]{\MakeUppercase{#1}\label{#1}}
 \newcommand{\lsssec}[1]{#1\label{#1}}
 
-\newcommand{\ssecfake}[1]{\par \vspace{1em}{\Large\bfseries\raggedright #1} \vspace{1em} \par}
-\newcommand{\sssecfake}[1]{\par \vspace{0.5em}{}{\large\raggedright #1} \vspace{0.5em} \par}
-\newcommand{\sssecfakehref}[2]{\par \vspace{0.5em}{}{\large\raggedright \hyperlink{#1}{#2}} \vspace{0.5em} \par}
 \newcommand{\pref}[1]{page \pageref{#1}}
 \newcommand{\pdref}[1]{#1 (page \pageref{#1})}
 \newcommand{\tref}[1]{Table \ref{cap:#1}: #1 (\pref{cap:#1})}
@@ -129,9 +126,6 @@
 \newcommand{\monability}[2]{\par \textbf{#1} #2}
 %http://tex.stackexchange.com/questions/128636/center-hrule-in-the-middle-of-the-page
 \newcommand{\monlinerule}{\par\noindent\hfil\rule[0.5em]{0.9\columnwidth}{0.5pt}\hfil\par}
-\newcommand{\mondescription}[1]{\par \end{mstatblock}\sssecfake{Description}\label{#1:Description}}
-\newcommand{\mondescriptionnoblock}[1]{\par \sssecfake{Description}\label{#1:Description}}
-\newcommand{\monbehavior}[1]{\sssecfake{Combat}\label{#1:Behavior}}
 
 \newcommand{\wilditem}{\addtocounter{enumi}{1} \item}
 \newcommand{\wilditemplus}{\addtocounter{enumi}{3} \item}
@@ -196,7 +190,6 @@
 \newcommand{\spellbonusscalingdescription}{This bonus increases to \plus3 at spellpower 8, to \plus4 at spellpower 14, and finally to \plus5 at spellpower 20.\xspace}
 \newcommand{\babscalingdescription}{This bonus increases to \plus3 at combat prowess 8, to \plus4 at combat prowess 12, and finally to \plus5 at combat prowess 16.\xspace}
 
-\newcommand{\feat}[2]{\hypertarget{feat:#1}{\sssecfakehref{ft:#1}{#1 [#2]}}\label{feat:#1}}
 \newcommand{\featpre}{\parhead{Prerequisite} }
 \newcommand{\featpres}{\parhead{Prerequisites} }
 \newcommand{\featben}{\parhead{Benefit} }
