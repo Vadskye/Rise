@@ -6,14 +6,12 @@ logger = getLogger(__name__)
 class Effects(object):
     def __init__(
             self,
-            attack=None,
-            effect=None,
-            special=None,
+            name,
+            effect_text,
             tags=None,
     ):
-        self.attack = attack
-        self.effect = effect
-        self.special = special
+        self.effect_text = effect_text
+        self.name = name
         self.tags = tags
 
         if (self.tags):
@@ -23,7 +21,9 @@ class Effects(object):
 
     def __str__(self):
         def glosstermify(tag):
-            if ' ' in tag:
+            if tag == '(see text)':
+                return tag
+            elif ' ' in tag:
                 split_tag = tag.split()
                 if len(split_tag) != 2:
                     raise Exception(f"Unable to parse tag {tag}")
@@ -37,16 +37,8 @@ class Effects(object):
 
         return join(
             f"""
-                \\begin<spelleffects>
-                    {f"|spellspecial {self.special}" if self.special else ""}
-            """, f"""
-                    \\spelleffect {self.effect}
-            """ if self.effect else None, f"""
-                    {self.attack if self.attack else ""}
-            """,
-            f"""
-                \\spelltags<{tag_text}>
-            """ if self.tags else None, f"""
-                \\end<spelleffects>
+                \\begin<ability><{self.name}>{f"[{tag_text}]" if tag_text else ""}
+                    {self.effect_text}
+                \\end<ability>
             """
         )
