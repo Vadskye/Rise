@@ -64,7 +64,7 @@ def generate_spells():
             Subspell('Stormlord', 5, """
                 This subspell functions like the \\spell<aeromancy> spell, except that the air also retaliates against creature that attack the target.
                 Whenever a creature within \\rngclose range of the target attacks it, wind strikes the attacking creature.
-                The wind deals \\glossterm<standard damage> -1d.
+                The wind deals bludgeoning \\glossterm<standard damage> -1d.
                 Any individual creature can only be dealt damage in this way once per round.
 
                 Any effect which increases this spell's range increases the range of this retaliation by the same amount.
@@ -94,7 +94,7 @@ def generate_spells():
         header=Header('You create a barrier around your ally that resists physical intrusion.'),
         effects=Effects('Barrier', """
             Choose a willing creature in \\rngclose range.
-            The target gains \\glossterm<damage reduction> equal to your spellpower.
+            The target gains \\glossterm<damage reduction> equal to your spellpower against all damage.
             In addition, it is \\glossterm<vulnerable> to \\glossterm<energy damage>.
 
             You can cast this spell as a \\glossterm<minor action>.
@@ -104,7 +104,7 @@ def generate_spells():
         cantrip="The spell's casting time becomes a standard action, and it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> (shared) tag.",
         subspells=[
             Subspell('Complete', 2, """
-                This subspell functions like the \\spell<barrier> spell, except that it does not make the target vulnerable to energy damage.
+                This subspell functions like the \\spell<barrier> spell, except that it does not make the target vulnerable to \\glossterm<energy damage>.
             """),
             Subspell('Repulsion', 2, """
                 This subspell creates a repulsive field in an \\areamed radius zone from your location.
@@ -115,18 +115,18 @@ def generate_spells():
                 Creatures in the area at the time that the spell is cast are unaffected by the spell.
             """, tags=['Sustain (minor)']),
             Subspell('Immunity', 4, """
-                Choose a willing creature in \\rngclose range, and a type of damage.
+                Choose a willing creature in \\rngclose range, and a type of damage other than physical damage (see \pcref{Damage Types}).
                 The target becomes immune to damage of the chosen type.
                 Attacks that deal damage of multiple types still inflict damage normally unless the target is immune to all types of damage dealt.
             """),
             Subspell('Retributive', 4, """
-                This subspell functions like the \\spell<barrier> spell, except that damage resisted by this subspell is reflected back to the attacker as life damage.
+                This subspell functions like the \\spell<barrier> spell, except that damage resisted by this subspell is dealt back to the attacker as life damage.
                 If the attacker is beyond \\rngclose range of the target, this reflection fails.
 
                 Any effect which increases this subspell's range increases the range of this effect by the same amount.
                 This subspell is from the Vivimancy school and gains the \\glossterm<Life> tag in addition to the tags from the \\spell<barrier> spell.
             """),
-            Subspell('Retributive', 5, """
+            Subspell('Empowered', 5, """
                 This subspell functions like the \\spell<barrier> spell, except that the damage reduction increases by an amount equal to your spellpower.
             """),
             Subspell("Armored", 4, """
@@ -175,7 +175,7 @@ def generate_spells():
             """),
             Subspell('Lingering', 5, f"""
                 This subspell functions like the \\spell<fabrication> spell, except that the spell deals -1d damage.
-                However, if the spell hits, it deals damage again at the end of every \\glossterm<action phase> in subsequent rounds.
+                However, if the spell hits, it deals damage to the target again at the end of every \\glossterm<action phase> in subsequent rounds.
                 This is a \\glossterm<condition>, and lasts until removed.
             """),
             Subspell('Web', 2, """
@@ -193,7 +193,7 @@ def generate_spells():
             Subspell('Poison', 2, """
                 Make a Spellpower vs. Fortitude attack against a creature within \\rngmed range.
 
-                \\hit The target takes \\glossterm<standard damage> -3d, and is poisoned as a \\glossterm<condition>.
+                \\hit The target takes poison \\glossterm<standard damage> -3d, and is poisoned as a \\glossterm<condition>.
                 If the target is poisoned, repeat this attack at the end of each \\glossterm<action phase> after the first round.
                 On the second hit, the target takes damage and becomes \\glossterm<sickened>.
                 On the third hit, the target takes damage and becomes \\glossterm<nauseated> instead of sickened.
@@ -287,7 +287,7 @@ def generate_spells():
             Subspell("Greater Ignition", 6, f"""
                 This subspell functions like the \\spell<pyromancy> spell, except that each target hit is also \\glossterm<ignited> as a \\glossterm<condition>.
                 Unlike the normal ignited effect, this condition cannot be removed by putting out the fire.
-                In addition, the ignited effect deals \\glossterm<standard damage> -3d instead of the normal 1d6 damage each round.
+                In addition, the ignited effect deals fire \\glossterm<standard damage> -3d instead of the normal 1d6 fire damage each round.
             """),
             Subspell("Supreme Ignition", 9, f"""
                 This subspell functions like the \\textit<greater ignition> subspell, except that the condition must be removed twice before the effect ends.
@@ -324,7 +324,7 @@ def generate_spells():
                 Choose an Large or smaller unattended openable object within \\rngclose range.
                 If the target object becomes opened, it explodes.
                 When it explodes, you make a Spellpower vs. Reflex attack against everything within an \\areamed radius burst from the target, including the target itself.
-                \\hit Each target takes \\glossterm<standard damage> -1d.
+                \\hit Each target takes fire \\glossterm<standard damage> -1d.
 
                 After the object explodes in this way, the spell is \\glossterm<dismissed>.
             """, tags=['Attune', 'Fire', 'Trap']),
@@ -405,7 +405,8 @@ def generate_spells():
             Subspell("Agony", 2, """
                 Make a Spellpower vs. Mental attack against a creature within \\rngmed range.
                 \\hit The target is inflicted with agonizing pain as a \\glossterm<condition>.
-                At the end of each \\glossterm<delayed action phase>, if the target took damage that round, it takes mental \\glossterm<standard damage> -2d.
+                At the end of each \\glossterm<delayed action phase>, if the target took damage that round, it takes \\glossterm<standard damage> -2d.
+                This damage is of all damage types that the target was affected by during that round.
             """, tags=['Emotion', 'Mind']),
             Subspell("Charm", 3, """
                 Make a Spellpower vs. Mental attack against a creature within \\rngmed range.
@@ -477,11 +478,10 @@ def generate_spells():
             Subspell("Dance", 3, """
                 Make a Spellpower vs. Mental attack against a creature within \\rngmed range.
                 \\hit As a \\glossterm<condition>, the target is compelled to dance.
-                It can spend a \\glossterm<minor action> or standard action to dance, if it is physically capable of dancing.
-                Whenever it takes a minor action or standard action in a round where it has not danced, it takes mental \\glossterm<standard damage> +1d.
-                Regardless of whether the target dances, it takes a -2 penalty to \\glossterm<physical defenses> due to its limited control over its limbs.
-                \\crit As above, except that dancing as a minor action does not prevent the target from taking damage.
-                Only dancing as a standard action can prevent the target from taking damage.
+                It can spend a \\glossterm<move action> to dance, if it is physically capable of dancing.
+                At the end of each round, if the target did not dance during that round, it takes a -2 penalty to \\glossterm<accuracy>, \\glossterm<checks>, and \\glossterm<defenses> as the compulsion intensifies.
+                This penalty stacks each round until the target dances, which resets the penalties to 0.
+                \\crit As above, except that the target must dance as a \\glossterm<standard action> to reset the penalties, instead of as a move action.
             """, tags=['Compulsion', 'Mind']),
             Subspell("Irresistible Dance", 9, """
                 This subspell functions like the \\textit<dance> subspell, except that you gain a +4 bonus to accuracy on the attack.
@@ -512,7 +512,7 @@ def generate_spells():
         lists=['Divine'],
         subspells=[
             Subspell("Mystic Blessing", 3, """
-                The damage bonus applies to all abilities that deal damage or grant healing measured in dice.
+                The +1d bonus applies to all abilities that deal damage or grant healing measured in dice.
             """),
             Subspell("Blessed Blade", 3, """
                 Choose a willing creature within \\rngclose range.
@@ -576,7 +576,7 @@ def generate_spells():
         header=Header('You drain the heat from an area, creating a field of extreme cold.'),
         effects=Effects('Cryomancy', """
             Make a Spellpower vs. Fortitude attack against everything in a \\areamed cone from you.
-            \\hit Each target takes Cold \\glossterm<standard damage> -1d, and is \\glossterm<fatigued> as a \\glossterm<condition>.
+            \\hit Each target takes cold \\glossterm<standard damage> -1d, and is \\glossterm<fatigued> as a \\glossterm<condition>.
         """, tags=['Cold']),
         schools=['Evocation'],
         lists=['Arcane', 'Nature'],
@@ -1195,10 +1195,6 @@ def generate_spells():
 
                 You can cast this subspell as a \\glossterm<minor action>.
             """, tags=['Attune (shared)', 'Temporal']),
-            Subspell("Temporal Shunt", 3, """
-                Make a Spellpower vs. Mental attack against a creature within \\rngmed range.
-                \\hit The target takes physical \\glossterm<standard damage> +1d.
-            """, tags=['Temporal']),
             Subspell("Accelerate Magic", 3, """
                 Choose a willing creature within \\rngmed range.
                 The target's spells resolve during the same phase it casts them in, rather than being delayed until the \\glossterm<delayed action phase>.
@@ -1217,7 +1213,7 @@ def generate_spells():
 
                 When the target reappears, its condition is unchanged from when it left, except that it loses all action points, spell points, and all similar resources equal to the amount used by its duplicate.
                 Its hit points, conditions, and all other statistics are unaffected, regardless of any damage or other negative effects suffered by the duplicate.
-                If this would reduce any of the target's resources below 0, it takes \\glossterm<standard damage> +3d from the paradox and becomes \\glossterm<stunned> as a \\glossterm<condition>.
+                If this would reduce any of the target's resources below 0, it takes physical \\glossterm<standard damage> +3d from the paradox and becomes \\glossterm<stunned> as a \\glossterm<condition>.
             """, tags=['Temporal']),
             Subspell("Time Hop", 2, """
                 Choose a willing creature within \\rngmed range.
@@ -1243,7 +1239,8 @@ def generate_spells():
                 Whenever you take damage, half of the damage (rounded down) is not dealt to you immediately.
                 This damage is tracked separately.
                 When the ends, you take all of the delayed damage at once.
-                When this happens, any damage in excess of your hit points is dealt as \\glossterm<vital damage>.
+                This damage has no type, and ignores all effects that reduce or negate damage.
+                Damage dealt in this way in excess of your hit points is dealt as \\glossterm<vital damage>.
 
                 You can cast this subspell as a \\glossterm<minor action>.
             """, tags=['Sustain (minor)', 'Temporal']),
