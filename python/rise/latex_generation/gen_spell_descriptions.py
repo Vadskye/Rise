@@ -582,13 +582,53 @@ def generate_spells():
         lists=['Arcane', 'Nature'],
         cantrip="The spell deals no damage.",
         subspells=[
+            Subspell('Cold Snap', 2, """
+                This subspell functions like the \\spell<cryomancy> spell, except that it gains the \\glossterm<Sustain> (standard) tag.
+                The area affected by the spell becomes a \\glossterm<zone> that is supernaturally chilled.
+                At the end of each \\glossterm<action phase> in subsequent rounds, the attack is repeated in that area.
+            """),
+            Subspell("Greater Cold Snap", 5, f"""
+                This subspell functions like the \\textit<cold snap> subspell, except that the spell gains the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Sustain> (standard) tag.
+            """),
             Subspell("Freezing", 4, """
                 This subspell functions like the \\spell<cryomancy> spell, except that each struck target is also \\glossterm<immobilized> as a \\glossterm<condition>.
             """),
+            Subspell('Frostbite', 3, """
+                Make a Spellpower vs. Fortitude attack against one creature within \\rngmed range.
+                \\hit The target takes cold \\glossterm<standard damage> +1d, and is \\glossterm<fatigued> as a \\glossterm<condition>.
+            """, tags=['Cold']),
+            Subspell('Deep Frostbite', 7, """
+                This subspell functions like the \\subspell<frostbite> subspell, except that the target is \\glossterm<exhausted> instead of \\glossterm<fatigued>.
+            """),
             Subspell("Slick", 2, """
-                This subspell functions like the \\spell<cryomancy> spell, except that the spell gains the \\glossterm<Sustain> (minor) tag.
-                The area affected by the spell becomes covered with a film of slick ice.
+                This subspell functions like the \\spell<cryomancy> spell, except that it gains the \\glossterm<Sustain> (minor) tag.
+                The area affected by the spell becomes a \\glossterm<zone> covered with a film of slick ice.
                 Creatures moving across the area must make Acrobatics checks to balance (see \pcref{Balance}).
+            """),
+            Subspell('Blizzard', 2, """
+                This subspell functions like the \\spell<cryomancy> spell, except that the area becomes an \\areamed radius from you.
+            """),
+            Subspell('Icecraft', 2, """
+                Choose a pool of unattended, nonmagical water within \\rngclose range.
+                This subspell creates an icy weapon or a suit of icy armor from the target pool of water.
+                You can create any weapon, shield, or body armor that you are proficient with, and which would normally be made entirely from metal, except for heavy body armor.
+                The pool of water targeted must be at least as large as the item you create.
+
+                The item functions like a normal item of its type, except that it is more fragile.
+                It has hit points equal to twice your spellpower, does not have any \\glossterm<hardness>, and is \\glossterm<vulnerable> to fire damage.
+                If the item would take cold damage, it instead heals that many hit points.
+
+                Whenever a creature wearing armor created in this way takes physical damage, cold damage, or fire damage, that damage is also dealt to the armor.
+                Likewise, whenever a creature wielding a weapon created in this way deals damage with the weapon, that damage is also dealt to the weapon.
+                If the item loses all of its hit points, this effect is \\glossterm<dismissed>.
+            """, tags=['Attune', 'Cold']),
+            Subspell('Sturdy Icecraft', 4, """
+                This subspell functions like the \\subspell<icecraft> subspell, except that the item created has hit points equal to four times your spellpower.
+                In addition, you can create heavy body armor.
+            """),
+            Subspell('Enhanced Icecraft', 6, """
+                This subspell functions like the \\subspell<icecraft> subspell, except that the item created is magically enhanced.
+                A weapon gains a +1d bonus to \\glossterm<strike damage>, and armor increases the defense bonus it grants by +1.
             """),
         ],
         category='damage',
