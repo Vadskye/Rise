@@ -79,7 +79,7 @@ This subspell functions like the \spell{aeromancy} spell, except that the defens
 \begin{ability}[\nth{5}]{Stormlord}
 This subspell functions like the \spell{aeromancy} spell, except that the air also retaliates against creature that attack the target.
 Whenever a creature within \rngclose range of the target attacks it, wind strikes the attacking creature.
-The wind deals \glossterm{standard damage} \minus1d.
+The wind deals bludgeoning \glossterm{standard damage} \minus1d.
 Any individual creature can only be dealt damage in this way once per round.
 
 Any effect which increases this spell's range increases the range of this retaliation by the same amount.
@@ -326,7 +326,7 @@ This subspell functions like the \spell{astromancy} spell, except that a struck 
 \begin{ability}{Barrier}[\glossterm{Attune} (shared), \glossterm{Shielding}]
 
 Choose a willing creature in \rngclose range.
-The target gains \glossterm{damage reduction} equal to your spellpower.
+The target gains \glossterm{damage reduction} equal to your spellpower against all damage.
 In addition, it is \glossterm{vulnerable} to \glossterm{energy damage}.
 
 You can cast this spell as a \glossterm{minor action}.
@@ -346,7 +346,7 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 \begin{ability}[\nth{2}]{Complete}
-This subspell functions like the \spell{barrier} spell, except that it does not make the target vulnerable to energy damage.
+This subspell functions like the \spell{barrier} spell, except that it does not make the target vulnerable to \glossterm{energy damage}.
 \end{ability}
 \vspace{0.25em}
 
@@ -369,7 +369,7 @@ This subspell functions like the \spell{barrier} spell, except that the target a
 
 
 \begin{ability}[\nth{4}]{Immunity}
-Choose a willing creature in \rngclose range, and a type of damage.
+Choose a willing creature in \rngclose range, and a type of damage other than physical damage (see \pcref{Damage Types}).
 The target becomes immune to damage of the chosen type.
 Attacks that deal damage of multiple types still inflict damage normally unless the target is immune to all types of damage dealt.
 \end{ability}
@@ -377,7 +377,7 @@ Attacks that deal damage of multiple types still inflict damage normally unless 
 
 
 \begin{ability}[\nth{4}]{Retributive}
-This subspell functions like the \spell{barrier} spell, except that damage resisted by this subspell is reflected back to the attacker as life damage.
+This subspell functions like the \spell{barrier} spell, except that damage resisted by this subspell is dealt back to the attacker as life damage.
 If the attacker is beyond \rngclose range of the target, this reflection fails.
 
 Any effect which increases this subspell's range increases the range of this effect by the same amount.
@@ -386,7 +386,7 @@ This subspell is from the Vivimancy school and gains the \glossterm{Life} tag in
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{5}]{Retributive}
+\begin{ability}[\nth{5}]{Empowered}
 This subspell functions like the \spell{barrier} spell, except that the damage reduction increases by an amount equal to your spellpower.
 \end{ability}
 \vspace{0.25em}
@@ -445,7 +445,7 @@ You can cast this subspell as a \glossterm{minor action}.
 
 
 \begin{ability}[\nth{3}]{Mystic Blessing}
-The damage bonus applies to all abilities that deal damage or grant healing measured in dice.
+The \plus1d bonus applies to all abilities that deal damage or grant healing measured in dice.
 \end{ability}
 \vspace{0.25em}
 
@@ -543,13 +543,6 @@ You can cast this subspell as a \glossterm{minor action}.
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{3}]{Temporal Shunt}[\glossterm{Temporal}]
-Make a Spellpower vs. Mental attack against a creature within \rngmed range.
-\hit The target takes physical \glossterm{standard damage} \plus1d.
-\end{ability}
-\vspace{0.25em}
-
-
 \begin{ability}[\nth{3}]{Temporal Stasis}[\glossterm{Temporal}]
 Choose a willing creature within \rngclose range.
 The target is placed into stasis, rendering it unconscious.
@@ -568,7 +561,8 @@ You can cast this subspell as a \glossterm{minor action}.
 Whenever you take damage, half of the damage (rounded down) is not dealt to you immediately.
 This damage is tracked separately.
 When the ends, you take all of the delayed damage at once.
-When this happens, any damage in excess of your hit points is dealt as \glossterm{vital damage}.
+This damage has no type, and ignores all effects that reduce or negate damage.
+Damage dealt in this way in excess of your hit points is dealt as \glossterm{vital damage}.
 
 You can cast this subspell as a \glossterm{minor action}.
 \end{ability}
@@ -586,7 +580,7 @@ If that space is occupied, it appears in the closest unoccupied space.
 
 When the target reappears, its condition is unchanged from when it left, except that it loses all action points, spell points, and all similar resources equal to the amount used by its duplicate.
 Its hit points, conditions, and all other statistics are unaffected, regardless of any damage or other negative effects suffered by the duplicate.
-If this would reduce any of the target's resources below 0, it takes \glossterm{standard damage} \plus3d from the paradox and becomes \glossterm{stunned} as a \glossterm{condition}.
+If this would reduce any of the target's resources below 0, it takes physical \glossterm{standard damage} \plus3d from the paradox and becomes \glossterm{stunned} as a \glossterm{condition}.
 \end{ability}
 \vspace{0.25em}
 
@@ -664,11 +658,10 @@ Make a Spellpower vs. Mental attack against a creature within \rngmed range.
 \begin{ability}[\nth{3}]{Dance}[\glossterm{Compulsion}, \glossterm{Mind}]
 Make a Spellpower vs. Mental attack against a creature within \rngmed range.
 \hit As a \glossterm{condition}, the target is compelled to dance.
-It can spend a \glossterm{minor action} or standard action to dance, if it is physically capable of dancing.
-Whenever it takes a minor action or standard action in a round where it has not danced, it takes mental \glossterm{standard damage} \plus1d.
-Regardless of whether the target dances, it takes a \minus2 penalty to \glossterm{physical defenses} due to its limited control over its limbs.
-\crit As above, except that dancing as a minor action does not prevent the target from taking damage.
-Only dancing as a standard action can prevent the target from taking damage.
+It can spend a \glossterm{move action} to dance, if it is physically capable of dancing.
+At the end of each round, if the target did not dance during that round, it takes a \minus2 penalty to \glossterm{accuracy}, \glossterm{checks}, and \glossterm{defenses} as the compulsion intensifies.
+This penalty stacks each round until the target dances, which resets the penalties to 0.
+\crit As above, except that the target must dance as a \glossterm{standard action} to reset the penalties, instead of as a move action.
 \end{ability}
 \vspace{0.25em}
 
@@ -798,7 +791,7 @@ A critically struck target immediately dies.
 \begin{ability}{Cryomancy}[\glossterm{Cold}]
 
 Make a Spellpower vs. Fortitude attack against everything in a \areamed cone from you.
-\hit Each target takes Cold \glossterm{standard damage} \minus1d, and is \glossterm{fatigued} as a \glossterm{condition}.
+\hit Each target takes cold \glossterm{standard damage} \minus1d, and is \glossterm{fatigued} as a \glossterm{condition}.
 
 \end{ability}
 
@@ -860,7 +853,8 @@ You take a \minus2 penalty to accuracy with the spell.
 \begin{ability}[\nth{2}]{Agony}[\glossterm{Emotion}, \glossterm{Mind}]
 Make a Spellpower vs. Mental attack against a creature within \rngmed range.
 \hit The target is inflicted with agonizing pain as a \glossterm{condition}.
-At the end of each \glossterm{delayed action phase}, if the target took damage that round, it takes mental \glossterm{standard damage} \minus2d.
+At the end of each \glossterm{delayed action phase}, if the target took damage that round, it takes \glossterm{standard damage} \minus2d.
+This damage is of all damage types that the target was affected by during that round.
 \end{ability}
 \vspace{0.25em}
 
@@ -1115,7 +1109,7 @@ Make a Spellpower vs. Reflex attack against one creature or object within \rnglo
 \begin{ability}[\nth{2}]{Poison}[\glossterm{Manifestation}, \glossterm{Poison}]
 Make a Spellpower vs. Fortitude attack against a creature within \rngmed range.
 
-\hit The target takes \glossterm{standard damage} \minus3d, and is poisoned as a \glossterm{condition}.
+\hit The target takes poison \glossterm{standard damage} \minus3d, and is poisoned as a \glossterm{condition}.
 If the target is poisoned, repeat this attack at the end of each \glossterm{action phase} after the first round.
 On the second hit, the target takes damage and becomes \glossterm{sickened}.
 On the third hit, the target takes damage and becomes \glossterm{nauseated} instead of sickened.
@@ -1156,7 +1150,7 @@ In addition, the webs are no longer \glossterm{vulnerable} to fire damage.
 
 \begin{ability}[\nth{5}]{Lingering}
 This subspell functions like the \spell{fabrication} spell, except that the spell deals \minus1d damage.
-However, if the spell hits, it deals damage again at the end of every \glossterm{action phase} in subsequent rounds.
+However, if the spell hits, it deals damage to the target again at the end of every \glossterm{action phase} in subsequent rounds.
 This is a \glossterm{condition}, and lasts until removed.
 \end{ability}
 \vspace{0.25em}
@@ -1459,7 +1453,7 @@ You can cast this subspell as a \glossterm{minor action}
 Choose an Large or smaller unattended openable object within \rngclose range.
 If the target object becomes opened, it explodes.
 When it explodes, you make a Spellpower vs. Reflex attack against everything within an \areamed radius burst from the target, including the target itself.
-\hit Each target takes \glossterm{standard damage} \minus1d.
+\hit Each target takes fire \glossterm{standard damage} \minus1d.
 
 After the object explodes in this way, the spell is \glossterm{dismissed}.
 \end{ability}
@@ -1507,7 +1501,7 @@ If you do, it increases the area of the emanation.
 \begin{ability}[\nth{6}]{Greater Ignition}
 This subspell functions like the \spell{pyromancy} spell, except that each target hit is also \glossterm{ignited} as a \glossterm{condition}.
 Unlike the normal ignited effect, this condition cannot be removed by putting out the fire.
-In addition, the ignited effect deals \glossterm{standard damage} \minus3d instead of the normal 1d6 damage each round.
+In addition, the ignited effect deals fire \glossterm{standard damage} \minus3d instead of the normal 1d6 fire damage each round.
 \end{ability}
 \vspace{0.25em}
 
