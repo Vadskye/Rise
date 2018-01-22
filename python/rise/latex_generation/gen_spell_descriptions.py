@@ -124,7 +124,7 @@ def generate_spells():
                 If the attacker is beyond \\rngclose range of the target, this reflection fails.
 
                 Any effect which increases this subspell's range increases the range of this effect by the same amount.
-                This subspell is from the Vivimancy school and gains the \\glossterm<Life> tag in addition to the tags from the \\spell<barrier> spell.
+                This subspell is from both the Abjuration and Vivimancy schools and gains the \\glossterm<Life> tag in addition to the tags from the \\spell<barrier> spell.
             """),
             Subspell('Empowered', 5, """
                 This subspell functions like the \\spell<barrier> spell, except that the damage reduction increases by an amount equal to your spellpower.
@@ -318,7 +318,7 @@ def generate_spells():
                 Melee weapons wielded by the target gain a +1d bonus to \\glossterm<strike damage>.
                 In addition, all \\glossterm<strike damage> dealt with its weapons becomes fire damage in addition to the attack's normal damage types.
 
-                You can cast this subspell as a \\glossterm<minor action>
+                You can cast this subspell as a \\glossterm<minor action>.
             """, tags=['Attune (shared)', 'Fire']),
             Subspell('Fire Trap', 3, """
                 Choose an Large or smaller unattended openable object within \\rngclose range.
@@ -344,11 +344,24 @@ def generate_spells():
         lists=['Nature', 'Water'],
         cantrip="The spell's area becomes a 5 ft.\ wide, \\areamed line.",
         subspells=[
+            Subspell('Raging River', 4, """
+                This subspell functions like the \\spell<aquamancy> spell, except that it gains the \\glossterm<Sustain> (standard) tag.
+                The area affected by the spell becomes a \\glossterm<zone> that is continuously filled with rushing water.
+                Creatures in area suffer penalties appropriate for fighting underwater, and may be unable to breathe.
+                In addition, at the end of each \\glossterm<action phase> in subsequent rounds, the attack is repeated in that area.
+            """),
+            Subspell("Greater Raging River", 7, f"""
+                This subspell functions like the \\textit<dynamo> subspell, except that the spell gains the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Sustain> (standard) tag.
+            """),
+            Subspell('Geyser', 3, """
+                Make a Spellpower vs. Fortitude attack against everything in a \\arealarge, 5 ft.\\ wide vertical line.
+                \\hit Each target takes takes bludgeoning \\glossterm<standard damage> +1d.
+            """, tags=['Manifestation', 'Water']),
             Subspell('Create Water', 2, """
                 You create up to one gallon of wholesome, drinkable water anywhere within \\rngclose range.
                 The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
                 You must create a minimum of one ounce of water in each location.
-            """, tags=['Manifestation', 'Water']),
+            """, tags=['Creation', 'Water']),
             Subspell("Aqueous Sphere", 2, f"""
                 This subspell functions like the \\spell<aquamancy> spell, except that it targets everything in a \\areasmall radius within \\rngclose range.
             """),
@@ -357,13 +370,9 @@ def generate_spells():
                 Whenever the target makes a \\glossterm<strike> with a melee weapon, the attack is made against Reflex defense instead of Armor defense.
                 However, the target takes a -2d penalty to \\glossterm<strike damage>.
 
-                You can cast this subspell as a \\glossterm<minor action>
+                You can cast this subspell as a \\glossterm<minor action>.
+                This subspell is from the Transmutation school instead of the Conjuration school.
             """, tags=['Attune (shared)', 'Shaping', 'Water']),
-            Subspell("Sustained", 4, """
-                This subspell functions like the \\spell<aquamancy> spell, except that it gains the \\glossterm<Sustain> (minor) tag.
-                The area affected by the spell becomes a \\glossterm<zone> that is completely filled with water.
-                Creatures in area suffer penalties appropriate for fighting underwater, and may be unable to breathe.
-            """),
             Subspell('Greater Aqueous Blade', 6, """
                 This subspell functions like the \\spell<aqueous blade> subspell, except that the penalty to strike damage is reduced to \minus1d.
             """),
@@ -591,7 +600,7 @@ def generate_spells():
                 This subspell functions like the \\textit<cold snap> subspell, except that the spell gains the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Sustain> (standard) tag.
             """),
             Subspell("Freezing", 4, """
-                This subspell functions like the \\spell<cryomancy> spell, except that each struck target is also \\glossterm<immobilized> as a \\glossterm<condition>.
+                This subspell functions like the \\spell<cryomancy> spell, except that each struck target is also \\glossterm<immobilized> as an additional \\glossterm<condition>.
             """),
             Subspell('Frostbite', 3, """
                 Make a Spellpower vs. Fortitude attack against one creature within \\rngmed range.
@@ -640,20 +649,37 @@ def generate_spells():
         header=Header("You create a bolt of electricity that fries your foes."),
         effects=Effects('Electromancy', """
             Make a Spellpower vs. Reflex attack against everything in an \\arealarge, 10 ft.\\ wide line from you.
-            You gain a +2 bonus to accuracy against creatures wearing metal armor or otherwise carrying a significant amount of metal.
             \\hit Each target takes electricity \\glossterm<standard damage> -1d.
         """, tags=['Electricity']),
         schools=['Evocation'],
         lists=['Arcane', 'Nature'],
         cantrip="The spell's area becomes a 5 ft.\\ wide \\areamed line.",
         subspells=[
+            Subspell('Magnetic', 2, """
+                This subspell functions like the \\spell<electromancy> spell, except that you gain a +2 bonus to accuracy against creatures wearing metal armor or otherwise carrying a significant amount of metal.
+            """),
+            Subspell('Dynamo', 2, """
+                This subspell functions like the \\spell<electromancy> spell, except that it gains the \\glossterm<Sustain> (standard) tag.
+                The area affected by the spell becomes a \\glossterm<zone> that is continuously filled with electrical pulses.
+                At the end of each \\glossterm<action phase> in subsequent rounds, the attack is repeated in that area.
+            """),
+            Subspell("Greater Dynamo", 5, f"""
+                This subspell functions like the \\textit<dynamo> subspell, except that the spell gains the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Sustain> (standard) tag.
+            """),
+            # This is fairly aggressively costed - should maybe be 7
+            Subspell('Chain Lightning', 6, """
+                Make a Spellpower vs. Reflex attack against one creature or object within \\rngmed range.
+                \\hit The target takes electricity \\glossterm<standard damage> +2d.
+                In addition, make an additional Spellpower vs. Reflex attack against any number of creatures in an \\areamed radius from the struck target.
+                \\hit Each secondary target takes electricity \\glossterm<standard damage>.
+            """, tags=['Electricity']),
             Subspell("Forked Lightning", 3, """
                 This subspell functions like the \\spell<electromancy> spell, except that you create two separate line-shaped areas instead of one.
                 The two areas can overlap, but targets in the overlapping area are only affected once.
             """),
             Subspell("Shocking", 5, """
                 This subspell functions like the \\spell<electromancy> spell, except that each struck target is also \\glossterm<dazed> as a \\glossterm<condition>.
-                Each critical struck target is \\glossterm<stunned> instead of dazed.
+                Each critically struck target is \\glossterm<stunned> instead of dazed.
             """),
             Subspell("Instantaneous", 4, """
                 This subspell functions like the \\spell<electromancy> spell, except that the spell's attack is made against Fortitude defense instead of Reflex defense.
@@ -662,7 +688,7 @@ def generate_spells():
                 Make a Spellpower vs. Reflex attack against everything in a \\arealarge, 5 ft.\\ wide vertical line.
                 If you are outdoors in cloudy or stormy weather, you gain a +2 bonus to \\glossterm<accuracy> with the attack.
                 \\hit Each target takes takes electricity \\glossterm<standard damage> +1d.
-            """),
+            """, tags=['Electricity']),
         ],
         category='damage',
     ))
@@ -688,7 +714,7 @@ def generate_spells():
         subspells=[
             Subspell("Eyebite", 2, """
                 This subspell functions like the \\spell<corruption> spell, except that a struck target is also \\glossterm<dazzled> as an additional \\glossterm<condition>.
-                A critical struck target is \\glossterm<blinded> instead of dazzled.
+                A critically struck target is \\glossterm<blinded> instead of dazzled.
             """),
             Subspell("Finger of Death", 7, """
                 This subspell functions like the \\spell<corruption> spell, except that a struck target also takes life \\glossterm<standard damage> +1d.

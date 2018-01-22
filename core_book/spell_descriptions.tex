@@ -215,7 +215,7 @@ This subspell functions like the \spell{aquamancy} spell, except that it targets
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{2}]{Create Water}[\glossterm{Manifestation}, \glossterm{Water}]
+\begin{ability}[\nth{2}]{Create Water}[\glossterm{Creation}, \glossterm{Water}]
 You create up to one gallon of wholesome, drinkable water anywhere within \rngclose range.
 The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
 You must create a minimum of one ounce of water in each location.
@@ -228,21 +228,36 @@ Choose a willing creature within \rngclose range.
 Whenever the target makes a \glossterm{strike} with a melee weapon, the attack is made against Reflex defense instead of Armor defense.
 However, the target takes a \minus2d penalty to \glossterm{strike damage}.
 
-You can cast this subspell as a \glossterm{minor action}
+You can cast this subspell as a \glossterm{minor action}.
+This subspell is from the Transmutation school instead of the Conjuration school.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{4}]{Sustained}
-This subspell functions like the \spell{aquamancy} spell, except that it gains the \glossterm{Sustain} (minor) tag.
-The area affected by the spell becomes a \glossterm{zone} that is completely filled with water.
+\begin{ability}[\nth{3}]{Geyser}[\glossterm{Manifestation}, \glossterm{Water}]
+Make a Spellpower vs. Fortitude attack against everything in a \arealarge, 5 ft.\ wide vertical line.
+\hit Each target takes takes bludgeoning \glossterm{standard damage} \plus1d.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{4}]{Raging River}
+This subspell functions like the \spell{aquamancy} spell, except that it gains the \glossterm{Sustain} (standard) tag.
+The area affected by the spell becomes a \glossterm{zone} that is continuously filled with rushing water.
 Creatures in area suffer penalties appropriate for fighting underwater, and may be unable to breathe.
+In addition, at the end of each \glossterm{action phase} in subsequent rounds, the attack is repeated in that area.
 \end{ability}
 \vspace{0.25em}
 
 
 \begin{ability}[\nth{6}]{Greater Aqueous Blade}
 This subspell functions like the \spell{aqueous blade} subspell, except that the penalty to strike damage is reduced to \minus1d.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{7}]{Greater Raging River}
+This subspell functions like the \textit{dynamo} subspell, except that the spell gains the \glossterm{Sustain} (minor) tag instead of the \glossterm{Sustain} (standard) tag.
 \end{ability}
 \vspace{0.25em}
 
@@ -381,7 +396,7 @@ This subspell functions like the \spell{barrier} spell, except that damage resis
 If the attacker is beyond \rngclose range of the target, this reflection fails.
 
 Any effect which increases this subspell's range increases the range of this effect by the same amount.
-This subspell is from the Vivimancy school and gains the \glossterm{Life} tag in addition to the tags from the \spell{barrier} spell.
+This subspell is from both the Abjuration and Vivimancy schools and gains the \glossterm{Life} tag in addition to the tags from the \spell{barrier} spell.
 \end{ability}
 \vspace{0.25em}
 
@@ -739,7 +754,7 @@ You take a \minus2 penalty to accuracy with the spell.
 
 \begin{ability}[\nth{2}]{Eyebite}
 This subspell functions like the \spell{corruption} spell, except that a struck target is also \glossterm{dazzled} as an additional \glossterm{condition}.
-A critical struck target is \glossterm{blinded} instead of dazzled.
+A critically struck target is \glossterm{blinded} instead of dazzled.
 \end{ability}
 \vspace{0.25em}
 
@@ -854,7 +869,7 @@ Make a Spellpower vs. Fortitude attack against one creature within \rngmed range
 
 
 \begin{ability}[\nth{4}]{Freezing}
-This subspell functions like the \spell{cryomancy} spell, except that each struck target is also \glossterm{immobilized} as a \glossterm{condition}.
+This subspell functions like the \spell{cryomancy} spell, except that each struck target is also \glossterm{immobilized} as an additional \glossterm{condition}.
 \end{ability}
 \vspace{0.25em}
 
@@ -1092,7 +1107,6 @@ Make a Spellpower vs. Mental attack against all enemies in a \areamed radius fro
 \begin{ability}{Electromancy}[\glossterm{Electricity}]
 
 Make a Spellpower vs. Reflex attack against everything in an \arealarge, 10 ft.\ wide line from you.
-You gain a \plus2 bonus to accuracy against creatures wearing metal armor or otherwise carrying a significant amount of metal.
 \hit Each target takes electricity \glossterm{standard damage} \minus1d.
 
 \end{ability}
@@ -1109,7 +1123,21 @@ You gain a \plus2 bonus to accuracy against creatures wearing metal armor or oth
 \subsubsection{Subspells}
 
 
-\begin{ability}[\nth{3}]{Call Lightning}
+\begin{ability}[\nth{2}]{Dynamo}
+This subspell functions like the \spell{electromancy} spell, except that it gains the \glossterm{Sustain} (standard) tag.
+The area affected by the spell becomes a \glossterm{zone} that is continuously filled with electrical pulses.
+At the end of each \glossterm{action phase} in subsequent rounds, the attack is repeated in that area.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{2}]{Magnetic}
+This subspell functions like the \spell{electromancy} spell, except that you gain a \plus2 bonus to accuracy against creatures wearing metal armor or otherwise carrying a significant amount of metal.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{3}]{Call Lightning}[\glossterm{Electricity}]
 Make a Spellpower vs. Reflex attack against everything in a \arealarge, 5 ft.\ wide vertical line.
 If you are outdoors in cloudy or stormy weather, you gain a \plus2 bonus to \glossterm{accuracy} with the attack.
 \hit Each target takes takes electricity \glossterm{standard damage} \plus1d.
@@ -1130,9 +1158,24 @@ This subspell functions like the \spell{electromancy} spell, except that the spe
 \vspace{0.25em}
 
 
+\begin{ability}[\nth{5}]{Greater Dynamo}
+This subspell functions like the \textit{dynamo} subspell, except that the spell gains the \glossterm{Sustain} (minor) tag instead of the \glossterm{Sustain} (standard) tag.
+\end{ability}
+\vspace{0.25em}
+
+
 \begin{ability}[\nth{5}]{Shocking}
 This subspell functions like the \spell{electromancy} spell, except that each struck target is also \glossterm{dazed} as a \glossterm{condition}.
-Each critical struck target is \glossterm{stunned} instead of dazed.
+Each critically struck target is \glossterm{stunned} instead of dazed.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{6}]{Chain Lightning}[\glossterm{Electricity}]
+Make a Spellpower vs. Reflex attack against one creature or object within \rngmed range.
+\hit The target takes electricity \glossterm{standard damage} \plus2d.
+In addition, make an additional Spellpower vs. Reflex attack against any number of creatures in an \areamed radius from the struck target.
+\hit Each secondary target takes electricity \glossterm{standard damage}.
 \end{ability}
 \vspace{0.25em}
 
@@ -1508,7 +1551,7 @@ Choose a willing creature within \rngclose range.
 Melee weapons wielded by the target gain a \plus1d bonus to \glossterm{strike damage}.
 In addition, all \glossterm{strike damage} dealt with its weapons becomes fire damage in addition to the attack's normal damage types.
 
-You can cast this subspell as a \glossterm{minor action}
+You can cast this subspell as a \glossterm{minor action}.
 \end{ability}
 \vspace{0.25em}
 
