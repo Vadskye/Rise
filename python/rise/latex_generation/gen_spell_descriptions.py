@@ -838,7 +838,7 @@ def generate_spells():
                 This subspell functions like the \\spell<scry> spell, except that you do not need \\glossterm<line of sight> or \\glossterm<line of effect> to target a location.
                 You must specify a distance and direction to target a location you cannot see.
                 This can allow you to cast the spell beyond walls and similar obstacles.
-                As normal, if the intended location is occupied or otherwise impossible, the spell simply fails.
+                As normal, if the intended location is occupied or otherwise impossible, the spell is \\glossterm<miscast>.
             """),
             Subspell("Semi-Autonomous", 4, """
                 This subspell functions like the \\spell<scry> spell, except that you can move the sensor as a \\glossterm<minor action> rather than as a standard action.
@@ -849,7 +849,7 @@ def generate_spells():
                 You do not need \\glossterm<line of sight> or \\glossterm<line of effect> to the target.
                 However,  must specify your target with a precise mental image of its appearance.
                 The image does not have to be perfect, but it must unambiguously identify the target.
-                If you specify its appearance incorrectly, or if the target has changed its appearance, you may accidentally target a different creature, or the spell may simply fail.
+                If you specify its appearance incorrectly, or if the target has changed its appearance, you may accidentally target a different creature, or the spell may simply be \\glossterm<miscast>.
                 \\hit A scrying sensor appears in the target's space.
                 This sensor functions like the sensor created by the \\spell<scry> spell, except that you cannot move the sensor manually.
                 Instead, it automatically tries to follow the target to stay in its space.
@@ -1153,7 +1153,7 @@ def generate_spells():
             Subspell("Teleport", 2, """
                 Choose a Medium or smaller willing creature within \\rngclose range.
                 The target teleports into an unoccupied destination within \\rngmed range of its original location.
-                If the destination is invalid, the spell fails.
+                If the destination is invalid, the spell is \\glossterm<miscast>.
             """, tags=['Teleportation']),
             Subspell("Dimension Door", 4, """
                 You teleport to a location within \\rngext range of you.
