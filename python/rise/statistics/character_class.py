@@ -14,8 +14,8 @@ def defense_bonuses_from_class_name(name):
         'rogue': [1, 3, 2],
 
         # Monster classes
-        'adept': [1, 2, 3],
-        'behemoth': [3, 1, 2],
+        'adept': [2, 2, 2],
+        'behemoth': [2, 2, 2],
         'horde': [0, 0, 0],
         'slayer': [2, 2, 2],
     }[name]
