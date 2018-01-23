@@ -1,7 +1,3 @@
-% create bordered frames
-\newmdenv{fullborder}
-\newmdenv[leftline=false,rightline=false]{topandbottomborders}
-
 %Set the spacing of lists
 \newenvironment{enumerate*}
 {\begin{enumerate}
@@ -11,14 +7,6 @@
   \setlength{\parskip}{0pt}
   \setlength{\parsep}{0pt}}
 {\end{enumerate}}
-\newenvironment{itemblank}
-{\begin{itemize}[label={}]
-  \setlength{\leftmargin}{0em}
-  \setlength{\topsep}{1pt}
-  \setlength{\itemsep}{1pt}
-  \setlength{\parskip}{0pt}
-  \setlength{\parsep}{0pt}}
-{\end{itemize}}
 
 %Define a custom table that uses that coloring
 \newenvironment{dtable}
@@ -50,48 +38,10 @@
 }
 {\twocolumn}
 
-\newenvironment{spelltable}
-{\begin{table}[htb!]}
-{\end{table}}
-
-%A list for sorcerer/wizard spells
-\newenvironment{swspelllist}
-{\begin{description}[nosep,font=\normalfont,leftmargin=4.25em,style=nextline,itemindent=-1em]}
-{\end{description}}
 %A list for normal spells
 \newenvironment{spelllist}
 {\begin{description}[nosep,font=\normalfont,leftmargin=2.25em,style=nextline,itemindent=-1em]}
 {\end{description}}
-%A list for rituals
-\newenvironment{rituallist}
-{\begin{description}[nosep,font=\normalfont,leftmargin=4.5em,style=nextline,itemindent=-1em]}
-{\end{description}}
-
-
-\newenvironment{mstatblock}{\leftskip 0.1in \parindent-0.1in}{}
-
-\newenvironment{wildaspect}
-{\begin{enumerate*}\setcounter{enumi}{1}}
-{\end{enumerate*}}
-
-\newenvironment{greaterwildaspect}
-{\begin{enumerate*}\setcounter{enumi}{9}}
-{\end{enumerate*}}
-
-\newenvironment{spellhealthy}
-{\parhead*{Healthy Effect}}
-{}
-\newenvironment{spellblood}
-{\parhead*{Bloodied Effect}}
-{}
-
-\DeclareDocumentEnvironment{spellmargin}{}
-{\par\setlength{\leftskip}{1em}}
-{\par\setlength{\leftskip}{0pt}}
-
-\DeclareDocumentEnvironment{spellmarginext}{}
-{\par\setlength{\leftskip}{2em}}
-{\par\setlength{\leftskip}{0pt}}
 
 \ExplSyntaxOn
 
@@ -151,15 +101,6 @@
 ]{ability}
 
 \newmdenv[
-    style=spellcontent,
-    leftline=true,
-    topline=false,
-    rightline=true,
-    bottomline=true,
-    skipabove=0,
-]{spellsubcontent}
-
-\newmdenv[
     style=colorenv,
     backgroundcolor=LightCyan,
 ]{spelltargetinginfo}
@@ -210,19 +151,6 @@
     bottomline=true,
 ]{monsterfooter}
 
-\DeclareDocumentEnvironment{spelltriggercolor}{}
-{
-    \begin{fakehang}
-}
-{
-    \end{fakehang}
-}
-
-\surroundwithmdframed[
-    style=colorenv,
-    backgroundcolor=Linen
-]{spelltriggercolor}
-
 \DeclareDocumentEnvironment{dtabularx}{m m}
 {
     \tabularx{#1}{#2}%
@@ -268,62 +196,6 @@
     \end{thesamepage}
 }
 
-% args:
-%   item name
-%   price
-%   effective spell level
-%   [body location]
-%   school and descriptors
-%   [activation]
-%   crafting skill
-%   fluff text
-\DeclareDocumentEnvironment{magicitemdef}{o m o m o m o m o}
-{
-    \begin{thesamepage}
-    \IfValueTF{#1}
-    {
-        \hypertarget{item:#2}{\sssecfakehref{it:#2}{#2~[#1]}}
-    }
-    {
-        \hypertarget{item:#2}{\sssecfakehref{it:#2}{#2}}
-    }
-    \label{item:#2}
-
-    \begin{spellcontent}
-    \begin{spelltargetinginfo}
-        \IfValueT{#3}
-        {
-            \mitempricewithlevel{#3}{#4}
-        }
-
-        \parhead*{Base~Item~Power} \magicitemspellpower{#4}
-
-        \IfValueT{#5}
-        {
-            \parhead*{Location} #5
-        }
-
-        \parhead*{Aura} \magicitemaurastrength{#4}~#6
-
-        \IfValueT{#7}
-        {
-            \parhead*{Activation} #7
-        }
-        \par
-    \end{spelltargetinginfo}
-    \begin{spelleffects}
-}
-{
-    \end{spelleffects}
-    \end{spellcontent}
-    \begin{spellfooter}
-        \IfValueT{#9}{\par\noindent #9}
-        \par\noindent \textit{Creation~Requirements:}~#6;~
-        \nth{#4}~level~spells~or~Craft~(#8)~\imath{#4*2+5}~ranks
-    \end{spellfooter}
-    \end{thesamepage}
-}
-
 \DeclareDocumentEnvironment{thesamepage}{}
 {
     \par\nobreak\vfil\penalty0\vfilneg
@@ -333,33 +205,6 @@
     \par\xdef\tpd{\the\prevdepth}
     \prevdepth=\tpd
 }
-
-\DeclareDocumentEnvironment{spellaugments}{}
-{
-    \parhead{Augments}
-    \begin{fakehang}
-}
-{
-    \end{fakehang}
-}
-\surroundwithmdframed[
-    style=colorenv,
-    backgroundcolor=MistyRose,
-]{spellaugments}
-
-\DeclareDocumentEnvironment{spellcantrip}{}
-{
-    \fieldhead{Cantrip}
-    \begin{fakehang}
-}
-{
-    \par~If~you~cast~this~spell~as~a~cantrip,~you~do~not~need~to~spend~an~\glossterm{action~point}~to~cast~it,~but~you~cannot~apply~any~augments~to~it.
-    \end{fakehang}
-}
-\surroundwithmdframed[
-    style=colorenv,
-    backgroundcolor=MistyRose,
-]{spellcantrip}
 
 \DeclareDocumentEnvironment{feat}{m m}
 {
