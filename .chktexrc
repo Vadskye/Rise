@@ -399,7 +399,6 @@ Silent
     \miscastyou \miscastrandom \miscastretarget \miscastexplode
     \taburowcolors
     \monlinerule \pari
-    \itempath \magical
 
 }[
 # Here you can put regular expressions to match Silent macros.  It was
