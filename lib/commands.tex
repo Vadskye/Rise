@@ -1,6 +1,3 @@
-%\newcommand{\Variable}{0}
-%\newcommand{\storevalue}[1]{\renewcommand{\Variable}{#1}}
-
 \newcommand{\lcaption}[1]{\caption{#1}\label{cap:#1}}
 
 \newcommand{\pref}[1]{page \pageref{#1}}
@@ -21,7 +18,6 @@
 \newcommand{\subsk}[1]{\par \emph{#1}:}    %Italicize sub-skill headers
 
 \newcommand{\subparhead}[1]{\par\emph{#1}:}
-%\newcommand{\thead}[1]{\textbf{#1}}    %Bold the header of tables
 \newcommand{\tb}[1]{\textbf{#1}}    %Bold the header of tables
 \newcommand{\tdash}{\hskip 0.1em---\xspace}    %A null entry in a table
 \newcommand{\ccol}{\centering\arraybackslash}    %Center columns
@@ -106,48 +102,7 @@
 
 \newcommand{\dismissable}{}
 
-% http://tex.stackexchange.com/questions/135617/how-to-i-reduce-space-before-and-after-hrule
-\newcommand{\HRule}[2][\medskipamount]{\par
-  \vspace*{\dimexpr-\parskip-\baselineskip+#1}
-  \noindent\rule{\linewidth}{#2}\par
-  \vspace*{\dimexpr-\parskip-.5\baselineskip+#1}}
-
-\newcommand{\spellline}{\par\HRule[0.5\medskipamount]{0.2pt}}
-% weird spacing before twocol
-\newcommand{\spelllinespaced}{\spellline\vspace{0.5\medskipamount}}
-
-%\newcommand{\spelleffect}{\fieldhead{Effect}}
-%\newcommand{\spellsuccess}{\fieldhead{Success}}
-%\newcommand{\spellfailure}{\fieldhead{Failure}\xspace}
-\newcommand{\spellnotes}{\par\noindent\textit{Notes}:\xspace}
-\newcommand{\spellspecial}{\fieldhead{Special}}
-\newcommand{\spellcheck}[1]{\fieldhead{Check} #1}
-
 \ExplSyntaxOn
-
-\DeclareDocumentCommand{\Create}{m}
-{
-    \newcounter{#1}
-    \setcounter{#1}{0}
-}
-
-\DeclareDocumentCommand{\Set}{m m}
-{
-    \setcounter{#1}{#2}
-}
-
-\DeclareDocumentCommand{\Get}{m}
-{
-    \arabic{#1}
-}
-
-\DeclareDocumentCommand{\GetValue}{m}
-{
-    \value{#1}
-}
-
-\newcommand{\TempVar}{0}
-\newcommand{\TempVarTwo}{0}
 
 \DeclareDocumentCommand{\parhead}{s m o}
 {
@@ -156,186 +111,6 @@
     \IfNoValueTF{#3}
     {\textbf{#2}:}
     {\textbf{#2}~[#3]:}\xspace
-}
-
-\DeclareDocumentCommand{\fieldhead}{m o}
-{
-    \par\noindent
-    \IfNoValueTF{#2}
-    {\textbf{#1}:}
-    {\textbf{#1}~[#2]:}\xspace
-}
-
-\DeclareDocumentCommand{\spellfailure}{o}
-{
-    \IfNoValueTF{#1}
-    {\fieldhead{Failure}}
-    {\fieldhead{Failure}[#1]}
-}
-\DeclareDocumentCommand{\spellsuccess}{o}
-{
-    \IfNoValueTF{#1}
-    {\fieldhead{Hit}}
-    {\fieldhead{Hit}[#1]}
-}
-\DeclareDocumentCommand{\spellcritical}{o}
-{
-    \IfNoValueTF{#1}
-    {\fieldhead{Critical~Hit}}
-    {\fieldhead{Critical~Hit}[#1]}
-}
-\DeclareDocumentCommand{\spelleffect}{o}
-{
-    \IfNoValueTF{#1}
-    {\fieldhead{Effect}}
-    {\fieldhead{Effect}[#1]}
-}
-\DeclareDocumentCommand{\spelltgt}{m o}
-{
-    \IfNoValueTF{#2}
-    {\fieldhead{Target} #1}
-    {\fieldhead{#2~Target} #1}
-}
-\DeclareDocumentCommand{\spelltgts}{m o}
-{
-    \IfNoValueTF{#2}
-    {\fieldhead{Targets} #1}
-    {\fieldhead{#2~Targets} #1}
-}
-
-\DeclareDocumentCommand{\ritualcostparser}{m}
-{
-    \ifcase#1\relax
-    \or 5~gp    %1
-    \or 20~gp   %2
-    \or 50~gp   %3
-    \or 125~gp  %4
-    \or 300~gp  %5
-    \or 750~gp  %6
-    \or 1,500~gp %7
-    \or 3,000~gp %8
-    \or 7,500~gp %9
-    \else???
-    \fi
-}
-
-\DeclareDocumentCommand{\ritualcost}{s m o}
-{
-    \IfBooleanF{#1}{\spellline}
-    \spellmat{\ritualcostparser#2\xspace
-        \IfValueTF{#3}
-        {#3}
-        {in~ritual~components.}
-    }
-}
-
-% args:
-%   magic item price or type of price
-%   effective spell level
-\DeclareDocumentCommand{\mitempricewithlevel}{m m}
-{
-    \IfSubStr{#1}{Passive}
-    {
-        %\renewcommand{\TempVarTwo}{\magicitempricepassive{#2}}
-        \magicitempricepassive{#2}
-    }
-    {
-        \IfSubStr{#1}{Active}
-        {
-            \magicitempriceactive{#2}
-        }
-        {
-            \renewcommand{\TempVarTwo}{#1}
-        }
-    }
-
-    \StrLen{\TempVarTwo}[\TempVar]
-    \pgfmathparse{\TempVar > 4}
-    \ifcase\pgfmathresult
-        % handle normal magic items
-        \fieldhead{Price~(Level)} \num{\TempVarTwo}~gp~(\cheapitemlevel{\TempVarTwo})
-    \or
-        % handle very expensive magic items
-        % by passing the number with the right three digits removed
-        \StrGobbleRight{\TempVarTwo}{3}[\TempVar]
-        \fieldhead{Price~(Level)} \num{\TempVarTwo}~gp~(
-            \magicitemexpensiveitemlevel{\TempVar}
-        )
-    \fi
-}
-
-\DeclareDocumentCommand{\mitempricetable}{m m}
-{
-    \IfSubStr{#1}{Passive}
-    {
-        %\renewcommand{\TempVarTwo}{\magicitempricepassive{#2}}
-        \magicitempricepassive{#2}
-    }
-    {
-        \IfSubStr{#1}{Active}
-        {
-            \magicitempriceactive{#2}
-        }
-        {
-            \renewcommand{\TempVarTwo}{#1}
-        }
-    }
-    \xdef\ItemCost{\num{\TempVarTwo}~gp}
-
-    \StrLen{\TempVarTwo}[\TempVar]
-    \pgfmathparse{\TempVar > 4}
-    \ifcase\pgfmathresult
-        % handle normal magic items
-        \xdef\ItemLevel{\cheapitemlevel{\TempVarTwo}}
-    \or
-        % handle very expensive magic items
-        % by passing the number with the right three digits removed
-        \StrGobbleRight{\TempVarTwo}{3}[\TempVar]
-        \xdef\ItemLevel{\magicitemexpensiveitemlevel{\TempVar}}
-    \fi
-    \ItemCost & \ItemLevel
-}
-
-% args:
-%    spell level
-\DeclareDocumentCommand{\magicitempriceactive}{m}
-{
-    \renewcommand{\TempVarTwo}{
-        \ifcase#1~
-        100    %0
-        \or 200   %1
-        \or 800   %2
-        \or 2000  %3
-        \or 5000  %4
-        \or 12000  %5
-        \or 30000 %6
-        \or 60000 %7
-        \or 140000 %8
-        \or 300000 %9
-        \else 0
-        \fi
-    }
-}
-
-% args:
-%    spell level
-\DeclareDocumentCommand{\magicitempricepassive}{m}
-{
-    \renewcommand{\TempVarTwo}{
-        \ifcase#1~
-        200   %0
-        \or 800   %1
-        \or 2000  %2
-        \or 5000  %3
-        \or 12000  %4
-        \or 30000 %5
-        \or 60000 %6
-        \or 140000 %7
-        \or 300000 %8
-        \or 700000 %9
-        \else 0
-        \fi
-    }
 }
 
 % If #1 = #2
@@ -371,23 +146,6 @@
     }:
 }
 
-\DeclareDocumentCommand{\spellinfo}{m s m}
-{
-    \IfBooleanTF{#2}
-    {
-        \noindent#1
-        \fieldhead{Lists} #3
-    }
-    {
-        \spelltwocol{\fieldhead{Schools}~#1}{\fieldhead{Lists}~#3}
-    }
-}
-
-\DeclareDocumentCommand{\spelltags}{m}
-{
-    \fieldhead{Tags} #1
-}
-
 \DeclareDocumentCommand{\imath}{m}
 {
     %\pgfmathparse{int(floor(#1))}\pgfmathresult
@@ -405,185 +163,6 @@
     \TempVar
 }
 
-\DeclareDocumentCommand{\mathnth}{m}
-{
-    \pgfmathparse{int(floor(#1))}\nth{\pgfmathresult}
-}
-
-\DeclareDocumentCommand{\gooddefense}{m}
-{
-    \plus \imath{(#1*5/4)}
-}
-
-\DeclareDocumentCommand{\avgdefense}{m}
-{
-    \plus \imath{(#1*1)}
-}
-
-\DeclareDocumentCommand{\poordefense}{m}
-{
-    \plus \imath{(#1*3/4)}
-}
-
-\DeclareDocumentCommand{\babold}{m}
-{
-    \imathparse{int(floor((#1-1)/5+1))}
-
-    \ifcase\imathresult \relax \or
-        \plus #1 % case 0
-    \or
-        \plus #1 / \plus \imath{#1-5} % case 1
-    \or
-        \plus #1 / \plus \imath{#1-5} / \plus \imath{#1-10} % case 2
-    \or
-        \plus #1 / \plus \imath{#1-5} / \plus \imath{#1-10} / \plus \imath{#1-15} % case 3
-    \or
-        \plus #1 / \plus \imath{#1-5} / \plus \imath{#1-10} / \plus \imath{#1-15} / \plus \imath{#1-20} % case 3
-    \fi
-}
-
-\DeclareDocumentCommand{\bab}{m o}
-{
-    \IfValueTF{#2}
-    {
-        \imathparse{int(floor((#1-1)/#2+1))}
-    }
-    {
-        \imathparse{int(floor((#1-1)/5+1))}
-    }
-
-    \ifcase\imathresult
-        {}#1 % case -1
-    \or
-        {}#1 % case 0
-    \or
-        {}#1~{}~(\mult2) % case 1
-    \or
-        {}#1~{}~(\mult3) % case 2
-    \or
-        {}#1~{}~(\mult4) % case 3
-    \or
-        {}#1~{}~(\mult5) % case 3
-    \fi
-}
-
-\DeclareDocumentCommand{\goodbab}{m}
-{
-    \pgfmathparse{int(floor(#1+2))}
-    \bab{\pgfmathresult}
-}
-
-\DeclareDocumentCommand{\avgbab}{m}
-{
-    \pgfmathparse{int(floor((#1*4/5+2)))}
-    \bab{\pgfmathresult}
-}
-
-\DeclareDocumentCommand{\poorbab}{m}
-{
-    \pgfmathparse{int(floor((#1*2/3+1)))}
-    \bab{\pgfmathresult}
-}
-
-\DeclareDocumentCommand{\alldefenseprogressionrow}{m}
-{
-    \nth{#1} & \gooddefense{#1} & \avgdefense{#1} & \poordefense{#1}
-}
-
-\DeclareDocumentCommand{\allbabprogressionrow}{m}
-{
-    \nth{#1} & \goodbab{#1} & \avgbab{#1} & \poorbab{#1}
-}
-
-\DeclareDocumentCommand{\barbarianprogressionrow}{m}
-{
-    \nth{#1} & \goodbab{#1}
-}
-
-\DeclareDocumentCommand{\clericprogressionrow}{m}
-{
-    \nth{#1} & \avgbab{#1}
-}
-
-\DeclareDocumentCommand{\druidprogressionrow}{m}
-{
-    \nth{#1} & \avgbab{#1}
-}
-
-\DeclareDocumentCommand{\halfdragonprogressionrow}{m}
-{
-    \nth{#1} & \goodbab{#1}
-}
-
-\DeclareDocumentCommand{\monkprogressionrow}{m}
-{
-    \nth{#1} & \goodbab{#1}
-}
-
-\DeclareDocumentCommand{\paladinprogressionrow}{m}
-{
-    \nth{#1} & \goodbab{#1}
-}
-
-\DeclareDocumentCommand{\rangerprogressionrow}{m}
-{
-    \nth{#1} & \goodbab{#1}
-}
-
-\DeclareDocumentCommand{\rogueprogressionrow}{m}
-{
-    \nth{#1} & \avgbab{#1}
-}
-
-\DeclareDocumentCommand{\spellwarpedprogressionrow}{m}
-{
-    \nth{#1} & \goodbab{#1}
-}
-
-\DeclareDocumentCommand{\mageprogressionrow}{m}
-{
-    \nth{#1} & \poorbab{#1}
-}
-
-\DeclareDocumentCommand{\fighterprogressionrow}{m}
-{
-    \nth{#1} & \goodbab{#1}
-}
-
-\DeclareDocumentCommand{\spelldamage}{m o}
-{
-    \IfValueTF{#2}{#2}{1d8}~
-    \ifstr{#1}{#1~}{}
-    damage~\plus1d~per~two~spellpower.
-    % or alternately: standard damage based on your spellpower \add 2, etc.
-}
-
-\DeclareDocumentCommand{\spelldamageemp}{m o}
-{
-    \ifstr{#1}{}
-    {
-        \IfValueTF{#2}
-        {1#2~damage~per~spellpower}
-        {1d8~damage~per~spellpower}
-    }
-    {
-        \IfValueTF{#2}
-        {1#2~#1~damage~per~spellpower}
-        {1d8~#1~damage~per~spellpower}
-    }
-}
-
-\DeclareDocumentCommand{\spellquicktargeting}{s m m}
-{
-    \IfBooleanTF{#1}
-    {
-        \spelltwocol{\spelltgts{#2}}{\spellrng{#3}}
-    }
-    {
-        \spelltwocol{\spelltgt{#2}}{\spellrng{#3}}
-    }
-}
-
 \DeclareDocumentCommand{\spelltabular}{}
 {
     \par\noindent
@@ -595,11 +174,6 @@
     \renewcommand{\arraystretch}{0.5}
     \par\noindent
     \begin{tabularx}{\linewidth}{@{} >{\lcol}X l @{}}
-}
-
-\DeclareDocumentCommand{\spellmiscast}{m}
-{
-    \par\noindent\textit{#1~Miscast}:\xspace
 }
 
 % args:
@@ -658,11 +232,6 @@
     }
 }
 
-\DeclareDocumentCommand{\altcf}{o m o}
-{
-    \cf*{}[#1]{#2}[#3]
-}
-
 \DeclareDocumentCommand{\featref}{s m}
 {
     \hyperlink{feat:#2}{#2}
@@ -670,20 +239,6 @@
     {
         \hypertarget{ft:#2}{}
     }
-}
-
-\DeclareDocumentCommand{\mitemref}{s m}
-{
-    \IfBooleanF{#1}
-    {
-        \hypertarget{it:#2}{}
-    }
-    \hyperlink{item:#2}{#2}
-}
-
-\DeclareDocumentCommand{\term}{m}
-{
-    \textbf{#1}
 }
 
 % args:
@@ -734,113 +289,6 @@
     }
 }
 
-% args:
-%   item price
-\DeclareDocumentCommand{\cheapitemlevel}{m}
-{
-    % construct a statement that returns 0-20, incrementing by 1 for each
-    % category of item level the item falls into
-    \pgfmathparse{
-        #1 <= 10 ? 0 : (
-            #1 <= 50 ? 1 : (
-                #1 <= 100 ? 2 : (
-                    #1 <= 250 ? 3 : (
-                        #1 <= 500 ? 4 : (
-                            #1 <= 800 ? 5 : (
-                                #1 <= 1200 ? 6 : (
-                                    #1 <= 1800 ? 7 : (
-                                        #1 <= 2750 ? 8 : (
-                                            #1 <= 4000 ? 9 : (
-                                                #1 <= 6500 ? 10 : (
-                                                    #1 <= 10000 ? 11 : 12
-                                                )
-                                            )
-                                        )
-                                    )
-                                )
-                            )
-                        )
-                    )
-                )
-            )
-        )
-    }
-    \ifstr{\pgfmathresult}{0}{1/2}[\nth{\pgfmathresult}]
-}
-
-\DeclareDocumentCommand{\magicitemexpensiveitemlevel}{m}
-{
-    \pgfmathparse{
-        #1 <= 10 ? 11 : (
-            #1 <= 16 ? 12 : (
-                #1 <= 25 ? 13 : (
-                    #1 <= 37 ? 14 : (
-                        #1 <= 55 ? 15 : (
-                            #1 <= 85 ? 16 : (
-                                #1 <= 125 ? 17 : (
-                                    #1 <= 190 ? 18 : (
-                                        #1 <= 280 ? 19 : (
-                                            #1 <= 400 ? 20 : 21
-                                        )
-                                    )
-                                )
-                            )
-                        )
-                    )
-                )
-            )
-        )
-    }
-    \nth{\pgfmathresult}
-}
-
-% args:
-%   effective spell level
-\DeclareDocumentCommand{\magicitemaurastrength}{m}
-{
-    \pgfmathparse{
-        #1 > 9 ? "Overwhelming" : (
-            #1 > 6 ? "Strong" : (
-                #1 > 3 ? "Moderate" : (
-                    #1 >= 0 ? "Faint" : 0
-                )
-            )
-        )
-    }
-    \pgfmathresult
-}
-
-% args:
-%   star: if true, return spellpower with ``nth''
-%   effective spell level
-\DeclareDocumentCommand{\magicitemspellpower}{s m}
-{
-    \imathparse{max(#2*2,1)}
-    \IfBooleanTF{#1}
-    {
-        \nth{\imathresult}
-    }
-    {
-        \imathresult
-    }
-}
-
-\DeclareDocumentCommand{\magicitemeffect}{o}
-{
-    \spelleffect[#1]
-}
-
-\DeclareDocumentCommand{\magicitemability}{m o}
-{
-    \fieldhead{#1~Ability}[#2]
-}
-
-\DeclareDocumentCommand{\spellaugment}{m m m o}
-{
-    \par\textbf{#1}~--~\textit{#2}:~#3
-    \IfValueT{#4}{~This~is~a~#4~effect.}
-}
-
 \DeclareDocumentCommand{\augment}{m m}
 {
     \vspace{0.5em}
@@ -869,17 +317,6 @@
 
 \ExplSyntaxOff
 
-\newcommand{\miscastexplode}{\spellmiscast{Explosive} The spell does not have its normal effect. Instead, the magical energy explodes, dealing 1d6 damage per two spellpower to you and all creatures adjacent to you.}
-\newcommand{\miscastrandom}{\spellmiscast{Retargeting} The spell targets a random valid target within range (including yourself, if applicable).}
-\newcommand{\miscastyou}{\spellmiscast{Localized} The spell targets you, or originates from your location, instead of its intended location. In addition, it only extends out 5 feet from your location, rather than its normal area.}
-
 \newcommand{\classbasics}[1]{\par\noindent\textbf{#1}:}
 
-\newcommand{\meh}[1]{\hypertarget{suspicious}{}#1}
-
 \newcommand{\pari}{\par\noindent}
-
-% for feat paths
-\newcommand{\itempath}{\item\addtocounter{enumi}{1}\xspace}
-
-\newcommand{\magical}{[\glossterm{Magical}]\xspace}
