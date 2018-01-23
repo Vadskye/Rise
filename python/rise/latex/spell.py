@@ -63,7 +63,7 @@ class Spell(object):
                     {self.header or ""}
                     {self.effects}
 
-                    \\parhead<Cantrip> {self.cantrip}
+                    \\parhead<Cantrip> {self.cantrip} If you cast this spell as a cantrip, you do not need to spend an \\glossterm<action point> to cast it, but you cannot apply any augments to it.
 
                     \\parhead<Schools> {', '.join(self.schools)}
 
