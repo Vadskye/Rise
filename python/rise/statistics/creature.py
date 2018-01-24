@@ -26,6 +26,7 @@ class Creature(object):
             weapons,  # Array of Weapon objects
             armor=None,
             challenge_rating=1,
+            key_attribute=None,
             name_suffix=None,
             natural_armor=0,
             shield=None,
@@ -45,6 +46,7 @@ class Creature(object):
 
         self.armor = armor
         self.challenge_rating = challenge_rating
+        self.key_attribute = key_attribute
         self.name_suffix = name_suffix
         self.natural_armor = natural_armor
         self.shield = shield
@@ -145,9 +147,12 @@ class Creature(object):
     def willpower(self):
         return calculate_attribute(self.starting_willpower, self.level)
 
-    def accuracy(self, statistic=None):
+    def accuracy(self, attribute=None):
         # Assume that Perception is used by default
-        return max(self.level, statistic if statistic is not None else self.perception)
+        return max(
+            self.level,
+            getattr(self, attribute or self.key_attribute, 0)
+        )
 
     def weapon_accuracy(self, weapon):
         """Return the accuracy with the given weapon"""
@@ -173,5 +178,10 @@ class Creature(object):
         ])
         return standard
 
-    def standard_damage(self, statistic=None):
-        return standard_damage(max(self.level, statistic) if statistic is not None else self.level)
+    def standard_damage(self, attribute=None):
+        return standard_damage(
+            max(
+                self.level,
+                getattr(self, attribute or self.key_attribute, 0)
+            )
+        )

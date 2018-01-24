@@ -1,27 +1,18 @@
+from rise.latex.tags import glosstermify
+
 def active_ability(
         name,
-        accuracy=None,
-        critical=None,
-        defense=None,
-        effect=None,
-        hit=None,
-        targeting=None,
+        effect,
+        tags=None,
 ):
+    tag_text = (
+        '[' + ', '.join([
+            glosstermify(tag) for tag in sorted(tags)
+        ]) + ']'
+    ) if tags else ""
+
     return f"""
-        \\pari
-        {
-            f'''
-            |spelltwocol<|textbf<{name}>: {accuracy_text(accuracy, defense)}><{targeting if targeting else ""}>
-                |par
-            '''
-            if accuracy or targeting
-            else f"|textbf<{name}>:"
-        }
-        {effect.strip() if effect else ""}
-        {f"|par |textit<Hit>: {hit}" if hit else ""}
-        {f"|par |textit<Critical>: {critical}" if critical else ""}
+        \\begin<ability><{name}>{tag_text}
+            {effect.strip()}
+        \\end<ability>
     """
-
-
-def accuracy_text(accuracy, defense):
-    return f"{'+' if accuracy > 0 else ''}{accuracy} vs {defense}" if accuracy else ""
