@@ -910,7 +910,7 @@ It defines how attributes work and explains how to make physical attacks in comb
                 You can use this ability to physically grab and restrain your foe.
                 If you do, make a melee \glossterm{physical attack} with a free hand against a creature's Fortitude and Reflex defenses.
 
-                On a hit against both defenses, you and the target are \grappled.
+                On a hit against both defenses, you and the target are \grappled by each other.
                 For details, see \pcref{Grappling}.
             \end{ability}
 
@@ -1103,25 +1103,60 @@ It defines how attributes work and explains how to make physical attacks in comb
             If you target yourself with a shared attunement ability, you only need to spend one action point, not two.
 
     \subsection{Grappling}\label{Grappling}
-        Grappling creatures are physically struggling with each other. While grappled, you suffer certain penalties and restrictions, as described below.
+        A grappled creature is physically struggling with at least one other creature.
+        While grappled, you suffer certain penalties and restrictions, as described below.
 
         \subsubsection{Being In A Grapple}
             While grappling, you suffer certain penalties and restrictions, as described below. Other than these restrictions, you can act normally. You can also take certain actions in a grapple, as described in \pcref{Grapple Actions}
             \begin{itemize}
-                \item You must use a free hand (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands. If you cannot free a hand, you suffer a \minus10 penalty to accuracy on all physical attacks, including grapple attacks, until you have a free hand.
-                \item You are \defenseless against creatures you are not grappling with.
+                \item You must use a free hand (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands.
+                    If you cannot free a hand, you suffer a \minus10 penalty to accuracy on all physical attacks, including grapple attacks, until you have a free hand.
+                \item You are \defenseless against creatures who are not grappled by you.
                 \item You take a \minus4 penalty to accuracy with weapons that are not light, since they are too large and cumbersome to be used effectively in a grapple.
-                \item Spellcasting is extremely difficult. You cannot cast spells with somatic components. Casting a spell without somatic components requires a Concentration check with a DR equal to 20 \add double spell level.
-                \item You cannot move normally (but see Move the Grapple, below).
+                \item Spellcasting is extremely difficult. You cannot cast spells with somatic components.
+                    Casting a spell without somatic components requires a Concentration check with a DR equal to 20 \add double spell level.
+                \item You cannot normally move from your location (but see the \textit{move grapple} ability, below).
             \end{itemize}
 
         \subsubsection{Grapple Actions}\label{Grapple Actions}
-            While grappled, you can take four special actions to try to affect the grapple.
+            While grappled, you can use four special abilities to try to affect the grapple.
 
-            \parhead{Bind Foe} As a standard action, you can make a grapple attack to bind your foe with ropes or other restraints. You must have the restraints in hand (in addition to the free hand required to grapple). Apply the result against the Fortitude and Reflex defenses of a creature grappling you. Success against both defenses means the creature is bound, rendering it helpless and effectively paralyzed. The only physical actions a bound creature can take are to esccape or break the bindings. Escaping the bindings requires a grapple attack or Escape Artist check which beats the grapple attack made to bind the creature. Breaking the bindings requires making a Strength check sufficient to break the item used to bind the creature. If you have the time, you can \glossterm{take 10} on your grapple attack to secure bindings on a helpless foe, including a foe rendered helpless through this attack.
-            \parhead{Escape the Grapple} As a standard action, you can make a grapple attack or Escape Artist check to escape from the grapple. Apply the result against the Reflex defense of each creature grappling you. Success against an individual creature means you are no longer grappling that creature.
-            \parhead{Move the Grapple} As a move action, you can make a grapple attack to move the grapple. Apply the result against the Fortitude defense of each creature grappling you. If you beat every creature's Fortitude defense, you can move yourself and all other creatures in the grapple up to half your speed. At the end of your movement, you choose which spaces creatures grappling you are in, as long as they stay adjacent to you.
-            \parhead{Pin} As a standard action, you can make a grapple attack against the Fortitude and Reflex defenses of a creature you are grappling with. Success against both defenses means the creature becomes \glossterm{pinned} (in addition to being grappled), while you remain only grappled. The only physical action a pinned creature can take is to escape the grapple, though it can take mental actions. At your discretion, you can cover the mouth of a pinned creature to prevent it from speaking.
+            \begin{ability}{Bind Foe}
+                As a standard action, you can use this ability.
+                You must have physical restraints, such as rope, in hand (in addition to the free hand required to grapple).
+                If you do, make a grapple vs. Fortitude and Reflex attack against a creature who is grappled by you.
+                If you have the time, you can \glossterm{take 10} on your grapple attack to secure bindings on a helpless foe, including a foe rendered helpless through this attack.
+                \\hit The target is bound, rendering it \glossterm{helpless} and effectively \glossterm{paralyzed}.
+                The only physical actions a bound creature can take are to esccape or break the bindings.
+                Escaping the bindings requires a grapple attack or Escape Artist check which beats the grapple attack made to bind the creature.
+                Breaking the bindings requires making a Strength check sufficient to break the item used to bind the creature.
+            \end{ability}
+
+            \begin{ability}{Escape Grapple}
+                As a standard action, you can use this ability.
+                Make a grapple vs. Reflex attack against every creature that you are grappled by.
+                \\hit You are not grappled by each target.
+            \end{ability}
+
+            \begin{ability}{Move Grapple}
+                As a move action, you can use this ability.
+                If you do, make a grapple vs. Fortitude attack against every creature grappled by you.
+                If a target also uses this ability to affect you during the same phase, you compare your attack result against its attack result instead of against its Fortitude defense.
+
+                If you beat every target, you can move yourself and all other creatures grappled by you a distance up to half your speed.
+            \end{ability}
+
+            \begin{ability}{Pin}
+                As a standard action, you can use this ability.
+                If you do, make a grapple vs. Fortitude and Reflex attack against a creature who is grappled by you.
+                \\hit The target becomes \glossterm{pinned}.
+                The only physical action a pinned creature can take is to escape the grapple, though it can take mental actions. At your discretion, you can cover the mouth of a pinned creature to prevent it from speaking.
+            \end{ability}
+
+        \subsubsection{Asymmetric Grappling}\label{Asymmetric Grappling}
+            Normally, when you use the \textit{grapple} ability, both you and the target become grappled by each other.
+            Some abilities allow you to grapple other creatures without becoming grappled yourself.
+            You gain a \plus5 bonus to accuracy with grapple attacks against a creature grappled by you if you are not also grappled by that creature.
 
     \subsection{Unarmed Combat}\label{Unarmed Combat}
         Every creature can attack with its body using an unarmed attack.
