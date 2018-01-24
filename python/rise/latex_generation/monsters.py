@@ -568,7 +568,8 @@ def magical_beasts():
             """),
             active_ability('Natural Grab', f"""
                 The behir makes a bite \\glossterm<strike>.
-                If the attack result hits, and also beats the target's Fortitude and Reflex defenses, the target is \\glossterm<grappled> by the behir.
+                In addition to the effects of the strike, it also makes a +{behir.accuracy('perception')+4} vs. Fortitude and Reflex attack against the same target.
+                \\hit The target is \\glossterm<grappled> by the behir.
             """),
         ],
     ))
@@ -923,16 +924,17 @@ def outsiders():
     monsters.append(get_latex_from_creature(
         flamebrother_salamander,
         active_abilities=[
-            active_ability('Natural Grab', f"""
-                The salamander makes a tail slam \\glossterm<strike>.
-                If the attack result hits, and also beats the target's Fortitude and Reflex defenses, the target is \\glossterm<grappled> by the salamander.
-            """),
             active_ability('Flame Aura', f"""
                 The salamander spends an action point to intensify its natural body heat, creating a burning aura around it.
                 This ability lasts as long as the salamander sustains it as a standard action.
                 At the end of each action phase, the salamander makes a +{flamebrother_salamander.accuracy()} vs. Reflex
                     attack against everything within a Medium radius emanation of it.
                 \\hit Each target takes {flamebrother_salamander.standard_damage() - 1} fire damage.
+            """),
+            active_ability('Natural Grab', f"""
+                The salamander makes a tail slam \\glossterm<strike>.
+                In addition to the effects of the strike, it also makes a +{flamebrother_salamander.accuracy('perception')} vs. Fortitude and Reflex attack against the same target.
+                \\hit The target is \\glossterm<grappled> by the salamander.
             """),
         ],
         immunities=['fire damage'],
@@ -970,16 +972,17 @@ def outsiders():
     monsters.append(get_latex_from_creature(
         salamander_battlemaster,
         active_abilities=[
-            active_ability('Natural Grab', f"""
-                The salamander makes a tail slam \\glossterm<strike>.
-                If the attack result hits, and also beats the target's Fortitude and Reflex defenses, the target is \\glossterm<grappled> by the salamander.
-            """),
             active_ability('Flame Aura', f"""
                 The salamander spends an action point to intensify its natural body heat, creating a burning aura around it.
                 This ability lasts as long as the salamander sustains it as a standard action.
                 At the end of each action phase, the salamander makes a +{flamebrother_salamander.accuracy()} vs. Reflex
                     attack against everything within a Medium radius emanation of it.
                 \\hit Each target takes {flamebrother_salamander.standard_damage() - 1} fire damage.
+            """),
+            active_ability('Natural Grab', f"""
+                The salamander makes a tail slam \\glossterm<strike>.
+                In addition to the effects of the strike, it also makes a +{salamander_battlemaster.accuracy('perception')} vs. Fortitude and Reflex attack against the same target.
+                \\hit The target is \\glossterm<grappled> by the salamander.
             """),
         ],
     ))
