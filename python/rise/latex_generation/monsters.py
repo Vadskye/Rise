@@ -20,39 +20,33 @@ def aberrations():
         challenge_rating=4,
         character_class=CharacterClass('adept'),
         level=12,
+        key_attribute='willpower',
         name='Aboleth',
         natural_armor=6,
         race=Race('aberration'),
         size=Size('huge'),
-        starting_attributes=[2, 0, 3, 2, 1, 3],
+        starting_attributes=[2, 0, 3, 2, 1, 4],
         weapons=[Weapon('tentacle')],
     )
     monsters.append(get_latex_from_creature(
         aboleth,
         active_abilities=[
-            active_ability(
-                'Enslave',
-                effect=f"""
-                    The aboleth spends an action point and makes a +{aboleth.accuracy(aboleth.willpower)} vs. Mental attack against a creature in Medium range.
-                    \\hit The target is \\glossterm<stunned> as a \\glossterm<condition>.
-                    \\crit The target is \\glossterm<dominated> by the aboleth for as long as the aboleth \\glossterm<attunes> to this ability.
-                """,
-            ),
-            active_ability(
-                'Mind Crush',
-                effect=f"""
-                    The aboleth makes a +{aboleth.accuracy(aboleth.willpower)} vs. Mental attack against a creature in Long range.
-                    \\hit The target takes {aboleth.standard_damage(aboleth.willpower) + 2} psionic damage.
-                """,
-            ),
-            active_ability(
-                'Psionic Blast',
-                effect=f"""
-                    The aboleth makes a +{aboleth.accuracy(aboleth.willpower)} vs. Mental attack against enemies in a Large cone.
-                    \\hit Each target takes {aboleth.standard_damage(aboleth.willpower)} psionic damage.
-                """,
-            ),
+            active_ability('Mind Crush', f"""
+                The aboleth makes a +{aboleth.accuracy()} vs. Mental attack against a creature in Long range.
+                \\hit The target takes {aboleth.standard_damage() + 2} psionic damage and is \\glossterm<stunned> as a \\glossterm<condition>.
+                \\crit The aboleth can spend an action point.
+                If it does, the target is \\glossterm<dominated> by the aboleth for as long as the aboleth \\glossterm<attunes> to this ability.
+                Otherwise, the target takes double the damage of a non-critical hit.
+            """, tags=['Mind']),
+            active_ability('Psionic Blast', f"""
+                The aboleth makes a +{aboleth.accuracy()} vs. Mental attack against enemies in a Large cone.
+                \\hit Each target takes {aboleth.standard_damage()} psionic damage.
+            """, tags=['Mind']),
+            active_ability('Rituals', f"""
+                The aboleth can learn and perform arcane rituals of up to 6th level.
+            """),
         ],
+        speed="50 ft. swim",
     ))
 
     return '\n\n'.join(monsters)
@@ -75,10 +69,9 @@ def animals():
     monsters.append(get_latex_from_creature(
         black_bear,
         active_abilities=[
-            active_ability(
-                'Rend',
-                effect='The bear makes a claw strike against two targets within reach.',
-            ),
+            active_ability('Rend', """
+                The bear makes a claw strike against two targets within reach.
+            """),
         ],
         immunities=['staggered'],
     ))
@@ -98,10 +91,9 @@ def animals():
     monsters.append(get_latex_from_creature(
         brown_bear,
         active_abilities=[
-            active_ability(
-                'Rend',
-                effect='The bear makes a claw strike against two targets within reach.',
-            ),
+            active_ability('Rend', """
+                The bear makes a claw strike against two targets within reach.
+            """),
         ],
         immunities=['staggered'],
     ))
@@ -120,13 +112,10 @@ def animals():
     monsters.append(get_latex_from_creature(
         dire_wolf,
         active_abilities=[
-            active_ability(
-                'Pounce',
-                effect="""
-                    The dire wolf moves up to its movement speed.
-                    If it uses this ability during the action phase, it can make a bite strike during the delayed action phase.
-                """,
-            ),
+            active_ability('Pounce', """
+                The dire wolf moves up to its movement speed.
+                If it uses this ability during the action phase, it can make a bite strike during the delayed action phase.
+            """),
         ],
     ))
 
@@ -186,13 +175,10 @@ def animals():
     monsters.append(get_latex_from_creature(
         roc,
         active_abilities=[
-            active_ability(
-                'Flyby Attack',
-                effect="""
-                    The roc flies up to its flying movement speed.
-                    It can make a talon strike or grapple attack at any point during this movement.
-                """
-            ),
+            active_ability('Flyby Attack', """
+                The roc flies up to its flying movement speed.
+                It can make a talon strike or grapple attack at any point during this movement.
+            """),
         ],
         speed="80 ft. fly",
     ))
@@ -280,14 +266,11 @@ def animates():
     monsters.append(get_latex_from_creature(
         ram_animus,
         active_abilities=[
-            active_ability(
-                'Forceful Smash',
-                effect=f"""
-                    The ram makes a slam strike.
-                    Treat the attack result as a shove attack against the target in addition to the strike.
-                    The ram does not have to move with the target to push it back.
-                """,
-            ),
+            active_ability('Forceful Smash', f"""
+                The ram makes a slam strike.
+                Treat the attack result as a shove attack against the target in addition to the strike.
+                The ram does not have to move with the target to push it back.
+            """),
         ],
     ))
 
@@ -300,6 +283,7 @@ def humanoids():
         armor=Armor('breastplate'),
         character_class=CharacterClass('adept'),
         level=1,
+        key_attribute='willpower',
         name='Cultist',
         race=Race('humanoid'),
         starting_attributes=[0, 0, 0, -1, -1, 3],
@@ -308,13 +292,10 @@ def humanoids():
     monsters.append(get_latex_from_creature(
         cultist,
         active_abilities=[
-            active_ability(
-                'Hex',
-                effect=f"""
-                    The cultist makes a +{cultist.accuracy(cultist.willpower)} vs. Fortitude attack against one creature in Medium range.
-                    \hit The target takes {cultist.standard_damage(cultist.willpower)} life damage and is \\glossterm<sickened> as a \\glossterm<condition>.",
-                """,
-            ),
+            active_ability('Hex', f"""
+                The cultist makes a +{cultist.accuracy()} vs. Fortitude attack against one creature in Medium range.
+                \hit The target takes {cultist.standard_damage()} life damage and is \\glossterm<sickened> as a \\glossterm<condition>.",
+            """),
         ],
     ))
 
@@ -333,20 +314,14 @@ def humanoids():
     monsters.append(get_latex_from_creature(
         goblin_shouter,
         active_abilities=[
-            active_ability(
-                'Shout of Running',
-                effect="""
-                    All other willing allies who can hear the shouter can use the sprint ability without spending action points.
-                    This effect lasts as long as the shouter sustains it as a standard action.
-                """,
-            ),
-            active_ability(
-                'Shout of Stabbing',
-                effect="""
-                    All other willing allies who can hear the shouter gain a +1d bonus to strike damage.
-                    This effect lasts as long as the shouter sustains it as a standard action.
-                """,
-            ),
+            active_ability('Shout of Running', """
+                All other willing allies who can hear the shouter can use the sprint ability without spending action points.
+                This effect lasts as long as the shouter sustains it as a standard action.
+            """),
+            active_ability('Shout of Stabbing', """
+                All other willing allies who can hear the shouter gain a +1d bonus to strike damage.
+                This effect lasts as long as the shouter sustains it as a standard action.
+            """),
         ],
     ))
 
@@ -364,13 +339,10 @@ def humanoids():
     monsters.append(get_latex_from_creature(
         goblin_stabber,
         active_abilities=[
-            active_ability(
-                'Sneeky Stab',
-                effect=f"""
-                    The stabber makes a shortsword strike.
-                    If the target is defenseless, overwhelmed, or unaware, the damage becomes {goblin_stabber.weapon_damage(Weapon('shortsword')) + 2}.
-                """,
-            ),
+            active_ability('Sneeky Stab', f"""
+                The stabber makes a shortsword strike.
+                If the target is defenseless, overwhelmed, or unaware, the damage becomes {goblin_stabber.weapon_damage(Weapon('shortsword')) + 2}.
+            """),
         ],
     ))
 
@@ -389,27 +361,18 @@ def humanoids():
     monsters.append(get_latex_from_creature(
         orc_chieftain,
         active_abilities=[
-            active_ability(
-                'Hit Everyone Else',
-                effect="""
-                    All other willing allies who can hear the chieftain gain a +2 bonus to accuracy with strikes.
-                    This effect lasts as long as the chieftain sustains it as a standard action.
-                """,
-            ),
-            active_ability(
-                'Hit Hardest',
-                effect=f"""
-                    The chieftain makes a greataxe strike.
-                    The strike deals {orc_chieftain.weapon_damage(Weapon('greataxe')) + 2} damage.
-                """,
-            ),
-            active_ability(
-                'Hit Fast',
-                effect=f"""
-                    The chieftain makes a greataxe strike.
-                    Its accuracy is increased to {orc_chieftain.accuracy() + 2}.
-                """,
-            ),
+            active_ability('Hit Everyone Else', """
+                All other willing allies who can hear the chieftain gain a +2 bonus to accuracy with strikes.
+                This effect lasts as long as the chieftain sustains it as a standard action.
+            """),
+            active_ability('Hit Hardest', f"""
+                The chieftain makes a greataxe strike.
+                The strike deals {orc_chieftain.weapon_damage(Weapon('greataxe')) + 2} damage.
+            """),
+            active_ability('Hit Fast', f"""
+                The chieftain makes a greataxe strike.
+                Its accuracy is increased to {orc_chieftain.accuracy('perception') + 2}.
+            """),
         ],
     ))
 
@@ -427,13 +390,10 @@ def humanoids():
     monsters.append(get_latex_from_creature(
         orc_grunt,
         active_abilities=[
-            active_ability(
-                'Hit Harder',
-                effect=f"""
-                    The grunt makes a greataxe strike.
-                    Its accuracy is reduced to {orc_grunt.accuracy() - 2}, but the strike deals {orc_grunt.weapon_damage(Weapon('greataxe')) + 2} damage.
-                """,
-            ),
+            active_ability('Hit Harder', f"""
+                The grunt makes a greataxe strike.
+                Its accuracy is reduced to {orc_grunt.accuracy('perception') - 2}, but the strike deals {orc_grunt.weapon_damage(Weapon('greataxe')) + 2} damage.
+            """),
         ],
     ))
 
@@ -452,20 +412,14 @@ def humanoids():
     monsters.append(get_latex_from_creature(
         orc_loudmouth,
         active_abilities=[
-            active_ability(
-                'Hit Harder',
-                effect=f"""
-                    The loudmouth makes a greataxe strike.
-                    Its accuracy is reduced to {orc_loudmouth.accuracy() - 2}, but the strike deals {orc_loudmouth.weapon_damage(Weapon('greataxe')) + 2} damage.
-                """,
-            ),
-            active_ability(
-                'Hit That One Over There',
-                effect="""
-                    All other willing allies who can hear the loudmouth gain a +2 bonus to accuracy with strikes against one creature within Long range.
-                    This effect lasts as long as the loudmouth sustains it as a standard action.
-                """,
-            ),
+            active_ability('Hit Harder', f"""
+                The loudmouth makes a greataxe strike.
+                Its accuracy is reduced to {orc_loudmouth.accuracy('perception') - 2}, but the strike deals {orc_loudmouth.weapon_damage(Weapon('greataxe')) + 2} damage.
+            """),
+            active_ability('Hit That One Over There', """
+                All other willing allies who can hear the loudmouth gain a +2 bonus to accuracy with strikes against one creature within Long range.
+                This effect lasts as long as the loudmouth sustains it as a standard action.
+            """),
         ],
     ))
 
@@ -473,6 +427,7 @@ def humanoids():
         armor=Armor('breastplate'),
         challenge_rating=2,
         character_class=CharacterClass('adept'),
+        key_attribute='willpower',
         level=3,
         name='Orc Shaman',
         natural_armor=0,
@@ -484,18 +439,14 @@ def humanoids():
     monsters.append(get_latex_from_creature(
         orc_shaman,
         active_abilities=[
-            active_ability(
-                'Hit Worse',
-                effect=f"""
-                    The shaman makes a +{orc_shaman.accuracy(orc_shaman.willpower)} vs. Mental attack against one creature in Close range.
-                    \\hit The target takes a -3 penalty to accuracy with strikes as a \\glossterm<condition>.
-                    \\crit As above, except that the penalty is increased to -6.
-                """,
-            ),
-            active_ability(
-                'Hurt Less',
-                effect=f"One other willing creature in Close range heals {orc_shaman.standard_damage(orc_shaman.willpower) + 1} hit points",
-            ),
+            active_ability('Hit Worse', f"""
+                The shaman makes a +{orc_shaman.accuracy()} vs. Mental attack against one creature in Close range.
+                \\hit The target takes a -3 penalty to accuracy with strikes as a \\glossterm<condition>.
+                \\crit As above, except that the penalty is increased to -6.
+            """),
+            active_ability('Hurt Less', f"""
+                One other willing creature in Close range heals {orc_shaman.standard_damage() + 1} hit points.
+            """),
         ],
     ))
 
@@ -513,13 +464,10 @@ def humanoids():
     monsters.append(get_latex_from_creature(
         orc_savage,
         active_abilities=[
-            active_ability(
-                'Hit Fast',
-                effect=f"""
-                    The savage makes a greataxe strike.
-                    Its accuracy is {orc_savage.accuracy() + 2}.
-                """,
-            ),
+            active_ability('Hit Fast', f"""
+                The savage makes a greataxe strike.
+                Its accuracy is {orc_savage.accuracy('perception') + 2}.
+            """),
         ],
     ))
 
@@ -533,30 +481,25 @@ def magical_beasts():
         challenge_rating=2,
         character_class=CharacterClass('slayer'),
         level=7,
+        key_attribute='constitution',
         name='Ankheg',
         natural_armor=6,
         race=Race('magical beast'),
         size=Size('large'),
-        starting_attributes=[3, 2, 1, -7, 1, 0],
+        starting_attributes=[3, 1, 2, -7, 1, 0],
         weapons=[Weapon('bite')],
     )
     monsters.append(get_latex_from_creature(
         ankheg,
         active_abilities=[
-            active_ability(
-                'Drag Prey',
-                effect=f"""
-                    The ankheg makes a shove attack with an accuracy of +{ankheg.accuracy(ankheg.strength) + 5}.
-                    It can move with the target up to a maximum distance equal to its land speed.
-                """,
-            ),
-            active_ability(
-                'Spit Acid',
-                effect=f"""
-                    The ankheg makes a +{ankheg.accuracy()} vs. Reflex attack against everything in a 5 ft. wide Medium line.
-                    \\hit Each target takes {ankheg.standard_damage(ankheg.constitution) - 1} acid damage, and creatures are \\glossterm<sickened> as a \\glossterm<condition>.
-                """,
-            ),
+            active_ability('Drag Prey', f"""
+                The ankheg makes a shove attack with an accuracy of +{ankheg.accuracy() + 5}.
+                It can move with the target up to a maximum distance equal to its land speed.
+            """),
+            active_ability('Spit Acid', f"""
+                The ankheg makes a +{ankheg.accuracy()} vs. Reflex attack against everything in a 5 ft. wide Medium line.
+                \\hit Each target takes {ankheg.standard_damage() - 1} acid damage, and creatures are \\glossterm<sickened> as a \\glossterm<condition>.
+            """),
         ]
     ))
 
@@ -572,40 +515,35 @@ def magical_beasts():
     monsters.append(get_latex_from_creature(
         aranea,
         active_abilities=[
-            active_ability(
-                'Shapeshift',
-                # Is this how shapeshifting should work?
-                effect="""
-                    The aranea makes a Disguise check to change its appearance.
-                    It ignores all penalties for differences between its natural appearance and its intended appearance.
-                """,
-            ),
+            # Is this how shapeshifting should work?
+            active_ability('Shapeshift', """
+                The aranea makes a Disguise check to change its appearance.
+                It ignores all penalties for differences between its natural appearance and its intended appearance.
+            """),
         ]
     ))
 
     basilisk = Creature(
         challenge_rating=2,
         character_class=CharacterClass('behemoth'),
+        key_attribute='perception',
         level=5,
         name='Basilisk',
         natural_armor=6,
         race=Race('magical beast'),
         size=Size('medium'),
-        starting_attributes=[2, -1, 2, -6, 1, 0],
+        starting_attributes=[2, -1, 2, -6, 2, 0],
         weapons=[Weapon('bite')],
     )
     monsters.append(get_latex_from_creature(
         basilisk,
         active_abilities=[
-            active_ability(
-                'Petrifying Gaze',
-                effect=f"""
-                    The basilisk makes a +{basilisk.accuracy()} vs. Fortitude attack against one creature in Medium range.
-                    \\hit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
-                    \\crit As above, and as an additional condition, the target takes {basilisk.standard_damage(basilisk.constitution) - 2} physical damage at the end of each action phase.
-                    If it takes vital damage in this way, it is petrified permanently.
-                """,
-            ),
+            active_ability('Petrifying Gaze', f"""
+                The basilisk makes a +{basilisk.accuracy()} vs. Fortitude attack against one creature in Medium range.
+                \\hit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
+                \\crit As above, and as an additional condition, the target takes {basilisk.standard_damage() - 2} physical damage at the end of each action phase.
+                If it takes vital damage in this way, it is petrified permanently.
+            """),
         ],
     ))
 
@@ -653,13 +591,10 @@ def magical_beasts():
     monsters.append(get_latex_from_creature(
         griffin,
         active_abilities=[
-            active_ability(
-                'Flyby Attack',
-                effect="""
-                    The griffin flies up to its flying movement speed.
-                    It can make a talon strike at any point during this movement.
-                """
-            ),
+            active_ability('Flyby Attack', """
+                The griffin flies up to its flying movement speed.
+                It can make a talon strike at any point during this movement.
+            """),
         ],
         speed="80 ft. fly",
     ))
@@ -701,6 +636,7 @@ def monstrous_humanoids():
 
     banshee = Creature(
         character_class=CharacterClass('adept'),
+        key_attribute='willpower',
         level=3,
         name='Banshee',
         natural_armor=4,
@@ -712,13 +648,10 @@ def monstrous_humanoids():
     monsters.append(get_latex_from_creature(
         banshee,
         active_abilities=[
-            active_ability(
-                'Wail',
-                effect=f"""
-                    The banshee makes a +{banshee.accuracy(banshee.willpower)} vs. Fortitude attack against everything in a Large radius.
-                    \\hit Each target takes {banshee.standard_damage(banshee.willpower) - 1} sonic damage, and creatures are sickened as a condition.
-                """,
-            ),
+            active_ability('Wail', f"""
+                The banshee makes a +{banshee.accuracy()} vs. Fortitude attack against everything in a Large radius.
+                \\hit Each target takes {banshee.standard_damage() - 1} sonic damage, and creatures are sickened as a condition.
+            """),
         ],
     ))
 
@@ -737,12 +670,9 @@ def monstrous_humanoids():
     monsters.append(get_latex_from_creature(
         hill_giant,
         active_abilities=[
-            active_ability(
-                'Boulder Toss',
-                effect="""
-                    The giant makes a ranged boulder strike, treating it as a thrown weapon with a 100 ft.\\ range increment.
-                """,
-            ),
+            active_ability('Boulder Toss', """
+                The giant makes a ranged boulder strike, treating it as a thrown weapon with a 100 ft.\\ range increment.
+            """),
         ],
     ))
 
@@ -761,18 +691,16 @@ def monstrous_humanoids():
     monsters.append(get_latex_from_creature(
         stone_giant,
         active_abilities=[
-            active_ability(
-                'Boulder Toss',
-                effect="""
-                    The giant makes a ranged boulder strike, treating it as a thrown weapon with a 100 ft.\\ range increment.
-                """,
-            ),
+            active_ability('Boulder Toss', """
+                The giant makes a ranged boulder strike, treating it as a thrown weapon with a 100 ft.\\ range increment.
+            """),
         ],
     ))
 
     storm_giant = Creature(
         armor=Armor('breastplate'),
         character_class=CharacterClass('slayer'),
+        key_attribute='willpower',
         level=15,
         name='Giant',
         name_suffix='Storm',
@@ -785,22 +713,16 @@ def monstrous_humanoids():
     monsters.append(get_latex_from_creature(
         storm_giant,
         active_abilities=[
-            active_ability(
-                'Lightning Javelin',
-                effect=f"""
-                    The storm giant makes a +{storm_giant.accuracy()} vs. Reflex attack against everything in a 10 ft. wide Large line.
-                    \\hit Each target takes {storm_giant.standard_damage(storm_giant.willpower)} electricity damage.
-                """,
-            ),
-            active_ability(
-                'Thunderstrike',
-                effect=f"""
-                    The storm giant makes a greatsword strike against a target.
-                    If its attack result beats the target's Fortitude defense,
-                        the target also takes {storm_giant.standard_damage(storm_giant.strength) - 1} sonic damage
-                        and is deafened as a condition.
-                """,
-            ),
+            active_ability('Lightning Javelin', f"""
+                The storm giant makes a +{storm_giant.accuracy()} vs. Reflex attack against everything in a 10 ft. wide Large line.
+                \\hit Each target takes {storm_giant.standard_damage()} electricity damage.
+            """),
+            active_ability('Thunderstrike', f"""
+                The storm giant makes a greatsword strike against a target.
+                If its attack result beats the target's Fortitude defense,
+                    the target also takes {storm_giant.standard_damage() - 1} sonic damage
+                    and is deafened as a condition.
+            """),
         ],
         immunities=['deafened'],
     ))
@@ -808,6 +730,7 @@ def monstrous_humanoids():
     green_hag = Creature(
         challenge_rating=2,
         character_class=CharacterClass('adept'),
+        key_attribute='perception',
         level=5,
         name='Hag',
         name_suffix='Green',
@@ -820,35 +743,27 @@ def monstrous_humanoids():
     monsters.append(get_latex_from_creature(
         green_hag,
         active_abilities=[
-            active_ability(
-                'Vital Surge',
-                effect=f"""
-                    The hag makes a +{green_hag.accuracy(green_hag.perception)} vs. Fortitude attack against one creature within Medium range.
-                    \\hit The target takes {green_hag.standard_damage(green_hag.perception) + 1} life damage.
-                """,
-            ),
-            active_ability(
-                "Green Hag's Curse",
-                effect=f"""
-                    The hag makes a +{green_hag.accuracy(green_hag.perception)} vs. Mental atack aginst one creature within Medium range.
-                    \\hit As a condition, the target is either dazed, fatigued, or sickened, as the hag chooses.
-                    \\crit As three separate conditions, the target is dazed, fatigued, and sickened.
-                """,
-            ),
-            active_ability(
-                'Coven Rituals',
-                effect="""
-                    Whenever three or more hags work together, they form a coven.
-                    All members of the coven gain the ability to perform nature rituals as long as they work together.
-                    Hags of any type can form a coven together.
-                """,
-            ),
+            active_ability('Vital Surge', f"""
+                The hag makes a +{green_hag.accuracy()} vs. Fortitude attack against one creature within Medium range.
+                \\hit The target takes {green_hag.standard_damage() + 1} life damage.
+            """),
+            active_ability("Green Hag's Curse", f"""
+                The hag makes a +{green_hag.accuracy()} vs. Mental atack aginst one creature within Medium range.
+                \\hit As a condition, the target is either dazed, fatigued, or sickened, as the hag chooses.
+                \\crit As three separate conditions, the target is dazed, fatigued, and sickened.
+            """),
+            active_ability('Coven Rituals', """
+                Whenever three or more hags work together, they form a coven.
+                All members of the coven gain the ability to perform nature rituals as long as they work together.
+                Hags of any type can form a coven together.
+            """),
         ],
     ))
 
     medusa = Creature(
         challenge_rating=2,
         character_class=CharacterClass('adept'),
+        key_attribute='perception',
         level=7,
         name='Medusa',
         natural_armor=4,
@@ -860,15 +775,12 @@ def monstrous_humanoids():
     monsters.append(get_latex_from_creature(
         medusa,
         active_abilities=[
-            active_ability(
-                'Petrifying Gaze',
-                effect=f"""
-                    The medusa makes a +{medusa.accuracy()} vs. Fortitude attack against one creature in Medium range.
-                    \\hit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
-                    \\crit As above, and as an additional condition, the target takes {medusa.standard_damage(medusa.constitution) - 2} physical damage at the end of each action phase.
-                    If it takes vital damage in this way, it is petrified permanently.
-                """,
-            ),
+            active_ability('Petrifying Gaze', f"""
+                The medusa makes a +{medusa.accuracy()} vs. Fortitude attack against one creature in Medium range.
+                \\hit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
+                \\crit As above, and as an additional condition, the target takes {medusa.standard_damage() - 2} physical damage at the end of each action phase.
+                If it takes vital damage in this way, it is petrified permanently.
+            """),
         ],
     ))
 
@@ -880,6 +792,7 @@ def outsiders():
 
     astral_deva = Creature(
         character_class=CharacterClass('adept'),
+        key_attribute='willpower',
         level=14,
         name='Angel',
         name_suffix='Astral Deva',
@@ -892,24 +805,19 @@ def outsiders():
     monsters.append(get_latex_from_creature(
         astral_deva,
         active_abilities=[
-            active_ability(
-                'Smite',
-                effect="""
-                    The angel makes a mace strike.
-                    If its target is evil, it gains a +2 bonus to accuracy and a +2d bonus to damage on the strike.
-                """,
-            ),
-            active_ability(
-                "Angel's Grace",
-                effect=f"""
-                    One willing creature within reach heals {astral_deva.standard_damage(astral_deva.willpower) + 1} hit points.
-                """,
-            ),
+            active_ability('Smite', """
+                The angel makes a mace strike.
+                If its target is evil, it gains a +2 bonus to accuracy and a +2d bonus to damage on the strike.
+            """),
+            active_ability("Angel's Grace", f"""
+                One willing creature within reach heals {astral_deva.standard_damage() + 1} hit points.
+            """),
         ],
     ))
 
     arrowhawk = Creature(
         character_class=CharacterClass('slayer'),
+        key_attribute='dexterity',
         level=3,
         name='Arrowhawk',
         natural_armor=4,
@@ -920,19 +828,17 @@ def outsiders():
     monsters.append(get_latex_from_creature(
         arrowhawk,
         active_abilities=[
-            active_ability(
-                'Electrobolt',
-                effect=f"""
-                    The arrowhawk makes a +{arrowhawk.accuracy()} vs. Reflex attack against one creature or object in Medium range.
-                    \\hit The target takes {arrowhawk.standard_damage(arrowhawk.constitution) + 1} electricity damage.
-                """,
-            ),
+            active_ability('Electrobolt', f"""
+                The arrowhawk makes a +{arrowhawk.accuracy()} vs. Reflex attack against one creature or object in Medium range.
+                \\hit The target takes {arrowhawk.standard_damage()} electricity damage.
+            """),
         ],
         speed="60 ft. fly (good)",
     ))
 
     bebelith = Creature(
         character_class=CharacterClass('slayer'),
+        key_attribute='constitution',
         level=11,
         name='Demon',
         name_suffix='Bebelith',
@@ -945,19 +851,17 @@ def outsiders():
     monsters.append(get_latex_from_creature(
         bebelith,
         active_abilities=[
-            active_ability(
-                'Venomous Bite',
-                effect=f"""
-                    The bebelith makes a bite strike.
-                    If it hits, and the attack result beats the target's Fortitude defense, the target is also poisoned as a condition.
-                    If the target is poisoned, it takes {bebelith.standard_damage(bebelith.constitution) - 1} poison damage at the end of each action phase after the first round.
-                """,
-            ),
+            active_ability('Venomous Bite', f"""
+                The bebelith makes a bite strike.
+                If it hits, and the attack result beats the target's Fortitude defense, the target is also poisoned as a condition.
+                If the target is poisoned, it takes {bebelith.standard_damage() - 1} poison damage at the end of each action phase after the first round.
+            """),
         ],
     ))
 
     hell_hound = Creature(
         character_class=CharacterClass('slayer'),
+        key_attribute='constitution',
         level=4,
         name='Hell Hound',
         natural_armor=4,
@@ -969,19 +873,17 @@ def outsiders():
     monsters.append(get_latex_from_creature(
         hell_hound,
         active_abilities=[
-            active_ability(
-                'Fire Breath',
-                effect=f"""
-                    The hell hound makes a +{hell_hound.accuracy()} vs. Reflex attack against everything in a Medium cone.
-                    \\hit Each target takes {hell_hound.standard_damage(hell_hound.constitution)} fire damage.
-                """,
-            ),
+            active_ability('Fire Breath', f"""
+                The hell hound makes a +{hell_hound.accuracy()} vs. Reflex attack against everything in a Medium cone.
+                \\hit Each target takes {hell_hound.standard_damage()} fire damage.
+            """),
         ],
         immunities=['fire damage'],
     ))
 
     flamebrother_salamander = Creature(
         character_class=CharacterClass('slayer'),
+        key_attribute='constitution',
         level=4,
         name='Salamander',
         name_suffix='Flamebrother',
@@ -995,24 +897,18 @@ def outsiders():
     monsters.append(get_latex_from_creature(
         flamebrother_salamander,
         active_abilities=[
-            active_ability(
-                'Tail Grab',
-                effect=f"""
-                    The salamander makes a tail slam strike.
-                    % wording with defenses vs. grappling?
-                    If the attack result beats the target's Fortitude defense, the salamander begins grappling the target.
-                """,
-            ),
-            active_ability(
-                'Flame Aura',
-                effect=f"""
-                    The salamander spends an action point to intensify its natural body heat, creating a burning aura around it.
-                    This ability lasts as long as the salamander sustains it as a standard action.
-                    At the end of each action phase, the salamander makes a +{flamebrother_salamander.accuracy(flamebrother_salamander.constitution)} vs. Reflex
-                        attack against everything within a Medium radius emanation of it.
-                    \\hit Each target takes {flamebrother_salamander.standard_damage(flamebrother_salamander.constitution) - 1} fire damage.
-                """,
-            ),
+            active_ability('Tail Grab', f"""
+                The salamander makes a tail slam strike.
+                % wording with defenses vs. grappling?
+                If the attack result beats the target's Fortitude defense, the salamander begins grappling the target.
+            """),
+            active_ability('Flame Aura', f"""
+                The salamander spends an action point to intensify its natural body heat, creating a burning aura around it.
+                This ability lasts as long as the salamander sustains it as a standard action.
+                At the end of each action phase, the salamander makes a +{flamebrother_salamander.accuracy()} vs. Reflex
+                    attack against everything within a Medium radius emanation of it.
+                \\hit Each target takes {flamebrother_salamander.standard_damage() - 1} fire damage.
+            """),
         ],
         immunities=['fire damage'],
     ))
@@ -1035,6 +931,7 @@ def outsiders():
     salamander_battlemaster = Creature(
         challenge_rating=3,
         character_class=CharacterClass('slayer'),
+        key_attribute='constitution',
         level=5,
         name='Salamander',
         name_suffix='Battlemaster',
@@ -1048,23 +945,17 @@ def outsiders():
     monsters.append(get_latex_from_creature(
         salamander_battlemaster,
         active_abilities=[
-            active_ability(
-                'Tail Grab',
-                effect=f"""
-                    The salamander makes a tail slam strike.
-                    If the attack result beats the target's Fortitude defense, it is grappled.
-                """,
-            ),
-            active_ability(
-                'Flame Aura',
-                effect=f"""
-                    The salamander spends an action point to intensify its natural body heat, creating a burning aura around it.
-                    This ability lasts as long as the salamander sustains it as a standard action.
-                    At the end of each action phase, the salamander makes a +{flamebrother_salamander.accuracy(flamebrother_salamander.constitution)} vs. Reflex
-                        attack against everything within a Medium radius emanation of it.
-                    \\hit Each target takes {flamebrother_salamander.standard_damage(flamebrother_salamander.constitution) - 1} fire damage.
-                """,
-            ),
+            active_ability('Tail Grab', f"""
+                The salamander makes a tail slam strike.
+                If the attack result beats the target's Fortitude defense, it is grappled.
+            """),
+            active_ability('Flame Aura', f"""
+                The salamander spends an action point to intensify its natural body heat, creating a burning aura around it.
+                This ability lasts as long as the salamander sustains it as a standard action.
+                At the end of each action phase, the salamander makes a +{flamebrother_salamander.accuracy()} vs. Reflex
+                    attack against everything within a Medium radius emanation of it.
+                \\hit Each target takes {flamebrother_salamander.standard_damage() - 1} fire damage.
+            """),
         ],
     ))
 
@@ -1104,6 +995,7 @@ def undead():
     dirgewalker = Creature(
         challenge_rating=4,
         character_class=CharacterClass('adept'),
+        key_attribute='willpower',
         level=4,
         name='Dirgewalker',
         natural_armor=6,
@@ -1115,22 +1007,16 @@ def undead():
     monsters.append(get_latex_from_creature(
         dirgewalker,
         active_abilities=[
-            active_ability(
-                'Animating Caper',
-                effect="""
-                    One corpse within Close range is animated as a skeleton under the dirgewalker's control.
-                    This ability costs an action point to use.
-                    It lasts as long as the dirgewalker attunes to it.
-                """,
-            ),
-            active_ability(
-                'Mournful Dirge',
-                effect=f"""
-                    The dirgewalker makes a +{dirgewalker.accuracy()} vs. Mental attack against all creatures in a Medium radius.
-                    \\hit Each target is dazed as a condition.
-                    \\crit Each target is stunned as a condition.
-                """,
-            ),
+            active_ability('Animating Caper', """
+                One corpse within Close range is animated as a skeleton under the dirgewalker's control.
+                This ability costs an action point to use.
+                It lasts as long as the dirgewalker attunes to it.
+            """),
+            active_ability('Mournful Dirge', f"""
+                The dirgewalker makes a +{dirgewalker.accuracy()} vs. Mental attack against all creatures in a Medium radius.
+                \\hit Each target is dazed as a condition.
+                \\crit Each target is stunned as a condition.
+            """),
         ],
     ))
 
