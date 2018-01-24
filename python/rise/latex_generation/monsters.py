@@ -548,7 +548,7 @@ def magical_beasts():
     ))
 
     behir = Creature(
-        challenge_rating=2,
+        challenge_rating=3,
         character_class=CharacterClass('behemoth'),
         key_attribute='constitution',
         level=8,
@@ -557,7 +557,7 @@ def magical_beasts():
         race=Race('magical beast'),
         size=Size('huge'),
         starting_attributes=[4, 1, 2, -3, 1, 0],
-        weapons=[Weapon('bite')],
+        weapons=[Weapon('bite'), Weapon('claw')],
     )
     monsters.append(get_latex_from_creature(
         behir,
@@ -570,6 +570,9 @@ def magical_beasts():
                 The behir makes a bite \\glossterm<strike>.
                 In addition to the effects of the strike, it also makes a +{behir.accuracy('perception')+4} vs. Fortitude and Reflex attack against the same target.
                 \\hit The target is \\glossterm<grappled> by the behir.
+            """),
+            active_ability('Rake', f"""
+                The behir spends an action point to make four claw \\glossterm<strikes> against a target that is \\glossterm<grappled> by it.
             """),
         ],
     ))
