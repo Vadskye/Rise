@@ -2,7 +2,7 @@
 
 import click
 from rise.latex.monster import get_latex_from_creature
-from rise.latex.active_ability import active_ability
+from rise.latex.ability import active_ability, passive_ability
 from rise.statistics.armor import Armor
 from rise.statistics.character_class import CharacterClass
 from rise.statistics.creature import Creature
@@ -12,6 +12,8 @@ from rise.statistics.size import Size
 from rise.statistics.weapon import Weapon
 from rise.latex.util import latexify
 
+def trunc_to_five(n):
+    return (n // 5) * 5
 
 def aberrations():
     monsters = []
@@ -42,7 +44,9 @@ def aberrations():
                 The aboleth makes a +{aboleth.accuracy()} vs. Mental attack against enemies in a Large cone.
                 \\hit Each target takes {aboleth.standard_damage()} psionic damage.
             """, tags=['Mind']),
-            active_ability('Rituals', f"""
+        ],
+        passive_abilities=[
+            passive_ability('Rituals', f"""
                 The aboleth can learn and perform arcane rituals of up to 6th level.
             """),
         ],
@@ -553,7 +557,7 @@ def magical_beasts():
         key_attribute='constitution',
         level=8,
         name='Behir',
-        natural_armor=4,
+        natural_armor=6,
         race=Race('magical beast'),
         size=Size('huge'),
         starting_attributes=[4, 1, 2, -3, 1, 0],
@@ -577,6 +581,26 @@ def magical_beasts():
         ],
     ))
 
+    blink_dog = Creature(
+        character_class=CharacterClass('slayer'),
+        level=3,
+        name='Blink Dog',
+        natural_armor=4,
+        race=Race('magical beast'),
+        size=Size('medium'),
+        starting_attributes=[0, 3, 0, 0, 1, 0],
+        weapons=[Weapon('bite')],
+    )
+    monsters.append(get_latex_from_creature(
+        blink_dog,
+        active_abilities=[
+            active_ability('Blink', f"""
+                As a \\glossterm<move action>, the blink dog can use this ability.
+                If it does, it teleports to an unoccupied location within Medium range.
+            """),
+        ],
+    ))
+
     centaur = Creature(
         armor=Armor('leather'),
         character_class=CharacterClass('slayer'),
@@ -590,6 +614,91 @@ def magical_beasts():
     )
     monsters.append(get_latex_from_creature(
         centaur,
+    ))
+
+    cockatrice = Creature(
+        character_class=CharacterClass('adept'),
+        key_attribute='constitution',
+        level=3,
+        name='Cockatrice',
+        natural_armor=4,
+        race=Race('magical beast'),
+        size=Size('small'),
+        starting_attributes=[-2, 3, 0, -8, 1, 0],
+        weapons=[Weapon('bite')],
+    )
+    monsters.append(get_latex_from_creature(
+        cockatrice,
+        active_abilities=[
+            active_ability('Petrifying Bite', f"""
+                The cockatrice makes a bite \\glossterm<strike>.
+                In addition to the strike's normal effects, the cockatrice also makes a +{cockatrice.accuracy()} vs. Fortitude attack against the target.
+                \\hit If the strike also hit, the target is \\glossterm<nauseated> as a \\glossterm<condition>.
+                \\crit As above, and as an additional condition, the target takes {cockatrice.standard_damage() - 2} physical damage at the end of each action phase.
+                If it takes vital damage in this way, it is petrified permanently.
+            """),
+        ],
+    ))
+
+    darkmantle = Creature(
+        character_class=CharacterClass('slayer'),
+        level=1,
+        name='Darkmantle',
+        natural_armor=4,
+        race=Race('magical beast'),
+        size=Size('small'),
+        starting_attributes=[3, 0, 1, -8, 0, 0],
+        weapons=[Weapon('slam')],
+    )
+    monsters.append(get_latex_from_creature(
+        darkmantle,
+        active_abilities=[
+            active_ability('Natural Grab', f"""
+                The darkmantle makes a slam \\glossterm<strike>.
+                In addition to the effects of the strike, it also makes a +{darkmantle.accuracy('perception') - 2} vs. Fortitude and Reflex attack against the same target.
+                \\hit The target is \\glossterm<grappled> by the darkmantle.
+            """),
+        ],
+    ))
+
+    frost_worm = Creature(
+        challenge_rating=3,
+        character_class=CharacterClass('behemoth'),
+        key_attribute='constitution',
+        level=12,
+        name='Frost Worm',
+        natural_armor=6,
+        race=Race('magical beast'),
+        size=Size('gargantuan'),
+        starting_attributes=[4, 0, 3, -8, 2, 0],
+        weapons=[Weapon('bite'), Weapon('slam')],
+    )
+    monsters.append(get_latex_from_creature(
+        frost_worm,
+        immunities=['cold'],
+        active_abilities=[
+            active_ability('Frost Breath', f"""
+                The frost worm makes a +{frost_worm.accuracy()} vs. Reflex attack against everything in a \\arealarge cone from it.
+                \\hit Each target takes {frost_worm.standard_damage() + 2} cold damage.
+            """, tags=['Cold']),
+            active_ability('Trill', f"""
+                The frost worm emits a piercing noise that compels prey to stay still.
+                It spends an action point and makes a +{frost_worm.accuracy()} vs. Mental attack against creatures in a \\areahuge radius from it.
+                This area can pass through solid objects, including the ground, but every 5 feet of solid obstacle counts as 20 feet of distance.
+                \\hit Each target is \\glossterm<dazed> and \\glossterm<immobilized> as two separate \\glossterm<conditions>.
+                \\crit Each target is \\glossterm<stunned> and \\glossterm<immobilized> as two separate \\glossterm<conditions>.
+            """, tags=['Mind']),
+        ],
+        passive_abilities=[
+            passive_ability('Bitter Cold', f"""
+                The frost worm's bite and slam strikes deal cold damage in addition to their other damage types.
+            """),
+            passive_ability('Death Throes', f"""
+                When a frost worm is killed, its corpse turns to ice and shatters in a violent explosion.
+                It makes a +{frost_worm.accuracy()} vs. Reflex attack against everything in a \\areahuge radius from it.
+                \\hit Each target takes {frost_worm.standard_damage() + 3} cold and piercing damage.
+            """),
+        ],
     ))
 
     girallon = Creature(
@@ -627,6 +736,72 @@ def magical_beasts():
             """),
         ],
         speed="80 ft. fly",
+    ))
+
+    hydra5 = Creature(
+        challenge_rating=4,
+        character_class=CharacterClass('behemoth'),
+        level=5,
+        name='Hydra, 5 Headed',
+        natural_armor=4,
+        race=Race('magical beast'),
+        size=Size('huge'),
+        starting_attributes=[2, 0, 4, -8, 0, 0],
+        weapons=[Weapon('bite')],
+    )
+    monsters.append(get_latex_from_creature(
+        hydra5,
+        actions='Five in action phase',
+        passive_abilities=[
+            passive_ability('Multi-Headed', f"""
+                A hydra can take a number of actions in each \\glossterm<action phase> equal to the number of heads it has active.
+                At the end of each action phase, if the hydra took at least {trunc_to_five(hydra5.hit_points // 5)} damage during that phase, it loses one of its heads.
+                Severed heads leave behind a stump that can quickly grow new heads.
+
+                At the end of each delayed action phase, if the hydra has a severed stump, the stump is either sealed or it grows two new heads.
+                If the hydra took {trunc_to_five(hydra5.hit_points // 10)} acid, cold, or fire damage during that phase, the stump is sealed, and will stop growing new heads.
+                Otherwise, the hydra grows two new heads from the stump.
+                This grants it additional actions during the action phase as normal.
+
+                A hydra cannot sustain too many excess heads for a prolonged period of time.
+                At the end of each round, if the hydra has more heads than twice its normal head count, it loses an action point.
+                If it has no action points remaining, the hydra collapses unconscious for 8 hours.
+                During that time, the excess heads shrivel and die, and any sealed stumps heal, restoring the hydra to its normal head count.
+            """),
+        ]
+    ))
+
+    hydra6 = Creature(
+        challenge_rating=4,
+        character_class=CharacterClass('behemoth'),
+        level=6,
+        name='Hydra, 6 Headed',
+        natural_armor=4,
+        race=Race('magical beast'),
+        size=Size('huge'),
+        starting_attributes=[2, 0, 4, -8, 0, 0],
+        weapons=[Weapon('bite')],
+    )
+    monsters.append(get_latex_from_creature(
+        hydra6,
+        actions='Six in action phase',
+        passive_abilities=[
+            passive_ability('Multi-Headed', f"""
+                A hydra can take a number of actions in each \\glossterm<action phase> equal to the number of heads it has active.
+                At the end of each action phase, if the hydra took at least {trunc_to_five(hydra6.hit_points // 5)} damage during that phase, it loses one of its heads.
+                Severed heads leave behind a stump that can quickly grow new heads.
+
+                At the end of each delayed action phase, if the hydra has a severed stump, the stump is either sealed or it grows two new heads.
+                If the hydra took {trunc_to_five(hydra6.hit_points // 10)} acid, cold, or fire damage during that phase, the stump is sealed, and will stop growing new heads.
+                Otherwise, the hydra grows two new heads from the stump.
+                This grants it additional actions during the action phase as normal.
+
+                A hydra cannot sustain too many excess heads for a prolonged period of time.
+                At the end of each round, if the hydra has more heads than twice its normal head count, it loses an action point.
+                If it has no action points remaining, the hydra collapses unconscious for 8 hours.
+                During that time, the excess heads shrivel and die, and any sealed stumps heal, restoring the hydra to its normal head count.
+            """),
+        ]
     ))
 
     thaumavore = Creature(
@@ -782,7 +957,9 @@ def monstrous_humanoids():
                 \\hit As a condition, the target is either dazed, fatigued, or sickened, as the hag chooses.
                 \\crit As three separate conditions, the target is dazed, fatigued, and sickened.
             """),
-            active_ability('Coven Rituals', """
+        ],
+        passive_abilities=[
+            passive_ability('Coven Rituals', """
                 Whenever three or more hags work together, they form a coven.
                 All members of the coven gain the ability to perform nature rituals as long as they work together.
                 Hags of any type can form a coven together.

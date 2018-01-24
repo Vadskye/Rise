@@ -16,3 +16,9 @@ def active_ability(
             {effect.strip()}
         \\end<ability>
     """
+
+def passive_ability(
+        name,
+        effect,
+):
+    return f"\\parhead<{name}> {effect}"
