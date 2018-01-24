@@ -1183,6 +1183,61 @@ If it takes vital damage in this way, it is petrified permanently.
 
 
 
+\begin{monsection}{Behir}{8}[2]
+\vspace{-1em}\spelltwocol{}{Huge magical beast}\vspace{-1em}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{
+\textbf{HP} 126;
+\textbf{Bloodied} 63;
+\textbf{Recovery} 4d6
+}
+{\textbf{AP} 3}
+
+\pari \textbf{Armor} 12;
+\textbf{Fort} 18;
+\textbf{Ref} 9;
+\textbf{Ment} 11
+\pari \textbf{Strike} Bite \plus8 (4d10)
+
+
+\pari \textbf{Actions} One in action phase, one in delayed action phase
+\end{spelltargetinginfo}
+\end{spellcontent}
+
+\begin{monsterfooter}
+\pari \textbf{Awareness} \plus6
+\pari \textbf{Speed} 50 ft.;
+\textbf{Space} 15 ft.;
+\textbf{Reach} 15 ft.
+\pari \textbf{Attributes}:
+Str 11,
+Dex 5,
+\textbf{Con 9},
+Int \minus3,
+Per 5,
+Wil 0
+\end{monsterfooter}
+\end{monsection}
+
+
+\subsubsection{Behir Abilities}
+
+\begin{ability}{Electric Breath}
+The behir makes a \plus9 vs. Reflex attack against everything in a \areamed cone.
+\hit Each target takes 2d10 electricity damage, and is \glossterm{dazed} as a \glossterm{condition}.
+\end{ability}
+
+\vspace{0.5em}
+\begin{ability}{Natural Grab}
+The behir makes a bite \glossterm{strike}.
+If the attack result hits, and also beats the target's Fortitude and Reflex defenses, the target is \glossterm{grappled} by the behir.
+\end{ability}
+
+
+
+
+
 \begin{monsection}{Centaur}{3}[1]
 \vspace{-1em}\spelltwocol{}{Large magical beast}\vspace{-1em}
 \begin{spellcontent}
@@ -1956,10 +2011,9 @@ Wil 0
 
 \subsubsection{Salamander Abilities}
 
-\begin{ability}{Tail Grab}
-The salamander makes a tail slam strike.
-% wording with defenses vs. grappling?
-If the attack result beats the target's Fortitude defense, the salamander begins grappling the target.
+\begin{ability}{Natural Grab}
+The salamander makes a tail slam \glossterm{strike}.
+If the attack result hits, and also beats the target's Fortitude and Reflex defenses, the target is \glossterm{grappled} by the salamander.
 \end{ability}
 
 \vspace{0.5em}
@@ -2056,9 +2110,9 @@ Wil 3
 
 \subsubsection{Salamander Abilities}
 
-\begin{ability}{Tail Grab}
-The salamander makes a tail slam strike.
-If the attack result beats the target's Fortitude defense, it is grappled.
+\begin{ability}{Natural Grab}
+The salamander makes a tail slam \glossterm{strike}.
+If the attack result hits, and also beats the target's Fortitude and Reflex defenses, the target is \glossterm{grappled} by the salamander.
 \end{ability}
 
 \vspace{0.5em}
