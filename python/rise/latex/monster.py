@@ -3,8 +3,10 @@ from rise.latex.util import join, tag_if
 # from rise.statistics.creature
 def get_latex_from_creature(
         creature,
+        actions=None,
         active_abilities=None,
         immunities=None,
+        passive_abilities=None,
         resistances=None,
         speed=None,
 ):
@@ -34,8 +36,10 @@ def get_latex_from_creature(
         strikes=creature.strikes,
         willpower=creature.willpower,
         # extra args
+        actions=actions,
         active_abilities=active_abilities,
         immunities=immunities,
+        passive_abilities=passive_abilities,
         resistances=resistances,
     )
 
@@ -63,6 +67,7 @@ def get_latex(
         immunities=None,
         key_attribute=None,
         name_suffix=None,
+        passive_abilities=None,
         resistances=None,
         size='medium',
         space=5,
@@ -89,7 +94,11 @@ def get_latex(
                         \\pari \\textbf<Strike> {strike_text(strikes)}
                         {immunity_text(immunities)}
                         {resistance_text(resistances)}
-                        {actions or actions_text(challenge_rating)}
+                        {
+                            f"|pari |textbf<Actions> {actions or actions_text(challenge_rating)}"
+                            if actions or actions_text(challenge_rating)
+                            else ""
+                        }
                     \\end<spelltargetinginfo>
                 \\end<spellcontent>
 
@@ -111,7 +120,8 @@ def get_latex(
             {f'''
                 |subsubsection<{name} Abilities>
                 {active_abilities_text(active_abilities)}
-            ''' if active_abilities else ""}
+                {passive_abilities_text(passive_abilities)}
+            ''' if active_abilities or passive_abilities else ""}
         """
     )
 
@@ -119,15 +129,21 @@ def get_latex(
 def actions_text(challenge_rating):
     return {
         1: "",
-        2: "\\pari \\textbf<Actions> One in action phase, one in delayed action phase",
-        3: "\\pari \\textbf<Actions> Two in action phase, one in delayed action phase",
-        4: "\\pari \\textbf<Actions> Two in action phase, two in delayed action phase",
+        2: "One in action phase, one in delayed action phase",
+        3: "Two in action phase, one in delayed action phase",
+        4: "Two in action phase, two in delayed action phase",
     }[challenge_rating]
 
 def active_abilities_text(active_abilities):
     return (
         '\n\\vspace<0.5em>'.join(active_abilities)
         if active_abilities else ""
+    )
+
+def passive_abilities_text(passive_abilities):
+    return (
+        '\n\\vspace<0.5em>'.join(passive_abilities)
+        if passive_abilities else ""
     )
 
 def immunity_text(immunities):
