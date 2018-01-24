@@ -17,63 +17,57 @@ This chapter describes the rules for monsters, and the combat statistics for a v
 \textbf{Bloodied} 208;
 \textbf{Recovery} 6d10
 }
-{\textbf{AP} 8}
+{\textbf{AP} 9}
 
 \pari \textbf{Armor} 18;
 \textbf{Fort} 20;
 \textbf{Ref} 12;
-\textbf{Ment} 22
+\textbf{Ment} 24
 \pari \textbf{Strike} Tentacle \plus12 (5d10)
 
 
 \pari \textbf{Actions} Two in action phase, two in delayed action phase
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Enslave}:
-The aboleth spends an action point and makes a \plus14 vs. Mental attack against a creature in Medium range.
-\hit The target is \glossterm{stunned} as a \glossterm{condition}.
-\crit The target is \glossterm{dominated} by the aboleth for as long as the aboleth \glossterm{attunes} to this ability.
-
-
-
-\vspace{0.5em}
-\pari
-\textbf{Mind Crush}:
-The aboleth makes a \plus14 vs. Mental attack against a creature in Long range.
-\hit The target takes 6d10 psionic damage.
-
-
-
-\vspace{0.5em}
-\pari
-\textbf{Psionic Blast}:
-The aboleth makes a \plus14 vs. Mental attack against enemies in a Large cone.
-\hit Each target takes 4d10 psionic damage.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
 \pari \textbf{Awareness} \plus6
-\pari \textbf{Speed} 50 ft.;
+\pari \textbf{Speed} 50 ft. swim ft.;
 \textbf{Space} 15 ft.;
 \textbf{Reach} 15 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 13,
 Dex 0,
 Con 14,
 Int 13,
 Per 7,
-Wil 14
+\textbf{Wil 15}
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Aboleth Abilities}
+
+\begin{ability}{Mind Crush}[\glossterm{Mind}]
+The aboleth makes a \plus15 vs. Mental attack against a creature in Long range.
+\hit The target takes 6d10 psionic damage and is \glossterm{stunned} as a \glossterm{condition}.
+\crit The aboleth can spend an action point.
+If it does, the target is \glossterm{dominated} by the aboleth for as long as the aboleth \glossterm{attunes} to this ability.
+Otherwise, the target takes double the damage of a non-critical hit.
+\end{ability}
+
+\vspace{0.5em}
+\begin{ability}{Psionic Blast}[\glossterm{Mind}]
+The aboleth makes a \plus15 vs. Mental attack against enemies in a Large cone.
+\hit Each target takes 4d10 psionic damage.
+\end{ability}
+
+\vspace{0.5em}
+\begin{ability}{Rituals}
+The aboleth can learn and perform arcane rituals of up to 6th level.
+\end{ability}
+
+
 
 
 \section{Animates}
@@ -98,20 +92,6 @@ Wil 14
 
 \pari \textbf{Actions} Two in action phase, two in delayed action phase
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Forceful Smash}:
-The ram makes a slam strike.
-Treat the attack result as a shove attack against the target in addition to the strike.
-The ram does not have to move with the target to push it back.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -119,7 +99,7 @@ The ram does not have to move with the target to push it back.
 \pari \textbf{Speed} 50 ft.;
 \textbf{Space} 15 ft.;
 \textbf{Reach} 15 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 8,
 Dex 0,
 Con 7,
@@ -128,6 +108,17 @@ Per 8,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Animus Abilities}
+
+\begin{ability}{Forceful Smash}
+The ram makes a slam strike.
+Treat the attack result as a shove attack against the target in addition to the strike.
+The ram does not have to move with the target to push it back.
+\end{ability}
+
+
 
 
 \section{Animals}
@@ -152,18 +143,6 @@ Wil 0
 
 \pari \textbf{Actions} One in action phase, one in delayed action phase
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Rend}:
-The bear makes a claw strike against two targets within reach.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -171,7 +150,7 @@ The bear makes a claw strike against two targets within reach.
 \pari \textbf{Speed} 30 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 4,
 Dex 2,
 Con 3,
@@ -180,6 +159,15 @@ Per 2,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Bear Abilities}
+
+\begin{ability}{Rend}
+The bear makes a claw strike against two targets within reach.
+\end{ability}
+
+
 
 
 
@@ -203,18 +191,6 @@ Wil 0
 
 \pari \textbf{Actions} One in action phase, one in delayed action phase
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Rend}:
-The bear makes a claw strike against two targets within reach.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -222,7 +198,7 @@ The bear makes a claw strike against two targets within reach.
 \pari \textbf{Speed} 40 ft.;
 \textbf{Space} 10 ft.;
 \textbf{Reach} 10 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 6,
 Dex 3,
 Con 5,
@@ -231,6 +207,15 @@ Per 3,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Bear Abilities}
+
+\begin{ability}{Rend}
+The bear makes a claw strike against two targets within reach.
+\end{ability}
+
+
 
 
 
@@ -254,19 +239,6 @@ Wil 0
 
 \pari \textbf{Actions} One in action phase, one in delayed action phase
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Pounce}:
-The dire wolf moves up to its movement speed.
-If it uses this ability during the action phase, it can make a bite strike during the delayed action phase.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -274,7 +246,7 @@ If it uses this ability during the action phase, it can make a bite strike durin
 \pari \textbf{Speed} 40 ft.;
 \textbf{Space} 10 ft.;
 \textbf{Reach} 10 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 7,
 Dex 7,
 Con 3,
@@ -283,6 +255,16 @@ Per 6,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Dire Wolf Abilities}
+
+\begin{ability}{Pounce}
+The dire wolf moves up to its movement speed.
+If it uses this ability during the action phase, it can make a bite strike during the delayed action phase.
+\end{ability}
+
+
 
 
 
@@ -306,8 +288,6 @@ Wil 0
 
 
 \end{spelltargetinginfo}
-
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -315,7 +295,7 @@ Wil 0
 \pari \textbf{Speed} 20 ft.;
 \textbf{Space} 2.5 ft.;
 \textbf{Reach} 2.5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str \minus6,
 Dex 1,
 Con \minus4,
@@ -324,6 +304,8 @@ Per 1,
 Wil \minus2
 \end{monsterfooter}
 \end{monsection}
+
+
 
 
 
@@ -347,8 +329,6 @@ Wil \minus2
 
 
 \end{spelltargetinginfo}
-
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -356,7 +336,7 @@ Wil \minus2
 \pari \textbf{Speed} 30 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 2,
 Dex 2,
 Con 2,
@@ -365,6 +345,8 @@ Per 2,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
 
 
 
@@ -388,8 +370,6 @@ Wil 0
 
 
 \end{spelltargetinginfo}
-
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -397,7 +377,7 @@ Wil 0
 \pari \textbf{Speed} 20 ft.;
 \textbf{Space} 2.5 ft.;
 \textbf{Reach} 2.5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str \minus9,
 Dex 3,
 Con \minus4,
@@ -406,6 +386,8 @@ Per 2,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
 
 
 
@@ -429,19 +411,6 @@ Wil 0
 
 \pari \textbf{Actions} Two in action phase, two in delayed action phase
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Flyby Attack}:
-The roc flies up to its flying movement speed.
-It can make a talon strike or grapple attack at any point during this movement.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -449,7 +418,7 @@ It can make a talon strike or grapple attack at any point during this movement.
 \pari \textbf{Speed} 80 ft. fly ft.;
 \textbf{Space} 20 ft.;
 \textbf{Reach} 20 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 12,
 Dex 10,
 Con 5,
@@ -458,6 +427,16 @@ Per 5,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Roc Abilities}
+
+\begin{ability}{Flyby Attack}
+The roc flies up to its flying movement speed.
+It can make a talon strike or grapple attack at any point during this movement.
+\end{ability}
+
+
 
 
 
@@ -481,8 +460,6 @@ Wil 0
 
 
 \end{spelltargetinginfo}
-
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -490,7 +467,7 @@ Wil 0
 \pari \textbf{Speed} 50 ft. fly (good) ft.;
 \textbf{Space} 10 ft.;
 \textbf{Reach} 10 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 7,
 Dex 9,
 Con 0,
@@ -499,6 +476,8 @@ Per 8,
 Wil \minus1
 \end{monsterfooter}
 \end{monsection}
+
+
 
 
 
@@ -522,8 +501,6 @@ Wil \minus1
 
 
 \end{spelltargetinginfo}
-
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -531,7 +508,7 @@ Wil \minus1
 \pari \textbf{Speed} 40 ft.;
 \textbf{Space} 10 ft.;
 \textbf{Reach} 10 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 1,
 Dex 3,
 Con 1,
@@ -540,6 +517,8 @@ Per 2,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
 
 
 
@@ -563,8 +542,6 @@ Wil 0
 
 \pari \textbf{Actions} One in action phase, one in delayed action phase
 \end{spelltargetinginfo}
-
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -572,7 +549,7 @@ Wil 0
 \pari \textbf{Speed} 40 ft.;
 \textbf{Space} 10 ft.;
 \textbf{Reach} 10 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 9,
 Dex 0,
 Con 9,
@@ -581,6 +558,8 @@ Per 8,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
 
 
 
@@ -604,8 +583,6 @@ Wil 0
 
 \pari \textbf{Actions} Two in action phase, two in delayed action phase
 \end{spelltargetinginfo}
-
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -613,7 +590,7 @@ Wil 0
 \pari \textbf{Speed} 50 ft.;
 \textbf{Space} 15 ft.;
 \textbf{Reach} 15 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 10,
 Dex 0,
 Con 10,
@@ -622,6 +599,8 @@ Per 9,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
 
 
 \section{Humanoids}
@@ -646,19 +625,6 @@ Wil 0
 
 
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Hex}:
-The cultist makes a \plus3 vs. Fortitude attack against one creature in Medium range.
-\hit The target takes 1d10 life damage and is \glossterm{sickened} as a \glossterm{condition}.",
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -666,15 +632,25 @@ The cultist makes a \plus3 vs. Fortitude attack against one creature in Medium r
 \pari \textbf{Speed} 30 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 0,
 Dex 0,
 Con 0,
 Int \minus1,
 Per \minus1,
-Wil 3
+\textbf{Wil 3}
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Cultist Abilities}
+
+\begin{ability}{Hex}
+The cultist makes a \plus3 vs. Fortitude attack against one creature in Medium range.
+\hit The target takes 1d10 life damage and is \glossterm{sickened} as a \glossterm{condition}.",
+\end{ability}
+
+
 
 
 
@@ -698,27 +674,6 @@ Wil 3
 
 \pari \textbf{Actions} One in action phase, one in delayed action phase
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Shout of Running}:
-All other willing allies who can hear the shouter can use the sprint ability without spending action points.
-This effect lasts as long as the shouter sustains it as a standard action.
-
-
-
-\vspace{0.5em}
-\pari
-\textbf{Shout of Stabbing}:
-All other willing allies who can hear the shouter gain a \plus1d bonus to strike damage.
-This effect lasts as long as the shouter sustains it as a standard action.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -726,7 +681,7 @@ This effect lasts as long as the shouter sustains it as a standard action.
 \pari \textbf{Speed} 25 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 0,
 Dex 3,
 Con \minus1,
@@ -735,6 +690,22 @@ Per 3,
 Wil 2
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Goblin Shouter Abilities}
+
+\begin{ability}{Shout of Running}
+All other willing allies who can hear the shouter can use the sprint ability without spending action points.
+This effect lasts as long as the shouter sustains it as a standard action.
+\end{ability}
+
+\vspace{0.5em}
+\begin{ability}{Shout of Stabbing}
+All other willing allies who can hear the shouter gain a \plus1d bonus to strike damage.
+This effect lasts as long as the shouter sustains it as a standard action.
+\end{ability}
+
+
 
 
 
@@ -758,19 +729,6 @@ Wil 2
 
 
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Sneeky Stab}:
-The stabber makes a shortsword strike.
-If the target is defenseless, overwhelmed, or unaware, the damage becomes 1d8.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -778,7 +736,7 @@ If the target is defenseless, overwhelmed, or unaware, the damage becomes 1d8.
 \pari \textbf{Speed} 25 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 0,
 Dex 3,
 Con \minus1,
@@ -787,6 +745,16 @@ Per 2,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Goblin Stabber Abilities}
+
+\begin{ability}{Sneeky Stab}
+The stabber makes a shortsword strike.
+If the target is defenseless, overwhelmed, or unaware, the damage becomes 1d8.
+\end{ability}
+
+
 
 
 
@@ -810,35 +778,6 @@ Wil 0
 
 \pari \textbf{Actions} Two in action phase, one in delayed action phase
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Hit Everyone Else}:
-All other willing allies who can hear the chieftain gain a \plus2 bonus to accuracy with strikes.
-This effect lasts as long as the chieftain sustains it as a standard action.
-
-
-
-\vspace{0.5em}
-\pari
-\textbf{Hit Hardest}:
-The chieftain makes a greataxe strike.
-The strike deals 4d10 damage.
-
-
-
-\vspace{0.5em}
-\pari
-\textbf{Hit Fast}:
-The chieftain makes a greataxe strike.
-Its accuracy is increased to 8.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -846,7 +785,7 @@ Its accuracy is increased to 8.
 \pari \textbf{Speed} 30 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 8,
 Dex 0,
 Con 3,
@@ -855,6 +794,28 @@ Per 6,
 Wil 6
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Orc Chieftain Abilities}
+
+\begin{ability}{Hit Everyone Else}
+All other willing allies who can hear the chieftain gain a \plus2 bonus to accuracy with strikes.
+This effect lasts as long as the chieftain sustains it as a standard action.
+\end{ability}
+
+\vspace{0.5em}
+\begin{ability}{Hit Hardest}
+The chieftain makes a greataxe strike.
+The strike deals 4d10 damage.
+\end{ability}
+
+\vspace{0.5em}
+\begin{ability}{Hit Fast}
+The chieftain makes a greataxe strike.
+Its accuracy is increased to 8.
+\end{ability}
+
+
 
 
 
@@ -878,19 +839,6 @@ Wil 6
 
 
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Hit Harder}:
-The grunt makes a greataxe strike.
-Its accuracy is reduced to 0, but the strike deals 4d6 damage.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -898,7 +846,7 @@ Its accuracy is reduced to 0, but the strike deals 4d6 damage.
 \pari \textbf{Speed} 30 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 4,
 Dex 0,
 Con 2,
@@ -907,6 +855,16 @@ Per 0,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Orc Grunt Abilities}
+
+\begin{ability}{Hit Harder}
+The grunt makes a greataxe strike.
+Its accuracy is reduced to 0, but the strike deals 4d6 damage.
+\end{ability}
+
+
 
 
 
@@ -930,27 +888,6 @@ Wil 0
 
 \pari \textbf{Actions} One in action phase, one in delayed action phase
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Hit Harder}:
-The loudmouth makes a greataxe strike.
-Its accuracy is reduced to 1, but the strike deals 4d6 damage.
-
-
-
-\vspace{0.5em}
-\pari
-\textbf{Hit That One Over There}:
-All other willing allies who can hear the loudmouth gain a \plus2 bonus to accuracy with strikes against one creature within Long range.
-This effect lasts as long as the loudmouth sustains it as a standard action.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -958,7 +895,7 @@ This effect lasts as long as the loudmouth sustains it as a standard action.
 \pari \textbf{Speed} 30 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 5,
 Dex 0,
 Con 2,
@@ -967,6 +904,22 @@ Per 0,
 Wil 4
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Orc Loudmouth Abilities}
+
+\begin{ability}{Hit Harder}
+The loudmouth makes a greataxe strike.
+Its accuracy is reduced to 1, but the strike deals 4d6 damage.
+\end{ability}
+
+\vspace{0.5em}
+\begin{ability}{Hit That One Over There}
+All other willing allies who can hear the loudmouth gain a \plus2 bonus to accuracy with strikes against one creature within Long range.
+This effect lasts as long as the loudmouth sustains it as a standard action.
+\end{ability}
+
+
 
 
 
@@ -990,27 +943,6 @@ Wil 4
 
 \pari \textbf{Actions} One in action phase, one in delayed action phase
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Hit Worse}:
-The shaman makes a \plus4 vs. Mental attack against one creature in Close range.
-\hit The target takes a \minus3 penalty to accuracy with strikes as a \glossterm{condition}.
-\crit As above, except that the penalty is increased to -6.
-
-
-
-\vspace{0.5em}
-\pari
-\textbf{Hurt Less}:
-One other willing creature in Close range heals 2d8 hit points
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -1018,15 +950,31 @@ One other willing creature in Close range heals 2d8 hit points
 \pari \textbf{Speed} 30 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 4,
 Dex 0,
 Con 2,
 Int \minus1,
 Per 0,
-Wil 4
+\textbf{Wil 4}
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Orc Shaman Abilities}
+
+\begin{ability}{Hit Worse}
+The shaman makes a \plus4 vs. Mental attack against one creature in Close range.
+\hit The target takes a \minus3 penalty to accuracy with strikes as a \glossterm{condition}.
+\crit As above, except that the penalty is increased to -6.
+\end{ability}
+
+\vspace{0.5em}
+\begin{ability}{Hurt Less}
+One other willing creature in Close range heals 2d8 hit points.
+\end{ability}
+
+
 
 
 
@@ -1050,19 +998,6 @@ Wil 4
 
 
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Hit Fast}:
-The savage makes a greataxe strike.
-Its accuracy is 6.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -1070,7 +1005,7 @@ Its accuracy is 6.
 \pari \textbf{Speed} 30 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 7,
 Dex 5,
 Con 3,
@@ -1081,6 +1016,16 @@ Wil 0
 \end{monsection}
 
 
+\subsubsection{Orc Savage Abilities}
+
+\begin{ability}{Hit Fast}
+The savage makes a greataxe strike.
+Its accuracy is 6.
+\end{ability}
+
+
+
+
 \section{Magical Beasts}
 
 \begin{monsection}{Ankheg}{7}[2]
@@ -1088,42 +1033,21 @@ Wil 0
 \begin{spellcontent}
 \begin{spelltargetinginfo}
 \spelltwocol{
-\textbf{HP} 96;
-\textbf{Bloodied} 48;
+\textbf{HP} 112;
+\textbf{Bloodied} 56;
 \textbf{Recovery} 2d10
 }
 {\textbf{AP} 3}
 
-\pari \textbf{Armor} 14;
-\textbf{Fort} 15;
-\textbf{Ref} 12;
+\pari \textbf{Armor} 13;
+\textbf{Fort} 16;
+\textbf{Ref} 10;
 \textbf{Ment} 10
 \pari \textbf{Strike} Bite \plus7 (4d6)
 
 
 \pari \textbf{Actions} One in action phase, one in delayed action phase
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Drag Prey}:
-The ankheg makes a shove attack with an accuracy of \plus14.
-It can move with the target up to a maximum distance equal to its land speed.
-
-
-
-\vspace{0.5em}
-\pari
-\textbf{Spit Acid}:
-The ankheg makes a \plus7 vs. Reflex attack against everything in a 5 ft. wide Medium line.
-\hit Each target takes 2d6 acid damage, and creatures are \glossterm{sickened} as a \glossterm{condition}.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -1131,15 +1055,31 @@ The ankheg makes a \plus7 vs. Reflex attack against everything in a 5 ft. wide M
 \pari \textbf{Speed} 40 ft.;
 \textbf{Space} 10 ft.;
 \textbf{Reach} 10 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 9,
-Dex 8,
-Con 4,
+Dex 4,
+\textbf{Con 8},
 Int \minus7,
 Per 4,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Ankheg Abilities}
+
+\begin{ability}{Drag Prey}
+The ankheg makes a shove attack with an accuracy of \plus13.
+It can move with the target up to a maximum distance equal to its land speed.
+\end{ability}
+
+\vspace{0.5em}
+\begin{ability}{Spit Acid}
+The ankheg makes a \plus8 vs. Reflex attack against everything in a 5 ft. wide Medium line.
+\hit Each target takes 2d8 acid damage, and creatures are \glossterm{sickened} as a \glossterm{condition}.
+\end{ability}
+
+
 
 
 
@@ -1163,19 +1103,6 @@ Wil 0
 
 
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Shapeshift}:
-The aranea makes a Disguise check to change its appearance.
-It ignores all penalties for differences between its natural appearance and its intended appearance.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -1183,7 +1110,7 @@ It ignores all penalties for differences between its natural appearance and its 
 \pari \textbf{Speed} 30 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 0,
 Dex 6,
 Con 0,
@@ -1192,6 +1119,16 @@ Per 3,
 Wil 7
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Aranea Abilities}
+
+\begin{ability}{Shapeshift}
+The aranea makes a Disguise check to change its appearance.
+It ignores all penalties for differences between its natural appearance and its intended appearance.
+\end{ability}
+
+
 
 
 
@@ -1208,28 +1145,13 @@ Wil 7
 
 \pari \textbf{Armor} 11;
 \textbf{Fort} 13;
-\textbf{Ref} 8;
+\textbf{Ref} 9;
 \textbf{Ment} 8
-\pari \textbf{Strike} Bite \plus5 (2d8)
+\pari \textbf{Strike} Bite \plus6 (2d8)
 
 
 \pari \textbf{Actions} One in action phase, one in delayed action phase
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Petrifying Gaze}:
-The basilisk makes a \plus5 vs. Fortitude attack against one creature in Medium range.
-\hit The target is \glossterm{nauseated} as a \glossterm{condition}.
-\crit As above, and as an additional condition, the target takes 1d10 physical damage at the end of each action phase.
-If it takes vital damage in this way, it is petrified permanently.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -1237,15 +1159,27 @@ If it takes vital damage in this way, it is petrified permanently.
 \pari \textbf{Speed} 30 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 6,
 Dex \minus1,
 Con 6,
 Int \minus6,
-Per 3,
+\textbf{Per 6},
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Basilisk Abilities}
+
+\begin{ability}{Petrifying Gaze}
+The basilisk makes a \plus6 vs. Fortitude attack against one creature in Medium range.
+\hit The target is \glossterm{nauseated} as a \glossterm{condition}.
+\crit As above, and as an additional condition, the target takes 1d10 physical damage at the end of each action phase.
+If it takes vital damage in this way, it is petrified permanently.
+\end{ability}
+
+
 
 
 
@@ -1269,8 +1203,6 @@ Wil 0
 
 
 \end{spelltargetinginfo}
-
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -1278,7 +1210,7 @@ Wil 0
 \pari \textbf{Speed} 40 ft.;
 \textbf{Space} 10 ft.;
 \textbf{Reach} 10 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 2,
 Dex 4,
 Con 4,
@@ -1287,6 +1219,8 @@ Per 4,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
 
 
 
@@ -1310,8 +1244,6 @@ Wil 0
 
 \pari \textbf{Actions} Two in action phase, two in delayed action phase
 \end{spelltargetinginfo}
-
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -1319,7 +1251,7 @@ Wil 0
 \pari \textbf{Speed} 40 ft.;
 \textbf{Space} 10 ft.;
 \textbf{Reach} 10 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 7,
 Dex 7,
 Con 0,
@@ -1328,6 +1260,8 @@ Per 6,
 Wil \minus1
 \end{monsterfooter}
 \end{monsection}
+
+
 
 
 
@@ -1351,19 +1285,6 @@ Wil \minus1
 
 \pari \textbf{Actions} One in action phase, one in delayed action phase
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Flyby Attack}:
-The griffin flies up to its flying movement speed.
-It can make a talon strike at any point during this movement.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -1371,7 +1292,7 @@ It can make a talon strike at any point during this movement.
 \pari \textbf{Speed} 80 ft. fly ft.;
 \textbf{Space} 10 ft.;
 \textbf{Reach} 10 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 5,
 Dex 6,
 Con 5,
@@ -1380,6 +1301,16 @@ Per 3,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Griffon Abilities}
+
+\begin{ability}{Flyby Attack}
+The griffin flies up to its flying movement speed.
+It can make a talon strike at any point during this movement.
+\end{ability}
+
+
 
 
 
@@ -1403,8 +1334,6 @@ Wil 0
 
 
 \end{spelltargetinginfo}
-
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -1412,7 +1341,7 @@ Wil 0
 \pari \textbf{Speed} 25 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 4,
 Dex 5,
 Con 0,
@@ -1421,6 +1350,8 @@ Per 2,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
 
 
 
@@ -1444,8 +1375,6 @@ Wil 0
 
 \pari \textbf{Actions} Two in action phase, two in delayed action phase
 \end{spelltargetinginfo}
-
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -1453,7 +1382,7 @@ Wil 0
 \pari \textbf{Speed} 50 ft.;
 \textbf{Space} 15 ft.;
 \textbf{Reach} 15 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 3,
 Dex 7,
 Con 0,
@@ -1462,6 +1391,8 @@ Per 7,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
 
 
 \section{Monstrous Humanoids}
@@ -1486,19 +1417,6 @@ Wil 0
 
 
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Wail}:
-The banshee makes a \plus4 vs. Fortitude attack against everything in a Large radius.
-\hit Each target takes 1d10 sonic damage, and creatures are sickened as a condition.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -1506,15 +1424,25 @@ The banshee makes a \plus4 vs. Fortitude attack against everything in a Large ra
 \pari \textbf{Speed} 30 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 2,
 Dex 4,
 Con 0,
 Int 0,
 Per 2,
-Wil 4
+\textbf{Wil 4}
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Banshee Abilities}
+
+\begin{ability}{Wail}
+The banshee makes a \plus4 vs. Fortitude attack against everything in a Large radius.
+\hit Each target takes 1d10 sonic damage, and creatures are sickened as a condition.
+\end{ability}
+
+
 
 
 
@@ -1538,18 +1466,6 @@ Wil 4
 
 
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Boulder Toss}:
-The giant makes a ranged boulder strike, treating it as a thrown weapon with a 100 ft.\ range increment.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -1557,7 +1473,7 @@ The giant makes a ranged boulder strike, treating it as a thrown weapon with a 1
 \pari \textbf{Speed} 40 ft.;
 \textbf{Space} 10 ft.;
 \textbf{Reach} 10 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 7,
 Dex \minus2,
 Con 3,
@@ -1566,6 +1482,15 @@ Per 0,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Giant Abilities}
+
+\begin{ability}{Boulder Toss}
+The giant makes a ranged boulder strike, treating it as a thrown weapon with a 100 ft.\ range increment.
+\end{ability}
+
+
 
 
 
@@ -1589,18 +1514,6 @@ Wil 0
 
 
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Boulder Toss}:
-The giant makes a ranged boulder strike, treating it as a thrown weapon with a 100 ft.\ range increment.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -1608,7 +1521,7 @@ The giant makes a ranged boulder strike, treating it as a thrown weapon with a 1
 \pari \textbf{Speed} 50 ft.;
 \textbf{Space} 15 ft.;
 \textbf{Reach} 15 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 11,
 Dex \minus2,
 Con 11,
@@ -1617,6 +1530,15 @@ Per 10,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Giant Abilities}
+
+\begin{ability}{Boulder Toss}
+The giant makes a ranged boulder strike, treating it as a thrown weapon with a 100 ft.\ range increment.
+\end{ability}
+
+
 
 
 
@@ -1640,29 +1562,6 @@ Wil 0
 
 
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Lightning Javelin}:
-The storm giant makes a \plus16 vs. Reflex attack against everything in a 10 ft. wide Large line.
-\hit Each target takes 5d10 electricity damage.
-
-
-
-\vspace{0.5em}
-\pari
-\textbf{Thunderstrike}:
-The storm giant makes a greatsword strike against a target.
-If its attack result beats the target's Fortitude defense,
-the target also takes 4d10 sonic damage
-and is deafened as a condition.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -1670,15 +1569,33 @@ and is deafened as a condition.
 \pari \textbf{Speed} 60 ft.;
 \textbf{Space} 20 ft.;
 \textbf{Reach} 20 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 17,
 Dex \minus1,
 Con 8,
 Int 8,
 Per 16,
-Wil 16
+\textbf{Wil 16}
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Giant Abilities}
+
+\begin{ability}{Lightning Javelin}
+The storm giant makes a \plus16 vs. Reflex attack against everything in a 10 ft. wide Large line.
+\hit Each target takes 5d10 electricity damage.
+\end{ability}
+
+\vspace{0.5em}
+\begin{ability}{Thunderstrike}
+The storm giant makes a greatsword strike against a target.
+If its attack result beats the target's Fortitude defense,
+the target also takes 4d10 sonic damage
+and is deafened as a condition.
+\end{ability}
+
+
 
 
 
@@ -1702,37 +1619,6 @@ Wil 16
 
 \pari \textbf{Actions} One in action phase, one in delayed action phase
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Vital Surge}:
-The hag makes a \plus7 vs. Fortitude attack against one creature within Medium range.
-\hit The target takes 2d10 life damage.
-
-
-
-\vspace{0.5em}
-\pari
-\textbf{Green Hag's Curse}:
-The hag makes a \plus7 vs. Mental atack aginst one creature within Medium range.
-\hit As a condition, the target is either dazed, fatigued, or sickened, as the hag chooses.
-\crit As three separate conditions, the target is dazed, fatigued, and sickened.
-
-
-
-\vspace{0.5em}
-\pari
-\textbf{Coven Rituals}:
-Whenever three or more hags work together, they form a coven.
-All members of the coven gain the ability to perform nature rituals as long as they work together.
-Hags of any type can form a coven together.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -1740,15 +1626,39 @@ Hags of any type can form a coven together.
 \pari \textbf{Speed} 30 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 0,
 Dex 6,
 Con 0,
 Int 6,
-Per 7,
+\textbf{Per 7},
 Wil 6
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Hag Abilities}
+
+\begin{ability}{Vital Surge}
+The hag makes a \plus7 vs. Fortitude attack against one creature within Medium range.
+\hit The target takes 2d10 life damage.
+\end{ability}
+
+\vspace{0.5em}
+\begin{ability}{Green Hag's Curse}
+The hag makes a \plus7 vs. Mental atack aginst one creature within Medium range.
+\hit As a condition, the target is either dazed, fatigued, or sickened, as the hag chooses.
+\crit As three separate conditions, the target is dazed, fatigued, and sickened.
+\end{ability}
+
+\vspace{0.5em}
+\begin{ability}{Coven Rituals}
+Whenever three or more hags work together, they form a coven.
+All members of the coven gain the ability to perform nature rituals as long as they work together.
+Hags of any type can form a coven together.
+\end{ability}
+
+
 
 
 
@@ -1772,21 +1682,6 @@ Wil 6
 
 \pari \textbf{Actions} One in action phase, one in delayed action phase
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Petrifying Gaze}:
-The medusa makes a \plus8 vs. Fortitude attack against one creature in Medium range.
-\hit The target is \glossterm{nauseated} as a \glossterm{condition}.
-\crit As above, and as an additional condition, the target takes 1d10 physical damage at the end of each action phase.
-If it takes vital damage in this way, it is petrified permanently.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -1794,15 +1689,27 @@ If it takes vital damage in this way, it is petrified permanently.
 \pari \textbf{Speed} 30 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 0,
 Dex 4,
 Con 0,
 Int 4,
-Per 8,
+\textbf{Per 8},
 Wil 8
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Medusa Abilities}
+
+\begin{ability}{Petrifying Gaze}
+The medusa makes a \plus8 vs. Fortitude attack against one creature in Medium range.
+\hit The target is \glossterm{nauseated} as a \glossterm{condition}.
+\crit As above, and as an additional condition, the target takes 2d6 physical damage at the end of each action phase.
+If it takes vital damage in this way, it is petrified permanently.
+\end{ability}
+
+
 
 
 \section{Outsiders}
@@ -1827,26 +1734,6 @@ Wil 8
 
 
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Smite}:
-The angel makes a mace strike.
-If its target is evil, it gains a \plus2 bonus to accuracy and a \plus2d bonus to damage on the strike.
-
-
-
-\vspace{0.5em}
-\pari
-\textbf{Angel's Grace}:
-One willing creature within reach heals 5d10 hit points.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -1854,15 +1741,30 @@ One willing creature within reach heals 5d10 hit points.
 \pari \textbf{Speed} 30 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 15,
 Dex 15,
 Con 15,
 Int 15,
 Per 15,
-Wil 15
+\textbf{Wil 15}
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Angel Abilities}
+
+\begin{ability}{Smite}
+The angel makes a mace strike.
+If its target is evil, it gains a \plus2 bonus to accuracy and a \plus2d bonus to damage on the strike.
+\end{ability}
+
+\vspace{0.5em}
+\begin{ability}{Angel's Grace}
+One willing creature within reach heals 5d10 hit points.
+\end{ability}
+
+
 
 
 
@@ -1886,19 +1788,6 @@ Wil 15
 
 
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Electrobolt}:
-The arrowhawk makes a \plus5 vs. Reflex attack against one creature or object in Medium range.
-\hit The target takes 2d6 electricity damage.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -1906,15 +1795,25 @@ The arrowhawk makes a \plus5 vs. Reflex attack against one creature or object in
 \pari \textbf{Speed} 60 ft. fly (good) ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 2,
-Dex 6,
+\textbf{Dex 6},
 Con \minus1,
 Int 0,
 Per 5,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Arrowhawk Abilities}
+
+\begin{ability}{Electrobolt}
+The arrowhawk makes a \plus6 vs. Reflex attack against one creature or object in Medium range.
+\hit The target takes 2d8 electricity damage.
+\end{ability}
+
+
 
 
 
@@ -1938,20 +1837,6 @@ Wil 0
 
 
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Venomous Bite}:
-The bebelith makes a bite strike.
-If it hits, and the attack result beats the target's Fortitude defense, the target is also poisoned as a condition.
-If the target is poisoned, it takes 4d6 poison damage at the end of each action phase after the first round.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -1959,15 +1844,26 @@ If the target is poisoned, it takes 4d6 poison damage at the end of each action 
 \pari \textbf{Speed} 50 ft.;
 \textbf{Space} 15 ft.;
 \textbf{Reach} 15 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 12,
 Dex 13,
-Con 12,
+\textbf{Con 12},
 Int 0,
 Per 6,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Demon Abilities}
+
+\begin{ability}{Venomous Bite}
+The bebelith makes a bite strike.
+If it hits, and the attack result beats the target's Fortitude defense, the target is also poisoned as a condition.
+If the target is poisoned, it takes 4d6 poison damage at the end of each action phase after the first round.
+\end{ability}
+
+
 
 
 
@@ -1991,19 +1887,6 @@ Wil 0
 
 
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Fire Breath}:
-The hell hound makes a \plus5 vs. Reflex attack against everything in a Medium cone.
-\hit Each target takes 2d6 fire damage.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -2011,15 +1894,25 @@ The hell hound makes a \plus5 vs. Reflex attack against everything in a Medium c
 \pari \textbf{Speed} 30 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 3,
 Dex 6,
-Con 0,
+\textbf{Con 0},
 Int \minus3,
 Per 5,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Hell Hound Abilities}
+
+\begin{ability}{Fire Breath}
+The hell hound makes a \plus4 vs. Reflex attack against everything in a Medium cone.
+\hit Each target takes 2d6 fire damage.
+\end{ability}
+
+
 
 
 
@@ -2043,31 +1936,6 @@ Wil 0
 
 
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Tail Grab}:
-The salamander makes a tail slam strike.
-% wording with defenses vs. grappling?
-If the attack result beats the target's Fortitude defense, the salamander begins grappling the target.
-
-
-
-\vspace{0.5em}
-\pari
-\textbf{Flame Aura}:
-The salamander spends an action point to intensify its natural body heat, creating a burning aura around it.
-This ability lasts as long as the salamander sustains it as a standard action.
-At the end of each action phase, the salamander makes a \plus4 vs. Reflex
-attack against everything within a Medium radius emanation of it.
-\hit Each target takes 1d10 fire damage.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -2075,15 +1943,35 @@ attack against everything within a Medium radius emanation of it.
 \pari \textbf{Speed} 30 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 7,
 Dex 5,
-Con 0,
+\textbf{Con 0},
 Int 3,
 Per 3,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Salamander Abilities}
+
+\begin{ability}{Tail Grab}
+The salamander makes a tail slam strike.
+% wording with defenses vs. grappling?
+If the attack result beats the target's Fortitude defense, the salamander begins grappling the target.
+\end{ability}
+
+\vspace{0.5em}
+\begin{ability}{Flame Aura}
+The salamander spends an action point to intensify its natural body heat, creating a burning aura around it.
+This ability lasts as long as the salamander sustains it as a standard action.
+At the end of each action phase, the salamander makes a \plus4 vs. Reflex
+attack against everything within a Medium radius emanation of it.
+\hit Each target takes 1d10 fire damage.
+\end{ability}
+
+
 
 
 
@@ -2107,8 +1995,6 @@ Wil 0
 
 
 \end{spelltargetinginfo}
-
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -2116,7 +2002,7 @@ Wil 0
 \pari \textbf{Speed} 30 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 8,
 Dex 9,
 Con 0,
@@ -2125,6 +2011,8 @@ Per 8,
 Wil 4
 \end{monsterfooter}
 \end{monsection}
+
+
 
 
 
@@ -2148,30 +2036,6 @@ Wil 4
 
 \pari \textbf{Actions} Two in action phase, one in delayed action phase
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Tail Grab}:
-The salamander makes a tail slam strike.
-If the attack result beats the target's Fortitude defense, it is grappled.
-
-
-
-\vspace{0.5em}
-\pari
-\textbf{Flame Aura}:
-The salamander spends an action point to intensify its natural body heat, creating a burning aura around it.
-This ability lasts as long as the salamander sustains it as a standard action.
-At the end of each action phase, the salamander makes a \plus4 vs. Reflex
-attack against everything within a Medium radius emanation of it.
-\hit Each target takes 1d10 fire damage.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -2179,15 +2043,34 @@ attack against everything within a Medium radius emanation of it.
 \pari \textbf{Speed} 30 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 8,
 Dex 6,
-Con 0,
+\textbf{Con 0},
 Int 3,
 Per 6,
 Wil 3
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Salamander Abilities}
+
+\begin{ability}{Tail Grab}
+The salamander makes a tail slam strike.
+If the attack result beats the target's Fortitude defense, it is grappled.
+\end{ability}
+
+\vspace{0.5em}
+\begin{ability}{Flame Aura}
+The salamander spends an action point to intensify its natural body heat, creating a burning aura around it.
+This ability lasts as long as the salamander sustains it as a standard action.
+At the end of each action phase, the salamander makes a \plus4 vs. Reflex
+attack against everything within a Medium radius emanation of it.
+\hit Each target takes 1d10 fire damage.
+\end{ability}
+
+
 
 
 \section{Undead}
@@ -2212,8 +2095,6 @@ Wil 3
 
 
 \end{spelltargetinginfo}
-
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -2221,7 +2102,7 @@ Wil 3
 \pari \textbf{Speed} 30 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 0,
 Dex 6,
 Con 0,
@@ -2230,6 +2111,8 @@ Per 0,
 Wil 6
 \end{monsterfooter}
 \end{monsection}
+
+
 
 
 
@@ -2253,8 +2136,6 @@ Wil 6
 
 \pari \textbf{Actions} One in action phase, one in delayed action phase
 \end{spelltargetinginfo}
-
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -2262,7 +2143,7 @@ Wil 6
 \pari \textbf{Speed} 30 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 0,
 Dex 9,
 Con 0,
@@ -2271,6 +2152,8 @@ Per 0,
 Wil 9
 \end{monsterfooter}
 \end{monsection}
+
+
 
 
 
@@ -2294,29 +2177,6 @@ Wil 9
 
 \pari \textbf{Actions} Two in action phase, two in delayed action phase
 \end{spelltargetinginfo}
-
-
-\begin{spelleffects}
-
-\pari
-\textbf{Animating Caper}:
-One corpse within Close range is animated as a skeleton under the dirgewalker's control.
-This ability costs an action point to use.
-It lasts as long as the dirgewalker attunes to it.
-
-
-
-\vspace{0.5em}
-\pari
-\textbf{Mournful Dirge}:
-The dirgewalker makes a \plus6 vs. Mental attack against all creatures in a Medium radius.
-\hit Each target is dazed as a condition.
-\crit Each target is stunned as a condition.
-
-
-
-\end{spelleffects}
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -2324,15 +2184,33 @@ The dirgewalker makes a \plus6 vs. Mental attack against all creatures in a Medi
 \pari \textbf{Speed} 30 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 0,
 Dex 6,
 Con 0,
 Int 3,
 Per 6,
-Wil 5
+\textbf{Wil 5}
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Dirgewalker Abilities}
+
+\begin{ability}{Animating Caper}
+One corpse within Close range is animated as a skeleton under the dirgewalker's control.
+This ability costs an action point to use.
+It lasts as long as the dirgewalker attunes to it.
+\end{ability}
+
+\vspace{0.5em}
+\begin{ability}{Mournful Dirge}
+The dirgewalker makes a \plus5 vs. Mental attack against all creatures in a Medium radius.
+\hit Each target is dazed as a condition.
+\crit Each target is stunned as a condition.
+\end{ability}
+
+
 
 
 
@@ -2356,8 +2234,6 @@ Wil 5
 
 
 \end{spelltargetinginfo}
-
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -2365,7 +2241,7 @@ Wil 5
 \pari \textbf{Speed} 30 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 2,
 Dex 2,
 Con 0,
@@ -2374,6 +2250,8 @@ Per 0,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
 
 
 
@@ -2397,8 +2275,6 @@ Wil 0
 
 
 \end{spelltargetinginfo}
-
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -2406,7 +2282,7 @@ Wil 0
 \pari \textbf{Speed} 30 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 4,
 Dex 4,
 Con 0,
@@ -2415,6 +2291,8 @@ Per 0,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
 
 
 
@@ -2438,8 +2316,6 @@ Wil 0
 
 
 \end{spelltargetinginfo}
-
-
 \end{spellcontent}
 
 \begin{monsterfooter}
@@ -2447,7 +2323,7 @@ Wil 0
 \pari \textbf{Speed} 30 ft.;
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
-\pari \textbf{Attributes}
+\pari \textbf{Attributes}:
 Str 2,
 Dex 0,
 Con 3,
@@ -2456,5 +2332,7 @@ Per 0,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
 
 

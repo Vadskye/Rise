@@ -35,3 +35,9 @@ def latexify(text):
         line for line in stripped_lines
     ])
     return text
+
+def tag_if(text, tag, test):
+    if test:
+        return f"|{tag}<{text}>"
+    else:
+        return text
