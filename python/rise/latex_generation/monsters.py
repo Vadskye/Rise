@@ -804,6 +804,31 @@ def magical_beasts():
         ]
     ))
 
+    minotaur = Creature(
+        character_class=CharacterClass('slayer'),
+        level=4,
+        name='Minotaur',
+        natural_armor=4,
+        race=Race('magical beast'),
+        size=Size('large'),
+        starting_attributes=[3, 2, 1, -2, 2, 0],
+        weapons=[Weapon('greataxe'), Weapon('gore')],
+    )
+    monsters.append(get_latex_from_creature(
+        minotaur,
+        active_abilities=[
+            active_ability('Impaling Charge', f"""
+                The minotaur moves up to its speed in a single straight line.
+                If it uses this ability during the \\glossterm<action phase>, it can make a gore \\glossterm<strike> from its new location during the \\glossterm<delayed action phase>.
+            """),
+        ],
+        passive_abilities=[
+            passive_ability('Labyrinth Dweller', f"""
+                The minotaur never gets lost or loses track of its current location.
+            """)
+        ],
+    ))
+
     thaumavore = Creature(
         character_class=CharacterClass('slayer'),
         level=3,
@@ -816,6 +841,12 @@ def magical_beasts():
     )
     monsters.append(get_latex_from_creature(
         thaumavore,
+        passive_abilities=[
+            passive_ability('Consume Magic', f"""
+                The thaumavore has \\glossterm<magic resistance> {thaumavore.level + 5}.
+                Whenever it resists an effect in this way, it heals hit points equal to twice the \\glossterm<power> of the effect.
+            """),
+        ],
     ))
 
     banehound = Creature(

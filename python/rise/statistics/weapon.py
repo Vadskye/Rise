@@ -22,6 +22,7 @@ def properties_from_weapon_name(name):
         # Natural weapons
         'bite': [0, Weapon.MEDIUM, None],
         'claw': [-1, Weapon.LIGHT, None],
+        'gore': [0, Weapon.HEAVY, None],
         'hoof': [-1, Weapon.LIGHT, None],
         'snakes': [-1, Weapon.LIGHT, None],
         'tail slam': [0, Weapon.HEAVY, None],

@@ -1653,11 +1653,11 @@ Wil 0
 
 \parhead{Multi-Headed}
 A hydra can take a number of actions in each \glossterm{action phase} equal to the number of heads it has active.
-At the end of the action phase, if the hydra took at least 40 damage during that phase, it loses one of its heads.
+At the end of each action phase, if the hydra took at least 40 damage during that phase, it loses one of its heads.
 Severed heads leave behind a stump that can quickly grow new heads.
 
-At the end of the delayed action phase, if the hydra has a severed stump, the stump is either sealed or it grows two new heads.
-If the hydra took 20 fire or cold damage during that phase, the stump is sealed, and will stop growing new heads.
+At the end of each delayed action phase, if the hydra has a severed stump, the stump is either sealed or it grows two new heads.
+If the hydra took 20 acid, cold, or fire damage during that phase, the stump is sealed, and will stop growing new heads.
 Otherwise, the hydra grows two new heads from the stump.
 This grants it additional actions during the action phase as normal.
 
@@ -1712,11 +1712,11 @@ Wil 0
 
 \parhead{Multi-Headed}
 A hydra can take a number of actions in each \glossterm{action phase} equal to the number of heads it has active.
-At the end of the action phase, if the hydra took at least 50 damage during that phase, it loses one of its heads.
+At the end of each action phase, if the hydra took at least 50 damage during that phase, it loses one of its heads.
 Severed heads leave behind a stump that can quickly grow new heads.
 
-At the end of the delayed action phase, if the hydra has a severed stump, the stump is either sealed or it grows two new heads.
-If the hydra took 25 fire or cold damage during that phase, the stump is sealed, and will stop growing new heads.
+At the end of each delayed action phase, if the hydra has a severed stump, the stump is either sealed or it grows two new heads.
+If the hydra took 25 acid, cold, or fire damage during that phase, the stump is sealed, and will stop growing new heads.
 Otherwise, the hydra grows two new heads from the stump.
 This grants it additional actions during the action phase as normal.
 
@@ -1724,6 +1724,58 @@ A hydra cannot sustain too many excess heads for a prolonged period of time.
 At the end of each round, if the hydra has more heads than twice its normal head count, it loses an action point.
 If it has no action points remaining, the hydra collapses unconscious for 8 hours.
 During that time, the excess heads shrivel and die, and any sealed stumps heal, restoring the hydra to its normal head count.
+
+
+
+
+
+\begin{monsection}{Minotaur}{4}[1]
+\vspace{-1em}\spelltwocol{}{Large magical beast}\vspace{-1em}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{
+\textbf{HP} 30;
+\textbf{Bloodied} 15;
+\textbf{Recovery} 2d6
+}
+{\textbf{AP} 2}
+
+\pari \textbf{Armor} 9;
+\textbf{Fort} 12;
+\textbf{Ref} 9;
+\textbf{Ment} 7
+\pari \textbf{Strike} Greataxe \plus5 (4d6) or gore \plus5 (2d10)
+
+
+
+\end{spelltargetinginfo}
+\end{spellcontent}
+
+\begin{monsterfooter}
+\pari \textbf{Awareness} \plus6
+\pari \textbf{Speed} 40 ft.;
+\textbf{Space} 10 ft.;
+\textbf{Reach} 10 ft.
+\pari \textbf{Attributes}:
+Str 6,
+Dex 5,
+Con 3,
+Int \minus2,
+Per 5,
+Wil 0
+\end{monsterfooter}
+\end{monsection}
+
+
+\subsubsection{Minotaur Abilities}
+
+\begin{ability}{Impaling Charge}
+The minotaur moves up to its speed in a single straight line.
+If it uses this ability during the \glossterm{action phase}, it can make a gore \glossterm{strike} from its new location during the \glossterm{delayed action phase}.
+\end{ability}
+
+\parhead{Labyrinth Dweller}
+The minotaur never gets lost or loses track of its current location.
 
 
 
@@ -1765,6 +1817,13 @@ Per 2,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Thaumavore Abilities}
+
+\parhead{Consume Magic}
+The thaumavore has \glossterm{magic resistance} 8.
+Whenever it resists an effect in this way, it heals hit points equal to twice the \glossterm{power} of the effect.
 
 
 
