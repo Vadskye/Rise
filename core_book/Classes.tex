@@ -2571,24 +2571,24 @@ This choice determines a great deal about your character's abilities.
             \tb{Level} & \tb{Abilities}
             \\\bottomrule
             \nth{1}  & Combat trick, skill lore, sneak attack
-            \\ \nth{2}  & Stealth lore
-            \\ \nth{3}  & Ambush attack
+            \\ \nth{2}  & Assassinate
+            \\ \nth{3}  & Uncanny dodge
             \\ \nth{4}  & Skill exemplar
-            \\ \nth{5}  & Uncanny dodge
+            \\ \nth{5}  & Stealth lore
             \\ \nth{6}  & Combat trick
             \\ \nth{7}  & Skill lore
-            \\ \nth{8}  & Assassinate
-            \\ \nth{9}  & Lucky slip
+            \\ \nth{8}  & Darkstalker
+            \\ \nth{9}  & Evasion
             \\ \nth{10} & Greater skill exemplar
-            \\ \nth{11} & Greater uncanny dodge
+            \\ \nth{11} & Greater sneak attack
             \\ \nth{12} & Combat trick
-            \\ \nth{13} & Lucky break
-            \\ \nth{14} & Greater sneak attack
-            \\ \nth{15} & Greater ambush attac
+            \\ \nth{13} & Skillful defense
+            \\ \nth{14} & Rapid assassination
+            \\ \nth{15} & Greater uncanny dodge
             \\ \nth{16} & Supreme skill exemplar
-            \\ \nth{17} & Rapid assassination
+            \\ \nth{17} & Greater darkstaler
             \\ \nth{18} & Combat trick
-            \\ \nth{19} &
+            \\ \nth{19} & Legendary fortune
             \\ \nth{20} &
         \end{dtabularx}
     \end{dtable}
@@ -2619,7 +2619,7 @@ This choice determines a great deal about your character's abilities.
         They are also proficient with saps.
 
     \subsection{Assassin}
-        This archetype improves your combat prowess, especially against unaware or distracted foes.
+        This archetype improves your stealth and combat prowess, especially against unaware or distracted foes.
 
         \cf{Rog}{Sneak Attack} You gain a \plus1d bonus to \glossterm{strike damage} against creatures who are unable to defend themselves effectively.
         This applies against creatures who are \unaware, \defenseless, or \glossterm{overwhelmed}.
@@ -2627,26 +2627,33 @@ This choice determines a great deal about your character's abilities.
         You must be within \rngclose range of a creature to gain this damage bonus.
         In addition, you do not gain this damage bonus against creatures who are immune to \glossterm{critical hits} or who lack a discernible body structure, such as oozes.
 
-        \cf{Rog}[2]{Stealth Lore} You gain two extra skill points which must be spent on rogue \glossterm{class skills}.
-
-        \cf{Rog}[5]{Uncanny Dodge}
-        You are not \unaware when attacked by surprise.
-        In addition, you gain a \plus2 bonus to \glossterm{initiative}.
-
-        \cf{Rog}[8]{Assassinate}
+        \cf{Rog}[2]{Assassinate}
         \begin{ability}
             As a standard action, you can use this ability.
-            If you do, you study a creature within \rngmed range, finding weak points you can take advantage of.
+            If you do, you study a creature within \rnglong range, finding weak points you can take advantage of.
             Until the end of the next round, if you make a melee \glossterm{strike} against the target while it is \unaware, your attack deals maximum damage.
         \end{ability}
 
-        \cf{Rog}[11]{Greater Uncanny Dodge}
-        The initiative bonus from your \textit{intuitive reaction} ability increases to \plus5.
+        \cf{Rog}[5]{Stealth Lore} You gain two extra skill points which must be spent on rogue \glossterm{class skills}.
 
-        \cf{Rog}[14]{Greater Sneak Attack}
+        \cf*{Rog}[8]{Darkstalker} You gain the \textit{darkstalker} ability.
+        \begin{ability}{Darkstalker}[\glossterm{Attune}]
+            As a standard action, you can spend an \glossterm{action point} to use this ability.
+            If you do, you become completely undetectable by your choice of one of the following senses:
+            \begin{itemize}
+                \item Blindsense and blindsight
+                \item Darkvision
+                \item Scent
+                \item Tremorsense and tremorsight
+            \end{itemize}
+        \end{ability}
+
+        \cf{Rog}[11]{Greater Sneak Attack}
         The damage bonus from your \textit{sneak attack} ability increases to \plus2d.
 
-        \cf{Rog}[17]{Rapid Assassination} You can use your \textit{assassinate} ability as a \glossterm{minor action}.
+        \cf{Rog}[14]{Rapid Assassination} You can use your \textit{assassinate} ability as a \glossterm{minor action}.
+
+        \cf{Rog}[17]{Greater Darkstalker} When you use your \textit{darkstalker} ability, you become undetectable by all of the listed senses, not just one.
 
     \subsection{Jack of All Trades}
         This archetype improves your skills.
@@ -2659,15 +2666,11 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rog}[10]{Greater Skill Exemplar} The skill bonus from your \textit{skill exemplar} ability increases to \plus2.
 
-        \cf{Rog}[13]{Lucky Break}
-        \begin{ability}
-            Once per round, when you make a \glossterm{check}, you can spend an \glossterm{action point} to use this ability.
-            If you do, you treat your roll as a 10.
-        \end{ability}
+        \cf{Rog}[13]{Skillful Defense} You gain a \plus1 bonus to all defenses.
 
         \cf{Rog}[16]{Supreme Skill Exemplar} The skill bonus from your \textit{skill exemplar} ability increases to \plus3.
 
-        \cf{Rog}[19]{Legendary Fortune} Whenever you take a \glossterm{short rest}, you also regain one \glossterm{legend point} if you spent one since your last short rest.
+        \cf{Rog}[19]{Legendary Fortune} Whenever you make a skill attack or check, you roll two dice and take either result.
 
     \subsection{Scoundrel}
         This archetype grants you abilities to use in combat and improves your combat prowess.
@@ -2785,23 +2788,21 @@ This choice determines a great deal about your character's abilities.
             \end{ability}
         }
 
-        \cf{Rog}[3]{Ambush Attack}
-        You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks} against creatures who did not \glossterm{threaten} you at the start of the round.
+        \cf{Rog}[3]{Uncanny Dodge} You gain a \plus2 bonus to Reflex defense and \glossterm{initiative} checks.
+        In addition, you are not \unaware when attacked by surprise.
 
         \cf*{Rog}[6]{Combat Trick}
         You learn an additional \textit{combat trick}.
 
-        \cf{Rog}[9]{Lucky Slip}
-        \begin{ability}
-            Once per round, when you are hit by an attack, you can spend an \glossterm{action point} to use this ability.
-            If you do, the attacking creature rerolls the attack roll.
-        \end{ability}
+        \cf{Rog}[9]{Evasion}
+        You may use your Reflex defense to resist any attack from an ability that affects an area, even if that attack would normally be made against a different defense.
 
         \cf*{Rog}[12]{Combat Trick}
         You learn an additional \textit{combat trick}.
 
-        \cf{Rog}[15]{Greater Ambush Attack}
-        The accuracy bonus from your \textit{ambush attack} ability increases to \plus2.
+        \cf{Rog}[15]{Greater Uncanny Dodge}
+        The bonuses from your \textit{uncanny dodge} ability increase to \plus3.
+        In addition, you gain a \plus1 bonus to \glossterm{overwhelm resistance}.
 
         \cf*{Rog}[18]{Combat Trick}
         You learn an additional \textit{combat trick}.
