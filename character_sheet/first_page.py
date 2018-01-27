@@ -135,7 +135,7 @@ def hit_points():
         flex_wrapper(div({'class': 'section-header'}, 'Hit Points')),
         "".join([
             labeled_number_input(hp_type, input_name=f"hit-points-{hp_type}")
-            for hp_type in 'Max Bloodied Temp Vital'.split()
+            for hp_type in 'Max Bloodied Vital ______'.split()
         ]),
     ])
 
@@ -152,7 +152,7 @@ def movement():
 def abilities():
     return flex_col({'class': 'abilities'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Abilities')),
-        "".join([ability(i) for i in range(11)]),
+        "".join([ability(i) for i in range(10)]),
     ])
 
 def ability(ability_number=None):
@@ -221,7 +221,7 @@ def active_ability(ability_number=None):
 def attacks():
     return flex_col({'class': 'attacks'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Attacks')),
-        "".join([attack(i) for i in range(5)]),
+        "".join([attack(i) for i in range(6)]),
     ])
 
 def attack(attack_number=None):
