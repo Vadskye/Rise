@@ -320,25 +320,23 @@ This choice determines a great deal about your character's abilities.
     \subsection{Battleforged Resilience}
         This archetype improves your defenses in combat.
 
-        \cf{Bbn}{Agile Defense} You gain a \plus1 bonus to Armor defense while not \glossterm{encumbered}.
+        \cf{Bbn}[1]{Fury of the Storm} You gain a \plus1 bonus to \glossterm{overwhelm resistance}.
 
         \cf{Bbn}[2]{Battle-Scarred} You gain \glossterm{damage reduction} equal to your level against damage from \glossterm{physical attacks}.
 
-        \cf{Bbn}[5]{Battleforged Awareness} You gain a \plus1 bonus to \glossterm{overwhelm resistance}.
+        \cf{Bbn}[5]{Agile Defense} You gain a \plus1 bonus to Armor defense while not \glossterm{encumbered}.
 
         \cf{Bbn}[8]{Soulscarred} The \glossterm{damage reduction} from your \textit{battle-scarred} ability applies against all damage, not just damage from physical attacks.
 
-        \cf{Bbn}[11]{Brute Resilience}
-        You gain a \plus2 bonus to Fortitude defense.
+        \cf{Bbn}[11]{Greater Fury of the Storm}
+        The bonus from your \textit{fury of the storm} ability increases to \plus2.
 
         \cf{Bbn}[14]{Greater Agile Defense}
-        The defense bonus from your \textit{agile defense} ability increases to \plus2.
+        The defense bonus from your \textit{agile defense} ability applies even if you are \glossterm{encumbered}.
+        It increases to \plus2 while you are not encumbered.
 
-        \cf{Bbn}[17]{Greater Battleforged Awareness}
-        The bonus from your \textit{battleforged awareness} ability increases to \plus2.
-
-        \cf{Bbn}[20]{Greater Soulscarred}
-        Your \glossterm{damage reduction} from your \textit{battle-scarred} ability increases to twice your level.
+        \cf{Bbn}[17]{Greater Battle-Scarred}
+        The \glossterm{damage reduction} from your \textit{battle-scarred} ability increases to twice your level.
 
     \subsection{Ex-Barbarians}
         If you become lawful, you cannot use your \textit{rage} ability.
@@ -1237,26 +1235,26 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Fighter Progression}
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\lcol}X}
             \tb{Level} & \tb{Abilities} \\\bottomrule
-            \nth{1}     & Armored agility, disciplined warrior, martial exertion
+            \nth{1}     & Armor expertise, discipline, martial exertion
             \\ \nth{2}  & Weapon focus
-            \\ \nth{3}  & Martial lore
-            \\ \nth{4}  & Discipline
-            \\ \nth{5}  & Combat awareness
+            \\ \nth{3}  & Martial training
+            \\ \nth{4}  & Disciplined defense
+            \\ \nth{5}  & Greater armor expertise
             \\ \nth{6}  & Martial exertion
-            \\ \nth{7}  & Focused recovery
-            \\ \nth{8}  & Greater armored agility
-            \\ \nth{9}  & Maneuver tolerance
+            \\ \nth{7}  & Greater discipline
+            \\ \nth{8}  & Weapon master
+            \\ \nth{9}  & Martial training
             \\ \nth{10} & Rapid warrior
-            \\ \nth{11} & Weapon master
+            \\ \nth{11} & Supreme armor expertise
             \\ \nth{12} & Martial exertion
-            \\ \nth{13} & Greater discipline
-            \\ \nth{14} & Supreme armored agility
-            \\ \nth{15} & Greater maneuver tolerance
-            \\ \nth{16} & Greater focused recovery
-            \\ \nth{17} & Greater combat awareness
+            \\ \nth{13} & Supreme discipline
+            \\ \nth{14} & Greater weapon focus
+            \\ \nth{15} & Exertion expertise
+            \\ \nth{16} & Greater disciplined defense
+            \\ \nth{17} & Armored juggernaut
             \\ \nth{18} & Martial exertion
-            \\ \nth{19} & Greater disciplined warrior
-            \\ \nth{20} & Supreme discipline
+            \\ \nth{19} & Legendary discipline
+            \\ \nth{20} & 
         \end{dtabularx}
     \end{dtable}
 
@@ -1438,17 +1436,17 @@ This choice determines a great deal about your character's abilities.
             \end{ability}
         }
 
-        \cf{Ftr}[3]{Martial Lore} You gain two additional skill points that must be spent on fighter \glossterm{class skills}.
+        \cf{Ftr}[3]{Martial Training} You gain two additional skill points that must be spent on fighter \glossterm{class skills}.
 
         \cf*{Ftr}[6]{Martial Exertion}
         You learn an additional \textit{martial exertion}.
 
-        \cf{Ftr}[9]{Maneuver Tolerance} You gain a \plus2 bonus to defenses against combat manuevers.
+        \cf*{Ftr}[9]{Martial Training} You gain two additional skill points that must be spent on fighter \glossterm{class skills}.
 
         \cf*{Ftr}[12]{Martial Exertion} 
         You learn an additional \textit{martial exertion}.
 
-        \cf{Ftr}[15]{Greater Maneuver Tolerance} The defense bonus from your \textit{maneuver tolerance} ability increases to \plus5.
+        \cf{Ftr}[15]{Exertion Expertise} You gain a \plus1d bonus to \glossterm{strike damage} when using any of your \textit{martial exertion} abilities.
 
         \cf*{Ftr}[18]{Martial Exertion}
         You learn an additional \textit{martial exertion}.
@@ -1456,8 +1454,9 @@ This choice determines a great deal about your character's abilities.
     \subsection{Equipment Training}
         This archetype improves your combat prowess with weapons and armor.
 
-        \cf{Ftr}{Armored Agility}
-        You reduce the \glossterm{encumbrance penalty} of body armor you wear by 1.
+        \cf{Ftr}{Armor Expertise}
+        You gain a \plus1 bonus to Armor defense while wearing body armor.
+        In addition, you reduce the \glossterm{encumbrance penalty} of body armor you wear by 1.
 
         \cf{Ftr}[2]{Weapon Focus}
         \begin{ability}{Weapon Focus}
@@ -1470,56 +1469,51 @@ This choice determines a great deal about your character's abilities.
             If you use this ability again, you lose its benefits with the other weapon group.
         \end{ability}
 
-        \cf{Ftr}[5]{Combat Awareness}
-        You gain a \plus1 bonus to \glossterm{overwhelm resistance}.
-
-        \cf{Ftr}[8]{Greater Armored Agility}
-        The penalty reduction from your \textit{armored agility} ability increases to 2.
+        \cf{Ftr}[5]{Greater Armor Expertise}
+        The \glossterm{encumbrance penalty} reduction from your \textit{armor expertise} ability increases to 2.
         In addition, you treat body armor were one encumbrance category lighter than normal whenever doing so would be beneficial for you.
 
-        \cf{Ftr}[11]{Weapon Master} 
+        \cf{Ftr}[8]{Weapon Master} 
         You gain a \plus1d bonus to \glossterm{strike damage}.
 
-        \cf{Ftr}[14]{Supreme Armored Agility}
-        The penalty reduction from your \textit{armored agility} ability increases to 3.
+        \cf{Ftr}[11]{Supreme Armor Expertise}
+        The \glossterm{encumbrance penalty} reduction from your \textit{armor expertise} ability increases to 3.
         In addition, you treat body armor as if it were an additional encumbrance category lighter than normal whenever doing so would be beneficical for you.
 
-        \cf{Ftr}[17]{Greater Combat Awareness} 
-        The bonus from your \textit{combat awareness} ability increases to \plus2.
+        \cf{Ftr}[14]{Greater Weapon Focus} You can use your \textit{weapon focus} ability as a \glossterm{minor action}.
+
+        \cf{Ftr}[17]{Armored Juggernaut}
+        As long as you are wearing body armor, you gain a \plus1 bonus to all defenses.
 
     \subsection{Combat Discipline}
         This archetype improves your defenses in combat, especially against special abilities.
 
-        \cf{Ftr}{Disciplined Defense}
-        You gain a \plus1 bonus to Armor defense.
-
-        \cf{Ftr}[4]{Discipline}
+        \cf{Ftr}{Discipline} You gain the \textit{discipline} ability.
         \begin{ability}{Discipline}
             As a \glossterm{minor action}, you can spend an \glossterm{action point} to use this ability.
             If you do, remove one \glossterm{condition} affecting you.
         \end{ability}
 
-        \cf{Ftr}[7]{Focused Recovery}
-        When you use the \textit{recover} action, you heal \plus1d hit points.
-        In addition, you can remove any \glossterm{sustained} effect on you.
+        \cf{Ftr}[4]{Disciplined Defense}
+        You gain a \plus1 bonus to Armor defense.
+
+        \cf{Ftr}[7]{Greater Discipline}
+        Your \textit{discipline} ability gains the \glossterm{Swift} tag, allowing it to resolve before other actions in the same phase.
+        This means that if you remove a condition with that ability, the penalties from the condition do not affect your attacks or defenses during the same phase.
 
         \cf{Ftr}[10]{Rapid Warrior}
         If you use only \glossterm{mundane} abilities in a given round, you can take an additional \glossterm{minor action} that round.
         After using this ability in a round, you are unable to use any \glossterm{magical} abilities until the next round.
         This does not prevent you from benefiting from magical abilities that do not have to be activated.
 
-        \cf{Ftr}[13]{Greater Discipline}
-        When you use the \textit{discipline} ability, you can remove any number of conditions.
+        \cf{Ftr}[13]{Supreme Discipline}
+        When you use the \textit{discipline} ability, you can remove an additional condition.
 
-        \cf{Ftr}[16]{Greater Focused Recovery}
-        The bonus to healing from your \textit{focused recovery} ability increases to \plus2d.
-        In addition, when you use the \textit{recover} ability, you can remove any number of \glossterm{sustained} effects on you.
-
-        \cf{Ftr}[19]{Greater Disciplined Defense}
+        \cf{Ftr}[16]{Greater Disciplined Defense}
         The defense bonus from your \textit{disciplined defense} ability increases to \plus2.
 
-        \cf{Ftr}[20]{Supreme Discipline} 
-        You are immune to all \glossterm{conditions}.
+        \cf{Ftr}[19]{Legendary Discipline} 
+        You can use your \textit{discipline} ability without spending an \glossterm{action point}.
 
 \newpage
 \section{Mage}\label{Mage}
@@ -1666,8 +1660,12 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Mge}[5]{Lesser Essence Lore}[Magical]
         You gain an ability based on your choice of arcane essence.
-        \subparhead{Sorcerer} You gain bonus hit points equal to your spellpower with arcane spells.
-        \subparhead{Wizard} You gains a \plus2 bonus to all Knowledge skills.
+        % TODO: wording
+        \subparhead{Sorcerer} Whenever a spell resolves, if you were a target of the spell, you heal hit points equal to that spell's spellpower.
+        This healing applies even if the spell's attack fails or if you resist it with \glossterm{magic resistance}.
+        You can only gain this healing once per round.
+        \subparhead{Wizard} You gain two additional skill points that must be spent on Knowledge skills.
+        In addition, you gain a \plus2 bonus to all Knowledge skills.
 
         \cf*{Mge}[9]{Spell Knowledge}
         You learn an additional spell from the arcane \glossterm{spell list} (see \pcref{Arcane Spells}).
@@ -2095,7 +2093,7 @@ This choice determines a great deal about your character's abilities.
         \begin{ability}{Lay on Hands}
             As a standard action, you can spend an \glossterm{action point} to use this ability.
             If you do, choose an adjacent willing creature.
-            The target is healed for hit points equal to your \glossterm{standard damage} \plus1d.
+            The target is healed for hit points equal to \glossterm{standard damage} \plus1d.
             Your \glossterm{power} with this ability is equal to your \textit{devotion power}.
         \end{ability}
 
@@ -2814,23 +2812,23 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} c >{\lcol}X}
             \tb{Level} & \tb{Spells} & \tb{Abilities}
             \\\bottomrule
-            \nth{1}  & 2 & Armor tolerance, infernal pact, malevolent boon, spells
+            \nth{1}  & 2 & Infernal pact, malevolent boon, spells, whispers of the lost
             \\ \nth{2}  & 3 & Spell knowledge
-            \\ \nth{3}  & 3 & Abyssal lore
+            \\ \nth{3}  & 3 & Armor tolerance
             \\ \nth{4}  & 3 & Pact augment
-            \\ \nth{5}  & 3 & Whispers of the lost
+            \\ \nth{5}  & 3 & Abyssal lore
             \\ \nth{6}  & 3 & Augments, greater malevolent boon
-            \\ \nth{7}  & 3 & Greater armor tolerance
+            \\ \nth{7}  & 3 & Greater whispers of the lost
             \\ \nth{8}  & 3 & Pact augment
             \\ \nth{9}  & 3 & Abyssal lore
-            \\ \nth{10} & 3 & Augment
-            \\ \nth{11} & 3 & Greater whispers of the lost
+            \\ \nth{10} & 3 & Augment, supreme malevolent boon
+            \\ \nth{11} & 3 & Greater armor tolerance
             \\ \nth{12} & 3 & Pact augment
-            \\ \nth{13} & 3 & Supreme armor tolerance
+            \\ \nth{13} & 3 & Supreme whispers of the lost
             \\ \nth{14} & 3 & Augment, infernal power
             \\ \nth{15} & 3 & Abyssal defense
             \\ \nth{16} & 3 & Pact augment
-            \\ \nth{17} & 3 & Supreme whispers of the lost
+            \\ \nth{17} & 3 & Supreme armor tolerance
             \\ \nth{18} & 3 & Dual pact
             \\ \nth{19} & 3 &
             \\ \nth{20} & 3 &
@@ -2858,7 +2856,7 @@ This choice determines a great deal about your character's abilities.
         \end{itemize}
 
         \cf{War}{Weapon and Armor Proficiencies}
-        You are proficient with simple weapons, any two other weapon groups, and light armor.
+        You are proficient with simple weapons, any two other weapon groups, light and medium armor, and shields.
 
         \cf{War}{Infernal Pact}
         To become a warlock, you must make a pact with a powerful demon or devil.
@@ -2883,24 +2881,56 @@ This choice determines a great deal about your character's abilities.
     \subsection{Blessings of the Abyss}
         This archetype grants you powers relating to the connection to the Abyss granted by your pact.
 
-        \cf{War}{Armor Tolerance} You reduce your \glossterm{encumbrance penalty} from armor by 1 when determining your \glossterm{arcane spell failure}.
+        \cf{War}{Whispers of the Lost} You hear the voices of souls lost to the Abyss, linked to you through your soulkeeper.
+        Choose one of the following types of whispers that you hear.
+        {
+            \subcf{Mentoring Whispers} You hear the voice of a dead warlock whose soul is bound to the same soulkeeper.
+            This provides no benefit immediately, but the warlock can sometimes provide good advice.
 
-        \cf{War}[3]{Abyssal Lore} You gain two additional skill points that must be spent on warlock class skills.
+            \subcf{Sycophantic Whispers} You hear the voices of adoring souls who praise your talents and everything you do.
+            You gain a \plus2 bonus to Mental defense, and you are immune to \glossterm{Fear} abilities.
 
-        \cf{War}[5]{Whispers of the Lost} In times of danger, you hear the voices of souls lost to the Abyss warning you against sharing their fate.
-        While you are \glossterm{bloodied}, you gain a \plus1 bonus to \glossterm{overwhelm resistance}.
+            \subcf{Warning Whispers} You hear the voices of paranoid and fearful souls warning you of danger, both real and imagined.
+            You gain a \plus2 bonus to Reflex defense, and you are not \unaware when attacked by surprise.
 
-        \cf{War}[7]{Greater Armor Tolerance} The penalty reduction from your \textit{armor tolerance} ability improves to 2.
+            \subcf{Whispers of the Mighty} Your soulkeeper forges the connection to your soul into a boon granted to any soul in the Abyss strong enough to claim it in battle.
+            You hear the voice of whatever soul currently possesses the boon - until that soul is defeated.
+            You gain a \plus2 bonus to Fortitude defense.
+        }
+
+        \cf{War}[3]{Armor Tolerance} You reduce your \glossterm{encumbrance penalty} from armor by 2 when determining your \glossterm{arcane spell failure}.
+
+        \cf{War}[5]{Abyssal Lore} You gain two additional skill points that must be spent on warlock class skills.
+
+        \cf{War}[7]{Greater Whispers of the Lost} You gain an additional ability depending on the voices you chose with your \textit{whispers of the lost} ability.
+        {
+            \subcf{Mentoring Whispers} If you can cast arcane spells, you learn an additional arcane spell.
+
+            \subcf{Sycophantic Whispers} The defense bonus increases to \plus3.
+
+            \subcf{Warning Whispers} You gain a \plus2 bonus to \glossterm{initiative} checks.
+
+            \subcf{Whispers of the Mighty} You reduce your \glossterm{vital damage penalties} by an amount equal to half your level.
+        }
 
         \cf*{War}[9]{Abyssal Lore} You gain two additional skill points that must be spent on warlock class skills.
 
-        \cf{War}[11]{Greater Whispers of the Lost} The bonus from your \textit{whispers of the lost} ability applies at all times, not just when you are bloodied.
+        \cf{War}[11]{Greater Armor Tolerance} The penalty reduction from your \textit{armor tolerance} ability improves to 3.
 
-        \cf{War}[13]{Supreme Armor Tolerance} The penalty reduction from your \textit{armor tolerance} ability improves to 3.
+        \cf{War}[13]{Supreme Whispers of the Lost} You gain an additional ability depending on the voices you chose with your \textit{whispers of the lost} ability.
+        {
+            \subcf{Mentoring Whispers} You gain a \plus1 bonus to \glossterm{accuracy} with arcane spells.
+
+            \subcf{Sycophantic Whispers} The defense bonus increases to \plus4.
+
+            \subcf{Warning Whispers} The initiative bonus increases to \plus4.
+
+            \subcf{Whispers of the Mighty} The penalty reduction increases to be equal to your level.
+        }
 
         \cf{War}[15]{Abyssal Defense} You gain a \plus1 bonus to Fortitude, Reflex, and Mental defenses.
 
-        \cf{War}[17]{Supreme Whispers of the Lost} You are not \unaware when attacked by surprise.
+        \cf{War}[17]{Supreme Armor Tolerance} The penalty reduction from your \textit{armor tolerance} ability improves to 4.
 
     \subsection{Spellcasting}
         This archetype grants you the ability to cast arcane spells.
