@@ -16,6 +16,7 @@ def create_page():
                 calc_speed(),
                 calc_attacks(),
                 calc_hit_points(),
+                calc_skill_points(),
                 flex_wrapper(div({'class': 'section-header'}, 'Defenses')),
                 calc_defenses(),
             ]),
@@ -48,7 +49,7 @@ def skill_labels(attribute):
     return flex_row({'class': 'skill-labels'}, [
         div({'class': 'skill-name'}),
         div({'class': 'skill-label'}, 'Train'),
-        div({'class': 'skill-label'}, 'Ranks'),
+        div({'class': 'skill-label'}, 'Bonus'),
         div({'class': 'skill-label skill-attribute'}, attribute),
         div({'class': 'skill-label'}, 'Misc'),
     ])
@@ -179,7 +180,6 @@ def calc_hit_points():
 def calc_attacks():
     return ''.join([
         calc_strike_accuracy(),
-        calc_spellpower(),
         # calc_special_attack(),
         calc_standard_damage(),
         calc_strike_damage(),
@@ -188,9 +188,9 @@ def calc_attacks():
 
 def calc_speed():
     return flex_row([
-        div({'class': 'calc-header'}, 'Speed'),
+        div({'class': 'calc-header'}, 'Base Speed'),
         equation([
-            underlabeled_number_input('Base'),
+            underlabeled_number_input('Size'),
             minus(),
             underlabeled_number_input('Armor'),
             plus(),
@@ -230,10 +230,7 @@ def calc_strike_accuracy():
         div({'class': 'calc-header'}, 'Strike Accuracy'),
         equation(
             [
-                this_or_that([
-                    underlabeled_number_input('Level'),
-                    underlabeled_number_input('Dex/Per'),
-                ]),
+                underlabeled_number_input('Lvl/Attr'),
                 misc_spacer(),
                 plus(),
                 underlabeled_number_input('Misc', 'melee-misc', {'class': 'eq-optional'}),
@@ -279,31 +276,17 @@ def calc_other_damage():
         ),
     ])
 
-def calc_spellpower():
+def calc_skill_points():
     return flex_row([
-        div({'class': 'calc-header'}, 'Spellpower'),
-        equation(
-            [
-                underlabeled_number_input('Level/Attr'),
-                misc_spacer(),
-                plus(),
-                underlabeled_number_input('Misc', 'melee-misc', {'class': 'eq-optional'}),
-            ],
-            result_attributes={
-                'disabled': 'true',
-                'name': 'melee',
-                'value': '+'.join([
-                    roll20_max_text(
-                        ROLL20_CALC['base_attack_bonus'],
-                        roll20_max_text(
-                            ROLL20_CALC['attribute']('strength'),
-                            ROLL20_CALC['attribute']('dexterity'),
-                        ),
-                    ),
-                    '@{proficiency}',
-                ]),
-            },
-        ),
+        div({'class': 'calc-header'}, 'Skill Points'),
+        equation([
+            underlabeled_number_input('Class'),
+            plus(),
+            underlabeled_number_input('Int'),
+            misc_spacer(),
+            plus(),
+            underlabeled_number_input('Misc', 'skill-points-misc', {'class': 'eq-optional'}),
+        ]),
     ])
 
 def calc_special_attack():

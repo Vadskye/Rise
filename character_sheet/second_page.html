@@ -24,7 +24,7 @@ Skills
 Train
 </div>
 <div class="skill-label">
-Ranks
+Bonus
 </div>
 <div class="skill-label skill-attribute">
 Str
@@ -109,7 +109,7 @@ Swim
 Train
 </div>
 <div class="skill-label">
-Ranks
+Bonus
 </div>
 <div class="skill-label skill-attribute">
 Dex
@@ -211,7 +211,7 @@ Stealth
 Train
 </div>
 <div class="skill-label">
-Ranks
+Bonus
 </div>
 <div class="skill-label skill-attribute">
 Int
@@ -347,7 +347,7 @@ Linguistics
 Train
 </div>
 <div class="skill-label">
-Ranks
+Bonus
 </div>
 <div class="skill-label skill-attribute">
 Per
@@ -449,7 +449,7 @@ Survival
 Train
 </div>
 <div class="skill-label">
-Ranks
+Bonus
 </div>
 <div class="skill-label skill-attribute">
 Other
@@ -605,7 +605,7 @@ Core Statistics
 </div>
 <div class="flex-row">
 <div class="calc-header">
-Speed
+Base Speed
 </div>
 <div class="flex-row equation">
 <div class="flex-col underlabeled-number-input">
@@ -626,7 +626,7 @@ Total
 
 </input>
 <div class="under-label">
-Base
+Size
 </div>
 </div><div class="flex-col equation-glue">
 <div class="equation-math">
@@ -671,63 +671,12 @@ Total
 =
 </div>
 </div>
-<div class="flex-row two-choices">
 <div class="flex-col underlabeled-number-input">
 <input type="number">
 
 </input>
 <div class="under-label">
-Level
-</div>
-</div><div class="flex-col equation-glue">
-or
-</div><div class="flex-col underlabeled-number-input">
-<input type="number">
-
-</input>
-<div class="under-label">
-Dex/Per
-</div>
-</div>
-</div><div class="misc-spacer">
-
-</div><div class="flex-col equation-glue">
-<div class="equation-math">
-+
-</div>
-</div><div class="flex-col underlabeled-number-input eq-optional">
-<input name="melee-misc" type="number">
-
-</input>
-<div class="under-label">
-Misc
-</div>
-</div>
-</div>
-</div><div class="flex-row">
-<div class="calc-header">
-Spellpower
-</div>
-<div class="flex-row equation">
-<div class="flex-col underlabeled-number-input">
-<input disabled="true" name="melee" type="number" value="ceil(floor(((@{bab-good}+@{bab-avg}+@{bab-poor})-0.1+100)/(ceil(floor(((@{strength-base}+@{strength-level}+@{strength-misc})-0.1+100)/((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+100))/200)*((@{strength-base}+@{strength-level}+@{strength-misc})+100)  + ceil(floor(((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+100)/((@{strength-base}+@{strength-level}+@{strength-misc})+100))/(200))*((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+100)-100+100))/200)*((@{bab-good}+@{bab-avg}+@{bab-poor})+100)  + ceil(floor((ceil(floor(((@{strength-base}+@{strength-level}+@{strength-misc})-0.1+100)/((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+100))/200)*((@{strength-base}+@{strength-level}+@{strength-misc})+100)  + ceil(floor(((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+100)/((@{strength-base}+@{strength-level}+@{strength-misc})+100))/(200))*((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+100)-100+100)/((@{bab-good}+@{bab-avg}+@{bab-poor})+100))/(200))*(ceil(floor(((@{strength-base}+@{strength-level}+@{strength-misc})-0.1+100)/((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+100))/200)*((@{strength-base}+@{strength-level}+@{strength-misc})+100)  + ceil(floor(((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+100)/((@{strength-base}+@{strength-level}+@{strength-misc})+100))/(200))*((@{dexterity-base}+@{dexterity-level}+@{dexterity-misc})+100)-100+100)-100+@{proficiency}">
-
-</input>
-<div class="under-label">
-Total
-</div>
-</div>
-<div class="flex-col equation-glue">
-<div class="equation-math">
-=
-</div>
-</div>
-<div class="flex-col underlabeled-number-input">
-<input type="number">
-
-</input>
-<div class="under-label">
-Level/Attr
+Lvl/Attr
 </div>
 </div><div class="misc-spacer">
 
@@ -925,6 +874,58 @@ Con*
 </div>
 </div><div class="flex-col underlabeled-number-input eq-optional">
 <input name="hp-misc" type="number">
+
+</input>
+<div class="under-label">
+Misc
+</div>
+</div>
+</div>
+</div>
+<div class="flex-row">
+<div class="calc-header">
+Skill Points
+</div>
+<div class="flex-row equation">
+<div class="flex-col underlabeled-number-input">
+<input name="eq-total" type="number">
+
+</input>
+<div class="under-label">
+Total
+</div>
+</div>
+<div class="flex-col equation-glue">
+<div class="equation-math">
+=
+</div>
+</div>
+<div class="flex-col underlabeled-number-input">
+<input type="number">
+
+</input>
+<div class="under-label">
+Class
+</div>
+</div><div class="flex-col equation-glue">
+<div class="equation-math">
++
+</div>
+</div><div class="flex-col underlabeled-number-input">
+<input type="number">
+
+</input>
+<div class="under-label">
+Int
+</div>
+</div><div class="misc-spacer">
+
+</div><div class="flex-col equation-glue">
+<div class="equation-math">
++
+</div>
+</div><div class="flex-col underlabeled-number-input eq-optional">
+<input name="skill-points-misc" type="number">
 
 </input>
 <div class="under-label">
