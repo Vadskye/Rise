@@ -207,9 +207,9 @@ def generate_spells():
     ))
 
     spells.append(Spell(
-        name='Antimagic',
+        name='Thaumaturgy',
         short_description="Suppress and manipulate magical effects",
-        effects=Effects('Antimagic', """
+        effects=Effects('Thaumaturgy', """
             Make a Spellpower attack against one creature, object, or magical effect within \\rngmed range.
             If you target a creature or object, the attack result is applied to every \\glossterm<magical> effect on the target.
             If you target a magical effect directly, the attack result is applied against the effect itself.
@@ -237,6 +237,13 @@ def generate_spells():
                 \\hit The target is treated as if the ability that created it was \\glossterm<dismissed>.
                 This usually causes the target to disappear.
             """, tags=['Mystic']),
+            Subspell('Malign Transferance', 2, """
+                Choose a willing ally within \\rngmed range.
+                The ally must be currently affected by a \\glossterm<magical> \\glossterm<condition>.
+                In addition, make a Spellpower vs. Mental attack against a creature within \\rngmed range.
+                \\hit One magical condition of your choice is removed from the chosen ally and applied to the struck creature.
+                \\crit As above, except that you can transfer any number of magical conditions in this way.
+            """, tags=['Mystic']),
             Subspell('Antimagic Field', 7, """
                 All other magical abilities and objects are \\glossterm<suppressed> within an \\areasmall radius emanation from you.
                 % How much of this is redundant with suppression?
@@ -253,7 +260,14 @@ def generate_spells():
                 This subspell creates a dimensional lock in an \\arealarge radius zone from your location.
                 Extraplanar travel into or out of the area is impossible.
                 This prevents all \\glossterm<Manifestation>, \\glossterm<Planar>, and \\glossterm<Teleportation> effects.
-            """, tags=['Attune', 'Mystic'])
+            """, tags=['Attune', 'Mystic']),
+            Subspell('Greater Malign Transferance', 7, """
+                Choose any number of willing allies within \\rngmed range.
+                Each ally must be currently affected by a \\glossterm<magical> \\glossterm<condition>.
+                In addition, make a Spellpower vs. Mental attack against a creature within \\rngmed range.
+                \\hit Up to two magical conditions of your choice are removed from the chosen allies and applied to the struck creature.
+                \\crit As above, except that you can transfer any number of magical conditions in this way.
+            """),
         ],
         category='debuff, combat',
     ))
@@ -1127,6 +1141,18 @@ def generate_spells():
                 Each struck target is also \\glossterm<deafened> as an additional \\glossterm<condition>.
                 This subspell gains the \\glossterm<auditory> tag in addition to the tags from the \\spell<flare> spell.
             """),
+            Subspell('Blinding', 5, """
+                This subspell functions like the \\spell<flare> spell, except that each struck target is \\glossterm<blinded> instead of \\glossterm<dazzled>.
+            """),
+            Subspell('Pillars of Light', 4, """
+                This subspell functions like the \\spell<flare> spell, except that it affects up to five different \\areasmall radius, 50 ft. tall cylinders within range.
+                The areas can overlap, but targets in the overlapping area are only affected once.
+            """),
+            Subspell('Solar', 6, """
+                This subspell functions like the \\spell<flare> spell, except that you gain a +2 bonus to accuracy with the attack.
+                In addition, the light is treated as being natural sunlight for the purpose of abilities.
+                This can allow it to destroy vampires and have similar effects.
+            """),
         ],
         category='debuff, combat',
     ))
@@ -1219,22 +1245,42 @@ def generate_spells():
             Subspell("Teleport", 2, """
                 Choose a Medium or smaller willing creature within \\rngclose range.
                 The target teleports into an unoccupied destination within \\rngmed range of its original location.
-                If the destination is invalid, the spell is \\glossterm<miscast>.
+                If the destination is invalid, this subspell is \\glossterm<miscast>.
             """, tags=['Teleportation']),
             Subspell("Dimension Door", 4, """
                 You teleport to a location within \\rngext range of you.
                 You must clearly visualize the destination's appearance, but you do not need \\glossterm<line of sight> or \\glossterm<line of effect> to your destination.
-            """),
+            """, tags=['Teleportation']),
             Subspell("Dimensional Jaunt -- Plane of Fire", 2, """
-                This subspell functions like the \\spell<astromancy> spell, except that the damage becomes fire damage.
-                In addition, a struck target is \\glossterm<ignited> until it puts out the fire.
+                This subspell functions like the \\spell<astromancy> spell, except that the target is partially teleported into the Plane of Fire.
+                The damage becomes fire damage, and a struck target is \\glossterm<ignited> until it puts out the fire.
             """),
             Subspell("Dimensional Jaunt -- Plane of Earth", 4, """
-                This subspell functions like the \\spell<astromancy> spell, except that the damage becomes bludgeoning damage.
-                In addition, a struck target is \\glossterm<immobilized> as a \\glossterm<condition>.
+                This subspell functions like the \\spell<astromancy> spell, except that the target is partially teleported into the Plane of Earth.
+                The damage becomes bludgeoning damage, and a struck target is \\glossterm<immobilized> as a \\glossterm<condition>.
             """),
-            Subspell("Dimensional Jaunt -- Deep Astral Plane", 8, """
-                This subspell functions like the \\spell<astromancy> spell, except that a struck target is \\glossterm<stunned> as a \\glossterm<condition>.
+            Subspell("Dimensional Jaunt -- Deep Astral Plane", 6, """
+                This subspell functions like the \\spell<astromancy> spell, except that the target is partially teleported into the deep Astral Plane.
+                A struck target is \\glossterm<stunned> as a \\glossterm<condition>.
+            """),
+            Subspell('Dimensional Jaunt -- Myriad', 9, """
+                This subspell functions like the \\spell<astromancy> spell, except that the target is partially teleported through a dizzying array of planes.
+                The damage increases by +3d and becomes damage of all types.
+            """),
+            Subspell('Dimensional Shuffle', 2, """
+                Choose up to five willing creatures within \\rngmed range.
+                Each target teleports into the location of a different target.
+                This subspell resolves during the phase it is cast.
+            """, tags=['Teleportation']),
+            Subspell('Blink', 5, """
+                Choose a willing creature within \\rngclose range.
+                The target randomly blinks between its current plane and the Astral Plane.
+                This blinking stops if the target takes actions on its current plane.
+                In any phase where it does not take any actions, the target has a 50\% chance to completely ignore any effect that targets it directly.
+                It is still affected normally by abilities that affect an area.
+            """, tags=['Attune (shared)', 'Teleportation']),
+            Subspell('Greater Blink', 9, """
+                This subspell functions like the \\subspell<blink> subspell, except that the target also has a 20\% chance to completely ignore any effect that targets it directly during phases where it takes an action.
             """),
         ],
         category='damage',
@@ -1370,7 +1416,7 @@ def generate_spells():
                 Whenever a creature or object passes through the wall, make a Spellpower vs. Reflex attack against it.
                 \\hit The target takes slashing \\glossterm<standard damage> -1d.
             """, tags=['Sustain (minor)']),
-            Subspell("Aerial", 3, """
+            Subspell("Aerial", 2, """
                 This subspell functions like the \\spell<weaponcraft> spell, except that the weapon's height above the ground is not limited.
                 This allows the weapon to fly up to fight airborne foes.
             """),
@@ -1396,6 +1442,20 @@ def generate_spells():
                 This allows it to fire at two different targets in the same round whenever you command it to fire.
                 It cannot fire at the same target twice.
                 Each round, it attacks the two creatures farthest from it.
+            """),
+            Subspell('Giant Blade', 4, """
+                This subspell functions like the \\spell<weaponcraft> spell, except that the weapon takes the form of a Large greatsword.
+                The weapon's attacks hit everything in a \\areasmall cone from it.
+                It aims the cone to hit as many creatures as possible.
+            """),
+            Subspell('Titan Blade', 8, """
+                This subspell functions like the \\spell<weaponcraft> spell, except that the weapon takes the form of a Gargantuan greatsword.
+                The weapon's attacks hit everything in a \\areamed cone from it.
+                It aims the cone to hit as many creatures as possible.
+            """),
+            Subspell('Paired', 9, """
+                This subspell functions like the \\spell<weaponcraft> spell, except that you summon two weapons instead of one.
+                Each weapon attacks independently.
             """),
         ],
         category='buff, offense',

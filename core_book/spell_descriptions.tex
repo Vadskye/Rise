@@ -106,83 +106,6 @@ If another ability would magically manipulate the weather in the same area, the 
 \vspace{0.25em}
 
 \newpage
-\begin{spellsection}{Antimagic}
-
-
-\begin{ability}{Antimagic}[\glossterm{Sustain} (minor), \glossterm{Thaumaturgy}]
-
-Make a Spellpower attack against one creature, object, or magical effect within \rngmed range.
-If you target a creature or object, the attack result is applied to every \glossterm{magical} effect on the target.
-If you target a magical effect directly, the attack result is applied against the effect itself.
-The DR for each effect is equal to 5 + the \glossterm{power} of that effect.
-\hit Each effect is \glossterm{suppressed}.
-
-\end{ability}
-
-
-\parhead{Cantrip} The spell gains the \glossterm{Sustain} (standard) tag in place of the \glossterm{Sustain} (minor) tag. If you cast this spell as a cantrip, you do not need to spend an \glossterm{action point} to cast it, but you cannot apply any augments to it.
-
-\parhead{Schools} Abjuration
-
-\parhead{Spell Lists} Arcane, Divine, Nature
-\end{spellsection}
-
-
-\subsubsection{Subspells}
-
-
-\begin{ability}[\nth{2}]{Alter Magic Aura}[\glossterm{Attune}, \glossterm{Thaumaturgy}]
-Make a Spellpower vs. Mental attack against one Large or smaller magical object in \rngmed range.
-\hit One of the target's magic auras is altered (see \pcref{Spellcraft}).
-You can change the school and descriptors of the aura.
-In addition, you can decrease the spellpower of the aura by up to half your spellpower, or increase the spellpower of the aura up to a maximum of your spellpower.
-\end{ability}
-\vspace{0.25em}
-
-
-\begin{ability}[\nth{2}]{Dimensional Anchor}[\glossterm{Thaumaturgy}]
-Make a Spellpower vs. Mental attack against a creature or object within \rngmed range.
-\hit As a \glossterm{condition}, the target is unable to travel extradimensionally.
-This prevents all \glossterm{Manifestation}, \glossterm{Planar}, and \glossterm{Teleportation} effects.
-\end{ability}
-\vspace{0.25em}
-
-
-\begin{ability}[\nth{2}]{Suppress Item}[\glossterm{Sustain} (minor), \glossterm{Thaumaturgy}]
-Make a Spellpower vs. Mental attack against one Large or smaller magical object in \rngmed range.
-\hit All magical properties the target has are \glossterm{suppressed}.
-\end{ability}
-\vspace{0.25em}
-
-
-\begin{ability}[\nth{3}]{Banishing}[\glossterm{Thaumaturgy}]
-Make a Spellpower attack against one creature or object within \rngmed range.
-If the target is an effect of an ongoing \glossterm{magical} ability, such as a summoned monster or created object, the DR is equal to 5 + add the \glossterm{power} of the ability.
-Otherwise, this subspell has no effect.
-\hit The target is treated as if the ability that created it was \glossterm{dismissed}.
-This usually causes the target to disappear.
-\end{ability}
-\vspace{0.25em}
-
-
-\begin{ability}[\nth{5}]{Dimensional Lock}[\glossterm{Attune}, \glossterm{Thaumaturgy}]
-This subspell creates a dimensional lock in an \arealarge radius zone from your location.
-Extraplanar travel into or out of the area is impossible.
-This prevents all \glossterm{Manifestation}, \glossterm{Planar}, and \glossterm{Teleportation} effects.
-\end{ability}
-\vspace{0.25em}
-
-
-\begin{ability}[\nth{7}]{Antimagic Field}[\glossterm{Sustain} (minor), \glossterm{Thaumaturgy}]
-All other magical abilities and objects are \glossterm{suppressed} within an \areasmall radius emanation from you.
-% How much of this is redundant with suppression?
-Creatures within the area cannot activate, sustain, or dismiss magical abilities.
-You cannot exclude yourself from this emanation.
-However, this subspell does not prevent you from sustaining or dismissing this subspell.
-\end{ability}
-\vspace{0.25em}
-
-\newpage
 \begin{spellsection}{Aquamancy}
 
 \begin{spellheader}
@@ -297,8 +220,16 @@ In addition, if the creature is an \glossterm{outsider} native to another plane,
 
 
 \begin{ability}[\nth{2}]{Dimensional Jaunt -- Plane of Fire}
-This subspell functions like the \spell{astromancy} spell, except that the damage becomes fire damage.
-In addition, a struck target is \glossterm{ignited} until it puts out the fire.
+This subspell functions like the \spell{astromancy} spell, except that the target is partially teleported into the Plane of Fire.
+The damage becomes fire damage, and a struck target is \glossterm{ignited} until it puts out the fire.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{2}]{Dimensional Shuffle}[\glossterm{Teleportation}]
+Choose up to five willing creatures within \rngmed range.
+Each target teleports into the location of a different target.
+This subspell resolves during the phase it is cast.
 \end{ability}
 \vspace{0.25em}
 
@@ -306,12 +237,12 @@ In addition, a struck target is \glossterm{ignited} until it puts out the fire.
 \begin{ability}[\nth{2}]{Teleport}[\glossterm{Teleportation}]
 Choose a Medium or smaller willing creature within \rngclose range.
 The target teleports into an unoccupied destination within \rngmed range of its original location.
-If the destination is invalid, the spell is \glossterm{miscast}.
+If the destination is invalid, this subspell is \glossterm{miscast}.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{4}]{Dimension Door}
+\begin{ability}[\nth{4}]{Dimension Door}[\glossterm{Teleportation}]
 You teleport to a location within \rngext range of you.
 You must clearly visualize the destination's appearance, but you do not need \glossterm{line of sight} or \glossterm{line of effect} to your destination.
 \end{ability}
@@ -319,14 +250,38 @@ You must clearly visualize the destination's appearance, but you do not need \gl
 
 
 \begin{ability}[\nth{4}]{Dimensional Jaunt -- Plane of Earth}
-This subspell functions like the \spell{astromancy} spell, except that the damage becomes bludgeoning damage.
-In addition, a struck target is \glossterm{immobilized} as a \glossterm{condition}.
+This subspell functions like the \spell{astromancy} spell, except that the target is partially teleported into the Plane of Earth.
+The damage becomes bludgeoning damage, and a struck target is \glossterm{immobilized} as a \glossterm{condition}.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{8}]{Dimensional Jaunt -- Deep Astral Plane}
-This subspell functions like the \spell{astromancy} spell, except that a struck target is \glossterm{stunned} as a \glossterm{condition}.
+\begin{ability}[\nth{5}]{Blink}[\glossterm{Attune} (shared), \glossterm{Teleportation}]
+Choose a willing creature within \rngclose range.
+The target randomly blinks between its current plane and the Astral Plane.
+This blinking stops if the target takes actions on its current plane.
+In any phase where it does not take any actions, the target has a 50\% chance to completely ignore any effect that targets it directly.
+It is still affected normally by abilities that affect an area.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{6}]{Dimensional Jaunt -- Deep Astral Plane}
+This subspell functions like the \spell{astromancy} spell, except that the target is partially teleported into the deep Astral Plane.
+A struck target is \glossterm{stunned} as a \glossterm{condition}.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{9}]{Dimensional Jaunt -- Myriad}
+This subspell functions like the \spell{astromancy} spell, except that the target is partially teleported through a dizzying array of planes.
+The damage increases by \plus3d and becomes damage of all types.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{9}]{Greater Blink}
+This subspell functions like the \subspell{blink} subspell, except that the target also has a 20\% chance to completely ignore any effect that targets it directly during phases where it takes an action.
 \end{ability}
 \vspace{0.25em}
 
@@ -1348,6 +1303,27 @@ This subspell gains the \glossterm{auditory} tag in addition to the tags from th
 \end{ability}
 \vspace{0.25em}
 
+
+\begin{ability}[\nth{4}]{Pillars of Light}
+This subspell functions like the \spell{flare} spell, except that it affects up to five different \areasmall radius, 50 ft. tall cylinders within range.
+The areas can overlap, but targets in the overlapping area are only affected once.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{5}]{Blinding}
+This subspell functions like the \spell{flare} spell, except that each struck target is \glossterm{blinded} instead of \glossterm{dazzled}.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{6}]{Solar}
+This subspell functions like the \spell{flare} spell, except that you gain a \plus2 bonus to accuracy with the attack.
+In addition, the light is treated as being natural sunlight for the purpose of abilities.
+This can allow it to destroy vampires and have similar effects.
+\end{ability}
+\vspace{0.25em}
+
 \newpage
 \begin{spellsection}{Polymorph}
 
@@ -1924,6 +1900,103 @@ This subspell functions like the \spell{levitate} subspell, except that you can 
 \vspace{0.25em}
 
 \newpage
+\begin{spellsection}{Thaumaturgy}
+
+
+\begin{ability}{Thaumaturgy}[\glossterm{Mystic}, \glossterm{Sustain} (minor)]
+
+Make a Spellpower attack against one creature, object, or magical effect within \rngmed range.
+If you target a creature or object, the attack result is applied to every \glossterm{magical} effect on the target.
+If you target a magical effect directly, the attack result is applied against the effect itself.
+The DR for each effect is equal to 5 + the \glossterm{power} of that effect.
+\hit Each effect is \glossterm{suppressed}.
+
+\end{ability}
+
+
+\parhead{Cantrip} The spell gains the \glossterm{Sustain} (standard) tag in place of the \glossterm{Sustain} (minor) tag. If you cast this spell as a cantrip, you do not need to spend an \glossterm{action point} to cast it, but you cannot apply any augments to it.
+
+\parhead{Schools} Abjuration
+
+\parhead{Spell Lists} Arcane, Divine, Nature
+\end{spellsection}
+
+
+\subsubsection{Subspells}
+
+
+\begin{ability}[\nth{2}]{Alter Magic Aura}[\glossterm{Attune}, \glossterm{Mystic}]
+Make a Spellpower vs. Mental attack against one Large or smaller magical object in \rngmed range.
+\hit One of the target's magic auras is altered (see \pcref{Spellcraft}).
+You can change the school and descriptors of the aura.
+In addition, you can decrease the spellpower of the aura by up to half your spellpower, or increase the spellpower of the aura up to a maximum of your spellpower.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{2}]{Dimensional Anchor}[\glossterm{Mystic}]
+Make a Spellpower vs. Mental attack against a creature or object within \rngmed range.
+\hit As a \glossterm{condition}, the target is unable to travel extradimensionally.
+This prevents all \glossterm{Manifestation}, \glossterm{Planar}, and \glossterm{Teleportation} effects.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{2}]{Malign Transferance}[\glossterm{Mystic}]
+Choose a willing ally within \rngmed range.
+The ally must be currently affected by a \glossterm{magical} \glossterm{condition}.
+In addition, make a Spellpower vs. Mental attack against a creature within \rngmed range.
+\hit One magical condition of your choice is removed from the chosen ally and applied to the struck creature.
+\crit As above, except that you can transfer any number of magical conditions in this way.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{2}]{Suppress Item}[\glossterm{Mystic}, \glossterm{Sustain} (minor)]
+Make a Spellpower vs. Mental attack against one Large or smaller magical object in \rngmed range.
+\hit All magical properties the target has are \glossterm{suppressed}.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{3}]{Banishing}[\glossterm{Mystic}]
+Make a Spellpower attack against one creature or object within \rngmed range.
+If the target is an effect of an ongoing \glossterm{magical} ability, such as a summoned monster or created object, the DR is equal to 5 + add the \glossterm{power} of the ability.
+Otherwise, this subspell has no effect.
+\hit The target is treated as if the ability that created it was \glossterm{dismissed}.
+This usually causes the target to disappear.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{5}]{Dimensional Lock}[\glossterm{Attune}, \glossterm{Mystic}]
+This subspell creates a dimensional lock in an \arealarge radius zone from your location.
+Extraplanar travel into or out of the area is impossible.
+This prevents all \glossterm{Manifestation}, \glossterm{Planar}, and \glossterm{Teleportation} effects.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{7}]{Antimagic Field}[\glossterm{Mystic}, \glossterm{Sustain} (minor)]
+All other magical abilities and objects are \glossterm{suppressed} within an \areasmall radius emanation from you.
+% How much of this is redundant with suppression?
+Creatures within the area cannot activate, sustain, or dismiss magical abilities.
+You cannot exclude yourself from this emanation.
+However, this subspell does not prevent you from sustaining or dismissing this subspell.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{7}]{Greater Malign Transferance}
+Choose any number of willing allies within \rngmed range.
+Each ally must be currently affected by a \glossterm{magical} \glossterm{condition}.
+In addition, make a Spellpower vs. Mental attack against a creature within \rngmed range.
+\hit Up to two magical conditions of your choice are removed from the chosen allies and applied to the struck creature.
+\crit As above, except that you can transfer any number of magical conditions in this way.
+\end{ability}
+\vspace{0.25em}
+
+\newpage
 \begin{spellsection}{Vital Surge}
 
 
@@ -2046,6 +2119,13 @@ If it hits, it deals \glossterm{standard damage} \minus1d.
 \subsubsection{Subspells}
 
 
+\begin{ability}[\nth{2}]{Aerial}
+This subspell functions like the \spell{weaponcraft} spell, except that the weapon's height above the ground is not limited.
+This allows the weapon to fly up to fight airborne foes.
+\end{ability}
+\vspace{0.25em}
+
+
 \begin{ability}[\nth{2}]{Blade Barrier}[\glossterm{Sustain} (minor)]
 A wall of whirling blades appears within \rngmed range.
 The wall either takes the form of a \arealarge line or a \areasmall radius.
@@ -2054,13 +2134,6 @@ The wall provides \glossterm{active cover} (20\% miss chance) against attacks ma
 Attacks that miss in this way harmlessly strike the wall.
 Whenever a creature or object passes through the wall, make a Spellpower vs. Reflex attack against it.
 \hit The target takes slashing \glossterm{standard damage} \minus1d.
-\end{ability}
-\vspace{0.25em}
-
-
-\begin{ability}[\nth{3}]{Aerial}
-This subspell functions like the \spell{weaponcraft} spell, except that the weapon's height above the ground is not limited.
-This allows the weapon to fly up to fight airborne foes.
 \end{ability}
 \vspace{0.25em}
 
@@ -2091,11 +2164,34 @@ In addition, the spell creates two parallel walls of the same length, five feet 
 \vspace{0.25em}
 
 
+\begin{ability}[\nth{4}]{Giant Blade}
+This subspell functions like the \spell{weaponcraft} spell, except that the weapon takes the form of a Large greatsword.
+The weapon's attacks hit everything in a \areasmall cone from it.
+It aims the cone to hit as many creatures as possible.
+\end{ability}
+\vspace{0.25em}
+
+
 \begin{ability}[\nth{6}]{Create Ballista, Dual Track}
 This subspell functions like the \spell{create ballista} subspell, except that the ballista is created with two separate bolt tracks.
 This allows it to fire at two different targets in the same round whenever you command it to fire.
 It cannot fire at the same target twice.
 Each round, it attacks the two creatures farthest from it.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{8}]{Titan Blade}
+This subspell functions like the \spell{weaponcraft} spell, except that the weapon takes the form of a Gargantuan greatsword.
+The weapon's attacks hit everything in a \areamed cone from it.
+It aims the cone to hit as many creatures as possible.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{9}]{Paired}
+This subspell functions like the \spell{weaponcraft} spell, except that you summon two weapons instead of one.
+Each weapon attacks independently.
 \end{ability}
 \vspace{0.25em}
 
