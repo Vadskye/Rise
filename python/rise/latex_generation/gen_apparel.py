@@ -252,11 +252,11 @@ def generate_armor():
     apparel.append(MagicItem(
         name="Shield of Mystic Reflection",
         level=12,
-        tags=['Thaumaturgy'],
+        tags=['Mystic'],
         material_type='shield',
         description="""
             As a \\glossterm<minor action>, you can spend an \\glossterm<action point> to activate this item.
-            If you do, any \\glossterm<targeted> \\glossterm<magical> abiliites that would target you are redirected to target the creature using the ability instead of you.
+            If you do, any \\glossterm<targeted> \\glossterm<magical> abilities that would target you are redirected to target the creature using that ability instead of you.
             Any other targets of the ability are affected normally.
             This is a \\glossterm<swift ability>, and it lasts until the end of the round.
         """,
@@ -833,7 +833,7 @@ def generate_worn():
         name="Hexward Cloak",
         level=10,
         material_type='cloak',
-        tags=['Thaumaturgy'],
+        tags=['Mystic'],
         description="""
             You gain a +5 bonus to defenses against \\glossterm<magical> abilities that target you directly.
             This does not protect you from abilities that affect an area.
@@ -845,7 +845,7 @@ def generate_worn():
         name="Hexproof Cloak",
         level=18,
         material_type='cloak',
-        tags=['Thaumaturgy'],
+        tags=['Mystic'],
         description="""
             All \\glossterm<magical> abilities that target you directly fail to affect you.
             This does not protect you from abilities that affect an area.

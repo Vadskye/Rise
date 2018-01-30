@@ -382,7 +382,7 @@ def generate_rituals():
     #             This effect lasts as long as you \\glossterm<attune> to it.
     #             If you use this ability multiple times, you can attune to it each time.
     #         """,
-    #         tags=['Thaumaturgy'],
+    #         tags=['Mystic'],
     #     ),
     #     schools=['Abjuration'],
     #     lists=['Arcane', 'Divine'],
@@ -427,7 +427,7 @@ def generate_rituals():
             This effect is permanent.
 
             This ritual takes 24 hour to perform, and requires 9 action points from its participants.
-        """, tags=['Thaumaturgy']),
+        """, tags=['Mystic']),
         schools=['Abjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
     ))
@@ -445,7 +445,7 @@ def generate_rituals():
             Creatures inside the area can see within the area and outside of it without any difficulty.
 
             This ritual takes 24 hours to perform, and requires 25 action points from its participants.
-        """, tags=['Thaumaturgy']),
+        """, tags=['Mystic']),
         schools=['Abjuration'],
         lists=['Arcane'],
     ))
@@ -556,7 +556,7 @@ def generate_rituals():
             However, it can allow the target to remove any cursed items it has equipped.
 
             This ritual takes 24 hours to perform, and requires 9 action points from its participants.
-        """, tags=['Thaumaturgy']),
+        """, tags=['Mystic']),
         schools=['Abjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
     ))
