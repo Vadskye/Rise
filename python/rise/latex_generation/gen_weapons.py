@@ -158,7 +158,6 @@ def generate_weapons():
         name="Longshot",
         level=4,
         material_type='weapon',
-        tags=['Enhancement'],
         description="""
             Ranged attacks with this weapon have twice the normal \\glossterm<range increment>.
         """,
@@ -169,7 +168,6 @@ def generate_weapons():
         name="Longshot, Greater",
         level=10,
         material_type='weapon',
-        tags=['Enhancement'],
         description="""
             Ranged attacks with this weapon have three times the normal \\glossterm<range increment>.
         """,
@@ -208,7 +206,6 @@ def generate_weapons():
         name="Fixating",
         level=13,
         material_type='weapon',
-        tags=['Enhancement'],
         description="""
             When you make a \\glossterm<strike> with this weapon, you gain a +1 bonus to accuracy against the target.
             This bonus lasts until you make a strike with this weapon against a different target.
@@ -378,7 +375,6 @@ def generate_weapons():
         name="Vorpal",
         level=12,
         material_type='weapon',
-        tags=['Enhancement'],
         description="""
             Critical hits on \\glossterm<strikes> with this weapon deal maximum damage.
         """,
