@@ -930,6 +930,7 @@ def generate_spells():
                 However,  must specify your target with a precise mental image of its appearance.
                 The image does not have to be perfect, but it must unambiguously identify the target.
                 If you specify its appearance incorrectly, or if the target has changed its appearance, you may accidentally target a different creature, or the spell may simply be \\glossterm<miscast>.
+                This attack roll cannot \\glossterm<explode>.
                 \\hit A scrying sensor appears in the target's space.
                 This sensor functions like the sensor created by the \\spell<scry> spell, except that you cannot move the sensor manually.
                 Instead, it automatically tries to follow the target to stay in its space.
