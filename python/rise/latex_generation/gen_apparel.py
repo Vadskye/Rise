@@ -536,7 +536,7 @@ def generate_worn():
         material_type='boot',
         tags=['Temporal'],
         description="""
-            You gain a +10 foot bonus to your speed in all your movement modes, up to a maximum of double your normal speed.
+            You gain a +10 foot bonus to your land speed, up to a maximum of double your normal speed.
         """,
         short_description="Increases speed by ten feet",
     ))
@@ -547,7 +547,7 @@ def generate_worn():
         material_type='boot',
         tags=['Temporal'],
         description="""
-            You gain a +30 foot bonus to your speed in all your movement modes, up to a maximum of double your normal speed.
+            You gain a +30 foot bonus to your land speed, up to a maximum of double your normal speed.
         """,
         short_description="Increases speed by thirty feet",
     ))
@@ -610,12 +610,22 @@ def generate_worn():
         level=10,
         material_type='boot',
         description="""
-            You gain a \\glossterm<fly speed> equal to your land speed.
+            You gain a \\glossterm<fly speed> equal to your \\glossterm<base speed>.
             However, the boots are not strong enough to keep you aloft indefinitely.
             At the end of each round, if you are not standing on solid ground, the magic of the boots fails and you fall normally.
             The boots begin working again at the end of the next round, even if you have not yet hit the ground.
         """,
         short_description="Grants limited flight",
+    ))
+
+    apparel.append(MagicItem(
+        name="Boots of Elvenkind",
+        level=4,
+        material_type='boot',
+        description="""
+            You gain a +2 bonus to the Stealth skill (see \\pcref<Stealth>).
+        """,
+        short_description="Grants +2 Stealth",
     ))
 
     # Rings
@@ -727,6 +737,72 @@ def generate_worn():
         short_description="Grants +2d damage with your body",
     ))
 
+    apparel.append(MagicItem(
+        name="Amulet of Health",
+        level=2,
+        material_type='amulet',
+        description="""
+            You increase your maximum hit points by an amount equal to this item's \\glossterm<power>.
+        """,
+        short_description="Increases your hit points",
+    ))
+
+    apparel.append(MagicItem(
+        name="Amulet of Health, Greater",
+        level=10,
+        material_type='amulet',
+        description="""
+            You increase your maximum hit points by an amount equal to twice this item's \\glossterm<power>.
+        """,
+        short_description="Greatly increases your hit points",
+    ))
+
+    apparel.append(MagicItem(
+        name="Amulet of the Planes",
+        level=12,
+        material_type='amulet',
+        tags=['Teleportation'],
+        description="""
+            When you perform the \\ritual<plane shift> ritual, this amulet provides all action points required.
+            This does not grant you the ability to perform the \\ritual<plane shift> ritual if you could not already.
+            It also does not provide any action points for subrituals of the \\ritual<plane shift> ritual.
+        """,
+        short_description="Aids travel with \\ritual<plane shift>",
+    ))
+
+    apparel.append(MagicItem(
+        name="Amulet of the Planes, Greater",
+        level=19,
+        material_type='amulet',
+        tags=['Teleportation'],
+        description="""
+            This item functions like the \\magicitem<amulet of the planes> item, except that it also provides action points for all subrituals of the \\ritual<plane shift> ritual.
+        """,
+        short_description="Aid travel with \\ritual<plane shift> subrituals",
+    ))
+
+    apparel.append(MagicItem(
+        name="Amulet of Nondetection",
+        level=6,
+        material_type='amulet',
+        tags=['Mystic'],
+        description="""
+            You gain a +5 bonus to defenses against abilities with the \\glossterm<Scrying> tag.
+        """,
+        short_description="Grants +5 to defenses against scrying",
+    ))
+
+    apparel.append(MagicItem(
+        name="Amulet of Nondetection, Greater",
+        level=14,
+        material_type='amulet',
+        tags=['Mystic'],
+        description="""
+            You gain a +10 bonus to defenses against abilities with the \\glossterm<Scrying> tag.
+        """,
+        short_description="Grants +10 to defenses against scrying",
+    ))
+
     # Cloaks
 
     apparel.append(MagicItem(
@@ -749,41 +825,6 @@ def generate_worn():
             At the end of each round, if you did not attack a creature that round, you become \\glossterm<invisible> until the end of the next round.
         """,
         short_description="Grants invisibility while not attacking",
-    ))
-
-    apparel.append(MagicItem(
-        name="Belt of Healing",
-        level=1,
-        material_type='belt',
-        tags=['Life'],
-        description="""
-            When you use the \\textit<recover> action, you heal +1d hit points.
-        """,
-        short_description="Grants +1d healing from the \\textit<recover> action",
-    ))
-
-    apparel.append(MagicItem(
-        name="Belt of Healing, Greater",
-        level=8,
-        material_type='belt',
-        tags=['Life'],
-        description="""
-            When you use the \\textit<recover> action, you heal +2d hit points.
-        """,
-        short_description="Grants +2d healing from the \\textit<recover> action",
-    ))
-
-    apparel.append(MagicItem(
-        name="Belt of Heroic Recovery",
-        level=6,
-        material_type='belt',
-        tags=['Life'],
-        description="""
-            As a \\glossterm<minor action>, you can activate this item.
-            If you do, you heal 1d6 damage +1d per two \\glossterm<power>.
-            If you were hit by a \\glossterm<critical hit> during the previous phase, this healing is increased by +2d.
-        """,
-        short_description="React to heal after getting a critical hit",
     ))
 
     apparel.append(MagicItem(
@@ -852,6 +893,63 @@ def generate_worn():
             This does not protect you from abilities that affect an area.
         """,
         short_description="Grants +10 defenses against targeted magical attacks",
+    ))
+
+    # Belts
+
+    apparel.append(MagicItem(
+        name="Belt of Healing",
+        level=1,
+        material_type='belt',
+        tags=['Life'],
+        description="""
+            When you use the \\textit<recover> ability, you heal +1d hit points.
+        """,
+        short_description="Grants +1d healing from the \\textit<recover> action",
+    ))
+
+    apparel.append(MagicItem(
+        name="Belt of Healing, Greater",
+        level=8,
+        material_type='belt',
+        tags=['Life'],
+        description="""
+            When you use the \\textit<recover> ability, you heal +2d hit points.
+        """,
+        short_description="Grants +2d healing from the \\textit<recover> action",
+    ))
+
+    apparel.append(MagicItem(
+        name="Lifekeeping Belt",
+        level=4,
+        material_type='belt',
+        tags=['Life'],
+        description="""
+            You reduce your \\glossterm<vital damage penalties> by 2.
+        """,
+        short_description="Reduces vital damage penalties by 2",
+    ))
+
+    apparel.append(MagicItem(
+        name="Lifekeeping Belt, Greater",
+        level=8,
+        material_type='belt',
+        tags=['Life'],
+        description="""
+            You reduce your \\glossterm<vital damage penalties> by 4.
+        """,
+        short_description="Reduces vital damage penalties by 4",
+    ))
+
+    apparel.append(MagicItem(
+        name="Lifekeeping Belt, Supreme",
+        level=12,
+        material_type='belt',
+        tags=['Life'],
+        description="""
+            You reduce your \\glossterm<vital damage penalties> by 6.
+        """,
+        short_description="Reduces vital damage penalties by 6",
     ))
 
     return apparel
