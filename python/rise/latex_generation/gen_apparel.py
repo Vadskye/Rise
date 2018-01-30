@@ -92,7 +92,6 @@ def generate_armor():
     apparel.append(MagicItem(
         name="Shield of Bashing",
         level=2,
-        tags=['Enhancement'],
         material_type='shield',
         description="""
             You gain a +1d bonus to \\glossterm<strike damage> with this shield.
@@ -103,7 +102,6 @@ def generate_armor():
     apparel.append(MagicItem(
         name="Shield of Bashing, Greater",
         level=12,
-        tags=['Enhancement'],
         material_type='shield',
         description="""
             You gain a +2d bonus to \\glossterm<strike damage> with this shield.
@@ -138,7 +136,6 @@ def generate_armor():
     apparel.append(MagicItem(
         name="Featherlight Armor",
         level=4,
-        tags=['Enhancement'],
         material_type='body armor',
         description="""
             This armor's \\glossterm<encumbrance penalty> is reduced by 1.
@@ -149,7 +146,6 @@ def generate_armor():
     apparel.append(MagicItem(
         name="Featherlight Armor, Greater",
         level=10,
-        tags=['Enhancement'],
         material_type='body armor',
         description="""
             This armor's \\glossterm<encumbrance penalty> is reduced by 2.
@@ -268,11 +264,12 @@ def generate_armor():
 def generate_worn():
     apparel = []
 
+    # Arm
+
     apparel.append(MagicItem(
         name="Bracers of Archery",
         level=1,
         material_type='bracer',
-        tags=['Enhancement'],
         description="""
             You are proficient with bows.
         """,
@@ -334,7 +331,6 @@ def generate_worn():
         name="Gauntlets of Improvisation",
         level=2,
         material_type='gauntlet',
-        tags=['Enhancement'],
         description="""
             You gain a +1d bonus to damage with \\glossterm<improvised weapons>.
         """,
@@ -345,7 +341,6 @@ def generate_worn():
         name="Gauntlets of Improvisation, Greater",
         level=7,
         material_type='gauntlet',
-        tags=['Enhancement'],
         description="""
             This item functions like the \\mitem<gauntlets of improvisation>, except that the damage bonus is increased to +2d.
         """,
@@ -400,7 +395,6 @@ def generate_worn():
         name="Throwing Gloves",
         level=4,
         material_type='glove',
-        tags=['Enhancement'],
         description="""
             % TODO: reference basic "not designed to be thrown" mechanics?
             You can throw any item as if it was designed to be thrown.
@@ -408,6 +402,8 @@ def generate_worn():
         """,
         short_description="Allows throwing any item accurately",
     ))
+
+    # Head
 
     apparel.append(MagicItem(
         name="Mask of Water Breathing",
@@ -487,11 +483,13 @@ def generate_worn():
         short_description="Continously deafens nearby enemies",
     ))
 
+    # Legs
+
     apparel.append(MagicItem(
         name="Boots of Earth's Embrace",
         level=4,
         material_type='boot',
-        tags=['Earth', 'Enhancement'],
+        tags=['Earth'],
         description="""
             While you are standing on solid ground, you are immune to effects that would force you to move.
             This does not protect you from other effects of those attacks, such as damage.
@@ -585,7 +583,6 @@ def generate_worn():
         name="Boots of the Winterlands",
         level=2,
         material_type='boot',
-        tags=['Enhancement'],
         description="""
             You can travel across snow and ice without slipping or suffering movement penalties for the terrain.
             % TODO: degree symbol?
@@ -620,6 +617,8 @@ def generate_worn():
         """,
         short_description="Grants limited flight",
     ))
+
+    # Rings
 
     apparel.append(MagicItem(
         name="Ring of Energy Resistance",
@@ -706,11 +705,12 @@ def generate_worn():
         short_description="Grants fast healing",
     ))
 
+    # Amulets
+
     apparel.append(MagicItem(
         name="Amulet of Mighty Fists",
         level=6,
         material_type='amulet',
-        tags=['Enhancement'],
         description="""
             You gain a +1d bonus to \\glossterm<strike damage> with \\glossterm<unarmed attacks> and natural weapons.
         """,
@@ -721,12 +721,13 @@ def generate_worn():
         name="Amulet of Mighty Fists, Greater",
         level=14,
         material_type='amulet',
-        tags=['Enhancement'],
         description="""
             You gain a +2d bonus to \\glossterm<strike damage> with \\glossterm<unarmed attacks> and natural weapons.
         """,
         short_description="Grants +2d damage with your body",
     ))
+
+    # Cloaks
 
     apparel.append(MagicItem(
         name="Assassin's Cloak",
@@ -820,7 +821,7 @@ def generate_worn():
         material_type='cloak',
         tags=['Glamer', 'Teleportation'],
         description="""
-            As a standard action, you can spend an \glossterm{action point} to use this item.
+            As a standard action, you can spend an \\glossterm<action point> to use this item.
             If you do, you teleport to an unoccupied location within \\rngmed range of your original location.
             In addition, you become \\glossterm<invisible> unitl the end of the next round.
 
