@@ -426,7 +426,7 @@ Feats can be used to specialize your character particular area, to grant your ch
             As a \glossterm{minor action}, you can use this ability.
             If you do, choose a creature currently attuning to a spell you cast.
             In addition, choose another creature to transfer the spell to.
-            Both targets must within that spell's range of you.
+            Both targets must within that spell's range of you, and must be valid targets for the spell.
             You cannot target yourself with this ability.
 
             If both targets are willing, the spell's effect is transferred from the first target to the second.
@@ -434,7 +434,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \end{ability}
 
         \ff[5]{Boon Lore} You learn an additional \glossterm{subspell} of 2nd level or lower.
-        The subspell must have an effect that lasts as long as you and the target attune to it.
+        The subspell must have the \glossterm{Attune} (shared) tag.
 
         \ff[7]{Greater Reciprocal Boon} You can use your \textit{reciprocal boon} ability on up to two different spells at once.
         If you use the ability while it already affects another spell, you choose which spells are affected by the ability.
@@ -444,14 +444,14 @@ Feats can be used to specialize your character particular area, to grant your ch
         That target must spend an action point to attune to the spell as normal.
 
         \ff[11]{Boon Lore} You learn an additional \glossterm{subspell} of 5th level or lower.
-        The subspell must have an effect that lasts as long as you and the target attune to it.
+        The subspell must have the \glossterm{Attune} (shared) tag.
 
         \ff[13]{Regenerative Transferance} When you use your \textit{benevolent transferance} ability successfully, the original target of the spell regains the action point it spent to attune to the spell.
 
         \ff[15]{Supreme Reciprocal Boon} You can use your \textit{reciprocal boon} ability on up to three different spells at once.
 
         \ff[17]{Boon Lore} You learn an additional \glossterm{subspell} of 8th level or lower.
-        The subspell must have an effect that lasts as long as you and the target attune to it.
+        The subspell must have the \glossterm{Attune} (shared) tag.
 
         \ff[19]{Greater Myriad Boon} You do not have to spend an \glossterm{action point} to use your \textit{myriad boon} ability.
 
@@ -722,8 +722,8 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[8]{Specialization} The bonus to Disguise increases to \plus4.
 
-        \ff[10]{Disguise Size}[Magical]
-        \begin{ability}
+        \ff[10]{Disguise Size}[Magical] You gain the \textit{disguise size} ability.
+        \begin{ability}{Disguise Size}
             As a \glossterm{standard action}, you can spend an action point to use this ability.
             If you do, you increase or decrease your size by one \glossterm{size category}.
             This effect lasts as long as you \glossterm{attune} to it.
@@ -935,9 +935,10 @@ Feats can be used to specialize your character particular area, to grant your ch
 
         \ff[17]{Supreme Enchanting Presence} The bonuses and penalties from your \textit{enchanting presence} increase to \plus2 and \minus2.
 
-        \ff[19]{Mental Torment} Whenever you target a creature with a Mind ability, that creature takes a \minus1 penalty to Mental defense.
-        This is a \glossterm{condition}, and lasts until it is removed.
-        This penalty stacks with itself if you target the same creature multiple times.
+        \ff[19]{Mental Torment} Whenever you target a creature with a Mind ability, you may have that creature take a \minus1 penalty to Mental defense.
+        This effect applies regardless of whether the ability's hits, but the target must be a valid target for the ability.
+        It is a \glossterm{condition}, and lasts until it is removed.
+        The penalty stacks with itself if you target the same creature multiple times.
     \end{feat}
 
     \begin{feat}{Escape Artist Specialization}{Skill}
@@ -1806,7 +1807,7 @@ Feats can be used to specialize your character particular area, to grant your ch
         \end{ability}
 
         \ff[4]{Unweave Magic} You gain the \textit{unweave magic} ability.
-        \begin{ability}{Unweave Magic}[\glossterm{Thaumaturgy}]
+        \begin{ability}{Unweave Magic}[\glossterm{Mystic}]
             As a standard action, you can spend an \glossterm{action point} to use this ability.
             If you do, make a Spellcraft check on an active spell effect within \rngmed range.
             The DR is equal to 5 \add the \glossterm{spellpower} of the effect.

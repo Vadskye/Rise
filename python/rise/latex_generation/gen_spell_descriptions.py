@@ -215,7 +215,7 @@ def generate_spells():
             If you target a magical effect directly, the attack result is applied against the effect itself.
             The DR for each effect is equal to 5 + the \\glossterm<power> of that effect.
             \\hit Each effect is \\glossterm<suppressed>.
-        """, tags=['Sustain (minor)', 'Thaumaturgy']),
+        """, tags=['Mystic', 'Sustain (minor)']),
         schools=['Abjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
         cantrip="The spell gains the \\glossterm<Sustain> (standard) tag in place of the \\glossterm<Sustain> (minor) tag.",
@@ -225,35 +225,35 @@ def generate_spells():
                 \\hit One of the target's magic auras is altered (see \pcref{Spellcraft}).
                 You can change the school and descriptors of the aura.
                 In addition, you can decrease the spellpower of the aura by up to half your spellpower, or increase the spellpower of the aura up to a maximum of your spellpower.
-            """, tags=['Attune', 'Thaumaturgy']),
+            """, tags=['Attune', 'Mystic']),
             Subspell('Suppress Item', 2, """
                 Make a Spellpower vs. Mental attack against one Large or smaller magical object in \\rngmed range.
                 \\hit All magical properties the target has are \\glossterm<suppressed>.
-            """, tags=['Sustain (minor)', 'Thaumaturgy']),
+            """, tags=['Mystic', 'Sustain (minor)']),
             Subspell('Banishing', 3, """
                 Make a Spellpower attack against one creature or object within \\rngmed range.
                 If the target is an effect of an ongoing \\glossterm<magical> ability, such as a summoned monster or created object, the DR is equal to 5 + add the \\glossterm<power> of the ability.
                 Otherwise, this subspell has no effect.
                 \\hit The target is treated as if the ability that created it was \\glossterm<dismissed>.
                 This usually causes the target to disappear.
-            """, tags=['Thaumaturgy']),
+            """, tags=['Mystic']),
             Subspell('Antimagic Field', 7, """
                 All other magical abilities and objects are \\glossterm<suppressed> within an \\areasmall radius emanation from you.
                 % How much of this is redundant with suppression?
                 Creatures within the area cannot activate, sustain, or dismiss magical abilities.
                 You cannot exclude yourself from this emanation.
                 However, this subspell does not prevent you from sustaining or dismissing this subspell.
-            """, tags=['Sustain (minor)', 'Thaumaturgy']),
+            """, tags=['Mystic', 'Sustain (minor)']),
             Subspell('Dimensional Anchor', 2, """
                 Make a Spellpower vs. Mental attack against a creature or object within \\rngmed range.
                 \\hit As a \\glossterm<condition>, the target is unable to travel extradimensionally.
                 This prevents all \\glossterm<Manifestation>, \\glossterm<Planar>, and \\glossterm<Teleportation> effects.
-            """, tags=['Thaumaturgy']),
+            """, tags=['Mystic']),
             Subspell('Dimensional Lock', 5, """
                 This subspell creates a dimensional lock in an \\arealarge radius zone from your location.
                 Extraplanar travel into or out of the area is impossible.
                 This prevents all \\glossterm<Manifestation>, \\glossterm<Planar>, and \\glossterm<Teleportation> effects.
-            """, tags=['Attune', 'Thaumaturgy'])
+            """, tags=['Attune', 'Mystic'])
         ],
         category='debuff, combat',
     ))
