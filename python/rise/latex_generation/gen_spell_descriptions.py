@@ -1279,7 +1279,7 @@ def generate_spells():
                 This blinking stops if the target takes actions on its current plane.
                 In any phase where it does not take any actions, the target has a 50\% chance to completely ignore any effect that targets it directly.
                 It is still affected normally by abilities that affect an area.
-            """, tags=['Attune (shared)', 'Teleportation']),
+            """, tags=['Attune (shared)', 'Teleportation', 'Planar']),
             Subspell('Greater Blink', 9, """
                 This subspell functions like the \\subspell<blink> subspell, except that the target also has a 20\% chance to completely ignore any effect that targets it directly during phases where it takes an action.
             """),
