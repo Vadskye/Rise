@@ -13,8 +13,9 @@ def generate_implements():
         material_type='staff',
         tags=['Shielding'],
         description="""
-            Whenever you cast a \\glossterm<Shielding> spell that targets creatures, you may also target yourself.
+            Whenever you cast a \\glossterm<targeted> \\glossterm<Shielding> spell, if you would be a valid target for the spell, you can target yourself in addition to the spell's normal targets.
         """,
+        short_description="Shields you when shielding others",
     ))
 
     implements.append(MagicItem(
@@ -25,6 +26,7 @@ def generate_implements():
         description="""
             The maximum distance you can teleport with your \\glossterm<Teleportation> spells is doubled.
         """,
+        short_description="Doubles your teleportation distance",
     ))
 
     implements.append(MagicItem(
@@ -33,8 +35,9 @@ def generate_implements():
         material_type='staff',
         tags=['Life'],
         description="""
-            Whenever you cast a spell other than a \\glossterm<cantrip>, you heal hit points equal to your level.
+            Whenever you cast a spell other than a \\glossterm<cantrip>, you heal hit points equal to your \\glossterm<spellpower> with the spell cast.
         """,
+        short_description="Heals you when casting spells",
     ))
 
     implements.append(MagicItem(
@@ -43,30 +46,33 @@ def generate_implements():
         material_type='staff',
         tags=['Life'],
         description="""
-            Whenever you cast a spell other than a \\glossterm<cantrip>, you heal hit points equal to twice your level.
+            Whenever you cast a spell other than a \\glossterm<cantrip>, you heal hit points equal to twice your \\glossterm<spellpower> with the spell cast.
         """,
+        short_description="Greatly heals you when casting spells",
     ))
 
     implements.append(MagicItem(
         name="Wand of Spell Focus",
-        level=4,
+        level=7,
         material_type='wand',
-        tags=['Thaumaturgy'],
+        tags=['Mystic'],
         description="""
-            You gain a +1 bonus to spellpower with a particular spell.
+            You gain a +1 bonus to spellpower with a particular spell and all of its subspells.
             Many \\textit<wands of spell focus> exist, each for different spells.
         """,
+        short_description="Grants +1 spellpower with a single spell",
     ))
 
     implements.append(MagicItem(
         name="Wand of Spell Focus, Greater",
-        level=12,
+        level=15,
         material_type='wand',
-        tags=['Thaumaturgy'],
+        tags=['Mystic'],
         description="""
-            You gain a +2 bonus to spellpower with a particular spell.
+            You gain a +2 bonus to spellpower with a particular spell and all of its subspells.
             Many \\textit<greater wands of spell focus> exist, each for different spells.
         """,
+        short_description="Grants +2 spellpower with a single spell",
     ))
 
     return implements
@@ -89,16 +95,39 @@ def generate_implement_latex(check=False):
     text = '\n'.join(texts)
     return latexify(text)
 
+def generate_implement_table():
+    implements = sorted(
+        sorted(generate_implements(), key=lambda item: item.name),
+        key=lambda item: item.level
+    )
+    rows = [
+        f"{item.name} & \\nth<{item.level}> & {item.short_description} & \\pageref<item:{item.name}> \\\\"
+        for item in implements
+    ]
+    row_text = '\n'.join(rows)
+    return latexify(f"""
+        \\begin<longtabuwrapper>
+            \\begin<longtabu><l l X l>
+                \\lcaption<Implement Items> \\\\
+                \\tb<Name> & \\tb<Level> & \\tb<Description> & \\tb<Page> \\\\
+                \\bottomrule
+                {row_text}
+            \\end<longtabu>
+        \\end<longtabuwrapper>
+    """)
+
 @click.command()
 @click.option('-c', '--check/--no-check', default=False)
-@click.option('-o', '--output')
+@click.option('-o', '--output/--no-output', default=False)
 def main(output, check):
-    text = generate_implement_latex()
+    implement_latex = generate_implement_latex()
     if output is None:
-        print(text)
+        print(implement_latex)
     else:
-        with open(output, 'w') as of:
-            of.write(text)
+        with open('../../core_book/implements.tex', 'w') as implement_description_file:
+            implement_description_file.write(implement_latex)
+        with open('../../core_book/implements_table.tex', 'w') as implement_table_file:
+            implement_table_file.write(generate_implement_table())
 
 
 if __name__ == "__main__":
