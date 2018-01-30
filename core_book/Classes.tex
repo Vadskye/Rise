@@ -603,10 +603,11 @@ This choice determines a great deal about your character's abilities.
             If a living enemy in the area takes \glossterm{vital damage}, it immediately dies.
 
         \subsubsection{Destruction}
-            \parhead{Gift} Your attacks negate an amount of \glossterm{hardness} and \glossterm{damage reduction} equal to your \textit{divine power}.
-            Damage reduction negated in this way does not apply against your attack or against any other attacks until the next round, including during the current phase.
-            % TODO: this is too strong
-            \parhead{Aspect} You gain a \plus1d bonus to \glossterm{strike damage}.
+            \parhead{Gift} You gain the \textit{power attack} ability, as the fighter \textit{martial exertion} (see Martial Exertion, \pref{Ftr:Martial Exertion}).
+            This includes all improvements to that ability with level.
+            \parhead{Aspect} Whenever you deal damage to a target, you first negate an amount of \glossterm{hardness} and \glossterm{damage reduction} equal to your \textit{divine power}.
+            Hardness and damage reduction negated in this way does not apply against your attack or against any other attacks during the current phase.
+            This effect lasts until the end of the round.
             \parhead{Essence} You gain the \textit{lay waste} ability.
             \begin{ability}{Lay Waste}
                 As a standard action, you can spend an \glossterm{action point} to use this ability.
@@ -794,7 +795,7 @@ This choice determines a great deal about your character's abilities.
                 % TODO: wording
                 If you do, one spell you cast this phase gains one of the following effects:
                 \begin{itemize}
-                    \item Legion: If the spell would normally affect five or more specific targets it instead affects five times that many targets.
+                    \item Legion: If the spell would normally affect five or more specific targets, it instead affects five times that many targets.
                     \item Selective: If the spell has an area, it has no effect on your allies in the area.
                     \item Widened: If the spell has an area, the size of the area is doubled.
                 \end{itemize}
@@ -2451,8 +2452,8 @@ This choice determines a great deal about your character's abilities.
     \subsection{Master of the Hunt}
         This archetype grants you and your allies abilities to hunt down specific foes.
 
-        \cf{Rgr}{Quarry}\label{Quarry}
-        \begin{ability}
+        \cf{Rgr}{Quarry}\label{Quarry} You gain the \textit{quarry} ability.
+        \begin{ability}{Quarry}
             As a \glossterm{minor action}, you can spend an \glossterm{action point} to use this ability.
             If you do, choose a creature within \rnglong range.
             The target becomes your quarry.
@@ -2625,10 +2626,9 @@ This choice determines a great deal about your character's abilities.
         You must be within \rngclose range of a creature to gain this damage bonus.
         In addition, you do not gain this damage bonus against creatures who are immune to \glossterm{critical hits} or who lack a discernible body structure, such as oozes.
 
-        \cf{Rog}[2]{Assassinate}
-        \begin{ability}
-            As a standard action, you can use this ability.
-            If you do, you study a creature within \rnglong range, finding weak points you can take advantage of.
+        \cf{Rog}[2]{Assassinate} You gain the \textit{assassinate} ability.
+        \begin{ability}{Assassinate}
+            You study a creature within \rnglong range, finding weak points you can take advantage of.
             Until the end of the next round, if you make a melee \glossterm{strike} against the target while it is \unaware, your attack deals maximum damage.
         \end{ability}
 
