@@ -1342,23 +1342,15 @@ def sanity_check(monsters):
 
 @click.command()
 @click.option('-c', '--check/--no-check', default=False)
-@click.option('-o', '--output')
+@click.option('-o', '--output/--no-output', default=False)
 def main(output, check):
     monster_text = generate_monsters()
-    text = latexify(f"""
-        \\chapter<Monsters>
-
-        Monsters are all of the various non-humanoid creatures that exist in the world of Rise.
-        Many of them are dangerous, and adventurers may need to fight them.
-        This chapter describes the rules for monsters, and the combat statistics for a variety of monsters.
-
-        {monster_text}
-    """)
+    text = latexify(monster_text)
     if output is None:
         print(text)
     else:
-        with open(output, 'w') as of:
-            of.write(text)
+        with open('../../core_book/monster_descriptions.tex', 'w') as file:
+            file.write(text)
 
 
 if __name__ == "__main__":
