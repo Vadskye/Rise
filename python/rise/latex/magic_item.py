@@ -10,6 +10,7 @@ class MagicItem(object):
             'body armor': ['bone', 'metal'],
             'boot': ['bone', 'leather', 'metal'],
             'bracer': ['bone', 'leather', 'metal', 'wood'],
+            'circlet': ['bone', 'metal'],
             'cloak': ['textiles'],
             'crown': ['bone', 'metal'],
             'gauntlet': ['bone', 'metal', 'wood'],
