@@ -267,13 +267,34 @@ def generate_worn():
     # Arm
 
     apparel.append(MagicItem(
+        name="Titan Gauntlets",
+        level=15,
+        material_type='gauntlet',
+        description="""
+            You gain a +1d bonus to \\glossterm<strike damage>.
+        """,
+        short_description="Grants +1d strike damage",
+    ))
+
+    apparel.append(MagicItem(
         name="Bracers of Archery",
         level=1,
         material_type='bracer',
         description="""
             You are proficient with bows.
         """,
-        short_description="Grants proficiency with bows",
+        short_description="Grants bow proficiency",
+    ))
+
+    apparel.append(MagicItem(
+        name="Bracers of Archery, Greater",
+        level=7,
+        material_type='bracer',
+        description="""
+            You are proficient with bows.
+            In addition, you gain a +1 bonus to \\glossterm<accuracy> with ranged \\glossterm<strikes>.
+        """,
+        short_description="Grants bow proficiency, +1 ranged accuracy",
     ))
 
     apparel.append(MagicItem(
@@ -406,6 +427,51 @@ def generate_worn():
     # Head
 
     apparel.append(MagicItem(
+        name="Circlet of Blasting",
+        level=4,
+        material_type='circlet',
+        tags=['Fire'],
+        description="""
+            As a standard action, you can spend an \\glossterm<action point> to use this item.
+            If you do, make a \\glossterm<power> vs. Reflex attack against a creature or object within \\rngmed range.
+            \\hit The target takes fire \\glossterm<standard damage> +1d.
+        """,
+        short_description="Can blast foe with fire",
+    ))
+
+    apparel.append(MagicItem(
+        name="Circlet of Blasting, Greater",
+        level=10,
+        material_type='circlet',
+        tags=['Fire'],
+        description="""
+            This item functions like the \\textit<circlet of blasting>, except that it gains a +1d bonus to damage.
+        """,
+        short_description="Can blast foe with intense fire",
+    ))
+
+    apparel.append(MagicItem(
+        name="Circlet of Blasting, Supreme",
+        level=16,
+        material_type='circlet',
+        tags=['Fire'],
+        description="""
+            This item functions like the \\textit<circlet of blasting>, except that it gains a +2d bonus to damage.
+        """,
+        short_description="Can blast foe with supremely intense fire",
+    ))
+
+    apparel.append(MagicItem(
+        name="Circlet of Persuasion",
+        level=4,
+        material_type='circlet',
+        description="""
+            You gain a +2 bonus to the Persuasion skill (see \\pcref<Persuasion>).
+        """,
+        short_description="Grants +2 Persuasion",
+    ))
+
+    apparel.append(MagicItem(
         name="Mask of Water Breathing",
         level=4,
         material_type='mask',
@@ -484,6 +550,34 @@ def generate_worn():
     ))
 
     # Legs
+
+    apparel.append(MagicItem(
+        name="Crater Boots",
+        level=10,
+        material_type='boot',
+        description="""
+            % This only works if you only take falling damage during the movement phase, which seems possible?
+            Whenever you take \\glossterm<falling damage>, make a \\glossterm<power> vs Reflex attack against everything within a \\areasmall radius from you.
+            \\hit Each target takes damage as if they had fallen the same distance that you fell.
+            This roll is made separately from the damage roll to determine your falling damage.
+            \\crit As above, and each target is knocked \\glossterm<prone>.
+            This does not deal double damage on a critical hit.
+        """,
+        short_description="Deals your falling damage to enemies",
+    ))
+
+    apparel.append(MagicItem(
+        name="Boots of the Skydancer",
+        level=7,
+        material_type='boot',
+        tags=['Air', 'Swift'],
+        description="""
+            As a \\glossterm<free action>, you can spend an \\glossterm<action point> to use this item.
+            If you do, you may treat air as if it were solid ground to your feet for the rest of the current phase.
+            You may selectively choose when to treat the air as solid ground, allowing you to walk or jump on air freely.
+        """,
+        short_description="Can walk on air",
+    ))
 
     apparel.append(MagicItem(
         name="Boots of Earth's Embrace",
@@ -597,7 +691,7 @@ def generate_worn():
         material_type='boot',
         tags=['Teleportation'],
         description="""
-            As a standard action, you can spend an \glossterm{action point} to use this item.
+            As a standard action, you can spend an \\glossterm<action point> to use this item.
             If you do, you teleport exactly 25 miles in a direction you specify.
             If this would place you within a solid object or otherwise impossible space, the boots will shunt you up to 1,000 feet in any direction to the closest available space.
             If there is no available space within 1,000 feet of your intended destination, the effect fails and you take \\glossterm<standard damage> -1d.
@@ -631,8 +725,32 @@ def generate_worn():
     # Rings
 
     apparel.append(MagicItem(
+        name="Ring of Protection",
+        level=8,
+        material_type='ring',
+        tags=['Shielding'],
+        description="""
+            This ring creates a transluscent shield-like barrier that floats in front of you, deflecting enemy attacks.
+            You gain a +1 bonus to \\glossterm<physical defenses>.
+            This does not stack with the defense bonus from any shields you use.
+        """,
+        short_description="Grants +1 to physical defenses",
+    ))
+
+    apparel.append(MagicItem(
+        name="Ring of Protection, Greater",
+        level=16,
+        material_type='ring',
+        tags=['Shielding'],
+        description="""
+            This item functions like the \\magicitem<ring of protection>, except that the bonus increases to +2.
+        """,
+        short_description="Grants +2 to physical defenses",
+    ))
+
+    apparel.append(MagicItem(
         name="Ring of Energy Resistance",
-        level=6,
+        level=5,
         material_type='ring',
         tags=['Shielding'],
         description="""
@@ -645,7 +763,7 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Ring of Energy Resistance, Greater",
-        level=14,
+        level=13,
         material_type='ring',
         tags=['Shielding'],
         description="""
@@ -951,6 +1069,8 @@ def generate_worn():
         """,
         short_description="Reduces vital damage penalties by 6",
     ))
+
+    # Other
 
     return apparel
 
