@@ -811,17 +811,6 @@ def generate_worn():
     ))
 
     apparel.append(MagicItem(
-        name="Ring of Protection",
-        level=8,
-        material_type='ring',
-        tags=['Shielding'],
-        description="""
-            You gain a +1 bonus to Armor defense.
-        """,
-        short_description="Grants +1 Armor defense",
-    ))
-
-    apparel.append(MagicItem(
         name="Ring of Regeneration",
         level=11,
         material_type='ring',
