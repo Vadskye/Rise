@@ -101,7 +101,7 @@ def generate_spells():
         """, tags=['Attune (shared)', 'Shielding']),
         schools=['Abjuration'],
         lists=['Arcane'],
-        cantrip="The spell's casting time becomes a standard action, and it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> (shared) tag.",
+        cantrip="The spell requires a \\glossterm<standard action> to cast, and it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> (shared) tag.",
         subspells=[
             Subspell('Complete', 2, """
                 This subspell functions like the \\spell<barrier> spell, except that it does not make the target vulnerable to \\glossterm<energy damage>.
@@ -530,7 +530,7 @@ def generate_spells():
             The target gains a +1d bonus to \\glossterm<strike damage>.
         """, tags=['Attune (shared)']),
         # hmmm don't like one-sided cost here
-        cantrip="The spell's casting time becomes a standard action, and it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> (shared) tag.",
+        cantrip="The spell requires a \\glossterm<standard action> to cast, and it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> (shared) tag.",
         schools=['Channeling'],
         lists=['Divine'],
         subspells=[
@@ -824,7 +824,7 @@ def generate_spells():
         """, tags=['Attune (shared)', 'Shielding', '(see text)']),  # TODO: (see text) without glossterm
         schools=['Abjuration'],
         lists=['Arcane', 'Chaos', 'Divine', 'Evil', 'Good', 'Law'],
-        cantrip="The spell's casting time becomes a standard action, and it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> (shared) tag.",
+        cantrip="The spell requires a \\glossterm<standard action> to cast, and it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> (shared) tag.",
         subspells=[
             Subspell("Complete", 3, """
                 This subspell functions like the \\spell<protection from alignment> spell, except that the damage reduction also applies against non-physical effects.
@@ -961,7 +961,7 @@ def generate_spells():
         """, tags=['Attune (shared)']),
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
-        cantrip="The spell's casting time becomes a standard action, and it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune (shared)> tag.",
+        cantrip="The spell requires a \\glossterm<standard action> to cast, and it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune (shared)> tag.",
         subspells=[
             Subspell("Discern Lies", 2, """
                 Make a Spellpower vs. Mental attack against a creature within \\rngmed range.
@@ -1059,7 +1059,7 @@ def generate_spells():
         """, tags=['Attune (shared)', 'Glamer', 'Visual']),
         schools=['Illusion'],
         lists=['Arcane'],
-        cantrip="The spell's casting time becomes a standard action, and it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> tag.",
+        cantrip="The spell requires a \\glossterm<standard action> to cast, and it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> tag.",
         subspells=[
             Subspell("Suppress Light", 2, """
                 Choose a Small or smaller unattended object within \\rngclose range.
