@@ -31,12 +31,12 @@ def latex_for_source(source, spells, rituals):
     ritual_latex = "\n".join(ritual_headers)
     return f"""
         \\small
-        \\section<{source} Magic>\\label<{source} Magic>
-            \\subsection<{source} Spells>\\label<{source} Spells>
+        \\subsection<{source} Magic>\\label<{source} Magic>
+            \\subsubsection<{source} Spells>\\label<{source} Spells>
                 \\begin<spelllist>
                     {spell_latex}
                 \\end<spelllist>
-            \\subsection<{source} Rituals>\\label<{source} Rituals>
+            \\subsubsection<{source} Rituals>\\label<{source} Rituals>
                 \\begin<spelllist>
                     {ritual_latex}
                 \\end<spelllist>
@@ -59,13 +59,13 @@ def generate_spell_lists():
 
 
 @click.command()
-@click.option('-o', '--output')
+@click.option('-o', '--output/--no-output')
 def main(output):
     if output is None:
         print(generate_spell_lists())
     else:
-        with open(output, 'w') as of:
-            of.write(generate_spell_lists())
+        with open('../../core_book/spell_lists.tex', 'w') as spell_lists_file:
+            spell_lists_file.write(generate_spell_lists())
 
 
 if __name__ == "__main__":
