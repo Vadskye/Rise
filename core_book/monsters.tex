@@ -4,4 +4,36 @@ Monsters are all of the various non-humanoid creatures that exist in the world o
 Many of them are dangerous, and adventurers may need to fight them.
 This chapter describes the rules for monsters, and the combat statistics for a variety of monsters.
 
+\section{Monster Mechanics}
+    Like player characters, monsters have levels, attributes, and abilities.
+    However, they do not have classes, feats, legacy items, or many other elements of characters.
+    This section defines how monsters function.
+
+    \subsection{Level}
+        Each monster has a \glossterm{level} that indicates its approximate strength.
+        This has all of the same effects as the level for a player character, except that monsters do not gain any of the benefits described in \tref{Character Advancement}.
+
+    \subsection{Challenge Rating}
+        Each monster has a \glossterm{challenge rating} that indicates its approximate strength within its level.
+        A monster's challenge rating ranges from 1/2 to 4.
+        This has several effects on the monster's statistics, and is a guideline to how many of that monster should typically be present in an encounter (see \pcref{Encounter Balancing}).
+
+        \parhead{Hit Points} A monster's base hit points are multiplied by its challenge rating to calculate its total hit points.
+
+        \parhead{Action Points} A monster has a number of \glossterm{action points} equal to its challenge rating \add 1 (rounded down).
+
+    \subsection{Attributes}
+        Each of a monster's starting attributes can range from \minus9 to 3, as appropriate for the type of monster.
+        A monster's attributes scale with level in the same way as character attributes.
+        A monster can also have up to two attributes starting at 4 or 5.
+        In general, a monster with higher starting attributes will be slightly stronger, but not all monsters need to start with the same starting attribute total.
+
+    \subsection{Encounter Balancing}
+        In general, a group of PCs of a given level will have an appropriate challenge from fighting monsters of the same level with a combined challenge rating equal to the number of PCs.
+        Fighting monsters of a lower level, or monsters whose combined challenge rating is less than the number of PCs, will yield an easier encounter.
+        Fighting monsters of a higher level, or fighting monsters whose combined challenge rating is greater than the number of PCs, will yield an easier encounter.
+
+        It is generally not a good idea for PCs to fight monsters more than three levels higher or lower than their own.
+        They may find that their attacks never miss, or always hit, and other aspects of the encounter may be similarly imbalanced in ways that are not easily remedied by simply changing the number of enemies.
+
 \input{monster_descriptions.tex}
