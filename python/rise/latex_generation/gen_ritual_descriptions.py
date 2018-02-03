@@ -779,7 +779,7 @@ def generate_rituals():
 
 @click.command()
 @click.option('-c', '--check/--no-check', default=False)
-@click.option('-o', '--output')
+@click.option('-o', '--output/--no-output', default=False)
 def main(output, check):
     rituals = generate_rituals()
     ritual_texts = []
@@ -788,15 +788,12 @@ def main(output, check):
             ritual_texts.append(ritual.to_latex())
         except Exception as e:
             raise Exception(f"Error converting ritual '{ritual.name}' to LaTeX") from e
-    ritual_text = latexify("""
-        \\section<Ritual Descriptions>
-        {}
-    """.format('\n'.join(ritual_texts)))
+    ritual_text = latexify('\n'.join(ritual_texts))
     if output is None:
         print(ritual_text)
     else:
-        with open(output, 'w') as of:
-            of.write(ritual_text)
+        with open('../../core_book/ritual_descriptions.tex', 'w') as ritual_descriptions_file:
+            ritual_descriptions_file.write(ritual_text)
 
 if __name__ == "__main__":
     main()
