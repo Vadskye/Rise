@@ -138,6 +138,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         Within each phase, actions of all creatures are simultaneously resolved in the following order.
         Allies with the ability to communicate can freely coordinate their actions with each other, within reasonable limits.
+        These six steps are called \glossterm{resolution steps}.
 
         \begin{enumerate*}
             \item Choose actions.
@@ -159,10 +160,23 @@ It defines how attributes work and explains how to make physical attacks in comb
         \subsubsection{Swift Abilities}\label{Swift Abilities}
             Some abilities resolve before other actions in the same phase.
             These abilities have the \glossterm{Swift} tag.
-            They resolve after targets are determined, but before attack rolls are made.
+            They resolve in \glossterm{resolution step} 3, after targets are determined but before attack rolls are made.
             Swift abilities never require attack rolls, and almost always affect only the creature using the ability.
+
             For example, the \textit{total defense} ability is a swift ability.
             It increases your defenses against attacks made during the same phase (see \pcref{Total Defense}).
+
+        \subsubsection{Delayed Abilities}\label{Delayed Abilities}
+            Some abilities resolve a full phase after they were originally used.
+            These abilities have the \glossterm{Delayed} tag.
+            For example, all \glossterm{spells} have the \glossterm{Delayed} tag.
+            Abilities with this tag cannot be used during the \glossterm{delayed action phase}.
+
+            During the \glossterm{action phase}, delayed abilities stop resolving at \glossterm{resolution step} 1, before targets are chosen.
+            They finish resolving during the delayed action phase, allowing you to choose targets, roll attack rolls, and so on.
+
+            You must still make all choices required to use a delayed ability when you first use the ability during the action phase.
+            For example, when casting a spell, you must choose which spell (or \glossterm{subspell}) you cast, and any \glossterm{augments} you apply to that spell, during the action phase.
 
         \subsubsection{Conflicting Actions}\label{Conflicting Actions}
 
