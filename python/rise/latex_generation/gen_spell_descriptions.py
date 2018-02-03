@@ -1516,7 +1516,7 @@ def sanity_check(spells):
 
 @click.command()
 @click.option('-c', '--check/--no-check', default=False)
-@click.option('-o', '--output')
+@click.option('-o', '--output/--no-output', default=False)
 def main(output, check):
     spells = generate_spells()
     if check:
@@ -1527,15 +1527,12 @@ def main(output, check):
             spell_texts.append(spell.to_latex())
         except Exception as e:
             raise Exception(f"Error converting spell '{spell.name}' to LaTeX") from e
-    spell_text = latexify("""
-        \\section<Spell Descriptions>
-        {}
-    """.format('\n\\newpage'.join(spell_texts)))
+    spell_text = latexify('\n\\newpage'.join(spell_texts))
     if output is None:
         print(spell_text)
     else:
-        with open(output, 'w') as of:
-            of.write(spell_text)
+        with open('../../core_book/spell_descriptions.tex', 'w') as spell_descriptions_file:
+            spell_descriptions_file.write(spell_text)
 
 
 if __name__ == "__main__":

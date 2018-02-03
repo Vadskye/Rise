@@ -59,7 +59,7 @@ def generate_spell_lists():
 
 
 @click.command()
-@click.option('-o', '--output/--no-output')
+@click.option('-o', '--output/--no-output', default=False)
 def main(output):
     if output is None:
         print(generate_spell_lists())
