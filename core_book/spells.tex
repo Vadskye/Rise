@@ -1,6 +1,332 @@
-\chapter{Spells}\label{Spells}
+\chapter{Spells and Rituals}\label{Spells}
 
-\section{Casting Spells}\label{Casting Spells} 
+\section{Spell and Ritual Mechanics}\label{Spell and Ritual Mechanics}
+
+    Spells and rituals share many common properties, defined here.
+
+    \subsection{Categories of Magic}
+        There are three \glossterm{magic sources} that spells can come from: arcane (cast by mages and warlocks), divine (cast by clerics and paladins), and nature (cast by druids).
+        In addition, there are nine schools of magic.
+        Each school of magic has a set of thematically related effects.
+        Every spell and ritual belongs to at least one school of magic.
+        The schools of magic are described below.
+
+        \subsubsection{Abjuration}
+            Abjuration spells and rituals reduce or negate damage, magic, and other effects.
+            They can be used to protect allies and remove harmful magic.
+
+        \subsubsection{Channeling}
+            Channeling spells and rituals call upon the power of deities or other supernatural entities.
+            They can be used to do anything those entities could do.
+            Arcane spellcasters do not have access to Channeling spells.
+
+        \subsubsection{Conjuration}
+            Conjuration spells and rituals create and transport objects and creatures.
+            They can be used to summon allies, transport creatures, and create objects from thin air.
+
+        \subsubsection{Divination}
+            Divination spells and rituals grant knowledge.
+            They can be used to reveal hidden truths, predict the future, or communicate at great distances.
+
+        \subsubsection{Enchantment}
+            Enchantment spells and rituals alter the minds of creatures.
+            They can be used to influence, control, or debilitate creatures.
+            Almost all enchantment spells and rituals have the \glossterm{Mind} tag, and many have the \glossterm{Subtle} as well (see \pcref{Ability Tags}).
+
+        \subsubsection{Evocation}
+            Evocation spells and rituals create and manipulate energy.
+            They can be used to inflict damage with energy blasts or manipulate the environment.
+
+        \subsubsection{Illusion}
+            Illusion spells and rituals create or manipulate sensory impressions.
+            They can be used to create or remove light, conceal things that exist, or cause creatures to perceive things that do not exist.
+
+        \subsubsection{Transmutation}
+            Transmutation spells and rituals change the properties of creatures and objects.
+            They can be used to grant new abilities, enhance existing abilities, change a target's form, or even alter the flow of time itself.
+
+        \subsubsection{Vivimancy}
+            Vivimancy spells and rituals manipulate the power of life and death, as well as souls.
+            They can be used to heal or inflict wounds, resurrect the dead, create undead monsters, and cripple the bodies of creatures.
+
+    \subsection{Casting Components}\label{Casting Components}
+        Unless otherwise noted, all spells and rituals require both verbal and somatic components to cast or perform.
+        You cannot start casting a spell or performing a ritual without all required components.
+        If you lose those components before the ability resolves, it is \glossterm{miscast}.
+
+        To provide the verbal component for a spell or ritual, you must speak in a strong voice with a volume at least as loud as ordinary conversation.
+        To provide the somatic component for a spell or ritual, you must make a measured and precise movement of at least one free hand.
+
+    \subsection{Augments}\label{Augments}
+        There are a number of \glossterm{augments} that can be applied to spells and rituals to increase their power.
+        Each augment has a name, a level, and an effect.
+        Whenever you cast a spell or perform a ritual, you can choose to apply any number of augments you know to the spell or ritual.
+        For each augment you apply, you increase the spell or ritual's level by an amount equal to the augment's level.
+        In exchange, the ability gains the effects of that augment.
+        If an augment would increase the spell or ritual's level beyond the maximum level you can cast, you cannot apply the augment to that ability.
+
+        \parhead{Augments and Subspells}
+        If a spell or ritual changes its properties with a subspell or subritual, it may become eligible for different augments.
+        % TODO: fix example
+        For example, if you apply the Fireball subspell to the \spell{pyromancy} spell, it changes to affect an area.
+        You would then be able to apply the Widened augment to increase its area.
+
+        \subsubsection{Augment Descriptions}\label{Augment Descriptions}
+
+            \augment{1}{Giant} The ability can affect a target one size category larger.
+            This augment can be applied multiple times.
+            Its effects stack.
+            \par This augment can be applied to any spell or ritual that that has a maximum size category of targets that it can affect.
+
+            \augment{1}{Silent} You do not need to use \glossterm{verbal components} to cast the spell.
+            \par This augment can be applied to any spell.
+
+            \augment{1}{Stilled} You do not need to use \glossterm{somatic components} to cast the spell.
+            \par This augment can be applied to any spell.
+
+            \augment{2}{Cryptic} The spell's visual effects and magical aura changes to mimic a different spell of your choice.
+            You may choose any combination of spell or \glossterm{subspell} you know, along with any other augments, that result in a spell of the same level or lower as the spell you are casting.
+            This affects inspection of the spell itself by any means, such as with the Spellcraft skill (see \pcref{Spellcraft}).
+            However, it does not alter the mechanical effects of the spell in any way.
+            If the spell's effects depend on visual components, the spell may fail to work if you alter the spell's visuals too much. 
+
+            \augment{2}{Extended} The ability's range increases by one step, to a maximum of \rngext.
+            The steps are, in order: \rngtouch, \rngclose, \rngmed, \rnglong, and \rngext.
+            This augment can be applied multiple times.
+            Each time, the ability's range increases by an additional step.
+            \par This augment can be applied to any spell or ritual with a range that is one of the above ranges.
+
+            \augment{2}{Quickened} You can cast the spell as a \glossterm{minor action}.
+            In exchange, you cannot take any actions during the \glossterm{action phase} or \glossterm{delayed action phase} of the next round.
+            \par This augment can be applied to any spell.
+
+            \augment{2}{Selective} You may freely exclude any areas from the spell's effect.
+            However, all squares in the final area of the spell must be contiguous.
+            You cannot create split a spell's area into multiple completely separate areas.
+            \par This augment can be applied to any spell or ritual that affects an area.
+
+            \augment{2}{Widened} The ability's area increases by one step, to a maximum of \areahuge.
+            The steps are, in order: \areasmall, \areamed, \arealarge, and \areahuge.
+            Normally, a Small or Medium line is 5 ft.\ wide, while a Large or Huge line is 10 ft.\ wide.
+            A line used to define a wall does not have a width.
+            This augment can be applied multiple times.
+            Each time, the ability's area increases by an additional step.
+            \par This augment can be applied to any spell or ritual with an area that is one of the above areas.
+
+            \augment{3}{Dual} The spell targets an additional creature within range.
+            This augment can be applied multiple times.
+            Its effects stack.
+            \par This augment can be applied to any spell that has a range and affects a single target of the caster's choice.
+            It cannot be applied to spells that affect a single specific target, such as the caster.
+
+            \augment{3}{Intensified} The damage inflicted and healing granted by the ability increases by \plus1d.
+            This augment can be applied multiple times.
+            Its effects stack.
+            \par This augment can be applied to any spell or ritual that deals damage or grants healing based on a dice pool.
+
+            \augment{3}{Phasing} When determining whether you have \glossterm{line of sight} and \glossterm{line of effect} to a particular location with the spell, you can ignore a single solid obstacle up to five feet thick.
+            This can allow you to cast spells through solid walls, though it does not grant you the ability to see through the wall.
+            \par This augment can be applied to any spell with a range.
+
+            \augment{3}{Precise} You gain a \plus1 bonus to accuracy with the ability.
+            This augment can be applied multiple times.
+            Its effects stack.
+            \par This augment can be applied to any spell or ritual that has an attack roll.
+
+            \augment{4}{Accelerated} The ritual takes half the normal amount of time to perform.
+            \par This augment can be applied to any ritual.
+
+            \augment{6}{Echoing} During the \glossterm{delayed action phase} of the next round, the spell's effect occurs again.
+            All choices you made for the original casting of the spell are made identically for the repeat casting.
+            It affects the same area, targets, and so on.
+
+            If the spell is now invalid, such as if all of its targets are out of range, the additional casting has no effect.
+            This augment does not allow you to \glossterm{attune} to the same spell more than once.
+
+    \subsection{Dismissal}
+        As a \glossterm{minor action}, you can dismiss any spells or rituals you used that have lasting effects.
+        This requires the same casting components (verbal and somatic) as casting the spell or performing the ritual normally.
+        Spells and rituals can also be dismissed in other ways, such as after their effects have finished.
+        When a spell or ability is dismissed, all of its lingering effects immediately end.
+        % Should a spell be dismissed for all targets simultaneously, or per target?
+
+    \subsection{Spellpower}
+
+        The \glossterm{power} of your spells and rituals is determined by your \glossterm{spellpower}.
+        Normally, your spellpower is equal to your level or an \glossterm{attribute}, whichever is higher.
+
+        \parhead{Multiple Spellcasting Abilities} If you have the ability to cast spells from more than one separate ability, use the spellpower appropriate to the ability that you are casting the spell with.
+
+        \parhead{Reducing Spellpower} You can voluntarily reduce the \glossterm{power} of the spells you cast by using a lower spellpower.
+        However, you cannot use a spellpower lower than the minimum spellpower required to cast the spell, which is equal to twice the spell's level.
+
+    \subsection{Resurrecting the Dead}\label{Resurrecting the Dead}
+        Several rituals have the power to restore dead characters to life.
+
+        When a living creature dies, its soul departs its body, travels through the Astral Plane, and goes to abide on the plane where the creature's deity resides.
+        If the creature did not worship a deity, its soul departs to the plane corresponding to its alignment.
+        Bringing a creature back from the dead means retrieving their soul and returning it to their body.
+
+        \subparhead{Preventing Revivification} Enemies can take steps to make it more difficult for a character to be returned from the dead.
+        Except for \spell{true resurrection}, every ritual to raise the dead requires a body, so keeping or destroying the body is an effective deterrent.
+        The \spell{soul bind} ritual prevents any sort of revivification unless the soul is first released.
+
+        \subparhead{Revivification against One's Will} A soul cannot be returned to life if it does not wish to be.
+        A soul infallibly knows the name, alignment, and patron deity (if any) of the character attempting to revive it and may refuse to return on that basis.
+
+\section{Spell Mechanics}\label{Spell Mechanics}
+
+    \subsection{Cantrips}\label{Cantrips}
+        Every spell can be cast as a \glossterm{cantrip}.
+        You do not have to spend an action point to cast a spell as a cantrip.
+        In exchange, the spell's effect is weaker in some way, as defined in the spell's description.
+        You cannot apply \glossterm{augments} to spells that are cast as a cantrip.
+        Subspells cannot be cast as cantrips.
+
+    \subsection{Miscasting}\label{Miscasting}
+
+        If you start casting a spell and fail to cast the spell successfully, such as if your concentration is broken (see \pcref{Concentration}), you miscast the spell.
+        A miscast spell resolves at the same time that the spell normally would, but it does not have its normal effect.
+        Instead, a wave of magical energy causes a \glossterm{miscast backlash}.
+        When a mystic backlash occurs, make an attack against the Mental defense of yourself and all creatures in a 5 foot radius from you.
+        Your \glossterm{power} with this ability is equal to your \glossterm{spellpower} with the spell you tried to cast.
+        % damage type?
+        On a hit, each target takes \glossterm{standard damage} \minus1d.
+
+        \parhead{Impossible Spells} Whenever you try to cast a spell in an impossible way, the spell is \glossterm{miscast} instead.
+        This most commonly happens if you attempt to declare an invalid target for the spell.
+        For example, if you try to cast a spell that only affects living creatures on a creature that is undead, the spell would be miscast.
+
+        \parhead{Voluntary Miscasting} At the start of each phase while you are casting a spell, you can choose to stop casting the spell, causing you to \glossterm{miscast} it instead.
+
+    \subsection{Delayed Resolution}\label{Delayed Resolution}
+        Every spell has the \glossterm{Delayed} tag, causing it to resolve later than other actions (see \pcref{Delayed Actions}).
+
+    \subsection{Concentration}\label{Concentration}
+        Every spell requires concentration to cast.
+        If you are distracted while casting a spell, such as if you are riding a galloping horse, you need to make a \glossterm{concentration} check to avoid losing concentration on the spell.
+        In addition, if the spell has the \glossterm{Delayed} tag, as all spells normally do, you must maintain this concentration for the entire \glossterm{action phase} before the spell resolves.
+        If you are damaged during that phase, you also need to make a \glossterm{concentration} check to avoid losing the spell.
+        If your concentration is broken while casting a spell, you \glossterm{miscast} that spell (see \pcref{Miscasting}).
+
+        Your bonus on concentration \glossterm{checks} is normally equal to your level or your Willpower, whichever is higher.
+        You apply any \glossterm{overwhelm penalties} you suffer to your concentration checks.
+        If you take damage while also being distracted by some other effect, you take a \minus2 penalty to the concentration check.
+        The \glossterm{difficulty rating} of the check is equal to 5 \add twice the level of the spell you are casting.
+
+        The amount of damage you take during the action phase does not directly affect your concentration check.
+        % TODO: timing of being staggered
+        However, if you become \glossterm{staggered}, you take a \minus4 penalty to checks, which affects your concentration check.
+
+    \subsection{Subspells}
+        % TODO: some of this wording is weird
+        All spells have a number of \glossterm{subspells}.
+        Each subspell has a name, a level, and an effect.
+        Whenever you cast a spell, you can choose to apply a single subspell you know from that spell.
+        If you do, the spell's level becomes equal to the subspell's level.
+        In exchange, the spell gains the effects of the subspell.
+        You cannot learn or cast subspells whose spell level exceeds your maximum spell level.
+
+        Some subspells simply add additional properties to a spell's normal effect.
+        Others change the targets or effects of the spell significantly.
+        After choosing whether to cast a subspell, you can apply any number of \glossterm{augments}, described below.
+
+\section{Ritual Mechanics}
+    Rituals are ceremonies that create magical effects.
+    Some spellcasting characters can learn and perform rituals.
+    You don't memorize a ritual as you would a normal spell or subspell.
+    Rituals are too complex for all but the most knowledgeable sages to commit to memory.
+    To perform a ritual, you need to read from a book or a scroll containing it.
+    Rituals are similar to spells, but abilities that affect spells do not affect rituals unless they say they do in their descriptions.
+
+    \subsection{Ritual Descriptions}
+        % TODO: proper chapter references
+        Rituals are described in Chapter 13.
+        The description of each ritual follows the same format as the description of spells in Chapter 12, except that every ritual has a level, like \glossterm{subspells} do.
+
+        \subparhead{Ritual Sources}
+        A ritual always matches the magic source of the person performing the ritual.
+        For example, \spell{scrying} is an arcane ritual when performed by a wizard, but a divine ritual when performed by a cleric.
+    \subsection{Ritual Requirements}
+        In order to learn and perform a ritual, you must be able to cast at least one spell of the same level as the ritual.
+    \subsection{Ritual Books}
+        A ritual book contains one or more rituals that you can use as frequently as you want, as long as you can spend the time and \glossterm{action point} to perform the ritual.
+        Scribing a ritual in a ritual book costs an amount of precious inks.
+    \subsection{Ritual Costs}\label{Ritual Costs}
+        The costs to scribe rituals are described on \trefnp{Ritual Costs}.
+        \begin{dtable}
+            \lcaption{Ritual Costs}
+            \begin{dtabularx}{\columnwidth}{X l l}
+                \tb{Ritual Level} & \tb{Cost to Scribe} & \tb{Item Level} \\
+                \bottomrule
+                1st-Level & 50 gp & 1st \\
+                2nd-Level & 200 gp & 3rd \\
+                3rd-Level & 500 gp & 4th \\
+                4th-Level & 1,250 gp & 7th \\
+                5th-Level & 3,000 gp & 9th \\
+                6th-Level & 7,500 gp & 11th \\
+                7th-Level & 15,000 gp & 12th \\
+                8th-Level & 35,000 gp & 14th \\
+                9th-Level & 75,000 gp & 16th \\
+            \end{dtabularx}
+        \end{dtable}
+
+    \subsection{Subrituals}\label{Subrituals}
+        Many rituals have \glossterm{subrituals}, just like many spells have \glossterm{subspells} (see \pcref{Subspells}).
+        Subrituals work in the same way as subspells, except that they are applied to rituals instead of spells.
+
+    \subsection{Performing Rituals}
+        To perform a ritual, you must have a ritual book containing the ritual and the material components required for the ritual.
+        Unless otherwise specified, performing a ritual requires spending a single \glossterm{action point}.
+        Some rituals require multiple action points to complete.
+        Other creatures can supply action points to help you perform rituals; see Ritual Participants, below.
+
+        If you are distracted during the ritual, you must make a Concentration check, just as if you were casting a spell of the ritual's level.
+        If you fail, the ritual is ruined and you must start from the beginning.
+        % TODO: can we remove the ``casting a ritual'' wording?
+        \par Performing a ritual and casting a ritual mean the same thing.
+
+        \subsubsection{Ritual Participants}
+            Creatures can assist in the performance of rituals even if they are unable to perform rituals themselves.
+            A creature that helps perform a ritual is called a ritual participant, and the creature performing the ritual is called the ritual leader.
+            A ritual participant may spend an action point in place of or in addition to the action point spent by the creature performing the ritual.
+            It may also \glossterm{attune} to the effect of the ritual in place of the creature performing the ritual.
+            Only one creature may attune to the ritual's effect in this way.
+            If multiple creatures are willing to spend action points or attune to effects, the ritual leader decides which creatures spend action points or attune to the ritual's effects.
+
+            The steps required to participate in rituals can be complex.
+            Ritual participants must be given specific instructions for the actions they must perform during a ritual by a creature who knows how to perform the ritual.
+            This instruction generally takes half the time required to perform the ritual.
+            A creature cannot participate in rituals unless it has an Intelligence of at least 0, can speak at least one language, and has the fine motor control required to perform the somatic components of spells.
+
+            Normally, a ritual participant can only contribute one action point.
+            If the participant can cast spells from the same source as the ritual, they can contribute any number of action points.
+
+            \parhead{Changing Ritual Participation}
+            Rituals are deeply complex magic, and they cannot be abandoned or paused partway through.
+            If the number of ritual participants in a ritual decreases below its initial value, the ritual fails at the end of the next round if the number of participants is not restored.
+            However, ritual participants can transfer their participation to other creatures without disrupting the ritual.
+
+            In order to transfer ritual participation, the new creature must be able to participate in the ritual, and must immediately spend the same number of action points as the creature that it is taking over from.
+            Similarly, the ritual leader can transfer their leadership to another creature.
+            In addition to the requirements for transferring ritual participation, the new leader must know the ritual and be able to perform it themselves.
+
+            Changing ritual participation and leadership is usually done when performing extraordinarily long or demanding rituals.
+
+    \subsection{Magical Writings}
+        To record a spell in written form, a character uses complex notation that describes the magical forces involved in the spell.
+        The notation constitutes a universal language that spellcasters have discovered, not invented.
+        Each writer uses this universal system regardless of their native language or culture.
+        However, each character uses the system in their own way.
+        Another person's magical writing remains incomprehensible to even the most powerful spellcaster until they take the time to study and decipher it.
+
+        To decipher an magical writing (such as a single spell in written form on a scroll), you must make a Spellcraft check (DR 10 \add the spell's level). If the skill check fails, you cannot attempt to read that particular spell again until the next day.
+        A \ritual{read magic} ritual automatically deciphers a magical writing without a skill check.
+        If the person who created the magical writing is on hand to help the reader, success is also automatic.
+
+        Once a character deciphers a particular magical writing, they do not need to decipher it again.
+        Deciphering a magical writing allows the reader to identify the spell and gives some idea of its effects (as explained in the spell or ritual description).
+        
 
 \section{Spell Lists}
 
