@@ -16,7 +16,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         To make an attack roll, roll 1d10 and add your \glossterm{accuracy} with the attack.
         The sum of your die roll and your accuracy is called your \glossterm{attack result}.
-        You compare your attack result to a \glossterm{defense} that your \glossterm{target} has.
+        You compare your attack result to a \glossterm{defense} that your \glossterm{target} has (see \pcref{Defenses}).
         All attacks specify which defense they are compared to.
         If your result is at least equal to your target's defense, the attack succeeds.
         This almost always means the target suffers some harmful effect, such as taking \glossterm{damage}.
@@ -420,6 +420,14 @@ It defines how attributes work and explains how to make physical attacks in comb
             \parhead{Size Modifier} Large creatures have a penalty to Reflex defense.
             For details, see \tref{Size in Combat}.
 
+        \subsubsection{Resisting Attacks}
+            If an attack fails against you, you almost always suffer no effects from the attack.
+            Even if the attack had no obvious physical or visual effects, a creature that resists an attack still feels a hostile force or a tingle, but cannot usually deduce the exact nature of the attack.
+            The Spellcraft skill can be used to learn about failed \glossterm{magical} attacks against you (see \pcref{Spellcraft}).
+
+            \parhead{Lowering Defenses} Whenever you are subject to an attack that you are aware of, you can voluntarily lower your defenses against the attack.
+            If you do, your defense is treated as 0 against the attack.
+
     \subsection{Initiative}\label{Initiative}
         When multiple creatures take mutually impossible actions simultaneously, such as racing to be the first one to a door, they must roll initiative checks.
         For details, see \pcref{Conflicting Actions}.
@@ -810,6 +818,415 @@ It defines how attributes work and explains how to make physical attacks in comb
         A creature with a land speed can move across the ground at the indicated speed.
         Most creatures have a land speed.
 
+\section{Ability Mechanics}\label{Ability Mechanics}
+
+    \subsection{Targets}\label{Targets}
+        Almost all abilities affect targets.
+        A target of an ability is a creature directly affected by the ability in some way.
+        Many abilities affect targets within a specific \glossterm{range}.
+
+        \subsubsection{Targeted Abilities}\label{Targeted Abilities}
+            Some abilities allow you to choose specific targets.
+            There can be restrictions on the targets of the ability, such as ``a creature or object'' or ``a willing creature''.
+            These abilities are called \glossterm{targeted} abilities.
+
+        \subsubsection{Area Abilities}
+            Some abilities affect all valid targets within a given area.
+            There can be restrictions on the targets of the ability, such as ``all creatures'' or ``all enemies''.
+            However, you cannot individually choose to include or exclude specific targets.
+            These abilities are not \glossterm{targeted} abilities.
+
+        \subsubsection{Willing Targets}
+            Some abilities can only target willing creatures.
+            Creatures choose to be considered willing when abilities choose their targets.
+            If a creature chose to be willing at the time when the ability targeted it, the ability will affect that creature even if it decides to be unwilling after that step.
+
+        \subsubsection{Invalid Targets}
+            % clarify timing
+            You can always attempt to use an ability on an invalid target.
+            If the target is still invalid when the ability resolves, the ability automatically fails and has no effect on the target.
+            A spell that fails in this way is \glossterm{miscast}.
+
+    \subsection{Range}\label{Range}
+        Many abilities can only affect targets or areas within a given \glossterm{range} of you.
+        For abilities that affect specific targets, all targets must be within the range.
+        For abilities that affect an area within a range, the area's \glossterm{point of origin} must within the range (see \pcref{Point of Origin}).
+        There are four common ranges: \rngclose, \rngmed, \rnglong, and \rngext.
+        Unless otherwise noted, all abilities with a range require both \glossterm{line of sight} and \glossterm{line of effect} to the point of origin or to all targets.
+
+    \subsection{Line of Sight}\label{Line of Sight}
+        Almost all abilities, including \glossterm{strikes}, must have \glossterm{line of sight} to target creatures or objects.
+        Unless otherwise noted in an ability's description, you cannot target a creature, object, or location that you do not have line of effect to.
+
+        A line of sight is a straight, unblocked path between you and a target.
+        To check if you have line of sight, find a path from any corner of one \glossterm{square} within your \glossterm{space} to any two corners of one \glossterm{square} within the \glossterm{space} of your target.
+        If those lines are not blocked by any obstacles that impede sight, you have line of sight to your target.
+
+    \subsection{Line of Effect}\label{Line of Effect}
+
+        Almost all abilities, including \glossterm{strikes}, must have a \glossterm{line of effect} to function.
+        Unless otherwise noted in an ability's description, you cannot target a creature, object, or location that you do not have line of effect to.
+        In addition, spells that affect an area do not affect targets that the spell does not have line of effect to.
+
+        A line of effect is a straight, unblocked path between you and a target.
+        It is identified in the same way as \glossterm{line of sight}, except that it is blocked by physical obstacles instead of obstacles that block sight.
+        For example, a pane of glass would block line of effect, but not line of sight.
+
+        \subsubsection{Areas}
+            For the purpose of abilities that affect areas, line of effect to a particular target is measured from the ability's \glossterm{point of origin}.
+            You cannot declare a point of origin for an ability that you do not have line of effect to.
+
+        \subsubsection{Destroying Barriers}\label{Destroying Barriers}
+            Some abilities deal damage to both creatures and objects.
+            If a physical barrier is \glossterm{broken} by an ability, that barrier does not affect the ability's line of effect.
+            For example, a thin curtain of silk normally blocks line of effect.
+            However, a spell that destroyed the curtain would have its full effect on everything behind the curtain.
+
+        \subsubsection{Inside Creatures}
+            Creatures block line of effect to the inside of their own bodies.
+            As a result, you cannot cast a spell that takes effect inside a creature unless you are also inside the creature.
+            This restriction applies even if there is no physical barrier to the inside of the creature.
+            You cannot place \glossterm{point of origin} for an area inside a creature's mouth, even if the creature has its mouth open at the time.
+
+    \subsection{Area}\label{Area}
+
+        Some abilities affect targets within an area.
+        All areas have an \glossterm{origin}, an area shape, a measurement of their size in feet, and an an \glossterm{area type}.
+
+    \subsubsection{Area Origin}
+
+        An area's \glossterm{origin} 
+
+        Most abilities with an area affect an area within a given range.
+        When you use one of these abilities, you choose one grid intersection within the ability's \glossterm{range}.
+        This location is the ability's \glossterm{origin}.
+
+        When you use an area that is based on a given creature or object, the ability's \glossterm{origin} is the creature or object you chose.
+
+        \subsubsection{Area Shape}
+
+            \parhead{Cone} A cone extends from the point of origin in a quarter-sphere, up to the given length.
+
+            \parhead{Cylinder} A cylinder extends out from the point of origin in a circle, up to the given radius.
+            Cylinders also have a specific height.
+            Unless otherwise specified, a cylinder's height is the same as its radius.
+            Cylinders ignore obstacles that partially block line of effect, as long as there is a path around the obstacle that lies entirely within the spell's area.
+
+            \parhead{Line} A line extends from the point of origin in a straight line, up to the given length.
+            Lines also have a specific width and height.
+            Unless otherwise specified, a line-shaped spell affects an area 5 feet wide and 5 feet high.
+            The affected squares are chosen such that they stay close to the chosen line as possible.
+            All squares affected by a line must be contiguous, so every square is adjacent to another affected square, disregarding diagonals.
+
+            \parhead{Sphere} A sphere extends from the point of origin in all directions.
+            Any spell which only specifies a radius for its area is sphere-shaped.
+
+            \parhead{Wall} A wall is like a line, except that it has no width.
+            Instead, it affects the boundary between squares.
+            Walls can also be shapeable.
+
+            Walls can normally be created within occupied squares, but not within solid objects.
+            Some walls are called solid walls, and cannot be created within occupied squares.
+
+            \parhead{Specific Shapes} Some spells specify a series of volumes that make up the area of the spell.
+            Most commonly, the volumes are cubes.
+            You may arrange the volumes as you want, with the restriction that each volume in the spell's area must be adjacent to one other volume in the spell's area.
+
+        \subsubsection{Area Size}
+
+            The area affected by many spells falls into one of three sizes.
+            Each size defines the extent to which the spell extends out from its origin, whether as a radius or as a length.
+            Some spells have specific sizes, as given in the spell description.
+
+            \parhead{Small} Small spells extend 10 feet from their point of origin.
+            \parhead{Medium} Medium spells extend 20 feet from their point of origin.
+            \parhead{Large} Large spells extend 50 feet from their point of origin.
+
+        \subsubsection{Area Types}\label{Area Types}
+
+            \parhead{Burst} A burst spell has an immediate effect on all valid targets within an area.
+
+            \parhead{Emanation} An emanation spell has effects within an area for the duration of the spell.
+            It emanates from a specific creature or object, rather than a location.
+            If that creature or object moves, the emanation moves with it.
+
+            \parhead{Zone} A zone spell has effects within an area for the duration of the spell.
+            Unless otherwise noted, it does not move after being created.
+
+
+        When casting an area spell, you select the point where the spell originates.
+        The point of origin of a spell is always a grid intersection.
+        When determining whether a given creature is within the area of a spell, count out the distance from the point of origin in squares just as you do when moving a character or when determining the range for a ranged attack.
+        The only difference is that instead of counting from the center of one square to the center of the next, you count from intersection to intersection.
+
+        You can freely decrease a spell's area, provided that you decrease it uniformly across all of the spell's dimensions.
+        For example, you can cast a \spell{fireball} that affects a 5 foot radius if you choose to do so, but you can't cast a \spell{fireball} with any shape other than a sphere.
+
+        You can count diagonally across a square, but remember that every second diagonal counts as 2 squares of distance.
+        If the far edge of a square is within the spell's area, anything within that square is within the spell's area.
+        If the spell's area only touches the near edge of a square, however, anything within that square is unaffected by the spell.
+
+    \subsection{Ability Durations}
+
+        An ability's duration determines how long its effect lasts.
+        Abilities can have one of several different kinds of durations.
+
+        \subsection{Conditions}\label{Conditions}
+            Many abilities impose \glossterm{conditions} on their targets.
+            A condition lasts until it is removed.
+            You can remove a condition by taking a \glossterm{short rest} or using the \textit{recover} or \textit{desperate recovery} abilities (see \pcref{Special Combat Abilities}).
+            There are several other abilities that can also remove conditions.
+
+        \subsection{Attunement}\label{Attunement}
+            Many abilities last as long as you \glossterm{attune} to them.
+            As long as you are attuned to an ability, you cannot regain the \glossterm{action point} spent to use that ability.
+            If the ability does not normally require spending an action point to use, you can spend an action point to attune to it.
+            That spent action point still counts against the number of action points you recover with a \glossterm{short rest} or \glossterm{long rest}.
+            You must release your attunement to abilities before beginning to rest in order to recover the spent action points.
+            Attuning to multiple abilities can prevent you from regaining any action points when you rest.
+
+            You can choose to stop attuning to an ability as a \glossterm{free action}.
+            If you do, the ability ends, and you can regain the action point spent to use it normally.
+
+            Attuned abilities continue to work across any distance, but not across planar boundaries.
+            At the end of each round, your attunement to all abilities active on a different plane than your current plane ends.
+            Planar travel that does not last a full round, such as teleportation, does not interrupt your attunement.
+
+            \parhead{Multiple Attunement}\label{Multiple Attunement}
+                Unless otherwise noted, you can only attune to one activation of a particular ability at once.
+                If you use the ability again, the effect of the previous use of the ability immediately ends.
+                Minor variations of a single ability are considered to be the same ability for this purpose.
+                Applying different \glossterm{augments} to a spell or subspell does not allow you to attune to it more than once.
+                However, you can attune to a spell and any number of different \glossterm{subspells} from that spell.
+
+                Some abilities allow you to attune to multiple activations of the same ability at once.
+                Attuning to an additional activation of an ability that allows multiple attunement does not cause the effects of previous activations to end.
+
+            \parhead{Shared Attunement}\label{Shared Attunement}
+                Some abilities also require the targets of the ability to spend action points to gain the ability's effects.
+                A shared attunement ability lasts as long as the creature using the ability and all targets of the ability \glossterm{attune} to it.
+                If you target yourself with a shared attunement ability, you only need to spend one action point, not two.
+
+        \subsection{Sustained Abilities}\label{Sustained Abilities}
+            Some abilities last as long as you take an action to sustain them each round.
+            The type of action required is always specified in the ability.
+            At the end of each round, the ability is dismissed unless you used the ability that round or took the action to sustain the ability that round.
+            Sustaining spells does not take concentration, and cannot be disrupted in the same way that casting spells can.
+
+            Taking an action to sustain an ability only allows you to sustain a single use of that ability.
+            However, you can sustain multiple separate abilities at once if you have available actions.
+
+            You can only sustain an ability for up to 5 minutes.
+            After that time, the ability's effect is \glossterm{dismissed}.
+
+        \subsection{Permanent}
+            Some abilities last permanently.
+            Such abilities never expire on their own, but can be \glossterm{dismissed} or removed by other abilities appropriately.
+
+        % Is this necessary?
+        % Should this clarify interactions with bursts/zones/emanations?
+        \subsection{Targeting and Durations}
+            If an ability targets creatures or objects directly, the effects travel with the targets for the ability's duration.
+            If an ability creates or summons objects or creatures, they last for the duration of the ability, and are capable of moving outside the ability's initial range.
+            Such effects can sometimes be destroyed prior to when their duration ends.
+
+    \subsection{Combining Effects}
+        Abilities do not generally affect the way another abilities function.
+        However, sometimes multiple effects can be in conflict on a creature.
+        If one effect makes another effect irrelevant or impossible, the latter effect is ignored.
+        If two effects both conflict with each other, the most recent effect takes precedence, and the other is ignored.
+        Unless otherwise noted, two different uses of the same ability are always considered to be conflicting with each other.
+
+        All abilities will still have as much of their effect as possible.
+        It is possible for an ability to be partially effective in this way.
+
+    \subsection{Suppressing Abilities}\label{Suppressing Abilities}
+        Abilities can be \glossterm{suppressed} by effects such as the \spell{thaumaturgy} spell.
+        While an ability is suppressed, it has no effect.
+        However, if it stops being suppressed, its effects continue as if they had not been interrupted.
+
+    \subsection{Ability Tags}\label{Ability Tags}
+
+        Many spells and other abilities have tags that describe the ability's nature.
+        Many of these tags have no game effect by themselves, but they govern how the ability interacts with spells, other abilities, unusual creatures, and so on.
+        They are described below.
+
+        \parhead{Acid} Acid abilities use corrosive acid.
+        They do not function underwater.
+
+        \parhead{Air} Air abilities control the surrounding air.
+        They do not function in environments without air.
+
+        \parhead{Auditory} Auditory abilities use sound to cause their effects.
+        Creatures and objects that cannot hear the effect are immune to it.
+
+        \parhead{Cold} Cold abilities use cold \glossterm{energy}. It is possible to freeze liquids and perform similar feats with cold abilities.
+
+        \parhead{Compulsion} Compulsion abilities forcibly alter a creature's actions, but do not necessarily affect its opinions or personality.
+        All Compulsion abilities are also \glossterm{Mind} abilities.
+
+        \parhead{Creation} Creation abilities create permanent physical objects.
+        Objects created with Creation abilities are identical to objects created through more mundane means.
+        Unless otherwise specified, magical Creation abilities do not allow \glossterm{magic resistance}.
+
+        \parhead{Curse} Curse abilities lay supernatural curses on their targets.
+        They cannot be \glossterm{dismissed}, but can be removed with the \spell{break enchantment} or \spell{remove curse} spells.
+
+        \parhead{Death} Death abilities only affect living creatures.
+        A creature killed by a death effect cannot be returned to life by \spell{resurrection} or similar abilities that depend on an intact corpse.
+
+        \parhead{Emotion} Emotion abilities alter a creature's opinons or personality, but do not necessarily affect their actions.
+        All Emotion abilities are also Mind abilities.
+
+        \parhead{Detection} Detection abilities reveal magical auras or information within an area.
+        They can penetrate up to 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.
+        For its ability to penetrate other materials, use the most similar substance from the list above.
+
+        \parhead{Earth} Earth abilities manipulate the ground or other forms of dirt.
+        They do not function if no earth is accessible.
+
+        \parhead{Electricity} Electricity abilities use electrical \glossterm{energy}.
+
+        \parhead{Figment} Figment abilities create light, sound, or other sensations.
+        Figments cannot remove real sensations present in their area, but they can add additional sensations.
+        You can only create figments of sensations you understand; for example, you cannot create a figment which speaks in a language you do not understand.
+        \par A figment's physical defenses are equal to 0.
+
+        \parhead{Fire} Fire abilities use fire \glossterm{energy}. They do not function underwater.
+        \par Fire abilities provide light equivalent to a torch for their duration.
+        Abilities without a duration create a brief burst of torchlight.
+
+        \parhead{Flesh} Flesh abilities manipulate the physical flesh of creatures.
+        They have no effect on creatures without flesh, such as ghosts or oozes.
+
+        \parhead{Glamer} Glamer abilities alter sensations present in an area or on a target.
+        They can be used to change how something real appears, or to remove it from perception entirely.
+
+        \parhead{Life} Life abilities attack, restore, or manipulate the life force of creatures.
+        They have no effect on objects and creatures that are not alive.
+        \par Undead creatures are affected in a special way by Life abilities.
+        In addition to any differences given in the effect's description, life damage instead heals undead creatures, and healing instead deals life damage.
+
+        \parhead{Light} Light abilities create visible light.
+        Their area is blocked by barriers that prevent sight, even if the barriers would not otherwise block effect areas.
+        Similarly, their area of effect is not blocked by barriers which do not prevent sight, even if the barriers would normally block effect areas.
+
+        \parhead{Manifestation} Manifestation abilities create temporary constructs formed from raw magical energy.
+        Objects and creatures created with manifestation abilities seem real on the surface, but they have no internal structure.
+        When an object or creature created by a Manifestation ability is destroyed or killed, or when the duration of the ability that created it ends, it disappears without a trace.
+        Unlike \glossterm{Creation} abilities, magical Manifestation abilities allow \glossterm{magic resistance}.
+
+        \parhead{Mind} Mind abilities manipulate the minds of creatures.
+        They have no effect on objects or creatures without minds.
+
+        \parhead{Mystic} Mystic abilities alter or destroy magic itself.
+        They do not allow \glossterm{magic resistance}.
+
+        \parhead{Physical} Physical abilities manipulate physical objects rather than having a direct magical effect on their targets.
+        They do not allow \glossterm{magic resistance}.
+        Some abilities are not themselves Physical, but have Physical effects, such as \spell{mighty throw}.
+
+        \parhead{Planar} Planar abilities transport matter or information between planes.
+
+        \parhead{Poison} Poison abilities use substances to weaken the foe's body.
+
+        \parhead{Scrying} Scrying abilities create one or more invisible magical sensors that send you information.
+        Unless otherwise noted, the sensor created has the same powers of sensory acuity that you possess.
+        This includes the effect of any abilities which target you personally, such as spells to increase your visual acuity, but not abilities which affect an area around you.
+        However, the sensor is treated as a separate, independent sensory organ, and it functions normally even if you have been blinded, deafened, or otherwise suffered sensory impairment.
+        \par Any creature trained in Spellcraft can notice the sensor by making a DR 20 Spellcraft check.
+        The sensor can be dismissed as if it were an active spell.
+        You cannot create a sensor in a location with lead sheeting between you and the location, and you sense that the effect is blocked in this way.
+        \\
+
+        \parhead{Shaping} Shaping abilities change the shape or structure of their targets.
+
+        \parhead{Shielding} Shielding abilities improve the defenses of their targets.
+
+        \parhead{Sizing} Sizing abilities alter the size of their targets.
+        Unless otherwise stated, multiple effects which increase or decrease size do not stack.
+        Opposing size modifications cancel each other out on a one for one basis, and any remaining effects occur normally.
+
+        \parhead{Sonic} Sonic abilities use sonic \glossterm{energy}.
+
+        \parhead{Speech} Speech abilities use words to achieve their ends.
+        You must specify a language when using a Speech effect, and the language must be one you know (or have memorized the correct words to say). They have no effect on objects or creatures that do not understand the chosen language.
+
+        \parhead{Subtle} Subtle abilities have no visual or otherwise perceivable manifestation.
+        Creatures affected by Subtle abilities do not generally know that they are being magically influenced.
+        Subtle spells can still be identified with the Spellcraft skill (see \pcref{Spellcraft}), but the DR is 10 higher than normal.
+
+        \parhead{Swift} Swift abilities take effect before other abilities used during the same phase.
+        For details, see \pcref{Swift Abilities}.
+
+        \parhead{Telekinesis} Telekinesis abilities use telekinesis, the power of the mind.
+        Many telekinesis abilities create fields of solid telekinetic force.
+
+        \parhead{Teleportation} Teleportation abilities move creature or objects through the Astral Plane to a distant destination.
+        A teleported creature can bring along equipment and held objects as long as their weight does not exceed the creature's maximum load (see \tref{Weight Limits}). Any excess items are left behind, in order of their distance from the creature's body.
+
+        \parhead{Temporal} Temporal abilities alter the flow of time.
+
+        \parhead{Trap} Trap abilities do not have their full effect immediately.
+        All Trap abilities specify a condition or circumstance, such as opening a door, which triggers the full effect of the ability.
+        \par Unless otherwise noted, active Trap effects can be detected with the Awareness skill and disabled with the Devices skill before their effect triggers (see \pcref{Awareness}, and \pcref{Devices}).
+        The DR to detect and disable the effect is equal to 20 \add the \glossterm{power} of the effect.
+        \par No more than one Trap ability can be placed on the same object or in the same area.
+        Only the first trap placed has any effect.
+        It must be dismissed before any new traps can be placed.
+
+        \parhead{Visual} Visual abilities use visible objects or forces to cause their effects.
+        Creatures and objects that cannot see the effect are immune to it.
+
+        \parhead{Water} Water abilities use water to cause their effects.
+
+    % TODO: different section?
+    \subsection{Damage Types}\label{Damage Types}
+        Abilities can deal many kinds of damage.
+        The damage types are listed below, along with any special properties that type of damage has.
+
+        \begin{dtable}
+            \lcaption{Damage Types}
+            \begin{dtabularx}{\columnwidth}{l X}
+                \tb{Name} & \tb{Special Effects} \\
+                \bottomrule
+                Acid & Effective against many objects \\
+                Bludgeoning & A type of physical damage \\
+                Cold & At type of energy damage \\
+                Divine & \\
+                Electricity & A type of energy damage \\
+                Fire & A type of energy damage \\
+                Life & Heals undead creatures instead of damaging them \\
+                Physical & \\
+                Poison & \\
+                Piercing & A type of physical damage \\
+                Slashing & A type of physical damage \\
+                Sonic & Effective against many objects, a type of energy damage \\
+            \end{dtabularx}
+        \end{dtable}
+
+    \subsection{Magical and Physical Abilities}
+
+        There are two types of abilities: magical abilities and physical abilities.
+
+        \parhead{Magical Abilities}\label{Magical Abilities} A magical ability is an ability that has no physical explanation.
+        Examples include spells, a medusa's petrifying gaze, and a cleric's domain invocations.
+        Magical attacks often target Fortitude and Mental defenses, and can be resisted by \glossterm{magic resistance}.
+        Abilities that are magical in nature are indicated with a [Mag] tag.
+        Abilities that are not magical are \glossterm{mundane}.
+
+        Many abilities which fundamentally concern magical effects are not themselves magical in nature.
+        This is most commmon with abilities that represent choices the character makes or knowledge the character has.
+        For example, although all spells are magical abilities, the ability to cast spells is not itself a magical ability.
+        It is simply knowledge that the creature possesses.
+        Of course, that knowledge would be useless if the creature had no access to magic.
+
+        \parhead{Physical Abilities}\label{Physical Abilities} A physical ability has a tangible component and some form of natural explanation.
+        Examples include weapon attacks, a dragon's breath weapon, and a barbarian's rage.
+        Physical attacks often target Armor and Reflex defenses.
+        Unless otherwise indicated, all abilities are physical in nature.
+        Abilities that are not physical are \glossterm{magical}.
+
 \section{Universal Abilities}
     All creatures can use the following abilities.
 
@@ -1068,46 +1485,18 @@ It defines how attributes work and explains how to make physical attacks in comb
         Subdual damage works in the same way as normal damage, except that it cannot turn into \glossterm{vital damage}.
         Instead, if you deal subdual damage to a \glossterm{wounded} creature, it immediately falls unconscious.
 
+
 % TODO: This is a bad name; organize these better
 \section{Special Rules}
 
     \subsection{Power}\label{Power}
         Many abilities have a \glossterm{power} which represents the overall strength of the ability.
+        This usually determines your \glossterm{accuracy} with the ability and the ability's \glossterm{standard damage}.
         For example, your \glossterm{power} with \glossterm{spells} is called your \glossterm{spellpower}.
         Your \glossterm{power} with an ability usually determines your \glossterm{accuracy} and \glossterm{damage} with that ability, if applicable.
 
         Most abilities explicitly specify how to calculate their power.
-        If an ability does not have an explicitly stated power, use your level as its power when necessary.
-
-    \subsection{Attunement}\label{Attunement}
-        Many abilities last as long as you \glossterm{attune} to them.
-        As long as you are attuned to an ability, you cannot regain the \glossterm{action point} spent to use that ability.
-        If the ability does not normally require spending an action point to use, you can spend an action point to attune to it.
-        That spent action point still counts against the number of action points you recover with a \glossterm{short rest} or \glossterm{long rest}.
-        You must release your attunement to abilities before beginning to rest in order to recover the spent action points.
-        Attuning to multiple abilities can prevent you from regaining any action points when you rest.
-
-        You can choose to stop attuning to an ability as a \glossterm{free action}.
-        If you do, the ability ends, and you can regain the action point spent to use it normally.
-
-        Attuned abilities continue to work across any distance, but not across planar boundaries.
-        At the end of each round, your attunement to all abilities active on a different plane than your current plane ends.
-        Planar travel that does not last a full round, such as teleportation, does not interrupt your attunement.
-
-        \subsubsection{Multiple Attunement}\label{Multiple Attunement}
-            Unless otherwise noted, you can only attune to one activation of a particular ability at once.
-            If you use the ability again, the effect of the previous use of the ability immediately ends.
-            Minor variations of a single ability are considered to be the same ability for this purpose.
-            Applying different \glossterm{augments} to a spell or subspell does not allow you to attune to it more than once.
-            However, you can attune to a spell and any number of different \glossterm{subspells} from that spell.
-
-            Some abilities allow you to attune to multiple activations of the same ability at once.
-            Attuning to an additional activation of an ability that allows multiple attunement does not cause the effects of previous activations to end.
-
-        \subsubsection{Shared Attunement}\label{Shared Attunement}
-            Some abilities also require the targets of the ability to spend action points to gain the ability's effects.
-            A shared attunement ability lasts as long as the creature using the ability and all targets of the ability \glossterm{attune} to it.
-            If you target yourself with a shared attunement ability, you only need to spend one action point, not two.
+        If an ability does not have an explicitly stated power, use your level as its power. 
 
     \subsection{Grappling}\label{Grappling}
         A grappled creature is physically struggling with at least one other creature.
@@ -1209,6 +1598,31 @@ It defines how attributes work and explains how to make physical attacks in comb
         This attack gains a \plus5 bonus for each round you hold your breath beyond your limit.
         If the result exceeds your Fortitude defense, you take \glossterm{vital damage} equal to the difference.
 
+    \subsection{Damage Reduction}\label{Damage Reduction}
+        Some abilities can give you \glossterm{damage reduction}.
+        Each \glossterm{round}, you ignore the first points of damage you would take.
+        Damage reduction always specifies an amount of damage it reduces.
+        Once it reduces that much damage, it stops functioning until the start of the next round.
+
+    \subsection{Magic Resistance}\label{Magic Resistance}
+        Some abilities can give you \glossterm{magic resistance}.
+        Magic resistance is an additional defense against \glossterm{magical} abilities such as spells.
+        To affect a creature that has magic resistance with a magical ability, you must make an additional attack against the creature's magic resistance.
+        Your accuracy is equal to your \glossterm{power} with the ability you using, such as your spellpower with spells.
+        If your attack result beats the creature's magic resistance, the ability works normally.
+        Otherwise, the ability has no effect on the creature.
+
+        Magic resistance does not prevent a magical ability from having its normal effect on other creatures or objects.
+        Magical abilities which do not directly affect targets, such as the \spell{summon monster} spell, do not allow magic resistance.
+        In addition, \glossterm{Mystic} and \glossterm{Physical} abilities do not allow magic resistance (see \pcref{Ability Tags}).
+
+        % Clarify how you know which abilities to allow through
+        Normally, creatures with magic resistance can choose to allow abilities through their resistance.
+        This choice is made when the ability targets the creature.
+        Some creatures cannot control their magic resistance, so an attack is always necessary to affect them.
+        This is specified in the description of the creature's magic resistance.
+
+    % TODO: Is this section necessary?
     \subsection{Ability Timing}
         % TODO: add more content here as necessary
         Some reactive abilities can be used at times where actions can't normally be taken.
