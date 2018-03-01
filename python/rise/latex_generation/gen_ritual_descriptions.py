@@ -121,7 +121,7 @@ def generate_rituals():
         name="Curse Water",
         base_level=1,
         # header=Header("description"),
-        effects=Effects('Bless Water', """
+        effects=Effects('Curse Water', """
             Choose one pint of unattended, nonmagical water within \\rngclose range.
             The target becomes unholy water.
             Unholy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck good outsider.

@@ -365,7 +365,7 @@ def generate_spells():
                 In addition, at the end of each \\glossterm<action phase> in subsequent rounds, the attack is repeated in that area.
             """),
             Subspell("Greater Raging River", 7, f"""
-                This subspell functions like the \\textit<dynamo> subspell, except that the spell gains the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Sustain> (standard) tag.
+                This subspell functions like the \\textit<raging river> subspell, except that the spell gains the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Sustain> (standard) tag.
             """),
             Subspell('Geyser', 3, """
                 Make a Spellpower vs. Fortitude attack against everything in a \\arealarge, 5 ft.\\ wide vertical line.
