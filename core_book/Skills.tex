@@ -65,6 +65,7 @@ This chapter describes each skill, including common uses for those skills.
                 Sleight of Hand   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & Dex              \\
                 Stealth           & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & C        & C        & \tdash   & \tdash   & Dex              \\
                 Craft             & \tdash   & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Int              \\
+                Deduction         & \tdash   & C        & C        & \tdash   & C        & C        & C        & C        & C        & C        & C        & Int              \\
                 Devices           & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & Int              \\
                 Disguise          & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & Int              \\
                 Heal              & \tdash   & C        & C        & \tdash   & \tdash   & C        & C        & C        & \tdash   & \tdash   & \tdash   & Int              \\
@@ -659,6 +660,52 @@ This chapter describes each skill, including common uses for those skills.
         \parhead{Bonus Tricks}\label{Bonus Tricks} Some trainers can teach creatures bonus tricks in addition to their normal maximum number of tricks known.
         Once a creature has learned a bonus trick, that trick may not be retrained into a different trick by any trainer without the same ability to grant bonus tricks.
         However, any trainer may untrain the trick.
+
+\newpage
+\skill{Deduction}{Int}
+    You can use the Deduction skill to make logical deductions based on evidence.
+    It includes both determining which facts and observations are relevant to use as evidence, and reaching conclusions based on that evidence.
+    However, this skill cannot protect you from coming to inaccurate conclusions if you rely on inaccurate or incomplete facts and observations.
+
+    \subsection{Analyze Evidence}
+        As a standard action, you can make a Deduction check to analyze evidence available to you and try to reach an accurate conclusion.
+        This includes both determining which evidence is relevant and deciding what that evidence proves.
+        Most deductions have two components: observations you make, and knowledge you have.
+        When you use this ability, you can decide to trust your own observations, your own knowledge, or both.
+
+        If you trust your own observations, and the deduction requires making observations, your Deduction modifier on the check is limited to be no greater than your modifier with the skill used to make observations.
+        This skill is typically Awareness or Sense Motive.
+        If you trust your own knowledge, and the deduction requires knowledge, your Deduction modifier on the check is limited to be no greater than twice your Knowledge modifier with any relevant knowledge.
+        If you trust both your observations and your knowledge, both limits apply.
+
+        Alternately, you can explicitly specify either the observations or knowledge your deduction is relying on.
+        For example, you could make a deduction based on information given to you by an ally.
+        If you do, your Deduction check is not limited, but your conclusions may be inaccurate if your assumptions are inaccurate.
+
+        The base DR for this check is 10.
+        This DR is modified depending on the difficulty of the deduction and the quality of the evidence available to you, as shown on \trefnp{Deduction DR Modifiers}.
+
+    \begin{dtable}
+        \lcaption{Deduction DR Modifiers}
+        \begin{dtabularx}{\columnwidth}{l X X}
+            \tb{Evidence Quality} & \tb{Example} & \tb{Modifier} \\
+            \bottomrule
+            No irrelevant or misleading evidence & Determining a historical truth by reading the relevant passage in a history book & \plus5 \\
+            Some evidence is irrelevant or misleading & Determining a historical truth by reading contemporary accounts & \plus0 \\
+            About half of the evidence is irrelevant or misleading & Determining a historical truth by reading eyewitness accounts & \minus5 \\
+            Almost all evidence is irrelevant or misleading & Determining a historical truth by reading military propaganda & \minus10\plus\fn{1} \\
+            All evidence is irrelevant or misleading & Determining a historical truth by reading a cookbook & \tdash\fn{2} \\
+
+            \tb{Complexity} & \tb{Example} & \tb{Modifier} \\
+            \bottomrule
+            Exceptionally simple logic using no more than one piece of evidence & The sun is out; therefore, it is daytime & \plus5 \\
+            Simple logic using one or two pieces of evidence & It is raining, and the cleric's clothes and boots are dry; therefore, he was not out in the rain & \plus0 \\
+            Moderately complex logic using at least three pieces of evidence & It is raining, the mage's clothes are wet but her boots are dry, she was observed stepping into the bar, and there are no tracks leading up to the door; therefore, she can probably fly & \minus5 \\
+            Exceptionally complex logic & A difficult logic puzzle & \minus10\plus \\
+        \end{dtabularx}
+        1. If there is an exceptionally large amount of irrelevant or misleading evidence relative to the amount of useful evidence, this penalty may be even larger.
+        2. It is impossible to make a correct deduction if there is no relevant and accurate evidence.
+    \end{dtable}
 
 \newpage
 \skill{Devices}{Int}
