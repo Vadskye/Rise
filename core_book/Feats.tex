@@ -177,7 +177,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[8]{Specialization} The bonus to Acrobatics increases to \plus4.
 
          % modifier at 10th: 12dex + 2mst + 2ft = 16
-        \ff[10]{Legendary Airwalker}[Mag] You can attempt to move on surfaces that cannot support your weight.
+        \ff[10]{Air Dancer}[Mag] You can attempt to move on surfaces that cannot support your weight.
         Surfaces that can support at least a quarter of your weight, such as thin tree branches and dense liquids, are DR 20.
         Surfaces that can support at least a tenth of your weight, such as water, are DR 25.
         Surfaces that can support at least a hundredth of your weight, such as tree leaves, are DR 30.
@@ -185,40 +185,45 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         Success means you move along the surface at half speed.
         Failure means you fall through the surface.
-        The DR increases by 2 for each consecutive round that you spend moving in this way.
+        The DR increases by 5 for each consecutive round that you spend moving in this way.
 
         \ff[12]{Greater Surface Tolerance} The reduction of DR modifiers for surface conditions increases to 5.
         This allows you to ignore almost all surface conditions when balancing.
 
-        \ff[14]{Rapid Airwalker} You can move at full speed with the \textit{legendary airwalker} ability.
+        \ff[14]{Rapid Air Dancer} You can move at full speed with your \textit{air dancer} ability.
 
         \ff[16]{Greater Specialization} The bonus to Acrobatics increases to \plus6.
 
-        \ff[18]{} 
+        \ff[18]{Persistent Air Dancer} For each round that you spend using your \textit{air dancer} ability, the DR increases by 2 instead of by 5.
     \end{feat}
 
     \begin{feat}{Agility}{Combat}
         \featpre Starting Dexterity of 2.
 
-        \ff[1]{Lightning Reflexes} You gain a \plus2 bonus to Reflex defense.
+        \ff[1]{Dodge Roll} You gain the \textit{dodge roll} ability.
+        \begin{ability}{Dodge Roll}[\glossterm{Swift}]
+            As a \glossterm{standard action}, you can use this ability.
+            If you do, you gain a \plus4 bonus to Armor and Reflex defenses until the end of the round.
+            In addition, you can move up to half your movement speed.
+            This movement resolves at the same time as normal actions during the current phase, rather than at the same time as other \glossterm{Swift} abilities resolve.
+        \end{ability}
 
-        \ff[2]{Dodge} At the start of each phase, you can choose a creature you can see.
-        You gain a \plus1 bonus to Armor defense against attacks by that target during that phase.
+        \ff[2]{Lightning Reflexes} You gain a \plus2 bonus to Reflex defense.
 
         \ff[4]{Rapid Reaction} You gain a \plus2 bonus to \glossterm{initiative} checks.
 
-        \ff[6]{} 
+        \ff[6]{Mobile Dodge} If you move at least ten feet during a single phase, you gain a \plus1 bonus to Armor defense until the end of the round.
+        Teleportation, being thrown, and other special movement effects do not grant you this bonus.
 
-        \ff[8]{Focused Dodge} You do not suffer \glossterm{overwhelm penalties} against attacks by the target of your \textit{dodge} ability.
-        In addition, when counting the number of creatures threatening you to determine your overwhelm penalties, you ignore that creature.
+        \ff[8]{Whirlwind Dodge} When you use your \textit{dodge roll} ability, you also do not suffer \glossterm{overwhelm penalties} until the end of the round.
 
         \ff[10]{Greater Rapid Reaction} The bonus to initiative from your \textit{rapid reaction} ability increases to \plus5.
 
         \ff[12]{Greater Lightning Reflexes} The bonus to Reflex defense from your \textit{lightning reflexes} ability increases to \plus4.
 
-        \ff[14]{Greater Dodge} The bonus to Armor defense from your \textit{dodge} ability increases to \plus2.
+        \ff[14]{Tumble} When you use your \textit{dodge roll} ability, you can move through space occupied by other creatures.
 
-        \ff[16]{Tumble} You can move through the space occupied by the target of your \textit{dodge} ability at half speed.
+        \ff[16]{Supreme Rapid Reaction} The bonus to initiative from your \textit{rapid reaction} ability increases to \plus10.
 
         \ff[18]{Evasion} Your \glossterm{overwhelm penalties} do not affect your Reflex defense.
     \end{feat}
