@@ -50,7 +50,7 @@ def aberrations():
                 The aboleth can learn and perform arcane rituals of up to 6th level.
             """),
         ],
-        speed="50 ft. swim",
+        speed='50 ft. swim',
     ))
 
     return '\n\n'.join(monsters)
@@ -327,6 +327,7 @@ def humanoids():
                 This effect lasts as long as the shouter sustains it as a standard action.
             """),
         ],
+        behavior='Attack lowest threat',
     ))
 
     goblin_stabber = Creature(
@@ -348,6 +349,7 @@ def humanoids():
                 If the target is defenseless, overwhelmed, or unaware, the damage becomes {goblin_stabber.weapon_damage(Weapon('shortsword')) + 2}.
             """),
         ],
+        behavior='Attack lowest threat',
     ))
 
     orc_chieftain = Creature(
@@ -846,7 +848,12 @@ def magical_beasts():
                 The thaumavore has \\glossterm<magic resistance> {thaumavore.level + 5}.
                 Whenever it resists an effect in this way, it heals hit points equal to twice the \\glossterm<power> of the effect.
             """),
+            passive_ability('Sense Magic', f"""
+                The thaumavore can sense the location of all sources of magic within 100 feet of it.
+                This includes magic items, attuned magical abilities, and so on.
+            """)
         ],
+        behavior='Attack highest threat that has a source of magic; if no souces of magic exist, attack highest threat',
     ))
 
     banehound = Creature(
@@ -1071,7 +1078,8 @@ def outsiders():
                 \\hit The target takes {arrowhawk.standard_damage()} electricity damage.
             """),
         ],
-        speed="60 ft. fly (good)",
+        speed='60 ft. fly (good)',
+        behavior='Attack lowest threat',
     ))
 
     bebelith = Creature(
