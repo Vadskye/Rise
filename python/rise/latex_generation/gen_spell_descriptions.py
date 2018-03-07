@@ -449,7 +449,7 @@ def generate_spells():
                 \\hit Each target has its emotions calmed.
                 The effects of all other \\glossterm<Emotion> abilities on that target are \\glossterm<suppressed>.
                 It cannot take violent actions (although it can defend itself) or do anything destructive.
-                If the target takes damage or feels threatened, this effect is \\glossterm<dismissed>.
+                If the target takes damage or feels that it is in danger, this effect is \\glossterm<dismissed>.
             """, tags=['Emotion', 'Mind', 'Sustain (standard)']),
             Subspell("Enrage", 4, """
                 Make a Spellpower vs. Mental attack against a creature within \\rngmed range.
