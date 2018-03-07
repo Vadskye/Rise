@@ -445,7 +445,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         \begin{dtable*}
             \lcaption{Size in Combat}
             \begin{dtabularx}{\textwidth}{l l l l p{4em} p{4.5em} p{3em} p{5.5em} X}
-                \tb{Size} & \tb{Space}\fn{1} & \tb{Reach}\fn{1} & \tb{Base Speed} & \tb{Reflex Modifier} & \tb{Damage Modifier}\fn{2} & \tb{Threat Value}\fn{3} & \tb{Overwhelm Resistance}\fn{4} & \tb{Example Creature} \\
+                \tb{Size} & \tb{Space}\fn{1} & \tb{Reach}\fn{1} & \tb{Base Speed} & \tb{Reflex Modifier} & \tb{Damage Modifier}\fn{2} & \tb{Overwhelm Value}\fn{3} & \tb{Overwhelm Resistance}\fn{4} & \tb{Example Creature} \\
                 \bottomrule
                 Fine              & 1/2 ft.    & 0          & 10 ft. & \plus8  & \minus4d & 1/4 & \tdash & Fly                      \\
                 Diminutive        & 1 ft.      & 0          & 15 ft. & \plus6  & \minus3d & 1/2 & \tdash & Toad                     \\
@@ -463,7 +463,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             \end{dtabularx}
             1 Creatures can vary in space and reach.  These are simply typical values.  \\
             2. This modifier applies to \glossterm{strike damage}. \\
-            3. See \pcref{Threat Value}. \\
+            3. See \pcref{Overwhelm Value}. \\
             4. See \pcref{Overwhelm Resistance}. \\
         \end{dtable*}
 
@@ -529,34 +529,34 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \subsubsection{Overwhelm}\label{Overwhelm}
             When you are being attacked by multiple foes at once, or by a massive foe that can attack from many directions, you are less able to defend yourself.
-            You take penalties to your \glossterm{physical defenses} equal to half the combined \glossterm{threat value} of all creatures threatening you, rounded down.
+            You take penalties to your \glossterm{physical defenses} equal to half the combined \glossterm{overwhelm value} of all creatures threatening you, rounded down.
             Among equal sized creatures, this usually means you take a penalty equal to half the number of creatures threatening you.
             These penalties are called \glossterm{overwhelm penalties}.
             If you are suffering at least a \minus1 overwhelm penalty, you are \glossterm{overwhelmed}.
 
-            \parhead{Threat Value}\label{Threat Value} Your \glossterm{threat value} determines how much of a penalty you impose on creatures you threaten.
-            For example, Medium creatures have a threat value of 1, and larger creatures have a higher threat value (see \pcref{Size in Combat}).
-            Some abilities can affect your threat value.
+            \parhead{Overwhelm Value}\label{Overwhelm Value} Your \glossterm{overwhelm value} affects how much of a penalty you impose on creatures you threaten, as described above.
+            For example, Medium creatures have an overwhelm value of 1, and larger creatures have a higher overwhelm value (see \pcref{Size in Combat}).
+            Some abilities can affect your overwhelm value.
 
-            Some creatures have fractional threat values.
-            For example, a Tiny creature has a threat value of 1/2.
-            Fractional threat values are not rounded down until after being added with the threat values from other threatening creatures.
-            For example, if five Tiny creatures were threatening a single creature, their combined threat value would be 2 and 1/2.
+            Some creatures have fractional overwhelm values.
+            For example, a Tiny creature has a overwhelm value of 1/2.
+            Fractional overwhelm values are not rounded down until after being added with the overwhelm values from other threatening creatures.
+            For example, if five Tiny creatures were threatening a single creature, their combined overwhelm value would be 2 and 1/2.
             That value is rounded down to 2 when determining whether the creature is overwhelmed, and how large that creature's overwhelm penalties are.
 
-            If your \glossterm{threat value} would be reduced below 1, special rules apply.
-            The first -1 penalty reduces your threat value to 1/2.
-            An additional -1 penalty reduces your threat value to 1/4.
-            Your threat value cannot be reduced below 1/4.
+            If your \glossterm{overwhelm value} would be reduced below 1, special rules apply.
+            The first -1 penalty reduces your overwhelm value to 1/2.
+            An additional -1 penalty reduces your overwhelm value to 1/4.
+            Your overwhelm value cannot be reduced below 1/4.
 
             \parhead{Overwhelm Resistance}\label{Overwhelm Resistance} Some abilities grant \glossterm{overwhelm resistance}.
             For example, Large and larger creatures automatically gain overwhelm resistance (see \pcref{Size in Combat}).
-            A creature with overwhelm resistance reduces the \glossterm{threat value} of all creatures threatening it by an amount equal to its overwhelm resistance.
+            A creature with overwhelm resistance reduces the \glossterm{overwhelm value} of all creatures threatening it by an amount equal to its overwhelm resistance.
             Some abilities can increase or decrease overwhelm resistance, such as the \spell{boon of many eyes} subspell.
             Creatures without overwhelm resistance are considered to have an overwhelm resistance of 0.
 
             For example, Felix the fighter has an \glossterm{overwhelm resistance} of 1.
-            If he was \glossterm{threatened} by a giant with a \glossterm{threat value} of 2, he would reduce the giant's threat value to 1.
+            If he was \glossterm{threatened} by a giant with a \glossterm{overwhelm value} of 2, he would reduce the giant's overwhelm value to 1.
             As a result, Felix would not be overwhelmed.
 
             \parhead{Ignoring Attackers} At the start of each phase, you can choose to ignore up to one creature threatening you.
