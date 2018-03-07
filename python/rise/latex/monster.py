@@ -5,6 +5,7 @@ def get_latex_from_creature(
         creature,
         actions=None,
         active_abilities=None,
+        behavior=None,
         immunities=None,
         passive_abilities=None,
         resistances=None,
@@ -38,6 +39,7 @@ def get_latex_from_creature(
         # extra args
         actions=actions,
         active_abilities=active_abilities,
+        behavior=behavior,
         immunities=immunities,
         passive_abilities=passive_abilities,
         resistances=resistances,
@@ -63,6 +65,7 @@ def get_latex(
         action_points=None,
         actions=None,
         active_abilities=None,
+        behavior=None,
         challenge_rating=1,
         immunities=None,
         key_attribute=None,
@@ -74,6 +77,7 @@ def get_latex(
         speed=30,
         reach=5,
 ):
+    behavior = behavior or 'Attack highest threat'
     return join(
         f"""
             \\begin<monsection>{name_suffix_text(name_suffix)}<{name}><{level}>[{challenge_rating}]
@@ -99,6 +103,7 @@ def get_latex(
                             if actions or actions_text(challenge_rating)
                             else ""
                         }
+                        \\pari \\textbf<Behavior> {behavior}
                     \\end<spelltargetinginfo>
                 \\end<spellcontent>
 
