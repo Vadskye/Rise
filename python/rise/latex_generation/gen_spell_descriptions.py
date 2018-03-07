@@ -48,7 +48,7 @@ def generate_spells():
             """, tags=['Air']),
             Subspell('Windblade', 3, """
                 Choose a willing creature within \\rngclose range.
-                Melee weapons wielded by the target gain an additional ten feet of reach, extending the target's threatened area.
+                Melee weapons wielded by the target gain an additional ten feet of \\glossterm<reach>.
                 This has no effect on ranged attacks the target makes.
 
                 You can cast this subspell as a \\glossterm<minor action>.
