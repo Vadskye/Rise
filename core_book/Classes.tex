@@ -122,6 +122,7 @@ This choice determines a great deal about your character's abilities.
             If you do, you gain the following benefits and drawbacks:
             \begin{itemize}
                 \item You gain a \plus1d bonus to \glossterm{strike damage}.
+                \item You gain a \plus2 bonus to \glossterm{threat}.
                 \item You are unable to take any action that requires patience or concentration, such as casting spells.
                 \item At the end of each round, if you did not attack a creature or object that round, you take \glossterm{subdual damage} equal to your level.
                     This damage ignores damage reduction and any similar abilities.
@@ -1229,16 +1230,16 @@ This choice determines a great deal about your character's abilities.
             \nth{1}     & Armor expertise, discipline, martial exertion
             \\ \nth{2}  & Weapon focus
             \\ \nth{3}  & Martial training
-            \\ \nth{4}  & Disciplined defense
+            \\ \nth{4}  & Disciplined threat
             \\ \nth{5}  & Greater armor expertise
             \\ \nth{6}  & Martial exertion
             \\ \nth{7}  & Greater discipline
             \\ \nth{8}  & Weapon master
             \\ \nth{9}  & Martial training
-            \\ \nth{10} & Rapid warrior
+            \\ \nth{10} & Disciplined defense
             \\ \nth{11} & Supreme armor expertise
             \\ \nth{12} & Martial exertion
-            \\ \nth{13} & Supreme discipline
+            \\ \nth{13} & Greater disciplined threat
             \\ \nth{14} & Greater weapon focus
             \\ \nth{15} & Exertion expertise
             \\ \nth{16} & Greater disciplined defense
@@ -1299,14 +1300,13 @@ This choice determines a great deal about your character's abilities.
                 At 18th level, the accuracy bonus increases to \plus5.
             \end{ability}
 
-            \begin{ability}{Challenge}[\glossterm{Mind}]
+            \begin{ability}{Challenge}[\glossterm{Attune}]
                 Make a \glossterm{strike}.
-                In addition to the strike's normal effects, you also compare the attack result against the target's Mental defense.
-                \hit As a \glossterm{condition}, the target suffers a \minus3 penalty to accuracy on all attacks that do not include you as a target.
-                This condition is removed if you are \glossterm{defeated}.
-                \crit As above, except that the penalty is increased to \minus6.
+                % TODO: figure out how to deal with ``so this one time I hit a guy'' problem
+                If the strike hits, you gain a \plus4 bonus to \glossterm{threat} against all creatures aware of the attack.
+                If it misses, this bonus is decreased to \plus2.
 
-                At 6th level, you gain a \plus1 bonus to accuracy on the strike.
+                At 6th level, you gain a \plus1 bonus to accuracy with the strike.
                 At 12th level, the accuracy bonus increases to \plus2.
                 At 18th level, the accuracy bonus increases to \plus3.
             \end{ability}
@@ -1485,20 +1485,22 @@ This choice determines a great deal about your character's abilities.
             If you do, remove one \glossterm{condition} affecting you.
         \end{ability}
 
-        \cf{Ftr}[4]{Disciplined Defense}
-        You gain a \plus1 bonus to Armor defense.
+        \cf{Ftr}[4]{Disciplined Threat}
+        You know how to control your actions to appear more or less threatening, as you choose.
+        As a \glossterm{minor action}, you can choose to enter a threatening stance, enter a nonthreatening stance, or act normally.
+        If you enter a threatening stance, you gain a \plus2 bonus to your \glossterm{threat}.
+        If you enter a nonthreatening stance, you take a \minus2 penalty to your \glossterm{threat}.
 
         \cf{Ftr}[7]{Greater Discipline}
         Your \textit{discipline} ability gains the \glossterm{Swift} tag, allowing it to resolve before other actions in the same phase.
         This means that if you remove a condition with that ability, the penalties from the condition do not affect your attacks or defenses during the same phase.
 
-        \cf{Ftr}[10]{Rapid Warrior}
-        If you use only \glossterm{mundane} abilities in a given round, you can take an additional \glossterm{minor action} that round.
-        After using this ability in a round, you are unable to use any \glossterm{magical} abilities until the next round.
-        This does not prevent you from benefiting from magical abilities that do not have to be activated.
+        \cf{Ftr}[10]{Disciplined Defense}
+        You gain a \plus1 bonus to Armor defense.
 
-        \cf{Ftr}[13]{Supreme Discipline}
-        When you use the \textit{discipline} ability, you can remove an additional condition.
+        \cf{Ftr}[13]{Greater Disciplined Threat}
+        You gain more control over how threatening you appear.
+        When you use your \textit{disciplined threat} ability, you can change your threat by any amount, up to a maximum bonus of \plus4 and a maximum penalty of \minus4.
 
         \cf{Ftr}[16]{Greater Disciplined Defense}
         The defense bonus from your \textit{disciplined defense} ability increases to \plus2.
@@ -2014,23 +2016,23 @@ This choice determines a great deal about your character's abilities.
             \tb{Level} & \tb{Spells} & \tb{Abilities} \\
             \bottomrule
             \nth{1}     & 2 & Lay on hands, smite, spells
-            \\ \nth{2}  & 2 & Unfaltering warrior
+            \\ \nth{2}  & 2 & Unfaltering champion
             \\ \nth{3}  & 2 & Cleansing touch
             \\ \nth{4}  & 2 & Zealous offense
             \\ \nth{5}  & 2 & Aligned aura
-            \\ \nth{6}  & 2 & Augments
+            \\ \nth{6}  & 2 & Augments, unfaltering zeal
             \\ \nth{7}  & 2 & Unbending devotion
-            \\ \nth{8}  & 3 & Unfaltering zeal
+            \\ \nth{8}  & 3 & Pass judgment
             \\ \nth{9}  & 3 & Expanded aura
-            \\ \nth{10} & 3 & Augment, pass judgment
+            \\ \nth{10} & 3 & Augment, greater unfaltering champion
             \\ \nth{11} & 3 & Greater lay on hands
             \\ \nth{12} & 3 & Greater smite
             \\ \nth{13} & 3 & Greater aligned aura
-            \\ \nth{14} & 3 & Augment
+            \\ \nth{14} & 3 & Augment, greater unfaltering zeal
             \\ \nth{15} & 3 & Greater cleansing touch
             \\ \nth{16} & 3 & Greater zealous offense
             \\ \nth{17} & 3 & Greater unbending devotion
-            \\ \nth{18} & 3 & Augment, stalwart champion
+            \\ \nth{18} & 3 & Augment, supreme unfaltering champion
             \\ \nth{19} & 3 & Greater expanded aura
             \\ \nth{20} & 3 & Aligned soul
         \end{dtabularx}
@@ -2156,11 +2158,6 @@ This choice determines a great deal about your character's abilities.
         \cf{Pal}[8]{Spell Knowledge}
         You learn an additional divine spell (see \pcref{Divine Spells}).
 
-        \cf*{Pal}[16]{Spell Point} 
-        You gain a spell point.
-        A spell point can be spent to cast spells in place of an action point.
-        You recover all spent spell points after a \glossterm{short rest}.
-
     \subsection{Zealous Warrior}
         This archetype improves your combat prowess, especially against foes who do not share your devoted alignment.
 
@@ -2172,16 +2169,16 @@ This choice determines a great deal about your character's abilities.
             Otherwise, the strike gains a \plus2d bonus to \glossterm{strike damage}.
         \end{ability}
 
-        \cf{Pal}[2]{Unfaltering Warrior}
-        You gain a \plus1 bonus to Armor defense.
+        \cf{Pal}[2]{Unfaltering Champion}
+        You gain a \plus2 bonus to \glossterm{threat} and a a \plus1 bonus to Armor defense.
 
         \cf{Pal}[4]{Zealous Offense}[Magical]
         Whenever you deal damage with your \textit{smite} ability, you gain a \plus1 bonus to \glossterm{accuracy} until the end of the next round.
 
-        \cf{Pal}[8]{Unfaltering Zeal}
+        \cf{Pal}[6]{Unfaltering Zeal}
         You gain a \plus1 bonus to Fortitude and Mental defense.
 
-        \cf{Pal}[10]{Pass Judgment}[Magical]
+        \cf{Pal}[8]{Pass Judgment}[Magical]
         \begin{ability}{Pass Judgment}[\glossterm{Attuned}]
             Whenever you use your \textit{smite} ability, you can spend an additional \glossterm{action point} to use this ability.
             If you do, the target of your strike is treated as if it had the alignment opposed to your devoted alignment for all spells and effects, including for your initial \textit{smite}.
@@ -2192,13 +2189,17 @@ This choice determines a great deal about your character's abilities.
             Persecution of allies can lead you to fall and become an ex-paladin.
         \end{ability}
 
+        \cf{Pal}[10]{Greater Unfaltering Champion} The \glossterm{threat} bonus from your \textit{unfaltering champion} ability increases to \plus4.
+
         \cf{Pal}[12]{Greater Smite} The damage bonus from your \textit{smite} ability increases to \plus3d.
+
+        \cf{Pal}[14]{Greater Unfaltering Zeal} The defense bonuses from your \textit{unfaltering zeal} ability increase to \plus2.
 
         \cf{Pal}[16]{Greater Zealous Offense}[Magical]
         The accuracy bonus from your \textit{zealous offense} ability increases to \plus2.
 
-        \cf{Pal}[18]{Stalwart Champion}
-        The bonus to defenses from your \textit{unfaltering zeal} and \textit{unfaltering warrior} abilities increase to \plus2.
+        \cf{Pal}[18]{Supreme Unfaltering Champion}
+        The Armor defense bonus from your \textit{unfaltering champion} ability increases to \plus2.
 
         % TODO: Doesn't work with new spell system
         % \cf{Pal}[20]{Martyr's Retribution}[Mag]
