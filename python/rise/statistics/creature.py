@@ -132,6 +132,7 @@ class Creature(object):
                 name=weapon.name,
                 accuracy=self.weapon_accuracy(weapon),
                 damage=self.weapon_damage(weapon),
+                defense=weapon.defense,
             )
         return strikes
 
