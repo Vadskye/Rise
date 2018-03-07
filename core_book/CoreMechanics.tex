@@ -1447,25 +1447,27 @@ It defines how attributes work and explains how to make physical attacks in comb
         \parhead{Healthy} When you are above half hit points, you suffer no significant effects from losing hit points.
         If you take damage, you can become bloodied (see Bloodied, below).
 
-        \parhead{Bloodied} When you drop to half your hit points or below, you are \bloodied.
+        \parhead{Bloodied} At the end of each phase, if you are at half your hit points or below, you become \glossterm{bloodied}.
         A bloodied creature takes a \minus4 penalty to Fortitude and Mental defense.
-        The first time you become \glossterm{bloodied} in an encounter, you become \glossterm{staggered} until the end of the next round.
-        If you take additional damage, you can become \glossterm{wounded} (see Wounded, below).
+        If you end a phase with more than half your hit points, you stop being bloodied.
+        Becoming bloodied can also make you \glossterm{staggered}, as described below.
 
         \parhead{Staggered}\label{Staggered}
-        While \glossterm{staggered}, you take a \minus4 penalty to \glossterm{accuracy} and \glossterm{checks}.
-        % TODO: clarify when this ``resets''
-        The first time you become bloodied in an encounter, you become staggered until the end of the next round.
-        In addition, whenever you become \glossterm{wounded}, you become staggered until the end of the next round.
+        The first time you become \glossterm{bloodied} in an encounter, you become \glossterm{staggered} until the end of the same phase in the next round.
+        For example, if you become bloodied at the end of the \glossterm{action phase}, you would be \glossterm{staggered} until the end of the action phase in the next round.
+        A staggered creature takes a \minus4 penalty to \glossterm{accuracy} and \glossterm{checks}.
 
-        \parhead{Wounded}\label{Wounded} At the end of each round, if you have no hit points remaining after resolving all other effects in the round, you become \wounded.
+        \parhead{Wounded}\label{Wounded} At the end of each round, if you have no hit points remaining, you become \wounded.
         In addition, you are wounded if you have any \glossterm{vital damage}.
-        If you take additional damage while wounded, that damage can become \glossterm{vital damage}.
+        A wounded creature suffers no immediate ill effects.
+        However, it becomes vulnerable to \glossterm{vital damage}, as described below.
+        At the end of each phase, if you have hit points remaining and do not have any \glossterm{vital damage}, you stop being wounded.
 
-        At the end of each round that you are \glossterm{wounded}, if you have taken damage in excess of your hit points, you take that damage as \glossterm{vital damage}.
-        When determining whether your damage exceeds your hit points, count all healing and any other effects that modify your hit points, even if they occurred after you took damage.
+        \parhead{Vital Damage}\label{Vital Damage}
+        If you are not \glossterm{wounded}, damage dealt in excess of your hit points has no effect.
+        However, if you are wounded, this damage can become vital damage.
+        At the end of each phase, if were wounded during that phase and you took damage in excess of your hit points that phase, the excess damage is dealt as \glossterm{vital damage}.
         If you take \glossterm{vital damage}, you begin dying (see Dying, below).
-        If you instead have hit points remaining at the end of the round, you stop being wounded.
 
         \parhead{Dying}\label{Dying} While you are dying, you must make an attack against your own Fortitude defense at the end of every round.
         This is called a \glossterm{stabilization roll}.
