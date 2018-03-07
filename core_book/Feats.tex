@@ -571,36 +571,34 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[1]{Fortified Manifestation} Objects and creatures you create with \glossterm{Manifestation} abilities have additional hit points equal to your spellpower, and gain a \plus1d bonus to damage with all attacks.
 
-        \ff[3]{Astral Spirit} When you cast the \spell{summon monster} spell, you can manifest an astral spirit instead of an animal.
-        An astral spirit is a floating, spirit-like creature with a translucent body.
-        Its size is Medium, and it is vaguely humanoid in shape.
-        It has a physical form, and occupies space like any other creature.
+        \ff[3]{Resummon} You gain the \textit{resummon} ability.
+        \begin{ability}{Resummon}
+            As a \glossterm{minor action}, you can spend an \glossterm{action point} to use this ability.
+            If you do, you may teleport any number of creatures or objects that you summoned with \glossterm{Summoning} abilities into unoccupied spaces on stable ground within \rngclose range of you.
+        \end{ability}
 
-        An astral spirit does not have a land speed, but it has a 30 foot \glossterm{fly speed} with good maneuverability.
-        In addition, it can teleport any distance as a move action as long as its destination is within \rngmed range of you.
-        If an astral spirit hits with its strike, it deals physical damage.
-
+        % This isn't meaningful as long as spells don't have cover anyway
         \ff[5]{Astral Spell Transit} Your attacks with spells ignore \glossterm{cover}, but not \glossterm{total cover}.
-
-        \ff[7]{Distant Spells} You double the range of all spells you cast.
         In addition, all \glossterm{Teleportation} spells you cast can teleport twice their normal distance.
 
-        \ff[9]{Regenerating Manifestations} Whenever you cast a spell, objects and creatures you have created with \glossterm{Manifestation} abilities heal hit points equal to your spellpower.
+        \ff[7]{Regenerating Manifestations} Whenever you cast a spell, objects and creatures you have created with \glossterm{Manifestation} abilities heal hit points equal to your spellpower.
 
-        \ff[11]{Sustained Manifestations} Once per round, when you cast or sustain a spell, you can also sustain a \glossterm{Manifestation} spell as a \glossterm{free action}.
+        \ff[9]{Remanifest} You gain the \textit{remanifest} ability.
+        \begin{ability}{Remanifest}
+            As a \glossterm{minor action}, you can spend an \glossterm{action point} to use this ability.
+            If you do, you may teleport one object that you created with a \glossterm{Manifestation} ability into unoccupied space on stable ground within \rngclose range of you.
+        \end{ability}
 
-        \ff[13]{Greater Astral Spell Transit} When determining whether you have \glossterm{line of effect} to a particular location with a spell, you can ignore all physical obstacles in a single five-foot span.
+        \ff[11]{Greater Astral Spell Transit} You double the range of all spells you cast.
+
+        \ff[13]{Sustained Manifestations} Once per round, when you cast or sustain a spell, you can also sustain a \glossterm{Manifestation} spell as a \glossterm{free action}.
+
+        \ff[15]{Extended Relocation} The range of your \textit{resummon} and \textit{remanifest} abilities increases to \rnglong.
+
+        \ff[17]{Supreme Astral Spell Transit} When determining whether you have \glossterm{line of effect} to a particular location with a spell, you can ignore all physical obstacles in a single five-foot span.
         This can allow you to cast spells through solid walls, though it does not grant you the ability to see through the wall.
 
-        \ff[15]{Greater Fortified Manifestation} The hit point bonus from your \textit{fortified manifestation} ability increases to twice your spellpower, and the damage bonus increases to \plus2d.
-
-        \ff[17]{} 
-
-        \ff[19]{Greater Astral Echo} You constantly drift between your plane and the Astral Plane.
-        All attacks against you have a 20\% failure chance.
-        You can suppress or resume this ability as a \glossterm{minor action}.
-        In addition, whenever you teleport, your connection to the Astral Plane is strengthened until the end of the next round.
-        During this time, all attacks against you have a 50\% failure chance.
+        \ff[19]{Greater Fortified Manifestation} The hit point bonus from your \textit{fortified manifestation} ability increases to twice your spellpower, and the damage bonus increases to \plus2d.
     \end{feat}
 
     \begin{feat}{Craft Specialization}{Skill}
@@ -1531,19 +1529,19 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[8]{Specialization} The bonus to Perform increases to \plus4.
 
         \ff[10]{Mesmeric Suggestion}[Magical] You gain the \textit{mesmeric suggestion} ability.
-        \begin{ability}{Mesmeric Suggestion}[\glossterm{Delusion}, \glossterm{Mind}, \glossterm{Sustain} (minor)]
+        \begin{ability}{Mesmeric Suggestion}[\glossterm{Delusion}, \glossterm{Mind}, \glossterm{Subtle}, \glossterm{Sustain} (minor)]
             As a standard action, you can spend an \glossterm{action point} to use this ability.
-            When you do, make a Perform vs. Mental attack against target within \rngmed range.
+            When you do, make a Perform vs. Mental attack against a target within \rngmed range.
             You must also make a verbal suggestion of a particular course of action to the target.
             You can work this suggestion into an active performance without penalty.
+            If your suggestion does not seem reasonable, you take a \minus5 penalty to accuracy on this attack.
+            Exceptionally unreasonable suggestions can impose even greater penalties, and exceptionally reasonable suggestions can give accuracy bonuses.
 
-            \hit The target thinks your suggestion is a good idea and will try to follow it to the best of its abilities.
-            Any act by you or your apparent allies that threatens or damages the target breaks the effect.
+            \hit As a \glossterm{condition}, the target thinks your suggestion is a good idea and will try to follow it to the best of its abilities.
+            Any act by you or your apparent allies that damages the target or makes it feel that it is in danger breaks the effect.
 
             If the target is not currently \fascinated by your \textit{fascinating performance} ability, this attack automatically fails.
             This ability lasts as long as you sustain your \textit{fascinating performance}.
-            If your suggestion does not seem reasonable, you take a \minus5 penalty to accuracy on this attack.
-            Exceptionally unreasonable suggestions can impose even greater penalties, and exceptionally reasonable suggestions can give accuracy bonuses.
         \end{ability}
 
         \ff[12]{Supreme Inspirating Performance}[Magical] The bonus from your \textit{inspiring performance} ability increases to \plus4.
@@ -1568,8 +1566,16 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[8]{Specialization} The bonus to Persuasion increases to \plus4.
 
         \ff[10]{Suggestion} You gain the \textit{suggestion} ability.
-        \begin{ability}{Suggestion}[\glossterm{Delusion}, \glossterm{Mind}]
+        \begin{ability}{Suggestion}[\glossterm{Delusion}, \glossterm{Mind}, \glossterm{Subtle}, \glossterm{Sustain} (minor)]
             As a standard action, you can spend an \glossterm{action point} to use this ability.
+            When you do, make a Persuasion vs. Mental attack against a target within \rngmed range.
+            You must also make a verbal suggestion of a particular course of action to the target.
+            If your suggestion does not seem reasonable, you take a \minus5 penalty to accuracy on this attack.
+            Exceptionally unreasonable suggestions can impose even greater penalties, and exceptionally reasonable suggestions can give accuracy bonuses.
+
+            \hit As a \glossterm{condition}, the target thinks your suggestion is a good idea and will try to follow it to the best of its abilities.
+            Any act by you or your apparent allies that damages the target or makes it feel that it is in danger breaks the effect.
+
         \end{ability}
 
         \ff[16]{Greater Specialization} The bonus to Persuasion increases to \plus6.
