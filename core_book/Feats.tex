@@ -289,21 +289,26 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Bardic Exemplar}{Magical, Skill}
         \featpre Perform Specialization feat.
 
-        \ff[1]{Mocking Performance} You gain the \textit{mocking performance} ability.
+        \ff[1]{Inspire Courage} You gain the \textit{inspire courage} ability.
         \begin{ability}{Mocking Performance}[\glossterm{Delusion}, \glossterm{Mind}, \glossterm{Sustain} (minor)]
             As a standard action, you can spend an \glossterm{action point} to use this ability.
             When you do, you begin a performance using one of your Perform skills.
-            Make a Perform vs. Mental attack against a creature within \rngmed range, and choose a willing creature within the same range.
-            \hit As a \glossterm{condition}, the target suffers a \minus3 penalty to \glossterm{accuracy} with attacks that do not include your chosen creature as a target.
-            \crit As above, except that the penalty is increased to \minus6.
+            All willing allies within a \areahuge emanation from you gain a \plus1 bonus to \glossterm{accuracy} and a \plus2 bonus to Mental defense.
 
-            If the target can neither see nor hear your performance, the effect immediately ends.
+            If a target can neither see nor hear your performance, the effect immediately ends for that target.
             This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
         \end{ability}
 
-        \ff[3]{Perform Point} You gain a perform point.
-        A perform point can be spent to use \glossterm{magical} abilities from this feat and the Perform Specialization feat in place of an action point.
-        You recover all spent perform points after a \glossterm{short rest}.
+        \ff[3]{Vicious Mockery} You gain the \textit{vicious mockery} ability.
+        \begin{ability}{Vicious Mockery}[\glossterm{Delusion}, \glossterm{Mind}]
+            As a standard action, you can spend an \glossterm{action point} to use this ability.
+            When you do, you make a brief performance using one of your Perform skills.
+            Make a Perform vs. Mental attack against all enemies within a \areahuge radius from you.
+
+            \hit As a \glossterm{condition}, each target takes a \minus1 penalty to \glossterm{accuracy} and a \minus2 penalty to Mental defense.
+
+            This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
+        \end{ability}
 
         \ff[5]{Song of Serenity} You gain the \textit{song of serenity} ability.
         \begin{ability}{Song of Serenity}[\glossterm{Delusion}, \glossterm{Mind}, \glossterm{Sustain} (minor)]
@@ -316,35 +321,22 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
         \end{ability}
 
-        \ff[7]{Demoralizing Mockery} A creature affected by your \textit{mocking performance} ability takes a \minus2 penalty to Mental defense as long as the effect lasts.
+        \ff[7]{Greater Inspire Courage} Each target affected by your \textit{inspire courage} ability is immune to \glossterm{Fear} abilities.
 
-        \ff[9]{Hybrid Performance} You can sustain two different \glossterm{magical} abilities from this feat or the Perform Specialization feat as part of the same \glossterm{minor action}.
+        \ff[9]{Greater Vicious Mockery} Your \textit{vicious mockery} ability gains the \glossterm{Sustain} (minor) tag.
+        At the end of each action phase after the first round, you make an additional attack against all creatures within a \areahuge radius of you not already affected by the ability.
 
-        \ff[11]{Mass Performance} When you use your \textit{mocking performance} ability, you can target up to five creatures.
-        In addition, when you use your \textit{song of serenity} ability, you can target up to two creatures.
+        \ff[11]{Greater Song of Serenity} When you use your \textit{song of serenity} ability, you can target up to five creatures.
 
-        \ff[13]{Battle Cry} You gain the \textit{battle cry} ability.
-        \begin{ability}{Battle Cry}[\glossterm{Delusion}, \glossterm{Mind}, \glossterm{Sustain} (minor)]
-            As a \glossterm{minor action}, you can spend an \glossterm{action point} to use this ability.
-            When you do, you begin a performance using one of your Perform skills.
-            Choose any number of willing creatures within \rngmed range.
-            Each target gains a \plus2 bonus to accuracy with all attacks.
+        \ff[13]{Supreme Inspire Courage} A creature affected by your \textit{inspire courage} ability may use your level in place of its accuracy with any attack.
 
-            If a target can neither see nor hear your performance, the effect immediately ends for that creature.
-            This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
-        \end{ability}
+        \ff[15]{Supreme Mocking Performance} The penalties from your \textit{vicious mockery} ability increase to \minus2 accuracy and a \minus4 penalty to Mental defense.
 
-        \ff[15]{Serene Bliss} A creature affected by your \textit{song of serenity} ability is not \glossterm{bloodied} as long as the effect lasts and it has hit points remaining.
-        It suffers the normal penalties for becoming bloodied if the effect ends or it has no hit points remaining.
+        \ff[17]{Supreme Song of Serenity} Each target affected by your \textit{song of serenity} is immune to being \glossterm{bloodied} as long as it has hit points remaining.
+        This can prevent the target from becoming \glossterm{staggered}.
+        When the effect ends, or if a target has no hit points remaining, it becomes bloodied and staggered appropriately.
 
-        \ff[17]{Greater Mass Performance} When you use your \textit{mocking performance} ability, you can target any number of creatures.
-        In addition, when you use your \textit{song of serenity} ability, you can target up to five creatures.
-        Finally, the range of your \textit{battle cry} ability is increased to \rnglong.
-
-        \ff[19]{Champion's Anthem} A creature affected by your \textit{battle cry} ability may use your level in place of its accuracy with any attack.
-
-        \ff[19]{Hideous Laughter} If you get a \glossterm{critical hit} against a creature with your \textit{mocking performance} ability, it laughs uncontrollably until the end of the next round.
-        During this time, it can take no other actions.
+        \ff[19]{Hybrid Performance} You can sustain two different \glossterm{magical} abilities from this feat or the Perform Specialization feat as part of the same \glossterm{minor action}.
     \end{feat}
 
     \begin{feat}{Blindfighter}{Combat}
@@ -470,8 +462,9 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \begin{ability}{Holy Blessing}[\glossterm{Attune} (shared)]
             As a \glossterm{minor action}, you can spend an \glossterm{action point} to use this ability.
             If you do, choose a willing creature within \rngclose range.
-            The target gains a \plus1 bonus to \glossterm{accuracy} with all attacks.
-            This effect lasts as long as you and the target \glossterm{attune} to it.
+            The target gains a \plus1d bonus to \glossterm{strike damage}.
+
+            This ability does not stack with the \spell{bless} spell.
         \end{ability}
 
         \ff[3]{Holy Protection} You gain the \textit{holy protection} ability.
@@ -485,24 +478,23 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         You can use these wings to glide at a rate equal to your land speed (see \pcref{Gliding}).
         The wings themselves are \glossterm{mundane}, but the ability to glide and fly with them is \glossterm{magical}.
 
-        \ff[7]{Complete Protection} The damage reduction from your \textit{holy protection} ability also applies against non-physical effects.
+        \ff[7]{Greater Holy Blessing} The damage bonus from your \textit{holy blessing} ability applies to all abilities that deal damage or grant healing measured in dice.
 
-        % TODO: vague?
-        \ff[9]{Aligned Blessing} The target of your \textit{holy blessing} ability treats all of their attacks as being good-aligned.
+        \ff[9]{Greater Holy Protection} The damage reduction from your \textit{holy protection} ability also applies against non-physical effects.
 
         \ff[11]{Angelic Flight} Your \textit{angel wings} grant you a fly speed equal to your land speed.
         While \glossterm{unencumbered}, you can fly (see \pcref{Flying}).
         You can only fly for a number of rounds equal to half your celestial power.
         After that limit is reached, you must take a \glossterm{short rest} before flying again.
 
-        \ff[13]{Holy Retribution} Whenever an evil creature makes a \glossterm{strike} against the creature protected by your \textit{holy protection} ability, you make a \textit{celestial power} vs. Mental attack against the attacking creature.
+        \ff[13]{Supreme Holy Blessing} The damage bonus from your \textit{holy blessing} ability increases to \plus2d.
+
+        \ff[15]{Holy Retribution} Whenever an evil creature makes a \glossterm{strike} against the target of your \textit{holy protection} ability, you make a \textit{celestial power} vs. Mental attack against the attacking creature.
         \hit The attacker takes divine \glossterm{standard damage} \minus1d.
 
-        \ff[15]{Empowered Blessing} The accuracy bonus from your \textit{holy blessing} ability increases to \plus2.
+        \ff[17]{Greater Angelic Flight} You no longer have a limit on how long you can fly with your \textit{angelic flight} ability.
 
-        \ff[17]{} % another augment?
-
-        \ff[19]{Greater Angelic Flight} You no longer have a limit on how long you can fly with your \textit{angelic flight} ability.
+        \ff[19]{Holy Champion} You gain a \plus2 bonus to your \textit{celestial power}.
     \end{feat}
 
     \begin{feat}{Class Dedication}{Class}
@@ -1499,17 +1491,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[1]{Lesser Specialization} You gain a \plus2 bonus to Perform.
 
-        \ff[2]{Inspiring Performance}[Magical] You gain the \textit{inspiring performance} ability.
-        \begin{ability}{Inspiring Performance}[\glossterm{Delusion}, \glossterm{Mind}, \glossterm{Sustain} (minor)]
-            As a standard action, you can spend an \glossterm{action point} to use this ability.
-            When you do, you begin a performance using one of your Perform skills.
-            One other willing creature within \rngmed range gains a \plus2 bonus to \glossterm{checks}.
-
-            If the target can neither see nor hear your performance, the effect immediately ends.
-            This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
-        \end{ability}
-
-        \ff[4]{Mesmerizing Performance}[Magical] You gain the \textit{mesmerizing performance} ability.
+        \ff[2]{Mesmerizing Performance}[Magical] You gain the \textit{mesmerizing performance} ability.
         \begin{ability}{Mesmerizing Performance}[\glossterm{Delusion}, \glossterm{Mind}, \glossterm{Sustain} (minor)]
             As a standard action, you can spend an \glossterm{action point} to use this ability.
             When you do, you begin a performance using one of your Perform skills.
@@ -1522,9 +1504,17 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
         \end{ability}
 
-        \ff[6]{Greater Inspirating Performance}[Magical] The bonus from your \textit{inspiring performance} ability increases to \plus3.
+        \ff[4]{Inspire Competence}[Magical] You gain the \textit{inspiring performance} ability.
+        \begin{ability}{Inspire Competence}[\glossterm{Delusion}, \glossterm{Mind}, \glossterm{Sustain} (minor)]
+            As a standard action, you can spend an \glossterm{action point} to use this ability.
+            When you do, you begin a performance using one of your Perform skills.
+            One other willing creature within \rngmed range gains a \plus2 bonus to \glossterm{checks}.
 
-        \ff[8]{Mass Performance}[Magical] You can target up to two creatures with your \textit{inspiring performance} ability.
+            If the target can neither see nor hear your performance, the effect immediately ends for that target.
+            This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
+        \end{ability}
+
+        \ff[6]{Mass Performance}[Magical] You can target up to two creatures with your \textit{inspire competence} ability.
         In addition, you can target any number of creatures with your \textit{mesmerizing performance} ability.
 
         \ff[8]{Specialization} The bonus to Perform increases to \plus4.
@@ -1542,14 +1532,13 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             Any act by you or your apparent allies that damages the target or makes it feel that it is in danger breaks the effect.
 
             If the target is not currently \fascinated by your \textit{fascinating performance} ability, this attack automatically fails.
+            If the target can neither see nor hear your performance, the effect immediately ends for that target.
             This ability lasts as long as you sustain your \textit{fascinating performance}.
         \end{ability}
 
-        \ff[12]{Supreme Inspirating Performance}[Magical] The bonus from your \textit{inspiring performance} ability increases to \plus4.
+        \ff[12]{Greater Inspire Competence}[Magical] The bonus from your \textit{inspire competence} ability increases to \plus4.
 
-        \ff[14]{Irresistible Dance} You ignore all failure chances on Perform attacks and checks you make.
-
-        \ff[16]{Greater Mass Performance}[Magical] When you use your \textit{inspiring performance} ability, you can target any number of creatures.
+        \ff[14]{Greater Mass Performance}[Magical] When you use your \textit{inspire competence} ability, you can target any number of creatures.
         In addition, the range of your \textit{mesmerizing performance} ability is increased to \rnglong.
 
         \ff[16]{Greater Specialization} The bonus to Perform increases to \plus6.
