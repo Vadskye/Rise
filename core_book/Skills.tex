@@ -709,15 +709,15 @@ This chapter describes each skill, including common uses for those skills.
             This DR is modified depending on the difficulty of the deduction and the quality of the evidence available to you, as shown on \trefnp{Deduction DR Modifiers}.
         \end{ability}
 
-    \begin{dtable}
+    \begin{dtable*}
         \lcaption{Deduction DR Modifiers}
-        \begin{dtabularx}{\columnwidth}{l X X}
+        \begin{dtabularx}{\textwidth}{X X l}
             \tb{Evidence Quality} & \tb{Example} & \tb{Modifier} \\
             \bottomrule
             No irrelevant or misleading evidence & Determining a historical truth by reading the relevant passage in a history book & \plus5 \\
             Some evidence is irrelevant or misleading & Determining a historical truth by reading contemporary accounts & \plus0 \\
             About half of the evidence is irrelevant or misleading & Determining a historical truth by reading eyewitness accounts & \minus5 \\
-            Almost all evidence is irrelevant or misleading & Determining a historical truth by reading military propaganda & \minus10\plus\fn{1} \\
+            Almost all evidence is irrelevant or misleading & Determining a historical truth by reading military propaganda & \minus10 or more\fn{1} \\
             All evidence is irrelevant or misleading & Determining a historical truth by reading a cookbook & \tdash\fn{2} \\
 
             \tb{Complexity} & \tb{Example} & \tb{Modifier} \\
@@ -725,11 +725,11 @@ This chapter describes each skill, including common uses for those skills.
             Exceptionally simple logic using no more than one piece of evidence & The sun is out; therefore, it is daytime & \plus5 \\
             Simple logic using one or two pieces of evidence & It is raining, and the cleric's clothes and boots are dry; therefore, he was not out in the rain & \plus0 \\
             Moderately complex logic using at least three pieces of evidence & It is raining, the mage's clothes are wet but her boots are dry, she was observed stepping into the bar, and there are no tracks leading up to the door; therefore, she can probably fly & \minus5 \\
-            Exceptionally complex logic & A difficult logic puzzle & \minus10\plus \\
+            Exceptionally complex logic & A difficult logic puzzle & \minus10 or more \\
         \end{dtabularx}
         1. If there is an exceptionally large amount of irrelevant or misleading evidence relative to the amount of useful evidence, this penalty may be even larger.
         2. It is impossible to make a correct deduction if there is no relevant and accurate evidence.
-    \end{dtable}
+    \end{dtable*}
 
 \newpage
 \skill{Devices}{Int}
