@@ -757,15 +757,17 @@ It defines how attributes work and explains how to make physical attacks in comb
         However, you can can come up with other reactive movements.
         The only requirement is that a reactive movement must have a simple criteria for determining how you move.
 
+        \parhead{Hustle} As a \glossterm{move action}, you can use the \textit{hustle} ability to move.
+        This is the most common movement ability.
+
         \begin{ability}{Hustle}
-            As a \glossterm{move action}, you can use this ability.
-            If you do, choose a path that you want to travel.
-            You travel that path, up to the limit of your movement speed.
+            Choose a path that you want to travel.  You travel that path, up to the limit of your movement speed.
         \end{ability}
 
+        \parhead{Block} As a \glossterm{move action}, you can use the \textit{block} ability to prevent a creature from entering a particular area.
+
         \begin{ability}{\labeltext{Block}}
-            As a \glossterm{move action}, you can use this ability.
-            If you do, choose a creature or object to block, and the area you want to block it from entering.
+            Choose a creature to block, and the area you want to block it from entering.
             During the current phase, you automatically move to intercept the target as it approaches the blocked area, up to the limit of your movement speed.
             Usually, blocking a target requires an opposed \glossterm{initiative} check against the target.
             Success means you successfully keep ahead of the target as it moves, preventing it from entering the area (unless it can move through you).
@@ -775,21 +777,25 @@ It defines how attributes work and explains how to make physical attacks in comb
             The blocked creature must beat the initiative of all blocking creatures to enter the blocked area.
         \end{ability}
 
+        \parhead{Follow} As a \glossterm{move action}, you can use the \textit{follow} ability to follow a creature as it moves.
+
         \begin{ability}{\labeltext{Follow}}
-            As a \glossterm{move action}, you can use this ability.
-            If you do, choose a creature or object to follow, and the maximum distance you want to follow at.
+            Choose a creature to follow, and the maximum distance you want to follow at.
             During the current phase, you automatically move such that your distance to the target is no greater than your desired follow distance, up to the limit of your movement speed.
-            If the target uses an ability that makes it impossible to follow with movement, such as teleporting, you stop moving when you reach the position where it used that ability.
+            If the target uses an ability that makes it impossible to follow with movement, such as teleporting, you stop moving when you become adjacent to the position where it used that ability.
         \end{ability}
+
+        As a \glossterm{move action}, you can use the \textit{withdraw} ability to keep away from creatures as they move.
 
         \begin{ability}{\labeltext{Withdraw}}
             This ability functions like the \textit{follow} ability, except that you specify a minimum distance between you and the target instead of a maximum distance.
             In addition, you can specify multiple targets and try to keep away from all of them.
         \end{ability}
 
+        As a \glossterm{free action}, you can spend an \glossterm{action point} to use the \textit{sprint} ability, allowing you to briefly move more quickly.
+
         \begin{ability}{\labeltext{Sprint}}[\glossterm{Swift}]
-            As a \glossterm{free action}, you can spend an \glossterm{action point} to use this ability.
-            If you do, you double your movement speed until the end of the current phase.
+            You double your movement speed until the end of the current phase.
         \end{ability}
 
     \subsection{Movement Impediments}
@@ -1270,12 +1276,11 @@ It defines how attributes work and explains how to make physical attacks in comb
         Your \glossterm{damage} with a strike has special rules (see \pcref{Strike Damage}).
 
         \parhead{Two-Weapon Strikes}\label{Two-Weapon Strikes}
-        All strike abilities allow you to attack with either one or two weapons.
+        All strike abilities require a \glossterm{standard action} and allow you to attack with either one or two weapons.
         If you make a strike with two weapons, you take a \minus1 penalty to \glossterm{accuracy} with both attacks for each non-light weapon you attack with.
 
         \begin{ability}{\labeltext{Melee Strike}}
-            As a \glossterm{standard action}, you can use this ability.
-            When you do, choose a creature you \glossterm{threaten} and one or two \glossterm{melee} weapons that you can attack with.
+            Choose a creature you \glossterm{threaten} and one or two \glossterm{melee} weapons that you can attack with.
             For each weapon, make a \glossterm{physical attack} with that weapon against the Armor defense of the target.
 
             On a hit with any weapon, the target takes \glossterm{strike damage} from one weapon you hit with (see \pcref{Strike Damage}).
@@ -1283,8 +1288,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         \end{ability}
 
         \begin{ability}{\labeltext{Projectile Strike}}
-            As a \glossterm{standard action}, you can use this ability.
-            When you do, choose a creature you can target and one or two \glossterm{projectile} weapons you can attack with, and a creature you can see.
+            Choose a creature you can target and one or two \glossterm{projectile} weapons you can attack with, and a creature you can see.
             The creature must be within ten \glossterm{range increments} of you with all weapons.
             For each weapon, make a \glossterm{physical attack} with that weapon against the Armor defense of the target.
             The attack takes a \minus1 penalty to accuracy for for each full range increment between you and the target with that weapon.
@@ -1294,8 +1298,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         \end{ability}
 
         \begin{ability}{\labeltext{Thrown Strike}}
-            As a \glossterm{standard action}, you can use this ability.
-            When you do, choose a creature you can target and one or two \glossterm{thrown} weapons you can attack with.
+            Choose a creature you can target and one or two \glossterm{thrown} weapons you can attack with.
             The creature must be within five \glossterm{range increments} of you with all weapons.
             For each weapon, make a \glossterm{physical attack} with that weapon against the Armor defense of the target.
             The attack takes a \minus1 penalty to accuracy for for each full range increment between you and the target with that weapon.
@@ -1323,10 +1326,13 @@ It defines how attributes work and explains how to make physical attacks in comb
         \end{dtable}
 
         \subsubsection{Maneuver Descriptions}
+            You can use the \textit{dirty trick} ability to creatively impair a foe's ability to fight.
 
             \begin{ability}{Dirty Trick}\label{Dirty Trick}
-                You can use this ability to strike your foe in a sensitive spot, pull its pants down, or creatively use your environment to attack.
-                If you do, make a melee \glossterm{physical attack} with a free hand against the Fortitude or Reflex defense of a creature.
+                When you use this ability, you must describe the kind of dirty trick you are performing.
+                For example, you can pull a creature's pants down, throw sand, or otherwise use your environment to attack.
+
+                Make a melee \glossterm{physical attack} with a free hand against the Fortitude or Reflex defense of a creature you \glossterm{threaten}.
                 The target uses whichever defense is appropriate to the nature of the trick you describe.
 
                 On a hit, as a \glossterm{condition}, the target suffers a \minus2 penalty to one of the following statistics:
