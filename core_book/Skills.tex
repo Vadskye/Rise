@@ -257,10 +257,9 @@ This chapter describes each skill, including common uses for those skills.
         Failure means you don't understand the message.
 
     \subsection{Search}\label{Search}
-        You can use the \textit{search} ability to closely investigate a small area.
+        As a standard action, you can use the \textit{search} ability to closely investigate a small area.
         \begin{ability}{Search}
-            As a standard action, you can use this ability.
-            If you do, make a Awareness check to notice things in a single 5-ft.\ square within 10 feet of you.
+            Make a Awareness check to notice things in a single 5-ft.\ square within 10 feet of you.
             You gain a \plus5 bonus to this check.
         \end{ability}
 
@@ -362,10 +361,9 @@ This chapter describes each skill, including common uses for those skills.
         If you act differently from the crowd you are trying to blend in with, anyone observing you gets a \plus5 bonus to find you. You may need to make Awareness or Sense Motive checks to figure out how to act, depending on the situation. If you are extremely dissimilar from the crowd, such as a naked person in a temple or a human among halflings, anyone observing you may gain a \plus10 or greater bonus to find you.
 
     \subsection{Conceal Threat}\label{Conceal Threat}
-        You can use the \textit{conceal threat} ability to look less threatening.
+        As a \glossterm{minor action}, you can use the \textit{conceal threat} ability to look less threatening.
         \begin{ability}{Conceal Threat}[\glossterm{Sustain} (minor)]
-            As a \glossterm{minor action}, you can use this ability.
-            If you do, choose a \glossterm{threat} value you wish to portray and make a Bluff check.
+            Choose a \glossterm{threat} value you wish to portray and make a Bluff check.
             The intended threat cannot exceed your actual threat.
             Your Bluff check is opposed by the Sense Motive checks of anyone observing you.
             \hit Your threat against each target is equal to your chosen threat.
@@ -625,9 +623,10 @@ This chapter describes each skill, including common uses for those skills.
         You can use Creature Handling to control a creature's actions using these abilities.
         Critical failure with these abilities may make the target hostile, depending on the circumstances.
 
+        As a standard action, you can use the \textit{pacify} ability to prevent creatures from attacking.
+
         \begin{ability}{\labeltext{Pacify}}[\glossterm{Compulsion}, \glossterm{Mind}]
-            As a standard action, you can use this ability.
-            If you do, make a Creature Handling vs. Mental attack against a creature within \rngmed range.
+            Make a Creature Handling vs. Mental attack against a creature within \rngmed range.
             On a hit, the target is unable to take any actions except the \textit{recover} and \textit{desperate recovery} actions.
             If damaged or feels that it is in danger, this effect is automatically broken.
             This effect lasts as long as you \glossterm{sustain} it as a \glossterm{standard action}.
@@ -636,12 +635,20 @@ This chapter describes each skill, including common uses for those skills.
             You take a \minus10 penalty to accuracy against an actively hostile target.
         \end{ability}
 
+        As a \glossterm{free action}, you can use the \textit{perform trained action} ability to convince a creature to perform an action it knows.
+
         \begin{ability}{Perform Trained Action}
-            As a free action, you can make a DR 5 check to convince a creature to perform an action it is trained to perform. Generally, wild animals are not trained in any actions, so this is not effective on them.
+            Make a DR 5 check on a willing creature within \rnglong range and choose an action that creature could take.
+            If you succeed, the target performs the chosen action if it is trained to perform it.
+            Generally, wild animals are not trained in any actions, so this is not effective on them.
         \end{ability}
 
+        As a standard action, you can use the \textit{push} ability to convince a creature to perform an action it does not know.
+
         \begin{ability}{Push}
-            As a standard action, you can make a DR 15 check to convince a willing creature to perform an action it is not trained to perform, but which it is physically capable of performing. This also covers making a creature perform a forced march and similar activities.
+            Make a DR 15 check on a willing creature within \rnglong range and choose an action that creature could take.
+            If you succeed, the target performs the chosen action if it is physically capable of performing it.
+            This can include convincing creatures to perform \glossterm{forced marches} and similar activities.
         \end{ability}
 
     \subsection{Training Creatures}\label{Training Creatures}
@@ -682,22 +689,25 @@ This chapter describes each skill, including common uses for those skills.
     However, this skill cannot protect you from coming to inaccurate conclusions if you rely on inaccurate or incomplete facts and observations.
 
     \subsection{Analyze Evidence}
-        As a standard action, you can make a Deduction check to analyze evidence available to you and try to reach an accurate conclusion.
-        This includes both determining which evidence is relevant and deciding what that evidence proves.
-        Most deductions have two components: observations you make, and knowledge you have.
-        When you use this ability, you can decide to trust your own observations, your own knowledge, or both.
+        As a standard action, you can make use the \textit{analyze evidence} ability.
+        \begin{ability}{Analyze Evidence}
+            Make a Deduction check to analyze evidence available to you and try to reach an accurate conclusion.
+            This includes both determining which evidence is relevant and deciding what that evidence proves.
+            Most deductions have two components: observations you make, and knowledge you have.
+            When you use this ability, you can decide to trust your own observations, your own knowledge, or both.
 
-        If you trust your own observations, and the deduction requires making observations, your Deduction modifier on the check is limited to be no greater than your modifier with the skill used to make observations.
-        This skill is typically Awareness or Sense Motive.
-        If you trust your own knowledge, and the deduction requires knowledge, your Deduction modifier on the check is limited to be no greater than twice your Knowledge modifier with any relevant knowledge.
-        If you trust both your observations and your knowledge, both limits apply.
+            If you trust your own observations, and the deduction requires making observations, your Deduction modifier on the check is limited to be no greater than your modifier with the skill used to make observations.
+            This skill is typically Awareness or Sense Motive.
+            If you trust your own knowledge, and the deduction requires knowledge, your Deduction modifier on the check is limited to be no greater than twice your Knowledge modifier with any relevant knowledge.
+            If you trust both your observations and your knowledge, both limits apply.
 
-        Alternately, you can explicitly specify either the observations or knowledge your deduction is relying on.
-        For example, you could make a deduction based on information given to you by an ally.
-        If you do, your Deduction check is not limited, but your conclusions may be inaccurate if your assumptions are inaccurate.
+            Alternately, you can explicitly specify either the observations or knowledge your deduction is relying on.
+            For example, you could make a deduction based on information given to you by an ally.
+            If you do, your Deduction check is not limited, but your conclusions may be inaccurate if your assumptions are inaccurate.
 
-        The base DR for this check is 10.
-        This DR is modified depending on the difficulty of the deduction and the quality of the evidence available to you, as shown on \trefnp{Deduction DR Modifiers}.
+            The base DR for this check is 10.
+            This DR is modified depending on the difficulty of the deduction and the quality of the evidence available to you, as shown on \trefnp{Deduction DR Modifiers}.
+        \end{ability}
 
     \begin{dtable}
         \lcaption{Deduction DR Modifiers}
@@ -895,10 +905,9 @@ This chapter describes each skill, including common uses for those skills.
         On the other hand, if you intimidate a creature by staring it down in a cold fury, you can use Willpower to make the Intimidate check.
 
     \subsection{Augment Threat}\label{Augment Threat}
-        You can use the \textit{augment threat} ability to look more threatening.
+        As a \glossterm{minor action}, you can use the \textit{augment threat} ability to look more threatening.
         \begin{ability}{Augment Threat}[\glossterm{Sustain} (minor)]
-            As a \glossterm{minor action}, you can use this ability.
-            If you do, make an Intimidate check.
+            Make an Intimidate check.
             Your Intimidate check is opposed by the Sense Motive checks of anyone observing you.
             \hit You gain a \plus2 bonus to \glossterm{threat} against each target.
         \end{ability}
@@ -913,11 +922,10 @@ This chapter describes each skill, including common uses for those skills.
 
     \subsection{Demoralize}\label{Demoralize}
 
-        You can use the \textit{demoralize} ability to intimidate creatures in combat.
+        As a standard action, you can use the \textit{demoralize} ability to intimidate creatures in combat.
 
         \begin{ability}{Demoralize}
-            As a standard action, you can use this ability.
-            If you do, make an Intimidate vs. Mental attack against a creature within \rngmed range.
+            Make an Intimidate vs. Mental attack against a creature within \rngmed range.
             On a hit, the target is \shaken by you as a \glossterm{condition}.
         \end{ability}
 
