@@ -216,7 +216,7 @@ def generate_rituals():
             In addition, choose a type of \\glossterm<energy damage> (cold, electricity, fire, or sonic).
             This ritual gains the tag appropriate to the chosen energy type.
             If a creature reads the target, the target explodes.
-            You make a Spellpower vs. Reflex attack against everything within an \\areamed radius from the target.
+            You make a Spellpower vs. Reflex attack against everything within a \\areamed radius from the target.
             \\hit Each target takes \\glossterm<standard damage> -1d of the damage type chosen.
 
             After the target explodes in this way, the ritual is \\glossterm<dismissed>.
@@ -267,7 +267,7 @@ def generate_rituals():
         effects=Effects('Gate', """
             Choose a plane that connects to your current plane, and a location within that plane.
             This ritual creates an interdimensional connection between your current plane and the location you choose, allowing travel between those two planes in either direction.
-            The gate takes the form of an \\areasmall radius circular disk, oriented a direction you choose (typically vertical).
+            The gate takes the form of a \\areasmall radius circular disk, oriented a direction you choose (typically vertical).
             It is a two-dimensional window looking into the plane you specified when casting the spell, and anyone or anything that moves through it is shunted instantly to the other location.
             The gate cannot be \\glossterm<sustained> for more than 5 rounds, and is automatically dismissed at the end of that time.
 
@@ -325,7 +325,7 @@ def generate_rituals():
         # header=Header("description"),
         effects=Effects('Light', """
             Choose a Medium or smaller willing creature or unattended object within \\rngclose range.
-            The target glows like a torch, shedding bright light in an \\areamed radius (and dim light for an additional 20 feet).
+            The target glows like a torch, shedding bright light in a \\areamed radius (and dim light for an additional 20 feet).
 
             This ritual takes one minute to perform.
         """, tags=['Attune (multiple)', 'Figment', 'Light']),
@@ -422,7 +422,7 @@ def generate_rituals():
         base_level=3,
         # header=Header("description"),
         effects=Effects('Scryward', """
-            This ritual creates a ward against scrying in an \\arealarge radius zone centered on your location.
+            This ritual creates a ward against scrying in a \\arealarge radius zone centered on your location.
             All \\glossterm<Scrying> effects fail to function in the area.
             This effect is permanent.
 
@@ -437,7 +437,7 @@ def generate_rituals():
         base_level=5,
         # header=Header("description"),
         effects=Effects('Private Sanctum', """
-            This ritual creates a ward against any external perception in an \\arealarge radius zone centered on your location.
+            This ritual creates a ward against any external perception in a \\arealarge radius zone centered on your location.
             This effect is permanent.
             Everything in the area is completely imperceptible from outside the area.
             Anyone observing the area from outside sees only a dark, silent void, regardless of darkvision and similar abilities.

@@ -502,7 +502,7 @@ def generate_worn():
             This crown is continuously on fire.
             The flame sheds light as a torch.
 
-            You and all allies within an \\arealarge radius emanation from you are immune to fire damage.
+            You and all allies within a \\arealarge radius emanation from you are immune to fire damage.
         """,
         short_description="Grants nearby allies immunity to fire damage",
     ))
@@ -516,7 +516,7 @@ def generate_worn():
             This crown continuously crackles with electricity.
             The constant sparks shed light as a torch.
 
-            At the end of each \\glossterm<action phase>, you make a Power vs. Reflex attack against all enemies within an \\areamed radius emanation from you.
+            At the end of each \\glossterm<action phase>, you make a Power vs. Reflex attack against all enemies within a \\areamed radius emanation from you.
             A hit deals electricity \\glossterm<standard damage> -3d.
         """,
         short_description="Continuously damages nearby enemies",
@@ -528,7 +528,7 @@ def generate_worn():
         material_type='crown',
         tags=['Cold'],
         description="""
-            At the end of each \\glossterm<action phase>, you make a Power vs. Fortitude attack against all enemies within an \\areamed radius emanation from you.
+            At the end of each \\glossterm<action phase>, you make a Power vs. Fortitude attack against all enemies within a \\areamed radius emanation from you.
             A hit deals cold \\glossterm<standard damage> -3d.
             Each creature that takes damage in this way is \\fatigued until the end of the next round.
         """,
@@ -543,7 +543,7 @@ def generate_worn():
         description="""
             The crown constantly emits a low-pitched rumbling.
             To you and your allies, the sound is barely perceptible.
-            However, all enemies within an \\arealarge radius emanation from you hear the sound as a deafening, continuous roll of thunder.
+            However, all enemies within a \\arealarge radius emanation from you hear the sound as a deafening, continuous roll of thunder.
             The noise blocks out all other sounds quieter than thunder, causing them to be \\deafened while they remain in the area and until the end of the next round after they leave.
         """,
         short_description="Continously deafens nearby enemies",
@@ -940,7 +940,7 @@ def generate_worn():
         material_type='cloak',
         tags=['Fog', 'Manifestation'],
         description="""
-            Fog constantly fills an \\areamed radius emanation from you.
+            Fog constantly fills a \\areamed radius emanation from you.
             This fog does not fully block sight, but it provides \\concealment.
 
             If a 5-foot square of fog takes fire damage equal to half this item's \\glossterm<power>, the fog disappears from that area until the end of the next round.
@@ -954,7 +954,7 @@ def generate_worn():
         material_type='cloak',
         tags=['Fog', 'Manifestation'],
         description="""
-            A thick fog constantly fills an \\areamed radius emanation from you.
+            A thick fog constantly fills a \\areamed radius emanation from you.
             This fog completely blocks sight beyond 10 feet.
             Within that range, it still provides \\concealment.
 
