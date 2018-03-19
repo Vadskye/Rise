@@ -107,7 +107,7 @@ def generate_spells():
                 This subspell functions like the \\spell<barrier> spell, except that it does not make the target vulnerable to \\glossterm<energy damage>.
             """),
             Subspell('Repulsion', 2, """
-                This subspell creates a repulsive field in an \\areamed radius zone from your location.
+                This subspell creates a repulsive field in a \\areamed radius zone from your location.
                 Whenever a creature makes physical contact with the spell's area for the first time, you make a Spellpower vs. Mental attack against it.
                 \\hit The target is unable to enter the spell's area with any part of its body.
                 The rest of its movement in the current phase is cancelled.
@@ -163,7 +163,7 @@ def generate_spells():
             """),
             Subspell('Meteor', 5, """
                 You create a meteor in midair that falls to the ground, crushing foes in its path.
-                The meteor takes up an \\areamed radius, and must be created in unoccupied space.
+                The meteor takes up a \\areamed radius, and must be created in unoccupied space.
                 After being summoned, it falls up to 100 feet before disappearing.
                 Make a Spellpower vs. Reflex attack against everything in its path.
                 \\hit Each target takes bludgeoning and fire \\glossterm<standard damage> -1d.
@@ -179,7 +179,7 @@ def generate_spells():
                 This is a \\glossterm<condition>, and lasts until removed.
             """),
             Subspell('Web', 2, """
-                You fill an \\areasmall radius zone in \\rngclose range with webs.
+                You fill a \\areasmall radius zone in \\rngclose range with webs.
                 The webs make the area \\glossterm<difficult terrain>.
                 Each 5-ft.\\ square of webbing has hit points equal to your spellpower, and is \\glossterm<vulnerable> to fire.
 
@@ -199,7 +199,7 @@ def generate_spells():
                 On the third hit, the target takes damage and becomes \\glossterm<nauseated> instead of sickened.
             """, tags=['Manifestation', 'Poison']),
             Subspell('Bladestorm', 3, """
-                Make a Spellpower vs. Reflex attack against all enemies in an \\areasmall radius from you.
+                Make a Spellpower vs. Reflex attack against all enemies in a \\areasmall radius from you.
                 \\hit Each target takes slashing \\glossterm<standard damage> -1d.
             """, tags=['Manifestation']),
         ],
@@ -245,7 +245,7 @@ def generate_spells():
                 \\crit As above, except that you can transfer any number of magical conditions in this way.
             """, tags=['Mystic']),
             Subspell('Antimagic Field', 7, """
-                All other magical abilities and objects are \\glossterm<suppressed> within an \\areasmall radius emanation from you.
+                All other magical abilities and objects are \\glossterm<suppressed> within a \\areasmall radius emanation from you.
                 % How much of this is redundant with suppression?
                 Creatures within the area cannot activate, sustain, or dismiss magical abilities.
                 You cannot exclude yourself from this emanation.
@@ -257,7 +257,7 @@ def generate_spells():
                 This prevents all \\glossterm<Manifestation>, \\glossterm<Planar>, and \\glossterm<Teleportation> effects.
             """, tags=['Mystic']),
             Subspell('Dimensional Lock', 5, """
-                This subspell creates a dimensional lock in an \\arealarge radius zone from your location.
+                This subspell creates a dimensional lock in a \\arealarge radius zone from your location.
                 Extraplanar travel into or out of the area is impossible.
                 This prevents all \\glossterm<Manifestation>, \\glossterm<Planar>, and \\glossterm<Teleportation> effects.
             """, tags=['Attune', 'Mystic']),
@@ -277,7 +277,7 @@ def generate_spells():
         short_description="Create fire to incinerate foes",
         header=Header('You create a small burst of flame.'),
         effects=Effects('Pyromancy', """
-            Make a Spellpower vs. Reflex attack against everything in an \\areasmall radius within \\rngclose range.
+            Make a Spellpower vs. Reflex attack against everything in a \\areasmall radius within \\rngclose range.
             \\hit Each target takes fire \\glossterm<standard damage> -1d.
         """, tags=['Fire']),
         schools=['Evocation'],
@@ -285,7 +285,7 @@ def generate_spells():
         cantrip="The spell affects a single target within range instead of creating a burst.",
         subspells=[
             Subspell("Burning Hands", 2, f"""
-                This subspell functions like the \\spell<pyromancy> spell, except that it targets everything in an \\arealarge cone from you.
+                This subspell functions like the \\spell<pyromancy> spell, except that it targets everything in a \\arealarge cone from you.
             """),
             Subspell("Blast Furnace", 2, f"""
                 This subspell functions like the \\spell<pyromancy> spell, except that it gains the \\glossterm<Sustain> (standard) tag.
@@ -311,11 +311,11 @@ def generate_spells():
                 \\hit Each target is \\glossterm<shaken> as a \\glossterm<condition>.
             """),
             Subspell("Flame Serpent", 4, f"""
-                This subspell functions like the \\spell<pyromancy> spell, except that it targets everything in an \\arealarge, 10 ft.\\ wide shapeable line within \\rngmed range.
+                This subspell functions like the \\spell<pyromancy> spell, except that it targets everything in a \\arealarge, 10 ft.\\ wide shapeable line within \\rngmed range.
             """),
             Subspell('Flame Aura', 6, """
                 Choose a willing creature within \\rngclose range.
-                Heat constantly radiates in an \\areamed radius emanation from the target.
+                Heat constantly radiates in a \\areamed radius emanation from the target.
                 At the end of each \\glossterm<action phase>, make a Spellpower vs. Reflex attack against everything in the area.
                 \\hit Each target takes fire \\glossterm<standard damage> -2d.
 
@@ -337,7 +337,7 @@ def generate_spells():
             Subspell('Fire Trap', 3, """
                 Choose an Large or smaller unattended openable object within \\rngclose range.
                 If the target object becomes opened, it explodes.
-                When it explodes, you make a Spellpower vs. Reflex attack against everything within an \\areamed radius burst from the target, including the target itself.
+                When it explodes, you make a Spellpower vs. Reflex attack against everything within a \\areamed radius burst from the target, including the target itself.
                 \\hit Each target takes fire \\glossterm<standard damage> -1d.
 
                 After the object explodes in this way, the spell is \\glossterm<dismissed>.
@@ -351,7 +351,7 @@ def generate_spells():
         short_description="Command water to crush and drown foes",
         header=Header("You create a wave of water to crush your foes."),
         effects=Effects('Aquamancy', """
-            Make a Spellpower vs. Fortitude attack against everything in an \\arealarge, 10 ft.\\ wide line.
+            Make a Spellpower vs. Fortitude attack against everything in a \\arealarge, 10 ft.\\ wide line.
             \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
         """, tags=['Manifestation', 'Water']),
         schools=['Conjuration'],
@@ -445,7 +445,7 @@ def generate_spells():
                 The target is not directly aware of any magical influence on its mind, though unusually paranoid or perceptive creatures may deduce that their minds were affected.
             """),
             Subspell("Calm Emotions", 3, """
-                Make a Spellpower vs. Mental attack against all creatures within an \\areamed radius from you.
+                Make a Spellpower vs. Mental attack against all creatures within a \\areamed radius from you.
                 \\hit Each target has its emotions calmed.
                 The effects of all other \\glossterm<Emotion> abilities on that target are \\glossterm<suppressed>.
                 It cannot take violent actions (although it can defend itself) or do anything destructive.
@@ -528,6 +528,8 @@ def generate_spells():
         effects=Effects('Bless', """
             Choose a willing creature within \\rngclose range.
             The target gains a +1d bonus to \\glossterm<strike damage>.
+
+            You can cast this spell as a \\glossterm<minor action>.
         """, tags=['Attune (shared)']),
         # hmmm don't like one-sided cost here
         cantrip="The spell requires a \\glossterm<standard action> to cast, and it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> (shared) tag.",
@@ -544,6 +546,9 @@ def generate_spells():
 
                 You can cast this subspell as a \\glossterm<minor action>.
             """, tags=['Attune (shared)', 'Fire']),
+            Subspell('Empowered', 6, """
+                The damage bonus increases to +2d.
+            """),
             Subspell("Divine Shield", 6, """
                 Choose a willing creature within \\rngclose range.
                 The target gains \\glossterm<damage reduction> equal to your spellpower against all damage.
@@ -629,7 +634,7 @@ def generate_spells():
                 Creatures moving across the area must make Acrobatics checks to balance (see \pcref{Balance}).
             """),
             Subspell('Blizzard', 2, """
-                This subspell functions like the \\spell<cryomancy> spell, except that the area becomes an \\areamed radius from you.
+                This subspell functions like the \\spell<cryomancy> spell, except that the area becomes a \\areamed radius from you.
             """),
             Subspell('Icecraft', 2, """
                 Choose a pool of unattended, nonmagical water within \\rngclose range.
@@ -662,7 +667,7 @@ def generate_spells():
         short_description='Create electricity to injure and stun foes',
         header=Header("You create a bolt of electricity that fries your foes."),
         effects=Effects('Electromancy', """
-            Make a Spellpower vs. Reflex attack against everything in an \\arealarge, 10 ft.\\ wide line from you.
+            Make a Spellpower vs. Reflex attack against everything in a \\arealarge, 10 ft.\\ wide line from you.
             \\hit Each target takes electricity \\glossterm<standard damage> -1d.
         """, tags=['Electricity']),
         schools=['Evocation'],
@@ -684,7 +689,7 @@ def generate_spells():
             Subspell('Chain Lightning', 6, """
                 Make a Spellpower vs. Reflex attack against one creature or object within \\rngmed range.
                 \\hit The target takes electricity \\glossterm<standard damage> +2d.
-                In addition, make an additional Spellpower vs. Reflex attack against any number of creatures in an \\areamed radius from the struck target.
+                In addition, make an additional Spellpower vs. Reflex attack against any number of creatures in a \\areamed radius from the struck target.
                 \\hit Each secondary target takes electricity \\glossterm<standard damage>.
             """, tags=['Electricity']),
             Subspell("Forked Lightning", 3, """
@@ -789,12 +794,12 @@ def generate_spells():
                 At the end of each round, if the target has 0 hit points, it immediately dies.
             """, tags=['Death']),
             Subspell("Circle of Death", 3, """
-                You are surrounded by an aura of death in an \\areamed radius emanation from you.
+                You are surrounded by an aura of death in a \\areamed radius emanation from you.
                 When this spell resolves, and the end of each \\glossterm<action phase> in subsequent rounds, make a Spellpower vs. Fortitude attack against all creatures in the area.
                 \\hit Each target takes life \\glossterm<standard damage> -3d.
             """, tags=['Life', 'Sustain (minor)']),
             Subspell("Circle of Healing", 4, """
-                You are surrounded by an aura of healing in an \\areamed radius emanation from you.
+                You are surrounded by an aura of healing in a \\areamed radius emanation from you.
                 When this spell resolves, and the end of each \\glossterm<action phase> in subsequent rounds, make a Spellpower vs. Fortitude attack against all creatures in the area.
                 \\hit Each target heals hit points equal to \\glossterm<standard damage> -3d.
             """, tags=['Life', 'Sustain (minor)']),
@@ -1063,7 +1068,7 @@ def generate_spells():
         subspells=[
             Subspell("Suppress Light", 2, """
                 Choose a Small or smaller unattended object within \\rngclose range.
-                This subspell suppresses light in an \\areamed radius emanation from the target.
+                This subspell suppresses light in a \\areamed radius emanation from the target.
                 Light within or passing through the area is dimmed to be no brighter than shadowy illumination.
                 Any effect or object which blocks light also blocks this spell's emanation.
             """, tags=['Attune', 'Glamer', 'Light']),
