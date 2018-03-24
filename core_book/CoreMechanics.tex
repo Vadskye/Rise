@@ -204,6 +204,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             \begin{itemize}
                 \item Strength determines how much a character can carry (see \tref{Weight Limits}).
                 \item Strength affects Strength-based skills: Climb, Jump, and Swim (see \pcref{Skills}).
+                \item You gain a bonus (or penalty) to your \glossterm{threat} equal to your starting Strength (see \pcref{Threat}).
                 \item If your Strength is negative, you take a penalty to all Strength-based skills equal to your Strength.
                 \item If your Strength is negative, you take a penalty to \glossterm{strike damage} equal to half your Strength in \glossterm{die increments}.
             \end{itemize}
@@ -242,13 +243,13 @@ It defines how attributes work and explains how to make physical attacks in comb
             If you have a high Constitution, you can use it to determine your Fortitude defense (see \pcref{Defenses}).
 
         \subsubsection{Intelligence (Int)}\label{Intelligence}
-            Intelligence determines how well you learns and reasons.
+            Intelligence represents how well you learn and reason.
             It has the following effects:
 
             \begin{itemize}
                 \item You gain bonus languages equal to your starting Intelligence (see \pcref{Languages}).
                 \item You gain extra skill points equal to twice your starting Intelligence (see \pcref{Skill Points}).
-                \item Your Intelligence affects Intelligence-based skills: Craft, Disguise, Heal, Knowledge, and Linguistics (see \pcref{Skills}).
+                \item Your Intelligence affects Intelligence-based skills: Craft, Deduction, Disguise, Heal, Knowledge, and Linguistics (see \pcref{Skills}).
                 \item If your starting Intelligence is negative, you lose skill points equal to twice your starting Intelligence.
                 \item If your Intelligence is negative, you take a penalty to all Intelligence-based skills equal to your Intelligence.
             \end{itemize}
@@ -259,7 +260,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             A creature of humanlike intelligence has a score of at least a \minus5 Intelligence.
 
         \subsubsection{Perception (Per)}\label{Perception}
-            Perception describes a character's ability to observe and be aware of one's surroundings.
+            Perception describes your ability to observe and be aware of your surroundings.
             It has the following effects:
             \begin{itemize}
                 \item Your Perception affects Perception-based skills: Awareness, Creature Handling, Sense Motive, Spellcraft, and Survival (see \pcref{Skills}).
@@ -274,7 +275,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             \end{itemize}
 
         \subsubsection{Willpower (Wil)}\label{Willpower}
-            Willpower measures a character's ability to endure mental hardships.
+            Willpower represents your ability to endure mental hardships.
             It has the following effects:
             \begin{itemize}
                 \item You gain a bonus (or penalty) to the number of \glossterm{action points} you have equal to your starting Willpower.
@@ -447,7 +448,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         \subsection{Threat From Equipment}
             If you are visibly wearing \glossterm{body armor}, you gain a bonus to your threat equal to half the defense bonus provided by the armor.
             For this purpose, ignore any abilities that increase the defense bonus you gain from the armor, and only use the base defense bonus from the armor itself.
-            If you are visibly wielding a weapon, you gain a \plus2 bonus to your threat.
+            If you are visibly wielding a weapon or otherwise obviously capable of inflicting lethal damage, you gain a \plus2 bonus to your threat.
 
         \subsection{Threat From Size}
             You gain a \plus2 bonus to your threat for each size category that you are larger than Medium.
@@ -1535,6 +1536,18 @@ It defines how attributes work and explains how to make physical attacks in comb
         Most abilities explicitly specify how to calculate their power.
         If an ability does not have an explicitly stated power, use your level as its power. 
 
+    \subsection{Encumbrance}\label{Encumbrance}
+        Wearing armor imposes an \glossterm{encumbrance penalty} based on how encumbering the armor is.
+        You apply your encumbrance penalty as a modifier to all Strength-based and Dexterity-based checks you make.
+        Carrying an excess weight can also apply an encumbrance penalty, as described in \pcref{Encumbrance by Weight}.
+
+        If you have an encumbrance penalty, you are \glossterm{encumbered}.
+        If you are encumbered, you may be unable to use abilities which require free motion, as stated in the ability descriptions.
+        In addition, you are unable to sleep properly while encumbered.
+        % This doesn't make sense - it should just have no effect on the normal process of automatically applying fatigue over time
+        If you sleep while encumbered, you become \glossterm{fatigued} when you wake up.
+
+
     \subsection{Grappling}\label{Grappling}
         A grappled creature is physically struggling with at least one other creature.
         While grappled, you suffer certain penalties and restrictions, as described below.
@@ -1797,16 +1810,16 @@ It defines how attributes work and explains how to make physical attacks in comb
         \subsubsection{Predefined Attribute Scores} This is the simplest method.
         Simply take the following set of attribute scores and distribute them as you choose among your attributes:
 
-        3, 2, 1, 1, 0, 0
+        3, 2, 2, 1, 0, 0
 
         This set of attribute scores is called the ``elite array''.
         For more extreme characters, you may use the ``savant array'':
 
-        4, 1, 1, 0, 0, 0.
+        4, 2, 1, 0, 0, 0.
 
         Finally, for more well-balanced characters, you may use the ``balanced array'':
 
-        2, 2, 2, 1, 0, 0
+        2, 2, 2, 2, 1, 0
 
         Any of these distributions can be altered by taking penalties to any attributes given as 0.
         For each penalty you take, you gain two additional \glossterm{skill points} (see \pcref{Skills}).
@@ -1814,7 +1827,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         \subsubsection{Point Buy}
             With this method, you can fully control your attribute scores to match what you want to be able to do.
             All your attribute scores start at 0.
-            You get seven points to distribute among your attributes.
+            You get nine points to distribute among your attributes.
             Attributes can be bought according to the costs on \trefnp{Attribute Score Point Costs}.
             The listed cost is the total cost required to gain the listed starting attribute.
             You are 1st level when you start, which adds appropriately to your total attribute score.
@@ -1834,11 +1847,11 @@ It defines how attributes work and explains how to make physical attacks in comb
                     0             & 0            & 0       \\
                     1             & Level        & 1       \\
                     2             & 1 \add level & 2       \\
-                    3             & 2 \add level & 3       \\
-                    4             & 3 \add level & 5       \\
+                    3             & 2 \add level & 4       \\
+                    4             & 3 \add level & 6       \\
                 \end{dtabularx}
                 1 You cannot reduce more than two attributes below 0 in this way. \\
-                2 You gain four \glossterm{skill points}. \\
+                2 You gain a total of four \glossterm{skill points}. \\
                 3 You gain two skill points. \\
             \end{dtable}
 
