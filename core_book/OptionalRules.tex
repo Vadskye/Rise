@@ -7,7 +7,7 @@
 
         \subsubsection{Semi-Randomized Point Buy}
             With this method, you have only a small degree of control over your attribute scores, but all characters generated in this way are equally powerful.
-            As with the point buy method, all your attribute scores start at 0, and you get 7 points to distribute among your attribute scores.
+            As with the point buy method, all your attribute scores start at 0, and you get 9 points to distribute among your attribute scores.
             However, you do not have full control over how to distribute those points.
 
             Roll 4d6 for each attribute score, dropping a die of your choice with each roll. First roll for the attribute scores that you care about most, and save the least important attribute scores for last. After rolling for an attribute score, sum results on the three highest dice and consult \trefnp{Semi-Randomized Point Buy Results} and spend the appropriate number of points to yield an attribute score, as indicated by \trefnp{Attribute Score Point Costs}. If you do not have enough points remaining to spend the amount indicated by the die roll, spend as many as you can and move on to the next ability.
@@ -26,36 +26,28 @@
                     9-12  & 0       & 0             \\
                     13-14 & 1       & 1             \\
                     15-16 & 2       & 2             \\
-                    16-17 & 3       & 3             \\
-                    18    & 4       & 5             \\
+                    16-17 & 3       & 4             \\
+                    18    & 4       & 6             \\
                 \end{dtabularx}
                 1 You gain four \glossterm{skill points}. \\
                 2 You gain two skill points. \\
             \end{dtable}
 
-            For characters with more extreme attribute scores, use the following approach for each attribute score, starting with 10 points as normal:
-            \begin{itemize}
-                \item Roll 2d6
-                \item Take the average, rounding down
-                \item Subtract 2
-                \item Spend the points as indicated on \trefnp{Attribute Score Point Costs} until you have no points left.
-            \end{itemize}
+            For characters with more extreme attribute scores, use the following approach, starting with 9 points as normal:
+            \begin{enumerate}
+                \item For each attribute, roll 2d6
+                \item Take the average, rounding down, and subtract 2 from it
+                \item Spend that many points as indicated on \trefnp{Attribute Score Point Costs} until you have no points left.
+            \end{enumerate}
 
         \subsubsection{Random Point Buy}
-            This method gives you no control over the character whatsoever, while still ensuring that all characters generated are equally powerful. It functions as the semi-randomized point buy method, except that you also randomize the order in which the attribute scores are rolled.
-
-\begin{comment}
-            \subsubsection{Weighted Semi-Randomized Point Buy}
-                This method gives you more control over your attribute scores, while still requiring you to deal with attribute score advantages or disadvantages that you might not have chosen. It functions like the semi-randomized point buy method, except that you do not roll 3d6 for every attribute score. You have a pool of 18 dice. You can distribute those dice as you choose between each attribute score, except the last one, which is automatically assigned your remaining points. If you roll more than three dice for an attribute score, keep only the highest 3 dice. If you assign fewer than three dice to roll for an attribute score, add 1 to the result for every die less than 3 you are rolling. You can roll as many as six dice for a single attribute score, and you cannot roll less than one die for an attribute score.
-
-                For example, player hoping to play a barbarian might assign six dice to Strength, five dice to Constitution, three dice to Dexterity, and two dice to each of Intelligence and Perception, leaving the rest of the points to Willpower.
-\end{comment}
+            This method gives you no control over your character whatsoever, while still ensuring that all characters generated are equally powerful. It functions as the semi-randomized point buy method, except that you also randomize the order in which the attribute scores are rolled.
 
         \subsubsection{Classic Hardcore}
 
             This method is completely random and can generate very overpowered or underpowered characters. It represents the unfairness of the world, where some people are just better or worse than others. Roll 1d6 for each attribute score and subtract 2 from each result. The result is the attribute score.
 
-            \newpage
+\newpage
 
 \section{Races}
 
@@ -87,38 +79,57 @@
                 \itemhead{Low-light Vision} A cat treats sources of light as if they had double their normal illumination range.
             \end{itemize}
 
-        \subsection{Changeling}
+    \subsection{Changeling}
 
-            \parhead{Size} Medium.
-            \parhead{Attributes} No change.
-            \parhead{Speed} 30 feet.
-            \parhead{Special Abilities}
-            \begin{itemize}
-                \itemhead{Alter Shape} A changeling can alter its physical form in minor ways. As a standard action, a changeling can make a Disguise check with a \plus10 bonus to alter its body. This ability does not alter the changeling's equipment, which may give away its identity unless disguised normally.
-            \end{itemize}
-            \parhead{Racial Bonus Feat} Any Skill feat.
-            \parhead{Automatic Languages} Common and any one language (except Druidic).
-            \parhead{Bonus Languages} Any.
+        \parhead{Size} Medium.
+        \parhead{Attributes} No change.
+        \parhead{Speed} 30 feet.
+        \parhead{Special Abilities}
+        \begin{itemize}
+            \itemhead{Alter Shape} A changeling can alter its physical form in minor ways. As a standard action, a changeling can make a Disguise check with a \plus10 bonus to alter its body. This ability does not alter the changeling's equipment, which may give away its identity unless disguised normally.
+                This is a \glossterm{magical} ability.
+        \end{itemize}
+        \parhead{Racial Bonus Feat} Class Versatility or any Skill feat.
+        \parhead{Automatic Languages} Common and any one language (except Druidic).
+        \parhead{Bonus Languages} Any.
 
     \subsection{Drakkenfel}
 
-        A drakkenfel is created when a dragon's scales are removed while the dragon still lives. The scales retain much of the dragon's power, and without them, the dragon is cursed to continue its life as a diminished, mortal creature. Drakkenfel are extremely rare, as there are few who are powerful enough to subdue a dragon to extract its scales -- and fewer still who would dare to do so, knowing that they would earn the eternal enmity of all dragons.
+        A drakkenfel is created when a dragon's scales are removed while the dragon still lives. The scales retain much of the dragon's power, and without them, the dragon is cursed to continue its life as a diminished, mortal creature.
+        Drakkenfel are extremely rare, as there are few who are powerful enough to subdue a dragon to extract its scales -- and fewer still who would dare to do so, knowing that they would earn the eternal enmity of dragonkind.
 
-        Although are drakkenfel are generally considered to be a lesser creature than true dragons, they have hidden power. While separated from her full draconic essence, a drakkenfel can bridge the divide between the different types of true dragons, gaining the affinity for multiple energy types and special powers. It is rumored that a drakkenfel who regains her scales retains these enhanced abilities, becoming even more powerful than ordinary dragons.
+        Although are drakkenfel are generally considered to be a lesser creature than true dragons, they have hidden power.
+        While separated from its full draconic essence, a drakkenfel can bridge the divide between the different types of true dragons, gaining the affinity for multiple energy types and special powers.
+        A drakkenfel that regains its scales retains these enhanced abilities, becoming more powerful than an ordinary dragon.
+        Such a creature is called a drakkenlord.
 
-        Physically, a drakkenfel resembles a wyrmling dragon, except that it is completely scaleless. Its skin is leathery and rough, and some drakkenfel bear horrific scars from the ritual that removed their scales. Most drakkenfel retain tatters of their wings, but they are always nonfunctional.
+        Physically, a drakkenfel resembles a wyrmling dragon, except that it is completely scaleless.
+        Its skin is leathery and rough, and some drakkenfel bear horrific scars from the ritual that removed their scales.
+        Most drakkenfel retain tatters of their wings, but they are always nonfunctional.
 
         \parhead{Size} Small.
         \parhead{Attributes} No change.
         \parhead{Speed} 25 feet.
         \parhead{Special Abilities}
         \begin{itemize}
-            \itemhead{Draconic Essence} Each drakkenfel was once a type of true dragon. This choice must be made at 1st level, and cannot thereafter be changed. A list of dragons and their associated energy type is given on \tref{Dragon Types}. The drakkenfel is treated as if she had the Draconic Heritage feat in this dragon for the purpose of feats and abilities.
-            \itemhead{Energy Resistance} A drakkenfel gains damage reduction equal to five times her level against the energy type associated with her draconic essence.
-            \itemhead{Sleeping Dragon} If a drakkenfel recovers her stolen scales, she immediately becomes a true dragon again.
+            \itemhead*{Low-light Vision}: Drakkenfel treat sources of light as if they had double their normal illumination range.
+            \itemhead{Draconic Essence} Each drakkenfel was once a type of true dragon.
+                When creating a drakkenfel, choose which type of dragon it used to be.
+                This is inherent to the drakkenfel, and cannot be changed.
+                A list of dragons and their associated energy type is given on \tref{Dragon Types}.
+            \itemhead{Energy Resistance} A drakkenfel gains damage reduction equal to five times its level against the energy type associated with its \textit{draconic essence}.
+            \itemhead{Sleeping Dragon} If a drakkenfel recovers its stolen scales, it immediately becomes a true dragon again.
+                Its statistics become identical to its statistics before losing its scales, including level, except that it keeps all abilities gained from its Scaleless feat while a drakkenfel.
+                It does not gain additional abilities from the Scaleless feat as it gains levels.
         \end{itemize}
-        \parhead{Racial Bonus Feat} Draconic Scales.
-        \parhead{Special} At least half of a drakkenfel's class levels must be taken in the drakkenfel class.
+        \parhead{Racial Bonus Feat} Scaleless.
+
+        \begin{feat}{Scaleless}{General}
+            \featpre Drakkenfel race.
+
+            TODO
+            
+        \end{feat}
 
     \subsection{Dryaidi}
 
@@ -126,10 +137,18 @@
 
         \parhead{Size} Medium.
         \parhead{Attributes} \plus1 Constitution, \minus1 Dexterity.
-        \parhead{Speed} 20 feet.
+        \parhead{Speed} 25 feet.
         \parhead{Special Abilities}
         \begin{itemize}
-            \itemhead{Ingrain} As a standard action, a dryaidi can plant roots into natural earth. While ingrained, a dryaid's land speed becomes 5 feet, but she gains a \plus4 bonus to her Fortitude defense against attacks that would move her. Resting for 4 hours while ingrained gains the same benefits that a human would gain from 8 hours of rest, including healing. In addition, the dryaidi acquires nutrients sufficient to replace a day's worth of food and water. Withdrawing ingrained roots is a full-round action.
+            \itemhead{Ingrain} As a standard action, a dryaidi use the \textit{ingrain} ability.
+                \begin{ability}{Ingrain}
+                    The dryaidi's land speed becomes 5 feet.
+                    It gains a \plus4 bonus to defenses against attacks that would move it.
+                    Resting for 4 hours while this ability is active gains the same benefits that a human would gain from 8 hours of rest.
+                    In addition, the dryaidi acquires nutrients sufficient to replace a day's worth of food and water.
+
+                    This ability lasts until the dryaidi ends it as a standard action.
+                \end{ability}
             \itemhead{Photosynthesis} While in sunlight, a dryaidi gains a \plus10 foot bonus to land speed.
         \end{itemize}
         \parhead{Racial Bonus Feat} Dryad Heritage.
@@ -143,7 +162,7 @@
         \parhead{Special Abilities}
         \begin{itemize}
             \itemhead{Darkvision} Tieflings can see in the dark clearly up to 50 feet. Beyond that, they can see dimly, treating areas of darkness as shadowy illumination. Darkvision does not function if a tiefling is in a brightly lit area, and does not resume functioning until 1 round after the tiefling leaves the brightly lit area.
-            \itemhead{Energy Resistance} A tiefling has damage reduction against cold, electricity, and fire equal to twice its level.
+            \itemhead{Energy Resistance} A tiefling has \glossterm{damage reduction} against cold, electricity, and fire equal to twice its level.
         \end{itemize}
         \parhead{Racial Bonus Feat} Fiendish Heritage.
 
