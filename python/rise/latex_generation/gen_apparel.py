@@ -731,10 +731,10 @@ def generate_worn():
         tags=['Shielding'],
         description="""
             This ring creates a transluscent shield-like barrier that floats in front of you, deflecting enemy attacks.
-            You gain a +1 bonus to \\glossterm<physical defenses>.
+            You gain a +1 bonus to Armor and Reflex defenses.
             This does not stack with the defense bonus from any shields you use.
         """,
-        short_description="Grants +1 to physical defenses",
+        short_description="Grants +1 to Armor and Reflex defenses",
     ))
 
     apparel.append(MagicItem(
@@ -745,7 +745,7 @@ def generate_worn():
         description="""
             This item functions like the \\magicitem<ring of protection>, except that the bonus increases to +2.
         """,
-        short_description="Grants +2 to physical defenses",
+        short_description="Grants +2 to Armor and Reflex defenses",
     ))
 
     apparel.append(MagicItem(
