@@ -24,7 +24,7 @@ def generate_spells():
         header=Header('You shield your ally with a barrier of wind, protecting them from harm.'),
         effects=Effects('Aeromancy', """
             Choose a willing, Medium or smaller creature in \\rngclose range.
-            The target gains a +1 bonus to \\glossterm<physical defenses>.
+            The target gains a +1 bonus to Armor defense.
             This bonus is increased to +5 against ranged \\glossterm<physical attacks> from weapons or projectiles that are Small or smaller.
 
             Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
@@ -1056,7 +1056,7 @@ def generate_spells():
         effects=Effects('Distort Image', """
             Choose a willing creature within \\rngmed range.
             The target's physical outline is distorted so it appears blurred, shifting, and wavering.
-            It gains a +1 bonus to \\glossterm<physical defenses> and Stealth (see \\pcref<Stealth>).
+            It gains a +1 bonus to Armor defense and Stealth (see \\pcref<Stealth>).
             This bonus is increases to +2 while in \\glossterm<shadowy illumination>.
             This effect provides no defensive benefit against creatures immune to \\glossterm<Visual> abilities.
 
