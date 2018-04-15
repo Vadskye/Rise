@@ -380,17 +380,12 @@ It defines how attributes work and explains how to make physical attacks in comb
     \subsection{Defenses}\label{Defenses}
         Usually, when you are attacked, the attacker has to make an \glossterm{attack roll} against a specific defense.
         If the attack roll is at least as high as that defense, the attack succeeds.
-        There are two physical defenses and two non-physical defenses.
         \begin{itemize}
             \item Armor defense (AD): Your Armor defense protects you from normal physical attacks, such as attempts to hit you with a sword.
                 It is the most commonly used defense.
-                Armor defense is a physical defense.
             \item Reflex defense: Your Reflex protects you from attacks you have to avoid, such as explosions or falling rocks.
-                Reflex defense is a physical defense.
             \item Fortitude defense: Your Fortitude defense protects you from attacks you have to physically endure or resist, such as poisons and deadly spells.
-                Fortitude defense is not a physical defense.
             \item Mental defense: Your Mental defense protects you from attacks you have to mentally endure or resist, such as terrifying creatures and magical manipulation.
-                Mental defense is not a physical defense.
         \end{itemize}
 
         \subsubsection{Defense Values}\label{Defense Values}
@@ -563,7 +558,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \subsubsection{Overwhelm}\label{Overwhelm}
             When you are being attacked by multiple foes at once, or by a massive foe that can attack from many directions, you are less able to defend yourself.
-            You take penalties to your \glossterm{physical defenses} equal to half the combined \glossterm{overwhelm value} of all creatures threatening you, rounded down.
+            You take penalties to your Armor and Reflex defenses equal to half the combined \glossterm{overwhelm value} of all creatures threatening you, rounded down.
             Among equal sized creatures, this usually means you take a penalty equal to half the number of creatures threatening you.
             These penalties are called \glossterm{overwhelm penalties}.
             If you are suffering at least a \minus1 overwhelm penalty, you are \glossterm{overwhelmed}.
@@ -617,7 +612,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             The obstacle takes any damage from a successful attack normally.
 
             \parhead{Passive Cover}\label{Passive Cover} Passive cover is provided by immobile obstacles between you and your target, such as trees and walls.
-            Creatures with passive cover gain a \plus2 bonus to \glossterm{physical defenses}.
+            Creatures with passive cover gain a \plus2 bonus to Armor and Reflex defenses.
             In addition, creatures with passive cover can hide (see \pcref{Stealth}).
 
             \parhead{Measuring Cover}
@@ -649,7 +644,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             A creature can benefit from both passive and active cover.
             Cover of the same type generally doesn't stack; a creature behind two trees is not substantially more protected than a creature behind a single tree.
             However, exceptionally well covered creatures, such as a creature behind an arrow slit in a castle, may receive additional benefits.
-            In that case, each additional major obstacle increases the miss chance by 10\% or grants an additional \plus1 bonus to physical defenses, as appropriate.
+            In that case, each additional major obstacle increases the miss chance by 10\% or increases the defense bonus by \plus1, as appropriate.
 
             \parhead{Total Cover}\label{Total Cover}
             If a creature is completely behind an physical object that blocks sight, it has \glossterm{total cover} from attacks.
@@ -657,7 +652,9 @@ It defines how attributes work and explains how to make physical attacks in comb
             Total cover is the only kind of cover that also affects attacks other than \glossterm{physical attacks}.
 
         \subsubsection{Concealment}\label{Concealment}
-            Concealment represents anything which makes it more difficult to see your target, such as dim lighting. A creature with concealment from you gains a \plus2 bonus to \glossterm{physical defenses}. The concealment bonus does not apply if you can't see your opponent (such as if you close your eyes).
+            Concealment represents anything which makes it more difficult to see your target, such as dim lighting.
+            A creature with concealment from you gains a \plus2 bonus to Armor and Reflex defenses.
+            The concealment bonus does not apply if you can't see your opponent (such as if you close your eyes).
             Determining concealment works similarly to determining cover.
             You must use the same \glossterm{points of origin} and \glossterm{target square} when determining concealment that you would use to determine cover.
 
@@ -670,7 +667,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \subsubsection{Helpless Defenders}
             A helpless creature is completely at an opponent's mercy.
-            Its physical defenses are calculated as if it had a Dexterity of \minus10.
+            Its Armor and Reflex defenses are calculated as if it had a Dexterity of \minus10.
             Paralyzed, bound, and unconscious creatures are helpless.
 
             \parhead{Coup de Grace}\label{Coup de Grace} As a full-round action, you can deliver a coup de grace to a helpless opponent within your \glossterm{reach} that you can see.
@@ -814,7 +811,10 @@ It defines how attributes work and explains how to make physical attacks in comb
         An obstacle is anything that gets in your way. Enemies and large solid objects like walls completely block your movement. If you can get past an obstacle, like a low wall, that square is treated as difficult terrain. Some obstacles require a \glossterm{check} to bypass, such as an Acrobatics check (see \pcref{Acrobatics}).
 
         \parhead{Squeezing}\label{Squeezing}
-        In some cases, you may have to squeeze into or through an area that isn't as wide as the space you take up. You can squeeze through or into a space that is at least half as wide as your normal space. While squeezing, you move half as fast, and you take a \minus2 penalty to physical accuracy, physical checks, and physical defenses. You can squeeze into tighter spaces with the Escape Artist skill.
+        In some cases, you may have to squeeze into or through an area that isn't as wide as the space you take up.
+        You can squeeze through or into a space that is at least half as wide as your normal space.
+        While \glossterm{squeezing}, you move half as fast, and you take a \minus2 penalty to physical accuracy, physical checks, and Armor and Reflex defenses.
+        You can squeeze into tighter spaces with the Escape Artist skill.
 
         Creatures that take up multiple squares take up half their normal number of squares while squeezing. For example, a Large creature who normally takes up four spaces takes up two spaces while squeezing.
 
@@ -1127,7 +1127,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         \parhead{Figment} Figment abilities create light, sound, or other sensations.
         Figments cannot remove real sensations present in their area, but they can add additional sensations.
         You can only create figments of sensations you understand; for example, you cannot create a figment which speaks in a language you do not understand.
-        \par A figment's physical defenses are equal to 0.
+        \par A figment's defenses are equal to 0.
 
         \parhead{Fire} Fire abilities use fire \glossterm{energy}. They do not function underwater.
         \par Fire abilities provide light equivalent to a torch for their duration.
@@ -1629,10 +1629,9 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \parhead{Combat while Mounted} With a DR 5 Ride check, you can guide your mount with your knees so as to use both hands to attack or defend yourself. This is a free action.
 
-        If your mount moves more than its normal speed when charging, you also take the physical defense penalty associated with a charge. If you make an attack at the end of such a charge, you receive the bonus gained from the charge. When charging on horse-back, you deal double damage with a lance (see \pcref{Charge}).
-
-        You can use ranged weapons while your mount is moving in the same phase, but at a \minus2 penalty to accuracy.
-        If your mount is also sprinting (see \pcref{Sprint}), this penalty increases to \minus4.
+        If your mount is moving in the current phase, you gain a \plus1d bonus to damage with Mounted weapons (see \pcref{Mounted Weapon}).
+        You also take a \minus2 penalty to accuracy with ranged strikes.
+        If your mount uses the \textit{sprint} action, this penalty increases to \minus4 (see \pcref{Sprint}).
 
         \parhead{Casting Spells while Mounted} You can cast a spell normally if your mount moves up to a normal move (its speed) either before or after you cast. If you have your mount move both before and after you cast a spell, then you're casting the spell while the mount is moving, and you have to make a Concentration check due to the vigorous motion (DR 10 \add double spell level) or lose the spell. If the mount is sprinting, your Concentration check is more difficult due to the violent motion (DR 15 \add double spell level).
 
