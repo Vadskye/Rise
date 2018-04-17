@@ -1227,19 +1227,19 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Fighter Progression}
         \begin{dtabularx}{\columnwidth}{>{\ccol}p{\levelcol} >{\lcol}X}
             \tb{Level} & \tb{Abilities} \\\bottomrule
-            \nth{1}     & Armor expertise, discipline, martial exertion
+            \nth{1}     & Armor expertise, disciplined threat, martial exertion
             \\ \nth{2}  & Weapon focus
             \\ \nth{3}  & Martial training
-            \\ \nth{4}  & Disciplined threat
+            \\ \nth{4}  & Discipline
             \\ \nth{5}  & Greater armor expertise
             \\ \nth{6}  & Martial exertion
-            \\ \nth{7}  & Greater discipline
+            \\ \nth{7}  & Disciplined defense
             \\ \nth{8}  & Weapon master
             \\ \nth{9}  & Martial training
-            \\ \nth{10} & Disciplined defense
+            \\ \nth{10} & Greater disciplined threat
             \\ \nth{11} & Supreme armor expertise
             \\ \nth{12} & Martial exertion
-            \\ \nth{13} & Greater disciplined threat
+            \\ \nth{13} & Greater discipline
             \\ \nth{14} & Greater weapon focus
             \\ \nth{15} & Exertion expertise
             \\ \nth{16} & Greater disciplined defense
@@ -1477,35 +1477,35 @@ This choice determines a great deal about your character's abilities.
         As long as you are wearing body armor, you gain a \plus1 bonus to all defenses.
 
     \subsection{Combat Discipline}
-        This archetype improves your defenses in combat, especially against special abilities.
+        This archetype allows you to control your \glossterm{threat} and improves your defenses, especially against special abilities.
 
-        \cf{Ftr}{Discipline} You gain the \textit{discipline} ability.
-        \begin{ability}{Discipline}
-            As a \glossterm{minor action}, you can spend an \glossterm{action point} to use this ability.
-            If you do, remove one \glossterm{condition} affecting you.
-        \end{ability}
-
-        \cf{Ftr}[4]{Disciplined Threat}
+        \cf{Ftr}{Disciplined Threat}
         You know how to control your actions to appear more or less threatening, as you choose.
         As a \glossterm{minor action}, you can choose to enter a threatening stance, enter a nonthreatening stance, or act normally.
         If you enter a threatening stance, you gain a \plus2 bonus to your \glossterm{threat}.
         If you enter a nonthreatening stance, you take a \minus2 penalty to your \glossterm{threat}.
 
-        \cf{Ftr}[7]{Greater Discipline}
-        Your \textit{discipline} ability gains the \glossterm{Swift} tag, allowing it to resolve before other actions in the same phase.
-        This means that if you remove a condition with that ability, the penalties from the condition do not affect your attacks or defenses during the same phase.
+        \cf{Ftr}[4]{Discipline} You gain the \textit{discipline} ability.
+        \begin{ability}{Discipline}[Swift]
+            As a \glossterm{minor action}, you can spend an \glossterm{action point} to use this ability.
+            If you do, remove one \glossterm{condition} affecting you.
+            Because this ability has the \glossterm{Swift} tag, the penalties from the condition do not affect your attacks or defenses during the current phase.
+        \end{ability}
 
-        \cf{Ftr}[10]{Disciplined Defense}
+        \cf{Ftr}[7]{Disciplined Defense}
         You gain a \plus1 bonus to Armor defense.
 
-        \cf{Ftr}[13]{Greater Disciplined Threat}
+        \cf{Ftr}[10]{Greater Disciplined Threat}
         You gain more control over how threatening you appear.
         When you use your \textit{disciplined threat} ability, you can change your threat by any amount, up to a maximum bonus of \plus4 and a maximum penalty of \minus4.
+
+        \cf{Ftr}[13]{Greater Discipline}
+        You can remove an additional condition with your \textit{discipline} ability.
 
         \cf{Ftr}[16]{Greater Disciplined Defense}
         The defense bonus from your \textit{disciplined defense} ability increases to \plus2.
 
-        \cf{Ftr}[19]{Legendary Discipline} 
+        \cf{Ftr}[19]{Legendary Discipline}
         You can use your \textit{discipline} ability without spending an \glossterm{action point}.
 
 \newpage
