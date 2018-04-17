@@ -598,7 +598,7 @@ def generate_worn():
         description="""
             You are immune to effects that restrict your mobility.
             This removes all penalties you would suffer for acting underwater, except for those relating to using ranged weapons.
-            This does not prevent you from being \\grappled, but you gain a +10 bonus to your defense against \\glossterm<grapple> attacks.
+            This does not prevent you from being \\grappled, but you gain a +10 bonus to defenses against the \\textit<grapple> ability (see \\pcref<Grapple>).
         """,
         short_description="Grants immunity to most mobility restrictions",
     ))
