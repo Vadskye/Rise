@@ -15,12 +15,6 @@
 
     Items with full descriptions have their abilities detailed, and each of the following topics is covered in notational form at the end of the description.
 
-    \parhead{Minimum Power} The next item in a notational entry gives the minimum power of the item.
-    An item's minumum power can affect its item power when used (see \pcref{Item Power}).
-
-    For potions and scrolls, the item's minimum power must be at least twice the level of the spell contained.
-    Generally, an item's minimum power is the same as the minimum spellpower required to create the item.
-
     \parhead{Aura} Most of the time, a Spellcraft check will reveal the school of magic associated with a magic item and the strength of the aura an item emits.
     This information (when applicable) is given at the beginning of the item's notational entry.
     See the Spellcraft skill for details.
@@ -535,7 +529,7 @@
 
         \begin{magicitemdef}{Candle of Truth}[Active]{2}{Enchantment [Compulsion, Mind]}{alchemy}
             This item appears to be a simple white candle.
-            \magicitemability{Active}[Standard action] If you light this candle, it mimics the effect of the \spell{zone of truth} ritual, with a spellpower equal to its item power.
+            \magicitemability{Active}[Standard action] If you light this candle, it mimics the effect of the \spell{zone of truth} ritual.
             The zone lasts as long as the candle remains lit, which is normally 1 hour.
             If the candle is snuffed, the zone immediately ends.
             While lit, the candle does not burn down, and provides servicable candle-light.
@@ -599,7 +593,7 @@
 
         Adamantine weapons ignore the \glossterm{hardness} of creatures and objects.
 
-        Adamantine body armor grants its wearer damage reduction against physical damage equal to your item power.
+        Adamantine body armor grants its wearer damage reduction against physical damage equal to the item's \glossterm{power} (see \pcref{Item Power}).
         This damage reduction is overcome by adamantine weapons.
         Adamantine shields have no special effects.
 
@@ -635,7 +629,7 @@
         Dragonbone weapons grant twice the normal number of offensive legend points from their enhancement bonus.
         This does not affect the damage dealt by the weapon.
 
-        Dragonbone armor grants its wearer \glossterm{magic resistance} equal to 10 \add item power.
+        Dragonbone armor grants its wearer \glossterm{magic resistance} equal to 10 \add the \glossterm{power} of the item (see \pcref{Item Power}).
 
         \parhead{Dragonhide}
 
