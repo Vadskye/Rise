@@ -181,7 +181,7 @@ def animals():
         active_abilities=[
             active_ability('Flyby Attack', """
                 The roc flies up to its flying movement speed.
-                It can make a talon strike or grapple attack at any point during this movement.
+                It can make a talon strike or use the \\textit<grapple> ability at any point during this movement.
             """),
         ],
         speed="80 ft. fly",
