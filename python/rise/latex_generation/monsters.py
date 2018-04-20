@@ -272,7 +272,8 @@ def animates():
         active_abilities=[
             active_ability('Forceful Smash', f"""
                 The ram makes a slam strike.
-                Treat the attack result as a shove attack against the target in addition to the strike.
+                In addition to the strike's normal effects, compare the attack result against the target's Fortitude defense.
+                \\hit The target moves up to 10 feet in a direction of the ram's choice, as the \\textit<shove> ability (see \\pcref<Shove>).
                 The ram does not have to move with the target to push it back.
             """),
         ],
@@ -499,8 +500,8 @@ def magical_beasts():
         ankheg,
         active_abilities=[
             active_ability('Drag Prey', f"""
-                The ankheg makes a shove attack with an accuracy of +{ankheg.accuracy() + 5}.
-                It can move with the target up to a maximum distance equal to its land speed.
+                This ability functions like the \\textit<shove> ability (see \\pcref<Shove>), except that the ankheg's accuracy is +{ankheg.accuracy() + 5}.
+                In addition, the ankheg can move with the target up to a maximum distance equal to its land speed.
             """),
             active_ability('Spit Acid', f"""
                 The ankheg makes a +{ankheg.accuracy()} vs. Reflex attack against everything in a 5 ft. wide Medium line.
