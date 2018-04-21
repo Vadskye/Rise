@@ -105,23 +105,6 @@ def calc_attribute(attribute_name):
 def level_chart():
     return flex_row([
         calc_attributes(),
-        flex_col({'class': 'personality'}, [
-            div({'class': 'section-header'}, 'Alignment and Deity'),
-            div(text_input()),
-            div({'class': 'section-header'}, 'Goals and Flaws'),
-            div(text_input()),
-            div(text_input()),
-            div({'class': 'section-header'}, 'Background'),
-            "".join([div(text_input()) for i in range(1, 7)]),
-            div({'class': 'section-header'}, 'Other Calculations'),
-            "".join([div(text_input()) for i in range(1, 4)]),
-        ])
-    ])
-
-def attribute_bonuses():
-    return flex_col({'class': 'attribute-bonuses'}, [
-        flex_wrapper(div({'class': 'attribute-bonus-header chart-header'}, 'Attributes')),
-        ''.join([text_input({'class': 'level' + str(level)}) for level in range(1, 21)]),
     ])
 
 def abilities(name_prefix):
