@@ -138,9 +138,9 @@ def generate_armor():
         level=4,
         material_type='body armor',
         description="""
-            This armor's \\glossterm<encumbrance penalty> is reduced by 1.
+            This armor's \\glossterm<encumbrance> is reduced by 1.
         """,
-        short_description="Reduces encumbrance penalty by 1",
+        short_description="Reduces encumbrance by 1",
     ))
 
     apparel.append(MagicItem(
@@ -148,9 +148,9 @@ def generate_armor():
         level=10,
         material_type='body armor',
         description="""
-            This armor's \\glossterm<encumbrance penalty> is reduced by 2.
+            This armor's \\glossterm<encumbrance> is reduced by 2.
         """,
-        short_description="Reduces encumbrance penalty by 2",
+        short_description="Reduces encumbrance by 2",
     ))
 
     apparel.append(MagicItem(
