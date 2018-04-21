@@ -3,10 +3,10 @@ from cgi_simple import value_sum
 ATTRIBUTES = 'Strength Dexterity Constitution Intelligence Perception Willpower'.split()
 DEFENSES = 'Armor Fortitude Reflex Mental'.split()
 ATTRIBUTE_SKILLS = {
-    'strength': 'Climb Jump Sprint Swim'.split(),
+    'strength': 'Climb Jump Swim'.split(),
     'dexterity': ['Acrobatics', 'Escape Artist', 'Ride', 'Sleight of Hand', 'Stealth'],
     'constitution': [],
-    'intelligence': ['Craft ______', 'Devices', 'Disguise', 'Heal', 'Knowledge ______', 'Knowledge ______', 'Linguistics'],
+    'intelligence': ['Craft ______', 'Deduction', 'Devices', 'Disguise', 'Heal', 'Knowledge ______', 'Knowledge ______', 'Linguistics'],
     'perception': ['Awareness', 'Creature Handling', 'Sense Motive', 'Spellcraft', 'Survival'],
     'willpower': [],
 }
