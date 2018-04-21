@@ -501,7 +501,7 @@ def magical_beasts():
         active_abilities=[
             active_ability('Drag Prey', f"""
                 This ability functions like the \\textit<shove> ability (see \\pcref<Shove>), except that the ankheg's accuracy is +{ankheg.accuracy() + 5}.
-                In addition, the ankheg can move with the target up to a maximum distance equal to its land speed.
+                In addition, the ankheg can move with the target up to a maximum distance equal to its \\glossterm<base speed>.
             """),
             active_ability('Spit Acid', f"""
                 The ankheg makes a +{ankheg.accuracy()} vs. Reflex attack against everything in a 5 ft. wide Medium line.
