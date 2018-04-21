@@ -1,5 +1,5 @@
 # For brevity, return a three-item array instead of a dict.
-# The order is [Defense bonus, encumbrance penalty, accuracy modifier].
+# The order is [Defense bonus, encumbrance, accuracy modifier].
 def properties_from_armor_name(name):
     return {
         'light': [1, 0, 0],

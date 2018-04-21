@@ -1,5 +1,5 @@
 # For brevity, return a three-item array instead of a dict.
-# The order is [Defense bonus, encumbrance penalty, encumbrance category].
+# The order is [Defense bonus, encumbrance, encumbrance category].
 def properties_from_armor_name(name):
     return {
         'breastplate': [4, 4, Armor.MEDIUM],

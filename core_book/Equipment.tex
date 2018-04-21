@@ -362,20 +362,21 @@
     \subsection{Armor Qualities}
         \par Here is the format for armor entries (given as column headings on \trefnp{Armor and Shields}, below).
 
-        \parhead{Encumbrance} All armor restricts a character's movement to some degree. The heavier the armor, the more restrictive it is. Shields are divided into light shields (including bucklers), heavy shields, or tower shields, while body armor can be light, medium, or heavy. Many classes are not proficient with heavier kinds of armor.
 
         \parhead{Cost} The cost of the armor for Small or Medium humanoid
         creatures. See \trefnp{Armor for Unusual Creatures}, below, for armor prices for other creatures.
         \parhead{Armor/Shield Bonus} Body armor improves your Armor defense, while shields improve both your Armor and Reflex defenses.
         Wearing multiple suits of armor or wielding multiple shields does not improve your defenses any further.
 
-        \parhead{Dexterity} Heavy body armor limits mobility and agility, halving the character's Dexterity. This halving is applied in addition to the armor's \glossterm{encumbrance penalty} (if any). A Dexterity penalty is not halved.
+        \parhead{Dexterity} Heavy body armor limits mobility and agility, halving your Dexterity.
+        If your Dexterity is negative, it is not halved.
 
-        Your encumbrance (the amount of gear you carry) may also affect your Dexterity.
         \subparhead{Shields} Most shields do not affect a your Dexterity. However, a tower shield halves your Dexterity. This is not cumulative with the halving from wearing heavy armor.
-        \parhead{Encumbrance Penalty} All armor has an associated \glossterm{encumbrance penalty}.
-        A character's encumbrance penalty applies to all Strength and Dexterity-based skill checks the character makes.
-        A character's encumbrance (the amount of gear carried, including armor) may also apply an encumbrance penalty.
+
+        \parhead{Encumbrance} This value indicates how much the armor increases your \glossterm{encumbrance}.
+        You apply your encumbrance as a penalty to all Strength and Dexterity-based checks you make.
+        For details, see \pcref{Encumbrance}.
+
         \subparhead{Shields} If a character is wearing armor and using a shield, both armor check penalties apply.
 
         \parhead{Weight} This column gives the weight of the armor sized for a Medium wearer. Armor fitted for Small characters weighs half as much, and armor for Large characters weighs twice as much.
@@ -383,15 +384,17 @@
         \subsubsection{Armor Proficiency}\label{Armor Proficiency}
             You may be \glossterm{proficient} with specific types of armor: light, medium, or heavy \glossterm{body armor}, or \glossterm{shields}.
             If you wear or use armor you are not proficient with, it provides half its normal bonus to defenses.
-            In addition, you apply that armor's \glossterm{encumbrance penalty} as a penalty to your \glossterm{accuracy} with \glossterm{physical attacks}.
+            In addition, you apply that armor's \glossterm{encumbrance} as a penalty to your \glossterm{accuracy} with \glossterm{physical attacks}.
 
         \subsubsection{Moving in Armor}\label{Moving in Armor}
-            The heavier the armor, the more it slows your movement. Light armor has no effect on your movement speed, though it does impose \glossterm{encumbrance penalties}. Medium and heavy armor reduce your movement speed by five feet (to a minimum of 5 feet).
+            The heavier the armor, the more it slows your movement.
+            Light armor has no effect on your movement speed.
+            Medium and heavy armor reduce your \glossterm{base speed} by five feet (to a minimum of 5 feet).
 
     \subsection{Getting Into And Out Of Armor}
         The time required to don armor depends on its type; see \trefnp{Donning Armor}. Donning armor of any kind takes both hands.
         \parhead{Don} This column tells how long it takes a character to put the armor on. (One minute is 10 rounds.) Readying (strapping on) a shield is only a move action.
-        \parhead{Don Hastily} This column tells how long it takes to put the armor on in a hurry. The encumbrance penalty and defense bonus for hastily donned armor are each 1 point worse than normal.
+        \parhead{Don Hastily} This column tells how long it takes to put the armor on in a hurry. The \glossterm{encumbrance} and defense bonus for hastily donned armor are each 1 point worse than normal.
         \parhead{Remove} This column tells how long it takes to get the armor off. Loosing a shield (removing it from the arm and dropping it) is only a move action.
 
         \begin{dtable}
@@ -411,28 +414,28 @@
         \begin{dtable!*}
             \lcaption{Armor and Shields}
             \begin{dtabularx}{\textwidth}{>{\lcol}X c c c c c c}
-                \tb{Armor} & \tb{Defense Bonus} & \tb{Dex Multiplier} & \tb{Encumbrance Penalty} & \tb{Material} & \tb{Cost} & \tb{Weight\fn{1}} \\
+                \tb{Armor} & \tb{Defense Bonus} & \tb{Dex Multiplier} & \tb{Encumbrance} & \tb{Material} & \tb{Cost} & \tb{Weight\fn{1}} \\
                 \bottomrule
                 Light armor &  &  &  &  &  &  \\
                 \tind Leather          & \plus1        & 1\x    & \tdash       & Leather           & 10 gp      & 15 lb.      \\
-                \tind Studded leather  & \plus2        & 1\x    & \minus1       & Leather and metal & 25 gp      & 20 lb.      \\
-                \tind Chain shirt      & \plus2        & 1\x    & \minus2       & Metal             & 40 gp      & 25 lb.      \\
+                \tind Studded leather  & \plus2        & 1\x    & \plus1       & Leather and metal & 25 gp      & 20 lb.      \\
+                \tind Chain shirt      & \plus2        & 1\x    & \plus2       & Metal             & 40 gp      & 25 lb.      \\
                 Medium armor           &               &        &               &                   &            &             \\
-                \tind Hide             & \plus3        & 1\x    & \minus3       & Leather           & 15 gp      & 25 lb.      \\
-                \tind Scale mail       & \plus4        & 1\x    & \minus5       & Metal             & 50 gp      & 30 lb.      \\
-                \tind Breastplate      & \plus4        & 1\x    & \minus4       & Metal             & 150 gp     & 30 lb.      \\
+                \tind Hide             & \plus3        & 1\x    & \plus3       & Leather           & 15 gp      & 25 lb.      \\
+                \tind Scale mail       & \plus4        & 1\x    & \plus5       & Metal             & 50 gp      & 30 lb.      \\
+                \tind Breastplate      & \plus4        & 1\x    & \plus4       & Metal             & 150 gp     & 30 lb.      \\
                 Heavy armor            &               &        &               &                   &            &             \\
-                \tind Half-plate       & \plus5        & 1/2\x  & \minus7       & Metal             & 200 gp     & 50 lb.      \\
-                \tind Full plate       & \plus6        & 1/2\x  & \minus6       & Metal             & 500 gp     & 50 lb.      \\
+                \tind Half-plate       & \plus5        & 1/2\x  & \plus7       & Metal             & 200 gp     & 50 lb.      \\
+                \tind Full plate       & \plus6        & 1/2\x  & \plus6       & Metal             & 500 gp     & 50 lb.      \\
                 Shields                &               &        &               &                   &            &             \\
                 \tind Buckler          & \plus1\fn{2}  & \tdash & \tdash        & Metal or wood     & 15 gp      & 5 lb.       \\
                 \tind Shield, light    & \plus1        & \tdash & \tdash\fn{3}  & Metal or wood     & 5 gp       & 5 lb.       \\
                 \tind Shield, heavy    & \plus2        & \tdash & \tdash\fn{3}  & Metal or wood     & 15 gp      & 10 lb.      \\
-                \tind Shield, tower    & \plus3\fn{4}  & 1/2\x  & \minus2\fn{3} & Metal or wood     & 30 gp      & 45 lb.      \\
+                \tind Shield, tower    & \plus3\fn{4}  & 1/2\x  & \plus2\fn{3} & Metal or wood     & 30 gp      & 45 lb.      \\
                 Extras                 &               &        &               &                   &            &             \\
-                \tind Armor spikes     & \minus1\fn{5} & \tdash & \minus1       & Metal             & \plus50 gp & \plus10 lb. \\
+                \tind Armor spikes     & \minus1\fn{5} & \tdash & \plus1       & Metal             & \plus50 gp & \plus10 lb. \\
                 \tind Gauntlet, locked & \tdash        & \tdash & Special       & Metal             & 8 gp       & \plus5 lb.  \\
-                \tind Shield spikes    & \tdash        & \tdash & \minus1       & Metal             & \plus10 gp & \plus5 lb.  \\
+                \tind Shield spikes    & \tdash        & \tdash & \plus1       & Metal             & \plus10 gp & \plus5 lb.  \\
             \end{dtabularx}
             1 Weight figures are for armor sized to fit Medium characters. Armor fitted for Small characters weighs half as much, and armor fitted for Large characters weighs twice as much. \\
             2 Bucklers do not increase your Reflex defense. \\
@@ -473,7 +476,7 @@
         When you take the \textit{total defense} action with a tower shield, you can treat the shield as a wall along one edge of your square, providing you with \glossterm{total cover} against attacks.
         You cannot attack with a tower shield, and you cannot use your shield hand for anything else.
 
-        While wielding a tower shield, you take a \minus2 penalty to \glossterm{accuracy} with \glossterm{strikes} because of the shield's encumbrance.
+        While wielding a tower shield, you take a \minus2 penalty to \glossterm{accuracy} with \glossterm{strikes} because of the shield's unwieldy nature.
         \parhead{Shield Spikes} When added to your shield, these spikes turn it into a piercing weapon that increases the damage dealt by a shield bash as if the shield were designed for a creature one size category larger than you. You can't put spikes on a buckler or a tower shield. Otherwise, attacking with a spiked shield is like making a shield bash attack (see above).
         \parhead{Studded Leather} Only the studs on studded leather are made of metal.
         Studded leather armor made with studs from special materials does not grant the wearer the properties of the special material.
