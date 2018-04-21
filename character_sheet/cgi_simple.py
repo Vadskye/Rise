@@ -192,12 +192,17 @@ def labeled_number_input(label_name, input_name=None, attributes=None, input_att
         number_input(input_attributes),
     ])
 
-def unlabeled_number_input(attributes=None, number_input_attributes=None, text_input_attributes=None):
+def unlabeled_number_input(input_name=None, attributes=None, input_attributes=None):
     attributes = attributes or dict()
-    space_append(attributes, 'class', 'unlabeled-number-input')
-    return flex_row(attributes, [
-        text_input(attributes=text_input_attributes),
-        number_input(attributes=number_input_attributes),
+    space_append(attributes, 'class', 'underlabeled-number-input')
+
+    if input_attributes is None:
+        input_attributes = {'name': input_name}
+    else:
+        input_attributes['name'] = input_attributes.get('name') or input_name
+
+    return flex_col(attributes, [
+        number_input(input_attributes),
     ])
 
 def underlabeled_number_input(label_name, input_name=None, attributes=None, input_attributes=None):
@@ -215,6 +220,15 @@ def underlabeled_number_input(label_name, input_name=None, attributes=None, inpu
             {'class': 'under-label'},
             label_name
         ),
+    ])
+
+
+def freeform_number_input(attributes=None):
+    attributes = attributes or dict()
+    space_append(attributes, 'class', 'freeform-number-input')
+    return flex_row(attributes, [
+        text_input(),
+        number_input(),
     ])
 
 def labeled_dual_input(label_name, text_input_name, number_input_name):

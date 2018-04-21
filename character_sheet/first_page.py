@@ -1,5 +1,7 @@
-from cgi_simple import button, div, flex_col, flex_row, flex_wrapper, labeled_number_input, labeled_text_input, number_input, text_input, underlabeled_number_input, unlabeled_number_input
-
+from cgi_simple import (
+    button, div, flex_col, flex_row, flex_wrapper, freeform_number_input,
+    labeled_number_input, labeled_text_input, number_input, text_input, underlabeled_number_input,
+)
 from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, ROLL20_CALC
 
 def create_page():
@@ -37,10 +39,10 @@ def attributes_and_skills():
         flex_col({'class': 'other-skills attribute-section'}, [
             div({'class': 'attribute attribute-header'}, 'Other Skills'),
             ''.join([skill_box(skill) for skill in ['Bluff', 'Intimidate', 'Perform ______', 'Persuasion']]),
-            unlabeled_number_input({'class': 'skill-box'}),
-            unlabeled_number_input({'class': 'skill-box'}),
-            unlabeled_number_input({'class': 'skill-box'}),
-            unlabeled_number_input({'class': 'skill-box'}),
+            freeform_number_input({'class': 'skill-box'}),
+            freeform_number_input({'class': 'skill-box'}),
+            freeform_number_input({'class': 'skill-box'}),
+            freeform_number_input({'class': 'skill-box'}),
         ]),
     ])
 
@@ -146,7 +148,7 @@ def movement():
             labeled_number_input(movement_type)
             for movement_type in 'Land Climb Fly Swim'.split()
         ]),
-        unlabeled_number_input(),
+        freeform_number_input(),
     ])
 
 def abilities():
