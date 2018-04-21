@@ -10,8 +10,8 @@ def html_separator():
 # be a dict, and contents should always be in an array or None.
 # If we get a non-dict attributes, those are actually attributes.
 # This allows quickly nesting html tags
-def ensure_valid_attributes_and_contents(attributes = None, contents = None):
-    if type(attributes) != type(dict()):
+def ensure_valid_attributes_and_contents(attributes=None, contents=None):
+    if not isinstance(attributes, dict):
         if contents is None:
             contents = attributes
             attributes = dict()
@@ -24,7 +24,7 @@ def ensure_valid_attributes_and_contents(attributes = None, contents = None):
         contents = [contents]
     return attributes, contents
 
-def html_tag(tag_name, attributes = None, contents = None):
+def html_tag(tag_name, attributes=None, contents=None):
     attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
 
     if input_name_prefix and attributes.get('name'):
@@ -51,7 +51,7 @@ def html_tag(tag_name, attributes = None, contents = None):
                 contents,
             ))
 
-def convert_html_attributes(attributes = None):
+def convert_html_attributes(attributes=None):
     if attributes is None:
         return ''
     attributes_text = ''
@@ -63,31 +63,31 @@ def convert_html_attributes(attributes = None):
             )
     return attributes_text
 
-def button(attributes = None, contents = None):
+def button(attributes=None, contents=None):
     return html_tag('button', attributes, contents)
 
-def div(attributes = None, contents = None):
+def div(attributes=None, contents=None):
     return html_tag('div', attributes, contents)
 
-def form(attributes = None, contents = None):
+def form(attributes=None, contents=None):
     return html_tag('form', attributes, contents)
 
-def h1(attributes = None, contents = None):
+def h1(attributes=None, contents=None):
     return html_tag('h1', attributes, contents)
 
-def h2(attributes = None, contents = None):
+def h2(attributes=None, contents=None):
     return html_tag('h2', attributes, contents)
 
-def head(attributes = None, contents = None):
+def head(attributes=None, contents=None):
     return html_tag('head', attributes, contents)
 
-def link(attributes = None, contents = None):
+def link(attributes=None, contents=None):
     return html_tag('link', attributes, contents)
 
-def span(attributes = None, contents = None):
+def span(attributes=None, contents=None):
     return html_tag('span', attributes, contents)
 
-def style(attributes = None, contents = None):
+def style(attributes=None, contents=None):
     return html_tag('style', attributes, contents)
 
 # input:
@@ -100,39 +100,39 @@ def style(attributes = None, contents = None):
 #   ],
 #   ...
 # ],
-def table(attributes = None, contents = None):
+def table(attributes=None, contents=None):
     inner_html = ''
     for row in contents:
         inner_html += tr([td(col) for col in row])
 
     return html_tag('table', attributes, inner_html)
 
-def td(attributes = None, contents = None):
+def td(attributes=None, contents=None):
     return html_tag('td', attributes, contents)
 
-def tr(attributes = None, contents = None):
+def tr(attributes=None, contents=None):
     return html_tag('tr', attributes, contents)
 
 def card(attributes, contents):
-    if attributes.has_key('class'):
+    if 'class' in attributes:
         attributes['class'] += 'card'
     else:
         attributes['class'] = 'card'
     return div(attributes, contents)
 
-def hidden_input(attributes = None):
+def hidden_input(attributes=None):
     attributes = attributes or dict()
     attributes['type'] = 'hidden'
     return html_tag('input', attributes)
 
-def number_input(attributes = None):
+def number_input(attributes=None):
     attributes = attributes or dict()
     attributes['type'] = 'number'
-    if DESTINATION == 'roll20' and not attributes.has_key('value'):
+    if DESTINATION == 'roll20' and 'value' not in attributes:
         attributes['value'] = '0'
     return html_tag('input', attributes)
 
-def text_input(attributes = None):
+def text_input(attributes=None):
     attributes = attributes or dict()
     attributes['type'] = 'text'
     attributes['size'] = attributes.get('size', '1')
@@ -146,22 +146,22 @@ def space_join(values):
 def space_append(dictionary, key, value):
     dictionary[key] = space_join([value, dictionary.get(key)])
 
-def flex_row(attributes = None, contents = None):
+def flex_row(attributes=None, contents=None):
     attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
     space_append(attributes, 'class', 'flex-row')
     return div(attributes, contents)
 
-def flex_col(attributes = None, contents = None):
+def flex_col(attributes=None, contents=None):
     attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
     space_append(attributes, 'class', 'flex-col')
     return div(attributes, contents)
 
-def flex_wrapper(attributes = None, contents = None):
+def flex_wrapper(attributes=None, contents=None):
     attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
     space_append(attributes, 'class', 'flex-wrapper')
     return div(attributes, contents)
 
-def labeled_text_input(label_name, input_name, attributes = None):
+def labeled_text_input(label_name, input_name, attributes=None):
     attributes = attributes or dict()
     space_append(attributes, 'class', 'labeled-text-input')
     return div(attributes, flex_col([
@@ -174,7 +174,7 @@ def labeled_text_input(label_name, input_name, attributes = None):
         ),
     ]))
 
-def labeled_number_input(label_name, input_name = None, attributes = None, input_attributes = None):
+def labeled_number_input(label_name, input_name=None, attributes=None, input_attributes=None):
     attributes = attributes or dict()
     space_append(attributes, 'class', 'labeled-number-input')
     input_name = input_name or label_name.lower()
@@ -192,15 +192,15 @@ def labeled_number_input(label_name, input_name = None, attributes = None, input
         number_input(input_attributes),
     ])
 
-def unlabeled_number_input(attributes = None, number_input_attributes = None, text_input_attributes = None):
+def unlabeled_number_input(attributes=None, number_input_attributes=None, text_input_attributes=None):
     attributes = attributes or dict()
     space_append(attributes, 'class', 'unlabeled-number-input')
     return flex_row(attributes, [
-        text_input(attributes = text_input_attributes),
-        number_input(attributes = number_input_attributes),
+        text_input(attributes=text_input_attributes),
+        number_input(attributes=number_input_attributes),
     ])
 
-def underlabeled_number_input(label_name, input_name = None, attributes = None, input_attributes = None):
+def underlabeled_number_input(label_name, input_name=None, attributes=None, input_attributes=None):
     attributes = attributes or dict()
     space_append(attributes, 'class', 'underlabeled-number-input')
 
@@ -226,9 +226,9 @@ def labeled_dual_input(label_name, text_input_name, number_input_name):
     ])
 
 def value_sum(values):
-    return '(' + '+'.join(['@{'+value+'}' for value in values]) + ')'
+    return '(' + '+'.join(['@{' + value + '}' for value in values]) + ')'
 
-def equation(attributes = None, contents = None, result_attributes = None):
+def equation(attributes=None, contents=None, result_attributes=None):
     attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
     space_append(attributes, 'class', 'equation')
     result_attributes = result_attributes or {'name': 'eq-total'}
@@ -236,7 +236,7 @@ def equation(attributes = None, contents = None, result_attributes = None):
     return flex_row(attributes, [
         underlabeled_number_input(
             'Total',
-            input_attributes = result_attributes
+            input_attributes=result_attributes
         ),
         equals(),
         ''.join(contents),
