@@ -201,7 +201,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             Strength measures muscle and physical power.
             It has the following effects:
             \begin{itemize}
-                \item Strength determines how much a character can carry (see \tref{Weight Limits}).
+                \item Strength determines how much a character can carry (see \tref{Carrying Capacity by Strength}).
                 \item Strength affects Strength-based skills: Climb, Jump, and Swim (see \pcref{Skills}).
                 \item If your Strength is negative, you take a penalty to all Strength-based skills equal to your Strength.
                 \item If your Strength is negative, you take a penalty to \glossterm{strike damage} equal to half your Strength in \glossterm{die increments}.
@@ -824,7 +824,8 @@ It defines how attributes work and explains how to make physical attacks in comb
         In addition, it gains a \plus10 bonus to any Climb checks it makes.
 
         \parhead{Flying}\label{Flying}
-        A creature with a fly speed can fly through the air at the indicated speed. It must be \glossterm{unencumbered} (see \pcref{Encumbrance}). If a creature with a fly speed is encumbered, it is treated as having a glide speed instead (see \pcref{Gliding}), which it can use to glide even though it is encumbered.
+        A creature with a fly speed can fly through the air at the indicated speed.
+        It must not be carrying weight in excess of its maximum carrying capacity (see \pcref{Carrying Capacity}).
 
         Each creature with a fly speed also has a maneuverability: good, average, poor, or special. Normally, a flying creature must move forward by at least half its fly speed each round. If it does not, it falls. Turning by 90 degrees costs 5 feet of movement, and it can't turn in the same place by more than 90 degrees. It can move up by only one square vertically per square traveled horizontally, but it can fly directly down if it chooses. The creature can fly up at half speed, but can fly down twice as fast.
 
@@ -840,7 +841,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         \parhead{Falling} If a flying creature loses control, usually by failing to maintain its minimum forward speed, or loses the ability to fly, it falls just like any other creature would in midair. As long as it still has the ability to fly, it can regain control of its fall as a standard action, causing it to resume flying normally.
 
         \parhead{Gliding}\label{Gliding}
-        A creature with a glide speed can glide through the air at the indicated speed. It must be \glossterm{unencumbered} (see \pcref{Encumbrance}).
+        A creature with a glide speed can glide through the air at the indicated speed.
 
         While in the air, a creature with a glide speed can control its fall as a move action. This allows it to move up to its speed horizontally in a direction of its choice while moving only five feet down. If it desires, it can move half as far horizontally and fall down twice as fast. It takes no falling damage if it touches the ground while gliding.
 
@@ -1193,7 +1194,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         Many telekinesis abilities create fields of solid telekinetic force.
 
         \parhead{Teleportation} Teleportation abilities move creature or objects through the Astral Plane to a distant destination.
-        A teleported creature can bring along equipment and held objects as long as their weight does not exceed the creature's maximum load (see \tref{Weight Limits}). Any excess items are left behind, in order of their distance from the creature's body.
+        A teleported creature can bring along equipment and held objects as long as their weight does not exceed the creature's maximum carrying capacity (see \pcref{Carrying Capacity}). Any excess items are left behind, in order of their distance from the creature's body.
 
         \parhead{Temporal} Temporal abilities alter the flow of time.
 
@@ -1534,11 +1535,8 @@ It defines how attributes work and explains how to make physical attacks in comb
         You apply your encumbrance penalty as a modifier to all Strength-based and Dexterity-based checks you make.
         Carrying an excess weight can also apply an encumbrance penalty, as described in \pcref{Encumbrance by Weight}.
 
-        If you have an encumbrance penalty, you are \glossterm{encumbered}.
-        If you are encumbered, you may be unable to use abilities which require free motion, as stated in the ability descriptions.
-        In addition, you are unable to sleep properly while encumbered.
-        % This doesn't make sense - it should just have no effect on the normal process of automatically applying fatigue over time
-        If you sleep while encumbered, you become \glossterm{fatigued} when you wake up.
+        Sleeping in armor is difficult.
+        If you sleep while you have any encumbrance penalty, you become \glossterm{fatigued} when you wake up.
 
 
     \subsection{Grappling}\label{Grappling}
