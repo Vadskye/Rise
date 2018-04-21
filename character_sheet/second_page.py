@@ -105,7 +105,7 @@ def calc_attribute(attribute_name):
 def level_chart():
     return flex_row([
         calc_attributes(),
-        flex_col({'class': 'level-chart'}, [
+        flex_col({'class': 'personality'}, [
             div({'class': 'section-header'}, 'Alignment and Deity'),
             div(text_input()),
             div({'class': 'section-header'}, 'Goals and Flaws'),
@@ -116,22 +116,6 @@ def level_chart():
             div({'class': 'section-header'}, 'Other Calculations'),
             "".join([div(text_input()) for i in range(1, 4)]),
         ])
-    ])
-
-def level_row(level):
-    return flex_row({'class': 'level-chart-row'}, [
-        flex_wrapper({'class': 'ability-level-row'}, [
-            text_input({'name': 'ability-level' + str(level)})
-        ]),
-        flex_wrapper({'class': 'ability-name-row'}, [
-            text_input({'name': 'ability-name' + str(level)})
-        ]),
-    ])
-
-def level_chart_column(title, html_name, contents):
-    return flex_col({'class': html_name}, [
-        flex_wrapper(div({'class': html_name + '-header chart-header'}, title)),
-        contents
     ])
 
 def attribute_bonuses():
