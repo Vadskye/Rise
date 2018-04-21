@@ -3,6 +3,9 @@ from cgi_simple import (
     plus, text_input, this_or_that, underlabeled_number_input,
 )
 
+def misc_spacer():
+    return div({'class': 'misc-spacer'}, '')
+
 from sheet_data import ATTRIBUTE_SKILLS, ATTRIBUTES, ROLL20_CALC, roll20_max_text
 
 def create_page():
@@ -340,9 +343,6 @@ def calc_armor():
             },
         ),
     ])
-
-def misc_spacer():
-    return div({'class': 'misc-spacer'}, '')
 
 def calc_fort():
     return flex_row([
