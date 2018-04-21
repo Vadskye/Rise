@@ -9,7 +9,6 @@ def create_page():
             feats_summary(),
             proficiencies(),
             inventory(),
-            adventuring(),
             flex_col([
                 flex_wrapper(div({'class': 'section-header'}, 'Experience')),
                 div(text_input()),
@@ -59,6 +58,7 @@ def proficiencies():
     return flex_col({'class': 'proficiencies'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Proficiencies')),
         labeled_text_input('Armor', 'prof-armor'),
+        text_input(),
         labeled_text_input('Weapons', 'prof-weapons'),
         text_input(),
         labeled_text_input('Languages', 'prof-languages'),
@@ -85,7 +85,7 @@ def inventory():
     return div({'class': 'inventory'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Inventory')),
         *[
-            text_input() for i in range(14)
+            text_input() for i in range(17)
         ]
     ])
 
@@ -96,21 +96,6 @@ def misc_equipment(body_slot, body_slot_html=None):
         subsection_header(body_slot),
         labeled_text_input('Name', body_slot_html + '-name', {'class': 'equipment-name'}),
         labeled_text_input('Special', body_slot_html + '-special', {'class': 'equipment-special'}),
-    ])
-
-def adventuring():
-    return flex_row({'class': 'adventuring'}, [
-        flex_col({'class': 'misc'}, [
-            flex_wrapper(div({'class': 'section-header'}, 'Weight Limits')),
-            flex_row({'class': 'weight-limits'}, [
-                labeled_text_input('Normal', 'weight-normal'),
-                labeled_text_input('Overloaded', 'weight-overloaded'),
-            ]),
-            flex_row({'class': 'weight-limits'}, [
-                labeled_text_input('Max', 'weight-max'),
-                labeled_text_input('Push/Drag', 'weight-push-drag'),
-            ]),
-        ]),
     ])
 
 def personality():
