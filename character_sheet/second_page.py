@@ -154,14 +154,9 @@ def calc_hit_points():
         div({'class': 'calc-header'}, 'Hit Points'),
         equation(
             [
-                underlabeled_number_input('Level', 'hp-level', {'class': 'eq-level'}),
-                flex_col({'class': 'equation-text'}, 'times the total of'),
-                number_input({
-                    'disabled': 'true',
-                    'value': '5'
-                }),
-                plus(),
-                underlabeled_number_input('Con*'),
+                underlabeled_number_input('1+Level', 'hp-level', {'class': 'eq-level'}),
+                flex_col({'class': 'equation-text'}, 'times'),
+                underlabeled_number_input('5+Con*'),
                 plus(),
                 unlabeled_number_input('hp-misc', {'class': 'equation-misc'}),
             ],
@@ -313,7 +308,7 @@ def calc_armor():
                     underlabeled_number_input(
                         'Level',
                     ),
-                    underlabeled_number_input('Dex/Con'),
+                    underlabeled_number_input('Dex'),
                 ]),
                 plus(),
                 underlabeled_number_input('Armor', 'armor-body'),
