@@ -195,31 +195,6 @@ def passive_ability(prefix, ability_number):
         labeled_text_input('Effect', 'passive{0}-{1}-effect'.format(ability_number, prefix), {'class': 'passive-effect'}),
     ])
 
-def active_abilities():
-    return flex_col({'class': 'active-abilities'}, [
-        flex_wrapper(div({'class': 'section-header'}, 'Abilities')),
-        "".join([active_ability(i) for i in range(4)]),
-    ])
-
-def active_ability(ability_number=None):
-    return flex_row({'class': 'active-ability'}, [
-        labeled_text_input(
-            'Ability',
-            'active-ability{0}-name'.format(ability_number),
-            {'class': 'active-ability-name'}
-        ),
-        underlabeled_number_input(
-            'Bonus',
-            'active-ability{0}-bonus'.format(ability_number),
-            {'class': 'active-ability-bonus'}
-        ),
-        labeled_text_input(
-            'Effect',
-            'active-ability{0}-effect'.format(ability_number),
-            {'class': 'active-ability-effect'}
-        ),
-    ])
-
 def attacks():
     return flex_col({'class': 'attacks'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Attacks')),
@@ -233,8 +208,8 @@ def attack(attack_number=None):
             'attack{0}-name'.format(attack_number),
             {'class': 'attack-name'}
         ),
-        underlabeled_number_input(
-            'Bonus',
+        labeled_text_input(
+            'Accuracy',
             'attack{0}-bonus'.format(attack_number),
             {'class': 'attack-bonus'}
         ),

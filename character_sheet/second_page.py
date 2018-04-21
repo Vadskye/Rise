@@ -1,9 +1,8 @@
 from cgi_simple import (
-    div, equation, flex_col, flex_row, flex_wrapper, minus, number_input,
+    div, equation, flex_col, flex_row, flex_wrapper, labeled_text_input, minus, number_input,
     plus, text_input, this_or_that, underlabeled_number_input, unlabeled_number_input
 )
-
-from sheet_data import ATTRIBUTE_SKILLS, ATTRIBUTES, ROLL20_CALC, roll20_max_text
+from sheet_data import ATTRIBUTE_SKILLS, ATTRIBUTES, ROLL20_CALC
 
 def create_page():
     return flex_row({'class': 'second-page'}, [
@@ -51,7 +50,7 @@ def skill_labels(attribute):
         div({'class': 'skill-label'}, 'Train'),
         div({'class': 'skill-label'}, 'Bonus'),
         div({'class': 'skill-label skill-attribute'}, attribute),
-        div({'class': 'skill-label'}, 'Misc'),
+        div({'class': 'skill-label misc'}, 'Misc'),
     ])
 
 def calc_skill(skill_name, blank_input=False):
@@ -60,7 +59,10 @@ def calc_skill(skill_name, blank_input=False):
         number_input({'class': 'skill-training'}),
         number_input({'class': 'skill-ranks'}),
         number_input({'class': 'skill-attr'}),
-        number_input({'class': 'skill-misc'}),
+        unlabeled_number_input(
+            skill_name + '-misc',
+            {'class': 'equation-misc'},
+        ),
     ])
 
 def calc_attributes():
@@ -105,6 +107,7 @@ def calc_attribute(attribute_name):
 def level_chart():
     return flex_row([
         calc_attributes(),
+        adventuring(),
     ])
 
 def abilities(name_prefix):
@@ -271,12 +274,7 @@ def calc_armor():
         div({'class': 'calc-header'}, 'Armor'),
         equation(
             [
-                this_or_that([
-                    underlabeled_number_input(
-                        'Level',
-                    ),
-                    underlabeled_number_input('Dex'),
-                ]),
+                underlabeled_number_input('Lvl/Dex'),
                 plus(),
                 underlabeled_number_input('Armor', 'armor-body'),
                 plus(),
@@ -297,10 +295,7 @@ def calc_fort():
         div({'class': 'calc-header'}, 'Fort'),
         equation(
             [
-                this_or_that([
-                    underlabeled_number_input('Level', 'fort-level'),
-                    underlabeled_number_input('Str/Con'),
-                ]),
+                underlabeled_number_input('Lvl/Str/Con'),
                 plus(),
                 underlabeled_number_input('Con*'),
                 plus(),
@@ -321,10 +316,7 @@ def calc_ref():
         div({'class': 'calc-header'}, 'Ref'),
         equation(
             [
-                this_or_that([
-                    underlabeled_number_input('Level', 'ref-level'),
-                    underlabeled_number_input('Dex/Per'),
-                ]),
+                underlabeled_number_input('Lvl/Dex/Per'),
                 plus(),
                 underlabeled_number_input('Dex*'),
                 plus(),
@@ -347,10 +339,7 @@ def calc_mental():
         div({'class': 'calc-header'}, 'Ment'),
         equation(
             [
-                this_or_that([
-                    underlabeled_number_input('Level', 'ment-level'),
-                    underlabeled_number_input('Int/Wil'),
-                ]),
+                underlabeled_number_input('Lvl/Int/Wil'),
                 plus(),
                 underlabeled_number_input('Wil*'),
                 plus(),
@@ -365,3 +354,54 @@ def calc_mental():
             },
         ),
     ])
+
+def adventuring():
+    return flex_col({'class': 'adventuring'}, [
+        flex_col({'class': 'misc'}, [
+            flex_wrapper(div({'class': 'section-header'}, 'Weight Limits')),
+            flex_row({'class': 'weight-limits'}, [
+                labeled_text_input('Unencumbered', 'weight-unencumbered'),
+                labeled_text_input('Maximum', 'weight-maximum'),
+            ]),
+            flex_row({'class': 'weight-limits'}, [
+                labeled_text_input('Overloaded', 'weight-overloaded'),
+                labeled_text_input('Push/Drag', 'weight-push-drag'),
+            ]),
+        ]),
+        standard_damage(),
+    ])
+
+def standard_damage():
+    return flex_col({'class': 'standard-damage'}, [
+        div({'class': 'section-header'}, 'Standard Damage'),
+        flex_row({'class': 'damage-chart'}, [
+            flex_col([
+                div({'class': 'header'}, 'Power'),
+                "".join([div(f"{i}-{i+1}") for i in range(0, 25, 2)])
+            ]),
+            flex_col([
+                div({'class': 'header'}, 'Damage'),
+                "".join([
+                    div(standard_damage_at_power(i))
+                    for i in range(0, 25, 2)
+                ]),
+            ])
+        ])
+    ])
+
+def standard_damage_at_power(power):
+    return {
+        0: '1d8',
+        2: '1d10',
+        4: '2d6',
+        6: '2d8',
+        8: '2d10',
+        10: '4d6',
+        12: '4d8',
+        14: '4d10',
+        16: '5d10',
+        18: '6d10',
+        20: '7d10',
+        22: '8d10',
+        24: '9d10',
+    }[power]

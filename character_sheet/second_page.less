@@ -69,16 +69,12 @@
 }
 
 .equation-misc {
-  flex-grow: 1;
 
   input {
     width: 6em;
   }
 }
 
-.calc-attributes .equation-misc > input {
-  width: 3em;
-}
 .calc-attribute-header {
   align-items: center;
   font-weight: bold;
@@ -112,18 +108,25 @@
 }
 .main-body {
   margin-left: 1%;
-  width: 65%;
+  width: 57%;
 }
 .attributes-header {
   margin-top: 0;
   margin-bottom: 0;
 }
 .sidebar {
-  width: 34%;
+  width: 42%;
 }
 .calc-skills:nth-child(3) {
   margin-top: 0;
 }
+
+.skill-row {
+    .underlabeled-number-input {
+        padding-bottom: 0;
+    }
+}
+
 .skill-row,
 .skill-labels {
   justify-content: space-between;
@@ -140,6 +143,10 @@
   font-size: 0.8em;
   text-align: center;
 }
+.skill-label.misc {
+  flex-basis: 6em;
+}
+
 .skill-attribute {
   font-weight: bold;
 }
@@ -157,4 +164,47 @@
 /* make the bottom boxes line up */
 .calc-attribute-header:nth-child(2) {
   margin-top: 0.25em;
+}
+
+.adventuring {
+    flex-grow: 1;
+
+    .weight-limits {
+        .labeled-text-input {
+            flex-basis: 25%;
+            flex-grow: 1;
+        }
+
+        > div {
+            margin-left: 0.25em;
+            margin-right: 0.25em;
+        }
+        > div:first-child {
+            margin-left: 0;
+        }
+        > div:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.standard-damage {
+    flex-grow: 1;
+
+    .level-range {
+      flex-basis: 2.5em;
+      text-align: center;
+    }
+
+    .damage-chart > .flex-col{
+        flex-grow: 1;
+    }
+
+    .damage-value {
+        flex-grow: 1;
+    }
+
+    .header {
+        font-weight: bold;
+    }
 }
