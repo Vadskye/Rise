@@ -5,6 +5,7 @@ import first_page
 import second_page
 import third_page
 import ability_cards
+from subprocess import call
 import sys
 
 DESTINATION = 'paper'
@@ -18,7 +19,18 @@ except IndexError:
 if DESTINATION == 'roll20':
     cgi.input_name_prefix = 'attr_'
 
+def compile_less():
+    call(['lessc', 'ability_cards.less', 'ability_cards.css'])
+    call(['lessc', 'first_page.less', 'first_page.css'])
+    call(['lessc', 'second_page.less', 'second_page.css'])
+    call(['lessc', 'third_page.less', 'third_page.css'])
+    call(['lessc', 'sheet.less', 'sheet.css'])
+    call(['lessc', 'paper_sheet.less', 'paper_sheet.css'])
+    call(['lessc', 'roll20.less', 'roll20.css'])
+
 def main():
+    compile_less()
+
     with open('first_page.html', 'w') as fh:
         fh.write(''.join([
             debug_stylesheets('first_page'),
