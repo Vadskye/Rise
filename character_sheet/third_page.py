@@ -22,7 +22,7 @@ def create_page():
         flex_col({'class': 'main-body'}, [
             equipment(),
             abilities_summary(),
-            description(),
+            personality(),
         ]),
     ])
 
@@ -32,7 +32,7 @@ def feats_summary():
             div({'class': 'summary-header-level section-header'}, 'Lvl'),
             div({'class': 'summary-header-name section-header'}, 'Feats'),
         ]),
-        "".join([summary_row(i) for i in [1, 1, 3, 6, 10]]),
+        "".join([summary_row(i) for i in [1, 2, 5, 9]]),
     ])
 
 def abilities_summary():
@@ -43,7 +43,7 @@ def abilities_summary():
                 labeled_text_input('Name', f'ability-name-{i}', {'class': 'ability-name'}),
                 labeled_text_input('Effects', f'ability-effects-{i}', {'class': 'ability-effects'}),
             ])
-            for i in range(12)
+            for i in range(9)
         ],
     ])
 
@@ -77,7 +77,7 @@ def equipment():
                 labeled_text_input('Name', f'equipment-name-{i}', {'class': 'equipment-name'}),
                 labeled_text_input('Effects', f'equipment-effects-{i}', {'class': 'equipment-effects'}),
             ])
-            for i in range(6)
+            for i in range(5)
         ],
     ])
 
@@ -113,10 +113,13 @@ def adventuring():
         ]),
     ])
 
-def description():
-    return flex_col({'class': 'description'}, [
-        div({'class': 'section-header'}, 'Personality and Description'),
-        "".join([
-            div({'class': 'description-row'}, text_input()) for i in range(5)
-        ]),
+def personality():
+    return flex_col({'class': 'personality'}, [
+        div({'class': 'section-header'}, 'Alignment and Deity'),
+        div(text_input()),
+        div({'class': 'section-header'}, 'Personality and Background'),
+        "".join([div(text_input()) for i in range(5)]),
+        div({'class': 'section-header'}, 'Goals and Flaws'),
+        div(text_input()),
+        div(text_input()),
     ])
