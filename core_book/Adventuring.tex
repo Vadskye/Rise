@@ -1,11 +1,12 @@
 \chapter{Adventuring}
 
-\section{Encumbrance by Weight}\label{Encumbrance by Weight}
+\section{Carrying Capacity}\label{Carrying Capacity}
 
 \begin{dtable}
-    \lcaption{Weight Limits}
+    \lcaption{Carrying Capacity by Strength}
     \setlength{\tabcolsep}{4pt}
     \begin{dtabularx}{\columnwidth}{X l l l l}
+        % TODO: better name than ``unencumbered''?
         \tb{Strength} & \tb{Unencumbered} & \tb{Maximum} & \tb{Overloaded} & \tb{Push/Drag} \\
         \bottomrule
         -9 & 6 lb. & 12 lb. & 18 lb. & 60 lb. \\
@@ -40,24 +41,27 @@
         20 & 5,000 & 10,000 & 15,000 & 50,000 \\
         21\plus\fn{1} & \tdash & \tdash & \tdash & \tdash \\
     \end{dtabularx}
-    1 To calculate weight limits for a creature with epic Strength, double its weight limit every 3 Strength.
+    1 To calculate the carrying capacity for a creature with epic Strength, double its carrying capacity every 3 Strength.
 \end{dtable}
 
-A creature's Strength determines how much it can carry, as shown in \trefnp{Weight Limits}. A creature can carry up to its unencumbered weight limit without any penalty. If it carries more than that, but less than its maximum weight limit, it is \glossterm{encumbered}. A creature encumbered by weight halves its Dexterity (if positive), takes a \minus4 \glossterm{encumbrance penalty}, and reduces its movement speed by 5 feet (as if it were in heavy armor). This encumbrance penalty does not stack with the encumbrance penalty from any armor the creature is wearing; only apply the higher of the two.
+A creature's Strength determines how much weight it can carry, as shown in \trefnp{Carrying Capacity by Strength}.
+A creature can carry weight up to its unencumbered carrying capacity without any penalty.
+If it carries more than that, but less than its maximum carrying capacity, it takes a \minus4 \glossterm{encumbrance penalty}.
+This stacks with the encumbrance penalty from any armor the creature wears.
 
-\parhead{Lifting and Dragging} You can lift as much as your maximum weight limit over you head.
+\parhead{Lifting and Dragging} You can lift as much as your maximum carrying capacity over your head.
 
-You can lift as much as 1-1/2 your maximum weight limit off the ground (the sum of your unencumbered and maximum weight limits).
-While overloaded in this way, your \glossterm{encumbrance penalty} is increased by 10, you take a \minus10 penalty to \glossterm{accuracy} with physical attacks, and you can only move by spending a \glossterm{standard action} to move 5 feet.
+You can lift as much as 1-1/2 your maximum carrying capacity off the ground (the sum of your unencumbered and maximum weight limits).
+While overloaded in this way, you take a \minus10 \glossterm{encumbrance penalty}, you take a \minus10 penalty to \glossterm{accuracy} with physical attacks, and you can only move by spending a \glossterm{standard action} to move 5 feet.
+This replaces the encumbrance penalty from carrying more than your unencumbered carrying capacity.
 
-You can generally push or drag along the ground as much as five times your maximum load.
-Favorable conditions can double these numbers, and bad circumstances can reduce them to one-half or less.
+You can generally push or drag along the ground as much as five times your maximum carrying capacity.
 
-\parhead{Bigger and Smaller Creatures} The figures on \trefnp{Weight Limits} are for Medium bipedal creatures. A larger bipedal creature can carry more weight depending on its size category, as follows: Large \mult2, Huge \mult4, Gargantuan \mult8, Colossal \mult16. A smaller creature can carry less weight depending on its size category, as follows: Small \mult3/4, Tiny \mult1/2, Diminutive \mult1/4, Fine \mult1/8.
+\parhead{Bigger and Smaller Creatures} The figures on \trefnp{Carrying Capacity by Strength} are for Medium bipedal creatures. A larger bipedal creature can carry more weight depending on its size category, as follows: Large \mult2, Huge \mult4, Gargantuan \mult8, Colossal \mult16. A smaller creature can carry less weight depending on its size category, as follows: Small \mult3/4, Tiny \mult1/2, Diminutive \mult1/4, Fine \mult1/8.
 
 Quadrupeds can carry heavier loads than characters can. Instead of the multipliers given above, multiply the value corresponding to the creature's Strength score from Table 9-1 by the appropriate modifier, as follows: Fine \mult1/4, Diminutive \mult1/2, Tiny \mult3/4, Small \mult1, Medium \mult1-1/2, Large \mult3, Huge \mult6, Gargantuan \mult12, Colossal \mult24.
 
-\parhead{Tremendous Strength} For Strength scores not shown on \trefnp{Weight Limits}, subtract 3 from its Strength until you find a Strength value shown on the chart. For each time you subtracted in this way, double the weight limits listed on the chart.
+\parhead{Tremendous Strength} For Strength scores not shown on \trefnp{Carrying Capacity by Strength}, subtract 3 from its Strength until you find a Strength value shown on the chart. For each time you subtracted in this way, double the weight limits listed on the chart.
 
 \section{Movement}
 
@@ -102,11 +106,6 @@ There are three movement scales in the game, as follows.
 \item Overland, for getting from place to place, measured in miles per
 hour or miles per day.
 \end{itemize}
-
-\parhead{Modes of Movement} While moving at the different movement scales, creatures generally walk, hustle.
-\subparhead{Walk} A walk represents unhurried but purposeful movement at 3 miles per hour for an unencumbered human.
-\subparhead{Hustle} A hustle is a jog at about 6 miles per hour for an unencumbered human. A character moving your
-speed twice in a single round, or moving that speed in the same round that he or she performs a standard action or another move action is hustling when he or she moves.
 
 \subsection{Tactical Movement}
 Use tactical movement for combat.
@@ -167,7 +166,7 @@ Mount (carrying load) &  &  \\
 \tind Longship (sailed and rowed) & 3 miles & 72 miles \\
 \tind Galley (rowed and sailed) & 4 miles & 96 miles \\
 \end{dtabularx}
-1 Quadrupeds, such as horses, can carry heavier loads than characters can. See \trefnp{Weight Limits}, above, for more information. \\
+1 Quadrupeds, such as horses, can carry heavier loads than characters can. See \tref{Carrying Capacity by Strength}, for more information. \\
 2 Rafts, barges, keelboats, and rowboats are used on lakes and rivers.
 If going downstream, add the speed of the current (typically 3 miles per hour) to the speed of the vehicle. In addition to 10 hours of being rowed, the vehicle can also float an additional 14 hours, if someone can guide it, so add an additional 42 miles to the daily distance traveled. These vehicles can't be rowed against any significant current, but they can be pulled upstream by draft animals on the shores.
 \end{dtable}
