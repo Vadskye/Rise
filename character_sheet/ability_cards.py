@@ -1,4 +1,4 @@
-from cgi_simple import *
+from cgi_simple import div, equation, flex_col, flex_row, labeled_text_input, plus, this_or_that, underlabeled_number_input
 
 def create_page():
     return flex_col([
@@ -36,10 +36,6 @@ def abilities_overview():
                 underlabeled_number_input('Misc', attributes={'class': 'eq-optional'}),
             ]),
         ]),
-        #flex_row({'class': 'resources-container'}, [
-        #    div({'class': 'calc-header'}, 'Resources'),
-        #    div({'class': 'resources'}),
-        #]),
     ])
 
 def ability_card():
