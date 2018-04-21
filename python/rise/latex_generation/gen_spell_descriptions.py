@@ -851,7 +851,7 @@ def generate_spells():
             You summon a creature in an unoccupied square within \\rngmed range.
             It visually appears to be a common Small or Medium animal of your choice, though in reality it is a manifestation of magical energy.
             Regardless of the appearance and size chosen, the creature has hit points equal to twice your spellpower.
-            All of its defenses are equal to your 5 \\add your spellpower, and its land speed is equal to 30 feet.
+            All of its defenses are equal to your 5 \\add your spellpower, and its \\glossterm<land speed> is equal to 30 feet.
 
             Each round, you choose the creature's actions.
             There are only two actions it can take.
