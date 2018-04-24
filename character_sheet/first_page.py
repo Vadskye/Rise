@@ -21,8 +21,8 @@ def create_page():
 def boring_stuff():
     return div({'class': 'boring-stuff'}, [
         flex_row({'class': 'boring-row'}, [
-            labeled_text_input('Character name', 'character-name'),
-            labeled_text_input('Player name', 'player-name'),
+            labeled_text_input('Character name', 'character_name'),
+            labeled_text_input('Player name', 'player_name'),
             labeled_text_input('Concept', 'concept'),
         ]),
         flex_row({'class': 'boring-row'}, [
@@ -35,7 +35,7 @@ def boring_stuff():
 def attributes_and_skills():
     return flex_col({'class': 'attributes-and-skills'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Attributes and Skills')),
-        ''.join([attribute_section(attribute) for attribute in ATTRIBUTES]),
+        ''.join([attribute_section(attribute.lower()) for attribute in ATTRIBUTES]),
         flex_col({'class': 'other-skills attribute-section'}, [
             div({'class': 'attribute attribute-header'}, 'Other Skills'),
             ''.join([skill_box(skill) for skill in ['Bluff', 'Intimidate', 'Perform ______', 'Persuasion']]),
@@ -47,32 +47,35 @@ def attributes_and_skills():
     ])
 
 def attribute_section(attribute):
-    return flex_col({'class': f'{attribute.lower()} attribute-section'}, [
+    return flex_col({'class': f'{attribute} attribute-section'}, [
         labeled_number_input(
-            attribute,
+            attribute.capitalize(),
             attributes={'class': 'attribute'},
             input_attributes={
                 'disabled': 'true',
-                'name': f"{attribute.lower()}-display",
-                'value': ROLL20_CALC[attribute.lower()],
+                'name': f"{attribute}_display",
+                'value': '(@{' + attribute + '})',
             },
         ),
-        ''.join([skill_box(skill) for skill in ATTRIBUTE_SKILLS[attribute.lower()]])
+        ''.join([skill_box(skill) for skill in ATTRIBUTE_SKILLS[attribute]])
     ])
 
 def skill_box(name):
+    formatted_skill = name.lower().replace(' ', '_')
     return flex_row({'class': 'skill-box'}, [
         button(
             {
                 'class': 'number-label',
-                'name': f"roll_skill-{name}",
+                'name': f"roll_skill_{formatted_skill}",
                 'type': 'roll',
-                'value': name + ': [[1d20+ @{' + name + '}]]'
+                'value': '/r @{' + formatted_skill + '} for ' + name
             },
             name
         ),
         number_input({
-            'name': name.lower(),
+            'disabled': True,
+            'name': formatted_skill + '_display',
+            'value': ROLL20_CALC['skill_total'](formatted_skill)
         }),
     ])
 
