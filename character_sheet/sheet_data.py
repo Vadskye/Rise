@@ -49,6 +49,10 @@ def roll20_max_text(x, y):
 def roll20_min_text(x, y):
     return '-1 * ' + roll20_max_text(f"(-1 * {x})", f"(-1 * {y})")
 
+def skill_ranks(skill_name):
+    points = at(skill_name + '_points')
+    return roll20_min_text(f"({points} * floor({at('level')} / 2))", at('level'))
+
 ROLL20_CALC = {
     'action_points': value_sum([
         'action_points_base',
@@ -75,6 +79,12 @@ ROLL20_CALC = {
         roll20_max_text('@{dexterity}', '@{perception}'),
         '@{level}',
     ),
+    'skill_points': value_sum([
+        'skill_points_class',
+        'skill_points_intelligence',
+        'skill_points_misc',
+    ]),
+    'skill_ranks': skill_ranks,
     'strike_accuracy': value_sum([
         'strike_accuracy_scaling',
         'strike_accuracy_misc',
@@ -84,7 +94,7 @@ ROLL20_CALC = {
 for attribute in ATTRIBUTES:
     ROLL20_CALC[attribute.lower()] = attribute_roll20_text(attribute.lower())
     starting_formula = at(attribute.lower() + '_starting')
-    ROLL20_CALC[attribute.lower() + '_scaling'] = f"""({roll20_min_text(f"({starting_formula} * ({at('level')} / 2))", at('level'))} - ({roll20_min_text(starting_formula, 1)}))"""
+    ROLL20_CALC[attribute.lower() + '_scaling'] = f"""({roll20_min_text(f"({starting_formula} * floor({at('level')} / 2))", at('level'))} - ({roll20_min_text(starting_formula, 1)}))"""
 
 for defense in ['fortitude', 'mental', 'reflex']:
     ROLL20_CALC[defense + '_defense'] = value_sum([
