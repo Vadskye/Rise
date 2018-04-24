@@ -210,24 +210,6 @@ def labeled_number_input(label_name, input_name=None, attributes=None, input_att
         number_input(input_attributes),
     ])
 
-def underlabeled_number_input(label_name, input_name=None, attributes=None, input_attributes=None):
-    attributes = attributes or dict()
-    space_append(attributes, 'class', 'underlabeled-number-input')
-
-    if input_attributes is None:
-        input_attributes = {'name': input_name}
-    else:
-        input_attributes['name'] = input_attributes.get('name') or input_name
-
-    return flex_col(attributes, [
-        number_input(input_attributes),
-        div(
-            {'class': 'under-label'},
-            label_name
-        ),
-    ])
-
-
 def freeform_number_input(attributes=None):
     attributes = attributes or dict()
     space_append(attributes, 'class', 'freeform-number-input')
@@ -253,10 +235,7 @@ def equation(attributes=None, contents=None, result_attributes=None):
     result_attributes = result_attributes or {'name': 'eq-total'}
 
     return flex_row(attributes, [
-        underlabeled_number_input(
-            'Total',
-            input_attributes=result_attributes
-        ),
+        underlabel('Total', number_input(result_attributes)),
         equals(),
         ''.join(contents),
     ])
@@ -289,6 +268,9 @@ def rise_title():
     )
 
 def underlabel(label_name, input_html, attributes=None):
+    attributes = attributes or dict()
+    space_append(attributes, 'class', 'underlabeled-number-input')
+
     return flex_col(attributes, [
         input_html,
         div(
