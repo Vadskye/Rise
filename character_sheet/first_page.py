@@ -109,7 +109,7 @@ def defenses():
                 input_attributes={
                     'disabled': 'true',
                     'name': defense + '-display',
-                    'value': ROLL20_CALC[defense.lower()],
+                    'value': ROLL20_CALC[defense.lower() + '_defense'],
                 },
             )
             for defense in DEFENSES
