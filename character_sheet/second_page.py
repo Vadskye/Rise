@@ -68,33 +68,33 @@ def calc_skill(skill_name, blank_input=False):
 def calc_attributes():
     return flex_col({'class': 'calc-attributes'}, [
         flex_wrapper(div({'class': 'section-header attributes-header'}, 'Attributes')),
-        ''.join([calc_attribute(attribute) for attribute in ATTRIBUTES]),
+        ''.join([calc_attribute(attribute.lower()) for attribute in ATTRIBUTES]),
     ])
 
 def calc_attribute(attribute_name):
     return ''.join([
-        div({'class': 'calc-attribute-header'}, attribute_name),
+        div({'class': 'calc-attribute-header'}, attribute_name.capitalize()),
         equation(
             [
                 underlabel('Base*', number_input({
-                    'name': f"{attribute_name}*",
+                    'name': attribute_name + '_starting',
                 })),
                 plus(),
                 underlabel('Level', number_input({
                     'disabled': True,
-                    'name': 'Level',
-                    'value': '@{Level}',
+                    'name': attribute_name + '_level',
+                    'value': ROLL20_CALC[attribute_name + '_level'],
                 })),
                 plus(),
                 number_input({
                     'class': 'equation-misc',
-                    'name': attribute_name + '-misc',
+                    'name': attribute_name + '_misc',
                 }),
             ],
             result_attributes={
                 'disabled': 'true',
                 'name': attribute_name,
-                'value': ROLL20_CALC['attribute'](attribute_name.lower()),
+                'value': ROLL20_CALC[attribute_name],
             },
         )
     ])

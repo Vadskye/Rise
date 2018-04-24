@@ -34,19 +34,19 @@ def html_tag(tag_name, attributes=None, contents=None):
             raise Exception('Input tag must have name')
 
         if 'name' in attributes:
-            # Standarize on a capitalized first letter
-            if attributes['name'][0] != attributes['name'][0].upper():
-                raise Exception('Name must be capitalized: ' + attributes['name'])
+            # Standarize on lowercase
+            if attributes['name'] != attributes['name'][0].lower():
+                raise Exception('Name must be lowercase: ' + attributes['name'])
 
-            # Standardize on no underscores or dashes; both make ugly attributes
-            # in a character sheet
+            # Standardize on only underscores
+            if ' ' in attributes['name']:
+                raise Exception('Name must not have spaces: ' + attributes['name'])
             if '-' in attributes['name']:
                 raise Exception('Name must not have dashes: ' + attributes['name'])
-            if '_' in attributes['name']:
-                raise Exception('Name must not have underscores: ' + attributes['name'])
 
-            # An "attr_" prefix is required by roll20
-            attributes['name'] = 'attr_' + attributes['name']
+    # An "attr_" prefix is required by roll20
+    if 'name' in attributes:
+        attributes['name'] = 'attr_' + attributes['name']
 
     if contents is None:
         return '<{0}{1} />'.format(

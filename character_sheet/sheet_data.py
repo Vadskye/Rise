@@ -28,11 +28,16 @@ ALL_SKILLS = ['Awareness', 'Balance', 'Bluff', 'Climb', 'Craft', 'Creature Handl
               'Ride', 'Sense Motive', 'Sleight of Hand', 'Spellcraft', 'Sprint',
               'Stealth', 'Survival', 'Swim', 'Tumble']
 
+def at(text):
+    return '@{' + text + '}'
+
 def attribute_roll20_text(attribute_name):
     return value_sum([
-        attribute_name + '-base',
-        attribute_name + '-level',
-        attribute_name + '-misc',
+        attribute_name.lower() + '_starting',
+        # 0 if attribute_starting is 0, level / 2 if attribute_starting is 1,
+        attribute_name.lower() + '_level',
+        # f"{{starting_formula} * {at('level')}
+        attribute_name.lower() + '_misc',
     ])
 
 def roll20_max_text(x, y):
@@ -41,8 +46,10 @@ def roll20_max_text(x, y):
         y,
     )
 
+def roll20_min_text(x, y):
+    return '-1 * (' + roll20_max_text(f"(-1 * {x})", f"(-1 * {y})") + ')'
+
 ROLL20_CALC = {
-    'attribute': attribute_roll20_text,
     'base_attack_bonus': value_sum([
         'bab-good',
         'bab-avg',
@@ -82,6 +89,11 @@ ROLL20_CALC = {
         '@{ref-misc}',
     ]),
 }
+for attribute in ATTRIBUTES:
+    ROLL20_CALC[attribute.lower()] = attribute_roll20_text(attribute.lower())
+    starting_formula = at(attribute.lower() + '_starting')
+    ROLL20_CALC[attribute.lower() + '_level'] = f"""({roll20_min_text(f"({starting_formula} * ({at('level')} / 2))", at('level'))} - ({roll20_min_text(starting_formula, 1)}))"""
+
 
 # these have dependencies and should be added second
 ROLL20_CALC['armor'] = '+'.join([
@@ -89,8 +101,8 @@ ROLL20_CALC['armor'] = '+'.join([
     roll20_max_text(
         ROLL20_CALC['base_attack_bonus'],
         roll20_max_text(
-            ROLL20_CALC['attribute']('dexterity'),
-            ROLL20_CALC['attribute']('constitution'),
+            ROLL20_CALC['dexterity'],
+            ROLL20_CALC['constitution'],
         ),
     ),
     '@{armor-body}',
@@ -102,8 +114,8 @@ ROLL20_CALC['maneuver'] = '+'.join([
     roll20_max_text(
         ROLL20_CALC['base_attack_bonus'],
         roll20_max_text(
-            ROLL20_CALC['attribute']('strength'),
-            ROLL20_CALC['attribute']('dexterity'),
+            ROLL20_CALC['strength'],
+            ROLL20_CALC['dexterity'],
         ),
     ),
     '@{shield}',
@@ -114,5 +126,5 @@ ROLL20_CALC['hit_points'] = '(' + '+'.join([
         ROLL20_CALC['fortitude'],
         ROLL20_CALC['mental'],
     ) + ')/2)',
-    'floor(' + ROLL20_CALC['attribute']('constitution') + '/2)',
+    'floor(' + ROLL20_CALC['constitution'] + '/2)',
 ]) + ') * @{level}',
