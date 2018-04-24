@@ -1,6 +1,6 @@
 from cgi_simple import (
     div, equation, flex_col, flex_row, flex_wrapper, labeled_text_input, minus, number_input,
-    plus, text_input, this_or_that, underlabeled_number_input, unlabeled_number_input
+    plus, text_input, underlabeled_number_input, underlabel
 )
 from sheet_data import ATTRIBUTE_SKILLS, ATTRIBUTES, ROLL20_CALC
 
@@ -47,7 +47,7 @@ def calc_skills():
 def skill_labels(attribute):
     return flex_row({'class': 'skill-labels'}, [
         div({'class': 'skill-name'}),
-        div({'class': 'skill-label'}, 'Train'),
+        div({'class': 'skill-label'}, 'Points'),
         div({'class': 'skill-label'}, 'Bonus'),
         div({'class': 'skill-label skill-attribute'}, attribute),
         div({'class': 'skill-label misc'}, 'Misc'),
@@ -56,13 +56,13 @@ def skill_labels(attribute):
 def calc_skill(skill_name, blank_input=False):
     return flex_row({'class': 'skill-row'}, [
         div({'class': f'skill-name{" blank-input" if blank_input else ""}'}, skill_name),
-        number_input({'class': 'skill-training'}),
+        number_input({'class': 'skill-points'}),
         number_input({'class': 'skill-ranks'}),
         number_input({'class': 'skill-attr'}),
-        unlabeled_number_input(
-            skill_name + '-misc',
-            {'class': 'equation-misc'},
-        ),
+        number_input({
+            'class': 'equation-misc',
+            'name': skill_name + '-misc',
+        }),
     ])
 
 def calc_attributes():
@@ -72,34 +72,29 @@ def calc_attributes():
     ])
 
 def calc_attribute(attribute_name):
-    calc_name = attribute_name.lower()
     return ''.join([
         div({'class': 'calc-attribute-header'}, attribute_name),
         equation(
             [
-                underlabeled_number_input(
-                    'Base*',
-                    calc_name + '-base',
-                    attributes={'class': 'eq-base'},
-                    # input_attributes = {'value': '0'},
-                ),
+                underlabel('Base*', number_input({
+                    'name': f"{attribute_name}*",
+                })),
                 plus(),
-                underlabeled_number_input(
-                    'Level',
-                    calc_name + '-level',
-                    attributes={'class': 'eq-level'},
-                    # input_attributes = {'value': '0'},
-                ),
+                underlabel('Level', number_input({
+                    'disabled': True,
+                    'name': 'Level',
+                    'value': '@{Level}',
+                })),
                 plus(),
-                unlabeled_number_input(
-                    calc_name + '-misc',
-                    {'class': 'equation-misc'},
-                ),
+                number_input({
+                    'class': 'equation-misc',
+                    'name': attribute_name + '-misc',
+                }),
             ],
             result_attributes={
                 'disabled': 'true',
-                'name': calc_name.lower(),
-                'value': ROLL20_CALC['attribute'](calc_name),
+                'name': attribute_name,
+                'value': ROLL20_CALC['attribute'](attribute_name.lower()),
             },
         )
     ])
@@ -128,7 +123,10 @@ def calc_hit_points():
                 flex_col({'class': 'equation-text'}, 'times'),
                 underlabeled_number_input('5+Con*'),
                 plus(),
-                unlabeled_number_input('hp-misc', {'class': 'equation-misc'}),
+                number_input({
+                    'class': 'equation-misc',
+                    'name': 'hp-misc',
+                }),
             ],
             result_attributes={
                 'disabled': 'true',
@@ -155,7 +153,7 @@ def calc_speed():
             minus(),
             underlabeled_number_input('Armor'),
             plus(),
-            unlabeled_number_input(attributes={'class': 'equation-misc'}),
+            number_input({'class': 'equation-misc'}),
         ])
     ])
 
@@ -180,7 +178,10 @@ def calc_standard_damage():
                 flex_col({'class': 'equation-text'}, '+1d per two'),
                 underlabeled_number_input('Level'),
                 plus(),
-                unlabeled_number_input('standard-damage-misc', {'class': 'equation-misc'}),
+                number_input({
+                    'class': 'equation-misc',
+                    'name': 'standard-damage-misc',
+                }),
             ],
         ),
     ])
@@ -192,7 +193,10 @@ def calc_strike_accuracy():
             [
                 underlabeled_number_input('Lvl/Attr'),
                 plus(),
-                unlabeled_number_input('melee-misc', {'class': 'equation-misc'}),
+                number_input({
+                    'class': 'equation-misc',
+                    'name': 'melee-misc',
+                }),
             ],
         ),
     ])
@@ -210,7 +214,10 @@ def calc_strike_damage():
                 flex_col({'class': 'equation-text'}, '+1d per two'),
                 underlabeled_number_input('Level/Str'),
                 plus(),
-                unlabeled_number_input('strike-damage-misc', {'class': 'equation-misc'}),
+                number_input({
+                    'class': 'equation-misc',
+                    'name': 'strike-damage-misc',
+                }),
             ],
         ),
     ])
@@ -228,7 +235,10 @@ def calc_other_damage():
                 flex_col({'class': 'equation-text'}, '+1d per two'),
                 underlabeled_number_input('Level/Attr'),
                 plus(),
-                unlabeled_number_input('strike-damage-misc', {'class': 'equation-misc'}),
+                number_input({
+                    'class': 'equation-misc',
+                    'name': 'strike-damage-misc',
+                }),
             ],
         ),
     ])
@@ -241,7 +251,10 @@ def calc_skill_points():
             plus(),
             underlabeled_number_input('Int'),
             plus(),
-            unlabeled_number_input('skill-points-misc', {'class': 'equation-misc'}),
+            number_input({
+                'class': 'equation-misc',
+                'name': 'skill-points-misc',
+            })
         ]),
     ])
 
@@ -254,7 +267,10 @@ def calc_special_attack():
             [
                 underlabeled_number_input('Level/Attr'),
                 plus(),
-                unlabeled_number_input('special-misc', {'class': 'equation-misc'}),
+                number_input({
+                    'class': 'equation-misc',
+                    'name': 'special-misc',
+                })
             ],
             result_attributes={
                 'disabled': 'true',
@@ -280,7 +296,10 @@ def calc_armor():
                 plus(),
                 underlabeled_number_input('Shield', 'shield'),
                 plus(),
-                unlabeled_number_input('armor-misc', {'class': 'equation-misc'}),
+                number_input({
+                    'class': 'equation-misc',
+                    'name': 'armor-misc',
+                })
             ],
             result_attributes={
                 'disabled': 'true',
@@ -301,7 +320,10 @@ def calc_fort():
                 plus(),
                 underlabeled_number_input('Class'),
                 plus(),
-                unlabeled_number_input('fort-misc', {'class': 'equation-misc'}),
+                number_input({
+                    'class': 'equation-misc',
+                    'name': 'fort-misc',
+                })
             ],
             result_attributes={
                 'disabled': 'true',
@@ -324,7 +346,10 @@ def calc_ref():
                 plus(),
                 underlabeled_number_input('Shield', 'shield'),
                 plus(),
-                unlabeled_number_input('ref-misc', {'class': 'equation-misc'}),
+                number_input({
+                    'class': 'equation-misc',
+                    'name': 'ref-misc',
+                })
             ],
             result_attributes={
                 'disabled': 'true',
@@ -345,7 +370,10 @@ def calc_mental():
                 plus(),
                 underlabeled_number_input('Class'),
                 plus(),
-                unlabeled_number_input('ment-misc', {'class': 'equation-misc'}),
+                number_input({
+                    'class': 'equation-misc',
+                    'name': 'ment-misc',
+                })
             ],
             result_attributes={
                 'disabled': 'true',

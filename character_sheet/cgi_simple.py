@@ -11,6 +11,8 @@ def html_separator():
 # If we get a non-dict attributes, those are actually attributes.
 # This allows quickly nesting html tags
 def ensure_valid_attributes_and_contents(attributes=None, contents=None):
+    if attributes is None:
+        attributes = dict()
     if not isinstance(attributes, dict):
         if contents is None:
             contents = attributes
@@ -208,19 +210,6 @@ def labeled_number_input(label_name, input_name=None, attributes=None, input_att
         number_input(input_attributes),
     ])
 
-def unlabeled_number_input(input_name=None, attributes=None, input_attributes=None):
-    attributes = attributes or dict()
-    space_append(attributes, 'class', 'underlabeled-number-input')
-
-    if input_attributes is None:
-        input_attributes = {'name': input_name}
-    else:
-        input_attributes['name'] = input_attributes.get('name') or input_name
-
-    return flex_col(attributes, [
-        number_input(input_attributes),
-    ])
-
 def underlabeled_number_input(label_name, input_name=None, attributes=None, input_attributes=None):
     attributes = attributes or dict()
     space_append(attributes, 'class', 'underlabeled-number-input')
@@ -298,3 +287,12 @@ def rise_title():
         {'class': 'rise-title'},
         'Rise'
     )
+
+def underlabel(label_name, input_html, attributes=None):
+    return flex_col(attributes, [
+        input_html,
+        div(
+            {'class': 'under-label'},
+            label_name
+        ),
+    ])
