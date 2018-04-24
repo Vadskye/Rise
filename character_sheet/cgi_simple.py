@@ -30,12 +30,12 @@ def html_tag(tag_name, attributes=None, contents=None):
     attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
 
     if DESTINATION == 'roll20':
-        if tag_name == 'input' and 'name' not in attributes:
-            raise Exception('Input tag must have name')
+        if tag_name == 'input' and attributes['type'] == 'number' and 'name' not in attributes:
+            raise Exception('Numerical input must have name')
 
         if 'name' in attributes:
             # Standarize on lowercase
-            if attributes['name'] != attributes['name'][0].lower():
+            if attributes['name'] != attributes['name'].lower():
                 raise Exception('Name must be lowercase: ' + attributes['name'])
 
             # Standardize on only underscores
@@ -232,7 +232,7 @@ def value_sum(values):
 def equation(attributes=None, contents=None, result_attributes=None):
     attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
     space_append(attributes, 'class', 'equation')
-    result_attributes = result_attributes or {'name': 'eq-total'}
+    result_attributes = result_attributes or dict()
 
     return flex_row(attributes, [
         underlabel('Total', number_input(result_attributes)),

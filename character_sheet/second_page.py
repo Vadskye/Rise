@@ -28,15 +28,15 @@ def calc_skills():
     return flex_col({'class': 'calc-skills'}, [
         div({'class': 'section-header'}, 'Skills'),
         skill_labels('Str'),
-        *[calc_skill(skill_name) for skill_name in ATTRIBUTE_SKILLS['strength']],
+        *[calc_skill(skill_name, 'strength') for skill_name in ATTRIBUTE_SKILLS['strength']],
         skill_labels('Dex'),
-        *[calc_skill(skill_name) for skill_name in ATTRIBUTE_SKILLS['dexterity']],
+        *[calc_skill(skill_name, 'dexterity') for skill_name in ATTRIBUTE_SKILLS['dexterity']],
         # *[calc_skill(skill_name) for skill_name in ATTRIBUTE_SKILLS['constitution']],
         skill_labels('Int'),
-        *[calc_skill(skill_name) for skill_name in ATTRIBUTE_SKILLS['intelligence']],
+        *[calc_skill(skill_name, 'intelligence') for skill_name in ATTRIBUTE_SKILLS['intelligence']],
         skill_labels('Per'),
-        *[calc_skill(skill_name) for skill_name in ATTRIBUTE_SKILLS['perception']],
-        *[calc_skill(skill_name) for skill_name in ATTRIBUTE_SKILLS['willpower']],
+        *[calc_skill(skill_name, 'perception') for skill_name in ATTRIBUTE_SKILLS['perception']],
+        *[calc_skill(skill_name, 'constitution') for skill_name in ATTRIBUTE_SKILLS['willpower']],
         skill_labels('Other'),
         *[calc_skill(skill_name) for skill_name in ['Bluff', 'Intimidate', 'Perform ______', 'Persuasion']],
         calc_skill('____________', blank_input=True),
@@ -54,15 +54,26 @@ def skill_labels(attribute):
         div({'class': 'skill-label misc'}, 'Misc'),
     ])
 
-def calc_skill(skill_name, blank_input=False):
+def calc_skill(skill_name, attribute=None, blank_input=False):
+    skill_parsable = skill_name.lower().replace(' ', '_')
     return flex_row({'class': 'skill-row'}, [
         div({'class': f'skill-name{" blank-input" if blank_input else ""}'}, skill_name),
-        number_input({'class': 'skill-points'}),
-        number_input({'class': 'skill-ranks'}),
-        number_input({'class': 'skill-attr'}),
+        number_input({'class': 'skill-points', 'name': skill_parsable + '_points'}),
+        number_input({
+            'class': 'skill-ranks',
+            'disabled': True,
+            'name': skill_parsable + '_ranks',
+            'value': ROLL20_CALC['skill_ranks'](skill_parsable),
+        }),
+        number_input({
+            'class': 'skill-attr',
+            'disabled': True,
+            'name': skill_parsable + '_attribute',
+            'value': '(@{' + attribute + '})' if attribute else '0',
+        }),
         number_input({
             'class': 'equation-misc',
-            'name': skill_name + '-misc',
+            'name': skill_parsable + '_misc',
         }),
     ])
 
@@ -143,7 +154,7 @@ def calc_hit_points():
             ],
             result_attributes={
                 'disabled': 'true',
-                'name': 'hit-points',
+                'name': 'hit_points',
                 'value': ROLL20_CALC['hit_points'],
             },
         ),
@@ -222,13 +233,14 @@ def calc_strike_damage():
                     'value': '1d8'
                 }),
                 flex_col({'class': 'equation-text'}, '+1d per two'),
-                underlabel('Level/Str', number_input()),
+                underlabel('Level/Str', text_input({'class': 'fake-number'})),
                 plus(),
-                number_input({
+                text_input({
                     'class': 'equation-misc',
-                    'name': 'strike-damage-misc',
+                    'name': 'strike_damage_misc',
                 }),
             ],
+            result_attributes={'name': 'strike_damage'},
         ),
     ])
 
@@ -243,29 +255,41 @@ def calc_other_damage():
                     'value': '1d8'
                 }),
                 flex_col({'class': 'equation-text'}, '+1d per two'),
-                underlabel('Level/Attr', number_input()),
+                underlabel('Level/Attr', text_input({'class': 'fake-number'})),
                 plus(),
                 number_input({
                     'class': 'equation-misc',
-                    'name': 'strike-damage-misc',
+                    'name': 'other_damage_misc',
                 }),
             ],
+            result_attributes={'name': 'other_damage'},
         ),
     ])
 
 def calc_skill_points():
     return flex_row([
         div({'class': 'calc-header'}, 'Skill Points'),
-        equation([
-            underlabel('Class', number_input()),
-            plus(),
-            underlabel('Int*', number_input()),
-            plus(),
-            number_input({
-                'class': 'equation-misc',
-                'name': 'skill-points-misc',
-            })
-        ]),
+        equation(
+            [
+                underlabel('Class', number_input({'name': 'skill_points_class'})),
+                plus(),
+                underlabel('Int*', number_input({
+                    'disabled': True,
+                    'name': 'skill_points_intelligence',
+                    'value': '(@{intelligence_starting})',
+                })),
+                plus(),
+                number_input({
+                    'class': 'equation-misc',
+                    'name': 'skill_points_misc',
+                })
+            ],
+            result_attributes={
+                'disabled': 'true',
+                'name': 'skill_points',
+                'value': ROLL20_CALC['skill_points'],
+            },
+        ),
     ])
 
 def calc_action_points():
@@ -460,12 +484,12 @@ def adventuring():
         flex_col({'class': 'misc'}, [
             flex_wrapper(div({'class': 'section-header'}, 'Weight Limits')),
             flex_row({'class': 'weight-limits'}, [
-                labeled_text_input('Unencumbered', 'weight-unencumbered'),
-                labeled_text_input('Maximum', 'weight-maximum'),
+                labeled_text_input('Unencumbered', 'weight_unencumbered'),
+                labeled_text_input('Maximum', 'weight_maximum'),
             ]),
             flex_row({'class': 'weight-limits'}, [
-                labeled_text_input('Overloaded', 'weight-overloaded'),
-                labeled_text_input('Push/Drag', 'weight-push-drag'),
+                labeled_text_input('Overloaded', 'weight_overloaded'),
+                labeled_text_input('Push/Drag', 'weight_push_drag'),
             ]),
         ]),
         standard_damage(),
