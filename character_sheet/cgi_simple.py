@@ -27,8 +27,24 @@ def ensure_valid_attributes_and_contents(attributes=None, contents=None):
 def html_tag(tag_name, attributes=None, contents=None):
     attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
 
-    if input_name_prefix and attributes.get('name'):
-        attributes['name'] = input_name_prefix + attributes['name']
+    if DESTINATION == 'roll20':
+        if tag_name == 'input' and 'name' not in attributes:
+            raise Exception('Input tag must have name')
+
+        if 'name' in attributes:
+            # Standarize on a capitalized first letter
+            if attributes['name'][0] != attributes['name'][0].upper():
+                raise Exception('Name must be capitalized: ' + attributes['name'])
+
+            # Standardize on no underscores or dashes; both make ugly attributes
+            # in a character sheet
+            if '-' in attributes['name']:
+                raise Exception('Name must not have dashes: ' + attributes['name'])
+            if '_' in attributes['name']:
+                raise Exception('Name must not have underscores: ' + attributes['name'])
+
+            # An "attr_" prefix is required by roll20
+            attributes['name'] = 'attr_' + attributes['name']
 
     if contents is None:
         return '<{0}{1} />'.format(
