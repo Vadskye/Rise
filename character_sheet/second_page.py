@@ -160,13 +160,22 @@ def calc_attacks():
 def calc_speed():
     return flex_row([
         div({'class': 'calc-header'}, 'Base Speed'),
-        equation([
-            underlabel('Size', number_input()),
-            minus(),
-            underlabel('Armor', number_input()),
-            plus(),
-            number_input({'class': 'equation-misc'}),
-        ])
+        equation(
+            [
+                underlabel('Size', number_input({'name': 'speed_size'})),
+                minus(),
+                underlabel('Armor', number_input({'name': 'speed_armor'})),
+                plus(),
+                number_input({
+                    'class': 'equation-misc',
+                    'name': 'speed_misc',
+                }),
+            ],
+            result_attributes={
+                'disabled': 'true',
+                'name': 'speed',
+            },
+        )
     ])
 
 def calc_defenses():
@@ -203,13 +212,22 @@ def calc_strike_accuracy():
         div({'class': 'calc-header'}, 'Strike Accuracy'),
         equation(
             [
-                underlabel('Lvl/Attr', number_input()),
+                # Not disabled because it's possible to override with Dex
+                underlabel('Lvl/Attr', number_input({
+                    'name': 'strike_accuracy_scaling',
+                    'value': ROLL20_CALC['strike_accuracy_scaling'],
+                })),
                 plus(),
                 number_input({
                     'class': 'equation-misc',
-                    'name': 'melee-misc',
+                    'name': 'strike_accuracy_misc',
                 }),
             ],
+            result_attributes={
+                'disabled': 'true',
+                'name': 'strike_accuracy',
+                'value': ROLL20_CALC['strike_accuracy'],
+            },
         ),
     ])
 
