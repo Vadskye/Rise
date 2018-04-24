@@ -269,7 +269,7 @@ def rise_title():
 
 def underlabel(label_name, input_html, attributes=None):
     attributes = attributes or dict()
-    space_append(attributes, 'class', 'underlabeled-number-input')
+    space_append(attributes, 'class', 'underlabeled')
 
     return flex_col(attributes, [
         input_html,
