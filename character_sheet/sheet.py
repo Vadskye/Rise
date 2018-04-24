@@ -29,35 +29,42 @@ def compile_less():
 @click.option('-a', '--ability-cards/--no-ability-cards', default=False)
 @click.option('-d', '--destination', default='paper')
 def main(ability_cards, destination):
-    compile_less()
 
-    if destination == 'roll20':
-        cgi.input_name_prefix = 'attr_'
+    cgi.DESTINATION = destination
 
-    with open('first_page.html', 'w') as fh:
-        fh.write(''.join([
-            debug_stylesheets('first_page', destination),
-            debug_html_wrapper(first_page.create_page(), destination),
-        ]) + '\n')
-
-    with open('second_page.html', 'w') as fh:
-        fh.write(''.join([
-            debug_stylesheets('second_page', destination),
-            debug_html_wrapper(second_page.create_page(), destination),
-        ]) + '\n')
-
-    with open('third_page.html', 'w') as fh:
-        fh.write(''.join([
-            debug_stylesheets('third_page', destination),
-            debug_html_wrapper(third_page.create_page(), destination),
-        ]) + '\n')
-
-    if ability_cards:
-        with open('ability_cards.html', 'w') as fh:
+    if destination == 'paper':
+        with open('first_page.html', 'w') as fh:
             fh.write(''.join([
-                debug_stylesheets('ability_cards', destination),
-                debug_html_wrapper(generate_ability_cards.create_page(), destination),
+                debug_stylesheets('first_page', destination),
+                debug_html_wrapper(first_page.create_page(), destination),
             ]) + '\n')
+
+        with open('second_page.html', 'w') as fh:
+            fh.write(''.join([
+                debug_stylesheets('second_page', destination),
+                debug_html_wrapper(second_page.create_page(), destination),
+            ]) + '\n')
+
+        with open('third_page.html', 'w') as fh:
+            fh.write(''.join([
+                debug_stylesheets('third_page', destination),
+                debug_html_wrapper(third_page.create_page(), destination),
+            ]) + '\n')
+
+        if ability_cards:
+            with open('ability_cards.html', 'w') as fh:
+                fh.write(''.join([
+                    debug_stylesheets('ability_cards', destination),
+                    debug_html_wrapper(generate_ability_cards.create_page(), destination),
+                ]) + '\n')
+    else:
+        with open('roll20.html', 'w') as fh:
+            fh.write(''.join([
+                debug_stylesheets('second_page', destination),
+                debug_html_wrapper(second_page.create_page(), destination),
+            ]) + '\n')
+
+    compile_less()
 
 def debug_stylesheets(page_name, destination):
 
