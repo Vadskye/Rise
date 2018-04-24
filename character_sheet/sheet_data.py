@@ -53,6 +53,13 @@ def skill_ranks(skill_name):
     points = at(skill_name + '_points')
     return roll20_min_text(f"({points} * floor({at('level')} / 2))", at('level'))
 
+def skill_total(skill_name):
+    return value_sum([
+        f"(@{{{skill_name}_points}} * 2)",
+        roll20_max_text(f"@{{{skill_name}_ranks}}", f"@{{{skill_name}_attribute}}"),
+        f"(@{{{skill_name}_misc}})",
+    ])
+
 ROLL20_CALC = {
     'action_points': value_sum([
         'action_points_base',
@@ -85,6 +92,7 @@ ROLL20_CALC = {
         'skill_points_misc',
     ]),
     'skill_ranks': skill_ranks,
+    'skill_total': skill_total,
     'strike_accuracy': value_sum([
         'strike_accuracy_scaling',
         'strike_accuracy_misc',
