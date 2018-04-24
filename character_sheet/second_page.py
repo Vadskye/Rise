@@ -16,6 +16,7 @@ def create_page():
                 calc_attacks(),
                 calc_hit_points(),
                 calc_skill_points(),
+                calc_action_points(),
                 flex_wrapper(div({'class': 'section-header'}, 'Defenses')),
                 calc_defenses(),
             ]),
@@ -152,7 +153,6 @@ def calc_attacks():
     return ''.join([
         calc_strike_accuracy(),
         # calc_special_attack(),
-        calc_standard_damage(),
         calc_strike_damage(),
         calc_other_damage(),
     ])
@@ -186,26 +186,6 @@ def calc_defenses():
         calc_mental(),
     ])
 
-def calc_standard_damage():
-    return flex_row([
-        div({'class': 'calc-header'}, 'Standard Dmg'),
-        equation(
-            [
-                text_input({
-                    'class': 'fake-number',
-                    'disabled': 'true',
-                    'value': '1d8'
-                }),
-                flex_col({'class': 'equation-text'}, '+1d per two'),
-                underlabel('Level', number_input()),
-                plus(),
-                number_input({
-                    'class': 'equation-misc',
-                    'name': 'standard-damage-misc',
-                }),
-            ],
-        ),
-    ])
 
 def calc_strike_accuracy():
     return flex_row([
@@ -279,13 +259,43 @@ def calc_skill_points():
         equation([
             underlabel('Class', number_input()),
             plus(),
-            underlabel('Int', number_input()),
+            underlabel('Int*', number_input()),
             plus(),
             number_input({
                 'class': 'equation-misc',
                 'name': 'skill-points-misc',
             })
         ]),
+    ])
+
+def calc_action_points():
+    return flex_row([
+        div({'class': 'calc-header'}, 'Action Points'),
+        equation(
+            [
+                underlabel('Base', number_input({
+                    'disabled': True,
+                    'name': 'action_points_base',
+                    'value': 6,
+                })),
+                plus(),
+                underlabel('Wil*', number_input({
+                    'disabled': True,
+                    'name': 'action_points_willpower',
+                    'value': '(@{willpower_starting})',
+                })),
+                plus(),
+                number_input({
+                    'class': 'equation-misc',
+                    'name': 'action_points_misc',
+                })
+            ],
+            result_attributes={
+                'disabled': 'true',
+                'name': 'action_points',
+                'value': ROLL20_CALC['action_points'],
+            },
+        ),
     ])
 
 def calc_special_attack():
