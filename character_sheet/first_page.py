@@ -1,6 +1,6 @@
 from cgi_simple import (
     button, div, flex_col, flex_row, flex_wrapper, freeform_number_input,
-    labeled_number_input, labeled_text_input, number_input, text_input, underlabeled_number_input,
+    labeled_number_input, labeled_text_input, number_input, text_input, underlabel
 )
 from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, ROLL20_CALC
 
@@ -81,9 +81,9 @@ def resources():
         flex_wrapper({'class': 'section-header'}, 'Resources'),
         flex_wrapper({'class': 'action-point-header'}, 'Action points'),
         flex_row({'class': 'action-point-wrapper'}, [
-            underlabeled_number_input('Maximum'),
-            underlabeled_number_input('Attuned'),
-            underlabeled_number_input('Recovery'),
+            underlabel('Maximum', number_input()),
+            underlabel('Attuned', number_input()),
+            underlabel('Recovery', number_input()),
         ]),
         labeled_number_input('Legend points'),
         labeled_number_input('Item slots'),

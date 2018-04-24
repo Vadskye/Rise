@@ -1,4 +1,4 @@
-from cgi_simple import div, equation, flex_col, flex_row, labeled_text_input, plus, this_or_that, underlabeled_number_input
+from cgi_simple import div, equation, flex_col, flex_row, labeled_text_input, number_input, plus, this_or_that, underlabel
 
 def create_page():
     return flex_col([
@@ -17,23 +17,23 @@ def abilities_overview():
             div({'class': 'calc-header'}, 'Power'),
             equation([
                 this_or_that([
-                    underlabeled_number_input('Level'),
-                    underlabeled_number_input('Attr'),
+                    underlabel('Level', number_input()),
+                    underlabel('Attr', number_input()),
                 ]),
                 plus(),
-                underlabeled_number_input('Misc', input_attributes={'class': 'equation-misc'}),
+                underlabel('Misc', number_input({'class': 'equation-misc'})),
             ]),
         ]),
         flex_row([
             div({'class': 'calc-header'}, 'Concentration'),
             equation([
                 this_or_that([
-                    underlabeled_number_input('Level'),
-                    underlabeled_number_input('Con'),
-                    underlabeled_number_input('Wil'),
+                    underlabel('Level', number_input()),
+                    underlabel('Con', number_input()),
+                    underlabel('Wil', number_input()),
                 ]),
                 plus(),
-                underlabeled_number_input('Misc', input_attributes={'class': 'equation-misc'}),
+                underlabel('Misc', number_input({'class': 'equation-misc'})),
             ]),
         ]),
     ])
