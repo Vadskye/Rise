@@ -12,11 +12,11 @@ def create_page():
         flex_col({'class': 'main-body'}, [
             flex_col({'class': 'statistics'}, [
                 flex_wrapper(div({'class': 'section-header'}, 'Core Statistics')),
+                calc_action_points(),
+                calc_skill_points(),
+                calc_hit_points(),
                 calc_speed(),
                 calc_attacks(),
-                calc_hit_points(),
-                calc_skill_points(),
-                calc_action_points(),
                 flex_wrapper(div({'class': 'section-header'}, 'Defenses')),
                 calc_defenses(),
             ]),
