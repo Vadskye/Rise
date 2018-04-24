@@ -58,6 +58,12 @@ def main(ability_cards, destination):
                     debug_html_wrapper(generate_ability_cards.create_page(), destination),
                 ]) + '\n')
     else:
+        with open('first_page.html', 'w') as fh:
+            fh.write(''.join([
+                debug_stylesheets('first_page', destination),
+                debug_html_wrapper(first_page.create_page(), destination),
+            ]) + '\n')
+
         with open('roll20.html', 'w') as fh:
             fh.write(''.join([
                 debug_stylesheets('second_page', destination),
