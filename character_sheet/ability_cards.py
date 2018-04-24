@@ -21,7 +21,7 @@ def abilities_overview():
                     underlabeled_number_input('Attr'),
                 ]),
                 plus(),
-                underlabeled_number_input('Misc', attributes={'class': 'equation-misc'}),
+                underlabeled_number_input('Misc', input_attributes={'class': 'equation-misc'}),
             ]),
         ]),
         flex_row([
@@ -33,7 +33,7 @@ def abilities_overview():
                     underlabeled_number_input('Wil'),
                 ]),
                 plus(),
-                underlabeled_number_input('Misc', attributes={'class': 'equation-misc'}),
+                underlabeled_number_input('Misc', input_attributes={'class': 'equation-misc'}),
             ]),
         ]),
     ])
