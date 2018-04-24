@@ -70,6 +70,11 @@ ROLL20_CALC = {
         roll20_max_text('@{dexterity}', '@{perception}'),
         '@{level}',
     ),
+    'strike_accuracy': value_sum([
+        'strike_accuracy_scaling',
+        'strike_accuracy_misc',
+    ]),
+    'strike_accuracy_scaling': roll20_max_text('@{level}', '@{perception}'),
 }
 for attribute in ATTRIBUTES:
     ROLL20_CALC[attribute.lower()] = attribute_roll20_text(attribute.lower())
