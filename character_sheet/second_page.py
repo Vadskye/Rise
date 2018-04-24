@@ -82,8 +82,8 @@ def calc_attribute(attribute_name):
                 plus(),
                 underlabel('Level', number_input({
                     'disabled': True,
-                    'name': attribute_name + '_level',
-                    'value': ROLL20_CALC[attribute_name + '_level'],
+                    'name': attribute_name + '_scaling',
+                    'value': ROLL20_CALC[attribute_name + '_scaling'],
                 })),
                 plus(),
                 number_input({
@@ -121,15 +121,23 @@ def calc_hit_points():
             [
                 underlabel(
                     '1+Level',
-                    number_input({'name': 'hp-level'}),
+                    number_input({
+                        'disabled': True,
+                        'name': 'hit_points_level',
+                        'value': '(@{level} + 1)',
+                    }),
                     {'class': 'eq-level'},
                 ),
                 flex_col({'class': 'equation-text'}, 'times'),
-                underlabel('5+Con*', number_input()),
+                underlabel('5+Con*', number_input({
+                    'disabled': True,
+                    'name': 'hit_points_constitution',
+                    'value': '(@{constitution_starting} + 5)',
+                })),
                 plus(),
                 number_input({
                     'class': 'equation-misc',
-                    'name': 'hp-misc',
+                    'name': 'hit_points_misc',
                 }),
             ],
             result_attributes={
@@ -294,21 +302,25 @@ def calc_armor():
         div({'class': 'calc-header'}, 'Armor'),
         equation(
             [
-                underlabel('Lvl/Dex', number_input()),
+                underlabel('Lvl/Dex', number_input({
+                    'disabled': True,
+                    'name': 'armor_scaling',
+                    'value': ROLL20_CALC['armor_scaling'],
+                })),
                 plus(),
-                underlabel('Armor', number_input({'name': 'armor-body'})),
+                underlabel('Armor', number_input({'name': 'body_armor_defense_value'})),
                 plus(),
-                underlabel('Shield', number_input({'name': 'shield'})),
+                underlabel('Shield', number_input({'name': 'shield_defense_value'})),
                 plus(),
                 number_input({
                     'class': 'equation-misc',
-                    'name': 'armor-misc',
+                    'name': 'armor_misc',
                 })
             ],
             result_attributes={
                 'disabled': 'true',
-                'name': 'armor',
-                'value': ROLL20_CALC['armor'],
+                'name': 'armor_defense',
+                'value': ROLL20_CALC['armor_defense'],
             },
         ),
     ])
@@ -318,21 +330,29 @@ def calc_fort():
         div({'class': 'calc-header'}, 'Fort'),
         equation(
             [
-                underlabel('Lvl/Str/Con', number_input()),
+                underlabel('Lvl/Str/Con', number_input({
+                    'disabled': True,
+                    'name': 'fortitude_scaling',
+                    'value': ROLL20_CALC['fortitude_scaling'],
+                })),
                 plus(),
-                underlabel('Con*', number_input()),
+                underlabel('Con*', number_input({
+                    'disabled': True,
+                    'name': 'fortitude_starting_attribute',
+                    'value': '(@{constitution_starting})',
+                })),
                 plus(),
-                underlabel('Class', number_input()),
+                underlabel('Class', number_input({'name': 'fortitude_class'})),
                 plus(),
                 number_input({
                     'class': 'equation-misc',
-                    'name': 'fort-misc',
+                    'name': 'fortitude_misc',
                 })
             ],
             result_attributes={
                 'disabled': 'true',
                 'name': 'fortitude',
-                'value': ROLL20_CALC['fortitude'],
+                'value': ROLL20_CALC['fortitude_defense'],
             },
         ),
     ])
@@ -342,23 +362,35 @@ def calc_ref():
         div({'class': 'calc-header'}, 'Ref'),
         equation(
             [
-                underlabel('Lvl/Dex/Per', number_input()),
+                underlabel('Lvl/Dex/Per', number_input({
+                    'disabled': True,
+                    'name': 'reflex_scaling',
+                    'value': ROLL20_CALC['reflex_scaling'],
+                })),
                 plus(),
-                underlabel('Dex*', number_input()),
+                underlabel('Dex*', number_input({
+                    'disabled': True,
+                    'name': 'reflex_starting_attribute',
+                    'value': '(@{dexterity_starting})',
+                })),
                 plus(),
-                underlabel('Class', number_input()),
+                underlabel('Class', number_input({'name': 'reflex_class'})),
                 plus(),
-                underlabel('Shield', number_input({'name': 'shield'})),
+                underlabel('Shield', number_input({
+                    'disabled': True,
+                    'name': 'shield',
+                    'value': '@{shield_defense_value}',
+                })),
                 plus(),
                 number_input({
                     'class': 'equation-misc',
-                    'name': 'ref-misc',
+                    'name': 'reflex_misc',
                 })
             ],
             result_attributes={
                 'disabled': 'true',
-                'name': 'reflex',
-                'value': ROLL20_CALC['reflex'],
+                'name': 'reflex_defense',
+                'value': ROLL20_CALC['reflex_defense'],
             },
         ),
     ])
@@ -368,21 +400,29 @@ def calc_mental():
         div({'class': 'calc-header'}, 'Ment'),
         equation(
             [
-                underlabel('Lvl/Int/Wil', number_input()),
+                underlabel('Lvl/Int/Wil', number_input({
+                    'disabled': True,
+                    'name': 'mental_scaling',
+                    'value': ROLL20_CALC['mental_scaling'],
+                })),
                 plus(),
-                underlabel('Wil*', number_input()),
+                underlabel('Wil*', number_input({
+                    'disabled': True,
+                    'name': 'mental_starting_attribute',
+                    'value': '(@{willpower_starting})',
+                })),
                 plus(),
-                underlabel('Class', number_input()),
+                underlabel('Class', number_input({'name': 'mental_class'})),
                 plus(),
                 number_input({
                     'class': 'equation-misc',
-                    'name': 'ment-misc',
+                    'name': 'mental_misc',
                 })
             ],
             result_attributes={
                 'disabled': 'true',
-                'name': 'mental',
-                'value': ROLL20_CALC['mental'],
+                'name': 'mental_defense',
+                'value': ROLL20_CALC['mental_defense'],
             },
         ),
     ])
