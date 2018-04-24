@@ -54,7 +54,7 @@ def attribute_section(attribute):
             input_attributes={
                 'disabled': 'true',
                 'name': f"{attribute.lower()}-display",
-                'value': ROLL20_CALC['attribute'](attribute.lower()),
+                'value': ROLL20_CALC[attribute.lower()],
             },
         ),
         ''.join([skill_box(skill) for skill in ATTRIBUTE_SKILLS[attribute.lower()]])
