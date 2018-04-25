@@ -1,6 +1,6 @@
 from cgi_simple import (
     button, div, flex_col, flex_row, flex_wrapper, freeform_number_input,
-    labeled_number_input, labeled_text_input, number_input, text_input, underlabel
+    labeled_number_input, labeled_text_input, number_input, sidelabel, text_input, underlabel, underlabel_spaced
 )
 from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, ROLL20_CALC
 
@@ -26,10 +26,26 @@ def boring_stuff():
             labeled_text_input('Concept', input_attributes={'name': 'concept'}),
         ]),
         flex_row({'class': 'boring-row'}, [
-            labeled_text_input('Class', input_attributes={'name': 'class'}),
-            labeled_number_input('Level', input_attributes={'name': 'level', 'value': '1'}),
-            labeled_text_input('Race and background', input_attributes={'name': 'race_and_background'}),
-            labeled_text_input('Description', input_attributes={'name': 'description'}),
+            underlabel_spaced(
+                'Level',
+                number_input({'class': 'fake-text', 'name': 'level'}),
+                attributes={'class': 'level-input'},
+            ),
+            labeled_text_input(
+                'Class',
+                attributes={'class': 'class-input'},
+                input_attributes={'name': 'class'},
+            ),
+            labeled_text_input(
+                'Race and background',
+                attributes={'class': 'race-input'},
+                input_attributes={'name': 'race_and_background'},
+            ),
+            labeled_text_input(
+                'Description',
+                attributes={'class': 'description-input'},
+                input_attributes={'name': 'description'},
+            ),
         ]),
     ])
 
@@ -140,11 +156,11 @@ def core_statistics():
             'name': 'strike_accuracy_display',
             'value': '@{strike_accuracy}',
         }),
-        labeled_text_input('Strike damage', input_attributes={
-            'disabled': 'true',
+        # Can't figure out how to make this draw from the calculations
+        sidelabel('Strike damage', text_input({
+            'class': 'fake-number',
             'name': 'strike_damage_display',
-            'value': '(@{strike_damage})',
-        }),
+        })),
         labeled_number_input('Land speed', input_attributes={
             'name': 'land_speed',
             'value': '@{base_speed}',
@@ -242,9 +258,10 @@ def attack(attack_number=None):
             {'class': 'attack-name'},
             {'name': 'attack{0}_name'.format(attack_number)},
         ),
-        underlabel(
+        underlabel_spaced(
             'Accuracy',
             number_input({
+                'class': 'fake-text',
                 'name': 'attack{0}_accuracy'.format(attack_number),
             }),
             {'class': 'attack-bonus'}

@@ -60,9 +60,21 @@
     margin-right: 0;
 }
 
-.passive-ability-row > div, .boring-row > div {
-    flex-basis: 25%;
+.passive-ability-row > div {
     flex-grow: 1;
+}
+
+.boring-row {
+    .labeled-text-input {
+        flex-grow: 1;
+    }
+    .race-input, .description-input {
+        flex-grow: 2;
+    }
+    .level-input {
+        flex-basis: 2em;
+        flex-grow: 0;
+    }
 }
 
 .active-ability-effect, .attack-effect {
@@ -126,4 +138,13 @@
 
 .attack-info .number-label {
     font-size: 1.25em;
+}
+
+input[type=number].fake-text {
+    box-shadow: none !important;
+    border: 0;
+    border-bottom: 1px solid black;
+    height: 2.1em;
+    padding-top: 0.75em;
+    width: 100%;
 }

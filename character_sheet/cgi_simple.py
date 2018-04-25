@@ -277,3 +277,26 @@ def underlabel(label_name, input_html, attributes=None):
             label_name
         ),
     ])
+
+def underlabel_spaced(label_name, input_html, attributes=None):
+    attributes = attributes or dict()
+    space_append(attributes, 'class', 'labeled-text-input'),
+    return div(attributes, flex_col([
+        input_html,
+        span(
+            {'class': 'under-label'},
+            label_name
+        ),
+    ]))
+
+def sidelabel(label_name, input_html, attributes=None):
+    attributes = attributes or dict()
+    space_append(attributes, 'class', 'labeled-number-input')
+
+    return flex_row(attributes, [
+        span(
+            {'class': 'number-label'},
+            label_name
+        ),
+        input_html,
+    ])
