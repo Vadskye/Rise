@@ -147,9 +147,9 @@ def core_statistics():
         }),
         labeled_number_input('Land speed', input_attributes={
             'name': 'land_speed',
-            'value': '@{speed}',
+            'value': '@{base_speed}',
         }),
-        labeled_number_input('Strike accuracy', input_attributes={
+        labeled_number_input('Other speed', input_attributes={
             'name': 'other_speed',
         }),
     ])
