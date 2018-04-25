@@ -13,11 +13,11 @@ def create_page():
             flex_col({'class': 'statistics'}, [
                 flex_wrapper(div({'class': 'section-header'}, 'Core Statistics')),
                 calc_action_points(),
-                calc_skill_points(),
-                calc_hit_points(),
-                calc_speed(),
-                calc_threat(),
+                calc_base_speed(),
                 calc_encumbrance(),
+                calc_hit_points(),
+                calc_skill_points(),
+                calc_threat(),
                 calc_other_damage(),
                 flex_wrapper(div({'class': 'section-header'}, 'Defenses')),
                 calc_defenses(),
@@ -71,7 +71,7 @@ def calc_skill(skill_name, attribute=None, blank_input=False):
             'class': 'skill-attr',
             'disabled': True,
             'name': skill_parsable + '_attribute',
-            'value': '(@{' + attribute + '})' if attribute else '0',
+            'value': '(@{' + attribute + '})' if attribute else None,
         }),
         number_input({
             'class': 'equation-misc',
@@ -162,7 +162,7 @@ def calc_hit_points():
         ),
     ])
 
-def calc_speed():
+def calc_base_speed():
     return flex_row([
         div({'class': 'calc-header'}, 'Base Speed'),
         equation(
