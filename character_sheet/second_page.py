@@ -405,7 +405,7 @@ def calc_fort():
             ],
             result_attributes={
                 'disabled': 'true',
-                'name': 'fortitude',
+                'name': 'fortitude_defense',
                 'value': ROLL20_CALC['fortitude_defense'],
             },
         ),
