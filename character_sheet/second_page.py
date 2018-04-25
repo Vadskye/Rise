@@ -154,7 +154,7 @@ def calc_hit_points():
             ],
             result_attributes={
                 'disabled': 'true',
-                'name': 'hit_points',
+                'name': 'hit_points_max',
                 'value': ROLL20_CALC['hit_points'],
             },
         ),
@@ -486,12 +486,12 @@ def adventuring():
         flex_col({'class': 'misc'}, [
             flex_wrapper(div({'class': 'section-header'}, 'Weight Limits')),
             flex_row({'class': 'weight-limits'}, [
-                labeled_text_input('Unencumbered', 'weight_unencumbered'),
-                labeled_text_input('Maximum', 'weight_maximum'),
+                labeled_text_input('Unencumbered', input_attributes={'name': 'weight_unencumbered'}),
+                labeled_text_input('Maximum', input_attributes={'name': 'weight_maximum'}),
             ]),
             flex_row({'class': 'weight-limits'}, [
-                labeled_text_input('Overloaded', 'weight_overloaded'),
-                labeled_text_input('Push/Drag', 'weight_push_drag'),
+                labeled_text_input('Overloaded', input_attributes={'name': 'weight_overloaded'}),
+                labeled_text_input('Push/Drag', input_attributes={'name': 'weight_push_drag'}),
             ]),
         ]),
         standard_damage(),
