@@ -241,6 +241,7 @@ def calc_strike_damage():
                 }),
             ],
             result_attributes={'name': 'strike_damage'},
+            input_type=text_input,
         ),
     ])
 
@@ -262,7 +263,8 @@ def calc_other_damage():
                     'name': 'other_damage_misc',
                 }),
             ],
-            result_attributes={'name': 'other_damage'},
+            result_attributes={'class': 'fake-number', 'name': 'other_damage'},
+            input_type=text_input,
         ),
     ])
 
