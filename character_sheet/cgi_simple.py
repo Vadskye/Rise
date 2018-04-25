@@ -179,13 +179,11 @@ def flex_wrapper(attributes=None, contents=None):
     space_append(attributes, 'class', 'flex-wrapper')
     return div(attributes, contents)
 
-def labeled_text_input(label_name, input_name, attributes=None):
+def labeled_text_input(label_name, attributes=None, input_attributes=None):
     attributes = attributes or dict()
     space_append(attributes, 'class', 'labeled-text-input')
     return div(attributes, flex_col([
-        text_input({
-            'name': input_name,
-        }),
+        text_input(input_attributes),
         span(
             {'class': 'under-label'},
             label_name
@@ -210,12 +208,12 @@ def labeled_number_input(label_name, input_name=None, attributes=None, input_att
         number_input(input_attributes),
     ])
 
-def freeform_number_input(attributes=None):
+def freeform_number_input(attributes=None, number_input_attributes=None):
     attributes = attributes or dict()
     space_append(attributes, 'class', 'freeform-number-input')
     return flex_row(attributes, [
         text_input(),
-        number_input(),
+        number_input(number_input_attributes),
     ])
 
 def labeled_dual_input(label_name, text_input_name, number_input_name):

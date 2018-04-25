@@ -54,7 +54,7 @@ def skill_ranks(skill_name):
     return roll20_min_text(f"({points} * floor({at('level')} / 2))", at('level'))
 
 def skill_total(skill_name):
-    return value_sum([
+    return ' + '.join([
         f"(@{{{skill_name}_points}} * 2)",
         roll20_max_text(f"@{{{skill_name}_ranks}}", f"@{{{skill_name}_attribute}}"),
         f"(@{{{skill_name}_misc}})",

@@ -21,14 +21,15 @@ def create_page():
 def boring_stuff():
     return div({'class': 'boring-stuff'}, [
         flex_row({'class': 'boring-row'}, [
-            labeled_text_input('Character name', 'character_name'),
-            labeled_text_input('Player name', 'player_name'),
-            labeled_text_input('Concept', 'concept'),
+            labeled_text_input('Character name', input_attributes={'name': 'character_name'}),
+            labeled_text_input('Player name', input_attributes={'name': 'player_name'}),
+            labeled_text_input('Concept', input_attributes={'name': 'concept'}),
         ]),
         flex_row({'class': 'boring-row'}, [
-            labeled_text_input('Class and level', 'class-and-level'),
-            labeled_text_input('Race and background', 'race-and-background'),
-            labeled_text_input('Description', 'description'),
+            labeled_text_input('Class', input_attributes={'name': 'class'}),
+            labeled_number_input('Level', input_attributes={'name': 'level', 'value': '1'}),
+            labeled_text_input('Race and background', input_attributes={'name': 'race_and_background'}),
+            labeled_text_input('Description', input_attributes={'name': 'description'}),
         ]),
     ])
 
@@ -39,10 +40,10 @@ def attributes_and_skills():
         flex_col({'class': 'other-skills attribute-section'}, [
             div({'class': 'attribute attribute-header'}, 'Other Skills'),
             ''.join([skill_box(skill) for skill in ['Bluff', 'Intimidate', 'Perform ______', 'Persuasion']]),
-            freeform_number_input({'class': 'skill-box'}),
-            freeform_number_input({'class': 'skill-box'}),
-            freeform_number_input({'class': 'skill-box'}),
-            freeform_number_input({'class': 'skill-box'}),
+            freeform_number_input({'class': 'skill-box'}, {'name': 'other_skill_1'}),
+            freeform_number_input({'class': 'skill-box'}, {'name': 'other_skill_2'}),
+            freeform_number_input({'class': 'skill-box'}, {'name': 'other_skill_3'}),
+            freeform_number_input({'class': 'skill-box'}, {'name': 'other_skill_4'}),
         ]),
     ])
 
@@ -84,12 +85,24 @@ def resources():
         flex_wrapper({'class': 'section-header'}, 'Resources'),
         flex_wrapper({'class': 'action-point-header'}, 'Action points'),
         flex_row({'class': 'action-point-wrapper'}, [
-            underlabel('Maximum', number_input()),
-            underlabel('Attuned', number_input()),
-            underlabel('Recovery', number_input()),
+            underlabel('Maximum', number_input({
+                'disabled': True,
+                'name': 'action_points_display',
+                'value': '@{action_points}',
+            })),
+            underlabel('Attuned', number_input({'name': 'action_points_attuned'})),
+            underlabel('Recovery', number_input({
+                'disabled': True,
+                'name': 'action_points_recovery',
+                'value': 'floor(@{action_points} / 2)',
+            })),
         ]),
-        labeled_number_input('Legend points'),
-        labeled_number_input('Item slots'),
+        labeled_number_input('Legend points', input_attributes={
+            'disabled': True,
+            'name': 'legend_points',
+            'value': 'floor((@{level} + 2) / 4)',
+        }),
+        labeled_number_input('Item slots', input_attributes={'name': 'item_slots'}),
     ])
 
 def statistics_header():
@@ -111,8 +124,8 @@ def defenses():
                 defense,
                 input_attributes={
                     'disabled': 'true',
-                    'name': defense + '-display',
-                    'value': ROLL20_CALC[defense.lower() + '_defense'],
+                    'name': defense.lower() + '_display',
+                    'value': '@{' + defense.lower() + '}',
                 },
             )
             for defense in DEFENSES
@@ -122,26 +135,40 @@ def defenses():
 def core_statistics():
     return flex_col({'class': 'offense'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Core Statistics')),
-        "".join([
-            labeled_number_input(
-                offense,
-                input_attributes={
-                    'disabled': 'true',
-                    'name': offense + '-display',
-                    # TODO: roll20 value
-                },
-            )
-            for offense in ['Strike accuracy', 'Strike damage', 'Land speed', '______ speed']
-        ]),
+        labeled_number_input('Strike accuracy', input_attributes={
+            'disabled': 'true',
+            'name': 'strike_accuracy_display',
+            'value': '@{strike_accuracy}',
+        }),
+        labeled_text_input('Strike damage', input_attributes={
+            'disabled': 'true',
+            'name': 'strike_damage_display',
+            'value': '@{strike_damage}',
+        }),
+        labeled_number_input('Land speed', input_attributes={
+            'name': 'land_speed',
+            'value': '@{speed}',
+        }),
+        labeled_number_input('Strike accuracy', input_attributes={
+            'name': 'other_speed',
+        }),
     ])
 
 def hit_points():
     return flex_col({'class': 'hit-points'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Hit Points')),
-        "".join([
-            labeled_number_input(hp_type, input_name=f"hit-points-{hp_type}")
-            for hp_type in 'Max Bloodied Vital ______'.split()
-        ]),
+        labeled_number_input('Max', input_attributes={
+            'disabled': True,
+            'name': 'hit_points_display',
+            'value': '@{hit_points_max}',
+        }),
+        labeled_number_input('Bloodied', input_attributes={
+            'disabled': True,
+            'name': 'hit_points_bloodied_display',
+            'value': 'floor(@{hit_points_max} / 2)',
+        }),
+        labeled_number_input('Vital', input_attributes={'name': 'vital_damage'}),
+        freeform_number_input(number_input_attributes={'name': 'hit_points_other'}),
     ])
 
 def movement():
@@ -164,13 +191,13 @@ def ability(ability_number=None):
     return flex_row({'class': 'ability'}, [
         labeled_text_input(
             'Name',
-            'active-ability{0}-name'.format(ability_number),
-            {'class': 'active-ability-name'}
+            {'class': 'active-ability-name'},
+            {'name': 'active_ability{0}_name'.format(ability_number)},
         ),
         labeled_text_input(
             'Effect',
-            'active-ability{0}-effect'.format(ability_number),
-            {'class': 'active-ability-effect'}
+            {'class': 'active-ability-effect'},
+            {'name': 'active_ability{0}_effect'.format(ability_number)},
         ),
     ])
 
@@ -194,8 +221,12 @@ def passive_ability(prefix, ability_number):
     )
 
     return flex_row({'class': 'passive-ability'}, [
-        labeled_text_input('Name', 'passive{0}-{1}-name'.format(ability_number, prefix), {'class': 'passive-name'}),
-        labeled_text_input('Effect', 'passive{0}-{1}-effect'.format(ability_number, prefix), {'class': 'passive-effect'}),
+        labeled_text_input('Name', {'class': 'passive-name'}, input_attributes={
+            'name': 'passive{0}-{1}-name'.format(ability_number, prefix),
+        }),
+        labeled_text_input('Effect', {'class': 'passive-effect'}, input_attributes={
+            'name': 'passive{0}-{1}-effect'.format(ability_number, prefix),
+        }),
     ])
 
 def attacks():
@@ -208,18 +239,20 @@ def attack(attack_number=None):
     return flex_row({'class': 'attack'}, [
         labeled_text_input(
             'Name',
-            'attack{0}-name'.format(attack_number),
-            {'class': 'attack-name'}
+            {'class': 'attack-name'},
+            {'name': 'attack{0}_name'.format(attack_number)},
         ),
-        labeled_text_input(
+        underlabel(
             'Accuracy',
-            'attack{0}-bonus'.format(attack_number),
+            number_input({
+                'name': 'attack{0}_accuracy'.format(attack_number),
+            }),
             {'class': 'attack-bonus'}
         ),
         labeled_text_input(
             'Damage/Effect',
-            'attack{0}-effect'.format(attack_number),
-            {'class': 'attack-effect'}
+            {'class': 'attack-effect'},
+            {'name': 'attack{0}_effect'.format(attack_number)},
         ),
     ])
 

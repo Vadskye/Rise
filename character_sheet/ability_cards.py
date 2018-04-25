@@ -41,23 +41,33 @@ def abilities_overview():
 def ability_card():
     return flex_col({'class': 'ability-card'}, [
         flex_row({'class': 'card-header'}, [
-            labeled_text_input('Name', 'ability-name',
-                               attributes={'class': 'ability-name-container'}
-                               ),
-            labeled_text_input('Action', 'ability-action',
-                               attributes={'class': 'ability-action-container'}
-                               ),
-            labeled_text_input('Ability Type', 'ability-type',
-                               attributes={'class': 'ability-type-container'}
-                               ),
+            labeled_text_input(
+                'Name',
+                attributes={'class': 'ability-name-container'},
+                input_attributes={'name': 'ability-name'},
+            ),
+            labeled_text_input(
+                'Action',
+                attributes={'class': 'ability-action-container'},
+                input_attributes={'name': 'ability-action'},
+            ),
+            labeled_text_input(
+                'Ability Type',
+                attributes={'class': 'ability-type-container'},
+                input_attributes={'name': 'ability-type'},
+            ),
         ]),
         flex_row({'class': 'card-targeting'}, [
-            labeled_text_input('Targets', 'ability-targets',
-                               attributes={'class': 'ability-targets-container'}
-                               ),
-            labeled_text_input('Range', 'ability-range',
-                               attributes={'class': 'ability-range-container'}
-                               ),
+            labeled_text_input(
+                'Targets',
+                attributes={'class': 'ability-targets-container'},
+                input_attributes={'name': 'ability-targets'},
+            ),
+            labeled_text_input(
+                'Range',
+                attributes={'class': 'ability-range-container'},
+                input_attributes={'name': 'ability-range'},
+            ),
         ]),
         div({'class': 'card-effect-separator'}),
         div({'class': 'ability-effect'}),
