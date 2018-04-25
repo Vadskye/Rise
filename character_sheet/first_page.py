@@ -169,14 +169,14 @@ def core_statistics():
             'name': 'hit_points_bloodied_display',
             'value': 'floor(@{hit_points_max} / 2)',
         }),
-        sidelabel('Threat', number_input({
-            'name': 'threat_display',
-            'value': '@{threat}',
-        })),
         labeled_number_input('Land speed', input_attributes={
             'name': 'land_speed',
             'value': '@{base_speed}',
         }),
+        sidelabel('Threat', number_input({
+            'name': 'threat_display',
+            'value': '@{threat}',
+        })),
     ])
 
 def movement():
