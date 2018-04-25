@@ -69,13 +69,13 @@ def skill_box(name):
                 'class': 'number-label',
                 'name': f"roll_skill_{formatted_skill}",
                 'type': 'roll',
-                'value': '/r @{' + formatted_skill + '} for ' + name
+                'value': '@{' + formatted_skill + '} for ' + name
             },
             name
         ),
         number_input({
             'disabled': True,
-            'name': formatted_skill + '_display',
+            'name': formatted_skill,
             'value': ROLL20_CALC['skill_total'](formatted_skill)
         }),
     ])
@@ -124,7 +124,7 @@ def defenses():
                 defense,
                 input_attributes={
                     'disabled': 'true',
-                    'name': defense.lower() + '_display',
+                    'name': defense.lower() + '_defense__display',
                     'value': '@{' + defense.lower() + '}',
                 },
             )
@@ -143,7 +143,7 @@ def core_statistics():
         labeled_text_input('Strike damage', input_attributes={
             'disabled': 'true',
             'name': 'strike_damage_display',
-            'value': '@{strike_damage}',
+            'value': '(@{strike_damage})',
         }),
         labeled_number_input('Land speed', input_attributes={
             'name': 'land_speed',

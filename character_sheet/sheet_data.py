@@ -102,7 +102,10 @@ ROLL20_CALC = {
 for attribute in ATTRIBUTES:
     ROLL20_CALC[attribute.lower()] = attribute_roll20_text(attribute.lower())
     starting_formula = at(attribute.lower() + '_starting')
-    ROLL20_CALC[attribute.lower() + '_scaling'] = f"""({roll20_min_text(f"({starting_formula} * floor({at('level')} / 2))", at('level'))} - ({roll20_min_text(starting_formula, 1)}))"""
+    ROLL20_CALC[attribute.lower() + '_scaling'] = roll20_min_text(
+        f"({starting_formula} * floor(@{{level}} / 2))",
+        f"(@{{level}} - 1)",
+    )
 
 for defense in ['fortitude', 'mental', 'reflex']:
     ROLL20_CALC[defense + '_defense'] = value_sum([
