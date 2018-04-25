@@ -85,7 +85,7 @@ def skill_box(name):
                 'class': 'number-label',
                 'name': f"roll_skill_{formatted_skill}",
                 'type': 'roll',
-                'value': '@{' + formatted_skill + '} for ' + name
+                'value': '/r @{' + formatted_skill + '} for ' + name
             },
             name
         ),
