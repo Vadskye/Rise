@@ -229,13 +229,14 @@ def labeled_dual_input(label_name, text_input_name, number_input_name):
 def value_sum(values):
     return '(' + '+'.join(['@{' + value + '}' for value in values]) + ')'
 
-def equation(attributes=None, contents=None, result_attributes=None):
+def equation(attributes=None, contents=None, result_attributes=None, input_type=None):
     attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
     space_append(attributes, 'class', 'equation')
     result_attributes = result_attributes or dict()
+    input_type = input_type or number_input
 
     return flex_row(attributes, [
-        underlabel('Total', number_input(result_attributes)),
+        underlabel('Total', input_type(result_attributes)),
         equals(),
         ''.join(contents),
     ])
