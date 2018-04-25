@@ -103,7 +103,7 @@ def resources():
         flex_row({'class': 'action-point-wrapper'}, [
             underlabel('Max', number_input({
                 'disabled': True,
-                'name': 'action_points_display',
+                'name': 'action_points_max',
                 'value': '@{action_points}',
             })),
             underlabel('Recover', number_input({
@@ -139,8 +139,8 @@ def defenses():
                 defense,
                 input_attributes={
                     'disabled': 'true',
-                    'name': defense.lower() + '_defense__display',
-                    'value': '@{' + defense.lower() + '}',
+                    'name': defense.lower() + '_display',
+                    'value': '@{' + defense.lower() + '_defense}',
                 },
             )
             for defense in DEFENSES
@@ -161,19 +161,20 @@ def core_statistics():
         flex_wrapper(div({'class': 'section-header'}, 'Core Statistics')),
         sidelabel('Hit points', number_input({
             'disabled': True,
-            'name': 'hit_points_display',
-            'value': '@{hit_points_max}',
+            'name': 'hit_points_max',
+            'value': '@{hit_points}',
         })),
         labeled_number_input('Bloodied', input_attributes={
             'disabled': True,
             'name': 'hit_points_bloodied_display',
-            'value': 'floor(@{hit_points_max} / 2)',
+            'value': 'floor(@{hit_points} / 2)',
         }),
         labeled_number_input('Land speed', input_attributes={
             'name': 'land_speed',
             'value': '@{base_speed}',
         }),
         sidelabel('Threat', number_input({
+            'disabled': True,
             'name': 'threat_display',
             'value': '@{threat}',
         })),
