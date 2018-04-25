@@ -73,6 +73,16 @@ ROLL20_CALC = {
         'armor_misc',
     ]),
     'armor_scaling': roll20_max_text('@{level}', '@{dexterity}'),
+    'base_speed': value_sum([
+        'speed_size',
+        'speed_armor',
+        'speed_misc',
+    ]),
+    # Odd syntax since we're subtracting constitution
+    'encumbrance': value_sum([
+        'body_armor_encumbrance',
+        'encumbrance_misc',
+    ]) + ' - @{constitution_starting})',
     'hit_points': '(@{hit_points_misc} + (@{hit_points_level} * @{hit_points_constitution}))',
     'fortitude_scaling': roll20_max_text(
         roll20_max_text('@{strength}', '@{constitution}'),
@@ -98,6 +108,12 @@ ROLL20_CALC = {
         'strike_accuracy_misc',
     ]),
     'strike_accuracy_scaling': roll20_max_text('@{level}', '@{perception}'),
+    'threat': value_sum([
+        'threat_scaling',
+        'threat_armor',
+        'threat_misc',
+    ]),
+    'threat_scaling': roll20_max_text('@{level}', '@{strength}'),
 }
 for attribute in ATTRIBUTES:
     ROLL20_CALC[attribute.lower()] = attribute_roll20_text(attribute.lower())

@@ -16,7 +16,9 @@ def create_page():
                 calc_skill_points(),
                 calc_hit_points(),
                 calc_speed(),
-                calc_attacks(),
+                calc_threat(),
+                calc_encumbrance(),
+                calc_other_damage(),
                 flex_wrapper(div({'class': 'section-header'}, 'Defenses')),
                 calc_defenses(),
             ]),
@@ -160,14 +162,6 @@ def calc_hit_points():
         ),
     ])
 
-def calc_attacks():
-    return ''.join([
-        calc_strike_accuracy(),
-        # calc_special_attack(),
-        calc_strike_damage(),
-        calc_other_damage(),
-    ])
-
 def calc_speed():
     return flex_row([
         div({'class': 'calc-header'}, 'Base Speed'),
@@ -184,9 +178,66 @@ def calc_speed():
             ],
             result_attributes={
                 'disabled': 'true',
-                'name': 'speed',
+                'name': 'base_speed',
+                'value': ROLL20_CALC['base_speed'],
             },
         )
+    ])
+
+def calc_threat():
+    return flex_row([
+        div({'class': 'calc-header'}, 'Threat'),
+        equation(
+            [
+                underlabel('Lvl/Str', number_input({
+                    'disabled': True,
+                    'name': 'threat_scaling',
+                    'value': ROLL20_CALC['threat_scaling'],
+                })),
+                plus(),
+                underlabel('1/2 Armor', number_input({
+                    'disabled': True,
+                    'name': 'threat_armor',
+                    'value': '(@{body_armor_defense_value} / 2)',
+                })),
+                plus(),
+                number_input({
+                    'class': 'equation-misc',
+                    'name': 'threat_misc',
+                }),
+            ],
+            result_attributes={
+                'disabled': True,
+                'name': 'threat',
+                'value': ROLL20_CALC['threat'],
+            },
+        ),
+    ])
+
+def calc_encumbrance():
+    return flex_row([
+        div({'class': 'calc-header'}, 'Encumbrance'),
+        equation(
+            [
+                underlabel('Armor', number_input({'name': 'body_armor_encumbrance'})),
+                minus(),
+                underlabel('Con*', number_input({
+                    'disabled': True,
+                    'name': 'encumbrance_constitution',
+                    'value': '(@{constitution_starting})',
+                })),
+                plus(),
+                number_input({
+                    'class': 'equation-misc',
+                    'name': 'encumbrance_misc',
+                }),
+            ],
+            result_attributes={
+                'disabled': True,
+                'name': 'encumbrance',
+                'value': ROLL20_CALC['encumbrance'],
+            },
+        ),
     ])
 
 def calc_defenses():
@@ -197,57 +248,9 @@ def calc_defenses():
         calc_mental(),
     ])
 
-
-def calc_strike_accuracy():
-    return flex_row([
-        div({'class': 'calc-header'}, 'Strike Accuracy'),
-        equation(
-            [
-                # Not disabled because it's possible to override with Dex
-                underlabel('Lvl/Attr', number_input({
-                    'name': 'strike_accuracy_scaling',
-                    'value': ROLL20_CALC['strike_accuracy_scaling'],
-                })),
-                plus(),
-                number_input({
-                    'class': 'equation-misc',
-                    'name': 'strike_accuracy_misc',
-                }),
-            ],
-            result_attributes={
-                'disabled': 'true',
-                'name': 'strike_accuracy',
-                'value': ROLL20_CALC['strike_accuracy'],
-            },
-        ),
-    ])
-
-def calc_strike_damage():
-    return flex_row([
-        div({'class': 'calc-header'}, 'Strike Dmg'),
-        equation(
-            [
-                text_input({
-                    'class': 'fake-number',
-                    'disabled': 'true',
-                    'value': '1d8'
-                }),
-                flex_col({'class': 'equation-text'}, '+1d per two'),
-                underlabel('Level/Str', text_input({'class': 'fake-number'})),
-                plus(),
-                text_input({
-                    'class': 'equation-misc',
-                    'name': 'strike_damage_misc',
-                }),
-            ],
-            result_attributes={'name': 'strike_damage'},
-            input_type=text_input,
-        ),
-    ])
-
 def calc_other_damage():
     return flex_row([
-        div({'class': 'calc-header blank-input'}, '____________'),
+        div({'class': 'calc-header equation-misc'}, '_____ Damage'),
         equation(
             [
                 text_input({
@@ -381,7 +384,7 @@ def calc_armor():
 
 def calc_fort():
     return flex_row([
-        div({'class': 'calc-header'}, 'Fort'),
+        div({'class': 'calc-header'}, 'Fortitude'),
         equation(
             [
                 underlabel('Lvl/Str/Con', number_input({
@@ -413,7 +416,7 @@ def calc_fort():
 
 def calc_ref():
     return flex_row([
-        div({'class': 'calc-header'}, 'Ref'),
+        div({'class': 'calc-header'}, 'Reflex'),
         equation(
             [
                 underlabel('Lvl/Dex/Per', number_input({
@@ -451,7 +454,7 @@ def calc_ref():
 
 def calc_mental():
     return flex_row([
-        div({'class': 'calc-header'}, 'Ment'),
+        div({'class': 'calc-header'}, 'Mental'),
         equation(
             [
                 underlabel('Lvl/Int/Wil', number_input({
