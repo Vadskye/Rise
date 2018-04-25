@@ -156,7 +156,7 @@ def calc_hit_points():
             ],
             result_attributes={
                 'disabled': 'true',
-                'name': 'hit_points_max',
+                'name': 'hit_points',
                 'value': ROLL20_CALC['hit_points'],
             },
         ),
