@@ -101,17 +101,17 @@ def resources():
         flex_wrapper({'class': 'section-header'}, 'Resources'),
         flex_wrapper({'class': 'action-point-header'}, 'Action points'),
         flex_row({'class': 'action-point-wrapper'}, [
-            underlabel('Maximum', number_input({
+            underlabel('Max', number_input({
                 'disabled': True,
                 'name': 'action_points_display',
                 'value': '@{action_points}',
             })),
-            underlabel('Attuned', number_input({'name': 'action_points_attuned'})),
-            underlabel('Recovery', number_input({
+            underlabel('Recover', number_input({
                 'disabled': True,
                 'name': 'action_points_recovery',
                 'value': 'floor(@{action_points} / 2)',
             })),
+            underlabel('Attuned', number_input({'name': 'action_points_attuned'})),
         ]),
         labeled_number_input('Legend points', input_attributes={
             'disabled': True,
@@ -124,11 +124,10 @@ def resources():
 def statistics_header():
     return ''.join([
         flex_row({'class': 'core-statistics'}, [
-            defenses(),
             core_statistics(),
-            hit_points(),
+            defenses(),
+            special_defenses(),
             resources()
-            # labeled_number_input('Hit Points', 'hit-points')
         ])
     ])
 
@@ -148,43 +147,36 @@ def defenses():
         ]),
     ])
 
+def special_defenses():
+    return flex_col({'class': 'special-defenses'}, [
+        flex_wrapper(div({'class': 'section-header'}, 'Special Defenses')),
+        "".join([
+            text_input({'name': f"special_defense_{i}"})
+            for i in range(4)
+        ]),
+    ])
+
 def core_statistics():
     return flex_col({'class': 'offense'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Core Statistics')),
-        labeled_number_input('Strike accuracy', input_attributes={
-            'disabled': 'true',
-            'name': 'strike_accuracy_display',
-            'value': '@{strike_accuracy}',
-        }),
-        # Can't figure out how to make this draw from the calculations
-        sidelabel('Strike damage', text_input({
-            'class': 'fake-number',
-            'name': 'strike_damage_display',
-        })),
-        labeled_number_input('Land speed', input_attributes={
-            'name': 'land_speed',
-            'value': '@{base_speed}',
-        }),
-        labeled_number_input('Other speed', input_attributes={
-            'name': 'other_speed',
-        }),
-    ])
-
-def hit_points():
-    return flex_col({'class': 'hit-points'}, [
-        flex_wrapper(div({'class': 'section-header'}, 'Hit Points')),
-        labeled_number_input('Max', input_attributes={
+        sidelabel('Hit points', number_input({
             'disabled': True,
             'name': 'hit_points_display',
             'value': '@{hit_points_max}',
-        }),
+        })),
         labeled_number_input('Bloodied', input_attributes={
             'disabled': True,
             'name': 'hit_points_bloodied_display',
             'value': 'floor(@{hit_points_max} / 2)',
         }),
-        labeled_number_input('Vital', input_attributes={'name': 'vital_damage'}),
-        freeform_number_input(number_input_attributes={'name': 'hit_points_other'}),
+        sidelabel('Threat', number_input({
+            'name': 'threat_display',
+            'value': '@{threat}',
+        })),
+        labeled_number_input('Land speed', input_attributes={
+            'name': 'land_speed',
+            'value': '@{base_speed}',
+        }),
     ])
 
 def movement():
