@@ -39,8 +39,12 @@ def abilities_summary():
         flex_wrapper(div({'class': 'section-header'}, 'Abilities')),
         *[
             flex_row([
-                labeled_text_input('Name', f'ability-name-{i}', {'class': 'ability-name'}),
-                labeled_text_input('Effects', f'ability-effects-{i}', {'class': 'ability-effects'}),
+                labeled_text_input('Name', {'class': 'ability-name'}, input_attributes={
+                    'name': f'ability-name-{i}',
+                }),
+                labeled_text_input('Effects', {'class': 'ability-effects'}, input_attributes={
+                    'name': f'ability-effects-{i}',
+                }),
             ])
             for i in range(9)
         ],
@@ -57,11 +61,11 @@ def summary_row(level=None):
 def proficiencies():
     return flex_col({'class': 'proficiencies'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Proficiencies')),
-        labeled_text_input('Armor', 'prof-armor'),
+        labeled_text_input('Armor', input_attributes={'name': 'prof-armor'}),
         text_input(),
-        labeled_text_input('Weapons', 'prof-weapons'),
+        labeled_text_input('Weapons', input_attributes={'name': 'prof-weapons'}),
         text_input(),
-        labeled_text_input('Languages', 'prof-languages'),
+        labeled_text_input('Languages', input_attributes={'name': 'prof-languages'}),
     ])
 
 def subsection_header(attributes=None, contents=None):
@@ -74,8 +78,8 @@ def equipment():
         flex_wrapper(div({'class': 'section-header'}, 'Equipment')),
         *[
             flex_row([
-                labeled_text_input('Name', f'equipment-name-{i}', {'class': 'equipment-name'}),
-                labeled_text_input('Effects', f'equipment-effects-{i}', {'class': 'equipment-effects'}),
+                labeled_text_input('Name', {'class': 'equipment-name'}, {'name': f'equipment-name-{i}'}),
+                labeled_text_input('Effects', {'class': 'equipment-effects'}, {'name': f'equipment-effects-{i}'}),
             ])
             for i in range(5)
         ],
@@ -94,8 +98,8 @@ def misc_equipment(body_slot, body_slot_html=None):
         body_slot_html = body_slot.lower()
     return flex_row({'class': body_slot_html}, [
         subsection_header(body_slot),
-        labeled_text_input('Name', body_slot_html + '-name', {'class': 'equipment-name'}),
-        labeled_text_input('Special', body_slot_html + '-special', {'class': 'equipment-special'}),
+        labeled_text_input('Name', {'class': 'equipment-name'}, {'name': body_slot_html + '-name'}),
+        labeled_text_input('Special', {'class': 'equipment-special'}, {'name': body_slot_html + '-special'}),
     ])
 
 def personality():
