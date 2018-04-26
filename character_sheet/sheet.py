@@ -3,6 +3,7 @@
 import click
 import cgi_simple as cgi
 import first_page
+import re
 import second_page
 import third_page
 import ability_cards as generate_ability_cards
@@ -14,16 +15,6 @@ try:
         cgi.is_pretty = True
 except IndexError:
     pass
-
-def compile_less():
-    call(['lessc', 'ability_cards.less', 'ability_cards.css'])
-    call(['lessc', 'first_page.less', 'first_page.css'])
-    call(['lessc', 'second_page.less', 'second_page.css'])
-    call(['lessc', 'third_page.less', 'third_page.css'])
-    call(['lessc', 'sheet.less', 'sheet.css'])
-    call(['lessc', 'paper_sheet.less', 'paper_sheet.css'])
-    call(['lessc', 'roll20.less', 'roll20.css'])
-
 
 @click.command()
 @click.option('-a', '--ability-cards/--no-ability-cards', default=False)
@@ -57,12 +48,33 @@ def main(ability_cards, destination):
                     debug_stylesheets('ability_cards', destination),
                     debug_html_wrapper(generate_ability_cards.create_page(), destination),
                 ]) + '\n')
+
+        # Compile LESS
+        call(['lessc', 'ability_cards.less', 'ability_cards.css'])
+        call(['lessc', 'first_page.less', 'first_page.css'])
+        call(['lessc', 'second_page.less', 'second_page.css'])
+        call(['lessc', 'third_page.less', 'third_page.css'])
+        call(['lessc', 'sheet.less', 'sheet.css'])
+        call(['lessc', 'paper_sheet.less', 'paper_sheet.css'])
     else:
         with open('roll20.html', 'w') as fh:
             fh.write(cgi.div({'class': 'first-page'}, first_page.create_page()))
             fh.write(cgi.div({'class': 'second-page'}, second_page.create_page()))
 
-    compile_less()
+        class_pattern = re.compile(r'\.([a-z\-]+)\b')
+        with open('roll20.less', 'w') as output_file:
+            for filename in ['sheet', 'first_page', 'second_page', 'third_page', 'roll20_custom']:
+                with open(filename + '.less', 'r') as input_file:
+                    if filename in ['first_page', 'second_page']:
+                        output_file.write(f".sheet-{filename.replace('_', '-')} {{\n")
+                    for line in input_file:
+                        line = class_pattern.sub(r'.sheet-\1', line)
+                        output_file.write(line)
+                    if filename in ['first_page', 'second_page']:
+                        output_file.write("\n}")
+                output_file.write('\n\n')
+
+        call(['lessc', 'roll20.less', 'roll20.css'])
 
 def debug_stylesheets(page_name, destination):
 

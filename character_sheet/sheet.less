@@ -69,14 +69,12 @@ input[type=text] {
 
 input[type=number], input[type=text].fake-number {
     width: 2.5em;
-    height: 2em;
     border: 0;
     box-shadow: 0 0 2px 1px inset;
     text-align: center;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    padding-top: 0;
 }
 
 .freeform-number-input input[type=text] {
@@ -137,4 +135,12 @@ input[type=text] {
 
 .blank-input {
     padding-top: 0.25em;
+}
+
+input[type=number].fake-text {
+    box-shadow: none !important;
+    border: 0;
+    border-bottom: 1px solid black;
+    padding-top: 0.75em;
+    width: 100%;
 }
