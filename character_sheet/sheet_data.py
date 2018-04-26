@@ -41,10 +41,19 @@ def attribute_roll20_text(attribute_name):
     ])
 
 def roll20_max_text(x, y):
-    return '(ceil(floor(({0}-0.1+100)/({1}+100))/200)*({0}+100)  + ceil(floor(({1}+100)/({0}+100))/(200))*({1}+100)-100)'.format(
-        x,
-        y,
-    )
+    return f"""(
+        ceil(
+            floor(
+                ({0}-0.1+100)/({1}+100)
+            )/200
+        )*({0}+100)
+        + ceil(
+            floor(
+                ({1}+100)/({0}+100)
+            )/200
+        )*({1}+100)
+        -100
+    )"""
 
 def roll20_min_text(x, y):
     return '-1 * ' + roll20_max_text(f"(-1 * {x})", f"(-1 * {y})")
