@@ -166,20 +166,29 @@ input.equation-misc {
 .adventuring {
     flex-grow: 1;
 
-    .weight-limits {
+    .carrying-capacity-header {
+        margin-top: 0;
+    }
+
+    .carrying-capacity {
+        .section-header {
+            margin-top: 0;
+        }
+
         .labeled-text-input {
             flex-basis: 25%;
             flex-grow: 1;
         }
 
-        > div {
+        .flex-row > div {
             margin-left: 0.25em;
             margin-right: 0.25em;
         }
-        > div:first-child {
+
+        .flex-row > div:first-child {
             margin-left: 0;
         }
-        > div:last-child {
+        .flex-row > div:last-child {
             margin-right: 0;
         }
     }

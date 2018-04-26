@@ -1,7 +1,3 @@
-/*
- * MAIN SHEET
- * */
-
 body {
     font-size: 16px;
     overflow: visible;
@@ -10,17 +6,13 @@ body {
     font-family: Calibri;
 }
 
-/* roll20 corrections
-
-.sheet-ui-dialog.ui-dialog-content {
-    position: relative !important;
+button {
+    font-family: Calibri;
 }
 
-.sheet-root {
-    padding: 0;
+div, span {
+    box-sizing: border-box;
 }
-
-*/
 
 /* row/col system */
 
@@ -42,69 +34,47 @@ body {
     align-items: flex-start;
 }
 
-.sheet-flex-row > div, .sheet-flex-row > span {
-    margin-left: 0.25em;
-    margin-right: 0.25em;
-}
-
-.sheet-flex-col > div, .sheet-flex-col > span {
-    margin-bottom: 0.5em;
-}
-
 .sheet-flex-col > div {
     width: 100%;
 }
 
 /* text and input formatting */
 
-.sheet-labeled-number-input, .sheet-freeform-number-input, {
-    width: 100%;
+.sheet-labeled-number-input, .sheet-freeform-number-input {
     align-items: center;
 }
 
+.sheet-labeled-number-input .sheet-number-label {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+    text-align: center;
+}
 .sheet-number-label {
     flex-grow: 1;
-    font-size: 1.25em;
-    text-align: center;
 }
 
 input {
-    font-size: 1em;
-    padding: 0;
+    font-size: 0.8em; /* override browser default */
 }
 
 input[type=text] {
-    height: 2em;
+    padding-top: 0.75em;
     border: 0;
-    box-shadow: 0px -2px 1px -2px #000000 inset;
+    box-shadow: 0 -2px 1px -2px #000000 inset;
     background-color: inherit;
-    box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-input[type=number] {
+input[type=number], input[type=text].sheet-fake-number {
     width: 2.5em;
-    height: 2em;
     border: 0;
     box-shadow: 0 0 2px 1px inset;
     text-align: center;
-    box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-}
-
-.sheet-labeled-text-input input[type=text] {
-    width: 100%;
-}
-
-.sheet-underlabeled-number-input {
-    align-items: center;
-}
-
-.sheet-underlabeled-number-input input[type=number] {
-    display: block;
-    height: 2em;
+    box-sizing: border-box;
 }
 
 .sheet-freeform-number-input input[type=text] {
@@ -115,9 +85,32 @@ input[type=number] {
 }
 
 .sheet-under-label {
-    font-size: 0.9em;
-    margin-bottom: 0 !important;
+    font-size: 0.8em;
+    margin-bottom: 0;
     text-align: center;
+}
+
+input[type=text] {
+    width: 100%;
+}
+
+.sheet-section-header {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+}
+
+/* hackery to allow underlabels to bleed into surrounding area */
+.sheet-underlabeled {
+    position: relative;
+    padding-bottom: 1.1em;
+}
+.sheet-underlabeled > .sheet-under-label {
+    position: absolute;
+    bottom: 0;
+    white-space: nowrap;
+    /* hackery to center arbitrarily sized underlabels */
+    width: 4.5em;
+    margin-left: -1em;
 }
 
 /* Rise-specific formatting */
@@ -136,13 +129,24 @@ input[type=number] {
     font-family: "Old English Text MT";
     text-align: center;
     font-size: 3.5em;
-    margin-bottom: 0;
+    margin-top: 0;
+    margin-bottom: -5px; /* no dropping letters makes this work */
 }
 
-/*
- * FIRST PAGE
- * */
+.sheet-blank-input {
+    padding-top: 0.25em;
+}
 
+input[type=number].sheet-fake-text {
+    box-shadow: none !important;
+    border: 0;
+    border-bottom: 1px solid black;
+    padding-top: 0.75em;
+    width: 100%;
+}
+
+
+.sheet-first-page {
 .sheet-skill-box {
     width: 100%;
     align-items: center;
@@ -158,255 +162,375 @@ input[type=number] {
     text-align: right;
 }
 
+.sheet-skill-box.sheet-freeform-number-input {
+    justify-content: flex-end;
+}
+
+.sheet-skill-box.sheet-freeform-number-input > input[type=text] {
+    flex-grow: 0;
+    width: 7em;
+    padding-bottom: 0;
+    padding-top: 0.5em;
+    margin-bottom: 0.25em;
+}
+
+.sheet-action-point-header {
+    margin-bottom: 0 !important;
+    text-align: center;
+}
+
+/* make resources the same height as other columns */
+.sheet-core-statistics div.sheet-action-point-wrapper {
+    margin-bottom: 0.1em;
+}
+
+.sheet-action-point-wrapper {
+    justify-content: space-around;
+}
+
 /* section-specific formatting */
 
-.sheet-boring-stuff {
-    margin-top: 0.25em;
-}
-
-.sheet-boring-stuff .sheet-labeled-text-input {
-    flex-grow: 1;
-    flex-basis: 20%;
-}
-
-.sheet-attacks, .sheet-main-body, .sheet-resources {
+.sheet-main-body {
     flex-grow: 1;
 }
 
-.sheet-main-body > div {
-    margin-bottom: 0.52em;
+.sheet-special-defenses {
+    flex-grow: 1;
 }
 
-input[type=text].passive-ability {
-    width: 100%;
-    /*margin-bottom: 0.5em;*/
+.sheet-first-page > div, .sheet-core-statistics > div, .sheet-boring-row div, .sheet-ability > div, .sheet-attack > div {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+}
+.sheet-first-page > div:first-child, .sheet-passive-ability-row > div:first-child, .sheet-core-statistics > div:first-child, .sheet-boring-row div:first-child, .sheet-active-ability > div:first-child, .sheet-attack > div:first-child {
+    margin-left: 0;
+}
+.sheet-first-page > div:last-child, .sheet-passive-ability-row > div:last-child, .sheet-core-statistics > div:last-child, .sheet-boring-row div:last-child, .sheet-active-ability > div:last-child, .sheet-attack > div:last-child {
+    margin-right: 0;
 }
 
 .sheet-passive-ability-row > div {
     flex-grow: 1;
 }
 
-.sheet-defenses {
-    margin-left: 0;
-}
-
-.sheet-hit-points {
-    margin-right: 0;
-}
-
-.sheet-active-ability-name, .sheet-attack-name {
-    width: 25%;
+.sheet-boring-row {
+    .sheet-labeled-text-input {
+        flex-grow: 1;
+    }
+    .sheet-race-input, .sheet-description-input {
+        flex-grow: 2;
+    }
+    .sheet-level-input {
+        flex-basis: 2em;
+        flex-grow: 0;
+    }
 }
 
 .sheet-active-ability-effect, .sheet-attack-effect {
     flex-grow: 1;
 }
-
-.sheet-flex-col.attribute-section {
-    margin-bottom: 0.625em;
-}
-
-.sheet-flex-row.skill-box {
-    margin-bottom: -1px;
+.sheet-active-ability-name, .sheet-attack-name {
+    width: 25%;
 }
 
 .sheet-attribute {
     align-items: center;
-}
-
-.sheet-attribute .sheet-number-label {
     font-weight: bold;
-}
-
-.sheet-other-skills .sheet-attribute {
-    font-weight: bold;
-    font-size: 1.25em;
     text-align: center;
 }
+.sheet-attribute .sheet-number-label, .sheet-attribute-header {
+    font-size: 1.25em;
+}
 
-.sheet-constitution {
+.sheet-active-ability, .sheet-attack, .sheet-defenses > div, .sheet-movement > div, .sheet-resources > div, .sheet-hit-points > div {
+    margin-bottom: 0.1em;
+}
+
+.sheet-attack-info {
     margin-bottom: 0.25em;
 }
 
-.sheet-willpower {
-    margin-bottom: 0;
+.sheet-attribute {
+    margin-bottom: 0.25em;
 }
 
-.sheet-sidebar {
-    margin-left: 1px;
+.sheet-passive-abilities, .sheet-core-statistics {
+    margin-bottom: 0.5em;
 }
 
-.sheet-main-sheet-body {
-    margin-right: 1px;
+.sheet-attribute-section {
+    margin-bottom: 0.75em;
 }
-
-.sheet-active-ability, .sheet-attack {
-    margin-bottom: 0.1em !important;
+.sheet-attribute-section:nth-child(4) {
+    margin-bottom: 0.4em;
 }
-
-.sheet-other-skills .sheet-attribute {
-    margin-bottom: 0;
+.sheet-attribute-section:nth-child(7) {
+    margin-bottom: 0.25em;
 }
 
 .sheet-resource-row div {
     flex-grow: 1;
 }
 
-/*
- * SECOND PAGE
- * */
-
-.sheet-personality, .sheet-abilities, .sheet-calcs {
-    flex-grow: 1;
-}
-
-input[type=text] {
-    width: 100%;
-}
-
-.sheet-flex-row.level-number-wrapper {
-    align-items: center;
-    justify-content: center;
-}
-
-.sheet-flex-row.level-number-wrapper, .sheet-personality input {
-    height: 2em;
-    /* overlap the number borders */
-    margin-top: -1px;
-    margin-bottom: -1px;
-}
-
-.sheet-level-number {
-    font-size: 1.5em;
-}
-
-.sheet-eq-misc input[type=number] {
-    box-shadow: 0 0 2px 0px #999 inset;
-}
-
-.sheet-bab, .sheet-fort, .sheet-ref, .sheet-ment {
-    align-items: center;
-}
-
-.sheet-chart-header {
+.sheet-core-statistics .sheet-number-label {
     font-size: 1.25em;
-    font-weight: bold;
-    text-align: center;
-    background-color: #FFF0C8;
-    padding-left: 0.25em;
-    padding-right: 0.25em;
-    position: relative;
-    left: -0.25em;
-    width: 100%;
-    /*
+}
+
+.sheet-core-statistics .sheet-flex-row {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+
+.sheet-attack-info {
+    justify-content: space-around;
+}
+
+.sheet-attack-info .sheet-number-label {
+    font-size: 1.25em;
+}
+
+.sheet-attack {
+    .sheet-attack-bonus {
+        width: 3em;
+    }
+}
+
+.sheet-special-defenses {
+    input {
+        height: 2.5em;
+    }
+}
+
+}
+
+.sheet-second-page {
+.sheet-abilities,
+.sheet-statistics {
+  flex-grow: 1;
+}
+.sheet-level-number {
+  font-size: 1.5em;
+}
+.sheet-chart-header {
+  font-size: 1.25em;
+  font-weight: bold;
+  text-align: center;
+  background-color: #FFF0C8;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  /*
     border-radius: 0.5em;
     */
 }
-
-.sheet-level-numbers .sheet-chart-header {
-    border-radius: 0.5em 0 0 0.5em;
+.sheet-level-wrapper,
+.sheet-ability-level-row {
+  width: 2em;
 }
-
-.sheet-level-numbers input {
-    width: 2em;
+.sheet-level-wrapper > .sheet-chart-header {
+  border-radius: 0.5em 0 0 0.5em;
 }
-
-.sheet-abilities .sheet-chart-header {
-    border-radius: 0 0.5em 0.5em 0;
+.sheet-name-wrapper > .sheet-chart-header {
+  border-radius: 0 0.5em 0.5em 0;
 }
-
+.sheet-name-wrapper:nth-child(2) {
+  margin-right: 0.25em;
+}
+.sheet-level-wrapper:nth-child(3) {
+  margin-left: 0.25em;
+}
+.sheet-name-wrapper,
+.sheet-ability-name-row {
+  flex-grow: 1;
+}
+.sheet-core-calculations > div,
+.sheet-core-calculations > div:first-child,
+.sheet-core-calculations > div:last-child,
 .sheet-equation {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    flex-grow: 1;
+  margin: 0;
+  flex-grow: 1;
 }
-
-.sheet-equation input, .sheet-equation div {
-    /* use the equation-glue for margins */
-    margin: 0;
+.sheet-two-choices input[type=number] {
+  background-color: #EEE;
 }
-
-.sheet-two-choices input[type=number]:disabled {
-    background-color: #ABD;
-}
-.sheet-two-choices input[type=number]:enabled {
-    background-color: #CDF;
-}
-
 .sheet-equation-glue {
-    margin-left: 0.25em !important;
-    margin-right: 0.25em !important;
-    width: 0.6em;
-    height: 2em;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  height: 1.6em;
+  width: 1.1em;
+  text-align: center;
+  align-items: center;
 }
-
+.sheet-equation-text {
+  display: flex;
+  justify-content: center;
+  height: 1.6em;
+  text-align: center;
+  align-items: center;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+}
 .sheet-equation-math {
-    font-size: 1.25em;
+  font-size: 1em;
 }
 
-.sheet-calcs {
-    margin-right: 0;
-}
-
-.sheet-calcs > .sheet-flex-row {
-    flex-wrap: nowrap;
-}
-
-.sheet-calc-attributes {
-    margin-bottom: 0 !important;
+input.sheet-equation-misc {
+  width: 6em;
 }
 
 .sheet-calc-attribute-header {
-    align-items: center;
-    font-weight: bold;
-    text-align: center;
-    font-size: 1.25em;
-    margin-bottom: 0em !important;
-    margin-top: 0.2em !important;
-
+  align-items: center;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0;
+  font-size: 1.25em;
 }
-
-.sheet-calc-attribute-header .sheet-number-label {
-    font-weight: bold;
-}
-
 .sheet-calc-header {
-    font-size: 1.25em;
-    font-weight: bold;
-    text-align: center;
-    /*
-    background-color: #FFF0C8;
-    padding-left: 0.25em;
-    padding-right: 0.25em;
-    border-radius: 0.5em;
-    */
-    width: 4.25em;
-    display: flex;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    height: 1.6em; /* 2em / 1.25em */
+  font-weight: bold;
+  width: 6.5em;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  height: 1.5em;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+}
+.sheet-core-statistics {
+  justify-content: space-around;
+  margin-bottom: 0.5em !important;
+}
+.sheet-prowess-header {
+  font-weight: bold;
+}
+.sheet-statistics > .sheet-flex-row {
+  margin-bottom: 0.1em;
+}
+.sheet-calc-attributes {
+  margin-right: 0.25em;
+}
+.sheet-main-body {
+  margin-left: 1%;
+  width: 57%;
+}
+.sheet-attributes-header {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.sheet-sidebar {
+  width: 42%;
+}
+.sheet-calc-skills:nth-child(3) {
+  margin-top: 0;
 }
 
-.sheet-half {
-    font-size: 0.9em;
+.sheet-skill-row {
+    .sheet-underlabeled {
+        padding-bottom: 0;
+    }
 }
 
-.sheet-misc-spacer {
-    display: inline-block;
+.sheet-skill-row,
+.sheet-skill-labels {
+  justify-content: space-between;
+  margin-top: 0.15em;
+  margin-bottom: 0.15em;
+  align-items: center;
+}
+.sheet-skill-labels {
+  margin-top: 0.2em;
+  margin-bottom: 0;
+}
+.sheet-skill-label {
+  flex-basis: 2.5em;
+  font-size: 0.8em;
+  text-align: center;
+}
+.sheet-skill-label.sheet-misc {
+  flex-basis: 6em;
+}
+
+.sheet-skill-attribute {
+  font-weight: bold;
+}
+.sheet-skill-name {
+  text-align: right;
+  width: 8em;
+}
+.sheet-skill-attribute {
+  font-weight: bold;
+  text-align: center;
+}
+.sheet-calc-attributes .sheet-flex-row.sheet-equation {
+  margin-bottom: 0.25em;
+}
+/* make the bottom boxes line up */
+.sheet-calc-attribute-header:nth-child(2) {
+  margin-top: 0.25em;
+}
+
+.sheet-adventuring {
     flex-grow: 1;
+
+    .sheet-weight-limits {
+        .sheet-labeled-text-input {
+            flex-basis: 25%;
+            flex-grow: 1;
+        }
+
+        > div {
+            margin-left: 0.25em;
+            margin-right: 0.25em;
+        }
+        > div:first-child {
+            margin-left: 0;
+        }
+        > div:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.sheet-standard-damage {
+    flex-grow: 1;
+
+    .sheet-level-range {
+      flex-basis: 2.5em;
+      text-align: center;
+    }
+
+    .sheet-damage-chart > .sheet-flex-col{
+        flex-grow: 1;
+    }
+
+    .sheet-damage-value {
+        flex-grow: 1;
+    }
+
+    .sheet-header {
+        font-weight: bold;
+    }
+}
+
 }
 
 .sheet-sidebar {
-    margin-left: 0;
+    width: 15em;
+    margin-right: 0.25em;
 }
 
-/*
- * THIRD PAGE
- * */
+/* make it fit */
+.sheet-sidebar .sheet-section-header {
+    margin-bottom: 0.15em;
+}
+
+.sheet-main-body {
+    margin-left: 0.25em;
+}
+
+.sheet-main-body {
+    flex-grow: 1;
+}
 
 .sheet-subsection-header {
     /*align-items: center;*/
@@ -416,19 +540,15 @@ input[type=text] {
     align-items: center;
     justify-content: center;
     height: 1.6em; /* 2em / 1.25em */
-    width: 3em;
+    width: 4em;
 }
 
-.sheet-equipment-name {
-    width: 20%;
-}
-
-.sheet-equipment-special {
+.sheet-equipment-name, .sheet-ability-name {
     flex-grow: 1;
 }
 
-.sheet-adventuring > div {
-    flex-grow: 1;
+.sheet-equipment-effects, .sheet-ability-effects {
+    flex-grow: 2;
 }
 
 .sheet-proficiencies {
@@ -437,14 +557,6 @@ input[type=text] {
 
 .sheet-misc {
     margin-right: 0;
-}
-
-.sheet-weight-limits {
-    margin-bottom: 2.05em;
-}
-
-.sheet-weight-limits .sheet-labeled-text-input {
-    flex-grow: 1;
 }
 
 .sheet-wealth-and-xp .sheet-flex-col {
@@ -462,3 +574,76 @@ input[type=text] {
 .sheet-inventory-col input {
     width: 100%;
 }
+
+.sheet-inventory-col, .sheet-equipment > .sheet-flex-row > div, .sheet-abilities > .sheet-flex-row > div, .sheet-wealth-and-xp > div, .sheet-summary-row > div {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+}
+.sheet-inventory-col:first-child, .sheet-equipment > .sheet-flex-row > div:first-child, .sheet-abilities > .sheet-flex-row > div:first-child, .sheet-wealth-and-xp > div:first-child, .sheet-summary-row > div:first-child {
+    margin-left: 0;
+}
+.sheet-inventory-col:last-child, .sheet-equipment > .sheet-flex-row > div:last-child, .sheet-abilities > .sheet-flex-row > div:first-child, .sheet-wealth-and-xp > div:last-child, .sheet-summary-row > div:last-child {
+    margin-right: 0;
+}
+
+.sheet-inventory, .sheet-equipment {
+    margin-bottom: 0.25em;
+}
+
+.sheet-feats-summary .sheet-summary-header > div, .sheet-equipment > .sheet-flex-wrapper:nth-child(1) > div {
+    margin-top: 0;
+}
+
+.sheet-summary-header > div {
+    margin-bottom: 0;
+}
+
+.sheet-summary-header-level {
+    border-radius: 0.5em 0 0 0.5em;
+}
+
+.sheet-summary-header-name {
+    border-radius: 0 0.5em 0.5em 0;
+}
+
+.sheet-summary-row-name, .sheet-section-header:nth-child(2) {
+    flex-grow: 1;
+}
+
+.sheet-summary-row-level {
+    width: 2em;
+}
+
+.sheet-summary-row-level > input {
+    text-align: center;
+}
+
+.sheet-feats-summary input[type=text], .sheet-abilities-summary input[type=text] {
+    padding-top: 0.7em;
+}
+
+.sheet-personality .sheet-section-header:nth-child(1) {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+input {
+    font-size: 1em;
+}
+
+.sheet-first-page {
+    .sheet-boring-row {
+        .sheet-level-input {
+            flex-basis: 3em;
+        }
+    }
+}
+
+.sheet-second-page {
+    .sheet-sidebar {
+        width: 40%;
+    }
+}
+
+

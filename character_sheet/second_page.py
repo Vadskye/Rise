@@ -486,13 +486,13 @@ def calc_mental():
 
 def adventuring():
     return flex_col({'class': 'adventuring'}, [
-        flex_col({'class': 'misc'}, [
-            flex_wrapper(div({'class': 'section-header'}, 'Weight Limits')),
-            flex_row({'class': 'weight-limits'}, [
+        flex_col({'class': 'carrying-capacity'}, [
+            flex_wrapper(div({'class': 'section-header'}, 'Carrying Capacity')),
+            flex_row([
                 labeled_text_input('Unencumbered', input_attributes={'name': 'weight_unencumbered'}),
                 labeled_text_input('Maximum', input_attributes={'name': 'weight_maximum'}),
             ]),
-            flex_row({'class': 'weight-limits'}, [
+            flex_row([
                 labeled_text_input('Overloaded', input_attributes={'name': 'weight_overloaded'}),
                 labeled_text_input('Push/Drag', input_attributes={'name': 'weight_push_drag'}),
             ]),
