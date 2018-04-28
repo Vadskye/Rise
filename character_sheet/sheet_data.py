@@ -48,7 +48,6 @@ ROLL20_CALC = {
         'shield_defense_value',
         'armor_misc',
     ]),
-    'armor_scaling': roll20_max_text('@{level}', '@{dexterity}'),
     'base_speed': value_sum([
         'speed_size',
         'speed_armor',
@@ -60,18 +59,6 @@ ROLL20_CALC = {
         'encumbrance_misc',
     ]) + ' - @{constitution_starting})',
     'hit_points': '(@{hit_points_misc} + (@{hit_points_level} * @{hit_points_constitution}))',
-    'fortitude_scaling': roll20_max_text(
-        roll20_max_text('@{strength}', '@{constitution}'),
-        '@{level}',
-    ),
-    'mental_scaling': roll20_max_text(
-        roll20_max_text('@{intelligence}', '@{willpower}'),
-        '@{level}',
-    ),
-    'reflex_scaling': roll20_max_text(
-        roll20_max_text('@{dexterity}', '@{perception}'),
-        '@{level}',
-    ),
     'skill_points': value_sum([
         'skill_points_class',
         'skill_points_intelligence',
@@ -89,11 +76,3 @@ ROLL20_CALC = {
     ]),
     'threat_scaling': roll20_max_text('@{level}', '@{strength}'),
 }
-
-for defense in ['fortitude', 'mental', 'reflex']:
-    ROLL20_CALC[defense + '_defense'] = value_sum([
-        defense + '_scaling',
-        defense + '_starting_attribute',
-        defense + '_class',
-        defense + '_misc',
-    ]),
