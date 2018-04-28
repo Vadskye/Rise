@@ -110,7 +110,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \featref{Leadership} & Wil 2 & Inspire nearby allies & \tdash & \featpref{Leadership} \\
         \featref{Martial Training} & \tdash & Improve combat abilities & \tdash & \featpref{Martial Training} \\
         \featref{Precognition} & Int 2 & React to future events & \tdash & \featpref{Precognition} \\
-        \featref{Savage} & Str 2 & Shove and overrun foes to deal damage & \featpref{Savage} \\
+        \featref{Savage} & Str 2 & Shove and overrun foes to deal damage & \tdash & \featpref{Savage} \\
         \featref{Sniper} & Per 2 & Aim precisely at distant foes & \tdash & \featpref{Sniper} \\
         \featref{Whirlwind Warrior} & Dex 2, Per 1 & Fight hordes with agile ease & \tdash & \featpref{Whirlwind Warrior} \\
     \end{longtabu}
@@ -175,7 +175,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[8]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
          % modifier at 10th: 12dex + 2mst + 2ft = 16
-        \ff[10]{Air Dancer}[Mag] You can attempt to move on surfaces that cannot support your weight.
+        \ff[10]{Air Dancer}[Magical] You can attempt to move on surfaces that cannot support your weight.
         Surfaces that can support at least a quarter of your weight, such as thin tree branches and dense liquids, are DR 20.
         Surfaces that can support at least a tenth of your weight, such as water, are DR 25.
         Surfaces that can support at least a hundredth of your weight, such as tree leaves, are DR 30.
@@ -375,7 +375,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[8]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
-        \ff[10]{Dual Speech}[Mag] Whenever you speak, you can spend an \glossterm{action point} to use the \textit{dual speech} ability.
+        \ff[10]{Dual Speech}[Magical] Whenever you speak, you can spend an \glossterm{action point} to use the \textit{dual speech} ability.
         \begin{ability}{Dual Speech}[\glossterm{Sustain} (minor)]
             You speak the same words with two different vocal patterns, such as tone or accent, though you cannot significantly change the volume.
             You can freely choose which creatures hear which pattern, treating all creatures you are not aware of as a single group.
@@ -600,7 +600,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[10]{Rapid Creation} Crafting magic items takes you one hour per 500 gp of material components.
 
-        \ff[12]{Greater Crafting Savant} The number of extra skill points increases to four.
+        \ff[12]{Greater Crafting Savant} The number of extra skill points from your \textit{crafting savant} ability increases to four.
 
         \ff[14]{Rapid Creation} Crafting magic items takes you one hour per 2,500 gp of material components.
 
@@ -992,22 +992,23 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[7]{Residual Energy Burst} When your \textit{energy burst} attack hits, the target suffers an additional effect depending on the energy type chosen.
         These effects are \glossterm{conditions}, and last until they are removed.
+        On a \glossterm{critical hit}, the attack still deals double damage in addition to the effects given here.
         \begin{itemize}
             \item Cold: If target is a creature, it is \fatigued.
                 A \glossterm{critical hit} makes the target \exhausted instead.
             \item Electricity: If the target is a creature, it is \dazed.
                 A \glossterm{critical hit} makes the target \stunned instead.
-            \item Fire: The target is \ignited.
+            \item Fire: The target is \ignited. This condition can be removed by putting out the fire.
             \item Sonic: If the target has \glossterm{hardness}, its hardness is reduced by an amount equal to half your spellpower. Otherwise, if it has \glossterm{damage reduction}, its damage reduction is reduced by amount equal to your spellpower.
         \end{itemize}
 
-        \ff[9]{Potent Evocation} You gain a \plus1d bonus to damage with Evocation abilities that deal damage measured in a dice pool, as well as with the \textit{energy burst} ability.
+        \ff[9]{Greater Energy Resistance} The damage reduction from your \textit{energy resistance} ability increases to twice your spellpower.
 
-        \ff[11]{Greater Energy Resistance} The damage reduction from your \textit{energy resistance} ability increases to twice your spellpower.
+        \ff[11]{Greater Energy Affinity} You gain a \plus1 bonus to accuracy with attacks that deal \glossterm{energy damage}.
 
-        \ff[13]{Greater Energy Affinity} The accuracy bonus from your \textit{energy affinity} ability increases to \plus2.
+        \ff[13]{Devastating Evocation} The area affected by your Evocation spells that affect areas doubles.
 
-        \ff[15]{Devastating Evocation} The area affected by your Evocation spells that affect areas doubles.
+        \ff[17]{Supreme Energy Affinity} The damage bonus from your \textit{energy affinity} ability increases to \plus2d.
     \end{feat}
 
     \begin{feat}{Executioner}{Combat}
@@ -1247,7 +1248,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[8]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
-        \ff[12]{Greater Knowledge Savant} The number of extra skill points increases to four.
+        \ff[12]{Greater Knowledge Savant} The number of extra skill points from your \textit{knowledge savant} ability increases to four.
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
     \end{feat}
@@ -1521,9 +1522,20 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Persuasion Specialization}{Skill}
         \featpre Persuasion as a mastered skill.
 
-        \ff{}
+        \ff{Compel Attention}[Magical] As a standard action, you can spend an \glossterm{action point} to use the \textit{compel attention} ability.
+        \begin{ability}{Compel Attention}[\glossterm{Auditory}, \glossterm{Compulsion}, \glossterm{Mind}, \glossterm{Sustain} (minor), \glossterm{Subtle}]
+            Make a Persuasion vs. Mental attack against a creature within \rngmed range.
+            You must talk loud enough for the target to hear hear to draw its attention.
+            \hit The target is \glossterm{fascinated} by you as long as you sustain this ability, which requires maintaining your conversation with it.
+            Any act by you or your apparent allies that damages a target or that causes it to feel that it is in danger breaks the effect for that creature.
+            An observant target may interpret overt threats to its allies as a threat to itself.
+        \end{ability}
 
         \ff[2]{Specialization} You gain a \plus2 bonus to Persuasion.
+
+        \ff[4]{} 
+
+        \ff[6]{Center of Attention} When you use your \textit{compel attention} ability, you may target up to five creatures.
 
         \ff[8]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
