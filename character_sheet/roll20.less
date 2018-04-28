@@ -472,20 +472,29 @@ input.sheet-equation-misc {
 .sheet-adventuring {
     flex-grow: 1;
 
-    .sheet-weight-limits {
+    .sheet-carrying-capacity-header {
+        margin-top: 0;
+    }
+
+    .sheet-carrying-capacity {
+        .sheet-section-header {
+            margin-top: 0;
+        }
+
         .sheet-labeled-text-input {
             flex-basis: 25%;
             flex-grow: 1;
         }
 
-        > div {
+        .sheet-flex-row > div {
             margin-left: 0.25em;
             margin-right: 0.25em;
         }
-        > div:first-child {
+
+        .sheet-flex-row > div:first-child {
             margin-left: 0;
         }
-        > div:last-child {
+        .sheet-flex-row > div:last-child {
             margin-right: 0;
         }
     }
