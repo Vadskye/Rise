@@ -30,8 +30,8 @@ def html_tag(tag_name, attributes=None, contents=None):
     attributes, contents = ensure_valid_attributes_and_contents(attributes, contents)
 
     if DESTINATION == 'roll20':
-        if tag_name == 'input' and attributes['type'] == 'number' and 'name' not in attributes:
-            raise Exception('Numerical input must have name')
+        if tag_name == 'input' and 'name' not in attributes:
+            raise Exception('Input must have name')
 
         if 'name' in attributes:
             # Standarize on lowercase
@@ -208,11 +208,11 @@ def labeled_number_input(label_name, input_name=None, attributes=None, input_att
         number_input(input_attributes),
     ])
 
-def freeform_number_input(attributes=None, number_input_attributes=None):
+def freeform_number_input(attributes=None, text_input_attributes=None, number_input_attributes=None):
     attributes = attributes or dict()
     space_append(attributes, 'class', 'freeform-number-input')
     return flex_row(attributes, [
-        text_input(),
+        text_input(text_input_attributes),
         number_input(number_input_attributes),
     ])
 
