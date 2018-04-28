@@ -256,10 +256,11 @@ def calc_other_damage():
                 text_input({
                     'class': 'fake-number',
                     'disabled': 'true',
+                    'name': 'other_damage_name',
                     'value': '1d8'
                 }),
                 flex_col({'class': 'equation-text'}, '+1d per two'),
-                underlabel('Level/Attr', text_input({'class': 'fake-number'})),
+                underlabel('Level/Attr', text_input({'class': 'fake-number', 'name': 'other_damage_scaling'})),
                 plus(),
                 number_input({
                     'class': 'equation-misc',
