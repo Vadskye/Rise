@@ -5,6 +5,7 @@ import cgi_simple as cgi
 import first_page
 import re
 import second_page
+import sheet_worker
 import third_page
 import ability_cards as generate_ability_cards
 from subprocess import call
@@ -58,6 +59,7 @@ def main(ability_cards, destination):
         call(['lessc', 'paper_sheet.less', 'paper_sheet.css'])
     else:
         with open('roll20.html', 'w') as fh:
+            fh.write(sheet_worker.generate_script())
             fh.write(cgi.div({'class': 'first-page'}, first_page.create_page()))
             fh.write(cgi.div({'class': 'second-page'}, second_page.create_page()))
 

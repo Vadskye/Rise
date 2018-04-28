@@ -96,8 +96,8 @@ def calc_attribute(attribute_name):
                 plus(),
                 underlabel('Level', number_input({
                     'disabled': True,
-                    'name': attribute_name + '_scaling',
-                    'value': ROLL20_CALC[attribute_name + '_scaling'],
+                    'name': attribute_name + '_scaling_display',
+                    'value': '@{' + attribute_name + '_scaling}',
                 })),
                 plus(),
                 number_input({
@@ -107,8 +107,8 @@ def calc_attribute(attribute_name):
             ],
             result_attributes={
                 'disabled': 'true',
-                'name': attribute_name,
-                'value': ROLL20_CALC[attribute_name],
+                'name': attribute_name + '_display',
+                'value': '@{' + attribute_name + '}',
             },
         )
     ])
