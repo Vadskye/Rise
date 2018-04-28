@@ -85,7 +85,7 @@ def skill_box(name):
                 'class': 'number-label',
                 'name': f"roll_skill_{formatted_skill}",
                 'type': 'roll',
-                'value': '/r d10 + @{' + formatted_skill + '} for ' + name
+                'value': f"@{{character_name}} uses {name}: [[d10 + @{{{formatted_skill}}}]]",
             },
             name
         ),
@@ -244,25 +244,34 @@ def attacks():
         "".join([attack(i) for i in range(6)]),
     ])
 
-def attack(attack_number=None):
+def attack(n=None):
     return flex_row({'class': 'attack'}, [
         labeled_text_input(
             'Name',
             {'class': 'attack-name'},
-            {'name': 'attack{0}_name'.format(attack_number)},
+            {'name': 'attack{0}_name'.format(n)},
         ),
         underlabel_spaced(
             'Accuracy',
             number_input({
                 'class': 'fake-text',
-                'name': 'attack{0}_accuracy'.format(attack_number),
+                'name': 'attack{0}_accuracy'.format(n),
             }),
             {'class': 'attack-bonus'}
         ),
         labeled_text_input(
             'Damage/Effect',
             {'class': 'attack-effect'},
-            {'name': 'attack{0}_effect'.format(attack_number)},
+            {'name': 'attack{0}_effect'.format(n)},
+        ),
+        button(
+            {
+                'class': 'attack-roll',
+                'name': f"roll_attack_{n}",
+                'type': 'roll',
+                'value': f"@{{character_name}} uses @{{attack{n}_name}}: [[d10! + @{{attack{n}_accuracy}}]] to hit! (@{{attack{n}_effect}})",
+            },
+            'Attack',
         ),
     ])
 

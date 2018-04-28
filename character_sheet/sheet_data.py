@@ -18,24 +18,6 @@ ALL_SKILLS = ['Awareness', 'Balance', 'Bluff', 'Climb', 'Craft', 'Creature Handl
               'Ride', 'Sense Motive', 'Sleight of Hand', 'Spellcraft', 'Sprint',
               'Stealth', 'Survival', 'Swim', 'Tumble']
 
-def at(text):
-    return '@{' + text + '}'
-
-def attribute_roll20_text(attribute_name):
-    return value_sum([
-        attribute_name.lower() + '_starting',
-        # 0 if attribute_starting is 0, level / 2 if attribute_starting is 1,
-        attribute_name.lower() + '_scaling',
-        # f"{{starting_formula} * {at('level')}
-        attribute_name.lower() + '_misc',
-    ])
-
-def roll20_max_text(x, y):
-    return '(ceil(floor(({0}-0.1+100)/({1}+100))/200)*({0}+100)  + ceil(floor(({1}+100)/({0}+100))/(200))*({1}+100)-100)'.format(
-        x,
-        y,
-    )
-
 ROLL20_CALC = {
     'action_points': value_sum([
         'action_points_base',
@@ -68,11 +50,4 @@ ROLL20_CALC = {
         'strike_accuracy_scaling',
         'strike_accuracy_misc',
     ]),
-    'strike_accuracy_scaling': roll20_max_text('@{level}', '@{perception}'),
-    'threat': value_sum([
-        'threat_scaling',
-        'threat_armor',
-        'threat_misc',
-    ]),
-    'threat_scaling': roll20_max_text('@{level}', '@{strength}'),
 }
