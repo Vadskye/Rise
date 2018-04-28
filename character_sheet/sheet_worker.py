@@ -9,6 +9,7 @@ def generate_script():
         fortitude(),
         reflex(),
         mental(),
+        threat(),
         '</script>',
         ""
     ])
@@ -142,6 +143,21 @@ def mental():
                 setAttrs({{
                     mental: total,
                     mental_scaling: scaling,
+                }});
+            }});
+        }});
+    """
+
+def threat():
+    return f"""
+        on("change:level change:strength change:body_armor_defense_value change:threat_misc", function(eventInfo) {{
+            getAttrs(["level", "strength", "body_armor_defense_value", "threat_misc"], function(v) {{
+                var scaling = Math.max(Number(v.level), Number(v.strength));
+                var armor_modifier = Math.floor(Number(v.body_armor_defense_value) / 2);
+                setAttrs({{
+                    threat: scaling + armor_modifier + Number(v.threat_misc),
+                    threat_armor: armor_modifier,
+                    threat_scaling: scaling,
                 }});
             }});
         }});
