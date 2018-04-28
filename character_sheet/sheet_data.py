@@ -36,9 +36,6 @@ def roll20_max_text(x, y):
         y,
     )
 
-def roll20_min_text(x, y):
-    return '-1 * ' + roll20_max_text(f"(-1 * {x})", f"(-1 * {y})")
-
 ROLL20_CALC = {
     'action_points': value_sum([
         'action_points_base',

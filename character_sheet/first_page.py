@@ -85,7 +85,7 @@ def skill_box(name):
                 'class': 'number-label',
                 'name': f"roll_skill_{formatted_skill}",
                 'type': 'roll',
-                'value': '/r @{' + formatted_skill + '} for ' + name
+                'value': '/r d10 + @{' + formatted_skill + '} for ' + name
             },
             name
         ),
@@ -140,7 +140,7 @@ def defenses():
                 input_attributes={
                     'disabled': 'true',
                     'name': defense.lower() + '_display',
-                    'value': '@{' + defense.lower() + '_defense}',
+                    'value': '@{' + ('armor_defense' if defense == 'Armor' else defense.lower()) + '}',
                 },
             )
             for defense in DEFENSES
