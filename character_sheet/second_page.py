@@ -64,8 +64,8 @@ def calc_skill(skill_name, attribute=None, blank_input=False):
         number_input({
             'class': 'skill-ranks',
             'disabled': True,
-            'name': skill_parsable + '_ranks',
-            'value': ROLL20_CALC['skill_ranks'](skill_parsable),
+            'name': skill_parsable + '_ranks_display',
+            'value': '@{' + skill_parsable + '_ranks}',
         }),
         number_input({
             'class': 'skill-attr',

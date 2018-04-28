@@ -2,7 +2,7 @@ from cgi_simple import (
     button, div, flex_col, flex_row, flex_wrapper, freeform_number_input,
     labeled_number_input, labeled_text_input, number_input, sidelabel, text_input, underlabel, underlabel_spaced
 )
-from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, ROLL20_CALC
+from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS
 
 def create_page():
     return flex_row({'class': 'first-page'}, [
@@ -55,7 +55,7 @@ def attributes_and_skills():
         ''.join([attribute_section(attribute.lower()) for attribute in ATTRIBUTES]),
         flex_col({'class': 'other-skills attribute-section'}, [
             div({'class': 'attribute attribute-header'}, 'Other Skills'),
-            ''.join([skill_box(skill) for skill in ['Bluff', 'Intimidate', 'Perform ______', 'Persuasion']]),
+            ''.join([skill_box(skill) for skill in ATTRIBUTE_SKILLS['other']]),
             freeform_number_input({'class': 'skill-box'}, {'name': 'other_skill_1'}),
             freeform_number_input({'class': 'skill-box'}, {'name': 'other_skill_2'}),
             freeform_number_input({'class': 'skill-box'}, {'name': 'other_skill_3'}),
@@ -91,8 +91,8 @@ def skill_box(name):
         ),
         number_input({
             'disabled': True,
-            'name': formatted_skill,
-            'value': ROLL20_CALC['skill_total'](formatted_skill)
+            'name': formatted_skill + '_display',
+            'value': '@{' + formatted_skill + '}',
         }),
     ])
 
