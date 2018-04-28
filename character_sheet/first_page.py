@@ -56,10 +56,10 @@ def attributes_and_skills():
         flex_col({'class': 'other-skills attribute-section'}, [
             div({'class': 'attribute attribute-header'}, 'Other Skills'),
             ''.join([skill_box(skill) for skill in ATTRIBUTE_SKILLS['other']]),
-            freeform_number_input({'class': 'skill-box'}, {'name': 'other_skill_1'}),
-            freeform_number_input({'class': 'skill-box'}, {'name': 'other_skill_2'}),
-            freeform_number_input({'class': 'skill-box'}, {'name': 'other_skill_3'}),
-            freeform_number_input({'class': 'skill-box'}, {'name': 'other_skill_4'}),
+            freeform_number_input({'class': 'skill-box'}, {'name': 'other_skill_1_name'}, {'name': 'other_skill_1'}),
+            freeform_number_input({'class': 'skill-box'}, {'name': 'other_skill_2_name'}, {'name': 'other_skill_2'}),
+            freeform_number_input({'class': 'skill-box'}, {'name': 'other_skill_3_name'}, {'name': 'other_skill_3'}),
+            freeform_number_input({'class': 'skill-box'}, {'name': 'other_skill_4_name'}, {'name': 'other_skill_4'}),
         ]),
     ])
 
