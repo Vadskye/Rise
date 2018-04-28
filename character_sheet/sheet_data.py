@@ -9,18 +9,8 @@ ATTRIBUTE_SKILLS = {
     'intelligence': ['Craft ______', 'Deduction', 'Devices', 'Disguise', 'Heal', 'Knowledge ______', 'Knowledge ______', 'Linguistics'],
     'perception': ['Awareness', 'Creature Handling', 'Sense Motive', 'Spellcraft', 'Survival'],
     'willpower': [],
+    'other': ['Bluff', 'Intimidate', 'Perform ______', 'Persuasion'],
 }
-
-ALL_SKILLS_BY_ATTRIBUTE = [
-    *ATTRIBUTE_SKILLS['strength'],
-    *ATTRIBUTE_SKILLS['dexterity'],
-    *ATTRIBUTE_SKILLS['constitution'],
-    *ATTRIBUTE_SKILLS['intelligence'],
-    *ATTRIBUTE_SKILLS['perception'],
-    *ATTRIBUTE_SKILLS['willpower'],
-    *['Bluff', 'Intimidate', 'Perform ______', 'Persuasion'],
-]
-
 
 ALL_SKILLS = ['Awareness', 'Balance', 'Bluff', 'Climb', 'Craft', 'Creature Handling',
               'Devices', 'Disguise', 'Escape Artist', 'Heal', 'Intimidate', 'Jump',
@@ -48,17 +38,6 @@ def roll20_max_text(x, y):
 
 def roll20_min_text(x, y):
     return '-1 * ' + roll20_max_text(f"(-1 * {x})", f"(-1 * {y})")
-
-def skill_ranks(skill_name):
-    points = at(skill_name + '_points')
-    return roll20_min_text(f"({points} * floor({at('level')} / 2))", at('level'))
-
-def skill_total(skill_name):
-    return ' + '.join([
-        f"(@{{{skill_name}_points}} * 2)",
-        roll20_max_text(f"@{{{skill_name}_ranks}}", f"@{{{skill_name}_attribute}}"),
-        f"(@{{{skill_name}_misc}})",
-    ])
 
 ROLL20_CALC = {
     'action_points': value_sum([
@@ -101,8 +80,6 @@ ROLL20_CALC = {
         'skill_points_intelligence',
         'skill_points_misc',
     ]),
-    'skill_ranks': skill_ranks,
-    'skill_total': skill_total,
     'strike_accuracy': value_sum([
         'strike_accuracy_scaling',
         'strike_accuracy_misc',
