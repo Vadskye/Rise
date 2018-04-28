@@ -191,14 +191,14 @@ def calc_threat():
             [
                 underlabel('Lvl/Str', number_input({
                     'disabled': True,
-                    'name': 'threat_scaling',
-                    'value': ROLL20_CALC['threat_scaling'],
+                    'name': 'threat_scaling_display',
+                    'value': '@{threat_scaling}',
                 })),
                 plus(),
                 underlabel('1/2 Armor', number_input({
                     'disabled': True,
-                    'name': 'threat_armor',
-                    'value': '(@{body_armor_defense_value} / 2)',
+                    'name': 'threat_armor_display',
+                    'value': '@{threat_armor}',
                 })),
                 plus(),
                 number_input({
@@ -208,8 +208,8 @@ def calc_threat():
             ],
             result_attributes={
                 'disabled': True,
-                'name': 'threat',
-                'value': ROLL20_CALC['threat'],
+                'name': 'threat_display',
+                'value': '@{threat}',
             },
         ),
     ])
