@@ -5,6 +5,10 @@ def generate_script():
         '<script type="text/worker">',
         *[attribute_change(a.lower()) for a in ATTRIBUTES],
         *[attribute_skills(a.lower()) for a in ATTRIBUTE_SKILLS],
+        armor_defense(),
+        fortitude(),
+        reflex(),
+        mental(),
         '</script>',
         ""
     ])
@@ -12,13 +16,13 @@ def generate_script():
 
 def attribute_change(a):
     return f"""
-        on("sheet:opened change:{a}_starting change:{a}_misc change:level", function(eventInfo) {{
+        on("change:level change:{a}_starting change:{a}_misc", function(eventInfo) {{
             getAttrs(["{a}_starting", "{a}_misc", "level"], function(v) {{
                 var starting = Number(v.{a}_starting);
                 var scaling = 0;
                 if (starting === 1) {{
                     scaling = Math.floor(v.level / 2);
-                }} else if ({a}Starting > 1) {{
+                }} else if (starting > 1) {{
                     scaling = Number(v.level) - 1;
                 }}
                 setAttrs({{
@@ -40,7 +44,7 @@ def attribute_skills(attribute):
 def set_skill(a, s):
     if a == 'other':
         return f"""
-            on("sheet:opened change:level change:{s}_points change:{s}_misc", function(eventInfo) {{
+            on("change:level change:{s}_points change:{s}_misc", function(eventInfo) {{
                 getAttrs(["level", "{s}_points", "{s}_misc"], function(v) {{
                     var level = Number(v.level);
                     var pointsModifier = 0;
@@ -86,3 +90,59 @@ def set_skill(a, s):
                 }});
             }});
         """
+
+def armor_defense():
+    return f"""
+        on("change:level change:dexterity change:body_armor_defense_value change:shield_defense_value change:armor_defense_misc", function(eventInfo) {{
+            getAttrs(["level", "dexterity", "body_armor_defense_value", "shield_defense_value", "armor_defense_misc"], function(v) {{
+                var scaling = Math.max(Number(v.level), Number(v.dexterity));
+                var total = scaling + Number(v.body_armor_defense_value) + Number(v.shield_defense_value) + Number(v.armor_defense_misc);
+                setAttrs({{
+                    armor_defense: total,
+                    armor_defense_scaling: scaling,
+                }});
+            }});
+        }});
+    """
+
+def fortitude():
+    return f"""
+        on("change:level change:strength change:constitution change:fortitude_class change:fortitude_misc", function(eventInfo) {{
+            getAttrs(["level", "strength", "constitution", "constitution_starting", "fortitude_class", "fortitude_misc"], function(v) {{
+                var scaling = Math.max(Number(v.level), Number(v.strength), Number(v.constitution));
+                var total = scaling + Number(v.constitution_starting) + Number(v.fortitude_class) + Number(v.fortitude_misc);
+                setAttrs({{
+                    fortitude: total,
+                    fortitude_scaling: scaling,
+                }});
+            }});
+        }});
+    """
+
+def reflex():
+    return f"""
+        on("change:level change:dexterity change:perception change:reflex_class change:reflex_misc", function(eventInfo) {{
+            getAttrs(["level", "dexterity", "perception", "dexterity_starting", "reflex_class", "reflex_misc"], function(v) {{
+                var scaling = Math.max(Number(v.level), Number(v.dexterity), Number(v.perception));
+                var total = scaling + Number(v.dexterity_starting) + Number(v.reflex_class) + Number(v.reflex_misc);
+                setAttrs({{
+                    reflex: total,
+                    reflex_scaling: scaling,
+                }});
+            }});
+        }});
+    """
+
+def mental():
+    return f"""
+        on("change:level change:intelligence change:willpower change:mental_class change:mental_misc", function(eventInfo) {{
+            getAttrs(["level", "intelligence", "willpower", "willpower_starting", "mental_class", "mental_misc"], function(v) {{
+                var scaling = Math.max(Number(v.level), Number(v.intelligence), Number(v.willpower));
+                var total = scaling + Number(v.willpower_starting) + Number(v.mental_class) + Number(v.mental_misc);
+                setAttrs({{
+                    mental: total,
+                    mental_scaling: scaling,
+                }});
+            }});
+        }});
+    """
