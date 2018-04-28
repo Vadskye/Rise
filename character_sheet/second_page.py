@@ -361,8 +361,8 @@ def calc_armor():
             [
                 underlabel('Lvl/Dex', number_input({
                     'disabled': True,
-                    'name': 'armor_scaling',
-                    'value': ROLL20_CALC['armor_scaling'],
+                    'name': 'armor_defense_scaling_display',
+                    'value': '@{armor_defense_scaling}',
                 })),
                 plus(),
                 underlabel('Armor', number_input({'name': 'body_armor_defense_value'})),
@@ -371,13 +371,13 @@ def calc_armor():
                 plus(),
                 number_input({
                     'class': 'equation-misc',
-                    'name': 'armor_misc',
+                    'name': 'armor_defense_misc',
                 })
             ],
             result_attributes={
                 'disabled': 'true',
-                'name': 'armor_defense',
-                'value': ROLL20_CALC['armor_defense'],
+                'name': 'armor_defense_display',
+                'value': '@{armor_defense}',
             },
         ),
     ])
@@ -389,8 +389,8 @@ def calc_fort():
             [
                 underlabel('Lvl/Str/Con', number_input({
                     'disabled': True,
-                    'name': 'fortitude_scaling',
-                    'value': ROLL20_CALC['fortitude_scaling'],
+                    'name': 'fortitude_scaling_display',
+                    'value': '@{fortitude_scaling}',
                 })),
                 plus(),
                 underlabel('Con*', number_input({
@@ -408,8 +408,8 @@ def calc_fort():
             ],
             result_attributes={
                 'disabled': 'true',
-                'name': 'fortitude_defense',
-                'value': ROLL20_CALC['fortitude_defense'],
+                'name': 'fortitude_defense_display',
+                'value': '@{fortitude}',
             },
         ),
     ])
@@ -421,8 +421,8 @@ def calc_ref():
             [
                 underlabel('Lvl/Dex/Per', number_input({
                     'disabled': True,
-                    'name': 'reflex_scaling',
-                    'value': ROLL20_CALC['reflex_scaling'],
+                    'name': 'reflex_scaling_display',
+                    'value': '@{reflex_scaling}',
                 })),
                 plus(),
                 underlabel('Dex*', number_input({
@@ -446,8 +446,8 @@ def calc_ref():
             ],
             result_attributes={
                 'disabled': 'true',
-                'name': 'reflex_defense',
-                'value': ROLL20_CALC['reflex_defense'],
+                'name': 'reflex_display',
+                'value': '@{reflex}',
             },
         ),
     ])
@@ -459,8 +459,8 @@ def calc_mental():
             [
                 underlabel('Lvl/Int/Wil', number_input({
                     'disabled': True,
-                    'name': 'mental_scaling',
-                    'value': ROLL20_CALC['mental_scaling'],
+                    'name': 'mental_scaling_display',
+                    'value': '@{mental_scaling}',
                 })),
                 plus(),
                 underlabel('Wil*', number_input({
@@ -478,8 +478,8 @@ def calc_mental():
             ],
             result_attributes={
                 'disabled': 'true',
-                'name': 'mental_defense',
-                'value': ROLL20_CALC['mental_defense'],
+                'name': 'mental_display',
+                'value': '@{mental}',
             },
         ),
     ])
