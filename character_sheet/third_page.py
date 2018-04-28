@@ -11,11 +11,11 @@ def create_page():
             inventory(),
             flex_col([
                 flex_wrapper(div({'class': 'section-header'}, 'Experience')),
-                div(text_input()),
+                div(text_input({'name': 'experience'})),
             ]),
             flex_col([
                 flex_wrapper(div({'class': 'section-header'}, 'Wealth')),
-                div(text_input()),
+                div(text_input({'name': 'wealth'})),
             ]),
         ]),
         flex_col({'class': 'main-body'}, [
@@ -31,7 +31,7 @@ def feats_summary():
             div({'class': 'summary-header-level section-header'}, 'Lvl'),
             div({'class': 'summary-header-name section-header'}, 'Feats'),
         ]),
-        "".join([summary_row(i) for i in [1, 2, 5, 9]]),
+        "".join([feat_row(i) for i in [1, 2, 5, 9]]),
     ])
 
 def abilities_summary():
@@ -40,32 +40,34 @@ def abilities_summary():
         *[
             flex_row([
                 labeled_text_input('Name', {'class': 'ability-name'}, input_attributes={
-                    'name': f'ability-name-{i}',
+                    'name': f'ability_name_{i}',
                 }),
                 labeled_text_input('Effects', {'class': 'ability-effects'}, input_attributes={
-                    'name': f'ability-effects-{i}',
+                    'name': f'ability_effects_{i}',
                 }),
             ])
             for i in range(9)
         ],
     ])
 
-def summary_row(level=None):
+def feat_row(level):
     return flex_row({'class': 'summary-row'}, [
         div({'class': 'summary-row-level'}, text_input({
+            'disabled': True,
+            'name': f"feat_level_{level}",
             'value': level,
         })),
-        div({'class': 'summary-row-name'}, text_input()),
+        div({'class': 'summary-row-name'}, text_input({'name': f"feat_name_{level}"})),
     ])
 
 def proficiencies():
     return flex_col({'class': 'proficiencies'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Proficiencies')),
-        labeled_text_input('Armor', input_attributes={'name': 'prof-armor'}),
-        text_input(),
-        labeled_text_input('Weapons', input_attributes={'name': 'prof-weapons'}),
-        text_input(),
-        labeled_text_input('Languages', input_attributes={'name': 'prof-languages'}),
+        labeled_text_input('Armor', input_attributes={'name': 'prof_armor'}),
+        text_input({'name': 'armor_proficiencies'}),
+        labeled_text_input('Weapons', input_attributes={'name': 'weapon_proficiencies_1'}),
+        text_input({'name': 'weapon_proficiencies_2'}),
+        labeled_text_input('Languages', input_attributes={'name': 'language_proficiencies'}),
     ])
 
 def subsection_header(attributes=None, contents=None):
@@ -78,8 +80,8 @@ def equipment():
         flex_wrapper(div({'class': 'section-header'}, 'Equipment')),
         *[
             flex_row([
-                labeled_text_input('Name', {'class': 'equipment-name'}, {'name': f'equipment-name-{i}'}),
-                labeled_text_input('Effects', {'class': 'equipment-effects'}, {'name': f'equipment-effects-{i}'}),
+                labeled_text_input('Name', {'class': 'equipment-name'}, {'name': f'equipment_name_{i}'}),
+                labeled_text_input('Effects', {'class': 'equipment-effects'}, {'name': f'equipment_effects_{i}'}),
             ])
             for i in range(5)
         ],
@@ -89,7 +91,7 @@ def inventory():
     return div({'class': 'inventory'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Inventory')),
         *[
-            text_input() for i in range(17)
+            text_input({'name': f"inventory_{i}"}) for i in range(17)
         ]
     ])
 
@@ -105,10 +107,9 @@ def misc_equipment(body_slot, body_slot_html=None):
 def personality():
     return flex_col({'class': 'personality'}, [
         div({'class': 'section-header'}, 'Alignment and Deity'),
-        div(text_input()),
+        div(text_input({'name': 'alignment_and_deity'})),
         div({'class': 'section-header'}, 'Personality and Background'),
-        "".join([div(text_input()) for i in range(5)]),
+        "".join([div(text_input({'name': f'personality_and_background_{i}'})) for i in range(5)]),
         div({'class': 'section-header'}, 'Goals and Flaws'),
-        div(text_input()),
-        div(text_input()),
+        "".join([div(text_input({'name': f'goals_and_flaws_{i}'})) for i in range(2)]),
     ])

@@ -62,17 +62,18 @@ def main(ability_cards, destination):
             fh.write(sheet_worker.generate_script())
             fh.write(cgi.div({'class': 'first-page'}, first_page.create_page()))
             fh.write(cgi.div({'class': 'second-page'}, second_page.create_page()))
+            fh.write(cgi.div({'class': 'third-page'}, third_page.create_page()))
 
         class_pattern = re.compile(r'\.([a-z\-]+)\b')
         with open('roll20.less', 'w') as output_file:
             for filename in ['sheet', 'first_page', 'second_page', 'third_page', 'roll20_custom']:
                 with open(filename + '.less', 'r') as input_file:
-                    if filename in ['first_page', 'second_page']:
+                    if filename in ['first_page', 'second_page', 'third_page']:
                         output_file.write(f".sheet-{filename.replace('_', '-')} {{\n")
                     for line in input_file:
                         line = class_pattern.sub(r'.sheet-\1', line)
                         output_file.write(line)
-                    if filename in ['first_page', 'second_page']:
+                    if filename in ['first_page', 'second_page', 'third_page']:
                         output_file.write("\n}")
                 output_file.write('\n\n')
 
