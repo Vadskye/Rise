@@ -41,19 +41,10 @@ def attribute_roll20_text(attribute_name):
     ])
 
 def roll20_max_text(x, y):
-    return f"""(
-        ceil(
-            floor(
-                ({0}-0.1+100)/({1}+100)
-            )/200
-        )*({0}+100)
-        + ceil(
-            floor(
-                ({1}+100)/({0}+100)
-            )/200
-        )*({1}+100)
-        -100
-    )"""
+    return '(ceil(floor(({0}-0.1+100)/({1}+100))/200)*({0}+100)  + ceil(floor(({1}+100)/({0}+100))/(200))*({1}+100)-100)'.format(
+        x,
+        y,
+    )
 
 def roll20_min_text(x, y):
     return '-1 * ' + roll20_max_text(f"(-1 * {x})", f"(-1 * {y})")
@@ -124,13 +115,6 @@ ROLL20_CALC = {
     ]),
     'threat_scaling': roll20_max_text('@{level}', '@{strength}'),
 }
-for attribute in ATTRIBUTES:
-    ROLL20_CALC[attribute.lower()] = attribute_roll20_text(attribute.lower())
-    starting_formula = at(attribute.lower() + '_starting')
-    ROLL20_CALC[attribute.lower() + '_scaling'] = roll20_min_text(
-        f"({starting_formula} * floor(@{{level}} / 2))",
-        f"(@{{level}} - 1)",
-    )
 
 for defense in ['fortitude', 'mental', 'reflex']:
     ROLL20_CALC[defense + '_defense'] = value_sum([
