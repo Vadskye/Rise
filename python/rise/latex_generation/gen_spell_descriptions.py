@@ -1348,11 +1348,11 @@ def generate_spells():
                 While in stasis, it cannot take any actions and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
 
                 % TODO: wording
-                This effect lasts as long as you \\glossterm<attune> to it, and until the end of the round when you release the attunement.
+                This effect normally lasts as long as you \\glossterm<attune> to it, and until the end of the round when you release the attunement.
                 If you use this ability on yourself, it instead lasts until the end of the next round.
 
                 You can cast this subspell as a \\glossterm<minor action>.
-            """, tags=['Temporal']),
+            """, tags=['Attune', 'Temporal']),
             Subspell("Delay Damage", 4, """
                 Whenever you take damage, half of the damage (rounded down) is not dealt to you immediately.
                 This damage is tracked separately.
