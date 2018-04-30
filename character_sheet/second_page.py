@@ -490,7 +490,7 @@ def adventuring():
         flex_col({'class': 'carrying-capacity'}, [
             flex_wrapper(div({'class': 'section-header'}, 'Carrying Capacity')),
             flex_row([
-                labeled_text_input('Unencumbered', input_attributes={'name': 'weight_unencumbered'}),
+                labeled_text_input('Light', input_attributes={'name': 'weight_light'}),
                 labeled_text_input('Maximum', input_attributes={'name': 'weight_maximum'}),
             ]),
             flex_row([
