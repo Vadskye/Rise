@@ -41,9 +41,9 @@ def calc_skills():
         *[calc_skill(skill_name, 'constitution') for skill_name in ATTRIBUTE_SKILLS['willpower']],
         skill_labels('Other'),
         *[calc_skill(skill_name) for skill_name in ['Bluff', 'Intimidate', 'Perform ______', 'Persuasion']],
-        calc_skill('____________', blank_input=True),
-        calc_skill('____________', blank_input=True),
-        calc_skill('____________', blank_input=True),
+        calc_skill('_________', blank_input=True),
+        calc_skill('__________', blank_input=True),
+        calc_skill('___________', blank_input=True),
         calc_skill('____________', blank_input=True),
     ])
 
