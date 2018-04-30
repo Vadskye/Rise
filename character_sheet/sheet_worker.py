@@ -122,10 +122,10 @@ def fortitude():
 
 def reflex():
     return f"""
-        on("change:level change:dexterity change:perception change:reflex_class change:reflex_misc", function(eventInfo) {{
-            getAttrs(["level", "dexterity", "perception", "dexterity_starting", "reflex_class", "reflex_misc"], function(v) {{
+        on("change:level change:dexterity change:perception change:shield_defense_value change:reflex_class change:reflex_misc", function(eventInfo) {{
+            getAttrs(["level", "dexterity", "perception", "shield_defense_value", "dexterity_starting", "reflex_class", "reflex_misc"], function(v) {{
                 var scaling = Math.max(Number(v.level), Number(v.dexterity), Number(v.perception));
-                var total = scaling + Number(v.dexterity_starting) + Number(v.reflex_class) + Number(v.reflex_misc);
+                var total = scaling + Number(v.dexterity_starting) + Number(v.reflex_class) + Number(v.reflex_misc) + Number(v.shield_defense_value);
                 setAttrs({{
                     reflex: total,
                     reflex_scaling: scaling,
