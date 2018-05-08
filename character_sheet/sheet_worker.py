@@ -11,6 +11,7 @@ def generate_script():
         mental(),
         threat(),
         encumbrance(),
+        initiative(),
         '</script>',
         ""
     ])
@@ -178,6 +179,19 @@ def encumbrance():
                         + Number(v.encumbrance_misc)
                         - Number(v.constitution_starting)
                     , 0),
+                }});
+            }});
+        }});
+    """
+
+def initiative():
+    return f"""
+        on("change:dexterity change:perception change:initiative_misc", function(eventInfo) {{
+            getAttrs(["dexterity", "perception", "initiative_misc"], function(v) {{
+                var scaling = Math.max(Number(v.dexterity), Number(v.perception));
+                setAttrs({{
+                    initiative: scaling + Number(v.initiative_misc),
+                    initiative_scaling: scaling,
                 }});
             }});
         }});
