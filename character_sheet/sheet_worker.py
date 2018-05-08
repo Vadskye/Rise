@@ -10,6 +10,7 @@ def generate_script():
         reflex(),
         mental(),
         threat(),
+        encumbrance(),
         '</script>',
         ""
     ])
@@ -67,9 +68,13 @@ def set_skill(a, s):
             }});
         """
     else:
+        include_encumbrance = a in ['strength', 'dexterity']
+        encumbrance_changed = ' change:encumbrance' if include_encumbrance else ""
+        get_encumbrance = ', "encumbrance"' if include_encumbrance else ""
+        subtract_encumbrance = ' - Number(v.encumbrance)' if include_encumbrance else ""
         return f"""
-            on("sheet:opened change:level change:{a} change:{s}_points change:{s}_misc", function(eventInfo) {{
-                getAttrs(["level", "{a}", "{s}_points", "{s}_misc"], function(v) {{
+            on("sheet:opened change:level change:{a} change:{s}_points change:{s}_misc{encumbrance_changed}", function(eventInfo) {{
+                getAttrs(["level", "{a}", "{s}_points", "{s}_misc"{get_encumbrance}], function(v) {{
                     var level = Number(v.level);
                     var pointsModifier = 0;
                     var ranks = 0;
@@ -85,7 +90,7 @@ def set_skill(a, s):
                     var scaling = Math.max(ranks, Number(v.{a}));
 
                     setAttrs({{
-                        {s}: scaling + pointsModifier + Number(v.{s}_misc),
+                        {s}: scaling + pointsModifier + Number(v.{s}_misc){subtract_encumbrance},
                         {s}_ranks: ranks,
                     }});
                 }});
@@ -158,6 +163,21 @@ def threat():
                     threat: scaling + armor_modifier + Number(v.threat_misc),
                     threat_armor: armor_modifier,
                     threat_scaling: scaling,
+                }});
+            }});
+        }});
+    """
+
+def encumbrance():
+    return f"""
+        on("change:body_armor_encumbrance change:encumbrance_misc change:constitution_starting", function(eventInfo) {{
+            getAttrs(["body_armor_encumbrance", "encumbrance_misc", "constitution_starting"], function(v) {{
+                setAttrs({{
+                    encumbrance: Math.max(
+                        Number(v.body_armor_encumbrance)
+                        + Number(v.encumbrance_misc)
+                        - Number(v.constitution_starting)
+                    , 0),
                 }});
             }});
         }});
