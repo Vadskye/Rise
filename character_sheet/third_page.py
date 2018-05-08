@@ -8,6 +8,7 @@ def create_page():
         flex_col({'class': 'sidebar'}, [
             feats_summary(),
             proficiencies(),
+            archetypes(),
             inventory(),
             flex_col([
                 flex_wrapper(div({'class': 'section-header'}, 'Experience')),
@@ -46,7 +47,7 @@ def abilities_summary():
                     'name': f'ability_effects_{i}',
                 }),
             ])
-            for i in range(9)
+            for i in range(10)
         ],
     ])
 
@@ -87,11 +88,19 @@ def equipment():
         ],
     ])
 
+def archetypes():
+    return div({'class': 'inventory'}, [
+        flex_wrapper(div({'class': 'section-header'}, 'Archetypes')),
+        *[
+            text_input({'name': f"archetypes_{i}"}) for i in range(4)
+        ]
+    ])
+
 def inventory():
     return div({'class': 'inventory'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Inventory')),
         *[
-            text_input({'name': f"inventory_{i}"}) for i in range(17)
+            text_input({'name': f"inventory_{i}"}) for i in range(13)
         ]
     ])
 
@@ -110,6 +119,6 @@ def personality():
         div(text_input({'name': 'alignment_and_deity'})),
         div({'class': 'section-header'}, 'Personality and Background'),
         "".join([div(text_input({'name': f'personality_and_background_{i}'})) for i in range(5)]),
-        div({'class': 'section-header'}, 'Goals and Flaws'),
+        div({'class': 'section-header goals-and-flaws'}, 'Goals and Flaws'),
         "".join([div(text_input({'name': f'goals_and_flaws_{i}'})) for i in range(2)]),
     ])
