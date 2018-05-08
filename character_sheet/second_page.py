@@ -16,9 +16,9 @@ def create_page():
                 calc_base_speed(),
                 calc_encumbrance(),
                 calc_hit_points(),
+                calc_initiative(),
                 calc_skill_points(),
                 calc_threat(),
-                calc_other_damage(),
                 flex_wrapper(div({'class': 'section-header'}, 'Defenses')),
                 calc_defenses(),
             ]),
@@ -162,6 +162,30 @@ def calc_hit_points():
         ),
     ])
 
+def calc_initiative():
+    return flex_row([
+        div({'class': 'calc-header'}, 'Initiative'),
+        equation(
+            [
+                underlabel('Dex/Per', number_input({
+                    'disabled': True,
+                    'name': 'initiative_scaling_display',
+                    'value': '@{initiative_scaling}',
+                })),
+                plus(),
+                number_input({
+                    'class': 'equation-misc',
+                    'name': 'initiative_misc',
+                }),
+            ],
+            result_attributes={
+                'disabled': True,
+                'name': 'initiative_display',
+                'value': '@{initiative}',
+            },
+        ),
+    ])
+
 def calc_base_speed():
     return flex_row([
         div({'class': 'calc-header'}, 'Base Speed'),
@@ -246,30 +270,6 @@ def calc_defenses():
         calc_fort(),
         calc_ref(),
         calc_mental(),
-    ])
-
-def calc_other_damage():
-    return flex_row([
-        div({'class': 'calc-header equation-misc'}, '_____ Damage'),
-        equation(
-            [
-                text_input({
-                    'class': 'fake-number',
-                    'disabled': 'true',
-                    'name': 'other_damage_name',
-                    'value': '1d8'
-                }),
-                flex_col({'class': 'equation-text'}, '+1d per two'),
-                underlabel('Level/Attr', text_input({'class': 'fake-number', 'name': 'other_damage_scaling'})),
-                plus(),
-                number_input({
-                    'class': 'equation-misc',
-                    'name': 'other_damage_misc',
-                }),
-            ],
-            result_attributes={'class': 'fake-number', 'name': 'other_damage'},
-            input_type=text_input,
-        ),
     ])
 
 def calc_skill_points():
