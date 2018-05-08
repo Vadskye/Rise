@@ -148,12 +148,18 @@ def number_input(attributes=None):
     attributes['type'] = 'number'
     if DESTINATION == 'roll20' and 'value' not in attributes:
         attributes['value'] = '0'
+    elif DESTINATION == 'paper' and 'value' in attributes and not attributes.get('disabled'):
+        # Hide "default" attributes from the paper sheet
+        attributes['value'] = ""
     return html_tag('input', attributes)
 
 def text_input(attributes=None):
     attributes = attributes or dict()
     attributes['type'] = 'text'
     attributes['size'] = attributes.get('size', '1')
+    if DESTINATION == 'paper' and 'value' in attributes and not attributes.get('disabled'):
+        # Hide "default" attributes from the paper sheet
+        attributes['value'] = ""
     return html_tag('input', attributes)
 
 # less simple
