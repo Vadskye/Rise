@@ -51,7 +51,7 @@ def skill_labels(attribute):
     return flex_row({'class': 'skill-labels'}, [
         div({'class': 'skill-name'}),
         div({'class': 'skill-label'}, 'Points'),
-        div({'class': 'skill-label'}, 'Bonus'),
+        div({'class': 'skill-label'}, 'Ranks'),
         div({'class': 'skill-label skill-attribute'}, attribute),
         div({'class': 'skill-label misc'}, 'Misc'),
     ])
@@ -234,8 +234,8 @@ def calc_encumbrance():
             ],
             result_attributes={
                 'disabled': True,
-                'name': 'encumbrance',
-                'value': ROLL20_CALC['encumbrance'],
+                'name': 'encumbrance_display',
+                'value': '@{encumbrance}',
             },
         ),
     ])
@@ -400,7 +400,7 @@ def calc_fort():
                     'value': '(@{constitution_starting})',
                 })),
                 plus(),
-                underlabel('Class', number_input({'name': 'fortitude_class'})),
+                underlabel('Class', number_input({'name': 'fortitude_class', 'value': '4'})),
                 plus(),
                 number_input({
                     'class': 'equation-misc',
@@ -432,7 +432,7 @@ def calc_ref():
                     'value': '(@{dexterity_starting})',
                 })),
                 plus(),
-                underlabel('Class', number_input({'name': 'reflex_class'})),
+                underlabel('Class', number_input({'name': 'reflex_class', 'value': '4'})),
                 plus(),
                 underlabel('Shield', number_input({
                     'disabled': True,
@@ -470,7 +470,7 @@ def calc_mental():
                     'value': '(@{willpower_starting})',
                 })),
                 plus(),
-                underlabel('Class', number_input({'name': 'mental_class'})),
+                underlabel('Class', number_input({'name': 'mental_class', 'value': '4'})),
                 plus(),
                 number_input({
                     'class': 'equation-misc',
