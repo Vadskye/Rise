@@ -35,17 +35,11 @@ ROLL20_CALC = {
         'speed_armor',
         'speed_misc',
     ]),
-    # Odd syntax since we're subtracting constitution
-    'encumbrance': value_sum([
-        'body_armor_encumbrance',
-        'encumbrance_misc',
-    ]) + ' - @{constitution_starting})',
     'hit_points': '(@{hit_points_misc} + (@{hit_points_level} * @{hit_points_constitution}))',
     'skill_points': value_sum([
         'skill_points_class',
-        'skill_points_intelligence',
         'skill_points_misc',
-    ]),
+    ]) + ' + (@{intelligence_starting}) * 2',
     'strike_accuracy': value_sum([
         'strike_accuracy_scaling',
         'strike_accuracy_misc',
