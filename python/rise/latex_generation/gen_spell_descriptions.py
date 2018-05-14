@@ -784,7 +784,7 @@ def generate_spells():
             """),
             Subspell("Cure Critical Wounds", 4, """
                 This subspell functions like the \\spell<vital surge> spell, except that you cannot choose to deal damage to the target.
-                In addition, it heals \\glossterm<vital damage> as easily as it heals it points.
+                In addition, it heals \\glossterm<vital damage> as easily as it heals hit points.
             """),
             Subspell("Drain Life", 3, """
                 This subspell functions like the \\spell<vital surge> spell, except that you heal hit points equal to half the damage dealt.
