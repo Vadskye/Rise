@@ -1849,13 +1849,13 @@ It defines how attributes work and explains how to make physical attacks in comb
                 \begin{dtabularx}{\columnwidth}{X X l}
                     \tb{Starting Attribute Score} & \tb{Total Attribute Score} & \tb{Cumulative Point Cost} \\
                     \bottomrule
-                    \minus2\fn{1} & \minus2      & 0\fn{2} \\
-                    \minus1\fn{1} & \minus1      & 0\fn{3} \\
-                    0             & 0            & 0       \\
-                    1             & Level        & 1       \\
-                    2             & 1 \add level & 2       \\
-                    3             & 2 \add level & 4       \\
-                    4             & 3 \add level & 6       \\
+                    \minus2\fn{1}                 & \minus2                    & 0\fn{2}                    \\
+                    \minus1\fn{1}                 & \minus1                    & 0\fn{3}                    \\
+                    0                             & 0                          & 0                          \\
+                    1                             & 1 \add half level          & 1                          \\
+                    2                             & 1 \add level               & 2                          \\
+                    3                             & 2 \add level               & 4                          \\
+                    4                             & 3 \add level               & 6                          \\
                 \end{dtabularx}
                 1 You cannot reduce more than two attributes below 0 in this way. \\
                 2 You gain a total of four \glossterm{skill points}. \\
@@ -1865,5 +1865,6 @@ It defines how attributes work and explains how to make physical attacks in comb
         \subsubsection{Extraordinary Attributes}
             Some abilities can increase your starting attributes above 4.
             For each point of starting attribute beyond 4, you increase your current attribute by the same amount.
+
             For example, a 20th level half-orc cleric with the Strength domain who spent 6 points on her starting Strength would have a total starting Strength of 6.
             Her Strength would be two higher than it would be with a starting attribute of 4, for a total of 25.
