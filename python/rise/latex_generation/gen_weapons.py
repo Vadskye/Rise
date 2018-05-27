@@ -8,6 +8,30 @@ def generate_weapons():
     weapons = []
 
     weapons.append(MagicItem(
+        name="Concussive",
+        level=4,
+        material_type='weapon',
+        # tags=[tag],
+        description="""
+            As a standard action, you can infuse this weapon with concussive force.
+            The next time you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Fortitude defense, it is \\glossterm<dazed> as a \\glossterm<condition>.
+        """,
+        short_description="Can daze",
+    ))
+
+    weapons.append(MagicItem(
+        name="Cutthroat",
+        level=4,
+        material_type='weapon',
+        # tags=[tag],
+        description="""
+            As a standard action, you can make a \\glossterm<strike> with this weapon.
+            In addition to the normal effects of the strike, if your attack result beats the target's Fortitude defense, it is \\glossterm<muted> as a \\glossterm<condition>.
+        """,
+        short_description="Can daze",
+    ))
+
+    weapons.append(MagicItem(
         name="Flaming",
         level=5,
         material_type='weapon',
