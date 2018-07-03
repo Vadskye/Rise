@@ -2601,12 +2601,12 @@ This choice determines a great deal about your character's abilities.
     \subsection{Assassin}
         This archetype improves your stealth and combat prowess, especially against unaware or distracted foes.
 
-        % Situational +d bonuses are the worst kind of effect - redesign?
-        \cf{Rog}{Sneak Attack} You gain a \plus1d bonus to damage with attacks against creatures who are unable to defend themselves effectively.
-        This applies against creatures who are \unaware, \defenseless, or \glossterm{overwhelmed}.
-
-        You must be within \rngclose range of a creature to gain this damage bonus.
-        In addition, you do not gain this damage bonus against creatures who are immune to \glossterm{critical hits} or who lack a discernible body structure, such as oozes.
+        \cf{Rog}{Sneak Attack} As a standard action, you can use the \textit{sneak attack} ability.
+        \begin{ability}{Sneak Attack}
+            Make a \glossterm{strike} against a creature within \rngclose range.
+            If the target is \unaware, \defenseless, or \glossterm{overwhelmed}, you gain a \plus2d bonus to damage with the strike.
+            You do not gain this damage bonus against creatures who are immune to \glossterm{critical hits} or who lack a discernible body structure, such as oozes.
+        \end{ability}
 
         \cf{Rog}[2]{Assassinate} As a standard action, you can use the \textit{assassinate} ability.
         \begin{ability}{Assassinate}
@@ -2628,7 +2628,7 @@ This choice determines a great deal about your character's abilities.
         \end{ability}
 
         \cf{Rog}[11]{Greater Sneak Attack}
-        The damage bonus from your \textit{sneak attack} ability increases to \plus2d.
+        The damage bonus from your \textit{sneak attack} ability increases to \plus3d.
 
         \cf{Rog}[14]{Rapid Assassination} You can use your \textit{assassinate} ability as a \glossterm{minor action}.
 
