@@ -593,24 +593,25 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Boots of Freedom",
-        level=6,
+        level=3,
         material_type='boot',
         description="""
-            You are immune to effects that restrict your mobility.
-            This removes all penalties you would suffer for acting underwater, except for those relating to using ranged weapons.
-            This does not prevent you from being \\grappled, but you gain a +10 bonus to defenses against the \\textit<grapple> ability (see \\pcref<Grapple>).
+            You are immune to magical effects that restrict your mobility.
+            This does not prevent physical obstacles from affecting you, such as \\glossterm<difficult terrain>.
         """,
-        short_description="Grants immunity to most mobility restrictions",
+        short_description="Grants immunity to magical mobility restrictions",
     ))
 
     apparel.append(MagicItem(
         name="Boots of Freedom, Greater",
-        level=12,
+        level=9,
         material_type='boot',
         description="""
-            These boots function like \\mitem<boots of freedom>, except that you are also immune to being \\grappled.
+            You are immune to all effects that restrict your mobility, including nonmagical effects such as \\glossterm<difficult terrain>.
+            This removes all penalties you would suffer for acting underwater, except for those relating to using ranged weapons.
+            This does not prevent you from being \\grappled, but you gain a +10 bonus to defenses against the \\textit<grapple> ability (see \\pcref<Grapple>).
         """,
-        short_description="Grants immunity to grappling and other mobility restrictions",
+        short_description="Grants immunity to almost all mobility restrictions",
     ))
 
     apparel.append(MagicItem(
