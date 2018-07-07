@@ -28,7 +28,7 @@ class Effects(object):
         return join(
             f"""
                 \\begin<ability><{self.name}>{f"[{tag_text}]" if tag_text else ""}
-                    {self.effect_text}
+                    {self.effect_text.strip()}
                 \\end<ability>
             """
         )
