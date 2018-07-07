@@ -1313,13 +1313,6 @@ def generate_spells():
 
                 You can cast this subspell as a \\glossterm<minor action>.
             """, tags=['Attune (shared)', 'Temporal']),
-            Subspell("Accelerate Magic", 3, """
-                Choose a willing creature within \\rngmed range.
-                The target's spells lose the \\glossterm<Delayed> tag, causing them to resolve during the same that it casts the spells in.
-                This prevents its spells from being disrupted by taking damage and similar effects.
-
-                You can cast this subspell as a \\glossterm<minor action>.
-            """, tags=['Attune (shared)', 'Temporal']),
             Subspell("Temporal Duplicate", 5, """
                 Choose a willing creature within \\rngmed range.
                 You reach into a possible future and create a duplicate of the target.
