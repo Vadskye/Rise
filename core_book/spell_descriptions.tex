@@ -31,16 +31,16 @@ but you cannot apply any augments to it.
 \subsubsection{Subspells}
 
 
-\begin{ability}[\nth{2}]{Gentle Descent}
-This subspell functions like the \spell{aeromancy} spell, except that the target also gains a 30 foot glide speed.
-A creature with a glide speed can glide through the air at the indicated speed (see \pcref{Gliding}).
+\begin{ability}[\nth{1}]{Windstrike}[\glossterm{Air}]
+Make a Spellpower vs. Fortitude attack against a creature or object within \rngmed range.
+\hit The target takes bludgeoning \glossterm{standard damage} \plus1d.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{2}]{Windstrike}[\glossterm{Air}]
-Make a Spellpower vs. Fortitude attack against a creature or object within \rngmed range.
-\hit The target takes bludgeoning \glossterm{standard damage} \plus1d.
+\begin{ability}[\nth{2}]{Gentle Descent}
+This subspell functions like the \spell{aeromancy} spell, except that the target also gains a 30 foot glide speed.
+A creature with a glide speed can glide through the air at the indicated speed (see \pcref{Gliding}).
 \end{ability}
 \vspace{0.25em}
 
@@ -134,16 +134,30 @@ but you cannot apply any augments to it.
 \subsubsection{Subspells}
 
 
+\begin{ability}[\nth{1}]{Create Water}[\glossterm{Creation}, \glossterm{Water}]
+You create up to one gallon of wholesome, drinkable water anywhere within \rngclose range.
+The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
+You must create a minimum of one ounce of water in each location.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{1}]{Underwater Freedom}[\glossterm{Attune} (shared)]
+Choose a willing creature within \rngclose range.
+The target suffers no penalties for acting underwater, except for those relating to using ranged weapons.
+\end{ability}
+\vspace{0.25em}
+
+
 \begin{ability}[\nth{2}]{Aqueous Sphere}
 This subspell functions like the \spell{aquamancy} spell, except that it targets everything in a \areasmall radius within \rngclose range.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{2}]{Create Water}[\glossterm{Creation}, \glossterm{Water}]
-You create up to one gallon of wholesome, drinkable water anywhere within \rngclose range.
-The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
-You must create a minimum of one ounce of water in each location.
+\begin{ability}[\nth{2}]{Dampen}[\glossterm{Attune} (shared)]
+Choose up to five willing creatures within \rngclose range.
+Each target gains damage reduction against fire damage equal to twice your \glossterm{spellpower}.
 \end{ability}
 \vspace{0.25em}
 
@@ -162,6 +176,12 @@ This subspell is from the Transmutation school instead of the Conjuration school
 \begin{ability}[\nth{3}]{Geyser}[\glossterm{Manifestation}, \glossterm{Water}]
 Make a Spellpower vs. Fortitude attack against everything in a \arealarge, 5 ft.\ wide vertical line.
 \hit Each target takes takes bludgeoning \glossterm{standard damage} \plus1d.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{3}]{Greater Underwater Freedom}
+This subspell functions like the \spell{underwater freedom} subspell, except that the target can also breathe water as if it was air.
 \end{ability}
 \vspace{0.25em}
 
@@ -299,8 +319,7 @@ This subspell functions like the \subspell{blink} subspell, except that the targ
 
 \begin{ability}{Barrier}[\glossterm{Attune} (shared), \glossterm{Shielding}]
 Choose a willing creature in \rngclose range.
-The target gains \glossterm{damage reduction} equal to your spellpower against all damage.
-In addition, it is \glossterm{vulnerable} to \glossterm{energy damage}.
+The target gains \glossterm{damage reduction} equal to your spellpower against all damage except for \glossterm{energy damage}.
 
 You can cast this spell as a \glossterm{minor action}.
 \end{ability}
@@ -321,8 +340,8 @@ but you cannot apply any augments to it.
 \subsubsection{Subspells}
 
 
-\begin{ability}[\nth{2}]{Complete}
-This subspell functions like the \spell{barrier} spell, except that it does not make the target vulnerable to \glossterm{energy damage}.
+\begin{ability}[\nth{1}]{Resist Energy}
+This subspell functions like the \spell{barrier} spell, except that the damage reduction only applies against \glossterm{energy damage}.
 \end{ability}
 \vspace{0.25em}
 
@@ -334,6 +353,12 @@ Whenever a creature makes physical contact with the spell's area for the first t
 The rest of its movement in the current phase is cancelled.
 
 Creatures in the area at the time that the spell is cast are unaffected by the spell.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{3}]{Complete}
+This subspell functions like the \spell{barrier} spell, except that the damage reduction applies against all damage.
 \end{ability}
 \vspace{0.25em}
 
@@ -383,7 +408,7 @@ This effect functions like the \spell{repulsion} subspell, except that you gain 
 
 \begin{ability}{Bless}[\glossterm{Attune} (shared)]
 Choose a willing creature within \rngclose range.
-The target gains a \plus1d bonus to \glossterm{strike damage}.
+The target gains a \plus1 bonus to \glossterm{accuracy} with all attacks.
 
 You can cast this spell as a \glossterm{minor action}.
 \end{ability}
@@ -402,6 +427,21 @@ but you cannot apply any augments to it.
 
 
 \subsubsection{Subspells}
+
+
+\begin{ability}[\nth{1}]{Protective Blessing}[\glossterm{Attune} (shared)]
+Choose a willing creature within \rngclose range.
+The target gains a \plus2 bonus to Fortitude and Mental defense.
+
+You can cast this spell as a \glossterm{minor action}.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{3}]{Battle Blessing}[\glossterm{Attune} (shared)]
+The target gains a \plus1d bonus to all abilities that deal damage or grant healing measured in dice.
+\end{ability}
+\vspace{0.25em}
 
 
 \begin{ability}[\nth{3}]{Blessed Blade}[\glossterm{Attune} (shared), \glossterm{Fire}]
@@ -424,8 +464,14 @@ You can cast this subspell as a \glossterm{minor action}.
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{3}]{Mystic Blessing}
-The \plus1d bonus applies to all abilities that deal damage or grant healing measured in dice.
+\begin{ability}[\nth{5}]{Empowered}
+The accuracy bonus increases to \plus2.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{5}]{Greater Protective Blessing}
+This subspell functions like the \textit{protective blessing} subspell, except that the bonus is increased to \plus4.
 \end{ability}
 \vspace{0.25em}
 
@@ -445,14 +491,14 @@ You can cast this subspell as a \glossterm{minor action}.
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{6}]{Empowered}
-The damage bonus increases to \plus2d.
+\begin{ability}[\nth{6}]{Greater Blessed Blade}
+This subspell functions like the \spell{blessed blade} subspell, except that the penalty to strike damage is reduced to \minus1d.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{6}]{Greater Blessed Blade}
-This subspell functions like the \spell{blessed blade} subspell, except that the penalty to strike damage is reduced to \minus1d.
+\begin{ability}[\nth{7}]{Greater Battle Blessing}
+The target gains a \plus2d bonus to all abilities that deal damage or grant healing measured in dice.
 \end{ability}
 \vspace{0.25em}
 
@@ -627,6 +673,15 @@ but you cannot apply any augments to it.
 \subsubsection{Subspells}
 
 
+\begin{ability}[\nth{1}]{Fall}
+Make a Spellpower vs. Mental attack against all creatures in a \areamed radius from you.
+\hit Each target falls \glossterm{prone}.
+\hit As above, and as a \glossterm{condition}, each target is unable to stand up.
+If a target is somehow brought into a standing position, it will immediately fall and become prone again.
+\end{ability}
+\vspace{0.25em}
+
+
 \begin{ability}[\nth{2}]{Confusion}[\glossterm{Compulsion}, \glossterm{Mind}]
 Make a Spellpower vs. Mental attack against a creature within \rngmed range.
 \hit The target is \disoriented as a \glossterm{condition}.
@@ -647,7 +702,7 @@ This penalty stacks each round until the target dances, which resets the penalti
 
 
 \begin{ability}[\nth{4}]{Discordant Song}[\glossterm{Compulsion}, \glossterm{Mind}]
-Make a Spellpower vs. Mental attack against all enemies in a \areamed radius from you.
+Make a Spellpower vs. Mental attack against all creatures in a \areamed radius from you.
 \hit Each target is \disoriented as a \glossterm{condition}.
 \crit Each target is \confused as a \glossterm{condition}.
 \end{ability}
@@ -822,14 +877,6 @@ If the item loses all of its hit points, this effect is \glossterm{dismissed}.
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{2}]{Slick}
-This subspell functions like the \spell{cryomancy} spell, except that it gains the \glossterm{Sustain} (minor) tag.
-The area affected by the spell becomes a \glossterm{zone} covered with a film of slick ice.
-Creatures moving across the area must make Acrobatics checks to balance (see \pcref{Balance}).
-\end{ability}
-\vspace{0.25em}
-
-
 \begin{ability}[\nth{3}]{Frostbite}[\glossterm{Cold}]
 Make a Spellpower vs. Fortitude attack against one creature within \rngmed range.
 \hit The target takes cold \glossterm{standard damage} \plus1d, and is \glossterm{fatigued} as a \glossterm{condition}.
@@ -900,11 +947,13 @@ but you cannot apply any augments to it.
 \subsubsection{Subspells}
 
 
-\begin{ability}[\nth{2}]{Agony}[\glossterm{Emotion}, \glossterm{Mind}]
+\begin{ability}[\nth{1}]{Agony}[\glossterm{Emotion}, \glossterm{Mind}]
 Make a Spellpower vs. Mental attack against a creature within \rngmed range.
 \hit The target is inflicted with agonizing pain as a \glossterm{condition}.
-At the end of each \glossterm{delayed action phase}, if the target took damage that round, it takes \glossterm{standard damage} \minus2d.
-This damage is of all damage types that the target was affected by during that round.
+It suffers a \minus2 penalty to Mental defense.
+% Does this need to clarify that it takes effect in the round the spell was cast?
+In addition, at the end of each \glossterm{delayed action phase}, if the target took damage that round, it takes \glossterm{standard damage} \minus2d.
+This damage is of all damage types that the target was damaged by during that round.
 \end{ability}
 \vspace{0.25em}
 
@@ -1185,6 +1234,17 @@ but you cannot apply any augments to it.
 \subsubsection{Subspells}
 
 
+\begin{ability}[\nth{1}]{Forge}[\glossterm{Attune}]
+Choose a type of weapon or shield that you are proficient with.
+You create a normal item of that type in your hand.
+
+The item cannot be constructed of any magical or extraordinary material.
+% This should allow the Giant augment; is this worded to allow that?
+It is sized appropriately for you, up to a maximum of a Medium size item.
+\end{ability}
+\vspace{0.25em}
+
+
 \begin{ability}[\nth{2}]{Arrow}[\glossterm{Manifestation}]
 Make a Spellpower vs. Reflex attack against one creature or object within \rnglong range.
 \hit The target takes piercing \glossterm{standard damage} \plus1d.
@@ -1223,6 +1283,12 @@ Make a Spellpower vs. Reflex attack against all enemies in a \areasmall radius f
 
 \begin{ability}[\nth{3}]{Corrosive}
 This subspell functions like the \spell{fabrication} spell, except that it deals double damage to objects.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{3}]{Greater Forge}
+This subspell functions like the \spell{forge} subspell, except that you can also create any type of body armor you are proficient with.
 \end{ability}
 \vspace{0.25em}
 
@@ -1533,6 +1599,13 @@ but you cannot apply any augments to it.
 \subsubsection{Subspells}
 
 
+\begin{ability}[\nth{1}]{Firebolt}
+Make a Spellpower vs. Reflex attack against one creature within \rngmed range.
+\hit The target takes fire \glossterm{standard damage} \plus1d.
+\end{ability}
+\vspace{0.25em}
+
+
 \begin{ability}[\nth{2}]{Blast Furnace}
 This subspell functions like the \spell{pyromancy} spell, except that it gains the \glossterm{Sustain} (standard) tag.
 The area affected by the spell becomes a \glossterm{zone} that is continuously engulfed in flames.
@@ -1543,13 +1616,6 @@ At the end of each \glossterm{action phase} in subsequent rounds, the attack is 
 
 \begin{ability}[\nth{2}]{Burning Hands}
 This subspell functions like the \spell{pyromancy} spell, except that it targets everything in a \arealarge cone from you.
-\end{ability}
-\vspace{0.25em}
-
-
-\begin{ability}[\nth{2}]{Firebolt}
-Make a Spellpower vs. Reflex attack against one creature within \rngmed range.
-\hit The target takes fire \glossterm{standard damage} \plus1d.
 \end{ability}
 \vspace{0.25em}
 
@@ -1635,7 +1701,7 @@ This subspell functions like the \textit{greater ignition} subspell, except that
 
 
 \begin{ability}{Revelation}[\glossterm{Attune} (shared)]
-Choose a willing creature within \rngclose range of you.
+Choose a willing creature within \rngclose range.
 The target gains a \plus1 bonus to \glossterm{accuracy} with all attacks.
 
 You can cast this spell as a \glossterm{minor action}.
@@ -1661,6 +1727,12 @@ but you cannot apply any augments to it.
 Make a Spellpower vs. Mental attack against a creature within \rngmed range.
 \hit You know when the target deliberately and knowingly speaks a lie.
 This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{2}]{Foresight}
+This subspell functions like the \spell{revelation} spell, except that the target also gains a \plus2 bonus to Reflex defense and \glossterm{initiative} checks.
 \end{ability}
 \vspace{0.25em}
 
@@ -1710,8 +1782,21 @@ This subspell functions like the \spell{revelation} spell, except that the targe
 \vspace{0.25em}
 
 
+\begin{ability}[\nth{5}]{Empowered}
+The accuracy bonus increases to \plus2.
+\end{ability}
+\vspace{0.25em}
+
+
 \begin{ability}[\nth{7}]{Greater Boon of Mastery}
 This subspell functions like the \spell{revelation} spell, except that the target also gains a \plus4 bonus to all skills.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{7}]{Greater Foresight}
+This subspell functions like the \subspell{foresight} subspell, except that the bonuses to Reflex defense and initiative checks are increased to \plus4.
+In addition, the target is not \glossterm{unaware} when attacked by surprise.
 \end{ability}
 \vspace{0.25em}
 
@@ -1968,11 +2053,18 @@ but you cannot apply any augments to it.
 \subsubsection{Subspells}
 
 
-\begin{ability}[\nth{2}]{Alter Magic Aura}[\glossterm{Attune}, \glossterm{Mystic}]
+\begin{ability}[\nth{1}]{Alter Magic Aura}[\glossterm{Attune}, \glossterm{Mystic}]
 Make a Spellpower vs. Mental attack against one Large or smaller magical object in \rngmed range.
 \hit One of the target's magic auras is altered (see \pcref{Spellcraft}).
 You can change the school and descriptors of the aura.
 In addition, you can decrease the spellpower of the aura by up to half your spellpower, or increase the spellpower of the aura up to a maximum of your spellpower.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{1}]{Suppress Item}[\glossterm{Mystic}, \glossterm{Sustain} (minor)]
+Make a Spellpower vs. Mental attack against one Large or smaller magical object in \rngmed range.
+\hit All magical properties the target has are \glossterm{suppressed}.
 \end{ability}
 \vspace{0.25em}
 
@@ -1991,13 +2083,6 @@ The ally must be currently affected by a \glossterm{magical} \glossterm{conditio
 In addition, make a Spellpower vs. Mental attack against a creature within \rngmed range.
 \hit One magical condition of your choice is removed from the chosen ally and applied to the struck creature.
 \crit As above, except that you can transfer any number of magical conditions in this way.
-\end{ability}
-\vspace{0.25em}
-
-
-\begin{ability}[\nth{2}]{Suppress Item}[\glossterm{Mystic}, \glossterm{Sustain} (minor)]
-Make a Spellpower vs. Mental attack against one Large or smaller magical object in \rngmed range.
-\hit All magical properties the target has are \glossterm{suppressed}.
 \end{ability}
 \vspace{0.25em}
 
