@@ -24,7 +24,7 @@ def generate_spells():
         header=Header('You shield your ally with a barrier of wind, protecting them from harm.'),
         effects=Effects('Aeromancy', """
             Choose a willing, Medium or smaller creature in \\rngclose range.
-            The target gains a +1 bonus to Armor defense.
+            The target gains a +1 \\glossterm<magic bonus> to Armor defense.
             This bonus is increased to +5 against ranged \\glossterm<physical attacks> from weapons or projectiles that are Small or smaller.
 
             Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
@@ -132,7 +132,7 @@ def generate_spells():
                 This subspell functions like the \\spell<barrier> spell, except that the damage reduction increases by an amount equal to your spellpower.
             """),
             Subspell("Armored", 4, """
-                This subspell functions like the \\spell<barrier> spell, except that the target also gains a +1 bonus to Armor defense.
+                This subspell functions like the \\spell<barrier> spell, except that the target also gains a +1 \\glossterm<magic bonus> to Armor defense.
             """),
             Subspell('Antilife Shell', 7, """
                 This effect functions like the \\spell<repulsion> subspell, except that you gain a +10 bonus to accuracy with the attack against living creatures.
@@ -559,7 +559,7 @@ def generate_spells():
         header=Header('You invoke a divine blessing to aid your ally.'),
         effects=Effects('Bless', """
             Choose a willing creature within \\rngclose range.
-            The target gains a \plus1 bonus to \\glossterm<accuracy> with all attacks.
+            The target gains a \plus1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
 
             You can cast this spell as a \\glossterm<minor action>.
         """, tags=['Attune (shared)']),
@@ -570,7 +570,7 @@ def generate_spells():
         subspells=[
             Subspell('Protective Blessing', 1, """
                 Choose a willing creature within \\rngclose range.
-                The target gains a \plus2 bonus to Fortitude and Mental defense.
+                The target gains a \plus2 \\glossterm<magic bonus> to Fortitude and Mental defense.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (shared)']),
@@ -992,7 +992,7 @@ def generate_spells():
         header=Header("You grant a creature the ability to see fractions of a second into the future."),
         effects=Effects('Revelation', """
             Choose a willing creature within \\rngclose range.
-            The target gains a +1 bonus to \\glossterm<accuracy> with all attacks.
+            The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
 
             You can cast this spell as a \\glossterm<minor action>.
         """, tags=['Attune (shared)']),
@@ -1002,11 +1002,11 @@ def generate_spells():
         subspells=[
             Subspell('Precognitive Defense', 1, """
                 Choose a willing creature within \\rngclose range.
-                The target gains a +1 bonus to Armor defense.
+                The target gains a +1 \\glossterm<magic bonus> to Armor defense.
             """),
             Subspell('Greater Precognitive Defense', 6, """
                 Choose a willing creature within \\rngclose range.
-                The target gains a +2 bonus to Armor defense.
+                The target gains a +2 \\glossterm<magic bonus> to Armor defense.
             """),
             Subspell("Discern Lies", 2, """
                 Make a Spellpower vs. Mental attack against a creature within \\rngmed range.
@@ -1014,23 +1014,23 @@ def generate_spells():
                 This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
             """, tags=['Attune', 'Detection']),
             Subspell('Foresight', 2, """
-                This subspell functions like the \\spell<revelation> spell, except that the target also gains a +2 bonus to Reflex defense and \\glossterm<initiative> checks.
+                This subspell functions like the \\spell<revelation> spell, except that the target also gains a +2 \\glossterm<magic bonus> to Reflex defense and \\glossterm<initiative> checks.
             """),
             Subspell('Greater Foresight', 7, """
                 This subspell functions like the \\subspell<foresight> subspell, except that the bonuses to Reflex defense and initiative checks are increased to +4.
                 In addition, the target is not \\glossterm<unaware> when attacked by surprise.
             """),
             Subspell("Boon of Mastery", 3, """
-                This subspell functions like the \\spell<revelation> spell, except that the target also gains a +2 bonus to all skills.
+                This subspell functions like the \\spell<revelation> spell, except that the target also gains a +2 \\glossterm<magic bonus> to all skills.
             """),
             Subspell("Boon of Many Eyes", 5, """
-                This subspell functions like the \\spell<revelation> spell, except that the target also gains a +1 bonus to \\glossterm<overwhelm resistance>.
+                This subspell functions like the \\spell<revelation> spell, except that the target also gains a +1 \\glossterm<magic bonus> to \\glossterm<overwhelm resistance>.
             """),
             Subspell("Greater Boon of Mastery", 7, """
-                This subspell functions like the \\spell<revelation> spell, except that the target also gains a +4 bonus to all skills.
+                This subspell functions like the \\spell<revelation> spell, except that the target also gains a +4 \\glossterm<magic bonus> to all skills.
             """),
             Subspell("Boon of Knowledge", 4, """
-                This subspell functions like the \\spell<revelation> spell, except that the target also gains a +4 bonus to all Knowledge skills (see \\pcref<Knowledge>).
+                This subspell functions like the \\spell<revelation> spell, except that the target also gains a +4 \\glossterm<magic bonus> to all Knowledge skills (see \\pcref<Knowledge>).
             """),
             Subspell("Augury", 3, """
                 Choose a willing creature within \\rngclose range, and an action which that creature could take.
@@ -1115,7 +1115,7 @@ def generate_spells():
         effects=Effects('Distort Image', """
             Choose a willing creature within \\rngmed range.
             The target's physical outline is distorted so it appears blurred, shifting, and wavering.
-            It gains a +1 bonus to Armor defense and Stealth (see \\pcref<Stealth>).
+            It gains a +1 \\glossterm<magic bonus> to Armor defense and Stealth (see \\pcref<Stealth>).
             This bonus is increases to +2 while in \\glossterm<shadowy illumination>.
             This effect provides no defensive benefit against creatures immune to \\glossterm<Visual> abilities.
 
@@ -1376,13 +1376,13 @@ def generate_spells():
         subspells=[
             Subspell('Accelerated Movement', 1, """
                 Choose a willing creature within \\rngmed range.
-                The target gains a +10 foot bonus to its speed in all its movement modes.
+                The target gains a +10 foot \\glossterm<magic bonus> to its speed in all its movement modes.
                 You can cast this subspell as a \\glossterm<minor action>.
             """, tags=['Attune (shared)', 'Temporal']),
             Subspell("Haste", 3, """
                 Choose a willing creature within \\rngmed range.
-                The target gains a +30 foot bonus to its speed in all its movement modes, up to a maximum of double its \\glossterm<base speed>.
-                In addition, it gains a +2 bonus to Reflex defense.
+                The target gains a +30 foot \\glossterm<magic bonus> to its speed in all its movement modes, up to a maximum of double its \\glossterm<base speed>.
+                In addition, it gains a +2 \\glossterm<magic bonus> to Reflex defense.
 
                 You can cast this subspell as a \\glossterm<minor action>.
             """, tags=['Attune (shared)', 'Temporal']),
