@@ -50,7 +50,7 @@ def generate_armor():
         material_type='shield',
         description="""
             As a \\glossterm<minor action>, you can activate this shield.
-            If you do, you gain a +5 bonus to Armor defense against ranged \\glossterm<physical attacks> from weapons or projectiles that are Small or smaller.
+            If you do, you gain a +5 \\glossterm<magic bonus> to Armor defense against ranged \\glossterm<physical attacks> from weapons or projectiles that are Small or smaller.
             This is a \\glossterm<swift ability>, and it lasts until the end of the round.
         """,
         short_description="Can block small projectiles",
@@ -62,7 +62,7 @@ def generate_armor():
         tags=['Telekinesis'],
         material_type='shield',
         description="""
-            You gain a +5 bonus to Armor defense against ranged \\glossterm<physical attacks> from weapons or projectiles that are Small or smaller.
+            You gain a +5 \\glossterm<magic bonus> to Armor defense against ranged \\glossterm<physical attacks> from weapons or projectiles that are Small or smaller.
         """,
         short_description="Blocks small projectiles",
     ))
@@ -292,7 +292,7 @@ def generate_worn():
         material_type='bracer',
         description="""
             You are proficient with bows.
-            In addition, you gain a +1 bonus to \\glossterm<accuracy> with ranged \\glossterm<strikes>.
+            In addition, you gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with ranged \\glossterm<strikes>.
         """,
         short_description="Grants bow proficiency, +1 ranged accuracy",
     ))
@@ -466,7 +466,7 @@ def generate_worn():
         level=4,
         material_type='circlet',
         description="""
-            You gain a +2 bonus to the Persuasion skill (see \\pcref<Persuasion>).
+            You gain a +2 \\glossterm<magic bonus> to the Persuasion skill (see \\pcref<Persuasion>).
         """,
         short_description="Grants +2 Persuasion",
     ))
@@ -631,7 +631,7 @@ def generate_worn():
         material_type='boot',
         tags=['Temporal'],
         description="""
-            You gain a +10 foot bonus to your land speed, up to a maximum of double your normal speed.
+            You gain a +10 foot \\glossterm<magic bonus> to your land speed, up to a maximum of double your normal speed.
         """,
         short_description="Increases speed by ten feet",
     ))
@@ -642,7 +642,7 @@ def generate_worn():
         material_type='boot',
         tags=['Temporal'],
         description="""
-            You gain a +30 foot bonus to your land speed, up to a maximum of double your normal speed.
+            You gain a +30 foot \\glossterm<magic bonus> to your land speed, up to a maximum of double your normal speed.
         """,
         short_description="Increases speed by thirty feet",
     ))
@@ -718,7 +718,7 @@ def generate_worn():
         level=4,
         material_type='boot',
         description="""
-            You gain a +2 bonus to the Stealth skill (see \\pcref<Stealth>).
+            You gain a +2 \\glossterm<magic bonus> to the Stealth skill (see \\pcref<Stealth>).
         """,
         short_description="Grants +2 Stealth",
     ))
@@ -732,7 +732,7 @@ def generate_worn():
         tags=['Shielding'],
         description="""
             This ring creates a transluscent shield-like barrier that floats in front of you, deflecting enemy attacks.
-            You gain a +1 bonus to Armor and Reflex defenses.
+            You gain a +1 \\glossterm<magic bonus> to Armor and Reflex defenses.
             This does not stack with the defense bonus from any shields you use.
         """,
         short_description="Grants +1 to Armor and Reflex defenses",
@@ -985,22 +985,22 @@ def generate_worn():
         material_type='cloak',
         tags=['Mystic'],
         description="""
-            You gain a +5 bonus to defenses against \\glossterm<magical> abilities that target you directly.
+            You gain a +4 bonus to defenses against \\glossterm<magical> abilities that target you directly.
             This does not protect you from abilities that affect an area.
         """,
-        short_description="Grants +5 defenses against targeted magical attacks",
+        short_description="Grants +4 defenses against targeted magical attacks",
     ))
 
     apparel.append(MagicItem(
-        name="Hexproof Cloak",
+        name="Hexproof Cloak, Greater",
         level=18,
         material_type='cloak',
         tags=['Mystic'],
         description="""
-            All \\glossterm<magical> abilities that target you directly fail to affect you.
+            You gain a +8 bonus to defenses against \\glossterm<magical> abilities that target you directly.
             This does not protect you from abilities that affect an area.
         """,
-        short_description="Grants +10 defenses against targeted magical attacks",
+        short_description="Grants +8 defenses against targeted magical attacks",
     ))
 
     # Belts

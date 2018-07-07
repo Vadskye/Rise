@@ -147,7 +147,7 @@ def generate_weapons():
         material_type='weapon',
         tags=['Shielding'],
         description="""
-            You gain a +1 bonus to Armor defense.
+            You gain a +1 \\glossterm<magic bonus> to Armor defense.
         """,
         short_description="Grants +1 Armor defense",
     ))
@@ -321,13 +321,13 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Surestrike",
-        level=10,
+        level=9,
         material_type='weapon',
         tags=['Knowledge'],
         description="""
-            You gain a +1 bonus to accuracy with \\glossterm<strikes> with this weapon.
+            You gain a +1 \\glossterm<magic bonus> to accuracy with \\glossterm<strikes> with this weapon.
         """,
-        short_description="React to reroll missed attacks",
+        short_description="Gain +1 accuracy bonus",
     ))
 
     weapons.append(MagicItem(
