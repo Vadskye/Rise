@@ -677,11 +677,16 @@ It defines how attributes work and explains how to make physical attacks in comb
             Sometimes, creatures are not aware that combat is taking place when the combat starts. This most commonly happens with ambushes. Any creature that is not aware of the combat continues taking whatever actions it would normally be taking until it becomes aware of the combat. It is \unaware until that point.
 
     \subsection{Stacking Rules}\label{Stacking Rules}
-        Usually, modifiers stack with each other, meaning that you add or subtract all of the modifiers to get the final result. However, some modifiers do not stack with each other, as described below. When bonuses don't stack with each other, you only apply the largest bonus. Likewise, when penalties don't stack with each ather, you only apply the largest penalty.
+        Usually, modifiers stack with each other, meaning that you add or subtract all of the modifiers to get the final result.
+        However, some modifiers do not stack with each other, as described below.
+        When bonuses don't stack with each other, you only apply the largest bonus.
+        Likewise, when penalties don't stack with each ather, you only apply the largest penalty.
 
         \parhead{Special Exceptions}
 
         \begin{itemize}
+            \item If a creature gains the same condition multiple times, the effects do not stack, but each instance of the condition is tracked separately.
+                The creature must remove all instances of the condition before the effects are removed.
             \item Effects from the same source do not stack. Any spell or ability with the same name has the same source.
             \item \glossterm{Sizing} effects do not stack.
                 If multiple effects both increase and decrease size, size increases offset size decreases on a one-for-one basis to determine the creature's final size.
