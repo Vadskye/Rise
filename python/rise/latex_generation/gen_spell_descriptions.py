@@ -1307,9 +1307,9 @@ def generate_spells():
             You take a -2 penalty to accuracy with the spell.
         """,
         subspells=[
-            Subspell("Haste", 2, """
+            Subspell("Haste", 3, """
                 Choose a willing creature within \\rngmed range.
-                The target gains a +30 foot bonus to its speed in all its movement modes, up to a maximum of double its original speed.
+                The target gains a +30 foot bonus to its speed in all its movement modes, up to a maximum of double its \\glossterm<base speed>.
 
                 You can cast this subspell as a \\glossterm<minor action>.
             """, tags=['Attune (shared)', 'Temporal']),
