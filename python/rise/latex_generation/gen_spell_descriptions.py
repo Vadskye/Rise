@@ -342,7 +342,7 @@ def generate_spells():
             """, tags=['Attune (shared)', 'Fire']),
             Subspell('Flame Blade', 2, """
                 Choose a willing creature within \\rngclose range.
-                Melee weapons wielded by the target gain a +1d bonus to \\glossterm<strike damage>.
+                Melee weapons wielded by the target gain a +1d \\glossterm<magic bonus> to \\glossterm<strike damage>.
                 In addition, all \\glossterm<strike damage> dealt with its weapons becomes fire damage in addition to the attack's normal damage types.
 
                 You can cast this subspell as a \\glossterm<minor action>.
@@ -578,10 +578,10 @@ def generate_spells():
                 This subspell functions like the \\textit<protective blessing> subspell, except that the bonus is increased to +4.
             """),
             Subspell("Battle Blessing", 3, """
-                The target gains a +1d bonus to all abilities that deal damage or grant healing measured in dice.
+                The target gains a +1d \\glossterm<magic bonus> to all abilities that deal damage or grant healing measured in dice.
             """, tags=['Attune (shared)']),
             Subspell("Greater Battle Blessing", 7, """
-                The target gains a +2d bonus to all abilities that deal damage or grant healing measured in dice.
+                The target gains a +2d \\glossterm<magic bonus> to all abilities that deal damage or grant healing measured in dice.
             """),
             Subspell("Blessed Blade", 3, """
                 Choose a willing creature within \\rngclose range.
@@ -695,7 +695,7 @@ def generate_spells():
             """),
             Subspell('Enhanced Icecraft', 6, """
                 This subspell functions like the \\subspell<icecraft> subspell, except that the item created is magically enhanced.
-                A weapon gains a +1d bonus to \\glossterm<strike damage>, and armor increases the defense bonus it grants by +1.
+                A weapon gains a +1d \\glossterm<magic bonus> to \\glossterm<strike damage>, and armor grants a +1 \\glossterm<magic bonus> to the defenses it improves.
             """),
         ],
         category='damage',
@@ -835,7 +835,7 @@ def generate_spells():
                 This subspell functions like the \\spell<cure wounds> subspell, except that for every 5 points of healing you provide, you can instead heal one point of \\glossterm<vital damage>.
             """),
             Subspell("Heal", 6, """
-                This subspell functions like the \\spell<cure wounds> subspell, except that it gains a +1d bonus to healing.
+                This subspell functions like the \\spell<cure wounds> subspell, except that it gains a +1d \\glossterm<magic bonus> to healing.
                 In addition, it heals \\glossterm<vital damage> as easily as it heals hit points.
             """),
             # TODO: make "Undead Bane" subspell after figuring out undead / life
