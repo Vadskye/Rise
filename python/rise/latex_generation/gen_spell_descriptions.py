@@ -654,6 +654,13 @@ def generate_spells():
         lists=['Arcane', 'Nature'],
         cantrip="The spell deals no damage.",
         subspells=[
+            Subspell('Frostbite', 1, """
+                Make a Spellpower vs. Fortitude attack against one creature within \\rngmed range.
+                \\hit The target takes cold \\glossterm<standard damage> +1d.
+            """, tags=['Cold']),
+            Subspell('Frostbite', 4, """
+                This subspell functions like the \\subspell<frostbite> subspell, except that the target becomes \\glossterm<exhausted> as a \\glossterm<condition> if it takes damage from the attack.
+            """),
             Subspell('Cold Snap', 2, """
                 This subspell functions like the \\spell<cryomancy> spell, except that it gains the \\glossterm<Sustain> (standard) tag.
                 The area affected by the spell becomes a \\glossterm<zone> that is supernaturally chilled.
@@ -664,13 +671,6 @@ def generate_spells():
             """),
             Subspell("Freezing", 4, """
                 This subspell functions like the \\spell<cryomancy> spell, except that each struck target is also \\glossterm<immobilized> as an additional \\glossterm<condition>.
-            """),
-            Subspell('Frostbite', 3, """
-                Make a Spellpower vs. Fortitude attack against one creature within \\rngmed range.
-                \\hit The target takes cold \\glossterm<standard damage> +1d, and is \\glossterm<fatigued> as a \\glossterm<condition>.
-            """, tags=['Cold']),
-            Subspell('Deep Frostbite', 7, """
-                This subspell functions like the \\subspell<frostbite> subspell, except that the target is \\glossterm<exhausted> instead of \\glossterm<fatigued>.
             """),
             Subspell('Blizzard', 2, """
                 This subspell functions like the \\spell<cryomancy> spell, except that the area becomes a \\areamed radius from you.
@@ -713,6 +713,14 @@ def generate_spells():
         lists=['Arcane', 'Nature'],
         cantrip="The spell's area becomes a 5 ft.\\ wide \\areamed line.",
         subspells=[
+            Subspell('Shocking Grasp', 1, """
+                Make a Spellpower vs. Reflex attack against one creature or object you \\glossterm<threaten>.
+                You gain a +5 bonus to \\glossterm<concentration> checks to cast this subspell.
+                \\hit The target takes electricity \\glossterm<standard damage> +1d.
+            """, tags=['Electricity']),
+            Subspell('Static Discharge', 2, """
+                This subspell functions like the \\spell<electromancy> spell, except that it affects everything within a \\areamed radius from you.
+            """),
             Subspell('Magnetic', 2, """
                 This subspell functions like the \\spell<electromancy> spell, except that you gain a +2 bonus to accuracy against creatures wearing metal armor or otherwise carrying a significant amount of metal.
             """),
@@ -758,10 +766,11 @@ def generate_spells():
         effects=Effects('Corruption', """
             Make a Spellpower vs. Fortitude attack against a living creature within \\rngclose range.
             \\hit The target is \\glossterm<sickened> as a \\glossterm<condition>.
+            % TODO: clarify when exactly this damage is taken (should be at the end of the phase)
             In addition, it takes life \\glossterm<standard damage> -3d whenever it takes a \\glossterm<standard action>.
             It can only take damage in this way once per round.
             \\crit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
-            In addition, it takes life \\glossterm<standard damage> whenever it takes a \\glossterm<standard action>.
+            In addition, it takes life \\glossterm<standard damage> -1d whenever it takes a \\glossterm<standard action>.
             It can only take damage in this way once per round.
         """, tags=['Life']),
         schools=['Vivimancy'],
@@ -770,6 +779,13 @@ def generate_spells():
             You take a -2 penalty to accuracy with the spell.
         """,
         subspells=[
+            Subspell('Miasma', 1, """
+                Make a Spellpower vs. Fortitude attack against all living creatures within an \\areamed radius from you.
+                \\hit Each target is \\glossterm<sickened> as a \\glossterm<condition>.
+            """),
+            Subspell('Greater Miasma', 4, """
+                This subspell functions like the \\spell<miasma> subspell, except that a struck target is \\glossterm<nauseated> instead of sickened.
+            """),
             Subspell("Eyebite", 2, """
                 This subspell functions like the \\spell<corruption> spell, except that a struck target is also \\glossterm<dazzled> as an additional \\glossterm<condition>.
                 A critically struck target is \\glossterm<blinded> instead of dazzled.
@@ -794,8 +810,7 @@ def generate_spells():
                 This subspell functions like the \\spell<corruption> spell, except that the attack is made against Mental defense instead of Fortitude defense.
                 In addition, if the attack critically hits, the spell's effect becomes a permanent curse.
                 It is no longer a condition, and cannot be removed by abilities that remove conditions.
-                This subspell gains the \\glossterm<Curse> tag in addition to the tags from the \spell<corruption> spell.
-            """),
+            """, tags=['Curse']),
         ],
         category='debuff, combat',
     ))
@@ -806,25 +821,25 @@ def generate_spells():
         # header=Header("description"),
         effects=Effects('Vital Surge', """
             Make a Spellpower vs. Fortitude attack against a creature within \\rngmed range.
-            When you cast this spell, you choose whether the target is healed or takes damage.
-            \\hit The target heals hit points or takes life damage equal to \\glossterm<standard damage> +1d.
-            \\crit As above, except that if you chose damage, the spell deals double damage.
+            \\hit The target takes life damage equal to \\glossterm<standard damage> +1d.
         """, tags=['Life']),
         schools=['Vivimancy'],
         lists=['Divine', 'Nature'],
-        cantrip="You cannot choose for the spell to heal the target, and the spell deals -2d damage.",
+        cantrip="The spell deals -2d damage.",
         subspells=[
-            Subspell("Undead Bane", 2, """
-                This subspell functions like the \\spell<vital surge> spell, except that you gain a +2 bonus to accuracy against undead creatures.
+            Subspell("Cure Wounds", 1, """
+                Choose a willing creature within \\rngmed range.
+                The target heals hit points equal to \\glossterm<standard damage> +1d.
             """),
-            Subspell("Cure Wounds", 2, """
-                This subspell functions like the \\spell<vital surge> spell, except that you cannot choose to deal damage to the target.
-                In addition, for every 5 points of healing you provide, you can instead heal one point of \\glossterm<vital damage>.
+            Subspell("Greater Cure Wounds", 3, """
+                This subspell functions like the \\spell<cure wounds> subspell, except that for every 5 points of healing you provide, you can instead heal one point of \\glossterm<vital damage>.
             """),
-            Subspell("Cure Critical Wounds", 4, """
-                This subspell functions like the \\spell<vital surge> spell, except that you cannot choose to deal damage to the target.
+            Subspell("Heal", 6, """
+                This subspell functions like the \\spell<cure wounds> subspell, except that it gains a +1d bonus to healing.
                 In addition, it heals \\glossterm<vital damage> as easily as it heals hit points.
             """),
+            # TODO: make "Undead Bane" subspell after figuring out undead / life
+            # damage interaction
             Subspell("Drain Life", 3, """
                 This subspell functions like the \\spell<vital surge> spell, except that you heal hit points equal to half the damage dealt.
             """),
@@ -856,33 +871,6 @@ def generate_spells():
     ))
 
     spells.append(Spell(
-        name="Protection from Alignment",
-        short_description="Protect allies from aligned foes",
-        # header=Header("description"),
-        effects=Effects('Protection from Alignment', """
-            Choose a willing creature within \\rngclose range, and an alignment other than neutral (chaotic, good, evil, or lawful).
-            The target gains damage reduction equal to your spellpower against physical effects that have the chosen alignment, and physical attacks made by creatures with the chosen alignment.
-            This spell gains the tag for the chosen alignment's \\glossterm<opposed alignment>.
-
-            You can cast this spell as a \\glossterm<minor action>.
-        """, tags=['Attune (shared)', 'Shielding', '(see text)']),  # TODO: (see text) without glossterm
-        schools=['Abjuration'],
-        lists=['Arcane', 'Chaos', 'Divine', 'Evil', 'Good', 'Law'],
-        cantrip="The spell requires a \\glossterm<standard action> to cast, and it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> (shared) tag.",
-        subspells=[
-            Subspell("Complete", 3, """
-                This subspell functions like the \\spell<protection from alignment> spell, except that the damage reduction also applies against non-physical effects.
-            """),
-            Subspell("Retributive", 4, """
-                This subspell functions like the \\spell<protection from alignment> spell, except that it deals retributive damage to creatures attacking the target.
-                Whenever a creature with the chosen alignment makes a physical melee attack against the target, you make a Spellpower vs. Mental attack against the attacking creature.
-                \\hit The attacker takes divine \\glossterm<standard damage> -1d.
-            """),
-        ],
-        category='buff, defense',
-    ))
-
-    spells.append(Spell(
         name="Summon Monster",
         short_description="Summon creatures to fight with you",
         header=Header("You summon a creature to fight by your side."),
@@ -903,8 +891,11 @@ def generate_spells():
         """, tags=["Manifestation", 'Sustain (minor)']),
         schools=['Conjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
+        # Should this allow you to summon two monsters at once? I think that is
+        # okay maybe?
         cantrip="The spell gains the \\glossterm<Sustain> (standard) tag in place of the \\glossterm<Sustain> (minor) tag.",
         subspells=[
+            # TODO: this needs more subspells
             Subspell("Summon Bear", 2, """
                 This subspell functions like the \\spell<summon monster> spell, except that the creature appears to be a Medium bear.
                 As a standard action, it can make a \\glossterm<grapple> attack against a creature it threatens.
@@ -923,14 +914,15 @@ def generate_spells():
         short_description="See and hear at great distances",
         header=Header("You create a scrying sensor that allows you to see at a distance."),
         effects=Effects('Scry', """
-            A Fine object appears floating in the air in an unoccupied square within \\rngmed range.
-            It resembles a human eye in size and shape, though it is \\glossterm<invisible>.
+            A \\glossterm<scrying sensor> appears floating in the air in an unoccupied square within \\rngmed range.
             At the start of each round, you choose whether you see from this sensor or from your body.
-            The sensor's visual acuity is the same as your own, except that it does not share the benefits of any \\glossterm<magical> effects that improve your vision.
+
+            While viewing through the sensor, your visual acuity is the same as your normal body, except that it does not share the benefits of any \\glossterm<magical> effects that improve your vision.
             You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \\blinded.
 
             If undisturbed, the sensor floats in the air in its position.
-            As a standard action, you can concentrate to move the sensor up to 30 feet in any direction, even vertically.
+            As a \\glossterm<minor action>, you can concentrate to move the sensor up to 30 feet in any direction, even vertically.
+            At the end of each round, if the sensor is does not have \\glossterm<line of effect> from you, it is destroyed.
         """, tags=['Attune', 'Scrying']),
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
@@ -939,8 +931,9 @@ def generate_spells():
             In addition, the spell gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> tag.",
         """,
         subspells=[
-            Subspell("Alarm", 2, """
-                This subspell functions like the \\spell<scry> spell, except that the sensor continues to observe its surroundings while you are not sensing through it.
+            Subspell("Alarm", 1, """
+                A \\glossterm<scrying sensor> appears floating in the air in an unoccupied square within \\rngmed range.
+                The sensor passively observes its surroundings.
                 If it sees a creature or object of Tiny size or larger moving within 50 feet of it, it will trigger a mental "ping" that only you can notice.
                 You must be within 1 mile of the sensor to receive this mental alarm.
                 This mental sensation is strong enough to wake you from normal sleep, but does not otherwise disturb concentration.
@@ -951,21 +944,21 @@ def generate_spells():
                 This choice is made independently from your sight.
                 The sensor's auditory acuity is the same as your own, except that it does not share the benefits of any \\glossterm<magical> effects that improve your hearing.
             """),
-            Subspell("Accelerated", 3, """
+            Subspell("Accelerated", 2, """
                 This subspell functions like the \\spell<scry> spell, except that the sensor moves up to 100 feet when moved instead of up to 30 feet.
             """),
-            Subspell("Dual", 3, """
-                This subspell functions like the \\spell<scry> spell, except that you create an additional sensor in the same location.
+            Subspell("Dual", 2, """
+                This subspell functions like the \\spell<scry> spell, except that you create an additional sensor in another location within range.
                 You must move and see through each sensor individually.
             """),
-            Subspell("Penetrating", 3, """
-                This subspell functions like the \\spell<scry> spell, except that you do not need \\glossterm<line of sight> or \\glossterm<line of effect> to target a location.
+            Subspell("Autonomous", 3, """
+                This subspell functions like the \\spell<scry> spell, except that the sensor is not destroyed when it loses \\glossterm<line of effect> to you.
+            """),
+            Subspell("Penetrating", 5, """
+                This subspell functions like the \\spell<autonomous> subspell, except that you do not need \\glossterm<line of sight> or \\glossterm<line of effect> to target a location.
                 You must specify a distance and direction to target a location you cannot see.
                 This can allow you to cast the spell beyond walls and similar obstacles.
                 As normal, if the intended location is occupied or otherwise impossible, the spell is \\glossterm<miscast>.
-            """),
-            Subspell("Semi-Autonomous", 4, """
-                This subspell functions like the \\spell<scry> spell, except that you can move the sensor as a \\glossterm<minor action> rather than as a standard action.
             """),
             # Need to make sure this can't be used for high-bandwidth bidirectional communication
             Subspell("Scry Creature", 5, """
@@ -980,14 +973,14 @@ def generate_spells():
                 Instead, it automatically tries to follow the target to stay in its space.
                 At the end of each phase, if the sensor is not in the target's space, this effect is \\glossterm<dismissed>.
             """),
-            Subspell("Split Senses", 6, """
+            Subspell("Split Senses", 5, """
                 This subspell functions like the \\spell<scry> spell, except that you constantly receive sensory input from both your body and the sensor.
                 This allows you to see simultaneously from your body and from the sensor.
             """),
             Subspell("Reverse Scrying", 4, """
                 Choose a magical sensor within \\rngmed range.
                 A new scrying sensor appears at the location of the source of the the ability that created the target sensor.
-                This sensor functions like the sensor created by the \\spell<scry> spell, except that the sensor cannot move.
+                This sensor functions like the sensor created by the \\spell<scry> spell, except that the sensor cannot move and it is not destroyed if it does not have \\glossterm<line of effect> to you.
             """),
         ],
         category='narrative',
@@ -1007,6 +1000,14 @@ def generate_spells():
         lists=['Arcane', 'Divine', 'Nature'],
         cantrip="The spell requires a \\glossterm<standard action> to cast, and it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune (shared)> tag.",
         subspells=[
+            Subspell('Precognitive Defense', 1, """
+                Choose a willing creature within \\rngclose range.
+                The target gains a +1 bonus to Armor defense.
+            """),
+            Subspell('Greater Precognitive Defense', 6, """
+                Choose a willing creature within \\rngclose range.
+                The target gains a +2 bonus to Armor defense.
+            """),
             Subspell("Discern Lies", 2, """
                 Make a Spellpower vs. Mental attack against a creature within \\rngmed range.
                 \\hit You know when the target deliberately and knowingly speaks a lie.
@@ -1062,16 +1063,30 @@ def generate_spells():
     spells.append(Spell(
         name="Telekinesis",
         short_description="Manipulate creatures and objects at a distance",
-        # header=Header("description"),
+        header=Header("You crush your foe's body with telekinetic force."),
         effects=Effects('Telekinesis', """
-            Make a Spellpower vs. Mental attack against a Medium or smaller creature or object within \\rngclose range.
-            \\hit You move the target up five feet per spellpower. Moving the target upwards costs twice the normal movement cost.
-            \\crit As above, but you move the target ten feet per spellpower instead of five feet per spellpower.
+            Make a Spellpower vs. Mental attack against one creature or object within \\rngmed range.
+            \\hit The target takes bludgeoning \\glossterm<standard damage> +1d.
         """, tags=['Telekinesis']),
         schools=['Evocation'],
         lists=['Arcane'],
-        cantrip="You take a -2 penalty to accuracy with the spell.",
+        cantrip="The spell deals -2d damage.",
         subspells=[
+            Subspell('Telekinetic Movement', 1, """
+                Make a Spellpower vs. Mental attack against a Medium or smaller creature or object within \\rngmed range.
+                \\hit You move the target up to thirty feet in any direction.
+                    You can change direction partway through the movement.
+                    Moving the target upwards costs twice the normal movement cost.
+            """),
+            Subspell('Greater Telekinetic Movement', 4, """
+                This subspell functions like the \\textit<telekinetic movement> spell, except that you can move the target up to one hundred feet.
+            """),
+            Subspell('Move Ally', 2, """
+                Choose a willing creature within \\rngmed range.
+                You move the target up to one hundred feet in any direction.
+                You can change direction partway through the movement.
+                Moving the target upwards costs twice the normal movement cost.
+            """),
             Subspell("Precise", 2, """
                 Make a Spellpower vs. Mental attack against a Medium or smaller creature or object within \\rngclose range.
                 \\hit You move the target up to five feet in any direction.
@@ -1088,11 +1103,6 @@ def generate_spells():
             """, tags=['Attune']),
             Subspell("Accelerated Levitate", 5, """
                 This subspell functions like the \\spell<levitate> subspell, except that you can move the target up to thirty feet instead of up to ten feet.
-            """),
-            Subspell("Mending", 2, """
-                % TODO: unattended or attended by a willing creature
-                Choose an unattended object within \\rngclose range.
-                The target is healed for hit points equal to \\glossterm<standard damage> +1d.
             """),
         ],
         category='debuff, combat',
@@ -1224,6 +1234,21 @@ def generate_spells():
         lists=['Arcane', 'Nature'],
         cantrip="The spell deals -2d damage.",
         subspells=[
+            Subspell("Mending", 1, """
+                % TODO: unattended or attended by a willing creature
+                Choose an unattended object within \\rngclose range.
+                The target is healed for hit points equal to \\glossterm<standard damage> +1d.
+            """),
+            Subspell("Shrink", 1, """
+                Choose a willing creature within \\rngclose range.
+                The target's size decreases by one size category, to a minimum of Tiny.
+                This decreases its \\glossterm<strike damage> and usually decreases its \\glossterm<reach> (see \\pcref<Size in Combat>).
+
+                You can cast this subspell as a \\glossterm<minor action>.
+            """, tags=['Attune (shared)', 'Shaping', 'Sizing']),
+            Subspell('Greater Shrink', 6, """
+                This subspell functions like the \\spell<shrink> subspell, except that the target's size decreases by two size categories, to a minimum of Diminuitive.
+            """),
             Subspell("Barkskin", 2, """
                 Choose a willing creature within \\rngclose range.
                 The target gains \\glossterm{damage reduction} equal to your spellpower against damage dealt by \\glossterm<physical attacks>.
@@ -1237,13 +1262,6 @@ def generate_spells():
             Subspell("Ironskin", 7, """
                 This subspell functions like the \\textit<stoneskin> subspell, except that the damage reduction is equal to twice your spellpower.
             """),
-            Subspell("Shrink", 2, """
-                Choose a willing creature within \\rngclose range.
-                The target's size decreases by one size category.
-                This decreases its \\glossterm<strike damage> and usually decreases its \\glossterm<reach> (see \\pcref<Size in Combat>).
-
-                You can cast this subspell as a \\glossterm<minor action>.
-            """, tags=['Attune (shared)', 'Shaping', 'Sizing']),
             Subspell("Enlarge", 3, """
                 Choose a Large or smaller willing creature within \\rngclose range.
                 The target's size increases by one size category.
@@ -1297,7 +1315,7 @@ def generate_spells():
         lists=['Arcane'],
         cantrip="The spell deals -2d damage.",
         subspells=[
-            Subspell("Teleport", 2, """
+            Subspell("Teleport", 1, """
                 Choose a Medium or smaller willing creature within \\rngclose range.
                 The target teleports into an unoccupied destination within \\rngmed range of its original location.
                 If the destination is invalid, this subspell is \\glossterm<miscast>.
@@ -1325,7 +1343,7 @@ def generate_spells():
             Subspell('Dimensional Shuffle', 2, """
                 Choose up to five willing creatures within \\rngmed range.
                 Each target teleports into the location of a different target.
-                This subspell resolves during the phase it is cast.
+                This subspell does not have the \\glossterm<Delayed> tag (see \pcref<Delayed Abilities>).
             """, tags=['Teleportation']),
             Subspell('Blink', 5, """
                 Choose a willing creature within \\rngclose range.
@@ -1356,9 +1374,15 @@ def generate_spells():
             You take a -2 penalty to accuracy with the spell.
         """,
         subspells=[
+            Subspell('Accelerated Movement', 1, """
+                Choose a willing creature within \\rngmed range.
+                The target gains a +10 foot bonus to its speed in all its movement modes.
+                You can cast this subspell as a \\glossterm<minor action>.
+            """, tags=['Attune (shared)', 'Temporal']),
             Subspell("Haste", 3, """
                 Choose a willing creature within \\rngmed range.
                 The target gains a +30 foot bonus to its speed in all its movement modes, up to a maximum of double its \\glossterm<base speed>.
+                In addition, it gains a +2 bonus to Reflex defense.
 
                 You can cast this subspell as a \\glossterm<minor action>.
             """, tags=['Attune (shared)', 'Temporal']),
@@ -1455,23 +1479,24 @@ def generate_spells():
         lists=['Arcane'],
         cantrip="The spell gains the \\glossterm<Sustain> (standard) tag in place of the \\glossterm<Sustain> (minor) tag.",
         subspells=[
-            Subspell("Blade Barrier", 2, """
+            Subspell("Blade Barrier", 1, """
                 A wall of whirling blades appears within \\rngmed range.
-                The wall either takes the form of a \\arealarge line or a \\areasmall radius.
-                In either case, it is 20 ft.\\ high.
+                The wall either takes the form of a 20 ft.\\ high, \\arealarge line.
                 The wall provides \\glossterm<active cover> (20\\% miss chance) against attacks made through it.
                 Attacks that miss in this way harmlessly strike the wall.
                 Whenever a creature or object passes through the wall, make a Spellpower vs. Reflex attack against it.
                 \\hit The target takes slashing \\glossterm<standard damage> -1d.
             """, tags=['Sustain (minor)']),
+            Subspell('Blade Perimeter', 3, """
+                This subspell functions like the \\spell<blade barrier> subspell, except that the wall is an 20 ft.\\ high, \\areamed radius circle.
+            """),
+            Subspell("Contracting Blade Perimeter", 5, """
+                This subspell functions like the \\spell<blade perimeter> subspell, except that the wall's radius shrinks by 5 feet at the end of every \\glossterm<action phase>, dealing damage to everything it moves through.
+                % Clarify interaction with solid obstacles that block contraction?
+            """),
             Subspell("Aerial", 2, """
                 This subspell functions like the \\spell<weaponcraft> spell, except that the weapon's height above the ground is not limited.
                 This allows the weapon to fly up to fight airborne foes.
-            """),
-            Subspell("Blade Barrier, Contracting", 4, """
-                This subspell functions like the \\spell<blade barrier> subspell, except that the area must be a radius.
-                In addition, the wall's radius shrinks by 5 feet at the end of every \\glossterm<action phase>, dealing damage to everything it moves through.
-                % Clarify interaction with solid obstacles that block contraction?
             """),
             Subspell("Blade Barrier, Dual", 4, """
                 This subspell functions like the \\spell<blade barrier> subspell, except that the area must be a line.
