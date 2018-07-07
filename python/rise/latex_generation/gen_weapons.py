@@ -40,7 +40,7 @@ def generate_weapons():
             This weapon is on fire.
             It sheds light as a torch, and all damage dealt with it is fire damage in addition to its other types.
             As a \\glossterm<minor action>, you can kindle the flames.
-            If you do, you gain a +1d bonus to \\glossterm<strike damage> with this weapon.
+            If you do, you gain a +1d \\glossterm<magic bonus> to \\glossterm<strike damage> with this weapon.
             This is a \\glossterm<swift ability>, and it lasts until the end of the round.
         """,
         short_description="Can deal +1d fire damage",
@@ -54,7 +54,7 @@ def generate_weapons():
         description="""
             This weapon is on fire.
             It sheds light as a torch, and all damage dealt with it is fire damage in addition to its other types.
-            You gain a +1d bonus to \\glossterm<strike damage> with this weapon.
+            You gain a +1d \\glossterm<magic bonus> to \\glossterm<strike damage> with this weapon.
         """,
         short_description="Deals +1d fire damage",
     ))

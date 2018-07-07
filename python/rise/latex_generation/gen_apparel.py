@@ -94,7 +94,7 @@ def generate_armor():
         level=2,
         material_type='shield',
         description="""
-            You gain a +1d bonus to \\glossterm<strike damage> with this shield.
+            You gain a +1d \\glossterm<magic bonus> to \\glossterm<strike damage> with this shield.
         """,
         short_description="Deals +1d damage",
     ))
@@ -104,7 +104,7 @@ def generate_armor():
         level=12,
         material_type='shield',
         description="""
-            You gain a +2d bonus to \\glossterm<strike damage> with this shield.
+            You gain a +2d \\glossterm<magic bonus> to \\glossterm<strike damage> with this shield.
         """,
         short_description="Deals +2d damage",
     ))
@@ -268,10 +268,10 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Titan Gauntlets",
-        level=15,
+        level=13,
         material_type='gauntlet',
         description="""
-            You gain a +1d bonus to \\glossterm<strike damage>.
+            You gain a +1d \\glossterm<magic bonus> to \\glossterm<strike damage>.
         """,
         short_description="Grants +1d strike damage",
     ))
@@ -353,7 +353,7 @@ def generate_worn():
         level=2,
         material_type='gauntlet',
         description="""
-            You gain a +1d bonus to damage with \\glossterm<improvised weapons>.
+            You gain a +1d \\glossterm<magic bonus> to damage with \\glossterm<improvised weapons>.
         """,
         short_description="Grants +1d damage with improvised weapons",
     ))
@@ -830,7 +830,7 @@ def generate_worn():
         level=6,
         material_type='amulet',
         description="""
-            You gain a +1d bonus to \\glossterm<strike damage> with \\glossterm<unarmed attacks> and natural weapons.
+            You gain a +1d \\glossterm<magic bonus> to \\glossterm<strike damage> with \\glossterm<unarmed attacks> and natural weapons.
         """,
         short_description="Grants +1d damage with your body",
     ))
@@ -840,7 +840,7 @@ def generate_worn():
         level=14,
         material_type='amulet',
         description="""
-            You gain a +2d bonus to \\glossterm<strike damage> with \\glossterm<unarmed attacks> and natural weapons.
+            You gain a +2d \\glossterm<magic bonus> to \\glossterm<strike damage> with \\glossterm<unarmed attacks> and natural weapons.
         """,
         short_description="Grants +2d damage with your body",
     ))
