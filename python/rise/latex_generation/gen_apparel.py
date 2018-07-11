@@ -343,7 +343,7 @@ def generate_worn():
         tags=['Figment', 'Light'],
         description="""
             These gloves shed light as a torch.
-            As a \\glossterm<standard action>, you may choose to suppress or resume the light from either or both gloves.
+            As a \\glossterm<standard action>, you may snap your fingers to suppress or resume the light from either or both gloves.
         """,
         short_description="Sheds light as a torch",
     ))
@@ -1058,6 +1058,35 @@ def generate_worn():
             You reduce your \\glossterm<vital damage penalties> by 6.
         """,
         short_description="Reduces vital damage penalties by 6",
+    ))
+
+    apparel.append(MagicItem(
+        name="Ocular Circlet",
+        level=3,
+        material_type='circlet',
+        tags=['Scrying'],
+        description="""
+            As a \\glossterm<standard action>, you can concentrate to use this item.
+            If you do, a \\glossterm<scrying sensor> appears floating in the air in an unoccupied square within \\rngclose range.
+            As long as you \\glossterm<sustain> the effect as a standard action, you see through the sensor instead of from your body.
+
+            While viewing through the sensor, your visual acuity is the same as your normal body,
+                except that it does not share the benefits of any \\glossterm<magical> effects that improve your vision.
+            You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \\blinded.
+        """,
+        short_description="Can allow you to see at a distance",
+    ))
+
+    apparel.append(MagicItem(
+        name="Ocular Circlet, Greater",
+        level=9,
+        material_type='circlet',
+        tags=['Scrying'],
+        description="""
+            This item functions like the \\mitem<ocular circlet>, except that it only takes a \\glossterm<minor action> to activate and sustain the item's effect.
+            In addition, the sensor appears anywhere within \\rngmed range.
+        """,
+        short_description="description",
     ))
 
     # Other
