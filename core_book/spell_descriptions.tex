@@ -2,24 +2,16 @@
 \begin{spellsection}{Aeromancy}
 
 \begin{spellheader}
-\spelldesc{You shield your ally with a barrier of wind, protecting them from harm.}
+\spelldesc{You blast a foe with wind.}
 \end{spellheader}
 
 
-\begin{ability}{Aeromancy}[\glossterm{Air}, \glossterm{Attune} (shared), \glossterm{Shielding}]
-Choose a willing, Medium or smaller creature in \rngclose range.
-The target gains a \plus1 \glossterm{magic bonus} to Armor defense.
-This bonus is increased to \plus5 against ranged \glossterm{physical attacks} from weapons or projectiles that are Small or smaller.
-
-Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
-You can cast this spell as a \glossterm{minor action}.
+\begin{ability}{Cantrip}
+Make a Spellpower vs. Fortitude attack against a creature or object within \rngmed range.
+\hit The target takes bludgeoning \glossterm{standard damage} \minus1d.
 \end{ability}
 
 
-
-\parhead{Cantrip} The spell requires a standard action to cast, and it gains the \glossterm{Sustain} (minor) tag in place of the \glossterm{Attune} (shared) tag. If you cast this spell as a cantrip,
-you do not need to spend an \glossterm{action point} to cast it,
-but you cannot apply any augments to it.
 
 
 \parhead{Schools} Transmutation
@@ -31,16 +23,27 @@ but you cannot apply any augments to it.
 \subsubsection{Subspells}
 
 
-\begin{ability}[\nth{1}]{Windstrike}[\glossterm{Air}]
-Make a Spellpower vs. Fortitude attack against a creature or object within \rngmed range.
-\hit The target takes bludgeoning \glossterm{standard damage} \plus1d.
+\begin{ability}[\nth{1}]{Gentle Descent}
+Choose a willing, Medium or smaller creature in \rngclose range.
+The target gains a 30 foot \glossterm{glide speed} (see \pcref{Gliding}).
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{2}]{Gentle Descent}
-This subspell functions like the \spell{aeromancy} spell, except that the target also gains a 30 foot glide speed.
-A creature with a glide speed can glide through the air at the indicated speed (see \pcref{Gliding}).
+\begin{ability}[\nth{1}]{Wind Screen}[\glossterm{Air}, \glossterm{Attune} (shared), \glossterm{Shielding}]
+Choose a willing creature in \rngclose range.
+The target gains a \plus1 \glossterm{magic bonus} to Armor defense.
+This bonus is increased to \plus5 against ranged \glossterm{physical attacks} from weapons or projectiles that are Small or smaller.
+
+Any effect which increases the size of creature this subspell can affect also increases the size of ranged weapon it defends against by the same amount.
+You can cast this subspell as a \glossterm{minor action}.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{1}]{Windstrike}[\glossterm{Air}]
+Make a Spellpower vs. Fortitude attack against a creature or object within \rngmed range.
+\hit The target takes bludgeoning \glossterm{standard damage} \plus1d.
 \end{ability}
 \vspace{0.25em}
 
@@ -63,7 +66,7 @@ You can cast this subspell as a \glossterm{minor action}.
 
 
 \begin{ability}[\nth{4}]{Air Walk}
-This subspell functions like the \spell{aeromancy} spell, except that the target can also walk on air as if it were solid ground.
+This subspell functions like the \spell{wind screen} subspell, except that the target can also walk on air as if it were solid ground.
 The magic only affects the target's legs and feet.
 By choosing when to treat the air as solid, it can traverse the air with ease.
 \end{ability}
@@ -71,13 +74,13 @@ By choosing when to treat the air as solid, it can traverse the air with ease.
 
 
 \begin{ability}[\nth{4}]{Wind Screen}
-This subspell functions like the \spell{aeromancy} spell, except that the defense bonus against ranged attacks increases to \plus10.
+This subspell functions like the \spell{wind screen} subspell, except that the defense bonus against ranged attacks increases to \plus10.
 \end{ability}
 \vspace{0.25em}
 
 
 \begin{ability}[\nth{5}]{Stormlord}
-This subspell functions like the \spell{aeromancy} spell, except that the air also retaliates against creature that attack the target.
+This subspell functions like the \spell{wind screen} subspell, except that the air also retaliates against creature that attack the target.
 Whenever a creature within \rngclose range of the target attacks it, wind strikes the attacking creature.
 The wind deals bludgeoning \glossterm{standard damage} \minus1d.
 Any individual creature can only be dealt damage in this way once per round.
@@ -113,16 +116,12 @@ If another ability would magically manipulate the weather in the same area, the 
 \end{spellheader}
 
 
-\begin{ability}{Aquamancy}[\glossterm{Manifestation}, \glossterm{Water}]
-Make a Spellpower vs. Fortitude attack against everything in a \arealarge, 10 ft.\ wide line.
+\begin{ability}{Cantrip}[\glossterm{Manifestation}, \glossterm{Water}]
+Make a Spellpower vs. Fortitude attack against everything in a \areamed, 5 ft.\ wide line from you.
 \hit Each target takes bludgeoning \glossterm{standard damage} \minus1d.
 \end{ability}
 
 
-
-\parhead{Cantrip} The spell's area becomes a 5 ft.\ wide, \areamed line. If you cast this spell as a cantrip,
-you do not need to spend an \glossterm{action point} to cast it,
-but you cannot apply any augments to it.
 
 
 \parhead{Schools} Conjuration
@@ -142,6 +141,13 @@ You must create a minimum of one ounce of water in each location.
 \vspace{0.25em}
 
 
+\begin{ability}[\nth{1}]{Crushing Wave}[\glossterm{Manifestation}, \glossterm{Water}]
+Make a Spellpower vs. Fortitude attack against everything in a \arealarge, 10 ft.\ wide line from you.
+\hit Each target takes bludgeoning \glossterm{standard damage} \minus1d.
+\end{ability}
+\vspace{0.25em}
+
+
 \begin{ability}[\nth{1}]{Underwater Freedom}[\glossterm{Attune} (shared)]
 Choose a willing creature within \rngclose range.
 The target suffers no penalties for acting underwater, except for those relating to using ranged weapons.
@@ -150,7 +156,7 @@ The target suffers no penalties for acting underwater, except for those relating
 
 
 \begin{ability}[\nth{2}]{Aqueous Sphere}
-This subspell functions like the \spell{aquamancy} spell, except that it targets everything in a \areasmall radius within \rngclose range.
+This subspell functions like the \spell{crushing wave} subspell, except that it targets everything in a \areasmall radius within \rngclose range.
 \end{ability}
 \vspace{0.25em}
 
@@ -174,7 +180,7 @@ This subspell is from the Transmutation school instead of the Conjuration school
 
 
 \begin{ability}[\nth{3}]{Geyser}[\glossterm{Manifestation}, \glossterm{Water}]
-Make a Spellpower vs. Fortitude attack against everything in a \arealarge, 5 ft.\ wide vertical line.
+Make a Spellpower vs. Fortitude attack against everything in a \arealarge, 5 ft.\ wide vertical line within \rngmed range.
 \hit Each target takes takes bludgeoning \glossterm{standard damage} \plus1d.
 \end{ability}
 \vspace{0.25em}
@@ -187,7 +193,7 @@ This subspell functions like the \spell{underwater freedom} subspell, except tha
 
 
 \begin{ability}[\nth{4}]{Raging River}
-This subspell functions like the \spell{aquamancy} spell, except that it gains the \glossterm{Sustain} (standard) tag.
+This subspell functions like the \spell{crushing wave} subspell, except that it gains the \glossterm{Sustain} (standard) tag.
 The area affected by the spell becomes a \glossterm{zone} that is continuously filled with rushing water.
 Creatures in area suffer penalties appropriate for fighting underwater, and may be unable to breathe.
 In addition, at the end of each \glossterm{action phase} in subsequent rounds, the attack is repeated in that area.
@@ -220,11 +226,9 @@ This subspell functions like the \spell{aqueous blade} subspell, except that the
 \end{spellheader}
 
 
-\begin{ability}{Astromancy}[\glossterm{Planar}, \glossterm{Teleportation}]
+\begin{ability}{Cantrip}[\glossterm{Planar}, \glossterm{Teleportation}]
 Make a Spellpower vs. Mental attack against a creature within \rngmed range.
-\hit The target takes physical \glossterm{standard damage} \plus1d.
-\crit As above, but double damage.
-In addition, if the creature is an \glossterm{outsider} native to another plane, it is sent back to its home plane.
+\hit The target takes physical \glossterm{standard damage} \minus1d.
 \end{ability}
 
 
@@ -243,6 +247,15 @@ but you cannot apply any augments to it.
 \subsubsection{Subspells}
 
 
+\begin{ability}[\nth{1}]{Dimensional Jaunt}[\glossterm{Planar}, \glossterm{Teleportation}]
+Make a Spellpower vs. Mental attack against a creature within \rngmed range.
+\hit The target takes physical \glossterm{standard damage} \plus1d.
+\crit As above, but double damage.
+In addition, if the creature is an \glossterm{outsider} native to another plane, it is sent back to its home plane.
+\end{ability}
+\vspace{0.25em}
+
+
 \begin{ability}[\nth{1}]{Teleport}[\glossterm{Teleportation}]
 Choose a Medium or smaller willing creature within \rngclose range.
 The target teleports into an unoccupied destination within \rngmed range of its original location.
@@ -252,7 +265,7 @@ If the destination is invalid, this subspell is \glossterm{miscast}.
 
 
 \begin{ability}[\nth{2}]{Dimensional Jaunt -- Plane of Fire}
-This subspell functions like the \spell{astromancy} spell, except that the target is partially teleported into the Plane of Fire.
+This subspell functions like the \spell{dimensional jaunt} subspell, except that the target is partially teleported into the Plane of Fire.
 The damage becomes fire damage, and a struck target is \glossterm{ignited} until it puts out the fire.
 \end{ability}
 \vspace{0.25em}
@@ -274,7 +287,7 @@ You must clearly visualize the destination's appearance, but you do not need \gl
 
 
 \begin{ability}[\nth{4}]{Dimensional Jaunt -- Plane of Earth}
-This subspell functions like the \spell{astromancy} spell, except that the target is partially teleported into the Plane of Earth.
+This subspell functions like the \spell{dimensional jaunt} subspell, except that the target is partially teleported into the Plane of Earth.
 The damage becomes bludgeoning damage, and a struck target is \glossterm{immobilized} as a \glossterm{condition}.
 \end{ability}
 \vspace{0.25em}
@@ -291,14 +304,14 @@ It is still affected normally by abilities that affect an area.
 
 
 \begin{ability}[\nth{6}]{Dimensional Jaunt -- Deep Astral Plane}
-This subspell functions like the \spell{astromancy} spell, except that the target is partially teleported into the deep Astral Plane.
+This subspell functions like the \spell{dimensional jaunt} subspell, except that the target is partially teleported into the deep Astral Plane.
 A struck target is \glossterm{stunned} as a \glossterm{condition}.
 \end{ability}
 \vspace{0.25em}
 
 
 \begin{ability}[\nth{9}]{Dimensional Jaunt -- Myriad}
-This subspell functions like the \spell{astromancy} spell, except that the target is partially teleported through a dizzying array of planes.
+This subspell functions like the \spell{dimensional jaunt} subspell, except that the target is partially teleported through a dizzying array of planes.
 The damage increases by \plus3d and becomes damage of all types.
 \end{ability}
 \vspace{0.25em}
@@ -317,18 +330,12 @@ This subspell functions like the \subspell{blink} subspell, except that the targ
 \end{spellheader}
 
 
-\begin{ability}{Barrier}[\glossterm{Attune} (shared), \glossterm{Shielding}]
+\begin{ability}{Cantrip}[\glossterm{Sustain} (standard)]
 Choose a willing creature in \rngclose range.
-The target gains \glossterm{damage reduction} equal to your spellpower against all damage except for \glossterm{energy damage}.
-
-You can cast this spell as a \glossterm{minor action}.
+The target gains \glossterm{damage reduction} equal to your spellpower against \glossterm{physical damage}.
 \end{ability}
 
 
-
-\parhead{Cantrip} The spell requires a \glossterm{standard action} to cast, and it gains the \glossterm{Sustain} (minor) tag in place of the \glossterm{Attune} (shared) tag. If you cast this spell as a cantrip,
-you do not need to spend an \glossterm{action point} to cast it,
-but you cannot apply any augments to it.
 
 
 \parhead{Schools} Abjuration
@@ -340,8 +347,17 @@ but you cannot apply any augments to it.
 \subsubsection{Subspells}
 
 
+\begin{ability}[\nth{1}]{Ablative Shield}[\glossterm{Attune} (shared), \glossterm{Shielding}]
+Choose a willing creature in \rngclose range.
+The target gains \glossterm{damage reduction} equal to your spellpower against all damage except for \glossterm{energy damage}.
+
+You can cast this spell as a \glossterm{minor action}.
+\end{ability}
+\vspace{0.25em}
+
+
 \begin{ability}[\nth{1}]{Resist Energy}
-This subspell functions like the \spell{barrier} spell, except that the damage reduction only applies against \glossterm{energy damage}.
+This subspell functions like the \spell{ablative shield} spell, except that the damage reduction only applies against \glossterm{energy damage}.
 \end{ability}
 \vspace{0.25em}
 
@@ -357,14 +373,14 @@ Creatures in the area at the time that the spell is cast are unaffected by the s
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{3}]{Complete}
-This subspell functions like the \spell{barrier} spell, except that the damage reduction applies against all damage.
+\begin{ability}[\nth{3}]{Complete Shield}
+This subspell functions like the \spell{ablative shield} spell, except that the damage reduction applies against all damage.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{4}]{Armored}
-This subspell functions like the \spell{barrier} spell, except that the target also gains a \plus1 \glossterm{magic bonus} to Armor defense.
+\begin{ability}[\nth{4}]{Deflective Shield}
+This subspell functions like the \spell{ablative shield} spell, except that the target also gains a \plus1 \glossterm{magic bonus} to Armor defense.
 \end{ability}
 \vspace{0.25em}
 
@@ -377,18 +393,18 @@ Attacks that deal damage of multiple types still inflict damage normally unless 
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{4}]{Retributive}
-This subspell functions like the \spell{barrier} spell, except that damage resisted by this subspell is dealt back to the attacker as life damage.
+\begin{ability}[\nth{4}]{Retributive Shield}
+This subspell functions like the \spell{ablative shield} spell, except that damage resisted by this subspell is dealt back to the attacker as life damage.
 If the attacker is beyond \rngclose range of the target, this reflection fails.
 
 Any effect which increases this subspell's range increases the range of this effect by the same amount.
-This subspell is from both the Abjuration and Vivimancy schools and gains the \glossterm{Life} tag in addition to the tags from the \spell{barrier} spell.
+This subspell is from both the Abjuration and Vivimancy schools and gains the \glossterm{Life} tag in addition to the tags from the \spell{ablative shield} spell.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{5}]{Empowered}
-This subspell functions like the \spell{barrier} spell, except that the damage reduction increases by an amount equal to your spellpower.
+\begin{ability}[\nth{5}]{Empowered Shield}
+This subspell functions like the \spell{ablative shield} spell, except that the damage reduction increases by an amount equal to your spellpower.
 \end{ability}
 \vspace{0.25em}
 
@@ -402,22 +418,16 @@ This effect functions like the \spell{repulsion} subspell, except that you gain 
 \begin{spellsection}{Bless}
 
 \begin{spellheader}
-\spelldesc{You invoke a divine blessing to aid your ally.}
+\spelldesc{You ask your deity for a blessing of resilience to aid an ally.}
 \end{spellheader}
 
 
-\begin{ability}{Bless}[\glossterm{Attune} (shared)]
+\begin{ability}{Cantrip}
 Choose a willing creature within \rngclose range.
-The target gains a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} with all attacks.
-
-You can cast this spell as a \glossterm{minor action}.
+The target removes one \glossterm{condition} affecting it.
 \end{ability}
 
 
-
-\parhead{Cantrip} The spell requires a \glossterm{standard action} to cast, and it gains the \glossterm{Sustain} (minor) tag in place of the \glossterm{Attune} (shared) tag. If you cast this spell as a cantrip,
-you do not need to spend an \glossterm{action point} to cast it,
-but you cannot apply any augments to it.
 
 
 \parhead{Schools} Channeling
@@ -429,17 +439,19 @@ but you cannot apply any augments to it.
 \subsubsection{Subspells}
 
 
-\begin{ability}[\nth{1}]{Protective Blessing}[\glossterm{Attune} (shared)]
-Choose a willing creature within \rngclose range.
-The target gains a \plus2 \glossterm{magic bonus} to Fortitude and Mental defense.
+\begin{ability}[\nth{1}]{Battle Blessing}[\glossterm{Attune} (shared)]
+The target gains a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} with all attacks.
 
 You can cast this spell as a \glossterm{minor action}.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{3}]{Battle Blessing}[\glossterm{Attune} (shared)]
-The target gains a \plus1d \glossterm{magic bonus} to all abilities that deal damage or grant healing measured in dice.
+\begin{ability}[\nth{1}]{Blessing of Resilience}[\glossterm{Attune} (shared)]
+Choose a willing creature within \rngclose range.
+The target removes one \glossterm{condition} affecting it.
+In addition, the target ignores the next two \glossterm{conditions} it would receive.
+After resisting two conditions in this way, this spell ends.
 \end{ability}
 \vspace{0.25em}
 
@@ -454,6 +466,12 @@ You can cast this subspell as a \glossterm{minor action}.
 \vspace{0.25em}
 
 
+\begin{ability}[\nth{3}]{Blessing of the Mighty}[\glossterm{Attune} (shared)]
+The target gains a \plus1d \glossterm{magic bonus} to all abilities that deal damage or grant healing measured in dice.
+\end{ability}
+\vspace{0.25em}
+
+
 \begin{ability}[\nth{3}]{Divine Might}[\glossterm{Attune}, \glossterm{Shaping}, \glossterm{Sizing}]
 You increase your size by one size category.
 This increases your \glossterm{strike damage} and usually increases your \glossterm{reach} (see \pcref{Size in Combat}).
@@ -464,14 +482,14 @@ You can cast this subspell as a \glossterm{minor action}.
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{5}]{Empowered}
-The accuracy bonus increases to \plus2.
+\begin{ability}[\nth{4}]{Greater Blessing of Resilience}
+This subspell functions like the \textit{blessing of resilience} subspell, except that the spell does not end until it resists five \glossterm{conditions}.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{5}]{Greater Protective Blessing}
-This subspell functions like the \textit{protective blessing} subspell, except that the bonus is increased to \plus4.
+\begin{ability}[\nth{5}]{Greater Battle Blessing}
+This subspell functions like the \spell{battle blessing} subspell, except that the bonus increases to \plus2.
 \end{ability}
 \vspace{0.25em}
 
@@ -497,8 +515,14 @@ This subspell functions like the \spell{blessed blade} subspell, except that the
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{7}]{Greater Battle Blessing}
+\begin{ability}[\nth{7}]{Greater Blessing of the Mighty}
 The target gains a \plus2d \glossterm{magic bonus} to all abilities that deal damage or grant healing measured in dice.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{7}]{Supreme Blessing of Resilience}
+This subspell functions like the \textit{blessing of resilience} subspell, except that the spell can resist any number of conditions without ending.
 \end{ability}
 \vspace{0.25em}
 
@@ -522,19 +546,13 @@ This subspell functions like the \spell{blessed blade} subspell, except that the
 \end{spellheader}
 
 
-\begin{ability}{Chronomancy}[\glossterm{Temporal}]
+\begin{ability}{Cantrip}[\glossterm{Temporal}]
 Make a Spellpower vs. Mental attack against a creature within \rngmed range.
-\hit The target is \glossterm{slowed} and \glossterm{dazed} as a single \glossterm{condition}.
-\crit the target is \glossterm{immobilized} and \glossterm{dazed} as a single \glossterm{condition}.
+\hit The target is \glossterm{slowed} as a \glossterm{condition}.
+\crit the target is \glossterm{immobilized} a \glossterm{condition}.
 \end{ability}
 
 
-
-\parhead{Cantrip}
-You take a \minus2 penalty to accuracy with the spell.
-If you cast this spell as a cantrip,
-you do not need to spend an \glossterm{action point} to cast it,
-but you cannot apply any augments to it.
 
 
 \parhead{Schools} Transmutation
@@ -550,6 +568,14 @@ but you cannot apply any augments to it.
 Choose a willing creature within \rngmed range.
 The target gains a \plus10 foot \glossterm{magic bonus} to its speed in all its movement modes.
 You can cast this subspell as a \glossterm{minor action}.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{1}]{Slow}[\glossterm{Temporal}]
+Make a Spellpower vs. Mental attack against a creature within \rngmed range.
+\hit The target is \glossterm{slowed} and \glossterm{dazed} as a single \glossterm{condition}.
+\crit the target is \glossterm{immobilized} and \glossterm{dazed} as a single \glossterm{condition}.
 \end{ability}
 \vspace{0.25em}
 
@@ -654,23 +680,16 @@ However, you cannot be detected by any means while you travel.
 \begin{spellsection}{Compel}
 
 \begin{spellheader}
-\spelldesc{Compel a foe to freeze in place.}
+\spelldesc{You compel a foe to fall down.}
 \end{spellheader}
 
 
-\begin{ability}{Compel}[\glossterm{Compulsion}, \glossterm{Mind}]
+\begin{ability}{Cantrip}[\glossterm{Compulsion}, \glossterm{Mind}]
 Make a Spellpower vs. Mental attack against a creature within \rngmed range.
-\hit The target is \immobilized as a \glossterm{condition}.
-\crit As above, except that the condition must be removed twice before the effect ends.
+\hit The target falls \glossterm{prone}.
 \end{ability}
 
 
-
-\parhead{Cantrip}
-You take a \minus2 penalty to accuracy with the spell.
-If you cast this spell as a cantrip,
-you do not need to spend an \glossterm{action point} to cast it,
-but you cannot apply any augments to it.
 
 
 \parhead{Schools} Enchantment
@@ -687,6 +706,15 @@ Make a Spellpower vs. Mental attack against all creatures in a \areamed radius f
 \hit Each target falls \glossterm{prone}.
 \hit As above, and as a \glossterm{condition}, each target is unable to stand up.
 If a target is somehow brought into a standing position, it will immediately fall and become prone again.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{1}]{Stay}[\glossterm{Compulsion}, \glossterm{Mind}]
+Make a Spellpower vs. Mental attack against a creature within \rngmed range.
+\hit The target is \immobilized as a \glossterm{condition}.
+\crit The target is \glossterm{immobilized} twice as two separate conditions.
+Both must be removed before the target can move again.
 \end{ability}
 \vspace{0.25em}
 
@@ -758,12 +786,7 @@ This subspell functions like the \textit{dance} subspell, except that you gain a
 \begin{ability}{Corruption}[\glossterm{Life}]
 Make a Spellpower vs. Fortitude attack against a living creature within \rngclose range.
 \hit The target is \glossterm{sickened} as a \glossterm{condition}.
-% TODO: clarify when exactly this damage is taken (should be at the end of the phase)
-In addition, it takes life \glossterm{standard damage} \minus3d whenever it takes a \glossterm{standard action}.
-It can only take damage in this way once per round.
 \crit The target is \glossterm{nauseated} as a \glossterm{condition}.
-In addition, it takes life \glossterm{standard damage} \minus1d whenever it takes a \glossterm{standard action}.
-It can only take damage in this way once per round.
 \end{ability}
 
 
@@ -791,24 +814,40 @@ Make a Spellpower vs. Fortitude attack against all living creatures within an \a
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{2}]{Eyebite}
-This subspell functions like the \spell{corruption} spell, except that a struck target is also \glossterm{dazzled} as an additional \glossterm{condition}.
-A critically struck target is \glossterm{blinded} instead of dazzled.
+\begin{ability}[\nth{1}]{Sickening Decay}[\glossterm{Life}]
+Make a Spellpower vs. Fortitude attack against a living creature within \rngclose range.
+\hit The target is \glossterm{sickened} as a \glossterm{condition}.
+% TODO: clarify when exactly this damage is taken (should be at the end of the phase)
+In addition, it takes life \glossterm{standard damage} \minus3d whenever it takes a \glossterm{standard action}.
+It can only take damage in this way once per round.
+\crit The target is \glossterm{nauseated} as a \glossterm{condition}.
+In addition, it takes life \glossterm{standard damage} \minus1d whenever it takes a \glossterm{standard action}.
+It can only take damage in this way once per round.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{3}]{Corruption of Blood and Bone}
-This subspell functions like the \spell{corruption} spell, except that damage from the spell reduces the target's maximum hit points by the same amount.
+\begin{ability}[\nth{4}]{Bleed}
+This subspell functions like the \spell{sickening decay} subspell, except that a struck target also begins bleeding as an additional \glossterm{condition}.
+At the end of every subsequent \glossterm{action phase}, the target takes slashing \glossterm{standard damage} \minus2d.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{4}]{Corruption of Blood and Bone}
+This subspell functions like the \spell{sickening decay} spell, except that it gains a \plus1d bonus to damage.
+In addition, damage from the spell reduces the target's maximum hit points by the same amount.
 This hit point reduction is part of the same \glossterm{condition} as the spell's other effects.
 When the condition is removed, the target's maximum hit points are restored.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{4}]{Bleed}
-This subspell functions like the \spell{corruption} spell, except that a struck target also begins bleeding as an additional \glossterm{condition}.
-At the end of every subsequent \glossterm{action phase}, the target takes slashing \glossterm{standard damage} \minus2d.
+\begin{ability}[\nth{4}]{Eyebite}[\glossterm{Life}]
+Make a Spellpower vs. Fortitude attack against a living creature within \rngclose range.
+\hit The target is \glossterm{blinded} as a \glossterm{condition}.
+\crit The target is \glossterm{blinded} twice by two separate \glossterm{conditions}.
+Both conditions must be removed before the target can see again.
 \end{ability}
 \vspace{0.25em}
 
@@ -819,23 +858,24 @@ This subspell functions like the \spell{miasma} subspell, except that a struck t
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{5}]{Cripple}
-This subspell functions like the \spell{corruption} spell, except that a struck target is also \glossterm{immobilized} as an additional \glossterm{condition}.
+\begin{ability}[\nth{5}]{Crippling Decay}
+This subspell functions like the \spell{sickening decay} spell, except that a struck target is also \glossterm{immobilized} as an additional \glossterm{condition}.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{6}]{Corrupting Curse}[\glossterm{Curse}]
-This subspell functions like the \spell{corruption} spell, except that the attack is made against Mental defense instead of Fortitude defense.
+\begin{ability}[\nth{6}]{Curse of Decay}[\glossterm{Curse}]
+This subspell functions like the \spell{sickening decay} subspell, except that the attack is made against Mental defense instead of Fortitude defense.
 In addition, if the attack critically hits, the spell's effect becomes a permanent curse.
 It is no longer a condition, and cannot be removed by abilities that remove conditions.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{7}]{Finger of Death}[\glossterm{Death}]
-This subspell functions like the \spell{corruption} spell, except that a struck target also takes life \glossterm{standard damage} \plus1d.
-A critically struck target immediately dies.
+\begin{ability}[\nth{7}]{Finger of Death}[\glossterm{Death}, \glossterm{Life}]
+Make a Spellpower vs. Fortitude attack against a living creature within \rngclose range.
+\hit The target takes life \glossterm{standard damage} \plus3d.
+\crit The target immediately dies.
 \end{ability}
 \vspace{0.25em}
 
@@ -843,20 +883,16 @@ A critically struck target immediately dies.
 \begin{spellsection}{Cryomancy}
 
 \begin{spellheader}
-\spelldesc{You drain the heat from an area, creating a field of extreme cold.}
+\spelldesc{You drain the heat from a foe.}
 \end{spellheader}
 
 
-\begin{ability}{Cryomancy}[\glossterm{Cold}]
-Make a Spellpower vs. Fortitude attack against everything in a \areamed cone from you.
-\hit Each target takes cold \glossterm{standard damage} \minus1d, and is \glossterm{fatigued} as a \glossterm{condition}.
+\begin{ability}{Cantrip}[\glossterm{Cold}]
+Make a Spellpower vs. Fortitude attack against one creature or object within \rngmed range.
+\hit The target takes cold \glossterm{standard damage} \minus1d.
 \end{ability}
 
 
-
-\parhead{Cantrip} The spell deals no damage. If you cast this spell as a cantrip,
-you do not need to spend an \glossterm{action point} to cast it,
-but you cannot apply any augments to it.
 
 
 \parhead{Schools} Evocation
@@ -868,21 +904,22 @@ but you cannot apply any augments to it.
 \subsubsection{Subspells}
 
 
+\begin{ability}[\nth{1}]{Cone of Cold}[\glossterm{Cold}]
+Make a Spellpower vs. Fortitude attack against everything in a \areamed cone from you.
+\hit Each target takes cold \glossterm{standard damage} \minus1d, and is \glossterm{fatigued} as a \glossterm{condition}.
+\end{ability}
+\vspace{0.25em}
+
+
 \begin{ability}[\nth{1}]{Frostbite}[\glossterm{Cold}]
-Make a Spellpower vs. Fortitude attack against one creature within \rngmed range.
+Make a Spellpower vs. Fortitude attack against one creature or object within \rngmed range.
 \hit The target takes cold \glossterm{standard damage} \plus1d.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{2}]{Blizzard}
-This subspell functions like the \spell{cryomancy} spell, except that the area becomes a \areamed radius from you.
-\end{ability}
-\vspace{0.25em}
-
-
 \begin{ability}[\nth{2}]{Cold Snap}
-This subspell functions like the \spell{cryomancy} spell, except that it gains the \glossterm{Sustain} (standard) tag.
+This subspell functions like the \spell{cone of cold} subspell, except that it gains the \glossterm{Sustain} (standard) tag.
 The area affected by the spell becomes a \glossterm{zone} that is supernaturally chilled.
 At the end of each \glossterm{action phase} in subsequent rounds, the attack is repeated in that area.
 \end{ability}
@@ -906,14 +943,20 @@ If the item loses all of its hit points, this effect is \glossterm{dismissed}.
 \vspace{0.25em}
 
 
+\begin{ability}[\nth{3}]{Blizzard}
+This subspell functions like the \spell{cone of cold} subspell, except that the area becomes a \areamed radius from you.
+\end{ability}
+\vspace{0.25em}
+
+
 \begin{ability}[\nth{4}]{Freezing}
-This subspell functions like the \spell{cryomancy} spell, except that each struck target is also \glossterm{immobilized} as an additional \glossterm{condition}.
+This subspell functions like the \spell{cone of cold} subspell, except that each struck target is also \glossterm{immobilized} as an additional \glossterm{condition}.
 \end{ability}
 \vspace{0.25em}
 
 
 \begin{ability}[\nth{4}]{Frostbite}
-This subspell functions like the \subspell{frostbite} subspell, except that the target becomes \glossterm{exhausted} as a \glossterm{condition} if it takes damage from the attack.
+This subspell functions like the \subspell{frostbite} subspell, except that a struck target is also \glossterm{exhausted} as a \glossterm{condition}.
 \end{ability}
 \vspace{0.25em}
 
@@ -945,19 +988,13 @@ A weapon gains a \plus1d \glossterm{magic bonus} to \glossterm{strike damage}, a
 \end{spellheader}
 
 
-\begin{ability}{Delusion}[\glossterm{Emotion}, \glossterm{Mind}]
+\begin{ability}{Cantrip}[\glossterm{Emotion}, \glossterm{Mind}]
 Make a Spellpower vs. Mental attack against a creature within \rngmed range.
-\hit The target is \frightened by you as a \glossterm{condition}.
-\crit The target is \panicked by you as a \glossterm{condition}.
+\hit The target is \glossterm{shaken} by you as a \glossterm{condition}.
+\crit The target is \glossterm{frightened} by you as a \glossterm{condition}.
 \end{ability}
 
 
-
-\parhead{Cantrip}
-You take a \minus2 penalty to accuracy with the spell.
-If you cast this spell as a cantrip,
-you do not need to spend an \glossterm{action point} to cast it,
-but you cannot apply any augments to it.
 
 
 \parhead{Schools} Enchantment
@@ -980,8 +1017,16 @@ This damage is of all damage types that the target was damaged by during that ro
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{2}]{Redirected}
-This subspell functions like the \spell{delusion} spell, except that you also choose a willing ally within the spell's range.
+\begin{ability}[\nth{1}]{Cause Fear}[\glossterm{Emotion}, \glossterm{Mind}]
+Make a Spellpower vs. Mental attack against a creature within \rngmed range.
+\hit The target is \frightened by you as a \glossterm{condition}.
+\crit The target is \panicked by you as a \glossterm{condition}.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{2}]{Redirected Fear}
+This subspell functions like the \spell{cause fear} subspell, except that you also choose a willing ally within the spell's range.
 The target is afraid of the chosen ally instead of being afraid of you.
 \end{ability}
 \vspace{0.25em}
@@ -1027,87 +1072,6 @@ The target is not directly aware of any magical influence on its mind, though un
 \vspace{0.25em}
 
 \newpage
-\begin{spellsection}{Distort Image}
-
-
-\begin{ability}{Distort Image}[\glossterm{Attune} (shared), \glossterm{Glamer}, \glossterm{Visual}]
-Choose a willing creature within \rngmed range.
-The target's physical outline is distorted so it appears blurred, shifting, and wavering.
-It gains a \plus1 \glossterm{magic bonus} to Armor defense and Stealth (see \pcref{Stealth}).
-This bonus is increases to \plus2 while in \glossterm{shadowy illumination}.
-This effect provides no defensive benefit against creatures immune to \glossterm{Visual} abilities.
-
-You can cast this spell as a \glossterm{minor action}.
-\end{ability}
-
-
-
-\parhead{Cantrip} The spell requires a \glossterm{standard action} to cast, and it gains the \glossterm{Sustain} (minor) tag in place of the \glossterm{Attune} tag. If you cast this spell as a cantrip,
-you do not need to spend an \glossterm{action point} to cast it,
-but you cannot apply any augments to it.
-
-
-\parhead{Schools} Illusion
-
-\parhead{Spell Lists} Arcane
-\end{spellsection}
-
-
-\subsubsection{Subspells}
-
-
-\begin{ability}[\nth{2}]{Mirror Image}[\glossterm{Attune} (shared), \glossterm{Figment}, \glossterm{Visual}]
-Choose a willing creature within \rngclose range.
-Four illusory duplicates appear around the target that mirror its every move.
-The duplicates shift chaotically in its space, making it difficult to identify the real creature.
-
-All \glossterm{targeted} attacks against the target have a 50\% miss chance.
-Whenever an attack misses in this way, it affects an image, destroying it.
-This ability provides no defensive benefit against creatures immune to \glossterm{Visual} abilities.
-\end{ability}
-\vspace{0.25em}
-
-
-\begin{ability}[\nth{2}]{Suppress Light}[\glossterm{Attune}, \glossterm{Glamer}, \glossterm{Light}]
-Choose a Small or smaller unattended object within \rngclose range.
-This subspell suppresses light in a \areamed radius emanation from the target.
-Light within or passing through the area is dimmed to be no brighter than shadowy illumination.
-Any effect or object which blocks light also blocks this spell's emanation.
-\end{ability}
-\vspace{0.25em}
-
-
-\begin{ability}[\nth{3}]{Disguise Image}[\glossterm{Attune} (shared), \glossterm{Glamer}, \glossterm{Visual}]
-Choose a willing creature within \rngclose range.
-You make a Disguise check to alter the target's appearance (see \pcref{Disguise Creature}).
-You gain a \plus5 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form.
-However, this effect is unable to alter the sound, smell, texture, or temperature of the target or its clothes and equipment.
-\end{ability}
-\vspace{0.25em}
-
-
-\begin{ability}[\nth{4}]{Shadow Mantle}
-This subspell functions like the \spell{distort image} spell, except that the spell's deceptive nature extends beyond altering light to affect the nature of reality itself.
-The defense bonus it provides applies to all defenses.
-In addition, the spell loses the \glossterm{Visual} tag, and can protect against attacks from creatures immune to Visual abilities.
-\end{ability}
-\vspace{0.25em}
-
-
-\begin{ability}[\nth{5}]{Greater Mirror Image}
-This subspell functions like the \textit{mirror image} subspell, except that destroyed images can reappear.
-At the end of each \glossterm{action phase}, one destroyed image reappears, to a maximum of four images.
-\end{ability}
-\vspace{0.25em}
-
-
-\begin{ability}[\nth{7}]{Displacement}
-This subspell functions like the \spell{scry} spell, except that the target's image is futher distorted, and appears to be two to three feet from its real location.
-\glossterm{Targeted} \glossterm{physical attacks} against the target suffer a 50\% miss chance.
-\end{ability}
-\vspace{0.25em}
-
-\newpage
 \begin{spellsection}{Divine Judgment}
 
 \begin{spellheader}
@@ -1115,16 +1079,12 @@ This subspell functions like the \spell{scry} spell, except that the target's im
 \end{spellheader}
 
 
-\begin{ability}{Divine Judgment}
+\begin{ability}{Cantrip}
 Make a Spellpower vs. Mental attack against a creature within \rngmed range.
-\hit The target takes divine \glossterm{standard damage} \plus1d.
+\hit The target takes divine \glossterm{standard damage} \minus1d.
 \end{ability}
 
 
-
-\parhead{Cantrip} The spell deals \minus2d damage. If you cast this spell as a cantrip,
-you do not need to spend an \glossterm{action point} to cast it,
-but you cannot apply any augments to it.
 
 
 \parhead{Schools} Channeling
@@ -1134,6 +1094,13 @@ but you cannot apply any augments to it.
 
 
 \subsubsection{Subspells}
+
+
+\begin{ability}[\nth{1}]{Divine Judgment}
+Make a Spellpower vs. Mental attack against a creature within \rngmed range.
+\hit The target takes divine \glossterm{standard damage} \plus1d.
+\end{ability}
+\vspace{0.25em}
 
 
 \begin{ability}[\nth{2}]{Word of Faith}
@@ -1151,15 +1118,11 @@ Make a Spellpower vs. Mental attack against all enemies in a \areamed radius fro
 
 
 \begin{ability}{Electromancy}[\glossterm{Electricity}]
-Make a Spellpower vs. Reflex attack against everything in a \arealarge, 10 ft.\ wide line from you.
+Make a Spellpower vs. Reflex attack against everything in a \areamed, 5 ft.\ wide line from you.
 \hit Each target takes electricity \glossterm{standard damage} \minus1d.
 \end{ability}
 
 
-
-\parhead{Cantrip} The spell's area becomes a 5 ft.\ wide \areamed line. If you cast this spell as a cantrip,
-you do not need to spend an \glossterm{action point} to cast it,
-but you cannot apply any augments to it.
 
 
 \parhead{Schools} Evocation
@@ -1169,6 +1132,13 @@ but you cannot apply any augments to it.
 
 
 \subsubsection{Subspells}
+
+
+\begin{ability}[\nth{1}]{Lightning Bolt}[\glossterm{Electricity}]
+Make a Spellpower vs. Reflex attack against everything in a \arealarge, 10 ft.\ wide line from you.
+\hit Each target takes electricity \glossterm{standard damage} \minus1d.
+\end{ability}
+\vspace{0.25em}
 
 
 \begin{ability}[\nth{1}]{Shocking Grasp}[\glossterm{Electricity}]
@@ -1200,7 +1170,7 @@ This subspell functions like the \spell{electromancy} spell, except that it affe
 
 
 \begin{ability}[\nth{3}]{Call Lightning}[\glossterm{Electricity}]
-Make a Spellpower vs. Reflex attack against everything in a \arealarge, 5 ft.\ wide vertical line.
+Make a Spellpower vs. Reflex attack against everything in a \arealarge, 5 ft.\ wide vertical line from you.
 If you are outdoors in cloudy or stormy weather, you gain a \plus2 bonus to \glossterm{accuracy} with the attack.
 \hit Each target takes takes electricity \glossterm{standard damage} \plus1d.
 \end{ability}
@@ -1245,20 +1215,16 @@ In addition, make an additional Spellpower vs. Reflex attack against any number 
 \begin{spellsection}{Fabrication}
 
 \begin{spellheader}
-\spelldesc{You conjure acid from thin air onto a foe's flesh}
+\spelldesc{You conjure acid from thin air to land on a foe.}
 \end{spellheader}
 
 
-\begin{ability}{Fabrication}[\glossterm{Acid}, \glossterm{Manifestation}]
+\begin{ability}{Cantrip}[\glossterm{Acid}, \glossterm{Manifestation}]
 Make a Spellpower vs. Reflex attack against one creature or object within \rngmed range.
-\hit The target takes acid \glossterm{standard damage} \plus1d.
+\hit The target takes acid \glossterm{standard damage} \minus1d.
 \end{ability}
 
 
-
-\parhead{Cantrip} The spell deals \minus2d damage. If you cast this spell as a cantrip,
-you do not need to spend an \glossterm{action point} to cast it,
-but you cannot apply any augments to it.
 
 
 \parhead{Schools} Conjuration
@@ -1270,6 +1236,13 @@ but you cannot apply any augments to it.
 \subsubsection{Subspells}
 
 
+\begin{ability}[\nth{1}]{Acid Splash}[\glossterm{Acid}, \glossterm{Manifestation}]
+Make a Spellpower vs. Reflex attack against one creature or object within \rngmed range.
+\hit The target takes acid \glossterm{standard damage} \plus1d.
+\end{ability}
+\vspace{0.25em}
+
+
 \begin{ability}[\nth{1}]{Forge}[\glossterm{Attune}]
 Choose a type of weapon or shield that you are proficient with.
 You create a normal item of that type in your hand.
@@ -1277,13 +1250,6 @@ You create a normal item of that type in your hand.
 The item cannot be constructed of any magical or extraordinary material.
 % This should allow the Giant augment; is this worded to allow that?
 It is sized appropriately for you, up to a maximum of a Medium size item.
-\end{ability}
-\vspace{0.25em}
-
-
-\begin{ability}[\nth{2}]{Arrow}[\glossterm{Manifestation}]
-Make a Spellpower vs. Reflex attack against one creature or object within \rnglong range.
-\hit The target takes piercing \glossterm{standard damage} \plus1d.
 \end{ability}
 \vspace{0.25em}
 
@@ -1317,8 +1283,8 @@ Make a Spellpower vs. Reflex attack against all enemies in a \areasmall radius f
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{3}]{Corrosive}
-This subspell functions like the \spell{fabrication} spell, except that it deals double damage to objects.
+\begin{ability}[\nth{3}]{Corrosive Splash}
+This subspell functions like the \spell{acid splash} spell, except that it deals double damage to objects.
 \end{ability}
 \vspace{0.25em}
 
@@ -1336,8 +1302,8 @@ In addition, the webs are no longer \glossterm{vulnerable} to fire damage.
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{5}]{Lingering}
-This subspell functions like the \spell{fabrication} spell, except that the spell deals \minus1d damage.
+\begin{ability}[\nth{5}]{Lingering Acid Splash}
+This subspell functions like the \spell{acid splash} spell, except that the spell deals \minus1d damage.
 However, if the spell hits, it deals damage to the target again at the end of every \glossterm{action phase} in subsequent rounds.
 This is a \glossterm{condition}, and lasts until removed.
 \end{ability}
@@ -1349,7 +1315,7 @@ You create a meteor in midair that falls to the ground, crushing foes in its pat
 The meteor takes up a \areamed radius, and must be created in unoccupied space.
 After being summoned, it falls up to 100 feet before disappearing.
 Make a Spellpower vs. Reflex attack against everything in its path.
-\hit Each target takes bludgeoning and fire \glossterm{standard damage} \minus1d.
+\hit Each target takes bludgeoning and fire \glossterm{standard damage}.
 \end{ability}
 \vspace{0.25em}
 
@@ -1362,22 +1328,107 @@ If one of the meteors is created in an invalid area, that meteor is not created,
 \vspace{0.25em}
 
 \newpage
-\begin{spellsection}{Flare}
+\begin{spellsection}{Glamer}
+
+\begin{spellheader}
+\spelldesc{}
+\end{spellheader}
 
 
-\begin{ability}{Flare}[\glossterm{Figment}, \glossterm{Light}, \glossterm{Visual}]
-This spell creates brilliant light in a \areasmall radius within \rngmed range of you.
-It illuminates a 100 foot radius around the area with bright light until the end of the round.
-Make a Spellpower vs. Reflex attack against all creatures in the source area.
-\hit Each target is \dazzled as a \glossterm{condition}.
-\crit Each target is \blinded as a \glossterm{condition}.
+\begin{ability}{Cantrip}[\glossterm{Sensation}, \glossterm{Visual}]
+TODO
 \end{ability}
 
 
 
-\parhead{Cantrip} The spell affects a single target within range instead of creating a burst. If you cast this spell as a cantrip,
+\parhead{Cantrip} The spell requires a \glossterm{standard action} to cast, and it gains the \glossterm{Sustain} (minor) tag in place of the \glossterm{Attune} tag. If you cast this spell as a cantrip,
 you do not need to spend an \glossterm{action point} to cast it,
 but you cannot apply any augments to it.
+
+
+\parhead{Schools} Illusion
+
+\parhead{Spell Lists} Arcane
+\end{spellsection}
+
+
+\subsubsection{Subspells}
+
+
+\begin{ability}[\nth{1}]{Blur}[\glossterm{Attune} (shared), \glossterm{Sensation}, \glossterm{Visual}]
+Choose a willing creature within \rngmed range.
+The target's physical outline is distorted so it appears blurred, shifting, and wavering.
+It gains a \plus1 \glossterm{magic bonus} to Armor defense and Stealth (see \pcref{Stealth}).
+This effect provides no defensive benefit against creatures immune to \glossterm{Visual} abilities.
+
+You can cast this spell as a \glossterm{minor action}.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{2}]{Mirror Image}[\glossterm{Attune} (shared), \glossterm{Sensation}, \glossterm{Visual}]
+Choose a willing creature within \rngclose range.
+Four illusory duplicates appear around the target that mirror its every move.
+The duplicates shift chaotically in its space, making it difficult to identify the real creature.
+
+All \glossterm{targeted} attacks against the target have a 50\% miss chance.
+Whenever an attack misses in this way, it affects an image, destroying it.
+This ability provides no defensive benefit against creatures immune to \glossterm{Visual} abilities.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{2}]{Suppress Light}[\glossterm{Attune}, \glossterm{Light}, \glossterm{Sensation}]
+Choose a Small or smaller unattended object within \rngclose range.
+This subspell suppresses light in a \areamed radius emanation from the target.
+Light within or passing through the area is dimmed to be no brighter than shadowy illumination.
+Any effect or object which blocks light also blocks this spell's emanation.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{3}]{Disguise Image}[\glossterm{Attune} (shared), \glossterm{Sensation}, \glossterm{Visual}]
+Choose a willing creature within \rngclose range.
+You make a Disguise check to alter the target's appearance (see \pcref{Disguise Creature}).
+You gain a \plus5 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form.
+However, this effect is unable to alter the sound, smell, texture, or temperature of the target or its clothes and equipment.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{4}]{Shadow Mantle}
+This subspell functions like the \spell{distort image} spell, except that the spell's deceptive nature extends beyond altering light to affect the nature of reality itself.
+The defense bonus it provides applies to all defenses.
+In addition, the spell loses the \glossterm{Visual} tag, and can protect against attacks from creatures immune to Visual abilities.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{5}]{Greater Mirror Image}
+This subspell functions like the \textit{mirror image} subspell, except that destroyed images can reappear.
+At the end of each \glossterm{action phase}, one destroyed image reappears, to a maximum of four images.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{7}]{Displacement}
+This subspell functions like the \spell{scry} spell, except that the target's image is futher distorted, and appears to be two to three feet from its real location.
+\glossterm{Targeted} \glossterm{physical attacks} against the target suffer a 50\% miss chance.
+\end{ability}
+\vspace{0.25em}
+
+\newpage
+\begin{spellsection}{Photomancy}
+
+
+\begin{ability}{Cantrip}[\glossterm{Light}, \glossterm{Sensation}, \glossterm{Visual}]
+Make a Spellpower vs. Reflex attack against one creature, object, or location within \rngmed range.
+Bright light illuminates a 100 foot radius around the target until the end of the round.
+\hit The target is \dazzled as a \glossterm{condition}.
+\crit The target is \blinded as a \glossterm{condition}.
+\end{ability}
+
+
 
 
 \parhead{Schools} Illusion
@@ -1389,23 +1440,26 @@ but you cannot apply any augments to it.
 \subsubsection{Subspells}
 
 
+\begin{ability}[\nth{1}]{Flare}[\glossterm{Light}, \glossterm{Sensation}, \glossterm{Visual}]
+A burst of light light fills a \areasmall radius within \rngmed range of you.
+Bright light illuminates a 100 foot radius around the area until the end of the round.
+Make a Spellpower vs. Reflex attack against all creatures in the source area.
+\hit Each target is \dazzled as a \glossterm{condition}.
+\crit Each target is \blinded as a \glossterm{condition}.
+\end{ability}
+\vspace{0.25em}
+
+
 \begin{ability}[\nth{2}]{Illuminating}
-This subspell functions like the \spell{flare} spell, except that it gains the \glossterm{Sustain} (minor) tag.
+This subspell functions like the \spell{flare} subspell, except that it gains the \glossterm{Sustain} (minor) tag.
 The area affected by the spell becomes an illuminated \glossterm{zone}.
 At the end of each \glossterm{action phase} in subsequent rounds, the attack is repeated in that area.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{2}]{Pinpoint}
-This subspell functions like the \spell{flare} spell, except that it only targets one creature within \rngmed range.
-However, you gain a \plus2 bonus to accuracy on the attack.
-\end{ability}
-\vspace{0.25em}
-
-
 \begin{ability}[\nth{3}]{Faerie Fire}
-This subspell functions like the \spell{flare} spell, except that each struck target is surrounded with a pale glow made of hundreds of ephemeral points of light.
+This subspell functions like the \spell{flare} subspell, except that each struck target is surrounded with a pale glow made of hundreds of ephemeral points of light.
 This causes the struck target to radiate bright light in a 5 foot radius, as a candle.
 The lights impose a \minus10 penalty to Stealth checks.
 In addition, they reveal the outline of the creatures if they become \glossterm{invisible}.
@@ -1414,7 +1468,7 @@ This allows observers to see their location, though not to see them perfectly.
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{3}]{Kaleidoscopic}[\glossterm{Figment}, \glossterm{Light}, \glossterm{Mind}, \glossterm{Visual}]
+\begin{ability}[\nth{3}]{Kaleidoscopic}[\glossterm{Light}, \glossterm{Mind}, \glossterm{Sensation}, \glossterm{Visual}]
 This subspell creates a brilliant, rapidly shifting rainbow of lights in a \areasmall radius within \rngmed range of you.
 They illuminate a 100 foot radius around the area with bright light until the end of the round.
 Make a Spellpower vs. Mental attack against all creatures in the source area.
@@ -1425,28 +1479,28 @@ Make a Spellpower vs. Mental attack against all creatures in the source area.
 
 
 \begin{ability}[\nth{4}]{Flashbang}
-This subspell functions like the \spell{flare} spell, except that an intense sound accompanies the flash of light caused by the spell.
+This subspell functions like the \spell{flare} subspell, except that an intense sound accompanies the flash of light caused by the spell.
 Each struck target is also \glossterm{deafened} as an additional \glossterm{condition}.
-This subspell gains the \glossterm{auditory} tag in addition to the tags from the \spell{flare} spell.
+This subspell gains the \glossterm{auditory} tag in addition to the tags from the \spell{flare} subspell.
 \end{ability}
 \vspace{0.25em}
 
 
 \begin{ability}[\nth{4}]{Pillars of Light}
-This subspell functions like the \spell{flare} spell, except that it affects up to five different \areasmall radius, 50 ft. tall cylinders within range.
+This subspell functions like the \spell{flare} subspell, except that it affects up to five different \areasmall radius, 50 ft. tall cylinders within range.
 The areas can overlap, but targets in the overlapping area are only affected once.
 \end{ability}
 \vspace{0.25em}
 
 
 \begin{ability}[\nth{5}]{Blinding}
-This subspell functions like the \spell{flare} spell, except that each struck target is \glossterm{blinded} instead of \glossterm{dazzled}.
+This subspell functions like the \spell{flare} subspell, except that each struck target is \glossterm{blinded} instead of \glossterm{dazzled}.
 \end{ability}
 \vspace{0.25em}
 
 
 \begin{ability}[\nth{6}]{Solar}
-This subspell functions like the \spell{flare} spell, except that you gain a \plus2 bonus to accuracy with the attack.
+This subspell functions like the \spell{flare} subspell, except that you gain a \plus2 bonus to accuracy with the attack.
 In addition, the light is treated as being natural sunlight for the purpose of abilities.
 This can allow it to destroy vampires and have similar effects.
 \end{ability}
@@ -1462,14 +1516,10 @@ This can allow it to destroy vampires and have similar effects.
 
 \begin{ability}{Polymorph}[\glossterm{Shaping}]
 Make a Spellpower vs. Fortitude attack against a creature within \rngmed range.
-\hit The target takes physical \glossterm{standard damage} \plus1d.
+\hit The target takes physical \glossterm{standard damage} \minus1d.
 \end{ability}
 
 
-
-\parhead{Cantrip} The spell deals \minus2d damage. If you cast this spell as a cantrip,
-you do not need to spend an \glossterm{action point} to cast it,
-but you cannot apply any augments to it.
 
 
 \parhead{Schools} Transmutation
@@ -1479,6 +1529,13 @@ but you cannot apply any augments to it.
 
 
 \subsubsection{Subspells}
+
+
+\begin{ability}[\nth{1}]{Baleful Polymorph}[\glossterm{Shaping}]
+Make a Spellpower vs. Fortitude attack against a creature within \rngmed range.
+\hit The target takes physical \glossterm{standard damage} \plus1d.
+\end{ability}
+\vspace{0.25em}
 
 
 \begin{ability}[\nth{1}]{Mending}
@@ -1587,16 +1644,12 @@ This subspell functions like the \spell{enlarge} subspell, except that the targe
 \end{spellheader}
 
 
-\begin{ability}{Pyromancy}[\glossterm{Fire}]
-Make a Spellpower vs. Reflex attack against everything in a \areasmall radius within \rngclose range.
-\hit Each target takes fire \glossterm{standard damage} \minus1d.
+\begin{ability}{Cantrip}[\glossterm{Fire}]
+Make a Spellpower vs. Reflex attack against one creature or object within \rngmed range.
+\hit The target takes fire \glossterm{standard damage} \minus1d.
 \end{ability}
 
 
-
-\parhead{Cantrip} The spell affects a single target within range instead of creating a burst. If you cast this spell as a cantrip,
-you do not need to spend an \glossterm{action point} to cast it,
-but you cannot apply any augments to it.
 
 
 \parhead{Schools} Evocation
@@ -1608,7 +1661,14 @@ but you cannot apply any augments to it.
 \subsubsection{Subspells}
 
 
-\begin{ability}[\nth{1}]{Firebolt}
+\begin{ability}[\nth{1}]{Fireball}[\glossterm{Fire}]
+Make a Spellpower vs. Reflex attack against everything in a \areasmall radius within \rngclose range.
+\hit Each target takes fire \glossterm{standard damage} \minus1d.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{1}]{Firebolt}[\glossterm{Fire}]
 Make a Spellpower vs. Reflex attack against one creature within \rngmed range.
 \hit The target takes fire \glossterm{standard damage} \plus1d.
 \end{ability}
@@ -1616,25 +1676,16 @@ Make a Spellpower vs. Reflex attack against one creature within \rngmed range.
 
 
 \begin{ability}[\nth{2}]{Blast Furnace}
-This subspell functions like the \spell{pyromancy} spell, except that it gains the \glossterm{Sustain} (standard) tag.
+This subspell functions like the \spell{fireball} subspell, except that it gains the \glossterm{Sustain} (standard) tag.
 The area affected by the spell becomes a \glossterm{zone} that is continuously engulfed in flames.
 At the end of each \glossterm{action phase} in subsequent rounds, the attack is repeated in that area.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{2}]{Burning Hands}
-This subspell functions like the \spell{pyromancy} spell, except that it targets everything in a \arealarge cone from you.
-\end{ability}
-\vspace{0.25em}
-
-
-\begin{ability}[\nth{2}]{Flame Blade}[\glossterm{Attune} (shared), \glossterm{Fire}]
-Choose a willing creature within \rngclose range.
-Melee weapons wielded by the target gain a \plus1d \glossterm{magic bonus} to \glossterm{strike damage}.
-In addition, all \glossterm{strike damage} dealt with its weapons becomes fire damage in addition to the attack's normal damage types.
-
-You can cast this subspell as a \glossterm{minor action}.
+\begin{ability}[\nth{2}]{Burning Hands}[\glossterm{Fire}]
+Make a Spellpower vs. Reflex attack against everything in a \arealarge cone.
+\hit Each target takes fire \glossterm{standard damage} \minus1d.
 \end{ability}
 \vspace{0.25em}
 
@@ -1650,27 +1701,43 @@ After the object explodes in this way, the spell is \glossterm{dismissed}.
 \vspace{0.25em}
 
 
+\begin{ability}[\nth{3}]{Flame Blade}[\glossterm{Attune} (shared), \glossterm{Fire}]
+Choose a willing creature within \rngclose range.
+Weapons wielded by the target gain a \plus1d \glossterm{magic bonus} to \glossterm{strike damage}.
+In addition, all \glossterm{strike damage} dealt with its weapons becomes fire damage in addition to the attack's normal damage types.
+
+You can cast this subspell as a \glossterm{minor action}.
+\end{ability}
+\vspace{0.25em}
+
+
 \begin{ability}[\nth{3}]{Ignition}
-This subspell functions like the \spell{pyromancy} spell, except that each target hit is also \glossterm{ignited} until it puts out the fire.
+This subspell functions like the \spell{fireball} subspell, except that each target hit is also \glossterm{ignited} until it puts out the fire.
 \end{ability}
 \vspace{0.25em}
 
 
 \begin{ability}[\nth{4}]{Fearsome Flame}
-This subspell functions like the \spell{pyromancy} spell, except that the attack result is also compared to each target's Mental defense.
+This subspell functions like the \spell{fireball} subspell, except that the attack result is also compared to each target's Mental defense.
 \hit Each target is \glossterm{shaken} as a \glossterm{condition}.
 \end{ability}
 \vspace{0.25em}
 
 
 \begin{ability}[\nth{4}]{Flame Serpent}
-This subspell functions like the \spell{pyromancy} spell, except that it targets everything in a \arealarge, 10 ft.\ wide shapeable line within \rngmed range.
+This subspell functions like the \spell{fireball} subspell, except that it targets everything in a \arealarge, 10 ft.\ wide shapeable line within \rngmed range.
 \end{ability}
 \vspace{0.25em}
 
 
 \begin{ability}[\nth{5}]{Greater Blast Furnace}
 This subspell functions like the \textit{blast furnace} subspell, except that the spell gains the \glossterm{Sustain} (minor) tag instead of the \glossterm{Sustain} (standard) tag.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{5}]{Inferno}
+This subspell functions like the \textit{fireball} subspell, except that it affects a \arealarge radius within \rngmed range.
 \end{ability}
 \vspace{0.25em}
 
@@ -1689,9 +1756,15 @@ If you do, it increases the area of the emanation.
 
 
 \begin{ability}[\nth{6}]{Greater Ignition}
-This subspell functions like the \spell{pyromancy} spell, except that each target hit is also \glossterm{ignited} as a \glossterm{condition}.
+This subspell functions like the \spell{fireball} subspell, except that each target hit is also \glossterm{ignited} as a \glossterm{condition}.
 Unlike the normal ignited effect, this condition cannot be removed by putting out the fire.
 In addition, the ignited effect deals fire \glossterm{standard damage} \minus3d instead of the normal 1d6 fire damage each round.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{9}]{Greater Inferno}
+This subspell functions like the \textit{fireball} subspell, except that it affects a 200 ft.\ radius within \rnglong range.
 \end{ability}
 \vspace{0.25em}
 
@@ -1709,18 +1782,12 @@ This subspell functions like the \textit{greater ignition} subspell, except that
 \end{spellheader}
 
 
-\begin{ability}{Revelation}[\glossterm{Attune} (shared)]
+\begin{ability}{Cantrip}
 Choose a willing creature within \rngclose range.
-The target gains a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} with all attacks.
-
-You can cast this spell as a \glossterm{minor action}.
+On the first \glossterm{strike} the target makes during the next round, it rolls twice and takes the higher result.
 \end{ability}
 
 
-
-\parhead{Cantrip} The spell requires a \glossterm{standard action} to cast, and it gains the \glossterm{Sustain} (minor) tag in place of the \glossterm{Attune (shared)} tag. If you cast this spell as a cantrip,
-you do not need to spend an \glossterm{action point} to cast it,
-but you cannot apply any augments to it.
 
 
 \parhead{Schools} Divination
@@ -1734,7 +1801,30 @@ but you cannot apply any augments to it.
 
 \begin{ability}[\nth{1}]{Precognitive Defense}
 Choose a willing creature within \rngclose range.
-The target gains a \plus1 \glossterm{magic bonus} to Armor defense.
+The target gains a \plus1 \glossterm{magic bonus} to Armor defense and Reflex defense.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{1}]{Precognitive Offense}[\glossterm{Attune} (shared)]
+Choose a willing creature within \rngclose range.
+The target gains a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} with all attacks.
+
+You can cast this spell as a \glossterm{minor action}.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{1}]{True Strike}
+Choose a willing creature within \rngclose range.
+On the first \glossterm{strike} the target makes during the next round, it gains a \plus4 bonus to \glossterm{accuracy} and rolls twice and takes the higher result.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{2}]{Boon of Mastery}
+Choose a willing creature within \rngclose range.
+The target gains a \plus2 \glossterm{magic bonus} to all skills.
 \end{ability}
 \vspace{0.25em}
 
@@ -1748,7 +1838,8 @@ This ability does not reveal the truth, uncover unintentional inaccuracies, or n
 
 
 \begin{ability}[\nth{2}]{Foresight}
-This subspell functions like the \spell{revelation} spell, except that the target also gains a \plus2 \glossterm{magic bonus} to Reflex defense and \glossterm{initiative} checks.
+Choose a willing creature within \rngclose range.
+The target gains a \plus4 \glossterm{magic bonus} to \glossterm{initiative} checks.
 \end{ability}
 \vspace{0.25em}
 
@@ -1773,52 +1864,53 @@ After using this subspell, you cannot cast it again until the hour affected by t
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{3}]{Boon of Mastery}
-This subspell functions like the \spell{revelation} spell, except that the target also gains a \plus2 \glossterm{magic bonus} to all skills.
+\begin{ability}[\nth{3}]{Boon of Knowledge}
+The target gains a \plus4 \glossterm{magic bonus} to all Knowledge skills (see \pcref{Knowledge}).
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{4}]{Boon of Knowledge}
-This subspell functions like the \spell{revelation} spell, except that the target also gains a \plus4 \glossterm{magic bonus} to all Knowledge skills (see \pcref{Knowledge}).
-\end{ability}
-\vspace{0.25em}
-
-
-\begin{ability}[\nth{4}]{Third Eye}
-This subspell functions like the \spell{revelation} spell, except that the target also gains \glossterm{blindsight} with a 50 foot range.
+\begin{ability}[\nth{3}]{Third Eye}
+Choose a willing creature within \rngclose range.
+The target gains \glossterm{blindsight} with a 50 foot range.
 This can allow it to see perfectly without any light, regardless of concealment or invisibility.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{5}]{Boon of Many Eyes}
-This subspell functions like the \spell{revelation} spell, except that the target also gains a \plus1 \glossterm{magic bonus} to \glossterm{overwhelm resistance}.
-\end{ability}
-\vspace{0.25em}
-
-
-\begin{ability}[\nth{5}]{Empowered}
-The accuracy bonus increases to \plus2.
-\end{ability}
-\vspace{0.25em}
-
-
-\begin{ability}[\nth{6}]{Greater Precognitive Defense}
+\begin{ability}[\nth{4}]{Boon of Many Eyes}
 Choose a willing creature within \rngclose range.
-The target gains a \plus2 \glossterm{magic bonus} to Armor defense.
+The target gains a \plus1 \glossterm{magic bonus} to \glossterm{overwhelm resistance}.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{7}]{Greater Boon of Mastery}
-This subspell functions like the \spell{revelation} spell, except that the target also gains a \plus4 \glossterm{magic bonus} to all skills.
+\begin{ability}[\nth{5}]{Greater Precognitive Defense}
+This subspell functions like the \spell{precognitive defense} subspell, except that the bonus is increased to \plus2.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{5}]{Greater Precognitive Offense}
+This subspell functions like the \spell{precognitive offense} subspell, except that the bonus is increased to \plus2.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{6}]{Greater Boon of Mastery}
+This subspell functions like the \spell{boon of mastery} spell, except that the bonus is increased to \plus4.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{6}]{Greater True Strike}
+This subspell functions like the \textit{true strike} subspell, except that the bonus is increased to \plus8.
 \end{ability}
 \vspace{0.25em}
 
 
 \begin{ability}[\nth{7}]{Greater Foresight}
-This subspell functions like the \subspell{foresight} subspell, except that the bonuses to Reflex defense and initiative checks are increased to \plus4.
+This subspell functions like the \subspell{foresight} subspell, except that the bonus is increased to \plus8.
 In addition, the target is not \glossterm{unaware} when attacked by surprise.
 \end{ability}
 \vspace{0.25em}
@@ -1831,26 +1923,12 @@ In addition, the target is not \glossterm{unaware} when attacked by surprise.
 \end{spellheader}
 
 
-\begin{ability}{Scry}[\glossterm{Attune}, \glossterm{Scrying}]
-A \glossterm{scrying sensor} appears floating in the air in an unoccupied square within \rngmed range.
-At the start of each round, you choose whether you see from this sensor or from your body.
-
-While viewing through the sensor, your visual acuity is the same as your normal body, except that it does not share the benefits of any \glossterm{magical} effects that improve your vision.
-You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \blinded.
-
-If undisturbed, the sensor floats in the air in its position.
-As a \glossterm{minor action}, you can concentrate to move the sensor up to 30 feet in any direction, even vertically.
-At the end of each round, if the sensor is does not have \glossterm{line of effect} from you, it is destroyed.
+\begin{ability}{Cantrip}[\glossterm{Attune}, \glossterm{Scrying}]
+This cantrip functions like the \textit{arcane eye} subspell, except that it gains the \glossterm{Sustain} (minor) tag in place of the \glossterm{Attune} tag.",
+In addition, the sensor cannot be moved after it is originally created.
 \end{ability}
 
 
-
-\parhead{Cantrip}
-The sensor cannot be moved after it is originally created.
-In addition, the spell gains the \glossterm{Sustain} (minor) tag in place of the \glossterm{Attune} tag.",
-If you cast this spell as a cantrip,
-you do not need to spend an \glossterm{action point} to cast it,
-but you cannot apply any augments to it.
 
 
 \parhead{Schools} Divination
@@ -1872,14 +1950,28 @@ This mental sensation is strong enough to wake you from normal sleep, but does n
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{2}]{Accelerated}
-This subspell functions like the \spell{scry} spell, except that the sensor moves up to 100 feet when moved instead of up to 30 feet.
+\begin{ability}[\nth{1}]{Arcane Eye}[\glossterm{Attune}, \glossterm{Scrying}]
+A \glossterm{scrying sensor} appears floating in the air in an unoccupied square within \rngmed range.
+At the start of each round, you choose whether you see from this sensor or from your body.
+
+While viewing through the sensor, your visual acuity is the same as your normal body, except that it does not share the benefits of any \glossterm{magical} effects that improve your vision.
+You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \blinded.
+
+If undisturbed, the sensor floats in the air in its position.
+As a \glossterm{minor action}, you can concentrate to move the sensor up to 30 feet in any direction, even vertically.
+At the end of each round, if the sensor is does not have \glossterm{line of effect} from you, it is destroyed.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{2}]{Auditory}
-This subspell functions like the \spell{scry} spell, except that you can you can also hear through the sensor.
+\begin{ability}[\nth{2}]{Accelerated Eye}
+This subspell functions like the \spell{arcane eye} subspell, except that the sensor moves up to 100 feet when moved instead of up to 30 feet.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{2}]{Auditory Eye}
+This subspell functions like the \spell{arcane eye} subspell, except that you can you can also hear through the sensor.
 At the start of each round, you can choose whether you hear from the sensor or from your body.
 This choice is made independently from your sight.
 The sensor's auditory acuity is the same as your own, except that it does not share the benefits of any \glossterm{magical} effects that improve your hearing.
@@ -1887,15 +1979,14 @@ The sensor's auditory acuity is the same as your own, except that it does not sh
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{2}]{Dual}
-This subspell functions like the \spell{scry} spell, except that you create an additional sensor in another location within range.
-You must move and see through each sensor individually.
+\begin{ability}[\nth{3}]{Autonomous Eye}
+This subspell functions like the \spell{arcane eye} subspell, except that the sensor is not destroyed when it loses \glossterm{line of effect} to you.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{3}]{Autonomous}
-This subspell functions like the \spell{scry} spell, except that the sensor is not destroyed when it loses \glossterm{line of effect} to you.
+\begin{ability}[\nth{3}]{Greater Alarm}
+This subspell functions like the \textit{alarm} subspell, except that the sensor gains 100 ft.\ \glossterm{darkvision} and its Awareness bonus is equal to your \glossterm{spellpower}.
 \end{ability}
 \vspace{0.25em}
 
@@ -1903,12 +1994,12 @@ This subspell functions like the \spell{scry} spell, except that the sensor is n
 \begin{ability}[\nth{4}]{Reverse Scrying}
 Choose a magical sensor within \rngmed range.
 A new scrying sensor appears at the location of the source of the the ability that created the target sensor.
-This sensor functions like the sensor created by the \spell{scry} spell, except that the sensor cannot move and it is not destroyed if it does not have \glossterm{line of effect} to you.
+This sensor functions like the sensor created by the \spell{arcane eye} subspell, except that the sensor cannot move and it is not destroyed if it does not have \glossterm{line of effect} to you.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{5}]{Penetrating}
+\begin{ability}[\nth{5}]{Penetrating Eye}
 This subspell functions like the \spell{autonomous} subspell, except that you do not need \glossterm{line of sight} or \glossterm{line of effect} to target a location.
 You must specify a distance and direction to target a location you cannot see.
 This can allow you to cast the spell beyond walls and similar obstacles.
@@ -1925,28 +2016,44 @@ The image does not have to be perfect, but it must unambiguously identify the ta
 If you specify its appearance incorrectly, or if the target has changed its appearance, you may accidentally target a different creature, or the spell may simply be \glossterm{miscast}.
 This attack roll cannot \glossterm{explode}.
 \hit A scrying sensor appears in the target's space.
-This sensor functions like the sensor created by the \spell{scry} spell, except that you cannot move the sensor manually.
+This sensor functions like the sensor created by the \spell{arcane eye} subspell, except that you cannot move the sensor manually.
 Instead, it automatically tries to follow the target to stay in its space.
 At the end of each phase, if the sensor is not in the target's space, this effect is \glossterm{dismissed}.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{5}]{Split Senses}
-This subspell functions like the \spell{scry} spell, except that you constantly receive sensory input from both your body and the sensor.
+\begin{ability}[\nth{5}]{Twin Eye}
+This subspell functions like the \spell{arcane eye} subspell, except that you constantly receive sensory input from both your body and the sensor.
 This allows you to see simultaneously from your body and from the sensor.
 \end{ability}
 \vspace{0.25em}
 
 \newpage
-\begin{spellsection}{Summon Monster}
+\begin{spellsection}{Summon}
 
 \begin{spellheader}
 \spelldesc{You summon a creature to fight by your side.}
 \end{spellheader}
 
 
-\begin{ability}{Summon Monster}[\glossterm{Manifestation}, \glossterm{Sustain} (minor)]
+\begin{ability}{Summon Monster}[\glossterm{Manifestation}, \glossterm{Sustain} (standard)]
+This cantrip functions like the \spell{summon monster} subspell, except that it has the \glossterm{Sustain} (standard) tag instead of the \glossterm{Sustain} (minor) tag.
+\end{ability}
+
+
+
+
+\parhead{Schools} Conjuration
+
+\parhead{Spell Lists} Arcane, Divine, Nature
+\end{spellsection}
+
+
+\subsubsection{Subspells}
+
+
+\begin{ability}[\nth{1}]{Summon Monster}[\glossterm{Manifestation}, \glossterm{Sustain} (minor)]
 You summon a creature in an unoccupied square within \rngmed range.
 It visually appears to be a common Small or Medium animal of your choice, though in reality it is a manifestation of magical energy.
 Regardless of the appearance and size chosen, the creature has hit points equal to twice your spellpower.
@@ -1961,21 +2068,7 @@ If it hits, it deals \glossterm{standard damage} \minus2d.
 The type of damage dealt by this attack depends on the creature's appearance.
 Most animals bite or claw their foes, which deals bludgeoning and slashing damage.
 \end{ability}
-
-
-
-\parhead{Cantrip} The spell gains the \glossterm{Sustain} (standard) tag in place of the \glossterm{Sustain} (minor) tag. If you cast this spell as a cantrip,
-you do not need to spend an \glossterm{action point} to cast it,
-but you cannot apply any augments to it.
-
-
-\parhead{Schools} Conjuration
-
-\parhead{Spell Lists} Arcane, Divine, Nature
-\end{spellsection}
-
-
-\subsubsection{Subspells}
+\vspace{0.25em}
 
 
 \begin{ability}[\nth{2}]{Summon Bear}
@@ -2073,19 +2166,14 @@ This subspell functions like the \spell{levitate} subspell, except that you can 
 \begin{spellsection}{Thaumaturgy}
 
 
-\begin{ability}{Thaumaturgy}[\glossterm{Mystic}, \glossterm{Sustain} (minor)]
-Make a Spellpower attack against one creature, object, or magical effect within \rngmed range.
-If you target a creature or object, the attack result is applied to every \glossterm{magical} effect on the target.
-If you target a magical effect directly, the attack result is applied against the effect itself.
+\begin{ability}{Cantrip}[\glossterm{Mystic}, \glossterm{Sustain} (standard)]
+Make a Spellpower attack against one creature within \rngmed range.
+The attack result is applied to every \glossterm{magical} effect on the target.
 The DR for each effect is equal to 5 + the \glossterm{power} of that effect.
 \hit Each effect is \glossterm{suppressed}.
 \end{ability}
 
 
-
-\parhead{Cantrip} The spell gains the \glossterm{Sustain} (standard) tag in place of the \glossterm{Sustain} (minor) tag. If you cast this spell as a cantrip,
-you do not need to spend an \glossterm{action point} to cast it,
-but you cannot apply any augments to it.
 
 
 \parhead{Schools} Abjuration
@@ -2113,6 +2201,16 @@ Make a Spellpower vs. Mental attack against one Large or smaller magical object 
 \vspace{0.25em}
 
 
+\begin{ability}[\nth{1}]{Suppress Magic}[\glossterm{Mystic}, \glossterm{Sustain} (standard)]
+Make a Spellpower attack against one creature, object, or magical effect within \rngmed range.
+If you target a creature or object, the attack result is applied to every \glossterm{magical} effect on the target.
+If you target a magical effect directly, the attack result is applied against the effect itself.
+The DR for each effect is equal to 5 + the \glossterm{power} of that effect.
+\hit Each effect is \glossterm{suppressed}.
+\end{ability}
+\vspace{0.25em}
+
+
 \begin{ability}[\nth{2}]{Dimensional Anchor}[\glossterm{Mystic}]
 Make a Spellpower vs. Mental attack against a creature or object within \rngmed range.
 \hit As a \glossterm{condition}, the target is unable to travel extradimensionally.
@@ -2131,12 +2229,19 @@ In addition, make a Spellpower vs. Mental attack against a creature within \rngm
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{3}]{Banishing}[\glossterm{Mystic}]
+\begin{ability}[\nth{3}]{Dismissal}[\glossterm{Mystic}]
 Make a Spellpower attack against one creature or object within \rngmed range.
 If the target is an effect of an ongoing \glossterm{magical} ability, such as a summoned monster or created object, the DR is equal to 5 + add the \glossterm{power} of the ability.
 Otherwise, this subspell has no effect.
 \hit The target is treated as if the ability that created it was \glossterm{dismissed}.
 This usually causes the target to disappear.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{4}]{Enhance Magic}[\glossterm{Attune} (shared), \glossterm{Mystic}]
+Choose a willing creature within \rngmed range.
+The target gains a \plus1 enhancement bonus to \glossterm{spellpower}.
 \end{ability}
 \vspace{0.25em}
 
@@ -2168,20 +2273,22 @@ In addition, make a Spellpower vs. Mental attack against a creature within \rngm
 \end{ability}
 \vspace{0.25em}
 
+
+\begin{ability}[\nth{8}]{Greater Enhance Magic}[\glossterm{Attune} (shared), \glossterm{Mystic}]
+This subspell functions like the \textit{enhance magic} subspell, except that the bonus is increased to \plus2.
+\end{ability}
+\vspace{0.25em}
+
 \newpage
 \begin{spellsection}{Vital Surge}
 
 
 \begin{ability}{Vital Surge}[\glossterm{Life}]
 Make a Spellpower vs. Fortitude attack against a creature within \rngmed range.
-\hit The target takes life damage equal to \glossterm{standard damage} \plus1d.
+\hit The target takes life damage equal to \glossterm{standard damage} \minus1d.
 \end{ability}
 
 
-
-\parhead{Cantrip} The spell deals \minus2d damage. If you cast this spell as a cantrip,
-you do not need to spend an \glossterm{action point} to cast it,
-but you cannot apply any augments to it.
 
 
 \parhead{Schools} Vivimancy
@@ -2193,9 +2300,16 @@ but you cannot apply any augments to it.
 \subsubsection{Subspells}
 
 
-\begin{ability}[\nth{1}]{Cure Wounds}
+\begin{ability}[\nth{1}]{Cure Wounds}[\glossterm{Life}]
 Choose a willing creature within \rngmed range.
 The target heals hit points equal to \glossterm{standard damage} \plus1d.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{1}]{Inflict Wounds}[\glossterm{Life}]
+Make a Spellpower vs. Fortitude attack against a creature within \rngmed range.
+\hit The target takes life damage equal to \glossterm{standard damage} \plus1d.
 \end{ability}
 \vspace{0.25em}
 
@@ -2217,7 +2331,7 @@ When this spell resolves, and the end of each \glossterm{action phase} in subseq
 
 
 \begin{ability}[\nth{3}]{Drain Life}
-This subspell functions like the \spell{vital surge} spell, except that you heal hit points equal to half the damage dealt.
+This subspell functions like the \spell{inflict wounds} subspell, except that you heal hit points equal to half the damage dealt.
 \end{ability}
 \vspace{0.25em}
 
@@ -2244,7 +2358,7 @@ When this spell resolves, and the end of each \glossterm{action phase} in subseq
 
 
 \begin{ability}[\nth{4}]{Death Knell}[\glossterm{Death}]
-This subspell functions like the \spell{vital surge} spell, except that a struck target suffers a death knell as an additional \glossterm{condition}.
+This subspell functions like the \spell{inflict wounds} subspell, except that a struck target suffers a death knell as an additional \glossterm{condition}.
 At the end of each round, if the target has 0 hit points, it immediately dies.
 \end{ability}
 \vspace{0.25em}
@@ -2264,17 +2378,9 @@ In addition, it heals \glossterm{vital damage} as easily as it heals hit points.
 \end{spellheader}
 
 
-\begin{ability}{Weaponcraft}[\glossterm{Manifestation}, \glossterm{Sustain} (minor)]
-A melee weapon that you are proficient with appears in an unoccupied square within \rngmed range.
-The weapon floats about three feet off the ground, and is sized appropriately for a creature of your size.
-The specific weapon you choose affects the type of damage it deals.
-Regardless of the weapon chosen, it has hit points equal to twice your spellpower.
-All of its defenses are equal to 5 \add your spellpower, and it has a 30 foot fly speed with good maneuverability, though it cannot travel farther than five feet above the ground.
-
-Each round, the weapon automatically moves towards the creature closest to it during the \glossterm{movement phase}.
-During the \glossterm{action phase}, it makes a melee \glossterm{strike} against a random creature adjacent to it.
-Its accuracy is equal to your spellpower.
-If it hits, it deals \glossterm{standard damage} \minus1d.
+\begin{ability}{Cantrip}[\glossterm{Manifestation}, \glossterm{Sustain} (minor)]
+Make a Spellpower vs. Armor attack against one creature or object within \rngmed range.
+\hit The target takes piercing \glossterm{standard damage} \minus1d.
 \end{ability}
 
 
@@ -2293,6 +2399,13 @@ but you cannot apply any augments to it.
 \subsubsection{Subspells}
 
 
+\begin{ability}[\nth{1}]{Arcane Bow}[\glossterm{Manifestation}]
+Make a Spellpower vs. Armor attack against one creature or object within \rngmed range.
+\hit The target takes piercing \glossterm{standard damage} \plus1d.
+\end{ability}
+\vspace{0.25em}
+
+
 \begin{ability}[\nth{1}]{Blade Barrier}[\glossterm{Sustain} (minor)]
 A wall of whirling blades appears within \rngmed range.
 The wall either takes the form of a 20 ft.\ high, \arealarge line.
@@ -2300,6 +2413,21 @@ The wall provides \glossterm{active cover} (20\% miss chance) against attacks ma
 Attacks that miss in this way harmlessly strike the wall.
 Whenever a creature or object passes through the wall, make a Spellpower vs. Reflex attack against it.
 \hit The target takes slashing \glossterm{standard damage} \minus1d.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{1}]{Summon Weapon}[\glossterm{Manifestation}, \glossterm{Sustain} (minor)]
+A melee weapon that you are proficient with appears in an unoccupied square within \rngmed range.
+The weapon floats about three feet off the ground, and is sized appropriately for a creature of your size.
+The specific weapon you choose affects the type of damage it deals.
+Regardless of the weapon chosen, it has hit points equal to twice your spellpower.
+All of its defenses are equal to 5 \add your spellpower, and it has a 30 foot fly speed with good maneuverability, though it cannot travel farther than five feet above the ground.
+
+Each round, the weapon automatically moves towards the creature closest to it during the \glossterm{movement phase}.
+During the \glossterm{action phase}, it makes a melee \glossterm{strike} against a random creature adjacent to it.
+Its accuracy is equal to your spellpower.
+If it hits, it deals \glossterm{standard damage} \minus1d.
 \end{ability}
 \vspace{0.25em}
 

@@ -39,9 +39,6 @@ class Spell(object):
             if getattr(self, arg) is None:
                 logger.warning(f"Warning: {self} is missing required property '{arg}'")
 
-        if self.ability_type == 'spell' and getattr(self, 'cantrip') is None:
-            logger.warning(f"Warning: {self} is missing required property 'cantrip'")
-
         for school in self.schools:
             if school not in rise_data.schools:
                 logger.warning(f"{self} has unrecognized school '{school}'")
