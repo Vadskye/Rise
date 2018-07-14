@@ -392,14 +392,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Cleric Progression}
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Divine Spellcasting} & \tb{Divine Spell Mastery}  & \tb{Domain Influence} \\\bottomrule
-               1 & Spellcasting     & Wellspring of magic & Domains, domain gift
-            \\ 2 & Rituals          & Subspell            & Domain gift
-            \\ 3 & Augments         & Spell knowledge     & Domain aspect
-            \\ 4 & Spell knowledge  & Subspell            & Domain aspect
-            \\ 5 & Augment          & Subspell            & Domain essence
-            \\ 6 & Ritual master    & Subspell            & Domain essence
-            \\ 7 & Augment          & Subspell            & Domain mastery
-            \\ 8 & Mystic supremacy &                     & Miracle
+               1 & Divine spells   & Wellspring of magic         & Domains, domain gift
+            \\ 2 & Subspells       & Expanded spell knowledge    & Domain gift
+            \\ 3 & Spell knowledge & Augments                    & Domain aspect
+            \\ 4 & Subspell        & Spell mastery               & Domain aspect
+            \\ 5 & Subspell        & Augment                     & Domain essence
+            \\ 6 & Subspell        & Greater wellspring of magic & Domain essence
+            \\ 7 & Subspell        & Greater spell mastery       & Domain mastery
+            \\ 8 &                 & Mystic supremacy            & Miracle
         \end{dtabularx}
     \end{dtable}
 
@@ -471,35 +471,34 @@ This choice determines a great deal about your character's abilities.
         \cf{Clr}[1]{Divine Spells}
         Your deity grants you the ability to cast divine spells.
         You learn two divine spells from the divine \glossterm{spell list} (see \pcref{Divine Spells}).
+        As a \glossterm{standard action}, you can cast the \glossterm{cantrip} version of any spell you know.
         Your \glossterm{spellpower} with divine spells is equal to your \textit{divine power}.
+        The maximum spell level you can cast is equal to half your level.
+        For details about spellcasting, see \pcref{Spell and Ritual Mechanics}.
 
-        To cast a spell, you must normally spend an \glossterm{action point}.
-        Every spell can also be cast as a cantrip.
-        Cantrips are weaker, but do not require action points to cast.
+        In addition, choose one \glossterm{subspell} from either spell you learned.
+        As a \glossterm{standard action}, you can spend an \glossterm{action point} to cast any \glossterm{subspell} you know.
+        For details about subspells, see \pcref{Subspells}.
 
-        \cf{Clr}[2]{Rituals}
-        You can perform divine rituals to create unique magical effects (see \pcref{Rituals}).
+        \cf{Clr}[2]{Subspells} Choose two \glossterm{subspells} for any divine spells you know.
+        You learn those subspells.
+        Whenever you gain access to a new spell or spell level, you can exchange any number of subspells you know for subspells of other spells you know.
+        However, you cannot know more than two divine subspells of the same level.
 
-        \cf{Clr}[3]{Augments}
-        Choose two \glossterm{augments} (see \pcref{Augments}).
-        You can apply those augments to divine spells you cast and divine rituals you perform.
-        Whenever you gain a level, you may change which augments you know.
-
-        \cf*{Clr}[4]{Spell Knowledge}
+        \cf*{Clr}[3]{Spell Knowledge}
         You learn an additional divine spell (see \pcref{Divine Spells}).
 
-        \cf*{Clr}[5]{Augment}
-        You learn an additional \glossterm{augment} (see \pcref{Augments}).
+        \cf{Clr}[4]{Subspell}
+        You learn an additional \glossterm{subspell} for a divine spell you know.
 
-        \cf{Clr}[6]{Ritual Master}
-        When you lead a divine ritual, each action point you spend contributes two action points to the ritual's cost.
+        \cf{Clr}[5]{Subspell}
+        You learn an additional \glossterm{subspell} for a divine spell you know.
 
-        \cf*{Clr}[7]{Augment}
-        You learn an additional \glossterm{augment} (see \pcref{Augments}).
+        \cf*{Clr}[6]{Subspell}
+        You learn an additional \glossterm{subspell} for a divine spell you know.
 
-        \cf{Clr}[8]{Mystic Supremacy}
-        The maximum spell level you can cast is increased to 11.
-        In addition, you learn an additional \glossterm{augment}.
+        \cf{Clr}[7]{Subspell}
+        You learn an additional \glossterm{subspell} for a divine spell you know.
 
     \subsection{Domain Influence}
         This archetype grants you divine influence over two domains of your choice.
@@ -572,28 +571,32 @@ This choice determines a great deal about your character's abilities.
         You must be able cast divine spells to gain the abilities from this archetype.
 
         \cf{Clr}[1]{Wellspring of Magic}
-        You gain two additional \glossterm{action points}.
+        You gain an additional \glossterm{action point}.
 
-        \cf{Clr}[2]{Subspell}
-        You learn one \glossterm{subspell} for a divine spell you know.
-        You can use that subspell when you cast that spell (see \pcref{Subspells}).
-        Whenever you gain access to a new spell level, you learn one additional subspell.
-        Normally, this happens every even level after 2nd level.
-
-        \cf{Clr}[3]{Spell Knowledge}
+        \cf{Clr}[2]{Expanded Spell Knowledge}
         You learn an additional divine spell (see \pcref{Divine Spells}).
+        In addition, you gain the ability to perform divine rituals to create unique magical effects (see \pcref{Rituals}).
 
-        \cf{Clr}[4]{Subspell}
-        You learn an additional \glossterm{subspell} for a divine spell you know.
+        \cf{Clr}[3]{Augments}
+        Choose two \glossterm{augments} (see \pcref{Augments}).
+        You can apply those augments to divine spells you cast and divine rituals you perform.
+        Whenever you gain access to a new spell level, you may change which augments you know.
 
-        \cf{Clr}[5]{Subspell}
-        You learn an additional \glossterm{subspell} for a divine spell you know.
+        \cf{Clr}[4]{Spell Mastery}
+        You gain a \plus1 bonus to \glossterm{spellpower} with divine spells.
 
-        \cf{Clr}[6]{Subspell}
-        You learn an additional \glossterm{subspell} for a divine spell you know.
+        \cf{Clr}[5]{Augment}
+        You learn an additional \glossterm{augment} that you can apply to divine spells.
 
-        \cf{Clr}[7]{Subspell}
-        You learn an additional \glossterm{subspell} for a divine spell you know.
+        \cf{Clr}[6]{Greater Wellspring of Magic}
+        You gain an additional \glossterm{action point}.
+
+        \cf{Clr}[7]{Greater Spell Mastery} 
+        The bonus from your \textit{spell mastery} ability increases to \plus2.
+
+        \cf{Clr}[8]{Mystic Supremacy}
+        The maximum spell level you can cast is increased to 11.
+        In addition, you learn an additional \glossterm{augment} that you can apply to divine spells.
 
     \subsection{Cleric Domain Abilities}\label{Cleric Domain Abilities}
         These domain abilities can be granted by the \textit{domain influence} cleric archetype.
@@ -877,14 +880,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Druid Progression}
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Nature Spellcasting} & \tb{Nature Spell Mastery}  & \tb{Natural Influence} \\\bottomrule
-               1 & Spellcasting     & Wellspring of magic & Wild aspect
-            \\ 2 & Rituals          & Subspell            & Wild speech
-            \\ 3 & Augments         & Spell knowledge     & Wild aspect
-            \\ 4 & Spell knowledge  & Subspell            & Natural lore
-            \\ 5 & Augment          & Subspell            & Wild aspect
-            \\ 6 & Ritual master    & Subspell            & Nature's champion
-            \\ 7 & Augment          & Subspell            & Wild aspect
-            \\ 8 & Mystic supremacy &                     & Avatar of nature
+               1 & Nature spells   & Wellspring of magic         & Wild aspect
+            \\ 2 & Subspells       & Expanded spell knowledge    & Wild speech
+            \\ 3 & Spell knowledge & Augments                    & Wild aspect
+            \\ 4 & Subspell        & Spell mastery               & Natural lore
+            \\ 5 & Subspell        & Augment                     & Wild aspect
+            \\ 6 & Subspell        & Greater wellspring of magic & Nature's champion
+            \\ 7 & Subspell        & Greater spell mastery       & Wild aspect
+            \\ 8 &                 & Mystic supremacy            & Avatar of nature
         \end{dtabularx}
     \end{dtable}
 
@@ -1100,63 +1103,66 @@ This choice determines a great deal about your character's abilities.
         \cf{Drd}[1]{Nature Spells}
         Your worship of nature grants you the ability to cast nature spells.
         You learn two nature spells from the nature \glossterm{spell list} (see \pcref{Nature Spells}).
+        As a \glossterm{standard action}, you can cast the \glossterm{cantrip} version of any spell you know.
         Your \glossterm{spellpower} with nature spells is equal to your \textit{nature power}.
+        The maximum spell level you can cast is equal to half your level.
+        For details about spellcasting, see \pcref{Spell and Ritual Mechanics}.
 
-        To cast a spell, you must normally spend an \glossterm{action point}.
-        Every spell can also be cast as a cantrip.
-        Cantrips are weaker, but do not require action points to cast.
+        In addition, choose one \glossterm{subspell} from either spell you learned.
+        As a \glossterm{standard action}, you can spend an \glossterm{action point} to cast any \glossterm{subspell} you know.
+        For details about subspells, see \pcref{Subspells}.
 
-        \cf{Drd}[2]{Rituals}
-        You can perform nature rituals to create unique magical effects (see \pcref{Rituals}).
+        \cf{Drd}[2]{Subspells} Choose two \glossterm{subspells} for any nature spells you know.
+        You learn those subspells.
+        Whenever you gain access to a new spell or spell level, you can exchange any number of subspells you know for subspells of other spells you know.
+        However, you cannot know more than two nature subspells of the same level.
 
-        \cf{Drd}[3]{Augments}
-        Choose two \glossterm{augments} (see \pcref{Augments}).
-        You can apply those augments to nature spells you cast and nature rituals you perform.
-        Whenever you gain a level, you may change which augments you know.
-
-        \cf*{Drd}[4]{Spell Knowledge}
+        \cf*{Drd}[3]{Spell Knowledge}
         You learn an additional nature spell (see \pcref{Nature Spells}).
 
-        \cf*{Drd}[5]{Augment}
-        You learn an additional \glossterm{augment} (see \pcref{Augments}).
+        \cf{Drd}[4]{Subspell}
+        You learn an additional \glossterm{subspell} for a nature spell you know.
 
-        \cf{Drd}[6]{Ritual Master}
-        When you lead a nature ritual, each action point you spend contributes two action points to the ritual's cost.
+        \cf{Drd}[5]{Cantrip Expertise}
+        You gain a \plus2 bonus to \glossterm{spellpower} when casting \glossterm{cantrips}.
 
-        \cf*{Drd}[7]{Augment}
-        You learn an additional \glossterm{augment} (see \pcref{Augments}).
+        \cf*{Drd}[6]{Subspell}
+        You learn an additional \glossterm{subspell} for a nature spell you know.
 
-        \cf{Drd}[8]{Mystic Supremacy}
-        The maximum spell level you can cast is increased to 11.
-        In addition, you learn an additional \glossterm{augment}.
+        \cf*{Drd}[7]{Greater Cantrip Expertise}
+        The bonus from your \textit{cantrip expertise} ability increases to \plus4.
 
     \subsection{Nature Spell Mastery}
         This archetype improves the nature spells you cast.
         You must be able cast nature spells to gain the abilities from this archetype.
 
         \cf{Drd}[1]{Wellspring of Magic}
-        You gain two additional \glossterm{action points}.
+        You gain an additional \glossterm{action point}.
 
-        \cf{Drd}[2]{Subspell}
-        You learn one \glossterm{subspell} for a nature spell you know.
-        You can use that subspell when you cast that spell (see \pcref{Subspells}).
-        Whenever you gain access to a new spell level, you learn one additional subspell.
-        Normally, this happens every even level after 2nd level.
-
-        \cf{Drd}[3]{Spell Knowledge}
+        \cf{Drd}[2]{Expanded Spell Knowledge}
         You learn an additional nature spell (see \pcref{Nature Spells}).
+        In addition, you gain the ability to perform nature rituals to create unique magical effects (see \pcref{Rituals}).
 
-        \cf{Drd}[4]{Subspell}
-        You learn an additional \glossterm{subspell} for a nature spell you know.
+        \cf{Drd}[3]{Augments}
+        Choose two \glossterm{augments} (see \pcref{Augments}).
+        You can apply those augments to nature spells you cast and nature rituals you perform.
+        Whenever you gain access to a new spell level, you may change which augments you know.
 
-        \cf{Drd}[5]{Subspell}
-        You learn an additional \glossterm{subspell} for a nature spell you know.
+        \cf{Drd}[4]{Spell Mastery}
+        You gain a \plus1 bonus to \glossterm{spellpower} with nature spells.
 
-        \cf{Drd}[6]{Subspell}
-        You learn an additional \glossterm{subspell} for a nature spell you know.
+        \cf{Drd}[5]{Augment}
+        You learn an additional \glossterm{augment} that you can apply to nature spells.
 
-        \cf{Drd}[7]{Subspell}
-        You learn an additional \glossterm{subspell} for a nature spell you know.
+        \cf{Drd}[6]{Greater Wellspring of Magic}
+        You gain an additional \glossterm{action point}.
+
+        \cf{Drd}[7]{Greater Spell Mastery} 
+        The bonus from your \textit{spell mastery} ability increases to \plus2.
+
+        \cf{Drd}[8]{Mystic Supremacy}
+        The maximum spell level you can cast is increased to 11.
+        In addition, you learn an additional \glossterm{augment} that you can apply to nature spells.
 
         % \subcf{15th -- Air Mantle}
         % You are surrounded by a mantle of air.
@@ -1517,7 +1523,7 @@ This choice determines a great deal about your character's abilities.
         The \glossterm{encumbrance} reduction from your \textit{armor expertise} ability increases to 2.
         In addition, you treat body armor were one encumbrance category lighter than normal whenever doing so would be beneficial for you.
 
-        \cf{Ftr}[4]{Weapon Master} 
+        \cf{Ftr}[4]{Weapon Master}
         You gain a \plus1d bonus to \glossterm{strike damage}.
 
         \cf{Ftr}[5]{Supreme Armor Expertise}
@@ -1566,14 +1572,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Mage Progression}
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Arcane Spellcasting} & \tb{Arcane Spell Mastery}  & \tb{Arcane Lore} \\\bottomrule
-               1 & Spellcasting       & Wellspring of magic & Mage armor
-            \\ 2 & Expanded knowledge & Subspell            & Arcane insights
-            \\ 3 & Augments           & Spell knowledge     & Essence lore
-            \\ 4 & Spell knowledge    & Subspell            & Arcane insight
-            \\ 5 & Augment            & Subspell            & Greater essence lore
-            \\ 6 & Ritual master      & Subspell            & Arcane insight
-            \\ 7 & Augment            & Subspell            & Supreme essence lore
-            \\ 8 & Mystic supremacy   &                     & Archmage
+            \\ 1 & Arcane spells   & Wellspring of magic         & Mage armor
+            \\ 2 & Subspells       & Expanded spell knowledge    & Arcane insights
+            \\ 3 & Spell knowledge & Augments                    & Essence lore
+            \\ 4 & Subspell        & Spell mastery               & Arcane insight
+            \\ 5 & Subspell        & Augment                     & Greater essence lore
+            \\ 6 & Subspell        & Greater wellspring of magic & Arcane insight
+            \\ 7 & Subspell        & Greater spell mastery       & Supreme essence lore
+            \\ 8 &                 & Mystic supremacy            & Archmage
         \end{dtabularx}
     \end{dtable}
 
@@ -1612,44 +1618,42 @@ This choice determines a great deal about your character's abilities.
 
     \subsection{Arcane Spellcasting}
         This archetype grants you the ability to cast arcane spells.
+        If you have both this archetype and the Pact Spellcasting archetype, you track the arcane spells and subspells known from each archetype separately.
 
         \cf{Mge}[1]{Arcane Spells}
         You can cast arcane spells.
         You learn two arcane spells from the arcane \glossterm{spell list} (see \pcref{Arcane Spells}).
-        Your \glossterm{spellpower} with arcane spells is equal to your \textit{arcane power}.
-        \subparhead{Sorcerer} Your spellpower with arcane spells is equal to your level or your Willpower, whichever is higher.
+        As a \glossterm{standard action}, you can cast the \glossterm{cantrip} version of any spell you know.
+        For details about spellcasting, see \pcref{Spell and Ritual Mechanics}.
+
+        \subparhead{Sorcerer} Your \glossterm{spellpower} with arcane spells is equal to your level or your Willpower, whichever is higher.
         The maximum spell level you can cast is equal to half your level (minimum 1).
-        \subparhead{Wizard} Your spellpower with arcane spells is equal to your character level or your Intelligence, whichever is higher.
+        \subparhead{Wizard} Your \glossterm{spellpower} with arcane spells is equal to your character level or your Intelligence, whichever is higher.
         The maximum spell level you can cast is equal to half your level (minimum 1) or your Intelligence, whichever is lower.
 
-        To cast a spell, you must normally spend an \glossterm{action point}.
-        Every spell can also be cast as a cantrip.
-        Cantrips are weaker, but do not require action points to cast.
+        In addition, choose one \glossterm{subspell} from either spell you learned.
+        As a \glossterm{standard action}, you can spend an \glossterm{action point} to cast any \glossterm{subspell} you know.
+        For details about subspells, see \pcref{Subspells}.
 
-        \cf{Mge}[2]{Expanded Knowledge}
-        \subparhead{Sorcerer} You learn an additional arcane spell (see \pcref{Arcane Spells}).
-        \subparhead{Wizard} You can perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
+        \cf{Mge}[2]{Subspells} Choose two \glossterm{subspells} for any arcane spells you know.
+        You learn those subspells.
+        Whenever you gain access to a new spell or spell level, you can exchange any number of subspells you know for subspells of other spells you know.
+        However, you cannot know more than two arcane subspells of the same level.
 
-        \cf{Mge}[3]{Augments}
-        Choose two \glossterm{augments} (see \pcref{Augments}).
-        You can apply those augments to arcane spells you cast and arcane rituals you perform.
-        Whenever you gain a level, you may change which augments you know.
-
-        \cf*{Mge}[4]{Spell Knowledge}
+        \cf*{Mge}[3]{Spell Knowledge}
         You learn an additional arcane spell (see \pcref{Arcane Spells}).
 
-        \cf*{Mge}[5]{Augment}
-        You learn an additional \glossterm{augment} (see \pcref{Augments}).
+        \cf{Mge}[4]{Subspell}
+        You learn an additional \glossterm{subspell} for a arcane spell you know.
 
-        \cf{Mge}[6]{Ritual Master}
-        When you lead a arcane ritual, each action point you spend contributes two action points to the ritual's cost.
+        \cf{Mge}[5]{Cantrip Expertise}
+        You gain a \plus2 bonus to \glossterm{spellpower} when casting \glossterm{cantrips}.
 
-        \cf*{Mge}[7]{Augment}
-        You learn an additional \glossterm{augment} (see \pcref{Augments}).
+        \cf*{Mge}[6]{Subspell}
+        You learn an additional \glossterm{subspell} for a arcane spell you know.
 
-        \cf{Mge}[8]{Mystic Supremacy}
-        The maximum spell level you can cast is increased to 11.
-        In addition, you learn an additional \glossterm{augment}.
+        \cf*{Mge}[7]{Greater Cantrip Expertise}
+        The bonus from your \textit{cantrip expertise} ability increases to \plus4.
 
     \subsection{Arcane Lore}
         This archetype grants you esoteric abilities relating to arcane magic.
@@ -1666,7 +1670,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Mge}[2]{Arcane Insights} 
         You gain two of the following insights.
-        Each insight can be chosen multiple times.
+        Some insights can be chosen multiple times, as indicated in their descriptions.
 
         {
             \parhead{Innate Spell} Choose a spell you know.
@@ -1685,16 +1689,15 @@ This choice determines a great deal about your character's abilities.
             If you know spells from a banned school, you must immediately learn different spells from unbanned schools in their place.
             \par If you choose this insight multiple times, you must choose to specialize in the same school each time.
 
-            \parhead{Expanded Spell Knowledge} You can only gain this arcane insight if you are a sorcerer.
-            Choose a single spell from the divine spell list or nature spell list and add it to your arcane spell list.
-            This does not grant you the spell as a spell known, but you may exchange one of your spells known to learn that new spell.
-            If do, you may learn subspells for this spell in the same way that you learn subspells for other spells you know.
-            \par If you choose this insight multiple times, you must choose a different spell each time.
+            \parhead{Arcane Reservoir} You can only gain this arcane insight if you are a sorcerer.
+            You gain an additional \glossterm{action point}.
+            \par You cannot choose this insight multiple times.
 
             \parhead{Memorized Ritual} You can only gain this arcane insight if you are a wizard.
             Choose an arcane ritual.
             You do not need your ritual book to cast that ritual or any of its subrituals.
             If you lead the ritual, it takes half the normal amount of time to perform and costs half the normal number of action points (minimum 1).
+            \par You cannot choose this insight multiple times.
         }
 
         \cf{Mge}[3]{Essence Lore}[Magical]
@@ -1743,6 +1746,7 @@ This choice determines a great deal about your character's abilities.
         \subparhead{Sorcerer} Whenever you resist a spell with your \glossterm{magic resistance}, you gain the ability to cast that spell once.
         The spell retains all augments, effects from feats and other abilities, and similar modifications from the original caster, and you cannot choose any other augments or apply effects from your own abilities.
         However, you make all other decisions required to cast the spell, and uses your spellpower to determine the spell's effects.
+        You must spend an \glossterm{action point} to cast the spell.
         Once you cast the spell, you expend the absorbed energy, and you cannot cast it again.
 
         If you resist multiple spells simultaneously, or if you resist another spell with your magic resistance before casting the previous spell you resisted, you choose which spell you gain the ability to cast.
@@ -1759,31 +1763,39 @@ This choice determines a great deal about your character's abilities.
 
     \subsection{Arcane Spell Mastery}
         This archetype improves the arcane spells you cast.
-        You must be able cast arcane spells to gain the abilities from this archetype.
+        You must have the Arcane Spellcasting archetype to gain the abilities from this archetype.
+        % TODO: This wording is ugly
+        Abilities from this archetype that affect arcane spells only affect arcane spells gained from the Arcane Spellcasting archetype.
 
         \cf{Mge}[1]{Wellspring of Magic}
-        You gain two additional \glossterm{action points}.
+        You gain an additional \glossterm{action point}.
 
-        \cf{Mge}[2]{Subspell}
-        You learn one \glossterm{subspell} for a arcane spell you know.
-        You can use that subspell when you cast that spell (see \pcref{Subspells}).
-        Whenever you gain access to a new spell level, you learn one additional subspell.
-        Normally, this happens every even level after 2nd level.
-
-        \cf{Mge}[3]{Spell Knowledge}
+        \cf{Mge}[2]{Expanded Spell Knowledge}
         You learn an additional arcane spell (see \pcref{Arcane Spells}).
+        In addition, you gain an additional ability depending on your \textit{arcane essence}.
+        \subparhead{Sorcerer} You learn an additional \glossterm{subspell}.
+        \subparhead{Wizard} You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
 
-        \cf{Mge}[4]{Subspell}
-        You learn an additional \glossterm{subspell} for a arcane spell you know.
+        \cf{Mge}[3]{Augments}
+        Choose two \glossterm{augments} (see \pcref{Augments}).
+        You can apply those augments to arcane spells you cast and arcane rituals you perform.
+        Whenever you gain access to a new spell level, you may change which augments you know.
 
-        \cf{Mge}[5]{Subspell}
-        You learn an additional \glossterm{subspell} for a arcane spell you know.
+        \cf{Mge}[4]{Spell Mastery}
+        You gain a \plus1 bonus to \glossterm{spellpower} with arcane spells.
 
-        \cf{Mge}[6]{Subspell}
-        You learn an additional \glossterm{subspell} for a arcane spell you know.
+        \cf{Mge}[5]{Augment}
+        You learn an additional \glossterm{augment} that you can apply to arcane spells.
 
-        \cf{Mge}[7]{Subspell}
-        You learn an additional \glossterm{subspell} for a arcane spell you know.
+        \cf{Mge}[6]{Greater Wellspring of Magic}
+        You gain an additional \glossterm{action point}.
+
+        \cf{Mge}[7]{Greater Spell Mastery} 
+        The bonus from your \textit{spell mastery} ability increases to \plus2.
+
+        \cf{Mge}[8]{Mystic Supremacy}
+        The maximum spell level you can cast is increased to 11.
+        In addition, you learn an additional \glossterm{augment} that you can apply to arcane spells.
 
 \newpage
 \section{Monk}\label{Monk}
@@ -2081,14 +2093,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Paladin Progression}
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Devoted Paragon} & \tb{Divine Spellcasting}  & \tb{Zealous Warrior} \\\bottomrule
-               1 & Lay on hands               & Divine spells    & Smite
-            \\ 2 & Aligned aura               & Rituals          & Unfaltering champion
-            \\ 3 & Greater lay on hands       & Augments         & Unfaltering zeal
-            \\ 4 & Unbending devotion         & Spell knowledge  & Greater smite
-            \\ 5 & Greater aligned aura       & Augment          & Greater unfaltering champion
-            \\ 6 & Supreme lay on hands       & Ritual master    & Supreme smite
-            \\ 7 & Greater unbending devotion & Augment          & Supreme unfaltering champion
-            \\ 8 & Aligned soul               & Mystic supremacy &
+               1 & Lay on hands               & Divine spells  & Smite
+            \\ 2 & Aligned aura               & Subspells      & Unfaltering champion
+            \\ 3 & Greater lay on hands       & Spell knowldge & Unfaltering zeal
+            \\ 4 & Unbending devotion         & Subspell       & Greater smite
+            \\ 5 & Greater aligned aura       & Subspell       & Greater unfaltering champion
+            \\ 6 & Supreme lay on hands       & Subspell       & Supreme smite
+            \\ 7 & Greater unbending devotion & Subspell       & Supreme unfaltering champion
+            \\ 8 & Aligned soul               & Subspell       &
         \end{dtabularx}
     \end{dtable}
 
@@ -2184,43 +2196,40 @@ This choice determines a great deal about your character's abilities.
         This functions like the \ritual{resurrection} ritual, except that no part of the body is required, and a new body is created by the entity.
         You can be resurrected in this way regardless of the condition of your body, but not if your soul has been trapped or otherwise prevented from going to the correct afterlife.
 
-    % TODO: clarify interaction between this ability and cleric spellcasting;
-    % you shouldn't have both, but they technically use different spellpowers
     \subsection{Divine Spellcasting}
         This archetype grants you the ability to cast divine spells.
 
         \cf{Pal}[1]{Divine Spells}
         Your deity grants you the ability to cast divine spells.
         You learn two divine spells from the divine \glossterm{spell list} (see \pcref{Divine Spells}).
-        Your \glossterm{spellpower} with divine spells is equal to your \textit{devotion power}.
+        As a \glossterm{standard action}, you can cast the \glossterm{cantrip} version of any spell you know.
+        Your \glossterm{spellpower} with divine spells is equal to your \textit{divine power}.
+        The maximum spell level you can cast is equal to half your level.
+        For details about spellcasting, see \pcref{Spell and Ritual Mechanics}.
 
-        To cast a spell, you must normally spend an \glossterm{action point}.
-        Every spell can also be cast as a cantrip.
-        Cantrips are weaker, but do not require action points to cast.
+        In addition, choose one \glossterm{subspell} from either spell you learned.
+        As a \glossterm{standard action}, you can spend an \glossterm{action point} to cast any \glossterm{subspell} you know.
+        For details about subspells, see \pcref{Subspells}.
 
-        \cf{Pal}[2]{Rituals}
-        You can perform divine rituals to create unique magical effects (see \pcref{Rituals}).
+        \cf{Pal}[2]{Subspells} Choose two \glossterm{subspells} for any divine spells you know.
+        You learn those subspells.
+        Whenever you gain access to a new spell or spell level, you can exchange any number of subspells you know for subspells of other spells you know.
+        However, you cannot know more than two divine subspells of the same level.
 
-        \cf{Pal}[3]{Augments}
-        Choose two \glossterm{augments} (see \pcref{Augments}).
-        You can apply those augments to divine spells you cast and divine rituals you perform.
-        Whenever you gain a level, you may change which augments you know.
-
-        \cf*{Pal}[4]{Spell Knowledge}
+        \cf*{Pal}[3]{Spell Knowledge}
         You learn an additional divine spell (see \pcref{Divine Spells}).
 
-        \cf*{Pal}[5]{Augment}
-        You learn an additional \glossterm{augment} (see \pcref{Augments}).
+        \cf{Pal}[4]{Subspell}
+        You learn an additional \glossterm{subspell} for a divine spell you know.
 
-        \cf{Pal}[6]{Ritual Master}
-        When you lead a divine ritual, each action point you spend contributes two action points to the ritual's cost.
+        \cf{Pal}[5]{Cantrip Expertise}
+        You gain a \plus2 bonus to \glossterm{spellpower} when casting \glossterm{cantrips}.
 
-        \cf*{Pal}[7]{Augment}
-        You learn an additional \glossterm{augment} (see \pcref{Augments}).
+        \cf*{Pal}[6]{Subspell}
+        You learn an additional \glossterm{subspell} for a divine spell you know.
 
-        \cf{Pal}[8]{Mystic Supremacy}
-        The maximum spell level you can cast is increased to 11.
-        In addition, you learn an additional \glossterm{augment}.
+        \cf*{Pal}[7]{Greater Cantrip Expertise}
+        The bonus from your \textit{cantrip expertise} ability increases to \plus4.
 
     \subsection{Zealous Warrior}
         This archetype improves your combat prowess, especially against foes who do not share your devoted alignment.
@@ -2897,14 +2906,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Warlock Progression}
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Arcane Spellcasting} & \tb{Blessings of the Abyss}  & \tb{Pact Magic} \\\bottomrule
-               1 & Spellcasting     & Whispers of the lost         & Malevolent boon
-            \\ 2 & Rituals          & Armor tolerance              & Pact augments
-            \\ 3 & Augments         & Abyssal lore                 & Greater malevolent boon
-            \\ 4 & Spell knowledge  & Greater armor tolerance      & Pact augment
-            \\ 5 & Augment          & Greater whispers of the lost & Supreme malevolent boon
-            \\ 6 & Ritual master    & Supreme armor tolerance      & Pact augment
-            \\ 7 & Augment          & Abyssal defense              & Infernal power
-            \\ 8 & Mystic supremacy &                              & Dual pact
+               1 & Arcane spells          & Whispers of the lost         & Wellspring of magic
+            \\ 2 & Pact augments          & Armor tolerance              & Malevolent boon
+            \\ 3 & Spell knowledge        & Abyssal lore                 & Augments
+            \\ 4 & Pact augment           & Greater armor tolerance      & Greater malevolent boon
+            \\ 5 & Infernal power         & Greater whispers of the lost & Augment
+            \\ 6 & Pact augment           & Supreme armor tolerance      & Greater wellspring of magic
+            \\ 7 & Greater infernal power & Abyssal defense              & Augment
+            \\ 8 & Dual pact              &                              & 
         \end{dtabularx}
     \end{dtable}
 
@@ -2951,42 +2960,106 @@ This choice determines a great deal about your character's abilities.
         Only a soul of extraordinary strength can maintain its integrity after decades or centuries in the Abyss.
         Many warlocks seek power zealously while mortal to gain the mental fortitude necessary to keep their soul after death.
 
-    \subsection{Arcane Spellcasting}
-        This archetype grants you the ability to cast arcane spells.
+    \subsection{Pact Spellcasting}
+        This archetype grants you the ability to cast arcane spells through the power of your pact.
+        If you have both this archetype and the Arcane Spellcasting archetype, you track the arcane spells and subspells known from each archetype separately.
 
         \cf{War}[1]{Arcane Spells}
         You can cast arcane spells.
+        Your worship of arcane grants you the ability to cast arcane spells.
         You learn two arcane spells from the arcane \glossterm{spell list} (see \pcref{Arcane Spells}).
-        Your \glossterm{spellpower} with arcane spells is equal to your \textit{arcane power}.
+        As a \glossterm{standard action}, you can cast the \glossterm{cantrip} version of any spell you know.
+        Your \glossterm{spellpower} with arcane spells is equal to your level or your Willpower, whichever is higher.
         The maximum spell level you can cast is equal to half your level (minimum 1).
+        For details about spellcasting, see \pcref{Spell and Ritual Mechanics}.
 
-        To cast a spell, you must normally spend an \glossterm{action point}.
-        Every spell can also be cast as a cantrip.
-        Cantrips are weaker, but do not require action points to cast.
+        Whenever you learn an arcane spell, you automatically learn one 1st level \glossterm{subspell} of your choice for that spell.
+        You cannot learn subspells for arcane spells you know by any other means.
+        As a \glossterm{standard action}, you can spend an \glossterm{action point} to cast any \glossterm{subspell} you know.
+        For details about subspells, see \pcref{Subspells}.
 
-        \cf{War}[2]{Rituals}
-        You can perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
+        \cf{War}[2]{Pact Augments} You learn two pact augments from the list below.
+        Pact augments function like other \glossterm{augments} (see \pcref{Augments}), with the following exceptions.
+        \begin{itemize}
+            \item Pact augments can only be applied to arcane spells, including \glossterm{cantrips}.
+            \item To apply a pact augment to a spell, you must spend an \glossterm{action point}.
+            \item You can only apply a single pact augment to a spell.
+                You can apply that pact augment in addition to any other non-pact augments the spell has.
+        \end{itemize}
+        Whenever you gain access to a new spell level, you may change which pact augments you know.
+        Your \glossterm{power} with pact augments is equal to your \glossterm{spellpower} with the spell you apply them to.
+        {
+            \augment{0}{Infernal Focus} You gain a \plus10 bonus to Concentration checks to cast the spell (see \pcref{Concentration}).
 
-        \cf{War}[3]{Augments}
-        Choose two \glossterm{augments} (see \pcref{Augments}).
-        You can apply those augments to arcane spells you cast and arcane rituals you perform.
-        Whenever you gain a level, you may change which augments you know.
+            \augment{0}{Sickening} Make a \glossterm{power} vs. Fortitude attack against one creature targeted by the spell.
+            On a hit, the target is \glossterm{sickened} as a \glossterm{condition}.
+            \par This augment can be applied to any spell that targets at least one creature.
 
-        \cf*{War}[4]{Spell Knowledge}
+            \augment{0}{Soulrending} Whenever a creature is dealt damage by the spell, if it has no hit points remaining, it dies.
+            \par This augment can be applied to any spell that deals damage.
+
+            \augment{0}{Terrifying} Make a \glossterm{power} vs. Mental attack against one creature targeted by the spell.
+            On a hit, the target is \glossterm{shaken} by you as a \glossterm{condition}.
+            \par This augment can be applied to any spell that targets at least one creature.
+
+            \augment{1}{Dark Expansion} The spell's area is increased by one step, to a maximum of \areahuge.
+            The steps are, in order: \areasmall, \areamed, \arealarge, and \areahuge.
+            Normally, a Small or Medium line is 5 ft.\ wide, while a Large or Huge line is 10 ft.\ wide.
+            A line used to define a wall does not have a width.
+            \par This augment can be applied to any spell with an area that is one of the above areas.
+
+            \augment{1}{Untraceable} You do not need verbal or somatic \glossterm{components} to cast the spell.
+
+            \augment{2}{Abyssal Flame} Non-physical damage dealt by the spell becomes life damage in place of its other damage types.
+            In addition, you gain a \plus1d bonus to life damage dealt by the spell.
+            This does not change any other aspects of the spell's effects.
+            \par This augment can be applied to any spell that deals non-physical damage.
+
+            \augment{2}{Bloodreaving} Whenever a creature takes damage from the spell, you heal hit points equal to the damage dealt.
+            \par This augment can be applied to any spell that deals damage.
+
+            % TODO: taking damage multiple times in the same round abuse?
+            \augment{2}{Exsanguinating} Whenever a creature takes damage from the spell, it begins bleeding as a \glossterm{condition}.
+            At the end of each \glossterm{action phase}, a bleeding creature takes life \glossterm{standard damage} \minus2d.
+            \par This augment can be applied to any spell that deals damage.
+
+            \augment{3}{Inevitable Doom} You gain a \plus2 bonus to accuracy with the spell.
+            \par This augment can be applied to any spell that makes an attack.
+
+            \augment{3}{Infernal Potency} You gain a \plus2d bonus to damage with the spell.
+            \par This augment can be applied to any spell that deals damage based on a dice pool.
+
+            \augment{4}{Dark Miasma} Whenever a creature takes damage from the spell, it becomes \glossterm{sickened} as a \glossterm{condition}.
+            \par This augment can be applied to any spell that deals damage.
+
+            \augment{4}{Unholy Terror} Whenever a creature takes damage from the spell, it becomes \glossterm{shaken} by you as a \glossterm{condition}.
+            \par This augment can be applied to any spell that deals damage.
+
+            \augment{5}{Soulclaiming} Whenever a creature takes damage from the spell, its soul becomes marked by your soulkeeper as a \glossterm{condition}.
+            It takes a \minus4 penalty to Mental defense.
+            If it dies, its soul is immediately claimed by your soulkeeper, preventing it from being resurrected by any means.
+
+            \augment{6}{Greater Inevitable Doom} You gain a \plus4 bonus to accuracy with the spell.
+            \par This augment can be applied to any spell that makes an attack.
+
+            \augment{6}{Greater Infernal Potency} You gain a \plus4d bonus to damage with the spell.
+            \par This augment can be applied to any spell that deals damage based on a dice pool.
+        }
+
+        \cf*{War}[3]{Spell Knowledge}
         You learn an additional arcane spell (see \pcref{Arcane Spells}).
 
-        \cf*{War}[5]{Augment}
-        You learn an additional \glossterm{augment} (see \pcref{Augments}).
+        \cf{War}[4]{Pact Augment} You learn an additional \textit{pact augment}.
 
-        \cf{War}[6]{Ritual Master}
-        When you lead a arcane ritual, each action point you spend contributes two action points to the ritual's cost.
+        \cf{War}[5]{Infernal Power}
+        You gain a \plus1 bonus to \glossterm{spellpower} with arcane spells.
 
-        \cf*{War}[7]{Augment}
-        You learn an additional \glossterm{augment} (see \pcref{Augments}).
+        \cf{War}[6]{Pact Augment} You learn an additional \textit{pact augment}.
 
-        \cf{War}[8]{Mystic Supremacy}
-        The maximum spell level you can cast is increased to 11.
-        In addition, you learn an additional \glossterm{augment}.
+        \cf{War}[7]{Greater Infernal Power}
+        The bonus from your \textit{infernal power} ability increases to \plus2.
+
+        \cf{War}[8]{Dual Pact} You can apply two different \textit{pact augments} to the same spell, paying separate action points for each.
 
     \subsection{Blessings of the Abyss}
         This archetype grants you powers relating to the connection to the Abyss granted by your pact.
@@ -3035,93 +3108,30 @@ This choice determines a great deal about your character's abilities.
 
     \subsection{Pact Magic}
         This archetype improves your ability to cast spells with the power of your dark pact.
-        You must be able to cast arcane spells to gain the abilities from this archetype.
+        You must have the Pact Spellcasting archetype to gain the abilities from this archetype.
+        % TODO: This wording is ugly
+        Abilities from this archetype that affect arcane spells only affect arcane spells gained from the Pact Spellcasting archetype.
 
-        \cf{War}[1]{Malevolent Boon}
-        When you cast a spell that makes an attack roll, if you miss, you may regain the \glossterm{action point} spent to cast the spell (if any).
+        \cf{War}[1]{Wellspring of Magic} You gain an additional \glossterm{action point}.
+
+        \cf{War}[2]{Malevolent Boon}
+        When you cast an arcane spell that makes an attack roll, if you miss, you may regain the \glossterm{action point} spent to cast the spell (if any).
         If you are \glossterm{attuned} to the spell, you cannot regain an action point in this way.
-        You can use this ability on spells that do not normally have attacks if you apply an \glossterm{augment} that makes an attack.
-        You cannot use this ability when casting \glossterm{subspells}.
+        You cannot use this ability on spells that do not normally have attacks, even if you apply an \glossterm{augment} that makes a separate attack.
 
-        \cf{War}[2]{Pact Augments} You learn two pact augments from the list below.
-        Pact augments function like other \glossterm{augments} (see \pcref{Augments}), with the following exceptions.
-        \begin{itemize}
-            \item Pact augments cannot be applied to divine spells, nature spells, subspells, or rituals.
-            \item To apply a pact augment to a spell, you must spend an \glossterm{action point}.
-            \item You can only apply a single pact augment to a spell.
-                You can apply that pact augment in addition to any other non-pact augments the spell has.
-        \end{itemize}
-        Whenever you gain a level, you may change which pact augments you know.
-        Your \glossterm{power} with pact augments is equal to your \glossterm{spellpower} with the spell you apply them to.
-        {
-            \augment{0}{Infernal Focus} You gain a \plus10 bonus to Concentration checks to cast the spell (see \pcref{Concentration}).
+        \cf{War}[3]{Augments}
+        Choose two \glossterm{augments} (see \pcref{Augments}).
+        You can apply those augments to arcane spells you cast.
+        Whenever you gain access to a new spell level, you may change which augments you know.
 
-            \augment{0}{Sickening} Make a \glossterm{power} vs. Fortitude attack against one creature targeted by the spell.
-            On a hit, the target is \glossterm{sickened} as a \glossterm{condition}.
-            \par This augment can be applied to any spell that targets at least one creature.
-
-            \augment{0}{Soulrending} Whenever a creature is dealt damage by the spell, if it has no hit points remaining, it dies.
-            \par This augment can be applied to any spell that deals damage.
-
-            \augment{0}{Terrifying} Make a \glossterm{power} vs. Mental attack against one creature targeted by the spell.
-            On a hit, the target is \glossterm{shaken} by you as a \glossterm{condition}.
-            \par This augment can be applied to any spell that targets at least one creature.
-
-            \augment{1}{Dark Expansion} The spell's area is increased by one step, to a maximum of \areahuge.
-            The steps are, in order: \areasmall, \areamed, \arealarge, and \areahuge.
-            Normally, a Small or Medium line is 5 ft.\ wide, while a Large or Huge line is 10 ft.\ wide.
-            A line used to define a wall does not have a width.
-            \par This augment can be applied to any spell with an area that is one of the above areas.
-
-            \augment{1}{Untraceable} You do not need verbal or somatic \glossterm{components} to cast the spell.
-
-            \augment{2}{Abyssal Flame} Non-physical damage dealt by the spell becomes life damage in place of its other damage types.
-            In addition, you gain a \plus1d bonus to life damage dealt by the spell.
-            This does not change any other aspects of the spell's effects.
-            \par This augment can be applied to any spell that deals non-physical damage.
-
-            \augment{2}{Bloodreaving} Whenever a creature takes damage from the spell, you heal hit points equal to the damage dealt.
-            \par This augment can be applied to any spell that deals damage.
-
-            \augment{3}{Exsanguinating} Whenever a creature takes damage from the spell, it begins bleeding as a \glossterm{condition}.
-            At the end of each \glossterm{action phase}, a bleeding creature takes life \glossterm{standard damage} \minus2d.
-            \par This augment can be applied to any spell that deals damage.
-
-            \augment{4}{Inevitable Doom} You gain a \plus2 bonus to accuracy with the spell.
-            \par This augment can be applied to any spell that makes an attack.
-
-            \augment{4}{Infernal Potency} You gain a \plus2d bonus to damage with the spell.
-            \par This augment can be applied to any spell that deals damage based on a dice pool.
-
-            \augment{5}{Dark Miasma} Whenever a creature takes damage from the spell, it becomes \glossterm{sickened} as a \glossterm{condition}.
-            \par This augment can be applied to any spell that deals damage.
-
-            \augment{5}{Unholy Terror} Whenever a creature takes damage from the spell, it becomes \glossterm{shaken} by you as a \glossterm{condition}.
-            \par This augment can be applied to any spell that deals damage.
-
-            \augment{6}{Soulclaiming} Whenever a creature takes damage from the spell, its soul becomes marked by your soulkeeper as a \glossterm{condition}.
-            It takes a \minus4 penalty to Mental defense.
-            If it dies, its soul is immediately claimed by your soulkeeper, preventing it from being resurrected by any means.
-
-            \augment{8}{Greater Inevitable Doom} You gain a \plus4 bonus to accuracy with the spell.
-            \par This augment can be applied to any spell that makes an attack.
-
-            \augment{8}{Greater Infernal Potency} You gain a \plus4d bonus to damage with the spell.
-            \par This augment can be applied to any spell that deals damage based on a dice pool.
-        }
-
-        \cf{War}[3]{Greater Malevolent Boon} You can cast spells that make attack rolls without spending \glossterm{action points}.
+        \cf{War}[4]{Greater Malevolent Boon} You can cast arcane spells that make attack rolls without spending \glossterm{action points}.
         You cannot \glossterm{attune} to a spell you cast in this way.
-        In addition, you cannot use this ability when casting \glossterm{subspells}.
+        You cannot use this ability on spells that do not normally have attacks, even if you apply an \glossterm{augment} that makes a separate attack.
 
-        \cf*{War}[4]{Pact Augment} You learn an additional \textit{pact augment}.
+        \cf*{War}[5]{Augment}
+        You learn an additional \glossterm{augment} that you can apply to arcane spells.
 
-        \cf{War}[5]{Supreme Malevolent Boon} You can cast all spells without spending \glossterm{action points}.
-        You cannot \glossterm{attune} to a spell you cast in this way.
-        In addition, you cannot use this ability when casting \glossterm{subspells}.
+        \cf*{War}[6]{Greater Wellspring of Magic} You gain an additional \glossterm{action point}.
 
-        \cf*{War}[6]{Pact Augment} You learn an additional \textit{pact augment}.
-
-        \cf{War}[7]{Infernal Power} You gain a \plus1 bonus to \glossterm{accuracy} with spells.
-
-        \cf{War}[8]{Dual Pact} You can apply two different \textit{pact augments} to the same spell, paying separate action points for each.
+        \cf{War}[7]{Augment}
+        You learn an additional \glossterm{augment} that you can apply to arcane spells.

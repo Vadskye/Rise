@@ -186,7 +186,7 @@ def generate_armor():
     apparel.append(MagicItem(
         name="Hidden Armor",
         level=4,
-        tags=['Glamer'],
+        tags=['Sensation'],
         material_type='body armor',
         description="""
              As a standard action, you can use this item.
@@ -340,7 +340,7 @@ def generate_worn():
         name="Torchlight Gloves",
         level=2,
         material_type='glove',
-        tags=['Figment', 'Light'],
+        tags=['Light'],
         description="""
             These gloves shed light as a torch.
             As a \\glossterm<standard action>, you may snap your fingers to suppress or resume the light from either or both gloves.
@@ -917,7 +917,7 @@ def generate_worn():
         name="Assassin's Cloak",
         level=7,
         material_type='cloak',
-        tags=['Glamer'],
+        tags=['Sensation'],
         description="""
             At the end of each round, if you took no actions that round, you become \\glossterm<invisible> until the end of the next round.
         """,
@@ -928,7 +928,7 @@ def generate_worn():
         name="Assassin's Cloak, Greater",
         level=17,
         material_type='cloak',
-        tags=['Glamer'],
+        tags=['Sensation'],
         description="""
             At the end of each round, if you did not attack a creature that round, you become \\glossterm<invisible> until the end of the next round.
         """,
@@ -968,7 +968,7 @@ def generate_worn():
         name="Vanishing Cloak",
         level=8,
         material_type='cloak',
-        tags=['Glamer', 'Teleportation'],
+        tags=['Sensation', 'Teleportation'],
         description="""
             As a standard action, you can spend an \\glossterm<action point> to use this item.
             If you do, you teleport to an unoccupied location within \\rngmed range of your original location.

@@ -328,7 +328,7 @@ def generate_rituals():
             The target glows like a torch, shedding bright light in a \\areamed radius (and dim light for an additional 20 feet).
 
             This ritual takes one minute to perform.
-        """, tags=['Attune (multiple)', 'Figment', 'Light']),
+        """, tags=['Attune (multiple)', 'Light', 'Sensation']),
         schools=['Illusion'],
         lists=['Arcane', 'Divine', 'Nature'],
     ))
@@ -347,7 +347,7 @@ def generate_rituals():
             After the message is spoken, this effect is \\glossterm<dismissed>.
 
             This ritual takes 24 hours to perform.
-        """, tags=['Attune (multiple)', 'Figment']),
+        """, tags=['Attune (multiple)', 'Sensation']),
         schools=['Illusion'],
         lists=['Arcane'],
     ))
