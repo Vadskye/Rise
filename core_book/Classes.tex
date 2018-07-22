@@ -1803,7 +1803,7 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Monk Progression}
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Ki} & \tb{Transcendent Sage} & \tb{Unfettered Warrior} \\\bottomrule
-               1 & Ki manifestations    & Serene strike         & Unarmed warrior, unfettered defense
+               1 & Ki barrier, ki manifestations    & Serene strike         & Unarmed warrior, unfettered defense
             \\ 2 & Ki vessel            & Sage lore             & Unfettered athletics
             \\ 3 & Ki manifestation     & Transcend frailty     & Intuitive reaction
             \\ 4 & Dual manifestation   & Greater serene strike & Unfettered athletics
@@ -1838,15 +1838,20 @@ This choice determines a great deal about your character's abilities.
         \cf{Mnk}{Weapon and Armor Proficiencies}
         Monks are proficient with simple weapons, monk weapons, and any one other weapon group.
         Monks are not proficient with any armor or shields.
-        When wearing armor, using a shield, or carrying a medium or heavy load, a monk loses the benefit of your \textit{enlightened defense} and \textit{fast movement} abilities, as well as all abilities from the Ki archetype.
 
     \subsection{Ki}
         This archtype grants you abilities you can use in combat.
         All abilities from this archetype are \glossterm{magical}.
+        If you wear armor, use a shield, or have \glossterm{encumbrance}, you lose the benefit of all abilities from this archetype.
 
         \cf{Mnk}[1]{Ki Power}
         The \glossterm{power} of your ki abilities is determined by your \textit{ki power}.
         Your \textit{ki power} is equal to your level or your Willpower, whichever is higher.
+
+        \cf{Mnk}[1]{Ki Barrier}
+        If you are not wearing armor and have no \glossterm{encumbrance}, you gain a ki barrier around your body.
+        This functions like body armor that provides a \plus2 bonus to Armor defense and has no \glossterm{encumbrance}.
+        You lose this bonus when you are \helpless.
 
         \cf{Mnk}[1]{Ki Manifestations}
         You can channel your ki to temporarily enhance your abilities.
@@ -2018,7 +2023,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Mnk}[8]{Myriad Manifestation} You can use up to three \textit{ki manifestation} abilities per round.
         If you do, the second and third abilities do not cost action points.
 
-    \subsection{Unfettered Warrior}
+    \subsection{Unfettered Warrior}\label{Unfettered Warrior}
         This archetype improves your combat prowess while unarmed and unencumbered.
 
         \cf{Mnk}[1]{Unarmed Warrior}
@@ -2026,9 +2031,8 @@ This choice determines a great deal about your character's abilities.
         In addition, you gain a \plus2d bonus to damage with your unarmed attack.
         For details about how to fight while unarmed, see \pcref{Unarmed Combat}.
 
-        \cf{Mnk}[1]{Unfettered Defense}[Magical]
-        If you are not wearing armor and have no \glossterm{encumbrance}, you gain a \plus2 bonus to Armor defense.
-        You lose this bonus when you are \helpless.
+        \cf{Mnk}[1]{Unfettered Defense}
+        While you have a free hand, have no \glossterm{encumbrance}, and are not using a shield, you gain a \plus1 bonus to Armor defense.
 
         \cf{Mnk}[2]{Unfettered Athletics} You gain two additional skill points.
 
@@ -2042,7 +2046,7 @@ This choice determines a great deal about your character's abilities.
         The initiative bonus from your \textit{intuitive reaction} ability increases to \plus5.
 
         \cf{Mnk}[6]{Greater Unfettered Defense}
-        Your bonus to Armor defense from your \textit{unfettered defense} ability improves to \plus3.
+        Your bonus to Armor defense from your \textit{unfettered defense} ability improves to \plus2.
 
         \cf{Mnk}[7]{Supreme Intuitive Reaction}
         The initiative bonus from your \textit{intuitive reaction} ability increases to \plus10.
