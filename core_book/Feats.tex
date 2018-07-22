@@ -107,6 +107,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \tb{Combat Feats}\label{Combat Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
         \featref{Agility} & Dex 2 & Increase reaction speed & \tdash & \featpref{Agility} \\
         \featref{Blindfighter} & Per 2 & Fight unseen foes better & \tdash & \featpref{Blindfighter} \\
+        \featref{Brawler} & Str 1, Dex 1 & Fight better unarmed and in close quarters & \tdash & \featpref{Brawler} \\
         \featref{Duelist} & Dex 1, Int 1 & Fight one-on-one better & \tdash & \featpref{Duelist} \\
         \featref{Executioner} & Str 1, Per 2 & Kill weakened foes more easily & \tdash & \featpref{Executioner} \\
         \featref{Guardian} & Per 1, Wil 1 & Protect nearby allies & \tdash & \featpref{Guardian} \\
@@ -377,8 +378,33 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         That target must spend an action point to attune to the spell as normal.
     \end{feat}
 
+    \begin{feat}{Brawler}{Combat}
+        \featpre Starting Strength of 1, starting Dexterity of 1.
+
+        \ff[1]{Unarmed Warrior} You are \glossterm{proficient} with your \glossterm{unarmed attack}.
+        In addition, you gain a \plus2d bonus to damage with your unarmed attack.
+        For details about how to fight while unarmed, see \pcref{Unarmed Combat}.
+        This ability does not stack with the ability of the same name from the Unfettered Warrior monk archetype (see \pcref{Unfettered Warrior}).
+
+        \ff[3]{Grapple Expertise} You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability (see \pcref{Grapple}).
+
+        \ff[6]{Takedown} As a standard action, you can spend an \glossterm{action point} to use the \textit{takedown} ability.
+        \begin{ability}{Takedown}
+            Make an unarmed \glossterm{strike}.
+            In addition to the attack's normal effects, if the attack result also beats the target's Fortitude defense, you and the target are \grappled by each other.
+        \end{ability}
+
+        \ff[9]{Greater Unarmed Warrior} The damage bonus from your \textit{unarmed warrior} increases to \plus3d.
+
+        \ff[12]{Greater Takedown} You gain a \plus1 bonus to accuracy with your \textit{grapple expertise} ability.
+
+        \ff[15]{Greater Grapple Expertise} The bonus from your \textit{grapple expertise} ability increases to \plus3.
+
+        \ff[18]{Supreme Takedown} The accuracy bonus from your \textit{greater takedown} ability increases to \plus2.
+    \end{feat}
+
     \begin{feat}{Celestial Heritage}{Bloodline, Magical}
-        \featpre Non-evil alignment
+        \featpre Non-evil alignment.
         \parhead{Special} You can only have one Bloodline feat.
 
         \ff[1]{Celestial Power} Your \glossterm{power} with abilities from this feat is equal to your Willpower or your level, whichever is higher.
