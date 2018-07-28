@@ -195,6 +195,5 @@ class Creature(object):
             max(
                 self.level,
                 getattr(self, attribute or self.key_attribute),
-                self.cr_mod,
-            )
-        )
+            ),
+        ) + self.cr_mod
