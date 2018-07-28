@@ -59,11 +59,16 @@ class Creature(object):
             self.shield.defense_bonus if self.shield else 0,
             max(self.level, self.dexterity),
             self.natural_armor,
+            self.cr_mod,
         ])
 
     @property
     def constitution(self):
         return calculate_attribute(self.starting_constitution, self.level)
+
+    @property
+    def cr_mod(self):
+        return max(0, self.challenge_rating - 1)
 
     @property
     def dexterity(self):
@@ -79,6 +84,7 @@ class Creature(object):
             max(self.level, self.strength, self.constitution),
             self.character_class.fortitude_defense_bonus,
             self.race.fortitude_defense_bonus,
+            self.cr_mod,
         ])
 
     @property
@@ -96,6 +102,7 @@ class Creature(object):
             max(self.level, self.intelligence, self.willpower),
             self.character_class.mental_defense_bonus,
             self.race.mental_defense_bonus,
+            self.cr_mod,
         ])
 
     @property
@@ -118,6 +125,7 @@ class Creature(object):
             self.character_class.reflex_defense_bonus,
             self.race.reflex_defense_bonus,
             self.size.reflex_defense_modifier,
+            self.cr_mod,
         ])
 
     @property
@@ -152,7 +160,8 @@ class Creature(object):
         # Assume that Perception is used by default
         return max(
             self.level,
-            getattr(self, attribute or self.key_attribute, 0)
+            getattr(self, attribute or self.key_attribute, 0),
+            self.cr_mod,
         )
 
     def weapon_accuracy(self, weapon):
@@ -163,6 +172,7 @@ class Creature(object):
             self.dexterity if weapon.encumbrance_category == Weapon.LIGHT else 0,
             getattr(self, weapon.attribute) if weapon.attribute else 0,
             self.shield.accuracy_modifier if self.shield else 0,
+            self.cr_mod,
         )
 
     def weapon_damage(self, weapon):
@@ -176,6 +186,7 @@ class Creature(object):
             ) // 2,
             weapon.damage_modifier,
             self.size.damage_modifier,
+            self.cr_mod,
         ])
         return standard
 
@@ -183,6 +194,7 @@ class Creature(object):
         return standard_damage(
             max(
                 self.level,
-                getattr(self, attribute or self.key_attribute, 0)
+                getattr(self, attribute or self.key_attribute),
+                self.cr_mod,
             )
         )

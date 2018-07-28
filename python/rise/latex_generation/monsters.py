@@ -27,7 +27,7 @@ def aberrations():
         natural_armor=6,
         race=Race('aberration'),
         size=Size('huge'),
-        starting_attributes=[2, 0, 3, 2, 1, 4],
+        starting_attributes=[2, 0, 2, 2, 1, 4],
         weapons=[Weapon('tentacle')],
     )
     monsters.append(get_latex_from_creature(
