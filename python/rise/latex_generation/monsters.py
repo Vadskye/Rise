@@ -320,13 +320,11 @@ def humanoids():
         goblin_shouter,
         active_abilities=[
             active_ability('Shout of Running', """
-                All other willing allies who can hear the shouter can use the sprint ability without spending action points.
-                This effect lasts as long as the shouter sustains it as a standard action.
-            """),
+                All other willing allies who can hear the shouter can use the \\textit<sprint> ability without spending action points.
+            """, tags=['Sustain (standard)']),
             active_ability('Shout of Stabbing', """
                 All other willing allies who can hear the shouter gain a +1d bonus to strike damage.
-                This effect lasts as long as the shouter sustains it as a standard action.
-            """),
+            """, tags=['Sustain (standard)']),
         ],
         behavior='Attack lowest threat',
     ))
@@ -370,8 +368,7 @@ def humanoids():
         active_abilities=[
             active_ability('Hit Everyone Else', """
                 All other willing allies who can hear the chieftain gain a +2 bonus to accuracy with strikes.
-                This effect lasts as long as the chieftain sustains it as a standard action.
-            """),
+            """, tags=['Sustain (standard)']),
             active_ability('Hit Hardest', f"""
                 The chieftain makes a greataxe strike.
                 The strike deals {orc_chieftain.weapon_damage(Weapon('greataxe')) + 2} damage.
@@ -425,8 +422,7 @@ def humanoids():
             """),
             active_ability('Hit That One Over There', """
                 All other willing allies who can hear the loudmouth gain a +2 bonus to accuracy with strikes against one creature within Long range.
-                This effect lasts as long as the loudmouth sustains it as a standard action.
-            """),
+            """, tags=['Sustain (standard)']),
         ],
     ))
 
@@ -1146,11 +1142,10 @@ def outsiders():
         active_abilities=[
             active_ability('Flame Aura', f"""
                 The salamander spends an action point to intensify its natural body heat, creating a burning aura around it.
-                This ability lasts as long as the salamander sustains it as a standard action.
                 At the end of each action phase, the salamander makes a +{flamebrother_salamander.accuracy()} vs. Reflex
                     attack against everything within a Medium radius emanation of it.
                 \\hit Each target takes {flamebrother_salamander.standard_damage() - 1} fire damage.
-            """),
+            """, tags=['Sustain (standard)']),
             active_ability('Natural Grab', f"""
                 The salamander makes a tail slam \\glossterm<strike>.
                 In addition to the effects of the strike, it also makes a +{flamebrother_salamander.accuracy('perception')} vs. Fortitude and Reflex attack against the same target.
@@ -1194,11 +1189,10 @@ def outsiders():
         active_abilities=[
             active_ability('Flame Aura', f"""
                 The salamander spends an action point to intensify its natural body heat, creating a burning aura around it.
-                This ability lasts as long as the salamander sustains it as a standard action.
                 At the end of each action phase, the salamander makes a +{flamebrother_salamander.accuracy()} vs. Reflex
                     attack against everything within a Medium radius emanation of it.
                 \\hit Each target takes {flamebrother_salamander.standard_damage() - 1} fire damage.
-            """),
+            """, tags=['Sustain (standard)']),
             active_ability('Natural Grab', f"""
                 The salamander makes a tail slam \\glossterm<strike>.
                 In addition to the effects of the strike, it also makes a +{salamander_battlemaster.accuracy('perception')} vs. Fortitude and Reflex attack against the same target.
@@ -1258,8 +1252,7 @@ def undead():
             active_ability('Animating Caper', """
                 One corpse within Close range is animated as a skeleton under the dirgewalker's control.
                 This ability costs an action point to use.
-                It lasts as long as the dirgewalker attunes to it.
-            """),
+            """, tags=['Attune']),
             active_ability('Mournful Dirge', f"""
                 The dirgewalker makes a +{dirgewalker.accuracy()} vs. Mental attack against all creatures in a Medium radius.
                 \\hit Each target is dazed as a condition.
