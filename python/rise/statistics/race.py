@@ -3,24 +3,24 @@
 def defense_bonuses_from_race_name(name):
     return {
         # PC races
-        'human': [2, 2, 2],
-        'dwarf': [3, 1, 2],
-        'elf': [1, 3, 2],
-        'gnome': [3, 2, 1],
-        'half-elf': [2, 2, 2],
-        'half-orc': [3, 2, 1],
-        'halfling': [2, 3, 1],
+        'human': [0, 0, 0],
+        'dwarf': [0, 0, 0],
+        'elf': [0, 0, 0],
+        'gnome': [0, 0, 0],
+        'half-elf': [0, 0, 0],
+        'half-orc': [0, 0, 0],
+        'halfling': [0, 0, 0],
 
         # Monster races
-        'aberration': [1, 2, 3],
-        'animal': [3, 2, 1],
-        'animate': [3, 2, 1],
-        'construct': [2, 1, 3],
-        'humanoid': [2, 2, 2],
-        'magical beast': [3, 2, 1],
-        'monstrous humanoid': [2, 2, 2],
-        'outsider': [1, 2, 3],
-        'undead': [1, 2, 3],
+        'aberration': [3, 4, 5],
+        'animal': [5, 4, 3],
+        'animate': [5, 4, 3],
+        'construct': [4, 3, 5],
+        'humanoid': [4, 4, 4],
+        'magical beast': [5, 4, 3],
+        'monstrous humanoid': [4, 4, 4],
+        'outsider': [3, 4, 5],
+        'undead': [3, 4, 5],
     }[name]
 
 class Race(object):

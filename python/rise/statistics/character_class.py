@@ -3,21 +3,21 @@
 def defense_bonuses_from_class_name(name):
     return {
         # PC classes
-        'barbarian': [3, 2, 1],
-        'cleric': [2, 1, 3],
-        'druid': [3, 1, 2],
-        'fighter': [3, 1, 2],
-        'mage': [1, 2, 3],
-        'monk': [1, 3, 2],
-        'paladin': [3, 1, 2],
-        'ranger': [2, 3, 1],
-        'rogue': [1, 3, 2],
+        'barbarian': [5, 4, 3],
+        'cleric': [4, 3, 5],
+        'druid': [5, 3, 4],
+        'fighter': [5, 3, 4],
+        'mage': [3, 4, 5],
+        'monk': [3, 5, 4],
+        'paladin': [5, 3, 4],
+        'ranger': [4, 5, 3],
+        'rogue': [3, 5, 4],
 
         # Monster classes
-        'adept': [2, 2, 2],
-        'behemoth': [2, 2, 2],
+        'adept': [0, 0, 0],
+        'behemoth': [0, 0, 0],
         'horde': [0, 0, 0],
-        'slayer': [2, 2, 2],
+        'slayer': [0, 0, 0],
     }[name]
 
 class CharacterClass(object):
