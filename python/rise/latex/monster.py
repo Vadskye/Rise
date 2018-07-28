@@ -134,9 +134,9 @@ def get_latex(
 def actions_text(challenge_rating):
     return {
         1: "",
-        2: "One in action phase, one in delayed action phase",
-        3: "Two in action phase, one in delayed action phase",
-        4: "Two in action phase, two in delayed action phase",
+        2: "",
+        3: "One in action phase, one in delayed action phase",
+        4: "One in action phase, one in delayed action phase",
     }[challenge_rating]
 
 def active_abilities_text(active_abilities):
