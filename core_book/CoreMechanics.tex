@@ -177,15 +177,21 @@ It defines how attributes work and explains how to make physical attacks in comb
             You must still make all choices required to use a delayed ability when you first use the ability during the action phase.
             For example, when casting a spell, you must choose which spell (or \glossterm{subspell}) you cast, and any \glossterm{augments} you apply to that spell, during the action phase.
 
+        % This may be too complicated
         \subsubsection{Conflicting Actions}\label{Conflicting Actions}
 
-            Sometimes, actions that occur at the same time can conflict with each other.
-            In this case, each involved character rolls an \glossterm{initiative} check (see \pcref{Initiative}).
-            The creature with the highest check result succeeds.
-            All other creatures come as close as possible to completing their intended action.
+            Sometimes, actions that occur in the same phase can conflict with each other.
+            In this case, each creature involved with conflicting actions in that phase rolls an \glossterm{initiative} check (see \pcref{Initiative}).
+            Starting from the highest check result and continuing to the lowest, each creature decides to resolve its chosen action or delay to choose a different action.
+            After the lowest initiative check result has made its choice, each creature that delayed can resolve a different action of its choice, starting from the lowest check result and continuing to the highest.
+            When deciding, each creature knows the resolved effects of the actions chosen by previous creatures that it can observe.
 
-            For example, if two creatures were racing to reach a door, they would both roll initiative.
-            The winner would reach the door and stop in their intended square, and the loser would stop as close as possible to their intended square.
+            When determining whether two actions conflict, it is best to be generous and consider the intention of the action.
+            The only downside to treating actions as conflicting is the time required to resolve the initiative checks and consider action changes.
+
+            For example, one of the most common conflicts occurs when a creature tries to move into melee range with a foe that unexpectedly moves away.
+            Although the two movements not mutually impossible, the first creature can easily end up out of melee range from all foes at the end of the phase if it doesn't have enough movement to reach its target.
+            Treating the movements as conflicting allows the first creature to sprint or change its action if it chooses.
 
 \section{Character Statistics}
     This section explains how character statistics, such as how strong you are or how accurate your attacks are, should be calculated.
