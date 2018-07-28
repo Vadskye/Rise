@@ -42,7 +42,7 @@ def aberrations():
             """, tags=['Mind']),
             active_ability('Psionic Blast', f"""
                 The aboleth makes a +{aboleth.accuracy()} vs. Mental attack against enemies in a Large cone.
-                \\hit Each target takes {aboleth.standard_damage()} psionic damage.
+                \\hit Each target takes {aboleth.standard_damage()} psionic damage and is \\glossterm<stunned> as a \\glossterm<condition>.
             """, tags=['Mind']),
         ],
         passive_abilities=[
