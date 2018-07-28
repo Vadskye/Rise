@@ -12,15 +12,15 @@ def defense_bonuses_from_race_name(name):
         'halfling': [0, 0, 0],
 
         # Monster races
-        'aberration': [3, 4, 5],
-        'animal': [5, 4, 3],
-        'animate': [5, 4, 3],
-        'construct': [4, 3, 5],
+        'aberration': [2, 4, 6],
+        'animal': [6, 4, 2],
+        'animate': [6, 4, 2],
+        'construct': [4, 2, 6],
         'humanoid': [4, 4, 4],
-        'magical beast': [5, 4, 3],
+        'magical beast': [6, 4, 2],
         'monstrous humanoid': [4, 4, 4],
-        'outsider': [3, 4, 5],
-        'undead': [3, 4, 5],
+        'outsider': [2, 4, 6],
+        'undead': [2, 4, 6],
     }[name]
 
 class Race(object):
