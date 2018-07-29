@@ -1528,6 +1528,7 @@ def generate_spells():
                 As a \\glossterm<standard action>, you can reach through time to restore the target's state.
                 If you do, the target's hit points, vital damage, and active conditions become identical to what they were when you cast this subspell.
                 This does not affect any other properties of the target, such as any resources expended.
+                After you restore the target's state in this way, the spell ends.
 
                 You can cast this subspell as a \\glossterm<minor action>.
             """, tags=['Sustain (minor)', 'Temporal']),
