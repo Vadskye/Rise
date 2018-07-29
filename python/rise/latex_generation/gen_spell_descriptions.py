@@ -536,7 +536,7 @@ def generate_spells():
             Subspell('Fall', 1, """
                 Make a Spellpower vs. Mental attack against all creatures in a \\areamed radius from you.
                 \\hit Each target falls \\glossterm<prone>.
-                \\hit As above, and as a \\glossterm<condition>, each target is unable to stand up.
+                \\crit As above, and as a \\glossterm<condition>, each target is unable to stand up.
                 If a target is somehow brought into a standing position, it will immediately fall and become prone again.
             """),
             Subspell('Stay', 1, """
@@ -1403,7 +1403,7 @@ def generate_spells():
             """, tags=['Planar', 'Teleportation']),
             Subspell("Teleport", 1, """
                 Choose a Medium or smaller willing creature within \\rngclose range.
-                The target teleports into an unoccupied destination within \\rngmed range of its original location.
+                The target teleports into an unoccupied destination within range.
                 If the destination is invalid, this subspell is \\glossterm<miscast>.
             """, tags=['Teleportation']),
             Subspell("Dimension Door", 4, """
