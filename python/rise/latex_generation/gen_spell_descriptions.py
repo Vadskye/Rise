@@ -1488,22 +1488,25 @@ def generate_spells():
                 If this would reduce any of the target's resources below 0, it takes physical \\glossterm<standard damage> +3d from the paradox and becomes \\glossterm<stunned> as a \\glossterm<condition>.
             """, tags=['Temporal']),
             Subspell("Time Hop", 2, """
-                Choose a willing creature within \\rngmed range.
+                Choose a Medium or smalller willing creature or unattended object within \\rngmed range.
                 You send the target into the future, causing it to temporarily cease to exist.
                 When you cast this subspell, you choose how many rounds the target ceases to exist for, up to a maximum of five rounds.
                 At the end of the last round, it reappears in the same location where it disappeared.
-                If that location is occupied, it appears in the closest unoccupied space.
+
+                The area the target occupied can be physically crossed, but it is treated as an invalid destination for teleportation and other similar magic.
+                When the target reappears, all of its surroundings are adjusted as if the object had retroactively always existed in its space.
+                For example, if the location is occupied by a creature that walked into the area, the creature is relocated to the closest unoccupied space along the path it took to reach the target.
 
                 You can cast this subspell as a \\glossterm<minor action>.
             """, tags=['Temporal']),
             Subspell("Temporal Stasis", 3, """
-                Choose a willing creature within \\rngclose range.
+                Choose a Medium or smaller willing creature within \\rngmed range.
                 The target is placed into stasis, rendering it unconscious.
                 While in stasis, it cannot take any actions and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
 
                 % TODO: wording
                 This effect normally lasts as long as you \\glossterm<attune> to it, and until the end of the round when you release the attunement.
-                If you use this ability on yourself, it instead lasts until the end of the next round.
+                If you use this ability on yourself, it instead lasts for a number of rounds you choose when you cast the spell, up to a maximum of five rounds.
 
                 You can cast this subspell as a \\glossterm<minor action>.
             """, tags=['Attune', 'Temporal']),
