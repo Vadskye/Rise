@@ -217,24 +217,24 @@
 }
 {}
 
-\DeclareDocumentEnvironment{monsection}{o m m o}
+\DeclareDocumentEnvironment{monsection}{m o m o}
 {
     \vspace{1em}
     \begin{thesamepage}
     \setlength\multicolsep{0pt}
     \begin{multicols}{2}
-        \IfValueTF{#1}
+        \IfValueTF{#2}
         {
-            \lowercase{\hypertarget{mon:#1~#2}{}}
-            \label{mon:#1~#2}
-            \hypertarget{mon:#1~#2}
-                {\subsection{#2,~#1}}
+            \lowercase{\hypertarget{mon:#2~#1}{}}
+            \label{mon:#2~#1}
+            \hypertarget{mon:#2~#1}
+                {\subsection{#1,~#2}}
         }
         {
-            \lowercase{\hypertarget{mon:#2}{}}
-            \label{mon:#2}
-            \hypertarget{mon:#2}
-                {\subsection{#2}}
+            \lowercase{\hypertarget{mon:#1}{}}
+            \label{mon:#1}
+            \hypertarget{mon:#1}
+                {\subsection{#1}}
         }
 
         \columnbreak
