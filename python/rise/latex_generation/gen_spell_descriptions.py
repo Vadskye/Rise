@@ -1229,12 +1229,12 @@ def generate_spells():
                 At the end of each \\glossterm<action phase>, one destroyed image reappears, to a maximum of four images.
             """),
             Subspell("Shadow Mantle", 4, """
-                This subspell functions like the \\spell<distort image> spell, except that the spell's deceptive nature extends beyond altering light to affect the nature of reality itself.
+                This subspell functions like the \\spell<blur> subspell, except that the spell's deceptive nature extends beyond altering light to affect the nature of reality itself.
                 The defense bonus it provides applies to all defenses.
                 In addition, the spell loses the \\glossterm<Visual> tag, and can protect against attacks from creatures immune to Visual abilities.
             """),
             Subspell("Displacement", 7, """
-                This subspell functions like the \\spell<scry> spell, except that the target's image is futher distorted, and appears to be two to three feet from its real location.
+                This subspell functions like the \\spell<blur> subspell, except that the target's image is futher distorted, and appears to be two to three feet from its real location.
                 \\glossterm<Targeted> \\glossterm<physical attacks> against the target suffer a 50\\% miss chance.
             """),
         ],
