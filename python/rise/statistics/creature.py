@@ -52,6 +52,10 @@ class Creature(object):
         self.shield = shield
         self.size = size or Size(Size.MEDIUM)
 
+        self.fortitude_defense_misc = 0
+        self.reflex_defense_misc = 0
+        self.mental_defense_misc = 0
+
     @property
     def armor_defense(self):
         return sum([
@@ -80,6 +84,7 @@ class Creature(object):
     @property
     def fortitude_defense(self):
         return sum([
+            self.fortitude_defense_misc,
             self.starting_constitution,
             max(self.level, self.strength, self.constitution),
             self.character_class.fortitude_defense_bonus,
@@ -98,6 +103,7 @@ class Creature(object):
     @property
     def mental_defense(self):
         return sum([
+            self.mental_defense_misc,
             self.starting_willpower,
             max(self.level, self.intelligence, self.willpower),
             self.character_class.mental_defense_bonus,
@@ -120,6 +126,7 @@ class Creature(object):
     @property
     def reflex_defense(self):
         return sum([
+            self.reflex_defense_misc,
             self.starting_dexterity,
             max(self.level, self.dexterity, self.perception),
             self.character_class.reflex_defense_bonus,

@@ -80,7 +80,7 @@ def get_latex(
     behavior = behavior or 'Attack highest threat'
     return join(
         f"""
-            \\begin<monsection>{name_suffix_text(name_suffix)}<{name}><{level}>[{challenge_rating}]
+            \\begin<monsection><{name}>{name_suffix_text(name_suffix)}<{level}>[{challenge_rating}]
                 \\vspace<-1em>\\spelltwocol<><{size.title()} {race}>\\vspace<-1em>
                 \\begin<spellcontent>
                     \\begin<spelltargetinginfo>
@@ -128,7 +128,7 @@ def get_latex(
                 {passive_abilities_text(passive_abilities)}
             ''' if active_abilities or passive_abilities else ""}
         """
-    )
+    ).strip()
 
 
 def actions_text(challenge_rating):

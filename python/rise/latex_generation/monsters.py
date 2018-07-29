@@ -15,6 +15,27 @@ from rise.latex.util import latexify
 def trunc_to_five(n):
     return (n // 5) * 5
 
+
+# These are functions commmon to multiple creatures that modify the creature's
+# statistics in some way.
+modifiers = {}
+
+def ichor_modifier(creature):
+    creature.name = f"Ichor {creature.name}"
+    creature.race.mental_defense_bonus = 6
+    return creature
+modifiers['ichor'] = ichor_modifier
+
+
+# These are passive abiliites common to multiple creature. The abilities take
+# the creature as an argument to alow referencing aspects of the creature in the
+# description.
+passives = {
+    'ichor healing': lambda creature: passive_ability('Ichor Healing', f"""
+        The {creature.name} heals {creature.level * creature.cr_mod} hit points at the end of each round.
+    """),
+}
+
 def aberrations():
     monsters = []
 
@@ -76,6 +97,19 @@ def animals():
             active_ability('Rend', """
                 The bear makes a claw strike against two targets within reach.
             """),
+        ],
+        immunities=['staggered'],
+    ))
+
+    monsters.append(get_latex_from_creature(
+        modifiers['ichor'](black_bear),
+        active_abilities=[
+            active_ability('Rend', """
+                The bear makes a claw strike against two targets within reach.
+            """),
+        ],
+        passive_abilities=[
+            passives['ichor healing'](black_bear),
         ],
         immunities=['staggered'],
     ))
@@ -248,6 +282,8 @@ def animals():
     monsters.append(get_latex_from_creature(
         huge_centipede,
     ))
+
+    monsters.sort()
 
     return '\n\n'.join(monsters)
 
