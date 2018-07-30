@@ -393,13 +393,13 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Divine Spellcasting} & \tb{Divine Spell Mastery}  & \tb{Domain Influence} \\\bottomrule
                1 & Divine spells   & Wellspring of magic         & Domains, domain gift
-            \\ 2 & Subspells       & Expanded spell knowledge    & Domain gift
-            \\ 3 & Spell knowledge & Augments                    & Domain aspect
-            \\ 4 & Subspell        & Spell mastery               & Domain aspect
-            \\ 5 & Subspell        & Augment                     & Domain essence
-            \\ 6 & Subspell        & Greater wellspring of magic & Domain essence
-            \\ 7 & Subspell        & Greater spell mastery       & Domain mastery
-            \\ 8 &                 & Mystic supremacy            & Miracle
+            \\ 2 & Subspells                 & Mystic knowledge            & Domain gift
+            \\ 3 & Subspell                  & Augments                    & Domain aspect
+            \\ 4 & Cantrip expertise         & Mystic knowledge            & Domain aspect
+            \\ 5 & Subspell                  & Augment                     & Domain essence
+            \\ 6 & Subspell                  & Greater wellspring of magic & Domain essence
+            \\ 7 & Greater cantrip expertise & Mystic knowledge            & Domain mastery
+            \\ 8 &                           & Mystic supremacy            & Miracle
         \end{dtabularx}
     \end{dtable}
 
@@ -488,17 +488,17 @@ This choice determines a great deal about your character's abilities.
         \cf{Clr}[3]{Subspell}
         You learn an additional \glossterm{subspell} for a divine spell you know.
 
-        \cf*{Clr}[4]{Spell Knowledge}
-        You learn an additional divine spell (see \pcref{Divine Spells}).
+        \cf{Clr}[4]{Cantrip Expertise}
+        You gain a \plus1 bonus to \glossterm{spellpower} with \glossterm{cantrips} for divine spells.
 
-        \cf{Clr}[5]{Subspell}
+        \cf*{Clr}[5]{Subspell}
         You learn an additional \glossterm{subspell} for a divine spell you know.
 
         \cf*{Clr}[6]{Subspell}
         You learn an additional \glossterm{subspell} for a divine spell you know.
 
-        \cf{Clr}[7]{Subspell}
-        You learn an additional \glossterm{subspell} for a divine spell you know.
+        \cf{Clr}[7]{Greater Cantrip Expertise}
+        The bonus from your \textit{cantrip expertise} ability increases to \plus2.
 
     \subsection{Domain Influence}
         This archetype grants you divine influence over two domains of your choice.
@@ -573,17 +573,23 @@ This choice determines a great deal about your character's abilities.
         \cf{Clr}[1]{Wellspring of Magic}
         You gain an additional \glossterm{action point}.
 
-        \cf{Clr}[2]{Expanded Spell Knowledge}
-        You learn an additional divine spell (see \pcref{Divine Spells}).
-        In addition, you gain the ability to perform divine rituals to create unique magical effects (see \pcref{Rituals}).
+        \cf{Clr}[2]{Mystic Knowledge}
+        You gain your choice of one of the following abilities.
+        {
+            \parhead{Rituals} You gain the ability to perform divine rituals to create unique magical effects (see \pcref{Rituals}).
+            \parhead{Spell Knowledge} You learn an additional divine spell.
+                You can choose this ability multiple times, learning an additional spell each time.
+            \parhead{Subspell Knowledge} You learn an additional \glossterm{subspell} for a divine spell you know.
+                You can choose this ability multiple times, learning an additional subspell each time.
+        }
 
         \cf{Clr}[3]{Augments}
         Choose two \glossterm{augments} (see \pcref{Augments}).
         You can apply those augments to divine spells you cast and divine rituals you perform.
         Whenever you gain access to a new spell level, you may change which augments you know.
 
-        \cf{Clr}[4]{Spell Mastery}
-        You gain a \plus1 bonus to \glossterm{spellpower} with divine spells.
+        \cf*{Clr}[4]{Mystic Knowledge}
+        You can an additional \textit{mystic knowledge} ability.
 
         \cf{Clr}[5]{Augment}
         You learn an additional \glossterm{augment} that you can apply to divine spells.
@@ -591,8 +597,8 @@ This choice determines a great deal about your character's abilities.
         \cf{Clr}[6]{Greater Wellspring of Magic}
         You gain an additional \glossterm{action point}.
 
-        \cf{Clr}[7]{Greater Spell Mastery} 
-        The bonus from your \textit{spell mastery} ability increases to \plus2.
+        \cf*{Clr}[7]{Mystic Knowledge}
+        You can an additional \textit{mystic knowledge} ability.
 
         \cf{Clr}[8]{Mystic Supremacy}
         The maximum spell level you can cast is increased to 11.
@@ -881,13 +887,13 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Nature Spellcasting} & \tb{Nature Spell Mastery}  & \tb{Natural Influence} \\\bottomrule
                1 & Nature spells   & Wellspring of magic         & Wild aspect
-            \\ 2 & Subspells       & Expanded spell knowledge    & Wild speech
-            \\ 3 & Spell knowledge & Augments                    & Wild aspect
-            \\ 4 & Subspell        & Spell mastery               & Natural lore
-            \\ 5 & Subspell        & Augment                     & Wild aspect
-            \\ 6 & Subspell        & Greater wellspring of magic & Nature's champion
-            \\ 7 & Subspell        & Greater spell mastery       & Wild aspect
-            \\ 8 &                 & Mystic supremacy            & Avatar of nature
+            \\ 2 & Subspells                 & Mystic knowledge            & Wild speech
+            \\ 3 & Subspell                  & Augments                    & Wild aspect
+            \\ 4 & Cantrip expertise         & Mystic knowledge            & Natural lore
+            \\ 5 & Subspell                  & Augment                     & Wild aspect
+            \\ 6 & Subspell                  & Greater wellspring of magic & Nature's champion
+            \\ 7 & Greater cantrip expertise & Mystic knowledge            & Wild aspect
+            \\ 8 &                           & Mystic supremacy            & Avatar of nature
         \end{dtabularx}
     \end{dtable}
 
@@ -1115,22 +1121,22 @@ This choice determines a great deal about your character's abilities.
         \cf{Drd}[2]{Subspells} Choose two \glossterm{subspells} for any nature spells you know.
         You learn those subspells.
         Whenever you gain access to a new spell or spell level, you can exchange any number of subspells you know for subspells of other spells you know.
-        You cannot know more than two divine subspells of the same level, other than 1st level.
+        You cannot know more than two nature subspells of the same level, other than 1st level.
 
         \cf{Drd}[3]{Subspell}
         You learn an additional \glossterm{subspell} for a nature spell you know.
 
-        \cf*{Drd}[4]{Spell Knowledge}
-        You learn an additional nature spell (see \pcref{Nature Spells}).
+        \cf{Drd}[4]{Cantrip Expertise}
+        You gain a \plus1 bonus to \glossterm{spellpower} with \glossterm{cantrips} for nature spells.
 
-        \cf{Drd}[5]{Subspell}
-        You learn an additional \glossterm{subspell} for a divine spell you know.
+        \cf*{Drd}[5]{Subspell}
+        You learn an additional \glossterm{subspell} for a nature spell you know.
 
         \cf*{Drd}[6]{Subspell}
         You learn an additional \glossterm{subspell} for a nature spell you know.
 
-        \cf{Drd}[7]{Subspell}
-        You learn an additional \glossterm{subspell} for a divine spell you know.
+        \cf{Drd}[7]{Greater Cantrip Expertise}
+        The bonus from your \textit{cantrip expertise} ability increases to \plus2.
 
     \subsection{Nature Spell Mastery}
         This archetype improves the nature spells you cast.
@@ -1139,17 +1145,23 @@ This choice determines a great deal about your character's abilities.
         \cf{Drd}[1]{Wellspring of Magic}
         You gain an additional \glossterm{action point}.
 
-        \cf{Drd}[2]{Expanded Spell Knowledge}
-        You learn an additional nature spell (see \pcref{Nature Spells}).
-        In addition, you gain the ability to perform nature rituals to create unique magical effects (see \pcref{Rituals}).
+        \cf{Drd}[2]{Mystic Knowledge}
+        You gain your choice of one of the following abilities.
+        {
+            \parhead{Rituals} You gain the ability to perform nature rituals to create unique magical effects (see \pcref{Rituals}).
+            \parhead{Spell Knowledge} You learn an additional nature spell.
+                You can choose this ability multiple times, learning an additional spell each time.
+            \parhead{Subspell Knowledge} You learn an additional \glossterm{subspell} for a nature spell you know.
+                You can choose this ability multiple times, learning an additional subspell each time.
+        }
 
         \cf{Drd}[3]{Augments}
         Choose two \glossterm{augments} (see \pcref{Augments}).
         You can apply those augments to nature spells you cast and nature rituals you perform.
         Whenever you gain access to a new spell level, you may change which augments you know.
 
-        \cf{Drd}[4]{Spell Mastery}
-        You gain a \plus1 bonus to \glossterm{spellpower} with nature spells.
+        \cf*{Drd}[4]{Mystic Knowledge}
+        You can an additional \textit{mystic knowledge} ability.
 
         \cf{Drd}[5]{Augment}
         You learn an additional \glossterm{augment} that you can apply to nature spells.
@@ -1157,8 +1169,8 @@ This choice determines a great deal about your character's abilities.
         \cf{Drd}[6]{Greater Wellspring of Magic}
         You gain an additional \glossterm{action point}.
 
-        \cf{Drd}[7]{Greater Spell Mastery} 
-        The bonus from your \textit{spell mastery} ability increases to \plus2.
+        \cf*{Drd}[7]{Mystic Knowledge}
+        You can an additional \textit{mystic knowledge} ability.
 
         \cf{Drd}[8]{Mystic Supremacy}
         The maximum spell level you can cast is increased to 11.
@@ -1573,13 +1585,13 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Arcane Spellcasting} & \tb{Arcane Spell Mastery}  & \tb{Arcane Lore} \\\bottomrule
             1 & Arcane spells   & Wellspring of magic         & Mage armor
-            \\ 2 & Subspells       & Expanded spell knowledge    & Arcane insights
-            \\ 3 & Spell knowledge & Augments                    & Essence lore
-            \\ 4 & Subspell        & Spell mastery               & Arcane insight
-            \\ 5 & Subspell        & Augment                     & Greater essence lore
-            \\ 6 & Subspell        & Greater wellspring of magic & Arcane insight
-            \\ 7 & Subspell        & Greater spell mastery       & Supreme essence lore
-            \\ 8 &                 & Mystic supremacy            & Archmage
+            \\ 2 & Subspells                 & Mystic knowledge            & Arcane insights
+            \\ 3 & Subspell                  & Augments                    & Essence lore
+            \\ 4 & Cantrip expertise         & Mystic knowledge            & Arcane insight
+            \\ 5 & Subspell                  & Augment                     & Greater essence lore
+            \\ 6 & Subspell                  & Greater wellspring of magic & Arcane insight
+            \\ 7 & Greater cantrip expertise & Mystic knowledge            & Supreme essence lore
+            \\ 8 &                           & Mystic supremacy            & Archmage
         \end{dtabularx}
     \end{dtable}
 
@@ -1638,22 +1650,22 @@ This choice determines a great deal about your character's abilities.
         \cf{Mge}[2]{Subspells} Choose two \glossterm{subspells} for any arcane spells you know.
         You learn those subspells.
         Whenever you gain access to a new spell or spell level, you can exchange any number of subspells you know for subspells of other spells you know.
-        You cannot know more than two divine subspells of the same level, other than 1st level.
+        You cannot know more than two arcane subspells of the same level, other than 1st level.
 
         \cf{Mge}[3]{Subspell}
         You learn an additional \glossterm{subspell} for an arcane spell you know.
 
-        \cf{Mge}[4]{Spell Knowledge}
-        You learn an additional arcane spell (see \pcref{Arcane Spells}).
+        \cf{Mge}[4]{Cantrip Expertise}
+        You gain a \plus1 bonus to \glossterm{spellpower} with \glossterm{cantrips} for arcane spells.
 
-        \cf{Mge}[5]{Subspell}
+        \cf*{Mge}[5]{Subspell}
         You learn an additional \glossterm{subspell} for an arcane spell you know.
 
         \cf*{Mge}[6]{Subspell}
         You learn an additional \glossterm{subspell} for an arcane spell you know.
 
-        \cf{Mge}[7]{Subspell}
-        You learn an additional \glossterm{subspell} for an arcane spell you know.
+        \cf{Mge}[7]{Greater Cantrip Expertise}
+        The bonus from your \textit{cantrip expertise} ability increases to \plus2.
 
     \subsection{Arcane Lore}
         This archetype grants you esoteric abilities relating to arcane magic.
@@ -1774,19 +1786,24 @@ This choice determines a great deal about your character's abilities.
         \cf{Mge}[1]{Wellspring of Magic}
         You gain an additional \glossterm{action point}.
 
-        \cf{Mge}[2]{Expanded Spell Knowledge}
-        You learn an additional arcane spell (see \pcref{Arcane Spells}).
-        In addition, you gain an additional ability depending on your \textit{arcane essence}.
-        \subparhead{Sorcerer} You learn an additional \glossterm{subspell}.
-        \subparhead{Wizard} You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
+        \cf{Mge}[2]{Mystic Knowledge}
+        You gain your choice of one of the following abilities.
+        {
+            \parhead{Rituals} You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
+                You can only choose this mystic knowledge if you are a wizard.
+            \parhead{Spell Knowledge} You learn an additional arcane spell.
+                You can choose this ability multiple times, learning an additional spell each time.
+            \parhead{Subspell Knowledge} You learn an additional \glossterm{subspell} for a arcane spell you know.
+                You can choose this ability multiple times, learning an additional subspell each time.
+        }
 
         \cf{Mge}[3]{Augments}
         Choose two \glossterm{augments} (see \pcref{Augments}).
         You can apply those augments to arcane spells you cast and arcane rituals you perform.
         Whenever you gain access to a new spell level, you may change which augments you know.
 
-        \cf{Mge}[4]{Spell Mastery}
-        You gain a \plus1 bonus to \glossterm{spellpower} with arcane spells.
+        \cf*{Mge}[4]{Mystic Knowledge}
+        You can an additional \textit{mystic knowledge} ability.
 
         \cf{Mge}[5]{Augment}
         You learn an additional \glossterm{augment} that you can apply to arcane spells.
@@ -1794,8 +1811,8 @@ This choice determines a great deal about your character's abilities.
         \cf{Mge}[6]{Greater Wellspring of Magic}
         You gain an additional \glossterm{action point}.
 
-        \cf{Mge}[7]{Greater Spell Mastery} 
-        The bonus from your \textit{spell mastery} ability increases to \plus2.
+        \cf*{Mge}[7]{Mystic Knowledge}
+        You can an additional \textit{mystic knowledge} ability.
 
         \cf{Mge}[8]{Mystic Supremacy}
         The maximum spell level you can cast is increased to 11.
@@ -2102,13 +2119,13 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Devoted Paragon} & \tb{Divine Spellcasting}  & \tb{Zealous Warrior} \\\bottomrule
                1 & Lay on hands               & Divine spells  & Smite
-            \\ 2 & Aligned aura               & Subspells      & Unfaltering champion
-            \\ 3 & Greater lay on hands       & Spell knowldge & Unfaltering zeal
-            \\ 4 & Unbending devotion         & Subspell       & Greater smite
-            \\ 5 & Greater aligned aura       & Subspell       & Greater unfaltering champion
-            \\ 6 & Supreme lay on hands       & Subspell       & Supreme smite
-            \\ 7 & Greater unbending devotion & Subspell       & Supreme unfaltering champion
-            \\ 8 & Aligned soul               & Subspell       &
+            \\ 2 & Aligned aura               & Subspells                 & Unfaltering champion
+            \\ 3 & Greater lay on hands       & Subspell                  & Unfaltering zeal
+            \\ 4 & Unbending devotion         & Cantrip expertise         & Greater smite
+            \\ 5 & Greater aligned aura       & Subspell                  & Greater unfaltering champion
+            \\ 6 & Supreme lay on hands       & Subspell                  & Supreme smite
+            \\ 7 & Greater unbending devotion & Greater cantrip expertise & Supreme unfaltering champion
+            \\ 8 & Aligned soul               &                           &
         \end{dtabularx}
     \end{dtable}
 
@@ -2210,7 +2227,7 @@ This choice determines a great deal about your character's abilities.
         Your deity grants you the ability to cast divine spells.
         You learn two divine spells from the divine \glossterm{spell list} (see \pcref{Divine Spells}).
         As a \glossterm{standard action}, you can cast the \glossterm{cantrip} version of any spell you know.
-        Your \glossterm{spellpower} with divine spells is equal to your \textit{divine power}.
+        Your \glossterm{spellpower} with divine spells is equal to your \textit{devotion power}.
         The maximum spell level you can cast is equal to half your level.
         For details about spellcasting, see \pcref{Spell and Ritual Mechanics}.
 
@@ -2223,20 +2240,20 @@ This choice determines a great deal about your character's abilities.
         Whenever you gain access to a new spell or spell level, you can exchange any number of subspells you know for subspells of other spells you know.
         You cannot know more than two divine subspells of the same level, other than 1st level.
 
-        \cf*{Pal}[3]{Spell Knowledge}
-        You learn an additional divine spell (see \pcref{Divine Spells}).
-
-        \cf{Pal}[4]{Subspell}
+        \cf{Pal}[3]{Subspell}
         You learn an additional \glossterm{subspell} for a divine spell you know.
 
-        \cf{Pal}[5]{Subspell}
+        \cf{Pal}[4]{Cantrip Expertise}
+        You gain a \plus1 bonus to \glossterm{spellpower} with \glossterm{cantrips} for divine spells.
+
+        \cf*{Pal}[5]{Subspell}
         You learn an additional \glossterm{subspell} for a divine spell you know.
 
         \cf*{Pal}[6]{Subspell}
         You learn an additional \glossterm{subspell} for a divine spell you know.
 
-        \cf{Pal}[7]{Subspell}
-        You learn an additional \glossterm{subspell} for a divine spell you know.
+        \cf{Pal}[7]{Greater Cantrip Expertise}
+        The bonus from your \textit{cantrip expertise} ability increases to \plus2.
 
     \subsection{Zealous Warrior}
         This archetype improves your combat prowess, especially against foes who do not share your devoted alignment.
