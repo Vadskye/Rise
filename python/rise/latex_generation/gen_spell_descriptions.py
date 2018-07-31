@@ -217,10 +217,6 @@ def generate_spells():
                 On the second hit, the target takes damage and becomes \\glossterm<sickened>.
                 On the third hit, the target takes damage and becomes \\glossterm<nauseated> instead of sickened.
             """, tags=['Manifestation', 'Poison']),
-            Subspell('Bladestorm', 3, """
-                Make a Spellpower vs. Reflex attack against all enemies in a \\areasmall radius from you.
-                \\hit Each target takes slashing \\glossterm<standard damage> -1d.
-            """, tags=['Manifestation']),
         ],
         category='damage',
     ))
