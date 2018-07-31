@@ -168,7 +168,7 @@ def generate_spells():
             """, tags=['Acid', 'Manifestation']),
             Subspell('Forge', 1, """
                 Choose a type of weapon or shield that you are proficient with.
-                You create a normal item of that type in your hand.
+                You create a normal item of that type anywhere within \\rngclose range.
 
                 The item cannot be constructed of any magical or extraordinary material.
                 % This should allow the Giant augment; is this worded to allow that?
@@ -176,6 +176,7 @@ def generate_spells():
             """, tags=['Attune']),
             Subspell('Greater Forge', 3, """
                 This subspell functions like the \\spell<forge> subspell, except that you can also create any type of body armor you are proficient with.
+                If you create body armor, you can create it already equipped to a willing creature within range.
             """),
             Subspell('Corrosive Splash', 3, """
                 This subspell functions like the \\spell<acid splash> spell, except that it deals double damage to objects.
