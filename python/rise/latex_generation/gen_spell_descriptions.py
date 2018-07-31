@@ -253,11 +253,14 @@ def generate_spells():
             """, tags=['Mystic', 'Sustain (minor)']),
             Subspell('Dismissal', 3, """
                 Make a Spellpower attack against one creature or object within \\rngmed range.
-                If the target is an effect of an ongoing \\glossterm<magical> ability, such as a summoned monster or created object, the DR is equal to 5 + add the \\glossterm<power> of the ability.
+                If the target is an effect of an ongoing \\glossterm<magical> ability, such as a summoned monster or created object, the DR is equal to the \\glossterm<power> of the ability.
                 Otherwise, this subspell has no effect.
                 \\hit The target is treated as if the ability that created it was \\glossterm<dismissed>.
                 This usually causes the target to disappear.
             """, tags=['Mystic']),
+            Subspell('Dispel Magic', 3, """
+                This subspell functions like the \\spell<suppress magic> spell, except that a hit against an effect causes it to be \\glossterm<dismissed> instead of suppressed.
+            """),
             Subspell('Malign Transferance', 2, """
                 Choose a willing ally within \\rngmed range.
                 The ally must be currently affected by a \\glossterm<magical> \\glossterm<condition>.
@@ -1566,7 +1569,7 @@ def generate_spells():
                 The weapon floats about three feet off the ground, and is sized appropriately for a creature of your size.
                 The specific weapon you choose affects the type of damage it deals.
                 Regardless of the weapon chosen, it has hit points equal to twice your spellpower.
-                All of its defenses are equal to 5 \\add your spellpower, and it has a 30 foot fly speed with good maneuverability, though it cannot travel farther than five feet above the ground.
+                All of its defenses are equal to 3 \\add your spellpower, and it has a 30 foot fly speed with good maneuverability, though it cannot travel farther than five feet above the ground.
 
                 Each round, the weapon automatically moves towards the creature closest to it during the \\glossterm<movement phase>.
                 During the \\glossterm<action phase>, it makes a melee \\glossterm<strike> against a random creature adjacent to it.
@@ -1593,6 +1596,7 @@ def generate_spells():
                 The ballista functions like any other weapon, with the following exceptions.
 
                 It cannot move, and makes ranged \\glossterm<strikes> instead of melee strikes.
+                Its attacks have a maximum range of 100 feet.
                 Its attacks deal piercing damage, and its hit points are equal to three times your spellpower.
                 In addition, the ballista attacks the creature farthest from it, instead of the creature closest to it.
             """),
