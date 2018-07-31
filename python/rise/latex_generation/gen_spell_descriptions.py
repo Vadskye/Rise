@@ -395,11 +395,6 @@ def generate_spells():
         schools=['Conjuration'],
         lists=['Nature', 'Water'],
         subspells=[
-            Subspell('Create Water', 1, """
-                You create up to one gallon of wholesome, drinkable water anywhere within \\rngclose range.
-                The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
-                You must create a minimum of one ounce of water in each location.
-            """, tags=['Creation', 'Water']),
             Subspell('Crushing Wave', 1, """
                 Make a Spellpower vs. Fortitude attack against everything in a \\arealarge, 10 ft.\\ wide line from you.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
@@ -945,7 +940,7 @@ def generate_spells():
                 You summon a creature in an unoccupied square within \\rngmed range.
                 It visually appears to be a common Small or Medium animal of your choice, though in reality it is a manifestation of magical energy.
                 Regardless of the appearance and size chosen, the creature has hit points equal to twice your spellpower.
-                All of its defenses are equal to your 5 \\add your spellpower, and its \\glossterm<land speed> is equal to 30 feet.
+                All of its defenses are equal to your 4 \\add your spellpower, and its \\glossterm<land speed> is equal to 30 feet.
 
                 Each round, you choose the creature's actions.
                 There are only two actions it can take.
@@ -1564,10 +1559,10 @@ def generate_spells():
             \\hit The target takes piercing \\glossterm<standard damage> -1d.
         """, tags=['Manifestation', 'Sustain (minor)']),
         schools=['Conjuration', 'Transmutation'],
-        lists=['Arcane'],
+        lists=['Arcane', 'Divine'],
         cantrip="The spell gains the \\glossterm<Sustain> (standard) tag in place of the \\glossterm<Sustain> (minor) tag.",
         subspells=[
-            Subspell('Arcane Bow', 1, """
+            Subspell('Mystic Bow', 1, """
                 Make a Spellpower vs. Armor attack against one creature or object within \\rngmed range.
                 \\hit The target takes piercing \\glossterm<standard damage> +1d.
             """, tags=['Manifestation']),
