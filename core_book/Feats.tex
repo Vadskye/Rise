@@ -130,7 +130,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \spelldesc{You have great talent with Abjuration spells.}
         \featpre Abjuration spell known.
         \ff{Abjurant Shield} Whenever you cast an Abjuration spell with a duration, you can give one willing creature targeted by the spell a deflective shield.
-        The shielded creature gains a \plus1 \glossterm{magic bonus} to Armor defense as long as the spell lasts.
+        The shielded creature gains a \plus1 \glossterm{magic bonus} to Armor defense as long as the spell lasts on that creature.
         This is a \glossterm{magical} \glossterm{Shielding} effect.
         You can only shield one creature in this way at a time.
         If you shield another creature, all previous shields are dismissed when the new shield takes effect.
@@ -775,31 +775,31 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Eldritch Knight}{Spell}
         \featpre Ability to cast a spell.
 
-        \ff[1]{Combat Caster} You gain a \plus2 bonus to Concentration checks made to cast spells.
-        In addition, you reduce your \glossterm{encumbrance} from \glossterm{armor} by 1.
+        \ff[1]{Imbue Weapon}[Magical] Whenever you cast a spell that affects a single target, you can spend an \glossterm{action point} to use the \textit{imbue weapon} ability.
+        \begin{ability}{Imbue Projectile}[\glossterm{Attune}]
+            The spell does not have its effect immediately, and you regain the action point used to cast the spell (if any).
+            Instead, its power is imbued in a melee weapon you hold. 
 
-        \ff[3]{Spellstrike}[Magical] As a standard action during the \glossterm{action phase}, you can spend an \glossterm{action point} to use the \textit{spellstrike} ability.
-        \begin{ability}{Spellstrike}
-            You imbue magical power into a weapon you wield or your \glossterm{unarmed attack}.
-            This requires concentration as if casting a spell, but breaking your concentration does not cause a \glossterm{miscast backlash}.
-            During the \glossterm{delayed action phase}, you may make a melee \glossterm{strike} with the chosen weapon.
-            If you maintained your concentration, the strike gains a \plus3d bonus to damage.
+            As a standard action, you can make a melee \glossterm{strike} using that weapon.
+            If you do, the spell affects the target of the strike.
+            After the spell takes effect, this ability's duration ends.
         \end{ability}
 
-        \ff[6]{Spellsword Rhythm}[Magical] Whenever you hit a creature with a \glossterm{strike}, you gain a \plus1 bonus to \glossterm{accuracy} with spells against that creature during the next round.
-        In addition, whenever you hit a creature with a \glossterm{spell}, you gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks} against that creature during the next round.
+        \ff[3]{Combat Caster} You gain a \plus2 bonus to Concentration checks made to cast spells.
+        In addition, you reduce your \glossterm{encumbrance} by 1 when determining your \glossterm{arcane spell failure} (if any).
+
+        \ff[6]{Spellsword Conduit}[Magical] You can cast spells using a melee weapon to perform the \glossterm{somatic components}.
+        When you do, you gain a \plus1 bonus to \glossterm{accuracy} with that weapon until the end of the next round.
 
         \ff[9]{Greater Combat Caster} The Concentration bonus from your \textit{combat caster} ability increases to \plus4.
         In addition, the \glossterm{encumbrance} reduction increases to 2.
 
-        \ff[12]{Greater Spellstrike}[Magical] The damage bonus from your \textit{spellstrike} ability increases to \plus4d.
+        \ff[12]{Greater Imbue Weapon}[Magical] You can maintain two separate attunements to your \textit{imbue weapon} ability.
 
-        \ff[15]{Greater Spellsword Rhythm} The accuracy bonus from your \textit{spellsword rhythm} ability increases to \plus2.
-
-        \ff[18]{Supreme Combat Caster} The Concentration bonus from your \textit{combat caster} ability increases to \plus6.
+        \ff[15]{Supreme Combat Caster} The Concentration bonus from your \textit{combat caster} ability increases to \plus6.
         In addition, the \glossterm{encumbrance} reduction increases to 3.
 
-        \ff[20]{Supreme Spellstrike} The damage bonus from your \textit{spellstrike} ability increases to \plus5d.
+        \ff[18]{Greater Spellsword Conduit} The accuracy bonus from your \textit{spellsword conduit} ability increases to \plus2.
     \end{feat}
 
     \begin{feat}{Enchanter}{Magical, Spell}
@@ -1252,7 +1252,8 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             The spell does not have its effect immediately, and you regain the action point used to cast the spell (if any).
             Instead, its power is imbued in a \glossterm{projectile} you hold. 
 
-            When you make a \glossterm{strike} using that projectile, the spell affects a target of the strike.
+            As a standard action, you can make a \glossterm{strike} using that projectile.
+            If you do, the spell affects the target of the strike.
             After the spell takes effect, this ability's duration ends.
         \end{ability}
 
@@ -1270,8 +1271,9 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             The spell does not have its effect immediately, and you regain the action point used to cast the spell (if any).
             Instead, its power is imbued in a \glossterm{projectile} you hold. 
 
-            When you make a \glossterm{strike} using that projectile, the spell takes effect in addition to the normal effects of the strike.
-            The spell's \glossterm{point of origin} can be anywhere within the \glossterm{space} of a target of the strike.
+            As a standard action, you can make a \glossterm{strike} using that projectile.
+            If you do, the spell takes effect in addition to the normal effects of the strike.
+            The spell's \glossterm{point of origin} can be anywhere within the \glossterm{space} of the target of the strike.
             It affects targets within the area as if it had just been cast in that area.
             After the spell takes effect, this ability's duration ends.
         \end{ability}
