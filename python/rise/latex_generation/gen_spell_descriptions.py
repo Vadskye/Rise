@@ -275,6 +275,10 @@ def generate_spells():
             Subspell('Greater Enhance Magic', 8, """
                 This subspell functions like the \\textit<enhance magic> subspell, except that the bonus is increased to +2.
             """, tags=['Attune (shared)', 'Mystic']),
+            Subspell('Resist Magic', 6, """
+                Choose a willing creature within \\rngmed range.
+                The target gains \\glossterm<magic resistance> equal to 5 + your \\glossterm<spellpower>.
+            """),
             Subspell('Antimagic Field', 7, """
                 All other magical abilities and objects are \\glossterm<suppressed> within a \\areasmall radius emanation from you.
                 % How much of this is redundant with suppression?
@@ -393,7 +397,7 @@ def generate_spells():
         header=Header("You create a wave of water to crush your foes."),
         effects=Effects('Cantrip', """
             Make a Spellpower vs. Fortitude attack against everything in a \\areamed, 5 ft.\\ wide line from you.
-            \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
+            \\hit Each target takes bludgeoning \\glossterm<standard damage> -2d.
         """, tags=['Manifestation', 'Water']),
         schools=['Conjuration'],
         lists=['Nature', 'Water'],
@@ -604,15 +608,21 @@ def generate_spells():
             """),
             Subspell('Blessing of Resilience', 1, """
                 Choose a willing creature within \\rngclose range.
-                The target removes one \\glossterm<condition> affecting it.
-                In addition, the target ignores the next two \\glossterm<conditions> it would receive.
+                The target ignores the next two \\glossterm<conditions> it would receive.
                 After resisting two conditions in this way, this spell ends.
+                You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (shared)']),
             Subspell('Greater Blessing of Resilience', 4, """
-                This subspell functions like the \\textit<blessing of resilience> subspell, except that the spell does not end until it resists five \\glossterm<conditions>.
+                This subspell functions like the \\textit<blessing of resilience> subspell, except that the spell does not end until it resists four \\glossterm<conditions>.
             """),
             Subspell('Supreme Blessing of Resilience', 7, """
                 This subspell functions like the \\textit<blessing of resilience> subspell, except that the spell can resist any number of conditions without ending.
+            """),
+            Subspell('Cleansing Blessing', 2, """
+                All allies within \\arealarge radius from you can remove one \\glossterm<condition> affecting them.
+            """),
+            Subspell('Greater Cleansing Blessing', 6, """
+                This subspell functions like the \\spell<cleansing blessing> subspell, except that it can remove two conditions instead of one.
             """),
             Subspell('Blessing of the Mighty', 3, """
                 The target gains a +1d \\glossterm<magic bonus> to all abilities that deal damage or grant healing measured in dice.
@@ -745,9 +755,9 @@ def generate_spells():
         name="Electromancy",
         short_description='Create electricity to injure and stun foes',
         header=Header("You create a bolt of electricity that fries your foes."),
-        effects=Effects('Electromancy', """
+        effects=Effects('Cantrip', """
             Make a Spellpower vs. Reflex attack against everything in a \\areamed, 5 ft.\\ wide line from you.
-            \\hit Each target takes electricity \\glossterm<standard damage> -1d.
+            \\hit Each target takes electricity \\glossterm<standard damage> -2d.
         """, tags=['Electricity']),
         schools=['Evocation'],
         lists=['Arcane', 'Nature'],
@@ -794,7 +804,7 @@ def generate_spells():
                 This subspell functions like the \\spell<lightning bolt> subspell, except that the spell's attack is made against Fortitude defense instead of Reflex defense.
             """),
             Subspell("Call Lightning", 3, """
-                Make a Spellpower vs. Reflex attack against everything in a \\arealarge, 5 ft.\\ wide vertical line from you.
+                Make a Spellpower vs. Reflex attack against everything in a \\arealarge, 5 ft.\\ wide vertical line within \\rngmed range.
                 If you are outdoors in cloudy or stormy weather, you gain a +2 bonus to \\glossterm<accuracy> with the attack.
                 \\hit Each target takes takes electricity \\glossterm<standard damage> +1d.
             """, tags=['Electricity']),
@@ -975,7 +985,7 @@ def generate_spells():
         effects=Effects('Cantrip', """
             This cantrip functions like the \\textit<arcane eye> subspell, except that it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> tag.",
             In addition, the sensor cannot be moved after it is originally created.
-        """, tags=['Attune', 'Scrying']),
+        """, tags=['Scrying', 'Sustain (minor)']),
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
         subspells=[
@@ -1092,23 +1102,6 @@ def generate_spells():
             Subspell("Boon of Knowledge", 3, """
                 The target gains a +4 \\glossterm<magic bonus> to all Knowledge skills (see \\pcref<Knowledge>).
             """),
-            Subspell("Augury", 3, """
-                Choose a willing creature within \\rngclose range, and an action which that creature could take.
-                You learn whether the stated action is likely to bring good or bad results for the target within the next hour.
-                This subspell provides one of four results:
-                \\begin<itemize>
-                    \\item Weal (if the action will probably bring good results).
-                    \\item Woe (for bad results).
-                    \\item Weal and woe (for both).
-                    \\item No response (for actions that don't have especially good or bad results).
-                \\end<itemize>
-
-                This subspell does not describe the future with certainty.
-                It describes which result is most probable.
-                The more unambiguous the action's effects, the more likely the spell is to be correct.
-
-                After using this subspell, you cannot cast it again until the hour affected by the previous casting is over, regardless of whether the action was taken.
-            """),
             Subspell("Third Eye", 3, """
                 Choose a willing creature within \\rngclose range.
                 The target gains \\glossterm<blindsight> with a 50 foot range.
@@ -1122,14 +1115,18 @@ def generate_spells():
         name="Telekinesis",
         short_description="Manipulate creatures and objects at a distance",
         header=Header("You crush your foe's body with telekinetic force."),
-        effects=Effects('Telekinesis', """
+        effects=Effects('Cantrip', """
             Make a Spellpower vs. Mental attack against one creature or object within \\rngmed range.
-            \\hit The target takes bludgeoning \\glossterm<standard damage> +1d.
+            \\hit The target takes bludgeoning \\glossterm<standard damage> -1d.
         """, tags=['Telekinesis']),
         schools=['Evocation'],
         lists=['Arcane'],
         cantrip="The spell deals -2d damage.",
         subspells=[
+            Subspell('Telekinetic Crush', 1, """
+                Make a Spellpower vs. Mental attack against one creature or object within \\rngmed range.
+                \\hit The target takes bludgeoning \\glossterm<standard damage> +1d.
+            """),
             Subspell('Telekinetic Movement', 1, """
                 Make a Spellpower vs. Mental attack against a Medium or smaller creature or object within \\rngmed range.
                 \\hit You move the target up to thirty feet in any direction.
@@ -1145,14 +1142,8 @@ def generate_spells():
                 You can change direction partway through the movement.
                 Moving the target upwards costs twice the normal movement cost.
             """),
-            Subspell("Precise", 2, """
-                Make a Spellpower vs. Mental attack against a Medium or smaller creature or object within \\rngclose range.
-                \\hit You move the target up to five feet in any direction.
-                In addition, you can make a check to manipulate the target as if you were using your hands.
-                The check's result has a maximum equal to your attack result.
-            """, tags=['Telekinesis']),
-            Subspell("Binding", 3, """
-                This subspell functions like the \\spell<telekinesis> spell, except that the struck creature is also \\immobilized as a \\glossterm<condition>.
+            Subspell("Binding Crush", 3, """
+                This subspell functions like the \\spell<telekinetic crush> subspell, except that the struck creature is also \\immobilized as a \\glossterm<condition>.
             """),
             Subspell("Levitate", 3, """
                 Choose a Medium or smaller willing creature or unattended object within \\rngclose range.
