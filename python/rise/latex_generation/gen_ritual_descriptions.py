@@ -67,6 +67,7 @@ def generate_rituals():
             Its Intelligence becomes 1d6 - 5.
             Its type changes from animal to magical beast.
             It gains the ability to speak and understand one language that you know of your choice.
+            Its maximum age increases to that of a human (rolled secretly).
             This effect is permanent.
 
             This ritual takes 24 hours to perform, and requires 49 action points from its participants.
