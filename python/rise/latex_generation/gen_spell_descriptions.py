@@ -1338,6 +1338,13 @@ def generate_spells():
 
                 You can cast this subspell as a \\glossterm<minor action>.
             """, tags=['Attune (shared)']),
+            Subspell('Regeneration', 4, """
+                Choose a willing creature within \\rngclose range.
+                A the end of each round, the target heals hit points equal to your \\glossterm<spellpower>.
+            """, tags=['Attune (shared)']),
+            Subspell('Greater Regeneration', 8, """
+                This subspell functions like the \\textit<regeneration> subspell, except that the healing is equal to twice your \\glossterm<spellpower>.
+            """),
             Subspell("Stoneskin", 3, """
                 This subspell functions like the \\textit<barkskin> subspell, except that the target becomes \\glossterm<vulnerable> to damage from adamantine weapons instead of fire damage.
             """),
