@@ -767,13 +767,13 @@ def generate_spells():
                 \\hit The target takes electricity \\glossterm<standard damage> +1d.
             """, tags=['Electricity']),
             Subspell('Static Discharge', 2, """
-                This subspell functions like the \\spell<electromancy> spell, except that it affects everything within a \\areamed radius from you.
+                This subspell functions like the \\spell<lightning bolt> subspell, except that it affects everything within a \\areamed radius from you.
             """),
             Subspell('Magnetic', 2, """
-                This subspell functions like the \\spell<electromancy> spell, except that you gain a +2 bonus to accuracy against creatures wearing metal armor or otherwise carrying a significant amount of metal.
+                This subspell functions like the \\spell<lightning bolt> subspell, except that you gain a +2 bonus to accuracy against creatures wearing metal armor or otherwise carrying a significant amount of metal.
             """),
             Subspell('Dynamo', 2, """
-                This subspell functions like the \\spell<electromancy> spell, except that it gains the \\glossterm<Sustain> (standard) tag.
+                This subspell functions like the \\spell<lightning bolt> subspell, except that it gains the \\glossterm<Sustain> (standard) tag.
                 The area affected by the spell becomes a \\glossterm<zone> that is continuously filled with electrical pulses.
                 At the end of each \\glossterm<action phase> in subsequent rounds, the attack is repeated in that area.
             """),
@@ -788,15 +788,15 @@ def generate_spells():
                 \\hit Each secondary target takes electricity \\glossterm<standard damage>.
             """, tags=['Electricity']),
             Subspell("Forked Lightning", 3, """
-                This subspell functions like the \\spell<electromancy> spell, except that you create two separate line-shaped areas instead of one.
+                This subspell functions like the \\spell<lightning bolt> subspell, except that you create two separate line-shaped areas instead of one.
                 The two areas can overlap, but targets in the overlapping area are only affected once.
             """),
             Subspell("Shocking", 5, """
-                This subspell functions like the \\spell<electromancy> spell, except that each struck target is also \\glossterm<dazed> as a \\glossterm<condition>.
+                This subspell functions like the \\spell<lightning bolt> subspell, except that each struck target is also \\glossterm<dazed> as a \\glossterm<condition>.
                 Each critically struck target is \\glossterm<stunned> instead of dazed.
             """),
             Subspell("Instantaneous", 4, """
-                This subspell functions like the \\spell<electromancy> spell, except that the spell's attack is made against Fortitude defense instead of Reflex defense.
+                This subspell functions like the \\spell<lightning bolt> subspell, except that the spell's attack is made against Fortitude defense instead of Reflex defense.
             """),
             Subspell("Call Lightning", 3, """
                 Make a Spellpower vs. Reflex attack against everything in a \\arealarge, 5 ft.\\ wide vertical line from you.
