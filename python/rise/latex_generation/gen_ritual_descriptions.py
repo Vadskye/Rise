@@ -613,9 +613,35 @@ def generate_rituals():
                 This ritual takes 24 hours to perform, and requires 49 action points from its participants.
             """),
             Subspell('True', 9, """
-                
+                This subritual functions like the \\ritual<resurrection> ritual, except that it does not require any piece of the corpse.
+                Instead, you must explicitly and unambiguously specify the identity of the creature being resurrected.
+                The resurrected creature's body is fully restored to its healthy state before dying, including regenerating all missing or damaged body parts.
+
+                This ritual takes 24 hours to perform, and requires 81 action points from its participants.
             """),
         ),
+    ))
+
+    rituals.append(Spell(
+        name="Scry Creature",
+        base_level=5,
+        # Need to make sure this can't be used for high-bandwidth bidirectional communication
+        effects=Effects("Scry Creature", """
+            Make a Spellpower vs. Mental attack against a creature on the same plane as you.
+            You do not need \\glossterm<line of sight> or \\glossterm<line of effect> to the target.
+            However,  must specify your target with a precise mental image of its appearance.
+            The image does not have to be perfect, but it must unambiguously identify the target.
+            If you specify its appearance incorrectly, or if the target has changed its appearance, you may accidentally target a different creature, or the spell may simply be \\glossterm<miscast>.
+            This attack roll cannot \\glossterm<explode>.
+            \\hit A scrying sensor appears in the target's space.
+            This sensor functions like the sensor created by the \\spell<arcane eye> subspell, except that you cannot move the sensor manually.
+            Instead, it automatically tries to follow the target to stay in its space.
+            At the end of each phase, if the sensor is not in the target's space, this effect is \\glossterm<dismissed>.
+
+            This ritual takes one hour to perform.
+        """),
+        schools=['Divination'],
+        lists=['Arcane', 'Divine', 'Nature'],
     ))
 
     rituals.append(Spell(

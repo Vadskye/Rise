@@ -1010,23 +1010,10 @@ def generate_spells():
                 This subspell functions like the \\spell<arcane eye> subspell, except that the sensor is not destroyed when it loses \\glossterm<line of effect> to you.
             """),
             Subspell("Penetrating Eye", 5, """
-                This subspell functions like the \\spell<autonomous> subspell, except that you do not need \\glossterm<line of sight> or \\glossterm<line of effect> to target a location.
+                This subspell functions like the \\spell<autonomous eye> subspell, except that you do not need \\glossterm<line of sight> or \\glossterm<line of effect> to target a location.
                 You must specify a distance and direction to target a location you cannot see.
                 This can allow you to cast the spell beyond walls and similar obstacles.
                 As normal, if the intended location is occupied or otherwise impossible, the spell is \\glossterm<miscast>.
-            """),
-            # Need to make sure this can't be used for high-bandwidth bidirectional communication
-            Subspell("Scry Creature", 5, """
-                Make a Spellpower vs. Mental attack against a creature on the same plane as you.
-                You do not need \\glossterm<line of sight> or \\glossterm<line of effect> to the target.
-                However,  must specify your target with a precise mental image of its appearance.
-                The image does not have to be perfect, but it must unambiguously identify the target.
-                If you specify its appearance incorrectly, or if the target has changed its appearance, you may accidentally target a different creature, or the spell may simply be \\glossterm<miscast>.
-                This attack roll cannot \\glossterm<explode>.
-                \\hit A scrying sensor appears in the target's space.
-                This sensor functions like the sensor created by the \\spell<arcane eye> subspell, except that you cannot move the sensor manually.
-                Instead, it automatically tries to follow the target to stay in its space.
-                At the end of each phase, if the sensor is not in the target's space, this effect is \\glossterm<dismissed>.
             """),
             Subspell("Twin Eye", 5, """
                 This subspell functions like the \\spell<arcane eye> subspell, except that you constantly receive sensory input from both your body and the sensor.
@@ -1035,7 +1022,7 @@ def generate_spells():
             Subspell("Reverse Scrying", 4, """
                 Choose a magical sensor within \\rngmed range.
                 A new scrying sensor appears at the location of the source of the the ability that created the target sensor.
-                This sensor functions like the sensor created by the \\spell<arcane eye> subspell, except that the sensor cannot move and it is not destroyed if it does not have \\glossterm<line of effect> to you.
+                This sensor functions like the sensor created by the \\spell<autonomous eye> subspell, except that the sensor cannot move.
             """),
         ],
         category='narrative',
@@ -1625,8 +1612,8 @@ def generate_spells():
                 The weapon's attacks hit everything in a \\areamed cone from it.
                 It aims the cone to hit as many creatures as possible.
             """),
-            Subspell('Paired', 9, """
-                This subspell functions like the \\spell<weaponcraft> spell, except that you summon two weapons instead of one.
+            Subspell('Paired Weapons', 9, """
+                This subspell functions like the \\spell<summon weapon> subspell, except that you summon two weapons instead of one.
                 Each weapon attacks independently.
             """),
         ],
