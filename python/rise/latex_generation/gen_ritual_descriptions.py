@@ -142,7 +142,7 @@ def generate_rituals():
             Make a Craft check to create an object of no greater than Small size.
             The object appears out of thin air in an unoccupied square within \\rngclose range.
             % TODO: add ability to create objects of other sizes/materials
-            It must be made of nonliving, nonreactive vegetable matter, such as wood or cloth.
+            It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
 
             This ritual takes one hour to perform.
         """, tags=['Attune (multiple)', 'Manifestation']),
