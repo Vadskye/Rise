@@ -166,6 +166,19 @@ def generate_rituals():
     ))
 
     rituals.append(Spell(
+        name="Create Water",
+        base_level=1,
+        # header=Header("description"),
+        effects=Effects('Create Water', """
+            You create up to one gallon of wholesome, drinkable water anywhere within \\rngclose range.
+            The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
+            You must create a minimum of one ounce of water in each location.
+        """, tags=['Creation']),
+        schools=['Conjuration'],
+        lists=['Arcane', 'Divine', 'Nature'],
+    ))
+
+    rituals.append(Spell(
         name="Discern Location",
         base_level=5,
         # header=Header("description"),
@@ -498,11 +511,8 @@ def generate_rituals():
             The creature's race is replaced with a random race from \\tref<Humanoid Reincarnations>.
             Its appearance changes as necessary to match its new race, though it retains the general shape and distinguishing features of its original appearance.
             The creature loses all attribute modifiers and abilities from its old race, and gains those of its new race.
-            However, its racial bonus feat and languages are unchanged.
-
-            A creature's soul naturally rejects being placed into a different body than its original home.
-            Until the creature is restored to its initial race, its maximum action points are reduced by 1.
-            This penalty does not stack if the creature is reincarnated multiple times.
+            If its racial bonus feat is invalid for its new race, it must choose a new racial bonus feat.
+            However, its languages are unchanged.
 
             Coming back from the dead is an ordeal.
             All of the creature's action points and other daily abilities are expended when it returns to life.
@@ -520,20 +530,13 @@ def generate_rituals():
                 \begin{dtabularx}{\columnwidth}{l X}
                     d\% & Incarnation \\
                     \bottomrule
-                    01 & Bugbear \\
-                    02--13 & Dwarf \\
-                    14--25 & Elf \\
-                    26 & Gnoll \\
-                    27--38 & Gnome \\
-                    39--42 & Goblin \\
-                    43--52 & Half-elf \\
+                    01--13 & Dwarf \\
+                    14--26 & Elf \\
+                    27--40 & Gnome \\
+                    41--52 & Half-elf \\
                     53--62 & Half-orc \\
                     63--74 & Halfling \\
-                    75--89 & Human \\
-                    90--93 & Kobold \\
-                    94 & Lizardfolk \\
-                    95--99 & Orc \\
-                    100 & Other
+                    75--100 & Human \\
                 \end{dtabularx}
             \end{dtable}
         """,
@@ -608,6 +611,9 @@ def generate_rituals():
                 The resurrected creature's body is fully restored to its healthy state before dying, including regenerating all missing or damaged body parts.
 
                 This ritual takes 24 hours to perform, and requires 49 action points from its participants.
+            """),
+            Subspell('True', 9, """
+                
             """),
         ),
     ))
