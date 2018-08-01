@@ -118,7 +118,7 @@ If another ability would magically manipulate the weather in the same area, the 
 
 \begin{ability}{Cantrip}[\glossterm{Manifestation}, \glossterm{Water}]
 Make a Spellpower vs. Fortitude attack against everything in a \areamed, 5 ft.\ wide line from you.
-\hit Each target takes bludgeoning \glossterm{standard damage} \minus1d.
+\hit Each target takes bludgeoning \glossterm{standard damage} \minus2d.
 \end{ability}
 
 
@@ -271,16 +271,16 @@ This subspell does not have the \glossterm{Delayed} tag (see \pcref{Delayed Abil
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{4}]{Dimension Door}[\glossterm{Teleportation}]
-You teleport to a location within \rngext range of you.
-You must clearly visualize the destination's appearance, but you do not need \glossterm{line of sight} or \glossterm{line of effect} to your destination.
+\begin{ability}[\nth{3}]{Dimensional Jaunt -- Plane of Earth}
+This subspell functions like the \spell{dimensional jaunt} subspell, except that the target is partially teleported into the Plane of Earth.
+The damage becomes bludgeoning damage, and a struck target is \glossterm{slowed} as a \glossterm{condition}.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{4}]{Dimensional Jaunt -- Plane of Earth}
-This subspell functions like the \spell{dimensional jaunt} subspell, except that the target is partially teleported into the Plane of Earth.
-The damage becomes bludgeoning damage, and a struck target is \glossterm{immobilized} as a \glossterm{condition}.
+\begin{ability}[\nth{4}]{Dimension Door}[\glossterm{Teleportation}]
+You teleport to a location within \rngext range of you.
+You must clearly visualize the destination's appearance, but you do not need \glossterm{line of sight} or \glossterm{line of effect} to your destination.
 \end{ability}
 \vspace{0.25em}
 
@@ -441,9 +441,15 @@ You can cast this spell as a \glossterm{minor action}.
 
 \begin{ability}[\nth{1}]{Blessing of Resilience}[\glossterm{Attune} (shared)]
 Choose a willing creature within \rngclose range.
-The target removes one \glossterm{condition} affecting it.
-In addition, the target ignores the next two \glossterm{conditions} it would receive.
+The target ignores the next two \glossterm{conditions} it would receive.
 After resisting two conditions in this way, this spell ends.
+You can cast this spell as a \glossterm{minor action}.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{2}]{Cleansing Blessing}
+All allies within \arealarge radius from you can remove one \glossterm{condition} affecting them.
 \end{ability}
 \vspace{0.25em}
 
@@ -475,7 +481,7 @@ You can cast this subspell as a \glossterm{minor action}.
 
 
 \begin{ability}[\nth{4}]{Greater Blessing of Resilience}
-This subspell functions like the \textit{blessing of resilience} subspell, except that the spell does not end until it resists five \glossterm{conditions}.
+This subspell functions like the \textit{blessing of resilience} subspell, except that the spell does not end until it resists four \glossterm{conditions}.
 \end{ability}
 \vspace{0.25em}
 
@@ -503,6 +509,12 @@ You can cast this subspell as a \glossterm{minor action}.
 
 \begin{ability}[\nth{6}]{Greater Blessed Blade}
 This subspell functions like the \spell{blessed blade} subspell, except that the penalty to strike damage is reduced to \minus1d.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{6}]{Greater Cleansing Blessing}
+This subspell functions like the \spell{cleansing blessing} subspell, except that it can remove two conditions instead of one.
 \end{ability}
 \vspace{0.25em}
 
@@ -541,7 +553,6 @@ This subspell functions like the \spell{blessed blade} subspell, except that the
 \begin{ability}{Cantrip}[\glossterm{Temporal}]
 Make a Spellpower vs. Mental attack against a creature within \rngmed range.
 \hit The target is \glossterm{slowed} as a \glossterm{condition}.
-\crit the target is \glossterm{immobilized} a \glossterm{condition}.
 \end{ability}
 
 
@@ -708,28 +719,27 @@ If a target is somehow brought into a standing position, it will immediately fal
 
 \begin{ability}[\nth{1}]{Stay}[\glossterm{Compulsion}, \glossterm{Mind}]
 Make a Spellpower vs. Mental attack against a creature within \rngmed range.
-\hit The target is \immobilized as a \glossterm{condition}.
-\crit The target is \glossterm{immobilized} twice as two separate conditions.
-Both must be removed before the target can move again.
+\hit The target falls \glossterm{prone} and is \glossterm{slowed} as a \glossterm{condition}.
+\crit The target falls prone and is \glossterm{immobilized} as a \glossterm{condition}.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{2}]{Confusion}[\glossterm{Compulsion}, \glossterm{Mind}]
-Make a Spellpower vs. Mental attack against a creature within \rngmed range.
-\hit The target is \disoriented as a \glossterm{condition}.
-\crit The target is \confused as a \glossterm{condition}.
-\end{ability}
-\vspace{0.25em}
-
-
-\begin{ability}[\nth{3}]{Dance}[\glossterm{Compulsion}, \glossterm{Mind}]
+\begin{ability}[\nth{2}]{Dance}[\glossterm{Compulsion}, \glossterm{Mind}]
 Make a Spellpower vs. Mental attack against a creature within \rngmed range.
 \hit As a \glossterm{condition}, the target is compelled to dance.
 It can spend a \glossterm{move action} to dance, if it is physically capable of dancing.
 At the end of each round, if the target did not dance during that round, it takes a \minus2 penalty to \glossterm{accuracy}, \glossterm{checks}, and \glossterm{defenses} as the compulsion intensifies.
 This penalty stacks each round until the target dances, which resets the penalties to 0.
 \crit As above, except that the target must dance as a \glossterm{standard action} to reset the penalties, instead of as a move action.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{3}]{Confusion}[\glossterm{Compulsion}, \glossterm{Mind}]
+Make a Spellpower vs. Mental attack against a creature within \rngmed range.
+\hit The target is \disoriented as a \glossterm{condition}.
+\crit The target is \confused as a \glossterm{condition}.
 \end{ability}
 \vspace{0.25em}
 
@@ -766,7 +776,7 @@ If the target was already dominated by you, including from a previous use of thi
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{9}]{Irresistible Dance}
+\begin{ability}[\nth{8}]{Irresistible Dance}
 This subspell functions like the \textit{dance} subspell, except that you gain a \plus4 bonus to accuracy on the attack.
 \end{ability}
 \vspace{0.25em}
@@ -945,12 +955,6 @@ This subspell functions like the \spell{cone of cold} subspell, except that the 
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{4}]{Freezing}
-This subspell functions like the \spell{cone of cold} subspell, except that each struck target is also \glossterm{immobilized} as an additional \glossterm{condition}.
-\end{ability}
-\vspace{0.25em}
-
-
 \begin{ability}[\nth{4}]{Frostbite}
 This subspell functions like the \subspell{frostbite} subspell, except that a struck target is also \glossterm{exhausted} as a \glossterm{condition}.
 \end{ability}
@@ -960,6 +964,12 @@ This subspell functions like the \subspell{frostbite} subspell, except that a st
 \begin{ability}[\nth{4}]{Sturdy Icecraft}
 This subspell functions like the \subspell{icecraft} subspell, except that the item created has hit points equal to four times your spellpower.
 In addition, you can create heavy body armor.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{5}]{Freezing}
+This subspell functions like the \spell{cone of cold} subspell, except that each struck target is also \glossterm{immobilized} as an additional \glossterm{condition}.
 \end{ability}
 \vspace{0.25em}
 
@@ -1113,9 +1123,9 @@ Make a Spellpower vs. Mental attack against all enemies in a \areamed radius fro
 \end{spellheader}
 
 
-\begin{ability}{Electromancy}[\glossterm{Electricity}]
+\begin{ability}{Cantrip}[\glossterm{Electricity}]
 Make a Spellpower vs. Reflex attack against everything in a \areamed, 5 ft.\ wide line from you.
-\hit Each target takes electricity \glossterm{standard damage} \minus1d.
+\hit Each target takes electricity \glossterm{standard damage} \minus2d.
 \end{ability}
 
 
@@ -1166,7 +1176,7 @@ This subspell functions like the \spell{lightning bolt} subspell, except that it
 
 
 \begin{ability}[\nth{3}]{Call Lightning}[\glossterm{Electricity}]
-Make a Spellpower vs. Reflex attack against everything in a \arealarge, 5 ft.\ wide vertical line from you.
+Make a Spellpower vs. Reflex attack against everything in a \arealarge, 5 ft.\ wide vertical line within \rngmed range.
 If you are outdoors in cloudy or stormy weather, you gain a \plus2 bonus to \glossterm{accuracy} with the attack.
 \hit Each target takes takes electricity \glossterm{standard damage} \plus1d.
 \end{ability}
@@ -1261,17 +1271,6 @@ On the third hit, the target takes damage and becomes \glossterm{nauseated} inst
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{2}]{Web}[\glossterm{Manifestation}, \glossterm{Sustain} (minor)]
-You fill a \areasmall radius zone in \rngclose range with webs.
-The webs make the area \glossterm{difficult terrain}.
-Each 5-ft.\ square of webbing has hit points equal to your spellpower, and is \glossterm{vulnerable} to fire.
-
-In addition, you make a Spellpower vs. Reflex attack against all creatures in the area when the spell is cast.
-\hit Each target is \immobilized as long as it has webbing from this ability in its space.
-\end{ability}
-\vspace{0.25em}
-
-
 \begin{ability}[\nth{3}]{Corrosive Splash}
 This subspell functions like the \spell{acid splash} spell, except that it deals double damage to objects.
 \end{ability}
@@ -1285,9 +1284,13 @@ If you create body armor, you can create it already equipped to a willing creatu
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{4}]{Reinforced Webbing}
-This subspell functions like the \textit{web} subspell, except that each 5-ft.\ square of webbing gains additional hit points equal to your spellpower.
-In addition, the webs are no longer \glossterm{vulnerable} to fire damage.
+\begin{ability}[\nth{3}]{Web}[\glossterm{Manifestation}, \glossterm{Sustain} (minor)]
+You fill a \areasmall radius zone in \rngclose range with webs.
+The webs make the area \glossterm{difficult terrain}.
+Each 5-ft.\ square of webbing has hit points equal to your spellpower, and is \glossterm{vulnerable} to fire.
+
+In addition, you make a Spellpower vs. Reflex attack against all creatures in the area when the spell is cast.
+\hit Each target is \immobilized as long as it has webbing from this ability in its space.
 \end{ability}
 \vspace{0.25em}
 
@@ -1306,6 +1309,13 @@ The meteor takes up a \areamed radius, and must be created in unoccupied space.
 After being summoned, it falls up to 100 feet before disappearing.
 Make a Spellpower vs. Reflex attack against everything in its path.
 \hit Each target takes bludgeoning and fire \glossterm{standard damage}.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{5}]{Reinforced Webbing}
+This subspell functions like the \textit{web} subspell, except that each 5-ft.\ square of webbing gains additional hit points equal to your spellpower.
+In addition, the webs are no longer \glossterm{vulnerable} to fire damage.
 \end{ability}
 \vspace{0.25em}
 
@@ -1847,26 +1857,6 @@ The target gains a \plus4 \glossterm{magic bonus} to \glossterm{initiative} chec
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{3}]{Augury}
-Choose a willing creature within \rngclose range, and an action which that creature could take.
-You learn whether the stated action is likely to bring good or bad results for the target within the next hour.
-This subspell provides one of four results:
-\begin{itemize}
-\item Weal (if the action will probably bring good results).
-\item Woe (for bad results).
-\item Weal and woe (for both).
-\item No response (for actions that don't have especially good or bad results).
-\end{itemize}
-
-This subspell does not describe the future with certainty.
-It describes which result is most probable.
-The more unambiguous the action's effects, the more likely the spell is to be correct.
-
-After using this subspell, you cannot cast it again until the hour affected by the previous casting is over, regardless of whether the action was taken.
-\end{ability}
-\vspace{0.25em}
-
-
 \begin{ability}[\nth{3}]{Boon of Knowledge}
 The target gains a \plus4 \glossterm{magic bonus} to all Knowledge skills (see \pcref{Knowledge}).
 \end{ability}
@@ -1926,7 +1916,7 @@ In addition, the target is not \glossterm{unaware} when attacked by surprise.
 \end{spellheader}
 
 
-\begin{ability}{Cantrip}[\glossterm{Attune}, \glossterm{Scrying}]
+\begin{ability}{Cantrip}[\glossterm{Scrying}, \glossterm{Sustain} (minor)]
 This cantrip functions like the \textit{arcane eye} subspell, except that it gains the \glossterm{Sustain} (minor) tag in place of the \glossterm{Attune} tag.",
 In addition, the sensor cannot be moved after it is originally created.
 \end{ability}
@@ -2077,9 +2067,9 @@ This augment replaces the effects of any other augments that change the appearan
 \end{spellheader}
 
 
-\begin{ability}{Telekinesis}[\glossterm{Telekinesis}]
+\begin{ability}{Cantrip}[\glossterm{Telekinesis}]
 Make a Spellpower vs. Mental attack against one creature or object within \rngmed range.
-\hit The target takes bludgeoning \glossterm{standard damage} \plus1d.
+\hit The target takes bludgeoning \glossterm{standard damage} \minus1d.
 \end{ability}
 
 
@@ -2096,6 +2086,13 @@ but you cannot apply any augments to it.
 
 
 \subsubsection{Subspells}
+
+
+\begin{ability}[\nth{1}]{Telekinetic Crush}
+Make a Spellpower vs. Mental attack against one creature or object within \rngmed range.
+\hit The target takes bludgeoning \glossterm{standard damage} \plus1d.
+\end{ability}
+\vspace{0.25em}
 
 
 \begin{ability}[\nth{1}]{Telekinetic Movement}
@@ -2116,17 +2113,8 @@ Moving the target upwards costs twice the normal movement cost.
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{2}]{Precise}[\glossterm{Telekinesis}]
-Make a Spellpower vs. Mental attack against a Medium or smaller creature or object within \rngclose range.
-\hit You move the target up to five feet in any direction.
-In addition, you can make a check to manipulate the target as if you were using your hands.
-The check's result has a maximum equal to your attack result.
-\end{ability}
-\vspace{0.25em}
-
-
-\begin{ability}[\nth{3}]{Binding}
-This subspell functions like the \spell{telekinesis} spell, except that the struck creature is also \immobilized as a \glossterm{condition}.
+\begin{ability}[\nth{3}]{Binding Crush}
+This subspell functions like the \spell{telekinetic crush} subspell, except that the struck creature is also \glossterm{slowed} as a \glossterm{condition}.
 \end{ability}
 \vspace{0.25em}
 
@@ -2147,6 +2135,12 @@ This subspell functions like the \textit{telekinetic movement} spell, except tha
 
 \begin{ability}[\nth{5}]{Accelerated Levitate}
 This subspell functions like the \spell{levitate} subspell, except that you can move the target up to thirty feet instead of up to ten feet.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{6}]{Greater Binding Crush}
+This subspell functions like the \spell{telekinetic crush} subspell, except that the struck creature is also \glossterm{immobilized} as a \glossterm{condition}.
 \end{ability}
 \vspace{0.25em}
 
@@ -2244,6 +2238,13 @@ The target gains a \plus1 enhancement bonus to \glossterm{spellpower}.
 This subspell creates a dimensional lock in a \arealarge radius zone from your location.
 Extraplanar travel into or out of the area is impossible.
 This prevents all \glossterm{Manifestation}, \glossterm{Planar}, and \glossterm{Teleportation} effects.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{6}]{Resist Magic}
+Choose a willing creature within \rngmed range.
+The target gains \glossterm{magic resistance} equal to 5 + your \glossterm{spellpower}.
 \end{ability}
 \vspace{0.25em}
 

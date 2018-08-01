@@ -198,7 +198,7 @@ def generate_spells():
                 However, if the spell hits, it deals damage to the target again at the end of every \\glossterm<action phase> in subsequent rounds.
                 This is a \\glossterm<condition>, and lasts until removed.
             """),
-            Subspell('Web', 2, """
+            Subspell('Web', 3, """
                 You fill a \\areasmall radius zone in \\rngclose range with webs.
                 The webs make the area \\glossterm<difficult terrain>.
                 Each 5-ft.\\ square of webbing has hit points equal to your spellpower, and is \\glossterm<vulnerable> to fire.
@@ -206,7 +206,7 @@ def generate_spells():
                 In addition, you make a Spellpower vs. Reflex attack against all creatures in the area when the spell is cast.
                 \\hit Each target is \\immobilized as long as it has webbing from this ability in its space.
             """, tags=['Manifestation', 'Sustain (minor)']),
-            Subspell("Reinforced Webbing", 4, f"""
+            Subspell("Reinforced Webbing", 5, f"""
                 This subspell functions like the \\textit<web> subspell, except that each 5-ft.\\ square of webbing gains additional hit points equal to your spellpower.
                 In addition, the webs are no longer \\glossterm<vulnerable> to fire damage.
             """),
@@ -540,11 +540,10 @@ def generate_spells():
             """),
             Subspell('Stay', 1, """
                 Make a Spellpower vs. Mental attack against a creature within \\rngmed range.
-                \\hit The target is \\immobilized as a \\glossterm<condition>.
-                \\crit The target is \\glossterm<immobilized> twice as two separate conditions.
-                Both must be removed before the target can move again.
+                \\hit The target falls \\glossterm<prone> and is \\glossterm<slowed> as a \\glossterm<condition>.
+                \\crit The target falls prone and is \\glossterm<immobilized> as a \\glossterm<condition>.
             """, tags=['Compulsion', 'Mind']),
-            Subspell("Confusion", 2, """
+            Subspell("Confusion", 3, """
                 Make a Spellpower vs. Mental attack against a creature within \\rngmed range.
                 \\hit The target is \\disoriented as a \\glossterm<condition>.
                 \\crit The target is \\confused as a \\glossterm<condition>.
@@ -564,7 +563,7 @@ def generate_spells():
                 \\hit Each target is \\disoriented as a \\glossterm<condition>.
                 \\crit Each target is \\confused as a \\glossterm<condition>.
             """, tags=['Compulsion', 'Mind']),
-            Subspell("Dance", 3, """
+            Subspell("Dance", 2, """
                 Make a Spellpower vs. Mental attack against a creature within \\rngmed range.
                 \\hit As a \\glossterm<condition>, the target is compelled to dance.
                 It can spend a \\glossterm<move action> to dance, if it is physically capable of dancing.
@@ -572,7 +571,7 @@ def generate_spells():
                 This penalty stacks each round until the target dances, which resets the penalties to 0.
                 \\crit As above, except that the target must dance as a \\glossterm<standard action> to reset the penalties, instead of as a move action.
             """, tags=['Compulsion', 'Mind']),
-            Subspell("Irresistible Dance", 9, """
+            Subspell("Irresistible Dance", 8, """
                 This subspell functions like the \\textit<dance> subspell, except that you gain a +4 bonus to accuracy on the attack.
             """),
             Subspell("Dominate", 5, """
@@ -719,7 +718,7 @@ def generate_spells():
             Subspell("Greater Cold Snap", 5, f"""
                 This subspell functions like the \\textit<cold snap> subspell, except that the spell gains the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Sustain> (standard) tag.
             """),
-            Subspell("Freezing", 4, """
+            Subspell("Freezing", 5, """
                 This subspell functions like the \\spell<cone of cold> subspell, except that each struck target is also \\glossterm<immobilized> as an additional \\glossterm<condition>.
             """),
             Subspell('Blizzard', 3, """
@@ -1143,7 +1142,10 @@ def generate_spells():
                 Moving the target upwards costs twice the normal movement cost.
             """),
             Subspell("Binding Crush", 3, """
-                This subspell functions like the \\spell<telekinetic crush> subspell, except that the struck creature is also \\immobilized as a \\glossterm<condition>.
+                This subspell functions like the \\spell<telekinetic crush> subspell, except that the struck creature is also \\glossterm<slowed> as a \\glossterm<condition>.
+            """),
+            Subspell('Greater Binding Crush', 6, """
+                This subspell functions like the \\spell<telekinetic crush> subspell, except that the struck creature is also \\glossterm<immobilized> as a \\glossterm<condition>.
             """),
             Subspell("Levitate", 3, """
                 Choose a Medium or smaller willing creature or unattended object within \\rngclose range.
@@ -1394,9 +1396,9 @@ def generate_spells():
                 This subspell functions like the \\spell<dimensional jaunt> subspell, except that the target is partially teleported into the Plane of Fire.
                 The damage becomes fire damage, and a struck target is \\glossterm<ignited> until it puts out the fire.
             """),
-            Subspell("Dimensional Jaunt -- Plane of Earth", 4, """
+            Subspell("Dimensional Jaunt -- Plane of Earth", 3, """
                 This subspell functions like the \\spell<dimensional jaunt> subspell, except that the target is partially teleported into the Plane of Earth.
-                The damage becomes bludgeoning damage, and a struck target is \\glossterm<immobilized> as a \\glossterm<condition>.
+                The damage becomes bludgeoning damage, and a struck target is \\glossterm<slowed> as a \\glossterm<condition>.
             """),
             Subspell("Dimensional Jaunt -- Deep Astral Plane", 6, """
                 This subspell functions like the \\spell<dimensional jaunt> subspell, except that the target is partially teleported into the deep Astral Plane.
@@ -1432,7 +1434,6 @@ def generate_spells():
         effects=Effects('Cantrip', """
             Make a Spellpower vs. Mental attack against a creature within \\rngmed range.
             \\hit The target is \\glossterm<slowed> as a \\glossterm<condition>.
-            \\crit the target is \\glossterm<immobilized> a \\glossterm<condition>.
         """, tags=['Temporal']),
         schools=['Transmutation'],
         lists=['Arcane'],
