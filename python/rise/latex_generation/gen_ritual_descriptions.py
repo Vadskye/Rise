@@ -139,7 +139,7 @@ def generate_rituals():
         base_level=3,
         # header=Header("description"),
         effects=Effects('Create Object', """
-            Make a Craft check to create an object of no greater than Small size.
+            Make a Craft check to create an object of Small size or smaller.
             The object appears out of thin air in an unoccupied square within \\rngclose range.
             % TODO: add ability to create objects of other sizes/materials
             It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
