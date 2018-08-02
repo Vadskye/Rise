@@ -316,7 +316,7 @@ def generate_worn():
         tags=['Telekinesis'],
         description="""
             As a standard action during the \\glossterm<action phase>, you can spend an \\glossterm<action point> to activate these bracers.
-            If you do, they emit a telekinetic burst of force during the \\glossterm<delayed action phase> that targets everything within a \\areamed radius burst from you.
+            If you do, they emit a telekinetic burst of force during the \\glossterm<delayed action phase> that targets objects and enemies within a \\areamed radius burst from you.
             You make a \\glossterm<shove> attack against all targets to push them away from you, using this item's \\glossterm<power> in place of your Strength.
             You gain a +5 bonus to this attack against any creature that attacked you during the action phase,
                 and an additional +5 bonus against any creature that damaged you during the action phase.

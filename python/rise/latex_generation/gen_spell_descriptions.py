@@ -116,7 +116,7 @@ def generate_spells():
             """),
             Subspell('Repulsion', 2, """
                 This subspell creates a repulsive field in a \\areamed radius zone from your location.
-                Whenever a creature makes physical contact with the spell's area for the first time, you make a Spellpower vs. Mental attack against it.
+                Whenever an enemy makes physical contact with the spell's area for the first time, you make a Spellpower vs. Mental attack against it.
                 \\hit The target is unable to enter the spell's area with any part of its body.
                 The rest of its movement in the current phase is cancelled.
 
@@ -533,7 +533,7 @@ def generate_spells():
         lists=['Arcane', 'Divine'],
         subspells=[
             Subspell('Fall', 1, """
-                Make a Spellpower vs. Mental attack against all creatures in a \\areamed radius from you.
+                Make a Spellpower vs. Mental attack against all enemies in a \\areamed radius from you.
                 \\hit Each target falls \\glossterm<prone>.
                 \\crit As above, and as a \\glossterm<condition>, each target is unable to stand up.
                 If a target is somehow brought into a standing position, it will immediately fall and become prone again.
@@ -558,8 +558,8 @@ def generate_spells():
                 This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                 However, it is a \\glossterm<condition>, and can be removed by effects which remove conditions.
             """, tags=['Compulsion', 'Mind']),
-            Subspell("Discordant Song", 4, """
-                Make a Spellpower vs. Mental attack against all creatures in a \\areamed radius from you.
+            Subspell("Discordant Song", 5, """
+                Make a Spellpower vs. Mental attack against all enemies in a \\areamed radius from you.
                 \\hit Each target is \\disoriented as a \\glossterm<condition>.
                 \\crit Each target is \\confused as a \\glossterm<condition>.
             """, tags=['Compulsion', 'Mind']),
@@ -848,7 +848,7 @@ def generate_spells():
                 It is no longer a condition, and cannot be removed by abilities that remove conditions.
             """, tags=['Curse']),
             Subspell('Miasma', 1, """
-                Make a Spellpower vs. Fortitude attack against all living creatures within an \\areamed radius from you.
+                Make a Spellpower vs. Fortitude attack against all living enemies within an \\areamed radius from you.
                 \\hit Each target is \\glossterm<sickened> as a \\glossterm<condition>.
             """),
             Subspell('Greater Miasma', 4, """
@@ -913,13 +913,12 @@ def generate_spells():
             """, tags=['Death']),
             Subspell("Circle of Death", 3, """
                 You are surrounded by an aura of death in a \\areamed radius emanation from you.
-                When this spell resolves, and the end of each \\glossterm<action phase> in subsequent rounds, make a Spellpower vs. Fortitude attack against all creatures in the area.
+                When this spell resolves, and the end of each \\glossterm<action phase> in subsequent rounds, make a Spellpower vs. Fortitude attack against all enemies in the area.
                 \\hit Each target takes life \\glossterm<standard damage> -3d.
             """, tags=['Life', 'Sustain (minor)']),
             Subspell("Circle of Healing", 4, """
                 You are surrounded by an aura of healing in a \\areamed radius emanation from you.
-                When this spell resolves, and the end of each \\glossterm<action phase> in subsequent rounds, make a Spellpower vs. Fortitude attack against all creatures in the area.
-                \\hit Each target heals hit points equal to \\glossterm<standard damage> -3d.
+                When this spell resolves, and the end of each \\glossterm<action phase> in subsequent rounds, all allies in the area heal hit points equal to \\glossterm<standard damage> -3d.
             """, tags=['Life', 'Sustain (minor)']),
             Subspell("Remove Disease", 3, """
                 Choose a willing creature within \\rngclose range.
