@@ -1410,7 +1410,6 @@ def generate_spells():
             Subspell('Dimensional Shuffle', 2, """
                 Choose up to five willing creatures within \\rngmed range.
                 Each target teleports into the location of a different target.
-                This subspell does not have the \\glossterm<Delayed> tag (see \pcref<Delayed Abilities>).
             """, tags=['Teleportation']),
             Subspell('Blink', 5, """
                 Choose a willing creature within \\rngclose range.
