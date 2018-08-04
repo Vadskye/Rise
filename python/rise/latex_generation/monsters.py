@@ -291,6 +291,23 @@ def animals():
 def animates():
     monsters = []
 
+    elemental_air = Creature(
+        challenge_rating=1,
+        character_class=CharacterClass('slayer'),
+        level=10,
+        name='Elemental',
+        name_suffix='Air',
+        natural_armor=4,
+        race=Race('animate'),
+        size=Size('large'),
+        starting_attributes=[0, 4, 1, 0, 3, 0],
+        weapons=[Weapon('slam')],
+    )
+    monsters.append(get_latex_from_creature(
+        elemental_air,
+        active_abilities=[],
+    ))
+
     ram_animus = Creature(
         challenge_rating=4,
         character_class=CharacterClass('behemoth'),
