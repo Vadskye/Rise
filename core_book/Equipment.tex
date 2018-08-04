@@ -39,7 +39,7 @@
             Each character is proficient with different weapon groups. These indicate the weapons that you can use effectively. You take a \minus2 penalty to accuracy with weapons you are not proficient with, and you cannot use them to defend yourself, which can cause you to be \defenseless.
 
     \subsection{Weapon Encumbrance}\label{Weapon Encumbrance}
-        This is a measure of how much effort it takes to wield a weapon in combat. A weapon's encumbrance indicates whether a melee weapon, when wielded by a character of the weapon's size category, is considered a light weapon, a medium weapon, or a heavy weapon.
+        This is a measure of how much effort it takes to wield a weapon in combat. A weapon's encumbrance indicates whether a melee weapon, when wielded by a creature the weapon is sized for, is considered a light weapon, a medium weapon, or a heavy weapon.
 
         \parhead{Light Weapons}\label{Light Weapons} You can use Dexterity to determine your \glossterm{accuracy} when making a \glossterm{physical attack} with a light weapon.
         In addition, light weapons are easier to use while making attacking with two weapons at once (see \pcref{Two-Weapon Strikes}) or while grappling.
@@ -75,7 +75,11 @@
 
             \parhead{Physical Size} Like all objects and creatures, weapons have a size category that represents how physically large they are. In general, a light weapon is an object two size categories smaller than the wielder, a medium weapon is an object one size category smaller than the wielder, and a heavy weapon is an object of the same size category as the wielder.
 
-            \parhead{Inappropriately Sized Weapons} A weapon's encumbrance is altered by one step for each size category of difference between the wielder's size and the size of the creature for which the weapon was designed. For example, a light weapon sized for a Large creature can be used by a Medium creature as if it had medium encumbrance. In addition, the wielder takes a \minus2 penalty to accuracy on physical attacks per size difference. If a weapon's encumbrance would be changed to something other than light, medium, or heavy by this alteration, the creature can't wield the weapon at all.
+            \parhead{Inappropriately Sized Weapons}\label{Inappropriately Sized Weapons} A weapon's encumbrance is altered by one step for each size category of difference between the wielder's size and the size of the creature for which the weapon was designed.
+            For example, a light weapon sized for a Large creature can be used by a Medium creature as if it had medium encumbrance.
+            The wielder also gains a \plus1d bonus to damage with the weapon per size category if the weapon is unusually large, or a \minus1d penalty to damage with the weapon if the weapon is unusually small.
+            In addition, the wielder takes a \minus2 penalty to accuracy with the weapon per size category of difference.
+            If a weapon's encumbrance would be changed to something other than light, medium, or heavy by this alteration, the creature can't wield the weapon at all.
 
     \subsection{Improvised Weapons}\label{Improvised Weapons} Sometimes objects not crafted to be weapons nonetheless see use in combat. Because such objects are not designed for this use, any creature that uses one in combat is considered to be nonproficient with it.
 
@@ -99,7 +103,9 @@
         \parhead{Encumbrance} Describes whether the weapon is a light, medium, heavy, double, or ranged weapon.
 
         \par This cost is the same for a Small or Medium version of the weapon. A Large version costs twice the listed price.
-        \parhead{Damage} The Damage column gives the damage dealt by the weapon on a successful hit. The damage given is for weapons used by Medium creatures. Weapons used by Small creatures have a damage die that is one \glossterm{die increment} smaller (see \pcref{Size in Combat}).
+        \parhead{Damage} The Damage column gives the damage dealt by the weapon on a successful hit.
+        These values are accurate for creatures using weapons sized appropriately for them.
+        For details about using weapons of other sizes, see \pcref{Inappropriately Sized Weapons}.
 
         If two damage ranges are given, the weapon is a double weapon. Use the second damage figure given for the double weapon's other side.
 
@@ -141,8 +147,8 @@
                 \tind Scimitar & Medium & \plus0d & Slashing & 15 gp & 4 lb. & \tdash \\
 
                 Blades, light &&&&&& \\
-                \tind Dagger & Light & \minus2d & Piercing or slashing & 2 gp & 1 lb. & Small, Throwing (10 ft.) \\
-                \tind Dagger, punching & Light & \minus2d & Piercing & 2 gp & 1 lb. & Small \\
+                \tind Dagger & Light & \minus2d & Piercing or slashing & 2 gp & 1 lb. & Compact, Throwing (10 ft.) \\
+                \tind Dagger, punching & Light & \minus2d & Piercing & 2 gp & 1 lb. & Compact \\
                 \tind Rapier\fn{4} & Light & \minus1d & Piercing & 20 gp & 2 lb. & Disarming \\
                 \tind Sword, short & Light & \minus1d & Piercing or slashing & 10 gp & 2 lb. & \tdash \\
 
@@ -197,7 +203,7 @@
                 Simple weapons &&&&&& \\
                 \tind Club & Medium & \minus1d & Bludgeoning & \tdash & 3 lb. & \tdash \\
                 \tind Crossbow, light\fn{4} & Medium (Ranged) & \plus0d & Piercing & 35 gp & 4 lb. & Projectile (50 ft.) \\
-                \tind Dagger & Light & \minus2d & Piercing or slashing & 2 gp & 1 lb. & Small, Thrown (10 ft.) \\
+                \tind Dagger & Light & \minus2d & Piercing or slashing & 2 gp & 1 lb. & Compact, Thrown (10 ft.) \\
                 \tind Quarterstaff & Heavy & \minus1d/\minus1d & Bludgeoning & \tdash & 4 lb. & Double \\
                 \tind Unarmed strike & Light & \minus3d & Bludgeoning & \tdash & \tdash & Subdual, Unarmed \\
 
@@ -209,7 +215,7 @@
 
                 Thrown weapons &&&&&& \\
                 \tind Axe, throwing & Light & \minus1d & Slashing & 8 gp & 2 lb. & Thrown (10 ft.) \\
-                \tind Dagger & Light & \minus2d & Piercing or slashing & 2 gp & 1 lb. & Small, Thrown (10 ft.) \\
+                \tind Dagger & Light & \minus2d & Piercing or slashing & 2 gp & 1 lb. & Compact, Thrown (10 ft.) \\
                 \tind Dart (5) & Light (Ranged) & \minus2d & Piercing & 1 gp & 1/2 lb. & Ammunition, Thrown (20 ft.) \\
                 \tind Hammer, light & Light & \minus2d & Bludgeoning & 1 gp & 2 lb. & Thrown (20 ft.) \\
                 \tind Javelin & Medium (Ranged) & \minus1d & Piercing & 1 gp & 2 lb. & Thrown (30 ft.) \\
@@ -223,7 +229,7 @@
                 \tind Gauntlet, spiked & Light & \minus2d & Piercing & 5 gp & 1 lb. & Unarmed \\
                 \tind Unarmed strike & Light & \minus3d & Bludgeoning & \tdash & \tdash & Subdual, Unarmed \\
             \end{longtabu}
-            1 Relative to your normal \glossterm{strike damage}.
+            1 Applies as a modifier to your damage with \glossterm{strikes} using the weapon.
             2 When two types are given, the weapon is both types if the entry specifies ``and,'' or either type (attacker's choice) if the entry specifies ``or.'' \\
             3 Weight figures are for Medium weapons. A Small weapon weighs half as much, and a Large weapon weighs twice as much. \\
             4 This weapon has special rules. \\
@@ -261,7 +267,7 @@
                 \tind Net\fn{4} & Medium (Ranged) & \tdash & \tdash & 20 gp & 6 lb. & Thrown (10 ft.) \\
                 Unarmed weapons &&&&&&\\
             \end{dtabularx}
-            1 Relative to your normal \glossterm{strike damage}.
+            1 Applies as a modifier to your damage with \glossterm{strikes} using the weapon.
             2 When two types are given, the weapon is both types if the entry specifies ``and,'' or either type (attacker's choice) if the entry specifies ``or.'' \\
             3 Weight figures are for Medium weapons. A Small weapon weighs half as much, and a Large weapon weighs twice as much. \\
             4 This weapon has special rules. \\
@@ -289,6 +295,7 @@
         \parhead{Ammunition} This weapon is designed to thrown or fired by a projectile weapon in large quantities. It is cheaper to buy and craft, but ammunition is usually \glossterm{broken} after being fired.
         \parhead{Bracing} As a move action, you can brace this weapon against a charge for 1 round.
         While you are bracing your weapon, you gain a \plus2d bonus to damage on attacks with that weapon against creatures that charge you that round.
+        \parhead{Compact} This weapon is unusually small. It is one size category smaller than normal for a light weapon (that is, three size categories smaller than the creature it is intended for). This makes it easier to conceal (see \pcref{Sleight of Hand}).
         \parhead{Disarming} You gain a \plus2 bonus to accuracy when you use the \textit{disarm} ability to attack with this weapon.
         \parhead{Double} This weapon has more than one striking surface. You can fight with both ends simultaneously, just like wielding two weapons at once (see \pcref{Two-Weapon Strikes}). Alternately, you can attack with one end at a time. If you have the ability to use a double weapon in one hand, you can only fight with one end at a time, not both.
         \parhead{Finesse} You can apply your Dexterity instead of your Perception when determining your accuracy with physical attacks using the weapon, even if it isn't a light weapon for you.
@@ -303,7 +310,6 @@
         \parhead{Reach}\label{Reach Weapon} This weapon can be used to attack at double your natural reach (so 10 feet for a typical Small or Medium creature). However, it cannot attack a creature within your natural reach.
 
         Reach weapons can held using a different grip to strike nearby foes. This is called ``short hafting''. While short hafting a Reach weapon, you ignore the weapon's Reach property, but you take a \minus2 penalty to accuracy with it.
-        \parhead{Small} This weapon is unusually small. It is one size category smaller than normal for a light weapon (that is, three size categories smaller than the creature it is intended for). This makes it easier to conceal (see \pcref{Sleight of Hand}).
         \parhead{Subdual} This weapon deals \glossterm{subdual damage} (see \pcref{Subdual Damage}).
         \parhead{Throwing} This weapon is designed to be thrown. Throwing weapons have a range increment listed in their description, which indicates the distance they can be easily thrown. See \pcref{Thrown Weapons}.
         \parhead{Tripping} When you use the \textit{trip} ability, you can attack with this weapon instead of with a free hand (see \pcref{Trip}).

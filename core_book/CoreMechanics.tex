@@ -198,12 +198,13 @@ It defines how attributes work and explains how to make physical attacks in comb
                 \item Strength determines how much a character can carry (see \tref{Carrying Capacity by Strength}).
                 \item Strength affects Strength-based skills: Climb, Jump, and Swim (see \pcref{Skills}).
                 \item If your Strength is negative, you take a penalty to all Strength-based skills equal to your Strength.
-                \item If your Strength is negative, you take a penalty to \glossterm{strike damage} equal to half your Strength in \glossterm{die increments}.
+                % TODO: wording
+                \item If your Strength is negative, you take a penalty to damage with \glossterm{strikes} equal to half your Strength in \glossterm{die increments}.
             \end{itemize}
 
             If you have a high Strength, you can use it to determine several statistics:
             \begin{itemize}
-                \item Your \glossterm{strike damage} (see \pcref{Strike Damage}).
+                \item Your \glossterm{power} with most \glossterm{mundane} abilities, such as \glossterm{strikes} (see \pcref{Power}).
                 \item Your \glossterm{threat} (see \pcref{Threat}).
                 \item Your Fortitude defense (see \pcref{Defenses}).
             \end{itemize}
@@ -219,7 +220,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
             If you have a high Dexterity, you can use it to determine several statistics:
             \begin{itemize}
-                \item Your \glossterm{accuracy} with \glossterm{physical attacks} using light melee and thrown weapons (see \pcref{Physical Accuracy}).
+                \item Your \glossterm{accuracy} with melee and thrown \glossterm{strikes} using \glossterm{light weapons} (see \pcref{Physical Accuracy}).
                 \item Your Armor and Reflex defenses (see \pcref{Defenses}).
             \end{itemize}
 
@@ -263,7 +264,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
             If you have a high Perception, you can use it to determine several statistics:
             \begin{itemize}
-                \item Your \glossterm{accuracy} with \glossterm{physical attacks} (see \pcref{Physical Accuracy}).
+                \item Your \glossterm{accuracy} with all attacks (see \pcref{Accuracy}).
                 \item Your Reflex defense (see \pcref{Defenses}).
             \end{itemize}
 
@@ -275,27 +276,43 @@ It defines how attributes work and explains how to make physical attacks in comb
                 \item You gain a bonus (or penalty) to your Mental defense equal to your starting Willpower.
             \end{itemize}
 
-            If you have a high Willpower, you can use it to determine your Mental defense (see \pcref{Defenses}).
+            If you have a high Willpower, you can use it to determine several statistics:
+            \begin{itemize}
+                \item Your \glossterm{power} with most \glossterm{magical} abilities (see \pcref{Power}).
+                \item Your Mental defense (see \pcref{Defenses}).
+            \end{itemize}
 
     \subsection{Accuracy}\label{Accuracy}
         Your accuracy with an \glossterm{attack} is the number that you add to the \glossterm{attack roll}.
-        You will have multiple different attacks you can make.
-        The accuracy for an attack depends on the type of attack it is.
+        Your accuracy with an attack is normally equal to the higher of your level and your Perception.
+        If you are making a \glossterm{strike} with a \glossterm{light weapon}, you may use your Dexterity in place of your Perception.
+        In addition to this base number, your accuracy can include any number of bonuses and penalties from other sources.
 
-        \subsubsection{Physical Accuracy}\label{Physical Accuracy}
-            Your accuracy with a \glossterm{physical attack}, such as a \glossterm{strike}, is normally equal to the higher of your level and your Perception.
-            If you are using a \glossterm{light weapon}, you may use your Dexterity instead.
-            In addition to this base number, your accuracy can include any number of bonuses and penalties from other sources.
+        \parhead{Proficiency} Each creature is \glossterm{proficient} with a number of weapons.
+        For details about the weapons you can be proficient with, see \pcref{Weapons}.
+        Your proficiencies are primarily determined by your class, but some abilities also grant proficiency with additional weapons.
+        If you make a \glossterm{physical attack} with a weapon you are not proficient with, you take a \minus2 penalty to accuracy.
 
-            \parhead{Proficiency} Each creature is \glossterm{proficient} with a number of weapons.
-            For details about the weapons you can be proficient with, see \pcref{Weapons}.
-            Your proficiencies are primarily determined by your class, but some abilities also grant proficiency with additional weapons.
-            If you make a \glossterm{physical attack} with a weapon you are not proficient with, you take a \minus2 penalty to accuracy.
+    \subsection{Power}\label{Power}
+        Many abilities have a \glossterm{power} which represents the overall strength of the ability.
+        This determines the ability's \glossterm{standard damage} (see \pcref{Standard Damage}).
+        Some abilities also have effects that explicitly depend on the ability's power.
+        Unless an ability specifies otherwise, its \glossterm{power} depends on whether it is \glossterm{magical} or \glossterm{mundane}.
+
+        \subsubsection{Magical Power}\label{Magical Power}
+            Your power with most \glossterm{magical} abilities is called your \glossterm{magical power}.
+            It is normally equal to the higher of your level and your Willpower.
+            % TODO: example
+
+        \subsubsection{Mundane Power}\label{Mundane Power}
+            Your power with most \glossterm{mundane} abilities is called your \glossterm{mundane power}.
+            It is normally equal to the higher of your level and your Strength.
+            For example, \glossterm{strikes} use your \glossterm{mundane power} to determine how much damage they deal.
 
     \subsection{Damage}\label{Damage}
         Some attacks deal damage when they hit.
         Damage does not represent serious physical injury to your body.
-        Instead, it represents a depletion of some combination of endurance, luck, or even divine providence that prevents you from suffering more serious injury
+        Instead, it represents a depletion of some combination of endurance, luck, or even divine providence that prevents you from suffering more serious injury.
         When you take damage, you reduce your \glossterm{hit points} by that amount (see \pcref{Hit Points}).
         If you have no hit points remaining, you may take that damage as \glossterm{vital damage} instead, which represents potentially life-threatening injuries (see \pcref{Vital Damage}).
 
@@ -358,17 +375,10 @@ It defines how attributes work and explains how to make physical attacks in comb
         \end{dtable}
 
         \subsubsection{Strike Damage}\label{Strike Damage}
-            The damage you deal with a single \glossterm{strike} from a weapon is called your \glossterm{strike damage}.
-            Your base \glossterm{strike damage} is equal to \glossterm{standard damage} based on your level or your Strength, whichever is higher.
-            For example, if you have a Strength of 4, your base \glossterm{strike damage} would be equal to 2d6 (1d8 \plus2d).
-            When you make a strike with a weapon, you also apply that weapon's damage modifier, if any.
+            The damage you deal with a single \glossterm{strike} from a weapon is equal to \glossterm{standard damage} based on your \glossterm{mundane power}.
+            For example, if you have a Strength of 4, your base damage on a strike would be equal to 2d6.
+            When you make a strike with a weapon, you also apply that weapon's damage modifier, if any (see \tref{Weapons}).
             Some abilities other than \glossterm{strikes} deal damage based on your \glossterm{strike damage}.
-
-            \parhead{Creature Size and Damage}\label{Creature Size and Damage}
-            Larger creatures deal more damage with their weapons.
-            Each creature size above Medium grants a \plus1d bonus to \glossterm{strike damage}.
-            Likewise, each creature size below Medium imposes a \minus1d penalty to damage with strikes.
-            This is described in \tref{Size in Combat}.
 
     \subsection{Defenses}\label{Defenses}
         Usually, when you are attacked, the attacker has to make an \glossterm{attack roll} against a specific defense.
@@ -467,24 +477,24 @@ It defines how attributes work and explains how to make physical attacks in comb
         \begin{dtable*}
             \lcaption{Size in Combat}
             \begin{dtabularx}{\textwidth}{l l l l p{4em} p{4.5em} p{3em} p{5.5em} X}
-                \tb{Size} & \tb{Space}\fn{1} & \tb{Reach}\fn{1} & \tb{Base Speed} & \tb{Reflex Modifier} & \tb{Damage Modifier}\fn{2} & \tb{Overwhelm Value}\fn{3} & \tb{Overwhelm Resistance}\fn{4} & \tb{Example Creature} \\
+                \tb{Size} & \tb{Space}\fn{1} & \tb{Reach}\fn{1} & \tb{Base Speed} & \tb{Strength Modifier}\fn{2} & \tb{Reflex Modifier} & \tb{Overwhelm Value}\fn{3} & \tb{Overwhelm Resistance}\fn{4} & \tb{Example Creature} \\
                 \bottomrule
-                Fine              & 1/2 ft.    & 0          & 10 ft. & \plus8  & \minus4d & 1/4 & \tdash & Fly                      \\
-                Diminutive        & 1 ft.      & 0          & 15 ft. & \plus6  & \minus3d & 1/2 & \tdash & Toad                     \\
-                Tiny              & 2-1/2 ft.  & 0          & 20 ft. & \plus4  & \minus2d & 1/2 & \tdash & Cat                      \\
-                Small             & 5 ft.      & 5 ft.      & 25 ft. & \plus2  & \minus1d & 1 & \tdash & Halfling                 \\
-                Medium            & 5 ft.      & 5 ft.      & 30 ft. & \tdash  & \tdash   & 1 & \tdash & Human                    \\
-                Large (tall)      & 10 ft.     & 10 ft.     & 40 ft. & \minus2 & \plus1d  & 2 & 1 & Ogre                     \\
-                Large (long)      & 10 ft.     & 5 ft.      & 40 ft. & \minus2 & \plus1d  & 2 & 1 & Horse                    \\
-                Huge (tall)       & 15 ft.     & 15 ft.     & 50 ft. & \minus4 & \plus2d  & 3 & 2 & Cloud giant              \\
-                Huge (long)       & 15 ft.     & 10 ft.     & 50 ft. & \minus4 & \plus2d  & 3 & 2 & Bulette                  \\
-                Gargantuan (tall) & 20 ft.     & 20 ft.     & 60 ft. & \minus6 & \plus3d  & 4 & 3 & 50-ft.\ animated statue  \\
-                Gargantuan (long) & 20 ft.     & 15 ft.     & 60 ft. & \minus6 & \plus3d  & 4 & 3 & Kraken                   \\
-                Colossal (tall)   & 25\add ft. & 25\add ft. & 70 ft. & \minus8 & \plus4d  & 5 & 4 & Colossal animated object \\
-                Colossal (long)   & 25\add ft. & 25\add ft. & 70 ft. & \minus8 & \plus4d  & 5 & 4 & Great wyrm red dragon    \\
+                Fine              & 1/2 ft.    & 0          & 10 ft. & \minus8 & \plus8  & 1/4 & \tdash & Fly                      \\
+                Diminutive        & 1 ft.      & 0          & 15 ft. & \minus6 & \plus6  & 1/2 & \tdash & Toad                     \\
+                Tiny              & 2-1/2 ft.  & 0          & 20 ft. & \minus4 & \plus4  & 1/2 & \tdash & Cat                      \\
+                Small             & 5 ft.      & 5 ft.      & 25 ft. & \minus2 & \plus2  & 1 & \tdash & Halfling                 \\
+                Medium            & 5 ft.      & 5 ft.      & 30 ft. & \tdash & \tdash  & 1 & \tdash & Human                    \\
+                Large (tall)      & 10 ft.     & 10 ft.     & 40 ft. & \plus2 & \minus2 & 2 & 1 & Ogre                     \\
+                Large (long)      & 10 ft.     & 5 ft.      & 40 ft. & \plus2 & \minus2 & 2 & 1 & Horse                    \\
+                Huge (tall)       & 15 ft.     & 15 ft.     & 50 ft. & \plus4 & \minus4 & 3 & 2 & Cloud giant              \\
+                Huge (long)       & 15 ft.     & 10 ft.     & 50 ft. & \plus4 & \minus4 & 3 & 2 & Bulette                  \\
+                Gargantuan (tall) & 20 ft.     & 20 ft.     & 60 ft. & \plus6 & \minus6 & 4 & 3 & 50-ft.\ animated statue  \\
+                Gargantuan (long) & 20 ft.     & 15 ft.     & 60 ft. & \plus6 & \minus6 & 4 & 3 & Kraken                   \\
+                Colossal (tall)   & 25\add ft. & 25\add ft. & 70 ft. & \plus8 & \minus8 & 5 & 4 & Colossal animated object \\
+                Colossal (long)   & 25\add ft. & 25\add ft. & 70 ft. & \plus8 & \minus8 & 5 & 4 & Great wyrm red dragon    \\
             \end{dtabularx}
             1 Creatures can vary in space and reach.  These are simply typical values.  \\
-            2. This modifier applies to \glossterm{strike damage}. \\
+            2. Applies to starting Strength. \\
             3. See \pcref{Overwhelm Value}. \\
             4. See \pcref{Overwhelm Resistance}. \\
         \end{dtable*}
@@ -532,6 +542,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
             \parhead{Movement} Creatures three size categories larger than you are not considered obstacles and do not hinder your movement.
 
+            % Should this be two size categories larger, or be more dependent on creature anatomy?
             \parhead{Immunities} Creatures at least three size categories larger than you are difficult to fight. You cannot get a \glossterm{critical hit} with \glossterm{strikes} or contribute to overwhelm penalties against such creatures. If you can reach a vulnerable point on the creature, such as by flying or by using ranged weapons, you can get critical hits and contribute to overwhelm penalties normally.
 
     \subsection{Circumstances, Bonuses, and Penalties}
@@ -1247,7 +1258,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         \parhead{Magical Abilities}\label{Magical Abilities} A magical ability is an ability that has no physical explanation.
         Examples include spells, a medusa's petrifying gaze, and a cleric's domain invocations.
         Magical attacks often target Fortitude and Mental defenses, and can be resisted by \glossterm{magic resistance}.
-        Abilities that are magical in nature are indicated with a [Mag] tag.
+        Abilities that are magical in nature are indicated with a [Magical] tag.
         Abilities that are not magical are \glossterm{mundane}.
 
         Many abilities which fundamentally concern magical effects are not themselves magical in nature.
@@ -1524,16 +1535,6 @@ It defines how attributes work and explains how to make physical attacks in comb
 
 % TODO: This is a bad name; organize these better
 \section{Special Rules}
-
-    \subsection{Power}\label{Power}
-        Many abilities have a \glossterm{power} which represents the overall strength of the ability.
-        This usually determines your \glossterm{accuracy} with the ability and the ability's \glossterm{standard damage}.
-        For example, your \glossterm{power} with \glossterm{spells} is called your \glossterm{spellpower}.
-        Your \glossterm{power} with an ability usually determines your \glossterm{accuracy} and \glossterm{damage} with that ability, if applicable.
-
-        Most abilities explicitly specify how to calculate their power.
-        If an ability does not have an explicitly stated power, use your level as its power. 
-
     \subsection{Encumbrance}\label{Encumbrance}
         Your encumbrance is a value that represents how much you are burdened by armor and weight.
         You apply your encumbrance as a penalty to all Strength and Dexterity-based checks you make.
