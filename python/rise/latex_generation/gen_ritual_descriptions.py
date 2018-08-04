@@ -86,7 +86,7 @@ def generate_rituals():
             The outlines of the zone are denoted by a magic circle physically inscribed on the ground during the ritual.
             The circle is obvious, but a DR 16 Perception or Spellcraft check is required to verify that the circle belongs to a \\ritual<binding> ritual.
             If the circle's perimeter is broken, the ritual's effects end immediately.
-            Whenever a creature enters the area, you make a Spellpower vs. Mental attack against it.
+            Whenever a creature enters the area, you make an attack vs. Mental against it.
             \\hit The target is unable to escape the ritual's area physically or alter the circle in any way.
             It treats the edge of the area as an impassable barrier, preventing the effects of any of its abilities from extending outside that area.
 
@@ -230,7 +230,7 @@ def generate_rituals():
             In addition, choose a type of \\glossterm<energy damage> (cold, electricity, fire, or sonic).
             This ritual gains the tag appropriate to the chosen energy type.
             If a creature reads the target, the target explodes.
-            You make a Spellpower vs. Reflex attack against everything within a \\areamed radius from the target.
+            You make an attack vs. Reflex against everything within a \\areamed radius from the target.
             \\hit Each target takes \\glossterm<standard damage> -1d of the damage type chosen.
 
             After the target explodes in this way, the ritual is \\glossterm<dismissed>.
@@ -628,7 +628,7 @@ def generate_rituals():
         base_level=5,
         # Need to make sure this can't be used for high-bandwidth bidirectional communication
         effects=Effects("Scry Creature", """
-            Make a Spellpower vs. Mental attack against a creature on the same plane as you.
+            Make an attack vs. Mental against a creature on the same plane as you.
             You do not need \\glossterm<line of sight> or \\glossterm<line of effect> to the target.
             However,  must specify your target with a precise mental image of its appearance.
             The image does not have to be perfect, but it must unambiguously identify the target.
