@@ -86,7 +86,7 @@ This choice determines a great deal about your character's abilities.
         These are the types of equipment that members of this class are trained in using.
 
         \parhead{Other Special Abilities}
-        Some classes have abilities shared by all members of the class that are not part of an archetype, such as a cleric's \textit{divine power}.
+        Some classes have abilities shared by all members of the class that are not part of an archetype, such as a druid's \textit{druidic language} ability.
 
         \parhead{Archetypes}
         The abilities associated with each of the three archetypes the class has.
@@ -208,7 +208,7 @@ This choice determines a great deal about your character's abilities.
             \end{ability}
 
             \begin{ability}{Demoralizing Shout}[\glossterm{Mind}]
-                Make a Willpower vs. Mental attack against all enemies within a \arealarge radius burst from you.
+                Make an attack vs. Mental against all enemies within a \arealarge radius burst from you.
                 \hit Each target is \glossterm{shaken} by you as a \glossterm{condition}.
                 \crit Each target is \glossterm{frightened} by you as a \glossterm{condition}.
 
@@ -220,7 +220,7 @@ This choice determines a great deal about your character's abilities.
             \end{ability}
 
             \begin{ability}{Ground Pound}
-                Make a Strength vs. Reflex attack against all enemies standing on solid ground adjacent to you.
+                Make an attack vs. Reflex against all enemies standing on solid ground adjacent to you.
                 You can only use this ability while standing on solid ground.
                 If you use this ability during the \glossterm{action phase}, you can also make a \glossterm{strike} during the \glossterm{delayed action phase}.
                 \hit Each target is knocked \prone.
@@ -317,7 +317,7 @@ This choice determines a great deal about your character's abilities.
             \end{ability}
 
             \begin{ability}{Thunderous Shout}[\glossterm{Sonic}]
-                Make a Constitution vs. Fortitude attack against all creatures and objects in a \areamed cone-shaped burst from you.
+                Make an attack vs. Fortitude against all creatures and objects in a \areamed cone-shaped burst from you.
                 Your \glossterm{power} with this ability is equal to your Constitution.
                 \hit Each target takes sonic \glossterm{standard damage} -1d.
 
@@ -425,10 +425,6 @@ This choice determines a great deal about your character's abilities.
         \cf{Clr}{Weapon and Armor Proficiencies}
         You are proficient with simple weapons, any two other weapon groups, light and medium armor, and shields.
 
-        \cf{Clr}{Divine Power}
-        The \glossterm{power} of many cleric spells and abilities is determined by your \textit{divine power}.
-        Your \textit{divine power} is equal to your level or your Willpower, whichever is higher.
-
         \cf{Clr}{Deity}
         You must worship a specific deity to be a cleric.
         Deities and their associated domains are listed in \trefnp{Deities}.
@@ -472,7 +468,6 @@ This choice determines a great deal about your character's abilities.
         Your deity grants you the ability to cast divine spells.
         You learn two divine spells from the divine \glossterm{spell list} (see \pcref{Divine Spells}).
         As a \glossterm{standard action}, you can cast the \glossterm{cantrip} version of any spell you know.
-        Your \glossterm{spellpower} with divine spells is equal to your \textit{divine power}.
         The maximum spell level you can cast is equal to half your level.
         For details about spellcasting, see \pcref{Spell and Ritual Mechanics}.
 
@@ -643,7 +638,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Aspect} Whenever you deal damage to a creature, any of your damage in excess of that creature's hit points is dealt as \glossterm{vital damage}.
             In addition, you are immune to \glossterm{Death} effects.
             \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use this ability.
-            If you do, you make a \textit{divine power} vs. Fortitude attack against a creature within \rngmed range.
+            If you do, you make an attack vs. against a creature within \rngmed range.
             \hit The target takes life \glossterm{standard damage} \plus2d.
             This damage is increased by \plus2d if the target is \glossterm{bloodied}.
             \parhead{Mastery} You constantly radiate an aura of death in a \areahuge radius emanation from you.
@@ -659,16 +654,16 @@ This choice determines a great deal about your character's abilities.
                 \rank{5} The damage bonus increases to \plus3d.
                 \rank{7} The damage bonus increases to \plus4d.
             \end{ability}
-            \parhead{Aspect} Whenever you deal damage to a target, you first negate an amount of \glossterm{hardness} and \glossterm{damage reduction} equal to your \textit{divine power}.
+            \parhead{Aspect} Whenever you deal damage to a target, you first negate an amount of \glossterm{hardness} and \glossterm{damage reduction} equal to your \glossterm{magical power}.
             Hardness and damage reduction negated in this way does not apply against your attack or against any other attacks during the current phase.
             This effect lasts until the end of the round.
             \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use the \textit{lay waste} ability.
             \begin{ability}{Lay Waste}
-                You make a \textit{divine power} vs. Fortitude attack against all unattended objects in a \arealarge radius.
+                You make an attack vs. Fortitude against all unattended objects in a \arealarge radius.
                 You may freely exclude any number of 5-ft\. cubes from the area, as long as the resulting area is still contiguous.
-                \hit For each target, if its \glossterm{hardness} is lower than your divine power, it crumbles into a fine power and is irreparably \glossterm{broken}.
+                \hit For each target, if its \glossterm{hardness} is lower than your \glossterm{magical power}, it crumbles into a fine power and is irreparably \glossterm{broken}.
             \end{ability}
-            \parhead{Mastery} Whenever you deal damage to a creature or object, its damage reduction and hardness (if any) are reduced by an amount equal to your \textit{divine power}.
+            \parhead{Mastery} Whenever you deal damage to a creature or object, its damage reduction and hardness (if any) are reduced by an amount equal to your \glossterm{magical power}.
             In addition, its Fortitude defense is reduced by 2.
             This is a \glossterm{condition}, and lasts until it is removed.
             This effect stacks with itself, but can only be applied to a target once per round.
@@ -676,7 +671,7 @@ This choice determines a great deal about your character's abilities.
 
         \subsubsection{Earth}
             \parhead{Gift} You gain a \plus2 bonus to Fortitude defense.
-            \parhead{Aspect} You gain \glossterm{damage reduction} equal to your \textit{divine power} against damage from \glossterm{physical attacks}.
+            \parhead{Aspect} You gain \glossterm{damage reduction} equal to your \glossterm{magical power} against damage from \glossterm{physical attacks}.
             \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use the \textit{speak with earth} ability.
             \begin{ability}{Speak with Earth}[\glossterm{Sustain} (minor)]
                 You can speak with and command earth within \rnglong range.
@@ -698,7 +693,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Aspect} You can use this domain's domain gift to redirect damage to any willing creature within \rngclose range.
             \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use the \textit{compel evil} ability.
             \begin{ability}{Compel Evil}[\glossterm{Compulsion}, \glossterm{Mind}]
-                Make a \textit{divine power} vs. Mental attack against a creature within \rngmed range.
+                Make an attack vs. Mental against a creature within \rngmed range.
                 Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
                 \hit The target takes an evil action as soon as it can.
                 You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
@@ -734,7 +729,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Aspect} You can use this domain's domain gift to redirect damage from any creature within \rngclose range.
             \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use the \textit{compel good} ability.
             \begin{ability}{Compel Good}[\glossterm{Compulsion}, \glossterm{Mind}]
-                Make a \textit{divine power} vs. Mental attack against a creature within \rngmed range.
+                Make an attack vs. Mental against a creature within \rngmed range.
                 Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
                 \hit The target takes an good action as soon as it can.
                 You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
@@ -747,7 +742,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Aspect} Your extensive knowledge of all methods of attack and defense grants you a \plus1 bonus to all defenses.
             \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use the \textit{share knowledge} ability.
             \begin{ability}{Share Knowledge}
-                You make a Knowledge check of any kind with a bonus equal to your \textit{divine power}.
+                You make a Knowledge check of any kind with a bonus equal to your \glossterm{magical power}.
                 You and all willing creatures within a \arealarge radius learn the results of your check.
                 Creatures believe the information gained in this way to be true as if they it had seen it with their own eyes.
 
@@ -761,7 +756,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Aspect} Whenever you roll a 1 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
             \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use the \textit{compel law} ability.
             \begin{ability}{Compel Law}[\glossterm{Compulsion}, \glossterm{Mind}]
-                Make a \textit{divine power} vs. Mental attack against all creatures within a \arealarge radius.
+                Make an attack vs. Mental against all creatures within a \arealarge radius.
                 \hit Each target is unable to break the laws that apply in the area, and any attempt to do so simply fails.
                 The laws which are applied are those which are most appropriate for the area, regardless of whether you or any other creature know those laws.
 
@@ -773,7 +768,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Mastery} Whenever you roll less than a 5 on an \glossterm{attack roll}, it is treated as if you had rolled a 5.
 
         \subsubsection{Life}
-            \parhead{Gift} You gain additional hit points equal to your \textit{divine power}.
+            \parhead{Gift} You gain additional hit points equal to your \glossterm{magical power}.
             % TODO: wording?
             \parhead{Aspect} You gain a \plus1d bonus to healing from all abilities you use that heal hit points measured in a dice pool.
             \parhead{Essence} As a standard action, you can all of your remaining an \glossterm{action points} (minimum 1) to use the \textit{revivify} ability.
@@ -782,15 +777,15 @@ This choice determines a great deal about your character's abilities.
                 If it was dead for no more than 5 minutes, it is restored to life, as the \ritual{resurrection} ritual.
             \end{ability}
             % Need special text to clarify that it is affected by the Aspect?
-            \parhead{Mastery} At the end of each \glossterm{action phase}, you heal hit points equal to your \textit{divine power}.
+            \parhead{Mastery} At the end of each \glossterm{action phase}, you heal hit points equal to your \glossterm{magical power}.
 
         \subsubsection{Magic}
             \parhead{Gift} You learn an additional subspell for a divine spell you know.
             \parhead{Aspect} You learn an additional divine spell.
-            \parhead{Essence} You gain \glossterm{magic resistance} equal to 5 \add your \textit{divine power}.
+            \parhead{Essence} You gain \glossterm{magic resistance} equal to 5 \add your \glossterm{magical power}.
             If you already have \glossterm{magic resistance}, you can instead increase it by 2.
             \parhead{Mastery} You gain a \plus2 bonus to your \glossterm{magic resistance}.
-            If you resist an ability with your magic resistance, you heal hit points equal to your \textit{divine power}.
+            If you resist an ability with your magic resistance, you heal hit points equal to your \glossterm{magical power}.
 
         \subsubsection{Strength}
             \parhead{Gift} You add Climb, Jump, and Swim to your cleric \glossterm{class skill} list.
@@ -820,7 +815,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Aspect} You gain a \plus2 bonus to Bluff, Disguise, and Stealth.
             \parhead{Essence} As a standard action, you can spend an \glossterm{action point} to use the \textit{compel belief} ability.
             \begin{ability}{Compel Belief}[\glossterm{Compulsion}, \glossterm{Mind}, \glossterm{Sustain} (minor)]
-                Make a \textit{divine power} vs. Mental attack against a creature within \rngmed range.
+                Make an attack vs. Mental against a creature within \rngmed range.
                 You must also choose a belief that the target has.
                 The belief may be a lie that you told it, or even a simple misunderstanding (such as believing a hidden creature is not present in a room).
                 If the creature does not already hold the chosen belief, this ability automatically fails.
@@ -1053,7 +1048,7 @@ This choice determines a great deal about your character's abilities.
             This is a \glossterm{swift ability}, and it lasts until the end of the round.
             When you deal damage with a \glossterm{strike} using a natural weapon, the target is poisoned.
             This is a \glossterm{condition}, and lasts until removed.
-            When you poison a target, and at the end of each \glossterm{action phase} in subsequent rounds, you make a \textit{nature power} vs. Fortitude attack against all creatures you have poisoned in this way.
+            When you poison a target, and at the end of each \glossterm{action phase} in subsequent rounds, you make an attack vs. Fortitude against all creatures you have poisoned in this way.
             The effects of the poison are described below.
             \begin{itemize}
                 \item First success: the target is \sickened.
@@ -2939,7 +2934,7 @@ This choice determines a great deal about your character's abilities.
         If a target can neither see nor hear your performance, the effect immediately ends for that target.
         {
             \begin{ability}{Mesmerizing Performance}[\glossterm{Delusion}, \glossterm{Mind}]
-                Make a Perform vs. Mental attack against up to five creatures within \rngmed range.
+                Make an attack vs. Mental against up to five creatures within \rngmed range.
                 \hit Each target is \fascinated by you.
                 Any act by you or your apparent allies that damages a target or that causes it to feel that it is in danger breaks the effect for that creature.
                 An observant target may interpret overt threats to its allies as a threat to itself.
@@ -3046,14 +3041,14 @@ This choice determines a great deal about your character's abilities.
         {
             \augment{0}{Infernal Focus} You gain a \plus10 bonus to Concentration checks to cast the spell (see \pcref{Concentration}).
 
-            \augment{0}{Sickening} Make a \glossterm{power} vs. Fortitude attack against one creature targeted by the spell.
+            \augment{0}{Sickening} Make an attack vs. Fortitude against one creature targeted by the spell.
             On a hit, the target is \glossterm{sickened} as a \glossterm{condition}.
             \par This augment can be applied to any spell that targets at least one creature.
 
             \augment{0}{Soulrending} Whenever a creature is dealt damage by the spell, if it has no hit points remaining, it dies.
             \par This augment can be applied to any spell that deals damage.
 
-            \augment{0}{Terrifying} Make a \glossterm{power} vs. Mental attack against one creature targeted by the spell.
+            \augment{0}{Terrifying} Make an attack vs. Mental against one creature targeted by the spell.
             On a hit, the target is \glossterm{shaken} by you as a \glossterm{condition}.
             \par This augment can be applied to any spell that targets at least one creature.
 
