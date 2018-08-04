@@ -91,18 +91,26 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \featref{Swim Specialization} & Mastered Swim & \tdash & \tdash & \featpref{Swim Specialization} \\
 
         \tb{Spell Feats}\label{Spell Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
-        \featref{Abjurer} & Abjuration spell & Improve Abjuration spells & Magical & \featpref{Abjurer} \\
         \featref{Boongiver} & Any spell & Benefits when casting spells on allies & Magical & \featpref{Boongiver} \\
-        \featref{Conjurer} & Conjuration spell & Improve Conjuration spells & Magical & \featpref{Conjurer} \\
-        \featref{Diviner} & Divination spell & Improve Divination spells & Magical & \featpref{Diviner} \\
         \featref{Eldritch Knight} & Any spell & Fight with sword and spell together & \tdash & \featpref{Eldritch Knight} \\
-        \featref{Enchanter} & Enchantment spell & Improve Enchantment spells & Magical & \featpref{Enchanter} \\
-        \featref{Evoker} & Evocation spell & Improve Evocation spells & Magical & \featpref{Evoker} \\
-        \featref{Illusionist} & Illusion spell & Improve Illusion spells & Magical & \featpref{Illusionist} \\
         \featref{Miscaster} & Any spell & Miscast spells intentionally and effectively & Magical & \featpref{Miscaster} \\
         \featref{Mystic Archer} & Any spell & Imbue projectiles with magic & Magical & \featpref{Mystic Archer} \\
-        \featref{Transmuter} & Transmutation spell & Improve Transmutation spells & Magical & \featpref{Transmuter} \\
-        \featref{Vivimancer} & Vivimancy spell & Improve Vivimancy spells & Magical & \featpref{Vivimancer} \\
+        \featref{Spell Focus: Aquamancy} & \spell{Aquamancy} spell known & \tdash & \featpref{Spell Focus: Aquamancy} \\
+        \featref{Spell Focus: Astromancy} & \spell{Astromancy} spell known & \tdash & \featpref{Spell Focus: Astromancy} \\
+        \featref{Spell Focus: Barrier} & \spell{Barrier} spell known & \tdash & \featpref{Spell Focus: Barrier} \\
+        \featref{Spell Focus: Chronomancy} & \spell{Chronomancy} spell known & \tdash & \featpref{Spell Focus: Chronomancy} \\
+        \featref{Spell Focus: Compel} & \spell{Compel} spell known & \tdash & \featpref{Spell Focus: Compel} \\
+        \featref{Spell Focus: Delusion} & \spell{Delusion} spell known & \tdash & \featpref{Spell Focus: Delusion} \\
+        \featref{Spell Focus: Fabrication} & \spell{Fabrication} spell known & \tdash & \featpref{Spell Focus: Fabrication} \\
+        \featref{Spell Focus: Glamer} & \spell{Glamer} spell known & \tdash & \featpref{Spell Focus: Glamer} \\
+        \featref{Spell Focus: Polymorph} & \spell{Polymorph} spell known & \tdash & \featpref{Spell Focus: Polymorph} \\
+        \featref{Spell Focus: Pyromancy} & \spell{Pyromancy} spell known & \tdash & \featpref{Spell Focus: Pyromancy} \\
+        \featref{Spell Focus: Revelation} & \spell{Revelation} spell known & \tdash & \featpref{Spell Focus: Revelation} \\
+        \featref{Spell Focus: Summon} & \spell{Summon} spell known & \tdash & \featpref{Spell Focus: Summon} \\
+        \featref{Spell Focus: Telekinesis} & \spell{Telekinesis} spell known & \tdash & \featpref{Spell Focus: Telekinesis} \\
+        \featref{Spell Focus: Thaumaturgy} & \spell{Thaumaturgy} spell known & \tdash & \featpref{Spell Focus: Thaumaturgy} \\
+        \featref{Spell Focus: Vital \spellVital} spell known & \tdash & \tdash & \featpref{Spell Focus: Vital Surge} \\
+        \featref{Spell Focus: Weaponcraft} & \spell{Weaponcraft} spell known & \tdash & \featpref{Spell Focus: Weaponcraft} \\
 
         \tb{Combat Feats}\label{Combat Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
         \featref{Agility} & Dex 2 & Increase reaction speed & \tdash & \featpref{Agility} \\
@@ -125,37 +133,6 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         Some feats also have specific requirements that a character must meet before taking the feat.
         These are listed under a \textbf{Prerequisites} heading.
         If a character loses the prerequisites for a feat, they lose all benefits of the feat until they meet the prerequisites again.
-
-    \begin{feat}{Abjurer}{Magical, Spell}
-        \spelldesc{You have great talent with Abjuration spells.}
-        \featpre Abjuration spell known.
-        \ff{Abjurant Shield} Whenever you cast an Abjuration spell with a duration, you can give one willing creature targeted by the spell a deflective shield.
-        The shielded creature gains a \plus1 \glossterm{magic bonus} to Armor defense as long as the spell lasts on that creature.
-        This is a \glossterm{magical} \glossterm{Shielding} effect.
-        You can only shield one creature in this way at a time.
-        If you shield another creature, all previous shields are dismissed when the new shield takes effect.
-
-        \ff[3]{Counterspell} As a standard action, you can spend an \glossterm{action point} to use the \textit{counterspell} ability.
-        \begin{ability}{Counterspell}
-            Choose a creature within \rngmed range of you.
-            If the target is casting a spell, and your maximum spell level is at least as high as the target's maximum spell level, their spell has no effect when it resolves.
-        \end{ability}
-
-        \ff[6]{Personal Shield} You gain a \plus1 \glossterm{magic bonus} to Armor defense.
-
-        \ff[9]{Greater Abjurant Shield} Your \textit{abjurant shield} also grants \glossterm{damage reduction} against \glossterm{physical damage} equal to your highest \glossterm{spellpower}.
-
-        \ff[12]{Improvised Counterspell} At the start of the \glossterm{delayed action phase}, if you are casting a spell other than a \glossterm{cantrip}, you can use your \textit{counterspell} ability without taking an action.
-        If you do, your spell has no effect when it resolves, and you regain the action point spent to cast it (if any).
-
-        \ff[15]{Expanded Protection} The defense bonuses from your \textit{personal shield} and \textit{abjurant shield} abilities apply to all defenses.
-        In addition, the damage reduction from your \textit{greater abjurant shield} ability applies against all damage.
-
-        \ff[18]{Punishing Counterspell} When you use your \textit{counterspell} ability, you can make the target \glossterm{miscast} their spell instead of negating the spell's effects.
-        In addition, the range of your \textit{counterspell} ability increases to \rnglong.
-
-        \ff[20]{Abjurant Bastion} The defens bonuses from your \textit{personal shield} and \textit{abjurant shield} abilities increase to \plus2.
-    \end{feat}
 
     \begin{feat}{Acrobatics Specialization}{Skill}
         \featpre Acrobatics as a mastered skill.
@@ -501,33 +478,6 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         In addition, for every round that you spend wallrunning on any surface, the DR increases by 2 instead of by 5.
     \end{feat}
 
-    \begin{feat}{Conjurer}{Magical, Spell}
-        \featpre Conjuration spell known.
-
-        \ff[1]{Fortified Manifestation} Objects and creatures you create with \glossterm{Manifestation} abilities have additional hit points equal to your highest \glossterm{spellpower}, and gain a \plus1d \glossterm{magic bonus} to damage with all attacks.
-
-        \ff[3]{Astral Spell Transit} You double the range of all Conjuration spells you cast.
-        In addition, all \glossterm{Teleportation} spells you cast can teleport twice their normal distance.
-
-        \ff[6]{Resummon} As a \glossterm{minor action}, you use the \textit{resummon} ability.
-        \begin{ability}{Resummon}
-            You may teleport one creature or object that you summoned with a \glossterm{Summoning} or \glossterm{Manifestation} ability into an unoccupied space on stable ground within \rngclose range of you.
-        \end{ability}
-
-        \ff[9]{Persistent Manifestations} Once per round, when you cast or sustain a spell, you can also sustain a \glossterm{Manifestation} spell as a \glossterm{free action}.
-        In addition, objects and creatures you have created with \glossterm{Manifestation} abilities heal hit points equal to your spellpower at the end of each round.
-
-        \ff[12]{Greater Astral Spell Transit} The range doubling from your \textit{astral spell transit} ability applies to all spells you cast, not just Conjuration spells.
-
-        \ff[15]{Greater Resummon} The range of your \textit{resummon} ability increases to \rngext.
-        In addition, you can choose up to two creatures or objects to teleport instead of only one.
-
-        \ff[18]{Greater Fortified Manifestation} The hit point bonus from your \textit{fortified manifestation} ability increases to twice your spellpower, and the damage bonus increases to \plus2d.
-
-        \ff[20]{Supreme Astral Spell Transit} When determining whether you have \glossterm{line of effect} to a particular location with a spell, you can ignore all physical obstacles in a single five-foot span.
-        This can allow you to cast spells through solid walls, though it does not grant you the ability to see through the wall.
-    \end{feat}
-
     \begin{feat}{Craft Specialization}{Skill}
         \featpre Craft (any) as a mastered skill.
 
@@ -643,41 +593,6 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \end{ability}
 
         \ff[14]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
-    \end{feat}
-
-    \begin{feat}{Diviner}{Magical, Spell}
-        \featpre Divination spell known.
-
-        \ff[1]{Prophesy} As a \glossterm{standard action}, you can spend an \glossterm{action point} to use the \textit{prophesy} ability.
-        \begin{ability}{Prophesy}
-            When you use this ability, you must visualize an action that a creature (or group of creatures) could take within the next hour.
-            This time period is called the \textit{time of prophecy}.
-
-            You see a brief, cryptic vision describing the most likely outcome of the action you visualized.
-            This vision does not reveal any consequences that might occur after the \textit{time of prophecy} has ended.
-            The vision does not have to be a literally accurate representation of the future.
-            For example, if you used this ability to foresee the results of entering a room that had a group of creatures waiting in ambush, you might see a vision of flashing daggers in darkness darting towards your exposed back, regardless of whether the creatures would actually use daggers to attack.
-
-            After using this ability, you cannot use it again until the \textit{time of prophecy} has ended, regardless of whether the action was taken.
-        \end{ability}
-
-        \ff[3]{Precognitive Reaction} You gain a \plus1 bonus to Reflex defense and a \plus2 bonus to \glossterm{initiative} checks.
-
-        \ff[6]{Truesight} You gain the \glossterm{truesight} ability with a 50 foot range.
-
-        \ff[9]{Deep Prophecy} When you use your \textit{prophesy} ability, you can increase the \textit{time of prophecy} to eight hours.
-        This affects both the distance you can see into the future and the time you must wait before using the ability again.
-
-        \ff[12]{Greater Precognitive Reaction} You are aware of all attacks against you, even those you cannot see, as long as you are conscious.
-        This allows you to use abilities to defend yourself, and prevents you from being \unaware.
-
-        \ff[15]{Dual Prophecy} You may use your \textit{prophesy} ability while you have an active \textit{time of prophecy}.
-        If you have two active \textit{times of prophecy}, you must wait until one has expired to use your \textit{prophesy} ability again.
-
-        \ff[18]{Supreme Precognitive Reaction} The Reflex defense bonus from your \textit{precognitive reaction} ability increases to \plus2, and the initiative bonus increases to \plus4.
-
-        \ff[20]{Oracle} When you use your \textit{prophesy} ability, the maximum \textit{time of prophesy} you can choose is increased to one week.
-        In addition, you may have three active \textit{times of prophecy}, rather than two.
     \end{feat}
 
     \begin{feat}{Draconic Heritage}{Bloodline}
@@ -802,35 +717,6 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[18]{Greater Spellsword Conduit} The accuracy bonus from your \textit{spellsword conduit} ability increases to \plus2.
     \end{feat}
 
-    \begin{feat}{Enchanter}{Magical, Spell}
-        \featpre Enchantment spell known.
-
-        \ff[1]{Mind Fragments} When you use \glossterm{Mind} abilities, you can affect creatures that are immune to \glossterm{Mind} abilities due to not having a mind.
-        You take a \minus5 penalty to accuracy on attacks against such creatures.
-        This does not allow you to affect creatures who are immune to \glossterm{Mind} abilities for other reasons.
-
-        \ff[3]{Enchanting Presence} You gain a \plus1 bonus to Intimidate and Persuasion.
-        In addition, creatures within a 50-foot radius \glossterm{emanation} of you take a \minus1 penalty to Mental defense.
-        You may freely exclude creatures you are aware of from this effect.
-
-        \ff[6]{Subtle Influence} You gain a \plus1 bonus to accuracy with \glossterm{Mind} abilities.
-        In addition, the DR to identify your \glossterm{Mind} abilities with Spellcraft, and to identify their effects with Sense Motive, increases by 5.
-
-        \ff[9]{Greater Mind Fragments} The accuracy penalty from your \textit{mind fragments} ability decreases to \minus2.
-
-        \ff[12]{Greater Enchanting Presence} The bonuses and penalties from your \textit{enchanting presence} ability increase to \plus2 and \minus2.
-
-        \ff[15]{Greater Subtle Influence} The accuracy bonus from your \textit{subtle influence} ability increases to \plus2.
-        In addition, the DR increase from that ability increases to 10.
-
-        \ff[18]{Supreme Mind Fragments} The accuracy penalty from your \textit{mind fragments} ability is removed.
-
-        \ff[20]{Mental Torment} Whenever you target a creature with a Mind ability, you may have that creature take a \minus1 penalty to Mental defense.
-        This effect applies regardless of whether the ability's hits, but the target must be a valid target for the ability.
-        It is a \glossterm{condition}, and lasts until it is removed.
-        The penalty stacks with itself if you target the same creature multiple times.
-    \end{feat}
-
     \begin{feat}{Escape Artist Specialization}{Skill}
         \featpre Escape Artist as a mastered skill.
 
@@ -859,46 +745,6 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         In addition, your movement speed is not halved while \glossterm{squeezing}.
 
         \ff[20]{Greater Escape Magic}[Magical] You can use your \textit{escape magic} ability as a \glossterm{minor action}.
-    \end{feat}
-
-    \begin{feat}{Evoker}{Magical, Spell}
-        \featpre Evocation spell known.
-
-        \ff[1]{Energy Burst} As a standard action, you can spend an \glossterm{action point} to use the \textit{energy burst} ability.
-        \begin{ability}{Energy Burst}[(see text)]
-            Choose a creature or object within \rngclose range and a type of \glossterm{energy}: cold, electricity, fire, or sonic.
-            You make a \glossterm{spellpower} attack against the target's Reflex defense if you chose electricity or fire, or against the target's Fortitude defense if you chose cold or sonic.
-            \hit The target takes \glossterm{standard damage} \plus1d of the chosen damage type.
-
-            This ability has the \glossterm{ability tag} corresponding to the type of energy chosen.
-        \end{ability}
-
-        \ff[3]{Energy Affinity} Choose a type of \glossterm{energy}: cold, electricity, fire, or sonic.
-        You gain a \plus1d bonus to damage with attacks that deal damage of that type measured in dice.
-        In addition, you gain damage reduction equal to your highest \glossterm{spellpower} against damage of that type.
-
-        \ff[6]{Devastating Evocation} The area affected by your Evocation spells is doubled.
-
-        \ff[9]{Residual Energy Burst} When your \textit{energy burst} attack hits, the target suffers an additional effect depending on the energy type chosen.
-        These effects are \glossterm{conditions}, and last until they are removed.
-        On a \glossterm{critical hit}, the attack still deals double damage in addition to the effects given here.
-        \begin{itemize}
-            \item Cold: If target is a creature, it is \fatigued.
-                A \glossterm{critical hit} makes the target \exhausted instead.
-            \item Electricity: If the target is a creature, it is \dazed.
-                A \glossterm{critical hit} makes the target \stunned instead.
-            \item Fire: The target is \ignited. This condition can be removed by putting out the fire.
-            \item Sonic: If the target has \glossterm{hardness}, its hardness is reduced by an amount equal to half your spellpower. Otherwise, if it has \glossterm{damage reduction}, its damage reduction is reduced by amount equal to your spellpower.
-        \end{itemize}
-
-        \ff[12]{Greater Energy Affinity} The benefits from your \textit{energy affinity} apply to all energy types.
-
-        \ff[15]{Devastating Caster} The area doubling from your \textit{devastating evocation} ability applies to all spells you cast, not just Evocation spells.
-
-        \ff[18]{Greater Energy Burst} You gain a \plus1 bonus to \glossterm{accuracy} and a \plus1d bonus to damage with your \glossterm{energy burst} ability.
-
-        \ff[20]{Supreme Energy Affinity} The damage bonus from your \textit{energy affinity} ability increases to \plus2d.
-        In addition, the damage reduction increases to be equal to twice your highest spellpower.
     \end{feat}
 
     \begin{feat}{Executioner}{Combat}
@@ -998,56 +844,6 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[20]{Wellspring of Life} You do not have to spend an \glossterm{action point} to use your \textit{healing touch} ability.
     \end{feat}
 
-    \begin{feat}{Illusionist}{Magical, Spell}
-        \featpre Illusion spell known.
-
-        \ff[1]{Create Image} As a standard action, you can spend an \glossterm{action point} to use the \textit{create image} ability.
-        \begin{ability}{Create Image}[\glossterm{Sensation}, \glossterm{Sustain} (minor)]
-            You create a visual illusion of an object, creature, or force within \rngmed range.
-            The figment's size must be no smaller than Tiny, and no larger than Large.
-            The figment does not create sound, smell, or temperature.
-
-            During the movement phase, you can move the figment anywhere within the range, with appropriate motions to simulate natural movement.
-            For example, if you created the illusion of a squad of human guards, you could cause them to walk realistically across a room.
-            The figments otherwise remain motionless, except for minor motions that simulate signs of life (if appropriate).
-            If the figment ever leaves this ability's range, the effect immediately ends.
-
-            The maximum intensity of a sensation created by this ability is not enough to have any significant detrimental effects on a human experiencing the sensation.
-            For example, it can create a bright light, but not so bright that it would be physically painful to view.
-            % should the light be visible outside the size of the illusion? If so, how to clarify?
-
-            When you use this ability, you make a check with a bonus equal to your spellpower \add 5.
-            Creatures can recognize the figment is created by illusory magic by interacting with it physically, or by making an Awareness check against a DR equal to your check result when using this ability.
-            A creature gets a \plus10 bonus on this Awareness check when using senses which should be present in the figment, but which are missing.
-        \end{ability}
-
-        \ff[3]{Reflexive Illusion} You gain a \plus1 bonus to Armor defense, Disguise, Sleight of Hand, and Stealth.
-
-        \ff[6]{Muffled Illusions} You learn the Silent \glossterm{augment}.
-        In addition, the level cost to apply the Silent \glossterm{augment} to Illusion spells you cast is reduced by 1, to a minimum of 0 (see \pcref{Augments}).
-        % How loud is the sound? How pungent is the smell? etc.
-
-        \ff[9]{Control Image} While your \textit{create image} ability is active, you can use the \textit{control image} ability as a standard action.
-        You gain the \textit{control image} ability.
-        \begin{ability}{Control Image}[\glossterm{Swift}]
-            You can directly control the movement of the figment from your \textit{create image} ability until the end of the round.
-            You cannot alter the fundamental shape of the figment, but you can have it perform complex actions, such as pretending to fight other creatures or dancing.
-            The figment's ability to simulate physical tasks that require dexterity or training, such as juggling, is limited by your own.
-            You may need to make relevant checks to make the figment perform complex actions.
-        \end{ability}
-
-        \ff[12]{Hidden Illusions} You learn the Stilled \glossterm{augment}.
-        In addition, the level cost to apply the Stilled augment to Illusion spells you cast is reduced by 1, to a minimum of 0 (see \pcref{Augments}).
-
-        \ff[15]{Flexible Image} Your \textit{create image} ability can create figments between Diminuitive and Huge size.
-        In addition, choose a sense: sound, smell, or temperature.
-        Your \textit{create image} ability can create sensations with the chosen sense.
-
-        \ff[18]{Supreme Reflexive Illusion} The bonus to Armor defense from your \textit{reflexive illusion} ability increases to \plus2, and the bonuses to skills increase to \plus3.
-
-        \ff[20]{Innate Illusions} The level cost to apply both the Silent and Stilled \glossterm{augments} to Illusion spells is removed.
-    \end{feat}
-
     \begin{feat}{Intimidate Specialization}{Skill}
         \featpre Intimidate as a mastered skill.
 
@@ -1128,11 +924,11 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \end{feat}
 
     \begin{feat}{Leadership}{Combat}
-        \featpre Willpower 2.
+        \featpre Starting Willpower of 2.
 
         \ff[1]{Bolster} As a standard action, you can spend an \glossterm{action point} to use the \textit{bolster} ability.
         \begin{ability}{Bolster}[\glossterm{Mind}]
-            All allies other than yourself within a \arealarge radius burst from you can remove one \glossterm{condition}.
+            All allies other than yourself within a \areamed radius burst from you can remove one \glossterm{condition}.
             In addition, each target heals hit points equal to your Willpower.
         \end{ability}
 
@@ -1309,7 +1105,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \end{ability}
 
         % clarify that it does not affect spells already in progress in the current phase?
-        \ff[7]{Disruptive Presence} All creatures within an \areamed radius of you have a 50\% chance to \glossterm{miscast} any spell they cast.
+        \ff[7]{Disruptive Presence} All enemies within an \areamed radius of you have a 50\% chance to \glossterm{miscast} any spell they cast.
 
         \ff[10]{Greater Nullify Magic} You gain a \plus2 bonus to the \glossterm{magic resistance} from your \textit{nullify magic} ability.
         In addition, you gain a \plus1 bonus to Fortitude, Reflex, and Mental defense.
@@ -1317,7 +1113,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[13]{Greater Null Severance} On a hit, your \textit{null severance} ability breaks the target's attunement to an additional random effect.
         In addition, it can break attunement to magic items in addition to attunement to abilities.
 
-        \ff[16]{Greater Disruptive Presence} Your \textit{disruptive presence} ability affects all creatures in a \arealarge radius \glossterm{emanation} from you.
+        \ff[16]{Greater Disruptive Presence} Your \textit{disruptive presence} ability affects all enemies in a \arealarge radius \glossterm{emanation} from you.
 
         \ff[19]{Supreme Null Severance} You gain a \plus2 bonus to accuracy with your \textit{null severance} ability.
 
@@ -1599,7 +1395,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[5]{Unweave Magic} As a standard action, you can spend an \glossterm{action point} to use the \textit{unweave magic} ability.
         \begin{ability}{Unweave Magic}[\glossterm{Mystic}]
             Make a Spellcraft check on an active spell effect within \rngmed range.
-            The DR is equal to 5 \add the \glossterm{spellpower} of the effect.
+            The DR is equal to 10 \add the \glossterm{spellpower} of the effect.
             Success means the effect is \glossterm{dismissed} if it is an effect that can be dismissed.
         \end{ability}
 
@@ -1609,9 +1405,450 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[14]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[17]{Mass Unweave Magic} When you use your \textit{unweave magic} ability, you can target up to five spell effects.
+        \ff[17]{Greater Unweave Magic} You gain a \plus2 bonus to \glossterm{accuracy} with your \textit{unweave magic} ability.
 
         \ff[20]{Greater Mystic Tolerance} The defense bonus from your \textit{mystic tolerance} ability increases to \plus2.
+    \end{feat}
+
+    \begin{feat}{Spell Focus: Aquamancy}{Spell}
+        \featpre \spell{Fabrication} spell known.
+
+        \ff[1]{Subspell} You learn a subspell from the \spell{aquamancy} spell.
+        When you gain access to a new spell level, you can change which subspell you know from that spell.
+
+        \ff[3]{Create Water} As a standard action, you can spend an \glossterm{action point} to use the \textit{create water} ability.
+        \begin{ability}{Create Water}[\glossterm{Creation}, \glossterm{Water}]
+            You create up to one gallon per \glossterm{spellpower} with the \spell{aquamancy} spell of wholesome, drinkable water anywhere within \rngclose range.
+            The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
+            You must create a minimum of one ounce of water in each location.
+        \end{ability}
+
+        \ff[3]{Fire Tolerance} You gain damage reduction against fire damage equal to your \glossterm{spellpower} with the \spell{aquamancy} spell.
+
+        \ff[6]{Swim Familiarity} You gain a \plus2 bonus to Swim.
+        In addition, you reduce your penalties for acting underwater by 2.
+
+        \ff[9]{Potent Aquamancy} You gain a \plus1 bonus to \glossterm{accuracy} with the \spell{aquamancy} spell. 
+
+        \ff[12]{Greater Create Water} The volume of water you can create with your \textit{create water} ability increases to ten gallons per \glossterm{spellpower}.
+
+        \ff[12]{Greater Fire Tolerance} Your damage reduction from the \textit{fire tolerance} ability increases to twice your \glossterm{spellpower} with the \spell{aquamancy} spell.
+
+        \ff[15]{Greater Swim Familiarity} The Swim bonus from your \textit{swim familiarity} ability increases to \plus4.
+        In addition, you take no penalties for acting underwater, except for those relating to using ranged weapons.
+
+        \ff[18]{Greater Potent Aquamancy} The bonus from your \textit{potent aquamancy} ability increases to \plus2.
+    \end{feat}
+
+    \begin{feat}{Spell Focus: Astromancy}{Spell}
+        \featpre \spell{Astromancy} spell known.
+
+        \ff[1]{Subspell} You learn a subspell from the \spell{astromancy} spell.
+        When you gain access to a new spell levels, you can change which subspell you know from that spell.
+
+        \ff[3]{Minor Translocation} As a standard action, you can use the \textit{minor translocation} ability.
+        \begin{ability}{Minor Translocation}[\glossterm{Teleportation}]
+            Choose a Tiny or smaller unattended object within \rngclose range.
+            The target teleports into an unoccupied destination within range.
+            If the destination is invalid, the ability fails without effect.
+        \end{ability}
+
+        \ff[6]{Astral Spell Transit} You double your range with the \spell{astromancy} spell.
+
+        \ff[9]{Potent Astromancy} You gain a \plus1 bonus to \glossterm{accuracy} with the \spell{Astromancy} spell. 
+
+        \ff[12]{Greater Astral Spell Transit} When determining whether you have \glossterm{line of effect} to a particular location with the \spell{astromancy} spell, you can ignore all physical obstacles in a single five-foot span.
+        This can allow you to cast the spell through solid walls, though it does not grant you the ability to see through the wall.
+
+        \ff[15]{Personal Translocation} As a \glossterm{minor action}, you can use the \textit{personal translocation} ability.
+        \begin{ability}{Personal Translocation}[\glossterm{Teleportation}]
+            You teleport to an unoccupied destination within \rngclose range.
+        \end{ability}
+
+        \ff[18]{Greater Potent Astromancy} The bonus from your \textit{potent astromancy} ability increases to \plus2.
+    \end{feat}
+
+    \begin{feat}{Spell Focus: Barrier}{Spell}
+        \featpre \spell{Barrier} spell known.
+
+        \ff[1]{Subspell} You learn a subspell from the \spell{barrier} spell.
+        When you gain access to a new spell levels, you can change which subspell you know from that spell.
+
+        \ff[3]{Burst Ward} As a standard action, you can use the \textit{burst ward} ability.
+        \begin{ability}{Burst Ward}[\glossterm{Swift}, \glossterm{Sustain} (standard)]
+            You take half damage from all attacks.
+            This halving is applied before damage reduction and similar abilities.
+            % TODO: wording?
+            This ability lasts until the end of the round.
+        \end{ability}
+
+        \ff[6]{Personal Shield} You gain a \plus1 \glossterm{magic bonus} to Armor defense.
+
+        \ff[9]{Abjurant Shield} Whenever you cast the \spell{barrier} spell, you can use the \textit{abjurant shield} ability.
+        \begin{ability}{Abjurant Shield}[\glossterm{Shielding}]
+            Choose a creature or object affected by the spell.
+            The target gains a \plus1 \glossterm{magic bonus} to all defenses as long as the spell lasts on the target.
+            This ability also ends if you use it again.
+        \end{ability}
+
+        \ff[12]{Greater Burst Ward} When you use your \textit{burst ward} ability, you also gain damage reduction equal to your \glossterm{spellpower}.
+
+        \ff[15]{Greater Personal Shield} The bonus from your \textit{personal shield} ability increases to \plus2.
+
+        \ff[18]{Greater Abjurant Shield} The bonus from your \textit{abjurant shield} ability increases to \plus2.
+    \end{feat}
+
+    \begin{feat}{Spell Focus: Chronomancy}{Spell}
+        \featpre \spell{Chronomancy} spell known.
+
+        \ff[1]{Subspell} You learn a subspell from the \spell{chronomancy} spell.
+        When you gain access to a new spell levels, you can change which subspell you know from that spell.
+
+        \ff[3]{Accelerated Movement} You gain a \plus10 foot bonus to your speed in all movement modes.
+
+        \ff[6]{Accelerated Mind} You can perform primarily mental tasks twice as quickly as normal.
+        This includes reading books, searching areas, and other similar activities.
+        It does not affect spellcasting, performing rituals, or other similar magical abilities.
+
+        \ff[9]{Potent Chronomancy} You gain a \plus1 bonus to \glossterm{accuracy} with the \spell{chronomancy} spell. 
+
+        \ff[12]{Greater Accelerated Movement} The speed bonus from your \textit{accelerated movement} ability increases to \plus30 feet.
+
+        \ff[15]{Greater Accelerated Mind} The speed increase from your \textit{accelerated mind} ability increases to five times normal speed.
+
+        \ff[18]{Greater Potent Chronomancy} The bonus from your \textit{potent chronomancy} ability increases to \plus2.
+    \end{feat}
+
+    \begin{feat}{Spell Focus: Compel}{Spell}
+        \featpre \spell{Compel} spell known.
+
+        \ff[1]{Subspell} You learn a subspell from the \spell{compel} spell.
+        When you gain access to a new spell levels, you can change which subspell you know from that spell.
+
+        \ff[3]{Mind Fragments} When you use \glossterm{Mind} abilities, you can affect creatures that are immune to \glossterm{Mind} abilities due to not having a mind.
+        You take a \minus5 penalty to accuracy on attacks against such creatures.
+        This does not allow you to affect creatures who are immune to \glossterm{Mind} abilities for other reasons.
+
+        \ff[6]{Mental Dominance} You gain a \plus2 bonus to Mental defense.
+
+        \ff[9]{Potent Compel} You gain a \plus1 bonus to \glossterm{accuracy} with the \spell{compel} spell. 
+
+        \ff[12]{Greater Mind Fragments} The accuracy penalty from your \textit{mind fragments} ability is reduced to \minus2.
+
+        \ff[15]{Greater Mental Dominance} The bonus from your \textit{mental dominance} ability increases to \plus4.
+
+        \ff[18]{Greater Potent Compel} The bonus from your \textit{potent compel} ability increases to \plus2.
+    \end{feat}
+
+    \begin{feat}{Spell Focus: Delusion}{Spell}
+        \featpre \spell{Delusion} spell known.
+
+        \ff[1]{Subspell} You learn a subspell from the \spell{delusion} spell.
+        When you gain access to a new spell levels, you can change which subspell you know from that spell.
+
+        \ff[3]{Enchanting Presence} You gain a \plus2 \glossterm{magic bonus} to Intimidate and Persuasion.
+
+        \ff[6]{Subtle Influence} The DR to identify your \glossterm{Mind} abilities with Spellcraft, and to identify their effects with Sense Motive, increases by 5.
+
+        \ff[9]{Potent Delusion} You gain a \plus1 bonus to \glossterm{accuracy} with the \spell{delusion} spell. 
+
+        \ff[12]{Greater Enchanting Presence} The bonuses from your \textit{enchanting presence} ability increase to \plus4.
+
+        \ff[15]{Greater Subtle Influence} The DR increase from your \textit{subtle influence} ability increases to \plus10.
+
+        \ff[18]{Greater Potent Delusion} The bonus from your \textit{potent delusion} ability increases to \plus2.
+    \end{feat}
+
+    \begin{feat}{Spell Focus: Fabrication}{Spell}
+        \featpre \spell{Fabrication} spell known.
+
+        \ff[1]{Subspell} You learn a subspell from the \spell{fabrication} spell.
+        When you gain access to a new spell level, you can change which subspell you know from that spell.
+
+        \ff[3]{Fabricate Trinket} As a standard action, you can spend an \glossterm{action point} to use the \textit{fabricate trinket} ability.
+        \begin{ability}{Fabricate Trinket}[\glossterm{Attune}, \glossterm{Manifestation}]
+            You make a Craft check to create an object of Tiny size or smaller.
+            The object appears in your hand or at your feet.
+            It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
+        \end{ability}
+
+        \ff[6]{Crafting Familiarity} You gain a \plus2 bonus to all Craft skills.
+        In addition, any objects you create with the \spell{fabrication} spell gain additional hit points equal to your \glossterm{spellpower} with that spell.
+
+        \ff[9]{Potent Fabrication} You gain a \plus1 bonus to \glossterm{accuracy} with the \spell{fabrication} spell.
+
+        \ff[12]{Greater Fabricate Trinket} The maximum size of object you can create with your \textit{fabricate trinket} ability increases to Medium.
+
+        \ff[15]{Greater Crafting Familiarity} The Craft bonus from your \textit{crafting familiarity} ability increases to \plus4.
+        In addition, the hit points bonus increases to twice your \glossterm{spellpower} with the \spell{fabrication} spell.
+
+        \ff[18]{Greater Potent Fabrication} The bonus from your \textit{potent fabrication} ability increases to \plus2.
+    \end{feat}
+
+    \begin{feat}{Spell Focus: Glamer}{Spell}
+        \featpre \spell{Glamer} spell known.
+
+        \ff[1]{Subspell} You learn a subspell from the \spell{glamer} spell.
+        When you gain access to a new spell levels, you can change which subspell you know from that spell.
+
+        \ff[3]{Reflexive Illusion} You gain a \plus1 \glossterm{magic bonus} to Disguise, Sleight of Hand, and Stealth.
+
+        \ff[6]{Muffled Glamer} You do not need \glossterm{verbal components} to cast the \spell{glamer} spell.
+
+        \ff[9]{Potent Glamer} You gain a \plus1 bonus to \glossterm{accuracy} with the \spell{glamer} spell.
+
+        \ff[12]{Greater Reflexive Illusion} The bonus from your \textit{reflexive illusion} ability increases to \plus2.
+
+        \ff[15]{Hidden Glamer} You do not need \glossterm{somatic components} to cast the \spell{glamer} spell.
+
+        \ff[18]{Greater Potent Glamer} The bonus from your \textit{potent glamer} ability increases to \plus2.
+    \end{feat}
+
+    \begin{feat}{Spell Focus: Polymorph}{Spell}
+        \featpre \spell{Polymorph} spell known.
+
+        \ff[1]{Subspell} You learn a subspell from the \spell{polymorph} spell.
+        When you gain access to a new spell levels, you can change which subspell you know from that spell.
+
+        \ff[3]{Reshaper} As a standard action, you can spend an \glossterm{action point} to use the \textit{alter self} or \textit{alter object} ability.
+        \begin{ability}{Alter Self}[\glossterm{Shaping}]
+            Make a Disguise check to alter your appearance (see \pcref{Disguise Creature}), except that you can use your spellpower in place of your Disguise skill.
+            You can only alter your physical body, not your clothes or equipment.
+
+            This ability lasts until you use it again.
+        \end{ability}
+
+        \begin{ability}{Alter Object}[\glossterm{Shaping}]
+            Choose an unattended, nonmagical object you can touch.
+            You make a Craft check to alter the target (see \pcref{Craft}), except that you can use your spellpower in place of your Craft skill.
+            In addition, you do not need any special tools to make the check (such as an anvil and furnace).
+            However, the maximum hardness of a material you can affect with this ability is equal to your spellpower.
+
+            % too short?
+            Each time you use this ability, you can accomplish work that would take up to five minutes with a normal Craft check.
+        \end{ability}
+
+        \ff[6]{Personal Regeneration} At the end of each \glossterm{action phase}, you heal hit points equal to half your \glossterm{spellpower} with the \spell{polymorph} spell.
+
+        \ff[9]{Potent Polymorph} You gain a \plus1 bonus to \glossterm{accuracy} with the \spell{polymorph} spell.
+
+        \ff[12]{Greater Reshaper} When you use your \textit{alter object} ability, you can accomplish work that would take up to an hour with a normal Craft check.
+        In addition, as a standard action, you can spend an \glossterm{action point} to use the \textit{alter poison} ability.
+        \begin{ability}{Alter Poison}[\glossterm{Shaping}, \glossterm{Sustain} (minor)]
+            Make a \glossterm{spellpower} vs. Fortitude attack against a creature within \rngclose range.
+            \hit Any poison in the target's system is neutralized.
+            It stops suffering any additional effects from poisons in its system.
+            As long as the effect lasts, it is immune to all poisons.
+            In addition, the target's \glossterm{mundane} poisons, including natural attacks that inflict poison, have no effect.
+        \end{ability}
+
+        \ff[15]{Greater Personal Alteration} The healing from your \textit{personal regeneration} ability increases to be equal to your \glossterm{spellpower} with the \spell{polymorph} spell.
+
+        \ff[18]{Greater Potent Polymorph} The bonus from your \textit{potent polymorph} ability increases to \plus2.
+    \end{feat}
+
+    \begin{feat}{Spell Focus: Pyromancy}{Spell}
+        \featpre \spell{Pyromancy} spell known.
+
+        \ff[1]{Subspell} You learn a subspell from the \spell{pyromancy} spell.
+        When you gain access to a new spell levels, you can change which subspell you know from that spell.
+
+        \ff[3]{Fire Tolerance} You gain damage reduction against fire damage equal to your \glossterm{spellpower} with the \spell{pyromancy} spell.
+
+        \ff[3]{Personal Torch} As a standard action, you can use the \textit{personal torch} ability.
+        \begin{ability}{Personal Torch}
+            You create a flame in your hand.
+            You can create it at any intensity, up to a maximum heat equivalent to a roaring campfire.
+            At it most intense, it sheds bright light in a 50 foot radius and dim light in an 100 foot radius.
+            If you touch a creature or object with it, the target takes 1d8 fire damage.
+            This ability lasts until you use it again or until you \glossterm{dismiss} it as a \glossterm{free action}.
+        \end{ability}
+
+        \ff[6]{Backdraft} Once per round, when you cast the \spell{pyromancy} spell, you can use the \textit{backdraft} ability.
+        Your \glossterm{power} with this ability is equal to your \glossterm{spellpower} with the spell you are casting.
+        \begin{ability}{Backdraft}
+            Make a \glossterm{power} vs. Reflex attack against everything except allies within an \areasmall radius from you.
+            \hit Each target takes fire damage equal to your \glossterm{power}.
+        \end{ability}
+
+        \ff[9]{Potent Pyromancy} You gain a \plus1d bonus to damage with the \spell{pyromancy} spell.
+
+        \ff[12]{Shared Fire Tolerance} The damage reduction from your \textit{fire tolerance} ability increases to twice your \glossterm{spellpower} with the \spell{pyromancy} spell.
+        In addition, all allies within a \areamed radius emanation from you gain damage reduction against fire damage equal to your \glossterm{spellpower} with the \spell{pyromancy} spell.
+
+        \ff[15]{Greater Backdraft} The area of your \textit{backdraft} ability increases to an \areamed radius.
+
+        \ff[18]{Greater Potent Pyromancy} The bonus from your \textit{potent pyromancy} ability increases to \plus2d.
+    \end{feat}
+
+    \begin{feat}{Spell Focus: Revelation}{Spell}
+        \featpre \spell{Revelation} spell known.
+
+        \ff[1]{Subspell} You learn a subspell from the \spell{revelation} spell.
+        When you gain access to a new spell levels, you can change which subspell you know from that spell.
+
+        \ff[3]{Prophesy} As a standard action, you can spend an \glossterm{action point} to use the \textit{prophesy} ability.
+        \begin{ability}{Prophesy}
+            When you use this ability, you must visualize an action that a creature (or group of creatures) could take within the next hour.
+            This time period is called the \textit{time of prophecy}.
+
+            You see a brief, cryptic vision describing the most likely outcome of the action you visualized.
+            This vision does not reveal any consequences that might occur after the \textit{time of prophecy} has ended.
+            The vision does not have to be a literally accurate representation of the future.
+            For example, if you used this ability to foresee the results of entering a room that had a group of creatures waiting in ambush, you might see a vision of flashing daggers in darkness darting towards your exposed back, regardless of whether the creatures would actually use daggers to attack.
+
+            After using this ability, you cannot use it again until the \textit{time of prophecy} has ended, regardless of whether the action was taken.
+        \end{ability}
+
+        \ff[6]{Precognitive Reaction} You gain a \plus2 bonus to Reflex defense and \glossterm{initiative} checks.
+
+        \ff[9]{Truesight} You gain the \glossterm{truesight} ability with a 50 foot range.
+
+        \ff[12]{Greater Prophesy} When you use your \textit{prophesy} ability, you can increase the \textit{time of prophecy} to eight hours.
+        This affects both the distance you can see into the future and the time you must wait before using the ability again.
+        In addition, you may use your \textit{prophesy} ability while you have an active \textit{time of prophecy}.
+        If you have two active \textit{times of prophecy}, you must wait until one has expired to use your \textit{prophesy} ability again.
+
+        \ff[15]{Greater Precognitive Reaction} At the start of each phase, before you choose your action for that phase, you know whether you will be attacked during that phase.
+        This prevents you from being \unaware of the attack, and allows you to change your actions accordingly.
+        % TODO: wording
+        However, this ability does not warn you against attacks by creatures who also have this ability or similar abilities allowing them to change their actions in response to the actions of other creatures.
+
+        \ff[18]{Oracle} When you use your \textit{prophesy} ability, the maximum \textit{time of prophecy} you can choose is increased to one week.
+        In addition, you may have three active \textit{times of prophecy}, rather than two.
+    \end{feat}
+
+    \begin{feat}{Spell Focus: Summon}{Spell}
+        \featpre \spell{Summon} spell known.
+
+        \ff[1]{Subspell} You learn a subspell from the \spell{summon} spell.
+        When you gain access to a new spell level, you can change which subspell you know from that spell.
+
+        \ff[3]{Resummon} As a \glossterm{minor action}, you can use the \textit{resummon} ability.
+        \begin{ability}{Resummon}
+            You may teleport one creature or object that you summoned with the \spell{summon} spell into an unoccupied space on stable ground within \rngmed range of you.
+        \end{ability}
+
+        \ff[6]{Fortified Summoning} Creatures you create with the \spell{summon} spell have \glossterm{damage reduction} equal to your spellpower.
+
+        \ff[9]{Potent Summoning} You gain a \plus1d bonus to damage with the \spell{summoning} spell.
+
+        \ff[12]{Greater Resummon} The range of your \textit{resummon} ability increases to \rnglong.
+        In addition, you can choose up to two creatures to teleport instead of only one.
+        Each target can be teleported to a different location within range.
+
+        \ff[15]{Greater Fortified Summoning} The damage reduction from your \textit{fortified summoning} ability increases to twice your spellpower.
+
+        \ff[18]{Greater Potent Summoning} The bonus from your \textit{potent summoning} ability increases to \plus2d.
+    \end{feat}
+
+    \begin{feat}{Spell Focus: Telekinesis}{Spell}
+        \featpre \spell{Telekinesis} spell known.
+
+        \ff[1]{Subspell} You learn a subspell from the \spell{telekinesis} spell.
+        When you gain access to a new spell levels, you can change which subspell you know from that spell.
+
+        \ff[3]{Distant Hand} As a \glossterm{minor action}, you can use the \textit{distant hand} ability.
+        \begin{ability}{Distant Hand}[\glossterm{Sustain} (minor), \glossterm{Telekinesis}]
+            Choose a Medium or smaller unattended object within \rngclose range.
+            You can move it up to five feet in any direction within range, using your \glossterm{spellpower} with the \spell{telekinesis} spell instead of your Strength to determine your maximum carrying capacity.
+
+            In addition, you can manipulate the target as if you were holding it in your hands.
+            Any attacks you make with the object or checks you make to manipulate the object have a maximum bonus equal to your \glossterm{spellpower} with the \spell{telekinesis} spell.
+        \end{ability}
+
+        \ff[6]{Forceful Telekinesis} You double the distance that you can move creatures and objects with the \spell{telekinesis} spell.
+
+        \ff[6]{Telekinetic Strike} As a standard action, you can use the \textit{telekinetic strike} ability.
+        \begin{ability}{Telekinetic Strike}[\glossterm{Telekinesis}]
+            Make a strike with a weapon you are controlling using the \textit{distant hand} ability.
+            You use your \glossterm{spellpower} with the \spell{telekinesis} spell to determine your accuracy and damage in place of your Perception and Strength.
+        \end{ability}
+
+        \ff[9]{Potent Telekinesis} You gain a \plus1 bonus to \glossterm{accuracy} with the \spell{telekinesis} spell. 
+
+        \ff[12]{Greater Distant Hand} The range of your \textit{distant hand} ability increases to \rngmed.
+        In addition, the distance you can move the target each round increases to 30 feet.
+
+        \ff[15]{Greater Telekinetic Strike} You gain a \plus1d bonus to damage with your \textit{telekinetic strike} ability.
+
+        \ff[18]{Greater Potent Telekinesis} The bonus from your \textit{potent telekinesis} ability increases to \plus2.
+    \end{feat}
+
+    \begin{feat}{Spell Focus: Thaumaturgy}{Spell}
+        \featpre \spell{Thaumaturgy} spell known.
+
+        \ff[1]{Subspell} You learn a subspell from the \spell{thaumaturgy} spell.
+        When you gain access to a new spell levels, you can change which subspell you know from that spell.
+
+        \ff[3]{Counterspell} As a standard action, you can spend an \glossterm{action point} to use the \textit{counterspell} ability.
+        \begin{ability}{Counterspell}[\glossterm{Swift}]
+            Choose a creature within \rngmed range of you.
+            If the target is casting a spell or begins casting a spell this phase, and your maximum spell level is at least as high as the target's maximum spell level, their spell has no effect when it resolves.
+        \end{ability}
+
+        \ff[6]{Magic Tolerance} You gain \glossterm{magic resistance} equal to 3 \add your \glossterm{spellpower} with the \spell{thaumaturgy} spell.
+
+        \ff[9]{Potent Thaumaturgy} You gain a \plus1 bonus to \glossterm{accuracy} with the \spell{thaumaturgy} spell. 
+
+        \ff[12]{Improvised Counterspell} At the start of the \glossterm{delayed action phase}, if you are casting a spell other than a \glossterm{cantrip}, you can use your \textit{counterspell} ability without taking an action.
+        If you do, your spell has no effect when it resolves, and you regain the action point spent to cast it (if any).
+
+        \ff[15]{Greater Magic Tolerance} You gain a \plus2 bonus to the magic resistance from your \textit{magic tolerance} ability.
+
+        \ff[18]{Greater Potent Thaumaturgy} The bonus from your \textit{potent thaumaturgy} ability increases to \plus2.
+
+        \ff[20]{Punishing Counterspell} When you use your \textit{counterspell} ability, you can make the target \glossterm{miscast} their spell instead of negating the spell's effects.
+        In addition, the range of your \textit{counterspell} ability increases to \rnglong.
+    \end{feat}
+
+    \begin{feat}{Spell Focus: Vital Surge}{Spell}
+        \featpre \spell{Vital surge} spell known.
+
+        \ff[1]{Subspell} You learn a subspell from the \spell{vital surge} spell.
+        When you gain access to a new spell levels, you can change which subspell you know from that spell.
+
+        \ff[3]{Vital Force} You are immune to \glossterm{disease} and hostile \glossterm{Death} effects.
+
+        \ff[6]{Healing Boon} You gain a \plus1d bonus to healing from the \spell{vital surge} spell.
+
+        \ff[9]{Potent Vital Surge} You gain a \plus1 bonus to \glossterm{accuracy} with the \spell{vital surge} spell.
+
+        \ff[12]{Greater Vital Force} You are immune to life damage and hostile \glossterm{Life} effects.
+
+        \ff[15]{Greater Healing Boon} The bonus from your \textit{healing boon} ability increases to \plus2d.
+
+        \ff[18]{Greater Potent Vital surge} The bonus from your \textit{potent vital surge} ability increases to \plus2.
+    \end{feat}
+
+    \begin{feat}{Spell Focus: Weaponcraft}{Spell}
+        \featpre \spell{Weaponcraft} spell known.
+
+        \ff[1]{Subspell} You learn a subspell from the \spell{weaponcraft} spell.
+        When you gain access to a new spell levels, you can change which subspell you know from that spell.
+
+        \ff[3]{Personal Weapon} As a \glossterm{minor action}, you can use the \textit{personal weapon} ability.
+        \begin{ability}{Personal Weapon}[\glossterm{Manifestation}, \glossterm{Swift}]
+            Choose a type of weapon that you are proficient with.
+            You create a normal item of that type in your hand.
+            If the item stops touching you, it disappears, and this effect ends.
+
+            If you create a projectile weapon, you can fire it without ammunition by creating projectiles as you fire.
+            The projectiles disappear after the attack is complete.
+
+            This ability lasts until you use it again, or until you \glossterm{dismiss} it as a \glossterm{free action}.
+        \end{ability}
+
+        \ff[6]{Guided Weapons} Autonomous weapons you create with the \spell{weaponcraft} spell try to move towards and attack creatures that have attacked you if possible.
+        If the weapon is unable to reach any such creatures in a given round, it follows its normal behavior.
+
+        \ff[9]{Potent Weaponcraft} You gain a \plus1d bonus to damage with the \spell{weaponcraft} spell. 
+
+        \ff[12]{Greater Personal Weapon} When attacking with a weapon created with your \textit{personal weapon} ability, you gain a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} and a \plus1d \glossterm{magic bonus} to damage.
+
+        \ff[15]{Greater Guided Weapons} You gain a \plus1 bonus to \glossterm{accuracy} on attacks with autonomous weapons you create with the \spell{weaponcraft} spell.
+
+        \ff[18]{Greater Potent Weaponcraft} The bonus from your \textit{potent weaponcraft} ability increases to \plus2d.
     \end{feat}
 
     \begin{feat}{Stealth Specialization}{Skill}
@@ -1734,80 +1971,6 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[20]{Unflinching Recovery} Whenever you take the \textit{recover} or \textit{desperate recovery} actions, you take half damage from all attacks until the end of the round.
         This is a \glossterm{Swift} ability.
-    \end{feat}
-
-    \begin{feat}{Transmuter}{Magical, Spell}
-        \featpre Transmutation spell known.
-
-        \ff[1]{Enhance Body} You gain a \plus1 bonus to Armor defense and Strength-based \glossterm{checks}.
-
-        \ff[3]{Reshaper} As a standard action, you can spend an \glossterm{action point} to use the \textit{alter self} or \textit{alter object} ability.
-        \begin{ability}{Alter Self}[\glossterm{Shaping}]
-            Make a Disguise check to alter your appearance (see \pcref{Disguise Creature}), except that you can use your spellpower in place of your Disguise skill.
-            You can only alter your physical body, not your clothes or equipment.
-
-            This ability lasts until you use it again.
-        \end{ability}
-
-        \begin{ability}{Alter Object}[\glossterm{Shaping}]
-            Choose an unattended, nonmagical object you can touch.
-            You make a Craft check to alter the target (see \pcref{Craft}), except that you can use your spellpower in place of your Craft skill.
-            In addition, you do not need any special tools to make the check (such as an anvil and furnace).
-            However, the maximum hardness of a material you can affect with this ability is equal to your spellpower.
-
-            % too short?
-            Each time you use this ability, you can accomplish work that would take up to five minutes with a normal Craft check.
-        \end{ability}
-
-        \ff[6]{Transmutive Vigor} At the end of each \glossterm{action phase}, you heal hit points equal to half your highest \glossterm{spellpower}.
-
-        \ff[9]{Greater Reshaper} When you use your \textit{alter object} ability, you can accomplish work that would take up to an hour with a normal Craft check.
-        In addition, as a standard action, you can spend an \glossterm{action point} to use the \textit{alter poison} ability.
-        \begin{ability}{Alter Poison}[\glossterm{Shaping}, \glossterm{Sustain} (minor)]
-            Make a \glossterm{spellpower} vs. Fortitude attack against a creature within \rngclose range.
-            \hit Any poison in the target's system is neutralized.
-            It stops suffering any additional effects from poisons in its system.
-            As long as the effect lasts, it is immune to all poisons.
-            In addition, the target's \glossterm{mundane} poisons, including natural attacks that inflict poison, have no effect.
-        \end{ability}
-
-        \ff[12]{Greater Transmutive Vigor} The healing from your \textit{transmutive vigor} ability increases to be equal to your highest \glossterm{spellpower}.
-
-        \ff[15]{Greater Enhance Body} The bonuses from your \textit{enhance body} ability increase to \plus2.
-
-        \ff[18]{Supreme Reshaper} You do not need to spend action points to use your \textit{alter self}, \textit{alter object}, or \textit{alter poison} abilities.
-
-        \ff[20]{Malleable Body} You are immune to \glossterm{critical hits} from \glossterm{strikes}.
-        You suffer only the effects of a normal hit instead.
-    \end{feat}
-
-    \begin{feat}{Vivimancer}{Magical, Spell}
-        \featpre Vivimancy spell known.
-
-        \ff[1]{Restore Life} As a standard action, you can spend an \glossterm{action point} to use the \textit{restore life} ability.
-        \begin{ability}{Restore Life}[\glossterm{Life}]
-            Choose a willing creature within \rngmed range.
-            The target is healed for hit points equal to your \glossterm{standard damage} \plus1d.
-            Your \glossterm{power} with this ability is equal to your highest \glossterm{spellpower}.
-        \end{ability}
-
-        \ff[3]{Unliving Resilience} You are immune to \glossterm{disease} and hostile \glossterm{Death} effects.
-
-        \ff[6]{Vivimantic Surge} Whenever you cast a Vivimancy spell, you can heal any number of willing targets of the spell for hit points equal to your \glossterm{spellpower} with that spell.
-        In addition, you gain a \plus1d bonus to damage with attacks that deal life damage.
-
-        \ff[9]{Greater Restore Life} The healing granted by your \textit{restore life} ability increases by \plus1d.
-        In addition, for every 2 points of healing, you can instead heal 1 \glossterm{vital damage}.
-
-        \ff[12]{Greater Unliving Resilience} You are immune to life damage and hostile \glossterm{Life} effects.
-
-        \ff[15]{Greater Vivimantic Surge} The healing granted by your \textit{vivimantic surge} ability increases to three times your \glossterm{spellpower} with the spell.
-        In addition, the damage bonus increases to \plus2d.
-
-        \ff[18]{Supreme Restore Life} The healing granted by your \textit{restore life} ability increases by an additional \plus1d.
-        In addition, it no longer costs an action point to use.
-
-        \ff[20]{Supreme Unliving Resilience} You gain a \plus4 bonus to Fortitude defense.
     \end{feat}
 
     \begin{feat}{Whirlwind Warrior}{Combat}
