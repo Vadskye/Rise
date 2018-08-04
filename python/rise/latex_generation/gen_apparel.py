@@ -433,7 +433,7 @@ def generate_worn():
         tags=['Fire'],
         description="""
             As a standard action, you can spend an \\glossterm<action point> to use this item.
-            If you do, make a \\glossterm<power> vs. Reflex attack against a creature or object within \\rngmed range.
+            If you do, make an attack vs. Reflex against a creature or object within \\rngmed range.
             \\hit The target takes fire \\glossterm<standard damage> +1d.
         """,
         short_description="Can blast foe with fire",
@@ -516,7 +516,7 @@ def generate_worn():
             This crown continuously crackles with electricity.
             The constant sparks shed light as a torch.
 
-            At the end of each \\glossterm<action phase>, you make a Power vs. Reflex attack against all enemies within a \\areamed radius emanation from you.
+            At the end of each \\glossterm<action phase>, you make an attack vs. Reflex against all enemies within a \\areamed radius emanation from you.
             A hit deals electricity \\glossterm<standard damage> -3d.
         """,
         short_description="Continuously damages nearby enemies",
@@ -528,7 +528,7 @@ def generate_worn():
         material_type='crown',
         tags=['Cold'],
         description="""
-            At the end of each \\glossterm<action phase>, you make a Power vs. Fortitude attack against all enemies within a \\areamed radius emanation from you.
+            At the end of each \\glossterm<action phase>, you make an attack vs. Fortitude against all enemies within a \\areamed radius emanation from you.
             A hit deals cold \\glossterm<standard damage> -3d.
             Each creature that takes damage in this way is \\fatigued until the end of the next round.
         """,
@@ -557,7 +557,7 @@ def generate_worn():
         material_type='boot',
         description="""
             % This only works if you only take falling damage during the movement phase, which seems possible?
-            Whenever you take \\glossterm<falling damage>, make a \\glossterm<power> vs Reflex attack against everything within a \\areasmall radius from you.
+            Whenever you take \\glossterm<falling damage>, make an attack vs Reflex against everything within a \\areasmall radius from you.
             \\hit Each target takes damage as if they had fallen the same distance that you fell.
             This roll is made separately from the damage roll to determine your falling damage.
             \\crit As above, and each target is knocked \\glossterm<prone>.
