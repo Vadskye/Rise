@@ -918,7 +918,7 @@ def generate_spells():
             """, tags=['Life', 'Sustain (minor)']),
             Subspell("Circle of Healing", 4, """
                 You are surrounded by an aura of healing in a \\areamed radius emanation from you.
-                When this spell resolves, and the end of each \\glossterm<action phase> in subsequent rounds, all allies in the area heal hit points equal to \\glossterm<standard damage> -3d.
+                When this spell resolves, and the end of each \\glossterm<action phase> in subsequent rounds, all allies in the area heal hit points equal to \\glossterm<standard damage> -4d.
             """, tags=['Life', 'Sustain (minor)']),
             Subspell("Remove Disease", 3, """
                 Choose a willing creature within \\rngclose range.
