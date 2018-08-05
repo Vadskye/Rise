@@ -283,6 +283,8 @@ def generate_spells():
                 All other magical abilities and objects are \\glossterm<suppressed> within a \\areasmall radius emanation from you.
                 % How much of this is redundant with suppression?
                 Creatures within the area cannot activate, sustain, or dismiss magical abilities.
+                % TODO: wording
+                This does not affect aspects of creatures that cannot be suppressed, such as the knowledge of abilities.
                 You cannot exclude yourself from this emanation.
                 However, this subspell does not prevent you from sustaining or dismissing this subspell.
             """, tags=['Mystic', 'Sustain (minor)']),

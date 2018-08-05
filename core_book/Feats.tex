@@ -293,7 +293,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[2]{Specialization} You gain a \plus2 bonus to Bluff.
 
-        \ff[5]{Deceive Magic} Any magical abilities which detect lies are unable to detect lies you speak.
+        \ff[5]{Deceive Magic}[Magical] Any magical abilities which detect lies are unable to detect lies you speak.
 
         \ff[8]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
@@ -307,17 +307,17 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[14]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[17]{Greater Deceive Magic} Whenever you impersonate a creature, if your Bluff check is high enough, magical abilities treat you as if you were that creature.
+        \ff[17]{Greater Deceive Magic}[Magical] Whenever you impersonate a creature, if your Bluff check is high enough, magical abilities treat you as if you were that creature.
         % is this DR high enough?
         The DR is equal to 10 \add the \glossterm{power} of the ability you are deceiving.
         % does this work mechanically?
         For example, if you impersonate an undead creature, the \spell{inflict light wounds} spell would heal you.
         This does not grant you any abilities associated with creatures you impersonate.
 
-        \ff[20]{Greater Dual Speech} When you use your \textit{dual speech} ability, you can speak entirely different words with your two voices.
+        \ff[20]{Greater Dual Speech}[Magical] When you use your \textit{dual speech} ability, you can speak entirely different words with your two voices.
     \end{feat}
 
-    \begin{feat}{Boongiver}{Spell}
+    \begin{feat}{Boongiver}{Magical, Spell}
         \featpre Ability to cast a spell.
 
         \ff[1]{Reciprocal Boon} Whenever you cast a spell with the \glossterm{Attune} tag that targets a single creature other than yourself, you can use the \textit{reciprocal boon} ability.
@@ -475,7 +475,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[17]{Greater Climb Speed} Your climb speed increases to be equal to your \glossterm{base speed}.
 
-        \ff[20]{Personal Gravity} You can wallrun on ceilings in the same way you wallrun on walls.
+        \ff[20]{Personal Gravity}[Magical] You can wallrun on ceilings in the same way you wallrun on walls.
         In addition, for every round that you spend wallrunning on any surface, the DR increases by 2 instead of by 5.
     \end{feat}
 
@@ -551,7 +551,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff{Rapid Improvisation} As a standard action, you can spend an \glossterm{action point} to use the \textit{improvise} ability to create a device (see \pcref{Improvise}).
 
-        \ff[2]{Specialization}[Magical] You gain a \plus2 bonus to Devices.
+        \ff[2]{Specialization} You gain a \plus2 bonus to Devices.
 
         \ff[5]{Lesser Disable Arcana}[Magical] You can disable arcane spell effects on objects or areas as if they were merely complex devices.
         You must be aware of an effect to disable it, either through the Spellcraft skill or because the effect is noticeable.
@@ -604,7 +604,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[1]{Draconic Ancestry} Choose a type of dragon from among the dragons on \trefnp{Dragon Types}.
         You have the blood of that type of dragon in your veins.
-        This grants you damage reduction equal to twice your \textit{draconic power} against the damage type that dragon's breath weapon deals.
+        This grants you damage reduction equal to your \glossterm{power} against the damage type that dragon's breath weapon deals.
 
         \ff[1]{Draconic Weapons} You gain a bite natural weapon and two claw natural weapons, one on each arm.
         For details, see \pcref{Natural Weapons}.
@@ -625,7 +625,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         A line breath weapon becomes a \areahuge, 10 ft.\ wide line.
         A cone breath weapon becomes a \arealarge cone.
 
-        \ff[11]{Draconic Flight} As a \glossterm{free action}, you can spend an \glossterm{action point} to use the \textit{draconic flight} ability.
+        \ff[11]{Draconic Flight}[Magical] As a \glossterm{free action}, you can spend an \glossterm{action point} to use the \textit{draconic flight} ability.
         \begin{ability}{Draconic Flight}
             You gain a \glossterm{fly speed} equal to your \glossterm{base speed} until the end of the round (see \pcref{Flying}).
         \end{ability}
@@ -716,7 +716,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[15]{Supreme Combat Caster} The Concentration bonus from your \textit{combat caster} ability increases to \plus6.
         In addition, the \glossterm{encumbrance} reduction increases to 3.
 
-        \ff[18]{Greater Spellsword Conduit} The accuracy bonus from your \textit{spellsword conduit} ability increases to \plus2.
+        \ff[18]{Greater Spellsword Conduit}[Magical] The accuracy bonus from your \textit{spellsword conduit} ability increases to \plus2.
     \end{feat}
 
     \begin{feat}{Escape Artist Specialization}{Skill}
@@ -821,7 +821,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Heal Specialization}{Skill}
         \featpre Heal as a mastered skill.
 
-        \ff{Healing Touch}[Magical] As a standard action, you can spend an \glossterm{action point} to use the \textit{healing touch} ability.
+        \ff{Healing Touch}[Magical] As a standard action, you can use the \textit{healing touch} ability.
         \begin{ability}{Healing Touch}[\glossterm{Life}]
             Make a Heal check on a willing creature you can touch.
             The target is healed for an amount equal to the Heal check result.
@@ -829,11 +829,11 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[2]{Specialization} You gain a \plus2 bonus to Heal.
 
-        \ff[6]{Vital Healing} For every five points of healing you would restore with your \textit{healing touch}, you can instead heal a point of \glossterm{vital damage}.
+        \ff[6]{Vital Healing}[Magical] For every five points of healing you would restore with your \textit{healing touch}, you can instead heal a point of \glossterm{vital damage}.
 
         \ff[9]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
-        \ff[11]{Purging Touch}[Magical] As a standard action, you can spend an \glossterm{action point} to use the \textit{purging touch} ability.
+        \ff[11]{Purging Touch}[Magical] As a standard action, you use the \textit{purging touch} ability.
         \begin{ability}{Purging Touch}
             Make a Heal check on a willing creature you can touch.
             For each poison and disease on the target, if your check result is at least 10 higher than the \glossterm{power} of the effect, the effect is removed.
@@ -842,23 +842,22 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[14]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
         \ff[17]{Lifesaver} You can stabilize dying creatures as a \glossterm{minor action}.
-
-        \ff[20]{Wellspring of Life} You do not have to spend an \glossterm{action point} to use your \textit{healing touch} ability.
     \end{feat}
 
     \begin{feat}{Intimidate Specialization}{Skill}
         \featpre Intimidate as a mastered skill.
 
-        \ff{Demoralizing Blow} As a standard action, you can use the \textit{demoralizing blow} ability.
+        \ff{Demoralizing Blow} As a standard action, you can spend an \glossterm{action point} to use the \textit{demoralizing blow} ability.
         \begin{ability}{Demoralizing Blow}
             Make a \glossterm{strike}.
-            % TODO: Timing is wrong
-            If you deal damage to the target, you can immediately use the \textit{demoralize} ability on the target (see \pcref{Demoralize}).
+            In addition to the effects of the strike, you can make an attack vs. Mental against the target.
+            Your \glossterm{accuracy} is equal to your Intimidate skill.
+            \hit The target is \shaken by you as a \glossterm{condition}.
         \end{ability}
 
         \ff[2]{Specialization} You gain a \plus2 bonus to Intimidate.
 
-        \ff[6]{Critical Demoralization} If you get a \glossterm{critical hit} when you take the \textit{demoralize} action, the target is \frightened by you instead of being shaken.
+        \ff[6]{Frightening Demoralization} If you get a \glossterm{critical hit} when you use the \textit{demoralize} or \textit{demoralizing blow} abilities, the target is \frightened by you instead of being shaken.
         See \pcref{Demoralize}, for details.
 
         \ff[8]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
@@ -894,7 +893,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[2]{Specialization} You gain a \plus2 bonus to Jump.
 
-        \ff[5]{Featherlight Leap} You gain the \textit{featherlight leap} ability.
+        \ff[5]{Featherlight Leap}[Magical] You gain the \textit{featherlight leap} ability.
         \begin{ability}{Featherlight Leap}[\glossterm{Swift}]
             As a \glossterm{free action}, you can spend an \glossterm{action point}.
             If you do, your maximum height for jumps during the current phase is equal to your Jump check result, rather than half your Jump check result.
@@ -902,7 +901,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[8]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
-        \ff[11]{Greater Featherlight Leap} You do not need to spend an \glossterm{action point} to use your \textit{featherlight leap} ability.
+        \ff[11]{Greater Featherlight Leap}[Magical] You do not need to spend an \glossterm{action point} to use your \textit{featherlight leap} ability.
 
         \ff[14]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
@@ -940,6 +939,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             Until the end of the round, whenever it makes a \glossterm{strike}, it can roll the \glossterm{attack roll} twice and take the higher result.
         \end{ability}
 
+        % TODO: redesign annoying situational modifier
         \ff[6]{Inspiring Presence} All allies other than yourself within a \arealarge radius emanation from you gain a \plus1 bonus to Mental defense.
         This ability is \glossterm{suppressed} if you are \glossterm{defeated}.
 
@@ -1170,9 +1170,9 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[14]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[17]{Projected Performance} The range of your \textit{mesmerizing performance}, \textit{inspiring performance}, and \textit{mesmeric suggestion} abilities increases to \rnglong.
+        \ff[17]{Projected Performance}[Magical] The range of your \textit{mesmerizing performance}, \textit{inspiring performance}, and \textit{mesmeric suggestion} abilities increases to \rnglong.
 
-        \ff[20]{Mass Performance} When you use your \textit{mesmerizing performance} and \textit{inspiring performance} abilities, you can target any number of creatures within range.
+        \ff[20]{Mass Performance}[Magical] When you use your \textit{mesmerizing performance} and \textit{inspiring performance} abilities, you can target any number of creatures within range.
     \end{feat}
 
     \begin{feat}{Persuasion Specialization}{Skill}
@@ -1190,11 +1190,11 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[2]{Specialization} You gain a \plus2 bonus to Persuasion.
 
-        \ff[5]{Center of Attention} When you use your \textit{compel attention} ability, you may target up to five creatures.
+        \ff[5]{Center of Attention}[Magical] When you use your \textit{compel attention} ability, you may target up to five creatures.
 
         \ff[8]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
-        \ff[11]{Suggestion} As a standard action, you can spend an \glossterm{action point} to use the \textit{suggestion} ability.
+        \ff[11]{Suggestion}[Magical] As a standard action, you can spend an \glossterm{action point} to use the \textit{suggestion} ability.
         \begin{ability}{Suggestion}[\glossterm{Delusion}, \glossterm{Mind}, \glossterm{Subtle}, \glossterm{Sustain} (minor)]
             Make an attack vs. Mental against a target within \rngmed range.
             Your \glossterm{accuracy} is equal to your Persuasion skill.
@@ -1299,10 +1299,8 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         In addition, if you get a \glossterm{critical hit} with the \textit{shove} ability, you can move the target a maximum distance equal to your movement speed.
 
         \ff[3]{Wall Slam} If you use the \textit{shove} ability to move a creature, and the creature's movement is interrupted by a solid obstacle, the obstacle and creature both take bludgeoning \glossterm{standard damage} -1d.
-        Your \glossterm{power} with this ability is based on your Strength.
 
         \ff[6]{Trample} If you use the \textit{overrun} ability to move through a creature, it takes bludgeoning \glossterm{standard damage} -3d.
-        Your \glossterm{power} with this ability is based on your Strength.
 
         \ff[9]{Greater Brute Force} The accuracy bonus from your \textit{brute force} ability increases to \plus3.
 
@@ -1363,7 +1361,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[1]{Aim} As a standard action, you can use the \textit{aim} ability.
         \begin{ability}{Aim}[\glossterm{Sustain} (minor)]
             Choose a creature or object within line of sight.
-            You gain a \plus2 bonus to accuracy on \glossterm{physical attacks} against the target.
+            You gain a \plus2 bonus to accuracy on \glossterm{strikes} against the target.
 
             If you lose sight of the target for a full round, this effect ends.
         \end{ability}
@@ -1399,7 +1397,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[2]{Specialization} You gain a \plus2 bonus to Spellcraft.
 
-        \ff[5]{Unweave Magic} As a standard action, you can spend an \glossterm{action point} to use the \textit{unweave magic} ability.
+        \ff[5]{Unweave Magic}[Magical] As a standard action, you can spend an \glossterm{action point} to use the \textit{unweave magic} ability.
         \begin{ability}{Unweave Magic}[\glossterm{Mystic}]
             Make a Spellcraft check on an active spell effect within \rngmed range.
             The DR is equal to 10 \add the \glossterm{power} of the effect.
@@ -1412,12 +1410,12 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[14]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[17]{Greater Unweave Magic} You gain a \plus2 bonus to \glossterm{accuracy} with your \textit{unweave magic} ability.
+        \ff[17]{Greater Unweave Magic}[Magical] You gain a \plus2 bonus to \glossterm{accuracy} with your \textit{unweave magic} ability.
 
-        \ff[20]{Greater Mystic Tolerance} The defense bonus from your \textit{mystic tolerance} ability increases to \plus2.
+        \ff[20]{Greater Mystic Tolerance}[Magical] The defense bonus from your \textit{mystic tolerance} ability increases to \plus2.
     \end{feat}
 
-    \begin{feat}{Spell Focus: Aquamancy}{Spell}
+    \begin{feat}{Spell Focus: Aquamancy}{Magical, Spell}
         \featpre \spell{Aquamancy} spell known.
 
         \ff[1]{Subspell} You learn a subspell from the \spell{aquamancy} spell.
@@ -1448,7 +1446,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[18]{Greater Potent Aquamancy} The bonus from your \textit{potent aquamancy} ability increases to \plus2.
     \end{feat}
 
-    \begin{feat}{Spell Focus: Astromancy}{Spell}
+    \begin{feat}{Spell Focus: Astromancy}{Magical, Spell}
         \featpre \spell{Astromancy} spell known.
 
         \ff[1]{Subspell} You learn a subspell from the \spell{astromancy} spell.
@@ -1476,7 +1474,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[18]{Greater Potent Astromancy} The bonus from your \textit{potent astromancy} ability increases to \plus2.
     \end{feat}
 
-    \begin{feat}{Spell Focus: Barrier}{Spell}
+    \begin{feat}{Spell Focus: Barrier}{Magical, Spell}
         \featpre \spell{Barrier} spell known.
 
         \ff[1]{Subspell} You learn a subspell from the \spell{barrier} spell.
@@ -1506,7 +1504,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[18]{Greater Abjurant Shield} The bonus from your \textit{abjurant shield} ability increases to \plus2.
     \end{feat}
 
-    \begin{feat}{Spell Focus: Chronomancy}{Spell}
+    \begin{feat}{Spell Focus: Chronomancy}{Magical, Spell}
         \featpre \spell{Chronomancy} spell known.
 
         \ff[1]{Subspell} You learn a subspell from the \spell{chronomancy} spell.
@@ -1527,7 +1525,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[18]{Greater Potent Chronomancy} The bonus from your \textit{potent chronomancy} ability increases to \plus2.
     \end{feat}
 
-    \begin{feat}{Spell Focus: Compel}{Spell}
+    \begin{feat}{Spell Focus: Compel}{Magical, Spell}
         \featpre \spell{Compel} spell known.
 
         \ff[1]{Subspell} You learn a subspell from the \spell{compel} spell.
@@ -1548,7 +1546,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[18]{Greater Potent Compel} The bonus from your \textit{potent compel} ability increases to \plus2.
     \end{feat}
 
-    \begin{feat}{Spell Focus: Delusion}{Spell}
+    \begin{feat}{Spell Focus: Delusion}{Magical, Spell}
         \featpre \spell{Delusion} spell known.
 
         \ff[1]{Subspell} You learn a subspell from the \spell{delusion} spell.
@@ -1567,7 +1565,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[18]{Greater Potent Delusion} The bonus from your \textit{potent delusion} ability increases to \plus2.
     \end{feat}
 
-    \begin{feat}{Spell Focus: Fabrication}{Spell}
+    \begin{feat}{Spell Focus: Fabrication}{Magical, Spell}
         \featpre \spell{Fabrication} spell known.
 
         \ff[1]{Subspell} You learn a subspell from the \spell{fabrication} spell.
@@ -1593,7 +1591,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[18]{Greater Potent Fabrication} The bonus from your \textit{potent fabrication} ability increases to \plus2.
     \end{feat}
 
-    \begin{feat}{Spell Focus: Glamer}{Spell}
+    \begin{feat}{Spell Focus: Glamer}{Magical, Spell}
         \featpre \spell{Glamer} spell known.
 
         \ff[1]{Subspell} You learn a subspell from the \spell{glamer} spell.
@@ -1612,7 +1610,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[18]{Greater Potent Glamer} The bonus from your \textit{potent glamer} ability increases to \plus2.
     \end{feat}
 
-    \begin{feat}{Spell Focus: Polymorph}{Spell}
+    \begin{feat}{Spell Focus: Polymorph}{Magical, Spell}
         \featpre \spell{Polymorph} spell known.
 
         \ff[1]{Subspell} You learn a subspell from the \spell{polymorph} spell.
@@ -1655,7 +1653,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[18]{Greater Potent Polymorph} The bonus from your \textit{potent polymorph} ability increases to \plus2.
     \end{feat}
 
-    \begin{feat}{Spell Focus: Pyromancy}{Spell}
+    \begin{feat}{Spell Focus: Pyromancy}{Magical, Spell}
         \featpre \spell{Pyromancy} spell known.
 
         \ff[1]{Subspell} You learn a subspell from the \spell{pyromancy} spell.
@@ -1688,7 +1686,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[18]{Greater Potent Pyromancy} The bonus from your \textit{potent pyromancy} ability increases to \plus2d.
     \end{feat}
 
-    \begin{feat}{Spell Focus: Revelation}{Spell}
+    \begin{feat}{Spell Focus: Revelation}{Magical, Spell}
         \featpre \spell{Revelation} spell known.
 
         \ff[1]{Subspell} You learn a subspell from the \spell{revelation} spell.
@@ -1725,7 +1723,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         In addition, you may have three active \textit{times of prophecy}, rather than two.
     \end{feat}
 
-    \begin{feat}{Spell Focus: Summon}{Spell}
+    \begin{feat}{Spell Focus: Summon}{Magical, Spell}
         \featpre \spell{Summon} spell known.
 
         \ff[1]{Subspell} You learn a subspell from the \spell{summon} spell.
@@ -1749,7 +1747,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[18]{Greater Potent Summoning} The bonus from your \textit{potent summoning} ability increases to \plus2d.
     \end{feat}
 
-    \begin{feat}{Spell Focus: Telekinesis}{Spell}
+    \begin{feat}{Spell Focus: Telekinesis}{Magical, Spell}
         \featpre \spell{Telekinesis} spell known.
 
         \ff[1]{Subspell} You learn a subspell from the \spell{telekinesis} spell.
@@ -1782,7 +1780,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[18]{Greater Potent Telekinesis} The bonus from your \textit{potent telekinesis} ability increases to \plus2.
     \end{feat}
 
-    \begin{feat}{Spell Focus: Thaumaturgy}{Spell}
+    \begin{feat}{Spell Focus: Thaumaturgy}{Magical, Spell}
         \featpre \spell{Thaumaturgy} spell known.
 
         \ff[1]{Subspell} You learn a subspell from the \spell{thaumaturgy} spell.
@@ -1809,7 +1807,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         In addition, the range of your \textit{counterspell} ability increases to \rnglong.
     \end{feat}
 
-    \begin{feat}{Spell Focus: Vital Surge}{Spell}
+    \begin{feat}{Spell Focus: Vital Surge}{Magical, Spell}
         \featpre \spell{Vital surge} spell known.
 
         \ff[1]{Subspell} You learn a subspell from the \spell{vital surge} spell.
@@ -1828,7 +1826,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[18]{Greater Potent Vital surge} The bonus from your \textit{potent vital surge} ability increases to \plus2.
     \end{feat}
 
-    \begin{feat}{Spell Focus: Weaponcraft}{Spell}
+    \begin{feat}{Spell Focus: Weaponcraft}{Magical, Spell}
         \featpre \spell{Weaponcraft} spell known.
 
         \ff[1]{Subspell} You learn a subspell from the \spell{weaponcraft} spell.
@@ -1895,13 +1893,13 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[8]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
-        \ff[11]{Planar Tolerance} You are immune to harmful effects imposed by being on other planes.
+        \ff[11]{Planar Tolerance}[Magical] You are immune to harmful effects imposed by being on other planes.
 
         \ff[14]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
         \ff[17]{Greater Rapid Tracker} If you use the \textit{track} ability as a \glossterm{minor action}, the check penalty is reduced to \minus5 instead of \minus10.
 
-        \ff[20]{Find the Path} As a standard action, you can spend an \glossterm{action point} to use the \textit{find the path} ability.
+        \ff[20]{Find the Path}[Magical] As a standard action, you can spend an \glossterm{action point} to use the \textit{find the path} ability.
         \begin{ability}{Find the Path}[\glossterm{Attune}, \glossterm{Knowledge}]
             When you use this ability, you must unambiguously specify a location on the same plane as you.
             You know exactly what direction you must travel to reach your chosen destination by the most direct physical route.
