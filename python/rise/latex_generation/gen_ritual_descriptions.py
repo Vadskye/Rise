@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 
 import click
-from rise.latex.attack import Attack
 from rise.latex.effects import Effects
 from rise.latex.header import Header
 from rise.latex.spell import Spell
 from rise.latex.subspell import Subspell
-from rise.latex.targeting import Targeting
 from rise.latex.util import latexify
 
 def generate_rituals():
@@ -18,7 +16,7 @@ def generate_rituals():
         header=Header("You bind a fragment of a dead creature's soul to its corpse, reanimating it as an undead skeleton or zombie."),
         effects=Effects('Animate Dead', """
             Choose any number of corpses within \\rngclose range.
-            The combined levels of all targets cannot exceed your spellpower.
+            The combined levels of all targets cannot exceed your \\glossterm<power>.
             The target becomes an undead creature that obeys your spoken commands.
             You choose whether to create a skeleton or a zombie.
             Creating a zombie require a mostly intact corpse, including most of the flesh.
@@ -38,7 +36,7 @@ def generate_rituals():
         effects=Effects('Mystic Lock', """
             Choose a Large or smaller closable, nonmagical object within \\rngclose range, such as a door or box.
             The target object becomes magically locked.
-            It can be unlocked with a Devices check against a DR equal to 20 \\add your spellpower.
+            It can be unlocked with a Devices check against a DR equal to 20 \\add your \\glossterm<power>.
             The DR to break it open forcibly increases by 10.
 
             You can freely pass your own \\ritual<arcane lock> as if the object were not locked.
@@ -51,7 +49,7 @@ def generate_rituals():
         lists=['Arcane', 'Divine', 'Nature'],
         subspells=[
             Subspell("Resilient", 5, f"""
-                This subritual functions like the \\ritual<mystic lock> ritual, except that the DR to unlock the target with a Devices check is instead equal to 30 + your spellpower.
+                This subritual functions like the \\ritual<mystic lock> ritual, except that the DR to unlock the target with a Devices check is instead equal to 30 + your \\glossterm<power>.
                 In addition, the DR to break it open increases by 20 instead of by 10.
             """),
         ],
@@ -157,7 +155,7 @@ def generate_rituals():
         # header=Header("description"),
         effects=Effects('Create Sustenance', """
             Choose an unoccupied square within \\rngclose range.
-            This ritual creates food and drink in that square that is sufficient to sustain two Medium creatures per spellpower for 24 hours.
+            This ritual creates food and drink in that square that is sufficient to sustain two Medium creatures per \\glossterm<power> for 24 hours.
             The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland.
 
             This ritual takes one hour to perform.
@@ -390,7 +388,7 @@ def generate_rituals():
     #     ),
     #     effects=Effects(
     #         effect="""
-    #             The target gains \\glossterm<magic resistance> against Awareness and Scrying abilities equal to 5 + your spellpower.
+    #             The target gains \\glossterm<magic resistance> against Awareness and Scrying abilities equal to 5 + your \\glossterm<power>.
     #             In addition, Awareness and Scrying abilities that do not directly affect the target simply treat it as if it did not exist.
     #
     #             This effect lasts as long as you \\glossterm<attune> to it.

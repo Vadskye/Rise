@@ -582,7 +582,8 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         For example, you could cause all of their equipment to appear nonmagical, or you could cause them to have a strong aura of good alignment.
         The maximum \glossterm{power} you can emulate is equal to your Disguise check result \minus10.
 
-        Anyone using divination magic on the creature must make a \glossterm{spellpower} check with a DR equal to your Disguise check result in order to perceive the truth.
+        Anyone using divination magic on the creature must make a check with a bonus equal to the creature's \glossterm{power} with the ability to perceive the truth.
+        The DR is equal to your Disguise check result.
         Regardless of the result of the check, the caster is not aware that the check was made.
 
         \ff[8]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
@@ -1038,7 +1039,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[15]{Magical Resilience} You gain \glossterm{magic resistance} equal to 5 \add your level.
 
-        \ff[18]{Empowered Channeler} When you use your \textit{overchannel} ability, you gain a \plus2 bonus to spellpower with the spell.
+        \ff[18]{Empowered Channeler} When you use your \textit{overchannel} ability, you gain a \plus2 bonus to \glossterm{power} with the spell.
     \end{feat}
 
     \begin{feat}{Mystic Archer}{Magical, Spell}
@@ -1401,7 +1402,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[5]{Unweave Magic} As a standard action, you can spend an \glossterm{action point} to use the \textit{unweave magic} ability.
         \begin{ability}{Unweave Magic}[\glossterm{Mystic}]
             Make a Spellcraft check on an active spell effect within \rngmed range.
-            The DR is equal to 10 \add the \glossterm{spellpower} of the effect.
+            The DR is equal to 10 \add the \glossterm{power} of the effect.
             Success means the effect is \glossterm{dismissed} if it is an effect that can be dismissed.
         \end{ability}
 
@@ -1417,28 +1418,29 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \end{feat}
 
     \begin{feat}{Spell Focus: Aquamancy}{Spell}
-        \featpre \spell{Fabrication} spell known.
+        \featpre \spell{Aquamancy} spell known.
 
         \ff[1]{Subspell} You learn a subspell from the \spell{aquamancy} spell.
         When you gain access to a new spell level, you can change which subspell you know from that spell.
 
         \ff[3]{Create Water} As a standard action, you can spend an \glossterm{action point} to use the \textit{create water} ability.
+
         \begin{ability}{Create Water}[\glossterm{Creation}, \glossterm{Water}]
-            You create up to one gallon per \glossterm{spellpower} with the \spell{aquamancy} spell of wholesome, drinkable water anywhere within \rngclose range.
+            You create up to one gallon per \glossterm{power} of wholesome, drinkable water anywhere within \rngclose range.
             The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
             You must create a minimum of one ounce of water in each location.
         \end{ability}
 
-        \ff[3]{Fire Tolerance} You gain damage reduction against fire damage equal to your \glossterm{spellpower} with the \spell{aquamancy} spell.
+        \ff[3]{Fire Tolerance} You gain damage reduction against fire damage equal to your \glossterm{power}.
 
         \ff[6]{Swim Familiarity} You gain a \plus2 bonus to Swim.
         In addition, you reduce your penalties for acting underwater by 2.
 
         \ff[9]{Potent Aquamancy} You gain a \plus1 bonus to \glossterm{accuracy} with the \spell{aquamancy} spell. 
 
-        \ff[12]{Greater Create Water} The volume of water you can create with your \textit{create water} ability increases to ten gallons per \glossterm{spellpower}.
+        \ff[12]{Greater Create Water} The volume of water you can create with your \textit{create water} ability increases to ten gallons per \glossterm{power}.
 
-        \ff[12]{Greater Fire Tolerance} Your damage reduction from the \textit{fire tolerance} ability increases to twice your \glossterm{spellpower} with the \spell{aquamancy} spell.
+        \ff[12]{Greater Fire Tolerance} Your damage reduction from the \textit{fire tolerance} ability increases to twice your \glossterm{power}.
 
         \ff[15]{Greater Swim Familiarity} The Swim bonus from your \textit{swim familiarity} ability increases to \plus4.
         In addition, you take no penalties for acting underwater, except for those relating to using ranged weapons.
@@ -1497,7 +1499,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             This ability also ends if you use it again.
         \end{ability}
 
-        \ff[12]{Greater Burst Ward} When you use your \textit{burst ward} ability, you also gain damage reduction equal to your \glossterm{spellpower}.
+        \ff[12]{Greater Burst Ward} When you use your \textit{burst ward} ability, you also gain damage reduction equal to your \glossterm{power}.
 
         \ff[15]{Greater Personal Shield} The bonus from your \textit{personal shield} ability increases to \plus2.
 
@@ -1579,14 +1581,14 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \end{ability}
 
         \ff[6]{Crafting Familiarity} You gain a \plus2 bonus to all Craft skills.
-        In addition, any objects you create with the \spell{fabrication} spell gain additional hit points equal to your \glossterm{spellpower} with that spell.
+        In addition, any objects you create with the \spell{fabrication} spell gain additional hit points equal to your \glossterm{power} with that spell.
 
         \ff[9]{Potent Fabrication} You gain a \plus1 bonus to \glossterm{accuracy} with the \spell{fabrication} spell.
 
         \ff[12]{Greater Fabricate Trinket} The maximum size of object you can create with your \textit{fabricate trinket} ability increases to Medium.
 
         \ff[15]{Greater Crafting Familiarity} The Craft bonus from your \textit{crafting familiarity} ability increases to \plus4.
-        In addition, the hit points bonus increases to twice your \glossterm{spellpower} with the \spell{fabrication} spell.
+        In addition, the hit point bonus increases to twice your \glossterm{power} with the \spell{fabrication} spell.
 
         \ff[18]{Greater Potent Fabrication} The bonus from your \textit{potent fabrication} ability increases to \plus2.
     \end{feat}
@@ -1618,7 +1620,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[3]{Reshaper} As a standard action, you can spend an \glossterm{action point} to use the \textit{alter self} or \textit{alter object} ability.
         \begin{ability}{Alter Self}[\glossterm{Shaping}]
-            Make a Disguise check to alter your appearance (see \pcref{Disguise Creature}), except that you can use your spellpower in place of your Disguise skill.
+            Make a Disguise check to alter your appearance (see \pcref{Disguise Creature}), except that you can use your \glossterm{power} in place of your Disguise skill.
             You can only alter your physical body, not your clothes or equipment.
 
             This ability lasts until you use it again.
@@ -1626,15 +1628,15 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \begin{ability}{Alter Object}[\glossterm{Shaping}]
             Choose an unattended, nonmagical object you can touch.
-            You make a Craft check to alter the target (see \pcref{Craft}), except that you can use your spellpower in place of your Craft skill.
+            You make a Craft check to alter the target (see \pcref{Craft}), except that you can use your \glossterm{power} in place of your Craft skill.
             In addition, you do not need any special tools to make the check (such as an anvil and furnace).
-            However, the maximum hardness of a material you can affect with this ability is equal to your spellpower.
+            However, the maximum hardness of a material you can affect with this ability is equal to your power.
 
             % too short?
             Each time you use this ability, you can accomplish work that would take up to five minutes with a normal Craft check.
         \end{ability}
 
-        \ff[6]{Personal Regeneration} At the end of each \glossterm{action phase}, you heal hit points equal to half your \glossterm{spellpower} with the \spell{polymorph} spell.
+        \ff[6]{Personal Regeneration} At the end of each \glossterm{action phase}, you heal hit points equal to half your \glossterm{power}.
 
         \ff[9]{Potent Polymorph} You gain a \plus1 bonus to \glossterm{accuracy} with the \spell{polymorph} spell.
 
@@ -1648,7 +1650,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             In addition, the target's \glossterm{mundane} poisons, including natural attacks that inflict poison, have no effect.
         \end{ability}
 
-        \ff[15]{Greater Personal Alteration} The healing from your \textit{personal regeneration} ability increases to be equal to your \glossterm{spellpower} with the \spell{polymorph} spell.
+        \ff[15]{Greater Personal Alteration} The healing from your \textit{personal regeneration} ability increases to be equal to your \glossterm{power}.
 
         \ff[18]{Greater Potent Polymorph} The bonus from your \textit{potent polymorph} ability increases to \plus2.
     \end{feat}
@@ -1659,7 +1661,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[1]{Subspell} You learn a subspell from the \spell{pyromancy} spell.
         When you gain access to a new spell levels, you can change which subspell you know from that spell.
 
-        \ff[3]{Fire Tolerance} You gain damage reduction against fire damage equal to your \glossterm{spellpower} with the \spell{pyromancy} spell.
+        \ff[3]{Fire Tolerance} You gain damage reduction against fire damage equal to your \glossterm{power}.
 
         \ff[3]{Personal Torch} As a standard action, you can use the \textit{personal torch} ability.
         \begin{ability}{Personal Torch}
@@ -1671,7 +1673,6 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \end{ability}
 
         \ff[6]{Backdraft} Once per round, when you cast the \spell{pyromancy} spell, you can use the \textit{backdraft} ability.
-        Your \glossterm{power} with this ability is equal to your \glossterm{spellpower} with the spell you are casting.
         \begin{ability}{Backdraft}
             Make an attack vs. Reflex against everything except allies within an \areasmall radius from you.
             \hit Each target takes fire damage equal to your \glossterm{power}.
@@ -1679,8 +1680,8 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[9]{Potent Pyromancy} You gain a \plus1d bonus to damage with the \spell{pyromancy} spell.
 
-        \ff[12]{Shared Fire Tolerance} The damage reduction from your \textit{fire tolerance} ability increases to twice your \glossterm{spellpower} with the \spell{pyromancy} spell.
-        In addition, all allies within a \areamed radius emanation from you gain damage reduction against fire damage equal to your \glossterm{spellpower} with the \spell{pyromancy} spell.
+        \ff[12]{Shared Fire Tolerance} The damage reduction from your \textit{fire tolerance} ability increases to twice your \glossterm{power}.
+        In addition, all allies within a \areamed radius emanation from you gain damage reduction against fire damage equal to your \glossterm{power}.
 
         \ff[15]{Greater Backdraft} The area of your \textit{backdraft} ability increases to an \areamed radius.
 
@@ -1735,7 +1736,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             You may teleport one creature or object that you summoned with the \spell{summon} spell into an unoccupied space on stable ground within \rngmed range of you.
         \end{ability}
 
-        \ff[6]{Fortified Summoning} Creatures you create with the \spell{summon} spell have \glossterm{damage reduction} equal to your spellpower.
+        \ff[6]{Fortified Summoning} Creatures you create with the \spell{summon} spell have \glossterm{damage reduction} equal to your \glossterm{power} with that spell.
 
         \ff[9]{Potent Summoning} You gain a \plus1d bonus to damage with the \spell{summoning} spell.
 
@@ -1743,7 +1744,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         In addition, you can choose up to two creatures to teleport instead of only one.
         Each target can be teleported to a different location within range.
 
-        \ff[15]{Greater Fortified Summoning} The damage reduction from your \textit{fortified summoning} ability increases to twice your spellpower.
+        \ff[15]{Greater Fortified Summoning} The damage reduction from your \textit{fortified summoning} ability increases to twice your \glossterm{power} with that spell.
 
         \ff[18]{Greater Potent Summoning} The bonus from your \textit{potent summoning} ability increases to \plus2d.
     \end{feat}
@@ -1757,10 +1758,10 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[3]{Distant Hand} As a \glossterm{minor action}, you can use the \textit{distant hand} ability.
         \begin{ability}{Distant Hand}[\glossterm{Sustain} (minor), \glossterm{Telekinesis}]
             Choose a Medium or smaller unattended object within \rngclose range.
-            You can move it up to five feet in any direction within range, using your \glossterm{spellpower} with the \spell{telekinesis} spell instead of your Strength to determine your maximum carrying capacity.
+            You can move it up to five feet in any direction within range, using your \glossterm{power} instead of your Strength to determine your maximum carrying capacity.
 
             In addition, you can manipulate the target as if you were holding it in your hands.
-            Any attacks you make with the object or checks you make to manipulate the object have a maximum bonus equal to your \glossterm{spellpower} with the \spell{telekinesis} spell.
+            Any attacks you make with the object or checks you make to manipulate the object have a maximum bonus equal to your \glossterm{power}.
         \end{ability}
 
         \ff[6]{Forceful Telekinesis} You double the distance that you can move creatures and objects with the \spell{telekinesis} spell.
@@ -1768,7 +1769,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[6]{Telekinetic Strike} As a standard action, you can use the \textit{telekinetic strike} ability.
         \begin{ability}{Telekinetic Strike}[\glossterm{Telekinesis}]
             Make a strike with a weapon you are controlling using the \textit{distant hand} ability.
-            You use your \glossterm{spellpower} with the \spell{telekinesis} spell to determine your accuracy and damage in place of your Perception and Strength.
+            You use your \glossterm{power} to determine your damage in place of your Strength.
         \end{ability}
 
         \ff[9]{Potent Telekinesis} You gain a \plus1 bonus to \glossterm{accuracy} with the \spell{telekinesis} spell. 
@@ -1793,7 +1794,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             If the target is casting a spell or begins casting a spell this phase, and your maximum spell level is at least as high as the target's maximum spell level, their spell has no effect when it resolves.
         \end{ability}
 
-        \ff[6]{Magic Tolerance} You gain \glossterm{magic resistance} equal to 3 \add your \glossterm{spellpower} with the \spell{thaumaturgy} spell.
+        \ff[6]{Magic Tolerance} You gain \glossterm{magic resistance} equal to 5 \add your \glossterm{power}.
 
         \ff[9]{Potent Thaumaturgy} You gain a \plus1 bonus to \glossterm{accuracy} with the \spell{thaumaturgy} spell. 
 
