@@ -77,38 +77,54 @@
 
         \subsubsection{Augment Descriptions}\label{Augment Descriptions}
 
+            \augment{1}{Cryptic} The spell's visual effects and magical aura changes to mimic a different spell of your choice.
+            You may choose any combination of spell or \glossterm{subspell} you know, along with any other augments, that result in a spell of the same level or lower as the spell you are casting.
+            This affects inspection of the spell itself by any means, such as with the Spellcraft skill (see \pcref{Spellcraft}).
+            However, it does not alter the mechanical effects of the spell in any way.
+            If the spell's effects depend on visual components, the spell may fail to work if you alter the spell's visuals too much. 
+
+            \augment{1}{Selective} You may freely exclude any areas from the spell's effect.
+            However, all squares in the final area of the spell must be contiguous.
+            You cannot create split a spell's area into multiple completely separate areas.
+            \par This augment can be applied to any spell or ritual that affects an area.
+
             \augment{1}{Silent} You do not need to use \glossterm{verbal components} to cast the spell.
             \par This augment can be applied to any spell.
 
             \augment{1}{Stilled} You do not need to use \glossterm{somatic components} to cast the spell.
             \par This augment can be applied to any spell.
 
-            \augment{2}{Cryptic} The spell's visual effects and magical aura changes to mimic a different spell of your choice.
-            You may choose any combination of spell or \glossterm{subspell} you know, along with any other augments, that result in a spell of the same level or lower as the spell you are casting.
-            This affects inspection of the spell itself by any means, such as with the Spellcraft skill (see \pcref{Spellcraft}).
-            However, it does not alter the mechanical effects of the spell in any way.
-            If the spell's effects depend on visual components, the spell may fail to work if you alter the spell's visuals too much. 
+            \augment{2}{Accelerated} The ritual takes half the normal amount of time to perform.
+            \par This augment can be applied to any ritual.
 
+            % TODO: Too weak at 2? Also, touch range doesn't really exist
             \augment{2}{Extended} The ability's range increases by one step, to a maximum of \rngext.
             The steps are, in order: \rngtouch, \rngclose, \rngmed, \rnglong, and \rngext.
             This augment can be applied multiple times.
             Each time, the ability's range increases by an additional step.
             \par This augment can be applied to any spell or ritual with a range that is one of the above ranges.
 
+            % Too weak at 2, weird narrative at 1?
             \augment{2}{Giant} The ability can affect a target one size category larger.
             This augment can be applied multiple times.
             Its effects stack.
             \par This augment can be applied to any spell or ritual that that has a maximum size category of targets that it can affect.
 
+            \augment{2}{Intensified} The damage inflicted and healing granted by the ability increases by \plus1d.
+            This augment can be applied multiple times.
+            Its effects stack.
+            \par This augment can be applied to any spell or ritual that deals damage or grants healing based on a dice pool.
+
+            \augment{2}{Precise} You gain a \plus1 bonus to accuracy with the ability.
+            This augment can be applied multiple times.
+            Its effects stack.
+            \par This augment can be applied to any spell or ritual that has an attack roll.
+
             \augment{2}{Quickened} You can cast the spell as a \glossterm{minor action}.
             In exchange, you cannot take any actions during the \glossterm{action phase} or \glossterm{delayed action phase} of the next round.
             \par This augment can be applied to any spell.
 
-            \augment{2}{Selective} You may freely exclude any areas from the spell's effect.
-            However, all squares in the final area of the spell must be contiguous.
-            You cannot create split a spell's area into multiple completely separate areas.
-            \par This augment can be applied to any spell or ritual that affects an area.
-
+            % took weak at 2?
             \augment{2}{Widened} The ability's area increases by one step, to a maximum of \areahuge.
             The steps are, in order: \areasmall, \areamed, \arealarge, and \areahuge.
             Normally, a Small or Medium line is 5 ft.\ wide, while a Large or Huge line is 10 ft.\ wide.
@@ -117,31 +133,20 @@
             Each time, the ability's area increases by an additional step.
             \par This augment can be applied to any spell or ritual with an area that is one of the above areas.
 
-            \augment{3}{Accelerated} The ritual takes half the normal amount of time to perform.
-            \par This augment can be applied to any ritual.
-
-            \augment{3}{Intensified} The damage inflicted and healing granted by the ability increases by \plus1d.
-            This augment can be applied multiple times.
-            Its effects stack.
-            \par This augment can be applied to any spell or ritual that deals damage or grants healing based on a dice pool.
-
+            % too weak at 3?
             \augment{3}{Phasing} When determining whether you have \glossterm{line of sight} and \glossterm{line of effect} to a particular location with the spell, you can ignore a single solid obstacle up to five feet thick.
             This can allow you to cast spells through solid walls, though it does not grant you the ability to see through the wall.
             \par This augment can be applied to any spell with a range.
 
-            \augment{3}{Precise} You gain a \plus1 bonus to accuracy with the ability.
-            This augment can be applied multiple times.
-            Its effects stack.
-            \par This augment can be applied to any spell or ritual that has an attack roll.
-
-            % \augment{5}{Dual} The spell targets an additional creature within range.
+            % \augment{4}{Dual} The spell targets an additional creature within range.
             % This augment can be applied multiple times.
             % Its effects stack.
             % \par This augment can be applied to any spell that has a range and affects a single target of the caster's choice.
             % It cannot be applied to spells that affect a single specific target, such as the caster.
             % In addition, it cannot be applied to \glossterm{Attune} spells.
 
-            \augment{6}{Echoing} During the \glossterm{delayed action phase} of the next round, the spell's effect occurs again.
+            % too weak at 4?
+            \augment{4}{Echoing} During the \glossterm{delayed action phase} of the next round, the spell's effect occurs again.
             All choices you made for the original casting of the spell are made identically for the repeat casting.
             It affects the same area, targets, and so on.
 
