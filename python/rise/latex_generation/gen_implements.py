@@ -35,7 +35,7 @@ def generate_implements():
         material_type='staff',
         tags=['Life'],
         description="""
-            Whenever you cast a spell other than a \\glossterm<cantrip>, you heal hit points equal to your \\glossterm<spellpower> with the spell cast.
+            Whenever you cast a spell other than a \\glossterm<cantrip>, you heal hit points equal to your \\glossterm<power> with the spell cast.
         """,
         short_description="Heals you when casting spells",
     ))
@@ -46,33 +46,45 @@ def generate_implements():
         material_type='staff',
         tags=['Life'],
         description="""
-            Whenever you cast a spell other than a \\glossterm<cantrip>, you heal hit points equal to twice your \\glossterm<spellpower> with the spell cast.
+            Whenever you cast a spell other than a \\glossterm<cantrip>, you heal hit points equal to twice your \\glossterm<power> with the spell cast.
         """,
         short_description="Greatly heals you when casting spells",
     ))
 
     implements.append(MagicItem(
         name="Wand of Spell Focus",
-        level=7,
+        level=4,
         material_type='wand',
         tags=['Mystic'],
         description="""
-            You gain a +1 \\glossterm<magic bonus> to spellpower with a particular spell and all of its subspells.
+            You gain a +1 \\glossterm<magic bonus> to \\glossterm<power> with a particular spell and all of its subspells.
             Many \\textit<wands of spell focus> exist, each for different spells.
         """,
-        short_description="Grants +1 spellpower with a single spell",
+        short_description="Grants +1 power with a single spell",
     ))
 
     implements.append(MagicItem(
         name="Wand of Spell Focus, Greater",
-        level=15,
+        level=10,
         material_type='wand',
         tags=['Mystic'],
         description="""
-            You gain a +2 \\glossterm<magic bonus> to spellpower with a particular spell and all of its subspells.
+            You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with a particular spell and all of its subspells.
             Many \\textit<greater wands of spell focus> exist, each for different spells.
         """,
-        short_description="Grants +2 spellpower with a single spell",
+        short_description="Grants +2 power with a single spell",
+    ))
+
+    implements.append(MagicItem(
+        name="Wand of Spell Focus, Supreme",
+        level=16,
+        material_type='wand',
+        tags=['Mystic'],
+        description="""
+            You gain a +3 \\glossterm<magic bonus> to \\glossterm<power> with a particular spell and all of its subspells.
+            Many \\textit<supreme wands of spell focus> exist, each for different spells.
+        """,
+        short_description="Grants +3 power with a single spell",
     ))
 
     return implements

@@ -97,14 +97,14 @@ def generate_spells():
         header=Header('You create a barrier around your ally that resists physical intrusion.'),
         effects=Effects('Cantrip', """
             Choose a willing creature in \\rngclose range.
-            The target gains \\glossterm<damage reduction> equal to your spellpower against \\glossterm<physical damage>.
+            The target gains \\glossterm<damage reduction> equal to your \\glossterm<power> against \\glossterm<physical damage>.
         """, tags=['Sustain (standard)']),
         schools=['Abjuration'],
         lists=['Arcane'],
         subspells=[
             Subspell('Ablative Shield', 1, """
                 Choose a willing creature in \\rngclose range.
-                The target gains \\glossterm<damage reduction> equal to your spellpower against all damage except for \\glossterm<energy damage>.
+                The target gains \\glossterm<damage reduction> equal to your \\glossterm<power> against all damage except for \\glossterm<energy damage>.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (shared)', 'Shielding']),
@@ -135,7 +135,7 @@ def generate_spells():
                 This subspell is from both the Abjuration and Vivimancy schools and gains the \\glossterm<Life> tag in addition to the tags from the \\spell<ablative shield> spell.
             """),
             Subspell('Empowered Shield', 5, """
-                This subspell functions like the \\spell<ablative shield> spell, except that the damage reduction increases by an amount equal to your spellpower.
+                This subspell functions like the \\spell<ablative shield> spell, except that the damage reduction increases by an amount equal to your \\glossterm<power>.
             """),
             Subspell("Deflective Shield", 4, """
                 This subspell functions like the \\spell<ablative shield> spell, except that the target also gains a +1 \\glossterm<magic bonus> to Armor defense.
@@ -201,13 +201,13 @@ def generate_spells():
             Subspell('Web', 3, """
                 You fill a \\areasmall radius zone in \\rngclose range with webs.
                 The webs make the area \\glossterm<difficult terrain>.
-                Each 5-ft.\\ square of webbing has hit points equal to your spellpower, and is \\glossterm<vulnerable> to fire.
+                Each 5-ft.\\ square of webbing has hit points equal to your \\glossterm<power>, and is \\glossterm<vulnerable> to fire.
 
                 In addition, you make an attack vs. Reflex against all creatures in the area when the spell is cast.
                 \\hit Each target is \\immobilized as long as it has webbing from this ability in its space.
             """, tags=['Manifestation', 'Sustain (minor)']),
             Subspell("Reinforced Webbing", 5, f"""
-                This subspell functions like the \\textit<web> subspell, except that each 5-ft.\\ square of webbing gains additional hit points equal to your spellpower.
+                This subspell functions like the \\textit<web> subspell, except that each 5-ft.\\ square of webbing gains additional hit points equal to your \\glossterm<power>.
                 In addition, the webs are no longer \\glossterm<vulnerable> to fire damage.
             """),
             Subspell('Poison', 2, """
@@ -226,7 +226,7 @@ def generate_spells():
         name='Thaumaturgy',
         short_description="Suppress and manipulate magical effects",
         effects=Effects('Cantrip', """
-            Make a Spellpower attack against one creature within \\rngmed range.
+            Make an attack against one creature within \\rngmed range.
             The attack result is applied to every \\glossterm<magical> effect on the target.
             The DR for each effect is equal to 5 + the \\glossterm<power> of that effect.
             \\hit Each effect is \\glossterm<suppressed>.
@@ -235,7 +235,7 @@ def generate_spells():
         lists=['Arcane', 'Divine', 'Nature'],
         subspells=[
             Subspell('Suppress Magic', 1, """
-                Make a Spellpower attack against one creature, object, or magical effect within \\rngmed range.
+                Make an attack against one creature, object, or magical effect within \\rngmed range.
                 If you target a creature or object, the attack result is applied to every \\glossterm<magical> effect on the target.
                 If you target a magical effect directly, the attack result is applied against the effect itself.
                 The DR for each effect is equal to 5 + the \\glossterm<power> of that effect.
@@ -245,14 +245,14 @@ def generate_spells():
                 Make an attack vs. Mental against one Large or smaller magical object in \\rngmed range.
                 \\hit One of the target's magic auras is altered (see \pcref{Spellcraft}).
                 You can change the school and descriptors of the aura.
-                In addition, you can decrease the spellpower of the aura by up to half your spellpower, or increase the spellpower of the aura up to a maximum of your spellpower.
+                In addition, you can decrease the \\glossterm<power> of the aura by up to half your power, or increase the power of the aura up to a maximum of your power.
             """, tags=['Attune', 'Mystic']),
             Subspell('Suppress Item', 1, """
                 Make an attack vs. Mental against one Large or smaller magical object in \\rngmed range.
                 \\hit All magical properties the target has are \\glossterm<suppressed>.
             """, tags=['Mystic', 'Sustain (minor)']),
             Subspell('Dismissal', 3, """
-                Make a Spellpower attack against one creature or object within \\rngmed range.
+                Make an attack against one creature or object within \\rngmed range.
                 If the target is an effect of an ongoing \\glossterm<magical> ability, such as a summoned monster or created object, the DR is equal to the \\glossterm<power> of the ability.
                 Otherwise, this subspell has no effect.
                 \\hit The target is treated as if the ability that created it was \\glossterm<dismissed>.
@@ -270,14 +270,14 @@ def generate_spells():
             """, tags=['Mystic']),
             Subspell('Enhance Magic', 4, """
                 Choose a willing creature within \\rngmed range.
-                The target gains a +1 enhancement bonus to \\glossterm<spellpower>.
+                The target gains a +1 enhancement bonus to \\glossterm<power> with spells.
             """, tags=['Attune (shared)', 'Mystic']),
             Subspell('Greater Enhance Magic', 8, """
                 This subspell functions like the \\textit<enhance magic> subspell, except that the bonus is increased to +2.
             """, tags=['Attune (shared)', 'Mystic']),
             Subspell('Resist Magic', 6, """
                 Choose a willing creature within \\rngmed range.
-                The target gains \\glossterm<magic resistance> equal to 5 + your \\glossterm<spellpower>.
+                The target gains \\glossterm<magic resistance> equal to 5 + your \\glossterm<power>.
             """),
             Subspell('Antimagic Field', 7, """
                 All other magical abilities and objects are \\glossterm<suppressed> within a \\areasmall radius emanation from you.
@@ -415,7 +415,7 @@ def generate_spells():
             """),
             Subspell('Dampen', 2, """
                 Choose up to five willing creatures within \\rngclose range.
-                Each target gains damage reduction against fire damage equal to twice your \\glossterm<spellpower>.
+                Each target gains damage reduction against fire damage equal to twice your \\glossterm<power>.
             """, tags=['Attune (shared)']),
             Subspell('Raging River', 4, """
                 This subspell functions like the \\spell<crushing wave> subspell, except that it gains the \\glossterm<Sustain> (standard) tag.
@@ -468,13 +468,13 @@ def generate_spells():
                 \\hit The target is \\frightened by you as a \\glossterm<condition>.
                 \\crit The target is \\panicked by you as a \\glossterm<condition>.
             """, tags=['Emotion', 'Mind']),
-            # Math: at 1st level, spellpower is probably ~2, so standard damage is probably 2d6.
+            # Math: at 1st level, power is probably ~2, so standard damage is probably 2d6.
             # Casting this spell and then two standard damage spells deals 4d6+2d8 = 23 damage
             # casting three standard damage spells deals 6d6 = 21 damage
             # So when fighting alone, this takes 3 rounds of effectiveness to be equal
             # in power to a simple damage spell.
 
-            # At 20th level, spellpower is ~22, so standard damage is 9d10
+            # At 20th level, power is ~22, so standard damage is 9d10
             # Casting this spell and then two standard damage spells deals 18d10+7d10=25d10
             # Casting three standard damage spells deals 27d10
             Subspell("Agony", 1, """
@@ -644,7 +644,7 @@ def generate_spells():
             """),
             Subspell("Divine Shield", 6, """
                 Choose a willing creature within \\rngclose range.
-                The target gains \\glossterm<damage reduction> equal to your spellpower against all damage.
+                The target gains \\glossterm<damage reduction> equal to your \\glossterm<power> against all damage.
 
                 You can cast this subspell as a \\glossterm<minor action>.
             """),
@@ -731,7 +731,7 @@ def generate_spells():
                 The pool of water targeted must be at least as large as the item you create.
 
                 The item functions like a normal item of its type, except that it is more fragile.
-                It has hit points equal to twice your spellpower, does not have any \\glossterm<hardness>, and is \\glossterm<vulnerable> to fire damage.
+                It has hit points equal to twice your \\glossterm<power>, does not have any \\glossterm<hardness>, and is \\glossterm<vulnerable> to fire damage.
                 If the item would take cold damage, it instead heals that many hit points.
 
                 Whenever a creature wearing armor created in this way takes physical damage, cold damage, or fire damage, that damage is also dealt to the armor.
@@ -739,7 +739,7 @@ def generate_spells():
                 If the item loses all of its hit points, this effect is \\glossterm<dismissed>.
             """, tags=['Attune', 'Cold']),
             Subspell('Sturdy Icecraft', 4, """
-                This subspell functions like the \\subspell<icecraft> subspell, except that the item created has hit points equal to four times your spellpower.
+                This subspell functions like the \\subspell<icecraft> subspell, except that the item created has hit points equal to four times your \\glossterm<power>.
                 In addition, you can create heavy body armor.
             """),
             Subspell('Enhanced Icecraft', 6, """
@@ -950,14 +950,14 @@ def generate_spells():
             Subspell('Summon Monster', 1, """
                 You summon a creature in an unoccupied square within \\rngmed range.
                 It visually appears to be a common Small or Medium animal of your choice, though in reality it is a manifestation of magical energy.
-                Regardless of the appearance and size chosen, the creature has hit points equal to twice your spellpower.
-                All of its defenses are equal to your 4 \\add your spellpower, and its \\glossterm<land speed> is equal to 30 feet.
+                Regardless of the appearance and size chosen, the creature has hit points equal to twice your \\glossterm<power>.
+                All of its defenses are equal to your 4 \\add your \\glossterm<power>, and its \\glossterm<land speed> is equal to 30 feet.
 
                 Each round, you choose the creature's actions.
                 There are only two actions it can take.
                 As a move action, it can move as you direct.
                 As a standard action, it can make a melee \\glossterm{strike} against a creature it threatens.
-                Its accuracy is equal to your spellpower.
+                Its accuracy is equal to your \\glossterm<accuracy>.
                 If it hits, it deals \\glossterm<standard damage> -2d.
                 The type of damage dealt by this attack depends on the creature's appearance.
                 Most animals bite or claw their foes, which deals bludgeoning and slashing damage.
@@ -1006,7 +1006,7 @@ def generate_spells():
                 At the end of each round, if the sensor is does not have \\glossterm<line of effect> from you, it is destroyed.
             """, tags=['Attune', 'Scrying']),
             Subspell('Greater Alarm', 3, """
-                This subspell functions like the \\textit<alarm> subspell, except that the sensor gains 100 ft.\ \\glossterm<darkvision> and its Awareness bonus is equal to your \\glossterm<spellpower>.
+                This subspell functions like the \\textit<alarm> subspell, except that the sensor gains 100 ft.\ \\glossterm<darkvision> and its Awareness bonus is equal to your \\glossterm<power>.
             """),
             Subspell("Auditory Eye", 2, """
                 This subspell functions like the \\spell<arcane eye> subspell, except that you can you can also hear through the sensor.
@@ -1307,23 +1307,23 @@ def generate_spells():
             """),
             Subspell("Barkskin", 2, """
                 Choose a willing creature within \\rngclose range.
-                The target gains \\glossterm{damage reduction} equal to your spellpower against damage dealt by \\glossterm<physical attacks>.
+                The target gains \\glossterm<damage reduction> equal to your \\glossterm<power> against damage dealt by \\glossterm<physical attacks>.
                 In addition, it is \\glossterm<vulnerable> to fire damage.
 
                 You can cast this subspell as a \\glossterm<minor action>.
             """, tags=['Attune (shared)']),
             Subspell('Regeneration', 4, """
                 Choose a willing creature within \\rngclose range.
-                A the end of each round, the target heals hit points equal to your \\glossterm<spellpower>.
+                A the end of each round, the target heals hit points equal to your \\glossterm<power>.
             """, tags=['Attune (shared)']),
             Subspell('Greater Regeneration', 8, """
-                This subspell functions like the \\textit<regeneration> subspell, except that the healing is equal to twice your \\glossterm<spellpower>.
+                This subspell functions like the \\textit<regeneration> subspell, except that the healing is equal to twice your \\glossterm<power>.
             """),
             Subspell("Stoneskin", 3, """
                 This subspell functions like the \\textit<barkskin> subspell, except that the target becomes \\glossterm<vulnerable> to damage from adamantine weapons instead of fire damage.
             """),
             Subspell("Ironskin", 7, """
-                This subspell functions like the \\textit<stoneskin> subspell, except that the damage reduction is equal to twice your spellpower.
+                This subspell functions like the \\textit<stoneskin> subspell, except that the damage reduction is equal to twice your \\glossterm<power>.
             """),
             Subspell("Enlarge", 3, """
                 Choose a Large or smaller willing creature within \\rngclose range.
@@ -1558,12 +1558,12 @@ def generate_spells():
                 A melee weapon that you are proficient with appears in an unoccupied square within \\rngmed range.
                 The weapon floats about three feet off the ground, and is sized appropriately for a creature of your size.
                 The specific weapon you choose affects the type of damage it deals.
-                Regardless of the weapon chosen, it has hit points equal to twice your spellpower.
-                All of its defenses are equal to 3 \\add your spellpower, and it has a 30 foot fly speed with good maneuverability, though it cannot travel farther than five feet above the ground.
+                Regardless of the weapon chosen, it has hit points equal to twice your \\glossterm<power>.
+                All of its defenses are equal to 3 \\add your \\glossterm<power>, and it has a 30 foot fly speed with good maneuverability, though it cannot travel farther than five feet above the ground.
 
                 Each round, the weapon automatically moves towards the creature closest to it during the \\glossterm<movement phase>.
                 During the \\glossterm<action phase>, it makes a melee \\glossterm<strike> against a random creature adjacent to it.
-                Its accuracy is equal to your spellpower.
+                Its accuracy is equal to your \\glossterm<accuracy>.
                 If it hits, it deals \\glossterm<standard damage> -1d.
             """, tags=['Manifestation', 'Sustain (minor)']),
             Subspell('Blade Perimeter', 3, """
@@ -1587,7 +1587,7 @@ def generate_spells():
 
                 It cannot move, and makes ranged \\glossterm<strikes> instead of melee strikes.
                 Its attacks have a maximum range of 100 feet.
-                Its attacks deal piercing damage, and its hit points are equal to three times your spellpower.
+                Its attacks deal piercing damage, and its hit points are equal to three times your \\glossterm<power>.
                 In addition, the ballista attacks the creature farthest from it, instead of the creature closest to it.
             """),
             Subspell("Create Ballista, Dual Track", 6, """
