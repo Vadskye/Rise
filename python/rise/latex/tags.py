@@ -34,7 +34,6 @@ valid_tags = set([
     'Subtle',
     'Sustain (standard)',
     'Sustain (minor)',
-    'Telekinesis',
     'Teleportation',
     'Temporal',
     'Trap',
