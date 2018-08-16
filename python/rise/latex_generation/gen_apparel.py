@@ -11,7 +11,6 @@ def generate_armor():
         name='Shield of Arrow Catching',
         level=5,
         material_type='shield',
-        tags=['Telekinesis'],
         description="""
             Whenever a creature within a \\areamed radius emanation from you would be attacked by a ranged weapon, the attack is redirected to target you instead.
             Resolve the attack as if it had initially targeted you, except that the attack is not affected by cover or concealment.
@@ -23,7 +22,6 @@ def generate_armor():
     apparel.append(MagicItem(
         name='Shield of Arrow Catching, Greater',
         level=10,
-        tags=['Telekinesis'],
         material_type='shield',
         description="""
             This item functions like the \\mitem<shield of arrow catching> item, except that it affects a \\arealarge radius from you.
@@ -35,7 +33,6 @@ def generate_armor():
     apparel.append(MagicItem(
         name='Shield of Boulder Catching',
         level=8,
-        tags=['Telekinesis'],
         material_type='shield',
         description="""
             This item functions like the \\mitem<shield of arrow catching> item, except that it can affect projectile and thrown objects of up to Large size.
@@ -46,7 +43,6 @@ def generate_armor():
     apparel.append(MagicItem(
         name="Shield of Arrow Deflection",
         level=2,
-        tags=['Telekinesis'],
         material_type='shield',
         description="""
             As a \\glossterm<minor action>, you can activate this shield.
@@ -59,7 +55,6 @@ def generate_armor():
     apparel.append(MagicItem(
         name="Shield of Arrow Deflection, Greater",
         level=8,
-        tags=['Telekinesis'],
         material_type='shield',
         description="""
             You gain a +5 \\glossterm<magic bonus> to Armor defense against ranged \\glossterm<physical attacks> from weapons or projectiles that are Small or smaller.
@@ -70,7 +65,6 @@ def generate_armor():
     apparel.append(MagicItem(
         name="Shield of Boulder Deflection",
         level=6,
-        tags=['Telekinesis'],
         material_type='shield',
         description="""
             This item functions like the \\mitem<shield of arrow deflection> item, except that it can affect weapons and projectiles of up to Large size.
@@ -81,7 +75,6 @@ def generate_armor():
     apparel.append(MagicItem(
         name="Shield of Boulder Deflection, Greater",
         level=12,
-        tags=['Telekinesis'],
         material_type='shield',
         description="""
             This item functions like the \\mitem<greater shield of arrow deflection> item, except that it can affect weapons and projectiles of up to Large size.
@@ -313,7 +306,6 @@ def generate_worn():
         name="Bracers of Repulsion",
         level=4,
         material_type='bracer',
-        tags=['Telekinesis'],
         description="""
             As a standard action during the \\glossterm<action phase>, you can spend an \\glossterm<action point> to activate these bracers.
             If you do, they emit a telekinetic burst of force during the \\glossterm<delayed action phase> that targets objects and enemies within a \\areamed radius burst from you.
@@ -329,7 +321,6 @@ def generate_worn():
         name="Bracers of Repulsion, Greater",
         level=8,
         material_type='bracer',
-        tags=['Telekinesis'],
         description="""
             This item functions like the \\mitem<bracers of repulsion> item, except that it targets everything within a \\arealarge radius burst.
         """,
@@ -372,7 +363,6 @@ def generate_worn():
         name="Gauntlet of the Ram",
         level=2,
         material_type='gauntlet',
-        tags=['Telekinesis'],
         description="""
             If you hit on a \\glossterm<strike> with this gauntlet during the \\glossterm<action phse>, you can attempt to \\glossterm<shove> your foe during the \\glossterm<delayed action phase>.
             Making a strike with this gauntlet is equivalent to an \\glossterm<unarmed attack>.
@@ -385,7 +375,6 @@ def generate_worn():
         name="Gauntlet of the Ram, Greater",
         level=7,
         material_type='gauntlet',
-        tags=['Telekinesis'],
         description="""
             This item functions like the \\mitem<gauntlet of the ram>, except that you gain a bonus to the \\glossterm<shove> attack equal to the damage you dealt with the \\glossterm<strike>.
         """,

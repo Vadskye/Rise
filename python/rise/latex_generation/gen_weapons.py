@@ -202,7 +202,6 @@ def generate_weapons():
         name="Forceful",
         level=6,
         material_type='weapon',
-        tags=['Telekinesis'],
         description="""
             This weapon feels heavy in the hand.
             As a \\glossterm<minor action>, you can intensify the weapon's heft.
@@ -217,7 +216,6 @@ def generate_weapons():
         name="Forceful, Greater",
         level=12,
         material_type='weapon',
-        tags=['Telekinesis'],
         description="""
             This weapon feels heavy in the hand.
             When you make a \\glossterm<strike> with this weapon, you can also use your attack result as a \\glossterm<shove> attack agsint the target.
