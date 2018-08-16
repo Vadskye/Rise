@@ -31,6 +31,38 @@ def generate_rituals():
     ))
 
     rituals.append(Spell(
+        name="Fortify",
+        base_level=1,
+        header=Header("You fortify a part of a structure, increasing its durability."),
+        effects=Effects('Fortify', """
+            Choose an unattended, nonmagical object or part of an object of up to Large size.
+            Unlike most abilities, this ritual can affect individual parts of a whole object.
+
+            The target gains a +5 \\glossterm<magic bonus> to \\glossterm<hardness>.
+            If the target is moved, this effect ends.
+            Otherwise, it lasts for one year.
+
+            This ritual takes one hour to perform.
+        """),
+        schools=['Transmutation'],
+        lists=['Arcane', 'Divine', 'Nature'],
+        subspells=[
+            Subspell('Enduring Fortify', 3, """
+                This subritual functions like the \\spell<fortify> ritual, except that the effect lasts for one hundred years.
+            """),
+            Subspell('Greater Enduring Fortify', 5, """
+                This subritual functions like the \\spell<greater fortify> subritual, except that the effect lasts for one hundred years.
+            """),
+            Subspell('Greater Fortify', 3, """
+                This subritual functions like the \\spell<fortify> ritual, except \\glossterm<hardness> bonus increases to 10.
+            """),
+            Subspell('Supreme Fortify', 6, """
+                This subritual functions like the \\spell<fortify> ritual, except \\glossterm<hardness> bonus increases to 15.
+            """),
+        ],
+    ))
+
+    rituals.append(Spell(
         name="Mystic Lock",
         base_level=2,
         effects=Effects('Mystic Lock', """
