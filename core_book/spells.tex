@@ -186,6 +186,11 @@
 
 \section{Spell Mechanics}\label{Spell Mechanics}
 
+    \subsection{Action Points}
+        Subspells normally cost an \glossterm{action point} to cast.
+        Subspells with the \glossterm{Attune} tag do not cost action points to cast, but require a creature to attune to the subspell's effect, which costs an action point.
+        For details, see \pcref{Attunement}.
+
     \subsection{Cantrips}\label{Cantrips}
         Every spell can be cast as a \glossterm{cantrip}.
         You do not have to spend an action point to cast a spell as a cantrip.
@@ -206,6 +211,11 @@
         For example, if you try to cast a spell that only affects living creatures on a creature that is undead, the spell would be miscast.
 
         \parhead{Voluntary Miscasting} At the start of each phase while you are casting a spell, you can choose to stop casting the spell, causing you to \glossterm{miscast} it instead.
+
+        % TODO: This may be more clear if minor + no miscast becomes a tag.
+        % Also, would it be better to prohibit miscasts on spells that don't cost action points?
+        \parhead{Minor Action Spells} Spells that require a \glossterm{minor action} to cast are not miscast if your concentration is broken while casting the spell.
+        Instead, the spell simply fizzles without any effect.
 
     \subsection{Concentration}\label{Concentration}
         Every spell requires concentration to cast.
@@ -287,6 +297,9 @@
         Unless otherwise specified, performing a ritual requires spending a single \glossterm{action point}.
         Some rituals require multiple action points to complete.
         Other creatures can supply action points to help you perform rituals; see Ritual Participants, below.
+
+        Rituals with the \glossterm{Attune} tag do not cost action points to perform, but require a ritual participant to attune to the ritual's effect, which costs an action point.
+        For details, see \pcref{Attunement}.
 
         If you are distracted during the ritual, you must make a Concentration check, just as if you were casting a spell of the ritual's level.
         If you fail, the ritual is ruined and you must start from the beginning.

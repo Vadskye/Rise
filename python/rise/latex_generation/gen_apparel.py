@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import click
+from rise.latex_generation.book_path import book_path
 from rise.latex.magic_item import MagicItem
 from rise.latex.util import latexify
 
@@ -1128,18 +1129,24 @@ def generate_apparel_table():
 def sanity_check(armor, worn):
     pass
 
+
+def write_to_file():
+    apparel_latex = generate_apparel_latex()
+    apparel_table = generate_apparel_table()
+    with open(book_path('apparel.tex'), 'w') as apparel_description_file:
+        apparel_description_file.write(apparel_latex)
+    with open(book_path('apparel_table.tex'), 'w') as apparel_table_file:
+        apparel_table_file.write(apparel_table)
+
+
 @click.command()
 @click.option('-c', '--check/--no-check', default=False)
 @click.option('-o', '--output/--no-output', default=False)
 def main(output, check):
-    apparel_latex = generate_apparel_latex()
-    if output is None:
-        print(apparel_latex)
+    if output:
+        write_to_file()
     else:
-        with open('../../core_book/apparel.tex', 'w') as apparel_description_file:
-            apparel_description_file.write(apparel_latex)
-        with open('../../core_book/apparel_table.tex', 'w') as apparel_table_file:
-            apparel_table_file.write(generate_apparel_table())
+        print(generate_apparel_latex())
 
 
 if __name__ == "__main__":

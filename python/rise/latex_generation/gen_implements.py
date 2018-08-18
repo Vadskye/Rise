@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import click
+from rise.latex_generation.book_path import book_path
 from rise.latex.magic_item import MagicItem
 from rise.latex.util import latexify
 
@@ -128,18 +129,24 @@ def generate_implement_table():
         \\end<longtabuwrapper>
     """)
 
+
+def write_to_file():
+    implement_latex = generate_implement_latex()
+    implement_table = generate_implement_table()
+    with open(book_path('implements.tex'), 'w') as implement_description_file:
+        implement_description_file.write(implement_latex)
+    with open(book_path('implements_table.tex'), 'w') as implement_table_file:
+        implement_table_file.write(implement_table)
+
+
 @click.command()
 @click.option('-c', '--check/--no-check', default=False)
 @click.option('-o', '--output/--no-output', default=False)
 def main(output, check):
-    implement_latex = generate_implement_latex()
-    if output is None:
-        print(implement_latex)
+    if output:
+        write_to_file()
     else:
-        with open('../../core_book/implements.tex', 'w') as implement_description_file:
-            implement_description_file.write(implement_latex)
-        with open('../../core_book/implements_table.tex', 'w') as implement_table_file:
-            implement_table_file.write(generate_implement_table())
+        print(generate_implement_latex())
 
 
 if __name__ == "__main__":

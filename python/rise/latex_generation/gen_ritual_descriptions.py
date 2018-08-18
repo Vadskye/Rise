@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import click
+from rise.latex_generation.book_path import book_path
 from rise.latex.effects import Effects
 from rise.latex.header import Header
 from rise.latex.spell import Spell
@@ -11,7 +12,7 @@ def generate_rituals():
     rituals = []
 
     rituals.append(Spell(
-        base_level=3,
+        base_level=2,
         name="Animate Dead",
         header=Header("You bind a fragment of a dead creature's soul to its corpse, reanimating it as an undead skeleton or zombie."),
         effects=Effects('Animate Dead', """
@@ -24,7 +25,7 @@ def generate_rituals():
             If a skeleton is made from an intact corpse, the flesh quickly falls off the animated bones.
 
             This ritual takes one hour to perform.
-        """, tags=['Attune (multiple)']),
+        """, tags=['Attune (ritual)']),
         schools=['Vivimancy'],
         lists=['Arcane', 'Divine'],
         subspells=[],
@@ -38,6 +39,7 @@ def generate_rituals():
             Choose an unattended, nonmagical object or part of an object of up to Large size.
             Unlike most abilities, this ritual can affect individual parts of a whole object.
 
+            % How should this affect Strength break DRs?
             The target gains a +5 \\glossterm<magic bonus> to \\glossterm<hardness>.
             If the target is moved, this effect ends.
             Otherwise, it lasts for one year.
@@ -76,7 +78,7 @@ def generate_rituals():
             If you use this ability multiple times, you can attune to it each time.
 
             This ritual takes one minute to perform.
-        """, tags=['Attune (multiple)']),
+        """, tags=['Attune (ritual)']),
         schools=['Transmutation'],
         lists=['Arcane', 'Divine', 'Nature'],
         subspells=[
@@ -121,7 +123,7 @@ def generate_rituals():
             It treats the edge of the area as an impassable barrier, preventing the effects of any of its abilities from extending outside that area.
 
             This ritual takes one hour to perform.
-        """, tags=['Attune']),
+        """, tags=['Attune (ritual)']),
         schools=['Abjuration'],
         lists=['Arcane', 'Divine'],
         subspells=[
@@ -142,7 +144,7 @@ def generate_rituals():
             Holy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck undead creature or an evil outsider.
 
             This ritual takes one minute to perform.
-        """, tags=['Attune (multiple)']),
+        """, tags=['Attune (ritual)']),
         schools=['Channeling'],
         lists=['Divine'],
         subspells=[],
@@ -158,7 +160,7 @@ def generate_rituals():
             Unholy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck good outsider.
 
             This ritual takes one minute to perform.
-        """, tags=['Attune (multiple)']),
+        """, tags=['Attune (ritual)']),
         schools=['Channeling'],
         lists=['Divine'],
         subspells=[],
@@ -175,7 +177,7 @@ def generate_rituals():
             It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
 
             This ritual takes one hour to perform.
-        """, tags=['Attune (multiple)', 'Manifestation']),
+        """, tags=['Attune (ritual)', 'Manifestation']),
         schools=['Conjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
         subspells=[],
@@ -246,7 +248,7 @@ def generate_rituals():
             This does not protect the target from fire or cold damage.
 
             This ritual takes one minute to perform.
-        """, tags=['Attune (multiple)']),
+        """, tags=['Attune (ritual)']),
         schools=['Abjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
     ))
@@ -266,7 +268,7 @@ def generate_rituals():
             After the target explodes in this way, the ritual is \\glossterm<dismissed>.
             If the target object is destroyed or rendered illegible, the ritual is dismissed without exploding.
             This ritual takes one hour to perform.
-        """, tags=['Attune (multiple)', 'Trap']),
+        """, tags=['Attune (ritual)', 'Trap']),
         schools=['Evocation'],
         lists=['Arcane'],
     ))
@@ -341,7 +343,7 @@ def generate_rituals():
             Additionally, this can make transporting a fallen comrade more pleasant.
 
             This ritual takes one minute to perform.
-        """, tags=['Attune (multiple)', 'Temporal']),
+        """, tags=['Attune (ritual)', 'Temporal']),
         schools=['Transmutation'],
         lists=['Arcane', 'Divine', 'Nature'],
     ))
@@ -372,7 +374,7 @@ def generate_rituals():
             The target glows like a torch, shedding bright light in a \\areamed radius (and dim light for an additional 20 feet).
 
             This ritual takes one minute to perform.
-        """, tags=['Attune (multiple)', 'Light', 'Sensation']),
+        """, tags=['Attune (ritual)', 'Light', 'Sensation']),
         schools=['Illusion'],
         lists=['Arcane', 'Divine', 'Nature'],
     ))
@@ -391,7 +393,7 @@ def generate_rituals():
             After the message is spoken, this effect is \\glossterm<dismissed>.
 
             This ritual takes 24 hours to perform.
-        """, tags=['Attune (multiple)', 'Sensation']),
+        """, tags=['Attune (ritual)', 'Sensation']),
         schools=['Illusion'],
         lists=['Arcane'],
     ))
@@ -404,7 +406,7 @@ def generate_rituals():
             This ritual creates your choice of a light horse or a pony to serve as a mount.
             The creature appears in an unoccupied location within \\rngclose range.
             It comes with a bit and bridle and a riding saddle, and will readily accept any creature as a rider.
-        """, tags=['Attune (multiple)', 'Manifestation']),
+        """, tags=['Attune (ritual)', 'Manifestation']),
         schools=['Conjuration'],
         lists=['Arcane'],
     ))
@@ -519,7 +521,7 @@ def generate_rituals():
             After you have read an inscription in this way, you are able to read that particular writing without the use of this ritual.
 
             This ritual takes one minute to perform.
-        """, tags=['Attune']),
+        """, tags=['Attune (ritual)']),
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
     ))
@@ -738,7 +740,7 @@ def generate_rituals():
             If you stop attuning to it, the ritual is \\glossterm<dismissed> as usual.
 
             This ritual takes 24 hours to perform.
-        """, tags=['Attune (shared)']),
+        """, tags=['Attune (ritual; see text)']),
         schools=['Divination'],
         lists=['Arcane'],
         subspells=[
@@ -805,7 +807,7 @@ def generate_rituals():
             If you use this ability multiple times, you can attune to it each time.
 
             This ritual takes one minute to perform.
-        """, tags=['Attune (multiple)']),
+        """, tags=['Attune (ritual)']),
         schools=['Transmutation'],
         lists=['Arcane', 'Divine', 'Nature'],
     ))
@@ -840,10 +842,8 @@ def generate_rituals():
 
     return sorted(rituals, key=lambda ritual: ritual.name)
 
-@click.command()
-@click.option('-c', '--check/--no-check', default=False)
-@click.option('-o', '--output/--no-output', default=False)
-def main(output, check):
+
+def generate_ritual_latex():
     rituals = generate_rituals()
     ritual_texts = []
     for ritual in rituals:
@@ -851,12 +851,23 @@ def main(output, check):
             ritual_texts.append(ritual.to_latex())
         except Exception as e:
             raise Exception(f"Error converting ritual '{ritual.name}' to LaTeX") from e
-    ritual_text = latexify('\n'.join(ritual_texts))
-    if output is None:
-        print(ritual_text)
+    return latexify('\n'.join(ritual_texts))
+
+
+def write_to_file():
+    ritual_latex = generate_ritual_latex()
+    with open(book_path('ritual_descriptions.tex'), 'w') as ritual_descriptions_file:
+        ritual_descriptions_file.write(ritual_latex)
+
+
+@click.command()
+@click.option('-c', '--check/--no-check', default=False)
+@click.option('-o', '--output/--no-output', default=False)
+def main(output, check):
+    if output:
+        write_to_file()
     else:
-        with open('../../core_book/ritual_descriptions.tex', 'w') as ritual_descriptions_file:
-            ritual_descriptions_file.write(ritual_text)
+        print(generate_ritual_latex())
 
 if __name__ == "__main__":
     main()
