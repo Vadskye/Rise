@@ -32,6 +32,9 @@ It defines how attributes work and explains how to make physical attacks in comb
             Many attacks have special effects on critical hits.
             Unless its critical hit effects are otherwise noted, any attack that deals damage deals double that damage on a critical hit.
 
+            Objects are not normally subject to critical hits.
+            Some creatures are also not subject to critical hits, as noted in their descriptions.
+
     \subsection{Checks}\label{Checks}
         Checks are required to perform actions that have a chance of failure that are not attacks.
         For example, climbing a wall or remembering an obscure piece of trivia may require a check.
@@ -1347,7 +1350,7 @@ It defines how attributes work and explains how to make physical attacks in comb
                 Feint       & Reflex               & Leave foe vulnerable to attacks \\
                 Grapple     & Fortitude and Reflex & Wrestle with a foe              \\
                 Shove       & Fortitude            & Move a foe                      \\
-                Trip        & Reflex               & Trip a foe                      \\
+                Trip        & Fortitude and Reflex & Trip a foe                      \\
             \end{dtabularx}
         \end{dtable}
 
@@ -1374,7 +1377,7 @@ It defines how attributes work and explains how to make physical attacks in comb
                 If the target is attended by a creature, the attack must also beat the attending creature's Reflex defense.
 
                 On a hit, you choose whether the target takes \glossterm{strike damage} from the weapon you hit it with.
-                In addition, if the target is \glossterm{attended} and is not held in two hands or extraordinarily well secured (such as a ring), you can choose to knock it loose.
+                In addition, if the target is \glossterm{attended} and is not held in two hands or well secured (such as a ring), you can choose to knock it loose.
                 If you do, it falls to the ground in the square occupied by the attending creature that is closest to you.
             \end{ability}
 
@@ -1413,7 +1416,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             \parhead{Trip} As a standard action, you can use the \textit{trip} ability to trip a creature.
 
             \begin{ability}{\labeltext{Trip}}
-                Make a melee \glossterm{physical attack} with a free hand against a creature's Reflex defense.
+                Make a melee \glossterm{physical attack} with a free hand against a creature's Fortitude and Reflex defenses.
 
                 On a hit, the target becomes \prone.
             \end{ability}
