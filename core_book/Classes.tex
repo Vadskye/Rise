@@ -2716,11 +2716,11 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Assassin} & \tb{Jack of All Trades}  & \tb{Scoundrel} \\\bottomrule
                1 & Sneak attack         & Skill lore             & Combat tricks
-            \\ 2 & Stealth lore         & Skill exemplar         & Uncanny dodge
+            \\ 2 & Uncanny Dodge        & Skill exemplar         & Tricky lore
             \\ 3 & Darkstalker          & Skill lore             & Combat trick
-            \\ 4 & Greater sneak attack & Greater skill exemplar & Evasion
-            \\ 5 & Assassinate          & Skillful defense       & Combat trick
-            \\ 6 & Supreme sneak attack & Supreme skill exemplar & Greater uncanny dodge
+            \\ 4 & Greater sneak attack & Greater skill exemplar & Tricky lore
+            \\ 5 & Assassinate, evasion & Skillful defense       & Combat trick
+            \\ 6 & Supreme sneak attack & Supreme skill exemplar & Skill trick
             \\ 7 & Greater darkstalker  & Legendary fortune      & Combat trick
             \\ 8 &                      &                        &
         \end{dtabularx}
@@ -2761,7 +2761,7 @@ This choice determines a great deal about your character's abilities.
             You do not gain this damage bonus against creatures who are immune to \glossterm{critical hits} or who lack a discernible body structure, such as oozes.
         \end{ability}
 
-        \cf{Rog}[2]{Stealth Lore} You gain two extra skill points.
+        \cf{Rog}[2]{Uncanny Dodge} You gain a \plus1 bonus to \glossterm{overwhelm resistance}.
 
         \cf*{Rog}[3]{Darkstalker}[Magical] As a standard action, you can spend an \glossterm{action point} to use the \textit{darkstalker} ability.
         \begin{ability}{Darkstalker}[\glossterm{Attune (self)}]
@@ -2782,6 +2782,9 @@ This choice determines a great deal about your character's abilities.
             You study a creature within \rnglong range, finding weak points you can take advantage of.
             Until the end of the next round, if you make a melee \glossterm{strike} against the target while it is \unaware, your attack deals maximum damage.
         \end{ability}
+
+        % TODO: wording
+        \cf{Rog}[5]{Evasion} When you are attacked by an ability that affects an area, you can use your Reflex defense in place of any other defenses against that attack.
 
         \cf{Rog}[6]{Supreme Sneak Attack} The damage bonus from your \textit{sneak attack} ability increases to \plus4d.
 
@@ -2929,21 +2932,17 @@ This choice determines a great deal about your character's abilities.
             \end{ability}
         }
 
-        \cf{Rog}[2]{Uncanny Dodge} You gain a \plus2 bonus to Reflex defense and \glossterm{initiative} checks.
-        In addition, you are not \unaware when attacked by surprise.
+        \cf{Rog}[2]{Tricky Lore} You gain two extra skill points.
 
         \cf*{Rog}[3]{Combat Trick}
         You learn an additional \textit{combat trick}.
 
-        \cf{Rog}[4]{Evasion}
-        You may use your Reflex defense to resist any attack from an ability that affects an area, even if that attack would normally be made against a different defense.
+        \cf*{Rog}[4]{Tricky Lore} You gain two extra skill points.
 
         \cf*{Rog}[5]{Combat Trick}
         You learn an additional \textit{combat trick}.
 
-        \cf{Rog}[6]{Greater Uncanny Dodge}
-        The bonuses from your \textit{uncanny dodge} ability increase to \plus3.
-        In addition, you gain a \plus1 bonus to \glossterm{overwhelm resistance}.
+        \cf{Rog}[6]{Skill Trick} % TODO
 
         \cf*{Rog}[7]{Combat Trick}
         You learn an additional \textit{combat trick}.
