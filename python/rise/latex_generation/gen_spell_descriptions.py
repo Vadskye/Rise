@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import click
+from rise.latex_generation.book_path import book_path
 from rise.latex.effects import Effects
 from rise.latex.header import Header
 from rise.latex.spell import Spell
@@ -47,7 +48,7 @@ def generate_spells():
 
                 Any effect which increases the size of creature this subspell can affect also increases the size of ranged weapon it defends against by the same amount.
                 You can cast this subspell as a \\glossterm<minor action>.
-            """, tags=['Air', 'Attune (shared)', 'Shielding']),
+            """, tags=['Air', 'Attune (target)', 'Shielding']),
             Subspell('Windstrike', 1, """
                 Make an attack vs. Fortitude against a creature or object within \\rngmed range.
                 \\hit The target takes bludgeoning \\glossterm<standard damage> +1d.
@@ -58,7 +59,7 @@ def generate_spells():
                 This has no effect on ranged attacks the target makes.
 
                 You can cast this subspell as a \\glossterm<minor action>.
-            """, tags=['Air', 'Attune (shared)', 'Shaping']),
+            """, tags=['Air', 'Attune (target)', 'Shaping']),
             Subspell('Greater Propulsion', 2, """
                 This subspell functions like the \\spell<propulsion> subspell, except that the distance you can move the target is increased to 100 feet.
                 In addition, the target gains a +1d bonus to damage with melee \\glossterm<strikes> during the same phase.
@@ -81,7 +82,7 @@ def generate_spells():
                 This has no effect on ranged attacks the target makes.
 
                 You can cast this subspell as a \\glossterm<minor action>.
-            """, tags=['Air', 'Attune (shared)', 'Shaping']),
+            """, tags=['Air', 'Attune (target)', 'Shaping']),
             Subspell('Greater Wind Screen', 3, """
                 This subspell functions like the \\spell<wind screen> subspell, except that the defense bonus against ranged attacks increases to +10.
             """),
@@ -114,7 +115,7 @@ def generate_spells():
                 After the spell's effect ends, the weather continues on its natural course, which may cause your chosen weather pattern to end.
                 % TODO: This should be redundant with generic spell mechanics
                 If another ability would magically manipulate the weather in the same area, the most recently used ability takes precedence.
-            """, ['Air', 'Attune']),
+            """, ['Air', 'Attune (self)']),
         ],
         category='buff, defense',
     ))
@@ -138,7 +139,7 @@ def generate_spells():
                 The target gains \\glossterm<damage reduction> equal to your \\glossterm<power> against all damage except for \\glossterm<energy damage>.
 
                 You can cast this spell as a \\glossterm<minor action>.
-            """, tags=['Attune (shared)', 'Shielding']),
+            """, tags=['Attune (target)', 'Shielding']),
             Subspell('Resist Energy', 1, """
                 Choose a willing creature in \\rngclose range.
                 The target gains \\glossterm<damage reduction> equal to your \\glossterm<power> against \\glossterm<energy damage>.
@@ -212,7 +213,7 @@ def generate_spells():
                 The item cannot be constructed of any magical or extraordinary material.
                 % This should allow the Giant augment; is this worded to allow that?
                 It is sized appropriately for you, up to a maximum of a Medium size item.
-            """, tags=['Attune']),
+            """, tags=['Attune (self)']),
             Subspell('Greater Forge', 2, """
                 This subspell functions like the \\spell<forge> subspell, except that you can also create any type of body armor you are proficient with.
                 If you create body armor, you can create it already equipped to a willing creature within range.
@@ -289,7 +290,7 @@ def generate_spells():
                 \\hit One of the target's magic auras is altered (see \pcref{Spellcraft}).
                 You can change the school and descriptors of the aura.
                 In addition, you can decrease the \\glossterm<power> of the aura by up to half your power, or increase the power of the aura up to a maximum of your power.
-            """, tags=['Attune', 'Mystic']),
+            """, tags=['Attune (self)', 'Mystic']),
             Subspell('Suppress Item', 1, """
                 Make an attack vs. Mental against one Large or smaller magical object in \\rngmed range.
                 \\hit All magical properties the target has are \\glossterm<suppressed>.
@@ -321,10 +322,10 @@ def generate_spells():
             Subspell('Enhance Magic', 3, """
                 Choose a willing creature within \\rngmed range.
                 The target gains a +1 enhancement bonus to \\glossterm<power> with spells.
-            """, tags=['Attune (shared)', 'Mystic']),
+            """, tags=['Attune (target)', 'Mystic']),
             Subspell('Greater Enhance Magic', 6, """
                 This subspell functions like the \\textit<enhance magic> subspell, except that the bonus is increased to +2.
-            """, tags=['Attune (shared)', 'Mystic']),
+            """, tags=['Attune (target)', 'Mystic']),
             Subspell('Resist Magic', 5, """
                 Choose a willing creature within \\rngmed range.
                 The target gains \\glossterm<magic resistance> equal to 5 + your \\glossterm<power>.
@@ -347,7 +348,7 @@ def generate_spells():
                 This subspell creates a dimensional lock in a \\arealarge radius zone from your location.
                 Extraplanar travel into or out of the area is impossible.
                 This prevents all \\glossterm<Manifestation>, \\glossterm<Planar>, and \\glossterm<Teleportation> effects.
-            """, tags=['Attune', 'Mystic']),
+            """, tags=['Attune (self)', 'Mystic']),
         ],
         category='debuff, combat',
     ))
@@ -425,14 +426,14 @@ def generate_spells():
                 You can cast this subspell as a \\glossterm<minor action>.
                 In addition, you can apply the Widened \\glossterm<augment> to this subspell.
                 If you do, it increases the area of the emanation.
-            """, tags=['Attune (shared)', 'Fire']),
+            """, tags=['Attune (target)', 'Fire']),
             Subspell('Flame Blade', 2, """
                 Choose a willing creature within \\rngclose range.
                 Weapons wielded by the target gain a +1d \\glossterm<magic bonus> to \\glossterm<strike damage>.
                 In addition, all \\glossterm<strike damage> dealt with its weapons becomes fire damage in addition to the attack's normal damage types.
 
                 You can cast this subspell as a \\glossterm<minor action>.
-            """, tags=['Attune (shared)', 'Fire']),
+            """, tags=['Attune (target)', 'Fire']),
         ],
         category='damage',
     ))
@@ -459,11 +460,15 @@ def generate_spells():
             Subspell('Dampen', 1, """
                 Choose up to five willing creatures within \\rngclose range.
                 Each target gains damage reduction against fire damage equal to your \\glossterm<power>.
-            """, tags=['Attune (shared)']),
+
+                You can cast this subspell as a \\glossterm<minor action>.
+            """, tags=['Attune (target)']),
             Subspell('Underwater Freedom', 1, """
                 Choose a willing creature within \\rngclose range.
                 The target suffers no penalties for acting underwater, except for those relating to using ranged weapons.
-            """, tags=['Attune (shared)']),
+
+                You can cast this subspell as a \\glossterm<minor action>.
+            """, tags=['Attune (target)']),
             Subspell('Greater Underwater Freedom', 3, """
                 This subspell functions like the \\spell<underwater freedom> subspell, except that the target can also breathe water as if it was air.
             """),
@@ -490,7 +495,7 @@ def generate_spells():
 
                 You can cast this subspell as a \\glossterm<minor action>.
                 This subspell is from the Transmutation school instead of the Conjuration school.
-            """, tags=['Attune (shared)', 'Shaping', 'Water']),
+            """, tags=['Attune (target)', 'Shaping', 'Water']),
             Subspell('Greater Aqueous Blade', 4, """
                 This subspell functions like the \\spell<aqueous blade> subspell, except that the penalty to strike damage is reduced to -1d.
             """),
@@ -550,7 +555,7 @@ def generate_spells():
                 Any act by you or your apparent allies that threatens or damages the \\spell<charmed> person breaks the effect.
                 This effect is automatically \\glossterm<dismissed> after one hour.
                 \\crit As above, except that the effect is not automatically dismissed.
-            """, tags=['Attune', 'Emotion', 'Mind', 'Subtle']),
+            """, tags=['Attune (self)', 'Emotion', 'Mind', 'Subtle']),
             Subspell("Amnesiac Charm", 5, """
                 This subspell functions like the \\spell<charm> subspell, except that when the spell ends, an affected target forgets all events that transpired during the spell's duration.
                 It becomes aware of its surroundings as if waking up from a daydream.
@@ -660,7 +665,7 @@ def generate_spells():
                 The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
 
                 You can cast this spell as a \\glossterm<minor action>.
-            """, tags=['Attune (shared)']),
+            """, tags=['Attune (target)']),
             Subspell('Greater Battle Blessing', 5, """
                 This subspell functions like the \\spell<battle blessing> subspell, except that the bonus increases to +2.
             """),
@@ -668,8 +673,9 @@ def generate_spells():
                 Choose a willing creature within \\rngclose range.
                 The target ignores the next two \\glossterm<conditions> it would receive.
                 After resisting two conditions in this way, this spell ends.
-                You can cast this spell as a \\glossterm<minor action>.
-            """, tags=['Attune (shared)']),
+
+                You can cast this subspell as a \\glossterm<minor action>.
+            """, tags=['Attune (target)']),
             Subspell('Greater Blessing of Resilience', 3, """
                 This subspell functions like the \\textit<blessing of resilience> subspell, except that the spell does not end until it resists four \\glossterm<conditions>.
             """),
@@ -684,7 +690,8 @@ def generate_spells():
             """),
             Subspell('Blessing of the Mighty', 2, """
                 The target gains a +1d \\glossterm<magic bonus> to damage with all abilities.
-            """, tags=['Attune (shared)']),
+                You can cast this subspell as a \\glossterm<minor action>.
+            """, tags=['Attune (target)']),
             Subspell("Greater Blessing of the Mighty", 5, """
                 The target gains a +2d \\glossterm<magic bonus> to damage with all abilities.
             """),
@@ -694,7 +701,7 @@ def generate_spells():
                 However, the target takes a -2d penalty to \\glossterm<strike damage>.
 
                 You can cast this subspell as a \\glossterm<minor action>.
-            """, tags=['Attune (shared)', 'Fire']),
+            """, tags=['Attune (target)', 'Fire']),
             Subspell('Greater Blessed Blade', 4, """
                 This subspell functions like the \\spell<blessed blade> subspell, except that the penalty to strike damage is reduced to -1d.
             """),
@@ -706,14 +713,14 @@ def generate_spells():
                 The target gains \\glossterm<damage reduction> equal to your \\glossterm<power> against all damage.
 
                 You can cast this subspell as a \\glossterm<minor action>.
-            """, tags=['Attune (shared)']),
+            """, tags=['Attune (target)']),
             Subspell("Divine Might", 3, """
                 You increase your size by one size category.
                 This increases your \\glossterm<strike damage> and usually increases your \\glossterm<reach> (see \\pcref<Size in Combat>).
                 However, you take a -1d penalty to \\glossterm<strike damage>, as your muscles are not increased fully to match your new size.
 
                 You can cast this subspell as a \\glossterm<minor action>.
-            """, tags=['Attune', 'Shaping', 'Sizing']),
+            """, tags=['Attune (self)', 'Shaping', 'Sizing']),
             Subspell("Divine Might, Greater", 5, """
                 This subspell functions like the \\textit<divine might> subspell, except that the penalty to \\glossterm<strike damage> is removed.
             """),
@@ -803,7 +810,7 @@ def generate_spells():
                 Whenever a creature wearing armor created in this way takes physical damage, cold damage, or fire damage, that damage is also dealt to the armor.
                 Likewise, whenever a creature wielding a weapon created in this way deals damage with the weapon, that damage is also dealt to the weapon.
                 If the item loses all of its hit points, this effect is \\glossterm<dismissed>.
-            """, tags=['Attune', 'Cold']),
+            """, tags=['Attune (self)', 'Cold']),
             Subspell('Sturdy Icecraft', 2, """
                 This subspell functions like the \\subspell<icecraft> subspell, except that the item created has hit points equal to four times your \\glossterm<power>.
                 In addition, you can create heavy body armor.
@@ -853,7 +860,7 @@ def generate_spells():
                 Attacks with the weapon gain a +2 bonus to \\glossterm<accuracy> against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
 
                 You can cast this subspell as a \\glossterm<minor action>.
-            """, tags=['Attune', 'Electricity']),
+            """, tags=['Attune (self)', 'Electricity']),
             Subspell('Dynamo', 2, """
                 This subspell functions like the \\spell<lightning bolt> subspell, except that it gains the \\glossterm<Sustain> (standard) tag.
                 The area affected by the spell becomes a \\glossterm<zone> that is continuously filled with electrical pulses.
@@ -1071,7 +1078,7 @@ def generate_spells():
         header=Header("You create a scrying sensor that allows you to see at a distance."),
         # TODO: this shouldn't reference the subspell effect.
         effects=Effects('Cantrip', """
-            This cantrip functions like the \\textit<arcane eye> subspell, except that it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> tag.",
+            This cantrip functions like the \\textit<arcane eye> subspell, except that it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> (self) tag.",
             In addition, the sensor cannot be moved after it is originally created.
         """, tags=['Scrying', 'Sustain (minor)']),
         schools=['Divination'],
@@ -1094,7 +1101,7 @@ def generate_spells():
                 If undisturbed, the sensor floats in the air in its position.
                 As a \\glossterm<minor action>, you can concentrate to move the sensor up to 30 feet in any direction, even vertically.
                 At the end of each round, if the sensor is does not have \\glossterm<line of effect> from you, it is destroyed.
-            """, tags=['Attune', 'Scrying']),
+            """, tags=['Attune (self)', 'Scrying']),
             Subspell('Greater Alarm', 2, """
                 This subspell functions like the \\textit<alarm> subspell, except that the sensor gains 100 ft.\\ \\glossterm<darkvision> and its Awareness bonus is equal to your \\glossterm<power>.
             """),
@@ -1161,7 +1168,7 @@ def generate_spells():
                 The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
 
                 You can cast this spell as a \\glossterm<minor action>.
-            """, tags=['Attune (shared)']),
+            """, tags=['Attune (target)']),
             Subspell('Greater Precognitive Offense', 4, """
                 This subspell functions like the \\spell<precognitive offense> subspell, except that the bonus is increased to +2.
             """),
@@ -1176,7 +1183,7 @@ def generate_spells():
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 \\hit You know when the target deliberately and knowingly speaks a lie.
                 This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
-            """, tags=['Attune', 'Detection']),
+            """, tags=['Attune (self)', 'Detection']),
             Subspell("Boon of Mastery", 2, """
                 Choose a willing creature within \\rngclose range.
                 The target gains a +2 \\glossterm<magic bonus> to all skills.
@@ -1253,7 +1260,7 @@ def generate_spells():
                 % TODO: Wording
                 As long as the target remains within 50 feet above a surface that could support its weight, it floats in midair, unaffected by gravity.
                 During the movement phase, you can move the target up to ten feet in any direction as a \\glossterm<free action>.
-            """, tags=['Attune']),
+            """, tags=['Attune (self)']),
         ],
         category='debuff, combat',
     ))
@@ -1266,7 +1273,7 @@ def generate_spells():
         short_description="Change how creatures and objects are perceived",
         header=Header(""),
         effects=Effects('Cantrip', """
-            You can only cast this spell during the \\glossterm<action phase>
+            You can only cast this spell during the \\glossterm<action phase>.
             Choose a willing creature within \\rngclose range.
             The target's weapons become briefly invisible, and its hands are blurred.
             On the first melee \\glossterm<strike> the target makes during the \\glossterm<delayed action phase> of this round, the target of the attack is treated as \\glossterm<unaware> of the attack.
@@ -1275,7 +1282,6 @@ def generate_spells():
         """, tags=['Sensation', 'Visual']),
         schools=['Illusion'],
         lists=['Arcane'],
-        cantrip="The spell requires a \\glossterm<standard action> to cast, and it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> tag.",
         subspells=[
             Subspell('Blur', 1, """
                 Choose a willing creature within \\rngmed range.
@@ -1283,8 +1289,8 @@ def generate_spells():
                 It gains a +1 \\glossterm<magic bonus> to Armor defense and Stealth (see \\pcref<Stealth>).
                 This effect provides no defensive benefit against creatures immune to \\glossterm<Visual> abilities.
 
-                You can cast this spell as a \\glossterm<minor action>.
-            """, tags=['Attune (shared)', 'Sensation', 'Visual']),
+                You can cast this subspell as a \\glossterm<minor action>.
+            """, tags=['Attune (target)', 'Sensation', 'Visual']),
             Subspell('Hidden Blade', 1, """
                 Choose a willing creature within \\rngclose range.
                 The target's weapons become invisible, and its hands are blurred.
@@ -1292,28 +1298,28 @@ def generate_spells():
                 After the target makes an attack in this way, this effect ends.
 
                 This effect provides no offensive benefit against creatures immune to \\glossterm<Visual> abilities.
-            """, tags=['Attune (shared)', 'Sensation', 'Visual']),
+            """, tags=['Attune (target)', 'Sensation', 'Visual']),
             Subspell("Suppress Light", 1, """
                 Choose a Small or smaller unattended object within \\rngclose range.
                 This subspell suppresses light in a \\areamed radius emanation from the target.
                 Light within or passing through the area is dimmed to be no brighter than shadowy illumination.
                 Any object or effect which blocks light also blocks this spell's emanation.
-            """, tags=['Attune', 'Light', 'Sensation']),
+            """, tags=['Attune (self)', 'Light', 'Sensation']),
             Subspell("Disguise Image", 2, """
                 Choose a willing creature within \\rngclose range.
                 You make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).
                 You gain a +5 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form.
                 However, this effect is unable to alter the sound, smell, texture, or temperature of the target or its clothes and equipment.
-            """, tags=['Attune (shared)', 'Sensation', 'Visual']),
+            """, tags=['Attune (target)', 'Sensation', 'Visual']),
             Subspell("Mirror Image", 2, """
                 Choose a willing creature within \\rngclose range.
                 Four illusory duplicates appear around the target that mirror its every move.
                 The duplicates shift chaotically in its space, making it difficult to identify the real creature.
 
-                All \\glossterm<targeted> attacks against the target have a 50\\% miss chance.
+                All \\glossterm<targeted> \\glossterm<physical attacks> against the target have a 50\\% miss chance.
                 Whenever an attack misses in this way, it affects an image, destroying it.
                 This ability provides no defensive benefit against creatures immune to \\glossterm<Visual> abilities.
-            """, tags=['Attune (shared)', 'Sensation', 'Visual']),
+            """, tags=['Attune (target)', 'Sensation', 'Visual']),
             Subspell("Greater Mirror Image", 4, """
                 This subspell functions like the \\textit<mirror image> subspell, except that destroyed images can reappear.
                 At the end of each \\glossterm<action phase>, one destroyed image reappears, to a maximum of four images.
@@ -1328,7 +1334,7 @@ def generate_spells():
                 The target's image appears to be two to three feet from its real location.
                 \\glossterm<Targeted> \\glossterm<physical attacks> against the target suffer a 50\\% miss chance.
                 This ability provides no defensive benefit against creatures immune to \\glossterm<Visual> abilities.
-            """, tags=['Attune (shared)', 'Sensation', 'Visual']),
+            """, tags=['Attune (target)', 'Sensation', 'Visual']),
         ],
         category='buff, defense',
     ))
@@ -1430,7 +1436,7 @@ def generate_spells():
                 This decreases its Strength by 2 and usually decreases its \\glossterm<reach> (see \\pcref<Size in Combat>).
 
                 You can cast this subspell as a \\glossterm<minor action>.
-            """, tags=['Attune (shared)', 'Shaping', 'Sizing']),
+            """, tags=['Attune (target)', 'Shaping', 'Sizing']),
             Subspell('Greater Shrink', 4, """
                 This subspell functions like the \\spell<shrink> subspell, except that the target's size decreases by two size categories, to a minimum of Diminuitive.
             """),
@@ -1440,11 +1446,11 @@ def generate_spells():
                 In addition, it is \\glossterm<vulnerable> to fire damage.
 
                 You can cast this subspell as a \\glossterm<minor action>.
-            """, tags=['Attune (shared)']),
+            """, tags=['Attune (target)']),
             Subspell('Regeneration', 4, """
                 Choose a willing creature within \\rngclose range.
                 A the end of each round, the target heals hit points equal to your \\glossterm<power>.
-            """, tags=['Attune (shared)']),
+            """, tags=['Attune (target)']),
             Subspell('Greater Regeneration', 7, """
                 This subspell functions like the \\textit<regeneration> subspell, except that the healing is equal to twice your \\glossterm<power>.
             """),
@@ -1452,7 +1458,7 @@ def generate_spells():
                 Choose a willing creature within \\rngclose range.
                 The target gains \\glossterm<damage reduction> equal to your \\glossterm<power> against damage dealt by \\glossterm<physical attacks>, except for damage from adamantine weapons.
                 You can cast this subspell as a \\glossterm<minor action>.
-            """, tags=['Attune (shared)']),
+            """, tags=['Attune (target)']),
             Subspell("Ironskin", 6, """
                 This subspell functions like the \\textit<stoneskin> subspell, except that the damage reduction is equal to twice your \\glossterm<power>.
             """),
@@ -1463,7 +1469,7 @@ def generate_spells():
                 However, the target's muscles are not increased fully to match its new size, and its Strength is unchanged.
 
                 You can cast this subspell as a \\glossterm<minor action>.
-            """, tags=['Attune (shared)', 'Shaping', 'Sizing']),
+            """, tags=['Attune (target)', 'Shaping', 'Sizing']),
             Subspell("Enlarge, Greater", 5, """
                 This subspell functions like the \\textit<enlarge> subspell, except that the target's Strength is increased by 2 to match its new size.
             """),
@@ -1478,7 +1484,7 @@ def generate_spells():
                 However, this effect is unable to alter the target's clothes or equipment in any way.
 
                 You can cast this subspell as a \\glossterm<minor action>.
-            """, tags=['Attune (shared)', 'Shaping']),
+            """, tags=['Attune (target)', 'Shaping']),
             Subspell("Craft Object", 3, """
                 Choose any number of unattended, nonmagical objects within \\rngclose range.
                 You make a Craft check to transform the targets into a new item (or items) made of the same materials.
@@ -1562,7 +1568,7 @@ def generate_spells():
                 This blinking stops if the target takes actions on its current plane.
                 In any phase where it does not take any actions, the target has a 50\% chance to completely ignore any effect that targets it directly.
                 It is still affected normally by abilities that affect an area.
-            """, tags=['Attune (shared)', 'Teleportation', 'Planar']),
+            """, tags=['Attune (target)', 'Teleportation', 'Planar']),
             Subspell('Greater Blink', 7, """
                 This subspell functions like the \\subspell<blink> subspell, except that the target also has a 20\% chance to completely ignore any effect that targets it directly during phases where it takes an action.
             """),
@@ -1595,14 +1601,14 @@ def generate_spells():
                 Choose a willing creature within \\rngmed range.
                 The target gains a +10 foot \\glossterm<magic bonus> to its speed in all its movement modes.
                 You can cast this subspell as a \\glossterm<minor action>.
-            """, tags=['Attune (shared)', 'Temporal']),
+            """, tags=['Attune (target)', 'Temporal']),
             Subspell("Greater Haste", 3, """
                 Choose a willing creature within \\rngmed range.
                 The target gains a +30 foot \\glossterm<magic bonus> to its speed in all its movement modes, up to a maximum of double its \\glossterm<base speed>.
                 In addition, it gains a +2 \\glossterm<magic bonus> to Reflex defense.
 
                 You can cast this subspell as a \\glossterm<minor action>.
-            """, tags=['Attune (shared)', 'Temporal']),
+            """, tags=['Attune (target)', 'Temporal']),
             Subspell("Temporal Duplicate", 4, """
                 Choose a willing creature within \\rngmed range.
                 You reach into a possible future and create a duplicate of the target.
@@ -1645,7 +1651,7 @@ def generate_spells():
                 If you use this ability on yourself, it instead lasts for a number of rounds you choose when you cast the spell, up to a maximum of five rounds.
 
                 You can cast this subspell as a \\glossterm<minor action>.
-            """, tags=['Attune', 'Temporal']),
+            """, tags=['Attune (self)', 'Temporal']),
             Subspell("Delay Damage", 3, """
                 Whenever you take damage, half of the damage (rounded down) is not dealt to you immediately.
                 This damage is tracked separately.
@@ -1671,8 +1677,8 @@ def generate_spells():
             Subspell("Greater Time Lock", 7, """
                 This subspell functions like the \\textit<time lock> subspell, except that the effect is not ended if the target dies, and restoring the target's state can also restore it to life.
                 If the target is restored to life in this way, all of its properties not locked by this subspell, such as any resources expended, are identical to what they were when the target died.
-                In addition, this spell has the \\glossterm<Attune> tag instead of the \\glossterm<Sustain> (minor) tag.
-            """, tags=['Attune', 'Temporal']),
+                In addition, this spell has the \\glossterm<Attune> (self) tag instead of the \\glossterm<Sustain> (minor) tag.
+            """, tags=['Attune (self)', 'Temporal']),
             Subspell("Time Stop", 7, """
                 You can take two full rounds of actions immediately.
                 During this time, all other creatures and objects are fixed in time, and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
@@ -1830,10 +1836,7 @@ def sanity_check(spells):
             warn(f"School {school} has only {len(categories_in_school[school])} spell categories")
 
 
-@click.command()
-@click.option('-c', '--check/--no-check', default=False)
-@click.option('-o', '--output/--no-output', default=False)
-def main(output, check):
+def generate_spell_latex(check=False):
     spells = generate_spells()
     if check:
         sanity_check(spells)
@@ -1843,13 +1846,23 @@ def main(output, check):
             spell_texts.append(spell.to_latex())
         except Exception as e:
             raise Exception(f"Error converting spell '{spell.name}' to LaTeX") from e
-    spell_text = latexify('\n\\newpage'.join(spell_texts))
-    if output is None:
-        print(spell_text)
-    else:
-        with open('../../core_book/spell_descriptions.tex', 'w') as spell_descriptions_file:
-            spell_descriptions_file.write(spell_text)
+    return latexify('\n\\newpage'.join(spell_texts))
 
+
+def write_to_file(check=None):
+    spell_latex = generate_spell_latex(check)
+    with open(book_path('spell_descriptions.tex'), 'w') as spell_descriptions_file:
+        spell_descriptions_file.write(spell_latex)
+
+
+@click.command()
+@click.option('-c', '--check/--no-check', default=False)
+@click.option('-o', '--output/--no-output', default=False)
+def main(output, check):
+    if output:
+        write_to_file(check)
+    else:
+        print(generate_spell_latex(check))
 
 if __name__ == "__main__":
     main()

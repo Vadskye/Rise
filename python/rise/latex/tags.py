@@ -1,9 +1,10 @@
 valid_tags = set([
     'Acid',
     'Air',
-    'Attune',
-    'Attune (multiple)',
-    'Attune (shared)',
+    'Attune (ritual)',
+    'Attune (ritual; see text)',
+    'Attune (self)',
+    'Attune (target)',
     'Auditory',
     'Cold',
     'Compulsion',
@@ -47,9 +48,7 @@ def glosstermify(tag):
         return tag
     elif ' ' in tag:
         split_tag = tag.split()
-        if len(split_tag) != 2:
-            raise Exception(f"Unable to parse tag {tag}")
-        return f"\\glossterm<{split_tag[0]}> {split_tag[1]}"
+        return f"\\glossterm<{split_tag[0]}> {' '.join(split_tag[1:])}"
     else:
         return f"\\glossterm<{tag}>"
 

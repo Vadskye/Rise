@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import click
+from rise.latex_generation.book_path import book_path
 from rise.latex.magic_item import MagicItem
 from rise.latex.util import latexify
 
@@ -457,18 +458,24 @@ def generate_weapon_table():
         \\end<longtabuwrapper>
     """)
 
+
+def write_to_file():
+    weapon_latex = generate_weapon_latex()
+    weapon_table = generate_weapon_table()
+    with open(book_path('weapons.tex'), 'w') as weapon_description_file:
+        weapon_description_file.write(weapon_latex)
+    with open(book_path('weapons_table.tex'), 'w') as weapon_table_file:
+        weapon_table_file.write(weapon_table)
+
+
 @click.command()
 @click.option('-c', '--check/--no-check', default=False)
 @click.option('-o', '--output/--no-output', default=False)
 def main(output, check):
-    weapon_latex = generate_weapon_latex()
-    if output is None:
-        print(weapon_latex)
+    if output:
+        write_to_file()
     else:
-        with open('../../core_book/weapons.tex', 'w') as weapon_description_file:
-            weapon_description_file.write(weapon_latex)
-        with open('../../core_book/weapons_table.tex', 'w') as weapon_table_file:
-            weapon_table_file.write(generate_weapon_table())
+        print(generate_weapon_latex())
 
 
 if __name__ == "__main__":
