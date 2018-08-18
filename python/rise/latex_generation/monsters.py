@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import click
+from rise.latex_generation.book_path import book_path
 from rise.latex.monster import get_latex_from_creature
 from rise.latex.ability import active_ability, passive_ability
 from rise.statistics.armor import Armor
@@ -1304,8 +1305,7 @@ def undead():
         active_abilities=[
             active_ability('Animating Caper', """
                 One corpse within Close range is animated as a skeleton under the dirgewalker's control.
-                This ability costs an action point to use.
-            """, tags=['Attune']),
+            """, tags=['Attune (self)']),
             active_ability('Mournful Dirge', f"""
                 The dirgewalker makes a +{dirgewalker.accuracy()} vs. Mental attack against all creatures in a Medium radius.
                 \\hit Each target is dazed as a condition.
@@ -1395,17 +1395,26 @@ def sanity_check(monsters):
     pass
 
 
+# This is an incredibly trivial function, but it matches the style of the
+# other files in this directory
+def generate_monster_latex():
+    return latexify(generate_monsters())
+
+
+def write_to_file():
+    monster_latex = generate_monster_latex()
+    with open(book_path('monster_descriptions.tex'), 'w') as file:
+        file.write(monster_latex)
+
+
 @click.command()
 @click.option('-c', '--check/--no-check', default=False)
 @click.option('-o', '--output/--no-output', default=False)
 def main(output, check):
-    monster_text = generate_monsters()
-    text = latexify(monster_text)
-    if output is None:
-        print(text)
+    if output:
+        write_to_file()
     else:
-        with open('../../core_book/monster_descriptions.tex', 'w') as file:
-            file.write(text)
+        print(generate_monster_latex())
 
 
 if __name__ == "__main__":

@@ -1027,34 +1027,52 @@ It defines how attributes work and explains how to make physical attacks in comb
             There are several other abilities that can also remove conditions.
 
         \subsection{Attunement}\label{Attunement}
-            Many abilities last as long as you \glossterm{attune} to them.
-            As long as you are attuned to an ability, you cannot regain the \glossterm{action point} spent to use that ability.
-            If the ability does not normally require spending an action point to use, you can spend an action point to attune to it.
-            That spent action point still counts against the number of action points you recover with a \glossterm{short rest} or \glossterm{long rest}.
-            You must release your attunement to abilities before beginning to rest in order to recover the spent action points.
-            Attuning to multiple abilities can prevent you from regaining any action points when you rest.
+            Many abilities last as long as a creature \glossterm{attunes} to them.
+            Attuning to an ability costs an \glossterm{action point}.
+            As long as you are attuned to an ability, you cannot regain the action point spent to attune to that ability.
+            In addition, each action point used for attunement reduces the number of action points you recover with a \glossterm{short rest} or \glossterm{long rest} by one.
+            You must release your attunement before beginning to rest in order to recover the action points spent to attune to abilities.
 
             You can choose to stop attuning to an ability as a \glossterm{free action}.
-            If you do, the ability ends, and you can regain the action point spent to use it normally.
+            If you do, the ability's effect ends.
 
             Attuned abilities continue to work across any distance, but not across planar boundaries.
             At the end of each round, your attunement to all abilities active on a different plane than your current plane ends.
             Planar travel that does not last a full round, such as teleportation, does not interrupt your attunement.
 
-            \parhead{Multiple Attunement}\label{Multiple Attunement}
+            \subsubsection{Action Point Costs}
+                Abilities with the \glossterm{Attune} tag do not cost an \glossterm{action point} to use unless otherwise noted.
+                Instead, an action point must be spent to attune to the ability's effect.
+
+            \subsubsection{Attunement Limits}\label{Attunement Limits}
+                % TODO: wording
+                If you have spent enough action points to attune to abilities that you no longer recover action points with a \glossterm{short rest}, you cannot attune to any additional abilities.
+                You must release your attunement to currently active abilities before attuning to new abilities.
+
+            \subsubsection{Multiple Attunement}\label{Multiple Attunement}
                 Unless otherwise noted, you can only attune to one activation of a particular ability at once.
                 If you use the ability again, the effect of the previous use of the ability immediately ends.
+                % What does this even mean? Intended to talk about within-ability choices, I think.
                 Minor variations of a single ability are considered to be the same ability for this purpose.
-                Applying different \glossterm{augments} to a spell or subspell does not allow you to attune to it more than once.
+                Applying different \glossterm{augments} to a spell or \glossterm{subspell} does not allow you to attune to it more than once.
                 However, you can attune to a spell and any number of different \glossterm{subspells} from that spell.
 
                 Some abilities allow you to attune to multiple activations of the same ability at once.
                 Attuning to an additional activation of an ability that allows multiple attunement does not cause the effects of previous activations to end.
 
-            \parhead{Shared Attunement}\label{Shared Attunement}
-                Some abilities also require the targets of the ability to spend action points to gain the ability's effects.
-                A shared attunement ability lasts as long as the creature using the ability and all targets of the ability \glossterm{attune} to it.
-                If you target yourself with a shared attunement ability, you only need to spend one action point, not two.
+            \subsubsection{Attunement Types}\label{Attunement Types}
+                There are three types of attunement abilities: self, target, and ritual.
+
+                \parhead{Attune (self)} A self attunement ability requires the creature using the ability to attune to the effect.
+
+                \parhead{Attune (target)} A target attunement ability requires the target of the ability to attune to the effect.
+                If the ability targets multiple creatures, each creature must attune to the ability independently.
+
+                \parhead{Attune (ritual)} Only \glossterm{rituals} have the \glossterm{Attune} (ritual) tag.
+                A ritual attunement ability requires any participant in the ritual to attune to the effect.
+                In addition, ritual attunement abilities are not subject to the normal restrictions on multiple attunement.
+                % TODO: wording
+                You can maintain any number of activations of a particular ritual attunement ability at once.
 
         \subsection{Sustained Abilities}\label{Sustained Abilities}
             Some abilities last as long as you take an action to sustain them each round.

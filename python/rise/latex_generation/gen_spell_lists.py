@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import click
+from rise.latex_generation.book_path import book_path
 from rise.latex_generation.gen_spell_descriptions import generate_spells
 from rise.latex.rise_data import spell_sources
 from rise.latex.util import latexify
@@ -58,14 +59,19 @@ def generate_spell_lists():
     )
 
 
+def write_to_file():
+    spell_lists = generate_spell_lists()
+    with open(book_path('spell_lists.tex'), 'w') as spell_lists_file:
+        spell_lists_file.write(spell_lists)
+
+
 @click.command()
 @click.option('-o', '--output/--no-output', default=False)
 def main(output):
-    if output is None:
-        print(generate_spell_lists())
+    if output:
+        write_to_file()
     else:
-        with open('../../core_book/spell_lists.tex', 'w') as spell_lists_file:
-            spell_lists_file.write(generate_spell_lists())
+        print(generate_spell_lists())
 
 
 if __name__ == "__main__":
