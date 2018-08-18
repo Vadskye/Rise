@@ -1508,7 +1508,7 @@ def generate_spells():
     # None: buff
     spells.append(Spell(
         name="Astromancy",
-        short_description="Transport creatures through the Astral Plane",
+        short_description="Transport creatures and objects instantly through space",
         header=Header("You disrupt a creature's body by partially thrusting it into another plane."),
         effects=Effects('Cantrip', """
             Make an attack vs. Mental against a creature within \\rngmed range.
@@ -1523,12 +1523,12 @@ def generate_spells():
                 \\hit The target takes physical \\glossterm<standard damage> +1d.
             """, tags=['Planar', 'Teleportation']),
             Subspell("Teleport", 1, """
-                Choose a Medium or smaller willing creature within \\rngclose range.
+                Choose a Medium or smaller willing creature or unattended object within \\rngclose range.
                 The target teleports into an unoccupied destination within range.
                 If the destination is invalid, this subspell is \\glossterm<miscast>.
             """, tags=['Teleportation']),
             Subspell('Greater Teleport', 3, """
-                This subspell functions like the \\textit<teleport> subspell, except that the range is increased to \\rnglong.
+                This subspell functions like the \\textit<teleport> subspell, except that the range is increased to \\rngext.
             """),
             Subspell('Banishment', 2, """
                 This subspell functions like the \\spell<dimensional jaunt> subspell, except that it gains a +2 bonus to \\glossterm<accuracy> against \\glossterm<outsiders> not on their home planes and creatures created by \\glossterm<Manifestation> abilities.
