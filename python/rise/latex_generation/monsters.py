@@ -81,6 +81,21 @@ def aberrations():
 def animals():
     monsters = []
 
+    eel = Creature(
+        challenge_rating=2,
+        character_class=CharacterClass('slayer'),
+        level=6,
+        name='Eel',
+        natural_armor=6,
+        race=Race('animal'),
+        size=Size('large'),
+        starting_attributes=[2, 2, 0, -8, 1, 0],
+        weapons=[Weapon('bite')],
+    )
+    monsters.append(get_latex_from_creature(
+        eel,
+    ))
+
     black_bear = Creature(
         challenge_rating=2,
         character_class=CharacterClass('behemoth'),
@@ -534,6 +549,21 @@ def humanoids():
 def magical_beasts():
     monsters = []
 
+    large_red_dragon = Creature(
+        character_class=CharacterClass('behemoth'),
+        level=9,
+        name='Dragon',
+        name_suffix='Large Red',
+        natural_armor=6,
+        race=Race('magical beast'),
+        size=Size('large'),
+        starting_attributes=[3, 0, 3, 2, 2, 2],
+        weapons=[Weapon('bite')],
+    )
+    monsters.append(get_latex_from_creature(
+        large_red_dragon,
+    ))
+
     ankheg = Creature(
         challenge_rating=2,
         character_class=CharacterClass('slayer'),
@@ -554,7 +584,7 @@ def magical_beasts():
                 In addition, the ankheg can move with the target up to a maximum distance equal to its \\glossterm<base speed>.
             """),
             active_ability('Spit Acid', f"""
-                The ankheg makes a +{ankheg.accuracy()} vs. Reflex attack against everything in a 5 ft. wide Medium line.
+                The ankheg makes a +{ankheg.accuracy()} vs. Armor attack against everything in a 5 ft. wide Medium line.
                 \\hit Each target takes {ankheg.standard_damage() - 1} acid damage, and creatures are \\glossterm<sickened> as a \\glossterm<condition>.
             """),
         ]
@@ -620,7 +650,7 @@ def magical_beasts():
         behir,
         active_abilities=[
             active_ability('Electric Breath', f"""
-                The behir makes a +{behir.accuracy()} vs. Reflex attack against everything in a \\areamed cone.
+                The behir makes a +{behir.accuracy()} vs. Armor attack against everything in a \\areamed cone.
                 \\hit Each target takes {behir.standard_damage()} electricity damage, and is \\glossterm<dazed> as a \\glossterm<condition>.
             """),
             active_ability('Natural Grab', f"""
@@ -731,7 +761,7 @@ def magical_beasts():
         immunities=['cold'],
         active_abilities=[
             active_ability('Frost Breath', f"""
-                The frost worm makes a +{frost_worm.accuracy()} vs. Reflex attack against everything in a \\arealarge cone from it.
+                The frost worm makes a +{frost_worm.accuracy()} vs. Fortitude attack against everything in a \\arealarge cone from it.
                 \\hit Each target takes {frost_worm.standard_damage() + 2} cold damage.
             """, tags=['Cold']),
             active_ability('Trill', f"""
@@ -748,7 +778,7 @@ def magical_beasts():
             """),
             passive_ability('Death Throes', f"""
                 When a frost worm is killed, its corpse turns to ice and shatters in a violent explosion.
-                It makes a +{frost_worm.accuracy()} vs. Reflex attack against everything in a \\areahuge radius from it.
+                It makes a +{frost_worm.accuracy()} vs. Fortitude attack against everything in a \\areahuge radius from it.
                 \\hit Each target takes {frost_worm.standard_damage() + 3} cold and piercing damage.
             """),
         ],
@@ -1008,7 +1038,7 @@ def monstrous_humanoids():
         storm_giant,
         active_abilities=[
             active_ability('Lightning Javelin', f"""
-                The storm giant makes a +{storm_giant.accuracy()} vs. Reflex attack against everything in a 10 ft. wide Large line.
+                The storm giant makes a +{storm_giant.accuracy()} vs. Fortitude attack against everything in a 10 ft. wide Large line.
                 \\hit Each target takes {storm_giant.standard_damage()} electricity damage.
             """),
             active_ability('Thunderstrike', f"""
@@ -1125,7 +1155,7 @@ def outsiders():
         arrowhawk,
         active_abilities=[
             active_ability('Electrobolt', f"""
-                The arrowhawk makes a +{arrowhawk.accuracy()} vs. Reflex attack against one creature or object in Medium range.
+                The arrowhawk makes a +{arrowhawk.accuracy()} vs. Fortitude attack against one creature or object in Medium range.
                 \\hit The target takes {arrowhawk.standard_damage()} electricity damage.
             """),
         ],
@@ -1171,7 +1201,7 @@ def outsiders():
         hell_hound,
         active_abilities=[
             active_ability('Fire Breath', f"""
-                The hell hound makes a +{hell_hound.accuracy()} vs. Reflex attack against everything in a Medium cone.
+                The hell hound makes a +{hell_hound.accuracy()} vs. Armor attack against everything in a Medium cone.
                 \\hit Each target takes {hell_hound.standard_damage()} fire damage.
             """),
         ],
@@ -1196,7 +1226,7 @@ def outsiders():
         active_abilities=[
             active_ability('Flame Aura', f"""
                 The salamander spends an action point to intensify its natural body heat, creating a burning aura around it.
-                At the end of each action phase, the salamander makes a +{flamebrother_salamander.accuracy()} vs. Reflex
+                At the end of each action phase, the salamander makes a +{flamebrother_salamander.accuracy()} vs. Armor
                     attack against everything within a Medium radius emanation of it.
                 \\hit Each target takes {flamebrother_salamander.standard_damage() - 1} fire damage.
             """, tags=['Sustain (standard)']),
@@ -1243,7 +1273,7 @@ def outsiders():
         active_abilities=[
             active_ability('Flame Aura', f"""
                 The salamander spends an action point to intensify its natural body heat, creating a burning aura around it.
-                At the end of each action phase, the salamander makes a +{flamebrother_salamander.accuracy()} vs. Reflex
+                At the end of each action phase, the salamander makes a +{flamebrother_salamander.accuracy()} vs. Armor
                     attack against everything within a Medium radius emanation of it.
                 \\hit Each target takes {flamebrother_salamander.standard_damage() - 1} fire damage.
             """, tags=['Sustain (standard)']),

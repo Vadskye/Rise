@@ -7,7 +7,7 @@
 
 
 \begin{ability}{Cantrip}
-Make an attack vs. Fortitude against a creature or object within \rngmed range.
+Make an attack vs. Armor against a creature or object within \rngmed range.
 \hit The target takes bludgeoning \glossterm{standard damage} \minus1d.
 \end{ability}
 
@@ -54,7 +54,7 @@ You can cast this subspell as a \glossterm{minor action}.
 
 
 \begin{ability}[\nth{1}]{Windstrike}[\glossterm{Air}]
-Make an attack vs. Fortitude against a creature or object within \rngmed range.
+Make an attack vs. Armor against a creature or object within \rngmed range.
 \hit The target takes bludgeoning \glossterm{standard damage} \plus1d.
 \end{ability}
 \vspace{0.25em}
@@ -75,8 +75,16 @@ In addition, the target gains a \plus1d bonus to damage with melee \glossterm{st
 
 
 \begin{ability}[\nth{2}]{Gust of Wind}[\glossterm{Air}]
-Make an attack vs. Fortitude against everything in a \arealarge, 10 ft. wide line from you.
+Make an attack vs. Armor against everything in a \arealarge, 10 ft. wide line from you.
 \hit Each target takes bludgeoning \glossterm{standard damage} \minus1d.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{2}]{Stripping Windstrike}
+This subspell functions like the \spell{windstrike} subspell, except that the attack result is also compared to the target's Reflex defense.
+% Clarify: this can hit even if the damaging effect misses
+\hit The target drops all items it is holding that are not well secured (such as a ring) or held in two hands.
 \end{ability}
 \vspace{0.25em}
 
@@ -99,11 +107,18 @@ You can cast this subspell as a \glossterm{minor action}.
 
 \begin{ability}[\nth{3}]{Stormlord}
 This subspell functions like the \spell{wind screen} subspell, except that the air also retaliates against creatures that attack the target.
-Whenever a creature within \rngclose range of the target attacks it, make an attack vs. Fortitude against the attacking creature.
+Whenever a creature within \rngclose range of the target attacks it, make an attack vs. Armor against the attacking creature.
 A hit deals bludgeoning \glossterm{standard damage} \minus2d.
 Any individual creature can only be dealt damage in this way once per round.
 
 Any effect which increases this spell's range increases the range of this retaliation by the same amount.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{3}]{Stripping Gust of Wind}
+This subspell functions like the \spell{gust of wind} subspell, except that the attack result is also compared to each target's Reflex defense.
+\hit Each target drops all items it is holding that are not well secured (such as a ring) or held in two hands.
 \end{ability}
 \vspace{0.25em}
 
@@ -136,9 +151,23 @@ If another ability would magically manipulate the weather in the same area, the 
 \vspace{0.25em}
 
 
+\begin{ability}[\nth{4}]{Cyclone}[\glossterm{Air}]
+Make an attack vs. Armor against everything in a \areamed radius within \rngmed range.
+\hit Each target takes bludgeoning \glossterm{standard damage} \minus1d.
+\end{ability}
+\vspace{0.25em}
+
+
 \begin{ability}[\nth{4}]{Supreme Propulsion}
 This subspell functions like the \spell{propulsion} subspell, except that the distance you can move the target is increased to 300 feet.
 In addition, the target gains a \plus2d bonus to damage with melee \glossterm{strikes} during the same phase.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{6}]{Stripping Cyclone}
+This subspell functions like the \spell{cyclone} subspell, except that the attack result is also compared to each target's Reflex defense.
+\hit Each target drops all items it is holding that are not well secured (such as a ring) or held in two hands.
 \end{ability}
 \vspace{0.25em}
 
@@ -211,6 +240,7 @@ This subspell functions like the \spell{crushing wave} subspell, except that it 
 
 \begin{ability}[\nth{2}]{Geyser}[\glossterm{Manifestation}, \glossterm{Water}]
 Make an attack vs. Fortitude against everything in a \arealarge, 5 ft.\ wide vertical line within \rngmed range.
+If this subspell has its area increased, such as with the Widened \glossterm{augment}, only the length of the line increases.
 \hit Each target takes takes bludgeoning \glossterm{standard damage} \plus1d.
 \end{ability}
 \vspace{0.25em}
@@ -218,6 +248,12 @@ Make an attack vs. Fortitude against everything in a \arealarge, 5 ft.\ wide ver
 
 \begin{ability}[\nth{3}]{Greater Underwater Freedom}
 This subspell functions like the \spell{underwater freedom} subspell, except that the target can also breathe water as if it was air.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{3}]{Overpowering Wave}
+This subspell functions like the \spell{crushing wave} subspell, except that it attacks Reflex defense instead of Fortitude defense.
 \end{ability}
 \vspace{0.25em}
 
@@ -231,7 +267,7 @@ In addition, at the end of each \glossterm{action phase} in subsequent rounds, t
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{4}]{Greater Aqueous Blade}
+\begin{ability}[\nth{5}]{Greater Aqueous Blade}
 This subspell functions like the \spell{aqueous blade} subspell, except that the penalty to strike damage is reduced to \minus1d.
 \end{ability}
 \vspace{0.25em}
@@ -239,12 +275,6 @@ This subspell functions like the \spell{aqueous blade} subspell, except that the
 
 \begin{ability}[\nth{6}]{Greater Raging River}
 This subspell functions like the \textit{raging river} subspell, except that the spell gains the \glossterm{Sustain} (minor) tag instead of the \glossterm{Sustain} (standard) tag.
-\end{ability}
-\vspace{0.25em}
-
-
-\begin{ability}[\nth{6}]{Supreme Aqueous Blade}
-This subspell functions like the \spell{aqueous blade} subspell, except that the penalty to strike damage is removed.
 \end{ability}
 \vspace{0.25em}
 
@@ -520,7 +550,7 @@ You can cast this subspell as a \glossterm{minor action}.
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{2}]{Blessing of the Mighty}[\glossterm{Attune} (target)]
+\begin{ability}[\nth{2}]{Blessing of Might}[\glossterm{Attune} (target)]
 The target gains a \plus1d \glossterm{magic bonus} to damage with all abilities.
 You can cast this subspell as a \glossterm{minor action}.
 \end{ability}
@@ -576,7 +606,7 @@ This subspell functions like the \spell{battle blessing} subspell, except that t
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{5}]{Greater Blessing of the Mighty}
+\begin{ability}[\nth{5}]{Greater Blessing of Might}
 The target gains a \plus2d \glossterm{magic bonus} to damage with all abilities.
 \end{ability}
 \vspace{0.25em}
@@ -1032,7 +1062,13 @@ In addition, you can create heavy body armor.
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{3}]{Frostbite}
+\begin{ability}[\nth{3}]{Deep Freeze}
+This subspell functions like the \spell{cone of cold} subspell, except that it attacks Reflex defense instead of Fortitude defense.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{3}]{Greater Frostbite}
 This subspell functions like the \subspell{frostbite} subspell, except that a struck target is also \glossterm{exhausted} as a \glossterm{condition}.
 \end{ability}
 \vspace{0.25em}
@@ -1194,7 +1230,7 @@ Make an attack vs. Mental against all enemies in a \areamed radius from you.
 
 
 \begin{ability}{Cantrip}[\glossterm{Electricity}]
-Make an attack vs. Reflex against everything in a \areamed, 5 ft.\ wide line from you.
+Make an attack vs. Fortitude against everything in a \areamed, 5 ft.\ wide line from you.
 \hit Each target takes electricity \glossterm{standard damage} \minus2d.
 \end{ability}
 
@@ -1211,14 +1247,14 @@ Make an attack vs. Reflex against everything in a \areamed, 5 ft.\ wide line fro
 
 
 \begin{ability}[\nth{1}]{Lightning Bolt}[\glossterm{Electricity}]
-Make an attack vs. Reflex against everything in a \arealarge, 10 ft.\ wide line from you.
+Make an attack vs. Fortitude against everything in a \arealarge, 10 ft.\ wide line from you.
 \hit Each target takes electricity \glossterm{standard damage} \minus1d.
 \end{ability}
 \vspace{0.25em}
 
 
 \begin{ability}[\nth{1}]{Shocking Grasp}[\glossterm{Electricity}]
-Make an attack vs. Reflex against one creature or object you \glossterm{threaten}.
+Make an attack vs. Fortitude against one creature or object you \glossterm{threaten}.
 You gain a \plus5 bonus to \glossterm{concentration} checks to cast this subspell.
 \hit The target takes electricity \glossterm{standard damage} \plus1d.
 \end{ability}
@@ -1226,7 +1262,7 @@ You gain a \plus5 bonus to \glossterm{concentration} checks to cast this subspel
 
 
 \begin{ability}[\nth{2}]{Call Lightning}[\glossterm{Electricity}]
-Make an attack vs. Reflex against everything in a \arealarge, 5 ft.\ wide vertical line within \rngmed range.
+Make an attack vs. Fortitude against everything in a \arealarge, 5 ft.\ wide vertical line within \rngmed range.
 If you are outdoors in cloudy or stormy weather, you gain a \plus2 bonus to \glossterm{accuracy} with the attack.
 If this subspell has its area increased, such as with the Widened \glossterm{augment}, only the length of the line increases.
 \hit Each target takes takes electricity \glossterm{standard damage} \plus1d.
@@ -1256,14 +1292,8 @@ This subspell functions like the \spell{lightning bolt} subspell, except that yo
 
 
 \begin{ability}[\nth{2}]{Uncontrolled Discharge}
-Make an attack vs. Reflex against everything in a \areamed radius from you.
+Make an attack vs. Fortitude against everything in a \areamed radius from you.
 \hit Each target takes electricity \glossterm{standard damage} \minus1d.
-\end{ability}
-\vspace{0.25em}
-
-
-\begin{ability}[\nth{3}]{Instantaneous}
-This subspell functions like the \spell{lightning bolt} subspell, except that the spell's attack is made against Fortitude defense instead of Reflex defense.
 \end{ability}
 \vspace{0.25em}
 
@@ -1286,9 +1316,9 @@ Each critically struck target is \glossterm{stunned} instead of dazed.
 
 
 \begin{ability}[\nth{4}]{Chain Lightning}[\glossterm{Electricity}]
-Make an attack vs. Reflex against one creature or object within \rngmed range.
+Make an attack vs. Fortitude against one creature or object within \rngmed range.
 \hit The target takes electricity \glossterm{standard damage} \plus2d.
-In addition, make an additional attack vs. Reflex against any number of creatures in a \areamed radius from the struck target.
+In addition, make an additional attack vs. Fortitude against any number of creatures in a \areamed radius from the struck target.
 \hit Each secondary target takes electricity \glossterm{standard damage}.
 \end{ability}
 \vspace{0.25em}
@@ -1308,7 +1338,7 @@ This subspell functions like the \textit{dynamo} subspell, except that the spell
 
 
 \begin{ability}{Cantrip}[\glossterm{Acid}, \glossterm{Manifestation}]
-Make an attack vs. Reflex against one creature or object within \rngmed range.
+Make an attack vs. Armor against one creature or object within \rngmed range.
 \hit The target takes acid \glossterm{standard damage} \minus1d.
 \end{ability}
 
@@ -1325,7 +1355,7 @@ Make an attack vs. Reflex against one creature or object within \rngmed range.
 
 
 \begin{ability}[\nth{1}]{Acid Splash}[\glossterm{Acid}, \glossterm{Manifestation}]
-Make an attack vs. Reflex against one creature or object within \rngmed range.
+Make an attack vs. Armor against one creature or object within \rngmed range.
 \hit The target takes acid \glossterm{standard damage} \plus1d.
 \end{ability}
 \vspace{0.25em}
@@ -1389,7 +1419,7 @@ This is a \glossterm{condition}, and lasts until removed.
 You create a meteor in midair that falls to the ground, crushing foes in its path.
 The meteor takes up a \areamed radius, and must be created in unoccupied space.
 After being summoned, it falls up to 100 feet before disappearing.
-Make an attack vs. Reflex against everything in its path.
+Make an attack vs. Armor against everything in its path.
 \hit Each target takes bludgeoning and fire \glossterm{standard damage}.
 \end{ability}
 \vspace{0.25em}
@@ -1763,7 +1793,7 @@ This subspell functions like the \textit{regeneration} subspell, except that the
 
 
 \begin{ability}{Cantrip}[\glossterm{Fire}]
-Make an attack vs. Reflex against one creature or object within \rngmed range.
+Make an attack vs. Armor against one creature or object within \rngmed range.
 \hit The target takes fire \glossterm{standard damage} \minus1d.
 \end{ability}
 
@@ -1780,14 +1810,14 @@ Make an attack vs. Reflex against one creature or object within \rngmed range.
 
 
 \begin{ability}[\nth{1}]{Firebolt}[\glossterm{Fire}]
-Make an attack vs. Reflex against one creature within \rngmed range.
+Make an attack vs. Armor against one creature within \rngmed range.
 \hit The target takes fire \glossterm{standard damage} \plus1d.
 \end{ability}
 \vspace{0.25em}
 
 
 \begin{ability}[\nth{1}]{Fireburst}[\glossterm{Fire}]
-Make an attack vs. Reflex against everything in a \areasmall radius within \rngclose range.
+Make an attack vs. Armor against everything in a \areasmall radius within \rngclose range.
 \hit Each target takes fire \glossterm{standard damage} \minus1d.
 \end{ability}
 \vspace{0.25em}
@@ -1802,7 +1832,7 @@ At the end of each \glossterm{action phase} in subsequent rounds, the attack is 
 
 
 \begin{ability}[\nth{2}]{Burning Hands}[\glossterm{Fire}]
-Make an attack vs. Reflex against everything in a \arealarge cone.
+Make an attack vs. Armor against everything in a \arealarge cone.
 \hit Each target takes fire \glossterm{standard damage} \minus1d.
 \end{ability}
 \vspace{0.25em}
@@ -1832,22 +1862,28 @@ This subspell functions like the \spell{fireburst} subspell, except that the att
 
 
 \begin{ability}[\nth{3}]{Fireball}
-Make an attack vs. Reflex against everything in a \areamed radius within \rngmed range.
+Make an attack vs. Armor against everything in a \areamed radius within \rngmed range.
 \hit Each target takes fire \glossterm{standard damage} \minus1d.
 \end{ability}
 \vspace{0.25em}
 
 
 \begin{ability}[\nth{3}]{Flame Serpent}[\glossterm{Fire}]
-Make an attack vs. Reflex against everything in a \arealarge, 5 ft.\ wide shapeable line within \rngmed range.
+Make an attack vs. Armor against everything in a \arealarge, 5 ft.\ wide shapeable line within \rngmed range.
 \hit Each target takes fire \glossterm{standard damage} \minus1d.
 \end{ability}
 \vspace{0.25em}
 
 
 \begin{ability}[\nth{3}]{Inferno}[\glossterm{Fire}]
-Make an attack vs. Reflex against everything in a \arealarge radius from you.
+Make an attack vs. Armor against everything in a \arealarge radius from you.
 \hit Each target takes fire \glossterm{standard damage} \minus1d.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{3}]{Superheated Fireburst}
+This subspell functions like the \spell{fireburst} subspell, except that it attacks Reflex defense instead of Armor defense.
 \end{ability}
 \vspace{0.25em}
 
@@ -1855,7 +1891,7 @@ Make an attack vs. Reflex against everything in a \arealarge radius from you.
 \begin{ability}[\nth{4}]{Flame Aura}[\glossterm{Attune} (target), \glossterm{Fire}]
 Choose a willing creature within \rngclose range.
 Heat constantly radiates in a \areamed radius emanation from the target.
-At the end of each \glossterm{action phase}, make an attack vs. Reflex against everything in the area.
+At the end of each \glossterm{action phase}, make an attack vs. Armor against everything in the area.
 \hit Each target takes fire \glossterm{standard damage} \minus2d.
 
 You can cast this subspell as a \glossterm{minor action}.
@@ -2502,7 +2538,7 @@ A wall of whirling blades appears within \rngmed range.
 The wall either takes the form of a 20 ft.\ high, \arealarge line.
 The wall provides \glossterm{active cover} (20\% miss chance) against attacks made through it.
 Attacks that miss in this way harmlessly strike the wall.
-Whenever a creature or object passes through the wall, make an attack vs. Reflex against it.
+Whenever a creature or object passes through the wall, make an attack vs. Armor against it.
 \hit The target takes slashing \glossterm{standard damage} \minus1d.
 \end{ability}
 \vspace{0.25em}

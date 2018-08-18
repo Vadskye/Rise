@@ -358,6 +358,44 @@ The dire wolf moves up to its movement speed.
 If it uses this ability during the action phase, it can make a bite strike during the delayed action phase.
 \end{ability}
 
+\begin{monsection}{Eel}{6}[2]
+\vspace{-1em}\spelltwocol{}{Large animal}\vspace{-1em}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{
+\textbf{HP} 70;
+\textbf{Bloodied} 35;
+\textbf{Recovery} 2d10
+}
+{\textbf{AP} 3}
+
+\pari \textbf{Armor} 14;
+\textbf{Fort} 14;
+\textbf{Ref} 12;
+\textbf{Ment} 9
+\pari \textbf{Strike} Bite \plus6 (4d6)
+
+
+
+\pari \textbf{Behavior} Attack highest threat
+\end{spelltargetinginfo}
+\end{spellcontent}
+
+\begin{monsterfooter}
+\pari \textbf{Awareness} \plus6
+\pari \textbf{Speed} 40 ft.;
+\textbf{Space} 10 ft.;
+\textbf{Reach} 10 ft.
+\pari \textbf{Attributes}:
+Str 7,
+Dex 7,
+Con 0,
+Int \minus8,
+Per 4,
+Wil 0
+\end{monsterfooter}
+\end{monsection}
+
 \begin{monsection}{Ferret}{1}[1]
 \vspace{-1em}\spelltwocol{}{Tiny animal}\vspace{-1em}
 \begin{spellcontent}
@@ -1038,6 +1076,44 @@ Its accuracy is 6.
 \end{ability}
 
 \section{Magical Beasts}
+\begin{monsection}{Dragon}[Large Red]{9}[1]
+\vspace{-1em}\spelltwocol{}{Large magical beast}\vspace{-1em}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{
+\textbf{HP} 80;
+\textbf{Bloodied} 40;
+\textbf{Recovery} 2d10
+}
+{\textbf{AP} 4}
+
+\pari \textbf{Armor} 15;
+\textbf{Fort} 20;
+\textbf{Ref} 12;
+\textbf{Ment} 14
+\pari \textbf{Strike} Bite \plus10 (4d8)
+
+
+
+\pari \textbf{Behavior} Attack highest threat
+\end{spelltargetinginfo}
+\end{spellcontent}
+
+\begin{monsterfooter}
+\pari \textbf{Awareness} \plus6
+\pari \textbf{Speed} 40 ft.;
+\textbf{Space} 10 ft.;
+\textbf{Reach} 10 ft.
+\pari \textbf{Attributes}:
+Str 11,
+Dex 0,
+Con 11,
+Int 10,
+Per 10,
+Wil 10
+\end{monsterfooter}
+\end{monsection}
+
 \begin{monsection}{Ankheg}{7}[2]
 \vspace{-1em}\spelltwocol{}{Large magical beast}\vspace{-1em}
 \begin{spellcontent}
@@ -1086,7 +1162,7 @@ In addition, the ankheg can move with the target up to a maximum distance equal 
 
 \vspace{0.5em}
 \begin{ability}{Spit Acid}
-The ankheg makes a \plus8 vs. Reflex attack against everything in a 5 ft. wide Medium line.
+The ankheg makes a \plus8 vs. Armor attack against everything in a 5 ft. wide Medium line.
 \hit Each target takes 2d10 acid damage, and creatures are \glossterm{sickened} as a \glossterm{condition}.
 \end{ability}
 
@@ -1226,7 +1302,7 @@ Wil 0
 \subsubsection{Behir Abilities}
 
 \begin{ability}{Electric Breath}
-The behir makes a \plus9 vs. Reflex attack against everything in a \areamed cone.
+The behir makes a \plus9 vs. Armor attack against everything in a \areamed cone.
 \hit Each target takes 4d8 electricity damage, and is \glossterm{dazed} as a \glossterm{condition}.
 \end{ability}
 
@@ -1464,7 +1540,7 @@ Wil 0
 \subsubsection{Frost Worm Abilities}
 
 \begin{ability}{Frost Breath}[\glossterm{Cold}]
-The frost worm makes a \plus14 vs. Reflex attack against everything in a \arealarge cone from it.
+The frost worm makes a \plus14 vs. Fortitude attack against everything in a \arealarge cone from it.
 \hit Each target takes 8d10 cold damage.
 \end{ability}
 
@@ -1482,7 +1558,7 @@ The frost worm's bite and slam strikes deal cold damage in addition to their oth
 
 \vspace{0.5em}\parhead{Death Throes}
 When a frost worm is killed, its corpse turns to ice and shatters in a violent explosion.
-It makes a \plus14 vs. Reflex attack against everything in a \areahuge radius from it.
+It makes a \plus14 vs. Fortitude attack against everything in a \areahuge radius from it.
 \hit Each target takes 9d10 cold and piercing damage.
 
 \begin{monsection}{Girallon}{5}[4]
@@ -1996,7 +2072,7 @@ Per 16,
 \subsubsection{Giant Abilities}
 
 \begin{ability}{Lightning Javelin}
-The storm giant makes a \plus16 vs. Reflex attack against everything in a 10 ft. wide Large line.
+The storm giant makes a \plus16 vs. Fortitude attack against everything in a 10 ft. wide Large line.
 \hit Each target takes 5d10 electricity damage.
 \end{ability}
 
@@ -2208,7 +2284,7 @@ Wil 0
 \subsubsection{Arrowhawk Abilities}
 
 \begin{ability}{Electrobolt}
-The arrowhawk makes a \plus6 vs. Reflex attack against one creature or object in Medium range.
+The arrowhawk makes a \plus6 vs. Fortitude attack against one creature or object in Medium range.
 \hit The target takes 2d8 electricity damage.
 \end{ability}
 
@@ -2301,7 +2377,7 @@ Wil 0
 \subsubsection{Hell Hound Abilities}
 
 \begin{ability}{Fire Breath}
-The hell hound makes a \plus4 vs. Reflex attack against everything in a Medium cone.
+The hell hound makes a \plus4 vs. Armor attack against everything in a Medium cone.
 \hit Each target takes 2d6 fire damage.
 \end{ability}
 
@@ -2348,7 +2424,7 @@ Wil 0
 
 \begin{ability}{Flame Aura}[\glossterm{Sustain} (standard)]
 The salamander spends an action point to intensify its natural body heat, creating a burning aura around it.
-At the end of each action phase, the salamander makes a \plus4 vs. Reflex
+At the end of each action phase, the salamander makes a \plus4 vs. Armor
 attack against everything within a Medium radius emanation of it.
 \hit Each target takes 1d10 fire damage.
 \end{ability}
@@ -2441,7 +2517,7 @@ Wil 3
 
 \begin{ability}{Flame Aura}[\glossterm{Sustain} (standard)]
 The salamander spends an action point to intensify its natural body heat, creating a burning aura around it.
-At the end of each action phase, the salamander makes a \plus4 vs. Reflex
+At the end of each action phase, the salamander makes a \plus4 vs. Armor
 attack against everything within a Medium radius emanation of it.
 \hit Each target takes 1d10 fire damage.
 \end{ability}

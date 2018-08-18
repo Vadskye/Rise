@@ -366,15 +366,18 @@
 
         \parhead{Cost} The cost of the armor for Small or Medium humanoid
         creatures. See \trefnp{Armor for Unusual Creatures}, below, for armor prices for other creatures.
-        \parhead{Armor/Shield Bonus} Body armor improves your Armor defense, while shields improve both your Armor and Reflex defenses.
+        \parhead{Armor/Shield Bonus} Both body armor and shields improve your Armor defense.
         Wearing multiple suits of armor or wielding multiple shields does not improve your defenses any further.
 
         \parhead{Dexterity} Heavy body armor limits mobility and agility, halving your Dexterity.
         If your Dexterity is negative, it is not halved.
 
-        \subparhead{Shields} Most shields do not affect a your Dexterity. However, a tower shield halves your Dexterity. This is not cumulative with the halving from wearing heavy armor.
+        \subparhead{Shields} Most shields do not affect your Dexterity.
+        However, a tower shield halves your Dexterity.
+        This is not cumulative with the halving from wearing heavy armor.
 
         \parhead{Encumbrance} This value indicates how much the armor increases your \glossterm{encumbrance}.
+        % TODO: awkward that this doesn't affect, say, Climb-based attacks.
         You apply your encumbrance as a penalty to all Strength and Dexterity-based checks you make.
         For details, see \pcref{Encumbrance}.
 
@@ -429,20 +432,19 @@
                 \tind Half-plate       & \plus5        & 1/2\x  & \plus7       & Metal             & 200 gp     & 50 lb.      \\
                 \tind Full plate       & \plus6        & 1/2\x  & \plus6       & Metal             & 500 gp     & 50 lb.      \\
                 Shields                &               &        &               &                   &            &             \\
-                \tind Buckler          & \plus1\fn{2}  & \tdash & \tdash        & Metal or wood     & 15 gp      & 5 lb.       \\
-                \tind Shield, light    & \plus1        & \tdash & \tdash\fn{3}  & Metal or wood     & 5 gp       & 5 lb.       \\
-                \tind Shield, heavy    & \plus2        & \tdash & \tdash\fn{3}  & Metal or wood     & 15 gp      & 10 lb.      \\
-                \tind Shield, tower    & \plus3\fn{4}  & 1/2\x  & \plus2\fn{3} & Metal or wood     & 30 gp      & 45 lb.      \\
+                \tind Buckler          & \plus1        & \tdash & \tdash        & Metal or wood     & 15 gp      & 5 lb.       \\
+                \tind Shield, light    & \plus1        & \tdash & \tdash\fn{2}  & Metal or wood     & 5 gp       & 5 lb.       \\
+                \tind Shield, heavy    & \plus2        & \tdash & \tdash\fn{2}  & Metal or wood     & 15 gp      & 10 lb.      \\
+                \tind Shield, tower    & \plus3\fn{3}  & 1/2\x  & \plus2\fn{2} & Metal or wood     & 30 gp      & 45 lb.      \\
                 Extras                 &               &        &               &                   &            &             \\
-                \tind Armor spikes     & \minus1\fn{5} & \tdash & \plus1       & Metal             & \plus50 gp & \plus10 lb. \\
+                \tind Armor spikes     & \minus1\fn{4} & \tdash & \plus1       & Metal             & \plus50 gp & \plus10 lb. \\
                 \tind Gauntlet, locked & \tdash        & \tdash & Special       & Metal             & 8 gp       & \plus5 lb.  \\
                 \tind Shield spikes    & \tdash        & \tdash & \plus1       & Metal             & \plus10 gp & \plus5 lb.  \\
             \end{dtabularx}
             1 Weight figures are for armor sized to fit Medium characters. Armor fitted for Small characters weighs half as much, and armor fitted for Large characters weighs twice as much. \\
-            2 Bucklers do not increase your Reflex defense. \\
-            3 The hand holding the shield is not free, which may limit your actions. \\
-            4 Tower shields can grant you cover. See the description. \\
-            5 Armor spikes reduce the defense bonus granted by the armor they are put on by 1. \\
+            2 The hand holding the shield is not free, which may limit your actions. \\
+            3 Tower shields can grant you cover. See the description. \\
+            4 Armor spikes reduce the defense bonus granted by the armor they are put on by 1. \\
         \end{dtable!*}
 
     \subsection{Armor Descriptions}
@@ -639,13 +641,14 @@ Any of these substances except for the everburning torch and holy water can be m
 \parhead{Tanglefoot Bag} When you throw a tanglefoot bag at a creature, make a ranged attack against the target's Reflex defense.
 The bag has a \glossterm{range increment} of 10 feet.
 A hit means the target is \slowed as a \glossterm{condition}.
-A critical hit means the target is \immobilized instead of slowed.
 \par In addition to being removed as a condition, this effect can be broken by dealing 5 points of damage to the goo on the target.
 Unless the attacker uses a slashing weapon, damage dealt to the goo is also dealt to the creature the goo is on.
-The goo does not have an Armor defense, and can be hit automatically.  % that doesn't make sense
+The goo's Armor defense is 0. % that doesn't make sense
+In addition, whenever the target moves, it can make a Strength check as part of the movement.
+If it beats a DR of 5, the condition is removed after the movement is complete.
 \parhead{Thunderstone} You can throw this stone as a ranged attack with a \glossterm{range increment} of 20 feet.
-When it strikes a hard surface (or is struck hard), it creates a deafening bang that is treated as a sonic attack.
-The creature detonating the stone makes an attack with a \plus5 \glossterm{accuracy} against the Fortitude defense of all creatures within an \areasmall radius burst from the stone.
+When it strikes a hard surface (or is struck hard), it creates a deafening bang.
+The creature detonating the stone makes an attack with a \plus2 \glossterm{accuracy} against the Fortitude defense of all creatures within an \areasmall radius burst from the stone.
 A hit against a target means it is \deafened as a \glossterm{condition}.
 \parhead{Tindertwig} The alchemical substance on the end of this small, wooden stick ignites when struck against a rough surface. Creating a flame with a tindertwig is much faster than creating a flame with flint and steel (or a magnifying glass) and tinder. Lighting a torch with a tindertwig is a standard action (rather than a full-round action), and lighting any other fire with one is at least a standard action.
 
