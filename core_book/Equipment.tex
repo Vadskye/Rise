@@ -18,7 +18,7 @@
             \begin{dtabularx}{\textwidth}{l >{\lcol}X >{\lcol}X}
                 \tb{Group} & \tb{Weapons} & \tb{Exotic Weapons} \\
                 \bottomrule
-                Armor weapons     & Heavy shield (and spiked), light shield (and spiked), spiked armor   &                            \\
+                Armor weapons     & Standard shield (and spiked), spiked armor                           &                            \\
                 Axes              & Battleaxe, greataxe, handaxe, throwing axe                           & Double axe, dwarven waraxe \\
                 Blades, heavy     & Falchion, greatsword, longsword, scimitar                            & Katana, two-bladed sword   \\
                 Blades, light     & Dagger, punching dagger, rapier, short sword                         & Kukri                      \\
@@ -128,11 +128,9 @@
                 \lcaption{Weapons}\\
                 \tb{Name} & \tb{Encumbrance} & \tb{Damage\fn{1}} & \tb{Damage Type\fn{2}} & \tb{Cost} & \tb{Weight\fn{3}} & \tb{Special} \\
                 Armor weapons\label{Armor Weapons} &&&&&& \\
-                \tind Shield, heavy\fn{4} & Medium & \minus2d & Bludgeoning & special & special & Forceful \\
-                \tind Shield, light\fn{4} & Light & \minus3d & Bludgeoning & special & special & Forceful \\
+                \tind Shield, standard\fn{4} & Medium & \minus2d & Bludgeoning & special & special & Forceful \\
                 \tind Spiked armor\fn{4} & Medium & \minus1d & Piercing & special & special & Grappling \\
-                \tind Spiked shield, heavy\fn{4} & Medium & \minus1d & Piercing & special & special & Forceful \\
-                \tind Spiked shield, light\fn{4} & Light & \minus2d & Piercing & special & special & Forceful \\
+                \tind Spiked shield, standard\fn{4} & Medium & \minus1d & Piercing & special & special & Forceful \\
 
                 Axes &&&&&& \\
                 \tind Axe, throwing & Light & \minus1d & Slashing & 8 gp & 2 lb. & Throwing (10 ft.) \\
@@ -337,7 +335,7 @@
         \parhead{Pike} A pike can be used to atttack at up to triple your natural reach (so 15 feet for a typical Small or Medium creature).
         However, it cannot be short hafted (see \pcref{Reach Weapon}).
         \parhead{Rapier} A rapier is treated as a medium weapon if it is used as a secondary weapon when making dual strikes (see \pcref{Two-Weapon Strikes}).
-        \parhead{Shield, Heavy or Light} You can bash with a shield instead of using it for defense. See Armor for details.
+        \parhead{Shield, Standard} You can bash with a shield in addition to defending with it. See Armor for details.
         \parhead{Shortbow} You need both hands to fire a bow, regardless of its size. One hand is free when not firing the bow. Loading a bow is a free action that requires both hands.
         \par When attacking with a bow, you take a \minus4 penalty to accuracy against creatures that threaten you.
         \parhead{Sling} You can fire, but not load, a sling with one hand. Loading a sling is a free action that requires both hands.
@@ -346,7 +344,7 @@
         You cannot normally attack with spiked armor.
         However, if your armor is spiked and you are proficient with it, you deal damage with it whenever you make a successful \glossterm{grapple} or \glossterm{shove} attack.
         Magical abilities on a suit of armor does not improve the spikes' effectiveness, but the spikes can be made into magic weapons in their own right.
-        \parhead{Spiked Shield, Heavy or Light} You can bash with a spiked shield instead of using it for defense. See Armor for details.
+        \parhead{Spiked Shield, Standard} You can bash with a spiked shield in addition to defending with it. See Armor for details.
 
         \parhead{Unarmed Strike} Anyone can attack unarmed, but it is more dangerous than attacking with a weapon. See \pcref{Unarmed Combat}, for details.
 
@@ -424,21 +422,20 @@
                 \tind Leather          & \plus1        & 1\x    & \plus1       & Leather           & 10 gp      & 15 lb.      \\
                 \tind Studded leather  & \plus2        & 1\x    & \plus2       & Leather and metal & 25 gp      & 20 lb.      \\
                 \tind Chain shirt      & \plus2        & 1\x    & \plus2       & Metal             & 40 gp      & 25 lb.      \\
-                Medium armor           &               &        &               &                   &            &             \\
-                \tind Hide             & \plus3        & 1\x    & \plus3       & Leather           & 15 gp      & 25 lb.      \\
-                \tind Scale mail       & \plus4        & 1\x    & \plus5       & Metal             & 50 gp      & 30 lb.      \\
-                \tind Breastplate      & \plus4        & 1\x    & \plus4       & Metal             & 150 gp     & 30 lb.      \\
-                Heavy armor            &               &        &               &                   &            &             \\
-                \tind Half-plate       & \plus5        & 1/2\x  & \plus7       & Metal             & 200 gp     & 50 lb.      \\
-                \tind Full plate       & \plus6        & 1/2\x  & \plus6       & Metal             & 500 gp     & 50 lb.      \\
-                Shields                &               &        &               &                   &            &             \\
-                \tind Buckler          & \plus1        & \tdash & \tdash        & Metal or wood     & 15 gp      & 5 lb.       \\
-                \tind Shield, light    & \plus1        & \tdash & \tdash\fn{2}  & Metal or wood     & 5 gp       & 5 lb.       \\
-                \tind Shield, heavy    & \plus2        & \tdash & \tdash\fn{2}  & Metal or wood     & 15 gp      & 10 lb.      \\
+                Medium armor           &               &        &              &                   &            &             \\
+                \tind Hide             & \plus2        & 1\x    & \plus3       & Leather           & 15 gp      & 25 lb.      \\
+                \tind Scale mail       & \plus3        & 1\x    & \plus5       & Metal             & 50 gp      & 30 lb.      \\
+                \tind Breastplate      & \plus3        & 1\x    & \plus4       & Metal             & 150 gp     & 30 lb.      \\
+                Heavy armor            &               &        &              &                   &            &             \\
+                \tind Half-plate       & \plus4        & 1/2\x  & \plus7       & Metal             & 200 gp     & 50 lb.      \\
+                \tind Full plate       & \plus4        & 1/2\x  & \plus5       & Metal             & 500 gp     & 50 lb.      \\
+                Shields                &               &        &              &                   &            &             \\
+                \tind Buckler          & \plus1        & \tdash & \tdash       & Metal or wood     & 15 gp      & 5 lb.       \\
+                \tind Shield, standard & \plus2        & \tdash & \tdash\fn{2} & Metal or wood     & 15 gp      & 10 lb.      \\
                 \tind Shield, tower    & \plus3\fn{3}  & 1/2\x  & \plus2\fn{2} & Metal or wood     & 30 gp      & 45 lb.      \\
-                Extras                 &               &        &               &                   &            &             \\
+                Extras                 &               &        &              &                   &            &             \\
                 \tind Armor spikes     & \minus1\fn{4} & \tdash & \plus1       & Metal             & \plus50 gp & \plus10 lb. \\
-                \tind Gauntlet, locked & \tdash        & \tdash & Special       & Metal             & 8 gp       & \plus5 lb.  \\
+                \tind Gauntlet, locked & \tdash        & \tdash & Special      & Metal             & 8 gp       & \plus5 lb.  \\
                 \tind Shield spikes    & \tdash        & \tdash & \plus1       & Metal             & \plus10 gp & \plus5 lb.  \\
             \end{dtabularx}
             1 Weight figures are for armor sized to fit Medium characters. Armor fitted for Small characters weighs half as much, and armor fitted for Large characters weighs twice as much. \\
@@ -470,12 +467,10 @@
         Like a normal gauntlet, a locked gauntlet lets you deal normal damage rather than \glossterm{subdual damage} with unarmed attacks (see \pcref{Unarmed Combat}).
         \parhead{Half-Plate} The suit includes gauntlets.
         \parhead{Scale Mail} The suit includes gauntlets.
-        \parhead{Shield, Heavy, Wooden or Steel} You strap a shield to your forearm and grip it with your hand. A heavy shield is so heavy that you can't use your shield hand for anything else.
-        \subparhead{Wooden or Steel} Wooden and steel shields offer the same basic protection, though they respond differently to special attacks.
-        \subparhead{Shield Bash Attacks} You can bash an opponent with a heavy shield, using it as a medium bludgeoning weapon. See \trefnp{Weapons} for the damage dealt by a shield bash.  If you use your shield as a weapon, you lose its defense bonus until your next action (usually until the next round). Magical abilities on a shield do not affect shield bash attacks made with it, but the shield can be made into a magic weapon in its own right.
-        \parhead{Shield, Light, Wooden or Steel} You strap a shield to your forearm and grip it with your hand. A light shield's weight lets you carry other items in that hand, although you cannot use weapons or cast spells with it.
-        \subparhead{Wooden or Steel} Wooden and steel shields offer the same basic protection, though they respond differently to special attacks.
-        \parhead{Shield, Tower} This massive wooden shield is nearly as tall as an average human.
+        \parhead{Shield, Standard, Wooden or Steel} You strap a shield to your forearm and grip it with your hand. A standard shield is so cumbersome that you can't use your shield hand for anything else.
+        \subparhead{Shield Bash Attacks} You can bash an opponent with a standard shield, using it as a medium bludgeoning weapon. See \trefnp{Weapons} for the damage dealt by a shield bash.
+        Magical abilities on a shield do not affect shield bash attacks made with it, but the shield can be made into a magic weapon in its own right.
+        \parhead{Shield, Tower} This massive shield is nearly as tall as an average human.
         When you take the \textit{total defense} action with a tower shield, you can treat the shield as a wall along one edge of your square, providing you with \glossterm{total cover} against attacks.
         You cannot attack with a tower shield, and you cannot use your shield hand for anything else.
 
