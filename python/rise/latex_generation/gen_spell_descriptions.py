@@ -29,7 +29,7 @@ def generate_spells():
         short_description="Command air to protect allies and blast foes",
         header=Header('You blast a foe with wind.'),
         effects=Effects('Cantrip', """
-            Make an attack vs. Fortitude against a creature or object within \\rngmed range.
+            Make an attack vs. Armor against a creature or object within \\rngmed range.
             \\hit The target takes bludgeoning \\glossterm<standard damage> -1d.
         """),
         schools=['Transmutation'],
@@ -50,7 +50,7 @@ def generate_spells():
                 You can cast this subspell as a \\glossterm<minor action>.
             """, tags=['Air', 'Attune (target)', 'Shielding']),
             Subspell('Windstrike', 1, """
-                Make an attack vs. Fortitude against a creature or object within \\rngmed range.
+                Make an attack vs. Armor against a creature or object within \\rngmed range.
                 \\hit The target takes bludgeoning \\glossterm<standard damage> +1d.
             """, tags=['Air']),
             Subspell('Windblade', 1, """
@@ -73,7 +73,7 @@ def generate_spells():
                 The target gains a 30 foot \\glossterm<glide speed> (see \\pcref<Gliding>).
             """),
             Subspell('Gust of Wind', 2, """
-                Make an attack vs. Fortitude against everything in a \\arealarge, 10 ft. wide line from you.
+                Make an attack vs. Armor against everything in a \\arealarge, 10 ft. wide line from you.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
             """, tags=['Air']),
             Subspell('Greater Windblade', 3, """
@@ -88,7 +88,7 @@ def generate_spells():
             """),
             Subspell('Stormlord', 3, """
                 This subspell functions like the \\spell<wind screen> subspell, except that the air also retaliates against creatures that attack the target.
-                Whenever a creature within \\rngclose range of the target attacks it, make an attack vs. Fortitude against the attacking creature.
+                Whenever a creature within \\rngclose range of the target attacks it, make an attack vs. Armor against the attacking creature.
                 A hit deals bludgeoning \\glossterm<standard damage> -2d.
                 Any individual creature can only be dealt damage in this way once per round.
 
@@ -116,6 +116,23 @@ def generate_spells():
                 % TODO: This should be redundant with generic spell mechanics
                 If another ability would magically manipulate the weather in the same area, the most recently used ability takes precedence.
             """, ['Air', 'Attune (self)']),
+            Subspell('Cyclone', 4, """
+                Make an attack vs. Armor against everything in a \\areamed radius within \\rngmed range.
+                \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
+            """, ['Air']),
+            Subspell('Stripping Windstrike', 2, """
+                This subspell functions like the \\spell<windstrike> subspell, except that the attack result is also compared to the target's Reflex defense.
+                % Clarify: this can hit even if the damaging effect misses
+                \\hit The target drops all items it is holding that are not well secured (such as a ring) or held in two hands.
+            """),
+            Subspell('Stripping Gust of Wind', 3, """
+                This subspell functions like the \\spell<gust of wind> subspell, except that the attack result is also compared to each target's Reflex defense.
+                \\hit Each target drops all items it is holding that are not well secured (such as a ring) or held in two hands.
+            """),
+            Subspell('Stripping Cyclone', 6, """
+                This subspell functions like the \\spell<cyclone> subspell, except that the attack result is also compared to each target's Reflex defense.
+                \\hit Each target drops all items it is holding that are not well secured (such as a ring) or held in two hands.
+            """),
         ],
         category='buff, defense',
     ))
@@ -196,14 +213,14 @@ def generate_spells():
         header=Header("You conjure acid from thin air to land on a foe."),
         # TODO: Narrative implications of at-will acid are annoying
         effects=Effects('Cantrip', """
-            Make an attack vs. Reflex against one creature or object within \\rngmed range.
+            Make an attack vs. Armor against one creature or object within \\rngmed range.
             \\hit The target takes acid \\glossterm<standard damage> -1d.
         """, tags=['Acid', 'Manifestation']),
         schools=['Conjuration'],
         lists=['Arcane'],
         subspells=[
             Subspell('Acid Splash', 1, """
-                Make an attack vs. Reflex against one creature or object within \\rngmed range.
+                Make an attack vs. Armor against one creature or object within \\rngmed range.
                 \\hit The target takes acid \\glossterm<standard damage> +1d.
             """, tags=['Acid', 'Manifestation']),
             Subspell('Forge', 1, """
@@ -225,7 +242,7 @@ def generate_spells():
                 You create a meteor in midair that falls to the ground, crushing foes in its path.
                 The meteor takes up a \\areamed radius, and must be created in unoccupied space.
                 After being summoned, it falls up to 100 feet before disappearing.
-                Make an attack vs. Reflex against everything in its path.
+                Make an attack vs. Armor against everything in its path.
                 \\hit Each target takes bludgeoning and fire \\glossterm<standard damage>.
             """, tags=['Manifestation']),
             Subspell("Meteor Storm", 5, f"""
@@ -361,22 +378,22 @@ def generate_spells():
         short_description="Create fire to incinerate foes",
         header=Header('You create a small burst of flame.'),
         effects=Effects('Cantrip', """
-            Make an attack vs. Reflex against one creature or object within \\rngmed range.
+            Make an attack vs. Armor against one creature or object within \\rngmed range.
             \\hit The target takes fire \\glossterm<standard damage> -1d.
         """, tags=['Fire']),
         schools=['Evocation'],
         lists=['Arcane', 'Fire', 'Nature'],
         subspells=[
             Subspell('Fireburst', 1, """
-                Make an attack vs. Reflex against everything in a \\areasmall radius within \\rngclose range.
+                Make an attack vs. Armor against everything in a \\areasmall radius within \\rngclose range.
                 \\hit Each target takes fire \\glossterm<standard damage> -1d.
             """, tags=['Fire']),
             Subspell('Firebolt', 1, """
-                Make an attack vs. Reflex against one creature within \\rngmed range.
+                Make an attack vs. Armor against one creature within \\rngmed range.
                 \\hit The target takes fire \\glossterm<standard damage> +1d.
             """, tags=['Fire']),
             Subspell("Burning Hands", 2, f"""
-                Make an attack vs. Reflex against everything in a \\arealarge cone.
+                Make an attack vs. Armor against everything in a \\arealarge cone.
                 \\hit Each target takes fire \\glossterm<standard damage> -1d.
             """, tags=['Fire']),
             Subspell("Blast Furnace", 2, f"""
@@ -385,7 +402,7 @@ def generate_spells():
                 At the end of each \\glossterm<action phase> in subsequent rounds, the attack is repeated in that area.
             """),
             Subspell('Fireball', 3, """
-                Make an attack vs. Reflex against everything in a \\areamed radius within \\rngmed range.
+                Make an attack vs. Armor against everything in a \\areamed radius within \\rngmed range.
                 \\hit Each target takes fire \\glossterm<standard damage> -1d.
             """),
             Subspell("Greater Blast Furnace", 4, f"""
@@ -403,24 +420,27 @@ def generate_spells():
                 This subspell functions like the \\textit<greater ignition> subspell, except that the condition must be removed twice before the effect ends.
             """),
             Subspell('Inferno', 3, """
-                Make an attack vs. Reflex against everything in a \\arealarge radius from you.
+                Make an attack vs. Armor against everything in a \\arealarge radius from you.
                 \\hit Each target takes fire \\glossterm<standard damage> -1d.
             """, tags=['Fire']),
             Subspell('Greater Inferno', 5, """
                 This subspell functions like the \\textit<inferno> subspell, except that it affects everything in a 200 ft.\\ radius from you.
+            """),
+            Subspell('Superheated Fireburst', 3, """
+                This subspell functions like the \\spell<fireburst> subspell, except that it attacks Reflex defense instead of Armor defense.
             """),
             Subspell("Fearsome Flame", 3, f"""
                 This subspell functions like the \\spell<fireburst> subspell, except that the attack result is also compared to each target's Mental defense.
                 \\hit Each target is \\glossterm<shaken> as a \\glossterm<condition>.
             """),
             Subspell("Flame Serpent", 3, f"""
-                Make an attack vs. Reflex against everything in a \\arealarge, 5 ft.\\ wide shapeable line within \\rngmed range.
+                Make an attack vs. Armor against everything in a \\arealarge, 5 ft.\\ wide shapeable line within \\rngmed range.
                 \\hit Each target takes fire \\glossterm<standard damage> -1d.
             """, tags=['Fire']),
             Subspell('Flame Aura', 4, """
                 Choose a willing creature within \\rngclose range.
                 Heat constantly radiates in a \\areamed radius emanation from the target.
-                At the end of each \\glossterm<action phase>, make an attack vs. Reflex against everything in the area.
+                At the end of each \\glossterm<action phase>, make an attack vs. Armor against everything in the area.
                 \\hit Each target takes fire \\glossterm<standard damage> -2d.
 
                 You can cast this subspell as a \\glossterm<minor action>.
@@ -483,6 +503,7 @@ def generate_spells():
             """),
             Subspell('Geyser', 2, """
                 Make an attack vs. Fortitude against everything in a \\arealarge, 5 ft.\\ wide vertical line within \\rngmed range.
+                If this subspell has its area increased, such as with the Widened \\glossterm<augment>, only the length of the line increases.
                 \\hit Each target takes takes bludgeoning \\glossterm<standard damage> +1d.
             """, tags=['Manifestation', 'Water']),
             Subspell("Aqueous Sphere", 2, f"""
@@ -496,11 +517,11 @@ def generate_spells():
                 You can cast this subspell as a \\glossterm<minor action>.
                 This subspell is from the Transmutation school instead of the Conjuration school.
             """, tags=['Attune (target)', 'Shaping', 'Water']),
-            Subspell('Greater Aqueous Blade', 4, """
+            Subspell('Greater Aqueous Blade', 5, """
                 This subspell functions like the \\spell<aqueous blade> subspell, except that the penalty to strike damage is reduced to -1d.
             """),
-            Subspell('Supreme Aqueous Blade', 6, """
-                This subspell functions like the \\spell<aqueous blade> subspell, except that the penalty to strike damage is removed.
+            Subspell('Overpowering Wave', 3, """
+                This subspell functions like the \\spell<crushing wave> subspell, except that it attacks Reflex defense instead of Fortitude defense.
             """),
         ],
         category='damage',
@@ -688,11 +709,11 @@ def generate_spells():
             Subspell('Greater Cleansing Blessing', 4, """
                 This subspell functions like the \\spell<cleansing blessing> subspell, except that it can remove two conditions instead of one.
             """),
-            Subspell('Blessing of the Mighty', 2, """
+            Subspell('Blessing of Might', 2, """
                 The target gains a +1d \\glossterm<magic bonus> to damage with all abilities.
                 You can cast this subspell as a \\glossterm<minor action>.
             """, tags=['Attune (target)']),
-            Subspell("Greater Blessing of the Mighty", 5, """
+            Subspell("Greater Blessing of Might", 5, """
                 The target gains a +2d \\glossterm<magic bonus> to damage with all abilities.
             """),
             Subspell("Blessed Blade", 2, """
@@ -780,7 +801,7 @@ def generate_spells():
                 Make an attack vs. Fortitude against one creature or object within \\rngmed range.
                 \\hit The target takes cold \\glossterm<standard damage> +1d.
             """, tags=['Cold']),
-            Subspell('Frostbite', 3, """
+            Subspell('Greater Frostbite', 3, """
                 This subspell functions like the \\subspell<frostbite> subspell, except that a struck target is also \\glossterm<exhausted> as a \\glossterm<condition>.
             """),
             Subspell('Cold Snap', 2, """
@@ -796,6 +817,9 @@ def generate_spells():
             """),
             Subspell('Blizzard', 2, """
                 This subspell functions like the \\spell<cone of cold> subspell, except that the area becomes a \\areamed radius from you.
+            """),
+            Subspell('Deep Freeze', 3, """
+                This subspell functions like the \\spell<cone of cold> subspell, except that it attacks Reflex defense instead of Fortitude defense.
             """),
             Subspell('Icecraft', 1, """
                 Choose a pool of unattended, nonmagical water within \\rngclose range.
@@ -832,23 +856,23 @@ def generate_spells():
         short_description='Create electricity to injure and stun foes',
         header=Header("You create a bolt of electricity that fries your foes."),
         effects=Effects('Cantrip', """
-            Make an attack vs. Reflex against everything in a \\areamed, 5 ft.\\ wide line from you.
+            Make an attack vs. Fortitude against everything in a \\areamed, 5 ft.\\ wide line from you.
             \\hit Each target takes electricity \\glossterm<standard damage> -2d.
         """, tags=['Electricity']),
         schools=['Evocation'],
         lists=['Arcane', 'Nature'],
         subspells=[
             Subspell('Lightning Bolt', 1, """
-                Make an attack vs. Reflex against everything in a \\arealarge, 10 ft.\\ wide line from you.
+                Make an attack vs. Fortitude against everything in a \\arealarge, 10 ft.\\ wide line from you.
                 \\hit Each target takes electricity \\glossterm<standard damage> -1d.
             """, tags=['Electricity']),
             Subspell('Shocking Grasp', 1, """
-                Make an attack vs. Reflex against one creature or object you \\glossterm<threaten>.
+                Make an attack vs. Fortitude against one creature or object you \\glossterm<threaten>.
                 You gain a +5 bonus to \\glossterm<concentration> checks to cast this subspell.
                 \\hit The target takes electricity \\glossterm<standard damage> +1d.
             """, tags=['Electricity']),
             Subspell('Uncontrolled Discharge', 2, """
-                Make an attack vs. Reflex against everything in a \\areamed radius from you.
+                Make an attack vs. Fortitude against everything in a \\areamed radius from you.
                 \\hit Each target takes electricity \\glossterm<standard damage> -1d.
             """),
             Subspell('Magnetic', 2, """
@@ -870,9 +894,9 @@ def generate_spells():
                 This subspell functions like the \\textit<dynamo> subspell, except that the spell gains the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Sustain> (standard) tag.
             """),
             Subspell('Chain Lightning', 4, """
-                Make an attack vs. Reflex against one creature or object within \\rngmed range.
+                Make an attack vs. Fortitude against one creature or object within \\rngmed range.
                 \\hit The target takes electricity \\glossterm<standard damage> +2d.
-                In addition, make an additional attack vs. Reflex against any number of creatures in a \\areamed radius from the struck target.
+                In addition, make an additional attack vs. Fortitude against any number of creatures in a \\areamed radius from the struck target.
                 \\hit Each secondary target takes electricity \\glossterm<standard damage>.
             """, tags=['Electricity']),
             Subspell("Forked Lightning", 2, """
@@ -883,11 +907,8 @@ def generate_spells():
                 This subspell functions like the \\spell<lightning bolt> subspell, except that each struck target is also \\glossterm<dazed> as a \\glossterm<condition>.
                 Each critically struck target is \\glossterm<stunned> instead of dazed.
             """),
-            Subspell("Instantaneous", 3, """
-                This subspell functions like the \\spell<lightning bolt> subspell, except that the spell's attack is made against Fortitude defense instead of Reflex defense.
-            """),
             Subspell("Call Lightning", 2, """
-                Make an attack vs. Reflex against everything in a \\arealarge, 5 ft.\\ wide vertical line within \\rngmed range.
+                Make an attack vs. Fortitude against everything in a \\arealarge, 5 ft.\\ wide vertical line within \\rngmed range.
                 If you are outdoors in cloudy or stormy weather, you gain a +2 bonus to \\glossterm<accuracy> with the attack.
                 If this subspell has its area increased, such as with the Widened \\glossterm<augment>, only the length of the line increases.
                 \\hit Each target takes takes electricity \\glossterm<standard damage> +1d.
@@ -1721,7 +1742,7 @@ def generate_spells():
                 The wall either takes the form of a 20 ft.\\ high, \\arealarge line.
                 The wall provides \\glossterm<active cover> (20\\% miss chance) against attacks made through it.
                 Attacks that miss in this way harmlessly strike the wall.
-                Whenever a creature or object passes through the wall, make an attack vs. Reflex against it.
+                Whenever a creature or object passes through the wall, make an attack vs. Armor against it.
                 \\hit The target takes slashing \\glossterm<standard damage> -1d.
             """, tags=['Sustain (minor)']),
             Subspell('Summon Weapon', 1, """
