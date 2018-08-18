@@ -230,6 +230,9 @@ def generate_rituals():
             However, you must specify your target with a precise mental image of its appearance.
             The image does not have to be perfect, but it must unambiguously identify the target.
             You learn the location (place, name, business name, or the like), community, country, and continent where the target lies.
+            % Wording?
+            If there is no corresponding information about an aspect of the target's location, such as if the target is in a location which is not part of a recognized country,
+                you learn only that that that aspect of the information is missing.
 
             This ritual takes 24 hours to perform, and it requires 32 action points from its participants.
         """),
@@ -352,8 +355,11 @@ def generate_rituals():
             Choose an unattended, nonmagical object within \\rngclose range.
             Time does not pass for the target, preventing it from decaying or spoiling.
             This can extend the time a poison or similar item lasts before becoming inert.
-            If used on a corpse, this effectively extends the time limit on raising that creature from the dead (see \\ritual<resurrection>) and similar effects that require a fresh body.
+            % What effects have an explicit time limit?
+            If used on a corpse, this effectively extends the time limit for effects that require a fresh or intact body.
             Additionally, this can make transporting a fallen comrade more pleasant.
+
+            % Does this need to explicitly clarify that it doesn't stop time from passing for the creature's soul?
 
             This ritual takes one minute to perform.
         """, tags=['Attune (ritual)', 'Temporal']),
@@ -496,14 +502,14 @@ def generate_rituals():
 
     rituals.append(Spell(
         name="Scryward",
-        base_level=3,
+        base_level=2,
         # header=Header("description"),
         effects=Effects('Scryward', """
             This ritual creates a ward against scrying in a \\arealarge radius zone centered on your location.
             All \\glossterm<Scrying> effects fail to function in the area.
             This effect is permanent.
 
-            This ritual takes 24 hour to perform, and requires 9 action points from its participants.
+            This ritual takes 24 hour to perform, and requires 8 action points from its participants.
         """, tags=['Mystic']),
         schools=['Abjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
@@ -511,7 +517,7 @@ def generate_rituals():
 
     rituals.append(Spell(
         name="Private Sanctum",
-        base_level=5,
+        base_level=4,
         # header=Header("description"),
         effects=Effects('Private Sanctum', """
             This ritual creates a ward against any external perception in a \\arealarge radius zone centered on your location.
@@ -521,7 +527,7 @@ def generate_rituals():
             In addition, all \\glossterm<Scrying> effects fail to function in the area.
             Creatures inside the area can see within the area and outside of it without any difficulty.
 
-            This ritual takes 24 hours to perform, and requires 25 action points from its participants.
+            This ritual takes 24 hours to perform, and requires 32 action points from its participants.
         """, tags=['Mystic']),
         schools=['Abjuration'],
         lists=['Arcane'],
@@ -559,7 +565,7 @@ def generate_rituals():
 
     rituals.append(Spell(
         name="Reincarnation",
-        base_level=5,
+        base_level=4,
         # header=Header("description"),
         effects=Effects('Reincarnation', """
             Choose one Diminuitive or larger piece of a humanoid corpse.
@@ -584,7 +590,7 @@ def generate_rituals():
             This penalty lasts for thirty days, or until the creature gains a level.
             If this would reduce a creature's maximum action points below 0, the creature cannot be resurrected.
 
-            This ritual takes 24 hours to perform, and requires 25 action points from its participants.
+            This ritual takes 24 hours to perform, and requires 32 action points from its participants.
         """, tags=['Creation', 'Flesh', 'Life']),
         schools=['Conjuration', 'Vivimancy'],
         lists=['Nature'],
@@ -605,16 +611,16 @@ def generate_rituals():
             \end{dtable}
         """,
         subspells=[
-            Subspell("Fated", 7, f"""
+            Subspell("Fated", 5, f"""
                 This subritual functions like the \\ritual<reincarnation> ritual, except that the target is reincarnated as its original race instead of as a random race.
-                This ritual takes 24 hours to perform, and requires 49 action points from its participants.
+                This ritual takes 24 hours to perform, and requires 50 action points from its participants.
             """),
         ],
     ))
 
     rituals.append(Spell(
         name="Purge Curse",
-        base_level=3,
+        base_level=2,
         # header=Header("description"),
         effects=Effects('Purge Curse', """
             Choose a willing creature within \\rngclose range.
@@ -622,22 +628,22 @@ def generate_rituals():
             This ritual cannot remove a curse that is part of the effect of an item the target has equipped.
             However, it can allow the target to remove any cursed items it has equipped.
 
-            This ritual takes 24 hours to perform, and requires 9 action points from its participants.
+            This ritual takes 24 hours to perform, and requires 8 action points from its participants.
         """, tags=['Mystic']),
         schools=['Abjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
     ))
 
     rituals.append(Spell(
-        name="Regeneration",
-        base_level=4,
+        name="Restoration",
+        base_level=3,
         # header=Header("description"),
-        effects=Effects('Regeneration', """
+        effects=Effects('Restoration', """
             Choose a willing creature within \\rngclose range.
             All of the target's hit points, \\glossterm<subdual damage>, and \\glossterm<vital damage> are healed.
             In addition, any of the target's severed body parts or missing organs grow back by the end of the next round.
 
-            This ritual takes 24 hours to perform, and requires 16 action points from its participants.
+            This ritual takes 24 hours to perform, and requires 18 action points from its participants.
         """, tags=['Flesh']),
         schools=['Vivimancy'],
         lists=['Divine', 'Nature'],
@@ -645,7 +651,7 @@ def generate_rituals():
 
     rituals.append(Spell(
         name="Resurrection",
-        base_level=4,
+        base_level=3,
         # header=Header("description"),
         effects=Effects('Resurrection', """
             Choose one intact humanoid corpse within \\rngclose range.
@@ -663,32 +669,32 @@ def generate_rituals():
             This penalty lasts for thirty days, or until the creature gains a level.
             If this would reduce a creature's maximum action points below 0, the creature cannot be resurrected.
 
-            This ritual takes 24 hours to perform, and requires 16 action points from its participants.
+            This ritual takes 24 hours to perform, and requires 18 action points from its participants.
         """, tags=['Flesh', 'Life']),
         schools=['Conjuration', 'Vivimancy'],
         lists=['Nature'],
         subspells=(
-            Subspell('Complete', 7, """
+            Subspell('Complete', 5, """
                 This subritual functions like the \\ritual<resurrection> ritual, except that it does not have to target a fully intact corpse.
                 Instead, it targets a Diminuitive or larger piece of a humanoid corpse.
                 The target must have been part of the original creature's body at the time of death.
                 The resurrected creature's body is fully restored to its healthy state before dying, including regenerating all missing or damaged body parts.
 
-                This ritual takes 24 hours to perform, and requires 49 action points from its participants.
+                This ritual takes 24 hours to perform, and requires 50 action points from its participants.
             """),
-            Subspell('True', 9, """
+            Subspell('True', 7, """
                 This subritual functions like the \\ritual<resurrection> ritual, except that it does not require any piece of the corpse.
                 Instead, you must explicitly and unambiguously specify the identity of the creature being resurrected.
                 The resurrected creature's body is fully restored to its healthy state before dying, including regenerating all missing or damaged body parts.
 
-                This ritual takes 24 hours to perform, and requires 81 action points from its participants.
+                This ritual takes 24 hours to perform, and requires 98 action points from its participants.
             """),
         ),
     ))
 
     rituals.append(Spell(
         name="Scry Creature",
-        base_level=5,
+        base_level=4,
         # Need to make sure this can't be used for high-bandwidth bidirectional communication
         effects=Effects("Scry Creature", """
             Make an attack vs. Mental against a creature on the same plane as you.
@@ -710,14 +716,14 @@ def generate_rituals():
 
     rituals.append(Spell(
         name="Sending",
-        base_level=4,
+        base_level=3,
         # header=Header("description"),
         effects=Effects('Sending', """
             Choose a creature on the same plane as you.
             You do not need \\glossterm<line of sight> or \\glossterm<line of effect> to the target.
             However,  must specify your target with a precise mental image of its appearance.
             The image does not have to be perfect, but it must unambiguously identify the target.
-            If you specify its appearance incorrectly, or if the target has changed its appearance, you may accidentally target a different creature, or the spell may simply fail.
+            If you specify its appearance incorrectly, or if the target has changed its appearance, you may accidentally target a different creature, or the ritual may simply fail.
 
             You send the target a short verbal message.
             The message must be twenty-five words or less, and speaking the message must not take longer than five rounds.
@@ -730,7 +736,7 @@ def generate_rituals():
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
         subspells=[
-            Subspell('Interplanar', 6, """
+            Subspell('Interplanar', 7, """
                 This subritual functions like the \\ritual<sending> ritual, except that the target does not have to be on the same plane as you.
                 It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<sending> ritual.
             """),
@@ -739,14 +745,17 @@ def generate_rituals():
 
     rituals.append(Spell(
         name="Soul Bind",
-        base_level=8,
+        base_level=5,
         # header=Header("description"),
         effects=Effects('Soul Bind', """
             Choose one intact corpse within \\rngclose range.
-            In addition, choose a gem you hold that is worth at least 1,000 gp.
-            The soul of the creature that the target corpse belongs to is imprisoned in the chosen gem.
-            This prevents the creature from being resurrected, and prevents the corpse from being used to create undead creatures, as long as the gem is intact.
+            % Is this clear enough that you can't use the same gem for this ritual twice?
+            In addition, choose a nonmagical gem you hold that is worth at least 1,000 gp.
+            A fragment of the soul of the creature that the target corpse belongs to is imprisoned in the chosen gem.
+            This does not remove the creature from its intended afterlife.
+            However, it prevents the creature from being resurrected, and prevents the corpse from being used to create undead creatures, as long as the gem is intact.
             A creature holding the gem may still resurrect or reanimate the creature.
+            If the gem is shattered, the fragment of the creature's soul returns to its body.
 
             This ritual takes one hour to perform.
         """, tags=['Life']),
@@ -756,35 +765,33 @@ def generate_rituals():
 
     rituals.append(Spell(
         name="Telepathic Bond",
-        base_level=4,
+        base_level=3,
         # header=Header("description"),
         effects=Effects('Telepathic Bond', """
             Choose up to five willing ritual participants.
             Each target can communicate mentally through telepathy with each other target.
-            This communication is instantaneous across any distance, but cannot reach across planes.
+            This communication is instantaneous, though it cannot reach more than 100 miles or across planes.
 
             % Is this grammatically correct?
-            This effect lasts as long as you and each target \\glossterm<attune> to it.
             Each target must attune to this ritual independently.
             If a target breaks its attunement, it stops being able to send and receive mental messages with other targets.
-            However, the effect continues as long as you attune to it.
-            If you stop attuning to it, the ritual is \\glossterm<dismissed> as usual.
+            However, the effect continues as long as at least one target attunes to it.
+            If you \\glossterm<dismiss> the ritual, the effect ends for all targets.
 
-            This ritual takes 24 hours to perform.
+            This ritual takes one hour to perform.
         """, tags=['Attune (ritual; see text)']),
         schools=['Divination'],
         lists=['Arcane'],
         subspells=[
-            Subspell('Interplanar', 8, """
-                This subritual functions like the \\ritual<telepathic bond> ritual, except that each target can communicate telepathically even across different planes.
-                It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<telepathic bond> ritual.
+            Subspell('Long-Distance Bond', 5, """
+                This subritual functions like the \\ritual<telepathic bond> ritual, except that the effect works at any distance.
             """),
         ],
     ))
 
     rituals.append(Spell(
         name="Overland Teleportation",
-        base_level=5,
+        base_level=4,
         # header=Header("description"),
         effects=Effects('Overland Teleportation', """
             Choose up to five willing, Medium or smaller ritual participants.
@@ -798,7 +805,7 @@ def generate_rituals():
             If no such area exists, the ritual simply fails.
             % TODO: does this need more clarity about what teleportation works?
 
-            This ritual takes 24 hours to perform and requires 25 action points from its ritual participants.
+            This ritual takes 24 hours to perform and requires 32 action points from its ritual participants.
         """, tags=['Teleportation']),
         schools=['Conjuration'],
         lists=['Arcane'],
@@ -806,11 +813,16 @@ def generate_rituals():
 
     rituals.append(Spell(
         name="Lifeweb Transit",
-        base_level=5,
+        base_level=4,
         # header=Header("description"),
         effects=Effects('Lifeweb Transit', """
-            This ritual functions like the \\ritual<overland teleporation> ritual, except that both the starting and ending points must be living plants.
-            Both plants must be larger than the largest creature being teleported in this way.
+            This ritual functions like the \\ritual<overland teleporation> ritual, except that you must also choose a living plant that all ritual participants can touch.
+            The plant must be larger than the largest creature being teleported in this way.
+            The ritual participants travel through the chosen plant.
+
+            In addition, you do not arrive directly at your intended destination.
+            % TODO: wording
+            Instead, you arrive at the sufficiently large living plant that is closest to your intended destination.
         """, tags=['Teleportation']),
         schools=['Conjuration'],
         lists=['Nature'],
@@ -818,13 +830,14 @@ def generate_rituals():
 
     rituals.append(Spell(
         name="Blessed Transit",
-        base_level=5,
+        base_level=4,
         # header=Header("description"),
         effects=Effects('Blessed Transit', """
-            This ritual functions like the \\ritual<overland teleporation> ritual, except that the destination must be a temple or equivalent holy site to your deity.
+            This ritual functions like the \\ritual<overland teleporation> ritual, except that you do not arrive directly at your intended destination.
+            Instead, you arrive at the temple or equivalent holy site to your deity that is closest to your intended destination.
         """, tags=['Teleportation']),
         schools=['Conjuration'],
-        lists=['divine'],
+        lists=['Divine'],
     ))
 
     rituals.append(Spell(
@@ -848,10 +861,10 @@ def generate_rituals():
         base_level=2,
         # header=Header("description"),
         effects=Effects('Seek Legacy', """
-            Choose a willing creature within \\rngclose range.
+            Choose a willing ritual participant.
             The target learns the precise distance and direction to their \\glossterm<legacy item>, if it is on the same plane.
 
-            This ritual takes 24 hours to perform.
+            This ritual takes 24 hours to perform, and requires 8 action points from its ritual participants.
         """),
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
@@ -859,13 +872,13 @@ def generate_rituals():
 
     rituals.append(Spell(
         name="Retrieve Legacy",
-        base_level=4,
+        base_level=3,
         # header=Header("description"),
         effects=Effects('Retrieve Legacy', """
-            Choose a willing creature within \\rngclose range.
+            Choose a willing ritual participant.
             If the target's \\glossterm<legacy item> is on the same plane and \\glossterm<unattended>, it is teleported into the target's hand.
 
-            This ritual takes 24 hours to perform, and requires 16 action points from its ritual participants.
+            This ritual takes 24 hours to perform, and requires 18 action points from its ritual participants.
         """, tags=['Teleportation']),
         schools=['Conjuration', 'Divination'],
         lists=['Arcane', 'Divine', 'Nature'],

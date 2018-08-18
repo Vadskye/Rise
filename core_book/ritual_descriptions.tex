@@ -81,11 +81,12 @@ This ritual takes one hour to perform.
 \vspace{0.25em}
 
 
-\begin{spellsection}{Blessed Transit}[5]
+\begin{spellsection}{Blessed Transit}[4]
 
 
 \begin{ability}{Blessed Transit}[\glossterm{Teleportation}]
-This ritual functions like the \ritual{overland teleporation} ritual, except that the destination must be a temple or equivalent holy site to your deity.
+This ritual functions like the \ritual{overland teleporation} ritual, except that you do not arrive directly at your intended destination.
+Instead, you arrive at the temple or equivalent holy site to your deity that is closest to your intended destination.
 \end{ability}
 
 
@@ -93,7 +94,7 @@ This ritual functions like the \ritual{overland teleporation} ritual, except tha
 
 \parhead{Schools} Conjuration
 
-\parhead{Spell Lists} divine
+\parhead{Spell Lists} Divine
 \end{spellsection}
 
 
@@ -195,6 +196,9 @@ You do not need \glossterm{line of sight} or \glossterm{line of effect} to the t
 However, you must specify your target with a precise mental image of its appearance.
 The image does not have to be perfect, but it must unambiguously identify the target.
 You learn the location (place, name, business name, or the like), community, country, and continent where the target lies.
+% Wording?
+If there is no corresponding information about an aspect of the target's location, such as if the target is in a location which is not part of a recognized country,
+you learn only that that that aspect of the information is missing.
 
 This ritual takes 24 hours to perform, and it requires 32 action points from its participants.
 \end{ability}
@@ -384,8 +388,11 @@ This ritual takes one week to perform, and requires 98 action points from its pa
 Choose an unattended, nonmagical object within \rngclose range.
 Time does not pass for the target, preventing it from decaying or spoiling.
 This can extend the time a poison or similar item lasts before becoming inert.
-If used on a corpse, this effectively extends the time limit on raising that creature from the dead (see \ritual{resurrection}) and similar effects that require a fresh body.
+% What effects have an explicit time limit?
+If used on a corpse, this effectively extends the time limit for effects that require a fresh or intact body.
 Additionally, this can make transporting a fallen comrade more pleasant.
+
+% Does this need to explicitly clarify that it doesn't stop time from passing for the creature's soul?
 
 This ritual takes one minute to perform.
 \end{ability}
@@ -442,12 +449,17 @@ This ritual takes 24 hours to perform.
 \end{spellsection}
 
 
-\begin{spellsection}{Lifeweb Transit}[5]
+\begin{spellsection}{Lifeweb Transit}[4]
 
 
 \begin{ability}{Lifeweb Transit}[\glossterm{Teleportation}]
-This ritual functions like the \ritual{overland teleporation} ritual, except that both the starting and ending points must be living plants.
-Both plants must be larger than the largest creature being teleported in this way.
+This ritual functions like the \ritual{overland teleporation} ritual, except that you must also choose a living plant that all ritual participants can touch.
+The plant must be larger than the largest creature being teleported in this way.
+The ritual participants travel through the chosen plant.
+
+In addition, you do not arrive directly at your intended destination.
+% TODO: wording
+Instead, you arrive at the sufficiently large living plant that is closest to your intended destination.
 \end{ability}
 
 
@@ -567,7 +579,7 @@ In addition, the DR to break it open increases by 20 instead of by 10.
 \vspace{0.25em}
 
 
-\begin{spellsection}{Overland Teleportation}[5]
+\begin{spellsection}{Overland Teleportation}[4]
 
 
 \begin{ability}{Overland Teleportation}[\glossterm{Teleportation}]
@@ -582,7 +594,7 @@ The new destination will be one that more closely resembles your mental image.
 If no such area exists, the ritual simply fails.
 % TODO: does this need more clarity about what teleportation works?
 
-This ritual takes 24 hours to perform and requires 25 action points from its ritual participants.
+This ritual takes 24 hours to perform and requires 32 action points from its ritual participants.
 \end{ability}
 
 
@@ -645,7 +657,7 @@ This ritual takes 24 hours to perform, and requires 50 action points from its pa
 \vspace{0.25em}
 
 
-\begin{spellsection}{Private Sanctum}[5]
+\begin{spellsection}{Private Sanctum}[4]
 
 
 \begin{ability}{Private Sanctum}[\glossterm{Mystic}]
@@ -656,7 +668,7 @@ Anyone observing the area from outside sees only a dark, silent void, regardless
 In addition, all \glossterm{Scrying} effects fail to function in the area.
 Creatures inside the area can see within the area and outside of it without any difficulty.
 
-This ritual takes 24 hours to perform, and requires 25 action points from its participants.
+This ritual takes 24 hours to perform, and requires 32 action points from its participants.
 \end{ability}
 
 
@@ -668,7 +680,7 @@ This ritual takes 24 hours to perform, and requires 25 action points from its pa
 \end{spellsection}
 
 
-\begin{spellsection}{Purge Curse}[3]
+\begin{spellsection}{Purge Curse}[2]
 
 
 \begin{ability}{Purge Curse}[\glossterm{Mystic}]
@@ -677,7 +689,7 @@ All curses affecting the target are removed.
 This ritual cannot remove a curse that is part of the effect of an item the target has equipped.
 However, it can allow the target to remove any cursed items it has equipped.
 
-This ritual takes 24 hours to perform, and requires 9 action points from its participants.
+This ritual takes 24 hours to perform, and requires 8 action points from its participants.
 \end{ability}
 
 
@@ -729,27 +741,7 @@ This ritual takes one minute to perform.
 \end{spellsection}
 
 
-\begin{spellsection}{Regeneration}[4]
-
-
-\begin{ability}{Regeneration}[\glossterm{Flesh}]
-Choose a willing creature within \rngclose range.
-All of the target's hit points, \glossterm{subdual damage}, and \glossterm{vital damage} are healed.
-In addition, any of the target's severed body parts or missing organs grow back by the end of the next round.
-
-This ritual takes 24 hours to perform, and requires 16 action points from its participants.
-\end{ability}
-
-
-
-
-\parhead{Schools} Vivimancy
-
-\parhead{Spell Lists} Divine, Nature
-\end{spellsection}
-
-
-\begin{spellsection}{Reincarnation}[5]
+\begin{spellsection}{Reincarnation}[4]
 
 
 \begin{ability}{Reincarnation}[\glossterm{Creation}, \glossterm{Flesh}, \glossterm{Life}]
@@ -775,7 +767,7 @@ In addition, its maximum action points are reduced by 1.
 This penalty lasts for thirty days, or until the creature gains a level.
 If this would reduce a creature's maximum action points below 0, the creature cannot be resurrected.
 
-This ritual takes 24 hours to perform, and requires 25 action points from its participants.
+This ritual takes 24 hours to perform, and requires 32 action points from its participants.
 \end{ability}
 
 
@@ -790,9 +782,9 @@ This ritual takes 24 hours to perform, and requires 25 action points from its pa
 \subsubsection{Subrituals}
 
 
-\begin{ability}[\nth{7}]{Fated}
+\begin{ability}[\nth{5}]{Fated}
 This subritual functions like the \ritual{reincarnation} ritual, except that the target is reincarnated as its original race instead of as a random race.
-This ritual takes 24 hours to perform, and requires 49 action points from its participants.
+This ritual takes 24 hours to perform, and requires 50 action points from its participants.
 \end{ability}
 \vspace{0.25em}
 
@@ -813,7 +805,27 @@ d\% & Incarnation \\
 \end{dtable}
 
 
-\begin{spellsection}{Resurrection}[4]
+\begin{spellsection}{Restoration}[3]
+
+
+\begin{ability}{Restoration}[\glossterm{Flesh}]
+Choose a willing creature within \rngclose range.
+All of the target's hit points, \glossterm{subdual damage}, and \glossterm{vital damage} are healed.
+In addition, any of the target's severed body parts or missing organs grow back by the end of the next round.
+
+This ritual takes 24 hours to perform, and requires 18 action points from its participants.
+\end{ability}
+
+
+
+
+\parhead{Schools} Vivimancy
+
+\parhead{Spell Lists} Divine, Nature
+\end{spellsection}
+
+
+\begin{spellsection}{Resurrection}[3]
 
 
 \begin{ability}{Resurrection}[\glossterm{Flesh}, \glossterm{Life}]
@@ -832,7 +844,7 @@ In addition, its maximum action points are reduced by 1.
 This penalty lasts for thirty days, or until the creature gains a level.
 If this would reduce a creature's maximum action points below 0, the creature cannot be resurrected.
 
-This ritual takes 24 hours to perform, and requires 16 action points from its participants.
+This ritual takes 24 hours to perform, and requires 18 action points from its participants.
 \end{ability}
 
 
@@ -847,35 +859,35 @@ This ritual takes 24 hours to perform, and requires 16 action points from its pa
 \subsubsection{Subrituals}
 
 
-\begin{ability}[\nth{7}]{Complete}
+\begin{ability}[\nth{5}]{Complete}
 This subritual functions like the \ritual{resurrection} ritual, except that it does not have to target a fully intact corpse.
 Instead, it targets a Diminuitive or larger piece of a humanoid corpse.
 The target must have been part of the original creature's body at the time of death.
 The resurrected creature's body is fully restored to its healthy state before dying, including regenerating all missing or damaged body parts.
 
-This ritual takes 24 hours to perform, and requires 49 action points from its participants.
+This ritual takes 24 hours to perform, and requires 50 action points from its participants.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{9}]{True}
+\begin{ability}[\nth{7}]{True}
 This subritual functions like the \ritual{resurrection} ritual, except that it does not require any piece of the corpse.
 Instead, you must explicitly and unambiguously specify the identity of the creature being resurrected.
 The resurrected creature's body is fully restored to its healthy state before dying, including regenerating all missing or damaged body parts.
 
-This ritual takes 24 hours to perform, and requires 81 action points from its participants.
+This ritual takes 24 hours to perform, and requires 98 action points from its participants.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{spellsection}{Retrieve Legacy}[4]
+\begin{spellsection}{Retrieve Legacy}[3]
 
 
 \begin{ability}{Retrieve Legacy}[\glossterm{Teleportation}]
-Choose a willing creature within \rngclose range.
+Choose a willing ritual participant.
 If the target's \glossterm{legacy item} is on the same plane and \glossterm{unattended}, it is teleported into the target's hand.
 
-This ritual takes 24 hours to perform, and requires 16 action points from its ritual participants.
+This ritual takes 24 hours to perform, and requires 18 action points from its ritual participants.
 \end{ability}
 
 
@@ -887,7 +899,7 @@ This ritual takes 24 hours to perform, and requires 16 action points from its ri
 \end{spellsection}
 
 
-\begin{spellsection}{Scry Creature}[5]
+\begin{spellsection}{Scry Creature}[4]
 
 
 \begin{ability}{Scry Creature}
@@ -914,7 +926,7 @@ This ritual takes one hour to perform.
 \end{spellsection}
 
 
-\begin{spellsection}{Scryward}[3]
+\begin{spellsection}{Scryward}[2]
 
 
 \begin{ability}{Scryward}[\glossterm{Mystic}]
@@ -922,7 +934,7 @@ This ritual creates a ward against scrying in a \arealarge radius zone centered 
 All \glossterm{Scrying} effects fail to function in the area.
 This effect is permanent.
 
-This ritual takes 24 hour to perform, and requires 9 action points from its participants.
+This ritual takes 24 hour to perform, and requires 8 action points from its participants.
 \end{ability}
 
 
@@ -938,10 +950,10 @@ This ritual takes 24 hour to perform, and requires 9 action points from its part
 
 
 \begin{ability}{Seek Legacy}
-Choose a willing creature within \rngclose range.
+Choose a willing ritual participant.
 The target learns the precise distance and direction to their \glossterm{legacy item}, if it is on the same plane.
 
-This ritual takes 24 hours to perform.
+This ritual takes 24 hours to perform, and requires 8 action points from its ritual participants.
 \end{ability}
 
 
@@ -953,7 +965,7 @@ This ritual takes 24 hours to perform.
 \end{spellsection}
 
 
-\begin{spellsection}{Sending}[4]
+\begin{spellsection}{Sending}[3]
 
 
 \begin{ability}{Sending}[\glossterm{Sustain} (standard)]
@@ -961,7 +973,7 @@ Choose a creature on the same plane as you.
 You do not need \glossterm{line of sight} or \glossterm{line of effect} to the target.
 However,  must specify your target with a precise mental image of its appearance.
 The image does not have to be perfect, but it must unambiguously identify the target.
-If you specify its appearance incorrectly, or if the target has changed its appearance, you may accidentally target a different creature, or the spell may simply fail.
+If you specify its appearance incorrectly, or if the target has changed its appearance, you may accidentally target a different creature, or the ritual may simply fail.
 
 You send the target a short verbal message.
 The message must be twenty-five words or less, and speaking the message must not take longer than five rounds.
@@ -984,22 +996,25 @@ This ritual takes one hour to perform.
 \subsubsection{Subrituals}
 
 
-\begin{ability}[\nth{6}]{Interplanar}
+\begin{ability}[\nth{7}]{Interplanar}
 This subritual functions like the \ritual{sending} ritual, except that the target does not have to be on the same plane as you.
 It gains the \glossterm{Planar} tag in addition to the tags from the \ritual{sending} ritual.
 \end{ability}
 \vspace{0.25em}
 
 
-\begin{spellsection}{Soul Bind}[8]
+\begin{spellsection}{Soul Bind}[5]
 
 
 \begin{ability}{Soul Bind}[\glossterm{Life}]
 Choose one intact corpse within \rngclose range.
-In addition, choose a gem you hold that is worth at least 1,000 gp.
-The soul of the creature that the target corpse belongs to is imprisoned in the chosen gem.
-This prevents the creature from being resurrected, and prevents the corpse from being used to create undead creatures, as long as the gem is intact.
+% Is this clear enough that you can't use the same gem for this ritual twice?
+In addition, choose a nonmagical gem you hold that is worth at least 1,000 gp.
+A fragment of the soul of the creature that the target corpse belongs to is imprisoned in the chosen gem.
+This does not remove the creature from its intended afterlife.
+However, it prevents the creature from being resurrected, and prevents the corpse from being used to create undead creatures, as long as the gem is intact.
 A creature holding the gem may still resurrect or reanimate the creature.
+If the gem is shattered, the fragment of the creature's soul returns to its body.
 
 This ritual takes one hour to perform.
 \end{ability}
@@ -1013,22 +1028,21 @@ This ritual takes one hour to perform.
 \end{spellsection}
 
 
-\begin{spellsection}{Telepathic Bond}[4]
+\begin{spellsection}{Telepathic Bond}[3]
 
 
 \begin{ability}{Telepathic Bond}[\glossterm{Attune} (ritual; see text)]
 Choose up to five willing ritual participants.
 Each target can communicate mentally through telepathy with each other target.
-This communication is instantaneous across any distance, but cannot reach across planes.
+This communication is instantaneous, though it cannot reach more than 100 miles or across planes.
 
 % Is this grammatically correct?
-This effect lasts as long as you and each target \glossterm{attune} to it.
 Each target must attune to this ritual independently.
 If a target breaks its attunement, it stops being able to send and receive mental messages with other targets.
-However, the effect continues as long as you attune to it.
-If you stop attuning to it, the ritual is \glossterm{dismissed} as usual.
+However, the effect continues as long as at least one target attunes to it.
+If you \glossterm{dismiss} the ritual, the effect ends for all targets.
 
-This ritual takes 24 hours to perform.
+This ritual takes one hour to perform.
 \end{ability}
 
 
@@ -1043,9 +1057,8 @@ This ritual takes 24 hours to perform.
 \subsubsection{Subrituals}
 
 
-\begin{ability}[\nth{8}]{Interplanar}
-This subritual functions like the \ritual{telepathic bond} ritual, except that each target can communicate telepathically even across different planes.
-It gains the \glossterm{Planar} tag in addition to the tags from the \ritual{telepathic bond} ritual.
+\begin{ability}[\nth{5}]{Long-Distance Bond}
+This subritual functions like the \ritual{telepathic bond} ritual, except that the effect works at any distance.
 \end{ability}
 \vspace{0.25em}
 
