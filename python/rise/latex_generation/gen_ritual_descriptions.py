@@ -82,7 +82,7 @@ def generate_rituals():
         schools=['Transmutation'],
         lists=['Arcane', 'Divine', 'Nature'],
         subspells=[
-            Subspell("Resilient", 5, f"""
+            Subspell("Resilient", 4, f"""
                 This subritual functions like the \\ritual<mystic lock> ritual, except that the DR to unlock the target with a Devices check is instead equal to 30 + your \\glossterm<power>.
                 In addition, the DR to break it open increases by 20 instead of by 10.
             """),
@@ -91,7 +91,7 @@ def generate_rituals():
 
     rituals.append(Spell(
         name="Awaken",
-        base_level=7,
+        base_level=5,
         # header=Header("description"),
         effects=Effects('Awaken', """
             Choose a Large or smaller willing animal within \\rngclose range.
@@ -102,37 +102,36 @@ def generate_rituals():
             Its maximum age increases to that of a human (rolled secretly).
             This effect is permanent.
 
-            This ritual takes 24 hours to perform, and requires 49 action points from its participants.
+            This ritual takes 24 hours to perform, and requires 50 action points from its participants.
         """),
         schools=['Transmutation'],
         lists=['Nature'],
         subspells=[],
     ))
 
-    rituals.append(Spell(
-        name="Binding",
-        base_level=3,
-        # header=Header("description"),
-        effects=Effects('Binding', """
-            This ritual creates a \\areasmall radius zone.
-            The outlines of the zone are denoted by a magic circle physically inscribed on the ground during the ritual.
-            The circle is obvious, but a DR 16 Perception or Spellcraft check is required to verify that the circle belongs to a \\ritual<binding> ritual.
-            If the circle's perimeter is broken, the ritual's effects end immediately.
-            Whenever a creature enters the area, you make an attack vs. Mental against it.
-            \\hit The target is unable to escape the ritual's area physically or alter the circle in any way.
-            It treats the edge of the area as an impassable barrier, preventing the effects of any of its abilities from extending outside that area.
-
-            This ritual takes one hour to perform.
-        """, tags=['Attune (ritual)']),
-        schools=['Abjuration'],
-        lists=['Arcane', 'Divine'],
-        subspells=[
-            Subspell("Dimension Lock", 5, f"""
-                This subritual functions like the \\ritual<binding> ritual, except that a struck creature also cannot travel extradimensionally.
-                This prevents all \\glossterm<Manifestation>, \\glossterm<Planar>, and \\glossterm<Teleportation> effects.
-            """),
-        ],
-    ))
+    # rituals.append(Spell(
+    #     name="Binding",
+    #     base_level=2,
+    #     # header=Header("description"),
+    #     effects=Effects('Binding', """
+    #         This ritual creates a \\areasmall radius zone.
+    #         The outlines of the zone are denoted by a magic circle physically inscribed on the ground during the ritual.
+    #         The circle is obvious, but a DR 16 Perception or Spellcraft check is required to verify that the circle belongs to a \\ritual<binding> ritual.
+    #         If the circle's perimeter is broken by any means, the ritual's effects end immediately.
+    #         Whenever a creature enters the area, you make an attack vs. Mental against it.
+    #         \\hit The target is unable to escape the ritual's area physically or alter the circle in any way.
+    #         It treats the edge of the area as an impassable barrier, preventing the effects of any of its abilities from extending outside that area.
+    #         This ritual takes one hour to perform.
+    #     """, tags=['Attune (ritual)']),
+    #     schools=['Abjuration'],
+    #     lists=['Arcane', 'Divine'],
+    #     subspells=[
+    #         Subspell("Dimension Lock", 5, f"""
+    #             This subritual functions like the \\ritual<binding> ritual, except that a struck creature also cannot travel extradimensionally.
+    #             This prevents all \\glossterm<Manifestation>, \\glossterm<Planar>, and \\glossterm<Teleportation> effects.
+    #         """),
+    #     ],
+    # ))
 
     rituals.append(Spell(
         name="Bless Water",
@@ -147,7 +146,12 @@ def generate_rituals():
         """, tags=['Attune (ritual)']),
         schools=['Channeling'],
         lists=['Divine'],
-        subspells=[],
+        subspells=[
+            Subspell('Permanent Blessing', 2, """
+                This subritual functions like the \\spell<bless water> ritual, except that it loses the \\glossterm<Attune> (ritual) tag and the effect lasts permanently.
+                This ritual takes one hour to perform.
+            """),
+        ],
     ))
 
     rituals.append(Spell(
@@ -163,12 +167,17 @@ def generate_rituals():
         """, tags=['Attune (ritual)']),
         schools=['Channeling'],
         lists=['Divine'],
-        subspells=[],
+        subspells=[
+            Subspell('Permanent Curse', 2, """
+                This subritual functions like the \\spell<curse water> ritual, except that it loses the \\glossterm<Attune> (ritual) tag and the effect lasts permanently.
+                This ritual takes one hour to perform.
+            """),
+        ],
     ))
 
     rituals.append(Spell(
         name="Create Object",
-        base_level=3,
+        base_level=2,
         # header=Header("description"),
         effects=Effects('Create Object', """
             Make a Craft check to create an object of Small size or smaller.
@@ -185,7 +194,7 @@ def generate_rituals():
 
     rituals.append(Spell(
         name="Create Sustenance",
-        base_level=3,
+        base_level=2,
         # header=Header("description"),
         effects=Effects('Create Sustenance', """
             Choose an unoccupied square within \\rngclose range.
@@ -213,7 +222,7 @@ def generate_rituals():
 
     rituals.append(Spell(
         name="Discern Location",
-        base_level=5,
+        base_level=4,
         # header=Header("description"),
         effects=Effects('Discern Location', """
             Choose a creature or object on the same plane as you.
@@ -222,16 +231,16 @@ def generate_rituals():
             The image does not have to be perfect, but it must unambiguously identify the target.
             You learn the location (place, name, business name, or the like), community, country, and continent where the target lies.
 
-            This ritual takes 24 hours to perform, and it requires 25 action points from its participants.
+            This ritual takes 24 hours to perform, and it requires 32 action points from its participants.
         """),
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
         subspells=[
-            Subspell('Interplanar', 7, """
+            Subspell('Interplanar', 6, """
                 This subritual functions like the \\ritual<discern location> ritual, except that the target does not have to be on the same plane as you.
                 It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<discern location> ritual.
 
-                This ritual takes 24 hours to perform, and it requires 49 action points from its participants.
+                This ritual takes 24 hours to perform, and it requires 72 action points from its participants.
             """),
         ],
     ))
@@ -261,12 +270,16 @@ def generate_rituals():
             Choose a Small or smaller unattended object with writing on it within \\rngclose range.
             In addition, choose a type of \\glossterm<energy damage> (cold, electricity, fire, or sonic).
             This ritual gains the tag appropriate to the chosen energy type.
+
+            % TODO: clarify how to identify that this is Explosive Runes instead of bad handwriting
+            The writing on the target is altered by the runes in subtle ways, making it more difficult to read.
+            To read the writing, a creature must concentrate on reading it, which requires a standard action.
             If a creature reads the target, the target explodes.
             You make an attack vs. Reflex against everything within a \\areamed radius from the target.
-            \\hit Each target takes \\glossterm<standard damage> -1d of the damage type chosen.
+            Each struck target takes \\glossterm<standard damage> -1d of the damage type chosen.
 
-            After the target explodes in this way, the ritual is \\glossterm<dismissed>.
-            If the target object is destroyed or rendered illegible, the ritual is dismissed without exploding.
+            After the target object explodes in this way, the ritual is \\glossterm<dismissed>.
+            If the target is destroyed or rendered illegible, the ritual is dismissed without exploding.
             This ritual takes one hour to perform.
         """, tags=['Attune (ritual)', 'Trap']),
         schools=['Evocation'],
@@ -276,7 +289,7 @@ def generate_rituals():
     # If Wild Growth becomes a spell, this would be a subspell
     rituals.append(Spell(
         name="Fertility",
-        base_level=3,
+        base_level=2,
         # header=Header("description"),
         effects=Effects('Fertility', """
             This ritual creates an area of bountiful growth in a one mile radius zone from your location.
@@ -284,7 +297,7 @@ def generate_rituals():
             This ritual does not stack with itself.
             If the \\ritual<infertility> ritual is also applied to the same area, the most recently performed ritual takes precedence.
 
-            This ritual takes 24 hours to perform, and requires 9 action points from its participants.
+            This ritual takes 24 hours to perform, and requires 8 action points from its participants.
         """),
         schools=['Transmutation'],
         lists=['Nature'],
@@ -292,7 +305,7 @@ def generate_rituals():
 
     rituals.append(Spell(
         name="Infertility",
-        base_level=3,
+        base_level=2,
         # header=Header("description"),
         effects=Effects('Fertility', """
             This ritual creates an area of death and decay in a one mile radius zone from your location.
@@ -300,7 +313,7 @@ def generate_rituals():
             This ritual does not stack with itself.
             If the \\ritual<fertility> ritual is also applied to the same area, the most recently performed ritual takes precedence.
 
-            This ritual takes 24 hours to perform, and requires 9 action points from its participants.
+            This ritual takes 24 hours to perform, and requires 8 action points from its participants.
         """),
         schools=['Transmutation'],
         lists=['Nature'],
@@ -308,7 +321,7 @@ def generate_rituals():
 
     rituals.append(Spell(
         name="Gate",
-        base_level=9,
+        base_level=7,
         # header=Header("description"),
         effects=Effects('Gate', """
             Choose a plane that connects to your current plane, and a location within that plane.
@@ -325,7 +338,7 @@ def generate_rituals():
             The Astral Plane connects to every plane, but transit from other planes is usually more limited.
             From the Material Plane, you can only reach the Astral Plane.
 
-            This ritual takes one week to perform, and requires 81 action points from its participants.
+            This ritual takes one week to perform, and requires 98 action points from its participants.
         """, tags=['Planar', 'Teleportation', 'Sustain (standard)']),
         schools=['Conjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
@@ -377,6 +390,12 @@ def generate_rituals():
         """, tags=['Attune (ritual)', 'Light', 'Sensation']),
         schools=['Illusion'],
         lists=['Arcane', 'Divine', 'Nature'],
+        subspells=[
+            Subspell('Permanent Light', 2, """
+                This subritual functions like the \\spell<light> ritual, except that it loses the \\glossterm<Attune> (ritual) tag and the effect lasts permanently.
+                This ritual takes 24 hours to perform, and it requires 8 action points from its participants.
+            """),
+        ],
     ))
 
     rituals.append(Spell(
@@ -392,7 +411,7 @@ def generate_rituals():
             The mouth speaks the chosen message aloud.
             After the message is spoken, this effect is \\glossterm<dismissed>.
 
-            This ritual takes 24 hours to perform.
+            This ritual takes one minute to perform.
         """, tags=['Attune (ritual)', 'Sensation']),
         schools=['Illusion'],
         lists=['Arcane'],
@@ -400,12 +419,14 @@ def generate_rituals():
 
     rituals.append(Spell(
         name="Mount",
-        base_level=3,
+        base_level=2,
         # header=Header("description"),
         effects=Effects('Mount', """
             This ritual creates your choice of a light horse or a pony to serve as a mount.
             The creature appears in an unoccupied location within \\rngclose range.
             It comes with a bit and bridle and a riding saddle, and will readily accept any creature as a rider.
+
+            This ritual takes one minute to perform.
         """, tags=['Attune (ritual)', 'Manifestation']),
         schools=['Conjuration'],
         lists=['Arcane'],
@@ -436,29 +457,39 @@ def generate_rituals():
 
     rituals.append(Spell(
         name="Plane Shift",
-        base_level=5,
+        base_level=3,
         # header=Header("description"),
         effects=Effects('Plane Shift', """
-            Choose up to five Medium or smaller willing ritual participants.
-            In addition, choose a plane that connects to your current plane and a location within that plane.
-            The targets teleport to a random location on that plane 1d100 miles away from the intended destination.
-
-            You must specify the destination with a precise mental image of its appearance.
-            The image does not have to be perfect, but it must unambiguously identify the location.
-            Incomplete or incorrect mental images may result in the ritual leading to an unintended destination within the same plane, or simply failing entirely.
+            Choose up to five Large or smaller willing ritual participants.
+            In addition, you choose a \\glossterm<planar rift> within \\rngmed range to travel through.
+            The targets teleport to the unoccupied spaces closest to the other side of the planar rift.
+            For details about \\glossterm<planar rifts>, see \\pcref<Planar Rifts>.
 
             % TODO: Is this planar cosmology correct?
             The Astral Plane connects to every plane, but transit from other planes is usually more limited.
             From the Material Plane, you can only reach the Astral Plane.
 
-            This ritual takes 24 hours to perform, and requires 25 action points from its participants.
+            This ritual takes 24 hours to perform, and requires 18 action points from its participants.
         """, tags=['Planar', 'Teleportation']),
         schools=['Conjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
         subspells=[
-            Subspell("Precise", 8, f"""
-                This subritual functions like the \\ritual<plane shift> ritual, except that the actual destination is the same as the intended destination, rather than being a random distance away.
-                This ritual takes 24 hours to perform, and requires 64 action points from its participants.
+            Subspell('Astral Projection', 4, """
+                Choose up to five Large or smaller willing ritual participants.
+                The targets teleport to a random location within the Inner Astral Plane (see \\pcref<The Astral Plane>).
+
+                In addition, a localized \\glossterm<planar rift> appears at the destination area on the Astral Plane which leads back to the location where this ritual was performed.
+                The rift can only be passed through by the targets of this effect.
+                It lasts for one week before disappearing permanently, potentially stranding the targets in the Astral Plane if they have not yet returned.
+
+                This ritual takes 24 hours to perform, and requires 32 action points from its participants.
+            """),
+            Subspell('Homeward Shift', 5, """
+                This ritual can only be performed on the Astral Plane.
+                Choose up to five Large or smaller willing ritual participants.
+                The targets teleport to the last spaces they occupied on their home planes.
+
+                This ritual takes 24 hours to perform, and requires 50 action points from its participants.
             """),
         ],
     ))
