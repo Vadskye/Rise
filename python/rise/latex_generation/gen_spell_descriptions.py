@@ -928,13 +928,9 @@ def generate_spells():
         effects=Effects('Corruption', """
             Make an attack vs. Fortitude against a living creature within \\rngclose range.
             \\hit The target is \\glossterm<sickened> as a \\glossterm<condition>.
-            \\crit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
         """, tags=['Life']),
         schools=['Vivimancy'],
         lists=['Arcane', 'Divine', 'Nature'],
-        cantrip="""
-            You take a -2 penalty to accuracy with the spell.
-        """,
         subspells=[
             Subspell('Sickening Decay', 1, """
                 Make an attack vs. Fortitude against a living creature within \\rngclose range.
@@ -1243,7 +1239,6 @@ def generate_spells():
         """),
         schools=['Evocation'],
         lists=['Arcane'],
-        cantrip="The spell deals -2d damage.",
         subspells=[
             Subspell('Telekinetic Crush', 1, """
                 Make an attack vs. Mental against one creature or object within \\rngmed range.
@@ -1538,7 +1533,6 @@ def generate_spells():
         """, tags=['Planar', 'Teleportation']),
         schools=['Conjuration'],
         lists=['Arcane'],
-        cantrip="The spell deals -2d damage.",
         subspells=[
             Subspell('Dimensional Jaunt', 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
@@ -1729,10 +1723,9 @@ def generate_spells():
         effects=Effects('Cantrip', """
             Make an attack vs. Armor against one creature or object within \\rngmed range.
             \\hit The target takes piercing \\glossterm<standard damage> -1d.
-        """, tags=['Manifestation', 'Sustain (minor)']),
+        """, tags=['Manifestation']),
         schools=['Conjuration', 'Transmutation'],
         lists=['Arcane', 'Divine'],
-        cantrip="The spell gains the \\glossterm<Sustain> (standard) tag in place of the \\glossterm<Sustain> (minor) tag.",
         subspells=[
             Subspell('Mystic Bow', 1, """
                 Make an attack vs. Armor against one creature or object within \\rngmed range.
