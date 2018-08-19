@@ -224,7 +224,7 @@ You can cast this subspell as a \glossterm{minor action}.
 \begin{ability}[\nth{2}]{Aqueous Blade}[\glossterm{Attune} (target), \glossterm{Shaping}, \glossterm{Water}]
 Choose a willing creature within \rngclose range.
 Whenever the target makes a \glossterm{strike} with a melee weapon, the attack is made against Reflex defense instead of Armor defense.
-However, the target takes a \minus2d penalty to \glossterm{strike damage}.
+However, the target takes a \minus2d penalty to damage with \glossterm{strikes}.
 
 You can cast this subspell as a \glossterm{minor action}.
 This subspell is from the Transmutation school instead of the Conjuration school.
@@ -268,7 +268,7 @@ In addition, at the end of each \glossterm{action phase} in subsequent rounds, t
 
 
 \begin{ability}[\nth{5}]{Greater Aqueous Blade}
-This subspell functions like the \spell{aqueous blade} subspell, except that the penalty to strike damage is reduced to \minus1d.
+This subspell functions like the \spell{aqueous blade} subspell, except that the penalty to damage is reduced to \minus1d.
 \end{ability}
 \vspace{0.25em}
 
@@ -539,7 +539,7 @@ All allies within \arealarge radius from you can remove one \glossterm{condition
 \begin{ability}[\nth{2}]{Blessed Blade}[\glossterm{Attune} (target), \glossterm{Fire}]
 Choose a willing creature within \rngclose range.
 \glossterm{Strikes} made with melee weapons wielded by the target are made against Mental defense instead of Armor defense.
-However, the target takes a \minus2d penalty to \glossterm{strike damage}.
+However, the target takes a \minus2d penalty to damage with \glossterm{strikes}.
 
 You can cast this subspell as a \glossterm{minor action}.
 \end{ability}
@@ -555,8 +555,8 @@ You can cast this subspell as a \glossterm{minor action}.
 
 \begin{ability}[\nth{3}]{Divine Might}[\glossterm{Attune} (self), \glossterm{Shaping}, \glossterm{Sizing}]
 You increase your size by one size category.
-This increases your \glossterm{strike damage} and usually increases your \glossterm{reach} (see \pcref{Size in Combat}).
-However, you take a \minus1d penalty to \glossterm{strike damage}, as your muscles are not increased fully to match your new size.
+This increases your \glossterm{overwhelm value}, \glossterm{overwhelm resistance}, and usually increases your \glossterm{reach} (see \pcref{Size in Combat}).
+However, your muscles are not increased fully to match its new size, and your Strength is unchanged.
 
 You can cast this subspell as a \glossterm{minor action}.
 \end{ability}
@@ -578,12 +578,6 @@ You can cast this subspell as a \glossterm{minor action}.
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{4}]{Greater Blessed Blade}
-This subspell functions like the \spell{blessed blade} subspell, except that the penalty to strike damage is reduced to \minus1d.
-\end{ability}
-\vspace{0.25em}
-
-
 \begin{ability}[\nth{4}]{Greater Cleansing Blessing}
 This subspell functions like the \spell{cleansing blessing} subspell, except that it can remove two conditions instead of one.
 \end{ability}
@@ -591,13 +585,19 @@ This subspell functions like the \spell{cleansing blessing} subspell, except tha
 
 
 \begin{ability}[\nth{5}]{Divine Might, Greater}
-This subspell functions like the \textit{divine might} subspell, except that the penalty to \glossterm{strike damage} is removed.
+This subspell functions like the \textit{divine might} subspell, except that you gain a \plus2 bonus to Strength
 \end{ability}
 \vspace{0.25em}
 
 
 \begin{ability}[\nth{5}]{Greater Battle Blessing}
 This subspell functions like the \spell{battle blessing} subspell, except that the bonus increases to \plus2.
+\end{ability}
+\vspace{0.25em}
+
+
+\begin{ability}[\nth{5}]{Greater Blessed Blade}
+This subspell functions like the \spell{blessed blade} subspell, except that the penalty to damage is reduced to \minus1d.
 \end{ability}
 \vspace{0.25em}
 
@@ -614,14 +614,9 @@ This subspell functions like the \textit{blessing of resilience} subspell, excep
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{6}]{Supreme Blessed Blade}
-This subspell functions like the \spell{blessed blade} subspell, except that the penalty to strike damage is removed.
-\end{ability}
-\vspace{0.25em}
-
-
 \begin{ability}[\nth{7}]{Divine Might, Supreme}
 This subspell functions like the \spell{divine might} subspell, except that your size is increased by two size categories.
+Your Strength is increased by 2 to partially match your new size.
 \end{ability}
 \vspace{0.25em}
 
@@ -1065,7 +1060,7 @@ This subspell functions like the \subspell{frostbite} subspell, except that a st
 
 \begin{ability}[\nth{4}]{Enhanced Icecraft}
 This subspell functions like the \subspell{sturdy icecraft} subspell, except that the item created is magically enhanced.
-A weapon gains a \plus1d \glossterm{magic bonus} to \glossterm{strike damage}, and armor grants a \plus1 \glossterm{magic bonus} to the defenses it improves.
+A weapon gains a \plus1d \glossterm{magic bonus} to damage with \glossterm{strikes}, and armor grants a \plus1 \glossterm{magic bonus} to the defenses it improves.
 \end{ability}
 \vspace{0.25em}
 
@@ -1828,8 +1823,9 @@ Make an attack vs. Armor against everything in a \arealarge cone.
 
 \begin{ability}[\nth{2}]{Flame Blade}[\glossterm{Attune} (target), \glossterm{Fire}]
 Choose a willing creature within \rngclose range.
-Weapons wielded by the target gain a \plus1d \glossterm{magic bonus} to \glossterm{strike damage}.
-In addition, all \glossterm{strike damage} dealt with its weapons becomes fire damage in addition to the attack's normal damage types.
+% Is this clear enough at not stacking with magic bonuses intrinsic to the creature?
+Weapons wielded by the target gain a \plus1d \glossterm{magic bonus} to damage with \glossterm{strikes}.
+In addition, all damage dealt with strikes using its weapons becomes fire damage in addition to the attack's normal damage types.
 
 You can cast this subspell as a \glossterm{minor action}.
 \end{ability}
