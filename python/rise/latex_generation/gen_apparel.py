@@ -198,7 +198,7 @@ def generate_armor():
         name="Hidden Armor, Greater",
         level=9,
         material_type='body armor',
-        tags=['Alteration'],
+        tags=['Sensation'],
         description="""
             This item functions like the \\mitem<hidden armor> item, except that the item also makes sound appropriate to its disguised form while disguised.
         """,
