@@ -1611,15 +1611,14 @@ def generate_spells():
                 \\hit The target is \\glossterm<slowed> and \\glossterm<dazed> as a single \\glossterm<condition>.
                 \\crit the target is \\glossterm<immobilized> and \\glossterm<dazed> as a single \\glossterm<condition>.
             """, tags=['Temporal']),
-            # Should "speed in all its movement modes" be "base speed"?
             Subspell('Haste', 1, """
                 Choose a willing creature within \\rngmed range.
-                The target gains a +10 foot \\glossterm<magic bonus> to its speed in all its movement modes.
+                The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<base speed>.
                 You can cast this subspell as a \\glossterm<minor action>.
             """, tags=['Attune (target)', 'Temporal']),
             Subspell("Greater Haste", 3, """
                 Choose a willing creature within \\rngmed range.
-                The target gains a +30 foot \\glossterm<magic bonus> to its speed in all its movement modes, up to a maximum of double its \\glossterm<base speed>.
+                The target gains a +30 foot \\glossterm<magic bonus> to its \\glossterm<base speed>, up to a maximum of double its \\glossterm<base speed>.
                 In addition, it gains a +2 \\glossterm<magic bonus> to Reflex defense.
 
                 You can cast this subspell as a \\glossterm<minor action>.
