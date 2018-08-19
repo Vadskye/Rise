@@ -392,7 +392,7 @@ def humanoids():
                 All other willing allies who can hear the shouter can use the \\textit<sprint> ability without spending action points.
             """, tags=['Sustain (standard)']),
             active_ability('Shout of Stabbing', """
-                All other willing allies who can hear the shouter gain a +1d bonus to strike damage.
+                All other willing allies who can hear the shouter gain a +1d bonus to damage with \\glossterm<strikes>.
             """, tags=['Sustain (standard)']),
         ],
         behavior='Attack lowest threat',

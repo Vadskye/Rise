@@ -452,8 +452,9 @@ def generate_spells():
             """, tags=['Attune (target)', 'Fire']),
             Subspell('Flame Blade', 2, """
                 Choose a willing creature within \\rngclose range.
-                Weapons wielded by the target gain a +1d \\glossterm<magic bonus> to \\glossterm<strike damage>.
-                In addition, all \\glossterm<strike damage> dealt with its weapons becomes fire damage in addition to the attack's normal damage types.
+                % Is this clear enough at not stacking with magic bonuses intrinsic to the creature?
+                Weapons wielded by the target gain a +1d \\glossterm<magic bonus> to damage with \\glossterm<strikes>.
+                In addition, all damage dealt with strikes using its weapons becomes fire damage in addition to the attack's normal damage types.
 
                 You can cast this subspell as a \\glossterm<minor action>.
             """, tags=['Attune (target)', 'Fire']),
@@ -515,13 +516,13 @@ def generate_spells():
             Subspell("Aqueous Blade", 2, """
                 Choose a willing creature within \\rngclose range.
                 Whenever the target makes a \\glossterm<strike> with a melee weapon, the attack is made against Reflex defense instead of Armor defense.
-                However, the target takes a -2d penalty to \\glossterm<strike damage>.
+                However, the target takes a -2d penalty to damage with \\glossterm<strikes>.
 
                 You can cast this subspell as a \\glossterm<minor action>.
                 This subspell is from the Transmutation school instead of the Conjuration school.
             """, tags=['Attune (target)', 'Shaping', 'Water']),
             Subspell('Greater Aqueous Blade', 5, """
-                This subspell functions like the \\spell<aqueous blade> subspell, except that the penalty to strike damage is reduced to -1d.
+                This subspell functions like the \\spell<aqueous blade> subspell, except that the penalty to damage is reduced to -1d.
             """),
             Subspell('Overpowering Wave', 3, """
                 This subspell functions like the \\spell<crushing wave> subspell, except that it attacks Reflex defense instead of Fortitude defense.
@@ -720,15 +721,12 @@ def generate_spells():
             Subspell("Blessed Blade", 2, """
                 Choose a willing creature within \\rngclose range.
                 \\glossterm<Strikes> made with melee weapons wielded by the target are made against Mental defense instead of Armor defense.
-                However, the target takes a -2d penalty to \\glossterm<strike damage>.
+                However, the target takes a -2d penalty to damage with \\glossterm<strikes>.
 
                 You can cast this subspell as a \\glossterm<minor action>.
             """, tags=['Attune (target)', 'Fire']),
-            Subspell('Greater Blessed Blade', 4, """
-                This subspell functions like the \\spell<blessed blade> subspell, except that the penalty to strike damage is reduced to -1d.
-            """),
-            Subspell('Supreme Blessed Blade', 6, """
-                This subspell functions like the \\spell<blessed blade> subspell, except that the penalty to strike damage is removed.
+            Subspell('Greater Blessed Blade', 5, """
+                This subspell functions like the \\spell<blessed blade> subspell, except that the penalty to damage is reduced to -1d.
             """),
             Subspell("Divine Shield", 4, """
                 Choose a willing creature within \\rngclose range.
@@ -738,16 +736,17 @@ def generate_spells():
             """, tags=['Attune (target)']),
             Subspell("Divine Might", 3, """
                 You increase your size by one size category.
-                This increases your \\glossterm<strike damage> and usually increases your \\glossterm<reach> (see \\pcref<Size in Combat>).
-                However, you take a -1d penalty to \\glossterm<strike damage>, as your muscles are not increased fully to match your new size.
+                This increases your \\glossterm<overwhelm value>, \\glossterm<overwhelm resistance>, and usually increases your \\glossterm<reach> (see \\pcref<Size in Combat>).
+                However, your muscles are not increased fully to match its new size, and your Strength is unchanged.
 
                 You can cast this subspell as a \\glossterm<minor action>.
             """, tags=['Attune (self)', 'Shaping', 'Sizing']),
             Subspell("Divine Might, Greater", 5, """
-                This subspell functions like the \\textit<divine might> subspell, except that the penalty to \\glossterm<strike damage> is removed.
+                This subspell functions like the \\textit<divine might> subspell, except that you gain a +2 bonus to Strength
             """),
             Subspell("Divine Might, Supreme", 7, """
                 This subspell functions like the \\spell<divine might> subspell, except that your size is increased by two size categories.
+                Your Strength is increased by 2 to partially match your new size.
             """),
         ],
         category='buff, offense',
@@ -842,7 +841,7 @@ def generate_spells():
             """),
             Subspell('Enhanced Icecraft', 4, """
                 This subspell functions like the \\subspell<sturdy icecraft> subspell, except that the item created is magically enhanced.
-                A weapon gains a +1d \\glossterm<magic bonus> to \\glossterm<strike damage>, and armor grants a +1 \\glossterm<magic bonus> to the defenses it improves.
+                A weapon gains a +1d \\glossterm<magic bonus> to damage with \\glossterm<strikes>, and armor grants a +1 \\glossterm<magic bonus> to the defenses it improves.
             """),
         ],
         category='damage',
