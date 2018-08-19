@@ -217,7 +217,7 @@ def generate_spells():
             \\hit The target takes acid \\glossterm<standard damage> -1d.
         """, tags=['Acid', 'Manifestation']),
         schools=['Conjuration'],
-        lists=['Arcane'],
+        lists=['Arcane', 'Pact'],
         subspells=[
             Subspell('Acid Splash', 1, """
                 Make an attack vs. Armor against one creature or object within \\rngmed range.
@@ -385,7 +385,7 @@ def generate_spells():
             \\hit The target takes fire \\glossterm<standard damage> -1d.
         """, tags=['Fire']),
         schools=['Evocation'],
-        lists=['Arcane', 'Fire', 'Nature'],
+        lists=['Arcane', 'Fire', 'Nature', 'Pact'],
         subspells=[
             Subspell('Fireburst', 1, """
                 Make an attack vs. Armor against everything in a \\areasmall radius within \\rngclose range.
@@ -474,7 +474,7 @@ def generate_spells():
             \\hit Each target takes bludgeoning \\glossterm<standard damage> -2d.
         """, tags=['Manifestation', 'Water']),
         schools=['Conjuration'],
-        lists=['Nature', 'Water'],
+        lists=['Nature'],
         subspells=[
             Subspell('Crushing Wave', 1, """
                 Make an attack vs. Fortitude against everything in a \\arealarge, 10 ft.\\ wide line from you.
@@ -544,7 +544,7 @@ def generate_spells():
             \\crit The target is \\glossterm<frightened> by you as a \\glossterm<condition>.
         """, tags=['Emotion', 'Mind']),
         schools=['Enchantment'],
-        lists=['Arcane'],
+        lists=['Arcane', 'Divine', 'Pact'],
         subspells=[
             Subspell('Cause Fear', 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
@@ -614,7 +614,7 @@ def generate_spells():
             \\hit The target falls \\glossterm<prone>.
         """, tags=['Compulsion', 'Mind']),
         schools=['Enchantment'],
-        lists=['Arcane', 'Divine'],
+        lists=['Arcane', 'Divine', 'Pact'],
         subspells=[
             Subspell("Dance", 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
@@ -792,7 +792,7 @@ def generate_spells():
             \\hit The target takes cold \\glossterm<standard damage> -1d.
         """, tags=['Cold']),
         schools=['Evocation'],
-        lists=['Arcane', 'Nature'],
+        lists=['Arcane', 'Nature', 'Pact'],
         subspells=[
             Subspell('Cone of Cold', 1, """
                 Make an attack vs. Fortitude against everything in a \\areamed cone from you.
@@ -861,7 +861,7 @@ def generate_spells():
             \\hit Each target takes electricity \\glossterm<standard damage> -2d.
         """, tags=['Electricity']),
         schools=['Evocation'],
-        lists=['Arcane', 'Nature'],
+        lists=['Arcane', 'Nature', 'Pact'],
         subspells=[
             Subspell('Lightning Bolt', 1, """
                 Make an attack vs. Fortitude against everything in a \\arealarge, 10 ft.\\ wide line from you.
@@ -930,7 +930,7 @@ def generate_spells():
             \\hit The target is \\glossterm<sickened> as a \\glossterm<condition>.
         """, tags=['Life']),
         schools=['Vivimancy'],
-        lists=['Arcane', 'Divine', 'Nature'],
+        lists=['Arcane', 'Divine', 'Nature', 'Pact'],
         subspells=[
             Subspell('Sickening Decay', 1, """
                 Make an attack vs. Fortitude against a living creature within \\rngclose range.
@@ -1238,7 +1238,7 @@ def generate_spells():
             \\hit The target takes bludgeoning \\glossterm<standard damage> -1d.
         """),
         schools=['Evocation'],
-        lists=['Arcane'],
+        lists=['Arcane', 'Pact'],
         subspells=[
             Subspell('Telekinetic Crush', 1, """
                 Make an attack vs. Mental against one creature or object within \\rngmed range.
@@ -1371,7 +1371,7 @@ def generate_spells():
             \\crit As above, and target is also \\dazed as an additional \\glossterm<condition>.
         """, tags=['Light', 'Sensation', 'Visual']),
         schools=['Illusion'],
-        lists=['Arcane', 'Divine', 'Nature'],
+        lists=['Arcane', 'Divine', 'Nature', 'Pact'],
         subspells=[
             Subspell('Flare', 1, """
                 A burst of light light fills a \\areasmall radius within \\rngmed range of you.
@@ -1436,7 +1436,7 @@ def generate_spells():
             \\hit The target takes physical \\glossterm<standard damage> -1d.
         """, tags=['Shaping']),
         schools=['Transmutation'],
-        lists=['Arcane', 'Nature'],
+        lists=['Arcane', 'Nature', 'Pact'],
         subspells=[
             Subspell('Baleful Polymorph', 1, """
                 Make an attack vs. Fortitude against a creature within \\rngmed range.
@@ -1532,7 +1532,7 @@ def generate_spells():
             \\hit The target takes physical \\glossterm<standard damage> -1d.
         """, tags=['Planar', 'Teleportation']),
         schools=['Conjuration'],
-        lists=['Arcane'],
+        lists=['Arcane', 'Pact'],
         subspells=[
             Subspell('Dimensional Jaunt', 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
@@ -1605,7 +1605,7 @@ def generate_spells():
             \\hit The target is \\glossterm<slowed> as a \\glossterm<condition>.
         """, tags=['Temporal']),
         schools=['Transmutation'],
-        lists=['Arcane'],
+        lists=['Arcane', 'Pact'],
         subspells=[
             Subspell('Slow', 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
@@ -1725,7 +1725,7 @@ def generate_spells():
             \\hit The target takes piercing \\glossterm<standard damage> -1d.
         """, tags=['Manifestation']),
         schools=['Conjuration', 'Transmutation'],
-        lists=['Arcane', 'Divine'],
+        lists=['Arcane', 'Divine', 'Pact'],
         subspells=[
             Subspell('Mystic Bow', 1, """
                 Make an attack vs. Armor against one creature or object within \\rngmed range.

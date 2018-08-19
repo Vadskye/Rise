@@ -8,6 +8,7 @@ spell_sources = [
     'Arcane',
     'Divine',
     'Nature',
+    'Pact',
 ]
 domains = [
     'Air',
