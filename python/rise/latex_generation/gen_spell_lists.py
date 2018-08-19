@@ -28,20 +28,21 @@ def latex_for_source(source, spells, rituals):
             f"\\spellhead[{ritual.base_level}]<{ritual.name}> {ritual.short_description}"
         )
 
-    spell_latex = "\n".join(spell_headers)
-    ritual_latex = "\n".join(ritual_headers)
+    spell_list = "\n".join(spell_headers)
+    ritual_list = "\n".join(ritual_headers)
+    ritual_latex = f"""
+            \\subsubsection<{source} Rituals>\\label<{source} Rituals>
+                \\begin<spelllist>
+                    {ritual_list}
+                \\end<spelllist>"""
     return f"""
         \\small
         \\subsection<{source} Magic>\\label<{source} Magic>
             \\subsubsection<{source} Spells>\\label<{source} Spells>
                 \\begin<spelllist>
-                    {spell_latex}
+                    {spell_list}
                 \\end<spelllist>
-            \\subsubsection<{source} Rituals>\\label<{source} Rituals>
-                \\begin<spelllist>
-                    {ritual_latex}
-                \\end<spelllist>
-
+            {ritual_latex if source != 'Pact' else ""}
     """
 
 
