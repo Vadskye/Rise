@@ -1525,16 +1525,13 @@ It defines how attributes work and explains how to make physical attacks in comb
         \parhead{Wounded}\label{Wounded} At the end of each round, if you have no hit points remaining, you become \wounded.
         In addition, you are wounded if you have any \glossterm{vital damage}.
         A wounded creature suffers no immediate ill effects.
-        However, it becomes vulnerable to \glossterm{vital damage}, as described below.
-        At the end of each phase, if you have hit points remaining and do not have any \glossterm{vital damage}, you stop being wounded.
+        However, it becomes vulnerable to taking \glossterm{vital damage} (see \pcref{Vital Damage}).
+        If you take vital damage, you can begin dying (see Dying, below).
 
-        \parhead{Vital Damage}\label{Vital Damage}
-        If you are not \glossterm{wounded}, damage dealt in excess of your hit points has no effect.
-        However, if you are wounded, this damage can become vital damage.
-        At the end of each phase, if were wounded during that phase and you took damage in excess of your hit points that phase, the excess damage is dealt as \glossterm{vital damage}.
-        If you take \glossterm{vital damage}, you begin dying (see Dying, below).
+        At the end of each round, if you have hit points remaining and do not have any \glossterm{vital damage}, you stop being wounded.
 
-        \parhead{Dying}\label{Dying} While you are dying, you must make an attack against your own Fortitude defense at the end of every round.
+        \parhead{Dying}\label{Dying} At the end of each round, if you have \glossterm{vital damage} and have no hit points remaining, you begin \glossterm{dying}.
+        While you are dying, you must make an attack against your own Fortitude defense at the end of every round.
         This is called a \glossterm{stabilization roll}.
         No bonuses or penalties apply to the attack roll, but \glossterm{vital damage} and other effects can penalize your Fortitude defense.
         If you fail to resist the attack once, you fall unconscious.
@@ -1753,7 +1750,7 @@ It defines how attributes work and explains how to make physical attacks in comb
                 \item Some other abilities have specific effects that last until you take a long rest.
             \end{itemize}
 
-\section{Legend Points}
+\section{Legend Points}\label{Legend Points}
     At 3rd level, you gain a limited ability to change your fate with \glossterm{legend points}.
     When you unexpectedly fail at a critical moment, or an enemy delivers a particularly devastating blow, you can spend a \glossterm{legend point} to shift the outcome of the situation in your favor.
 
