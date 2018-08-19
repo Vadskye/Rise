@@ -923,9 +923,13 @@ It defines how attributes work and explains how to make physical attacks in comb
         It is identified in the same way as \glossterm{line of sight}, except that it is blocked by physical obstacles instead of obstacles that block sight.
         For example, a pane of glass would block line of effect, but not line of sight.
 
-        \subsubsection{Areas}
-            For the purpose of abilities that affect areas, line of effect to a particular target is measured from the ability's \glossterm{point of origin}.
-            You cannot declare a point of origin for an ability that you do not have line of effect to.
+        \subsubsection{Area Line of Effect}\label{Area Line of Effect}
+            Abilities that affect areas normally measure line of effect from the area's \glossterm{point of origin}.
+            This can allow you to affect targets that you do not have line of effect to as long as the point of origin has line of effect to both you and the target.
+
+            Areas originating from creatures do not have a single point of origin.
+            Instead, line of effect is measured from all grid intersections within or touching the creature's space.
+            If any such grid intersection has line of effect to a location, the area as a whole is considered to have line of effect to that location.
 
         \subsubsection{Destroying Barriers}\label{Destroying Barriers}
             Some abilities deal damage to both creatures and objects.
@@ -942,17 +946,14 @@ It defines how attributes work and explains how to make physical attacks in comb
     \subsection{Area}\label{Area}
 
         Some abilities affect targets within an area.
-        All areas have an \glossterm{origin}, an area shape, a measurement of their size in feet, and an an \glossterm{area type}.
+        All areas have a \glossterm{point of origin}, an area shape, a measurement of their size in feet, and an an \glossterm{area type}.
 
-    \subsubsection{Area Origin}
-
-        An area's \glossterm{origin} 
-
-        Most abilities with an area affect an area within a given range.
-        When you use one of these abilities, you choose one grid intersection within the ability's \glossterm{range}.
-        This location is the ability's \glossterm{origin}.
-
-        When you use an area that is based on a given creature or object, the ability's \glossterm{origin} is the creature or object you chose.
+        \subsubsection{Point of Origin}
+            Whenever you use an ability that affects an area within a \glossterm{range}, you choose one grid intersection to serve as a starting point for the area.
+            This grid intersection is called the \glossterm{point of origin} for the area.
+            Areas that originate from a creature do not have a single point of origin.
+            % What ambiguity does having multiple points of origin cause?
+            For the purpose of effects that care about the area's point of origin, all grid intersections within or touching the creature's space are used.
 
         \subsubsection{Area Shape}
 
