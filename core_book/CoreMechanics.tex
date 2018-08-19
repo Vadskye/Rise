@@ -23,9 +23,14 @@ It defines how attributes work and explains how to make physical attacks in comb
         Otherwise, the attack fails.
 
         \subsubsection{Exploding Attacks}\label{Exploding Attacks}
-            When you make an attack roll, if you roll a 10 on the d10, the die ``explodes''.
-            You roll again and add the second result to the original 10 before applying your \glossterm{accuracy}.
+            When you make an attack roll, if you roll a 10 on the d10, the die \glossterm{explodes}.
+            In addition, some effects can cause your roll to \glossterm{explode} without rolling a 10.
+            For example, if you attack an \glossterm{unaware} target, your attack roll explodes regadless of the roll.
+
+            When an attack roll \glossterm{explodes}, you roll it again and add the second result to the original result before applying your \glossterm{accuracy}.
             If you roll a 10 on the extra roll, you keep rolling until you stop rolling a 10 and add all of the rolls together.
+            % Is this necessary text?
+            No effect can cause extra rolls to explode without rolling a 10.
 
         \subsubsection{Critical Hit}\label{Critical Hit}
             If your attack result is at least 10 higher than your target's defense, your attack is a \glossterm{critical hit}.
@@ -85,7 +90,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
     \subsection{Actions}\label{Actions}
 
-        You can take \glossterm{actions} in combat to defeat your foes.
+        You can take actions in combat to defeat your foes.
         There are four types of actions: \glossterm{standard actions}, \glossterm{minor actions}, \glossterm{move actions}, and \glossterm{free actions}.
         % TODO: define conflicting action limits (drawing a sword and sheathing a shield?)
 
@@ -508,13 +513,13 @@ It defines how attributes work and explains how to make physical attacks in comb
             Most creatures have a space significantly larger than the physical space their body occupies because they need room to maneuver in combat.
 
         \subsubsection{Reach}\label{Reach}
-            A creature's \glossterm{reach} is the distance that its \glossterm{melee} attacks can reach.
+            A creature's \glossterm{reach} is the distance that its \glossterm{melee attacks} can reach.
             Enemies within a creature's reach are considered \glossterm{threatened}.
 
         \subsubsection{Base Speed}\label{Base Speed}
             A creature's \glossterm{base speed} is the distance that it can usually move.
             In addition to a base speed, most creatures have specific \glossterm{movement modes} that allow them to move in particular ways.
-            The most common movement mode is a \glossterm{land speed}, which allows creatures to move across the ground.
+            The most common movement mode is a land speed, which allows creatures to move across the ground.
             Most creatures, including all humanoid races, have a land speed equal to their base speed.
             There are other movement modes that can allow creatures to move in different ways.
             For example, most birds have a \glossterm{fly speed}, which allows them to move through the air.
@@ -828,7 +833,11 @@ It defines how attributes work and explains how to make physical attacks in comb
         \parhead{Accidentally Squeezing} Sometimes a character ends its movement while moving through a space where it's not normally allowed to stop. When that happens, the character is squeezing in the space until it can move. If squeezing is impossible, the creature immediately moves to the closest available space. Try not to do this.
 
     \subsection{Movement Modes}\label{Movement Modes}
-        Some spells and abilities grant creatures the ability to move in unusual ways. These forms of movement are described here.
+        A movement mode is a method of moving from one location to another.
+        % TODO: terminology confusion mode vs. speed
+        The most common movement mode is a land speed.
+        In addition, some spells and abilities grant creatures the ability to move in unusual ways.
+        These forms of movement are described here.
 
         \parhead{Burrowing}
         A creature with a burrow speed can move through the ground at the indicated speed in any direction, even vertically. Unless otherwise noted, the creature can only burrow through dirt and loose earth, not rock or harder substances. It does not leave behind a usable tunnel for other creatures.
@@ -946,7 +955,7 @@ It defines how attributes work and explains how to make physical attacks in comb
     \subsection{Area}\label{Area}
 
         Some abilities affect targets within an area.
-        All areas have a \glossterm{point of origin}, an area shape, a measurement of their size in feet, and an an \glossterm{area type}.
+        All areas have a \glossterm{point of origin}, an area shape, a measurement of their size in feet, and an area type.
 
         \subsubsection{Point of Origin}\label{Point of Origin}
             Whenever you use an ability that affects an area within a \glossterm{range}, you choose one grid intersection to serve as a starting point for the area.
@@ -1310,31 +1319,31 @@ It defines how attributes work and explains how to make physical attacks in comb
         If you make a strike with two weapons, you take a \minus1 penalty to \glossterm{accuracy} with both attacks for each non-light weapon you attack with.
 
         \begin{ability}{\labeltext{Melee Strike}}
-            Choose a creature you \glossterm{threaten} and one or two \glossterm{melee} weapons that you can attack with.
+            Choose a creature you \glossterm{threaten} and one or two \glossterm{melee weapons} that you can attack with.
             For each weapon, make a \glossterm{physical attack} with that weapon against the Armor defense of the target.
 
             On a hit with any weapon, the target takes \glossterm{strike damage} from one weapon you hit with (see \pcref{Strike Damage}).
-            On a critical hit with any weapon, the target takes double damage from one weapon you hit with, as normal for critical hits.
+            On a critical hit with any weapon, the target takes double damage from one weapon you hit with.
         \end{ability}
 
         \begin{ability}{\labeltext{Projectile Strike}}
             Choose a creature you can target and one or two \glossterm{projectile} weapons you can attack with, and a creature you can see.
             The creature must be within ten \glossterm{range increments} of you with all weapons.
             For each weapon, make a \glossterm{physical attack} with that weapon against the Armor defense of the target.
-            The attack takes a \minus1 penalty to accuracy for for each full range increment between you and the target with that weapon.
+            The attack takes a \minus1 penalty to \glossterm{accuracy} for for each full range increment between you and the target with that weapon.
 
             On a hit with any weapon, the target takes \glossterm{strike damage} from one weapon you hit with.
-            On a critical hit with any weapon, the target takes double damage from one weapon you hit with, as normal for critical hits.
+            On a critical hit with any weapon, the target takes double damage from one weapon you hit with.
         \end{ability}
 
         \begin{ability}{\labeltext{Thrown Strike}}
-            Choose a creature you can target and one or two \glossterm{thrown} weapons you can attack with.
-            The creature must be within five \glossterm{range increments} of you with all weapons.
+            Choose a creature you can target and one or two \glossterm{thrown weapons} you can attack with.
+            The creature must be within five \glossterm{range increments} of you with all of the weapons.
             For each weapon, make a \glossterm{physical attack} with that weapon against the Armor defense of the target.
-            The attack takes a \minus1 penalty to accuracy for for each full range increment between you and the target with that weapon.
+            The attack takes a \minus1 penalty to \glossterm{accuracy} for for each full range increment between you and the target with that weapon.
 
             On a hit with any weapon, the target takes \glossterm{strike damage} from one weapon you hit with.
-            On a critical hit with any weapon, the target takes double damage from one weapon you hit with, as normal for critical hits.
+            On a critical hit with any weapon, the target takes double damage from one weapon you hit with.
         \end{ability}
 
     \subsection{Combat Maneuvers}\label{Combat Maneuvers}

@@ -146,7 +146,7 @@ def generate_spells():
         header=Header('You create a barrier around your ally that resists physical intrusion.'),
         effects=Effects('Cantrip', """
             Choose a willing creature in \\rngclose range.
-            The target gains \\glossterm<damage reduction> equal to your \\glossterm<power> against \\glossterm<physical damage>.
+            The target gains \\glossterm<damage reduction> equal to your \\glossterm<power> against \\glossterm<physical> damage.
         """, tags=['Sustain (standard)']),
         schools=['Abjuration'],
         lists=['Arcane'],
