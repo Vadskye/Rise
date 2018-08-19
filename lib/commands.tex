@@ -261,15 +261,21 @@
 {
     \IfValueTF{#1}
     {
-        % Enable this to test glossary links
+        % Enable this to test for missing glossary definitions
         % \pref{#1}
+        % Enable this to test for unnecessary glossary entries
+        % \label{#1}
+
         % TODO: remove \mbox before making major releases;
         % it fixes bizarre page break errors but makes text uglier
         \hyperlink{gloss:#1}{\textbf{\mbox{#2}}}
     }
     {
-        % Enable this to test glossary links
+        % Enable this to test for missing glossary definitions
         % \pref{#2}
+        % Enable this to test for unnecessary glossary entries
+        % \label{#2}
+
         \hyperlink{gloss:#2}{\textbf{\mbox{#2}}}
     }
 }
@@ -281,13 +287,19 @@
 {
     \IfValueT{#2}
     {
-        % Enable this to test glossary links
+        % Enable this to test for missing glossary definitions
         % \label{#2}\label{#2s}
+        % Enable this to test for unnecessary glossary entries
+        % \pref{#2}
+
         \hypertarget{gloss:#2}{}
         \hypertarget{gloss:#2s}{}
     }
-    % Enable this to test glossary links
+    % Enable this to test for missing glossary definitions
     % \label{#1}\label{#1s}
+    % Enable this to test for unnecessary glossary entries
+    % \pref{#1}
+
     \hypertarget{gloss:#1}{}
     \hypertarget{gloss:#1s}{}
     \parhead{#1}
