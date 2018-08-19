@@ -808,6 +808,17 @@ Make an attack vs. Mental against a creature within \rngmed range.
 \subsubsection{Subspells}
 
 
+\begin{ability}[\nth{1}]{Dance}[\glossterm{Compulsion}, \glossterm{Mind}]
+Make an attack vs. Mental against a creature within \rngmed range.
+\hit As a \glossterm{condition}, the target is compelled to dance.
+It can spend a \glossterm{move action} to dance, if it is physically capable of dancing.
+At the end of each round, if the target did not dance during that round, it takes a \minus2 penalty to \glossterm{accuracy}, \glossterm{checks}, and \glossterm{defenses} as the compulsion intensifies.
+This penalty stacks each round until the target dances, which resets the penalties to 0.
+\crit As above, except that the target must dance as a \glossterm{standard action} to reset the penalties, instead of as a move action.
+\end{ability}
+\vspace{0.25em}
+
+
 \begin{ability}[\nth{1}]{Fall}
 Make an attack vs. Mental against all enemies in a \areamed radius from you.
 \hit Each target falls \glossterm{prone}.
@@ -817,21 +828,10 @@ If a target is somehow brought into a standing position, it will immediately fal
 \vspace{0.25em}
 
 
-\begin{ability}[\nth{1}]{Stay}[\glossterm{Compulsion}, \glossterm{Mind}]
+\begin{ability}[\nth{2}]{Stay}[\glossterm{Compulsion}, \glossterm{Mind}]
 Make an attack vs. Mental against a creature within \rngmed range.
 \hit The target falls \glossterm{prone} and is \glossterm{slowed} as a \glossterm{condition}.
 \crit The target falls prone and is \glossterm{immobilized} as a \glossterm{condition}.
-\end{ability}
-\vspace{0.25em}
-
-
-\begin{ability}[\nth{2}]{Dance}[\glossterm{Compulsion}, \glossterm{Mind}]
-Make an attack vs. Mental against a creature within \rngmed range.
-\hit As a \glossterm{condition}, the target is compelled to dance.
-It can spend a \glossterm{move action} to dance, if it is physically capable of dancing.
-At the end of each round, if the target did not dance during that round, it takes a \minus2 penalty to \glossterm{accuracy}, \glossterm{checks}, and \glossterm{defenses} as the compulsion intensifies.
-This penalty stacks each round until the target dances, which resets the penalties to 0.
-\crit As above, except that the target must dance as a \glossterm{standard action} to reset the penalties, instead of as a move action.
 \end{ability}
 \vspace{0.25em}
 
@@ -1159,11 +1159,9 @@ This effect is automatically \glossterm{dismissed} after one hour.
 
 
 \begin{ability}[\nth{2}]{Enrage}[\glossterm{Emotion}, \glossterm{Mind}]
-Make an attack vs. Mental against a creature within \rngmed range.
-\hit As a \glossterm{condition}, the target is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
+Make an attack vs. Mental against up to five creatures within \rngmed range.
+\hit As a \glossterm{condition}, each target is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
 For example, it could make a \glossterm{strike} or cast an offensive spell, but it could not heal itself or summon an ally.
-This cannot prevent it from taking the \textit{recover} or \textit{desperate recovery} actions.
-\crit As a \glossterm{condition}, the target cannot take any \glossterm{standard actions} that do not cause it to make a \glossterm{strike}.
 This cannot prevent it from taking the \textit{recover} or \textit{desperate recovery} actions.
 \end{ability}
 \vspace{0.25em}
@@ -1388,10 +1386,11 @@ If you create body armor, you can create it already equipped to a willing creatu
 \begin{ability}[\nth{2}]{Poison}[\glossterm{Manifestation}, \glossterm{Poison}]
 Make an attack vs. Fortitude against a creature within \rngmed range.
 
-\hit The target takes poison \glossterm{standard damage} \minus3d, and is poisoned as a \glossterm{condition}.
+\hit The target takes poison \glossterm{standard damage} and is poisoned as a \glossterm{condition}.
 If the target is poisoned, repeat this attack at the end of each \glossterm{action phase} after the first round.
-On the second hit, the target takes damage and becomes \glossterm{sickened}.
-On the third hit, the target takes damage and becomes \glossterm{nauseated} instead of sickened.
+On the second hit, the target takes poison \glossterm{standard damage} \minus1d and becomes \glossterm{sickened}.
+On the third hit, the target takes poison \glossterm{standard damage} \plus1d and becomes \glossterm{nauseated} instead of sickened.
+After the third hit, no further attacks are made, but the target remains nauseated until the condition is removed.
 \end{ability}
 \vspace{0.25em}
 
@@ -1408,8 +1407,8 @@ In addition, you make an attack vs. Reflex against all creatures in the area whe
 
 
 \begin{ability}[\nth{3}]{Lingering Acid Splash}
-This subspell functions like the \spell{acid splash} spell, except that the spell deals \minus1d damage.
-However, if the spell hits, it deals damage to the target again at the end of every \glossterm{action phase} in subsequent rounds.
+This subspell functions like the \spell{acid splash} spell, except that the acid lingers on a struck target.
+At the end of each \glossterm{action phase} in subsequent rounds, the target takes acid \glossterm{standard damage} \minus1d.
 This is a \glossterm{condition}, and lasts until removed.
 \end{ability}
 \vspace{0.25em}
@@ -2324,6 +2323,8 @@ Make an attack vs. Mental against one Large or smaller magical object in \rngmed
 \begin{ability}[\nth{1}]{Suppress Magic}[\glossterm{Mystic}, \glossterm{Sustain} (standard)]
 Make an attack against one creature, object, or magical effect within \rngmed range.
 If you target a creature or object, the attack result is applied to every \glossterm{magical} effect on the target.
+% Is this clear enough?
+This does not affect the passive effects of any magic items the target has equipped.
 If you target a magical effect directly, the attack result is applied against the effect itself.
 The DR for each effect is equal to 5 + the \glossterm{power} of that effect.
 \hit Each effect is \glossterm{suppressed}.

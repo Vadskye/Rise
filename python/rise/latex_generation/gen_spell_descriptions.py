@@ -251,8 +251,8 @@ def generate_spells():
                 If one of the meteors is created in an invalid area, that meteor is not created, but the others are created and dealt their damage normally.
             """),
             Subspell('Lingering Acid Splash', 3, f"""
-                This subspell functions like the \\spell<acid splash> spell, except that the spell deals -1d damage.
-                However, if the spell hits, it deals damage to the target again at the end of every \\glossterm<action phase> in subsequent rounds.
+                This subspell functions like the \\spell<acid splash> spell, except that the acid lingers on a struck target.
+                At the end of each \\glossterm<action phase> in subsequent rounds, the target takes acid \\glossterm<standard damage> -1d.
                 This is a \\glossterm<condition>, and lasts until removed.
             """),
             Subspell('Web', 2, """
@@ -270,10 +270,11 @@ def generate_spells():
             Subspell('Poison', 2, """
                 Make an attack vs. Fortitude against a creature within \\rngmed range.
 
-                \\hit The target takes poison \\glossterm<standard damage> -3d, and is poisoned as a \\glossterm<condition>.
+                \\hit The target takes poison \\glossterm<standard damage> and is poisoned as a \\glossterm<condition>.
                 If the target is poisoned, repeat this attack at the end of each \\glossterm<action phase> after the first round.
-                On the second hit, the target takes damage and becomes \\glossterm<sickened>.
-                On the third hit, the target takes damage and becomes \\glossterm<nauseated> instead of sickened.
+                On the second hit, the target takes poison \\glossterm<standard damage> -1d and becomes \\glossterm<sickened>.
+                On the third hit, the target takes poison \\glossterm<standard damage> +1d and becomes \\glossterm<nauseated> instead of sickened.
+                After the third hit, no further attacks are made, but the target remains nauseated until the condition is removed.
             """, tags=['Manifestation', 'Poison']),
         ],
         category='damage',
@@ -298,6 +299,8 @@ def generate_spells():
             Subspell('Suppress Magic', 1, """
                 Make an attack against one creature, object, or magical effect within \\rngmed range.
                 If you target a creature or object, the attack result is applied to every \\glossterm<magical> effect on the target.
+                % Is this clear enough?
+                This does not affect the passive effects of any magic items the target has equipped.
                 If you target a magical effect directly, the attack result is applied against the effect itself.
                 The DR for each effect is equal to 5 + the \\glossterm<power> of that effect.
                 \\hit Each effect is \\glossterm<suppressed>.
@@ -590,11 +593,9 @@ def generate_spells():
                 If the target takes damage or feels that it is in danger, this effect is \\glossterm<dismissed>.
             """, tags=['Emotion', 'Mind', 'Sustain (standard)']),
             Subspell("Enrage", 2, """
-                Make an attack vs. Mental against a creature within \\rngmed range.
-                \\hit As a \\glossterm<condition>, the target is unable to take any \\glossterm<standard actions> that do not cause it to make an attack.
+                Make an attack vs. Mental against up to five creatures within \\rngmed range.
+                \\hit As a \\glossterm<condition>, each target is unable to take any \\glossterm<standard actions> that do not cause it to make an attack.
                 For example, it could make a \\glossterm<strike> or cast an offensive spell, but it could not heal itself or summon an ally.
-                This cannot prevent it from taking the \\textit<recover> or \\textit<desperate recovery> actions.
-                \\crit As a \\glossterm<condition>, the target cannot take any \\glossterm<standard actions> that do not cause it to make a \\glossterm<strike>.
                 This cannot prevent it from taking the \\textit<recover> or \\textit<desperate recovery> actions.
             """, tags=['Emotion', 'Mind']),
         ],
@@ -615,13 +616,21 @@ def generate_spells():
         schools=['Enchantment'],
         lists=['Arcane', 'Divine'],
         subspells=[
+            Subspell("Dance", 1, """
+                Make an attack vs. Mental against a creature within \\rngmed range.
+                \\hit As a \\glossterm<condition>, the target is compelled to dance.
+                It can spend a \\glossterm<move action> to dance, if it is physically capable of dancing.
+                At the end of each round, if the target did not dance during that round, it takes a -2 penalty to \\glossterm<accuracy>, \\glossterm<checks>, and \\glossterm<defenses> as the compulsion intensifies.
+                This penalty stacks each round until the target dances, which resets the penalties to 0.
+                \\crit As above, except that the target must dance as a \\glossterm<standard action> to reset the penalties, instead of as a move action.
+            """, tags=['Compulsion', 'Mind']),
             Subspell('Fall', 1, """
                 Make an attack vs. Mental against all enemies in a \\areamed radius from you.
                 \\hit Each target falls \\glossterm<prone>.
                 \\crit As above, and as a \\glossterm<condition>, each target is unable to stand up.
                 If a target is somehow brought into a standing position, it will immediately fall and become prone again.
             """),
-            Subspell('Stay', 1, """
+            Subspell('Stay', 2, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 \\hit The target falls \\glossterm<prone> and is \\glossterm<slowed> as a \\glossterm<condition>.
                 \\crit The target falls prone and is \\glossterm<immobilized> as a \\glossterm<condition>.
@@ -645,14 +654,6 @@ def generate_spells():
                 Make an attack vs. Mental against all enemies in a \\areamed radius from you.
                 \\hit Each target is \\disoriented as a \\glossterm<condition>.
                 \\crit Each target is \\confused as a \\glossterm<condition>.
-            """, tags=['Compulsion', 'Mind']),
-            Subspell("Dance", 2, """
-                Make an attack vs. Mental against a creature within \\rngmed range.
-                \\hit As a \\glossterm<condition>, the target is compelled to dance.
-                It can spend a \\glossterm<move action> to dance, if it is physically capable of dancing.
-                At the end of each round, if the target did not dance during that round, it takes a -2 penalty to \\glossterm<accuracy>, \\glossterm<checks>, and \\glossterm<defenses> as the compulsion intensifies.
-                This penalty stacks each round until the target dances, which resets the penalties to 0.
-                \\crit As above, except that the target must dance as a \\glossterm<standard action> to reset the penalties, instead of as a move action.
             """, tags=['Compulsion', 'Mind']),
             Subspell("Irresistible Dance", 6, """
                 This subspell functions like the \\textit<dance> subspell, except that you gain a +4 bonus to accuracy on the attack.
