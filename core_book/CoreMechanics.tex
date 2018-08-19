@@ -1346,92 +1346,27 @@ It defines how attributes work and explains how to make physical attacks in comb
             On a critical hit with any weapon, the target takes double damage from one weapon you hit with.
         \end{ability}
 
-    \subsection{Combat Maneuvers}\label{Combat Maneuvers}
-        A \glossterm{combat maneuver} is an attempt to physically hinder your foe with your body, such as by shoving or tripping it.
-        Unless otherwise noted, combat maneuvers do not deal damage.
-
-        \begin{dtable}
-            \lcaption{Combat Maneuvers}
-            \begin{dtabularx}{\columnwidth}{l l X}
-                \tb{Maneuver}  & \tb{Defense} & \tb{Brief Description} \\
-                \bottomrule
-                Dirty Trick & Any                  & Impose penalty on a foe         \\
-                Disarm      & Reflex               & Attack item, knocking it free   \\
-                Feint       & Reflex               & Leave foe vulnerable to attacks \\
-                Grapple     & Fortitude and Reflex & Wrestle with a foe              \\
-                Shove       & Fortitude            & Move a foe                      \\
-                Trip        & Fortitude and Reflex & Trip a foe                      \\
-            \end{dtabularx}
-        \end{dtable}
-
-        \subsubsection{Maneuver Descriptions}
-            \parhead{Dirty Trick} As a standard action, you can use the \textit{dirty trick} ability to creatively impair a foe's ability to fight.
-
-            \begin{ability}{Dirty Trick}\label{Dirty Trick}
-                When you use this ability, you must describe the kind of dirty trick you are performing.
-                For example, you can pull a creature's pants down, throw sand, or otherwise use your environment to attack.
-
-                Make a melee \glossterm{physical attack} with a free hand against the Fortitude or Reflex defense of a creature you \glossterm{threaten}.
-                The target uses whichever defense is appropriate to the nature of the trick you describe.
-
-                On a hit, as a \glossterm{condition}, the target suffers a \minus2 penalty to one of the following statistics:
-                    \glossterm{accuracy} with \glossterm{physical attacks}, Armor defense, Fortitude defense, Reflex defense, or Mental defense.
-            \end{ability}
-
-            \parhead{Disarm} As a standard action, you can use the \textit{disarm} ability to knock an item out of a foe's hands.
-
-            \begin{ability}{Disarm}\label{Disarm}
-                Make a melee \glossterm{physical attack} with a weapon you wield against an object.
-                Unlike most abilities, this ability can target specific items \glossterm{attended} by creatures.
-                This attack must beat the target's Armor defense.
-                If the target is attended by a creature, the attack must also beat the attending creature's Reflex defense.
-
-                On a hit, you choose whether the target takes \glossterm{strike damage} from the weapon you hit it with.
-                In addition, if the target is \glossterm{attended} and is not held in two hands or well secured (such as a ring), you can choose to knock it loose.
-                If you do, it falls to the ground in the square occupied by the attending creature that is closest to you.
-            \end{ability}
-
-            \parhead{Feint} As a standard action during the \glossterm{action phase}, you can use the \textit{feint} ability to distract an opponent, allowing you to strike them more accurately.
-
-            \begin{ability}{Feint}\label{Feint}
-                Make a melee \glossterm{physical attack} with a weapon you wield against a creature's Reflex defense.
-                During the \glossterm{delayed action phase}, you can also make a melee \glossterm{strike} with the same weapon.
-
-                On a hit, the target takes a \minus2 penalty to defenses against the delayed strike.
-                On a miss, you take a \minus2 penalty to accuracy with the strike.
-            \end{ability}
-
-            \parhead{Grapple} As a standard action, you can use the \textit{grapple} ability to physically grab and restrain a creature.
-
-            \begin{ability}{Grapple}\label{Grapple}
-                Make a melee \glossterm{physical attack} with a free hand against a creature's Fortitude and Reflex defenses.
-
-                On a hit against both defenses, you and the target are \grappled by each other.
-                For details, see \pcref{Grappling}.
-            \end{ability}
-
-            \parhead{Shove} As a standard action, you can use the \textit{shove} ability to physically move a creature.
-
-            \begin{ability}{Shove}\label{Shove}
-                Make a melee \glossterm{physical attack} with a free hand against a creature's Fortitude defense.
-                For each size category larger or smaller than the target that you are, you gain a \plus4 bonus or penalty to \glossterm{accuracy}.
-
-                On a hit, you move the target up to 10 feet in a direction of your choice.
-                Effects that limit movement speed, such as \glossterm{difficult terrain}, similarly limit the distance you can move the target.
-                You can move the same distance that you push the target.
-                You cannot normally keep moving the target if it stops being adjacent to you.
-                If the target encounters a creature or solid object, you must stop moving it.
-            \end{ability}
-
-            \parhead{Trip} As a standard action, you can use the \textit{trip} ability to trip a creature.
-
-            \begin{ability}{\labeltext{Trip}}
-                Make a melee \glossterm{physical attack} with a free hand against a creature's Fortitude and Reflex defenses.
-
-                On a hit, the target becomes \prone.
-            \end{ability}
 
     \subsection{Special Combat Abilities}\label{Special Combat Abilities}
+
+        \begin{dtable}
+            \lcaption{Special Combat Abilities}
+            \begin{dtabularx}{\columnwidth}{>{\lcol}p{6em} l X}
+                \tb{Maneuver}  & \tb{Defense} & \tb{Brief Description} \\
+                \bottomrule
+                Charge\fn{1}       & Armor        & Move and attack                                      \\
+                Desperate Recovery & \tdash       & Remove a \glossterm{condition} if you take no damage \\
+                Dirty Trick        & Any          & Impose penalty on a foe                              \\
+                Disarm             & Ref          & Attack item, knocking it free                        \\
+                Feint              & Ref          & Leave foe vulnerable to attacks                      \\
+                Grapple            & Fort and Ref & Wrestle with a foe                                   \\
+                Recover\fn{1}      & \tdash       & Quickly remove a \glossterm{condition}               \\
+                Shove              & Fort         & Move a foe                                           \\
+                Total Defense      & \tdash       & Gain \plus2 to defenses                              \\
+                Trip               & Fort and Ref & Trip a foe                                           \\
+            \end{dtabularx}
+            1. This ability costs an \glossterm{action point} to use.
+        \end{dtable}
 
         \parhead{Charge} As a standard action during the \glossterm{action phase}, you can spend an \glossterm{action point} to use the \textit{charge} ability.
 
@@ -1448,6 +1383,51 @@ It defines how attributes work and explains how to make physical attacks in comb
             This cannot remove a condition applied during the current round.
         \end{ability}
 
+        \parhead{Dirty Trick} As a standard action, you can use the \textit{dirty trick} ability to creatively impair a foe's ability to fight.
+
+        \begin{ability}{Dirty Trick}\label{Dirty Trick}
+            When you use this ability, you must describe the kind of dirty trick you are performing.
+            For example, you can pull a creature's pants down, throw sand, or otherwise use your environment to attack.
+
+            Make a melee \glossterm{physical attack} with a free hand against the Fortitude or Reflex defense of a creature you \glossterm{threaten}.
+            The target uses whichever defense is appropriate to the nature of the trick you describe.
+
+            On a hit, as a \glossterm{condition}, the target suffers a \minus2 penalty to one of the following statistics:
+                \glossterm{accuracy} with \glossterm{physical attacks}, Armor defense, Fortitude defense, Reflex defense, or Mental defense.
+        \end{ability}
+
+        \parhead{Disarm} As a standard action, you can use the \textit{disarm} ability to knock an item out of a foe's hands.
+
+        \begin{ability}{Disarm}\label{Disarm}
+            Make a melee \glossterm{physical attack} with a weapon you wield against an object.
+            Unlike most abilities, this ability can target specific items \glossterm{attended} by creatures.
+            This attack must beat the target's Armor defense.
+            If the target is attended by a creature, the attack must also beat the attending creature's Reflex defense.
+
+            On a hit, you choose whether the target takes \glossterm{strike damage} from the weapon you hit it with.
+            In addition, if the target is \glossterm{attended} and is not held in two hands or well secured (such as a ring), you can choose to knock it loose.
+            If you do, it falls to the ground in the square occupied by the attending creature that is closest to you.
+        \end{ability}
+
+        \parhead{Feint} As a standard action during the \glossterm{action phase}, you can use the \textit{feint} ability to distract an opponent, allowing you to strike them more accurately.
+
+        \begin{ability}{Feint}\label{Feint}
+            Make a melee \glossterm{physical attack} with a weapon you wield against a creature's Reflex defense.
+            During the \glossterm{delayed action phase}, you can also make a melee \glossterm{strike} with the same weapon.
+
+            On a hit, the target takes a \minus2 penalty to defenses against the delayed strike.
+            On a miss, you take a \minus2 penalty to accuracy with the strike.
+        \end{ability}
+
+        \parhead{Grapple} As a standard action, you can use the \textit{grapple} ability to physically grab and restrain a creature.
+
+        \begin{ability}{Grapple}\label{Grapple}
+            Make a melee \glossterm{physical attack} with a free hand against a creature's Fortitude and Reflex defenses.
+
+            On a hit against both defenses, you and the target are \grappled by each other.
+            For details, see \pcref{Grappling}.
+        \end{ability}
+
         \parhead{Recover} As a \glossterm{minor action}, you can spend an \glossterm{action point} to use the \textit{recover} ability.
         As long as you are conscious, no effect can prevent you from using this ability, even effects that prohibit using any other abilities.
         \begin{ability}{\labeltext{Recover}}
@@ -1455,10 +1435,31 @@ It defines how attributes work and explains how to make physical attacks in comb
             This cannot remove a condition applied during the current round.
         \end{ability}
 
+        \parhead{Shove} As a standard action, you can use the \textit{shove} ability to physically move a creature.
+
+        \begin{ability}{Shove}\label{Shove}
+            Make a melee \glossterm{physical attack} with a free hand against a creature's Fortitude defense.
+            For each size category larger or smaller than the target that you are, you gain a \plus4 bonus or penalty to \glossterm{accuracy}.
+
+            On a hit, you move the target up to 10 feet in a direction of your choice.
+            Effects that limit movement speed, such as \glossterm{difficult terrain}, similarly limit the distance you can move the target.
+            You can move the same distance that you push the target.
+            You cannot normally keep moving the target if it stops being adjacent to you.
+            If the target encounters a creature or solid object, you must stop moving it.
+        \end{ability}
+
         \parhead{Total Defense} As a standard action, you can use the \textit{total defense} ability to focus entirely on defending yourself.
 
         \begin{ability}{\labeltext{Total Defense}}[\glossterm{Swift}]
             You gain a \plus2 bonus to your \glossterm{defenses} until the end of the round.
+        \end{ability}
+
+        \parhead{Trip} As a standard action, you can use the \textit{trip} ability to trip a creature.
+
+        \begin{ability}{\labeltext{Trip}}
+            Make a melee \glossterm{physical attack} with a free hand against a creature's Fortitude and Reflex defenses.
+
+            On a hit, the target becomes \prone.
         \end{ability}
 
     \subsection{Special Movement Abilities}
