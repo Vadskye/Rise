@@ -1372,7 +1372,7 @@ def generate_spells():
             Make an attack vs. Fortitude against one creature, object, or location within \\rngmed range.
             Bright light illuminates a 100 foot radius around the target until the end of the round.
             \\hit The target is \\dazzled as a \\glossterm<condition>.
-            \\crit The target is \\blinded as a \\glossterm<condition>.
+            \\crit As above, and target is also \\dazed as an additional \\glossterm<condition>.
         """, tags=['Light', 'Sensation', 'Visual']),
         schools=['Illusion'],
         lists=['Arcane', 'Divine', 'Nature'],
@@ -1408,7 +1408,7 @@ def generate_spells():
                 Each struck target is also \\glossterm<deafened> as an additional \\glossterm<condition>.
                 This subspell gains the \\glossterm<Auditory> tag in addition to the tags from the \\spell<flare> subspell.
             """),
-            Subspell('Blinding', 5, """
+            Subspell('Blinding', 4, """
                 This subspell functions like the \\spell<flare> subspell, except that each struck target is \\glossterm<blinded> instead of \\glossterm<dazzled>.
             """),
             Subspell('Pillars of Light', 3, """
