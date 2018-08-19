@@ -48,7 +48,7 @@ def generate_armor():
         description="""
             As a \\glossterm<minor action>, you can activate this shield.
             If you do, you gain a +5 \\glossterm<magic bonus> to Armor defense against ranged \\glossterm<physical attacks> from weapons or projectiles that are Small or smaller.
-            This is a \\glossterm<swift ability>, and it lasts until the end of the round.
+            This is a \\glossterm<Swift> ability, and it lasts until the end of the round.
         """,
         short_description="Can block small projectiles",
     ))
@@ -248,7 +248,7 @@ def generate_armor():
             As a \\glossterm<minor action>, you can spend an \\glossterm<action point> to activate this item.
             If you do, any \\glossterm<targeted> \\glossterm<magical> abilities that would target you are redirected to target the creature using that ability instead of you.
             Any other targets of the ability are affected normally.
-            This is a \\glossterm<swift ability>, and it lasts until the end of the round.
+            This is a \\glossterm<Swift> ability, and it lasts until the end of the round.
         """,
         short_description="React to reflect magical attacks",
     ))
