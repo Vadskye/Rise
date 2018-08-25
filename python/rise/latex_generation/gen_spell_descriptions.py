@@ -1569,7 +1569,7 @@ def generate_spells():
                 The damage increases by +1d.
                 In addition, a struck target is \\glossterm<stunned> as a \\glossterm<condition>.
             """),
-            Subspell('Dimensional Jaunt -- Myriad', 7, """
+            Subspell('Dimensional Jaunt -- Myriad', 6, """
                 This subspell functions like the \\spell<dimensional jaunt> subspell, except that the target is partially teleported through a dizzying array of planes.
                 The damage increases by +3d and becomes damage of all types.
             """),
