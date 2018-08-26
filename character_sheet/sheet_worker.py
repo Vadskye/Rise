@@ -12,6 +12,7 @@ def generate_script():
         threat(),
         encumbrance(),
         initiative(),
+        base_speed(),
         '</script>',
         ""
     ])
@@ -129,9 +130,9 @@ def fortitude():
 def reflex():
     return f"""
         on("change:level change:dexterity change:perception change:shield_defense_value change:reflex_class change:reflex_misc", function(eventInfo) {{
-            getAttrs(["level", "dexterity", "perception", "shield_defense_value", "dexterity_starting", "reflex_class", "reflex_misc"], function(v) {{
+            getAttrs(["level", "dexterity", "perception", "dexterity_starting", "reflex_class", "reflex_misc"], function(v) {{
                 var scaling = Math.max(Number(v.level), Number(v.dexterity), Number(v.perception));
-                var total = scaling + Number(v.dexterity_starting) + Number(v.reflex_class) + Number(v.reflex_misc) + Number(v.shield_defense_value);
+                var total = scaling + Number(v.dexterity_starting) + Number(v.reflex_class) + Number(v.reflex_misc);
                 setAttrs({{
                     reflex: total,
                     reflex_scaling: scaling,
@@ -192,6 +193,17 @@ def initiative():
                 setAttrs({{
                     initiative: scaling + Number(v.initiative_misc),
                     initiative_scaling: scaling,
+                }});
+            }});
+        }});
+    """
+
+def base_speed():
+    return f"""
+        on("change:speed_size change:speed_armor change:speed_misc", function(eventInfo) {{
+            getAttrs(["speed_size", "speed_armor", "speed_misc"], function(v) {{
+                setAttrs({{
+                    base_speed: Number(v.speed_size) - Number(v.speed_armor) + Number(v.speed_misc),
                 }});
             }});
         }});
