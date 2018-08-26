@@ -57,14 +57,14 @@ def aberrations():
         active_abilities=[
             active_ability('Mind Crush', f"""
                 The aboleth makes a +{aboleth.accuracy()} vs. Mental attack against a creature in Long range.
-                \\hit The target takes {aboleth.standard_damage() + 2} psionic damage and is \\glossterm<stunned> as a \\glossterm<condition>.
+                \\hit The target takes {aboleth.standard_damage() + 3} psionic damage and is \\glossterm<stunned> as a \\glossterm<condition>.
                 \\crit The aboleth can spend an action point.
                 If it does, the target is \\glossterm<dominated> by the aboleth for as long as the aboleth \\glossterm<attunes> to this ability.
                 Otherwise, the target takes double the damage of a non-critical hit.
             """, tags=['Mind']),
             active_ability('Psionic Blast', f"""
                 The aboleth makes a +{aboleth.accuracy()} vs. Mental attack against enemies in a Large cone.
-                \\hit Each target takes {aboleth.standard_damage()} psionic damage and is \\glossterm<stunned> as a \\glossterm<condition>.
+                \\hit Each target takes {aboleth.standard_damage() + 1} psionic damage and is \\glossterm<stunned> as a \\glossterm<condition>.
             """, tags=['Mind']),
         ],
         passive_abilities=[
@@ -368,7 +368,7 @@ def humanoids():
         active_abilities=[
             active_ability('Hex', f"""
                 The cultist makes a +{cultist.accuracy()} vs. Fortitude attack against one creature in Medium range.
-                \hit The target takes {cultist.standard_damage()} life damage and is \\glossterm<sickened> as a \\glossterm<condition>.",
+                \hit The target takes {cultist.standard_damage() + 1} life damage and is \\glossterm<sickened> as a \\glossterm<condition>.",
             """),
         ],
     ))
@@ -517,7 +517,7 @@ def humanoids():
                 \\crit As above, except that the penalty is increased to -6.
             """),
             active_ability('Hurt Less', f"""
-                One other willing creature in Close range heals {orc_shaman.standard_damage() + 1} hit points.
+                One other willing creature in Close range heals {orc_shaman.standard_damage() + 2} hit points.
             """),
         ],
     ))
@@ -585,7 +585,7 @@ def magical_beasts():
             """),
             active_ability('Spit Acid', f"""
                 The ankheg makes a +{ankheg.accuracy()} vs. Armor attack against everything in a 5 ft. wide Medium line.
-                \\hit Each target takes {ankheg.standard_damage() - 1} acid damage, and creatures are \\glossterm<sickened> as a \\glossterm<condition>.
+                \\hit Each target takes {ankheg.standard_damage()} acid damage, and creatures are \\glossterm<sickened> as a \\glossterm<condition>.
             """),
         ]
     ))
@@ -628,7 +628,7 @@ def magical_beasts():
             active_ability('Petrifying Gaze', f"""
                 The basilisk makes a +{basilisk.accuracy()} vs. Fortitude attack against one creature in Medium range.
                 \\hit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
-                \\crit As above, and as an additional condition, the target takes {basilisk.standard_damage() - 2} physical damage at the end of each action phase.
+                \\crit As above, and as an additional condition, the target takes {basilisk.standard_damage() - 1} physical damage at the end of each action phase.
                 If it takes vital damage in this way, it is petrified permanently.
             """),
         ],
@@ -651,7 +651,7 @@ def magical_beasts():
         active_abilities=[
             active_ability('Electric Breath', f"""
                 The behir makes a +{behir.accuracy()} vs. Armor attack against everything in a \\areamed cone.
-                \\hit Each target takes {behir.standard_damage()} electricity damage, and is \\glossterm<dazed> as a \\glossterm<condition>.
+                \\hit Each target takes {behir.standard_damage() + 1} electricity damage, and is \\glossterm<dazed> as a \\glossterm<condition>.
             """),
             active_ability('Natural Grab', f"""
                 The behir makes a bite \\glossterm<strike>.
@@ -717,7 +717,7 @@ def magical_beasts():
                 The cockatrice makes a bite \\glossterm<strike>.
                 In addition to the strike's normal effects, the cockatrice also makes a +{cockatrice.accuracy()} vs. Fortitude attack against the target.
                 \\hit If the strike also hit, the target is \\glossterm<nauseated> as a \\glossterm<condition>.
-                \\crit As above, and as an additional condition, the target takes {cockatrice.standard_damage() - 2} physical damage at the end of each action phase.
+                \\crit As above, and as an additional condition, the target takes {cockatrice.standard_damage() - 1} physical damage at the end of each action phase.
                 If it takes vital damage in this way, it is petrified permanently.
             """),
         ],
@@ -779,7 +779,7 @@ def magical_beasts():
             passive_ability('Death Throes', f"""
                 When a frost worm is killed, its corpse turns to ice and shatters in a violent explosion.
                 It makes a +{frost_worm.accuracy()} vs. Fortitude attack against everything in a \\areahuge radius from it.
-                \\hit Each target takes {frost_worm.standard_damage() + 3} cold and piercing damage.
+                \\hit Each target takes {frost_worm.standard_damage() + 4} cold and piercing damage.
             """),
         ],
     ))
@@ -974,7 +974,7 @@ def monstrous_humanoids():
         active_abilities=[
             active_ability('Wail', f"""
                 The banshee makes a +{banshee.accuracy()} vs. Fortitude attack against everything in a Large radius.
-                \\hit Each target takes {banshee.standard_damage() - 1} sonic damage, and creatures are sickened as a condition.
+                \\hit Each target takes {banshee.standard_damage()} sonic damage, and creatures are sickened as a condition.
             """),
         ],
     ))
@@ -1039,12 +1039,12 @@ def monstrous_humanoids():
         active_abilities=[
             active_ability('Lightning Javelin', f"""
                 The storm giant makes a +{storm_giant.accuracy()} vs. Fortitude attack against everything in a 10 ft. wide Large line.
-                \\hit Each target takes {storm_giant.standard_damage()} electricity damage.
+                \\hit Each target takes {storm_giant.standard_damage() + 2} electricity damage.
             """),
             active_ability('Thunderstrike', f"""
                 The storm giant makes a greatsword strike against a target.
                 If its attack result beats the target's Fortitude defense,
-                    the target also takes {storm_giant.standard_damage() - 1} sonic damage
+                    the target also takes {storm_giant.standard_damage()} sonic damage
                     and is deafened as a condition.
             """),
         ],
@@ -1069,7 +1069,7 @@ def monstrous_humanoids():
         active_abilities=[
             active_ability('Vital Surge', f"""
                 The hag makes a +{green_hag.accuracy()} vs. Fortitude attack against one creature within Medium range.
-                \\hit The target takes {green_hag.standard_damage() + 1} life damage.
+                \\hit The target takes {green_hag.standard_damage() + 2} life damage.
             """),
             active_ability("Green Hag's Curse", f"""
                 The hag makes a +{green_hag.accuracy()} vs. Mental atack aginst one creature within Medium range.
@@ -1104,7 +1104,7 @@ def monstrous_humanoids():
             active_ability('Petrifying Gaze', f"""
                 The medusa makes a +{medusa.accuracy()} vs. Fortitude attack against one creature in Medium range.
                 \\hit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
-                \\crit As above, and as an additional condition, the target takes {medusa.standard_damage() - 2} physical damage at the end of each action phase.
+                \\crit As above, and as an additional condition, the target takes {medusa.standard_damage() - 1} physical damage at the end of each action phase.
                 If it takes vital damage in this way, it is petrified permanently.
             """),
         ],
@@ -1136,7 +1136,7 @@ def outsiders():
                 If its target is evil, it gains a +2 bonus to accuracy and a +2d bonus to damage on the strike.
             """),
             active_ability("Angel's Grace", f"""
-                One willing creature within reach heals {astral_deva.standard_damage() + 1} hit points.
+                One willing creature within reach heals {astral_deva.standard_damage() + 3} hit points.
             """),
         ],
     ))
@@ -1156,7 +1156,7 @@ def outsiders():
         active_abilities=[
             active_ability('Electrobolt', f"""
                 The arrowhawk makes a +{arrowhawk.accuracy()} vs. Fortitude attack against one creature or object in Medium range.
-                \\hit The target takes {arrowhawk.standard_damage()} electricity damage.
+                \\hit The target takes {arrowhawk.standard_damage() + 2} electricity damage.
             """),
         ],
         speed='60 ft. fly (good)',
@@ -1181,7 +1181,7 @@ def outsiders():
             active_ability('Venomous Bite', f"""
                 The bebelith makes a bite strike.
                 If it hits, and the attack result beats the target's Fortitude defense, the target is also poisoned as a condition.
-                If the target is poisoned, it takes {bebelith.standard_damage() - 1} poison damage at the end of each action phase after the first round.
+                If the target is poisoned, it takes {bebelith.standard_damage()} poison damage at the end of each action phase after the first round.
             """),
         ],
     ))
@@ -1202,7 +1202,7 @@ def outsiders():
         active_abilities=[
             active_ability('Fire Breath', f"""
                 The hell hound makes a +{hell_hound.accuracy()} vs. Armor attack against everything in a Medium cone.
-                \\hit Each target takes {hell_hound.standard_damage()} fire damage.
+                \\hit Each target takes {hell_hound.standard_damage() + 1} fire damage.
             """),
         ],
         immunities=['fire damage'],
@@ -1228,7 +1228,7 @@ def outsiders():
                 The salamander spends an action point to intensify its natural body heat, creating a burning aura around it.
                 At the end of each action phase, the salamander makes a +{flamebrother_salamander.accuracy()} vs. Armor
                     attack against everything within a Medium radius emanation of it.
-                \\hit Each target takes {flamebrother_salamander.standard_damage() - 1} fire damage.
+                \\hit Each target takes {flamebrother_salamander.standard_damage()} fire damage.
             """, tags=['Sustain (standard)']),
             active_ability('Natural Grab', f"""
                 The salamander makes a tail slam \\glossterm<strike>.
@@ -1275,7 +1275,7 @@ def outsiders():
                 The salamander spends an action point to intensify its natural body heat, creating a burning aura around it.
                 At the end of each action phase, the salamander makes a +{flamebrother_salamander.accuracy()} vs. Armor
                     attack against everything within a Medium radius emanation of it.
-                \\hit Each target takes {flamebrother_salamander.standard_damage() - 1} fire damage.
+                \\hit Each target takes {flamebrother_salamander.standard_damage()} fire damage.
             """, tags=['Sustain (standard)']),
             active_ability('Natural Grab', f"""
                 The salamander makes a tail slam \\glossterm<strike>.
