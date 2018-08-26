@@ -1012,20 +1012,22 @@ def generate_worn():
         material_type='belt',
         tags=['Life'],
         description="""
-            When you use the \\textit<recover> ability, you heal +1d hit points.
+            As a standard action, you can spend an \\glossterm<action point> to use this belt.
+            If you do, you heal hit points equal to \\glossterm<standard damage>.
         """,
-        short_description="Grants +1d healing from the \\textit<recover> action",
+        short_description="Grants healing",
     ))
 
     apparel.append(MagicItem(
         name="Belt of Healing, Greater",
-        level=8,
+        level=7,
         material_type='belt',
         tags=['Life'],
         description="""
-            When you use the \\textit<recover> ability, you heal +2d hit points.
+            As a standard action, you can spend an \\glossterm<action point> to use this belt.
+            If you do, you heal hit points equal to \\glossterm<standard damage> +1d.
         """,
-        short_description="Grants +2d healing from the \\textit<recover> action",
+        short_description="Grants more healing",
     ))
 
     apparel.append(MagicItem(
