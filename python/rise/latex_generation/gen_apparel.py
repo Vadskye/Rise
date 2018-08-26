@@ -896,9 +896,9 @@ def generate_worn():
         material_type='amulet',
         tags=['Mystic'],
         description="""
-            You gain a +5 bonus to defenses against abilities with the \\glossterm<Scrying> tag.
+            You gain a +4 bonus to defenses against abilities with the \\glossterm<Detection> or \\glossterm<Scrying> tags.
         """,
-        short_description="Grants +5 to defenses against scrying",
+        short_description="Grants +4 to defenses against detection",
     ))
 
     apparel.append(MagicItem(
@@ -907,9 +907,9 @@ def generate_worn():
         material_type='amulet',
         tags=['Mystic'],
         description="""
-            You gain a +10 bonus to defenses against abilities with the \\glossterm<Scrying> tag.
+            You gain a +8 bonus to defenses against abilities with the \\glossterm<Detection> or \\glossterm<Scrying> tags.
         """,
-        short_description="Grants +10 to defenses against scrying",
+        short_description="Grants +8 to defenses against detection",
     ))
 
     # Cloaks
