@@ -291,8 +291,9 @@
     \subsection{Weapon Tags}\label{Weapon Tags}
         Some weapons found on \trefnp{Weapons} have tags that indicate that they have special abilities. The list of abilities that weapons can have is given below.
         \parhead{Ammunition} This weapon is designed to thrown or fired by a projectile weapon in large quantities. It is cheaper to buy and craft, but ammunition is usually \glossterm{broken} after being fired.
-        \parhead{Bracing} As a move action, you can brace this weapon against a charge for 1 round.
-        While you are bracing your weapon, you gain a \plus2d bonus to damage on attacks with that weapon against creatures that charge you that round.
+        % Timing is weird
+        \parhead{Bracing} As a \glossterm{move action}, you can brace this weapon against a charge until the end of the round.
+        While you are bracing your weapon, you gain a \plus2d bonus to damage on attacks with that weapon against creatures that use the \textit{charge} ability to move up to you that round.
         \parhead{Compact} This weapon is unusually small. It is one size category smaller than normal for a light weapon (that is, three size categories smaller than the creature it is intended for). This makes it easier to conceal (see \pcref{Sleight of Hand}).
         \parhead{Disarming} You gain a \plus2 bonus to accuracy when you use the \textit{disarm} ability to attack with this weapon.
         \parhead{Double} This weapon has more than one striking surface. You can fight with both ends simultaneously, just like wielding two weapons at once (see \pcref{Two-Weapon Strikes}). Alternately, you can attack with one end at a time. If you have the ability to use a double weapon in one hand, you can only fight with one end at a time, not both.
@@ -626,15 +627,18 @@ A few of the pieces of adventuring gear found on Table: Goods and Services are d
 \subsection{Special Substances And Items}
 Any of these substances except for the everburning torch and holy water can be made by a character with the Craft (alchemy) skill.
 \parhead{Acid} You can throw a flask of acid as a splash weapon. Treat this attack as a ranged touch attack with a \glossterm{range increment} of 10 feet. A direct hit deals 1d6 points of acid damage. Every creature within 5 feet of the point where the acid hits takes 1 point of acid damage from the splash.
-\parhead{Alchemist's Fire} You can throw a flask of alchemist's fire as a splash weapon. Treat this attack as a ranged touch attack with a range increment of 10 feet.
-\par A direct hit deals 1d6 points of fire damage and makes the creature \ignited for 1 round. Every creature within 5 feet of the point where the flask hits takes 1 point of fire damage from the splash.
+\parhead{Alchemist's Fire} You can throw a flask of alchemist's fire as a splash weapon.
+This is a ranged \glossterm{physical attack} against the target's Armor defense.
+\par A direct hit deals 1d6 points of fire damage and makes the creature \ignited until the target puts out the fire.
+Every creature within 5 feet of the point where the flask hits takes 1 point of fire damage from the splash.
 \parhead{Antitoxin} If you drink antitoxin, you gain a \plus5 bonus to Fortitude defense against \glossterm{Poison} abilities for 1 hour.
 \parhead{Everburning Torch} This otherwise normal torch has a continual flame spell cast upon it. An everburning torch clearly illuminates a 20 foot radius and provides shadowy illumination out to a 40 foot radius.
 \parhead{Holy Water} Holy water damages undead creatures and evil outsiders almost as if it were acid. A flask of holy water can be thrown as a splash weapon.
 \par Treat this attack as a ranged touch attack with a \glossterm{range increment} of 10 feet. A flask breaks if thrown against the body of a corporeal creature, but to use it against an incorporeal creature, you must open the flask and pour the holy water out onto the target. Thus, you can douse an incorporeal creature with holy water only if you are adjacent to it. Doing so is a ranged touch attack.
 \par A direct hit by a flask of holy water deals 2d4 points of damage to an undead creature or an evil outsider. Each such creature within 5 feet of the point where the flask hits takes 1 point of damage from the splash.
 \par Temples to good deities sell holy water at cost (making no profit).
-\parhead{Smokestick} This alchemically treated wooden stick instantly creates thick, opaque smoke when ignited. The smoke fills a 10 foot cube (treat the effect as a fog cloud spell, except that a moderate or stronger wind dissipates the smoke in 1 round). The stick is consumed after 1 round, and the smoke dissipates naturally.
+% TODO: define fog clouds
+% \parhead{Smokestick} This alchemically treated wooden stick instantly creates thick, opaque smoke when ignited. The smoke fills a 10 foot cube (treat the effect as a fog cloud spell, except that a moderate or stronger wind dissipates the smoke in 1 round). The stick is consumed after 1 round, and the smoke dissipates naturally.
 \parhead{Sunrod} This 1 foot long, gold-tipped, iron rod glows brightly when struck. It clearly illuminates a 20 foot radius and provides shadowy illumination in a 40 foot radius. It glows for 6 hours, after which the gold tip is burned out and worthless.
 \parhead{Tanglefoot Bag} When you throw a tanglefoot bag at a creature, make a ranged attack against the target's Reflex defense.
 The bag has a \glossterm{range increment} of 10 feet.
