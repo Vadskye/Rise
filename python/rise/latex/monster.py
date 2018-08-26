@@ -27,7 +27,6 @@ def get_latex_from_creature(
         name_suffix=creature.name_suffix,
         perception=creature.perception,
         race=creature.race.name,
-        recovery_dice=creature.recovery_dice,
         reach=creature.reach,
         reflex_defense=creature.reflex_defense,
         size=creature.size.name,
@@ -59,7 +58,6 @@ def get_latex(
         race,
         strength,
         strikes,
-        recovery_dice,
         reflex_defense,
         willpower,
         action_points=None,
@@ -87,7 +85,6 @@ def get_latex(
                         \\spelltwocol<
                             \\textbf<HP> {hit_points};
                             \\textbf<Bloodied> {hit_points // 2};
-                            \\textbf<Recovery> {recovery_dice}
                         >
                             <\\textbf<AP> {action_points if action_points is not None else challenge_rating}>
 
