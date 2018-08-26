@@ -13,7 +13,7 @@ All characters know how to speak Common. A dwarf, elf, gnome, half-elf, half-orc
 \subsection{Small Characters}\label{Small Characters}
 A Small character has the following effects based on their size.
 \begin{itemize}
-    \item \minus2 penalty to starting Strength.
+    \item \minus2 penalty to total Strength.
     \item \minus2 penalty to \glossterm{threat}.
     \item \plus2 bonus to Reflex defense.
     \item \plus4 bonus to Stealth.
@@ -61,13 +61,19 @@ In addition, a Small character generally has a move speed five feet slower than 
 
 \subsection{Gnomes}
 \parhead{Size} Small. This gives several benefits and penalties, as described at \pcref{Small Characters}.
-\parhead{Attributes} \plus1 starting Constitution. In addition, being Small gives gnomes a \minus2 penalty to starting Strength.
+\parhead{Attributes} \plus1 starting Constitution. In addition, being Small gives gnomes a \minus2 penalty to total Strength.
 \parhead{Speed} 25 feet.
 \parhead{Special Abilities}
 \begin{itemize}
     \itemhead*{Earthen Resilience}: Gnomes gain a \plus1 bonus to Fortitude defense.
+    \itemhead*{Fae Light}: As a \glossterm{standard action}, a gnome can spend an \glossterm{action point} to use the \textit{fae light} ability.
+        \begin{ability}{Fae Light}[\glossterm{Attune} (self)]
+            A Tiny glowing orb appears at a location within \rngmed range.
+            It sheds pale, bright light in a \areamed radius, and dim light for an additional 20 feet.
+            The orb is intangible, and cannot be moved once placed.
+        \end{ability}
     \itemhead*{Low-light Vision}: Gnomes treat sources of light as if they had double their normal illumination range.
-    \itemhead*{Mystic Essence}: Gnomes gain an additional \glossterm{action point}.
+    \itemhead*{Tinker}: Gnomes gain a \plus2 bonus to a Craft skill of their choice (see \pcref{Craft}).
 \end{itemize}
 \parhead{Racial Bonus Feat} Any Spell feat (see \pcref{Spell Feats}), or any from the following list: \featref*{Blindfighter}, \featref*{Craft Specialization}, \featref*{Stealth Specialization}, \featref*{Toughness}.
 \parhead{Automatic Languages} Common, Gnome.
@@ -103,7 +109,7 @@ In addition, a Small character generally has a move speed five feet slower than 
 
 \subsection{Halflings}
 \parhead{Size} Small. This gives several benefits and penalties, as described at \pcref{Small Characters}.
-\parhead{Attributes} \plus1 starting Dexterity. In addition, being Small gives halflings a \minus2 penalty to starting Strength.
+\parhead{Attributes} \plus1 starting Dexterity. In addition, being Small gives halflings a \minus2 penalty to total Strength.
 \parhead{Speed} 25 feet.
 \parhead{Special Abilities}
 \begin{itemize}
