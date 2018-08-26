@@ -1687,14 +1687,14 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             \hit Each target takes fire damage equal to your \glossterm{power}.
         \end{ability}
 
-        \ff[9]{Potent Pyromancy} You gain a \plus1d bonus to damage with the \spell{pyromancy} spell.
+        \ff[9]{Potent Pyromancy} You gain a \plus1 bonus to \glossterm{power} with the \spell{pyromancy} spell.
 
         \ff[12]{Shared Fire Tolerance} The damage reduction from your \textit{fire tolerance} ability increases to twice your \glossterm{power}.
         In addition, all allies within a \areamed radius emanation from you gain damage reduction against fire damage equal to your \glossterm{power}.
 
         \ff[15]{Greater Backdraft} The area of your \textit{backdraft} ability increases to an \areamed radius.
 
-        \ff[18]{Greater Potent Pyromancy} The bonus from your \textit{potent pyromancy} ability increases to \plus2d.
+        \ff[18]{Greater Potent Pyromancy} The bonus from your \textit{potent pyromancy} ability increases to \plus2.
     \end{feat}
 
     \begin{feat}{Spell Focus: Revelation}{Magical, Spell}
@@ -1747,7 +1747,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[6]{Fortified Summoning} Creatures you create with the \spell{summon} spell have \glossterm{damage reduction} equal to your \glossterm{power} with that spell.
 
-        \ff[9]{Potent Summoning} You gain a \plus1d bonus to damage with the \spell{summoning} spell.
+        \ff[9]{Potent Summoning} You gain a \plus1 bonus to \glossterm{power} with the \spell{summoning} spell.
 
         \ff[12]{Greater Resummon} The range of your \textit{resummon} ability increases to \rnglong.
         In addition, you can choose up to two creatures to teleport instead of only one.
@@ -1755,7 +1755,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[15]{Greater Fortified Summoning} The damage reduction from your \textit{fortified summoning} ability increases to twice your \glossterm{power} with that spell.
 
-        \ff[18]{Greater Potent Summoning} The bonus from your \textit{potent summoning} ability increases to \plus2d.
+        \ff[18]{Greater Potent Summoning} The bonus from your \textit{potent summoning} ability increases to \plus2.
     \end{feat}
 
     \begin{feat}{Spell Focus: Telekinesis}{Magical, Spell}
@@ -1826,15 +1826,16 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[3]{Vital Force} You are immune to \glossterm{disease} and hostile \glossterm{Death} effects.
 
-        \ff[6]{Healing Boon} You gain a \plus1d bonus to healing from the \spell{vital surge} spell.
+        \ff[6]{Reciprocal Healing} When you heal a creature with the \spell{vital surge} spell, you also heal hit points equal to your \glossterm{power} with the spell.
+        You can only gain this healing once per time you cast the spell.
 
-        \ff[9]{Potent Vital Surge} You gain a \plus1 bonus to \glossterm{accuracy} with the \spell{vital surge} spell.
+        \ff[9]{Potent Vital Surge} You gain a \plus1 bonus to \glossterm{power} with the \spell{vital surge} spell.
 
         \ff[12]{Greater Vital Force} You are immune to life damage and hostile \glossterm{Life} effects.
 
-        \ff[15]{Greater Healing Boon} The bonus from your \textit{healing boon} ability increases to \plus2d.
+        \ff[15]{Reciprocal Healing} The healing from your \textit{reciprocal healing} ability increases to twice your \glossterm{power} with the spell.
 
-        \ff[18]{Greater Potent Vital surge} The bonus from your \textit{potent vital surge} ability increases to \plus2.
+        \ff[18]{Greater Potent Vital Surge} The bonus from your \textit{potent vital surge} ability increases to \plus2.
     \end{feat}
 
     \begin{feat}{Spell Focus: Weaponcraft}{Magical, Spell}
@@ -1855,16 +1856,21 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             This ability lasts until you use it again, or until you \glossterm{dismiss} it as a \glossterm{free action}.
         \end{ability}
 
-        \ff[6]{Guided Weapons} Autonomous weapons you create with the \spell{weaponcraft} spell try to move towards and attack creatures that have attacked you if possible.
-        If the weapon is unable to reach any such creatures in a given round, it follows its normal behavior.
+        \ff[6]{Disable Weapon} As a \glossterm{minor action}, you can use the \textit{disable weapon} ability.
+        \begin{ability}{Disable Weapon}[\glossterm{Swift}]
+            Choose a weapon you created with the \spell{weaponcraft} ability.
+            The weapon takes no actions until the end of the round.
+            Since this ability has the \glossterm{Swift} tag, you can use this ability to prevent the weapon from attacking you or your allies in the current phase.
+        \end{ability}
 
-        \ff[9]{Potent Weaponcraft} You gain a \plus1d bonus to damage with the \spell{weaponcraft} spell. 
+        \ff[9]{Potent Weaponcraft} You gain a \plus1 bonus to \glossterm{power} with the \spell{weaponcraft} spell. 
 
         \ff[12]{Greater Personal Weapon} When attacking with a weapon created with your \textit{personal weapon} ability, you gain a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} and a \plus1d \glossterm{magic bonus} to damage.
 
-        \ff[15]{Greater Guided Weapons} You gain a \plus1 bonus to \glossterm{accuracy} on attacks with autonomous weapons you create with the \spell{weaponcraft} spell.
+        % TODO: wording?
+        \ff[15]{Greater Disable Weapon} You can use your \textit{disable weapon} ability as a \glossterm{free action} during the \glossterm{action phase} or \glossterm{delayed action phase}.
 
-        \ff[18]{Greater Potent Weaponcraft} The bonus from your \textit{potent weaponcraft} ability increases to \plus2d.
+        \ff[18]{Greater Potent Weaponcraft} The bonus from your \textit{potent weaponcraft} ability increases to \plus2.
     \end{feat}
 
     \begin{feat}{Stealth Specialization}{Skill}
