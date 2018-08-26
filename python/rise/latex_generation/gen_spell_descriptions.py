@@ -30,7 +30,7 @@ def generate_spells():
         header=Header('You blast a foe with wind.'),
         effects=Effects('Cantrip', """
             Make an attack vs. Armor against a creature or object within \\rngmed range.
-            \\hit The target takes bludgeoning \\glossterm<standard damage> -1d.
+            \\hit The target takes bludgeoning \\glossterm<standard damage>.
         """),
         schools=['Transmutation'],
         lists=['Nature'],
@@ -51,7 +51,7 @@ def generate_spells():
             """, tags=['Air', 'Attune (target)', 'Shielding']),
             Subspell('Windstrike', 1, """
                 Make an attack vs. Armor against a creature or object within \\rngmed range.
-                \\hit The target takes bludgeoning \\glossterm<standard damage> +1d.
+                \\hit The target takes bludgeoning \\glossterm<standard damage> +2d.
             """, tags=['Air']),
             Subspell('Windblade', 1, """
                 Choose a willing creature within \\rngclose range.
@@ -74,7 +74,7 @@ def generate_spells():
             """),
             Subspell('Gust of Wind', 2, """
                 Make an attack vs. Armor against everything in a \\arealarge, 10 ft. wide line from you.
-                \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
+                \\hit Each target takes bludgeoning \\glossterm<standard damage>.
             """, tags=['Air']),
             Subspell('Greater Windblade', 3, """
                 Choose a willing creature within \\rngclose range.
@@ -89,7 +89,7 @@ def generate_spells():
             Subspell('Stormlord', 3, """
                 This subspell functions like the \\spell<wind screen> subspell, except that the air also retaliates against creatures that attack the target.
                 Whenever a creature within \\rngclose range of the target attacks it, make an attack vs. Armor against the attacking creature.
-                A hit deals bludgeoning \\glossterm<standard damage> -2d.
+                A hit deals bludgeoning \\glossterm<standard damage> -1d.
                 Any individual creature can only be dealt damage in this way once per round.
 
                 Any effect which increases this spell's range increases the range of this retaliation by the same amount.
@@ -118,7 +118,7 @@ def generate_spells():
             """, ['Air', 'Attune (self)']),
             Subspell('Cyclone', 4, """
                 Make an attack vs. Armor against everything in a \\areamed radius within \\rngmed range.
-                \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
+                \\hit Each target takes bludgeoning \\glossterm<standard damage>.
             """, ['Air']),
             Subspell('Stripping Windstrike', 2, """
                 This subspell functions like the \\spell<windstrike> subspell, except that the attack result is also compared to the target's Reflex defense.
@@ -214,14 +214,14 @@ def generate_spells():
         # TODO: Narrative implications of at-will acid are annoying
         effects=Effects('Cantrip', """
             Make an attack vs. Armor against one creature or object within \\rngmed range.
-            \\hit The target takes acid \\glossterm<standard damage> -1d.
+            \\hit The target takes acid \\glossterm<standard damage>.
         """, tags=['Acid', 'Manifestation']),
         schools=['Conjuration'],
         lists=['Arcane', 'Pact'],
         subspells=[
             Subspell('Acid Splash', 1, """
                 Make an attack vs. Armor against one creature or object within \\rngmed range.
-                \\hit The target takes acid \\glossterm<standard damage> +1d.
+                \\hit The target takes acid \\glossterm<standard damage> +2d.
             """, tags=['Acid', 'Manifestation']),
             Subspell('Forge', 1, """
                 Choose a type of weapon or shield that you are proficient with.
@@ -238,21 +238,21 @@ def generate_spells():
             Subspell('Corrosive Splash', 2, """
                 This subspell functions like the \\spell<acid splash> spell, except that it deals double damage to objects.
             """),
-            Subspell('Meteor', 3, """
+            Subspell('Meteor', 4, """
                 You create a meteor in midair that falls to the ground, crushing foes in its path.
                 The meteor takes up a \\areamed radius, and must be created in unoccupied space.
                 After being summoned, it falls up to 100 feet before disappearing.
                 Make an attack vs. Armor against everything in its path.
                 \\hit Each target takes bludgeoning and fire \\glossterm<standard damage>.
             """, tags=['Manifestation']),
-            Subspell("Meteor Storm", 5, f"""
+            Subspell("Meteor Storm", 6, f"""
                 This subspell functions like the \\textit<meteor> subspell, except that you can create up to five different meteors.
                 The areas affected by two different meteors cannot overlap.
                 If one of the meteors is created in an invalid area, that meteor is not created, but the others are created and dealt their damage normally.
             """),
             Subspell('Lingering Acid Splash', 3, f"""
                 This subspell functions like the \\spell<acid splash> spell, except that the acid lingers on a struck target.
-                At the end of each \\glossterm<action phase> in subsequent rounds, the target takes acid \\glossterm<standard damage> -1d.
+                At the end of each \\glossterm<action phase> in subsequent rounds, the target takes acid \\glossterm<standard damage>.
                 This is a \\glossterm<condition>, and lasts until removed.
             """),
             Subspell('Web', 2, """
@@ -270,10 +270,10 @@ def generate_spells():
             Subspell('Poison', 2, """
                 Make an attack vs. Fortitude against a creature within \\rngmed range.
 
-                \\hit The target takes poison \\glossterm<standard damage> and is poisoned as a \\glossterm<condition>.
+                \\hit The target takes poison \\glossterm<standard damage> +1d and is poisoned as a \\glossterm<condition>.
                 If the target is poisoned, repeat this attack at the end of each \\glossterm<action phase> after the first round.
-                On the second hit, the target takes poison \\glossterm<standard damage> -1d and becomes \\glossterm<sickened>.
-                On the third hit, the target takes poison \\glossterm<standard damage> +1d and becomes \\glossterm<nauseated> instead of sickened.
+                On the second hit, the target takes poison \\glossterm<standard damage> and becomes \\glossterm<sickened>.
+                On the third hit, the target takes poison \\glossterm<standard damage> +2d and becomes \\glossterm<nauseated> instead of sickened.
                 After the third hit, no further attacks are made, but the target remains nauseated until the condition is removed.
             """, tags=['Manifestation', 'Poison']),
         ],
@@ -382,22 +382,22 @@ def generate_spells():
         header=Header('You create a small burst of flame.'),
         effects=Effects('Cantrip', """
             Make an attack vs. Armor against one creature or object within \\rngmed range.
-            \\hit The target takes fire \\glossterm<standard damage> -1d.
+            \\hit The target takes fire \\glossterm<standard damage>.
         """, tags=['Fire']),
         schools=['Evocation'],
         lists=['Arcane', 'Fire', 'Nature', 'Pact'],
         subspells=[
             Subspell('Fireburst', 1, """
                 Make an attack vs. Armor against everything in a \\areasmall radius within \\rngclose range.
-                \\hit Each target takes fire \\glossterm<standard damage> -1d.
+                \\hit Each target takes fire \\glossterm<standard damage>.
             """, tags=['Fire']),
             Subspell('Firebolt', 1, """
                 Make an attack vs. Armor against one creature within \\rngmed range.
-                \\hit The target takes fire \\glossterm<standard damage> +1d.
+                \\hit The target takes fire \\glossterm<standard damage> +2d.
             """, tags=['Fire']),
             Subspell("Burning Hands", 2, f"""
                 Make an attack vs. Armor against everything in a \\arealarge cone.
-                \\hit Each target takes fire \\glossterm<standard damage> -1d.
+                \\hit Each target takes fire \\glossterm<standard damage>.
             """, tags=['Fire']),
             Subspell("Blast Furnace", 2, f"""
                 This subspell functions like the \\spell<fireburst> subspell, except that it gains the \\glossterm<Sustain> (standard) tag.
@@ -406,7 +406,7 @@ def generate_spells():
             """),
             Subspell('Fireball', 3, """
                 Make an attack vs. Armor against everything in a \\areamed radius within \\rngmed range.
-                \\hit Each target takes fire \\glossterm<standard damage> -1d.
+                \\hit Each target takes fire \\glossterm<standard damage>.
             """),
             Subspell("Greater Blast Furnace", 4, f"""
                 This subspell functions like the \\textit<blast furnace> subspell, except that the spell gains the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Sustain> (standard) tag.
@@ -417,14 +417,14 @@ def generate_spells():
             Subspell("Greater Ignition", 4, f"""
                 This subspell functions like the \\spell<fireburst> subspell, except that each target hit is also \\glossterm<ignited> as a \\glossterm<condition>.
                 Unlike the normal ignited effect, this condition cannot be removed by putting out the fire.
-                In addition, the ignited effect deals fire \\glossterm<standard damage> -3d instead of the normal 1d6 fire damage each round.
+                In addition, the ignited effect deals fire \\glossterm<standard damage> -2d instead of the normal 1d6 fire damage each round.
             """),
             Subspell("Supreme Ignition", 6, f"""
                 This subspell functions like the \\textit<greater ignition> subspell, except that the condition must be removed twice before the effect ends.
             """),
             Subspell('Inferno', 3, """
                 Make an attack vs. Armor against everything in a \\arealarge radius from you.
-                \\hit Each target takes fire \\glossterm<standard damage> -1d.
+                \\hit Each target takes fire \\glossterm<standard damage>.
             """, tags=['Fire']),
             Subspell('Greater Inferno', 5, """
                 This subspell functions like the \\textit<inferno> subspell, except that it affects everything in a 200 ft.\\ radius from you.
@@ -438,7 +438,7 @@ def generate_spells():
             """),
             Subspell("Flame Serpent", 3, f"""
                 Make an attack vs. Armor against everything in a \\arealarge, 5 ft.\\ wide shapeable line within \\rngmed range.
-                \\hit Each target takes fire \\glossterm<standard damage> -1d.
+                \\hit Each target takes fire \\glossterm<standard damage>.
             """, tags=['Fire']),
             Subspell('Flame Aura', 4, """
                 Choose a willing creature within \\rngclose range.
@@ -472,14 +472,14 @@ def generate_spells():
         header=Header("You create a wave of water to crush your foes."),
         effects=Effects('Cantrip', """
             Make an attack vs. Fortitude against everything in a \\areamed, 5 ft.\\ wide line from you.
-            \\hit Each target takes bludgeoning \\glossterm<standard damage> -2d.
+            \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
         """, tags=['Manifestation', 'Water']),
         schools=['Conjuration'],
         lists=['Nature'],
         subspells=[
             Subspell('Crushing Wave', 1, """
                 Make an attack vs. Fortitude against everything in a \\arealarge, 10 ft.\\ wide line from you.
-                \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
+                \\hit Each target takes bludgeoning \\glossterm<standard damage>.
             """, tags=['Manifestation', 'Water']),
             Subspell('Dampen', 1, """
                 Choose up to five willing creatures within \\rngclose range.
@@ -508,7 +508,7 @@ def generate_spells():
             Subspell('Geyser', 2, """
                 Make an attack vs. Fortitude against everything in a \\arealarge, 5 ft.\\ wide vertical line within \\rngmed range.
                 If this subspell has its area increased, such as with the Widened \\glossterm<augment>, only the length of the line increases.
-                \\hit Each target takes takes bludgeoning \\glossterm<standard damage> +1d.
+                \\hit Each target takes takes bludgeoning \\glossterm<standard damage> +2d.
             """, tags=['Manifestation', 'Water']),
             Subspell("Aqueous Sphere", 2, f"""
                 This subspell functions like the \\spell<crushing wave> subspell, except that it targets everything in a \\areasmall radius within \\rngclose range.
@@ -566,7 +566,7 @@ def generate_spells():
                 \\hit The target is inflicted with agonizing pain as a \\glossterm<condition>.
                 It suffers a -2 penalty to Mental defense.
                 % Does this need to clarify that it takes effect in the round the spell was cast?
-                In addition, at the end of each \\glossterm<delayed action phase>, if the target took damage that round, it takes \\glossterm<standard damage> -2d.
+                In addition, at the end of each \\glossterm<delayed action phase>, if the target took damage that round, it takes \\glossterm<standard damage> -1d.
                 This damage is of all damage types that the target was damaged by during that round.
             """, tags=['Emotion', 'Mind']),
             Subspell("Redirected Fear", 2, """
@@ -761,18 +761,18 @@ def generate_spells():
         header=Header("You smite a foe with holy (or unholy) power."),
         effects=Effects('Cantrip', """
             Make an attack vs. Mental against a creature within \\rngmed range.
-            \\hit The target takes divine \\glossterm<standard damage> -1d.
+            \\hit The target takes divine \\glossterm<standard damage>.
         """),
         schools=['Channeling'],
         lists=['Divine'],
         subspells=[
             Subspell('Divine Judgment', 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
-                \\hit The target takes divine \\glossterm<standard damage> +1d.
+                \\hit The target takes divine \\glossterm<standard damage> +2d.
             """),
             Subspell("Word of Faith", 2, """
                 Make an attack vs. Mental against all enemies in a \\areamed radius from you.
-                \\hit Each target takes divine \\glossterm<standard damage> -1d.
+                \\hit Each target takes divine \\glossterm<standard damage>.
             """),
         ],
         category='damage',
@@ -788,18 +788,18 @@ def generate_spells():
         header=Header('You drain the heat from a foe.'),
         effects=Effects('Cantrip', """
             Make an attack vs. Fortitude against one creature or object within \\rngmed range.
-            \\hit The target takes cold \\glossterm<standard damage> -1d.
+            \\hit The target takes cold \\glossterm<standard damage>.
         """, tags=['Cold']),
         schools=['Evocation'],
         lists=['Arcane', 'Nature', 'Pact'],
         subspells=[
             Subspell('Cone of Cold', 1, """
                 Make an attack vs. Fortitude against everything in a \\areamed cone from you.
-                \\hit Each target takes cold \\glossterm<standard damage> -1d, and is \\glossterm<fatigued> as a \\glossterm<condition>.
+                \\hit Each target takes cold \\glossterm<standard damage>, and is \\glossterm<fatigued> as a \\glossterm<condition>.
             """, tags=['Cold']),
             Subspell('Frostbite', 1, """
                 Make an attack vs. Fortitude against one creature or object within \\rngmed range.
-                \\hit The target takes cold \\glossterm<standard damage> +1d.
+                \\hit The target takes cold \\glossterm<standard damage> +2d.
             """, tags=['Cold']),
             Subspell('Greater Frostbite', 3, """
                 This subspell functions like the \\subspell<frostbite> subspell, except that a struck target is also \\glossterm<exhausted> as a \\glossterm<condition>.
@@ -857,23 +857,23 @@ def generate_spells():
         header=Header("You create a bolt of electricity that fries your foes."),
         effects=Effects('Cantrip', """
             Make an attack vs. Fortitude against everything in a \\areamed, 5 ft.\\ wide line from you.
-            \\hit Each target takes electricity \\glossterm<standard damage> -2d.
+            \\hit Each target takes electricity \\glossterm<standard damage> -1d.
         """, tags=['Electricity']),
         schools=['Evocation'],
         lists=['Arcane', 'Nature', 'Pact'],
         subspells=[
             Subspell('Lightning Bolt', 1, """
                 Make an attack vs. Fortitude against everything in a \\arealarge, 10 ft.\\ wide line from you.
-                \\hit Each target takes electricity \\glossterm<standard damage> -1d.
+                \\hit Each target takes electricity \\glossterm<standard damage>.
             """, tags=['Electricity']),
             Subspell('Shocking Grasp', 1, """
                 Make an attack vs. Fortitude against one creature or object you \\glossterm<threaten>.
                 You gain a +5 bonus to \\glossterm<concentration> checks to cast this subspell.
-                \\hit The target takes electricity \\glossterm<standard damage> +1d.
+                \\hit The target takes electricity \\glossterm<standard damage> +2d.
             """, tags=['Electricity']),
             Subspell('Uncontrolled Discharge', 2, """
                 Make an attack vs. Fortitude against everything in a \\areamed radius from you.
-                \\hit Each target takes electricity \\glossterm<standard damage> -1d.
+                \\hit Each target takes electricity \\glossterm<standard damage>.
             """),
             Subspell('Magnetic', 2, """
                 This subspell functions like the \\spell<lightning bolt> subspell, except that you gain a +2 bonus to accuracy against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
@@ -895,9 +895,9 @@ def generate_spells():
             """),
             Subspell('Chain Lightning', 4, """
                 Make an attack vs. Fortitude against one creature or object within \\rngmed range.
-                \\hit The target takes electricity \\glossterm<standard damage> +2d.
+                \\hit The target takes electricity \\glossterm<standard damage> +3d.
                 In addition, make an additional attack vs. Fortitude against any number of creatures in a \\areamed radius from the struck target.
-                \\hit Each secondary target takes electricity \\glossterm<standard damage>.
+                \\hit Each secondary target takes electricity \\glossterm<standard damage> +1d.
             """, tags=['Electricity']),
             Subspell("Forked Lightning", 2, """
                 This subspell functions like the \\spell<lightning bolt> subspell, except that you create two separate line-shaped areas instead of one.
@@ -911,7 +911,7 @@ def generate_spells():
                 Make an attack vs. Fortitude against everything in a \\arealarge, 5 ft.\\ wide vertical line within \\rngmed range.
                 If you are outdoors in cloudy or stormy weather, you gain a +2 bonus to \\glossterm<accuracy> with the attack.
                 If this subspell has its area increased, such as with the Widened \\glossterm<augment>, only the length of the line increases.
-                \\hit Each target takes takes electricity \\glossterm<standard damage> +1d.
+                \\hit Each target takes takes electricity \\glossterm<standard damage> +2d.
             """, tags=['Electricity']),
         ],
         category='damage',
@@ -935,10 +935,10 @@ def generate_spells():
                 Make an attack vs. Fortitude against a living creature within \\rngclose range.
                 \\hit The target is \\glossterm<sickened> as a \\glossterm<condition>.
                 % TODO: clarify when exactly this damage is taken (should be at the end of the phase)
-                In addition, it takes life \\glossterm<standard damage> -3d whenever it takes a \\glossterm<standard action>.
+                In addition, it takes life \\glossterm<standard damage> -2d whenever it takes a \\glossterm<standard action>.
                 It can only take damage in this way once per round.
                 \\crit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
-                In addition, it takes life \\glossterm<standard damage> -1d whenever it takes a \\glossterm<standard action>.
+                In addition, it takes life \\glossterm<standard damage> whenever it takes a \\glossterm<standard action>.
                 It can only take damage in this way once per round.
             """, tags=['Life']),
             Subspell("Corruption of Blood and Bone", 3, """
@@ -967,12 +967,12 @@ def generate_spells():
             """, tags=['Life']),
             Subspell("Finger of Death", 5, """
                 Make an attack vs. Fortitude against a living creature within \\rngclose range.
-                \\hit The target takes life \\glossterm<standard damage> +3d.
+                \\hit The target takes life \\glossterm<standard damage> +4d.
                 \\crit The target immediately dies.
             """, tags=['Death', 'Life']),
             Subspell("Bleed", 3, """
                 This subspell functions like the \\spell<sickening decay> subspell, except that a struck target also begins bleeding as an additional \\glossterm<condition>.
-                At the end of every subsequent \\glossterm<action phase>, the target takes slashing \\glossterm<standard damage> -2d.
+                At the end of every subsequent \\glossterm<action phase>, the target takes slashing \\glossterm<standard damage> -1d.
             """),
             Subspell("Crippling Decay", 4, """
                 This subspell functions like the \\spell<sickening decay> spell, except that a struck target is also \\glossterm<immobilized> as an additional \\glossterm<condition>.
@@ -990,18 +990,18 @@ def generate_spells():
         # header=Header("description"),
         effects=Effects('Vital Surge', """
             Make an attack vs. Fortitude against a creature within \\rngmed range.
-            \\hit The target takes life damage equal to \\glossterm<standard damage> -1d.
+            \\hit The target takes life damage equal to \\glossterm<standard damage>.
         """, tags=['Life']),
         schools=['Vivimancy'],
         lists=['Divine', 'Nature'],
         subspells=[
             Subspell("Cure Wounds", 1, """
                 Choose a willing creature within \\rngmed range.
-                The target heals hit points equal to \\glossterm<standard damage> +1d.
+                The target heals hit points equal to \\glossterm<standard damage> +2d.
             """, tags=['Life']),
             Subspell('Inflict Wounds', 1, """
                 Make an attack vs. Fortitude against a creature within \\rngmed range.
-                \\hit The target takes life damage equal to \\glossterm<standard damage> +1d.
+                \\hit The target takes life damage equal to \\glossterm<standard damage> +2d.
             """, tags=['Life']),
             Subspell("Greater Cure Wounds", 2, """
                 This subspell functions like the \\spell<cure wounds> subspell, except that for every 5 points of healing you provide, you can instead heal one point of \\glossterm<vital damage>.
@@ -1024,7 +1024,7 @@ def generate_spells():
             Subspell("Circle of Death", 3, """
                 You are surrounded by an aura of death in a \\areamed radius emanation from you.
                 When this spell resolves, and the end of each \\glossterm<action phase> in subsequent rounds, make an attack vs. Fortitude against all enemies in the area.
-                \\hit Each target takes life \\glossterm<standard damage> -3d.
+                \\hit Each target takes life \\glossterm<standard damage> -2d.
             """, tags=['Life', 'Sustain (minor)']),
             Subspell("Circle of Healing", 3, """
                 You are surrounded by an aura of healing in a \\areamed radius emanation from you.
@@ -1069,7 +1069,7 @@ def generate_spells():
                 As a move action, it can move as you direct.
                 As a standard action, it can make a melee \\glossterm{strike} against a creature it threatens.
                 Its accuracy is equal to your \\glossterm<accuracy>.
-                If it hits, it deals \\glossterm<standard damage> -2d.
+                If it hits, it deals \\glossterm<standard damage> -1d.
                 The type of damage dealt by this attack depends on the creature's appearance.
                 Most animals bite or claw their foes, which deals bludgeoning and slashing damage.
             """, tags=['Manifestation', 'Sustain (minor)']),
@@ -1234,14 +1234,14 @@ def generate_spells():
         header=Header("You crush your foe's body with telekinetic force."),
         effects=Effects('Cantrip', """
             Make an attack vs. Mental against one creature or object within \\rngmed range.
-            \\hit The target takes bludgeoning \\glossterm<standard damage> -1d.
+            \\hit The target takes bludgeoning \\glossterm<standard damage>.
         """),
         schools=['Evocation'],
         lists=['Arcane', 'Pact'],
         subspells=[
             Subspell('Telekinetic Crush', 1, """
                 Make an attack vs. Mental against one creature or object within \\rngmed range.
-                \\hit The target takes bludgeoning \\glossterm<standard damage> +1d.
+                \\hit The target takes bludgeoning \\glossterm<standard damage> +2d.
             """),
             Subspell('Telekinetic Throw', 1, """
                 Make an attack vs. Mental against a Medium or smaller creature or object within \\rngmed range.
@@ -1432,19 +1432,19 @@ def generate_spells():
         header=Header("You transform a foe's body into a more broken state."),
         effects=Effects('Polymorph', """
             Make an attack vs. Fortitude against a creature within \\rngmed range.
-            \\hit The target takes physical \\glossterm<standard damage> -1d.
+            \\hit The target takes physical \\glossterm<standard damage>.
         """, tags=['Shaping']),
         schools=['Transmutation'],
         lists=['Arcane', 'Nature', 'Pact'],
         subspells=[
             Subspell('Baleful Polymorph', 1, """
                 Make an attack vs. Fortitude against a creature within \\rngmed range.
-                \\hit The target takes physical \\glossterm<standard damage> +1d.
+                \\hit The target takes physical \\glossterm<standard damage> +2d.
             """, tags=['Shaping']),
             Subspell("Mending", 1, """
                 % TODO: unattended or attended by a willing creature
                 Choose an unattended object within \\rngclose range.
-                The target is healed for hit points equal to \\glossterm<standard damage> +1d.
+                The target is healed for hit points equal to \\glossterm<standard damage> +2d.
             """),
             Subspell("Shrink", 1, """
                 Choose a willing creature within \\rngclose range.
@@ -1509,7 +1509,7 @@ def generate_spells():
             """, tags=['Shaping']),
             Subspell("Disintegrate", 5, """
                 Make an attack vs. Fortitude against a creature within \\rngmed range.
-                \\hit The target takes physical \\glossterm<standard damage> +3d.
+                \\hit The target takes physical \\glossterm<standard damage> +4d.
                 In addition, if the target has no hit points remaining, it dies.
                 Its body is completely disintegrated, leaving behind only a pinch of fine dust.
                 Its equipment is unaffected.
@@ -1528,14 +1528,14 @@ def generate_spells():
         header=Header("You disrupt a creature's body by partially thrusting it into another plane."),
         effects=Effects('Cantrip', """
             Make an attack vs. Mental against a creature within \\rngmed range.
-            \\hit The target takes physical \\glossterm<standard damage> -1d.
+            \\hit The target takes physical \\glossterm<standard damage>.
         """, tags=['Planar', 'Teleportation']),
         schools=['Conjuration'],
         lists=['Arcane', 'Pact'],
         subspells=[
             Subspell('Dimensional Jaunt', 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
-                \\hit The target takes physical \\glossterm<standard damage> +1d.
+                \\hit The target takes physical \\glossterm<standard damage> +2d.
             """, tags=['Planar', 'Teleportation']),
             Subspell("Teleport", 1, """
                 Choose a Medium or smaller willing creature or unattended object within \\rngclose range.
@@ -1634,7 +1634,7 @@ def generate_spells():
 
                 When the target reappears, its condition is unchanged from when it left, except that it loses all action points, spell points, and all similar resources equal to the amount used by its duplicate.
                 Its hit points, conditions, and all other statistics are unaffected, regardless of any damage or other negative effects suffered by the duplicate.
-                If this would reduce any of the target's resources below 0, it takes physical \\glossterm<standard damage> +3d from the paradox and becomes \\glossterm<stunned> as a \\glossterm<condition>.
+                If this would reduce any of the target's resources below 0, it takes physical \\glossterm<standard damage> +4d from the paradox and becomes \\glossterm<stunned> as a \\glossterm<condition>.
 
                 You can cast this subspell as a \\glossterm<minor action>.
             """, tags=['Temporal']),
@@ -1720,14 +1720,14 @@ def generate_spells():
         header=Header("You create a dancing blade that attacks nearby foes"),
         effects=Effects('Cantrip', """
             Make an attack vs. Armor against one creature or object within \\rngmed range.
-            \\hit The target takes piercing \\glossterm<standard damage> -1d.
+            \\hit The target takes piercing \\glossterm<standard damage>.
         """, tags=['Manifestation']),
         schools=['Conjuration', 'Transmutation'],
         lists=['Arcane', 'Divine', 'Pact'],
         subspells=[
             Subspell('Mystic Bow', 1, """
                 Make an attack vs. Armor against one creature or object within \\rngmed range.
-                \\hit The target takes piercing \\glossterm<standard damage> +1d.
+                \\hit The target takes piercing \\glossterm<standard damage> +2d.
             """, tags=['Manifestation']),
             Subspell("Blade Barrier", 1, """
                 A wall of whirling blades appears within \\rngmed range.
@@ -1735,7 +1735,7 @@ def generate_spells():
                 The wall provides \\glossterm<active cover> (20\\% miss chance) against attacks made through it.
                 Attacks that miss in this way harmlessly strike the wall.
                 Whenever a creature or object passes through the wall, make an attack vs. Armor against it.
-                \\hit The target takes slashing \\glossterm<standard damage> -1d.
+                \\hit The target takes slashing \\glossterm<standard damage>.
             """, tags=['Sustain (minor)']),
             Subspell('Summon Weapon', 1, """
                 A melee weapon that you are proficient with appears in an unoccupied square within \\rngmed range.
@@ -1747,7 +1747,7 @@ def generate_spells():
                 Each round, the weapon automatically moves towards the creature closest to it during the \\glossterm<movement phase>.
                 During the \\glossterm<action phase>, it makes a melee \\glossterm<strike> against a random creature adjacent to it.
                 Its accuracy is equal to your \\glossterm<accuracy>.
-                If it hits, it deals \\glossterm<standard damage> -1d.
+                If it hits, it deals \\glossterm<standard damage>.
             """, tags=['Manifestation', 'Sustain (minor)']),
             Subspell('Blade Perimeter', 2, """
                 This subspell functions like the \\spell<blade barrier> subspell, except that the wall is an 20 ft.\\ high, \\areamed radius circle.
