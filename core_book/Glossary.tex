@@ -196,8 +196,9 @@ If you have no hit points remaining, you may take that damage as \glossterm{vita
 For details, see \pcref{Damage}.
 
 \glossdef{damage reduction} Damage reduction allows you to ignore a certain amount of incoming damage.
-Each \glossterm{round}, you ignore the first points of damage you would take.
-Damage reduction always specifies an amount of damage it reduces.
+If you have damage reduction, you ignore the first points of damage you would take each \glossterm{round}, up to a maximum equal to the value of your damage reduction.
+Any additional damage is dealt normally.
+% TODO: clarify how to tell whether a particular attack dealt damage to you if you have damage reduction
 Once it reduces that much damage, it stops functioning until the start of the next round.
 
 Most sources of damage reduction only apply against a specific type of attack.
@@ -207,7 +208,7 @@ For example, damage reduction against piercing damage would not help if you are 
 
 \glossdef{darkvision} A creature with darkvision can see in the dark clearly up to a given range.
 Beyond that, it can see dimly, treating areas of darkness as \glossterm{shadowy illumination}.
-Darkvision does not function if a creature is in a brightly lit area, and does not resume functioning until 1 round after the creature leaves the brightly lit area.
+Darkvision does not function if a creature is in a brightly lit area, and does not resume functioning until the end of the next round after the creature leaves the brightly lit area.
 
 \glossdef{dazed} A dazed creature cannot act during the \glossterm{action phase}.
 It can take its normal actions during the \glossterm{delayed action phase}.
