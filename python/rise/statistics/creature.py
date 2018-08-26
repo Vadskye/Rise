@@ -120,10 +120,6 @@ class Creature(object):
         return self.size.reach
 
     @property
-    def recovery_dice(self):
-        return DicePool(8) + self.level // 2 + max(self.challenge_rating - 1, 0)
-
-    @property
     def reflex_defense(self):
         return sum([
             self.reflex_defense_misc,
