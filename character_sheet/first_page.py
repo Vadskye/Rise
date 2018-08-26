@@ -109,7 +109,7 @@ def resources():
             underlabel('Recover', number_input({
                 'disabled': True,
                 'name': 'action_points_recovery',
-                'value': 'floor(@{action_points} / 2)',
+                'value': 'floor(@{action_points} / 2) - @{action_points_attuned}',
             })),
             underlabel('Attuned', number_input({'name': 'action_points_attuned'})),
         ]),
