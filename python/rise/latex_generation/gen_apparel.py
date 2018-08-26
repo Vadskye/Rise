@@ -617,7 +617,7 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Boots of Speed",
-        level=5,
+        level=6,
         material_type='boot',
         tags=['Temporal'],
         description="""
@@ -628,7 +628,18 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Boots of Speed, Greater",
-        level=13,
+        level=10,
+        material_type='boot',
+        tags=['Temporal'],
+        description="""
+            You gain a +20 foot \\glossterm<magic bonus> to your land speed, up to a maximum of double your normal speed.
+        """,
+        short_description="Increases speed by twenty feet",
+    ))
+
+    apparel.append(MagicItem(
+        name="Boots of Speed, Supreme",
+        level=14,
         material_type='boot',
         tags=['Temporal'],
         description="""
