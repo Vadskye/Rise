@@ -339,11 +339,11 @@ def generate_spells():
                 \\hit Up to two magical conditions of your choice are removed from the chosen allies and applied to the struck creature.
                 \\crit As above, except that you can transfer any number of magical conditions in this way.
             """),
-            Subspell('Enhance Magic', 3, """
+            Subspell('Enhance Magic', 2, """
                 Choose a willing creature within \\rngmed range.
                 The target gains a +1 enhancement bonus to \\glossterm<power> with spells.
             """, tags=['Attune (target)', 'Mystic']),
-            Subspell('Greater Enhance Magic', 6, """
+            Subspell('Greater Enhance Magic', 5, """
                 This subspell functions like the \\textit<enhance magic> subspell, except that the bonus is increased to +2.
             """, tags=['Attune (target)', 'Mystic']),
             Subspell('Resist Magic', 5, """
