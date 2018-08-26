@@ -858,7 +858,7 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Amulet of Health, Greater",
-        level=10,
+        level=8,
         material_type='amulet',
         description="""
             You increase your maximum hit points by an amount equal to twice this item's \\glossterm<power>.
