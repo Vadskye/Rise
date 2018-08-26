@@ -61,6 +61,7 @@
         Spells and rituals require deep concentration to use successfully.
         If you are distracted while using a spell or ritual, you may have to make a \glossterm{concentration} check to maintain your focus.
         Your bonus with a concentration check is equal to your level or your Willpower, whichever is higher.
+        You gain a \plus4 bonus to the check if you are casting a \glossterm{cantrip}.
         You apply any \glossterm{overwhelm penalties} you suffer as penalties to concentration checks.
         Success on a concentration check generally means you successfully use the spell or ritual.
         Failure generally means you \glossterm{miscast} the spell or ritual (see Miscasting, below).
@@ -195,6 +196,10 @@
             If the spell is now invalid, such as if all of its targets are out of range, the additional casting has no effect.
             \par This augment can be applied to any spell that does not have the \glossterm{Attune} tag.
 
+            % Are there any exploitable spells?
+            \augment{4}{Innate} You can cast the spell without spending an \glossterm{action point}.
+            \par This augment can be applied to any spell that requires a standard action to cast and which does not have the \glossterm{Attune} or \glossterm{Sustain} tags.
+
     \subsection{Dismissal}
         As a \glossterm{minor action}, you can dismiss any spells or rituals you used that have lasting effects.
         This requires the same casting components (verbal and somatic) as casting the spell or performing the ritual normally.
@@ -237,7 +242,8 @@
     \subsection{Cantrips}\label{Cantrips}
         Every spell can be cast as a \glossterm{cantrip}.
         You do not have to spend an action point to cast a spell as a cantrip.
-        Cantrips are considered to be 1st level spells for the purpose of abilities that care about spell level, such as \glossterm{augments}.
+        Cantrips are considered to be 1st level spells for the purpose of abilities that care about spell level, such as \glossterm{augments} (see \pcref{Augments}).
+        You gain a \plus4 bonus to \glossterm{concentration} when casting a cantrip (see \pcref{Concentration}).
 
     \subsection{Subspells}\label{Subspells}
         % TODO: some of this wording is weird
