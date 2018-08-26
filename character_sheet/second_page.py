@@ -202,8 +202,8 @@ def calc_base_speed():
             ],
             result_attributes={
                 'disabled': 'true',
-                'name': 'base_speed',
-                'value': ROLL20_CALC['base_speed'],
+                'name': 'base_speed_display',
+                'value': '@{base_speed}',
             },
         )
     ])
@@ -282,7 +282,7 @@ def calc_skill_points():
                 underlabel('Int*', number_input({
                     'disabled': True,
                     'name': 'skill_points_intelligence',
-                    'value': '(@{intelligence_starting})',
+                    'value': '(@{intelligence_starting} * 2)',
                 })),
                 plus(),
                 number_input({
@@ -433,12 +433,6 @@ def calc_ref():
                 })),
                 plus(),
                 underlabel('Class', number_input({'name': 'reflex_class', 'value': '4'})),
-                plus(),
-                underlabel('Shield', number_input({
-                    'disabled': True,
-                    'name': 'shield',
-                    'value': '@{shield_defense_value}',
-                })),
                 plus(),
                 number_input({
                     'class': 'equation-misc',
