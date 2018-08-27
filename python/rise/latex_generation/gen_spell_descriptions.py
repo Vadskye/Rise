@@ -71,7 +71,7 @@ def generate_spells():
             Subspell('Gentle Descent', 2, """
                 Choose a willing, Large or smaller creature in \\rngclose range.
                 The target gains a 30 foot \\glossterm<glide speed> (see \\pcref<Gliding>).
-            """),
+            """, tags=['Air', 'Attune (target)']),
             Subspell('Gust of Wind', 2, """
                 Make an attack vs. Armor against everything in a \\arealarge, 10 ft. wide line from you.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage>.
@@ -1219,7 +1219,7 @@ def generate_spells():
                 Choose a willing creature within \\rngclose range.
                 The target gains \\glossterm<blindsight> with a 50 foot range.
                 This can allow it to see perfectly without any light, regardless of concealment or invisibility.
-            """),
+            """, tags=['Attune (target)']),
         ],
         category='buff, offense',
     ))
@@ -1379,7 +1379,7 @@ def generate_spells():
                 \\hit Each target is \\dazzled as a \\glossterm<condition>.
                 \\crit As above, and target is also \\dazed as an additional \\glossterm<condition>.
             """, tags=['Light', 'Sensation', 'Visual']),
-            Subspell("Kaleidoscopic", 3, """
+            Subspell("Kaleidoscopic Pattern", 4, """
                 This subspell creates a brilliant, rapidly shifting rainbow of lights in a \\areasmall radius within \\rngmed range of you.
                 They illuminate a 100 foot radius around the area with bright light until the end of the round.
                 Make an attack vs. Mental against all creatures in the source area.
@@ -1756,8 +1756,8 @@ def generate_spells():
                 This subspell functions like the \\spell<blade perimeter> subspell, except that the wall's radius shrinks by 5 feet at the end of every \\glossterm<action phase>, dealing damage to everything it moves through.
                 % Clarify interaction with solid obstacles that block contraction?
             """),
-            Subspell("Aerial", 2, """
-                This subspell functions like the \\spell<weaponcraft> spell, except that the weapon's height above the ground is not limited.
+            Subspell("Aerial Weapon", 2, """
+                This subspell functions like the \\spell<summon weapon> subspell, except that the weapon's height above the ground is not limited.
                 This allows the weapon to fly up to fight airborne foes.
             """),
             Subspell("Blade Barrier, Dual", 3, """
