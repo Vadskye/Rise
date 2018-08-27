@@ -341,10 +341,10 @@ def generate_spells():
             """),
             Subspell('Enhance Magic', 2, """
                 Choose a willing creature within \\rngmed range.
-                The target gains a +1 enhancement bonus to \\glossterm<power> with spells.
+                The target gains a +2 \\glossterm<magic bonus> to \\glossterm<power> with spells.
             """, tags=['Attune (target)', 'Mystic']),
-            Subspell('Greater Enhance Magic', 5, """
-                This subspell functions like the \\textit<enhance magic> subspell, except that the bonus is increased to +2.
+            Subspell('Greater Enhance Magic', 6, """
+                This subspell functions like the \\textit<enhance magic> subspell, except that the bonus is increased to +4.
             """, tags=['Attune (target)', 'Mystic']),
             Subspell('Resist Magic', 5, """
                 Choose a willing creature within \\rngmed range.
@@ -1506,6 +1506,9 @@ def generate_spells():
                 You make a Craft check to transform the targets into a new item (or items) made of the same materials.
                 You require none of the tools or time expenditure that would normally be necessary.
                 The total size of all targets combined must be Large size or smaller.
+
+                You can apply the Giant \\glossterm<augment> to this subspell.
+                If you do, it increases the maximum size of all targets combined.
             """, tags=['Shaping']),
             Subspell("Disintegrate", 5, """
                 Make an attack vs. Fortitude against a creature within \\rngmed range.
