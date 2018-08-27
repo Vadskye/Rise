@@ -115,8 +115,8 @@ def resources():
         ]),
         labeled_number_input('Legend points', input_attributes={
             'disabled': True,
-            'name': 'legend_points',
-            'value': 'floor((@{level} + 2) / 4)',
+            'name': 'legend_points_display',
+            'value': '@{legend_points}',
         }),
         labeled_number_input('Item slots', input_attributes={'name': 'item_slots'}),
     ])
