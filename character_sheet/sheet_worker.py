@@ -13,6 +13,7 @@ def generate_script():
         encumbrance(),
         initiative(),
         base_speed(),
+        legend_points(),
         '</script>',
         ""
     ])
@@ -204,6 +205,17 @@ def base_speed():
             getAttrs(["speed_size", "speed_armor", "speed_misc"], function(v) {{
                 setAttrs({{
                     base_speed: Number(v.speed_size) - Number(v.speed_armor) + Number(v.speed_misc),
+                }});
+            }});
+        }});
+    """
+
+def legend_points():
+    return f"""
+        on("change:level", function(eventInfo) {{
+            getAttrs(["level"], function(v) {{
+                setAttrs({{
+                    legend_points: Number(v.level) >= 3 ? 1 : 0,
                 }});
             }});
         }});
