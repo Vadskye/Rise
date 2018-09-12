@@ -927,7 +927,7 @@ def magical_beasts():
         passive_abilities=[
             passive_ability('Consume Magic', f"""
                 The thaumavore has \\glossterm<magic resistance> {thaumavore.level + 5}.
-                Whenever it resists an effect in this way, it heals hit points equal to twice the \\glossterm<power> of the effect.
+                When it resists an effect in this way, it heals hit points equal to twice the \\glossterm<power> of the effect.
             """),
             passive_ability('Sense Magic', f"""
                 The thaumavore can sense the location of all sources of magic within 100 feet of it.
@@ -1079,7 +1079,7 @@ def monstrous_humanoids():
         ],
         passive_abilities=[
             passive_ability('Coven Rituals', """
-                Whenever three or more hags work together, they form a coven.
+                When three or more hags work together, they form a coven.
                 All members of the coven gain the ability to perform nature rituals as long as they work together.
                 Hags of any type can form a coven together.
             """),

@@ -335,7 +335,7 @@ def generate_weapons():
         material_type='weapon',
         tags=['Knowledge'],
         description="""
-            Whenever you make a \\glossterm<strike> with this weapon, you can roll twice and take the higher result.
+            When you make a \\glossterm<strike> with this weapon, you can roll twice and take the higher result.
         """,
         short_description="Rolls attacks twice",
     ))

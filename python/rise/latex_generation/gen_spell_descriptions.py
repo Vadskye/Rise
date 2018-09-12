@@ -88,7 +88,7 @@ def generate_spells():
             """),
             Subspell('Stormlord', 3, """
                 This subspell functions like the \\spell<wind screen> subspell, except that the air also retaliates against creatures that attack the target.
-                Whenever a creature within \\rngclose range of the target attacks it, make an attack vs. Armor against the attacking creature.
+                When a creature within \\rngclose range of the target attacks it, make an attack vs. Armor against the attacking creature.
                 A hit deals bludgeoning \\glossterm<standard damage> -1d.
                 Any individual creature can only be dealt damage in this way once per round.
 
@@ -168,7 +168,7 @@ def generate_spells():
             """),
             Subspell('Repulsion Field', 2, """
                 This subspell creates a repulsive field in a \\areamed radius zone from your location.
-                Whenever an enemy makes physical contact with the spell's area for the first time, you make an attack vs. Mental against it.
+                When an enemy makes physical contact with the spell's area for the first time, you make an attack vs. Mental against it.
                 \\hit The target is unable to enter the spell's area with any part of its body.
                 The rest of its movement in the current phase is cancelled.
 
@@ -515,7 +515,7 @@ def generate_spells():
             """),
             Subspell("Aqueous Blade", 2, """
                 Choose a willing creature within \\rngclose range.
-                Whenever the target makes a \\glossterm<strike> with a melee weapon, the attack is made against Reflex defense instead of Armor defense.
+                When the target makes a \\glossterm<strike> with a melee weapon, the attack is made against Reflex defense instead of Armor defense.
                 However, the target takes a -2d penalty to damage with \\glossterm<strikes>.
 
                 You can cast this subspell as a \\glossterm<minor action>.
@@ -831,8 +831,8 @@ def generate_spells():
                 It has hit points equal to twice your \\glossterm<power>, does not have any \\glossterm<hardness>, and is \\glossterm<vulnerable> to fire damage.
                 If the item would take cold damage, it instead heals that many hit points.
 
-                Whenever a creature wearing armor created in this way takes physical damage, cold damage, or fire damage, that damage is also dealt to the armor.
-                Likewise, whenever a creature wielding a weapon created in this way deals damage with the weapon, that damage is also dealt to the weapon.
+                When a creature wearing armor created in this way takes physical damage, cold damage, or fire damage, that damage is also dealt to the armor.
+                Likewise, when a creature wielding a weapon created in this way deals damage with the weapon, that damage is also dealt to the weapon.
                 If the item loses all of its hit points, this effect is \\glossterm<dismissed>.
             """, tags=['Attune (self)', 'Cold']),
             Subspell('Sturdy Icecraft', 2, """
@@ -935,10 +935,10 @@ def generate_spells():
                 Make an attack vs. Fortitude against a living creature within \\rngclose range.
                 \\hit The target is \\glossterm<sickened> as a \\glossterm<condition>.
                 % TODO: clarify when exactly this damage is taken (should be at the end of the phase)
-                In addition, it takes life \\glossterm<standard damage> -2d whenever it takes a \\glossterm<standard action>.
+                In addition, it takes life \\glossterm<standard damage> -2d when it takes a \\glossterm<standard action>.
                 It can only take damage in this way once per round.
                 \\crit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
-                In addition, it takes life \\glossterm<standard damage> whenever it takes a \\glossterm<standard action>.
+                In addition, it takes life \\glossterm<standard damage> when it takes a \\glossterm<standard action>.
                 It can only take damage in this way once per round.
             """, tags=['Life']),
             Subspell("Corruption of Blood and Bone", 3, """
@@ -1333,7 +1333,7 @@ def generate_spells():
                 The duplicates shift chaotically in its space, making it difficult to identify the real creature.
 
                 All \\glossterm<targeted> \\glossterm<physical attacks> against the target have a 50\\% miss chance.
-                Whenever an attack misses in this way, it affects an image, destroying it.
+                When an attack misses in this way, it affects an image, destroying it.
                 This ability provides no defensive benefit against creatures immune to \\glossterm<Visual> abilities.
             """, tags=['Attune (target)', 'Sensation', 'Visual']),
             Subspell("Greater Mirror Image", 4, """
@@ -1670,7 +1670,7 @@ def generate_spells():
                 You can cast this subspell as a \\glossterm<minor action>.
             """, tags=['Attune (self)', 'Temporal']),
             Subspell("Delay Damage", 3, """
-                Whenever you take damage, half of the damage (rounded down) is not dealt to you immediately.
+                When you take damage, half of the damage (rounded down) is not dealt to you immediately.
                 This damage is tracked separately.
                 When the ends, you take all of the delayed damage at once.
                 This damage has no type, and ignores all effects that reduce or negate damage.
@@ -1737,7 +1737,7 @@ def generate_spells():
                 The wall either takes the form of a 20 ft.\\ high, \\arealarge line.
                 The wall provides \\glossterm<active cover> (20\\% miss chance) against attacks made through it.
                 Attacks that miss in this way harmlessly strike the wall.
-                Whenever a creature or object passes through the wall, make an attack vs. Armor against it.
+                When a creature or object passes through the wall, make an attack vs. Armor against it.
                 \\hit The target takes slashing \\glossterm<standard damage>.
             """, tags=['Sustain (minor)']),
             Subspell('Summon Weapon', 1, """
@@ -1778,7 +1778,7 @@ def generate_spells():
             """),
             Subspell("Create Ballista, Dual Track", 4, """
                 This subspell functions like the \\spell<create ballista> subspell, except that the ballista is created with two separate bolt tracks.
-                This allows it to fire at two different targets in the same round whenever you command it to fire.
+                This allows it to fire at two different targets in the same round when you command it to fire.
                 It cannot fire at the same target twice.
                 Each round, it attacks the two creatures farthest from it.
             """),

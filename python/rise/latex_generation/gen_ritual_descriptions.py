@@ -118,7 +118,7 @@ def generate_rituals():
     #         The outlines of the zone are denoted by a magic circle physically inscribed on the ground during the ritual.
     #         The circle is obvious, but a DR 16 Perception or Spellcraft check is required to verify that the circle belongs to a \\ritual<binding> ritual.
     #         If the circle's perimeter is broken by any means, the ritual's effects end immediately.
-    #         Whenever a creature enters the area, you make an attack vs. Mental against it.
+    #         When a creature enters the area, you make an attack vs. Mental against it.
     #         \\hit The target is unable to escape the ritual's area physically or alter the circle in any way.
     #         It treats the edge of the area as an impassable barrier, preventing the effects of any of its abilities from extending outside that area.
     #         This ritual takes one hour to perform.
