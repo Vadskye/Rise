@@ -42,6 +42,61 @@ def generate_implements():
     ))
 
     implements.append(MagicItem(
+        name="Staff of Spellpower",
+        level=8,
+        material_type='staff',
+        tags=['Mystic'],
+        description="""
+            You gain a +1 \\glossterm<magic bonus> to \\glossterm<power> with all spells and rituals.
+        """,
+        short_description="Grants +1 power with spells",
+    ))
+
+    implements.append(MagicItem(
+        name="Staff of Spellpower, Greater",
+        level=14,
+        material_type='staff',
+        tags=['Mystic'],
+        description="""
+            You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with all spells and rituals.
+        """,
+        short_description="Grants +2 power with spells",
+    ))
+
+    implements.append(MagicItem(
+        name="Staff of Spellpower, Supreme",
+        level=20,
+        material_type='staff',
+        tags=['Mystic'],
+        description="""
+            You gain a +3 \\glossterm<magic bonus> to \\glossterm<power> with all spells and rituals.
+        """,
+        short_description="Grants +3 power with spells",
+    ))
+
+    implements.append(MagicItem(
+        name="Staff of Precision",
+        level=10,
+        material_type='staff',
+        tags=['Mystic'],
+        description="""
+            You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all spells and rituals.
+        """,
+        short_description="Grants +1 accuracy with spells",
+    ))
+
+    implements.append(MagicItem(
+        name="Greater Staff of Precision",
+        level=16,
+        material_type='staff',
+        tags=['Mystic'],
+        description="""
+            You gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy> with all spells and rituals.
+        """,
+        short_description="Grants +2 accuracy with spells",
+    ))
+
+    implements.append(MagicItem(
         name="Spellfeeding Staff, Greater",
         level=14,
         material_type='staff',
@@ -53,37 +108,61 @@ def generate_implements():
     ))
 
     implements.append(MagicItem(
-        name="Wand of Spell Focus",
+        name="Wand of Precision",
+        level=8,
+        material_type='wand',
+        tags=['Mystic'],
+        description="""
+            You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with a particular spell and all of its subspells.
+            Many \\textit<wands of precision> exist, each for different spells.
+        """,
+        short_description="Grants +1 accuracy with a single spell",
+    ))
+
+    implements.append(MagicItem(
+        name="Wand of Precision, Greater",
+        level=14,
+        material_type='wand',
+        tags=['Mystic'],
+        description="""
+            You gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy> with a particular spell and all of its subspells.
+            Many \\textit<greater wands of precision> exist, each for different spells.
+        """,
+        short_description="Grants +2 accuracy with a single spell",
+    ))
+
+    implements.append(MagicItem(
+        name="Wand of Spellpower",
         level=4,
         material_type='wand',
         tags=['Mystic'],
         description="""
             You gain a +1 \\glossterm<magic bonus> to \\glossterm<power> with a particular spell and all of its subspells.
-            Many \\textit<wands of spell focus> exist, each for different spells.
+            Many \\textit<wands of spellpower> exist, each for different spells.
         """,
         short_description="Grants +1 power with a single spell",
     ))
 
     implements.append(MagicItem(
-        name="Wand of Spell Focus, Greater",
+        name="Wand of Spellpower, Greater",
         level=10,
         material_type='wand',
         tags=['Mystic'],
         description="""
             You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with a particular spell and all of its subspells.
-            Many \\textit<greater wands of spell focus> exist, each for different spells.
+            Many \\textit<greater wands of spellpower> exist, each for different spells.
         """,
         short_description="Grants +2 power with a single spell",
     ))
 
     implements.append(MagicItem(
-        name="Wand of Spell Focus, Supreme",
+        name="Wand of Spellpower, Supreme",
         level=16,
         material_type='wand',
         tags=['Mystic'],
         description="""
             You gain a +3 \\glossterm<magic bonus> to \\glossterm<power> with a particular spell and all of its subspells.
-            Many \\textit<supreme wands of spell focus> exist, each for different spells.
+            Many \\textit<supreme wands of spellpower> exist, each for different spells.
         """,
         short_description="Grants +3 power with a single spell",
     ))
