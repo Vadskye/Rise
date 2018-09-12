@@ -17,19 +17,7 @@ def generate_weapons():
             As a standard action, you can infuse this weapon with concussive force.
             The next time you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Fortitude defense, it is \\glossterm<dazed> as a \\glossterm<condition>.
         """,
-        short_description="Can daze",
-    ))
-
-    weapons.append(MagicItem(
-        name="Cutthroat",
-        level=4,
-        material_type='weapon',
-        # tags=[tag],
-        description="""
-            As a standard action, you can make a \\glossterm<strike> with this weapon.
-            In addition to the normal effects of the strike, if your attack result beats the target's Fortitude defense, it is \\glossterm<muted> as a \\glossterm<condition>.
-        """,
-        short_description="Can daze",
+        short_description="Can daze a foe",
     ))
 
     weapons.append(MagicItem(
@@ -40,11 +28,11 @@ def generate_weapons():
         description="""
             This weapon is on fire.
             It sheds light as a torch, and all damage dealt with it is fire damage in addition to its other types.
-            As a \\glossterm<minor action>, you can kindle the flames.
-            If you do, you gain a +1d \\glossterm<magic bonus> to \\glossterm<damage> with \\glossterm<strikes> using this weapon.
-            This is a \\glossterm<Swift> ability, and it lasts until the end of the round.
+            As a standard action, you can kindle the flames.
+            The next time you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Reflex defense,
+                it is \\glossterm<ignited> until it extinguishes the flames.
         """,
-        short_description="Can deal +1d fire damage",
+        short_description="Can ignite a foe",
     ))
 
     weapons.append(MagicItem(
@@ -53,24 +41,22 @@ def generate_weapons():
         material_type='weapon',
         tags=['Fire'],
         description="""
-            This weapon is on fire.
-            It sheds light as a torch, and all damage dealt with it is fire damage in addition to its other types.
-            You gain a +1d \\glossterm<magic bonus> to \\glossterm<damage> with \\glossterm<damage> using this weapon.
+            This item functions like a \\mitem<flaming> item, except that you also gain a +1d \\glossterm<magic bonus> to \\glossterm<damage> using the weapon.
         """,
         short_description="Deals +1d fire damage",
     ))
 
     weapons.append(MagicItem(
         name="Shocking",
-        level=7,
+        level=6,
         material_type='weapon',
         tags=['Electricity'],
         description="""
             This weapon continuously crackles with electricity.
             The constant sparks shed light as a torch, and all damage dealt with it is electricity damage in addition to its other types.
-            As a \\glossterm<minor action>, you can intensify the electricity.
-            If you do, when you make a \\glossterm<strike> with this weapon and your attack result beats the target's Fortitude defense, the target is \\dazed as a \\glossterm<condition>.
-            This is a \\glossterm<Swift> ability, and it lasts until the end of the round.
+            As a standard action, you can intensify the electricity.
+            When you make a \\glossterm<strike> with this weapon, if the weapon is intensified and your attack result beats the target's Fortitude defense,
+                the target is \\dazed as a \\glossterm<condition> and the weapon stops being intensified.
         """,
         short_description="Deals electicity damage, can daze",
     ))
@@ -85,19 +71,19 @@ def generate_weapons():
             The constant sparks shed light as a torch, and all damage dealt with it is electricity damage in addition to its other types.
             When you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Fortitude defense, it is \\dazed as a \\glossterm<condition>.
         """,
-        short_description="Deals dazing electicity damage",
+        short_description="Deals electicity damage, dazes foes",
     ))
 
     weapons.append(MagicItem(
         name="Freezing",
-        level=4,
+        level=3,
         material_type='weapon',
         tags=['Cold'],
         description="""
             This weapon is bitterly cold, and all damage dealt with it is cold damage in addition to its other types.
-            As a \\glossterm<minor action>, you can intensify the cold.
-            If you do, when you make a \\glossterm<strike> with this weapon and your attack result beats the target's Fortitude defense, the target is \\fatigued as a \\glossterm<condition>.
-            This is a \\glossterm<Swift> ability, and it lasts until the end of the round.
+            As a standard action, you can intensify the cold.
+            When you make a \\glossterm<strike> with this weapon, if the weapon is intensified and your attack result beats the target's Fortitude defense,
+                the target is \\fatigued as a \\glossterm<condition> and the weapon stops being intensified.
         """,
         short_description="Deals cold damage, can fatigue",
     ))
@@ -111,7 +97,7 @@ def generate_weapons():
             This weapon is bitterly cold, and all damage dealt with it is cold damage in addition to its other types.
             When you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Fortitude defense, the target is \\fatigued as a \\glossterm<condition>.
         """,
-        short_description="Deals fatiguing cold damage",
+        short_description="Deals cold damage, fatigues foes",
     ))
 
     weapons.append(MagicItem(
@@ -122,9 +108,9 @@ def generate_weapons():
         description="""
             This weapon constantly emits a low-pitched rumbling noise and vibrates slightly in your hand.
             All damage dealt with it is sonic damage in addition to its other types.
-            As a \\glossterm<minor action>, you can intensify the vibration.
-            If you do, when you make a \\glossterm<strike> with this weapon and your attack result beats the target's Fortitude defense, the target is \\deafened as a \\glossterm<condition>.
-            This is a \\glossterm<Swift> ability, and it lasts until the end of the round.
+            As a standard action, you can intensify the vibration.
+            When you make a \\glossterm<strike> with this weapon, if the weapon is intensified and your attack result beats the target's Fortitude defense,
+                the target is \\deafened as a \\glossterm<condition> and the weapon stops being intensified.
         """,
         short_description="Deals sonic damage, can deafen",
     ))
@@ -137,14 +123,14 @@ def generate_weapons():
         description="""
             This weapon constantly emits a low-pitched rumbling noise and vibrates slightly in your hand.
             All damage dealt with it is sonic damage in addition to its other types.
-            When you make a \\glossterm<strike> with this weapon and your attack result beats the target's Fortitude defense, the target is \\deafened as a \\glossterm<condition>.
+            When you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Fortitude defense, the target is \\deafened as a \\glossterm<condition>.
         """,
-        short_description="Deals deafening sonic damage",
+        short_description="Deals sonic damage, deafens foes",
     ))
 
     weapons.append(MagicItem(
         name="Defending",
-        level=9,
+        level=8,
         material_type='weapon',
         tags=['Shielding'],
         description="""
@@ -160,21 +146,21 @@ def generate_weapons():
         tags=['Compulsion', 'Mind'],
         description="""
             This weapon shimmers with a chaotic pattern of colors.
-            As a \\glossterm<minor action>, you can intensify the shimmering.
-            If you do, when you make a \\glossterm<strike>  with this weapon and your attack result beats the target's Mental defense, it is \\disoriented as a \\glossterm<condition>.
-            This is a \\glossterm<Swift> ability, and it lasts until the end of the round.
+            As a standard action, you can intensify the shimmering.
+            The next time you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Mental defense,
+                it is \\disoriented as a \\glossterm<condition>.
         """,
         short_description="Can disorient struck foes",
     ))
 
     weapons.append(MagicItem(
         name="Disorienting, Greater",
-        level=15,
+        level=18,
         material_type='weapon',
         tags=['Compulsion', 'Mind'],
         description="""
             This weapon shimmers with a chaotic pattern of colors.
-            When you make a \\glossterm<strike> with this weapon and your attack result beats the target's Mental defense, it is \\disoriented as a \\glossterm<condition>.
+            When you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Mental defense, it is \\disoriented as a \\glossterm<condition>.
         """,
         short_description="Disorients struck foes",
     ))
@@ -200,22 +186,34 @@ def generate_weapons():
     ))
 
     weapons.append(MagicItem(
+        name="Boomerang",
+        level=10,
+        material_type='weapon',
+        description="""
+            You can throw this weapon as if it was designed to be thrown.
+            In addition, as a standard action, you can spend an \\glossterm<action point> to throw this weapon in a spinning arc.
+            When you do, make a thrown \\glossterm<strike> against up to three targets within two range increments.
+            After attacking the last target, the weapon flies to your hand.
+        """,
+        short_description="Can be thrown to strike multiple foes",
+    ))
+
+    weapons.append(MagicItem(
         name="Forceful",
-        level=6,
+        level=4,
         material_type='weapon',
         description="""
             This weapon feels heavy in the hand.
-            As a \\glossterm<minor action>, you can intensify the weapon's heft.
-            If you do, when you make a \\glossterm<strike> with this weapon, you can also use your attack result as a \\glossterm<shove> attack agsint the target.
+            As a standard action, you can intensify the weapon's heft.
+            The next time you make a \\glossterm<strike> with this weapon, you can also use your attack result as a \\glossterm<shove> attack against the target.
             You do not need to move with your foe to move it the full distance of the shove.
-            This is a \\glossterm<Swift> ability, and it lasts until the end of the round.
         """,
         short_description="Can shove struck foes",
     ))
 
     weapons.append(MagicItem(
         name="Forceful, Greater",
-        level=12,
+        level=11,
         material_type='weapon',
         description="""
             This weapon feels heavy in the hand.
@@ -232,7 +230,7 @@ def generate_weapons():
         description="""
             When you make a \\glossterm<strike> with this weapon, you gain a +1 bonus to accuracy against the target.
             This bonus lasts until you make a strike with this weapon against a different target.
-            This bonus can stack with itself, up to a maximum of +5.
+            This bonus can stack with itself, up to a maximum of +4.
         """,
         short_description="Grants accuracy bonus against struck foe",
     ))
@@ -300,13 +298,13 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Soulreaving",
-        level=13,
+        level=9,
         tags=[],
         material_type='weapon',
         description="""
             This weapon is transluscent and has no physical presence for anyone except you.
             It has no effect on objects or constructs, and creatures do not feel any pain or even notice attacks from it.
-            Attacks with this weapon ignore all damage reduction and hardness, but the damage is delayed instead of being dealt immediately.
+            Attacks with this weapon ignore \\glossterm<damage reduction>, but the damage is delayed instead of being dealt immediately.
             Damage that would be dealt by the weapon can be delayed indefinitely.
             While the damage is delayed, it cannot be removed by any means short of the destruction of this weapon or the creature's death.
 
@@ -320,13 +318,13 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Surestrike",
-        level=9,
+        level=8,
         material_type='weapon',
         tags=['Knowledge'],
         description="""
             You gain a +1 \\glossterm<magic bonus> to accuracy with \\glossterm<strikes> with this weapon.
         """,
-        short_description="Gain +1 accuracy bonus",
+        short_description="Grants +1 accuracy bonus",
     ))
 
     weapons.append(MagicItem(
@@ -406,7 +404,7 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Phasing",
-        level=9,
+        level=10,
         material_type='weapon',
         tags=['Planar'],
         description="""
