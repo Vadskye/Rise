@@ -981,9 +981,9 @@ def generate_worn():
     ))
 
     apparel.append(MagicItem(
-        name="Hexward Cloak",
+        name="Hexward Amulet",
         level=10,
-        material_type='cloak',
+        material_type='amulet',
         tags=['Mystic'],
         description="""
             You gain a +4 bonus to defenses against \\glossterm<magical> abilities that target you directly.
@@ -993,9 +993,9 @@ def generate_worn():
     ))
 
     apparel.append(MagicItem(
-        name="Hexproof Cloak, Greater",
+        name="Hexproof Amulet, Greater",
         level=18,
-        material_type='cloak',
+        material_type='amulet',
         tags=['Mystic'],
         description="""
             You gain a +8 bonus to defenses against \\glossterm<magical> abilities that target you directly.
@@ -1032,7 +1032,7 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Lifekeeping Belt",
-        level=4,
+        level=2,
         material_type='belt',
         tags=['Life'],
         description="""
@@ -1043,7 +1043,7 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Lifekeeping Belt, Greater",
-        level=8,
+        level=7,
         material_type='belt',
         tags=['Life'],
         description="""
@@ -1054,13 +1054,13 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Lifekeeping Belt, Supreme",
-        level=12,
+        level=13,
         material_type='belt',
         tags=['Life'],
         description="""
-            You reduce your \\glossterm<vital damage penalties> by 6.
+            You reduce your \\glossterm<vital damage penalties> by 8.
         """,
-        short_description="Reduces vital damage penalties by 6",
+        short_description="Reduces vital damage penalties by 8",
     ))
 
     apparel.append(MagicItem(
@@ -1088,6 +1088,38 @@ def generate_worn():
         description="""
             This item functions like the \\mitem<ocular circlet>, except that it only takes a \\glossterm<minor action> to activate and sustain the item's effect.
             In addition, the sensor appears anywhere within \\rngmed range.
+        """,
+        short_description="description",
+    ))
+
+    apparel.append(MagicItem(
+        name="Gloves of Spell Investment",
+        level=10,
+        material_type='glove',
+        tags=['Mystic'],
+        description="""
+            When you cast a spell that does not have the \\glossterm<Attune> or \\glossterm<Sustain> tags,
+                you can invest the magic of the spell in these gloves.
+            If you do, the spell does not have its normal effect.
+
+            As a standard action, you can activate the gloves to use the last spell invested in the gloves in this way.
+            When you do, the spell has its normal effect.
+            This does not require \\glossterm<concentration> and does not cost an \\glossterm<action point>.
+            After you use a spell in this way, the energy in the gloves is spent, and you must invest a new spell to activate the gloves again.
+
+            If you remove either glove from your hand, the magic of the spell invested in the gloves is lost.
+        """,
+        short_description="description",
+    ))
+
+    apparel.append(MagicItem(
+        name="Gloves of Spell Investment, Greater",
+        level=18,
+        material_type='glove',
+        tags=['Mystic'],
+        description="""
+            This item functions like the \\mitem<gloves of spell investment>, except that you can store up to two spells in the gloves.
+            When you activate the gauntlets, you choose which spell to use.
         """,
         short_description="description",
     ))
