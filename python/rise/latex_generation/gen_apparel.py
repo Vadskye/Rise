@@ -13,7 +13,7 @@ def generate_armor():
         level=5,
         material_type='shield',
         description="""
-            Whenever a creature within a \\areamed radius emanation from you would be attacked by a ranged weapon, the attack is redirected to target you instead.
+            When a creature within a \\areamed radius emanation from you would be attacked by a ranged weapon, the attack is redirected to target you instead.
             Resolve the attack as if it had initially targeted you, except that the attack is not affected by cover or concealment.
             This item can only affect projectiles and thrown objects that are Small or smaller.
         """,
@@ -110,7 +110,7 @@ def generate_armor():
         material_type='body armor',
         description="""
             You have \\glossterm<damage reduction> equal to the item's \\glossterm<power> against \\glossterm<energy damage>.
-            Whenever you resist energy with this item, it sheds light as a torch until the end of the next round.
+            When you resist energy with this item, it sheds light as a torch until the end of the next round.
             The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, red for fire, and brown for sonic.
         """,
         short_description="Reduces energy damage",
@@ -547,7 +547,7 @@ def generate_worn():
         material_type='boot',
         description="""
             % This only works if you only take falling damage during the movement phase, which seems possible?
-            Whenever you take \\glossterm<falling damage>, make an attack vs Reflex against everything within a \\areasmall radius from you.
+            When you take \\glossterm<falling damage>, make an attack vs Reflex against everything within a \\areasmall radius from you.
             \\hit Each target takes damage as if they had fallen the same distance that you fell.
             This roll is made separately from the damage roll to determine your falling damage.
             \\crit As above, and each target is knocked \\glossterm<prone>.
@@ -654,7 +654,7 @@ def generate_worn():
         material_type='boot',
         tags=['Teleportation'],
         description="""
-            Whenever you move, you can teleport the same distance instead.
+            When you move, you can teleport the same distance instead.
             This does not change the total distance you can move, but you can teleport in any direction, even vertically.
             You cannot teleport to locations you do not have \\glossterm<line of sight> and \\glossterm<line of effect> to.
         """,
@@ -757,7 +757,7 @@ def generate_worn():
         tags=['Shielding'],
         description="""
             You have \\glossterm<damage reduction> equal to the ring's \\glossterm<power> against \\glossterm<energy damage>.
-            Whenever you resist energy with this ability, the ring sheds light as a torch until the end of the next round.
+            When you resist energy with this ability, the ring sheds light as a torch until the end of the next round.
             The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, red for fire, and brown for sonic.
         """,
         short_description="Reduces energy damage",
