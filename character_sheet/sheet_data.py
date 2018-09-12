@@ -35,7 +35,6 @@ ROLL20_CALC = {
         'speed_armor',
         'speed_misc',
     ]),
-    'hit_points': '(@{hit_points_misc} + (@{hit_points_level} * @{hit_points_constitution}))',
     'skill_points': value_sum([
         'skill_points_class',
         'skill_points_misc',

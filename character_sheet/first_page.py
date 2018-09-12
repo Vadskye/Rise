@@ -161,7 +161,7 @@ def core_statistics():
         flex_wrapper(div({'class': 'section-header'}, 'Core Statistics')),
         sidelabel('Hit points', number_input({
             'disabled': True,
-            'name': 'hit_points_max',
+            'name': 'hit_points_max_display',
             'value': '@{hit_points}',
         })),
         labeled_number_input('Bloodied', input_attributes={

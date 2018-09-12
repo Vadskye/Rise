@@ -14,6 +14,7 @@ def generate_script():
         initiative(),
         base_speed(),
         legend_points(),
+        hit_points(),
         '</script>',
         ""
     ])
@@ -102,10 +103,10 @@ def set_skill(a, s):
 
 def armor_defense():
     return f"""
-        on("change:level change:dexterity change:body_armor_defense_value change:shield_defense_value change:armor_defense_misc", function(eventInfo) {{
-            getAttrs(["level", "dexterity", "body_armor_defense_value", "shield_defense_value", "armor_defense_misc"], function(v) {{
+        on("change:level change:dexterity change:body_armor_defense_value change:shield_defense_value change:armor_defense_misc change:challenge_rating", function(eventInfo) {{
+            getAttrs(["level", "dexterity", "body_armor_defense_value", "shield_defense_value", "armor_defense_misc", "challenge_rating"], function(v) {{
                 var scaling = Math.max(Number(v.level), Number(v.dexterity));
-                var total = scaling + Number(v.body_armor_defense_value) + Number(v.shield_defense_value) + Number(v.armor_defense_misc);
+                var total = scaling + Number(v.body_armor_defense_value) + Number(v.shield_defense_value) + Number(v.armor_defense_misc) + Number(v.challenge_rating || 1);
                 setAttrs({{
                     armor_defense: total,
                     armor_defense_scaling: scaling,
@@ -116,10 +117,10 @@ def armor_defense():
 
 def fortitude():
     return f"""
-        on("change:level change:strength change:constitution change:fortitude_class change:fortitude_misc", function(eventInfo) {{
-            getAttrs(["level", "strength", "constitution", "constitution_starting", "fortitude_class", "fortitude_misc"], function(v) {{
+        on("change:level change:strength change:constitution change:fortitude_class change:fortitude_misc change:challenge_rating", function(eventInfo) {{
+            getAttrs(["level", "strength", "constitution", "constitution_starting", "fortitude_class", "fortitude_misc", "challenge_rating"], function(v) {{
                 var scaling = Math.max(Number(v.level), Number(v.strength), Number(v.constitution));
-                var total = scaling + Number(v.constitution_starting) + Number(v.fortitude_class) + Number(v.fortitude_misc);
+                var total = scaling + Number(v.constitution_starting) + Number(v.fortitude_class) + Number(v.fortitude_misc) + Number(v.challenge_rating || 1);
                 setAttrs({{
                     fortitude: total,
                     fortitude_scaling: scaling,
@@ -130,10 +131,10 @@ def fortitude():
 
 def reflex():
     return f"""
-        on("change:level change:dexterity change:perception change:shield_defense_value change:reflex_class change:reflex_misc", function(eventInfo) {{
-            getAttrs(["level", "dexterity", "perception", "dexterity_starting", "reflex_class", "reflex_misc"], function(v) {{
+        on("change:level change:dexterity change:perception change:shield_defense_value change:reflex_class change:reflex_misc change:challenge_rating", function(eventInfo) {{
+            getAttrs(["level", "dexterity", "perception", "dexterity_starting", "reflex_class", "reflex_misc", "challenge_rating"], function(v) {{
                 var scaling = Math.max(Number(v.level), Number(v.dexterity), Number(v.perception));
-                var total = scaling + Number(v.dexterity_starting) + Number(v.reflex_class) + Number(v.reflex_misc);
+                var total = scaling + Number(v.dexterity_starting) + Number(v.reflex_class) + Number(v.reflex_misc) + Number(v.challenge_rating || 1);
                 setAttrs({{
                     reflex: total,
                     reflex_scaling: scaling,
@@ -144,10 +145,10 @@ def reflex():
 
 def mental():
     return f"""
-        on("change:level change:intelligence change:willpower change:mental_class change:mental_misc", function(eventInfo) {{
-            getAttrs(["level", "intelligence", "willpower", "willpower_starting", "mental_class", "mental_misc"], function(v) {{
+        on("change:level change:intelligence change:willpower change:mental_class change:mental_misc change:challenge_rating", function(eventInfo) {{
+            getAttrs(["level", "intelligence", "willpower", "willpower_starting", "mental_class", "mental_misc", "challenge_rating"], function(v) {{
                 var scaling = Math.max(Number(v.level), Number(v.intelligence), Number(v.willpower));
-                var total = scaling + Number(v.willpower_starting) + Number(v.mental_class) + Number(v.mental_misc);
+                var total = scaling + Number(v.willpower_starting) + Number(v.mental_class) + Number(v.mental_misc) + Number(v.challenge_rating || 1);
                 setAttrs({{
                     mental: total,
                     mental_scaling: scaling,
@@ -177,8 +178,8 @@ def encumbrance():
             getAttrs(["body_armor_encumbrance", "encumbrance_misc", "constitution_starting"], function(v) {{
                 setAttrs({{
                     encumbrance: Math.max(
-                        Number(v.body_armor_encumbrance)
-                        + Number(v.encumbrance_misc)
+                        Number(v.body_armor_encumbrance || 0)
+                        + Number(v.encumbrance_misc || 0)
                         - Number(v.constitution_starting)
                     , 0),
                 }});
@@ -204,7 +205,7 @@ def base_speed():
         on("change:speed_size change:speed_armor change:speed_misc", function(eventInfo) {{
             getAttrs(["speed_size", "speed_armor", "speed_misc"], function(v) {{
                 setAttrs({{
-                    base_speed: Number(v.speed_size) - Number(v.speed_armor) + Number(v.speed_misc),
+                    base_speed: Number(v.speed_size || 0) - Number(v.speed_armor || 0) + Number(v.speed_misc || 0),
                 }});
             }});
         }});
@@ -216,6 +217,19 @@ def legend_points():
             getAttrs(["level"], function(v) {{
                 setAttrs({{
                     legend_points: Number(v.level) >= 3 ? 1 : 0,
+                }});
+            }});
+        }});
+    """
+
+def hit_points():
+    return f"""
+        on("change:hit_points_misc change:level change:constitution_starting change:challenge_rating", function(eventInfo) {{
+            getAttrs(["hit_points_misc", "level", "constitution_starting", "challenge_rating"], function(v) {{
+                var hp_from_level = (1 + Number(v.level || 0)) * (5 + Number(v.constitution_starting || 0))
+                var hp_before_cr = Number(v.hit_points_misc || 0) + hp_from_level;
+                setAttrs({{
+                    hit_points_max: hp_before_cr * Number(v.challenge_rating || 1),
                 }});
             }});
         }});
