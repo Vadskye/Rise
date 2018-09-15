@@ -1245,7 +1245,7 @@ def generate_spells():
             """),
             Subspell('Telekinetic Throw', 1, """
                 Make an attack vs. Mental against a Medium or smaller creature or object within \\rngmed range.
-                \\hit You move the target up to 50 feet in any direction.
+                \\hit You move the target up to 30 feet in any direction.
                     You can change direction partway through the movement.
                     Moving the target upwards costs twice the normal movement cost.
 
@@ -1258,11 +1258,11 @@ def generate_spells():
             """),
             Subspell('Telekinetic Lift', 1, """
                 Choose a Medium or smaller willing creature or unattended object within \\rngclose range.
-                The target is reduced to one quarter of its normal weight.
+                The target is reduced to half of its normal weight.
                 This gives it a +4 bonus to Jump, if applicable, and makes it easier to lift and move.
-            """),
+            """, tags=['Attune (target)']),
             Subspell('Greater Telekinetic Lift', 3, """
-                This subspell functions like the \\spell<telekinetic lift> subspell, except that the target is reduced to one tenth of its normal weight.
+                This subspell functions like the \\spell<telekinetic lift> subspell, except that the target is reduced to one quarter of its normal weight.
                 This increases the Jump bonus to +8.
             """),
             Subspell("Binding Crush", 2, """
