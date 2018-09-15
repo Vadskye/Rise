@@ -58,13 +58,13 @@
         To provide the somatic component for a spell or ritual, you must make a measured and precise movement of at least one free hand.
 
     \subsection{Concentration}\label{Concentration}
-        Spells and rituals require deep concentration to use successfully.
-        If you are distracted while using a spell or ritual, you may have to make a \glossterm{concentration} check to maintain your focus.
+        Some abilities, such as spells and rituals, require focused thought to use successfully.
+        If your focus is tested, such as by casting a spell defensively (see \pcref{Defensive Casting}), you may need to make a \glossterm{concentration} check.
         Your bonus with a concentration check is equal to your level or your Willpower, whichever is higher.
-        You gain a \plus4 bonus to the check if you are casting a \glossterm{cantrip}.
         You apply any \glossterm{overwhelm penalties} you suffer as penalties to concentration checks.
-        Success on a concentration check generally means you successfully use the spell or ritual.
-        Failure generally means you \glossterm{miscast} the spell or ritual (see Miscasting, below).
+
+        Success on a concentration check generally means you successfully use the ability that triggered the check.
+        Failure generally means that you do not use the ability successfully.
 
     \subsection{Miscasting}\label{Miscasting}
 
@@ -100,11 +100,29 @@
         \subsubsection{Defensive Casting}\label{Defensive Casting}
             If you use a spell or ritual using \glossterm{defensive casting}, you suffer no penalty to defenses.
             In exchange, you have to make a \glossterm{concentration} check to use the ability successfully (see \pcref{Concentration}).
-            The \glossterm{difficulty rating} of the check is equal to 5 \add twice the level of the spell you are casting.
+            The \glossterm{difficulty rating} of the check is equal to 4 if the spell is a cantrip.
+            Otherwise, it is equal to 5 \add three times the level of the spell you are casting, as shown on \tref{Concentration DRs}.
             Success means that you use the ability successfully.
             Failure means that you \glossterm{miscast} the spell or ritual (see Miscasting, below).
 
             When you use defensive casting to perform a ritual, you must make a new check during each phase.
+
+            \begin{dtable}
+                \lcaption{Concentration DRs}
+                \begin{dtabularx}{\columnwidth}{l X}
+                    \tb{Spell Level} & \tb{DR} \\
+                    \bottomrule
+                    Cantrip & 4 \\
+                    1st level & 8 \\
+                    2nd level & 11 \\
+                    3rd level & 15 \\
+                    4th level & 18 \\
+                    5th level & 21 \\
+                    6th level & 24 \\
+                    7th level & 27 \\
+                \end{dtabularx}
+            \end{dtable}
+
 
     \subsection{Augments}\label{Augments}
         There are a number of \glossterm{augments} that can be applied to spells and rituals to increase their power.
