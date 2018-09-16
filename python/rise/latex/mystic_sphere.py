@@ -3,7 +3,7 @@ import rise.latex.rise_data as rise_data
 from rise.latex.util import join
 logger = getLogger(__name__)
 
-class Spell(object):
+class MysticSphere(object):
     def __init__(
             self,
             cantrip=None,
@@ -15,7 +15,7 @@ class Spell(object):
             name=None,
             schools=None,
             rituals=None,
-            subspells=None,
+            spells=None,
             notes=None,
             short_description=None,
     ):
@@ -30,7 +30,7 @@ class Spell(object):
         self.rituals = rituals or []
         self.schools = schools
         self.short_description = short_description or 'TODO'
-        self.subspells = subspells or []
+        self.spells = spells or []
 
         for arg in ['effects', 'lists', 'name', 'schools']:
             if getattr(self, arg) is None:
@@ -42,9 +42,9 @@ class Spell(object):
 
     def to_latex(self):
         # Sort by level as primary, name as secondary
-        sorted_subspells = sorted(
+        sorted_spells = sorted(
             sorted(
-                self.subspells,
+                self.spells,
                 key=lambda augment: augment.name
             ),
             key=lambda augment: augment.level
@@ -78,11 +78,11 @@ class Spell(object):
             """,
             f"""
                 \\subsubsection<{"Spells"}>
-            """ if self.subspells else None,
+            """ if self.spells else None,
             '\n'.join([
                 str(subspell)
-                for subspell in sorted_subspells
-            ]) if self.subspells else None,
+                for subspell in sorted_spells
+            ]) if self.spells else None,
             f"""
                 \\subsubsection<{"Rituals"}>
             """ if self.rituals else None,
