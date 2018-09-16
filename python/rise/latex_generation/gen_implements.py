@@ -148,8 +148,8 @@ def generate_implements():
         material_type='wand',
         tags=['Mystic'],
         description="""
-            You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> if you cast a particular spell or any of its subspells using this wand.
-            Many \\textit<wands of precision> exist, each for different spells.
+            You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> if you cast spells from a particular \\glossterm<mystic sphere> using this wand.
+            Many \\textit<wands of precision> exist, each for different \\glossterm<mystic spheres>.
         """,
         short_description="Grants +1 accuracy with a single spell",
     ))
@@ -160,8 +160,8 @@ def generate_implements():
         material_type='wand',
         tags=['Mystic'],
         description="""
-            You gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy> if you cast a particular spell or any of its subspells using this wand.
-            Many \\textit<greater wands of precision> exist, each for different spells.
+            You gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy> if you cast spells from a particular \\glossterm<mystic sphere> using this wand.
+            Many \\textit<greater wands of precision> exist, each for different \\glossterm<mystic spheres>.
         """,
         short_description="Grants +2 accuracy with a single spell",
     ))
@@ -172,8 +172,8 @@ def generate_implements():
         material_type='wand',
         tags=['Mystic'],
         description="""
-            You gain a +3 \\glossterm<magic bonus> to \\glossterm<accuracy> if you cast a particular spell or any of its subspells using this wand.
-            Many \\textit<supreme wands of precision> exist, each for different spells.
+            You gain a +3 \\glossterm<magic bonus> to \\glossterm<accuracy> if you cast spells from a particular \\glossterm<mystic sphere> using this wand.
+            Many \\textit<supreme wands of precision> exist, each for different \\glossterm<mystic spheres>.
         """,
         short_description="Grants +3 accuracy with a single spell",
     ))
@@ -184,8 +184,8 @@ def generate_implements():
         material_type='wand',
         tags=['Mystic'],
         description="""
-            You gain a +1 \\glossterm<magic bonus> to \\glossterm<power> if you cast a particular spell or any of its subspells using this wand.
-            Many \\textit<wands of spellpower> exist, each for different spells.
+            You gain a +1 \\glossterm<magic bonus> to \\glossterm<power> if you cast spells from a particular \\glossterm<mystic sphere> using this wand.
+            Many \\textit<wands of spellpower> exist, each for different \\glossterm<mystic spheres>.
         """,
         short_description="Grants +1 power with a single spell",
     ))
@@ -196,8 +196,8 @@ def generate_implements():
         material_type='wand',
         tags=['Mystic'],
         description="""
-            You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> if you cast a particular spell or any of its subspells using this wand.
-            Many \\textit<greater wands of spellpower> exist, each for different spells.
+            You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> if you cast spells from a particular \\glossterm<mystic sphere> using this wand.
+            Many \\textit<greater wands of spellpower> exist, each for different \\glossterm<mystic spheres>.
         """,
         short_description="Grants +2 power with a single spell",
     ))
@@ -208,8 +208,8 @@ def generate_implements():
         material_type='wand',
         tags=['Mystic'],
         description="""
-            You gain a +3 \\glossterm<magic bonus> to \\glossterm<power> if you cast a particular spell or any of its subspells using this wand.
-            Many \\textit<supreme wands of spellpower> exist, each for different spells.
+            You gain a +3 \\glossterm<magic bonus> to \\glossterm<power> if you cast spells from a particular \\glossterm<mystic sphere> using this wand.
+            Many \\textit<supreme wands of spellpower> exist, each for different \\glossterm<mystic spheres>.
         """,
         short_description="Grants +3 power with a single spell",
     ))
