@@ -1798,10 +1798,13 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[1]{Spell} You learn a spell from the \sphere{thaumaturgy} \glossterm{mystic sphere}.
         When you gain access to a new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[3]{Counterspell} As a standard action, you can spend an \glossterm{action point} to use the \textit{counterspell} ability.
+        \ff[3]{Counterspell} As a standard action, you can use the \textit{counterspell} ability.
         \begin{ability}{Counterspell}[\glossterm{Swift}]
             Choose a creature within \rngmed range of you.
-            If the target is casting a spell or begins casting a spell this phase, and your maximum spell level is at least as high as the target's maximum spell level, their spell has no effect when it resolves.
+            If the target is casting a spell or begins casting a spell this round, you can spend an \glossterm{action point}.
+            When you do, if your maximum spell level is at least as high as the target's maximum spell level, their spell has no effect when it resolves.
+            Otherwise, make a contested \glossterm{power} check against the target, using your power with this ability against the target's power with the spell it is casting.
+            If you win, the target's spell has no effect when it resolves.
         \end{ability}
 
         \ff[6]{Magic Tolerance} You gain \glossterm{magic resistance} equal to 5 \add your \glossterm{power}.
