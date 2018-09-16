@@ -95,7 +95,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         % TODO: define conflicting action limits (drawing a sword and sheathing a shield?)
 
         \subsubsection{Standard Actions}\label{Standard Actions}
-            Most common activities require a \glossterm{standard action}, such as attacking with a weapon, casting a spell, and using many special abilities.
+            Most common activities require a \glossterm{standard action}, such as attacking with a weapon, casting a \glossterm{spell}, and using many special abilities.
             Using a standard action generally takes about three seconds of time within the game, and it requires most of your attention during that time.
 
             You can take one standard action per round.
@@ -591,7 +591,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             \parhead{Overwhelm Resistance}\label{Overwhelm Resistance} Some abilities grant \glossterm{overwhelm resistance}.
             For example, Large and larger creatures automatically gain overwhelm resistance (see \pcref{Size in Combat}).
             A creature with overwhelm resistance treats creatures threating it as if their \glossterm{overwhelm value} was reduced by amount equal to the creatures overwhelm resistance.
-            Some abilities can increase or decrease overwhelm resistance, such as the \spell{boon of many eyes} subspell.
+            Some abilities can increase or decrease overwhelm resistance, such as the \spell{boon of many eyes} spell.
             A creature without overwhelm resistance is considered to have an overwhelm resistance of 0.
 
             For example, Felix the fighter has an \glossterm{overwhelm resistance} of 1.
@@ -696,13 +696,12 @@ It defines how attributes work and explains how to make physical attacks in comb
         \parhead{Special Exceptions}
 
         \begin{itemize}
-            \item Effects from the same source do not stack. Any spell or ability with the same name has the same source.
+            \item Effects from the same source do not stack. Any ability with the same name has the same source.
             \item Magic bonuses do not stack with each other.
             \item If a creature gains the same condition multiple times, the effects do not stack, but each instance of the condition is tracked separately.
                 The creature must remove all instances of the condition before the effects are removed.
             \item \glossterm{Sizing} effects do not stack.
                 If multiple effects both increase and decrease size, size increases offset size decreases on a one-for-one basis to determine the creature's final size.
-            \item Effects that grant extra \glossterm{strikes} (such as the \spell{haste} spell with the Empowered augment) do not stack.
             \item If a character has two separate abilities which let them add the same attribute to a given roll or statistic, the attribute is still only added once.
         \end{itemize}
 
@@ -846,7 +845,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         A movement mode is a method of moving from one location to another.
         % TODO: terminology confusion mode vs. speed
         The most common movement mode is a land speed.
-        In addition, some spells and abilities grant creatures the ability to move in unusual ways.
+        In addition, some abilities grant creatures the ability to move in unusual ways.
         These forms of movement are described here.
 
         \parhead{Burrowing}
@@ -915,7 +914,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             % clarify timing
             You can always attempt to use an ability on an invalid target.
             If the target is still invalid when the ability resolves, the ability automatically fails and has no effect on the target.
-            A spell that fails in this way is \glossterm{miscast}.
+            A \glossterm{spell} that fails in this way is \glossterm{miscast} (see \pcref{Miscasting}).
 
     \subsection{Range}\label{Range}
         Many abilities can only affect targets or areas within a given \glossterm{range} of you.
@@ -936,7 +935,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         Almost all abilities, including \glossterm{strikes}, must have a \glossterm{line of effect} to function.
         Unless otherwise noted in an ability's description, you cannot target a creature, object, or location that you do not have line of effect to.
-        In addition, spells that affect an area do not affect targets that the spell does not have line of effect to.
+        In addition, abilities that affect an area do not affect targets that the ability does not have line of effect to.
 
         A line of effect is a straight, unblocked path between you and a target.
         It is identified in the same way as \glossterm{line of sight}, except that it is blocked by physical obstacles instead of obstacles that block sight.
@@ -954,11 +953,11 @@ It defines how attributes work and explains how to make physical attacks in comb
             Some abilities deal damage to both creatures and objects.
             If a physical barrier is \glossterm{broken} by an ability, that barrier does not affect the ability's line of effect.
             For example, a thin curtain of silk normally blocks line of effect.
-            However, a spell that destroyed the curtain would have its full effect on everything behind the curtain.
+            However, an ability that destroyed the curtain would have its full effect on everything behind the curtain.
 
         \subsubsection{Inside Creatures}
             Creatures block line of effect to the inside of their own bodies.
-            As a result, you cannot cast a spell that takes effect inside a creature unless you are also inside the creature.
+            As a result, you cannot use an ability that takes effect inside a creature unless you are also inside the creature.
             This restriction applies even if there is no physical barrier to the inside of the creature.
             You cannot place \glossterm{point of origin} for an area inside a creature's mouth, even if the creature has its mouth open at the time.
 
@@ -981,16 +980,16 @@ It defines how attributes work and explains how to make physical attacks in comb
             \parhead{Cylinder} A cylinder extends out from the point of origin in a circle, up to the given radius.
             Cylinders also have a specific height.
             Unless otherwise specified, a cylinder's height is the same as its radius.
-            Cylinders ignore obstacles that partially block line of effect, as long as there is a path around the obstacle that lies entirely within the spell's area.
+            Cylinders ignore obstacles that partially block line of effect, as long as there is a path around the obstacle that lies entirely within the ability's area.
 
             \parhead{Line} A line extends from the point of origin in a straight line, up to the given length.
             Lines also have a specific width and height.
-            Unless otherwise specified, a line-shaped spell affects an area 5 feet wide and 5 feet high.
+            Unless otherwise specified, a line-shaped ability affects an area 5 feet wide and 5 feet high.
             The affected squares are chosen such that they stay close to the chosen line as possible.
             All squares affected by a line must be contiguous, so every square is adjacent to another affected square, disregarding diagonals.
 
             \parhead{Sphere} A sphere extends from the point of origin in all directions.
-            Any spell which only specifies a radius for its area is sphere-shaped.
+            Any ability which only specifies a radius for its area is sphere-shaped.
 
             \parhead{Wall} A wall is like a line, except that it has no width.
             Instead, it affects the boundary between squares.
@@ -999,43 +998,43 @@ It defines how attributes work and explains how to make physical attacks in comb
             Walls can normally be created within occupied squares, but not within solid objects.
             Some walls are called solid walls, and cannot be created within occupied squares.
 
-            \parhead{Specific Shapes} Some spells specify a series of volumes that make up the area of the spell.
+            \parhead{Specific Shapes} Some abilities specify a series of volumes that make up the area of the ability.
             Most commonly, the volumes are cubes.
-            You may arrange the volumes as you want, with the restriction that each volume in the spell's area must be adjacent to one other volume in the spell's area.
+            You may arrange the volumes as you want, with the restriction that each volume in the ability's area must be adjacent to one other volume in the ability's area.
 
         \subsubsection{Area Size}
 
-            The area affected by many spells falls into one of three sizes.
-            Each size defines the extent to which the spell extends out from its origin, whether as a radius or as a length.
-            Some spells have specific sizes, as given in the spell description.
+            The area affected by many abilities falls into one of three sizes.
+            Each size defines the extent to which the ability extends out from its origin, whether as a radius or as a length.
+            Some abilities have specific sizes, as given in the ability description.
 
-            \parhead{Small} Small spells extend 10 feet from their point of origin.
-            \parhead{Medium} Medium spells extend 20 feet from their point of origin.
-            \parhead{Large} Large spells extend 50 feet from their point of origin.
+            \parhead{Small} Small abilities extend 10 feet from their point of origin.
+            \parhead{Medium} Medium abilities extend 20 feet from their point of origin.
+            \parhead{Large} Large abilities extend 50 feet from their point of origin.
 
         \subsubsection{Area Types}\label{Area Types}
 
-            \parhead{Burst} A burst spell has an immediate effect on all valid targets within an area.
+            \parhead{Burst} A burst ability has an immediate effect on all valid targets within an area.
 
-            \parhead{Emanation} An emanation spell has effects within an area for the duration of the spell.
+            \parhead{Emanation} An emanation ability has effects within an area for the duration of the ability.
             It emanates from a specific creature or object, rather than a location.
             If that creature or object moves, the emanation moves with it.
 
-            \parhead{Zone} A zone spell has effects within an area for the duration of the spell.
+            \parhead{Zone} A zone ability has effects within an area for the duration of the ability.
             Unless otherwise noted, it does not move after being created.
 
 
-        When casting an area spell, you select the point where the spell originates.
-        The point of origin of a spell is always a grid intersection.
-        When determining whether a given creature is within the area of a spell, count out the distance from the point of origin in squares just as you do when moving a character or when determining the range for a ranged attack.
+        When casting an area ability, you select the point where the ability originates.
+        The point of origin of a ability is always a grid intersection.
+        When determining whether a given creature is within the area of a ability, count out the distance from the point of origin in squares just as you do when moving a character or when determining the range for a ranged attack.
         The only difference is that instead of counting from the center of one square to the center of the next, you count from intersection to intersection.
 
-        You can freely decrease a spell's area, provided that you decrease it uniformly across all of the spell's dimensions.
-        For example, you can cast a \spell{fireball} that affects a 5 foot radius if you choose to do so, but you can't cast a \spell{fireball} with any shape other than a sphere.
+        You can freely decrease a ability's area, provided that you decrease it uniformly across all of the ability's dimensions.
+        For example, you can cast a \spell{fireball} spell that affects a 5 foot radius if you choose to do so, but you can't cast a \spell{fireball} with any shape other than a sphere.
 
         You can count diagonally across a square, but remember that every second diagonal counts as 2 squares of distance.
-        If the far edge of a square is within the spell's area, anything within that square is within the spell's area.
-        If the spell's area only touches the near edge of a square, however, anything within that square is unaffected by the spell.
+        If the far edge of a square is within the ability's area, anything within that square is within the ability's area.
+        If the ability's area only touches the near edge of a square, however, anything within that square is unaffected by the ability.
 
     \subsection{Ability Durations}
 
@@ -1080,8 +1079,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
                 % What does this even mean? Intended to talk about within-ability choices, I think.
                 Minor variations of a single ability are considered to be the same ability for this purpose.
-                Applying different \glossterm{augments} to a spell or \glossterm{subspell} does not allow you to attune to it more than once.
-                However, you can attune to a spell and any number of different \glossterm{subspells} from that spell.
+                Applying different \glossterm{augments} to a \glossterm{spell} does not allow you to attune to it more than once.
 
             \subsubsection{Attunement Types}\label{Attunement Types}
                 There are three types of attunement abilities: self, target, and ritual.
@@ -1133,13 +1131,13 @@ It defines how attributes work and explains how to make physical attacks in comb
         It is possible for an ability to be partially effective in this way.
 
     \subsection{Suppressing Abilities}\label{Suppressing Abilities}
-        Abilities can be \glossterm{suppressed} by effects such as the \spell{thaumaturgy} spell.
+        Abilities can be \glossterm{suppressed} by effects such as the \spell{suppress magic} spell.
         While an ability is suppressed, it has no effect.
         However, if it stops being suppressed, its effects continue as if they had not been interrupted.
 
     \subsection{Ability Tags}\label{Ability Tags}
 
-        Many spells and other abilities have tags that describe the ability's nature.
+        Many abilities have tags that describe the nature of the ability.
         Many of these tags have no game effect by themselves, but they govern how the ability interacts with spells, other abilities, unusual creatures, and so on.
         They are described below.
 
@@ -1162,10 +1160,10 @@ It defines how attributes work and explains how to make physical attacks in comb
         Unless otherwise specified, magical Creation abilities do not allow \glossterm{magic resistance}.
 
         \parhead{Curse} Curse abilities lay supernatural curses on their targets.
-        They cannot be \glossterm{dismissed}, but can be removed with the \spell{break enchantment} or \spell{remove curse} spells.
+        They cannot be \glossterm{dismissed}, but can be removed with the \spell{remove curse} spell.
 
         \parhead{Death} Death abilities only affect living creatures.
-        A creature killed by a death effect cannot be returned to life by \spell{resurrection} or similar abilities that depend on an intact corpse.
+        A creature killed by a Death effect cannot be returned to life by the \spell{resurrection} ritual or similar abilities that depend on an intact corpse.
 
         \parhead{Emotion} Emotion abilities alter a creature's opinons or personality, but do not necessarily affect their actions.
         All Emotion abilities are also Mind abilities.
@@ -1213,7 +1211,8 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \parhead{Physical} Physical abilities manipulate physical objects rather than having a direct magical effect on their targets.
         They do not allow \glossterm{magic resistance}.
-        Some abilities are not themselves Physical, but have Physical effects, such as \spell{mighty throw}.
+        % TODO: find example? Does this still exist
+        Some abilities are not themselves Physical, but have Physical effects.
 
         \parhead{Planar} Planar abilities transport matter or information between planes.
 
@@ -1596,8 +1595,8 @@ It defines how attributes work and explains how to make physical attacks in comb
                 \item You must use a free hand (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands.
                     If you cannot free a hand, you suffer a \minus10 penalty to accuracy on all \glossterm{physical attacks} until you have a free hand.
                 \item You take a \minus4 penalty to accuracy with weapons that are not \glossterm{light weapons}, since they are too large and cumbersome to be used effectively in a grapple.
-                \item Spellcasting is extremely difficult. You cannot cast spells with somatic components.
-                    Casting a spell without somatic components requires a \glossterm{concentration} check with a DR equal to 20 \add double spell level.
+                \item Spellcasting is extremely difficult. You cannot cast \glossterm{spells} or perform \glossterm{rituals} with somatic components.
+                    Casting a spell without somatic components requires a \glossterm{concentration} check with a DR equal to 20 \add three times the spell's level.
                 \item You cannot normally move from your location (but see the \textit{move grapple} ability, below).
             \end{itemize}
 
@@ -1666,7 +1665,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         You cannot dual-wield unarmed attacks as if you were fighting with two weapons at once (see \pcref{Strikes}).
 
         An unarmed attack is a type of natural weapon.
-        Spells and abilities that affect natural weapons can affect your unarmed attack.
+        Abilities that affect natural weapons can affect your unarmed attack.
         Gauntlets can also be worn to increase the power of an unarmed attack (see \pcref{Unarmed Weapons}).
 
     \subsection{Mounted Combat}\label{Mounted Combat}
