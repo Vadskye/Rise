@@ -2,7 +2,7 @@ from logging import getLogger, WARNING
 from rise.latex.tags import glosstermify, is_valid_tag
 logger = getLogger(__name__)
 
-class Subspell(object):
+class Spell(object):
 
     def __init__(
             self,
@@ -21,7 +21,7 @@ class Subspell(object):
         if (self.tags):
             for tag in self.tags:
                 if not is_valid_tag(tag):
-                    logger.log(WARNING, f"Subspell {self.name} has invalid tag {tag}")
+                    logger.log(WARNING, f"Spell {self.name} has invalid tag {tag}")
 
     def tag_text(self):
         """Get the text for this effect's tags and schools"""
