@@ -80,8 +80,8 @@ class MysticSphere(object):
                 \\subsubsection<{"Spells"}>
             """ if self.spells else None,
             '\n'.join([
-                str(subspell)
-                for subspell in sorted_spells
+                str(spell)
+                for spell in sorted_spells
             ]) if self.spells else None,
             f"""
                 \\subsubsection<{"Rituals"}>
