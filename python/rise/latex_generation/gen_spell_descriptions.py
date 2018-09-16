@@ -4,7 +4,7 @@ import click
 from rise.latex_generation.book_path import book_path
 from rise.latex.effects import Effects
 from rise.latex.header import Header
-from rise.latex.spell import Spell
+from rise.latex.mystic_sphere import MysticSphere
 from rise.latex.subspell import Subspell
 from rise.latex.util import latexify
 import rise.latex.rise_data as rise_data
@@ -24,7 +24,7 @@ def generate_mystic_spheres():
     # Secondary: utility
     # Tertiary: buff
     # None: debuff
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name='Aeromancy',
         short_description="Command air to protect allies and blast foes",
         header=Header('You blast a foe with wind.'),
@@ -36,7 +36,7 @@ def generate_mystic_spheres():
         lists=['Nature'],
         rituals=[
         ],
-        subspells=[
+        spells=[
             Subspell('Propulsion', 1, """
                 Choose a willing creature in \\rngclose range.
                 You move the target up to 50 feet in any direction.
@@ -142,7 +142,7 @@ def generate_mystic_spheres():
     # Primary: buff
     # Secondary: utility
     # None: damage, debuff
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name='Barrier',
         short_description="Shield allies from hostile forces",
         header=Header('You create a barrier around your ally that resists physical intrusion.'),
@@ -152,7 +152,7 @@ def generate_mystic_spheres():
         """, tags=['Sustain (standard)']),
         schools=['Abjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
-        subspells=[
+        spells=[
             Subspell('Ablative Shield', 1, """
                 Choose a willing creature in \\rngclose range.
                 The target gains \\glossterm<damage reduction> equal to your \\glossterm<power> against all damage except for \\glossterm<energy damage>.
@@ -266,7 +266,7 @@ def generate_mystic_spheres():
     # Secondary: utility
     # Tertiary: debuff
     # None: buff
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name='Fabrication',
         short_description="Create objects to damage and impair foes",
         header=Header("You conjure acid from thin air to land on a foe."),
@@ -277,7 +277,7 @@ def generate_mystic_spheres():
         """, tags=['Acid', 'Manifestation']),
         schools=['Conjuration'],
         lists=['Arcane', 'Pact'],
-        subspells=[
+        spells=[
             Subspell('Acid Splash', 1, """
                 Make an attack vs. Armor against one creature or object within \\rngmed range.
                 \\hit The target takes acid \\glossterm<standard damage> +2d.
@@ -365,7 +365,7 @@ def generate_mystic_spheres():
     # Secondary: debuff
     # Tertiary: buff
     # None: damage
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name='Thaumaturgy',
         short_description="Suppress and manipulate magical effects",
         effects=Effects('Cantrip', """
@@ -376,7 +376,7 @@ def generate_mystic_spheres():
         """, tags=['Mystic', 'Sustain (standard)']),
         schools=['Abjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
-        subspells=[
+        spells=[
             Subspell('Suppress Magic', 1, """
                 Make an attack against one creature, object, or magical effect within \\rngmed range.
                 If you target a creature or object, the attack result is applied to every \\glossterm<magical> effect on the target.
@@ -388,7 +388,7 @@ def generate_mystic_spheres():
             """, tags=['Mystic', 'Sustain (standard)']),
             Subspell('Alter Magic Aura', 1, """
                 Make an attack vs. Mental against one Large or smaller magical object in \\rngmed range.
-                \\hit One of the target's magic auras is altered (see \pcref{Spellcraft}).
+                \\hit One of the target's magic auras is altered (see \pcref{MysticSpherecraft}).
                 You can change the school and descriptors of the aura.
                 In addition, you can decrease the \\glossterm<power> of the aura by up to half your power, or increase the power of the aura up to a maximum of your power.
             """, tags=['Attune (self)', 'Mystic']),
@@ -457,7 +457,7 @@ def generate_mystic_spheres():
     # Primary: damage
     # Tertiary: buff, debuff
     # None: utility
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name='Pyromancy',
         short_description="Create fire to incinerate foes",
         header=Header('You create a small burst of flame.'),
@@ -467,7 +467,7 @@ def generate_mystic_spheres():
         """, tags=['Fire']),
         schools=['Evocation'],
         lists=['Arcane', 'Fire', 'Nature', 'Pact'],
-        subspells=[
+        spells=[
             Subspell('Fireburst', 1, """
                 Make an attack vs. Armor against everything in a \\areasmall radius within \\rngclose range.
                 \\hit Each target takes fire \\glossterm<standard damage>.
@@ -548,7 +548,7 @@ def generate_mystic_spheres():
     # Secondary: damage
     # Tertiary: debuff
     # None: utility
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name="Aquamancy",
         short_description="Command water to crush and drown foes",
         header=Header("You create a wave of water to crush your foes."),
@@ -558,7 +558,7 @@ def generate_mystic_spheres():
         """, tags=['Manifestation', 'Water']),
         schools=['Conjuration'],
         lists=['Nature'],
-        subspells=[
+        spells=[
             Subspell('Crushing Wave', 1, """
                 Make an attack vs. Fortitude against everything in a \\arealarge, 10 ft.\\ wide line from you.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage>.
@@ -627,7 +627,7 @@ def generate_mystic_spheres():
     # Secondary: damage
     # Tertiary: utility
     # None: buff
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name="Delusion",
         short_description="Instill false emotions to influence creatures",
         header=Header("You terrify your foe."),
@@ -638,7 +638,7 @@ def generate_mystic_spheres():
         """, tags=['Emotion', 'Mind']),
         schools=['Enchantment'],
         lists=['Arcane', 'Divine', 'Pact'],
-        subspells=[
+        spells=[
             Subspell('Cause Fear', 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 \\hit The target is \\frightened by you as a \\glossterm<condition>.
@@ -698,7 +698,7 @@ def generate_mystic_spheres():
     # This spell seems problematic
     # Primary: debuff
     # None: damage, utility, buff
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name="Compel",
         short_description="Bend creatures to your will by controlling their actions",
         header=Header("You compel a foe to fall down."),
@@ -708,7 +708,7 @@ def generate_mystic_spheres():
         """, tags=['Compulsion', 'Mind']),
         schools=['Enchantment'],
         lists=['Arcane', 'Divine', 'Pact'],
-        subspells=[
+        spells=[
             Subspell("Dance", 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 \\hit As a \\glossterm<condition>, the target is compelled to dance.
@@ -765,7 +765,7 @@ def generate_mystic_spheres():
 
     # Primary: buff
     # None: debuff, utility, damage
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name='Bless',
         short_description="Grant divine blessings to aid allies and improve combat prowess",
         header=Header('You ask your deity for a blessing of resilience to aid an ally.'),
@@ -775,7 +775,7 @@ def generate_mystic_spheres():
         """),
         schools=['Channeling'],
         lists=['Divine'],
-        subspells=[
+        spells=[
             Subspell('Battle Blessing', 1, """
                 The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
 
@@ -917,7 +917,7 @@ def generate_mystic_spheres():
     # This spell is problematic
     # Primary: damage
     # None: buff, debuff, utility
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name="Divine Judgment",
         short_description="Smite foes with divine power",
         header=Header("You smite a foe with holy (or unholy) power."),
@@ -927,7 +927,7 @@ def generate_mystic_spheres():
         """),
         schools=['Channeling'],
         lists=['Divine'],
-        subspells=[
+        spells=[
             Subspell('Divine Judgment', 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 \\hit The target takes divine \\glossterm<standard damage> +2d.
@@ -944,7 +944,7 @@ def generate_mystic_spheres():
     # Secondary: debuff
     # Tertiary: buff
     # None: utility
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name='Cryomancy',
         short_description='Drain heat to injure and freeze foes',
         header=Header('You drain the heat from a foe.'),
@@ -954,7 +954,7 @@ def generate_mystic_spheres():
         """, tags=['Cold']),
         schools=['Evocation'],
         lists=['Arcane', 'Nature', 'Pact'],
-        subspells=[
+        spells=[
             Subspell('Cone of Cold', 1, """
                 Make an attack vs. Fortitude against everything in a \\areamed cone from you.
                 \\hit Each target takes cold \\glossterm<standard damage>, and is \\glossterm<fatigued> as a \\glossterm<condition>.
@@ -1013,7 +1013,7 @@ def generate_mystic_spheres():
     # Secondary: debuff
     # Tertiary: buff
     # None: utility
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name="Electromancy",
         short_description='Create electricity to injure and stun foes',
         header=Header("You create a bolt of electricity that fries your foes."),
@@ -1023,7 +1023,7 @@ def generate_mystic_spheres():
         """, tags=['Electricity']),
         schools=['Evocation'],
         lists=['Arcane', 'Nature', 'Pact'],
-        subspells=[
+        spells=[
             Subspell('Lightning Bolt', 1, """
                 Make an attack vs. Fortitude against everything in a \\arealarge, 10 ft.\\ wide line from you.
                 \\hit Each target takes electricity \\glossterm<standard damage>.
@@ -1082,7 +1082,7 @@ def generate_mystic_spheres():
     # Primary: debuff
     # Secondary: damage
     # None: buff, utility
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name="Corruption",
         short_description="Weaken the life force of foes, reducing their combat prowess",
         header=Header("You corrupt your foe's life force, weakening it."),
@@ -1092,7 +1092,7 @@ def generate_mystic_spheres():
         """, tags=['Life']),
         schools=['Vivimancy'],
         lists=['Arcane', 'Divine', 'Nature', 'Pact'],
-        subspells=[
+        spells=[
             Subspell('Sickening Decay', 1, """
                 Make an attack vs. Fortitude against a living creature within \\rngclose range.
                 \\hit The target is \\glossterm<sickened> as a \\glossterm<condition>.
@@ -1159,7 +1159,7 @@ def generate_mystic_spheres():
     # Primary: damage
     # Secondary: buff (healing)
     # Tertiary: debuff, utility
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name="Vital Surge",
         short_description="Alter life energy to cure or inflict wounds",
         # header=Header("description"),
@@ -1169,7 +1169,7 @@ def generate_mystic_spheres():
         """, tags=['Life']),
         schools=['Vivimancy'],
         lists=['Divine', 'Nature'],
-        subspells=[
+        spells=[
             Subspell("Cure Wounds", 1, """
                 Choose a willing creature within \\rngmed range.
                 The target heals hit points equal to \\glossterm<standard damage> +2d.
@@ -1338,7 +1338,7 @@ def generate_mystic_spheres():
 
     # This seems weird?
     # Secondary: buff, damage, debuff, utility
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name="Summon",
         short_description="Summon creatures to fight with you",
         header=Header("You summon a creature to fight by your side."),
@@ -1348,7 +1348,7 @@ def generate_mystic_spheres():
         """, tags=["Manifestation", 'Sustain (standard)']),
         schools=['Conjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
-        subspells=[
+        spells=[
             # TODO: this needs more subspells
             Subspell('Summon Monster', 1, """
                 You summon a creature in an unoccupied square within \\rngmed range.
@@ -1390,7 +1390,7 @@ def generate_mystic_spheres():
     # This spell is problematic
     # Primary: utility
     # None: buff, damage, debuff
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name="Scry",
         short_description="See and hear at great distances",
         header=Header("You create a scrying sensor that allows you to see at a distance."),
@@ -1401,7 +1401,7 @@ def generate_mystic_spheres():
         """, tags=['Scrying', 'Sustain (minor)']),
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
-        subspells=[
+        spells=[
             Subspell("Alarm", 1, """
                 A \\glossterm<scrying sensor> appears floating in the air in an unoccupied square within \\rngmed range.
                 The sensor passively observes its surroundings.
@@ -1478,7 +1478,7 @@ def generate_mystic_spheres():
     # Primary: buff
     # Secondary: utility
     # None: damage, debuff
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name="Revelation",
         short_description="Share visions of the present and future, granting insight or combat prowess",
         header=Header("You grant a creature the ability to see fractions of a second into the future."),
@@ -1489,7 +1489,7 @@ def generate_mystic_spheres():
         """),
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
-        subspells=[
+        spells=[
             Subspell('True Strike', 1, """
                 You can only cast this spell during the \\glossterm<action phase>.
                 Choose a willing creature within \\rngclose range.
@@ -1622,7 +1622,7 @@ def generate_mystic_spheres():
     # Secondary: utility
     # Tertiary: debuff
     # None: buff
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name="Telekinesis",
         short_description="Manipulate creatures and objects at a distance",
         header=Header("You crush your foe's body with telekinetic force."),
@@ -1632,7 +1632,7 @@ def generate_mystic_spheres():
         """),
         schools=['Evocation'],
         lists=['Arcane', 'Pact'],
-        subspells=[
+        spells=[
             Subspell('Telekinetic Crush', 1, """
                 Make an attack vs. Mental against one creature or object within \\rngmed range.
                 \\hit The target takes bludgeoning \\glossterm<standard damage> +2d.
@@ -1678,7 +1678,7 @@ def generate_mystic_spheres():
     # Primary: buff
     # Secondary: utility
     # None: damage, debuff
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name="Glamer",
         short_description="Change how creatures and objects are perceived",
         header=Header(""),
@@ -1692,7 +1692,7 @@ def generate_mystic_spheres():
         """, tags=['Sensation', 'Visual']),
         schools=['Illusion'],
         lists=['Arcane'],
-        subspells=[
+        spells=[
             Subspell('Blur', 1, """
                 Choose a willing creature within \\rngmed range.
                 The target's physical outline is distorted so it appears blurred, shifting, and wavering.
@@ -1766,7 +1766,7 @@ def generate_mystic_spheres():
     # Primary: debuff
     # Secondary: utility
     # None: buff, damage
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name="Photomancy",
         short_description="Create bright light to blind foes and illuminate your surroundings",
         # header=Header("description"),
@@ -1778,7 +1778,7 @@ def generate_mystic_spheres():
         """, tags=['Light', 'Sensation', 'Visual']),
         schools=['Illusion'],
         lists=['Arcane', 'Divine', 'Nature', 'Pact'],
-        subspells=[
+        spells=[
             Subspell('Flare', 1, """
                 A burst of light light fills a \\areasmall radius within \\rngmed range of you.
                 Bright light illuminates a 100 foot radius around the area until the end of the round.
@@ -1845,7 +1845,7 @@ def generate_mystic_spheres():
     # Secondary: buff
     # Tertiary: utility
     # None: debuff
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name="Polymorph",
         short_description="Change the physical forms of objects and creatures",
         header=Header("You transform a foe's body into a more broken state."),
@@ -1855,7 +1855,7 @@ def generate_mystic_spheres():
         """, tags=['Shaping']),
         schools=['Transmutation'],
         lists=['Arcane', 'Nature', 'Pact'],
-        subspells=[
+        spells=[
             Subspell('Baleful Polymorph', 1, """
                 Make an attack vs. Fortitude against a creature within \\rngmed range.
                 \\hit The target takes physical \\glossterm<standard damage> +2d.
@@ -2003,7 +2003,7 @@ def generate_mystic_spheres():
     # Secondary: debuff
     # Tertiary: utility
     # None: buff
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name="Astromancy",
         short_description="Transport creatures and objects instantly through space",
         header=Header("You disrupt a creature's body by partially thrusting it into another plane."),
@@ -2013,7 +2013,7 @@ def generate_mystic_spheres():
         """, tags=['Planar', 'Teleportation']),
         schools=['Conjuration'],
         lists=['Arcane', 'Pact'],
-        subspells=[
+        spells=[
             Subspell('Dimensional Jaunt', 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 \\hit The target takes physical \\glossterm<standard damage> +2d.
@@ -2146,7 +2146,7 @@ def generate_mystic_spheres():
     # Secondary: buff
     # Tertiary: utility
     # None: damage
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name="Chronomancy",
         short_description="Manipulate the passage of time to inhibit foes and aid allies",
         header=Header("You slow a foe's passage through time, inhibiting its actions."),
@@ -2156,7 +2156,7 @@ def generate_mystic_spheres():
         """, tags=['Temporal']),
         schools=['Transmutation'],
         lists=['Arcane', 'Pact'],
-        subspells=[
+        spells=[
             Subspell('Slow', 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 \\hit The target is \\glossterm<slowed> and \\glossterm<dazed> as a single \\glossterm<condition>.
@@ -2279,7 +2279,7 @@ def generate_mystic_spheres():
     # Primary: damage
     # Secondary: utility
     # None: buff, debuff
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name="Weaponcraft",
         short_description="Create and manipulate weapons to attack foes",
         header=Header("You create a dancing blade that attacks nearby foes"),
@@ -2289,7 +2289,7 @@ def generate_mystic_spheres():
         """, tags=['Manifestation']),
         schools=['Conjuration', 'Transmutation'],
         lists=['Arcane', 'Divine', 'Pact'],
-        subspells=[
+        spells=[
             Subspell('Mystic Bow', 1, """
                 Make an attack vs. Armor against one creature or object within \\rngmed range.
                 \\hit The target takes piercing \\glossterm<standard damage> +2d.
@@ -2366,7 +2366,7 @@ def generate_mystic_spheres():
     # Secondary: utility
     # Tertiary: damage
     # None: buff
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name="Verdamancy",
         short_description="Animate and manipulate plants",
         header=Header("Animate and manipulate plants"),
@@ -2378,7 +2378,7 @@ def generate_mystic_spheres():
         """),
         schools=['Transmutation'],
         lists=['Nature'],
-        subspells=[
+        spells=[
             Subspell('Entangle', 1, """
                 You cause plants to grow and trap a foe.
                 Make an attack vs. Reflex against a Large or smaller creature within \\rngmed range.
@@ -2460,7 +2460,7 @@ def generate_mystic_spheres():
     # Secondary: utility
     # Tertiary: debuff
     # None: buff
-    mystic_spheres.append(Spell(
+    mystic_spheres.append(MysticSphere(
         name="Terramancy",
         short_description="Manipulate earth to crush foes",
         header=Header("Manipulate earth to crush foes"),
@@ -2472,7 +2472,7 @@ def generate_mystic_spheres():
         """, tags=['Earth', 'Physical']),
         schools=['Conjuration', 'Transmutation'],
         lists=['Arcane', 'Nature'],
-        subspells=[
+        spells=[
             Subspell('Rock Throw', 1, """
                 % TODO: define maximum hardness?
                 You extract a Tiny chunk from a body of earth or unworked stone within 5 feet of you and throw it at a foe.
