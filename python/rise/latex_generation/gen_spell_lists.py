@@ -2,68 +2,51 @@
 
 import click
 from rise.latex_generation.book_path import book_path
-from rise.latex_generation.gen_spell_descriptions import generate_spells
-from rise.latex.rise_data import spell_sources
+from rise.latex_generation.gen_spell_descriptions import generate_mystic_spheres
+from rise.latex.rise_data import mystic_sphere_sources
 from rise.latex.util import latexify
-from rise.latex_generation.gen_ritual_descriptions import generate_rituals
 
-def by_source(spells):
-    spells_by_source = {source: [] for source in spell_sources}
-    for spell in spells:
-        for source in spell_sources:
-            if source in spell.lists:
-                spells_by_source[source].append(spell)
-    return spells_by_source
+def by_source(mystic_spheres):
+    mystic_spheres_by_source = {source: [] for source in mystic_sphere_sources}
+    for mystic_sphere in mystic_spheres:
+        for source in mystic_sphere_sources:
+            if source in mystic_sphere.lists:
+                mystic_spheres_by_source[source].append(mystic_sphere)
+    return mystic_spheres_by_source
 
 
-def latex_for_source(source, spells, rituals):
-    spell_headers = []
-    for spell in sorted(spells, key=lambda s: s.name):
-        spell_headers.append(f"\\spellhead<{spell.name}> {spell.short_description}.")
+def latex_for_source(source, mystic_spheres):
+    mystic_sphere_headers = []
+    for mystic_sphere in sorted(mystic_spheres, key=lambda s: s.name):
+        mystic_sphere_headers.append(f"\\spellhead<{mystic_sphere.name}> {mystic_sphere.short_description}.")
 
-    ritual_headers = []
-    # Sort by base_level as primary, name as secondary
-    for ritual in sorted(sorted(rituals, key=lambda s: s.name), key=lambda s: s.base_level):
-        ritual_headers.append(
-            f"\\spellhead[{ritual.base_level}]<{ritual.name}> {ritual.short_description}"
-        )
-
-    spell_list = "\n".join(spell_headers)
-    ritual_list = "\n".join(ritual_headers)
-    ritual_latex = f"""
-            \\subsubsection<{source} Rituals>\\label<{source} Rituals>
-                \\begin<spelllist>
-                    {ritual_list}
-                \\end<spelllist>"""
+    mystic_sphere_list = "\n".join(mystic_sphere_headers)
     return f"""
         \\small
         \\subsection<{source} Magic>\\label<{source} Magic>
-            \\subsubsection<{source} Spells>\\label<{source} Spells>
+            \\subsubsection<{source} Mystic Spheres>\\label<{source} Mystic Spheres>
                 \\begin<spelllist>
-                    {spell_list}
+                    {mystic_sphere_list}
                 \\end<spelllist>
-            {ritual_latex if source != 'Pact' else ""}
     """
 
 
-def generate_spell_lists():
-    spells = generate_spells()
-    spells_by_source = by_source(spells)
-    rituals = generate_rituals()
-    rituals_by_source = by_source(rituals)
+def generate_mystic_sphere_lists():
+    mystic_spheres = generate_mystic_spheres()
+    mystic_spheres_by_source = by_source(mystic_spheres)
 
     return latexify(
         "\n\n".join([
-            latex_for_source(source, spells_by_source[source], rituals_by_source[source])
-            for source in spell_sources
+            latex_for_source(source, mystic_spheres_by_source[source])
+            for source in mystic_sphere_sources
         ])
     )
 
 
 def write_to_file():
-    spell_lists = generate_spell_lists()
-    with open(book_path('spell_lists.tex'), 'w') as spell_lists_file:
-        spell_lists_file.write(spell_lists)
+    mystic_sphere_lists = generate_mystic_sphere_lists()
+    with open(book_path('mystic_sphere_lists.tex'), 'w') as mystic_sphere_lists_file:
+        mystic_sphere_lists_file.write(mystic_sphere_lists)
 
 
 @click.command()
@@ -72,7 +55,7 @@ def main(output):
     if output:
         write_to_file()
     else:
-        print(generate_spell_lists())
+        print(generate_mystic_sphere_lists())
 
 
 if __name__ == "__main__":

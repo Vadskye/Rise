@@ -10,11 +10,13 @@ class Subspell(object):
             level,
             effect_text,
             tags=None,
+            extra_text=None,
     ):
         self.level = level
         self.name = name
         self.effect_text = effect_text
         self.tags = tags
+        self.extra_text = extra_text
 
         if (self.tags):
             for tag in self.tags:
@@ -48,4 +50,5 @@ class Subspell(object):
                 {self.effect_text.strip()}
             \\end<ability>
             \\vspace<0.25em>
+            {self.extra_text.strip() if self.extra_text else ""}
         """
