@@ -388,7 +388,7 @@ def generate_mystic_spheres():
             """, tags=['Mystic', 'Sustain (standard)']),
             Spell('Alter Magic Aura', 1, """
                 Make an attack vs. Mental against one Large or smaller magical object in \\rngmed range.
-                \\hit One of the target's magic auras is altered (see \pcref{MysticSpherecraft}).
+                \\hit One of the target's magic auras is altered (see \pcref{Spellcraft}).
                 You can change the school and descriptors of the aura.
                 In addition, you can decrease the \\glossterm<power> of the aura by up to half your power, or increase the power of the aura up to a maximum of your power.
             """, tags=['Attune (self)', 'Mystic']),
@@ -928,7 +928,7 @@ def generate_mystic_spheres():
         schools=['Channeling'],
         lists=['Divine'],
         spells=[
-            Spell('Divine Judgment', 1, """
+            Spell('Judge Unworthy', 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 \\hit The target takes divine \\glossterm<standard damage> +2d.
             """),
