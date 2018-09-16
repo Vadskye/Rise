@@ -371,7 +371,7 @@ def generate_mystic_spheres():
         effects=Effects('Cantrip', """
             Make an attack against one creature within \\rngmed range.
             The attack result is applied to every \\glossterm<magical> effect on the target.
-            The DR for each effect is equal to 5 + the \\glossterm<power> of that effect.
+            The DR for each effect is equal to the \\glossterm<power> of that effect.
             \\hit Each effect is \\glossterm<suppressed>.
         """, tags=['Mystic', 'Sustain (standard)']),
         schools=['Abjuration'],
@@ -383,7 +383,7 @@ def generate_mystic_spheres():
                 % Is this clear enough?
                 This does not affect the passive effects of any magic items the target has equipped.
                 If you target a magical effect directly, the attack result is applied against the effect itself.
-                The DR for each effect is equal to 5 + the \\glossterm<power> of that effect.
+                The DR for each effect is equal to the \\glossterm<power> of that effect.
                 \\hit Each effect is \\glossterm<suppressed>.
             """, tags=['Mystic', 'Sustain (standard)']),
             Spell('Alter Magic Aura', 1, """
