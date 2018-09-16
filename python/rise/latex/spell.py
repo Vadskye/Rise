@@ -46,7 +46,8 @@ class Spell(object):
         ) if self.tags else ""
 
         return f"""
-            \\begin<ability>[\\nth<{self.level}>]<{self.name}>{tag_text}
+            \\lowercase<\\hypertarget<spell:{self.name}><>>\\label<spell:{self.name}>
+            \\begin<ability>[\\nth<{self.level}>]<\\hypertarget<spell:{self.name}><{self.name}>>{tag_text}
                 {self.effect_text.strip()}
             \\end<ability>
             \\vspace<0.25em>
