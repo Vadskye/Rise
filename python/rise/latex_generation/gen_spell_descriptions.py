@@ -17,14 +17,14 @@ def warn(*args):
     logger.log(WARNING, *args)
 
 
-def generate_spells():
-    spells = []
+def generate_mystic_spheres():
+    mystic_spheres = []
 
     # Primary: damage
     # Secondary: utility
     # Tertiary: buff
     # None: debuff
-    spells.append(Spell(
+    mystic_spheres.append(Spell(
         name='Aeromancy',
         short_description="Command air to protect allies and blast foes",
         header=Header('You blast a foe with wind.'),
@@ -34,6 +34,8 @@ def generate_spells():
         """),
         schools=['Transmutation'],
         lists=['Nature'],
+        rituals=[
+        ],
         subspells=[
             Subspell('Propulsion', 1, """
                 Choose a willing creature in \\rngclose range.
@@ -140,7 +142,7 @@ def generate_spells():
     # Primary: buff
     # Secondary: utility
     # None: damage, debuff
-    spells.append(Spell(
+    mystic_spheres.append(Spell(
         name='Barrier',
         short_description="Shield allies from hostile forces",
         header=Header('You create a barrier around your ally that resists physical intrusion.'),
@@ -149,7 +151,7 @@ def generate_spells():
             The target gains \\glossterm<damage reduction> equal to your \\glossterm<power> against \\glossterm<physical> damage.
         """, tags=['Sustain (standard)']),
         schools=['Abjuration'],
-        lists=['Arcane'],
+        lists=['Arcane', 'Divine', 'Nature'],
         subspells=[
             Subspell('Ablative Shield', 1, """
                 Choose a willing creature in \\rngclose range.
@@ -196,6 +198,63 @@ def generate_spells():
                 This effect functions like the \\spell<repulsion> subspell, except that you gain a +10 bonus to accuracy with the attack against living creatures.
             """),
         ],
+        rituals=[
+            Subspell('Endure Elements', 1, """
+                Choose a willing creature or unattended object within \\rngclose range.
+                The target suffers no harm from being in a hot or cold environment.
+                It can exist comfortably in conditions between \minus50 and 140 degrees Fahrenheit.
+                Its equipment, if any, is also protected.
+                This does not protect the target from fire or cold damage.
+
+                This ritual takes one minute to perform.
+            """, tags=['Attune (ritual)', 'Shielding']),
+            Subspell("Mystic Lock", 2, """
+                Choose a Large or smaller closable, nonmagical object within \\rngclose range, such as a door or box.
+                The target object becomes magically locked.
+                It can be unlocked with a Devices check against a DR equal to 20 \\add your \\glossterm<power>.
+                The DR to break it open forcibly increases by 10.
+
+                You can freely pass your own \\ritual<arcane lock> as if the object were not locked.
+                This effect lasts as long as you \\glossterm<attune> to it.
+                If you use this ability multiple times, you can attune to it each time.
+
+                This ritual takes one minute to perform.
+            """, tags=['Attune (ritual)']),
+            Subspell("Resilient Lock", 4, f"""
+                This subritual functions like the \\ritual<mystic lock> ritual, except that the DR to unlock the target with a Devices check is instead equal to 30 + your \\glossterm<power>.
+                In addition, the DR to break it open increases by 20 instead of by 10.
+            """),
+            Subspell("Explosive Runes", 3, """
+                Choose a Small or smaller unattended object with writing on it within \\rngclose range.
+                % TODO: clarify how to identify that this is Explosive Runes instead of bad handwriting
+                The writing on the target is altered by the runes in subtle ways, making it more difficult to read.
+                To read the writing, a creature must concentrate on reading it, which requires a standard action.
+                If a creature reads the target, the target explodes.
+                You make an attack vs. Reflex against everything within a \\areamed radius from the target.
+                Each struck target takes bludgeoning \\glossterm<standard damage> from the explosion.
+
+                After the target object explodes in this way, the ritual is \\glossterm<dismissed>.
+                If the target is destroyed or rendered illegible, the ritual is dismissed without exploding.
+                This ritual takes one hour to perform.
+            """, tags=['Attune (ritual)', 'Trap']),
+            Subspell("Scryward", 2, """
+                This ritual creates a ward against scrying in a \\arealarge radius zone centered on your location.
+                All \\glossterm<Scrying> effects fail to function in the area.
+                This effect is permanent.
+
+                This ritual takes 24 hour to perform, and requires 8 action points from its participants.
+            """, tags=['Mystic']),
+            Subspell("Private Sanctum", 4, """
+                This ritual creates a ward against any external perception in a \\arealarge radius zone centered on your location.
+                This effect is permanent.
+                Everything in the area is completely imperceptible from outside the area.
+                Anyone observing the area from outside sees only a dark, silent void, regardless of darkvision and similar abilities.
+                In addition, all \\glossterm<Scrying> effects fail to function in the area.
+                Creatures inside the area can see within the area and outside of it without any difficulty.
+
+                This ritual takes 24 hours to perform, and requires 32 action points from its participants.
+            """, tags=['Mystic']),
+        ],
         category='buff, defense',
     ))
 
@@ -207,7 +266,7 @@ def generate_spells():
     # Secondary: utility
     # Tertiary: debuff
     # None: buff
-    spells.append(Spell(
+    mystic_spheres.append(Spell(
         name='Fabrication',
         short_description="Create objects to damage and impair foes",
         header=Header("You conjure acid from thin air to land on a foe."),
@@ -277,6 +336,28 @@ def generate_spells():
                 After the third hit, no further attacks are made, but the target remains nauseated until the condition is removed.
             """, tags=['Manifestation', 'Poison']),
         ],
+        rituals=[
+            Subspell("Manifest Object", 2, """
+                Make a Craft check to create an object of Small size or smaller.
+                The object appears out of thin air in an unoccupied square within \\rngclose range.
+                % TODO: add ability to create objects of other sizes/materials
+                It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
+
+                This ritual takes one hour to perform.
+            """, tags=['Attune (ritual)', 'Manifestation']),
+            Subspell("Create Sustenance", 2, """
+                Choose an unoccupied square within \\rngclose range.
+                This ritual creates food and drink in that square that is sufficient to sustain two Medium creatures per \\glossterm<power> for 24 hours.
+                The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland.
+
+                This ritual takes one hour to perform.
+            """, tags=['Creation']),
+            Subspell("Create Water", 1, """
+                You create up to one gallon of wholesome, drinkable water anywhere within \\rngclose range.
+                The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
+                You must create a minimum of one ounce of water in each location.
+            """, tags=['Creation']),
+        ],
         category='damage',
     ))
 
@@ -284,7 +365,7 @@ def generate_spells():
     # Secondary: debuff
     # Tertiary: buff
     # None: damage
-    spells.append(Spell(
+    mystic_spheres.append(Spell(
         name='Thaumaturgy',
         short_description="Suppress and manipulate magical effects",
         effects=Effects('Cantrip', """
@@ -376,7 +457,7 @@ def generate_spells():
     # Primary: damage
     # Tertiary: buff, debuff
     # None: utility
-    spells.append(Spell(
+    mystic_spheres.append(Spell(
         name='Pyromancy',
         short_description="Create fire to incinerate foes",
         header=Header('You create a small burst of flame.'),
@@ -396,7 +477,7 @@ def generate_spells():
                 \\hit The target takes fire \\glossterm<standard damage> +2d.
             """, tags=['Fire']),
             Subspell("Burning Hands", 2, f"""
-                Make an attack vs. Armor against everything in a \\arealarge cone.
+                Make an attack vs. Armor against everything in a \\arealarge cone from you.
                 \\hit Each target takes fire \\glossterm<standard damage>.
             """, tags=['Fire']),
             Subspell("Blast Furnace", 2, f"""
@@ -413,10 +494,11 @@ def generate_spells():
             """),
             Subspell("Ignition", 2, f"""
                 This subspell functions like the \\spell<fireburst> subspell, except that each struck target is also \\glossterm<ignited> as a \\glossterm<condition>.
+                This condition can also be removed if the target makes a \\glossterm<DR> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
+                Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
             """),
             Subspell("Greater Ignition", 4, f"""
                 This subspell functions like the \\spell<fireburst> subspell, except that each target hit is also \\glossterm<ignited> as a \\glossterm<condition>.
-                Unlike the normal ignited effect, this condition cannot be removed by putting out the fire.
                 In addition, the ignited effect deals fire \\glossterm<standard damage> -2d instead of the normal 1d6 fire damage each round.
             """),
             Subspell("Supreme Ignition", 6, f"""
@@ -466,7 +548,7 @@ def generate_spells():
     # Secondary: damage
     # Tertiary: debuff
     # None: utility
-    spells.append(Spell(
+    mystic_spheres.append(Spell(
         name="Aquamancy",
         short_description="Command water to crush and drown foes",
         header=Header("You create a wave of water to crush your foes."),
@@ -528,6 +610,16 @@ def generate_spells():
                 This subspell functions like the \\spell<crushing wave> subspell, except that it attacks Reflex defense instead of Fortitude defense.
             """),
         ],
+        rituals=[
+            Subspell("Water Breathing", 2, """
+                Choose a Medium or smaller willing creature within \\rngclose range.
+                The target can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
+                This effect lasts as long as you \\glossterm<attune> to it.
+                If you use this ability multiple times, you can attune to it each time.
+
+                This ritual takes one minute to perform.
+            """, tags=['Attune (ritual)']),
+        ],
         category='damage',
     ))
 
@@ -535,7 +627,7 @@ def generate_spells():
     # Secondary: damage
     # Tertiary: utility
     # None: buff
-    spells.append(Spell(
+    mystic_spheres.append(Spell(
         name="Delusion",
         short_description="Instill false emotions to influence creatures",
         header=Header("You terrify your foe."),
@@ -606,7 +698,7 @@ def generate_spells():
     # This spell seems problematic
     # Primary: debuff
     # None: damage, utility, buff
-    spells.append(Spell(
+    mystic_spheres.append(Spell(
         name="Compel",
         short_description="Bend creatures to your will by controlling their actions",
         header=Header("You compel a foe to fall down."),
@@ -673,7 +765,7 @@ def generate_spells():
 
     # Primary: buff
     # None: debuff, utility, damage
-    spells.append(Spell(
+    mystic_spheres.append(Spell(
         name='Bless',
         short_description="Grant divine blessings to aid allies and improve combat prowess",
         header=Header('You ask your deity for a blessing of resilience to aid an ally.'),
@@ -749,13 +841,83 @@ def generate_spells():
                 Your Strength is increased by 2 to partially match your new size.
             """),
         ],
+        rituals=[
+            Subspell("Blessing of Fortification", 1, """
+                Choose an unattended, nonmagical object or part of an object of up to Large size.
+                Unlike most abilities, this ritual can affect individual parts of a whole object.
+
+                % How should this affect Strength break DRs?
+                The target gains a +5 \\glossterm<magic bonus> to \\glossterm<hardness>.
+                If the target is moved, this effect ends.
+                Otherwise, it lasts for one year.
+
+                This ritual takes one hour to perform.
+            """, tags=['Attune (ritual)']),
+            Subspell('Enduring Fortification', 3, """
+                This ritual functions like the \\spell<blessing of fortification> ritual, except that the effect lasts for one hundred years.
+            """),
+            Subspell('Greater Enduring Fortification', 5, """
+                This ritual functions like the \\spell<greater fortification> ritual, except that the effect lasts for one hundred years.
+            """),
+            Subspell('Greater Fortification', 3, """
+                This ritual functions like the \\spell<blessing of fortification> ritual, except that the \\glossterm<hardness> bonus increases to 10.
+            """),
+            Subspell('Supreme Fortification', 6, """
+                This ritual functions like the \\spell<blessing of fortification> ritual, except that the \\glossterm<hardness> bonus increases to 15.
+            """),
+            Subspell("Bless Water", 1, """
+                Choose one pint of unattended, nonmagical water within \\rngclose range.
+                The target becomes holy water.
+                Holy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck undead creature or an evil outsider.
+
+                This ritual takes one minute to perform.
+            """, tags=['Attune (ritual)']),
+            Subspell('Permanent Bless Water', 2, """
+                This subritual functions like the \\spell<bless water> ritual, except that it loses the \\glossterm<Attune> (ritual) tag and the effect lasts permanently.
+                This ritual takes one hour to perform.
+            """),
+            Subspell("Curse Water", 1, """
+                Choose one pint of unattended, nonmagical water within \\rngclose range.
+                The target becomes unholy water.
+                Unholy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck good outsider.
+
+                This ritual takes one minute to perform.
+            """, tags=['Attune (ritual)']),
+            Subspell('Permanent Curse Water', 2, """
+                This subritual functions like the \\spell<curse water> ritual, except that it loses the \\glossterm<Attune> (ritual) tag and the effect lasts permanently.
+                This ritual takes one hour to perform.
+            """),
+            Subspell("Blessing of Purification", 1, """
+                All food and water in a single square within \\rngclose range is purified.
+                Spoiled, rotten, poisonous, or otherwise contaminated food and water becomes pure and suitable for eating and drinking.
+                This does not prevent subsequent natural decay or spoiling.
+
+                This ritual takes one hour to perform.
+            """, tags=['Shaping']),
+            # This seems like a weird mystic sphere for this ritual
+            Subspell("Blessed Transit", 4, """
+                Choose up to five willing, Medium or smaller ritual participants.
+                In addition, choose a destination up to 100 miles away from you on your current plane.
+                Each target is teleported to the temple or equivalent holy site to your deity that is closest to the chosen destination.
+
+                You must specify the destination with a precise mental image of its appearance.
+                The image does not have to be perfect, but it must unambiguously identify the destination.
+                If you specify its appearance incorrectly, or if the area has changed its appearance, the destination may be a different area than you intended.
+                The new destination will be one that more closely resembles your mental image.
+                If no such area exists, the ritual simply fails.
+                % TODO: does this need more clarity about what teleportation works?
+
+                This ritual takes 24 hours to perform and requires 32 action points from its ritual participants.
+                It is from the Conjuration school instead of the Channeling school.
+            """, tags=['Teleportation']),
+        ],
         category='buff, offense',
     ))
 
     # This spell is problematic
     # Primary: damage
     # None: buff, debuff, utility
-    spells.append(Spell(
+    mystic_spheres.append(Spell(
         name="Divine Judgment",
         short_description="Smite foes with divine power",
         header=Header("You smite a foe with holy (or unholy) power."),
@@ -782,7 +944,7 @@ def generate_spells():
     # Secondary: debuff
     # Tertiary: buff
     # None: utility
-    spells.append(Spell(
+    mystic_spheres.append(Spell(
         name='Cryomancy',
         short_description='Drain heat to injure and freeze foes',
         header=Header('You drain the heat from a foe.'),
@@ -851,7 +1013,7 @@ def generate_spells():
     # Secondary: debuff
     # Tertiary: buff
     # None: utility
-    spells.append(Spell(
+    mystic_spheres.append(Spell(
         name="Electromancy",
         short_description='Create electricity to injure and stun foes',
         header=Header("You create a bolt of electricity that fries your foes."),
@@ -920,7 +1082,7 @@ def generate_spells():
     # Primary: debuff
     # Secondary: damage
     # None: buff, utility
-    spells.append(Spell(
+    mystic_spheres.append(Spell(
         name="Corruption",
         short_description="Weaken the life force of foes, reducing their combat prowess",
         header=Header("You corrupt your foe's life force, weakening it."),
@@ -978,13 +1140,26 @@ def generate_spells():
                 This subspell functions like the \\spell<sickening decay> spell, except that a struck target is also \\glossterm<immobilized> as an additional \\glossterm<condition>.
             """),
         ],
+        rituals=[
+            Subspell("Animate Dead", 2, """
+                Choose any number of corpses within \\rngclose range.
+                The combined levels of all targets cannot exceed your \\glossterm<power>.
+                The target becomes an undead creature that obeys your spoken commands.
+                You choose whether to create a skeleton or a zombie.
+                Creating a zombie require a mostly intact corpse, including most of the flesh.
+                Creating a skeleton only requires a mostly intact skeleton.
+                If a skeleton is made from an intact corpse, the flesh quickly falls off the animated bones.
+
+                This ritual takes one hour to perform.
+            """, tags=['Attune (ritual)']),
+        ],
         category='debuff, combat',
     ))
 
     # Primary: damage
     # Secondary: buff (healing)
     # Tertiary: debuff, utility
-    spells.append(Spell(
+    mystic_spheres.append(Spell(
         name="Vital Surge",
         short_description="Alter life energy to cure or inflict wounds",
         # header=Header("description"),
@@ -1038,6 +1213,123 @@ def generate_spells():
                 This can heal both magical and mundane effects, but it cannot completely replace missing body parts required for a sense to function (such as missing eyes).
             """, tags=['Flesh']),
         ],
+        rituals=[
+            Subspell("Reincarnation", 4, """
+                Choose one Diminuitive or larger piece of a humanoid corpse.
+                The target must have been part of the original creature's body at the time of death.
+                The creature the target corpse belongs to returns to life in a new body.
+                It must not have died due to old age.
+
+                This ritual creates an entirely new body for the creature's soul to inhabit from the natural elements at hand.
+                During the ritual, the body ages to match the age of the original creature at the time it died.
+                The creature has 0 hit points when it returns to life.
+
+                A reincarnated creature is identical to the original creature in all respects, except for its race.
+                The creature's race is replaced with a random race from \\tref<Humanoid Reincarnations>.
+                Its appearance changes as necessary to match its new race, though it retains the general shape and distinguishing features of its original appearance.
+                The creature loses all attribute modifiers and abilities from its old race, and gains those of its new race.
+                If its racial bonus feat is invalid for its new race, it must choose a new racial bonus feat.
+                However, its languages are unchanged.
+
+                Coming back from the dead is an ordeal.
+                All of the creature's action points and other daily abilities are expended when it returns to life.
+                In addition, its maximum action points are reduced by 1.
+                This penalty lasts for thirty days, or until the creature gains a level.
+                If this would reduce a creature's maximum action points below 0, the creature cannot be resurrected.
+
+                This ritual takes 24 hours to perform, and requires 32 action points from its participants.
+                It is from the Conjuration school in addition to the Vivimancy school.
+                In addition, it can only be learned through the nature \\glossterm<magic source>.
+            """, tags=['Creation', 'Flesh', 'Life'], extra_text="""
+                \\begin{dtable}
+                    \\lcaption{Humanoid Reincarnations}
+                    \\begin{dtabularx}{\\columnwidth}{l X}
+                        d\\% & Incarnation \\\\
+                        \\bottomrule
+                        01--13 & Dwarf \\\\
+                        14--26 & Elf \\\\
+                        27--40 & Gnome \\\\
+                        41--52 & Half-elf \\\\
+                        53--62 & Half-orc \\\\
+                        63--74 & Halfling \\\\
+                        75--100 & Human \\\\
+                    \\end{dtabularx}
+                \\end{dtable}
+            """),
+            Subspell("Fated Reincarnation", 5, f"""
+                This subritual functions like the \\ritual<reincarnation> ritual, except that the target is reincarnated as its original race instead of as a random race.
+
+                This ritual takes 24 hours to perform, and requires 50 action points from its participants.
+                It is from the Conjuration school in addition to the Vivimancy school.
+                In addition, it can only be learned through the nature \\glossterm<magic source>.
+            """),
+            Subspell("Purge Curse", 2, """
+                Choose a willing creature within \\rngclose range.
+                All curses affecting the target are removed.
+                This ritual cannot remove a curse that is part of the effect of an item the target has equipped.
+                However, it can allow the target to remove any cursed items it has equipped.
+
+                This ritual takes 24 hours to perform, and requires 8 action points from its participants.
+            """, tags=['Mystic']),
+            Subspell("Restoration", 3, """
+                Choose a willing creature within \\rngclose range.
+                All of the target's hit points, \\glossterm<subdual damage>, and \\glossterm<vital damage> are healed.
+                In addition, any of the target's severed body parts or missing organs grow back by the end of the next round.
+
+                This ritual takes 24 hours to perform, and requires 18 action points from its participants.
+            """, tags=['Flesh']),
+            Subspell("Resurrection", 3, """
+                Choose one intact humanoid corpse within \\rngclose range.
+                The target returns to life.
+                It must not have died due to old age.
+
+                The creature has 0 hit points when it returns to life.
+                It is cured of all \\glossterm<vital damage> and other negative effects, but the body's shape is unchanged.
+                Any missing or irreparably damaged limbs or organs remain missing or damaged.
+                The creature may therefore die shortly after being resurrected if its body is excessively damaged.
+
+                Coming back from the dead is an ordeal.
+                All of the creature's action points and other daily abilities are expended when it returns to life.
+                In addition, its maximum action points are reduced by 1.
+                This penalty lasts for thirty days, or until the creature gains a level.
+                If this would reduce a creature's maximum action points below 0, the creature cannot be resurrected.
+
+                This ritual takes 24 hours to perform, and requires 18 action points from its participants.
+                It is from the Conjuration school in addition to the Vivimancy school.
+                In addition, it can only be learned through the divine \\glossterm<magic source>.
+            """, tags=['Flesh', 'Life']),
+            Subspell('Complete Resurrection', 5, """
+                This subritual functions like the \\ritual<resurrection> ritual, except that it does not have to target a fully intact corpse.
+                Instead, it targets a Diminuitive or larger piece of a humanoid corpse.
+                The target must have been part of the original creature's body at the time of death.
+                The resurrected creature's body is fully restored to its healthy state before dying, including regenerating all missing or damaged body parts.
+
+                This ritual takes 24 hours to perform, and requires 50 action points from its participants.
+                It is from the Conjuration school in addition to the Vivimancy school.
+                In addition, it can only be learned through the divine \\glossterm<magic source>.
+            """),
+            Subspell('True Resurrection', 7, """
+                This subritual functions like the \\ritual<resurrection> ritual, except that it does not require any piece of the corpse.
+                Instead, you must explicitly and unambiguously specify the identity of the creature being resurrected.
+                The resurrected creature's body is fully restored to its healthy state before dying, including regenerating all missing or damaged body parts.
+
+                This ritual takes 24 hours to perform, and requires 98 action points from its participants.
+                It is from the Conjuration school in addition to the Vivimancy school.
+                In addition, it can only be learned through the divine \\glossterm<magic source>.
+            """),
+            Subspell("Soul Bind", 5, """
+                Choose one intact corpse within \\rngclose range.
+                % Is this clear enough that you can't use the same gem for this ritual twice?
+                In addition, choose a nonmagical gem you hold that is worth at least 1,000 gp.
+                A fragment of the soul of the creature that the target corpse belongs to is imprisoned in the chosen gem.
+                This does not remove the creature from its intended afterlife.
+                However, it prevents the creature from being resurrected, and prevents the corpse from being used to create undead creatures, as long as the gem is intact.
+                A creature holding the gem may still resurrect or reanimate the creature.
+                If the gem is shattered, the fragment of the creature's soul returns to its body.
+
+                This ritual takes one hour to perform.
+            """, tags=['Life']),
+        ],
         category='damage',
     ))
 
@@ -1046,7 +1338,7 @@ def generate_spells():
 
     # This seems weird?
     # Secondary: buff, damage, debuff, utility
-    spells.append(Spell(
+    mystic_spheres.append(Spell(
         name="Summon",
         short_description="Summon creatures to fight with you",
         header=Header("You summon a creature to fight by your side."),
@@ -1082,6 +1374,15 @@ def generate_spells():
                 This augment replaces the effects of any other augments that change the appearance of the creature.
             """),
         ],
+        rituals=[
+            Subspell("Mount", 2, """
+                This ritual summons your choice of a light horse or a pony to serve as a mount.
+                The creature appears in an unoccupied location within \\rngclose range.
+                It comes with a bit and bridle and a riding saddle, and will readily accept any creature as a rider.
+
+                This ritual takes one minute to perform.
+            """, tags=['Attune (ritual)', 'Manifestation']),
+        ],
         # What category does this belong to?
         category='buff, offense',
     ))
@@ -1089,7 +1390,7 @@ def generate_spells():
     # This spell is problematic
     # Primary: utility
     # None: buff, damage, debuff
-    spells.append(Spell(
+    mystic_spheres.append(Spell(
         name="Scry",
         short_description="See and hear at great distances",
         header=Header("You create a scrying sensor that allows you to see at a distance."),
@@ -1151,13 +1452,33 @@ def generate_spells():
             """),
             # Subspell to cast spells from the eye instead of from your body?
         ],
+        rituals=[
+            Subspell("Scry Creature", 4, """
+                Make an attack vs. Mental against a creature on the same plane as you.
+                You do not need \\glossterm<line of sight> or \\glossterm<line of effect> to the target.
+                However,  must specify your target with a precise mental image of its appearance.
+                The image does not have to be perfect, but it must unambiguously identify the target.
+                If you specify its appearance incorrectly, or if the target has changed its appearance, you may accidentally target a different creature, or the spell may simply be \\glossterm<miscast>.
+                This attack roll cannot \\glossterm<explode>.
+                \\hit A scrying sensor appears in the target's space.
+                This sensor functions like the sensor created by the \\spell<arcane eye> subspell, except that you cannot move the sensor manually.
+                Instead, it automatically tries to follow the target to stay in its space.
+                At the end of each phase, if the sensor is not in the target's space, this effect is \\glossterm<dismissed>.
+
+                This ritual takes one hour to perform.
+            """, tags=['Scrying']),
+            Subspell('Interplanar Scry Creature', 7, """
+                This subritual functions like the \\ritual<scry creature> ritual, except that the target does not have to be on the same plane as you.
+                It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<scry creature> ritual.
+            """),
+        ],
         category='narrative',
     ))
 
     # Primary: buff
     # Secondary: utility
     # None: damage, debuff
-    spells.append(Spell(
+    mystic_spheres.append(Spell(
         name="Revelation",
         short_description="Share visions of the present and future, granting insight or combat prowess",
         header=Header("You grant a creature the ability to see fractions of a second into the future."),
@@ -1221,6 +1542,79 @@ def generate_spells():
                 This can allow it to see perfectly without any light, regardless of concealment or invisibility.
             """, tags=['Attune (target)']),
         ],
+        rituals=[
+            Subspell("Read Magic", 1, """
+                You gain the ability to decipher magical inscriptions that would otherwise be unintelligible.
+                This can allow you to read ritual books and similar objects created by other creatures.
+                After you have read an inscription in this way, you are able to read that particular writing without the use of this ritual.
+
+                This ritual takes one minute to perform.
+            """, tags=['Attune (ritual)']),
+            Subspell("Discern Location", 4, """
+                Choose a creature or object on the same plane as you.
+                You do not need \\glossterm<line of sight> or \\glossterm<line of effect> to the target.
+                However, you must specify your target with a precise mental image of its appearance.
+                The image does not have to be perfect, but it must unambiguously identify the target.
+                You learn the location (place, name, business name, or the like), community, country, and continent where the target lies.
+                % Wording?
+                If there is no corresponding information about an aspect of the target's location, such as if the target is in a location which is not part of a recognized country,
+                    you learn only that that that aspect of the information is missing.
+
+                This ritual takes 24 hours to perform, and it requires 32 action points from its participants.
+            """),
+            Subspell('Interplanar Discern Location', 6, """
+                This subritual functions like the \\ritual<discern location> ritual, except that the target does not have to be on the same plane as you.
+                It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<discern location> ritual.
+
+                This ritual takes 24 hours to perform, and it requires 72 action points from its participants.
+            """),
+            Subspell("Sending", 3, """
+                Choose a creature on the same plane as you.
+                You do not need \\glossterm<line of sight> or \\glossterm<line of effect> to the target.
+                However,  must specify your target with a precise mental image of its appearance.
+                The image does not have to be perfect, but it must unambiguously identify the target.
+                If you specify its appearance incorrectly, or if the target has changed its appearance, you may accidentally target a different creature, or the ritual may simply fail.
+
+                You send the target a short verbal message.
+                The message must be twenty-five words or less, and speaking the message must not take longer than five rounds.
+
+                After the the target receives the message, it may reply with a message of the same length as long as the ritual's effect continues.
+                Once it speaks twenty-five words, or you stop sustaining the effect, the ritual is \\glossterm<dismissed>.
+
+                This ritual takes one hour to perform.
+            """, tags=['Sustain (standard)']),
+            Subspell('Interplanar Sending', 6, """
+                This subritual functions like the \\ritual<sending> ritual, except that the target does not have to be on the same plane as you.
+                It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<sending> ritual.
+            """),
+            Subspell("Telepathic Bond", 3, """
+                Choose up to five willing ritual participants.
+                Each target can communicate mentally through telepathy with each other target.
+                This communication is instantaneous, though it cannot reach more than 100 miles or across planes.
+
+                % Is this grammatically correct?
+                Each target must attune to this ritual independently.
+                If a target breaks its attunement, it stops being able to send and receive mental messages with other targets.
+                However, the effect continues as long as at least one target attunes to it.
+                If you \\glossterm<dismiss> the ritual, the effect ends for all targets.
+
+                This ritual takes one minute to perform.
+            """, tags=['Attune (ritual; see text)']),
+            Subspell('Long-Distance Bond', 5, """
+                This subritual functions like the \\ritual<telepathic bond> ritual, except that the effect works at any distance.
+                The communication still does not function across planes.
+            """),
+            Subspell('Planar Bond', 7, """
+                This subritual functions like the \\ritual<telepathic bond> ritual, except that the effect works at any distance and across planes.
+                It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<telepathic bond> ritual.
+            """),
+            Subspell("Seek Legacy", 2, """
+                Choose a willing ritual participant.
+                The target learns the precise distance and direction to their \\glossterm<legacy item>, if it is on the same plane.
+
+                This ritual takes 24 hours to perform, and requires 8 action points from its ritual participants.
+            """),
+        ],
         category='buff, offense',
     ))
 
@@ -1228,7 +1622,7 @@ def generate_spells():
     # Secondary: utility
     # Tertiary: debuff
     # None: buff
-    spells.append(Spell(
+    mystic_spheres.append(Spell(
         name="Telekinesis",
         short_description="Manipulate creatures and objects at a distance",
         header=Header("You crush your foe's body with telekinetic force."),
@@ -1284,7 +1678,7 @@ def generate_spells():
     # Primary: buff
     # Secondary: utility
     # None: damage, debuff
-    spells.append(Spell(
+    mystic_spheres.append(Spell(
         name="Glamer",
         short_description="Change how creatures and objects are perceived",
         header=Header(""),
@@ -1352,6 +1746,19 @@ def generate_spells():
                 This ability provides no defensive benefit against creatures immune to \\glossterm<Visual> abilities.
             """, tags=['Attune (target)', 'Sensation', 'Visual']),
         ],
+        rituals=[
+            Subspell("Magic Mouth", 1, """
+                Choose a Large or smaller willing creature or unattended object within \\rngclose range.
+                In addition, choose a triggering condition and a message of twenty-five words or less.
+                The condition must be something that a typical human in the target's place could detect.
+
+                When the triggering condition occurs, the target appears to grow a magically animated mouth.
+                The mouth speaks the chosen message aloud.
+                After the message is spoken, this effect is \\glossterm<dismissed>.
+
+                This ritual takes one minute to perform.
+            """, tags=['Attune (ritual)', 'Sensation']),
+        ],
         category='buff, defense',
     ))
 
@@ -1359,7 +1766,7 @@ def generate_spells():
     # Primary: debuff
     # Secondary: utility
     # None: buff, damage
-    spells.append(Spell(
+    mystic_spheres.append(Spell(
         name="Photomancy",
         short_description="Create bright light to blind foes and illuminate your surroundings",
         # header=Header("description"),
@@ -1419,6 +1826,18 @@ def generate_spells():
                 This subspell functions like the \\spell<solar flare> subspell, except that the accuracy bonus is increased to +4.
             """),
         ],
+        rituals=[
+            Subspell("Light", 1, """
+                Choose a Medium or smaller willing creature or unattended object within \\rngclose range.
+                The target glows like a torch, shedding bright light in a \\areamed radius (and dim light for an additional 20 feet).
+
+                This ritual takes one minute to perform.
+            """, tags=['Attune (ritual)', 'Light', 'Sensation']),
+            Subspell('Permanent Light', 2, """
+                This subritual functions like the \\spell<light> ritual, except that it loses the \\glossterm<Attune> (ritual) tag and the effect lasts permanently.
+                This ritual takes 24 hours to perform, and it requires 8 action points from its participants.
+            """),
+        ],
         category='debuff, combat',
     ))
 
@@ -1426,7 +1845,7 @@ def generate_spells():
     # Secondary: buff
     # Tertiary: utility
     # None: debuff
-    spells.append(Spell(
+    mystic_spheres.append(Spell(
         name="Polymorph",
         short_description="Change the physical forms of objects and creatures",
         header=Header("You transform a foe's body into a more broken state."),
@@ -1456,6 +1875,11 @@ def generate_spells():
             Subspell('Greater Shrink', 4, """
                 This subspell functions like the \\spell<shrink> subspell, except that the target's size decreases by two size categories, to a minimum of Diminuitive.
             """),
+            Subspell('Spider Climb', 1, """
+                Choose a willing creature within \\rngclose range.
+                The target gains a \\glossterm<climb speed> equal to its \\glossterm<base speed>.
+                In addition, it gains a +5 bonus to Climb checks to climb on ceilings and similar surfaces.
+            """, tags=['Attune (target)']),
             Subspell("Barkskin", 2, """
                 Choose a willing creature within \\rngclose range.
                 The target gains \\glossterm<damage reduction> equal to your \\glossterm<power> against damage dealt by \\glossterm<physical attacks>.
@@ -1470,6 +1894,7 @@ def generate_spells():
             Subspell('Greater Regeneration', 7, """
                 This subspell functions like the \\textit<regeneration> subspell, except that the healing is equal to twice your \\glossterm<power>.
             """),
+            # Should this also/instead be under Terramancy?
             Subspell("Stoneskin", 3, """
                 Choose a willing creature within \\rngclose range.
                 The target gains \\glossterm<damage reduction> equal to your \\glossterm<power> against damage dealt by \\glossterm<physical attacks>, except for damage from adamantine weapons.
@@ -1518,6 +1943,59 @@ def generate_spells():
                 Its equipment is unaffected.
             """, tags=['Shaping']),
         ],
+        rituals=[
+            Subspell("Fortify", 1, """
+                Choose an unattended, nonmagical object or part of an object of up to Large size.
+                Unlike most abilities, this ritual can affect individual parts of a whole object.
+
+                % How should this affect Strength break DRs?
+                The target gains a +5 \\glossterm<magic bonus> to \\glossterm<hardness>.
+                If the target is moved, this effect ends.
+                Otherwise, it lasts for one year.
+
+                This ritual takes one hour to perform.
+            """, tags=['Attune (ritual)']),
+            Subspell('Enduring Fortify', 3, """
+                This ritual functions like the \\spell<fortify> ritual, except that the effect lasts for one hundred years.
+            """),
+            Subspell('Greater Enduring Fortify', 5, """
+                This ritual functions like the \\spell<greater fortify> ritual, except that the effect lasts for one hundred years.
+            """),
+            Subspell('Greater Fortify', 3, """
+                This ritual functions like the \\spell<fortify> ritual, except that the \\glossterm<hardness> bonus increases to 10.
+            """),
+            Subspell('Supreme Fortify', 6, """
+                This ritual functions like the \\spell<fortify> ritual, except that the \\glossterm<hardness> bonus increases to 15.
+            """),
+            Subspell("Awaken", 5, """
+                Choose a Large or smaller willing animal within \\rngclose range.
+                The target becomes sentient.
+                Its Intelligence becomes 1d6 - 5.
+                Its type changes from animal to magical beast.
+                It gains the ability to speak and understand one language that you know of your choice.
+                Its maximum age increases to that of a human (rolled secretly).
+                This effect is permanent.
+
+                This ritual takes 24 hours to perform, and requires 50 action points from its participants.
+                It can only be learned with the nature \\glossterm<magic source>.
+            """),
+            Subspell("Ironwood", 3, """
+                Choose a Small or smaller unattended, nonmagical wooden object within \\rngclose range.
+                The target is transformed into ironwood.
+                While remaining natural wood in almost every way, ironwood is as strong, heavy, and resistant to fire as iron.
+                Metallic armor and weapons, such as full plate, can be crafted from ironwood.
+
+                % Should this have an action point cost? May be too rare...
+                This ritual takes 24 hours to perform.
+            """, tags=['Shaping']),
+            Subspell("Purify Sustenance", 1, """
+                All food and water in a single square within \\rngclose range is purified.
+                Spoiled, rotten, poisonous, or otherwise contaminated food and water becomes pure and suitable for eating and drinking.
+                This does not prevent subsequent natural decay or spoiling.
+
+                This ritual takes one hour to perform.
+            """, tags=['Shaping']),
+        ],
         category='damage',
     ))
 
@@ -1525,7 +2003,7 @@ def generate_spells():
     # Secondary: debuff
     # Tertiary: utility
     # None: buff
-    spells.append(Spell(
+    mystic_spheres.append(Spell(
         name="Astromancy",
         short_description="Transport creatures and objects instantly through space",
         header=Header("You disrupt a creature's body by partially thrusting it into another plane."),
@@ -1566,6 +2044,8 @@ def generate_spells():
                 This subspell functions like the \\spell<dimensional jaunt> subspell, except that the target is partially teleported into the Plane of Fire.
                 The damage becomes fire damage and increases by +1d.
                 In addition, a struck target is \\glossterm<ignited> until it puts out the fire.
+                This condition can also be removed if the target makes a \\glossterm<DR> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
+                Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
             """),
             Subspell("Dimensional Jaunt -- Deep Astral Plane", 5, """
                 This subspell functions like the \\spell<dimensional jaunt> subspell, except that the target is partially teleported into the deep Astral Plane.
@@ -1591,6 +2071,74 @@ def generate_spells():
                 This subspell functions like the \\subspell<blink> subspell, except that the target also has a 20\% chance to completely ignore any effect that targets it directly during phases where it takes an action.
             """),
         ],
+        rituals=[
+            Subspell("Gate", 7, """
+                Choose a plane that connects to your current plane, and a location within that plane.
+                This ritual creates an interdimensional connection between your current plane and the location you choose, allowing travel between those two planes in either direction.
+                The gate takes the form of a \\areasmall radius circular disk, oriented a direction you choose (typically vertical).
+                It is a two-dimensional window looking into the plane you specified when casting the spell, and anyone or anything that moves through it is shunted instantly to the other location.
+                The gate cannot be \\glossterm<sustained> for more than 5 rounds, and is automatically dismissed at the end of that time.
+
+                You must specify the gate's destination with a precise mental image of its appearance.
+                The image does not have to be perfect, but it must unambiguously identify the location.
+                Incomplete or incorrect mental images may result in the ritual leading to an unintended destination within the same plane, or simply failing entirely.
+
+                % TODO: Is this planar cosmology correct?
+                The Astral Plane connects to every plane, but transit from other planes is usually more limited.
+                From the Material Plane, you can only reach the Astral Plane.
+
+                This ritual takes one week to perform, and requires 98 action points from its participants.
+            """, tags=['Planar', 'Teleportation', 'Sustain (standard)']),
+            Subspell("Plane Shift", 3, """
+                Choose up to five Large or smaller willing ritual participants.
+                In addition, you choose a \\glossterm<planar rift> within \\rngmed range to travel through.
+                The targets teleport to the unoccupied spaces closest to the other side of the planar rift.
+                For details about \\glossterm<planar rifts>, see \\pcref<Planar Rifts>.
+
+                % TODO: Is this planar cosmology correct?
+                The Astral Plane connects to every plane, but transit from other planes is usually more limited.
+                From the Material Plane, you can only reach the Astral Plane.
+
+                This ritual takes 24 hours to perform, and requires 18 action points from its participants.
+            """, tags=['Planar', 'Teleportation']),
+            Subspell('Astral Projection', 4, """
+                Choose up to five Large or smaller willing ritual participants.
+                The targets teleport to a random location within the Inner Astral Plane (see \\pcref<The Astral Plane>).
+
+                In addition, a localized \\glossterm<planar rift> appears at the destination area on the Astral Plane which leads back to the location where this ritual was performed.
+                The rift can only be passed through by the targets of this effect.
+                It lasts for one week before disappearing permanently, potentially stranding the targets in the Astral Plane if they have not yet returned.
+
+                This ritual takes 24 hours to perform, and requires 32 action points from its participants.
+            """, tags=['Planar', 'Teleportation']),
+            Subspell('Homeward Shift', 5, """
+                This ritual can only be performed on the Astral Plane.
+                Choose up to five Large or smaller willing ritual participants.
+                The targets teleport to the last spaces they occupied on their home planes.
+
+                This ritual takes 24 hours to perform, and requires 50 action points from its participants.
+            """, tags=['Planar', 'Teleportation']),
+            Subspell("Overland Teleportation", 4, """
+                Choose up to five willing, Medium or smaller ritual participants.
+                In addition, choose a destination up to 100 miles away from you on your current plane.
+                Each target is teleported to the chosen destination.
+
+                You must specify the destination with a precise mental image of its appearance.
+                The image does not have to be perfect, but it must unambiguously identify the destination.
+                If you specify its appearance incorrectly, or if the area has changed its appearance, the destination may be a different area than you intended.
+                The new destination will be one that more closely resembles your mental image.
+                If no such area exists, the ritual simply fails.
+                % TODO: does this need more clarity about what teleportation works?
+
+                This ritual takes 24 hours to perform and requires 32 action points from its ritual participants.
+            """, tags=['Teleportation']),
+            Subspell("Retrieve Legacy", 3, """
+                Choose a willing ritual participant.
+                If the target's \\glossterm<legacy item> is on the same plane and \\glossterm<unattended>, it is teleported into the target's hand.
+
+                This ritual takes 24 hours to perform, and requires 18 action points from its ritual participants.
+            """, tags=['Teleportation']),
+        ],
         category='damage',
     ))
 
@@ -1598,7 +2146,7 @@ def generate_spells():
     # Secondary: buff
     # Tertiary: utility
     # None: damage
-    spells.append(Spell(
+    mystic_spheres.append(Spell(
         name="Chronomancy",
         short_description="Manipulate the passage of time to inhibit foes and aid allies",
         header=Header("You slow a foe's passage through time, inhibiting its actions."),
@@ -1707,6 +2255,20 @@ def generate_spells():
                 After casting this spell, you cannot cast it again until you take a \\glossterm<short rest>.
             """, tags=['Temporal']),
         ],
+        rituals=[
+            Subspell("Gentle Repose", 2, """
+                Choose an unattended, nonmagical object within \\rngclose range.
+                Time does not pass for the target, preventing it from decaying or spoiling.
+                This can extend the time a poison or similar item lasts before becoming inert.
+                % What effects have an explicit time limit?
+                If used on a corpse, this effectively extends the time limit for effects that require a fresh or intact body.
+                Additionally, this can make transporting a fallen comrade more pleasant.
+
+                % Does this need to explicitly clarify that it doesn't stop time from passing for the creature's soul?
+
+                This ritual takes one minute to perform.
+            """, tags=['Attune (ritual)', 'Temporal']),
+        ],
         category='debuff, combat',
     ))
 
@@ -1717,7 +2279,7 @@ def generate_spells():
     # Primary: damage
     # Secondary: utility
     # None: buff, debuff
-    spells.append(Spell(
+    mystic_spheres.append(Spell(
         name="Weaponcraft",
         short_description="Create and manipulate weapons to attack foes",
         header=Header("You create a dancing blade that attacks nearby foes"),
@@ -1800,7 +2362,223 @@ def generate_spells():
         category='buff, offense',
     ))
 
-    return sorted(spells, key=lambda spell: spell.name)
+    # Primary: debuff
+    # Secondary: utility
+    # Tertiary: damage
+    # None: buff
+    mystic_spheres.append(Spell(
+        name="Verdamancy",
+        short_description="Animate and manipulate plants",
+        header=Header("Animate and manipulate plants"),
+        effects=Effects('Cantrip', """
+            You throw a seed that embeds itself in a foe and grows painfully.
+            Make an attack vs. Armor at a creature within \\rngclose range.
+            \\hit As a \\glossterm<condition>, the target takes \\glossterm<standard damage> -1d at the end of each \\glossterm<action phase>.
+            This condition can be removed if the target or a creature that can reach the target makes a \\glossterm<DR> 5 Heal check as a standard action to remove the seed.
+        """),
+        schools=['Transmutation'],
+        lists=['Nature'],
+        subspells=[
+            Subspell('Entangle', 1, """
+                You cause plants to grow and trap a foe.
+                Make an attack vs. Reflex against a Large or smaller creature within \\rngmed range.
+                The target must be within 5 feet of earth or plants.
+                You gain a +2 bonus to \\glossterm<accuracy> with this attack if the target is in standing in undergrowth.
+                \\hit The target is \\glossterm<immobilized> as a \\glossterm<condition>.
+                This condition can be removed if the target or a creature that can reach the target makes a \\glossterm<DR> 5 Strength check as a standard action to pull the target free of the plants.
+            """),
+            Subspell('Embedded Growth', 1, """
+                You throw a seed that embeds itself in a foe and grows painfully.
+                Make an attack vs. Armor at a creature within \\rngclose range.
+                \\hit As a \\glossterm<condition>, the target takes \\glossterm<standard damage> +1d at the end of each \\glossterm<action phase>.
+                This condition can be removed if the target or a creature that can reach the target makes a \\glossterm<DR> 5 Heal check as a standard action to remove the seed.
+            """),
+            Subspell('Fire Seed', 2, """
+                % Does "seed structure" make sense?
+                You transform an unattended acorn or similar seed structure into a small bomb.
+                As a standard action, you or another creature can throw the acorn with a \\glossterm<range increment> of 20 feet.
+                On impact, the acorn detonates, and you make an attack vs. Armor against all creatures within a \\areasmall radius of the struck creature or object.
+                \\hit Each target takes fire \\glossterm<standard damage>.
+            """, tags=['Attune (self)', 'Fire']),
+            Subspell('Greater Fire Seed', 4, """
+                This spell functions like the \\spell<fire seed> spell, except that you can transform up to four bombs.
+                In addition, the detonation affects a \\areamed radius instead of an \\areasmall radius.
+            """),
+            Subspell('Plant Growth', 2, """
+                Choose a \\arealarge radius within \\rnglong range.
+                In addition, choose whether you want plants within the area to grow or diminish.
+
+                If you choose for plants to grow, all arable earth within the area becomes \\glossterm<light undergrowth>.
+                Light undergrowth within the area is increased in density to \\glossterm<heavy undergrowth>.
+                If you choose for plants to diminish, all \\glossterm<heavy undergrowth> in the area is reduced to \\glossterm<light undergrowth>, and all \\glossterm<light undergrowth> is removed.
+
+                When this spell's duration ends, the plants return to their natural size.
+            """, tags=['Attune (self)']),
+            Subspell('Blight', 2, """
+                Make an attack vs. Fortitude against a living creature or plant within \\rngmed range.
+                \\hit The target takes life \\glossterm<standard damage> +1d.
+                This damage is doubled if the target is a plant, including plant creatures.
+            """, tags=['Life']),
+        ],
+        rituals=[
+            Subspell("Fertility", 2, """
+                This ritual creates an area of bountiful growth in a one mile radius zone from your location.
+                Normal plants within the area become twice as productive as normal for the next year.
+                This ritual does not stack with itself.
+                If the \\ritual<infertility> ritual is also applied to the same area, the most recently performed ritual takes precedence.
+
+                This ritual takes 24 hours to perform, and requires 8 action points from its participants.
+            """),
+            Subspell("Infertility", 2, """
+                This ritual creates an area of death and decay in a one mile radius zone from your location.
+                Normal plants within the area become half as productive as normal for the next year.
+                This ritual does not stack with itself.
+                If the \\ritual<fertility> ritual is also applied to the same area, the most recently performed ritual takes precedence.
+
+                This ritual takes 24 hours to perform, and requires 8 action points from its participants.
+            """),
+            Subspell("Lifeweb Transit", 4, """
+                Choose up to five willing, Medium or smaller ritual participants and a living plant that all ritual participants touch during the ritual.
+                The plant must be at least one size category larger than the largest target.
+                In addition, choose a destination up to 100 miles away from you on your current plane.
+                By walking through the chosen plant, each target is teleported to the closest plant to the destination that is at least one size category larger than the largest target.
+
+                You must specify the destination with a precise mental image of its appearance.
+                The image does not have to be perfect, but it must unambiguously identify the destination.
+                If you specify its appearance incorrectly, or if the area has changed its appearance, the destination may be a different area than you intended.
+                The new destination will be one that more closely resembles your mental image.
+                If no such area exists, the ritual simply fails.
+                % TODO: does this need more clarity about what teleportation works?
+
+                This ritual takes 24 hours to perform and requires 32 action points from its ritual participants.
+                It is from from the Conjuration school instead of the Transmutation school.
+            """, tags=['Teleportation']),
+        ],
+    ))
+
+    # Primary: damage
+    # Secondary: utility
+    # Tertiary: debuff
+    # None: buff
+    mystic_spheres.append(Spell(
+        name="Terramancy",
+        short_description="Manipulate earth to crush foes",
+        header=Header("Manipulate earth to crush foes"),
+        effects=Effects('Cantrip', """
+            You create a spike of earth from the ground that quickly retracts, leaving the surface unchanged.
+            Make an attack vs. Armor against a creature or object within \\rngclose range.
+            The target must be within 5 feet of a Small or larger body of earth or stone.
+            \\hit The target takes piercing \\glossterm<standard damage>.
+        """, tags=['Earth', 'Physical']),
+        schools=['Conjuration', 'Transmutation'],
+        lists=['Arcane', 'Nature'],
+        subspells=[
+            Subspell('Rock Throw', 1, """
+                % TODO: define maximum hardness?
+                You extract a Tiny chunk from a body of earth or unworked stone within 5 feet of you and throw it at a foe.
+                If no such chunk can be extracted, this spell is \\glossterm<miscast>.
+                Otherwise, make an attack vs. Armor against a creature or object within \\rngmed range.
+                \\hit The target takes bludgeoning \\glossterm<standard damage> +2d.
+            """, tags=['Earth', 'Physical']),
+            Subspell('Shrapnel Blast', 2, """
+                You extract a Tiny chunk from a body of earth or unworked stone within 5 feet of you and blast it at your foes.
+                If no such chunk can be extracted, this spell is \\glossterm<miscast>.
+                Otherwise, make an attack vs. Armor against everything in a \\arealarge cone from you.
+                \\hit Each target takes bludgeoning and piercing \\glossterm<standard damage>.
+            """, tags=['Earth', 'Physical']),
+            Subspell('Earthcraft', 1, """
+                You create a weapon or suit of armor from a body of earth or unworked stone within 5 feet of you.
+                You can create any weapon, shield, or body armor that you are proficient with, and which would normally be made entirely from metal, except for heavy body armor.
+                The body targeted must be at least as large as the item you create.
+
+                The item functions like a normal item of its type, except that it is twice as heavy.
+                If the item loses all of its hit points, this effect is \\glossterm<dismissed>.
+            """, tags=['Attune (self)', 'Earth']),
+            Subspell('Reinforced Earthcraft', 2, """
+                This spell functions like the \\spell<earthcraft> spell, except that the item is the same weight as a normal item of its type.
+                In addition, you can create heavy body armor.
+            """, tags=['Attune (self)', 'Earth']),
+            Subspell('Earthspike', 1, """
+                You create a spike of earth from the ground.
+                Make an attack vs. Armor against a creature or object within \\rngclose range.
+                The target must be within 5 feet of a Small or larger body of earth or stone.
+                \\hit The target takes piercing \\glossterm<standard damage> +2d and is \\glossterm<slowed> as a \\glossterm<condition>.
+            """, tags=['Earth', 'Physical']),
+            Subspell('Impaling Earthspike', 4, """
+                This spell functions like the \\spell<earthspike> spell, except that a struck target is \\glossterm<immobilized> instead of \\glossterm<slowed>.
+            """, tags=['Earth', 'Physical']),
+            Subspell('Meld into Stone', 2, """
+                Choose a stone object you can touch that is at least as large as your body.
+                You and up to 100 pounds of nonliving equipment meld into the stone.
+                If you try to bring excess equipment into the stone, the spell is \\glossterm<miscast>.
+
+                As long as the spell lasts, you can move within the stone as if it was thick water.
+                However, at least part of you must remain within one foot of the place you originally melded with the stone.
+                You gain no special ability to breathe or see while embedded the stone, and you cannot speak if your mouth is within the stone.
+                The stone muffles sound, but very loud noises may reach your ears within it.
+                If you fully exit the stone, this spell ends.
+
+                If this spell ends before you exit the stone, or if the stone stops being a valid target for the spell (such as if it is broken into pieces), you are forcibly expelled from the stone.
+                When you are forcibly expelled from the stone, you take 4d10 bludgeoning damage and become \\glossterm<nauseated> as a \\glossterm<condition>.
+            """, tags=['Attune (self)', 'Earth']),
+            Subspell('Tremor', 2, """
+                You create an highly localized tremor that rips through the ground.
+                Make an attack vs. Reflex against all creatures other than yourself standing on the ground in a \\areamed radius within \\rngmed range.
+                \\hit Each target is knocked \\glossterm<prone>.
+            """, tags=['Earth', 'Physical']),
+            Subspell('Earthquake', 5, """
+                You create an intense but highly localized tremor that rips through the ground.
+                Make an attack vs. Reflex against all creatures other than yourself standing on the ground in a \\arealarge radius within \\rngmed range.
+                \\hit Each target takes bludgeoning \\glossterm<standard damage> and is knocked \\glossterm<prone>.
+            """, tags=['Earth', 'Physical']),
+            Subspell('Fissure', 3, """
+                You open up a rift in the ground that swallows and traps a foe.
+                Make an attack vs. Reflex against a Large or smaller creature standing on earth or unworked stone within \\rngmed range.
+                \\hit The target is \\glossterm<immobilized>.
+                As long as the target is immobilized in this way,
+                    it takes bludgeoning \\glossterm<standard damage> -1d at the end of each \\glossterm<action phase> in subsequent rounds.
+                This immobilization can be removed by climbing out of the fissure, which requires a \\glossterm<DR> 10 Climb check as a \\glossterm<move action>.
+                Alternately, an ally that can reach the target can make a Strength check against the same DR to pull the target out.
+                Special movement abilities such as teleportation can also remove the target from the fissure.
+            """, tags=['Earth', 'Physical']),
+            Subspell('Fissure Swarm', 6, """
+                This spell functions like the \\spell<fissure> spell, except that it affects all enemies in a \\areamed radius within \\rngmed range.
+            """, tags=['Earth']),
+            Subspell('Earthbind', 2, """
+                Make an attack vs. Fortitude against a creature within \\rngmed range that is within 50 feet of the ground.
+                \\hit As a \\glossterm<condition>, the target is pulled towards the ground with great force, approximately quadrupling the gravity it experiences.
+                This imposes a -4 penalty to \\glossterm<accuracy>, physical \\glossterm<checks>, and \\glossterm<defenses>.
+                In addition, most flying creatures are unable to fly with this increased gravity and crash to the ground.
+            """, tags=['Earth']),
+            Subspell('Quagmire', 2, """
+                % TODO: define maximum hardness
+                Choose a \\areamed radius within \\rngmed range.
+                All earth and unworked stone within the area is softened into a thick sludge, creating a quagmire that is difficult to move through.
+                The movement cost required to move out of each affected square within the area is quadrupled.
+                This does not affect objects under significant structural stress, such as walls and support columns.
+            """, tags=['Attune (self)', 'Earth', 'Physical']),
+            Subspell('Earthen Fortification', 2, """
+                You construct a fortification made of packed earth within \\rngmed range.
+                This takes the form of up to ten contiguous 5-foot squares, each of which is four inches thick.
+                The squares can be placed at any angle and used to form any structure as long as that structure is stable.
+                Since the fortifications are made of packed earth, their maximum weight is limited, and structures taller than ten feet high are usually impossible.
+                % TODO: define hit points and hardness of earth
+
+                The fortifications form slowly, rather than instantly.
+                The structure becomes complete at the end of the action phase in the next round after this spell is cast.
+                This makes it difficult to trap creatures within structures formed.
+            """, tags=['Attune (self)', 'Earth', 'Manifestation']),
+            Subspell('Stone Fortification', 3, """
+                This spell functions like the \\spell<earthen fortification> spell, except that the fortifications are made of stone instead of earth.
+                This makes them more resistant to attack and allows the construction of more complex structures.
+                % TODO: define hit points and hardness of stone
+            """, tags=['Attune (self)', 'Earth', 'Manifestation']),
+        ],
+        rituals=[
+        ],
+    ))
+
+    return sorted(mystic_spheres, key=lambda m: m.name)
 
 
 def sanity_check(spells):
@@ -1852,23 +2630,23 @@ def sanity_check(spells):
             warn(f"School {school} has only {len(categories_in_school[school])} spell categories")
 
 
-def generate_spell_latex(check=False):
-    spells = generate_spells()
+def generate_mystic_sphere_latex(check=False):
+    mystic_spheres = generate_mystic_spheres()
     if check:
-        sanity_check(spells)
-    spell_texts = []
-    for spell in spells:
+        sanity_check(mystic_spheres)
+    mystic_sphere_texts = []
+    for mystic_sphere in mystic_spheres:
         try:
-            spell_texts.append(spell.to_latex())
+            mystic_sphere_texts.append(mystic_sphere.to_latex())
         except Exception as e:
-            raise Exception(f"Error converting spell '{spell.name}' to LaTeX") from e
-    return latexify('\n\\newpage'.join(spell_texts))
+            raise Exception(f"Error converting mystic sphere '{mystic_sphere.name}' to LaTeX") from e
+    return latexify('\n\\newpage'.join(mystic_sphere_texts))
 
 
 def write_to_file(check=None):
-    spell_latex = generate_spell_latex(check)
-    with open(book_path('spell_descriptions.tex'), 'w') as spell_descriptions_file:
-        spell_descriptions_file.write(spell_latex)
+    mystic_sphere_latex = generate_mystic_sphere_latex(check)
+    with open(book_path('mystic_sphere_descriptions.tex'), 'w') as mystic_sphere_descriptions_file:
+        mystic_sphere_descriptions_file.write(mystic_sphere_latex)
 
 
 @click.command()
@@ -1878,7 +2656,7 @@ def main(output, check):
     if output:
         write_to_file(check)
     else:
-        print(generate_spell_latex(check))
+        print(generate_mystic_sphere_latex(check))
 
 if __name__ == "__main__":
     main()

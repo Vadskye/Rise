@@ -6,7 +6,6 @@ logger = getLogger(__name__)
 class Spell(object):
     def __init__(
             self,
-            base_level=None,
             cantrip=None,
             category=None,
             effects=None,
@@ -15,11 +14,11 @@ class Spell(object):
             lists=None,
             name=None,
             schools=None,
+            rituals=None,
             subspells=None,
             notes=None,
             short_description=None,
     ):
-        self.base_level = base_level
         self.cantrip = cantrip
         self.category = category
         self.effects = effects
@@ -28,12 +27,10 @@ class Spell(object):
         self.name = name
         self.lists = lists
         self.notes = notes
+        self.rituals = rituals or []
         self.schools = schools
         self.short_description = short_description or 'TODO'
         self.subspells = subspells or []
-
-        # This may need to be an argument later
-        self.ability_type = 'spell' if self.base_level is None else 'ritual'
 
         for arg in ['effects', 'lists', 'name', 'schools']:
             if getattr(self, arg) is None:
@@ -52,7 +49,13 @@ class Spell(object):
             ),
             key=lambda augment: augment.level
         )
-        base_level_text = f"[{self.base_level}]" if self.base_level else ""
+        sorted_rituals = sorted(
+            sorted(
+                self.rituals,
+                key=lambda augment: augment.name
+            ),
+            key=lambda augment: augment.level
+        )
 
         cantrip_text = f"""
             \\parhead<Cantrip> {self.cantrip} If you cast this spell as a cantrip,
@@ -62,7 +65,7 @@ class Spell(object):
 
         return join(
             f"""
-                \\begin<spellsection><{self.name}>{base_level_text}
+                \\begin<spellsection><{self.name}>
                     {self.header or ""}
                     {self.effects}
 
@@ -70,16 +73,23 @@ class Spell(object):
 
                     \\parhead<Schools> {', '.join(self.schools)}
 
-                    \\parhead<Spell Lists> {', '.join(self.lists)}
+                    \\parhead<Mystic Sphere Lists> {', '.join(self.lists)}
                 \\end<spellsection>
             """,
             f"""
-                \\subsubsection<{"Subspells" if self.ability_type == 'spell' else "Subrituals"}>
+                \\subsubsection<{"Spells"}>
             """ if self.subspells else None,
             '\n'.join([
                 str(subspell)
                 for subspell in sorted_subspells
             ]) if self.subspells else None,
+            f"""
+                \\subsubsection<{"Rituals"}>
+            """ if self.rituals else None,
+            '\n'.join([
+                str(ritual)
+                for ritual in sorted_rituals
+            ]) if self.rituals else None,
             self.extra_table if self.extra_table else None,
         )
 

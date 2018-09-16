@@ -383,14 +383,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Cleric Progression}
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Divine Spellcasting} & \tb{Divine Spell Mastery}  & \tb{Domain Influence} \\\bottomrule
-               1 & Cantrips   & Wellspring of magic         & Domains, domain gift
-            \\ 2 & Subspells                           & Mystic knowledge            & Domain gift
-            \\ 3 & Spell level (2)           & Augments                    & Domain aspect
-            \\ 4 & Spell level (3), subspell & Mystic knowledge            & Domain aspect
-            \\ 5 & Spell level (4)           & Augment                     & Domain essence
-            \\ 6 & Spell level (5), subspell & Greater wellspring of magic & Domain essence
-            \\ 7 & Spell level (6)           & Mystic knowledge            & Domain mastery
-            \\ 8 & Spell level (7), subspell & Mystic supremacy            & Miracle
+               1 & Mystic spheres         & Wellspring of magic         & Domains, domain gift
+            \\ 2 & Spells                 & Mystic knowledge            & Domain gift
+            \\ 3 & Spell level (2)        & Augments                    & Domain aspect
+            \\ 4 & Spell level (3), spell & Mystic knowledge            & Domain aspect
+            \\ 5 & Spell level (4)        & Augment                     & Domain essence
+            \\ 6 & Spell level (5), spell & Greater wellspring of magic & Domain essence
+            \\ 7 & Spell level (6)        & Mystic knowledge            & Domain mastery
+            \\ 8 & Spell level (7), spell & Mystic supremacy            & Miracle
         \end{dtabularx}
     \end{dtable}
 
@@ -456,35 +456,35 @@ This choice determines a great deal about your character's abilities.
         This archetype grants you the ability to cast divine spells.
         You must have a starting Willpower of at least 1 to gain this archetype.
 
-        \cf{Clr}[1]{Cantrips}[Magical]
-        Your deity grants you the ability to cast divine spells.
-        You learn two divine spells from the divine \glossterm{spell list} (see \pcref{Divine Spells}).
-        As a \glossterm{standard action}, you can cast the \glossterm{cantrip} version of any spell you know.
+        \cf{Clr}[1]{Mystic Spheres}[Magical]
+        Your deity grants you the ability to use divine magic.
+        You gain access to two divine \glossterm{mystic spheres} (see \pcref{Divine Mystic Spheres}).
+        As a \glossterm{standard action}, you can cast the \glossterm{cantrip} spell from any mystic sphere you have access to.
 
-        For details about spellcasting, see \pcref{Spell and Ritual Mechanics}.
+        For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
-        \cf{Clr}[2]{Subspells} You learn a number of \glossterm{subspells} equal to your starting Intelligence \add 2 (minimum 1).
-        You can use these subspells to learn any 1st level subspell of divine spells you know.
-        As a \glossterm{standard action}, you can spend an \glossterm{action point} to cast any \glossterm{subspell} you know.
-        When you gain access to a new spell or spell level, you can exchange any number of subspells you know for subspells of other spells you know, including subspells of the higher level.
+        \cf{Clr}[2]{Spells} You learn a number of divine \glossterm{spells} equal to your starting Intelligence \add 2 (minimum 1).
+        You can learn any 1st level spells from the divine \glossterm{mystic spheres} you have access to.
+        As a \glossterm{standard action}, you can spend an \glossterm{action point} to cast any \glossterm{spell} you know.
+        When you gain access to a new \glossterm{mystic sphere} or spell level, you can exchange any number of spells you know for spells of other spells you know, including spells of the higher level.
 
         \cf{Clr}[3]{Spell Level}[Magical] You gain the ability to cast 2nd level divine spells.
 
         \cf*{Clr}[4]{Spell Level}[Magical] You gain the ability to cast 3rd level divine spells.
 
-        \cf{Clr}[4]{Subspell} You gain an additional \glossterm{subspell} for any divine spell you know.
+        \cf{Clr}[4]{Spell} You gain an additional \glossterm{spell} for any divine \glossterm{mystic sphere} you know.
 
         \cf*{Clr}[5]{Spell Level}[Magical] You gain the ability to cast 4th level divine spells.
 
         \cf*{Clr}[6]{Spell Level}[Magical] You gain the ability to cast 5th level divine spells.
 
-        \cf*{Clr}[6]{Subspell} You gain an additional \glossterm{subspell} for any divine spell you know.
+        \cf*{Clr}[6]{Spell} You gain an additional \glossterm{spell} for any divine \glossterm{mystic sphere} you know.
 
         \cf*{Clr}[7]{Spell Level}[Magical] You gain the ability to cast 6th level divine spells.
 
         \cf*{Clr}[8]{Spell Level}[Magical] You gain the ability to cast 7th level divine spells.
 
-        \cf*{Clr}[8]{Subspell} You gain an additional \glossterm{subspell} for any divine spell you know.
+        \cf*{Clr}[8]{Spell} You gain an additional \glossterm{spell} for any divine \glossterm{mystic sphere} you know.
 
     \subsection{Domain Influence}
         This archetype grants you divine influence over two domains of your choice.
@@ -562,11 +562,12 @@ This choice determines a great deal about your character's abilities.
         You gain your choice of one of the following abilities.
         {
             \parhead{Rituals} You gain the ability to perform divine rituals to create unique magical effects (see \pcref{Rituals}).
-            \parhead{Spell Knowledge} You learn an additional divine spell.
+            The maximum level of divine ritual you can learn or perform is equal to the maximum divine spell level you can cast.
+            \parhead{Mystic Sphere Access} You gain access to an additional divine \glossterm{mystic sphere}.
+                You can choose this ability multiple times, gaining access to an additional \glossterm{mystic sphere} each time.
+            \parhead{Spell Knowledge} You learn an additional \glossterm{spell} for a divine \glossterm{mystic sphere} you have access to.
+                You must have the ability to cast 1st level divine \glossterm{spells} to choose this ability.
                 You can choose this ability multiple times, learning an additional spell each time.
-            \parhead{Subspell Knowledge} You learn an additional \glossterm{subspell} for a divine spell you know.
-                You must have divine subspells to choose this ability.
-                You can choose this ability multiple times, learning an additional subspell each time.
         }
 
         \cf{Clr}[3]{Augments}[Magical]
@@ -773,8 +774,8 @@ This choice determines a great deal about your character's abilities.
             \parhead{Mastery} At the end of each \glossterm{action phase}, you heal hit points equal to your \glossterm{magical power}.
 
         \subsubsection{Magic}
-            \parhead{Gift} You learn an additional subspell for a divine spell you know.
-            \parhead{Aspect} You learn an additional divine spell.
+            \parhead{Gift} You learn an additional \glossterm{spell} for a divine \glossterm{mystic sphere} you have access to.
+            \parhead{Aspect} You gain access to an additional divine \glossterm{mystic sphere}.
             \parhead{Essence} You gain \glossterm{magic resistance} equal to 5 \add your \glossterm{magical power}.
             If you already have \glossterm{magic resistance}, you can instead increase it by 2.
             \parhead{Mastery} You gain a \plus2 bonus to your \glossterm{magic resistance}.
@@ -876,14 +877,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Druid Progression}
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Nature Spellcasting} & \tb{Nature Spell Mastery}  & \tb{Natural Influence} \\\bottomrule
-               1 & Cantrips   & Wellspring of magic         & Wild aspect
-            \\ 2 & Subspells                 & Mystic knowledge            & Wild speech
-            \\ 3 & Spell level (2)           & Augments                    & Wild aspect
-            \\ 4 & Spell level (3), subspell & Mystic knowledge            & Natural lore
-            \\ 5 & Spell level (4)           & Augment                     & Wild aspect
-            \\ 6 & Spell level (5), subspell & Greater wellspring of magic & Nature's champion
-            \\ 7 & Spell level (6)           & Mystic knowledge            & Wild aspect
-            \\ 8 & Spell level (7), subspell & Mystic supremacy            & Avatar of nature
+               1 & Mystic spheres         & Wellspring of magic         & Wild aspect
+            \\ 2 & Spells                 & Mystic knowledge            & Wild speech
+            \\ 3 & Spell level (2)        & Augments                    & Wild aspect
+            \\ 4 & Spell level (3), spell & Mystic knowledge            & Natural lore
+            \\ 5 & Spell level (4)        & Augment                     & Wild aspect
+            \\ 6 & Spell level (5), spell & Greater wellspring of magic & Nature's champion
+            \\ 7 & Spell level (6)        & Mystic knowledge            & Wild aspect
+            \\ 8 & Spell level (7), spell & Mystic supremacy            & Avatar of nature
         \end{dtabularx}
     \end{dtable}
 
@@ -1095,35 +1096,35 @@ This choice determines a great deal about your character's abilities.
         This archetype grants you the ability to cast nature spells.
         You must have a starting Perception of at least 1 to gain this archetype.
 
-        \cf{Drd}[1]{Cantrips}[Magical]
-        Your worship of nature grants you the ability to cast nature spells.
-        You learn two nature spells from the nature \glossterm{spell list} (see \pcref{Nature Spells}).
-        As a \glossterm{standard action}, you can cast the \glossterm{cantrip} version of any spell you know.
+        \cf{Drd}[1]{Mystic Spheres}[Magical]
+        Your connection to nature grants you the ability to use nature magic.
+        You gain access to two nature \glossterm{mystic spheres} (see \pcref{Nature Mystic Spheres}).
+        As a \glossterm{standard action}, you can cast the \glossterm{cantrip} spell from any mystic sphere you have access to.
 
-        For details about spellcasting, see \pcref{Spell and Ritual Mechanics}.
+        For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
-        \cf{Drd}[2]{Subspells} You learn a number of \glossterm{subspells} equal to your starting Intelligence \add 2 (minimum 1).
-        You can use these subspells to learn any 1st level subspell of nature spells you know.
-        As a \glossterm{standard action}, you can spend an \glossterm{action point} to cast any \glossterm{subspell} you know.
-        When you gain access to a new spell or spell level, you can exchange any number of subspells you know for subspells of other spells you know, including subspells of the higher level.
+        \cf{Drd}[2]{Spells} You learn a number of nature \glossterm{spells} equal to your starting Intelligence \add 2 (minimum 1).
+        You can learn any 1st level spells from the nature \glossterm{mystic spheres} you have access to.
+        As a \glossterm{standard action}, you can spend an \glossterm{action point} to cast any \glossterm{spell} you know.
+        When you gain access to a new \glossterm{mystic sphere} or spell level, you can exchange any number of spells you know for spells of other spells you know, including spells of the higher level.
 
         \cf{Drd}[3]{Spell Level}[Magical] You gain the ability to cast 2nd level nature spells.
 
         \cf*{Drd}[4]{Spell Level}[Magical] You gain the ability to cast 3rd level nature spells.
 
-        \cf{Drd}[4]{Subspell} You gain an additional \glossterm{subspell} for any nature spell you know.
+        \cf{Drd}[4]{Spell} You gain an additional \glossterm{spell} for any nature \glossterm{mystic sphere} you know.
 
         \cf*{Drd}[5]{Spell Level}[Magical] You gain the ability to cast 4th level nature spells.
 
         \cf*{Drd}[6]{Spell Level}[Magical] You gain the ability to cast 5th level nature spells.
 
-        \cf*{Drd}[6]{Subspell} You gain an additional \glossterm{subspell} for any nature spell you know.
+        \cf*{Drd}[6]{Spell} You gain an additional \glossterm{spell} for any nature \glossterm{mystic sphere} you know.
 
         \cf*{Drd}[7]{Spell Level}[Magical] You gain the ability to cast 6th level nature spells.
 
         \cf*{Drd}[8]{Spell Level}[Magical] You gain the ability to cast 7th level nature spells.
 
-        \cf*{Drd}[8]{Subspell} You gain an additional \glossterm{subspell} for any nature spell you know.
+        \cf*{Drd}[8]{Spell} You gain an additional \glossterm{spell} for any nature \glossterm{mystic sphere} you know.
 
     \subsection{Nature Spell Mastery}
         This archetype improves the nature spells you cast.
@@ -1136,11 +1137,11 @@ This choice determines a great deal about your character's abilities.
         You gain your choice of one of the following abilities.
         {
             \parhead{Rituals} You gain the ability to perform nature rituals to create unique magical effects (see \pcref{Rituals}).
-            \parhead{Spell Knowledge} You learn an additional nature spell.
+            \parhead{Mystic Sphere Access} You gain access to an additional divine \glossterm{mystic sphere}.
+                You can choose this ability multiple times, gaining access to an additional \glossterm{mystic sphere} each time.
+            \parhead{Spell Knowledge} You learn an additional \glossterm{spell} for a divine \glossterm{mystic sphere} you have access to.
+                You must have the ability to cast 1st level divine \glossterm{spells} to choose this ability.
                 You can choose this ability multiple times, learning an additional spell each time.
-            \parhead{Subspell Knowledge} You learn an additional \glossterm{subspell} for a nature spell you know.
-                You must have nature subspells to choose this ability.
-                You can choose this ability multiple times, learning an additional subspell each time.
         }
 
         \cf{Drd}[3]{Augments}[Magical]
@@ -1563,14 +1564,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Mage Progression}
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Arcane Spellcasting} & \tb{Arcane Spell Mastery}  & \tb{Arcane Lore} \\\bottomrule
-            1 & Cantrips   & Wellspring of magic         & Mage armor
-            \\ 2 & Subspells                 & Mystic knowledge            & Arcane insights
-            \\ 3 & Spell level (2)           & Augments                    & Essence lore
-            \\ 4 & Spell level (3), subspell & Mystic knowledge            & Arcane insight
-            \\ 5 & Spell level (4)           & Augment                     & Greater essence lore
-            \\ 6 & Spell level (5), subspell & Greater wellspring of magic & Arcane insight
-            \\ 7 & Spell level (6)           & Mystic knowledge            & Supreme essence lore
-            \\ 8 & Spell level (7), subspell & Mystic supremacy            & Archmage
+            1 & Mystic spheres            & Wellspring of magic         & Mage armor
+            \\ 2 & Spells                 & Mystic knowledge            & Arcane insights
+            \\ 3 & Spell level (2)        & Augments                    & Essence lore
+            \\ 4 & Spell level (3), spell & Mystic knowledge            & Arcane insight
+            \\ 5 & Spell level (4)        & Augment                     & Greater essence lore
+            \\ 6 & Spell level (5), spell & Greater wellspring of magic & Arcane insight
+            \\ 7 & Spell level (6)        & Mystic knowledge            & Supreme essence lore
+            \\ 8 & Spell level (7), spell & Mystic supremacy            & Archmage
         \end{dtabularx}
     \end{dtable}
 
@@ -1613,35 +1614,40 @@ This choice determines a great deal about your character's abilities.
         If you are a sorcerer, you must have a starting Willpower of at least 1 to gain this archetype.
         If you are a wizard, you must have an starting Intelligence of at least 2 to gain this archetype.
 
-        \cf{Mge}[1]{Cantrips}[Magical]
-        You can cast arcane spells.
-        You learn two arcane spells from the arcane \glossterm{spell list} (see \pcref{Arcane Spells}).
-        As a \glossterm{standard action}, you can cast the \glossterm{cantrip} version of any spell you know.
+        \cf{Mge}[1]{Arcane Spell Failure}
+        When you cast an arcane spell or perform an arcane ritual while using \glossterm{armor}, you must roll 1d10.
+        If your result is less than or equal to your \glossterm{encumbrance}, you \glossterm{miscast} the ability (see \pcref{Miscasting}).
+        When you perform a ritual, this roll must be repeated at the end of each action phase during the ritual.
 
-        For details about spellcasting, see \pcref{Spell and Ritual Mechanics}.
+        \cf{Mge}[1]{Mystic Spheres}[Magical]
+        You can use arcane magic.
+        You gain access to two arcane \glossterm{mystic spheres} (see \pcref{Arcane Mystic Spheres}).
+        As a \glossterm{standard action}, you can cast the \glossterm{cantrip} spell from any mystic sphere you have access to.
 
-        \cf{Mge}[2]{Subspells} You learn a number of \glossterm{subspells} equal to your starting Intelligence \add 2 (minimum 1).
-        You can use these subspells to learn any 1st level subspell of arcane spells you know.
-        As a \glossterm{standard action}, you can spend an \glossterm{action point} to cast any \glossterm{subspell} you know.
-        When you gain access to a new spell or spell level, you can exchange any number of subspells you know for subspells of other spells you know, including subspells of the higher level.
+        For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
+
+        \cf{Mge}[2]{Spells} You learn a number of arcane \glossterm{spells} equal to your starting Intelligence \add 2 (minimum 1).
+        You can learn any 1st level spells from the arcane \glossterm{mystic spheres} you have access to.
+        As a \glossterm{standard action}, you can spend an \glossterm{action point} to cast any \glossterm{spell} you know.
+        When you gain access to a new \glossterm{mystic sphere} or spell level, you can exchange any number of spells you know for spells of other spells you know, including spells of the higher level.
 
         \cf{Mge}[3]{Spell Level}[Magical] You gain the ability to cast 2nd level arcane spells.
 
         \cf*{Mge}[4]{Spell Level}[Magical] You gain the ability to cast 3rd level arcane spells.
 
-        \cf{Mge}[4]{Subspell} You gain an additional \glossterm{subspell} for any arcane spell you know.
+        \cf{Mge}[4]{Spell} You gain an additional \glossterm{spell} for any arcane \glossterm{mystic sphere} you know.
 
         \cf*{Mge}[5]{Spell Level}[Magical] You gain the ability to cast 4th level arcane spells.
 
         \cf*{Mge}[6]{Spell Level}[Magical] You gain the ability to cast 5th level arcane spells.
 
-        \cf*{Mge}[6]{Subspell} You gain an additional \glossterm{subspell} for any arcane spell you know.
+        \cf*{Mge}[6]{Spell} You gain an additional \glossterm{spell} for any arcane \glossterm{mystic sphere} you know.
 
         \cf*{Mge}[7]{Spell Level}[Magical] You gain the ability to cast 6th level arcane spells.
 
         \cf*{Mge}[8]{Spell Level}[Magical] You gain the ability to cast 7th level arcane spells.
 
-        \cf*{Mge}[8]{Subspell} You gain an additional \glossterm{subspell} for any arcane spell you know.
+        \cf*{Mge}[8]{Spell} You gain an additional \glossterm{spell} for any arcane \glossterm{mystic sphere} you know.
 
     \subsection{Arcane Lore}
         This archetype grants you esoteric abilities relating to arcane magic.
@@ -1774,11 +1780,11 @@ This choice determines a great deal about your character's abilities.
         {
             \parhead{Rituals} You can only choose this mystic knowledge if you are a wizard.
                 You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
-            \parhead{Spell Knowledge} You learn an additional arcane spell.
+            \parhead{Mystic Sphere Access} You gain access to an additional divine \glossterm{mystic sphere}.
+                You can choose this ability multiple times, gaining access to an additional \glossterm{mystic sphere} each time.
+            \parhead{Spell Knowledge} You learn an additional \glossterm{spell} for a divine \glossterm{mystic sphere} you have access to.
+                You must have the ability to cast 1st level divine \glossterm{spells} to choose this ability.
                 You can choose this ability multiple times, learning an additional spell each time.
-            \parhead{Subspell Knowledge} You learn an additional \glossterm{subspell} for an arcane spell you know.
-                You must have arcane subspells to choose this ability.
-                You can choose this ability multiple times, learning an additional subspell each time.
         }
 
         \cf{Mge}[3]{Augments}[Magical]
@@ -2097,14 +2103,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Paladin Progression}
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Devoted Paragon} & \tb{Divine Spellcasting}  & \tb{Zealous Warrior} \\\bottomrule
-               1 & Lay on hands               & Cantrips  & Smite
-            \\ 2 & Aligned aura               & Subspells                 & Unfaltering champion
+               1 & Lay on hands               & Mystic spheres  & Smite
+            \\ 2 & Aligned aura               & Spells                 & Unfaltering champion
             \\ 3 & Greater lay on hands       & Spell level (2)           & Unfaltering zeal
-            \\ 4 & Unbending devotion         & Spell level (3), subspell & Greater smite
+            \\ 4 & Unbending devotion         & Spell level (3), spell & Greater smite
             \\ 5 & Greater aligned aura       & Spell level (4)           & Greater unfaltering champion
-            \\ 6 & Supreme lay on hands       & Spell level (5), subspell & Supreme smite
+            \\ 6 & Supreme lay on hands       & Spell level (5), spell & Supreme smite
             \\ 7 & Greater unbending devotion & Spell level (6)           & Supreme unfaltering champion
-            \\ 8 & Aligned soul               & Spell level (7), subspell &
+            \\ 8 & Aligned soul               & Spell level (7), spell &
         \end{dtabularx}
     \end{dtable}
 
@@ -2915,14 +2921,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Warlock Progression}
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Pact Spellcasting} & \tb{Blessings of the Abyss}  & \tb{Pact Magic} \\\bottomrule
-               1 & Pact spells          & Whispers of the lost         & Wellspring of magic
+               1 & Mystic spheres         & Whispers of the lost         & Wellspring of magic
             \\ 2 & Pact augments          & Armor tolerance              & Malevolent boon
-            \\ 3 & Spell knowledge        & Abyssal lore                 & Augments
+            \\ 3 & Mystic sphere          & Abyssal lore                 & Augments
             \\ 4 & Pact augment           & Greater armor tolerance      & Greater malevolent boon
             \\ 5 & Infernal power         & Greater whispers of the lost & Augment
             \\ 6 & Pact augment           & Supreme armor tolerance      & Greater wellspring of magic
             \\ 7 & Greater infernal power & Abyssal defense              & Augment
-            \\ 8 & Dual pact              &                              & 
+            \\ 8 & Dual pact              &                              &
         \end{dtabularx}
     \end{dtable}
 
@@ -2973,22 +2979,23 @@ This choice determines a great deal about your character's abilities.
 
     \subsection{Pact Spellcasting}
         This archetype grants you the ability to cast pact spells through the power of your pact.
+        You must have a starting Willpower of at least 1 to gain this archetype.
 
         \cf{War}[1]{Pact Spells}[Magical]
-        You can cast pact spells.
-        You learn two pact spells from the pact \glossterm{spell list} (see \pcref{Pact Spells}).
-        As a \glossterm{standard action}, you can cast the \glossterm{cantrip} version of any spell you know.
-        The maximum spell level you can cast is equal to half your level (minimum 1) or your Willpower, whichever is lower.
+        You can use pact magic.
+        You gain access to two pact \glossterm{mystic spheres} (see \pcref{Pact Mystic Spheres}).
+        As a \glossterm{standard action}, you can cast the \glossterm{cantrip} spell from any mystic sphere you have access to.
         For details about spellcasting, see \pcref{Spell and Ritual Mechanics}.
 
-        When you learn a pact spell, you automatically learn one 1st level \glossterm{subspell} of your choice for that spell.
-        You cannot learn subspells for pact spells you know by any other means.
-        As a \glossterm{standard action}, you can spend an \glossterm{action point} to cast any \glossterm{subspell} you know.
+        When you gain access to a pact \glossterm{mystic sphere}, you automatically learn one 1st level spell of your choice from that \glossterm{mystic sphere}.
+        You cannot learn pact spells by any other means.
+        As a \glossterm{standard action}, you can spend an \glossterm{action point} to cast any \glossterm{spell} you know.
         For details about subspells, see \pcref{Subspells}.
 
         \cf{War}[1]{Pact Spell Failure}
-        When you cast a pact spell while using \glossterm{armor}, you must roll 1d10.
-        If your result is less than or equal to your \glossterm{encumbrance}, you \glossterm{miscast} your spell.
+        When you cast a pact spell or perform a pact ritual while using \glossterm{armor}, you must roll 1d10.
+        If your result is less than or equal to your \glossterm{encumbrance}, you \glossterm{miscast} the ability (see \pcref{Miscasting}).
+        When you perform a ritual, this roll must be repeated at the end of each action phase during the ritual.
 
         \cf{War}[2]{Pact Augments}[Magical] You learn two pact augments from the list below.
         Pact augments function like other \glossterm{augments} (see \pcref{Augments}), with the following exceptions.
@@ -2998,7 +3005,7 @@ This choice determines a great deal about your character's abilities.
             \item You can only apply a single pact augment to a spell.
                 You can apply that pact augment in addition to any other non-pact augments the spell has.
         \end{itemize}
-        When you gain access to a new spell level, you may change which pact augments you know.
+        When you gain access to a new pact spell level, you may change which pact augments you know.
         Your \glossterm{power} with pact augments is equal to your \glossterm{power} with the spell you apply them to.
         {
             \augment{0}{Infernal Focus} You gain a \plus10 bonus to \glossterm{concentration} checks to cast the spell (see \pcref{Concentration}).
@@ -3058,8 +3065,8 @@ This choice determines a great deal about your character's abilities.
             \par This augment can be applied to any spell that deals damage based on a dice pool.
         }
 
-        \cf*{War}[3]{Spell Knowledge}[Magical]
-        You learn an additional pact spell (see \pcref{Pact Spells}).
+        \cf*{War}[3]{Mystic Sphere}[Magical]
+        You gain access to an additional pact \glossterm{mystic sphere} (see \pcref{Pact Mystic Spheres}).
 
         \cf{War}[4]{Pact Augment}[Magical] You learn an additional \textit{pact augment}.
 
