@@ -1344,7 +1344,7 @@ def generate_mystic_spheres():
         header=Header("You summon a creature to fight by your side."),
         # TODO: this shouldn't reference the spell effect
         effects=Effects('Summon Monster', """
-                This cantrip functions like the \\spell<summon monster> spell, except that it has the \\glossterm<Sustain> (standard) tag instead of the \\glossterm<Sustain> (minor) tag.
+                This cantrip functions like the \\spell<summon monster> spell, except that it has the \\glossterm<Sustain> (standard) tag instead of the \\glossterm<Attune> (self) tag.
         """, tags=["Manifestation", 'Sustain (standard)']),
         schools=['Conjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
@@ -1354,17 +1354,19 @@ def generate_mystic_spheres():
                 You summon a creature in an unoccupied square within \\rngmed range.
                 It visually appears to be a common Small or Medium animal of your choice, though in reality it is a manifestation of magical energy.
                 Regardless of the appearance and size chosen, the creature has hit points equal to twice your \\glossterm<power>.
-                All of its defenses are equal to your 4 \\add your \\glossterm<power>, and its \\glossterm<land speed> is equal to 30 feet.
+                All of its defenses are equal to your 3 \\add your \\glossterm<power>, and its \\glossterm<land speed> is equal to 30 feet.
 
-                Each round, you choose the creature's actions.
+                Each round, you can choose the creature's actions by mentally commanding it.
                 There are only two actions it can take.
-                As a move action, it can move as you direct.
+                As a \\glossterm<move action>, it can move as you direct.
                 As a standard action, it can make a melee \\glossterm{strike} against a creature it threatens.
                 Its accuracy is equal to your \\glossterm<accuracy>.
                 If it hits, it deals \\glossterm<standard damage> -1d.
                 The type of damage dealt by this attack depends on the creature's appearance.
                 Most animals bite or claw their foes, which deals bludgeoning and slashing damage.
-            """, tags=['Manifestation', 'Sustain (minor)']),
+
+                If you do not command the creature's actions, it will continue to obey its last instructions if possible or do nothing otherwise.
+            """, tags=['Attune (self)', 'Manifestation']),
             Spell("Summon Bear", 2, """
                 This spell functions like the \\spell<summon monster> spell, except that the creature appears to be a Medium bear.
                 As a standard action, it can make a \\glossterm<grapple> attack against a creature it threatens.
@@ -2307,7 +2309,7 @@ def generate_mystic_spheres():
                 The weapon floats about three feet off the ground, and is sized appropriately for a creature of your size.
                 The specific weapon you choose affects the type of damage it deals.
                 Regardless of the weapon chosen, it has hit points equal to twice your \\glossterm<power>.
-                All of its defenses are equal to 3 \\add your \\glossterm<power>, and it has a 30 foot fly speed with good maneuverability, though it cannot travel farther than five feet above the ground.
+                All of its defenses are equal to 2 \\add your \\glossterm<power>, and it has a 30 foot fly speed with good maneuverability, though it cannot travel farther than five feet above the ground.
 
                 Each round, the weapon automatically moves towards the creature closest to it during the \\glossterm<movement phase>.
                 During the \\glossterm<action phase>, it makes a melee \\glossterm<strike> against a random creature adjacent to it.
