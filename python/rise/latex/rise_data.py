@@ -4,7 +4,7 @@ defenses = [
     'Reflex',
     'Special',
 ]
-spell_sources = [
+mystic_sphere_sources = [
     'Arcane',
     'Divine',
     'Nature',

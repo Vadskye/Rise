@@ -1,14 +1,31 @@
 \chapter{Spells and Rituals}\label{Spells and Rituals}
 
-\section{Spell and Ritual Mechanics}\label{Spell and Ritual Mechanics}
+\section{Categories of Magic}
+    % TODO: description
 
-    Spells and rituals share many common properties, defined here.
+    \subsection{Magic Sources}
+        There are four \glossterm{magic sources} that characters can use to cast spells and perform rituals: arcane (cast by mages), divine (cast by clerics and paladins), nature (cast by druids), and pact (cast by warlocks).
+        Each magic source has a set of associated \glossterm{mystic spheres} (see Mystic Spheres, below).
+        % TODO: more description
 
-    \subsection{Categories of Magic}
-        There are four \glossterm{magic sources} that spells can come from: arcane (cast by mages), divine (cast by clerics and paladins), nature (cast by druids), and pact (cast by warlocks).
-        In addition, there are nine schools of magic.
+        \subsubsection{Characters with Multiple Magic Sources}
+            A character can have access to multiple sources of magic through the use of abilities like the Class Versatility feat (see \featpref{Class Versatility}).
+            The \glossterm{mystic spheres}, spells, and rituals that character knows are tracked separately for each source of magic that character has access to.
+            If you have access to the same spell or ritual from multiple sources, the two versions of the ability are generally considered to be the same ability.
+            When you cast the spell or perform the ritual, you choose which source you are using for the ability.
+
+    \subsection{Mystic Spheres}\label{Mystic Spheres}
+        A \glossterm{mystic sphere} is a collection of thematically related magical effects that includes both \glossterm{spells} and \glossterm{rituals}.
+        Each \glossterm{mystic sphere} is associated with a single school of magic and any number of \glossterm{magic sources}.
+        The mystic spheres are listed at \pcref{Mystic Sphere Lists}.
+
+    \subsection{Magic Schools}
+        There are nine schools of magic.
         Each school of magic has a set of thematically related effects.
         Every spell and ritual belongs to at least one school of magic.
+        % TODO: wording.
+        When you cast a spell or perform a ritual, that ability is considered to be from the source you used to gain access to the ability.
+
         The schools of magic are described below.
 
         \subsubsection{Abjuration}
@@ -18,7 +35,7 @@
         \subsubsection{Channeling}
             Channeling spells and rituals call upon the power of deities or other supernatural entities.
             They can be used to do anything those entities could do.
-            Arcane spellcasters do not have access to Channeling spells.
+            Only divine spellcasters have access to Channeling spells.
 
         \subsubsection{Conjuration}
             Conjuration spells and rituals create and transport objects and creatures.
@@ -48,6 +65,11 @@
         \subsubsection{Vivimancy}
             Vivimancy spells and rituals manipulate the power of life and death, as well as souls.
             They can be used to heal or inflict wounds, resurrect the dead, create undead monsters, and cripple the bodies of creatures.
+
+
+\section{Spell and Ritual Mechanics}\label{Spell and Ritual Mechanics}
+
+    Spells and rituals share many common properties, defined here.
 
     \subsection{Casting Components}\label{Casting Components}
         Unless otherwise noted, all spells and rituals require both verbal and somatic components to cast or perform.
@@ -139,7 +161,7 @@
         \subsubsection{Augment Descriptions}\label{Augment Descriptions}
 
             \augment{1}{Cryptic} The spell's visual effects and magical aura changes to mimic a different spell of your choice.
-            You may choose any combination of spell or \glossterm{subspell} you know, along with any other augments, that result in a spell of the same level or lower as the spell you are casting.
+            You may choose any combination of spells you know, along with any other augments, that result in a spell of the same level or lower as the spell you are casting.
             This affects inspection of the spell itself by any means, such as with the Spellcraft skill (see \pcref{Spellcraft}).
             However, it does not alter the mechanical effects of the spell in any way.
             If the spell's effects depend on visual components, the spell may fail to work if you alter the spell's visuals too much. 
@@ -250,52 +272,45 @@
         \subparhead{Revivification against One's Will} A soul cannot be returned to life if it does not wish to be.
         A soul infallibly knows the name, alignment, and patron deity (if any) of the character attempting to revive it and may refuse to return on that basis.
 
-% TODO: add generic text like ``Spells are magical effects that do stuff''
 \section{Spells}\label{Spells}
+    % TODO: better description
+    A \glossterm{spell} is a discrete magical effect with a name, a level, and an effect.
+    Each \glossterm{mystic sphere} has a number of spells associated with it.
+    An ability that gives you access to \glossterm{mystic spheres} will define how many spells you know from that sphere.
+    It will also define the maximum level of spell you can cast.
+
+    When you cast a spell, you can apply any number of \glossterm{augments} to the spell (see \pcref{Augments}).
+    You cannot learn or cast spells whose spell level exceeds your maximum spell level.
 
     \subsection{Action Points}
-        Subspells normally cost an \glossterm{action point} to cast.
-        Subspells with the \glossterm{Attune} tag do not cost action points to cast, but require a creature to attune to the subspell's effect, which costs an action point.
+        Spells normally cost an \glossterm{action point} to cast.
+        However, spells with the \glossterm{Attune} tag do not cost action points to cast.
+        Instead, they require a creature to attune to the spell's effect, which costs an action point.
         For details, see \pcref{Attunement}.
 
     \subsection{Cantrips}\label{Cantrips}
-        Every spell can be cast as a \glossterm{cantrip}.
-        You do not have to spend an action point to cast a spell as a cantrip.
+        Each \glossterm{mystic sphere} has a \glossterm{cantrip}.
+        A cantrip is a minor spell that does not require an \glossterm{action point} to cast.
         Cantrips are considered to be 1st level spells for the purpose of abilities that care about spell level, such as \glossterm{augments} (see \pcref{Augments}).
-        You gain a \plus4 bonus to \glossterm{concentration} when casting a cantrip (see \pcref{Concentration}).
-
-    \subsection{Subspells}\label{Subspells}
-        % TODO: some of this wording is weird
-        All spells have a number of \glossterm{subspells}.
-        Each subspell has a name, a level, and an effect.
-        When you cast a spell, you can choose to apply a single subspell you know from that spell.
-        If you do, the spell's level becomes equal to the subspell's level.
-        In exchange, the spell gains the effects of the subspell.
-        You cannot learn or cast subspells whose spell level exceeds your maximum spell level.
-
-        Some subspells simply add additional properties to a spell's normal effect.
-        Others change the targets or effects of the spell significantly.
-        After choosing whether to cast a subspell, you can apply any number of \glossterm{augments}, described below.
+        Because cantrips are so simple, the \glossterm{difficulty rating} to maintain \glossterm{concentration} on a cantrip is 4 lower than it is for other spells (see \pcref{Concentration}).
 
 \section{Rituals}\label{Rituals}
-    Rituals are ceremonies that create magical effects.
+    Each \glossterm{mystic sphere} has a number of \glossterm{rituals}.
     Some spellcasting characters can learn and perform rituals.
-    You don't memorize a ritual as you would a normal spell or subspell.
+    Rituals are ceremonies that create magical effects.
+    Like spells, each ritual has a name, a level, and an effect.
+    Although rituals are similar to spells, abilities that affect spells do not affect rituals unless they say they do in their descriptions.
+    % Oddly located
+    An ability that gives you access to rituals will define the maximum level of ritual that you can perform.
+
+    You don't memorize a ritual as you would a normal spell.
     Rituals are too complex for all but the most knowledgeable sages to commit to memory.
     To perform a ritual, you need to read from a book or a scroll containing it.
-    Rituals are similar to spells, but abilities that affect spells do not affect rituals unless they say they do in their descriptions.
+    You must have access to the \glossterm{mystic sphere} a ritual is from in order to perform the ritual.
 
     \subsection{Ritual Descriptions}
         % TODO: proper chapter references
-        Rituals are described in Chapter 13.
-        The description of each ritual follows the same format as the description of spells in Chapter 12, except that every ritual has a level, like \glossterm{subspells} do.
-
-        \subparhead{Ritual Sources}
-        A ritual always matches the magic source of the person performing the ritual.
-        For example, \spell{scrying} is an arcane ritual when performed by a wizard, but a divine ritual when performed by a cleric.
-
-    \subsection{Ritual Requirements}
-        In order to learn and perform a ritual, you must be able to cast at least one spell of the same level as the ritual.
+        Rituals are described in the body of the \glossterm{mystic sphere} they are associated with, following the description of spells from that mystic sphere.
 
     \subsection{Ritual Books}
         A ritual book contains one or more rituals that you can use as frequently as you want, as long as you can spend the time and \glossterm{action point} to perform the ritual.
@@ -308,21 +323,15 @@
             \begin{dtabularx}{\columnwidth}{X l l}
                 \tb{Ritual Level} & \tb{Cost to Scribe} & \tb{Item Level} \\
                 \bottomrule
-                1st-Level & 50 gp & 1st \\
-                2nd-Level & 200 gp & 3rd \\
-                3rd-Level & 500 gp & 4th \\
-                4th-Level & 1,250 gp & 7th \\
-                5th-Level & 3,000 gp & 9th \\
-                6th-Level & 7,500 gp & 11th \\
-                7th-Level & 15,000 gp & 12th \\
-                8th-Level & 35,000 gp & 14th \\
-                9th-Level & 75,000 gp & 16th \\
+                1st-Level & 125 gp     & 2nd  \\
+                2nd-Level & 800 gp     & 5th  \\
+                3rd-Level & 2,750 gp   & 8th  \\
+                4th-Level & 10,000 gp  & 11th \\
+                5th-Level & 37,000 gp  & 14th \\
+                6th-Level & 125,000 gp & 17th \\
+                7th-Level & 400,000 gp & 20th \\
             \end{dtabularx}
         \end{dtable}
-
-    \subsection{Subrituals}\label{Subrituals}
-        Many rituals have \glossterm{subrituals}, just like many spells have \glossterm{subspells} (see \pcref{Subspells}).
-        Subrituals work in the same way as subspells, except that they are applied to rituals instead of spells.
 
     \subsection{Performing Rituals}
         To perform a ritual, you must have a ritual book containing the ritual and the material components required for the ritual.
@@ -335,9 +344,6 @@
 
         Rituals with the \glossterm{Attune} tag do not cost action points to perform, but require a ritual participant to attune to the ritual's effect, which costs an action point.
         For details, see \pcref{Attunement}.
-
-        % TODO: can we remove all instance of ``casting a ritual''?
-        Performing a ritual and casting a ritual mean the same thing.
 
         \subsubsection{Ritual Participants}
             Creatures can assist in the performance of rituals even if they are unable to perform rituals themselves.
@@ -353,7 +359,7 @@
             A creature cannot participate in rituals unless it has an Intelligence of at least 0, can speak at least one language, and has the fine motor control required to perform the somatic components of spells.
 
             Normally, a ritual participant can only contribute one action point.
-            If the participant can cast spells from the same source as the ritual, they can contribute any number of action points.
+            If the participant has access to the same \glossterm{magic source} as the ritual, they can contribute any number of action points.
 
             \parhead{Changing Ritual Participation}
             Rituals are deeply complex magic, and they cannot be abandoned or paused partway through.
@@ -373,22 +379,13 @@
         However, each character uses the system in their own way.
         Another person's magical writing remains incomprehensible to even the most powerful spellcaster until they take the time to study and decipher it.
 
-        To decipher an magical writing (such as a single spell in written form on a scroll), you must make a Spellcraft check (DR 10 \add the spell's level). If the skill check fails, you cannot attempt to read that particular spell again until the next day.
-        A \ritual{read magic} ritual automatically deciphers a magical writing without a skill check.
-        If the person who created the magical writing is on hand to help the reader, success is also automatic.
+        You can identify magical writing using the Spellcraft skill (see \pcref{Identify Magical Writing}).
 
-        Once a character deciphers a particular magical writing, they do not need to decipher it again.
-        Deciphering a magical writing allows the reader to identify the spell and gives some idea of its effects (as explained in the spell or ritual description).
-        
 
-\section{Spell Lists}
+\section{Mystic Sphere Lists}\label{Mystic Sphere Lists}
 
-\input{spell_lists.tex}
+    \input{mystic_sphere_lists.tex}
 
-\section{Spell Descriptions}
+\section{Mystic Sphere Descriptions}\label{Mystic Sphere Descriptions}
 
-\input{spell_descriptions.tex}
-
-\section{Ritual Descriptions}
-
-\input{ritual_descriptions.tex}
+    \input{mystic_sphere_descriptions.tex}
