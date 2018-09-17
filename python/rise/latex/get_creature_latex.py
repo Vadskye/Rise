@@ -160,9 +160,8 @@ def resistance_text(resistances):
 
 def strike_text(strikes):
     strike_texts = []
-    for strike_name in strikes:
-        strike = strikes[strike_name]
-        defense_text = f" vs. {strike.defense.title()}" if strike.defense else ""
+    for strike in strikes:
+        defense_text = f" vs. {strike.defense.title()}" if strike.defense != 'Armor' else ""
         strike_texts.append(f"{strike.name} +{strike.accuracy}{defense_text} ({strike.damage})")
     text = " or ".join(strike_texts)
     return text[0].upper() + text[1:]

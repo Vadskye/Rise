@@ -1,15 +1,17 @@
 defenses = [
+    'Armor',
     'Fortitude',
     'Mental',
     'Reflex',
-    'Special',
 ]
+
 mystic_sphere_sources = [
     'Arcane',
     'Divine',
     'Nature',
     'Pact',
 ]
+
 domains = [
     'Air',
     'Chaos',
@@ -31,15 +33,6 @@ domains = [
     'Water',
     'Wild',
 ]
-categories = set([
-    'buff, offense',
-    'buff, defense',
-    'buff, utility',
-    'damage',
-    'debuff, combat',
-    'debuff, mobility',
-    'narrative',
-])
 
 schools = [
     'Abjuration',
@@ -51,4 +44,13 @@ schools = [
     'Illusion',
     'Transmutation',
     'Vivimancy',
+]
+
+attributes = [
+    'strength',
+    'dexterity',
+    'constitution',
+    'intelligence',
+    'perception',
+    'willpower',
 ]

@@ -1,3 +1,5 @@
+from copy import copy
+from rise.statistics.active_ability import ActiveAbility
 from rise.statistics.creature import Creature
 from rise.statistics.character_class import CharacterClass
 from rise.statistics.race import Race
@@ -20,10 +22,72 @@ def generate_sample_creatures():
 
     samples = {
         'monsters': generate_sample_monsters(),
+        'tests': generate_test_creatures(),
     }
 
     cache = samples
     return cache
+
+
+def generate_test_creatures():
+    tests = {}
+
+    tests['fighter_1'] = Creature(
+        character_class=CharacterClass('fighter'),
+        level=1,
+        name='Fighter',
+        race=Race('human'),
+        starting_attributes=[2, 0, 2, 0, 2, 0],
+        armor=Armor('breastplate'),
+        weapons=[Weapon('longsword')],
+        shield=Shield('heavy'),
+    )
+
+    tests['fighter_7'] = copy(tests['fighter_1'])
+    tests['fighter_7'].level = 7
+
+    tests['fighter_13'] = copy(tests['fighter_1'])
+    tests['fighter_13'].level = 13
+
+    tests['fighter_19'] = copy(tests['fighter_1'])
+    tests['fighter_19'].level = 19
+
+    tests['fighter_1_pa'] = copy(tests['fighter_1'])
+    tests['fighter_1_pa'].active_abilities = [ActiveAbility('power attack')]
+
+    tests['sorcerer_1_firebolt'] = Creature(
+        character_class=CharacterClass('mage'),
+        level=1,
+        name='Mage',
+        race=Race('human'),
+        starting_attributes=[0, 0, 2, 0, 2, 2],
+        armor=Armor('studded leather'),
+        weapons=[Weapon('club')],
+        active_abilities=[ActiveAbility('firebolt')],
+    )
+    tests['sorcerer_1_inflict'] = Creature(
+        character_class=CharacterClass('mage'),
+        level=1,
+        name='Mage',
+        race=Race('human'),
+        starting_attributes=[0, 0, 2, 0, 2, 2],
+        armor=Armor('studded leather'),
+        weapons=[Weapon('club')],
+        active_abilities=[ActiveAbility('inflict wounds')],
+    )
+    tests['sorcerer_1_multispell'] = Creature(
+        character_class=CharacterClass('mage'),
+        level=1,
+        name='Mage',
+        race=Race('human'),
+        starting_attributes=[0, 0, 2, 0, 2, 2],
+        armor=Armor('studded leather'),
+        weapons=[Weapon('club')],
+        active_abilities=[ActiveAbility('firebolt'), ActiveAbility('inflict wounds')],
+    )
+
+    return tests
+
 
 def generate_sample_monsters():
     monsters = {}

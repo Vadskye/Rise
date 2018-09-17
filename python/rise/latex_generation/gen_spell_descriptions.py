@@ -7,7 +7,7 @@ from rise.latex.header import Header
 from rise.latex.mystic_sphere import MysticSphere
 from rise.latex.spell import Spell
 from rise.latex.util import latexify
-import rise.latex.rise_data as rise_data
+import rise.statistics.rise_data as rise_data
 from logging import getLogger, WARNING
 # from pprint import pformat
 logger = getLogger(__name__)
