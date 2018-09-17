@@ -1,6 +1,6 @@
 from math import ceil
 
-def run_combat(red, blue):
+def run_combat(blue, red):
     """Run a combat between two creatures until one of them reaches 0.
 
     Args:
@@ -11,20 +11,20 @@ def run_combat(red, blue):
         object: Unknown
     """
 
-    red_defenses = get_defenses(red)
     blue_defenses = get_defenses(blue)
+    red_defenses = get_defenses(red)
 
-    red_attack = find_best_attack(red.attacks, blue_defenses)
     blue_attack = find_best_attack(blue.attacks, red_defenses)
+    red_attack = find_best_attack(red.attacks, blue_defenses)
 
-    red_average_damage = get_average_damage(red_attack, blue_defenses)
     blue_average_damage = get_average_damage(blue_attack, red_defenses)
+    red_average_damage = get_average_damage(red_attack, blue_defenses)
 
-    red_survival_time = red.hit_points / blue_average_damage
     blue_survival_time = blue.hit_points / red_average_damage
+    red_survival_time = red.hit_points / blue_average_damage
 
-    winner = 'red' if red_survival_time > blue_survival_time else None
-    winner = 'blue' if blue_survival_time > red_survival_time else None
+    winner = 'Blue' if blue_survival_time > red_survival_time else None
+    winner = 'Red' if red_survival_time > blue_survival_time else winner
     winner = winner or 'Tie'
 
     return {
