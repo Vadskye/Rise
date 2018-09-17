@@ -32,7 +32,7 @@ def generate_sample_creatures():
 def generate_test_creatures():
     tests = {}
 
-    tests['fighter_1'] = Creature(
+    tests['fighter 1'] = Creature(
         character_class=CharacterClass('fighter'),
         level=1,
         name='Fighter',
@@ -43,19 +43,23 @@ def generate_test_creatures():
         shield=Shield('heavy'),
     )
 
-    tests['fighter_7'] = copy(tests['fighter_1'])
-    tests['fighter_7'].level = 7
+    tests['fighter 7'] = copy(tests['fighter 1'])
+    tests['fighter 7'].level = 7
 
-    tests['fighter_13'] = copy(tests['fighter_1'])
-    tests['fighter_13'].level = 13
+    tests['fighter 13'] = copy(tests['fighter 1'])
+    tests['fighter 13'].level = 13
 
-    tests['fighter_19'] = copy(tests['fighter_1'])
-    tests['fighter_19'].level = 19
+    tests['fighter 19'] = copy(tests['fighter 1'])
+    tests['fighter 19'].level = 19
 
-    tests['fighter_1_pa'] = copy(tests['fighter_1'])
-    tests['fighter_1_pa'].active_abilities = [ActiveAbility('power attack')]
+    tests['fighter 1 pa'] = copy(tests['fighter 1'])
+    tests['fighter 1 pa'].active_abilities = [ActiveAbility('power attack')]
 
-    tests['sorcerer_1_firebolt'] = Creature(
+    tests['fighter 1 pa greatsword'] = copy(tests['fighter 1'])
+    tests['fighter 1 pa greatsword'].weapons = [Weapon('greatsword'), Weapon('longsword')]
+    tests['fighter 1 pa greatsword'].active_abilities = [ActiveAbility('power attack')]
+
+    tests['sorcerer 1 firebolt'] = Creature(
         character_class=CharacterClass('mage'),
         level=1,
         name='Mage',
@@ -65,7 +69,7 @@ def generate_test_creatures():
         weapons=[Weapon('club')],
         active_abilities=[ActiveAbility('firebolt')],
     )
-    tests['sorcerer_1_inflict'] = Creature(
+    tests['sorcerer 1 inflict'] = Creature(
         character_class=CharacterClass('mage'),
         level=1,
         name='Mage',
@@ -75,7 +79,7 @@ def generate_test_creatures():
         weapons=[Weapon('club')],
         active_abilities=[ActiveAbility('inflict wounds')],
     )
-    tests['sorcerer_1_multispell'] = Creature(
+    tests['sorcerer 1 multispell'] = Creature(
         character_class=CharacterClass('mage'),
         level=1,
         name='Mage',

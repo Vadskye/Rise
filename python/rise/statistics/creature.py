@@ -84,6 +84,10 @@ class Creature(object):
         return 6 + self.starting_willpower + self.cr_mod
 
     @property
+    def recovery_action_points(self):
+        return self.action_points // 2
+
+    @property
     def armor_defense(self):
         return sum([
             self.armor.defense_bonus if self.armor else 0,
