@@ -2,7 +2,7 @@
 
 import click
 from rise.latex_generation.book_path import book_path
-from rise.latex.monster import get_latex_from_creature
+from rise.latex.get_creature_latex import get_creature_latex
 from rise.latex.ability import active_ability, passive_ability
 from rise.statistics.armor import Armor
 from rise.statistics.character_class import CharacterClass
@@ -38,12 +38,11 @@ passives = {
     """),
 }
 
-def aberrations():
+def aberrations(sample_monsters):
     monsters = []
-    sample_creatures = get_sample_creatures()
 
-    aboleth = sample_creatures['aboleth']
-    monsters.append(get_latex_from_creature(
+    aboleth = sample_monsters['aboleth']
+    monsters.append(get_creature_latex(
         aboleth,
         active_abilities=[
             active_ability('Mind Crush', f"""
@@ -69,7 +68,7 @@ def aberrations():
     return '\n\n'.join(monsters)
 
 
-def animals():
+def animals(sample_monsters):
     monsters = []
 
     eel = Creature(
@@ -83,7 +82,7 @@ def animals():
         starting_attributes=[2, 2, 0, -8, 1, 0],
         weapons=[Weapon('bite')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         eel,
     ))
 
@@ -98,7 +97,7 @@ def animals():
         starting_attributes=[3, 1, 2, -7, 1, 0],
         weapons=[Weapon('bite'), Weapon('claw')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         black_bear,
         active_abilities=[
             active_ability('Rend', """
@@ -108,7 +107,7 @@ def animals():
         immunities=['staggered'],
     ))
 
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         modifiers['ichor'](black_bear),
         active_abilities=[
             active_ability('Rend', """
@@ -133,7 +132,7 @@ def animals():
         starting_attributes=[3, 1, 2, -7, 1, 0],
         weapons=[Weapon('bite'), Weapon('claw')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         brown_bear,
         active_abilities=[
             active_ability('Rend', """
@@ -154,7 +153,7 @@ def animals():
         starting_attributes=[3, 3, 1, -6, 2, 0],
         weapons=[Weapon('bite')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         dire_wolf,
         active_abilities=[
             active_ability('Pounce', """
@@ -174,7 +173,7 @@ def animals():
         starting_attributes=[-6, 1, -4, -7, 1, -2],
         weapons=[Weapon('bite')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         ferret,
     ))
 
@@ -188,7 +187,7 @@ def animals():
         starting_attributes=[1, 1, 1, -7, 1, 0],
         weapons=[Weapon('bite')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         pony,
     ))
 
@@ -202,7 +201,7 @@ def animals():
         starting_attributes=[-9, 3, -4, -6, 2, 0],
         weapons=[Weapon('talon')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         raven,
     ))
 
@@ -217,7 +216,7 @@ def animals():
         starting_attributes=[4, 2, 1, -7, 1, 0],
         weapons=[Weapon('talon')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         roc,
         active_abilities=[
             active_ability('Flyby Attack', """
@@ -239,7 +238,7 @@ def animals():
         starting_attributes=[2, 4, 0, -8, 3, -1],
         weapons=[Weapon('bite')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         wasp,
         speed="50 ft. fly (good)",
     ))
@@ -254,7 +253,7 @@ def animals():
         starting_attributes=[1, 3, 1, -6, 2, 0],
         weapons=[Weapon('bite')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         wolf,
     ))
 
@@ -270,7 +269,7 @@ def animals():
         starting_attributes=[3, 0, 3, -9, 2, 0],
         weapons=[Weapon('bite')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         dire_beetle,
     ))
 
@@ -286,7 +285,7 @@ def animals():
         starting_attributes=[3, 0, 3, -9, 2, 0],
         weapons=[Weapon('bite')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         huge_centipede,
     ))
 
@@ -295,7 +294,7 @@ def animals():
     return '\n\n'.join(monsters)
 
 
-def animates():
+def animates(sample_monsters):
     monsters = []
 
     elemental_air = Creature(
@@ -310,7 +309,7 @@ def animates():
         starting_attributes=[0, 4, 1, 0, 3, 0],
         weapons=[Weapon('slam')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         elemental_air,
         active_abilities=[],
     ))
@@ -327,7 +326,7 @@ def animates():
         starting_attributes=[3, 0, 2, 0, 3, 0],
         weapons=[Weapon('slam'), Weapon('hoof')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         ram_animus,
         active_abilities=[
             active_ability('Forceful Smash', f"""
@@ -341,7 +340,7 @@ def animates():
 
     return '\n\n'.join(monsters)
 
-def humanoids():
+def humanoids(sample_monsters):
     monsters = []
 
     cultist = Creature(
@@ -354,7 +353,7 @@ def humanoids():
         starting_attributes=[0, 0, 0, -1, -1, 3],
         weapons=[Weapon('club')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         cultist,
         active_abilities=[
             active_ability('Hex', f"""
@@ -376,7 +375,7 @@ def humanoids():
         starting_attributes=[0, 2, -1, -2, 2, 1],
         weapons=[Weapon('club'), Weapon('sling')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         goblin_shouter,
         active_abilities=[
             active_ability('Shout of Running', """
@@ -400,7 +399,7 @@ def humanoids():
         starting_attributes=[0, 3, -1, -2, 2, 0],
         weapons=[Weapon('shortsword'), Weapon('sling')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         goblin_stabber,
         active_abilities=[
             active_ability('Sneeky Stab', f"""
@@ -423,7 +422,7 @@ def humanoids():
         starting_attributes=[4, 0, 1, 0, 2, 2],
         weapons=[Weapon('greataxe')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         orc_chieftain,
         active_abilities=[
             active_ability('Hit Everyone Else', """
@@ -451,7 +450,7 @@ def humanoids():
         starting_attributes=[3, 0, 1, -1, 0, 0],
         weapons=[Weapon('greataxe')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         orc_grunt,
         active_abilities=[
             active_ability('Hit Harder', f"""
@@ -473,7 +472,7 @@ def humanoids():
         starting_attributes=[3, 0, 1, -1, 0, 2],
         weapons=[Weapon('greataxe')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         orc_loudmouth,
         active_abilities=[
             active_ability('Hit Harder', f"""
@@ -499,7 +498,7 @@ def humanoids():
         starting_attributes=[2, 0, 1, -1, 0, 2],
         weapons=[Weapon('greatstaff')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         orc_shaman,
         active_abilities=[
             active_ability('Hit Worse', f"""
@@ -524,7 +523,7 @@ def humanoids():
         starting_attributes=[4, 2, 1, -1, 0, 0],
         weapons=[Weapon('greataxe')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         orc_savage,
         active_abilities=[
             active_ability('Hit Fast', f"""
@@ -537,7 +536,7 @@ def humanoids():
     return '\n\n'.join(monsters)
 
 
-def magical_beasts():
+def magical_beasts(sample_monsters):
     monsters = []
 
     large_red_dragon = Creature(
@@ -551,7 +550,7 @@ def magical_beasts():
         starting_attributes=[3, 0, 3, 2, 2, 2],
         weapons=[Weapon('bite')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         large_red_dragon,
     ))
 
@@ -567,7 +566,7 @@ def magical_beasts():
         starting_attributes=[3, 1, 2, -7, 1, 0],
         weapons=[Weapon('bite')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         ankheg,
         active_abilities=[
             active_ability('Drag Prey', f"""
@@ -590,7 +589,7 @@ def magical_beasts():
         starting_attributes=[0, 2, 0, 2, 1, 3],
         weapons=[Weapon('bite')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         aranea,
         active_abilities=[
             # Is this how shapeshifting should work?
@@ -613,7 +612,7 @@ def magical_beasts():
         starting_attributes=[2, -1, 2, -6, 2, 0],
         weapons=[Weapon('bite')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         basilisk,
         active_abilities=[
             active_ability('Petrifying Gaze', f"""
@@ -637,7 +636,7 @@ def magical_beasts():
         starting_attributes=[4, 1, 2, -3, 1, 0],
         weapons=[Weapon('bite'), Weapon('claw')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         behir,
         active_abilities=[
             active_ability('Electric Breath', f"""
@@ -665,7 +664,7 @@ def magical_beasts():
         starting_attributes=[0, 3, 0, 0, 1, 0],
         weapons=[Weapon('bite')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         blink_dog,
         active_abilities=[
             active_ability('Blink', f"""
@@ -686,7 +685,7 @@ def magical_beasts():
         starting_attributes=[1, 2, 2, 0, 2, 0],
         weapons=[Weapon('longsword'), Weapon('longbow'), Weapon('hoof')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         centaur,
     ))
 
@@ -701,7 +700,7 @@ def magical_beasts():
         starting_attributes=[-2, 3, 0, -8, 1, 0],
         weapons=[Weapon('bite')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         cockatrice,
         active_abilities=[
             active_ability('Petrifying Bite', f"""
@@ -724,7 +723,7 @@ def magical_beasts():
         starting_attributes=[3, 0, 1, -8, 0, 0],
         weapons=[Weapon('slam')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         darkmantle,
         active_abilities=[
             active_ability('Natural Grab', f"""
@@ -747,7 +746,7 @@ def magical_beasts():
         starting_attributes=[4, 0, 3, -8, 2, 0],
         weapons=[Weapon('bite'), Weapon('slam')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         frost_worm,
         immunities=['cold'],
         active_abilities=[
@@ -786,7 +785,7 @@ def magical_beasts():
         starting_attributes=[3, 3, 0, -8, 2, -1],
         weapons=[Weapon('claw')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         girallon,
     ))
 
@@ -801,7 +800,7 @@ def magical_beasts():
         starting_attributes=[2, 3, 2, -4, 1, 0],
         weapons=[Weapon('talon')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         griffin,
         active_abilities=[
             active_ability('Flyby Attack', """
@@ -823,7 +822,7 @@ def magical_beasts():
         starting_attributes=[2, 0, 4, -8, 0, 0],
         weapons=[Weapon('bite')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         hydra5,
         actions='Five in action phase',
         passive_abilities=[
@@ -856,7 +855,7 @@ def magical_beasts():
         starting_attributes=[2, 0, 4, -8, 0, 0],
         weapons=[Weapon('bite')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         hydra6,
         actions='Six in action phase',
         passive_abilities=[
@@ -888,7 +887,7 @@ def magical_beasts():
         starting_attributes=[3, 2, 1, -2, 2, 0],
         weapons=[Weapon('greataxe'), Weapon('gore')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         minotaur,
         active_abilities=[
             active_ability('Impaling Charge', f"""
@@ -913,7 +912,7 @@ def magical_beasts():
         starting_attributes=[2, 3, 0, -7, 1, 0],
         weapons=[Weapon('bite')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         thaumavore,
         passive_abilities=[
             passive_ability('Consume Magic', f"""
@@ -939,14 +938,14 @@ def magical_beasts():
         starting_attributes=[1, 3, 0, 1, 3, 0],
         weapons=[Weapon('bite')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         banehound,
     ))
 
     return '\n\n'.join(monsters)
 
 
-def monstrous_humanoids():
+def monstrous_humanoids(sample_monsters):
     monsters = []
 
     banshee = Creature(
@@ -960,7 +959,7 @@ def monstrous_humanoids():
         starting_attributes=[1, 2, 0, 0, 1, 2],
         weapons=[Weapon('claw')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         banshee,
         active_abilities=[
             active_ability('Wail', f"""
@@ -982,7 +981,7 @@ def monstrous_humanoids():
         starting_attributes=[3, -2, 1, -2, 0, 0],
         weapons=[Weapon('greatclub'), Weapon('boulder')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         hill_giant,
         active_abilities=[
             active_ability('Boulder Toss', """
@@ -1003,7 +1002,7 @@ def monstrous_humanoids():
         starting_attributes=[3, -2, 3, -1, 2, 0],
         weapons=[Weapon('greatclub'), Weapon('boulder')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         stone_giant,
         active_abilities=[
             active_ability('Boulder Toss', """
@@ -1025,7 +1024,7 @@ def monstrous_humanoids():
         starting_attributes=[3, -1, 1, 1, 2, 2],
         weapons=[Weapon('greatsword')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         storm_giant,
         active_abilities=[
             active_ability('Lightning Javelin', f"""
@@ -1055,7 +1054,7 @@ def monstrous_humanoids():
         starting_attributes=[0, 2, 0, 2, 3, 2],
         weapons=[Weapon('claw')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         green_hag,
         active_abilities=[
             active_ability('Vital Surge', f"""
@@ -1089,7 +1088,7 @@ def monstrous_humanoids():
         starting_attributes=[0, 1, 0, 1, 2, 2],
         weapons=[Weapon('longbow'), Weapon('snakes')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         medusa,
         active_abilities=[
             active_ability('Petrifying Gaze', f"""
@@ -1104,7 +1103,7 @@ def monstrous_humanoids():
     return '\n\n'.join(monsters)
 
 
-def outsiders():
+def outsiders(sample_monsters):
     monsters = []
 
     astral_deva = Creature(
@@ -1119,7 +1118,7 @@ def outsiders():
         starting_attributes=[2, 2, 2, 2, 2, 2],
         weapons=[Weapon('mace')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         astral_deva,
         active_abilities=[
             active_ability('Smite', """
@@ -1142,7 +1141,7 @@ def outsiders():
         starting_attributes=[1, 4, -1, 0, 3, 0],
         weapons=[Weapon('bite')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         arrowhawk,
         active_abilities=[
             active_ability('Electrobolt', f"""
@@ -1166,7 +1165,7 @@ def outsiders():
         starting_attributes=[2, 3, 2, 0, 1, 0],
         weapons=[Weapon('bite')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         bebelith,
         active_abilities=[
             active_ability('Venomous Bite', f"""
@@ -1188,7 +1187,7 @@ def outsiders():
         starting_attributes=[1, 3, 0, -3, 2, 0],
         weapons=[Weapon('bite')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         hell_hound,
         active_abilities=[
             active_ability('Fire Breath', f"""
@@ -1212,7 +1211,7 @@ def outsiders():
         # TODO: weapons deal fire damage, and its strength is lower
         weapons=[Weapon('spear'), Weapon('tail slam')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         flamebrother_salamander,
         active_abilities=[
             active_ability('Flame Aura', f"""
@@ -1241,7 +1240,7 @@ def outsiders():
         starting_attributes=[2, 3, 0, 1, 2, 1],
         weapons=[Weapon('shortsword')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         janni,
     ))
 
@@ -1259,7 +1258,7 @@ def outsiders():
         # TODO: weapons deal fire damage, and its strength is lower
         weapons=[Weapon('spear'), Weapon('tail slam')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         salamander_battlemaster,
         active_abilities=[
             active_ability('Flame Aura', f"""
@@ -1279,7 +1278,7 @@ def outsiders():
     return '\n\n'.join(monsters)
 
 
-def undead():
+def undead(sample_monsters):
     monsters = []
 
     allip = Creature(
@@ -1291,7 +1290,7 @@ def undead():
         starting_attributes=[0, 3, 0, 0, 0, 3],
         weapons=[Weapon('draining touch')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         allip,
     ))
 
@@ -1305,7 +1304,7 @@ def undead():
         starting_attributes=[0, 3, 0, 0, 0, 3],
         weapons=[Weapon('draining touch')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         spectre,
     ))
 
@@ -1321,7 +1320,7 @@ def undead():
         starting_attributes=[0, 3, 0, 1, 3, 2],
         weapons=[Weapon('claw')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         dirgewalker,
         active_abilities=[
             active_ability('Animating Caper', """
@@ -1345,7 +1344,7 @@ def undead():
         starting_attributes=[2, 2, 0, 0, 0, 0],
         weapons=[Weapon('claw')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         skeleton,
     ))
 
@@ -1360,7 +1359,7 @@ def undead():
         starting_attributes=[2, 2, 0, 0, 0, 0],
         weapons=[Weapon('claw')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         skeleton_warrior,
     ))
 
@@ -1374,7 +1373,7 @@ def undead():
         starting_attributes=[2, 0, 3, 0, 0, 0],
         weapons=[Weapon('slam')],
     )
-    monsters.append(get_latex_from_creature(
+    monsters.append(get_creature_latex(
         zombie,
         # TODO: this creature acts during the delayed action phase
     ))
@@ -1383,30 +1382,31 @@ def undead():
 
 
 def generate_monsters():
+    sample_monsters = get_sample_creatures()['monsters']
     monsters = f"""
         \\section<Aberrations>
-        {aberrations()}
+        {aberrations(sample_monsters)}
 
         \\section<Animates>
-        {animates()}
+        {animates(sample_monsters)}
 
         \\section<Animals>
-        {animals()}
+        {animals(sample_monsters)}
 
         \\section<Humanoids>
-        {humanoids()}
+        {humanoids(sample_monsters)}
 
         \\section<Magical Beasts>
-        {magical_beasts()}
+        {magical_beasts(sample_monsters)}
 
         \\section<Monstrous Humanoids>
-        {monstrous_humanoids()}
+        {monstrous_humanoids(sample_monsters)}
 
         \\section<Outsiders>
-        {outsiders()}
+        {outsiders(sample_monsters)}
 
         \\section<Undead>
-        {undead()}
+        {undead(sample_monsters)}
     """
 
     return monsters
