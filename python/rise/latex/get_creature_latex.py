@@ -1,7 +1,7 @@
 from rise.latex.util import join, tag_if
 
 # from rise.statistics.creature
-def get_latex_from_creature(
+def get_creature_latex(
         creature,
         actions=None,
         active_abilities=None,
@@ -12,6 +12,7 @@ def get_latex_from_creature(
         speed=None,
 ):
     return get_latex(
+        # use a different calculation for monster AP
         action_points=max(1, 1 + creature.challenge_rating + creature.starting_willpower),
         armor_defense=creature.armor_defense,
         challenge_rating=creature.challenge_rating,

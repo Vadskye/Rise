@@ -56,6 +56,10 @@ class Creature(object):
         self.mental_defense_misc = 0
 
     @property
+    def action_points(self):
+        return 6 + self.starting_willpower + self.cr_mod
+
+    @property
     def armor_defense(self):
         return sum([
             self.armor.defense_bonus if self.armor else 0,
