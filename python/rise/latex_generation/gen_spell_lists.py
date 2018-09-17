@@ -3,8 +3,8 @@
 import click
 from rise.latex_generation.book_path import book_path
 from rise.latex_generation.gen_spell_descriptions import generate_mystic_spheres
-from rise.latex.rise_data import mystic_sphere_sources
 from rise.latex.util import latexify
+from rise.statistics.rise_data import mystic_sphere_sources
 
 def by_source(mystic_spheres):
     mystic_spheres_by_source = {source: [] for source in mystic_sphere_sources}
