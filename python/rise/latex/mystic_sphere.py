@@ -1,5 +1,5 @@
 from logging import getLogger
-import rise.latex.rise_data as rise_data
+import rise.statistics.rise_data as rise_data
 from rise.latex.util import join
 logger = getLogger(__name__)
 

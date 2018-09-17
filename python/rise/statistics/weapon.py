@@ -1,13 +1,12 @@
-# For brevity, return a three-item array instead of a dict.
-# The order is [Damage die modifier, encumbrance category, attribute, defense].
+# For brevity, return a four-item array instead of a dict.
+# The order is [Damage die modifier, encumbrance category, damage_type, defense].
 # If the weapon has no encumbrance, "encumbrance category" is None.
-# If no special attribute is used, "attribute" is None.
-# If Armor defense is used, "defense" is None.
+# Damage type is either "magical" or "mundane", defaulting to "mundane".
+# If Armor defense is used, "defense" is None or "Armor".
 def properties_from_weapon_name(name):
     return {
         # Manufactured weapons
         'club': [-1, Weapon.MEDIUM],
-        'draining touch': [0, Weapon.LIGHT, 'willpower', 'reflex'],
         'greataxe': [1, Weapon.HEAVY],
         'greatclub': [1, Weapon.HEAVY],
         'greatstaff': [0, Weapon.HEAVY],
@@ -33,6 +32,7 @@ def properties_from_weapon_name(name):
 
         # Special "weapons"
         'boulder': [0, Weapon.HEAVY],
+        'draining touch': [0, Weapon.LIGHT, 'magical', 'Reflex'],
     }[name]
 
 class Weapon(object):
@@ -45,5 +45,5 @@ class Weapon(object):
         properties = properties_from_weapon_name(name)
         self.damage_modifier = properties[0]
         self.encumbrance_category = properties[1]
-        self.attribute = properties[2] if len(properties) >= 3 else None
+        self.damage_type = properties[2] if len(properties) >= 3 else 'mundane'
         self.defense = properties[3] if len(properties) >= 4 else None
