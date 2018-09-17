@@ -5,7 +5,6 @@ from rise.statistics.strike import Strike
 from rise.statistics.weapon import Weapon
 
 def calculate_attribute(starting_value, level):
-    # Doesn't match PC growth, but looks better and shouldn't matter
     if starting_value == 1:
         return level // 2 + 1
     elif starting_value > 0:
