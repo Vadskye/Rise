@@ -12,6 +12,7 @@ from rise.statistics.shield import Shield
 from rise.statistics.size import Size
 from rise.statistics.weapon import Weapon
 from rise.latex.util import latexify
+from rise.statistics.sample_creatures import get_sample_creatures
 
 def trunc_to_five(n):
     return (n // 5) * 5
@@ -39,19 +40,9 @@ passives = {
 
 def aberrations():
     monsters = []
+    sample_creatures = get_sample_creatures()
 
-    aboleth = Creature(
-        challenge_rating=4,
-        character_class=CharacterClass('adept'),
-        level=12,
-        key_attribute='willpower',
-        name='Aboleth',
-        natural_armor=6,
-        race=Race('aberration'),
-        size=Size('huge'),
-        starting_attributes=[2, 0, 2, 2, 1, 4],
-        weapons=[Weapon('tentacle')],
-    )
+    aboleth = sample_creatures['aboleth']
     monsters.append(get_latex_from_creature(
         aboleth,
         active_abilities=[
