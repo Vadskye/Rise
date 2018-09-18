@@ -4,6 +4,7 @@ def active_ability(
         name,
         effect,
         tags=None,
+        ap_cost=False,
 ):
     tag_text = (
         '[' + ', '.join([
@@ -11,10 +12,12 @@ def active_ability(
         ]) + ']'
     ) if tags else ""
 
+    ability_type = 'attuneability' if 'Attune' in tag_text else ('apability' if ap_cost else 'freeability')
+
     return f"""
-        \\begin<ability><{name}>{tag_text}
+        \\begin<{ability_type}><{name}>{tag_text}
             {effect.strip()}
-        \\end<ability>
+        \\end<{ability_type}>
     """
 
 def passive_ability(
