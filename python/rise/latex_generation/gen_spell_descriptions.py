@@ -775,24 +775,24 @@ def generate_mystic_spheres():
             Spell('Greater Battle Blessing', 5, """
                 This spell functions like the \\spell<battle blessing> spell, except that the bonus increases to +2.
             """),
-            Spell('Blessing of Resilience', 1, """
+            Spell('Blessing of Resilience', 3, """
                 Choose a willing creature within \\rngclose range.
                 The target ignores the next two \\glossterm<conditions> it would receive.
                 After resisting two conditions in this way, this spell ends.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)']),
-            Spell('Greater Blessing of Resilience', 3, """
+            Spell('Greater Blessing of Resilience', 5, """
                 This spell functions like the \\textit<blessing of resilience> spell, except that the spell does not end until it resists three \\glossterm<conditions>.
             """),
-            Spell('Supreme Blessing of Resilience', 5, """
-                This spell functions like the \\textit<blessing of resilience> spell, except that the spell can resist any number of conditions without ending.
+            Spell('Supreme Blessing of Resilience', 7, """
+                This spell functions like the \\textit<blessing of resilience> spell, except that the spell does not end until it resists four \\glossterm<conditions>.
             """),
             Spell('Cleansing Blessing', 1, """
                 All allies within \\arealarge radius from you can remove one \\glossterm<condition> affecting them.
             """),
             Spell('Greater Cleansing Blessing', 4, """
-                This spell functions like the \\spell<cleansing blessing> spell, except that it can remove two conditions instead of one.
+                This spell functions like the \\spell<cleansing blessing> spell, except that each ally can remove two conditions instead of one.
             """),
             Spell('Blessing of Might', 2, """
                 The target gains a +1d \\glossterm<magic bonus> to damage with all abilities.
