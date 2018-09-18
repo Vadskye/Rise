@@ -11,12 +11,14 @@ class Spell(object):
             effect_text,
             tags=None,
             extra_text=None,
+            ap_cost=True,
     ):
         self.level = level
         self.name = name
         self.effect_text = effect_text
         self.tags = tags
         self.extra_text = extra_text
+        self.ap_cost = ap_cost
 
         if (self.tags):
             for tag in self.tags:
@@ -45,11 +47,13 @@ class Spell(object):
             ]) + ']'
         ) if self.tags else ""
 
+        ability_type = 'attuneability' if 'Attune' in tag_text else ('apability' if self.ap_cost else 'freeability')
+
         return f"""
             \\lowercase<\\hypertarget<spell:{self.name}><>>\\label<spell:{self.name}>
-            \\begin<ability>[\\nth<{self.level}>]<\\hypertarget<spell:{self.name}><{self.name}>>{tag_text}
+            \\begin<{ability_type}>[\\nth<{self.level}>]<\\hypertarget<spell:{self.name}><{self.name}>>{tag_text}
                 {self.effect_text.strip()}
-            \\end<ability>
+            \\end<{ability_type}>
             \\vspace<0.25em>
             {self.extra_text.strip() if self.extra_text else ""}
         """

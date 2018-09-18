@@ -9,10 +9,12 @@ class Effects(object):
             name,
             effect_text,
             tags=None,
+            ap_cost=True,
     ):
         self.effect_text = effect_text
         self.name = name
         self.tags = tags
+        self.ap_cost = ap_cost
 
         if (self.tags):
             for tag in self.tags:
@@ -25,10 +27,12 @@ class Effects(object):
             glosstermify(tag) for tag in sorted(self.tags)
         ]) if self.tags else ""
 
+        ability_type = 'attuneability' if 'Attune' in tag_text else ('apability' if self.ap_cost else 'freeability')
+
         return join(
             f"""
-                \\begin<ability><{self.name}>{f"[{tag_text}]" if tag_text else ""}
+                \\begin<{ability_type}><{self.name}>{f"[{tag_text}]" if tag_text else ""}
                     {self.effect_text.strip()}
-                \\end<ability>
+                \\end<{ability_type}>
             """
         )
