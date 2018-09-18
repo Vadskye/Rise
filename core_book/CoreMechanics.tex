@@ -191,6 +191,20 @@ It defines how attributes work and explains how to make physical attacks in comb
 \section{Character Statistics}
     This section explains how character statistics, such as how strong you are or how accurate your attacks are, should be calculated.
 
+    \subsection{Action Points}\label{Action Points}
+        You can use a wide variety of special abilities by spending \glossterm{action points}.
+        Abilities that require action points have the \glossterm{AP} or \glossterm{Attune} tags (see \pcref{Ability Tags}).
+
+        There are two kinds of action points: \glossterm{recovery action points} and \glossterm{reserve action points}.
+        The difference between the two types is how quickly you can get them back after spending them.
+        You can get back a spent \glossterm{recovery action point} with a \glossterm{short rest},
+            but a spent \glossterm{reserve action point} does not return until after a \glossterm{long rest}.
+        For details, see \pcref{Resting}.
+        Unless otherwise noted, you can use abilities that require action points by spending either type of action point.
+
+        A typical 1st level character has three \glossterm{recovery action points} and three \glossterm{reserve action points}.
+        You can gain additional \glossterm{reserve action points} with a high Willpower, and some abilities can also grant action points.
+
     \subsection{Attributes}\label{Attributes}
 
         Each character has six \glossterm{attributes}: Strength (Str), Dexterity (Dex), Constitution (Con), Intelligence (Int), Perception (Per), and Willpower (Wil).
@@ -279,7 +293,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             Willpower represents your ability to endure mental hardships.
             It has the following effects:
             \begin{itemize}
-                \item You gain a bonus (or penalty) to the number of \glossterm{action points} you have equal to your starting Willpower.
+                \item You gain a bonus (or penalty) to the number of \glossterm{reserve action points} you have equal to your starting Willpower.
                 \item You gain a bonus (or penalty) to your Mental defense equal to your starting Willpower.
             \end{itemize}
 
@@ -1049,26 +1063,23 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \subsection{Attunement}\label{Attunement}
             Many abilities last as long as a creature \glossterm{attunes} to them.
+            % This wording would be simpler if attuning to abilities strictly cost recovery action points. 
+            % However, that leads to weird scenarios where it's sometimes better to use reserve AP while you still have recovery AP remaining.
             Attuning to an ability costs an \glossterm{action point}.
-            As long as you are attuned to an ability, you cannot regain the action point spent to attune to that ability.
-            In addition, each action point used for attunement reduces the number of action points you recover with a \glossterm{short rest} or \glossterm{long rest} by one.
-            You must release your attunement before beginning to rest in order to recover the action points spent to attune to abilities.
+            When you attune to an ability, you must choose one of your \glossterm{recovery action points} which has not been used to attune to an ability.
+            As long as you remain attuned to that ability, you cannot recover that action point by any means.
+            If you cannot select a \glossterm{recovery action point} in this way,
+                such as if you have already attuned to as many abilities as you have recovery action points,
+                you cannot attune to the ability.
+            You must release your attunement before beginning to rest in order to recover the associated \glossterm{recovery action point}.
 
             You can choose to stop attuning to an ability as a \glossterm{free action}.
             If you do, the ability's effect ends.
 
             Attuned abilities continue to work across any distance, but not across planar boundaries.
-            At the end of each round, your attunement to all abilities active on a different plane than your current plane ends.
-            Planar travel that does not last a full round, such as teleportation, does not interrupt your attunement.
-
-            \subsubsection{Action Point Costs}
-                Abilities with the \glossterm{Attune} tag do not cost an \glossterm{action point} to use unless otherwise noted.
-                Instead, an action point must be spent to attune to the ability's effect.
-
-            \subsubsection{Attunement Limits}\label{Attunement Limits}
-                % TODO: wording
-                If you have spent enough action points to attune to abilities that you no longer recover action points with a \glossterm{short rest}, you cannot attune to any additional abilities.
-                You must release your attunement to currently active abilities before attuning to new abilities.
+            % TODO: wording
+            At the end of each round, your attunement to all abilities created by creatures on a different plane than your current plane ends.
+            Planar travel that does not last a full round, such as teleportation within a plane, does not interrupt your attunement.
 
             % This name is not great
             \subsubsection{Duplicate Attunement Abilities}\label{Duplicate Attunement Abilities}
@@ -1738,15 +1749,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
 \section{Daily Resources}
 
-    \subsection{Action Points}\label{Action Points}
-        You can perform a wide variety of special actions by spending \glossterm{action points}.
-        You normally have six action points.
-        You gain a bonus or penalty to the number of action points you have equal to your starting Willpower, and some abilities can grant you additional action points.
-
-        After a \glossterm{short rest}, you regain all action points you spent since your last rest, up to a maximum equal to half of your maximum action points.
-        After a \glossterm{long rest}, you recover all spent action points.
-
-    \subsection{Resting}
+    \subsection{Resting}\label{Resting}
         When you have a moment to relax, you can rest to regain some of your expended abilities.
         There are two main types of rests: a \glossterm{short rest} and a \glossterm{long rest}.
 
@@ -1756,8 +1759,8 @@ It defines how attributes work and explains how to make physical attacks in comb
             \begin{itemize}
                 \item You heal hit points equal to half your maximum hit points.
                     The Heal skill can increase this healing (see \pcref{Accelerate Recovery}).
-                \item You regain all action points you spent since your last rest, up to a maximum equal to half of your maximum action points.
-                    Being \glossterm{attuned} to effects at the start of your rest can reduce the number of action points you recover in this way (see \pcref{Attunement}).
+                \item You regain all spent \glossterm{recovery action points}.
+                    Being \glossterm{attuned} to effects at the start of your rest can prevent you from regaining spent \glossterm{recovery action points} (see \pcref{Attunement}).
                 \item You remove all \glossterm{conditions} affecting you (unless they cannot be removed normally).
                 \item Some other abilities have specific effects that last until you take a short rest.
                     For example, a barbarian cannot use their \textit{rage} ability again after raging until after they take a short rest (see Rage, page \pref{Bbn:Rage}).
@@ -1769,8 +1772,8 @@ It defines how attributes work and explains how to make physical attacks in comb
             \begin{itemize}
                 \item You heal vital damage equal to your starting Constitution \add half your level, to a minimum of 1 vital damage.
                     The Heal skill can increase this healing (see \pcref{Accelerate Recovery}).
-                \item You regain all spent \glossterm{action points}.
-                    Being \glossterm{attuned} to effects at the start of your rest can reduce the number of action points you recover in this way (see \pcref{Attunement}).
+                \item You regain all spent \glossterm{action points}, including \glossterm{reserve action points}.
+                    Being \glossterm{attuned} to effects at the start of your rest can prevent you from regaining spent \glossterm{recovery action points} (see \pcref{Attunement}).
                 \item You regain all spent \glossterm{legend points}.
                 \item You regain all spent \glossterm{item slots}.
                 \item Some other abilities have specific effects that last until you take a long rest.
