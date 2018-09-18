@@ -32,34 +32,102 @@ def generate_sample_creatures():
 def generate_test_creatures():
     tests = {}
 
-    tests['fighter 1'] = Creature(
+    tests['fighter'] = Creature(
         character_class=CharacterClass('fighter'),
         level=1,
         name='Fighter',
         race=Race('human'),
-        starting_attributes=[2, 0, 2, 0, 2, 0],
+        starting_attributes=[2, 0, 4, 0, 2, 4],
         armor=Armor('breastplate'),
         weapons=[Weapon('longsword')],
         shield=Shield('heavy'),
     )
 
-    tests['fighter 7'] = copy(tests['fighter 1'])
-    tests['fighter 7'].level = 7
+    tests['warrior'] = Creature(
+        character_class=CharacterClass('fighter'),
+        level=1,
+        name='Warrior',
+        race=Race('human'),
+        starting_attributes=[0, 0, 0, 0, 0, 0],
+        armor=Armor('breastplate'),
+        weapons=[Weapon('longsword')],
+        shield=Shield('heavy'),
+    )
 
-    tests['fighter 13'] = copy(tests['fighter 1'])
-    tests['fighter 13'].level = 13
+    modifiers = {}
 
-    tests['fighter 19'] = copy(tests['fighter 1'])
-    tests['fighter 19'].level = 19
+    def barrier(c):
+        c.attuned_ability_count += 1
+        c.damage_reduction += c.level + 1
+    modifiers['barrier'] = barrier
 
-    tests['fighter 1 pa'] = copy(tests['fighter 1'])
-    tests['fighter 1 pa'].active_abilities = [ActiveAbility('power attack')]
+    def bless(c):
+        c.attuned_ability_count += 1
+        c.weapon_damage_modifier += 1
+    modifiers['bless'] = bless
 
-    tests['fighter 1 pa greatsword'] = copy(tests['fighter 1'])
-    tests['fighter 1 pa greatsword'].weapons = [Weapon('greatsword'), Weapon('longsword')]
-    tests['fighter 1 pa greatsword'].active_abilities = [ActiveAbility('power attack')]
+    def greatsword(c):
+        c.weapons = [Weapon('greatsword'), Weapon('longsword')]
+        c.shield = None
+    modifiers['greatsword'] = greatsword
 
-    tests['sorcerer 1 firebolt'] = Creature(
+    def power_attack(c):
+        c.active_abilities = [ActiveAbility('power attack')]
+    modifiers['power_attack'] = power_attack
+
+    def precognitive_defense(c):
+        c.natural_armor += 1
+        c.attuned_ability_count += 1
+    modifiers['precognitive_defense'] = precognitive_defense
+
+    def revelation(c):
+        c.accuracy_modifier += 1
+        c.attuned_ability_count += 1
+    modifiers['revelation'] = revelation
+
+    def add_test_character(base_character_key, modifier_name):
+        new_character = copy(tests[base_character_key])
+        modifiers[modifier_name](new_character)
+        tests[f"{base_character_key} {modifier_name}"] = new_character
+
+    for character_name in sorted(tests.keys()):
+        for modifier_name in sorted(modifiers.keys()):
+            add_test_character(character_name, modifier_name)
+
+    # Add nested modifier combinations in alphabetical order
+    add_test_character('fighter barrier', 'bless')
+    add_test_character('fighter barrier bless', 'revelation')
+    add_test_character('fighter barrier bless revelation', 'power_attack')
+    add_test_character('fighter barrier bless', 'power_attack')
+    add_test_character('fighter barrier', 'power_attack')
+    add_test_character('fighter bless', 'power_attack')
+    add_test_character('fighter bless power_attack', 'revelation')
+    add_test_character('fighter bless', 'revelation')
+    add_test_character('fighter greatsword', 'power_attack')
+    add_test_character('fighter power_attack', 'revelation')
+
+    def l4(c):
+        c.level = 4
+    modifiers['4'] = l4
+
+    def l7(c):
+        c.level = 7
+    modifiers['7'] = l7
+
+    def l13(c):
+        c.level = 13
+    modifiers['13'] = l13
+
+    def l19(c):
+        c.level = 19
+    modifiers['19'] = l19
+
+    # Add levels at the end
+    for character_name in sorted(tests.keys()):
+        for level in [4, 7, 13, 19]:
+            add_test_character(character_name, f"{level}")
+
+    tests['sorcerer 7 firebolt'] = Creature(
         character_class=CharacterClass('mage'),
         level=1,
         name='Mage',
@@ -69,7 +137,7 @@ def generate_test_creatures():
         weapons=[Weapon('club')],
         active_abilities=[ActiveAbility('firebolt')],
     )
-    tests['sorcerer 1 inflict'] = Creature(
+    tests['sorcerer 7 inflict'] = Creature(
         character_class=CharacterClass('mage'),
         level=1,
         name='Mage',
@@ -79,7 +147,7 @@ def generate_test_creatures():
         weapons=[Weapon('club')],
         active_abilities=[ActiveAbility('inflict wounds')],
     )
-    tests['sorcerer 1 multispell'] = Creature(
+    tests['sorcerer 7 multispell'] = Creature(
         character_class=CharacterClass('mage'),
         level=1,
         name='Mage',
@@ -89,6 +157,30 @@ def generate_test_creatures():
         weapons=[Weapon('club')],
         active_abilities=[ActiveAbility('firebolt'), ActiveAbility('inflict wounds')],
     )
+
+    tests['warrior strength'] = copy(tests['warrior'])
+    tests['warrior strength'].starting_strength = 2
+
+    tests['warrior perception'] = copy(tests['warrior'])
+    tests['warrior perception'].starting_perception = 2
+
+    tests['warrior l4 strength'] = copy(tests['warrior strength'])
+    tests['warrior l4 strength'].level = 4
+
+    tests['warrior l4 perception'] = copy(tests['warrior perception'])
+    tests['warrior l4 perception'].level = 4
+
+    tests['warrior l7 strength'] = copy(tests['warrior strength'])
+    tests['warrior l7 strength'].level = 7
+
+    tests['warrior l7 perception'] = copy(tests['warrior perception'])
+    tests['warrior l7 perception'].level = 7
+
+    tests['warrior l20 strength'] = copy(tests['warrior strength'])
+    tests['warrior l20 strength'].level = 20
+
+    tests['warrior l20 perception'] = copy(tests['warrior perception'])
+    tests['warrior l20 perception'].level = 20
 
     return tests
 
