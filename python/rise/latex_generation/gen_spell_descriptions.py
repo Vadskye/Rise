@@ -535,6 +535,16 @@ def generate_mystic_spheres():
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)', 'Fire']),
+            Spell('Wall of Fire', 2, """
+                You create a wall of fire in a 10 ft.\\ high, \\arealarge line.
+                The flames and heat make it diffcult to see through the wall, granting \\glossterm<concealment> to targets on the opposite side of the wall.
+                When a creature passes through the wall, you make an attack vs. Armor against that creature.
+                You can only make an attack in this way against a given creature once per phase.
+                \\hit The target takes fire \\glossterm<standard damage>.
+
+                Each five-foot square of wall has hit points equal to twice your \\glossterm<power>, and all of its defenses are 0.
+                It is immune to most forms of attack, but it can be destroyed by \\glossterm<cold damage> and similar effects that can destroy fire.
+            """),
         ],
         category='damage',
     ))
@@ -557,12 +567,20 @@ def generate_mystic_spheres():
                 Make an attack vs. Fortitude against everything in a \\arealarge, 10 ft.\\ wide line from you.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage>.
             """, tags=['Manifestation', 'Water']),
-            Spell('Dampen', 1, """
-                Choose up to five willing creatures within \\rngclose range.
-                Each target gains damage reduction against fire damage equal to your \\glossterm<power>.
+            Spell('Water Jet', 1, """
+                Make an attack vs. Armor against a creature within \\rngclose range.
+                \\hit The target takes bludgeoning \\glossterm<standard damage> +2d.
+            """),
+            Spell('Wall of Water', 2, """
+                You create a wall of water in a 20 ft.\\ high, \\arealarge line.
+                The wall is four inches thick, and blocks \\glossterm<line of effect> for abilities.
+                Sight through the wall is possible, though distorted.
+                The wall provides both \\glossterm<passive cover> and \\glossterm<concealment> to targets on the opposite side of the wall, for a total of a +4 bonus to Armor defense.
+                Creatures can pass through the wall unharmed, though it costs five extra feet of movement to move through the wall.
 
-                You can cast this spell as a \\glossterm<minor action>.
-            """, tags=['Attune (target)']),
+                Each five-foot square of wall has hit points equal to four times your \\glossterm<power>, and all of its defenses are 0.
+                It is immune to most forms of attack, but it can be destroyed by \\glossterm<fire damage> and similar effects that can destroy water.
+            """),
             Spell('Underwater Freedom', 1, """
                 Choose a willing creature within \\rngclose range.
                 The target suffers no penalties for acting underwater, except for those relating to using ranged weapons.
@@ -589,27 +607,20 @@ def generate_mystic_spheres():
             Spell("Aqueous Sphere", 2, f"""
                 This spell functions like the \\spell<crushing wave> spell, except that it targets everything in a \\areasmall radius within \\rngclose range.
             """),
-            Spell("Aqueous Blade", 2, """
-                Choose a willing creature within \\rngclose range.
-                When the target makes a \\glossterm<strike> with a melee weapon, the attack is made against Reflex defense instead of Armor defense.
-                However, the target takes a -2d penalty to damage with \\glossterm<strikes>.
-
-                You can cast this spell as a \\glossterm<minor action>.
-                This spell is from the Transmutation school instead of the Conjuration school.
-            """, tags=['Attune (target)', 'Shaping', 'Water']),
-            Spell('Greater Aqueous Blade', 5, """
-                This spell functions like the \\spell<aqueous blade> spell, except that the penalty to damage is reduced to -1d.
-            """),
             Spell('Overpowering Wave', 3, """
                 This spell functions like the \\spell<crushing wave> spell, except that it attacks Reflex defense instead of Fortitude defense.
             """),
         ],
         rituals=[
+            Spell('Dampen', 1, """
+                Choose up to five willing ritual participants.
+                Each target gains damage reduction against fire damage equal to your \\glossterm<power>.
+
+                You can cast this spell as a \\glossterm<minor action>.
+            """, tags=['Attune (ritual)']),
             Spell("Water Breathing", 2, """
-                Choose a Medium or smaller willing creature within \\rngclose range.
+                Choose a Medium or smaller willing ritual participant.
                 The target can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
-                This effect lasts as long as you \\glossterm<attune> to it.
-                If you use this ability multiple times, you can attune to it each time.
 
                 This ritual takes one minute to perform.
             """, tags=['Attune (ritual)']),
