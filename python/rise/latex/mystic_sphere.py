@@ -8,7 +8,6 @@ class MysticSphere(object):
             self,
             cantrip=None,
             category=None,
-            effects=None,
             extra_table=None,
             header=None,
             lists=None,
@@ -21,7 +20,6 @@ class MysticSphere(object):
     ):
         self.cantrip = cantrip
         self.category = category
-        self.effects = effects
         self.extra_table = extra_table
         self.header = header
         self.name = name
@@ -32,7 +30,7 @@ class MysticSphere(object):
         self.short_description = short_description or 'TODO'
         self.spells = spells or []
 
-        for arg in ['effects', 'lists', 'name', 'schools']:
+        for arg in ['cantrip', 'lists', 'name', 'schools']:
             if getattr(self, arg) is None:
                 logger.warning(f"Warning: {self} is missing required property '{arg}'")
 
@@ -57,34 +55,29 @@ class MysticSphere(object):
             key=lambda augment: augment.level
         )
 
-        cantrip_text = f"""
-            \\parhead<Cantrip> {self.cantrip} If you cast this spell as a cantrip,
-                you do not need to spend an \\glossterm<action point> to cast it,
-                but you cannot apply any augments to it.
-        """ if self.cantrip else ""
-
         return join(
             f"""
                 \\begin<spellsection><{self.name}>
                     {self.header or ""}
-                    {self.effects}
-
-                    {cantrip_text}
 
                     \\parhead<Schools> {', '.join(self.schools)}
 
                     \\parhead<Mystic Sphere Lists> {', '.join(self.lists)}
+
+                    \\subsubsection<Cantrip>
+
+                    {self.cantrip}
                 \\end<spellsection>
             """,
             f"""
-                \\subsubsection<{"Spells"}>
+                \\subsubsection<Spells>
             """ if self.spells else None,
             '\n'.join([
                 str(spell)
                 for spell in sorted_spells
             ]) if self.spells else None,
             f"""
-                \\subsubsection<{"Rituals"}>
+                \\subsubsection<Rituals>
             """ if self.rituals else None,
             '\n'.join([
                 str(ritual)
