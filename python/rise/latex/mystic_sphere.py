@@ -1,5 +1,6 @@
 from logging import getLogger
 import rise.statistics.rise_data as rise_data
+from rise.latex.header import Header
 from rise.latex.util import join
 logger = getLogger(__name__)
 
@@ -9,7 +10,6 @@ class MysticSphere(object):
             cantrip=None,
             category=None,
             extra_table=None,
-            header=None,
             lists=None,
             name=None,
             schools=None,
@@ -21,7 +21,6 @@ class MysticSphere(object):
         self.cantrip = cantrip
         self.category = category
         self.extra_table = extra_table
-        self.header = header
         self.name = name
         self.lists = lists
         self.notes = notes
@@ -58,7 +57,7 @@ class MysticSphere(object):
         return join(
             f"""
                 \\begin<spellsection><{self.name}>
-                    {self.header or ""}
+                    {Header(self.short_description + '.')}
 
                     \\parhead<Schools> {', '.join(self.schools)}
 
