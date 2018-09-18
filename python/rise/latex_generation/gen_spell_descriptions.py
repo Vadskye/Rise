@@ -3,7 +3,6 @@
 import click
 from rise.latex_generation.book_path import book_path
 from rise.latex.effects import Effects
-from rise.latex.header import Header
 from rise.latex.mystic_sphere import MysticSphere
 from rise.latex.spell import Spell
 from rise.latex.util import latexify
@@ -27,7 +26,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name='Aeromancy',
         short_description="Command air to protect allies and blast foes",
-        header=Header('You blast a foe with wind.'),
         cantrip=Effects('Minor Windstrike', """
             Make an attack vs. Armor against a creature or object within \\rngmed range.
             \\hit The target takes bludgeoning \\glossterm<standard damage>.
@@ -145,7 +143,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name='Barrier',
         short_description="Shield allies from hostile forces",
-        header=Header('You create a barrier around your ally that resists physical intrusion.'),
         cantrip=Effects('Kinetic Shield', """
             Choose a willing creature in \\rngclose range.
             The target gains \\glossterm<damage reduction> equal to your \\glossterm<power> against \\glossterm<physical> damage.
@@ -269,7 +266,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name='Fabrication',
         short_description="Create objects to damage and impair foes",
-        header=Header("You conjure acid from thin air to land on a foe."),
         # TODO: Narrative implications of at-will acid are annoying
         cantrip=Effects('Acid Splash', """
             Make an attack vs. Armor against one creature or object within \\rngmed range.
@@ -460,7 +456,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name='Pyromancy',
         short_description="Create fire to incinerate foes",
-        header=Header('You create a small burst of flame.'),
         cantrip=Effects('Scorch', """
             Make an attack vs. Armor against one creature or object within \\rngmed range.
             \\hit The target takes fire \\glossterm<standard damage>.
@@ -551,7 +546,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Aquamancy",
         short_description="Command water to crush and drown foes",
-        header=Header("You create a wave of water to crush your foes."),
         cantrip=Effects('Whelming Wave', """
             Make an attack vs. Fortitude against everything in a \\areamed, 5 ft.\\ wide line from you.
             \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
@@ -630,7 +624,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Delusion",
         short_description="Instill false emotions to influence creatures",
-        header=Header("You terrify your foe."),
         cantrip=Effects('Cause Fear', """
             Make an attack vs. Mental against a creature within \\rngmed range.
             \\hit The target is \\glossterm<shaken> by you as a \\glossterm<condition>.
@@ -701,7 +694,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Compel",
         short_description="Bend creatures to your will by controlling their actions",
-        header=Header("You compel a foe to fall down."),
         cantrip=Effects('Fall', """
             Make an attack vs. Mental against a creature within \\rngmed range.
             \\hit The target falls \\glossterm<prone>.
@@ -768,7 +760,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name='Bless',
         short_description="Grant divine blessings to aid allies and improve combat prowess",
-        header=Header('You ask your deity for a blessing of resilience to aid an ally.'),
         cantrip=Effects('Blessing of Restoration', """
             Choose a willing creature within \\rngclose range.
             The target removes one \\glossterm<condition> affecting it.
@@ -920,7 +911,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Divine Judgment",
         short_description="Smite foes with divine power",
-        header=Header("You smite a foe with holy (or unholy) power."),
         cantrip=Effects('Judge Unworthy', """
             Make an attack vs. Mental against a creature within \\rngmed range.
             \\hit The target takes divine \\glossterm<standard damage>.
@@ -947,7 +937,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name='Cryomancy',
         short_description='Drain heat to injure and freeze foes',
-        header=Header('You drain the heat from a foe.'),
         cantrip=Effects('Chill', """
             Make an attack vs. Fortitude against one creature or object within \\rngmed range.
             \\hit The target takes cold \\glossterm<standard damage>.
@@ -1016,7 +1005,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Electromancy",
         short_description='Create electricity to injure and stun foes',
-        header=Header("You create a bolt of electricity that fries your foes."),
         cantrip=Effects('Spark', """
             Make an attack vs. Fortitude against everything in a \\areamed, 5 ft.\\ wide line from you.
             \\hit Each target takes electricity \\glossterm<standard damage> -1d.
@@ -1085,7 +1073,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Corruption",
         short_description="Weaken the life force of foes, reducing their combat prowess",
-        header=Header("You corrupt your foe's life force, weakening it."),
         cantrip=Effects('Sicken', """
             Make an attack vs. Fortitude against a living creature within \\rngclose range.
             \\hit The target is \\glossterm<sickened> as a \\glossterm<condition>.
@@ -1162,7 +1149,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Vital Surge",
         short_description="Alter life energy to cure or inflict wounds",
-        # header=Header("description"),
         cantrip=Effects('Inflict Minor Wounds', """
             Make an attack vs. Fortitude against a creature within \\rngmed range.
             \\hit The target takes life damage equal to \\glossterm<standard damage>.
@@ -1341,7 +1327,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Summon",
         short_description="Summon creatures to fight with you",
-        header=Header("You summon a creature to fight by your side."),
         # TODO: this shouldn't reference the spell effect
         cantrip=Effects('Sustained Summoning', """
                 This cantrip functions like the \\spell<summon monster> spell, except that it has the \\glossterm<Sustain> (standard) tag instead of the \\glossterm<Attune> (self) tag.
@@ -1395,7 +1380,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Scry",
         short_description="See and hear at great distances",
-        header=Header("You create a scrying sensor that allows you to see at a distance."),
         # TODO: this shouldn't reference the spell effect.
         cantrip=Effects('Remote Sensing', """
             This cantrip functions like the \\textit<arcane eye> spell, except that it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> (self) tag.",
@@ -1483,7 +1467,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Revelation",
         short_description="Share visions of the present and future, granting insight or combat prowess",
-        header=Header("You grant a creature the ability to see fractions of a second into the future."),
         cantrip=Effects('Precognitive Strike', """
             You can only cast this spell during the \\glossterm<action phase>.
             Choose a willing creature within \\rngclose range.
@@ -1628,7 +1611,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Telekinesis",
         short_description="Manipulate creatures and objects at a distance",
-        header=Header("You crush your foe's body with telekinetic force."),
         cantrip=Effects('Telekinetic Compression', """
             Make an attack vs. Mental against one creature or object within \\rngmed range.
             \\hit The target takes bludgeoning \\glossterm<standard damage>.
@@ -1684,7 +1666,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Glamer",
         short_description="Change how creatures and objects are perceived",
-        header=Header(""),
         cantrip=Effects('Blur Weapon', """
             Choose a willing creature within \\rngclose range.
             The target's weapons become blurred and harder to see, making its attacks harder to avoid.
@@ -1776,7 +1757,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Photomancy",
         short_description="Create bright light to blind foes and illuminate your surroundings",
-        # header=Header("description"),
         cantrip=Effects('Flash', """
             Make an attack vs. Fortitude against one creature, object, or location within \\rngmed range.
             Bright light illuminates a 100 foot radius around the target until the end of the round.
@@ -1855,7 +1835,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Polymorph",
         short_description="Change the physical forms of objects and creatures",
-        header=Header("You transform a foe's body into a more broken state."),
         cantrip=Effects('Twist Body', """
             Make an attack vs. Fortitude against a creature within \\rngmed range.
             \\hit The target takes physical \\glossterm<standard damage>.
@@ -2013,7 +1992,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Astromancy",
         short_description="Transport creatures and objects instantly through space",
-        header=Header("You disrupt a creature's body by partially thrusting it into another plane."),
         cantrip=Effects('Dimensional Disruption', """
             Make an attack vs. Mental against a creature within \\rngmed range.
             \\hit The target takes physical \\glossterm<standard damage>.
@@ -2156,7 +2134,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Chronomancy",
         short_description="Manipulate the passage of time to inhibit foes and aid allies",
-        header=Header("You slow a foe's passage through time, inhibiting its actions."),
         cantrip=Effects('Minor Slow', """
             Make an attack vs. Mental against a creature within \\rngmed range.
             \\hit The target is \\glossterm<slowed> as a \\glossterm<condition>.
@@ -2289,7 +2266,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Weaponcraft",
         short_description="Create and manipulate weapons to attack foes",
-        header=Header("You create a dancing blade that attacks nearby foes"),
         cantrip=Effects('Fire Projectile', """
             Make an attack vs. Armor against one creature or object within \\rngmed range.
             \\hit The target takes piercing \\glossterm<standard damage>.
@@ -2376,7 +2352,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Verdamancy",
         short_description="Animate and manipulate plants",
-        header=Header("Animate and manipulate plants"),
         cantrip=Effects('Minor Embedded Growth', """
             You throw a seed that embeds itself in a foe and grows painfully.
             Make an attack vs. Armor at a creature within \\rngclose range.
@@ -2470,7 +2445,6 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Terramancy",
         short_description="Manipulate earth to crush foes",
-        header=Header("Manipulate earth to crush foes"),
         cantrip=Effects('Minor Earthspike', """
             You create a spike of earth from the ground that quickly retracts, leaving the surface unchanged.
             Make an attack vs. Armor against a creature or object within \\rngclose range.
