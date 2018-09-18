@@ -812,26 +812,6 @@ def generate_mystic_spheres():
             Spell('Greater Blessed Blade', 5, """
                 This spell functions like the \\spell<blessed blade> spell, except that the penalty to damage is reduced to -1d.
             """),
-            Spell("Divine Shield", 4, """
-                Choose a willing creature within \\rngclose range.
-                The target gains \\glossterm<damage reduction> equal to your \\glossterm<power> against all damage.
-
-                You can cast this spell as a \\glossterm<minor action>.
-            """, tags=['Attune (target)']),
-            Spell("Divine Might", 3, """
-                You increase your size by one size category.
-                This increases your \\glossterm<overwhelm value>, \\glossterm<overwhelm resistance>, and usually increases your \\glossterm<reach> (see \\pcref<Size in Combat>).
-                However, your muscles are not increased fully to match its new size, and your Strength is unchanged.
-
-                You can cast this spell as a \\glossterm<minor action>.
-            """, tags=['Attune (self)', 'Shaping', 'Sizing']),
-            Spell("Divine Might, Greater", 5, """
-                This spell functions like the \\textit<divine might> spell, except that you gain a +2 bonus to Strength
-            """),
-            Spell("Divine Might, Supreme", 7, """
-                This spell functions like the \\spell<divine might> spell, except that your size is increased by two size categories.
-                Your Strength is increased by 2 to partially match your new size.
-            """),
         ],
         rituals=[
             Spell("Blessing of Fortification", 1, """
@@ -886,8 +866,53 @@ def generate_mystic_spheres():
 
                 This ritual takes one hour to perform.
             """, tags=['Shaping']),
-            # This seems like a weird mystic sphere for this ritual
-            Spell("Blessed Transit", 4, """
+        ],
+        category='buff, offense',
+    ))
+
+    # This spell is problematic
+    # Primary: damage
+    # None: buff, debuff, utility
+    mystic_spheres.append(MysticSphere(
+        name="Channel Divinity",
+        short_description="Invoke divine power to smite foes and gain power",
+        cantrip=Effects('Divine Judgment', """
+            Make an attack vs. Mental against a creature within \\rngmed range.
+            \\hit The target takes divine \\glossterm<standard damage>.
+        """, ap_cost=False),
+        schools=['Channeling'],
+        lists=['Divine'],
+        spells=[
+            Spell('Judge Unworthy', 1, """
+                Make an attack vs. Mental against a creature within \\rngmed range.
+                \\hit The target takes divine \\glossterm<standard damage> +2d.
+            """),
+            Spell("Word of Faith", 2, """
+                Make an attack vs. Mental against all enemies in a \\areamed radius from you.
+                \\hit Each target takes divine \\glossterm<standard damage>.
+            """),
+            Spell("Mantle of Faith", 1, """
+                You gain \\glossterm<damage reduction> equal to your \\glossterm<power> against all damage.
+
+                You can cast this spell as a \\glossterm<minor action>.
+            """, tags=['Attune (target)']),
+            Spell("Divine Might", 3, """
+                You increase your size by one size category.
+                This increases your \\glossterm<overwhelm value>, \\glossterm<overwhelm resistance>, and usually increases your \\glossterm<reach> (see \\pcref<Size in Combat>).
+                However, your muscles are not increased fully to match its new size, and your Strength is unchanged.
+
+                You can cast this spell as a \\glossterm<minor action>.
+            """, tags=['Attune (self)', 'Shaping', 'Sizing']),
+            Spell("Divine Might, Greater", 5, """
+                This spell functions like the \\textit<divine might> spell, except that you gain a +2 bonus to Strength.
+            """),
+            Spell("Divine Might, Supreme", 7, """
+                This spell functions like the \\spell<divine might> spell, except that your size is increased by two size categories.
+                Your Strength is increased by 2 to partially match your new size.
+            """),
+        ],
+        rituals=[
+            Spell("Divine Transit", 4, """
                 Choose up to five willing, Medium or smaller ritual participants.
                 In addition, choose a destination up to 100 miles away from you on your current plane.
                 Each target is teleported to the temple or equivalent holy site to your deity that is closest to the chosen destination.
@@ -900,33 +925,8 @@ def generate_mystic_spheres():
                 % TODO: does this need more clarity about what teleportation works?
 
                 This ritual takes 24 hours to perform and requires 32 action points from its ritual participants.
-                It is from the Conjuration school instead of the Channeling school.
+                It is from the Conjuration school in addition to the Channeling school.
             """, tags=['Teleportation']),
-        ],
-        category='buff, offense',
-    ))
-
-    # This spell is problematic
-    # Primary: damage
-    # None: buff, debuff, utility
-    mystic_spheres.append(MysticSphere(
-        name="Divine Judgment",
-        short_description="Smite foes with divine power",
-        cantrip=Effects('Judge Unworthy', """
-            Make an attack vs. Mental against a creature within \\rngmed range.
-            \\hit The target takes divine \\glossterm<standard damage>.
-        """, ap_cost=False),
-        schools=['Channeling'],
-        lists=['Divine'],
-        spells=[
-            Spell('Smite the Unworthy', 1, """
-                Make an attack vs. Mental against a creature within \\rngmed range.
-                \\hit The target takes divine \\glossterm<standard damage> +2d.
-            """),
-            Spell("Word of Faith", 2, """
-                Make an attack vs. Mental against all enemies in a \\areamed radius from you.
-                \\hit Each target takes divine \\glossterm<standard damage>.
-            """),
         ],
         category='damage',
     ))
@@ -2436,7 +2436,7 @@ def generate_mystic_spheres():
                 % TODO: does this need more clarity about what teleportation works?
 
                 This ritual takes 24 hours to perform and requires 32 action points from its ritual participants.
-                It is from from the Conjuration school instead of the Transmutation school.
+                It is from from the Conjuration school in addition to the Transmutation school.
             """, tags=['Teleportation']),
         ],
     ))
