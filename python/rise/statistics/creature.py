@@ -31,13 +31,16 @@ class Creature(object):
             natural_armor=0,
             shield=None,
             size=None,
+            accuracy_modifier=0,
             active_abilities=None,
+            attuned_ability_count=0,
+            damage_reduction=0,
+            weapon_damage_modifier=0,
     ):
         self.character_class = character_class
         self.level = level
         self.name = name
         self.race = race
-        self.starting_attributes = starting_attributes
         self.starting_strength = starting_attributes[0]
         self.starting_dexterity = starting_attributes[1]
         self.starting_constitution = starting_attributes[2]
@@ -53,7 +56,11 @@ class Creature(object):
         self.natural_armor = natural_armor
         self.shield = shield
         self.size = size or Size(Size.MEDIUM)
+        self.accuracy_modifier = accuracy_modifier
         self.active_abilities = active_abilities or []
+        self.attuned_ability_count = attuned_ability_count
+        self.damage_reduction = damage_reduction
+        self.weapon_damage_modifier = weapon_damage_modifier
 
         self.fortitude_defense_misc = 0
         self.reflex_defense_misc = 0
@@ -65,10 +72,15 @@ class Creature(object):
             level=self.level,
             name=self.name,
             race=self.race,
-            # For brevity, take an array of starting attributes as ints.
-            # The order is str, dex, con, int, per, wil
-            starting_attributes=self.starting_attributes,
-            weapons=self.weapons,  # Array of Weapon objects
+            starting_attributes=[
+                self.starting_strength,
+                self.starting_dexterity,
+                self.starting_constitution,
+                self.starting_intelligence,
+                self.starting_perception,
+                self.starting_willpower,
+            ],
+            weapons=self.weapons,
             armor=self.armor,
             challenge_rating=self.challenge_rating,
             key_attribute=self.key_attribute,
@@ -76,7 +88,11 @@ class Creature(object):
             natural_armor=self.natural_armor,
             shield=self.shield,
             size=self.size,
+            accuracy_modifier=self.accuracy_modifier,
             active_abilities=self.active_abilities,
+            attuned_ability_count=self.attuned_ability_count,
+            damage_reduction=self.damage_reduction,
+            weapon_damage_modifier=self.weapon_damage_modifier,
         )
 
     @property
@@ -85,7 +101,7 @@ class Creature(object):
 
     @property
     def recovery_action_points(self):
-        return self.action_points // 2
+        return self.action_points // 2 - self.attuned_ability_count
 
     @property
     def armor_defense(self):
@@ -102,6 +118,7 @@ class Creature(object):
         return [
             Attack(
                 accuracy=self.accuracy(),
+                action_point=ability.action_point,
                 damage=self.active_ability_damage(ability),
                 defense=ability.defense,
                 name=ability.name,
@@ -208,21 +225,27 @@ class Creature(object):
 
     def accuracy(self, attribute=None):
         # Perception is normally used except in unusual situations
-        return max(
-            self.level,
-            getattr(self, attribute or self.key_attribute or 'perception'),
+        return sum([
+            max(
+                self.level,
+                getattr(self, attribute or self.key_attribute or 'perception'),
+            ),
+            self.accuracy_modifier,
             self.cr_mod,
-        )
+        ])
 
     def weapon_accuracy(self, weapon):
         """Return the accuracy with the given weapon"""
-        return max(
-            self.level,
-            self.perception,
-            self.dexterity if weapon.encumbrance_category == Weapon.LIGHT else 0,
+        return sum([
+            max(
+                self.level,
+                self.perception,
+                self.dexterity if weapon.encumbrance_category == Weapon.LIGHT else 0,
+            ),
             self.shield.accuracy_modifier if self.shield else 0,
+            self.accuracy_modifier,
             self.cr_mod,
-        )
+        ])
 
     def weapon_damage(self, weapon):
         """Return the DicePool for damage with the given Weapon"""
@@ -233,6 +256,7 @@ class Creature(object):
                 self.willpower if weapon.damage_type == 'magical' else self.strength,
             ) // 2,
             weapon.damage_modifier,
+            self.weapon_damage_modifier,
             # TODO: remove direct size damage modifier
             self.size.damage_modifier,
             self.cr_mod,
