@@ -9,3 +9,9 @@ class Attack(object):
     @property
     def defense(self):
         return self._defense or 'Armor'
+
+    def __str__(self):
+        return (
+            f"Attack({self.name}: +{self.accuracy} ({self.damage})"
+            + f"{' (AP)' if self.action_point else ''})"
+        )

@@ -2,10 +2,19 @@
 from rise.statistics.sample_creatures import get_sample_creatures
 
 
-def main():
+import click
+import re
+
+@click.command()
+@click.option('-g', '--grep', default=None)
+def main(grep):
     test_samples = get_sample_creatures()['tests']
 
-    for key in test_samples:
+    sample_keys = sorted(test_samples.keys())
+    if grep:
+        sample_keys = list(filter(lambda key: re.search(grep, key), sample_keys))
+
+    for key in sample_keys:
         print(key, test_samples[key])
         print()
 
