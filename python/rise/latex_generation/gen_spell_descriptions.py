@@ -46,8 +46,8 @@ def generate_mystic_spheres():
                 The target gains a +1 \\glossterm<magic bonus> to Armor defense.
                 This bonus is increased to +5 against ranged \\glossterm<physical attacks> from weapons or projectiles that are Small or smaller.
 
-                Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
                 You can cast this spell as a \\glossterm<minor action>.
+                Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
             """, tags=['Air', 'Attune (target)', 'Shielding']),
             Spell('Windstrike', 1, """
                 Make an attack vs. Armor against a creature or object within \\rngmed range.
@@ -796,6 +796,7 @@ def generate_mystic_spheres():
             """),
             Spell('Blessing of Might', 2, """
                 The target gains a +1d \\glossterm<magic bonus> to damage with all abilities.
+
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)']),
             Spell("Greater Blessing of Might", 5, """
@@ -1884,6 +1885,7 @@ def generate_mystic_spheres():
             Spell("Stoneskin", 3, """
                 Choose a willing creature within \\rngclose range.
                 The target gains \\glossterm<damage reduction> equal to your \\glossterm<power> against damage dealt by \\glossterm<physical attacks>, except for damage from adamantine weapons.
+
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)']),
             Spell("Ironskin", 6, """
@@ -2149,6 +2151,7 @@ def generate_mystic_spheres():
             Spell('Haste', 1, """
                 Choose a willing creature within \\rngmed range.
                 The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<base speed>.
+
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)', 'Temporal']),
             Spell("Greater Haste", 3, """
