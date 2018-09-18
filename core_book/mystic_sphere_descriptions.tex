@@ -241,17 +241,6 @@ Make an attack vs. Fortitude against everything in a \arealarge, 10 ft.\ wide li
 
 
 
-\lowercase{\hypertarget{spell:Dampen}{}}\label{spell:Dampen}
-\begin{attuneability}[\nth{1}]{\hypertarget{spell:Dampen}{Dampen}}[\glossterm{Attune} (target)]
-Choose up to five willing creatures within \rngclose range.
-Each target gains damage reduction against fire damage equal to your \glossterm{power}.
-
-You can cast this spell as a \glossterm{minor action}.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Underwater Freedom}{}}\label{spell:Underwater Freedom}
 \begin{attuneability}[\nth{1}]{\hypertarget{spell:Underwater Freedom}{Underwater Freedom}}[\glossterm{Attune} (target)]
 Choose a willing creature within \rngclose range.
@@ -263,15 +252,11 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
-\lowercase{\hypertarget{spell:Aqueous Blade}{}}\label{spell:Aqueous Blade}
-\begin{attuneability}[\nth{2}]{\hypertarget{spell:Aqueous Blade}{Aqueous Blade}}[\glossterm{Attune} (target), \glossterm{Shaping}, \glossterm{Water}]
-Choose a willing creature within \rngclose range.
-When the target makes a \glossterm{strike} with a melee weapon, the attack is made against Reflex defense instead of Armor defense.
-However, the target takes a \minus2d penalty to damage with \glossterm{strikes}.
-
-You can cast this spell as a \glossterm{minor action}.
-This spell is from the Transmutation school instead of the Conjuration school.
-\end{attuneability}
+\lowercase{\hypertarget{spell:Water Jet}{}}\label{spell:Water Jet}
+\begin{apability}[\nth{1}]{\hypertarget{spell:Water Jet}{Water Jet}}
+Make an attack vs. Armor against a creature within \rngclose range.
+\hit The target takes bludgeoning \glossterm{standard damage} \plus2d.
+\end{apability}
 \vspace{0.25em}
 
 
@@ -289,6 +274,21 @@ This spell functions like the \spell{crushing wave} spell, except that it target
 Make an attack vs. Fortitude against everything in a \arealarge, 5 ft.\ wide vertical line within \rngmed range.
 If this spell has its area increased, such as with the Widened \glossterm{augment}, only the length of the line increases.
 \hit Each target takes takes bludgeoning \glossterm{standard damage} \plus2d.
+\end{apability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Wall of Water}{}}\label{spell:Wall of Water}
+\begin{apability}[\nth{2}]{\hypertarget{spell:Wall of Water}{Wall of Water}}
+You create a wall of water in a 20 ft.\ high, \arealarge line.
+The wall is four inches thick, and blocks \glossterm{line of effect} for abilities.
+Sight through the wall is possible, though distorted.
+The wall provides both \glossterm{passive cover} and \glossterm{concealment} to targets on the opposite side of the wall, for a total of a \plus4 bonus to Armor defense.
+Creatures can pass through the wall unharmed, though it costs five extra feet of movement to move through the wall.
+
+Each five-foot square of wall has hit points equal to four times your \glossterm{power}, and all of its defenses are 0.
+It is immune to most forms of attack, but it can be destroyed by \glossterm{fire damage} and similar effects that can destroy water.
 \end{apability}
 \vspace{0.25em}
 
@@ -321,14 +321,6 @@ In addition, at the end of each \glossterm{action phase} in subsequent rounds, t
 
 
 
-\lowercase{\hypertarget{spell:Greater Aqueous Blade}{}}\label{spell:Greater Aqueous Blade}
-\begin{apability}[\nth{5}]{\hypertarget{spell:Greater Aqueous Blade}{Greater Aqueous Blade}}
-This spell functions like the \spell{aqueous blade} spell, except that the penalty to damage is reduced to \minus1d.
-\end{apability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Greater Raging River}{}}\label{spell:Greater Raging River}
 \begin{apability}[\nth{6}]{\hypertarget{spell:Greater Raging River}{Greater Raging River}}
 This spell functions like the \textit{raging river} spell, except that the spell gains the \glossterm{Sustain} (minor) tag instead of the \glossterm{Sustain} (standard) tag.
@@ -340,12 +332,21 @@ This spell functions like the \textit{raging river} spell, except that the spell
 \subsubsection{Rituals}
 
 
+\lowercase{\hypertarget{spell:Dampen}{}}\label{spell:Dampen}
+\begin{attuneability}[\nth{1}]{\hypertarget{spell:Dampen}{Dampen}}[\glossterm{Attune} (ritual)]
+Choose up to five willing ritual participants.
+Each target gains damage reduction against fire damage equal to your \glossterm{power}.
+
+You can cast this spell as a \glossterm{minor action}.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Water Breathing}{}}\label{spell:Water Breathing}
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Water Breathing}{Water Breathing}}[\glossterm{Attune} (ritual)]
-Choose a Medium or smaller willing creature within \rngclose range.
+Choose a Medium or smaller willing ritual participant.
 The target can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
-This effect lasts as long as you \glossterm{attune} to it.
-If you use this ability multiple times, you can attune to it each time.
 
 This ritual takes one minute to perform.
 \end{attuneability}
@@ -2763,6 +2764,21 @@ You can cast this spell as a \glossterm{minor action}.
 This spell functions like the \spell{fireburst} spell, except that each struck target is also \glossterm{ignited} as a \glossterm{condition}.
 This condition can also be removed if the target makes a \glossterm{DR} 10 Dexterity check as a \glossterm{move action} to put out the flames.
 Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this check.
+\end{apability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Wall of Fire}{}}\label{spell:Wall of Fire}
+\begin{apability}[\nth{2}]{\hypertarget{spell:Wall of Fire}{Wall of Fire}}
+You create a wall of fire in a 10 ft.\ high, \arealarge line.
+The flames and heat make it diffcult to see through the wall, granting \glossterm{concealment} to targets on the opposite side of the wall.
+When a creature passes through the wall, you make an attack vs. Armor against that creature.
+You can only make an attack in this way against a given creature once per phase.
+\hit The target takes fire \glossterm{standard damage}.
+
+Each five-foot square of wall has hit points equal to twice your \glossterm{power}, and all of its defenses are 0.
+It is immune to most forms of attack, but it can be destroyed by \glossterm{cold damage} and similar effects that can destroy fire.
 \end{apability}
 \vspace{0.25em}
 
