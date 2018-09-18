@@ -768,13 +768,13 @@ It defines how attributes work and explains how to make physical attacks in comb
         \parhead{Hustle} As a \glossterm{move action}, you can use the \textit{hustle} ability to move.
         This is the most common movement ability.
 
-        \begin{ability}{Hustle}
+        \begin{freeability}{Hustle}
             Choose a path that you want to travel.  You travel that path, up to the limit of your movement speed.
-        \end{ability}
+        \end{freeability}
 
         \parhead{Block} As a \glossterm{move action}, you can use the \textit{block} ability to prevent a creature from entering a particular area.
 
-        \begin{ability}{\labeltext{Block}}
+        \begin{freeability}{\labeltext{Block}}
             Choose a creature to block, and the area you want to block it from entering.
             During the current phase, you automatically move to intercept the target as it approaches the blocked area, up to the limit of your movement speed.
             Usually, blocking a target requires an opposed \glossterm{initiative} check against the target.
@@ -783,29 +783,29 @@ It defines how attributes work and explains how to make physical attacks in comb
 
             Multiple creatures can coordinate to block a single creature.
             The blocked creature must beat the initiative of all blocking creatures to enter the blocked area.
-        \end{ability}
+        \end{freeability}
 
         \parhead{Follow} As a \glossterm{move action}, you can use the \textit{follow} ability to follow a creature as it moves.
 
-        \begin{ability}{\labeltext{Follow}}
+        \begin{freeability}{\labeltext{Follow}}
             Choose a creature to follow, and the maximum distance you want to follow at.
             During the current phase, you automatically move such that your distance to the target is no greater than your desired follow distance, up to the limit of your movement speed.
             If the target uses an ability that makes it impossible to follow with movement, such as teleporting, you stop moving when you become adjacent to the position where it used that ability.
-        \end{ability}
+        \end{freeability}
 
         \parhead{Withdraw} As a \glossterm{move action}, you can use the \textit{withdraw} ability to keep away from creatures as they move.
 
-        \begin{ability}{\labeltext{Withdraw}}
+        \begin{freeability}{\labeltext{Withdraw}}
             This ability functions like the \textit{follow} ability, except that you specify a minimum distance between you and the target instead of a maximum distance.
             In addition, you can specify multiple targets and try to keep away from all of them.
-        \end{ability}
+        \end{freeability}
 
         \parhead{Sprint} As a \glossterm{free action}, you can spend an \glossterm{action point} to use the \textit{sprint} ability, allowing you to briefly move more quickly.
         You cannot use this ability twice in the same round.
 
-        \begin{ability}{\labeltext{Sprint}}[\glossterm{Swift}]
+        \begin{freeability}{\labeltext{Sprint}}[\glossterm{Swift}]
             You double your movement speed until the end of the current phase.
-        \end{ability}
+        \end{freeability}
 
     \subsection{Movement Impediments}
 
@@ -1147,6 +1147,10 @@ It defines how attributes work and explains how to make physical attacks in comb
         \parhead{Air} Air abilities control the surrounding air.
         They do not function in environments without air.
 
+        \parhead{AP} AP abilities require spending an \glossterm{action point} to use.
+        Some AP abilities, such as specific \glossterm{rituals}, require spending multiple action points instead of only one.
+        The number of action points required will be given in the ability's description.
+
         \parhead{Auditory} Auditory abilities use sound to cause their effects.
         Creatures and objects that cannot hear the effect are immune to it.
 
@@ -1329,15 +1333,15 @@ It defines how attributes work and explains how to make physical attacks in comb
         All strike abilities require a \glossterm{standard action} and allow you to attack with either one or two weapons.
         If you make a strike with two weapons, you take a \minus1 penalty to \glossterm{accuracy} with both attacks for each non-light weapon you attack with.
 
-        \begin{ability}{\labeltext{Melee Strike}}
+        \begin{freeability}{\labeltext{Melee Strike}}
             Choose a creature you \glossterm{threaten} and one or two \glossterm{melee weapons} that you can attack with.
             For each weapon, make a \glossterm{physical attack} with that weapon against the Armor defense of the target.
 
             On a hit with any weapon, the target takes damage from one weapon you hit with (see \pcref{Strike Damage}).
             On a critical hit with any weapon, the target takes double damage from one weapon you hit with.
-        \end{ability}
+        \end{freeability}
 
-        \begin{ability}{\labeltext{Projectile Strike}}
+        \begin{freeability}{\labeltext{Projectile Strike}}
             Choose a creature you can target and one or two \glossterm{projectile} weapons you can attack with, and a creature you can see.
             The creature must be within ten \glossterm{range increments} of you with all weapons.
             For each weapon, make a \glossterm{physical attack} with that weapon against the Armor defense of the target.
@@ -1345,9 +1349,9 @@ It defines how attributes work and explains how to make physical attacks in comb
 
             On a hit with any weapon, the target takes damage from one weapon you hit with (see \pcref{Strike Damage}).
             On a critical hit with any weapon, the target takes double damage from one weapon you hit with.
-        \end{ability}
+        \end{freeability}
 
-        \begin{ability}{\labeltext{Thrown Strike}}
+        \begin{freeability}{\labeltext{Thrown Strike}}
             Choose a creature you can target and one or two \glossterm{thrown weapons} you can attack with.
             The creature must be within five \glossterm{range increments} of you with all of the weapons.
             For each weapon, make a \glossterm{physical attack} with that weapon against the Armor defense of the target.
@@ -1355,7 +1359,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
             On a hit with any weapon, the target takes damage from one weapon you hit with (see \pcref{Strike Damage}).
             On a critical hit with any weapon, the target takes double damage from one weapon you hit with.
-        \end{ability}
+        \end{freeability}
 
 
     \subsection{Special Combat Abilities}\label{Special Combat Abilities}
@@ -1379,24 +1383,24 @@ It defines how attributes work and explains how to make physical attacks in comb
             1. This ability costs an \glossterm{action point} to use.
         \end{dtable}
 
-        \parhead{Charge} As a standard action during the \glossterm{action phase}, you can spend an \glossterm{action point} to use the \textit{charge} ability.
+        \parhead{Charge} You can use the \textit{charge} ability as a standard action during the \glossterm{action phase}.
 
-        \begin{ability}{\labeltext{Charge}}
+        \begin{apability}{\labeltext{Charge}}
             Move up to your speed in a single straight line.
             During the \glossterm{delayed action phase}, you can make a melee \glossterm{strike} from your new location.
-        \end{ability}
+        \end{apability}
 
         \parhead{Desperate Recovery} As a standard action, you can use the \textit{desperate recovery} ability to remove a \glossterm{condition} from yourself.
         As long as you are conscious, no effect can prevent you from using this ability, even effects that prohibit using any other abilities.
 
-        \begin{ability}{\labeltext{Desperate Recovery}}
+        \begin{freeability}{\labeltext{Desperate Recovery}}
             At the end of the round, if you did not take damage this round, you may remove one \glossterm{condition} affecting you.
             This cannot remove a condition applied during the current round.
-        \end{ability}
+        \end{freeability}
 
         \parhead{Dirty Trick} As a standard action, you can use the \textit{dirty trick} ability to creatively impair a foe's ability to fight.
 
-        \begin{ability}{Dirty Trick}\label{Dirty Trick}
+        \begin{freeability}{Dirty Trick}\label{Dirty Trick}
             When you use this ability, you must describe the kind of dirty trick you are performing.
             For example, you can pull a creature's pants down, throw sand, or otherwise use your environment to attack.
 
@@ -1405,11 +1409,11 @@ It defines how attributes work and explains how to make physical attacks in comb
 
             On a hit, as a \glossterm{condition}, the target suffers a \minus2 penalty to one of the following statistics:
                 \glossterm{accuracy} with \glossterm{physical attacks}, Armor defense, Fortitude defense, Reflex defense, or Mental defense.
-        \end{ability}
+        \end{freeability}
 
         \parhead{Disarm} As a standard action, you can use the \textit{disarm} ability to knock an item out of a foe's hands.
 
-        \begin{ability}{Disarm}\label{Disarm}
+        \begin{freeability}{Disarm}\label{Disarm}
             Make a melee \glossterm{strike} with a weapon you wield against an object.
             Unlike most abilities, this ability can target specific items \glossterm{attended} by creatures.
             This attack must beat the target's Armor defense.
@@ -1418,37 +1422,37 @@ It defines how attributes work and explains how to make physical attacks in comb
             On a hit, you choose whether the target takes damage from the weapon you hit it with.
             In addition, if the target is \glossterm{attended} and is not held in two hands or well secured (such as a ring), you can choose to knock it loose.
             If you do, it falls to the ground in the square occupied by the attending creature that is closest to you.
-        \end{ability}
+        \end{freeability}
 
         \parhead{Feint} As a standard action during the \glossterm{action phase}, you can use the \textit{feint} ability to distract an opponent, allowing you to strike them more accurately.
 
-        \begin{ability}{Feint}\label{Feint}
+        \begin{freeability}{Feint}\label{Feint}
             Make a melee \glossterm{physical attack} with a weapon you wield against a creature's Reflex defense.
             During the \glossterm{delayed action phase}, you can also make a melee \glossterm{strike} with the same weapon.
 
             On a hit, the target takes a \minus2 penalty to defenses against the delayed strike.
             On a miss, you take a \minus2 penalty to accuracy with the strike.
-        \end{ability}
+        \end{freeability}
 
         \parhead{Grapple} As a standard action, you can use the \textit{grapple} ability to physically grab and restrain a creature.
 
-        \begin{ability}{Grapple}\label{Grapple}
+        \begin{freeability}{Grapple}\label{Grapple}
             Make a melee \glossterm{physical attack} with a free hand against a creature's Fortitude and Reflex defenses.
 
             On a hit against both defenses, you and the target are \grappled by each other.
             For details, see \pcref{Grappling}.
-        \end{ability}
+        \end{freeability}
 
-        \parhead{Recover} As a \glossterm{minor action}, you can spend an \glossterm{action point} to use the \textit{recover} ability.
+        \parhead{Recover} You can use the \textit{recover} ability as a \glossterm{minor action}.
         As long as you are conscious, no effect can prevent you from using this ability, even effects that prohibit using any other abilities.
-        \begin{ability}{\labeltext{Recover}}
+        \begin{apability}{\labeltext{Recover}}
             You may remove one \glossterm{condition} affecting you.
             This cannot remove a condition applied during the current round.
-        \end{ability}
+        \end{apability}
 
         \parhead{Shove} As a standard action, you can use the \textit{shove} ability to physically move a creature.
 
-        \begin{ability}{Shove}\label{Shove}
+        \begin{freeability}{Shove}\label{Shove}
             Make a melee \glossterm{physical attack} with a free hand against a creature's Fortitude defense.
             For each size category larger or smaller than the target that you are, you gain a \plus4 bonus or penalty to \glossterm{accuracy}.
 
@@ -1457,35 +1461,35 @@ It defines how attributes work and explains how to make physical attacks in comb
             You can move the same distance that you push the target.
             You cannot normally keep moving the target if it stops being adjacent to you.
             If the target encounters a creature or solid object, you must stop moving it.
-        \end{ability}
+        \end{freeability}
 
         \parhead{Total Defense} As a standard action, you can use the \textit{total defense} ability to focus entirely on defending yourself.
 
-        \begin{ability}{\labeltext{Total Defense}}[\glossterm{Swift}]
+        \begin{freeability}{\labeltext{Total Defense}}[\glossterm{Swift}]
             You gain a \plus2 bonus to your \glossterm{defenses} until the end of the round.
-        \end{ability}
+        \end{freeability}
 
         \parhead{Trip} As a standard action, you can use the \textit{trip} ability to trip a creature.
 
-        \begin{ability}{\labeltext{Trip}}
+        \begin{freeability}{\labeltext{Trip}}
             Make a melee \glossterm{physical attack} with a free hand against a creature's Fortitude and Reflex defenses.
 
             On a hit, the target becomes \prone.
-        \end{ability}
+        \end{freeability}
 
     \subsection{Special Movement Abilities}
 
         \parhead{Struggle} As a standard action, you can use the \textit{struggle} ability to move despite movement impediments.
 
-        \begin{ability}{\labeltext{Struggle}}
+        \begin{freeability}{\labeltext{Struggle}}
             Until the end of the current phase, your land speed becomes five feet, regardless of all other effects that would modify your land speed.
             In addition, you can move a distance up to your land speed.
             This does not allow you to pass obstacles unrelated to movement speed penalties, such as walls.
-        \end{ability}
+        \end{freeability}
 
         \parhead{Overrun} At the start of each phase, you can spend an \glossterm{action point} to use the \textit{overrun} ability.
 
-        \begin{ability}{\labeltext{Overrun}}
+        \begin{freeability}{\labeltext{Overrun}}
             You can try to move directly through creatures in your way during the current phase.
             Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered.
             If a creature does not attempt to avoid you, you make an attack vs. Fortitude against it.
@@ -1494,7 +1498,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             On a hit, you can move through the creature's space, though you treat it as \glossterm{difficult terrain}.
             On a critical hit, the creature is also knocked prone, and you do not treat its space as difficult terrain.
             On a miss, you end your movement immediately.
-        \end{ability}
+        \end{freeability}
 
 \section{Injury, Death, and Healing}\label{Injury, Death, and Healing}
 
@@ -1606,7 +1610,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
             \parhead{Bind Foe} As a standard action, you can use the \textit{bind foe} ability to bind a foe you are grappling in restraints.
 
-            \begin{ability}{Bind Foe}
+            \begin{freeability}{Bind Foe}
                 You must have physical restraints, such as rope, in hand to use this ability (in addition to the free hand required to grapple).
 
                 Make an attack vs. Fortitude and Reflex against a creature who is grappled by you.
@@ -1617,30 +1621,30 @@ It defines how attributes work and explains how to make physical attacks in comb
                 The only physical actions a bound creature can take are to escape or break the bindings.
                 Escaping the bindings requires a \glossterm{physical attack} or Escape Artist check which beats the attack result made to bind the creature.
                 Breaking the bindings requires making a Strength check sufficient to break the item used to bind the creature.
-            \end{ability}
+            \end{freeability}
 
             \parhead{Escape Grapple} As a standard action, you can use the \textit{escape grapple} ability to try to stop being grappled.
 
-            \begin{ability}{Escape Grapple}
+            \begin{freeability}{Escape Grapple}
                 Make an attack vs. Reflex against every creature that you are grappled by.
 
                 % TODO: awkward wording
                 \hit You are not grappled by each target, and each target is not grappled by you.
-            \end{ability}
+            \end{freeability}
 
             \parhead{Move Grapple} As a \glossterm{move action}, you can use the \textit{move grapple} ability to move yourself and all creatures you are grappling with.
 
-            \begin{ability}{Move Grapple}
+            \begin{freeability}{Move Grapple}
                 Make an attack vs. Fortitude against every creature grappled by you.
                 If a target also uses this ability to affect you during the same phase, you compare your attack result against its attack result instead of against its Fortitude defense.
 
                 % how to word ``hit or beat''?
                 If you hit every target or beat every target's attack result, you can move yourself and all other creatures grappled by you a distance up to half your speed.
-            \end{ability}
+            \end{freeability}
 
             \parhead{Pin} As a standard action, you can use the \textit{pin} ability to further restrict the actions of a creature you are grappling with.
 
-            \begin{ability}{Pin}
+            \begin{freeability}{Pin}
                 Make an attack vs. Fortitude and Reflex against a creature who is grappled by you.
                 This ability requires two free hands to use.
 
@@ -1648,7 +1652,7 @@ It defines how attributes work and explains how to make physical attacks in comb
                 The only physical action the target can take is the \textit{escape grapple} ability (see above), though it can take mental actions.
                 At your discretion, you can cover the mouth of a pinned creature to prevent it from speaking.
                 You may release the target as a \glossterm{free action}, ending this effect.
-            \end{ability}
+            \end{freeability}
 
         \subsubsection{Asymmetric Grappling}\label{Asymmetric Grappling}
             Normally, when you use the \textit{grapple} ability, both you and the target become grappled by each other.

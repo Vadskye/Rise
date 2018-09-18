@@ -169,11 +169,11 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Agility}{Combat}
         \featpre Starting Dexterity of 2.
 
-        \ff{Spring Attack} As a standard action, you can spend an \glossterm{action point} to use the \textit{spring attack} ability.
-        \begin{ability}{Spring Attack}
+        \ff{Spring Attack} You can use the \textit{spring attack} ability as a standard action.
+        \begin{apability}{Spring Attack}
             Move up to your movement speed and make a \glossterm{strike}.
             If you use this ability during the \glossterm{action phase}, you may continue moving during the \glossterm{delayed action phase} if you have remaining movement available.
-        \end{ability}
+        \end{apability}
 
         \ff[3]{Lightning Reflexes} You gain a \plus2 bonus to Reflex defense and \glossterm{initiative} checks.
 
@@ -216,17 +216,17 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Bardic Exemplar}{Magical, Skill}
         \featpre Perform Specialization feat.
 
-        \ff[1]{Inspire Courage} As a standard action, you can spend an \glossterm{action point} to use the \textit{inspire courage} ability.
-        \begin{ability}{Inspire Courage}[\glossterm{Emotion}, \glossterm{Mind}, \glossterm{Sustain} (minor)]
+        \ff[1]{Inspire Courage} You can use the \textit{inspire courage} ability as a standard action.
+        \begin{apability}{Inspire Courage}[\glossterm{Emotion}, \glossterm{Mind}, \glossterm{Sustain} (minor)]
             You begin a performance using one of your Perform skills.
             All willing allies within a \areahuge emanation from you gain a \plus1 bonus to \glossterm{accuracy} and a \plus2 bonus to Mental defense.
 
             If a target can neither see nor hear your performance, the effect immediately ends for that target.
             This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
-        \end{ability}
+        \end{apability}
 
-        \ff[2]{Vicious Mockery} As a standard action, you can spend an \glossterm{action point} to use the \textit{vicious mockery} ability.
-        \begin{ability}{Vicious Mockery}[\glossterm{Emotion}, \glossterm{Mind}]
+        \ff[2]{Vicious Mockery} You can use the \textit{vicious mockery} ability as a standard action.
+        \begin{apability}{Vicious Mockery}[\glossterm{Emotion}, \glossterm{Mind}]
             You make a brief performance using one of your Perform skills.
             Make an attack vs. Mental against all enemies within a \areahuge radius from you.
             Your accuracy is equal to the Perform skill used for your performance.
@@ -234,17 +234,17 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             \hit As a \glossterm{condition}, each target takes a \minus1 penalty to \glossterm{accuracy} and a \minus2 penalty to Mental defense.
 
             This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
-        \end{ability}
+        \end{apability}
 
-        \ff[5]{Song of Serenity} As a standard action, you can spend an \glossterm{action point} to use the \textit{song of serenity} ability.
-        \begin{ability}{Song of Serenity}[\glossterm{Emotion}, \glossterm{Mind}, \glossterm{Sustain} (minor)]
+        \ff[5]{Song of Serenity} You can use the \textit{song of serenity} ability as a standard action.
+        \begin{apability}{Song of Serenity}[\glossterm{Emotion}, \glossterm{Mind}, \glossterm{Sustain} (minor)]
             You begin a performance using one of your Perform skills.
             Choose a willing creature within \rngmed range.
             The target is immune to hostile \glossterm{Mind} effects.
 
             If the target can neither see nor hear your performance, the effect immediately ends.
             This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
-        \end{ability}
+        \end{apability}
 
         \ff[8]{Greater Inspire Courage} Each target affected by your \textit{inspire courage} ability is immune to \glossterm{Fear} abilities.
 
@@ -297,13 +297,13 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[8]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
-        \ff[11]{Dual Speech}[Magical] When you speak, you can spend an \glossterm{action point} to use the \textit{dual speech} ability.
-        \begin{ability}{Dual Speech}[\glossterm{Sustain} (minor)]
+        \ff[11]{Dual Speech}[Magical] When you speak, you can use the \textit{dual speech} ability.
+        \begin{apability}{Dual Speech}[\glossterm{Sustain} (minor)]
             You speak the same words with two different vocal patterns, such as tone or accent, though you cannot significantly change the volume.
             You can freely choose which creatures hear which pattern, treating all creatures you are not aware of as a single group.
 
             You can freely choose different vocal patterns each round that you sustain this ability.
-        \end{ability}
+        \end{apability}
 
         \ff[14]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
@@ -321,7 +321,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \featpre Ability to cast a spell.
 
         \ff[1]{Multiple Boon} When you cast a spell with the \glossterm{Attune} (target) tag, you can use the \textit{multiple boon} ability.
-        \begin{ability}{Multiple Boon}
+        \begin{freeability}{Multiple Boon}
             % This wording is a bit awkward, but it works
             Choose a previous activation of the current spell you are casting.
             Unlike normal, that activation is not \glossterm{dismissed} by the spell you are currently casting (see \pcref{Duplicate Attunement Abilities}).
@@ -330,10 +330,10 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             You can only use this ability on one spell at a time.
             If you use this ability while it already affects another spell, you choose which spell is affected by the ability.
             The other spell is immediately \glossterm{dismissed}.
-        \end{ability}
+        \end{freeability}
 
-        \ff[3]{Benevolent Transferance} As a \glossterm{minor action}, you can use the \textit{benevolent transferance} ability.
-        \begin{ability}{Benevolent Transferance}
+        \ff[3]{Benevolent Transferance} You can use the \textit{benevolent transferance} ability as a \glossterm{minor action}.
+        \begin{freeability}{Benevolent Transferance}
             Choose a creature currently attuning to a spell you cast.
             In addition, choose another creature to transfer the spell to.
             Both targets must within that spell's range of you, and must be valid targets for the spell.
@@ -341,7 +341,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
             If both targets are willing, the spell's effect is transferred from the first target to the second.
             The spell's new target must spend an action point to attune to the spell as normal.
-        \end{ability}
+        \end{freeability}
 
         \ff[6]{Boon Lore} You learn an additional \glossterm{spell}.
         The spell must have the \glossterm{Attune} (target) tag.
@@ -353,7 +353,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[12]{Regenerative Transferance} When you use your \textit{benevolent transferance} ability, if the new target attunes to the spell, the original target of the spell regains the action point it spent to attune to the spell.
 
         \ff[15]{Personal Boon} When you cast a spell with the \glossterm{Attune} (target) tag on yourself, you can use the \textit{personal boon} ability.
-        \begin{ability}{Personal Boon}
+        \begin{freeability}{Personal Boon}
             You can attune to the spell you are casting without spending an \glossterm{action point}.
 
             You can only use this ability on one spell at a time.
@@ -361,7 +361,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             % This has a bizarre edge case involving you being one of multiple targets for a multi-attunement effect,
             % but there is only one of those in the game and it's a ritual, so it's not worth worrying about.
             The other spell is immediately \glossterm{dismissed}.
-        \end{ability}
+        \end{freeability}
 
         \ff[18]{Supreme Multiple Boon} You can use your \textit{multiple boon} ability on up to three different spells at once.
     \end{feat}
@@ -376,11 +376,11 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[3]{Grapple Expertise} You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability (see \pcref{Grapple}).
 
-        \ff[6]{Takedown} As a standard action, you can spend an \glossterm{action point} to use the \textit{takedown} ability.
-        \begin{ability}{Takedown}
+        \ff[6]{Takedown} You can use the \textit{takedown} ability as a standard action.
+        \begin{apability}{Takedown}
             Make an unarmed \glossterm{strike}.
             In addition to the attack's normal effects, if the attack result also beats the target's Fortitude defense, you and the target are \grappled by each other.
-        \end{ability}
+        \end{apability}
 
         \ff[9]{Greater Unarmed Warrior} The damage bonus from your \textit{unarmed warrior} increases to \plus3d.
 
@@ -397,11 +397,11 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[1]{Celestial Power} Your \glossterm{power} with abilities from this feat is equal to your Willpower or your level, whichever is higher.
 
-        \ff[1]{Holy Blessing} As a \glossterm{minor action}, you can spend an \glossterm{action point} to use the \textit{holy blessing} ability.
-        \begin{ability}{Holy Blessing}[\glossterm{Attune} (target)]
+        \ff[1]{Holy Blessing} You can use the \textit{holy blessing} ability as a \glossterm{minor action}.
+        \begin{apability}{Holy Blessing}[\glossterm{Attune} (target)]
             Choose a willing creature within \rngclose range.
             The target gains a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} with all attacks.
-        \end{ability}
+        \end{apability}
 
         \ff[2]{Divine Favor} You gain a \plus1 bonus to Fortitude and Mental defense.
 
@@ -411,10 +411,10 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[8]{Greater Holy Blessing} When you use your \textit{holy blessing} ability, the target also gains a \plus1d \glossterm{magic bonus} to all abilities that deal damage or grant healing measured in dice.
 
-        \ff[11]{Angelic Flight} As a \glossterm{free action}, you can spend an \glossterm{action point} to use the \textit{angelic flight} ability.
-        \begin{ability}{Angelic Flight}
+        \ff[11]{Angelic Flight} You can use the \textit{angelic flight} ability as a \glossterm{free action}.
+        \begin{apability}{Angelic Flight}
             You gain a \glossterm{fly speed} equal to your \glossterm{base speed} until the end of the round (see \pcref{Flying}).
-        \end{ability}
+        \end{apability}
 
         \ff[14]{Greater Divine Favor} The bonuses from your \textit{divine favor} ability increase to \plus2.
 
@@ -598,11 +598,11 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[8]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
-        \ff[11]{Disguise Size}[Magical] As a \glossterm{standard action}, you can spend an action point to use the \textit{disguise size} ability.
-        \begin{ability}{Disguise Size}[\glossterm{Attune} (self)]
+        \ff[11]{Disguise Size}[Magical] You can use the \textit{disguise size} ability as a \glossterm{standard action}.
+        \begin{attuneability}{Disguise Size}[\glossterm{Attune} (self)]
             You increase or decrease your size by one \glossterm{size category}.
             This effect lasts as long as you \glossterm{attune} to it.
-        \end{ability}
+        \end{attuneability}
 
         \ff[14]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
     \end{feat}
@@ -619,12 +619,12 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[1]{Draconic Weapons} You gain a bite natural weapon and two claw natural weapons, one on each arm.
         For details, see \pcref{Natural Weapons}.
 
-        \ff[2]{Breath Weapon} As a \glossterm{standard action}, you can spend an \glossterm{action point} to use the \textit{breath weapon} ability.
-        \begin{ability}{Breath Weapon}
+        \ff[2]{Breath Weapon} You can use the \textit{breath weapon} ability as a \glossterm{standard action}.
+        \begin{apability}{Breath Weapon}
             Make an attack vs. Armor against everything in the area defined by your \textit{draconic ancestry} ability (see \trefnp{Dragon Types}).
             \hit Each target takes \glossterm{standard damage}.
             The damage type is defined by your \textit{draconic ancestry} ability.
-        \end{ability}
+        \end{apability}
 
         \ff[5]{Draconic Wings} You gain scaly wings that sprout from your back.
         These wings grant you a glide speed equal to your \glossterm{base speed} (see \pcref{Gliding}).
@@ -635,10 +635,10 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         A line breath weapon becomes a \areahuge, 10 ft.\ wide line.
         A cone breath weapon becomes a \arealarge cone.
 
-        \ff[11]{Draconic Flight}[Magical] As a \glossterm{free action}, you can spend an \glossterm{action point} to use the \textit{draconic flight} ability.
-        \begin{ability}{Draconic Flight}
+        \ff[11]{Draconic Flight}[Magical] You can use the \textit{draconic flight} ability as a \glossterm{free action}.
+        \begin{apability}{Draconic Flight}
             You gain a \glossterm{fly speed} equal to your \glossterm{base speed} until the end of the round (see \pcref{Flying}).
-        \end{ability}
+        \end{apability}
 
         \ff[14]{Supreme Breath Weapon} The damage dealt by your \textit{breath weapon} ability increases by \plus1d.
         In addition, the area affected increases.
@@ -671,12 +671,12 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Duelist}{Combat}
         \featpre Starting Dexterity of 1, starting Intelligence of 1.
 
-        \ff[1]{Focused Strike} As a standard action, you can spend an \glossterm{action point} to use the \textit{focused strike} ability.
-        \begin{ability}{Focused Strike}
+        \ff[1]{Focused Strike} You can use the \textit{focused strike} ability as a standard action.
+        \begin{apability}{Focused Strike}
             Make a melee \glossterm{strike}.
             If you are not threatened by more than one creature, you gain a \plus2 bonus to \glossterm{accuracy} with the strike.
             If you are the only creature threatening your target, you gain a \plus2d bonus to damage with the strike.
-        \end{ability}
+        \end{apability}
 
         \ff[3]{Parry} You gain a \plus1 bonus to Armor defense as long as you are not \glossterm{threatened} by more than one creature.
 
@@ -702,15 +702,15 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Eldritch Knight}{Spell}
         \featpre Ability to cast a spell.
 
-        \ff[1]{Imbue Weapon}[Magical] When you cast a spell that affects a single target, you can spend an \glossterm{action point} to use the \textit{imbue weapon} ability.
-        \begin{ability}{Imbue Weapon}[\glossterm{Attune} (self)]
+        \ff[1]{Imbue Weapon}[Magical] When you cast a spell that affects a single target, you can use the \textit{imbue weapon} ability.
+        \begin{attuneability}{Imbue Weapon}[\glossterm{Attune} (self)]
             The spell does not have its effect immediately, and you regain the action point used to cast the spell (if any).
             Instead, its power is imbued in a melee weapon you hold. 
 
             As a standard action, you can make a melee \glossterm{strike} using that weapon.
             If you do, the spell affects the target of the strike.
             After the spell takes effect, this ability's duration ends.
-        \end{ability}
+        \end{attuneability}
 
         \ff[3]{Combat Caster} You gain a \plus2 bonus to \glossterm{concentration} checks made to use spells and rituals.
         In addition, you reduce your \glossterm{encumbrance} by 1 when determining your \textit{arcane spell failure} (if any).
@@ -740,13 +740,13 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[8]{Greater Specialization} The bonus to Escape Artist from your \textit{specialization} ability increases to \plus4.
 
-        \ff[11]{Escape Magic}[Magical] As a standard action, you can spend an \glossterm{action point} to use the \textit{escape magic} ability.
-        \begin{ability}{Escape Magic}
+        \ff[11]{Escape Magic}[Magical] You can use the \textit{escape magic} ability as a standard action.
+        \begin{apability}{Escape Magic}
             You make an Escape Artist attack against all \glossterm{magical} effects on you.
             You may exclude any number of effects you are aware of from this attack, allowing you to maintain beneficial magical effects.
             The DR for each effect is equal to 10 \add the effect's \glossterm{power}.
             \hit Each effect is \glossterm{dismissed}, if it is an effect that can be dismissed.
-        \end{ability}
+        \end{apability}
 
         You can only dismiss effects with this ability which target you directly, not area effects which include you as a target.
         If an ability targets multiple creatures, you can only remove its effects on you.
@@ -762,11 +762,11 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Executioner}{Combat}
         \featpres Starting Strength of 1, starting Perception of 2.
 
-        \ff[1]{Execution} As a standard action, you can spend an \glossterm{action point} to use the \textit{execution} ability.
-        \begin{ability}{Execution}
+        \ff[1]{Execution} You can use the \textit{execution} ability as a standard action.
+        \begin{apability}{Execution}
             Make a \glossterm{strike}.
             At the end of the current phase, if the target is \glossterm{bloodied}, it takes additional damage equal to the damage you dealt to it with your strike.
-        \end{ability}
+        \end{apability}
 
         \ff[3]{Purge the Weak} You gain a \plus1 bonus to \glossterm{accuracy} against \glossterm{bloodied} creatures.
 
@@ -788,32 +788,32 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Guardian}{Combat}
         \featpre Starting Perception and Willpower of 1.
 
-        \ff[1]{Binding Strike} As a standard action, you can spend an \glossterm{action point} to use the \textit{binding strike} ability.
-        \begin{ability}{Binding Strike}
+        \ff[1]{Binding Strike} You can use the \textit{binding strike} ability as a standard action.
+        \begin{apability}{Binding Strike}
             Make a melee \glossterm{strike} against an adjacent creature.
             In addition to the strike's normal effects, you also compare the attack result against the target's Mental defense.
 
             \hit The target is \glossterm{immobilized} as a \glossterm{condition}.
             This effect immediately ends if you are \glossterm{defeated} or if you stop being adjacent to the target.
             \crit The target is \glossterm{immobilized} as a \glossterm{condition}.
-        \end{ability}
+        \end{apability}
 
-        \ff[3]{Protect} As a \glossterm{minor action}, you can use the \textit{protect} ability.
-        \begin{ability}{Protect}[\glossterm{Swift}]
+        \ff[3]{Protect} You can use the \textit{protect} ability as a \glossterm{minor action}.
+        \begin{freeability}{Protect}[\glossterm{Swift}]
             One ally adjacent to you gains a \plus2 bonus to Armor defense.
             However, you take a \minus2 penalty to Armor defense.
             This effect lasts until the end of the round.
-        \end{ability}
+        \end{freeability}
 
         \ff[6]{Certain Bind} You gain a \plus1 bonus to accuracy with your \textit{binding strike} ability.
 
         \ff[6]{Defender} You gain a \plus2 bonus to \glossterm{threat}.
 
-        \ff[9]{Redirection}[Magical] When you use your \textit{protect} ability, you can spend an \glossterm{action point} to use the \textit{redirection} ability.
-        \begin{ability}{Redirection}
-            You suffer all effects from \glossterm{strikes} that hit the target in place of the target as long as the \textit{protect} ability lasts.
-            Any abilities you have that would make the attack miss or fail have no effect, but your abilities that allow you to reduce or ignore its effects work normally.
-        \end{ability}
+        \ff[9]{Redirection}[Magical] When you use your \textit{protect} ability, you can use the \textit{redirection} ability.
+        \begin{apability}{Redirection}
+            You suffer all effects from \glossterm{strikes} that hit the target in place of the target until the end of the round.
+            Any abilities you have that would reduce or negate the effects of the attack have no effect.
+        \end{apability}
 
         \ff[12]{Greater Certain Bind} The accuracy bonus from your \textit{certain bind} ability increases to \plus2.
 
@@ -831,11 +831,11 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Heal Specialization}{Skill}
         \featpre Heal as a mastered skill.
 
-        \ff{Healing Touch}[Magical] As a standard action, you can use the \textit{healing touch} ability.
-        \begin{ability}{Healing Touch}[\glossterm{Life}]
+        \ff{Healing Touch}[Magical] You can use the \textit{healing touch} ability as a standard action.
+        \begin{freeability}{Healing Touch}[\glossterm{Life}]
             Make a Heal check on a willing creature you can touch.
             The target is healed for an amount equal to the Heal check result.
-        \end{ability}
+        \end{freeability}
 
         \ff[2]{Specialization} You gain a \plus2 bonus to Heal.
 
@@ -843,11 +843,11 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[9]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
-        \ff[11]{Purging Touch}[Magical] As a standard action, you use the \textit{purging touch} ability.
-        \begin{ability}{Purging Touch}
+        \ff[11]{Purging Touch}[Magical] You can use the \textit{purging touch} ability as a standard action.
+        \begin{freeability}{Purging Touch}
             Make a Heal check on a willing creature you can touch.
             For each poison and disease on the target, if your check result is at least 10 higher than the \glossterm{power} of the effect, the effect is removed.
-        \end{ability}
+        \end{freeability}
 
         \ff[14]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
@@ -857,13 +857,13 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Intimidate Specialization}{Skill}
         \featpre Intimidate as a mastered skill.
 
-        \ff{Demoralizing Blow} As a standard action, you can spend an \glossterm{action point} to use the \textit{demoralizing blow} ability.
-        \begin{ability}{Demoralizing Blow}
+        \ff{Demoralizing Blow} You can use the \textit{demoralizing blow} ability as a standard action.
+        \begin{apability}{Demoralizing Blow}
             Make a \glossterm{strike}.
             In addition to the effects of the strike, you can make an attack vs. Mental against the target.
             Your \glossterm{accuracy} is equal to your Intimidate skill.
             \hit The target is \shaken by you as a \glossterm{condition}.
-        \end{ability}
+        \end{apability}
 
         \ff[2]{Specialization} You gain a \plus2 bonus to Intimidate.
 
@@ -903,11 +903,10 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[2]{Specialization} You gain a \plus2 bonus to Jump.
 
-        \ff[5]{Featherlight Leap}[Magical] You gain the \textit{featherlight leap} ability.
-        \begin{ability}{Featherlight Leap}[\glossterm{Swift}]
-            As a \glossterm{free action}, you can spend an \glossterm{action point}.
-            If you do, your maximum height for jumps during the current phase is equal to your Jump check result, rather than half your Jump check result.
-        \end{ability}
+        \ff[5]{Featherlight Leap}[Magical] You can use the \textit{featherlight leap} ability as a \glossterm{free action}.
+        \begin{apability}{Featherlight Leap}[\glossterm{Swift}]
+            Your maximum height for jumps during the current phase is equal to your Jump check result, rather than half your Jump check result.
+        \end{apability}
 
         \ff[8]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
@@ -937,17 +936,17 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Leadership}{Combat}
         \featpre Starting Willpower of 2.
 
-        \ff[1]{Bolster} As a standard action, you can spend an \glossterm{action point} to use the \textit{bolster} ability.
-        \begin{ability}{Bolster}[\glossterm{Mind}]
+        \ff[1]{Bolster} You can use the \textit{bolster} ability as a standard action.
+        \begin{apability}{Bolster}[\glossterm{Mind}]
             All allies other than yourself within a \areamed radius burst from you can remove one \glossterm{condition}.
             In addition, each target heals hit points equal to your Willpower.
-        \end{ability}
+        \end{apability}
 
-        \ff[3]{Battle Command} As a standard action, you can use the \textit{battle command} ability.
-        \begin{ability}{Battle Command}[\glossterm{Swift}]
+        \ff[3]{Battle Command} You can use the \textit{battle command} ability as a standard action.
+        \begin{freeability}{Battle Command}[\glossterm{Swift}]
             Choose an ally within \rngmed range of you.
             Until the end of the round, when it makes a \glossterm{strike}, it can roll the \glossterm{attack roll} twice and take the higher result.
-        \end{ability}
+        \end{freeability}
 
         % TODO: redesign annoying situational modifier
         \ff[6]{Inspiring Presence} All allies other than yourself within a \arealarge radius emanation from you gain a \plus1 bonus to Mental defense.
@@ -975,14 +974,14 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[5]{Language Focus} By spending a day in focused concentration on learning a specific \glossterm{common language}, you can use the \textit{language focus} ability.
         You must have access to either a willing creature fluent in the language or at least a book's worth of material written in the language.
-        \begin{ability}{Language Focus}
+        \begin{freeability}{Language Focus}
             If you had access to written material on the language, including from a teacher, you can read or write the language.
             If you had access to a speaker of the language, you can speak and understand the language.
             
             Similarly, if the creature teaching you was unable to commu, you cannot read or write the language.
 
             This ability's effect lasts until you use this ability again.
-        \end{ability}
+        \end{freeability}
 
         \ff[8]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
@@ -1003,11 +1002,11 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             \item Proficiency with \glossterm{exotic weapons} from a weapon group of your choice that you are already proficient with.
         \end{itemize}
 
-        \ff[3]{Honed Strike} As a standard action, you can spend an \glossterm{action point} to use the \textit{honed strike} ability.
-        \begin{ability}{Honed Strike}
+        \ff[3]{Honed Strike} You can use the \textit{honed strike} ability as a standard action.
+        \begin{apability}{Honed Strike}
             You make a \glossterm{strike} with a \plus1d bonus to damage.
             If the strike misses, you regain the \glossterm{action point} spent to use this ability.
-        \end{ability}
+        \end{apability}
 
         \ff[6]{Equipment Training} You gain an additional \textit{equipment training} ability of your choice.
 
@@ -1030,14 +1029,14 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[1]{Selective Backlash} Your \glossterm{miscast backlash} does not hurt your allies, though it still hurts you.
 
         \ff[3]{Overchannel} When you cast a spell, you can use the \textit{overchannel} ability.
-        \begin{ability}{Overchannel}
+        \begin{freeability}{Overchannel}
             Your concentration on the spell you are casting cannot be disrupted, and you cannot \glossterm{miscast} the spell for any other reason.
             Effects that prevent the spell from having any effect, such as the \textit{counterspell} ability from the Sphere Focus: Thaumaturgy feat, work normally (see \featpref{Sphere Focus: Thaumaturgy}).
             In addition, you cause a \glossterm{miscast backlash} when the spell resolves.
 
             However, using this ability requires channeling excessive magical energy that temporarily limits your connection to magic.
             During the next round, you cannot cast spells other than \glossterm{cantrips}, and you take a \minus2 penalty to all defenses.
-        \end{ability}
+        \end{freeability}
 
         \ff[6]{Suppressed Backlash} When you miscast a spell, you can suppress the \glossterm{miscast backlash}.
         If you do, you regain the action point spent to cast the spell (if any).
@@ -1055,27 +1054,29 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Mystic Archer}{Casting, Magical}
         \featpre Ability to cast a spell.
 
-        \ff[1]{Imbue Projectile} When you cast a spell that affects a single target, you can spend an \glossterm{action point} to use the \textit{imbue projectile} ability.
-        \begin{ability}{Imbue Projectile}[\glossterm{Attune} (self)]
+        \ff[1]{Imbue Projectile} When you cast a spell that affects a single target and does not have the \glossterm{Attune} or \glossterm{Sustain} tags,
+            you can use the \textit{imbue projectile} ability.
+        \begin{attuneability}{Imbue Projectile}[\glossterm{Attune} (self)]
             The spell does not have its effect immediately, and you regain the action point used to cast the spell (if any).
             Instead, its power is imbued in a \glossterm{projectile} you hold. 
 
             As a standard action, you can make a \glossterm{strike} using that projectile.
             If you do, the spell affects the target of the strike.
             After the spell takes effect, this ability's duration ends.
-        \end{ability}
+        \end{attuneability}
 
-        \ff[3]{Missile Storm} As a standard action, you can spend an \glossterm{action point} to use the \textit{missile storm} ability.
-        \begin{ability}{Missile Storm}
+        \ff[3]{Missile Storm} You can use the \textit{missile storm} ability as a standard action.
+        \begin{apability}{Missile Storm}
             Make a ranged \glossterm{strike} with a \glossterm{projectile weapon} you wield.
             The strike targets up to five creatures and objects within one \glossterm{range increment} of you with that weapon, except for creatures adjacent to you.
             You take a \minus1d penalty to damage with the strike.
-        \end{ability}
+        \end{apability}
 
         \ff[6]{Guided Projectiles} Your attacks with projectiles ignore \glossterm{cover}, but not \glossterm{total cover}.
 
-        \ff[9]{Imbue Detonating Projectile} When you cast a spell that affects an area, you can spend an \glossterm{action point} to use the \textit{imbue detonating projectile} ability.
-        \begin{ability}{Imbue Detonating Projectile}[\glossterm{Attune} (self)]
+        \ff[9]{Imbue Detonating Projectile} When you cast a spell that affects an area and does not have the \glossterm{Attune} or \glossterm{Sustain} tags,
+            you can use the \textit{imbue detonating projectile} ability.
+        \begin{attuneability}{Imbue Detonating Projectile}[\glossterm{Attune} (self)]
             The spell does not have its effect immediately, and you regain the action point used to cast the spell (if any).
             Instead, its power is imbued in a \glossterm{projectile} you hold. 
 
@@ -1084,7 +1085,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             The spell's \glossterm{point of origin} can be anywhere within the \glossterm{space} of the target of the strike.
             It affects targets within the area as if it had just been cast in that area.
             After the spell takes effect, this ability's duration ends.
-        \end{ability}
+        \end{attuneability}
 
         \ff[12]{Phasing Projectiles}[Teleportation] When attacking with projectiles, you can ignore all physical obstacles in single five-foot span.
         This can allow you to fire projectiles through solid walls, though it does not grant you the ability to see through the wall.
@@ -1105,8 +1106,8 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         In exchange, you lose the benefits of all \glossterm{magical} abilities you possess.
         In addition, you are unable to \glossterm{attune} to any \glossterm{magical} abilities, such as magic items or spells cast by other creatures.
 
-        \ff[4]{Null Severance} As a standard action, you can spend an \glossterm{action point} to use the \textit{null severance} ability.
-        \begin{ability}{Null Severance}
+        \ff[4]{Null Severance} You can use the \textit{null severance} ability as a standard action.
+        \begin{apability}{Null Severance}
             Make a \glossterm{strike}.
             The strike gains a \plus1d bonus to damage.
             In addition to the strike's normal effects, you also compare the attack result against the target's Mental defense.
@@ -1114,7 +1115,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             \hit The target breaks its \glossterm{attunement} to a random ability that it is currently attuned to.
             This ability does not affect attunement to magic items.
             \crit The target breaks its attunement to all abilities that it is attuned to.
-        \end{ability}
+        \end{apability}
 
         % clarify that it does not affect spells already in progress in the current phase?
         \ff[7]{Disruptive Presence} All enemies within an \areamed radius of you have a 50\% chance to \glossterm{miscast} any spell they cast.
@@ -1135,8 +1136,8 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Perform Specialization}{Skill}
         \featpre Perform as a mastered skill.
 
-        \ff{Mesmerizing Performance}[Magical] As a standard action, you can spend an \glossterm{action point} to use the \textit{mesmerizing performance} ability.
-        \begin{ability}{Mesmerizing Performance}[\glossterm{Emotion}, \glossterm{Mind}, \glossterm{Sustain} (minor)]
+        \ff{Mesmerizing Performance}[Magical] You can use the \textit{mesmerizing performance} ability as a standard action.
+        \begin{apability}{Mesmerizing Performance}[\glossterm{Emotion}, \glossterm{Mind},\\\glossterm{Sustain} (minor)]
             You begin a performance using one of your Perform skills.
             Make an attack vs. Mental against up to five creatures within \rngmed range.
             Your accuracy is equal to the Perform skill used for your performance.
@@ -1146,23 +1147,23 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
             If a target can neither see nor hear your performance, the effect immediately ends for that target.
             This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
-        \end{ability}
+        \end{apability}
 
         \ff[2]{Specialization} You gain a \plus2 bonus to Perform.
 
-        \ff[5]{Inspiring Performance}[Magical] As a standard action, you can spend an \glossterm{action point} to use the \textit{inspiring performance} ability.
-        \begin{ability}{Inspiring Performance}[\glossterm{Emotion}, \glossterm{Mind}, \glossterm{Sustain} (minor)]
+        \ff[5]{Inspiring Performance}[Magical] You can use the \textit{inspiring performance} ability as a standard action.
+        \begin{apability}{Inspiring Performance}[\glossterm{Emotion}, \glossterm{Mind},\\\glossterm{Sustain} (minor)]
             You begin a performance using one of your Perform skills.
             One other willing creature within \rngmed range gains a \plus2 bonus to \glossterm{checks}.
 
             If the target can neither see nor hear your performance, the effect immediately ends for that target.
             This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
-        \end{ability}
+        \end{apability}
 
         \ff[8]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
-        \ff[11]{Mesmeric Suggestion}[Magical] As a standard action, you can spend an \glossterm{action point} to use the \textit{mesmeric suggestion} ability.
-        \begin{ability}{Mesmeric Suggestion}[\glossterm{Emotion}, \glossterm{Mind}, \glossterm{Subtle}, \glossterm{Sustain} (minor)]
+        \ff[11]{Mesmeric Suggestion}[Magical] You can use the \textit{mesmeric suggestion} ability as a standard action.
+        \begin{apability}{Mesmeric Suggestion}[\glossterm{Emotion}, \glossterm{Mind},\\\glossterm{Subtle}, \glossterm{Sustain} (minor)]
             Make an attack vs. Mental against a target within \rngmed range.
             Your accuracy is equal to the Perform skill used for your performance.
             You must also make a verbal suggestion of a particular course of action to the target.
@@ -1176,7 +1177,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             If the target is not currently \fascinated by your \textit{mesmerizing performance} ability, this attack automatically fails.
             If the target can neither see nor hear your performance, the effect immediately ends for that target.
             This ability lasts as long as you sustain your \textit{mesmerizing performance}.
-        \end{ability}
+        \end{apability}
 
         \ff[14]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
@@ -1188,15 +1189,15 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Persuasion Specialization}{Skill}
         \featpre Persuasion as a mastered skill.
 
-        \ff{Compel Attention}[Magical] As a standard action, you can spend an \glossterm{action point} to use the \textit{compel attention} ability.
-        \begin{ability}{Compel Attention}[\glossterm{Auditory}, \glossterm{Compulsion}, \glossterm{Mind}, \glossterm{Sustain} (minor), \glossterm{Subtle}]
+        \ff{Compel Attention}[Magical] You can use the \textit{compel attention} ability as a standard action.
+        \begin{apability}{Compel Attention}[\glossterm{Auditory}, \glossterm{Compulsion},\\\glossterm{Mind}, \glossterm{Sustain} (minor), \glossterm{Subtle}]
             Make an attack vs. Mental against a creature within \rngmed range.
             Your \glossterm{accuracy} is equal to your Persuasion skill.
             You must talk loud enough for the target to hear hear to draw its attention.
             \hit The target is \glossterm{fascinated} by you as long as you sustain this ability, which requires maintaining your conversation with it.
             Any act by you or your apparent allies that damages a target or that causes it to feel that it is in danger breaks the effect for that creature.
             An observant target may interpret overt threats to its allies as a threat to itself.
-        \end{ability}
+        \end{apability}
 
         \ff[2]{Specialization} You gain a \plus2 bonus to Persuasion.
 
@@ -1204,8 +1205,8 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[8]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
-        \ff[11]{Suggestion}[Magical] As a standard action, you can spend an \glossterm{action point} to use the \textit{suggestion} ability.
-        \begin{ability}{Suggestion}[\glossterm{Emotion}, \glossterm{Mind}, \glossterm{Subtle}, \glossterm{Sustain} (minor)]
+        \ff[11]{Suggestion}[Magical] You can use the \textit{suggestion} ability as a standard action.
+        \begin{apability}{Suggestion}[\glossterm{Emotion}, \glossterm{Mind}, \glossterm{Subtle}, \glossterm{Sustain} (minor)]
             Make an attack vs. Mental against a target within \rngmed range.
             Your \glossterm{accuracy} is equal to your Persuasion skill.
             You must also make a verbal suggestion of a particular course of action to the target.
@@ -1215,7 +1216,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             \hit As a \glossterm{condition}, the target thinks your suggestion is a good idea and will try to follow it to the best of its abilities.
             Any act by you or your apparent allies that damages the target or makes it feel that it is in danger breaks the effect.
 
-        \end{ability}
+        \end{apability}
 
         \ff[14]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
     \end{feat}
@@ -1223,14 +1224,14 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Precognition}{Combat}
         \featpre Starting Intelligence of 2.
 
-        \ff[1]{Precognitive Strike} As a standard action, you can use the \textit{precognitive strike} ability.
-        \begin{ability}{Precognitive Strike}
+        \ff[1]{Precognitive Strike} You can use the \textit{precognitive strike} ability as a standard action.
+        \begin{freeability}{Precognitive Strike}
             Make a \glossterm{strike}.
             You can use your Intelligence in place of your Perception to determine your accuracy with this strike.
-        \end{ability}
+        \end{freeability}
 
-        \ff[3]{Combat Prediction} At the start of each phase, you can spend an \glossterm{action point} to use the \textit{combat prediction} ability.
-        \begin{ability}{Combat Prediction}
+        \ff[3]{Combat Prediction} At the start of each phase, you can use the \textit{combat prediction} ability.
+        \begin{apability}{Combat Prediction}
             Make an attack vs. Mental against a creature within \rngmed range of you.
             \hit You gain insight into the actions that creature intends to take during the current phase.
                 It may change its actions based on your interference if you communicate this information in a way it understands.
@@ -1239,7 +1240,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             The insight from this ability allows you to see and hear what actions that creature intends to take.
             You do not gain any knowledge of actions that have no obvious signs, such as purely mental actions, or actions which you are not observant enough to notice.
             In addition, you do not know the results of actions with a chance of failure, such as attacks.
-        \end{ability}
+        \end{apability}
 
         \ff[6]{Greater Precognitive Strike} When you use your \textit{precognitive strike} ability, you can also use your Intelligence to determine your damage with the strike in place of your Strength.
 
@@ -1327,13 +1328,13 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Sense Motive Specialization}{Skill}
         \featpre Sense Motive as a mastered skill.
 
-        \ff{Read Mind}[Magical] As a standard action, you can spend an \glossterm{action point} to use the \textit{read mind} ability.
-        \begin{ability}{Read Mind}[\glossterm{Mind}, \glossterm{Sustain} (minor)]
+        \ff{Read Mind}[Magical] You can use the \textit{read mind} ability as a standard action.
+        \begin{apability}{Read Mind}[\glossterm{Mind}, \glossterm{Sustain} (minor)]
             Make an attack vs. Mental against a creature within \rngclose range.
             Your \glossterm{accuracy} is equal to Sense Motive skill.
             \hit You know the target's surface thoughts.
             This grants you a \plus2 bonus to Bluff, Persuasion, and Intimidate attacks and checks against the target.
-        \end{ability}
+        \end{apability}
 
         \ff[2]{Specialization} You gain a \plus2 bonus to Sense Motive.
 
@@ -1355,13 +1356,13 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         If you do, you conceal the object in a pocket dimension that cannot be accessed by nonmagical means.
         You can only hide one object at a time in this way.
 
-        \ff[10]{Extradimensional Retrieval}[Magical] As a standard action, you can spend an \glossterm{action point} to use the \textit{extradimensional retrieval} ability.
-        \begin{ability}{Extradimensional Retrieval}
+        \ff[10]{Extradimensional Retrieval}[Magical] You can use the \textit{extradimensional retrieval} ability as a standard action.
+        \begin{apability}{Extradimensional Retrieval}
             You reach into your pocket dimension to retrieve the object you stored there previously.
 
             Alternately, you can reach into the pocket dimension belonging to a creature you are touching to retrieve the object stored there.
             If that creature does not have the \textit{extradimensional concealment} ability, or does not have an object in their pocket dimension, this ability fails.
-        \end{ability}
+        \end{apability}
 
         \ff[14]{Supreme Specialization} The bonus to Sleight from your \textit{specialization} ability increases to \plus6.
     \end{feat}
@@ -1369,13 +1370,13 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Sniper}{Combat}
         \featpre Starting Perception of 2.
 
-        \ff[1]{Aim} As a standard action, you can use the \textit{aim} ability.
-        \begin{ability}{Aim}[\glossterm{Sustain} (minor)]
+        \ff[1]{Aim} You can use the \textit{aim} ability as a standard action.
+        \begin{freeability}{Aim}[\glossterm{Sustain} (minor)]
             Choose a creature or object within line of sight.
             You gain a \plus2 bonus to accuracy on \glossterm{strikes} against the target.
 
             If you lose sight of the target for a full round, this effect ends.
-        \end{ability}
+        \end{freeability}
 
         \ff[3]{Distance Tolerance} You reduce your accuracy penalties from \glossterm{range increments} by 2.
 
@@ -1395,8 +1396,8 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Spellcraft Specialization}{Skill}
         \featpre Spellcraft as a mastered skill.
 
-        \ff{Detect Spellcasting}[Magical] As a standard action, you can spend an \glossterm{action point} to use the \textit{detect spellcasting} ability.
-        \begin{ability}{Detect Spellcasting}[\glossterm{Knowledge}, \glossterm{Subtle}]
+        \ff{Detect Spellcasting}[Magical] You can use the \textit{detect spellcasting} ability as a standard action.
+        \begin{apability}{Detect Spellcasting}[\glossterm{Knowledge}, \glossterm{Subtle}]
             Make a Spellcraft attack against the Mental defense of a creature within \rngmed range.
             \hit You know whether the target is capable of casting spells.
             If the target can cast spells, you know what sources the target can cast spells from.
@@ -1404,16 +1405,16 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             This does not grant you knowledge of any specific spells the target knows.
 
             After using this ability on a target, you cannot use it again on the same target for 24 hours regardless of whether you hit or miss.
-        \end{ability}
+        \end{apability}
 
         \ff[2]{Specialization} You gain a \plus2 bonus to Spellcraft.
 
-        \ff[5]{Unweave Magic}[Magical] As a standard action, you can spend an \glossterm{action point} to use the \textit{unweave magic} ability.
-        \begin{ability}{Unweave Magic}[\glossterm{Mystic}]
+        \ff[5]{Unweave Magic}[Magical] You can use the \textit{unweave magic} ability as a standard action.
+        \begin{apability}{Unweave Magic}[\glossterm{Mystic}]
             Make a Spellcraft check on an active spell effect within \rngmed range.
             The DR is equal to 5 \add the \glossterm{power} of the effect.
             Success means the effect is \glossterm{dismissed} if it is an effect that can be dismissed.
-        \end{ability}
+        \end{apability}
 
         \ff[8]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
@@ -1432,13 +1433,12 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[1]{Spell} You learn a spell from the \sphere{aquamancy} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[3]{Create Water} As a standard action, you can spend an \glossterm{action point} to use the \textit{create water} ability.
-
-        \begin{ability}{Create Water}[\glossterm{Creation}, \glossterm{Water}]
+        \ff[3]{Create Water} You can use the \textit{create water} ability as a standard action.
+        \begin{freeability}{Create Water}[\glossterm{Creation}, \glossterm{Water}]
             You create up to one gallon per \glossterm{power} of wholesome, drinkable water anywhere within \rngclose range.
             The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
             You must create a minimum of one ounce of water in each location.
-        \end{ability}
+        \end{freeability}
 
         \ff[3]{Fire Tolerance} You gain damage reduction against fire damage equal to your \glossterm{power}.
 
@@ -1463,12 +1463,12 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[1]{Spell} You learn a spell from the \sphere{astromancy} \glossterm{mystic sphere}.
         When you gain access to a new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[3]{Minor Translocation} As a standard action, you can use the \textit{minor translocation} ability.
-        \begin{ability}{Minor Translocation}[\glossterm{Teleportation}]
+        \ff[3]{Minor Translocation} You can use the \textit{minor translocation} ability as a standard action.
+        \begin{freeability}{Minor Translocation}[\glossterm{Teleportation}]
             Choose a Tiny or smaller unattended object within \rngclose range.
             The target teleports into an unoccupied destination within range.
             If the destination is invalid, the ability fails without effect.
-        \end{ability}
+        \end{freeability}
 
         \ff[6]{Astral Spell Transit} You double your range with abilities from the \sphere{astromancy} \glossterm{mystic sphere}.
 
@@ -1477,10 +1477,10 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[12]{Greater Astral Spell Transit} When determining whether you have \glossterm{line of effect} to a particular location with abilites from the \sphere{astromancy} \glossterm{mystic sphere}, you can ignore all physical obstacles in a single five-foot span.
         This can allow you to use abilities through solid walls, though it does not grant you the ability to see through the wall.
 
-        \ff[15]{Personal Translocation} As a \glossterm{minor action}, you can use the \textit{personal translocation} ability.
-        \begin{ability}{Personal Translocation}[\glossterm{Teleportation}]
+        \ff[15]{Personal Translocation} You can use the \textit{personal translocation} ability as a \glossterm{minor action}.
+        \begin{freeability}{Personal Translocation}[\glossterm{Teleportation}]
             You teleport to an unoccupied destination within \rngclose range.
-        \end{ability}
+        \end{freeability}
 
         \ff[18]{Greater Potent Astromancy} The bonus from your \textit{potent astromancy} ability increases to \plus2.
     \end{feat}
@@ -1491,22 +1491,22 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[1]{Spell} You learn a spell from the \sphere{barrier} \glossterm{mystic sphere}.
         When you gain access to a new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[3]{Burst Ward} As a standard action, you can use the \textit{burst ward} ability.
-        \begin{ability}{Burst Ward}[\glossterm{Swift}, \glossterm{Sustain} (standard)]
+        \ff[3]{Burst Ward} You can use the \textit{burst ward} ability as a standard action.
+        \begin{freeability}{Burst Ward}[\glossterm{Swift}, \glossterm{Sustain} (standard)]
             You take half damage from all attacks.
             This halving is applied before damage reduction and similar abilities.
             % TODO: wording?
             This ability lasts until the end of the round.
-        \end{ability}
+        \end{freeability}
 
         \ff[6]{Personal Shield} You gain a \plus1 \glossterm{magic bonus} to Armor defense.
 
         \ff[9]{Abjurant Shield} When you cast a spell from the \sphere{barrier} \glossterm{mystic sphere}, you can use the \textit{abjurant shield} ability.
-        \begin{ability}{Abjurant Shield}[\glossterm{Shielding}]
+        \begin{freeability}{Abjurant Shield}[\glossterm{Shielding}]
             Choose a creature or object affected by the spell.
             The target gains a \plus1 \glossterm{magic bonus} to all defenses as long as the spell lasts on the target.
             This ability also ends if you use it again.
-        \end{ability}
+        \end{freeability}
 
         \ff[12]{Greater Burst Ward} When you use your \textit{burst ward} ability, you also gain damage reduction equal to your \glossterm{power}.
 
@@ -1582,12 +1582,12 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[1]{Spell} You learn a spell from the \sphere{fabrication} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[3]{Fabricate Trinket} As a standard action, you can spend an \glossterm{action point} to use the \textit{fabricate trinket} ability.
-        \begin{ability}{Fabricate Trinket}[\glossterm{Attune} (self), \glossterm{Manifestation}]
+        \ff[3]{Fabricate Trinket} You can use the \textit{fabricate trinket} ability as a standard action.
+        \begin{attuneability}{Fabricate Trinket}[\glossterm{Attune} (self), \glossterm{Manifestation}]
             You make a Craft check to create an object of Tiny size or smaller.
             The object appears in your hand or at your feet.
             It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
-        \end{ability}
+        \end{attuneability}
 
         \ff[6]{Crafting Familiarity} You gain a \plus2 bonus to all Craft skills.
         In addition, any objects you create with abilities from the \sphere{fabrication} \glossterm{mystic sphere} gain additional hit points equal to your \glossterm{power} with that ability.
@@ -1627,15 +1627,15 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[1]{Spell} You learn a spell from the \sphere{polymorph} \glossterm{mystic sphere}.
         When you gain access to a new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[3]{Reshaper} As a standard action, you can spend an \glossterm{action point} to use the \textit{alter self} or \textit{alter object} ability.
-        \begin{ability}{Alter Self}[\glossterm{Shaping}]
+        \ff[3]{Reshaper} As a standard action, you can use the \textit{alter self} or \textit{alter object} ability.
+        \begin{freeability}{Alter Self}[\glossterm{Shaping}]
             Make a Disguise check to alter your appearance (see \pcref{Disguise Creature}), except that you can use your \glossterm{power} in place of your Disguise skill.
             You can only alter your physical body, not your clothes or equipment.
 
             This ability lasts until you use it again.
-        \end{ability}
+        \end{freeability}
 
-        \begin{ability}{Alter Object}[\glossterm{Shaping}]
+        \begin{freeability}{Alter Object}[\glossterm{Shaping}]
             Choose an unattended, nonmagical object you can touch.
             You make a Craft check to alter the target (see \pcref{Craft}), except that you can use your \glossterm{power} in place of your Craft skill.
             In addition, you do not need any special tools to make the check (such as an anvil and furnace).
@@ -1643,21 +1643,21 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
             % too short?
             Each time you use this ability, you can accomplish work that would take up to five minutes with a normal Craft check.
-        \end{ability}
+        \end{freeability}
 
         \ff[6]{Personal Regeneration} At the end of each \glossterm{action phase}, you heal hit points equal to half your \glossterm{power}.
 
         \ff[9]{Potent Polymorph} You gain a \plus1 bonus to \glossterm{accuracy} with abilities from the \sphere{polymorph} \glossterm{mystic sphere}.
 
         \ff[12]{Greater Reshaper} When you use your \textit{alter object} ability, you can accomplish work that would take up to an hour with a normal Craft check.
-        In addition, as a standard action, you can spend an \glossterm{action point} to use the \textit{alter poison} ability.
-        \begin{ability}{Alter Poison}[\glossterm{Shaping}, \glossterm{Sustain} (minor)]
+        In addition, you can use the \textit{alter poison} ability as a standard action.
+        \begin{apability}{Alter Poison}[\glossterm{Shaping}, \glossterm{Sustain} (minor)]
             Make an attack vs. Fortitude against a creature within \rngclose range.
             \hit Any poison in the target's system is neutralized.
             It stops suffering any additional effects from poisons in its system.
             As long as the effect lasts, it is immune to all poisons.
             In addition, the target's \glossterm{mundane} poisons, including natural attacks that inflict poison, have no effect.
-        \end{ability}
+        \end{apability}
 
         \ff[15]{Greater Personal Alteration} The healing from your \textit{personal regeneration} ability increases to be equal to your \glossterm{power}.
 
@@ -1672,20 +1672,20 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[3]{Fire Tolerance} You gain damage reduction against fire damage equal to your \glossterm{power}.
 
-        \ff[3]{Personal Torch} As a standard action, you can use the \textit{personal torch} ability.
-        \begin{ability}{Personal Torch}
+        \ff[3]{Personal Torch} You can use the \textit{personal torch} ability as a standard action.
+        \begin{freeability}{Personal Torch}
             You create a flame in your hand.
             You can create it at any intensity, up to a maximum heat equivalent to a roaring campfire.
             At it most intense, it sheds bright light in a 50 foot radius and dim light in an 100 foot radius.
             If you touch a creature or object with it, the target takes 1d8 fire damage.
             This ability lasts until you use it again or until you \glossterm{dismiss} it as a \glossterm{free action}.
-        \end{ability}
+        \end{freeability}
 
         \ff[6]{Backdraft} Once per round, when you cast a spell from the \sphere{pyromancy} \glossterm{mystic sphere}, you can use the \textit{backdraft} ability.
-        \begin{ability}{Backdraft}
+        \begin{freeability}{Backdraft}
             Make an attack vs. Armor against everything except allies within an \areasmall radius from you.
             \hit Each target takes fire damage equal to your \glossterm{power}.
-        \end{ability}
+        \end{freeability}
 
         \ff[9]{Potent Pyromancy} You gain a \plus1 bonus to \glossterm{power} with abilities from the \sphere{pyromancy} \glossterm{mystic sphere}.
 
@@ -1703,8 +1703,8 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[1]{Spell} You learn a spell from the \sphere{revelation} \glossterm{mystic sphere}.
         When you gain access to a new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[3]{Prophesy} As a standard action, you can spend an \glossterm{action point} to use the \textit{prophesy} ability.
-        \begin{ability}{Prophesy}
+        \ff[3]{Prophesy} You can use the \textit{prophesy} ability as a standard action.
+        \begin{apability}{Prophesy}
             When you use this ability, you must visualize an action that a creature (or group of creatures) could take within the next hour.
             This time period is called the \textit{time of prophecy}.
 
@@ -1714,7 +1714,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             For example, if you used this ability to foresee the results of entering a room that had a group of creatures waiting in ambush, you might see a vision of flashing daggers in darkness darting towards your exposed back, regardless of whether the creatures would actually use daggers to attack.
 
             After using this ability, you cannot use it again until the \textit{time of prophecy} has ended, regardless of whether the action was taken.
-        \end{ability}
+        \end{apability}
 
         \ff[6]{Precognitive Reaction} You gain a \plus2 bonus to Reflex defense and \glossterm{initiative} checks.
 
@@ -1740,11 +1740,11 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[1]{Spell} You learn a spell from the \sphere{summon} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[3]{Resummon} As a \glossterm{minor action}, you can use the \textit{resummon} ability.
-        \begin{ability}{Resummon}
+        \ff[3]{Resummon} You can use the \textit{resummon} ability as a \glossterm{minor action}.
+        \begin{freeability}{Resummon}
             Choose one creature or object that you summoned with an ability from the \sphere{summon} \glossterm{mystic sphere}.
             You teleport the target into an unoccupied space on stable ground within \rngmed range of you.
-        \end{ability}
+        \end{freeability}
 
         \ff[6]{Fortified Summoning} Creatures you create with abilities from the \sphere{summon} spell have \glossterm{damage reduction} equal to half your \glossterm{power} with that ability.
 
@@ -1765,22 +1765,22 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[1]{Spell} You learn a spell from the \sphere{telekinesis} \glossterm{mystic sphere}.
         When you gain access to a new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[3]{Distant Hand} As a \glossterm{minor action}, you can use the \textit{distant hand} ability.
-        \begin{ability}{Distant Hand}[\glossterm{Sustain} (minor)]
+        \ff[3]{Distant Hand} You can use the \textit{distant hand} ability as a \glossterm{minor action}.
+        \begin{freeability}{Distant Hand}[\glossterm{Sustain} (minor)]
             Choose a Medium or smaller unattended object within \rngclose range.
             You can move it up to five feet in any direction within range, using your \glossterm{power} instead of your Strength to determine your maximum carrying capacity.
 
             In addition, you can manipulate the target as if you were holding it in your hands.
             Any attacks you make with the object or checks you make to manipulate the object have a maximum bonus equal to your \glossterm{power}.
-        \end{ability}
+        \end{freeability}
 
         \ff[6]{Forceful Telekinesis} You double the distance that you can move creatures and objects with abilities from the \sphere{telekinesis} \glossterm{mystic sphere}.
 
-        \ff[6]{Telekinetic Strike} As a standard action, you can use the \textit{telekinetic strike} ability.
-        \begin{ability}{Telekinetic Strike}
+        \ff[6]{Telekinetic Strike} You can use the \textit{telekinetic strike} ability as a standard action.
+        \begin{freeability}{Telekinetic Strike}
             Make a strike with a weapon you are controlling using the \textit{distant hand} ability.
             You use your \glossterm{power} to determine your damage in place of your Strength.
-        \end{ability}
+        \end{freeability}
 
         \ff[9]{Potent Telekinesis} You gain a \plus1 bonus to \glossterm{accuracy} with abilities from the \sphere{telekinesis} \glossterm{mystic sphere}. 
 
@@ -1798,14 +1798,14 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[1]{Spell} You learn a spell from the \sphere{thaumaturgy} \glossterm{mystic sphere}.
         When you gain access to a new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[3]{Counterspell} As a standard action, you can use the \textit{counterspell} ability.
-        \begin{ability}{Counterspell}[\glossterm{Swift}]
+        \ff[3]{Counterspell} You can use the \textit{counterspell} ability as a standard action.
+        \begin{freeability}{Counterspell}[\glossterm{Swift}]
             Choose a creature within \rngmed range of you.
             If the target is casting a spell or begins casting a spell this round, you can spend an \glossterm{action point}.
             When you do, if your maximum spell level is at least as high as the target's maximum spell level, their spell has no effect when it resolves.
             Otherwise, make a contested \glossterm{power} check against the target, using your power with this ability against the target's power with the spell it is casting.
             If you win, the target's spell has no effect when it resolves.
-        \end{ability}
+        \end{freeability}
 
         \ff[6]{Magic Tolerance} You gain \glossterm{magic resistance} equal to 5 \add your \glossterm{power}.
 
@@ -1848,8 +1848,8 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[1]{Spell} You learn a spell from the \sphere{weaponcraft} \glossterm{mystic sphere}.
         When you gain access to a new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[3]{Personal Weapon} As a \glossterm{minor action}, you can use the \textit{personal weapon} ability.
-        \begin{ability}{Personal Weapon}[\glossterm{Manifestation}, \glossterm{Swift}]
+        \ff[3]{Personal Weapon} You can use the \textit{personal weapon} ability as a \glossterm{minor action}.
+        \begin{freeability}{Personal Weapon}[\glossterm{Manifestation}, \glossterm{Swift}]
             Choose a type of weapon that you are proficient with.
             You create a normal item of that type in your hand.
             If the item stops touching you, it disappears, and this effect ends.
@@ -1858,14 +1858,14 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             The projectiles disappear after the attack is complete.
 
             This ability lasts until you use it again, or until you \glossterm{dismiss} it as a \glossterm{free action}.
-        \end{ability}
+        \end{freeability}
 
-        \ff[6]{Disable Weapon} As a \glossterm{minor action}, you can use the \textit{disable weapon} ability.
-        \begin{ability}{Disable Weapon}[\glossterm{Swift}]
+        \ff[6]{Disable Weapon} You can use the \textit{disable weapon} ability as a \glossterm{minor action}.
+        \begin{freeability}{Disable Weapon}[\glossterm{Swift}]
             Choose a weapon you created with an ability from the \sphere{weaponcraft} \glossterm{mystic sphere}.
             The weapon takes no actions until the end of the round.
             Since this ability has the \glossterm{Swift} tag, you can use this ability to prevent the weapon from attacking you or your allies in the current phase.
-        \end{ability}
+        \end{freeability}
 
         \ff[9]{Guided Weaponcraft} Creatures you create with the \sphere{weaponcraft} \glossterm{mystic sphere} gain a \plus1 bonus to \glossterm{accuracy}.
 
@@ -1920,15 +1920,15 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[17]{Greater Rapid Tracker} If you use the \textit{track} ability as a \glossterm{minor action}, the check penalty is reduced to \minus5 instead of \minus10.
 
-        \ff[20]{Find the Path}[Magical] As a standard action, you can spend an \glossterm{action point} to use the \textit{find the path} ability.
-        \begin{ability}{Find the Path}[\glossterm{Attune} (self), \glossterm{Knowledge}]
+        \ff[20]{Find the Path}[Magical] You can use the \textit{find the path} ability as a standard action.
+        \begin{attuneability}{Find the Path}[\glossterm{Attune} (self), \glossterm{Knowledge}]
             When you use this ability, you must unambiguously specify a location on the same plane as you.
             You know exactly what direction you must travel to reach your chosen destination by the most direct physical route.
             You are not always led in the exact direction of the destination -- if there is an impassable obstacle between the target and the destination, this ability will direct you around the obstacle, rather than through it.
 
             The guidance provided by this ability adjusts to match whatever your current physical capabilities are, including flight and other unusual movement modes. It does not see into the future, and changing circumstances may cause the most direct path to change over time.
             It also does not consider hostile creatures, traps, and other passable dangers which may endanger or slow progress.
-        \end{ability}
+        \end{attuneability}
     \end{feat}
 
     \begin{feat}{Swift}{General}
@@ -2002,13 +2002,13 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Whirlwind Warrior}{Combat}
         \featpres Starting Dexterity of 2, starting Perception of 1.
 
-        \ff[1]{Whirlwind Spin} As a standard action, you can spend an \glossterm{action point} to use the \textit{whirlwind spin} ability.
-        \begin{ability}{Whirlwind Spin}
+        \ff[1]{Whirlwind Spin} You can use the \textit{whirlwind spin} ability as a standard action.
+        \begin{apability}{Whirlwind Spin}
             Make a melee \glossterm{strike} against any number of creatures and objects adjacent to you that you \glossterm{threaten}.
             You must use the same weapon to make each strike.
             Use the same attack result and damage against each target.
             You take a \minus2d penalty to damage on each strike.
-        \end{ability}
+        \end{apability}
 
         \ff[3]{Eye of the Storm} You gain a \plus1 bonus to \glossterm{overwhelm resistance}.
 

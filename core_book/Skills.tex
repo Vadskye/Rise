@@ -198,13 +198,13 @@ This chapter describes each skill, including common uses for those skills.
         For every 10 points by which you beat that DR, you can reduce the falling damage by 10 additional feet.
 
     \subsection{Rapid Stand}
-        As a \glossterm{minor action}, you can use the \textit{rapid stand} ability.
-        \begin{ability}{Rapid Stand}[Swift]
-            As a \glossterm{minor action}, you can make a DR 15 Acrobatics check to stand up from a prone position quickly.
+        You can use the \textit{rapid stand} ability as a \glossterm{minor action}.
+        \begin{freeability}{Rapid Stand}[Swift]
+            You make a DR 15 Acrobatics check to stand up from a prone position quickly.
             Success means you stand up.
             Since this is a \glossterm{Swift} ability, standing up in this way means you do not suffer the penalties for being prone during the current phase.
             Failure means you fail to stand up.
-        \end{ability}
+        \end{freeability}
 
 \newpage
 \skill{Awareness}{Per}
@@ -260,10 +260,10 @@ This chapter describes each skill, including common uses for those skills.
 
     \subsection{Search}\label{Search}
         As a standard action, you can use the \textit{search} ability to closely investigate a small area.
-        \begin{ability}{Search}
+        \begin{freeability}{Search}
             Make an Awareness check to notice things in a single 5-ft.\ square within 10 feet of you.
             You gain a \plus5 bonus to this check.
-        \end{ability}
+        \end{freeability}
 
     \subsection{Senses}\label{Senses}
 
@@ -364,12 +364,12 @@ This chapter describes each skill, including common uses for those skills.
 
     \subsection{Conceal Threat}\label{Conceal Threat}
         As a \glossterm{minor action}, you can use the \textit{conceal threat} ability to look less threatening.
-        \begin{ability}{Conceal Threat}[\glossterm{Sustain} (minor)]
+        \begin{freeability}{Conceal Threat}[\glossterm{Sustain} (minor)]
             Choose a \glossterm{threat} value you wish to portray and make a Bluff check.
             The intended threat cannot exceed your actual threat.
             Your Bluff check is opposed by the Sense Motive checks of anyone observing you.
             \hit Your threat against each target is equal to your chosen threat.
-        \end{ability}
+        \end{freeability}
 
     \subsection{Distract}\label{Distract}
         As a standard action, you can make a Bluff check to distract a creature you are interacting with.
@@ -628,7 +628,7 @@ This chapter describes each skill, including common uses for those skills.
 
         As a standard action, you can use the \textit{pacify} ability to prevent creatures from attacking.
 
-        \begin{ability}{\labeltext{Pacify}}[\glossterm{Compulsion}, \glossterm{Mind}]
+        \begin{freeability}{\labeltext{Pacify}}[\glossterm{Compulsion}, \glossterm{Mind}]
             Make an attack vs. Mental against a creature within \rngmed range.
             Your \glossterm{accuracy} is equal to your Creature Handling skill.
             On a hit, the target is unable to take any actions except the \textit{recover} and \textit{desperate recovery} actions.
@@ -637,23 +637,23 @@ This chapter describes each skill, including common uses for those skills.
 
             The target's defense is increased if it is not an animal, as normal for Creature Handling attacks and checks.
             You take a \minus10 penalty to accuracy against an actively hostile target.
-        \end{ability}
+        \end{freeability}
 
         As a \glossterm{free action}, you can use the \textit{perform trained action} ability to convince a creature to perform an action it knows.
 
-        \begin{ability}{Perform Trained Action}
+        \begin{freeability}{Perform Trained Action}
             Make a DR 5 check on a willing creature within \rnglong range and choose an action that creature could take.
             If you succeed, the target performs the chosen action if it is trained to perform it.
             Generally, wild animals are not trained in any actions, so this is not effective on them.
-        \end{ability}
+        \end{freeability}
 
         As a standard action, you can use the \textit{push} ability to convince a creature to perform an action it does not know.
 
-        \begin{ability}{Push}
+        \begin{freeability}{Push}
             Make a DR 15 check on a willing creature within \rnglong range and choose an action that creature could take.
             If you succeed, the target performs the chosen action if it is physically capable of performing it.
             This can include convincing creatures to perform forced marches and similar activities (see \pcref{Forced March}).
-        \end{ability}
+        \end{freeability}
 
     \subsection{Training Creatures}\label{Training Creatures}
         You can use Creature Handling to train a creature. Success means the creature learns a trick or becomes domesticated. Failure means your time is wasted, and you must try again. Exceptional failure may indicate that the animal becomes unable to learn the trick, becomes hostile, or other consequences depending on the situation. Training a creature takes a week or more; this requires spending at least four hours each day with the creature. It is not generally possible to accelerate the process by spending more time each day; the creature must take time to learn the new behavior. If the training is interrupted for a week or more, the attempt automatically fails.
@@ -694,7 +694,7 @@ This chapter describes each skill, including common uses for those skills.
 
     \subsection{Analyze Evidence}
         As a standard action, you can make use the \textit{analyze evidence} ability.
-        \begin{ability}{Analyze Evidence}
+        \begin{freeability}{Analyze Evidence}
             Make a Deduction check to analyze evidence available to you and try to reach an accurate conclusion.
             This includes both determining which evidence is relevant and deciding what that evidence proves.
             Most deductions have two components: observations you make, and knowledge you have.
@@ -711,7 +711,7 @@ This chapter describes each skill, including common uses for those skills.
 
             The base DR for this check is 10.
             This DR is modified depending on the difficulty of the deduction and the quality of the evidence available to you, as shown on \trefnp{Deduction DR Modifiers}.
-        \end{ability}
+        \end{freeability}
 
     \begin{dtable*}
         \lcaption{Deduction DR Modifiers}
@@ -860,7 +860,7 @@ This chapter describes each skill, including common uses for those skills.
 
     \subsection{Tight Squeeze}
         As a standard action, you can use the \textit{tight squeeze} ability to squeeze into spaces too small to normally fit you.
-        \begin{ability}{Tight Squeeze}
+        \begin{freeability}{Tight Squeeze}
             Make an Escape Artist check to move one foot forward into a tight space.
             A DR 15 check allows you to move in a space that can fit your head and shoulders, but which is too tight to allow normal crawling.
             A DR 20 check allows you to move in a space that can fit your head, but not your shoulders.
@@ -868,7 +868,7 @@ This chapter describes each skill, including common uses for those skills.
 
             This functions like \glossterm{squeezing}, except that the penalties are increased to \minus4.
             If you are squeezing in a space that cannot fit your shoulders, you are also treated as \glossterm{helpless}.
-        \end{ability}
+        \end{freeability}
 
 \newpage
 \skill{Heal}{Int}
@@ -908,11 +908,11 @@ This chapter describes each skill, including common uses for those skills.
 
     \subsection{Augment Threat}\label{Augment Threat}
         As a \glossterm{minor action}, you can use the \textit{augment threat} ability to look more threatening.
-        \begin{ability}{Augment Threat}[\glossterm{Sustain} (minor)]
+        \begin{freeability}{Augment Threat}[\glossterm{Sustain} (minor)]
             Make an Intimidate check.
             Your Intimidate check is opposed by the Sense Motive checks of anyone observing you.
             \hit You gain a \plus2 bonus to \glossterm{threat} against each target.
-        \end{ability}
+        \end{freeability}
 
     \subsection{Coerce}
         You can make an Intimidate check to convince a creature to do what you want. This functions like a Persuasion check to form an agreement with a group, except that you do not apply a relationship modifier. In addition, the DR is up to 10 lower if the group thinks your group is significantly stronger than them, or up to 10 higher if the group thinks your group is significantly weaker.
@@ -921,11 +921,11 @@ This chapter describes each skill, including common uses for those skills.
 
         As a standard action, you can use the \textit{demoralize} ability to intimidate creatures in combat.
 
-        \begin{ability}{Demoralize}
+        \begin{freeability}{Demoralize}
             Make an attack vs. Mental against a creature within \rngmed range.
             Your \glossterm{accuracy} is equal to your Intimidate skill.
             \hit The target is \shaken by you as a \glossterm{condition}.
-        \end{ability}
+        \end{freeability}
 
 \newpage
 \skill{Jump}{Str}

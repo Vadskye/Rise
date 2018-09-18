@@ -367,8 +367,8 @@ def magical_beasts(sample_monsters):
                 \\hit The target is \\glossterm<grappled> by the behir.
             """),
             active_ability('Rake', f"""
-                The behir spends an action point to make four claw \\glossterm<strikes> against a target that is \\glossterm<grappled> by it.
-            """),
+                The behir makes four claw \\glossterm<strikes> against a target that is \\glossterm<grappled> by it.
+            """, ap_cost=True),
         ],
     ))
 
@@ -425,11 +425,11 @@ def magical_beasts(sample_monsters):
             """, tags=['Cold']),
             active_ability('Trill', f"""
                 The frost worm emits a piercing noise that compels prey to stay still.
-                It spends an action point and makes a +{frost_worm.accuracy()} vs. Mental attack against creatures in a \\areahuge radius from it.
+                It makes a +{frost_worm.accuracy()} vs. Mental attack against creatures in a \\areahuge radius from it.
                 This area can pass through solid objects, including the ground, but every 5 feet of solid obstacle counts as 20 feet of distance.
                 \\hit Each target is \\glossterm<dazed> and \\glossterm<immobilized> as two separate \\glossterm<conditions>.
                 \\crit Each target is \\glossterm<stunned> and \\glossterm<immobilized> as two separate \\glossterm<conditions>.
-            """, tags=['Mind']),
+            """, tags=['Mind'], ap_cost=True),
         ],
         passive_abilities=[
             passive_ability('Bitter Cold', f"""
@@ -696,11 +696,11 @@ def outsiders(sample_monsters):
         flamebrother_salamander,
         active_abilities=[
             active_ability('Flame Aura', f"""
-                The salamander spends an action point to intensify its natural body heat, creating a burning aura around it.
+                The salamander intensifies its natural body heat, creating a burning aura around it.
                 At the end of each action phase, the salamander makes a +{flamebrother_salamander.accuracy()} vs. Armor
                     attack against everything within a Medium radius emanation of it.
                 \\hit Each target takes {flamebrother_salamander.standard_damage()} fire damage.
-            """, tags=['Sustain (standard)']),
+            """, tags=['Sustain (standard)'], ap_cost=True),
             active_ability('Natural Grab', f"""
                 The salamander makes a tail slam \\glossterm<strike>.
                 In addition to the effects of the strike, it also makes a +{flamebrother_salamander.accuracy('perception')} vs. Fortitude and Reflex attack against the same target.
@@ -720,11 +720,11 @@ def outsiders(sample_monsters):
         salamander_battlemaster,
         active_abilities=[
             active_ability('Flame Aura', f"""
-                The salamander spends an action point to intensify its natural body heat, creating a burning aura around it.
+                The salamander intensifies its natural body heat, creating a burning aura around it.
                 At the end of each action phase, the salamander makes a +{flamebrother_salamander.accuracy()} vs. Armor
                     attack against everything within a Medium radius emanation of it.
                 \\hit Each target takes {flamebrother_salamander.standard_damage()} fire damage.
-            """, tags=['Sustain (standard)']),
+            """, tags=['Sustain (standard)'], ap_cost=True),
             active_ability('Natural Grab', f"""
                 The salamander makes a tail slam \\glossterm<strike>.
                 In addition to the effects of the strike, it also makes a +{salamander_battlemaster.accuracy('perception')} vs. Fortitude and Reflex attack against the same target.
