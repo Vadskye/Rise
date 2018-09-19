@@ -188,7 +188,7 @@ def generate_mystic_spheres():
             Spell('Empowered Shield', 4, """
                 This spell functions like the \\spell<ablative shield> spell, except that the damage reduction increases by an amount equal to your \\glossterm<power>.
             """),
-            Spell("Deflective Shield", 3, """
+            Spell('Deflective Shield', 3, """
                 This spell functions like the \\spell<ablative shield> spell, except that the target also gains a +1 \\glossterm<magic bonus> to Armor defense.
             """),
             Spell('Antilife Shell', 5, """
@@ -205,7 +205,7 @@ def generate_mystic_spheres():
 
                 This ritual takes one minute to perform.
             """, tags=['Attune (ritual)', 'Shielding']),
-            Spell("Mystic Lock", 2, """
+            Spell('Mystic Lock', 2, """
                 Choose a Large or smaller closable, nonmagical object within \\rngclose range, such as a door or box.
                 The target object becomes magically locked.
                 It can be unlocked with a Devices check against a DR equal to 20 \\add your \\glossterm<power>.
@@ -217,11 +217,11 @@ def generate_mystic_spheres():
 
                 This ritual takes one minute to perform.
             """, tags=['Attune (ritual)']),
-            Spell("Resilient Lock", 4, f"""
+            Spell('Resilient Lock', 4, f"""
                 This ritual functions like the \\ritual<mystic lock> ritual, except that the DR to unlock the target with a Devices check is instead equal to 30 + your \\glossterm<power>.
                 In addition, the DR to break it open increases by 20 instead of by 10.
             """),
-            Spell("Explosive Runes", 3, """
+            Spell('Explosive Runes', 3, """
                 Choose a Small or smaller unattended object with writing on it within \\rngclose range.
                 % TODO: clarify how to identify that this is Explosive Runes instead of bad handwriting
                 The writing on the target is altered by the runes in subtle ways, making it more difficult to read.
@@ -234,14 +234,14 @@ def generate_mystic_spheres():
                 If the target is destroyed or rendered illegible, the ritual is dismissed without exploding.
                 This ritual takes one hour to perform.
             """, tags=['Attune (ritual)', 'Trap']),
-            Spell("Scryward", 2, """
+            Spell('Scryward', 2, """
                 This ritual creates a ward against scrying in a \\arealarge radius zone centered on your location.
                 All \\glossterm<Scrying> effects fail to function in the area.
                 This effect is permanent.
 
                 This ritual takes 24 hour to perform, and requires 8 action points from its participants.
             """, tags=['Mystic']),
-            Spell("Private Sanctum", 4, """
+            Spell('Private Sanctum', 4, """
                 This ritual creates a ward against any external perception in a \\arealarge radius zone centered on your location.
                 This effect is permanent.
                 Everything in the area is completely imperceptible from outside the area.
@@ -300,7 +300,7 @@ def generate_mystic_spheres():
                 Make an attack vs. Armor against everything in its path.
                 \\hit Each target takes bludgeoning and fire \\glossterm<standard damage>.
             """, tags=['Manifestation']),
-            Spell("Meteor Storm", 6, f"""
+            Spell('Meteor Storm', 6, f"""
                 This spell functions like the \\textit<meteor> spell, except that you can create up to five different meteors.
                 The areas affected by two different meteors cannot overlap.
                 If one of the meteors is created in an invalid area, that meteor is not created, but the others are created and dealt their damage normally.
@@ -318,7 +318,7 @@ def generate_mystic_spheres():
                 In addition, you make an attack vs. Reflex against all creatures in the area when the spell is cast.
                 \\hit Each target is \\immobilized as long as it has webbing from this ability in its space.
             """, tags=['Manifestation', 'Sustain (minor)']),
-            Spell("Reinforced Webbing", 3, f"""
+            Spell('Reinforced Webbing', 3, f"""
                 This spell functions like the \\textit<web> spell, except that each 5-ft.\\ square of webbing gains additional hit points equal to your \\glossterm<power>.
                 In addition, the webs are no longer \\glossterm<vulnerable> to fire damage.
             """),
@@ -333,7 +333,7 @@ def generate_mystic_spheres():
             """, tags=['Manifestation', 'Poison']),
         ],
         rituals=[
-            Spell("Manifest Object", 2, """
+            Spell('Manifest Object', 2, """
                 Make a Craft check to create an object of Small size or smaller.
                 The object appears out of thin air in an unoccupied square within \\rngclose range.
                 % TODO: add ability to create objects of other sizes/materials
@@ -341,14 +341,14 @@ def generate_mystic_spheres():
 
                 This ritual takes one hour to perform.
             """, tags=['Attune (ritual)', 'Manifestation']),
-            Spell("Create Sustenance", 2, """
+            Spell('Create Sustenance', 2, """
                 Choose an unoccupied square within \\rngclose range.
                 This ritual creates food and drink in that square that is sufficient to sustain two Medium creatures per \\glossterm<power> for 24 hours.
                 The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland.
 
                 This ritual takes one hour to perform.
             """, tags=['Creation']),
-            Spell("Create Water", 1, """
+            Spell('Create Water', 1, """
                 You create up to one gallon of wholesome, drinkable water anywhere within \\rngclose range.
                 The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
                 You must create a minimum of one ounce of water in each location.
@@ -471,11 +471,11 @@ def generate_mystic_spheres():
                 Make an attack vs. Armor against one creature within \\rngmed range.
                 \\hit The target takes fire \\glossterm<standard damage> +2d.
             """, tags=['Fire']),
-            Spell("Burning Hands", 2, f"""
+            Spell('Burning Hands', 2, f"""
                 Make an attack vs. Armor against everything in a \\arealarge cone from you.
                 \\hit Each target takes fire \\glossterm<standard damage>.
             """, tags=['Fire']),
-            Spell("Blast Furnace", 2, f"""
+            Spell('Blast Furnace', 2, f"""
                 This spell functions like the \\spell<fireburst> spell, except that it gains the \\glossterm<Sustain> (standard) tag.
                 The area affected by the spell becomes a \\glossterm<zone> that is continuously engulfed in flames.
                 At the end of each \\glossterm<action phase> in subsequent rounds, the attack is repeated in that area.
@@ -484,19 +484,19 @@ def generate_mystic_spheres():
                 Make an attack vs. Armor against everything in a \\areamed radius within \\rngmed range.
                 \\hit Each target takes fire \\glossterm<standard damage>.
             """),
-            Spell("Greater Blast Furnace", 4, f"""
+            Spell('Greater Blast Furnace', 4, f"""
                 This spell functions like the \\textit<blast furnace> spell, except that the spell gains the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Sustain> (standard) tag.
             """),
-            Spell("Ignition", 2, f"""
+            Spell('Ignition', 2, f"""
                 This spell functions like the \\spell<fireburst> spell, except that each struck target is also \\glossterm<ignited> as a \\glossterm<condition>.
                 This condition can also be removed if the target makes a \\glossterm<DR> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
                 Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
             """),
-            Spell("Greater Ignition", 4, f"""
+            Spell('Greater Ignition', 4, f"""
                 This spell functions like the \\spell<fireburst> spell, except that each target hit is also \\glossterm<ignited> as a \\glossterm<condition>.
                 In addition, the ignited effect deals fire \\glossterm<standard damage> -2d instead of the normal 1d6 fire damage each round.
             """),
-            Spell("Supreme Ignition", 6, f"""
+            Spell('Supreme Ignition', 6, f"""
                 This spell functions like the \\textit<greater ignition> spell, except that the condition must be removed twice before the effect ends.
             """),
             Spell('Inferno', 3, """
@@ -509,11 +509,11 @@ def generate_mystic_spheres():
             Spell('Superheated Fireburst', 3, """
                 This spell functions like the \\spell<fireburst> spell, except that it attacks Reflex defense instead of Armor defense.
             """),
-            Spell("Fearsome Flame", 3, f"""
+            Spell('Fearsome Flame', 3, f"""
                 This spell functions like the \\spell<fireburst> spell, except that the attack result is also compared to each target's Mental defense.
                 \\hit Each target is \\glossterm<shaken> as a \\glossterm<condition>.
             """),
-            Spell("Flame Serpent", 3, f"""
+            Spell('Flame Serpent', 3, f"""
                 Make an attack vs. Armor against everything in a \\arealarge, 5 ft.\\ wide shapeable line within \\rngmed range.
                 \\hit Each target takes fire \\glossterm<standard damage>.
             """, tags=['Fire']),
@@ -596,7 +596,7 @@ def generate_mystic_spheres():
                 Creatures in area suffer penalties appropriate for fighting underwater, and may be unable to breathe.
                 In addition, at the end of each \\glossterm<action phase> in subsequent rounds, the attack is repeated in that area.
             """),
-            Spell("Greater Raging River", 6, f"""
+            Spell('Greater Raging River', 6, f"""
                 This spell functions like the \\textit<raging river> spell, except that the spell gains the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Sustain> (standard) tag.
             """),
             Spell('Geyser', 2, """
@@ -604,7 +604,7 @@ def generate_mystic_spheres():
                 If this spell has its area increased, such as with the Widened \\glossterm<augment>, only the length of the line increases.
                 \\hit Each target takes takes bludgeoning \\glossterm<standard damage> +2d.
             """, tags=['Manifestation', 'Water']),
-            Spell("Aqueous Sphere", 2, f"""
+            Spell('Aqueous Sphere', 2, f"""
                 This spell functions like the \\spell<crushing wave> spell, except that it targets everything in a \\areasmall radius within \\rngclose range.
             """),
             Spell('Overpowering Wave', 3, """
@@ -618,7 +618,7 @@ def generate_mystic_spheres():
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (ritual)']),
-            Spell("Water Breathing", 2, """
+            Spell('Water Breathing', 2, """
                 Choose a Medium or smaller willing ritual participant.
                 The target can breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
 
@@ -657,7 +657,7 @@ def generate_mystic_spheres():
             # At 20th level, power is ~22, so standard damage is 9d10
             # Casting this spell and then two standard damage spells deals 18d10+7d10=25d10
             # Casting three standard damage spells deals 27d10
-            Spell("Agony", 1, """
+            Spell('Agony', 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 \\hit The target is inflicted with agonizing pain as a \\glossterm<condition>.
                 It suffers a -2 penalty to Mental defense.
@@ -665,11 +665,11 @@ def generate_mystic_spheres():
                 In addition, at the end of each \\glossterm<delayed action phase>, if the target took damage that round, it takes \\glossterm<standard damage> -1d.
                 This damage is of all damage types that the target was damaged by during that round.
             """, tags=['Emotion', 'Mind']),
-            Spell("Redirected Terror", 2, """
+            Spell('Redirected Terror', 2, """
                 This spell functions like the \\spell<terror> spell, except that you also choose a willing ally within the spell's range.
                 The target is afraid of the chosen ally instead of being afraid of you.
             """),
-            Spell("Charm", 2, """
+            Spell('Charm', 2, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 If the target thinks that you or your allies are threatening it, you take a -5 penalty to accuracy on the attack.
                 \\hit The target is \\charmed by you.
@@ -677,19 +677,19 @@ def generate_mystic_spheres():
                 This effect is automatically \\glossterm<dismissed> after one hour.
                 \\crit As above, except that the effect is not automatically dismissed.
             """, tags=['Attune (self)', 'Emotion', 'Mind', 'Subtle']),
-            Spell("Amnesiac Charm", 5, """
+            Spell('Amnesiac Charm', 5, """
                 This spell functions like the \\spell<charm> spell, except that when the spell ends, an affected target forgets all events that transpired during the spell's duration.
                 It becomes aware of its surroundings as if waking up from a daydream.
                 The target is not directly aware of any magical influence on its mind, though unusually paranoid or perceptive creatures may deduce that their minds were affected.
             """),
-            Spell("Calm Emotions", 2, """
+            Spell('Calm Emotions', 2, """
                 Make an attack vs. Mental against all creatures within a \\areamed radius from you.
                 \\hit Each target has its emotions calmed.
                 The effects of all other \\glossterm<Emotion> abilities on that target are \\glossterm<suppressed>.
                 It cannot take violent actions (although it can defend itself) or do anything destructive.
                 If the target takes damage or feels that it is in danger, this effect is \\glossterm<dismissed>.
             """, tags=['Emotion', 'Mind', 'Sustain (standard)']),
-            Spell("Enrage", 2, """
+            Spell('Enrage', 2, """
                 Make an attack vs. Mental against up to five creatures within \\rngmed range.
                 \\hit As a \\glossterm<condition>, each target is unable to take any \\glossterm<standard actions> that do not cause it to make an attack.
                 For example, it could make a \\glossterm<strike> or cast an offensive spell, but it could not heal itself or summon an ally.
@@ -712,7 +712,7 @@ def generate_mystic_spheres():
         schools=['Enchantment'],
         lists=['Arcane', 'Divine', 'Pact'],
         spells=[
-            Spell("Dance", 1, """
+            Spell('Dance', 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 \\hit As a \\glossterm<condition>, the target is compelled to dance.
                 It can spend a \\glossterm<move action> to dance, if it is physically capable of dancing.
@@ -731,12 +731,12 @@ def generate_mystic_spheres():
                 \\hit The target falls \\glossterm<prone> and is \\glossterm<slowed> as a \\glossterm<condition>.
                 \\crit The target falls prone and is \\glossterm<immobilized> as a \\glossterm<condition>.
             """, tags=['Compulsion', 'Mind']),
-            Spell("Confusion", 3, """
+            Spell('Confusion', 3, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 \\hit The target is \\disoriented as a \\glossterm<condition>.
                 \\crit The target is \\confused as a \\glossterm<condition>.
             """, tags=['Compulsion', 'Mind']),
-            Spell("Sleep", 3, """
+            Spell('Sleep', 3, """
                 Make an attack vs. Mental against a creature within \\rngclose range.
                 \\hit The target is \\blinded as a \\glossterm<condition>.
                 \\crit The target falls asleep.
@@ -746,15 +746,15 @@ def generate_mystic_spheres():
                 This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                 However, it is a \\glossterm<condition>, and can be removed by effects which remove conditions.
             """, tags=['Compulsion', 'Mind']),
-            Spell("Discordant Song", 4, """
+            Spell('Discordant Song', 4, """
                 Make an attack vs. Mental against all enemies in a \\areamed radius from you.
                 \\hit Each target is \\disoriented as a \\glossterm<condition>.
                 \\crit Each target is \\confused as a \\glossterm<condition>.
             """, tags=['Compulsion', 'Mind']),
-            Spell("Irresistible Dance", 6, """
+            Spell('Irresistible Dance', 6, """
                 This spell functions like the \\textit<dance> spell, except that you gain a +4 bonus to accuracy on the attack.
             """),
-            Spell("Dominate", 4, """
+            Spell('Dominate', 4, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 \\hit The target is \\glossterm<confused> as a \\glossterm<condition>.
                 \\crit The target is \\glossterm<stunned> as a \\glossterm<condition>.
@@ -810,10 +810,10 @@ def generate_mystic_spheres():
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)']),
-            Spell("Greater Blessing of Might", 5, """
+            Spell('Greater Blessing of Might', 5, """
                 The target gains a +2d \\glossterm<magic bonus> to damage with all abilities.
             """),
-            Spell("Blessed Blade", 2, """
+            Spell('Blessed Blade', 2, """
                 Choose a willing creature within \\rngclose range.
                 \\glossterm<Strikes> made with melee weapons wielded by the target are made against Mental defense instead of Armor defense.
                 However, the target takes a -2d penalty to damage with \\glossterm<strikes>.
@@ -825,7 +825,7 @@ def generate_mystic_spheres():
             """),
         ],
         rituals=[
-            Spell("Blessing of Fortification", 1, """
+            Spell('Blessing of Fortification', 1, """
                 Choose an unattended, nonmagical object or part of an object of up to Large size.
                 Unlike most abilities, this ritual can affect individual parts of a whole object.
 
@@ -848,7 +848,7 @@ def generate_mystic_spheres():
             Spell('Supreme Fortification', 6, """
                 This ritual functions like the \\spell<blessing of fortification> ritual, except that the \\glossterm<hardness> bonus increases to 15.
             """),
-            Spell("Bless Water", 1, """
+            Spell('Bless Water', 1, """
                 Choose one pint of unattended, nonmagical water within \\rngclose range.
                 The target becomes holy water.
                 Holy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck undead creature or an evil outsider.
@@ -859,7 +859,7 @@ def generate_mystic_spheres():
                 This ritual functions like the \\spell<bless water> ritual, except that it loses the \\glossterm<Attune> (ritual) tag and the effect lasts permanently.
                 This ritual takes one hour to perform.
             """),
-            Spell("Curse Water", 1, """
+            Spell('Curse Water', 1, """
                 Choose one pint of unattended, nonmagical water within \\rngclose range.
                 The target becomes unholy water.
                 Unholy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck good outsider.
@@ -870,7 +870,7 @@ def generate_mystic_spheres():
                 This ritual functions like the \\spell<curse water> ritual, except that it loses the \\glossterm<Attune> (ritual) tag and the effect lasts permanently.
                 This ritual takes one hour to perform.
             """),
-            Spell("Blessing of Purification", 1, """
+            Spell('Blessing of Purification', 1, """
                 All food and water in a single square within \\rngclose range is purified.
                 Spoiled, rotten, poisonous, or otherwise contaminated food and water becomes pure and suitable for eating and drinking.
                 This does not prevent subsequent natural decay or spoiling.
@@ -898,32 +898,32 @@ def generate_mystic_spheres():
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 \\hit The target takes divine \\glossterm<standard damage> +2d.
             """),
-            Spell("Word of Faith", 2, """
+            Spell('Word of Faith', 2, """
                 Make an attack vs. Mental against all enemies in a \\areamed radius from you.
                 \\hit Each target takes divine \\glossterm<standard damage>.
             """),
-            Spell("Mantle of Faith", 1, """
+            Spell('Mantle of Faith', 1, """
                 You gain \\glossterm<damage reduction> equal to your \\glossterm<power> against all damage.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)']),
-            Spell("Divine Might", 3, """
+            Spell('Divine Might', 3, """
                 You increase your size by one size category.
                 This increases your \\glossterm<overwhelm value>, \\glossterm<overwhelm resistance>, and usually increases your \\glossterm<reach> (see \\pcref<Size in Combat>).
                 However, your muscles are not increased fully to match its new size, and your Strength is unchanged.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (self)', 'Shaping', 'Sizing']),
-            Spell("Divine Might, Greater", 5, """
+            Spell('Divine Might, Greater', 5, """
                 This spell functions like the \\textit<divine might> spell, except that you gain a +2 bonus to Strength.
             """),
-            Spell("Divine Might, Supreme", 7, """
+            Spell('Divine Might, Supreme', 7, """
                 This spell functions like the \\spell<divine might> spell, except that your size is increased by two size categories.
                 Your Strength is increased by 2 to partially match your new size.
             """),
         ],
         rituals=[
-            Spell("Divine Transit", 4, """
+            Spell('Divine Transit', 4, """
                 Choose up to five willing, Medium or smaller ritual participants.
                 In addition, choose a destination up to 100 miles away from you on your current plane.
                 Each target is teleported to the temple or equivalent holy site to your deity that is closest to the chosen destination.
@@ -972,10 +972,10 @@ def generate_mystic_spheres():
                 The area affected by the spell becomes a \\glossterm<zone> that is supernaturally chilled.
                 At the end of each \\glossterm<action phase> in subsequent rounds, the attack is repeated in that area.
             """),
-            Spell("Greater Cold Snap", 4, f"""
+            Spell('Greater Cold Snap', 4, f"""
                 This spell functions like the \\textit<cold snap> spell, except that the spell gains the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Sustain> (standard) tag.
             """),
-            Spell("Freezing", 4, """
+            Spell('Freezing', 4, """
                 This spell functions like the \\spell<cone of cold> spell, except that each struck target is also \\glossterm<immobilized> as an additional \\glossterm<condition>.
             """),
             Spell('Blizzard', 2, """
@@ -1052,7 +1052,7 @@ def generate_mystic_spheres():
                 The area affected by the spell becomes a \\glossterm<zone> that is continuously filled with electrical pulses.
                 At the end of each \\glossterm<action phase> in subsequent rounds, the attack is repeated in that area.
             """),
-            Spell("Greater Dynamo", 4, f"""
+            Spell('Greater Dynamo', 4, f"""
                 This spell functions like the \\textit<dynamo> spell, except that the spell gains the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Sustain> (standard) tag.
             """),
             Spell('Chain Lightning', 4, """
@@ -1061,15 +1061,15 @@ def generate_mystic_spheres():
                 In addition, make an additional attack vs. Fortitude against any number of creatures in a \\areamed radius from the struck target.
                 \\hit Each secondary target takes electricity \\glossterm<standard damage> +1d.
             """, tags=['Electricity']),
-            Spell("Forked Lightning", 2, """
+            Spell('Forked Lightning', 2, """
                 This spell functions like the \\spell<lightning bolt> spell, except that you create two separate line-shaped areas instead of one.
                 The two areas can overlap, but targets in the overlapping area are only affected once.
             """),
-            Spell("Shocking", 3, """
+            Spell('Shocking', 3, """
                 This spell functions like the \\spell<lightning bolt> spell, except that each struck target is also \\glossterm<dazed> as a \\glossterm<condition>.
                 Each critically struck target is \\glossterm<stunned> instead of dazed.
             """),
-            Spell("Call Lightning", 2, """
+            Spell('Call Lightning', 2, """
                 Make an attack vs. Fortitude against everything in a \\arealarge, 5 ft.\\ wide vertical line within \\rngmed range.
                 If you are outdoors in cloudy or stormy weather, you gain a +2 bonus to \\glossterm<accuracy> with the attack.
                 If this spell has its area increased, such as with the Widened \\glossterm<augment>, only the length of the line increases.
@@ -1102,13 +1102,13 @@ def generate_mystic_spheres():
                 In addition, it takes life \\glossterm<standard damage> when it takes a \\glossterm<standard action>.
                 It can only take damage in this way once per round.
             """, tags=['Life']),
-            Spell("Corruption of Blood and Bone", 3, """
+            Spell('Corruption of Blood and Bone', 3, """
                 This spell functions like the \\spell<sickening decay> spell, except that it gains a +1d bonus to damage.
                 In addition, damage from the spell reduces the target's maximum hit points by the same amount.
                 This hit point reduction is part of the same \\glossterm<condition> as the spell's other effects.
                 When the condition is removed, the target's maximum hit points are restored.
             """),
-            Spell("Curse of Decay", 4, """
+            Spell('Curse of Decay', 4, """
                 This spell functions like the \\spell<sickening decay> spell, except that the attack is made against Mental defense instead of Fortitude defense.
                 In addition, if the attack critically hits, the spell's effect becomes a permanent curse.
                 It is no longer a condition, and cannot be removed by abilities that remove conditions.
@@ -1120,27 +1120,27 @@ def generate_mystic_spheres():
             Spell('Greater Miasma', 3, """
                 This spell functions like the \\spell<miasma> spell, except that a struck target is \\glossterm<nauseated> instead of sickened.
             """),
-            Spell("Eyebite", 3, """
+            Spell('Eyebite', 3, """
                 Make an attack vs. Fortitude against a living creature within \\rngclose range.
                 \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
                 \\crit The target is \\glossterm<blinded> twice by two separate \\glossterm<conditions>.
                     Both conditions must be removed before the target can see again.
             """, tags=['Life']),
-            Spell("Finger of Death", 5, """
+            Spell('Finger of Death', 5, """
                 Make an attack vs. Fortitude against a living creature within \\rngclose range.
                 \\hit The target takes life \\glossterm<standard damage> +4d.
                 \\crit The target immediately dies.
             """, tags=['Death', 'Life']),
-            Spell("Bleed", 3, """
+            Spell('Bleed', 3, """
                 This spell functions like the \\spell<sickening decay> spell, except that a struck target also begins bleeding as an additional \\glossterm<condition>.
                 At the end of every subsequent \\glossterm<action phase>, the target takes slashing \\glossterm<standard damage> -1d.
             """),
-            Spell("Crippling Decay", 4, """
+            Spell('Crippling Decay', 4, """
                 This spell functions like the \\spell<sickening decay> spell, except that a struck target is also \\glossterm<immobilized> as an additional \\glossterm<condition>.
             """),
         ],
         rituals=[
-            Spell("Animate Dead", 2, """
+            Spell('Animate Dead', 2, """
                 Choose any number of corpses within \\rngclose range.
                 The combined levels of all targets cannot exceed your \\glossterm<power>.
                 The target becomes an undead creature that obeys your spoken commands.
@@ -1168,7 +1168,7 @@ def generate_mystic_spheres():
         schools=['Vivimancy'],
         lists=['Divine', 'Nature'],
         spells=[
-            Spell("Cure Wounds", 1, """
+            Spell('Cure Wounds', 1, """
                 Choose a willing creature within \\rngmed range.
                 The target heals hit points equal to \\glossterm<standard damage> +2d.
             """, tags=['Life']),
@@ -1176,43 +1176,43 @@ def generate_mystic_spheres():
                 Make an attack vs. Fortitude against a creature within \\rngmed range.
                 \\hit The target takes life damage equal to \\glossterm<standard damage> +2d.
             """, tags=['Life']),
-            Spell("Greater Cure Wounds", 2, """
+            Spell('Greater Cure Wounds', 2, """
                 This spell functions like the \\spell<cure wounds> spell, except that for every 5 points of healing you provide, you can instead heal one point of \\glossterm<vital damage>.
             """),
-            Spell("Heal", 4, """
+            Spell('Heal', 4, """
                 This spell functions like the \\spell<cure wounds> spell, except that it gains a +1d bonus to healing.
                 In addition, it heals \\glossterm<vital damage> as easily as it heals hit points.
             """),
             # TODO: make "Undead Bane" spell after figuring out undead / life
             # damage interaction
-            Spell("Drain Life", 2, """
+            Spell('Drain Life', 2, """
                 This spell functions like the \\spell<inflict wounds> spell, except that you heal hit points equal to your \\glossterm<power> if you hit, up to a maximum equal to the damage dealt.
             """),
-            Spell("Death Knell", 3, """
+            Spell('Death Knell', 3, """
                 This spell functions like the \\spell<inflict wounds> spell, except that a struck target suffers a death knell as a \\glossterm<condition>.
                 At the end of each round, if the target has 0 hit points, it immediately dies.
                 % TODO: wording
                 If the target dies while the condition is active, you heal hit points equal to twice your \\glossterm<power>.
             """, tags=['Death']),
-            Spell("Circle of Death", 3, """
+            Spell('Circle of Death', 3, """
                 You are surrounded by an aura of death in a \\areamed radius emanation from you.
                 When this spell resolves, and the end of each \\glossterm<action phase> in subsequent rounds, make an attack vs. Fortitude against all enemies in the area.
                 \\hit Each target takes life \\glossterm<standard damage> -2d.
             """, tags=['Life', 'Sustain (minor)']),
-            Spell("Circle of Healing", 3, """
+            Spell('Circle of Healing', 3, """
                 You are surrounded by an aura of healing in a \\areamed radius emanation from you.
                 When this spell resolves, and the end of each \\glossterm<action phase> in subsequent rounds, all allies in the area heal hit points equal to half your \\glossterm<power>.
             """, tags=['Life', 'Sustain (minor)']),
-            Spell("Remove Disease", 2, """
+            Spell('Remove Disease', 2, """
                 This spell functions like the \\spell<cure wounds> spell, except that all diseases affecting the target are also removed.
             """, tags=['Flesh']),
-            Spell("Restore Senses", 2, """
+            Spell('Restore Senses', 2, """
                 This spell functions like the \\spell<cure wounds> spell, except that one of the target's physical senses, such as sight or hearing, is also restored to full capacity.
                 This can heal both magical and mundane effects, but it cannot completely replace missing body parts required for a sense to function (such as missing eyes).
             """, tags=['Flesh']),
         ],
         rituals=[
-            Spell("Reincarnation", 4, """
+            Spell('Reincarnation', 4, """
                 Choose one Diminuitive or larger piece of a humanoid corpse.
                 The target must have been part of the original creature's body at the time of death.
                 The creature the target corpse belongs to returns to life in a new body.
@@ -1254,14 +1254,14 @@ def generate_mystic_spheres():
                     \\end{dtabularx}
                 \\end{dtable}
             """),
-            Spell("Fated Reincarnation", 5, f"""
+            Spell('Fated Reincarnation', 5, f"""
                 This ritual functions like the \\ritual<reincarnation> ritual, except that the target is reincarnated as its original race instead of as a random race.
 
                 This ritual takes 24 hours to perform, and requires 50 action points from its participants.
                 It is from the Conjuration school in addition to the Vivimancy school.
                 In addition, it can only be learned through the nature \\glossterm<magic source>.
             """),
-            Spell("Purge Curse", 2, """
+            Spell('Purge Curse', 2, """
                 Choose a willing creature within \\rngclose range.
                 All curses affecting the target are removed.
                 This ritual cannot remove a curse that is part of the effect of an item the target has equipped.
@@ -1269,14 +1269,14 @@ def generate_mystic_spheres():
 
                 This ritual takes 24 hours to perform, and requires 8 action points from its participants.
             """, tags=['Mystic']),
-            Spell("Restoration", 3, """
+            Spell('Restoration', 3, """
                 Choose a willing creature within \\rngclose range.
                 All of the target's hit points, \\glossterm<subdual damage>, and \\glossterm<vital damage> are healed.
                 In addition, any of the target's severed body parts or missing organs grow back by the end of the next round.
 
                 This ritual takes 24 hours to perform, and requires 18 action points from its participants.
             """, tags=['Flesh']),
-            Spell("Resurrection", 3, """
+            Spell('Resurrection', 3, """
                 Choose one intact humanoid corpse within \\rngclose range.
                 The target returns to life.
                 It must not have died due to old age.
@@ -1315,7 +1315,7 @@ def generate_mystic_spheres():
                 It is from the Conjuration school in addition to the Vivimancy school.
                 In addition, it can only be learned through the divine \\glossterm<magic source>.
             """),
-            Spell("Soul Bind", 5, """
+            Spell('Soul Bind', 5, """
                 Choose one intact corpse within \\rngclose range.
                 % Is this clear enough that you can't use the same gem for this ritual twice?
                 In addition, choose a nonmagical gem you hold that is worth at least 1,000 gp.
@@ -1364,7 +1364,7 @@ def generate_mystic_spheres():
 
                 If you do not command the creature's actions, it will continue to obey its last instructions if possible or do nothing otherwise.
             """, tags=['Attune (self)', 'Manifestation']),
-            Spell("Summon Bear", 2, """
+            Spell('Summon Bear', 2, """
                 This spell functions like the \\spell<summon monster> spell, except that the creature appears to be a Medium bear.
                 As a standard action, it can make a \\glossterm<grapple> attack against a creature it threatens.
                 Its accuracy is the same as its accuracy with \\glossterm<strikes>.
@@ -1374,7 +1374,7 @@ def generate_mystic_spheres():
             """),
         ],
         rituals=[
-            Spell("Mount", 2, """
+            Spell('Mount', 2, """
                 This ritual summons your choice of a light horse or a pony to serve as a mount.
                 The creature appears in an unoccupied location within \\rngclose range.
                 It comes with a bit and bridle and a riding saddle, and will readily accept any creature as a rider.
@@ -1400,7 +1400,7 @@ def generate_mystic_spheres():
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
         spells=[
-            Spell("Alarm", 1, """
+            Spell('Alarm', 1, """
                 A \\glossterm<scrying sensor> appears floating in the air in an unoccupied square within \\rngmed range.
                 The sensor passively observes its surroundings.
                 If it sees a creature or object of Tiny size or larger moving within 50 feet of it, it will trigger a mental "ping" that only you can notice.
@@ -1421,29 +1421,29 @@ def generate_mystic_spheres():
             Spell('Greater Alarm', 2, """
                 This spell functions like the \\textit<alarm> spell, except that the sensor gains 100 ft.\\ \\glossterm<darkvision> and its Awareness bonus is equal to your \\glossterm<power>.
             """),
-            Spell("Auditory Eye", 2, """
+            Spell('Auditory Eye', 2, """
                 This spell functions like the \\spell<arcane eye> spell, except that you can you can also hear through the sensor.
                 At the start of each round, you can choose whether you hear from the sensor or from your body.
                 This choice is made independently from your sight.
                 The sensor's auditory acuity is the same as your own, except that it does not share the benefits of any \\glossterm<magical> effects that improve your hearing.
             """),
-            Spell("Accelerated Eye", 2, """
+            Spell('Accelerated Eye', 2, """
                 This spell functions like the \\spell<arcane eye> spell, except that the sensor moves up to 100 feet when moved instead of up to 30 feet.
             """),
-            Spell("Autonomous Eye", 3, """
+            Spell('Autonomous Eye', 3, """
                 This spell functions like the \\spell<arcane eye> spell, except that the sensor is not destroyed when it loses \\glossterm<line of effect> to you.
             """),
-            Spell("Penetrating Eye", 4, """
+            Spell('Penetrating Eye', 4, """
                 This spell functions like the \\spell<autonomous eye> spell, except that you do not need \\glossterm<line of sight> or \\glossterm<line of effect> to target a location.
                 You must specify a distance and direction to target a location you cannot see.
                 This can allow you to cast the spell beyond walls and similar obstacles.
                 As normal, if the intended location is occupied or otherwise impossible, the spell is \\glossterm<miscast>.
             """),
-            Spell("Twin Eye", 3, """
+            Spell('Twin Eye', 3, """
                 This spell functions like the \\spell<arcane eye> spell, except that you constantly receive sensory input from both your body and the sensor.
                 This allows you to see simultaneously from your body and from the sensor.
             """),
-            Spell("Reverse Scrying", 2, """
+            Spell('Reverse Scrying', 2, """
                 Choose a magical sensor within \\rngmed range.
                 A new scrying sensor appears at the location of the source of the the ability that created the target sensor.
                 This sensor functions like the sensor created by the \\spell<autonomous eye> spell, except that the sensor cannot move.
@@ -1451,7 +1451,7 @@ def generate_mystic_spheres():
             # spell to cast spells from the eye instead of from your body?
         ],
         rituals=[
-            Spell("Scry Creature", 4, """
+            Spell('Scry Creature', 4, """
                 Make an attack vs. Mental against a creature on the same plane as you.
                 You do not need \\glossterm<line of sight> or \\glossterm<line of effect> to the target.
                 However,  must specify your target with a precise mental image of its appearance.
@@ -1515,40 +1515,40 @@ def generate_mystic_spheres():
             Spell('Greater Precognitive Defense', 4, """
                 This spell functions like the \\spell<precognitive defense> spell, except that the bonus is increased to +2.
             """),
-            Spell("Discern Lies", 2, """
+            Spell('Discern Lies', 2, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 \\hit You know when the target deliberately and knowingly speaks a lie.
                 This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
             """, tags=['Attune (self)', 'Detection']),
-            Spell("Boon of Mastery", 2, """
+            Spell('Boon of Mastery', 2, """
                 Choose a willing creature within \\rngclose range.
                 The target gains a +2 \\glossterm<magic bonus> to all skills.
             """),
-            Spell("Greater Boon of Mastery", 5, """
+            Spell('Greater Boon of Mastery', 5, """
                 This spell functions like the \\spell<boon of mastery> spell, except that the bonus is increased to +4.
             """),
-            Spell("Boon of Many Eyes", 2, """
+            Spell('Boon of Many Eyes', 2, """
                 Choose a willing creature within \\rngclose range.
                 The target gains a +1 \\glossterm<magic bonus> to \\glossterm<overwhelm resistance>.
             """),
-            Spell("Boon of Knowledge", 3, """
+            Spell('Boon of Knowledge', 3, """
                 The target gains a +4 \\glossterm<magic bonus> to all Knowledge skills (see \\pcref<Knowledge>).
             """),
-            Spell("Third Eye", 3, """
+            Spell('Third Eye', 3, """
                 Choose a willing creature within \\rngclose range.
                 The target gains \\glossterm<blindsight> with a 50 foot range.
                 This can allow it to see perfectly without any light, regardless of concealment or invisibility.
             """, tags=['Attune (target)']),
         ],
         rituals=[
-            Spell("Read Magic", 1, """
+            Spell('Read Magic', 1, """
                 You gain the ability to decipher magical inscriptions that would otherwise be unintelligible.
                 This can allow you to read ritual books and similar objects created by other creatures.
                 After you have read an inscription in this way, you are able to read that particular writing without the use of this ritual.
 
                 This ritual takes one minute to perform.
             """, tags=['Attune (ritual)']),
-            Spell("Discern Location", 4, """
+            Spell('Discern Location', 4, """
                 Choose a creature or object on the same plane as you.
                 You do not need \\glossterm<line of sight> or \\glossterm<line of effect> to the target.
                 However, you must specify your target with a precise mental image of its appearance.
@@ -1566,7 +1566,7 @@ def generate_mystic_spheres():
 
                 This ritual takes 24 hours to perform, and it requires 72 action points from its participants.
             """),
-            Spell("Sending", 3, """
+            Spell('Sending', 3, """
                 Choose a creature on the same plane as you.
                 You do not need \\glossterm<line of sight> or \\glossterm<line of effect> to the target.
                 However,  must specify your target with a precise mental image of its appearance.
@@ -1585,7 +1585,7 @@ def generate_mystic_spheres():
                 This ritual functions like the \\ritual<sending> ritual, except that the target does not have to be on the same plane as you.
                 It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<sending> ritual.
             """),
-            Spell("Telepathic Bond", 3, """
+            Spell('Telepathic Bond', 3, """
                 Choose up to five willing ritual participants.
                 Each target can communicate mentally through telepathy with each other target.
                 This communication is instantaneous, though it cannot reach more than 100 miles or across planes.
@@ -1606,7 +1606,7 @@ def generate_mystic_spheres():
                 This ritual functions like the \\ritual<telepathic bond> ritual, except that the effect works at any distance and across planes.
                 It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<telepathic bond> ritual.
             """),
-            Spell("Seek Legacy", 2, """
+            Spell('Seek Legacy', 2, """
                 Choose a willing ritual participant.
                 The target learns the precise distance and direction to their \\glossterm<legacy item>, if it is on the same plane.
 
@@ -1656,7 +1656,7 @@ def generate_mystic_spheres():
                 This spell functions like the \\spell<telekinetic lift> spell, except that the target is reduced to one quarter of its normal weight.
                 This increases the Jump bonus to +8.
             """),
-            Spell("Binding Crush", 2, """
+            Spell('Binding Crush', 2, """
                 This spell functions like the \\spell<telekinetic crush> spell, except that the struck creature is also \\glossterm<slowed> as a \\glossterm<condition> if it is Large or smaller.
             """),
             Spell('Greater Binding Crush', 5, """
@@ -1709,19 +1709,19 @@ def generate_mystic_spheres():
 
                 This effect provides no offensive benefit against creatures immune to \\glossterm<Visual> abilities.
             """, tags=['Sensation', 'Visual']),
-            Spell("Suppress Light", 1, """
+            Spell('Suppress Light', 1, """
                 Choose a Small or smaller unattended object within \\rngclose range.
                 This spell suppresses light in a \\areamed radius emanation from the target.
                 Light within or passing through the area is dimmed to be no brighter than shadowy illumination.
                 Any object or effect which blocks light also blocks this spell's emanation.
             """, tags=['Attune (self)', 'Light', 'Sensation']),
-            Spell("Disguise Image", 2, """
+            Spell('Disguise Image', 2, """
                 Choose a willing creature within \\rngclose range.
                 You make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).
                 You gain a +5 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form.
                 However, this effect is unable to alter the sound, smell, texture, or temperature of the target or its clothes and equipment.
             """, tags=['Attune (target)', 'Sensation', 'Visual']),
-            Spell("Mirror Image", 2, """
+            Spell('Mirror Image', 2, """
                 Choose a willing creature within \\rngclose range.
                 Four illusory duplicates appear around the target that mirror its every move.
                 The duplicates shift chaotically in its space, making it difficult to identify the real creature.
@@ -1730,16 +1730,16 @@ def generate_mystic_spheres():
                 When an attack misses in this way, it affects an image, destroying it.
                 This ability provides no defensive benefit against creatures immune to \\glossterm<Visual> abilities.
             """, tags=['Attune (target)', 'Sensation', 'Visual']),
-            Spell("Greater Mirror Image", 4, """
+            Spell('Greater Mirror Image', 4, """
                 This spell functions like the \\textit<mirror image> spell, except that destroyed images can reappear.
                 At the end of each \\glossterm<action phase>, one destroyed image reappears, to a maximum of four images.
             """),
-            Spell("Shadow Mantle", 3, """
+            Spell('Shadow Mantle', 3, """
                 This spell functions like the \\spell<blur> spell, except that the spell's deceptive nature extends beyond altering light to affect the nature of reality itself.
                 The defense bonus it provides applies to all defenses.
                 In addition, the spell loses the \\glossterm<Visual> tag, and can protect against attacks from creatures immune to Visual abilities.
             """),
-            Spell("Displacement", 6, """
+            Spell('Displacement', 6, """
                 Choose a willing creature within \\rngmed range.
                 The target's image appears to be two to three feet from its real location.
                 \\glossterm<Targeted> \\glossterm<physical attacks> against the target suffer a 50\\% miss chance.
@@ -1747,7 +1747,7 @@ def generate_mystic_spheres():
             """, tags=['Attune (target)', 'Sensation', 'Visual']),
         ],
         rituals=[
-            Spell("Magic Mouth", 1, """
+            Spell('Magic Mouth', 1, """
                 Choose a Large or smaller willing creature or unattended object within \\rngclose range.
                 In addition, choose a triggering condition and a message of twenty-five words or less.
                 The condition must be something that a typical human in the target's place could detect.
@@ -1785,26 +1785,26 @@ def generate_mystic_spheres():
                 \\hit Each target is \\dazzled as a \\glossterm<condition>.
                 \\crit As above, and target is also \\dazed as an additional \\glossterm<condition>.
             """, tags=['Light', 'Sensation', 'Visual']),
-            Spell("Kaleidoscopic Pattern", 4, """
+            Spell('Kaleidoscopic Pattern', 4, """
                 This spell creates a brilliant, rapidly shifting rainbow of lights in a \\areasmall radius within \\rngmed range of you.
                 They illuminate a 100 foot radius around the area with bright light until the end of the round.
                 Make an attack vs. Mental against all creatures in the source area.
                 \\hit Each target is \\disoriented as a \\glossterm<condition>.
                 \\crit Each target is \\confused as a \\glossterm<condition>.
             """, tags=['Light', 'Mind', 'Sensation', 'Visual']),
-            Spell("Faerie Fire", 2, """
+            Spell('Faerie Fire', 2, """
                 This spell functions like the \\spell<flare> spell, except that each struck target is surrounded with a pale glow made of hundreds of ephemeral points of light.
                 This causes the struck target to radiate bright light in a 5 foot radius, as a candle.
                 The lights impose a -10 penalty to Stealth checks.
                 In addition, they reveal the outline of the creatures if they become \\glossterm<invisible>.
                 This allows observers to see their location, though not to see them perfectly.
             """),
-            Spell("Illuminating", 2, """
+            Spell('Illuminating', 2, """
                 This spell functions like the \\spell<flare> spell, except that it gains the \\glossterm<Sustain> (minor) tag.
                 The area affected by the spell becomes an illuminated \\glossterm<zone>.
                 At the end of each \\glossterm<action phase> in subsequent rounds, the attack is repeated in that area.
             """),
-            Spell("Flashbang", 3, """
+            Spell('Flashbang', 3, """
                 This spell functions like the \\spell<flare> spell, except that an intense sound accompanies the flash of light caused by the spell.
                 Each struck target is also \\glossterm<deafened> as an additional \\glossterm<condition>.
                 This spell gains the \\glossterm<Auditory> tag in addition to the tags from the \\spell<flare> spell.
@@ -1826,7 +1826,7 @@ def generate_mystic_spheres():
             """),
         ],
         rituals=[
-            Spell("Light", 1, """
+            Spell('Light', 1, """
                 Choose a Medium or smaller willing creature or unattended object within \\rngclose range.
                 The target glows like a torch, shedding bright light in a \\areamed radius (and dim light for an additional 20 feet).
 
@@ -1858,12 +1858,12 @@ def generate_mystic_spheres():
                 Make an attack vs. Fortitude against a creature within \\rngmed range.
                 \\hit The target takes physical \\glossterm<standard damage> +2d.
             """, tags=['Shaping']),
-            Spell("Mending", 1, """
+            Spell('Mending', 1, """
                 % TODO: unattended or attended by a willing creature
                 Choose an unattended object within \\rngclose range.
                 The target is healed for hit points equal to \\glossterm<standard damage> +2d.
             """),
-            Spell("Shrink", 1, """
+            Spell('Shrink', 1, """
                 Choose a willing creature within \\rngclose range.
                 The target's size decreases by one size category, to a minimum of Tiny.
                 This decreases its Strength by 2 and usually decreases its \\glossterm<reach> (see \\pcref<Size in Combat>).
@@ -1878,7 +1878,7 @@ def generate_mystic_spheres():
                 The target gains a \\glossterm<climb speed> equal to its \\glossterm<base speed>.
                 In addition, it gains a +5 bonus to Climb checks to climb on ceilings and similar surfaces.
             """, tags=['Attune (target)']),
-            Spell("Barkskin", 2, """
+            Spell('Barkskin', 2, """
                 Choose a willing creature within \\rngclose range.
                 The target gains \\glossterm<damage reduction> equal to your \\glossterm<power> against damage dealt by \\glossterm<physical attacks>.
                 In addition, it is \\glossterm<vulnerable> to fire damage.
@@ -1893,16 +1893,16 @@ def generate_mystic_spheres():
                 This spell functions like the \\textit<regeneration> spell, except that the healing is equal to twice your \\glossterm<power>.
             """),
             # Should this also/instead be under Terramancy?
-            Spell("Stoneskin", 3, """
+            Spell('Stoneskin', 3, """
                 Choose a willing creature within \\rngclose range.
                 The target gains \\glossterm<damage reduction> equal to your \\glossterm<power> against damage dealt by \\glossterm<physical attacks>, except for damage from adamantine weapons.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)']),
-            Spell("Ironskin", 6, """
+            Spell('Ironskin', 6, """
                 This spell functions like the \\textit<stoneskin> spell, except that the damage reduction is equal to twice your \\glossterm<power>.
             """),
-            Spell("Enlarge", 3, """
+            Spell('Enlarge', 3, """
                 Choose a Large or smaller willing creature within \\rngclose range.
                 The target's size increases by one size category.
                 This increases its \\glossterm<overwhelm value>, \\glossterm<overwhelm resistance>, and usually increases its \\glossterm<reach> (see \\pcref<Size in Combat>).
@@ -1910,14 +1910,14 @@ def generate_mystic_spheres():
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)', 'Shaping', 'Sizing']),
-            Spell("Enlarge, Greater", 5, """
+            Spell('Enlarge, Greater', 5, """
                 This spell functions like the \\textit<enlarge> spell, except that the target's Strength is increased by 2 to match its new size.
             """),
-            Spell("Enlarge, Supreme", 7, """
+            Spell('Enlarge, Supreme', 7, """
                 This spell functions like the \\spell<enlarge> spell, except that the target's size is increased by two size categories.
                 Its Strength is increased by 2 to partially match its new size.
             """),
-            Spell("Alter Appearance", 2, """
+            Spell('Alter Appearance', 2, """
                 Choose a Large or smaller willing creature within \\rngclose range.
                 You make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).
                 You gain a +5 bonus on the check, and you ignore penalties for changing the target's gender, race, subtype, or age.
@@ -1925,7 +1925,7 @@ def generate_mystic_spheres():
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)', 'Shaping']),
-            Spell("Craft Object", 3, """
+            Spell('Craft Object', 3, """
                 Choose any number of unattended, nonmagical objects within \\rngclose range.
                 You make a Craft check to transform the targets into a new item (or items) made of the same materials.
                 You require none of the tools or time expenditure that would normally be necessary.
@@ -1934,7 +1934,7 @@ def generate_mystic_spheres():
                 You can apply the Giant \\glossterm<augment> to this spell.
                 If you do, it increases the maximum size of all targets combined.
             """, tags=['Shaping']),
-            Spell("Disintegrate", 5, """
+            Spell('Disintegrate', 5, """
                 Make an attack vs. Fortitude against a creature within \\rngmed range.
                 \\hit The target takes physical \\glossterm<standard damage> +4d.
                 In addition, if the target has no hit points remaining, it dies.
@@ -1943,7 +1943,7 @@ def generate_mystic_spheres():
             """, tags=['Shaping']),
         ],
         rituals=[
-            Spell("Fortify", 1, """
+            Spell('Fortify', 1, """
                 Choose an unattended, nonmagical object or part of an object of up to Large size.
                 Unlike most abilities, this ritual can affect individual parts of a whole object.
 
@@ -1966,7 +1966,7 @@ def generate_mystic_spheres():
             Spell('Supreme Fortify', 6, """
                 This ritual functions like the \\spell<fortify> ritual, except that the \\glossterm<hardness> bonus increases to 15.
             """),
-            Spell("Awaken", 5, """
+            Spell('Awaken', 5, """
                 Choose a Large or smaller willing animal within \\rngclose range.
                 The target becomes sentient.
                 Its Intelligence becomes 1d6 - 5.
@@ -1978,7 +1978,7 @@ def generate_mystic_spheres():
                 This ritual takes 24 hours to perform, and requires 50 action points from its participants.
                 It can only be learned with the nature \\glossterm<magic source>.
             """),
-            Spell("Ironwood", 3, """
+            Spell('Ironwood', 3, """
                 Choose a Small or smaller unattended, nonmagical wooden object within \\rngclose range.
                 The target is transformed into ironwood.
                 While remaining natural wood in almost every way, ironwood is as strong, heavy, and resistant to fire as iron.
@@ -1987,7 +1987,7 @@ def generate_mystic_spheres():
                 % Should this have an action point cost? May be too rare...
                 This ritual takes 24 hours to perform.
             """, tags=['Shaping']),
-            Spell("Purify Sustenance", 1, """
+            Spell('Purify Sustenance', 1, """
                 All food and water in a single square within \\rngclose range is purified.
                 Spoiled, rotten, poisonous, or otherwise contaminated food and water becomes pure and suitable for eating and drinking.
                 This does not prevent subsequent natural decay or spoiling.
@@ -2016,7 +2016,7 @@ def generate_mystic_spheres():
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 \\hit The target takes physical \\glossterm<standard damage> +2d.
             """, tags=['Planar', 'Teleportation']),
-            Spell("Teleport", 1, """
+            Spell('Teleport', 1, """
                 Choose a Medium or smaller willing creature or unattended object within \\rngclose range.
                 The target teleports into an unoccupied destination within range.
                 If the destination is invalid, this spell is \\glossterm<miscast>.
@@ -2030,22 +2030,22 @@ def generate_mystic_spheres():
                 In addition, if it is an outsider not on its home plane, it is teleported to a random location on its home plane.
                 If it is a creature created by a \\glossterm<Manifestation> ability, it immediately disappears.
             """),
-            Spell("Dimension Door", 3, """
+            Spell('Dimension Door', 3, """
                 You teleport to a location within \\rngext range of you.
                 You must clearly visualize the destination's appearance, but you do not need \\glossterm<line of sight> or \\glossterm<line of effect> to your destination.
             """, tags=['Teleportation']),
-            Spell("Dimensional Jaunt -- Plane of Earth", 2, """
+            Spell('Dimensional Jaunt -- Plane of Earth', 2, """
                 This spell functions like the \\spell<dimensional jaunt> spell, except that the target is partially teleported into the Plane of Earth.
                 The damage becomes bludgeoning damage, and a struck target is \\glossterm<slowed> as a \\glossterm<condition>.
             """),
-            Spell("Dimensional Jaunt -- Plane of Fire", 3, """
+            Spell('Dimensional Jaunt -- Plane of Fire', 3, """
                 This spell functions like the \\spell<dimensional jaunt> spell, except that the target is partially teleported into the Plane of Fire.
                 The damage becomes fire damage and increases by +1d.
                 In addition, a struck target is \\glossterm<ignited> until it puts out the fire.
                 This condition can also be removed if the target makes a \\glossterm<DR> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
                 Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
             """),
-            Spell("Dimensional Jaunt -- Deep Astral Plane", 5, """
+            Spell('Dimensional Jaunt -- Deep Astral Plane', 5, """
                 This spell functions like the \\spell<dimensional jaunt> spell, except that the target is partially teleported into the deep Astral Plane.
                 The damage increases by +1d.
                 In addition, a struck target is \\glossterm<stunned> as a \\glossterm<condition>.
@@ -2070,7 +2070,7 @@ def generate_mystic_spheres():
             """),
         ],
         rituals=[
-            Spell("Gate", 7, """
+            Spell('Gate', 7, """
                 Choose a plane that connects to your current plane, and a location within that plane.
                 This ritual creates an interdimensional connection between your current plane and the location you choose, allowing travel between those two planes in either direction.
                 The gate takes the form of a \\areasmall radius circular disk, oriented a direction you choose (typically vertical).
@@ -2087,7 +2087,7 @@ def generate_mystic_spheres():
 
                 This ritual takes one week to perform, and requires 98 action points from its participants.
             """, tags=['Planar', 'Teleportation', 'Sustain (standard)']),
-            Spell("Plane Shift", 3, """
+            Spell('Plane Shift', 3, """
                 Choose up to five Large or smaller willing ritual participants.
                 In addition, you choose a \\glossterm<planar rift> within \\rngmed range to travel through.
                 The targets teleport to the unoccupied spaces closest to the other side of the planar rift.
@@ -2116,7 +2116,7 @@ def generate_mystic_spheres():
 
                 This ritual takes 24 hours to perform, and requires 50 action points from its participants.
             """, tags=['Planar', 'Teleportation']),
-            Spell("Overland Teleportation", 4, """
+            Spell('Overland Teleportation', 4, """
                 Choose up to five willing, Medium or smaller ritual participants.
                 In addition, choose a destination up to 100 miles away from you on your current plane.
                 Each target is teleported to the chosen destination.
@@ -2130,7 +2130,7 @@ def generate_mystic_spheres():
 
                 This ritual takes 24 hours to perform and requires 32 action points from its ritual participants.
             """, tags=['Teleportation']),
-            Spell("Retrieve Legacy", 3, """
+            Spell('Retrieve Legacy', 3, """
                 Choose a willing ritual participant.
                 If the target's \\glossterm<legacy item> is on the same plane and \\glossterm<unattended>, it is teleported into the target's hand.
 
@@ -2165,14 +2165,14 @@ def generate_mystic_spheres():
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)', 'Temporal']),
-            Spell("Greater Haste", 3, """
+            Spell('Greater Haste', 3, """
                 Choose a willing creature within \\rngmed range.
                 The target gains a +30 foot \\glossterm<magic bonus> to its \\glossterm<base speed>, up to a maximum of double its \\glossterm<base speed>.
                 In addition, it gains a +2 \\glossterm<magic bonus> to Reflex defense.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)', 'Temporal']),
-            Spell("Temporal Duplicate", 4, """
+            Spell('Temporal Duplicate', 4, """
                 Choose a willing creature within \\rngmed range.
                 You reach into a possible future and create a duplicate of the target.
                 The duplicate is identical in all ways to the target when the spell resolves, except that it has no \\glossterm<legend points>.
@@ -2192,7 +2192,7 @@ def generate_mystic_spheres():
                 When you cast the spell, you choose the length of time before the target disappears.
                 The duplicate still only exists for a single round.
             """),
-            Spell("Time Hop", 2, """
+            Spell('Time Hop', 2, """
                 Choose a Medium or smalller willing creature or unattended object within \\rngmed range.
                 You send the target into the future, causing it to temporarily cease to exist.
                 When you cast this spell, you choose how many rounds the target ceases to exist for, up to a maximum of five rounds.
@@ -2204,7 +2204,7 @@ def generate_mystic_spheres():
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Temporal']),
-            Spell("Temporal Stasis", 3, """
+            Spell('Temporal Stasis', 3, """
                 Choose a Medium or smaller willing creature within \\rngmed range.
                 The target is placed into stasis, rendering it unconscious.
                 While in stasis, it cannot take any actions and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
@@ -2215,7 +2215,7 @@ def generate_mystic_spheres():
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (self)', 'Temporal']),
-            Spell("Delay Damage", 3, """
+            Spell('Delay Damage', 3, """
                 When you take damage, half of the damage (rounded down) is not dealt to you immediately.
                 This damage is tracked separately.
                 When the ends, you take all of the delayed damage at once.
@@ -2224,7 +2224,7 @@ def generate_mystic_spheres():
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Sustain (minor)', 'Temporal']),
-            Spell("Time Lock", 4, """
+            Spell('Time Lock', 4, """
                 Choose a willing creature within \\rngmed range.
                 You lock the state of the target's body in time.
                 Note the target's hit points, vital damage, and active conditions.
@@ -2237,12 +2237,12 @@ def generate_mystic_spheres():
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Sustain (minor)', 'Temporal']),
-            Spell("Greater Time Lock", 7, """
+            Spell('Greater Time Lock', 7, """
                 This spell functions like the \\textit<time lock> spell, except that the effect is not ended if the target dies, and restoring the target's state can also restore it to life.
                 If the target is restored to life in this way, all of its properties not locked by this spell, such as any resources expended, are identical to what they were when the target died.
                 In addition, this spell has the \\glossterm<Attune> (self) tag instead of the \\glossterm<Sustain> (minor) tag.
             """, tags=['Attune (self)', 'Temporal']),
-            Spell("Time Stop", 7, """
+            Spell('Time Stop', 7, """
                 You can take two full rounds of actions immediately.
                 During this time, all other creatures and objects are fixed in time, and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
                 You can still affect yourself and create areas or new effects.
@@ -2254,7 +2254,7 @@ def generate_mystic_spheres():
             """, tags=['Temporal']),
         ],
         rituals=[
-            Spell("Gentle Repose", 2, """
+            Spell('Gentle Repose', 2, """
                 Choose an unattended, nonmagical object within \\rngclose range.
                 Time does not pass for the target, preventing it from decaying or spoiling.
                 This can extend the time a poison or similar item lasts before becoming inert.
@@ -2291,7 +2291,7 @@ def generate_mystic_spheres():
                 Make an attack vs. Armor against one creature or object within \\rngmed range.
                 \\hit The target takes piercing \\glossterm<standard damage> +2d.
             """, tags=['Manifestation']),
-            Spell("Blade Barrier", 1, """
+            Spell('Blade Barrier', 1, """
                 A wall of whirling blades appears within \\rngmed range.
                 The wall either takes the form of a 20 ft.\\ high, \\arealarge line.
                 The wall provides \\glossterm<active cover> (20\\% miss chance) against attacks made through it.
@@ -2314,19 +2314,19 @@ def generate_mystic_spheres():
             Spell('Blade Perimeter', 2, """
                 This spell functions like the \\spell<blade barrier> spell, except that the wall is an 20 ft.\\ high, \\areamed radius circle.
             """),
-            Spell("Contracting Blade Perimeter", 3, """
+            Spell('Contracting Blade Perimeter', 3, """
                 This spell functions like the \\spell<blade perimeter> spell, except that the wall's radius shrinks by 5 feet at the end of every \\glossterm<action phase>, dealing damage to everything it moves through.
                 % Clarify interaction with solid obstacles that block contraction?
             """),
-            Spell("Aerial Weapon", 2, """
+            Spell('Aerial Weapon', 2, """
                 This spell functions like the \\spell<summon weapon> spell, except that the weapon's height above the ground is not limited.
                 This allows the weapon to fly up to fight airborne foes.
             """),
-            Spell("Blade Barrier, Dual", 3, """
+            Spell('Blade Barrier, Dual', 3, """
                 This spell functions like the \\spell<blade barrier> spell, except that the area must be a line.
                 In addition, the spell creates two parallel walls of the same length, five feet apart.
             """),
-            Spell("Create Ballista", 2, """
+            Spell('Create Ballista', 2, """
                 This spell functions like the \\spell<weaponcraft> spell, except that it creates a fully functional Large ballista instead of a weapon of your choice.
                 The ballista functions like any other weapon, with the following exceptions.
 
@@ -2335,7 +2335,7 @@ def generate_mystic_spheres():
                 Its attacks deal piercing damage, and its hit points are equal to three times your \\glossterm<power>.
                 In addition, the ballista attacks the creature farthest from it, instead of the creature closest to it.
             """),
-            Spell("Create Ballista, Dual Track", 4, """
+            Spell('Create Ballista, Dual Track', 4, """
                 This spell functions like the \\spell<create ballista> spell, except that the ballista is created with two separate bolt tracks.
                 This allows it to fire at two different targets in the same round when you command it to fire.
                 It cannot fire at the same target twice.
@@ -2417,7 +2417,7 @@ def generate_mystic_spheres():
             """, tags=['Life']),
         ],
         rituals=[
-            Spell("Fertility", 2, """
+            Spell('Fertility', 2, """
                 This ritual creates an area of bountiful growth in a one mile radius zone from your location.
                 Normal plants within the area become twice as productive as normal for the next year.
                 This ritual does not stack with itself.
@@ -2425,7 +2425,7 @@ def generate_mystic_spheres():
 
                 This ritual takes 24 hours to perform, and requires 8 action points from its participants.
             """),
-            Spell("Infertility", 2, """
+            Spell('Infertility', 2, """
                 This ritual creates an area of death and decay in a one mile radius zone from your location.
                 Normal plants within the area become half as productive as normal for the next year.
                 This ritual does not stack with itself.
@@ -2433,7 +2433,7 @@ def generate_mystic_spheres():
 
                 This ritual takes 24 hours to perform, and requires 8 action points from its participants.
             """),
-            Spell("Lifeweb Transit", 4, """
+            Spell('Lifeweb Transit', 4, """
                 Choose up to five willing, Medium or smaller ritual participants and a living plant that all ritual participants touch during the ritual.
                 The plant must be at least one size category larger than the largest target.
                 In addition, choose a destination up to 100 miles away from you on your current plane.
