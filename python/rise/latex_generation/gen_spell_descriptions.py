@@ -2380,7 +2380,7 @@ def generate_mystic_spheres():
                 You cause plants to grow and trap a foe.
                 Make an attack vs. Reflex against a Large or smaller creature within \\rngmed range.
                 The target must be within 5 feet of earth or plants.
-                You gain a +2 bonus to \\glossterm<accuracy> with this attack if the target is in standing in undergrowth.
+                You gain a +2 bonus to \\glossterm<accuracy> with this attack if the target is in standing in \\glossterm<undergrowth>.
                 \\hit The target is \\glossterm<immobilized> as a \\glossterm<condition>.
                 This condition can be removed if the target or a creature that can reach the target makes a \\glossterm<DR> 5 Strength check as a standard action to pull the target free of the plants.
             """, tags=[]),
