@@ -9,7 +9,7 @@ class Spell(object):
             name,
             level,
             effect_text,
-            tags=None,
+            tags,
             extra_text=None,
             ap_cost=True,
     ):
