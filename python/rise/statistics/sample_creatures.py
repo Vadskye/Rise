@@ -37,7 +37,7 @@ def generate_test_creatures():
         level=1,
         name='Fighter',
         race=Race('human'),
-        starting_attributes=[2, 0, 4, 0, 2, 4],
+        starting_attributes=[2, 0, 2, 0, 2, 0],
         armor=Armor('breastplate'),
         weapons=[Weapon('longsword')],
         shield=Shield('heavy'),
