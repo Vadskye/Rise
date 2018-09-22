@@ -181,7 +181,8 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Bbn}[2]{Primal Exertions}
         You can channel your primal energy into ferocious attacks.
-        Choose two \textit{primal exertions} from the list below.
+        Choose one \textit{primal exertion} from the list below.
+        You can also spend \glossterm{insight points} to learn one additional \textit{primal exertion} per \glossterm{insight point}.
         You can use any \textit{primal exertion} ability you know as a \glossterm{standard action}.
         {
             \begin{apability}{Battle Cry}[\glossterm{Mind}]
@@ -497,7 +498,8 @@ This choice determines a great deal about your character's abilities.
 
         For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
-        \cf{Clr}[2]{Spells} You learn a number of divine \glossterm{spells} equal to your starting Intelligence \add 2 (minimum 1).
+        \cf{Clr}[2]{Spells} You learn two divine \glossterm{spells}.
+        You can also spend \glossterm{insight points} to learn one additional divine spell per \glossterm{insight point}.
         You can learn any 1st level spells from the divine \glossterm{mystic spheres} you have access to.
         As a \glossterm{standard action}, you can spend an \glossterm{action point} to cast any \glossterm{spell} you know.
         When you gain access to a new \glossterm{mystic sphere} or spell level, you can exchange any number of spells you know for spells of other spells you know, including spells of the higher level.
@@ -587,25 +589,24 @@ This choice determines a great deal about your character's abilities.
 
     \subsection{Divine Spell Mastery}
         This archetype improves the divine spells you cast.
-        You must be able cast divine spells to gain the abilities from this archetype.
+        You must be able to cast divine spells to gain the abilities from this archetype.
 
-        \cf{Clr}[1]{Wellspring of Magic}[Magical]
-        You gain an additional \glossterm{reserve action point}.
+        \cf{Clr}[1]{Wellspring of Power}[Magical]
+        You gain a \plus1 bonus to \glossterm{power} with divine spells.
 
         \cf{Clr}[2]{Mystic Knowledge}[Magical]
         You gain your choice of one of the following abilities.
         {
+            \parhead{Insight} You gain an additional \glossterm{insight point} (see \pcref{Insight Points}).
             \parhead{Rituals} You gain the ability to perform divine rituals to create unique magical effects (see \pcref{Rituals}).
             The maximum level of divine ritual you can learn or perform is equal to the maximum divine spell level you can cast.
             \parhead{Mystic Sphere Access} You gain access to an additional divine \glossterm{mystic sphere}.
                 You can choose this ability multiple times, gaining access to an additional \glossterm{mystic sphere} each time.
-            \parhead{Spell Knowledge} You learn an additional \glossterm{spell} for a divine \glossterm{mystic sphere} you have access to.
-                You must have the ability to cast 1st level divine \glossterm{spells} to choose this ability.
-                You can choose this ability multiple times, learning an additional spell each time.
         }
 
         \cf{Clr}[3]{Augments}[Magical]
-        Choose two \glossterm{augments} (see \pcref{Augments}).
+        Choose one \glossterm{augment} (see \pcref{Augments}).
+        You can also spend \glossterm{insight points} to learn one additional augment per \glossterm{insight point}.
         You can apply those augments to divine spells you cast and divine rituals you perform.
         When you gain access to a new spell level, you may change which augments you know.
 
@@ -615,8 +616,8 @@ This choice determines a great deal about your character's abilities.
         \cf{Clr}[5]{Augment}[Magical]
         You learn an additional \glossterm{augment} that you can apply to divine spells.
 
-        \cf{Clr}[6]{Greater Wellspring of Magic}[Magical]
-        You gain an additional \glossterm{reserve action point}.
+        \cf{Clr}[6]{Greater Wellspring of Power}[Magical]
+        The bonus from your \textit{wellspring of power} ability increases to \plus2.
 
         \cf*{Clr}[7]{Mystic Knowledge}[Magical]
         You can an additional \textit{mystic knowledge} ability.
@@ -963,8 +964,10 @@ This choice determines a great deal about your character's abilities.
         \cf{Drd}[1]{Wild Aspect}[Magical]
         You gain the ability to embody an aspect of an animal or of nature itself.
         Choose a single wild aspect from the list below.
-        That ability is normally active.
-        You may suppress or resume the effects of any number of \textit{wild aspects} you have as a \glossterm{minor action}.
+        You can also spend \glossterm{insight points} to learn one additional \textit{wild aspect} per \glossterm{insight point}.
+
+        As a \glossterm{minor action}, you can gain the effects of one wild aspect that you know.
+        That effect lasts until you activate a different wild aspect you know.
 
         The abilities in the list below describe the effects of the aspect.
         Your appearance also changes to match the aspect's effects, but the nature of this change is not described.
@@ -1010,6 +1013,9 @@ This choice determines a great deal about your character's abilities.
 
         \cf*{Drd}[3]{Wild Aspect}[Magical]
         You learn an additional \textit{wild aspect}.
+        %TODO: wording
+        In addition, you gain the ability maintain the effects of up to two \textit{wild aspects} simultaneously.
+        When you activate a new \textit{wild aspect}, you can choose which of your wild aspects remain active. 
         In addition to your previous options, you can also choose from among the aspects below.
         {
             \subcf{A Thousand Faces}
@@ -1050,6 +1056,8 @@ This choice determines a great deal about your character's abilities.
 
         \cf*{Drd}[5]{Wild Aspect}[Magical]
         You learn an additional \textit{wild aspect}.
+        In addition, you gain the ability maintain the effects of up to three \textit{wild aspects} simultaneously.
+        When you activate a new \textit{wild aspect}, you can choose which of your wild aspects remain active. 
         In addition to your previous options, you can also choose from among the aspects below.
         {
             % \subcf{Elemental Retribution}
@@ -1088,6 +1096,8 @@ This choice determines a great deal about your character's abilities.
 
         \cf*{Drd}[7]{Wild Aspect}[Magical]
         You learn an additional \textit{wild aspect}.
+        In addition, you gain the ability maintain the effects of up to four \textit{wild aspects} simultaneously.
+        When you activate a new \textit{wild aspect}, you can choose which of your wild aspects remain active. 
         In addition to your previous options, you can also choose from among the aspects below.
         {
             \subcf{Natural Renewal}
@@ -1134,7 +1144,8 @@ This choice determines a great deal about your character's abilities.
 
         For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
-        \cf{Drd}[2]{Spells} You learn a number of nature \glossterm{spells} equal to your starting Intelligence \add 2 (minimum 1).
+        \cf{Drd}[2]{Spells} You learn two nature \glossterm{spells}.
+        You can also spend \glossterm{insight points} to learn one additional nature spell per \glossterm{insight point}.
         You can learn any 1st level spells from the nature \glossterm{mystic spheres} you have access to.
         As a \glossterm{standard action}, you can spend an \glossterm{action point} to cast any \glossterm{spell} you know.
         When you gain access to a new \glossterm{mystic sphere} or spell level, you can exchange any number of spells you know for spells of other spells you know, including spells of the higher level.
@@ -1159,24 +1170,23 @@ This choice determines a great deal about your character's abilities.
 
     \subsection{Nature Spell Mastery}
         This archetype improves the nature spells you cast.
-        You must be able cast nature spells to gain the abilities from this archetype.
+        You must be able to cast nature spells to gain the abilities from this archetype.
 
-        \cf{Drd}[1]{Wellspring of Magic}[Magical]
-        You gain an additional \glossterm{reserve action point}.
+        \cf{Drd}[1]{Wellspring of Power}[Magical]
+        You gain a \plus1 bonus to \glossterm{power} with nature spells.
 
         \cf{Drd}[2]{Mystic Knowledge}
         You gain your choice of one of the following abilities.
         {
+            \parhead{Insight} You gain an additional \glossterm{insight point} (see \pcref{Insight Points}).
             \parhead{Rituals} You gain the ability to perform nature rituals to create unique magical effects (see \pcref{Rituals}).
             \parhead{Mystic Sphere Access} You gain access to an additional divine \glossterm{mystic sphere}.
                 You can choose this ability multiple times, gaining access to an additional \glossterm{mystic sphere} each time.
-            \parhead{Spell Knowledge} You learn an additional \glossterm{spell} for a divine \glossterm{mystic sphere} you have access to.
-                You must have the ability to cast 1st level divine \glossterm{spells} to choose this ability.
-                You can choose this ability multiple times, learning an additional spell each time.
         }
 
         \cf{Drd}[3]{Augments}[Magical]
-        Choose two \glossterm{augments} (see \pcref{Augments}).
+        Choose one \glossterm{augments} (see \pcref{Augments}).
+        You can also spend \glossterm{insight points} to learn one additional augment per \glossterm{insight point}.
         You can apply those augments to nature spells you cast and nature rituals you perform.
         When you gain access to a new spell level, you may change which augments you know.
 
@@ -1186,8 +1196,8 @@ This choice determines a great deal about your character's abilities.
         \cf{Drd}[5]{Augment}[Magical]
         You learn an additional \glossterm{augment} that you can apply to nature spells.
 
-        \cf{Drd}[6]{Greater Wellspring of Magic}[Magical]
-        You gain an additional \glossterm{reserve action point}.
+        \cf{Drd}[6]{Greater Wellspring of Power}[Magical]
+        The bonus from your \textit{wellspring of power} ability increases to \plus2.
 
         \cf*{Drd}[7]{Mystic Knowledge}[Magical]
         You can an additional \textit{mystic knowledge} ability.
@@ -1361,7 +1371,8 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Ftr}[2]{Martial Exertions}
         You can channel your martial prowess into devastating attacks.
-        Choose two \textit{martial exertions} from the list below.
+        Choose one \textit{martial exertions} from the list below.
+        You can also spend \glossterm{insight points} to learn one additional \textit{martial exertion} per \glossterm{insight point}.
         You can use any \textit{martial exertion} ability you know as a \glossterm{standard action}.
         {
             \begin{freeability}{Brace for Impact}[\glossterm{Swift}]
@@ -1673,7 +1684,8 @@ This choice determines a great deal about your character's abilities.
 
         For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
-        \cf{Mge}[2]{Spells} You learn a number of arcane \glossterm{spells} equal to your starting Intelligence \add 2 (minimum 1).
+        \cf{Mge}[2]{Spells} You learn two arcane \glossterm{spells}.
+        You can also spend \glossterm{insight points} to learn one additional arcane spell per \glossterm{insight point}.
         You can learn any 1st level spells from the arcane \glossterm{mystic spheres} you have access to.
         As a \glossterm{standard action}, you can spend an \glossterm{action point} to cast any \glossterm{spell} you know.
         When you gain access to a new \glossterm{mystic sphere} or spell level, you can exchange any number of spells you know for spells of other spells you know, including spells of the higher level.
@@ -1819,23 +1831,22 @@ This choice determines a great deal about your character's abilities.
         % TODO: This wording is ugly
         Abilities from this archetype that affect arcane spells only affect arcane spells gained from the Arcane Spellcasting archetype.
 
-        \cf{Mge}[1]{Wellspring of Magic}[Magical]
-        You gain an additional \glossterm{reserve action point}.
+        \cf{Mge}[1]{Wellspring of Power}[Magical]
+        You gain a \plus1 bonus to \glossterm{power} with arcane spells.
 
         \cf{Mge}[2]{Mystic Knowledge}[Magical]
         You gain your choice of one of the following abilities.
         {
+            \parhead{Insight} You gain an additional \glossterm{insight point} (see \pcref{Insight Points}).
             \parhead{Rituals} You can only choose this mystic knowledge if you are a wizard.
                 You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
             \parhead{Mystic Sphere Access} You gain access to an additional divine \glossterm{mystic sphere}.
                 You can choose this ability multiple times, gaining access to an additional \glossterm{mystic sphere} each time.
-            \parhead{Spell Knowledge} You learn an additional \glossterm{spell} for a divine \glossterm{mystic sphere} you have access to.
-                You must have the ability to cast 1st level divine \glossterm{spells} to choose this ability.
-                You can choose this ability multiple times, learning an additional spell each time.
         }
 
         \cf{Mge}[3]{Augments}[Magical]
-        Choose two \glossterm{augments} (see \pcref{Augments}).
+        Choose one \glossterm{augment} (see \pcref{Augments}).
+        You can also spend \glossterm{insight points} to learn one additional augment per \glossterm{insight point}.
         You can apply those augments to arcane spells you cast and arcane rituals you perform.
         When you gain access to a new spell level, you may change which augments you know.
 
@@ -1845,8 +1856,8 @@ This choice determines a great deal about your character's abilities.
         \cf{Mge}[5]{Augment}[Magical]
         You learn an additional \glossterm{augment} that you can apply to arcane spells.
 
-        \cf{Mge}[6]{Greater Wellspring of Magic}[Magical]
-        You gain an additional \glossterm{reserve action point}.
+        \cf{Mge}[6]{Greater Wellspring of Power}[Magical]
+        The bonus from your \textit{wellspring of power} ability increases to \plus2.
 
         \cf*{Mge}[7]{Mystic Knowledge}[Magical]
         You can an additional \textit{mystic knowledge} ability.
@@ -1915,7 +1926,8 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Mnk}[2]{Ki Manifestations}[Magical]
         You can channel your ki to temporarily enhance your abilities.
-        Choose two \textit{ki manifestations} from the list below.
+        Choose one \textit{ki manifestation} from the list below.
+        You can also spend \glossterm{insight points} to learn one additional \textit{ki manifestation} per \glossterm{insight point}.
         You can use any \textit{ki manifestation} ability you know using the type of action indicated in the ability's description.
         You cannot use more than one \textit{ki manifestation} per round.
         {
@@ -2255,7 +2267,8 @@ This choice determines a great deal about your character's abilities.
 
         For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
-        \cf{Pal}[2]{Spells} You learn a number of divine \glossterm{spells} equal to your starting Intelligence \add 2 (minimum 1).
+        \cf{Pal}[2]{Spells} You learn two divine \glossterm{spells}.
+        You can also spend \glossterm{insight points} to learn one additional divine spell per \glossterm{insight point}.
         You can learn any 1st level spells from the divine \glossterm{mystic spheres} you have access to.
         As a \glossterm{standard action}, you can spend an \glossterm{action point} to cast any \glossterm{spell} you know.
         When you gain access to a new \glossterm{mystic sphere} or spell level, you can exchange any number of spells you know for spells of other spells you know, including spells of the higher level.
@@ -2416,7 +2429,8 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rgr}[2]{Wild Exertions} 
         You can channel your martial prowess into devastating attacks.
-        Choose two \textit{wild exertions} from the list below.
+        Choose one \textit{wild exertion} from the list below.
+        You can also spend \glossterm{insight points} to learn one additional \textit{wild exertion} per \glossterm{insight point}.
         As a standard action, you can spend an \glossterm{action point} to use a \textit{wild exertion} ability.
         {
             \begin{freeability}{Brace for Impact}[\glossterm{Swift}]
@@ -2602,7 +2616,8 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rgr}[3]{Hunting Styles}
         You learn specific hunting styles to defeat particular quarries.
-        Choose two hunting styles from the list below.
+        Choose one hunting style from the list below.
+        You can also spend \glossterm{insight points} to learn one additional \textit{hunting style} per \glossterm{insight point}.
         When you use your \textit{quarry} ability, you may also use one of your \textit{hunting styles}.
         Each \textit{hunting style} ability lasts as long as the \textit{quarry} ability you used it with.
         {
@@ -2843,7 +2858,8 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rog}[2]{Combat Tricks}
         You can confuse and confound your foes in combat.
-        Choose two \textit{combat tricks} from the list below.
+        Choose one \textit{combat trick} from the list below.
+        You can also spend \glossterm{insight points} to learn one additional \textit{combat trick} per \glossterm{insight point}.
         As a standard action, you can spend an \glossterm{action point} to use a \textit{combat trick} ability.
         {
             \begin{apability}{Certain Strike}
@@ -3079,7 +3095,8 @@ This choice determines a great deal about your character's abilities.
         You cannot learn pact spells by any other means.
         As a \glossterm{standard action}, you can spend an \glossterm{action point} to cast any \glossterm{spell} you know.
 
-        \cf{War}[2]{Pact Augments}[Magical] You learn two pact augments from the list below.
+        \cf{War}[2]{Pact Augments}[Magical] You learn one pact augment from the list below.
+        You can also spend \glossterm{insight points} to learn one additional pact augment per \glossterm{insight point}.
         Pact augments function like other \glossterm{augments} (see \pcref{Augments}), with the following exceptions.
         \begin{itemize}
             \item Pact augments can only be applied to pact spells, including \glossterm{cantrips}.
@@ -3211,7 +3228,8 @@ This choice determines a great deal about your character's abilities.
         This archetype improves your ability to cast spells with the power of your dark pact.
         You must have the Pact Spellcasting archetype to gain the abilities from this archetype.
 
-        \cf{War}[1]{Wellspring of Magic}[Magical] You gain an additional \glossterm{reserve action point}.
+        \cf{War}[1]{Wellspring of Power}[Magical]
+        You gain a \plus1 bonus to \glossterm{power} with pact spells.
 
         \cf{War}[2]{Malevolent Boon}[Magical]
         When you cast a pact spell that makes an attack roll, if you miss, you may regain the \glossterm{action point} spent to cast the spell (if any).
@@ -3219,7 +3237,8 @@ This choice determines a great deal about your character's abilities.
         You cannot use this ability on spells that do not normally have attacks, even if you apply an \glossterm{augment} that makes a separate attack.
 
         \cf{War}[3]{Augments}[Magical]
-        Choose two \glossterm{augments} (see \pcref{Augments}).
+        Choose one \glossterm{augment} (see \pcref{Augments}).
+        You can also spend \glossterm{insight points} to learn one additional augment per \glossterm{insight point}.
         You can apply those augments to pact spells you cast.
         When you gain access to a new spell level, you may change which augments you know.
 
@@ -3230,7 +3249,8 @@ This choice determines a great deal about your character's abilities.
         \cf*{War}[5]{Augment}[Magical]
         You learn an additional \glossterm{augment} that you can apply to pact spells.
 
-        \cf*{War}[6]{Greater Wellspring of Magic}[Magical] You gain an additional \glossterm{reserve action point}.
+        \cf{War}[6]{Greater Wellspring of Power}[Magical]
+        The bonus from your \textit{wellspring of power} ability increases to \plus2.
 
         \cf{War}[7]{Augment}[Magical]
         You learn an additional \glossterm{augment} that you can apply to pact spells.
