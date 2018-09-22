@@ -10,7 +10,6 @@ valid_tags = set([
     'Compulsion',
     'Creation',
     'Curse',
-    'Death',
     'Emotion',
     'Detection',
     'Earth',
