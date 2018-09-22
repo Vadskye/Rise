@@ -37,7 +37,7 @@ def generate_test_creatures():
         level=1,
         name='Fighter',
         race=Race('human'),
-        starting_attributes=[2, 0, 2, 0, 2, 0],
+        starting_attributes=[2, 0, 2, 0, 0, 0],
         armor=Armor('breastplate'),
         weapons=[Weapon('longsword')],
         shield=Shield('heavy'),
@@ -85,6 +85,22 @@ def generate_test_creatures():
         c.attuned_ability_count += 1
     modifiers['revelation'] = revelation
 
+    # def per2(c):
+    #     c.starting_perception = 2
+    # modifiers['per2'] = per2
+
+    # def per4(c):
+    #     c.starting_perception = 4
+    # modifiers['per4'] = per4
+
+    # def will2(c):
+    #     c.starting_willpower = 2
+    # modifiers['will2'] = will2
+
+    # def will4(c):
+    #     c.starting_willpower = 4
+    # modifiers['will4'] = will4
+
     def add_test_character(base_character_key, modifier_name):
         new_character = copy(tests[base_character_key])
         modifiers[modifier_name](new_character)
@@ -108,24 +124,24 @@ def generate_test_creatures():
 
     def l4(c):
         c.level = 4
-    modifiers['4'] = l4
+    modifiers['l4'] = l4
 
     def l7(c):
         c.level = 7
-    modifiers['7'] = l7
+    modifiers['l7'] = l7
 
     def l13(c):
         c.level = 13
-    modifiers['13'] = l13
+    modifiers['l13'] = l13
 
     def l19(c):
         c.level = 19
-    modifiers['19'] = l19
+    modifiers['l19'] = l19
 
     # Add levels at the end
     for character_name in sorted(tests.keys()):
         for level in [4, 7, 13, 19]:
-            add_test_character(character_name, f"{level}")
+            add_test_character(character_name, f"l{level}")
 
     tests['sorcerer 7 firebolt'] = Creature(
         character_class=CharacterClass('mage'),
@@ -157,30 +173,6 @@ def generate_test_creatures():
         weapons=[Weapon('club')],
         active_abilities=[ActiveAbility('firebolt'), ActiveAbility('inflict wounds')],
     )
-
-    tests['warrior strength'] = copy(tests['warrior'])
-    tests['warrior strength'].starting_strength = 2
-
-    tests['warrior perception'] = copy(tests['warrior'])
-    tests['warrior perception'].starting_perception = 2
-
-    tests['warrior l4 strength'] = copy(tests['warrior strength'])
-    tests['warrior l4 strength'].level = 4
-
-    tests['warrior l4 perception'] = copy(tests['warrior perception'])
-    tests['warrior l4 perception'].level = 4
-
-    tests['warrior l7 strength'] = copy(tests['warrior strength'])
-    tests['warrior l7 strength'].level = 7
-
-    tests['warrior l7 perception'] = copy(tests['warrior perception'])
-    tests['warrior l7 perception'].level = 7
-
-    tests['warrior l20 strength'] = copy(tests['warrior strength'])
-    tests['warrior l20 strength'].level = 20
-
-    tests['warrior l20 perception'] = copy(tests['warrior perception'])
-    tests['warrior l20 perception'].level = 20
 
     return tests
 

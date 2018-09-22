@@ -16,8 +16,8 @@ During the action phase, creatures can \glossterm{attack}, cast \glossterm{spell
 There are two types of action points: \glossterm{recovery action points} and \glossterm{reserve action points}.
 For details, see \pcref{Action Points}.
 
-\glossdef{active cover} Active cover is a type of \glossterm{cover} that can block \glossterm{physical attacks}.
-It represent mobile obstacles that move unpredictably, imposing a 20\% \glossterm{miss chance} on physical attacks.
+\glossdef{active cover} Active cover is a type of \glossterm{cover} provided by mobile obstacles that can block \glossterm{physical attacks}.
+Physical attacks against creatures and objects with active cover suffer a 20\% miss chance.
 For details, see \pcref{Active Cover}.
 
 \glossdef{accuracy} The bonus added to an \glossterm{attack roll}.
@@ -160,7 +160,8 @@ They are described in \tref{Common Languages}.
 \glossdef{Compulsion}[Compulsions] See \pcref{Ability Tags}.
 
 \glossdef{concealment} Concealment represents effects which make a target harder to see, such as shadowy lighting.
-You take a \minus4 penalty to accuracy with \glossterm{physical attacks} against creatures and objects that have concealment from you.
+A creature or object with concealment from you gains a \plus2 bonus to Armor defense.
+For details, see \pcref{Concealment}.
 
 \glossdef{concentration} Some abilities, such as spells, require concentration to use successfully.
 If your concentration is disrupted, the ability may fail.
@@ -216,15 +217,17 @@ Darkvision does not function if a creature is in a brightly lit area, and does n
 
 \glossdef{dazed} A dazed creature cannot act during the \glossterm{action phase}.
 It can take its normal actions during the \glossterm{delayed action phase}.
-In addition, the creature takes a \minus2 penalty to \glossterm{accuracy}, \glossterm{checks}, and \glossterm{defenses}.
+In addition, the creature takes a \minus2 penalty to \glossterm{defenses}.
 
 \glossdef{dazzled} A dazzled creature has difficulty seeing.
 It loses any special vision abilities it has, such as \glossterm{darkvision} or \glossterm{low-light vision}.
-In addition, it takes a \minus2 penalty to \glossterm{accuracy} with \glossterm{physical attacks} and vision-related checks.
+In addition, it takes a \minus2 penalty to \glossterm{accuracy} and visual Awareness checks (see \pcref{Awareness}).
 
 \glossdef{dead} A dead creature's soul leaves its body. Dead creatures cannot benefit from normal or magical healing, but they can be restored to life via magic (see \pcref{Resurrecting the Dead}). A dead body decays normally unless magically preserved.
 
 \glossdef{deafened} A deafened creature cannot hear. It automatically fails at actions which depend on hearing. In addition, it has a 20\% failure chance when casting any spell with verbal components.
+
+\glossdef{decelerated} A decelerated creature moves at one quarter speed and takes a \minus4 penalty to Reflex defense.
 
 \glossdef{defenseless} A defenseless creature is unable to defend itself in melee combat.
 \glossterm{Melee attacks} against it gain a \plus2 bonus to accuracy.
@@ -236,7 +239,9 @@ Any creature not capable of using a weapon or shield to defend itself, such as m
 Some abilities, such as a ranger's \textit{quarry} ability (see \pcref{Quarry}), last until an enemy is defeated.
 If there is ambiguity about whether a surrendering or seemingly incapacitated enemy still poses a threat, you choose whether you consider the enemy to be defeated.
 
-\glossdef{defense}[defenses] A defense is a static number which represents how difficult you are to affect with attacks. See \glossterm{attack rolls}.
+\glossdef{defense}[defenses] A defense is a static number which represents how difficult you are to affect with attacks.
+There are four defenses: Armor, Fortitude, Reflex, and Mental.
+For details, see \pcref{Defenses}.
 
 \glossdef{defensive casting} When you use a spell or ritual, you can choose to balance concentrating on the ability and defending yourself.
 This is called defensive casting.
@@ -308,7 +313,8 @@ For details, see \pcref{Encumbrance}.
 
 % \glossdef{Enchantment} Enchantment spells affect the minds of others, influencing or controlling their behavior or mental capabilities. Almost all enchantment spells are \glossterm{Mind} spells, and many of them are \glossterm{Subtle} as well.
 
-\glossdef{exhausted} An exhausted creature moves at half speed, cannot sprint (see \pcref{Sprint}), and takes a \minus2 penalty to \glossterm{accuracy}, checks, and defenses.
+\glossdef{exhausted} An exhausted creature moves at half speed and takes a \minus4 penalty to \glossterm{defenses}
+This does not stack with the \glossterm{fatigued} effect.
 
 \glossdef{exotic weapon}[exotic weapons] A rare few weapons are considered exotic weapons.
 They are unusually difficult to wield, and even being \glossterm{proficient} with the associated \glossterm{weapon group} does not grant you the ability to use an exotic ewapon.
@@ -326,11 +332,12 @@ If you control your fall with a successful Acrobatics or Jump check, you can red
 \glossdef{fast healing} A creature with fast healing automatically heals hit points at the end of every round.
 Like other healing, this healing offsets damage taken during the round for the purposes of taking \glossterm{vital damage} and becoming \wounded.
 
-\glossdef{fatigued} A fatigued creature cannot sprint (see \pcref{Sprint}).
+\glossdef{fatigued} A fatigued creature moves at half speed and takes a \minus2 penalty to \glossterm{defenses}.
+This does not stack with the \glossterm{exhausted} effect.
 
 \glossdef{Fear} See \pcref{Ability Tags}.
 
-\glossdef{feint} You can use hte \textit{feint} ability to trick a creature into lowering its defenses.
+\glossdef{feint} You can use the \textit{feint} ability to trick a creature into lowering its defenses.
 For details, see \pcref{Feint}.
 
 \glossdef{fire}[Fire] A kind of \glossterm{energy}. For the Fire ability tag, see \pcref{Ability Tags}.
@@ -357,8 +364,8 @@ For details, see \pcref{Follow}.
 Free actions can be taken in any phase.
 For details, see \pcref{Free Actions}.
 
-\glossdef{frightened} A frightened creature takes a \minus4 penalty to \glossterm{accuracy}, checks, and defenses as long as it is within \rngmed range of the source of its fear.
-These penalties do not stack with the penalties for being \shaken or \panicked.
+\glossdef{frightened} A frightened creature takes a \minus4 penalty to \glossterm{defenses} as long as it is within \rngmed range of the source of its fear.
+This does not stack with the \glossterm{shaken} effect.
 
 If the source of a frightened creature's fear is a creature and is \glossterm{defeated}, this effect is broken.
 
@@ -377,7 +384,7 @@ While grappled, you suffer certain penalties and restrictions, as described belo
     \item You must use a free hand (or equivalent limbs) to grapple, preventing you from taking any actions which would require having two free hands.
         If you cannot free a hand, you suffer a \minus10 penalty to accuracy on all \glossterm{physical attacks} until you have a free hand.
     \item You are \defenseless against creatures who are not grappled by you.
-    \item You take a \minus4 penalty to accuracy with weapons that are not light, since they are too large and cumbersome to be used effectively in a grapple.
+    \item You take a \minus4 penalty to \glossterm{accuracy} with weapons that are not light, since they are too large and cumbersome to be used effectively in a grapple.
     \item Spellcasting is extremely difficult. You cannot cast spells with somatic components.
         Casting a spell without somatic components requires a \glossterm{concentration} check with a DR equal to 20 \add double spell level.
     \item You cannot normally move from your location. 
@@ -412,9 +419,11 @@ For details, see \pcref{Hit Points}.
 \glossdef{hunting party} A hunting party is the group of allies affected by a ranger's \textit{quarry} ability (see \pcref{Quarry}).
 
 \glossdef{ignited} An ignited creature has been set on fire.
-It takes 1d6 fire damage at the end of each \glossterm{action phase}, and takes a \minus2 penalty to \glossterm{accuracy}, checks, and defenses.
+It takes 1d6 fire damage at the end of each \glossterm{action phase} and takes a \minus2 penalty to \glossterm{defenses}.
 
-\glossdef{immobilized} An immobilized creature can't move out of the space it was in when it became immobilized. Immobilized flying creatures that have the ability to hover can maintain their initial altitude. All other flying creatures subjected to this condition descend at a rate of 20 feet per round until they reach the ground, taking no falling damage.
+\glossdef{immobilized} An immobilized creature can't move out of the space it was in when it became immobilized.
+Immobilized flying creatures that have the ability to hover can maintain their initial altitude.
+All other flying creatures subjected to this condition descend at a rate of 20 feet per round until they reach the ground, taking no falling damage.
 
 \glossdef{improvised weapon}[improvised weapons] An improvised weapon is an object which could conceivably be used as a weapon, but which was not designed for that purpose.
 Common examples include doors and wine bottles.
@@ -570,8 +579,8 @@ For details, see \pcref{Mystic Spheres}.
 \glossdef{natural weapon} A natural weapon is a \glossterm{weapon} that is part of a creature's body.
 For details, see \pcref{Natural Weapons}.
 
-\glossdef{nauseated} A nauseated creature takes a \minus4 penalty to \glossterm{accuracy}, checks, and defenses.
-These penalties do not stack with the penalties for being \sickened.
+\glossdef{nauseated} A nauseated creature takes a \minus4 penalty to \glossterm{accuracy} and Fortitude defense.
+This does not stack with the \glossterm{sickened} effect.
 
 \glossdef{opposed alignment} Each \glossterm{alignment} has an opposed alignment that is antethical to its principles and goals.
 Good and Evil are opposed alignments, and Chaos and Law are opposed alignments.
@@ -603,17 +612,15 @@ For details, see \pcref{Overwhelm}.
 \glossdef{outsider} An outsider is a type of creature.
 Outsiders are composed of planar material from a plane other than the Material Plane.
 
-\glossdef{panicked} A panicked creature takes a \minus4 penalty to \glossterm{accuracy}, checks, and defenses as long as it is within \rngmed range of the source of its fear.
-In addition, it must flee from the source of its fear by any means necessary if it is within that range.
+\glossdef{panicked} A panicked creature must flee from the source of its fear by any means necessary if it is within \rngmed range of the source of its fear.
 If unable to flee, it must do nothing other than use the \textit{total defense} ability every round (see \pcref{Total Defense}).
-These penalties do not stack with the penalties for being \shaken or \panicked.
 
 If the source of a panicked creature's fear is a creature and is \glossterm{defeated}, this effect is broken.
 
 \glossdef{paralyzed} A paralyzed creature is unable to take physical actions. It has effective Dexterity and Strength scores of \minus10 and is \helpless, but can take purely mental actions. This can cause flying creatures to crash, swimming creatures to drown, and so on. A creature can move through a space occupied by a paralyzed creature -- ally or otherwise. Each square occupied by a paralyzed creature, however, counts as 2 squares.
 
-\glossdef{passive cover} Passive cover is a type of \glossterm{cover} that can block \glossterm{physical attacks}.
-It represent immobile obstacles that make it harder to aim, imposing a \minus2 penalty to \glossterm{accuracy}.
+\glossdef{passive cover} Passive cover is a type of \glossterm{cover} provided by immobile obstacles that can block \glossterm{physical attacks}.
+Creatures and objects with passive cover from you gain a \plus2 bonus to Armor defense.
 For details, see \pcref{Passive Cover}.
 
 \glossdef{petrified} A petrified creature has been turned to stone. It is neither alive nor dead, but is unconscious and unable to take actions, and its body is an inanimate statue. If the statue is broken or damaged before the creature is restored to its original state, the creature has equivalent damage or deformities.
@@ -721,8 +728,8 @@ Unless otherwise specified, a scrying sensor's visual acuity is the same as that
 \glossdef{shadowy illumination} In an area with shadowy illumination, creatures can see dimly.
 Creatures within this area have \concealment, which can allow them to make Stealth checks to hide (see \pcref{Stealth}).
 
-\glossdef{shaken} A shaken creature takes a \minus2 penalty to \glossterm{accuracy}, checks, and defenses as long as it is within 100 feet of the source of its fear.
-These penalties do not stack with the penalties for being \frightened or \panicked.
+\glossdef{shaken} A shaken creature takes a \minus2 penalty to \glossterm{defenses} as it is within \rngclose range of the source of its fear.
+This does not stack with the \glossterm{frightened} effect.
 
 If the source of a shaken creature's fear is a creature and is \glossterm{defeated}, this effect is broken.
 
@@ -740,8 +747,8 @@ For details, see \pcref{Short Rest}.
 \glossdef{shove} You can use the \textit{shove} ability to forcibly move a creature.
 For details, see \pcref{Shove}.
 
-\glossdef{sickened} A sickened creature takes a \minus2 penalty to \glossterm{accuracy}, checks, and defenses.
-These penalties do not stack with the penalties for being \nauseated.
+\glossdef{sickened} A sickened creature takes a \minus2 penalty to \glossterm{accuracy} and Fortitude defense.
+This does not stack with the \glossterm{nauseated} effect.
 
 \glossdef{size category} A creature's size category indicates how large it is.
 There are nine size categories, from smallest to largest: Fine, Diminuitive, Tiny, Small, Medium, Large, Huge, Gargantuan, Colossal.
@@ -757,7 +764,7 @@ For details, see \pcref{Skills}.
 You gain skill points from your class, from having a high Intelligence, and from taking penalties to your starting attributes (see \pcref{Impaired Attributes}).
 For details, see \pcref{Skill Points}.
 
-\glossdef{slowed} A slowed creature moves at half speed.
+\glossdef{slowed} A slowed creature moves at half speed and takes a \minus2 penalty to Reflex defense.
 
 \glossdef{somatic components}[somatic] Somatic components are hand motions required to cast most spells.
 For details, see \pcref{Casting Components}.

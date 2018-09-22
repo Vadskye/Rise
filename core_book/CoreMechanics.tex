@@ -632,12 +632,12 @@ It defines how attributes work and explains how to make physical attacks in comb
             All three types of cover are determined by the presence or absence of physical obstacles.
 
             \parhead{Active Cover}\label{Active Cover} Active cover is provided by mobile obstacles between you and your target, such as creatures or tree branches blowing in the wind.
-            Physical attacks against creatures with active cover suffer a 20\% miss chance.
+            Physical attacks against creatures and objects with active cover suffer a 20\% miss chance.
             If an attack misses due to active cover, the attack is made against the intervening obstacle rather than being negated like normal for miss chances.
             The obstacle takes any damage from a successful attack normally.
 
             \parhead{Passive Cover}\label{Passive Cover} Passive cover is provided by immobile obstacles between you and your target, such as trees and walls.
-            Creatures with passive cover gain a \plus2 bonus to Armor defense.
+            Creatures and objects with passive cover from you gain a \plus2 bonus to Armor defense.
             In addition, creatures with passive cover can hide (see \pcref{Stealth}).
 
             \parhead{Measuring Cover}
@@ -678,7 +678,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \subsubsection{Concealment}\label{Concealment}
             Concealment represents anything which makes it more difficult to see your target, such as dim lighting.
-            A creature with concealment from you gains a \plus2 bonus to Armor defense.
+            A creature or object with concealment from you gains a \plus2 bonus to Armor defense.
             The concealment bonus does not apply if you can't see your opponent (such as if you close your eyes).
             Determining concealment works similarly to determining cover.
             You must use the same \glossterm{points of origin} and \glossterm{target square} when determining concealment that you would use to determine cover.
@@ -1178,9 +1178,6 @@ It defines how attributes work and explains how to make physical attacks in comb
         \parhead{Curse} Curse abilities lay supernatural curses on their targets.
         They cannot be \glossterm{dismissed}, but can be removed with the \spell{remove curse} spell.
 
-        \parhead{Death} Death abilities only affect living creatures.
-        A creature killed by a Death effect cannot be returned to life by the \spell{resurrection} ritual or similar abilities that depend on an intact corpse.
-
         \parhead{Emotion} Emotion abilities alter a creature's opinons or personality, but do not necessarily affect their actions.
         All Emotion abilities are also Mind abilities.
 
@@ -1458,7 +1455,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         \parhead{Recover} You can use the \textit{recover} ability as a \glossterm{minor action}.
         As long as you are conscious, no effect can prevent you from using this ability, even effects that prohibit using any other abilities.
         \begin{apability}{\labeltext{Recover}}
-            You may remove one \glossterm{condition} affecting you.
+            You remove one \glossterm{condition} affecting you.
             This cannot remove a condition applied during the current round.
         \end{apability}
 

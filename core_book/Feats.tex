@@ -216,16 +216,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Bardic Exemplar}{Magical, Skill}
         \featpre Perform Specialization feat.
 
-        \ff[1]{Inspire Courage} You can use the \textit{inspire courage} ability as a standard action.
-        \begin{apability}{Inspire Courage}[\glossterm{Emotion}, \glossterm{Mind}, \glossterm{Sustain} (minor)]
-            You begin a performance using one of your Perform skills.
-            All willing allies within a \areahuge emanation from you gain a \plus1 bonus to \glossterm{accuracy} and a \plus2 bonus to Mental defense.
-
-            If a target can neither see nor hear your performance, the effect immediately ends for that target.
-            This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
-        \end{apability}
-
-        \ff[2]{Vicious Mockery} You can use the \textit{vicious mockery} ability as a standard action.
+        \ff[1]{Vicious Mockery} You can use the \textit{vicious mockery} ability as a standard action.
         \begin{apability}{Vicious Mockery}[\glossterm{Emotion}, \glossterm{Mind}]
             You make a brief performance using one of your Perform skills.
             Make an attack vs. Mental against all enemies within a \areahuge radius from you.
@@ -233,6 +224,16 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
             \hit As a \glossterm{condition}, each target takes a \minus1 penalty to \glossterm{accuracy} and a \minus2 penalty to Mental defense.
 
+            This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
+        \end{apability}
+
+        \ff[2]{Inspire Courage} You can use the \textit{inspire courage} ability as a standard action.
+        \begin{apability}{Inspire Courage}[\glossterm{Emotion}, \glossterm{Mind}, \glossterm{Sustain} (minor)]
+            You begin a performance using one of your Perform skills.
+            Choose a willing creature within \rngmed range.
+            The target gains a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} and a \plus2 bonus to Mental defense.
+
+            If a target can neither see nor hear your performance, the effect immediately ends for that target.
             This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
         \end{apability}
 
@@ -379,7 +380,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[6]{Takedown} You can use the \textit{takedown} ability as a standard action.
         \begin{apability}{Takedown}
             Make an unarmed \glossterm{strike}.
-            In addition to the attack's normal effects, if the attack result also beats the target's Fortitude defense, you and the target are \grappled by each other.
+            In addition to the attack's normal effects, if the strike hits and attack result also beats the target's Fortitude defense, you and the target are \grappled by each other.
         \end{apability}
 
         \ff[9]{Greater Unarmed Warrior} The damage bonus from your \textit{unarmed warrior} increases to \plus3d.
@@ -395,30 +396,29 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \featpre Non-evil alignment.
         \parhead{Special} You can only have one Bloodline feat.
 
-        \ff[1]{Celestial Power} Your \glossterm{power} with abilities from this feat is equal to your Willpower or your level, whichever is higher.
+        \ff[1]{Divine Favor} You gain a \plus1 bonus to Fortitude and Mental defense.
 
-        \ff[1]{Holy Blessing} You can use the \textit{holy blessing} ability as a \glossterm{minor action}.
-        \begin{apability}{Holy Blessing}[\glossterm{Attune} (target)]
-            Choose a willing creature within \rngclose range.
-            The target gains a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} with all attacks.
+        \ff[2]{Holy Smite} You can use the \textit{holy smite} ability as a standard action.
+        \begin{apability}{Smite}
+            Make a \glossterm{strike}.
+            If your target is good, the strike deals no damage.
+            Otherwise, the strike gains a \plus2d bonus to damage.
         \end{apability}
-
-        \ff[2]{Divine Favor} You gain a \plus1 bonus to Fortitude and Mental defense.
 
         \ff[5]{Angel Wings} You gain feathery wings that sprout from your back.
         These wings grant you a glide speed equal to your \glossterm{base speed} (see \pcref{Gliding}).
         The wings themselves are physical, but the ability to fly and glide with them is \glossterm{magical}.
 
-        \ff[8]{Greater Holy Blessing} When you use your \textit{holy blessing} ability, the target also gains a \plus1d \glossterm{magic bonus} to all abilities that deal damage or grant healing measured in dice.
+        \ff[8]{Greater Holy Smite} The damage bonus from your \textit{holy smite} ability increases to \plus3d.
 
         \ff[11]{Angelic Flight} You can use the \textit{angelic flight} ability as a \glossterm{free action}.
         \begin{apability}{Angelic Flight}
             You gain a \glossterm{fly speed} equal to your \glossterm{base speed} until the end of the round (see \pcref{Flying}).
         \end{apability}
 
-        \ff[14]{Greater Divine Favor} The bonuses from your \textit{divine favor} ability increase to \plus2.
+        \ff[14]{Supreme Holy Smite} The damage bonus from your \textit{holy smite} ability increases to \plus4d.
 
-        \ff[17]{Supreme Holy Blessing} The accuracy bonus from your \textit{holy blessing} ability increases to \plus2.
+        \ff[17]{Greater Divine Favor} The bonuses from your \textit{divine favor} ability increase to \plus2.
 
         \ff[20]{Greater Angelic Flight} You can use your \textit{angelic flight} ability without spending an \glossterm{action point}.
     \end{feat}
@@ -671,38 +671,37 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Duelist}{Combat}
         \featpre Starting Dexterity of 1, starting Intelligence of 1.
 
-        \ff[1]{Focused Strike} You can use the \textit{focused strike} ability as a standard action.
+        \ff[1]{Parry} You gain a \plus1 bonus to Armor defense as long as you are not \glossterm{threatened} by more than one creature.
+
+        \ff[3]{Focused Strike} You can use the \textit{focused strike} ability as a standard action.
         \begin{apability}{Focused Strike}
             Make a melee \glossterm{strike}.
             If you are not threatened by more than one creature, you gain a \plus2 bonus to \glossterm{accuracy} with the strike.
             If you are the only creature threatening your target, you gain a \plus2d bonus to damage with the strike.
         \end{apability}
 
-        \ff[3]{Parry} You gain a \plus1 bonus to Armor defense as long as you are not \glossterm{threatened} by more than one creature.
+        \ff[6]{Riposte} You gain a \plus1d bonus to damage as long as you are not \glossterm{threatened} by more than one creature.
 
-        \ff[6]{Duel Expertise} You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{disarm} and \textit{feint} abilities (see \pcref{Disarm}, and \pcref{Feint}).
+        \ff[9]{Duel Expertise} You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{disarm} and \textit{feint} abilities (see \pcref{Disarm}, and \pcref{Feint}).
 
-        \ff[6]{Focused Precision} The accuracy bonus from your \textit{focused strike} ability increases to \plus3.
+        \ff[9]{Focused Precision} The accuracy bonus from your \textit{focused strike} ability increases to \plus3.
 
-        \ff[9]{Riposte} You gain a \plus1d bonus to damage as long as you are not \glossterm{threatened} by more than one creature.
+        \ff[12]{Greater Parry} The bonus from your \textit{parry} ability increases to \plus2.
 
-        \ff[12]{Greater Duel Expertise} The accuracy bonus from your \textit{duel expertise} ability increases to \plus3. 
+        \ff[15]{Greater Duel Expertise} The accuracy bonus from your \textit{duel expertise} ability increases to \plus3. 
 
-        \ff[12]{Greater Focused Strike} The damage bonus from your \textit{focused strike} ability increases to \plus3d.
+        \ff[15]{Greater Focused Strike} The damage bonus from your \textit{focused strike} ability increases to \plus3d.
 
-        \ff[15]{Greater Parry} The bonus from your \textit{parry} ability increases to \plus2.
-
-        \ff[18]{Supreme Duel Expertise} The accuracy bonus from your \textit{duel expertise} ability increases to \plus4. 
-
-        \ff[18]{Greater Focused Precision} The accuracy bonus from your \textit{focused strike} ability increases to \plus4.
-
-        \ff[20]{Legendary Duelist} You are treated as being threatened by one fewer creature than you actually are for the purpose of abilities from this feat.
+        \ff[18]{Legendary Duelist} You are treated as being threatened by one fewer creature than you actually are for the purpose of abilities from this feat.
     \end{feat}
 
     \begin{feat}{Eldritch Knight}{Spell}
         \featpre Ability to cast a spell.
 
-        \ff[1]{Imbue Weapon}[Magical] When you cast a spell that affects a single target, you can use the \textit{imbue weapon} ability.
+        \ff[1]{Combat Caster} You gain a \plus2 bonus to \glossterm{concentration} checks made to use spells and rituals.
+        In addition, you reduce your \glossterm{encumbrance} by 1 when determining your \textit{arcane spell failure} (if any).
+
+        \ff[3]{Imbue Weapon}[Magical] When you cast a spell that affects a single target, you can use the \textit{imbue weapon} ability.
         \begin{attuneability}{Imbue Weapon}[\glossterm{Attune} (self)]
             The spell does not have its effect immediately, and you regain the action point used to cast the spell (if any).
             Instead, its power is imbued in a melee weapon you hold. 
@@ -711,9 +710,6 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             If you do, the spell affects the target of the strike.
             After the spell takes effect, this ability's duration ends.
         \end{attuneability}
-
-        \ff[3]{Combat Caster} You gain a \plus2 bonus to \glossterm{concentration} checks made to use spells and rituals.
-        In addition, you reduce your \glossterm{encumbrance} by 1 when determining your \textit{arcane spell failure} (if any).
 
         \ff[6]{Spellsword Conduit}[Magical] You can cast spells using a melee weapon to perform the \glossterm{somatic components}.
         When you do, you gain a \plus1 bonus to \glossterm{accuracy} with that weapon until the end of the next round.
@@ -762,13 +758,13 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Executioner}{Combat}
         \featpres Starting Strength of 1, starting Perception of 2.
 
-        \ff[1]{Execution} You can use the \textit{execution} ability as a standard action.
+        \ff[1]{Purge the Weak} You gain a \plus1 bonus to \glossterm{accuracy} against \glossterm{bloodied} creatures.
+
+        \ff[3]{Execution} You can use the \textit{execution} ability as a standard action.
         \begin{apability}{Execution}
             Make a \glossterm{strike}.
             At the end of the current phase, if the target is \glossterm{bloodied}, it takes additional damage equal to the damage you dealt to it with your strike.
         \end{apability}
-
-        \ff[3]{Purge the Weak} You gain a \plus1 bonus to \glossterm{accuracy} against \glossterm{bloodied} creatures.
 
         \ff[6]{Blood Sense}[Magical] You automatically know the location of all \glossterm{bloodied} living creatures within 50 feet of you, regardless of concealment or invisibility.
         You must have \glossterm{line of effect} to a creature to see it in this way.
@@ -788,24 +784,22 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Guardian}{Combat}
         \featpre Starting Perception and Willpower of 1.
 
-        \ff[1]{Binding Strike} You can use the \textit{binding strike} ability as a standard action.
-        \begin{apability}{Binding Strike}
-            Make a melee \glossterm{strike} against an adjacent creature.
-            In addition to the strike's normal effects, you also compare the attack result against the target's Mental defense.
-
-            \hit The target is \glossterm{immobilized} as a \glossterm{condition}.
-            This effect immediately ends if you are \glossterm{defeated} or if you stop being adjacent to the target.
-            \crit The target is \glossterm{immobilized} as a \glossterm{condition}.
-        \end{apability}
-
-        \ff[3]{Protect} You can use the \textit{protect} ability as a \glossterm{minor action}.
+        \ff[1]{Protect} You can use the \textit{protect} ability as a \glossterm{minor action}.
         \begin{freeability}{Protect}[\glossterm{Swift}]
             One ally adjacent to you gains a \plus2 bonus to Armor defense.
             However, you take a \minus2 penalty to Armor defense.
             This effect lasts until the end of the round.
         \end{freeability}
 
-        \ff[6]{Certain Bind} You gain a \plus1 bonus to accuracy with your \textit{binding strike} ability.
+        \ff[3]{Binding Strike} You can use the \textit{binding strike} ability as a standard action.
+        \begin{apability}{Binding Strike}
+            Make a melee \glossterm{strike} against an adjacent creature.
+            In addition to the strike's normal effects, you also compare the attack result against the target's Mental defense.
+
+            \hit The target is \glossterm{decelerated} as a \glossterm{condition}.
+            This effect immediately ends if you are \glossterm{defeated} or if you stop being adjacent to the target.
+            \crit The target is \glossterm{decelerated} as a \glossterm{condition}.
+        \end{apability}
 
         \ff[6]{Defender} You gain a \plus2 bonus to \glossterm{threat}.
 
@@ -815,13 +809,13 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             Any abilities you have that would reduce or negate the effects of the attack have no effect.
         \end{apability}
 
-        \ff[12]{Greater Certain Bind} The accuracy bonus from your \textit{certain bind} ability increases to \plus2.
+        \ff[12]{Certain Bind} You gain a \plus1 bonus to \glossterm{accuracy} with your \textit{binding strike} ability.
 
         \ff[12]{Greater Defender} The threat bonus from your \textit{defender} ability increases to \plus4.
 
         \ff[15]{Expanded Redirection}[Magical] When you use your \textit{redirection} ability, you redirect the effects of all attacks, not just \glossterm{strikes}.
 
-        \ff[12]{Supreme Certain Bind} The accuracy bonus from your \textit{certain bind} ability increases to \plus3.
+        \ff[18]{Supreme Certain Bind} The accuracy bonus from your \textit{certain bind} ability increases to \plus3.
 
         \ff[18]{Supreme Defender} The bonus from your \textit{defender} ability increases to \plus6.
 
@@ -857,7 +851,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Intimidate Specialization}{Skill}
         \featpre Intimidate as a mastered skill.
 
-        \ff{Demoralizing Blow} You can use the \textit{demoralizing blow} ability as a standard action.
+        \ff[1]{Demoralizing Blow} You can use the \textit{demoralizing blow} ability as a standard action.
         \begin{apability}{Demoralizing Blow}
             Make a \glossterm{strike}.
             In addition to the effects of the strike, you can make an attack vs. Mental against the target.
@@ -936,17 +930,17 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Leadership}{Combat}
         \featpre Starting Willpower of 2.
 
-        \ff[1]{Bolster} You can use the \textit{bolster} ability as a standard action.
-        \begin{apability}{Bolster}[\glossterm{Mind}]
-            All allies other than yourself within a \areamed radius burst from you can remove one \glossterm{condition}.
-            In addition, each target heals hit points equal to your Willpower.
-        \end{apability}
-
-        \ff[3]{Battle Command} You can use the \textit{battle command} ability as a standard action.
+        \ff[1]{Battle Command} You can use the \textit{battle command} ability as a standard action.
         \begin{freeability}{Battle Command}[\glossterm{Swift}]
             Choose an ally within \rngmed range of you.
             Until the end of the round, when it makes a \glossterm{strike}, it can roll the \glossterm{attack roll} twice and take the higher result.
         \end{freeability}
+
+        \ff[3]{Bolster} You can use the \textit{bolster} ability as a standard action.
+        \begin{apability}{Bolster}[\glossterm{Mind}]
+            All allies other than yourself within a \areamed radius burst from you can remove one \glossterm{condition}.
+            In addition, each target heals hit points equal to your Willpower.
+        \end{apability}
 
         % TODO: redesign annoying situational modifier
         \ff[6]{Inspiring Presence} All allies other than yourself within a \arealarge radius emanation from you gain a \plus1 bonus to Mental defense.
@@ -1004,7 +998,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[3]{Honed Strike} You can use the \textit{honed strike} ability as a standard action.
         \begin{apability}{Honed Strike}
-            You make a \glossterm{strike} with a \plus1d bonus to damage.
+            You make a \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy} and a \plus1d bonus to damage.
             If the strike misses, you regain the \glossterm{action point} spent to use this ability.
         \end{apability}
 
@@ -1328,7 +1322,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Sense Motive Specialization}{Skill}
         \featpre Sense Motive as a mastered skill.
 
-        \ff{Read Mind}[Magical] You can use the \textit{read mind} ability as a standard action.
+        \ff[1]{Read Mind}[Magical] You can use the \textit{read mind} ability as a standard action.
         \begin{apability}{Read Mind}[\glossterm{Mind}, \glossterm{Sustain} (minor)]
             Make an attack vs. Mental against a creature within \rngclose range.
             Your \glossterm{accuracy} is equal to Sense Motive skill.
@@ -2002,30 +1996,29 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Whirlwind Warrior}{Combat}
         \featpres Starting Dexterity of 2, starting Perception of 1.
 
-        \ff[1]{Whirlwind Spin} You can use the \textit{whirlwind spin} ability as a standard action.
+        \ff[1]{Eye of the Storm} You gain a \plus1 bonus to \glossterm{overwhelm resistance}.
+
+        \ff[3]{Whirlwind Spin} You can use the \textit{whirlwind spin} ability as a standard action.
         \begin{apability}{Whirlwind Spin}
-            Make a melee \glossterm{strike} against any number of creatures and objects adjacent to you that you \glossterm{threaten}.
-            You must use the same weapon to make each strike.
-            Use the same attack result and damage against each target.
-            You take a \minus2d penalty to damage on each strike.
+            Make a melee \glossterm{strike} with a slashing weapon.
+            The strike targets all creatures you \glossterm{threaten}.
+            You take a \minus2 penalty to \glossterm{accuracy} with the strike.
         \end{apability}
 
-        \ff[3]{Eye of the Storm} You gain a \plus1 bonus to \glossterm{overwhelm resistance}.
-
-        \ff[6]{Greater Whirlwind Spin} The damage penalty on the strike you make with your \textit{whirlwind spin} ability is reduced to \minus1d.
-
-        \ff[9]{Unfettered Movement} During each phase, you may move through one creature's space during movement.
+        \ff[6]{Unfettered Movement} During each phase, you may move through one creature's space during movement.
         You move at half speed while in its space.
         After moving through that creature's space, other creatures block you as normal for the remainder of your movement.
         Certain unusual creatures that occupy their entire space, such as gelatinous cubes, may be immune to this ability.
 
-        \ff[12]{Supreme Whirlwind Spin} The damage penalty with your \textit{whirlwind spin} ability is removed.
+        \ff[9]{Greater Whirlwind Spin} You gain a \plus1d bonus to damage with your \textit{whirlwind spin}.
 
-        \ff[15]{Greater Eye of the Storm} The bonus from your \textit{eye of the storm} ability increases to \plus2.
+        \ff[12]{Greater Eye of the Storm} The bonus from your \textit{eye of the storm} ability increases to \plus2.
 
-        \ff[18]{Legendary Whirlwind Spin} You gain a \plus1d bonus to damage with your \textit{whirlwind spin} ability.
+        \ff[15]{Supreme Whirlwind Spin} The damage bonus from your \textit{greater whirlwind spin} ability increases to \plus2d.
 
-        \ff[20]{Greater Unfettered Movement} Using your \textit{unfettered movement} ability does not cause you to move at half speed while in the creature's space.
+        \ff[18]{Greater Unfettered Movement} Using your \textit{unfettered movement} ability does not cause you to move at half speed while in the creature's space.
+
+        \ff[20]{Supreme Whirlwind Spin} The damage bonus from your \textit{greater whirlwind spin} ability increases to \plus3d.
     \end{feat}
 
 \section{Other Feat Rules}
