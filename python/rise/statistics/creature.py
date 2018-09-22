@@ -97,11 +97,11 @@ class Creature(object):
 
     @property
     def action_points(self):
-        return 6 + self.starting_willpower + self.cr_mod
+        return 3 + self.starting_willpower
 
     @property
     def recovery_action_points(self):
-        return self.action_points // 2 - self.attuned_ability_count
+        return 3 + self.level // 7 - self.attuned_ability_count + self.cr_mod
 
     @property
     def armor_defense(self):
@@ -312,15 +312,9 @@ class Creature(object):
 
     def _to_string_defenses(self):
         text = '; '.join([
-            "[HP] {0}".format(self.hit_points),
-            "[Defs] AD {0}".format(
-                self.armor_defense,
-            ),
-            "Fort {0}, Ref {1}, Ment {2}".format(
-                self.fortitude_defense,
-                self.reflex_defense,
-                self.mental_defense,
-            ),
+            f"[HP] {self.hit_points}",
+            f"[Defs] {self.armor_defense}/{self.fortitude_defense}/{self.reflex_defense}/{self.mental_defense}",
+            f"[AP] {self.recovery_action_points}/{self.action_points}",
         ])
         return text
 
