@@ -1168,7 +1168,7 @@ def generate_mystic_spheres():
             Spell('Pernicious Sickness', 2, """
                 Make an attack vs. Fortitude with a +2 bonus to \\glossterm<accuracy> against a living creature within \\rngmed range.
                 \\hit The target is \\glossterm<sickened> as a \\glossterm<condition>.
-                \\hit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
+                \\crit The target is \\glossterm<nauseated> as a \\glossterm<condition>.
             """, tags=['Life']),
             Spell('Greater Pernicious Sickness', 5, """
                 This spell functions like the \\spell<pernicious sickness> spell, except that the accuracy bonus is increased to +4.
