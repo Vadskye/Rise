@@ -228,8 +228,10 @@ def hit_points():
             getAttrs(["hit_points_misc", "level", "constitution_starting", "challenge_rating"], function(v) {{
                 var hp_from_level = (1 + Number(v.level || 0)) * (5 + Number(v.constitution_starting || 0))
                 var hp_before_cr = Number(v.hit_points_misc || 0) + hp_from_level;
+                var hit_points = hp_before_cr * Number(v.challenge_rating || 1);
                 setAttrs({{
-                    hit_points_max: hp_before_cr * Number(v.challenge_rating || 1),
+                    hit_points_max: hit_points,
+                    hit_points_total: hit_points,
                 }});
             }});
         }});
