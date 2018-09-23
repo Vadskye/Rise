@@ -19,11 +19,6 @@ ALL_SKILLS = ['Awareness', 'Balance', 'Bluff', 'Climb', 'Craft', 'Creature Handl
               'Stealth', 'Survival', 'Swim', 'Tumble']
 
 ROLL20_CALC = {
-    'action_points': value_sum([
-        'action_points_base',
-        'action_points_willpower',
-        'action_points_misc',
-    ]),
     'armor_defense': value_sum([
         'armor_scaling',
         'body_armor_defense_value',
@@ -34,6 +29,17 @@ ROLL20_CALC = {
         'speed_size',
         'speed_armor',
         'speed_misc',
+    ]),
+    'insight_points': value_sum([
+        'insight_points_base',
+        'insight_points_intelligence',
+        'insight_points_misc',
+    ]),
+    'recovery_ap': "(3 + floor((@{level}) / 7))",
+    'reserve_ap': value_sum([
+        'action_points_base',
+        'action_points_willpower',
+        'action_points_misc',
     ]),
     'skill_points': value_sum([
         'skill_points_class',
