@@ -101,15 +101,11 @@ def resources():
         flex_wrapper({'class': 'section-header'}, 'Resources'),
         flex_wrapper({'class': 'action-point-header'}, 'Action points'),
         flex_row({'class': 'action-point-wrapper'}, [
-            underlabel('Max', number_input({
-                'disabled': True,
+            underlabel('Reserve', number_input({
                 'name': 'action_points_max',
-                'value': '@{action_points}',
             })),
             underlabel('Recover', number_input({
-                'disabled': True,
-                'name': 'action_points_recovery',
-                'value': 'floor(@{action_points} / 2) - @{action_points_attuned}',
+                'name': 'action_points_recovery_max',
             })),
             underlabel('Attuned', number_input({'name': 'action_points_attuned'})),
         ]),
@@ -161,13 +157,13 @@ def core_statistics():
         flex_wrapper(div({'class': 'section-header'}, 'Core Statistics')),
         sidelabel('Hit points', number_input({
             'disabled': True,
-            'name': 'hit_points_max_display',
-            'value': '@{hit_points}',
+            'name': 'hit_points_total_display',
+            'value': '(@{hit_points_total})',
         })),
         labeled_number_input('Bloodied', input_attributes={
             'disabled': True,
             'name': 'hit_points_bloodied_display',
-            'value': 'floor(@{hit_points} / 2)',
+            'value': 'floor(@{hit_points_total} / 2)',
         }),
         labeled_number_input('Land speed', input_attributes={
             'name': 'land_speed',
