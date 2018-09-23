@@ -1,13 +1,13 @@
 from cgi_simple import (
-    div, equation, flex_col, flex_row, flex_wrapper, labeled_text_input, minus, number_input,
+    div, fieldset, equation, flex_col, flex_row, flex_wrapper, labeled_text_input, minus, number_input,
     plus, text_input, underlabel
 )
 from sheet_data import ATTRIBUTE_SKILLS, ATTRIBUTES, ROLL20_CALC
 
-def create_page():
+def create_page(destination):
     return flex_row({'class': 'second-page'}, [
         flex_col({'class': 'sidebar'}, [
-            calc_skills(),
+            calc_skills(destination),
         ]),
         flex_col({'class': 'main-body'}, [
             flex_col({'class': 'statistics'}, [
@@ -26,7 +26,20 @@ def create_page():
         ]),
     ])
 
-def calc_skills():
+def calc_skills(destination):
+    # Does not work
+    blank_skill_info = [
+        calc_skill('__________'),
+        calc_skill('__________'),
+        calc_skill('__________'),
+        calc_skill('__________'),
+    ] if destination == 'paper' else [
+        div({'class': 'other-skills-header'}, 'Other Skills'),
+        fieldset({'class': 'repeating_blankskills'}, [
+            calc_blank_skill(),
+        ]),
+    ]
+
     return flex_col({'class': 'calc-skills'}, [
         div({'class': 'section-header'}, 'Skills'),
         skill_labels('Str'),
@@ -41,10 +54,7 @@ def calc_skills():
         *[calc_skill(skill_name, 'constitution') for skill_name in ATTRIBUTE_SKILLS['willpower']],
         skill_labels('Other'),
         *[calc_skill(skill_name) for skill_name in ['Bluff', 'Intimidate', 'Perform ______', 'Persuasion']],
-        calc_skill('_________', blank_input=True),
-        calc_skill('__________', blank_input=True),
-        calc_skill('___________', blank_input=True),
-        calc_skill('____________', blank_input=True),
+        *blank_skill_info
     ])
 
 def skill_labels(attribute):
@@ -56,10 +66,10 @@ def skill_labels(attribute):
         div({'class': 'skill-label misc'}, 'Misc'),
     ])
 
-def calc_skill(skill_name, attribute=None, blank_input=False):
+def calc_skill(skill_name, attribute=None):
     skill_parsable = skill_name.lower().replace(' ', '_')
     return flex_row({'class': 'skill-row'}, [
-        div({'class': f'skill-name{" blank-input" if blank_input else ""}'}, skill_name),
+        div({'class': 'skill-name'}, skill_name),
         number_input({'class': 'skill-points', 'name': skill_parsable + '_points'}),
         number_input({
             'class': 'skill-ranks',
@@ -78,6 +88,17 @@ def calc_skill(skill_name, attribute=None, blank_input=False):
             'name': skill_parsable + '_misc',
         }),
     ])
+
+
+def calc_blank_skill():
+    return flex_row({'class': 'skill-row'}, [
+        text_input({'class': 'skill-name', 'name': 'blank_skill_name'}),
+        number_input({'class': 'skill-points', 'name': 'blank_skill_points'}),
+        number_input({'class': 'skill-ranks', 'name': 'blank_skill_ranks'}),
+        number_input({'class': 'skill-attr', 'name': 'blank_skill_attribute'}),
+        number_input({'class': 'equation-misc', 'name': 'blank_skill_misc'}),
+    ])
+
 
 def calc_attributes():
     return flex_col({'class': 'calc-attributes'}, [
