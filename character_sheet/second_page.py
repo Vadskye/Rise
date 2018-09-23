@@ -12,11 +12,12 @@ def create_page(destination):
         flex_col({'class': 'main-body'}, [
             flex_col({'class': 'statistics'}, [
                 flex_wrapper(div({'class': 'section-header'}, 'Core Statistics')),
-                calc_action_points(),
                 calc_base_speed(),
                 calc_encumbrance(),
                 calc_hit_points(),
                 calc_initiative(),
+                calc_insight_points(),
+                calc_reserve_ap(),
                 calc_skill_points(),
                 calc_threat(),
                 flex_wrapper(div({'class': 'section-header'}, 'Defenses')),
@@ -319,15 +320,15 @@ def calc_skill_points():
         ),
     ])
 
-def calc_action_points():
+def calc_reserve_ap():
     return flex_row([
-        div({'class': 'calc-header'}, 'Action Points'),
+        div({'class': 'calc-header'}, 'Reserve AP'),
         equation(
             [
                 underlabel('Base', number_input({
                     'disabled': True,
                     'name': 'action_points_base',
-                    'value': 6,
+                    'value': 3,
                 })),
                 plus(),
                 underlabel('Wil*', number_input({
@@ -343,8 +344,38 @@ def calc_action_points():
             ],
             result_attributes={
                 'disabled': 'true',
-                'name': 'action_points',
-                'value': ROLL20_CALC['action_points'],
+                'name': 'reserve_ap_display',
+                'value': ROLL20_CALC['reserve_ap'],
+            },
+        ),
+    ])
+
+def calc_insight_points():
+    return flex_row([
+        div({'class': 'calc-header'}, 'Insight Points'),
+        equation(
+            [
+                underlabel('Base', number_input({
+                    'disabled': True,
+                    'name': 'insight_points_base',
+                    'value': 1,
+                })),
+                plus(),
+                underlabel('Int*', number_input({
+                    'disabled': True,
+                    'name': 'insight_points_intelligence',
+                    'value': '(@{intelligence_starting})',
+                })),
+                plus(),
+                number_input({
+                    'class': 'equation-misc',
+                    'name': 'insight_points_misc',
+                })
+            ],
+            result_attributes={
+                'disabled': 'true',
+                'name': 'insight_points',
+                'value': ROLL20_CALC['insight_points'],
             },
         ),
     ])
