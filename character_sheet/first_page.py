@@ -2,7 +2,7 @@ from cgi_simple import (
     button, div, flex_col, flex_row, flex_wrapper, freeform_number_input,
     labeled_number_input, labeled_text_input, number_input, sidelabel, text_input, underlabel, underlabel_spaced
 )
-from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS
+from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, ROLL20_CALC
 
 def create_page():
     return flex_row({'class': 'first-page'}, [
@@ -102,10 +102,14 @@ def resources():
         flex_wrapper({'class': 'action-point-header'}, 'Action points'),
         flex_row({'class': 'action-point-wrapper'}, [
             underlabel('Reserve', number_input({
+                'disabled': True,
                 'name': 'action_points_max',
+                'value': ROLL20_CALC['reserve_ap'],
             })),
             underlabel('Recover', number_input({
+                'disabled': True,
                 'name': 'action_points_recovery_max',
+                'value': ROLL20_CALC['recovery_ap'],
             })),
             underlabel('Attuned', number_input({'name': 'action_points_attuned'})),
         ]),
