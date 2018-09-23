@@ -61,7 +61,7 @@ def main(ability_cards, destination):
         with open('roll20.html', 'w') as fh:
             fh.write(sheet_worker.generate_script())
             fh.write(cgi.div({'class': 'first-page'}, first_page.create_page()))
-            fh.write(cgi.div({'class': 'second-page'}, second_page.create_page()))
+            fh.write(cgi.div({'class': 'second-page'}, second_page.create_page(cgi.DESTINATION)))
             fh.write(cgi.div({'class': 'third-page'}, third_page.create_page()))
 
         class_pattern = re.compile(r'\.([a-z\-]+)\b')

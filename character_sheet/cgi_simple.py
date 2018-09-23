@@ -87,6 +87,12 @@ def button(attributes=None, contents=None):
 def div(attributes=None, contents=None):
     return html_tag('div', attributes, contents)
 
+def fieldset(attributes, contents=None):
+    if not (attributes['class'] and 'repeating' in attributes['class']):
+        raise Exception('Fieldset must have repeating class name')
+    # oddity: the section name cannot have underscores. Not currently asserting.
+    return html_tag('fieldset', attributes, contents)
+
 def form(attributes=None, contents=None):
     return html_tag('form', attributes, contents)
 
