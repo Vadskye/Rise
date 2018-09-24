@@ -193,7 +193,7 @@ def generate_mystic_spheres():
                 Creatures in the area at the time that the spell is cast are unaffected by the spell.
             """, tags=['Sustain (minor)']),
             Spell('Immunity', 3, """
-                Choose a willing creature in \\rngclose range, and a type of damage other than physical damage (see \\pcref<Damage Types>).
+                Choose a willing creature in \\rngclose range, and a type of damage that is not a kind of physical damage (see \\pcref<Damage Types>).
                 The target becomes immune to damage of the chosen type.
                 Attacks that deal damage of multiple types still inflict damage normally unless the target is immune to all types of damage dealt.
             """, tags=['Attune (target)', 'Shielding']),
@@ -618,7 +618,7 @@ def generate_mystic_spheres():
             Spell('Raging River', 3, """
                 This spell functions like the \\spell<crushing wave> spell, except that it gains the \\glossterm<Sustain> (standard) tag.
                 The area affected by the spell becomes a \\glossterm<zone> that is continuously filled with rushing water.
-                Creatures in area suffer penalties appropriate for fighting underwater, and may be unable to breathe.
+                Creatures in the area suffer penalties appropriate for fighting underwater, and may be unable to breathe.
                 In addition, at the end of each \\glossterm<action phase> in subsequent rounds, the attack is repeated in that area.
             """, tags=['Manifestation', 'Water']),
             Spell('Greater Raging River', 5, f"""
