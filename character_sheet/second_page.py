@@ -15,10 +15,11 @@ def create_page(destination):
                 calc_base_speed(),
                 calc_encumbrance(),
                 calc_hit_points(),
-                calc_initiative(),
+                calc_initiative() if destination == 'roll20' else "",
                 calc_insight_points(),
                 calc_reserve_ap(),
                 calc_skill_points(),
+                calc_strike_damage() if destination == 'roll20' else "",
                 calc_threat(),
                 flex_wrapper(div({'class': 'section-header'}, 'Defenses')),
                 calc_defenses(),
@@ -223,11 +224,32 @@ def calc_base_speed():
                 }),
             ],
             result_attributes={
-                'disabled': 'true',
+                'disabled': True,
                 'name': 'base_speed_display',
                 'value': '@{base_speed}',
             },
         )
+    ])
+
+def calc_strike_damage():
+    return flex_row([
+        div({'class': 'calc-header'}, 'Strike Dmg'),
+        equation(
+            [
+                underlabel('Lvl/Str', text_input({
+                    'name': 'strike_damage_scaling_display',
+                })),
+                plus(),
+                text_input({
+                    'class': 'equation-misc',
+                    'name': 'strike_damage_misc',
+                }),
+            ],
+            result_attributes={
+                'name': 'strike_damage_display',
+            },
+            input_type=text_input,
+        ),
     ])
 
 def calc_threat():

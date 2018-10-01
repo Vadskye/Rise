@@ -5,6 +5,7 @@ def generate_script():
         '<script type="text/worker">',
         *[attribute_change(a.lower()) for a in ATTRIBUTES],
         *[attribute_skills(a.lower()) for a in ATTRIBUTE_SKILLS],
+        accuracy(),
         armor_defense(),
         fortitude(),
         reflex(),
@@ -101,12 +102,27 @@ def set_skill(a, s):
             }});
         """
 
+
+def accuracy():
+    return f"""
+        on("change:level change:perception", function(eventInfo) {{
+            getAttrs(["level", "perception"], function(v) {{
+                var cr_mod = Math.max(0, Number(v.challenge_rating || 1) - 1);
+                setAttrs({{
+                    base_accuracy: Math.max(Number(v.level), Number(v.perception)) + cr_mod,
+                }});
+            }});
+        }});
+    """
+
+
 def armor_defense():
     return f"""
         on("change:level change:dexterity change:body_armor_defense_value change:shield_defense_value change:armor_defense_misc change:challenge_rating", function(eventInfo) {{
             getAttrs(["level", "dexterity", "body_armor_defense_value", "shield_defense_value", "armor_defense_misc", "challenge_rating"], function(v) {{
                 var scaling = Math.max(Number(v.level), Number(v.dexterity));
-                var total = scaling + Number(v.body_armor_defense_value) + Number(v.shield_defense_value) + Number(v.armor_defense_misc) + Number(v.challenge_rating || 1);
+                var cr_mod = Math.max(0, Number(v.challenge_rating || 1) - 1);
+                var total = scaling + Number(v.body_armor_defense_value) + Number(v.shield_defense_value) + Number(v.armor_defense_misc) + cr_mod;
                 setAttrs({{
                     armor_defense: total,
                     armor_defense_scaling: scaling,
@@ -120,7 +136,8 @@ def fortitude():
         on("change:level change:strength change:constitution change:fortitude_class change:fortitude_misc change:challenge_rating", function(eventInfo) {{
             getAttrs(["level", "strength", "constitution", "constitution_starting", "fortitude_class", "fortitude_misc", "challenge_rating"], function(v) {{
                 var scaling = Math.max(Number(v.level), Number(v.strength), Number(v.constitution));
-                var total = scaling + Number(v.constitution_starting) + Number(v.fortitude_class) + Number(v.fortitude_misc) + Number(v.challenge_rating || 1);
+                var cr_mod = Math.max(0, Number(v.challenge_rating || 1) - 1);
+                var total = scaling + Number(v.constitution_starting) + Number(v.fortitude_class) + Number(v.fortitude_misc) + cr_mod;
                 setAttrs({{
                     fortitude: total,
                     fortitude_scaling: scaling,
@@ -134,7 +151,8 @@ def reflex():
         on("change:level change:dexterity change:perception change:shield_defense_value change:reflex_class change:reflex_misc change:challenge_rating", function(eventInfo) {{
             getAttrs(["level", "dexterity", "perception", "dexterity_starting", "reflex_class", "reflex_misc", "challenge_rating"], function(v) {{
                 var scaling = Math.max(Number(v.level), Number(v.dexterity), Number(v.perception));
-                var total = scaling + Number(v.dexterity_starting) + Number(v.reflex_class) + Number(v.reflex_misc) + Number(v.challenge_rating || 1);
+                var cr_mod = Math.max(0, Number(v.challenge_rating || 1) - 1);
+                var total = scaling + Number(v.dexterity_starting) + Number(v.reflex_class) + Number(v.reflex_misc) + cr_mod;
                 setAttrs({{
                     reflex: total,
                     reflex_scaling: scaling,
@@ -148,7 +166,8 @@ def mental():
         on("change:level change:intelligence change:willpower change:mental_class change:mental_misc change:challenge_rating", function(eventInfo) {{
             getAttrs(["level", "intelligence", "willpower", "willpower_starting", "mental_class", "mental_misc", "challenge_rating"], function(v) {{
                 var scaling = Math.max(Number(v.level), Number(v.intelligence), Number(v.willpower));
-                var total = scaling + Number(v.willpower_starting) + Number(v.mental_class) + Number(v.mental_misc) + Number(v.challenge_rating || 1);
+                var cr_mod = Math.max(0, Number(v.challenge_rating || 1) - 1);
+                var total = scaling + Number(v.willpower_starting) + Number(v.mental_class) + Number(v.mental_misc) + cr_mod;
                 setAttrs({{
                     mental: total,
                     mental_scaling: scaling,

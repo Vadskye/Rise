@@ -269,7 +269,7 @@ def attack(n=None):
                 'class': 'attack-roll',
                 'name': f"roll_attack_{n}",
                 'type': 'roll',
-                'value': f"@{{character_name}} uses @{{attack{n}_name}}: [[d10! + @{{attack{n}_accuracy}}]] to hit! (@{{attack{n}_effect}})",
+                'value': f"@{{character_name}} uses @{{attack{n}_name}}: [[d10! + @{{base_accuracy}} + @{{attack{n}_accuracy}}]] to hit! (@{{attack{n}_effect}})",
             },
             'Attack',
         ),
