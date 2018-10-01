@@ -34,7 +34,7 @@ def main(ability_cards, destination):
         with open('second_page.html', 'w') as fh:
             fh.write(''.join([
                 debug_stylesheets('second_page', destination),
-                debug_html_wrapper(second_page.create_page(), destination),
+                debug_html_wrapper(second_page.create_page(destination), destination),
             ]) + '\n')
 
         with open('third_page.html', 'w') as fh:
