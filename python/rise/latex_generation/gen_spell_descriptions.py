@@ -1248,7 +1248,12 @@ def generate_mystic_spheres():
                 \\hit The target takes life damage equal to \\glossterm<standard damage> +2d.
             """, tags=['Life']),
             Spell('Greater Inflict Wounds', 3, """
-                This spell functions like the \\spell<inflict wounds> spell, except that you gain a +1d bonus to damage, and any damage dealt in excess of the target's hit points is dealt as \\glossterm<vital damage>.
+                This spell functions like the \\spell<inflict wounds> spell, except that you gain a +1 bonus to \\glossterm<accuracy>.
+                In addition, a struck target takes a -2 penalty to Fortitude defense as a \\glossterm<condition>.
+            """, tags=['Life']),
+            Spell('Supreme Inflict Wounds', 5, """
+                This spell functions like the \\spell<inflict wounds> spell, except that you gain a +2 bonus to \\glossterm<accuracy>.
+                In addition, a struck target takes a -4 penalty to Fortitude defense as a \\glossterm<condition>.
             """, tags=['Life']),
             Spell('Greater Cure Wounds', 3, """
                 This spell functions like the \\spell<cure wounds> spell, except that you gain a +1d bonus to healing.
@@ -1260,11 +1265,13 @@ def generate_mystic_spheres():
             """, tags=['Life']),
             # TODO: make "Undead Bane" spell after figuring out undead / life
             # damage interaction
-            Spell('Drain Life', 2, """
-                This spell functions like the \\spell<inflict wounds> spell, except that you heal hit points equal to half the damage dealt.
+            Spell('Drain Life', 3, """
+                This spell functions like the \\spell<inflict wounds> spell, except that you gain a +1d bonus to damage.
+                In addition, you heal hit points equal to your \\glossterm<power> if you deal damage.
             """, tags=['Life']),
             Spell('Greater Drain Life', 5, """
-                This spell functions like the \\spell<inflict wounds> spell, except that gain a +1d bonus to damage and you heal hit points equal to the damage dealt.
+                This spell functions like the \\spell<inflict wounds> spell, except that gain a +2d bonus to damage.
+                In addition, you heal hit points equal to twice your \\glossterm<power> if you deal damage.
             """, tags=['Life']),
             Spell('Vital Persistence', 2, """
                 Choose a willing creature within \\rngclose range.
@@ -2360,7 +2367,6 @@ def generate_mystic_spheres():
                 This damage is tracked separately.
                 When the ends, you take all of the delayed damage at once.
                 This damage has no type, and ignores all effects that reduce or negate damage.
-                Damage dealt in this way in excess of your hit points is dealt as \\glossterm<vital damage>.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Sustain (minor)', 'Temporal']),
