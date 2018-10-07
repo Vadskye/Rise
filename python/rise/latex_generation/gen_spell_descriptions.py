@@ -818,6 +818,7 @@ def generate_mystic_spheres():
         lists=['Divine'],
         spells=[
             Spell('Blessing of Protection', 1, """
+                Choose a willing creature within \\rngclose range.
                 The target gains a +1 \\glossterm<magic bonus> to Armor defense and Mental defense.
             """, tags=['Attune (target)']),
             Spell('Greater Blessing Of Protection', 4, """
@@ -827,6 +828,7 @@ def generate_mystic_spheres():
                 This spell functions like the \\spell<blessing of protection> spell, except that bonus increases to +3.
             """, tags=['Attune (target)']),
             Spell('Battle Blessing', 2, """
+                Choose a willing creature within \\rngclose range.
                 The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with all attacks.
 
                 You can cast this spell as a \\glossterm<minor action>.
@@ -846,6 +848,10 @@ def generate_mystic_spheres():
             """, tags=['Attune (target)']),
             Spell('Supreme Blessing of Resilience', 7, """
                 This spell functions like the \\textit<blessing of resilience> spell, except that the spell does not end until it resists four \\glossterm<conditions>.
+            """, tags=['Attune (target)']),
+            Spell('Blessing of Supremacy', 4, """
+                Choose a willing creature within \\rngclose range.
+                The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> and a +1d \\glossterm<magic bonus> to \\glossterm<damage> with all abilities.
             """, tags=['Attune (target)']),
             Spell('Cleansing Blessing', 1, """
                 All allies within \\arealarge radius from you can remove one \\glossterm<condition> affecting them.
@@ -941,9 +947,20 @@ def generate_mystic_spheres():
                 \\hit Each target takes divine \\glossterm<standard damage>.
             """, tags=[]),
             Spell('Mantle of Faith', 1, """
+                You gain \\glossterm<damage reduction> equal to your \\glossterm<power> against \\glossterm<physical> damage.
+
+                You can cast this spell as a \\glossterm<minor action>.
+            """, tags=['Attune (self)']),
+            Spell('Greater Mantle Of Faith', 4, """
+                This spell functions like the \\spell<mantle of faith> spell, except that the damage reduction increases to be equal to twice your \\glossterm<power>.
+            """, tags=['Attune (self)']),
+            Spell('Complete Mantle of Faith', 1, """
                 You gain \\glossterm<damage reduction> equal to your \\glossterm<power> against all damage.
 
                 You can cast this spell as a \\glossterm<minor action>.
+            """, tags=['Attune (self)']),
+            Spell('Greater Complete Mantle Of Faith', 4, """
+                This spell functions like the \\spell<complete mantle of faith> spell, except that the damage reduction increases to be equal to twice your \\glossterm<power>.
             """, tags=['Attune (self)']),
             Spell('Divine Might', 3, """
                 You increase your size by one size category.
