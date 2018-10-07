@@ -537,7 +537,7 @@ def generate_mystic_spheres():
             Spell('Fearsome Flame', 2, f"""
                 This spell functions like the \\spell<fireburst> spell, except that the attack result is also compared to each target's Mental defense.
                 \\hit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
-            """, tags=['Fire']),
+            """, tags=['Emotion', 'Fire', 'Mind']),
             Spell('Flame Serpent', 3, f"""
                 Make an attack vs. Armor against everything in a \\arealarge, 5 ft.\\ wide shapeable line within \\rngmed range.
                 \\hit Each target takes fire \\glossterm<standard damage>.
@@ -677,6 +677,14 @@ def generate_mystic_spheres():
                 \\hit The target is \\frightened by you as a \\glossterm<condition>.
                 \\crit The target is \\panicked by you as a \\glossterm<condition>.
             """, tags=['Emotion', 'Mind']),
+            Spell('Fearsome Aura', 1, """
+                You radiate an aura of fear in a \\arealarge radius emanation.
+                Immediately after casting this spell, and at the end of each \\glossterm<action phase> in subsequent rounds, make an attack vs. Mental against all creatures in the area that you did not already attack with this spell.
+                \\hit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
+            """, tags=['Attune (self)', 'Emotion', 'Mind']),
+            Spell('Greater Fearsome Aura', 4, """
+                This spell functions like the \\spell<fearsome aura> spell, except that a struck target is \\glossterm<frightened> instead of \\glossterm<shaken>.
+            """, tags=['Attune (self)', 'Emotion', 'Mind']),
             # Math: at 1st level, power is probably ~2, so standard damage is probably 2d6.
             # Casting this spell and then two standard damage spells deals 4d6+2d8 = 23 damage
             # casting three standard damage spells deals 6d6 = 21 damage
@@ -720,11 +728,14 @@ def generate_mystic_spheres():
                 It cannot take violent actions (although it can defend itself) or do anything destructive.
                 If the target takes damage or feels that it is in danger, this effect is \\glossterm<dismissed>.
             """, tags=['Emotion', 'Mind', 'Sustain (standard)']),
-            Spell('Enrage', 2, """
+            Spell('Enrage', 1, """
                 Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against a creature within \\rngmed range.
                 \\hit As a \\glossterm<condition>, the target is unable to take any \\glossterm<standard actions> that do not cause it to make an attack.
                 For example, it could make a \\glossterm<strike> or cast an offensive spell, but it could not heal itself or summon an ally.
                 This cannot prevent it from taking the \\textit<recover> or \\textit<desperate recovery> actions.
+            """, tags=['Emotion', 'Mind']),
+            Spell('Mass Enrage', 4, """
+                This spell functions like the \\spell<enrage> spell, except that it affects all enemies within a \\areamed radius.
             """, tags=['Emotion', 'Mind']),
             Spell('Inevitable Doom', 4, """
                 This spell functions like the \\spell<terror> spell, except that you gain a +2 bonus to \\glossterm<accuracy>.
