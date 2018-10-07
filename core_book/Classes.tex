@@ -97,14 +97,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Barbarian Progression}
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Battleforged Resilience} & \tb{Battlerager}  & \tb{Primal Warrior} \\\bottomrule
-               1 & Fury of the storm         & Rage                  & Primal exertions
-            \\ 2 & Battle-scarred            & Blood frenzy          & Athletic prowess
-            \\ 3 & Battleforged fortitude    & Frenzied assault      & Primal exertion
-            \\ 4 & Soulscarred               & Mindless rage         & Athletic prowess
-            \\ 5 & Greater fury of the storm & Greater blood frenzy  & Primal exertion
-            \\ 6 & Agile defense             & Greater mindless rage & Primal prowess
-            \\ 7 & Greater battle-scarred    & Deathless rage        & Primal exertion
-            \\ 8 & Battleforged supremacy    & Endless rage          & Primal dominance
+               1 & Fury of the storm         & Rage                   & Primal exertions
+            \\ 2 & Battle-scarred            & Cleansing rage         & Athletic prowess
+            \\ 3 & Battleforged fortitude    & Focused rage           & Primal exertion
+            \\ 4 & Soulscarred               & Fearsome rage          & Athletic prowess
+            \\ 5 & Greater fury of the storm & Greater cleansing rage & Primal exertion
+            \\ 6 & Agile defense             & Greater fearsome rage  & Primal prowess
+            \\ 7 & Greater battle-scarred    & Deathless rage         & Primal exertion
+            \\ 8 & Battleforged supremacy    & Endless rage           & Primal dominance
         \end{dtabularx}
     \end{dtable}
 
@@ -140,6 +140,7 @@ This choice determines a great deal about your character's abilities.
             You gain the following benefits and drawbacks:
             \begin{itemize}
                 \item You gain a \plus1d bonus to damage with \glossterm{strikes}.
+                \item You take a \minus1 penalty to \glossterm{accuracy} with \glossterm{strikes}.
                 \item You gain a \plus2 bonus to \glossterm{threat}.
                 \item You are unable to take any action that requires patience or concentration, such as casting spells.
                 \item At the end of each round, if you did not attack a creature or object that round, you take \glossterm{subdual damage} equal to your level.
@@ -148,22 +149,24 @@ This choice determines a great deal about your character's abilities.
             When this ability ends, you become \fatigued and unable to use it again until you take a \glossterm{short rest}.
         \end{attuneability}
 
-        \cf{Bbn}[2]{Blood Frenzy}
-        You reduce your penalties for being \glossterm{bloodied} by 2 while raging.
+        \cf{Bbn}[2]{Cleansing Rage}
+        When you use your \textit{rage} ability, if you are not already in a rage, you can remove one \glossterm{condition} affecting you.
 
-        \cf{Bbn}[3]{Frenzied Assault}
-        You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks}.
+        \cf{Bbn}[3]{Focused Rage}
+        Your \textit{rage} ability no longer imposes a penalty to \glossterm{accuracy} with \glossterm{strikes}.
 
-        \cf{Bbn}[4]{Mindless Rage}
-        You are immune to \glossterm{Mind} \glossterm{conditions} while raging.
+        \cf{Bbn}[4]{Fearsome Rage}
+        As long as your \textit{rage} ability is active, you radiate an aura of fear in a \arealarge radius emanation.
+        At the end of each \glossterm{action phase}, make an attack vs. Mental against all creatures in the area that you did not already attack with this ability.
+        On a hit, each target is \glossterm{shaken} by you as a \glossterm{condition}.
 
-        \cf{Bbn}[5]{Greater Blood Frenzy} 
-        You do not take penalties for being \glossterm{bloodied} while raging.
+        \cf{Bbn}[5]{Greater Cleansing Rage} 
+        You can remove two conditions with your \textit{cleansing rage} ability instead of only one.
 
-        \cf{Bbn}[6]{Greater Mindless Rage} 
-        You are immune to all hostile \glossterm{Mind} abilities while raging.
+        \cf{Bbn}[6]{Greater Fearsome Rage}
+        If you hit a target with your \textit{fearsome rage} ability, the target is \glossterm{frightened} by you instead of \glossterm{shaken}.
 
-        \cf{Bbn}[7]{Deathless Rage} 
+        \cf{Bbn}[7]{Deathless Rage}
         You reduce your \glossterm{vital damage penalties} by an amount equal to your level while raging.
 
         \cf{Bbn}[8]{Endless Rage}
