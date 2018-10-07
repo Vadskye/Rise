@@ -358,7 +358,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         Damage does not represent serious physical injury to your body.
         Instead, it represents a depletion of some combination of endurance, luck, or even divine providence that prevents you from suffering more serious injury.
         When you take damage, you reduce your \glossterm{hit points} by that amount (see \pcref{Hit Points}).
-        If you have no hit points remaining, you may take that damage as \glossterm{vital damage} instead, which represents potentially life-threatening injuries (see \pcref{Vital Damage}).
+        If you take damage in excess of your \glossterm{hit points}, the excess damage is dealt as \glossterm{vital damage}, which represents potentially life-threatening injuries (see \pcref{Vital Damage}).
 
         Most attacks deal damage equal to the result rolled from a pool of dice.
 
@@ -1552,18 +1552,13 @@ It defines how attributes work and explains how to make physical attacks in comb
         Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow fatigued you, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
 
     \subsection{Vital Damage}\label{Vital Damage}
-        When you take damage in excess of your hit points while \glossterm{wounded}, that damage represents serious physical injury to your body.
-        This is called \glossterm{vital damage}.
+        At the end of each phase, if you have taken damage in excess of your remaining hit points, the excess damage is converted into \glossterm{vital damage}.
+        Vital damage represents serious physical injury to your body.
         For every 4 points of \glossterm{vital damage} you have, you take a \minus1 penalty to \glossterm{accuracy}, \glossterm{checks}, and \glossterm{defenses}.
 
         \parhead{Healing Vital Damage} Vital damage is much more difficult to heal than lost hit points.
         Vital damage can only be healed by taking a \glossterm{long rest} or with special abilities (see \pcref{Long Rest}).
         Abilities that heal hit points cannot heal vital damage unless they explicitly say they can.
-
-    \subsection{Overkill Damage}\label{Overkill Damage}
-        Normally, when you take damage that would reduce your hit points to 0, any excess damage from the attack is wasted.
-        However, some attacks deal such massive damage that you begin dying immediately, rather than just losing all of your hit points.
-        If you take damage in excess of your \glossterm{bloodied} hit point total in a single round, any damage past what would reduce your hit points to 0 is dealt as \glossterm{vital damage}.
 
     \subsection{Stages of Injury}
 
@@ -1572,31 +1567,25 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \parhead{Bloodied} At the end of each phase, if you are at half your hit points or below, you become \glossterm{bloodied}.
         A bloodied creature takes a \minus4 penalty to Fortitude and Mental defense.
-        If you end a phase with more than half your hit points, you stop being bloodied.
         Becoming bloodied can also make you \glossterm{staggered}, as described below.
+        If you end a phase with more than half your hit points, you stop being bloodied.
+        If you end a phase with \glossterm{vital damage} and no hit points remaining, you begin \glossterm{dying}, as described below.
 
         \parhead{Staggered}\label{Staggered}
         The first time you become \glossterm{bloodied} in an encounter, you become \glossterm{staggered} until the end of the same phase in the next round.
         For example, if you become bloodied at the end of the \glossterm{action phase}, you would be \glossterm{staggered} until the end of the action phase in the next round.
         A staggered creature takes a \minus4 penalty to \glossterm{accuracy} and \glossterm{checks}.
 
-        \parhead{Wounded}\label{Wounded} At the end of each round, if you have no hit points remaining, you become \wounded.
-        In addition, you are wounded if you have any \glossterm{vital damage}.
-        A wounded creature suffers no immediate ill effects.
-        However, it becomes vulnerable to taking \glossterm{vital damage} (see \pcref{Vital Damage}).
-        If you take vital damage, you can begin dying (see Dying, below).
+        \parhead{Dying}\label{Dying} At the end of each phase, if you have \glossterm{vital damage} and have no hit points remaining, you begin \glossterm{dying}.
+        Immediately after you begin dying, and at the end of the \glossterm{action phase} in subsequent rounds, you make a \glossterm{stabilization check}.
+        To make a stabilization check, roll 1d10 and add your Fortitude defense.
+        The \glossterm{difficulty rating} of this check is 10.
+        Success means that you suffer no immediate adverse effects.
+        Failure means you fall unconscious.
 
-        At the end of each round, if you have hit points remaining and do not have any \glossterm{vital damage}, you stop being wounded.
-
-        \parhead{Dying}\label{Dying} At the end of each round, if you have \glossterm{vital damage} and have no hit points remaining, you begin \glossterm{dying}.
-        While you are dying, you must make an attack against your own Fortitude defense at the end of every round.
-        This is called a \glossterm{stabilization roll}.
-        No bonuses or penalties apply to the attack roll, but \glossterm{vital damage} and other effects can penalize your Fortitude defense.
-        If you fail to resist the attack once, you fall unconscious.
-        If you fail to resist the attack three times, you die.
-        If you resist the attack three times, you stabilize.
-        When you stabilize, you no longer need to make attacks against yourself each round, and any failures that brought you closer to death are negated.
-        If you take additional \glossterm{vital damage} while dying, any successes you rolled to resist death are negated, but any failures remain unchanged.
+        If you succeed at this check three times, you stabilize, and are no longer considered to be \glossterm{dying}.
+        Taking additional damage after stabilizing means you begin \glossterm{dying} again, and you ignore any previous successes or failures on \glossterm{stabilization checks}.
+        If you fail at this check three times, you die.
 
         An ally can make a Heal check to tend to you while you are dying.
         The Heal check result can be used in place of your Fortitude defense.
@@ -1605,7 +1594,8 @@ It defines how attributes work and explains how to make physical attacks in comb
     \subsection{Subdual Damage}\label{Subdual Damage}
         Some attacks and environmental effects deal subdual damage.
         Subdual damage works in the same way as normal damage, except that it cannot turn into \glossterm{vital damage}.
-        Instead, if you deal subdual damage to a \glossterm{wounded} creature, it immediately falls unconscious.
+        % This makes subdual damage actually better at knocking creatures unconscious than non-subdual damage, but that doesn't seem to be a narrative problem?
+        At the end of each phase, if a creature has subdual damage in excess of its hit points, it immediately falls unconscious.
 
 
 % TODO: This is a bad name; organize these better
