@@ -679,7 +679,7 @@ def generate_mystic_spheres():
             """, tags=['Emotion', 'Mind']),
             Spell('Fearsome Aura', 1, """
                 You radiate an aura of fear in a \\arealarge radius emanation.
-                Immediately after casting this spell, and at the end of each \\glossterm<action phase> in subsequent rounds, make an attack vs. Mental against all creatures in the area that you did not already attack with this spell.
+                When you attune to this spell, and at the end of each \\glossterm<action phase> in subsequent rounds, make an attack vs. Mental against all creatures in the area that you did not already attack with this spell.
                 \\hit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
             """, tags=['Attune (self)', 'Emotion', 'Mind']),
             Spell('Greater Fearsome Aura', 4, """
