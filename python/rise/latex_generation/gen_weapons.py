@@ -311,7 +311,6 @@ def generate_weapons():
             As a \\glossterm<minor action>, you can cut yourself with this weapon to activate it.
             This deals no damage to you.
             If you do, all delayed damage dealt by this weapon is converted into real damage.
-            Any such damage dealt in excess of a creature's hit points is dealt immediately as \\glossterm<vital damage>.
         """,
         short_description="Deals delayed damage",
     ))

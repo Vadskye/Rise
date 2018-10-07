@@ -1321,7 +1321,6 @@ When you take damage, half of the damage (rounded down) is not dealt to you imme
 This damage is tracked separately.
 When the ends, you take all of the delayed damage at once.
 This damage has no type, and ignores all effects that reduce or negate damage.
-Damage dealt in this way in excess of your hit points is dealt as \glossterm{vital damage}.
 
 You can cast this spell as a \glossterm{minor action}.
 \end{apability}
@@ -4270,14 +4269,6 @@ If the target dies while the condition is active, you heal hit points equal to t
 
 
 
-\lowercase{\hypertarget{spell:Drain Life}{}}\label{spell:Drain Life}
-\begin{apability}[\nth{2}]{\hypertarget{spell:Drain Life}{Drain Life}}[\glossterm{Life}]
-This spell functions like the \spell{inflict wounds} spell, except that you heal hit points equal to half the damage dealt.
-\end{apability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Vital Persistence}{}}\label{spell:Vital Persistence}
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Vital Persistence}{Vital Persistence}}[\glossterm{Attune} (target), \glossterm{Life}]
 Choose a willing creature within \rngclose range.
@@ -4306,6 +4297,15 @@ When this spell resolves, and the end of each \glossterm{action phase} in subseq
 
 
 
+\lowercase{\hypertarget{spell:Drain Life}{}}\label{spell:Drain Life}
+\begin{apability}[\nth{3}]{\hypertarget{spell:Drain Life}{Drain Life}}[\glossterm{Life}]
+This spell functions like the \spell{inflict wounds} spell, except that you gain a \plus1d bonus to damage.
+In addition, you heal hit points equal to your \glossterm{power} if you deal damage.
+\end{apability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Greater Cure Wounds}{}}\label{spell:Greater Cure Wounds}
 \begin{apability}[\nth{3}]{\hypertarget{spell:Greater Cure Wounds}{Greater Cure Wounds}}[\glossterm{Life}]
 This spell functions like the \spell{cure wounds} spell, except that you gain a \plus1d bonus to healing.
@@ -4317,7 +4317,8 @@ In addition, for every 5 points of healing you provide, you can instead heal one
 
 \lowercase{\hypertarget{spell:Greater Inflict Wounds}{}}\label{spell:Greater Inflict Wounds}
 \begin{apability}[\nth{3}]{\hypertarget{spell:Greater Inflict Wounds}{Greater Inflict Wounds}}[\glossterm{Life}]
-This spell functions like the \spell{inflict wounds} spell, except that you gain a \plus1d bonus to damage, and any damage dealt in excess of the target's hit points is dealt as \glossterm{vital damage}.
+This spell functions like the \spell{inflict wounds} spell, except that you gain a \plus1 bonus to \glossterm{accuracy}.
+In addition, a struck target takes a \minus2 penalty to Fortitude defense as a \glossterm{condition}.
 \end{apability}
 \vspace{0.25em}
 
@@ -4355,7 +4356,8 @@ Make an attack vs. Fortitude against a living creature within \rngclose range.
 
 \lowercase{\hypertarget{spell:Greater Drain Life}{}}\label{spell:Greater Drain Life}
 \begin{apability}[\nth{5}]{\hypertarget{spell:Greater Drain Life}{Greater Drain Life}}[\glossterm{Life}]
-This spell functions like the \spell{inflict wounds} spell, except that gain a \plus1d bonus to damage and you heal hit points equal to the damage dealt.
+This spell functions like the \spell{inflict wounds} spell, except that gain a \plus2d bonus to damage.
+In addition, you heal hit points equal to twice your \glossterm{power} if you deal damage.
 \end{apability}
 \vspace{0.25em}
 
@@ -4365,6 +4367,15 @@ This spell functions like the \spell{inflict wounds} spell, except that gain a \
 \begin{apability}[\nth{5}]{\hypertarget{spell:Heal}{Heal}}[\glossterm{Life}]
 This spell functions like the \spell{cure wounds} spell, except that you gain a \plus2d bonus to healing.
 In addition, it heals \glossterm{vital damage} as easily as it heals hit points.
+\end{apability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Supreme Inflict Wounds}{}}\label{spell:Supreme Inflict Wounds}
+\begin{apability}[\nth{5}]{\hypertarget{spell:Supreme Inflict Wounds}{Supreme Inflict Wounds}}[\glossterm{Life}]
+This spell functions like the \spell{inflict wounds} spell, except that you gain a \plus2 bonus to \glossterm{accuracy}.
+In addition, a struck target takes a \minus4 penalty to Fortitude defense as a \glossterm{condition}.
 \end{apability}
 \vspace{0.25em}
 
