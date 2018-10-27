@@ -527,8 +527,8 @@ def magical_beasts(sample_monsters):
         thaumavore,
         passive_abilities=[
             passive_ability('Consume Magic', f"""
-                The thaumavore has \\glossterm<magic resistance> {thaumavore.level + 5}.
-                When it resists an effect in this way, it heals hit points equal to twice the \\glossterm<power> of the effect.
+                The thaumavore gains a +4 bonus to \\glossterm<defenses> against \\glossterm<magical> abilities.
+                Whenever it resists a \\glossterm<magical> attack, it heals hit points equal to twice the \\glossterm<power> of the effect.
             """),
             passive_ability('Sense Magic', f"""
                 The thaumavore can sense the location of all sources of magic within 100 feet of it.

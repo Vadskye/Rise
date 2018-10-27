@@ -444,10 +444,7 @@ def generate_mystic_spheres():
             Spell('Greater Enhance Magic', 4, """
                 This spell functions like the \\textit<enhance magic> spell, except that the bonus is increased to +2.
             """, tags=['Attune (target)', 'Mystic']),
-            Spell('Resist Magic', 5, """
-                Choose a willing creature within \\rngmed range.
-                The target gains \\glossterm<magic resistance> equal to 5 + your \\glossterm<power>.
-            """, tags=['Attune (target)', 'Shielding']),
+            # Is this worth the complexity it adds to the system?
             Spell('Antimagic Field', 7, """
                 All other magical abilities and objects are \\glossterm<suppressed> within a \\areamed radius emanation from you.
                 % How much of this is redundant with suppression?

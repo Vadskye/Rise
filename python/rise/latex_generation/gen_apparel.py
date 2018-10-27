@@ -229,17 +229,6 @@ def generate_armor():
     ))
 
     apparel.append(MagicItem(
-        name="Armor of Magic Resistance",
-        level=14,
-        tags=['Shielding'],
-        material_type='body armor',
-        description="""
-            You have \\glossterm<magic resistance> equal to 5 + the item's \\glossterm<power>.
-        """,
-        short_description="Provides magic resistance",
-    ))
-
-    apparel.append(MagicItem(
         name="Shield of Mystic Reflection",
         level=12,
         tags=['Mystic'],
@@ -980,9 +969,10 @@ def generate_worn():
         short_description="Can teleport a short distance and grant invisibility",
     ))
 
+    # Maybe too strong?
     apparel.append(MagicItem(
         name="Hexward Amulet",
-        level=10,
+        level=11,
         material_type='amulet',
         tags=['Mystic'],
         description="""
@@ -994,14 +984,14 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Hexproof Amulet, Greater",
-        level=18,
+        level=17,
         material_type='amulet',
         tags=['Mystic'],
         description="""
-            You gain a +8 bonus to defenses against \\glossterm<magical> abilities that target you directly.
+            You gain a +6 bonus to defenses against \\glossterm<magical> abilities that target you directly.
             This does not protect you from abilities that affect an area.
         """,
-        short_description="Grants +8 defenses against targeted magical attacks",
+        short_description="Grants +6 defenses against targeted magical attacks",
     ))
 
     # Belts
