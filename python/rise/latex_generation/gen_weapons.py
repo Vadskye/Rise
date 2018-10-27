@@ -290,8 +290,9 @@ def generate_weapons():
         tags=['Knowledge'],
         description="""
             This weapon automatically veers towards its intended target.
-            \\glossterm<Strikes> with this weapon that would suffer a 50\\% miss chance instead suffer a 20\\% miss chance.
-            In addition, attacks that would otherwise suffer a 20\\% miss chance instead suffer no miss chance.
+            \\glossterm<Strikes> with this weapon ignore \\glossterm<concealment>.
+            In addition, any miss chance the strike would normally have is reduced.
+            A 50\\% miss chance is reduced to a 20\\% miss chance, and a 20\\% miss chance is removed entirely.
         """,
         short_description="Reduces miss chances",
     ))
