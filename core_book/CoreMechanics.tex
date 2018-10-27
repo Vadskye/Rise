@@ -1195,7 +1195,6 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \parhead{Creation} Creation abilities create permanent physical objects.
         Objects created with Creation abilities are identical to objects created through more mundane means.
-        Unless otherwise specified, magical Creation abilities do not allow \glossterm{magic resistance}.
 
         \parhead{Curse} Curse abilities lay supernatural curses on their targets.
         They cannot be \glossterm{dismissed}, but can be removed with the \spell{remove curse} spell.
@@ -1236,16 +1235,13 @@ It defines how attributes work and explains how to make physical attacks in comb
         \parhead{Manifestation} Manifestation abilities create temporary constructs formed from raw magical energy.
         Objects and creatures created with manifestation abilities seem real on the surface, but they have no internal structure.
         When an object or creature created by a Manifestation ability is destroyed or killed, or when the duration of the ability that created it ends, it disappears without a trace.
-        Unlike \glossterm{Creation} abilities, magical Manifestation abilities allow \glossterm{magic resistance}.
 
         \parhead{Mind} Mind abilities manipulate the minds of creatures.
         They have no effect on objects or creatures without minds.
 
         \parhead{Mystic} Mystic abilities alter or destroy magic itself.
-        They do not allow \glossterm{magic resistance}.
 
         \parhead{Physical} Physical abilities manipulate physical objects rather than having a direct magical effect on their targets.
-        They do not allow \glossterm{magic resistance}.
         % TODO: find example? Does this still exist
         Some abilities are not themselves Physical, but have Physical effects.
 
@@ -1325,27 +1321,20 @@ It defines how attributes work and explains how to make physical attacks in comb
             \end{dtabularx}
         \end{dtable}
 
-    \subsection{Magical and Physical Abilities}
+    \subsection{Magical and Mundane Abilities}
 
-        There are two types of abilities: magical abilities and physical abilities.
+        There are two types of abilities: magical abilities and mundane abilities.
 
-        \parhead{Magical Abilities}\label{Magical Abilities} A magical ability is an ability that has no physical explanation.
-        Examples include spells, a medusa's petrifying gaze, and a cleric's domain invocations.
-        Magical attacks often target Fortitude and Mental defenses, and can be resisted by \glossterm{magic resistance}.
+        \parhead{Magical Abilities}\label{Magical Abilities} A \glossterm{magical} ability is an ability that has no physical explanation.
+        Examples include \glossterm{spells}, a medusa's petrifying gaze, and a cleric's domain invocations.
         Abilities that are magical in nature are indicated with a (Magical) indicator.
         Abilities that are not magical are \glossterm{mundane}.
 
-        Many abilities which fundamentally concern magical effects are not themselves magical in nature.
-        This is most commmon with abilities that represent choices the character makes or knowledge the character has.
-        For example, although all spells are magical abilities, the ability to cast spells is not itself a magical ability.
-        It is simply knowledge that the creature possesses.
-        Of course, that knowledge would be useless if the creature had no access to magic.
-
-        \parhead{Physical Abilities}\label{Physical Abilities} A physical ability has a tangible component and some form of natural explanation.
+        \parhead{Mundane Abilities}\label{Mundane Abilities} A \glossterm{mundane} ability has a tangible component and some form of natural explanation.
         Examples include weapon attacks, a dragon's breath weapon, and a barbarian's rage.
-        Physical attacks often target Armor defense.
-        Unless otherwise indicated, all abilities are physical in nature.
-        Abilities that are not physical are \glossterm{magical}.
+        Mundane attacks often target Armor defense.
+        Unless otherwise indicated, all abilities are mundane in nature.
+        Abilities that are not mundane are \glossterm{magical}.
 
 \section{Universal Abilities}\label{Universal Abilities}
     All creatures can use the following abilities.
@@ -1739,24 +1728,6 @@ It defines how attributes work and explains how to make physical attacks in comb
         When a creature or object with hardness would take damage, if the hardness of the attacking object or creature lower than the hardness of the defender, the attacking object or creature takes the damage instead.
         For example, if you try to break a stone wall with a wooden club, the club will break instead of the wall.
         % TODO: define hardness for creatures and their natural weapons; natural weapons should generally have higher hardness than creatures to avoid hardness reflection being common
-
-    \subsection{Magic Resistance}\label{Magic Resistance}
-        Some abilities can give you \glossterm{magic resistance}.
-        Magic resistance is an additional defense against \glossterm{magical} abilities such as spells.
-        To affect a creature that has magic resistance with a magical ability, you must make an additional attack against the creature's magic resistance.
-        Your accuracy is equal to your \glossterm{power} with the ability you using.
-        If your attack result beats the creature's magic resistance, the ability works normally.
-        Otherwise, the ability has no effect on the creature.
-
-        Magic resistance does not prevent a magical ability from having its normal effect on other creatures or objects.
-        Magical abilities which do not directly affect targets, such as the \spell{summon monster} spell, do not allow magic resistance.
-        In addition, \glossterm{Mystic} and \glossterm{Physical} abilities do not allow magic resistance (see \pcref{Ability Tags}).
-
-        % Clarify how you know which abilities to allow through
-        Normally, creatures with magic resistance can choose to allow abilities through their resistance.
-        This choice is made when the ability targets the creature.
-        Some creatures cannot control their magic resistance, so an attack is always necessary to affect them.
-        This is specified in the description of the creature's magic resistance.
 
     \subsection{Underwater Combat}\label{Underwater Combat}
         Land-based creatures have considerable difficulty when fighting in water.
