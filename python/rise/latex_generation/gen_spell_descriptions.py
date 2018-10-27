@@ -1340,11 +1340,11 @@ def generate_mystic_spheres():
                 During the ritual, the body ages to match the age of the original creature at the time it died.
                 The creature has 0 hit points when it returns to life.
 
-                A reincarnated creature is identical to the original creature in all respects, except for its race.
-                The creature's race is replaced with a random race from \\tref<Humanoid Reincarnations>.
-                Its appearance changes as necessary to match its new race, though it retains the general shape and distinguishing features of its original appearance.
-                The creature loses all attribute modifiers and abilities from its old race, and gains those of its new race.
-                If its racial bonus feat is invalid for its new race, it must choose a new racial bonus feat.
+                A reincarnated creature is identical to the original creature in all respects, except for its species.
+                The creature's species is replaced with a random species from \\tref<Humanoid Reincarnations>.
+                Its appearance changes as necessary to match its new species, though it retains the general shape and distinguishing features of its original appearance.
+                The creature loses all attribute modifiers and abilities from its old species, and gains those of its new species.
+                If its racial bonus feat is invalid for its new species, it must choose a new racial bonus feat.
                 However, its languages are unchanged.
 
                 Coming back from the dead is an ordeal.
@@ -1373,7 +1373,7 @@ def generate_mystic_spheres():
                 \\end{dtable}
             """),
             Spell('Fated Reincarnation', 5, f"""
-                This ritual functions like the \\ritual<reincarnation> ritual, except that the target is reincarnated as its original race instead of as a random race.
+                This ritual functions like the \\ritual<reincarnation> ritual, except that the target is reincarnated as its original species instead of as a random species.
 
                 This ritual takes 24 hours to perform, and requires 50 action points from its participants.
                 It is from the Conjuration school in addition to the Vivimancy school.
@@ -2056,7 +2056,7 @@ def generate_mystic_spheres():
             Spell('Alter Appearance', 2, """
                 Choose a Large or smaller willing creature within \\rngclose range.
                 You make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).
-                You gain a +5 bonus on the check, and you ignore penalties for changing the target's gender, race, subtype, or age.
+                You gain a +5 bonus on the check, and you ignore penalties for changing the target's gender, species, subtype, or age.
                 However, this effect is unable to alter the target's clothes or equipment in any way.
 
                 You can cast this spell as a \\glossterm<minor action>.

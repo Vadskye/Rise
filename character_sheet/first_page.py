@@ -37,9 +37,9 @@ def boring_stuff():
                 input_attributes={'name': 'class'},
             ),
             labeled_text_input(
-                'Race and background',
-                attributes={'class': 'race-input'},
-                input_attributes={'name': 'race_and_background'},
+                'Species and background',
+                attributes={'class': 'species-input'},
+                input_attributes={'name': 'species_and_background'},
             ),
             labeled_text_input(
                 'Description',

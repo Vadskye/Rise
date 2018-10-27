@@ -19,7 +19,7 @@ class Creature(object):
             character_class,
             level,
             name,
-            race,
+            species,
             # For brevity, take an array of starting attributes as ints.
             # The order is str, dex, con, int, per, wil
             starting_attributes,
@@ -40,7 +40,7 @@ class Creature(object):
         self.character_class = character_class
         self.level = level
         self.name = name
-        self.race = race
+        self.species = species
         self.starting_strength = starting_attributes[0]
         self.starting_dexterity = starting_attributes[1]
         self.starting_constitution = starting_attributes[2]
@@ -71,7 +71,7 @@ class Creature(object):
             character_class=self.character_class,
             level=self.level,
             name=self.name,
-            race=self.race,
+            species=self.species,
             starting_attributes=[
                 self.starting_strength,
                 self.starting_dexterity,
@@ -152,7 +152,7 @@ class Creature(object):
             self.starting_constitution,
             max(self.level, self.strength, self.constitution),
             self.character_class.fortitude_defense_bonus,
-            self.race.fortitude_defense_bonus,
+            self.species.fortitude_defense_bonus,
             self.cr_mod,
         ])
 
@@ -171,7 +171,7 @@ class Creature(object):
             self.starting_willpower,
             max(self.level, self.intelligence, self.willpower),
             self.character_class.mental_defense_bonus,
-            self.race.mental_defense_bonus,
+            self.species.mental_defense_bonus,
             self.cr_mod,
         ])
 
@@ -190,7 +190,7 @@ class Creature(object):
             self.starting_dexterity,
             max(self.level, self.dexterity, self.perception),
             self.character_class.reflex_defense_bonus,
-            self.race.reflex_defense_bonus,
+            self.species.reflex_defense_bonus,
             self.size.reflex_defense_modifier,
             self.cr_mod,
         ])
@@ -291,7 +291,7 @@ class Creature(object):
 
     def __str__(self):
         return '{0} {1} {2}\n{3}\n{4}{5}\n{6}\n{7}'.format(
-            self.race.name if self.race else self.monster_type.name,
+            self.species.name if self.species else self.monster_type.name,
             self.name,
             self.level,
             self._to_string_defenses(),
