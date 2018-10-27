@@ -27,7 +27,7 @@ def get_creature_latex(
         name=creature.name,
         name_suffix=creature.name_suffix,
         perception=creature.perception,
-        race=creature.race.name,
+        species=creature.species.name,
         reach=creature.reach,
         reflex_defense=creature.reflex_defense,
         size=creature.size.name,
@@ -56,7 +56,7 @@ def get_latex(
         mental_defense,
         name,
         perception,
-        race,
+        species,
         strength,
         strikes,
         reflex_defense,
@@ -80,7 +80,7 @@ def get_latex(
     return join(
         f"""
             \\begin<monsection><{name}>{name_suffix_text(name_suffix)}<{level}>[{challenge_rating}]
-                \\vspace<-1em>\\spelltwocol<><{size.title()} {race}>\\vspace<-1em>
+                \\vspace<-1em>\\spelltwocol<><{size.title()} {species}>\\vspace<-1em>
                 \\begin<spellcontent>
                     \\begin<spelltargetinginfo>
                         \\spelltwocol<

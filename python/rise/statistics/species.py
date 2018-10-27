@@ -2,7 +2,7 @@
 # The order is [Fortitude, Reflex, Mental].
 def defense_bonuses_from_race_name(name):
     return {
-        # PC races
+        # PC species
         'human': [0, 0, 0],
         'dwarf': [0, 0, 0],
         'elf': [0, 0, 0],
@@ -11,7 +11,7 @@ def defense_bonuses_from_race_name(name):
         'half-orc': [0, 0, 0],
         'halfling': [0, 0, 0],
 
-        # Monster races
+        # Monster species
         'aberration': [2, 4, 6],
         'animal': [6, 4, 2],
         'animate': [6, 4, 2],
@@ -23,7 +23,7 @@ def defense_bonuses_from_race_name(name):
         'undead': [2, 4, 6],
     }[name]
 
-class Race(object):
+class Species(object):
     def __init__(self, name):
         self.name = name
         defense_bonuses = defense_bonuses_from_race_name(self.name)

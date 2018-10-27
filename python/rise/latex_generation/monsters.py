@@ -18,7 +18,7 @@ modifiers = {}
 
 def ichor_modifier(creature):
     creature.name = f"Ichor {creature.name}"
-    creature.race.mental_defense_bonus = 6
+    creature.species.mental_defense_bonus = 6
     return creature
 modifiers['ichor'] = ichor_modifier
 
