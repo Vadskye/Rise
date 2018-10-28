@@ -2,7 +2,7 @@
 
 \section{Weapons}\label{Weapons}
 
-    Weapons are grouped into several interlocking sets of categories. These categories pertain to what weapon group the weapon belongs to (axes, bows, and so on), the weapon's usefulness either in close combat (melee) or at a distance (ranged, which includes both thrown and projectile weapons), and its relative encumbrance (light, medium, or heavy).
+    Weapons are grouped into several interlocking sets of categories. These categories pertain to what weapon group the weapon belongs to (axes, bows, and so on), the weapon's usefulness either in close combat (melee) or at a distance (ranged, which includes both thrown and projectile weapons), and its relative \glossterm{usage class} (light, medium, or heavy).
 
     \subsection{Weapon Groups}\label{Weapon Groups}
 
@@ -38,8 +38,9 @@
         \subsubsection{Weapon Proficiency}\label{Weapon Proficiency}
             Each character is proficient with different weapon groups. These indicate the weapons that you can use effectively. You take a \minus2 penalty to accuracy with weapons you are not proficient with, and you cannot use them to defend yourself, which can cause you to be \defenseless.
 
-    \subsection{Weapon Encumbrance}\label{Weapon Encumbrance}
-        This is a measure of how much effort it takes to wield a weapon in combat. A weapon's encumbrance indicates whether a melee weapon, when wielded by a creature the weapon is sized for, is considered a light weapon, a medium weapon, or a heavy weapon.
+    \subsection{Weapon Usage Classes}\label{Weapon Usage Classes}
+        A weapon's \glossterm{usage class} is a measure of how much effort it takes to wield a weapon in combat.
+        It indicates whether a melee weapon, when wielded by a creature the weapon is sized for, is considered a light weapon, a medium weapon, or a heavy weapon.
 
         \parhead{Light Weapons}\label{Light Weapons} You can use Dexterity to determine your \glossterm{accuracy} when making a \glossterm{physical attack} with a light weapon.
         In addition, light weapons are easier to use while making attacking with two weapons at once (see \pcref{Two-Weapon Strikes}) or while grappling.
@@ -75,11 +76,11 @@
 
             \parhead{Physical Size} Like all objects and creatures, weapons have a size category that represents how physically large they are. In general, a light weapon is an object two size categories smaller than the wielder, a medium weapon is an object one size category smaller than the wielder, and a heavy weapon is an object of the same size category as the wielder.
 
-            \parhead{Inappropriately Sized Weapons}\label{Inappropriately Sized Weapons} A weapon's encumbrance is altered by one step for each size category of difference between the wielder's size and the size of the creature for which the weapon was designed.
-            For example, a light weapon sized for a Large creature can be used by a Medium creature as if it had medium encumbrance.
+            \parhead{Inappropriately Sized Weapons}\label{Inappropriately Sized Weapons} A weapon's \glossterm{usage class} is altered by one step for each size category of difference between the wielder's size and the size of the creature for which the weapon was designed.
+            For example, a light weapon sized for a Large creature can be used by a Medium creature as if it had medium usage class.
             The wielder also gains a \plus1d bonus to damage with the weapon per size category if the weapon is unusually large, or a \minus1d penalty to damage with the weapon if the weapon is unusually small.
             In addition, the wielder takes a \minus2 penalty to accuracy with the weapon per size category of difference.
-            If a weapon's encumbrance would be changed to something other than light, medium, or heavy by this alteration, the creature can't wield the weapon at all.
+            If a weapon's usage class would be changed to something other than light, medium, or heavy by this alteration, the creature can't wield the weapon at all.
 
     \subsection{Improvised Weapons}\label{Improvised Weapons} Sometimes objects not crafted to be weapons nonetheless see use in combat. Because such objects are not designed for this use, any creature that uses one in combat is considered to be nonproficient with it.
 
@@ -100,7 +101,7 @@
     \subsection{Weapon Qualities}
         Here is the format for weapon entries (given as column headings on \trefnp{Weapons}, below).
 
-        \parhead{Encumbrance} Describes whether the weapon is a light, medium, heavy, double, or ranged weapon.
+        \parhead{Usage Class} Describes whether the weapon is a light, medium, heavy, double, or ranged weapon.
 
         \par This cost is the same for a Small or Medium version of the weapon. A Large version costs twice the listed price.
         \parhead{Damage} The Damage column gives the damage dealt by the weapon on a successful hit.
@@ -126,7 +127,7 @@
         \begin{longtabuwrapper}
             \begin{longtabu}{p{12em} c c >{\ccol}p{10em} c c >{\ccol}X}
                 \lcaption{Weapons}\\
-                \tb{Name} & \tb{Encumbrance} & \tb{Damage\fn{1}} & \tb{Damage Type\fn{2}} & \tb{Cost} & \tb{Weight\fn{3}} & \tb{Special} \\
+                \tb{Name} & \tb{Usage Class} & \tb{Damage\fn{1}} & \tb{Damage Type\fn{2}} & \tb{Cost} & \tb{Weight\fn{3}} & \tb{Special} \\
                 Armor weapons\label{Armor Weapons} &&&&&& \\
                 \tind Shield, standard\fn{4} & Medium & \minus2d & Bludgeoning & special & special & Forceful \\
                 \tind Spiked armor\fn{4} & Medium & \minus1d & Piercing & special & special & Grappling \\
@@ -235,7 +236,7 @@
 
         \begin{dtable!*}
             \begin{dtabularx}{\textwidth}{p{12em} c c >{\ccol}p{10em} c c >{\ccol}X}
-                \tb{Exotic Weapons} & \tb{Encumbrance} & \tb{Damage\fn{1}} & \tb{Damage Type\fn{2}} & \tb{Cost} & \tb{Weight\fn{3}} & \tb{Special} \\
+                \tb{Exotic Weapons} & \tb{Usage Class} & \tb{Damage\fn{1}} & \tb{Damage Type\fn{2}} & \tb{Cost} & \tb{Weight\fn{3}} & \tb{Special} \\
                 \bottomrule
                 Armor &&&&&& \\
                 Axes &&&&&& \\
@@ -274,7 +275,7 @@
         \begin{dtable!*}
             \lcaption{Natural Weapons}
             \begin{dtabularx}{\textwidth}{p{12em} c c >{\ccol}p{15em} >{\ccol}X}
-                \tb{Natural Weapons} & \tb{Encumbrance} & \tb{Damage} & \tb{Damage Type\fn{2}} & \tb{Special} \\
+                \tb{Natural Weapons} & \tb{Usage Class} & \tb{Damage} & \tb{Damage Type\fn{2}} & \tb{Special} \\
                 \bottomrule
                 Bite            & Medium & \plus0d  & Piercing and bludgeoning & \tdash   \\
                 Claw            & Light  & \minus1d & Slashing and piercing    & \tdash   \\
@@ -359,12 +360,29 @@
 
     Most characters use armor to protect themselves. There are two kinds of armor: \glossterm{body armor}, such as full plate armor, and \glossterm{shields}.
 
+    \subsection{Armor Usage Classes}\label{Armor Usage Classes}
+        An armor's \glossterm{usage class} is a measure of how the armor is used, and how much effort is required to use it.
+        It indicates whether armor, when used by a creature the armor is sized for, is considered light armor, medium armor, heavy armor, or a shield.
+        Light armor, medium armor, and heavy armor are all types of \glossterm{body armor}.
+
+        \parhead{Light Armor} Light armor has a low \glossterm{encumbrance} and imposes no special penalties on a creature wearing it.
+
+        \parhead{Medium Armor} A creature wearing medium armor has its \glossterm{base speed} reduced by five feet (to a minimum of five feet).
+
+        \parhead{Heavy Armor} A creature wearing heavy armor has its \glossterm{base speed} reduced by ten feet (to a minimum of five feet).
+
+        \parhead{Shield} A shield requires a free hand instead of being worn on the body, and impose no special penalties on a creature wielding it.
+
+        \subsubsection{Armor Proficiency}\label{Armor Proficiency}
+            Unlike weapons, proficiency with armor is defined by the armor's usage class.
+            If you wear or use armor you are not proficient with, it provides half its normal bonus to defenses.
+            In addition, you apply that armor's \glossterm{encumbrance} as a penalty to your \glossterm{accuracy} with \glossterm{physical attacks}.
+
     \subsection{Armor Qualities}
         \par Here is the format for armor entries (given as column headings on \trefnp{Armor and Shields}, below).
 
-
-        \parhead{Cost} The cost of the armor for Small or Medium humanoid
-        creatures. See \trefnp{Armor for Unusual Creatures}, below, for armor prices for other creatures.
+        \parhead{Cost} The cost of the armor for Small or Medium humanoid creatures.
+        See \trefnp{Armor for Unusual Creatures}, below, for armor prices for other creatures.
         \parhead{Armor/Shield Bonus} Both body armor and shields improve your Armor defense.
         Wearing multiple suits of armor or wielding multiple shields does not improve your defenses any further.
 
@@ -383,17 +401,6 @@
         \subparhead{Shields} If a character is wearing armor and using a shield, both armor check penalties apply.
 
         \parhead{Weight} This column gives the weight of the armor sized for a Medium wearer. Armor fitted for Small characters weighs half as much, and armor for Large characters weighs twice as much.
-
-        \subsubsection{Armor Proficiency}\label{Armor Proficiency}
-            You may be \glossterm{proficient} with specific types of armor: light, medium, or heavy \glossterm{body armor}, or \glossterm{shields}.
-            If you wear or use armor you are not proficient with, it provides half its normal bonus to defenses.
-            In addition, you apply that armor's \glossterm{encumbrance} as a penalty to your \glossterm{accuracy} with \glossterm{physical attacks}.
-
-        \subsubsection{Moving in Armor}\label{Moving in Armor}
-            The heavier the armor, the more it slows your movement.
-            Light armor has no effect on your movement speed.
-            Medium armor reduces your \glossterm{base speed} by five feet (to a minimum of 5 feet).
-            Heavy armor reduces your \glossterm{base speed} by ten feet (to a minimum of 5 feet).
 
     \subsection{Getting Into And Out Of Armor}
         The time required to don armor depends on its type; see \trefnp{Donning Armor}. Donning armor of any kind takes both hands.
