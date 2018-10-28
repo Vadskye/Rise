@@ -1598,7 +1598,8 @@ def generate_mystic_spheres():
             You can only cast this spell during the \\glossterm<action phase>.
             Choose a willing creature within \\rngclose range.
             On the next \\glossterm<strike> the target makes, it rolls twice and takes the higher result.
-            This effect ends at the end of the current round if the target has not made a strike by that time.
+            If you cast this spell on another creature, the effect ends at the end of the current round if the target has not made a strike by that time.
+            If you cast this spell on yourself, it lasts until the end of the next round.
         """, ap_cost=False),
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
