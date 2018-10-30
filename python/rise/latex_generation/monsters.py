@@ -212,10 +212,12 @@ def humanoids(sample_monsters):
         goblin_shouter,
         active_abilities=[
             active_ability('Shout of Running', """
-                All other willing allies who can hear the shouter can use the \\textit<sprint> ability without spending action points.
+                The shouter chooses any number of willing creatures other than itself who can hear it.
+                Each target does not have to spend \\glossterm<action points> to use use the \\textit<sprint> ability.
             """, tags=['Sustain (standard)']),
             active_ability('Shout of Stabbing', """
-                All other willing allies who can hear the shouter gain a +1d bonus to damage with \\glossterm<strikes>.
+                The shouter chooses any number of willing creatures other than itself who can hear it.
+                Each target gains a +1d bonus to damage with \\glossterm<strikes>.
             """, tags=['Sustain (standard)']),
         ],
         behavior='Attack lowest threat',
@@ -238,7 +240,8 @@ def humanoids(sample_monsters):
         orc_chieftain,
         active_abilities=[
             active_ability('Hit Everyone Else', """
-                All other willing allies who can hear the chieftain gain a +2 bonus to accuracy with strikes.
+                The chieftain chooses any number of willing creatures other than itself who can hear it.
+                Each target gains a +2 bonus to \\glossterm<accuracy> with \\glossterm<strikes>.
             """, tags=['Sustain (standard)']),
             active_ability('Hit Hardest', f"""
                 The chieftain makes a greataxe strike.
@@ -271,7 +274,9 @@ def humanoids(sample_monsters):
                 Its accuracy is reduced to {orc_loudmouth.accuracy('perception') - 2}, but the strike deals {orc_loudmouth.weapon_damage(Weapon('greataxe')) + 2} damage.
             """),
             active_ability('Hit That One Over There', """
-                All other willing allies who can hear the loudmouth gain a +2 bonus to accuracy with strikes against one creature within Long range.
+                The loudmouth chooses any number of willing creatures other than itself who can hear it.
+                In addition, it chooses an enemy within Long range.
+                Each target gains a +2 bonus to accuracy with strikes against the chosen enemy.
             """, tags=['Sustain (standard)']),
         ],
     ))
