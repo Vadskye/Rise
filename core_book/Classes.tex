@@ -906,13 +906,13 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Druid Progression}
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Nature Spellcasting} & \tb{Nature Spell Mastery}  & \tb{Natural Influence} \\\bottomrule
-               1 & Mystic spheres         & Wellspring of magic         & Wild aspect
-            \\ 2 & Spells                 & Mystic knowledge            & Wild speech
-            \\ 3 & Spell level (2)        & Augments                    & Wild aspect
-            \\ 4 & Spell level (3), spell & Mystic knowledge            & Natural lore
-            \\ 5 & Spell level (4)        & Augment                     & Wild aspect
-            \\ 6 & Spell level (5), spell & Greater wellspring of magic & Nature's champion
-            \\ 7 & Spell level (6)        & Mystic knowledge            & Wild aspect
+               1 & Mystic spheres         & Wellspring of magic         & Wild speech
+            \\ 2 & Spells                 & Mystic knowledge            & Wild aspect
+            \\ 3 & Spell level (2)        & Augments                    & Natural lore
+            \\ 4 & Spell level (3), spell & Mystic knowledge            & Wild aspect
+            \\ 5 & Spell level (4)        & Augment                     & Nature's champion
+            \\ 6 & Spell level (5), spell & Greater wellspring of magic & Wild aspect
+            \\ 7 & Spell level (6)        & Mystic knowledge            & Fluid aspect
             \\ 8 & Spell level (7), spell & Mystic supremacy            & Avatar of nature
         \end{dtabularx}
     \end{dtable}
@@ -957,7 +957,16 @@ This choice determines a great deal about your character's abilities.
     \subsection{Natural Influence}
         This archetype grants you influence over the natural world, and the ability to embody aspects the natural world in your own form.
 
-        \cf{Drd}[1]{Wild Aspect}[Magical]
+        \cf{Drd}[1]{Wild Speech}[Magical] You can use the \textit{wild speech} ability as a standard action.
+        \begin{attuneability}{Wild Speech}[\glossterm{Attune} (self)]
+            Choose an animal within \rnglong range.
+            You can speak to and understand the speech of the target animal, and any other animals of the same species.
+
+            This ability does not make the target any more friendly or cooperative than normal.
+            Wary and cunning animals are likely to be terse and evasive, while stupid ones tend to make inane comments and are unlikely to say or understand anything of use.
+        \end{attuneability}
+
+        \cf{Drd}[2]{Wild Aspect}[Magical]
         You gain the ability to embody an aspect of an animal or of nature itself.
         Choose a single wild aspect from the list below.
         You can also spend \glossterm{insight points} to learn one additional \textit{wild aspect} per \glossterm{insight point}.
@@ -1001,16 +1010,10 @@ This choice determines a great deal about your character's abilities.
             However, plants magically manipulated to impede motion still affect your movement.
         }
 
-        \cf{Drd}[2]{Wild Speech}[Magical] You can use the \textit{wild speech} ability as a standard action.
-        \begin{attuneability}{Wild Speech}[\glossterm{Attune} (self)]
-            Choose an animal within \rnglong range.
-            You can speak to and understand the speech of the target animal, and any other animals of the same species.
+        \cf{Drd}[3]{Natural Lore}
+        You gain two extra skill points.
 
-            This ability does not make the target any more friendly or cooperative than normal.
-            Wary and cunning animals are likely to be terse and evasive, while stupid ones tend to make inane comments and are unlikely to say or understand anything of use.
-        \end{attuneability}
-
-        \cf*{Drd}[3]{Wild Aspect}[Magical]
+        \cf*{Drd}[4]{Wild Aspect}[Magical]
         You learn an additional \textit{wild aspect}.
         %TODO: wording
         In addition, you gain the ability maintain the effects of up to two \textit{wild aspects} simultaneously.
@@ -1050,10 +1053,10 @@ This choice determines a great deal about your character's abilities.
             % A creature can only be dealt damage by this effect once per round.
         }
 
-        \cf{Drd}[4]{Natural Lore}
-        You gain two extra skill points.
+        \cf{Drd}[5]{Nature's Champion}
+        You gain a \plus2 bonus to the Creature Handling, Heal, Knowledge (geography), Knowledge (nature), Ride, and Survival skills.
 
-        \cf*{Drd}[5]{Wild Aspect}[Magical]
+        \cf*{Drd}[6]{Wild Aspect}[Magical]
         You learn an additional \textit{wild aspect}.
         In addition, you gain the ability maintain the effects of up to three \textit{wild aspects} simultaneously.
         When you activate a new \textit{wild aspect}, you can choose which of your wild aspects remain active. 
@@ -1070,6 +1073,12 @@ This choice determines a great deal about your character's abilities.
             You increase in size by one size category (see \pcref{Size in Combat}).
             However, you take a \minus2 penalty to Strength, which offsets the bonus you gain for increasing your size.
             This is a \glossterm{Sizing} effect.
+            \subcf{Natural Renewal}
+            At the end of each \glossterm{action phase}, you heal hit points equal to your \glossterm{magical power}.
+            \subcf{Solar Radiance}
+            You continuously radiate bright light out to a 500 foot radius (and shadowy illumination for an additional 500 feet).
+            The illumination is so bright that you become hard to look at.
+            Any creature making a \glossterm{strike} against you from within the radius of bright light becomes \dazzled as a \glossterm{condition} after the attack.
             \subcf{Wolfpack}
             You increase your \glossterm{overwhelm value} by 1.
             \subcf{Venom}
@@ -1088,28 +1097,13 @@ This choice determines a great deal about your character's abilities.
                 \end{itemize}
             \end{freeability}
             % TODO poison stacking rules
-        }
-
-        \cf{Drd}[6]{Nature's Champion}
-        You gain a \plus2 bonus to the Creature Handling, Heal, Knowledge (geography), Knowledge (nature), Ride, and Survival skills.
-
-        \cf*{Drd}[7]{Wild Aspect}[Magical]
-        You learn an additional \textit{wild aspect}.
-        In addition, you gain the ability maintain the effects of up to four \textit{wild aspects} simultaneously.
-        When you activate a new \textit{wild aspect}, you can choose which of your wild aspects remain active. 
-        In addition to your previous options, you can also choose from among the aspects below.
-        {
-            \subcf{Natural Renewal}
-            At the end of each \glossterm{action phase}, you heal hit points equal to your \glossterm{magical power}.
-            \subcf{Stable Foundation} As long as you are on solid ground, you gain a \plus1 bonus to all defenses.
             \subcf{Wings}
             You grow wings, granting you a \glossterm{fly speed} equal to your \glossterm{base speed} (see \pcref{Flying}).
-            % TODO: standard flight limitation
-            \subcf{Solar Radiance}
-            You continuously radiate bright light out to a 500 foot radius (and shadowy illumination for an additional 500 feet).
-            The illumination is so bright that you become hard to look at.
-            Any creature making a \glossterm{strike} against you from within the radius of bright light becomes \dazzled as a \glossterm{condition} after the attack.
         }
+
+        \cf{Drd}[7]{Fluid Aspect}
+        % TODO: wording; this just replaces the action time, not gives you an extra one active
+        Once per round, you can activate a \textit{wild aspect} as a \glossterm{free action} instead of as a \glossterm{minor action}.
 
         \cf{Drd}[8]{Avatar of Nature}[Magical]
         If you die, except if by old age, you may choose to have your body and soul become an instrument of nature's will.
@@ -2383,11 +2377,9 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rgr}[1]{Keen Vision}
         Your sight improves, allowing you to see more easily.
-        You gain \glossterm{low-light vision}, allowing you to treat sources of light as if they had double their normal illumination range.
+        You gain a \plus2 bonus to \glossterm{Awareness}.
+        In addition, you gain \glossterm{low-light vision}, allowing you to treat sources of light as if they had double their normal illumination range.
         If you already have low-light vision, you double its benefit, allowing you to treat sources of light as if they had four times their normal illumination range.
-
-        In addition, you gain \glossterm{darkvision} out to 50 feet, allowing you to see in complete darkness.
-        If you already have darkvision, you increase its range by 50 feet.
 
         \cf{Rgr}[2]{Learned Perception} You gain two skill points.
 
@@ -2398,16 +2390,16 @@ This choice determines a great deal about your character's abilities.
         If you already have the blindsense ability, you increase its range by 50 feet.
 
         \cf{Rgr}[4]{Farsight}
-        You increase the range of your \glossterm{darkvision} by 150 feet, and your \glossterm{blindsense} by 50 feet.
-        In addition, you reduce your \glossterm{range increment} penalties for attacking at long range by 2.
+        You reduce your \glossterm{range increment} penalties for attacking at long range by 2.
 
         \cf{Rgr}[5]{Blindsight}
         You gain the \glossterm{blindsight} ability, allowing you to ``see'' perfectly without your eyes in a 50 foot radius around you.
         With this ability, you can fight just as well with your eyes closed as with them open.
+        In addition, the range of your \glossterm{blindsense} ability increases by 50 feet.
 
         \cf{Rgr}[6]{Greater Farsight}
-        You increase the range of your \glossterm{darkvision} by 500 feet, your \glossterm{blindsense} by 200 feet, and your \glossterm{blindsight} by 50 feet.
-        In addition, the penalty reduction of \glossterm{range increment} penalties from your \textit{farsight} ability increases to 5.
+        You increase the range of your your \glossterm{blindsense} by 100 feet, and your \glossterm{blindsight} by 50 feet.
+        In addition, the penalty reduction of \glossterm{range increment} penalties from your \textit{farsight} ability increases to 4.
 
         % This may not actually be very strong? Also inconsistent with other ``truesight'' abilities
         \cf{Rgr}[7]{Truesight}[Magical]
