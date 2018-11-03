@@ -63,7 +63,7 @@ def skill_labels(attribute):
     return flex_row({'class': 'skill-labels'}, [
         div({'class': 'skill-name'}),
         div({'class': 'skill-label'}, 'Points'),
-        div({'class': 'skill-label'}, 'Ranks'),
+        div({'class': 'skill-label'}, 'Mod'),
         div({'class': 'skill-label skill-attribute'}, attribute),
         div({'class': 'skill-label misc'}, 'Misc'),
     ])
@@ -113,11 +113,11 @@ def calc_attribute(attribute_name):
         div({'class': 'calc-attribute-header'}, attribute_name.capitalize()),
         equation(
             [
-                underlabel('Base*', number_input({
+                underlabel('(Base)', number_input({
                     'name': attribute_name + '_starting',
                 })),
                 plus(),
-                underlabel('Level', number_input({
+                underlabel('Lvl mod', number_input({
                     'disabled': True,
                     'name': attribute_name + '_scaling_display',
                     'value': '@{' + attribute_name + '_scaling}',
@@ -166,7 +166,7 @@ def calc_hit_points():
                     {'class': 'eq-level'},
                 ),
                 flex_col({'class': 'equation-text'}, 'times'),
-                underlabel('5+Con*', number_input({
+                underlabel('5+(Con)', number_input({
                     'disabled': True,
                     'name': 'hit_points_constitution',
                     'value': '(@{constitution_starting} + 5)',
@@ -289,7 +289,7 @@ def calc_encumbrance():
             [
                 underlabel('Armor', number_input({'name': 'body_armor_encumbrance'})),
                 minus(),
-                underlabel('Con*', number_input({
+                underlabel('(Con)', number_input({
                     'disabled': True,
                     'name': 'encumbrance_constitution',
                     'value': '(@{constitution_starting})',
@@ -321,9 +321,11 @@ def calc_skill_points():
         div({'class': 'calc-header'}, 'Skill Points'),
         equation(
             [
-                underlabel('Class', number_input({'name': 'skill_points_class'})),
+                underlabel('Base', number_input({
+                    'disabled': True, 'name': 'skill_points_base', 'value': 8,
+                })),
                 plus(),
-                underlabel('Int*', number_input({
+                underlabel('(Int)', number_input({
                     'disabled': True,
                     'name': 'skill_points_intelligence',
                     'value': '(@{intelligence_starting} * 2)',
@@ -353,7 +355,7 @@ def calc_reserve_ap():
                     'value': 3,
                 })),
                 plus(),
-                underlabel('Wil*', number_input({
+                underlabel('(Wil)', number_input({
                     'disabled': True,
                     'name': 'action_points_willpower',
                     'value': '(@{willpower_starting})',
@@ -383,7 +385,7 @@ def calc_insight_points():
                     'value': 1,
                 })),
                 plus(),
-                underlabel('Int*', number_input({
+                underlabel('(Int)', number_input({
                     'disabled': True,
                     'name': 'insight_points_intelligence',
                     'value': '(@{intelligence_starting})',
@@ -468,7 +470,7 @@ def calc_fort():
                     'value': '@{fortitude_scaling}',
                 })),
                 plus(),
-                underlabel('Con*', number_input({
+                underlabel('(Con)', number_input({
                     'disabled': True,
                     'name': 'fortitude_starting_attribute',
                     'value': '(@{constitution_starting})',
@@ -500,7 +502,7 @@ def calc_ref():
                     'value': '@{reflex_scaling}',
                 })),
                 plus(),
-                underlabel('Dex*', number_input({
+                underlabel('(Dex)', number_input({
                     'disabled': True,
                     'name': 'reflex_starting_attribute',
                     'value': '(@{dexterity_starting})',
@@ -532,7 +534,7 @@ def calc_mental():
                     'value': '@{mental_scaling}',
                 })),
                 plus(),
-                underlabel('Wil*', number_input({
+                underlabel('(Wil)', number_input({
                     'disabled': True,
                     'name': 'mental_starting_attribute',
                     'value': '(@{willpower_starting})',
