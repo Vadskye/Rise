@@ -97,14 +97,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Barbarian Progression}
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Battleforged Resilience} & \tb{Battlerager}  & \tb{Primal Warrior} \\\bottomrule
-               1 & Fury of the storm         & Rage                    & Primal exertions
-            \\ 2 & Battle-scarred            & Determined rage         & Athletic prowess
-            \\ 3 & Battleforged fortitude    & Focused rage            & Primal exertion
-            \\ 4 & Soulscarred               & Deathless rage           & Athletic prowess
-            \\ 5 & Greater fury of the storm & Deathless rage          & Primal exertion
-            \\ 6 & Agile defense             & Greater fearsome rage   & Primal prowess
-            \\ 7 & Greater battle-scarred    & Greater deathless rage  & Primal exertion
-            \\ 8 & Battleforged supremacy    & Greater determined rage & Primal dominance
+               1 & Fury of the storm         & Rage                    & Primal smash
+            \\ 2 & Battle-scarred            & Determined rage         & Primal exertions
+            \\ 3 & Battleforged fortitude    & Focused rage            & Athletic prowess
+            \\ 4 & Soulscarred               & Deathless rage           & Primal exertion
+            \\ 5 & Greater fury of the storm & Deathless rage          & Greater primal smash
+            \\ 6 & Agile defense             & Greater fearsome rage   & Primal exertion
+            \\ 7 & Greater battle-scarred    & Greater deathless rage  & Primal prowess
+            \\ 8 & Battleforged supremacy    & Greater determined rage & Primal dominance, primal exertion
         \end{dtabularx}
     \end{dtable}
 
@@ -667,8 +667,8 @@ This choice determines a great deal about your character's abilities.
             If a living enemy in the area takes \glossterm{vital damage}, it immediately dies.
 
         \subsubsection{Destruction}
-            \parhead{Gift} When you deal damage to a target, you first negate an amount of \glossterm{damage reduction} equal to your \glossterm{magical power}.
-            In addition, you negate an amount of \glossterm{hardness} equal to half your \glossterm{magical power}.
+            \parhead{Gift} When you deal damage to a target, you first negate an amount of \glossterm{damage reduction} equal to your \glossterm{power}.
+            In addition, you negate an amount of \glossterm{hardness} equal to half your \glossterm{power}.
             Hardness and damage reduction negated in this way does not apply against your attack or against any other attacks during the current phase.
             This effect lasts until the end of the round.
             % TODO: upgrade timing is a little weird
@@ -685,13 +685,13 @@ This choice determines a great deal about your character's abilities.
             \begin{apability}{Lay Waste}
                 You make an attack vs. Fortitude against all unattended objects in a \arealarge radius.
                 You may freely exclude any number of 5-ft\. cubes from the area, as long as the resulting area is still contiguous.
-                \hit For each target, if its \glossterm{hardness} is lower than your \glossterm{magical power}, it crumbles into a fine power and is irreparably \glossterm{broken}.
+                \hit For each target, if its \glossterm{hardness} is lower than your \glossterm{power}, it crumbles into a fine power and is irreparably \glossterm{broken}.
             \end{apability}
             \parhead{Mastery} You gain a \plus1d bonus to damage with \glossterm{strikes}.
 
         \subsubsection{Earth}
             \parhead{Gift} You gain a \plus2 bonus to Fortitude defense.
-            \parhead{Aspect} You gain \glossterm{damage reduction} equal to your \glossterm{magical power} against damage from \glossterm{physical attacks}.
+            \parhead{Aspect} You gain \glossterm{damage reduction} equal to your \glossterm{power} against damage from \glossterm{physical attacks}.
             \parhead{Essence} You can use the \textit{speak with earth} ability as a standard action.
             \begin{attuneability}{Speak with Earth}[\glossterm{Attune} (self)]
                 You can speak with and command earth within a \areahuge zone from your location.
@@ -761,7 +761,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Aspect} Your extensive knowledge of all methods of attack and defense grants you a \plus1 bonus to all defenses.
             \parhead{Essence} You can use the \textit{share knowledge} ability as a standard action.
             \begin{apability}{Share Knowledge}
-                You make a Knowledge check of any kind with a bonus equal to your \glossterm{magical power}.
+                You make a Knowledge check of any kind with a bonus equal to your \glossterm{power}.
                 You and all willing creatures within a \arealarge radius learn the results of your check.
                 Creatures believe the information gained in this way to be true as if they it had seen it with their own eyes.
 
@@ -787,7 +787,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Mastery} When you roll less than a 5 on an \glossterm{attack roll}, it is treated as if you had rolled a 5.
 
         \subsubsection{Life}
-            \parhead{Gift} You gain additional hit points equal to your \glossterm{magical power}.
+            \parhead{Gift} You gain additional hit points equal to your \glossterm{power}.
                 In addition, you gain a \plus1 bonus to \glossterm{power} with all abilities you use that heal hit points.
             % TODO: wording?
             \parhead{Aspect} The bonus to \glossterm{power} from your Life domain gift increases to 2.
@@ -798,13 +798,13 @@ This choice determines a great deal about your character's abilities.
                 When the target is returned to life in this way, you expend all of your remaining \glossterm{action points}.
             \end{apability}
             % Need special text to clarify that it is affected by the Aspect?
-            \parhead{Mastery} At the end of each \glossterm{action phase}, you heal hit points equal to your \glossterm{magical power}.
+            \parhead{Mastery} At the end of each \glossterm{action phase}, you heal hit points equal to your \glossterm{power}.
 
         \subsubsection{Magic}
             \parhead{Gift} You learn an additional \glossterm{spell} for a divine \glossterm{mystic sphere} you have access to.
             \parhead{Aspect} You gain access to an additional divine \glossterm{mystic sphere}.
-            \parhead{Essence} Whenever you cast a spell, you heal hit points equal to your \glossterm{magical power}.
-            \parhead{Mastery} Whenever you are affected by a \glossterm{magical} ability, you heal hit points equal to your \glossterm{magical power}.
+            \parhead{Essence} Whenever you cast a spell, you heal hit points equal to your \glossterm{power}.
+            \parhead{Mastery} Whenever you are affected by a \glossterm{magical} ability, you heal hit points equal to your \glossterm{power}.
             This healing applies even if the spell has an attack that fails to beat your defenses.
             It stacks with the healing from this domain's essence if you target yourself with a spell.
 
@@ -1021,7 +1021,7 @@ This choice determines a great deal about your character's abilities.
         In addition to your previous options, you can also choose from among the aspects below.
         {
             \subcf{A Thousand Faces}
-            You may use your \glossterm{magical power} in place of your Disguise skill when making Disguise checks to alter your own appearance.
+            You may use your \glossterm{power} in place of your Disguise skill when making Disguise checks to alter your own appearance.
             In addition, you can disguise yourself as a standard action by spending an \glossterm{action point}. 
             \subcf{Constrict}
             Your body transforms, improving your grappling prowess.
@@ -1074,7 +1074,7 @@ This choice determines a great deal about your character's abilities.
             However, you take a \minus2 penalty to Strength, which offsets the bonus you gain for increasing your size.
             This is a \glossterm{Sizing} effect.
             \subcf{Natural Renewal}
-            At the end of each \glossterm{action phase}, you heal hit points equal to your \glossterm{magical power}.
+            At the end of each \glossterm{action phase}, you heal hit points equal to your \glossterm{power}.
             \subcf{Solar Radiance}
             You continuously radiate bright light out to a 500 foot radius (and shadowy illumination for an additional 500 feet).
             The illumination is so bright that you become hard to look at.
@@ -1912,7 +1912,7 @@ This choice determines a great deal about your character's abilities.
         \begin{freeability}{Ki Strike}
             Make a melee \glossterm{strike}.
             % TODO: wording
-            Because this is a \glossterm{magical} ability, you use your \glossterm{magical power} in place of your \glossterm{mundane power} to determine your damage with the strike.
+            Because this is a \glossterm{magical} ability, you use your \glossterm{power} with magical abilities to determine your damage with the strike.
         \end{freeability}
 
         \cf{Mnk}[2]{Ki Manifestations}[Magical]
@@ -1948,7 +1948,7 @@ This choice determines a great deal about your character's abilities.
                 You can use this ability as a standard action.
                 When you do, make a \glossterm{strike}.
                 Your \glossterm{reach} is increased by 5 feet for the strike.
-                Because this is a \glossterm{magical} ability, you use your \glossterm{magical power} in place of your \glossterm{mundane power} to determine your damage with the strike.
+                Because this is a \glossterm{magical} ability, you use your \glossterm{power} with magical abilities to determine your damage with the strike.
 
                 \rankline
                 \rank{4} You gain a \plus1d bonus to damage with the strike.

@@ -307,19 +307,19 @@ It defines how attributes work and explains how to make physical attacks in comb
                     \item Your Mental defense (see \pcref{Defenses}).
                 \end{itemize}
 
-            \subsubsection{Increasing Attributes}
-                As your level increases, your attributes increase as well, as shown on \trefnp{Increasing Attributes with Level}.
+        \subsubsection{Increasing Attributes}
+            As your level increases, your attributes increase as well, as shown on \trefnp{Increasing Attributes with Level}.
 
-                \begin{dtable}
-                    \lcaption{Increasing Attributes with Level}
-                    \begin{dtabularx}{\columnwidth}{X X}
-                        \tb{Starting Attribute} & \tb{Bonus}   \\
-                        0 or lower              & 0            \\
-                        1                       & \plus1 per even level \\
-                        2                       & \plus1 per level after 1st \\
-                        3                       & \plus1 per level after 1st \\
-                    \end{dtabularx}
-                \end{dtable}
+            \begin{dtable}
+                \lcaption{Increasing Attributes with Level}
+                \begin{dtabularx}{\columnwidth}{X X}
+                    \tb{Starting Attribute} & \tb{Bonus}   \\
+                    0 or lower              & 0            \\
+                    1                       & \plus1 per even level \\
+                    2                       & \plus1 per level after 1st \\
+                    3                       & \plus1 per level after 1st \\
+                \end{dtabularx}
+            \end{dtable}
 
         \subsubsection{Determining Attributes}
             There are several options for how to determine attribute scores.
@@ -397,15 +397,12 @@ It defines how attributes work and explains how to make physical attacks in comb
         Some abilities also have effects that explicitly depend on the ability's power.
         Unless an ability specifies otherwise, its \glossterm{power} depends on whether it is \glossterm{magical} or \glossterm{mundane}.
 
-        \subsubsection{Magical Power}\label{Magical Power}
-            Your power with most \glossterm{magical} abilities is called your \glossterm{magical power}.
-            It is normally equal to the higher of your level and your Willpower.
-            % TODO: example
+        \parhead{Magical Abilities}
+        Your power with magical abilities is normally equal to the higher of your level and your Willpower.
 
-        \subsubsection{Mundane Power}\label{Mundane Power}
-            Your power with most \glossterm{mundane} abilities is called your \glossterm{mundane power}.
-            It is normally equal to the higher of your level and your Strength.
-            For example, \glossterm{strikes} use your \glossterm{mundane power} to determine how much damage they deal.
+        \parhead{Mundane Abilities}
+        Your power with mundane abilities is normally equal to the higher of your level and your Strength.
+        For example, \glossterm{strikes} use your \glossterm{power} with mundane abiliites to determine how much damage they deal.
 
     \subsection{Damage}\label{Damage}
         Some attacks deal damage when they hit.
@@ -473,7 +470,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         \end{dtable}
 
         \subsubsection{Strike Damage}\label{Strike Damage}
-            The damage you deal with a single \glossterm{strike} from a weapon is equal to \glossterm{standard damage} based on your \glossterm{mundane power}.
+            The damage you deal with a single \glossterm{strike} from a weapon is equal to \glossterm{standard damage} based on your \glossterm{power} with \glossterm{mundane} abilities.
             For example, if you have a Strength of 4, your base damage on a strike would be equal to 2d6.
             When you make a strike with a weapon, you also apply that weapon's damage modifier, if any (see \tref{Weapons}).
 
@@ -552,10 +549,6 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \subsubsection{Subjective Threat Modifiers}
             In addition to your base \glossterm{threat}, some actions and abilities modify the threat that particular creatures perceive you have.
-            The most common threat modifier comes from dealing damage.
-            When you deal damage, you gain a \plus2 bonus to threat until the end of the next round against all creatures that know you dealt that damage.
-
-            Some abilities can also increase or decrease your threat against particular creatures.
             For example, the \textit{Conceal Threat} ability from the Bluff skill allows you to lower your apparent threat to creatures that fail to see through the deception (see \pcref{Conceal Threat}).
 
         \subsubsection{Consistent Targeting}
@@ -587,6 +580,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             \item Rogue: Combat tricks
             \item Warlock: Augments, pact augments
         \end{itemize}
+
 \section{Circumstances, Bonuses, and Penalties}
 
     Many effects can grant bonuses or penalties to actions you take.
@@ -1421,7 +1415,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         All strikes are \glossterm{mundane} abilities.
         Your \glossterm{accuracy} with a strike is equal to your normal accuracy (see \pcref{Accuracy}).
-        Your \glossterm{damage} with a strike is determined by your \glossterm{mundane power} and the weapon you hit with (see \pcref{Strike Damage}).
+        Your \glossterm{damage} with a strike is determined by your \glossterm{power} and the weapon you hit with (see \pcref{Strike Damage}).
 
         \parhead{Two-Weapon Strikes}\label{Two-Weapon Strikes}
         All strike abilities require a \glossterm{standard action} and allow you to attack with either one or two weapons.
