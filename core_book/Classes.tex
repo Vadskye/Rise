@@ -969,13 +969,13 @@ This choice determines a great deal about your character's abilities.
         Choose a single wild aspect from the list below.
         You can also spend \glossterm{insight points} to learn one additional \textit{wild aspect} per \glossterm{insight point}.
 
-        As a \glossterm{minor action}, you can gain the effects of one wild aspect that you know.
+        As a \glossterm{standard action}, you can gain the effects of one wild aspect that you know.
         That effect lasts until you activate a different wild aspect you know.
 
         The abilities in the list below describe the effects of the aspect.
         Your appearance also changes to match the aspect's effects, but the nature of this change is not described.
         Different druids change in different ways.
-        For example, one druid might gain unusually large eyes when embodying the low-light vision aspect, while another might change their irises into slits, like a cat, when embodying the same aspect.
+        For example, one druid might grow brown fur when using the Form of the Bear, while another might instead change their face to become broader and more bear-shaped when embodying the same aspect.
         You choose how your appearance changes when you gain a wild aspect.
         This change cannot be used to gain an additional substantive benefit beyond the effects given in the description of the aspect.
 
@@ -983,34 +983,139 @@ This choice determines a great deal about your character's abilities.
         See \pcref{Natural Weapons}, for details about natural weapons.
 
         {
-            \subcf{Animal Affinity}
-            You gain a \plus2 bonus to Creature Handling and Ride checks.
-            \subcf{Armaments of the Bear}
-            You gain a \plus2 bonus to Fortitude.
-            In addition, your mouth and hands transform, granting you bite and claw \glossterm{natural weapons}.
-            The bite deals \plus0d damage for a Medium creature, and the claws deal \minus1d damage.
-            % TODO: name
-            \subcf{Fish Swim}
-            You gain a \glossterm{swim speed} equal to your \glossterm{base speed}.
-            \subcf{Gore}
-            Your head transforms, granting you a gore \glossterm{natural weapon}.
-            The weapon deals \plus0d damage for a Medium druid, and has the Forceful weapon tag (see \pcref{Weapon Tags}).
-            \subcf{Monkey Climb}
-            You gain a \glossterm{climb speed} equal to your \glossterm{base speed}.
-            \subcf{Senses}
-            You gain low-light vision.
-            You treat sources of light as if they had double their normal illumination range.
-            If you already have low-light vision, you double its benefit, allowing you to treat sources of light as if they had four times their normal illumination range.
-            In addition, you gain \glossterm{darkvision} out to 50 feet, allowing you to see in complete darkness.
-            If you already have darkvision, you increase its range by 50 feet.
-            \subcf{Slither}
-            You gain a \glossterm{climb speed} equal to half your \glossterm{base speed}.
-            You do not need to use your hands to climb in this way.
-            In addition, you gain a bite \glossterm{natural weapon} that deals \plus0d damage for a Medium druid.
-            \subcf{Woodland Stride}
-            You may move through any sort of undergrowth (such as natural thorns, briars, overgrown areas, and similar terrain) at your normal speed and without taking damage or suffering any other impairment.
-            The plants bend of their own volition to allow you to pass.
-            However, plants magically manipulated to impede motion still affect your movement.
+            \begin{freeability}{Form of the Bear}
+                You gain a \plus1 bonus to Fortitude defense.
+                In addition, you mouth and hands transform, granting you bite and claw \glossterm{natural weapons}.
+                The bite deals \plus0d damage, and the claws deal \minus1d damage.
+
+                \rankline
+                \rank{4} The Fortitude bonus increases to \plus2.
+                \rank{6} You gain a \plus1d bonus to damage with the natural weapons.
+                \rank{8} The Fortitude bonus increases to \plus4.
+            \end{freeability}
+
+            \begin{freeability}{Form of the Bull}
+                You gain a \plus1 bonus to \glossterm{accuracy} with the \textit{shove} ability (see \pcref{Shove}).
+                In addition, your head transforms, granting you a gore \glossterm{natural weapon}.
+                The weapon deals \plus0d damage, and has the Forceful weapon tag (see \pcref{Weapon Tags}).
+
+                \rankline
+                \rank{4} The accuracy bonus increases to \plus2.
+                \rank{6} You gain a \plus1d bonus to damage with the natural weapon.
+                \rank{8} The accuracy bonus increases to \plus4.
+            \end{freeability}
+
+            \begin{freeability}{Form of the Constrictor}
+                You gain a \plus1 bonus to \glossterm{accuracy} with the Grapple ability (see \pcref{Grapple}).
+                In addition, you gain a constrict \glossterm{natural weapon}.
+                This weapon deals \plus1d damage, and it has the Grappling weapon tag (see \pcref{Weapon Tags}).
+                It can only be used against a foe you are grappling with.
+                \rankline
+                \rank{4} The accuracy bonus increases to \plus2.
+                \rank{6} You gain a \plus1d bonus to damage with the natural weapon.
+                \rank{8} The accuracy bonus increases to \plus4.
+            \end{freeability}
+
+            \begin{freeability}{Form of the Fish}
+                You gain a \glossterm{swim speed} equal to your \glossterm{base speed}.
+                In addition, you gain a bite \glossterm{natural weapon} that deals \plus0d damage.
+
+                \rankline
+                \rank{4} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
+                \rank{6} You suffer no penalties for acting underwater.
+                \rank{8} You are immune to \glossterm{magical} effects that restrict your mobility.
+                In addition, you gain a \plus5 bonus to defenses against the \textit{grapple} ability (see \pcref{Grapple}).
+            \end{freeability}
+
+            \begin{freeability}{Form of the Hawk}
+                You gain \glossterm{low-light vision}.
+                If you already have low-light vision, you double its benefit, allowing you to treat sources of light as if they had four times their normal illumination range.
+                In addition, your feet transform, granting you a talon \glossterm{natural weapon}.
+                The weapon deals \minus1d damage.
+
+                \rankline
+                \rank{4} You grow wings, granting your a glide speed equal to your \glossterm{base speed} (see \pcref{Gliding}).
+                \rank{6} You gain a \plus1d bonus to damage with the natural weapon.
+                \rank{8} The glide speed is replaced with a \glossterm{fly speed} equal to your \glossterm{base speed} (see \pcref{Flying}).
+            \end{freeability}
+
+            \begin{freeability}{Form of the Hound}
+                You gain the \glossterm{scent} ability.
+                In addition, you gain a bite \glossterm{natural weapon} that deals \plus0d damage.
+
+                \rankline
+                \rank{4} You gain the ability to move on all four limbs.
+                When doing so, you gain a \plus20 foot bonus to your land speed, up to a maximum of double your original speed.
+                When not using your hands to move, your ability to use your hands is unchanged.
+                Descending to four legs and rising up to stand on two legs again does not take an action.
+                \rank{6} You gain a \plus1d bonus to damage with the natural weapon.
+                \rank{8} You gain an additional \plus10 bonus to scent-based Awareness checks (see \pcref{Awareness}).
+            \end{freeability}
+
+            % Seems boring? What abilities would make sense?
+            \begin{freeability}{Form of the Monkey}
+                You gain a \glossterm{climb speed} equal to your \glossterm{base speed}.
+                In addition, you gain a bite \glossterm{natural weapon} that deals \plus0d damage.
+
+                \rankline
+                \rank{4} You gain a \plus1 bonus to your Reflex defense.
+                \rank{6} You gain a \plus1d bonus to damage with the natural weapon.
+                \rank{8} The defense bonus increases to \plus2.
+            \end{freeability}
+
+            \begin{freeability}{Form of the Mouse}
+                You gain a \plus2 bonus to the Escape Artist and Stealth skills.
+                In addition, you gain a bite \glossterm{natural weapon} that deals \plus0d damage.
+                
+                \rankline
+                \rank{4} When you use this wild aspect, you can choose to shrink by one \glossterm{size category}.
+                \rank{6} The skill bonuses increases to \plus3.
+                \rank{8} The skill bonuses increases to \plus4. In addition, when you use this wild aspect, you can choose to shrink by up to two \glossterm{size categories} instead of only one.
+            \end{freeability}
+
+            \begin{freeability}{Form of the Viper}
+                You gain a \glossterm{climb speed} equal to half your \glossterm{base speed}.
+                You do not need to use your hands to climb in this way.
+                In addition, you gain a bite \glossterm{natural weapon} that deals \plus0d damage.
+
+                \rankline
+                \rank{4} When a creatures takes damage from your bite \glossterm{natural weapon}, it is poisoned.
+                At the end of each \glossterm{action phase} in subsequent rounds, you make an attack vs. Fortitude against the target.
+                If you hit, the target is \glossterm{sickened} until it removes the poison.
+                The poison is removed if you miss the target on this attack three times.
+                \rank{6} You gain a \plus1d bonus to damage with the natural weapon.
+                \rank{8} The poison makes the target \glossterm{nauseated} instead of \glossterm{sickened}.
+            \end{freeability}
+
+            \begin{freeability}{Form of the Wolf}
+                You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks} against \glossterm{overwhelmed} creatures.
+                In addition, you gain a bite \glossterm{natural weapon} that deals \plus0d damage.
+
+                \rankline
+                \rank{4} You gain the ability to move on all four limbs.
+                When doing so, you gain a \plus20 foot bonus to your land speed, up to a maximum of double your original speed.
+                When not using your hands to move, your ability to use your hands is unchanged.
+                Descending to four legs and rising up to stand on two legs again does not take an action.
+                \rank{6} You gain a \plus1d bonus to damage with the natural weapon.
+                \rank{8} You increase your \glossterm{overwhelm value} by 1.
+            \end{freeability}
+
+            \begin{freeability}{Myriad Form}
+                You can use your \glossterm{power} in place of your Disguise skill when making Disguise checks to alter your own appearance.
+                \rankline
+                \rank{4} When you use this wild aspect, you can choose to grow or shrink by one \glossterm{size category}.
+                \rank{6} You can use the \textit{Disguise Creature} ability to disguise yourself as a \glossterm{standard action} (see \pcref{Disguise Creature}).
+                \rank{8} When you use this wild aspect, you can choose to grow or shrink by up to two \glossterm{size categories} instead of only one.
+            \end{freeability}
+
+            \begin{freeability}{Photosynthesis}
+                As long as you are in natural sunlight, you gain a \plus10 foot bonus to your \glossterm{base speed}.
+                \rankline
+                \rank{4} As long as you are in natural sunlight, you heal hit points equal to half your \glossterm{power} at the end of each \glossterm{action phase}.
+                In addition, being in sunlight for 8 hours gives you the same benefit as consuming a full day's worth of food and water, allowing you to survive without eating or drinking.
+                \rank{6} The healing increases to be equal to your \glossterm{power}.
+                \rank{8} The speed bonus increases to \plus30 feet.
+            \end{freeability}
         }
 
         \cf{Drd}[3]{Natural Lore}
@@ -1021,36 +1126,6 @@ This choice determines a great deal about your character's abilities.
         %TODO: wording
         In addition, you gain the ability to maintain the effects of up to two \textit{wild aspects} simultaneously.
         When you activate a new \textit{wild aspect}, you can choose which of your wild aspects remain active. 
-        In addition to your previous options, you can also choose from among the aspects below.
-        {
-            \subcf{A Thousand Faces}
-            You may use your \glossterm{power} in place of your Disguise skill when making Disguise checks to alter your own appearance.
-            In addition, you can disguise yourself as a standard action by spending an \glossterm{action point}. 
-            \subcf{Constrict}
-            Your body transforms, improving your grappling prowess.
-            You gain a \plus2 bonus to accuracy with the \textit{grapple} ability and all grapple actions (see \pcref{Grapple}, and \pcref{Grapple Actions}).
-            In addition, you gain a constrict \glossterm{natural weapon}.
-            This weapon deals \plus1d damage for a Medium druid, and it has the Grappling weapon tag (see \pcref{Weapon Tags}).
-            However, it can only be used against a foe you are grappling with.
-            \subcf{Flight of the Hawk}
-            You grow wings, granting your a glide speed equal to your \glossterm{base speed}.
-            See \pcref{Gliding}, for more details.
-            In addition, your feet transform, granting you a talon \glossterm{natural weapon}.
-            The weapon deals \minus1d damage for a Medium creature.
-            \subcf{Lope}
-            You gain the ability to move on all four limbs.
-            When doing so, you gain a \plus30 foot bonus to your land speed, up to a maximum of double your original speed.
-            When not using your hands to move, your ability to use your hands is unchanged.
-            Descending to four legs and rising up to stand on two legs again does not take an action.
-            \subcf{Scent}
-            You gain the \glossterm{scent} ability.
-            \subcf{Shrink}
-            You shrink by one size category (see \pcref{Size in Combat}).
-            This is a \glossterm{Sizing} effect.
-            % \subcf{Spikes}
-            % When a creature adjacent to the druid makes a physical attack against you, the attacking creature takes 1d4 piercing damage \plus1d per two nature power.
-            % A creature can only be dealt damage by this effect once per round.
-        }
 
         \cf{Drd}[5]{Nature's Champion}
         You gain a \plus2 bonus to the Creature Handling, Heal, Knowledge (geography), Knowledge (nature), Ride, and Survival skills.
@@ -1059,50 +1134,10 @@ This choice determines a great deal about your character's abilities.
         You learn an additional \textit{wild aspect}.
         In addition, you gain the ability to maintain the effects of up to three \textit{wild aspects} simultaneously.
         When you activate a new \textit{wild aspect}, you can choose which of your wild aspects remain active. 
-        In addition to your previous options, you can also choose from among the aspects below.
-        {
-            % \subcf{Elemental Retribution}
-            % When a creature within \rngmed range of you attacks you, the attacking creature takes 1d6 damage per two nature power of either cold, electricity, or fire damage.
-            % You may choose the damage type independently for each attacking creature.
-            % A creature can only be dealt damage by this effect once per round.
-            \subcf{Beetle's Carapace} You gain a \plus1 bonus to Armor defense.
-            \subcf{Fluid Motion} You are immune to effects that restrict your mobility, and you suffer no penalties for acting underwater.
-            In addition, you gain a \plus10 bonus to defenses against the \textit{grapple} ability (see \pcref{Grapple}).
-            \subcf{Grow}
-            You increase in size by one size category (see \pcref{Size in Combat}).
-            However, you take a \minus2 penalty to Strength, which offsets the bonus you gain for increasing your size.
-            This is a \glossterm{Sizing} effect.
-            \subcf{Natural Renewal}
-            At the end of each \glossterm{action phase}, you heal hit points equal to your \glossterm{power}.
-            \subcf{Solar Radiance}
-            You continuously radiate bright light out to a 500 foot radius (and shadowy illumination for an additional 500 feet).
-            The illumination is so bright that you become hard to look at.
-            Any creature making a \glossterm{strike} against you from within the radius of bright light becomes \dazzled as a \glossterm{condition} after the attack.
-            \subcf{Wolfpack}
-            You increase your \glossterm{overwhelm value} by 1.
-            \subcf{Venom}
-            You gains a bite \glossterm{natural weapon} that deals \plus0d damage for a Medium druid.
-            You can use the \textit{venom} ability as a \glossterm{standard action}, 
-            \begin{freeability}{Venom}
-                Make a \glossterm{strike} with a \glossterm{natural weapon}.
-                If the target takes damage from the strike, it is poisoned as a \glossterm{condition}.
-                At the end of each \glossterm{action phase} in subsequent rounds, you make an attack vs. Fortitude against the target.
-                The effects of the poison are described below.
-                \begin{itemize}
-                    \item First success: the target is \sickened.
-                    \item Second success: the target is \nauseated.
-                    \item Third success: the target is \paralyzed.
-                    \item Third failure: the the condition is removed, causing any lingering effects from the poison to end.
-                \end{itemize}
-            \end{freeability}
-            % TODO poison stacking rules
-            \subcf{Wings}
-            You grow wings, granting you a \glossterm{fly speed} equal to your \glossterm{base speed} (see \pcref{Flying}).
-        }
 
         \cf{Drd}[7]{Fluid Aspect}
         % TODO: wording; this just replaces the action time, not gives you an extra one active
-        Once per round, you can activate a \textit{wild aspect} as a \glossterm{free action} instead of as a \glossterm{minor action}.
+        You can activate a \textit{wild aspect} as a \glossterm{minor action} instead of as a \glossterm{standard action}.
 
         \cf{Drd}[8]{Avatar of Nature}[Magical]
         If you die, except if by old age, you may choose to have your body and soul become an instrument of nature's will.
