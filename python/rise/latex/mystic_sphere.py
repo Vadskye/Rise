@@ -7,7 +7,7 @@ logger = getLogger(__name__)
 class MysticSphere(object):
     def __init__(
             self,
-            cantrip=None,
+            cantrips=None,
             category=None,
             extra_table=None,
             lists=None,
@@ -18,7 +18,7 @@ class MysticSphere(object):
             notes=None,
             short_description=None,
     ):
-        self.cantrip = cantrip
+        self.cantrips = cantrips
         self.category = category
         self.extra_table = extra_table
         self.name = name
@@ -29,13 +29,16 @@ class MysticSphere(object):
         self.short_description = short_description or 'TODO'
         self.spells = spells or []
 
-        for arg in ['cantrip', 'lists', 'name', 'schools']:
+        for arg in ['cantrips', 'lists', 'name', 'schools']:
             if getattr(self, arg) is None:
                 logger.warning(f"Warning: {self} is missing required property '{arg}'")
 
         for school in self.schools:
             if school not in rise_data.schools:
                 logger.warning(f"{self} has unrecognized school '{school}'")
+
+    def cantrip_latex(self):
+        return '\n'.join([str(c) for c in self.cantrips])
 
     def to_latex(self):
         # Sort by level as primary, name as secondary
@@ -63,9 +66,9 @@ class MysticSphere(object):
 
                     \\parhead<Mystic Sphere Lists> {', '.join(self.lists)}
 
-                    \\subsubsection<Cantrip>
+                    \\subsubsection<Cantrips>
 
-                    {self.cantrip}
+                    {self.cantrip_latex()}
                 \\end<spellsection>
             """,
             f"""
