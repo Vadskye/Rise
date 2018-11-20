@@ -392,7 +392,7 @@ This spell functions like the \textit{raging river} spell, except that the spell
 \lowercase{\hypertarget{spell:Dampen}{}}\label{spell:Dampen}
 \begin{attuneability}[\nth{1}]{\hypertarget{spell:Dampen}{Dampen}}[\glossterm{Attune} (ritual)]
 Choose up to five willing ritual participants.
-Each target gains damage reduction against fire damage equal to your \glossterm{power}.
+Each target gains a \glossterm{magic bonus} equal to your \glossterm{power} to damage reduction against fire damage.
 
 You can cast this spell as a \glossterm{minor action}.
 \end{attuneability}
@@ -667,7 +667,7 @@ This ritual takes one week to perform, and requires 98 action points from its pa
 
 \begin{freeability}{Kinetic Shield}[\glossterm{Sustain} (standard)]
 Choose a willing creature in \rngclose range.
-The target gains \glossterm{damage reduction} equal to your \glossterm{power} against \glossterm{physical} damage.
+The target gains a \glossterm{magic bonus} equal to your \glossterm{power} to \glossterm{damage reduction} against \glossterm{physical} damage.
 \end{freeability}
 
 \end{spellsection}
@@ -679,7 +679,7 @@ The target gains \glossterm{damage reduction} equal to your \glossterm{power} ag
 \lowercase{\hypertarget{spell:Ablative Shield}{}}\label{spell:Ablative Shield}
 \begin{attuneability}[\nth{1}]{\hypertarget{spell:Ablative Shield}{Ablative Shield}}[\glossterm{Attune} (target), \glossterm{Shielding}]
 Choose a willing creature in \rngclose range.
-The target gains \glossterm{damage reduction} equal to your \glossterm{power} against all damage except for \glossterm{energy damage}.
+The target gains a \glossterm{magic bonus} equal to your \glossterm{power} to \glossterm{damage reduction} against all damage except for \glossterm{energy damage}.
 
 You can cast this spell as a \glossterm{minor action}.
 \end{attuneability}
@@ -690,7 +690,7 @@ You can cast this spell as a \glossterm{minor action}.
 \lowercase{\hypertarget{spell:Resist Energy}{}}\label{spell:Resist Energy}
 \begin{attuneability}[\nth{1}]{\hypertarget{spell:Resist Energy}{Resist Energy}}[\glossterm{Attune} (target), \glossterm{Shielding}]
 Choose a willing creature in \rngclose range.
-The target gains \glossterm{damage reduction} equal to your \glossterm{power} against \glossterm{energy damage}.
+The target gains a \glossterm{magic bonus} equal to your \glossterm{power} to \glossterm{damage reduction} against \glossterm{energy damage}.
 
 You can cast this spell as a \glossterm{minor action}.
 \end{attuneability}
@@ -751,7 +751,7 @@ This spell is from both the Abjuration and Vivimancy schools and gains the \glos
 
 \lowercase{\hypertarget{spell:Empowered Shield}{}}\label{spell:Empowered Shield}
 \begin{attuneability}[\nth{4}]{\hypertarget{spell:Empowered Shield}{Empowered Shield}}[\glossterm{Attune} (target), \glossterm{Shielding}]
-This spell functions like the \spell{ablative shield} spell, except that the damage reduction increases by an amount equal to your \glossterm{power}.
+This spell functions like the \spell{ablative shield} spell, except that the bonus is equal to twice your \glossterm{power}.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -1123,16 +1123,6 @@ Make an attack vs. Mental against a creature within \rngmed range.
 \subsubsection{Spells}
 
 
-\lowercase{\hypertarget{spell:Complete Mantle of Faith}{}}\label{spell:Complete Mantle of Faith}
-\begin{attuneability}[\nth{1}]{\hypertarget{spell:Complete Mantle of Faith}{Complete Mantle of Faith}}[\glossterm{Attune} (self)]
-You gain \glossterm{damage reduction} equal to your \glossterm{power} against all damage.
-
-You can cast this spell as a \glossterm{minor action}.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Judge Unworthy}{}}\label{spell:Judge Unworthy}
 \begin{apability}[\nth{1}]{\hypertarget{spell:Judge Unworthy}{Judge Unworthy}}
 Make an attack vs. Mental against a creature within \rngmed range.
@@ -1144,7 +1134,17 @@ Make an attack vs. Mental against a creature within \rngmed range.
 
 \lowercase{\hypertarget{spell:Mantle of Faith}{}}\label{spell:Mantle of Faith}
 \begin{attuneability}[\nth{1}]{\hypertarget{spell:Mantle of Faith}{Mantle of Faith}}[\glossterm{Attune} (self)]
-You gain \glossterm{damage reduction} equal to your \glossterm{power} against \glossterm{physical} damage.
+You gain a \glossterm{magic bonus} to equal to your \glossterm{power} to \glossterm{damage reduction} against \glossterm{physical} damage.
+
+You can cast this spell as a \glossterm{minor action}.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Complete Mantle of Faith}{}}\label{spell:Complete Mantle of Faith}
+\begin{attuneability}[\nth{2}]{\hypertarget{spell:Complete Mantle of Faith}{Complete Mantle of Faith}}[\glossterm{Attune} (self)]
+You gain a \glossterm{magic bonus} equal to your \glossterm{power} to \glossterm{damage reduction} against all damage.
 
 You can cast this spell as a \glossterm{minor action}.
 \end{attuneability}
@@ -1173,17 +1173,9 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
-\lowercase{\hypertarget{spell:Greater Complete Mantle Of Faith}{}}\label{spell:Greater Complete Mantle Of Faith}
-\begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Complete Mantle Of Faith}{Greater Complete Mantle Of Faith}}[\glossterm{Attune} (self)]
-This spell functions like the \spell{complete mantle of faith} spell, except that the damage reduction increases to be equal to twice your \glossterm{power}.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Greater Mantle Of Faith}{}}\label{spell:Greater Mantle Of Faith}
 \begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Mantle Of Faith}{Greater Mantle Of Faith}}[\glossterm{Attune} (self)]
-This spell functions like the \spell{mantle of faith} spell, except that the damage reduction increases to be equal to twice your \glossterm{power}.
+This spell functions like the \spell{mantle of faith} spell, except that the bonus is equal to twice your \glossterm{power}.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -1192,6 +1184,14 @@ This spell functions like the \spell{mantle of faith} spell, except that the dam
 \lowercase{\hypertarget{spell:Divine Might, Greater}{}}\label{spell:Divine Might, Greater}
 \begin{attuneability}[\nth{5}]{\hypertarget{spell:Divine Might, Greater}{Divine Might, Greater}}[\glossterm{Attune} (self), \glossterm{Shaping}, \glossterm{Sizing}]
 This spell functions like the \textit{divine might} spell, except that you gain a \plus2 bonus to Strength.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Greater Complete Mantle Of Faith}{}}\label{spell:Greater Complete Mantle Of Faith}
+\begin{attuneability}[\nth{5}]{\hypertarget{spell:Greater Complete Mantle Of Faith}{Greater Complete Mantle Of Faith}}[\glossterm{Attune} (self)]
+This spell functions like the \spell{complete mantle of faith} spell, except that the bonus is equal to twice your \glossterm{power}.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -2671,7 +2671,7 @@ You can cast this spell as a \glossterm{minor action}.
 \lowercase{\hypertarget{spell:Barkskin}{}}\label{spell:Barkskin}
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Barkskin}{Barkskin}}[\glossterm{Attune} (target)]
 Choose a willing creature within \rngclose range.
-The target gains \glossterm{damage reduction} equal to your \glossterm{power} against damage dealt by \glossterm{physical attacks}.
+The target gains a \glossterm{magic bonus} equal to your \glossterm{power} to \glossterm{damage reduction} against damage dealt by \glossterm{physical attacks}.
 In addition, it is \glossterm{vulnerable} to fire damage.
 
 You can cast this spell as a \glossterm{minor action}.
@@ -2710,7 +2710,7 @@ You can cast this spell as a \glossterm{minor action}.
 \lowercase{\hypertarget{spell:Stoneskin}{}}\label{spell:Stoneskin}
 \begin{attuneability}[\nth{3}]{\hypertarget{spell:Stoneskin}{Stoneskin}}[\glossterm{Attune} (target)]
 Choose a willing creature within \rngclose range.
-The target gains \glossterm{damage reduction} equal to your \glossterm{power} against damage dealt by \glossterm{physical attacks}, except for damage from adamantine weapons.
+The target gains a \glossterm{magic bonus} equal to your \glossterm{power} to \glossterm{damage reduction} against damage dealt by \glossterm{physical attacks}, except for damage from adamantine weapons.
 
 You can cast this spell as a \glossterm{minor action}.
 \end{attuneability}
@@ -2765,7 +2765,7 @@ This spell functions like the \textit{enlarge} spell, except that the target's S
 
 \lowercase{\hypertarget{spell:Ironskin}{}}\label{spell:Ironskin}
 \begin{attuneability}[\nth{6}]{\hypertarget{spell:Ironskin}{Ironskin}}[\glossterm{Attune} (target)]
-This spell functions like the \textit{stoneskin} spell, except that the damage reduction is equal to twice your \glossterm{power}.
+This spell functions like the \textit{stoneskin} spell, except that the bonus is equal to twice your \glossterm{power}.
 \end{attuneability}
 \vspace{0.25em}
 
