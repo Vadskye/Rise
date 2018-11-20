@@ -93,6 +93,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \tb{Casting Feats}\label{Casting Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
         \featref{Boongiver}                 & Spellcasting ability              & Improve ability to cast spells on allies     & Magical & \featpref{Boongiver}                 \\
         \featref{Eldritch Knight}           & Spellcasting ability              & Fight with sword and spell together          & \tdash  & \featpref{Eldritch Knight}           \\
+        \featref{Innate Magic}              & Wil 2, Spellcasting ability       & Cast spells without words or gestures        & Magical & \featpref{Innate Magic}              \\
         \featref{Miscaster}                 & Spellcasting ability              & Miscast spells intentionally and effectively & Magical & \featpref{Miscaster}                 \\
         \featref{Mystic Archer}             & Spellcasting ability              & Imbue projectiles with magic                 & Magical & \featpref{Mystic Archer}             \\
         \featref{Sphere Focus: Aquamancy}   & \sphere{Aquamancy} sphere access   & Improve casting with chosen sphere           & Magical & \featpref{Sphere Focus: Aquamancy}   \\
@@ -849,6 +850,28 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[17]{Lifesaver} You can stabilize dying creatures as a \glossterm{minor action}.
     \end{feat}
 
+    \begin{feat}{Innate Magic}{Casting, Magical}
+        \featpre Spellcasting ability, Willpower 2.
+
+        \ff[1]{Mental Casting} You connect to the magical essence of the universe differently from other spellcasters, allowing you to cast spells with purely mental effort.
+        None of your spells have \glossterm{somatic components} or \glossterm{verbal components}.
+        However, the lack of a physical focus for your magic makes it more difficult for you to concentrate on your spells.
+        You take a \minus6 penalty to \glossterm{concentration} checks to cast spells (see \pcref{Concentration}).
+
+        \ff[3]{Innate Creativity} You learn an additional \glossterm{spell}.
+        When you gain access to new spell levels, you can change which spell you know.
+
+        \ff[6]{Greater Innate Creativity} You learn an additional \glossterm{mystic sphere}.
+
+        \ff[9]{Greater Mental Casting} The penalty to \glossterm{concentration} checks from your \textit{mental casting} ability is reduced to \minus3.
+
+        \ff[12]{Innate Power} You gain a \plus1 bonus to \glossterm{power} with \glossterm{spells}.
+
+        \ff[15]{Supreme Innate Creativity} You gain an additional \glossterm{insight point}.
+
+        \ff[18]{Supreme Mental Casting} The penalty to \glossterm{concentration} checks from your \textit{mental casting} ability is removed.
+    \end{feat}
+
     \begin{feat}{Intimidate Specialization}{Skill}
         \featpre Intimidate as a mastered skill.
 
@@ -1453,7 +1476,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \featpre Access to the \sphere{Astromancy} \glossterm{mystic sphere}.
 
         \ff[1]{Spell} You learn a spell from the \sphere{astromancy} \glossterm{mystic sphere}.
-        When you gain access to a new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
+        When you gain access to new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
         \ff[3]{Minor Translocation} You can use the \textit{minor translocation} ability as a standard action.
         \begin{freeability}{Minor Translocation}[\glossterm{Teleportation}]
@@ -1481,7 +1504,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \featpre Access to the \sphere{Barrier} \glossterm{mystic sphere}.
 
         \ff[1]{Spell} You learn a spell from the \sphere{barrier} \glossterm{mystic sphere}.
-        When you gain access to a new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
+        When you gain access to new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
         \ff[3]{Burst Ward} You can use the \textit{burst ward} ability as a standard action.
         \begin{freeability}{Burst Ward}[\glossterm{Swift}, \glossterm{Sustain} (standard)]
@@ -1511,7 +1534,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \featpre Access to the \sphere{Chronomancy} \glossterm{mystic sphere}.
 
         \ff[1]{Spell} You learn a spell from the \sphere{chronomancy} \glossterm{mystic sphere}.
-        When you gain access to a new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
+        When you gain access to new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
         \ff[3]{Accelerated Movement} You gain a \plus10 foot bonus to your speed in all movement modes.
 
@@ -1532,7 +1555,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \featpre Access to the \sphere{Compel} \glossterm{mystic sphere}.
 
         \ff[1]{Spell} You learn a spell from the \sphere{compel} \glossterm{mystic sphere}.
-        When you gain access to a new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
+        When you gain access to new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
         \ff[3]{Mind Fragments} When you use \glossterm{Mind} abilities, you can affect creatures that are immune to \glossterm{Mind} abilities due to not having a mind.
         You take a \minus5 penalty to accuracy on attacks against such creatures.
@@ -1553,7 +1576,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \featpre Access to the \sphere{Delusion} \glossterm{mystic sphere}.
 
         \ff[1]{Spell} You learn a spell from the \sphere{delusion} \glossterm{mystic sphere}.
-        When you gain access to a new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
+        When you gain access to new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
         \ff[3]{Enchanting Presence} You gain a \plus2 \glossterm{magic bonus} to Intimidate and Persuasion.
 
@@ -1598,7 +1621,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \featpre Access to the \sphere{Glamer} \glossterm{mystic sphere}.
 
         \ff[1]{Spell} You learn a spell from the \sphere{glamer} \glossterm{mystic sphere}.
-        When you gain access to a new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
+        When you gain access to new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
         \ff[3]{Reflexive Illusion} You gain a \plus1 \glossterm{magic bonus} to Disguise, Sleight of Hand, and Stealth.
 
@@ -1617,7 +1640,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \featpre Access to the \sphere{Polymorph} \glossterm{mystic sphere}.
 
         \ff[1]{Spell} You learn a spell from the \sphere{polymorph} \glossterm{mystic sphere}.
-        When you gain access to a new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
+        When you gain access to new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
         \ff[3]{Reshaper} As a standard action, you can use the \textit{alter self} or \textit{alter object} ability.
         \begin{freeability}{Alter Self}[\glossterm{Shaping}]
@@ -1660,18 +1683,9 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \featpre Access to the \sphere{Pyromancy} \glossterm{mystic sphere}.
 
         \ff[1]{Spell} You learn a spell from the \sphere{pyromancy} \glossterm{mystic sphere}.
-        When you gain access to a new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
+        When you gain access to new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
         \ff[3]{Fire Tolerance} You gain a bonus equal to your \glossterm{power} to your damage reduction against fire damage.
-
-        \ff[3]{Personal Torch} You can use the \textit{personal torch} ability as a standard action.
-        \begin{freeability}{Personal Torch}
-            You create a flame in your hand.
-            You can create it at any intensity, up to a maximum heat equivalent to a roaring campfire.
-            At it most intense, it sheds bright light in a 50 foot radius and dim light in an 100 foot radius.
-            If you touch a creature or object with it, the target takes 1d8 fire damage.
-            This ability lasts until you use it again or until you \glossterm{dismiss} it as a \glossterm{free action}.
-        \end{freeability}
 
         \ff[6]{Backdraft} Once per round, when you cast a spell from the \sphere{pyromancy} \glossterm{mystic sphere}, you can use the \textit{backdraft} ability.
         \begin{freeability}{Backdraft}
@@ -1679,7 +1693,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
             \hit Each target takes fire damage equal to your \glossterm{power}.
         \end{freeability}
 
-        \ff[9]{Potent Pyromancy} You gain a \plus1 bonus to \glossterm{power} with abilities from the \sphere{pyromancy} \glossterm{mystic sphere}.
+        \ff[9]{Potent Pyromancy} You gain a \plus1 bonus to \glossterm{accuracy} with abilities from the \sphere{pyromancy} \glossterm{mystic sphere}.
 
         \ff[12]{Greater Fire Tolerance} Your bonus from the \textit{fire tolerance} ability increases to twice your \glossterm{power}.
 
@@ -1692,7 +1706,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \featpre Access to the \sphere{Revelation} \glossterm{mystic sphere}.
 
         \ff[1]{Spell} You learn a spell from the \sphere{revelation} \glossterm{mystic sphere}.
-        When you gain access to a new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
+        When you gain access to new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
         \ff[3]{Prophesy} You can use the \textit{prophesy} ability as a standard action.
         \begin{apability}{Prophesy}
@@ -1754,7 +1768,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \featpre Access to the \sphere{Telekinesis} \glossterm{mystic sphere}.
 
         \ff[1]{Spell} You learn a spell from the \sphere{telekinesis} \glossterm{mystic sphere}.
-        When you gain access to a new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
+        When you gain access to new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
         \ff[3]{Distant Hand} You can use the \textit{distant hand} ability as a \glossterm{minor action}.
         \begin{freeability}{Distant Hand}[\glossterm{Sustain} (minor)]
@@ -1787,7 +1801,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \featpre Access to the \sphere{Thaumaturgy} \glossterm{mystic sphere}.
 
         \ff[1]{Spell} You learn a spell from the \sphere{thaumaturgy} \glossterm{mystic sphere}.
-        When you gain access to a new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
+        When you gain access to new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
         \ff[3]{Counterspell} You can use the \textit{counterspell} ability as a standard action.
         \begin{freeability}{Counterspell}[\glossterm{Swift}]
@@ -1818,7 +1832,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \featpre Access to the \sphere{Vital surge} \glossterm{mystic sphere}.
 
         \ff[1]{Spell} You learn a spell from the \sphere{vital surge} \glossterm{mystic sphere}.
-        When you gain access to a new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
+        When you gain access to new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
         \ff[3]{Vital Force} You are immune to \glossterm{disease} and hostile \glossterm{Death} effects.
 
@@ -1838,7 +1852,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \featpre Access to the \sphere{Weaponcraft} \glossterm{mystic sphere}.
 
         \ff[1]{Spell} You learn a spell from the \sphere{weaponcraft} \glossterm{mystic sphere}.
-        When you gain access to a new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
+        When you gain access to new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
         \ff[3]{Personal Weapon} You can use the \textit{personal weapon} ability as a \glossterm{minor action}.
         \begin{freeability}{Personal Weapon}[\glossterm{Manifestation}, \glossterm{Swift}]
