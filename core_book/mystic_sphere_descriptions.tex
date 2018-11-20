@@ -10,12 +10,18 @@
 
 \parhead{Mystic Sphere Lists} Nature
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
 
 
-\begin{freeability}{Minor Windstrike}
+\begin{freeability}{Minor Windstrike}[\glossterm{Air}]
 Make an attack vs. Armor against a creature or object within \rngmed range.
 \hit The target takes bludgeoning \glossterm{standard damage}.
+\end{freeability}
+
+
+\begin{freeability}{Soften Landing}[\glossterm{Air}]
+Choose a willing creature in \rngclose range.
+Until the end of the round, the target treats all falls as if they were 20 feet shorter for the purpose of determining \glossterm{falling damage}.
 \end{freeability}
 
 \end{spellsection}
@@ -267,7 +273,7 @@ This spell functions like the \spell{cyclone} spell, except that it affects ever
 
 \parhead{Mystic Sphere Lists} Nature
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
 
 
 \begin{freeability}{Whelming Wave}[\glossterm{Manifestation}, \glossterm{Water}]
@@ -422,7 +428,7 @@ This ritual takes one minute to perform.
 
 \parhead{Mystic Sphere Lists} Arcane, Pact
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
 
 
 \begin{freeability}{Dimensional Disruption}[\glossterm{Planar}, \glossterm{Teleportation}]
@@ -662,7 +668,7 @@ This ritual takes one week to perform, and requires 98 action points from its pa
 
 \parhead{Mystic Sphere Lists} Arcane, Divine, Nature
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
 
 
 \begin{freeability}{Kinetic Shield}[\glossterm{Sustain} (standard)]
@@ -864,7 +870,7 @@ In addition, the DR to break it open increases by 20 instead of by 10.
 
 \parhead{Mystic Sphere Lists} Divine
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
 
 
 \begin{freeability}{Minor Cleansing Blessing}
@@ -1109,7 +1115,7 @@ This ritual functions like the \spell{blessing of fortification} ritual, except 
 
 \parhead{Mystic Sphere Lists} Divine
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
 
 
 \begin{freeability}{Divine Judgment}
@@ -1240,7 +1246,7 @@ It is from the Conjuration school in addition to the Channeling school.
 
 \parhead{Mystic Sphere Lists} Arcane, Pact
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
 
 
 \begin{freeability}{Minor Slow}[\glossterm{Temporal}]
@@ -1460,7 +1466,7 @@ This ritual takes one minute to perform.
 
 \parhead{Mystic Sphere Lists} Arcane, Divine, Pact
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
 
 
 \begin{freeability}{Fall}[\glossterm{Compulsion}, \glossterm{Mind}]
@@ -1580,7 +1586,7 @@ This spell functions like the \textit{dance} spell, except that you gain a \plus
 
 \parhead{Mystic Sphere Lists} Arcane, Divine, Nature, Pact
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
 
 
 \begin{freeability}{Sicken}[\glossterm{Life}]
@@ -1728,7 +1734,7 @@ This ritual takes one hour to perform.
 
 \parhead{Mystic Sphere Lists} Arcane, Nature, Pact
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
 
 
 \begin{freeability}{Chill}[\glossterm{Cold}]
@@ -1874,7 +1880,7 @@ This spell functions like the \spell{cone of cold} spell, except it affects ever
 
 \parhead{Mystic Sphere Lists} Arcane, Divine, Pact
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
 
 
 \begin{freeability}{Cause Fear}[\glossterm{Emotion}, \glossterm{Mind}]
@@ -2015,7 +2021,7 @@ The target is not directly aware of any magical influence on its mind, though un
 
 \parhead{Mystic Sphere Lists} Arcane, Nature, Pact
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
 
 
 \begin{freeability}{Spark}[\glossterm{Electricity}]
@@ -2153,7 +2159,7 @@ This spell functions like the \spell{magnetic blade} spell, except that the bonu
 
 \parhead{Mystic Sphere Lists} Arcane, Pact
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
 
 
 \begin{freeability}{Acid Splash}[\glossterm{Acid}, \glossterm{Manifestation}]
@@ -2323,7 +2329,14 @@ This ritual takes one hour to perform.
 
 \parhead{Mystic Sphere Lists} Arcane
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
+
+
+\begin{freeability}{Assist Disguise}[\glossterm{Sensation}, \glossterm{Visual}]
+Choose a willing creature within \rngclose range.
+% TODO: wording?
+If the target is disguised as another creature, it gains a \plus2 \glossterm{magic bonus} to the result of the disguise.
+\end{freeability}
 
 
 \begin{freeability}{Blur Weapon}[\glossterm{Sensation}, \glossterm{Visual}]
@@ -2468,7 +2481,7 @@ This ritual takes one minute to perform.
 
 \parhead{Mystic Sphere Lists} Arcane, Divine, Nature, Pact
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
 
 
 \begin{freeability}{Flash}[\glossterm{Light}, \glossterm{Sensation}, \glossterm{Visual}]
@@ -2476,6 +2489,14 @@ Make an attack vs. Fortitude against one creature, object, or location within \r
 Bright light illuminates a 100 foot radius around the target until the end of the round.
 \hit The target is \dazzled as a \glossterm{condition}.
 \crit As above, and target is also \dazed as an additional \glossterm{condition}.
+\end{freeability}
+
+
+\begin{freeability}{Illuminate}[\glossterm{Light}, \glossterm{Sensation}, \glossterm{Visual}]
+Choose a location within \rngmed range.
+A glowing light appears in midair in the chosen location.
+It casts bright light in a 20 foot radius and dim light in a 40 foot radius.
+This effect lasts until you use it again or until you \glossterm{dismiss} it as a \glossterm{free action}.
 \end{freeability}
 
 \end{spellsection}
@@ -2579,8 +2600,8 @@ This spell functions like the \spell{solar flare} spell, except that the accurac
 \subsubsection{Rituals}
 
 
-\lowercase{\hypertarget{spell:Light}{}}\label{spell:Light}
-\begin{attuneability}[\nth{1}]{\hypertarget{spell:Light}{Light}}[\glossterm{Attune} (ritual), \glossterm{Light}, \glossterm{Sensation}]
+\lowercase{\hypertarget{spell:Mobile Light}{}}\label{spell:Mobile Light}
+\begin{attuneability}[\nth{1}]{\hypertarget{spell:Mobile Light}{Mobile Light}}[\glossterm{Attune} (ritual), \glossterm{Light}, \glossterm{Sensation}]
 Choose a Medium or smaller willing creature or unattended object within \rngclose range.
 The target glows like a torch, shedding bright light in a \areamed radius (and dim light for an additional 20 feet).
 
@@ -2610,7 +2631,7 @@ This ritual takes 24 hours to perform, and it requires 8 action points from its 
 
 \parhead{Mystic Sphere Lists} Arcane, Nature, Pact
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
 
 
 \begin{freeability}{Twist Body}[\glossterm{Shaping}]
@@ -2913,7 +2934,16 @@ This ritual functions like the \spell{fortify} ritual, except that the \glosster
 
 \parhead{Mystic Sphere Lists} Arcane, Fire, Nature, Pact
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
+
+
+\begin{freeability}{Personal Torch}[\glossterm{Fire}]
+You create a flame in your hand.
+You can create it at any intensity, up to a maximum heat equivalent to a burning torch.
+At it most intense, it sheds bright light in a 20 foot radius and dim light in an 40 foot radius.
+If you touch a creature or object with it, the target takes 1d8 fire damage.
+This effect lasts until you use it again or until you \glossterm{dismiss} it as a \glossterm{free action}.
+\end{freeability}
 
 
 \begin{freeability}{Scorch}[\glossterm{Fire}]
@@ -3113,7 +3143,7 @@ This spell functions like the \textit{greater ignition} spell, except that the c
 
 \parhead{Mystic Sphere Lists} Arcane, Divine, Nature
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
 
 
 \begin{freeability}{Precognitive Strike}
@@ -3385,7 +3415,7 @@ It gains the \glossterm{Planar} tag in addition to the tags from the \ritual{tel
 
 \parhead{Mystic Sphere Lists} Arcane, Divine, Nature
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
 
 
 \begin{freeability}{Remote Sensing}[\glossterm{Scrying}, \glossterm{Sustain} (minor)]
@@ -3534,7 +3564,7 @@ It gains the \glossterm{Planar} tag in addition to the tags from the \ritual{scr
 
 \parhead{Mystic Sphere Lists} Arcane, Divine, Nature
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
 
 
 \begin{freeability}{Sustained Summoning}[\glossterm{Manifestation}, \glossterm{Sustain} (standard)]
@@ -3608,7 +3638,7 @@ This ritual takes one minute to perform.
 
 \parhead{Mystic Sphere Lists} Arcane, Pact
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
 
 
 \begin{freeability}{Telekinetic Compression}
@@ -3732,7 +3762,7 @@ Each five-foot square of wall has hit points equal to twice your \glossterm{powe
 
 \parhead{Mystic Sphere Lists} Arcane, Nature
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
 
 
 \begin{freeability}{Minor Earthspike}[\glossterm{Earth}, \glossterm{Physical}]
@@ -3936,7 +3966,7 @@ This spell functions like the \spell{fissure} spell, except that it affects all 
 
 \parhead{Mystic Sphere Lists} Arcane, Divine, Nature
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
 
 
 \begin{freeability}{Minor Suppression}[\glossterm{Mystic}, \glossterm{Sustain} (standard)]
@@ -4094,7 +4124,7 @@ However, this spell does not prevent you from sustaining or dismissing this spel
 
 \parhead{Mystic Sphere Lists} Nature
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
 
 
 \begin{freeability}{Minor Embedded Growth}
@@ -4243,7 +4273,7 @@ It is from from the Conjuration school in addition to the Transmutation school.
 
 \parhead{Mystic Sphere Lists} Divine, Nature
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
 
 
 \begin{freeability}{Inflict Minor Wounds}[\glossterm{Life}]
@@ -4585,7 +4615,7 @@ In addition, it can only be learned through the divine \glossterm{magic source}.
 
 \parhead{Mystic Sphere Lists} Arcane, Divine, Pact
 
-\subsubsection{Cantrip}
+\subsubsection{Cantrips}
 
 
 \begin{freeability}{Fire Projectile}[\glossterm{Manifestation}]
