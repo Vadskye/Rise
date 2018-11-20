@@ -109,7 +109,7 @@ def generate_armor():
         tags=['Shielding'],
         material_type='body armor',
         description="""
-            You have \\glossterm<damage reduction> equal to the item's \\glossterm<power> against \\glossterm<energy damage>.
+            You gain a \\glossterm<magic bonus> equal to the item's \\glossterm<power> to \\glossterm<damage reduction> against \\glossterm<energy damage>.
             When you resist energy with this item, it sheds light as a torch until the end of the next round.
             The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, red for fire, and brown for sonic.
         """,
@@ -211,7 +211,7 @@ def generate_armor():
         tags=['Shielding'],
         material_type='body armor',
         description="""
-            You have \\glossterm<damage reduction> equal to this item's \\glossterm<power> against damage from \\glossterm<physical attacks>.
+            You gain a \\glossterm<magic bonus> equal to this item's \\glossterm<power> to \\glossterm<damage reduction> against damage from \\glossterm<physical attacks>.
         """,
         short_description="Reduces damage from physical attacks",
     ))
@@ -223,7 +223,6 @@ def generate_armor():
         material_type='body armor',
         description="""
             This item functions like the \\mitem<armor of invulnerability> item, except that the damage reduction is equal to twice the item's \\glossterm<power>.
-            You have \\glossterm<damage reduction> equal to the item's \\glossterm<power> against damage from \\glossterm<physical attacks>.
         """,
         short_description="Drastically reduces damage from physical attacks",
     ))
@@ -750,7 +749,7 @@ def generate_worn():
         material_type='ring',
         tags=['Shielding'],
         description="""
-            You have \\glossterm<damage reduction> equal to the ring's \\glossterm<power> against \\glossterm<energy damage>.
+            You gain a \\glossterm<magic bonus> equal to this item's \\glossterm<power> to \\glossterm<damage reduction> against \\glossterm<energy damage>.
             When you resist energy with this ability, the ring sheds light as a torch until the end of the next round.
             The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, red for fire, and brown for sonic.
         """,

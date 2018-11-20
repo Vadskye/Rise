@@ -164,20 +164,20 @@ def generate_mystic_spheres():
         short_description="Shield allies from hostile forces",
         cantrip=Effects('Kinetic Shield', """
             Choose a willing creature in \\rngclose range.
-            The target gains \\glossterm<damage reduction> equal to your \\glossterm<power> against \\glossterm<physical> damage.
+            The target gains a \\glossterm<magic bonus> equal to your \\glossterm<power> to \\glossterm<damage reduction> against \\glossterm<physical> damage.
         """, tags=['Sustain (standard)'], ap_cost=False),
         schools=['Abjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
         spells=[
             Spell('Ablative Shield', 1, """
                 Choose a willing creature in \\rngclose range.
-                The target gains \\glossterm<damage reduction> equal to your \\glossterm<power> against all damage except for \\glossterm<energy damage>.
+                The target gains a \\glossterm<magic bonus> equal to your \\glossterm<power> to \\glossterm<damage reduction> against all damage except for \\glossterm<energy damage>.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)', 'Shielding']),
             Spell('Resist Energy', 1, """
                 Choose a willing creature in \\rngclose range.
-                The target gains \\glossterm<damage reduction> equal to your \\glossterm<power> against \\glossterm<energy damage>.
+                The target gains a \\glossterm<magic bonus> equal to your \\glossterm<power> to \\glossterm<damage reduction> against \\glossterm<energy damage>.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)', 'Shielding']),
@@ -205,7 +205,7 @@ def generate_mystic_spheres():
                 This spell is from both the Abjuration and Vivimancy schools and gains the \\glossterm<Life> tag in addition to the tags from the \\spell<ablative shield> spell.
             """, tags=['Attune (target)', 'Shielding']),
             Spell('Empowered Shield', 4, """
-                This spell functions like the \\spell<ablative shield> spell, except that the damage reduction increases by an amount equal to your \\glossterm<power>.
+                This spell functions like the \\spell<ablative shield> spell, except that the bonus is equal to twice your \\glossterm<power>.
             """, tags=['Attune (target)', 'Shielding']),
             Spell('Deflective Shield', 3, """
                 This spell functions like the \\spell<ablative shield> spell, except that the target also gains a +1 \\glossterm<magic bonus> to Armor defense.
@@ -639,7 +639,7 @@ def generate_mystic_spheres():
         rituals=[
             Spell('Dampen', 1, """
                 Choose up to five willing ritual participants.
-                Each target gains damage reduction against fire damage equal to your \\glossterm<power>.
+                Each target gains a \\glossterm<magic bonus> equal to your \\glossterm<power> to damage reduction against fire damage.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (ritual)']),
@@ -955,20 +955,20 @@ def generate_mystic_spheres():
                 \\hit Each target takes divine \\glossterm<standard damage>.
             """, tags=[]),
             Spell('Mantle of Faith', 1, """
-                You gain \\glossterm<damage reduction> equal to your \\glossterm<power> against \\glossterm<physical> damage.
+                You gain a \\glossterm<magic bonus> to equal to your \\glossterm<power> to \\glossterm<damage reduction> against \\glossterm<physical> damage.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (self)']),
             Spell('Greater Mantle Of Faith', 4, """
-                This spell functions like the \\spell<mantle of faith> spell, except that the damage reduction increases to be equal to twice your \\glossterm<power>.
+                This spell functions like the \\spell<mantle of faith> spell, except that the bonus is equal to twice your \\glossterm<power>.
             """, tags=['Attune (self)']),
-            Spell('Complete Mantle of Faith', 1, """
-                You gain \\glossterm<damage reduction> equal to your \\glossterm<power> against all damage.
+            Spell('Complete Mantle of Faith', 2, """
+                You gain a \\glossterm<magic bonus> equal to your \\glossterm<power> to \\glossterm<damage reduction> against all damage.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (self)']),
-            Spell('Greater Complete Mantle Of Faith', 4, """
-                This spell functions like the \\spell<complete mantle of faith> spell, except that the damage reduction increases to be equal to twice your \\glossterm<power>.
+            Spell('Greater Complete Mantle Of Faith', 5, """
+                This spell functions like the \\spell<complete mantle of faith> spell, except that the bonus is equal to twice your \\glossterm<power>.
             """, tags=['Attune (self)']),
             Spell('Divine Might', 3, """
                 You increase your size by one size category.
@@ -2014,7 +2014,7 @@ def generate_mystic_spheres():
             """, tags=['Attune (target)']),
             Spell('Barkskin', 2, """
                 Choose a willing creature within \\rngclose range.
-                The target gains \\glossterm<damage reduction> equal to your \\glossterm<power> against damage dealt by \\glossterm<physical attacks>.
+                The target gains a \\glossterm<magic bonus> equal to your \\glossterm<power> to \\glossterm<damage reduction> against damage dealt by \\glossterm<physical attacks>.
                 In addition, it is \\glossterm<vulnerable> to fire damage.
 
                 You can cast this spell as a \\glossterm<minor action>.
@@ -2029,12 +2029,12 @@ def generate_mystic_spheres():
             # Should this also/instead be under Terramancy?
             Spell('Stoneskin', 3, """
                 Choose a willing creature within \\rngclose range.
-                The target gains \\glossterm<damage reduction> equal to your \\glossterm<power> against damage dealt by \\glossterm<physical attacks>, except for damage from adamantine weapons.
+                The target gains a \\glossterm<magic bonus> equal to your \\glossterm<power> to \\glossterm<damage reduction> against damage dealt by \\glossterm<physical attacks>, except for damage from adamantine weapons.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)']),
             Spell('Ironskin', 6, """
-                This spell functions like the \\textit<stoneskin> spell, except that the damage reduction is equal to twice your \\glossterm<power>.
+                This spell functions like the \\textit<stoneskin> spell, except that the bonus is equal to twice your \\glossterm<power>.
             """, tags=['Attune (target)']),
             Spell('Enlarge', 3, """
                 Choose a Large or smaller willing creature within \\rngclose range.
