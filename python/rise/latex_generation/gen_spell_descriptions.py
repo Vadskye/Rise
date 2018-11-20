@@ -1471,7 +1471,7 @@ def generate_mystic_spheres():
         short_description="Summon creatures to fight with you",
         # TODO: this shouldn't reference the spell effect
         cantrips=[Effects('Sustained Summoning', """
-                This cantrip functions like the \\spell<summon monster> spell, except that it has the \\glossterm<Sustain> (standard) tag instead of the \\glossterm<Attune> (self) tag.
+            This cantrip functions like the \\spell<summon monster> spell, except that it has the \\glossterm<Sustain> (standard) tag instead of the \\glossterm<Attune> (self) tag.
         """, tags=["Manifestation", 'Sustain (standard)'], ap_cost=False)],
         schools=['Conjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
