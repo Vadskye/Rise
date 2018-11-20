@@ -1480,8 +1480,10 @@ def generate_mystic_spheres():
             Spell('Summon Monster', 1, """
                 You summon a creature in an unoccupied square within \\rngmed range.
                 It visually appears to be a common Small or Medium animal of your choice, though in reality it is a manifestation of magical energy.
-                Regardless of the appearance and size chosen, the creature has hit points equal to twice your \\glossterm<power>.
-                All of its defenses are equal to your 3 \\add your \\glossterm<power>, and its \\glossterm<land speed> is equal to 30 feet.
+                Regardless of the appearance and size chosen, the creature's statistics are unchanged.
+                It has hit points equal to twice your \\glossterm<power>.
+                % Has to be level instead of power because power can't scale directly with d10s ever
+                All of its defenses are equal to your 4 \\add your level, and its \\glossterm<land speed> is equal to 30 feet.
 
                 Each round, you can choose the creature's actions by mentally commanding it.
                 There are only two actions it can take.
@@ -1499,17 +1501,37 @@ def generate_mystic_spheres():
                 As a standard action, it can make a \\glossterm<grapple> attack against a creature it threatens.
                 Its accuracy is the same as its accuracy with \\glossterm<strikes>.
                 While grappling, the manifested creature can either make a strike or attempt to escape the grapple.
-
-                This augment replaces the effects of any other augments that change the appearance of the creature.
             """, tags=['Attune (self)', 'Manifestation']),
+            Spell('Summon Mount', 2, """
+                This spell functions like the \\spell<summon monster> spell, except that you must also choose a willing creature within \\rngmed range to ride the summoned creature.
+                In addition, the summoned creature appears to be either a Large horse or a Medium pony.
+                It comes with a bit and bridle and a riding saddle, and will only accept the target as a rider.
+                It has the same statistics as a creature from the \\spell<summon monster> spell, except that it follows its rider's directions to the extent that a well-trained horse would and it cannot attack.
+            """, tags=['Attune (target)', 'Manifestation']),
+            Spell('Summon Bird', 3, """
+                This spell functions like the \\spell<summon monster> spell, except that the creature appears to be a bird.
+                It has a 30 foot \\glossterm<fly speed>.
+            """, tags=['Attune (self)', 'Manifestation']),
+            Spell('Summon Wolfpack', 4, """
+                This spell functions like the \\spell<summon monster> spell, except that it summons a pack of four wolf-shaped creatures instead of a single creature.
+                Each creature has a -2 penalty to \\glossterm<accuracy> and \\glossterm<defenses> compared to a normal summoned creature.
+                % TODO: wording?
+                You must command the creatures as a group, rather than as individuals.
+                Each creature obeys your command to the extent it can.
+            """, tags=['Attune (self)', 'Manifestation']),
+            Spell('Summon Flying Mount', 4, """
+                This spell functions like the \\spell<summon mount> spell, except that the summoned creature appears to be either a Large or Medium pegasus.
+                It has a 30 foot \\glossterm<fly speed>.
+            """, tags=['Attune (target)', 'Manifestation']),
         ],
         rituals=[
-            Spell('Mount', 2, """
-                This ritual summons your choice of a light horse or a pony to serve as a mount.
+            # weird to have a spell and a ritual but both are useful
+            Spell('Ritual Mount', 2, """
+                Choose a willing creature within \\rngclose range.
+                This ritual summons your choice of a Large light horse or a Medium pony to serve as a mount.
                 The creature appears in an unoccupied location within \\rngclose range.
-                It comes with a bit and bridle and a riding saddle, and will readily accept any creature as a rider.
-
-                This ritual takes one minute to perform.
+                It comes with a bit and bridle and a riding saddle, and will only accept the target as a rider.
+                It has the same statistics as a creature from the \\spell<summon monster> spell, except that it follows its rider's directions to the extent that a well-trained horse would and it cannot attack.
             """, tags=['Attune (ritual)', 'Manifestation']),
         ],
         # What category does this belong to?
@@ -2489,7 +2511,7 @@ def generate_mystic_spheres():
                 The weapon floats about three feet off the ground, and is sized appropriately for a creature of your size.
                 The specific weapon you choose affects the type of damage it deals.
                 Regardless of the weapon chosen, it has hit points equal to twice your \\glossterm<power>.
-                All of its defenses are equal to 2 \\add your \\glossterm<power>, and it has a 30 foot fly speed with good maneuverability, though it cannot travel farther than five feet above the ground.
+                All of its defenses are equal to 3 \\add your level, and it has a 30 foot fly speed with good maneuverability, though it cannot travel farther than five feet above the ground.
 
                 Each round, the weapon automatically moves towards the creature closest to it during the \\glossterm<movement phase>.
                 During the \\glossterm<action phase>, it makes a melee \\glossterm<strike> against a random creature adjacent to it.
