@@ -17,43 +17,30 @@ def get_sample_creatures():
 
     return cache
 
+
+def parse_creature(sample_info, creature_text):
+    tokens = creature_text.split(' ')
+    name = tokens[0]
+    creature = copy(sample_info['characters'].get(name) or sample_info['monsters'].get(name))
+    for modifier_name in tokens[1:]:
+        sample_info['modifiers'][modifier_name](creature)
+    return creature
+
+
 def generate_sample_creatures():
     global cache
 
     samples = {
+        'characters': generate_sample_characters(),
+        'modifiers': generate_modifiers(),
         'monsters': generate_sample_monsters(),
-        'tests': generate_test_creatures(),
     }
 
     cache = samples
     return cache
 
 
-def generate_test_creatures():
-    tests = {}
-
-    tests['fighter'] = Creature(
-        character_class=CharacterClass('fighter'),
-        level=1,
-        name='Fighter',
-        species=Species('human'),
-        starting_attributes=[2, 0, 2, 0, 0, 0],
-        armor=Armor('breastplate'),
-        weapons=[Weapon('longsword')],
-        shield=Shield('heavy'),
-    )
-
-    tests['warrior'] = Creature(
-        character_class=CharacterClass('fighter'),
-        level=1,
-        name='Warrior',
-        species=Species('human'),
-        starting_attributes=[0, 0, 0, 0, 0, 0],
-        armor=Armor('breastplate'),
-        weapons=[Weapon('longsword')],
-        shield=Shield('heavy'),
-    )
-
+def generate_modifiers():
     modifiers = {}
 
     def barrier(c):
@@ -85,75 +72,46 @@ def generate_test_creatures():
         c.attuned_ability_count += 1
     modifiers['revelation'] = revelation
 
-    # def per2(c):
-    #     c.starting_perception = 2
-    # modifiers['per2'] = per2
+    def firebolt(c):
+        c.active_abilities = c.active_abilities or []
+        c.active_abilities.append(ActiveAbility('firebolt'))
+    modifiers['firebolt'] = firebolt
 
-    # def per4(c):
-    #     c.starting_perception = 4
-    # modifiers['per4'] = per4
+    def inflict(c):
+        c.active_abilities = c.active_abilities or []
+        c.active_abilities.append(ActiveAbility('inflict wounds'))
+    modifiers['inflict'] = inflict
 
-    # def will2(c):
-    #     c.starting_willpower = 2
-    # modifiers['will2'] = will2
+    def make_attribute_mod(attribute, i):
+        return lambda c: setattr(c, f"starting_{attribute}", i)
+    for i in range(-2, 5):
+        for attribute in ['strength', 'dexterity', 'constitution', 'intelligence', 'perception', 'willpower']:
+            modifiers[f"{attribute[:3]}{i}"] = make_attribute_mod(attribute, i)
 
-    # def will4(c):
-    #     c.starting_willpower = 4
-    # modifiers['will4'] = will4
+    def make_level_mod(i):
+        return lambda c: setattr(c, 'level', i)
+    for i in range(1, 21):
+        key = f"l{i}"  # if i > 10 else f"l0{i}"
+        modifiers[key] = make_level_mod(i)
 
-    def add_test_character(base_character_key, modifier_name):
-        new_character = copy(tests[base_character_key])
-        modifiers[modifier_name](new_character)
-        tests[f"{base_character_key} {modifier_name}"] = new_character
+    return modifiers
 
-    for character_name in sorted(tests.keys()):
-        for modifier_name in sorted(modifiers.keys()):
-            add_test_character(character_name, modifier_name)
 
-    # Add nested modifier combinations in alphabetical order
-    add_test_character('fighter barrier', 'bless')
-    add_test_character('fighter barrier bless', 'revelation')
-    add_test_character('fighter barrier bless revelation', 'power_attack')
-    add_test_character('fighter barrier bless', 'power_attack')
-    add_test_character('fighter barrier', 'power_attack')
-    add_test_character('fighter bless', 'power_attack')
-    add_test_character('fighter bless power_attack', 'revelation')
-    add_test_character('fighter bless', 'revelation')
-    add_test_character('fighter greatsword', 'power_attack')
-    add_test_character('fighter power_attack', 'revelation')
+def generate_sample_characters():
+    tests = {}
 
-    def l4(c):
-        c.level = 4
-    modifiers['l4'] = l4
-
-    def l7(c):
-        c.level = 7
-    modifiers['l7'] = l7
-
-    def l13(c):
-        c.level = 13
-    modifiers['l13'] = l13
-
-    def l19(c):
-        c.level = 19
-    modifiers['l19'] = l19
-
-    # Add levels at the end
-    for character_name in sorted(tests.keys()):
-        for level in [4, 7, 13, 19]:
-            add_test_character(character_name, f"l{level}")
-
-    tests['sorcerer 7 firebolt'] = Creature(
-        character_class=CharacterClass('mage'),
+    tests['fighter'] = Creature(
+        character_class=CharacterClass('fighter'),
         level=1,
-        name='Mage',
+        name='Fighter',
         species=Species('human'),
-        starting_attributes=[0, 0, 2, 0, 2, 2],
-        armor=Armor('studded leather'),
-        weapons=[Weapon('club')],
-        active_abilities=[ActiveAbility('firebolt')],
+        starting_attributes=[2, 0, 2, 0, 0, 0],
+        armor=Armor('breastplate'),
+        weapons=[Weapon('longsword')],
+        shield=Shield('heavy'),
     )
-    tests['sorcerer 7 inflict'] = Creature(
+
+    tests['sorcerer'] = Creature(
         character_class=CharacterClass('mage'),
         level=1,
         name='Mage',
@@ -161,17 +119,17 @@ def generate_test_creatures():
         starting_attributes=[0, 0, 2, 0, 2, 2],
         armor=Armor('studded leather'),
         weapons=[Weapon('club')],
-        active_abilities=[ActiveAbility('inflict wounds')],
     )
-    tests['sorcerer 7 multispell'] = Creature(
-        character_class=CharacterClass('mage'),
+
+    tests['warrior'] = Creature(
+        character_class=CharacterClass('fighter'),
         level=1,
-        name='Mage',
+        name='Warrior',
         species=Species('human'),
-        starting_attributes=[0, 0, 2, 0, 2, 2],
-        armor=Armor('studded leather'),
-        weapons=[Weapon('club')],
-        active_abilities=[ActiveAbility('firebolt'), ActiveAbility('inflict wounds')],
+        starting_attributes=[0, 0, 0, 0, 0, 0],
+        armor=Armor('breastplate'),
+        weapons=[Weapon('longsword')],
+        shield=Shield('heavy'),
     )
 
     return tests
