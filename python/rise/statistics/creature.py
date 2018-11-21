@@ -250,11 +250,12 @@ class Creature(object):
     def weapon_damage(self, weapon):
         """Return the DicePool for damage with the given Weapon"""
         standard = DicePool(8)
+        power = max(
+            self.level,
+            self.willpower if weapon.damage_type == 'magical' else self.strength,
+        )
         standard += sum([
-            max(
-                self.level,
-                self.willpower if weapon.damage_type == 'magical' else self.strength,
-            ) // 2,
+            power // 2,
             weapon.damage_modifier,
             self.weapon_damage_modifier,
             # TODO: remove direct size damage modifier
