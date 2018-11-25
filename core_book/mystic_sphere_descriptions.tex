@@ -276,6 +276,16 @@ This spell functions like the \spell{cyclone} spell, except that it affects ever
 \subsubsection{Cantrips}
 
 
+\lowercase{\hypertarget{spell:Create Water}{}}\label{spell:Create Water}
+\begin{freeability}[\nth{1}]{\hypertarget{spell:Create Water}{Create Water}}[\glossterm{Creation}, \glossterm{Water}]
+You create up to one gallon of wholesome, drinkable water anywhere within \rngclose range.
+The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
+You must create a minimum of one ounce of water in each location.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \begin{freeability}{Whelming Wave}[\glossterm{Manifestation}, \glossterm{Water}]
 Make an attack vs. Fortitude against everything in a \areamed, 5 ft.\ wide line from you.
 \hit Each target takes bludgeoning \glossterm{standard damage} \minus1d.
@@ -434,6 +444,13 @@ This ritual takes one minute to perform.
 \begin{freeability}{Dimensional Disruption}[\glossterm{Planar}, \glossterm{Teleportation}]
 Make an attack vs. Mental against a creature within \rngmed range.
 \hit The target takes physical \glossterm{standard damage}.
+\end{freeability}
+
+
+\begin{freeability}{Minor Translocation}[\glossterm{Teleportation}]
+Choose a Tiny or smaller unattended object within \rngclose range.
+The target teleports into an unoccupied location on a stable surface within range that can support the weight of the target.
+If the destination is invalid, the ability fails without effect.
 \end{freeability}
 
 \end{spellsection}
@@ -2283,16 +2300,6 @@ If one of the meteors is created in an invalid area, that meteor is not created,
 \subsubsection{Rituals}
 
 
-\lowercase{\hypertarget{spell:Create Water}{}}\label{spell:Create Water}
-\begin{apability}[\nth{1}]{\hypertarget{spell:Create Water}{Create Water}}[\glossterm{Creation}]
-You create up to one gallon of wholesome, drinkable water anywhere within \rngclose range.
-The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
-You must create a minimum of one ounce of water in each location.
-\end{apability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Create Sustenance}{}}\label{spell:Create Sustenance}
 \begin{apability}[\nth{2}]{\hypertarget{spell:Create Sustenance}{Create Sustenance}}[\glossterm{Creation}]
 Choose an unoccupied square within \rngclose range.
@@ -3579,7 +3586,7 @@ This cantrip functions like the \spell{summon monster} spell, except that it has
 
 \lowercase{\hypertarget{spell:Summon Monster}{}}\label{spell:Summon Monster}
 \begin{attuneability}[\nth{1}]{\hypertarget{spell:Summon Monster}{Summon Monster}}[\glossterm{Attune} (self), \glossterm{Manifestation}]
-You summon a creature in an unoccupied square within \rngmed range.
+You summon a creature in an unoccupied square on stable ground within \rngmed range.
 It visually appears to be a common Small or Medium animal of your choice, though in reality it is a manifestation of magical energy.
 Regardless of the appearance and size chosen, the creature's statistics are unchanged.
 It has hit points equal to twice your \glossterm{power}.
