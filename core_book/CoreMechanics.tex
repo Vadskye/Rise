@@ -223,7 +223,7 @@ It defines how attributes work and explains how to make physical attacks in comb
                     \item Strength affects Strength-based skills: Climb, Jump, and Swim (see \pcref{Skills}).
                     \item If your Strength is negative, you take a penalty to all Strength-based skills equal to your Strength.
                     % TODO: wording
-                    \item If your Strength is negative, you take a penalty to damage with \glossterm{strikes} equal to half your Strength in \glossterm{die increments}.
+                    \item If your Strength is negative, you take a penalty to \glossterm{power} with \glossterm{mundane} abilities equal to your Strength.
                 \end{itemize}
 
                 If you have a high Strength, you can use it to determine several statistics:
@@ -299,6 +299,7 @@ It defines how attributes work and explains how to make physical attacks in comb
                 \begin{itemize}
                     \item You gain a bonus (or penalty) to the number of \glossterm{reserve action points} you have equal to your starting Willpower.
                     \item You gain a bonus (or penalty) to your Mental defense equal to your starting Willpower.
+                    \item If your Willpower is negative, you take a penalty to \glossterm{power} with \glossterm{magical} abilities equal to your Willpower.
                 \end{itemize}
 
                 If you have a high Willpower, you can use it to determine several statistics:
@@ -402,7 +403,6 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \parhead{Mundane Abilities}
         Your power with mundane abilities is normally equal to the higher of your level and your Strength.
-        For example, \glossterm{strikes} use your \glossterm{power} with mundane abiliites to determine how much damage they deal.
 
     \subsection{Damage}\label{Damage}
         Some attacks deal damage when they hit.
@@ -468,11 +468,6 @@ It defines how attributes work and explains how to make physical attacks in comb
             \end{dtabularx}
             1. For values above 25, increase by 1d10 at every even value.
         \end{dtable}
-
-        \subsubsection{Strike Damage}\label{Strike Damage}
-            The damage you deal with a single \glossterm{strike} from a weapon is equal to \glossterm{standard damage} based on your \glossterm{power} with \glossterm{mundane} abilities.
-            For example, if you have a Strength of 4, your base damage on a strike would be equal to 2d6.
-            When you make a strike with a weapon, you also apply that weapon's damage modifier, if any (see \tref{Weapons}).
 
     \subsection{Defenses}\label{Defenses}
         Usually, when you are attacked, the attacker has to make an \glossterm{attack roll} against a specific defense.
@@ -1449,6 +1444,10 @@ It defines how attributes work and explains how to make physical attacks in comb
             On a critical hit with any weapon, the target takes double damage from one weapon you hit with.
         \end{freeability}
 
+        \subsubsection{Strike Damage}\label{Strike Damage}
+            The damage you deal with a single \glossterm{strike} is equal to \glossterm{standard damage} based on your \glossterm{power} with \glossterm{mundane} abilities plus that weapon's damage modifier, if any (see \tref{Weapons}).
+            For example, if you had a \glossterm{power} of 4, your base damage on a strike would be 2d6.
+            If you then made a strike with a greatsword, which has a \plus1d damage modifier, your total damage would be 2d8.
 
     \subsection{Special Combat Abilities}\label{Special Combat Abilities}
 
@@ -1745,7 +1744,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         In addition, an unarmed attack always deals \glossterm{subdual damage}.
         You may use any appropriate part of your body to make an unarmed attack -- fists, feet, elbows, and so on.
         However, you only have one unarmed attack.
-        You cannot dual-wield unarmed attacks as if you were fighting with two weapons at once (see \pcref{Strikes}).
+        You cannot dual-wield unarmed attacks as if you were fighting with two weapons at once unless you are \glossterm{proficient} with your unarmed attack (see \pcref{Strikes}).
 
         An unarmed attack is a type of natural weapon.
         Abilities that affect natural weapons can affect your unarmed attack.
