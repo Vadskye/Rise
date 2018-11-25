@@ -297,6 +297,11 @@ def generate_mystic_spheres():
                 Make an attack vs. Armor against one creature or object within \\rngmed range.
                 \\hit The target takes acid \\glossterm<standard damage>.
             """, tags=['Acid', 'Manifestation'], ap_cost=False),
+            Effects('Fabricate Trinket', """
+                You make a Craft check to create an object of Tiny size or smaller.
+                The object appears in your hand or at your feet.
+                It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
+            """, tags=['Attune (self)', 'Manifestation'], ap_cost=False),
         ],
         schools=['Conjuration'],
         lists=['Arcane', 'Pact'],
@@ -726,7 +731,6 @@ def generate_mystic_spheres():
             Spell('Charm', 2, """
                 Make an attack vs. Mental against a creature within \\rnglong range.
                 If the target thinks that you or your allies are threatening it, you take a -5 penalty to accuracy on the attack.
-                \\miss You regain the \\glossterm<action point> spent to cast this spell.
                 \\hit The target is \\charmed by you.
                 Any act by you or your apparent allies that threatens or damages the \\spell<charmed> person breaks the effect.
                 This effect is automatically \\glossterm<dismissed> after one hour.
@@ -1133,7 +1137,7 @@ def generate_mystic_spheres():
                 Metal weapons wielded by the target gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy> against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
 
                 You can cast this spell as a \\glossterm<minor action>.
-            """, tags=['Attune (self)', 'Electricity']),
+            """, tags=['Attune (target)', 'Electricity']),
             Spell('Greater Magnetic Blade', 6, """
                 This spell functions like the \\spell<magnetic blade> spell, except that the bonus is increased to +3.
             """, tags=['Attune (self)', 'Electricity']),
