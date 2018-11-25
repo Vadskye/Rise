@@ -687,11 +687,11 @@ def generate_mystic_spheres():
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (self)', 'Shaping', 'Sizing']),
             Spell('Divine Might, Greater', 5, """
-                This spell functions like the \\textit<divine might> spell, except that you gain a +2 bonus to Strength.
+                This spell functions like the \\textit<divine might> spell, except that you also gain a +2 bonus to Strength.
             """, tags=['Attune (self)', 'Shaping', 'Sizing']),
             Spell('Divine Might, Supreme', 7, """
                 This spell functions like the \\spell<divine might> spell, except that your size is increased by two size categories.
-                Your Strength is increased by 2 to partially match your new size.
+                You gain a +2 bonus to Strength to partially match your new size.
             """, tags=['Attune (self)', 'Shaping', 'Sizing']),
         ],
         rituals=[
