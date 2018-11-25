@@ -533,6 +533,8 @@ def generate_mystic_spheres():
             Spell('Blessing of Protection', 1, """
                 Choose a willing creature within \\rngclose range.
                 The target gains a +1 \\glossterm<magic bonus> to Armor defense and Mental defense.
+
+                You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)']),
             Spell('Greater Blessing Of Protection', 4, """
                 This spell functions like the \\spell<blessing of protection> spell, except that bonus increases to +2.
@@ -565,6 +567,8 @@ def generate_mystic_spheres():
             Spell('Blessing of Supremacy', 4, """
                 Choose a willing creature within \\rngclose range.
                 The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> and a +1d \\glossterm<magic bonus> to \\glossterm<damage> with all abilities.
+
+                You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)']),
             Spell('Cleansing Blessing', 1, """
                 All allies within \\arealarge radius from you can remove one \\glossterm<condition> affecting them.
