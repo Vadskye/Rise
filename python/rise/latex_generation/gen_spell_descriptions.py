@@ -213,14 +213,14 @@ def generate_mystic_spheres():
             Spell('Raging River', 3, """
                 This spell functions like the \\spell<crushing wave> spell, except that it gains the \\glossterm<Sustain> (standard) tag.
                 The area affected by the spell becomes a \\glossterm<zone> that is continuously filled with rushing water.
-                Creatures in the area suffer penalties appropriate for fighting underwater, and may be unable to breathe.
+                Each struck target in the area suffers penalties appropriate for fighting underwater, and may be unable to breathe.
                 In addition, at the end of each \\glossterm<action phase> in subsequent rounds, the attack is repeated in that area.
             """, tags=['Manifestation', 'Water']),
             Spell('Greater Raging River', 5, f"""
                 This spell functions like the \\textit<raging river> spell, except that the spell gains the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Sustain> (standard) tag.
             """, tags=['Manifestation', 'Water']),
             Spell('Geyser', 2, """
-                Make an attack vs. Fortitude against everything in a \\arealarge, 5 ft.\\ wide vertical line within \\rngmed range.
+                Make an attack vs. Armor against everything in a \\arealarge, 5 ft.\\ wide vertical line within \\rngmed range.
                 If this spell has its area increased, such as with the Widened \\glossterm<augment>, only the length of the line increases.
                 \\hit Each target takes takes bludgeoning \\glossterm<standard damage> +2d.
             """, tags=['Manifestation', 'Water']),
@@ -490,7 +490,7 @@ def generate_mystic_spheres():
                 The writing on the target is altered by the runes in subtle ways, making it more difficult to read.
                 To read the writing, a creature must concentrate on reading it, which requires a standard action.
                 If a creature reads the target, the target explodes.
-                You make an attack vs. Reflex against everything within a \\areamed radius from the target.
+                You make an attack vs. Armor against everything within a \\areamed radius from the target.
                 Each struck target takes bludgeoning \\glossterm<standard damage> from the explosion.
 
                 After the target object explodes in this way, the ritual is \\glossterm<dismissed>.
@@ -990,7 +990,7 @@ def generate_mystic_spheres():
             """, tags=['Life']),
             Spell('Bleed', 3, """
                 This spell functions like the \\spell<sickening decay> spell, except that a struck target also begins bleeding as an additional \\glossterm<condition>.
-                At the end of every subsequent \\glossterm<action phase>, the target takes slashing \\glossterm<standard damage> -1d.
+                At the end of every \\glossterm<action phase> in subsequent rounds, the target takes slashing \\glossterm<standard damage> -1d.
             """, tags=['Life']),
             Spell('Crippling Decay', 3, """
                 This spell functions like the \\spell<sickening decay> spell, except that a struck target is also \\glossterm<decelerated> as an additional \\glossterm<condition>.
