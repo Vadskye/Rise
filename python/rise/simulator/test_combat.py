@@ -38,7 +38,7 @@ def main(blue_grep, grep, levels, modifiers, red_grep):
         if levels == 'even':
             levels = ' '.join(str(n) for n in range(2, 21, 2))
         if levels == 'std':
-            levels = ' '.join(str(n) for n in range(1, 21, 5))
+            levels = ' '.join(str(n) for n in range(2, 21, 5))
         for level in sorted(int(n) for n in levels.split(' ')):
             leveled_blue_text = blue_text + f" l{level}"
             leveled_red_text = red_text + f" l{level}"
