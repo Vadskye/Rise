@@ -32,8 +32,8 @@ def generate_mystic_spheres():
                 \\hit The target takes bludgeoning \\glossterm<standard damage>.
             """, tags=['Air'], ap_cost=False),
             Effects('Soften Landing', """
-                Choose a willing creature in \\rngclose range.
-                Until the end of the round, the target treats all falls as if they were 20 feet shorter for the purpose of determining \\glossterm<falling damage>.
+                Choose a willing creature in \\rngmed range.
+                Until the end of the round, the target treats all falls as if they were 5 feet shorter per \\glossterm<power> for the purpose of determining \\glossterm<falling damage>.
             """, tags=['Air'], ap_cost=False),
         ],
         schools=['Transmutation'],
@@ -2350,7 +2350,7 @@ def generate_mystic_spheres():
             """, tags=['Mystic', 'Sustain (standard)'], ap_cost=False),
         ],
         schools=['Abjuration'],
-        lists=['Arcane', 'Divine', 'Nature'],
+        lists=['Arcane', 'Divine'],
         spells=[
             Spell('Suppress Magic', 1, """
                 Make an attack against one creature, object, or magical effect within \\rngmed range.
