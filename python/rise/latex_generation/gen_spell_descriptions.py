@@ -171,7 +171,7 @@ def generate_mystic_spheres():
         short_description="Command water to crush and drown foes",
         cantrips=[
             Spell('Create Water', 1, """
-                You create up to one gallon of wholesome, drinkable water anywhere within \\rngclose range.
+                You create up to one gallon per \\glossterm<power> of wholesome, drinkable water anywhere within \\rngclose range.
                 The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
                 You must create a minimum of one ounce of water in each location.
             """, tags=['Creation', 'Water'], ap_cost=False),
