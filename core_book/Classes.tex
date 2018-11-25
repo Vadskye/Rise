@@ -626,7 +626,8 @@ This choice determines a great deal about your character's abilities.
         All cleric domain abilities are \glossterm{magical} unless otherwise specified.
 
         \subsubsection{Air}
-            \parhead{Gift} You add the Jump skill to your \glossterm{class skill} list and gain a \plus5 bonus to Jump attacks and checks (see \pcref{Jump}).
+            \parhead{Gift} You add the \sphere{aeromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
+            In addition, you add the Jump skill to your \glossterm{class skill} list and gain a \plus4 \glossterm{magic bonus} to the Jump skill (see \pcref{Jump}).
             \parhead{Aspect} You gain a \glossterm{glide speed} equal to your \glossterm{base speed} (see \pcref{Gliding}).
             \parhead{Essence} You can use the \textit{speak with air} ability as a standard action.
             \begin{attuneability}{Speak with Air}[\glossterm{Attune} (self)]
@@ -691,14 +692,13 @@ This choice determines a great deal about your character's abilities.
             \parhead{Mastery} You gain a \plus1d bonus to damage with \glossterm{strikes}.
 
         \subsubsection{Earth}
-            \parhead{Gift} You gain a \plus2 bonus to Fortitude defense.
+            \parhead{Gift} You add the \sphere{terramancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
+            In addition, you gain a \plus2 bonus to Fortitude defense.
             \parhead{Aspect} You gain a \glossterm{magic bonus} equal to your \glossterm{power} to \glossterm{damage reduction} against damage from \glossterm{physical attacks}.
             \parhead{Essence} You can use the \textit{speak with earth} ability as a standard action.
             \begin{attuneability}{Speak with Earth}[\glossterm{Attune} (self)]
-                You can speak with and command earth within a \areahuge zone from your location.
+                You can speak with earth within a \areahuge zone from your location.
                 You can ask the earth simple questions and understand its responses.
-                If you command the earth to perform a task, it will do so do the best of its ability until this effect ends.
-                You cannot compel the earth to move faster than 10 feet per round.
 
                 After you use this ability on a particular area of earth, you cannot use it again on that same area for 24 hours.
             \end{attuneability}
@@ -723,23 +723,23 @@ This choice determines a great deal about your character's abilities.
             You cannot use this ability to redirect damage to the same unwilling creature more than once between \glossterm{short rests}.
 
         \subsubsection{Fire}
-            \parhead{Gift} You add the \spell{pyromancy} spell to your divine \glossterm{spell list}.
-            \parhead{Aspect} When you would take fire damage, you heal half that many hit points instead.
-            % TODO: define those terms?
-            This applies before any \glossterm{damage reduction} and damage immunity abilities you have.
+            \parhead{Gift} You add the \sphere{pyromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
+            In addition, you gain a \glossterm{magic bonus} to equal to your \glossterm{power} to \glossterm{damage reduction} against fire damage.
+            \parhead{Aspect} The damage reduction from this domain's gift increases to be equal to twice your \glossterm{power}.
+            In addition, whenever you resist fire damage in this way, you gain a \plus2 bonus to \glossterm{power} with \glossterm{Fire} abilities until the end of the next round.
             \parhead{Essence} You can use the \textit{speak with fire} ability as a standard action.
             \begin{attuneability}{Speak with Fire}[\glossterm{Attune} (self)]
-                You can speak with and command fire within a \areahuge zone from your location.
+                You can speak with and command fire within a \areahuge radius zone from your location.
                 You can ask the fire simple questions and understand its responses.
                 If you command the fire to perform a task, it will do so do the best of its ability until this effect ends.
                 You cannot compel the fire to move farther than 30 feet in a single round.
                 Fire that ends the round on non-combustable materials usually goes out, depending on the circumstances.
 
-                This effect lasts as long as you \glossterm{sustain} it as a \glossterm{minor action}.
                 After you use this ability on a particular area of fire, you cannot use it again on that same area for 24 hours.
                 % TODO: What does an ``area of fire'' mean?
             \end{attuneability}
-            \parhead{Mastery} When you deal fire damage to a creature, that creature becomes \ignited as a \glossterm{condition}.
+            \parhead{Mastery} When you get a \glossterm{critical hit} against a creature with a \glossterm{Fire} ability, that creature becomes \ignited as a \glossterm{condition}.
+            This condition deals fire \glossterm{standard damage} \minus2d instead of the normal 1d6 damage per round.
 
         \subsubsection{Good}
             \parhead{Gift} At the start of each phase, you may choose an adjacent willing creature.
@@ -810,15 +810,15 @@ This choice determines a great deal about your character's abilities.
             It stacks with the healing from this domain's essence if you target yourself with a spell.
 
         \subsubsection{Strength}
-            \parhead{Gift} You add Climb, Jump, and Swim to your cleric \glossterm{class skill} list.
+            \parhead{Gift} You add the Climb, Jump, and Swim skills to your cleric \glossterm{class skill} list.
             In addition, you gain two skill points.
             \parhead{Aspect} You reduce the \glossterm{encumbrance} of body armor you wear by 1.
-            \parhead{Essence} You gain a \plus5 bonus to Strength for the purpose of checks and determining your carrying capacity.
+            \parhead{Essence} You gain a \plus4 bonus to Strength for the purpose of checks and determining your carrying capacity.
             \parhead{Mastery} You gain a \plus1 bonus to your starting Strength.
 
         \subsubsection{Travel}
-            \parhead{Gift} You add Knowledge (geography), Survival, and Swim to your cleric \glossterm{class skill} list.
-            In addition, you gain two skill points.
+            \parhead{Gift} You add the \sphere{astromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
+            In addition, you add the Knowledge (geography), Survival, and Swim skills to your cleric \glossterm{class skill} list.
             \parhead{Aspect} You gain a \plus20 foot \glossterm{magic bonus} to your \glossterm{base speed}, up to a maximum of double your normal speed.
             \parhead{Essence} You can use the \textit{dimensional jaunt} ability as a standard action.
             \begin{apability}{Dimensional Jaunt}[\glossterm{Teleportation}]
@@ -832,9 +832,9 @@ This choice determines a great deal about your character's abilities.
             If your intended destination is invalid, the distance you tried to teleport is taken from your remaining movement, but you suffer no other ill effects.
 
         \subsubsection{Trickery}
-            \parhead{Gift} You add Bluff, Disguise, and Stealth to your cleric \glossterm{class skill} list.
-            In addition, you gain two skill points.
-            \parhead{Aspect} You gain a \plus2 bonus to Bluff, Disguise, and Stealth.
+            \parhead{Gift} You add the \sphere{glamer} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
+            In addition, you add the Bluff, Disguise, and Stealth skills to your cleric \glossterm{class skill} list.
+            \parhead{Aspect} You gain a \plus2 \glossterm{magic bonus} to the Bluff, Disguise, and Stealth skills.
             \parhead{Essence} You can use the \textit{compel belief} ability as a standard action.
             \begin{apability}{Compel Belief}[\glossterm{Compulsion}, \glossterm{Mind}, \glossterm{Sustain} (minor)]
                 Make an attack vs. Mental against a creature within \rngmed range.
@@ -867,9 +867,9 @@ This choice determines a great deal about your character's abilities.
             \parhead{Mastery} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks}.
 
         \subsubsection{Water}
-            \parhead{Gift} You add Swim to your cleric \glossterm{class skill} list and gain a \plus5 bonus to Swim attacks and checks.
+            \parhead{Gift} You add the \sphere{aquamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
+            In addition, you add the Swim skill to your cleric \glossterm{class skill} list and gain a \plus4 \glossterm{magic bonus} to the Swim skill.
             \parhead{Aspect} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
-            You also gain a \glossterm{swim speed} equal to your \glossterm{base speed}.
             \parhead{Essence} You can use the \textit{speak with water} ability as a standard action.
             \begin{attuneability}{Speak with Water}[\glossterm{Attune} (self)]
                 You can speak with and command water within a \areahuge zone from your location.
@@ -890,11 +890,10 @@ This choice determines a great deal about your character's abilities.
             This usually causes you to die.
 
         \subsubsection{Wild}
-            \parhead{Gift} You add Creature Handling, Knowledge (nature), and Survival to your cleric \glossterm{class skill} list.
-            In addition, you gain two skill points.
+            \parhead{Gift} You add the \sphere{verdamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
+            In addition, you add the Creature Handling, Knowledge (nature), and Survival skills to your cleric \glossterm{class skill} list.
             % Does this even make sense?
-            \parhead{Aspect} When you gain this ability, you choose one wild aspect ability, as if you were a druid of a level equal to your cleric level (see Wild Aspect, \pref{Drd:Wild Aspect}).
-            As a standard action, you can spend an \glossterm{action point} to embody that wild aspect for 1 hour.
+            \parhead{Aspect} You gain two skill points.
             % TODO: essence, mastery
 
         \subsubsection{Ex-Clerics}
