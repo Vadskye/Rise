@@ -292,10 +292,12 @@ def generate_mystic_spheres():
         name='Fabrication',
         short_description="Create objects to damage and impair foes",
         # TODO: Narrative implications of at-will acid are annoying
-        cantrips=[Effects('Acid Splash', """
-            Make an attack vs. Armor against one creature or object within \\rngmed range.
-            \\hit The target takes acid \\glossterm<standard damage>.
-        """, tags=['Acid', 'Manifestation'], ap_cost=False)],
+        cantrips=[
+            Effects('Acid Splash', """
+                Make an attack vs. Armor against one creature or object within \\rngmed range.
+                \\hit The target takes acid \\glossterm<standard damage>.
+            """, tags=['Acid', 'Manifestation'], ap_cost=False),
+        ],
         schools=['Conjuration'],
         lists=['Arcane', 'Pact'],
         spells=[
@@ -372,11 +374,6 @@ def generate_mystic_spheres():
                 The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland.
 
                 This ritual takes one hour to perform.
-            """, tags=['Creation']),
-            Spell('Create Water', 1, """
-                You create up to one gallon of wholesome, drinkable water anywhere within \\rngclose range.
-                The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
-                You must create a minimum of one ounce of water in each location.
             """, tags=['Creation']),
         ],
         category='damage',
@@ -593,10 +590,17 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Aquamancy",
         short_description="Command water to crush and drown foes",
-        cantrips=[Effects('Whelming Wave', """
-            Make an attack vs. Fortitude against everything in a \\areamed, 5 ft.\\ wide line from you.
-            \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
-        """, tags=['Manifestation', 'Water'], ap_cost=False)],
+        cantrips=[
+            Spell('Create Water', 1, """
+                You create up to one gallon of wholesome, drinkable water anywhere within \\rngclose range.
+                The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
+                You must create a minimum of one ounce of water in each location.
+            """, tags=['Creation', 'Water'], ap_cost=False),
+            Effects('Whelming Wave', """
+                Make an attack vs. Fortitude against everything in a \\areamed, 5 ft.\\ wide line from you.
+                \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
+            """, tags=['Manifestation', 'Water'], ap_cost=False),
+        ],
         schools=['Conjuration'],
         lists=['Nature'],
         spells=[
@@ -1478,7 +1482,7 @@ def generate_mystic_spheres():
         spells=[
             # TODO: this needs more spell
             Spell('Summon Monster', 1, """
-                You summon a creature in an unoccupied square within \\rngmed range.
+                You summon a creature in an unoccupied square on stable ground within \\rngmed range.
                 It visually appears to be a common Small or Medium animal of your choice, though in reality it is a manifestation of magical energy.
                 Regardless of the appearance and size chosen, the creature's statistics are unchanged.
                 It has hit points equal to twice your \\glossterm<power>.
@@ -2200,10 +2204,17 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Astromancy",
         short_description="Transport creatures and objects instantly through space",
-        cantrips=[Effects('Dimensional Disruption', """
-            Make an attack vs. Mental against a creature within \\rngmed range.
-            \\hit The target takes physical \\glossterm<standard damage>.
-        """, tags=['Planar', 'Teleportation'], ap_cost=False)],
+        cantrips=[
+            Effects('Dimensional Disruption', """
+                Make an attack vs. Mental against a creature within \\rngmed range.
+                \\hit The target takes physical \\glossterm<standard damage>.
+            """, tags=['Planar', 'Teleportation'], ap_cost=False),
+            Effects('Minor Translocation', """
+                Choose a Tiny or smaller unattended object within \\rngclose range.
+                The target teleports into an unoccupied location on a stable surface within range that can support the weight of the target.
+                If the destination is invalid, the ability fails without effect.
+            """, tags=['Teleportation'], ap_cost=False),
+        ],
         schools=['Conjuration'],
         lists=['Arcane', 'Pact'],
         spells=[
