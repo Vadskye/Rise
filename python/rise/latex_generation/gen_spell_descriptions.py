@@ -84,7 +84,7 @@ def generate_mystic_spheres():
                 Make an attack vs. Armor against everything in a \\arealarge, 10 ft. wide line from you.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage>.
             """, tags=['Air']),
-            Spell('Greater Gust Of Wind', 5, """
+            Spell('Greater Gust of Wind', 5, """
                 This spell functions like the \\spell<gust of wind> spell, except that it affects everything in a \\areahuge, 10 ft. wide line from you and you gain a +1d bonus to damage.
             """, tags=['Air']),
             Spell('Windblade', 1, """
@@ -536,10 +536,10 @@ def generate_mystic_spheres():
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)']),
-            Spell('Greater Blessing Of Protection', 4, """
+            Spell('Greater Blessing of Protection', 4, """
                 This spell functions like the \\spell<blessing of protection> spell, except that bonus increases to +2.
             """, tags=['Attune (target)']),
-            Spell('Supreme Blessing Of Protection', 7, """
+            Spell('Supreme Blessing of Protection', 7, """
                 This spell functions like the \\spell<blessing of protection> spell, except that bonus increases to +3.
             """, tags=['Attune (target)']),
             Spell('Battle Blessing', 2, """
@@ -668,7 +668,7 @@ def generate_mystic_spheres():
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (self)']),
-            Spell('Greater Mantle Of Faith', 4, """
+            Spell('Greater Mantle of Faith', 4, """
                 This spell functions like the \\spell<mantle of faith> spell, except that the bonus is equal to twice your \\glossterm<power>.
             """, tags=['Attune (self)']),
             Spell('Complete Mantle of Faith', 2, """
@@ -676,7 +676,7 @@ def generate_mystic_spheres():
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (self)']),
-            Spell('Greater Complete Mantle Of Faith', 5, """
+            Spell('Greater Complete Mantle of Faith', 5, """
                 This spell functions like the \\spell<complete mantle of faith> spell, except that the bonus is equal to twice your \\glossterm<power>.
             """, tags=['Attune (self)']),
             Spell('Divine Might', 3, """
