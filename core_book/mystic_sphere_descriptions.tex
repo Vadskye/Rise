@@ -2652,6 +2652,16 @@ Make an attack vs. Fortitude against a creature within \rngmed range.
 \hit The target takes physical \glossterm{standard damage}.
 \end{freeability}
 
+
+\begin{freeability}{Alter Object}[\glossterm{Shaping}]
+Choose an unattended, nonmagical object you can touch.
+You make a Craft check to alter the target (see \pcref{Craft}), except that you do not need any special tools to make the check (such as an anvil and furnace).
+The maximum hardness of a material you can affect with this ability is equal to your \glossterm{power}.
+
+% too short?
+Each time you use this ability, you can accomplish work that would take up to five minutes with a normal Craft check.
+\end{freeability}
+
 \end{spellsection}
 
 
@@ -2954,7 +2964,7 @@ This ritual functions like the \spell{fortify} ritual, except that the \glosster
 You create a flame in your hand.
 You can create it at any intensity, up to a maximum heat equivalent to a burning torch.
 At it most intense, it sheds bright light in a 20 foot radius and dim light in an 40 foot radius.
-If you touch a creature or object with it, the target takes 1d8 fire damage.
+If you touch a creature or object with it, the target takes fire \glossterm{standard damage} \minus2d.
 This effect lasts until you use it again or until you \glossterm{dismiss} it as a \glossterm{free action}.
 \end{freeability}
 
@@ -3032,7 +3042,7 @@ You can cast this spell as a \glossterm{minor action}.
 \lowercase{\hypertarget{spell:Ignition}{}}\label{spell:Ignition}
 \begin{apability}[\nth{2}]{\hypertarget{spell:Ignition}{Ignition}}[\glossterm{Fire}]
 This spell functions like the \spell{fireburst} spell, except that each struck target is also \glossterm{ignited} as a \glossterm{condition}.
-This condition can also be removed if the target makes a \glossterm{DR} 10 Dexterity check as a \glossterm{move action} to put out the flames.
+This condition can be removed if the target makes a \glossterm{DR} 10 Dexterity check as a \glossterm{move action} to put out the flames.
 Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this check.
 \end{apability}
 \vspace{0.25em}
@@ -3598,6 +3608,7 @@ Regardless of the appearance and size chosen, the creature's statistics are unch
 It has hit points equal to twice your \glossterm{power}.
 % Has to be level instead of power because power can't scale directly with d10s ever
 All of its defenses are equal to your 4 \add your level, and its \glossterm{land speed} is equal to 30 feet.
+It does not have any \glossterm{action points}.
 
 Each round, you can choose the creature's actions by mentally commanding it.
 There are only two actions it can take.
@@ -3693,6 +3704,15 @@ It has the same statistics as a creature from the \spell{summon monster} spell, 
 \parhead{Mystic Sphere Lists} Arcane, Pact
 
 \subsubsection{Cantrips}
+
+
+\begin{freeability}{Distant Hand}[\glossterm{Sustain} (standard)]
+Choose a Medium or smaller unattended object within \rngclose range.
+You can move it up to five feet in any direction within range, using your \glossterm{power} instead of your Strength to determine your maximum carrying capacity.
+
+In addition, you can manipulate the target as if you were holding it in your hands.
+Any attacks you make with the object or checks you make to manipulate the object have a maximum bonus equal to your \glossterm{power}.
+\end{freeability}
 
 
 \begin{freeability}{Telekinetic Compression}
@@ -4330,6 +4350,12 @@ It is from from the Conjuration school in addition to the Transmutation school.
 \subsubsection{Cantrips}
 
 
+\begin{freeability}{Cure Minor Wounds}[\glossterm{Life}]
+Choose a willing creature within \rngmed range.
+The target heals hit points equal to \glossterm{standard damage}.
+\end{freeability}
+
+
 \begin{freeability}{Inflict Minor Wounds}[\glossterm{Life}]
 Make an attack vs. Fortitude against a creature within \rngmed range.
 \hit The target takes life damage equal to \glossterm{standard damage}.
@@ -4675,6 +4701,19 @@ In addition, it can only be learned through the divine \glossterm{magic source}.
 \begin{freeability}{Fire Projectile}[\glossterm{Manifestation}]
 Make an attack vs. Armor against one creature or object within \rngmed range.
 \hit The target takes piercing \glossterm{standard damage}.
+\end{freeability}
+
+
+\begin{freeability}{Personal Weapon}[\glossterm{Manifestation}]
+Choose a type of weapon that you are proficient with.
+You create a normal item of that type in your hand.
+If the item stops touching you, it disappears, and this effect ends.
+
+If you create a projectile weapon, you can fire it without ammunition by creating projectiles as you fire.
+The projectiles disappear after the attack is complete.
+
+% Strange duration for a cantrip
+This spell lasts until you use it again, or until you \glossterm{dismiss} it as a \glossterm{free action}.
 \end{freeability}
 
 \end{spellsection}

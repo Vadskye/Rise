@@ -391,12 +391,14 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name='Thaumaturgy',
         short_description="Suppress and manipulate magical effects",
-        cantrips=[Effects('Minor Suppression', """
-            Make an attack against one creature within \\rngmed range.
-            The attack result is applied to every \\glossterm<magical> effect on the target.
-            The DR for each effect is equal to the \\glossterm<power> of that effect.
-            \\hit Each effect is \\glossterm<suppressed>.
-        """, tags=['Mystic', 'Sustain (standard)'], ap_cost=False)],
+        cantrips=[
+            Effects('Minor Suppression', """
+                Make an attack against one creature within \\rngmed range.
+                The attack result is applied to every \\glossterm<magical> effect on the target.
+                The DR for each effect is equal to the \\glossterm<power> of that effect.
+                \\hit Each effect is \\glossterm<suppressed>.
+            """, tags=['Mystic', 'Sustain (standard)'], ap_cost=False),
+        ],
         schools=['Abjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
         spells=[
@@ -488,7 +490,7 @@ def generate_mystic_spheres():
                 You create a flame in your hand.
                 You can create it at any intensity, up to a maximum heat equivalent to a burning torch.
                 At it most intense, it sheds bright light in a 20 foot radius and dim light in an 40 foot radius.
-                If you touch a creature or object with it, the target takes 1d8 fire damage.
+                If you touch a creature or object with it, the target takes fire \\glossterm<standard damage> -2d.
                 This effect lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
             """, tags=['Fire'], ap_cost=False),
             Effects('Scorch', """
@@ -528,7 +530,7 @@ def generate_mystic_spheres():
             """, tags=['Fire']),
             Spell('Ignition', 2, f"""
                 This spell functions like the \\spell<fireburst> spell, except that each struck target is also \\glossterm<ignited> as a \\glossterm<condition>.
-                This condition can also be removed if the target makes a \\glossterm<DR> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
+                This condition can be removed if the target makes a \\glossterm<DR> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
                 Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
             """, tags=['Fire']),
             Spell('Greater Ignition', 4, f"""
@@ -1263,10 +1265,16 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Vital Surge",
         short_description="Alter life energy to cure or inflict wounds",
-        cantrips=[Effects('Inflict Minor Wounds', """
-            Make an attack vs. Fortitude against a creature within \\rngmed range.
-            \\hit The target takes life damage equal to \\glossterm<standard damage>.
-        """, tags=['Life'], ap_cost=False)],
+        cantrips=[
+            Effects('Cure Minor Wounds', """
+                Choose a willing creature within \\rngmed range.
+                The target heals hit points equal to \\glossterm<standard damage>.
+            """, tags=['Life'], ap_cost=False),
+            Effects('Inflict Minor Wounds', """
+                Make an attack vs. Fortitude against a creature within \\rngmed range.
+                \\hit The target takes life damage equal to \\glossterm<standard damage>.
+            """, tags=['Life'], ap_cost=False),
+        ],
         schools=['Vivimancy'],
         lists=['Divine', 'Nature'],
         spells=[
@@ -1478,9 +1486,11 @@ def generate_mystic_spheres():
         name="Summon",
         short_description="Summon creatures to fight with you",
         # TODO: this shouldn't reference the spell effect
-        cantrips=[Effects('Sustained Summoning', """
-            This cantrip functions like the \\spell<summon monster> spell, except that it has the \\glossterm<Sustain> (standard) tag instead of the \\glossterm<Attune> (self) tag.
-        """, tags=["Manifestation", 'Sustain (standard)'], ap_cost=False)],
+        cantrips=[
+            Effects('Sustained Summoning', """
+                This cantrip functions like the \\spell<summon monster> spell, except that it has the \\glossterm<Sustain> (standard) tag instead of the \\glossterm<Attune> (self) tag.
+            """, tags=["Manifestation", 'Sustain (standard)'], ap_cost=False),
+        ],
         schools=['Conjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
         spells=[
@@ -1492,6 +1502,7 @@ def generate_mystic_spheres():
                 It has hit points equal to twice your \\glossterm<power>.
                 % Has to be level instead of power because power can't scale directly with d10s ever
                 All of its defenses are equal to your 4 \\add your level, and its \\glossterm<land speed> is equal to 30 feet.
+                It does not have any \\glossterm<action points>.
 
                 Each round, you can choose the creature's actions by mentally commanding it.
                 There are only two actions it can take.
@@ -1639,13 +1650,15 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Revelation",
         short_description="Share visions of the present and future, granting insight or combat prowess",
-        cantrips=[Effects('Precognitive Strike', """
-            You can only cast this spell during the \\glossterm<action phase>.
-            Choose a willing creature within \\rngclose range.
-            On the next \\glossterm<strike> the target makes, it rolls twice and takes the higher result.
-            If you cast this spell on another creature, the effect ends at the end of the current round if the target has not made a strike by that time.
-            If you cast this spell on yourself, it lasts until the end of the next round.
-        """, ap_cost=False)],
+        cantrips=[
+            Effects('Precognitive Strike', """
+                You can only cast this spell during the \\glossterm<action phase>.
+                Choose a willing creature within \\rngclose range.
+                On the next \\glossterm<strike> the target makes, it rolls twice and takes the higher result.
+                If you cast this spell on another creature, the effect ends at the end of the current round if the target has not made a strike by that time.
+                If you cast this spell on yourself, it lasts until the end of the next round.
+            """, ap_cost=False),
+        ],
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
         spells=[
@@ -1788,10 +1801,19 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Telekinesis",
         short_description="Manipulate creatures and objects at a distance",
-        cantrips=[Effects('Telekinetic Compression', """
-            Make an attack vs. Mental against one creature or object within \\rngmed range.
-            \\hit The target takes bludgeoning \\glossterm<standard damage>.
-        """, ap_cost=False)],
+        cantrips=[
+            Effects('Distant Hand', """
+                Choose a Medium or smaller unattended object within \\rngclose range.
+                You can move it up to five feet in any direction within range, using your \\glossterm<power> instead of your Strength to determine your maximum carrying capacity.
+
+                In addition, you can manipulate the target as if you were holding it in your hands.
+                Any attacks you make with the object or checks you make to manipulate the object have a maximum bonus equal to your \\glossterm<power>.
+            """, tags=['Sustain (standard)'], ap_cost=False),
+            Effects('Telekinetic Compression', """
+                Make an attack vs. Mental against one creature or object within \\rngmed range.
+                \\hit The target takes bludgeoning \\glossterm<standard damage>.
+            """, tags=[], ap_cost=False),
+        ],
         schools=['Evocation'],
         lists=['Arcane', 'Pact'],
         spells=[
@@ -2040,10 +2062,20 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Polymorph",
         short_description="Change the physical forms of objects and creatures",
-        cantrips=[Effects('Twist Body', """
-            Make an attack vs. Fortitude against a creature within \\rngmed range.
-            \\hit The target takes physical \\glossterm<standard damage>.
-        """, tags=['Shaping'], ap_cost=False)],
+        cantrips=[
+            Effects('Twist Body', """
+                Make an attack vs. Fortitude against a creature within \\rngmed range.
+                \\hit The target takes physical \\glossterm<standard damage>.
+            """, tags=['Shaping'], ap_cost=False),
+            Effects('Alter Object', """
+                Choose an unattended, nonmagical object you can touch.
+                You make a Craft check to alter the target (see \\pcref<Craft>), except that you do not need any special tools to make the check (such as an anvil and furnace).
+                The maximum hardness of a material you can affect with this ability is equal to your \\glossterm<power>.
+
+                % too short?
+                Each time you use this ability, you can accomplish work that would take up to five minutes with a normal Craft check.
+            """, tags=['Shaping'], ap_cost=False),
+        ],
         schools=['Transmutation'],
         lists=['Arcane', 'Nature', 'Pact'],
         spells=[
@@ -2502,10 +2534,23 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Weaponcraft",
         short_description="Create and manipulate weapons to attack foes",
-        cantrips=[Effects('Fire Projectile', """
-            Make an attack vs. Armor against one creature or object within \\rngmed range.
-            \\hit The target takes piercing \\glossterm<standard damage>.
-        """, tags=['Manifestation'], ap_cost=False)],
+        cantrips=[
+            Effects('Fire Projectile', """
+                Make an attack vs. Armor against one creature or object within \\rngmed range.
+                \\hit The target takes piercing \\glossterm<standard damage>.
+            """, tags=['Manifestation'], ap_cost=False),
+            Effects('Personal Weapon', """
+                Choose a type of weapon that you are proficient with.
+                You create a normal item of that type in your hand.
+                If the item stops touching you, it disappears, and this effect ends.
+
+                If you create a projectile weapon, you can fire it without ammunition by creating projectiles as you fire.
+                The projectiles disappear after the attack is complete.
+
+                % Strange duration for a cantrip
+                This spell lasts until you use it again, or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
+            """, tags=['Manifestation'], ap_cost=False),
+        ],
         schools=['Conjuration', 'Transmutation'],
         lists=['Arcane', 'Divine', 'Pact'],
         spells=[
