@@ -126,17 +126,18 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \featref{Sphere Focus: Weaponcraft}  & \sphere{Weaponcraft} sphere access  & Improve casting with chosen sphere & Magical & \featpref{Sphere Focus: Weaponcraft}  \\
 
         \tb{Combat Feats}\label{Combat Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
-        \featref{Blindfighter}      & Per 2        & Fight unseen foes better                   & \tdash & \featpref{Blindfighter}      \\
-        \featref{Brawler}           & Str 1, Dex 1 & Fight better unarmed and in close quarters & \tdash & \featpref{Brawler}           \\
-        \featref{Duelist}           & Dex 1, Int 1 & Fight one-on-one better                    & \tdash & \featpref{Duelist}           \\
-        \featref{Executioner}       & Str 1, Per 2 & Kill weakened foes more easily             & \tdash & \featpref{Executioner}       \\
-        \featref{Guardian}          & Per 1, Wil 1 & Protect nearby allies                      & \tdash & \featpref{Guardian}          \\
-        \featref{Leadership}        & Wil 2        & Inspire nearby allies                      & \tdash & \featpref{Leadership}        \\
-        \featref{Martial Training}  & \tdash       & Improve combat abilities                   & \tdash & \featpref{Martial Training}  \\
-        \featref{Precognition}      & Int 2        & React to future events                     & \tdash & \featpref{Precognition}      \\
-        \featref{Savage}            & Str 2        & Shove and overrun foes to deal damage      & \tdash & \featpref{Savage}            \\
-        \featref{Sniper}            & Per 2        & Aim precisely at distant foes              & \tdash & \featpref{Sniper}            \\
-        \featref{Whirlwind Warrior} & Dex 2, Per 1 & Fight hordes with agile ease               & \tdash & \featpref{Whirlwind Warrior} \\
+        \featref{Blindfighter}        & Per 2        & Fight unseen foes better                   & \tdash & \featpref{Blindfighter}        \\
+        \featref{Brawler}             & Str 1, Dex 1 & Fight better unarmed and in close quarters & \tdash & \featpref{Brawler}             \\
+        \featref{Duelist}             & Dex 1, Int 1 & Fight one-on-one better                    & \tdash & \featpref{Duelist}             \\
+        \featref{Executioner}         & Str 1, Per 2 & Kill weakened foes more easily             & \tdash & \featpref{Executioner}         \\
+        \featref{Guardian}            & Per 1, Wil 1 & Protect nearby allies                      & \tdash & \featpref{Guardian}            \\
+        \featref{Leadership}          & Wil 2        & Inspire nearby allies                      & \tdash & \featpref{Leadership}          \\
+        \featref{Martial Training}    & \tdash       & Improve combat abilities                   & \tdash & \featpref{Martial Training}    \\
+        \featref{Precognition}        & Int 2        & React to future events                     & \tdash & \featpref{Precognition}        \\
+        \featref{Savage}              & Str 2        & Shove and overrun foes to deal damage      & \tdash & \featpref{Savage}              \\
+        \featref{Sniper}              & Per 2        & Aim precisely at distant foes              & \tdash & \featpref{Sniper}              \\
+        \featref{Two-Weapon Fighting} & Dex 2        & Fight better with two weapons at once      & \tdash & \featpref{Two-Weapon Fighting} \\
+        \featref{Whirlwind Warrior}   & Dex 2, Per 1 & Fight hordes with agile ease               & \tdash & \featpref{Whirlwind Warrior}   \\
     \end{longtabu}
 \end{longtabuwrapper}
 
@@ -2169,6 +2170,32 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[20]{Unflinching Recovery} When you take the \textit{recover} or \textit{desperate recovery} actions, you take half damage from all attacks until the end of the round.
         This is a \glossterm{Swift} ability.
+    \end{feat}
+
+    \begin{feat}{Two-Weapon Fighting}{Combat}
+        \featpre Starting Dexterity of 2.
+
+        \ff[1]{Two-Weapon Defense} While wielding two melee weapons, you gain a \plus1 bonus to Armor defense.
+        This bonus does not stack with the bonus from any shields you wield.
+
+        \ff[3]{Rend} You can use the \textit{rend} ability as a standard action.
+        \begin{apability}{Rend}
+            Make a melee \glossterm{strike} with two different weapons you wield.
+            Both strikes must target the same creature.
+            Each strike is made independently, so you roll for accuracy and damage once for each weapon.
+            If both strikes hit, you gain a \plus1d bonus to damage with both strikes.
+        \end{apability}
+
+        \ff[6]{Dual Feint} When you use the \textit{feint} ability while wielding two weapons, you can feint with one weapon and make the strike with the other.
+        When you do, you suffer no penalty to damage with the delayed strike.
+
+        \ff[9]{Greater Rend} You gain a \plus1 bonus to \glossterm{accuracy} with your \textit{rend} ability.
+
+        \ff[12]{Dual Precision} While wielding two melee weapons, your \glossterm{attack rolls} with melee \glossterm{strikes} \glossterm{explode} on either a 9 or a 10.
+
+        \ff[15]{Supreme Rend} The accuracy bonus from your \textit{greater rend} ability increases to \plus2.
+
+        \ff[18]{Greater Two-Weapon Defense} The bonus from your \textit{two-weapon defense} ability increases to \plus2.
     \end{feat}
 
     \begin{feat}{Whirlwind Warrior}{Combat}
