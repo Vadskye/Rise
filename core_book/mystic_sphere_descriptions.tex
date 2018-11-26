@@ -1236,6 +1236,18 @@ You gain a \plus2 bonus to Strength to partially match your new size.
 \subsubsection{Rituals}
 
 
+\lowercase{\hypertarget{spell:Consecrate}{}}\label{spell:Consecrate}
+\begin{attuneability}[\nth{2}]{\hypertarget{spell:Consecrate}{Consecrate}}[\glossterm{Attune} (self)]
+The area within an \arealarge radius \glossterm{zone} from your location becomes sacred to your deity.
+% TODO: what cares about consecration?
+This has no tangible effects by itself, but some special abilities and monsters behave differently in consecrated areas.
+
+This ritual takes 24 hours to perform and requires 8 action points from its ritual participants.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Divine Transit}{}}\label{spell:Divine Transit}
 \begin{apability}[\nth{4}]{\hypertarget{spell:Divine Transit}{Divine Transit}}[\glossterm{Teleportation}]
 Choose up to five willing, Medium or smaller ritual participants.
@@ -2141,8 +2153,8 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
-\lowercase{\hypertarget{spell:Shocking}{}}\label{spell:Shocking}
-\begin{apability}[\nth{3}]{\hypertarget{spell:Shocking}{Shocking}}[\glossterm{Electricity}]
+\lowercase{\hypertarget{spell:Shocking Bolt}{}}\label{spell:Shocking Bolt}
+\begin{apability}[\nth{3}]{\hypertarget{spell:Shocking Bolt}{Shocking Bolt}}[\glossterm{Electricity}]
 This spell functions like the \spell{lightning bolt} spell, except that each struck target is also \glossterm{dazed} as a \glossterm{condition}.
 \end{apability}
 \vspace{0.25em}
@@ -2164,6 +2176,14 @@ In addition, make an additional attack vs. Fortitude against any number of creat
 \begin{attuneability}[\nth{6}]{\hypertarget{spell:Greater Magnetic Blade}{Greater Magnetic Blade}}[\glossterm{Attune} (self), \glossterm{Electricity}]
 This spell functions like the \spell{magnetic blade} spell, except that the bonus is increased to \plus3.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Stunning Bolt}{}}\label{spell:Stunning Bolt}
+\begin{apability}[\nth{6}]{\hypertarget{spell:Stunning Bolt}{Stunning Bolt}}[\glossterm{Electricity}]
+This spell functions like the \spell{lightning bolt} spell, except that each struck target is also \glossterm{stunned} as a \glossterm{condition}.
+\end{apability}
 \vspace{0.25em}
 
 
@@ -3058,7 +3078,7 @@ Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this c
 You create a wall of fire in a 10 ft.\ high, \arealarge line within \rngmed range.
 The flames and heat make it diffcult to see through the wall, granting \glossterm{concealment} to targets on the opposite side of the wall.
 When a creature passes through the wall, you make an attack vs. Armor against that creature.
-You can only make an attack in this way against a given creature once per phase.
+You can only make an attack in this way against a given creature once per \glossterm{phase}.
 \hit The target takes fire \glossterm{standard damage}.
 
 Each five-foot square of wall has hit points equal to twice your \glossterm{power}, and all of its defenses are 0.
@@ -4281,10 +4301,46 @@ When this spell's duration ends, the plants return to their natural size.
 
 
 
+\lowercase{\hypertarget{spell:Wall of Thorns}{}}\label{spell:Wall of Thorns}
+\begin{attuneability}[\nth{2}]{\hypertarget{spell:Wall of Thorns}{Wall of Thorns}}[\glossterm{Attune} (self)]
+You create a wall of thorns in a 10 ft.\ high, \areamed line within \rngmed range.
+The base of at least half of the wall must be in arable earth.
+The wall is four inches thick, but permeable.
+It provides \glossterm{passive cover} to attacks made through the wall.
+Creatures can pass through the wall, though it costs five extra feet of movement to move through the wall.
+When a creature moves through the wall, make an attack vs. Armor against it.
+You can only make an attack in this way against a given creature once per \glossterm{phase}.
+\hit The target takes piercing \glossterm{standard damage} \minus1d.
+
+Each five-foot square of wall has hit points equal to three times your \glossterm{power}, and all of its defenses are 0.
+It is \glossterm{vulnerable} to fire damage.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Greater Fire Seed}{}}\label{spell:Greater Fire Seed}
 \begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Fire Seed}{Greater Fire Seed}}[\glossterm{Attune} (self), \glossterm{Fire}]
 This spell functions like the \spell{fire seed} spell, except that you can transform up to four bombs.
 In addition, the detonation affects a \areamed radius instead of an \areasmall radius.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Greater Plant Growth}{}}\label{spell:Greater Plant Growth}
+\begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Plant Growth}{Greater Plant Growth}}[\glossterm{Attune} (self)]
+This spell functions like the \spell{plant growth} spell, except that its effects are intensified.
+If you choose for plants to grow, all arable earth within the area becomes \glossterm{heavy undergrowth}.
+If you choose for plants to diminish, all \glossterm{undergrowth} within the area is removed.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Greater Wall of Thorns}{}}\label{spell:Greater Wall of Thorns}
+\begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Wall of Thorns}{Greater Wall of Thorns}}[\glossterm{Attune} (self)]
+This spell functions like the \spell{wall of thorns} spell, except that the wall is an \arealarge shapeable line.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -4729,7 +4785,7 @@ This spell lasts until you use it again, or until you \glossterm{dismiss} it as 
 \lowercase{\hypertarget{spell:Blade Barrier}{}}\label{spell:Blade Barrier}
 \begin{apability}[\nth{1}]{\hypertarget{spell:Blade Barrier}{Blade Barrier}}[\glossterm{Sustain} (minor)]
 A wall of whirling blades appears within \rngmed range.
-The wall either takes the form of a 10 ft.\ high, \arealarge line.
+The wall takes the form of a 10 ft.\ high, \arealarge line.
 The wall provides \glossterm{active cover} (20\% miss chance) against attacks made through it.
 Attacks that miss in this way harmlessly strike the wall.
 When a creature or object passes through the wall, make an attack vs. Armor against it.
