@@ -52,12 +52,13 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{longtabu}{>{\lcol}p{11em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{8em} >{\lcol}p{3em}}
         \lcaption{Feats}\\
         \tb{General Feats}\label{General Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
-        \featref{Agility}           & Dex 1     & Increase reaction speed          & \tdash & \featpref{Agility}           \\
+        \featref{Agility}            & Dex 1    & Increase reaction speed          & \tdash             & \featpref{Agility}            \\
         \featref{Celestial Heritage} & Non-evil & Gain aspects of celestial beings & Bloodline, Magical & \featpref{Celestial Heritage} \\
         \featref{Draconic Heritage}  & \tdash   & Gain aspects of draconic power   & Bloodline          & \featpref{Draconic Heritage}  \\
         \featref{Iron Will}          & Wil 1    & Increase mental resilience       & \tdash             & \featpref{Iron Will}          \\
         \featref{Null}               & Wil 2    & Become immune to magic           & \tdash             & \featpref{Null}               \\
         \featref{Regenerator}        & Con 1    & Heal wounds with inhuman speed   & \tdash             & \featpref{Regenerator}        \\
+        \featref{Spellwarped}        & Wil 1    & Gain limited spellcasting        & Magical            & \featpref{Spellwarped}        \\
         \featref{Swift}              & Dex 1    & Move more quickly                & \tdash             & \featpref{Swift}              \\
         \featref{Toughness}          & Con 1    & Increase physical fortitude      & \tdash             & \featpref{Toughness}          \\
 
@@ -869,14 +870,14 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         However, the lack of a physical focus for your magic makes it more difficult for you to concentrate on your spells.
         You take a \minus5 penalty to \glossterm{concentration} checks to cast spells (see \pcref{Concentration}).
 
-        \ff[3]{Spellwarped Body} You gain a \plus1 bonus to Fortitude and Mental defense.
+        \ff[3]{Internal Magic} You gain a \plus1 bonus to Fortitude and Mental defense.
 
         \ff[6]{Innate Creativity} You learn an additional \glossterm{spell}.
         When you gain access to new spell levels, you can change which spell you know.
 
         \ff[9]{Miscast Tolerance} You take half damage from your own \glossterm{miscast backlash}.
 
-        \ff[12]{Greater Spellwarped Body} The bonuses from your \textit{spellwarped body} ability increase to \plus2.
+        \ff[12]{Greater Internal Magic} The bonuses from your \textit{spellwarped body} ability increase to \plus2.
 
         \ff[15]{Innate Power} You gain a \plus1 bonus to \glossterm{power} with \glossterm{spells}.
 
@@ -1461,6 +1462,31 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[17]{Greater Unweave Magic}[Magical] You gain a \plus2 bonus to \glossterm{accuracy} with your \textit{unweave magic} ability.
 
         \ff[20]{Greater Mystic Tolerance}[Magical] The defense bonus from your \textit{mystic tolerance} ability increases to \plus2.
+    \end{feat}
+
+    \begin{feat}{Spellwarped}{General, Magical}
+        \featpre Starting Willpower of 1.
+
+        \ff[1]{Mystic Sphere} Choose a \glossterm{mystic sphere} from the list of arcane mystic spheres (see \pcref{Arcane Mystic Spheres}).
+        You gain access to that mystic sphere.
+        As a \glossterm{standard action}, you can cast any \glossterm{cantrip} spells from that mystic sphere.
+        You need both \glossterm{somatic components} and \glossterm{verbal components} to cast spells from your mystic sphere (see \pcref{Casting Components}).
+        For details about spellcasting, see \pcref{Spell and Ritual Mechanics}.
+
+        \ff[4]{Spell} You learn one arcane \glossterm{spell} from your chosen \glossterm{mystic sphere}.
+        You can also spend \glossterm{insight points} to learn one additional arcane spell from that mystic sphere per \glossterm{insight point}.
+        As a \glossterm{standard action}, you can spend an \glossterm{action point} to cast any \glossterm{spell} you know.
+        When you gain access to a new spell level, you can exchange any number of spells you know for spells of other spells you know, including spells of the higher level.
+
+        \ff[7]{Spell Level} You gain the ability to cast 2nd level spells from your chosen \glossterm{mystic sphere}.
+
+        \ff[10]{Spell Level} You gain the ability to cast 3rd level spells from your chosen \glossterm{mystic sphere}.
+
+        \ff[13]{Spell Level} You gain the ability to cast 4th level spells from your chosen \glossterm{mystic sphere}.
+
+        \ff[16]{Spell Level} You gain the ability to cast 5th level spells from your chosen \glossterm{mystic sphere}.
+
+        \ff[19]{Spell Level} You gain the ability to cast 6th level spells from your chosen \glossterm{mystic sphere}.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Aeromancy}{Casting, Magical}
