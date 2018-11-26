@@ -695,6 +695,13 @@ def generate_mystic_spheres():
             """, tags=['Attune (self)', 'Shaping', 'Sizing']),
         ],
         rituals=[
+            Spell('Consecrate', 2, """
+                The area within an \\arealarge radius \\glossterm<zone> from your location becomes sacred to your deity.
+                % TODO: what cares about consecration?
+                This has no tangible effects by itself, but some special abilities and monsters behave differently in consecrated areas.
+
+                This ritual takes 24 hours to perform and requires 8 action points from its ritual participants.
+            """, tags=['Attune (self)']),
             Spell('Divine Transit', 4, """
                 Choose up to five willing, Medium or smaller ritual participants.
                 In addition, choose a destination up to 100 miles away from you on your current plane.
@@ -1191,6 +1198,7 @@ def generate_mystic_spheres():
                 Make an attack vs. Fortitude against everything in a \\arealarge, 10 ft.\\ wide line from you.
                 \\hit Each target takes electricity \\glossterm<standard damage>.
             """, tags=['Electricity']),
+            # A little weird that "Shocking" Grasp doesn't daze
             Spell('Shocking Grasp', 1, """
                 Make an attack vs. Fortitude against one creature or object you \\glossterm<threaten>.
                 You gain a +4 bonus to \\glossterm<concentration> checks to cast this spell.
@@ -1231,8 +1239,11 @@ def generate_mystic_spheres():
                 In addition, you create two separate line-shaped areas instead of one.
                 The two areas can overlap, but targets in the overlapping area are only affected once.
             """, tags=['Electricity']),
-            Spell('Shocking', 3, """
+            Spell('Shocking Bolt', 3, """
                 This spell functions like the \\spell<lightning bolt> spell, except that each struck target is also \\glossterm<dazed> as a \\glossterm<condition>.
+            """, tags=['Electricity']),
+            Spell('Stunning Bolt', 6, """
+                This spell functions like the \\spell<lightning bolt> spell, except that each struck target is also \\glossterm<stunned> as a \\glossterm<condition>.
             """, tags=['Electricity']),
             Spell('Call Lightning', 2, """
                 Make an attack vs. Fortitude against everything in a \\arealarge, 5 ft.\\ wide vertical line within \\rngmed range.
@@ -1812,7 +1823,7 @@ def generate_mystic_spheres():
                 You create a wall of fire in a 10 ft.\\ high, \\arealarge line within \\rngmed range.
                 The flames and heat make it diffcult to see through the wall, granting \\glossterm<concealment> to targets on the opposite side of the wall.
                 When a creature passes through the wall, you make an attack vs. Armor against that creature.
-                You can only make an attack in this way against a given creature once per phase.
+                You can only make an attack in this way against a given creature once per \\glossterm<phase>.
                 \\hit The target takes fire \\glossterm<standard damage>.
 
                 Each five-foot square of wall has hit points equal to twice your \\glossterm<power>, and all of its defenses are 0.
@@ -2476,6 +2487,22 @@ def generate_mystic_spheres():
                 This spell functions like the \\spell<fire seed> spell, except that you can transform up to four bombs.
                 In addition, the detonation affects a \\areamed radius instead of an \\areasmall radius.
             """, tags=['Attune (self)', 'Fire']),
+            Spell('Wall of Thorns', 2, """
+                You create a wall of thorns in a 10 ft.\\ high, \\areamed line within \\rngmed range.
+                The base of at least half of the wall must be in arable earth.
+                The wall is four inches thick, but permeable.
+                It provides \\glossterm<passive cover> to attacks made through the wall.
+                Creatures can pass through the wall, though it costs five extra feet of movement to move through the wall.
+                When a creature moves through the wall, make an attack vs. Armor against it.
+                You can only make an attack in this way against a given creature once per \\glossterm<phase>.
+                \\hit The target takes piercing \\glossterm<standard damage> -1d.
+
+                Each five-foot square of wall has hit points equal to three times your \\glossterm<power>, and all of its defenses are 0.
+                It is \\glossterm<vulnerable> to fire damage.
+            """, tags=['Attune (self)']),
+            Spell('Greater Wall of Thorns', 4, """
+                This spell functions like the \\spell<wall of thorns> spell, except that the wall is an \\arealarge shapeable line.
+            """, tags=['Attune (self)']),
             Spell('Plant Growth', 2, """
                 Choose a \\arealarge radius within \\rnglong range.
                 In addition, choose whether you want plants within the area to grow or diminish.
@@ -2485,6 +2512,11 @@ def generate_mystic_spheres():
                 If you choose for plants to diminish, all \\glossterm<heavy undergrowth> in the area is reduced to \\glossterm<light undergrowth>, and all \\glossterm<light undergrowth> is removed.
 
                 When this spell's duration ends, the plants return to their natural size.
+            """, tags=['Attune (self)']),
+            Spell('Greater Plant Growth', 4, """
+                This spell functions like the \\spell<plant growth> spell, except that its effects are intensified.
+                If you choose for plants to grow, all arable earth within the area becomes \\glossterm<heavy undergrowth>.
+                If you choose for plants to diminish, all \\glossterm<undergrowth> within the area is removed.
             """, tags=['Attune (self)']),
             Spell('Blight', 2, """
                 Make an attack vs. Fortitude against a living creature or plant within \\rngmed range.
@@ -2782,7 +2814,7 @@ def generate_mystic_spheres():
             """, tags=['Manifestation']),
             Spell('Blade Barrier', 1, """
                 A wall of whirling blades appears within \\rngmed range.
-                The wall either takes the form of a 10 ft.\\ high, \\arealarge line.
+                The wall takes the form of a 10 ft.\\ high, \\arealarge line.
                 The wall provides \\glossterm<active cover> (20\\% miss chance) against attacks made through it.
                 Attacks that miss in this way harmlessly strike the wall.
                 When a creature or object passes through the wall, make an attack vs. Armor against it.
