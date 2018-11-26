@@ -52,6 +52,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{longtabu}{>{\lcol}p{11em} >{\lcol}p{15em} >{\lcol}X >{\lcol}p{8em} >{\lcol}p{3em}}
         \lcaption{Feats}\\
         \tb{General Feats}\label{General Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
+        \featref{Agility}           & Dex 1     & Increase reaction speed          & \tdash & \featpref{Agility}           \\
         \featref{Celestial Heritage} & Non-evil & Gain aspects of celestial beings & Bloodline, Magical & \featpref{Celestial Heritage} \\
         \featref{Draconic Heritage}  & \tdash   & Gain aspects of draconic power   & Bloodline          & \featpref{Draconic Heritage}  \\
         \featref{Iron Will}          & Wil 1    & Increase mental resilience       & \tdash             & \featpref{Iron Will}          \\
@@ -125,7 +126,6 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \featref{Sphere Focus: Weaponcraft}  & \sphere{Weaponcraft} sphere access  & Improve casting with chosen sphere & Magical & \featpref{Sphere Focus: Weaponcraft}  \\
 
         \tb{Combat Feats}\label{Combat Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
-        \featref{Agility}           & Dex 2        & Increase reaction speed                    & \tdash & \featpref{Agility}           \\
         \featref{Blindfighter}      & Per 2        & Fight unseen foes better                   & \tdash & \featpref{Blindfighter}      \\
         \featref{Brawler}           & Str 1, Dex 1 & Fight better unarmed and in close quarters & \tdash & \featpref{Brawler}           \\
         \featref{Duelist}           & Dex 1, Int 1 & Fight one-on-one better                    & \tdash & \featpref{Duelist}           \\
@@ -178,27 +178,26 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         In addition, for each round that you spend using your \textit{air dancer} ability, the DR increases by 2 instead of by 5.
     \end{feat}
 
-    \begin{feat}{Agility}{Combat}
-        \featpre Starting Dexterity of 2.
+    \begin{feat}{Agility}{General}
+        \featpre Starting Dexterity of 1.
 
-        \ff[1]{Spring Attack} You can use the \textit{spring attack} ability as a standard action.
+        \ff[1]{Lightning Reflexes} You gain a \plus2 bonus to Reflex defense and \glossterm{initiative} checks.
+
+        \ff[4]{Evasion} When you are attacked by an ability that affects an area, you can use your Reflex defense in place of any other defenses against that attack.
+
+        \ff[7]{Spring Attack} You can use the \textit{spring attack} ability as a standard action.
         \begin{apability}{Spring Attack}
-            Move up to your movement speed and make a \glossterm{strike}.
+            Move up to your movement speed and make a \glossterm{strike} with a \plus1d bonus to damage.
             If you use this ability during the \glossterm{action phase}, you may continue moving during the \glossterm{delayed action phase} if you have remaining movement available.
         \end{apability}
 
-        \ff[3]{Lightning Reflexes} You gain a \plus2 bonus to Reflex defense and \glossterm{initiative} checks.
+        \ff[10]{Greater Lightning Reflexes} The bonuses from your \textit{lightning reflexes} ability increase to \plus4.
 
-        \ff[6]{Dodge Roll} When you use your \textit{spring attack} ability, you gain a \plus2 bonus to Armor and Reflex defenses during that phase.
-        This is a \glossterm{Swift} ability.
+        \ff[13]{Dodge} You gain a \plus1 bonus to Armor defense.
 
-        \ff[9]{Combat Evasion} You gain a \plus1 bonus to Armor defense.
+        \ff[16]{Greater Spring Attack} You gain a \plus1d bonus to damage on the strike from your \textit{spring attack} ability.
 
-        \ff[12]{Greater Spring Attack} You gain a \plus1d bonus to damage on the strike from your \textit{spring attack} ability.
-
-        \ff[15]{Greater Lightning Reflexes} The bonuses from your \textit{lightning reflexes} ability increase to \plus4.
-
-        \ff[18]{Greater Combat Evasion} The bonus from your \textit{combat evasion} ability increases to \plus2.
+        \ff[18]{Supreme Lightning Reflexes} The bonuses from your \textit{lightning reflexes} ability increase to \plus6.
     \end{feat}
 
     \begin{feat}{Awareness Specialization}{Skill}
