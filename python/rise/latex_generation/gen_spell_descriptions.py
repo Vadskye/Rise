@@ -1676,7 +1676,7 @@ def generate_mystic_spheres():
             Spell('Faerie Fire', 2, """
                 This spell functions like the \\spell<flare> spell, except that each struck target is surrounded with a pale glow made of hundreds of ephemeral points of light.
                 This causes the struck target to radiate bright light in a 5 foot radius, as a candle.
-                The lights impose a -10 penalty to Stealth checks.
+                The lights impose a -10 penalty to the Stealth skill.
                 In addition, they reveal the outline of the creatures if they become \\glossterm<invisible>.
                 This allows observers to see their location, though not to see them perfectly.
             """, tags=['Light', 'Sensation', 'Visual']),
@@ -2193,7 +2193,7 @@ def generate_mystic_spheres():
             Spell('Telekinetic Lift', 1, """
                 Choose a Medium or smaller willing creature or unattended object within \\rngclose range.
                 The target is reduced to half of its normal weight.
-                This gives it a +4 bonus to Jump, if applicable, and makes it easier to lift and move.
+                This gives it a +4 bonus to the Jump skill, if applicable, and makes it easier to lift and move.
             """, tags=['Attune (target)']),
             Spell('Greater Telekinetic Lift', 3, """
                 This spell functions like the \\spell<telekinetic lift> spell, except that the target is reduced to one quarter of its normal weight.
