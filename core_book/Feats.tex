@@ -114,7 +114,8 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \featref{Sphere Focus: Polymorph}    & \sphere{Polymorph} sphere access    & Improve casting with chosen sphere & Magical & \featpref{Sphere Focus: Polymorph}    \\
         \featref{Sphere Focus: Pyromancy}    & \sphere{Pyromancy} sphere access    & Improve casting with chosen sphere & Magical & \featpref{Sphere Focus: Pyromancy}    \\
         \featref{Sphere Focus: Revelation}   & \sphere{Revelation} sphere access   & Improve casting with chosen sphere & Magical & \featpref{Sphere Focus: Revelation}   \\
-        \featref{Sphere Focus: Scry}         & \sphere{Scry} sphere access         & Improve casting with chosen sphere & Magical & \featpref{Sphere Focus: Scry}         \\
+        % Scry doesn't really need a Sphere Focus feat
+        % \featref{Sphere Focus: Scry}         & \sphere{Scry} sphere access         & Improve casting with chosen sphere & Magical & \featpref{Sphere Focus: Scry}         \\
         \featref{Sphere Focus: Summon}       & \sphere{Summon} sphere access       & Improve casting with chosen sphere & Magical & \featpref{Sphere Focus: Summon}       \\
         \featref{Sphere Focus: Telekinesis}  & \sphere{Telekinesis} sphere access  & Improve casting with chosen sphere & Magical & \featpref{Sphere Focus: Telekinesis}  \\
         \featref{Sphere Focus: Terramancy}   & \sphere{Terramancy} sphere access   & Improve casting with chosen sphere & Magical & \featpref{Sphere Focus: Terramancy}   \\
@@ -1463,10 +1464,18 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[1]{Aeromancy Focus} You gain a \plus1 bonus to \glossterm{accuracy} with abilities from the \sphere{aeromancy} \glossterm{mystic sphere}.
 
+        \ff[3]{Personal Updraft} You gain a \plus4 \glossterm{magic bonus} to the Jump skill.
+
         \ff[6]{Spell} You learn a spell from the \sphere{aeromancy} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
 
+        \ff[9]{Greater Personal Updraft} You gain a \glossterm{glide speed} equal to your \glossterm{base speed} (see \pcref{Gliding}).
+
+        \ff[12]{Favorable Winds} You gain a \plus2 \glossterm{magic bonus} to accuracy with \glossterm{physical} ranged attacks.
+
         \ff[15]{Greater Aeromancy Focus} The bonus from your \textit{aeromancy focus} ability increases to \plus2.
+
+        \ff[18]{Supreme Personal Updraft} You gain a \glossterm{fly speed} equal to your \glossterm{base speed} (see \pcref{Flying}).
     \end{feat}
 
     \begin{feat}{Sphere Focus: Aquamancy}{Casting, Magical}
@@ -1542,12 +1551,25 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Sphere Focus: Bless}{Casting, Magical}
         \featpre Access to the \sphere{Bless} \glossterm{mystic sphere}.
 
-        \ff[1]{Bless Focus} You gain a \plus1 bonus to \glossterm{accuracy} with abilities from the \sphere{bless} \glossterm{mystic sphere}.
+        \ff[1]{Reciprocal Blessing} When you cast a spell from the \sphere{bless} \glossterm{mystic sphere} on another creature, you can also target yourself.
+
+        \ff[3]{Restorative Blessing} Whenever a creature \glossterm{attunes} to a spell you cast from the \sphere{bless} \glossterm{mystic sphere}, it heals hit points equal to your \glossterm{power}.
 
         \ff[6]{Spell} You learn a spell from the \sphere{bless} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[15]{Greater Bless Focus} The bonus from your \textit{bless focus} ability increases to \plus2.
+        \ff[9]{Dual Blessing} You gain the Dual Blessing \glossterm{augment}.
+        If you increase the spell's level by two levels, you can target an additional creature with the spell.
+        You can only apply this augment to \glossterm{targeted} spells from the \sphere{bless} \glossterm{mystic sphere}.
+
+        \ff[12]{Greater Restorative Blessing} The healing from your \textit{restorative blessing} ability increases to be equal to twice your \glossterm{power}.
+
+        \ff[15]{Spell} You learn a spell from the \sphere{bless} \glossterm{mystic sphere}.
+        When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
+
+        \ff[18]{Myriad Blessing} You gain the Myriad Blessing \glossterm{augment}.
+        If you increase the spell's level by three levels, you can target up to ten additional creatures with the spell.
+        You can only apply this augment to \glossterm{targeted} spells from the \sphere{bless} \glossterm{mystic sphere}.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Channel Divinity}{Casting, Magical}
@@ -1555,10 +1577,19 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[1]{Channel Divinity Focus} You gain a \plus1 bonus to \glossterm{accuracy} with abilities from the \sphere{channel divinity} \glossterm{mystic sphere}.
 
+        \ff[3]{Divine Intervention} You gain a \plus5 bonus to any roll that you spend a \glossterm{legend point} on.
+
         \ff[6]{Spell} You learn a spell from the \sphere{channel divinity} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
 
+        \ff[9]{Divine Champion} You gain a \plus2 \glossterm{magic bonus} to \glossterm{accuracy} and \glossterm{defenses} in areas sacred to your deity, such as temples.
+
+        % This is pretty weird
+        \ff[12]{Divine Servant} Once per session, if you pray to your deity in an area sacred to your deity, you can regain a \glossterm{legend point} if you have no \glossterm{legend points} remaining.
+
         \ff[15]{Greater Channel Divinity Focus} The bonus from your \textit{channel divinity focus} ability increases to \plus2.
+
+        \ff[18]{Greater Divine Champion} The bonus from your \textit{divine champion} ability increases to \plus3.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Chronomancy}{Casting, Magical}
@@ -1611,10 +1642,20 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[1]{Corruption Focus} You gain a \plus1 bonus to \glossterm{accuracy} with abilities from the \sphere{corruption} \glossterm{mystic sphere}.
 
+        \ff[3]{Corruption Tolerance} You gain a \plus1 bonus to Fortitude defense and are immune to being \glossterm{sickened}.
+
         \ff[6]{Spell} You learn a spell from the \sphere{corruption} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
 
+        \ff[9]{Lingering Corruption} When a creature removes a condition imposed by a spell you cast from the \sphere{corruption} \glossterm{mystic sphere}, the effects of the condition last until the end of the next round after the condition is removed.
+
+        \ff[12]{Greater Corruption Tolerance} The bonus from your \textit{corruption tolerance} ability increases to \plus2.
+        In addition, you are immune to being \glossterm{nauseated}.
+
         \ff[15]{Greater Corruption Focus} The bonus from your \textit{corruption focus} ability increases to \plus2.
+
+        \ff[18]{Supreme Corruption Tolerance} The bonus from your \textit{corruption tolerance} ability increases to \plus3.
+        In addition, you are immune to hostile \glossterm{Life} abilities.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Cryomancy}{Casting, Magical}
@@ -1622,10 +1663,22 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[1]{Cryomancy Focus} You gain a \plus1 bonus to \glossterm{accuracy} with abilities from the \sphere{cryomancy} \glossterm{mystic sphere}.
 
+        \ff[3]{Cold Resistance} You gain a \glossterm{magic bonus} equal to your \glossterm{power} to your damage reduction against cold damage.
+
+        \ff[3]{Lingering Chill} Whenever you get a \glossterm{critical hit} against a target with a spell from the \sphere{cryomancy} \glossterm{mystic sphere}, the target is \glossterm{fatigued} as a \glossterm{condition}.
+
         \ff[6]{Spell} You learn a spell from the \sphere{cryomancy} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
 
+        \ff[9]{Potent Cryomancy} You gain a \plus1 bonus to \glossterm{power} with abilities from the \sphere{cryomancy} \glossterm{mystic sphere}.
+
+        \ff[12]{Greater Cold Resistance} Your bonus from the \textit{cold resistance} ability increases to twice your \glossterm{power}.
+
+        \ff[12]{Greater Lingering Chill} The \glossterm{fatigued} condition from your \textit{lingering chill} ability is replaced with the \glossterm{exhausted} condition.
+
         \ff[15]{Greater Cryomancy Focus} The bonus from your \textit{cryomancy focus} ability increases to \plus2.
+
+        \ff[18]{Greater Potent Cryomancy} The bonus from your \textit{potent cryomancy} ability increases to \plus2.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Delusion}{Casting, Magical}
@@ -1652,10 +1705,23 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[1]{Electromancy Focus} You gain a \plus1 bonus to \glossterm{accuracy} with abilities from the \sphere{electromancy} \glossterm{mystic sphere}.
 
+        \ff[3]{Electricity Resistance} You gain a \glossterm{magic bonus} equal to your \glossterm{power} to your damage reduction against electricity damage.
+
+        \ff[3]{Lingering Shock} When you get a \glossterm{critical hit} against a target with a spell from the \sphere{electromancy} \glossterm{mystic sphere}, the target is \glossterm{dazed} as a \glossterm{condition}.
+
         \ff[6]{Spell} You learn a spell from the \sphere{electromancy} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
 
+        \ff[9]{Potent Electromancy} You gain a \plus1 bonus to \glossterm{power} with abilities from the \sphere{electromancy} \glossterm{mystic sphere}.
+
+        \ff[12]{Greater Electricity Resistance} Your bonus from the \textit{electricity resistance} ability increases to twice your \glossterm{power}.
+
+        % TODO: Stunned is too strong, decelerated is awkward
+        \ff[12]{Greater Lingering Shock} Your \textit{lingering shock} ability makes the target both \glossterm{dazed} and \glossterm{decerated} as part of the same \glossterm{condition}.
+
         \ff[15]{Greater Electromancy Focus} The bonus from your \textit{electromancy focus} ability increases to \plus2.
+
+        \ff[18]{Greater Potent Electromancy} The bonus from your \textit{potent electromancy} ability increases to \plus2.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Fabrication}{Casting, Magical}
@@ -1703,10 +1769,22 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[1]{Photomancy Focus} You gain a \plus1 bonus to \glossterm{accuracy} with abilities from the \sphere{photomancy} \glossterm{mystic sphere}.
 
+        \ff[3]{Augmented Vision} You gain a \plus2 \glossterm{magic bonus} to the Awareness skill.
+        In addition, you gain the \glossterm{low-light vision} ability, allowing you to treat sources of light as if they had double their normal illumination range.
+
         \ff[6]{Spell} You learn a spell from the \sphere{photomancy} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
 
+        \ff[9]{Certain Sight} You are immune to being \glossterm{dazzled} and \glossterm{blinded}.
+
+        \ff[12]{Greater Augmented Vision} The bonus from your \textit{augmented vision} ability increases to \plus4.
+        In addition, the benefit of your \glossterm{low-light vision} ability doubles, allowing you to treat sources of light as if they had four times their norrmal illumination range.
+
         \ff[15]{Greater Photomancy Focus} The bonus from your \textit{photomancy focus} ability increases to \plus2.
+
+        \ff[18]{Supreme Augmented Vision} The bonus from your \textit{augmented vision} ability increases to \plus6.
+        In addition, you gain the \glossterm{truesight} ability with a 50 foot range.
+        If you already have the \glossterm{truesight} ability, you increase its range by 50 feet.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Polymorph}{Casting, Magical}
@@ -1798,17 +1876,6 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[15]{Greater Prophesy} When you use your \textit{prophesy} ability, you can increase the \textit{time of prophecy} to eight hours.
 
         \ff[18]{Greater Truesight} The range of your \glossterm{truesight} ability increases by 100 feet.
-    \end{feat}
-
-    \begin{feat}{Sphere Focus: Scry}{Casting, Magical}
-        \featpre Access to the \sphere{Scry} \glossterm{mystic sphere}.
-
-        \ff[1]{Scry Focus} You gain a \plus1 bonus to \glossterm{accuracy} with abilities from the \sphere{scry} \glossterm{mystic sphere}.
-
-        \ff[6]{Spell} You learn a spell from the \sphere{scry} \glossterm{mystic sphere}.
-        When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
-
-        \ff[15]{Greater Scry Focus} The bonus from your \textit{scry focus} ability increases to \plus2.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Summon}{Casting, Magical}
@@ -1914,10 +1981,23 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[1]{Verdamancy Focus} You gain a \plus1 bonus to \glossterm{accuracy} with abilities from the \sphere{verdamancy} \glossterm{mystic sphere}.
 
+        \ff[3]{Verdant Allies} Your speed is not reduced when moving in light or heavy \glossterm{undergrowth}.
+        In addition, you can ignore \glossterm{concealment} from plants when attacking.
+
         \ff[6]{Spell} You learn a spell from the \sphere{verdamancy} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
 
+        \ff[9]{Creative Genesis} You gain the Creative Genesis \glossterm{augment}.
+        If you increase the spell's level by one level, you can cast the spell as if non-arable ground of any kind was arable earth.
+        You can only apply this augment to spells from the \sphere{verdamancy} \glossterm{mystic sphere}.
+
+        \ff[12]{Greater Verdant Allies} You can ignore all \glossterm{cover} and \glossterm{concealment} from plants whenever doing so would be beneficial to you.
+        For example, creatures cannot use plants to hide from you.
+
         \ff[15]{Greater Verdamancy Focus} The bonus from your \textit{verdamancy focus} ability increases to \plus2.
+
+        % Seems weird for an 18th level; should stay in sync with the druid wild aspect
+        \ff[18]{Supreme Verdant Allies} The movement penalties from \glossterm{undergrowth} are doubled for enemies within a \areahuge radius emanation from you.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Vital Surge}{Casting, Magical}
