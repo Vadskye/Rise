@@ -1501,8 +1501,9 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \parhead{Disarm} As a standard action, you can use the \textit{disarm} ability to knock an item out of a foe's hands.
 
+        % Somewhat oddly? dual wielding is significantly better at disarming than two-handing
         \begin{freeability}{Disarm}\label{Disarm}
-            Make a melee \glossterm{strike} with a weapon you wield against an object.
+            Make a melee \glossterm{strike} against an object.
             Unlike most abilities, this ability can target specific items \glossterm{attended} by creatures.
             This attack must beat the target's Armor defense.
             If the target is attended by a creature, the attack must also beat the attending creature's Reflex defense.
@@ -1512,11 +1513,12 @@ It defines how attributes work and explains how to make physical attacks in comb
             If you do, it falls to the ground in the square occupied by the attending creature that is closest to you.
         \end{freeability}
 
-        \parhead{Feint} As a standard action during the \glossterm{action phase}, you can use the \textit{feint} ability to distract an opponent, allowing you to strike them more accurately.
+        \parhead{Feint} As a standard action during the \glossterm{action phase}, you can use the \textit{feint} ability to distract an opponent.
+        This allows you to strike them more accurately, though you sacrifice some power for the feint.
 
         \begin{freeability}{Feint}\label{Feint}
             Make a melee \glossterm{physical attack} with a weapon you wield against a creature's Reflex defense.
-            During the \glossterm{delayed action phase}, you can also make a melee \glossterm{strike} with the same weapon.
+            During the \glossterm{delayed action phase}, you can also make a melee \glossterm{strike} with the same weapon with a \minus1d penalty to damage.
 
             On a hit, the target takes a \minus2 penalty to defenses against the delayed strike.
             On a miss, you take a \minus2 penalty to accuracy with the strike.
