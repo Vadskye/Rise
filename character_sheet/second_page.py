@@ -325,7 +325,7 @@ def calc_skill_points():
                     'disabled': True, 'name': 'skill_points_base', 'value': 8,
                 })),
                 plus(),
-                underlabel('(Int)', number_input({
+                underlabel('2 * (Int)', number_input({
                     'disabled': True,
                     'name': 'skill_points_intelligence',
                     'value': '(@{intelligence_starting} * 2)',
