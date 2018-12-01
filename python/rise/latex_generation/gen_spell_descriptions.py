@@ -680,18 +680,18 @@ def generate_mystic_spheres():
                 This spell functions like the \\spell<complete mantle of faith> spell, except that the bonus is equal to twice your \\glossterm<power>.
             """, tags=['Attune (self)']),
             Spell('Divine Might', 3, """
-                You increase your size by one size category.
+                You increase your size by one \\glossterm<size category>.
                 This increases your \\glossterm<overwhelm value>, \\glossterm<overwhelm resistance>, and usually increases your \\glossterm<reach> (see \\pcref<Size in Combat>).
                 However, your muscles are not increased fully to match its new size, and your Strength is unchanged.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (self)', 'Shaping', 'Sizing']),
             Spell('Divine Might, Greater', 5, """
-                This spell functions like the \\textit<divine might> spell, except that you also gain a +2 bonus to Strength.
+                This spell functions like the \\textit<divine might> spell, except that you also gain a +2 \\glossterm<magic bonus> to Strength.
             """, tags=['Attune (self)', 'Shaping', 'Sizing']),
             Spell('Divine Might, Supreme', 7, """
                 This spell functions like the \\spell<divine might> spell, except that your size is increased by two size categories.
-                You gain a +2 bonus to Strength to partially match your new size.
+                You gain a +2 \\glossterm<magic bonus> to Strength to partially match your new size.
             """, tags=['Attune (self)', 'Shaping', 'Sizing']),
         ],
         rituals=[
@@ -1539,11 +1539,11 @@ def generate_mystic_spheres():
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)', 'Shaping', 'Sizing']),
             Spell('Enlarge, Greater', 5, """
-                This spell functions like the \\textit<enlarge> spell, except that the target's Strength is increased by 2 to match its new size.
+                This spell functions like the \\textit<enlarge> spell, except that the target gains a +2 \\glossterm<magic bonus> to Strength to match its new size.
             """, tags=['Attune (target)', 'Shaping', 'Sizing']),
             Spell('Enlarge, Supreme', 7, """
                 This spell functions like the \\spell<enlarge> spell, except that the target's size is increased by two size categories.
-                Its Strength is increased by 2 to partially match its new size.
+                It gains a +2 \\glossterm<magic bonus> to Strength to partially match its new size.
             """, tags=['Attune (target)', 'Shaping', 'Sizing']),
             Spell('Alter Appearance', 2, """
                 Choose a Large or smaller willing creature within \\rngclose range.
