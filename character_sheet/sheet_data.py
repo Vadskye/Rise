@@ -41,10 +41,6 @@ ROLL20_CALC = {
         'action_points_willpower',
         'action_points_misc',
     ]),
-    'skill_points': value_sum([
-        'skill_points_class',
-        'skill_points_misc',
-    ]) + ' + (@{intelligence_starting}) * 2',
     'strike_accuracy': value_sum([
         'strike_accuracy_scaling',
         'strike_accuracy_misc',
