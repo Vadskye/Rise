@@ -143,7 +143,6 @@ def generate_sample_monsters():
         challenge_rating=4,
         character_class=CharacterClass('adept'),
         level=12,
-        key_attribute='willpower',
         name='Aboleth',
         natural_armor=6,
         species=Species('aberration'),
@@ -314,7 +313,6 @@ def generate_sample_monsters():
         armor=Armor('breastplate'),
         character_class=CharacterClass('adept'),
         level=1,
-        key_attribute='willpower',
         name='Cultist',
         species=Species('humanoid'),
         starting_attributes=[0, 0, 0, -1, -1, 3],
@@ -382,7 +380,6 @@ def generate_sample_monsters():
         armor=Armor('breastplate'),
         challenge_rating=2,
         character_class=CharacterClass('adept'),
-        key_attribute='willpower',
         level=3,
         name='Orc Shaman',
         natural_armor=0,
@@ -419,7 +416,6 @@ def generate_sample_monsters():
         challenge_rating=2,
         character_class=CharacterClass('slayer'),
         level=7,
-        key_attribute='constitution',
         name='Ankheg',
         natural_armor=6,
         species=Species('magical beast'),
@@ -439,7 +435,6 @@ def generate_sample_monsters():
     monsters['basilisk'] = Creature(
         challenge_rating=2,
         character_class=CharacterClass('behemoth'),
-        key_attribute='perception',
         level=5,
         name='Basilisk',
         natural_armor=6,
@@ -451,7 +446,6 @@ def generate_sample_monsters():
     monsters['behir'] = Creature(
         challenge_rating=3,
         character_class=CharacterClass('behemoth'),
-        key_attribute='constitution',
         level=8,
         name='Behir',
         natural_armor=6,
@@ -483,7 +477,6 @@ def generate_sample_monsters():
     )
     monsters['cockatrice'] = Creature(
         character_class=CharacterClass('adept'),
-        key_attribute='constitution',
         level=3,
         name='Cockatrice',
         natural_armor=4,
@@ -505,7 +498,6 @@ def generate_sample_monsters():
     monsters['frost_worm'] = Creature(
         challenge_rating=3,
         character_class=CharacterClass('behemoth'),
-        key_attribute='constitution',
         level=12,
         name='Frost Worm',
         natural_armor=6,
@@ -593,7 +585,6 @@ def generate_sample_monsters():
     # Monstrous humanoids<M-F7>
     monsters['banshee'] = Creature(
         character_class=CharacterClass('adept'),
-        key_attribute='willpower',
         level=3,
         name='Banshee',
         natural_armor=4,
@@ -629,7 +620,6 @@ def generate_sample_monsters():
     monsters['storm_giant'] = Creature(
         armor=Armor('breastplate'),
         character_class=CharacterClass('slayer'),
-        key_attribute='willpower',
         level=15,
         name='Giant',
         name_suffix='Storm',
@@ -642,7 +632,6 @@ def generate_sample_monsters():
     monsters['green_hag'] = Creature(
         challenge_rating=2,
         character_class=CharacterClass('adept'),
-        key_attribute='perception',
         level=5,
         name='Hag',
         name_suffix='Green',
@@ -655,7 +644,6 @@ def generate_sample_monsters():
     monsters['medusa'] = Creature(
         challenge_rating=2,
         character_class=CharacterClass('adept'),
-        key_attribute='perception',
         level=7,
         name='Medusa',
         natural_armor=4,
@@ -668,7 +656,6 @@ def generate_sample_monsters():
     # Outsiders
     monsters['astral_deva'] = Creature(
         character_class=CharacterClass('adept'),
-        key_attribute='willpower',
         level=14,
         name='Angel',
         name_suffix='Astral Deva',
@@ -680,7 +667,6 @@ def generate_sample_monsters():
     )
     monsters['arrowhawk'] = Creature(
         character_class=CharacterClass('slayer'),
-        key_attribute='dexterity',
         level=3,
         name='Arrowhawk',
         natural_armor=4,
@@ -690,7 +676,6 @@ def generate_sample_monsters():
     )
     monsters['bebelith'] = Creature(
         character_class=CharacterClass('slayer'),
-        key_attribute='constitution',
         level=11,
         name='Demon',
         name_suffix='Bebelith',
@@ -702,7 +687,6 @@ def generate_sample_monsters():
     )
     monsters['hell_hound'] = Creature(
         character_class=CharacterClass('slayer'),
-        key_attribute='constitution',
         level=4,
         name='Hell Hound',
         natural_armor=4,
@@ -713,7 +697,6 @@ def generate_sample_monsters():
     )
     monsters['flamebrother_salamander'] = Creature(
         character_class=CharacterClass('slayer'),
-        key_attribute='constitution',
         level=4,
         name='Salamander',
         name_suffix='Flamebrother',
@@ -738,7 +721,6 @@ def generate_sample_monsters():
     monsters['salamander_battlemaster'] = Creature(
         challenge_rating=3,
         character_class=CharacterClass('slayer'),
-        key_attribute='constitution',
         level=5,
         name='Salamander',
         name_suffix='Battlemaster',
@@ -773,7 +755,6 @@ def generate_sample_monsters():
     monsters['dirgewalker'] = Creature(
         challenge_rating=4,
         character_class=CharacterClass('adept'),
-        key_attribute='willpower',
         level=4,
         name='Dirgewalker',
         natural_armor=6,
