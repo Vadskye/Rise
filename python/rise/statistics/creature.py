@@ -26,7 +26,6 @@ class Creature(object):
             weapons,  # Array of Weapon objects
             armor=None,
             challenge_rating=1,
-            key_attribute=None,
             name_suffix=None,
             natural_armor=0,
             shield=None,
@@ -51,7 +50,6 @@ class Creature(object):
 
         self.armor = armor
         self.challenge_rating = challenge_rating
-        self.key_attribute = key_attribute
         self.name_suffix = name_suffix
         self.natural_armor = natural_armor
         self.shield = shield
@@ -83,7 +81,6 @@ class Creature(object):
             weapons=self.weapons,
             armor=self.armor,
             challenge_rating=self.challenge_rating,
-            key_attribute=self.key_attribute,
             name_suffix=self.name_suffix,
             natural_armor=self.natural_armor,
             shield=self.shield,
@@ -228,7 +225,7 @@ class Creature(object):
         return sum([
             max(
                 self.level,
-                getattr(self, attribute or self.key_attribute or 'perception'),
+                getattr(self, attribute or 'perception'),
             ),
             self.accuracy_modifier,
             self.cr_mod,
@@ -282,12 +279,13 @@ class Creature(object):
         ])
         return standard
 
-    def standard_damage(self, attribute=None):
+    def standard_damage(self, ability_type='physical'):
+        attribute = {
+            'magical': self.willpower,
+            'physical': self.strength,
+        }[ability_type]
         return standard_damage(
-            max(
-                self.level,
-                getattr(self, attribute or self.key_attribute),
-            ),
+            max(self.level, attribute),
         ) + self.cr_mod
 
     def __str__(self):

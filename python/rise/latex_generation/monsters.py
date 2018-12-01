@@ -41,14 +41,14 @@ def aberrations(sample_monsters):
         active_abilities=[
             active_ability('Mind Crush', f"""
                 The aboleth makes a +{aboleth.accuracy()} vs. Mental attack against a creature in Long range.
-                \\hit The target takes {aboleth.standard_damage() + 3} psionic damage and is \\glossterm<stunned> as a \\glossterm<condition>.
+                \\hit The target takes {aboleth.standard_damage('magical') + 3} psionic damage and is \\glossterm<stunned> as a \\glossterm<condition>.
                 \\crit The aboleth can spend an action point.
                 If it does, the target is \\glossterm<dominated> by the aboleth for as long as the aboleth \\glossterm<attunes> to this ability.
                 Otherwise, the target takes double the damage of a non-critical hit.
             """, tags=['Mind']),
             active_ability('Psionic Blast', f"""
                 The aboleth makes a +{aboleth.accuracy()} vs. Mental attack against enemies in a Large cone.
-                \\hit Each target takes {aboleth.standard_damage() + 1} psionic damage and is \\glossterm<stunned> as a \\glossterm<condition>.
+                \\hit Each target takes {aboleth.standard_damage('magical') + 1} psionic damage and is \\glossterm<stunned> as a \\glossterm<condition>.
             """, tags=['Mind']),
         ],
         passive_abilities=[

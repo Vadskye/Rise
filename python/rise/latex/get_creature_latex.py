@@ -1,4 +1,4 @@
-from rise.latex.util import join, tag_if
+from rise.latex.util import join
 
 # from rise.statistics.creature
 def get_creature_latex(
@@ -21,7 +21,6 @@ def get_creature_latex(
         fortitude_defense=creature.fortitude_defense,
         hit_points=creature.hit_points,
         intelligence=creature.intelligence,
-        key_attribute=creature.key_attribute,
         level=creature.level,
         mental_defense=creature.mental_defense,
         name=creature.name,
@@ -67,7 +66,6 @@ def get_latex(
         behavior=None,
         challenge_rating=1,
         immunities=None,
-        key_attribute=None,
         name_suffix=None,
         passive_abilities=None,
         resistances=None,
@@ -111,12 +109,12 @@ def get_latex(
                         \\textbf<Space> {space} ft.;
                         \\textbf<Reach> {reach} ft.
                     \\pari \\textbf<Attributes>:
-                        {tag_if(f"Str {strength}", 'textbf', key_attribute == 'strength')},
-                        {tag_if(f"Dex {dexterity}", 'textbf', key_attribute == 'dexterity')},
-                        {tag_if(f"Con {constitution}", 'textbf', key_attribute == 'constitution')},
-                        {tag_if(f"Int {intelligence}", 'textbf', key_attribute == 'intelligence')},
-                        {tag_if(f"Per {perception}", 'textbf', key_attribute == 'perception')},
-                        {tag_if(f"Wil {willpower}", 'textbf', key_attribute == 'willpower')}
+                        Str {strength},
+                        Dex {dexterity},
+                        Con {constitution},
+                        Int {intelligence},
+                        Per {perception},
+                        Wil {willpower}
                 \\end<monsterfooter>
             \\end<monsection>
 
