@@ -17,7 +17,7 @@ def defense_bonuses_from_race_name(name):
         'animate': [6, 4, 2],
         'construct': [4, 2, 6],
         'humanoid': [4, 4, 4],
-        'magical beast': [6, 4, 2],
+        'magical beast': [4, 4, 4],
         'monstrous humanoid': [4, 4, 4],
         'outsider': [2, 4, 6],
         'undead': [2, 4, 6],
