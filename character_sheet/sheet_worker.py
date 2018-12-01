@@ -194,13 +194,13 @@ def threat():
 
 def encumbrance():
     return f"""
-        on("change:body_armor_encumbrance change:encumbrance_misc change:constitution_starting", function(eventInfo) {{
-            getAttrs(["body_armor_encumbrance", "encumbrance_misc", "constitution_starting"], function(v) {{
+        on("change:body_armor_encumbrance change:encumbrance_misc change:strength_starting", function(eventInfo) {{
+            getAttrs(["body_armor_encumbrance", "encumbrance_misc", "strength_starting"], function(v) {{
                 setAttrs({{
                     encumbrance: Math.max(
                         Number(v.body_armor_encumbrance || 0)
                         + Number(v.encumbrance_misc || 0)
-                        - Number(v.constitution_starting)
+                        - Number(v.strength_starting)
                     , 0),
                 }});
             }});
