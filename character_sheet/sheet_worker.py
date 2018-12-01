@@ -16,6 +16,7 @@ def generate_script():
         base_speed(),
         legend_points(),
         hit_points(),
+        skill_points(),
         '</script>',
         ""
     ])
@@ -251,6 +252,17 @@ def hit_points():
                 setAttrs({{
                     hit_points_max: hit_points,
                     hit_points_total: hit_points,
+                }});
+            }});
+        }});
+    """
+
+def skill_points():
+    return f"""
+        on("change:intelligence_starting change:skill_points_misc", function(eventInfo) {{
+            getAttrs(["intelligence_starting", "skill_points_misc"], function(v) {{
+                setAttrs({{
+                    skill_points: 8 + Number(v.intelligence_starting || 0) * 2 + Number((v.skill_points_misc || 0)),
                 }});
             }});
         }});

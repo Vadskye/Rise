@@ -180,7 +180,7 @@ def calc_hit_points():
             result_attributes={
                 'disabled': 'true',
                 'name': 'hit_points_display',
-                'value': '@{hit_points}',
+                'value': '(@{hit_points_total})',
             },
         ),
     ])
@@ -338,8 +338,8 @@ def calc_skill_points():
             ],
             result_attributes={
                 'disabled': 'true',
-                'name': 'skill_points',
-                'value': ROLL20_CALC['skill_points'],
+                'name': 'skill_points_display',
+                'value': '(@{skill_points})',
             },
         ),
     ])
