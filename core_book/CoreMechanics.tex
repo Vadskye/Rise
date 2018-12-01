@@ -230,7 +230,6 @@ It defines how attributes work and explains how to make physical attacks in comb
                 \begin{itemize}
                     \item Your \glossterm{power} with most \glossterm{mundane} abilities, such as \glossterm{strikes} (see \pcref{Power}).
                     \item Your \glossterm{threat} (see \pcref{Threat}).
-                    \item Your Fortitude defense (see \pcref{Defenses}).
                 \end{itemize}
 
             \parhead{Dexterity (Dex)}\label{Dexterity}
@@ -267,13 +266,11 @@ It defines how attributes work and explains how to make physical attacks in comb
                 \begin{itemize}
                     \item You gain \glossterm{insight points} equal to your starting Intelligence (see \pcref{Insight Points}).
                     \item You gain bonus languages equal to your starting Intelligence (see \pcref{Languages}).
-                    \item You gain extra skill points equal to twice your starting Intelligence (see \pcref{Skill Points}).
+                    \item You gain a bonus (or penalty) to \glossterm{skill points} equal to twice your starting Intelligence (see \pcref{Skill Points}).
+                    \item You gain a bonus (or penalty) to \glossterm{insight points} equal to your starting Intelligence (see \pcref{Insight Points}).
                     \item Your Intelligence affects Intelligence-based skills: Craft, Deduction, Disguise, Heal, Knowledge, and Linguistics (see \pcref{Skills}).
-                    \item If your starting Intelligence is negative, you lose \glossterm{insight points} equal to your starting Intelligence, and you lose skill points equal to twice your starting Intelligence.
                     \item If your Intelligence is negative, you take a penalty to all Intelligence-based skills equal to your Intelligence.
                 \end{itemize}
-
-                If you have a high Intelligence, you can use it to determine your Mental defense (see \pcref{Defenses}).
 
                 \par An animal has an Intelligence score of \minus6 or lower.
                 A creature of humanlike intelligence has a score of at least a \minus5 Intelligence.
@@ -287,11 +284,7 @@ It defines how attributes work and explains how to make physical attacks in comb
                     \item If your Perception is negative, you take a penalty to accuracy with all attacks equal to half your Perception.
                 \end{itemize}
 
-                If you have a high Perception, you can use it to determine several statistics:
-                \begin{itemize}
-                    \item Your \glossterm{accuracy} with all attacks (see \pcref{Accuracy}).
-                    \item Your Reflex defense (see \pcref{Defenses}).
-                \end{itemize}
+                If you have a high Perception, you can use it to determine your \glossterm{accuracy} with all attacks (see \pcref{Accuracy}).
 
             \parhead{Willpower (Wil)}\label{Willpower}
                 Willpower represents your ability to endure mental hardships.
@@ -482,23 +475,25 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \subsubsection{Defense Values}\label{Defense Values}
 
-            Each of your defenses is calculated in the following way:
-
-            \begin{figure}[h]
-                \centering Level or Dexterity \add class defense bonus \add other bonuses and penalties
-            \end{figure}
-
+            Your defenses are calculated in the following way:
+            \begin{itemize*}
+                \itemhead{Armor}: Level or Dexterity \add defense bonuses from equipped body armor and shield
+                \itemhead{Fortitude}: Level or Constitution \add starting Constitution \add class defense bonus
+                \itemhead{Reflex}: Level or Dexterity \add starting Dexterity \add class defense bonus
+                \itemhead{Mental}: Level or Willpower \add starting Willpower \add class defense bonus
+            \end{itemize*}
             The attributes and relevant bonuses which apply to each defense are described in \trefnp{Defense Calculations}.
+            In addition to the normal calculation, each defense may have additional bonuses or penalties applied by various abilities.
 
             \begin{dtable!*}
                 \lcaption{Defense Calculations}
                 \begin{dtabularx}{\textwidth}{l l l l >{\lcol}X}
-                    \tb{Defense Name} & \tb{Attributes} & \tb{Starting Attribute Modifier} & \tb{Body Armor Modifier} & \tb{Shield Modifier} \\
+                    \tb{Defense Name} & \tb{Attribute} & \tb{Starting Attribute Modifier} & \tb{Body Armor Modifier} & \tb{Shield Modifier} \\
                     \midrule
                     Armor defense     & Dex & \tdash & Yes & Yes \\
-                    Fortitude defense & Con or Str & Con & No  & No  \\
-                    Reflex defense    & Dex or Per & Dex & No  & Yes \\
-                    Mental defense    & Wil or Int & Wil & No  & No  \\
+                    Fortitude defense & Con & Con    & No  & No  \\
+                    Reflex defense    & Dex & Dex    & No  & No  \\
+                    Mental defense    & Wil & Wil    & No  & No  \\
                 \end{dtabularx}
             \end{dtable!*}
 

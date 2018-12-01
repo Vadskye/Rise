@@ -464,7 +464,7 @@ def calc_fort():
         div({'class': 'calc-header'}, 'Fortitude'),
         equation(
             [
-                underlabel('Lvl/Str/Con', number_input({
+                underlabel('Lvl/Con', number_input({
                     'disabled': True,
                     'name': 'fortitude_scaling_display',
                     'value': '@{fortitude_scaling}',
@@ -496,7 +496,7 @@ def calc_ref():
         div({'class': 'calc-header'}, 'Reflex'),
         equation(
             [
-                underlabel('Lvl/Dex/Per', number_input({
+                underlabel('Lvl/Dex', number_input({
                     'disabled': True,
                     'name': 'reflex_scaling_display',
                     'value': '@{reflex_scaling}',
@@ -528,7 +528,7 @@ def calc_mental():
         div({'class': 'calc-header'}, 'Mental'),
         equation(
             [
-                underlabel('Lvl/Int/Wil', number_input({
+                underlabel('Lvl/Wil', number_input({
                     'disabled': True,
                     'name': 'mental_scaling_display',
                     'value': '@{mental_scaling}',
