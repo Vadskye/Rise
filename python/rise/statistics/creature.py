@@ -147,7 +147,7 @@ class Creature(object):
         return sum([
             self.fortitude_defense_misc,
             self.starting_constitution,
-            max(self.level, self.strength, self.constitution),
+            max(self.level, self.constitution),
             self.character_class.fortitude_defense_bonus,
             self.species.fortitude_defense_bonus,
             self.cr_mod,
@@ -166,7 +166,7 @@ class Creature(object):
         return sum([
             self.mental_defense_misc,
             self.starting_willpower,
-            max(self.level, self.intelligence, self.willpower),
+            max(self.level, self.willpower),
             self.character_class.mental_defense_bonus,
             self.species.mental_defense_bonus,
             self.cr_mod,
@@ -185,7 +185,7 @@ class Creature(object):
         return sum([
             self.reflex_defense_misc,
             self.starting_dexterity,
-            max(self.level, self.dexterity, self.perception),
+            max(self.level, self.dexterity),
             self.character_class.reflex_defense_bonus,
             self.species.reflex_defense_bonus,
             self.size.reflex_defense_modifier,
