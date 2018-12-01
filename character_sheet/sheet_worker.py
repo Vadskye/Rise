@@ -135,7 +135,7 @@ def fortitude():
     return f"""
         on("change:level change:strength change:constitution change:fortitude_class change:fortitude_misc change:challenge_rating", function(eventInfo) {{
             getAttrs(["level", "strength", "constitution", "constitution_starting", "fortitude_class", "fortitude_misc", "challenge_rating"], function(v) {{
-                var scaling = Math.max(Number(v.level), Number(v.strength), Number(v.constitution));
+                var scaling = Math.max(Number(v.level), Number(v.constitution));
                 var cr_mod = Math.max(0, Number(v.challenge_rating || 1) - 1);
                 var total = scaling + Number(v.constitution_starting) + Number(v.fortitude_class) + Number(v.fortitude_misc) + cr_mod;
                 setAttrs({{
@@ -150,7 +150,7 @@ def reflex():
     return f"""
         on("change:level change:dexterity change:perception change:shield_defense_value change:reflex_class change:reflex_misc change:challenge_rating", function(eventInfo) {{
             getAttrs(["level", "dexterity", "perception", "dexterity_starting", "reflex_class", "reflex_misc", "challenge_rating"], function(v) {{
-                var scaling = Math.max(Number(v.level), Number(v.dexterity), Number(v.perception));
+                var scaling = Math.max(Number(v.level), Number(v.dexterity));
                 var cr_mod = Math.max(0, Number(v.challenge_rating || 1) - 1);
                 var total = scaling + Number(v.dexterity_starting) + Number(v.reflex_class) + Number(v.reflex_misc) + cr_mod;
                 setAttrs({{
@@ -165,7 +165,7 @@ def mental():
     return f"""
         on("change:level change:intelligence change:willpower change:mental_class change:mental_misc change:challenge_rating", function(eventInfo) {{
             getAttrs(["level", "intelligence", "willpower", "willpower_starting", "mental_class", "mental_misc", "challenge_rating"], function(v) {{
-                var scaling = Math.max(Number(v.level), Number(v.intelligence), Number(v.willpower));
+                var scaling = Math.max(Number(v.level), Number(v.willpower));
                 var cr_mod = Math.max(0, Number(v.challenge_rating || 1) - 1);
                 var total = scaling + Number(v.willpower_starting) + Number(v.mental_class) + Number(v.mental_misc) + cr_mod;
                 setAttrs({{
