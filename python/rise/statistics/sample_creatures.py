@@ -147,7 +147,7 @@ def generate_sample_monsters():
         natural_armor=6,
         species=Species('aberration'),
         size=Size('huge'),
-        starting_attributes=[2, 0, 2, 2, 1, 4],
+        starting_attributes=[2, 0, 3, 4, 3, 5],
         weapons=[Weapon('tentacle')],
     )
     monsters['eel'] = Creature(
@@ -158,7 +158,7 @@ def generate_sample_monsters():
         natural_armor=6,
         species=Species('animal'),
         size=Size('large'),
-        starting_attributes=[2, 2, 0, -8, 1, 0],
+        starting_attributes=[2, 3, 2, -8, 3, 0],
         weapons=[Weapon('bite')],
     )
     monsters['black_bear'] = Creature(
@@ -169,7 +169,7 @@ def generate_sample_monsters():
         name_suffix='Black',
         natural_armor=4,
         species=Species('animal'),
-        starting_attributes=[3, 1, 2, -7, 1, 0],
+        starting_attributes=[4, 1, 4, -7, 1, 0],
         weapons=[Weapon('bite'), Weapon('claw')],
     )
     monsters['brown_bear'] = Creature(
@@ -181,7 +181,7 @@ def generate_sample_monsters():
         name_suffix='Brown',
         species=Species('animal'),
         size=Size('large'),
-        starting_attributes=[3, 1, 2, -7, 1, 0],
+        starting_attributes=[4, 1, 4, -7, 1, 0],
         weapons=[Weapon('bite'), Weapon('claw')],
     )
     monsters['dire_wolf'] = Creature(
@@ -192,7 +192,7 @@ def generate_sample_monsters():
         natural_armor=4,
         species=Species('animal'),
         size=Size('large'),
-        starting_attributes=[3, 3, 1, -6, 2, 0],
+        starting_attributes=[3, 3, 2, -6, 3, 0],
         weapons=[Weapon('bite')],
     )
     monsters['ferret'] = Creature(
@@ -202,7 +202,7 @@ def generate_sample_monsters():
         natural_armor=2,
         species=Species('animal'),
         size=Size('tiny'),
-        starting_attributes=[-6, 1, -4, -7, 1, -2],
+        starting_attributes=[-6, 4, -4, -7, 1, -2],
         weapons=[Weapon('bite')],
     )
     monsters['pony'] = Creature(
@@ -212,7 +212,7 @@ def generate_sample_monsters():
         natural_armor=4,
         species=Species('animal'),
         size=Size('medium'),
-        starting_attributes=[1, 1, 1, -7, 1, 0],
+        starting_attributes=[1, 1, 3, -7, 1, 0],
         weapons=[Weapon('bite')],
     )
     monsters['raven'] = Creature(
@@ -233,7 +233,7 @@ def generate_sample_monsters():
         natural_armor=6,
         species=Species('animal'),
         size=Size('gargantuan'),
-        starting_attributes=[4, 2, 1, -7, 1, 0],
+        starting_attributes=[6, 2, 2, -7, 3, 0],
         weapons=[Weapon('talon')],
     )
     monsters['wasp'] = Creature(
@@ -244,16 +244,15 @@ def generate_sample_monsters():
         natural_armor=6,
         species=Species('animal'),
         size=Size('large'),
-        starting_attributes=[2, 4, 0, -8, 3, -1],
+        starting_attributes=[1, 3, 0, -8, 2, -1],
         weapons=[Weapon('bite')],
     )
     monsters['wolf'] = Creature(
         character_class=CharacterClass('slayer'),
         level=1,
         name='Wolf',
-        natural_armor=4,
+        natural_armor=3,
         species=Species('animal'),
-        size=Size('large'),
         starting_attributes=[1, 3, 1, -6, 2, 0],
         weapons=[Weapon('bite')],
     )
@@ -266,11 +265,11 @@ def generate_sample_monsters():
         natural_armor=6,
         species=Species('animal'),
         size=Size('large'),
-        starting_attributes=[3, 0, 3, -9, 2, 0],
+        starting_attributes=[4, 0, 4, -9, 2, 0],
         weapons=[Weapon('bite')],
     )
     monsters['huge_centipede'] = Creature(
-        challenge_rating=4,
+        challenge_rating=3,
         character_class=CharacterClass('behemoth'),
         level=8,
         name='Centipede',
@@ -278,7 +277,7 @@ def generate_sample_monsters():
         natural_armor=6,
         species=Species('animal'),
         size=Size('huge'),
-        starting_attributes=[3, 0, 3, -9, 2, 0],
+        starting_attributes=[4, 1, 5, -9, 2, 0],
         weapons=[Weapon('bite')],
     )
 
@@ -292,7 +291,7 @@ def generate_sample_monsters():
         natural_armor=4,
         species=Species('animate'),
         size=Size('large'),
-        starting_attributes=[0, 4, 1, 0, 3, 0],
+        starting_attributes=[2, 6, 2, 0, 3, 0],
         weapons=[Weapon('slam')],
     )
     monsters['ram_animus'] = Creature(
@@ -304,7 +303,7 @@ def generate_sample_monsters():
         natural_armor=6,
         species=Species('animate'),
         size=Size('huge'),
-        starting_attributes=[3, 0, 2, 0, 3, 0],
+        starting_attributes=[4, 2, 4, 0, 2, 0],
         weapons=[Weapon('slam'), Weapon('hoof')],
     )
 
@@ -315,7 +314,7 @@ def generate_sample_monsters():
         level=1,
         name='Cultist',
         species=Species('humanoid'),
-        starting_attributes=[0, 0, 0, -1, -1, 3],
+        starting_attributes=[0, 0, 0, -1, 1, 3],
         weapons=[Weapon('club')],
     )
     monsters['goblin_shouter'] = Creature(
@@ -327,7 +326,7 @@ def generate_sample_monsters():
         natural_armor=0,
         species=Species('humanoid'),
         size=Size('small'),
-        starting_attributes=[0, 2, -1, -2, 2, 1],
+        starting_attributes=[1, 2, 1, -2, 2, 3],
         weapons=[Weapon('club'), Weapon('sling')],
     )
     monsters['goblin_stabber'] = Creature(
@@ -347,10 +346,9 @@ def generate_sample_monsters():
         character_class=CharacterClass('slayer'),
         level=5,
         name='Orc Chieftain',
-        natural_armor=2,
         species=Species('humanoid'),
         size=Size('medium'),
-        starting_attributes=[4, 0, 1, 0, 2, 2],
+        starting_attributes=[6, 2, 3, 0, 2, 3],
         weapons=[Weapon('greataxe')],
     )
     monsters['orc_grunt'] = Creature(
@@ -358,10 +356,9 @@ def generate_sample_monsters():
         character_class=CharacterClass('slayer'),
         level=2,
         name='Orc Grunt',
-        natural_armor=0,
         species=Species('humanoid'),
         size=Size('medium'),
-        starting_attributes=[3, 0, 1, -1, 0, 0],
+        starting_attributes=[5, 0, 1, -1, 0, 0],
         weapons=[Weapon('greataxe')],
     )
     monsters['orc_loudmouth'] = Creature(
@@ -370,10 +367,9 @@ def generate_sample_monsters():
         character_class=CharacterClass('slayer'),
         level=3,
         name='Orc Loudmouth',
-        natural_armor=0,
         species=Species('humanoid'),
         size=Size('medium'),
-        starting_attributes=[3, 0, 1, -1, 0, 2],
+        starting_attributes=[4, 2, 1, -1, 2, 2],
         weapons=[Weapon('greataxe')],
     )
     monsters['orc_shaman'] = Creature(
@@ -382,10 +378,9 @@ def generate_sample_monsters():
         character_class=CharacterClass('adept'),
         level=3,
         name='Orc Shaman',
-        natural_armor=0,
         species=Species('humanoid'),
         size=Size('medium'),
-        starting_attributes=[2, 0, 1, -1, 0, 2],
+        starting_attributes=[4, 2, 2, -1, 0, 3],
         weapons=[Weapon('greatstaff')],
     )
     monsters['orc_savage'] = Creature(
@@ -393,23 +388,71 @@ def generate_sample_monsters():
         character_class=CharacterClass('slayer'),
         level=4,
         name='Orc Savage',
-        natural_armor=2,
         species=Species('humanoid'),
         size=Size('medium'),
-        starting_attributes=[4, 2, 1, -1, 0, 0],
+        starting_attributes=[6, 2, 1, -1, 0, 0],
         weapons=[Weapon('greataxe')],
     )
 
     # Magical beasts
-    monsters['large_red_dragon'] = Creature(
+    monsters['medium_red_dragon'] = Creature(
+        challenge_rating=4,
         character_class=CharacterClass('behemoth'),
-        level=9,
+        level=3,
         name='Dragon',
-        name_suffix='Large Red',
+        name_suffix='Medium Red',
         natural_armor=6,
         species=Species('magical beast'),
+        size=Size('medium'),
+        starting_attributes=[2, 0, 3, 3, 3, 3],
+        weapons=[Weapon('bite')],
+    )
+    monsters['large_red_dragon'] = Creature(
+        challenge_rating=4,
+        character_class=CharacterClass('behemoth'),
+        level=6,
+        name='Dragon',
+        name_suffix='Large Red',
+        natural_armor=7,
+        species=Species('magical beast'),
         size=Size('large'),
-        starting_attributes=[3, 0, 3, 2, 2, 2],
+        starting_attributes=[2, 0, 3, 3, 3, 3],
+        weapons=[Weapon('bite')],
+    )
+    monsters['huge_red_dragon'] = Creature(
+        challenge_rating=4,
+        character_class=CharacterClass('behemoth'),
+        level=10,
+        name='Dragon',
+        name_suffix='Huge Red',
+        natural_armor=8,
+        species=Species('magical beast'),
+        size=Size('huge'),
+        starting_attributes=[2, 0, 3, 3, 3, 3],
+        weapons=[Weapon('bite')],
+    )
+    monsters['gargantuan_red_dragon'] = Creature(
+        challenge_rating=4,
+        character_class=CharacterClass('behemoth'),
+        level=14,
+        name='Dragon',
+        name_suffix='Huge Red',
+        natural_armor=8,
+        species=Species('magical beast'),
+        size=Size('gargantuan'),
+        starting_attributes=[2, 0, 4, 4, 4, 4],
+        weapons=[Weapon('bite')],
+    )
+    monsters['colossal_red_dragon'] = Creature(
+        challenge_rating=4,
+        character_class=CharacterClass('behemoth'),
+        level=18,
+        name='Dragon',
+        name_suffix='Colossal Red',
+        natural_armor=9,
+        species=Species('magical beast'),
+        size=Size('colossal'),
+        starting_attributes=[2, 0, 4, 4, 4, 4],
         weapons=[Weapon('bite')],
     )
     monsters['ankheg'] = Creature(
@@ -420,16 +463,17 @@ def generate_sample_monsters():
         natural_armor=6,
         species=Species('magical beast'),
         size=Size('large'),
-        starting_attributes=[3, 1, 2, -7, 1, 0],
+        starting_attributes=[4, 1, 3, -7, 2, 0],
         weapons=[Weapon('bite')],
     )
     monsters['aranea'] = Creature(
+        challenge_rating=2,
         character_class=CharacterClass('adept'),
         level=5,
         name='Aranea',
         natural_armor=4,
         species=Species('magical beast'),
-        starting_attributes=[0, 2, 0, 2, 1, 3],
+        starting_attributes=[1, 2, 1, 2, 3, 3],
         weapons=[Weapon('bite')],
     )
     monsters['basilisk'] = Creature(
@@ -440,7 +484,7 @@ def generate_sample_monsters():
         natural_armor=6,
         species=Species('magical beast'),
         size=Size('medium'),
-        starting_attributes=[2, -1, 2, -6, 2, 0],
+        starting_attributes=[2, -1, 3, -6, 3, 0],
         weapons=[Weapon('bite')],
     )
     monsters['behir'] = Creature(
@@ -451,7 +495,7 @@ def generate_sample_monsters():
         natural_armor=6,
         species=Species('magical beast'),
         size=Size('huge'),
-        starting_attributes=[4, 1, 2, -3, 1, 0],
+        starting_attributes=[5, 1, 4, -3, 1, 0],
         weapons=[Weapon('bite'), Weapon('claw')],
     )
     monsters['blink_dog'] = Creature(
@@ -461,18 +505,19 @@ def generate_sample_monsters():
         natural_armor=4,
         species=Species('magical beast'),
         size=Size('medium'),
-        starting_attributes=[0, 3, 0, 0, 1, 0],
+        starting_attributes=[2, 3, 0, 0, 2, 0],
         weapons=[Weapon('bite')],
     )
     monsters['centaur'] = Creature(
+        challenge_rating=2,
         armor=Armor('leather'),
         character_class=CharacterClass('slayer'),
         level=3,
         name='Centaur',
-        natural_armor=4,
+        natural_armor=3,
         species=Species('magical beast'),
         size=Size('large'),
-        starting_attributes=[1, 2, 2, 0, 2, 0],
+        starting_attributes=[1, 2, 2, 0, 2, 1],
         weapons=[Weapon('longsword'), Weapon('longbow'), Weapon('hoof')],
     )
     monsters['cockatrice'] = Creature(
@@ -482,7 +527,7 @@ def generate_sample_monsters():
         natural_armor=4,
         species=Species('magical beast'),
         size=Size('small'),
-        starting_attributes=[-2, 3, 0, -8, 1, 0],
+        starting_attributes=[-2, 3, 0, -8, 2, 2],
         weapons=[Weapon('bite')],
     )
     monsters['darkmantle'] = Creature(
@@ -503,18 +548,18 @@ def generate_sample_monsters():
         natural_armor=6,
         species=Species('magical beast'),
         size=Size('gargantuan'),
-        starting_attributes=[4, 0, 3, -8, 2, 0],
+        starting_attributes=[5, 0, 5, -8, 2, 0],
         weapons=[Weapon('bite'), Weapon('slam')],
     )
     monsters['girallon'] = Creature(
-        challenge_rating=4,
+        challenge_rating=2,
         character_class=CharacterClass('slayer'),
         level=5,
         name='Girallon',
-        natural_armor=6,
+        natural_armor=4,
         species=Species('magical beast'),
         size=Size('large'),
-        starting_attributes=[3, 3, 0, -8, 2, -1],
+        starting_attributes=[3, 4, 1, -8, 2, -1],
         weapons=[Weapon('claw')],
     )
     monsters['griffin'] = Creature(
@@ -522,10 +567,10 @@ def generate_sample_monsters():
         character_class=CharacterClass('slayer'),
         level=4,
         name='Griffon',
-        natural_armor=6,
+        natural_armor=4,
         species=Species('magical beast'),
         size=Size('large'),
-        starting_attributes=[2, 3, 2, -4, 1, 0],
+        starting_attributes=[2, 4, 1, -4, 2, 0],
         weapons=[Weapon('talon')],
     )
     monsters['hydra5'] = Creature(
@@ -536,7 +581,7 @@ def generate_sample_monsters():
         natural_armor=4,
         species=Species('magical beast'),
         size=Size('huge'),
-        starting_attributes=[2, 0, 4, -8, 0, 0],
+        starting_attributes=[4, 0, 4, -8, 2, 0],
         weapons=[Weapon('bite')],
     )
     monsters['hydra6'] = Creature(
@@ -547,7 +592,7 @@ def generate_sample_monsters():
         natural_armor=4,
         species=Species('magical beast'),
         size=Size('huge'),
-        starting_attributes=[2, 0, 4, -8, 0, 0],
+        starting_attributes=[4, 0, 4, -8, 2, 0],
         weapons=[Weapon('bite')],
     )
     monsters['minotaur'] = Creature(
@@ -557,7 +602,7 @@ def generate_sample_monsters():
         natural_armor=4,
         species=Species('magical beast'),
         size=Size('large'),
-        starting_attributes=[3, 2, 1, -2, 2, 0],
+        starting_attributes=[3, 1, 1, -2, 2, 0],
         weapons=[Weapon('greataxe'), Weapon('gore')],
     )
     monsters['thaumavore'] = Creature(
@@ -567,7 +612,7 @@ def generate_sample_monsters():
         natural_armor=6,
         species=Species('magical beast'),
         size=Size('small'),
-        starting_attributes=[2, 3, 0, -7, 1, 0],
+        starting_attributes=[2, 3, 0, -7, 0, 0],
         weapons=[Weapon('bite')],
     )
     monsters['banehound'] = Creature(
@@ -578,31 +623,32 @@ def generate_sample_monsters():
         natural_armor=6,
         species=Species('magical beast'),
         size=Size('huge'),
-        starting_attributes=[1, 3, 0, 1, 3, 0],
+        starting_attributes=[2, 4, 0, 1, 3, 0],
         weapons=[Weapon('bite')],
     )
 
-    # Monstrous humanoids<M-F7>
+    # Monstrous humanoids
     monsters['banshee'] = Creature(
+        challenge_rating=2,
         character_class=CharacterClass('adept'),
         level=3,
         name='Banshee',
         natural_armor=4,
         species=Species('monstrous humanoid'),
         size=Size('medium'),
-        starting_attributes=[1, 2, 0, 0, 1, 2],
+        starting_attributes=[2, 2, 0, 0, 2, 4],
         weapons=[Weapon('claw')],
     )
     monsters['hill_giant'] = Creature(
         armor=Armor('breastplate'),
         character_class=CharacterClass('behemoth'),
-        level=5,
+        level=6,
         name='Giant',
         name_suffix='Hill',
-        natural_armor=4,
+        natural_armor=2,
         species=Species('monstrous humanoid'),
         size=Size('large'),
-        starting_attributes=[3, -2, 1, -2, 0, 0],
+        starting_attributes=[4, -1, 2, -2, 0, 0],
         weapons=[Weapon('greatclub'), Weapon('boulder')],
     )
     monsters['stone_giant'] = Creature(
@@ -611,10 +657,10 @@ def generate_sample_monsters():
         level=9,
         name='Giant',
         name_suffix='Stone',
-        natural_armor=6,
+        natural_armor=4,
         species=Species('monstrous humanoid'),
         size=Size('huge'),
-        starting_attributes=[3, -2, 3, -1, 2, 0],
+        starting_attributes=[4, -1, 2, -1, 1, 0],
         weapons=[Weapon('greatclub'), Weapon('boulder')],
     )
     monsters['storm_giant'] = Creature(
@@ -626,7 +672,7 @@ def generate_sample_monsters():
         natural_armor=4,
         species=Species('monstrous humanoid'),
         size=Size('gargantuan'),
-        starting_attributes=[3, -1, 1, 1, 2, 2],
+        starting_attributes=[5, 0, 2, 1, 2, 2],
         weapons=[Weapon('greatsword')],
     )
     monsters['green_hag'] = Creature(
@@ -649,12 +695,13 @@ def generate_sample_monsters():
         natural_armor=4,
         species=Species('monstrous humanoid'),
         size=Size('medium'),
-        starting_attributes=[0, 1, 0, 1, 2, 2],
+        starting_attributes=[0, 1, 0, 1, 3, 2],
         weapons=[Weapon('longbow'), Weapon('snakes')],
     )
 
     # Outsiders
     monsters['astral_deva'] = Creature(
+        challenge_rating=2,
         character_class=CharacterClass('adept'),
         level=14,
         name='Angel',
@@ -662,7 +709,7 @@ def generate_sample_monsters():
         natural_armor=6,
         species=Species('outsider'),
         shield=Shield('heavy'),
-        starting_attributes=[2, 2, 2, 2, 2, 2],
+        starting_attributes=[3, 3, 3, 3, 3, 3],
         weapons=[Weapon('mace')],
     )
     monsters['arrowhawk'] = Creature(
@@ -671,7 +718,7 @@ def generate_sample_monsters():
         name='Arrowhawk',
         natural_armor=4,
         species=Species('outsider'),
-        starting_attributes=[1, 4, -1, 0, 3, 0],
+        starting_attributes=[1, 4, -1, 0, 2, 0],
         weapons=[Weapon('bite')],
     )
     monsters['bebelith'] = Creature(
@@ -682,7 +729,7 @@ def generate_sample_monsters():
         natural_armor=6,
         species=Species('outsider'),
         size=Size('huge'),
-        starting_attributes=[2, 3, 2, 0, 1, 0],
+        starting_attributes=[2, 3, 2, 0, 2, 0],
         weapons=[Weapon('bite')],
     )
     monsters['hell_hound'] = Creature(
@@ -749,25 +796,25 @@ def generate_sample_monsters():
         name='Spectre',
         natural_armor=4,  # How does this interact with being incorporeal?
         species=Species('undead'),
-        starting_attributes=[0, 3, 0, 0, 0, 3],
+        starting_attributes=[0, 4, 0, 0, 2, 4],
         weapons=[Weapon('draining touch')],
     )
     monsters['dirgewalker'] = Creature(
-        challenge_rating=4,
+        challenge_rating=3,
         character_class=CharacterClass('adept'),
         level=4,
         name='Dirgewalker',
         natural_armor=6,
         species=Species('undead'),
         size=Size('medium'),
-        starting_attributes=[0, 3, 0, 1, 3, 2],
+        starting_attributes=[0, 4, 0, 1, 3, 3],
         weapons=[Weapon('claw')],
     )
     monsters['skeleton'] = Creature(
         character_class=CharacterClass('slayer'),
         level=1,
         name='Skeleton',
-        natural_armor=6,
+        natural_armor=5,
         species=Species('undead'),
         size=Size('medium'),
         starting_attributes=[2, 2, 0, 0, 0, 0],
@@ -778,17 +825,17 @@ def generate_sample_monsters():
         level=3,
         name='Skeleton',
         name_suffix='Warrior',
-        natural_armor=6,
+        natural_armor=5,
         species=Species('undead'),
         size=Size('medium'),
-        starting_attributes=[2, 2, 0, 0, 0, 0],
+        starting_attributes=[2, 3, 0, 0, 0, 0],
         weapons=[Weapon('claw')],
     )
     monsters['zombie'] = Creature(
         character_class=CharacterClass('behemoth'),
         level=1,
         name='Zombie',
-        natural_armor=6,
+        natural_armor=4,
         species=Species('undead'),
         size=Size('medium'),
         starting_attributes=[2, 0, 3, 0, 0, 0],
