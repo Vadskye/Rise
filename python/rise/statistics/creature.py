@@ -93,7 +93,7 @@ class Creature(object):
         )
 
     @property
-    def action_points(self):
+    def reserve_action_points(self):
         return 3 + self.starting_willpower
 
     @property
@@ -313,7 +313,7 @@ class Creature(object):
         text = '; '.join([
             f"[HP] {self.hit_points}",
             f"[Defs] {self.armor_defense}/{self.fortitude_defense}/{self.reflex_defense}/{self.mental_defense}",
-            f"[AP] {self.recovery_action_points}/{self.action_points}",
+            f"[AP] {self.recovery_action_points}/{self.reserve_action_points}",
         ])
         return text
 
