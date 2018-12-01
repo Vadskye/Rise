@@ -289,10 +289,10 @@ def calc_encumbrance():
             [
                 underlabel('Armor', number_input({'name': 'body_armor_encumbrance'})),
                 minus(),
-                underlabel('(Con)', number_input({
+                underlabel('(Str)', number_input({
                     'disabled': True,
-                    'name': 'encumbrance_constitution',
-                    'value': '(@{constitution_starting})',
+                    'name': 'encumbrance_strength',
+                    'value': '(@{strength_starting})',
                 })),
                 plus(),
                 number_input({
