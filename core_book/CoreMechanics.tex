@@ -221,6 +221,7 @@ It defines how attributes work and explains how to make physical attacks in comb
                 \begin{itemize}
                     \item Strength determines how much a character can carry (see \tref{Carrying Capacity by Strength}).
                     \item Strength affects Strength-based skills: Climb, Jump, and Swim (see \pcref{Skills}).
+                    \item You reduce your \textit{encumbrance} for weight or heavy armor by an amount equal to your starting Strength.
                     \item If your Strength is negative, you take a penalty to all Strength-based skills equal to your Strength.
                     % TODO: wording
                     \item If your Strength is negative, you take a penalty to \glossterm{power} with \glossterm{mundane} abilities equal to your Strength.
@@ -254,7 +255,6 @@ It defines how attributes work and explains how to make physical attacks in comb
                     \item You gain bonus hit points based on your starting Constitution (see \pcref{Hit Points}).
                     \item You heal additional \glossterm{vital damage} when you take a \glossterm{long rest} based on your starting Constitution (see \pcref{Short Rest}).
                     \item You gain a bonus (or penalty) to your Fortitude defense equal to your starting Constitution.
-                    \item You reduce your \textit{encumbrance} for weight or heavy armor by an amount equal to your starting Constitution.
                 \end{itemize}
 
                 If you have a high Constitution, you can use it to determine your Fortitude defense (see \pcref{Defenses}).
@@ -1660,12 +1660,11 @@ It defines how attributes work and explains how to make physical attacks in comb
         Your encumbrance is a value that represents how much you are burdened by armor and weight.
         You apply your encumbrance as a penalty to all Strength and Dexterity-based checks you make.
         You can increase your encumbrance by wearing armor or by carrying an excessive weight (see \pcref{Carrying Capacity}).
-        In addition, you reduce your encumbrance by amount equal to your starting Constitution.
+        In addition, you reduce your encumbrance by amount equal to your starting Strength.
 
         In addition, sleeping in armor is difficult.
         % ``have any encumbrance'' is awkward - worth introducing ``encumbered''?
         If you sleep while you have any encumbrance, you become \glossterm{fatigued} when you wake up.
-
 
     \subsection{Grappling}\label{Grappling}
         A grappled creature is physically struggling with at least one other creature.
