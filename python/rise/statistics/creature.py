@@ -194,7 +194,7 @@ class Creature(object):
 
     @property
     def strength(self):
-        return calculate_attribute(self.starting_strength, self.level)
+        return calculate_attribute(self.starting_strength, self.level) + self.size.strength_modifier
 
     @property
     def strikes(self):
@@ -255,8 +255,6 @@ class Creature(object):
             power // 2,
             weapon.damage_modifier,
             self.weapon_damage_modifier,
-            # TODO: remove direct size damage modifier
-            self.size.damage_modifier,
             self.cr_mod,
         ])
         return standard
@@ -287,6 +285,40 @@ class Creature(object):
         return standard_damage(
             max(self.level, attribute),
         ) + self.cr_mod
+
+    def expected_monster_points(self):
+        # Having a high CR gives static benefits, but it also allows more
+        # extreme specific attributes
+        return 8 + self.level * 2 + self.cr_mod * 5
+
+    def monster_point_total(self):
+        points = 0
+        # Add points from starting attributes; same as PC calcs
+        for attribute_name in rise_data.attributes:
+            attribute_value = getattr(self, 'starting_' + attribute_name)
+            if attribute_value > 1:
+                points += attribute_value * 2 - 1
+            elif attribute_value == 1:
+                points += 1
+
+        # Add points from natural armor; up to 3 is free, 2 per armor above that
+        if self.natural_armor > 3:
+            points += (self.natural_armor - 3) * 2
+        # having armor and natural armor is significant; worth about 3 natural armor
+        if self.natural_armor and self.armor:
+            points += 6
+        if self.natural_armor and self.shield:
+            points += 2
+
+        # Add points from size; +4 per size above Medium, +2 per size below Small
+        large_sizes = ['large', 'huge', 'gargantuan', 'colossal']
+        if self.size.name in large_sizes:
+            points += 4 * (large_sizes.index(self.size.name) + 1)
+        small_sizes = ['tiny', 'diminuitive', 'fine']
+        if self.size.name in small_sizes:
+            points += 2 * (small_sizes.index(self.size.name) + 1)
+
+        return points
 
     def __str__(self):
         return '{0} {1} {2}\n{3}\n{4}{5}\n{6}\n{7}'.format(
