@@ -11,7 +11,7 @@ import re
 def main(grep, modifiers):
     sample_info = get_sample_creatures()
 
-    sample_keys = sorted(sample_info['characters'].keys())
+    sample_keys = sorted(list(sample_info['characters'].keys()) + list(sample_info['monsters'].keys()))
     if grep:
         sample_keys = list(filter(lambda key: re.search(grep, key), sample_keys))
 
