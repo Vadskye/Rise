@@ -60,7 +60,7 @@ def set_skill(a, s):
 
                     if (Number(v.{s}_points) === 1) {{
                         ranks = Math.floor(level / 2);
-                        pointsModifier = 2;
+                        pointsModifier = 1;
                     }} else if (Number(v.{s}_points) >= 2) {{
                         ranks = level
                         pointsModifier = 4;
@@ -68,7 +68,7 @@ def set_skill(a, s):
 
                     setAttrs({{
                         {s}: ranks + pointsModifier + Number(v.{s}_misc),
-                        {s}_ranks: ranks,
+                        {s}_ranks: ranks + pointsModifier,
                     }});
                 }});
             }});
@@ -80,24 +80,26 @@ def set_skill(a, s):
         subtract_encumbrance = ' - Number(v.encumbrance)' if include_encumbrance else ""
         return f"""
             on("sheet:opened change:level change:{a} change:{s}_points change:{s}_misc{encumbrance_changed}", function(eventInfo) {{
-                getAttrs(["level", "{a}", "{s}_points", "{s}_misc"{get_encumbrance}], function(v) {{
+                getAttrs(["level", "{a}", "{a}_starting", "{s}_points", "{s}_misc"{get_encumbrance}], function(v) {{
                     var level = Number(v.level);
                     var pointsModifier = 0;
                     var ranks = 0;
 
                     if (Number(v.{s}_points) === 1) {{
                         ranks = Math.floor(level / 2);
-                        pointsModifier = 2;
+                        pointsModifier = 1;
                     }} else if (Number(v.{s}_points) >= 2) {{
                         ranks = level
                         pointsModifier = 4;
                     }}
 
-                    var scaling = Math.max(ranks, Number(v.{a}));
+                    var attributeModifier = Number(v.{a}_starting) === 1 ? Math.floor(Number(v.{a}) / 2) : Number(v.{a})
+
+                    var scaling = Math.max(ranks, attributeModifier));
 
                     setAttrs({{
                         {s}: scaling + pointsModifier + Number(v.{s}_misc){subtract_encumbrance},
-                        {s}_ranks: ranks,
+                        {s}_ranks: ranks + pointsModifier,
                     }});
                 }});
             }});
