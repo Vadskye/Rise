@@ -124,7 +124,7 @@ def generate_mystic_spheres():
                 You can only choose weather which would be possible in the climate and season of the area you are in.
                 For example, you can normally create a thunderstorm, but not if you are in a desert.
 
-                When you complete the spell, the weather begins to take effect in a two mile radius cylinder-shaped zone centered on from your location.
+                When you complete the spell, the weather begins to take effect in a two mile radius cylinder-shaped \\glossterm<zone> centered on from your location.
                 After five minutes, your chosen weather pattern fully takes effect.
 
                 You can control the general tendencies of the weather, such as the direction and intensity of the wind.
@@ -437,7 +437,7 @@ def generate_mystic_spheres():
                 This spell functions like the \\spell<kinetic shield> spell, except that the damage reduction applies against all damage and the bonus is increased to be equal to twice your \\glossterm<power>.
             """, tags=['Attune (target)', 'Shielding']),
             Spell('Repulsion Field', 2, """
-                This spell creates a repulsive field in a \\areamed radius zone from your location.
+                This spell creates a repulsive field in a \\areamed radius \\glossterm<zone> from your location.
                 When an enemy makes physical contact with the spell's area for the first time, you make an attack vs. Mental against it.
                 \\hit The target is unable to enter the spell's area with any part of its body.
                 The rest of its movement in the current phase is cancelled.
@@ -512,14 +512,14 @@ def generate_mystic_spheres():
                 This ritual takes one hour to perform.
             """, tags=['Attune (ritual)', 'Trap']),
             Spell('Scryward', 2, """
-                This ritual creates a ward against scrying in a \\arealarge radius zone centered on your location.
+                This ritual creates a ward against scrying in a \\arealarge radius \\glossterm<zone> centered on your location.
                 All \\glossterm<Scrying> effects fail to function in the area.
                 This effect is permanent.
 
                 This ritual takes 24 hour to perform, and requires 8 action points from its participants.
             """, tags=['Mystic']),
             Spell('Private Sanctum', 4, """
-                This ritual creates a ward against any external perception in a \\arealarge radius zone centered on your location.
+                This ritual creates a ward against any external perception in a \\arealarge radius \\glossterm<zone> centered on your location.
                 This effect is permanent.
                 Everything in the area is completely imperceptible from outside the area.
                 Anyone observing the area from outside sees only a dark, silent void, regardless of darkvision and similar abilities.
@@ -1136,7 +1136,7 @@ def generate_mystic_spheres():
                 \\crit The target is \\panicked by you as a \\glossterm<condition>.
             """, tags=['Emotion', 'Mind']),
             Spell('Fearsome Aura', 1, """
-                You radiate an aura of fear in a \\arealarge radius emanation.
+                You radiate an aura of fear in a \\arealarge radius \\glossterm<emanation>.
                 When you attune to this spell, and at the end of each \\glossterm<action phase> in subsequent rounds, make an attack vs. Mental against all creatures in the area that you did not already attack with this spell.
                 \\hit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
             """, tags=['Attune (self)', 'Emotion', 'Mind']),
@@ -1339,7 +1339,7 @@ def generate_mystic_spheres():
                 This is a \\glossterm<condition>, and lasts until removed.
             """, tags=['Acid', 'Manifestation']),
             Spell('Web', 2, """
-                You fill a \\areasmall radius zone in \\rngclose range with webs.
+                You fill a \\areasmall radius \\glossterm<zone> in \\rngclose range with webs.
                 The webs make the area \\glossterm<difficult terrain>.
                 Each 5-ft.\\ square of webbing has hit points equal to your \\glossterm<power>, and is \\glossterm<vulnerable> to fire.
 
@@ -1427,9 +1427,9 @@ def generate_mystic_spheres():
             """, tags=['Sensation', 'Visual']),
             Spell('Suppress Light', 1, """
                 Choose a Small or smaller unattended object within \\rngclose range.
-                This spell suppresses light in a \\areamed radius emanation from the target.
+                This spell suppresses light in a \\areamed radius \\glossterm<emanation> from the target.
                 Light within or passing through the area is dimmed to be no brighter than shadowy illumination.
-                Any object or effect which blocks light also blocks this spell's emanation.
+                Any object or effect which blocks light also blocks this spell's \\glossterm<emanation>.
             """, tags=['Attune (self)', 'Light', 'Sensation']),
             Spell('Disguise Image', 2, """
                 Choose a willing creature within \\rngclose range.
@@ -1824,13 +1824,13 @@ def generate_mystic_spheres():
             """, tags=['Fire']),
             Spell('Flame Aura', 4, """
                 Choose a willing creature within \\rngclose range.
-                Heat constantly radiates in a \\areamed radius emanation from the target.
+                Heat constantly radiates in a \\areamed radius \\glossterm<emanation> from the target.
                 At the end of each \\glossterm<action phase>, make an attack vs. Armor against everything in the area.
                 \\hit Each target takes fire \\glossterm<standard damage> -2d.
 
                 You can cast this spell as a \\glossterm<minor action>.
                 In addition, you can apply the Widened \\glossterm<augment> to this spell.
-                If you do, it increases the area of the emanation.
+                If you do, it increases the area of the \\glossterm<emanation>.
             """, tags=['Attune (target)', 'Fire']),
             Spell('Flame Blade', 2, """
                 Choose a willing creature within \\rngclose range.
@@ -2442,12 +2442,12 @@ def generate_mystic_spheres():
             """, tags=['Attune (target)', 'Mystic']),
             # Is this worth the complexity it adds to the system?
             Spell('Antimagic Field', 7, """
-                All other magical abilities and objects are \\glossterm<suppressed> within a \\areamed radius emanation from you.
+                All other magical abilities and objects are \\glossterm<suppressed> within a \\areamed radius \\glossterm<emanation> from you.
                 % How much of this is redundant with suppression?
                 Creatures within the area cannot activate, sustain, or dismiss magical abilities.
                 % TODO: wording
                 This does not affect aspects of creatures that cannot be suppressed, such as the knowledge of abilities.
-                You cannot exclude yourself from this emanation.
+                You cannot exclude yourself from this \\glossterm<emanation>.
                 However, this spell does not prevent you from sustaining or dismissing this spell.
             """, tags=['Mystic', 'Sustain (minor)']),
             # Does having this be Swift break anything?
@@ -2457,7 +2457,7 @@ def generate_mystic_spheres():
                 This prevents all \\glossterm<Manifestation>, \\glossterm<Planar>, and \\glossterm<Teleportation> effects.
             """, tags=['Mystic', 'Swift', 'Sustain (minor)']),
             Spell('Dimensional Lock', 4, """
-                This spell creates a dimensional lock in a \\arealarge radius zone from your location.
+                This spell creates a dimensional lock in a \\arealarge radius \\glossterm<zone> from your location.
                 Extraplanar travel into or out of the area is impossible.
                 This prevents all \\glossterm<Manifestation>, \\glossterm<Planar>, and \\glossterm<Teleportation> effects.
             """, tags=['Attune (self)', 'Mystic']),
@@ -2547,7 +2547,7 @@ def generate_mystic_spheres():
         ],
         rituals=[
             Spell('Fertility', 2, """
-                This ritual creates an area of bountiful growth in a one mile radius zone from your location.
+                This ritual creates an area of bountiful growth in a one mile radius \\glossterm<zone> from your location.
                 Normal plants within the area become twice as productive as normal for the next year.
                 This ritual does not stack with itself.
                 If the \\ritual<infertility> ritual is also applied to the same area, the most recently performed ritual takes precedence.
@@ -2555,7 +2555,7 @@ def generate_mystic_spheres():
                 This ritual takes 24 hours to perform, and requires 8 action points from its participants.
             """, tags=[]),
             Spell('Infertility', 2, """
-                This ritual creates an area of death and decay in a one mile radius zone from your location.
+                This ritual creates an area of death and decay in a one mile radius \\glossterm<zone> from your location.
                 Normal plants within the area become half as productive as normal for the next year.
                 This ritual does not stack with itself.
                 If the \\ritual<fertility> ritual is also applied to the same area, the most recently performed ritual takes precedence.
@@ -2656,12 +2656,12 @@ def generate_mystic_spheres():
                 If the target dies while the condition is active, you heal hit points equal to twice your \\glossterm<power>.
             """, tags=['Life']),
             Spell('Circle of Death', 3, """
-                You are surrounded by an aura of death in a \\areamed radius emanation from you.
+                You are surrounded by an aura of death in a \\areamed radius \\glossterm<emanation> from you.
                 When this spell resolves, and the end of each \\glossterm<action phase> in subsequent rounds, make an attack vs. Fortitude against all enemies in the area.
                 \\hit Each target takes life \\glossterm<standard damage> -2d.
             """, tags=['Attune (self)', 'Life']),
             Spell('Circle of Healing', 3, """
-                You are surrounded by an aura of healing in a \\areamed radius emanation from you.
+                You are surrounded by an aura of healing in a \\areamed radius \\glossterm<emanation> from you.
                 When this spell resolves, and the end of each \\glossterm<action phase> in subsequent rounds, all allies in the area heal hit points equal to half your \\glossterm<power>.
             """, tags=['Attune (self)', 'Life']),
             Spell('Finger of Death', 5, """
