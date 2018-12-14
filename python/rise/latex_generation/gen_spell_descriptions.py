@@ -42,7 +42,7 @@ def generate_mystic_spheres():
         ],
         spells=[
             Spell('Propulsion', 1, """
-                Choose a willing creature in \\rngclose range.
+                Choose a Large or smaller willing creature in \\rngclose range.
                 You move the target up to 50 feet in any direction.
                 You cannot change direction partway through the movement.
                 Moving the target upwards cost twice the normal movement cost.
@@ -63,21 +63,21 @@ def generate_mystic_spheres():
                 \\hit The target takes bludgeoning \\glossterm<standard damage> +2d.
             """, tags=['Air']),
             Spell('Greater Windstrike', 3, """
-                This spell functions like the \\spell<windstrike> spell, except that it affects a target within \\rnglong range and you gain a +1d bonus to damage.
+                This spell functions like the \\spell<windstrike> spell, except that it affects a target within \\rnglong range and the damage increases to \\glossterm<standard damage> +3d.
             """, tags=['Air']),
             Spell('Supreme Windstrike', 5, """
-                This spell functions like the \\spell<windstrike> spell, except that it affects a target within \\rngext range and you gain a +2d bonus to damage.
+                This spell functions like the \\spell<windstrike> spell, except that it affects a target within \\rngext range and the damage increases to \\glossterm<standard damage> +4d.
             """, tags=['Air']),
             Spell('Greater Propulsion', 2, """
                 This spell functions like the \\spell<propulsion> spell, except that the distance you can move the target is increased to 100 feet.
-                In addition, the target gains a +1d bonus to damage with melee \\glossterm<strikes> during the same phase.
+                In addition, the target gains a +1 bonus to Armor defense during the current phase.
             """, tags=['Air', 'Swift']),
             Spell('Supreme Propulsion', 4, """
                 This spell functions like the \\spell<propulsion> spell, except that the distance you can move the target is increased to 300 feet.
-                In addition, the target gains a +2d bonus to damage with melee \\glossterm<strikes> during the same phase.
+                In addition, the target gains a +2 bonus to Armor defense during the current phase.
             """, tags=['Air', 'Swift']),
             Spell('Gentle Descent', 2, """
-                Choose a willing, Large or smaller creature in \\rngclose range.
+                Choose a Large or smaller willing creature in \\rngclose range.
                 The target gains a 30 foot \\glossterm<glide speed> (see \\pcref<Gliding>).
             """, tags=['Air', 'Attune (target)']),
             Spell('Gust of Wind', 2, """
@@ -85,7 +85,7 @@ def generate_mystic_spheres():
                 \\hit Each target takes bludgeoning \\glossterm<standard damage>.
             """, tags=['Air']),
             Spell('Greater Gust of Wind', 5, """
-                This spell functions like the \\spell<gust of wind> spell, except that it affects everything in a \\areahuge, 10 ft. wide line from you and you gain a +1d bonus to damage.
+                This spell functions like the \\spell<gust of wind> spell, except that it affects everything in a \\areahuge, 10 ft. wide line from you and deals \\glossterm<standard damage> +1d.
             """, tags=['Air']),
             Spell('Windblade', 1, """
                 Choose a willing creature within \\rngclose range.
@@ -97,7 +97,7 @@ def generate_mystic_spheres():
             Spell('Greater Windblade', 4, """
                 Choose a willing creature within \\rngclose range.
                 Melee weapons wielded by the target gain an additional ten feet of \\glossterm<reach>.
-                In addition, the target gains a +1d \\glossterm<magic bonus> to damage with melee \\glossterm<strikes>.
+                In addition, the target gains a +2 \\glossterm<magic bonus> to \\glossterm<power> with melee \\glossterm<strikes>.
                 This has no effect on ranged attacks the target makes.
 
                 You can cast this spell as a \\glossterm<minor action>.
@@ -111,7 +111,7 @@ def generate_mystic_spheres():
                 Any effect which increases this spell's range increases the range of this retaliation by the same amount.
             """, tags=['Air', 'Attune (target)', 'Shielding']),
             Spell('Greater Stormlord', 6, """
-                This spell functions like the \\spell<stormlord> spell, except that you gain a +2d bonus to damage.
+                This spell functions like the \\spell<stormlord> spell, except that the damage increases to \\glossterm<standard damage> +1d.
             """, tags=['Air', 'Attune (target)', 'Shielding']),
             Spell('Air Walk', 4, """
                 Choose a willing creature in \\rngclose range.
@@ -140,10 +140,12 @@ def generate_mystic_spheres():
                 \\hit Each target takes bludgeoning \\glossterm<standard damage>.
             """, tags=['Air']),
             Spell('Greater Cyclone', 3, """
-                This spell functions like the \\spell<cyclone> spell, except that it affects everything in a \\areamed radius within \\rnglong range.
+                Make an attack vs. Armor against everything in a \\areamed radius within \\rnglong range.
+                \\hit Each target takes bludgeoning \\glossterm<standard damage>.
             """, tags=['Air']),
             Spell('Supreme Cyclone', 6, """
-                This spell functions like the \\spell<cyclone> spell, except that it affects everything in a \\arealarge radius and you gain a +1d bonus to damage.
+                Make an attack vs. Armor against everything in a \\arealarge radius within \\rnglong range.
+                \\hit Each target takes bludgeoning \\glossterm<standard damage> +1d.
             """, tags=['Air']),
             Spell('Stripping Windstrike', 2, """
                 This spell functions like the \\spell<windstrike> spell, except that the attack result is also compared to the target's Reflex defense.
@@ -300,19 +302,19 @@ def generate_mystic_spheres():
             """, tags=['Planar', 'Teleportation']),
             Spell('Dimensional Jaunt -- Plane of Fire', 3, """
                 This spell functions like the \\spell<dimensional jaunt> spell, except that the target is partially teleported into the Plane of Fire.
-                The damage becomes fire damage and increases by +1d.
+                The damage dealt changes to fire \\glossterm<standard damage> +3d.
                 In addition, a struck target is \\glossterm<ignited> until it puts out the fire.
                 This condition can also be removed if the target makes a \\glossterm<DR> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
                 Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
             """, tags=['Planar', 'Teleportation']),
             Spell('Dimensional Jaunt -- Deep Astral Plane', 5, """
                 This spell functions like the \\spell<dimensional jaunt> spell, except that the target is partially teleported into the deep Astral Plane.
-                The damage increases by +1d.
+                The damage dealt increases to \\glossterm<standard damage> +3d.
                 In addition, a struck target is \\glossterm<stunned> as a \\glossterm<condition>.
             """, tags=['Planar', 'Teleportation']),
             Spell('Dimensional Jaunt -- Myriad', 6, """
                 This spell functions like the \\spell<dimensional jaunt> spell, except that the target is partially teleported through a dizzying array of planes.
-                The damage increases by +3d and becomes damage of all types.
+                The damage dealt increases to \\glossterm<standard damage> +5d and becomes damage of all types.
             """, tags=['Planar', 'Teleportation']),
             Spell('Dimensional Shuffle', 2, """
                 Choose up to five willing creatures within \\rngmed range.
@@ -377,7 +379,7 @@ def generate_mystic_spheres():
                 This ritual takes 24 hours to perform, and requires 50 action points from its participants.
             """, tags=['Planar', 'Teleportation']),
             Spell('Overland Teleportation', 4, """
-                Choose up to five willing, Medium or smaller ritual participants.
+                Choose up to five Medium or smaller willing ritual participants.
                 In addition, choose a destination up to 100 miles away from you on your current plane.
                 Each target is teleported to the chosen destination.
 
@@ -413,9 +415,9 @@ def generate_mystic_spheres():
         schools=['Abjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
         spells=[
-            Spell('Ablative Shield', 1, """
+            Spell('Kinetic Shield', 1, """
                 Choose a willing creature in \\rngclose range.
-                The target gains a \\glossterm<magic bonus> equal to your \\glossterm<power> to \\glossterm<damage reduction> against all damage except for \\glossterm<energy damage>.
+                The target gains a \\glossterm<magic bonus> equal to your \\glossterm<power> to \\glossterm<damage reduction> against \\glossterm<physical> damage.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)', 'Shielding']),
@@ -425,8 +427,14 @@ def generate_mystic_spheres():
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)', 'Shielding']),
+            Spell('Greater Resist Energy', 4, """
+                This spell functions like the \\spell<resist energy> spell, except that the bonus is equal to twice your \\glossterm<power>.
+            """, tags=['Attune (target)', 'Shielding']),
             Spell('Complete Shield', 2, """
-                This spell functions like the \\spell<ablative shield> spell, except that the damage reduction applies against all damage.
+                This spell functions like the \\spell<kinetic shield> spell, except that the damage reduction applies against all damage.
+            """, tags=['Attune (target)', 'Shielding']),
+            Spell('Greater Complete Shield', 5, """
+                This spell functions like the \\spell<kinetic shield> spell, except that the damage reduction applies against all damage and the bonus is increased to be equal to twice your \\glossterm<power>.
             """, tags=['Attune (target)', 'Shielding']),
             Spell('Repulsion Field', 2, """
                 This spell creates a repulsive field in a \\areamed radius zone from your location.
@@ -442,17 +450,23 @@ def generate_mystic_spheres():
                 Attacks that deal damage of multiple types still inflict damage normally unless the target is immune to all types of damage dealt.
             """, tags=['Attune (target)', 'Shielding']),
             Spell('Retributive Shield', 3, """
-                This spell functions like the \\spell<ablative shield> spell, except that damage resisted by this spell is dealt back to the attacker as life damage.
+                This spell functions like the \\spell<kinetic shield> spell, except that damage resisted by this spell is dealt back to the attacker as life damage.
                 If the attacker is beyond \\rngclose range of the target, this reflection fails.
 
                 Any effect which increases this spell's range increases the range of this effect by the same amount.
-                This spell is from both the Abjuration and Vivimancy schools and gains the \\glossterm<Life> tag in addition to the tags from the \\spell<ablative shield> spell.
+                This spell is from both the Abjuration and Vivimancy schools and gains the \\glossterm<Life> tag in addition to the tags from the \\spell<kinetic shield> spell.
             """, tags=['Attune (target)', 'Shielding']),
-            Spell('Empowered Shield', 4, """
-                This spell functions like the \\spell<ablative shield> spell, except that the bonus is equal to twice your \\glossterm<power>.
+            Spell('Greater Kinetic Shield', 4, """
+                This spell functions like the \\spell<kinetic shield> spell, except that the bonus is equal to twice your \\glossterm<power>.
             """, tags=['Attune (target)', 'Shielding']),
-            Spell('Deflective Shield', 3, """
-                This spell functions like the \\spell<ablative shield> spell, except that the target also gains a +1 \\glossterm<magic bonus> to Armor defense.
+            Spell('Deflective Shield', 1, """
+                Choose a willing creature in \\rngclose range.
+                The target gains a +1 \\glossterm<magic bonus> to Armor defense.
+
+                You can cast this spell as a \\glossterm<minor action>.
+            """, tags=['Attune (target)', 'Shielding']),
+            Spell('Greater Deflective Shield', 4, """
+                This spell functions like the \\spell<deflective shield> spell, except that the bonus is increased to +2.
             """, tags=['Attune (target)', 'Shielding']),
             Spell('Antilife Shell', 5, """
                 This effect functions like the \\spell<repulsion field> spell, except that you gain a +10 bonus to accuracy with the attack against living creatures.
@@ -564,9 +578,15 @@ def generate_mystic_spheres():
             Spell('Supreme Blessing of Resilience', 7, """
                 This spell functions like the \\textit<blessing of resilience> spell, except that the spell does not end until it resists four \\glossterm<conditions>.
             """, tags=['Attune (target)']),
-            Spell('Blessing of Supremacy', 4, """
+            Spell('Blessing of Supremacy', 3, """
                 Choose a willing creature within \\rngclose range.
-                The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> and a +1d \\glossterm<magic bonus> to \\glossterm<damage> with all abilities.
+                The target gains a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> and a +2 \\glossterm<magic bonus> to \\glossterm<power>.
+
+                You can cast this spell as a \\glossterm<minor action>.
+            """, tags=['Attune (target)']),
+            Spell('Greater Blessing of Supremacy', 7, """
+                Choose a willing creature within \\rngclose range.
+                The target gains a +2 \\glossterm<magic bonus> to \\glossterm<accuracy> and a +4 \\glossterm<magic bonus> to \\glossterm<power>.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)']),
@@ -576,13 +596,14 @@ def generate_mystic_spheres():
             Spell('Greater Cleansing Blessing', 4, """
                 This spell functions like the \\spell<cleansing blessing> spell, except that each ally can remove two conditions instead of one.
             """, tags=[]),
-            Spell('Blessing of Might', 3, """
-                The target gains a +1d \\glossterm<magic bonus> to damage with all abilities.
+            Spell('Blessing of Might', 2, """
+                Choose a willing creature within \\rngclose range.
+                The target gains a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)']),
-            Spell('Greater Blessing of Might', 6, """
-                The target gains a +2d \\glossterm<magic bonus> to damage with all abilities.
+            Spell('Greater Blessing of Might', 5, """
+                This spell functions like the \\spell<blessing of might> spell, except that the power bonus increases to +4.
             """, tags=['Attune (target)']),
         ],
         rituals=[
@@ -703,7 +724,7 @@ def generate_mystic_spheres():
                 This ritual takes 24 hours to perform and requires 8 action points from its ritual participants.
             """, tags=['Attune (self)']),
             Spell('Divine Transit', 4, """
-                Choose up to five willing, Medium or smaller ritual participants.
+                Choose up to five Medium or smaller willing ritual participants.
                 In addition, choose a destination up to 100 miles away from you on your current plane.
                 Each target is teleported to the temple or equivalent holy site to your deity that is closest to the chosen destination.
 
@@ -2412,12 +2433,12 @@ def generate_mystic_spheres():
                 \\hit Up to two magical conditions of your choice are removed from the chosen allies and applied to the struck creature.
                 \\crit As above, except that you can transfer any number of magical conditions in this way.
             """, tags=[]),
-            Spell('Enhance Magic', 1, """
+            Spell('Enhance Magic', 2, """
                 Choose a willing creature within \\rngmed range.
-                The target gains a +1 \\glossterm<magic bonus> to \\glossterm<power> with spells.
+                The target gains a +2 \\glossterm<magic bonus> to \\glossterm<power> with spells.
             """, tags=['Attune (target)', 'Mystic']),
-            Spell('Greater Enhance Magic', 4, """
-                This spell functions like the \\textit<enhance magic> spell, except that the bonus is increased to +2.
+            Spell('Greater Enhance Magic', 5, """
+                This spell functions like the \\textit<enhance magic> spell, except that the bonus is increased to +4.
             """, tags=['Attune (target)', 'Mystic']),
             # Is this worth the complexity it adds to the system?
             Spell('Antimagic Field', 7, """
@@ -2542,7 +2563,7 @@ def generate_mystic_spheres():
                 This ritual takes 24 hours to perform, and requires 8 action points from its participants.
             """, tags=[]),
             Spell('Lifeweb Transit', 4, """
-                Choose up to five willing, Medium or smaller ritual participants and a living plant that all ritual participants touch during the ritual.
+                Choose up to five Medium or smaller willing ritual participants and a living plant that all ritual participants touch during the ritual.
                 The plant must be at least one size category larger than the largest target.
                 In addition, choose a destination up to 100 miles away from you on your current plane.
                 By walking through the chosen plant, each target is teleported to the closest plant to the destination that is at least one size category larger than the largest target.

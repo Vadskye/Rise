@@ -9,6 +9,28 @@ def generate_armor():
     apparel = []
 
     apparel.append(MagicItem(
+        name="Protective Armor",
+        level=7,
+        material_type='body armor',
+        tags=['Shielding'],
+        description="""
+            You gain a +1 \\glossterm<magic bonus> to Armor defense.
+        """,
+        short_description="Grants +1 Armor defense",
+    ))
+
+    apparel.append(MagicItem(
+        name="Protective Shield",
+        level=7,
+        material_type='shield',
+        tags=['Shielding'],
+        description="""
+            You gain a +1 \\glossterm<magic bonus> to Armor defense.
+        """,
+        short_description="Grants +1 Armor defense",
+    ))
+
+    apparel.append(MagicItem(
         name='Shield of Arrow Catching',
         level=5,
         material_type='shield',
@@ -207,7 +229,7 @@ def generate_armor():
 
     apparel.append(MagicItem(
         name="Armor of Invulnerability",
-        level=8,
+        level=10,
         tags=['Shielding'],
         material_type='body armor',
         description="""
@@ -821,22 +843,22 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Amulet of Mighty Fists",
-        level=6,
+        level=8,
         material_type='amulet',
         description="""
-            You gain a +1d \\glossterm<magic bonus> to damage with \\glossterm<strikes> using \\glossterm<unarmed attacks> and natural weapons.
+            You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<unarmed attacks> and natural weapons.
         """,
-        short_description="Grants +1d damage with your body",
+        short_description="Grants +2 power with natural and unarmed attacks",
     ))
 
     apparel.append(MagicItem(
         name="Amulet of Mighty Fists, Greater",
-        level=14,
+        level=16,
         material_type='amulet',
         description="""
-            You gain a +2d \\glossterm<magic bonus> to damage with \\glossterm<strikes> using \\glossterm<unarmed attacks> and natural weapons.
+            You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<unarmed attacks> and natural weapons.
         """,
-        short_description="Grants +2d damage with your body",
+        short_description="Grants +4 power with natural and unarmed attacks",
     ))
 
     apparel.append(MagicItem(
