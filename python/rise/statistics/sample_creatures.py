@@ -61,6 +61,8 @@ def generate_modifiers():
     def power_attack(c):
         c.active_abilities = [ActiveAbility('power attack')]
     modifiers['power_attack'] = power_attack
+    # Shorthand
+    modifiers['pa'] = power_attack
 
     def precognitive_defense(c):
         c.natural_armor += 1
@@ -71,6 +73,11 @@ def generate_modifiers():
         c.accuracy_modifier += 1
         c.attuned_ability_count += 1
     modifiers['revelation'] = revelation
+
+    def blessing_of_might(c):
+        c.weapon_damage_modifier += 1
+        c.attuned_ability_count += 1
+    modifiers['blessing_of_might'] = blessing_of_might
 
     def firebolt(c):
         c.active_abilities = c.active_abilities or []
@@ -105,7 +112,7 @@ def generate_sample_characters():
         level=1,
         name='Fighter',
         species=Species('human'),
-        starting_attributes=[2, 0, 2, 0, 0, 0],
+        starting_attributes=[2, 0, 2, 0, 2, 0],
         armor=Armor('breastplate'),
         weapons=[Weapon('longsword')],
         shield=Shield('heavy'),
@@ -280,6 +287,66 @@ def generate_sample_monsters():
         starting_attributes=[4, 1, 5, -9, 2, 0],
         weapons=[Weapon('bite')],
     )
+    monsters['spider_large'] = Creature(
+        challenge_rating=3,
+        character_class=CharacterClass('slayer'),
+        level=3,
+        name='Spider',
+        name_suffix='Large',
+        natural_armor=6,
+        species=Species('animal'),
+        size=Size('large'),
+        starting_attributes=[2, 4, 1, -9, 3, 0],
+        weapons=[Weapon('bite')],
+    )
+    monsters['spider_huge'] = Creature(
+        challenge_rating=3,
+        character_class=CharacterClass('slayer'),
+        level=6,
+        name='Spider',
+        name_suffix='Huge',
+        natural_armor=6,
+        species=Species('animal'),
+        size=Size('huge'),
+        starting_attributes=[2, 4, 1, -9, 3, 0],
+        weapons=[Weapon('bite')],
+    )
+    monsters['spider_gargantuan'] = Creature(
+        challenge_rating=3,
+        character_class=CharacterClass('slayer'),
+        level=9,
+        name='Spider',
+        name_suffix='Gargantuan',
+        natural_armor=6,
+        species=Species('animal'),
+        size=Size('gargantuan'),
+        starting_attributes=[3, 4, 1, -9, 3, 0],
+        weapons=[Weapon('bite')],
+    )
+    monsters['spider_colossal'] = Creature(
+        challenge_rating=3,
+        character_class=CharacterClass('slayer'),
+        level=12,
+        name='Spider',
+        name_suffix='Colossal',
+        natural_armor=6,
+        species=Species('animal'),
+        size=Size('colossal'),
+        starting_attributes=[4, 4, 1, -9, 3, 0],
+        weapons=[Weapon('bite')],
+    )
+    monsters['spider_gargantuan_alt'] = Creature(
+        challenge_rating=1,
+        character_class=CharacterClass('slayer'),
+        level=12,
+        name='Spider',
+        name_suffix='Gargantuan',
+        natural_armor=6,
+        species=Species('animal'),
+        size=Size('gargantuan'),
+        starting_attributes=[2, 4, 1, -9, 3, 0],
+        weapons=[Weapon('bite')],
+    )
 
     # Animates
     monsters['elemental_air'] = Creature(
@@ -305,6 +372,18 @@ def generate_sample_monsters():
         size=Size('huge'),
         starting_attributes=[4, 2, 4, 0, 2, 0],
         weapons=[Weapon('slam'), Weapon('hoof')],
+    )
+    monsters['earth_elemental_elder'] = Creature(
+        challenge_rating=3,
+        character_class=CharacterClass('behemoth'),
+        level=12,
+        name='Earth Elemental',
+        name_suffix='Elder',
+        natural_armor=6,
+        species=Species('animate'),
+        size=Size('huge'),
+        starting_attributes=[4, 0, 5, 1, 3, 3],
+        weapons=[Weapon('slam')],
     )
 
     # Humanoids
@@ -681,10 +760,10 @@ def generate_sample_monsters():
         level=5,
         name='Hag',
         name_suffix='Green',
-        natural_armor=6,
+        natural_armor=4,
         species=Species('monstrous humanoid'),
         size=Size('medium'),
-        starting_attributes=[0, 2, 0, 2, 3, 2],
+        starting_attributes=[0, 2, 2, 2, 3, 2],
         weapons=[Weapon('claw')],
     )
     monsters['medusa'] = Creature(
@@ -697,6 +776,19 @@ def generate_sample_monsters():
         size=Size('medium'),
         starting_attributes=[0, 1, 0, 1, 3, 2],
         weapons=[Weapon('longbow'), Weapon('snakes')],
+    )
+    monsters['harpy_archer'] = Creature(
+        challenge_rating=1,
+        character_class=CharacterClass('slayer'),
+        level=12,
+        name='Harpy',
+        name_suffix='Harpy Archer',
+        natural_armor=4,
+        species=Species('monstrous humanoid'),
+        armor=Armor('studded leather'),
+        size=Size('medium'),
+        starting_attributes=[2, 4, 1, 1, 4, 3],
+        weapons=[Weapon('longbow')],
     )
 
     # Outsiders
@@ -722,6 +814,7 @@ def generate_sample_monsters():
         weapons=[Weapon('bite')],
     )
     monsters['bebelith'] = Creature(
+        challenge_rating=3,
         character_class=CharacterClass('slayer'),
         level=11,
         name='Demon',

@@ -64,6 +64,9 @@ class Creature(object):
         self.reflex_defense_misc = 0
         self.mental_defense_misc = 0
 
+        self.damage_taken = 0
+        self.spent_action_points = 0
+
     def __copy__(self):
         return Creature(
             character_class=self.character_class,
@@ -94,11 +97,25 @@ class Creature(object):
 
     @property
     def reserve_action_points(self):
-        return 3 + self.starting_willpower
+        if self.character_class.class_type == 'character':
+            return 3 + self.starting_willpower
+        elif self.character_class.class_type == 'monster':
+            return self.starting_willpower
+        else:
+            raise Exception(f"Unknown character class {self.character_class.class_type}")
 
     @property
     def recovery_action_points(self):
-        return 3 + self.level // 7 - self.attuned_ability_count + self.cr_mod
+        if self.character_class.class_type == 'character':
+            return 3 + self.level // 7 - self.attuned_ability_count
+        elif self.character_class.class_type == 'monster':
+            return self.challenge_rating + self.level // 7 - self.attuned_ability_count
+        else:
+            raise Exception(f"Unknown character class {self.character_class.class_type}")
+
+    @property
+    def remaining_action_points(self):
+        return self.recovery_action_points - self.spent_action_points
 
     @property
     def armor_defense(self):
@@ -154,8 +171,16 @@ class Creature(object):
         ])
 
     @property
-    def hit_points(self):
+    def max_hit_points(self):
         return ((self.level + 1) * (5 + self.starting_constitution)) * self.challenge_rating
+
+    @property
+    def current_hit_points(self):
+        return self.max_hit_points - self.damage_taken
+
+    @property
+    def hit_points(self):
+        return self.current_hit_points
 
     @property
     def intelligence(self):
@@ -246,16 +271,14 @@ class Creature(object):
 
     def weapon_damage(self, weapon):
         """Return the DicePool for damage with the given Weapon"""
-        standard = DicePool(8)
         power = max(
             self.level,
             self.willpower if weapon.damage_type == 'magical' else self.strength,
         )
+        standard = standard_damage(power)
         standard += sum([
-            power // 2,
             weapon.damage_modifier,
             self.weapon_damage_modifier,
-            self.cr_mod,
         ])
         return standard
 

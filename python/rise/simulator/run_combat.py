@@ -1,29 +1,76 @@
-from math import ceil
-
-def run_combat(blue, red):
+def run_combat(blue_creatures, red_creatures):
     """Run a combat between two creatures until one of them reaches 0.
 
     Args:
-        red (Creature): A creature to fight
-        blue (Creature): A creature to fight
+        blue_creatures (Creature[]): A list of creatures to fight
+        red_creatures (Creature[]): A list of creatures to fight
 
     Yields:
         object: Unknown
     """
 
-    blue_survival_time = get_survival_time(red, blue)
-    red_survival_time = get_survival_time(blue, red)
+    total_survival_time = 0
 
-    winner = 'Blue' if blue_survival_time > red_survival_time else None
-    winner = 'Red' if red_survival_time > blue_survival_time else winner
+    blue_living = blue_creatures
+    red_living = red_creatures
+
+    while len(blue_living) > 0 and len(red_living) > 0:
+        red_defender, red_survival_time, red_damage_taken_per_round = find_best_defender(blue_living, red_living)
+        blue_defender, blue_survival_time, blue_damage_taken_per_round = find_best_defender(red_living, blue_living)
+
+        rounds_elapsed = min(red_survival_time, blue_survival_time)
+        total_survival_time += rounds_elapsed
+
+        # The blue defender took damage proportional to the time elapsed.
+        # If red survived for 1 round and blue survived for 4, blue should
+        # have taken 25% of its HP in damage.
+        blue_defender.damage_taken += blue_damage_taken_per_round * rounds_elapsed
+        red_defender.damage_taken += red_damage_taken_per_round * rounds_elapsed
+
+        blue_living = list(filter(lambda c: c.hit_points > 0, blue_living))
+        red_living = list(filter(lambda c: c.hit_points > 0, red_living))
+
+    winner = 'Blue' if len(blue_living) > 0 else None
+    winner = 'Red' if len(red_living) > 0 else winner
     winner = winner or 'Tie'
 
     return {
-        'blue_time_to_kill': round(red_survival_time, 2),
-        'red_time_to_kill': round(blue_survival_time, 2),
-        'round_count': ceil(min(blue_survival_time, red_survival_time)),
+        'blue_hp_remaining': sum([max(c.hit_points, 0) for c in blue_creatures]) / sum([c.max_hit_points for c in blue_creatures]),
+        'red_hp_remaining': sum([max(c.hit_points, 0) for c in red_creatures]) / sum([c.max_hit_points for c in red_creatures]),
+        'blue_living_count': len(blue_living),
+        'red_living_count': len(red_living),
+        'combat_length': total_survival_time,
         'winner': winner,
     }
+
+
+def find_best_defender(attackers, defenders):
+    """Find the best defender for the attackers to attack.
+    This name is slightly misleading; it means the optimal target from the attackers' perspective,
+    not the creature most skilled at defending.
+
+    Args:
+        attackers (Creature[]): Attacking creatures
+        defenders (Creature[]): Defending creatures
+
+    Yields:
+        Creature, int: Creature to attack, and how many rounds it survived
+    """
+    max_damage_per_round = None
+    # We use best_survival_time to find the defender to ensure that we
+    # prioritize low HP targets.
+    best_survival_time = None
+    best_defender = None
+    for defender in defenders:
+        survival_times = [get_survival_time(attacker, defender) for attacker in attackers]
+        combined_damage_per_round = sum([defender.hit_points / time for time in survival_times])
+        survival_time = defender.hit_points / combined_damage_per_round
+        if best_survival_time is None or survival_time < best_survival_time:
+            max_damage_per_round = combined_damage_per_round
+            best_survival_time = survival_time
+            best_defender = defender
+
+    return best_defender, best_survival_time, max_damage_per_round
 
 
 def get_survival_time(attacker, target):
@@ -104,3 +151,15 @@ def hit_chance(accuracy, defense):
 
 def crit_chance(accuracy, defense):
     return hit_chance(accuracy, defense + 10)
+
+
+def percent(val):
+    return f"{int(round(val * 100))}%"
+
+
+def format_combat_results(results):
+    combat_length = round(results['combat_length'], 2)
+    return (
+        f"{results['winner']} wins: time {combat_length}, {results['blue_living_count']} vs {results['red_living_count']} alive,"
+        + f" {percent(results['blue_hp_remaining'])} vs {percent(results['red_hp_remaining'])} HP"
+    )
