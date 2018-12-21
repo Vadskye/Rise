@@ -1189,7 +1189,7 @@ def generate_mystic_spheres():
                 Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against a creature within \\rngmed range.
                 \\hit As a \\glossterm<condition>, the target is unable to take any \\glossterm<standard actions> that do not cause it to make an attack.
                 For example, it could make a \\glossterm<strike> or cast an offensive spell, but it could not heal itself or summon an ally.
-                This cannot prevent it from taking the \\textit<recover> or \\textit<desperate recovery> actions.
+                This cannot prevent it from using the \\textit<cleanse> ability.
             """, tags=['Emotion', 'Mind']),
             Spell('Mass Enrage', 4, """
                 This spell functions like the \\spell<enrage> spell, except that it affects all enemies within a \\areamed radius.
