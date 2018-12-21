@@ -287,7 +287,12 @@ class Creature(object):
         if active_ability.damage_type == 'strike':
             # Default to the first weapon, assuming that it is the primary weapon
             weapon = active_ability.weapon or self.weapons[0]
-            return self.weapon_damage(weapon) + active_ability.damage_modifier
+            damage_modifier = (
+                active_ability.damage_modifier
+                if isinstance(active_ability.damage_modifier, int)
+                else active_ability.damage_modifier(self)
+            )
+            return self.weapon_damage(weapon) + damage_modifier
 
         standard = DicePool(8)
         standard += sum([
