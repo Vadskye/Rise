@@ -13,7 +13,6 @@ def get_creature_latex(
 ):
     return get_latex(
         # use a different calculation for monster AP
-        action_points=max(1, 1 + creature.challenge_rating + creature.starting_willpower),
         armor_defense=creature.armor_defense,
         challenge_rating=creature.challenge_rating,
         constitution=creature.constitution,
@@ -28,6 +27,8 @@ def get_creature_latex(
         perception=creature.perception,
         species=creature.species.name,
         reach=creature.reach,
+        recovery_action_points=creature.recovery_action_points,
+        reserve_action_points=creature.reserve_action_points,
         reflex_defense=creature.reflex_defense,
         size=creature.size.name,
         space=creature.space,
@@ -55,12 +56,13 @@ def get_latex(
         mental_defense,
         name,
         perception,
+        recovery_action_points,
+        reserve_action_points,
         species,
         strength,
         strikes,
         reflex_defense,
         willpower,
-        action_points=None,
         actions=None,
         active_abilities=None,
         behavior=None,
@@ -85,7 +87,7 @@ def get_latex(
                             \\textbf<HP> {hit_points};
                             \\textbf<Bloodied> {hit_points // 2};
                         >
-                            <\\textbf<AP> {action_points if action_points is not None else challenge_rating}>
+                            <\\textbf<AP> {recovery_action_points}/{reserve_action_points}>
 
                         \\pari \\textbf<Armor> {armor_defense};
                             \\textbf<Fort> {fortitude_defense};
