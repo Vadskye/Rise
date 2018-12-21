@@ -164,6 +164,39 @@ def animals(sample_monsters):
         huge_centipede,
     ))
 
+    spider_gargantuan = sample_monsters['spider_gargantuan']
+    monsters.append(get_creature_latex(
+        spider_gargantuan,
+        active_abilities=[
+            active_ability('Web Spit', f"""
+                The spider makes a +{spider_gargantuan.accuracy()} vs. Reflex attack against one creature within \\rnglong range.
+                \\hit The target is \\glossterm<immobilized> as a \\glossterm<condition>.
+            """),
+        ],
+    ))
+
+    spider_gargantuan_alt = sample_monsters['spider_gargantuan_alt']
+    monsters.append(get_creature_latex(
+        spider_gargantuan_alt,
+        active_abilities=[
+            active_ability('Web Spit', f"""
+                The spider makes a +{spider_gargantuan.accuracy()} vs. Reflex attack against one creature within \\rnglong range.
+                \\hit The target is \\glossterm<immobilized> as a \\glossterm<condition>.
+            """),
+        ],
+    ))
+
+    spider_colossal = sample_monsters['spider_colossal']
+    monsters.append(get_creature_latex(
+        spider_colossal,
+        active_abilities=[
+            active_ability('Web Spit', f"""
+                The spider makes a +{spider_colossal.accuracy()} vs. Reflex attack against one creature within \\rnglong range.
+                \\hit The target is \\glossterm<immobilized> as a \\glossterm<condition>.
+            """),
+        ],
+    ))
+
     monsters.sort()
 
     return '\n\n'.join(monsters)
@@ -189,6 +222,11 @@ def animates(sample_monsters):
                 The ram does not have to move with the target to push it back.
             """),
         ],
+    ))
+
+    earth_elemental_elder = sample_monsters['earth_elemental_elder']
+    monsters.append(get_creature_latex(
+        earth_elemental_elder,
     ))
 
     return '\n\n'.join(monsters)
@@ -637,6 +675,11 @@ def monstrous_humanoids(sample_monsters):
                 If it takes vital damage in this way, it is petrified permanently.
             """),
         ],
+    ))
+
+    harpy_archer = sample_monsters['harpy_archer']
+    monsters.append(get_creature_latex(
+        harpy_archer,
     ))
 
     return '\n\n'.join(monsters)
