@@ -69,6 +69,11 @@ def generate_modifiers():
         c.attuned_ability_count += 1
     modifiers['precognitive_defense'] = precognitive_defense
 
+    def rage(c):
+        c.attuned_ability_count += 1
+        c.weapon_damage_modifier += 2 if c.level >= 14 else 1
+    modifiers['rage'] = rage
+
     def revelation(c):
         c.accuracy_modifier += 1
         c.attuned_ability_count += 1

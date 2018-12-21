@@ -1,4 +1,5 @@
 from copy import copy
+import re
 from rise.statistics.sample_creatures import get_sample_creatures
 
 def parse_creature(creature_text, sample_info=None):
@@ -6,9 +7,25 @@ def parse_creature(creature_text, sample_info=None):
     tokens = creature_text.split(' ')
     name = tokens[0]
     creature = copy(sample_info['characters'].get(name) or sample_info['monsters'].get(name))
-    for modifier_name in tokens[1:]:
+    modifier_names = sort_modifier_names(tokens[1:])
+    for modifier_name in modifier_names:
         sample_info['modifiers'][modifier_name](creature)
     return creature
+
+
+level_pattern = re.compile(r'l\d{1,2}')
+def sort_modifier_names(modifier_names):
+    levels = []
+    nonlevels = []
+    for m in modifier_names:
+        if level_pattern.search(m):
+            levels.append(m)
+        else:
+            nonlevels.append(m)
+    if len(levels) > 1:
+        raise Exception(f"Only one level modifier should exist! ({modifier_names})")
+    return levels + sorted(nonlevels)
+
 
 def parse_level_group(levels):
     if levels == 'all':
