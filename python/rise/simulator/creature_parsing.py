@@ -19,6 +19,10 @@ def parse_level_group(levels):
         return [str(n) for n in range(2, 21, 2)]
     elif levels == 'std':
         return [str(n) for n in range(2, 21, 5)]
+    elif levels == 'threes':
+        return [str(n) for n in range(2, 21, 3)]
+    elif levels == 'low':
+        return [str(n) for n in range(2, 12, 3)]
     else:
         return map(str, sorted(map(int, levels.split(' '))))
 
