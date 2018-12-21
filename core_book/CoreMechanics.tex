@@ -206,6 +206,19 @@ It defines how attributes work and explains how to make physical attacks in comb
         At higher levels, you gain additional \glossterm{recovery action points} (see \pcref{Character Advancement}).
         You can gain additional \glossterm{reserve action points} with a high Willpower, and some abilities can also grant reserve action points.
 
+        \subsubsection{Regaining Action Points}
+            You gain regain spent \glossterm{action points} by resting (see \pcref{Resting}).
+            In addition, some abilities allow you to regain action points during combat.
+            There are two significant restrictions on regaining action points during combat.
+
+            First, you cannot regain action points and spend action points in the same round.
+            If you have spent an action point during a round, including spending an action point to \glossterm{attune} to an ability, you cannot regain action points until the next round.
+            Similarly, if you have already regained an action point during a round, you cannot spend action points until the next round.
+            If you somehow spend and regain action points simultaneously, you do not regain the action points.
+
+            Second, you cannot regain more than one action point per round, even if multiple different abilities say you regain a spent action point.
+            All action points you would regain after the first one in the round are ignored.
+
     \subsection{Attributes}\label{Attributes}
 
         Each character has six \glossterm{attributes}: Strength (Str), Dexterity (Dex), Constitution (Con), Intelligence (Int), Perception (Per), and Willpower (Wil).
@@ -1149,7 +1162,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         \subsection{Conditions}\label{Conditions}
             Many abilities impose \glossterm{conditions} on their targets.
             A condition lasts until it is removed.
-            You can remove a condition by taking a \glossterm{short rest} or using the \textit{recover} or \textit{desperate recovery} abilities (see \pcref{Special Combat Abilities}).
+            You can remove a condition by taking a \glossterm{short rest} or using the \textit{cleanse} ability (see \pcref{Cleanse}).
             There are several other abilities that can also remove conditions.
 
         \subsection{Attunement}\label{Attunement}
@@ -1460,18 +1473,18 @@ It defines how attributes work and explains how to make physical attacks in comb
         \begin{dtable}
             \lcaption{Special Combat Abilities}
             \begin{dtabularx}{\columnwidth}{>{\lcol}p{6em} l X}
-                \tb{Maneuver}  & \tb{Defense} & \tb{Brief Description} \\
+                \tb{Ability}  & \tb{Defense} & \tb{Brief Description} \\
                 \bottomrule
-                Charge\fn{1}       & Armor        & Move and attack                                      \\
-                Desperate Recovery & \tdash       & Remove a \glossterm{condition} if you take no damage \\
-                Dirty Trick        & Any          & Impose penalty on a foe                              \\
-                Disarm             & Ref          & Attack item, knocking it free                        \\
-                Feint              & Ref          & Leave foe vulnerable to attacks                      \\
-                Grapple            & Fort and Ref & Wrestle with a foe                                   \\
-                Recover\fn{1}      & \tdash       & Quickly remove a \glossterm{condition}               \\
-                Shove              & Fort         & Move a foe                                           \\
-                Total Defense      & \tdash       & Gain \plus2 to defenses                              \\
-                Trip               & Ref          & Trip a foe                                           \\
+                Charge\fn{1}  & Armor        & Move and attack                         \\
+                Cleanse\fn{1} & \tdash       & Quick remove a \glossterm{condition}    \\
+                Dirty Trick   & Any          & Impose penalty on a foe                 \\
+                Disarm        & Ref          & Attack item, knocking it free           \\
+                Feint         & Ref          & Leave foe vulnerable to attacks         \\
+                Grapple       & Fort and Ref & Wrestle with a foe                      \\
+                Recover       & \tdash       & Regain a spent \glossterm{action point} \\
+                Shove         & Fort         & Move a foe                              \\
+                Total Defense & \tdash       & Gain \plus2 to defenses                 \\
+                Trip          & Ref          & Trip a foe                              \\
             \end{dtabularx}
             1. This ability costs an \glossterm{action point} to use.
         \end{dtable}
@@ -1483,13 +1496,12 @@ It defines how attributes work and explains how to make physical attacks in comb
             During the \glossterm{delayed action phase}, you can make a melee \glossterm{strike} from your new location.
         \end{apability}
 
-        \parhead{Desperate Recovery} As a standard action, you can use the \textit{desperate recovery} ability to remove a \glossterm{condition} from yourself.
+        \parhead{Cleanse} You can use the \textit{cleanse} ability as a \glossterm{minor action}.
         As long as you are conscious, no effect can prevent you from using this ability, even effects that prohibit using any other abilities.
-
-        \begin{freeability}{\labeltext{Desperate Recovery}}
-            At the end of the round, if you did not take damage this round, you may remove one \glossterm{condition} affecting you.
+        \begin{apability}{\labeltext{Cleanse}}
+            You remove one \glossterm{condition} affecting you.
             This cannot remove a condition applied during the current round.
-        \end{freeability}
+        \end{apability}
 
         \parhead{Dirty Trick} As a standard action, you can use the \textit{dirty trick} ability to creatively impair a foe's ability to fight.
 
@@ -1538,12 +1550,12 @@ It defines how attributes work and explains how to make physical attacks in comb
             For details, see \pcref{Grappling}.
         \end{freeability}
 
-        \parhead{Recover} You can use the \textit{recover} ability as a \glossterm{minor action}.
-        As long as you are conscious, no effect can prevent you from using this ability, even effects that prohibit using any other abilities.
-        \begin{apability}{\labeltext{Recover}}
-            You remove one \glossterm{condition} affecting you.
-            This cannot remove a condition applied during the current round.
-        \end{apability}
+        \parhead{Recover} As a standard action, you can use the \textit{recover} ability to regain a spent \glossterm{recovery action point}.
+
+        \begin{freeability}{\labeltext{Recover}}
+            At the end of the round, if you did not take damage this round, you may regain one spent \glossterm{recovery action point}.
+            For details, see \pcref{Regaining Action Points}.
+        \end{freeability}
 
         \parhead{Shove} As a standard action, you can use the \textit{shove} ability to physically move a creature.
 
