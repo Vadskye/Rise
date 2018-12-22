@@ -556,7 +556,7 @@ def generate_maneuvers():
         name='Hidden Recovery',
         short_description='Hide and recover a spent \\glossterm<action point>.',
         effect_text="""
-            You can move up to half your speed and make a Stealth check to hide (see \\pcref<Stealth).
+            You can move up to half your speed and make a Stealth check to hide (see \\pcref<Stealth>).
             % TODO: define unobserved better?
             At the end of the round, if you are unobserved, you regain a spent \\glossterm<recovery action point>.
         """,
