@@ -340,18 +340,6 @@ def generate_sample_monsters():
         starting_attributes=[4, 4, 1, -9, 3, 0],
         weapons=[Weapon('bite')],
     )
-    monsters['spider_gargantuan_alt'] = Creature(
-        challenge_rating=1,
-        character_class=CharacterClass('slayer'),
-        level=12,
-        name='Spider',
-        name_suffix='Gargantuan',
-        natural_armor=6,
-        species=Species('animal'),
-        size=Size('gargantuan'),
-        starting_attributes=[2, 4, 1, -9, 3, 0],
-        weapons=[Weapon('bite')],
-    )
 
     # Animates
     monsters['elemental_air'] = Creature(
