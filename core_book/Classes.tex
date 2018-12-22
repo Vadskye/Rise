@@ -98,13 +98,13 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Battleforged Resilience} & \tb{Battlerager}  & \tb{Primal Warrior} \\\bottomrule
                1 & Fury of the storm         & Rage                       & Primal smash
-            \\ 2 & Battlefield lore          & Intimidating anger         & Primal exertions
+            \\ 2 & Battlefield lore          & Intimidating anger         & Primal maneuvers
             \\ 3 & Battle-scarred            & Focused rage               & Athletic prowess
-            \\ 4 & Soulscarred               & tireless rage              & Primal exertion
+            \\ 4 & Soulscarred               & tireless rage              & Primal maneuver
             \\ 5 & Greater fury of the storm & Greater intimidating anger & Greater primal smash
-            \\ 6 & Agile defense             & Greater rage               & Primal exertion
+            \\ 6 & Agile defense             & Greater rage               & Primal maneuver
             \\ 7 & Greater battle-scarred    & Endless rage               & Primal prowess
-            \\ 8 & Battleforged supremacy    & Titanic rage               & Primal dominance, primal exertion
+            \\ 8 & Battleforged supremacy    & Titanic rage               & Primal dominance, primal maneuver
         \end{dtabularx}
     \end{dtable}
 
@@ -182,201 +182,21 @@ This choice determines a great deal about your character's abilities.
             If you deal damage with the strike, you regain hit points equal to your \glossterm{power}.
         \end{freeability}
 
-        \cf{Bbn}[2]{Primal Exertions}
+        \cf{Bbn}[2]{Primal Maneuvers}
         You can channel your primal energy into ferocious attacks.
-        Choose one \textit{primal exertion} from the list below.
-        You can also spend \glossterm{insight points} to learn one additional \textit{primal exertion} per \glossterm{insight point}.
-        You can use any \textit{primal exertion} ability you know as a \glossterm{standard action}.
-        {
-            \begin{apability}{Battle Cry}[\glossterm{Mind}]
-                You and any number of willing creatures within a \arealarge radius burst from you heal hit points equal to \glossterm{standard damage}.
-
-                \rankline
-                \rank{4} You gain a \plus1d bonus to the amount healed.
-                \rank{6} The healing bonus increases to \plus2d.
-                \rank{8} The healing bonus increases to \plus3d.
-            \end{apability}
-
-            \begin{freeability}{Brace for Impact}[\glossterm{Swift}]
-                You take half damage from all attacks.
-                This halving is applied before \glossterm{damage reduction} and similar abilities.
-                This ability lasts until the end of the round.
-
-                \rankline
-                \rank{4} You also gain a \plus1 bonus to all defenses.
-                \rank{6} The defense bonus increases to \plus2.
-                \rank{8} The defense bonus increases to \plus3.
-            \end{freeability}
-
-            \begin{apability}{Certain Strike}
-                Make a \glossterm{strike} with a \plus3 bonus to accuracy.
-
-                \rankline
-                \rank{4} The accuracy bonus increases to \plus4.
-                \rank{6} The accuracy bonus increases to \plus5.
-                \rank{8} The accuracy bonus increases to \plus6.
-            \end{apability}
-
-            \begin{apability}{Counterattack}
-                Make a \glossterm{strike}.
-                If the target attacked you in the same phase, you gain a \plus2 bonus to accuracy and a \plus2d bonus to damage.
-                Otherwise, you regain the action point spent to use this ability.
-
-                \rankline
-                \rank{4} The damage bonus increases to \plus3d.
-                \rank{6} The damage bonus increases to \plus4d.
-                \rank{8} The damage bonus increases to \plus5d.
-            \end{apability}
-
-            \begin{apability}{Daunting Blow}[\glossterm{Mind}]
-                Make a melee \glossterm{strike}.
-                If the target takes damage from the strike, it is \glossterm{shaken} by you as a \glossterm{condition}.
-                Otherwise, you regain the \glossterm{action point} spent to use this ability.
-
-                \rankline
-                \rank{4} You gain a \plus1 bonus to accuracy on the strike.
-                \rank{6} The accuracy bonus increases to \plus2.
-                \rank{8} The accuracy bonus increases to \plus3.
-            \end{apability}
-
-            \begin{apability}{Demoralizing Shout}[\glossterm{Mind}]
-                Make an attack vs. Mental against all enemies within a \arealarge radius burst from you.
-                \hit Each target is \glossterm{shaken} by you as a \glossterm{condition}.
-
-                \rankline
-                \rank{4} You gain a \plus1 bonus to \glossterm{accuracy} with the attack.
-                \rank{6} The accuracy bonus increases to \plus2.
-                \rank{8} The accuracy bonus increases to \plus3.
-            \end{apability}
-
-            \begin{apability}{Ground Pound}
-                You can only use this ability while standing on solid ground.
-                Make an attack vs. Reflex against all enemies standing on solid ground adjacent to you.
-                If you use this ability during the \glossterm{action phase}, you can also make a \glossterm{strike} during the \glossterm{delayed action phase}.
-                \hit Each target is knocked \prone.
-
-                \rankline
-                \rank{4} The area increases to a \areamed radius burst.
-                \rank{6} The area increases to a \arealarge radius burst.
-                \rank{8} The area increases to a \areahuge radius burst.
-            \end{apability}
-
-            \begin{apability}{Leaping Strike}
-                You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to your \glossterm{base speed} (see \pcref{Leap}).
-                You can make a \glossterm{strike} with a \plus1d bonus to damage from any location you occupy during the leap.
-
-                \rankline
-                \rank{4} The damage bonus increases to \plus2d.
-                \rank{6} The damage bonus increases to \plus3d.
-                \rank{8} The damage bonus increases to \plus4d.
-            \end{apability}
-
-            \begin{apability}{Liver Shot}
-                Make a \glossterm{strike} with a bludgeoning weapon.
-                If the target takes damage from the strike, it is \sickened as a \glossterm{condition}.
-                Otherwise, you regain the \glossterm{action point} spent to use this ability.
-
-                \rankline
-                \rank{4} You gain a \plus1 bonus to \glossterm{accuracy} with the strike.
-                \rank{6} The accuracy bonus increases to \plus2.
-                \rank{8} The accuracy bonus increases to \plus3.
-            \end{apability}
-
-            \begin{apability}{Power Attack}
-                Make a \glossterm{strike} with a \plus2d bonus to damage.
-
-                \rankline
-                \rank{4} The damage bonus increases to \plus3d.
-                \rank{6} The damage bonus increases to \plus4d.
-                \rank{8} The damage bonus increases to \plus5d.
-            \end{apability}
-
-            \begin{apability}{Pulverizing Smash}
-                Make a \glossterm{strike} with a piercing weapon.
-                The attack is made against the target's Fortitude defense instead of its Armor defense.
-
-                \rankline
-                \rank{4} You gain a \plus1d bonus to damage with the strike.
-                \rank{6} The damage bonus increases to \plus2d.
-                \rank{8} The damage bonus increases to \plus3d.
-            \end{apability}
-
-            \begin{apability}{Rapid Assault}
-                Make a \glossterm{strike} against a creature.
-                If you use this ability during the \glossterm{action phase}, you can make another strike during the \glossterm{delayed action phase}.
-                You take a \minus2 penalty to accuracy on both strikes.
-
-                \rankline
-                \rank{4} The accuracy penalty is reduced to \minus1.
-                \rank{6} The accuracy penalty is removed.
-                \rank{8} You gain a \plus1 bonus to accuracy with both strikes.
-            \end{apability}
-
-            \begin{apability}{Reaping Charge}
-                Move up to your movement speed in a straight line.
-                You can make a melee \glossterm{strike} with a slashing or bludgeoning weapon.
-                The strike targets any number of creatures and objects that you \glossterm{threaten} at any point during your movement, except for the space you start in and the space you end in.
-                You take a \minus2 penalty to \glossterm{accuracy} on the strike.
-
-                \rankline
-                \rank{4} You gain a \plus1d bonus to damage with the strike.
-                \rank{6} The damage bonus increases to \plus2d.
-                \rank{8} The damage bonus increases to \plus3d.
-            \end{apability}
-
-            \begin{apability}{Strip the Flesh}
-                Make a \glossterm{strike} with a slashing weapon.
-                At the end of the \glossterm{action phase} of the next round, if you hit with the strike and the target is not \glossterm{bloodied}, it takes additional damage equal to the damage you dealt with the strike.
-
-                \rankline
-                \rank{4} If you hit with the strike, the target continues taking the same damage at the end of each \glossterm{action phase} until it becomes \glossterm{bloodied}.
-                This is a \glossterm{condition}, and can be removed by abilities that remove conditions.
-                \rank{6} You gain a \plus1d bonus to damage with the strike.
-                \rank{8} The damage bonus increases to \plus2d.
-            \end{apability}
-
-            \begin{apability}{Sweeping Strike}
-                Make a melee \glossterm{strike} with a slashing or bludgeoning weapon.
-                The strike targets each of up to three creatures or objects you \glossterm{threaten}.
-                You take a \minus1 penalty to \glossterm{accuracy} with the strike.
-
-                \rankline
-                \rank{4} You gain a \plus1d bonus to damage with the strike.
-                \rank{6} The damage bonus increases to \plus2d.
-                \rank{8} The damage bonus increases to \plus3d.
-            \end{apability}
-
-            \begin{apability}{Thunderous Shout}[\glossterm{Sonic}]
-                Make an attack vs. Fortitude against all creatures and objects in a \areamed cone-shaped burst from you.
-                \hit Each target takes sonic \glossterm{standard damage} and is \glossterm{deafened} as a \glossterm{condition}.
-
-                \rankline
-                \rank{4} You gain a \plus1d bonus to damage with the attack.
-                \rank{6} The area increases to \arealarge.
-                \rank{8} The damage bonus increases to \plus2d.
-            \end{apability}
-
-            \begin{apability}{Whirlwind Spin}
-                Make a melee \glossterm{strike} with a slashing weapon.
-                The strike targets all creatures you \glossterm{threaten}.
-                You take a \minus2 penalty to \glossterm{accuracy} with the strike.
-
-                \rankline
-                \rank{4} You gain a \plus1d bonus to damage with the strike.
-                \rank{6} The damage bonus increases to \plus2d.
-                \rank{8} The damage bonus increases to \plus3d.
-            \end{apability}
-        }
+        You learn one \glossterm{maneuver} from the primal maneuver list (see \pcref{Primal Maneuvers}).
+        You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
+        As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
 
         \cf{Bbn}[3]{Athletic Prowess} You gain two additional \glossterm{skill points}.
 
-        \cf*{Bbn}[4]{Primal Exertion}
-        You learn an additional \textit{primal exertion}.
+        \cf*{Bbn}[4]{Primal Maneuver}
+        You learn an additional primal \glossterm{maneuver} (see \pcref{Primal Maneuvers}).
 
         \cf{Bbn}[5]{Greater Primal Smash} The healing from your \textit{primal smash} ability increases to be equal to twice your \glossterm{power}.
 
-        \cf*{Bbn}[6]{Primal Exertion}
-        You learn an additional \textit{primal exertion}.
+        \cf*{Bbn}[6]{Primal Maneuver}
+        You learn an additional primal \glossterm{maneuver} (see \pcref{Primal Maneuvers}).
 
         \cf{Bbn}[7]{Primal Prowess}
         You gain a \plus2 bonus to Strength-based and Dexterity-based checks.
@@ -384,8 +204,8 @@ This choice determines a great deal about your character's abilities.
         \cf{Bbn}[8]{Primal Dominance}
         You gain a \plus2 bonus to \glossterm{power} with \glossterm{mundane} abilities.
 
-        \cf*{Bbn}[8]{Primal Exertion}
-        You learn an additional \textit{primal exertion}.
+        \cf*{Bbn}[8]{Primal Maneuver}
+        You learn an additional primal \glossterm{maneuver} (see \pcref{Primal Maneuvers}).
 
     \subsection{Battleforged Resilience}
         This archetype improves your defenses in combat.
@@ -1429,13 +1249,13 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Fighter Progression}
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Combat Discipline} & \tb{Equipment Training}  & \tb{Martial Mastery} \\\bottomrule
-               1 & Disciplined Threat          & Armor expertise         & Martial exertions
+               1 & Disciplined Threat          & Armor expertise         & Martial maneuvers
             \\ 2 & Discipline                  & Weapon focus            & Martial lore
-            \\ 3 & Disciplined defense         & Greater armor expertise & Martial exertion
+            \\ 3 & Disciplined defense         & Greater armor expertise & Martial maneuver
             \\ 4 & Greater disciplined threat  & Weapon master           & Martial lore
-            \\ 5 & Greater discipline          & Supreme armor expertise & Martial exertion
-            \\ 6 & Greater disciplined defense & Greater weapon focus    & Exertion expertise
-            \\ 7 & Legendary discipline        & Armored juggernaut      & Martial exertion
+            \\ 5 & Greater discipline          & Supreme armor expertise & Martial maneuver
+            \\ 6 & Greater disciplined defense & Greater weapon focus    & Master of arms
+            \\ 7 & Legendary discipline        & Armored juggernaut      & Martial maneuver
             \\ 8 &                             &
         \end{dtabularx}
     \end{dtable}
@@ -1471,186 +1291,26 @@ This choice determines a great deal about your character's abilities.
             Make a \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy}.
         \end{freeability}
 
-        \cf{Ftr}[2]{Martial Exertions}
+        \cf{Ftr}[2]{Martial Maneuvers}
         You can channel your martial prowess into devastating attacks.
-        Choose one \textit{martial exertions} from the list below.
-        You can also spend \glossterm{insight points} to learn one additional \textit{martial exertion} per \glossterm{insight point}.
-        You can use any \textit{martial exertion} ability you know as a \glossterm{standard action}.
-        {
-            \begin{freeability}{Brace for Impact}[\glossterm{Swift}]
-                You take half damage from all attacks.
-                This halving is applied before \glossterm{damage reduction} and similar abilities.
-                This ability lasts until the end of the round.
-
-                \rankline
-                \rank{4} You also gain a \plus1 bonus to all defenses.
-                \rank{6} The defense bonus increases to \plus2.
-                \rank{8} The defense bonus increases to \plus3.
-            \end{freeability}
-
-            \begin{apability}{Certain Strike}
-                Make a \glossterm{strike} with a \plus3 bonus to accuracy.
-
-                \rankline
-                \rank{4} The accuracy bonus increases to \plus4.
-                \rank{6} The accuracy bonus increases to \plus5.
-                \rank{8} The accuracy bonus increases to \plus6.
-            \end{apability}
-
-            \begin{freeability}{Challenge}[\glossterm{Attune} (self)]
-                Make a melee \glossterm{strike}.
-                If the strike hits, you gain a \plus4 bonus to \glossterm{threat} against the struck creature.
-                This effect lasts until you take a \glossterm{short rest} or until you use this ability on a different creature.
-
-                % TODO: weird scaling
-                \rankline
-                \rank{4} The threat bonus increases to \plus6.
-                \rank{6} The threat bonus increases to \plus8.
-                \rank{8} The threat bonus increases to \plus10.
-            \end{freeability}
-
-            \begin{apability}{Counterattack}
-                Make a \glossterm{strike}.
-                If the target attacked you in the same phase, you gain a \plus2 bonus to accuracy and a \plus2d bonus to damage.
-                Otherwise, you regain the action point spent to use this ability.
-
-                \rankline
-                \rank{4} The damage bonus increases to \plus3d.
-                \rank{6} The damage bonus increases to \plus4d.
-                \rank{8} The damage bonus increases to \plus5d.
-            \end{apability}
-
-            \begin{apability}{Daunting Blow}[\glossterm{Mind}]
-                Make a melee \glossterm{strike}.
-                If the target takes damage from the strike, it is \glossterm{shaken} by you as a \glossterm{condition}.
-                Otherwise, you regain the \glossterm{action point} spent to use this ability.
-
-                \rankline
-                \rank{4} You gain a \plus1 bonus to accuracy on the strike.
-                \rank{6} The accuracy bonus increases to \plus2.
-                \rank{8} The accuracy bonus increases to \plus3.
-            \end{apability}
-
-            \begin{apability}{Liver Shot}
-                Make a \glossterm{strike} with a bludgeoning weapon.
-                If the target takes damage from the strike, it is \sickened as a \glossterm{condition}.
-                Otherwise, you regain the \glossterm{action point} spent to use this ability.
-
-                \rankline
-                \rank{4} You gain a \plus1 bonus to \glossterm{accuracy} with the strike.
-                \rank{6} The accuracy bonus increases to \plus2.
-                \rank{8} The accuracy bonus increases to \plus3.
-            \end{apability}
-
-            \begin{apability}{Penetrating Strike}
-                Make a \glossterm{strike} with a piercing weapon.
-                The attack is made against the target's Reflex defense instead of its Armor defense.
-
-                \rankline
-                \rank{4} You gain a \plus1d bonus to damage with the strike.
-                \rank{6} The damage bonus increases to \plus2d.
-                \rank{8} The damage bonus increases to \plus3d.
-            \end{apability}
-
-            \begin{apability}{Power Attack}
-                Make a \glossterm{strike} with a \plus2d bonus to damage.
-
-                \rankline
-                \rank{4} The damage bonus increases to \plus3d.
-                \rank{6} The damage bonus increases to \plus4d.
-                \rank{8} The damage bonus increases to \plus5d.
-            \end{apability}
-
-            \begin{apability}{Pulverizing Smash}
-                Make a \glossterm{strike} with a piercing weapon.
-                The attack is made against the target's Fortitude defense instead of its Armor defense.
-
-                \rankline
-                \rank{4} You gain a \plus1d bonus to damage with the strike.
-                \rank{6} The damage bonus increases to \plus2d.
-                \rank{8} The damage bonus increases to \plus3d.
-            \end{apability}
-
-            \begin{apability}{Rally the Troops}
-                You and any number of willing creatures within a \areamed radius from you can each remove one \glossterm{condition}.
-
-                \rankline
-                \rank{4} The area increases to \arealarge.
-                \rank{6} Each target can instead remove two conditions.
-                \rank{8} Each target can instead remove three conditions.
-            \end{apability}
-
-            \begin{apability}{Rapid Assault}
-                Make a \glossterm{strike} against a creature.
-                If you use this ability during the \glossterm{action phase}, you can make another strike during the \glossterm{delayed action phase}.
-                You take a \minus2 penalty to accuracy on both strikes.
-
-                \rankline
-                \rank{4} The accuracy penalty is reduced to \minus1.
-                \rank{6} The accuracy penalty is removed.
-                \rank{8} You gain a \plus1 bonus to accuracy with both strikes.
-            \end{apability}
-
-            \begin{apability}{Reaping Charge}
-                Move up to your movement speed in a straight line.
-                You can make a melee \glossterm{strike} with a slashing or bludgeoning weapon.
-                The strike targets any number of creatures and objects that you \glossterm{threaten} at any point during your movement, except for the space you start in and the space you end in.
-                You take a \minus2 penalty to \glossterm{accuracy} on the strike.
-
-                \rankline
-                \rank{4} You gain a \plus1d bonus to damage with the strike.
-                \rank{6} The damage bonus increases to \plus2d.
-                \rank{8} The damage bonus increases to \plus3d.
-            \end{apability}
-
-            \begin{apability}{Strip the Flesh}
-                Make a \glossterm{strike} with a slashing weapon.
-                At the end of the \glossterm{action phase} of the next round, if you hit with the strike and the target is not \glossterm{bloodied}, it takes additional damage equal to the damage you dealt with the strike.
-
-                \rankline
-                \rank{4} If you hit with the strike, the target continues taking the same damage at the end of each \glossterm{action phase} until it becomes \glossterm{bloodied}.
-                This is a \glossterm{condition}, and can be removed by abilities that remove conditions.
-                \rank{6} You gain a \plus1d bonus to damage with the strike.
-                \rank{8} The damage bonus increases to \plus2d.
-            \end{apability}
-
-            \begin{apability}{Sweeping Strike}
-                Make a melee \glossterm{strike} with a slashing or bludgeoning weapon.
-                The strike targets each of up to three creatures or objects you \glossterm{threaten}.
-                You take a \minus1 penalty to \glossterm{accuracy} with the strike.
-
-                \rankline
-                \rank{4} You gain a \plus1d bonus to damage with the strike.
-                \rank{6} The damage bonus increases to \plus2d.
-                \rank{8} The damage bonus increases to \plus3d.
-            \end{apability}
-
-            \begin{apability}{Whirlwind Spin}
-                Make a melee \glossterm{strike} with a slashing weapon.
-                The strike targets all creatures you \glossterm{threaten}.
-                You take a \minus2 penalty to \glossterm{accuracy} with the strike.
-
-                \rankline
-                \rank{4} You gain a \plus1d bonus to damage with the strike.
-                \rank{6} The damage bonus increases to \plus2d.
-                \rank{8} The damage bonus increases to \plus3d.
-            \end{apability}
-        }
+        You learn one \glossterm{maneuver} from the martial maneuver list (see \pcref{Martial Maneuvers}).
+        You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
+        As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
 
         \cf{Ftr}[3]{Martial Lore} You gain two additional skill points.
 
-        \cf*{Ftr}[4]{Martial Exertion}
-        You learn an additional \textit{martial exertion}.
+        \cf*{Ftr}[4]{Martial Maneuver}
+        You learn an additional \textit{martial maneuver}.
 
         \cf{Ftr}[5]{Greater Masterful Strike} The accuracy bonus from your \textit{masterful strike} ability increases to \plus2.
 
-        \cf*{Ftr}[6]{Martial Exertion} 
-        You learn an additional \textit{martial exertion}.
+        \cf*{Ftr}[6]{Martial Maneuver} 
+        You learn an additional \textit{martial maneuver}.
 
         \cf{Ftr}[7]{Master of Arms} You gain a \plus2 bonus to \glossterm{power} with \glossterm{mundane} abilities.
 
-        \cf*{Ftr}[8]{Martial Exertion}
-        You learn an additional \textit{martial exertion}.
+        \cf*{Ftr}[8]{Martial Maneuver}
+        You learn an additional \textit{martial maneuver}.
 
     \subsection{Equipment Training}
         This archetype improves your combat prowess with weapons and armor.
@@ -2453,13 +2113,13 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Ranger Progression}
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Huntmaster}  & \tb{Keen Senses} & \tb{Wilderness Warrior} \\\bottomrule
-               1 & Quarry         & Keen vision        & Wild exertions
+               1 & Quarry         & Keen vision        & Wild maneuvers
             \\ 2 & Tracker        & Learned perception & Wilderness lore
-            \\ 3 & Hunting styles & Blindsense         & Wild exertion
+            \\ 3 & Hunting styles & Blindsense         & Wild maneuver
             \\ 4 & Hunting lore   & Farsight           & Wilderness lore
-            \\ 5 & Hunting style  & Blindsight         & Wild exertion
+            \\ 5 & Hunting style  & Blindsight         & Wild maneuver
             \\ 6 & Fluid style    & Greater farsight   & Wilderness mastery
-            \\ 7 & Hunting style  & Truesight          & Wild exertion
+            \\ 7 & Hunting style  & Truesight          & Wild maneuver
             \\ 8 & Dual quarry    &                    &
         \end{dtabularx}
     \end{dtable}
@@ -2533,176 +2193,26 @@ This choice determines a great deal about your character's abilities.
             During the \glossterm{delayed action phase}, you can take the action you did not take during the \glossterm{action phase}.
         \end{freeability}
 
-        \cf{Rgr}[2]{Wild Exertions} 
+        \cf{Rgr}[2]{Wild Maneuvers} 
         You can channel your martial prowess into devastating attacks.
-        Choose one \textit{wild exertion} from the list below.
-        You can also spend \glossterm{insight points} to learn one additional \textit{wild exertion} per \glossterm{insight point}.
-        As a standard action, you can spend an \glossterm{action point} to use a \textit{wild exertion} ability.
-        {
-            \begin{freeability}{Brace for Impact}[\glossterm{Swift}]
-                You take half damage from all attacks.
-                This halving is applied before \glossterm{damage reduction} and similar abilities.
-                This ability lasts until the end of the round.
-
-                \rankline
-                \rank{4} You also gain a \plus1 bonus to all defenses.
-                \rank{6} The defense bonus increases to \plus2.
-                \rank{8} The defense bonus increases to \plus3.
-            \end{freeability}
-
-            \begin{apability}{Certain Strike}
-                Make a \glossterm{strike} with a \plus3 bonus to accuracy.
-
-                \rankline
-                \rank{4} The accuracy bonus increases to \plus4.
-                \rank{6} The accuracy bonus increases to \plus5.
-                \rank{8} The accuracy bonus increases to \plus6.
-            \end{apability}
-
-            \begin{apability}{Hamstring}
-                Make a \glossterm{strike} with a slashing or piercing weapon.
-                If the target takes damage from the strike, it is \glossterm{slowed} as a \glossterm{condition}.
-                Otherwise, you regain the \glossterm{action point} spent to use this ability.
-
-                \rankline
-                \rank{4} You gain a \plus1 bonus to accuracy on the strike.
-                \rank{6} The accuracy bonus increases to \plus2.
-                \rank{8} The accuracy bonus increases to \plus3.
-            \end{apability}
-
-            \begin{freeability}{Hunting Strike}
-                Make a \glossterm{strike} against a creature.
-                After making the strike, you gain a \plus1 bonus to \glossterm{accuracy} against the target with all attacks.
-                This effect stacks with itself, up to a maximum of a \plus4 bonus.
-                It lasts until you take a \glossterm{short rest} or use this ability on a different creature.
-
-                \rankline
-                \rank{4} The accuracy bonus increases by \plus2 per strike instead of \plus1.
-                \rank{6} The maximum accuracy bonus is increased to \plus6.
-                \rank{8} The maximum accuracy bonus is increased to \plus8.
-            \end{freeability}
-
-            \begin{apability}{Liver Shot}
-                Make a \glossterm{strike} with a bludgeoning weapon.
-                If the target takes damage from the strike, it is \sickened as a \glossterm{condition}.
-                Otherwise, you regain the \glossterm{action point} spent to use this ability.
-
-                \rankline
-                \rank{4} You gain a \plus1 bonus to \glossterm{accuracy} with the strike.
-                \rank{6} The accuracy bonus increases to \plus2.
-                \rank{8} The accuracy bonus increases to \plus3.
-            \end{apability}
-
-            \begin{apability}{Leaping Strike}
-                You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to your \glossterm{base speed} (see \pcref{Leap}).
-                You can make a \glossterm{strike} with a \plus1d bonus to damage from any location you occupy during the leap.
-
-                \rankline
-                \rank{4} The damage bonus increases to \plus2d.
-                \rank{6} The damage bonus increases to \plus3d.
-                \rank{8} The damage bonus increases to \plus4d.
-            \end{apability}
-
-            \begin{apability}{Penetrating Strike}
-                Make a \glossterm{strike} with a piercing weapon.
-                The attack is made against the target's Reflex defense instead of its Armor defense.
-
-                \rankline
-                \rank{4} You gain a \plus1d bonus to damage with the strike.
-                \rank{6} The damage bonus increases to \plus2d.
-                \rank{8} The damage bonus increases to \plus3d.
-            \end{apability}
-
-            \begin{apability}{Power Attack}
-                Make a \glossterm{strike} with a \plus2d bonus to damage.
-
-                \rankline
-                \rank{4} The damage bonus increases to \plus3d.
-                \rank{6} The damage bonus increases to \plus4d.
-                \rank{8} The damage bonus increases to \plus5d.
-            \end{apability}
-
-            \begin{apability}{Pulverizing Smash}
-                Make a \glossterm{strike} with a piercing weapon.
-                The attack is made against the target's Fortitude defense instead of its Armor defense.
-
-                \rankline
-                \rank{4} You gain a \plus1d bonus to damage with the strike.
-                \rank{6} The damage bonus increases to \plus2d.
-                \rank{8} The damage bonus increases to \plus3d.
-            \end{apability}
-
-            \begin{apability}{Rapid Assault}
-                Make a \glossterm{strike} against a creature.
-                If you use this ability during the \glossterm{action phase}, you can make another strike during the \glossterm{delayed action phase}.
-                You take a \minus2 penalty to accuracy on both strikes.
-
-                \rankline
-                \rank{4} The accuracy penalty is reduced to \minus1.
-                \rank{6} The accuracy penalty is removed.
-                \rank{8} You gain a \plus1 bonus to accuracy with both strikes.
-            \end{apability}
-
-            \begin{apability}{Reaping Charge}
-                Move up to your movement speed in a straight line.
-                You can make a melee \glossterm{strike} with a slashing or bludgeoning weapon.
-                The strike targets any number of creatures and objects that you \glossterm{threaten} at any point during your movement, except for the space you start in and the space you end in.
-                You take a \minus2 penalty to \glossterm{accuracy} on the strike.
-
-                \rankline
-                \rank{4} You gain a \plus1d bonus to damage with the strike.
-                \rank{6} The damage bonus increases to \plus2d.
-                \rank{8} The damage bonus increases to \plus3d.
-            \end{apability}
-
-            \begin{apability}{Strip the Flesh}
-                Make a \glossterm{strike} with a slashing weapon.
-                At the end of the \glossterm{action phase} of the next round, if you hit with the strike and the target is not \glossterm{bloodied}, it takes additional damage equal to the damage you dealt with the strike.
-
-                \rankline
-                \rank{4} If you hit with the strike, the target continues taking the same damage at the end of each \glossterm{action phase} until it becomes \glossterm{bloodied}.
-                This is a \glossterm{condition}, and can be removed by abilities that remove conditions.
-                \rank{6} You gain a \plus1d bonus to damage with the strike.
-                \rank{8} The damage bonus increases to \plus2d.
-            \end{apability}
-
-            \begin{apability}{Sweeping Strike}
-                Make a melee \glossterm{strike} with a slashing or bludgeoning weapon.
-                The strike targets each of up to three creatures or objects you \glossterm{threaten}.
-                You take a \minus1 penalty to \glossterm{accuracy} with the strike.
-
-                \rankline
-                \rank{4} You gain a \plus1d bonus to damage with the strike.
-                \rank{6} The damage bonus increases to \plus2d.
-                \rank{8} The damage bonus increases to \plus3d.
-            \end{apability}
-
-            \begin{apability}{Whirlwind Spin}
-                Make a melee \glossterm{strike} with a slashing weapon.
-                The strike targets all creatures you \glossterm{threaten}.
-                You take a \minus2 penalty to \glossterm{accuracy} with the strike.
-
-                \rankline
-                \rank{4} You gain a \plus1d bonus to damage with the strike.
-                \rank{6} The damage bonus increases to \plus2d.
-                \rank{8} The damage bonus increases to \plus3d.
-            \end{apability}
-        }
+        You learn one \glossterm{maneuver} from the wild maneuver list (see \pcref{Wild Maneuvers}).
+        You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
+        As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
 
         \cf{Rgr}[3]{Wilderness Lore} You gain two extra skill points.
 
-        \cf*{Rgr}[4]{Wild Exertion}
-        You learn an additional \textit{wild exertion}.
+        \cf*{Rgr}[4]{Wild Maneuver}
+        You learn an additional \textit{wild maneuver}.
 
         \cf{Rgr}[5]{Greater Wanderer's Strike} The distance you can move with your \textit{wanderer's strike} ability is increased to your full movement speed.
 
-        \cf*{Rgr}[6]{Wild Exertion} 
-        You learn an additional \textit{wild exertion}.
+        \cf*{Rgr}[6]{Wild Maneuver} 
+        You learn an additional \textit{wild maneuver}.
 
         \cf{Rgr}[7]{Wilderness Mastery} You gain a \plus2 bonus to the Creature Handling, Heal, Knowledge (geography), Knowledge (nature), Ride, and Survival skills.
 
-        \cf*{Rgr}[8]{Wild Exertion} 
-        You learn an additional \textit{wild exertion}.
+        \cf*{Rgr}[8]{Wild Maneuver} 
+        You learn an additional \textit{wild maneuver}.
 
     \subsection{Huntmaster}
         This archetype grants you and your allies abilities to hunt down specific foes.
@@ -2858,13 +2368,13 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Rogue Progression}
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Assassin} & \tb{Jack of All Trades}  & \tb{Scoundrel} \\\bottomrule
-               1 & Sneak attack         & Skill lore             & Combat tricks
+               1 & Sneak attack         & Skill lore             & Trick maneuvers
             \\ 2 & Uncanny Dodge        & Skill exemplar         & Tricky lore
-            \\ 3 & Darkstalker          & Skill lore             & Combat trick
+            \\ 3 & Darkstalker          & Skill lore             & Trick maneuver
             \\ 4 & Greater sneak attack & Greater skill exemplar & Tricky lore
-            \\ 5 & Assassinate, evasion & Skillful defense       & Combat trick
+            \\ 5 & Assassinate, evasion & Skillful defense       & Trick maneuver
             \\ 6 & Supreme sneak attack & Supreme skill exemplar & Skill trick
-            \\ 7 & Greater darkstalker  & Legendary fortune      & Combat trick
+            \\ 7 & Greater darkstalker  & Legendary fortune      & Trick maneuver
             \\ 8 &                      &                        &
         \end{dtabularx}
     \end{dtable}
@@ -2954,134 +2464,26 @@ This choice determines a great deal about your character's abilities.
             You do not gain this damage bonus against creatures who are immune to \glossterm{critical hits} or who lack a discernible body structure, such as oozes.
         \end{freeability}
 
-        \cf{Rog}[2]{Combat Tricks}
+        \cf{Rog}[2]{Trick Maneuvers}
         You can confuse and confound your foes in combat.
-        Choose one \textit{combat trick} from the list below.
-        You can also spend \glossterm{insight points} to learn one additional \textit{combat trick} per \glossterm{insight point}.
-        As a standard action, you can spend an \glossterm{action point} to use a \textit{combat trick} ability.
-        {
-            \begin{apability}{Certain Strike}
-                Make a \glossterm{strike} with a \plus3 bonus to accuracy.
-
-                \rankline
-                \rank{4} The accuracy bonus increases to \plus4.
-                \rank{6} The accuracy bonus increases to \plus5.
-                \rank{8} The accuracy bonus increases to \plus6.
-            \end{apability}
-
-            \begin{apability}{Counterattack}
-                Make a \glossterm{strike}.
-                If the target attacked you in the same phase, you gain a \plus2 bonus to accuracy and a \plus2d bonus to damage.
-                Otherwise, you regain the action point spent to use this ability.
-
-                \rankline
-                \rank{4} The damage bonus increases to \plus3d.
-                \rank{6} The damage bonus increases to \plus4d.
-                \rank{8} The damage bonus increases to \plus5d.
-            \end{apability}
-
-            \begin{apability}{Daunting Blow}[\glossterm{Mind}]
-                Make a melee \glossterm{strike}.
-                If the target takes damage from the strike, it is \glossterm{shaken} by you as a \glossterm{condition}.
-                Otherwise, you regain the \glossterm{action point} spent to use this ability.
-
-                \rankline
-                \rank{4} You gain a \plus1 bonus to accuracy on the strike.
-                \rank{6} The accuracy bonus increases to \plus2.
-                \rank{8} The accuracy bonus increases to \plus3.
-            \end{apability}
-
-            \begin{apability}{Hamstring}
-                Make a \glossterm{strike} with a slashing or piercing weapon.
-                If the target takes damage from the strike, it is \glossterm{slowed} as a \glossterm{condition}.
-                Otherwise, you regain the \glossterm{action point} spent to use this ability.
-
-                \rankline
-                \rank{4} You gain a \plus1 bonus to accuracy on the strike.
-                \rank{6} The accuracy bonus increases to \plus2.
-                \rank{8} The accuracy bonus increases to \plus3.
-            \end{apability}
-
-            \begin{apability}{Head Shot}[\glossterm{Mind}]
-                Make a \glossterm{strike} with a bludgeoning weapon.
-                If the target takes damage from the strike, it is \glossterm{dazed} as a \glossterm{condition}.
-                Otherwise, you regain the \glossterm{action point} spent to use this ability.
-
-                \rankline
-                \rank{4} You gain a \plus1 bonus to accuracy on the strike.
-                \rank{6} The accuracy bonus increases to \plus2.
-                \rank{8} The accuracy bonus increases to \plus3.
-            \end{apability}
-
-            \begin{apability}{Liver Shot}
-                Make a \glossterm{strike} with a bludgeoning weapon.
-                If the target takes damage from the strike, it is \sickened as a \glossterm{condition}.
-                Otherwise, you regain the \glossterm{action point} spent to use this ability.
-
-                \rankline
-                \rank{4} You gain a \plus1 bonus to \glossterm{accuracy} with the strike.
-                \rank{6} The accuracy bonus increases to \plus2.
-                \rank{8} The accuracy bonus increases to \plus3.
-            \end{apability}
-
-            \begin{apability}{Penetrating Strike}
-                Make a \glossterm{strike} with a piercing weapon.
-                The attack is made against the target's Reflex defense instead of its Armor defense.
-
-                \rankline
-                \rank{4} You gain a \plus1d bonus to damage with the strike.
-                \rank{6} The damage bonus increases to \plus2d.
-                \rank{8} The damage bonus increases to \plus3d.
-            \end{apability}
-
-            \begin{apability}{Rapid Assault}
-                Make a \glossterm{strike} against a creature.
-                If you use this ability during the \glossterm{action phase}, you can make another strike during the \glossterm{delayed action phase}.
-                You take a \minus2 penalty to accuracy on both strikes.
-
-                \rankline
-                \rank{4} The accuracy penalty is reduced to \minus1.
-                \rank{6} The accuracy penalty is removed.
-                \rank{8} You gain a \plus1 bonus to accuracy with both strikes.
-            \end{apability}
-
-            \begin{apability}{Strip the Flesh}
-                Make a \glossterm{strike} with a slashing weapon.
-                At the end of the \glossterm{action phase} of the next round, if you hit with the strike and the target is not \glossterm{bloodied}, it takes additional damage equal to the damage you dealt with the strike.
-
-                \rankline
-                \rank{4} If you hit with the strike, the target continues taking the same damage at the end of each \glossterm{action phase} until it becomes \glossterm{bloodied}.
-                This is a \glossterm{condition}, and can be removed by abilities that remove conditions.
-                \rank{6} You gain a \plus1d bonus to damage with the strike.
-                \rank{8} The damage bonus increases to \plus2d.
-            \end{apability}
-
-            \begin{apability}{Sweeping Strike}
-                Make a melee \glossterm{strike} with a slashing or bludgeoning weapon.
-                The strike targets each of up to three creatures or objects you \glossterm{threaten}.
-                You take a \minus1 penalty to \glossterm{accuracy} with the strike.
-
-                \rankline
-                \rank{4} You gain a \plus1d bonus to damage with the strike.
-                \rank{6} The damage bonus increases to \plus2d.
-                \rank{8} The damage bonus increases to \plus3d.
-            \end{apability}
-        }
+        You learn one \glossterm{maneuver} from the trick maneuver list (see \pcref{Trick Maneuvers}).
+        You can also spend \glossterm{insight points} to learn one additional trick \glossterm{maneuver} per \glossterm{insight point}.
+        As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
 
         \cf{Rog}[3]{Tricky Lore} You gain two extra skill points.
 
-        \cf*{Rog}[4]{Combat Trick}
-        You learn an additional \textit{combat trick}.
+        \cf*{Rog}[4]{Trick Maneuver}
+        You learn an additional \textit{trick maneuver}.
 
         \cf{Rog}[5]{Greater Sneak Attack} The damage bonus from your \textit{sneak attack} ability increases to \plus3d.
 
-        \cf*{Rog}[6]{Combat Trick}
-        You learn an additional \textit{combat trick}.
+        \cf*{Rog}[6]{Trick Maneuver}
+        You learn an additional \textit{trick maneuver}.
 
         \cf{Rog}[7]{Skill Trick} % TODO
 
-        \cf*{Rog}[8]{Combat Trick}
-        You learn an additional \textit{combat trick}.
+        \cf*{Rog}[8]{Trick Maneuver}
+        You learn an additional \textit{trick maneuver}.
 
     % \subsection{Bard}
     %     This archetype grants you the ability to inspire your allies and impair your foes with magical performances.
