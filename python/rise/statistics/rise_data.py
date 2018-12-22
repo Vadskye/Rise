@@ -12,6 +12,13 @@ mystic_sphere_sources = [
     'Pact',
 ]
 
+maneuver_sources = [
+    'Primal',
+    'Martial',
+    'Trick',
+    'Wild',
+]
+
 domains = [
     'Air',
     'Chaos',
