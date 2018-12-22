@@ -1,5 +1,5 @@
 from logging import getLogger, WARNING
-from rise.latex.tags import glosstermify, is_valid_tag
+from rise.latex.tags import is_valid_tag, to_latex_tags
 logger = getLogger(__name__)
 
 class Spell(object):
@@ -41,11 +41,7 @@ class Spell(object):
             return ""
 
     def __str__(self):
-        tag_text = (
-            '[' + ', '.join([
-                glosstermify(tag) for tag in sorted(self.tags)
-            ]) + ']'
-        ) if self.tags else ""
+        tag_text = to_latex_tags(self.tags)
 
         ability_type = 'attuneability' if 'Attune' in tag_text else ('apability' if self.ap_cost else 'freeability')
 

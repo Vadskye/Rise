@@ -30,6 +30,7 @@ valid_tags = set([
     'Shaping',
     'Shielding',
     'Sizing',
+    'Sonic',
     'Speech',
     'Subtle',
     'Sustain (standard)',
@@ -53,3 +54,13 @@ def glosstermify(tag):
 
 def is_valid_tag(tag):
     return tag in valid_tags
+
+def to_latex_tags(tags):
+    if tags:
+        return (
+            '[' + ', '.join([
+                glosstermify(tag) for tag in sorted(tags)
+            ]) + ']'
+        )
+    else:
+        return ""
