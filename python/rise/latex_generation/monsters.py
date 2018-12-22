@@ -175,17 +175,6 @@ def animals(sample_monsters):
         ],
     ))
 
-    spider_gargantuan_alt = sample_monsters['spider_gargantuan_alt']
-    monsters.append(get_creature_latex(
-        spider_gargantuan_alt,
-        active_abilities=[
-            active_ability('Web Spit', f"""
-                The spider makes a +{spider_gargantuan.accuracy()} vs. Reflex attack against one creature within \\rnglong range.
-                \\hit The target is \\glossterm<immobilized> as a \\glossterm<condition>.
-            """),
-        ],
-    ))
-
     spider_colossal = sample_monsters['spider_colossal']
     monsters.append(get_creature_latex(
         spider_colossal,
