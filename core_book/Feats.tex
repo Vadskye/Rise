@@ -64,7 +64,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \tb{Class Feats}\label{Class Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
         \featref{Class Versatility}      & \tdash                 & Swap for abilities from additional class & \tdash & \featpref{Class Versatility} \\
-        \tind \featref{Class Dedication} & Class Versatility feat & Gain archetype from additional class     & \tdash & \featpref{Class Dedication}  \\
+        \tind \featref{Class Versatility, Greater} & Class Versatility feat & Gain archetype from additional class     & \tdash & \featpref{Class Versatility, Greater}  \\
 
         \tb{Skill Feats}\label{Skill Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
         \featref{Acrobatics Specialization}        & Mastered Acrobatics        & Improve use of chosen skill        & \tdash  & \featpref{Acrobatics Specialization}        \\
@@ -436,26 +436,6 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[20]{Greater Angelic Flight} You can use your \textit{angelic flight} ability without spending an \glossterm{action point}.
     \end{feat}
 
-    \begin{feat}{Class Dedication}{Class}
-        \featpre Class Versatility feat.
-
-        \ff[1]{Additional Archetype} Choose an archetype from a class you have chosen with the \textit{additional class} ability of the Class Versatility feat (see \featpref{Class Versatility}).
-        You gain that archetype in addition to your other archetypes.
-        Your \glossterm{archetype rank} in that archetype is Rank 1.
-
-        \ff[4]{Archetype Rank} You become Rank 2 in any of your archetypes.
-
-        \ff[7]{Archetype Rank} You become Rank 3 in any of your archetypes.
-
-        \ff[10]{Archetype Rank} You become Rank 4 in any of your archetypes.
-
-        \ff[13]{Archetype Rank} You become Rank 5 in any of your archetypes.
-
-        \ff[16]{Archetype Rank} You become Rank 6 in any of your archetypes.
-
-        \ff[19]{Archetype Rank} You become Rank 7 in any of your archetypes.
-    \end{feat}
-
     \begin{feat}{Class Versatility}{Class}
 
         \ff[1]{Additional Class} Choose a class.
@@ -477,6 +457,26 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \ff[12]{Expanded Versatility} You gain the \textit{versatile expertise} ability again.
 
         \ff[18]{Expanded Versatility} You gain the \textit{versatile expertise} ability again.
+    \end{feat}
+
+    \begin{feat}{Class Versatility, Greater}{Class}
+        \featpre Class Versatility feat.
+
+        \ff[1]{Additional Archetype} Choose an archetype from a class you have chosen with the \textit{additional class} ability of the Class Versatility feat (see \featpref{Class Versatility}).
+        You gain that archetype in addition to your other archetypes.
+        Your \glossterm{archetype rank} in that archetype is Rank 1.
+
+        \ff[4]{Archetype Rank} You become Rank 2 in any of your archetypes.
+
+        \ff[7]{Archetype Rank} You become Rank 3 in any of your archetypes.
+
+        \ff[10]{Archetype Rank} You become Rank 4 in any of your archetypes.
+
+        \ff[13]{Archetype Rank} You become Rank 5 in any of your archetypes.
+
+        \ff[16]{Archetype Rank} You become Rank 6 in any of your archetypes.
+
+        \ff[19]{Archetype Rank} You become Rank 7 in any of your archetypes.
     \end{feat}
 
     \begin{feat}{Climb Specialization}{Skill}
@@ -1341,12 +1341,13 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
         \featpre Starting Strength of 2.
 
         \ff[1]{Brute Force} You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{shove} and \textit{overrun} abilities (see \pcref{Shove}, and \pcref{Overrun}).
-        In addition, if you get a \glossterm{critical hit} with the \textit{shove} ability, you can move the target a maximum distance equal to your movement speed.
+        If you get a \glossterm{critical hit} with the \textit{shove} ability, you can move the target a maximum distance equal to your movement speed.
+        In addition, if you get a \glossterm{critical hit} with the \textit{overrun} ability, the target is knocked \glossterm{prone}.
 
         % TODO: define interaction with hardness
         \ff[3]{Wall Slam} If you use the \textit{shove} ability to move a creature, and the creature's movement is interrupted by a solid obstacle, the obstacle and creature both take bludgeoning \glossterm{standard damage}.
 
-        \ff[6]{Trample} If you use the \textit{overrun} ability to move through a creature, it takes bludgeoning \glossterm{standard damage} -2d.
+        \ff[6]{Trample} If you use the \textit{overrun} ability to move through a creature, it takes bludgeoning \glossterm{standard damage} \minus2d.
 
         \ff[9]{Greater Brute Force} The accuracy bonus from your \textit{brute force} ability increases to \plus3.
 
@@ -2136,7 +2137,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
     \begin{feat}{Swift}{General}
         \featpre Starting Dexterity of 1.
 
-        \ff[1]{Rapid Movement} You gain a \plus10 foot bonus to speed in all your movement modes.
+        \ff[1]{Rapid Movement} You gain a \plus10 foot bonus to your \glossterm{base speed}.
 
         \ff[3]{Sprinter} When you use the \textit{sprint} ability, you move at triple your movement speed.
 
@@ -2145,7 +2146,7 @@ Feats can be used to specialize in a particular area, to gain new abilities, or 
 
         \ff[9]{Water Runner} When you use the \textit{sprint} ability, you can move on water and similar liquids as if they were solid ground.
 
-        \ff[12]{Greater Rapid Movement} The speed bonus from your \textit{rapid movement} ability increases to \plus30 feet.
+        \ff[12]{Greater Rapid Movement} The speed bonus from your \textit{rapid movement} ability increases to \plus20 feet.
 
         \ff[15]{Greater Sprinter} When you use the \textit{sprint} ability, you move at quadruple your movement speed.
 
