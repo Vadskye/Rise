@@ -1481,8 +1481,10 @@ It defines how attributes work and explains how to make physical attacks in comb
                 Disarm        & Ref          & Attack item, knocking it free           \\
                 Feint         & Ref          & Leave foe vulnerable to attacks         \\
                 Grapple       & Fort and Ref & Wrestle with a foe                      \\
+                Overrun\fn{1} & Fort         & Move through foe's space                \\
                 Recover       & \tdash       & Regain a spent \glossterm{action point} \\
                 Shove         & Fort         & Move a foe                              \\
+                Struggle      & \tdash       & Move 5 feet regardless of penalties     \\
                 Total Defense & \tdash       & Gain \plus2 to defenses                 \\
                 Trip          & Ref          & Trip a foe                              \\
             \end{dtabularx}
@@ -1550,6 +1552,18 @@ It defines how attributes work and explains how to make physical attacks in comb
             For details, see \pcref{Grappling}.
         \end{freeability}
 
+        \parhead{Overrun} At the start of each phase, you can spend an \glossterm{action point} to use the \textit{overrun} ability.
+
+        \begin{freeability}{\labeltext{Overrun}}
+            You can try to move directly through creatures in your way during the current phase.
+            Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered.
+            If a creature does not attempt to avoid you, you make an attack vs. Fortitude against it.
+            Your \glossterm{accuracy} is equal to your Strength.
+
+            On a hit, you can move through the creature's space, though you treat it as \glossterm{difficult terrain}.
+            On a miss, you end your movement immediately.
+        \end{freeability}
+
         \parhead{Recover} As a standard action, you can use the \textit{recover} ability to regain a spent \glossterm{recovery action point}.
 
         \begin{freeability}{\labeltext{Recover}}
@@ -1570,6 +1584,14 @@ It defines how attributes work and explains how to make physical attacks in comb
             If the target encounters a creature or solid object, you must stop moving it.
         \end{freeability}
 
+        \parhead{Struggle} As a standard action, you can use the \textit{struggle} ability to move despite movement impediments.
+
+        \begin{freeability}{\labeltext{Struggle}}
+            Until the end of the current phase, your land speed becomes five feet, regardless of all other effects that would modify your land speed.
+            In addition, you can move a distance up to your land speed.
+            This does not allow you to pass obstacles unrelated to movement speed penalties, such as walls.
+        \end{freeability}
+
         \parhead{Total Defense} As a standard action, you can use the \textit{total defense} ability to focus entirely on defending yourself.
 
         \begin{freeability}{\labeltext{Total Defense}}[\glossterm{Swift}]
@@ -1583,29 +1605,6 @@ It defines how attributes work and explains how to make physical attacks in comb
             For each size category smaller than the target that you are, you take a \minus4 penalty to \glossterm{accuracy}.
 
             On a hit, the target becomes \prone.
-        \end{freeability}
-
-    \subsection{Special Movement Abilities}
-
-        \parhead{Struggle} As a standard action, you can use the \textit{struggle} ability to move despite movement impediments.
-
-        \begin{freeability}{\labeltext{Struggle}}
-            Until the end of the current phase, your land speed becomes five feet, regardless of all other effects that would modify your land speed.
-            In addition, you can move a distance up to your land speed.
-            This does not allow you to pass obstacles unrelated to movement speed penalties, such as walls.
-        \end{freeability}
-
-        \parhead{Overrun} At the start of each phase, you can spend an \glossterm{action point} to use the \textit{overrun} ability.
-
-        \begin{freeability}{\labeltext{Overrun}}
-            You can try to move directly through creatures in your way during the current phase.
-            Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered.
-            If a creature does not attempt to avoid you, you make an attack vs. Fortitude against it.
-            Your \glossterm{accuracy} is equal to your Strength.
-
-            On a hit, you can move through the creature's space, though you treat it as \glossterm{difficult terrain}.
-            On a critical hit, the creature is also knocked prone, and you do not treat its space as difficult terrain.
-            On a miss, you end your movement immediately.
         \end{freeability}
 
 \section{Injury, Death, and Healing}\label{Injury, Death, and Healing}
