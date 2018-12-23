@@ -9,10 +9,12 @@ This choice determines a great deal about your character's abilities.
     As you gain levels, you gain more abilities from your class.
 
     \subsection{Archetypes}\label{Archetypes}
-        Each class has three \glossterm{archetypes}.
+        Each class has three or four \glossterm{archetypes}.
         An archetype is a collection of thematically related class abilities.
         For examples, barbarians have the Battlerager archetype, which grants abilities related to flying into a rage in combat.
-        Normally, a member of a class has all three archetypes associated with that class.
+
+        Normally, you choose three of the archetypes associated with your class at 1st level.
+        You gain the abilities from those three archetypes, and you gain no abilities from any additional archetypes the class has.
         Characters with the Class Versatility feat can gain achetypes from two different classes (see \featpcref{Class Versatility}).
 
         \subsubsection{Archetype Ranks}\label{Archetype Ranks}
@@ -93,24 +95,24 @@ This choice determines a great deal about your character's abilities.
 
 \newpage
 \section{Barbarian}\label{Barbarian}
-    \begin{dtable}
+    \begin{dtable!*}
         \lcaption{Barbarian Progression}
-        \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Battleforged Resilience} & \tb{Battlerager}  & \tb{Primal Warrior} \\\bottomrule
-               1 & Fury of the storm         & Rage                       & Primal power
-            \\ 2 & Battlefield lore          & Intimidating anger         & Primal maneuvers
-            \\ 3 & Battle-scarred            & Focused rage               & Athletic prowess
-            \\ 4 & Soulscarred               & tireless rage              & Greater primal power
-            \\ 5 & Greater fury of the storm & Greater intimidating anger & Primal maneuver
-            \\ 6 & Agile defense             & Greater rage               & Primal prowess
-            \\ 7 & Greater battle-scarred    & Endless rage               & Supreme primal power
-            \\ 8 & Battleforged supremacy    & Titanic rage               & 
+        \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+            \tb{Rank} & \tb{Battleforged Resilience} & \tb{Battlerager}  & \tb{Primal Warrior} & \tb{Outlander}\\\bottomrule
+            1    & Fury of the storm         & Rage                       & Primal power         & Fast movement
+            \\ 2 & Battlefield lore          & Intimidating anger         & Primal maneuvers     & Exotic weaponry, savage force
+            \\ 3 & Battle-scarred            & Tireless rage              & Athletic prowess     & Outland lore
+            \\ 4 & Soulscarred               & Focused anger              & Greater primal power & Greater fast movement
+            \\ 5 & Greater fury of the storm & Greater intimidating anger & Primal maneuver      & Greater savage force
+            \\ 6 & Agile defense             & Greater rage               & Primal prowess       & Greater exotic weaponry
+            \\ 7 & Greater battle-scarred    & Endless rage               & Supreme primal power & Supreme fast movement
+            \\ 8 & Battleforged supremacy    & Titanic rage               &
         \end{dtabularx}
-    \end{dtable}
+    \end{dtable!*}
 
     \classbasics{Alignment} Any nonlawful.
 
-    \classbasics{Archetypes} Barbarians have the Battlerager, Primal Warrior, and Battleforged Resilience \glossterm{archetypes}.
+    \classbasics{Archetypes} Barbarians have the Battlerager, Primal Warrior, Battleforged Resilience, and Outlander \glossterm{archetypes}.
 
     \subsection{Basic Class Abilities}
         If you are a barbarian, you gain the following abilities.
@@ -224,20 +226,25 @@ This choice determines a great deal about your character's abilities.
         \cf{Bbn}[8]{Battleforged Supremacy}
         You gain a \plus1 bonus to all defenses.
 
-    % \subsection{Outlander}
-    %     This archetype improves your 
+    \subsection{Outlander}
+        This archetype improves your mobility and combat prowess with direct, brutal abilities.
 
-    %     \cf{Bbn}[1]{Fast Movement} You gain a \plus10 foot bonus to your \glossterm{base speed}.
+        \cf{Bbn}[1]{Fast Movement} You gain a \plus10 foot bonus to your \glossterm{base speed}.
 
-    %     \cf{Bbn}[2]{Wilderness Lore} You gain two additional \glossterm{skill points}.
+        \cf{Bbn}[2]{Exotic Weaponry} You gain proficiency with \glossterm{exotic weapons} from one weapon group of your choice that you are proficient with.
 
-    %     \cf{Bbn}[3]{Savage Force} You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{dirty trick}, \textit{disarm}, \textit{grapple}, \textit{shove}, and \textit{trip} abilities (see \pcref{Special Combat Abilities}).
+        \cf{Bbn}[2]{Savage Force} You gain a \plus1 bonus to \glossterm{accuracy} with the \textit{dirty trick}, \textit{disarm}, \textit{grapple}, \textit{overrun}, \textit{shove}, and \textit{trip} abilities (see \pcref{Special Combat Abilities}).
+        In addition, you gain a \plus1 bonus to \glossterm{accuracy} with grapple actions (see \pcref{Grapple Actions}).
 
-    %     \cf{Bbn}[4]{} 
+        \cf{Bbn}[3]{Outland Lore} You gain two additional \glossterm{skill points}.
 
-    %     \cf{Bbn}[5]{Greater Fast Movement} The speed bonus from your \textit{fast movement} ability increases to \plus20 feet.
+        \cf{Bbn}[4]{Greater Fast Movement} The speed bonus from your \textit{fast movement} ability increases to \plus20 feet.
 
-    %     \cf{Bbn}[6]{Greater Savage Force} The accuracy bonus from your \textit{savage force} ability increases to \plus3.
+        \cf{Bbn}[5]{Greater Savage Force} The accuracy bonus from your \textit{savage force} ability increases to \plus2.
+
+        \cf{Bbn}[6]{Greater Exotic Weaponry} You gain proficiency with \glossterm{exotic weapons} from all weapon groups you are proficient with.
+
+        \cf{Bbn}[7]{Supreme Fast Movement} The speed bonus from your \textit{fast movement} ability increases to \plus30 feet.
 
     \subsection{Ex-Barbarians}
         If you become lawful, you cannot use your \textit{rage} ability.
@@ -1626,7 +1633,7 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Monk Progression}
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Ki} & \tb{Transcendent Sage} & \tb{Esoteric Warrior} \\\bottomrule
-               1 & Ki barrier, ki strike                 & Clear the mind      & Unarmed warrior, grapple expertise
+               1 & Ki barrier, ki strike                 & Clear the mind      & Unarmed warrior, unarmed expertise
             \\ 2 & Ki manifestations                     & Transcend frailty   & Esoteric maneuvers
             \\ 3 & Ki power                              & Sage lore           & Evasion
             \\ 4 & Greater ki barrier, greater ki strike & Inner peace         & Greater unarmed warrior, unfettered athletics
@@ -1826,8 +1833,9 @@ This choice determines a great deal about your character's abilities.
         In addition, you gain a \plus2d bonus to damage with your unarmed attack.
         For details about how to fight while unarmed, see \pcref{Unarmed Combat}.
 
-        \cf{Mnk}[1]{Grapple Expertise}
-        You gain a \plus1 bonus to accuracy with the \textit{grapple} ability and all grapple actions (see \pcref{Grapple Actions}).
+        \cf{Mnk}[1]{Unarmed Expertise}
+        When you attack with a free hand, you gain a \plus1 bonus to \glossterm{accuracy} with the \textit{dirty trick}, \textit{disarm}, \textit{grapple}, \textit{overrun}, \textit{shove}, and \textit{trip} abilities (see \pcref{Special Combat Abilities}).
+        In addition, you gain a \plus1 bonus to \glossterm{accuracy} with grapple actions (see \pcref{Grapple Actions}).
 
         \cf{Mnk}[2]{Esoteric Maneuvers} 
         You learn one \glossterm{maneuver} from the esoteric maneuver list (see \pcref{Esoteric Maneuvers}).
@@ -1835,21 +1843,23 @@ This choice determines a great deal about your character's abilities.
         As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
 
         % TODO: wording?
-        \cf{Mnk}[3]{Evasion} When you are attacked by an ability that affects an area, you can use your Reflex defense in place of any other defenses against that attack.
+        % \cf{Mnk}[3]{Evasion} When you are attacked by an ability that affects an area, you can use your Reflex defense in place of any other defenses against that attack.
 
-        \cf*{Mnk}[4]{Greater Unarmed Warrior} The damage bonus from your \textit{unarmed warrior} ability increases to \plus3d.
+        % \cf{Mnk}[3]{Unfettered Athletics} You gain two additional skill points.
 
-        \cf{Mnk}[4]{Unfettered Athletics} You gain two additional skill points.
+        % \cf{Mnk}[6]{Intuitive Reaction}
+        % You gain a \plus2 bonus to Reflex defense and \glossterm{initiative}.
+
+        \cf*{Mnk}[3]{Greater Unarmed Warrior} The damage bonus from your \textit{unarmed warrior} ability increases to \plus3d.
+
+        \cf{Mnk}[4]{Greater Unarmed Expertise}
+        The bonus from your \textit{unarmed expertise} ability increases to \plus2.
 
         \cf{Mnk}[5]{Esoteric Maneuver} You learn an additional esoteric \glossterm{maneuver} (see \pcref{Esoteric Maneuvers}).
 
-        \cf{Mnk}[6]{Greater Grapple Expertise}
-        The bonus from your \textit{grapple expertise} ability increases to \plus2.
+        \cf{Mnk}[6]{Supreme Unarmed Warrior} The damage bonus from your \textit{unarmed warrior} ability increases to \plus4d.
 
-        \cf{Mnk}[6]{Intuitive Reaction}
-        You gain a \plus2 bonus to Reflex defense and \glossterm{initiative}.
-
-        \cf{Mnk}[7]{Supreme Unarmed Warrior} The damage bonus from your \textit{unarmed warrior} ability increases to \plus4d.
+        \cf{Mnk}[7]{Supreme Unarmed Expertise} The bonus from your \textit{unarmed expertise} ability increases to \plus3.
 
     \subsection{Transcendent Sage}
         This archetype grants you abilities to resist or remove conditions.
