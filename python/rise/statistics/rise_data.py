@@ -13,6 +13,7 @@ mystic_sphere_sources = [
 ]
 
 maneuver_sources = [
+    'Esoteric',
     'Primal',
     'Martial',
     'Trick',
