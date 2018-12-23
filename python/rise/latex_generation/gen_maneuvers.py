@@ -40,7 +40,7 @@ def generate_maneuvers():
         },
         ap_cost=False,
         tags=['Swift'],
-        lists=['Martial', 'Primal', 'Wild'],
+        lists=['Martial', 'Primal', 'Wild', 'Esoteric'],
     ))
 
     maneuvers.append(Maneuver(
@@ -55,7 +55,7 @@ def generate_maneuvers():
             '8': 'The accuracy bonus increases to +6.',
         },
         tags=[],
-        lists=['Martial', 'Primal', 'Trick', 'Wild'],
+        lists=['Martial', 'Primal', 'Trick', 'Wild', 'Esoteric'],
     ))
 
     maneuvers.append(Maneuver(
@@ -89,7 +89,7 @@ def generate_maneuvers():
             '8': 'The accuracy bonus increases to +3.',
         },
         tags=['Mind'],
-        lists=['Primal', 'Martial', 'Trick'],
+        lists=['Primal', 'Martial', 'Trick', 'Esoteric'],
     ))
 
     maneuvers.append(Maneuver(
@@ -139,7 +139,7 @@ def generate_maneuvers():
             '8': 'The damage bonus increases to +4d.',
         },
         tags=[],
-        lists=['Primal', 'Wild'],
+        lists=['Primal', 'Wild', 'Esoteric'],
     ))
 
     maneuvers.append(Maneuver(
@@ -156,7 +156,7 @@ def generate_maneuvers():
             '8': 'The damage bonus increases to +3d.',
         },
         tags=[],
-        lists=['Primal', 'Martial', 'Wild', 'Trick'],
+        lists=['Primal', 'Martial', 'Wild', 'Trick', 'Esoteric'],
     ))
 
     maneuvers.append(Maneuver(
@@ -204,7 +204,7 @@ def generate_maneuvers():
             '8': 'You gain a +1 bonus to accuracy with both strikes.',
         },
         tags=[],
-        lists=['Primal', 'Martial', 'Wild', 'Trick'],
+        lists=['Primal', 'Martial', 'Wild', 'Trick', 'Esoteric'],
     ))
 
     maneuvers.append(Maneuver(
@@ -222,7 +222,7 @@ def generate_maneuvers():
             '8': 'The damage bonus increases to +3d.',
         },
         tags=[],
-        lists=['Primal', 'Martial', 'Wild'],
+        lists=['Primal', 'Martial', 'Wild', 'Esoteric'],
     ))
 
     maneuvers.append(Maneuver(
@@ -261,7 +261,7 @@ def generate_maneuvers():
             '8': 'The damage bonus increases to +3d.',
         },
         tags=[],
-        lists=['Primal', 'Martial', 'Wild'],
+        lists=['Primal', 'Martial', 'Wild', 'Esoteric'],
     ))
 
     maneuvers.append(Maneuver(
@@ -294,7 +294,7 @@ def generate_maneuvers():
             '8': 'The damage bonus increases to +3d.',
         },
         tags=[],
-        lists=['Primal', 'Martial', 'Wild'],
+        lists=['Primal', 'Martial', 'Wild', 'Esoteric'],
     ))
 
     maneuvers.append(Maneuver(
@@ -328,7 +328,7 @@ def generate_maneuvers():
             '8': 'The damage bonus increases to +3d.',
         },
         tags=[],
-        lists=['Martial', 'Wild', 'Trick'],
+        lists=['Martial', 'Wild', 'Trick', 'Esoteric'],
     ))
 
     maneuvers.append(Maneuver(
@@ -361,7 +361,7 @@ def generate_maneuvers():
             '8': 'The accuracy bonus increases to +3.',
         },
         tags=[],
-        lists=['Wild', 'Trick'],
+        lists=['Wild', 'Trick', 'Esoteric'],
     ))
 
     maneuvers.append(Maneuver(
@@ -397,7 +397,7 @@ def generate_maneuvers():
             '8': 'On a normal hit, the target is stunned instead of dazed.',
         },
         tags=['Mind'],
-        lists=['Trick'],
+        lists=['Trick', 'Esoteric'],
     ))
 
     maneuvers.append(Maneuver(
@@ -430,7 +430,7 @@ def generate_maneuvers():
             '8': 'You regain the action point even if you miss.',
         },
         tags=[],
-        lists=['Primal'],
+        lists=['Primal', 'Martial', 'Wild', 'Trick', 'Esoteric'],
         ap_cost=False,
     ))
 
@@ -498,7 +498,7 @@ def generate_maneuvers():
             '8': 'The accuracy bonus increases to +3.',
         },
         tags=['Mind'],
-        lists=['Martial', 'Primal', 'Wild', 'Trick'],
+        lists=['Martial', 'Primal', 'Wild', 'Trick', 'Esoteric'],
     ))
 
     maneuvers.append(Maneuver(
@@ -548,7 +548,7 @@ def generate_maneuvers():
             '8': 'The defense bonus increases to +5.',
         },
         tags=['Swift'],
-        lists=['Martial', 'Trick', 'Wild'],
+        lists=['Martial', 'Trick', 'Wild', 'Esoteric'],
         ap_cost=False,
     ))
 
@@ -566,7 +566,7 @@ def generate_maneuvers():
             '8': 'The distance you can move increases to your full speed.',
         },
         tags=[],
-        lists=['Trick'],
+        lists=['Trick', 'Wild', 'Esoteric'],
         ap_cost=False,
     ))
 
@@ -584,7 +584,7 @@ def generate_maneuvers():
             '8': 'The damage bonus increases to +2d.',
         },
         tags=[],
-        lists=['Primal', 'Wild'],
+        lists=['Primal', 'Wild', 'Esoteric'],
         ap_cost=False,
     ))
 
