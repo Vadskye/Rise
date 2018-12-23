@@ -95,6 +95,9 @@ class Creature(object):
             weapon_damage_modifier=self.weapon_damage_modifier,
         )
 
+    def is_character(self):
+        return self.character_class.class_type == 'character'
+
     @property
     def reserve_action_points(self):
         if self.character_class.class_type == 'character':
@@ -172,7 +175,10 @@ class Creature(object):
 
     @property
     def max_hit_points(self):
-        return ((self.level + 1) * (5 + self.starting_constitution)) * self.challenge_rating
+        return (
+            (self.level + (1 if self.is_character() else 0))
+            * (5 + self.starting_constitution)
+        ) * self.challenge_rating
 
     @property
     def current_hit_points(self):
