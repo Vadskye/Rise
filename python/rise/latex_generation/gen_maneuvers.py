@@ -436,7 +436,7 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Retributive Recovery',
-        short_description='Regain an \\glossterm<action point> and gain bonuses against attackers.',
+        short_description='Regain an \\glossterm<action point> and gain bonuses against attackers',
         effect_text="""
             At the end of the round, you regain a spent \\glossterm<recovery action point>.
             For each creature that attacks you this round, you gain
@@ -503,7 +503,7 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Draining Strike',
-        short_description='Make a strike to drain an \\glossterm<action point>.',
+        short_description='Make a strike to drain an \\glossterm<action point>',
         effect_text="""
             Make a \\glossterm<strike> with a +1 bonus to \\glossterm<accuracy>.
             If the attack result hits the target's Mental defense,
@@ -554,7 +554,7 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Hidden Recovery',
-        short_description='Hide and recover a spent \\glossterm<action point>.',
+        short_description='Hide and recover a spent \\glossterm<action point>',
         effect_text="""
             You can move up to half your speed and make a Stealth check to hide (see \\pcref<Stealth>).
             % TODO: define unobserved better?
