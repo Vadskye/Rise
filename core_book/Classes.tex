@@ -1015,7 +1015,7 @@ This choice determines a great deal about your character's abilities.
         }
 
         \cf{Drd}[3]{Natural Lore}
-        You gain two extra skill points.
+        You gain two additional skill points.
 
         \cf*{Drd}[4]{Wild Aspect}[Magical]
         You learn an additional \textit{wild aspect}.
@@ -2227,7 +2227,7 @@ This choice determines a great deal about your character's abilities.
         You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
         As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
 
-        \cf{Rgr}[3]{Wilderness Lore} You gain two extra skill points.
+        \cf{Rgr}[3]{Wilderness Lore} You gain two additional skill points.
 
         \cf{Rgr}[4]{Greater Wild Power} The bonus from your \textit{wild power} ability increases to \plus2.
 
@@ -2371,7 +2371,7 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
         }
 
-        \cf{Rgr}[4]{Hunting Lore} You gain two extra skill points.
+        \cf{Rgr}[4]{Hunting Lore} You gain two additional skill points.
 
         \cf*{Rgr}[5]{Hunting Style}
         You learn an additional \textit{hunting style}.
@@ -2388,24 +2388,24 @@ This choice determines a great deal about your character's abilities.
 
 \newpage
 \section{Rogue}\label{Rogue}
-    \begin{dtable}
+    \begin{dtable!*}
         \lcaption{Rogue Progression}
-        \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Assassin} & \tb{Jack of All Trades}  & \tb{Scoundrel} \\\bottomrule
-               1 & Sneak attack         & Skill lore             & Trick power
-            \\ 2 & Evasion              & Skill exemplar         & Tricky maneuvers
-            \\ 3 & Darkstalker          & Skill lore             & Trick lore
-            \\ 4 & Greater sneak attack & Greater skill exemplar & Greater trick power
-            \\ 5 & Assassinate, evasion & Skillful defense       & Trick maneuver
-            \\ 6 & Hide in plain sight  & Supreme skill exemplar & 
-            \\ 7 & Supreme sneak attack & Legendary fortune      & Supreme trick power
-            \\ 8 & Greater darkstalker  &                        & 
+        \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+            \tb{Rank} & \tb{Assassin} & \tb{Jack of All Trades}  & \tb{Combat Trickste} & Suave Scoundrel \\\bottomrule
+               1 & Sneak attack         & Skill lore             & Trick power         & Glibness
+            \\ 2 & Evasion              & Skill exemplar         & Tricky maneuvers    & Suave lore
+            \\ 3 & Darkstalker          & Skill lore             & Trick lore          & Confound
+            \\ 4 & Greater sneak attack & Greater skill exemplar & Greater trick power & Greater glibness
+            \\ 5 & Assassinate, evasion & Skillful defense       & Trick maneuver      & Compel belief
+            \\ 6 & Hide in plain sight  & Supreme skill exemplar &                     & Greater confound
+            \\ 7 & Supreme sneak attack & Legendary fortune      & Supreme trick power & Supreme glibness
+            \\ 8 & Greater darkstalker  &                        &
         \end{dtabularx}
-    \end{dtable}
+    \end{dtable!*}
 
     \classbasics{Alignment} Any.
 
-    \classbasics{Archetypes} Rogues have the Assassin, Jack of All Trades, and Scoundrel \glossterm{archetypes}.
+    \classbasics{Archetypes} Rogues have the Assassin, Jack of All Trades, Combat Trickster, and Suave Scoundrel \glossterm{archetypes}.
 
     \subsection{Basic Class Abilities}
         If you are a rogue, you gain the following abilities.
@@ -2472,11 +2472,11 @@ This choice determines a great deal about your character's abilities.
     \subsection{Jack of All Trades}
         This archetype improves your skills.
 
-        \cf{Rog}[1]{Skill Lore} You gain three extra skill points.
+        \cf{Rog}[1]{Skill Lore} You gain three additional skill points.
 
         \cf{Rog}[2]{Skill Exemplar} You gain a \plus1 bonus to all skills.
 
-        \cf*{Rog}[3]{Skill Lore} You gain three extra skill points.
+        \cf*{Rog}[3]{Skill Lore} You gain three additional skill points.
 
         \cf{Rog}[4]{Greater Skill Exemplar} The skill bonus from your \textit{skill exemplar} ability increases to \plus2.
 
@@ -2486,7 +2486,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rog}[8]{Legendary Fortune} When you make a skill attack or check, you roll twice and take either result.
 
-    \subsection{Scoundrel}
+    \subsection{Combat Trickster}
         This archetype grants you abilities to use in combat and improves your combat prowess.
 
         \cf{Rog}[1]{Trick Power} You gain a \plus1 bonus to \glossterm{power} with \glossterm{mundane} abilities.
@@ -2497,7 +2497,7 @@ This choice determines a great deal about your character's abilities.
         You can also spend \glossterm{insight points} to learn one additional trick \glossterm{maneuver} per \glossterm{insight point}.
         As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
 
-        \cf{Rog}[3]{Tricky Lore} You gain two extra skill points.
+        \cf{Rog}[3]{Tricky Lore} You gain two additional skill points.
 
         \cf{Rog}[4]{Greater Trick Power} The bonus from your \textit{trick power} ability increases to \plus2.
 
@@ -2508,6 +2508,38 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rog}[7]{Supreme Trick Power}
         The bonus from your \textit{trick power} ability increases to \plus3.
+
+    \subsection{Suave Scoundrel}
+        This archetype improves your social manipulation abilities.
+
+        \cf{Rog}[1]{Glibness} You gain a \plus2 bonus to the Bluff, Intimidate, and Persuasion skills.
+
+        \cf{Rog}[2]{Suave Lore} You gain two additional \glossterm{skill points}.
+
+        \cf{Rog}[3]{Confound} You can use the \textit{confound} ability as a standard action.
+        \begin{apability}{Confound}{\glossterm{Compulsion}, \glossterm{Magical}, \glossterm{Mind}}
+            Make a attack vs. Mental against a creature within \rngclose range.
+            You can choose to use your Bluff skill to attack in place of your normal \glossterm{accuracy}.
+            \hit As a \glossterm{condition}, the target is either \glossterm{dazed} or \glossterm{disoriented}, as you choose.
+        \end{apability}
+
+        \cf{Rog}[4]{Greater Glibness} The bonus from your \textit{glibness} ability increases to \plus3.
+
+        \cf{Rog}[5]{Compel Belief} You can use the \textit{compel belief} ability as a standard action.
+        \begin{apability}{Compel Belief}[\glossterm{Compulsion}, \glossterm{Magical}, \glossterm{Mind}, \glossterm{Sustain} (minor)]
+            Make an attack vs. Mental against a creature within \rngmed range.
+            You can choose to ues your Persuasion skill to attack in place of your normal \glossterm{accuracy}.
+            You must also choose a belief that the target has.
+            The belief may be a lie that you told it, or even a simple misunderstanding (such as believing a hidden creature is not present in a room).
+            If the creature does not already hold the chosen belief, this ability automatically fails.
+            \hit The target continues to maintain the chosen belief, regardless of any evidence to the contrary.
+            It will interpret any evidence that the falsehood is incorrect to be somehow wrong -- an illusion, a conspiracy to decieve it, or any other reason it can think of to continue believing the falsehood.
+            At the end of the effect, the creature can decide whether it believes the falsehood or not, as normal.
+        \end{apability}
+
+        \cf{Rog}[6]{Greater Confound} When you use the \textit{confound} ability, you can make the target \glossterm{stunned} instead of dazed or disoriented.
+
+        \cf{Rog}[7]{Supreme Glibness} The bonus from your \textit{glibness} ability increases to \plus4.
 
     % \subsection{Bard}
     %     This archetype grants you the ability to inspire your allies and impair your foes with magical performances.
