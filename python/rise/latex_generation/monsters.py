@@ -815,17 +815,6 @@ def undead(sample_monsters):
     monsters.append(get_creature_latex(
         zombie,
         passive_abilities=[
-            passive_ability('Soft Flesh', f"""
-                The zombie has \\glossterm<damage reduction> 3 against piercing and bludgeoning damage.
-            """),
-        ],
-        # TODO: this creature acts during the delayed action phase
-    ))
-
-    zombie = sample_monsters['zombie']
-    monsters.append(get_creature_latex(
-        zombie,
-        passive_abilities=[
             passive_ability('Slow', f"""
                 The zombie does not act during the \\glossterm<action phase>.
                 Instead, it acts during the \\glossterm<delayed action phase>.
