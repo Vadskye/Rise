@@ -922,7 +922,7 @@ def generate_mystic_spheres():
         cantrips=[Effects('Fall', """
             Make an attack vs. Mental against a creature within \\rngmed range.
             \\hit The target falls \\glossterm<prone>.
-        """, tags=['Compulsion', 'Mind'], ap_cost=False)],
+        """, tags=['Compulsion'], ap_cost=False)],
         schools=['Enchantment'],
         lists=['Arcane', 'Divine', 'Pact'],
         spells=[
@@ -930,7 +930,7 @@ def generate_mystic_spheres():
                 You force your mind and body to rest quickly.
                 Until the end of the round, you gain a +2 bonus to Mental defense.
                 At the end of the round, you regain a spent \\glossterm<recovery action point>.
-            """, tags=['Compulsion', 'Mind', 'Swift'], ap_cost=False),
+            """, tags=['Compulsion', 'Swift'], ap_cost=False),
             Spell('Dance', 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 \\miss You regain the \\glossterm<action point> spent to cast this spell.
@@ -939,25 +939,25 @@ def generate_mystic_spheres():
                 At the end of each round, if the target did not dance during that round, it takes a -2 penalty to \\glossterm<accuracy>, \\glossterm<checks>, and \\glossterm<defenses> as the compulsion intensifies.
                 This penalty stacks each round until the target dances, which resets the penalties to 0.
                 \\crit As above, except that the target must dance as a \\glossterm<standard action> to reset the penalties, instead of as a move action.
-            """, tags=['Compulsion', 'Mind']),
+            """, tags=['Compulsion']),
             Spell('Collapse', 1, """
                 Make an attack vs. Mental against all enemies in a \\areamed radius from you.
                 \\hit Each target falls \\glossterm<prone>.
                 \\crit As above, and as a \\glossterm<condition>, each target is unable to stand up.
                 If a target is somehow brought into a standing position, it will immediately fall and become prone again.
-            """, tags=['Compulsion', 'Mind']),
+            """, tags=['Compulsion']),
             Spell('Stay', 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 \\miss You regain the \\glossterm<action point> spent to cast this spell.
                 \\hit The target falls \\glossterm<prone> and is \\glossterm<slowed> as a \\glossterm<condition>.
                 \\crit The target falls prone and is \\glossterm<decelerated> as a \\glossterm<condition>.
-            """, tags=['Compulsion', 'Mind']),
+            """, tags=['Compulsion']),
             Spell('Confusion', 3, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 \\miss You regain the \\glossterm<action point> spent to cast this spell.
                 \\hit The target is \\disoriented as a \\glossterm<condition>.
                 \\crit The target is \\confused as a \\glossterm<condition>.
-            """, tags=['Compulsion', 'Mind']),
+            """, tags=['Compulsion']),
             Spell('Sleep', 3, """
                 Make an attack vs. Mental against a creature within \\rngclose range.
                 \\miss You regain the \\glossterm<action point> spent to cast this spell.
@@ -968,15 +968,15 @@ def generate_mystic_spheres():
                 % Awkward to sustain without the Sustain tag
                 This effect lasts as long as you \\glossterm<sustain> it as a \\glossterm<minor action>.
                 However, it is a \\glossterm<condition>, and can be removed by effects which remove conditions.
-            """, tags=['Compulsion', 'Mind']),
+            """, tags=['Compulsion']),
             Spell('Discordant Song', 4, """
                 Make an attack vs. Mental against all enemies in a \\areamed radius from you.
                 \\hit Each target is \\disoriented as a \\glossterm<condition>.
                 \\crit Each target is \\confused as a \\glossterm<condition>.
-            """, tags=['Compulsion', 'Mind']),
+            """, tags=['Compulsion']),
             Spell('Irresistible Dance', 6, """
                 This spell functions like the \\textit<dance> spell, except that you gain a +4 bonus to accuracy on the attack.
-            """, tags=['Compulsion', 'Mind']),
+            """, tags=['Compulsion']),
             Spell('Dominate', 4, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 \\miss You regain the \\glossterm<action point> spent to cast this spell.
@@ -985,7 +985,7 @@ def generate_mystic_spheres():
                 As a standard action, you can make an additional attack vs. Mental against the target as long as it remains stunned in this way and is within \\rngmed range of you.
                 On a hit, the target becomes stunned in the same way as an additional condition, continuing the effect even if the target removed the original condition in the same phase.
                 On a critical hit, the target becomes \\glossterm<dominated> by you as long as you \\glossterm<attune> to this ability.
-            """, tags=['Compulsion', 'Mind']),
+            """, tags=['Compulsion']),
         ],
         category='debuff, combat',
     ))
@@ -1169,7 +1169,7 @@ def generate_mystic_spheres():
             Make an attack vs. Mental against a creature within \\rngmed range.
             \\hit The target is \\glossterm<shaken> by you as a \\glossterm<condition>.
             \\crit The target is \\glossterm<frightened> by you as a \\glossterm<condition>.
-        """, tags=['Emotion', 'Mind'], ap_cost=False)],
+        """, tags=['Emotion'], ap_cost=False)],
         schools=['Enchantment'],
         lists=['Arcane', 'Divine', 'Pact'],
         spells=[
@@ -1178,21 +1178,21 @@ def generate_mystic_spheres():
                 Un
                 Until the end of the round, you gain a +2 bonus to Mental defense.
                 At the end of the round, you regain a spent \\glossterm<recovery action point>.
-            """, tags=['Emotion', 'Mind', 'Swift'], ap_cost=False),
+            """, tags=['Emotion', 'Swift'], ap_cost=False),
             Spell('Terror', 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 \\miss You regain the \\glossterm<action point> spent to cast this spell.
                 \\hit The target is \\frightened by you as a \\glossterm<condition>.
                 \\crit The target is \\panicked by you as a \\glossterm<condition>.
-            """, tags=['Emotion', 'Mind']),
+            """, tags=['Emotion']),
             Spell('Fearsome Aura', 1, """
                 You radiate an aura of fear in a \\arealarge radius \\glossterm<emanation>.
                 When you attune to this spell, and at the end of each \\glossterm<action phase> in subsequent rounds, make an attack vs. Mental against all creatures in the area that you did not already attack with this spell.
                 \\hit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
-            """, tags=['Attune (self)', 'Emotion', 'Mind']),
+            """, tags=['Attune (self)', 'Emotion']),
             Spell('Greater Fearsome Aura', 4, """
                 This spell functions like the \\spell<fearsome aura> spell, except that a struck target is \\glossterm<frightened> instead of \\glossterm<shaken>.
-            """, tags=['Attune (self)', 'Emotion', 'Mind']),
+            """, tags=['Attune (self)', 'Emotion']),
             # Math: at 1st level, power is probably ~2, so standard damage is probably 2d6.
             # Casting this spell and then two standard damage spells deals 4d6+2d8 = 23 damage
             # casting three standard damage spells deals 6d6 = 21 damage
@@ -1210,11 +1210,11 @@ def generate_mystic_spheres():
                 % Does this need to clarify that it takes effect in the round the spell was cast?
                 In addition, at the end of each \\glossterm<delayed action phase>, if the target took damage that round, it takes \\glossterm<standard damage> -1d.
                 This damage is of all damage types that the target was damaged by during that round.
-            """, tags=['Emotion', 'Mind']),
+            """, tags=['Emotion']),
             Spell('Redirected Terror', 2, """
                 This spell functions like the \\spell<terror> spell, except that you also choose a willing ally within the spell's range.
                 The target is afraid of the chosen ally instead of being afraid of you.
-            """, tags=['Emotion', 'Mind']),
+            """, tags=['Emotion']),
             Spell('Charm', 2, """
                 Make an attack vs. Mental against a creature within \\rnglong range.
                 If the target thinks that you or your allies are threatening it, you take a -5 penalty to accuracy on the attack.
@@ -1222,31 +1222,31 @@ def generate_mystic_spheres():
                 Any act by you or your apparent allies that threatens or damages the \\spell<charmed> person breaks the effect.
                 This effect is automatically \\glossterm<dismissed> after one hour.
                 \\crit As above, except that the effect is not automatically dismissed.
-            """, tags=['Attune (self)', 'Emotion', 'Mind', 'Subtle']),
+            """, tags=['Attune (self)', 'Emotion', 'Subtle']),
             Spell('Amnesiac Charm', 5, """
                 This spell functions like the \\spell<charm> spell, except that when the spell ends, an affected target forgets all events that transpired during the spell's duration.
                 It becomes aware of its surroundings as if waking up from a daydream.
                 The target is not directly aware of any magical influence on its mind, though unusually paranoid or perceptive creatures may deduce that their minds were affected.
-            """, tags=['Attune (self)', 'Emotion', 'Mind', 'Subtle']),
+            """, tags=['Attune (self)', 'Emotion', 'Subtle']),
             Spell('Calm Emotions', 3, """
                 Make an attack vs. Mental against all creatures within a \\arealarge radius from you.
                 \\hit Each target has its emotions calmed.
                 The effects of all other \\glossterm<Emotion> abilities on that target are \\glossterm<suppressed>.
                 It cannot take violent actions (although it can defend itself) or do anything destructive.
                 If the target takes damage or feels that it is in danger, this effect is \\glossterm<dismissed>.
-            """, tags=['Emotion', 'Mind', 'Sustain (standard)']),
+            """, tags=['Emotion', 'Sustain (standard)']),
             Spell('Enrage', 1, """
                 Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against a creature within \\rngmed range.
                 \\hit As a \\glossterm<condition>, the target is unable to take any \\glossterm<standard actions> that do not cause it to make an attack.
                 For example, it could make a \\glossterm<strike> or cast an offensive spell, but it could not heal itself or summon an ally.
                 This cannot prevent it from using the \\textit<cleanse> ability.
-            """, tags=['Emotion', 'Mind']),
+            """, tags=['Emotion']),
             Spell('Mass Enrage', 4, """
                 This spell functions like the \\spell<enrage> spell, except that it affects all enemies within a \\areamed radius.
-            """, tags=['Emotion', 'Mind']),
+            """, tags=['Emotion']),
             Spell('Inevitable Doom', 4, """
                 This spell functions like the \\spell<terror> spell, except that you gain a +2 bonus to \\glossterm<accuracy>.
-            """, tags=['Emotion', 'Mind']),
+            """, tags=['Emotion']),
         ],
         category='debuff, combat',
     ))
@@ -1762,7 +1762,7 @@ def generate_mystic_spheres():
                 Make an attack vs. Mental against all creatures in the source area.
                 \\hit Each target is \\disoriented as a \\glossterm<condition>.
                 \\crit Each target is \\confused as a \\glossterm<condition>.
-            """, tags=['Light', 'Mind', 'Sensation', 'Visual']),
+            """, tags=['Compulsion', 'Light', 'Sensation', 'Visual']),
             Spell('Faerie Fire', 2, """
                 This spell functions like the \\spell<flare> spell, except that each struck target is surrounded with a pale glow made of hundreds of ephemeral points of light.
                 This causes the struck target to radiate bright light in a 5 foot radius, as a candle.
@@ -1891,7 +1891,7 @@ def generate_mystic_spheres():
             Spell('Fearsome Flame', 2, f"""
                 This spell functions like the \\spell<fireburst> spell, except that the attack result is also compared to each target's Mental defense.
                 \\hit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
-            """, tags=['Emotion', 'Fire', 'Mind']),
+            """, tags=['Emotion', 'Fire']),
             Spell('Flame Serpent', 3, f"""
                 Make an attack vs. Armor against everything in a \\arealarge, 5 ft.\\ wide shapeable line within \\rngmed range.
                 \\hit Each target takes fire \\glossterm<standard damage>.

@@ -19,7 +19,6 @@ valid_tags = set([
     'Life',
     'Light',
     'Manifestation',
-    'Mind',
     'Mystic',
     'Physical',
     'Planar',
