@@ -199,7 +199,7 @@ def generate_weapons():
         name="Disorienting",
         level=9,
         material_type='weapon',
-        tags=['Compulsion', 'Mind'],
+        tags=['Compulsion'],
         description="""
             This weapon shimmers with a chaotic pattern of colors.
             As a standard action, you can intensify the shimmering.
@@ -213,7 +213,7 @@ def generate_weapons():
         name="Disorienting, Greater",
         level=19,
         material_type='weapon',
-        tags=['Compulsion', 'Mind'],
+        tags=['Compulsion'],
         description="""
             This weapon shimmers with a chaotic pattern of colors.
             When you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Mental defense, it is \\disoriented as a \\glossterm<condition>.

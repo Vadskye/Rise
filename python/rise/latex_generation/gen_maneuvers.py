@@ -88,7 +88,7 @@ def generate_maneuvers():
             '6': 'The target is \\glossterm<frightened> instead of shaken.',
             '8': 'The accuracy bonus increases to +3.',
         },
-        tags=['Mind'],
+        tags=['Emotion'],
         lists=['Primal', 'Martial', 'Trick', 'Esoteric'],
     ))
 
@@ -104,7 +104,7 @@ def generate_maneuvers():
             '6': 'The accuracy bonus increases to +2.',
             '8': 'The accuracy bonus increases to +3.',
         },
-        tags=['Mind'],
+        tags=['Emotion'],
         lists=['Primal'],
     ))
 
@@ -396,7 +396,7 @@ def generate_maneuvers():
             '6': 'The damage bonus increases to +2d.',
             '8': 'On a normal hit, the target is stunned instead of dazed.',
         },
-        tags=['Mind'],
+        tags=['Emotion'],
         lists=['Trick', 'Esoteric'],
     ))
 
@@ -497,7 +497,7 @@ def generate_maneuvers():
             '6': 'The target is \\glossterm<nauseated> instead of sickened.',
             '8': 'The accuracy bonus increases to +3.',
         },
-        tags=['Mind'],
+        tags=['Emotion'],
         lists=['Martial', 'Primal', 'Wild', 'Trick', 'Esoteric'],
     ))
 

@@ -45,11 +45,11 @@ def aberrations(sample_monsters):
                 \\crit The aboleth can spend an action point.
                 If it does, the target is \\glossterm<dominated> by the aboleth for as long as the aboleth \\glossterm<attunes> to this ability.
                 Otherwise, the target takes double the damage of a non-critical hit.
-            """, tags=['Mind']),
+            """, tags=['Compulsion']),
             active_ability('Psionic Blast', f"""
                 The aboleth makes a +{aboleth.accuracy()} vs. Mental attack against enemies in a Large cone.
                 \\hit Each target takes {aboleth.standard_damage('magical') + 1} psionic damage and is \\glossterm<stunned> as a \\glossterm<condition>.
-            """, tags=['Mind']),
+            """, tags=['Compulsion']),
         ],
         passive_abilities=[
             passive_ability('Rituals', f"""
@@ -461,7 +461,7 @@ def magical_beasts(sample_monsters):
                 This area can pass through solid objects, including the ground, but every 5 feet of solid obstacle counts as 20 feet of distance.
                 \\hit Each target is \\glossterm<dazed> and \\glossterm<immobilized> as two separate \\glossterm<conditions>.
                 \\crit Each target is \\glossterm<stunned> and \\glossterm<immobilized> as two separate \\glossterm<conditions>.
-            """, tags=['Mind'], ap_cost=True),
+            """, tags=['Compulsion'], ap_cost=True),
         ],
         passive_abilities=[
             passive_ability('Bitter Cold', f"""
