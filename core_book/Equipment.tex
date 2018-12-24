@@ -370,8 +370,14 @@
         \parhead{Medium Armor} A creature wearing medium armor has its \glossterm{base speed} reduced by five feet (to a minimum of five feet).
 
         \parhead{Heavy Armor} A creature wearing heavy armor has its \glossterm{base speed} reduced by ten feet (to a minimum of five feet).
+        In addition, the creature's current Dexterity is reduced to half its normal value.
+        % TODO: wording
+        The creature's starting Dexterity is also reduced to half its normal value for the purpose of calculations that rely on starting Dexterity directly, such as Reflex defense.
+        If the creature's Dexterity is negative, it is not halved.
 
-        \parhead{Shield} A shield requires a free hand instead of being worn on the body, and impose no special penalties on a creature wielding it.
+        \parhead{Shield} A shield requires a free hand instead of being worn on the body.
+        Most shields impose no special penalties on a creature wielding them.
+        However, a creature wielding a tower shield increases \glossterm{encumbrance} by 2 and halves the creature's Dexterity, just like heavy armor.
 
         \subsubsection{Armor Proficiency}\label{Armor Proficiency}
             Unlike weapons, proficiency with armor is defined by the armor's usage class.
@@ -387,19 +393,10 @@
         \parhead{Armor/Shield Bonus} Both body armor and shields improve your Armor defense.
         Wearing multiple suits of armor or wielding multiple shields does not improve your defenses any further.
 
-        \parhead{Dexterity} Heavy body armor limits mobility and agility, halving your Dexterity.
-        If your Dexterity is negative, it is not halved.
-
-        \subparhead{Shields} Most shields do not affect your Dexterity.
-        However, a tower shield halves your Dexterity.
-        This is not cumulative with the halving from wearing heavy armor.
-
         \parhead{Encumbrance} This value indicates how much the armor increases your \glossterm{encumbrance}.
         % TODO: awkward that this doesn't affect, say, Climb-based attacks.
         You apply your encumbrance as a penalty to all Strength and Dexterity-based checks you make.
         For details, see \pcref{Encumbrance}.
-
-        \subparhead{Shields} If a character is wearing armor and using a shield, both armor check penalties apply.
 
         \parhead{Weight} This column gives the weight of the armor sized for a Medium wearer. Armor fitted for Small characters weighs half as much, and armor for Large characters weighs twice as much.
 
