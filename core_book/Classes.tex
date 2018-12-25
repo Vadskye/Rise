@@ -254,20 +254,20 @@ This choice determines a great deal about your character's abilities.
 
 \newpage
 \section{Cleric}\label{Cleric}
-    \begin{dtable}
+    \begin{dtable!*}
         \lcaption{Cleric Progression}
-        \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Divine Spellcasting} & \tb{Divine Spell Mastery}  & \tb{Domain Influence} \\\bottomrule
-               1 & Mystic spheres         & Wellspring of magic         & Domains, domain gift
-            \\ 2 & Spells                 & Mystic knowledge            & Domain gift
-            \\ 3 & Spell level (2)        & Augments                    & Domain aspect
-            \\ 4 & Spell level (3), spell & Mystic knowledge            & Domain aspect
-            \\ 5 & Spell level (4)        & Augment                     & Domain essence
-            \\ 6 & Spell level (5), spell & Greater wellspring of magic & Domain essence
-            \\ 7 & Spell level (6)        & Mystic knowledge            & Miracle
+        \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+            \tb{Rank} & \tb{Divine Spellcasting} & \tb{Divine Spell Mastery}  & \tb{Domain Influence}  & \tb{Healer} & \\\bottomrule
+            1 & Mystic spheres         & Wellspring of magic         & Domains, domain gift & Divine healing
+            \\ 2 & Spells                 & Mystic knowledge            & Domain gift & Vital healer
+            \\ 3 & Spell level (2)        & Augments                    & Domain aspect & Divine cleanse
+            \\ 4 & Spell level (3), spell & Mystic knowledge            & Domain aspect & Greater divine healing
+            \\ 5 & Spell level (4)        & Augment                     & Domain essence & Greater vital healer
+            \\ 6 & Spell level (5), spell & Greater wellspring of magic & Domain essence & Greater divine cleanse
+            \\ 7 & Spell level (6)        & Mystic knowledge            & Miracle & Supreme divine healing
             \\ 8 & Spell level (7), spell & Mystic supremacy            & Domain masteries
         \end{dtabularx}
-    \end{dtable}
+    \end{dtable!*}
 
     \classbasics{Alignment} Your alignment must be within one step of your deity's (that is, it may be one step away on either the lawful-chaotic axis or the good-evil axis, but not both).
 
@@ -467,6 +467,34 @@ This choice determines a great deal about your character's abilities.
         \cf{Clr}[8]{Mystic Supremacy}[Magical]
         The maximum spell level you can cast is increased to 8.
         In addition, you learn an additional \glossterm{augment} that you can apply to divine spells.
+
+    \subsection{Healer}
+        This archetype grants you healing abilities.
+
+        \cf{Clr}[1]{Divine Healing} You can use the \textit{divine healing} ability as a standard action.
+        \begin{freeability}{Divine Healing}[\glossterm{Life}, \glossterm{Magical}]
+            Choose a willing living creature within your \glossterm{reach}.
+            The target is healed for hit points equal to \glossterm{standard damage}.
+        \end{freeability}
+
+        \cf{Clr}[2]{Vital Healer}[Magical] Whenever you heal a creature, for every 5 hit points of healing you provide, you can also heal one point of \glossterm{vital damage}.
+
+        \cf{Clr}[3]{Divine Cleanse} You can use the \textit{divine cleanse} ability as a standard action.
+        \begin{freeability}{Divine Cleanse}[\glossterm{Magical}]
+            Choose a willing creature within \rngclose range.
+            The target removes one \glossterm{condition}.
+        \end{freeability}
+
+        \cf{Clr}[4]{Greater Diving Healing} You gain a \plus1d bonus to healing with your \textit{divine healing} ability.
+        In addition, you can target a creature within \rngclose range.
+
+        \cf{Clr}[5]{Greater Vital Healer} The healing from your \textit{vital healer} ability improves to heal one point of \glossterm{vital damage} for every 2 hit points of healing you provider.
+
+        \cf{Clr}[6]{Greater Divine Cleanse} Your \textit{divine cleanse} ability gains the \glossterm{Swift} tag.
+        That that any penalties from the condition the ability removes do not affect the target during the current phase.
+
+        \cf{Clr}[7]{Supreme Divine Healing} The healing bonus from your \textit{greater divine healing} ability increases to \plus2d.
+        In addition, your \textit{divine healing} ability can can target a creature within \rngmed range.
 
     \subsection{Cleric Domain Abilities}\label{Cleric Domain Abilities}
         These domain abilities can be granted by the \textit{domain influence} cleric archetype.
@@ -2110,7 +2138,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Pal}[1]{Lay on Hands}[Magical] You can use the \textit{lay on hands} ability as a standard action.
         \begin{freeability}{Lay on Hands}[Life]
-            Choose yourself or a willing creature within your \glossterm{reach}.
+            Choose a willing creature within your \glossterm{reach}.
             The target is healed for hit points equal to \glossterm{standard damage}.
         \end{freeability}
 
