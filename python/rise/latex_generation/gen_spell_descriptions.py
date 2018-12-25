@@ -2686,7 +2686,7 @@ def generate_mystic_spheres():
         short_description="Alter life energy to cure or inflict wounds",
         cantrips=[
             Effects('Cure Minor Wounds', """
-                Choose a willing creature within \\rngmed range.
+                Choose a willing living creature within \\rngmed range.
                 The target heals hit points equal to \\glossterm<standard damage>.
             """, tags=['Life'], ap_cost=False),
             Effects('Inflict Minor Wounds', """
@@ -2702,7 +2702,7 @@ def generate_mystic_spheres():
                 At the end of the round, you regain a spent \\glossterm<recovery action point>.
             """, tags=['Life'], ap_cost=False),
             Spell('Cure Wounds', 1, """
-                Choose a willing creature within \\rngmed range.
+                Choose a willing living creature within \\rngmed range.
                 The target heals hit points equal to \\glossterm<standard damage> +2d.
             """, tags=['Life']),
             Spell('Inflict Wounds', 1, """
@@ -2743,7 +2743,7 @@ def generate_mystic_spheres():
                 This spell functions like the \\spell<vital persistence> spell, except that the penalty reduction increases to be equal to twice your \\glossterm<power>.
             """, tags=['Attune (target)', 'Life']),
             Spell('Life Exchange', 4, """
-                Choose a willing ally within \\rngmed range.
+                Choose a willing living ally within \\rngmed range.
                 Make an attack vs. Fortitude against a creature within \\rngmed range.
                 \\hit The target takes life damage equal to \\glossterm<standard damage> +3d.
                 In addition, the chosen ally heals hit points equal to the damage dealt in this way.
@@ -2763,7 +2763,8 @@ def generate_mystic_spheres():
             """, tags=['Attune (self)', 'Life']),
             Spell('Circle of Healing', 3, """
                 You are surrounded by an aura of healing in a \\areamed radius \\glossterm<emanation> from you.
-                When this spell resolves, and the end of each \\glossterm<action phase> in subsequent rounds, all allies in the area heal hit points equal to half your \\glossterm<power>.
+                When this spell resolves, and the end of each \\glossterm<action phase> in subsequent rounds, choose any number of willing living creatures in the area.
+                Each target heals hit points equal to half your \\glossterm<power>.
             """, tags=['Attune (self)', 'Life']),
             Spell('Finger of Death', 5, """
                 Make an attack vs. Fortitude against a living creature within \\rngclose range.
