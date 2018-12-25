@@ -928,6 +928,7 @@ def generate_sample_monsters():
         weapons=[Weapon('slam')],
     )
     monsters['zombie_warrior'] = Creature(
+        challenge_rating=2,
         character_class=CharacterClass('behemoth'),
         level=2,
         name='Zombie',
@@ -935,8 +936,30 @@ def generate_sample_monsters():
         natural_armor=3,
         species=Species('undead'),
         size=Size('medium'),
-        starting_attributes=[2, 0, 3, 0, 0, 0],
+        starting_attributes=[3, 0, 4, 0, 0, 0],
         weapons=[Weapon('slam')],
+    )
+    monsters['unliving_mother'] = Creature(
+        challenge_rating=2,
+        character_class=CharacterClass('adept'),
+        level=2,
+        name='Unliving Mother',
+        natural_armor=3,
+        species=Species('undead'),
+        size=Size('medium'),
+        starting_attributes=[3, 0, 3, 0, 0, 2],
+        weapons=[Weapon('bite')],
+    )
+    monsters['unliving_queen'] = Creature(
+        challenge_rating=3,
+        character_class=CharacterClass('adept'),
+        level=2,
+        name='Unliving Mother',
+        natural_armor=4,
+        species=Species('undead'),
+        size=Size('medium'),
+        starting_attributes=[3, 2, 3, 0, 3, 0],
+        weapons=[Weapon('bite')],
     )
 
     return monsters
