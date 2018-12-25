@@ -841,6 +841,16 @@ def undead(sample_monsters):
         # TODO: this creature acts during the delayed action phase
     ))
 
+    unliving_mother = sample_monsters['unliving_mother']
+    monsters.append(get_creature_latex(
+        unliving_mother,
+    ))
+
+    unliving_queen = sample_monsters['unliving_queen']
+    monsters.append(get_creature_latex(
+        unliving_queen,
+    ))
+
     return '\n\n'.join(monsters)
 
 
