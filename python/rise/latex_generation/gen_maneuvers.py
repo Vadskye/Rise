@@ -253,7 +253,6 @@ def generate_maneuvers():
         effect_text="""
                 Make a melee \\glossterm<strike> with a slashing or bludgeoning weapon.
                 The strike targets each of up to three creatures or objects you \\glossterm<threaten>.
-                You take a -1 penalty to \\glossterm<accuracy> with the strike.
         """,
         rank_upgrades={
             '4': 'You gain a +1d bonus to damage with the strike.',
@@ -286,7 +285,7 @@ def generate_maneuvers():
         effect_text="""
                 Make a melee \\glossterm<strike> with a slashing weapon.
                 The strike targets all creatures you \\glossterm<threaten>.
-                You take a -2 penalty to \\glossterm<accuracy> with the strike.
+                You take a -1 penalty to \\glossterm<accuracy> with the strike.
         """,
         rank_upgrades={
             '4': 'You gain a +1d bonus to damage with the strike.',
@@ -586,6 +585,40 @@ def generate_maneuvers():
         tags=[],
         lists=['Primal', 'Wild', 'Esoteric'],
         ap_cost=False,
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Shield Slam',
+        short_description='Make a stunning strike with a shield',
+        effect_text="""
+            Make a strike using a shield.
+            If the attack result hits the target's Fortitude defense,
+                it is \\glossterm<stunned> as a \\glossterm<condition>.
+        """,
+        rank_upgrades={
+            '4': 'You gain a +1 bonus to accuracy with the strike.',
+            '6': 'The target is stunned twice as two separate conditions.',
+            '8': 'The accuracy bonus increases to +2.',
+        },
+        tags=[],
+        lists=['Martial'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Quivering Palm',
+        short_description='Make a nauseating strike with an unarmed attack',
+        effect_text="""
+            Make a strike using an \\glossterm<unarmed attack>.
+            If the attack result hits the target's Fortitude defense,
+                it is \\glossterm<nauseated> as a \\glossterm<condition>.
+        """,
+        rank_upgrades={
+            '4': 'You gain a +1 bonus to \\glossterm<accuracy> with the strike.',
+            '6': 'The target is nauseated twice as two seperate conditions.',
+            '8': 'The accuracy bonus increases to +2.',
+        },
+        tags=[],
+        lists=['Esoteric'],
     ))
 
     return maneuvers
