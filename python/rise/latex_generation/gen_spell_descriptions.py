@@ -140,11 +140,11 @@ def generate_mystic_spheres():
                 If another ability would magically manipulate the weather in the same area, the most recently used ability takes precedence.
             """, tags=['Air', 'Attune (self)']),
             Spell('Cyclone', 1, """
-                Make an attack vs. Armor against everything in a \\areasmall radius within \\rngmed range.
+                Make an attack vs. Armor against everything in a \\areasmall radius within \\rngclose range.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage>.
             """, tags=['Air']),
             Spell('Greater Cyclone', 3, """
-                Make an attack vs. Armor against everything in a \\areamed radius within \\rnglong range.
+                Make an attack vs. Armor against everything in a \\areamed radius within \\rngmed range.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage>.
             """, tags=['Air']),
             Spell('Supreme Cyclone', 6, """
@@ -1840,7 +1840,7 @@ def generate_mystic_spheres():
                 In addition, you regain a spent \\glossterm<recovery action point> at the end of the round.
             """, tags=['Fire'], ap_cost=False),
             Spell('Fireburst', 1, """
-                Make an attack vs. Armor against everything in a \\areasmall radius within \\rngmed range.
+                Make an attack vs. Armor against everything in a \\areasmall radius within \\rngclose range.
                 \\hit Each target takes fire \\glossterm<standard damage>.
             """, tags=['Fire']),
             Spell('Firebolt', 1, """
@@ -1857,11 +1857,12 @@ def generate_mystic_spheres():
                 At the end of each \\glossterm<action phase> in subsequent rounds, the attack is repeated in that area.
             """, tags=['Fire']),
             Spell('Fireball', 3, """
-                Make an attack vs. Armor against everything in a \\areamed radius within \\rnglong range.
+                Make an attack vs. Armor against everything in a \\areamed radius within \\rngmed range.
                 \\hit Each target takes fire \\glossterm<standard damage>.
             """, tags=['Fire']),
             Spell('Greater Fireball', 6, """
-                This spell functions like the \\spell<fireball> spell, except that it affects everything in a \\arealarge radius and you gain a +1d bonus to damage.
+                Make an attack vs. Armor against everything in a \\arealarge radius within \\rnglong range.
+                \\hit Each target takes fire \\glossterm<standard damage> +1d.
             """, tags=['Fire']),
             Spell('Greater Blast Furnace', 3, f"""
                 This spell functions like the \\spell<blast furnace> spell, except that the spell gains the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Sustain> (standard) tag.
@@ -2404,7 +2405,7 @@ def generate_mystic_spheres():
                 Make an attack vs. Reflex against all Large or smaller creatures other than yourself standing on the ground in a \\areamed radius within \\rngmed range.
                 \\hit Each target is knocked \\glossterm<prone>.
             """, tags=['Earth', 'Physical']),
-            Spell('Earthquake', 5, """
+            Spell('Earthquake', 6, """
                 You create an intense but highly localized tremor that rips through the ground.
                 Make an attack vs. Reflex against all creatures other than yourself standing on the ground in a \\arealarge radius within \\rnglong range.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage>.
