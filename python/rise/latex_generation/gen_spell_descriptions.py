@@ -1937,12 +1937,10 @@ def generate_mystic_spheres():
         short_description="Share visions of the present and future, granting insight or combat prowess",
         cantrips=[
             Effects('Precognitive Strike', """
-                You can only cast this spell during the \\glossterm<action phase>.
                 Choose a willing creature within \\rngclose range.
-                On the next \\glossterm<strike> the target makes, it rolls twice and takes the higher result.
-                If you cast this spell on another creature, the effect ends at the end of the current round if the target has not made a strike by that time.
-                If you cast this spell on yourself, it lasts until the end of the next round.
-            """, ap_cost=False),
+                If the target makes a \\glossterm<strike> during the current phase, it rolls twice and takes the higher result.
+                If you cast this spell on yourself, it affects the first strike you make until the end of the next round.
+            """, tags=['Swift'], ap_cost=False),
         ],
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
@@ -1953,9 +1951,10 @@ def generate_mystic_spheres():
             """, tags=['Swift']),
             Spell('True Strike', 1, """
                 Choose a willing creature within \\rngclose range.
-                On the next \\glossterm<strike> the target makes, it gains a +4 bonus to \\glossterm<accuracy> and rolls twice and takes the higher result.
-                This effect ends at the end of the next round if the target has not made a strike by that time.
-            """, tags=[]),
+                If the target makes a \\glossterm<strike> during the current phase,
+                    it gains a +4 bonus to \\glossterm<accuracy> and rolls twice and takes the higher result.
+                If you cast this spell on yourself, it affects the first strike you make until the end of the next round.
+            """, tags=['Swift']),
             Spell('Greater True Strike', 3, """
                 This spell functions like the \\textit<true strike> spell, except that the bonus is increased to +6.
             """, tags=[]),
