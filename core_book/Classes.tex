@@ -1643,47 +1643,40 @@ This choice determines a great deal about your character's abilities.
             This ability lasts until you \glossterm{dismiss} it as a free action.
         \end{freeability}
 
-        \cf{Mge}[2]{Arcane Insights}[Magical]
-        You gain two of the following insights.
+        \cf{Mge}[2]{Arcane Insight}[Magical]
+        You gain one of the following insights.
         Some insights can be chosen multiple times, as indicated in their descriptions.
 
         {
-            \parhead{Esoteric Insight} You forget a \glossterm{spell} you know.
-            In exchange, you gain access to a new \glossterm{mystic sphere}.
-            \par If you choose the insight multiple times, you must forget a different spell each time.
+            \parhead{Mystic Sphere Access} You gain access to a new \glossterm{mystic sphere}.
+            \par You cannot choose this insight multiple times.
 
-            \parhead{Focused Insight} You lose access to a \glossterm{mystic sphere} you know.
-            In exchange, you learn a \glossterm{spell} from another \glossterm{mystic sphere} you know.
-            \par If you choose the insight multiple times, you must lose access to a different \glossterm{mystic sphere} each time.
+            \parhead{Signature Spell} Choose a \glossterm{spell} you know.
+            You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
+            In addition, you gain a \plus5 bonus to \glossterm{concentration} checks you make to cast that spell.
+            \par If you choose this insight multiple times, you must choose a different \glossterm{spell} each time.
 
-            \parhead{Innate Sphere} Choose a \glossterm{mystic sphere} you know.
-            You no longer need \glossterm{verbal components} or \glossterm{somatic components} to cast spells from that \glossterm{mystic sphere}.
-            \par If you choose this insight multiple times, you must choose a different \glossterm{mystic sphere} each time.
+            \parhead{Spell Knowledge} You learn an additional \glossterm{spell}.
+            \par You can choose this insight multiple times, learning an additional spell each time.
 
-            \parhead{Signature Sphere} Choose a \glossterm{mystic sphere} you have access to.
+            \parhead{Sphere Specialization} Choose a a \glossterm{mystic sphere} you have access to.
             You gain a \plus1 bonus to \glossterm{accuracy} with abilities from that \glossterm{mystic sphere}.
-            In addition, you gain a \plus10 bonus to \glossterm{concentration} checks you make to use abilities from that \glossterm{mystic sphere}.
-            \par If you choose this insight multiple times, you must choose a different \glossterm{mystic sphere} each time.
-
-            \parhead{Specialization} Choose a school of magic that you know a \glossterm{mystic sphere} from.
-            You learn an additional \glossterm{spell} from that school of magic.
-            You can exchange this spell for other spells as you gain access to new spell levels, but the spell must always be used for the chosen school.
-            In exchange, you must ban two other schools of magic.
-            You can never gain access to \glossterm{mystic spheres} from your banned schools.
-            If you know \glossterm{mystic spheres} from a banned school, you must immediately learn different \glossterm{mystic spheres} from unbanned schools in their place.
-            You cannot ban the Channeling school of magic.
-            \par If you choose this insight multiple times, you must choose to specialize in the same school each time.
-
-            \parhead{Arcane Reservoir} You can only gain this arcane insight if you are a sorcerer.
-            You gain an additional \glossterm{reserve action point}.
+            In addition, you learn an additional \glossterm{spell} from that \glossterm{mystic sphere}.
+            In exchange, you must lose access to another \glossterm{mystic sphere} you have.
+            You must exchange all spells you know from that \glossterm{mystic sphere} with spells from other \glossterm{mystic spheres} you have access to.
             \par You cannot choose this insight multiple times.
 
-            \parhead{Memorized Ritual} You can only gain this arcane insight if you are a wizard.
+            \parhead{Innate Sphere} You can only gain this arcane insight if you are a sorcerer.
+            Choose a \glossterm{mystic sphere} you have access to.
+            You no longer need \glossterm{verbal components} or \glossterm{somatic components} to cast spells from that \glossterm{mystic sphere}.
+            \par You can choose this insight multiple times, choosing a different \glossterm{mystic sphere} each time.
+
+            \parhead{Memorized Sphere} You can only gain this arcane insight if you are a wizard and if you have the ability to perform arcane rituals.
             % TODO: clarify you need to be high enough level?
-            Choose an arcane ritual.
-            You do not need your ritual book to cast that ritual or any of its subrituals.
-            If you lead the ritual, it takes half the normal amount of time to perform and costs half the normal number of action points (minimum 1).
-            \par You cannot choose this insight multiple times.
+            Choose a \glossterm{mystic sphere} you have access to.
+            You can perform rituals from that \glossterm{mystic sphere} without having them written in your ritual book.
+            If you lead any rituals from that \glossterm{mystic sphere}, they take half the normal amount of time to perform and cost half the normal number of action points (minimum 1).
+            \par You can choose this insight multiple times, choosing a different \glossterm{mystic sphere} each time.
         }
 
         \cf{Mge}[3]{Essence Lore}[Magical]
@@ -1759,7 +1752,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Mge}[2]{Mystic Knowledge}[Magical]
         You gain your choice of one of the following abilities.
         {
-            \parhead{Insight} You learn an additional arcane \glossterm{spell} (see \pcref{Arcane Mystic Spheres}).
+            \parhead{Spell Knowledge} You learn an additional arcane \glossterm{spell} (see \pcref{Arcane Mystic Spheres}).
                 You can choose this ability multiple times, gaining access to an additional spell each time.
             \parhead{Rituals} You can only choose this mystic knowledge if you are a wizard.
                 The maximum level of arcane ritual you can learn or perform is equal to the maximum arcane spell level you can cast.
