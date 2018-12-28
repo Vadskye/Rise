@@ -1948,7 +1948,7 @@ def generate_mystic_spheres():
             Spell('Precognitive Recovery', 1, """
                 Until the end of the round, you gain a +1 bonus to Armor defense.
                 At the end of the round, you regain a spent \\glossterm<recovery action point>.
-            """, tags=['Swift']),
+            """, tags=['Swift'], ap_cost=False),
             Spell('True Strike', 1, """
                 Choose a willing creature within \\rngclose range.
                 If the target makes a \\glossterm<strike> during the current phase,
