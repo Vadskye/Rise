@@ -258,14 +258,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Cleric Progression}
         \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Divine Spellcasting} & \tb{Divine Spell Mastery}  & \tb{Domain Influence} & \tb{Healer} \\\bottomrule
-               1 & Mystic spheres         & Wellspring of magic         & Domains, domain gift & Divine healing
+            1    & Mystic spheres         & Battle prayer               & Domains, domain gift & Divine healing
             \\ 2 & Spells                 & Mystic knowledge            & Domain gift    & Vital healer
-            \\ 3 & Spell level (2)        & Augments                    & Domain aspect  & Divine cleanse
+            \\ 3 & Spell level (2)        & Wellspring of power         & Domain aspect  & Divine cleanse
             \\ 4 & Spell level (3)        & Mystic knowledge            & Domain aspect  & Greater divine healing
-            \\ 5 & Spell level (4), spell & Augment                     & Domain essence & Greater vital healer
-            \\ 6 & Spell level (5)        & Greater wellspring of magic & Domain essence & Greater divine cleanse
-            \\ 7 & Spell level (6)        & Mystic knowledge            & Miracle        & Supreme divine healing
-            \\ 8 & Spell level (7), spell & Mystic supremacy            & Domain masteries
+            \\ 5 & Spell level (4), spell & Greater battle prayer       & Domain essence & Greater vital healer
+            \\ 6 & Spell level (5)        & Mystic knowledge            & Domain essence & Greater divine cleanse
+            \\ 7 & Spell level (6)        & Greater wellspring of power & Miracle        & Supreme divine healing
+            \\ 8 & Spell level (7), spell &                             & Domain masteries
         \end{dtabularx}
     \end{dtable!*}
 
@@ -441,7 +441,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Insight} You learn an additional divine \glossterm{spell} (see \pcref{Divine Mystic Spheres}).
                 You can choose this ability multiple times, gaining access to an additional spell each time.
             \parhead{Rituals} You gain the ability to perform divine rituals to create unique magical effects (see \pcref{Rituals}).
-                The maximum level of divine ritual you can learn or perform is equal to the maximum divine spell level you can cast.
+                The maximum level of divine ritual you can learn or perform is equal to the maximum level of divine spell that you can cast.
                 You cannot choose this ability multiple times.
             \parhead{Mystic Sphere Access} You gain access to an additional divine \glossterm{mystic sphere} (see \pcref{Divine Mystic Spheres}).
                 You cannot choose this ability multiple times.
@@ -460,10 +460,6 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Clr}[7]{Greater Wellspring of Power}[Magical]
         The bonus from your \textit{wellspring of power} ability increases to \plus2.
-
-        \cf{Clr}[8]{Mystic Supremacy}[Magical]
-        The maximum spell level you can cast is increased to 8.
-        In addition, you learn an additional \glossterm{augment} that you can apply to divine spells.
 
     \subsection{Healer}
         This archetype grants you healing abilities.
@@ -804,14 +800,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Druid Progression}
         \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Nature Spellcasting} & \tb{Nature Spell Mastery} & \tb{Shifter} & \tb{Beastmaster} \\\bottomrule
-               1 & Mystic spheres         & Wellspring of magic         & Shifting defense  & Animal speech
+            1    & Mystic spheres         & Natural spells              & Shifting defense  & Animal speech
             \\ 2 & Spells                 & Mystic knowledge            & Wild aspect       & Animal companion
-            \\ 3 & Spell level (2)        & Augments                    & Shifter lore      & Beast lore
+            \\ 3 & Spell level (2)        & Wellspring of power         & Shifter lore      & Beast lore
             \\ 4 & Spell level (3)        & Mystic knowledge            & Wild aspect       & Greater wild speech
-            \\ 5 & Spell level (4), spell & Augment                     & Nature's champion & Beast companion
-            \\ 6 & Spell level (5)        & Greater wellspring of magic & Wild aspect       & Beast tamer
-            \\ 7 & Spell level (6)        & Mystic knowledge            & Fluid aspect      & Supreme wild speech
-            \\ 8 & Spell level (7), spell & Mystic supremacy            & Avatar of nature  & True companion
+            \\ 5 & Spell level (4), spell & Greater natural spells      & Nature's champion & Beast companion
+            \\ 6 & Spell level (5)        & Mystic knowledge            & Wild aspect       & Beast tamer
+            \\ 7 & Spell level (6)        & Greater wellspring of power & Fluid aspect      & Supreme wild speech
+            \\ 8 & Spell level (7), spell &                             & Avatar of nature  & True companion
         \end{dtabularx}
     \end{dtable!*}
 
@@ -1127,7 +1123,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Insight} You learn an additional nature \glossterm{spell} (see \pcref{Nature Mystic Spheres}).
                 You can choose this ability multiple times, gaining access to an additional spell each time.
             \parhead{Rituals} You gain the ability to perform nature rituals to create unique magical effects (see \pcref{Rituals}).
-                The maximum level of nature ritual you can learn or perform is equal to the maximum nature spell level you can cast.
+                The maximum level of nature ritual you can learn or perform is equal to the maximum level of divine spell that you can cast.
                 You cannot choose this ability multiple times.
             \parhead{Mystic Sphere Access} You gain access to an additional nature \glossterm{mystic sphere}.
                 You cannot choose this ability multiple times.
@@ -1146,10 +1142,6 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Drd}[7]{Greater Wellspring of Power}[Magical]
         The bonus from your \textit{wellspring of power} ability increases to \plus2.
-
-        \cf{Drd}[8]{Mystic Supremacy}[Magical]
-        The maximum spell level you can cast is increased to 8.
-        In addition, you learn an additional \glossterm{augment} that you can apply to nature spells.
 
     \subsection{Beastmaster}
         This archetype improves your connection to animals, allowing you to control and command them in battle.
@@ -1538,24 +1530,24 @@ This choice determines a great deal about your character's abilities.
 
 \newpage
 \section{Mage}\label{Mage}
-    \begin{dtable}
+    \begin{dtable!*}
         \lcaption{Mage Progression}
-        \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Arcane Spellcasting} & \tb{Arcane Spell Mastery} & \tb{Arcane Lore} \\\bottomrule
-            1 & Mystic spheres            & Wellspring of magic         & Mage armor
-            \\ 2 & Spells                 & Mystic knowledge            & Arcane insights
-            \\ 3 & Spell level (2)        & Augments                    & Essence lore
-            \\ 4 & Spell level (3)        & Mystic knowledge            & Arcane insight
-            \\ 5 & Spell level (4), spell & Augment                     & Greater essence lore
-            \\ 6 & Spell level (5)        & Greater wellspring of magic & Arcane insight
-            \\ 7 & Spell level (6)        & Mystic knowledge            & Supreme essence lore
-            \\ 8 & Spell level (7), spell & Mystic supremacy            & Archmage
+        \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+            \tb{Rank} & \tb{Arcane Spellcasting} & \tb{Arcane Spell Mastery} & \tb{Arcane Scholar} & \tb{Innate Arcanist} \\\bottomrule
+            1    & Mystic spheres         & Mage armor                  & Scholastic lore       & Mystic healing
+            \\ 2 & Spells                 & Mystic knowledge            & Rituals               & Limited components
+            \\ 3 & Spell level (2)        & Wellspring of power         & Scholastic insight    & Spell knowledge
+            \\ 4 & Spell level (3)        & Mystic knowledge            & Ritual expertise      & Magic resistance
+            \\ 5 & Spell level (4), spell & Greater mage armor          & Contingency           & Greater limited components
+            \\ 6 & Spell level (5)        & Mystic knowledge            & Scholastic insight    & Spell knowledge
+            \\ 7 & Spell level (6)        & Greater wellspring of power & Malleable contingency & Spell absorption
+            \\ 8 & Spell level (7), spell &                             &                       &
         \end{dtabularx}
-    \end{dtable}
+    \end{dtable!*}
 
     \classbasics{Alignment} Any.
 
-    \classbasics{Archetypes} Mages have the Arcane Spellcasting, Arcane Lore, and Arcane Spell Mastery \glossterm{archetypes}.
+    \classbasics{Archetypes} Mages have the Arcane Spellcasting, Arcane Spell Mastery, Arcane Scholar, and Innate Arcanist \glossterm{archetypes}.
 
     \subsection{Basic Class Abilities}
         If you are a mage, you gain the following abilities.
@@ -1625,119 +1617,6 @@ This choice determines a great deal about your character's abilities.
 
         \cf*{Mge}[8]{Spell} You gain an additional \glossterm{spell} for any arcane \glossterm{mystic sphere} you know.
 
-    \subsection{Arcane Lore}
-        This archetype grants you esoteric abilities relating to arcane magic.
-        You must have the Arcane Spellcasting archetype to gain the abilities from this archetype.
-
-        \cf{Mge}[1]{Mage Armor}[Magical] You can use the \textit{mage armor} ability as a standard action.
-        \begin{freeability}{Mage Armor}
-            You create a translucent suit of magical armor on your body and over your hands.
-            This functions like body armor that provides a \plus2 bonus to Armor defense and has no \glossterm{encumbrance}.
-            The body armor does not appear if you are waring other body armor of any kind.
-
-            As long as you have a free hand, the barrier also manifests as a shield that provides a \plus1 bonus to Armor defense.
-            This bonus is considered to come from a shield, and does not stack with the benefits of using a physical shield.
-
-            This ability lasts until you \glossterm{dismiss} it as a free action.
-        \end{freeability}
-
-        \cf{Mge}[2]{Arcane Insight}[Magical]
-        You gain one of the following insights.
-        Some insights can be chosen multiple times, as indicated in their descriptions.
-
-        {
-            \parhead{Mystic Sphere Access} You gain access to a new \glossterm{mystic sphere}.
-            \par You cannot choose this insight multiple times.
-
-            \parhead{Signature Spell} Choose a \glossterm{spell} you know.
-            You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
-            In addition, you gain a \plus5 bonus to \glossterm{concentration} checks you make to cast that spell.
-            \par If you choose this insight multiple times, you must choose a different \glossterm{spell} each time.
-
-            \parhead{Spell Knowledge} You learn an additional \glossterm{spell}.
-            \par You can choose this insight multiple times, learning an additional spell each time.
-
-            \parhead{Sphere Specialization} Choose a a \glossterm{mystic sphere} you have access to.
-            You gain a \plus1 bonus to \glossterm{accuracy} with abilities from that \glossterm{mystic sphere}.
-            In addition, you learn an additional \glossterm{spell} from that \glossterm{mystic sphere}.
-            In exchange, you must lose access to another \glossterm{mystic sphere} you have.
-            You must exchange all spells you know from that \glossterm{mystic sphere} with spells from other \glossterm{mystic spheres} you have access to.
-            \par You cannot choose this insight multiple times.
-
-            \parhead{Innate Sphere} You can only gain this arcane insight if you are a sorcerer.
-            Choose a \glossterm{mystic sphere} you have access to.
-            You no longer need \glossterm{verbal components} or \glossterm{somatic components} to cast spells from that \glossterm{mystic sphere}.
-            \par You can choose this insight multiple times, choosing a different \glossterm{mystic sphere} each time.
-
-            \parhead{Memorized Sphere} You can only gain this arcane insight if you are a wizard and if you have the ability to perform arcane rituals.
-            % TODO: clarify you need to be high enough level?
-            Choose a \glossterm{mystic sphere} you have access to.
-            You can perform rituals from that \glossterm{mystic sphere} without having them written in your ritual book.
-            If you lead any rituals from that \glossterm{mystic sphere}, they take half the normal amount of time to perform and cost half the normal number of action points (minimum 1).
-            \par You can choose this insight multiple times, choosing a different \glossterm{mystic sphere} each time.
-        }
-
-        \cf{Mge}[3]{Essence Lore}[Magical]
-        You gain an ability based on your choice of arcane essence.
-        % TODO: wording
-        \subparhead{Sorcerer} When a spell resolves, if you were a target of the spell, you heal hit points equal to that spell's \glossterm{power}.
-        This healing applies even if the spell's attack fails.
-        You can only gain this healing once per round.
-        \subparhead{Wizard} You gain two additional skill points.
-        In addition, you gain a \plus2 bonus to all Knowledge skills.
-
-        \cf*{Mge}[4]{Arcane Insight}[Magical]
-        You learn an additional \textit{arcane insight}.
-
-        \cf{Mge}[5]{Greater Essence Lore}[Magical]
-        You gain an ability based on your choice of arcane essence.
-        \subparhead{Sorcerer} You gain a \plus2 bonus to \glossterm{defenses} against \glossterm{magical} abilities.
-        \subparhead{Wizard} You learn the Contingency augment, allowing you to prepare a spell so it takes effect automatically if specific circumstances arise.
-        The Contingency augment adds two levels to a spell's level.
-        You can apply this augment to any arcane spell that can be cast as a \glossterm{standard action}.
-
-        Casting a spell with the Contingency augment takes 5 minutes.
-        When the casting is complete, the spell has no immediate effect.
-        Instead, it automatically takes effect when some specific circumstances arise.
-        During the time required to cast the spell, you specify what circumstances cause the spell to take effect.
-
-        The spell can be set to trigger in response to any circumstances that a typical human observing you and your situation could detect.
-        For example, you could specify ``when I fall at least 50 feet'' or ``when I become bloodied'', but not ``when there is an invisible creature within 50 feet of me'' or ``when I am at 17 hit points or fewer.''
-        The more specific the required circumstances, the better -- vague requirements, such as ``when I am in danger'', may cause the spell to trigger unexpectedly or fail to trigger at all.
-        If you attempt to specify multiple separate triggering conditions, such as ``when I take damage or when an enemy is adjacent to me'', the spell will randomly ignore all but one of the conditions.
-
-        If the spell needs to be targeted, the trigger condition can specify a simple rule for identifying how to target the spell, such as ``the closest enemy''.
-        If the rule is poorly worded or imprecise, the spell may target incorrectly or fail to activate at all.
-        Any spells which require decisions, such as the \spell{dimension door} spell, must have those decisions made at the time it is cast.
-        You cannot alter those decisions when the contingency takes effect.
-
-        You can have only one spell with this augment active at a time.
-        If you use the augment again with a different spell, the new spell.
-
-        \cf*{Mge}[6]{Arcane Insight}[Magical]
-        You learn an additional \textit{arcane insight}.
-
-        \cf{Mge}[7]{Supreme Essence Lore}[Magical]
-        You gain an ability based on your choice of arcane essence.
-
-        \subparhead{Sorcerer} When a \glossterm{spell} affects you and fails to beat your defenses, you gain the ability to cast that spell once.
-        The spell retains all augments, effects from feats and other abilities, and similar modifications from the original caster, and you cannot choose any other augments or apply effects from your own abilities.
-        However, you make all other decisions required to cast the spell, and use your \glossterm{accuracy} and \glossterm{power} to determine the spell's effects.
-        You must spend an \glossterm{action point} to cast the spell.
-        Once you cast the spell, you expend the absorbed energy, and you cannot cast it again.
-
-        If you resist multiple spells simultaneously, or if you resist another spell before casting the previous spell you resisted, you choose which spell you gain the ability to cast.
-
-        \subparhead{Wizard} You may have two spells active with the Contingency augment, rather than only one.
-        When you cast a new spell with the Contingency augment, you choose which existing contingency to replace.
-
-        Only one contingency can trigger in a given round.
-        If both would trigger simultaneously, only the first spell cast triggers.
-        The second spell cast does not trigger that round.
-
-        \cf{Mge}[8]{Archmage}[Magical]
-        You gain a \plus2 bonus to \glossterm{accuracy} and \glossterm{power} with arcane spells.
-
     \subsection{Arcane Spell Mastery}
         This archetype improves the arcane spells you cast.
         You must have the Arcane Spellcasting archetype to gain the abilities from this archetype.
@@ -1766,7 +1645,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Spell Knowledge} You learn an additional arcane \glossterm{spell} (see \pcref{Arcane Mystic Spheres}).
                 You can choose this ability multiple times, gaining access to an additional spell each time.
             \parhead{Rituals} You can only choose this mystic knowledge if you are a wizard.
-                The maximum level of arcane ritual you can learn or perform is equal to the maximum arcane spell level you can cast.
+                The maximum level of arcane ritual you can learn or perform is equal to the maximum arcane level of arcane spell that you can cast.
                 You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
                 You cannot choose this ability multiple times.
             \parhead{Mystic Sphere Access} You gain access to an additional arcane \glossterm{mystic sphere}.
@@ -1788,9 +1667,105 @@ This choice determines a great deal about your character's abilities.
         \cf{Mge}[7]{Greater Wellspring of Power}[Magical]
         The bonus from your \textit{wellspring of power} ability increases to \plus2.
 
-        \cf{Mge}[8]{Mystic Supremacy}[Magical]
-        The maximum spell level you can cast is increased to 8.
-        In addition, you learn an additional \glossterm{augment} that you can apply to arcane spells.
+    \subsection{Arcane Scholar}
+        This archetype deepens your study of arcane magic.
+        You be a wizard and have the Arcane Spellcasting archetype to gain the abilities from this archetype.
+
+        \cf{Mge}[1]{Scholastic Lore} You gain two additional skill points.
+
+        \cf{Mge}[2]{Rituals} You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Rituals}).
+        The maximum level of arcane ritual you can learn or perform is equal to the maximum level of arcane spell that you can cast.
+
+        \cf{Mge}[3]{Scholastic Insight}[Magical]
+        You gain one of the following insights.
+        Some insights can be chosen multiple times, as indicated in their descriptions.
+
+        {
+            \parhead{Expanded Sphere Access} You gain access to a new \glossterm{mystic sphere}.
+            \par You cannot choose this insight multiple times.
+
+            \parhead{Expanded Spell Knowledge} You learn an additional \glossterm{spell}.
+            \par You can choose this insight multiple times, learning an additional spell each time.
+
+            \parhead{Signature Spell} Choose a \glossterm{spell} you know.
+            You gain a \plus1 bonus to \glossterm{accuracy} with that spell.
+            In addition, you gain a \plus5 bonus to \glossterm{concentration} checks you make to cast that spell.
+            \par If you choose this insight multiple times, you must choose a different \glossterm{spell} each time.
+
+            \parhead{Sphere Specialization} Choose a a \glossterm{mystic sphere} you have access to.
+            You gain a \plus1 bonus to \glossterm{accuracy} with abilities from that \glossterm{mystic sphere}.
+            In addition, you learn an additional \glossterm{spell} from that \glossterm{mystic sphere}.
+            In exchange, you must lose access to another \glossterm{mystic sphere} you have.
+            You must exchange all spells you know from that \glossterm{mystic sphere} with spells from other \glossterm{mystic spheres} you have access to.
+            \par You cannot choose this insight multiple times.
+
+            \parhead{Memorized Sphere} % TODO: clarify you need to be high enough level?
+            Choose a \glossterm{mystic sphere} you have access to.
+            You can perform rituals from that \glossterm{mystic sphere} without having them written in your ritual book.
+            If you lead a ritual from that \glossterm{mystic sphere}, it requires half the normal amount of time to perform and costs half the normal number of action points (minimum 1).
+            \par You can choose this insight multiple times, choosing a different \glossterm{mystic sphere} each time.
+        }
+
+        \cf{Mge}[4]{Ritual Expertise} Each \glossterm{action point} you spend performing a \glossterm{ritual} contributes two action points towards the ritual's cost.
+
+        % This may be a better fit?
+        % \cf{Mge}[4]{Scholastic Knowledge} You gain a \plus2 bonus to all Knowledge skills.
+
+        \cf{Mge}[5]{Contingency}  You learn the Contingency \glossterm{augment}, allowing you to prepare a spell so it takes effect automatically if specific circumstances arise.
+        The Contingency \glossterm{augment} adds two levels to a spell's level.
+        You can apply this augment to any arcane spell.
+        % If any spells take more than one standard action, they would need to be excluded from Contingency, but none exist
+        % You can apply this augment to any arcane spell that can be cast as a \glossterm{standard action} or \glossterm{minor action}.
+
+        Casting a spell with the Contingency augment takes 5 minutes.
+        When the casting is complete, the spell has no immediate effect.
+        Instead, it automatically takes effect when some specific circumstances arise.
+        During the time required to cast the spell, you specify what circumstances cause the spell to take effect.
+
+        The spell can be set to trigger in response to any circumstances that a typical human observing you and your situation could detect.
+        For example, you could specify ``when I fall at least 50 feet'' or ``when I become bloodied'', but not ``when there is an invisible creature within 50 feet of me'' or ``when I am at 17 hit points or fewer.''
+        The more specific the required circumstances, the better -- vague requirements, such as ``when I am in danger'', may cause the spell to trigger unexpectedly or fail to trigger at all.
+        If you attempt to specify multiple separate triggering conditions, such as ``when I take damage or when an enemy is adjacent to me'', the spell will randomly ignore all but one of the conditions.
+
+        If the spell needs to be targeted, the trigger condition can specify a simple rule for identifying how to target the spell, such as ``the closest enemy''.
+        If the rule is poorly worded or imprecise, the spell may target incorrectly or fail to activate at all.
+        Any spells which require decisions, such as the \spell{dimension door} spell, must have those decisions made at the time it is cast.
+        You cannot alter those decisions when the contingency takes effect.
+
+        You can have only one spell with this augment active at a time.
+        If you use the augment again with a different spell, the old contingency is removed.
+
+        \cf*{Mge}[6]{Scholastic Insight}[Magical]
+        You learn an additional \textit{scholastic insight}.
+
+        \cf{Mge}[7]{Malleable Contingency} If you have a \textit{contingency} active, you can change the conditions of your \textit{contingency} as a standard action.
+
+    \subsection{Innate Arcanist}
+        This archetype deepens your innate connection to arcane magic.
+        You be a sorcerer and have the Arcane Spellcasting archetype to gain the abilities from this archetype.
+
+        \cf{Mge}[1]{Mystic Healing}
+        When a spell resolves, if you were a target of the spell, you heal hit points equal to that spell's \glossterm{power}.
+        This healing applies even if the spell's attack fails.
+        You can only gain this healing once per round.
+
+        \cf{Mge}[2]{Limited Components} You reduce your \glossterm{encumbrance} by 2 when determining your \textit{arcane spell failure}.
+
+        \cf{Mge}[3]{Spell Knowledge} You learn an additional \glossterm{spell}.
+
+        \cf{Mge}[4]{Magic Resistance} You gain a \plus2 bonus to \glossterm{defenses} against \glossterm{magical} abilities.
+
+        \cf{Mge}[5]{Greater Limited Components} The penalty reduction from your \textit{limited components} ability increases to 4.
+
+        \cf*{Mge}[6]{Spell Knowledge} You learn an additional \glossterm{spell}.
+
+        \cf{Mge}[7]{Spell Absorption} When a spell is used to attack you, if the attack fails to beat your defenses, you gain the ability to cast the spell once.
+        The spell retains its original \glossterm{augments}, if any, and you cannot apply any \glossterm{augments} to it.
+        When you cast the spell, you use your own \glossterm{accuracy}, \glossterm{power}, and abilities to determine the effects of the spell.
+        You must spend an \glossterm{action point} to cast the spell.
+        Once you cast the spell, you expend the absorbed energy, and you cannot cast it again.
+
+        If you resist multiple spells simultaneously, or if you resist another spell before casting the previous spell you resisted, you choose which spell you gain the ability to cast.
 
 \newpage
 \section{Monk}\label{Monk}
