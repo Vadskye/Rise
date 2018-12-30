@@ -438,7 +438,7 @@ def generate_maneuvers():
         short_description='Regain an \\glossterm<action point> and gain bonuses against attackers',
         effect_text="""
             At the end of the round, you regain a spent \\glossterm<recovery action point>.
-            For each creature that attacks you this round, you gain
+            Each time a creature attacks you this round, you gain
                 a +1 bonus to \\glossterm<accuracy> against that creature during the next round.
         """,
         rank_upgrades={
