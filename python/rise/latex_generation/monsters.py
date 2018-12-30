@@ -27,8 +27,18 @@ modifiers['ichor'] = ichor_modifier
 # the creature as an argument to alow referencing aspects of the creature in the
 # description.
 passives = {
+    'hard bones': lambda creature: passive_ability('Hard Bones', f"""
+        The {creature.name.lower()} has \\glossterm<damage reduction> {creature.magical_power} against piercing and slashing damage.
+    """),
     'ichor healing': lambda creature: passive_ability('Ichor Healing', f"""
-        The {creature.name} heals {creature.level * creature.cr_mod} hit points at the end of each round.
+        The {creature.name.lower()} heals {creature.level * creature.cr_mod} hit points at the end of each round.
+    """),
+    'soft flesh': lambda creature: passive_ability('Soft Flesh', f"""
+        The {creature.name.lower()} has \\glossterm<damage reduction> {creature.constitution} against piercing and bludgeoning damage.
+    """),
+    'slow': lambda creature: passive_ability('Slow', f"""
+        The {creature.name.lower()} does not act during the \\glossterm<action phase>.
+        Instead, it acts during the \\glossterm<delayed action phase>.
     """),
 }
 
@@ -40,7 +50,7 @@ def aberrations(sample_monsters):
         aboleth,
         active_abilities=[
             active_ability('Mind Crush', f"""
-                The aboleth makes a +{aboleth.accuracy()} vs. Mental attack against a creature in Long range.
+                The aboleth makes a +{aboleth.accuracy()} vs. Mental attack against a creature in \\rnglong range.
                 \\hit The target takes {aboleth.standard_damage('magical') + 3} psionic damage and is \\glossterm<stunned> as a \\glossterm<condition>.
                 \\crit The aboleth can spend an action point.
                 If it does, the target is \\glossterm<dominated> by the aboleth for as long as the aboleth \\glossterm<attunes> to this ability.
@@ -575,6 +585,11 @@ def magical_beasts(sample_monsters):
         banehound,
     ))
 
+    fleshfeeder = sample_monsters['fleshfeeder']
+    monsters.append(get_creature_latex(
+        fleshfeeder,
+    ))
+
     return '\n\n'.join(monsters)
 
 
@@ -804,24 +819,53 @@ def undead(sample_monsters):
     skeleton = sample_monsters['skeleton']
     monsters.append(get_creature_latex(
         skeleton,
+        passive_abilities=[
+            passives['hard bones'](skeleton),
+        ],
     ))
 
     skeleton_warrior = sample_monsters['skeleton_warrior']
     monsters.append(get_creature_latex(
         skeleton_warrior,
+        passive_abilities=[
+            passives['hard bones'](skeleton),
+        ],
+    ))
+
+    skeleton_mage = sample_monsters['skeleton_mage']
+    monsters.append(get_creature_latex(
+        skeleton_mage,
+        active_abilities=[
+            active_ability('Drain Life', f"""
+                The skeleton mage makes a +{skeleton_mage.accuracy()} vs. Fortitude attack against a creature in \\rngmed range.
+                \\hit The target takes {skeleton_mage.standard_damage('magical')} life damage.
+                In addition, the skeleton mage heals {skeleton_mage.magical_power} hit points.
+            """, tags=['Life']),
+            active_ability('Terror', f"""
+                The skeleton mage makes a +{skeleton_mage.accuracy()} vs. Mental attack against a creature in \\rngmed range.
+                \\hit The target is \\frightened by you as a \\glossterm<condition>.
+                \\crit The target is \\panicked by you as a \\glossterm<condition>.
+            """, tags=['Life']),
+        ],
+        passive_abilities=[
+            passives['hard bones'](skeleton),
+        ],
+    ))
+
+    skeleton_champion = sample_monsters['skeleton_champion']
+    monsters.append(get_creature_latex(
+        skeleton_champion,
+        passive_abilities=[
+            passives['hard bones'](skeleton),
+        ],
     ))
 
     zombie = sample_monsters['zombie']
     monsters.append(get_creature_latex(
         zombie,
         passive_abilities=[
-            passive_ability('Slow', f"""
-                The zombie does not act during the \\glossterm<action phase>.
-                Instead, it acts during the \\glossterm<delayed action phase>.
-            """),
-            passive_ability('Soft Flesh', f"""
-                The zombie has \\glossterm<damage reduction> {zombie.constitution} against piercing and bludgeoning damage.
-            """),
+            passives['slow'](zombie),
+            passives['soft flesh'](zombie),
         ],
         # TODO: this creature acts during the delayed action phase
     ))
@@ -830,15 +874,38 @@ def undead(sample_monsters):
     monsters.append(get_creature_latex(
         zombie_warrior,
         passive_abilities=[
-            passive_ability('Slow', f"""
-                The zombie does not act during the \\glossterm<action phase>.
-                Instead, it acts during the \\glossterm<delayed action phase>.
-            """),
-            passive_ability('Soft Flesh', f"""
-                The zombie has \\glossterm<damage reduction> {zombie_warrior.constitution} against piercing and bludgeoning damage.
-            """),
+            passives['slow'](zombie_warrior),
+            passives['soft flesh'](zombie_warrior),
+        ],
+    ))
+
+    zombie_hulking = sample_monsters['zombie_hulking']
+    monsters.append(get_creature_latex(
+        zombie_hulking,
+        passive_abilities=[
+            passives['slow'](zombie_hulking),
+            passives['soft flesh'](zombie_hulking),
         ],
         # TODO: this creature acts during the delayed action phase
+    ))
+
+    zombie_captain = sample_monsters['zombie_captain']
+    monsters.append(get_creature_latex(
+        zombie_captain,
+        passive_abilities=[
+            passives['slow'](zombie_captain),
+            passives['soft flesh'](zombie_captain),
+        ],
+        # TODO: this creature acts during the delayed action phase
+    ))
+
+    zombie_elite = sample_monsters['zombie_elite']
+    monsters.append(get_creature_latex(
+        zombie_elite,
+        passive_abilities=[
+            passives['slow'](zombie_elite),
+            passives['soft flesh'](zombie_elite),
+        ],
     ))
 
     unliving_mother = sample_monsters['unliving_mother']
@@ -849,6 +916,28 @@ def undead(sample_monsters):
     unliving_queen = sample_monsters['unliving_queen']
     monsters.append(get_creature_latex(
         unliving_queen,
+    ))
+
+    corrupted_mage = sample_monsters['corrupted_mage']
+    monsters.append(get_creature_latex(
+        corrupted_mage,
+        active_abilities=[
+            active_ability('Cone of Cold', f"""
+                The mage makes a {corrupted_mage.accuracy()} vs. Fortitude attack against everything in a \\areamed cone from it.
+                \\hit Each target takes {corrupted_mage.standard_damage('magical')} cold damage.
+            """),
+            active_ability('Frost Bombs', f"""
+                The mage creates three orbs of cold energy at locations of its choice within \\rngmed range.
+                At the end of the next round's \\glossterm<action phase>,
+                the mage makes a {corrupted_mage.accuracy()} vs. Fortitude attack against everything in a \\areasmall radius burst around each orb.
+                If a target is in the area of multiple orbs, it is only affected once.
+                \\hit Each target takes {corrupted_mage.standard_damage('magical') + 1} cold damage.
+            """),
+            active_ability('Telekinetic Crush', f"""
+                The mage makes a {corrupted_mage.accuracy()} vs. Mental attack against one creature or object within \\rngmed range of it.
+                \\hit The target takes {corrupted_mage.standard_damage('magical') + 2} bludgeoning damage.
+            """),
+        ],
     ))
 
     return '\n\n'.join(monsters)

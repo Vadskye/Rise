@@ -41,7 +41,7 @@ Wil 16
 \subsubsection{Aboleth Abilities}
 
 \begin{freeability}{Mind Crush}[\glossterm{Compulsion}]
-The aboleth makes a \plus17 vs. Mental attack against a creature in Long range.
+The aboleth makes a \plus17 vs. Mental attack against a creature in \rnglong range.
 \hit The target takes 10d10 psionic damage and is \glossterm{stunned} as a \glossterm{condition}.
 \crit The aboleth can spend an action point.
 If it does, the target is \glossterm{dominated} by the aboleth for as long as the aboleth \glossterm{attunes} to this ability.
@@ -506,7 +506,7 @@ The bear makes a claw strike against two targets within reach.
 \end{freeability}
 
 \parhead{Ichor Healing}
-The Ichor Bear heals 2 hit points at the end of each round.
+The ichor bear heals 2 hit points at the end of each round.
 
 \begin{monsection}{Pony}{2}[1]
 \vspace{-1em}\spelltwocol{}{Medium animal}\vspace{-1em}
@@ -1984,6 +1984,43 @@ Wil 0
 \end{monsterfooter}
 \end{monsection}
 
+\begin{monsection}{Fleshfeeder}{4}[1]
+\vspace{-1em}\spelltwocol{}{Medium magical beast}\vspace{-1em}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{
+\textbf{HP} 28;
+\textbf{Bloodied} 14;
+}
+{\textbf{AP} 1/0}
+
+\pari \textbf{Armor} 10;
+\textbf{Fort} 11;
+\textbf{Ref} 13;
+\textbf{Ment} 8
+\pari \textbf{Strike} Bite \plus5 (1d10)
+
+
+
+\pari \textbf{Behavior} Attack highest threat
+\end{spelltargetinginfo}
+\end{spellcontent}
+
+\begin{monsterfooter}
+\pari \textbf{Awareness} \plus6
+\pari \textbf{Speed} 30 ft.;
+\textbf{Space} 5 ft.;
+\textbf{Reach} 5 ft.
+\pari \textbf{Attributes}:
+Str 5,
+Dex 6,
+Con 5,
+Int 0,
+Per 5,
+Wil 0
+\end{monsterfooter}
+\end{monsection}
+
 \section{Monstrous Humanoids}
 \begin{monsection}{Banshee}{3}[2]
 \vspace{-1em}\spelltwocol{}{Medium monstrous humanoid}\vspace{-1em}
@@ -2807,21 +2844,27 @@ Wil 0
 \end{monsterfooter}
 \end{monsection}
 
-\begin{monsection}{Skeleton}[Warrior]{3}[1]
+
+\subsubsection{Skeleton Abilities}
+
+\parhead{Hard Bones}
+The skeleton has \glossterm{damage reduction} 1 against piercing and slashing damage.
+
+\begin{monsection}{Skeleton}[Warrior]{4}[1]
 \vspace{-1em}\spelltwocol{}{Medium undead}\vspace{-1em}
 \begin{spellcontent}
 \begin{spelltargetinginfo}
 \spelltwocol{
-\textbf{HP} 15;
-\textbf{Bloodied} 7;
+\textbf{HP} 20;
+\textbf{Bloodied} 10;
 }
 {\textbf{AP} 1/0}
 
-\pari \textbf{Armor} 10;
-\textbf{Fort} 5;
-\textbf{Ref} 12;
-\textbf{Ment} 9
-\pari \textbf{Strike} Claw \plus5 (1d8)
+\pari \textbf{Armor} 11;
+\textbf{Fort} 6;
+\textbf{Ref} 13;
+\textbf{Ment} 10
+\pari \textbf{Strike} Longsword \plus4 (1d10)
 
 
 
@@ -2835,14 +2878,119 @@ Wil 0
 \textbf{Space} 5 ft.;
 \textbf{Reach} 5 ft.
 \pari \textbf{Attributes}:
-Str 4,
-Dex 5,
+Str 5,
+Dex 6,
 Con 0,
 Int 0,
 Per 0,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+
+\subsubsection{Skeleton Abilities}
+
+\parhead{Hard Bones}
+The skeleton has \glossterm{damage reduction} 1 against piercing and slashing damage.
+
+\begin{monsection}{Skeleton}[Mage]{4}[1]
+\vspace{-1em}\spelltwocol{}{Medium undead}\vspace{-1em}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{
+\textbf{HP} 20;
+\textbf{Bloodied} 10;
+}
+{\textbf{AP} 1/3}
+
+\pari \textbf{Armor} 11;
+\textbf{Fort} 6;
+\textbf{Ref} 13;
+\textbf{Ment} 15
+\pari \textbf{Strike} Claw \plus6 (1d8)
+
+
+
+\pari \textbf{Behavior} Attack highest threat
+\end{spelltargetinginfo}
+\end{spellcontent}
+
+\begin{monsterfooter}
+\pari \textbf{Awareness} \plus6
+\pari \textbf{Speed} 30 ft.;
+\textbf{Space} 5 ft.;
+\textbf{Reach} 5 ft.
+\pari \textbf{Attributes}:
+Str 0,
+Dex 6,
+Con 0,
+Int 0,
+Per 0,
+Wil 6
+\end{monsterfooter}
+\end{monsection}
+
+
+\subsubsection{Skeleton Abilities}
+
+\begin{freeability}{Drain Life}[\glossterm{Life}]
+The skeleton mage makes a \plus4 vs. Fortitude attack against a creature in \rngmed range.
+\hit The target takes 2d6 life damage.
+In addition, the skeleton mage heals 6 hit points.
+\end{freeability}
+
+\vspace{0.5em}
+\begin{freeability}{Terror}[\glossterm{Life}]
+The skeleton mage makes a \plus4 vs. Mental attack against a creature in \rngmed range.
+\hit The target is \frightened by you as a \glossterm{condition}.
+\crit The target is \panicked by you as a \glossterm{condition}.
+\end{freeability}
+
+\parhead{Hard Bones}
+The skeleton has \glossterm{damage reduction} 1 against piercing and slashing damage.
+
+\begin{monsection}{Skeleton}[Warrior]{4}[3]
+\vspace{-1em}\spelltwocol{}{Large undead}\vspace{-1em}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{
+\textbf{HP} 72;
+\textbf{Bloodied} 36;
+}
+{\textbf{AP} 3/0}
+
+\pari \textbf{Armor} 14;
+\textbf{Fort} 9;
+\textbf{Ref} 15;
+\textbf{Ment} 12
+\pari \textbf{Strike} Greatsword \plus6 (2d10)
+
+
+\pari \textbf{Actions} One in action phase, one in delayed action phase
+\pari \textbf{Behavior} Attack highest threat
+\end{spelltargetinginfo}
+\end{spellcontent}
+
+\begin{monsterfooter}
+\pari \textbf{Awareness} \plus6
+\pari \textbf{Speed} 40 ft.;
+\textbf{Space} 10 ft.;
+\textbf{Reach} 10 ft.
+\pari \textbf{Attributes}:
+Str 8,
+Dex 7,
+Con 3,
+Int 0,
+Per 0,
+Wil 0
+\end{monsterfooter}
+\end{monsection}
+
+
+\subsubsection{Skeleton Abilities}
+
+\parhead{Hard Bones}
+The skeleton has \glossterm{damage reduction} 1 against piercing and slashing damage.
 
 \begin{monsection}{Zombie}{1}[1]
 \vspace{-1em}\spelltwocol{}{Medium undead}\vspace{-1em}
@@ -2938,6 +3086,147 @@ Instead, it acts during the \glossterm{delayed action phase}.
 \vspace{0.5em}\parhead{Soft Flesh}
 The zombie has \glossterm{damage reduction} 5 against piercing and bludgeoning damage.
 
+\begin{monsection}{Zombie}[Hulking]{3}[2]
+\vspace{-1em}\spelltwocol{}{Large undead}\vspace{-1em}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{
+\textbf{HP} 54;
+\textbf{Bloodied} 27;
+}
+{\textbf{AP} 2/0}
+
+\pari \textbf{Armor} 8;
+\textbf{Fort} 13;
+\textbf{Ref} 6;
+\textbf{Ment} 10
+\pari \textbf{Strike} Slam \plus4 (2d6)
+
+
+
+\pari \textbf{Behavior} Attack highest threat
+\end{spelltargetinginfo}
+\end{spellcontent}
+
+\begin{monsterfooter}
+\pari \textbf{Awareness} \plus6
+\pari \textbf{Speed} 40 ft.;
+\textbf{Space} 10 ft.;
+\textbf{Reach} 10 ft.
+\pari \textbf{Attributes}:
+Str 6,
+Dex 0,
+Con 6,
+Int 0,
+Per 0,
+Wil 0
+\end{monsterfooter}
+\end{monsection}
+
+
+\subsubsection{Zombie Abilities}
+
+\parhead{Slow}
+The zombie does not act during the \glossterm{action phase}.
+Instead, it acts during the \glossterm{delayed action phase}.
+
+\vspace{0.5em}\parhead{Soft Flesh}
+The zombie has \glossterm{damage reduction} 6 against piercing and bludgeoning damage.
+
+\begin{monsection}{Zombie}[Captain]{3}[3]
+\vspace{-1em}\spelltwocol{}{Medium undead}\vspace{-1em}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{
+\textbf{HP} 81;
+\textbf{Bloodied} 40;
+}
+{\textbf{AP} 3/0}
+
+\pari \textbf{Armor} 8;
+\textbf{Fort} 14;
+\textbf{Ref} 9;
+\textbf{Ment} 11
+\pari \textbf{Strike} Slam \plus5 (2d6)
+
+
+\pari \textbf{Actions} One in action phase, one in delayed action phase
+\pari \textbf{Behavior} Attack highest threat
+\end{spelltargetinginfo}
+\end{spellcontent}
+
+\begin{monsterfooter}
+\pari \textbf{Awareness} \plus6
+\pari \textbf{Speed} 30 ft.;
+\textbf{Space} 5 ft.;
+\textbf{Reach} 5 ft.
+\pari \textbf{Attributes}:
+Str 6,
+Dex 0,
+Con 6,
+Int 0,
+Per 0,
+Wil 0
+\end{monsterfooter}
+\end{monsection}
+
+
+\subsubsection{Zombie Abilities}
+
+\parhead{Slow}
+The zombie does not act during the \glossterm{action phase}.
+Instead, it acts during the \glossterm{delayed action phase}.
+
+\vspace{0.5em}\parhead{Soft Flesh}
+The zombie has \glossterm{damage reduction} 6 against piercing and bludgeoning damage.
+
+\begin{monsection}{Zombie}[Elite]{4}[1]
+\vspace{-1em}\spelltwocol{}{Medium undead}\vspace{-1em}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{
+\textbf{HP} 40;
+\textbf{Bloodied} 20;
+}
+{\textbf{AP} 1/0}
+
+\pari \textbf{Armor} 8;
+\textbf{Fort} 15;
+\textbf{Ref} 8;
+\textbf{Ment} 10
+\pari \textbf{Strike} Slam \plus4 (2d6)
+
+
+
+\pari \textbf{Behavior} Attack highest threat
+\end{spelltargetinginfo}
+\end{spellcontent}
+
+\begin{monsterfooter}
+\pari \textbf{Awareness} \plus6
+\pari \textbf{Speed} 30 ft.;
+\textbf{Space} 5 ft.;
+\textbf{Reach} 5 ft.
+\pari \textbf{Attributes}:
+Str 6,
+Dex 0,
+Con 8,
+Int 0,
+Per 0,
+Wil 0
+\end{monsterfooter}
+\end{monsection}
+
+
+\subsubsection{Zombie Abilities}
+
+\parhead{Slow}
+The zombie does not act during the \glossterm{action phase}.
+Instead, it acts during the \glossterm{delayed action phase}.
+
+\vspace{0.5em}\parhead{Soft Flesh}
+The zombie has \glossterm{damage reduction} 8 against piercing and bludgeoning damage.
+
 \begin{monsection}{Unliving Mother}{2}[2]
 \vspace{-1em}\spelltwocol{}{Medium undead}\vspace{-1em}
 \begin{spellcontent}
@@ -3011,3 +3300,63 @@ Per 4,
 Wil 0
 \end{monsterfooter}
 \end{monsection}
+
+\begin{monsection}{Corrupted}[Mage]{4}[3]
+\vspace{-1em}\spelltwocol{}{Medium undead}\vspace{-1em}
+\begin{spellcontent}
+\begin{spelltargetinginfo}
+\spelltwocol{
+\textbf{HP} 96;
+\textbf{Bloodied} 48;
+}
+{\textbf{AP} 3/4}
+
+\pari \textbf{Armor} 10;
+\textbf{Fort} 13;
+\textbf{Ref} 10;
+\textbf{Ment} 19
+\pari \textbf{Strike} Slam \plus8 (1d10)
+
+
+\pari \textbf{Actions} One in action phase, one in delayed action phase
+\pari \textbf{Behavior} Attack highest threat
+\end{spelltargetinginfo}
+\end{spellcontent}
+
+\begin{monsterfooter}
+\pari \textbf{Awareness} \plus6
+\pari \textbf{Speed} 30 ft.;
+\textbf{Space} 5 ft.;
+\textbf{Reach} 5 ft.
+\pari \textbf{Attributes}:
+Str 5,
+Dex 0,
+Con 6,
+Int 0,
+Per 6,
+Wil 7
+\end{monsterfooter}
+\end{monsection}
+
+
+\subsubsection{Corrupted Abilities}
+
+\begin{freeability}{Cone of Cold}
+The mage makes a 8 vs. Fortitude attack against everything in a \areamed cone from it.
+\hit Each target takes 2d10 cold damage.
+\end{freeability}
+
+\vspace{0.5em}
+\begin{freeability}{Frost Bombs}
+The mage creates three orbs of cold energy at locations of its choice within \rngmed range.
+At the end of the next round's \glossterm{action phase},
+the mage makes a 8 vs. Fortitude attack against everything in a \areasmall radius burst around each orb.
+If a target is in the area of multiple orbs, it is only affected once.
+\hit Each target takes 4d6 cold damage.
+\end{freeability}
+
+\vspace{0.5em}
+\begin{freeability}{Telekinetic Crush}
+The mage makes a 8 vs. Mental attack against one creature or object within \rngmed range of it.
+\hit The target takes 4d8 bludgeoning damage.
+\end{freeability}

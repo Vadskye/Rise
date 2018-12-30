@@ -121,6 +121,14 @@ class Creature(object):
         return self.recovery_action_points - self.spent_action_points
 
     @property
+    def magical_power(self):
+        return max(self.level, self.willpower)
+
+    @property
+    def mundane_power(self):
+        return max(self.level, self.strength)
+
+    @property
     def armor_defense(self):
         return sum([
             self.armor.defense_bonus if self.armor else 0,
