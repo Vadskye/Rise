@@ -315,14 +315,14 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Bracers of Repulsion",
-        level=4,
+        level=5,
         material_type='bracer',
         description="""
-            As a standard action during the \\glossterm<action phase>, you can spend an \\glossterm<action point> to activate these bracers.
-            If you do, they emit a telekinetic burst of force during the \\glossterm<delayed action phase> that targets objects and enemies within a \\areamed radius burst from you.
-            You make a \\glossterm<shove> attack against all targets to push them away from you, using this item's \\glossterm<power> in place of your Strength.
-            You gain a +5 bonus to this attack against any creature that attacked you during the action phase,
-                and an additional +5 bonus against any creature that damaged you during the action phase.
+            As a standard action, you can spend an \\glossterm<action point> to activate these bracers.
+            When you do, they emit a telekinetic burst of force that targets everything within a \\areamed radius burst from you.
+            You make a \\glossterm<shove> attack against each target to push it away from you, using this item's \\glossterm<power> as your \\glossterm<accuracy>.
+            If you use this item during the \\glossterm<delayed action phase>,
+                you gain a +4 bonus to \\glossterm<accuracy> with this attack against any creature that attacked you during the action phase.
             You do not have to move with any targets to push them the full distance of the shove.
         """,
         short_description="Can shove nearby creatures back",
@@ -330,7 +330,7 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Bracers of Repulsion, Greater",
-        level=8,
+        level=10,
         material_type='bracer',
         description="""
             This item functions like the \\mitem<bracers of repulsion> item, except that it targets everything within a \\arealarge radius burst.
@@ -375,7 +375,7 @@ def generate_worn():
         level=2,
         material_type='gauntlet',
         description="""
-            If you hit on a \\glossterm<strike> with this gauntlet during the \\glossterm<action phse>, you can attempt to \\glossterm<shove> your foe during the \\glossterm<delayed action phase>.
+            If you hit on a \\glossterm<strike> with this gauntlet during the \\glossterm<action phase>, you can attempt to \\glossterm<shove> your foe during the \\glossterm<delayed action phase>.
             Making a strike with this gauntlet is equivalent to an \\glossterm<unarmed attack>.
             You do not need to move with your foe to push it back the full distance.
         """,
