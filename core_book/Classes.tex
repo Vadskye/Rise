@@ -429,12 +429,15 @@ This choice determines a great deal about your character's abilities.
         This archetype improves the divine spells you cast.
         You must be able to cast divine spells to gain the abilities from this archetype.
 
-        \cf{Clr}[1]{Wellspring of Power}[Magical]
-        You gain a \plus1 bonus to \glossterm{power} with divine spells.
+        \cf{Clr}[1]{Battle Prayer} You gain a \plus2 bonus to \glossterm{concentration} checks to cast divine spells.
 
         \cf{Clr}[2]{Mystic Knowledge}[Magical]
         You gain your choice of one of the following abilities.
         {
+            \parhead{Augment} You learn one \glossterm{augment} (see \pcref{Augments}).
+                You can apply that augment to divine spells you cast and divine rituals you perform.
+                When you gain access to a new divine spell level, you may change which augments you know.
+                \par You can choose this ability multiple times, learning an additional \glossterm{augment} each time.
             \parhead{Insight} You learn an additional divine \glossterm{spell} (see \pcref{Divine Mystic Spheres}).
                 You can choose this ability multiple times, gaining access to an additional spell each time.
             \parhead{Rituals} You gain the ability to perform divine rituals to create unique magical effects (see \pcref{Rituals}).
@@ -444,23 +447,19 @@ This choice determines a great deal about your character's abilities.
                 You cannot choose this ability multiple times.
         }
 
-        \cf{Clr}[3]{Augments}[Magical]
-        Choose one \glossterm{augment} (see \pcref{Augments}).
-        You can also spend \glossterm{insight points} to learn one additional augment per \glossterm{insight point}.
-        You can apply those augments to divine spells you cast and divine rituals you perform.
-        When you gain access to a new spell level, you may change which augments you know.
+        \cf{Clr}[3]{Wellspring of Power}[Magical]
+        You gain a \plus1 bonus to \glossterm{power} with divine spells.
 
         \cf*{Clr}[4]{Mystic Knowledge}[Magical]
         You gain an additional \textit{mystic knowledge} ability.
 
-        \cf{Clr}[5]{Augment}[Magical]
-        You learn an additional \glossterm{augment} that you can apply to divine spells.
+        \cf{Clr}[5]{Greater Battle Prayer} The bonus from your \textit{battle prayer} ability increases to \plus4.
 
-        \cf{Clr}[6]{Greater Wellspring of Power}[Magical]
-        The bonus from your \textit{wellspring of power} ability increases to \plus2.
-
-        \cf*{Clr}[7]{Mystic Knowledge}[Magical]
+        \cf*{Clr}[6]{Mystic Knowledge}[Magical]
         You gain an additional \textit{mystic knowledge} ability.
+
+        \cf{Clr}[7]{Greater Wellspring of Power}[Magical]
+        The bonus from your \textit{wellspring of power} ability increases to \plus2.
 
         \cf{Clr}[8]{Mystic Supremacy}[Magical]
         The maximum spell level you can cast is increased to 8.
@@ -1116,12 +1115,15 @@ This choice determines a great deal about your character's abilities.
         This archetype improves the nature spells you cast.
         You must be able to cast nature spells to gain the abilities from this archetype.
 
-        \cf{Drd}[1]{Wellspring of Power}[Magical]
-        You gain a \plus1 bonus to \glossterm{power} with nature spells.
+        \cf{Drd}[1]{Natural Spells} You gain a \plus1 bonus to \glossterm{accuracy} with spells against animals and plants.
 
         \cf{Drd}[2]{Mystic Knowledge}
         You gain your choice of one of the following abilities.
         {
+            \parhead{Augment} You learn one \glossterm{augment} (see \pcref{Augments}).
+                You can apply that augment to nature spells you cast and nature rituals you perform.
+                When you gain access to a new nature spell level, you may change which augments you know.
+                \par You can choose this ability multiple times, learning an additional \glossterm{augment} each time.
             \parhead{Insight} You learn an additional nature \glossterm{spell} (see \pcref{Nature Mystic Spheres}).
                 You can choose this ability multiple times, gaining access to an additional spell each time.
             \parhead{Rituals} You gain the ability to perform nature rituals to create unique magical effects (see \pcref{Rituals}).
@@ -1131,23 +1133,19 @@ This choice determines a great deal about your character's abilities.
                 You cannot choose this ability multiple times.
         }
 
-        \cf{Drd}[3]{Augments}[Magical]
-        Choose one \glossterm{augments} (see \pcref{Augments}).
-        You can also spend \glossterm{insight points} to learn one additional augment per \glossterm{insight point}.
-        You can apply those augments to nature spells you cast and nature rituals you perform.
-        When you gain access to a new spell level, you may change which augments you know.
+        \cf{Drd}[3]{Wellspring of Power}[Magical]
+        You gain a \plus1 bonus to \glossterm{power} with nature spells.
 
         \cf*{Drd}[4]{Mystic Knowledge}[Magical]
         You gain an additional \textit{mystic knowledge} ability.
 
-        \cf{Drd}[5]{Augment}[Magical]
-        You learn an additional \glossterm{augment} that you can apply to nature spells.
+        \cf{Drd}[5]{Greater Natural Spells} The bonus from your \textit{natural spells} ability increases to \plus2.
 
-        \cf{Drd}[6]{Greater Wellspring of Power}[Magical]
-        The bonus from your \textit{wellspring of power} ability increases to \plus2.
-
-        \cf*{Drd}[7]{Mystic Knowledge}[Magical]
+        \cf*{Drd}[6]{Mystic Knowledge}[Magical]
         You gain an additional \textit{mystic knowledge} ability.
+
+        \cf{Drd}[7]{Greater Wellspring of Power}[Magical]
+        The bonus from your \textit{wellspring of power} ability increases to \plus2.
 
         \cf{Drd}[8]{Mystic Supremacy}[Magical]
         The maximum spell level you can cast is increased to 8.
@@ -1543,7 +1541,7 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable}
         \lcaption{Mage Progression}
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Arcane Spellcasting} & \tb{Arcane Spell Mastery}  & \tb{Arcane Lore} \\\bottomrule
+            \tb{Rank} & \tb{Arcane Spellcasting} & \tb{Arcane Spell Mastery} & \tb{Arcane Lore} \\\bottomrule
             1 & Mystic spheres            & Wellspring of magic         & Mage armor
             \\ 2 & Spells                 & Mystic knowledge            & Arcane insights
             \\ 3 & Spell level (2)        & Augments                    & Essence lore
@@ -1746,12 +1744,25 @@ This choice determines a great deal about your character's abilities.
         % TODO: This wording is ugly
         Abilities from this archetype that affect arcane spells only affect arcane spells gained from the Arcane Spellcasting archetype.
 
-        \cf{Mge}[1]{Wellspring of Power}[Magical]
-        You gain a \plus1 bonus to \glossterm{power} with arcane spells.
+        \cf{Mge}[1]{Mage Armor}[Magical] You can use the \textit{mage armor} ability as a standard action.
+        \begin{freeability}{Mage Armor}
+            You create a translucent suit of magical armor on your body and over your hands.
+            This functions like body armor that provides a \plus2 bonus to Armor defense and has no \glossterm{encumbrance}.
+            The body armor does not appear if you are wearing other body armor of any kind.
+
+            As long as you have a free hand, the barrier also manifests as a shield that provides a \plus1 bonus to Armor defense.
+            This bonus is considered to come from a shield, and does not stack with the benefits of using a physical shield.
+
+            This ability lasts until you \glossterm{dismiss} it as a free action.
+        \end{freeability}
 
         \cf{Mge}[2]{Mystic Knowledge}[Magical]
         You gain your choice of one of the following abilities.
         {
+            \parhead{Augment} You learn one \glossterm{augment} (see \pcref{Augments}).
+                You can apply that augment to arcane spells you cast and arcane rituals you perform.
+                When you gain access to a new arcane spell level, you may change which augments you know.
+                \par You can choose this ability multiple times, learning an additional \glossterm{augment} each time.
             \parhead{Spell Knowledge} You learn an additional arcane \glossterm{spell} (see \pcref{Arcane Mystic Spheres}).
                 You can choose this ability multiple times, gaining access to an additional spell each time.
             \parhead{Rituals} You can only choose this mystic knowledge if you are a wizard.
@@ -1762,23 +1773,20 @@ This choice determines a great deal about your character's abilities.
                 You cannot choose this ability multiple times.
         }
 
-        \cf{Mge}[3]{Augments}[Magical]
-        Choose one \glossterm{augment} (see \pcref{Augments}).
-        You can also spend \glossterm{insight points} to learn one additional augment per \glossterm{insight point}.
-        You can apply those augments to arcane spells you cast and arcane rituals you perform.
-        When you gain access to a new spell level, you may change which augments you know.
+        \cf{Mge}[3]{Wellspring of Power}[Magical]
+        You gain a \plus1 bonus to \glossterm{power} with arcane spells.
 
         \cf*{Mge}[4]{Mystic Knowledge}[Magical]
         You gain an additional \textit{mystic knowledge} ability.
 
-        \cf{Mge}[5]{Augment}[Magical]
-        You learn an additional \glossterm{augment} that you can apply to arcane spells.
+        \cf{Mge}[5]{Greater Mage Armor}[Magical]
+        The defense bonus from the body armor from your \textit{mage armor} ability increases to \plus3.
 
-        \cf{Mge}[6]{Greater Wellspring of Power}[Magical]
-        The bonus from your \textit{wellspring of power} ability increases to \plus2.
-
-        \cf*{Mge}[7]{Mystic Knowledge}[Magical]
+        \cf*{Mge}[6]{Mystic Knowledge}[Magical]
         You gain an additional \textit{mystic knowledge} ability.
+
+        \cf{Mge}[7]{Greater Wellspring of Power}[Magical]
+        The bonus from your \textit{wellspring of power} ability increases to \plus2.
 
         \cf{Mge}[8]{Mystic Supremacy}[Magical]
         The maximum spell level you can cast is increased to 8.
