@@ -698,6 +698,17 @@ def generate_sample_monsters():
         starting_attributes=[2, 4, 0, 1, 3, 0],
         weapons=[Weapon('bite')],
     )
+    monsters['fleshfeeder'] = Creature(
+        challenge_rating=1,
+        character_class=CharacterClass('slayer'),
+        level=4,
+        name='Fleshfeeder',
+        natural_armor=4,
+        species=Species('magical beast'),
+        size=Size('medium'),
+        starting_attributes=[2, 3, 2, 0, 2, 0],
+        weapons=[Weapon('bite')],
+    )
 
     # Monstrous humanoids
     monsters['banshee'] = Creature(
@@ -908,14 +919,37 @@ def generate_sample_monsters():
     )
     monsters['skeleton_warrior'] = Creature(
         character_class=CharacterClass('slayer'),
-        level=3,
+        level=4,
         name='Skeleton',
         name_suffix='Warrior',
         natural_armor=5,
         species=Species('undead'),
         size=Size('medium'),
         starting_attributes=[2, 3, 0, 0, 0, 0],
+        weapons=[Weapon('longsword')],
+    )
+    monsters['skeleton_mage'] = Creature(
+        character_class=CharacterClass('adept'),
+        level=4,
+        name='Skeleton',
+        name_suffix='Mage',
+        natural_armor=5,
+        species=Species('undead'),
+        size=Size('medium'),
+        starting_attributes=[0, 3, 0, 0, 0, 3],
         weapons=[Weapon('claw')],
+    )
+    monsters['skeleton_champion'] = Creature(
+        challenge_rating=3,
+        character_class=CharacterClass('slayer'),
+        level=4,
+        name='Skeleton',
+        name_suffix='Warrior',
+        natural_armor=5,
+        species=Species('undead'),
+        size=Size('large'),
+        starting_attributes=[3, 4, 1, 0, 0, 0],
+        weapons=[Weapon('greatsword')],
     )
     monsters['zombie'] = Creature(
         character_class=CharacterClass('behemoth'),
@@ -960,6 +994,65 @@ def generate_sample_monsters():
         size=Size('medium'),
         starting_attributes=[3, 2, 3, 0, 3, 0],
         weapons=[Weapon('bite')],
+    )
+    monsters['zombie_captain'] = Creature(
+        challenge_rating=3,
+        character_class=CharacterClass('behemoth'),
+        level=3,
+        name='Zombie',
+        name_suffix='Captain',
+        natural_armor=3,
+        species=Species('undead'),
+        size=Size('medium'),
+        starting_attributes=[4, 0, 4, 0, 0, 0],
+        weapons=[Weapon('slam')],
+    )
+    monsters['zombie_hulking'] = Creature(
+        challenge_rating=2,
+        character_class=CharacterClass('behemoth'),
+        level=3,
+        name='Zombie',
+        name_suffix='Hulking',
+        natural_armor=4,
+        species=Species('undead'),
+        size=Size('large'),
+        starting_attributes=[2, 0, 4, 0, 0, 0],
+        weapons=[Weapon('slam')],
+    )
+    monsters['zombie_elite'] = Creature(
+        character_class=CharacterClass('behemoth'),
+        level=4,
+        name='Zombie',
+        name_suffix='Elite',
+        natural_armor=4,
+        species=Species('undead'),
+        size=Size('medium'),
+        starting_attributes=[3, 0, 5, 0, 0, 0],
+        weapons=[Weapon('slam')],
+    )
+    monsters['corrupted_mage'] = Creature(
+        challenge_rating=3,
+        character_class=CharacterClass('adept'),
+        level=4,
+        name='Corrupted',
+        name_suffix='Mage',
+        natural_armor=4,
+        species=Species('undead'),
+        size=Size('medium'),
+        starting_attributes=[2, 0, 3, 0, 3, 4],
+        weapons=[Weapon('slam')],
+    )
+
+    monsters['unliving_amalgamation'] = Creature(
+        challenge_rating=3,
+        character_class=CharacterClass('behemoth'),
+        level=4,
+        name='Unliving Amalgamation',
+        natural_armor=4,
+        species=Species('undead'),
+        size=Size('huge'),
+        starting_attributes=[2, 0, 4, 0, 3, 0],
+        weapons=[Weapon('slam')],
     )
 
     return monsters
