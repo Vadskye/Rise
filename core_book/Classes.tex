@@ -112,7 +112,7 @@ This choice determines a great deal about your character's abilities.
 
     \classbasics{Alignment} Any nonlawful.
 
-    \classbasics{Archetypes} Barbarians have the Battlerager, Primal Warrior, Battleforged Resilience, and Outlander \glossterm{archetypes}.
+    \classbasics{Archetypes} Barbarians have the Battlerager, Primal Warrior, Battleforged Resilience, and Outland Savage \glossterm{archetypes}.
     If you are a barbarian, you choose three of those four archetypes.
 
     \subsection{Basic Class Abilities}
@@ -227,23 +227,25 @@ This choice determines a great deal about your character's abilities.
         \cf{Bbn}[8]{Battleforged Supremacy}
         You gain a \plus1 bonus to all defenses.
 
-    \subsection{Outlander}
+    \subsection{Outland Savage}
         This archetype improves your mobility and combat prowess with direct, brutal abilities.
 
         \cf{Bbn}[1]{Fast Movement} You gain a \plus10 foot bonus to your \glossterm{base speed}.
 
-        \cf{Bbn}[2]{Exotic Weaponry} You gain proficiency with \glossterm{exotic weapons} from one weapon group of your choice that you are proficient with.
+        \cf{Bbn}[2]{Exotic Weaponry} You gain proficiency with \glossterm{exotic weapons} from all weapon groups you are proficient with.
 
-        \cf{Bbn}[2]{Savage Force} You gain a \plus1 bonus to \glossterm{accuracy} with the \textit{dirty trick}, \textit{disarm}, \textit{grapple}, \textit{overrun}, \textit{shove}, and \textit{trip} abilities (see \pcref{Special Combat Abilities}).
+        \cf{Bbn}[3]{Savage Precision} You gain a \plus1 bonus to \glossterm{accuracy} with the \textit{dirty trick}, \textit{disarm}, \textit{grapple}, \textit{overrun}, \textit{shove}, and \textit{trip} abilities (see \pcref{Special Combat Abilities}).
         In addition, you gain a \plus1 bonus to \glossterm{accuracy} with grapple actions (see \pcref{Grapple Actions}).
 
-        \cf{Bbn}[3]{Outland Lore} You gain two additional \glossterm{skill points}.
+        \cf{Bbn}[3]{Savage Force} You gain a \plus1 bonus to \glossterm{power} with \glossterm{mundane} abilities.
 
         \cf{Bbn}[4]{Greater Fast Movement} The speed bonus from your \textit{fast movement} ability increases to \plus20 feet.
 
-        \cf{Bbn}[5]{Greater Savage Force} The accuracy bonus from your \textit{savage force} ability increases to \plus2.
+        \cf{Bbn}[5]{Savage Resilience} You gain a \plus2 bonus to Fortitude defense.
 
-        \cf{Bbn}[6]{Greater Exotic Weaponry} You gain proficiency with \glossterm{exotic weapons} from all weapon groups you are proficient with.
+        \cf{Bbn}[6]{Greater Savage Force} The bonus from your \textit{savage force} ability increases to \plus2.
+
+        \cf{Bbn}[6]{Greater Savage Precision} The bonuses from your \textit{savage force} ability increase to \plus2.
 
         \cf{Bbn}[7]{Supreme Fast Movement} The speed bonus from your \textit{fast movement} ability increases to \plus30 feet.
 
@@ -2289,24 +2291,24 @@ This choice determines a great deal about your character's abilities.
 
 \newpage
 \section{Ranger}\label{Ranger}
-    \begin{dtable}
+    \begin{dtable!*}
         \lcaption{Ranger Progression}
-        \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Huntmaster}  & \tb{Keen Senses} & \tb{Wilderness Warrior} \\\bottomrule
-               1 & Tracking lore & Keen vision        & Wild power
-            \\ 2 & Quarry        & Learned perception & Wild maneuvers
-            \\ 3 & Hunting style & Blindsense         & Wilderness lore
-            \\ 4 & Tracker       & Perceive weakness  & Greater wild power
-            \\ 5 & Wary hunter   & Blindsight         & Wild maneuver
-            \\ 6 & Hunting style & Farsight           & Wilderness mastery
-            \\ 7 & Fluid style   & Truesight          & Supreme wild power
+        \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X > {\lcol}X}
+            \tb{Rank} & \tb{Huntmaster}  & \tb{Keen Senses} & \tb{Wilderness Warrior} & \tb{Monster Slayer} \\\bottomrule
+            1    & Tracking lore & Keen vision        & Wild power         & Monstrous lore
+            \\ 2 & Quarry        & Learned perception & Wild maneuvers     & Exotic weaponry
+            \\ 3 & Hunting style & Blindsense         & Wilderness lore    & Favored enemy
+            \\ 4 & Tracker       & Perceive weakness  & Greater wild power & Monster familiarity
+            \\ 5 & Wary hunter   & Blindsight         & Wild maneuver      & Favored enemy
+            \\ 6 & Hunting style & Farsight           & Wilderness mastery & Experienced defense
+            \\ 7 & Fluid style   & Truesight          & Supreme wild power & Greater favored enemy
             \\ 8 & Dual quarry   &                    &
         \end{dtabularx}
-    \end{dtable}
+    \end{dtable!*}
 
     \classbasics{Alignment} Any.
 
-    \classbasics{Archetypes} Rangers have the Keen Senses, Wilderness Warrior, and Huntmaster \glossterm{archetypes}.
+    \classbasics{Archetypes} Rangers have the Keen Senses, Wilderness Warrior, Huntmaster, and Monster Slayer \glossterm{archetypes}.
 
     \subsection{Basic Class Abilities}
         If you are a ranger, you gain the following abilities.
@@ -2363,6 +2365,8 @@ This choice determines a great deal about your character's abilities.
         You can see through normal and magical darkness, see the truth behind visual figments and glamers, and see the true form of creatures and objects affected by \glossterm{Shaping} abilities.
         This ability works at any range.
 
+    % Would be nice to call this ``Hunter'' and the maneuvers ``Hunting'' maneuvers,
+    % but that conflicts with the naming for Huntmaster
     \subsection{Wilderness Warrior}
         This archetype grants you abilities to use in combat and improves your wilderness skills.
 
@@ -2530,6 +2534,33 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rgr}[8]{Dual Quarry} You can attune to two separate uses of your \textit{quarry} ability simultaneously.
         You can use different \textit{hunting style} abilities with each \textit{quarry}.
+
+    \subsection{Monster Slayer}
+        This archetype grants you abilities improving your ability to slay fearsome monsters.
+
+        \cf{Rgr}[1]{Monstrous Lore} You gain two additional \glossterm{skill points}.
+
+        \cf{Rgr}[2]{Exotic Weaponry} You gain proficiency with \glossterm{exotic weapons} from all weapon groups that you are proficient with.
+
+        \cf{Rgr}[3]{Favored Enemy} Choose one of the following creature types: aberration, animate, animal, magical beast, monstrous humanoid, outsider, or undead.
+        You can also spend \glossterm{insight points} to choose one additional creature type per \glossterm{insight point}.
+        You gain a \plus1 bonus to \glossterm{accuracy} against creatures of any type you chose.
+
+        \cf{Rgr}[4]{Monster Familiarity} You gain a \plus2 bonus to Knowledge checks to identify monsters.
+        This bonus is doubled against creatures you chose for your \textit{favored enemy} ability.
+
+        \cf{Rgr}[5]{Favored Enemy} You choose an additional creature type for your \textit{favored enemy} ability.
+
+        \cf{Rgr}[6]{Experienced Defense} You gain a \plus1 bonus to Armor defense.
+
+        \cf{Rgr}[7]{Greater Favored Enemy} The bonus from your \textit{favored enemy} ability increases to \plus2.
+
+    % \subsection{Boundary Warden}
+    %     This archetype grants you abilities improving your ability to guard the boundaries between civilization and nature.
+
+    %     \cf{Rgr}[2]{Favored Terrain} Choose one of the following terrain types: 
+    %     You can also spend \glossterm{insight points} to choose one additional creature type per \glossterm{insight point}.
+    %     You gain a \plus1 bonus to all \glossterm{defenses} and a \plus10 foot bonus to land speed while in any terrain you chose.
 
 \newpage
 \section{Rogue}\label{Rogue}
