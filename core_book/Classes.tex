@@ -1767,24 +1767,24 @@ This choice determines a great deal about your character's abilities.
 
 \newpage
 \section{Monk}\label{Monk}
-    \begin{dtable}
+    \begin{dtable!*}
         \lcaption{Monk Progression}
-        \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Ki} & \tb{Transcendent Sage} & \tb{Esoteric Warrior} \\\bottomrule
-               1 & Ki barrier, ki strike                 & Clear the mind      & Unarmed warrior, unarmed expertise
-            \\ 2 & Ki manifestations                     & Transcend frailty   & Esoteric maneuvers
-            \\ 3 & Ki power                              & Sage lore           & Evasion
-            \\ 4 & Greater ki barrier, greater ki strike & Inner peace         & Greater unarmed warrior, unfettered athletics
-            \\ 5 & Ki manifestation                      & Transcend flesh     & Esoteric maneuver
-            \\ 6 & Greater ki power                      & Greater inner peace & Greater grapple expertise, intuitive reaction
-            \\ 7 & Supreme ki barrier, supreme ki strike & Transcend senses    & Supreme unarmed warrior
+        \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
+            \tb{Rank} & \tb{Ki} & \tb{Transcendent Sage} & \tb{Esoteric Warrior} & \tb{Perfected Form} \\\bottomrule
+            1    & Ki barrier, ki strike                 & Clear the mind      & Unarmed warrior, unarmed expertise            & Fast movement
+            \\ 2 & Ki manifestations                     & Transcend frailty   & Esoteric maneuvers                            & Graceful athletics
+            \\ 3 & Ki power                              & Sage lore           & Evasion                                       & Perfect body
+            \\ 4 & Greater ki barrier, greater ki strike & Inner peace         & Greater unarmed warrior, unfettered athletics & Greater fast movement
+            \\ 5 & Ki manifestation                      & Transcend flesh     & Esoteric maneuver                             & Perfected defense
+            \\ 6 & Greater ki power                      & Greater inner peace & Greater grapple expertise, intuitive reaction & Greater perfect body
+            \\ 7 & Supreme ki barrier, supreme ki strike & Transcend senses    & Supreme unarmed warrior                       & Supreme fast movement
             \\ 8 & Dual manifestation, ki manifestation  & Transcend mortality &
         \end{dtabularx}
-    \end{dtable}
+    \end{dtable!*}
 
     \classbasics{Alignment} Any nonchaotic.
 
-    \classbasics{Archetypes} Monks have the Ki, Unfettered Warrior, and Transcendent Sage \glossterm{archetypes}.
+    \classbasics{Archetypes} Monks have the Ki, Unfettered Warrior, Transcendent Sage, and Perfected Form \glossterm{archetypes}.
 
     \subsection{Basic Class Abilities}
         If you are a monk, you gain the following abilities.
@@ -2039,6 +2039,23 @@ This choice determines a great deal about your character's abilities.
 
         After each time you reform yourself in this way, it takes an additional hour to reform the next time you ``die''.
         You can only be permanently killed by the direct intervention of a deity.
+
+    \subsection{Perfected Form}
+        This archetype improves the perfection of your physical body through rigorous training.
+
+        \cf{Mnk}[1]{Fast Movement} You gain a \plus10 foot bonus to your \glossterm{base speed}.
+
+        \cf{Mnk}[2]{Graceful Athletics} You gain two additional skill points.
+
+        \cf{Mnk}[3]{Perfect Body} You gain a \plus1 bonus to one physical \glossterm{attribute} of your choice: Strength, Dexterity, or Constitution.
+
+        \cf{Mnk}[4]{Greater Fast Movement} The speed bonus from your \textit{fast movement} ability increases to \plus20 feet.
+
+        \cf{Mnk}[5]{Perfected Defense} You gain a \plus1 bonus to Armor defense and Fortitude defense.
+
+        \cf{Mnk}[6]{Greater Perfect Body} You gain a \plus1 bonus to the physical \glossterm{attributes} you did not increase with your \textit{perfect body} ability.
+
+        \cf{Mnk}[7]{Supreme Fast Movement} The speed bonus from your \textit{fast movement} ability increases to \plus30 feet.
 
     \subsection{Ex-Monks}
         As long as you are chaotic, you lose all of your \glossterm{magical} monk abilities.
