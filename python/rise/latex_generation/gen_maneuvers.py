@@ -63,8 +63,7 @@ def generate_maneuvers():
         short_description='Make a strike with bonuses if attacked',
         effect_text="""
                 Make a \\glossterm<strike>.
-                If the target attacked you in the same phase, you gain a +2 bonus to accuracy and a +2d bonus to damage with the strike.
-                Otherwise, you regain the action point spent to use this ability.
+                If the target attacked you earlier in the current round, you gain a +1 bonus to accuracy and a +2d bonus to damage with the strike.
         """,
         rank_upgrades={
             '4': 'The damage bonus increases to +3d.',
