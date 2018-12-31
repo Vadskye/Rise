@@ -2293,14 +2293,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Ranger Progression}
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Huntmaster}  & \tb{Keen Senses} & \tb{Wilderness Warrior} \\\bottomrule
-               1 & Quarry         & Keen vision        & Wild power
-            \\ 2 & Tracker        & Learned perception & Wild maneuvers
-            \\ 3 & Hunting styles & Blindsense         & Wilderness lore
-            \\ 4 & Hunting lore   & Perceive weakness  & Greater wild power
-            \\ 5 & Hunting style  & Blindsight         & Wild maneuver
-            \\ 6 & Fluid style    & Farsight           & Wilderness mastery
-            \\ 7 & Hunting style  & Truesight          & Supreme wild power
-            \\ 8 & Dual quarry    &                    &
+               1 & Tracking lore & Keen vision        & Wild power
+            \\ 2 & Quarry        & Learned perception & Wild maneuvers
+            \\ 3 & Hunting style & Blindsense         & Wilderness lore
+            \\ 4 & Tracker       & Perceive weakness  & Greater wild power
+            \\ 5 & Wary hunter   & Blindsight         & Wild maneuver
+            \\ 6 & Hunting style & Farsight           & Wilderness mastery
+            \\ 7 & Fluid style   & Truesight          & Supreme wild power
+            \\ 8 & Dual quarry   &                    &
         \end{dtabularx}
     \end{dtable}
 
@@ -2388,21 +2388,19 @@ This choice determines a great deal about your character's abilities.
     \subsection{Huntmaster}
         This archetype grants you and your allies abilities to hunt down specific foes.
 
-        \cf{Rgr}[1]{Quarry}\label{Quarry} You can use the \textit{quarry} ability as a \glossterm{minor action}.
+        \cf{Rgr}[1]{Tracking Lore}
+        You gain two additional \glossterm{skill points}.
+
+        \cf{Rgr}[2]{Quarry}\label{Quarry} You can use the \textit{quarry} ability as a \glossterm{minor action}.
         \begin{attuneability}{Quarry}[\glossterm{Attune} (self)]
             Choose a creature within \rnglong range.
             The target becomes your quarry.
             In addition, choose any number of willing creatures within the same range.
             Each target gains a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks} against your quarry.
             You and the willing creatures affected by this ability are called your \glossterm{hunting party}.
-            In addition, you gain a \plus5 bonus to checks made to follow the target's tracks.
         \end{attuneability}
 
-        \cf{Rgr}[2]{Tracker}
-        You gain a \plus2 bonus to the Survival skill.
-        In addition, you may use your \textit{quarry} ability on any creature whose tracks you are following, regardless of the creature's current location.
-
-        \cf{Rgr}[3]{Hunting Styles}
+        \cf{Rgr}[3]{Hunting Style}
         You learn specific hunting styles to defeat particular quarries.
         Choose one hunting style from the list below.
         You can also spend \glossterm{insight points} to learn one additional \textit{hunting style} per \glossterm{insight point}.
@@ -2518,17 +2516,17 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
         }
 
-        \cf{Rgr}[4]{Hunting Lore} You gain two additional skill points.
+        \cf{Rgr}[4]{Tracker} You gain a \plus4 bonus to the Survival skill.
+        In addition, you may use your \textit{quarry} ability on any creature whose tracks you are following, regardless of the creature's current location.
 
-        \cf*{Rgr}[5]{Hunting Style}
+        \cf{Rgr}[5]{Wary Hunter} You gain a \plus1 bonus to all \glossterm{defenses} against your quarry.
+
+        \cf*{Rgr}[6]{Hunting Style}
         You learn an additional \textit{hunting style}.
 
-        \cf{Rgr}[6]{Fluid Style}
+        \cf{Rgr}[7]{Fluid Style}
         At the start of each round, you can change which \textit{hunting style} you are using.
         This does not cost an \glossterm{action point} or change the target of your \textit{quarry} ability.
-
-        \cf*{Rgr}[7]{Hunting Style}
-        You learn an additional \textit{hunting style}.
 
         \cf{Rgr}[8]{Dual Quarry} You can attune to two separate uses of your \textit{quarry} ability simultaneously.
         You can use different \textit{hunting style} abilities with each \textit{quarry}.
