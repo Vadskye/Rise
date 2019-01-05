@@ -1744,20 +1744,26 @@ This choice determines a great deal about your character's abilities.
         This archetype deepens your innate connection to arcane magic.
         You be a sorcerer and have the Arcane Spellcasting archetype to gain the abilities from this archetype.
 
-        \cf{Mge}[1]{Mystic Healing}
+        \cf{Mge}[1]{Stilled Caster} When you cast a spell, you can omit that spell's \glossterm{somatic components}.
+        This tests your focus when casting the spell, forcing you to make a \glossterm{concentration} check to cast the spell successfully (see \pcref{Concentration}).
+
+        \cf{Mge}[2]{Mystic Healing}
         When a spell resolves, if you were a target of the spell, you heal hit points equal to that spell's \glossterm{power}.
         This healing applies even if the spell's attack fails.
         You can only gain this healing once per round.
+        If you are affected by multiple spells simultaneously, you can choose which spell you benefit from.
 
-        \cf{Mge}[2]{Limited Components} You reduce your \glossterm{encumbrance} by 2 when determining your \textit{arcane spell failure}.
+        \cf{Mge}[3]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
 
-        \cf{Mge}[3]{Spell Knowledge} You learn an additional \glossterm{spell}.
+        \cf{Mge}[4]{Nonverbal Caster} When you cast a spell, you can omit that spell's \glossterm{verbal components}.
+        This tests your focus when casting the spell, forcing you to make a \glossterm{concentration} check to cast the spell successfully (see \pcref{Concentration}).
+        If you also omit the spell's \glossterm{somatic components} with your \textit{stilled caster} ability,
+            you take a \minus2 penalty to the \glossterm{concentration} check to cast the spell,
+            as normal when there are multiple effects testing your concentration.
 
-        \cf{Mge}[4]{Magic Resistance} You gain a \plus2 bonus to \glossterm{defenses} against \glossterm{magical} abilities.
+        \cf{Mge}[5]{Magic Resistance} You gain a \plus2 bonus to \glossterm{defenses} against \glossterm{magical} abilities.
 
-        \cf{Mge}[5]{Greater Limited Components} The penalty reduction from your \textit{limited components} ability increases to 4.
-
-        \cf*{Mge}[6]{Spell Knowledge} You learn an additional \glossterm{spell}.
+        \cf*{Mge}[6]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
 
         \cf{Mge}[7]{Spell Absorption} When a spell is used to attack you, if the attack fails to beat your defenses, you gain the ability to cast the spell once.
         The spell retains its original \glossterm{augments}, if any, and you cannot apply any \glossterm{augments} to it.
@@ -2147,10 +2153,10 @@ This choice determines a great deal about your character's abilities.
         \cf{Pal}[4]{Greater Aligned Resistance}[Magical]
         Your ability to resist attacks based on your alignment improves.
 
-        \subparhead{Chaos} You are immune to hostile \glossterm{Compulsion} effects.
-        \subparhead{Evil} You are immune to hostile \glossterm{Disease} and \glossterm{Poison} effects.
-        \subparhead{Good} You are immune to hostile \glossterm{Life} effects.
-        \subparhead{Law} You are immune to hostile \glossterm{Emotion} effects.
+        \subparhead{Chaos} You are immune to hostile \glossterm{Compulsion} abilities.
+        \subparhead{Evil} You are immune to hostile \glossterm{Disease} and \glossterm{Poison} abilities.
+        \subparhead{Good} You are immune to hostile \glossterm{Life} abilities.
+        \subparhead{Law} You are immune to hostile \glossterm{Emotion} abilities.
 
         \cf{Pal}[5]{Greater Aligned Aura}[Magical]
         The effect of your \textit{aligned aura} becomes stronger, as described below.
@@ -2751,21 +2757,21 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable}
         \lcaption{Warlock Progression}
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Pact Spellcasting} & \tb{Blessings of the Abyss}  & \tb{Pact Magic} \\\bottomrule
-               1 & Mystic spheres         & Whispers of the lost         & Wellspring of magic
-            \\ 2 & Pact augments          & Armor tolerance              & Malevolent boon
-            \\ 3 & Mystic sphere          & Abyssal lore                 & Augments
-            \\ 4 & Pact augment           & Greater armor tolerance      & Greater malevolent boon
-            \\ 5 & Infernal power         & Greater whispers of the lost & Augment
-            \\ 6 & Pact augment           & Supreme armor tolerance      & Greater wellspring of magic
-            \\ 7 & Greater infernal power & Abyssal defense              & Augment
-            \\ 8 & Dual pact              &                              &
+            \tb{Rank} & \tb{Pact Spellcasting} & \tb{Pact Spell Mastery}  & \tb{Blessings of the Abyss} \\\bottomrule
+            1    & Mystic spheres         & Armor tolerance             & Eldritch blast
+            \\ 2 & Pact augments          & Spell knowledge             & Eldritch augment
+            \\ 3 & Mystic sphere          & Wellspring of power         & Empowering Whispers
+            \\ 4 & Pact augment           & Spell knowledge             & Fiendish resistance
+            \\ 5 & Infernal power         & Greater armor tolerance     & Eldritch Augment
+            \\ 6 & Pact augment           & Spell knowledge             & Greater Empowering Whispers
+            \\ 7 & Greater infernal power & Greater wellspring of power & Greater eldritch augment
+            \\ 8 & Dual pact              &                             &
         \end{dtabularx}
     \end{dtable}
 
     \classbasics{Alignment} Any.
 
-    \classbasics{Archetypes} Warlocks have the Pact Spellcasting, Blessings of the Abyss, and Pact Magic \glossterm{archetypes}.
+    \classbasics{Archetypes} Warlocks have the Pact Spellcasting, Pact Spell Mastery, and Blessings of the Abyss \glossterm{archetypes}.
 
     \subsection{Basic Class Abilities}
         If you are a warlock, you gain the following abilities.
@@ -2808,189 +2814,215 @@ This choice determines a great deal about your character's abilities.
         Only a soul of extraordinary strength can maintain its integrity after decades or centuries in the Abyss.
         Many warlocks seek power zealously while mortal to gain the mental fortitude necessary to keep their soul after death.
 
+        \cf{War}{Whispers of the Lost}[Magical]
+        You hear the voices of souls lost to the Abyss, linked to you through your soulkeeper.
+        Choose one of the following types of whispers that you hear.
+        {
+            \subcf{Mentoring Whispers} You hear the voice of a dead warlock whose soul is bound to the same soulkeeper as yours.
+
+            % \subcf{Spiteful Whispers} You hear the voices of cruel souls who berate you for your flaws and mistakes.
+
+            \subcf{Sycophantic Whispers} You hear the voices of adoring souls who praise your talents and everything you do.
+
+            \subcf{Warning Whispers} You hear the voices of paranoid and fearful souls warning you of danger, both real and imagined.
+
+            \subcf{Whispers of the Mighty} Your soulkeeper forges the connection to your soul into a boon granted to any soul in the Abyss strong enough to claim it in battle.
+            You hear the voice of whatever soul currently possesses the boon, which may change suddenly and unexpectedly.
+        }
+
     \subsection{Pact Spellcasting}
-        This archetype grants you the ability to cast pact spells through the power of your pact.
+        This archetype grants you the ability to cast pact spells.
         You must have a starting Willpower of at least 1 to gain this archetype.
 
         \cf{War}[1]{Mystic Spheres}[Magical]
-        You can use pact magic.
+        Your soulkeeper grants you the ability to use pact magic.
         You gain access to two pact \glossterm{mystic spheres} (see \pcref{Pact Mystic Spheres}).
         As a \glossterm{standard action}, you can cast any \glossterm{cantrip} spells from any mystic sphere you have access to.
 
-        Pact spells require both \glossterm{verbal components} and \glossterm{somatic components} to cast (see \pcref{Casting Components}).
-        For details about spellcasting, see \pcref{Spell and Ritual Mechanics}.
+        Pact spells require \glossterm{verbal components} to cast (see \pcref{Casting Components}).
+        For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
-        When you gain access to a pact \glossterm{mystic sphere}, you automatically learn one 1st level spell of your choice from that \glossterm{mystic sphere}.
-        You cannot learn pact spells by any other means.
+        \cf{War}[2]{Spells} You learn two pact \glossterm{spells}.
+        You can also spend \glossterm{insight points} to learn one additional pact spell per \glossterm{insight point}.
+        You can learn any 1st level spells from the pact \glossterm{mystic spheres} you have access to.
         You can cast any \glossterm{spell} you know as a \glossterm{standard action}.
         Most spells also cost \glossterm{action points}, as indicated in their descriptions.
+        When you gain access to a new \glossterm{mystic sphere} or spell level, you can exchange any number of spells you know for spells of other spells you know, including spells of the higher level.
 
-        \cf{War}[2]{Spell Knowledge}
-        For each \glossterm{mystic sphere} you have access to, you learn one 1st level spell from that \glossterm{mystic sphere}.
-        As a \glossterm{standard action}, you can cast any \glossterm{spell} you know.
-        You cannot learn pact spells of higher than 1st level.
-        You cannot exchange pact spells you know for higher level pact spells.
+        \cf{War}[3]{Spell Level}[Magical] You gain the ability to cast 2nd level pact spells.
 
-        \cf{War}[3]{Spell Level}[Magical] You gain the ability to cast 2nd level arcane spells.
-        This does not grant you knowledge of 2nd level spells directly, but allows you to use \glossterm{augments} to increase the effective level of your existing spells up to 2nd level.
+        \cf*{War}[4]{Spell Level}[Magical] You gain the ability to cast 3rd level pact spells.
 
-        \cf{War}[3]{Pact Augments}[Magical] You learn one pact augment from the list below.
-        You can also spend \glossterm{insight points} to learn one additional pact augment per \glossterm{insight point}.
-        Pact augments function like other \glossterm{augments} (see \pcref{Augments}), with the following exceptions.
-        \begin{itemize}
-            \item Pact augments can only be applied to pact spells, including \glossterm{cantrips}.
-            \item To apply a pact augment to a spell, you must spend an \glossterm{action point}.
-            \item You can only apply a single pact augment to a spell.
-                You can apply that pact augment in addition to any other non-pact augments the spell has.
-        \end{itemize}
-        When you gain access to a new pact spell level, you may change which pact augments you know.
-        Your \glossterm{power} with pact augments is equal to your \glossterm{power} with the spell you apply them to.
-        {
-            \augment{0}{Infernal Focus} You gain a \plus10 bonus to \glossterm{concentration} checks to cast the spell (see \pcref{Concentration}).
+        \cf*{War}[5]{Spell Level}[Magical] You gain the ability to cast 4th level pact spells.
 
-            \augment{0}{Sickening} Make an attack vs. Fortitude against one creature targeted by the spell.
-            On a hit, the target is \glossterm{sickened} as a \glossterm{condition}.
-            \par This augment can be applied to any spell that targets at least one creature.
+        \cf{War}[5]{Spell} You gain an additional \glossterm{spell} for any pact \glossterm{mystic sphere} you know.
 
-            \augment{0}{Soulrending} When a creature is dealt damage by the spell, if it has no hit points remaining, it dies.
-            \par This augment can be applied to any spell that deals damage.
+        \cf*{War}[6]{Spell Level}[Magical] You gain the ability to cast 5th level pact spells.
 
-            \augment{0}{Terrifying} Make an attack vs. Mental against one creature targeted by the spell.
-            On a hit, the target is \glossterm{shaken} by you as a \glossterm{condition}.
-            \par This augment can be applied to any spell that targets at least one creature.
+        \cf*{War}[7]{Spell Level}[Magical] You gain the ability to cast 6th level pact spells.
 
-            \augment{1}{Dark Expansion} The spell's area is increased by one step, to a maximum of \areahuge.
-            The steps are, in order: \areasmall, \areamed, \arealarge, and \areahuge.
-            Normally, a Small or Medium line is 5 ft.\ wide, while a Large or Huge line is 10 ft.\ wide.
-            A line used to define a wall does not have a width.
-            \par This augment can be applied to any spell with an area that is one of the above areas.
+        \cf*{War}[8]{Spell Level}[Magical] You gain the ability to cast 7th level pact spells.
 
-            \augment{1}{Untraceable} You do not need \glossterm{verbal components} or \glossterm{somatic components} to cast the spell.
+        \cf*{War}[8]{Spell} You gain an additional \glossterm{spell} for any pact \glossterm{mystic sphere} you know.
 
-            \augment{2}{Abyssal Flame} Non-physical damage dealt by the spell becomes life damage in place of its other damage types.
-            In addition, you gain a \plus1d bonus to life damage dealt by the spell.
-            This does not change any other aspects of the spell's effects.
-            \par This augment can be applied to any spell that deals non-physical damage.
+        % {
+        %     \augment{0}{Infernal Focus} You gain a \plus10 bonus to \glossterm{concentration} checks to cast the spell (see \pcref{Concentration}).
 
-            \augment{2}{Bloodreaving} When a creature takes damage from the spell, you heal hit points equal to the damage dealt.
-            \par This augment can be applied to any spell that deals damage.
+        %     \augment{0}{Sickening} Make an attack vs. Fortitude against one creature targeted by the spell.
+        %     On a hit, the target is \glossterm{sickened} as a \glossterm{condition}.
+        %     \par This augment can be applied to any spell that targets at least one creature.
 
-            % TODO: taking damage multiple times in the same round abuse?
-            \augment{2}{Exsanguinating} When a creature takes damage from the spell, it begins bleeding as a \glossterm{condition}.
-            At the end of each \glossterm{action phase}, a bleeding creature takes life \glossterm{standard damage} \minus1d.
-            \par This augment can be applied to any spell that deals damage.
+        %     \augment{0}{Soulrending} When a creature is dealt damage by the spell, if it has no hit points remaining, it dies.
+        %     \par This augment can be applied to any spell that deals damage.
 
-            \augment{3}{Inevitable Doom} You gain a \plus2 bonus to \glossterm{accuracy} with the spell.
-            \par This augment can be applied to any spell that makes an attack.
+        %     \augment{0}{Terrifying} Make an attack vs. Mental against one creature targeted by the spell.
+        %     On a hit, the target is \glossterm{shaken} by you as a \glossterm{condition}.
+        %     \par This augment can be applied to any spell that targets at least one creature.
 
-            \augment{3}{Infernal Potency} You gain a \plus4 bonus to \glossterm{power} with the spell.
-            \par This augment can be applied to any spell.
+        %     \augment{1}{Dark Expansion} The spell's area is increased by one step, to a maximum of \areahuge.
+        %     The steps are, in order: \areasmall, \areamed, \arealarge, and \areahuge.
+        %     Normally, a Small or Medium line is 5 ft.\ wide, while a Large or Huge line is 10 ft.\ wide.
+        %     A line used to define a wall does not have a width.
+        %     \par This augment can be applied to any spell with an area that is one of the above areas.
 
-            \augment{4}{Dark Miasma} When a creature takes damage from the spell, it becomes \glossterm{sickened} as a \glossterm{condition}.
-            \par This augment can be applied to any spell that deals damage.
+        %     \augment{1}{Untraceable} You do not need \glossterm{verbal components} or \glossterm{somatic components} to cast the spell.
 
-            \augment{4}{Unholy Terror} When a creature takes damage from the spell, it becomes \glossterm{shaken} by you as a \glossterm{condition}.
-            \par This augment can be applied to any spell that deals damage.
+        %     \augment{2}{Abyssal Flame} Non-physical damage dealt by the spell becomes life damage in place of its other damage types.
+        %     In addition, you gain a \plus1d bonus to life damage dealt by the spell.
+        %     This does not change any other aspects of the spell's effects.
+        %     \par This augment can be applied to any spell that deals non-physical damage.
 
-            \augment{5}{Soulclaiming} When a creature takes damage from the spell, its soul becomes marked by your soulkeeper as a \glossterm{condition}.
-            It takes a \minus4 penalty to Mental defense.
-            If it dies, its soul is immediately claimed by your soulkeeper, preventing it from being resurrected by any means.
+        %     \augment{2}{Bloodreaving} When a creature takes damage from the spell, you heal hit points equal to the damage dealt.
+        %     \par This augment can be applied to any spell that deals damage.
 
-            \augment{6}{Greater Inevitable Doom} You gain a \plus4 bonus to \glossterm{accuracy} with the spell.
-            \par This augment can be applied to any spell that makes an attack.
+        %     % TODO: taking damage multiple times in the same round abuse?
+        %     \augment{2}{Exsanguinating} When a creature takes damage from the spell, it begins bleeding as a \glossterm{condition}.
+        %     At the end of each \glossterm{action phase}, a bleeding creature takes life \glossterm{standard damage} \minus1d.
+        %     \par This augment can be applied to any spell that deals damage.
 
-            \augment{6}{Greater Infernal Potency} You gain a \plus8 bonus to \glossterm{power} with the spell.
-            \par This augment can be applied to any spell.
-        }
+        %     \augment{3}{Inevitable Doom} You gain a \plus2 bonus to \glossterm{accuracy} with the spell.
+        %     \par This augment can be applied to any spell that makes an attack.
 
-        \cf*{War}[4]{Spell Level}[Magical] You gain the ability to cast 3rd level arcane spells.
+        %     \augment{3}{Infernal Potency} You gain a \plus4 bonus to \glossterm{power} with the spell.
+        %     \par This augment can be applied to any spell.
 
-        \cf*{War}[5]{Spell Level}[Magical] You gain the ability to cast 4th level arcane spells.
+        %     \augment{4}{Dark Miasma} When a creature takes damage from the spell, it becomes \glossterm{sickened} as a \glossterm{condition}.
+        %     \par This augment can be applied to any spell that deals damage.
 
-        \cf{War}[5]{Pact Augment}[Magical] You learn an additional \textit{pact augment}.
+        %     \augment{4}{Unholy Terror} When a creature takes damage from the spell, it becomes \glossterm{shaken} by you as a \glossterm{condition}.
+        %     \par This augment can be applied to any spell that deals damage.
 
-        \cf*{War}[6]{Spell Level}[Magical] You gain the ability to cast 5th level arcane spells.
+        %     \augment{5}{Soulclaiming} When a creature takes damage from the spell, its soul becomes marked by your soulkeeper as a \glossterm{condition}.
+        %     It takes a \minus4 penalty to Mental defense.
+        %     If it dies, its soul is immediately claimed by your soulkeeper, preventing it from being resurrected by any means.
 
-        \cf*{War}[7]{Spell Level}[Magical] You gain the ability to cast 6th level arcane spells.
+        %     \augment{6}{Greater Inevitable Doom} You gain a \plus4 bonus to \glossterm{accuracy} with the spell.
+        %     \par This augment can be applied to any spell that makes an attack.
 
-        \cf*{War}[7]{Pact Augment}[Magical] You learn an additional \textit{pact augment}.
+        %     \augment{6}{Greater Infernal Potency} You gain a \plus8 bonus to \glossterm{power} with the spell.
+        %     \par This augment can be applied to any spell.
+        % }
 
-        \cf{War}[8]{Dual Pact}[Magical] You can apply two different \textit{pact augments} to the same spell, paying separate action points for each.
+    \subsection{Pact Spell Mastery}
+        This archetype improves your ability to cast spells with the power of your dark pact.
+        You must have the Pact Spellcasting archetype to gain the abilities from this archetype.
+
+        \cf{War}[1]{Armor Tolerance} You reduce your \glossterm{encumbrance} by 2 when determining your \glossterm{somatic component failure}.
+
+        % \cf{War}[2]{Malevolent Recovery}[Magical]
+        % When you hit a creature with a pact \glossterm{cantrip} that makes an attack roll, you regain a spent \glossterm{action point} (see \pcref{Regaining Action Points}).
+
+        \cf{War}[2]{Spell Knowledge} You learn an additional pact \glossterm{spell}.
+
+        \cf{War}[3]{Wellspring of Power}[Magical]
+        You gain a \plus1 bonus to \glossterm{power} with pact spells.
+
+        \cf*{War}[4]{Spell Knowledge} You learn an additional pact \glossterm{spell}.
+
+        \cf{War}[5]{Greater Armor Tolerance}[Magical] The penalty reduction from your \textit{armor tolerance} ability increases to 3.
+
+        \cf*{War}[6]{Spell Knowledge} You learn an additional pact \glossterm{spell}.
+
+        \cf{War}[7]{Greater Wellspring of Power}[Magical]
+        The bonus from your \textit{wellspring of power} ability increases to \plus2.
 
     \subsection{Blessings of the Abyss}
         This archetype grants you powers relating to the connection to the Abyss granted by your pact.
 
-        \cf{War}[1]{Whispers of the Lost}[Magical]
-        You hear the voices of souls lost to the Abyss, linked to you through your soulkeeper.
-        Choose one of the following types of whispers that you hear.
+        \cf{War}[1]{Eldritch Blast} You can use the \textit{eldritch blast} ability as a standard action.
+        \begin{freeability}{Eldritch Blast}[\glossterm{Magical}]
+            Make an attack vs. Armor against one creature or object within \rngclose range.
+            % Is ``abyssal'' a reasonable damage type?
+            \hit The target takes abyssal \glossterm{standard damage}.
+        \end{freeability}
+
+        \cf{War}[2]{Eldritch Augment} You gain the ability to increase the power of your \textit{eldritch blast}.
+        You learn one eldritch augment from the list below.
+        You can also spend \glossterm{insight points} to learn one additional eldritch augment per \glossterm{insight point}.
+        Whenever you use your \textit{eldritch blast} ability, you may also use one eldritch augment to increase the power of the \textit{eldritch blast}.
         {
-            \subcf{Mentoring Whispers} You hear the voice of a dead warlock whose soul is bound to the same soulkeeper.
-            This provides no benefit immediately, but the warlock can sometimes provide good advice.
+            \parhead{Bloodreaving} If you hit a living creature, you heal hit points equal to half the damage dealt.
 
-            \subcf{Sycophantic Whispers} You hear the voices of adoring souls who praise your talents and everything you do.
-            You gain a \plus2 bonus to Mental defense.
+            \parhead{Chaining} You can also target an additional creature or object within range.
+            You take a \minus2 penalty to \glossterm{accuracy} against that target.
 
-            \subcf{Warning Whispers} You hear the voices of paranoid and fearful souls warning you of danger, both real and imagined.
-            You gain a \plus2 bonus to Reflex defense.
+            \parhead{Empowered} You gain a \plus2 bonus to \glossterm{power}.
 
-            \subcf{Whispers of the Mighty} Your soulkeeper forges the connection to your soul into a boon granted to any soul in the Abyss strong enough to claim it in battle.
-            You hear the voice of whatever soul currently possesses the boon - until that soul is defeated.
-            You gain a \plus2 bonus to Fortitude defense.
+            \parhead{Exsanguinating} If your attack result beats the target's Fortitude defense, it begins bleeding as a \glossterm{condition}.
+            At the end of each \glossterm{action phase} in subsequent rounds, it takes slashing \glossterm{standard damage} \minus2d.
+
+            \parhead{Extended} The range of the ability increases to \rngmed.
+
+            \parhead{Precise} You gain a \plus1 bonus to \glossterm{accuracy}.
+
+            \parhead{Sickening} If your attack result beats the target's Fortitude defense, it is \glossterm{sickened} as a \glossterm{condition}.
+
+            \parhead{Fearful} If your attack result beats the target's Mental defense, it is \glossterm{shaken} by you as a \glossterm{condition}.
         }
 
-        \cf{War}[2]{Armor Tolerance} You reduce your \glossterm{encumbrance} by 2 when determining your \textit{pact spell failure}.
-
-        \cf{War}[3]{Abyssal Lore} You gain two additional skill points.
-
-        \cf{War}[4]{Greater Armor Tolerance} The penalty reduction from your \textit{armor tolerance} ability increases to 3.
-
-        \cf{War}[5]{Greater Whispers of the Lost}[Magical] You gain an additional ability depending on the voices you chose with your \textit{whispers of the lost} ability.
+        \cf{War}[3]{Empowering Whispers}[Magical]
+        You gain an ability based on the type of whispers you hear with your \textit{whispers of the lost} ability.
         {
-            \subcf{Mentoring Whispers} You gain a \plus1 bonus to \glossterm{accuracy} and \glossterm{power} with pact spells.
+            \subcf{Mentoring Whispers} You gain two additional \glossterm{skill points}.
 
-            \subcf{Sycophantic Whispers} The defense bonus increases to \plus4.
-            % Does Compulsion make sense?
-            In addition, you are immune to \glossterm{Compulsion} and \glossterm{Fear} abilities.
+            % \subcf{Spiteful Whispers} 
 
-            \subcf{Warning Whispers} The defense bonus increases to \plus4.
-            In addition, you are not \glossterm{unaware} when attacked from surprise.
+            \subcf{Sycophantic Whispers} You are immune to \glossterm{Compulsion} abilities.
 
-            \subcf{Whispers of the Mighty} The defense bonus increases to \plus4.
-            In addition, you gain additional hit points equal to your level.
+            \subcf{Warning Whispers} You are not \glossterm{unaware} when attacked from surprise.
+
+            \subcf{Whispers of the Mighty} You are immune to \glossterm{Poison} and \glossterm{Disease} abilities.
         }
 
-        \cf{War}[6]{Supreme Armor Tolerance}[Magical] The penalty reduction from your \textit{armor tolerance} ability increases to 4.
+        \cf{War}[4]{Fiendish Resistance} You gain a bonus equal to your \glossterm{power} to \glossterm{damage reduction} against \glossterm{energy damage}.
 
-        \cf{War}[7]{Abyssal Defense}[Magical] You gain a \plus1 bonus to Fortitude, Reflex, and Mental defenses.
+        \cf*{War}[5]{Eldritch Augment} You learn an additional \textit{eldritch augment}.
+        In addition, you can also choose from the options on the list below.
+        When you gain this ability, you can exchange any other eldritch augments you know for eldritch augments on this list.
+        {
+            \parhead{Greater Chaining} You can also target up to five additional creatures or objects within range.
+            You take a \minus2 penalty to \glossterm{accuracy} against each of those targets.
 
-    \subsection{Pact Magic}
-        This archetype improves your ability to cast spells with the power of your dark pact.
-        You must have the Pact Spellcasting archetype to gain the abilities from this archetype.
+            \parhead{Greater Empowered} You gain a \plus4 bonus to \glossterm{power}.
 
-        \cf{War}[1]{Wellspring of Power}[Magical]
-        You gain a \plus1 bonus to \glossterm{power} with pact spells.
+            \parhead{Greater Extended} The range of the ability increases to \rnglong.
 
-        \cf{War}[2]{Malevolent Boon}[Magical]
-        When you cast a pact spell that makes an attack roll, if you miss, you may regain the \glossterm{action point} spent to cast the spell (if any).
-        If you are \glossterm{attuned} to the spell, you cannot regain an action point in this way.
-        You cannot use this ability on spells that do not normally have attacks, even if you apply an \glossterm{augment} that makes a separate attack.
+            \parhead{Greater Precise} You gain a \plus2 bonus to \glossterm{accuracy}.
 
-        \cf{War}[3]{Augments}[Magical]
-        Choose one \glossterm{augment} (see \pcref{Augments}).
-        You can also spend \glossterm{insight points} to learn one additional augment per \glossterm{insight point}.
-        You can apply those augments to pact spells you cast.
-        When you gain access to a new spell level, you may change which augments you know.
+            \parhead{Nauseating} If your attack result beats the target's Fortitude defense, it is \glossterm{nauseated} as a \glossterm{condition}.
 
-        \cf{War}[4]{Greater Malevolent Boon}[Magical] You can cast pact spells that make attack rolls without spending \glossterm{action points}.
-        When you do, you take a \minus2 penalty to \glossterm{power} with the spell.
-        You cannot \glossterm{attune} to a spell you cast in this way.
-        You cannot use this ability on spells that do not normally have attacks, even if you apply an \glossterm{augment} that makes a separate attack.
+            \parhead{Terrifying} If your attack result beats the target's Mental defense, it is \glossterm{frightened} by you as a \glossterm{condition}.
+        }
 
-        \cf*{War}[5]{Augment}[Magical]
-        You learn an additional \glossterm{augment} that you can apply to pact spells.
+        \cf{War}[6]{Greater Empowering Whispers}[Magical] You gain an additional ability depending on the voices you chose with your \textit{whispers of the lost} ability.
+        {
+            \subcf{Mentoring Whispers} You gain a \plus1 bonus to \glossterm{power} with \glossterm{magical} abilities.
 
-        \cf{War}[6]{Greater Wellspring of Power}[Magical]
-        The bonus from your \textit{wellspring of power} ability increases to \plus2.
+            \subcf{Sycophantic Whispers} You gain a \plus2 bonus to Mental defense.
 
-        \cf{War}[7]{Augment}[Magical]
-        You learn an additional \glossterm{augment} that you can apply to pact spells.
+            \subcf{Warning Whispers} You gain a \plus2 bonus to Reflex defense.
+
+            \subcf{Whispers of the Mighty} You gain a \plus2 bonus to Fortitude defense.
+        }
+
+        \cf{War}[7]{Greater Eldritch Augment}[Magical] You can apply an additional \textit{eldritch augment} to your \textit{eldritch blast}.
