@@ -91,8 +91,8 @@ def skill_box(name):
         ),
         number_input({
             'disabled': True,
-            'name': formatted_skill + '_display',
-            'value': '@{' + formatted_skill + '}',
+            'name': formatted_skill + '_total_display',
+            'value': '@{' + formatted_skill + '_total}',
         }),
     ])
 

@@ -82,8 +82,8 @@ def calc_skill(skill_name, attribute=None):
         number_input({
             'class': 'skill-attr',
             'disabled': True,
-            'name': skill_parsable + '_attribute',
-            'value': '(@{' + attribute + '})' if attribute else None,
+            'name': skill_parsable + '_attribute_display',
+            'value': '(@{' + skill_parsable + '_attribute})' if attribute else '0',
         }),
         number_input({
             'class': 'equation-misc',

@@ -67,8 +67,9 @@ def set_skill(a, s):
                     }}
 
                     setAttrs({{
-                        {s}: ranks + pointsModifier + Number(v.{s}_misc),
+                        {s}_attribute: 0,
                         {s}_ranks: ranks + pointsModifier,
+                        {s}_total: ranks + pointsModifier + Number(v.{s}_misc),
                     }});
                 }});
             }});
@@ -82,24 +83,28 @@ def set_skill(a, s):
             on("sheet:opened change:level change:{a} change:{s}_points change:{s}_misc{encumbrance_changed}", function(eventInfo) {{
                 getAttrs(["level", "{a}", "{a}_starting", "{s}_points", "{s}_misc"{get_encumbrance}], function(v) {{
                     var level = Number(v.level);
+                    var attributeModifier = 0;
                     var pointsModifier = 0;
                     var ranks = 0;
 
                     if (Number(v.{s}_points) === 1) {{
+                        attributeModifier = Number(v.{a});
                         ranks = Math.floor(level / 2);
                         pointsModifier = 1;
                     }} else if (Number(v.{s}_points) >= 2) {{
+                        attributeModifier = Number(v.{a});
                         ranks = level
                         pointsModifier = 4;
                     }}
 
-                    var attributeModifier = Number(v.{a}_starting) === 1 ? Math.floor(Number(v.{a}) / 2) : Number(v.{a})
+                    var scaling = Math.max(ranks, attributeModifier);
 
-                    var scaling = Math.max(ranks, attributeModifier));
+                    var negativeModifier = Number(v.{a}) < 0 ? Number(v.{a}) : 0;
 
                     setAttrs({{
-                        {s}: scaling + pointsModifier + Number(v.{s}_misc){subtract_encumbrance},
-                        {s}_ranks: ranks + pointsModifier,
+                        {s}_attribute: attributeModifier,
+                        {s}_ranks: ranks,
+                        {s}_total: scaling + pointsModifier + negativeModiifer + Number(v.{s}_misc || 0){subtract_encumbrance},
                     }});
                 }});
             }});
@@ -264,7 +269,7 @@ def skill_points():
         on("change:intelligence_starting change:skill_points_misc", function(eventInfo) {{
             getAttrs(["intelligence_starting", "skill_points_misc"], function(v) {{
                 setAttrs({{
-                    skill_points: 8 + Number(v.intelligence_starting || 0) * 2 + Number((v.skill_points_misc || 0)),
+                    skill_points: 8 + Number(v.intelligence_starting || 0) * 2 + Number(v.skill_points_misc || 0),
                 }});
             }});
         }});
