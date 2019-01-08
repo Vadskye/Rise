@@ -519,16 +519,13 @@ def generate_weapon_table():
         sorted(generate_weapons(), key=lambda item: item.name),
         key=lambda item: item.level
     )
-    rows = [
-        f"{item.name} & \\nth<{item.level}> & {item.short_description} & \\pageref<item:{item.name}> \\\\"
-        for item in weapons
-    ]
+    rows = [item.latex_table_row() for item in weapons]
     row_text = '\n'.join(rows)
     return latexify(f"""
         \\begin<longtabuwrapper>
-            \\begin<longtabu><l l X l>
+            \\begin<longtabu><l l l X l>
                 \\lcaption<Weapon Items> \\\\
-                \\tb<Name> & \\tb<Level> & \\tb<Description> & \\tb<Page> \\\\
+                \\tb<Name> & \\tb<Level> & \\tb<Typical Price> & \\tb<Description> & \\tb<Page> \\\\
                 \\bottomrule
                 {row_text}
             \\end<longtabu>
