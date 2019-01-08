@@ -1105,12 +1105,12 @@ def generate_worn():
             This item functions like the \\mitem<ocular circlet>, except that it only takes a \\glossterm<minor action> to activate and sustain the item's effect.
             In addition, the sensor appears anywhere within \\rngmed range.
         """,
-        short_description="description",
+        short_description="Can allow you to see at a greater distance",
     ))
 
     apparel.append(MagicItem(
         name="Gloves of Spell Investment",
-        level=10,
+        level=5,
         material_type='glove',
         tags=['Mystic'],
         description="""
@@ -1118,26 +1118,38 @@ def generate_worn():
                 you can invest the magic of the spell in these gloves.
             If you do, the spell does not have its normal effect.
 
-            As a standard action, you can activate the gloves to use the last spell invested in the gloves in this way.
-            When you do, the spell has its normal effect.
-            This does not require \\glossterm<concentration> and does not cost an \\glossterm<action point>.
+            As a standard action, you can spend an \\glossterm<action point> to activate the gloves.
+            When you do, you cause the effect of the last spell invested in the gloves.
+            This does not require \\glossterm<concentration> or \\glossterm<somatic components> and does not cost an \\glossterm<action point>.
             After you use a spell in this way, the energy in the gloves is spent, and you must invest a new spell to activate the gloves again.
 
             If you remove either glove from your hand, the magic of the spell invested in the gloves is lost.
         """,
-        short_description="description",
+        short_description="Can invest a spell to cast later",
     ))
 
     apparel.append(MagicItem(
         name="Gloves of Spell Investment, Greater",
-        level=18,
+        level=11,
         material_type='glove',
         tags=['Mystic'],
         description="""
-            This item functions like the \\mitem<gloves of spell investment>, except that you can store up to two spells in the gloves.
+            This item functions like the \\mitem<gloves of spell investment>, except that
+                activating the gloves to gain the effect of an invested spell does not cost an \\glossterm<action point>.
+        """,
+        short_description="Can invest a spell to cast later for free",
+    ))
+
+    apparel.append(MagicItem(
+        name="Gloves of Spell Investment, Supreme",
+        level=19,
+        material_type='glove',
+        tags=['Mystic'],
+        description="""
+            This item functions like the \\mitem<greater gloves of spell investment>, except that you can store up to two spells in the gloves.
             When you activate the gauntlets, you choose which spell to use.
         """,
-        short_description="description",
+        short_description="Can invest two spells to cast later for free",
     ))
 
     # Other
