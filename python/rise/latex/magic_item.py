@@ -1,4 +1,5 @@
 from rise.latex.util import join
+from rise.statistics.rise_data import item_prices
 
 class MagicItem(object):
 
@@ -62,11 +63,17 @@ class MagicItem(object):
     def latex_tags(self):
         return ', '.join([f"\\glossterm<{tag}>" for tag in sorted(self.tags)]) if self.tags else ""
 
+    def price(self):
+        return item_prices[self.level]
+
+    def latex_table_row(self):
+        return f"{self.name} & \\nth<{self.level}> & {self.price()} gp & {self.short_description} & \\pageref<item:{self.name}> \\\\"
+
     def latex(self):
         return join(
             f"""
                 \\lowercase<\\hypertarget<item:{self.name}><>>\\label<item:{self.name}>
-                \\hypertarget<item:{self.name}><\\subsubsection<{self.name}\\hfill\\nth<{self.level}>>>
+                \\hypertarget<item:{self.name}><\\subsubsection<{self.name}\\hfill\\nth<{self.level}> ({self.price()} gp)>>
                 {self.description}
             """,
             self.latex_ability(),
