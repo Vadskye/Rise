@@ -85,7 +85,7 @@ def skill_box(name):
                 'class': 'number-label',
                 'name': f"roll_skill_{formatted_skill}",
                 'type': 'roll',
-                'value': f"@{{character_name}} uses {name}: [[d10 + @{{{formatted_skill}}}]]",
+                'value': f"@{{character_name}} uses {name}: [[d10 + @{{{formatted_skill}_total}}]]",
             },
             name
         ),
