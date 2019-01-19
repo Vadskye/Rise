@@ -104,7 +104,7 @@ def set_skill(a, s):
                     setAttrs({{
                         {s}_attribute: attributeModifier,
                         {s}_ranks: ranks,
-                        {s}_total: scaling + pointsModifier + negativeModiifer + Number(v.{s}_misc || 0){subtract_encumbrance},
+                        {s}_total: scaling + pointsModifier + negativeModifier + Number(v.{s}_misc || 0){subtract_encumbrance},
                     }});
                 }});
             }});
