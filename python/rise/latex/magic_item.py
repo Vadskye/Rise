@@ -17,6 +17,7 @@ class MagicItem(object):
             'gauntlet': ['bone', 'metal', 'wood'],
             'glove': ['leather'],
             'mask': ['textiles'],
+            'potion': ['alchemy'],
             'ring': ['bone', 'jewelry', 'metal', 'wood'],
             'shield': ['bone', 'metal', 'wood'],
             'staff': ['bone', 'wood'],
@@ -70,10 +71,11 @@ class MagicItem(object):
         return f"{self.name} & \\nth<{self.level}> & {self.price()} gp & {self.short_description} & \\pageref<item:{self.name}> \\\\"
 
     def latex(self):
+        level_text = f"\\nth<{self.level}>" if self.level >= 1 else "1/2"
         return join(
             f"""
                 \\lowercase<\\hypertarget<item:{self.name}><>>\\label<item:{self.name}>
-                \\hypertarget<item:{self.name}><\\subsubsection<{self.name}\\hfill\\nth<{self.level}> ({self.price()} gp)>>
+                \\hypertarget<item:{self.name}><\\subsubsection<{self.name}\\hfill{level_text} ({self.price()} gp)>>
                 {self.description}
             """,
             self.latex_ability(),
