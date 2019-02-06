@@ -2795,7 +2795,6 @@ def generate_mystic_spheres():
                 The creature's species is replaced with a random species from \\tref<Humanoid Reincarnations>.
                 Its appearance changes as necessary to match its new species, though it retains the general shape and distinguishing features of its original appearance.
                 The creature loses all attribute modifiers and abilities from its old species, and gains those of its new species.
-                If its species bonus feat is invalid for its new species, it must choose a new species bonus feat.
                 However, its languages are unchanged.
 
                 Coming back from the dead is an ordeal.
