@@ -576,7 +576,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         You normally have a number of \glossterm{insight points} equal to 1 \add your starting Intelligence.
         Some abilities can also grant insight points.
 
-        You can spend an \glossterm{insight point} to gain two skill points.
+        You can spend an \glossterm{insight point} to gain two \glossterm{skill points}.
         In addition, every class has at least one way to spend \glossterm{insight points} to learn additional abilities.
         The list of ways to spend \glossterm{insight points} on class abilities is given below.
         \begin{itemize}
@@ -591,8 +591,6 @@ It defines how attributes work and explains how to make physical attacks in comb
             \item Rogue: Trick maneuvers
             \item Warlock: Eldritch augments, pact spells
         \end{itemize}
-
-        In addition, you can spend \glossterm{insight points} on spells from the Spellwarped feat (see \featpcref{Spellwarped}).
 
 \section{Circumstances, Bonuses, and Penalties}
 
@@ -1269,7 +1267,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         \parhead{Auditory} Auditory abilities use sound to cause their effects.
         Creatures and objects that cannot hear the effect are immune to it.
 
-        \parhead{Cold} Cold abilities use cold \glossterm{energy}. It is possible to freeze liquids and perform similar feats with cold abilities.
+        \parhead{Cold} Cold abilities use cold \glossterm{energy}. It is possible to freeze liquids and have similar effects with cold abilities.
 
         \parhead{Compulsion} Compulsion abilities forcibly alter a creature's actions, but do not necessarily affect its opinions or personality.
         They have no effect on objects or creatures without minds.
@@ -1400,7 +1398,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             \end{dtabularx}
         \end{dtable}
 
-    \subsection{Magical and Mundane Abilities}
+    \subsection{Magical and Mundane Abilities}\label{Magical and Mundane Abilities}
 
         There are two types of abilities: magical abilities and mundane abilities.
 
@@ -1877,14 +1875,12 @@ It defines how attributes work and explains how to make physical attacks in comb
 
     As you accomplish challenges and defeats foes, you gain experience.
     If you have enough experience, you gain a level.
-    When you gain a level, you may gain new abilities from your class and the feats you have chosen.
-    You also gain some abilities at specific levels, as described in \trefnp{Character Advancement}.
+    You gain some abilities at specific levels, as described in \trefnp{Character Advancement}.
 
     A character that increases in level gains additional benefits.
     \begin{itemize}
         \item At 1st, 3rd, 6th, and 10th level, you gain an \glossterm{item slot}.
         \item At 2nd level, you gain access to \glossterm{insight points}.
-        \item At 2nd, 5th, and 9th level, you gain a feat (see \pcref{Feats}).
         \item At 3rd level, you gain access to \glossterm{legend points}.
         \item At 4th level, and every 4 levels thereafter, you gain a \glossterm{legacy item} upgrade (see \pcref{Legacy Items}).
         \item At 7th, 13th, and 19th level, you gain an additional \glossterm{recovery action point}.
@@ -1892,31 +1888,30 @@ It defines how attributes work and explains how to make physical attacks in comb
 
     \begin{dtable}
         \lcaption{Character Advancement}
-        \begin{dtabularx}{\columnwidth}{*{3}{>{\lcol}l} *{4}{>{\lcol}X}}
-            \tb{Level} & \tb{XP} & \tb{Feats} & \tb{Item Slots} & \tb{Legacy Item}\fn{1} & \tb{Recovery AP}
+        \begin{dtabularx}{\columnwidth}{*{2}{>{\lcol}l} *{4}{>{\lcol}X}}
+            \tb{Level} & \tb{XP}  & \tb{Item Slots} & \tb{Legacy Item}\fn{1} & \tb{Recovery AP}
             \\\bottomrule
-            1st          & 0      & \tdash\fn{2}& 1 & \tdash & 3
-            \\ 2nd       & 20     & 1      & \tdash & \tdash & \tdash
-            \\ 3rd\fn{3} & 50     & \tdash & 2      & \tdash & \tdash
-            \\ 4th       & 90     & \tdash & \tdash & 1      & \tdash
-            \\ 5th       & 150    & 2      & \tdash & \tdash & \tdash
-            \\ 6th       & 230    & \tdash & 3      & \tdash & \tdash
-            \\ 7th       & 350    & \tdash & \tdash & \tdash & 4
-            \\ 8th       & 510    & \tdash & \tdash & 2      & \tdash
-            \\ 9th       & 750    & 3      & \tdash & \tdash & \tdash
-            \\ 10th      & 1,050  & \tdash & 4      & \tdash & \tdash
-            \\ 11th      & 1,550  & \tdash & \tdash & \tdash & \tdash
-            \\ 12th      & 2,200  & \tdash & \tdash & 3      & \tdash
-            \\ 13th      & 3,150  & \tdash & \tdash & \tdash & 5
-            \\ 14th      & 4,450  & \tdash & \tdash & \tdash & \tdash
-            \\ 15th      & 6,350  & \tdash & \tdash & \tdash & \tdash
-            \\ 16th      & 8,900  & \tdash & \tdash & 4      & \tdash
-            \\ 17th      & 13,000 & \tdash & \tdash & \tdash & \tdash
-            \\ 18th      & 18,000 & \tdash & \tdash & \tdash & \tdash
-            \\ 19th      & 25,500 & \tdash & \tdash & \tdash & 6
-            \\ 20th      & 36,000 & \tdash & \tdash & 5      & \tdash
+            1st          & 0      & 1 & \tdash & 3
+            \\ 2nd       & 20     & \tdash & \tdash & \tdash
+            \\ 3rd\fn{2} & 50     & 2      & \tdash & \tdash
+            \\ 4th       & 90     & \tdash & 1      & \tdash
+            \\ 5th       & 150    & \tdash & \tdash & \tdash
+            \\ 6th       & 230    & 3      & \tdash & \tdash
+            \\ 7th       & 350    & \tdash & \tdash & 4
+            \\ 8th       & 510    & \tdash & 2      & \tdash
+            \\ 9th       & 750    & \tdash & \tdash & \tdash
+            \\ 10th      & 1,050  & 4      & \tdash & \tdash
+            \\ 11th      & 1,550  & \tdash & \tdash & \tdash
+            \\ 12th      & 2,200  & \tdash & 3      & \tdash
+            \\ 13th      & 3,150  & \tdash & \tdash & 5
+            \\ 14th      & 4,450  & \tdash & \tdash & \tdash
+            \\ 15th      & 6,350  & \tdash & \tdash & \tdash
+            \\ 16th      & 8,900  & \tdash & 4      & \tdash
+            \\ 17th      & 13,000 & \tdash & \tdash & \tdash
+            \\ 18th      & 18,000 & \tdash & \tdash & \tdash
+            \\ 19th      & 25,500 & \tdash & \tdash & 6
+            \\ 20th      & 36,000 & \tdash & 5      & \tdash
         \end{dtabularx}
         1. This is the number of abilities you gain with your \glossterm{legacy item} (see \pcref{Legacy Items}). \\
-        2. All species grant a bonus feat at 1st level. The feat must be chosen from a specific list of bonus feats unique to that species (see \pcref{Species Bonus Feats}). \\
-        3. You gain access to \glossterm{legend points} at this level.
+        2. You gain access to \glossterm{legend points} at this level.
     \end{dtable}
