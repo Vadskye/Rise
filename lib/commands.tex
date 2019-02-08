@@ -158,6 +158,26 @@
     }:
 }
 
+% args:
+%   pre-spell header spell name, spell name modifier (Greater, etc.)
+\DeclareDocumentCommand{\maneuverhead}{o m o}
+{
+    \IfValueTF{#1}
+    {\item[#1]}
+    {\item}
+    \textbf{
+        \IfValueTF{#3}
+        {
+            \hyperlink{maneuver:#3~#2}{#2,~#3}
+            \hypertarget{maneuverlist:#3~#2}
+        }
+        {
+            \hyperlink{maneuver:#2}{#2}
+            \hypertarget{maneuverlist:#2}
+        }
+    }:
+}
+
 \DeclareDocumentCommand{\imath}{m}
 {
     %\pgfmathparse{int(floor(#1))}\pgfmathresult
