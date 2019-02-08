@@ -653,7 +653,7 @@ def group_by_source(maneuvers):
 def latex_for_source(source, maneuvers):
     maneuver_headers = []
     for maneuver in sorted(maneuvers, key=lambda m: m.name):
-        maneuver_headers.append(f"\\spellhead<{maneuver.name}> {maneuver.short_description}.")
+        maneuver_headers.append(f"\\maneuverhead<{maneuver.name}> {maneuver.short_description}.")
 
     maneuver_list = "\n".join(maneuver_headers)
     return f"""
