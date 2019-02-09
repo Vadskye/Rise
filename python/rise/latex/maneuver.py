@@ -37,7 +37,8 @@ class Maneuver(object):
 
         return f"""
             \\lowercase<\\hypertarget<maneuver:{self.name}><>>\\label<maneuver:{self.name}>
-            \\begin<{ability_type}><\\hypertarget<maneuver:{self.name}><{self.name}>>{tag_text}
+            \\hypertarget<maneuver:{self.name}><>
+            \\begin<{ability_type}><{self.name}>{tag_text}
                 {self.effect_text.strip()}
 
                 \\rankline
