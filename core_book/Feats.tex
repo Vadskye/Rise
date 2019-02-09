@@ -90,7 +90,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featref{Bardic Exemplar}                  & Perform Specialization     & Gain magical performance abilities & Magical & \featpref{Bardic Exemplar}                  \\
         \featref{Bluff Specialization}             & Mastered Bluff             & Improve use of chosen skill        & \tdash  & \featpref{Bluff Specialization}             \\
         \featref{Climb Specialization}             & Mastered Climb             & Improve use of chosen skill        & \tdash  & \featpref{Climb Specialization}             \\
-        \featref{Craft Specialization}             & Mastered Creaft            & Improve use of chosen skill        & \tdash  & \featpref{Craft Specialization}             \\
+        \featref{Craft Specialization}             & Mastered Craft             & Improve use of chosen skill        & \tdash  & \featpref{Craft Specialization}             \\
         \featref{Creature Handling Specialization} & Mastered Creature Handling & Improve use of chosen skill        & \tdash  & \featpref{Creature Handling Specialization} \\
         \featref{Devices Specialization}           & Mastered Devices           & Improve use of chosen skill        & \tdash  & \featpref{Devices Specialization}           \\
         \featref{Disguise Specialization}          & Mastered Disguise          & Improve use of chosen skill        & \tdash  & \featpref{Disguise Specialization}          \\
@@ -112,10 +112,10 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \tb{Casting Feats}\label{Casting Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
         \featref{Boongiver}                 & Spellcasting ability              & Improve ability to cast spells on allies     & Magical & \featpref{Boongiver}                 \\
-        \featref{Eldritch Knight}           & Spellcasting ability              & Fight with sword and spell together          & \tdash  & \featpref{Eldritch Knight}           \\
         \featref{Innate Magic}              & Spellcasting ability, Wil 2       & Cast spells without words or gestures        & Magical & \featpref{Innate Magic}              \\
         \featref{Miscaster}                 & Spellcasting ability              & Miscast spells intentionally and effectively & Magical & \featpref{Miscaster}                 \\
         \featref{Mystic Archer}             & Spellcasting ability              & Imbue projectiles with magic                 & Magical & \featpref{Mystic Archer}             \\
+        \featref{Spellsword}                & Spellcasting ability              & Fight with sword and spell together          & \tdash  & \featpref{Spellsword}           \\
         \featref{Sphere Focus: Aeromancy}   & \sphere{Aeromancy} sphere access   & Improve casting with chosen sphere           & Magical & \featpref{Sphere Focus: Aeromancy}   \\
         \featref{Sphere Focus: Aquamancy}   & \sphere{Aquamancy} sphere access   & Improve casting with chosen sphere           & Magical & \featpref{Sphere Focus: Aquamancy}   \\
         \featref{Sphere Focus: Astromancy}  & \sphere{Astromancy} sphere access  & Improve casting with chosen sphere           & Magical & \featpref{Sphere Focus: Astromancy}  \\
@@ -171,10 +171,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Specialization} You gain a \plus2 bonus to the Acrobatics skill.
 
-        \ff[4]{Rapid Balance} Using Acrobatics to balance on slippery or narrow surfaces does not reduce your speed.
+        \ff[4]{Combat Tumble} You can use the \textit{combat tumble} ability as a \glossterm{move action}.
+        \begin{apability}{Combat Tumble}
+            You can move up to your normal movement speed.
+            During this movement, you can move through enemy spaces as if they were unoccupied.
+        \end{apability}
 
-        \ff[7]{Surface Tolerance} You reduce DR modifiers for surface conditions on Acrobatics checks to balance by 2.
-        This allows you to ignore minor surface conditions, such as slippery surfaces, when balancing.
+        \ff[7]{Greater Rapid Stand} You can use the \textit{rapid stand} ability as a \glossterm{free action} (see \pcref{Rapid Stand}).
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
@@ -191,10 +194,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[19]{Greater Surface Tolerance} The DR modifier reduction from your \textit{surface tolerance} ability increases to 5.
-        This allows you to ignore almost all surface conditions when balancing.
-
-        \ff[20]{Aerial Supremacy} You can move at full speed while using your \textit{air dancer} ability.
+        \ff[19]{Greater Air Dancer} You can move at full speed while using your \textit{air dancer} ability.
         In addition, for each round that you spend using your \textit{air dancer} ability, the DR increases by 2 instead of by 5.
     \end{feat}
 
@@ -203,19 +203,24 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Lightning Reflexes} You gain a \plus2 bonus to Reflex defense and \glossterm{initiative} checks.
 
-        \ff[4]{Evasion} When you are attacked by an ability that affects an area, you can use your Reflex defense in place of any other defenses against that attack.
-
-        \ff[7]{Spring Attack} You can use the \textit{spring attack} ability as a standard action.
+        \ff[4]{Spring Attack} You can use the \textit{spring attack} ability as a standard action.
         \begin{apability}{Spring Attack}
-            Move up to your movement speed and make a \glossterm{strike} with a \plus1d bonus to damage.
+            Move up to your movement speed and make a melee \glossterm{strike} with a \plus1d bonus to damage.
             If you use this ability during the \glossterm{action phase}, you may continue moving during the \glossterm{delayed action phase} if you have remaining movement available.
         \end{apability}
 
+        \ff[7]{Evasion} When you are attacked by an ability that affects an area, you can use your Reflex defense in place of any other defenses against that attack.
+
         \ff[10]{Greater Lightning Reflexes} The bonuses from your \textit{lightning reflexes} ability increase to \plus4.
+
+        \ff[10]{Greater Spring Attack} The damage bonus from your \textit{spring attack} ability increases to \plus2d.
 
         \ff[13]{Dodge} You gain a \plus1 bonus to Armor defense.
 
-        \ff[16]{Greater Spring Attack} The damage bonus from your \textit{spring attack} ability increases to \plus2d.
+        \ff[16]{Greater Evasion} You take half damage from abilities that affect areas.
+        You suffer non-damaging effects from such abilities normally.
+
+        \ff[16]{Supreme Spring Attack} The damage bonus from your \textit{spring attack} ability increases to \plus3d.
 
         \ff[19]{Supreme Lightning Reflexes} The bonuses from your \textit{lightning reflexes} ability increase to \plus6.
     \end{feat}
@@ -228,8 +233,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         % TODO: clarify stacking with existing senses
         \ff[4]{Extraordinary Senses} You gain one of the following senses: \glossterm{blindsense} (20 ft.), \glossterm{darkvision} (50 ft.), \glossterm{low-light vision}, \glossterm{scent}, or \glossterm{tremorsense} (20 ft.).
 
-        \ff[7]{Distance Tolerance} You reduce DR modifiers for distance on Awareness rolls by 2.
-        This usually allows you to ignore up to 100 feet of distance.
+        \ff[7]{Quick Scan} When you use the \textit{search} ability, you can notice things in a \areasmall radius within \rngclose range (see \pcref{Search}).
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
@@ -237,10 +241,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[19]{Greater Distance Tolerance} The reduction of DR modifiers for distance increases to 5.
-        This usually allows you to ignore up to 500 feet of distance.
-
-        \ff[20]{Supreme Extraordinary Senses} You can choose an additional sense from the list given in your \textit{greater extraordinary senses} ability.
+        \ff[19]{Supreme Extraordinary Senses} You can choose an additional sense from the list given in your \textit{greater extraordinary senses} ability.
         In addition, the range of all senses gained from this feat is doubled.
     \end{feat}
 
@@ -322,7 +323,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Specialization} You gain a \plus2 bonus to the Bluff skill.
 
         \ff[4]{Sustained Distraction} If you successfully distract a creature with the \textit{distract} ability of the Bluff skill, you can sustain that distraction on that creature with a \glossterm{minor action} as long as you continue to be distracting.
-        You must make a new check each round, and the DR increases by 2 for each round you have distracted the creature.
+        You must make a new check each round, and the DR increases by 2 for each consecutive round that you have distracted the creature.
         For details, see \pcref{Distract}.
 
         \ff[7]{Deceive Magic}[Magical] Any magical abilities which detect lies are unable to detect lies you speak.
@@ -339,14 +340,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[19]{Greater Deceive Magic}[Magical] When you impersonate a creature, if your Bluff check is high enough, magical abilities treat you as if you were that creature.
-        % is this DR high enough?
-        The DR is equal to 10 \add the \glossterm{power} of the ability you are deceiving.
-        % does this work mechanically?
-        For example, if you impersonate an undead creature, the \spell{inflict wounds} spell would heal you.
-        This does not grant you any abilities associated with creatures you impersonate.
-
-        \ff[20]{Greater Dual Speech}[Magical] When you use your \textit{dual speech} ability, you can speak entirely different words with your two voices.
+        \ff[19]{Greater Dual Speech}[Magical] When you use your \textit{dual speech} ability, you can speak entirely different words with your two voices.
     \end{feat}
 
     \begin{feat}{Boongiver}{Casting, Magical}
@@ -406,7 +400,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         For details about how to fight while unarmed, see \pcref{Unarmed Combat}.
         This ability does not stack with the ability of the same name from the Unfettered Warrior monk archetype (see \pcref{Unfettered Warrior}).
 
-        \ff[4]{Grapple Expertise} You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability (see \pcref{Grapple}).
+        \ff[4]{Grapple Expertise} You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability (see \pcref{Grapple}), as well as with all grapple actions (see \pcref{Grapple Actions}).
 
         \ff[7]{Takedown} You can use the \textit{takedown} ability as a standard action.
         \begin{apability}{Takedown}
@@ -418,7 +412,11 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[13]{Greater Takedown} You gain a \plus1 bonus to accuracy with your \textit{takedown} ability.
 
-        \ff[16]{Greater Grapple Expertise} The bonus from your \textit{grapple expertise} ability increases to \plus3.
+        \ff[13]{Greater Grapple Expertise} The bonus from your \textit{grapple expertise} ability increases to \plus3.
+
+        \ff[16]{Pin Mastery} You can use the \textit{pin} ability with only one free hand (see \pcref{Pin}).
+
+        \ff[19]{Supreme Takedown} The accuracy bonus from your \textit{greater takedown} ability increases to \plus2.
 
         \ff[19]{Supreme Unarmed Warrior} The damage bonus from your \textit{unarmed warrior} ability increases to \plus4d.
     \end{feat}
@@ -438,7 +436,9 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[7]{Angel Wings} You gain feathery wings that sprout from your back.
         These wings grant you a glide speed equal to your \glossterm{base speed} (see \pcref{Gliding}).
-        The wings themselves are physical, but the ability to fly and glide with them is \glossterm{magical}.
+        The wings themselves are \glossterm{mundane}, but the ability to fly and glide with them is \glossterm{magical}.
+
+        % TODO: needs additional 10th level ability
 
         \ff[10]{Greater Holy Smite} The damage bonus from your \textit{holy smite} ability increases to \plus3d.
 
@@ -449,9 +449,9 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[16]{Supreme Holy Smite} The damage bonus from your \textit{holy smite} ability increases to \plus4d.
 
-        \ff[19]{Greater Divine Favor} The bonuses from your \textit{divine favor} ability increase to \plus2.
+        \ff[16]{Greater Divine Favor} The bonuses from your \textit{divine favor} ability increase to \plus2.
 
-        \ff[20]{Greater Angelic Flight} You can use your \textit{angelic flight} ability without spending an \glossterm{action point}.
+        \ff[19]{Greater Angelic Flight} Your \textit{angelic flight} ability lasts until the end of the next round.
     \end{feat}
 
     \begin{feat}{Class Versatility}{Class}
@@ -472,9 +472,9 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \item Extra \glossterm{hit points} equal to half your level
         \end{itemize}
 
-        \ff[13]{Expanded Versatility} You gain the \textit{versatile expertise} ability again.
+        \ff[13]{Expanded Versatility} You gain an additional \textit{versatile expertise} ability.
 
-        \ff[19]{Expanded Versatility} You gain the \textit{versatile expertise} ability again.
+        \ff[19]{Expanded Versatility} You gain an additional \textit{versatile expertise} ability.
     \end{feat}
 
     \begin{feat}{Class Versatility, Greater}{Class}
@@ -515,9 +515,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
         \ff[19]{Greater Climb Speed} Your climb speed increases to be equal to your \glossterm{base speed}.
-
-        \ff[20]{Personal Gravity}[Magical] You can wallrun on ceilings in the same way you wallrun on walls.
-        In addition, for every round that you spend wallrunning on any surface, the DR increases by 2 instead of by 5.
     \end{feat}
 
     \begin{feat}{Craft Specialization}{Skill}
@@ -527,27 +524,23 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[4]{Craft Magic Item}[Magical] You can imbue items with magic using your crafting skill.
         Imbuing an item with magic takes material components, as described in \pcref{Magic Item Creation}.
-        It takes you one hour per 10 gp of material components to create an item.
+        You can craft an item with an item level equal to your level or one item level lower than your level with 24 hours of continuous work.
+        You can make weaker items more quickly.
+        For every two item levels lower than your level, the time required to craft an item is halved, to a minimum of 15 minutes.
 
         You can also mend a broken magic item if it is one that you could make.
         Doing so costs a tenth of the raw materials and a quarter of the time it would take to craft that item in the first place.
         You cannot mend a \glossterm{destroyed} magic item.
 
         \ff[7]{Crafting Savant} You gain two additional \glossterm{skill points} which can only be spent on Craft skills.
-        In addition, crafting magic items takes you one hour per 100 gp of material components.
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
         \ff[13]{Item Attunement} You gain an additional \glossterm{item slot}.
-        In addition, crafting magic items takes you one hour per 500 gp of material components.
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[19]{}
-        Crafting magic items takes you one hour per 2,500 gp of material components.
-
-        \ff[20]{Greater Item Attunement} You gain an additional \glossterm{item slot}.
-        In addition, crafting magic items takes you one hour per 12,500 gp of material components.
+        \ff[19]{Greater Item Attunement} You gain an additional \glossterm{item slot}.
     \end{feat}
 
     \begin{feat}{Creature Handling Specialization}{Skill}
@@ -555,36 +548,35 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Specialization} You gain a \plus2 bonus to the Creature Handling skill.
 
-        \ff[4]{Sustained Pacify} You can sustain the \textit{pacify} ability from the Creature Handling skill as a minor action, rather than as a standard action (see \pcref{Pacify}).
-
-        \ff[7]{Efficient Training} You can teach a creature a trick with 12 hours of work, split as you choose, rather than in a week of 4 hour sessions (see \pcref{Training Creatures}).
+        \ff[4]{Efficient Training} You can teach a creature a trick with 12 hours of work, split as you choose, rather than in a week of 4 hour sessions (see \pcref{Training Creatures}).
         In addition, you can train creatures to learn two bonus tricks beyond their normal maximum (see \pcref{Bonus Tricks}).
 
-        \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
-
-        \ff[13]{Battleforged Training} You can teach a creature the Battleforged trick.
-        The DR to train the trick is 20.
+        \ff[7]{Battleforged Training} You can teach a creature the Battleforged trick.
+        The DR to train the trick is 15.
         A creature with the trick gains the following benefits:
         \begin{itemize}
             \item Its maximum hit points increase by an amount equal to its level.
             \item It gains a \plus1 bonus to accuracy with all attacks.
             \item It gains a \plus1d bonus to damage with \glossterm{strikes}.
         \end{itemize}
-        In addition, the number of bonus tricks you can teach from your \textit{efficient training} ability increases to four.
 
-        \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
+        \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
-        \ff[19]{Rapid Pacify} You can use the \textit{pacify} ability from the Creature Handling skill as a minor action, rather than as a standard action.
-
-        \ff[20]{Greater Battleforged Training} You can teach a creature that has learned the Battleforged trick the Greater Battleforged trick.
-        The DR to train the trick is 30.
+        \ff[13]{Greater Battleforged Training} You can teach a creature that has learned the Battleforged trick the Greater Battleforged trick.
+        The DR to train the trick is 25.
         A creature with the trick gains the following benefits, which replace the benefits of the Battleforged trick:
         \begin{itemize}
             \item Its maximum hit points increase by an amount equal to twice its level.
             \item It gains a \plus2 bonus to accuracy with all attacks.
             \item It gains a \plus2d bonus to damage with \glossterm{strikes}.
         \end{itemize}
-        In addition, the number of bonus tricks you can teach from your \textit{efficient training} ability increases to six.
+
+        \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
+
+        \cf[19]{Greater Efficient Training} You can teach a creature with 4 hours of work, split as you choose (see \pcref{Training Creatures}).
+        In addition, the number of bonus tricks you can teach from your \textit{efficient training} ability increases to four.
+
+        \ff[19]{Rapid Pacify} You can use the \textit{pacify} ability from the Creature Handling skill as a \glossterm{minor action}, rather than as a standard action.
     \end{feat}
 
     \begin{feat}{Devices Specialization}{Skill}
@@ -607,9 +599,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[19]{Durable Improvization} Devices you create with the \textit{improvise} ability last for twice as many uses before they break.
-
-        \ff[20]{Greater Disable Arcana}[Magical] You can disable all magical effects on objects or areas, not just spell effects.
+        \ff[19]{Greater Disable Arcana}[Magical] You can disable all magical effects on objects or areas, not just spell effects.
     \end{feat}
 
     \begin{feat}{Disguise Specialization}{Skill}
@@ -636,6 +626,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \end{attuneability}
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
+
+        \ff[19]{Greater Quick Change} You can use your \textit{quick change} ability without spending an \glossterm{action point}.
     \end{feat}
 
     \begin{feat}{Draconic Heritage}{Bloodline}
@@ -707,7 +699,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[4]{Focused Strike} You can use the \textit{focused strike} ability as a standard action.
         \begin{apability}{Focused Strike}
             Make a melee \glossterm{strike}.
-            If you are not threatened by more than one creature, you gain a \plus2 bonus to \glossterm{accuracy} with the strike.
+            If you are not \glossterm{threatened} by more than one creature, you gain a \plus2 bonus to \glossterm{accuracy} with the strike.
             If you are the only creature threatening your target, you gain a \plus2d bonus to damage with the strike.
         \end{apability}
 
@@ -723,37 +715,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[16]{Supreme Focused Strike} The damage bonus from your \textit{focused strike} ability increases to \plus3d.
 
-        \ff[19]{Legendary Duelist} You are treated as being threatened by one fewer creature than you actually are for the purpose of abilities from this feat.
-    \end{feat}
-
-    \begin{feat}{Eldritch Knight}{Spell}
-        \featpre Ability to cast a spell.
-
-        \ff[1]{Combat Caster} You gain a \plus2 bonus to \glossterm{concentration} checks made to use spells and rituals.
-        In addition, you reduce your \glossterm{encumbrance} by 1 when determining your \textit{arcane spell failure} (if any).
-
-        \ff[4]{Imbue Weapon}[Magical] When you cast a spell that affects a single target, you can use the \textit{imbue weapon} ability.
-        \begin{attuneability}{Imbue Weapon}[\glossterm{Attune} (self)]
-            The spell does not have its effect immediately, and you regain the action point used to cast the spell (if any).
-            Instead, its power is imbued in a melee weapon you hold.
-
-            As a standard action, you can make a melee \glossterm{strike} using that weapon.
-            If you do, the spell affects the target of the strike.
-            After the spell takes effect, this ability's duration ends.
-        \end{attuneability}
-
-        \ff[7]{Spellsword Conduit}[Magical] You can cast spells using a melee weapon as if it were an implement (see \pcref{Implements}).
-        When you do, you gain a \plus1 bonus to \glossterm{accuracy} with that weapon until the end of the next round.
-
-        \ff[10]{Greater Combat Caster} The \glossterm{concentration} bonus from your \textit{combat caster} ability increases to \plus4.
-        In addition, the \glossterm{encumbrance} reduction increases to 2.
-
-        \ff[13]{Greater Imbue Weapon}[Magical] You can maintain two separate attunements to your \textit{imbue weapon} ability.
-
-        \ff[16]{Supreme Combat Caster} The \glossterm{concentration} bonus from your \textit{combat caster} ability increases to \plus6.
-        In addition, the \glossterm{encumbrance} reduction increases to 3.
-
-        \ff[19]{Greater Spellsword Conduit}[Magical] The accuracy bonus from your \textit{spellsword conduit} ability increases to \plus2.
+        \ff[19]{Legendary Duelist} You are treated as being \glossterm{threatened} by one fewer creature than you actually are for the purpose of abilities from this feat.
     \end{feat}
 
     \begin{feat}{Escape Artist Specialization}{Skill}
@@ -789,28 +751,29 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{feat}{Executioner}{Combat}
         \featpres Starting Strength of 1, starting Perception of 2.
 
-        \ff[1]{Purge the Weak} You gain a \plus1 bonus to \glossterm{accuracy} against \glossterm{bloodied} creatures.
+        \ff[1]{Blood Sense}[Magical] You automatically know the location of all \glossterm{bloodied} living creatures within 50 feet of you, regardless of concealment or invisibility.
+        You must have \glossterm{line of effect} to a creature to sense it in this way.
 
         \ff[4]{Execution} You can use the \textit{execution} ability as a standard action.
         \begin{apability}{Execution}
             Make a \glossterm{strike}.
-            At the end of the current phase, if the target is \glossterm{bloodied}, it takes additional damage equal to the damage you dealt to it with your strike.
-            This additional damage is of the same type as the original damage you dealt with the strike.
+            If the target is \glossterm{bloodied}, you gain a \plus3d bonus to damage with the strike.
         \end{apability}
 
-        \ff[7]{Blood Sense}[Magical] You automatically know the location of all \glossterm{bloodied} living creatures within 50 feet of you, regardless of concealment or invisibility.
-        You must have \glossterm{line of effect} to a creature to see it in this way.
+        \ff[7]{Purge the Weak} You gain a \plus1 bonus to \glossterm{accuracy} against \glossterm{bloodied} creatures.
 
-        \ff[10]{Greater Execution} You gain a \plus1d bonus to damage with the strike from your \textit{execution} ability.
+        \ff[10]{Greater Blood Sense}[Magical] Your \textit{blood sense} ability allows you to know the location of all living creatures within range, not just bloodied living creatures.
+        You can still automatically identify which creatures are bloodied and which creatures are not bloodied.
 
-        \ff[13]{Greater Purge the Weak} The accuracy bonus from your \textit{purge the weak} ability increases to \plus2.
+        \ff[10]{Greater Execution} The damage bonus from your \textit{execution} ability increases to \plus4d.
 
-        \ff[16]{Greater Blood Sense}[Magical] Your \textit{blood sense} ability allows you to know the location of all living creatures within range, not just bloodied living creatures.
-        You must have \glossterm{line of effect} to a creature to see it.
+        \ff[13]{Bloody Resilience} You gain a \plus2 bonus to Fortitude defense.
 
-        \ff[19]{Supreme Execution} The damage bonus from your \textit{greater execution} ability increases to \plus2d.
+        \ff[16]{Greater Purge the Weak} The bonus from your \textit{purge the weak} ability increases to \plus2.
 
-        \ff[20]{Blood Sight}[Magical] Your \textit{blood sense} ability allows you to see creatures perfectly instead of only knowing their location.
+        \ff[16]{Supreme Execution} The damage bonus from your \textit{execution} ability increases to \plus5d.
+
+        \ff[19]{Blood Sight}[Magical] Your \textit{blood sense} ability allows you to see all living creatures within range perfectly instead of only knowing their location.
     \end{feat}
 
     \begin{feat}{Guardian}{Combat}
@@ -822,6 +785,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
             The target gains a \plus2 bonus to Armor defense.
             However, you take a \minus2 penalty to Armor defense.
             This effect lasts until the end of the round.
+
+            Because this ability has the \glossterm{Swift} tag, these bonuses and penalties apply against attacks made in the current phase.
         \end{freeability}
 
         \ff[4]{Binding Strike} You can use the \textit{binding strike} ability as a standard action.
@@ -834,25 +799,24 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \crit The target is \glossterm{decelerated} as a \glossterm{condition}.
         \end{apability}
 
-        \ff[7]{Defender} You gain a \plus2 bonus to \glossterm{threat}.
+        \ff[7]{Resolute Defender} You gain a \plus1 bonus to Mental defense and a \plus2 bonus to \glossterm{threat}.
 
-        \ff[10]{Redirection}[Magical] When you use your \textit{protect} ability, you can use the \textit{redirection} ability.
-        \begin{apability}{Redirection}
+        \ff[10]{Redirection}[Magical] When you use your \textit{protect} ability, you can use the \textit{redirection} ability as part of the same action.
+        \begin{apability}{Redirection}[\glossterm{Swift}]
+            Choose a target of your \textit{protect} ability.
             You suffer all effects from \glossterm{strikes} that hit the target in place of the target until the end of the round.
             Any abilities you have that would reduce or negate the effects of the attack have no effect.
         \end{apability}
 
-        \ff[13]{Certain Bind} You gain a \plus1 bonus to \glossterm{accuracy} with your \textit{binding strike} ability.
+        \ff[13]{Greater Binding Strike} You gain a \plus1 bonus to \glossterm{accuracy} with your \textit{binding strike} ability.
 
-        \ff[13]{Greater Defender} The threat bonus from your \textit{defender} ability increases to \plus4.
+        \ff[13]{Greater Resolute Defender} The defense bonus from your \textit{resolute defender} ability increases to \plus2, and the threat bonus increases to \plus4.
 
-        \ff[16]{Expanded Redirection}[Magical] When you use your \textit{redirection} ability, you redirect the effects of all attacks, not just \glossterm{strikes}.
+        \ff[16]{Greater Redirection}[Magical] When you use your \textit{redirection} ability, you redirect the effects of all attacks, not just \glossterm{strikes}.
 
-        \ff[19]{Supreme Certain Bind} The accuracy bonus from your \textit{certain bind} ability increases to \plus3.
+        \ff[19]{Supreme Binding Strike} The accuracy bonus from your \textit{greater binding strike} ability increases to \plus2.
 
-        \ff[19]{Supreme Defender} The bonus from your \textit{defender} ability increases to \plus6.
-
-        \ff[20]{Supreme Protector} When you use your \textit{protect} ability, you may target any number of willing creatures adjacent to you.
+        \ff[19]{Greater Protect} When you use your \textit{protect} ability, you may target any number of willing creatures adjacent to you.
     \end{feat}
 
     \begin{feat}{Heal Specialization}{Skill}
@@ -876,13 +840,11 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
-        \ff[13]{Supreme Healing Touch} You can use your \textit{healing touch} ability without spending an \glossterm{action point}.
-
-        \ff[13]{Greater Purging Touch} You can use your \textit{purging touch} ability without spending an \glossterm{action point}.
+        \ff[13]{Lifesaver} You can use the \textit{first aid} ability as a \glossterm{minor action} (see \pcref{First Aid}).
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[19]{Lifesaver} You can stabilize dying creatures as a \glossterm{minor action}.
+        \ff[19]{Paragon of Healing} You can use your \textit{healing touch} and \textit{purging touch} abilities without spending an \glossterm{action point}.
     \end{feat}
 
     \begin{feat}{Innate Magic}{Casting, Magical}
@@ -912,20 +874,18 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Specialization} You gain a \plus2 bonus to the Intimidate skill.
 
-        \ff[4]{Demoralizing Blow} You can use the \textit{demoralizing blow} ability as a standard action.
-        \begin{apability}{Demoralizing Blow}
-            Make a \glossterm{strike}.
-            In addition to the effects of the strike, you can make an attack vs. Mental against the target.
-            Your \glossterm{accuracy} is equal to your Intimidate skill.
-            \hit The target is \shaken by you as a \glossterm{condition}.
-        \end{apability}
-
-        \ff[7]{Frightening Demoralization} If you get a \glossterm{critical hit} when you use the \textit{demoralize} or \textit{demoralizing blow} abilities, the target is \frightened by you instead of being shaken.
+        \ff[4]{Greater Demoralize} When you use the \textit{demoralize} ability, the target is \frightened by you instead of being shaken.
         See \pcref{Demoralize}, for details.
+
+        \ff[7]{Threatening Foe} The threat bonus from your \textit{augment threat} ability increases to \plus4 (see \pcref{Augment Threat}).
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
+        \ff[13]{Mass Demoralize} When you use the \textit{demoralize} ability, you can affect any number of targets within a \areamed radius within \rngmed range.
+
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
+
+        \ff[19]{Supreme Demoralize} When you use the \textit{demoralize} ability, the target is \panicked by you instead of being shaken.
     \end{feat}
 
     \begin{feat}{Iron Will}{General}
@@ -954,11 +914,12 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Specialization} You gain a \plus2 bonus to the Jump skill.
 
-        \ff[4]{Instant Leap} You must move at least five feet before jumping to have a running start, rather than twenty feet (see \pcref{Running Start}).
+        \ff[4]{Instant Leap} You suffer no penalty for jumping without a running start (see \pcref{Running Start}).
 
         \ff[7]{Featherlight Leap}[Magical] You can use the \textit{featherlight leap} ability as a \glossterm{free action}.
         \begin{apability}{Featherlight Leap}[\glossterm{Swift}]
             Your maximum height for jumps during the current phase is equal to your Jump check result, rather than half your Jump check result.
+            This does not affect the forward distance you can reach with your jumps.
         \end{apability}
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
@@ -967,9 +928,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[19]{Greater Instant Leap} You are always considered to have a running start when jumping, even when rebounding off of objects (see \pcref{Rebounding Leap}).
-
-        \ff[20]{Impact Tolerance} You are immune to \glossterm{falling damage}.
+        \ff[19]{Impact Tolerance} You are immune to \glossterm{falling damage}.
     \end{feat}
 
     \begin{feat}{Knowledge Specialization}{Skill}
@@ -983,7 +942,11 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
+        \ff[13]{Experienced Defense} You gain a \plus1 bonus to Fortitude, Reflex, and Mental defenses. 
+
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
+
+        \ff[19]{Greater Experienced Defense} You gain a \plus1 bonus to Armor defense.
     \end{feat}
 
     \begin{feat}{Leadership}{Combat}
@@ -1005,15 +968,15 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[10]{Greater Bolster} The healing from your \textit{bolster} ability increases to twice your Willpower.
 
-        \ff[10]{Greater Battle Command} The target of your \textit{battle command} ability also gains a \plus2 bonus to \glossterm{power} with \glossterm{mundane} abilities.
+        \ff[10]{Greater Battle Command} The target of your \textit{battle command} ability also gains a \plus1 bonus to \glossterm{accuracy} with the strike.
 
         \ff[13]{Greater Commanding Presence} The bonus from your \textit{commanding presence} ability increases to \plus4.
 
         \ff[16]{Supreme Bolster} The healing from your \textit{bolster} ability increases to three times your Willpower.
 
-        \ff[19]{Supreme Battle Command} The power bonus from your \textit{greater battle command command} ability increases to \plus4.
+        \ff[16]{Supreme Battle Command} The accuracy bonus from your \textit{greater battle command} ability increases to \plus2.
 
-        \ff[20]{War Leader} The area affected by your \textit{bolster} and \textit{inspiring presence} abilities increases to an \areahuge radius.
+        \ff[19]{War Leader} The area affected by your \textit{bolster} and \textit{inspiring presence} abilities increases to an \areahuge radius.
     \end{feat}
 
     \begin{feat}{Linguistics Specialization}{Skill}
@@ -1028,8 +991,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \begin{freeability}{Language Focus}
             If you had access to written material on the language, including from a teacher, you can read or write the language.
             If you had access to a speaker of the language, you can speak and understand the language.
-
-            Similarly, if the creature teaching you was unable to commu, you cannot read or write the language.
 
             This ability's effect lasts until you use this ability again.
         \end{freeability}
@@ -1066,15 +1027,15 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[10]{Practiced Defense} You gain a \plus1 bonus to Armor defense.
 
+        \ff[10]{Greater Honed Strike} The damage bonus from your \textit{honed strike} ability increases to \plus2d.
+
         \ff[13]{Equipment Training} You gain an additional \textit{equipment training} ability of your choice.
 
-        \ff[13]{Greater Honed Strike} The damage bonus from your \textit{honed strike} ability increases to \plus2d.
+        \ff[16]{Practiced Accuracy} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{mundane} abilities.
 
-        \ff[16]{Practiced Accuracy} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks}.
+        \ff[16]{Supreme Honed Strike} The damage bonus from your \textit{honed strike} ability increases to \plus3d.
 
         \ff[19]{Equipment Training} You gain an additional \textit{equipment training} ability of your choice.
-
-        \ff[19]{Supreme Honed Strike} The damage bonus from your \textit{honed strike} ability increases to \plus3d.
     \end{feat}
 
     \begin{feat}{Miscaster}{Casting, Magical}
@@ -1108,27 +1069,31 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{feat}{Mystic Archer}{Casting, Magical}
         \featpre Ability to cast a spell.
 
-        \ff[1]{Imbue Projectile} When you cast a spell that affects a single target and does not have the \glossterm{Attune} or \glossterm{Sustain} tags,
+        \ff[1]{Guided Projectiles} Your attacks with projectiles ignore \glossterm{cover}, but not \glossterm{total cover}.
+
+        \ff[4]{Imbue Projectile} When you cast a spell that affects a single target and does not have the \glossterm{Attune} or \glossterm{Sustain} tags,
             you can use the \textit{imbue projectile} ability.
         \begin{attuneability}{Imbue Projectile}[\glossterm{Attune} (self)]
             The spell does not have its effect immediately, and you regain the action point used to cast the spell (if any).
             Instead, its power is imbued in a \glossterm{projectile} you hold.
 
-            As a standard action, you can make a \glossterm{strike} using that projectile.
+            As a standard action, you can make a ranged \glossterm{strike} using that projectile.
             If you do, the spell affects the target of the strike.
             After the spell takes effect, this ability's duration ends.
         \end{attuneability}
 
-        \ff[4]{Missile Storm} You can use the \textit{missile storm} ability as a standard action.
+        \ff[7]{Missile Storm} You can use the \textit{missile storm} ability as a standard action.
         \begin{apability}{Missile Storm}
             Make a ranged \glossterm{strike} with a \glossterm{projectile weapon} you wield.
             The strike targets up to five creatures and objects within one \glossterm{range increment} of you with that weapon, except for creatures adjacent to you.
-            You take a \minus1d penalty to damage with the strike.
         \end{apability}
 
-        \ff[7]{Guided Projectiles} Your attacks with projectiles ignore \glossterm{cover}, but not \glossterm{total cover}.
+        \ff[10]{Phasing Projectiles}[Teleportation] When attacking with projectiles, you can ignore all physical obstacles in single one-foot span.
+        This can allow you to fire projectiles through solid walls, though it does not grant you the ability to see through the wall.
 
-        \ff[10]{Imbue Detonating Projectile} When you cast a spell that affects an area and does not have the \glossterm{Attune} or \glossterm{Sustain} tags,
+        \ff[13]{Greater Missile Storm} You gain a \plus1d bonus to damage with your \textit{missile storm} ability.
+
+        \ff[13]{Imbue Detonating Projectile} When you cast a spell that affects an area and does not have the \glossterm{Attune} or \glossterm{Sustain} tags,
             you can use the \textit{imbue detonating projectile} ability.
         \begin{attuneability}{Imbue Detonating Projectile}[\glossterm{Attune} (self)]
             The spell does not have its effect immediately, and you regain the action point used to cast the spell (if any).
@@ -1141,15 +1106,12 @@ Feats also make the system more mechanically complex, so they are not necessaril
             After the spell takes effect, this ability's duration ends.
         \end{attuneability}
 
-        \ff[13]{Phasing Projectiles}[Teleportation] When attacking with projectiles, you can ignore all physical obstacles in single five-foot span.
-        This can allow you to fire projectiles through solid walls, though it does not grant you the ability to see through the wall.
+        \ff[16]{Mystic Precision} You gain a \plus1 bonus to \glossterm{accuracy}.
 
-        \ff[16]{Greater Missile Storm} When you use your \textit{missile storm} ability, you may target any number of creatures.
+        \ff[19]{Greater Phasing Projectiles}[Teleportation] Your \textit{phasing projectiles} ability improves, allowing you to ignore obstacles in up to five one-foot spans.
+        The spans can be contiguous or independent, which can allow you to ignore a single obstacle up to five feet deep.
 
-        \ff[19]{Mystic Precision} You gain a \plus1 bonus to \glossterm{accuracy}.
-
-        \ff[20]{Greater Phasing Projectiles}[Teleportation] Your \textit{phasing projectiles} ability improves, allowing you to ignore obstacles in up to four five-foot spans.
-        The spans can be contiguous, which can allow you to ignore a single obstacle up to twenty feet long.
+        \ff[19]{Supreme Missile Storm} When you use your \textit{missile storm} ability, you may target any number of creatures.
     \end{feat}
 
     \begin{feat}{Null}{General}
@@ -1163,8 +1125,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[4]{Mundane Legacy} You do not gain any legacy item upgrades (see \pcref{Legacy Items}).
         Instead, each time you would gain a legacy item upgrade, you instead gain an additional \glossterm{recovery action point}.
 
-        \ff[4]{Null Severance} You can use the \textit{null severance} ability as a standard action.
-        \begin{apability}{Null Severance}
+        \ff[4]{Sever Magic} You can use the \textit{sever magic} ability as a standard action.
+        \begin{apability}{Sever Magic}
             Make a \glossterm{strike}.
             The strike gains a \plus1d bonus to damage.
             In addition to the strike's normal effects, you also compare the attack result against the target's Mental defense.
@@ -1177,16 +1139,23 @@ Feats also make the system more mechanically complex, so they are not necessaril
         % clarify that it does not affect spells already in progress in the current phase?
         \ff[7]{Disruptive Presence} All enemies within an \areamed radius from you have a 50\% chance to \glossterm{miscast} any spell they cast.
 
-        \ff[10]{Greater Nullify Magic} The bonus to defenses from your \textit{nullify magic} ability increases to \plus6.
+        \ff[7]{Greater Nullify Magic} The bonus to defenses from your \textit{nullify magic} ability increases to \plus6.
 
-        \ff[13]{Greater Null Severance} On a hit, your \textit{null severance} ability breaks the target's attunement to an additional random effect.
-        In addition, it can break attunement to magic items in addition to attunement to abilities.
+        \ff[10]{Greater Sever Magic} You gain a \plus1 bonus to accuracy with your \textit{sever magic} ability.
+
+        \ff[10]{Itembane} Whenever you touch a \glossterm{magical} item or hit it with a melee weapon, such as with the \textit{disarm} ability, it loses all magical abilities until the end of the next round (see \pcref{Disarm}).
+        This does not prevent you from suffering the normal effects of the item's initial hit, if the item was used to strike you.
+        Under normal circumstances, removes the abilities of items that hit you with melee \glossterm{strikes}, but does not affect magical projectile weapons.
+        Items with an intrinsic \glossterm{power} at least 10 higher than your level are immune to this effect.
+        The \glossterm{power} of the item's wielder, if any, does not affect whether the item can be affected in this way.
+
+        \ff[13]{Mundane Precision} You gain a \plus1 bonus to \glossterm{accuracy}.
 
         \ff[16]{Greater Disruptive Presence} Your \textit{disruptive presence} ability affects all enemies in a \arealarge radius \glossterm{emanation} from you.
 
-        \ff[19]{Supreme Null Severance} You gain a \plus2 bonus to accuracy with your \textit{null severance} ability.
+        \ff[16]{Supreme Sever Magic} The accuracy bonus from your \textit{greater sever magic} ability increases to \plus2.
 
-        \ff[20]{True Null} You are unaffected by all \glossterm{magical} abilities.
+        \ff[19]{True Null} You are unaffected by all \glossterm{magical} abilities.
     \end{feat}
 
     \begin{feat}{Perform Specialization}{Skill}
@@ -1237,9 +1206,9 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[19]{Projected Performance}[Magical] The range of your \textit{mesmerizing performance}, \textit{inspiring performance}, and \textit{mesmeric suggestion} abilities increases to \rnglong.
+        % \ff[19]{Projected Performance}[Magical] The range of your \textit{mesmerizing performance}, \textit{inspiring performance}, and \textit{mesmeric suggestion} abilities increases to \rnglong.
 
-        \ff[20]{Mass Performance}[Magical] When you use your \textit{mesmerizing performance} and \textit{inspiring performance} abilities, you can target any number of creatures within range.
+        \ff[19]{Mass Performance}[Magical] When you use your \textit{mesmerizing performance} and \textit{inspiring performance} abilities, you can target any number of creatures within range.
     \end{feat}
 
     \begin{feat}{Persuasion Specialization}{Skill}
@@ -1275,6 +1244,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \end{apability}
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
+
+        \ff[19]{Greater Suggestion} When you use your \textit{suggestion} ability, you may target any number of creatures within a \areamed burst within range.
     \end{feat}
 
     \begin{feat}{Precognition}{Combat}
@@ -1313,14 +1284,12 @@ Feats also make the system more mechanically complex, so they are not necessaril
         You gain a \plus2 bonus to accuracy with your \textit{combat prediction} ability.
 
         \ff[19]{Precognitive Defense} You gain a \plus1 bonus to Armor defense.
-
-        \ff[20]{Greater Combat Prediction} When you use your \textit{combat prediction} ability, you can target up to five creatures within range.
     \end{feat}
 
     \begin{feat}{Regenerator}{General}
         \featpre Starting Constitution of 1.
 
-        \ff[1]{Regenerative Rest} When you take a \glossterm{short rest}, you can heal vital damage equal to half your Constitution in addition to your normal healing.
+        \ff[1]{Regenerative Rest} When you take a \glossterm{short rest}, you can heal \glossterm{vital damage} equal to half your Constitution in addition to your normal healing (see \pcref{Vital Damage}).
 
         \ff[4]{Diehard} You reduce your \glossterm{vital damage penalties} by 2.
 
@@ -1332,9 +1301,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[16]{Greater Fast Healing} The healing from your \textit{fast healing} ability increases to be equal to your Constitution.
 
-        \ff[19]{Battlescarred Skin} You gain a \plus1 bonus to Armor defense.
-
-        \ff[20]{Indestructible} The penalty reduction from your \textit{diehard} ability increases to be equal to your Constitution.
+        \ff[19]{Indestructible} The penalty reduction from your \textit{diehard} ability increases to be equal to your Constitution.
     \end{feat}
 
     \begin{feat}{Ride Specialization}{Skill}
@@ -1355,8 +1322,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[19]{Greater Mounted Warrior} The penalty reduction from your \textit{mounted warrior} ability increases to \minus8.
         In addition, you gain a \plus1 bonus to Armor defense while mounted.
-
-        \ff[20]{Supreme Mounted Defense} The defense bonus from your \textit{mounted defense} ability increases to \plus6.
     \end{feat}
 
     \begin{feat}{Savage}{Combat}
@@ -1377,9 +1342,9 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[16]{Inescapable} When you use the \textit{overrun} ability, you may choose not to allow creatures to try to avoid you.
 
-        \ff[19]{Supreme Brute Force} The accuracy bonus from your \textit{brute force} ability increases to \plus4.
+        \ff[19]{Greater Crush} The damage bonuses from your \textit{crush} ability increase to \plus2d.
 
-        \ff[20]{Greater Crush} The damage bonuses from your \textit{crush} ability increase to \plus2d.
+        \ff[19]{Supreme Brute Force} The accuracy bonus from your \textit{brute force} ability increases to \plus4.
     \end{feat}
 
     \begin{feat}{Sense Motive Specialization}{Skill}
@@ -1452,9 +1417,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[16]{Supreme Aim} The bonus from your \textit{aim} ability increases to \plus3.
         In addition, you can sustain your \textit{aim} ability as a \glossterm{free action}.
 
-        \ff[19]{Greater Sniper Shot} The power bonus from your \textit{sniper shot} ability increases to \plus8.
-
-        \ff[20]{Rapid Aim} You can spend an \glossterm{action point} to use your \textit{aim} ability as a \glossterm{minor action}.
+        \ff[19]{Rapid Aim} You can spend an \glossterm{action point} to use your \textit{aim} ability as a \glossterm{minor action}.
     \end{feat}
 
     \begin{feat}{Spellcraft Specialization}{Skill}
@@ -1488,7 +1451,38 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[19]{Greater Unweave Magic}[Magical] You gain a \plus2 bonus to \glossterm{accuracy} with your \textit{unweave magic} ability.
 
-        \ff[20]{Greater Mystic Tolerance}[Magical] The defense bonus from your \textit{mystic tolerance} ability increases to \plus2.
+        \ff[19]{Greater Mystic Tolerance}[Magical] The defense bonus from your \textit{mystic tolerance} ability increases to \plus2.
+    \end{feat}
+
+    \begin{feat}{Spellsword}{Spell}
+        \featpre Ability to cast a spell.
+
+        \ff[1]{Combat Caster} You gain a \plus2 bonus to \glossterm{concentration} checks made to use spells and rituals.
+        In addition, you reduce your \glossterm{encumbrance} by 1 when determining your \glossterm{somatic component failure}.
+
+        \ff[4]{Imbue Weapon}[Magical] When you cast a spell that affects a single target and does not have the \glossterm{Attune} or \glossterm{Sustain} tags,
+            you can use the \textit{imbue weapon} ability.
+        \begin{attuneability}{Imbue Weapon}[\glossterm{Attune} (self)]
+            The spell does not have its effect immediately, and you regain the action point used to cast the spell (if any).
+            Instead, its power is imbued in a melee weapon you hold.
+
+            As a standard action, you can make a melee \glossterm{strike} using that weapon.
+            If you do, the spell affects the target of the strike.
+            After the spell takes effect, this ability's duration ends.
+        \end{attuneability}
+
+        \ff[7]{Spellsword Conduit}[Magical] You can cast spells using a melee weapon as if it were an implement (see \pcref{Implements}).
+        When you do, you gain a \plus1 bonus to \glossterm{accuracy} with that weapon until the end of the next round.
+
+        \ff[10]{Greater Combat Caster} The \glossterm{concentration} bonus from your \textit{combat caster} ability increases to \plus4.
+        In addition, the \glossterm{encumbrance} reduction increases to 2.
+
+        \ff[13]{Greater Imbue Weapon}[Magical] You can maintain two separate attunements to your \textit{imbue weapon} ability.
+
+        \ff[16]{Supreme Combat Caster} The \glossterm{concentration} bonus from your \textit{combat caster} ability increases to \plus6.
+        In addition, the \glossterm{encumbrance} reduction increases to 3.
+
+        \ff[19]{Greater Spellsword Conduit}[Magical] The accuracy bonus from your \textit{spellsword conduit} ability increases to \plus2.
     \end{feat}
 
     \begin{feat}{Spellwarped}{General, Magical}
@@ -1532,7 +1526,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[16]{Greater Aeromancy Focus} The bonus from your \textit{aeromancy focus} ability increases to \plus2.
 
-        \ff[19]{Supreme Personal Updraft} You gain a \glossterm{fly speed} equal to your \glossterm{base speed} (see \pcref{Flying}).
+        \ff[19]{Supreme Personal Updraft} As long as you are within 30 feet of the ground, you gain a \glossterm{fly speed} equal to your \glossterm{base speed} (see \pcref{Flying}).
     \end{feat}
 
     \begin{feat}{Sphere Focus: Aquamancy}{Casting, Magical}
@@ -1541,7 +1535,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Aquamancy Focus} You gain a \plus1 bonus to \glossterm{accuracy} with abilities from the \sphere{aquamancy} \glossterm{mystic sphere}.
 
         \ff[4]{Swim Familiarity} You gain a \plus2 bonus to the Swim skill.
-        In addition, you reduce your penalties for acting underwater by 2.
+        In addition, you reduce your penalties for acting underwater by 2 (see \pcref{Underwater Combat}).
 
         \ff[7]{Spell} You learn a spell from the \sphere{aquamancy} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
@@ -2107,9 +2101,10 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Specialization} You gain a \plus2 bonus to the Stealth skill.
 
-        \ff[4]{}
+        \ff[4]{Ambush the Unwary} You gain a \plus2 bonus to \glossterm{power} against \glossterm{unaware} creatures.
 
-        \ff[7]{Movement Tolerance} Your penalties for moving while hiding are reduced by 2.
+        \ff[7]{Movement Tolerance} Your penalties for moving while hiding are reduced by 5.
+        This allows you to move at half speed without penalty.
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
@@ -2118,10 +2113,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[19]{Greater Movement Tolerance} The reduction of penalties for moving increases to 5.
-        This allows you to move at half speed without penalty.
-
-        \ff[20]{Greater Hide in Plain Sight} The penalty for hiding while observed is reduced to \minus5.
+        \ff[19]{Greater Movement Tolerance} The penalty reduction from your \textit{movement tolerance} ability increases to 10.
+        This allows you to move at full speed without penalty.
     \end{feat}
 
     \begin{feat}{Survival Specialization}{Skill}
@@ -2143,9 +2136,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[19]{Greater Rapid Tracker} If you use the \textit{track} ability as a \glossterm{minor action}, the check penalty is reduced to \minus5 instead of \minus10.
-
-        \ff[20]{Find the Path}[Magical] You can use the \textit{find the path} ability as a standard action.
+        \ff[19]{Find the Path}[Magical] You can use the \textit{find the path} ability as a standard action.
         \begin{attuneability}{Find the Path}[\glossterm{Attune} (self), \glossterm{Knowledge}]
             When you use this ability, you must unambiguously specify a location on the same plane as you.
             You know exactly what direction you must travel to reach your chosen destination by the most direct physical route.
@@ -2173,8 +2164,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[16]{Greater Sprinter} When you use the \textit{sprint} ability, you move at quadruple your movement speed.
 
         \ff[19]{Cloud Runner} When you use the \textit{sprint} ability, you can move on dense fog and similar gaseous substances as if they were solid ground.
-
-        \ff[20]{Endless Endurance} While you are not using the \textit{sprint} ability, you move at double your movement speed.
     \end{feat}
 
     \begin{feat}{Swim Specialization}{Skill}
@@ -2183,7 +2172,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Specialization} You gain a \plus2 bonus to the Swim skill.
         % Maybe add burrow speed? The book needs a description of fighting underwater penalties.
 
-        \ff[4]{Underwater Tolerance} You reduce your penalties for fighting underwater by 2, except for penalties to physical ranged attacks.
+        \ff[4]{Underwater Tolerance} You reduce your penalties for fighting underwater by 2, except for penalties to physical ranged attacks (see \pcref{Underwater Combat}).
 
         \ff[7]{Swim Speed} You gain a \glossterm{swim speed} equal to your \glossterm{base speed}.
         A successful Swim check to move allows you to move a distance equal to your swim speed.
@@ -2241,11 +2230,19 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[10]{Greater Rend} You gain a \plus1 bonus to \glossterm{accuracy} with your \textit{rend} ability.
 
+        \ff[10]{Overwhelming Flurry} You can use the \textit{overwhelming flurry} ability as a \glossterm{minor action}.
+        \begin{attuneability}{Overwhelming Flurry}
+            You begin attacking and feinting with incredible speed, dazzling your foes.
+            You gain a \plus1 bonus to \glossterm{overwhelm value} (see \pcref{Overwhelm Value}).
+        \end{attuneability}
+
         \ff[13]{Dual Precision} While wielding two melee weapons, your \glossterm{attack rolls} with melee \glossterm{strikes} \glossterm{explode} on either a 9 or a 10.
 
         \ff[16]{Supreme Rend} The accuracy bonus from your \textit{greater rend} ability increases to \plus2.
 
-        \ff[19]{Greater Two-Weapon Defense} The bonus from your \textit{two-weapon defense} ability increases to \plus2.
+        \ff[16]{Greater Two-Weapon Defense} The bonus from your \textit{two-weapon defense} ability increases to \plus2.
+
+        \ff[19]{Greater Overwhelming Flurry} The bonus from your \textit{overwhelming flurry} ability increases to \plus2.
     \end{feat}
 
     \begin{feat}{Whirlwind Warrior}{Combat}
