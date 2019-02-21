@@ -85,6 +85,7 @@ class MagicItem(object):
             """,
             self.latex_ability(),
             f"""
+                \\vspace<0.25em>
                 \\spelltwocol<\\textbf<Type>: {self.material_type}><{self.tag_text()}>
                 \\textbf<Materials>: {', '.join(sorted(self.materials)).capitalize()}
             """,
