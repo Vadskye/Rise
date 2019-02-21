@@ -10,7 +10,7 @@ def generate_tools():
     tools.append(MagicItem(
         name="Potion (1st)",
         level=0.5,
-        material_type='potion',
+        material_type='Potion',
         tags=[],
         description="""
             This potion contains the power of a 1st level \\glossterm<targeted> spell that does not have the \\glossterm<Attune> or \\glossterm<Sustain> tags.
@@ -27,7 +27,7 @@ def generate_tools():
     tools.append(MagicItem(
         name="Potion (2nd)",
         level=1,
-        material_type='potion',
+        material_type='Potion',
         tags=[],
         description="""
             This item functions like a 1st level potion, except that it contains a 2nd level spell.
@@ -38,7 +38,7 @@ def generate_tools():
     tools.append(MagicItem(
         name="Potion (3rd)",
         level=4,
-        material_type='potion',
+        material_type='Potion',
         tags=[],
         description="""
             This item functions like a 1st level potion, except that it contains a 3rd level spell.
@@ -49,7 +49,7 @@ def generate_tools():
     tools.append(MagicItem(
         name="Potion (4th)",
         level=7,
-        material_type='potion',
+        material_type='Potion',
         tags=[],
         description="""
             This item functions like a 1st level potion, except that it contains a 4th level spell.
@@ -60,7 +60,7 @@ def generate_tools():
     tools.append(MagicItem(
         name="Potion (5th)",
         level=10,
-        material_type='potion',
+        material_type='Potion',
         tags=[],
         description="""
             This item functions like a 1st level potion, except that it contains a 5th level spell.
@@ -71,7 +71,7 @@ def generate_tools():
     tools.append(MagicItem(
         name="Potion (6th)",
         level=13,
-        material_type='potion',
+        material_type='Potion',
         tags=[],
         description="""
             This item functions like a 1st level potion, except that it contains a 6th level spell.

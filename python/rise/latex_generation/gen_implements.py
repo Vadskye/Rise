@@ -11,7 +11,7 @@ def generate_implements():
     implements.append(MagicItem(
         name="Wand of Sympathetic Shielding",
         level=8,
-        material_type='wand',
+        material_type='Wand',
         tags=['Shielding'],
         description="""
             When you cast a \\glossterm<targeted> \\glossterm<Shielding> spell using this wand,
@@ -24,7 +24,7 @@ def generate_implements():
     implements.append(MagicItem(
         name="Wand of Transit",
         level=6,
-        material_type='wand',
+        material_type='Wand',
         tags=['Teleportation'],
         description="""
             When you cast a \\glossterm<Teleportation> spell using this wand,
@@ -36,7 +36,7 @@ def generate_implements():
     implements.append(MagicItem(
         name="Extending Staff",
         level=8,
-        material_type='staff',
+        material_type='Staff',
         description="""
             You double the range of spells you cast with this staff.
         """,
@@ -46,7 +46,7 @@ def generate_implements():
     implements.append(MagicItem(
         name="Extending Staff, Greater",
         level=14,
-        material_type='staff',
+        material_type='Staff',
         description="""
             You triple the range of spells you cast with this staff.
         """,
@@ -56,7 +56,7 @@ def generate_implements():
     implements.append(MagicItem(
         name="Reaching Staff",
         level=12,
-        material_type='staff',
+        material_type='Staff',
         description="""
             Spells you cast with this staff automatically have the benefits of the Reach augment, if applicable (see \\pcref<Augment Descriptions>).
         """,
@@ -66,7 +66,7 @@ def generate_implements():
     implements.append(MagicItem(
         name="Protective Staff",
         level=8,
-        material_type='staff',
+        material_type='Staff',
         tags=['Shielding'],
         description="""
             You gain a +1 \\glossterm<magic bonus> to Armor defense.
@@ -77,7 +77,7 @@ def generate_implements():
     implements.append(MagicItem(
         name="Protective Staff, Greater",
         level=16,
-        material_type='staff',
+        material_type='Staff',
         tags=['Shielding'],
         description="""
             You gain a +2 \\glossterm<magic bonus> to Armor defense.
@@ -88,7 +88,7 @@ def generate_implements():
     implements.append(MagicItem(
         name="Spellfeeding Staff",
         level=9,
-        material_type='staff',
+        material_type='Staff',
         tags=['Life'],
         description="""
             Once per round, when you cast a spell other than a \\glossterm<cantrip> using this staff,
@@ -100,7 +100,7 @@ def generate_implements():
     implements.append(MagicItem(
         name="Spellfeeding Staff, Greater",
         level=16,
-        material_type='staff',
+        material_type='Staff',
         tags=['Life'],
         description="""
             Once per round, when you cast a spell other than a \\glossterm<cantrip> using this staff,
@@ -112,7 +112,7 @@ def generate_implements():
     implements.append(MagicItem(
         name="Staff of Concentration",
         level=1,
-        material_type='staff',
+        material_type='Staff',
         description="""
             You gain a +1 \\glossterm<magic bonus> to \\glossterm<concentration> on spells you cast using this staff.
         """,
@@ -122,7 +122,7 @@ def generate_implements():
     implements.append(MagicItem(
         name="Staff of Concentration, Greater",
         level=5,
-        material_type='staff',
+        material_type='Staff',
         description="""
             You gain a +2 \\glossterm<magic bonus> to \\glossterm<concentration> on spells you cast using this staff.
         """,
@@ -132,7 +132,7 @@ def generate_implements():
     implements.append(MagicItem(
         name="Staff of Concentration, Supreme",
         level=9,
-        material_type='staff',
+        material_type='Staff',
         description="""
             You gain a +3 \\glossterm<magic bonus> to \\glossterm<concentration> on spells you cast using this staff.
         """,
@@ -142,7 +142,7 @@ def generate_implements():
     implements.append(MagicItem(
         name="Staff of Spellpower",
         level=4,
-        material_type='staff',
+        material_type='Staff',
         tags=['Mystic'],
         description="""
             You gain a +1 \\glossterm<magic bonus> to \\glossterm<power> with spells you cast using this staff.
@@ -153,7 +153,7 @@ def generate_implements():
     implements.append(MagicItem(
         name="Staff of Spellpower, Greater",
         level=8,
-        material_type='staff',
+        material_type='Staff',
         tags=['Mystic'],
         description="""
             You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with spells you cast using this staff.
@@ -164,7 +164,7 @@ def generate_implements():
     implements.append(MagicItem(
         name="Staff of Spellpower, Supreme",
         level=12,
-        material_type='staff',
+        material_type='Staff',
         tags=['Mystic'],
         description="""
             You gain a +3 \\glossterm<magic bonus> to \\glossterm<power> with spells you cast using this staff.
@@ -175,7 +175,7 @@ def generate_implements():
     implements.append(MagicItem(
         name="Staff of Spellpower, Legendary",
         level=16,
-        material_type='staff',
+        material_type='Staff',
         tags=['Mystic'],
         description="""
             You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with spells you cast using this staff.
@@ -186,7 +186,7 @@ def generate_implements():
     implements.append(MagicItem(
         name="Staff of Precision",
         level=8,
-        material_type='staff',
+        material_type='Staff',
         tags=['Mystic'],
         description="""
             You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with spells you cast using this staff.
@@ -197,7 +197,7 @@ def generate_implements():
     implements.append(MagicItem(
         name="Greater Staff of Precision",
         level=16,
-        material_type='staff',
+        material_type='Staff',
         tags=['Mystic'],
         description="""
             You gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy> with spells you cast using this staff.
@@ -208,7 +208,7 @@ def generate_implements():
     implements.append(MagicItem(
         name="Wand of Precision",
         level=6,
-        material_type='wand',
+        material_type='Wand',
         tags=['Mystic'],
         description="""
             You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> if you cast spells from a particular \\glossterm<mystic sphere> using this wand.
@@ -220,7 +220,7 @@ def generate_implements():
     implements.append(MagicItem(
         name="Wand of Precision, Greater",
         level=14,
-        material_type='wand',
+        material_type='Wand',
         tags=['Mystic'],
         description="""
             You gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy> if you cast spells from a particular \\glossterm<mystic sphere> using this wand.
@@ -232,7 +232,7 @@ def generate_implements():
     implements.append(MagicItem(
         name="Wand of Spellpower",
         level=2,
-        material_type='wand',
+        material_type='Wand',
         tags=['Mystic'],
         description="""
             You gain a +1 \\glossterm<magic bonus> to \\glossterm<power> if you cast spells from a particular \\glossterm<mystic sphere> using this wand.
@@ -244,7 +244,7 @@ def generate_implements():
     implements.append(MagicItem(
         name="Wand of Spellpower, Greater",
         level=6,
-        material_type='wand',
+        material_type='Wand',
         tags=['Mystic'],
         description="""
             You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> if you cast spells from a particular \\glossterm<mystic sphere> using this wand.
@@ -256,7 +256,7 @@ def generate_implements():
     implements.append(MagicItem(
         name="Wand of Spellpower, Supreme",
         level=10,
-        material_type='wand',
+        material_type='Wand',
         tags=['Mystic'],
         description="""
             You gain a +3 \\glossterm<magic bonus> to \\glossterm<power> if you cast spells from a particular \\glossterm<mystic sphere> using this wand.
@@ -268,7 +268,7 @@ def generate_implements():
     implements.append(MagicItem(
         name="Wand of Spellpower, Legendary",
         level=14,
-        material_type='wand',
+        material_type='Wand',
         tags=['Mystic'],
         description="""
             You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> if you cast spells from a particular \\glossterm<mystic sphere> using this wand.
