@@ -6,23 +6,24 @@ class MagicItem(object):
     @classmethod
     def automatic_materials(cls, material_type):
         return {
-            'amulet': ['jewelry'],
-            'belt': ['leather', 'textiles'],
-            'body armor': ['bone', 'metal'],
-            'boot': ['bone', 'leather', 'metal'],
-            'bracer': ['bone', 'leather', 'metal', 'wood'],
-            'circlet': ['bone', 'metal'],
-            'cloak': ['textiles'],
-            'crown': ['bone', 'metal'],
-            'gauntlet': ['bone', 'metal', 'wood'],
-            'glove': ['leather'],
-            'mask': ['textiles'],
-            'potion': ['alchemy'],
-            'ring': ['bone', 'jewelry', 'metal', 'wood'],
-            'shield': ['bone', 'metal', 'wood'],
-            'staff': ['bone', 'wood'],
-            'wand': ['bone', 'wood'],
-            'weapon': ['as weapon'],
+            'Amulet': ['jewelry'],
+            'Belt': ['leather', 'textiles'],
+            'Body armor': ['bone', 'metal'],
+            'Boots': ['bone', 'leather', 'metal'],
+            'Bracers': ['bone', 'leather', 'metal', 'wood'],
+            'Circlet': ['bone', 'metal'],
+            'Cloak': ['textiles'],
+            'Crown': ['bone', 'metal'],
+            'Gauntlet': ['bone', 'metal', 'wood'],
+            'Glove': ['leather'],
+            'Gloves': ['leather'],
+            'Mask': ['textiles'],
+            'Potion': ['alchemy'],
+            'Ring': ['bone', 'jewelry', 'metal', 'wood'],
+            'Shield': ['bone', 'metal', 'wood'],
+            'Staff': ['bone', 'wood'],
+            'Wand': ['bone', 'wood'],
+            'Weapon': ['as weapon'],
         }[material_type]
 
     def __init__(
@@ -42,6 +43,7 @@ class MagicItem(object):
         self.name = name
         self.tags = tags
         self.short_description = short_description
+        self.material_type = material_type
 
         self.effects = effects
         try:
@@ -70,6 +72,9 @@ class MagicItem(object):
     def latex_table_row(self):
         return f"{self.name} & \\nth<{self.level}> & {self.price()} gp & {self.short_description} & \\pageref<item:{self.name}> \\\\"
 
+    def tag_text(self):
+        return f"\\parhead*<Tags> {self.latex_tags()}" if self.tags else ""
+
     def latex(self):
         level_text = f"\\nth<{self.level}>" if self.level >= 1 else "1/2"
         return join(
@@ -80,9 +85,7 @@ class MagicItem(object):
             """,
             self.latex_ability(),
             f"""
-                \\parhead*<Tags> {self.latex_tags()}
-            """ if self.tags else "",
-            f"""
-                \\parhead*<Materials> {', '.join(sorted(self.materials)).capitalize()}
+                \\spelltwocol<\\textbf<Type>: {self.material_type}><{self.tag_text()}>
+                \\textbf<Materials>: {', '.join(sorted(self.materials)).capitalize()}
             """,
         )

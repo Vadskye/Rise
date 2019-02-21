@@ -11,7 +11,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Concussive",
         level=4,
-        material_type='weapon',
+        material_type='Weapon',
         # tags=[tag],
         description="""
             As a standard action, you can infuse this weapon with concussive force.
@@ -23,7 +23,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Flaming",
         level=5,
-        material_type='weapon',
+        material_type='Weapon',
         tags=['Fire'],
         description="""
             This weapon is on fire.
@@ -41,7 +41,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Flaming, Greater",
         level=15,
-        material_type='weapon',
+        material_type='Weapon',
         tags=['Fire'],
         description="""
             This weapon is on fire.
@@ -54,7 +54,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Potency",
         level=4,
-        material_type='weapon',
+        material_type='Weapon',
         description="""
             You gain a +1 \\glossterm<magic bonus> to \\glossterm<power> with this weapon.
         """,
@@ -64,7 +64,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Potency, Greater",
         level=8,
-        material_type='weapon',
+        material_type='Weapon',
         description="""
             You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with this weapon.
         """,
@@ -74,7 +74,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Potency, Supreme",
         level=12,
-        material_type='weapon',
+        material_type='Weapon',
         description="""
             You gain a +3 \\glossterm<magic bonus> to \\glossterm<power> with this weapon.
         """,
@@ -84,7 +84,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Potency, Legendary",
         level=16,
-        material_type='weapon',
+        material_type='Weapon',
         description="""
             You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with this weapon.
         """,
@@ -94,7 +94,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Shocking",
         level=6,
-        material_type='weapon',
+        material_type='Weapon',
         tags=['Electricity'],
         description="""
             This weapon continuously crackles with electricity.
@@ -109,7 +109,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Shocking, Greater",
         level=15,
-        material_type='weapon',
+        material_type='Weapon',
         tags=['Electricity'],
         description="""
             This weapon continuously crackles with electricity.
@@ -122,7 +122,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Freezing",
         level=6,
-        material_type='weapon',
+        material_type='Weapon',
         tags=['Cold'],
         description="""
             This weapon is bitterly cold, and all damage dealt with it is cold damage in addition to its other types.
@@ -136,7 +136,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Freezing, Greater",
         level=16,
-        material_type='weapon',
+        material_type='Weapon',
         tags=['Cold'],
         description="""
             This weapon is bitterly cold, and all damage dealt with it is cold damage in addition to its other types.
@@ -148,7 +148,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Thundering",
         level=4,
-        material_type='weapon',
+        material_type='Weapon',
         tags=['Sonic'],
         description="""
             This weapon constantly emits a low-pitched rumbling noise and vibrates slightly in your hand.
@@ -163,7 +163,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Thundering, Greater",
         level=14,
-        material_type='weapon',
+        material_type='Weapon',
         tags=['Sonic'],
         description="""
             This weapon constantly emits a low-pitched rumbling noise and vibrates slightly in your hand.
@@ -176,7 +176,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Protective",
         level=8,
-        material_type='weapon',
+        material_type='Weapon',
         tags=['Shielding'],
         description="""
             You gain a +1 \\glossterm<magic bonus> to Armor defense.
@@ -187,7 +187,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Protective, Greater",
         level=16,
-        material_type='weapon',
+        material_type='Weapon',
         tags=['Shielding'],
         description="""
             You gain a +2 \\glossterm<magic bonus> to Armor defense.
@@ -198,7 +198,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Disorienting",
         level=9,
-        material_type='weapon',
+        material_type='Weapon',
         tags=['Compulsion'],
         description="""
             This weapon shimmers with a chaotic pattern of colors.
@@ -212,7 +212,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Disorienting, Greater",
         level=19,
-        material_type='weapon',
+        material_type='Weapon',
         tags=['Compulsion'],
         description="""
             This weapon shimmers with a chaotic pattern of colors.
@@ -224,7 +224,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Longshot",
         level=4,
-        material_type='weapon',
+        material_type='Weapon',
         description="""
             When you make a ranged attack with this weapon, you reduce your penalties for \\glossterm<range increments> by 1.
         """,
@@ -234,7 +234,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Longshot, Greater",
         level=10,
-        material_type='weapon',
+        material_type='Weapon',
         description="""
             When you make a ranged attack with this weapon, you reduce your penalties for \\glossterm<range increments> by 2.
         """,
@@ -244,7 +244,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Longshot, Supreme",
         level=16,
-        material_type='weapon',
+        material_type='Weapon',
         description="""
             When you make a ranged attack with this weapon, you reduce your penalties for \\glossterm<range increments> by 3.
         """,
@@ -254,7 +254,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Boomerang",
         level=9,
-        material_type='weapon',
+        material_type='Weapon',
         description="""
             You can throw this weapon as if it was designed to be thrown.
             In addition, as a standard action, you can spend an \\glossterm<action point> to throw this weapon in a spinning arc.
@@ -267,7 +267,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Forceful",
         level=4,
-        material_type='weapon',
+        material_type='Weapon',
         description="""
             This weapon feels heavy in the hand.
             As a standard action, you can intensify the weapon's heft.
@@ -281,7 +281,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Forceful, Greater",
         level=11,
-        material_type='weapon',
+        material_type='Weapon',
         description="""
             This weapon feels heavy in the hand.
             When you make a \\glossterm<strike> with this weapon, you can choose to also use your attack result as a \\glossterm<shove> attack against the target.
@@ -293,7 +293,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Fixating",
         level=15,
-        material_type='weapon',
+        material_type='Weapon',
         description="""
             When you make a \\glossterm<strike> with this weapon, you gain a +1 bonus to accuracy against the target.
             This bonus lasts until you make a strike with this weapon against a different target.
@@ -306,7 +306,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Merciful",
         level=3,
-        material_type='weapon',
+        material_type='Weapon',
         description="""
             This weapon deals \\glossterm<subdual damage>.
         """,
@@ -316,7 +316,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Morphing",
         level=2,
-        material_type='weapon',
+        material_type='Weapon',
         tags=['Shaping'],
         description="""
              As a standard action, you can spend an \\glossterm<action point> to activate this item.
@@ -328,7 +328,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Morphing, Greater",
         level=6,
-        material_type='weapon',
+        material_type='Weapon',
         tags=['Shaping'],
         description="""
              As a standard action, you can spend an \\glossterm<action point> to activate this item.
@@ -341,7 +341,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Returning",
         level=3,
-        material_type='weapon',
+        material_type='Weapon',
         tags=['Teleportation'],
         description="""
             After being thrown, this weapon teleports back into your hand at the end of the current phase.
@@ -354,7 +354,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Seeking",
         level=7,
-        material_type='weapon',
+        material_type='Weapon',
         tags=['Knowledge'],
         description="""
             This weapon automatically veers towards its intended target.
@@ -369,7 +369,7 @@ def generate_weapons():
         name="Soulreaving",
         level=9,
         tags=[],
-        material_type='weapon',
+        material_type='Weapon',
         description="""
             This weapon is transluscent and has no physical presence for anyone except you.
             It has no effect on objects or constructs, and creatures do not feel any pain or even notice attacks from it.
@@ -387,7 +387,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Surestrike",
         level=8,
-        material_type='weapon',
+        material_type='Weapon',
         tags=['Knowledge'],
         description="""
             You gain a +1 \\glossterm<magic bonus> to accuracy with \\glossterm<strikes> with this weapon.
@@ -398,7 +398,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Surestrike, Greater",
         level=16,
-        material_type='weapon',
+        material_type='Weapon',
         tags=['Knowledge'],
         description="""
             You gain a +2 \\glossterm<magic bonus> to accuracy with \\glossterm<strikes> with this weapon.
@@ -409,7 +409,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Heartseeker",
         level=19,
-        material_type='weapon',
+        material_type='Weapon',
         tags=['Knowledge'],
         description="""
             When you make a \\glossterm<strike> with this weapon, you can roll twice and take the higher result.
@@ -420,7 +420,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Thieving",
         level=7,
-        material_type='weapon',
+        material_type='Weapon',
         tags=['Shaping'],
         description="""
             As a \\glossterm<standard action>, you can spend an \\glossterm<action point> to activate this weapon.
@@ -441,7 +441,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Thieving, Greater",
         level=13,
-        material_type='weapon',
+        material_type='Weapon',
         tags=['Shaping'],
         description="""
             This item functions like the \\mitem<thieving> item, except that the maximum size category of object it can absorb is one size category larger than the weapon.
@@ -452,7 +452,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Vampiric",
         level=6,
-        material_type='weapon',
+        material_type='Weapon',
         tags=['Life'],
         description="""
             When you deal damage to a living creature with a \\glossterm<strike> with this weapon, you heal hit points equal to your level.
@@ -463,7 +463,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Vampiric, Greater",
         level=14,
-        material_type='weapon',
+        material_type='Weapon',
         tags=['Life'],
         description="""
             When you deal damage to a living creature with a \\glossterm<strike> with this weapon, you heal hit points equal to twice your level.
@@ -474,7 +474,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Vorpal",
         level=12,
-        material_type='weapon',
+        material_type='Weapon',
         description="""
             Critical hits on \\glossterm<strikes> with this weapon deal maximum damage.
         """,
@@ -484,7 +484,7 @@ def generate_weapons():
     weapons.append(MagicItem(
         name="Phasing",
         level=10,
-        material_type='weapon',
+        material_type='Weapon',
         tags=['Planar'],
         description="""
             \\glossterm<Strikes> with this weapon can pass through a single solid obstacle of up to five feet thick on the way to their target.
