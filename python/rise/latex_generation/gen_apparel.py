@@ -433,7 +433,7 @@ def generate_worn():
         tags=['Fire'],
         description="""
             As a standard action, you can spend an \\glossterm<action point> to use this item.
-            If you do, make an attack vs. Reflex against a creature or object within \\rngmed range.
+            If you do, make an attack vs. Armor against a creature or object within \\rngmed range.
             \\hit The target takes fire \\glossterm<standard damage> +1d.
         """,
         short_description="Can blast foe with fire",
@@ -503,7 +503,8 @@ def generate_worn():
             The flame sheds light as a torch.
 
             % TODO: clarify timing of choice
-            You and any number of willing creatures within a \\arealarge radius emanation from you are immune to fire damage.
+            You and any number of willing creatures within a \\arealarge radius emanation from you
+            gain a \\glossterm<magic bonus> equal to this item's \\glossterm<power> to \\glossterm<damage reduction> against fire damage.
         """,
         short_description="Grants nearby allies immunity to fire damage",
     ))
@@ -517,7 +518,7 @@ def generate_worn():
             This crown continuously crackles with electricity.
             The constant sparks shed light as a torch.
 
-            At the end of each \\glossterm<action phase>, you make an attack vs. Reflex against all enemies within a \\areamed radius emanation from you.
+            At the end of each \\glossterm<action phase>, you make an attack vs. Fortitude against all enemies within a \\areamed radius emanation from you.
             A hit deals electricity \\glossterm<standard damage> -3d.
         """,
         short_description="Continuously damages nearby enemies",
