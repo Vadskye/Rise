@@ -2195,6 +2195,7 @@ def generate_mystic_spheres():
                 % Has to be level instead of power because power can't scale directly with d10s ever
                 All of its defenses are equal to your 4 \\add your level, and its \\glossterm<land speed> is equal to 30 feet.
                 It does not have any \\glossterm<action points>.
+                If a summoned creature has no hit points remaining at the end of a phase, it disappears.
 
                 Each round, you can choose the creature's actions by mentally commanding it.
                 There are only two actions it can take.
@@ -2947,6 +2948,7 @@ def generate_mystic_spheres():
                 The specific weapon you choose affects the type of damage it deals.
                 Regardless of the weapon chosen, it has hit points equal to twice your \\glossterm<power>.
                 All of its defenses are equal to 3 \\add your level, and it has a 30 foot fly speed with good maneuverability, though it cannot travel farther than five feet above the ground.
+                If the weapon has no hit points remaining at the end of a phase, it disappears.
 
                 Each round, the weapon automatically moves towards the creature closest to it during the \\glossterm<movement phase>.
                 During the \\glossterm<action phase>, it makes a melee \\glossterm<strike> against a random creature adjacent to it.
