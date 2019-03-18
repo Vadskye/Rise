@@ -623,33 +623,27 @@ This chapter describes each skill, including common uses for those skills.
         You can use Creature Handling to control a creature's actions using these abilities.
         Critical failure with these abilities may make the target hostile, depending on the circumstances.
 
-        As a standard action, you can use the \textit{pacify} ability to prevent creatures from attacking.
+        As a standard action, you can use the \textit{command} ability to control the actions of a creature.
 
-        \begin{freeability}{\labeltext{Pacify}}[\glossterm{Compulsion}]
+        \begin{freeability}{\labeltext{Command}}[\glossterm{Auditory}, \glossterm{Compulsion}, \glossterm{Sustain (standard)}]
             Make an attack vs. Mental against a creature within \rngmed range.
             Your \glossterm{accuracy} is equal to your Creature Handling skill.
-            On a hit, the target is unable to take any actions except to use the \textit{cleanse} ability (see \pcref{Cleanse}).
-            If the target is damaged or feels that it is in danger, this effect is automatically broken.
-            This effect lasts as long as you \glossterm{sustain} it as a \glossterm{standard action}.
-
+            In addition, choose and state an action that the creature could take.
+            \hit The target is unable to take any actions except to use the \textit{cleanse} ability (see \pcref{Cleanse}).
+            \crit The target performs the chosen action if it is physically capable of performing it.
+            This can include convincing creatures to perform forced marches and similar activities (see \pcref{Forced March}).
+            
             The target's defense is increased if it is not an animal, as normal for Creature Handling attacks and checks.
             You take a \minus10 penalty to accuracy against an actively hostile target.
+            If the target is damaged or feels that it is in danger, this effect is automatically ended.
         \end{freeability}
 
         As a \glossterm{free action}, you can use the \textit{perform trained action} ability to convince a creature to perform an action it knows.
 
         \begin{freeability}{Perform Trained Action}
-            Make a DR 5 check on a willing creature within \rnglong range and choose an action that creature could take.
+            Make a DR 5 Creature Handling check on a willing creature within \rnglong range and choose an action that creature could take.
             If you succeed, the target performs the chosen action if it is trained to perform it.
             Generally, wild animals are not trained in any actions, so this is not effective on them.
-        \end{freeability}
-
-        As a standard action, you can use the \textit{push} ability to convince a creature to perform an action it does not know.
-
-        \begin{freeability}{Push}
-            Make a DR 15 check on a willing creature within \rnglong range and choose an action that creature could take.
-            If you succeed, the target performs the chosen action if it is physically capable of performing it.
-            This can include convincing creatures to perform forced marches and similar activities (see \pcref{Forced March}).
         \end{freeability}
 
     \subsection{Training Creatures}\label{Training Creatures}
@@ -921,7 +915,7 @@ This chapter describes each skill, including common uses for those skills.
         \begin{freeability}{Demoralize}
             Make an attack vs. Mental against a creature within \rngmed range.
             Your \glossterm{accuracy} is equal to your Intimidate skill.
-            \hit The target is \shaken by you as a \glossterm{condition}.
+            \hit The target is \shaken by you until the end of the next round.
         \end{freeability}
 
 \newpage
