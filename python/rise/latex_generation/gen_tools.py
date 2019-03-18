@@ -104,7 +104,7 @@ def generate_tool_table():
     return latexify(f"""
         \\begin<longtabuwrapper>
             \\begin<longtabu><l l l X l>
-                \\lcaption<tool Items> \\\\
+                \\lcaption<Tool Items> \\\\
                 \\tb<Name> & \\tb<Level> & \\tb<Typical Price> & \\tb<Description> & \\tb<Page> \\\\
                 \\bottomrule
                 {row_text}
