@@ -69,8 +69,14 @@ class MagicItem(object):
     def price(self):
         return item_prices[self.level]
 
+    def nth_text(self):
+        if self.level == 0.5:
+            return "1/2"
+        else:
+            return f"\\nth<{self.level}>"
+
     def latex_table_row(self):
-        return f"{self.name} & \\nth<{self.level}> & {self.price()} gp & {self.short_description} & \\pageref<item:{self.name}> \\\\"
+        return f"{self.name} & {self.nth_text()} & {self.price()} gp & {self.short_description} & \\pageref<item:{self.name}> \\\\"
 
     def tag_text(self):
         return f"\\parhead*<Tags> {self.latex_tags()}" if self.tags else ""
