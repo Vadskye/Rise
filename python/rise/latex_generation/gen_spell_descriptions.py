@@ -2351,7 +2351,7 @@ def generate_mystic_spheres():
                 You embody the resilience of earth as you focus on recovering.
                 Until the end of the round, you gain a +2 bonus to Fortitude defense.
                 At the end of the round, you regain a spent \\glossterm<recovery action point>.
-            """, tags=['Earth', 'Swift']),
+            """, tags=['Earth', 'Swift'], ap_cost=False),
             Spell('Rock Throw', 1, """
                 % TODO: define maximum hardness?
                 You extract a Tiny chunk from a body of earth or unworked stone within 5 feet of you and throw it at a foe.
