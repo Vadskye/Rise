@@ -308,8 +308,7 @@ def generate_implement_table():
         \\begin<longtabuwrapper>
             \\begin<longtabu><l l l X l>
                 \\lcaption<Implement Items> \\\\
-                \\tb<Name> & \\tb<Level> & \\tb<Typical Price> & \\tb<Description> & \\tb<Page> \\\\
-                \\bottomrule
+                \\tb<Name> & \\tb<Level> & \\tb<Typical Price> & \\tb<Description> & \\tb<Page> \\tableheaderrule
                 {row_text}
             \\end<longtabu>
         \\end<longtabuwrapper>
