@@ -2811,8 +2811,7 @@ def generate_mystic_spheres():
                 \\begin{dtable}
                     \\lcaption{Humanoid Reincarnations}
                     \\begin{dtabularx}{\\columnwidth}{l X}
-                        d\\% & Incarnation \\\\
-                        \\bottomrule
+                        \\tb{d\\%} & \\tb{Incarnation} \\tableheaderrule
                         01--13 & Dwarf \\\\
                         14--26 & Elf \\\\
                         27--40 & Gnome \\\\

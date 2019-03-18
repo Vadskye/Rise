@@ -385,7 +385,7 @@ Silent
     \or
 
     \addlinespace \cr \fill \frontmatter
-    \toprule \midrule \bottomrule
+    \toprule \midrule \bottomrule \tableheaderrule
 
     \add \sub \tind \concealment
     \areasmall \areamed \arealarge \areahuge
