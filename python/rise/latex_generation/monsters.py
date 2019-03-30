@@ -355,6 +355,13 @@ def magical_beasts(sample_monsters):
         large_red_dragon,
     ))
 
+    wyvern = sample_monsters['wyvern']
+    monsters.append(get_creature_latex(
+        wyvern,
+        active_abilities=[
+        ]
+    ))
+
     ankheg = sample_monsters['ankheg']
     monsters.append(get_creature_latex(
         ankheg,

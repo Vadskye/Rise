@@ -29,6 +29,7 @@ def properties_from_weapon_name(name):
         'talon': [-1, Weapon.LIGHT],
         'tentacle': [0, Weapon.MEDIUM],
         'slam': [0, Weapon.HEAVY],
+        'sting': [1, Weapon.HEAVY],
 
         # Special "weapons"
         'boulder': [0, Weapon.HEAVY],
