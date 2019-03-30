@@ -315,9 +315,6 @@ Creatures who are not enemies are considered \glossterm{allies}.
 
 \glossdef{energy}[energy damage] There are four types of energy: cold, electricity, fire, and sonic. Energy effects often deal damage.
 
-\glossdef{exhausted} An exhausted creature moves at half speed and takes a \minus4 penalty to \glossterm{defenses}
-This does not stack with the \glossterm{fatigued} effect.
-
 \glossdef{exotic weapon}[exotic weapons] A rare few weapons are considered exotic weapons.
 They are unusually difficult to wield, and even being \glossterm{proficient} with the associated \glossterm{weapon group} does not grant you the ability to use an exotic ewapon.
 Some class abilities grant proficiency with exotic weapons.
@@ -334,8 +331,12 @@ If the creature notices any threat against it, such as an approaching enemy, it 
 
 \glossdef{fast healing} A creature with fast healing automatically heals hit points at the end of every \glossterm{action phase}.
 
-\glossdef{fatigued} A fatigued creature moves at half speed and takes a \minus2 penalty to \glossterm{defenses}.
-This does not stack with the \glossterm{exhausted} effect.
+\glossdef{fatigue} Each point of fatigue lowers your \glossterm{wound threshold}, making you more vulnerable to \glossterm{vital wounds}.
+You gain a point of fatigue if you take at least as much damage as your \glossterm{fatigue threshold} from a single damage roll.
+For details, see \pcref{Taking Damage}.
+
+\glossdef{fatigue threshold} You gain a point of \glossterm{fatigue} if you take at least as much damage as your \glossterm{fatigue threshold} from a single damage roll.
+For details, see \pcref{Fatigue Threshold}.
 
 \glossdef{Fear} See \pcref{Ability Tags}.
 
@@ -811,7 +812,7 @@ For details, see \pcref{Strikes}.
 In addition, it takes a \minus2 penalty to \glossterm{accuracy}, \glossterm{checks}, and \glossterm{defenses}.
 
 \glossdef{subdual damage} Subdual damage is a special kind of damage that can't kill you.
-If you take subdual damage in excess of your hit points, you fall unconscious.
+If you would die from subdual damage, you fall unconscious instead.
 For details, see \pcref{Subdual Damage}.
 
 \glossdef{Subtle} See \pcref{Ability Tags}.
@@ -918,12 +919,9 @@ For details, see \pcref{Casting Components}.
 
 \glossdef{Visual} See \pcref{Ability Tags}.
 
-\glossdef{vital damage} If you take damage in excess of your \glossterm{hit points}, that damage is dealt as vital damage.
-Vital damage inflicts debilitating \glossterm{vital damage penalties}.
-For details, see \pcref{Vital Damage}.
-
-\glossdef{vital damage penalties} For every 4 points of \glossterm{vital damage} you have, you take a \minus1 penalty to \glossterm{accuracy}, \glossterm{checks}, and \glossterm{defenses}.
-For details, see \pcref{Vital Damage}.
+\glossdef{vital wound} A \glossterm{vital wound} is a serious injury that inflicts negative effects on you.
+You gain a \glossterm{vital wound} if you take at least as much damage as your \glossterm{wound threshold} from a single damage roll.
+For details, see \pcref{Vital Wounds}.
 
 \glossdef{vulnerable} A creature can be vulnerable to a type of damage or a special weapon material.
 It takes double damage from sources it is vulnerable to.
@@ -945,6 +943,13 @@ For details, see \pcref{Weapon Groups}.
 
 \glossdef{withdraw} The \textit{withdraw} ability allows you to stay away from a creature, preventing it from coming too close to you.
 For details, see \pcref{Withdraw}.
+
+\glossdef{wound threshold} You gain a \glossterm{vital wound} if you take at least as much damage as your \glossterm{wound threshold} from a single damage roll.
+For details, see \pcref{Wound Threshold}.
+
+\glossdef{wound roll} When you gain a \glossterm{vital wound}, you make a \glossterm{wound roll} to determine the detrimental effect of the \glossterm{vital wound}.
+To make a \glossterm{wound roll}, roll 1d10 \sub the number of \glossterm{vital wounds} you have.
+For details, see \pcref{Vital Wounds}.
 
 \glossdef{zone} A zone is a type of area that an ability can have (see \pcref{Area Types}).
 A zone ability has effects within an area for the \glossterm{duration} of the ability.
