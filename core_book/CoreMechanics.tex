@@ -549,14 +549,15 @@ It defines how attributes work and explains how to make attacks in combat.
             Your \glossterm{wound threshold} indicates the amount of damage an attack has to deal to seriously injure you.
             % TODO: do math to figure out correct wound threshold value to balance con vs dex vs str and make combat time work
             It is normally equal to your level \x (5 \add starting Constitution).
-            For each point of \glossterm{fatigue} you have, your wound threshold is lowered by an amount equal to your level.
+            Being fatigued from the current combat or exhausted from lack of rest makes you more vulnerable to serious wounds.
+            For each point of \glossterm{fatigue} and \glossterm{exhaustion} that you have, your wound threshold is lowered by an amount equal to your level.
 
             When you take at least as much damage as your \glossterm{wound threshold} from a single damage roll, you gain a \glossterm{vital wound}.
             In addition, if your \glossterm{wound threshold} is reduced to 0, you gain a \glossterm{vital wound}.
             This can be caused by effects that inflict \glossterm{fatigue} without dealing damage.
 
         \subsubsection{Vital Wounds}\label{Vital Wounds}
-            When you gain a \glossterm{vital wound}, you remove all points of \glossterm{fatigue} except for points of \glossterm{fatigue} that cannot be removed.
+            When you gain a \glossterm{vital wound}, you remove all points of \glossterm{fatigue}.
             You take a \minus2 penalty to Fortitude and Mental defenses for each \glossterm{vital wound} you have.
             In addition, each \glossterm{vital wound} has a specific detrimental effect on you.
 
@@ -574,13 +575,14 @@ It defines how attributes work and explains how to make attacks in combat.
                     \minus1 or less & You are unconscious, and at the end of the next round you die \\
                     0 & You are unconscious \\
                     1 & Your maximum \glossterm{recovery action points} are reduced by 2 \\
-                    2 & You gain two points of \glossterm{fatigue} that cannot be removed \\
+                    % TODO: clarify that if you remove this wound on a long rest, you also heal the exhaustion in the same rest
+                    2 & You gain two points of \glossterm{exhaustion} that cannot be removed \\
                     3 & You move at half speed (minimum 5 ft.) \\
                     4 & Your maximum \glossterm{reserve action points} are reduced by 2 \\
                     5 & You take a \minus2 penalty to all defenses \\
                     6 & You take a \minus2 penalty to \glossterm{accuracy} \\
                     7 & Your maximum \glossterm{recovery action points} are reduced by 1 \\
-                    8 & You gain a point of \glossterm{fatigue} that cannot be removed \\
+                    8 & You gain a point of \glossterm{exhaustion} that cannot be removed \\
                     9 & You take a \minus4 penalty to all skills \\
                     10 or more & No effect \\
                 \end{dtabularx}
@@ -1667,8 +1669,7 @@ It defines how attributes work and explains how to make attacks in combat.
         In addition, you reduce your encumbrance by amount equal to your starting Strength.
 
         Sleeping in armor is difficult.
-        % ``have any encumbrance'' is awkward - worth introducing ``encumbered''?
-        If you sleep while you have any encumbrance, you become \glossterm{fatigued} when you wake up.
+        If you sleep while you have any encumbrance, you gain a point of \glossterm{exhaustion} when you wake up.
 
     \subsection{Grappling}\label{Grappling}
         A grappled creature is physically struggling with at least one other creature.
@@ -1814,7 +1815,7 @@ It defines how attributes work and explains how to make attacks in combat.
             Resting for five minutes is considered a \glossterm{short rest}.
             When you take a short rest, you gain the following benefits.
             \begin{itemize}
-                \item You heal all points of \glossterm{fatigue}.
+                \item You remove all points of \glossterm{fatigue}.
                 \item You regain all spent \glossterm{recovery action points}.
                     Being \glossterm{attuned} to effects at the start of your rest can prevent you from regaining spent \glossterm{recovery action points} (see \pcref{Attunement}).
                 \item You remove all \glossterm{conditions} affecting you (unless they cannot be removed normally).
@@ -1826,7 +1827,8 @@ It defines how attributes work and explains how to make attacks in combat.
             Resting for eight hours is considered a \glossterm{long rest}.
             When you take a long rest, you gain the following benefits.
             \begin{itemize}
-                \item You heal one \glossterm{vital wound}.
+                \item You remove all points of \glossterm{exhaustion}.
+                \item You remove one \glossterm{vital wound}.
                     The Heal skill can increase this healing (see \pcref{Accelerate Recovery}).
                 \item You regain all spent \glossterm{action points}, including \glossterm{reserve action points}.
                     Being \glossterm{attuned} to effects at the start of your rest can prevent you from regaining spent \glossterm{recovery action points} (see \pcref{Attunement}).
