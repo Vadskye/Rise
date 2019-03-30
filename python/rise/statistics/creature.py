@@ -182,19 +182,12 @@ class Creature(object):
         ])
 
     @property
-    def max_hit_points(self):
-        return (
-            (self.level + (1 if self.is_character() else 0))
-            * (5 + self.starting_constitution)
-        ) * self.challenge_rating
+    def fatigue_threshold(self):
+        return max(self.level, self.constitution)
 
     @property
-    def current_hit_points(self):
-        return self.max_hit_points - self.damage_taken
-
-    @property
-    def hit_points(self):
-        return self.current_hit_points
+    def wound_threshold(self):
+        return self.level * (5 + self.starting_constitution)
 
     @property
     def intelligence(self):
@@ -385,7 +378,7 @@ class Creature(object):
 
     def _to_string_defenses(self):
         text = '; '.join([
-            f"[HP] {self.hit_points}",
+            f"[FT] {self.fatigue_threshold}, [WT] {self.wound_threshold}",
             f"[Defs] {self.armor_defense}/{self.fortitude_defense}/{self.reflex_defense}/{self.mental_defense}",
             f"[AP] {self.recovery_action_points}/{self.reserve_action_points}",
         ])
