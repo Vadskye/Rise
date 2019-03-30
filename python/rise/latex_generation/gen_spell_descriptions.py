@@ -1120,7 +1120,7 @@ def generate_mystic_spheres():
             """, tags=['Cold'], ap_cost=False),
             Spell('Cone of Cold', 1, """
                 Make an attack vs. Fortitude against everything in a \\areamed cone from you.
-                \\hit Each target takes cold \\glossterm<standard damage>, and is \\glossterm<fatigued> as a \\glossterm<condition>.
+                \\hit Each target takes cold \\glossterm<standard damage>, and is \\glossterm<chilled> as a \\glossterm<condition>.
             """, tags=['Cold']),
             Spell('Greater Cone of Cold', 4, """
                 This spell functions like the \\spell<cone of cold> spell, except it affects everything in a \\arealarge cone from you and you gain a +1d bonus to damage.
@@ -1133,18 +1133,18 @@ def generate_mystic_spheres():
                 \\hit The target takes cold \\glossterm<standard damage> +2d.
             """, tags=['Cold']),
             Spell('Greater Frostbite', 3, """
-                This spell functions like the \\spell<frostbite> spell, except that a struck target is also \\glossterm<exhausted> as a \\glossterm<condition>.
+                This spell functions like the \\spell<frostbite> spell, except that you gain a +1d bonus to damage and a struck target is also \\glossterm<chilled> as a \\glossterm<condition>.
             """, tags=['Cold']),
             Spell('Cold Snap', 2, """
                 This spell functions like the \\spell<cone of cold> spell, except that it gains the \\glossterm<Sustain> (standard) tag.
-                The area affected by the spell becomes a \\glossterm<zone> that is supernaturally chilled.
+                The area affected by the spell becomes a \\glossterm<zone> that is supernaturally cold.
                 At the end of each \\glossterm<action phase> in subsequent rounds, the attack is repeated in that area.
             """, tags=['Cold']),
             Spell('Greater Cold Snap', 3, f"""
                 This spell functions like the \\textit<cold snap> spell, except that the spell gains the \\glossterm<Sustain> (minor) tag instead of the \\glossterm<Sustain> (standard) tag.
             """, tags=['Cold']),
             Spell('Freezing Cone', 3, """
-                This spell functions like the \\spell<cone of cold> spell, except that you gain a +1d bonus to damage and each struck target is \\glossterm<exhausted> instead of \\glossterm<fatigued>.
+                This spell functions like the \\spell<cone of cold> spell, except that you gain a +1d bonus to damage and each struck target is \\glossterm<immobilized> instead of \\glossterm<chilled>.
             """, tags=['Cold']),
             Spell('Blizzard', 2, """
                 This spell functions like the \\spell<cone of cold> spell, except that the area becomes a \\areamed radius from you.
