@@ -555,6 +555,7 @@ It defines how attributes work and explains how to make attacks in combat.
             When you take at least as much damage as your \glossterm{wound threshold} from a single damage roll, you gain a \glossterm{vital wound}.
             In addition, if your \glossterm{wound threshold} is reduced to 0, you gain a \glossterm{vital wound}.
             This can be caused by effects that inflict \glossterm{fatigue} without dealing damage.
+            If this \glossterm{vital wound} gets a \glossterm{wound roll} less than 0, treat the roll as a 0, causing you to fall unconscious until the \glossterm{vital wound} is removed.
 
         \subsubsection{Vital Wounds}\label{Vital Wounds}
             When you gain a \glossterm{vital wound}, you remove all points of \glossterm{fatigue}.
@@ -562,7 +563,7 @@ It defines how attributes work and explains how to make attacks in combat.
             In addition, each \glossterm{vital wound} has a specific detrimental effect on you.
 
             To determine the effect of a \glossterm{vital wound}, make a \glossterm{wound roll} and find the corresponding effect in \trefnp{Vital Wound Effects}.
-            The effect of the wound lasts until you heal that \glossterm{vital wound}.
+            The effect of the wound lasts until you remove that \glossterm{vital wound}.
             The effects of vital wounds stack with each other, even if you roll the same effect twice for different \glossterm{vital wounds}.
 
             \parhead{Wound Roll}\label{Wound Roll}
@@ -575,7 +576,7 @@ It defines how attributes work and explains how to make attacks in combat.
                     \minus1 or less & You are unconscious, and at the end of the next round you die \\
                     0 & You are unconscious \\
                     1 & Your maximum \glossterm{recovery action points} are reduced by 2 \\
-                    % TODO: clarify that if you remove this wound on a long rest, you also heal the exhaustion in the same rest
+                    % TODO: clarify that if you remove this wound on a long rest, you also remove the exhaustion in the same rest
                     2 & You gain two points of \glossterm{exhaustion} that cannot be removed \\
                     3 & You move at half speed (minimum 5 ft.) \\
                     4 & Your maximum \glossterm{reserve action points} are reduced by 2 \\
@@ -591,7 +592,7 @@ It defines how attributes work and explains how to make attacks in combat.
         \subsubsection{Subdual Damage}\label{Subdual Damage}
             Some attacks and environmental effects deal subdual damage.
             Subdual damage works in the same way as normal damage, except that \glossterm{vital wounds} from subdual damage cannot kill.
-            Any \glossterm{wound roll} below 0 from subdual damage is treated as a 0, causing the target to fall unconscious until the \glossterm{vital wound} is healed.
+            Any \glossterm{wound roll} below 0 from subdual damage is treated as a 0, causing the target to fall unconscious until the \glossterm{vital wound} is removed.
 
     \subsection{Initiative}\label{Initiative}
         When multiple creatures take mutually impossible actions simultaneously, such as racing to be the first one to a door, they must roll initiative checks.
