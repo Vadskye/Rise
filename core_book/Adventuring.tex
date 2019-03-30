@@ -208,11 +208,11 @@
             \parhead{Hardness} Each object has a \glossterm{hardness} which indicates how durable it is.
             For details, see \pcref{Hardness}.
 
-%None of these tables exist currently. Also object hit points are obnoxious.
-%(see \trefnp{Common Armor, Weapon, and Shield Hardness and Hit Points}; \trefnp{Substance Hardness and Hit Points}; and \trefnp{Object Hardness and Hit Points}).
-            \parhead{Hit Points} An object's hit point total depends on what it is made of and how big it is. When an object's hit points reach 0, it's ruined.
+%None of these tables exist currently. Also object thresholds are obnoxious.
+%(see \trefnp{Common Armor, Weapon, and Shield Hardness and Thresholds}; \trefnp{Substance Hardness and Thresholds}; and \trefnp{Object Hardness and Thresholds}).
+            \parhead{Damage Thresholds} An object's \glossterm{fatigue threshold} and \glossterm{wound threshold} depend on what it is made of and how big it is.
 
-            Very large objects may have separate hit point totals for different sections.
+            Smaller sections of very large objects may be treated as independent objects for determining damage thresholds and tracking whether the object is \glossterm{broken} or \glossterm{destroyed}.
 
             \subparhead{Energy Attacks} Sonic attacks deal damage to most objects just as they do to creatures; roll damage and apply it normally after a successful hit. Electricity and fire attacks deal half damage to most objects, and cold attacks deal one-quarter damage to most objects.
 
@@ -230,17 +230,15 @@
 
             \subparhead{Animated Objects} Animated objects count as creatures for purposes of determining their Armor Defense (do not treat them as inanimate objects).
 
-
         \subsubsection{Damaged Objects}
-            An object that has taken damage remains fully functional until its hit points are reduced to 0, at which point it is \glossterm{broken}.
-            Any additional damage is applied as \glossterm{vital damage}.
-            If an object has more vital damage than its maximum hit points, it is \glossterm{destroyed}.
+            An object that gains a \glossterm{vital wound} becomes \glossterm{broken} and ignores any other effects of the \glossterm{vital wound}.
+            If it gains an additional \glossterm{vital wound}, it is \glossterm{destroyed}.
 
-            Both magical and mundane objects that are damaged or broken can be repaired to full hit points for a cost equal to 10\% of their value.
+            Both magical and mundane objects that have taken points of \glossterm{fatigue} or become \glossterm{broken} can be repaired to normal for a cost equal to 10\% of their value.
             You must be able to craft the item originally to repair it.
 
             \parhead{Broken Objects}\label{Broken Objects}
-            Broken objects cannot be used for their intended purpose, but still retain enough of their original form to be repaired without too much work. For example, a broken wall lies in pieces on the ground and no longer blocks passage, but can be repaired with no more effort than damaged items. Magic items that are broken retain their magical properties once fixed. Damaged and broken (but not destroyed) objects can be repaired with the Craft skill.
+            Broken objects cannot be used for their intended purpose, but still retain enough of their original form to be repaired without too much work. For example, a broken wall lies in pieces on the ground and no longer blocks passage, but can be repaired with no more effort than damaged items. Magic items that are broken retain their magical properties once fixed. Fatigued and broken (but not destroyed) objects can be repaired with the Craft skill.
 
             \parhead{Destroyed Objects}\label{Destroyed Objects}
             Destroyed object have been damaged beyond hope of any sort of repair short of crafting the object again from raw materials.
@@ -251,7 +249,7 @@
             If you try to break something with sudden force rather than by dealing damage, use a Strength check (rather than an attack roll and damage roll, as with the disarm special attack) to see whether you succeed.
             The DR depends more on the construction of the item than on the material.
 
-            If an item has no more than half its hit points remaining, the DR to break it drops by 5.
+            The DR to break an object with Strength is reduced by 2 for each point of \glossterm{fatigue} the object has suffered.
 
             A crowbar or portable ram improves a character's chance of breaking open a door.
 
