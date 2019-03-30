@@ -516,18 +516,17 @@ def magical_beasts(sample_monsters):
         passive_abilities=[
             passive_ability('Multi-Headed', f"""
                 A hydra can take a number of actions in each \\glossterm<action phase> equal to the number of heads it has active.
-                At the end of each action phase, if the hydra took at least {trunc_to_five(hydra5.hit_points // 5)} damage during that phase, it loses one of its heads.
+                When the hydra gains a point of \\glossterm<fatigue>, it loses once of its heads.
                 Severed heads leave behind a stump that can quickly grow new heads.
 
                 At the end of each delayed action phase, if the hydra has a severed stump, the stump is either sealed or it grows two new heads.
-                If the hydra took {trunc_to_five(hydra5.hit_points // 10)} acid, cold, or fire damage during that phase, the stump is sealed, and will stop growing new heads.
+                If the hydra took at least as much acid, cold, or fire damage as its \\glossterm<fatigue threshold> during that phase, the stump is sealed, and will stop growing new heads.
                 Otherwise, the hydra grows two new heads from the stump.
                 This grants it additional actions during the action phase as normal.
 
                 A hydra cannot sustain too many excess heads for a prolonged period of time.
-                At the end of each round, if the hydra has more heads than twice its normal head count, it loses an action point.
-                If it has no action points remaining, the hydra collapses unconscious for 8 hours.
-                During that time, the excess heads shrivel and die, and any sealed stumps heal, restoring the hydra to its normal head count.
+                At the end of each round, if the hydra has more heads than twice its normal head count, it gains a point of \\glossterm<fatigue>.
+                If the hydra takes a \\glossterm<long rest>, the excess heads shrivel and die, and any sealed stumps heal, restoring the hydra to its normal head count.
             """),
         ]
     ))
@@ -539,18 +538,17 @@ def magical_beasts(sample_monsters):
         passive_abilities=[
             passive_ability('Multi-Headed', f"""
                 A hydra can take a number of actions in each \\glossterm<action phase> equal to the number of heads it has active.
-                At the end of each action phase, if the hydra took at least {trunc_to_five(hydra6.hit_points // 5)} damage during that phase, it loses one of its heads.
+                When the hydra gains a point of \\glossterm<fatigue>, it loses once of its heads.
                 Severed heads leave behind a stump that can quickly grow new heads.
 
                 At the end of each delayed action phase, if the hydra has a severed stump, the stump is either sealed or it grows two new heads.
-                If the hydra took {trunc_to_five(hydra6.hit_points // 10)} acid, cold, or fire damage during that phase, the stump is sealed, and will stop growing new heads.
+                If the hydra took at least as much acid, cold, or fire damage as its \\glossterm<fatigue threshold> during that phase, the stump is sealed, and will stop growing new heads.
                 Otherwise, the hydra grows two new heads from the stump.
                 This grants it additional actions during the action phase as normal.
 
                 A hydra cannot sustain too many excess heads for a prolonged period of time.
-                At the end of each round, if the hydra has more heads than twice its normal head count, it loses an action point.
-                If it has no action points remaining, the hydra collapses unconscious for 8 hours.
-                During that time, the excess heads shrivel and die, and any sealed stumps heal, restoring the hydra to its normal head count.
+                At the end of each round, if the hydra has more heads than twice its normal head count, it gains a point of \\glossterm<fatigue>.
+                If the hydra takes a \\glossterm<long rest>, the excess heads shrivel and die, and any sealed stumps heal, restoring the hydra to its normal head count.
             """),
         ]
     ))
