@@ -527,6 +527,17 @@ def generate_sample_monsters():
         starting_attributes=[2, 0, 4, 4, 4, 4],
         weapons=[Weapon('bite')],
     )
+    monsters['wyvern'] = Creature(
+        challenge_rating=3,
+        character_class=CharacterClass('slayer'),
+        level=5,
+        name='Wyvern',
+        natural_armor=6,
+        species=Species('magical beast'),
+        size=Size('large'),
+        starting_attributes=[4, 1, 3, -7, 2, 0],
+        weapons=[Weapon('sting'), Weapon('bite')],
+    )
     monsters['ankheg'] = Creature(
         challenge_rating=2,
         character_class=CharacterClass('slayer'),
