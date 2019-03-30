@@ -662,8 +662,8 @@ def monstrous_humanoids(sample_monsters):
             """),
             active_ability("Green Hag's Curse", f"""
                 The hag makes a +{green_hag.accuracy()} vs. Mental atack aginst one creature within Medium range.
-                \\hit As a condition, the target is either dazed, fatigued, or sickened, as the hag chooses.
-                \\crit As three separate conditions, the target is dazed, fatigued, and sickened.
+                \\hit As a condition, the target is \\glossterm<dazed> or \\glossterm<sickened>, as the hag chooses.
+                \\crit As two separate conditions, the target is dazed and sickened.
             """),
         ],
         passive_abilities=[

@@ -128,9 +128,9 @@ def generate_weapons():
             This weapon is bitterly cold, and all damage dealt with it is cold damage in addition to its other types.
             As a standard action, you can intensify the cold.
             When you make a \\glossterm<strike> with this weapon, if the weapon is intensified and your attack result beats the target's Fortitude defense,
-                the target is \\fatigued as a \\glossterm<condition> and the weapon stops being intensified.
+                the target is \\chilled as a \\glossterm<condition> and the weapon stops being intensified.
         """,
-        short_description="Deals cold damage, can fatigue",
+        short_description="Deals cold damage, can chill",
     ))
 
     weapons.append(MagicItem(
@@ -140,9 +140,9 @@ def generate_weapons():
         tags=['Cold'],
         description="""
             This weapon is bitterly cold, and all damage dealt with it is cold damage in addition to its other types.
-            When you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Fortitude defense, the target is \\fatigued as a \\glossterm<condition>.
+            When you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Fortitude defense, the target is \\chilled as a \\glossterm<condition>.
         """,
-        short_description="Deals cold damage, fatigues foes",
+        short_description="Deals cold damage, chills foes",
     ))
 
     weapons.append(MagicItem(

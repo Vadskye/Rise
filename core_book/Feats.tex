@@ -87,7 +87,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featref{Draconic Heritage}  & \tdash   & Gain aspects of draconic power   & Bloodline          & \featpref{Draconic Heritage}  \\
         \featref{Iron Will}          & Wil 1    & Increase mental resilience       & \tdash             & \featpref{Iron Will}          \\
         \featref{Null}               & Wil 2    & Become immune to magic           & \tdash             & \featpref{Null}               \\
-        \featref{Regenerator}        & Con 1    & Heal wounds with inhuman speed   & \tdash             & \featpref{Regenerator}        \\
+        \featref{Regenerator}        & Con 2    & Heal wounds with inhuman speed   & \tdash             & \featpref{Regenerator}        \\
         \featref{Spellwarped}        & Wil 1    & Gain limited spellcasting        & Magical            & \featpref{Spellwarped}        \\
         \featref{Swift}              & Dex 1    & Move more quickly                & \tdash             & \featpref{Swift}              \\
         \featref{Toughness}          & Con 1    & Increase physical fortitude      & \tdash             & \featpref{Toughness}          \\
@@ -904,21 +904,19 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featpre Starting Willpower of 1.
 
         \ff[1]{Mental Discipline} You gain a \plus2 bonus to Mental defense.
-        In addition, you gain additional hit points equal to your Willpower.
+        In addition, you gain a \plus2 bonus to \glossterm{concentration} checks (see \pcref{Concentration}).
 
-        \ff[4]{Mind over Matter} You reduce your penalties for being \glossterm{staggered} by 2.
+        \ff[4]{Mind over Matter} You gain a bonus equal to your level to your \glossterm{wound threshold}.
 
         \ff[7]{Unclouded Mind} You are immune to being \glossterm{dazed}.
 
-        \ff[10]{Greater Mental Discipline} The bonus hit points from your \textit{mental discipline} ability increase to twice your Willpower.
+        \ff[10]{Greater Mental Discipline} The bonuses from your \textit{mental discipline} ability increase to \plus3.
 
-        \ff[13]{Greater Mind over Matter} You do not take penalties for being \glossterm{staggered}.
+        \ff[13]{Greater Mind over Matter} The bonus from your \textit{mind over matter} ability increases to twice your level.
 
         \ff[16]{Greater Unclouded Mind} You are immune to being \glossterm{stunned}.
 
-        \ff[19]{Supreme Mental Discipline} The defense bonus from your \textit{mental discipline} ability increases to \plus4.
-
-        \ff[20]{Mental Fortress} You are immune to all hostile \glossterm{Mind} abilities.
+        \ff[19]{Supreme Mental Discipline} The bonuses from your \textit{mental discipline} ability increase to \plus4.
     \end{feat}
 
     \begin{feat}{Jump Specialization}{Skill}
@@ -1299,21 +1297,21 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \end{feat}
 
     \begin{feat}{Regenerator}{General}
-        \featpre Starting Constitution of 1.
+        \featpre Starting Constitution of 2.
 
-        \ff[1]{Regenerative Rest} When you take a \glossterm{short rest}, you can heal \glossterm{vital damage} equal to half your Constitution in addition to your normal healing (see \pcref{Vital Damage}).
+        \ff[1]{Regenerative Rest} When you take a \glossterm{short rest}, you can spend a \glossterm{reserve action point}. If you do, you heal one \glossterm{vital wound}.
 
-        \ff[4]{Diehard} You reduce your \glossterm{vital damage penalties} by 2.
+        \ff[4]{Diehard} You gain a \plus1 bonus to \glossterm{wound rolls}.
 
-        \ff[7]{Fast Healing} At the end of each \glossterm{action phase}, you heal hit points equal to half your Constitution.
+        \ff[7]{Vital Healing} At the end of each \glossterm{action phase}, if you have any \glossterm{vital wounds}, you remove one point of \glossterm{fatigue}.
 
-        \ff[10]{Regeneration} If you have taken \glossterm{vital damage}, the healing from your \textit{fast healing} ability heals vital damage instead of hit points until you have no vital damage remaining.
+        \ff[10]{Injury Tolerance} You reduce your Fortitude and Mental defense penalties for having \glossterm{vital wounds} by 2 (see \pcref{Vital Wounds}).
 
-        \ff[13]{Unkillable} The penalty reduction from your \textit{diehard} ability increases to be equal to half your Constitution.
+        \ff[13]{Greater Regenerative Rest} You do not have to spend a \glossterm{reserve action point} to use your \textit{regenerative rest} ability.
 
-        \ff[16]{Greater Fast Healing} The healing from your \textit{fast healing} ability increases to be equal to your Constitution.
+        \ff[16]{Fast Healing} The fatigue removal from your \textit{vital healing} ability happens even if you have no \glossterm{vital wounds}.
 
-        \ff[19]{Indestructible} The penalty reduction from your \textit{diehard} ability increases to be equal to your Constitution.
+        \ff[19]{Indestructible} The bonus from your \textit{diehard} ability increases to \plus2.
     \end{feat}
 
     \begin{feat}{Ride Specialization}{Skill}
@@ -1728,7 +1726,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[4]{Cold Resistance} You gain a \glossterm{magic bonus} equal to your \glossterm{power} to your damage reduction against cold damage.
 
-        \ff[4]{Lingering Chill} Whenever you get a \glossterm{critical hit} against a target with a spell from the \sphere{cryomancy} \glossterm{mystic sphere}, the target is \glossterm{fatigued} as a \glossterm{condition}.
+        \ff[4]{Lingering Chill} Whenever you get a \glossterm{critical hit} against a target with a spell from the \sphere{cryomancy} \glossterm{mystic sphere}, the target gains a point of \glossterm{fatigue}.
 
         \ff[7]{Spell} You learn a spell from the \sphere{cryomancy} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
@@ -1737,7 +1735,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[13]{Greater Cold Resistance} Your bonus from the \textit{cold resistance} ability increases to twice your \glossterm{power}.
 
-        \ff[13]{Greater Lingering Chill} The \glossterm{fatigued} condition from your \textit{lingering chill} ability is replaced with the \glossterm{exhausted} condition.
+        \ff[13]{Greater Lingering Chill} Your \textit{lingering chill} ability inflicts a point of \glossterm{exhaustion} instead of a point of \glossterm{fatigue}.
 
         \ff[16]{Greater Cryomancy Focus} The bonus from your \textit{cryomancy focus} ability increases to \plus2.
 
@@ -2204,23 +2202,23 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{feat}{Toughness}{General}
         \featpre Starting Constitution of 1.
 
-        \ff[1]{Durability} You gain a \plus2 bonus to Fortitude defense.
-        In addition, you gain additional hit points equal to your Constitution.
+        \ff[1]{Fortified Body} You gain a \plus2 bonus to Fortitude defense.
+        In addition, you can sleep while you have \glossterm{encumbrance} without penalty (see \pcref{Encumbrance}).
 
-        \ff[4]{Injury Tolerance} You reduce your penalties for being \glossterm{bloodied} by 2.
+        \ff[4]{Durability} You gain a bonus equal to your level to your \glossterm{wound threshold}.
 
-        \ff[7]{Ailment Tolerance} You are immune to being \glossterm{sickened} and \glossterm{fatigued}.
-        This allows you to sleep while you have \glossterm{encumbrance} without penalty.
+        \ff[7]{Ailment Tolerance} You are immune to being \glossterm{sickened}.
 
-        \ff[10]{Greater Durability} The bonus hit points from your \textit{durability} ability increase to twice your Constitution.
-
-        \ff[13]{Greater Injury Tolerance} You do not take penalties for being \glossterm{bloodied}.
-
-        \ff[16]{Greater Ailment Tolerance} You are immune to being \glossterm{nauseated} and \glossterm{exhausted}.
+        \ff[10]{Greater Fortified Body} The defense bonus from your \textit{fortified body} ability increases to \plus3.
         In addition, you need half the normal amount of rest and sleep each day to function normally.
         For example, a human would only need four hours of sleep per night.
+        This does not reduce the time required for you to take a \glossterm{long rest}.
 
-        \ff[19]{Supreme Durability} The defense bonus from your \textit{durability} ability increases to \plus4.
+        \ff[13]{Greater Durability} The bonus from your \textit{durability} ability increases to twice your level.
+
+        \ff[16]{Greater Ailment Tolerance} You are immune to being \glossterm{nauseated}.
+
+        \ff[19]{Greater Fortified Body} The defense bonus from your \textit{fortified body} ability increases to \plus4.
     \end{feat}
 
     \begin{feat}{Two-Weapon Fighting}{Combat}

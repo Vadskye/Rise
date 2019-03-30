@@ -531,8 +531,7 @@ def generate_worn():
         tags=['Cold'],
         description="""
             At the end of each \\glossterm<action phase>, you make an attack vs. Fortitude against all enemies within a \\areamed radius emanation from you.
-            A hit deals cold \\glossterm<standard damage> -3d.
-            Each creature that takes damage in this way is \\fatigued until the end of the next round.
+            At hit causes each target to gain a point of \\glossterm<fatigue>.
         """,
         short_description="Continuously damages and fatigues nearby enemies",
     ))
