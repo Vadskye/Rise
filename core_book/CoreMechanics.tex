@@ -543,7 +543,7 @@ It defines how attributes work and explains how to make attacks in combat.
             Your \glossterm{fatigue threshold} indicates the amount of damage an attack has to deal in order to fatigue you.
             It is normally equal to the higher of your level and Constitution.
 
-            If you take at least as much damage as your \glossterm{fatigue threshold} from a single damage roll, you gain a point of \glossterm{fatigue}, which lowers your \glossterm{wound threshold}.
+            When you take at least as much damage as your \glossterm{fatigue threshold} from a single damage roll, you gain a point of \glossterm{fatigue}, which lowers your \glossterm{wound threshold}.
 
         \subsubsection{Wound Threshold}\label{Wound Threshold}
             Your \glossterm{wound threshold} indicates the amount of damage an attack has to deal to seriously injure you.
@@ -551,10 +551,12 @@ It defines how attributes work and explains how to make attacks in combat.
             It is normally equal to your level \x (5 \add starting Constitution).
             For each point of \glossterm{fatigue} you have, your wound threshold is lowered by an amount equal to your level.
 
-            If you take at least as much damage as your \glossterm{wound threshold} from a single damage roll, you gain a \glossterm{vital wound}.
+            When you take at least as much damage as your \glossterm{wound threshold} from a single damage roll, you gain a \glossterm{vital wound}.
+            In addition, if your \glossterm{wound threshold} is reduced to 0, you gain a \glossterm{vital wound}.
+            This can be caused by effects that inflict \glossterm{fatigue} without dealing damage.
 
         \subsubsection{Vital Wounds}\label{Vital Wounds}
-            When you gain a \glossterm{vital wound}, you lose all points of \glossterm{fatigue}.
+            When you gain a \glossterm{vital wound}, you lose all points of \glossterm{fatigue} except for points of \glossterm{fatigue} that cannot be removed.
             You take a \minus2 penalty to Fortitude and Mental defenses for each \glossterm{vital wound} you have.
             In addition, each \glossterm{vital wound} has a specific detrimental effect on you.
 
