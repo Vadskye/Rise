@@ -64,8 +64,13 @@ class Creature(object):
         self.reflex_defense_misc = 0
         self.mental_defense_misc = 0
 
-        self.damage_taken = 0
+        self.reset_combat()
+
+    def reset_combat(self):
+        self.is_conscious = True
+        self.fatigue = 0
         self.spent_action_points = 0
+        self.vital_wounds = 0
 
     def __copy__(self):
         return Creature(
@@ -187,7 +192,39 @@ class Creature(object):
 
     @property
     def wound_threshold(self):
-        return self.level * (5 + self.starting_constitution)
+        return {
+            1: 6,
+            2: 8,
+            3: 10,
+            4: 12,
+            5: 14,
+            # increase to +3 per
+            6: 17,
+            7: 20,
+            8: 23,
+            9: 26,
+            10: 29,
+            11: 32,
+            # increase to +4 per
+            12: 36,
+            13: 40,
+            14: 44,
+            15: 48,
+            16: 52,
+            17: 56,
+            # increase to +5 per
+            18: 61,
+            19: 66,
+            20: 71,
+            21: 76,
+            22: 81,
+            23: 86,
+            24: 91,
+        }[self.level]
+
+    @property
+    def current_wound_threshold(self):
+        return self.wound_threshold - ((self.level + 1) // 2) * self.fatigue
 
     @property
     def intelligence(self):
@@ -251,6 +288,20 @@ class Creature(object):
     @property
     def willpower(self):
         return calculate_attribute(self.starting_willpower, self.level)
+
+    def take_wound(self):
+        self.fatigue = 0
+        self.vital_wounds += 1
+        wound_roll = DicePool(10).roll() - self.vital_wounds + self.starting_constitution
+        self.is_conscious = self.is_conscious and wound_roll >= 3
+
+    def take_damage(self, damage):
+        if damage >= self.current_wound_threshold:
+            self.take_wound()
+        elif damage >= self.fatigue_threshold:
+            self.fatigue += 1
+            if self.current_wound_threshold == 0:
+                self.take_wound()
 
     def accuracy(self, attribute=None):
         # Perception is normally used except in unusual situations
