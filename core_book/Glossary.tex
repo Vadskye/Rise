@@ -97,15 +97,14 @@ Blindsight always has a range, and grants no benefits beyond that range.
 \glossdef{block}[blocking] The \textit{block} ability allows you to try to prevent other creatures from entering an area.
 For details, see \pcref{Block}.
 
-\glossdef{bloodied} At or below half hit points. Bloodied creatures take a \minus4 penalty to Fortitude and Mental defense.
-
 \glossdef{body armor} Body armor is a form of \glossterm{armor} that you wear on your body.
 For details, see \pcref{Armor}.
 
 \glossdef{broken} A broken object is damaged and unsuitable for use, though it retains its general structure and can be repaired.
 For details, see \pcref{Broken Objects}.
 
-An object that reaches 0 hit points is broken. If an object takes additional damage equal to its maximum hit points, it is \glossterm{destroyed}. A destroyed object cannot be repaired by any means.
+An object that takes a \glossterm{vital wound} becomes broken.
+If it takes an additional \glossterm{vital wound}, it becomes \glossterm{destroyed}.
 
 \glossdef{burst} A burst is a type of area that an ability can have (see \pcref{Area Types}).
 A burst ability has an immediate effect on all valid targets within an area.
@@ -199,10 +198,9 @@ Some abilities have special effects on critical hits.
 \glossdef{critical success} When you make a check, if your result beat the DR by 10 or more, you get a critical success.
 Some abilities have special effects on critical successes.
 
-\glossdef{damage} Some attacks deal damage to you when they hit.
-When you take damage, you reduce your \glossterm{hit points} by that amount.
-If you have no hit points remaining, you may take that damage as \glossterm{vital damage} instead, which represents potentially life-threatening injuries.
-For details, see \pcref{Damage}.
+\glossdef{damage} Many attacks deal damage to you when they hit.
+When you take damage, you make gain points of \glossterm{fatigue} or a \glossterm{vital wound}, depending on the amount of damage.
+For details, see \pcref{Taking Damage}.
 
 \glossdef{damage reduction} Damage reduction allows you to ignore a certain amount of incoming damage.
 If you have damage reduction, you ignore the first points of damage you would take each \glossterm{round}, up to a maximum equal to the value of your damage reduction.
@@ -336,8 +334,6 @@ If you control your fall with a successful Acrobatics or Jump check, you can red
 \glossdef{fascinated} A fascinated creature can take no actions. It remains in place, giving its total attention to some object, creature, or effect. It takes a \minus4 penalty to skill checks made as reactions, such as Awareness checks.
 If the creature notices any threat against it, such as an approaching enemy, it is no longer fascinated.
 
-\glossdef{fast healing} A creature with fast healing automatically heals hit points at the end of every \glossterm{action phase}.
-
 \glossdef{fatigue} Each point of fatigue lowers your \glossterm{wound threshold}, making you more vulnerable to \glossterm{vital wounds}.
 You gain a point of fatigue if you take at least as much damage as your \glossterm{fatigue threshold} from a single damage roll.
 For details, see \pcref{Taking Damage}.
@@ -420,10 +416,6 @@ Any \glossterm{physical attack} against a helpless creature automatically \gloss
 \glossdef{hidden task}[hidden tasks] Any checks for a hidden \glossterm{task} should be rolled secretly by the GM.\@
 You should not know the result of your check, or even that a check was made.
 For details, see \pcref{Hidden Tasks}.
-
-\glossdef{hit point}[hit points] Your hit points measure how hard you are to kill.
-When you take damage, you subtract that damage from your hit points.
-For details, see \pcref{Hit Points}.
 
 \glossdef{hunting party} A hunting party is the group of allies affected by a ranger's \textit{quarry} ability (see \pcref{Quarry}).
 
@@ -739,7 +731,7 @@ For details, see \pcref{Armor}.
 \glossdef{Shielding} See \pcref{Ability Tags}.
 
 \glossdef{short rest}[short rests] A short rest represents five minutes of relaxation.
-It allows you to regain a small amount of \glossterm{hit points} and some of your spent \glossterm{recovery action points}.
+It allows you to remove \glossterm{fatigue} and your spent \glossterm{recovery action points}.
 For details, see \pcref{Short Rest}.
 
 \glossdef{shove} You can use the \textit{shove} ability to forcibly move a creature.
