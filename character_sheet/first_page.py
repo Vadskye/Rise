@@ -106,10 +106,9 @@ def resources():
                 'name': 'action_points_max',
                 'value': ROLL20_CALC['reserve_ap'],
             })),
+            # This needs to be editable to support the Null feat
             underlabel('Recover', number_input({
-                'disabled': True,
                 'name': 'action_points_recovery_max',
-                'value': ROLL20_CALC['recovery_ap'],
             })),
             underlabel('Attuned', number_input({'name': 'action_points_attuned'})),
         ]),
