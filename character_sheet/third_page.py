@@ -32,7 +32,7 @@ def feats_summary():
             div({'class': 'summary-header-level section-header'}, 'Lvl'),
             div({'class': 'summary-header-name section-header'}, 'Feats'),
         ]),
-        "".join([feat_row(i) for i in [1, 2, 5, 9]]),
+        "".join([feat_row(i) for i in [1, 3, 6, 9]]),
     ])
 
 def abilities_summary():
