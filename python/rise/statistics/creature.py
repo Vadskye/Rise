@@ -224,7 +224,7 @@ class Creature(object):
 
     @property
     def current_wound_threshold(self):
-        return self.wound_threshold - ((self.level + 1) // 2) * self.fatigue
+        return self.wound_threshold - self.level * (self.fatigue // 2)
 
     @property
     def intelligence(self):
