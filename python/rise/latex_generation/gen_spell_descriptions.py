@@ -1590,7 +1590,8 @@ def generate_mystic_spheres():
             Spell('Spider Climb', 1, """
                 Choose a willing creature within \\rngclose range.
                 The target gains a \\glossterm<climb speed> equal to its \\glossterm<base speed>.
-                In addition, it gains a +5 bonus to Climb checks to climb on ceilings and similar surfaces.
+                It also gains a +4 \\glossterm<magic bonus> to Climb checks.
+                This bonus is increased to +8 when you climb on ceilings and similar surfaces.
             """, tags=['Attune (target)']),
             Spell('Barkskin', 2, """
                 Choose a willing creature within \\rngclose range.
@@ -2427,8 +2428,9 @@ def generate_mystic_spheres():
             """, tags=['Earth', 'Physical']),
             Spell('Earthbind', 2, """
                 Make an attack vs. Fortitude against a creature within \\rngmed range that is within 50 feet of the ground.
+                \\miss You regain the \\glossterm<action point> spent to cast this spell.
                 \\hit As a \\glossterm<condition>, the target is pulled towards the ground with great force, approximately quadrupling the gravity it experiences.
-                This imposes a -4 penalty to \\glossterm<accuracy>, physical \\glossterm<checks>, and \\glossterm<defenses>.
+                This imposes a -2 penalty to \\glossterm<accuracy>, physical \\glossterm<checks>, and \\glossterm<defenses>.
                 In addition, most flying creatures are unable to fly with this increased gravity and crash to the ground.
             """, tags=['Earth']),
             Spell('Quagmire', 2, """
