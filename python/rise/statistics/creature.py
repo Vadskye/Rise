@@ -192,39 +192,14 @@ class Creature(object):
 
     @property
     def wound_threshold(self):
-        return {
-            1: 6,
-            2: 8,
-            3: 10,
-            4: 12,
-            5: 14,
-            # increase to +3 per
-            6: 17,
-            7: 20,
-            8: 23,
-            9: 26,
-            10: 29,
-            11: 32,
-            # increase to +4 per
-            12: 36,
-            13: 40,
-            14: 44,
-            15: 48,
-            16: 52,
-            17: 56,
-            # increase to +5 per
-            18: 61,
-            19: 66,
-            20: 71,
-            21: 76,
-            22: 81,
-            23: 86,
-            24: 91,
-        }[self.level]
+        total = 4
+        for i in range(self.level):
+            total += 3 + (i + 1) // 4
+        return total
 
     @property
     def current_wound_threshold(self):
-        return self.wound_threshold - self.level * (self.fatigue // 2)
+        return self.wound_threshold - self.level * self.fatigue
 
     @property
     def intelligence(self):
@@ -290,10 +265,9 @@ class Creature(object):
         return calculate_attribute(self.starting_willpower, self.level)
 
     def take_wound(self):
-        self.fatigue = 0
         self.vital_wounds += 1
         wound_roll = DicePool(10).roll() - self.vital_wounds + self.starting_constitution
-        self.is_conscious = self.is_conscious and wound_roll >= 3
+        self.is_conscious = self.is_conscious and wound_roll >= 2
 
     def take_damage(self, damage):
         if damage >= self.current_wound_threshold:

@@ -1,7 +1,9 @@
 from rise.statistics.dice_pool import DicePool
 
+d10 = DicePool(10)
+
 def run_iterated_combat(blue_creatures, red_creatures, iterations=None):
-    iterations = iterations or 1000
+    iterations = iterations or 200
     average_results = {
         'blue_vital_wounds': 0,
         'red_vital_wounds': 0,
@@ -51,32 +53,14 @@ def run_combat(blue_creatures, red_creatures):
     blue_living = blue_creatures
     red_living = red_creatures
 
-    d10 = DicePool(10)
-
     while len(blue_living) > 0 and len(red_living) > 0:
         total_round_count += 1
 
-        red_defender, blue_attacks = find_best_defender(blue_living, red_living)
-        blue_defender, red_attacks = find_best_defender(red_living, blue_living)
+        temp = resolve_attacks(red_living, blue_living)
+        red_living = resolve_attacks(blue_living, red_living)
+        blue_living = temp
 
-        for attack in blue_attacks:
-            attack_result = d10.roll_explosion() + attack.accuracy
-            if attack_result >= get_defenses(red_defender)[attack.defense]:
-                red_defender.take_damage(attack.damage.roll())
-            if attack_result - 10 >= get_defenses(red_defender)[attack.defense]:
-                red_defender.take_damage(attack.damage.roll())
-
-        for attack in red_attacks:
-            attack_result = d10.roll_explosion() + attack.accuracy
-            if attack_result >= get_defenses(blue_defender)[attack.defense]:
-                blue_defender.take_damage(attack.damage.roll())
-            if attack_result - 10 >= get_defenses(blue_defender)[attack.defense]:
-                blue_defender.take_damage(attack.damage.roll())
-
-        blue_living = list(filter(lambda c: c.is_conscious, blue_living))
-        red_living = list(filter(lambda c: c.is_conscious, red_living))
-
-        if total_round_count > 1000:
+        if total_round_count > 100:
             break
 
     winner = 'Blue' if len(blue_living) > 0 else None
@@ -91,6 +75,25 @@ def run_combat(blue_creatures, red_creatures):
         'combat_length': total_round_count,
         'winner': winner,
     }
+
+
+def resolve_attacks(attackers, defenders):
+    defender = find_best_defender(attackers, defenders)
+    attacks = find_best_attacks(attackers, defender)
+
+    for attack in attacks:
+        attack_result = d10.roll_explosion() + attack.accuracy
+        damage = attack.damage.roll()
+        if attack_result - 10 >= get_defenses(defender)[attack.defense]:
+            damage += attack.damage.roll()
+        if attack_result >= get_defenses(defender)[attack.defense]:
+            defender.take_damage(damage)
+
+    return get_still_living(defenders)
+
+
+def get_still_living(creatures):
+    return list(filter(lambda c: c.is_conscious, creatures))
 
 
 def find_best_defender(attackers, defenders):
@@ -109,7 +112,6 @@ def find_best_defender(attackers, defenders):
     # prioritize low HP targets.
     best_survival_time = None
     best_defender = None
-    best_attacks = None
     for defender in defenders:
         survival_times = [get_survival_time(attacker, defender) for attacker in attackers]
         combined_damage_per_round = sum([defender.current_wound_threshold / time for time in survival_times])
@@ -117,12 +119,15 @@ def find_best_defender(attackers, defenders):
         if best_survival_time is None or survival_time < best_survival_time:
             best_survival_time = survival_time
             best_defender = defender
-            best_attacks = sorted(
-                [find_best_attack(attacker.attacks, get_defenses(defender), allow_action_points=True) for attacker in attackers],
-                key=lambda a: a.damage.average()
-            )
 
-    return best_defender, best_attacks
+    return best_defender
+
+
+def find_best_attacks(attackers, defender):
+    return sorted(
+        [find_best_attack(attacker.attacks, get_defenses(defender), allow_action_points=True) for attacker in attackers],
+        key=lambda a: a.damage.average()
+    )
 
 
 def get_survival_time(attacker, target):

@@ -543,14 +543,14 @@ It defines how attributes work and explains how to make attacks in combat.
             Your \glossterm{fatigue threshold} indicates the amount of damage an attack has to deal in order to fatigue you.
             It is normally equal to the higher of your level and Constitution.
 
-            When you take at least as much damage as your \glossterm{fatigue threshold} from a single damage roll, you gain a point of \glossterm{fatigue}, which lowers your \glossterm{wound threshold}.
+            When you take at least as much damage as your \glossterm{fatigue threshold} from a single damage roll, but less damage than your \glossterm{wound threshold}, you gain a point of \glossterm{fatigue}.
+            Each point of fatigue lowers your \glossterm{wound threshold} (see below).
 
         \subsubsection{Wound Threshold}\label{Wound Threshold}
             Your \glossterm{wound threshold} indicates the amount of damage an attack has to deal to seriously injure you.
             It is calculated based on your level, as described in \tref{Character Advancement}.
             Being fatigued from the current combat or exhausted from lack of rest makes you more vulnerable to serious wounds.
-            For every two points of \glossterm{fatigue} and \glossterm{exhaustion} that you have, you take a penalty to your \glossterm{wound threshold} equal to your level.
-            Having only one point of \glossterm{fatigue} or \glossterm{exhaustion} imposes no penalty.
+            For every point of \glossterm{fatigue} and \glossterm{exhaustion} that you have, you take a penalty to your \glossterm{wound threshold} equal to your level.
 
             When you take at least as much damage as your \glossterm{wound threshold} from a single damage roll, you gain a \glossterm{vital wound}.
             In addition, if your \glossterm{wound threshold} is reduced to 0, you gain a \glossterm{vital wound}.
@@ -558,7 +558,7 @@ It defines how attributes work and explains how to make attacks in combat.
             If this \glossterm{vital wound} gets a \glossterm{wound roll} less than 0, treat the roll as a 0, causing you to fall unconscious until the \glossterm{vital wound} is removed.
 
         \subsubsection{Vital Wounds}\label{Vital Wounds}
-            When you gain a \glossterm{vital wound}, you remove all points of \glossterm{fatigue}.
+            A \glossterm{vital wound} represents a serious injury to your body.
             You take a \minus2 penalty to Fortitude and Mental defenses for each \glossterm{vital wound} you have.
             In addition, each \glossterm{vital wound} has a specific detrimental effect on you.
 
@@ -574,15 +574,16 @@ It defines how attributes work and explains how to make attacks in combat.
                 \begin{dtabularx}{\textwidth}{l X}
                     \tb{Wound Roll} & \tb{Effect} \tableheaderrule
                     \minus1 or less & You are unconscious, and at the end of the next round you die \\
-                    0--1 & You are unconscious \\
-                    2 & You fall unconscious immediately, but can be awoken as if from sleep \\
-                    3 & You gain two points of \glossterm{exhaustion} that cannot be removed \\
-                    4 & You move at half speed (minimum 5 ft.) \\
+                    0 & You are unconscious \\
+                    1 & You fall unconscious immediately, but can be awoken as if from sleep \\
+                    2 & Your maximum \glossterm{recovery action points} are reduced by 2 \\
+                    3 & You move at half speed (minimum 5 ft.) \\
+                    % TODO: clarify that if you remove this wound on a long rest, you also remove the exhaustion in the same rest
+                    4 & You gain a point of \glossterm{exhaustion} that cannot be removed \\
                     5 & Your maximum \glossterm{reserve action points} are reduced by 2 \\
                     6 & You take a \minus2 penalty to all defenses \\
-                    7 & Your maximum \glossterm{recovery action points} are reduced by 1 \\
-                    % TODO: clarify that if you remove this wound on a long rest, you also remove the exhaustion in the same rest
-                    8 & You gain a point of \glossterm{exhaustion} that cannot be removed \\
+                    7 & You take a \minus2 penalty to \glossterm{accuracy} \\
+                    8 & Your maximum \glossterm{recovery action points} are reduced by 1 \\
                     9 & You take a \minus4 penalty to all skills \\
                     10 or more & No effect \\
                 \end{dtabularx}
@@ -1879,26 +1880,26 @@ It defines how attributes work and explains how to make attacks in combat.
         \lcaption{Character Advancement}
         \begin{dtabularx}{\columnwidth}{*{2}{>{\lcol}l} *{3}{>{\lcol}X} p{3.5em} l}
             \tb{Level} & \tb{XP}  & \tb{Max Rank}\fn{1} & \tb{Item Slots} & \tb{Legacy Item}\fn{2} & \tb{Recovery AP} & \tb{WT}\fn{3} \tableheaderrule
-            1st          & 0      & 1      & 1      & \tdash & 3      & 6
-            \\ 2nd       & 20     & 2      & \tdash & \tdash & \tdash & 8
-            \\ 3rd\fn{5} & 50     & \tdash & 2      & \tdash & \tdash & 10
-            \\ 4th       & 90     & \tdash & \tdash & 1      & \tdash & 12
-            \\ 5th       & 150    & 3      & \tdash & \tdash & \tdash & 14
-            \\ 6th       & 230    & \tdash & 3      & \tdash & \tdash & 17
-            \\ 7th       & 350    & \tdash & \tdash & \tdash & 4      & 20
-            \\ 8th       & 510    & 4      & \tdash & 2      & \tdash & 23
-            \\ 9th       & 750    & \tdash & \tdash & \tdash & \tdash & 26
-            \\ 10th      & 1,050  & \tdash & 4      & \tdash & \tdash & 29
-            \\ 11th      & 1,550  & 5      & \tdash & \tdash & \tdash & 32
-            \\ 12th      & 2,200  & \tdash & \tdash & 3      & \tdash & 36
-            \\ 13th      & 3,150  & \tdash & \tdash & \tdash & 5      & 40
-            \\ 14th      & 4,450  & 6      & \tdash & \tdash & \tdash & 44
-            \\ 15th      & 6,350  & \tdash & \tdash & \tdash & \tdash & 48
-            \\ 16th      & 8,900  & \tdash & \tdash & 4      & \tdash & 52
-            \\ 17th      & 13,000 & 7      & \tdash & \tdash & \tdash & 56
-            \\ 18th      & 18,000 & \tdash & \tdash & \tdash & \tdash & 61
-            \\ 19th      & 25,500 & \tdash & \tdash & \tdash & 6      & 66
-            \\ 20th      & 36,000 & 8      & \tdash & 5      & \tdash & 71
+            1st          & 0      & 1      & 1      & \tdash & 3      & 7
+            \\ 2nd       & 20     & 2      & \tdash & \tdash & \tdash & 10
+            \\ 3rd\fn{5} & 50     & \tdash & 2      & \tdash & \tdash & 13
+            \\ 4th       & 90     & \tdash & \tdash & 1      & \tdash & 16
+            \\ 5th       & 150    & 3      & \tdash & \tdash & \tdash & 21
+            \\ 6th       & 230    & \tdash & 3      & \tdash & \tdash & 25
+            \\ 7th       & 350    & \tdash & \tdash & \tdash & 4      & 29
+            \\ 8th       & 510    & 4      & \tdash & 2      & \tdash & 34
+            \\ 9th       & 750    & \tdash & \tdash & \tdash & \tdash & 39
+            \\ 10th      & 1,050  & \tdash & 4      & \tdash & \tdash & 44
+            \\ 11th      & 1,550  & 5      & \tdash & \tdash & \tdash & 49
+            \\ 12th      & 2,200  & \tdash & \tdash & 3      & \tdash & 55
+            \\ 13th      & 3,150  & \tdash & \tdash & \tdash & 5      & 61
+            \\ 14th      & 4,450  & 6      & \tdash & \tdash & \tdash & 67
+            \\ 15th      & 6,350  & \tdash & \tdash & \tdash & \tdash & 73
+            \\ 16th      & 8,900  & \tdash & \tdash & 4      & \tdash & 80
+            \\ 17th      & 13,000 & 7      & \tdash & \tdash & \tdash & 87
+            \\ 18th      & 18,000 & \tdash & \tdash & \tdash & \tdash & 94
+            \\ 19th      & 25,500 & \tdash & \tdash & \tdash & 6      & 101
+            \\ 20th      & 36,000 & 8      & \tdash & 5      & \tdash & 109
         \end{dtabularx}
         1. This is your maximum rank in your class archetypes (see \pcref{Archetypes}). \\
         2. This is the number of abilities you gain with your \glossterm{legacy item} (see \pcref{Legacy Items}). \\
