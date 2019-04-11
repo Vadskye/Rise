@@ -453,19 +453,19 @@ It defines how attributes work and explains how to make attacks in combat.
             \lcaption{Standard Damage}
             \begin{dtabularx}{\columnwidth}{l X}
                 \tb{Power} & \tb{Damage} \\
-                0--1         & 1d6  \\
-                2--3         & 1d8  \\
-                4--5         & 1d10 \\
-                6--7         & 2d6  \\
-                8--9         & 2d8  \\
-                10--11       & 2d10 \\
-                12--13       & 4d6  \\
-                14--15       & 4d8  \\
-                16--17       & 4d10 \\
-                18--19       & 5d10 \\
-                20--21       & 6d10 \\
-                22--23       & 7d10 \\
-                24--25\fn{1} & 8d10 \\
+                0--1   & 1d8  \\
+                2--3   & 1d10 \\
+                4--5   & 2d6  \\
+                6--7   & 2d8  \\
+                8--9   & 2d10 \\
+                10--11 & 4d6  \\
+                12--13 & 4d8  \\
+                14--15 & 4d10 \\
+                16--17 & 5d10 \\
+                18--19 & 6d10 \\
+                20--21 & 7d10 \\
+                22--23 & 8d10 \\
+                24--25\fn{1} & 9d10 \\
             \end{dtabularx}
             1. For values above 25, increase by 1d10 at every even value.
         \end{dtable}
@@ -548,14 +548,16 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \subsubsection{Wound Threshold}\label{Wound Threshold}
             Your \glossterm{wound threshold} indicates the amount of damage an attack has to deal to seriously injure you.
-            It is calculated based on your level, as described in \tref{Character Advancement}.
+            It is normally equal to (your level \add 1) \mtimes (5 \add your starting Constitution).
             Being fatigued from the current combat or exhausted from lack of rest makes you more vulnerable to serious wounds.
             For every point of \glossterm{fatigue} and \glossterm{exhaustion} that you have, you take a penalty to your \glossterm{wound threshold} equal to your level.
 
             When you take at least as much damage as your \glossterm{wound threshold} from a single damage roll, you gain a \glossterm{vital wound}.
-            In addition, if your \glossterm{wound threshold} is reduced to 0, you gain a \glossterm{vital wound}.
+
+            \parhead{Zero Vital Threshold}
+            If your \glossterm{wound threshold} is reduced to 0, you gain a \glossterm{vital wound}.
             This can be caused by effects that inflict \glossterm{fatigue} without dealing damage.
-            If this \glossterm{vital wound} gets a \glossterm{wound roll} less than 0, treat the roll as a 0, causing you to fall unconscious until the \glossterm{vital wound} is removed.
+            If that \glossterm{vital wound} gets a \glossterm{wound roll} less than 0, treat the roll as a 0, causing you to fall unconscious until the \glossterm{vital wound} is removed.
 
         \subsubsection{Vital Wounds}\label{Vital Wounds}
             A \glossterm{vital wound} represents a serious injury to your body.
@@ -1529,13 +1531,13 @@ It defines how attributes work and explains how to make attacks in combat.
             \begin{dtabularx}{\columnwidth}{>{\lcol}p{6em} l X}
                 \tb{Ability}  & \tb{Defense} & \tb{Brief Description} \tableheaderrule
                 Charge\fn{1}  & Armor        & Move and attack                         \\
-                Cleanse\fn{1} & \tdash       & Quick remove a \glossterm{condition}    \\
+                Cleanse\fn{1} & \tdash       & Quickly remove a \glossterm{condition}    \\
                 Dirty Trick   & Any          & Impose penalty on a foe                 \\
                 Disarm        & Ref          & Attack item, knocking it free           \\
                 Feint         & Ref          & Leave foe vulnerable to attacks         \\
                 Grapple       & Fort and Ref & Wrestle with a foe                      \\
                 Overrun\fn{1} & Fort         & Move through foe's space                \\
-                Recover       & \tdash       & Regain a spent \glossterm{action point} \\
+                Recover       & \tdash       & Regain an \glossterm{action point} or remove \glossterm{fatigue} \\
                 Shove         & Fort         & Move a foe                              \\
                 Struggle      & \tdash       & Move 5 feet regardless of penalties     \\
                 Total Defense & \tdash       & Gain \plus2 to defenses                 \\
@@ -1617,10 +1619,10 @@ It defines how attributes work and explains how to make attacks in combat.
             On a miss, you end your movement immediately.
         \end{freeability}
 
-        \parhead{Recover} As a standard action, you can use the \textit{recover} ability to regain a spent \glossterm{recovery action point}.
+        \parhead{Recover} As a standard action, you can use the \textit{recover} ability to briefly rest.
 
         \begin{freeability}{\labeltext{Recover}}
-            At the end of the round, if you did not take damage this round, you may regain one spent \glossterm{recovery action point}.
+            At the end of the round, if you did not take damage this round, you may regain one spent \glossterm{recovery action point} or remove a point of \glossterm{fatigue}.
             For details, see \pcref{Regaining Action Points}.
         \end{freeability}
 
@@ -1878,33 +1880,33 @@ It defines how attributes work and explains how to make attacks in combat.
 
     \begin{dtable}
         \lcaption{Character Advancement}
-        \begin{dtabularx}{\columnwidth}{*{2}{>{\lcol}l} *{3}{>{\lcol}X} p{3.5em} l}
-            \tb{Level} & \tb{XP}  & \tb{Max Rank}\fn{1} & \tb{Item Slots} & \tb{Legacy Item}\fn{2} & \tb{Recovery AP} & \tb{WT}\fn{3} \tableheaderrule
-            1st          & 0      & 1      & 1      & \tdash & 3      & 7
-            \\ 2nd       & 20     & 2      & \tdash & \tdash & \tdash & 10
-            \\ 3rd\fn{5} & 50     & \tdash & 2      & \tdash & \tdash & 13
-            \\ 4th       & 90     & \tdash & \tdash & 1      & \tdash & 16
-            \\ 5th       & 150    & 3      & \tdash & \tdash & \tdash & 21
-            \\ 6th       & 230    & \tdash & 3      & \tdash & \tdash & 25
-            \\ 7th       & 350    & \tdash & \tdash & \tdash & 4      & 29
-            \\ 8th       & 510    & 4      & \tdash & 2      & \tdash & 34
-            \\ 9th       & 750    & \tdash & \tdash & \tdash & \tdash & 39
-            \\ 10th      & 1,050  & \tdash & 4      & \tdash & \tdash & 44
-            \\ 11th      & 1,550  & 5      & \tdash & \tdash & \tdash & 49
-            \\ 12th      & 2,200  & \tdash & \tdash & 3      & \tdash & 55
-            \\ 13th      & 3,150  & \tdash & \tdash & \tdash & 5      & 61
-            \\ 14th      & 4,450  & 6      & \tdash & \tdash & \tdash & 67
-            \\ 15th      & 6,350  & \tdash & \tdash & \tdash & \tdash & 73
-            \\ 16th      & 8,900  & \tdash & \tdash & 4      & \tdash & 80
-            \\ 17th      & 13,000 & 7      & \tdash & \tdash & \tdash & 87
-            \\ 18th      & 18,000 & \tdash & \tdash & \tdash & \tdash & 94
-            \\ 19th      & 25,500 & \tdash & \tdash & \tdash & 6      & 101
-            \\ 20th      & 36,000 & 8      & \tdash & 5      & \tdash & 109
+        \begin{dtabularx}{\columnwidth}{*{2}{>{\lcol}l} *{5}{>{\lcol}X}}
+            \tb{Level} & \tb{XP}  & \tb{Max Rank}\fn{1} & \tb{Item Slots} & \tb{Legacy Item}\fn{2} & \tb{Recovery AP} \tableheaderrule
+            1st          & 0      & 1      & 1      & \tdash & 3
+            \\ 2nd       & 20     & 2      & \tdash & \tdash & \tdash
+            \\ 3rd\fn{4} & 50     & \tdash & 2      & \tdash & \tdash
+            \\ 4th       & 90     & \tdash & \tdash & 1      & \tdash
+            \\ 5th       & 150    & 3      & \tdash & \tdash & \tdash
+            \\ 6th       & 230    & \tdash & 3      & \tdash & \tdash
+            \\ 7th       & 350    & \tdash & \tdash & \tdash & 4
+            \\ 8th       & 510    & 4      & \tdash & 2      & \tdash
+            \\ 9th       & 750    & \tdash & \tdash & \tdash & \tdash
+            \\ 10th      & 1,050  & \tdash & 4      & \tdash & \tdash
+            \\ 11th      & 1,550  & 5      & \tdash & \tdash & \tdash
+            \\ 12th      & 2,200  & \tdash & \tdash & 3      & \tdash
+            \\ 13th      & 3,150  & \tdash & \tdash & \tdash & 5
+            \\ 14th      & 4,450  & 6      & \tdash & \tdash & \tdash
+            \\ 15th      & 6,350  & \tdash & \tdash & \tdash & \tdash
+            \\ 16th      & 8,900  & \tdash & \tdash & 4      & \tdash
+            \\ 17th      & 13,000 & 7      & \tdash & \tdash & \tdash
+            \\ 18th      & 18,000 & \tdash & \tdash & \tdash & \tdash
+            \\ 19th      & 25,500 & \tdash & \tdash & \tdash & 6
+            \\ 20th      & 36,000 & 8      & \tdash & 5      & \tdash
         \end{dtabularx}
         1. This is your maximum rank in your class archetypes (see \pcref{Archetypes}). \\
         2. This is the number of abilities you gain with your \glossterm{legacy item} (see \pcref{Legacy Items}). \\
-        3. See \pcref{Wound Threshold}. \\
-        5. You gain access to \glossterm{legend points} at this level.
+        3. You gain access to \glossterm{insight points} at this level. \\
+        4. You gain access to \glossterm{legend points} at this level.
     \end{dtable}
 
     \subsection{Leveling Up}

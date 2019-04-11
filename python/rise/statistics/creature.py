@@ -192,10 +192,7 @@ class Creature(object):
 
     @property
     def wound_threshold(self):
-        total = 4
-        for i in range(self.level):
-            total += 3 + (i + 1) // 4
-        return total
+        return (self.level + 1) * 5
 
     @property
     def current_wound_threshold(self):

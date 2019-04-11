@@ -124,4 +124,4 @@ class DicePool(object):
         return self.size == die.size and self.count == die.count
 
 def standard_damage(statistic):
-    return DicePool(6) + statistic // 2
+    return DicePool(8) + statistic // 2
