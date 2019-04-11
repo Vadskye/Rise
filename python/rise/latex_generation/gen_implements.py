@@ -92,7 +92,7 @@ def generate_implements():
         tags=['Life'],
         description="""
             Once per round, when you cast a spell other than a \\glossterm<cantrip> using this staff,
-                you heal hit points equal to your \\glossterm<power> with the spell cast.
+                you remove a point of \\glossterm<fatigue>.
         """,
         short_description="Heals you when casting spells",
     ))
@@ -104,7 +104,7 @@ def generate_implements():
         tags=['Life'],
         description="""
             Once per round, when you cast a spell other than a \\glossterm<cantrip> using this staff,
-                you heal hit points equal to twice your \\glossterm<power> with the spell cast.
+                you remove two points of \\glossterm<fatigue>.
         """,
         short_description="Greatly heals you when casting spells",
     ))

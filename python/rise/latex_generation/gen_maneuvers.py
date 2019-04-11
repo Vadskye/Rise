@@ -14,7 +14,7 @@ def generate_maneuvers():
         short_description='Heal nearby allies',
         effect_text="""
             You and any number of willing creatures within a \\arealarge radius from you
-                heal hit points equal to \\glossterm<standard damage>.
+                each remove a point of \\glossterm<fatigue>.
         """,
         rank_upgrades={
             '3': 'You gain a +1d bonus to the amount healed',
@@ -455,7 +455,7 @@ def generate_maneuvers():
         short_description='Make a melee strike against a creature to heal',
         effect_text="""
             Make a melee \\glossterm<strike>.
-            If you hit a creature with the strike, you regain hit points equal to \\glossterm<standard damage>.
+            If you hit a creature with the strike, you remove a point of \\glossterm<fatigue>.
         """,
         rank_upgrades={
             '3': 'You gain a +1d bonus to the amount healed.',
