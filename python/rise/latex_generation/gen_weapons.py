@@ -455,7 +455,8 @@ def generate_weapons():
         material_type='Weapon',
         tags=['Life'],
         description="""
-            When you deal damage to a living creature with a \\glossterm<strike> with this weapon, you heal hit points equal to your level.
+            When you deal damage to a living creature with a \\glossterm<strike> with this weapon, you remove a point of \\glossterm<fatigue>.
+            You can only remove fatigue in this way once per round.
         """,
         short_description="Heals you when dealing damage",
     ))
@@ -466,7 +467,8 @@ def generate_weapons():
         material_type='Weapon',
         tags=['Life'],
         description="""
-            When you deal damage to a living creature with a \\glossterm<strike> with this weapon, you heal hit points equal to twice your level.
+            When you deal damage to a living creature with a \\glossterm<strike> with this weapon, you remove two points of \\glossterm<fatigue>.
+            You can only remove fatigue in this way once per round.
         """,
         short_description="Drastically heals you when dealing damage",
     ))

@@ -829,11 +829,23 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Ring of Regeneration",
-        level=11,
+        level=9,
         material_type='Ring',
         tags=['Life'],
         description="""
-            At the end of each \\glossterm<action phase>, you heal hit points equal to this item's \\glossterm<power>.
+            At the end of each round, if you have at least three points of \\glossterm<fatigue>, you remove a point of \\glossterm<fatigue>.
+            Only damage taken while wearing the ring can be healed in this way.
+        """,
+        short_description="Grants fast healing while significantly fatigued",
+    ))
+
+    apparel.append(MagicItem(
+        name="Ring of Regeneration, Greater",
+        level=14,
+        material_type='Ring',
+        tags=['Life'],
+        description="""
+            At the end of each round, you remove a point of \\glossterm<fatigue>.
             Only damage taken while wearing the ring can be healed in this way.
         """,
         short_description="Grants fast healing",
@@ -866,9 +878,9 @@ def generate_worn():
         level=2,
         material_type='Amulet',
         description="""
-            You increase your maximum hit points by an amount equal to this item's \\glossterm<power>.
+            You gain a \\glossterm<magic bonus> equal to this item's \\glossterm<power> to your \\glossterm<wound threshold>.
         """,
-        short_description="Increases your hit points",
+        short_description="Increases your \\glossterm<wound threshold>",
     ))
 
     apparel.append(MagicItem(
@@ -876,9 +888,9 @@ def generate_worn():
         level=8,
         material_type='Amulet',
         description="""
-            You increase your maximum hit points by an amount equal to twice this item's \\glossterm<power>.
+            You gain a \\glossterm<magic bonus> equal to twice this item's \\glossterm<power> to your \\glossterm<wound threshold>.
         """,
-        short_description="Greatly increases your hit points",
+        short_description="Greatly increases your \\glossterm<wound threshold>",
     ))
 
     apparel.append(MagicItem(
@@ -1029,7 +1041,7 @@ def generate_worn():
         tags=['Life'],
         description="""
             As a standard action, you can spend an \\glossterm<action point> to use this belt.
-            If you do, you heal hit points equal to \\glossterm<standard damage>.
+            If you do, you remove a point of \\glossterm<fatigue>.
         """,
         short_description="Grants healing",
     ))
@@ -1041,42 +1053,42 @@ def generate_worn():
         tags=['Life'],
         description="""
             As a standard action, you can spend an \\glossterm<action point> to use this belt.
-            If you do, you heal hit points equal to \\glossterm<standard damage> +1d.
+            If you do, you remove two points of \\glossterm<fatigue>.
         """,
         short_description="Grants more healing",
     ))
 
     apparel.append(MagicItem(
         name="Lifekeeping Belt",
-        level=2,
-        material_type='Belt',
-        tags=['Life'],
-        description="""
-            You reduce your \\glossterm<vital damage penalties> by 2.
-        """,
-        short_description="Reduces vital damage penalties by 2",
-    ))
-
-    apparel.append(MagicItem(
-        name="Lifekeeping Belt, Greater",
         level=7,
         material_type='Belt',
         tags=['Life'],
         description="""
-            You reduce your \\glossterm<vital damage penalties> by 4.
+            You gain a +1 \\glossterm<magic bonus> to \\glossterm<wound rolls>.
         """,
-        short_description="Reduces vital damage penalties by 4",
+        short_description="Grants +1 bonus to \\glossterm<wound rolls>",
     ))
 
     apparel.append(MagicItem(
-        name="Lifekeeping Belt, Supreme",
+        name="Lifekeeping Belt, Greater",
         level=13,
         material_type='Belt',
         tags=['Life'],
         description="""
-            You reduce your \\glossterm<vital damage penalties> by 8.
+            You gain a +2 \\glossterm<magic bonus> to \\glossterm<wound rolls>.
         """,
-        short_description="Reduces vital damage penalties by 8",
+        short_description="Grants +2 bonus to \\glossterm<wound rolls>",
+    ))
+
+    apparel.append(MagicItem(
+        name="Lifekeeping Belt, Supreme",
+        level=19,
+        material_type='Belt',
+        tags=['Life'],
+        description="""
+            You gain a +3 \\glossterm<magic bonus> to \\glossterm<wound rolls>.
+        """,
+        short_description="Grants +3 bonus to \\glossterm<wound rolls>",
     ))
 
     apparel.append(MagicItem(
