@@ -42,7 +42,7 @@ def generate_mystic_spheres():
         spells=[
             Spell('Recovering Screen', 1, """
                 Until the end of the round, you gain a +2 bonus to Armor defense against ranged \\glossterm<physical attacks> from weapons or projectiles that are Small or smaller.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
+                At the end of the round, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
             """, tags=['Air', 'Swift'], ap_cost=False),
             Spell('Propulsion', 1, """
                 Choose a Large or smaller willing creature in \\rngclose range.
@@ -190,7 +190,7 @@ def generate_mystic_spheres():
         spells=[
             Spell('Refreshing Drink', 1, """
                 Until the end of the round, you gain a \\glossterm<magic bonus> equal to your \\glossterm<power> to \\glossterm<damage reduction> against fire damage.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
+                At the end of the round, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
             """, tags=['Creation', 'Swift', 'Water'], ap_cost=False),
             Spell('Crushing Wave', 1, """
                 Make an attack vs. Fortitude against everything in a \\arealarge, 10 ft.\\ wide line from you.
@@ -280,7 +280,7 @@ def generate_mystic_spheres():
             Spell('Astral Recovery', 1, """
                 You slip slightly into the Astral Plane and draw power from it.
                 Until the end of the round, \\glossterm<targeted> attacks against you have a 10\\% miss chance.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
+                At the end of the round, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
             """, tags=['Planar', 'Swift', 'Teleportation'], ap_cost=False),
             Spell('Dimensional Jaunt', 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
@@ -448,7 +448,7 @@ def generate_mystic_spheres():
             """, tags=['Attune (self)']),
             Spell('Ablative Recovery', 1, """
                 Until the end of the round, you gain a bonus equal to half your \\glossterm<power> to \\glossterm<damage reduction> against \\glossterm<physical> damage.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
+                At the end of the round, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
             """, tags=['Shielding', 'Swift'], ap_cost=False),
             Spell('Kinetic Shield', 1, """
                 Choose a willing creature in \\rngclose range.
@@ -579,7 +579,7 @@ def generate_mystic_spheres():
         spells=[
             Spell('Recovering Blessing', 1, """
                 You ignore the first \\glossterm<condition> that would be applied to you this round.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
+                At the end of the round, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
             """, tags=['Swift'], ap_cost=False),
             Spell('Blessing of Protection', 1, """
                 Choose a willing creature within \\rngclose range.
@@ -720,7 +720,7 @@ def generate_mystic_spheres():
         spells=[
             Spell('Faithful Recovery', 1, """
                 Until the end of the round, you gain a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<damage reduction> against \\glossterm<physical> damage.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
+                At the end of the round, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
             """, tags=['Shielding', 'Swift'], ap_cost=False),
             Spell('Divine Judgment', 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
@@ -810,7 +810,7 @@ def generate_mystic_spheres():
         spells=[
             Spell('Accelerated Recovery', 1, """
                 Until the end of the round, you gain a +2 bonus to Reflex defense.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
+                At the end of the round, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
             """, tags=['Swift', 'Temporal'], ap_cost=False),
             Spell('Slow', 1, """
                 Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against a creature within \\rngmed range.
@@ -954,7 +954,7 @@ def generate_mystic_spheres():
             Spell('Compel Recovery', 1, """
                 You force your mind and body to rest quickly.
                 Until the end of the round, you gain a +2 bonus to Mental defense.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
+                At the end of the round, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
             """, tags=['Compulsion', 'Swift'], ap_cost=False),
             Spell('Dance', 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
@@ -1028,7 +1028,7 @@ def generate_mystic_spheres():
             Spell('Corrupting Recovery', 1, """
                 Make an attack vs. Fortitude against a living creature within \\rngclose range.
                 \\hit As a \\glossterm<condition>, the target takes a -2 penalty to Fortitude defense.
-                In addition, you regain a spent \\glossterm<recovery action point>.
+                In addition, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
             """, tags=['Life'], ap_cost=False),
             Spell('Sickening Decay', 1, """
                 Make an attack vs. Fortitude against a living creature within \\rngclose range.
@@ -1116,7 +1116,7 @@ def generate_mystic_spheres():
             Spell('Drain Heat', 1, """
                 Make an attack vs. Fortitude against one creature within \\rngmed range.
                 \\hit The target takes cold \\glossterm<standard damage> -2d.
-                In addition, you regain a spent \\glossterm<recovery action point>.
+                In addition, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
             """, tags=['Cold'], ap_cost=False),
             Spell('Cone of Cold', 1, """
                 Make an attack vs. Fortitude against everything in a \\areamed cone from you.
@@ -1197,7 +1197,7 @@ def generate_mystic_spheres():
             Spell('Recovering Calm', 1, """
                 You infuse yourself with a sense of calm to help you rest.
                 Until the end of the round, you gain a +2 bonus to Mental defense.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
+                At the end of the round, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
             """, tags=['Emotion', 'Swift'], ap_cost=False),
             Spell('Terror', 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
@@ -1284,8 +1284,8 @@ def generate_mystic_spheres():
         spells=[
             Spell('Recovering Discharge', 1, """
                 You release an uncontrolled burst of electricity as you recover your energy.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
-                Make an attack vs. Fortitude against everything adjacent to you.
+                At the end of the round, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
+                When you use this ability, make an attack vs. Fortitude against everything adjacent to you.
                 \\hit Each target takes electricity damage equal to your \\glossterm<power>.
             """, tags=['Electricity'], ap_cost=False),
             Spell('Lightning Bolt', 1, """
@@ -1468,7 +1468,7 @@ def generate_mystic_spheres():
             Spell('Recovering Blur', 1, """
                 Your image blurs as you focus your magical energy on recovering.
                 Until the end of the round, you gain a +1 bonus to Armor defense.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
+                At the end of the round, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
             """, tags=['Sensation', 'Swift', 'Visual'], ap_cost=False),
             Spell('Blur', 1, """
                 Choose a willing creature within \\rngmed range.
@@ -1566,7 +1566,7 @@ def generate_mystic_spheres():
         spells=[
             Spell('Fortifying Recovery', 1, """
                 Until the end of the round, you gain a +2 bonus to Fortitude defense.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
+                At the end of the round, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
             """, tags=['Shaping', 'Swift'], ap_cost=False),
             Spell('Baleful Polymorph', 1, """
                 Make an attack vs. Fortitude against a creature within \\rngmed range.
@@ -1743,7 +1743,7 @@ def generate_mystic_spheres():
         spells=[
             Spell('Recovering Illumination', 1, """
                 Until the end of the round, you radiate bright light in a 20 foot radius and dim light in a 40 foot radius.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
+                At the end of the round, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
             """, tags=['Light', 'Sensation', 'Visual'], ap_cost=False),
             Spell('Flare', 1, """
                 A burst of light light fills a \\areasmall radius within \\rngmed range of you.
@@ -1834,7 +1834,7 @@ def generate_mystic_spheres():
             Spell('Recovering Scorch', 1, """
                 Make an attack vs. Armor against one creature or object within \\rngmed range.
                 \\hit The target takes fire \\glossterm<standard damage> -2d.
-                In addition, you regain a spent \\glossterm<recovery action point> at the end of the round.
+                In addition, you may either regain a spent \\glossterm<recovery action point> at the end of the round or remove a point of \\glossterm<fatigue>.
             """, tags=['Fire'], ap_cost=False),
             Spell('Fireburst', 1, """
                 Make an attack vs. Armor against everything in a \\areasmall radius within \\rngclose range.
@@ -1943,7 +1943,7 @@ def generate_mystic_spheres():
         spells=[
             Spell('Precognitive Recovery', 1, """
                 Until the end of the round, you gain a +1 bonus to Armor defense.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
+                At the end of the round, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
             """, tags=['Swift'], ap_cost=False),
             Spell('True Strike', 1, """
                 Choose a willing creature within \\rngclose range.
@@ -2266,7 +2266,7 @@ def generate_mystic_spheres():
             Spell('Recovering Crush', 1, """
                 Make an attack vs. Mental against one creature or object within \\rngmed range.
                 \\hit The target takes bludgeoning \\glossterm<standard damage> -2d.
-                In addition, you regain a spent \\glossterm<recovery action point>.
+                In addition, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
             """, tags=[], ap_cost=False),
             Spell('Telekinetic Crush', 1, """
                 Make an attack vs. Mental against one creature or object within \\rngmed range.
@@ -2335,7 +2335,7 @@ def generate_mystic_spheres():
             Spell('Earthen Recovery', 1, """
                 You embody the resilience of earth as you focus on recovering.
                 Until the end of the round, you gain a +2 bonus to Fortitude defense.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
+                At the end of the round, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
             """, tags=['Earth', 'Swift'], ap_cost=False),
             Spell('Rock Throw', 1, """
                 % TODO: define maximum hardness?
@@ -2462,7 +2462,7 @@ def generate_mystic_spheres():
         spells=[
             Spell('Thaumaturgic Recovery', 1, """
                 Until the end of the round, you gain a +1 bonus to \\glossterm<defenses> against spells.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
+                At the end of the round, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
             """, tags=['Swift'], ap_cost=False),
             Spell('Suppress Magic', 1, """
                 Make an attack against one creature, object, or magical effect within \\rngmed range.
@@ -2560,7 +2560,7 @@ def generate_mystic_spheres():
         spells=[
             Spell('Verdant Recovery', 1, """
                 If you are standing in arable earth, you heal hit points equal to half your \\glossterm<power>.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
+                At the end of the round, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
             """, tags=['Life'], ap_cost=False),
             Spell('Entangle', 1, """
                 You cause plants to grow and trap a foe.
@@ -2679,7 +2679,7 @@ def generate_mystic_spheres():
         spells=[
             Spell('Healing Recovery', 1, """
                 You heal hit points equal to half your \\glossterm<power>.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
+                At the end of the round, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
             """, tags=['Life'], ap_cost=False),
             Spell('Cure Wounds', 1, """
                 Choose a willing living creature within \\rngmed range.

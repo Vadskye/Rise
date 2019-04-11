@@ -400,10 +400,10 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Defensive Recovery',
-        short_description='Recover a spent \\glossterm<action point> and gain +1 Armor defense',
+        short_description='Recover and gain +1 Armor defense',
         effect_text="""
             You gain a +1 bonus to Armor defense until the end of the round.
-            At the end of the round, you regain a spent \\glossterm<recovery action point>.
+            At the end of the round, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
         """,
         rank_upgrades={
             '3': 'The defense bonus increases to +2.',
@@ -417,10 +417,10 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Recovering Strike',
-        short_description='Make a strike at a creature to regain an \\glossterm<action point>',
+        short_description='Make a strike at a creature to recover',
         effect_text="""
             Make a \\glossterm<strike> with a -2d penalty to damage.
-            If you hit a creature, you regain a spent \\glossterm<recovery action point> at the end of the round.
+            If you hit a creature, at the end of the round you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
         """,
         rank_upgrades={
             '3': 'The damage penalty is decreased to -1d.',
@@ -434,9 +434,9 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Retributive Recovery',
-        short_description='Regain an \\glossterm<action point> and gain bonuses against attackers',
+        short_description='Recover and gain bonuses against attackers',
         effect_text="""
-            At the end of the round, you regain a spent \\glossterm<recovery action point>.
+            At the end of the round, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
             Each time a creature attacks you this round, you gain
                 a +1 bonus to \\glossterm<accuracy> against that creature during the next round.
         """,
@@ -518,10 +518,10 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Stabilizing Recovery',
-        short_description='Recover a spent \\glossterm<action point> and gain +2 Fortitude defense',
+        short_description='Recover and gain +2 Fortitude defense',
         effect_text="""
             You gain a +2 bonus to Fortitude defense until the end of the round.
-            At the end of the round, you regain a spent \\glossterm<recovery action point>.
+            At the end of the round, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
         """,
         rank_upgrades={
             '3': 'The defense bonus increases to +3.',
@@ -535,10 +535,10 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Focusing Recovery',
-        short_description='Recover a spent \\glossterm<action point> and gain +2 Mental defense',
+        short_description='Recover and gain +2 Mental defense',
         effect_text="""
             You gain a +2 bonus to Mental defense until the end of the round.
-            At the end of the round, you regain a spent \\glossterm<recovery action point>.
+            At the end of the round, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
         """,
         rank_upgrades={
             '3': 'The defense bonus increases to +3.',
@@ -552,11 +552,11 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Hidden Recovery',
-        short_description='Hide and recover a spent \\glossterm<action point>',
+        short_description='Hide and recover',
         effect_text="""
             You can move up to half your speed and make a Stealth check to hide (see \\pcref<Stealth>).
             % TODO: define unobserved better?
-            At the end of the round, if you are unobserved, you regain a spent \\glossterm<recovery action point>.
+            At the end of the round, if you are unobserved, you may either regain a spent \\glossterm<recovery action point> or remove a point of \\glossterm<fatigue>.
         """,
         rank_upgrades={
             '3': 'You gain a +1 bonus to the Stealth check.',
