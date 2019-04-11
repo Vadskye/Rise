@@ -31,7 +31,7 @@ passives = {
         The {creature.name.lower()} has \\glossterm<damage reduction> {creature.magical_power} against piercing and slashing damage.
     """),
     'ichor healing': lambda creature: passive_ability('Ichor Healing', f"""
-        The {creature.name.lower()} heals {creature.level * creature.cr_mod} hit points at the end of each round.
+        The {creature.name.lower()} removes {creature.cr_mod} points of \\glossterm<fatigue> at the end of each round.
     """),
     'soft flesh': lambda creature: passive_ability('Soft Flesh', f"""
         The {creature.name.lower()} has \\glossterm<damage reduction> {creature.constitution} against piercing and bludgeoning damage.
@@ -328,7 +328,7 @@ def humanoids(sample_monsters):
                 \\crit As above, except that the penalty is increased to -6.
             """),
             active_ability('Hurt Less', f"""
-                One other willing creature in Close range heals {orc_shaman.standard_damage() + 2} hit points.
+                One other willing creature in Close range removes two points of \\glossterm<fatigue>.
             """),
         ],
     ))
@@ -575,7 +575,7 @@ def magical_beasts(sample_monsters):
         passive_abilities=[
             passive_ability('Consume Magic', f"""
                 The thaumavore gains a +4 bonus to \\glossterm<defenses> against \\glossterm<magical> abilities.
-                Whenever it resists a \\glossterm<magical> attack, it heals hit points equal to twice the \\glossterm<power> of the effect.
+                Whenever it resists a \\glossterm<magical> attack, it removes two points of \\glossterm<fatigue>.
             """),
             passive_ability('Sense Magic', f"""
                 The thaumavore can sense the location of all sources of magic within 100 feet of it.
@@ -706,7 +706,7 @@ def outsiders(sample_monsters):
                 If its target is evil, it gains a +2 bonus to accuracy and a +2d bonus to damage on the strike.
             """),
             active_ability("Angel's Grace", f"""
-                One willing creature within reach heals {astral_deva.standard_damage() + 3} hit points.
+                One willing creature within reach removes two points of \\glossterm<fatigue>.
             """),
         ],
     ))
@@ -844,7 +844,7 @@ def undead(sample_monsters):
             active_ability('Drain Life', f"""
                 The skeleton mage makes a +{skeleton_mage.accuracy()} vs. Fortitude attack against a creature in \\rngmed range.
                 \\hit The target takes {skeleton_mage.standard_damage('magical')} life damage.
-                In addition, the skeleton mage heals {skeleton_mage.magical_power} hit points.
+                In addition, the skeleton mage removes a point of \\glossterm<fatigue>.
             """, tags=['Life']),
             active_ability('Terror', f"""
                 The skeleton mage makes a +{skeleton_mage.accuracy()} vs. Mental attack against a creature in \\rngmed range.
