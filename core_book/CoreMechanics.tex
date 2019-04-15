@@ -143,9 +143,12 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \subsubsection{Triggered Ability Timing}\label{Triggered Ability Timing}
             Some abilities trigger at the start or end of particular phases, or at the start or end of the round.
-            Here is the order in which these abilities trigger each round:
+            Here is the order in which these abilities trigger each round, and some notable events that occur during the round:
             \begin{itemize}
                 \item Start of round
+                    \begin{itemize}
+                        \item Recalculate \glossterm{wound thresholds}
+                    \end{itemize}
                 \item Start of movement phase
                 \item End of movement phase
                 \item Start of action phase
@@ -573,6 +576,7 @@ It defines how attributes work and explains how to make attacks in combat.
             It is normally equal to (your level \add 1) \x (5 \add your starting Constitution).
             Being fatigued from the current combat or exhausted from lack of rest makes you more vulnerable to serious wounds.
             For every point of \glossterm{fatigue} or \glossterm{exhaustion} that you have, you take a penalty to your \glossterm{wound threshold} equal to your level.
+            If you gain or remove \glossterm{fatigue} or \glossterm{exhaustion} during a round, your \glossterm{wound threshold} is not recalculated until the start of the next round.
 
             When you take at least as much damage as your \glossterm{wound threshold} from a single damage roll, you gain a \glossterm{vital wound}.
 
