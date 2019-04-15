@@ -148,7 +148,7 @@ This choice determines a great deal about your character's abilities.
             \begin{itemize}
                 \item You gain a \plus2 bonus to \glossterm{power} with \glossterm{mundane} abilities.
                 \item You are unable to take \glossterm{standard actions} that do not cause you to make physical attacks.
-                \item At the end of each round, if you did not make a physical attack that round, you take \glossterm{subdual damage} equal to your level.
+                \item At the end of each round, if you did not make a physical attack that round, you gain a point of \glossterm{fatigue}.
                     This damage ignores \glossterm{damage reduction} and any similar abilities.
             \end{itemize}
         \end{apability}
@@ -158,7 +158,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Bbn}[3]{Focused Anger} You gain a \plus2 bonus to Mental defense.
 
-        \cf{Bbn}[4]{Invigorating Rage} During your \textit{rage} ability, you heal hit points equal to half your \glossterm{power} at the end of each \glossterm{action phase}.
+        \cf{Bbn}[4]{Invigorating Rage} During your \textit{rage} ability, you remove a point of \glossterm{fatigue} at the end of each round if you dealt damage to another creature with a \glossterm{mundane} ability that round.
 
         \cf{Bbn}[5]{Greater Rage} The \glossterm{power} bonus from your \textit{rage} ability increases to \plus4.
 
@@ -469,26 +469,29 @@ This choice determines a great deal about your character's abilities.
         \cf{Clr}[1]{Divine Healing} You can use the \textit{divine healing} ability as a standard action.
         \begin{freeability}{Divine Healing}[\glossterm{Life}, \glossterm{Magical}]
             Choose a willing living creature within your \glossterm{reach}.
-            The target is healed for hit points equal to \glossterm{standard damage}.
+            The target removes a point of \glossterm{fatigue}.
         \end{freeability}
 
-        \cf{Clr}[2]{Vital Healer}[Magical] Whenever you heal a creature, for every 5 hit points of healing you provide, you can also heal one point of \glossterm{vital damage}.
-
-        \cf{Clr}[3]{Divine Cleanse} You can use the \textit{divine cleanse} ability as a standard action.
+        \cf{Clr}[2]{Divine Cleanse} You can use the \textit{divine cleanse} ability as a standard action.
         \begin{freeability}{Divine Cleanse}[\glossterm{Magical}]
             Choose a willing creature within \rngclose range.
             The target removes one \glossterm{condition}.
         \end{freeability}
 
-        \cf{Clr}[4]{Greater Diving Healing} You gain a \plus1d bonus to healing with your \textit{divine healing} ability.
-        In addition, you can target a creature within \rngclose range.
+        \cf{Clr}[3]{Vital Healing} When you cause a creature to remove a point of \glossterm{fatigue} with a \glossterm{magical} ability, you can spend a \glossterm{reserve action point}.
+        If you do, you cause the target to remove a \glossterm{vital wound} instead of a point of \glossterm{fatigue}.
+        You can only use this ability once per round.
 
-        \cf{Clr}[5]{Greater Vital Healer} The healing from your \textit{vital healer} ability improves to heal one point of \glossterm{vital damage} for every 2 hit points of healing you provider.
+        \cf{Clr}[4]{Greater Divine Healing} When you use your \textit{divine healing} ability, you can spend an \glossterm{action point}.
+        If you do, the target removes an additional point of \glossterm{fatigue}.
+        In addition, the \glossterm{range} of that ability increases to \rngclose.
 
-        \cf{Clr}[6]{Greater Divine Cleanse} Your \textit{divine cleanse} ability gains the \glossterm{Swift} tag.
-        That that any penalties from the condition the ability removes do not affect the target during the current phase.
+        \cf{Clr}[5]{Greater Divine Cleanse} Your \textit{divine cleanse} ability gains the \glossterm{Swift} tag.
+        This means that any effects of the removed condition do not affect the target during the current phase.
 
-        \cf{Clr}[7]{Supreme Divine Healing} The healing bonus from your \textit{greater divine healing} ability increases to \plus2d.
+        \cf{Clr}[6]{Greater Vital Healing} You can use your \textit{vital healing} ability by spending a \glossterm{recovery action point} instead of a \glossterm{reserve action point}.
+
+        \cf{Clr}[7]{Supreme Divine Healing} When you use your \textit{divine healing} ability, the target removes two points of \glossterm{fatigue} instead of one. 
         In addition, your \textit{divine healing} ability can can target a creature within \rngmed range.
 
     \subsection{Cleric Domain Abilities}\label{Cleric Domain Abilities}
@@ -532,8 +535,7 @@ This choice determines a great deal about your character's abilities.
             % Lame gift
             \parhead{Gift} You gain a \plus2 bonus to Fortitude defense.
             \parhead{Aspect} You radiate an aura of death within a \areamed radius emanation.
-            When a creature in the aura takes \glossterm{vital damage}, you can choose to increase that vital damage by an amount equal to your \glossterm{power}.
-            Once per round, if a creature in the aura dies, you heal hit points equal to \glossterm{standard damage}.
+            The \glossterm{wound threshold} of each enemy in the area is reduced by an amount equal to your \glossterm{power}.
             \parhead{Essence} You can use the \textit{speak with dead} ability as a standard action.
             \begin{attuneability}{Speak with Dead}
                 Choose a corpse within \rngclose range.
@@ -668,9 +670,8 @@ This choice determines a great deal about your character's abilities.
             \parhead{Mastery} When you roll less than a 5 on an \glossterm{attack roll}, it is treated as if you had rolled a 5.
 
         \subsubsection{Life}
-            \parhead{Gift} You gain additional hit points equal to your \glossterm{power}.
-            In addition, you gain a \plus4 \glossterm{magic bonus} to the Heal skill (see \pcref{Heal}).
-            \parhead{Aspect} You gain a \plus1 bonus to \glossterm{power} with all abilities you use that heal hit points.
+            \parhead{Gift} You gain a \plus4 bonus to the Heal skill (see \pcref{Heal}).
+            \parhead{Aspect} You gain a bonus equal to your \glossterm{power} to your \glossterm{wound threshold}.
             \parhead{Essence} You can use the \textit{revivify} ability as a standard action.
             \begin{apability}{Revivify}
                 Choose a dead creature adjacent to you.
@@ -678,15 +679,14 @@ This choice determines a great deal about your character's abilities.
                 When the target is returned to life in this way, you expend all of your remaining \glossterm{action points}.
             \end{apability}
             % Need special text to clarify that it is affected by the Aspect?
-            \parhead{Mastery} At the end of each \glossterm{action phase}, you heal hit points equal to your \glossterm{power}.
+            \parhead{Mastery} At the end of each round, you remove a point of \glossterm{fatigue}.
 
         \subsubsection{Magic}
             \parhead{Gift} You gain a \plus1 bonus to \glossterm{power} with divine spells.
             \parhead{Aspect} You learn an additional \glossterm{spell} for a divine \glossterm{mystic sphere} you have access to.
-            \parhead{Essence} When you cast a spell, you heal hit points equal to your \glossterm{power}.
-            \parhead{Mastery} When you are affected by a \glossterm{magical} ability, you heal hit points equal to your \glossterm{power}.
-            This healing applies even if the spell has an attack that fails to beat your defenses.
-            It stacks with the healing from this domain's essence if you target yourself with a spell.
+            \parhead{Essence} Once per round, when you cast a spell, you may spend an \glossterm{action point}.
+            If you do, remove a point of \glossterm{fatigue}.
+            \parhead{Mastery} When you use this domain's essence ability, you remove two points of \glossterm{fatigue} instead of one.
 
         \subsubsection{Strength}
             If you choose this domain, you add the Climb, Jump, and Swim skills to your cleric \glossterm{class skill} list.
@@ -1010,10 +1010,10 @@ This choice determines a great deal about your character's abilities.
             \begin{freeability}{Photosynthesis}
                 As long as you are in natural sunlight, you gain a \plus10 foot bonus to your \glossterm{base speed}.
                 \rankline
-                \rank{3} As long as you are in natural sunlight, you heal hit points equal to half your \glossterm{power} at the end of each \glossterm{action phase}.
-                In addition, being in sunlight for 8 hours gives you the same benefit as consuming a full day's worth of food and water, allowing you to survive without eating or drinking.
-                \rank{5} The healing increases to be equal to your \glossterm{power}.
-                \rank{7} The speed bonus increases to \plus30 feet.
+                \rank{3} As long as you are in natural sunlight, at the end of each round you may spend an \glossterm{action point}.
+                If you do, you remove a point of \glossterm{fatigue}.
+                \rank{5} The speed bonus increases to \plus20 feet.
+                \rank{7} When you take a \glossterm{short rest} while you are in natural sunlight, you remove a \glossterm{vital wound}.
             \end{freeability}
 
             \begin{freeability}{Plantspeaker}
@@ -1174,7 +1174,8 @@ This choice determines a great deal about your character's abilities.
 
             Your magical connection to the animal improves its resilience and strength in combat.
             If any of its statistics are higher than the normal values below, the animal uses its own statistics instead.
-            Its hit points are normally equal to three times your \glossterm{power}.
+            Its \glossterm{fatigue threshold} is equal to your \glossterm{power}.
+            Its \glossterm{wound threshold} is equal to three times your \glossterm{power}.
             Each of its defenses is normally equal to 4 \add your level.
             Its \glossterm{accuracy} is normally equal to the higher of your level and Perception.
             Its \glossterm{power} with its attacks is normally equal to your \glossterm{power}.
@@ -1744,7 +1745,7 @@ This choice determines a great deal about your character's abilities.
         During the time required to cast the spell, you specify what circumstances cause the spell to take effect.
 
         The spell can be set to trigger in response to any circumstances that a typical human observing you and your situation could detect.
-        For example, you could specify ``when I fall at least 50 feet'' or ``when I become bloodied'', but not ``when there is an invisible creature within 50 feet of me'' or ``when I am at 17 hit points or fewer.''
+        For example, you could specify ``when I fall at least 50 feet'' or ``when I take a \glossterm{vital wound}'', but not ``when there is an invisible creature within 50 feet of me'' or ``when my \glossterm{wound threshold} is 20 or lower.''
         The more specific the required circumstances, the better -- vague requirements, such as ``when I am in danger'', may cause the spell to trigger unexpectedly or fail to trigger at all.
         If you attempt to specify multiple separate triggering conditions, such as ``when I take damage or when an enemy is adjacent to me'', the spell will randomly ignore all but one of the conditions.
 
@@ -1769,10 +1770,9 @@ This choice determines a great deal about your character's abilities.
         This tests your focus when casting the spell, forcing you to make a \glossterm{concentration} check to cast the spell successfully (see \pcref{Concentration}).
 
         \cf{Mge}[2]{Mystic Healing}
-        When a spell resolves, if you were a target of the spell, you heal hit points equal to that spell's \glossterm{power}.
-        This healing applies even if the spell's attack fails.
-        You can only gain this healing once per round.
-        If you are affected by multiple spells simultaneously, you can choose which spell you benefit from.
+        Once per round, when you are the target of a spell, you may spend an \glossterm{action point}.
+        If you do, remove a point of \glossterm{fatigue}.
+        You can use this ability even if the spell has an attack that fails.
 
         \cf{Mge}[3]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
 
@@ -2291,8 +2291,8 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Pal}[1]{Lay on Hands}[Magical] You can use the \textit{lay on hands} ability as a standard action.
         \begin{freeability}{Lay on Hands}[Life]
-            Choose a willing creature within your \glossterm{reach}.
-            The target is healed for hit points equal to \glossterm{standard damage}.
+            Choose a willing living creature within your \glossterm{reach}.
+            The target removes a point of \glossterm{fatigue}.
         \end{freeability}
 
         \cf{Pal}[2]{Stalwart Champion}
@@ -2300,7 +2300,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Pal}[3]{Stalwart Resilience}[Magical]
         You gain a \plus1 bonus to Fortitude and Mental defense.
-        In addition, you gain additional hit points equal to your \glossterm{power}.
+        In addition, you gain a bonus equal to your \glossterm{power} to your \glossterm{wound threshold}.
 
         \cf{Pal}[4]{Greater Lay on Hands}[Magical]
         You gain a \plus1d bonus to the healing from your \textit{lay on hands} ability.
@@ -2311,7 +2311,7 @@ This choice determines a great deal about your character's abilities.
         In addition, the Armor defense bonus increases to \plus2.
 
         \cf{Pal}[6]{Greater Stalwart Resilience}[Magical] The defense bonus from your \textit{stalwart resilience} ability increases to \plus2.
-        In addition, the hit point bonus increases to twice your \glossterm{power}.
+        In addition, the \glossterm{wound threshold} bonus increases to twice your \glossterm{power}.
 
         \cf{Pal}[7]{Supreme Lay on Hands}[Magical]
         The healing bonus from your \textit{greater lay on hands ability} increases to \plus2d.
@@ -2490,7 +2490,7 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
 
             \begin{freeability}{Lifeseal}[Magical]
-                As long as your quarry is \glossterm{threatened} by at least two members of your \glossterm{hunting party}, it cannot regain hit points.
+                As long as your quarry is \glossterm{threatened} by at least two members of your \glossterm{hunting party}, it cannot remove \glossterm{fatigue}.
 
                 \rankline
                 \rank{4} This effect instead applies if the target is within \rngmed range of at least two members of your hunting party.
@@ -3008,7 +3008,7 @@ This choice determines a great deal about your character's abilities.
         You can also spend \glossterm{insight points} to learn one additional eldritch augment per \glossterm{insight point}.
         Whenever you use your \textit{eldritch blast} ability, you may also use one eldritch augment to increase the power of the \textit{eldritch blast}.
         {
-            \parhead{Bloodreaving} If you hit a living creature, you heal hit points equal to half the damage dealt.
+            \parhead{Bloodreaving} If you inflict a \glossterm{vital wound} with the spell, you remove a point of \glossterm{fatigue}.
 
             \parhead{Chaining} You can also target an additional creature or object within range.
             You take a \minus2 penalty to \glossterm{accuracy} against that target.
