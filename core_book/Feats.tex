@@ -763,19 +763,21 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{feat}{Executioner}{Combat}
         \featpres Starting Strength of 1, starting Perception of 2.
 
-        \ff[1]{Blood Sense}[Magical] You automatically know the location of all \glossterm{bloodied} living creatures within 50 feet of you, regardless of concealment or invisibility.
-        You must have \glossterm{line of effect} to a creature to sense it in this way.
+        \ff[1]{Blood Sense}[Magical] You automatically know the location of all living creatures with a \glossterm{vital wound} within 50 feet of you, regardless of concealment or invisibility.
+        You must have \glossterm{line of effect} to a creature to sense it in this way, but you do not need \glossterm{line of sight}.
 
         \ff[4]{Execution} You can use the \textit{execution} ability as a standard action.
         \begin{apability}{Execution}
             Make a \glossterm{strike}.
-            If the target is \glossterm{bloodied}, you gain a \plus3d bonus to damage with the strike.
+            You gain a \plus3d bonus to damage on the strike.
+            % TODO: wording?
+            If the strike does not beat the target's \glossterm{wound threshold}, the target takes no damage.
         \end{apability}
 
-        \ff[7]{Purge the Weak} You gain a \plus1 bonus to \glossterm{accuracy} against \glossterm{bloodied} creatures.
+        \ff[7]{Purge the Weak} You gain a \plus1 bonus to \glossterm{accuracy} against creatures with a \glossterm{vital wound}.
 
-        \ff[10]{Greater Blood Sense}[Magical] Your \textit{blood sense} ability allows you to know the location of all living creatures within range, not just bloodied living creatures.
-        You can still automatically identify which creatures are bloodied and which creatures are not bloodied.
+        \ff[10]{Greater Blood Sense}[Magical] Your \textit{blood sense} ability allows you to know the location of all living creatures within range, not just living creatures with a \glossterm{vital wound}.
+        You can automatically identify which of those creatures have a \glossterm{vital wound}.
 
         \ff[10]{Greater Execution} The damage bonus from your \textit{execution} ability increases to \plus4d.
 
@@ -965,28 +967,28 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Battle Command} You can use the \textit{battle command} ability as a standard action.
         \begin{freeability}{Battle Command}[\glossterm{Swift}]
             Choose a willing creature within \rngmed range of you.
-            When the target makes a \glossterm{strike} during the current phase, it can roll the \glossterm{attack roll} twice and take the higher result.
+            If the target makes a \glossterm{strike} during the current phase, it can roll the \glossterm{attack roll} twice and take the higher result.
         \end{freeability}
 
         \ff[4]{Bolster} You can use the \textit{bolster} ability as a standard action.
         \begin{apability}{Bolster}[\glossterm{Emotion}]
             Choose any number of willing creatures other than yourself within an \areamed radius burst from you.
-            Each target removes one point of \glossterm{fatigue} and can remove one \glossterm{condition} of its choice.
+            Each target may either remove one point of \glossterm{fatigue} or remove one \glossterm{condition} of its choice.
         \end{apability}
 
         \ff[7]{Commanding Presence} You gain a \plus2 bonus to the Intimidate and Persuasion skills.
 
-        \ff[10]{Greater Bolster} The healing from your \textit{bolster} ability increases to twice your Willpower.
+        \ff[10]{Greater Bolster} The area affected by your \textit{bolster} ability increases to an \arealarge radius burst from you.
 
         \ff[10]{Greater Battle Command} The target of your \textit{battle command} ability also gains a \plus1 bonus to \glossterm{accuracy} with the strike.
 
-        \ff[13]{Greater Commanding Presence} The bonus from your \textit{commanding presence} ability increases to \plus4.
+        \ff[13]{War Leader} Each creature within an \areamed emanation from you may use your level in place of its \glossterm{accuracy} with \glossterm{strikes}.
 
-        \ff[16]{Supreme Bolster} The healing from your \textit{bolster} ability increases to three times your Willpower.
+        \ff[16]{Supreme Bolster} Each target affected by your \textit{bolster} ability can both remove a point of \glossterm{fatigue} and remove a \glossterm{condition}.
 
         \ff[16]{Supreme Battle Command} The accuracy bonus from your \textit{greater battle command} ability increases to \plus2.
 
-        \ff[19]{War Leader} The area affected by your \textit{bolster} and \textit{inspiring presence} abilities increases to an \areahuge radius.
+        \ff[19]{Greater War Leader} The area affected by your \textit{war leader} ability increases to a \areahuge radius.
     \end{feat}
 
     \begin{feat}{Linguistics Specialization}{Skill}

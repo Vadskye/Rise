@@ -13,13 +13,12 @@ def generate_maneuvers():
         name='Battle Cry',
         short_description='Heal nearby allies',
         effect_text="""
-            You and any number of willing creatures within a \\arealarge radius from you
-                each remove a point of \\glossterm<fatigue>.
+            Any number of willing creatures other than yourself within a \\arealarge radius burst from you each remove a point of \\glossterm<fatigue>.
         """,
         rank_upgrades={
-            '3': 'You gain a +1d bonus to the amount healed',
-            '5': 'The healing bonus increases to +2d',
-            '7': 'The healing bonus increases to +3d',
+            '3': 'The ability can also affect you.',
+            '5': 'Each target may either remove a point of \\glossterm<fatigue> or remove a \\glossterm<condition>.',
+            '7': 'Each target may both remove a point of \\glossterm<fatigue> and remove a \\glossterm<condition>.',
         },
         tags=[],
         lists=['Primal'],
@@ -226,21 +225,17 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Strip the Flesh',
-        short_description='Make a strike with bonus damage against unbloodied foes',
+        short_description='Make a strike that inflicts additional fatigue',
         effect_text="""
-                Make a \\glossterm<strike> with a slashing weapon.
-                At the end of the \\glossterm<action phase> of the next round,
-                    if you hit with the strike and the target is not \\glossterm<bloodied>,
-                    it takes additional damage equal to the damage you dealt with the strike.
+            Make a \\glossterm<strike> using a slashing weapon with a -1d penalty to damage.
+            If the target gains a point of \\glossterm<fatigue> from the attack, it gains an additional point of \\glossterm<fatigue>.
         """,
         rank_upgrades={
             '3': """
-                If you hit with the strike, the target continues taking the same damage
-                at the end of each \\glossterm<action phase> until it becomes \\glossterm<bloodied>.
-                This is a \\glossterm<condition>, and can be removed by abilities that remove conditions.
+                You gain a +1 bonus to \\glossterm<accuracy> with the strike.
             """,
-            '5': 'You gain a +1d bonus to damage with the strike.',
-            '7': 'The damage bonus increases to +2d.',
+            '5': 'The damage penalty with the strike is removed.',
+            '7': 'The accuracy bonus increases to +2.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Wild', 'Trick'],
