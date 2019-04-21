@@ -227,15 +227,13 @@ def generate_maneuvers():
         name='Strip the Flesh',
         short_description='Make a strike that inflicts additional fatigue',
         effect_text="""
-            Make a \\glossterm<strike> using a slashing weapon with a -1d penalty to damage.
+            Make a \\glossterm<strike> using a slashing weapon with a -2d penalty to damage.
             If the target gains a point of \\glossterm<fatigue> from the attack, it gains an additional point of \\glossterm<fatigue>.
         """,
         rank_upgrades={
-            '3': """
-                You gain a +1 bonus to \\glossterm<accuracy> with the strike.
-            """,
-            '5': 'The damage penalty with the strike is removed.',
-            '7': 'The accuracy bonus increases to +2.',
+            '3': """ The damage penalty is reduced to -1d.""",
+            '5': 'You gain a +1 bonus to \\glossterm<accuracy> with the strike ',
+            '7': 'The damage penalty is removed.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Wild', 'Trick'],
