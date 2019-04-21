@@ -194,12 +194,12 @@ def generate_maneuvers():
         effect_text="""
                 Make a \\glossterm<strike> against a creature.
                 If you use this ability during the \\glossterm<action phase>, you can make another strike during the \\glossterm<delayed action phase>.
-                You take a -2 penalty to accuracy on both strikes.
+                You take a -2 penalty to accuracy and a -2d penalty to damage on both strikes.
         """,
         rank_upgrades={
             '3': 'The accuracy penalty is reduced to -1.',
-            '5': 'The accuracy penalty is removed.',
-            '7': 'You gain a +1 bonus to accuracy with both strikes.',
+            '5': 'The damage penalty is reduced to -1d.',
+            '7': 'The accuracy penalty is removed.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Wild', 'Trick', 'Esoteric'],
