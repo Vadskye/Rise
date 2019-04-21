@@ -173,6 +173,7 @@ def core_statistics():
             'name': 'fatigue_threshold_display',
             'value': '(@{fortitude_scaling} + @{fatigue_threshold_misc})',
         })),
+        freeform_number_input(number_input_attributes={'name': 'freeform-core-statistic'})
     ])
 
 def resources():
@@ -274,7 +275,7 @@ def wound_thresholds():
         flex_wrapper(div({'class': 'section-header'}, 'Fatigue Track')),
         flex_row({'class': 'wound-threshold-values'}, [
             wound_threshold_header(),
-            "".join(wound_threshold_value(i) for i in range(9)),
+            "".join(wound_threshold_value(i) for i in range(8)),
         ]),
     ])
 
