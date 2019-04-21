@@ -206,7 +206,7 @@ def encumbrance():
                 setAttrs({{
                     encumbrance: Math.max(
                         Number(v.body_armor_encumbrance || 0)
-                        + Number(v.encumbrance_misc || 0)
+                        - Number(v.encumbrance_misc || 0)
                         - Number(v.strength_starting)
                     , 0),
                 }});
