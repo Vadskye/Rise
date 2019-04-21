@@ -171,13 +171,8 @@ def core_statistics():
         sidelabel('FT', number_input({
             'disabled': True,
             'name': 'fatigue_threshold_display',
-            'value': '(@{fatigue_threshold})',
+            'value': '(@{fortitude_scaling} + @{fatigue_threshold_misc})',
         })),
-        labeled_number_input('Item slots', input_attributes={
-            'disabled': True,
-            'name': 'hit_points_bloodied_display',
-            'value': 'floor(@{hit_points_total} / 2)',
-        }),
     ])
 
 def resources():
@@ -186,36 +181,33 @@ def resources():
         flex_row({'class': 'recovery-action-points'}, [
             div({'class': 'resource-header number-label'}, 'Recovery AP'),
             flex_row({'class': 'resource-inputs'}, [
-                number_input(),
-                number_input(),
-                number_input(),
-                number_input(),
-                number_input(),
+                number_input({
+                    'name': f"recovery_ap_{i}"
+                })
+                for i in range(5)
             ]),
         ]),
         flex_row({'class': 'reserve-action-points'}, [
             div({'class': 'resource-header number-label'}, 'Reserve AP'),
             flex_row({'class': 'resource-inputs'}, [
-                number_input(),
-                number_input(),
-                number_input(),
-                number_input(),
-                number_input(),
-                number_input(),
+                number_input({
+                    'name': f"reserve_ap_{i}"
+                })
+                for i in range(6)
             ]),
         ]),
         flex_row({'class': 'item-slots'}, [
             div({'class': 'resource-header number-label'}, 'Item slots'),
             flex_row({'class': 'resource-inputs'}, [
-                number_input(),
-                number_input(),
-                number_input(),
-                number_input(),
+                number_input({
+                    'name': f"item_slot_{i}"
+                })
+                for i in range(4)
             ]),
         ]),
         flex_row({'class': 'legend-points'}, [
             div({'class': 'resource-header number-label'}, 'Legend point'),
-            number_input(),
+            number_input({'name': 'legend_point'}),
         ]),
     ])
 
@@ -296,7 +288,11 @@ def wound_threshold_header():
 
 def wound_threshold_value(i):
     return flex_col([
-        number_input(),
+        number_input({
+            'disabled': 'true',
+            'name': f"wound_threshold_fatigue_{i}_display",
+            'value': f"(@{{wound_threshold_total}} - (@{{level}} * {i}))",
+        }),
         div({'class': 'fatigue-value'}, str(i)),
     ])
 

@@ -15,7 +15,7 @@ def generate_script():
         initiative(),
         base_speed(),
         legend_points(),
-        hit_points(),
+        wound_threshold(),
         skill_points(),
         '</script>',
         ""
@@ -249,16 +249,15 @@ def legend_points():
         }});
     """
 
-def hit_points():
+def wound_threshold():
     return f"""
-        on("change:hit_points_misc change:level change:constitution_starting change:challenge_rating", function(eventInfo) {{
-            getAttrs(["hit_points_misc", "level", "constitution_starting", "challenge_rating"], function(v) {{
-                var hp_from_level = (1 + Number(v.level || 0)) * (5 + Number(v.constitution_starting || 0))
-                var hp_before_cr = Number(v.hit_points_misc || 0) + hp_from_level;
-                var hit_points = hp_before_cr * Number(v.challenge_rating || 1);
+        on("change:wound_threshold_misc change:level change:constitution_starting change:challenge_rating", function(eventInfo) {{
+            getAttrs(["wound_threshold_misc", "level", "constitution_starting", "challenge_rating"], function(v) {{
+                var from_level = (1 + Number(v.level || 0)) * (5 + Number(v.constitution_starting || 0))
+                var wound_threshold = Number(v.wound_threshold_misc || 0) + from_level;
                 setAttrs({{
-                    hit_points_max: hit_points,
-                    hit_points_total: hit_points,
+                    wound_threshold_max: wound_threshold,
+                    wound_threshold_total: wound_threshold,
                 }});
             }});
         }});
