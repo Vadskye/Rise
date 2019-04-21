@@ -14,13 +14,13 @@ def create_page(destination):
                 flex_wrapper(div({'class': 'section-header'}, 'Core Statistics')),
                 calc_base_speed(),
                 calc_encumbrance(),
-                calc_hit_points(),
+                calc_fatigue_threshold(),
                 calc_initiative() if destination == 'roll20' else "",
                 calc_insight_points(),
-                calc_reserve_ap(),
                 calc_skill_points(),
                 calc_strike_damage() if destination == 'roll20' else "",
                 calc_threat(),
+                calc_wound_threshold(),
                 flex_wrapper(div({'class': 'section-header'}, 'Defenses')),
                 calc_defenses(),
             ]),
@@ -151,16 +151,45 @@ def abilities(name_prefix):
         }) for level in range(1, 14)]),
     ])
 
-def calc_hit_points():
+
+def calc_fatigue_threshold():
     return flex_row([
-        div({'class': 'calc-header'}, 'Hit Points'),
+        div({'class': 'calc-header'}, 'Fatigue Threshold'),
+        equation(
+            [
+                underlabel(
+                    'Lvl/Con',
+                    number_input({
+                        'disabled': True,
+                        'name': 'fatigue_threshold_scaling_display',
+                        'value': '@{fortitude_scaling}',
+                    }),
+                ),
+                plus(),
+                number_input({
+                    'class': 'equation-misc',
+                    'name': 'fatigue_threshold_misc',
+                })
+            ],
+            result_attributes={
+                'disabled': 'true',
+                'name': 'fatigue_threshold_display',
+                'value': '(@{fortitude_scaling} + @{fatigue_threshold_misc})',
+            },
+        ),
+    ])
+
+
+def calc_wound_threshold():
+    return flex_row([
+        div({'class': 'calc-header'}, 'Wound Threshold'),
         equation(
             [
                 underlabel(
                     '1+Level',
                     number_input({
                         'disabled': True,
-                        'name': 'hit_points_level',
+                        'name': 'wound_threshold_level_display',
                         'value': '(@{level} + 1)',
                     }),
                     {'class': 'eq-level'},
@@ -168,19 +197,19 @@ def calc_hit_points():
                 flex_col({'class': 'equation-text'}, 'times'),
                 underlabel('5+(Con)', number_input({
                     'disabled': True,
-                    'name': 'hit_points_constitution',
+                    'name': 'wound_threshold_constitution_display',
                     'value': '(@{constitution_starting} + 5)',
                 })),
                 plus(),
                 number_input({
                     'class': 'equation-misc',
-                    'name': 'hit_points_misc',
+                    'name': 'wound_threshold_misc',
                 }),
             ],
             result_attributes={
                 'disabled': 'true',
-                'name': 'hit_points_display',
-                'value': '(@{hit_points_total})',
+                'name': 'wound_threshold_display',
+                'value': '(@{wound_threshold_total})',
             },
         ),
     ])
@@ -340,36 +369,6 @@ def calc_skill_points():
                 'disabled': 'true',
                 'name': 'skill_points_display',
                 'value': '(@{skill_points})',
-            },
-        ),
-    ])
-
-def calc_reserve_ap():
-    return flex_row([
-        div({'class': 'calc-header'}, 'Reserve AP'),
-        equation(
-            [
-                underlabel('Base', number_input({
-                    'disabled': True,
-                    'name': 'action_points_base',
-                    'value': 3,
-                })),
-                plus(),
-                underlabel('(Wil)', number_input({
-                    'disabled': True,
-                    'name': 'action_points_willpower',
-                    'value': '(@{willpower_starting})',
-                })),
-                plus(),
-                number_input({
-                    'class': 'equation-misc',
-                    'name': 'action_points_misc',
-                })
-            ],
-            result_attributes={
-                'disabled': 'true',
-                'name': 'reserve_ap_display',
-                'value': ROLL20_CALC['reserve_ap'],
             },
         ),
     ])
