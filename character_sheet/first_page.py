@@ -13,6 +13,7 @@ def create_page():
         flex_col({'class': 'main-body'}, [
             boring_stuff(),
             statistics_header(),
+            wound_thresholds(),
             attacks(),
             abilities(),
         ]),
@@ -96,37 +97,37 @@ def skill_box(name):
         }),
     ])
 
-def resources():
-    return flex_col({'class': 'resources'}, [
-        flex_wrapper({'class': 'section-header'}, 'Resources'),
-        flex_wrapper({'class': 'action-point-header'}, 'Action points'),
-        flex_row({'class': 'action-point-wrapper'}, [
-            underlabel('Reserve', number_input({
-                'disabled': True,
-                'name': 'action_points_max',
-                'value': ROLL20_CALC['reserve_ap'],
-            })),
-            # This needs to be editable to support the Null feat
-            underlabel('Recover', number_input({
-                'name': 'action_points_recovery_max',
-            })),
-            underlabel('Attuned', number_input({'name': 'action_points_attuned'})),
-        ]),
-        labeled_number_input('Legend points', input_attributes={
-            'disabled': True,
-            'name': 'legend_points_display',
-            'value': '@{legend_points}',
-        }),
-        labeled_number_input('Item slots', input_attributes={'name': 'item_slots'}),
-    ])
+# def resources():
+#     return flex_col({'class': 'resources'}, [
+#         flex_wrapper({'class': 'section-header'}, 'Resources'),
+#         flex_wrapper({'class': 'action-point-header'}, 'Action points'),
+#         flex_row({'class': 'action-point-wrapper'}, [
+#             underlabel('Reserve', number_input({
+#                 'disabled': True,
+#                 'name': 'action_points_max',
+#                 'value': ROLL20_CALC['reserve_ap'],
+#             })),
+#             underlabel('Recover', number_input({
+#                 'disabled': True,
+#                 'name': 'action_points_recovery_max',
+#                 'value': ROLL20_CALC['recovery_ap'],
+#             })),
+#             underlabel('Attuned', number_input({'name': 'action_points_attuned'})),
+#         ]),
+#         labeled_number_input('Legend points', input_attributes={
+#             'disabled': True,
+#             'name': 'legend_points_display',
+#             'value': '@{legend_points}',
+#         }),
+#         labeled_number_input('Item slots', input_attributes={'name': 'item_slots'}),
+#     ])
 
 def statistics_header():
     return ''.join([
-        flex_row({'class': 'core-statistics'}, [
+        flex_row({'class': 'all-statistics'}, [
             core_statistics(),
             defenses(),
-            special_defenses(),
-            resources()
+            resources(),
         ])
     ])
 
@@ -156,18 +157,8 @@ def special_defenses():
     ])
 
 def core_statistics():
-    return flex_col({'class': 'offense'}, [
+    return flex_col({'class': 'core-statistics'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Core Statistics')),
-        sidelabel('Hit points', number_input({
-            'disabled': True,
-            'name': 'hit_points_total_display',
-            'value': '(@{hit_points_total})',
-        })),
-        labeled_number_input('Bloodied', input_attributes={
-            'disabled': True,
-            'name': 'hit_points_bloodied_display',
-            'value': 'floor(@{hit_points_total} / 2)',
-        }),
         labeled_number_input('Land speed', input_attributes={
             'name': 'land_speed',
             'value': '@{base_speed}',
@@ -177,6 +168,55 @@ def core_statistics():
             'name': 'threat_display',
             'value': '@{threat}',
         })),
+        sidelabel('FT', number_input({
+            'disabled': True,
+            'name': 'fatigue_threshold_display',
+            'value': '(@{fatigue_threshold})',
+        })),
+        labeled_number_input('Item slots', input_attributes={
+            'disabled': True,
+            'name': 'hit_points_bloodied_display',
+            'value': 'floor(@{hit_points_total} / 2)',
+        }),
+    ])
+
+def resources():
+    return flex_col({'class': 'resources'}, [
+        flex_wrapper(div({'class': 'section-header'}, 'Resources')),
+        flex_row({'class': 'recovery-action-points'}, [
+            div({'class': 'resource-header number-label'}, 'Recovery AP'),
+            flex_row({'class': 'resource-inputs'}, [
+                number_input(),
+                number_input(),
+                number_input(),
+                number_input(),
+                number_input(),
+            ]),
+        ]),
+        flex_row({'class': 'reserve-action-points'}, [
+            div({'class': 'resource-header number-label'}, 'Reserve AP'),
+            flex_row({'class': 'resource-inputs'}, [
+                number_input(),
+                number_input(),
+                number_input(),
+                number_input(),
+                number_input(),
+                number_input(),
+            ]),
+        ]),
+        flex_row({'class': 'item-slots'}, [
+            div({'class': 'resource-header number-label'}, 'Item slots'),
+            flex_row({'class': 'resource-inputs'}, [
+                number_input(),
+                number_input(),
+                number_input(),
+                number_input(),
+            ]),
+        ]),
+        flex_row({'class': 'legend-points'}, [
+            div({'class': 'resource-header number-label'}, 'Legend point'),
+            number_input(),
+        ]),
     ])
 
 def movement():
@@ -237,10 +277,34 @@ def passive_ability(prefix, ability_number):
         }),
     ])
 
+def wound_thresholds():
+    return flex_col({'class': 'wound-thresholds'}, [
+        flex_wrapper(div({'class': 'section-header'}, 'Fatigue Track')),
+        flex_row({'class': 'wound-threshold-values'}, [
+            wound_threshold_header(),
+            "".join(wound_threshold_value(i) for i in range(9)),
+        ]),
+    ])
+
+
+def wound_threshold_header():
+    return flex_col({'class': 'wound-threshold-headers'}, [
+        div({'class': 'number-label'}, 'WT'),
+        div({'class': 'number-label'}, 'Fatigue'),
+    ])
+
+
+def wound_threshold_value(i):
+    return flex_col([
+        number_input(),
+        div({'class': 'fatigue-value'}, str(i)),
+    ])
+
+
 def attacks():
     return flex_col({'class': 'attacks'}, [
-        flex_wrapper(div({'class': 'section-header'}, 'Attacks')),
-        "".join([attack(i) for i in range(6)]),
+        flex_wrapper(div({'class': 'section-header'}, 'Basic Attacks')),
+        "".join([attack(i) for i in range(4)]),
     ])
 
 def attack(n=None):
