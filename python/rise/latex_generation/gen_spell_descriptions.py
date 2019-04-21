@@ -207,7 +207,7 @@ def generate_mystic_spheres():
                 The wall provides both \\glossterm<passive cover> and \\glossterm<concealment> to targets on the opposite side of the wall, for a total of a +4 bonus to Armor defense.
                 Creatures can pass through the wall unharmed, though it costs five extra feet of movement to move through the wall.
 
-                Each five-foot square of wall has hit points equal to four times your \\glossterm<power>, and all of its defenses are 0.
+                Each five-foot square of wall has a \\glossterm<wound threshold> equal to four times your \\glossterm<power>, and all of its defenses are 0.
                 It is immune to most forms of attack, but it can be destroyed by \\glossterm<fire damage> and similar effects that can destroy water.
             """, tags=['Manifestation', 'Water']),
             Spell('Underwater Freedom', 1, """
@@ -853,7 +853,7 @@ def generate_mystic_spheres():
                 If that space is occupied, it appears in the closest unoccupied space.
 
                 When the target reappears, its condition is unchanged from when it left, except that it loses all action points, spell points, and all similar resources equal to the amount used by its duplicate.
-                Its hit points, conditions, and all other statistics are unaffected, regardless of any damage or other negative effects suffered by the duplicate.
+                Its \\glossterm<fatigue>, conditions, and all other statistics are unaffected, regardless of any damage or other negative effects suffered by the duplicate.
                 If this would reduce any of the target's resources below 0, it takes physical \\glossterm<standard damage> +4d from the paradox and becomes \\glossterm<stunned> as a \\glossterm<condition>.
 
                 You can cast this spell as a \\glossterm<minor action>.
@@ -897,11 +897,11 @@ def generate_mystic_spheres():
             Spell('Time Lock', 4, """
                 Choose a willing creature within \\rngmed range.
                 You lock the state of the target's body in time.
-                Note the target's hit points, vital damage, and active conditions.
+                Note the target's \\glossterm<fatigue>, \\glossterm<exhaustion>, \\glossterm<vital wounds> (including \\glossterm<wound roll> results), and active conditions.
                 If the target dies, this effect ends immediately.
 
                 As a \\glossterm<standard action>, you can reach through time to restore the target's state.
-                If you do, the target's hit points, vital damage, and active conditions become identical to what they were when you cast this spell.
+                If you do, the target's \\glossterm<fatigue>, \\glossterm<exhaustion>, \\glossterm<vital wounds>, and active conditions become identical to what they were when you cast this spell.
                 This does not affect any other properties of the target, such as any resources expended.
                 After you restore the target's state in this way, the spell ends.
 
@@ -1043,9 +1043,7 @@ def generate_mystic_spheres():
             """, tags=['Life']),
             Spell('Corruption of Blood and Bone', 3, """
                 This spell functions like the \\spell<sickening decay> spell, except that it gains a +1d bonus to damage.
-                In addition, damage from the spell reduces the target's maximum hit points by the same amount.
-                This hit point reduction is part of the same \\glossterm<condition> as the spell's other effects.
-                When the condition is removed, the target's maximum hit points are restored.
+                In addition, if the target would gain \\glossterm<fatigue> from this spell, it gains that much \\glossterm<exhaustion> instead.
             """, tags=['Life']),
             Spell('Curse of Decay', 4, """
                 This spell functions like the \\spell<sickening decay> spell, except that the attack is made against Mental defense instead of Fortitude defense.
@@ -1159,15 +1157,15 @@ def generate_mystic_spheres():
                 The pool of water targeted must be at least as large as the item you create.
 
                 The item functions like a normal item of its type, except that it is more fragile.
-                It has hit points equal to twice your \\glossterm<power>, does not have any \\glossterm<hardness>, and is \\glossterm<vulnerable> to fire damage.
-                If the item would take cold damage, it instead heals that many hit points.
+                Its \\glossterm<wound threshold> is equal to twice your \\glossterm<power>, it does not have any \\glossterm<hardness>, and it is \\glossterm<vulnerable> to fire damage.
+                If the item would take cold damage, it instead removes a point of \\glossterm<fatigue>.
 
                 When a creature wearing armor created in this way takes physical damage, cold damage, or fire damage, that damage is also dealt to the armor.
                 Likewise, when a creature wielding a weapon created in this way deals damage with the weapon, that damage is also dealt to the weapon.
-                If the item loses all of its hit points, this effect is \\glossterm<dismissed>.
+                If the item becomes \\glossterm<broken>, this effect is \\glossterm<dismissed>.
             """, tags=['Attune (self)', 'Cold']),
             Spell('Sturdy Icecraft', 2, """
-                This spell functions like the \\spell<icecraft> spell, except that the item created has hit points equal to four times your \\glossterm<power>.
+                This spell functions like the \\spell<icecraft> spell, except that the item created has a \\glossterm<wound threshold> equal to four times your \\glossterm<power>.
                 In addition, you can create heavy body armor.
             """, tags=['Attune (self)', 'Cold']),
             Spell('Enhanced Icecraft', 4, """
@@ -1410,13 +1408,13 @@ def generate_mystic_spheres():
             Spell('Web', 2, """
                 You fill a \\areasmall radius \\glossterm<zone> in \\rngclose range with webs.
                 The webs make the area \\glossterm<difficult terrain>.
-                Each 5-ft.\\ square of webbing has hit points equal to your \\glossterm<power>, and is \\glossterm<vulnerable> to fire.
+                Each 5-ft.\\ square of webbing has a \\glossterm<wound threshold> equal to your \\glossterm<power>, and is \\glossterm<vulnerable> to fire.
 
                 In addition, you make an attack vs. Reflex against all Large or smaller creatures in the area when the spell is cast.
                 \\hit Each target is \\glossterm<immobilized> as long as it has webbing from this ability in its space.
             """, tags=['Manifestation', 'Sustain (minor)']),
             Spell('Reinforced Webbing', 3, f"""
-                This spell functions like the \\textit<web> spell, except that each 5-ft.\\ square of webbing gains additional hit points equal to your \\glossterm<power>.
+                This spell functions like the \\textit<web> spell, except that each 5-ft.\\ square of webbing has a \\glossterm<wound threshold> equal to twice your \\glossterm<power>.
                 In addition, the webs are no longer \\glossterm<vulnerable> to fire damage.
             """, tags=['Manifestation', 'Sustain (minor)']),
             Spell('Poison', 2, """
