@@ -13,7 +13,7 @@ def generate_maneuvers():
         name='Battle Cry',
         short_description='Heal nearby allies',
         effect_text="""
-            You and any number of willing creatures within a \\arealarge radius burst from you
+            You and any number of willing creatures within a \\arealarge radius from you
                 heal hit points equal to \\glossterm<standard damage>.
         """,
         rank_upgrades={
