@@ -17,9 +17,9 @@ def generate_maneuvers():
                 heal hit points equal to \\glossterm<standard damage>.
         """,
         rank_upgrades={
-            '4': 'You gain a +1d bonus to the amount healed',
-            '6': 'The healing bonus increases to +2d',
-            '8': 'The healing bonus increases to +3d',
+            '3': 'You gain a +1d bonus to the amount healed',
+            '5': 'The healing bonus increases to +2d',
+            '7': 'The healing bonus increases to +3d',
         },
         tags=[],
         lists=['Primal'],
@@ -34,9 +34,9 @@ def generate_maneuvers():
                 This ability lasts until the end of the round.
         """,
         rank_upgrades={
-            '4': 'You also gain a +1 bonus to all defenses.',
-            '6': 'The defense bonus increases to +2.',
-            '8': 'The defense bonus increases to +3.',
+            '3': 'You also gain a +1 bonus to all defenses.',
+            '5': 'The defense bonus increases to +2.',
+            '7': 'The defense bonus increases to +3.',
         },
         ap_cost=False,
         tags=['Swift'],
@@ -50,9 +50,9 @@ def generate_maneuvers():
                 Make a \\glossterm<strike> with a +3 bonus to accuracy.
         """,
         rank_upgrades={
-            '4': 'The accuracy bonus increases to +4.',
-            '6': 'The accuracy bonus increases to +5.',
-            '8': 'The accuracy bonus increases to +6.',
+            '3': 'The accuracy bonus increases to +4.',
+            '5': 'The accuracy bonus increases to +5.',
+            '7': 'The accuracy bonus increases to +6.',
         },
         tags=[],
         lists=['Martial', 'Primal', 'Trick', 'Wild', 'Esoteric'],
@@ -66,9 +66,9 @@ def generate_maneuvers():
                 If the target attacked you earlier in the current round, you gain a +1 bonus to accuracy and a +2d bonus to damage with the strike.
         """,
         rank_upgrades={
-            '4': 'The damage bonus increases to +3d.',
-            '6': 'The damage bonus increases to +4d.',
-            '8': 'The damage bonus increases to +5d.',
+            '3': 'The damage bonus increases to +3d.',
+            '5': 'The damage bonus increases to +4d.',
+            '7': 'The damage bonus increases to +5d.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Trick'],
@@ -83,9 +83,9 @@ def generate_maneuvers():
                     it is \\glossterm<shaken> by you as a \\glossterm<condition>.
         """,
         rank_upgrades={
-            '4': 'The accuracy bonus increases to +2.',
-            '6': 'The target is \\glossterm<frightened> instead of shaken.',
-            '8': 'The accuracy bonus increases to +3.',
+            '3': 'The accuracy bonus increases to +2.',
+            '5': 'The target is \\glossterm<frightened> instead of shaken.',
+            '7': 'The accuracy bonus increases to +3.',
         },
         tags=['Emotion'],
         lists=['Primal', 'Martial', 'Trick', 'Esoteric'],
@@ -99,9 +99,9 @@ def generate_maneuvers():
                 \\hit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
         """,
         rank_upgrades={
-            '4': 'You gain a +1 bonus to \\glossterm<accuracy> with the attack.',
-            '6': 'The accuracy bonus increases to +2.',
-            '8': 'The accuracy bonus increases to +3.',
+            '3': 'You gain a +1 bonus to \\glossterm<accuracy> with the attack.',
+            '5': 'The accuracy bonus increases to +2.',
+            '7': 'The accuracy bonus increases to +3.',
         },
         tags=['Emotion'],
         lists=['Primal'],
@@ -117,9 +117,9 @@ def generate_maneuvers():
                 \\hit Each target is knocked \\prone.
         """,
         rank_upgrades={
-            '4': 'The area increases to a \\areamed radius burst.',
-            '6': 'The area increases to a \\arealarge radius burst.',
-            '8': 'The area increases to a \\areahuge radius burst.',
+            '3': 'The area increases to a \\areamed radius burst.',
+            '5': 'The area increases to a \\arealarge radius burst.',
+            '7': 'The area increases to a \\areahuge radius burst.',
         },
         tags=[],
         lists=['Primal'],
@@ -133,9 +133,9 @@ def generate_maneuvers():
                 You can make a \\glossterm<strike> with a +1d bonus to damage from any location you occupy during the leap.
         """,
         rank_upgrades={
-            '4': 'The damage bonus increases to +2d.',
-            '6': 'The damage bonus increases to +3d.',
-            '8': 'The damage bonus increases to +4d.',
+            '3': 'The damage bonus increases to +2d.',
+            '5': 'The damage bonus increases to +3d.',
+            '7': 'The damage bonus increases to +4d.',
         },
         tags=[],
         lists=['Primal', 'Wild', 'Esoteric'],
@@ -150,9 +150,9 @@ def generate_maneuvers():
                 it is \\glossterm<sickened> as a \\glossterm<condition>.
         """,
         rank_upgrades={
-            '4': 'The damage bonus increases to +2d.',
-            '6': 'The target is \\glossterm<nauseated> instead of sickened.',
-            '8': 'The damage bonus increases to +3d.',
+            '3': 'The damage bonus increases to +2d.',
+            '5': 'The target is \\glossterm<nauseated> instead of sickened.',
+            '7': 'The damage bonus increases to +3d.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Wild', 'Trick', 'Esoteric'],
@@ -165,9 +165,9 @@ def generate_maneuvers():
                 Make a \\glossterm<strike> with a +2d bonus to damage.
         """,
         rank_upgrades={
-            '4': 'The damage bonus increases to +3d.',
-            '6': 'The damage bonus increases to +4d.',
-            '8': 'The damage bonus increases to +5d.',
+            '3': 'The damage bonus increases to +3d.',
+            '5': 'The damage bonus increases to +4d.',
+            '7': 'The damage bonus increases to +5d.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Wild'],
@@ -181,9 +181,9 @@ def generate_maneuvers():
                 The attack is made against the target's Fortitude defense instead of its Armor defense.
         """,
         rank_upgrades={
-            '4': 'You gain a +1d bonus to damage with the strike.',
-            '6': 'The damage bonus increases to +2d.',
-            '8': 'The damage bonus increases to +3d.',
+            '3': 'You gain a +1d bonus to damage with the strike.',
+            '5': 'The damage bonus increases to +2d.',
+            '7': 'The damage bonus increases to +3d.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Wild'],
@@ -198,9 +198,9 @@ def generate_maneuvers():
                 You take a -2 penalty to accuracy on both strikes.
         """,
         rank_upgrades={
-            '4': 'The accuracy penalty is reduced to -1.',
-            '6': 'The accuracy penalty is removed.',
-            '8': 'You gain a +1 bonus to accuracy with both strikes.',
+            '3': 'The accuracy penalty is reduced to -1.',
+            '5': 'The accuracy penalty is removed.',
+            '7': 'You gain a +1 bonus to accuracy with both strikes.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Wild', 'Trick', 'Esoteric'],
@@ -216,9 +216,9 @@ def generate_maneuvers():
                 You take a -2 penalty to \\glossterm<accuracy> on the strike.
         """,
         rank_upgrades={
-            '4': 'You gain a +1d bonus to damage with the strike.',
-            '6': 'The damage bonus increases to +2d.',
-            '8': 'The damage bonus increases to +3d.',
+            '3': 'You gain a +1d bonus to damage with the strike.',
+            '5': 'The damage bonus increases to +2d.',
+            '7': 'The damage bonus increases to +3d.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Wild', 'Esoteric'],
@@ -234,13 +234,13 @@ def generate_maneuvers():
                     it takes additional damage equal to the damage you dealt with the strike.
         """,
         rank_upgrades={
-            '4': """
+            '3': """
                 If you hit with the strike, the target continues taking the same damage
                 at the end of each \\glossterm<action phase> until it becomes \\glossterm<bloodied>.
                 This is a \\glossterm<condition>, and can be removed by abilities that remove conditions.
             """,
-            '6': 'You gain a +1d bonus to damage with the strike.',
-            '8': 'The damage bonus increases to +2d.',
+            '5': 'You gain a +1d bonus to damage with the strike.',
+            '7': 'The damage bonus increases to +2d.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Wild', 'Trick'],
@@ -254,9 +254,9 @@ def generate_maneuvers():
                 The strike targets each of up to three creatures or objects you \\glossterm<threaten>.
         """,
         rank_upgrades={
-            '4': 'You gain a +1d bonus to damage with the strike.',
-            '6': 'The damage bonus increases to +2d.',
-            '8': 'The damage bonus increases to +3d.',
+            '3': 'You gain a +1d bonus to damage with the strike.',
+            '5': 'The damage bonus increases to +2d.',
+            '7': 'The damage bonus increases to +3d.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Wild', 'Esoteric'],
@@ -270,9 +270,9 @@ def generate_maneuvers():
                 \\hit Each target takes sonic \\glossterm<standard damage> and is \\glossterm<deafened> as a \\glossterm<condition>.
         """,
         rank_upgrades={
-            '4': 'You gain a +1d bonus to damage with the attack.',
-            '6': 'The area increases to \\arealarge.',
-            '8': 'The damage bonus increases to +2d.',
+            '3': 'You gain a +1d bonus to damage with the attack.',
+            '5': 'The area increases to \\arealarge.',
+            '7': 'The damage bonus increases to +2d.',
         },
         tags=['Sonic'],
         lists=['Primal'],
@@ -287,9 +287,9 @@ def generate_maneuvers():
                 You take a -1 penalty to \\glossterm<accuracy> with the strike.
         """,
         rank_upgrades={
-            '4': 'You gain a +1d bonus to damage with the strike.',
-            '6': 'The damage bonus increases to +2d.',
-            '8': 'The damage bonus increases to +3d.',
+            '3': 'You gain a +1d bonus to damage with the strike.',
+            '5': 'The damage bonus increases to +2d.',
+            '7': 'The damage bonus increases to +3d.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Wild', 'Esoteric'],
@@ -304,9 +304,9 @@ def generate_maneuvers():
             This effect lasts until you take a \\glossterm<short rest> or until you use this ability on a different creature.
         """,
         rank_upgrades={
-            '4': 'The threat bonus increases to +6.',
-            '6': 'The threat bonus increases to +8.',
-            '8': 'The threat bonus increases to +10.',
+            '3': 'The threat bonus increases to +6.',
+            '5': 'The threat bonus increases to +8.',
+            '7': 'The threat bonus increases to +10.',
         },
         ap_cost=False,
         tags=[],
@@ -321,9 +321,9 @@ def generate_maneuvers():
             The attack is made against the target's Reflex defense instead of its Armor defense.
         """,
         rank_upgrades={
-            '4': 'You gain a +1d bonus to damage with the strike.',
-            '6': 'The damage bonus increases to +2d.',
-            '8': 'The damage bonus increases to +3d.',
+            '3': 'You gain a +1d bonus to damage with the strike.',
+            '5': 'The damage bonus increases to +2d.',
+            '7': 'The damage bonus increases to +3d.',
         },
         tags=[],
         lists=['Martial', 'Wild', 'Trick', 'Esoteric'],
@@ -337,9 +337,9 @@ def generate_maneuvers():
             can each remove one \\glossterm<condition>.
         """,
         rank_upgrades={
-            '4': 'The area increases to \\arealarge.',
-            '6': 'The area increases to \\areahuge.',
-            '8': 'Each target can instead remove two conditions.',
+            '3': 'The area increases to \\arealarge.',
+            '5': 'The area increases to \\areahuge.',
+            '7': 'Each target can instead remove two conditions.',
         },
         tags=[],
         lists=['Martial'],
@@ -354,9 +354,9 @@ def generate_maneuvers():
                 it is \\glossterm<slowed> as a \\glossterm<condition>.
         """,
         rank_upgrades={
-            '4': 'The accuracy bonus increases to +2.',
-            '6': 'The target is \\glossterm<immobilized> instead of slowed.',
-            '8': 'The accuracy bonus increases to +3.',
+            '3': 'The accuracy bonus increases to +2.',
+            '5': 'The target is \\glossterm<immobilized> instead of slowed.',
+            '7': 'The accuracy bonus increases to +3.',
         },
         tags=[],
         lists=['Wild', 'Trick', 'Esoteric'],
@@ -372,9 +372,9 @@ def generate_maneuvers():
             It lasts until you take a \\glossterm<short rest> or use this ability on a different creature.
         """,
         rank_upgrades={
-            '4': 'If you hit the target, the accuracy bonus increases by +2 instead of +1.',
-            '6': 'The maximum accuracy bonus is increased to +5.',
-            '8': 'The maximum accuracy bonus is increased to +6.',
+            '3': 'If you hit the target, the accuracy bonus increases by +2 instead of +1.',
+            '5': 'The maximum accuracy bonus is increased to +5.',
+            '7': 'The maximum accuracy bonus is increased to +6.',
         },
         tags=[],
         lists=['Wild'],
@@ -390,9 +390,9 @@ def generate_maneuvers():
                 it is \\glossterm<dazed> as a \\glossterm<condition>.
         """,
         rank_upgrades={
-            '4': 'On a \\glossterm<critical hit>, the target is \\glossterm<stunned> instead of dazed.',
-            '6': 'The damage bonus increases to +2d.',
-            '8': 'On a normal hit, the target is stunned instead of dazed.',
+            '3': 'On a \\glossterm<critical hit>, the target is \\glossterm<stunned> instead of dazed.',
+            '5': 'The damage bonus increases to +2d.',
+            '7': 'On a normal hit, the target is stunned instead of dazed.',
         },
         tags=['Emotion'],
         lists=['Trick', 'Esoteric'],
@@ -406,9 +406,9 @@ def generate_maneuvers():
             At the end of the round, you regain a spent \\glossterm<recovery action point>.
         """,
         rank_upgrades={
-            '4': 'The defense bonus increases to +2.',
-            '6': 'The defense bonus increases to +3.',
-            '8': 'The defense bonus increases to +4.',
+            '3': 'The defense bonus increases to +2.',
+            '5': 'The defense bonus increases to +3.',
+            '7': 'The defense bonus increases to +4.',
         },
         tags=['Swift'],
         lists=['Martial'],
@@ -423,9 +423,9 @@ def generate_maneuvers():
             If you hit a creature, you regain a spent \\glossterm<recovery action point> at the end of the round.
         """,
         rank_upgrades={
-            '4': 'The damage penalty is decreased to -1d.',
-            '6': 'The damage penalty is removed.',
-            '8': 'You regain the action point even if you miss.',
+            '3': 'The damage penalty is decreased to -1d.',
+            '5': 'The damage penalty is removed.',
+            '7': 'You regain the action point even if you miss.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Wild', 'Trick', 'Esoteric'],
@@ -441,9 +441,9 @@ def generate_maneuvers():
                 a +1 bonus to \\glossterm<accuracy> against that creature during the next round.
         """,
         rank_upgrades={
-            '4': 'The accuracy bonus increases to +2.',
-            '6': 'The accuracy bonus increases to +3.',
-            '8': 'The accuracy bonus increases to +4.',
+            '3': 'The accuracy bonus increases to +2.',
+            '5': 'The accuracy bonus increases to +3.',
+            '7': 'The accuracy bonus increases to +4.',
         },
         tags=[],
         lists=['Trick', 'Primal', 'Martial'],
@@ -458,9 +458,9 @@ def generate_maneuvers():
             If you hit a creature with the strike, you regain hit points equal to \\glossterm<standard damage>.
         """,
         rank_upgrades={
-            '4': 'You gain a +1d bonus to the amount healed.',
-            '6': 'The healing bonus increases to +2d.',
-            '8': 'The healing bonus increases to +3d.',
+            '3': 'You gain a +1d bonus to the amount healed.',
+            '5': 'The healing bonus increases to +2d.',
+            '7': 'The healing bonus increases to +3d.',
         },
         tags=['Life'],
         lists=['Primal', 'Wild'],
@@ -474,9 +474,9 @@ def generate_maneuvers():
             You reduce your penalties for \\glossterm<range increments> with the strike by 2.
         """,
         rank_upgrades={
-            '4': 'The damage bonus increases to +2d.',
-            '6': 'The damage bonus increases to +3d.',
-            '8': 'The damage bonus increases to +4d.',
+            '3': 'The damage bonus increases to +2d.',
+            '5': 'The damage bonus increases to +3d.',
+            '7': 'The damage bonus increases to +4d.',
         },
         tags=[],
         lists=['Martial', 'Wild'],
@@ -491,9 +491,9 @@ def generate_maneuvers():
                 it is \\glossterm<sickened> as a \\glossterm<condition>.
         """,
         rank_upgrades={
-            '4': 'The accuracy bonus increases to +2.',
-            '6': 'The target is \\glossterm<nauseated> instead of sickened.',
-            '8': 'The accuracy bonus increases to +3.',
+            '3': 'The accuracy bonus increases to +2.',
+            '5': 'The target is \\glossterm<nauseated> instead of sickened.',
+            '7': 'The accuracy bonus increases to +3.',
         },
         tags=['Emotion'],
         lists=['Martial', 'Primal', 'Wild', 'Trick', 'Esoteric'],
@@ -508,9 +508,9 @@ def generate_maneuvers():
                 it spends one \\glossterm<recovery action point>, if it has any.
         """,
         rank_upgrades={
-            '4': 'The accuracy bonus increases to +2.',
-            '6': 'The target spends two \\glossterm<recovery action points> instead of one.',
-            '8': 'The accuracy bonus increases to +3.',
+            '3': 'The accuracy bonus increases to +2.',
+            '5': 'The target spends two \\glossterm<recovery action points> instead of one.',
+            '7': 'The accuracy bonus increases to +3.',
         },
         tags=[],
         lists=['Trick'],
@@ -524,9 +524,9 @@ def generate_maneuvers():
             At the end of the round, you regain a spent \\glossterm<recovery action point>.
         """,
         rank_upgrades={
-            '4': 'The defense bonus increases to +3.',
-            '6': 'The defense bonus increases to +4.',
-            '8': 'The defense bonus increases to +5.',
+            '3': 'The defense bonus increases to +3.',
+            '5': 'The defense bonus increases to +4.',
+            '7': 'The defense bonus increases to +5.',
         },
         tags=['Swift'],
         lists=['Primal', 'Martial', 'Wild'],
@@ -541,9 +541,9 @@ def generate_maneuvers():
             At the end of the round, you regain a spent \\glossterm<recovery action point>.
         """,
         rank_upgrades={
-            '4': 'The defense bonus increases to +3.',
-            '6': 'The defense bonus increases to +4.',
-            '8': 'The defense bonus increases to +5.',
+            '3': 'The defense bonus increases to +3.',
+            '5': 'The defense bonus increases to +4.',
+            '7': 'The defense bonus increases to +5.',
         },
         tags=['Swift'],
         lists=['Martial', 'Trick', 'Wild', 'Esoteric'],
@@ -559,9 +559,9 @@ def generate_maneuvers():
             At the end of the round, if you are unobserved, you regain a spent \\glossterm<recovery action point>.
         """,
         rank_upgrades={
-            '4': 'You gain a +1 bonus to the Stealth check.',
-            '6': 'The Stealth bonus increases to +2.',
-            '8': 'The distance you can move increases to your full speed.',
+            '3': 'You gain a +1 bonus to the Stealth check.',
+            '5': 'The Stealth bonus increases to +2.',
+            '7': 'The distance you can move increases to your full speed.',
         },
         tags=[],
         lists=['Trick', 'Wild', 'Esoteric'],
@@ -577,9 +577,9 @@ def generate_maneuvers():
             During the \\glossterm<delayed action phase>, you can take the action you did not take during the \\glossterm<action phase>.
         """,
         rank_upgrades={
-            '4': 'You gain a +1d bonus to damage with the strike.',
-            '6': 'The distance you can move increases to to your full speed.',
-            '8': 'The damage bonus increases to +2d.',
+            '3': 'You gain a +1d bonus to damage with the strike.',
+            '5': 'The distance you can move increases to to your full speed.',
+            '7': 'The damage bonus increases to +2d.',
         },
         tags=[],
         lists=['Primal', 'Wild', 'Esoteric'],
@@ -595,9 +595,9 @@ def generate_maneuvers():
                 it is \\glossterm<stunned> as a \\glossterm<condition>.
         """,
         rank_upgrades={
-            '4': 'You gain a +1 bonus to accuracy with the strike.',
-            '6': 'The target is stunned twice as two separate conditions.',
-            '8': 'The accuracy bonus increases to +2.',
+            '3': 'You gain a +1 bonus to accuracy with the strike.',
+            '5': 'The target is stunned twice as two separate conditions.',
+            '7': 'The accuracy bonus increases to +2.',
         },
         tags=[],
         lists=['Martial'],
@@ -612,9 +612,9 @@ def generate_maneuvers():
                 it is \\glossterm<nauseated> as a \\glossterm<condition>.
         """,
         rank_upgrades={
-            '4': 'You gain a +1 bonus to \\glossterm<accuracy> with the strike.',
-            '6': 'The target is nauseated twice as two seperate conditions.',
-            '8': 'The accuracy bonus increases to +2.',
+            '3': 'You gain a +1 bonus to \\glossterm<accuracy> with the strike.',
+            '5': 'The target is nauseated twice as two seperate conditions.',
+            '7': 'The accuracy bonus increases to +2.',
         },
         tags=[],
         lists=['Esoteric'],

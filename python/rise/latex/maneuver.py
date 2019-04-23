@@ -24,7 +24,7 @@ class Maneuver(object):
         self.ap_cost = ap_cost
         self.extra_text = extra_text
 
-        if list(sorted(self.rank_upgrades.keys())) != ['4', '6', '8']:
+        if list(sorted(self.rank_upgrades.keys())) != ['3', '5', '7']:
             logger.log(WARNING, f"Maneuver {self.name} has invalid rank upgrades {self.rank_upgrades}")
 
         for tag in self.tags:
@@ -42,9 +42,9 @@ class Maneuver(object):
                 {self.effect_text.strip()}
 
                 \\rankline
-                \\rank<4> {self.rank_upgrades['4'].strip()}
-                \\rank<6> {self.rank_upgrades['6'].strip()}
-                \\rank<8> {self.rank_upgrades['8'].strip()}
+                \\rank<4> {self.rank_upgrades['3'].strip()}
+                \\rank<6> {self.rank_upgrades['5'].strip()}
+                \\rank<8> {self.rank_upgrades['7'].strip()}
                 \\parhead<Lists> {', '.join(sorted(self.lists))}
             \\end<{ability_type}>
             \\vspace<0.25em>
