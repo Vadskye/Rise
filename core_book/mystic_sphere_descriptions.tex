@@ -13,9 +13,8 @@
 \subsubsection{Cantrips}
 
 
-\begin{freeability}{Minor Windstrike}[\glossterm{Air}]
-Make an attack vs. Armor against a creature or object within \rngmed range.
-\hit The target takes bludgeoning \glossterm{standard damage}.
+\begin{freeability}{Airborne Leap}[\glossterm{Air}]
+You gain a \plus4 bonus to the Jump skill until the end of the next round.
 \end{freeability}
 
 
@@ -287,19 +286,16 @@ Make an attack vs. Armor against everything in a \arealarge radius within \rnglo
 \subsubsection{Cantrips}
 
 
-\lowercase{\hypertarget{spell:Create Water}{}}\label{spell:Create Water}
-\begin{freeability}[\nth{1}]{\hypertarget{spell:Create Water}{Create Water}}[\glossterm{Creation}, \glossterm{Water}]
+\begin{freeability}{Create Water}[\glossterm{Creation}, \glossterm{Water}]
 You create up to one gallon per \glossterm{power} of wholesome, drinkable water anywhere within \rngclose range.
 The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
 You must create a minimum of one ounce of water in each location.
 \end{freeability}
-\vspace{0.25em}
 
 
-
-\begin{freeability}{Whelming Wave}[\glossterm{Manifestation}, \glossterm{Water}]
-Make an attack vs. Fortitude against everything in a \areamed, 5 ft.\ wide line from you.
-\hit Each target takes bludgeoning \glossterm{standard damage} \minus1d.
+\begin{freeability}{Slippery Escape}[\glossterm{Manifestation}, \glossterm{Water}]
+Choose a willing creature within \rngclose range.
+The target gains a \plus4 bonus to the Escape Artist skill until the end of the next round.
 \end{freeability}
 
 \end{spellsection}
@@ -459,12 +455,6 @@ This ritual takes one minute to perform.
 \parhead{Mystic Sphere Lists} Arcane, Pact
 
 \subsubsection{Cantrips}
-
-
-\begin{freeability}{Dimensional Disruption}[\glossterm{Planar}, \glossterm{Teleportation}]
-Make an attack vs. Mental against a creature within \rngmed range.
-\hit The target takes physical \glossterm{standard damage}.
-\end{freeability}
 
 
 \begin{freeability}{Minor Translocation}[\glossterm{Teleportation}]
@@ -707,7 +697,7 @@ This ritual takes one week to perform, and requires 98 action points from its pa
 \begin{spellsection}{Barrier}
 
 \begin{spellheader}
-\spelldesc{Shield allies from hostile forces.}
+\spelldesc{Shield allies and areas from hostile forces.}
 \end{spellheader}
 
 
@@ -717,11 +707,6 @@ This ritual takes one week to perform, and requires 98 action points from its pa
 
 \subsubsection{Cantrips}
 
-
-\begin{freeability}{Ablative Shield}[\glossterm{Sustain} (standard)]
-Choose a willing creature in \rngclose range.
-The target gains a \glossterm{magic bonus} equal to your \glossterm{power} to \glossterm{damage reduction} against \glossterm{physical} damage.
-\end{freeability}
 
 \end{spellsection}
 
@@ -771,9 +756,28 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
+\lowercase{\hypertarget{spell:Wall of Force}{}}\label{spell:Wall of Force}
+\begin{attuneability}[\nth{1}]{\hypertarget{spell:Wall of Force}{Wall of Force}}[\glossterm{Attune} (self)]
+You create a wall of magical energy in a 10 ft.\ high, \areamed line within \rngmed range.
+The wall is visible as a shimmering magical membrane that does not block sight.
+Nothing can pass through the wall until it is destroyed.
+Each 5-ft.\ square of wall has hit points equal to your \glossterm{power}.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Complete Shield}{}}\label{spell:Complete Shield}
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Complete Shield}{Complete Shield}}[\glossterm{Attune} (target), \glossterm{Shielding}]
 This spell functions like the \spell{kinetic shield} spell, except that the damage reduction applies against all damage.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Expanded Wall of Force}{}}\label{spell:Expanded Wall of Force}
+\begin{attuneability}[\nth{2}]{\hypertarget{spell:Expanded Wall of Force}{Expanded Wall of Force}}[\glossterm{Attune} (self)]
+This spell functions like the \spell{wall of force} spell, except that the wall fills a 10 ft.\ high, \arealarge line.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -788,6 +792,24 @@ The rest of its movement in the current phase is cancelled.
 
 Creatures in the area at the time that the spell is cast are unaffected by the spell.
 \end{apability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Wall of Energy Impedance}{}}\label{spell:Wall of Energy Impedance}
+\begin{attuneability}[\nth{2}]{\hypertarget{spell:Wall of Energy Impedance}{Wall of Energy Impedance}}[\glossterm{Attune} (self)]
+You create a wall of magical energy in a 10 ft.\ high, \areamed line within \rngmed range.
+The wall is visible as a shimmering magical membrane that does not block sight.
+It does not impede passage for objects or creatures, but any ability that deals \glossterm{energy damage} treats the wall as an impassable barrier.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Fortified Wall of Force}{}}\label{spell:Fortified Wall of Force}
+\begin{attuneability}[\nth{3}]{\hypertarget{spell:Fortified Wall of Force}{Fortified Wall of Force}}[\glossterm{Attune} (self)]
+This spell functions like the \spell{wall of force} spell, except that each 5-ft.\ square of wall has hit points equal to four times your \glossterm{power}.
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -838,6 +860,16 @@ This spell functions like the \spell{resist energy} spell, except that the bonus
 
 
 
+\lowercase{\hypertarget{spell:Wall of Magic Impedance}{}}\label{spell:Wall of Magic Impedance}
+\begin{attuneability}[\nth{4}]{\hypertarget{spell:Wall of Magic Impedance}{Wall of Magic Impedance}}[\glossterm{Attune} (self)]
+You create a wall of magical energy in a 10 ft.\ high, \areamed line within \rngmed range.
+The wall is visible as a shimmering magical membrane that does not block sight.
+It does not impede passage for objects or creatures, but any \glossterm{magical} ability treats the wall as an impassable barrier.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Antilife Shell}{}}\label{spell:Antilife Shell}
 \begin{apability}[\nth{5}]{\hypertarget{spell:Antilife Shell}{Antilife Shell}}[\glossterm{Sustain} (minor)]
 This effect functions like the \spell{repulsion field} spell, except that you gain a \plus10 bonus to accuracy with the attack against living creatures.
@@ -849,6 +881,14 @@ This effect functions like the \spell{repulsion field} spell, except that you ga
 \lowercase{\hypertarget{spell:Greater Complete Shield}{}}\label{spell:Greater Complete Shield}
 \begin{attuneability}[\nth{5}]{\hypertarget{spell:Greater Complete Shield}{Greater Complete Shield}}[\glossterm{Attune} (target), \glossterm{Shielding}]
 This spell functions like the \spell{kinetic shield} spell, except that the damage reduction applies against all damage and the bonus is increased to be equal to twice your \glossterm{power}.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Impervious Wall of Force}{}}\label{spell:Impervious Wall of Force}
+\begin{attuneability}[\nth{5}]{\hypertarget{spell:Impervious Wall of Force}{Impervious Wall of Force}}[\glossterm{Attune} (self)]
+This spell functions like the \spell{wall of force} spell, except that the wall is immune to all damage except sonic damage and thaumatic damage.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -956,11 +996,6 @@ In addition, the DR to break it open increases by 20 instead of by 10.
 \subsubsection{Cantrips}
 
 
-\begin{freeability}{Minor Cleansing Blessing}
-Choose a willing creature within \rngclose range.
-The target removes one \glossterm{condition} affecting it.
-\end{freeability}
-
 \end{spellsection}
 
 
@@ -980,7 +1015,7 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Cleansing Blessing}{}}\label{spell:Cleansing Blessing}
 \begin{apability}[\nth{1}]{\hypertarget{spell:Cleansing Blessing}{Cleansing Blessing}}
-All allies within \arealarge radius from you can remove one \glossterm{condition} affecting them.
+You and any number of willing creatures within an \arealarge radius from you can remove one \glossterm{condition}.
 \end{apability}
 \vspace{0.25em}
 
@@ -1050,7 +1085,7 @@ This spell functions like the \spell{blessing of protection} spell, except that 
 
 \lowercase{\hypertarget{spell:Greater Cleansing Blessing}{}}\label{spell:Greater Cleansing Blessing}
 \begin{apability}[\nth{4}]{\hypertarget{spell:Greater Cleansing Blessing}{Greater Cleansing Blessing}}
-This spell functions like the \spell{cleansing blessing} spell, except that each ally can remove two conditions instead of one.
+This spell functions like the \spell{cleansing blessing} spell, except that each target can remove two conditions instead of one.
 \end{apability}
 \vspace{0.25em}
 
@@ -1226,9 +1261,12 @@ This ritual functions like the \spell{blessing of fortification} ritual, except 
 \subsubsection{Cantrips}
 
 
-\begin{freeability}{Divine Judgment}
-Make an attack vs. Mental against a creature within \rngmed range.
-\hit The target takes divine \glossterm{standard damage}.
+\begin{freeability}{Testament}[\glossterm{Sustain} (free)]
+The magical essence of your deity or alignment is overlayed on your body as an aura.
+This channels your deity if you are a cleric, or your alignment if you are a paladin.
+In either case, you gain the ability to see the auras of other creatures using this spell.
+If you see another creature with the same aura as you, this spell grants you the unerring knowledge of that similarity.
+This can allow you to identify other followers of your deity or alignment with certainty.
 \end{freeability}
 
 \end{spellsection}
@@ -1237,20 +1275,20 @@ Make an attack vs. Mental against a creature within \rngmed range.
 \subsubsection{Spells}
 
 
+\lowercase{\hypertarget{spell:Divine Judgment}{}}\label{spell:Divine Judgment}
+\begin{apability}[\nth{1}]{\hypertarget{spell:Divine Judgment}{Divine Judgment}}
+Make an attack vs. Mental against a creature within \rngmed range.
+\hit The target takes divine \glossterm{standard damage} \plus2d.
+\end{apability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Faithful Recovery}{}}\label{spell:Faithful Recovery}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Faithful Recovery}{Faithful Recovery}}[\glossterm{Shielding}, \glossterm{Swift}]
 Until the end of the round, you gain a \glossterm{magic bonus} equal to half your \glossterm{power} to \glossterm{damage reduction} against \glossterm{physical} damage.
 At the end of the round, you regain a spent \glossterm{recovery action point}.
 \end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Judge Unworthy}{}}\label{spell:Judge Unworthy}
-\begin{apability}[\nth{1}]{\hypertarget{spell:Judge Unworthy}{Judge Unworthy}}
-Make an attack vs. Mental against a creature within \rngmed range.
-\hit The target takes divine \glossterm{standard damage} \plus2d.
-\end{apability}
 \vspace{0.25em}
 
 
@@ -1378,9 +1416,15 @@ It is from the Conjuration school in addition to the Channeling school.
 \subsubsection{Cantrips}
 
 
-\begin{freeability}{Minor Slow}[\glossterm{Temporal}]
-Make an attack vs. Mental against a creature within \rngmed range.
-\hit The target is \glossterm{slowed} as a \glossterm{condition}.
+\begin{freeability}{Accelerated Reading}[\glossterm{Sustain} (free), \glossterm{Temporal}]
+You can read at five times your normal speed.
+However, the mental effort imposes a \minus4 penalty to Mental defense.
+\end{freeability}
+
+
+\begin{freeability}{Accelerated Search}[\glossterm{Temporal}]
+Make an Awareness check to notice things in a single 10-ft.\ squrae within 10 feet of you.
+You gain a \plus5 bonus to this check.
 \end{freeability}
 
 \end{spellsection}
@@ -1607,11 +1651,6 @@ This ritual takes one minute to perform.
 \subsubsection{Cantrips}
 
 
-\begin{freeability}{Fall}[\glossterm{Compulsion}]
-Make an attack vs. Mental against a creature within \rngmed range.
-\hit The target falls \glossterm{prone}.
-\end{freeability}
-
 \end{spellsection}
 
 
@@ -1736,11 +1775,6 @@ This spell functions like the \textit{dance} spell, except that you gain a \plus
 
 \subsubsection{Cantrips}
 
-
-\begin{freeability}{Sicken}[\glossterm{Life}]
-Make an attack vs. Fortitude against a living creature within \rngclose range.
-\hit The target is \glossterm{sickened} as a \glossterm{condition}.
-\end{freeability}
 
 \end{spellsection}
 
@@ -1895,11 +1929,6 @@ This ritual takes one hour to perform.
 \subsubsection{Cantrips}
 
 
-\begin{freeability}{Chill}[\glossterm{Cold}]
-Make an attack vs. Fortitude against one creature or object within \rngmed range.
-\hit The target takes cold \glossterm{standard damage}.
-\end{freeability}
-
 \end{spellsection}
 
 
@@ -2051,10 +2080,9 @@ This spell functions like the \spell{cone of cold} spell, except it affects ever
 \subsubsection{Cantrips}
 
 
-\begin{freeability}{Cause Fear}[\glossterm{Emotion}]
-Make an attack vs. Mental against a creature within \rngmed range.
-\hit The target is \glossterm{shaken} by you as a \glossterm{condition}.
-\crit The target is \glossterm{frightened} by you as a \glossterm{condition}.
+\begin{freeability}{Cheer}[\glossterm{Emotion}, \glossterm{Sustain} (free)]
+Choose a willing creature within \rngclose range.
+The target's mood improves and it feels more cheerful.
 \end{freeability}
 
 \end{spellsection}
@@ -2101,7 +2129,6 @@ When you attune to this spell, and at the end of each \glossterm{action phase} i
 \lowercase{\hypertarget{spell:Recovering Calm}{}}\label{spell:Recovering Calm}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Recovering Calm}{Recovering Calm}}[\glossterm{Emotion}, \glossterm{Swift}]
 You infuse yourself with a sense of calm to help you rest.
-Un
 Until the end of the round, you gain a \plus2 bonus to Mental defense.
 At the end of the round, you regain a spent \glossterm{recovery action point}.
 \end{freeability}
@@ -2201,11 +2228,6 @@ The target is not directly aware of any magical influence on its mind, though un
 
 \subsubsection{Cantrips}
 
-
-\begin{freeability}{Spark}[\glossterm{Electricity}]
-Make an attack vs. Fortitude against everything in a \areamed, 5 ft.\ wide line from you.
-\hit Each target takes electricity \glossterm{standard damage} \minus1d.
-\end{freeability}
 
 \end{spellsection}
 
@@ -2357,12 +2379,6 @@ This spell functions like the \spell{lightning bolt} spell, except that each str
 \parhead{Mystic Sphere Lists} Arcane, Pact
 
 \subsubsection{Cantrips}
-
-
-\begin{freeability}{Acid Splash}[\glossterm{Acid}, \glossterm{Manifestation}]
-Make an attack vs. Armor against one creature or object within \rngmed range.
-\hit The target takes acid \glossterm{standard damage}.
-\end{freeability}
 
 
 \begin{attuneability}{Fabricate Trinket}[\glossterm{Attune} (self), \glossterm{Manifestation}]
@@ -2526,20 +2542,10 @@ This ritual takes one hour to perform.
 \subsubsection{Cantrips}
 
 
-\begin{freeability}{Assist Disguise}[\glossterm{Sensation}, \glossterm{Visual}]
+\begin{freeability}{Assist Disguise}[\glossterm{Sensation}, \glossterm{Sustain} (minor), \glossterm{Visual}]
 Choose a willing creature within \rngclose range.
 % TODO: wording?
 If the target is disguised as another creature, it gains a \plus2 \glossterm{magic bonus} to the result of the disguise.
-\end{freeability}
-
-
-\begin{freeability}{Blur Weapon}[\glossterm{Sensation}, \glossterm{Visual}]
-Choose a willing creature within \rngclose range.
-The target's weapons become blurred and harder to see, making its attacks harder to avoid.
-On the next melee \glossterm{strike} the target makes, it rolls twice and takes the higher result.
-This effect ends at the end of the next round if the target has not made a strike by that time.
-
-This effect provides no offensive benefit against creatures immune to \glossterm{Visual} abilities.
 \end{freeability}
 
 \end{spellsection}
@@ -2686,14 +2692,6 @@ This ritual takes one minute to perform.
 \parhead{Mystic Sphere Lists} Arcane, Divine, Nature, Pact
 
 \subsubsection{Cantrips}
-
-
-\begin{freeability}{Flash}[\glossterm{Light}, \glossterm{Sensation}, \glossterm{Visual}]
-Make an attack vs. Fortitude against one creature, object, or location within \rngmed range.
-Bright light illuminates a 100 foot radius around the target until the end of the round.
-\hit The target is \dazzled as a \glossterm{condition}.
-\crit As above, and target is also \dazed as an additional \glossterm{condition}.
-\end{freeability}
 
 
 \begin{freeability}{Illuminate}[\glossterm{Light}, \glossterm{Sensation}, \glossterm{Visual}]
@@ -2845,12 +2843,6 @@ This ritual takes 24 hours to perform, and it requires 8 action points from its 
 \parhead{Mystic Sphere Lists} Arcane, Nature, Pact
 
 \subsubsection{Cantrips}
-
-
-\begin{freeability}{Twist Body}[\glossterm{Shaping}]
-Make an attack vs. Fortitude against a creature within \rngmed range.
-\hit The target takes physical \glossterm{standard damage}.
-\end{freeability}
 
 
 \begin{freeability}{Alter Object}[\glossterm{Shaping}]
@@ -3170,18 +3162,19 @@ This ritual functions like the \spell{fortify} ritual, except that the \glosster
 \subsubsection{Cantrips}
 
 
+\begin{freeability}{Kindle}[\glossterm{Fire}]
+Make an attack vs. Armor against one object within \rngclose range.
+\hit The target takes fire damage equal to your \glossterm{power}.
+If the target is highly flammable, such as a torch or campfire, it ignites.
+\end{freeability}
+
+
 \begin{freeability}{Personal Torch}[\glossterm{Fire}]
 You create a flame in your hand.
 You can create it at any intensity, up to a maximum heat equivalent to a burning torch.
 At it most intense, it sheds bright light in a 20 foot radius and dim light in an 40 foot radius.
 If you touch a creature or object with it, the target takes fire \glossterm{standard damage} \minus2d.
 This effect lasts until you use it again or until you \glossterm{dismiss} it as a \glossterm{free action}.
-\end{freeability}
-
-
-\begin{freeability}{Scorch}[\glossterm{Fire}]
-Make an attack vs. Armor against one creature or object within \rngmed range.
-\hit The target takes fire \glossterm{standard damage}.
 \end{freeability}
 
 \end{spellsection}
@@ -3390,10 +3383,9 @@ This spell functions like the \textit{greater ignition} spell, except that the c
 \subsubsection{Cantrips}
 
 
-\begin{freeability}{Precognitive Strike}[\glossterm{Swift}]
-Choose a willing creature within \rngclose range.
-If the target makes a \glossterm{strike} during the current phase, it rolls twice and takes the higher result.
-If you cast this spell on yourself, it affects the first strike you make until the end of the next round.
+\begin{freeability}{Minor Vision}
+You may reroll one Knowledge check you made last round.
+You can only cast this spell once per hour.
 \end{freeability}
 
 \end{spellsection}
@@ -3819,10 +3811,6 @@ It gains the \glossterm{Planar} tag in addition to the tags from the \ritual{scr
 \subsubsection{Cantrips}
 
 
-\begin{freeability}{Sustained Summoning}[\glossterm{Manifestation}, \glossterm{Sustain} (standard)]
-This cantrip functions like the \spell{summon monster} spell, except that it has the \glossterm{Sustain} (standard) tag instead of the \glossterm{Attune} (self) tag.
-\end{freeability}
-
 \end{spellsection}
 
 
@@ -3944,20 +3932,14 @@ In addition, you can manipulate the target as if you were holding it in your han
 Any attacks you make with the object or checks you make to manipulate the object have a maximum bonus equal to your \glossterm{power}.
 \end{freeability}
 
-
-\begin{freeability}{Telekinetic Compression}
-Make an attack vs. Mental against one creature or object within \rngmed range.
-\hit The target takes bludgeoning \glossterm{standard damage}.
-\end{freeability}
-
 \end{spellsection}
 
 
 \subsubsection{Spells}
 
 
-\lowercase{\hypertarget{spell:Recovering Compression}{}}\label{spell:Recovering Compression}
-\begin{freeability}[\nth{1}]{\hypertarget{spell:Recovering Compression}{Recovering Compression}}
+\lowercase{\hypertarget{spell:Recovering Crush}{}}\label{spell:Recovering Crush}
+\begin{freeability}[\nth{1}]{\hypertarget{spell:Recovering Crush}{Recovering Crush}}
 Make an attack vs. Mental against one creature or object within \rngmed range.
 \hit The target takes bludgeoning \glossterm{standard damage} \minus2d.
 In addition, you regain a spent \glossterm{recovery action point}.
@@ -4078,13 +4060,6 @@ Each five-foot square of wall has hit points equal to twice your \glossterm{powe
 
 \subsubsection{Cantrips}
 
-
-\begin{freeability}{Minor Earthspike}[\glossterm{Earth}, \glossterm{Physical}]
-You create a spike of earth from the ground that quickly retracts, leaving the surface unchanged.
-Make an attack vs. Armor against a creature or object within \rngmed range.
-The target must be within 5 feet of a Small or larger body of earth or stone.
-\hit The target takes piercing \glossterm{standard damage}.
-\end{freeability}
 
 \end{spellsection}
 
@@ -4294,11 +4269,8 @@ This spell functions like the \spell{fissure} spell, except that it affects all 
 \subsubsection{Cantrips}
 
 
-\begin{freeability}{Minor Suppression}[\glossterm{Mystic}, \glossterm{Sustain} (standard)]
-Make an attack against one creature within \rngmed range.
-The attack result is applied to every \glossterm{magical} effect on the target.
-The DR for each effect is equal to the \glossterm{power} of that effect.
-\hit Each effect is \glossterm{suppressed}.
+\begin{freeability}{Sense Magic}
+You gain a \plus4 bonus to the Spellcraft skill until the end of the next round.
 \end{freeability}
 
 \end{spellsection}
@@ -4461,12 +4433,11 @@ However, this spell does not prevent you from sustaining or dismissing this spel
 \subsubsection{Cantrips}
 
 
-\begin{freeability}{Minor Embedded Growth}
-You throw a seed that embeds itself in a foe and grows painfully.
-Make an attack vs. Armor at a creature within \rngclose range.
-\hit As a \glossterm{condition}, the target takes \glossterm{standard damage} \minus1d at the end of each \glossterm{action phase}.
-This condition can be removed if the target or a creature that can reach the target makes a \glossterm{DR} 5 Heal check as a standard action to remove the seed.
-\end{freeability}
+\begin{apability}{Rapid Growth}[\glossterm{Life}, \glossterm{Sustain} (minor)]
+Choose a Small or smaller inanimate plant within \rngclose range.
+The target grows as if a month of time had passed.
+When this spell ends, the plant returns to its original state.
+\end{apability}
 
 \end{spellsection}
 
@@ -4656,14 +4627,8 @@ It is from from the Conjuration school in addition to the Transmutation school.
 
 
 \begin{freeability}{Cure Minor Wounds}[\glossterm{Life}]
-Choose a willing living creature within \rngmed range.
-The target heals hit points equal to \glossterm{standard damage}.
-\end{freeability}
-
-
-\begin{freeability}{Inflict Minor Wounds}[\glossterm{Life}]
-Make an attack vs. Fortitude against a creature within \rngmed range.
-\hit The target takes life damage equal to \glossterm{standard damage}.
+Choose a willing living creature within \rngclose range.
+The target heals hit points equal to your \glossterm{power}.
 \end{freeability}
 
 \end{spellsection}
@@ -5009,12 +4974,6 @@ In addition, it can only be learned through the divine \glossterm{magic source}.
 \parhead{Mystic Sphere Lists} Arcane, Divine, Pact
 
 \subsubsection{Cantrips}
-
-
-\begin{freeability}{Fire Projectile}[\glossterm{Manifestation}]
-Make an attack vs. Armor against one creature or object within \rngmed range.
-\hit The target takes piercing \glossterm{standard damage}.
-\end{freeability}
 
 
 \begin{freeability}{Personal Weapon}[\glossterm{Manifestation}]

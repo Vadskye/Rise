@@ -27,9 +27,8 @@ def generate_mystic_spheres():
         name='Aeromancy',
         short_description="Command air to protect allies and blast foes",
         cantrips=[
-            Effects('Minor Windstrike', """
-                Make an attack vs. Armor against a creature or object within \\rngmed range.
-                \\hit The target takes bludgeoning \\glossterm<standard damage>.
+            Effects('Airborne Leap', """
+                You gain a +4 bonus to the Jump skill until the end of the next round.
             """, tags=['Air'], ap_cost=False),
             Effects('Soften Landing', """
                 Choose a willing creature in \\rngmed range.
@@ -176,14 +175,14 @@ def generate_mystic_spheres():
         name="Aquamancy",
         short_description="Command water to crush and drown foes",
         cantrips=[
-            Spell('Create Water', 1, """
+            Effects('Create Water', """
                 You create up to one gallon per \\glossterm<power> of wholesome, drinkable water anywhere within \\rngclose range.
                 The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
                 You must create a minimum of one ounce of water in each location.
             """, tags=['Creation', 'Water'], ap_cost=False),
-            Effects('Whelming Wave', """
-                Make an attack vs. Fortitude against everything in a \\areamed, 5 ft.\\ wide line from you.
-                \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
+            Effects('Slippery Escape', """
+                Choose a willing creature within \\rngclose range.
+                The target gains a +4 bonus to the Escape Artist skill until the end of the next round.
             """, tags=['Manifestation', 'Water'], ap_cost=False),
         ],
         schools=['Conjuration'],
@@ -269,10 +268,6 @@ def generate_mystic_spheres():
         name="Astromancy",
         short_description="Transport creatures and objects instantly through space",
         cantrips=[
-            Effects('Dimensional Disruption', """
-                Make an attack vs. Mental against a creature within \\rngmed range.
-                \\hit The target takes physical \\glossterm<standard damage>.
-            """, tags=['Planar', 'Teleportation'], ap_cost=False),
             Effects('Minor Translocation', """
                 Choose a Tiny or smaller unattended object within \\rngclose range.
                 The target teleports into an unoccupied location on a stable surface within range that can support the weight of the target.
@@ -420,14 +415,37 @@ def generate_mystic_spheres():
     # None: damage, debuff
     mystic_spheres.append(MysticSphere(
         name='Barrier',
-        short_description="Shield allies from hostile forces",
-        cantrips=[Effects('Ablative Shield', """
-            Choose a willing creature in \\rngclose range.
-            The target gains a \\glossterm<magic bonus> equal to your \\glossterm<power> to \\glossterm<damage reduction> against \\glossterm<physical> damage.
-        """, tags=['Sustain (standard)'], ap_cost=False)],
+        short_description="Shield allies and areas from hostile forces",
+        cantrips=[
+        ],
         schools=['Abjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
         spells=[
+            Spell('Wall of Force', 1, """
+                You create a wall of magical energy in a 10 ft.\\ high, \\areamed line within \\rngmed range.
+                The wall is visible as a shimmering magical membrane that does not block sight.
+                Nothing can pass through the wall until it is destroyed.
+                Each 5-ft.\\ square of wall has hit points equal to your \\glossterm<power>.
+            """, tags=['Attune (self)']),
+            Spell('Fortified Wall of Force', 3, """
+                This spell functions like the \\spell<wall of force> spell, except that each 5-ft.\\ square of wall has hit points equal to four times your \\glossterm<power>.
+            """, tags=['Attune (self)']),
+            Spell('Expanded Wall of Force', 2, """
+                This spell functions like the \\spell<wall of force> spell, except that the wall fills a 10 ft.\\ high, \\arealarge line.
+            """, tags=['Attune (self)']),
+            Spell('Impervious Wall of Force', 5, """
+                This spell functions like the \\spell<wall of force> spell, except that the wall is immune to all damage except sonic damage and thaumatic damage.
+            """, tags=['Attune (self)']),
+            Spell('Wall of Energy Impedance', 2, """
+                You create a wall of magical energy in a 10 ft.\\ high, \\areamed line within \\rngmed range.
+                The wall is visible as a shimmering magical membrane that does not block sight.
+                It does not impede passage for objects or creatures, but any ability that deals \\glossterm<energy damage> treats the wall as an impassable barrier.
+            """, tags=['Attune (self)']),
+            Spell('Wall of Magic Impedance', 4, """
+                You create a wall of magical energy in a 10 ft.\\ high, \\areamed line within \\rngmed range.
+                The wall is visible as a shimmering magical membrane that does not block sight.
+                It does not impede passage for objects or creatures, but any \\glossterm<magical> ability treats the wall as an impassable barrier.
+            """, tags=['Attune (self)']),
             Spell('Ablative Recovery', 1, """
                 Until the end of the round, you gain a bonus equal to half your \\glossterm<power> to \\glossterm<damage reduction> against \\glossterm<physical> damage.
                 At the end of the round, you regain a spent \\glossterm<recovery action point>.
@@ -554,10 +572,8 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name='Bless',
         short_description="Grant divine blessings to aid allies and improve combat prowess",
-        cantrips=[Effects('Minor Cleansing Blessing', """
-            Choose a willing creature within \\rngclose range.
-            The target removes one \\glossterm<condition> affecting it.
-        """, ap_cost=False)],
+        cantrips=[
+        ],
         schools=['Channeling'],
         lists=['Divine'],
         spells=[
@@ -612,10 +628,10 @@ def generate_mystic_spheres():
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)']),
             Spell('Cleansing Blessing', 1, """
-                All allies within \\arealarge radius from you can remove one \\glossterm<condition> affecting them.
+                You and any number of willing creatures within an \\arealarge radius from you can remove one \\glossterm<condition>.
             """, tags=[]),
             Spell('Greater Cleansing Blessing', 4, """
-                This spell functions like the \\spell<cleansing blessing> spell, except that each ally can remove two conditions instead of one.
+                This spell functions like the \\spell<cleansing blessing> spell, except that each target can remove two conditions instead of one.
             """, tags=[]),
             Spell('Blessing of Might', 2, """
                 Choose a willing creature within \\rngclose range.
@@ -690,10 +706,15 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Channel Divinity",
         short_description="Invoke divine power to smite foes and gain power",
-        cantrips=[Effects('Divine Judgment', """
-            Make an attack vs. Mental against a creature within \\rngmed range.
-            \\hit The target takes divine \\glossterm<standard damage>.
-        """, ap_cost=False)],
+        cantrips=[
+            Effects('Testament', """
+                The magical essence of your deity or alignment is overlayed on your body as an aura.
+                This channels your deity if you are a cleric, or your alignment if you are a paladin.
+                In either case, you gain the ability to see the auras of other creatures using this spell.
+                If you see another creature with the same aura as you, this spell grants you the unerring knowledge of that similarity.
+                This can allow you to identify other followers of your deity or alignment with certainty.
+            """, tags=['Sustain (free)'], ap_cost=False),
+        ],
         schools=['Channeling'],
         lists=['Divine'],
         spells=[
@@ -701,7 +722,7 @@ def generate_mystic_spheres():
                 Until the end of the round, you gain a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<damage reduction> against \\glossterm<physical> damage.
                 At the end of the round, you regain a spent \\glossterm<recovery action point>.
             """, tags=['Shielding', 'Swift'], ap_cost=False),
-            Spell('Judge Unworthy', 1, """
+            Spell('Divine Judgment', 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 \\hit The target takes divine \\glossterm<standard damage> +2d.
             """, tags=[]),
@@ -774,10 +795,16 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Chronomancy",
         short_description="Manipulate the passage of time to inhibit foes and aid allies",
-        cantrips=[Effects('Minor Slow', """
-            Make an attack vs. Mental against a creature within \\rngmed range.
-            \\hit The target is \\glossterm<slowed> as a \\glossterm<condition>.
-        """, tags=['Temporal'], ap_cost=False)],
+        cantrips=[
+            Effects('Accelerated Reading', """
+                You can read at five times your normal speed.
+                However, the mental effort imposes a -4 penalty to Mental defense.
+            """, tags=['Sustain (free)', 'Temporal'], ap_cost=False),
+            Effects('Accelerated Search', """
+                Make an Awareness check to notice things in a single 10-ft.\\ squrae within 10 feet of you.
+                You gain a +5 bonus to this check.
+            """, tags=['Temporal'], ap_cost=False),
+        ],
         schools=['Transmutation'],
         lists=['Arcane', 'Pact'],
         spells=[
@@ -919,10 +946,8 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Compel",
         short_description="Bend creatures to your will by controlling their actions",
-        cantrips=[Effects('Fall', """
-            Make an attack vs. Mental against a creature within \\rngmed range.
-            \\hit The target falls \\glossterm<prone>.
-        """, tags=['Compulsion'], ap_cost=False)],
+        cantrips=[
+        ],
         schools=['Enchantment'],
         lists=['Arcane', 'Divine', 'Pact'],
         spells=[
@@ -996,10 +1021,7 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Corruption",
         short_description="Weaken the life force of foes, reducing their combat prowess",
-        cantrips=[Effects('Sicken', """
-            Make an attack vs. Fortitude against a living creature within \\rngclose range.
-            \\hit The target is \\glossterm<sickened> as a \\glossterm<condition>.
-        """, tags=['Life'], ap_cost=False)],
+        cantrips=[],
         schools=['Vivimancy'],
         lists=['Arcane', 'Divine', 'Nature', 'Pact'],
         spells=[
@@ -1086,10 +1108,8 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name='Cryomancy',
         short_description='Drain heat to injure and freeze foes',
-        cantrips=[Effects('Chill', """
-            Make an attack vs. Fortitude against one creature or object within \\rngmed range.
-            \\hit The target takes cold \\glossterm<standard damage>.
-        """, tags=['Cold'], ap_cost=False)],
+        cantrips=[
+        ],
         schools=['Evocation'],
         lists=['Arcane', 'Nature', 'Pact'],
         spells=[
@@ -1165,17 +1185,17 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Delusion",
         short_description="Instill false emotions to influence creatures",
-        cantrips=[Effects('Cause Fear', """
-            Make an attack vs. Mental against a creature within \\rngmed range.
-            \\hit The target is \\glossterm<shaken> by you as a \\glossterm<condition>.
-            \\crit The target is \\glossterm<frightened> by you as a \\glossterm<condition>.
-        """, tags=['Emotion'], ap_cost=False)],
+        cantrips=[
+            Effects('Cheer', """
+                Choose a willing creature within \\rngclose range.
+                The target's mood improves and it feels more cheerful.
+            """, tags=['Emotion', 'Sustain (free)'], ap_cost=False),
+        ],
         schools=['Enchantment'],
         lists=['Arcane', 'Divine', 'Pact'],
         spells=[
             Spell('Recovering Calm', 1, """
                 You infuse yourself with a sense of calm to help you rest.
-                Un
                 Until the end of the round, you gain a +2 bonus to Mental defense.
                 At the end of the round, you regain a spent \\glossterm<recovery action point>.
             """, tags=['Emotion', 'Swift'], ap_cost=False),
@@ -1258,10 +1278,7 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Electromancy",
         short_description='Create electricity to injure and stun foes',
-        cantrips=[Effects('Spark', """
-            Make an attack vs. Fortitude against everything in a \\areamed, 5 ft.\\ wide line from you.
-            \\hit Each target takes electricity \\glossterm<standard damage> -1d.
-        """, tags=['Electricity'], ap_cost=False)],
+        cantrips=[],
         schools=['Evocation'],
         lists=['Arcane', 'Nature', 'Pact'],
         spells=[
@@ -1345,10 +1362,6 @@ def generate_mystic_spheres():
         short_description="Create objects to damage and impair foes",
         # TODO: Narrative implications of at-will acid are annoying
         cantrips=[
-            Effects('Acid Splash', """
-                Make an attack vs. Armor against one creature or object within \\rngmed range.
-                \\hit The target takes acid \\glossterm<standard damage>.
-            """, tags=['Acid', 'Manifestation'], ap_cost=False),
             Effects('Fabricate Trinket', """
                 You make a Craft check to create an object of Tiny size or smaller.
                 The object appears in your hand or at your feet.
@@ -1447,15 +1460,7 @@ def generate_mystic_spheres():
                 Choose a willing creature within \\rngclose range.
                 % TODO: wording?
                 If the target is disguised as another creature, it gains a +2 \\glossterm<magic bonus> to the result of the disguise.
-            """, tags=['Sensation', 'Visual'], ap_cost=False),
-            Effects('Blur Weapon', """
-                Choose a willing creature within \\rngclose range.
-                The target's weapons become blurred and harder to see, making its attacks harder to avoid.
-                On the next melee \\glossterm<strike> the target makes, it rolls twice and takes the higher result.
-                This effect ends at the end of the next round if the target has not made a strike by that time.
-
-                This effect provides no offensive benefit against creatures immune to \\glossterm<Visual> abilities.
-            """, tags=['Sensation', 'Visual'], ap_cost=False),
+            """, tags=['Sensation', 'Sustain (minor)', 'Visual'], ap_cost=False),
         ],
         schools=['Illusion'],
         lists=['Arcane'],
@@ -1547,10 +1552,6 @@ def generate_mystic_spheres():
         name="Polymorph",
         short_description="Change the physical forms of objects and creatures",
         cantrips=[
-            Effects('Twist Body', """
-                Make an attack vs. Fortitude against a creature within \\rngmed range.
-                \\hit The target takes physical \\glossterm<standard damage>.
-            """, tags=['Shaping'], ap_cost=False),
             Effects('Alter Object', """
                 Choose an unattended, nonmagical object you can touch.
                 You make a Craft check to alter the target (see \\pcref<Craft>), except that you do not need any special tools to make the check (such as an anvil and furnace).
@@ -1730,12 +1731,6 @@ def generate_mystic_spheres():
         name="Photomancy",
         short_description="Create bright light to blind foes and illuminate your surroundings",
         cantrips=[
-            Effects('Flash', """
-                Make an attack vs. Fortitude against one creature, object, or location within \\rngmed range.
-                Bright light illuminates a 100 foot radius around the target until the end of the round.
-                \\hit The target is \\dazzled as a \\glossterm<condition>.
-                \\crit As above, and target is also \\dazed as an additional \\glossterm<condition>.
-            """, tags=['Light', 'Sensation', 'Visual'], ap_cost=False),
             Effects('Illuminate', """
                 Choose a location within \\rngmed range.
                 A glowing light appears in midair in the chosen location.
@@ -1820,16 +1815,17 @@ def generate_mystic_spheres():
         name='Pyromancy',
         short_description="Create fire to incinerate foes",
         cantrips=[
+            Effects('Kindle', """
+                Make an attack vs. Armor against one object within \\rngclose range.
+                \\hit The target takes fire damage equal to your \\glossterm<power>.
+                If the target is highly flammable, such as a torch or campfire, it ignites.
+            """, tags=['Fire'], ap_cost=False),
             Effects('Personal Torch', """
                 You create a flame in your hand.
                 You can create it at any intensity, up to a maximum heat equivalent to a burning torch.
                 At it most intense, it sheds bright light in a 20 foot radius and dim light in an 40 foot radius.
                 If you touch a creature or object with it, the target takes fire \\glossterm<standard damage> -2d.
                 This effect lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
-            """, tags=['Fire'], ap_cost=False),
-            Effects('Scorch', """
-                Make an attack vs. Armor against one creature or object within \\rngmed range.
-                \\hit The target takes fire \\glossterm<standard damage>.
             """, tags=['Fire'], ap_cost=False),
         ],
         schools=['Evocation'],
@@ -1937,11 +1933,10 @@ def generate_mystic_spheres():
         name="Revelation",
         short_description="Share visions of the present and future, granting insight or combat prowess",
         cantrips=[
-            Effects('Precognitive Strike', """
-                Choose a willing creature within \\rngclose range.
-                If the target makes a \\glossterm<strike> during the current phase, it rolls twice and takes the higher result.
-                If you cast this spell on yourself, it affects the first strike you make until the end of the next round.
-            """, tags=['Swift'], ap_cost=False),
+            Effects('Minor Vision', """
+                You may reroll one Knowledge check you made last round.
+                You can only cast this spell once per hour.
+            """, tags=[], ap_cost=False),
         ],
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
@@ -2089,11 +2084,13 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Scry",
         short_description="See and hear at great distances",
-        # TODO: this shouldn't reference the spell effect.
-        cantrips=[Effects('Remote Sensing', """
-            This cantrip functions like the \\textit<arcane eye> spell, except that it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> (self) tag.",
-            In addition, the sensor cannot be moved after it is originally created.
-        """, tags=['Scrying', 'Sustain (minor)'], ap_cost=False)],
+        # TODO: this shouldn't reference the spell effect
+        cantrips=[
+            Effects('Remote Sensing', """
+                This cantrip functions like the \\textit<arcane eye> spell, except that it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> (self) tag.",
+                In addition, the sensor cannot be moved after it is originally created.
+            """, tags=['Scrying', 'Sustain (minor)'], ap_cost=False),
+        ],
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
         spells=[
@@ -2178,11 +2175,7 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Summon",
         short_description="Summon creatures to fight with you",
-        # TODO: this shouldn't reference the spell effect
         cantrips=[
-            Effects('Sustained Summoning', """
-                This cantrip functions like the \\spell<summon monster> spell, except that it has the \\glossterm<Sustain> (standard) tag instead of the \\glossterm<Attune> (self) tag.
-            """, tags=["Manifestation", 'Sustain (standard)'], ap_cost=False),
         ],
         schools=['Conjuration'],
         lists=['Arcane', 'Divine', 'Nature'],
@@ -2266,15 +2259,11 @@ def generate_mystic_spheres():
                 In addition, you can manipulate the target as if you were holding it in your hands.
                 Any attacks you make with the object or checks you make to manipulate the object have a maximum bonus equal to your \\glossterm<power>.
             """, tags=['Sustain (standard)'], ap_cost=False),
-            Effects('Telekinetic Compression', """
-                Make an attack vs. Mental against one creature or object within \\rngmed range.
-                \\hit The target takes bludgeoning \\glossterm<standard damage>.
-            """, tags=[], ap_cost=False),
         ],
         schools=['Evocation'],
         lists=['Arcane', 'Pact'],
         spells=[
-            Spell('Recovering Compression', 1, """
+            Spell('Recovering Crush', 1, """
                 Make an attack vs. Mental against one creature or object within \\rngmed range.
                 \\hit The target takes bludgeoning \\glossterm<standard damage> -2d.
                 In addition, you regain a spent \\glossterm<recovery action point>.
@@ -2339,12 +2328,7 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Terramancy",
         short_description="Manipulate earth to crush foes",
-        cantrips=[Effects('Minor Earthspike', """
-            You create a spike of earth from the ground that quickly retracts, leaving the surface unchanged.
-            Make an attack vs. Armor against a creature or object within \\rngmed range.
-            The target must be within 5 feet of a Small or larger body of earth or stone.
-            \\hit The target takes piercing \\glossterm<standard damage>.
-        """, tags=['Earth', 'Physical'], ap_cost=False)],
+        cantrips=[],
         schools=['Conjuration', 'Transmutation'],
         lists=['Arcane', 'Nature'],
         spells=[
@@ -2469,12 +2453,9 @@ def generate_mystic_spheres():
         name='Thaumaturgy',
         short_description="Suppress and manipulate magical effects",
         cantrips=[
-            Effects('Minor Suppression', """
-                Make an attack against one creature within \\rngmed range.
-                The attack result is applied to every \\glossterm<magical> effect on the target.
-                The DR for each effect is equal to the \\glossterm<power> of that effect.
-                \\hit Each effect is \\glossterm<suppressed>.
-            """, tags=['Mystic', 'Sustain (standard)'], ap_cost=False),
+            Effects('Sense Magic', """
+                You gain a +4 bonus to the Spellcraft skill until the end of the next round.
+            """, tags=[], ap_cost=False),
         ],
         schools=['Abjuration'],
         lists=['Arcane', 'Divine'],
@@ -2567,12 +2548,13 @@ def generate_mystic_spheres():
     mystic_spheres.append(MysticSphere(
         name="Verdamancy",
         short_description="Animate and manipulate plants",
-        cantrips=[Effects('Minor Embedded Growth', """
-            You throw a seed that embeds itself in a foe and grows painfully.
-            Make an attack vs. Armor at a creature within \\rngclose range.
-            \\hit As a \\glossterm<condition>, the target takes \\glossterm<standard damage> -1d at the end of each \\glossterm<action phase>.
-            This condition can be removed if the target or a creature that can reach the target makes a \\glossterm<DR> 5 Heal check as a standard action to remove the seed.
-        """, ap_cost=False)],
+        cantrips=[
+            Effects('Rapid Growth', """
+                Choose a Small or smaller inanimate plant within \\rngclose range.
+                The target grows as if a month of time had passed.
+                When this spell ends, the plant returns to its original state.
+            """, tags=['Life', 'Sustain (minor)']),
+        ],
         schools=['Transmutation'],
         lists=['Nature'],
         spells=[
@@ -2688,12 +2670,8 @@ def generate_mystic_spheres():
         short_description="Alter life energy to cure or inflict wounds",
         cantrips=[
             Effects('Cure Minor Wounds', """
-                Choose a willing living creature within \\rngmed range.
-                The target heals hit points equal to \\glossterm<standard damage>.
-            """, tags=['Life'], ap_cost=False),
-            Effects('Inflict Minor Wounds', """
-                Make an attack vs. Fortitude against a creature within \\rngmed range.
-                \\hit The target takes life damage equal to \\glossterm<standard damage>.
+                Choose a willing living creature within \\rngclose range.
+                The target heals hit points equal to your \\glossterm<power>.
             """, tags=['Life'], ap_cost=False),
         ],
         schools=['Vivimancy'],
@@ -2912,10 +2890,6 @@ def generate_mystic_spheres():
         name="Weaponcraft",
         short_description="Create and manipulate weapons to attack foes",
         cantrips=[
-            Effects('Fire Projectile', """
-                Make an attack vs. Armor against one creature or object within \\rngmed range.
-                \\hit The target takes piercing \\glossterm<standard damage>.
-            """, tags=['Manifestation'], ap_cost=False),
             Effects('Personal Weapon', """
                 Choose a type of weapon that you are proficient with.
                 You create a normal item of that type in your hand.
