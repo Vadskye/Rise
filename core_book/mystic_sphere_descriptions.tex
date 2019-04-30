@@ -31,7 +31,7 @@ Until the end of the round, the target treats all falls as if they were 5 feet s
 
 \lowercase{\hypertarget{spell:Cyclone}{}}\label{spell:Cyclone}
 \begin{apability}[\nth{1}]{\hypertarget{spell:Cyclone}{Cyclone}}[\glossterm{Air}]
-Make an attack vs. Armor against everything in a \areasmall radius within \rngclose range.
+Make an attack vs. Fortitude against everything in a \areasmall radius within \rngclose range.
 \hit Each target takes bludgeoning \glossterm{standard damage}.
 \end{apability}
 \vspace{0.25em}
@@ -92,6 +92,16 @@ Make an attack vs. Armor against a creature or object within \rngmed range.
 
 
 
+\lowercase{\hypertarget{spell:Buffeting Gale}{}}\label{spell:Buffeting Gale}
+\begin{apability}[\nth{2}]{\hypertarget{spell:Buffeting Gale}{Buffeting Gale}}[\glossterm{Air}]
+Make an attack vs. Fortitude against everything in a \arealarge, 10 ft. wide line from you.
+% TODO: wording
+\hit Each target takes bludgeoning \glossterm{standard damage} \minus1d and is moved 10 feet in the direction the line points away from you.
+\end{apability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Gentle Descent}{}}\label{spell:Gentle Descent}
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Gentle Descent}{Gentle Descent}}[\glossterm{Air}, \glossterm{Attune} (target)]
 Choose a Large or smaller willing creature in \rngclose range.
@@ -105,15 +115,6 @@ The target gains a 30 foot \glossterm{glide speed} (see \pcref{Gliding}).
 \begin{apability}[\nth{2}]{\hypertarget{spell:Greater Propulsion}{Greater Propulsion}}[\glossterm{Air}, \glossterm{Swift}]
 This spell functions like the \spell{propulsion} spell, except that the distance you can move the target is increased to 100 feet.
 In addition, the target gains a \plus1 bonus to Armor defense during the current phase.
-\end{apability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Gust of Wind}{}}\label{spell:Gust of Wind}
-\begin{apability}[\nth{2}]{\hypertarget{spell:Gust of Wind}{Gust of Wind}}[\glossterm{Air}]
-Make an attack vs. Armor against everything in a \arealarge, 10 ft. wide line from you.
-\hit Each target takes bludgeoning \glossterm{standard damage}.
 \end{apability}
 \vspace{0.25em}
 
@@ -140,7 +141,7 @@ This spell functions like the \spell{windstrike} spell, except that the attack r
 
 \lowercase{\hypertarget{spell:Greater Cyclone}{}}\label{spell:Greater Cyclone}
 \begin{apability}[\nth{3}]{\hypertarget{spell:Greater Cyclone}{Greater Cyclone}}[\glossterm{Air}]
-Make an attack vs. Armor against everything in a \areamed radius within \rngmed range.
+Make an attack vs. Fortitude against everything in a \areamed radius within \rngmed range.
 \hit Each target takes bludgeoning \glossterm{standard damage}.
 \end{apability}
 \vspace{0.25em}
@@ -150,6 +151,16 @@ Make an attack vs. Armor against everything in a \areamed radius within \rngmed 
 \lowercase{\hypertarget{spell:Greater Windstrike}{}}\label{spell:Greater Windstrike}
 \begin{apability}[\nth{3}]{\hypertarget{spell:Greater Windstrike}{Greater Windstrike}}[\glossterm{Air}]
 This spell functions like the \spell{windstrike} spell, except that it affects a target within \rnglong range and the damage increases to \glossterm{standard damage} \plus3d.
+\end{apability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Hurricane}{}}\label{spell:Hurricane}
+\begin{apability}[\nth{3}]{\hypertarget{spell:Hurricane}{Hurricane}}[\glossterm{Air}]
+Make an attack vs. Fortitude against everything in a \arealarge radius from you.
+\hit Each target takes bludgeoning \glossterm{standard damage} \minus1d and is moved 10 feet clockwise around you.
+Each target's final position should be the same distance from you as its starting position.
 \end{apability}
 \vspace{0.25em}
 
@@ -168,9 +179,9 @@ Any effect which increases this spell's range increases the range of this retali
 
 
 
-\lowercase{\hypertarget{spell:Stripping Gust of Wind}{}}\label{spell:Stripping Gust of Wind}
-\begin{apability}[\nth{3}]{\hypertarget{spell:Stripping Gust of Wind}{Stripping Gust of Wind}}[\glossterm{Air}]
-This spell functions like the \spell{gust of wind} spell, except that the attack result is also compared to each target's Reflex defense.
+\lowercase{\hypertarget{spell:Stripping Gale}{}}\label{spell:Stripping Gale}
+\begin{apability}[\nth{3}]{\hypertarget{spell:Stripping Gale}{Stripping Gale}}[\glossterm{Air}]
+This spell functions like the \spell{buffeting gale} spell, except that the attack result is also compared to each target's Reflex defense.
 \hit Each target drops all items it is holding that are not well secured (such as a ring) or held in two hands.
 \end{apability}
 \vspace{0.25em}
@@ -209,6 +220,14 @@ If another ability would magically manipulate the weather in the same area, the 
 
 
 
+\lowercase{\hypertarget{spell:Greater Buffeting Gale}{}}\label{spell:Greater Buffeting Gale}
+\begin{apability}[\nth{4}]{\hypertarget{spell:Greater Buffeting Gale}{Greater Buffeting Gale}}[\glossterm{Air}]
+This spell functions like the \spell{buffeting gale} spell, except that it affects everything in a \areahuge, 10 ft. wide line from you and targets are moved 30 feet instead of 10 feet.
+\end{apability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Greater Wind Screen}{}}\label{spell:Greater Wind Screen}
 \begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Wind Screen}{Greater Wind Screen}}[\glossterm{Air}, \glossterm{Attune} (target), \glossterm{Shielding}]
 This spell functions like the \spell{wind screen} spell, except that the Armor defense bonus increases to \plus2 and the defense bonus against ranged attacks increases to \plus10.
@@ -222,7 +241,6 @@ This spell functions like the \spell{wind screen} spell, except that the Armor d
 Choose a willing creature within \rngclose range.
 Melee weapons wielded by the target gain an additional ten feet of \glossterm{reach}.
 In addition, the target gains a \plus2 \glossterm{magic bonus} to \glossterm{power} with melee \glossterm{strikes}.
-This has no effect on ranged attacks the target makes.
 
 You can cast this spell as a \glossterm{minor action}.
 \end{attuneability}
@@ -239,9 +257,9 @@ In addition, the target gains a \plus2 bonus to Armor defense during the current
 
 
 
-\lowercase{\hypertarget{spell:Greater Gust of Wind}{}}\label{spell:Greater Gust of Wind}
-\begin{apability}[\nth{5}]{\hypertarget{spell:Greater Gust of Wind}{Greater Gust of Wind}}[\glossterm{Air}]
-This spell functions like the \spell{gust of wind} spell, except that it affects everything in a \areahuge, 10 ft. wide line from you and deals \glossterm{standard damage} \plus1d.
+\lowercase{\hypertarget{spell:Greater Hurricane}{}}\label{spell:Greater Hurricane}
+\begin{apability}[\nth{5}]{\hypertarget{spell:Greater Hurricane}{Greater Hurricane}}[\glossterm{Air}]
+This spell functions like the \spell{hurricane} spell, except that it deals \glossterm{standard damage} and targets are moved 30 feet instead of 10 feet.
 \end{apability}
 \vspace{0.25em}
 
@@ -265,7 +283,7 @@ This spell functions like the \spell{stormlord} spell, except that the damage in
 
 \lowercase{\hypertarget{spell:Supreme Cyclone}{}}\label{spell:Supreme Cyclone}
 \begin{apability}[\nth{6}]{\hypertarget{spell:Supreme Cyclone}{Supreme Cyclone}}[\glossterm{Air}]
-Make an attack vs. Armor against everything in a \arealarge radius within \rnglong range.
+Make an attack vs. Fortitude against everything in a \arealarge radius within \rnglong range.
 \hit Each target takes bludgeoning \glossterm{standard damage} \plus1d.
 \end{apability}
 \vspace{0.25em}
@@ -307,7 +325,7 @@ The target gains a \plus4 bonus to the Escape Artist skill until the end of the 
 \lowercase{\hypertarget{spell:Crushing Wave}{}}\label{spell:Crushing Wave}
 \begin{apability}[\nth{1}]{\hypertarget{spell:Crushing Wave}{Crushing Wave}}[\glossterm{Manifestation}, \glossterm{Water}]
 Make an attack vs. Fortitude against everything in a \arealarge, 10 ft.\ wide line from you.
-\hit Each target takes bludgeoning \glossterm{standard damage}.
+\hit Each target takes bludgeoning \glossterm{standard damage} \minus1d.
 \end{apability}
 \vspace{0.25em}
 

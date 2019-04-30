@@ -83,12 +83,13 @@ def generate_mystic_spheres():
                 Choose a Large or smaller willing creature in \\rngclose range.
                 The target gains a 30 foot \\glossterm<glide speed> (see \\pcref<Gliding>).
             """, tags=['Air', 'Attune (target)']),
-            Spell('Gust of Wind', 2, """
-                Make an attack vs. Armor against everything in a \\arealarge, 10 ft. wide line from you.
-                \\hit Each target takes bludgeoning \\glossterm<standard damage>.
+            Spell('Buffeting Gale', 2, """
+                Make an attack vs. Fortitude against everything in a \\arealarge, 10 ft. wide line from you.
+                % TODO: wording
+                \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d and is moved 10 feet in the direction the line points away from you.
             """, tags=['Air']),
-            Spell('Greater Gust of Wind', 5, """
-                This spell functions like the \\spell<gust of wind> spell, except that it affects everything in a \\areahuge, 10 ft. wide line from you and deals \\glossterm<standard damage> +1d.
+            Spell('Greater Buffeting Gale', 4, """
+                This spell functions like the \\spell<buffeting gale> spell, except that it affects everything in a \\areahuge, 10 ft. wide line from you and targets are moved 30 feet instead of 10 feet.
             """, tags=['Air']),
             Spell('Windblade', 1, """
                 Choose a willing creature within \\rngclose range.
@@ -101,7 +102,6 @@ def generate_mystic_spheres():
                 Choose a willing creature within \\rngclose range.
                 Melee weapons wielded by the target gain an additional ten feet of \\glossterm<reach>.
                 In addition, the target gains a +2 \\glossterm<magic bonus> to \\glossterm<power> with melee \\glossterm<strikes>.
-                This has no effect on ranged attacks the target makes.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Air', 'Attune (target)', 'Shaping']),
@@ -139,24 +139,32 @@ def generate_mystic_spheres():
                 If another ability would magically manipulate the weather in the same area, the most recently used ability takes precedence.
             """, tags=['Air', 'Attune (self)']),
             Spell('Cyclone', 1, """
-                Make an attack vs. Armor against everything in a \\areasmall radius within \\rngclose range.
+                Make an attack vs. Fortitude against everything in a \\areasmall radius within \\rngclose range.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage>.
             """, tags=['Air']),
             Spell('Greater Cyclone', 3, """
-                Make an attack vs. Armor against everything in a \\areamed radius within \\rngmed range.
+                Make an attack vs. Fortitude against everything in a \\areamed radius within \\rngmed range.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage>.
             """, tags=['Air']),
             Spell('Supreme Cyclone', 6, """
-                Make an attack vs. Armor against everything in a \\arealarge radius within \\rnglong range.
+                Make an attack vs. Fortitude against everything in a \\arealarge radius within \\rnglong range.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage> +1d.
+            """, tags=['Air']),
+            Spell('Hurricane', 3, """
+                Make an attack vs. Fortitude against everything in a \\arealarge radius from you.
+                \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d and is moved 10 feet clockwise around you.
+                Each target's final position should be the same distance from you as its starting position.
+            """, tags=['Air']),
+            Spell('Greater Hurricane', 5, """
+                This spell functions like the \\spell<hurricane> spell, except that it deals \\glossterm<standard damage> and targets are moved 30 feet instead of 10 feet.
             """, tags=['Air']),
             Spell('Stripping Windstrike', 2, """
                 This spell functions like the \\spell<windstrike> spell, except that the attack result is also compared to the target's Reflex defense.
                 % Clarify: this can hit even if the damaging effect misses
                 \\hit The target drops all items it is holding that are not well secured (such as a ring) or held in two hands.
             """, tags=['Air']),
-            Spell('Stripping Gust of Wind', 3, """
-                This spell functions like the \\spell<gust of wind> spell, except that the attack result is also compared to each target's Reflex defense.
+            Spell('Stripping Gale', 3, """
+                This spell functions like the \\spell<buffeting gale> spell, except that the attack result is also compared to each target's Reflex defense.
                 \\hit Each target drops all items it is holding that are not well secured (such as a ring) or held in two hands.
             """, tags=['Air']),
             Spell('Stripping Cyclone', 2, """
@@ -194,7 +202,7 @@ def generate_mystic_spheres():
             """, tags=['Creation', 'Swift', 'Water'], ap_cost=False),
             Spell('Crushing Wave', 1, """
                 Make an attack vs. Fortitude against everything in a \\arealarge, 10 ft.\\ wide line from you.
-                \\hit Each target takes bludgeoning \\glossterm<standard damage>.
+                \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
             """, tags=['Manifestation', 'Water']),
             Spell('Water Jet', 1, """
                 Make an attack vs. Armor against a creature within \\rngclose range.
