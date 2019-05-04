@@ -441,8 +441,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Divine Favor} You gain a \plus1 bonus to Fortitude and Mental defense.
 
         \ff[4]{Holy Smite} You can use the \textit{holy smite} ability as a standard action.
-        \begin{freeability}{Smite}
-            Make a \glossterm{strike}.
+        \begin{freeability}{Smite}[Magical]
+            Make a \glossterm{magical strike}.
             If your target is good, the strike deals no damage.
             Otherwise, the strike gains a \plus1d bonus to damage.
         \end{freeability}
@@ -456,12 +456,12 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[10]{Greater Holy Smite} The damage bonus from your \textit{holy smite} ability increases to \plus2d.
 
         \ff[13]{Angelic Flight} You can use the \textit{angelic flight} ability as a \glossterm{free action}.
-        \begin{freeability}{Angelic Flight}
+        \begin{freeability}{Angelic Flight}[Magical]
             You gain a \glossterm{fly speed} equal to your \glossterm{base speed} until the end of the round (see \pcref{Flying}).
             In addition, you take \glossterm{subdual damage} equal to your level.
         \end{freeability}
 
-        \ff[16]{Supreme Holy Smite} The damage bonus from your \textit{holy smite} ability increases to \plus4d.
+        \ff[16]{Supreme Holy Smite} The damage bonus from your \textit{holy smite} ability increases to \plus3d.
 
         \ff[16]{Greater Divine Favor} The bonuses from your \textit{divine favor} ability increase to \plus2.
 
@@ -1080,51 +1080,49 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[19]{Empowered Overchannel} When you use your \textit{overchannel} ability, you gain a \plus2 bonus to \glossterm{power} with the spell.
     \end{feat}
 
-    \begin{feat}{Mystic Archer}{Casting, Magical}
+    \begin{feat}{Mystic Archer}{Casting}
         \featpre Ability to cast a spell.
 
-        \ff[1]{Guided Projectiles} Your attacks with projectiles ignore \glossterm{cover}, but not \glossterm{total cover}.
+        \ff[1]{Guided Projectiles}[Magical] Your attacks with projectiles ignore \glossterm{cover}, but not \glossterm{total cover}.
 
         \ff[4]{Imbue Projectile} When you cast a spell that affects a single target and does not have the \glossterm{AP}, \glossterm{Attune}, or \glossterm{Sustain} tags,
             you can use the \textit{imbue projectile} ability.
-        \begin{attuneability}{Imbue Projectile}[\glossterm{Attune} (self)]
+            You can use the \textit{imbued shot} ability as a standard action to trigger the imbued spell.
+        \begin{attuneability}{Imbue Projectile}[\glossterm{Attune} (self), \glossterm{Magical}]
             The spell does not have its effect immediately.
             Instead, its power is imbued in a \glossterm{projectile} you hold.
-
-            As a standard action, you can make a ranged \glossterm{strike} using that projectile.
-            If you do, the spell affects the target of the strike.
-            After the spell takes effect this way, the projectile's magic is lost, and the spell cannot take effect again.
-            That does not break your attunement to this ability.
         \end{attuneability}
 
+        \begin{freeability}{Imbued Shot}
+            As a standard action, you can make a ranged \glossterm{strike} using a projectile you have imbued with the \textit{imbued projectile} or \textit{imbue detonating projectile} ability.
+            If you do, the spell affects the target of the strike.
+
+            After the spell takes effect this way, your attunement to the ability that imbued that projectile ends.
+            The next time you take a \glossterm{short rest}, you regain the \glossterm{action point} you spent to attune to that ability.
+        \end{freeability}
+
         \ff[7]{Missile Storm} You can use the \textit{missile storm} ability as a standard action.
-        \begin{freeability}{Missile Storm}
-            Make a ranged \glossterm{strike} with a \glossterm{projectile weapon} you wield.
+        \begin{freeability}{Missile Storm}[\glossterm{Magical}]
+            Make a ranged \glossterm{magical strike} with a \glossterm{projectile weapon} you wield.
+            You take a \minus1 penalty to \glossterm{accuracy} with the strike.
             The strike targets up to five creatures or objects within one \glossterm{range increment} of you with that weapon, except for creatures adjacent to you.
         \end{freeability}
 
-        \ff[10]{Phasing Projectiles}[Teleportation] When attacking with projectiles, you can ignore all physical obstacles in single one-foot span.
+        \ff[10]{Phasing Projectiles}[\glossterm{Magical}, \glossterm{Teleportation}] When attacking with projectiles, you can ignore all physical obstacles in single one-foot span.
         This can allow you to fire projectiles through solid walls, though it does not grant you the ability to see through the wall.
 
         \ff[13]{Greater Missile Storm} You gain a \plus1d bonus to damage with your \textit{missile storm} ability.
 
-        \ff[13]{Imbue Detonating Projectile} When you cast a spell that affects an area and does not have the \glossterm{Attune} or \glossterm{Sustain} tags,
+        \ff[13]{Imbue Detonating Projectile} When you cast a spell that affects an area and does not have the \glossterm{AP}, \glossterm{Attune}, or \glossterm{Sustain} tags,
             you can use the \textit{imbue detonating projectile} ability.
-        \begin{attuneability}{Imbue Detonating Projectile}[\glossterm{Attune} (self)]
+        \begin{attuneability}{Imbue Detonating Projectile}[\glossterm{Attune} (self), \glossterm{Magical}]
             The spell does not have its effect immediately, and you regain the action point used to cast the spell (if any).
             Instead, its power is imbued in a \glossterm{projectile} you hold.
-
-            As a standard action, you can make a \glossterm{strike} using that projectile.
-            If you do, the spell takes effect in addition to the normal effects of the strike.
-            The spell's \glossterm{point of origin} can be anywhere within the \glossterm{space} of the target of the strike.
-            It affects targets within the area as if it had just been cast in that area.
-            After the spell takes effect this way, the projectile's magic is lost, and the spell cannot take effect again.
-            That does not break your attunement to this ability.
         \end{attuneability}
 
         \ff[16]{Mystic Precision} You gain a \plus1 bonus to \glossterm{accuracy}.
 
-        \ff[19]{Greater Phasing Projectiles}[Teleportation] Your \textit{phasing projectiles} ability improves, allowing you to ignore obstacles in up to five one-foot spans.
+        \ff[19]{Greater Phasing Projectiles}[\glossterm{Magical}, \glossterm{Teleportation}] Your \textit{phasing projectiles} ability improves, allowing you to ignore obstacles in up to five one-foot spans.
         The spans can be contiguous or independent, which can allow you to ignore a single obstacle up to five feet deep.
 
         \ff[19]{Supreme Missile Storm} When you use your \textit{missile storm} ability, you may target any number of creatures.
@@ -1474,16 +1472,21 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Combat Caster} You gain a \plus2 bonus to \glossterm{concentration} checks made to use spells and rituals.
         In addition, you reduce your \glossterm{encumbrance} by 1 when determining your \glossterm{somatic component failure}.
 
-        \ff[4]{Imbue Weapon}[Magical] When you cast a spell that affects a single target and does not have the \glossterm{Attune} or \glossterm{Sustain} tags,
+        \ff[4]{Imbue Weapon} When you cast a spell that affects a single target and does not have the \glossterm{AP}, \glossterm{Attune}, \glossterm{Sustain} tags,
             you can use the \textit{imbue weapon} ability.
-        \begin{attuneability}{Imbue Weapon}[\glossterm{Attune} (self)]
-            The spell does not have its effect immediately, and you regain the action point used to cast the spell (if any).
+            You can use the \textit{imbued strike} ability as a standard action to trigger the imbued spell.
+        \begin{attuneability}{Imbue Weapon}[\glossterm{Attune} (self), \glossterm{Magical}]
+            The spell does not have its effect immediately.
             Instead, its power is imbued in a melee weapon you hold.
-
-            As a standard action, you can make a melee \glossterm{strike} using that weapon.
-            If you do, the spell affects the target of the strike.
-            After the spell takes effect, this ability's duration ends.
         \end{attuneability}
+
+        \begin{freeability}{Imbued Strike}
+            As a standard action, you can make a melee \glossterm{strike} using a weapon you have imbued with the \textit{imbue weapon} ability.
+            If you do, the spell affects the target of the strike.
+
+            After the spell takes effect this way, your attunement to the ability that imbued that weapon ends.
+            The next time you take a \glossterm{short rest}, you regain the \glossterm{action point} you spent to attune to that ability.
+        \end{freeability}
 
         \ff[7]{Spellsword Conduit}[Magical] You can cast spells using a melee weapon as if it were an implement (see \pcref{Implements}).
         When you do, you gain a \plus1 bonus to \glossterm{accuracy} with that weapon until the end of the next round.
@@ -1980,9 +1983,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[4]{Rapid Distant Hand} You can use the \spell{distant hand} \glossterm{cantrip} as a \glossterm{minor action}, and you can \glossterm{sustain} it as a \glossterm{minor action}.
 
         \ff[4]{Telekinetic Strike} You can use the \textit{telekinetic strike} ability as a standard action.
-        \begin{freeability}{Telekinetic Strike}
-            Make a strike with a weapon you are controlling using the \spell{distant hand} cantrip.
-            You use your \glossterm{power} to determine your damage in place of your Strength.
+        \begin{freeability}{Telekinetic Strike}[Magical]
+            Make a \glossterm{magical strike} with a weapon you are controlling using the \spell{distant hand} cantrip.
         \end{freeability}
 
         \ff[7]{Spell} You learn a spell from the \sphere{telekinesis} \glossterm{mystic sphere}.
