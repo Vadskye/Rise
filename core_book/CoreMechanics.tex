@@ -899,9 +899,10 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \parhead{Sprint} As a \glossterm{standard action}, you can use the \textit{sprint} ability to move more quickly.
 
-        \begin{apability}{\labeltext{Sprint}}[\glossterm{Swift}]
+        \begin{apability}{\labeltext{Sprint}}
             You move up to double your normal movement speed.
-            In addition, you take \glossterm{subdual damage} equal to your level.
+            % TODO: prevent infinite sprinting at 0 HP
+            In addition, you lose hit points equal to your level.
         \end{apability}
 
     \subsection{Movement Impediments}
@@ -1153,7 +1154,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             As a standard action, you can use the \textit{release attunement} ability to stop being attuned an ability you have attuned to.
             \begin{freeability}{Release Attunement}
                 You stop being attuned to one ability you have attuned to, ending its effect.
-                You regain the \glossterm{action point} you spent to attune to that ability.
+                The next time you take a \glossterm{short rest}, you regain the \glossterm{action point} you spent to attune to that ability.
             \end{freeability}
 
             Attuned abilities continue to work across any distance, but not across planar boundaries.
@@ -1622,6 +1623,12 @@ It defines how attributes work and explains how to make physical attacks in comb
         % This makes subdual damage actually better at knocking creatures unconscious than non-subdual damage, but that doesn't seem to be a narrative problem?
         At the end of each phase, if a creature has subdual damage in excess of its hit points, it immediately falls unconscious.
 
+    \subsection{Losing Hit Points}\label{Losing Hit Points}
+        Some attacks and abilities cause you to lose hit points directly instead of dealing damage to you.
+        Effects that reduce damage you take or react to you taking damage have no effect when you lose hit points directly.
+
+        Because effects that cause you to lose hit points do not deal damage, they never cause you to take \glossterm{vital damage}.
+        If your hit points would be reduced below 0, they are reduced to 0 instead.
 
 % TODO: This is a bad name; organize these better
 \section{Special Rules}
@@ -1796,6 +1803,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             \begin{itemize}
                 \item You heal hit points equal to half your maximum hit points.
                     The Heal skill can increase this healing (see \pcref{Accelerate Recovery}).
+                \item You regain any \glossterm{action points} you released from \glossterm{attuned} abilities with the \textit{release attunement} ability (see \pcref{Attunement}).
                 \item You remove all \glossterm{conditions} affecting you (unless they cannot be removed normally).
                 \item Some other abilities have specific effects that last until you take a short rest.
                     For example, a barbarian cannot use their \textit{rage} ability again after raging until after they take a short rest (see Rage, page \pref{Bbn:Rage}).
