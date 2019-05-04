@@ -11,14 +11,12 @@ class Spell(object):
             effect_text,
             tags,
             extra_text=None,
-            ap_cost=True,
     ):
         self.level = level
         self.name = name
         self.effect_text = effect_text
         self.tags = tags
         self.extra_text = extra_text
-        self.ap_cost = ap_cost
 
         if (self.tags):
             for tag in self.tags:
@@ -43,7 +41,7 @@ class Spell(object):
     def __str__(self):
         tag_text = to_latex_tags(self.tags)
 
-        ability_type = 'attuneability' if 'Attune' in tag_text else ('apability' if self.ap_cost else 'freeability')
+        ability_type = 'attuneability' if 'Attune' in tag_text else 'freeability'
 
         return f"""
             \\lowercase<\\hypertarget<spell:{self.name}><>>\\label<spell:{self.name}>

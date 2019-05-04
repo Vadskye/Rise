@@ -29,21 +29,17 @@ def generate_mystic_spheres():
         cantrips=[
             Effects('Airborne Leap', """
                 You gain a +4 bonus to the Jump skill until the end of the next round.
-            """, tags=['Air'], ap_cost=False),
+            """, tags=['Air']),
             Effects('Soften Landing', """
                 Choose a willing creature in \\rngmed range.
                 Until the end of the round, the target treats all falls as if they were 5 feet shorter per \\glossterm<power> for the purpose of determining \\glossterm<falling damage>.
-            """, tags=['Air'], ap_cost=False),
+            """, tags=['Air']),
         ],
         schools=['Transmutation'],
         lists=['Nature'],
         rituals=[
         ],
         spells=[
-            Spell('Recovering Screen', 1, """
-                Until the end of the round, you gain a +2 bonus to Armor defense against ranged \\glossterm<physical attacks> from weapons or projectiles that are Small or smaller.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
-            """, tags=['Air', 'Swift'], ap_cost=False),
             Spell('Propulsion', 1, """
                 Choose a Large or smaller willing creature in \\rngclose range.
                 You move the target up to 50 feet in any direction.
@@ -195,19 +191,15 @@ def generate_mystic_spheres():
                 You create up to one gallon per \\glossterm<power> of wholesome, drinkable water anywhere within \\rngclose range.
                 The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
                 You must create a minimum of one ounce of water in each location.
-            """, tags=['Creation', 'Water'], ap_cost=False),
+            """, tags=['Creation', 'Water']),
             Effects('Slippery Escape', """
                 Choose a willing creature within \\rngclose range.
                 The target gains a +4 bonus to the Escape Artist skill until the end of the next round.
-            """, tags=['Manifestation', 'Water'], ap_cost=False),
+            """, tags=['Manifestation', 'Water']),
         ],
         schools=['Conjuration'],
         lists=['Nature'],
         spells=[
-            Spell('Refreshing Drink', 1, """
-                Until the end of the round, you gain a \\glossterm<magic bonus> equal to your \\glossterm<power> to \\glossterm<damage reduction> against fire damage.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
-            """, tags=['Creation', 'Swift', 'Water'], ap_cost=False),
             Spell('Crushing Wave', 1, """
                 Make an attack vs. Fortitude against everything in a \\arealarge, 10 ft.\\ wide line from you.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage> -1d.
@@ -288,16 +280,11 @@ def generate_mystic_spheres():
                 Choose a Tiny or smaller unattended object within \\rngclose range.
                 The target teleports into an unoccupied location on a stable surface within range that can support the weight of the target.
                 If the destination is invalid, the ability fails without effect.
-            """, tags=['Teleportation'], ap_cost=False),
+            """, tags=['Teleportation']),
         ],
         schools=['Conjuration'],
         lists=['Arcane', 'Pact'],
         spells=[
-            Spell('Astral Recovery', 1, """
-                You slip slightly into the Astral Plane and draw power from it.
-                Until the end of the round, \\glossterm<targeted> attacks against you have a 10\\% miss chance.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
-            """, tags=['Planar', 'Swift', 'Teleportation'], ap_cost=False),
             Spell('Dimensional Jaunt', 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 \\hit The target takes physical \\glossterm<standard damage> +2d.
@@ -462,10 +449,6 @@ def generate_mystic_spheres():
                 The wall is visible as a shimmering magical membrane that does not block sight.
                 It does not impede passage for objects or creatures, but any \\glossterm<magical> ability treats the wall as an impassable barrier.
             """, tags=['Attune (self)']),
-            Spell('Ablative Recovery', 1, """
-                Until the end of the round, you gain a bonus equal to half your \\glossterm<power> to \\glossterm<damage reduction> against \\glossterm<physical> damage.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
-            """, tags=['Shielding', 'Swift'], ap_cost=False),
             Spell('Kinetic Shield', 1, """
                 Choose a willing creature in \\rngclose range.
                 The target gains a \\glossterm<magic bonus> equal to your \\glossterm<power> to \\glossterm<damage reduction> against \\glossterm<physical> damage.
@@ -593,10 +576,6 @@ def generate_mystic_spheres():
         schools=['Channeling'],
         lists=['Divine'],
         spells=[
-            Spell('Recovering Blessing', 1, """
-                You ignore the first \\glossterm<condition> that would be applied to you this round.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
-            """, tags=['Swift'], ap_cost=False),
             Spell('Blessing of Protection', 1, """
                 Choose a willing creature within \\rngclose range.
                 The target gains a +1 \\glossterm<magic bonus> to Armor defense and Mental defense.
@@ -729,15 +708,11 @@ def generate_mystic_spheres():
                 In either case, you gain the ability to see the auras of other creatures using this spell.
                 If you see another creature with the same aura as you, this spell grants you the unerring knowledge of that similarity.
                 This can allow you to identify other followers of your deity or alignment with certainty.
-            """, tags=['Sustain (free)'], ap_cost=False),
+            """, tags=['Sustain (free)']),
         ],
         schools=['Channeling'],
         lists=['Divine'],
         spells=[
-            Spell('Faithful Recovery', 1, """
-                Until the end of the round, you gain a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<damage reduction> against \\glossterm<physical> damage.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
-            """, tags=['Shielding', 'Swift'], ap_cost=False),
             Spell('Divine Judgment', 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 \\hit The target takes divine \\glossterm<standard damage> +2d.
@@ -815,19 +790,15 @@ def generate_mystic_spheres():
             Effects('Accelerated Reading', """
                 You can read at five times your normal speed.
                 However, the mental effort imposes a -4 penalty to Mental defense.
-            """, tags=['Sustain (free)', 'Temporal'], ap_cost=False),
+            """, tags=['Sustain (free)', 'Temporal']),
             Effects('Accelerated Search', """
                 Make an Awareness check to notice things in a single 10-ft.\\ squrae within 10 feet of you.
                 You gain a +5 bonus to this check.
-            """, tags=['Temporal'], ap_cost=False),
+            """, tags=['Temporal']),
         ],
         schools=['Transmutation'],
         lists=['Arcane', 'Pact'],
         spells=[
-            Spell('Accelerated Recovery', 1, """
-                Until the end of the round, you gain a +2 bonus to Reflex defense.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
-            """, tags=['Swift', 'Temporal'], ap_cost=False),
             Spell('Slow', 1, """
                 Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against a creature within \\rngmed range.
                 \\miss You regain the \\glossterm<action point> spent to cast this spell.
@@ -967,11 +938,6 @@ def generate_mystic_spheres():
         schools=['Enchantment'],
         lists=['Arcane', 'Divine', 'Pact'],
         spells=[
-            Spell('Compel Recovery', 1, """
-                You force your mind and body to rest quickly.
-                Until the end of the round, you gain a +2 bonus to Mental defense.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
-            """, tags=['Compulsion', 'Swift'], ap_cost=False),
             Spell('Dance', 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 \\miss You regain the \\glossterm<action point> spent to cast this spell.
@@ -1041,11 +1007,6 @@ def generate_mystic_spheres():
         schools=['Vivimancy'],
         lists=['Arcane', 'Divine', 'Nature', 'Pact'],
         spells=[
-            Spell('Corrupting Recovery', 1, """
-                Make an attack vs. Fortitude against a living creature within \\rngclose range.
-                \\hit As a \\glossterm<condition>, the target takes a -2 penalty to Fortitude defense.
-                In addition, you regain a spent \\glossterm<recovery action point>.
-            """, tags=['Life'], ap_cost=False),
             Spell('Sickening Decay', 1, """
                 Make an attack vs. Fortitude against a living creature within \\rngclose range.
                 \\miss You regain the \\glossterm<action point> spent to cast this spell.
@@ -1129,11 +1090,6 @@ def generate_mystic_spheres():
         schools=['Evocation'],
         lists=['Arcane', 'Nature', 'Pact'],
         spells=[
-            Spell('Drain Heat', 1, """
-                Make an attack vs. Fortitude against one creature within \\rngmed range.
-                \\hit The target takes cold \\glossterm<standard damage> -2d.
-                In addition, you regain a spent \\glossterm<recovery action point>.
-            """, tags=['Cold'], ap_cost=False),
             Spell('Cone of Cold', 1, """
                 Make an attack vs. Fortitude against everything in a \\areamed cone from you.
                 \\hit Each target takes cold \\glossterm<standard damage>, and is \\glossterm<fatigued> as a \\glossterm<condition>.
@@ -1205,16 +1161,11 @@ def generate_mystic_spheres():
             Effects('Cheer', """
                 Choose a willing creature within \\rngclose range.
                 The target's mood improves and it feels more cheerful.
-            """, tags=['Emotion', 'Sustain (free)'], ap_cost=False),
+            """, tags=['Emotion', 'Sustain (free)']),
         ],
         schools=['Enchantment'],
         lists=['Arcane', 'Divine', 'Pact'],
         spells=[
-            Spell('Recovering Calm', 1, """
-                You infuse yourself with a sense of calm to help you rest.
-                Until the end of the round, you gain a +2 bonus to Mental defense.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
-            """, tags=['Emotion', 'Swift'], ap_cost=False),
             Spell('Terror', 1, """
                 Make an attack vs. Mental against a creature within \\rngmed range.
                 \\miss You regain the \\glossterm<action point> spent to cast this spell.
@@ -1298,12 +1249,6 @@ def generate_mystic_spheres():
         schools=['Evocation'],
         lists=['Arcane', 'Nature', 'Pact'],
         spells=[
-            Spell('Recovering Discharge', 1, """
-                You release an uncontrolled burst of electricity as you recover your energy.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
-                Make an attack vs. Fortitude against everything adjacent to you.
-                \\hit Each target takes electricity damage equal to your \\glossterm<power>.
-            """, tags=['Electricity'], ap_cost=False),
             Spell('Lightning Bolt', 1, """
                 Make an attack vs. Fortitude against everything in a \\arealarge, 10 ft.\\ wide line from you.
                 \\hit Each target takes electricity \\glossterm<standard damage>.
@@ -1382,7 +1327,7 @@ def generate_mystic_spheres():
                 You make a Craft check to create an object of Tiny size or smaller.
                 The object appears in your hand or at your feet.
                 It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
-            """, tags=['Attune (self)', 'Manifestation'], ap_cost=False),
+            """, tags=['Attune (self)', 'Manifestation']),
         ],
         schools=['Conjuration'],
         lists=['Arcane', 'Pact'],
@@ -1476,16 +1421,11 @@ def generate_mystic_spheres():
                 Choose a willing creature within \\rngclose range.
                 % TODO: wording?
                 If the target is disguised as another creature, it gains a +2 \\glossterm<magic bonus> to the result of the disguise.
-            """, tags=['Sensation', 'Sustain (minor)', 'Visual'], ap_cost=False),
+            """, tags=['Sensation', 'Sustain (minor)', 'Visual']),
         ],
         schools=['Illusion'],
         lists=['Arcane'],
         spells=[
-            Spell('Recovering Blur', 1, """
-                Your image blurs as you focus your magical energy on recovering.
-                Until the end of the round, you gain a +1 bonus to Armor defense.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
-            """, tags=['Sensation', 'Swift', 'Visual'], ap_cost=False),
             Spell('Blur', 1, """
                 Choose a willing creature within \\rngmed range.
                 The target's physical outline is distorted so it appears blurred, shifting, and wavering.
@@ -1575,15 +1515,11 @@ def generate_mystic_spheres():
 
                 % too short?
                 Each time you use this ability, you can accomplish work that would take up to five minutes with a normal Craft check.
-            """, tags=['Shaping'], ap_cost=False),
+            """, tags=['Shaping']),
         ],
         schools=['Transmutation'],
         lists=['Arcane', 'Nature', 'Pact'],
         spells=[
-            Spell('Fortifying Recovery', 1, """
-                Until the end of the round, you gain a +2 bonus to Fortitude defense.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
-            """, tags=['Shaping', 'Swift'], ap_cost=False),
             Spell('Baleful Polymorph', 1, """
                 Make an attack vs. Fortitude against a creature within \\rngmed range.
                 \\hit The target takes physical \\glossterm<standard damage> +2d.
@@ -1752,15 +1688,11 @@ def generate_mystic_spheres():
                 A glowing light appears in midair in the chosen location.
                 It casts bright light in a 20 foot radius and dim light in a 40 foot radius.
                 This effect lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
-            """, tags=['Light', 'Sensation', 'Visual'], ap_cost=False),
+            """, tags=['Light', 'Sensation', 'Visual']),
         ],
         schools=['Illusion'],
         lists=['Arcane', 'Divine', 'Nature', 'Pact'],
         spells=[
-            Spell('Recovering Illumination', 1, """
-                Until the end of the round, you radiate bright light in a 20 foot radius and dim light in a 40 foot radius.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
-            """, tags=['Light', 'Sensation', 'Visual'], ap_cost=False),
             Spell('Flare', 1, """
                 A burst of light light fills a \\areasmall radius within \\rngmed range of you.
                 Bright light illuminates a 100 foot radius around the area until the end of the round.
@@ -1835,23 +1767,18 @@ def generate_mystic_spheres():
                 Make an attack vs. Armor against one object within \\rngclose range.
                 \\hit The target takes fire damage equal to your \\glossterm<power>.
                 If the target is highly flammable, such as a torch or campfire, it ignites.
-            """, tags=['Fire'], ap_cost=False),
+            """, tags=['Fire']),
             Effects('Personal Torch', """
                 You create a flame in your hand.
                 You can create it at any intensity, up to a maximum heat equivalent to a burning torch.
                 At it most intense, it sheds bright light in a 20 foot radius and dim light in an 40 foot radius.
                 If you touch a creature or object with it, the target takes fire \\glossterm<standard damage> -2d.
                 This effect lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
-            """, tags=['Fire'], ap_cost=False),
+            """, tags=['Fire']),
         ],
         schools=['Evocation'],
         lists=['Arcane', 'Fire', 'Nature', 'Pact'],
         spells=[
-            Spell('Recovering Scorch', 1, """
-                Make an attack vs. Armor against one creature or object within \\rngmed range.
-                \\hit The target takes fire \\glossterm<standard damage> -2d.
-                In addition, you regain a spent \\glossterm<recovery action point> at the end of the round.
-            """, tags=['Fire'], ap_cost=False),
             Spell('Fireburst', 1, """
                 Make an attack vs. Armor against everything in a \\areasmall radius within \\rngclose range.
                 \\hit Each target takes fire \\glossterm<standard damage>.
@@ -1952,15 +1879,11 @@ def generate_mystic_spheres():
             Effects('Minor Vision', """
                 You may reroll one Knowledge check you made last round.
                 You can only cast this spell once per hour.
-            """, tags=[], ap_cost=False),
+            """, tags=[]),
         ],
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
         spells=[
-            Spell('Precognitive Recovery', 1, """
-                Until the end of the round, you gain a +1 bonus to Armor defense.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
-            """, tags=['Swift'], ap_cost=False),
             Spell('True Strike', 1, """
                 Choose a willing creature within \\rngclose range.
                 If the target makes a \\glossterm<strike> during the current phase,
@@ -2105,7 +2028,7 @@ def generate_mystic_spheres():
             Effects('Remote Sensing', """
                 This cantrip functions like the \\textit<arcane eye> spell, except that it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> (self) tag.",
                 In addition, the sensor cannot be moved after it is originally created.
-            """, tags=['Scrying', 'Sustain (minor)'], ap_cost=False),
+            """, tags=['Scrying', 'Sustain (minor)']),
         ],
         schools=['Divination'],
         lists=['Arcane', 'Divine', 'Nature'],
@@ -2274,16 +2197,11 @@ def generate_mystic_spheres():
 
                 In addition, you can manipulate the target as if you were holding it in your hands.
                 Any attacks you make with the object or checks you make to manipulate the object have a maximum bonus equal to your \\glossterm<power>.
-            """, tags=['Sustain (standard)'], ap_cost=False),
+            """, tags=['Sustain (standard)']),
         ],
         schools=['Evocation'],
         lists=['Arcane', 'Pact'],
         spells=[
-            Spell('Recovering Crush', 1, """
-                Make an attack vs. Mental against one creature or object within \\rngmed range.
-                \\hit The target takes bludgeoning \\glossterm<standard damage> -2d.
-                In addition, you regain a spent \\glossterm<recovery action point>.
-            """, tags=[], ap_cost=False),
             Spell('Telekinetic Crush', 1, """
                 Make an attack vs. Mental against one creature or object within \\rngmed range.
                 \\hit The target takes bludgeoning \\glossterm<standard damage> +2d.
@@ -2348,11 +2266,6 @@ def generate_mystic_spheres():
         schools=['Conjuration', 'Transmutation'],
         lists=['Arcane', 'Nature'],
         spells=[
-            Spell('Earthen Recovery', 1, """
-                You embody the resilience of earth as you focus on recovering.
-                Until the end of the round, you gain a +2 bonus to Fortitude defense.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
-            """, tags=['Earth', 'Swift'], ap_cost=False),
             Spell('Rock Throw', 1, """
                 % TODO: define maximum hardness?
                 You extract a Tiny chunk from a body of earth or unworked stone within 5 feet of you and throw it at a foe.
@@ -2471,15 +2384,11 @@ def generate_mystic_spheres():
         cantrips=[
             Effects('Sense Magic', """
                 You gain a +4 bonus to the Spellcraft skill until the end of the next round.
-            """, tags=[], ap_cost=False),
+            """, tags=[]),
         ],
         schools=['Abjuration'],
         lists=['Arcane', 'Divine'],
         spells=[
-            Spell('Thaumaturgic Recovery', 1, """
-                Until the end of the round, you gain a +1 bonus to \\glossterm<defenses> against spells.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
-            """, tags=['Swift'], ap_cost=False),
             Spell('Suppress Magic', 1, """
                 Make an attack against one creature, object, or magical effect within \\rngmed range.
                 If you target a creature or object, the attack result is applied to every \\glossterm<magical> effect on the target.
@@ -2574,10 +2483,6 @@ def generate_mystic_spheres():
         schools=['Transmutation'],
         lists=['Nature'],
         spells=[
-            Spell('Verdant Recovery', 1, """
-                If you are standing in arable earth, you heal hit points equal to half your \\glossterm<power>.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
-            """, tags=['Life'], ap_cost=False),
             Spell('Entangle', 1, """
                 You cause plants to grow and trap a foe.
                 Make an attack vs. Reflex against a Large or smaller creature within \\rngmed range.
@@ -2688,15 +2593,11 @@ def generate_mystic_spheres():
             Effects('Cure Minor Wounds', """
                 Choose a willing living creature within \\rngclose range.
                 The target heals hit points equal to your \\glossterm<power>.
-            """, tags=['Life'], ap_cost=False),
+            """, tags=['Life']),
         ],
         schools=['Vivimancy'],
         lists=['Divine', 'Nature'],
         spells=[
-            Spell('Healing Recovery', 1, """
-                You heal hit points equal to half your \\glossterm<power>.
-                At the end of the round, you regain a spent \\glossterm<recovery action point>.
-            """, tags=['Life'], ap_cost=False),
             Spell('Cure Wounds', 1, """
                 Choose a willing living creature within \\rngmed range.
                 The target heals hit points equal to \\glossterm<standard damage> +2d.
@@ -2916,7 +2817,7 @@ def generate_mystic_spheres():
 
                 % Strange duration for a cantrip
                 This spell lasts until you use it again, or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
-            """, tags=['Manifestation'], ap_cost=False),
+            """, tags=['Manifestation']),
         ],
         schools=['Conjuration', 'Transmutation'],
         lists=['Arcane', 'Divine', 'Pact'],
