@@ -79,9 +79,17 @@ def generate_mystic_spheres():
                 This spell functions like the \\spell<propulsion> spell, except that the distance you can move the target is increased to 300 feet.
                 In addition, the target gains a +2 bonus to Armor defense during the current phase.
             """, tags=['Air', 'Swift']),
-            Spell('Gentle Descent', 2, """
+            Spell('Gentle Descent', 1, """
                 Choose a Large or smaller willing creature in \\rngclose range.
                 The target gains a 30 foot \\glossterm<glide speed> (see \\pcref<Gliding>).
+            """, tags=['Air', 'Attune (target)']),
+            Spell('Flight', 4, """
+                Choose a Large or smaller willing creature in \\rngclose range.
+                The target gains a 30 foot \\glossterm<fly speed> as long as it is no more than 50 feet above solid ground (see \\pcref<Flying>).
+            """, tags=['Air', 'Attune (target)']),
+            Spell('Greater Flight', 7, """
+                Choose a Large or smaller willing creature in \\rngclose range.
+                The target gains a 30 foot \\glossterm<fly speed> with good \\glossterm<maneuverability> (see \pcref<Flying>).
             """, tags=['Air', 'Attune (target)']),
             Spell('Buffeting Gale', 2, """
                 Make an attack vs. Fortitude against everything in a \\arealarge, 10 ft. wide line from you.
@@ -116,9 +124,9 @@ def generate_mystic_spheres():
             Spell('Greater Stormlord', 6, """
                 This spell functions like the \\spell<stormlord> spell, except that the damage increases to \\glossterm<standard damage> +1d.
             """, tags=['Air', 'Attune (target)', 'Shielding']),
-            Spell('Air Walk', 4, """
+            Spell('Air Walk', 5, """
                 Choose a willing creature in \\rngclose range.
-                The target can walk on air as if it were solid ground.
+                The target can walk on air as if it were solid ground as long as it is no more than 50 feet above solid ground.
                 The magic only affects the target's legs and feet.
                 By choosing when to treat the air as solid, it can traverse the air with ease.
             """, tags=['Air', 'Attune (target)']),
