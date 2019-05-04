@@ -11,7 +11,6 @@ class Maneuver(object):
             rank_upgrades,
             short_description,
             tags,
-            ap_cost=True,
             extra_text=None,
     ):
         self.effect_text = effect_text
@@ -21,7 +20,6 @@ class Maneuver(object):
         self.short_description = short_description
         self.tags = tags
 
-        self.ap_cost = ap_cost
         self.extra_text = extra_text
 
         if list(sorted(self.rank_upgrades.keys())) != ['3', '5', '7']:
@@ -33,7 +31,7 @@ class Maneuver(object):
 
     def to_latex(self):
         tag_text = to_latex_tags(self.tags)
-        ability_type = 'attuneability' if 'Attune' in tag_text else ('apability' if self.ap_cost else 'freeability')
+        ability_type = 'attuneability' if 'Attune' in tag_text else 'freeability'
 
         return f"""
             \\lowercase<\\hypertarget<maneuver:{self.name}><>>\\label<maneuver:{self.name}>
