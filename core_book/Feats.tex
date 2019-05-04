@@ -184,10 +184,10 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Specialization} You gain a \plus2 bonus to the Acrobatics skill.
 
         \ff[4]{Combat Tumble} You can use the \textit{combat tumble} ability as a \glossterm{move action}.
-        \begin{apability}{Combat Tumble}
+        \begin{freeability}{Combat Tumble}
             You can move up to your normal movement speed.
-            During this movement, you can move through enemy spaces as if they were unoccupied.
-        \end{apability}
+            During this movement, you can move through one enemy as if its space was \glossterm{difficult terrain}.
+        \end{freeability}
 
         \ff[7]{Greater Rapid Stand} You can use the \textit{rapid stand} ability as a \glossterm{free action} (see \pcref{Rapid Stand}).
 
@@ -216,23 +216,23 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Lightning Reflexes} You gain a \plus2 bonus to Reflex defense and \glossterm{initiative} checks.
 
         \ff[4]{Spring Attack} You can use the \textit{spring attack} ability as a standard action.
-        \begin{apability}{Spring Attack}
-            Move up to your movement speed and make a melee \glossterm{strike} with a \plus1d bonus to damage.
+        \begin{freeability}{Spring Attack}
+            Move up to your movement speed and make a melee \glossterm{strike} with a \minus1d penalty to damage.
             If you use this ability during the \glossterm{action phase}, you may continue moving during the \glossterm{delayed action phase} if you have remaining movement available.
-        \end{apability}
+        \end{freeability}
 
         \ff[7]{Evasion} When you are attacked by an ability that affects an area, you can use your Reflex defense in place of any other defenses against that attack.
 
         \ff[10]{Greater Lightning Reflexes} The bonuses from your \textit{lightning reflexes} ability increase to \plus4.
 
-        \ff[10]{Greater Spring Attack} The damage bonus from your \textit{spring attack} ability increases to \plus2d.
+        \ff[10]{Greater Spring Attack} The damage penalty from your \textit{spring attack} ability is removed.
 
         \ff[13]{Dodge} You gain a \plus1 bonus to Armor defense.
 
         \ff[16]{Greater Evasion} You take half damage from abilities that affect areas.
         You suffer non-damaging effects from such abilities normally.
 
-        \ff[16]{Supreme Spring Attack} The damage bonus from your \textit{spring attack} ability increases to \plus3d.
+        \ff[16]{Supreme Spring Attack} You gain a \plus1d bonus to damage with your \textit{spring attack} ability.
 
         \ff[19]{Supreme Lightning Reflexes} The bonuses from your \textit{lightning reflexes} ability increase to \plus6.
     \end{feat}
@@ -261,35 +261,36 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featpre Perform Specialization feat.
 
         \ff[1]{Vicious Mockery} You can use the \textit{vicious mockery} ability as a standard action.
-        \begin{apability}{Vicious Mockery}[\glossterm{Emotion}]
+        \begin{freeability}{Vicious Mockery}[\glossterm{Emotion}]
             You make a brief performance using one of your Perform skills.
-            Make an attack vs. Mental against all enemies within a \areahuge radius from you.
+            Make an attack vs. Mental against all enemies within a \arealarge radius from you.
             Your accuracy is equal to the Perform skill used for your performance.
 
             \hit As a \glossterm{condition}, each target takes a \minus1 penalty to \glossterm{accuracy} and a \minus2 penalty to Mental defense.
 
             This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
-        \end{apability}
+        \end{freeability}
 
         \ff[4]{Inspire Courage} You can use the \textit{inspire courage} ability as a standard action.
-        \begin{apability}{Inspire Courage}[\glossterm{Emotion}, \glossterm{Sustain} (minor)]
+        \begin{freeability}{Inspire Courage}[\glossterm{Emotion}, \glossterm{Sustain} (minor)]
             You begin a performance using one of your Perform skills.
             Choose a willing creature within \rngmed range.
-            The target gains a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} and a \plus2 bonus to Mental defense.
+            The target gains a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} and a \plus2 \glossterm{magic bonus} to Mental defense.
 
             If a target can neither see nor hear your performance, the effect immediately ends for that target.
             This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
-        \end{apability}
+        \end{freeability}
 
         \ff[7]{Song of Serenity} You can use the \textit{song of serenity} ability as a standard action.
-        \begin{apability}{Song of Serenity}[\glossterm{Emotion}, \glossterm{Sustain} (minor)]
+        \begin{freeability}{Song of Serenity}[\glossterm{Emotion}, \glossterm{Sustain} (minor)]
             You begin a performance using one of your Perform skills.
             Choose a willing creature within \rngmed range.
             The target is immune to hostile \glossterm{Emotion} effects.
+            It immediately removes all \glossterm{conditions} caused by \glossterm{Emotion} effects.
 
             If the target can neither see nor hear your performance, the effect immediately ends.
             This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
-        \end{apability}
+        \end{freeability}
 
         \ff[10]{Greater Inspire Courage} Each target affected by your \textit{inspire courage} ability is immune to \glossterm{Fear} abilities.
 
@@ -343,12 +344,12 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
         \ff[13]{Dual Speech}[Magical] When you speak, you can use the \textit{dual speech} ability.
-        \begin{apability}{Dual Speech}[\glossterm{Sustain} (minor)]
+        \begin{freeability}{Dual Speech}[\glossterm{Sustain} (minor)]
             You speak the same words with two different vocal patterns, such as tone or accent, though you cannot significantly change the volume.
             You can freely choose which creatures hear which pattern, treating all creatures you are not aware of as a single group.
 
             You can freely choose different vocal patterns each round that you sustain this ability.
-        \end{apability}
+        \end{freeability}
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
@@ -370,15 +371,15 @@ Feats also make the system more mechanically complex, so they are not necessaril
             The other spell is immediately \glossterm{dismissed}.
         \end{freeability}
 
-        \ff[4]{Benevolent Transferance} You can use the \textit{benevolent transferance} ability as a \glossterm{minor action}.
+        \ff[4]{Benevolent Transferance} You can use the \textit{benevolent transferance} ability as a \glossterm{standard action}.
         \begin{freeability}{Benevolent Transferance}
-            Choose a creature currently attuning to a spell you cast.
+            Choose a creature currently \glossterm{attuned} to a spell you cast.
             In addition, choose another creature to transfer the spell to.
             Both targets must within that spell's range of you, and must be valid targets for the spell.
             You cannot target yourself with this ability.
 
-            If both targets are willing, the spell's effect is transferred from the first target to the second.
-            The spell's new target must spend an action point to attune to the spell as normal.
+            If both targets are willing, and the new target spends an \glossterm{action point} to attune to the spell, the spell's effect is transferred from the first target to the second.
+            The spell's old target regains the \glossterm{action point} it spent to attune to the spell.
         \end{freeability}
 
         \ff[7]{Boon Lore} You learn an additional \glossterm{spell}.
@@ -388,7 +389,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[10]{Greater Multiple Boon} You can use your \textit{multiple boon} ability on up to two different spells at once.
         If you use the ability while it already affects another spell, you choose which spells are affected by the ability.
 
-        \ff[13]{Regenerative Transferance} When you use your \textit{benevolent transferance} ability, if the new target attunes to the spell, the original target of the spell regains the action point it spent to attune to the spell.
+        \ff[13]{Rapid Transferance} You can use your \textit{benevolent transferance} ability as a \glossterm{minor action}.
 
         \ff[16]{Personal Boon} When you cast a spell with the \glossterm{Attune} (target) tag on yourself, you can use the \textit{personal boon} ability.
         \begin{freeability}{Personal Boon}
@@ -415,10 +416,10 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[4]{Grapple Expertise} You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability (see \pcref{Grapple}), as well as with all grapple actions (see \pcref{Grapple Actions}).
 
         \ff[7]{Takedown} You can use the \textit{takedown} ability as a standard action.
-        \begin{apability}{Takedown}
+        \begin{freeability}{Takedown}
             Make an unarmed \glossterm{strike}.
             In addition to the attack's normal effects, if the strike hits and the attack result also beats the target's Fortitude defense, you and the target are \grappled by each other.
-        \end{apability}
+        \end{freeability}
 
         \ff[10]{Greater Unarmed Warrior} The damage bonus from your \textit{unarmed warrior} increases to \plus3d.
 
@@ -440,11 +441,11 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Divine Favor} You gain a \plus1 bonus to Fortitude and Mental defense.
 
         \ff[4]{Holy Smite} You can use the \textit{holy smite} ability as a standard action.
-        \begin{apability}{Smite}
+        \begin{freeability}{Smite}
             Make a \glossterm{strike}.
             If your target is good, the strike deals no damage.
-            Otherwise, the strike gains a \plus2d bonus to damage.
-        \end{apability}
+            Otherwise, the strike gains a \plus1d bonus to damage.
+        \end{freeability}
 
         \ff[7]{Angel Wings} You gain feathery wings that sprout from your back.
         These wings grant you a glide speed equal to your \glossterm{base speed} (see \pcref{Gliding}).
@@ -452,12 +453,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         % TODO: needs additional 10th level ability
 
-        \ff[10]{Greater Holy Smite} The damage bonus from your \textit{holy smite} ability increases to \plus3d.
+        \ff[10]{Greater Holy Smite} The damage bonus from your \textit{holy smite} ability increases to \plus2d.
 
         \ff[13]{Angelic Flight} You can use the \textit{angelic flight} ability as a \glossterm{free action}.
-        \begin{apability}{Angelic Flight}
+        \begin{freeability}{Angelic Flight}
             You gain a \glossterm{fly speed} equal to your \glossterm{base speed} until the end of the round (see \pcref{Flying}).
-        \end{apability}
+            In addition, you take \glossterm{subdual damage} equal to your level.
+        \end{freeability}
 
         \ff[16]{Supreme Holy Smite} The damage bonus from your \textit{holy smite} ability increases to \plus4d.
 
@@ -658,11 +660,11 @@ Feats also make the system more mechanically complex, so they are not necessaril
         For details, see \pcref{Natural Weapons}.
 
         \ff[4]{Breath Weapon} You can use the \textit{breath weapon} ability as a \glossterm{standard action}.
-        \begin{apability}{Breath Weapon}
+        \begin{freeability}{Breath Weapon}
             Make an attack vs. Armor against everything in the area defined by your \textit{draconic ancestry} ability (see \trefnp{Dragon Types}).
-            \hit Each target takes \glossterm{standard damage}.
+            \hit Each target takes \glossterm{standard damage} \minus1d.
             The damage type is defined by your \textit{draconic ancestry} ability.
-        \end{apability}
+        \end{freeability}
 
         \ff[7]{Draconic Wings} You gain scaly wings that sprout from your back.
         These wings grant you a glide speed equal to your \glossterm{base speed} (see \pcref{Gliding}).
@@ -674,9 +676,10 @@ Feats also make the system more mechanically complex, so they are not necessaril
         A cone breath weapon becomes a \arealarge cone.
 
         \ff[13]{Draconic Flight}[Magical] You can use the \textit{draconic flight} ability as a \glossterm{free action}.
-        \begin{apability}{Draconic Flight}
+        \begin{freeability}{Draconic Flight}
             You gain a \glossterm{fly speed} equal to your \glossterm{base speed} until the end of the round (see \pcref{Flying}).
-        \end{apability}
+            In addition, you take \glossterm{subdual damage} equal to your level.
+        \end{freeability}
 
         \ff[16]{Supreme Breath Weapon} The damage bonus from your \textit{greater breath weapon} ability increases to \plus2d.
         In addition, the area affected increases.
@@ -692,11 +695,11 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \lcaption{Dragon Types}
         \begin{dtabularx}{\columnwidth}{l >{\lcol}X >{\lcol}X}
             \tb{Dragon} & \tb{Energy Type} & \tb{Breath Weapon} \tableheaderrule
-            Black & Acid & \areamed, 5 ft. wide line \\
-            Blue & Electricity & \areamed, 5 ft. wide line \\
-            Brass & Fire & \areamed, 5 ft. wide line \\
-            Bronze & Electricity & \areamed, 5 ft. wide line \\
-            Copper & Acid & \areamed, 5 ft. wide line \\
+            Black & Acid & \areamed, 10 ft. wide line \\
+            Blue & Electricity & \areamed, 10 ft. wide line \\
+            Brass & Fire & \areamed, 10 ft. wide line \\
+            Bronze & Electricity & \areamed, 10 ft. wide line \\
+            Copper & Acid & \areamed, 10 ft. wide line \\
             Gold & Fire & \areamed cone \\
             Green & Acid & \areamed cone \\
             Red & Fire & \areamed cone \\
@@ -711,23 +714,23 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Parry} You gain a \plus1 bonus to Armor defense as long as you wield a melee weapon and are not \glossterm{threatened} by more than one creature.
 
         \ff[4]{Focused Strike} You can use the \textit{focused strike} ability as a standard action.
-        \begin{apability}{Focused Strike}
+        \begin{freeability}{Focused Strike}
             Make a melee \glossterm{strike}.
-            If you are not \glossterm{threatened} by more than one creature, you gain a \plus2 bonus to \glossterm{accuracy} with the strike.
-            If you are the only creature threatening your target, you gain a \plus2d bonus to damage with the strike.
-        \end{apability}
+            If you are not \glossterm{threatened} by more than one creature, you gain a \plus1 bonus to \glossterm{accuracy} with the strike.
+            If you are the only creature threatening your target, you gain a \plus1d bonus to damage with the strike.
+        \end{freeability}
 
         \ff[7]{Riposte} You gain a \plus1 bonus to \glossterm{accuracy} with melee \glossterm{strikes} as long as you are not \glossterm{threatened} by more than one creature.
 
         \ff[10]{Duel Expertise} You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{disarm} and \textit{feint} abilities (see \pcref{Disarm}, and \pcref{Feint}).
 
-        \ff[10]{Greater Focused Strike} The accuracy bonus from your \textit{focused strike} ability increases to \plus3.
+        \ff[10]{Greater Focused Strike} The accuracy bonus from your \textit{focused strike} ability increases to \plus2.
 
         \ff[13]{Greater Parry} The bonus from your \textit{parry} ability increases to \plus2.
 
         \ff[16]{Greater Duel Expertise} The accuracy bonus from your \textit{duel expertise} ability increases to \plus3.
 
-        \ff[16]{Supreme Focused Strike} The damage bonus from your \textit{focused strike} ability increases to \plus3d.
+        \ff[16]{Supreme Focused Strike} The damage bonus from your \textit{focused strike} ability increases to \plus2d.
 
         \ff[19]{Legendary Duelist} You are treated as being \glossterm{threatened} by one fewer creature than you actually are for the purpose of abilities from this feat.
     \end{feat}
@@ -744,12 +747,12 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
         \ff[13]{Escape Magic}[Magical] You can use the \textit{escape magic} ability as a standard action.
-        \begin{apability}{Escape Magic}
+        \begin{freeability}{Escape Magic}
             You make an Escape Artist attack against all \glossterm{magical} effects on you.
             You may exclude any number of effects you are aware of from this attack, allowing you to maintain beneficial magical effects.
             The DR for each effect is equal to 10 \add the effect's \glossterm{power}.
             \hit Each effect is \glossterm{dismissed}, if it is an effect that can be dismissed.
-        \end{apability}
+        \end{freeability}
 
         You can only dismiss effects with this ability which target you directly, not area effects which include you as a target.
         If an ability targets multiple creatures, you can only remove its effects on you.
@@ -769,23 +772,23 @@ Feats also make the system more mechanically complex, so they are not necessaril
         You must have \glossterm{line of effect} to a creature to sense it in this way.
 
         \ff[4]{Execution} You can use the \textit{execution} ability as a standard action.
-        \begin{apability}{Execution}
+        \begin{freeability}{Execution}
             Make a \glossterm{strike}.
-            If the target is \glossterm{bloodied}, you gain a \plus3d bonus to damage with the strike.
-        \end{apability}
+            If the target is \glossterm{bloodied}, you gain a \plus1 bonus to \glossterm{accuracy} and a \plus1d bonus to damage with the strike.
+        \end{freeability}
 
         \ff[7]{Purge the Weak} You gain a \plus1 bonus to \glossterm{accuracy} against \glossterm{bloodied} creatures.
 
         \ff[10]{Greater Blood Sense}[Magical] Your \textit{blood sense} ability allows you to know the location of all living creatures within range, not just bloodied living creatures.
         You can still automatically identify which creatures are bloodied and which creatures are not bloodied.
 
-        \ff[10]{Greater Execution} The damage bonus from your \textit{execution} ability increases to \plus4d.
+        \ff[10]{Greater Execution} The accuracy bonus from your \textit{execution} ability increases to \plus2.
 
         \ff[13]{Bloody Resilience} You gain a \plus2 bonus to Fortitude defense.
 
         \ff[16]{Greater Purge the Weak} The bonus from your \textit{purge the weak} ability increases to \plus2.
 
-        \ff[16]{Supreme Execution} The damage bonus from your \textit{execution} ability increases to \plus5d.
+        \ff[16]{Supreme Execution} The damage bonus from your \textit{execution} ability increases to \plus2d.
 
         \ff[19]{Blood Sight}[Magical] Your \textit{blood sense} ability allows you to see all living creatures within range perfectly instead of only knowing their location.
     \end{feat}
@@ -804,23 +807,19 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \end{freeability}
 
         \ff[4]{Binding Strike} You can use the \textit{binding strike} ability as a standard action.
-        \begin{apability}{Binding Strike}
+        \begin{freeability}{Binding Strike}
             Make a melee \glossterm{strike} against an adjacent creature.
             In addition to the strike's normal effects, you also compare the attack result against the target's Mental defense.
 
             \hit The target is \glossterm{decelerated} as a \glossterm{condition}.
             This effect immediately ends if you are \glossterm{defeated} or if you stop being adjacent to the target.
             \crit The target is \glossterm{decelerated} as a \glossterm{condition}.
-        \end{apability}
+        \end{freeability}
 
         \ff[7]{Resolute Defender} You gain a \plus1 bonus to Mental defense and a \plus2 bonus to \glossterm{threat}.
 
-        \ff[10]{Redirection}[Magical] When you use your \textit{protect} ability, you can use the \textit{redirection} ability as part of the same action.
-        \begin{apability}{Redirection}[\glossterm{Swift}]
-            Choose a target of your \textit{protect} ability.
-            You suffer all effects from \glossterm{strikes} that hit the target in place of the target until the end of the round.
-            Any abilities you have that would reduce or negate the effects of the attack have no effect.
-        \end{apability}
+        \ff[10]{Redirection}[Magical] When you use your \textit{protect} ability, you can also choose to suffer all effects from \glossterm{strikes} that hit the target in place of the target until the end of the round.
+        Any abilities you have that would reduce or negate the effects of the attack have no effect.
 
         \ff[13]{Greater Binding Strike} You gain a \plus1 bonus to \glossterm{accuracy} with your \textit{binding strike} ability.
 
@@ -839,18 +838,19 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Specialization} You gain a \plus2 bonus to the Heal skill.
 
         \ff[4]{Healing Touch}[Magical] You can use the \textit{healing touch} ability as a standard action.
-        \begin{apability}{Healing Touch}[\glossterm{Life}, \glossterm{Magical}]
+        \begin{freeability}{Healing Touch}[\glossterm{Life}, \glossterm{Magical}]
             Make a Heal check on a willing creature within your \glossterm{reach}.
-            The target is healed for an amount equal to the Heal check result.
-        \end{apability}
+            The target is healed for \glossterm{standard damage} \minus1d.
+            Your \glossterm{power} with this ability is equal to your bonus with the Heal skill.
+        \end{freeability}
 
         \ff[7]{Greater Healing Touch}[Magical] For every five points of healing you would restore with your \textit{healing touch} ability, you can instead heal a point of \glossterm{vital damage}.
 
         \ff[7]{Purging Touch}[Magical] You can use the \textit{purging touch} ability as a standard action.
-        \begin{apability}{Purging Touch}
+        \begin{freeability}{Purging Touch}
             Make a Heal check on a willing creature you can touch.
             For each poison and disease on the target, if your check result is at least 10 higher than the \glossterm{power} of the effect, the effect is removed.
-        \end{apability}
+        \end{freeability}
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
@@ -930,15 +930,16 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[4]{Instant Leap} You suffer no penalty for jumping without a running start (see \pcref{Running Start}).
 
-        \ff[7]{Featherlight Leap}[Magical] You can use the \textit{featherlight leap} ability as a \glossterm{free action}.
-        \begin{apability}{Featherlight Leap}[\glossterm{Swift}]
+        \ff[7]{Featherlight Leap} You can use the \textit{featherlight leap} ability as a \glossterm{free action}.
+        \begin{freeability}{Featherlight Leap}[\glossterm{Swift}]
             Your maximum height for jumps during the current phase is equal to your Jump check result, rather than half your Jump check result.
             This does not affect the forward distance you can reach with your jumps.
-        \end{apability}
+            In addition, you take \glossterm{subdual damage} equal to your level.
+        \end{freeability}
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
-        \ff[13]{Greater Featherlight Leap}[Magical] You do not need to spend an \glossterm{action point} to use your \textit{featherlight leap} ability.
+        \ff[13]{Greater Featherlight Leap} You do not take damage from using your \textit{featherlight leap} ability.
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
@@ -973,20 +974,20 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \end{freeability}
 
         \ff[4]{Bolster} You can use the \textit{bolster} ability as a standard action.
-        \begin{apability}{Bolster}[\glossterm{Emotion}]
-            Choose any number of willing creatures other than yourself within an \areamed radius burst from you.
-            Each target heals hit points equal to your Willpower and can remove one \glossterm{condition} of its choice.
-        \end{apability}
+        \begin{freeability}{Bolster}[\glossterm{Emotion}]
+            Choose any number of willing creatures other than yourself within an \areamed radius from you.
+            Each target can remove one \glossterm{condition} of its choice.
+        \end{freeability}
 
         \ff[7]{Commanding Presence} You gain a \plus2 bonus to the Intimidate and Persuasion skills.
 
-        \ff[10]{Greater Bolster} The healing from your \textit{bolster} ability increases to twice your Willpower.
+        \ff[10]{Greater Bolster} The area affected by your \textit{bolster} ability increases to a \arealarge radius.
 
         \ff[10]{Greater Battle Command} The target of your \textit{battle command} ability also gains a \plus1 bonus to \glossterm{accuracy} with the strike.
 
         \ff[13]{Greater Commanding Presence} The bonus from your \textit{commanding presence} ability increases to \plus4.
 
-        \ff[16]{Supreme Bolster} The healing from your \textit{bolster} ability increases to three times your Willpower.
+        \ff[16]{Supreme Bolster} The area affected by your \textit{bolster} ability increases to a \areahuge radius.
 
         \ff[16]{Supreme Battle Command} The accuracy bonus from your \textit{greater battle command} ability increases to \plus2.
 
@@ -1026,11 +1027,10 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \item Proficiency with \glossterm{exotic weapons} from a weapon group of your choice that you are already proficient with.
         \end{itemize}
 
-        \ff[4]{Honed Strike} You can use the \textit{honed strike} ability as a standard action.
-        \begin{apability}{Honed Strike}
-            You make a \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy} and a \plus1d bonus to damage.
-            If the strike misses, you regain the \glossterm{action point} spent to use this ability.
-        \end{apability}
+        \ff[4]{Trained Strike} You can use the \textit{trained strike} ability as a standard action.
+        \begin{freeability}{Trained Strike}
+            You make a \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy}.
+        \end{freeability}
 
         \ff[7]{Equipment Training} You gain an additional \textit{equipment training} ability of your choice.
         In addition, you add a new ability to the set of abilities you can choose with your \textit{equipment training}.
@@ -1041,13 +1041,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[10]{Practiced Defense} You gain a \plus1 bonus to Armor defense.
 
-        \ff[10]{Greater Honed Strike} The damage bonus from your \textit{honed strike} ability increases to \plus2d.
+        \ff[10]{Greater Trained Strike} The accuracy bonus from your \textit{trained strike} ability increases to \plus2.
 
         \ff[13]{Equipment Training} You gain an additional \textit{equipment training} ability of your choice.
 
         \ff[16]{Practiced Accuracy} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{mundane} abilities.
 
-        \ff[16]{Supreme Honed Strike} The damage bonus from your \textit{honed strike} ability increases to \plus3d.
+        \ff[16]{Supreme Trained Strike} The accuracy bonus from your \textit{trained strike} ability increases to \plus3.
 
         \ff[19]{Equipment Training} You gain an additional \textit{equipment training} ability of your choice.
     \end{feat}
@@ -1085,22 +1085,23 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Guided Projectiles} Your attacks with projectiles ignore \glossterm{cover}, but not \glossterm{total cover}.
 
-        \ff[4]{Imbue Projectile} When you cast a spell that affects a single target and does not have the \glossterm{Attune} or \glossterm{Sustain} tags,
+        \ff[4]{Imbue Projectile} When you cast a spell that affects a single target and does not have the \glossterm{AP}, \glossterm{Attune}, or \glossterm{Sustain} tags,
             you can use the \textit{imbue projectile} ability.
         \begin{attuneability}{Imbue Projectile}[\glossterm{Attune} (self)]
-            The spell does not have its effect immediately, and you regain the action point used to cast the spell (if any).
+            The spell does not have its effect immediately.
             Instead, its power is imbued in a \glossterm{projectile} you hold.
 
             As a standard action, you can make a ranged \glossterm{strike} using that projectile.
             If you do, the spell affects the target of the strike.
-            After the spell takes effect, this ability's duration ends.
+            After the spell takes effect this way, the projectile's magic is lost, and the spell cannot take effect again.
+            That does not break your attunement to this ability.
         \end{attuneability}
 
         \ff[7]{Missile Storm} You can use the \textit{missile storm} ability as a standard action.
-        \begin{apability}{Missile Storm}
+        \begin{freeability}{Missile Storm}
             Make a ranged \glossterm{strike} with a \glossterm{projectile weapon} you wield.
-            The strike targets up to five creatures and objects within one \glossterm{range increment} of you with that weapon, except for creatures adjacent to you.
-        \end{apability}
+            The strike targets up to five creatures or objects within one \glossterm{range increment} of you with that weapon, except for creatures adjacent to you.
+        \end{freeability}
 
         \ff[10]{Phasing Projectiles}[Teleportation] When attacking with projectiles, you can ignore all physical obstacles in single one-foot span.
         This can allow you to fire projectiles through solid walls, though it does not grant you the ability to see through the wall.
@@ -1117,7 +1118,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
             If you do, the spell takes effect in addition to the normal effects of the strike.
             The spell's \glossterm{point of origin} can be anywhere within the \glossterm{space} of the target of the strike.
             It affects targets within the area as if it had just been cast in that area.
-            After the spell takes effect, this ability's duration ends.
+            After the spell takes effect this way, the projectile's magic is lost, and the spell cannot take effect again.
+            That does not break your attunement to this ability.
         \end{attuneability}
 
         \ff[16]{Mystic Precision} You gain a \plus1 bonus to \glossterm{accuracy}.
@@ -1140,15 +1142,14 @@ Feats also make the system more mechanically complex, so they are not necessaril
         Instead, each time you would gain a legacy item upgrade, you instead gain an additional \glossterm{recovery action point}.
 
         \ff[4]{Sever Magic} You can use the \textit{sever magic} ability as a standard action.
-        \begin{apability}{Sever Magic}
+        \begin{freeability}{Sever Magic}
             Make a \glossterm{strike}.
-            The strike gains a \plus1d bonus to damage.
             In addition to the strike's normal effects, you also compare the attack result against the target's Mental defense.
 
             \hit The target breaks its \glossterm{attunement} to a random ability that it is currently attuned to.
             This ability does not affect attunement to magic items.
             \crit The target breaks its attunement to all abilities that it is attuned to.
-        \end{apability}
+        \end{freeability}
 
         % clarify that it does not affect spells already in progress in the current phase?
         \ff[7]{Disruptive Presence} All enemies within an \areamed radius from you have a 50\% chance to \glossterm{miscast} any spell they cast.
@@ -1178,7 +1179,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Specialization} You gain a \plus2 bonus to all Perform skills.
 
         \ff[4]{Mesmerizing Performance}[Magical] You can use the \textit{mesmerizing performance} ability as a standard action.
-        \begin{apability}{Mesmerizing Performance}[\glossterm{Emotion}, \glossterm{Sustain} (minor)]
+        \begin{freeability}{Mesmerizing Performance}[\glossterm{Emotion}, \glossterm{Sustain} (minor)]
             You begin a performance using one of your Perform skills.
             Make an attack vs. Mental against up to five creatures within \rngmed range.
             Your accuracy is equal to the Perform skill used for your performance.
@@ -1188,21 +1189,21 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
             If a target can neither see nor hear your performance, the effect immediately ends for that target.
             This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
-        \end{apability}
+        \end{freeability}
 
         \ff[7]{Inspiring Performance}[Magical] You can use the \textit{inspiring performance} ability as a standard action.
-        \begin{apability}{Inspiring Performance}[\glossterm{Emotion}, \glossterm{Sustain} (minor)]
+        \begin{freeability}{Inspiring Performance}[\glossterm{Emotion}, \glossterm{Sustain} (minor)]
             You begin a performance using one of your Perform skills.
-            One other willing creature within \rngmed range gains a \plus2 bonus to \glossterm{checks}.
+            One other willing creature within \rngmed range gains a \plus2 \glossterm{magic bonus} to \glossterm{checks}.
 
             If the target can neither see nor hear your performance, the effect immediately ends for that target.
             This ability may have the \glossterm{Auditory} or \glossterm{Visual} tags, depending on the nature of your performance.
-        \end{apability}
+        \end{freeability}
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
         \ff[13]{Mesmeric Suggestion}[Magical] You can use the \textit{mesmeric suggestion} ability as a standard action.
-        \begin{apability}{Mesmeric Suggestion}[\glossterm{Emotion}, \glossterm{Subtle}, \glossterm{Sustain} (minor)]
+        \begin{freeability}{Mesmeric Suggestion}[\glossterm{Emotion}, \glossterm{Subtle}, \glossterm{Sustain} (minor)]
             Make an attack vs. Mental against a target within \rngmed range.
             Your accuracy is equal to the Perform skill used for your performance.
             You must also make a verbal suggestion of a particular course of action to the target.
@@ -1216,7 +1217,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             If the target is not currently \fascinated by your \textit{mesmerizing performance} ability, this attack automatically fails.
             If the target can neither see nor hear your performance, the effect immediately ends for that target.
             This ability lasts as long as you sustain your \textit{mesmerizing performance}.
-        \end{apability}
+        \end{freeability}
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
@@ -1231,21 +1232,21 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Specialization} You gain a \plus2 bonus to the Persuasion skill.
 
         \ff[4]{Compel Attention}[Magical] You can use the \textit{compel attention} ability as a standard action.
-        \begin{apability}{Compel Attention}[\glossterm{Auditory}, \glossterm{Compulsion},\\\glossterm{Sustain} (minor), \glossterm{Subtle}]
+        \begin{freeability}{Compel Attention}[\glossterm{Auditory}, \glossterm{Compulsion},\\\glossterm{Sustain} (minor), \glossterm{Subtle}]
             Make an attack vs. Mental against a creature within \rngmed range.
             Your \glossterm{accuracy} is equal to your Persuasion skill.
             You must talk loud enough for the target to hear hear to draw its attention.
             \hit The target is \glossterm{fascinated} by you as long as you sustain this ability, which requires maintaining your conversation with it.
             Any act by you or your apparent allies that damages a target or that causes it to feel that it is in danger breaks the effect for that creature.
             An observant target may interpret overt threats to its allies as a threat to itself.
-        \end{apability}
+        \end{freeability}
 
         \ff[7]{Center of Attention}[Magical] When you use your \textit{compel attention} ability, you may target up to five creatures.
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
         \ff[13]{Suggestion}[Magical] You can use the \textit{suggestion} ability as a standard action.
-        \begin{apability}{Suggestion}[\glossterm{Emotion}, \glossterm{Subtle}, \glossterm{Sustain} (minor)]
+        \begin{freeability}{Suggestion}[\glossterm{Emotion}, \glossterm{Subtle}, \glossterm{Sustain} (minor)]
             Make an attack vs. Mental against a target within \rngmed range.
             Your \glossterm{accuracy} is equal to your Persuasion skill.
             You must also make a verbal suggestion of a particular course of action to the target.
@@ -1254,8 +1255,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
             \hit As a \glossterm{condition}, the target thinks your suggestion is a good idea and will try to follow it to the best of its abilities.
             Any act by you or your apparent allies that damages the target or makes it feel that it is in danger breaks the effect.
-
-        \end{apability}
+        \end{freeability}
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
@@ -1268,36 +1268,34 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Precognitive Strike} You can use the \textit{precognitive strike} ability as a standard action.
         \begin{freeability}{Precognitive Strike}
             Make a \glossterm{strike}.
-            You can use your Intelligence in place of your Perception to determine your accuracy with this strike.
+            You can use your Intelligence in place of your Perception and Strength to determine your accuracy and damage, respectively.
         \end{freeability}
 
-        \ff[4]{Combat Prediction} At the start of each phase, you can use the \textit{combat prediction} ability.
+        \ff[4]{Combat Prediction} You can use the \textit{combat prediction} ability as a standard action.
         \begin{apability}{Combat Prediction}
             Make an attack vs. Mental against a creature within \rngmed range of you.
-            \hit You gain insight into the actions that creature intends to take during the current phase.
-                It may change its actions based on your interference if you communicate this information in a way it understands.
-            \miss You regain the action point spent to use this ability.
-
-            The insight from this ability allows you to see and hear what actions that creature intends to take.
+            \hit As a \glossterm{condition}, that creature's intentions become obvious to you.
+            At the start of each phase, you can see and hear what actions that creature intends to take.
             You do not gain any knowledge of actions that have no obvious signs, such as purely mental actions, or actions which you are not observant enough to notice.
             In addition, you do not know the results of actions with a chance of failure, such as attacks.
+
+            The creature may change its actions based on your interference if you communicate your insight in a way it understands.
         \end{apability}
 
-        \ff[7]{Greater Precognitive Strike} When you use your \textit{precognitive strike} ability, you can also use your Intelligence to determine your damage with the strike in place of your Strength.
+        \ff[7]{Precognitive Reaction} You gain a \plus2 bonus to Reflex defense and \glossterm{initiative} checks.
 
-        \ff[10]{Precognitive Reaction} You gain a \plus2 bonus to Reflex defense and \glossterm{initiative} checks.
+        \ff[10]{Greater Precognitive Strike} You gain a \plus1d bonus to damage with your \textit{precognitive strike} ability.
 
         \ff[13]{Foresight} During the \glossterm{movement phase}, you choose your action after all other creatures have chosen their actions.
         When you choose your action, you have insight into the actions chosen by any creatures within \rngclose range of you that you can see.
         This insight gives you the same information as the insight from your \textit{combat prediction} ability.
         You choose your actions simultaneously with any other creatures who have a similar ability.
 
-        \ff[16]{Supreme Precognitive Strike} When you use your \textit{precognitive strike} ability, you also compare your attack result against the target's Mental defense.
-        \hit You gain insight into the actions that creature intends to take during each phase until the end of the next round.
-        This insight gives you the same information as the insight from your \textit{combat prediction} ability.
-        You gain a \plus2 bonus to accuracy with your \textit{combat prediction} ability.
+        \ff[16]{Precognitive Defense} You gain a \plus1 bonus to Armor defense.
 
-        \ff[19]{Precognitive Defense} You gain a \plus1 bonus to Armor defense.
+        \ff[19]{Supreme Precognitive Strike} When you use your \textit{precognitive strike} ability, you also compare your attack result against the target's Mental defense.
+        On a hit, you gain insight into the actions that creature intends to take during each phase until the end of the next round.
+        This insight gives you the same information as the insight from your \textit{combat prediction} ability.
     \end{feat}
 
     \begin{feat}{Regenerator}{General}
@@ -1369,12 +1367,14 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[4]{Rapid Social Assessment} When you make a social assessment with only one round of observation instead of a full minute, the penalty is reduced by 5 (see \pcref{Social Assessment}).
 
         \ff[7]{Read Mind}[Magical] You can use the \textit{read mind} ability as a standard action.
-        \begin{apability}{Read Mind}[\glossterm{Emotion}, \glossterm{Sustain} (minor)]
+        \begin{freeability}{Read Mind}[\glossterm{Emotion}, \glossterm{Sustain} (minor)]
             Make an attack vs. Mental against a creature within \rngclose range.
             Your \glossterm{accuracy} is equal to your Sense Motive skill.
             \hit You know the target's current emotions.
             This grants you a \plus2 bonus to Bluff, Persuasion, and Intimidate attacks and checks against the target.
-        \end{apability}
+            \crit You know the target's surface thoughts.
+            This grants you a \plus5 bonus to Bluff, Persuasion, and Intimidate attacks and checks against the target.
+        \end{freeability}
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
@@ -1399,12 +1399,12 @@ Feats also make the system more mechanically complex, so they are not necessaril
         You can only hide one object at a time in this way.
 
         \ff[13]{Extradimensional Retrieval}[Magical] You can use the \textit{extradimensional retrieval} ability as a standard action.
-        \begin{apability}{Extradimensional Retrieval}
+        \begin{freeability}{Extradimensional Retrieval}
             You reach into your pocket dimension to retrieve the object you stored there previously.
 
             Alternately, you can reach into the pocket dimension belonging to a creature you are touching to retrieve the object stored there.
             If that creature does not have the \textit{extradimensional concealment} ability, or does not have an object in their pocket dimension, this ability fails.
-        \end{apability}
+        \end{freeability}
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
     \end{feat}
@@ -1440,7 +1440,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Specialization} You gain a \plus2 bonus to the Spellcraft skill.
 
         \ff[4]{Detect Spellcasting}[Magical] You can use the \textit{detect spellcasting} ability as a standard action.
-        \begin{apability}{Detect Spellcasting}[\glossterm{Knowledge}, \glossterm{Subtle}]
+        \begin{freeability}{Detect Spellcasting}[\glossterm{Knowledge}, \glossterm{Subtle}]
             Make a Spellcraft attack against the Mental defense of a creature within \rngmed range.
             \hit You know whether the target is capable of casting spells.
             If the target can cast spells, you know what sources the target can cast spells from.
@@ -1448,14 +1448,14 @@ Feats also make the system more mechanically complex, so they are not necessaril
             This does not grant you knowledge of any specific spells the target knows.
 
             After using this ability on a target, you cannot use it again on the same target for 24 hours regardless of whether you hit or miss.
-        \end{apability}
+        \end{freeability}
 
         \ff[7]{Unweave Magic}[Magical] You can use the \textit{unweave magic} ability as a standard action.
-        \begin{apability}{Unweave Magic}[\glossterm{Mystic}]
+        \begin{freeability}{Unweave Magic}[\glossterm{Mystic}]
             Make a Spellcraft check on an active spell effect within \rngmed range.
             The DR is equal to 5 \add the \glossterm{power} of the effect.
             Success means the effect is \glossterm{dismissed} if it is an effect that can be dismissed.
-        \end{apability}
+        \end{freeability}
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
@@ -1873,13 +1873,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[13]{Greater Reshaper} When you use the \spell{alter object} cantrip, you can accomplish work that would take up to an hour with a normal Craft check.
         In addition, you can use the \textit{alter poison} ability as a standard action.
-        \begin{apability}{Alter Poison}[\glossterm{Shaping}, \glossterm{Sustain} (minor)]
+        \begin{freeability}{Alter Poison}[\glossterm{Shaping}, \glossterm{Sustain} (minor)]
             Make an attack vs. Fortitude against a creature within \rngclose range.
             \hit Any poison in the target's system is neutralized.
             It stops suffering any additional effects from poisons in its system.
             As long as the effect lasts, it is immune to all poisons.
             In addition, the target's \glossterm{mundane} poisons, including natural attacks that inflict poison, have no effect.
-        \end{apability}
+        \end{freeability}
 
         \ff[16]{Greater Polymorph Focus} The bonus from your \textit{polymorph focus} ability increases to \plus2.
 
@@ -1918,7 +1918,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Truthsense} You gain a \plus2 \glossterm{magic bonus} to all Knowledge skills and the Sense Motive skill.
 
         \ff[4]{Prophesy} You can use the \textit{prophesy} ability as a standard action.
-        \begin{apability}{Prophesy}
+        \begin{freeability}{Prophesy}
             When you use this ability, you must visualize an action that a creature (or group of creatures) could take within the next hour.
             This time period is called the \textit{time of prophecy}.
 
@@ -1928,7 +1928,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             For example, if you used this ability to foresee the results of entering a room that had a group of creatures waiting in ambush, you might see a vision of flashing daggers in darkness darting towards your exposed back, regardless of whether the creatures would actually use daggers to attack.
 
             After using this ability, you cannot use it again for 24 hours.
-        \end{apability}
+        \end{freeability}
 
         \ff[7]{Spell} You learn a spell from the \sphere{revelation} \glossterm{mystic sphere}.
         When you gain access to new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
@@ -2232,12 +2232,10 @@ Feats also make the system more mechanically complex, so they are not necessaril
         This bonus is considered to come from a shield, and does not stack with the benefits of using a physical shield.
 
         \ff[4]{Rend} You can use the \textit{rend} ability as a standard action.
-        \begin{apability}{Rend}
-            Make a melee \glossterm{strike} with two different weapons you wield.
-            Both strikes must target the same creature.
-            Each strike is made independently, so you roll for accuracy and damage once for each weapon.
-            If both strikes hit, you gain a \plus1d bonus to damage with both strikes.
-        \end{apability}
+        \begin{freeability}{Rend}
+            Make a melee \glossterm{strike} using two weapons.
+            If you hit with the \glossterm{attack roll} for both weapons, you gain a \plus2d bonus to damage with the strike.
+        \end{freeability}
 
         \ff[7]{Dual Feint} When you use the \textit{feint} ability while wielding two weapons, you can feint with one weapon and make the strike with the other.
         When you do, you suffer no penalty to damage with the delayed strike.
@@ -2253,6 +2251,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[13]{Dual Precision} While wielding two melee weapons, your \glossterm{attack rolls} with melee \glossterm{strikes} \glossterm{explode} on either a 9 or a 10.
 
         \ff[16]{Supreme Rend} The accuracy bonus from your \textit{greater rend} ability increases to \plus2.
+        In addition, the damage bonus increases to \plus3d.
 
         \ff[16]{Greater Two-Weapon Defense} The bonus from your \textit{two-weapon defense} ability increases to \plus2.
 
@@ -2265,11 +2264,11 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Eye of the Storm} You gain a \plus1 bonus to \glossterm{overwhelm resistance}.
 
         \ff[4]{Whirlwind Spin} You can use the \textit{whirlwind spin} ability as a standard action.
-        \begin{apability}{Whirlwind Spin}
+        \begin{freeability}{Whirlwind Spin}
             Make a melee \glossterm{strike} with a slashing weapon.
             The strike targets all creatures you \glossterm{threaten}.
             You take a \minus2 penalty to \glossterm{accuracy} with the strike.
-        \end{apability}
+        \end{freeability}
 
         \ff[7]{Unfettered Movement} During each phase, you may move through one creature's space during movement.
         You move at half speed while in its space.
