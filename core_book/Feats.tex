@@ -458,7 +458,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[13]{Angelic Flight} You can use the \textit{angelic flight} ability as a \glossterm{free action}.
         \begin{freeability}{Angelic Flight}[Magical]
             You gain a \glossterm{fly speed} equal to your \glossterm{base speed} until the end of the round (see \pcref{Flying}).
-            In addition, you take \glossterm{subdual damage} equal to your level.
+            In addition, you lose hit points equal to your level.
         \end{freeability}
 
         \ff[16]{Supreme Holy Smite} The damage bonus from your \textit{holy smite} ability increases to \plus3d.
@@ -623,7 +623,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Specialization} You gain a \plus2 bonus to the Disguise skill.
 
-        \ff[4]{Quick Change} As a standard action, you can spend an \glossterm{action point} to use the \textit{disguise creature} or \textit{emulate creature} ability.
+        \ff[4]{Quick Change} You reduce the penalties for reducing the creation time of disguises with the \textit{disguise creature} and \textit{emulate creature} abilities by 5.
 
         \ff[7]{Disguise Aura}[Magical] When you use the \textit{disguise creature} or \textit{emulate creature} abilities, you can decide how the target and any items on the target appear when examined by Divination spells.
         For example, you could cause all of their equipment to appear nonmagical, or you could cause them to have a strong aura of good alignment.
@@ -643,7 +643,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[19]{Greater Quick Change} You can use your \textit{quick change} ability without spending an \glossterm{action point}.
+        \ff[19]{Greater Quick Change} You do not suffer penalties for reducing the creation time of disguises with the \textit{disguise creature} and \textit{emulate creature} abilities.
     \end{feat}
 
     \begin{feat}{Draconic Heritage}{Bloodline}
@@ -677,7 +677,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[13]{Draconic Flight}[Magical] You can use the \textit{draconic flight} ability as a \glossterm{free action}.
         \begin{freeability}{Draconic Flight}
             You gain a \glossterm{fly speed} equal to your \glossterm{base speed} until the end of the round (see \pcref{Flying}).
-            In addition, you take \glossterm{subdual damage} equal to your level.
+            In addition, you lose hit points equal to your level.
         \end{freeability}
 
         \ff[16]{Supreme Breath Weapon} The damage bonus from your \textit{greater breath weapon} ability increases to \plus2d.
@@ -685,9 +685,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         A line breath weapon becomes a \areahuge, 20 ft.\ wide line.
         A cone breath weapon becomes a \areahuge cone.
 
-        \ff[19]{Draconic Scales} You gain a \plus1 bonus to Armor defense.
-
-        \ff[20]{Greater Draconic Flight}[Magical] You can use your \textit{draconic flight} ability without spending an \glossterm{action point}.
+        \ff[19]{Greater Draconic Flight} Your \textit{draconic flight} ability lasts until the end of the next round.
     \end{feat}
 
     \begin{dtable}
@@ -836,14 +834,14 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Specialization} You gain a \plus2 bonus to the Heal skill.
 
-        \ff[4]{Healing Touch}[Magical] You can use the \textit{healing touch} ability as a standard action.
-        \begin{freeability}{Healing Touch}[\glossterm{Life}, \glossterm{Magical}]
+        \ff[4]{Healing Touch} You can use the \textit{healing touch} ability as a standard action.
+        \begin{freeability}{Healing Touch}[\glossterm{Life}]
             Make a Heal check on a willing creature within your \glossterm{reach}.
             The target is healed for \glossterm{standard damage} \minus1d.
             Your \glossterm{power} with this ability is equal to your bonus with the Heal skill.
         \end{freeability}
 
-        \ff[7]{Greater Healing Touch}[Magical] For every five points of healing you would restore with your \textit{healing touch} ability, you can instead heal a point of \glossterm{vital damage}.
+        \ff[7]{Vital Healing Touch}[Magical] For every five points of healing you would restore with your \textit{healing touch} ability, you can instead heal a point of \glossterm{vital damage}.
 
         \ff[7]{Purging Touch}[Magical] You can use the \textit{purging touch} ability as a standard action.
         \begin{freeability}{Purging Touch}
@@ -853,11 +851,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
+        \ff[13]{Greater Healing Touch} You gain a \plus1d bonus to healing with your \textit{healing touch} ability.
+
         \ff[13]{Lifesaver} You can use the \textit{first aid} ability as a \glossterm{minor action} (see \pcref{First Aid}).
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[19]{Paragon of Healing} You can use your \textit{healing touch} and \textit{purging touch} abilities without spending an \glossterm{action point}.
+        \ff[19]{Greater Vital Healing Touch} For every two points of healing you would restore with your \textit{healing touch} ability, you can instead heal a point of \glossterm{vital damage}.
     \end{feat}
 
     \begin{feat}{Innate Magic}{Casting, Magical}
@@ -905,7 +905,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featpre Starting Willpower of 1.
 
         \ff[1]{Mental Discipline} You gain a \plus2 bonus to Mental defense.
-        In addition, you gain additional hit points equal to your Willpower.
+        In addition, you gain additional hit points equal to your level.
 
         \ff[4]{Mind over Matter} You reduce your penalties for being \glossterm{staggered} by 2.
 
@@ -1063,20 +1063,19 @@ Feats also make the system more mechanically complex, so they are not necessaril
             In addition, you cause a \glossterm{miscast backlash} when the spell resolves.
 
             However, using this ability requires channeling excessive magical energy that temporarily limits your connection to magic.
-            During the next round, you cannot cast spells other than \glossterm{cantrips}, and you take a \minus2 penalty to all defenses.
+            During the next round, you take a \minus2 penalty to all defenses and any spell you cast is automatically \glossterm{miscast}.
         \end{freeability}
 
-        \ff[7]{Suppressed Backlash} When you miscast a spell, you can suppress the \glossterm{miscast backlash}.
-        If you do, you regain the action point spent to cast the spell (if any).
+        \ff[7]{Widened Backlash} The area affected by your \glossterm{miscast backlash} increases to a \areamed radius centered on you.
 
-        \ff[10]{Widened Backlash} The area affected by your \glossterm{miscast backlash} increases to a \areamed radius burst centered on you.
+        \ff[10]{Toughened Body} You gain additional hit points equal to your level.
+        In addition, you gain a \plus1 bonus to Fortitude defense.
 
-        \ff[13]{Resilient Channeler} In the round after you use your \textit{overchannel} ability, you can cast both cantrips and spells.
-        In addition, the penalty to defenses is reduced to \minus1.
+        \ff[13]{Resilient Channeler} The penalty to defenses from your \textit{overchannel} ability is removed.
 
         \ff[16]{Empowered Miscast} You gain a \plus2 bonus to \glossterm{power} with your \glossterm{miscast backlash}.
 
-        \ff[19]{Empowered Overchannel} When you use your \textit{overchannel} ability, you gain a \plus2 bonus to \glossterm{power} with the spell.
+        \ff[19]{Greater Widened Backlash} The area affected by your \glossterm{miscast backlash} increases to a \areamed radius centered on you.
     \end{feat}
 
     \begin{feat}{Mystic Archer}{Casting}
@@ -1115,7 +1114,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[13]{Imbue Detonating Projectile} When you cast a spell that affects an area and does not have the \glossterm{AP}, \glossterm{Attune}, or \glossterm{Sustain} tags,
             you can use the \textit{imbue detonating projectile} ability.
         \begin{attuneability}{Imbue Detonating Projectile}[\glossterm{Attune} (self), \glossterm{Magical}]
-            The spell does not have its effect immediately, and you regain the action point used to cast the spell (if any).
+            The spell does not have its effect immediately.
             Instead, its power is imbued in a \glossterm{projectile} you hold.
         \end{attuneability}
 
@@ -1135,8 +1134,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
         In exchange, you lose the benefits of all \glossterm{magical} abilities you possess.
         In addition, you are unable to \glossterm{attune} to any \glossterm{magical} abilities, such as magic items or spells cast by other creatures.
 
-        \ff[4]{Mundane Legacy} You do not gain any legacy item upgrades (see \pcref{Legacy Items}).
-        Instead, each time you would gain a legacy item upgrade, you instead gain an additional \glossterm{recovery action point}.
+        \ff[4]{Legendary Legacy} You do not gain any legacy item upgrades (see \pcref{Legacy Items}).
+        Instead, each time you would gain a legacy item upgrade, you instead increase your minimum \glossterm{legend points} at the start of each session.
 
         \ff[4]{Sever Magic} You can use the \textit{sever magic} ability as a standard action.
         \begin{freeability}{Sever Magic}
@@ -1256,7 +1255,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[19]{Greater Suggestion} When you use your \textit{suggestion} ability, you may target any number of creatures within a \areamed burst within range.
+        \ff[19]{Greater Suggestion} When you use your \textit{suggestion} ability, you may target any number of creatures within a \areamed radius within range.
     \end{feat}
 
     \begin{feat}{Precognition}{Combat}
@@ -1391,17 +1390,12 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus4.
 
-        \ff[13]{Extradimensional Concealment}[Magical] When you use the \textit{conceal object} ability, you can spend an \glossterm{action point}.
-        If you do, you conceal the object in a pocket dimension that cannot be accessed by nonmagical means.
-        You can only hide one object at a time in this way.
-
-        \ff[13]{Extradimensional Retrieval}[Magical] You can use the \textit{extradimensional retrieval} ability as a standard action.
-        \begin{freeability}{Extradimensional Retrieval}
-            You reach into your pocket dimension to retrieve the object you stored there previously.
-
-            Alternately, you can reach into the pocket dimension belonging to a creature you are touching to retrieve the object stored there.
-            If that creature does not have the \textit{extradimensional concealment} ability, or does not have an object in their pocket dimension, this ability fails.
-        \end{freeability}
+        \ff[13]{Extradimensional Concealment}[Magical] When you use the \textit{conceal object} ability, you can use the \textit{extradimensional pocket} ability.
+        \begin{ability}{Extradimensional Pocket}[\glossterm{Attune} (self), \glossterm{Magical}]
+            You conceal the object in a pocket dimension that cannot be accessed by nonmagical means.
+            When your attunement to this ability ends, the object appears in a free hand.
+            If you have no free hands, it drops to the ground.
+        \end{ability}
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
     \end{feat}
@@ -1426,9 +1420,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[13]{Greater Distance Tolerance} The penalty reduction from your \textit{distance tolerance} ability increases to 4.
 
         \ff[16]{Supreme Aim} The bonus from your \textit{aim} ability increases to \plus3.
-        In addition, you can sustain your \textit{aim} ability as a \glossterm{free action}.
 
-        \ff[19]{Rapid Aim} You can spend an \glossterm{action point} to use your \textit{aim} ability as a \glossterm{minor action}.
+        \ff[19]{Greater Sniper Shot} The bonus from your \textit{sniper shot} ability increases to \plus8.
     \end{feat}
 
     \begin{feat}{Spellcraft Specialization}{Skill}
@@ -1961,7 +1954,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[7]{Spell} You learn a spell from the \sphere{summon} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[10]{Augmented Summons} Creatures you create with abilities from the \sphere{summon} spell gain a reserve \glossterm{action point}.
+        \ff[10]{Augmented Summons} Creatures you create with abilities from the \sphere{summon} spell gain an \glossterm{action point}.
 
         \ff[13]{Greater Fortified Summons} The bonus from your \textit{fortified summoning} ability increases to be equal to twice your \glossterm{power}.
 
@@ -1971,7 +1964,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[16]{Greater Guided Summons} The bonus from your \textit{guided summons} ability increases to \plus2.
 
-        \ff[19]{Greater Augmented Summons} The number of reserve action points granted by your \textit{augmented summons} ability increases to two.
+        \ff[19]{Greater Augmented Summons} The number of action points granted by your \textit{augmented summons} ability increases to two.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Telekinesis}{Casting, Magical}
@@ -2023,7 +2016,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[4]{Counterspell} You can use the \textit{counterspell} ability as a standard action.
         \begin{freeability}{Counterspell}[\glossterm{Swift}]
             Choose a creature within \rngmed range of you.
-            If the target is casting a spell or begins casting a spell this round, you can spend an \glossterm{action point}.
+            If the target is casting a spell or begins casting a spell this round, you can attempt to counter the spell.
             When you do, if your maximum spell level is at least as high as the target's maximum spell level, their spell has no effect when it resolves.
             Otherwise, make a contested \glossterm{power} check against the target, using your power with this ability against the target's power with the spell it is casting.
             If you win, the target's spell has no effect when it resolves.
@@ -2032,14 +2025,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[7]{Spell} You learn a spell from the \sphere{thaumaturgy} \glossterm{mystic sphere}.
         When you gain access to new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[10]{Magic Tolerance} You gain a \plus2 bonus to \glossterm{defenses} against \glossterm{magical} abilities.
+        \ff[10]{Magic Tolerance} You gain a \plus1 bonus to \glossterm{defenses} against \glossterm{magical} abilities.
 
-        \ff[13]{Improvised Counterspell} At the start of the \glossterm{delayed action phase}, if you are casting a spell other than a \glossterm{cantrip}, you can use your \textit{counterspell} ability without taking an action.
-        If you do, your spell has no effect when it resolves, and you regain the action point spent to cast it (if any).
+        \ff[13]{Greater Counterspell} When you use your \textit{counterspell} ability, you can target two creatures instead of one.
 
         \ff[16]{Greater Thaumaturgy Focus} The bonus from your \textit{thaumaturgy focus} ability increases to \plus2.
 
-        \ff[19]{Greater Magic Tolerance} The bonus from your \textit{magic tolerance} ability increases to \plus4.
+        \ff[19]{Greater Magic Tolerance} The bonus from your \textit{magic tolerance} ability increases to \plus2.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Verdamancy}{Casting, Magical}
@@ -2208,7 +2200,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featpre Starting Constitution of 1.
 
         \ff[1]{Durability} You gain a \plus2 bonus to Fortitude defense.
-        In addition, you gain additional hit points equal to your Constitution.
+        In addition, you gain additional hit points equal to your level.
 
         \ff[4]{Injury Tolerance} You reduce your penalties for being \glossterm{bloodied} by 2.
 
