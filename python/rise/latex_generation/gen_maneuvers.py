@@ -34,9 +34,9 @@ def generate_maneuvers():
         """,
         rank_upgrades={
             # Alternate idea: bonuses against attackers
-            '3': 'This ability lasts until the end of the next round.',
-            '5': 'You can also negate a condition that would be applied to you.',
-            '7': 'You are also immune to conditions.',
+            '3': 'You can also negate a condition that would be applied to you while this ability lasts.',
+            '5': 'This ability lasts until the end of the next round.',
+            '7': 'You are also immune to condition while this ability lastss.',
         },
         tags=['Swift'],
         lists=['Martial', 'Primal', 'Wild', 'Esoteric'],
@@ -82,8 +82,8 @@ def generate_maneuvers():
                     it is \\glossterm<shaken> by you as a \\glossterm<condition>.
         """,
         rank_upgrades={
-            '3': 'The target is \\glossterm<frightened> instead of shaken.',
-            '5': 'On a critical hit, the target is \\glossterm<panicked> instead of frightened.',
+            '3': 'On a \\glossterm<critical hit>, the target is \\glossterm<panicked> instead of shaken.',
+            '5': 'The target is \\glossterm<frightened> instead of shaken.',
             '7': 'The target is panicked instead of frightened.',
         },
         tags=['Emotion'],
@@ -98,9 +98,9 @@ def generate_maneuvers():
                 \\hit Each target is \\glossterm<shaken> by you as a \\glossterm<condition>.
         """,
         rank_upgrades={
-            '3': 'Each target is \\glossterm<frightened> instead of shaken.',
-            '5': 'The area increases to a \\arealarge radius from you.',
-            '7': 'You gain a +2 bonus to \\glossterm<accuracy> with the attack.',
+            '3': 'The area increases to a \\areamed radius from you.',
+            '5': 'Each target is \\glossterm<frightened> instead of shaken.',
+            '7': 'The area increases to a \\areahuge radius from you.',
         },
         tags=['Emotion'],
         lists=['Primal'],
@@ -149,8 +149,8 @@ def generate_maneuvers():
                 it is \\glossterm<sickened> as a \\glossterm<condition>.
         """,
         rank_upgrades={
-            '3': 'The target is \\glossterm<nauseated> instead of sickened.',
-            '5': 'On a \\glossterm<critical hit>, the target is is \\glossterm<paralyzed> instead of nauseated.',
+            '3': 'On a \\glossterm<critical hit>, the target is is \\glossterm<paralyzed> instead of sickened.',
+            '5': 'The target is \\glossterm<nauseated> instead of sickened.',
             '7': 'The target is \\glossterm<paralyzed> instead of nauseated.',
         },
         tags=[],
@@ -436,8 +436,8 @@ def generate_maneuvers():
                 it is \\glossterm<sickened> as a \\glossterm<condition>.
         """,
         rank_upgrades={
-            '3': 'The target is \\glossterm<nauseated> instead of sickened.',
-            '5': 'On a \\glossterm<critical hit>, the target is is \\glossterm<paralyzed> instead of nauseated.',
+            '3': 'On a \\glossterm<critical hit>, the target is is \\glossterm<paralyzed> instead of sickened.',
+            '5': 'The target is \\glossterm<nauseated> instead of sickened.',
             '7': 'The target is \\glossterm<paralyzed> instead of nauseated.',
         },
         tags=['Emotion'],
@@ -506,8 +506,8 @@ def generate_maneuvers():
                 it is \\glossterm<sickened> as a \\glossterm<condition>.
         """,
         rank_upgrades={
-            '3': 'The target is \\glossterm<nauseated> instead of sickened.',
-            '5': 'On a \\glossterm<critical hit>, the target is is \\glossterm<paralyzed> instead of nauseated.',
+            '3': 'On a \\glossterm<critical hit>, the target is is \\glossterm<paralyzed> instead of sickened.',
+            '5': 'The target is \\glossterm<nauseated> instead of sickened.',
             '7': 'The target is \\glossterm<paralyzed> instead of nauseated.',
         },
         tags=[],
