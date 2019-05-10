@@ -29,15 +29,6 @@ Until the end of the round, the target treats all falls as if they were 5 feet s
 \subsubsection{Spells}
 
 
-\lowercase{\hypertarget{spell:Cyclone}{}}\label{spell:Cyclone}
-\begin{freeability}[\nth{1}]{\hypertarget{spell:Cyclone}{Cyclone}}[\glossterm{Air}]
-Make an attack vs. Fortitude against everything in a \areasmall radius within \rngclose range.
-\hit Each target takes bludgeoning \glossterm{standard damage}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Gentle Descent}{}}\label{spell:Gentle Descent}
 \begin{attuneability}[\nth{1}]{\hypertarget{spell:Gentle Descent}{Gentle Descent}}[\glossterm{Air}, \glossterm{Attune} (target)]
 Choose a Large or smaller willing creature in \rngclose range.
@@ -51,7 +42,7 @@ The target gains a 30 foot \glossterm{glide speed} (see \pcref{Gliding}).
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Propulsion}{Propulsion}}[\glossterm{Air}, \glossterm{Swift}]
 Choose a Large or smaller willing creature in \rngclose range.
 You move the target up to 50 feet in any direction.
-You cannot change direction partway through the movement.
+You cannot change direction the direction of the movement partway through.
 Moving the target upwards cost twice the normal movement cost.
 \end{freeability}
 \vspace{0.25em}
@@ -85,8 +76,8 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Windstrike}{}}\label{spell:Windstrike}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Windstrike}{Windstrike}}[\glossterm{Air}]
-Make an attack vs. Armor against a creature or object within \rngmed range.
-\hit The target takes bludgeoning \glossterm{standard damage} \plus2d.
+Make an attack vs. Armor against a creature or object within \rnglong range.
+\hit The target takes bludgeoning \glossterm{standard damage}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -96,7 +87,17 @@ Make an attack vs. Armor against a creature or object within \rngmed range.
 \begin{freeability}[\nth{2}]{\hypertarget{spell:Buffeting Gale}{Buffeting Gale}}[\glossterm{Air}]
 Make an attack vs. Fortitude against everything in a \arealarge, 10 ft. wide line from you.
 % TODO: wording
-\hit Each target takes bludgeoning \glossterm{standard damage} \minus1d and is moved 10 feet in the direction the line points away from you.
+\hit Each target takes bludgeoning \glossterm{standard damage} \minus1d and is moved 20 feet in the direction the line points away from you.
+Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Cyclone}{}}\label{spell:Cyclone}
+\begin{freeability}[\nth{2}]{\hypertarget{spell:Cyclone}{Cyclone}}[\glossterm{Air}]
+Make an attack vs. Fortitude against everything in a \areasmall radius within \rngclose range.
+\hit Each target takes bludgeoning \glossterm{standard damage}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -106,15 +107,6 @@ Make an attack vs. Fortitude against everything in a \arealarge, 10 ft. wide lin
 \begin{freeability}[\nth{2}]{\hypertarget{spell:Greater Propulsion}{Greater Propulsion}}[\glossterm{Air}, \glossterm{Swift}]
 This spell functions like the \spell{propulsion} spell, except that the distance you can move the target is increased to 100 feet.
 In addition, the target gains a \plus1 bonus to Armor defense during the current phase.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Stripping Cyclone}{}}\label{spell:Stripping Cyclone}
-\begin{freeability}[\nth{2}]{\hypertarget{spell:Stripping Cyclone}{Stripping Cyclone}}[\glossterm{Air}]
-This spell functions like the \spell{cyclone} spell, except that the attack result is also compared to each target's Reflex defense.
-\hit Each target drops all items it is holding that are not well secured (such as a ring) or held in two hands.
 \end{freeability}
 \vspace{0.25em}
 
@@ -130,29 +122,21 @@ This spell functions like the \spell{windstrike} spell, except that the attack r
 
 
 
-\lowercase{\hypertarget{spell:Greater Cyclone}{}}\label{spell:Greater Cyclone}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Greater Cyclone}{Greater Cyclone}}[\glossterm{Air}]
-Make an attack vs. Fortitude against everything in a \areamed radius within \rngmed range.
-\hit Each target takes bludgeoning \glossterm{standard damage}.
+\lowercase{\hypertarget{spell:Distant Windstrike}{}}\label{spell:Distant Windstrike}
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Distant Windstrike}{Distant Windstrike}}[\glossterm{Air}]
+This spell functions like the \spell{windstrike} spell, except that it affects a target within 2,000 foot range.
 \end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Greater Windstrike}{}}\label{spell:Greater Windstrike}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Greater Windstrike}{Greater Windstrike}}[\glossterm{Air}]
-This spell functions like the \spell{windstrike} spell, except that it affects a target within \rnglong range and the damage increases to \glossterm{standard damage} \plus3d.
-\end{freeability}
-\vspace{0.25em}
+\lowercase{\hypertarget{spell:Greater Windblade}{}}\label{spell:Greater Windblade}
+\begin{attuneability}[\nth{3}]{\hypertarget{spell:Greater Windblade}{Greater Windblade}}[\glossterm{Air}, \glossterm{Attune} (target), \glossterm{Shaping}]
+Choose a willing creature within \rngclose range.
+Melee weapons wielded by the target gain an additional ten feet of \glossterm{reach}.
 
-
-
-\lowercase{\hypertarget{spell:Hurricane}{}}\label{spell:Hurricane}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Hurricane}{Hurricane}}[\glossterm{Air}]
-Make an attack vs. Fortitude against everything in a \arealarge radius from you.
-\hit Each target takes bludgeoning \glossterm{standard damage} \minus1d and is moved 10 feet clockwise around you.
-Each target's final position should be the same distance from you as its starting position.
-\end{freeability}
+You can cast this spell as a \glossterm{minor action}.
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -166,6 +150,15 @@ Any individual creature can only be dealt damage in this way once per round.
 
 Any effect which increases this spell's range increases the range of this retaliation by the same amount.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Stripping Cyclone}{}}\label{spell:Stripping Cyclone}
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Stripping Cyclone}{Stripping Cyclone}}[\glossterm{Air}]
+This spell functions like the \spell{cyclone} spell, except that the attack result is also compared to each target's Reflex defense.
+\hit Each target drops all items it is holding that are not well secured (such as a ring) or held in two hands.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -209,9 +202,19 @@ The target gains a 30 foot \glossterm{fly speed} as long as it is no more than 5
 
 
 
+\lowercase{\hypertarget{spell:Forceful Windstrike}{}}\label{spell:Forceful Windstrike}
+\begin{freeability}[\nth{4}]{\hypertarget{spell:Forceful Windstrike}{Forceful Windstrike}}[\glossterm{Air}]
+This spell functions like the \spell{windstrike} spell, except that you gain a \plus1d bonus to damage.
+In addition, if your attack result beats the target's Fortitude defense, you move it up to 30 feet in any direction.
+Moving the target upwards cost twice the normal movement cost.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Greater Buffeting Gale}{}}\label{spell:Greater Buffeting Gale}
 \begin{freeability}[\nth{4}]{\hypertarget{spell:Greater Buffeting Gale}{Greater Buffeting Gale}}[\glossterm{Air}]
-This spell functions like the \spell{buffeting gale} spell, except that it affects everything in a \areahuge, 10 ft. wide line from you and targets are moved 30 feet instead of 10 feet.
+This spell functions like the \spell{buffeting gale} spell, except that it affects everything in a \areahuge, 10 ft. wide line from you and targets are moved 50 feet instead of 20 feet.
 \end{freeability}
 \vspace{0.25em}
 
@@ -225,14 +228,12 @@ This spell functions like the \spell{wind screen} spell, except that the Armor d
 
 
 
-\lowercase{\hypertarget{spell:Greater Windblade}{}}\label{spell:Greater Windblade}
-\begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Windblade}{Greater Windblade}}[\glossterm{Air}, \glossterm{Attune} (target), \glossterm{Shaping}]
-Choose a willing creature within \rngclose range.
-Melee weapons wielded by the target gain an additional ten feet of \glossterm{reach}.
-In addition, the target gains a \plus2 \glossterm{magic bonus} to \glossterm{power} with melee \glossterm{strikes}.
-
-You can cast this spell as a \glossterm{minor action}.
-\end{attuneability}
+\lowercase{\hypertarget{spell:Hurricane}{}}\label{spell:Hurricane}
+\begin{freeability}[\nth{4}]{\hypertarget{spell:Hurricane}{Hurricane}}[\glossterm{Air}]
+Make an attack vs. Fortitude against everything in a \arealarge radius from you.
+\hit Each target takes bludgeoning \glossterm{standard damage} \minus1d and is moved 20 feet clockwise around you.
+Each target's final position should be the same distance from you as its starting position.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -257,17 +258,18 @@ By choosing when to treat the air as solid, it can traverse the air with ease.
 
 
 
-\lowercase{\hypertarget{spell:Greater Hurricane}{}}\label{spell:Greater Hurricane}
-\begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Hurricane}{Greater Hurricane}}[\glossterm{Air}]
-This spell functions like the \spell{hurricane} spell, except that it deals \glossterm{standard damage} and targets are moved 30 feet instead of 10 feet.
+\lowercase{\hypertarget{spell:Greater Cyclone}{}}\label{spell:Greater Cyclone}
+\begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Cyclone}{Greater Cyclone}}[\glossterm{Air}]
+Make an attack vs. Fortitude against everything in a \areamed radius within \rngmed range.
+\hit Each target takes bludgeoning \glossterm{standard damage}.
 \end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Supreme Windstrike}{}}\label{spell:Supreme Windstrike}
-\begin{freeability}[\nth{5}]{\hypertarget{spell:Supreme Windstrike}{Supreme Windstrike}}[\glossterm{Air}]
-This spell functions like the \spell{windstrike} spell, except that it affects a target within \rngext range and the damage increases to \glossterm{standard damage} \plus4d.
+\lowercase{\hypertarget{spell:Greater Hurricane}{}}\label{spell:Greater Hurricane}
+\begin{freeability}[\nth{6}]{\hypertarget{spell:Greater Hurricane}{Greater Hurricane}}[\glossterm{Air}]
+This spell functions like the \spell{hurricane} spell, except that it deals \glossterm{standard damage} and targets are moved 50 feet instead of 20 feet.
 \end{freeability}
 \vspace{0.25em}
 
@@ -277,15 +279,6 @@ This spell functions like the \spell{windstrike} spell, except that it affects a
 \begin{attuneability}[\nth{6}]{\hypertarget{spell:Greater Stormlord}{Greater Stormlord}}[\glossterm{Air}, \glossterm{Attune} (target), \glossterm{Shielding}]
 This spell functions like the \spell{stormlord} spell, except that the damage increases to \glossterm{standard damage} \plus1d.
 \end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Supreme Cyclone}{}}\label{spell:Supreme Cyclone}
-\begin{freeability}[\nth{6}]{\hypertarget{spell:Supreme Cyclone}{Supreme Cyclone}}[\glossterm{Air}]
-Make an attack vs. Fortitude against everything in a \arealarge radius within \rnglong range.
-\hit Each target takes bludgeoning \glossterm{standard damage} \plus1d.
-\end{freeability}
 \vspace{0.25em}
 
 
@@ -333,8 +326,8 @@ The target gains a \plus4 bonus to the Escape Artist skill until the end of the 
 
 \lowercase{\hypertarget{spell:Crushing Wave}{}}\label{spell:Crushing Wave}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Crushing Wave}{Crushing Wave}}[\glossterm{Manifestation}, \glossterm{Water}]
-Make an attack vs. Fortitude against everything in a \arealarge, 10 ft.\ wide line from you.
-\hit Each target takes bludgeoning \glossterm{standard damage} \minus1d.
+Make an attack vs. Fortitude against everything in a \areamed, 10 ft.\ wide line from you.
+\hit Each target takes bludgeoning \glossterm{standard damage}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -353,8 +346,8 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Water Jet}{}}\label{spell:Water Jet}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Water Jet}{Water Jet}}[\glossterm{Manifestation}, \glossterm{Water}]
-Make an attack vs. Armor against a creature within \rngclose range.
-\hit The target takes bludgeoning \glossterm{standard damage} \plus2d.
+Make an attack vs. Armor against a creature within \rngmed range.
+\hit The target takes bludgeoning \glossterm{standard damage} \plus1d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -362,7 +355,8 @@ Make an attack vs. Armor against a creature within \rngclose range.
 
 \lowercase{\hypertarget{spell:Aqueous Sphere}{}}\label{spell:Aqueous Sphere}
 \begin{freeability}[\nth{2}]{\hypertarget{spell:Aqueous Sphere}{Aqueous Sphere}}[\glossterm{Manifestation}, \glossterm{Water}]
-This spell functions like the \spell{crushing wave} spell, except that it targets everything in a \areasmall radius within \rngmed range.
+Make an attack vs. Fortitude against everything in a \areasmall radius within \rngclose range.
+\hit Each target takes bludgeoning \glossterm{standard damage}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -378,18 +372,19 @@ If this spell has its area increased, such as with the Widened \glossterm{augmen
 
 
 
-\lowercase{\hypertarget{spell:Greater Underwater Freedom}{}}\label{spell:Greater Underwater Freedom}
-\begin{attuneability}[\nth{3}]{\hypertarget{spell:Greater Underwater Freedom}{Greater Underwater Freedom}}[\glossterm{Attune} (target)]
-This spell functions like the \spell{underwater freedom} spell, except that the target can also breathe water as if it was air.
-\end{attuneability}
+\lowercase{\hypertarget{spell:Overpowering Wave}{}}\label{spell:Overpowering Wave}
+\begin{freeability}[\nth{2}]{\hypertarget{spell:Overpowering Wave}{Overpowering Wave}}[\glossterm{Manifestation}, \glossterm{Water}]
+This spell functions like the \spell{crushing wave} spell, except that it attacks Reflex defense instead of Fortitude defense.
+In addition, it only affects creatures of Large size or smaller.
+\end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Overpowering Wave}{}}\label{spell:Overpowering Wave}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Overpowering Wave}{Overpowering Wave}}[\glossterm{Manifestation}, \glossterm{Water}]
-This spell functions like the \spell{crushing wave} spell, except that it attacks Reflex defense instead of Fortitude defense.
-\end{freeability}
+\lowercase{\hypertarget{spell:Greater Underwater Freedom}{}}\label{spell:Greater Underwater Freedom}
+\begin{attuneability}[\nth{3}]{\hypertarget{spell:Greater Underwater Freedom}{Greater Underwater Freedom}}[\glossterm{Attune} (target)]
+This spell functions like the \spell{underwater freedom} spell, except that the target can also breathe water as if it was air.
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -406,7 +401,7 @@ In addition, at the end of each \glossterm{action phase} in subsequent rounds, t
 
 
 \lowercase{\hypertarget{spell:Wall of Water}{}}\label{spell:Wall of Water}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Wall of Water}{Wall of Water}}[\glossterm{Manifestation}, \glossterm{Water}]
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Wall of Water}{Wall of Water}}[\glossterm{Manifestation}, \glossterm{Sustain} (minor), \glossterm{Water}]
 You create a wall of water in a 20 ft.\ high, \arealarge line within \rngmed range.
 The wall is four inches thick, and blocks \glossterm{line of effect} for abilities.
 Sight through the wall is possible, though distorted.
@@ -421,8 +416,8 @@ It is immune to most forms of attack, but it can be destroyed by \glossterm{fire
 
 
 \lowercase{\hypertarget{spell:Greater Aqueous Sphere}{}}\label{spell:Greater Aqueous Sphere}
-\begin{freeability}[\nth{4}]{\hypertarget{spell:Greater Aqueous Sphere}{Greater Aqueous Sphere}}[\glossterm{Manifestation}, \glossterm{Water}]
-This spell functions like the \spell{crushing wave} spell, except that it targets everything in a \areamed radius within \rnglong range.
+\begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Aqueous Sphere}{Greater Aqueous Sphere}}[\glossterm{Manifestation}, \glossterm{Water}]
+This spell functions like the \spell{aqueous sphere} spell, except that it targets everything in a \areamed radius within \rngmed range.
 \end{freeability}
 \vspace{0.25em}
 
@@ -490,7 +485,7 @@ If the destination is invalid, the ability fails without effect.
 \lowercase{\hypertarget{spell:Dimensional Jaunt}{}}\label{spell:Dimensional Jaunt}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Dimensional Jaunt}{Dimensional Jaunt}}[\glossterm{Planar}, \glossterm{Teleportation}]
 Make an attack vs. Mental against a creature within \rngmed range.
-\hit The target takes physical \glossterm{standard damage} \plus2d.
+\hit The target takes physical \glossterm{standard damage} \plus1d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -520,7 +515,7 @@ If it is a creature created by a \glossterm{Manifestation} ability, it immediate
 \lowercase{\hypertarget{spell:Dimensional Jaunt -- Plane of Earth}{}}\label{spell:Dimensional Jaunt -- Plane of Earth}
 \begin{freeability}[\nth{2}]{\hypertarget{spell:Dimensional Jaunt -- Plane of Earth}{Dimensional Jaunt -- Plane of Earth}}[\glossterm{Planar}, \glossterm{Teleportation}]
 This spell functions like the \spell{dimensional jaunt} spell, except that the target is partially teleported into the Plane of Earth.
-The damage becomes bludgeoning damage, and a struck target is \glossterm{slowed} as a \glossterm{condition}.
+The damage dealt changes to bludgeoning \glossterm{standard damage} \minus1d, and a struck target is \glossterm{slowed} as a \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -547,7 +542,7 @@ You must clearly visualize the destination's appearance, but you do not need \gl
 \lowercase{\hypertarget{spell:Dimensional Jaunt -- Plane of Fire}{}}\label{spell:Dimensional Jaunt -- Plane of Fire}
 \begin{freeability}[\nth{3}]{\hypertarget{spell:Dimensional Jaunt -- Plane of Fire}{Dimensional Jaunt -- Plane of Fire}}[\glossterm{Planar}, \glossterm{Teleportation}]
 This spell functions like the \spell{dimensional jaunt} spell, except that the target is partially teleported into the Plane of Fire.
-The damage dealt changes to fire \glossterm{standard damage} \plus3d.
+The damage dealt changes to fire \glossterm{standard damage}.
 In addition, a struck target is \glossterm{ignited} until it puts out the fire.
 This condition can also be removed if the target makes a \glossterm{DR} 10 Dexterity check as a \glossterm{move action} to put out the flames.
 Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this check.
@@ -576,20 +571,19 @@ It is still affected normally by abilities that affect an area.
 
 
 
-\lowercase{\hypertarget{spell:Dimensional Jaunt -- Deep Astral Plane}{}}\label{spell:Dimensional Jaunt -- Deep Astral Plane}
-\begin{freeability}[\nth{5}]{\hypertarget{spell:Dimensional Jaunt -- Deep Astral Plane}{Dimensional Jaunt -- Deep Astral Plane}}[\glossterm{Planar}, \glossterm{Teleportation}]
-This spell functions like the \spell{dimensional jaunt} spell, except that the target is partially teleported into the deep Astral Plane.
-The damage dealt increases to \glossterm{standard damage} \plus3d.
-In addition, a struck target is \glossterm{stunned} as a \glossterm{condition}.
+\lowercase{\hypertarget{spell:Dimensional Jaunt -- Myriad}{}}\label{spell:Dimensional Jaunt -- Myriad}
+\begin{freeability}[\nth{4}]{\hypertarget{spell:Dimensional Jaunt -- Myriad}{Dimensional Jaunt -- Myriad}}[\glossterm{Planar}, \glossterm{Teleportation}]
+This spell functions like the \spell{dimensional jaunt} spell, except that the target is partially teleported through a dizzying array of planes.
+The damage dealt increases to \glossterm{standard damage} \plus3d and becomes damage of all types.
 \end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Dimensional Jaunt -- Myriad}{}}\label{spell:Dimensional Jaunt -- Myriad}
-\begin{freeability}[\nth{6}]{\hypertarget{spell:Dimensional Jaunt -- Myriad}{Dimensional Jaunt -- Myriad}}[\glossterm{Planar}, \glossterm{Teleportation}]
-This spell functions like the \spell{dimensional jaunt} spell, except that the target is partially teleported through a dizzying array of planes.
-The damage dealt increases to \glossterm{standard damage} \plus5d and becomes damage of all types.
+\lowercase{\hypertarget{spell:Dimensional Jaunt -- Deep Astral Plane}{}}\label{spell:Dimensional Jaunt -- Deep Astral Plane}
+\begin{freeability}[\nth{7}]{\hypertarget{spell:Dimensional Jaunt -- Deep Astral Plane}{Dimensional Jaunt -- Deep Astral Plane}}[\glossterm{Planar}, \glossterm{Teleportation}]
+This spell functions like the \spell{dimensional jaunt} spell, except that the target is partially teleported into the deep Astral Plane.
+A struck target is \glossterm{confused} as a \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -756,12 +750,12 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 \lowercase{\hypertarget{spell:Wall of Force}{}}\label{spell:Wall of Force}
-\begin{attuneability}[\nth{1}]{\hypertarget{spell:Wall of Force}{Wall of Force}}[\glossterm{Attune} (self)]
+\begin{freeability}[\nth{1}]{\hypertarget{spell:Wall of Force}{Wall of Force}}[\glossterm{Sustain} (minor)]
 You create a wall of magical energy in a 10 ft.\ high, \areamed line within \rngmed range.
 The wall is visible as a shimmering magical membrane that does not block sight.
 Nothing can pass through the wall until it is destroyed.
 Each 5-ft.\ square of wall has hit points equal to your \glossterm{power}.
-\end{attuneability}
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -775,9 +769,9 @@ This spell functions like the \spell{kinetic shield} spell, except that the dama
 
 
 \lowercase{\hypertarget{spell:Expanded Wall of Force}{}}\label{spell:Expanded Wall of Force}
-\begin{attuneability}[\nth{2}]{\hypertarget{spell:Expanded Wall of Force}{Expanded Wall of Force}}[\glossterm{Attune} (self)]
+\begin{freeability}[\nth{2}]{\hypertarget{spell:Expanded Wall of Force}{Expanded Wall of Force}}[\glossterm{Sustain} (minor)]
 This spell functions like the \spell{wall of force} spell, except that the wall fills a 10 ft.\ high, \arealarge line.
-\end{attuneability}
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -796,26 +790,26 @@ Creatures in the area at the time that the spell is cast are unaffected by the s
 
 
 \lowercase{\hypertarget{spell:Wall of Energy Impedance}{}}\label{spell:Wall of Energy Impedance}
-\begin{attuneability}[\nth{2}]{\hypertarget{spell:Wall of Energy Impedance}{Wall of Energy Impedance}}[\glossterm{Attune} (self)]
+\begin{freeability}[\nth{2}]{\hypertarget{spell:Wall of Energy Impedance}{Wall of Energy Impedance}}[\glossterm{Sustain} (minor)]
 You create a wall of magical energy in a 10 ft.\ high, \areamed line within \rngmed range.
 The wall is visible as a shimmering magical membrane that does not block sight.
 It does not impede passage for objects or creatures, but any ability that deals \glossterm{energy damage} treats the wall as an impassable barrier.
-\end{attuneability}
+\end{freeability}
 \vspace{0.25em}
 
 
 
 \lowercase{\hypertarget{spell:Fortified Wall of Force}{}}\label{spell:Fortified Wall of Force}
-\begin{attuneability}[\nth{3}]{\hypertarget{spell:Fortified Wall of Force}{Fortified Wall of Force}}[\glossterm{Attune} (self)]
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Fortified Wall of Force}{Fortified Wall of Force}}[\glossterm{Sustain} (minor)]
 This spell functions like the \spell{wall of force} spell, except that each 5-ft.\ square of wall has hit points equal to four times your \glossterm{power}.
-\end{attuneability}
+\end{freeability}
 \vspace{0.25em}
 
 
 
 \lowercase{\hypertarget{spell:Immunity}{}}\label{spell:Immunity}
 \begin{attuneability}[\nth{3}]{\hypertarget{spell:Immunity}{Immunity}}[\glossterm{Attune} (target), \glossterm{Shielding}]
-Choose a willing creature in \rngclose range, and a type of damage that is not a kind of physical damage (see \pcref{Damage Types}).
+Choose a willing creature in \rngclose range, and a type of damage that is not a type of physical damage (see \pcref{Damage Types}).
 The target becomes immune to damage of the chosen type.
 Attacks that deal damage of multiple types still inflict damage normally unless the target is immune to all types of damage dealt.
 \end{attuneability}
@@ -860,11 +854,11 @@ This spell functions like the \spell{resist energy} spell, except that the bonus
 
 
 \lowercase{\hypertarget{spell:Wall of Magic Impedance}{}}\label{spell:Wall of Magic Impedance}
-\begin{attuneability}[\nth{4}]{\hypertarget{spell:Wall of Magic Impedance}{Wall of Magic Impedance}}[\glossterm{Attune} (self)]
+\begin{freeability}[\nth{4}]{\hypertarget{spell:Wall of Magic Impedance}{Wall of Magic Impedance}}[\glossterm{Sustain} (minor)]
 You create a wall of magical energy in a 10 ft.\ high, \areamed line within \rngmed range.
 The wall is visible as a shimmering magical membrane that does not block sight.
 It does not impede passage for objects or creatures, but any \glossterm{magical} ability treats the wall as an impassable barrier.
-\end{attuneability}
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -886,9 +880,9 @@ This spell functions like the \spell{kinetic shield} spell, except that the dama
 
 
 \lowercase{\hypertarget{spell:Impervious Wall of Force}{}}\label{spell:Impervious Wall of Force}
-\begin{attuneability}[\nth{5}]{\hypertarget{spell:Impervious Wall of Force}{Impervious Wall of Force}}[\glossterm{Attune} (self)]
+\begin{freeability}[\nth{5}]{\hypertarget{spell:Impervious Wall of Force}{Impervious Wall of Force}}[\glossterm{Sustain} (minor)]
 This spell functions like the \spell{wall of force} spell, except that the wall is immune to all damage except sonic damage and thaumatic damage.
-\end{attuneability}
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -1012,14 +1006,6 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
-\lowercase{\hypertarget{spell:Cleansing Blessing}{}}\label{spell:Cleansing Blessing}
-\begin{freeability}[\nth{1}]{\hypertarget{spell:Cleansing Blessing}{Cleansing Blessing}}
-You and any number of willing creatures within an \arealarge radius from you can remove one \glossterm{condition}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Battle Blessing}{}}\label{spell:Battle Blessing}
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Battle Blessing}{Battle Blessing}}[\glossterm{Attune} (target)]
 Choose a willing creature within \rngclose range.
@@ -1042,11 +1028,20 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
+\lowercase{\hypertarget{spell:Cleansing Blessing}{}}\label{spell:Cleansing Blessing}
+\begin{freeability}[\nth{2}]{\hypertarget{spell:Cleansing Blessing}{Cleansing Blessing}}
+Choose a willing creature within \rngclose range.
+The target can remove a \glossterm{condition}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Blessing of Resilience}{}}\label{spell:Blessing of Resilience}
 \begin{attuneability}[\nth{3}]{\hypertarget{spell:Blessing of Resilience}{Blessing of Resilience}}[\glossterm{Attune} (target)]
 Choose a willing creature within \rngclose range.
-The target ignores the next two \glossterm{conditions} it would receive.
-After resisting two conditions in this way, this spell ends.
+Whenever the target gains a \glossterm{condition}, it can choose to negate that condition.
+After negating a condition in this way, this spell ends.
 
 You can cast this spell as a \glossterm{minor action}.
 \end{attuneability}
@@ -1065,18 +1060,18 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
-\lowercase{\hypertarget{spell:Greater Blessing of Protection}{}}\label{spell:Greater Blessing of Protection}
-\begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Blessing of Protection}{Greater Blessing of Protection}}[\glossterm{Attune} (target)]
-This spell functions like the \spell{blessing of protection} spell, except that bonus increases to \plus2.
-\end{attuneability}
+\lowercase{\hypertarget{spell:Cleansing Benediction}{}}\label{spell:Cleansing Benediction}
+\begin{freeability}[\nth{4}]{\hypertarget{spell:Cleansing Benediction}{Cleansing Benediction}}
+Each ally other than yourself within a \areamed radius from you can remove one \glossterm{condition}.
+\end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Greater Cleansing Blessing}{}}\label{spell:Greater Cleansing Blessing}
-\begin{freeability}[\nth{4}]{\hypertarget{spell:Greater Cleansing Blessing}{Greater Cleansing Blessing}}
-This spell functions like the \spell{cleansing blessing} spell, except that each target can remove two conditions instead of one.
-\end{freeability}
+\lowercase{\hypertarget{spell:Greater Blessing of Protection}{}}\label{spell:Greater Blessing of Protection}
+\begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Blessing of Protection}{Greater Blessing of Protection}}[\glossterm{Attune} (target)]
+This spell functions like the \spell{blessing of protection} spell, except that bonus increases to \plus2.
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -1097,10 +1092,26 @@ This spell functions like the \spell{blessing of might} spell, except that the p
 
 
 
+\lowercase{\hypertarget{spell:Greater Cleansing Blessing}{}}\label{spell:Greater Cleansing Blessing}
+\begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Cleansing Blessing}{Greater Cleansing Blessing}}
+This spell functions like the \spell{cleansing blessing} spell, except that the target can remove two conditions instead of one.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Greater Blessing of Resilience}{}}\label{spell:Greater Blessing of Resilience}
-\begin{attuneability}[\nth{5}]{\hypertarget{spell:Greater Blessing of Resilience}{Greater Blessing of Resilience}}[\glossterm{Attune} (target)]
-This spell functions like the \textit{blessing of resilience} spell, except that the spell does not end until it resists three \glossterm{conditions}.
+\begin{attuneability}[\nth{6}]{\hypertarget{spell:Greater Blessing of Resilience}{Greater Blessing of Resilience}}[\glossterm{Attune} (target)]
+This spell functions like the \textit{blessing of resilience} spell, except that the spell does not end until it resists two \glossterm{conditions}.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Greater Benediction}{}}\label{spell:Greater Benediction}
+\begin{freeability}[\nth{7}]{\hypertarget{spell:Greater Benediction}{Greater Benediction}}
+This spell functions like the \spell{cleansing benediction} spell, except that each target can remove two conditions instead of one.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -1119,14 +1130,6 @@ You can cast this spell as a \glossterm{minor action}.
 \lowercase{\hypertarget{spell:Supreme Blessing of Protection}{}}\label{spell:Supreme Blessing of Protection}
 \begin{attuneability}[\nth{7}]{\hypertarget{spell:Supreme Blessing of Protection}{Supreme Blessing of Protection}}[\glossterm{Attune} (target)]
 This spell functions like the \spell{blessing of protection} spell, except that bonus increases to \plus3.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Supreme Blessing of Resilience}{}}\label{spell:Supreme Blessing of Resilience}
-\begin{attuneability}[\nth{7}]{\hypertarget{spell:Supreme Blessing of Resilience}{Supreme Blessing of Resilience}}[\glossterm{Attune} (target)]
-This spell functions like the \textit{blessing of resilience} spell, except that the spell does not end until it resists four \glossterm{conditions}.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -1268,7 +1271,7 @@ This can allow you to identify other followers of your deity or alignment with c
 \lowercase{\hypertarget{spell:Divine Judgment}{}}\label{spell:Divine Judgment}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Divine Judgment}{Divine Judgment}}
 Make an attack vs. Mental against a creature within \rngmed range.
-\hit The target takes divine \glossterm{standard damage} \plus2d.
+\hit The target takes divine \glossterm{standard damage} \plus1d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1294,15 +1297,6 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
-\lowercase{\hypertarget{spell:Word of Faith}{}}\label{spell:Word of Faith}
-\begin{freeability}[\nth{2}]{\hypertarget{spell:Word of Faith}{Word of Faith}}
-Make an attack vs. Mental against all enemies in a \areamed radius from you.
-\hit Each target takes divine \glossterm{standard damage}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Divine Might}{}}\label{spell:Divine Might}
 \begin{attuneability}[\nth{3}]{\hypertarget{spell:Divine Might}{Divine Might}}[\glossterm{Attune} (self), \glossterm{Shaping}, \glossterm{Sizing}]
 You increase your size by one \glossterm{size category}.
@@ -1311,6 +1305,23 @@ However, your muscles are not increased fully to match its new size, and your St
 
 You can cast this spell as a \glossterm{minor action}.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Word of Faith}{}}\label{spell:Word of Faith}
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Word of Faith}{Word of Faith}}
+Make an attack vs. Mental against all enemies in a \areamed radius from you.
+\hit Each target takes divine \glossterm{standard damage}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Greater Divine Judgment}{}}\label{spell:Greater Divine Judgment}
+\begin{freeability}[\nth{4}]{\hypertarget{spell:Greater Divine Judgment}{Greater Divine Judgment}}
+This spell functions like the \textit{divine judgment} spell, except that that damage increases to \glossterm{standard damage} \plus3d.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -1335,6 +1346,14 @@ This spell functions like the \textit{divine might} spell, except that you also 
 \begin{attuneability}[\nth{5}]{\hypertarget{spell:Greater Complete Mantle of Faith}{Greater Complete Mantle of Faith}}[\glossterm{Attune} (self)]
 This spell functions like the \spell{complete mantle of faith} spell, except that the bonus is equal to twice your \glossterm{power}.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Word of Faith}{}}\label{spell:Word of Faith}
+\begin{freeability}[\nth{6}]{\hypertarget{spell:Word of Faith}{Word of Faith}}
+This spell functions like the \textit{word of faith} spell, except that the damage increases to \glossterm{standard damage} \plus1d and the area increases to a \arealarge radius from you.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -1427,21 +1446,18 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Slow}{}}\label{spell:Slow}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Slow}{Slow}}[\glossterm{Temporal}]
-Make an attack vs. Mental with a \plus2 bonus to \glossterm{accuracy} against a creature within \rngmed range.
-\miss You regain the \glossterm{action point} spent to cast this spell.
+Make an attack vs. Mental against a creature within \rngmed range.
 \hit The target is \glossterm{slowed} as a \glossterm{condition}.
-\crit the target is \glossterm{decelerated} as a \glossterm{condition}.
+\crit The target is also \glossterm{decelerated} as a separate \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Mental Lag}{}}\label{spell:Mental Lag}
-\begin{freeability}[\nth{2}]{\hypertarget{spell:Mental Lag}{Mental Lag}}[\glossterm{Temporal}]
+\lowercase{\hypertarget{spell:Decelerate}{}}\label{spell:Decelerate}
+\begin{freeability}[\nth{2}]{\hypertarget{spell:Decelerate}{Decelerate}}[\glossterm{Temporal}]
 Make an attack vs. Mental against a creature within \rngmed range.
-\miss You regain the \glossterm{action point} spent to cast this spell.
-\hit The target is \glossterm{slowed} and \glossterm{dazed} as two separate \glossterm{conditions}.
-\crit the target is \glossterm{decelerated} and \glossterm{dazed} as two separate \glossterm{conditions}.
+\hit The target is \glossterm{decelerated} as a \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1464,17 +1480,6 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
-\lowercase{\hypertarget{spell:Decelerate}{}}\label{spell:Decelerate}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Decelerate}{Decelerate}}[\glossterm{Temporal}]
-Make an attack vs. Mental against a creature within \rngmed range.
-\miss You regain the \glossterm{action point} spent to cast this spell.
-\hit The target is \glossterm{decelerated} as a \glossterm{condition}.
-\crit the target is \glossterm{decelerated} twice as two separate \glossterm{conditions}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Delay Damage}{}}\label{spell:Delay Damage}
 \begin{freeability}[\nth{3}]{\hypertarget{spell:Delay Damage}{Delay Damage}}[\glossterm{Sustain} (minor), \glossterm{Temporal}]
 When you take damage, half of the damage (rounded down) is not dealt to you immediately.
@@ -1492,10 +1497,18 @@ You can cast this spell as a \glossterm{minor action}.
 \begin{attuneability}[\nth{3}]{\hypertarget{spell:Greater Haste}{Greater Haste}}[\glossterm{Attune} (target), \glossterm{Temporal}]
 Choose a willing creature within \rngmed range.
 The target gains a \plus30 foot \glossterm{magic bonus} to its \glossterm{base speed}, up to a maximum of double its \glossterm{base speed}.
-In addition, it gains a \plus2 \glossterm{magic bonus} to Reflex defense.
 
 You can cast this spell as a \glossterm{minor action}.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Mental Lag}{}}\label{spell:Mental Lag}
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Mental Lag}{Mental Lag}}[\glossterm{Temporal}]
+Make an attack vs. Mental against a creature within \rngmed range.
+\hit The target is \glossterm{immobilized} and \glossterm{dazed} as a single \glossterm{condition}.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -1643,10 +1656,9 @@ If a target is somehow brought into a standing position, it will immediately fal
 \lowercase{\hypertarget{spell:Dance}{}}\label{spell:Dance}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Dance}{Dance}}[\glossterm{Compulsion}]
 Make an attack vs. Mental against a creature within \rngmed range.
-\miss You regain the \glossterm{action point} spent to cast this spell.
 \hit As a \glossterm{condition}, the target is compelled to dance.
 It can spend a \glossterm{move action} to dance, if it is physically capable of dancing.
-At the end of each round, if the target did not dance during that round, it takes a \minus2 penalty to \glossterm{accuracy}, \glossterm{checks}, and \glossterm{defenses} as the compulsion intensifies.
+At the end of each round, if the target did not dance during that round, it takes a \minus2 penalty to \glossterm{accuracy} and Mental defense as the compulsion intensifies.
 This penalty stacks each round until the target dances, which resets the penalties to 0.
 \crit As above, except that the target must dance as a \glossterm{standard action} to reset the penalties, instead of as a move action.
 \end{freeability}
@@ -1657,9 +1669,8 @@ This penalty stacks each round until the target dances, which resets the penalti
 \lowercase{\hypertarget{spell:Stay}{}}\label{spell:Stay}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Stay}{Stay}}[\glossterm{Compulsion}]
 Make an attack vs. Mental against a creature within \rngmed range.
-\miss You regain the \glossterm{action point} spent to cast this spell.
-\hit The target falls \glossterm{prone} and is \glossterm{slowed} as a \glossterm{condition}.
-\crit The target falls prone and is \glossterm{decelerated} as a \glossterm{condition}.
+\hit The target falls \glossterm{prone} immediately. In addition, it is \glossterm{slowed} as a \glossterm{condition}.
+\crit The target falls prone immediately. In addition, it is \glossterm{decelerated} as a \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1668,9 +1679,7 @@ Make an attack vs. Mental against a creature within \rngmed range.
 \lowercase{\hypertarget{spell:Confusion}{}}\label{spell:Confusion}
 \begin{freeability}[\nth{3}]{\hypertarget{spell:Confusion}{Confusion}}[\glossterm{Compulsion}]
 Make an attack vs. Mental against a creature within \rngmed range.
-\miss You regain the \glossterm{action point} spent to cast this spell.
-\hit The target is \disoriented as a \glossterm{condition}.
-\crit The target is \confused as a \glossterm{condition}.
+\hit The target is \confused as a \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1679,7 +1688,6 @@ Make an attack vs. Mental against a creature within \rngmed range.
 \lowercase{\hypertarget{spell:Sleep}{}}\label{spell:Sleep}
 \begin{freeability}[\nth{3}]{\hypertarget{spell:Sleep}{Sleep}}[\glossterm{Compulsion}]
 Make an attack vs. Mental against a creature within \rngclose range.
-\miss You regain the \glossterm{action point} spent to cast this spell.
 \hit The target is \blinded as a \glossterm{condition}.
 \crit The target falls asleep.
 It cannot be awakened by any means while the spell lasts.
@@ -1692,25 +1700,23 @@ However, it is a \glossterm{condition}, and can be removed by effects which remo
 
 
 
-\lowercase{\hypertarget{spell:Discordant Song}{}}\label{spell:Discordant Song}
-\begin{freeability}[\nth{4}]{\hypertarget{spell:Discordant Song}{Discordant Song}}[\glossterm{Compulsion}]
-Make an attack vs. Mental against all enemies in a \areamed radius from you.
-\hit Each target is \disoriented as a \glossterm{condition}.
-\crit Each target is \confused as a \glossterm{condition}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Dominate}{}}\label{spell:Dominate}
 \begin{freeability}[\nth{4}]{\hypertarget{spell:Dominate}{Dominate}}[\glossterm{Compulsion}]
 Make an attack vs. Mental against a creature within \rngmed range.
-\miss You regain the \glossterm{action point} spent to cast this spell.
 \hit The target is \glossterm{confused} as a \glossterm{condition}.
 \crit The target is \glossterm{stunned} as a \glossterm{condition}.
 As a standard action, you can make an additional attack vs. Mental against the target as long as it remains stunned in this way and is within \rngmed range of you.
 On a hit, the target becomes stunned in the same way as an additional condition, continuing the effect even if the target removed the original condition in the same phase.
 On a critical hit, the target becomes \glossterm{dominated} by you as long as you \glossterm{attune} to this ability.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Discordant Song}{}}\label{spell:Discordant Song}
+\begin{freeability}[\nth{5}]{\hypertarget{spell:Discordant Song}{Discordant Song}}[\glossterm{Compulsion}]
+Make an attack vs. Mental against all enemies in a \areamed radius from you.
+\hit Each target is \disoriented as a \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1744,26 +1750,12 @@ This spell functions like the \textit{dance} spell, except that you gain a \plus
 \subsubsection{Spells}
 
 
-\lowercase{\hypertarget{spell:Miasma}{}}\label{spell:Miasma}
-\begin{freeability}[\nth{1}]{\hypertarget{spell:Miasma}{Miasma}}[\glossterm{Life}]
-Make an attack vs. Fortitude against all living enemies within an \areamed radius from you.
-\hit Each target is \glossterm{sickened} as a \glossterm{condition}.
-\crit Each target is \glossterm{nauseated} as a \glossterm{condition}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Sickening Decay}{}}\label{spell:Sickening Decay}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Sickening Decay}{Sickening Decay}}[\glossterm{Life}]
 Make an attack vs. Fortitude against a living creature within \rngclose range.
-\miss You regain the \glossterm{action point} spent to cast this spell.
 \hit The target is \glossterm{sickened} as a \glossterm{condition}.
 % TODO: clarify when exactly this damage is taken (should be at the end of the phase)
 In addition, it takes life \glossterm{standard damage} \minus2d when it takes a \glossterm{standard action}.
-It can only take damage in this way once per round.
-\crit The target is \glossterm{nauseated} as a \glossterm{condition}.
-In addition, it takes life \glossterm{standard damage} when it takes a \glossterm{standard action}.
 It can only take damage in this way once per round.
 \end{freeability}
 \vspace{0.25em}
@@ -1772,18 +1764,8 @@ It can only take damage in this way once per round.
 
 \lowercase{\hypertarget{spell:Pernicious Sickness}{}}\label{spell:Pernicious Sickness}
 \begin{freeability}[\nth{2}]{\hypertarget{spell:Pernicious Sickness}{Pernicious Sickness}}[\glossterm{Life}]
-Make an attack vs. Fortitude with a \plus2 bonus to \glossterm{accuracy} against a living creature within \rngmed range.
+Make an attack vs. Fortitude with a \plus2 bonus to \glossterm{accuracy} against a living creature within \rngclose range.
 \hit The target is \glossterm{sickened} as a \glossterm{condition}.
-\crit The target is \glossterm{nauseated} as a \glossterm{condition}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Bleed}{}}\label{spell:Bleed}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Bleed}{Bleed}}[\glossterm{Life}]
-This spell functions like the \spell{sickening decay} spell, except that a struck target also begins bleeding as an additional \glossterm{condition}.
-At the end of every \glossterm{action phase} in subsequent rounds, the target takes slashing \glossterm{standard damage} \minus1d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1791,7 +1773,7 @@ At the end of every \glossterm{action phase} in subsequent rounds, the target ta
 
 \lowercase{\hypertarget{spell:Corruption of Blood and Bone}{}}\label{spell:Corruption of Blood and Bone}
 \begin{freeability}[\nth{3}]{\hypertarget{spell:Corruption of Blood and Bone}{Corruption of Blood and Bone}}[\glossterm{Life}]
-This spell functions like the \spell{sickening decay} spell, except that it gains a \plus1d bonus to damage.
+This spell functions like the \spell{sickening decay} spell, except that the damage increases to \glossterm{standard damage} \minus1d.
 In addition, damage from the spell reduces the target's maximum hit points by the same amount.
 This hit point reduction is part of the same \glossterm{condition} as the spell's other effects.
 When the condition is removed, the target's maximum hit points are restored.
@@ -1800,31 +1782,28 @@ When the condition is removed, the target's maximum hit points are restored.
 
 
 
-\lowercase{\hypertarget{spell:Crippling Decay}{}}\label{spell:Crippling Decay}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Crippling Decay}{Crippling Decay}}[\glossterm{Life}]
-This spell functions like the \spell{sickening decay} spell, except that a struck target is also \glossterm{decelerated} as an additional \glossterm{condition}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Eyebite}{}}\label{spell:Eyebite}
 \begin{freeability}[\nth{3}]{\hypertarget{spell:Eyebite}{Eyebite}}[\glossterm{Life}]
 Make an attack vs. Fortitude against a living creature within \rngclose range.
-\miss You regain the \glossterm{action point} spent to cast this spell.
 \hit The target is \glossterm{blinded} as a \glossterm{condition}.
-\crit The target is \glossterm{blinded} twice by two separate \glossterm{conditions}.
-Both conditions must be removed before the target can see again.
 \end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Greater Miasma}{}}\label{spell:Greater Miasma}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Greater Miasma}{Greater Miasma}}[\glossterm{Life}]
+\lowercase{\hypertarget{spell:Miasma}{}}\label{spell:Miasma}
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Miasma}{Miasma}}[\glossterm{Life}]
 Make an attack vs. Fortitude against all living enemies within an \areamed radius from you.
-\hit Each target is \glossterm{nauseated} as a \glossterm{condition}.
-\crit Each target is \glossterm{nauseated} twice as two separate \glossterm{conditions}.
+\hit Each target is \glossterm{sickened} as a \glossterm{condition}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Bleed}{}}\label{spell:Bleed}
+\begin{freeability}[\nth{4}]{\hypertarget{spell:Bleed}{Bleed}}[\glossterm{Life}]
+This spell functions like the \spell{sickening decay} spell, except that a struck target also begins bleeding as an additional \glossterm{condition}.
+At the end of every \glossterm{action phase} in subsequent rounds, the target takes slashing \glossterm{standard damage} \minus2d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1834,7 +1813,25 @@ Make an attack vs. Fortitude against all living enemies within an \areamed radiu
 \begin{freeability}[\nth{4}]{\hypertarget{spell:Curse of Decay}{Curse of Decay}}[\glossterm{Curse}]
 This spell functions like the \spell{sickening decay} spell, except that the attack is made against Mental defense instead of Fortitude defense.
 In addition, if the attack critically hits, the spell's effect becomes a permanent curse.
-It is no longer a condition, and cannot be removed by abilities that remove conditions.
+It is no longer a \glossterm{condition}, and cannot be removed by abilities that remove conditions.
+It can be removed by abilities that can remove curses.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Crippling Decay}{}}\label{spell:Crippling Decay}
+\begin{freeability}[\nth{5}]{\hypertarget{spell:Crippling Decay}{Crippling Decay}}[\glossterm{Life}]
+This spell functions like the \spell{sickening decay} spell, except that a struck target is also \glossterm{immobilized} as an additional \glossterm{condition}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Greater Miasma}{}}\label{spell:Greater Miasma}
+\begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Miasma}{Greater Miasma}}[\glossterm{Life}]
+Make an attack vs. Fortitude against all living enemies within an \areamed radius from you.
+\hit Each target is \glossterm{nauseated} as a \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1890,7 +1887,7 @@ This ritual takes one hour to perform.
 \lowercase{\hypertarget{spell:Cone of Cold}{}}\label{spell:Cone of Cold}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Cone of Cold}{Cone of Cold}}[\glossterm{Cold}]
 Make an attack vs. Fortitude against everything in a \areamed cone from you.
-\hit Each target takes cold \glossterm{standard damage}, and is \glossterm{fatigued} as a \glossterm{condition}.
+\hit Each target takes cold \glossterm{standard damage}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1899,7 +1896,7 @@ Make an attack vs. Fortitude against everything in a \areamed cone from you.
 \lowercase{\hypertarget{spell:Frostbite}{}}\label{spell:Frostbite}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Frostbite}{Frostbite}}[\glossterm{Cold}]
 Make an attack vs. Fortitude against one creature or object within \rngmed range.
-\hit The target takes cold \glossterm{standard damage} \plus2d.
+\hit The target takes cold \glossterm{standard damage} \minus2d and is \glossterm{slowed} as a \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1926,7 +1923,8 @@ If the item loses all of its hit points, this effect is \glossterm{dismissed}.
 
 \lowercase{\hypertarget{spell:Blizzard}{}}\label{spell:Blizzard}
 \begin{freeability}[\nth{2}]{\hypertarget{spell:Blizzard}{Blizzard}}[\glossterm{Cold}]
-This spell functions like the \spell{cone of cold} spell, except that the area becomes a \areamed radius from you.
+Make an attack vs. Fortitude against everything in a \areamed radius from you.
+\hit Each target takes cold \glossterm{standard damage}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1954,14 +1952,7 @@ In addition, you can create heavy body armor.
 \lowercase{\hypertarget{spell:Deep Freeze}{}}\label{spell:Deep Freeze}
 \begin{freeability}[\nth{3}]{\hypertarget{spell:Deep Freeze}{Deep Freeze}}[\glossterm{Cold}]
 This spell functions like the \spell{cone of cold} spell, except that it attacks Reflex defense instead of Fortitude defense.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Freezing Cone}{}}\label{spell:Freezing Cone}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Freezing Cone}{Freezing Cone}}[\glossterm{Cold}]
-This spell functions like the \spell{cone of cold} spell, except that you gain a \plus1d bonus to damage and each struck target is \glossterm{exhausted} instead of \glossterm{fatigued}.
+In addition, it only affects creatures of Large size or smaller.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1975,9 +1966,9 @@ This spell functions like the \textit{cold snap} spell, except that the spell ga
 
 
 
-\lowercase{\hypertarget{spell:Greater Frostbite}{}}\label{spell:Greater Frostbite}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Greater Frostbite}{Greater Frostbite}}[\glossterm{Cold}]
-This spell functions like the \spell{frostbite} spell, except that a struck target is also \glossterm{exhausted} as a \glossterm{condition}.
+\lowercase{\hypertarget{spell:Greater Cone of Cold}{}}\label{spell:Greater Cone of Cold}
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Greater Cone of Cold}{Greater Cone of Cold}}[\glossterm{Cold}]
+This spell functions like the \spell{cone of cold} spell, except it affects everything in a \arealarge cone from you.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1992,17 +1983,25 @@ A weapon gains a \plus1d \glossterm{magic bonus} to damage with \glossterm{strik
 
 
 
-\lowercase{\hypertarget{spell:Greater Cone of Cold}{}}\label{spell:Greater Cone of Cold}
-\begin{freeability}[\nth{4}]{\hypertarget{spell:Greater Cone of Cold}{Greater Cone of Cold}}[\glossterm{Cold}]
-This spell functions like the \spell{cone of cold} spell, except it affects everything in a \arealarge cone from you and you gain a \plus1d bonus to damage.
+\lowercase{\hypertarget{spell:Freezing Cone}{}}\label{spell:Freezing Cone}
+\begin{freeability}[\nth{4}]{\hypertarget{spell:Freezing Cone}{Freezing Cone}}[\glossterm{Cold}]
+This spell functions like the \spell{cone of cold} spell, except that each struck target is also \glossterm{slowed} as a \glossterm{condition}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Greater Frostbite}{}}\label{spell:Greater Frostbite}
+\begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Frostbite}{Greater Frostbite}}[\glossterm{Cold}]
+This spell functions like the \spell{frostbite} spell, except that the target is \glossterm{decelerated} instead of \glossterm{slowed}.
 \end{freeability}
 \vspace{0.25em}
 
 
 
 \lowercase{\hypertarget{spell:Supreme Cone of Cold}{}}\label{spell:Supreme Cone of Cold}
-\begin{freeability}[\nth{7}]{\hypertarget{spell:Supreme Cone of Cold}{Supreme Cone of Cold}}[\glossterm{Cold}]
-This spell functions like the \spell{cone of cold} spell, except it affects everything in a \areahuge cone from you and you gain a \plus2d bonus to damage.
+\begin{freeability}[\nth{5}]{\hypertarget{spell:Supreme Cone of Cold}{Supreme Cone of Cold}}[\glossterm{Cold}]
+This spell functions like the \spell{cone of cold} spell, except it affects everything in a \areahuge cone from you.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2036,9 +2035,8 @@ The target's mood improves and it feels more cheerful.
 \lowercase{\hypertarget{spell:Agony}{}}\label{spell:Agony}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Agony}{Agony}}[\glossterm{Emotion}]
 Make an attack vs. Mental against a creature within \rngmed range.
-\miss You regain the \glossterm{action point} spent to cast this spell.
 \hit The target is inflicted with agonizing pain as a \glossterm{condition}.
-It suffers a \minus2 penalty to Mental defense.
+It takes a \minus2 penalty to Mental defense.
 % Does this need to clarify that it takes effect in the round the spell was cast?
 In addition, at the end of each \glossterm{delayed action phase}, if the target took damage that round, it takes \glossterm{standard damage} \minus1d.
 This damage is of all damage types that the target was damaged by during that round.
@@ -2052,28 +2050,15 @@ This damage is of all damage types that the target was damaged by during that ro
 Make an attack vs. Mental with a \plus2 bonus to \glossterm{accuracy} against a creature within \rngmed range.
 \hit As a \glossterm{condition}, the target is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
 For example, it could make a \glossterm{strike} or cast an offensive spell, but it could not heal itself or summon an ally.
-This cannot prevent it from using the \textit{cleanse} ability.
 \end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Fearsome Aura}{}}\label{spell:Fearsome Aura}
-\begin{attuneability}[\nth{1}]{\hypertarget{spell:Fearsome Aura}{Fearsome Aura}}[\glossterm{Attune} (self), \glossterm{Emotion}]
-You radiate an aura of fear in a \arealarge radius \glossterm{emanation}.
-When you attune to this spell, and at the end of each \glossterm{action phase} in subsequent rounds, make an attack vs. Mental against all creatures in the area that you did not already attack with this spell.
-\hit Each target is \glossterm{shaken} by you as a \glossterm{condition}.
-\end{attuneability}
 \vspace{0.25em}
 
 
 
 \lowercase{\hypertarget{spell:Terror}{}}\label{spell:Terror}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Terror}{Terror}}[\glossterm{Emotion}]
-Make an attack vs. Mental against a creature within \rngmed range.
-\miss You regain the \glossterm{action point} spent to cast this spell.
+Make an attack vs. Mental against a creature within \rngclose range.
 \hit The target is \frightened by you as a \glossterm{condition}.
-\crit The target is \panicked by you as a \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2087,6 +2072,16 @@ If the target thinks that you or your allies are threatening it, you take a \min
 Any act by you or your apparent allies that threatens or damages the \spell{charmed} person breaks the effect.
 This effect is automatically \glossterm{dismissed} after one hour.
 \crit As above, except that the effect is not automatically dismissed.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Fearsome Aura}{}}\label{spell:Fearsome Aura}
+\begin{attuneability}[\nth{2}]{\hypertarget{spell:Fearsome Aura}{Fearsome Aura}}[\glossterm{Attune} (self), \glossterm{Emotion}]
+You radiate an aura of fear in a \areamed radius \glossterm{emanation}.
+When you attune to this spell, and at the end of each \glossterm{action phase} in subsequent rounds, make an attack vs. Mental against all enemies in the area that you did not already attack with this spell.
+\hit Each target is \glossterm{shaken} by you as a \glossterm{condition}.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -2129,19 +2124,35 @@ This spell functions like the \spell{terror} spell, except that you gain a \plus
 
 
 
-\lowercase{\hypertarget{spell:Mass Enrage}{}}\label{spell:Mass Enrage}
-\begin{freeability}[\nth{4}]{\hypertarget{spell:Mass Enrage}{Mass Enrage}}[\glossterm{Emotion}]
-This spell functions like the \spell{enrage} spell, except that it affects all enemies within a \areamed radius.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Amnesiac Charm}{}}\label{spell:Amnesiac Charm}
 \begin{attuneability}[\nth{5}]{\hypertarget{spell:Amnesiac Charm}{Amnesiac Charm}}[\glossterm{Attune} (self), \glossterm{Emotion}, \glossterm{Subtle}]
 This spell functions like the \spell{charm} spell, except that when the spell ends, an affected target forgets all events that transpired during the spell's duration.
 It becomes aware of its surroundings as if waking up from a daydream.
 The target is not directly aware of any magical influence on its mind, though unusually paranoid or perceptive creatures may deduce that their minds were affected.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Greater Terror}{}}\label{spell:Greater Terror}
+\begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Terror}{Greater Terror}}[\glossterm{Emotion}]
+This spell functions like the \spell{terror} spell, except that the target is \glossterm{panicked} instead of \glossterm{frightened}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Mass Enrage}{}}\label{spell:Mass Enrage}
+\begin{freeability}[\nth{5}]{\hypertarget{spell:Mass Enrage}{Mass Enrage}}[\glossterm{Emotion}]
+This spell functions like the \spell{enrage} spell, except that it affects all enemies in a \areamed radius within \rngmed range.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Supreme Fearsome Aura}{}}\label{spell:Supreme Fearsome Aura}
+\begin{attuneability}[\nth{6}]{\hypertarget{spell:Supreme Fearsome Aura}{Supreme Fearsome Aura}}[\glossterm{Attune} (self), \glossterm{Emotion}]
+This spell functions like the \spell{greater fearsome aura} spell, except that the area increases to a \arealarge radius.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -2169,7 +2180,7 @@ The target is not directly aware of any magical influence on its mind, though un
 
 \lowercase{\hypertarget{spell:Lightning Bolt}{}}\label{spell:Lightning Bolt}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Lightning Bolt}{Lightning Bolt}}[\glossterm{Electricity}]
-Make an attack vs. Fortitude against everything in a \arealarge, 10 ft.\ wide line from you.
+Make an attack vs. Fortitude against everything in a \areamed, 10 ft.\ wide line from you.
 \hit Each target takes electricity \glossterm{standard damage}.
 \end{freeability}
 \vspace{0.25em}
@@ -2178,9 +2189,9 @@ Make an attack vs. Fortitude against everything in a \arealarge, 10 ft.\ wide li
 
 \lowercase{\hypertarget{spell:Shocking Grasp}{}}\label{spell:Shocking Grasp}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Shocking Grasp}{Shocking Grasp}}[\glossterm{Electricity}]
-Make an attack vs. Fortitude against one creature or object you \glossterm{threaten}.
+Make an attack vs. Fortitude against a creature or object you \glossterm{threaten}.
 You gain a \plus4 bonus to \glossterm{concentration} checks to cast this spell.
-\hit The target takes electricity \glossterm{standard damage} \plus2d.
+\hit The target takes electricity \glossterm{standard damage} \plus1d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2191,7 +2202,7 @@ You gain a \plus4 bonus to \glossterm{concentration} checks to cast this spell.
 Make an attack vs. Fortitude against everything in a \arealarge, 5 ft.\ wide vertical line within \rngmed range.
 If you are outdoors in cloudy or stormy weather, you gain a \plus2 bonus to \glossterm{accuracy} with the attack.
 If this spell has its area increased, such as with the Widened \glossterm{augment}, only the length of the line increases.
-\hit Each target takes takes electricity \glossterm{standard damage} \plus2d.
+\hit Each target takes takes electricity \glossterm{standard damage} \plus1d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2202,14 +2213,6 @@ If this spell has its area increased, such as with the Widened \glossterm{augmen
 This spell functions like the \spell{lightning bolt} spell, except that it gains the \glossterm{Sustain} (standard) tag.
 The area affected by the spell becomes a \glossterm{zone} that is continuously filled with electrical pulses.
 At the end of each \glossterm{action phase} in subsequent rounds, the attack is repeated in that area.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Magnetic}{}}\label{spell:Magnetic}
-\begin{freeability}[\nth{2}]{\hypertarget{spell:Magnetic}{Magnetic}}[\glossterm{Electricity}]
-This spell functions like the \spell{lightning bolt} spell, except that you gain a \plus2 bonus to accuracy against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2242,6 +2245,14 @@ This spell functions like the \textit{dynamo} spell, except that the spell gains
 
 
 
+\lowercase{\hypertarget{spell:Greater Lightning Bolt}{}}\label{spell:Greater Lightning Bolt}
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Greater Lightning Bolt}{Greater Lightning Bolt}}[\glossterm{Electricity}]
+This spell functions like the \spell{lightning bolt} spell, except that it targets everything in a \arealarge, 15 ft.\ wide line from you.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Magnetic Blade}{}}\label{spell:Magnetic Blade}
 \begin{attuneability}[\nth{3}]{\hypertarget{spell:Magnetic Blade}{Magnetic Blade}}[\glossterm{Attune} (target), \glossterm{Electricity}]
 Choose a willing creature within \rngclose range.
@@ -2253,9 +2264,9 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
-\lowercase{\hypertarget{spell:Shocking Bolt}{}}\label{spell:Shocking Bolt}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Shocking Bolt}{Shocking Bolt}}[\glossterm{Electricity}]
-This spell functions like the \spell{lightning bolt} spell, except that each struck target is also \glossterm{dazed} as a \glossterm{condition}.
+\lowercase{\hypertarget{spell:Magnetic Bolt}{}}\label{spell:Magnetic Bolt}
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Magnetic Bolt}{Magnetic Bolt}}[\glossterm{Electricity}]
+This spell functions like the \spell{lightning bolt} spell, except that you gain a \plus2 bonus to accuracy against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2264,9 +2275,17 @@ This spell functions like the \spell{lightning bolt} spell, except that each str
 \lowercase{\hypertarget{spell:Chain Lightning}{}}\label{spell:Chain Lightning}
 \begin{freeability}[\nth{4}]{\hypertarget{spell:Chain Lightning}{Chain Lightning}}[\glossterm{Electricity}]
 Make an attack vs. Fortitude against one creature or object within \rngmed range.
-\hit The target takes electricity \glossterm{standard damage} \plus3d.
-In addition, make an additional attack vs. Fortitude against any number of creatures in a \areamed radius from the struck target.
-\hit Each secondary target takes electricity \glossterm{standard damage} \plus1d.
+\hit The target takes electricity \glossterm{standard damage} \plus2d.
+In addition, make an additional attack vs. Fortitude against any number of creatures in a \areasmall radius from the struck target.
+\hit Each secondary target takes electricity \glossterm{standard damage}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Shocking Bolt}{}}\label{spell:Shocking Bolt}
+\begin{freeability}[\nth{4}]{\hypertarget{spell:Shocking Bolt}{Shocking Bolt}}[\glossterm{Electricity}]
+This spell functions like the \spell{lightning bolt} spell, except that each struck target is also \glossterm{dazed} as a \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2276,14 +2295,6 @@ In addition, make an additional attack vs. Fortitude against any number of creat
 \begin{attuneability}[\nth{6}]{\hypertarget{spell:Greater Magnetic Blade}{Greater Magnetic Blade}}[\glossterm{Attune} (self), \glossterm{Electricity}]
 This spell functions like the \spell{magnetic blade} spell, except that the bonus is increased to \plus3.
 \end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Stunning Bolt}{}}\label{spell:Stunning Bolt}
-\begin{freeability}[\nth{6}]{\hypertarget{spell:Stunning Bolt}{Stunning Bolt}}[\glossterm{Electricity}]
-This spell functions like the \spell{lightning bolt} spell, except that each struck target is also \glossterm{stunned} as a \glossterm{condition}.
-\end{freeability}
 \vspace{0.25em}
 
 
@@ -2317,7 +2328,7 @@ It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as 
 \lowercase{\hypertarget{spell:Acid Orb}{}}\label{spell:Acid Orb}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Acid Orb}{Acid Orb}}[\glossterm{Acid}, \glossterm{Manifestation}]
 Make an attack vs. Armor against one creature or object within \rngmed range.
-\hit The target takes acid \glossterm{standard damage} \plus2d.
+\hit The target takes acid \glossterm{standard damage} \plus1d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2349,9 +2360,9 @@ If you create body armor, you can create it already equipped to a willing creatu
 \begin{freeability}[\nth{2}]{\hypertarget{spell:Poison}{Poison}}[\glossterm{Manifestation}, \glossterm{Poison}]
 Make an attack vs. Fortitude against a creature within \rngmed range.
 
-\hit The target takes poison \glossterm{standard damage} \plus1d and is poisoned as a \glossterm{condition}.
+\hit The target takes poison \glossterm{standard damage} \minus1d and is poisoned as a \glossterm{condition}.
 If the target is poisoned, repeat this attack at the end of each \glossterm{action phase} after the first round.
-On the second hit, the target takes poison \glossterm{standard damage} and becomes \glossterm{sickened}.
+On the second hit, the target takes poison \glossterm{standard damage} \minus1d and becomes \glossterm{sickened}.
 On the third hit, the target takes poison \glossterm{standard damage} \plus2d and becomes \glossterm{nauseated} instead of sickened.
 After the third hit, no further attacks are made, but the target remains nauseated until the condition is removed.
 \end{freeability}
@@ -2374,7 +2385,7 @@ In addition, you make an attack vs. Reflex against all Large or smaller creature
 
 \lowercase{\hypertarget{spell:Corrosive Orb}{}}\label{spell:Corrosive Orb}
 \begin{freeability}[\nth{3}]{\hypertarget{spell:Corrosive Orb}{Corrosive Orb}}[\glossterm{Acid}, \glossterm{Manifestation}]
-This spell functions like the \spell{acid orb} spell, except that you gain a \plus1d bonus to damage and it deals double damage to objects.
+This spell functions like the \spell{acid orb} spell, except that the damage increases to \glossterm{standard damage} \plus2d and it deals double damage to objects.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2383,7 +2394,7 @@ This spell functions like the \spell{acid orb} spell, except that you gain a \pl
 \lowercase{\hypertarget{spell:Lingering Acid Orb}{}}\label{spell:Lingering Acid Orb}
 \begin{freeability}[\nth{3}]{\hypertarget{spell:Lingering Acid Orb}{Lingering Acid Orb}}[\glossterm{Acid}, \glossterm{Manifestation}]
 This spell functions like the \spell{acid orb} spell, except that the acid lingers on a struck target.
-At the end of each \glossterm{action phase} in subsequent rounds, the target takes acid \glossterm{standard damage}.
+At the end of each \glossterm{action phase} in subsequent rounds, the target takes acid \glossterm{standard damage} \minus1d.
 This is a \glossterm{condition}, and lasts until removed.
 \end{freeability}
 \vspace{0.25em}
@@ -2393,7 +2404,7 @@ This is a \glossterm{condition}, and lasts until removed.
 \lowercase{\hypertarget{spell:Meteor}{}}\label{spell:Meteor}
 \begin{freeability}[\nth{3}]{\hypertarget{spell:Meteor}{Meteor}}[\glossterm{Manifestation}]
 You create a meteor in midair within \rngmed range that falls to the ground, crushing foes in its path.
-The meteor takes up a \areamed radius, and must be created in unoccupied space.
+The meteor takes up a \areasmall radius, and must be created in unoccupied space.
 After being summoned, it falls up to 100 feet before disappearing.
 Make an attack vs. Armor against everything in its path.
 \hit Each target takes bludgeoning and fire \glossterm{standard damage}.
@@ -2412,7 +2423,7 @@ In addition, the webs are no longer \glossterm{vulnerable} to fire damage.
 
 
 \lowercase{\hypertarget{spell:Meteor Storm}{}}\label{spell:Meteor Storm}
-\begin{freeability}[\nth{5}]{\hypertarget{spell:Meteor Storm}{Meteor Storm}}[\glossterm{Manifestation}]
+\begin{freeability}[\nth{6}]{\hypertarget{spell:Meteor Storm}{Meteor Storm}}[\glossterm{Manifestation}]
 This spell functions like the \textit{meteor} spell, except that you can create up to five different meteors within \rnglong range.
 The areas affected by two different meteors cannot overlap.
 If one of the meteors is created in an invalid area, that meteor is not created, but the others are created and dealt their damage normally.
@@ -2624,7 +2635,6 @@ A burst of light light fills a \areasmall radius within \rngmed range of you.
 Bright light illuminates a 100 foot radius around the area until the end of the round.
 Make an attack vs. Fortitude against all creatures in the source area.
 \hit Each target is \dazzled as a \glossterm{condition}.
-\crit As above, and target is also \dazed as an additional \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2637,6 +2647,7 @@ This causes the struck target to radiate bright light in a 5 foot radius, as a c
 The lights impose a \minus10 penalty to the Stealth skill.
 In addition, they reveal the outline of the creatures if they become \glossterm{invisible}.
 This allows observers to see their location, though not to see them perfectly.
+This effect is part of the same \glossterm{condition} as the effect of the \textit{flare}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2655,7 +2666,7 @@ At the end of each \glossterm{action phase} in subsequent rounds, the attack is 
 \lowercase{\hypertarget{spell:Flashbang}{}}\label{spell:Flashbang}
 \begin{freeability}[\nth{3}]{\hypertarget{spell:Flashbang}{Flashbang}}[\glossterm{Light}, \glossterm{Sensation}, \glossterm{Visual}]
 This spell functions like the \spell{flare} spell, except that an intense sound accompanies the flash of light caused by the spell.
-Each struck target is also \glossterm{deafened} as an additional \glossterm{condition}.
+Each struck target is also \glossterm{deafened} as part of the same \glossterm{condition}.
 This spell gains the \glossterm{Auditory} tag in addition to the tags from the \spell{flare} spell.
 \end{freeability}
 \vspace{0.25em}
@@ -2664,17 +2675,8 @@ This spell gains the \glossterm{Auditory} tag in addition to the tags from the \
 
 \lowercase{\hypertarget{spell:Pillars of Light}{}}\label{spell:Pillars of Light}
 \begin{freeability}[\nth{3}]{\hypertarget{spell:Pillars of Light}{Pillars of Light}}[\glossterm{Light}, \glossterm{Sensation}, \glossterm{Visual}]
-This spell functions like the \spell{flare} spell, except that you gain a \plus1 bonus to \glossterm{accuracy}.
-In addition, it affects up to five different \areasmall radius, 50 ft. tall cylinders within range.
+This spell functions like the \spell{flare} spell, except that it affects up to five different \areasmall radius, 50 ft. tall cylinders within range.
 The areas can overlap, but targets in the overlapping area are only affected once.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Blinding}{}}\label{spell:Blinding}
-\begin{freeability}[\nth{4}]{\hypertarget{spell:Blinding}{Blinding}}[\glossterm{Light}, \glossterm{Sensation}, \glossterm{Visual}]
-This spell functions like the \spell{flare} spell, except that each struck target is \glossterm{blinded} instead of \glossterm{dazzled}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2685,8 +2687,8 @@ This spell functions like the \spell{flare} spell, except that each struck targe
 This spell creates a brilliant, rapidly shifting rainbow of lights in a \areasmall radius within \rngmed range of you.
 They illuminate a 100 foot radius around the area with bright light until the end of the round.
 Make an attack vs. Mental against all creatures in the source area.
-\hit Each target is \disoriented as a \glossterm{condition}.
-\crit Each target is \confused as a \glossterm{condition}.
+\hit Each target is \dazed as a \glossterm{condition}.
+\crit Each target is \disoriented as a \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2697,6 +2699,14 @@ Make an attack vs. Mental against all creatures in the source area.
 This spell functions like the \spell{flare} spell, except that you gain a \plus2 bonus to \glossterm{accuracy}.
 In addition, the light is treated as being natural sunlight for the purpose of abilities.
 This can allow it to destroy vampires and have similar effects.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Blinding Flare}{}}\label{spell:Blinding Flare}
+\begin{freeability}[\nth{6}]{\hypertarget{spell:Blinding Flare}{Blinding Flare}}[\glossterm{Light}, \glossterm{Sensation}, \glossterm{Visual}]
+This spell functions like the \spell{flare} spell, except that each struck target is \glossterm{blinded} instead of \glossterm{dazzled}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2765,7 +2775,7 @@ Each time you use this ability, you can accomplish work that would take up to fi
 \lowercase{\hypertarget{spell:Baleful Polymorph}{}}\label{spell:Baleful Polymorph}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Baleful Polymorph}{Baleful Polymorph}}[\glossterm{Shaping}]
 Make an attack vs. Fortitude against a creature within \rngmed range.
-\hit The target takes physical \glossterm{standard damage} \plus2d.
+\hit The target takes physical \glossterm{standard damage} \plus1d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2859,7 +2869,7 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Greater Baleful Polymorph}{}}\label{spell:Greater Baleful Polymorph}
 \begin{freeability}[\nth{4}]{\hypertarget{spell:Greater Baleful Polymorph}{Greater Baleful Polymorph}}[\glossterm{Shaping}]
-This spell functions like the \spell{baleful polymorph} spell, except that you gain a \plus1 bonus to \glossterm{accuracy} and a struck target is \glossterm{sickened} as a \glossterm{condition}.
+This spell functions like the \spell{baleful polymorph} spell, except that a struck target is \glossterm{sickened} as a \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2885,7 +2895,7 @@ A the end of each round, the target heals hit points equal to your \glossterm{po
 \lowercase{\hypertarget{spell:Disintegrate}{}}\label{spell:Disintegrate}
 \begin{freeability}[\nth{5}]{\hypertarget{spell:Disintegrate}{Disintegrate}}[\glossterm{Shaping}]
 Make an attack vs. Fortitude against a creature within \rngmed range.
-\hit The target takes physical \glossterm{standard damage} \plus4d.
+\hit The target takes physical \glossterm{standard damage} \plus3d.
 In addition, if the target has no hit points remaining, it dies.
 Its body is completely disintegrated, leaving behind only a pinch of fine dust.
 Its equipment is unaffected.
@@ -2910,6 +2920,14 @@ This spell functions like the \textit{stoneskin} spell, except that the bonus is
 
 
 
+\lowercase{\hypertarget{spell:Supreme Baleful Polymorph}{}}\label{spell:Supreme Baleful Polymorph}
+\begin{freeability}[\nth{6}]{\hypertarget{spell:Supreme Baleful Polymorph}{Supreme Baleful Polymorph}}[\glossterm{Shaping}]
+This spell functions like the \spell{baleful polymorph} spell, except that a struck target is \glossterm{nauseated} as a \glossterm{condition}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Enlarge, Supreme}{}}\label{spell:Enlarge, Supreme}
 \begin{attuneability}[\nth{7}]{\hypertarget{spell:Enlarge, Supreme}{Enlarge, Supreme}}[\glossterm{Attune} (target), \glossterm{Shaping}, \glossterm{Sizing}]
 This spell functions like the \spell{enlarge} spell, except that the target's size is increased by two size categories.
@@ -2923,14 +2941,6 @@ It gains a \plus2 \glossterm{magic bonus} to Strength to partially match its new
 \begin{attuneability}[\nth{7}]{\hypertarget{spell:Greater Regeneration}{Greater Regeneration}}[\glossterm{Attune} (target)]
 This spell functions like the \textit{regeneration} spell, except that the healing is equal to twice your \glossterm{power}.
 \end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Supreme Baleful Polymorph}{}}\label{spell:Supreme Baleful Polymorph}
-\begin{freeability}[\nth{7}]{\hypertarget{spell:Supreme Baleful Polymorph}{Supreme Baleful Polymorph}}[\glossterm{Shaping}]
-This spell functions like the \spell{baleful polymorph} spell, except that you gain a \plus2 bonus to \glossterm{accuracy} and a struck target is \glossterm{nauseated} as a \glossterm{condition}.
-\end{freeability}
 \vspace{0.25em}
 
 
@@ -3025,8 +3035,8 @@ It can only be learned with the nature \glossterm{magic source}.
 
 
 
-\lowercase{\hypertarget{spell:Greater Enduring Fortify}{}}\label{spell:Greater Enduring Fortify}
-\begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Enduring Fortify}{Greater Enduring Fortify}}
+\lowercase{\hypertarget{spell:Enduring Greater Fortify}{}}\label{spell:Enduring Greater Fortify}
+\begin{freeability}[\nth{5}]{\hypertarget{spell:Enduring Greater Fortify}{Enduring Greater Fortify}}
 This ritual functions like the \spell{greater fortify} ritual, except that the effect lasts for one hundred years.
 \end{freeability}
 \vspace{0.25em}
@@ -3076,47 +3086,28 @@ This effect lasts until you use it again or until you \glossterm{dismiss} it as 
 \subsubsection{Spells}
 
 
+\lowercase{\hypertarget{spell:Burning Hands}{}}\label{spell:Burning Hands}
+\begin{freeability}[\nth{1}]{\hypertarget{spell:Burning Hands}{Burning Hands}}[\glossterm{Fire}]
+Make an attack vs. Armor against everything in a \areamed cone from you.
+\hit Each target takes fire \glossterm{standard damage}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Firebolt}{}}\label{spell:Firebolt}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Firebolt}{Firebolt}}[\glossterm{Fire}]
 Make an attack vs. Armor against one creature within \rngmed range.
-\hit The target takes fire \glossterm{standard damage} \plus2d.
+\hit The target takes fire \glossterm{standard damage} \plus1d.
 \end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Fireburst}{}}\label{spell:Fireburst}
-\begin{freeability}[\nth{1}]{\hypertarget{spell:Fireburst}{Fireburst}}[\glossterm{Fire}]
+\lowercase{\hypertarget{spell:Fireball}{}}\label{spell:Fireball}
+\begin{freeability}[\nth{2}]{\hypertarget{spell:Fireball}{Fireball}}[\glossterm{Fire}]
 Make an attack vs. Armor against everything in a \areasmall radius within \rngclose range.
 \hit Each target takes fire \glossterm{standard damage}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Blast Furnace}{}}\label{spell:Blast Furnace}
-\begin{freeability}[\nth{2}]{\hypertarget{spell:Blast Furnace}{Blast Furnace}}[\glossterm{Fire}]
-This spell functions like the \spell{fireburst} spell, except that it gains the \glossterm{Sustain} (standard) tag.
-The area affected by the spell becomes a \glossterm{zone} that is continuously engulfed in flames.
-At the end of each \glossterm{action phase} in subsequent rounds, the attack is repeated in that area.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Burning Hands}{}}\label{spell:Burning Hands}
-\begin{freeability}[\nth{2}]{\hypertarget{spell:Burning Hands}{Burning Hands}}[\glossterm{Fire}]
-Make an attack vs. Armor against everything in a \arealarge cone from you.
-\hit Each target takes fire \glossterm{standard damage}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Fearsome Flame}{}}\label{spell:Fearsome Flame}
-\begin{freeability}[\nth{2}]{\hypertarget{spell:Fearsome Flame}{Fearsome Flame}}[\glossterm{Emotion}, \glossterm{Fire}]
-This spell functions like the \spell{fireburst} spell, except that the attack result is also compared to each target's Mental defense.
-\hit Each target is \glossterm{shaken} by you as a \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3126,7 +3117,7 @@ This spell functions like the \spell{fireburst} spell, except that the attack re
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Flame Blade}{Flame Blade}}[\glossterm{Attune} (target), \glossterm{Fire}]
 Choose a willing creature within \rngclose range.
 % Is this clear enough at not stacking with magic bonuses intrinsic to the creature?
-Weapons wielded by the target gain a \plus1d \glossterm{magic bonus} to damage with \glossterm{strikes}.
+Weapons wielded by the target gain a \plus2 \glossterm{magic bonus} to \glossterm{power} with \glossterm{strikes}.
 In addition, all damage dealt with strikes using its weapons becomes fire damage in addition to the attack's normal damage types.
 
 You can cast this spell as a \glossterm{minor action}.
@@ -3135,9 +3126,37 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
+\lowercase{\hypertarget{spell:Flame Serpent}{}}\label{spell:Flame Serpent}
+\begin{freeability}[\nth{2}]{\hypertarget{spell:Flame Serpent}{Flame Serpent}}[\glossterm{Fire}]
+Make an attack vs. Armor against everything in a \areamed, 5 ft.\ wide shapeable line within \rngmed range.
+\hit Each target takes fire \glossterm{standard damage}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Inferno}{}}\label{spell:Inferno}
+\begin{freeability}[\nth{2}]{\hypertarget{spell:Inferno}{Inferno}}[\glossterm{Fire}]
+Make an attack vs. Armor against everything in a \areamed radius from you.
+\hit Each target takes fire \glossterm{standard damage}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Blast Furnace}{}}\label{spell:Blast Furnace}
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Blast Furnace}{Blast Furnace}}[\glossterm{Fire}]
+This spell functions like the \spell{fireball} spell, except that it gains the \glossterm{Sustain} (standard) tag.
+The area affected by the spell becomes a \glossterm{zone} that is continuously engulfed in flames.
+At the end of each \glossterm{action phase} in subsequent rounds, the attack is repeated in that area.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Ignition}{}}\label{spell:Ignition}
-\begin{freeability}[\nth{2}]{\hypertarget{spell:Ignition}{Ignition}}[\glossterm{Fire}]
-This spell functions like the \spell{fireburst} spell, except that each struck target is also \glossterm{ignited} as a \glossterm{condition}.
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Ignition}{Ignition}}[\glossterm{Fire}]
+This spell functions like the \spell{firebolt} spell, except that a struck target is also \glossterm{ignited} as a \glossterm{condition}.
 This condition can be removed if the target makes a \glossterm{DR} 10 Dexterity check as a \glossterm{move action} to put out the flames.
 Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this check.
 \end{freeability}
@@ -3145,8 +3164,16 @@ Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this c
 
 
 
+\lowercase{\hypertarget{spell:Superheated Fireball}{}}\label{spell:Superheated Fireball}
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Superheated Fireball}{Superheated Fireball}}[\glossterm{Fire}]
+This spell functions like the \spell{fireball} spell, except that it attacks Fortitude defense instead of Armor defense.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Wall of Fire}{}}\label{spell:Wall of Fire}
-\begin{attuneability}[\nth{2}]{\hypertarget{spell:Wall of Fire}{Wall of Fire}}[\glossterm{Attune} (self), \glossterm{Fire}]
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Wall of Fire}{Wall of Fire}}[\glossterm{Fire}, \glossterm{Sustain} (minor)]
 You create a wall of fire in a 10 ft.\ high, \arealarge line within \rngmed range.
 The flames and heat make it diffcult to see through the wall, granting \glossterm{concealment} to targets on the opposite side of the wall.
 When a creature passes through the wall, you make an attack vs. Armor against that creature.
@@ -3155,49 +3182,6 @@ You can only make an attack in this way against a given creature once per \gloss
 
 Each five-foot square of wall has hit points equal to twice your \glossterm{power}, and all of its defenses are 0.
 It is immune to most forms of attack, but it can be destroyed by \glossterm{cold damage} and similar effects that can destroy water.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Fireball}{}}\label{spell:Fireball}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Fireball}{Fireball}}[\glossterm{Fire}]
-Make an attack vs. Armor against everything in a \areamed radius within \rngmed range.
-\hit Each target takes fire \glossterm{standard damage}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Flame Serpent}{}}\label{spell:Flame Serpent}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Flame Serpent}{Flame Serpent}}[\glossterm{Fire}]
-Make an attack vs. Armor against everything in a \arealarge, 5 ft.\ wide shapeable line within \rngmed range.
-\hit Each target takes fire \glossterm{standard damage}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Blast Furnace}{}}\label{spell:Greater Blast Furnace}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Greater Blast Furnace}{Greater Blast Furnace}}[\glossterm{Fire}]
-This spell functions like the \spell{blast furnace} spell, except that the spell gains the \glossterm{Sustain} (minor) tag instead of the \glossterm{Sustain} (standard) tag.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Inferno}{}}\label{spell:Inferno}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Inferno}{Inferno}}[\glossterm{Fire}]
-Make an attack vs. Armor against everything in a \arealarge radius from you.
-\hit Each target takes fire \glossterm{standard damage}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Superheated Fireburst}{}}\label{spell:Superheated Fireburst}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Superheated Fireburst}{Superheated Fireburst}}[\glossterm{Fire}]
-This spell functions like the \spell{fireburst} spell, except that it attacks Reflex defense instead of Armor defense.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3206,47 +3190,78 @@ This spell functions like the \spell{fireburst} spell, except that it attacks Re
 \lowercase{\hypertarget{spell:Flame Aura}{}}\label{spell:Flame Aura}
 \begin{attuneability}[\nth{4}]{\hypertarget{spell:Flame Aura}{Flame Aura}}[\glossterm{Attune} (target), \glossterm{Fire}]
 Choose a willing creature within \rngclose range.
-Heat constantly radiates in a \areamed radius \glossterm{emanation} from the target.
+Heat constantly radiates in a \areasmall radius \glossterm{emanation} from the target.
 At the end of each \glossterm{action phase}, make an attack vs. Armor against everything in the area.
 \hit Each target takes fire \glossterm{standard damage} \minus2d.
 
 You can cast this spell as a \glossterm{minor action}.
-In addition, you can apply the Widened \glossterm{augment} to this spell.
-If you do, it increases the area of the \glossterm{emanation}.
 \end{attuneability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Greater Ignition}{}}\label{spell:Greater Ignition}
-\begin{freeability}[\nth{4}]{\hypertarget{spell:Greater Ignition}{Greater Ignition}}[\glossterm{Fire}]
-This spell functions like the \spell{fireburst} spell, except that each target hit is also \glossterm{ignited} as a \glossterm{condition}.
-In addition, the ignited effect deals fire \glossterm{standard damage} \minus2d instead of the normal 1d6 fire damage each round.
+\lowercase{\hypertarget{spell:Greater Blast Furnace}{}}\label{spell:Greater Blast Furnace}
+\begin{freeability}[\nth{4}]{\hypertarget{spell:Greater Blast Furnace}{Greater Blast Furnace}}[\glossterm{Fire}]
+This spell functions like the \spell{blast furnace} spell, except that the spell gains the \glossterm{Sustain} (minor) tag instead of the \glossterm{Sustain} (standard) tag.
 \end{freeability}
 \vspace{0.25em}
 
 
 
 \lowercase{\hypertarget{spell:Greater Inferno}{}}\label{spell:Greater Inferno}
-\begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Inferno}{Greater Inferno}}[\glossterm{Fire}]
-This spell functions like the \textit{inferno} spell, except that it affects everything in a 200 ft.\ radius from you.
+\begin{freeability}[\nth{4}]{\hypertarget{spell:Greater Inferno}{Greater Inferno}}[\glossterm{Fire}]
+This spell functions like the \textit{inferno} spell, except that it affects everything in a \arealarge radius from you.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Fearsome Fireball}{}}\label{spell:Fearsome Fireball}
+\begin{freeability}[\nth{5}]{\hypertarget{spell:Fearsome Fireball}{Fearsome Fireball}}[\glossterm{Emotion}, \glossterm{Fire}]
+This spell functions like the \spell{fireball} spell, except that the attack result is also compared to each target's Mental defense.
+\hit Each target is \glossterm{shaken} by you as a \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
 
 
 
 \lowercase{\hypertarget{spell:Greater Fireball}{}}\label{spell:Greater Fireball}
-\begin{freeability}[\nth{6}]{\hypertarget{spell:Greater Fireball}{Greater Fireball}}[\glossterm{Fire}]
-Make an attack vs. Armor against everything in a \arealarge radius within \rnglong range.
-\hit Each target takes fire \glossterm{standard damage} \plus1d.
+\begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Fireball}{Greater Fireball}}[\glossterm{Fire}]
+Make an attack vs. Armor against everything in a \areamed radius within \rngmed range.
+\hit Each target takes fire \glossterm{standard damage}.
 \end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Supreme Ignition}{}}\label{spell:Supreme Ignition}
-\begin{freeability}[\nth{6}]{\hypertarget{spell:Supreme Ignition}{Supreme Ignition}}[\glossterm{Fire}]
-This spell functions like the \textit{greater ignition} spell, except that the condition must be removed twice before the effect ends.
+\lowercase{\hypertarget{spell:Greater Flame Serpent}{}}\label{spell:Greater Flame Serpent}
+\begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Flame Serpent}{Greater Flame Serpent}}[\glossterm{Fire}]
+This spell functions like the \spell{flame serpent} spell, except that the area increases to a \arealarge, 10 ft.\ wide shapeable line.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Greater Ignition}{}}\label{spell:Greater Ignition}
+\begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Ignition}{Greater Ignition}}[\glossterm{Fire}]
+This spell functions like the \spell{firebolt} spell, except that a struck target is also \glossterm{ignited} as a \glossterm{condition}.
+In addition, the ignited effect deals fire \glossterm{standard damage} \minus2d instead of the normal 1d6 fire damage each round.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Greater Flame Aura}{}}\label{spell:Greater Flame Aura}
+\begin{attuneability}[\nth{6}]{\hypertarget{spell:Greater Flame Aura}{Greater Flame Aura}}[\glossterm{Attune} (target), \glossterm{Fire}]
+This spell functions like the \spell{flame aura} spell, except that the area increases to a \areamed radius.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Supreme Inferno}{}}\label{spell:Supreme Inferno}
+\begin{freeability}[\nth{6}]{\hypertarget{spell:Supreme Inferno}{Supreme Inferno}}[\glossterm{Fire}]
+This spell functions like the \textit{inferno} spell, except that it affects everything in a \areahuge radius from you.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3707,7 +3722,7 @@ There are only two actions it can take.
 As a \glossterm{move action}, it can move as you direct.
 As a standard action, it can make a melee \glossterm{strike} against a creature it threatens.
 Its accuracy is equal to your \glossterm{accuracy}.
-If it hits, it deals \glossterm{standard damage} \minus1d.
+If it hits, it deals \glossterm{standard damage} \minus2d.
 The type of damage dealt by this attack depends on the creature's appearance.
 Most animals bite or claw their foes, which deals bludgeoning and slashing damage.
 
@@ -3815,7 +3830,7 @@ Any attacks you make with the object or checks you make to manipulate the object
 \lowercase{\hypertarget{spell:Telekinetic Crush}{}}\label{spell:Telekinetic Crush}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Telekinetic Crush}{Telekinetic Crush}}
 Make an attack vs. Mental against one creature or object within \rngmed range.
-\hit The target takes bludgeoning \glossterm{standard damage} \plus2d.
+\hit The target takes bludgeoning \glossterm{standard damage} \plus1d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3837,17 +3852,14 @@ Make an attack vs. Mental against a Medium or smaller creature or object within 
 \hit You move the target up to 30 feet in any direction.
 You can change direction partway through the movement.
 Moving the target upwards costs twice the normal movement cost.
-
-% Wording?
-If the target is willing, you can move it up to 100 feet.
 \end{freeability}
 \vspace{0.25em}
 
 
 
 \lowercase{\hypertarget{spell:Binding Crush}{}}\label{spell:Binding Crush}
-\begin{freeability}[\nth{2}]{\hypertarget{spell:Binding Crush}{Binding Crush}}
-This spell functions like the \spell{telekinetic crush} spell, except that the struck creature is also \glossterm{slowed} as a \glossterm{condition} if it is Large or smaller.
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Binding Crush}{Binding Crush}}
+This spell functions like the \spell{telekinetic crush} spell, except that the struck creature is also \glossterm{slowed} as a \glossterm{condition} if it is Medium or smaller.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3857,25 +3869,6 @@ This spell functions like the \spell{telekinetic crush} spell, except that the s
 \begin{attuneability}[\nth{3}]{\hypertarget{spell:Greater Telekinetic Lift}{Greater Telekinetic Lift}}[\glossterm{Attune} (target)]
 This spell functions like the \spell{telekinetic lift} spell, except that the target is reduced to one quarter of its normal weight.
 This increases the Jump bonus to \plus8.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Telekinetic Throw}{}}\label{spell:Greater Telekinetic Throw}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Greater Telekinetic Throw}{Greater Telekinetic Throw}}
-This spell functions like the \textit{telekinetic throw} spell, except that you can move the target up to 100 feet.
-If the target is willing, you can move it up to 200 feet.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Wall of Force}{}}\label{spell:Wall of Force}
-\begin{attuneability}[\nth{3}]{\hypertarget{spell:Wall of Force}{Wall of Force}}[\glossterm{Attune} (self)]
-You create a wall of telekinetic force in a 10 ft.\ high, \arealarge line within \rngmed range.
-The wall is transparent, but blocks physical passage and \glossterm{line of effect}.
-Each five-foot square of wall has hit points equal to twice your \glossterm{power}, and all of its defenses are 0.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -3892,9 +3885,19 @@ During the movement phase, you can move the target up to ten feet in any directi
 
 
 
+\lowercase{\hypertarget{spell:Wall of Force}{}}\label{spell:Wall of Force}
+\begin{attuneability}[\nth{4}]{\hypertarget{spell:Wall of Force}{Wall of Force}}[\glossterm{Attune} (self)]
+You create a wall of telekinetic force in a 10 ft.\ high, \arealarge line within \rngmed range.
+The wall is transparent, but blocks physical passage and \glossterm{line of effect}.
+Each five-foot square of wall has hit points equal to twice your \glossterm{power}, and all of its defenses are 0.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Greater Binding Crush}{}}\label{spell:Greater Binding Crush}
-\begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Binding Crush}{Greater Binding Crush}}
-This spell functions like the \spell{telekinetic crush} spell, except that the struck creature is also \glossterm{decelerated} as a \glossterm{condition} if it is Large or smaller.
+\begin{freeability}[\nth{6}]{\hypertarget{spell:Greater Binding Crush}{Greater Binding Crush}}
+This spell functions like the \spell{telekinetic crush} spell, except that the struck creature is also \glossterm{decelerated} as a \glossterm{condition} if it is Medium or smaller.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3949,7 +3952,7 @@ If the item loses all of its hit points, this effect is \glossterm{dismissed}.
 You create a spike of earth from the ground.
 Make an attack vs. Armor against a creature or object within \rngmed range.
 The target must be within 5 feet of a Small or larger body of earth or stone.
-\hit The target takes piercing \glossterm{standard damage} \plus1d and is \glossterm{slowed} as a \glossterm{condition}.
+\hit The target takes piercing \glossterm{standard damage} \minus2d and is \glossterm{slowed} as a \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3961,7 +3964,17 @@ The target must be within 5 feet of a Small or larger body of earth or stone.
 You extract a Tiny chunk from a body of earth or unworked stone within 5 feet of you and throw it at a foe.
 If no such chunk can be extracted, this spell is \glossterm{miscast}.
 Otherwise, make an attack vs. Armor against a creature or object within \rngmed range.
-\hit The target takes bludgeoning \glossterm{standard damage} \plus2d.
+\hit The target takes bludgeoning \glossterm{standard damage} \plus1d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Tremor}{}}\label{spell:Tremor}
+\begin{freeability}[\nth{1}]{\hypertarget{spell:Tremor}{Tremor}}[\glossterm{Earth}, \glossterm{Physical}]
+You create an highly localized tremor that rips through the ground.
+Make an attack vs. Reflex against all Large or smaller creatures other than yourself standing on the ground in a \areasmall radius within \rngmed range.
+\hit Each target is knocked \glossterm{prone}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3970,27 +3983,10 @@ Otherwise, make an attack vs. Armor against a creature or object within \rngmed 
 \lowercase{\hypertarget{spell:Earthbind}{}}\label{spell:Earthbind}
 \begin{freeability}[\nth{2}]{\hypertarget{spell:Earthbind}{Earthbind}}[\glossterm{Earth}]
 Make an attack vs. Fortitude against a creature within \rngmed range that is within 50 feet of the ground.
-\miss You regain the \glossterm{action point} spent to cast this spell.
 \hit As a \glossterm{condition}, the target is pulled towards the ground with great force, approximately quadrupling the gravity it experiences.
 This imposes a \minus2 penalty to \glossterm{accuracy}, physical \glossterm{checks}, and \glossterm{defenses}.
 In addition, most flying creatures are unable to fly with this increased gravity and crash to the ground.
 \end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Earthen Fortification}{}}\label{spell:Earthen Fortification}
-\begin{attuneability}[\nth{2}]{\hypertarget{spell:Earthen Fortification}{Earthen Fortification}}[\glossterm{Attune} (self), \glossterm{Earth}, \glossterm{Manifestation}]
-You construct a fortification made of packed earth within \rngmed range.
-This takes the form of up to ten contiguous 5-foot squares, each of which is four inches thick.
-The squares can be placed at any angle and used to form any structure as long as that structure is stable.
-Since the fortifications are made of packed earth, their maximum weight is limited, and structures taller than ten feet high are usually impossible.
-% TODO: define hit points and hardness of earth
-
-The fortifications form slowly, rather than instantly.
-The structure becomes complete at the end of the action phase in the next round after this spell is cast.
-This makes it difficult to trap creatures within structures formed.
-\end{attuneability}
 \vspace{0.25em}
 
 
@@ -4014,8 +4010,41 @@ When you are forcibly expelled from the stone, you take 4d10 bludgeoning damage 
 
 
 
+\lowercase{\hypertarget{spell:Reinforced Earthcraft}{}}\label{spell:Reinforced Earthcraft}
+\begin{attuneability}[\nth{2}]{\hypertarget{spell:Reinforced Earthcraft}{Reinforced Earthcraft}}[\glossterm{Attune} (self), \glossterm{Earth}]
+This spell functions like the \spell{earthcraft} spell, except that the item is the same weight as a normal item of its type.
+In addition, you can create heavy body armor.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Earthen Fortification}{}}\label{spell:Earthen Fortification}
+\begin{attuneability}[\nth{3}]{\hypertarget{spell:Earthen Fortification}{Earthen Fortification}}[\glossterm{Attune} (self), \glossterm{Earth}, \glossterm{Manifestation}]
+You construct a fortification made of packed earth within \rngmed range.
+This takes the form of up to ten contiguous 5-foot squares, each of which is four inches thick.
+The squares can be placed at any angle and used to form any structure as long as that structure is stable.
+Since the fortifications are made of packed earth, their maximum weight is limited, and structures taller than ten feet high are usually impossible.
+% TODO: define hit points and hardness of earth
+
+The fortifications form slowly, rather than instantly.
+The structure becomes complete at the end of the action phase in the next round after this spell is cast.
+This makes it difficult to trap creatures within structures formed.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Greater Tremor}{}}\label{spell:Greater Tremor}
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Greater Tremor}{Greater Tremor}}[\glossterm{Earth}, \glossterm{Physical}]
+This spell functions like the \spell{tremor} spell, except that the area increases to a \areamed radius.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Quagmire}{}}\label{spell:Quagmire}
-\begin{attuneability}[\nth{2}]{\hypertarget{spell:Quagmire}{Quagmire}}[\glossterm{Attune} (self), \glossterm{Earth}, \glossterm{Physical}]
+\begin{attuneability}[\nth{3}]{\hypertarget{spell:Quagmire}{Quagmire}}[\glossterm{Attune} (self), \glossterm{Earth}, \glossterm{Physical}]
 % TODO: define maximum hardness
 Choose a \areamed radius within \rngmed range.
 All earth and unworked stone within the area is softened into a thick sludge, creating a quagmire that is difficult to move through.
@@ -4026,17 +4055,8 @@ This does not affect objects under significant structural stress, such as walls 
 
 
 
-\lowercase{\hypertarget{spell:Reinforced Earthcraft}{}}\label{spell:Reinforced Earthcraft}
-\begin{attuneability}[\nth{2}]{\hypertarget{spell:Reinforced Earthcraft}{Reinforced Earthcraft}}[\glossterm{Attune} (self), \glossterm{Earth}]
-This spell functions like the \spell{earthcraft} spell, except that the item is the same weight as a normal item of its type.
-In addition, you can create heavy body armor.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Shrapnel Blast}{}}\label{spell:Shrapnel Blast}
-\begin{freeability}[\nth{2}]{\hypertarget{spell:Shrapnel Blast}{Shrapnel Blast}}[\glossterm{Earth}, \glossterm{Physical}]
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Shrapnel Blast}{Shrapnel Blast}}[\glossterm{Earth}, \glossterm{Physical}]
 You extract a Tiny chunk from a body of earth or unworked stone within 5 feet of you and blast it at your foes.
 If no such chunk can be extracted, this spell is \glossterm{miscast}.
 Otherwise, make an attack vs. Armor against everything in a \arealarge cone from you.
@@ -4046,24 +4066,13 @@ Otherwise, make an attack vs. Armor against everything in a \arealarge cone from
 
 
 
-\lowercase{\hypertarget{spell:Tremor}{}}\label{spell:Tremor}
-\begin{freeability}[\nth{2}]{\hypertarget{spell:Tremor}{Tremor}}[\glossterm{Earth}, \glossterm{Physical}]
-You create an highly localized tremor that rips through the ground.
-Make an attack vs. Reflex against all Large or smaller creatures other than yourself standing on the ground in a \areamed radius within \rngmed range.
-\hit Each target is knocked \glossterm{prone}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Fissure}{}}\label{spell:Fissure}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Fissure}{Fissure}}[\glossterm{Earth}, \glossterm{Physical}]
+\begin{freeability}[\nth{4}]{\hypertarget{spell:Fissure}{Fissure}}[\glossterm{Earth}, \glossterm{Physical}]
 You open up a rift in the ground that swallows and traps a foe.
 Make an attack vs. Reflex against a Large or smaller creature standing on earth or unworked stone within \rngmed range.
-\miss You regain the \glossterm{action point} spent to cast this spell.
 \hit The target is \glossterm{immobilized}.
 As long as the target is immobilized in this way,
-it takes bludgeoning \glossterm{standard damage} \minus1d at the end of each \glossterm{action phase} in subsequent rounds.
+it takes bludgeoning \glossterm{standard damage} \minus2d at the end of each \glossterm{action phase} in subsequent rounds.
 This immobilization can be removed by climbing out of the fissure, which requires a \glossterm{DR} 10 Climb check as a \glossterm{move action}.
 Alternately, an ally that can reach the target can make a Strength check against the same DR to pull the target out.
 Special movement abilities such as teleportation can also remove the target from the fissure.
@@ -4072,8 +4081,16 @@ Special movement abilities such as teleportation can also remove the target from
 
 
 
+\lowercase{\hypertarget{spell:Impaling Earthspike}{}}\label{spell:Impaling Earthspike}
+\begin{freeability}[\nth{4}]{\hypertarget{spell:Impaling Earthspike}{Impaling Earthspike}}[\glossterm{Earth}, \glossterm{Physical}]
+This spell functions like the \spell{earthspike} spell, except that a struck target is \glossterm{immobilized} instead of \glossterm{slowed}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Stone Fortification}{}}\label{spell:Stone Fortification}
-\begin{attuneability}[\nth{3}]{\hypertarget{spell:Stone Fortification}{Stone Fortification}}[\glossterm{Attune} (self), \glossterm{Earth}, \glossterm{Manifestation}]
+\begin{attuneability}[\nth{4}]{\hypertarget{spell:Stone Fortification}{Stone Fortification}}[\glossterm{Attune} (self), \glossterm{Earth}, \glossterm{Manifestation}]
 This spell functions like the \spell{earthen fortification} spell, except that the fortifications are made of stone instead of earth.
 This makes them more resistant to attack and allows the construction of more complex structures.
 % TODO: define hit points and hardness of stone
@@ -4082,18 +4099,10 @@ This makes them more resistant to attack and allows the construction of more com
 
 
 
-\lowercase{\hypertarget{spell:Impaling Earthspike}{}}\label{spell:Impaling Earthspike}
-\begin{freeability}[\nth{4}]{\hypertarget{spell:Impaling Earthspike}{Impaling Earthspike}}[\glossterm{Earth}, \glossterm{Physical}]
-This spell functions like the \spell{earthspike} spell, except that a struck target is \glossterm{decelerated} instead of \glossterm{slowed}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Earthquake}{}}\label{spell:Earthquake}
 \begin{freeability}[\nth{6}]{\hypertarget{spell:Earthquake}{Earthquake}}[\glossterm{Earth}, \glossterm{Physical}]
 You create an intense but highly localized tremor that rips through the ground.
-Make an attack vs. Reflex against all creatures other than yourself standing on the ground in a \arealarge radius within \rnglong range.
+Make an attack vs. Reflex against all creatures other than yourself standing on the ground in a \areamed radius within \rngmed range.
 \hit Each target takes bludgeoning \glossterm{standard damage}.
 If a target is Huge or smaller, it is also knocked \glossterm{prone}.
 \end{freeability}
@@ -4102,7 +4111,7 @@ If a target is Huge or smaller, it is also knocked \glossterm{prone}.
 
 
 \lowercase{\hypertarget{spell:Fissure Swarm}{}}\label{spell:Fissure Swarm}
-\begin{freeability}[\nth{6}]{\hypertarget{spell:Fissure Swarm}{Fissure Swarm}}[\glossterm{Earth}, \glossterm{Physical}]
+\begin{freeability}[\nth{7}]{\hypertarget{spell:Fissure Swarm}{Fissure Swarm}}[\glossterm{Earth}, \glossterm{Physical}]
 This spell functions like the \spell{fissure} spell, except that it affects all enemies in a \areamed radius within \rngmed range.
 \end{freeability}
 \vspace{0.25em}
@@ -4184,6 +4193,8 @@ If the target is an effect of an ongoing \glossterm{magical} ability, such as a 
 Otherwise, this spell has no effect.
 \hit The target is treated as if the ability that created it was \glossterm{dismissed}.
 This usually causes the target to disappear.
+If an \glossterm{attuned} effect is \glossterm{dismissed} in this way,
+the attuning creature can regain the \glossterm{action point} spent to attune to the spell when it takes a \glossterm{short rest}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -4192,6 +4203,8 @@ This usually causes the target to disappear.
 \lowercase{\hypertarget{spell:Dispel Magic}{}}\label{spell:Dispel Magic}
 \begin{freeability}[\nth{2}]{\hypertarget{spell:Dispel Magic}{Dispel Magic}}[\glossterm{Mystic}, \glossterm{Sustain} (standard)]
 This spell functions like the \spell{suppress magic} spell, except that a hit against an effect causes it to be \glossterm{dismissed} instead of suppressed.
+If an \glossterm{attuned} effect is \glossterm{dismissed} in this way,
+the attuning creature can regain the \glossterm{action point} spent to attune to the spell when it takes a \glossterm{short rest}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -4294,8 +4307,7 @@ When this spell ends, the plant returns to its original state.
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Embedded Growth}{Embedded Growth}}
 You throw a seed that embeds itself in a foe and grows painfully.
 Make an attack vs. Armor at a creature within \rngclose range.
-\miss You regain the \glossterm{action point} spent to cast this spell.
-\hit As a \glossterm{condition}, the target takes \glossterm{standard damage} \plus1d at the end of each \glossterm{action phase}.
+\hit As a \glossterm{condition}, the target takes physical \glossterm{standard damage} at the end of each \glossterm{action phase}.
 This condition can be removed if the target or a creature that can reach the target makes a \glossterm{DR} 5 Heal check as a standard action to remove the seed.
 \end{freeability}
 \vspace{0.25em}
@@ -4305,12 +4317,27 @@ This condition can be removed if the target or a creature that can reach the tar
 \lowercase{\hypertarget{spell:Entangle}{}}\label{spell:Entangle}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Entangle}{Entangle}}
 You cause plants to grow and trap a foe.
-Make an attack vs. Reflex against a Large or smaller creature within \rngmed range.
+Make an attack vs. Reflex against a Large or smaller creature within \rngclose range.
 The target must be within 5 feet of earth or plants.
 You gain a \plus2 bonus to \glossterm{accuracy} with this attack if the target is in standing in \glossterm{undergrowth}.
-\miss You regain the \glossterm{action point} spent to cast this spell.
 \hit The target is \glossterm{immobilized} as a \glossterm{condition}.
-This condition can be removed if the target or a creature that can reach the target makes a \glossterm{DR} 5 Strength check as a standard action to pull the target free of the plants.
+This condition can be removed if the target or a creature that can reach the target makes a \glossterm{DR} 5 Strength check break the target free of the plants.
+The target can make this check as a \glossterm{move action}, while other creatures can make the check as a standard action.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Plant Growth}{}}\label{spell:Plant Growth}
+\begin{freeability}[\nth{1}]{\hypertarget{spell:Plant Growth}{Plant Growth}}[\glossterm{Sustain} (minor)]
+Choose a \areamed radius within \rngmed range.
+In addition, choose whether you want plants within the area to grow or diminish.
+
+If you choose for plants to grow, all arable earth within the area becomes \glossterm{light undergrowth}.
+Light undergrowth within the area is increased in density to \glossterm{heavy undergrowth}.
+If you choose for plants to diminish, all \glossterm{heavy undergrowth} in the area is reduced to \glossterm{light undergrowth}, and all \glossterm{light undergrowth} is removed.
+
+When this spell's duration ends, the plants return to their natural size.
 \end{freeability}
 \vspace{0.25em}
 
@@ -4330,24 +4357,11 @@ This damage is doubled if the target is a plant, including plant creatures.
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Fire Seed}{Fire Seed}}[\glossterm{Attune} (self), \glossterm{Fire}]
 % Does "seed structure" make sense?
 You transform an unattended acorn or similar seed structure into a small bomb.
-As a standard action, you or another creature can throw the acorn with a \glossterm{range increment} of 20 feet.
-On impact, the acorn detonates, and you make an attack vs. Armor against all creatures within a \areasmall radius of the struck creature or object.
+As a standard action, you or another creature can throw the acorn anywhere within \rngclose range.
+% More accurate version: the acorn has a range increment of 10 feet to hit its target, but that accuracy roll is completely independent of the explosion.
+% Doesn't seem worth the complexity, and implicitly gives the fire seed surprisingly long range since objects are easy to hit.
+On impact, the acorn detonates, and you make an attack vs. Armor against everything within a \areasmall radius of the struck creature or object.
 \hit Each target takes fire \glossterm{standard damage}.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Plant Growth}{}}\label{spell:Plant Growth}
-\begin{attuneability}[\nth{2}]{\hypertarget{spell:Plant Growth}{Plant Growth}}[\glossterm{Attune} (self)]
-Choose a \arealarge radius within \rnglong range.
-In addition, choose whether you want plants within the area to grow or diminish.
-
-If you choose for plants to grow, all arable earth within the area becomes \glossterm{light undergrowth}.
-Light undergrowth within the area is increased in density to \glossterm{heavy undergrowth}.
-If you choose for plants to diminish, all \glossterm{heavy undergrowth} in the area is reduced to \glossterm{light undergrowth}, and all \glossterm{light undergrowth} is removed.
-
-When this spell's duration ends, the plants return to their natural size.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -4371,6 +4385,15 @@ It is \glossterm{vulnerable} to fire damage.
 
 
 
+\lowercase{\hypertarget{spell:Greater Entangle}{}}\label{spell:Greater Entangle}
+\begin{freeability}[\nth{4}]{\hypertarget{spell:Greater Entangle}{Greater Entangle}}
+This spell functions like the \spell{entangle} spell, except that the \glossterm{condition} is harder to remove.
+The target or any other creature that can reach the target can remove the condition with a \glossterm{DR} 10 Strength check as a standard action.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Greater Fire Seed}{}}\label{spell:Greater Fire Seed}
 \begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Fire Seed}{Greater Fire Seed}}[\glossterm{Attune} (self), \glossterm{Fire}]
 This spell functions like the \spell{fire seed} spell, except that you can transform up to four bombs.
@@ -4380,20 +4403,18 @@ In addition, the detonation affects a \areamed radius instead of an \areasmall r
 
 
 
-\lowercase{\hypertarget{spell:Greater Plant Growth}{}}\label{spell:Greater Plant Growth}
-\begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Plant Growth}{Greater Plant Growth}}[\glossterm{Attune} (self)]
-This spell functions like the \spell{plant growth} spell, except that its effects are intensified.
-If you choose for plants to grow, all arable earth within the area becomes \glossterm{heavy undergrowth}.
-If you choose for plants to diminish, all \glossterm{undergrowth} within the area is removed.
+\lowercase{\hypertarget{spell:Greater Wall of Thorns}{}}\label{spell:Greater Wall of Thorns}
+\begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Wall of Thorns}{Greater Wall of Thorns}}[\glossterm{Attune} (self)]
+This spell functions like the \spell{wall of thorns} spell, except that the wall is an \arealarge shapeable line.
 \end{attuneability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Greater Wall of Thorns}{}}\label{spell:Greater Wall of Thorns}
-\begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Wall of Thorns}{Greater Wall of Thorns}}[\glossterm{Attune} (self)]
-This spell functions like the \spell{wall of thorns} spell, except that the wall is an \arealarge shapeable line.
-\end{attuneability}
+\lowercase{\hypertarget{spell:Greater Plant Growth}{}}\label{spell:Greater Plant Growth}
+\begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Plant Growth}{Greater Plant Growth}}[\glossterm{Sustain} (minor)]
+This spell functions like the \spell{plant growth} spell, except that it affects a \arealarge radius within \rnglong range.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -4476,7 +4497,7 @@ The target heals hit points equal to your \glossterm{power}.
 \lowercase{\hypertarget{spell:Cure Wounds}{}}\label{spell:Cure Wounds}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Cure Wounds}{Cure Wounds}}[\glossterm{Life}]
 Choose a willing living creature within \rngmed range.
-The target heals hit points equal to \glossterm{standard damage} \plus2d.
+The target heals hit points equal to \glossterm{standard damage} \plus1d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -4485,19 +4506,7 @@ The target heals hit points equal to \glossterm{standard damage} \plus2d.
 \lowercase{\hypertarget{spell:Inflict Wounds}{}}\label{spell:Inflict Wounds}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Inflict Wounds}{Inflict Wounds}}[\glossterm{Life}]
 Make an attack vs. Fortitude against a creature within \rngmed range.
-\hit The target takes life damage equal to \glossterm{standard damage} \plus2d.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Death Knell}{}}\label{spell:Death Knell}
-\begin{freeability}[\nth{2}]{\hypertarget{spell:Death Knell}{Death Knell}}[\glossterm{Life}]
-This spell functions like the \spell{inflict wounds} spell, except that a struck target suffers a death knell as a \glossterm{condition}.
-At the end of each round, if the target has 0 hit points, it immediately dies.
-
-% TODO: wording
-If the target dies while the condition is active, you heal hit points equal to twice your \glossterm{power}.
+\hit The target takes life \glossterm{standard damage} \plus1d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -4512,8 +4521,46 @@ The target reduces its \glossterm{vital damage penalties} by an amount equal to 
 
 
 
+\lowercase{\hypertarget{spell:Death Knell}{}}\label{spell:Death Knell}
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Death Knell}{Death Knell}}[\glossterm{Life}]
+This spell functions like the \spell{inflict wounds} spell, except that a struck target suffers a death knell as a \glossterm{condition}.
+At the end of each round, if the target has 0 hit points, it immediately dies.
+
+% TODO: wording
+If the target dies while the condition is active, you heal hit points equal to twice your \glossterm{power}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Drain Life}{}}\label{spell:Drain Life}
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Drain Life}{Drain Life}}[\glossterm{Life}]
+This spell functions like the \spell{inflict wounds} spell, except that the damage increases to \glossterm{standard damage} \plus2d.
+In addition, you heal hit points equal to your \glossterm{power} if you deal damage.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Greater Cure Wounds}{}}\label{spell:Greater Cure Wounds}
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Greater Cure Wounds}{Greater Cure Wounds}}[\glossterm{Life}]
+This spell functions like the \spell{cure wounds} spell, except that the healing increases to \glossterm{standard damage} \plus2d.
+In addition, for every 5 points of healing you provide, you can instead heal one point of \glossterm{vital damage}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Inflict Debilitating Wounds}{}}\label{spell:Inflict Debilitating Wounds}
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Inflict Debilitating Wounds}{Inflict Debilitating Wounds}}[\glossterm{Life}]
+This spell functions like the \spell{inflict wounds} spell, except that a struck target also takes a \minus2 penalty to Fortitude defense as a \glossterm{condition}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Circle of Death}{}}\label{spell:Circle of Death}
-\begin{attuneability}[\nth{3}]{\hypertarget{spell:Circle of Death}{Circle of Death}}[\glossterm{Attune} (self), \glossterm{Life}]
+\begin{attuneability}[\nth{4}]{\hypertarget{spell:Circle of Death}{Circle of Death}}[\glossterm{Attune} (self), \glossterm{Life}]
 You are surrounded by an aura of death in a \areamed radius \glossterm{emanation} from you.
 When this spell resolves, and the end of each \glossterm{action phase} in subsequent rounds, make an attack vs. Fortitude against all enemies in the area.
 \hit Each target takes life \glossterm{standard damage} \minus2d.
@@ -4523,7 +4570,7 @@ When this spell resolves, and the end of each \glossterm{action phase} in subseq
 
 
 \lowercase{\hypertarget{spell:Circle of Healing}{}}\label{spell:Circle of Healing}
-\begin{attuneability}[\nth{3}]{\hypertarget{spell:Circle of Healing}{Circle of Healing}}[\glossterm{Attune} (self), \glossterm{Life}]
+\begin{attuneability}[\nth{4}]{\hypertarget{spell:Circle of Healing}{Circle of Healing}}[\glossterm{Attune} (self), \glossterm{Life}]
 You are surrounded by an aura of healing in a \areamed radius \glossterm{emanation} from you.
 When this spell resolves, and the end of each \glossterm{action phase} in subsequent rounds, choose any number of willing living creatures in the area.
 Each target heals hit points equal to half your \glossterm{power}.
@@ -4532,28 +4579,9 @@ Each target heals hit points equal to half your \glossterm{power}.
 
 
 
-\lowercase{\hypertarget{spell:Drain Life}{}}\label{spell:Drain Life}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Drain Life}{Drain Life}}[\glossterm{Life}]
-This spell functions like the \spell{inflict wounds} spell, except that you gain a \plus1d bonus to damage.
-In addition, you heal hit points equal to your \glossterm{power} if you deal damage.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Cure Wounds}{}}\label{spell:Greater Cure Wounds}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Greater Cure Wounds}{Greater Cure Wounds}}[\glossterm{Life}]
-This spell functions like the \spell{cure wounds} spell, except that you gain a \plus1d bonus to healing.
-In addition, for every 5 points of healing you provide, you can instead heal one point of \glossterm{vital damage}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Greater Inflict Wounds}{}}\label{spell:Greater Inflict Wounds}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Greater Inflict Wounds}{Greater Inflict Wounds}}[\glossterm{Life}]
-This spell functions like the \spell{inflict wounds} spell, except that you gain a \plus1 bonus to \glossterm{accuracy}.
-In addition, a struck target takes a \minus2 penalty to Fortitude defense as a \glossterm{condition}.
+\begin{freeability}[\nth{4}]{\hypertarget{spell:Greater Inflict Wounds}{Greater Inflict Wounds}}[\glossterm{Life}]
+This spell functions like the \spell{inflict wounds} spell, except that the damage increases to \glossterm{standard damage} \plus3d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -4571,7 +4599,7 @@ This spell functions like the \spell{vital persistence} spell, except that the p
 \begin{freeability}[\nth{4}]{\hypertarget{spell:Life Exchange}{Life Exchange}}[\glossterm{Life}]
 Choose a willing living ally within \rngmed range.
 Make an attack vs. Fortitude against a creature within \rngmed range.
-\hit The target takes life damage equal to \glossterm{standard damage} \plus3d.
+\hit The target takes life damage equal to \glossterm{standard damage} \plus2d.
 In addition, the chosen ally heals hit points equal to the damage dealt in this way.
 \crit This spell does not deal additional damage on a critical hit.
 \end{freeability}
@@ -4582,7 +4610,7 @@ In addition, the chosen ally heals hit points equal to the damage dealt in this 
 \lowercase{\hypertarget{spell:Finger of Death}{}}\label{spell:Finger of Death}
 \begin{freeability}[\nth{5}]{\hypertarget{spell:Finger of Death}{Finger of Death}}[\glossterm{Life}]
 Make an attack vs. Fortitude against a living creature within \rngclose range.
-\hit The target takes life \glossterm{standard damage} \plus4d.
+\hit The target takes life \glossterm{standard damage} \plus3d.
 \crit The target immediately dies.
 \end{freeability}
 \vspace{0.25em}
@@ -4591,7 +4619,7 @@ Make an attack vs. Fortitude against a living creature within \rngclose range.
 
 \lowercase{\hypertarget{spell:Greater Drain Life}{}}\label{spell:Greater Drain Life}
 \begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Drain Life}{Greater Drain Life}}[\glossterm{Life}]
-This spell functions like the \spell{inflict wounds} spell, except that gain a \plus2d bonus to damage.
+This spell functions like the \spell{inflict wounds} spell, except that the damage increases to \glossterm{standard damage} \plus3d.
 In addition, you heal hit points equal to twice your \glossterm{power} if you deal damage.
 \end{freeability}
 \vspace{0.25em}
@@ -4608,9 +4636,8 @@ In addition, it heals \glossterm{vital damage} as easily as it heals hit points.
 
 
 \lowercase{\hypertarget{spell:Supreme Inflict Wounds}{}}\label{spell:Supreme Inflict Wounds}
-\begin{freeability}[\nth{5}]{\hypertarget{spell:Supreme Inflict Wounds}{Supreme Inflict Wounds}}[\glossterm{Life}]
-This spell functions like the \spell{inflict wounds} spell, except that you gain a \plus2 bonus to \glossterm{accuracy}.
-In addition, a struck target takes a \minus4 penalty to Fortitude defense as a \glossterm{condition}.
+\begin{freeability}[\nth{7}]{\hypertarget{spell:Supreme Inflict Wounds}{Supreme Inflict Wounds}}[\glossterm{Life}]
+This spell functions like the \spell{inflict wounds} spell, except that the damage increases to \glossterm{standard damage} \plus5d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -4828,7 +4855,7 @@ The wall takes the form of a 10 ft.\ high, \arealarge line.
 The wall provides \glossterm{active cover} (20\% miss chance) against attacks made through it.
 Attacks that miss in this way harmlessly strike the wall.
 When a creature or object passes through the wall, make an attack vs. Armor against it.
-\hit The target takes slashing \glossterm{standard damage}.
+\hit The target takes slashing \glossterm{standard damage} \minus1d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -4837,7 +4864,7 @@ When a creature or object passes through the wall, make an attack vs. Armor agai
 \lowercase{\hypertarget{spell:Mystic Bow}{}}\label{spell:Mystic Bow}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Mystic Bow}{Mystic Bow}}[\glossterm{Manifestation}]
 Make an attack vs. Armor against one creature or object within \rngmed range.
-\hit The target takes piercing \glossterm{standard damage} \plus2d.
+\hit The target takes piercing \glossterm{standard damage} \plus1d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -4855,7 +4882,7 @@ If the weapon has no hit points remaining at the end of a phase, it disappears.
 Each round, the weapon automatically moves towards the creature closest to it during the \glossterm{movement phase}.
 During the \glossterm{action phase}, it makes a melee \glossterm{strike} against a random creature adjacent to it.
 Its accuracy is equal to your \glossterm{accuracy}.
-If it hits, it deals \glossterm{standard damage}.
+If it hits, it deals \glossterm{standard damage} \minus1d.
 \end{freeability}
 \vspace{0.25em}
 
