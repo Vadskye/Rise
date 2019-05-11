@@ -2409,7 +2409,6 @@ def generate_mystic_spheres():
                 Choose a willing ally within \\rngmed range.
                 The ally must be currently affected by a \\glossterm<magical> \\glossterm<condition>.
                 In addition, make an attack vs. Mental against a creature within \\rngmed range.
-                \\miss You regain the \\glossterm<action point> spent to cast this spell.
                 \\hit One magical condition of your choice is removed from the chosen ally and applied to the struck creature.
                 \\crit As above, except that you can transfer any number of magical conditions in this way.
             """, tags=[]),
@@ -2417,7 +2416,6 @@ def generate_mystic_spheres():
                 Choose any number of willing allies within \\rngmed range.
                 Each ally must be currently affected by a \\glossterm<magical> \\glossterm<condition>.
                 In addition, make an attack vs. Mental against a creature within \\rngmed range.
-                \\miss You regain the \\glossterm<action point> spent to cast this spell.
                 \\hit Up to two magical conditions of your choice are removed from the chosen allies and applied to the struck creature.
                 \\crit As above, except that you can transfer any number of magical conditions in this way.
             """, tags=[]),
