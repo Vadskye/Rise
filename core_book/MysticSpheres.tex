@@ -112,7 +112,6 @@
         For example, if you try to cast a spell that only affects living creatures on a creature that is undead, the spell would be miscast.
 
         % TODO: This may be more clear if minor + no miscast becomes a tag.
-        % Also, would it be better to prohibit miscasts on spells that don't cost action points?
         \parhead{Minor Action Spells} Spells that require a \glossterm{minor action} to cast are not miscast if your concentration is broken while casting the spell.
         Instead, the spell simply fizzles without any effect.
 
@@ -131,8 +130,7 @@
         \subsubsection{Defensive Casting}\label{Defensive Casting}
             If you use a spell or ritual using \glossterm{defensive casting}, you suffer no penalty to defenses.
             In exchange, you have to make a \glossterm{concentration} check to use the ability successfully (see \pcref{Concentration}).
-            The \glossterm{difficulty rating} of the check is equal to 4 if the spell is a cantrip.
-            Otherwise, it is equal to 5 \add three times the level of the spell you are casting, as shown on \tref{Concentration DRs}.
+            The \glossterm{difficulty rating} of the check is equal to 5 \add three times the level of the spell you are casting, as shown on \tref{Concentration DRs}.
             Success means that you use the ability successfully.
             Failure means that you \glossterm{miscast} the spell or ritual (see Miscasting, below).
 
@@ -142,7 +140,7 @@
                 \lcaption{Concentration DRs}
                 \begin{dtabularx}{\columnwidth}{l X}
                     \tb{Spell Level} & \tb{DR} \tableheaderrule
-                    Cantrip & 4 \\
+                    Cantrip & 5 \\
                     1st level & 8 \\
                     2nd level & 11 \\
                     3rd level & 15 \\
@@ -164,7 +162,7 @@
 
         \parhead{Augments and Cantrips}
         You can apply augments to \glossterm{cantrips}.
-        Cantrips are considered to be 1st level spells for this purpose.
+        Cantrips are considered to be 0th level spells for this purpose.
 
         \subsubsection{Augment Descriptions}\label{Augment Descriptions}
 
@@ -206,6 +204,8 @@
             Its effects stack.
             \par This augment can be applied to any spell or ritual that that has a maximum size category of targets that it can affect.
 
+            \augment{2}{Legion} If the spell would normally affect five or more specific targets, it instead affects five times that many targets.
+
             \augment{2}{Precise} You gain a \plus1 bonus to accuracy with the ability.
             This augment can be applied multiple times.
             Its effects stack.
@@ -224,19 +224,19 @@
             % Are there other edge cases that could cause problems?
             \par This augment can be applied to any spell that does not create an \glossterm{emanation}.
 
-            % too weak at 2?
-            \augment{2}{Widened} The ability's area increases by one step, to a maximum of \areahuge.
-            The steps are, in order: \areasmall, \areamed, \arealarge, and \areahuge.
-            Normally, a Small or Medium line is 5 ft.\ wide, while a Large or Huge line is 10 ft.\ wide.
-            A line used to define a wall does not have a width.
-            This augment can be applied multiple times.
-            Each time, the ability's area increases by an additional step.
-            \par This augment can be applied to any spell or ritual with an area that is one of the above areas.
-
             % too weak at 3?
             \augment{3}{Phasing} When determining whether you have \glossterm{line of sight} and \glossterm{line of effect} to a particular location with the spell, you can ignore a single solid obstacle up to five feet thick.
             This can allow you to cast spells through solid walls, though it does not grant you the ability to see through the wall.
             \par This augment can be applied to any spell with a range.
+
+            % too weak at 3?
+            \augment{3}{Widened} The ability's area increases by one step, to a maximum of \areahuge.
+            The steps are, in order: \areasmall, \areamed, \arealarge, and \areahuge.
+            If you widen a line-shaped area, the line also increases in width by 5 feet.
+            A line used to define a wall does not have a width.
+            This augment can be applied multiple times.
+            Each time, the ability's area increases by an additional step.
+            \par This augment can be applied to any spell or ritual with an area that is one of the above areas.
 
             % \augment{4}{Dual} The spell targets an additional creature within range.
             % This augment can be applied multiple times.
@@ -252,10 +252,6 @@
 
             If the spell is now invalid, such as if all of its targets are out of range, the additional casting has no effect.
             \par This augment can be applied to any spell that does not have the \glossterm{Attune} tag.
-
-            % Are there any exploitable spells?
-            \augment{4}{Innate} The spell loses the \glossterm{AP} tag, allowing you to cast it without spending an \glossterm{action point}.
-            \par This augment can be applied to any spell with the \glossterm{AP} tag that requires a standard action to cast and which does not have the \glossterm{Sustain} tag.
 
     \subsection{Dismissal}
         As a \glossterm{minor action}, you can dismiss any spells or rituals you used that have lasting effects.
@@ -296,20 +292,13 @@
     An ability that gives you access to \glossterm{mystic spheres} will define how many spells you know from that sphere.
     It will also define the maximum level of spell you can cast.
 
-    When you cast a spell, you can apply any number of \glossterm{augments} to the spell (see \pcref{Augments}).
+    When you cast a spell, you can apply any number of \glossterm{augments} you know to the spell (see \pcref{Augments}).
     You cannot learn or cast spells whose spell level exceeds your maximum spell level.
 
-    \subsection{Action Points}
-        Most spells have the \glossterm{AP} tag, which means they cost an \glossterm{action point} to cast.
-        However, some spells have the \glossterm{Attune} tag instead, and do not cost action points to cast.
-        Instead, they require a creature to attune to the spell's effect, which costs an action point.
-        For details, see \pcref{Attunement}.
-
     \subsection{Cantrips}\label{Cantrips}
-        Each \glossterm{mystic sphere} has a \glossterm{cantrip}.
-        A cantrip is a minor spell that does not require an \glossterm{action point} to cast.
-        Cantrips are considered to be 1st level spells for the purpose of abilities that care about spell level, such as \glossterm{augments} (see \pcref{Augments}).
-        Because cantrips are so simple, the \glossterm{difficulty rating} to maintain \glossterm{concentration} on a cantrip is 4 lower than it is for other spells (see \pcref{Concentration}).
+        Some \glossterm{mystic spheres} have minor spells called cantrips.
+        Anyone who has access to a mystic sphere knows all cantrips from that sphere.
+        Cantrips are considered to be 0th level spells for the purpose of abilities that care about spell level, such as \glossterm{concentration} (see \pcref{Concentration}).
 
 \section{Rituals}\label{Rituals}
     Each \glossterm{mystic sphere} has a number of \glossterm{rituals}.

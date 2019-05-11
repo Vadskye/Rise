@@ -12,8 +12,8 @@ For the Acid ability tag, see \pcref{Ability Tags}.
 \glossdef{action phase} The action phase is the second of two \glossterm{phases} in a combat \glossterm{round}.
 During the action phase, creatures can \glossterm{attack}, cast \glossterm{spells}, and take other major combat actions.
 
-\glossdef{action point} Action points allow you to perform special abilities that you have access to.
-There are two types of action points: \glossterm{recovery action points} and \glossterm{reserve action points}.
+\glossdef{action point} Action points allow you to \glossterm{attune} to effects such as spells or items (see \pcref{Attunement}).
+In addition, you can use some special abilities by spending \glossterm{action points}.
 For details, see \pcref{Action Points}.
 
 \glossdef{active cover} Active cover is a type of \glossterm{cover} provided by mobile obstacles that can block \glossterm{physical attacks}.
@@ -67,7 +67,7 @@ For details, see \pcref{Attunement}.
 \glossdef{Attune} An ability with this \glossterm{ability tag} lasts as long as a creature attunes to it.
 For details, see \pcref{Attunement}.
 
-\glossdef{attuned} If you are attuned to an ability, you have invested an action point in it to maintain its effect.
+\glossdef{attuned} If you are attuned to an ability, you have invested an \glossterm{action point} in it to maintain its effect.
 For details, see \pcref{Attunement}.
 
 \glossdef{Auditory} See \pcref{Ability Tags}.
@@ -110,8 +110,8 @@ An object that reaches 0 hit points is broken. If an object takes additional dam
 \glossdef{burst} A burst is a type of area that an ability can have (see \pcref{Area Types}).
 A burst ability has an immediate effect on all valid targets within an area.
 
-\glossdef{cantrip}[cantrips] Every \glossterm{spell} can be cast as a cantrip.
-A cantrip is a weaker version of the spell that does not cost an \glossterm{action point} to use.
+\glossdef{cantrip}[cantrips] Some \glossterm{mystic spheres} have minor spells called cantrips.
+Anyone who has access to a mystic sphere knows all cantrips from that sphere.
 For details, see \pcref{Cantrips}.
 
 \glossdef{Chaos} See \pcref{Ability Tags}.
@@ -215,9 +215,8 @@ For example, damage reduction against piercing damage would not help if you are 
 \glossdef{darkvision} A creature with darkvision can see in the dark clearly up to a given range.
 Darkvision does not function if a creature is in a brightly lit area, and does not resume functioning until the end of the next round after the creature leaves the brightly lit area.
 
-\glossdef{dazed} A dazed creature cannot act during the \glossterm{action phase}.
-It can take its normal actions during the \glossterm{delayed action phase}.
-In addition, the creature takes a \minus2 penalty to \glossterm{defenses}.
+\glossdef{dazed} A dazed creature takes a \minus2 penalty to \glossterm{accuracy} and Mental defense.
+This does not stack with the \glossterm{stunned} effect.
 
 \glossdef{dazzled} A dazzled creature has difficulty seeing.
 It loses any special vision abilities it has, such as \glossterm{darkvision} or \glossterm{low-light vision}.
@@ -228,6 +227,8 @@ In addition, it takes a \minus2 penalty to \glossterm{accuracy} and visual Aware
 \glossdef{deafened} A deafened creature cannot hear. It automatically fails at actions which depend on hearing. In addition, it has a 20\% failure chance when casting any spell with verbal components.
 
 \glossdef{decelerated} A decelerated creature moves at one quarter speed and takes a \minus4 penalty to Reflex defense.
+In addition, a dazed creature cannot act during the \glossterm{action phase}.
+It can take its normal actions during the \glossterm{delayed action phase}.
 
 \glossdef{defenseless} A defenseless creature is unable to defend itself in melee combat.
 \glossterm{Melee attacks} against it gain a \plus2 bonus to accuracy.
@@ -424,6 +425,7 @@ It takes 1d6 fire damage at the end of each \glossterm{action phase} and takes a
 
 \glossdef{immobilized} An immobilized creature can't move out of the space it was in when it became immobilized.
 Immobilized flying creatures that have the ability to hover can maintain their initial altitude.
+% TODO: Fix flying interaction; safest way to descend for non-good maneuverability
 All other flying creatures subjected to this condition descend at a rate of 20 feet per round until they reach the ground, taking no falling damage.
 
 \glossdef{improvised weapon}[improvised weapons] An improvised weapon is an object which could conceivably be used as a weapon, but which was not designed for that purpose.
@@ -449,10 +451,6 @@ For details, see \pcref{Initiative}.
 For details, see \pcref{Insight Points}.
 
 \glossdef{invisible} An invisible creature or object cannot be seen. Creatures unable to see an invisible creature are \defenseless against its attacks. Attackers suffer a 50\% miss chance even if they know the location of the invisible creature. See \pcref{Awareness}, and \pcref{Stealth}, for how to identify invisible creatures.
-
-\glossdef{item slot}[item slots] Item slots are a resource that you can use to \glossterm{attune} to items in place of \glossterm{action points}.
-If you use an item slot to attune to an item, you gain its effects without reducing your available action points.
-For details, see \pcref{Item Slots}.
 
 \glossdef{key attribute} The key attribute for a skill is the attribute associated with that skill.
 For example, Climb is a Strength-based skill.
@@ -486,7 +484,7 @@ Line of sight is blocked by any obstacle that blocks sight.
 For details, see \pcref{Line of Sight}.
 
 \glossdef{long rest} A long rest represents eight hours of relaxation or sleep.
-It allows you to recover all of your spent \glossterm{action points} and \glossterm{legend points}.
+It allows you to recover all of your spent \glossterm{action points}.
 For details, see \pcref{Long Rest}.
 
 \glossdef{low-light vision} A creature with low-light vision can see more clearly in conditions of dim light.
@@ -504,6 +502,9 @@ Mages cast arcane spells, clerics cast divine spells, druids cast nature spells,
 \glossdef{magical} A magical ability is an ability that has no physical explanation.
 Examples include spells, a medusa's petrifying gaze, and a cleric's domain invocations.
 For details, see \pcref{Magical Abilities}.
+
+\glossdef{magical strike} A magical strike is a \glossterm{strike} caused by a \glossterm{magical} ability.
+Because it is a magical ability, you use your \glossterm{power} with magical abilities to determine your damage with the strike instead of your \glossterm{power} with \glossterm{mundane} abilities.
 
 \glossdef{maneuver} A maneuver is a type \glossterm{mundane} ability that some classes grant access to.
 For details, see \pcref{Maneuvers}.
@@ -686,15 +687,6 @@ They are described in \tref{Rare Languages}.
 \glossdef{reach} Your reach is how far away from your body you can make melee attacks.
 A typical Medium creature has a five-foot reach.
 
-\glossdef{recovery action point} A recovery action point is a type of \glossterm{action point}.
-You can regain spent recovery action points with a \glossterm{short rest}.
-Recovery action points are also required to \glossterm{attune} to abilities.
-For details, see \pcref{Action Points}, and \pcref{Attunement}.
-
-\glossdef{reserve action point} A reserve action point is a type of \glossterm{action point}.
-You can regain spent reserve action points with a \glossterm{long rest}.
-For detais, see \pcref{Action Points}.
-
 \glossdef{ritual}[rituals] A ritual is a discrete \glossterm{magical} ability with esoteric effects.
 For details, see \pcref{Rituals}.
 
@@ -730,7 +722,7 @@ For details, see \pcref{Armor}.
 \glossdef{Shielding} See \pcref{Ability Tags}.
 
 \glossdef{short rest}[short rests] A short rest represents five minutes of relaxation.
-It allows you to regain a small amount of \glossterm{hit points} and some of your spent \glossterm{recovery action points}.
+It allows you to regain half of your \glossterm{hit points} and any \glossterm{action points} you released from \glossterm{attunement}.
 For details, see \pcref{Short Rest}.
 
 \glossdef{shove} You can use the \textit{shove} ability to forcibly move a creature.
@@ -807,7 +799,8 @@ You can make a strike as a \glossterm{standard action} in the \glossterm{action 
 For details, see \pcref{Strikes}.
 
 \glossdef{stunned} A stunned creature cannot take any actions during the \glossterm{action phase} or \glossterm{delayed action phase}, except to use the \textit{cleanse} ability (see \pcref{Cleanse}).
-In addition, it takes a \minus2 penalty to \glossterm{accuracy}, \glossterm{checks}, and \glossterm{defenses}.
+In addition, it takes a \minus4 penalty to \glossterm{accuracy} and Mental defense.
+This does not stack with the \glossterm{dazed} effect.
 
 \glossdef{subdual damage} Subdual damage is a special kind of damage that can't kill you.
 If you take subdual damage in excess of your hit points, you fall unconscious.
