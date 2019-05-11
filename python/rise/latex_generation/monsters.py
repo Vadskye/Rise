@@ -52,8 +52,8 @@ def aberrations(sample_monsters):
             active_ability('Mind Crush', f"""
                 The aboleth makes a +{aboleth.accuracy()} vs. Mental attack against a creature in \\rnglong range.
                 \\hit The target takes {aboleth.standard_damage('magical') + 3} psionic damage and is \\glossterm<stunned> as a \\glossterm<condition>.
-                \\crit The aboleth can spend an action point.
-                If it does, the target is \\glossterm<dominated> by the aboleth for as long as the aboleth \\glossterm<attunes> to this ability.
+                \\crit The aboleth can spend an \\glossterm<action point> to \\glossterm<attune> to this ability.
+                If it does, the target is \\glossterm<dominated> by the aboleth as long as the ability lasts.
                 Otherwise, the target takes double the damage of a non-critical hit.
             """, tags=['Compulsion']),
             active_ability('Psionic Blast', f"""
@@ -248,13 +248,9 @@ def humanoids(sample_monsters):
     monsters.append(get_creature_latex(
         goblin_shouter,
         active_abilities=[
-            active_ability('Shout of Running', """
-                The shouter chooses any number of willing creatures other than itself who can hear it.
-                Each target does not have to spend \\glossterm<action points> to use use the \\textit<sprint> ability.
-            """, tags=['Sustain (standard)']),
             active_ability('Shout of Stabbing', """
                 The shouter chooses any number of willing creatures other than itself who can hear it.
-                Each target gains a +1d bonus to damage with \\glossterm<strikes>.
+                Each target gains a +2 bonus to \\glossterm<power> with \\glossterm<strikes>.
             """, tags=['Sustain (standard)']),
         ],
         behavior='Attack lowest threat',
@@ -525,7 +521,7 @@ def magical_beasts(sample_monsters):
                 This grants it additional actions during the action phase as normal.
 
                 A hydra cannot sustain too many excess heads for a prolonged period of time.
-                At the end of each round, if the hydra has more heads than twice its normal head count, it loses an action point.
+                At the end of each round, if the hydra has more heads than twice its normal head count, it loses an \\glossterm<action point>.
                 If it has no action points remaining, the hydra collapses unconscious for 8 hours.
                 During that time, the excess heads shrivel and die, and any sealed stumps heal, restoring the hydra to its normal head count.
             """),
@@ -548,7 +544,7 @@ def magical_beasts(sample_monsters):
                 This grants it additional actions during the action phase as normal.
 
                 A hydra cannot sustain too many excess heads for a prolonged period of time.
-                At the end of each round, if the hydra has more heads than twice its normal head count, it loses an action point.
+                At the end of each round, if the hydra has more heads than twice its normal head count, it loses an \\glossterm<action point>.
                 If it has no action points remaining, the hydra collapses unconscious for 8 hours.
                 During that time, the excess heads shrivel and die, and any sealed stumps heal, restoring the hydra to its normal head count.
             """),

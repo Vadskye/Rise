@@ -143,15 +143,15 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Bbn}[1]{Rage} You can use the \textit{rage} ability as a \glossterm{free action}.
         % TODO: prevent recovering this AP; may need to be Attunement again?
-        \begin{apability}{Rage}[\glossterm{Emotion}, \glossterm{Sustain} (free), \glossterm{Swift}]
+        \begin{attuneability}{Rage}[\glossterm{Emotion}, \glossterm{Attune} (self), \glossterm{Swift}]
             You gain the following benefits and drawbacks:
             \begin{itemize}
                 \item You gain a \plus2 bonus to \glossterm{power} with \glossterm{mundane} abilities.
                 \item You are unable to take \glossterm{standard actions} that do not cause you to make physical attacks.
-                \item At the end of each round, if you did not make a physical attack that round, you take \glossterm{subdual damage} equal to your level.
-                    This damage ignores \glossterm{damage reduction} and any similar abilities.
+                \item At the end of each round, if you did not make a physical attack that round, this ability ends.
+                    If the ability ends this way, you regain the \glossterm{action point} you spent to attune to this ability the next time you take a \glossterm{short rest}.
             \end{itemize}
-        \end{apability}
+        \end{attuneability}
 
         \cf{Bbn}[2]{Intimidating Anger}
         You gain a \plus2 bonus to the \glossterm{Intimidate} skill and to \glossterm{threat}.
@@ -333,13 +333,11 @@ This choice determines a great deal about your character's abilities.
         Your deity grants you the ability to use divine magic.
         You gain access to one divine \glossterm{mystic sphere} (see \pcref{Divine Mystic Spheres}).
         Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
-        Some spells are considered \glossterm{cantrips}.
-        As a \glossterm{standard action}, you can cast any \glossterm{cantrip} spells from any mystic sphere you have access to.
 
-        In addition to \glossterm{cantrips}, you learn one 1st level \glossterm{spell} from your chosen \glossterm{mystic spheres}.
+        You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
+        In addition, you learn one 1st level \glossterm{spell} from your chosen \glossterm{mystic sphere}.
         You can also spend \glossterm{insight points} to learn one additional divine spell per \glossterm{insight point}.
         Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
-        Many spells also cost \glossterm{action points}, as indicated by the presence of an \glossterm{AP} tag (see \pcref{Ability Tags}).
 
         When you gain access to a new \glossterm{mystic sphere} or spell level,
             you can exchange any number of spells you know for other spells,
@@ -520,12 +518,12 @@ This choice determines a great deal about your character's abilities.
             \parhead{Aspect} If you roll a 1 on an attack roll, it explodes (see \pcref{Exploding Attacks}).
             This does not affect bonus dice rolled for exploding attacks (see \pcref{Exploding Attacks}).
             \parhead{Essence} You can use the \textit{twist of fate} ability as a standard action.
-            \begin{apability}{Twist of Fate}
+            \begin{freeability}{Twist of Fate}
                 An improbable event occurs within \rnglong range.
                 You can specify in general terms what you want to happen, such as ``Make the bartender leave the bar''.
                 You cannot control the exact nature of the event, though it always beneficial for you in some way.
                 After using this ability, you cannot use it again for an hour.
-            \end{apability}
+            \end{freeability}
             \parhead{Mastery} You gain a \plus5 bonus to \glossterm{accuracy} with any attack roll that explodes (see \pcref{Exploding Attacks}).
 
         \subsubsection{Death}
@@ -551,20 +549,20 @@ This choice determines a great deal about your character's abilities.
             This effect lasts until the end of the round.
             % TODO: upgrade timing is a little weird
             \parhead{Aspect} You can use the \textit{destructive attack} ability as a standard action.
-            \begin{apability}{Destructive Attack}
-                Make a \glossterm{strike} with a \plus2d bonus to damage.
+            \begin{freeability}{Destructive Attack}
+                Make a \glossterm{strike} with a \plus1d bonus to damage.
 
                 \rankline
-                \rank{3} The damage bonus increases to \plus3d.
-                \rank{5} The damage bonus increases to \plus4d.
-                \rank{7} The damage bonus increases to \plus5d.
-            \end{apability}
+                \rank{3} The damage bonus increases to \plus2d.
+                \rank{5} The damage bonus increases to \plus3d.
+                \rank{7} The damage bonus increases to \plus4d.
+            \end{freeability}
             \parhead{Essence} You can use the \textit{lay waste} ability as a standard action.
-            \begin{apability}{Lay Waste}
+            \begin{freeability}{Lay Waste}
                 You make an attack vs. Fortitude against all unattended objects in a \arealarge radius.
                 You may freely exclude any number of 5-ft\. cubes from the area, as long as the resulting area is still contiguous.
                 \hit For each target, if its \glossterm{hardness} is lower than your \glossterm{power}, it crumbles into a fine power and is irreparably \glossterm{broken}.
-            \end{apability}
+            \end{freeability}
             \parhead{Mastery} You gain a \plus2 bonus to \glossterm{power} with \glossterm{mundane} abilities.
 
         \subsubsection{Earth}
@@ -589,14 +587,13 @@ This choice determines a great deal about your character's abilities.
             You take the remaining half of the damage, and suffer any non-damaging effects of all attacks normally.
             \parhead{Aspect} You can use this domain's domain gift to target any willing creature within \rngclose range.
             \parhead{Essence} You can use the \textit{compel evil} ability as a standard action.
-            \begin{apability}{Compel Evil}[\glossterm{Compulsion}]
+            \begin{freeability}{Compel Evil}[\glossterm{Compulsion}]
                 Make an attack vs. Mental against a creature within \rngmed range.
                 Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
                 \hit The target takes an evil action as soon as it can.
                 You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
-            \end{apability}
-            \parhead{Mastery} When you use your Evil domain gift, you can spend an \glossterm{action point}.
-            If you do, you can redirect your damage to an unwilling creature that phase.
+            \end{freeability}
+            \parhead{Mastery} You can use your domain gift to redirect your damage to an adjacent unwilling creature.
             You cannot use this ability to redirect damage to the same unwilling creature more than once between \glossterm{short rests}.
 
         \subsubsection{Fire}
@@ -627,12 +624,12 @@ This choice determines a great deal about your character's abilities.
             The protected creature takes the remaining half of the damage, and suffers any non-damaging effects of attacks normally.
             \parhead{Aspect} You can use this domain's domain gift to target any willing creature within \rngclose range.
             \parhead{Essence} You can use the \textit{compel good} ability as a standard action.
-            \begin{apability}{Compel Good}[\glossterm{Compulsion}]
+            \begin{freeability}{Compel Good}[\glossterm{Compulsion}]
                 Make an attack vs. Mental against a creature within \rngmed range.
                 Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to Good, are immune to this ability.
                 \hit The target takes an good action as soon as it can.
                 You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
-            \end{apability}
+            \end{freeability}
             \parhead{Mastery} When you use your Good domain gift, you can redirect all damage to you instead of only half.
 
         \subsubsection{Knowledge}
@@ -641,13 +638,13 @@ This choice determines a great deal about your character's abilities.
             \parhead{Gift} You gain two skill points.
             \parhead{Aspect} Your extensive knowledge of all methods of attack and defense grants you a \plus1 bonus to all defenses.
             \parhead{Essence} You can use the \textit{share knowledge} ability as a standard action.
-            \begin{apability}{Share Knowledge}
+            \begin{freeability}{Share Knowledge}
                 You make a Knowledge check of any kind with a bonus equal to your \glossterm{power}.
                 You and all willing creatures within a \arealarge radius learn the results of your check.
                 Creatures believe the information gained in this way to be true as if they it had seen it with their own eyes.
 
                 You cannot alter the knowledge you gain with this check in any way, such as by adding or withholding information.
-            \end{apability}
+            \end{freeability}
             \parhead{Mastery} You gain a \plus1 bonus to \glossterm{accuracy} with all attacks.
 
         \subsubsection{Law}
@@ -655,7 +652,7 @@ This choice determines a great deal about your character's abilities.
             % Clarify - does this apply to exploding dice?
             \parhead{Aspect} When you roll a 1 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
             \parhead{Essence} You can use the \textit{compel law} ability as a standard action.
-            \begin{apability}{Compel Law}[\glossterm{Compulsion}]
+            \begin{freeability}{Compel Law}[\glossterm{Compulsion}]
                 Make an attack vs. Mental against all creatures within a \arealarge radius.
                 \hit Each target is unable to break the laws that apply in the area, and any attempt to do so simply fails.
                 The laws which are applied are those which are most appropriate for the area, regardless of whether you or any other creature know those laws.
@@ -664,7 +661,7 @@ This choice determines a great deal about your character's abilities.
                 When you use this ability, you also gain the condition.
                 If this condition is removed from you, it is also removed from all other affected creatures.
                 In areas under ambiguous or nonexistent government, this ability may have unexpected effects, or it may have no effect at all.
-            \end{apability}
+            \end{freeability}
             \parhead{Mastery} When you roll less than a 5 on an \glossterm{attack roll}, it is treated as if you had rolled a 5.
 
         \subsubsection{Life}
@@ -675,7 +672,7 @@ This choice determines a great deal about your character's abilities.
             \begin{apability}{Revivify}
                 Choose a dead creature adjacent to you.
                 If it was dead for no more than 5 minutes, it is restored to life, as the \ritual{resurrection} ritual.
-                When the target is returned to life in this way, you expend all of your remaining \glossterm{action points}.
+                After using this ability, you cannot use it for 1 hour.
             \end{apability}
             % Need special text to clarify that it is affected by the Aspect?
             \parhead{Mastery} At the end of each \glossterm{action phase}, you heal hit points equal to your \glossterm{power}.
@@ -693,8 +690,8 @@ This choice determines a great deal about your character's abilities.
 
             \parhead{Gift} You gain two skill points.
             \parhead{Aspect} You gain a \plus4 bonus to Strength for the purpose of checks and determining your carrying capacity.
-            \parhead{Essence} You can use the \textit{burst of strength} ability as a standard action.
-            \begin{attuneability}{Burst of Strength}[\glossterm{Attune} (self)]
+            \parhead{Essence} You can use the \textit{divine strength} ability as a \glossterm{minor action}.
+            \begin{attuneability}{Divine Strength}[\glossterm{Attune} (self)]
                 You gain a \plus4 \glossterm{magic bonus} to Strength.
             \end{attuneability}
             \parhead{Mastery} You gain a \plus1 bonus to your starting Strength.
@@ -705,11 +702,11 @@ This choice determines a great deal about your character's abilities.
 
             \parhead{Gift} You gain two skill points.
             \parhead{Aspect} You gain a \plus20 foot \glossterm{magic bonus} to your \glossterm{base speed}, up to a maximum of double your normal speed.
-            \parhead{Essence} You can use the \textit{dimensional jaunt} ability as a standard action.
-            \begin{apability}{Dimensional Jaunt}[\glossterm{Teleportation}]
+            \parhead{Essence} You can use the \textit{dimensional travel} ability as a standard action.
+            \begin{freeability}{Dimensional Travel}[\glossterm{Teleportation}]
                 You teleport up to 1 mile in any direction.
                 You do not need \glossterm{line of sight} or \glossterm{line of effect} to your destination, but you must be able to clearly visualize it.
-            \end{apability}
+            \end{freeability}
             \parhead{Mastery} When you move, you can teleport the same distance instead.
             This does not change the total distance you can move, but you can teleport in any direction, including vertically.
 
@@ -723,7 +720,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Gift} You gain two skill points.
             \parhead{Aspect} You gain a \plus2 \glossterm{magic bonus} to the Bluff, Disguise, and Stealth skills.
             \parhead{Essence} You can use the \textit{compel belief} ability as a standard action.
-            \begin{apability}{Compel Belief}[\glossterm{Compulsion}, \glossterm{Sustain} (minor)]
+            \begin{freeability}{Compel Belief}[\glossterm{Compulsion}, \glossterm{Sustain} (minor)]
                 Make an attack vs. Mental against a creature within \rngmed range.
                 You must also choose a belief that the target has.
                 The belief may be a lie that you told it, or even a simple misunderstanding (such as believing a hidden creature is not present in a room).
@@ -731,27 +728,15 @@ This choice determines a great deal about your character's abilities.
                 \hit The target continues to maintain the chosen belief, regardless of any evidence to the contrary.
                 It will interpret any evidence that the falsehood is incorrect to be somehow wrong -- an illusion, a conspiracy to decieve it, or any other reason it can think of to continue believing the falsehood.
                 At the end of the effect, the creature can decide whether it believes the falsehood or not, as normal.
-            \end{apability}
+            \end{freeability}
             \parhead{Mastery} You are undetectable by Divination spells and effects.
             They cannot detect your presence, sounds you make, or any actions you take.
 
         \subsubsection{War}
             \parhead{Gift} You gain proficiency with heavy armor and an additional weapon group of your choice.
             \parhead{Aspect} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks}.
-            \parhead{Essence} You can use the \textit{battlefield magic} ability as a \glossterm{minor action}.
-            \begin{apability}{Battlefield Magic}[Swift]
-                % TODO: wording
-                One spell you cast this phase gains one of the following effects when it resolves:
-                \begin{itemize}
-                    \item Legion: If the spell would normally affect five or more specific targets, it instead affects five times that many targets.
-                    \item Selective: If the spell has an area, you may freely exclude any areas from the spell's effect.
-                    All squares in the final area of the spell must be contiguous.
-                    You cannot create split a spell's area into multiple completely separate areas.
-                    \item Widened: If the spell has an area, the size of the area is doubled.
-                \end{itemize}
-                You cannot use this ability on spells with the \glossterm{Attune} tag.
-            \end{apability}
-            \parhead{Mastery} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks}.
+            \parhead{Essence} You learn one of the Legion, Selective, or Widened \glossterm{augments} (see \pcref{Augments}).
+            \parhead{Mastery} You gain a \plus2 bonus to \glossterm{power} with \glossterm{physical attacks}.
 
         \subsubsection{Water}
             If you choose this domain, you add the \sphere{aquamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
@@ -1084,13 +1069,11 @@ This choice determines a great deal about your character's abilities.
         Your deity grants you the ability to use nature magic.
         You gain access to one nature \glossterm{mystic sphere} (see \pcref{Nature Mystic Spheres}).
         Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
-        Some spells are considered \glossterm{cantrips}.
-        As a \glossterm{standard action}, you can cast any \glossterm{cantrip} spells from any mystic sphere you have access to.
 
-        In addition to \glossterm{cantrips}, you learn one 1st level \glossterm{spell} from your chosen \glossterm{mystic spheres}.
+        You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
+        In addition, you learn one 1st level \glossterm{spell} from your chosen \glossterm{mystic sphere}.
         You can also spend \glossterm{insight points} to learn one additional nature spell per \glossterm{insight point}.
         Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
-        Many spells also cost \glossterm{action points}, as indicated by the presence of an \glossterm{AP} tag (see \pcref{Ability Tags}).
 
         When you gain access to a new \glossterm{mystic sphere} or spell level,
             you can exchange any number of spells you know for other spells,
@@ -1325,7 +1308,7 @@ This choice determines a great deal about your character's abilities.
             \\ 5 & Greater disciplined threat  & Supreme armor expertise & Greater martial power & Brave leader, greater guided strike
             \\ 6 & Disciplined mind            & Greater weapon training & Steady expertise      & Greater battle tactics
             \\ 7 & Greater disciplined defense & Armored juggernaut      & Martial maneuver      & Battle tactic
-            \\ 8 & Legendary discipline        &                         &
+            \\ 8 & Supreme discipline          &                         &
         \end{dtabularx}
     \end{dtable!*}
 
@@ -1410,11 +1393,10 @@ This choice determines a great deal about your character's abilities.
     \subsection{Combat Discipline}
         This archetype allows you to control your \glossterm{threat} and improves your defenses, especially against special abilities.
 
-        \cf{Ftr}[1]{Discipline} You can use the \textit{discipline} ability as a \glossterm{minor action}.
-        \begin{apability}{Discipline}[Swift]
+        \cf{Ftr}[1]{Discipline} You can use the \textit{discipline} ability as a \glossterm{standard action}.
+        \begin{freeability}{Discipline}
             Remove one \glossterm{condition} affecting you.
-            Because this ability has the \glossterm{Swift} tag, the penalties from the condition do not affect you during the current phase.
-        \end{apability}
+        \end{freeability}
 
         \cf{Ftr}[2]{Disciplined Threat}
         You know how to control your actions to appear more or less threatening, as you choose.
@@ -1441,8 +1423,10 @@ This choice determines a great deal about your character's abilities.
         \cf{Ftr}[7]{Greater Disciplined Defense}
         The defense bonus from your \textit{disciplined defense} ability increases to \plus2.
 
-        \cf{Ftr}[8]{Legendary Discipline}
-        You can use your \textit{discipline} ability without spending an \glossterm{action point}.
+        \cf{Ftr}[8]{Supreme Discipline}
+        Your \textit{discipline} ability gains the \glossterm{Swift} tag.
+        When you use it, the penalties from the removed condition do not affect you during the current phase.
+        In addition, the ability removes any number of conditions.
 
     \subsection{Battle Leader}
 
@@ -1451,7 +1435,7 @@ This choice determines a great deal about your character's abilities.
         Choose a single battle tactic from the list below.
         You can also spend \glossterm{insight points} to learn one additional \textit{battle tactic} per \glossterm{insight point}.
 
-        As a \glossterm{standard action}, you can spent an \glossterm{action point} to initiate a \textit{battle tactic}.
+        You can initiate a \textit{battle tactic} as a standard action.
         When you do, choose any number of willing creatures within a \arealarge emanation from yourself.
         Each target must be able to see or hear you.
 
@@ -1605,13 +1589,11 @@ This choice determines a great deal about your character's abilities.
         Your deity grants you the ability to use arcane magic.
         You gain access to one arcane \glossterm{mystic sphere} (see \pcref{Arcane Mystic Spheres}).
         Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
-        Some spells are considered \glossterm{cantrips}.
-        As a \glossterm{standard action}, you can cast any \glossterm{cantrip} spells from any mystic sphere you have access to.
 
-        In addition to \glossterm{cantrips}, you learn one 1st level \glossterm{spell} from your chosen \glossterm{mystic spheres}.
+        You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
+        In addition, you learn one 1st level \glossterm{spell} from your chosen \glossterm{mystic sphere}.
         You can also spend \glossterm{insight points} to learn one additional arcane spell per \glossterm{insight point}.
         Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
-        Many spells also cost \glossterm{action points}, as indicated by the presence of an \glossterm{AP} tag (see \pcref{Ability Tags}).
 
         When you gain access to a new \glossterm{mystic sphere} or spell level,
             you can exchange any number of spells you know for other spells,
@@ -1722,7 +1704,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Memorized Sphere} % TODO: clarify you need to be high enough level?
             Choose a \glossterm{mystic sphere} you have access to.
             You can perform rituals from that \glossterm{mystic sphere} without having them written in your ritual book.
-            If you lead a ritual from that \glossterm{mystic sphere}, it requires half the normal amount of time to perform and costs half the normal number of action points (minimum 1).
+            If you lead a ritual from that \glossterm{mystic sphere}, it requires half the normal amount of time to perform and costs half the normal number of \glossterm{action points} (minimum 1).
             \par You can choose this insight multiple times, choosing a different \glossterm{mystic sphere} each time.
         }
 
@@ -1788,7 +1770,6 @@ This choice determines a great deal about your character's abilities.
         \cf{Mge}[7]{Spell Absorption} When a spell is used to attack you, if the attack fails to beat your defenses, you gain the ability to cast the spell once.
         The spell retains its original \glossterm{augments}, if any, and you cannot apply any \glossterm{augments} to it.
         When you cast the spell, you use your own \glossterm{accuracy}, \glossterm{power}, and abilities to determine the effects of the spell.
-        You must spend an \glossterm{action point} to cast the spell.
         Once you cast the spell, you expend the absorbed energy, and you cannot cast it again.
 
         If you resist multiple spells simultaneously, or if you resist another spell before casting the previous spell you resisted, you choose which spell you gain the ability to cast.
@@ -1850,125 +1831,116 @@ This choice determines a great deal about your character's abilities.
         Choose one \textit{ki manifestation} from the list below.
         You can also spend \glossterm{insight points} to learn one additional \textit{ki manifestation} per \glossterm{insight point}.
         You can use any \textit{ki manifestation} ability you know using the type of action indicated in the ability's description.
+
+        Whenever you use a \textit{ki manifestation}, you lose hit points equal to your level.
         You cannot use more than one \textit{ki manifestation} per round.
         {
-            \begin{apability}{Abandon the Fragile Self}[\glossterm{Swift}]
-                You can use this ability as a \glossterm{minor action}.
-                Remove one \glossterm{condition} affecting you.
-                Because this ability has the \glossterm{Swift} tag, the penalties from the condition do not affect you during the current phase.
+            \begin{freeability}{Abandon the Fragile Self}
+                You can use this ability at the start of the round.
+                You can negate one \glossterm{condition} that would be applied to you this round.
 
                 \rankline
-                \rank{3} You are also immune to all \glossterm{conditions} during the current phase, preventing new conditions from being applied to you.
-                \rank{5} The immunity to conditions lasts until the end of the round.
-                \rank{7} The immunity to conditions lasts until the end of the next round.
-            \end{apability}
+                \rank{3} You can negate two conditions that would be applied to you this round.
+                \rank{5} You can negate three conditions that would be applied to you this round.
+                \rank{7} You are immune to conditions this round.
+            \end{freeability}
 
-            \begin{apability}{Burst of Blinding Speed}
+            \begin{freeability}{Burst of Blinding Speed}
                 You can use this ability at the start of the round.
-                It lasts until the end of the round.
-                You gain a \plus30 foot \glossterm{magic bonus} to your land speed, up to a maximum of double your original speed.
+                You gain a \plus10 foot bonus to your land speed this round.
 
                 \rankline
-                \rank{3} You can also ignore \glossterm{difficult terrain}.
-                \rank{5} You can also move or stand on liquids as if they were solid.
-                \rank{7} The speed bonus increases to \plus60 feet, up to a maximum of triple your original speed.
-            \end{apability}
+                \rank{3} You can also ignore \glossterm{difficult terrain} this round.
+                \rank{5} The speed bonus increases to \plus20 feet.
+                \rank{7} You can also move or stand on liquids as if they were solid this round.
+            \end{freeability}
 
-            \begin{apability}{Elegant Whirl of Fluid Motion}
+            \begin{freeability}{Elegant Whirl of Fluid Motion}
                 You can use this ability at the start of the round.
-                It lasts until the end of the round.
-                You gain a \plus5 bonus to the Acrobatics skill (see \pcref{Acrobatics}).
+                You gain a \plus5 bonus to the Acrobatics skill this round (see \pcref{Acrobatics}).
 
                 \rankline
                 \rank{3} The bonus increases to \plus10.
                 \rank{5} The bonus lasts until the end of the next round.
                 \rank{7} The bonus increases to \plus20.
-            \end{apability}
+            \end{freeability}
 
-            \begin{apability}{Flash Step}[\glossterm{Teleportation}]
-                You can use this ability at the start of the round.
-                It lasts until the end of the round.
+            \begin{freeability}{Flash Step}[\glossterm{Teleportation}]
+                You can use this ability as part of movement.
                 % TODO: is 'horizontally' the correct word?
-                When you move, you can teleport horizontally up to half your movement speed instead.
-                This replaces the entire distance you would have moved that phase.
-                If your \glossterm{line of effect} to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your movement is cancelled and you remain where you are.
+                You teleport horizontally instead of moving normally.
+                If your \glossterm{line of effect} to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are.
+
+                Teleporting a given distance costs movement equal to twice that distance.
+                For example, if you have a 30 foot movement speed, you can move 10 feet, teleport 5 feet, and move an additional 10 feet before your movement ends.
 
                 \rankline
-                \rank{3} The movement cost to teleport is reduced to be equal to the distance you teleport.
-                \rank{5} You can teleport in multiple steps within the same phase.
-                Each step costs movement equal to twice the distance you teleport.
+                \rank{3} You can use this ability to move even if you are \glossterm{immobilized} or \glossterm{grappled}.
+                \rank{5} The movement cost to teleport is reduced to be equal to the distance you teleport.
                 \rank{7} You can attempt to teleport to locations outside of \glossterm{line of sight} and \glossterm{line of effect}.
                 If your intended destination is invalid, the distance you spent teleporting is wasted, but you suffer no other ill effects.
-            \end{apability}
+            \end{freeability}
 
-            \begin{apability}{Leap of the Heavens}
+            \begin{freeability}{Leap of the Heavens}
                 You can use this ability at the start of the round.
-                It lasts until the end of the round.
-                You gain a \plus5 bonus to the Jump skill (see \pcref{Jump}).
+                You gain a \plus5 bonus to the Jump skill this round (see \pcref{Jump}).
 
                 \rankline
                 \rank{3} The bonus increases to \plus10.
                 \rank{5} The bonus lasts until the end of the next round.
                 \rank{7} The bonus increases to \plus20.
-            \end{apability}
+            \end{freeability}
 
-            \begin{apability}{Scale the Highest Tower}
+            \begin{freeability}{Scale the Highest Tower}
                 You can use this ability at the start of the round.
-                It lasts until the end of the round.
-                You gain a \plus5 bonus to the Climb skill (see \pcref{Climb}).
+                You gain a \plus5 bonus to the Climb skill this round (see \pcref{Climb}).
                 % TODO: is this wording correct?
 
                 \rankline
                 \rank{3} The Climb bonus increases to \plus10.
                 \rank{5} The bonus lasts until the end of the next round.
                 \rank{5} The bonus increases to \plus20.
-            \end{apability}
+            \end{freeability}
 
-            \begin{apability}{See the Flow of Life}
+            \begin{freeability}{See the Flow of Life}
                 You can use this ability at the start of the round.
-                It lasts until the end of the round.
-                You gain the ability to see the ki of living creatures.
-                You can ``see'' any living creatures and their equipment within 50 feet perfectly, regardless of lighting conditions, blindness, invisibility, or any other means of concealment.
-                This cannot detect living creatures through solid walls, however.
+                You gain the \glossterm{lifesense} ability with a 50 foot range this round.
+                You know the location of all living creatures within range.
+                This can allow you to identify the presence of hidden living creatures or to identify that seemingly living creatures are not alive.
+                You still take normal \glossterm{miss chances} for concealment, invisibility, and so on.
 
                 \rankline
-                \rank{3} The range of the ability is increased to 100 feet.
-                \rank{5} This ability gains the \glossterm{Sustain} (minor) tag.
-                \rank{7} This ability gains the \glossterm{Attune} tag in place of the \glossterm{Sustain} (minor) tag.
-            \end{apability}
+                \rank{3} The range of the \glossterm{lifesense} ability is increased to 100 feet.
+                \rank{5} You also gain the \glossterm{lifesight} ability with a 50 foot range.
+                You can ``see'' any living creatures and their equipment within range perfectly, regardless of lighting conditions, blindness, invisibility, or any other means of concealment.
+                \rank{7} The range of the \glossterm{lifesense} ability is increased to 200 feet, and the range of the \glossterm{lifesight} ability is increased to 100 feet.
+            \end{freeability}
 
-            \begin{apability}{Step Between the Mystic Worlds}[\glossterm{Swift}]
-                You can use this ability as a \glossterm{minor action}.
-                It lasts until the end of the round.
-                You gain a \plus2 bonus to \glossterm{defenses} against \glossterm{magical} abilities that directly target you.
+            \begin{freeability}{Step Between the Mystic Worlds}
+                You can use this ability at the start of the round.
+                You gain a \plus2 bonus to \glossterm{defenses} against \glossterm{magical} abilities that directly target you this round.
                 This does not protect you from abilities that affect an area.
 
                 \rankline
-                \rank{3} The defense bonus is increased to \plus4.
-                \rank{5} The defense bonus is increased to \plus6.
-                \rank{7} You cannot be directly targeted by \glossterm{magical} abilities.
-            \end{apability}
+                \rank{3} The defense bonus is increased to \plus3.
+                \rank{5} The defense bonus is increased to \plus4.
+                \rank{7} The defense bonus is increased to \plus5.
+            \end{freeability}
 
-            \begin{apability}{Surpass the Mortal Limits}
+            \begin{freeability}{Surpass the Mortal Limits}
                 You can use this ability at the start of the round.
-                It lasts until the end of the round.
-                You can use your \glossterm{power} in place of your Strength, Dexterity, and Constitution when making checks.
+                You can use your \glossterm{power} in place of your Strength, Dexterity, and Constitution when making checks this round.
 
                 \rankline
                 \rank{3} You also gain a \plus2 bonus to checks based on Strength, Dexterity, and Constitution.
                 \rank{5} The effect lasts until the end of the next round.
                 \rank{7} The bonus increases to \plus4.
-            \end{apability}
+            \end{freeability}
 
             % TODO: add more
         }
 
-        \cf{Mnk}[2]{Ki Strike} You can use the \textit{ki strike} ability as a standard action.
-        \begin{freeability}{Ki Strike}[Magical]
-            Make a melee \glossterm{strike}.
-            % TODO: wording
-            Because this is a \glossterm{magical} ability, you use your \glossterm{power} with magical abilities to determine your damage with the strike.
-        \end{freeability}
+        \cf{Mnk}[2]{Ki Strike} You can treat all strikes you make as \glossterm{magical strikes}, allowing you to use your \glossterm{power} with magical abilities to determine your damage.
 
         \cf{Mnk}[3]{Ki Power} You gain a \plus1 bonus to \glossterm{power} with \glossterm{magical} abilities.
 
@@ -1977,19 +1949,14 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Mnk}[5]{Greater Ki Barrier} The body armor bonus from your \textit{ki barrier} ability increases to \plus3.
 
-        \cf{Mnk}[5]{Greater Ki Strike} You gain a \plus1d bonus to damage with your \textit{ki strike} ability.
-
         \cf{Mnk}[6]{Greater Ki Power} The bonus from your \textit{ki power} ability increases to \plus2.
 
         \cf*{Mnk}[7]{Ki Manifestation}[Magical]
         You learn an additional \textit{ki manifestation}.
 
-        \cf{Mnk}[8]{Dual Manifestation}[Magical] You can use up to two \textit{ki manifestation} abilities per round.
-        If you do, the second ability does not cost an action point.
+        \cf{Mnk}[8]{Dual Manifestation}[Magical] You can use two \textit{ki manifestation} abilities per round.
 
-        \cf{Mnk}[8]{Supreme Ki Barrier} The shield from your \textit{ki barrier} ability increases to \plus2.
-
-        \cf{Mnk}[8]{Supreme Ki Strike} The damage bonus from your \textit{greater ki strike} ability increases to \plus2d.
+        \cf{Mnk}[8]{Supreme Ki Barrier} The shield bonus from your \textit{ki barrier} ability increases to \plus2.
 
     \subsection{Esoteric Warrior}\label{Esoteric Warrior}
         This archetype improves your combat prowess with unusual fighting styles like unarmed attacks and grappling.
@@ -2203,13 +2170,11 @@ This choice determines a great deal about your character's abilities.
         Your deity grants you the ability to use divine magic.
         You gain access to one divine \glossterm{mystic sphere} (see \pcref{Divine Mystic Spheres}).
         Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
-        Some spells are considered \glossterm{cantrips}.
-        As a \glossterm{standard action}, you can cast any \glossterm{cantrip} spells from any mystic sphere you have access to.
 
-        In addition to \glossterm{cantrips}, you learn one 1st level \glossterm{spell} from your chosen \glossterm{mystic spheres}.
+        You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
+        In addition, you learn one 1st level \glossterm{spell} from your chosen \glossterm{mystic sphere}.
         You can also spend \glossterm{insight points} to learn one additional divine spell per \glossterm{insight point}.
         Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
-        Many spells also cost \glossterm{action points}, as indicated by the presence of an \glossterm{AP} tag (see \pcref{Ability Tags}).
 
         When you gain access to a new \glossterm{mystic sphere} or spell level,
             you can exchange any number of spells you know for other spells,
@@ -2243,37 +2208,32 @@ This choice determines a great deal about your character's abilities.
         This archetype improves your combat prowess, especially against foes who do not share your devoted alignment.
 
         \cf{Pal}[1]{Smite}[Magical] You can use the \textit{smite} ability as a standard action.
-        \begin{apability}{Smite}
-            Make a \glossterm{strike}.
+        \begin{freeability}{Smite}
+            Make a \glossterm{magical strike}.
             If your target shares your devoted alignment, the strike deals no damage.
-            Otherwise, the strike gains a \plus2d bonus to damage.
-        \end{apability}
-
-        \cf{Pal}[2]{Recovering Smite} You can use the \textit{recovering smite} ability as a standard action.
-        \begin{freeability}{Recovering Smite}
-            Make a \glossterm{strike} with a \minus1d penalty to damage.
-            If it hits a creature that does not share your devoted alignment, you recover a spent \glossterm{recovery action point}.
+            Otherwise, the strike gains a \plus1d bonus to damage.
         \end{freeability}
 
-        \cf{Pal}[3]{Zealous Power} You gain a \plus1 bonus to \glossterm{power} with \glossterm{mundane} abilities.
+        \cf{Pal}[2]{Zealous Conviction} You gain a \plus1 bonus to Fortitude and Mental defenses.
 
-        \cf{Pal}[4]{Greater Smite}[Magical] The damage bonus from your \textit{smite} ability increases to \plus3d.
-        In addition, when you use your \textit{smite} ability, you can spend an additional \glossterm{action point}.
-        If you do, the target of your strike is treated as if it had the alignment opposed to your devoted alignment for the purpose of all abilities, including for your initial \textit{smite}.
-        This only affects its alignment along the alignment axis your devoted alignment is on.
-        For example, if your devoted alignment was evil, a chaotic neutral target would be treated as chaotic good.
+        \cf{Pal}[3]{Zealous Power} You gain a \plus1 bonus to \glossterm{power} with \glossterm{physical attacks}.
 
-        You can use this ability to do battle against foes who share your alignment, but you should exercise caution in doing so.
-        Persecution of allies can lead you to fall and become an ex-paladin.
+        \cf{Pal}[4]{Greater Smite}[Magical] The damage bonus from your \textit{smite} ability increases to \plus2d.
+        In addition, when you use your \textit{smite} ability, you can use the \textit{pass judgment} ability.
+        \begin{attuneability}{Pass Judgment}[\glossterm{Attune} (self)]
+            The target of your \textit{smite} is treated as if it had the alignment opposed to your devoted alignment for the purpose of all abilities, including for your initial \textit{smite}.
+            This only affects its alignment along the alignment axis your devoted alignment is on.
+            For example, if your devoted alignment was evil, a chaotic neutral target would be treated as chaotic good.
 
-        \cf{Pal}[5]{Greater Recovering Smite} The damage penalty with your \textit{recovering smite} ability is removed.
+            You can use this ability to do battle against foes who share your alignment, but you should exercise caution in doing so.
+            Persecution of allies can lead you to fall and become an ex-paladin.
+        \end{attuneability}
 
-        \cf{Pal}[5]{Greater Zealous Power} The bonus from your \textit{zealous power} ability increases to \plus2.
+        \cf{Pal}[5]{Greater Zealous Conviction} The bonus from your \textit{zealous conviction} ability increases to \plus2.
 
-        \cf{Pal}[6]{Supreme Smite}[Magical] The damage bonus from your \textit{smite} ability increases to \plus4d.
-        In addition, you can force the target to be treated as if it had the alignment opposed to your own without spending an additional \glossterm{action point}.
+        \cf{Pal}[6]{Greater Zealous Power} The bonus from your \textit{zealous power} ability increases to \plus2.
 
-        \cf{Pal}[7]{Supreme Recovering Smite} You gain a \plus1d bonus to damage with your \textit{recovering smite} ability.
+        \cf{Pal}[7]{Supreme Smite}[Magical] The damage bonus from your \textit{smite} ability increases to \plus4d.
 
         % TODO: Doesn't work with new spell system
         % \cf{Pal}[20]{Martyr's Retribution}[Mag]
@@ -2303,9 +2263,7 @@ This choice determines a great deal about your character's abilities.
         In addition, you gain additional hit points equal to your \glossterm{power}.
 
         \cf{Pal}[4]{Greater Lay on Hands}[Magical]
-        You gain a \plus1d bonus to the healing from your \textit{lay on hands} ability.
-        In addition, you can spend an \glossterm{action point} when you use that ability.
-        If you do, the target also removes one \glossterm{condition} affecting it.
+        The target of your \textit{lay on hands} ability can also remove a \glossterm{condition}.
 
         \cf{Pal}[5]{Greater Stalwart Champion} The threat bonus from your \textit{stalwart champion} ability increases to \plus4.
         In addition, the Armor defense bonus increases to \plus2.
@@ -2314,7 +2272,7 @@ This choice determines a great deal about your character's abilities.
         In addition, the hit point bonus increases to twice your \glossterm{power}.
 
         \cf{Pal}[7]{Supreme Lay on Hands}[Magical]
-        The healing bonus from your \textit{greater lay on hands ability} increases to \plus2d.
+        You gain a \plus1d bonus to the healing from your \textit{lay on hands} ability.
         In addition, the number of conditions you can remove with your \textit{lay on hands} ability increases to two.
 
     \subsection{Ex-Paladins}
@@ -2576,7 +2534,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rgr}[7]{Fluid Hunter}
         At the start of each round, you can change which \textit{hunting style} you are using.
-        This does not cost an \glossterm{action point} or change the target of your \textit{quarry} ability.
+        This does not change the target of your \textit{quarry} ability.
 
         \cf{Rgr}[8]{Dual Quarry} You can attune to two separate uses of your \textit{quarry} ability simultaneously.
         You can use different \textit{hunting style} abilities with each \textit{quarry}.
@@ -2737,16 +2695,16 @@ This choice determines a great deal about your character's abilities.
         \cf{Rog}[1]{Glibness} You gain a \plus2 bonus to the Bluff, Intimidate, and Persuasion skills.
 
         \cf{Rog}[2]{Confound} You can use the \textit{confound} ability as a standard action.
-        \begin{apability}{Confound}[\glossterm{Compulsion}, \glossterm{Magical}]
+        \begin{freeability}{Confound}[\glossterm{Compulsion}, \glossterm{Magical}]
             Make a attack vs. Mental against a creature within \rngclose range.
             You can choose to use your Bluff skill to attack in place of your normal \glossterm{accuracy}.
             \hit As a \glossterm{condition}, the target is either \glossterm{dazed} or \glossterm{disoriented}, as you choose.
-        \end{apability}
+        \end{freeability}
 
         \cf{Rog}[3]{Suave Lore} You gain two additional \glossterm{skill points}.
 
         \cf{Rog}[4]{Compel Belief} You can use the \textit{compel belief} ability as a standard action.
-        \begin{apability}{Compel Belief}[\glossterm{Compulsion}, \glossterm{Magical}, \glossterm{Sustain} (minor)]
+        \begin{freeability}{Compel Belief}[\glossterm{Compulsion}, \glossterm{Magical}, \glossterm{Sustain} (minor)]
             Make an attack vs. Mental against a creature within \rngmed range.
             You can use your Persuasion skill to attack in place of your normal \glossterm{accuracy}.
             You must also choose a belief that the target has.
@@ -2755,7 +2713,7 @@ This choice determines a great deal about your character's abilities.
             \hit The target continues to maintain the chosen belief, regardless of any evidence to the contrary.
             It will interpret any evidence that the falsehood is incorrect to be somehow wrong -- an illusion, a conspiracy to decieve it, or any other reason it can think of to continue believing the falsehood.
             At the end of the effect, the creature can decide whether it believes the falsehood or not, as normal.
-        \end{apability}
+        \end{freeability}
 
         \cf{Rog}[5]{Greater Confound} When you use the \textit{confound} ability, you can make the target \glossterm{stunned} instead of dazed or disoriented.
 
@@ -2768,14 +2726,14 @@ This choice determines a great deal about your character's abilities.
 
     %     \cf{Rog}{1}{Bardic Performances}
     %     Choose two \textit{bardic performances} from the list below.
-    %     As a standard action, you can spend an \glossterm{action point} to use a \textit{bardic performance}.
+    %     As a standard action, you can use a \textit{bardic performance}.
     %     All \textit{bardic performances} have the \glossterm{Sustain} (minor) tag.
 
     %     When you use a \textit{bardic performance} ability, you begin a performance using one of your Perform skills.
     %     Depending on the nature of your performance, the ability may have the \glossterm{Auditory} or \glossterm{Visual} tags.
     %     If a target can neither see nor hear your performance, the effect immediately ends for that target.
     %     {
-    %         \begin{apability}{Mesmerizing Performance}[\glossterm{Delusion}, \glossterm{Mind}]
+    %         \begin{freeability}{Mesmerizing Performance}[\glossterm{Delusion}, \glossterm{Mind}]
     %             Make an attack vs. Mental against up to five creatures within \rngmed range.
     %             \hit Each target is \fascinated by you.
     %             Any act by you or your apparent allies that damages a target or that causes it to feel that it is in danger breaks the effect for that creature.
@@ -2784,12 +2742,12 @@ This choice determines a great deal about your character's abilities.
     %             \rankline
     %             \rank{3} 
 
-    %         \end{apability}
+    %         \end{freeability}
 
-    %         \begin{apability}{Inspiring Performance}[\glossterm{Delusion}, \glossterm{Mind}]
+    %         \begin{freeability}{Inspiring Performance}[\glossterm{Delusion}, \glossterm{Mind}]
     %             Choose a willing creature within \rngmed range.
     %             The target gains a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} and a \plus2 \glossterm{magic bonus} to \glossterm{checks}.
-    %         \end{apability}
+    %         \end{freeability}
     %     }
 
 \newpage
@@ -2878,13 +2836,11 @@ This choice determines a great deal about your character's abilities.
         Your deity grants you the ability to use pact magic.
         You gain access to one pact \glossterm{mystic sphere} (see \pcref{Pact Mystic Spheres}).
         Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
-        Some spells are considered \glossterm{cantrips}.
-        As a \glossterm{standard action}, you can cast any \glossterm{cantrip} spells from any mystic sphere you have access to.
 
-        In addition to \glossterm{cantrips}, you learn one 1st level \glossterm{spell} from your chosen \glossterm{mystic spheres}.
+        You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
+        In addition, you learn one 1st level \glossterm{spell} from your chosen \glossterm{mystic sphere}.
         You can also spend \glossterm{insight points} to learn one additional pact spell per \glossterm{insight point}.
         Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
-        Many spells also cost \glossterm{action points}, as indicated by the presence of an \glossterm{AP} tag (see \pcref{Ability Tags}).
 
         When you gain access to a new \glossterm{mystic sphere} or spell level,
             you can exchange any number of spells you know for other spells,
@@ -2975,9 +2931,6 @@ This choice determines a great deal about your character's abilities.
         You must have the Pact Spellcasting archetype to gain the abilities from this archetype.
 
         \cf{War}[1]{Armor Tolerance} You reduce your \glossterm{encumbrance} by 2 when determining your \glossterm{somatic component failure}.
-
-        % \cf{War}[2]{Malevolent Recovery}[Magical]
-        % When you hit a creature with a pact \glossterm{cantrip} that makes an attack roll, you regain a spent \glossterm{action point} (see \pcref{Regaining Action Points}).
 
         \cf{War}[2]{Spell Knowledge} You learn an additional pact \glossterm{spell}.
 

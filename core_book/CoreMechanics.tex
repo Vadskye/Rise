@@ -191,32 +191,16 @@ It defines how attributes work and explains how to make physical attacks in comb
     This section explains how character statistics, such as how strong you are or how accurate your attacks are, should be calculated.
 
     \subsection{Action Points}\label{Action Points}
-        You can use a wide variety of special abilities by spending \glossterm{action points}.
+        You can use \glossterm{action points} to \glossterm{attune} to effects such as spells or items (see \pcref{Attunement}).
+        In addition, you can use some special abilities by spending \glossterm{action points}.
         Abilities that require action points have the \glossterm{AP} or \glossterm{Attune} tags (see \pcref{Ability Tags}).
 
-        There are two kinds of action points: \glossterm{recovery action points} and \glossterm{reserve action points}.
-        The difference between the two types is how quickly you can get them back after spending them.
-        You can get back a spent \glossterm{recovery action point} with a \glossterm{short rest},
-            but a spent \glossterm{reserve action point} does not return until after a \glossterm{long rest}.
+        A 1st level character typically has 4 \glossterm{action points}.
+        At higher levels, you gain additional \glossterm{action points} (see \pcref{Character Advancement}).
+        Some abilities can also grant additional \glossterm{action points}.
+
+        When you take a \glossterm{long rest}, you recover all spent \glossterm{action points}.
         For details, see \pcref{Resting}.
-        Unless otherwise noted, you can use abilities that require action points by spending either type of action point.
-
-        A typical 1st level character has three \glossterm{recovery action points} and three \glossterm{reserve action points}.
-        At higher levels, you gain additional \glossterm{recovery action points} (see \pcref{Character Advancement}).
-        You can gain additional \glossterm{reserve action points} with a high Willpower, and some abilities can also grant reserve action points.
-
-        \subsubsection{Regaining Action Points}\label{Regaining Action Points}
-            You gain regain spent \glossterm{action points} by resting (see \pcref{Resting}).
-            In addition, some abilities allow you to regain action points during combat.
-            There are two significant restrictions on regaining action points during combat.
-
-            First, you cannot regain action points and spend action points in the same round.
-            If you have spent an action point during a round, including spending an action point to \glossterm{attune} to an ability, you cannot regain action points until the next round.
-            Similarly, if you have already regained an action point during a round, you cannot spend action points until the next round.
-            If you somehow spend and regain action points simultaneously, you do not regain the action points.
-
-            Second, you cannot regain more than one action point per round, even if multiple different abilities say you regain a spent action point.
-            All action points you would regain after the first one in the round are ignored.
 
     \subsection{Attributes}\label{Attributes}
 
@@ -302,7 +286,6 @@ It defines how attributes work and explains how to make physical attacks in comb
                 Willpower represents your ability to endure mental hardships.
                 It has the following effects:
                 \begin{itemize}
-                    \item You gain a bonus (or penalty) to the number of \glossterm{reserve action points} you have equal to your starting Willpower.
                     \item You gain a bonus (or penalty) to your Mental defense equal to your starting Willpower.
                     \item If your Willpower is negative, you take a penalty to \glossterm{power} with \glossterm{magical} abilities equal to your Willpower.
                 \end{itemize}
@@ -913,12 +896,13 @@ It defines how attributes work and explains how to make physical attacks in comb
             In addition, you can specify multiple targets and try to keep away from all of them.
         \end{freeability}
 
-        \parhead{Sprint} As a \glossterm{free action}, you can spend an \glossterm{action point} to use the \textit{sprint} ability, allowing you to briefly move more quickly.
-        You cannot use this ability twice in the same round.
+        \parhead{Sprint} As a \glossterm{standard action}, you can use the \textit{sprint} ability to move more quickly.
 
-        \begin{apability}{\labeltext{Sprint}}[\glossterm{Swift}]
-            You double your movement speed until the end of the current phase.
-        \end{apability}
+        \begin{freeability}{\labeltext{Sprint}}
+            You move up to double your normal movement speed.
+            % TODO: prevent infinite sprinting at 0 HP
+            In addition, you lose hit points equal to your level.
+        \end{freeability}
 
     \subsection{Movement Impediments}
 
@@ -1161,35 +1145,20 @@ It defines how attributes work and explains how to make physical attacks in comb
             There are several other abilities that can also remove conditions.
 
         \subsection{Attunement}\label{Attunement}
-            Many abilities last as long as a creature \glossterm{attunes} to them.
-            % This wording would be simpler if attuning to abilities strictly cost recovery action points. 
-            % However, that leads to weird scenarios where it's sometimes better to use reserve AP while you still have recovery AP remaining.
+            Many abilities last as long as a creature attunes to them.
             Attuning to an ability costs an \glossterm{action point}.
-            When you attune to an ability, you must choose one of your \glossterm{recovery action points} which has not been used to attune to an ability.
-            As long as you remain attuned to that ability, you cannot recover that action point by any means.
-            If you cannot select a \glossterm{recovery action point} in this way,
-                such as if you have already attuned to as many abilities as you have recovery action points,
-                you cannot attune to the ability.
-            You must release your attunement before beginning to rest in order to recover the associated \glossterm{recovery action point}.
+            As long as you remain attuned to that ability, you cannot recover that \glossterm{action point} by any means.
 
-            You can choose to stop attuning to an ability as a \glossterm{free action}.
-            If you do, the ability's effect ends.
+            As a standard action, you can use the \textit{release attunement} ability to stop being attuned an ability you have attuned to.
+            \begin{freeability}{Release Attunement}
+                You stop being attuned to one effect you have attuned to.
+                The next time you take a \glossterm{short rest}, you regain the \glossterm{action point} you spent to attune to that effect.
+            \end{freeability}
 
             Attuned abilities continue to work across any distance, but not across planar boundaries.
             % TODO: wording
             At the end of each round, your attunement to all abilities created by creatures on a different plane than your current plane ends.
             Planar travel that does not last a full round, such as teleportation within a plane, does not interrupt your attunement.
-
-            % This name is not great
-            \subsubsection{Duplicate Attunement Abilities}\label{Duplicate Attunement Abilities}
-                When you use an \glossterm{Attune} (self) or \glossterm{Attune} (target) ability, any previous activations of that ability are immediately \glossterm{dismissed}.
-                Any creatures that were attuned to the previous activation of the ability have their attunement released.
-                \glossterm{Attune} (ritual) abilities do not have this limitation.
-                You may have any number of activations of \glossterm{Attune} (ritual) abilities active at once.
-
-                % What does this even mean? Intended to talk about within-ability choices, I think.
-                Minor variations of a single ability are considered to be the same ability for this purpose.
-                Applying different \glossterm{augments} to a \glossterm{spell} does not allow you to attune to it more than once.
 
             \subsubsection{Attunement Types}\label{Attunement Types}
                 There are three types of attunement abilities: self, target, and ritual.
@@ -1260,9 +1229,9 @@ It defines how attributes work and explains how to make physical attacks in comb
         \parhead{Air} Air abilities control the surrounding air.
         They do not function in environments without air.
 
-        \parhead{AP} AP abilities require spending an \glossterm{action point} to use.
+        \parhead{AP} AP abilities require spending \glossterm{action points} to use.
         Some AP abilities, such as specific \glossterm{rituals}, require spending multiple action points instead of only one.
-        The number of action points required will be given in the ability's description.
+        Unless otherwise specified in the ability's description, an AP ability requires a single \glossterm{action point}.
 
         \parhead{Auditory} Auditory abilities use sound to cause their effects.
         Creatures and objects that cannot hear the effect are immune to it.
@@ -1469,33 +1438,24 @@ It defines how attributes work and explains how to make physical attacks in comb
             \lcaption{Special Combat Abilities}
             \begin{dtabularx}{\columnwidth}{>{\lcol}p{6em} l X}
                 \tb{Ability}  & \tb{Defense} & \tb{Brief Description} \tableheaderrule
-                Charge\fn{1}  & Armor        & Move and attack                         \\
-                Cleanse\fn{1} & \tdash       & Quick remove a \glossterm{condition}    \\
-                Dirty Trick   & Any          & Impose penalty on a foe                 \\
-                Disarm        & Ref          & Attack item, knocking it free           \\
-                Feint         & Ref          & Leave foe vulnerable to attacks         \\
-                Grapple       & Fort and Ref & Wrestle with a foe                      \\
-                Overrun\fn{1} & Fort         & Move through foe's space                \\
-                Recover       & \tdash       & Regain a spent \glossterm{action point} \\
-                Shove         & Fort         & Move a foe                              \\
-                Struggle      & \tdash       & Move 5 feet regardless of penalties     \\
-                Total Defense & \tdash       & Gain \plus2 to defenses                 \\
-                Trip          & Ref          & Trip a foe                              \\
+                Cleanse\fn{1} & \tdash       & Quickly remove a \glossterm{condition} \\
+                Dirty Trick   & Any          & Impose penalty on a foe                \\
+                Disarm        & Ref          & Attack item, knocking it free          \\
+                Feint         & Ref          & Leave foe vulnerable to attacks        \\
+                Grapple       & Fort and Ref & Wrestle with a foe                     \\
+                Overrun\fn{1} & Fort         & Move through foe's space               \\
+                Shove         & Fort         & Move a foe                             \\
+                Struggle      & \tdash       & Move 5 feet regardless of penalties    \\
+                Total Defense & \tdash       & Gain \plus2 to defenses                \\
+                Trip          & Ref          & Trip a foe                             \\
             \end{dtabularx}
             1. This ability costs an \glossterm{action point} to use.
         \end{dtable}
 
-        \parhead{Charge} You can use the \textit{charge} ability as a standard action during the \glossterm{action phase}.
-
-        \begin{apability}{\labeltext{Charge}}
-            Move up to your speed in a single straight line.
-            During the \glossterm{delayed action phase}, you can make a melee \glossterm{strike} from your new location.
-        \end{apability}
-
         \parhead{Cleanse} You can use the \textit{cleanse} ability as a \glossterm{minor action}.
         As long as you are conscious, no effect can prevent you from using this ability, even effects that prohibit using any other abilities.
         \begin{apability}{\labeltext{Cleanse}}
-            You remove one \glossterm{condition} affecting you.
+            You remove all \glossterm{conditions} affecting you.
             This cannot remove a condition applied during the current round.
         \end{apability}
 
@@ -1546,23 +1506,17 @@ It defines how attributes work and explains how to make physical attacks in comb
             For details, see \pcref{Grappling}.
         \end{freeability}
 
-        \parhead{Overrun} At the start of each phase, you can spend an \glossterm{action point} to use the \textit{overrun} ability.
+        \parhead{Overrun} As a \glossterm{standard action}, you can use the \textit{overrun} ability to move through creatures in your way.
 
         \begin{freeability}{\labeltext{Overrun}}
-            You can try to move directly through creatures in your way during the current phase.
+            Move up to your movement speed.
+            You can try to move directly through creatures in your way during this movement.
             Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered.
             If a creature does not attempt to avoid you, you make an attack vs. Fortitude against it.
             Your \glossterm{accuracy} is equal to your Strength.
 
-            On a hit, you can move through the creature's space, though you treat it as \glossterm{difficult terrain}.
+            On a hit, the target is knocked \glossterm{prone} and you can move through its space, though you treat it as \glossterm{difficult terrain}.
             On a miss, you end your movement immediately.
-        \end{freeability}
-
-        \parhead{Recover} As a standard action, you can use the \textit{recover} ability to regain a spent \glossterm{recovery action point}.
-
-        \begin{freeability}{\labeltext{Recover}}
-            At the end of the round, if you did not take damage this round, you may regain one spent \glossterm{recovery action point}.
-            For details, see \pcref{Regaining Action Points}.
         \end{freeability}
 
         \parhead{Shove} As a standard action, you can use the \textit{shove} ability to physically move a creature.
@@ -1667,6 +1621,12 @@ It defines how attributes work and explains how to make physical attacks in comb
         % This makes subdual damage actually better at knocking creatures unconscious than non-subdual damage, but that doesn't seem to be a narrative problem?
         At the end of each phase, if a creature has subdual damage in excess of its hit points, it immediately falls unconscious.
 
+    \subsection{Losing Hit Points}\label{Losing Hit Points}
+        Some attacks and abilities cause you to lose hit points directly instead of dealing damage to you.
+        Effects that reduce damage you take or react to you taking damage have no effect when you lose hit points directly.
+
+        Because effects that cause you to lose hit points do not deal damage, they never cause you to take \glossterm{vital damage}.
+        If your hit points would be reduced below 0, they are reduced to 0 instead.
 
 % TODO: This is a bad name; organize these better
 \section{Special Rules}
@@ -1841,8 +1801,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             \begin{itemize}
                 \item You heal hit points equal to half your maximum hit points.
                     The Heal skill can increase this healing (see \pcref{Accelerate Recovery}).
-                \item You regain all spent \glossterm{recovery action points}.
-                    Being \glossterm{attuned} to effects at the start of your rest can prevent you from regaining spent \glossterm{recovery action points} (see \pcref{Attunement}).
+                \item You regain any \glossterm{action points} you released from \glossterm{attuned} abilities (see \pcref{Attunement}).
                 \item You remove all \glossterm{conditions} affecting you (unless they cannot be removed normally).
                 \item Some other abilities have specific effects that last until you take a short rest.
                     For example, a barbarian cannot use their \textit{rage} ability again after raging until after they take a short rest (see Rage, page \pref{Bbn:Rage}).
@@ -1852,17 +1811,14 @@ It defines how attributes work and explains how to make physical attacks in comb
             Resting for eight hours is considered a \glossterm{long rest}.
             When you take a long rest, you gain the following benefits.
             \begin{itemize}
-                \item You heal vital damage equal to your starting Constitution \add half your level, to a minimum of 1 vital damage.
+                \item You heal \glossterm{vital damage} equal to your starting Constitution \add half your level, to a minimum of 1 vital damage.
                     The Heal skill can increase this healing (see \pcref{Accelerate Recovery}).
-                \item You regain all spent \glossterm{action points}, including \glossterm{reserve action points}.
-                    Being \glossterm{attuned} to effects at the start of your rest can prevent you from regaining spent \glossterm{recovery action points} (see \pcref{Attunement}).
-                \item You regain all spent \glossterm{legend points}.
-                \item You regain all spent \glossterm{item slots}.
+                \item You regain all spent \glossterm{action points} other than \glossterm{action points} which are currently \glossterm{attuned} to abilities (see \pcref{Attunement}).
                 \item Some other abilities have specific effects that last until you take a long rest.
             \end{itemize}
 
 \section{Legend Points}\label{Legend Points}
-    At 3rd level, you gain a limited ability to change your fate with \glossterm{legend points}.
+    At 5th level, you gain a limited ability to change your fate with \glossterm{legend points}.
     When you unexpectedly fail at a critical moment, or an enemy delivers a particularly devastating blow, you can spend a \glossterm{legend point} to shift the outcome of the situation in your favor.
 
     \subsubsection{Using Legend Points}
@@ -1893,40 +1849,41 @@ It defines how attributes work and explains how to make physical attacks in comb
 
     A character that increases in level gains additional benefits.
     \begin{itemize}
-        \item At 1st, 3rd, 6th, and 10th level, you gain an \glossterm{item slot}.
-        \item At 3rd level, you gain access to \glossterm{legend points}.
-        \item At 4th level, and every 4 levels thereafter, you gain a \glossterm{legacy item} upgrade (see \pcref{Legacy Items}).
-        \item At 7th level, and every 6 levels thereafter, you gain an additional \glossterm{recovery action point}.
+        \item At 2nd level, and every 3 levels thereafter, your maximum \glossterm{archetype rank} increases (see \pcref{Archetype Ranks}).
+        \item At 3rd level, and every 6 levels thereafter, you gain an additional \glossterm{action point}.
+        \item At 4th level, and every 6 levels thereafter, you gain a \glossterm{legacy item} upgrade (see \pcref{Legacy Items}).
+        \item At 5th level, you gain access to \glossterm{legend points}.
     \end{itemize}
 
     \begin{dtable}
         \lcaption{Character Advancement}
-        \begin{dtabularx}{\columnwidth}{*{2}{>{\lcol}l} *{5}{>{\lcol}X}}
-            \tb{Level} & \tb{XP}  & \tb{Max Rank}\fn{1} & \tb{Item Slots} & \tb{Legacy Item}\fn{2} & \tb{Recovery AP} \tableheaderrule
-            1st          & 0      & 1      & 1      & \tdash & 3
-            \\ 2nd       & 20     & 2      & \tdash & \tdash & \tdash
-            \\ 2rd\fn{4} & 50     & \tdash & 2      & \tdash & \tdash
-            \\ 4th       & 90     & \tdash & \tdash & 1      & \tdash
-            \\ 5th       & 150    & 3      & \tdash & \tdash & \tdash
-            \\ 6th       & 230    & \tdash & 3      & \tdash & \tdash
-            \\ 7th       & 350    & \tdash & \tdash & \tdash & 4
-            \\ 8th       & 510    & 4      & \tdash & 2      & \tdash
-            \\ 9th       & 750    & \tdash & \tdash & \tdash & \tdash
-            \\ 10th      & 1,050  & \tdash & 4      & \tdash & \tdash
-            \\ 11th      & 1,550  & 5      & \tdash & \tdash & \tdash
-            \\ 12th      & 2,200  & \tdash & \tdash & 3      & \tdash
-            \\ 13th      & 3,150  & \tdash & \tdash & \tdash & 5
-            \\ 14th      & 4,450  & 6      & \tdash & \tdash & \tdash
-            \\ 15th      & 6,350  & \tdash & \tdash & \tdash & \tdash
-            \\ 16th      & 8,900  & \tdash & \tdash & 4      & \tdash
-            \\ 17th      & 13,000 & 7      & \tdash & \tdash & \tdash
-            \\ 18th      & 18,000 & \tdash & \tdash & \tdash & \tdash
-            \\ 19th      & 25,500 & \tdash & \tdash & \tdash & 6
-            \\ 20th      & 36,000 & 8      & \tdash & 5      & \tdash
+        \begin{dtabularx}{\columnwidth}{*{2}{>{\lcol}l} *{4}{>{\lcol}X}}
+            \tb{Level} & \tb{XP}  & \tb{Max Rank}\fn{1} & \tb{Legacy Item}\fn{2} & \tb{AP}\fn{3} \tableheaderrule
+            1st          & 0      & 1      & \tdash & 4
+            \\ 2nd       & 20     & 2      & \tdash & \tdash
+            \\ 3rd       & 50     & \tdash & \tdash & 5
+            \\ 4th       & 90     & \tdash & 1      & \tdash
+            \\ 5th\fn{4} & 150    & 3      & \tdash & \tdash
+            \\ 6th       & 230    & \tdash & \tdash & \tdash
+            \\ 7th       & 350    & \tdash & \tdash & \tdash
+            \\ 8th       & 510    & 4      & \tdash & \tdash
+            \\ 9th       & 750    & \tdash & \tdash & 6
+            \\ 10th      & 1,050  & \tdash & 2      & \tdash
+            \\ 11th      & 1,550  & 5      & \tdash & \tdash
+            \\ 12th      & 2,200  & \tdash & \tdash & \tdash
+            \\ 13th      & 3,150  & \tdash & \tdash & \tdash
+            \\ 14th      & 4,450  & 6      & \tdash & \tdash
+            \\ 15th      & 6,350  & \tdash & \tdash & 7
+            \\ 16th      & 8,900  & \tdash & 3      & \tdash
+            \\ 17th      & 13,000 & 7      & \tdash & \tdash
+            \\ 18th      & 18,000 & \tdash & \tdash & \tdash
+            \\ 19th      & 25,500 & \tdash & \tdash & \tdash
+            \\ 20th      & 36,000 & 8      & \tdash & \tdash
         \end{dtabularx}
-        1. This is your maximum rank in your class archetypes (see \pcref{Archetypes}). \\
+        1. This is your maximum rank in your class archetypes (see \pcref{Archetype Ranks}). \\
         2. This is the number of abilities you gain with your \glossterm{legacy item} (see \pcref{Legacy Items}). \\
-        3. You gain access to \glossterm{legend points} at this level.
+        3. This is the number of \glossterm{action points} you have (see \pcref{Action points}). \\
+        4. You gain access to \glossterm{legend points} at this level.
     \end{dtable}
 
     \subsection{Leveling Up}
