@@ -436,10 +436,16 @@ def calc_armor():
         div({'class': 'calc-header'}, 'Armor'),
         equation(
             [
-                underlabel('Lvl/Dex', number_input({
+                underlabel('Lvl', number_input({
                     'disabled': True,
                     'name': 'armor_defense_scaling_display',
-                    'value': '@{armor_defense_scaling}',
+                    'value': '@{level}',
+                })),
+                plus(),
+                underlabel('(Dex)', number_input({
+                    'disabled': True,
+                    'name': 'body_armor_dexterity_display',
+                    'value': '@{dexterity_starting}',
                 })),
                 plus(),
                 underlabel('Armor', number_input({'name': 'body_armor_defense_value'})),
@@ -464,10 +470,10 @@ def calc_fort():
         div({'class': 'calc-header'}, 'Fortitude'),
         equation(
             [
-                underlabel('Lvl/Con', number_input({
+                underlabel('Lvl', number_input({
                     'disabled': True,
                     'name': 'fortitude_scaling_display',
-                    'value': '@{fortitude_scaling}',
+                    'value': '@{level}',
                 })),
                 plus(),
                 underlabel('(Con)', number_input({
@@ -496,10 +502,10 @@ def calc_ref():
         div({'class': 'calc-header'}, 'Reflex'),
         equation(
             [
-                underlabel('Lvl/Dex', number_input({
+                underlabel('Lvl', number_input({
                     'disabled': True,
                     'name': 'reflex_scaling_display',
-                    'value': '@{reflex_scaling}',
+                    'value': '@{level}',
                 })),
                 plus(),
                 underlabel('(Dex)', number_input({
@@ -528,10 +534,10 @@ def calc_mental():
         div({'class': 'calc-header'}, 'Mental'),
         equation(
             [
-                underlabel('Lvl/Wil', number_input({
+                underlabel('Lvl', number_input({
                     'disabled': True,
                     'name': 'mental_scaling_display',
-                    'value': '@{mental_scaling}',
+                    'value': '@{level}',
                 })),
                 plus(),
                 underlabel('(Wil)', number_input({

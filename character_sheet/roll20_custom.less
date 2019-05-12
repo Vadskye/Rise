@@ -6,6 +6,10 @@ input {
     font-size: 1em;
 }
 
+.first-page input[type=number], .second-page input[type=number], .third-page  input[type=number] {
+    width: 3em;
+}
+
 .first-page {
     .boring-row {
         .level-input {
@@ -21,6 +25,9 @@ input {
     .skill-labels {
         .skill-label {
             font-size: 1em;
+        }
+        .skill-label.misc {
+            flex-basis: 2.5em;
         }
     }
 }
