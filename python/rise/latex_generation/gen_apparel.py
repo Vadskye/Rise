@@ -543,13 +543,9 @@ def generate_worn():
         tags=['Sonic'],
         description="""
             The crown constantly emits a low-pitched rumbling.
-            To you, the sound is barely perceptible.
+            To you and your \\glossterm<allies>, the sound is barely perceptible.
             However, all other creatures within a \\arealarge radius emanation from you hear the sound as a deafening, continuous roll of thunder.
             The noise blocks out all other sounds quieter than thunder, causing them to be \\deafened while they remain in the area and until the end of the next round after they leave.
-
-            As a \\glossterm<standard action>, you can designate a willing creature you touch as protected from the crown.
-            The target hears the crown's rumbling as a barely perceptable rumbling like you do.
-            This effect lasts until you revoke that protection, which you can do as a \\glossterm<free action>.
         """,
         short_description="Continously deafens nearby enemies",
     ))

@@ -993,19 +993,14 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \subsubsection{Targeted Abilities}\label{Targeted Abilities}
             Some abilities allow you to choose specific targets.
-            There can be restrictions on the targets of the ability, such as ``a creature or object'' or ``a willing creature''.
+            There can be restrictions on the targets of the ability, such as ``a creature or object'' or ``an \glossterm{ally}''.
             These abilities are called \glossterm{targeted} abilities.
 
         \subsubsection{Area Abilities}
             Some abilities affect all valid targets within a given area.
-            There can be restrictions on the targets of the ability, such as ``all creatures'' or ``all enemies''.
+            There can be restrictions on the targets of the ability, such as ``all creatures'' or ``all \glossterm{enemies}''.
             However, you cannot individually choose to include or exclude specific targets.
             These abilities are not \glossterm{targeted} abilities.
-
-        \subsubsection{Willing Targets}
-            Some abilities can only target willing creatures.
-            Creatures choose to be considered willing when abilities choose their targets.
-            If a creature chose to be willing at the time when the ability targeted it, the ability will affect that creature even if it decides to be unwilling after that step.
 
         \subsubsection{Invalid Targets}
             % clarify timing
@@ -1644,6 +1639,25 @@ It defines how attributes work and explains how to make physical attacks in comb
         When applying multipliers to real-world values (such as weight or distance), normal rules of math apply instead.
         A creature whose size doubles (thus multiplying its weight by 8) and then is turned to stone (which would multiply its weight by a factor of roughly 3) now weighs about 24 times normal, not 10 times normal.
         Similarly, a blinded creature attempting to negotiate \glossterm{difficult terrain} would need to spend 20 feet of movement to move 5 feet (doubling the cost twice, for a total multiplier of \mult4), rather than as 15 feet (adding 100\% twice).
+
+    \subsection{Allies and Enemies}\label{Allies and Enemies}
+        Each creature you interact with in Rise is either an \glossterm{ally}, an \glossterm{enemy}, or a \glossterm{neutral party}.
+        Some beneficial abilities only affect allies, and some offensive abilities only affect enemies.
+
+        You can choose how you consider each creature at the start of each \glossterm{phase}.
+        You cannot consider yourself an \glossterm{ally} or an \glossterm{enemy}.
+        While you are \glossterm{unconscious}, you treat all creatures as \glossterm{allies}.
+
+        \parhead{Allies} An ally is any creature you consider an ally who also considers you an ally.
+        If you consider someone an ally, but they do not consider you an ally, you treat them as a neutral party for the purpose of your abilities.
+        Allies can move through your \glossterm{space}.
+
+        \parhead{Enemies} An enemy is any creature who you consider to be an enemy.
+        Enemies cannot move through your \glossterm{space}.
+
+        \parhead{Neutral Parties} A neutral party is any creature who is neither an ally nor an enemy.
+        You treat all creatures you have not declared an opinion of as neutral parties.
+        Neutral parties can move through your \glossterm{space}.
 
     \subsection{Encumbrance}\label{Encumbrance}
         Your encumbrance is a value that represents how much you are burdened by armor and weight.
