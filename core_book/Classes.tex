@@ -640,7 +640,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Essence} You can use the \textit{share knowledge} ability as a standard action.
             \begin{freeability}{Share Knowledge}
                 You make a Knowledge check of any kind with a bonus equal to your \glossterm{power}.
-                You and all willing creatures within a \arealarge radius learn the results of your check.
+                You and your \glossterm{allies} within a \arealarge radius learn the results of your check.
                 Creatures believe the information gained in this way to be true as if they it had seen it with their own eyes.
 
                 You cannot alter the knowledge you gain with this check in any way, such as by adding or withholding information.
@@ -1436,8 +1436,7 @@ This choice determines a great deal about your character's abilities.
         You can also spend \glossterm{insight points} to learn one additional \textit{battle tactic} per \glossterm{insight point}.
 
         You can initiate a \textit{battle tactic} as a standard action.
-        When you do, choose any number of willing creatures within a \arealarge emanation from yourself.
-        Each target must be able to see or hear you.
+        Your \textit{battle tactics} affect your \glossterm{allies} within a \arealarge radius emanation from you who can either see or hear you.
 
         All \textit{battle tactics} have the \glossterm{Attune} (self) tag, so they last as long as you \glossterm{attune} to them (see \pcref{Attunement}).
         If you know multiple battle tactics, you can initiate multiple \textit{battle tactics} simultaneously.
@@ -2226,7 +2225,7 @@ This choice determines a great deal about your character's abilities.
             For example, if your devoted alignment was evil, a chaotic neutral target would be treated as chaotic good.
 
             You can use this ability to do battle against foes who share your alignment, but you should exercise caution in doing so.
-            Persecution of allies can lead you to fall and become an ex-paladin.
+            Persecution of those who share your ideals can lead you to fall and become an ex-paladin.
         \end{attuneability}
 
         \cf{Pal}[5]{Greater Zealous Conviction} The bonus from your \textit{zealous conviction} ability increases to \plus2.
@@ -2387,9 +2386,8 @@ This choice determines a great deal about your character's abilities.
         \begin{attuneability}{Quarry}[\glossterm{Attune} (self)]
             Choose a creature within \rnglong range.
             The target becomes your quarry.
-            In addition, choose any number of willing creatures within the same range.
-            Each target gains a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks} against your quarry.
-            You and the willing creatures affected by this ability are called your \glossterm{hunting party}.
+            You and your \glossterm{allies} within the same range are called your hunting party.
+            Your hunting party gains a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks} against your quarry.
         \end{attuneability}
 
         \cf{Rgr}[2]{Hunting Style}
@@ -2400,7 +2398,7 @@ This choice determines a great deal about your character's abilities.
         Each \textit{hunting style} ability lasts as long as the \textit{quarry} ability you used it with.
         {
             \begin{freeability}{Anchoring}[Magical]
-                As long as your quarry is \glossterm{threatened} by at least two members of your \glossterm{hunting party}, it cannot travel extradimensionally.
+                As long as your quarry is \glossterm{threatened} by at least two members of your hunting party, it cannot travel extradimensionally.
                 This prevents all \glossterm{Manifestation}, \glossterm{Planar}, and \glossterm{Teleportation} effects.
 
                 \rankline
@@ -2420,7 +2418,7 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
 
             \begin{freeability}{Coordinated Stealth}
-                Your quarry takes a \minus4 penalty to Awareness checks to notice members of your \glossterm{hunting party}.
+                Your quarry takes a \minus4 penalty to Awareness checks to notice members of your hunting party.
 
                 \rankline
                 % seems weak?
@@ -2439,7 +2437,7 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
 
             \begin{freeability}{Decoy}
-                If you \glossterm{threaten} your quarry, it takes a \minus2 penalty to accuracy on attacks against members of your \glossterm{hunting party} other than you.
+                If you \glossterm{threaten} your quarry, it takes a \minus2 penalty to accuracy on attacks against members of your hunting party other than you.
 
                 \rankline
                 \rank{4} The penalty increases to \minus3.
@@ -2448,7 +2446,7 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
 
             \begin{freeability}{Lifeseal}[Magical]
-                As long as your quarry is \glossterm{threatened} by at least two members of your \glossterm{hunting party}, it cannot regain hit points.
+                As long as your quarry is \glossterm{threatened} by at least two members of your hunting party, it cannot regain hit points.
 
                 \rankline
                 \rank{4} This effect instead applies if the target is within \rngmed range of at least two members of your hunting party.
@@ -2457,7 +2455,7 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
 
             \begin{freeability}{Martial Suppression}
-                As long as your quarry is \glossterm{threatened} by at least two members of your \glossterm{hunting party}, it takes a \minus1 penalty to accuracy with \glossterm{physical attacks}.
+                As long as your quarry is \glossterm{threatened} by at least two members of your hunting party, it takes a \minus1 penalty to accuracy with \glossterm{physical attacks}.
 
                 \rankline
                 \rank{4} The penalty increases to \minus2.
@@ -2466,7 +2464,7 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
 
             \begin{freeability}{Mystic Guidance}[Magical]
-                The accuracy bonus from your \textit{quarry} ability applies to all attacks your \glossterm{hunting party} makes against your quarry, instead of only to \glossterm{physical attacks}.
+                The accuracy bonus from your \textit{quarry} ability applies to all attacks your hunting party makes against your quarry, instead of only to \glossterm{physical attacks}.
 
                 \rankline
                 \rank{4} Your hunting party gains a \plus1 bonus to Fortitude, Reflex, and Mental defenses against attacks from your quarry.
@@ -2475,7 +2473,7 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
 
             \begin{freeability}{Mystic Suppression}
-                As long as your quarry is \glossterm{threatened} by at least two members of your \glossterm{hunting party}, it takes a \minus1 penalty to \glossterm{accuracy} with \glossterm{magical} attacks.
+                As long as your quarry is \glossterm{threatened} by at least two members of your hunting party, it takes a \minus1 penalty to \glossterm{accuracy} with \glossterm{magical} attacks.
 
                 \rankline
                 \rank{4} The penalty increases to \minus2. 
@@ -2494,16 +2492,16 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
 
             \begin{freeability}{Swarm Hunter}
-                When you use your \textit{quarry} ability, you can target any number of creatures.
+                When you use your \textit{quarry} ability, you can target any number of creatures to be your quarry.
 
                 \rankline
                 \rank{4} You gain a \plus1 bonus to \glossterm{overwhelm resistance}.
-                \rank{6} The bonus to overwhelm resistance applies to all members of your \glossterm{hunting party}.
+                \rank{6} The bonus to overwhelm resistance applies to all members of your hunting party.
                 \rank{8} The bonus to \glossterm{overwhelm resistance} increases to \plus2.
             \end{freeability}
 
             \begin{freeability}{Unerring}
-                Your \glossterm{hunting party} rolls twice and takes the better result for miss chances on attacks against your quarry, such as from \glossterm{active cover}.
+                Your hunting party rolls twice and takes the better result for miss chances on attacks against your quarry, such as from \glossterm{active cover}.
 
                 \rankline
                 \rank{4} Your hunting party also ignores the defense bonus from \glossterm{cover} on attacks against your quarry.
@@ -2512,7 +2510,7 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
 
             \begin{freeability}{Wolfpack}
-                At the start of each \glossterm{phase}, if your quarry is \glossterm{threatened} by at least two members of your \glossterm{hunting party}, it is \glossterm{slowed} until the end of that phase.
+                At the start of each \glossterm{phase}, if your quarry is \glossterm{threatened} by at least two members of your hunting party, it is \glossterm{slowed} until the end of that phase.
 
                 \rankline
                 \rank{4} This effect instead applies if your quarry is within \rngmed range of at least two members of your hunting party.

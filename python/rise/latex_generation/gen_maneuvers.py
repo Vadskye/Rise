@@ -13,8 +13,7 @@ def generate_maneuvers():
         name='Battle Cry',
         short_description='Heal nearby allies',
         effect_text="""
-            Choose any number of willing creatures other than yourself within a \\areamed radius from you.
-            Each target heals hit points equal to \\glossterm<standard damage> -2d.
+            Your \\glossterm<allies> within a \\areamed radius from you heal hit points equal to \\glossterm<standard damage> -2d.
         """,
         rank_upgrades={
             '3': 'The healing increases to \\glossterm<standard damage> -1d.',
@@ -331,12 +330,12 @@ def generate_maneuvers():
         name='Rally the Troops',
         short_description='Suppress conditions on allies',
         effect_text="""
-            Choose any number of willing creatures within a \\areamed radius from you.
-            Each target is immune to \\glossterm<conditions> this round and suffers no penalties from any conditions they currently have.
+            You and your \\glossterm<allies> within a \\areamed radius from you are immune to \\glossterm<conditions> this round.
+            In addition, each target suffers no penalties from any conditions it currently has this round.
         """,
         rank_upgrades={
             '3': 'One target can also remove a \\glossterm<condition>.',
-            '5': 'The area increses to a \\arealarge radius from you.',
+            '5': 'The area increases to a \\arealarge radius from you.',
             '7': 'Each target can also remove a \\glossterm<condition> instead of only one target.',
         },
         tags=['Swift'],

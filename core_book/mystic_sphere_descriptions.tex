@@ -523,7 +523,8 @@ The damage dealt changes to bludgeoning \glossterm{standard damage} \minus1d, an
 
 \lowercase{\hypertarget{spell:Dimensional Shuffle}{}}\label{spell:Dimensional Shuffle}
 \begin{freeability}[\nth{2}]{\hypertarget{spell:Dimensional Shuffle}{Dimensional Shuffle}}[\glossterm{Teleportation}]
-Choose up to five willing creatures within \rngmed range.
+% TODO: wording
+Choose up to five targets within \rngmed range from among you and your \glossterm{allies}.
 Each target teleports into the location of a different target.
 \end{freeability}
 \vspace{0.25em}
@@ -1062,7 +1063,7 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Cleansing Benediction}{}}\label{spell:Cleansing Benediction}
 \begin{freeability}[\nth{4}]{\hypertarget{spell:Cleansing Benediction}{Cleansing Benediction}}
-Each ally other than yourself within a \areamed radius from you can remove one \glossterm{condition}.
+Each of your \glossterm{allies} within a \areamed radius from you can remove one \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2049,7 +2050,7 @@ This damage is of all damage types that the target was damaged by during that ro
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Enrage}{Enrage}}[\glossterm{Emotion}]
 Make an attack vs. Mental with a \plus2 bonus to \glossterm{accuracy} against a creature within \rngmed range.
 \hit As a \glossterm{condition}, the target is unable to take any \glossterm{standard actions} that do not cause it to make an attack.
-For example, it could make a \glossterm{strike} or cast an offensive spell, but it could not heal itself or summon an ally.
+For example, it could make a \glossterm{strike} or cast an offensive spell, but it could not heal itself or summon a creature.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2067,11 +2068,10 @@ Make an attack vs. Mental against a creature within \rngclose range.
 \lowercase{\hypertarget{spell:Charm}{}}\label{spell:Charm}
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Charm}{Charm}}[\glossterm{Attune} (self), \glossterm{Emotion}, \glossterm{Subtle}]
 Make an attack vs. Mental against a creature within \rnglong range.
-If the target thinks that you or your allies are threatening it, you take a \minus5 penalty to accuracy on the attack.
 \hit The target is \charmed by you.
-Any act by you or your apparent allies that threatens or damages the \spell{charmed} person breaks the effect.
+Any act by you or by creatures that appear to be your allies that threatens or damages the \spell{charmed} person breaks the effect.
 This effect is automatically \glossterm{dismissed} after one hour.
-\crit As above, except that the effect is not automatically dismissed.
+\crit As above, except that the effect is not automatically dismissed after one hour.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -2089,7 +2089,7 @@ When you attune to this spell, and at the end of each \glossterm{action phase} i
 
 \lowercase{\hypertarget{spell:Redirected Terror}{}}\label{spell:Redirected Terror}
 \begin{freeability}[\nth{2}]{\hypertarget{spell:Redirected Terror}{Redirected Terror}}[\glossterm{Emotion}]
-This spell functions like the \spell{terror} spell, except that you also choose a willing ally within the spell's range.
+This spell functions like the \spell{terror} spell, except that you also choose an \glossterm{ally} within the spell's range.
 The target is afraid of the chosen ally instead of being afraid of you.
 \end{freeability}
 \vspace{0.25em}
@@ -4074,7 +4074,7 @@ Make an attack vs. Reflex against a Large or smaller creature standing on earth 
 As long as the target is immobilized in this way,
 it takes bludgeoning \glossterm{standard damage} \minus2d at the end of each \glossterm{action phase} in subsequent rounds.
 This immobilization can be removed by climbing out of the fissure, which requires a \glossterm{DR} 10 Climb check as a \glossterm{move action}.
-Alternately, an ally that can reach the target can make a Strength check against the same DR to pull the target out.
+Alternately, any creature that can reach the target can make a Strength check against the same DR to pull the target out.
 Special movement abilities such as teleportation can also remove the target from the fissure.
 \end{freeability}
 \vspace{0.25em}
@@ -4221,7 +4221,7 @@ The target gains a \plus2 \glossterm{magic bonus} to \glossterm{power} with spel
 
 \lowercase{\hypertarget{spell:Malign Transferance}{}}\label{spell:Malign Transferance}
 \begin{freeability}[\nth{2}]{\hypertarget{spell:Malign Transferance}{Malign Transferance}}
-Choose a willing ally within \rngmed range.
+Choose an \glossterm{ally} within \rngmed range.
 The ally must be currently affected by a \glossterm{magical} \glossterm{condition}.
 In addition, make an attack vs. Mental against a creature within \rngmed range.
 \hit One magical condition of your choice is removed from the chosen ally and applied to the struck creature.
@@ -4251,10 +4251,8 @@ This spell functions like the \textit{enhance magic} spell, except that the bonu
 
 \lowercase{\hypertarget{spell:Greater Malign Transferance}{}}\label{spell:Greater Malign Transferance}
 \begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Malign Transferance}{Greater Malign Transferance}}
-Choose any number of willing allies within \rngmed range.
-Each ally must be currently affected by a \glossterm{magical} \glossterm{condition}.
-In addition, make an attack vs. Mental against a creature within \rngmed range.
-\hit Up to two magical conditions of your choice are removed from the chosen allies and applied to the struck creature.
+Make an attack vs. Mental against a creature within \rngmed range.
+\hit One magical condition of your choice is removed from each of your \glossterm{allies} within range and applied to the struck creature.
 \crit As above, except that you can transfer any number of magical conditions in this way.
 \end{freeability}
 \vspace{0.25em}
@@ -4570,8 +4568,8 @@ When this spell resolves, and the end of each \glossterm{action phase} in subseq
 \lowercase{\hypertarget{spell:Circle of Healing}{}}\label{spell:Circle of Healing}
 \begin{attuneability}[\nth{4}]{\hypertarget{spell:Circle of Healing}{Circle of Healing}}[\glossterm{Attune} (self), \glossterm{Life}]
 You are surrounded by an aura of healing in a \areamed radius \glossterm{emanation} from you.
-When this spell resolves, and the end of each \glossterm{action phase} in subsequent rounds, choose any number of willing living creatures in the area.
-Each target heals hit points equal to half your \glossterm{power}.
+When this spell resolves, and the end of each \glossterm{action phase} in subsequent rounds,
+you and each of your living \glossterm{allies} in the area heal hit points equal to half your \glossterm{power}.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -4595,7 +4593,7 @@ This spell functions like the \spell{vital persistence} spell, except that the p
 
 \lowercase{\hypertarget{spell:Life Exchange}{}}\label{spell:Life Exchange}
 \begin{freeability}[\nth{4}]{\hypertarget{spell:Life Exchange}{Life Exchange}}[\glossterm{Life}]
-Choose a willing living ally within \rngmed range.
+Choose a living \glossterm{ally} within \rngmed range.
 Make an attack vs. Fortitude against a creature within \rngmed range.
 \hit The target takes life damage equal to \glossterm{standard damage} \plus2d.
 In addition, the chosen ally heals hit points equal to the damage dealt in this way.

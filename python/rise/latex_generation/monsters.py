@@ -249,8 +249,7 @@ def humanoids(sample_monsters):
         goblin_shouter,
         active_abilities=[
             active_ability('Shout of Stabbing', """
-                The shouter chooses any number of willing creatures other than itself who can hear it.
-                Each target gains a +2 bonus to \\glossterm<power> with \\glossterm<strikes>.
+                The shouter's \\glossterm<allies> that can hear it gain a +2 bonus to \\glossterm<power> with \\glossterm<strikes>.
             """, tags=['Sustain (standard)']),
         ],
         behavior='Attack lowest threat',
@@ -273,8 +272,7 @@ def humanoids(sample_monsters):
         orc_chieftain,
         active_abilities=[
             active_ability('Hit Everyone Else', """
-                The chieftain chooses any number of willing creatures other than itself who can hear it.
-                Each target gains a +2 bonus to \\glossterm<accuracy> with \\glossterm<strikes>.
+                The chieftain's \\glossterm<allies> that can hear it gain a +2 bonus to \\glossterm<accuracy> with \\glossterm<strikes>.
             """, tags=['Sustain (standard)']),
             active_ability('Hit Hardest', f"""
                 The chieftain makes a greataxe strike.
@@ -307,9 +305,8 @@ def humanoids(sample_monsters):
                 Its accuracy is reduced to {orc_loudmouth.accuracy('perception') - 2}, but the strike deals {orc_loudmouth.weapon_damage(Weapon('greataxe')) + 2} damage.
             """),
             active_ability('Hit That One Over There', """
-                The loudmouth chooses any number of willing creatures other than itself who can hear it.
-                In addition, it chooses an enemy within Long range.
-                Each target gains a +2 bonus to accuracy with strikes against the chosen enemy.
+                The loudmouth chooses an enemy within Long range.
+                The loudmouth's \\glossterm<allies> that can hear it gain a +2 bonus to \\glossterm<accuracy> with \\glossterm<strikes> against that target.
             """, tags=['Sustain (standard)']),
         ],
     ))
