@@ -6,6 +6,7 @@ def generate_script():
         *[attribute_change(a.lower()) for a in ATTRIBUTES],
         *[attribute_skills(a.lower()) for a in ATTRIBUTE_SKILLS],
         accuracy(),
+        action_points(),
         armor_defense(),
         fortitude(),
         reflex(),
@@ -118,6 +119,21 @@ def accuracy():
                 var cr_mod = Math.max(0, Number(v.challenge_rating || 1) - 1);
                 setAttrs({{
                     base_accuracy: Math.max(Number(v.level), Number(v.perception)) + cr_mod,
+                }});
+            }});
+        }});
+    """
+
+
+def action_points():
+    return f"""
+        on("change:level", function(eventInfo) {{
+            getAttrs(["level"], function(v) {{
+                var level = Number(v.level || 0);
+                var action_points = 4 + Math.floor((level + 3) / 6);
+                setAttrs({{
+                    action_points_max: action_points,
+                    action_points_total: action_points,
                 }});
             }});
         }});

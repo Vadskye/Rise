@@ -101,23 +101,20 @@ def resources():
         flex_wrapper({'class': 'section-header'}, 'Resources'),
         flex_wrapper({'class': 'action-point-header'}, 'Action points'),
         flex_row({'class': 'action-point-wrapper'}, [
-            underlabel('Reserve', number_input({
+            underlabel('Max', number_input({
                 'disabled': True,
-                'name': 'action_points_max',
-                'value': ROLL20_CALC['reserve_ap'],
+                'name': 'action_points_total_display',
+                'value': '@{action_points_total}',
             })),
             # This needs to be editable to support the Null feat
-            underlabel('Recover', number_input({
-                'name': 'action_points_recovery_max',
+            underlabel('Available', number_input({
+                'name': 'action_points_available',
             })),
             underlabel('Attuned', number_input({'name': 'action_points_attuned'})),
         ]),
         labeled_number_input('Legend points', input_attributes={
-            'disabled': True,
             'name': 'legend_points_display',
-            'value': '@{legend_points}',
         }),
-        labeled_number_input('Item slots', input_attributes={'name': 'item_slots'}),
     ])
 
 def statistics_header():
