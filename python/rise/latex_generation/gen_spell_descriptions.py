@@ -358,7 +358,7 @@ def generate_mystic_spheres():
                 From the Material Plane, you can only reach the Astral Plane.
 
                 This ritual takes one week to perform, and requires 98 action points from its participants.
-            """, tags=['Planar', 'Teleportation', 'Sustain (standard)']),
+            """, tags=['AP', 'Planar', 'Teleportation', 'Sustain (standard)']),
             Spell('Plane Shift', 3, """
                 Choose up to five Large or smaller ritual participants.
                 In addition, you choose a \\glossterm<planar rift> within \\rngmed range to travel through.
@@ -370,7 +370,7 @@ def generate_mystic_spheres():
                 From the Material Plane, you can only reach the Astral Plane.
 
                 This ritual takes 24 hours to perform, and requires 18 action points from its participants.
-            """, tags=['Planar', 'Teleportation']),
+            """, tags=['AP', 'Planar', 'Teleportation']),
             Spell('Astral Projection', 4, """
                 Choose up to five Large or smaller ritual participants.
                 The targets teleport to a random location within the Inner Astral Plane (see \\pcref<The Astral Plane>).
@@ -380,14 +380,14 @@ def generate_mystic_spheres():
                 It lasts for one week before disappearing permanently, potentially stranding the targets in the Astral Plane if they have not yet returned.
 
                 This ritual takes 24 hours to perform, and requires 32 action points from its participants.
-            """, tags=['Planar', 'Teleportation']),
+            """, tags=['AP', 'Planar', 'Teleportation']),
             Spell('Homeward Shift', 5, """
                 This ritual can only be performed on the Astral Plane.
                 Choose up to five Large or smaller ritual participants.
                 The targets teleport to the last spaces they occupied on their home planes.
 
                 This ritual takes 24 hours to perform, and requires 50 action points from its participants.
-            """, tags=['Planar', 'Teleportation']),
+            """, tags=['AP', 'Planar', 'Teleportation']),
             Spell('Overland Teleportation', 4, """
                 Choose up to five Medium or smaller ritual participants.
                 In addition, choose a destination up to 100 miles away from you on your current plane.
@@ -401,13 +401,13 @@ def generate_mystic_spheres():
                 % TODO: does this need more clarity about what teleportation works?
 
                 This ritual takes 24 hours to perform and requires 32 action points from its ritual participants.
-            """, tags=['Teleportation']),
+            """, tags=['AP', 'Teleportation']),
             Spell('Retrieve Legacy', 3, """
                 Choose a ritual participant.
                 If the target's \\glossterm<legacy item> is on the same plane and \\glossterm<unattended>, it is teleported into the target's hand.
 
                 This ritual takes 24 hours to perform, and requires 18 action points from its ritual participants.
-            """, tags=['Teleportation']),
+            """, tags=['AP', 'Teleportation']),
         ],
         category='damage',
     ))
@@ -550,7 +550,7 @@ def generate_mystic_spheres():
                 This effect is permanent.
 
                 This ritual takes 24 hour to perform, and requires 8 action points from its participants.
-            """, tags=['Mystic']),
+            """, tags=['AP', 'Mystic']),
             Spell('Private Sanctum', 4, """
                 This ritual creates a ward against any external perception in a \\arealarge radius \\glossterm<zone> centered on your location.
                 This effect is permanent.
@@ -560,7 +560,7 @@ def generate_mystic_spheres():
                 Creatures inside the area can see within the area and outside of it without any difficulty.
 
                 This ritual takes 24 hours to perform, and requires 32 action points from its participants.
-            """, tags=['Mystic']),
+            """, tags=['AP', 'Mystic']),
         ],
         category='buff, defense',
     ))
@@ -655,10 +655,10 @@ def generate_mystic_spheres():
             """, tags=['Attune (ritual)']),
             Spell('Enduring Fortification', 3, """
                 This ritual functions like the \\spell<blessing of fortification> ritual, except that the effect lasts for one hundred years.
-            """, tags=[]),
+            """, tags=['AP']),
             Spell('Greater Enduring Fortification', 5, """
                 This ritual functions like the \\spell<greater fortification> ritual, except that the effect lasts for one hundred years.
-            """, tags=[]),
+            """, tags=['AP']),
             Spell('Greater Fortification', 3, """
                 This ritual functions like the \\spell<blessing of fortification> ritual, except that the \\glossterm<hardness> bonus increases to 10.
             """, tags=['Attune (ritual)']),
@@ -675,7 +675,7 @@ def generate_mystic_spheres():
             Spell('Permanent Bless Water', 2, """
                 This ritual functions like the \\spell<bless water> ritual, except that it loses the \\glossterm<Attune> (ritual) tag and the effect lasts permanently.
                 This ritual takes one hour to perform.
-            """, tags=[]),
+            """, tags=['AP']),
             Spell('Curse Water', 1, """
                 Choose one pint of unattended, nonmagical water within \\rngclose range.
                 The target becomes unholy water.
@@ -686,14 +686,14 @@ def generate_mystic_spheres():
             Spell('Permanent Curse Water', 2, """
                 This ritual functions like the \\spell<curse water> ritual, except that it loses the \\glossterm<Attune> (ritual) tag and the effect lasts permanently.
                 This ritual takes one hour to perform.
-            """, tags=[]),
+            """, tags=['AP']),
             Spell('Blessing of Purification', 1, """
                 All food and water in a single square within \\rngclose range is purified.
                 Spoiled, rotten, poisonous, or otherwise contaminated food and water becomes pure and suitable for eating and drinking.
                 This does not prevent subsequent natural decay or spoiling.
 
                 This ritual takes one hour to perform.
-            """, tags=['Shaping']),
+            """, tags=['AP', 'Shaping']),
         ],
         category='buff, offense',
     ))
@@ -783,7 +783,7 @@ def generate_mystic_spheres():
 
                 This ritual takes 24 hours to perform and requires 32 action points from its ritual participants.
                 It is from the Conjuration school in addition to the Channeling school.
-            """, tags=['Teleportation']),
+            """, tags=['AP', 'Teleportation']),
         ],
         category='damage',
     ))
@@ -1395,7 +1395,7 @@ def generate_mystic_spheres():
                 The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland.
 
                 This ritual takes one hour to perform.
-            """, tags=['Creation']),
+            """, tags=['AP', 'Creation']),
         ],
         category='damage',
     ))
@@ -1608,7 +1608,7 @@ def generate_mystic_spheres():
                 The target is healed for hit points equal to \\glossterm<standard damage> +2d.
 
                 This ritual takes one minute to perform.
-            """, tags=['Shaping']),
+            """, tags=['AP', 'Shaping']),
             Spell('Fortify', 1, """
                 Choose an \\glossterm<unattended>, nonmagical object or part of an object of up to Large size.
                 Unlike most abilities, this ritual can affect individual parts of a whole object.
@@ -1622,10 +1622,10 @@ def generate_mystic_spheres():
             """, tags=['Attune (ritual)']),
             Spell('Enduring Fortify', 3, """
                 This ritual functions like the \\spell<fortify> ritual, except that the effect lasts for one hundred years.
-            """, tags=[]),
+            """, tags=['AP']),
             Spell('Enduring Greater Fortify', 5, """
                 This ritual functions like the \\spell<greater fortify> ritual, except that the effect lasts for one hundred years.
-            """, tags=[]),
+            """, tags=['AP']),
             Spell('Greater Fortify', 3, """
                 This ritual functions like the \\spell<fortify> ritual, except that the \\glossterm<hardness> bonus increases to 10.
             """, tags=['Attune (ritual)']),
@@ -1643,7 +1643,7 @@ def generate_mystic_spheres():
 
                 This ritual takes 24 hours to perform, and requires 50 action points from its participants.
                 It can only be learned with the nature \\glossterm<magic source>.
-            """, tags=[]),
+            """, tags=['AP', ]),
             Spell('Ironwood', 3, """
                 Choose a Small or smaller unattended, nonmagical wooden object within \\rngclose range.
                 The target is transformed into ironwood.
@@ -1652,14 +1652,14 @@ def generate_mystic_spheres():
 
                 % Should this have an action point cost? May be too rare...
                 This ritual takes 24 hours to perform.
-            """, tags=['Shaping']),
+            """, tags=['AP', 'Shaping']),
             Spell('Purify Sustenance', 1, """
                 All food and water in a single square within \\rngclose range is purified.
                 Spoiled, rotten, poisonous, or otherwise contaminated food and water becomes pure and suitable for eating and drinking.
                 This does not prevent subsequent natural decay or spoiling.
 
                 This ritual takes one hour to perform.
-            """, tags=['Shaping']),
+            """, tags=['AP', 'Shaping']),
         ],
         category='damage',
     ))
@@ -1739,7 +1739,7 @@ def generate_mystic_spheres():
             Spell('Permanent Light', 2, """
                 This ritual functions like the \\spell<light> ritual, except that it loses the \\glossterm<Attune> (ritual) tag and the effect lasts permanently.
                 This ritual takes 24 hours to perform, and it requires 8 action points from its participants.
-            """, tags=['Light', 'Sensation']),
+            """, tags=['AP', 'Light', 'Sensation']),
         ],
         category='debuff, combat',
     ))
@@ -1948,13 +1948,13 @@ def generate_mystic_spheres():
                     you learn only that that that aspect of the information is missing.
 
                 This ritual takes 24 hours to perform, and it requires 32 action points from its participants.
-            """, tags=[]),
+            """, tags=['AP']),
             Spell('Interplanar Discern Location', 6, """
                 This ritual functions like the \\ritual<discern location> ritual, except that the target does not have to be on the same plane as you.
                 It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<discern location> ritual.
 
                 This ritual takes 24 hours to perform, and it requires 72 action points from its participants.
-            """, tags=[]),
+            """, tags=['AP']),
             Spell('Sending', 3, """
                 Choose a creature on the same plane as you.
                 You do not need \\glossterm<line of sight> or \\glossterm<line of effect> to the target.
@@ -1969,11 +1969,11 @@ def generate_mystic_spheres():
                 Once it speaks twenty-five words, or you stop sustaining the effect, the ritual is \\glossterm<dismissed>.
 
                 This ritual takes one hour to perform.
-            """, tags=['Sustain (standard)']),
+            """, tags=['AP', 'Sustain (standard)']),
             Spell('Interplanar Sending', 6, """
                 This ritual functions like the \\ritual<sending> ritual, except that the target does not have to be on the same plane as you.
                 It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<sending> ritual.
-            """, tags=['Sustain (standard)']),
+            """, tags=['AP', 'Sustain (standard)']),
             Spell('Telepathic Bond', 3, """
                 Choose up to five ritual participants.
                 Each target can communicate mentally through telepathy with each other target.
@@ -2000,7 +2000,7 @@ def generate_mystic_spheres():
                 The target learns the precise distance and direction to their \\glossterm<legacy item>, if it is on the same plane.
 
                 This ritual takes 24 hours to perform, and requires 8 action points from its ritual participants.
-            """, tags=[]),
+            """, tags=['AP']),
         ],
         category='buff, offense',
     ))
@@ -2085,11 +2085,11 @@ def generate_mystic_spheres():
                 At the end of each phase, if the sensor is not in the target's space, this effect is \\glossterm<dismissed>.
 
                 This ritual takes one hour to perform.
-            """, tags=['Scrying']),
+            """, tags=['AP', 'Scrying']),
             Spell('Interplanar Scry Creature', 7, """
                 This ritual functions like the \\ritual<scry creature> ritual, except that the target does not have to be on the same plane as you.
                 It gains the \\glossterm<Planar> tag in addition to the tags from the \\ritual<scry creature> ritual.
-            """, tags=['Scrying']),
+            """, tags=['AP', 'Scrying']),
         ],
         category='narrative',
     ))
@@ -2540,7 +2540,7 @@ def generate_mystic_spheres():
                 If the \\ritual<infertility> ritual is also applied to the same area, the most recently performed ritual takes precedence.
 
                 This ritual takes 24 hours to perform, and requires 8 action points from its participants.
-            """, tags=[]),
+            """, tags=['AP']),
             Spell('Infertility', 2, """
                 This ritual creates an area of death and decay in a one mile radius \\glossterm<zone> from your location.
                 Normal plants within the area become half as productive as normal for the next year.
@@ -2548,7 +2548,7 @@ def generate_mystic_spheres():
                 If the \\ritual<fertility> ritual is also applied to the same area, the most recently performed ritual takes precedence.
 
                 This ritual takes 24 hours to perform, and requires 8 action points from its participants.
-            """, tags=[]),
+            """, tags=['AP']),
             Spell('Lifeweb Transit', 4, """
                 Choose up to five Medium or smaller ritual participants and a living plant that all ritual participants touch during the ritual.
                 The plant must be at least one size category larger than the largest target.
@@ -2564,7 +2564,7 @@ def generate_mystic_spheres():
 
                 This ritual takes 24 hours to perform and requires 32 action points from its ritual participants.
                 It is from from the Conjuration school in addition to the Transmutation school.
-            """, tags=['Teleportation']),
+            """, tags=['AP', 'Teleportation']),
         ],
     ))
 
@@ -2659,12 +2659,12 @@ def generate_mystic_spheres():
             Spell('Remove Disease', 2, """
                 Choose an \glossterm<ally> within \\rngmed range.
                 All diseases affecting the target are removed.
-            """, tags=['Life']),
+            """, tags=['AP', 'Life']),
             Spell('Restore Senses', 2, """
                 Choose an \glossterm<ally> within \\rngmed range.
                 One of the target's physical senses, such as sight or hearing, is restored to full capacity.
                 This can heal both magical and mundane effects, but it cannot completely replace missing body parts required for a sense to function (such as missing eyes).
-            """, tags=['Life']),
+            """, tags=['AP', 'Life']),
             Spell('Reincarnation', 4, """
                 Choose one Diminuitive or larger piece of a humanoid corpse.
                 The target must have been part of the original creature's body at the time of death.
@@ -2690,7 +2690,7 @@ def generate_mystic_spheres():
                 This ritual takes 24 hours to perform, and requires 32 action points from its participants.
                 It is from the Conjuration school in addition to the Vivimancy school.
                 In addition, it can only be learned through the nature \\glossterm<magic source>.
-            """, tags=['Creation', 'Flesh', 'Life'], extra_text="""
+            """, tags=['AP', 'Creation', 'Flesh', 'Life'], extra_text="""
                 \\begin{dtable}
                     \\lcaption{Humanoid Reincarnations}
                     \\begin{dtabularx}{\\columnwidth}{l X}
@@ -2711,7 +2711,7 @@ def generate_mystic_spheres():
                 This ritual takes 24 hours to perform, and requires 50 action points from its participants.
                 It is from the Conjuration school in addition to the Vivimancy school.
                 In addition, it can only be learned through the nature \\glossterm<magic source>.
-            """, tags=['Creation', 'Flesh', 'Life']),
+            """, tags=['AP', 'Creation', 'Flesh', 'Life']),
             Spell('Purge Curse', 2, """
                 Choose an \glossterm<ally> within \\rngclose range.
                 All curses affecting the target are removed.
@@ -2719,14 +2719,14 @@ def generate_mystic_spheres():
                 However, it can allow the target to remove any cursed items it has equipped.
 
                 This ritual takes 24 hours to perform, and requires 8 action points from its participants.
-            """, tags=['Mystic']),
+            """, tags=['AP', 'Mystic']),
             Spell('Restoration', 3, """
                 Choose an \glossterm<ally> within \\rngclose range.
                 All of the target's hit points, \\glossterm<subdual damage>, and \\glossterm<vital damage> are healed.
                 In addition, any of the target's severed body parts or missing organs grow back by the end of the next round.
 
                 This ritual takes 24 hours to perform, and requires 18 action points from its participants.
-            """, tags=['Flesh']),
+            """, tags=['AP', 'Flesh']),
             Spell('Resurrection', 3, """
                 Choose one intact humanoid corpse within \\rngclose range.
                 The target returns to life.
@@ -2746,7 +2746,7 @@ def generate_mystic_spheres():
                 This ritual takes 24 hours to perform, and requires 18 action points from its participants.
                 It is from the Conjuration school in addition to the Vivimancy school.
                 In addition, it can only be learned through the divine \\glossterm<magic source>.
-            """, tags=['Flesh', 'Life']),
+            """, tags=['AP', 'Flesh', 'Life']),
             Spell('Complete Resurrection', 5, """
                 This ritual functions like the \\ritual<resurrection> ritual, except that it does not have to target a fully intact corpse.
                 Instead, it targets a Diminuitive or larger piece of a humanoid corpse.
@@ -2756,7 +2756,7 @@ def generate_mystic_spheres():
                 This ritual takes 24 hours to perform, and requires 50 action points from its participants.
                 It is from the Conjuration school in addition to the Vivimancy school.
                 In addition, it can only be learned through the divine \\glossterm<magic source>.
-            """, tags=['Creation', 'Flesh', 'Life']),
+            """, tags=['AP', 'Creation', 'Flesh', 'Life']),
             Spell('True Resurrection', 7, """
                 This ritual functions like the \\ritual<resurrection> ritual, except that it does not require any piece of the corpse.
                 Instead, you must explicitly and unambiguously specify the identity of the creature being resurrected.
@@ -2765,7 +2765,7 @@ def generate_mystic_spheres():
                 This ritual takes 24 hours to perform, and requires 98 action points from its participants.
                 It is from the Conjuration school in addition to the Vivimancy school.
                 In addition, it can only be learned through the divine \\glossterm<magic source>.
-            """, tags=['Creation', 'Flesh', 'Life']),
+            """, tags=['AP', 'Creation', 'Flesh', 'Life']),
             Spell('Soul Bind', 5, """
                 Choose one intact corpse within \\rngclose range.
                 % Is this clear enough that you can't use the same gem for this ritual twice?
@@ -2777,7 +2777,7 @@ def generate_mystic_spheres():
                 If the gem is shattered, the fragment of the creature's soul returns to its body.
 
                 This ritual takes one hour to perform.
-            """, tags=['Life']),
+            """, tags=['AP', 'Life']),
         ],
         category='damage',
     ))

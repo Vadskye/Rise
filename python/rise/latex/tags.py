@@ -1,6 +1,7 @@
 valid_tags = set([
     'Acid',
     'Air',
+    'AP',
     'Attune (ritual)',
     'Attune (ritual; see text)',
     'Attune (self)',
