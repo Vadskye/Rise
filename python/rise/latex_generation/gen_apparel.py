@@ -502,9 +502,8 @@ def generate_worn():
             This crown is continuously on fire.
             The flame sheds light as a torch.
 
-            % TODO: clarify timing of choice
-            You and any number of willing creatures within a \\arealarge radius emanation from you
-            gain a \\glossterm<magic bonus> equal to this item's \\glossterm<power> to \\glossterm<damage reduction> against fire damage.
+            You and your \\glossterm<allies> within a \\arealarge radius emanation from you
+                gain a \\glossterm<magic bonus> equal to this item's \\glossterm<power> to \\glossterm<damage reduction> against fire damage.
         """,
         short_description="Grants nearby allies immunity to fire damage",
     ))

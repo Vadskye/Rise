@@ -326,7 +326,8 @@ def generate_mystic_spheres():
                 A struck target is \\glossterm<confused> as a \\glossterm<condition>.
             """, tags=['Planar', 'Teleportation']),
             Spell('Dimensional Shuffle', 2, """
-                Choose up to five willing creatures within \\rngmed range.
+                % TODO: wording
+                Choose up to five targets within \\rngmed range from among you and your \\glossterm<allies>.
                 Each target teleports into the location of a different target.
             """, tags=['Teleportation']),
             Spell('Blink', 4, """
@@ -625,7 +626,7 @@ def generate_mystic_spheres():
                 This spell functions like the \\spell<cleansing blessing> spell, except that the target can remove two conditions instead of one.
             """, tags=[]),
             Spell('Cleansing Benediction', 4, """
-                Each ally other than yourself within a \\areamed radius from you can remove one \\glossterm<condition>.
+                Each of your \\glossterm<allies> within a \\areamed radius from you can remove one \\glossterm<condition>.
             """, tags=[]),
             Spell('Greater Benediction', 7, """
                 This spell functions like the \\spell<cleansing benediction> spell, except that each target can remove two conditions instead of one.
@@ -1190,16 +1191,15 @@ def generate_mystic_spheres():
                 This damage is of all damage types that the target was damaged by during that round.
             """, tags=['Emotion']),
             Spell('Redirected Terror', 2, """
-                This spell functions like the \\spell<terror> spell, except that you also choose a willing ally within the spell's range.
+                This spell functions like the \\spell<terror> spell, except that you also choose an \\glossterm<ally> within the spell's range.
                 The target is afraid of the chosen ally instead of being afraid of you.
             """, tags=['Emotion']),
             Spell('Charm', 2, """
                 Make an attack vs. Mental against a creature within \\rnglong range.
-                If the target thinks that you or your allies are threatening it, you take a -5 penalty to accuracy on the attack.
                 \\hit The target is \\charmed by you.
-                Any act by you or your apparent allies that threatens or damages the \\spell<charmed> person breaks the effect.
+                Any act by you or by creatures that appear to be your allies that threatens or damages the \\spell<charmed> person breaks the effect.
                 This effect is automatically \\glossterm<dismissed> after one hour.
-                \\crit As above, except that the effect is not automatically dismissed.
+                \\crit As above, except that the effect is not automatically dismissed after one hour.
             """, tags=['Attune (self)', 'Emotion', 'Subtle']),
             Spell('Amnesiac Charm', 5, """
                 This spell functions like the \\spell<charm> spell, except that when the spell ends, an affected target forgets all events that transpired during the spell's duration.
@@ -1216,7 +1216,7 @@ def generate_mystic_spheres():
             Spell('Enrage', 1, """
                 Make an attack vs. Mental with a +2 bonus to \\glossterm<accuracy> against a creature within \\rngmed range.
                 \\hit As a \\glossterm<condition>, the target is unable to take any \\glossterm<standard actions> that do not cause it to make an attack.
-                For example, it could make a \\glossterm<strike> or cast an offensive spell, but it could not heal itself or summon an ally.
+                For example, it could make a \\glossterm<strike> or cast an offensive spell, but it could not heal itself or summon a creature.
             """, tags=['Emotion']),
             Spell('Mass Enrage', 5, """
                 This spell functions like the \\spell<enrage> spell, except that it affects all enemies in a \\areamed radius within \\rngmed range.
@@ -2317,7 +2317,7 @@ def generate_mystic_spheres():
                 As long as the target is immobilized in this way,
                     it takes bludgeoning \\glossterm<standard damage> -2d at the end of each \\glossterm<action phase> in subsequent rounds.
                 This immobilization can be removed by climbing out of the fissure, which requires a \\glossterm<DR> 10 Climb check as a \\glossterm<move action>.
-                Alternately, an ally that can reach the target can make a Strength check against the same DR to pull the target out.
+                Alternately, any creature that can reach the target can make a Strength check against the same DR to pull the target out.
                 Special movement abilities such as teleportation can also remove the target from the fissure.
             """, tags=['Earth', 'Physical']),
             Spell('Fissure Swarm', 7, """
@@ -2406,17 +2406,15 @@ def generate_mystic_spheres():
                     the attuning creature can regain the \\glossterm<action point> spent to attune to the spell when it takes a \\glossterm<short rest>.
             """, tags=['Mystic', 'Sustain (standard)']),
             Spell('Malign Transferance', 2, """
-                Choose a willing ally within \\rngmed range.
+                Choose an \\glossterm<ally> within \\rngmed range.
                 The ally must be currently affected by a \\glossterm<magical> \\glossterm<condition>.
                 In addition, make an attack vs. Mental against a creature within \\rngmed range.
                 \\hit One magical condition of your choice is removed from the chosen ally and applied to the struck creature.
                 \\crit As above, except that you can transfer any number of magical conditions in this way.
             """, tags=[]),
             Spell('Greater Malign Transferance', 5, """
-                Choose any number of willing allies within \\rngmed range.
-                Each ally must be currently affected by a \\glossterm<magical> \\glossterm<condition>.
-                In addition, make an attack vs. Mental against a creature within \\rngmed range.
-                \\hit Up to two magical conditions of your choice are removed from the chosen allies and applied to the struck creature.
+                Make an attack vs. Mental against a creature within \\rngmed range.
+                \\hit One magical condition of your choice is removed from each of your \\glossterm<allies> within range and applied to the struck creature.
                 \\crit As above, except that you can transfer any number of magical conditions in this way.
             """, tags=[]),
             Spell('Enhance Magic', 2, """
@@ -2629,7 +2627,7 @@ def generate_mystic_spheres():
                 This spell functions like the \\spell<vital persistence> spell, except that the penalty reduction increases to be equal to twice your \\glossterm<power>.
             """, tags=['Attune (target)', 'Life']),
             Spell('Life Exchange', 4, """
-                Choose a willing living ally within \\rngmed range.
+                Choose a living \\glossterm<ally> within \\rngmed range.
                 Make an attack vs. Fortitude against a creature within \\rngmed range.
                 \\hit The target takes life damage equal to \\glossterm<standard damage> +2d.
                 In addition, the chosen ally heals hit points equal to the damage dealt in this way.
@@ -2649,8 +2647,8 @@ def generate_mystic_spheres():
             """, tags=['Attune (self)', 'Life']),
             Spell('Circle of Healing', 4, """
                 You are surrounded by an aura of healing in a \\areamed radius \\glossterm<emanation> from you.
-                When this spell resolves, and the end of each \\glossterm<action phase> in subsequent rounds, choose any number of willing living creatures in the area.
-                Each target heals hit points equal to half your \\glossterm<power>.
+                When this spell resolves, and the end of each \\glossterm<action phase> in subsequent rounds,
+                    you and each of your living \\glossterm<allies> in the area heal hit points equal to half your \\glossterm<power>.
             """, tags=['Attune (self)', 'Life']),
             Spell('Finger of Death', 5, """
                 Make an attack vs. Fortitude against a living creature within \\rngclose range.
