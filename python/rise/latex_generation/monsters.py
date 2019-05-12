@@ -321,7 +321,7 @@ def humanoids(sample_monsters):
                 \\crit As above, except that the penalty is increased to -6.
             """),
             active_ability('Hurt Less', f"""
-                One other willing creature in Close range heals {orc_shaman.standard_damage() + 2} hit points.
+                One ally in Close range heals {orc_shaman.standard_damage() + 2} hit points.
             """),
         ],
     ))
@@ -697,11 +697,11 @@ def outsiders(sample_monsters):
         astral_deva,
         active_abilities=[
             active_ability('Smite', """
-                The angel makes a mace strike.
+                The angel makes a melee \\glossterm<strike>.
                 If its target is evil, it gains a +2 bonus to accuracy and a +2d bonus to damage on the strike.
             """),
             active_ability("Angel's Grace", f"""
-                One willing creature within reach heals {astral_deva.standard_damage() + 3} hit points.
+                One \\glossterm<ally> within reach heals {astral_deva.standard_damage() + 3} hit points.
             """),
         ],
     ))
