@@ -294,7 +294,7 @@ def calc_encumbrance():
                     'name': 'encumbrance_strength',
                     'value': '(@{strength_starting})',
                 })),
-                plus(),
+                minus(),
                 number_input({
                     'class': 'equation-misc',
                     'name': 'encumbrance_misc',
