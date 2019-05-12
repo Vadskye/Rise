@@ -2782,7 +2782,7 @@ def generate_mystic_spheres():
         category='damage',
     ))
 
-    # Weaponcraft can create and manipulate weapons of all varieties; all of it
+    # Weaponcraft can create and manipulate weapons of all varieties; all of its
     # spells should involve a mixture of creating a weapon and manipulating
     # it after it is created.
 
