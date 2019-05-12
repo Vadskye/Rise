@@ -41,7 +41,7 @@ class Spell(object):
     def __str__(self):
         tag_text = to_latex_tags(self.tags)
 
-        ability_type = 'attuneability' if 'Attune' in tag_text else 'freeability'
+        ability_type = 'attuneability' if 'Attune' in tag_text else ('apability' if 'AP' in tag_text else 'freeability')
 
         return f"""
             \\lowercase<\\hypertarget<spell:{self.name}><>>\\label<spell:{self.name}>
