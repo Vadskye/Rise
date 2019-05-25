@@ -24,27 +24,10 @@ def boring_stuff():
             labeled_text_input('Character name', input_attributes={'name': 'character_name'}),
             labeled_text_input('Player name', input_attributes={'name': 'player_name'}),
             labeled_text_input('Concept', input_attributes={'name': 'concept'}),
-        ]),
-        flex_row({'class': 'boring-row'}, [
             underlabel_spaced(
                 'Level',
                 number_input({'class': 'fake-text', 'name': 'level'}),
                 attributes={'class': 'level-input'},
-            ),
-            labeled_text_input(
-                'Class',
-                attributes={'class': 'class-input'},
-                input_attributes={'name': 'class'},
-            ),
-            labeled_text_input(
-                'Species and background',
-                attributes={'class': 'species-input'},
-                input_attributes={'name': 'species_and_background'},
-            ),
-            labeled_text_input(
-                'Description',
-                attributes={'class': 'description-input'},
-                input_attributes={'name': 'description'},
             ),
         ]),
     ])
@@ -189,7 +172,7 @@ def movement():
 def abilities():
     return flex_col({'class': 'abilities'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Abilities')),
-        "".join([ability(i) for i in range(10)]),
+        "".join([ability(i) for i in range(11)]),
     ])
 
 def ability(ability_number=None):
