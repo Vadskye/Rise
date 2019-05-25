@@ -19,7 +19,7 @@ You gain a \plus4 bonus to the Jump skill until the end of the next round.
 
 
 \begin{apability}{Soften Landing}[\glossterm{Air}]
-Choose an \glossterm{ally} in \rngmed range.
+Choose yourself or an \glossterm{ally} in \rngmed range.
 Until the end of the round, the target treats all falls as if they were 5 feet shorter per \glossterm{power} for the purpose of determining \glossterm{falling damage}.
 \end{apability}
 
@@ -51,7 +51,7 @@ Moving the target upwards cost twice the normal movement cost.
 
 \lowercase{\hypertarget{spell:Wind Screen}{}}\label{spell:Wind Screen}
 \begin{attuneability}[\nth{1}]{\hypertarget{spell:Wind Screen}{Wind Screen}}[\glossterm{Air}, \glossterm{Attune} (target), \glossterm{Shielding}]
-Choose an \glossterm{ally} in \rngclose range.
+Choose yourself or an \glossterm{ally} in \rngclose range.
 The target gains a \plus1 \glossterm{magic bonus} to Armor defense.
 This bonus is increased to \plus5 against ranged \glossterm{physical attacks} from weapons or projectiles that are Small or smaller.
 
@@ -64,7 +64,7 @@ Any effect which increases the size of creature this spell can affect also incre
 
 \lowercase{\hypertarget{spell:Windblade}{}}\label{spell:Windblade}
 \begin{attuneability}[\nth{1}]{\hypertarget{spell:Windblade}{Windblade}}[\glossterm{Air}, \glossterm{Attune} (target), \glossterm{Shaping}]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 Melee weapons wielded by the target gain an additional five feet of \glossterm{reach}.
 This has no effect on ranged attacks the target makes.
 
@@ -132,7 +132,7 @@ This spell functions like the \spell{windstrike} spell, except that it affects a
 
 \lowercase{\hypertarget{spell:Greater Windblade}{}}\label{spell:Greater Windblade}
 \begin{attuneability}[\nth{3}]{\hypertarget{spell:Greater Windblade}{Greater Windblade}}[\glossterm{Air}, \glossterm{Attune} (target), \glossterm{Shaping}]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 Melee weapons wielded by the target gain an additional ten feet of \glossterm{reach}.
 
 You can cast this spell as a \glossterm{minor action}.
@@ -178,7 +178,7 @@ When you cast this spell, you choose a new weather pattern.
 You can only choose weather which would be possible in the climate and season of the area you are in.
 For example, you can normally create a thunderstorm, but not if you are in a desert.
 
-When you complete the spell, the weather begins to take effect in a two mile radius cylinder-shaped \glossterm{zone} centered on from your location.
+When you complete the spell, the weather begins to take effect in a two mile radius cylinder-shaped \glossterm{zone} from your location.
 After five minutes, your chosen weather pattern fully takes effect.
 
 You can control the general tendencies of the weather, such as the direction and intensity of the wind.
@@ -230,7 +230,7 @@ This spell functions like the \spell{wind screen} spell, except that the Armor d
 
 \lowercase{\hypertarget{spell:Hurricane}{}}\label{spell:Hurricane}
 \begin{freeability}[\nth{4}]{\hypertarget{spell:Hurricane}{Hurricane}}[\glossterm{Air}]
-Make an attack vs. Fortitude against everything in a \arealarge radius from you.
+Make an attack vs. Fortitude against \glossterm{enemies} in a \arealarge radius from you.
 \hit Each target takes bludgeoning \glossterm{standard damage} \minus1d and is moved 20 feet clockwise around you.
 Each target's final position should be the same distance from you as its starting position.
 \end{freeability}
@@ -249,7 +249,7 @@ In addition, the target gains a \plus2 bonus to Armor defense during the current
 
 \lowercase{\hypertarget{spell:Air Walk}{}}\label{spell:Air Walk}
 \begin{attuneability}[\nth{5}]{\hypertarget{spell:Air Walk}{Air Walk}}[\glossterm{Air}, \glossterm{Attune} (target)]
-Choose an \glossterm{ally} in \rngclose range.
+Choose yourself or an \glossterm{ally} in \rngclose range.
 The target can walk on air as if it were solid ground as long as it is no more than 50 feet above solid ground.
 The magic only affects the target's legs and feet.
 By choosing when to treat the air as solid, it can traverse the air with ease.
@@ -314,7 +314,7 @@ You must create a minimum of one ounce of water in each location.
 
 
 \begin{apability}{Slippery Escape}[\glossterm{Manifestation}, \glossterm{Water}]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 The target gains a \plus4 bonus to the Escape Artist skill until the end of the next round.
 \end{apability}
 
@@ -333,9 +333,18 @@ Make an attack vs. Fortitude against everything in a \areamed, 10 ft.\ wide line
 
 
 
+\lowercase{\hypertarget{spell:Obscuring Mist}{}}\label{spell:Obscuring Mist}
+\begin{freeability}[\nth{1}]{\hypertarget{spell:Obscuring Mist}{Obscuring Mist}}[\glossterm{Sustain} (minor)]
+Fog fills the air within a \areamed radius \glossterm{zone} from your location.
+The fog partially obstructs sight, granting \glossterm{concealment} to anything seen through the fog (see \pcref{Concealment}).
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Underwater Freedom}{}}\label{spell:Underwater Freedom}
 \begin{attuneability}[\nth{1}]{\hypertarget{spell:Underwater Freedom}{Underwater Freedom}}[\glossterm{Attune} (target)]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 The target suffers no penalties for acting underwater, except for those relating to using ranged weapons.
 
 You can cast this spell as a \glossterm{minor action}.
@@ -353,9 +362,19 @@ Make an attack vs. Armor against a creature within \rngmed range.
 
 
 
-\lowercase{\hypertarget{spell:Aqueous Sphere}{}}\label{spell:Aqueous Sphere}
-\begin{freeability}[\nth{2}]{\hypertarget{spell:Aqueous Sphere}{Aqueous Sphere}}[\glossterm{Manifestation}, \glossterm{Water}]
-Make an attack vs. Fortitude against everything in a \areasmall radius within \rngclose range.
+\lowercase{\hypertarget{spell:Aqueous Tentacles}{}}\label{spell:Aqueous Tentacles}
+\begin{attuneability}[\nth{2}]{\hypertarget{spell:Aqueous Tentacles}{Aqueous Tentacles}}[\glossterm{Attune} (self)]
+Each of your arms with a \glossterm{free hand} is covered with watery tentacles that you can attack with.
+Each tentacle is a slam \glossterm{natural weapon} (see \tref{Natural Weapons}).
+The tentacles have a \glossterm{reach} of 10 feet, and any strikes with them are \glossterm{magical strikes}.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Fountain}{}}\label{spell:Fountain}
+\begin{freeability}[\nth{2}]{\hypertarget{spell:Fountain}{Fountain}}[\glossterm{Manifestation}, \glossterm{Water}]
+Make an attack vs. Armor against \glossterm{enemies} within a \areamed radius from you.
 \hit Each target takes bludgeoning \glossterm{standard damage}.
 \end{freeability}
 \vspace{0.25em}
@@ -366,7 +385,7 @@ Make an attack vs. Fortitude against everything in a \areasmall radius within \r
 \begin{freeability}[\nth{2}]{\hypertarget{spell:Geyser}{Geyser}}[\glossterm{Manifestation}, \glossterm{Water}]
 Make an attack vs. Armor against everything in a \arealarge, 5 ft.\ wide vertical line within \rngmed range.
 If this spell has its area increased, such as with the Widened \glossterm{augment}, only the length of the line increases.
-\hit Each target takes takes bludgeoning \glossterm{standard damage} \plus2d.
+\hit Each target takes takes bludgeoning \glossterm{standard damage} \plus1d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -376,6 +395,44 @@ If this spell has its area increased, such as with the Widened \glossterm{augmen
 \begin{freeability}[\nth{2}]{\hypertarget{spell:Overpowering Wave}{Overpowering Wave}}[\glossterm{Manifestation}, \glossterm{Water}]
 This spell functions like the \spell{crushing wave} spell, except that it attacks Reflex defense instead of Fortitude defense.
 In addition, it only affects creatures of Large size or smaller.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Rainstorm}{}}\label{spell:Rainstorm}
+\begin{freeability}[\nth{2}]{\hypertarget{spell:Rainstorm}{Rainstorm}}[\glossterm{Manifestation}, \glossterm{Sustain} (minor), \glossterm{Water}]
+Torrential rain begins falling out of thin air within a \arealarge radius \glossterm{zone} from your location.
+The rain extinguishes minor fires such as campfires and torches on contact.
+Everything in the area gain a bonus to \glossterm{damage reduction} against fire damage equal to your \glossterm{power}.
+\glossterm{Water} abilities gain a \plus1 bonus to \glossterm{accuracy} against targets in the area.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Constraining Bubble}{}}\label{spell:Constraining Bubble}
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Constraining Bubble}{Constraining Bubble}}[\glossterm{Manifestation}, \glossterm{Water}]
+Make an attack vs. Fortitude against a creature within \rngmed range.
+\hit As a \glossterm{condition}, the majority of the target's body is surrounded by a layer of water.
+This does not impede the target's ability to breathe, but it takes penalties as if it was fighting underwater (see \pcref{Underwater Combat}).
+In addition, it gains a bonus to \glossterm{damage reduction} against fire damage equal to your \glossterm{power}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Greater Crushing Wave}{}}\label{spell:Greater Crushing Wave}
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Greater Crushing Wave}{Greater Crushing Wave}}[\glossterm{Manifestation}, \glossterm{Water}]
+This spell functions like the \spell{crushing wave} spell, except that the area increases to a \arealarge, 15 ft.\ wide line from you.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Greater Obscuring Mist}{}}\label{spell:Greater Obscuring Mist}
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Greater Obscuring Mist}{Greater Obscuring Mist}}[\glossterm{Sustain} (minor)]
+This spell functions like the \spell{obscuring mist} spell, except that the area increases to an \arealarge radius \glossterm{zone} from your location..
 \end{freeability}
 \vspace{0.25em}
 
@@ -415,10 +472,34 @@ It is immune to most forms of attack, but it can be destroyed by \glossterm{fire
 
 
 
-\lowercase{\hypertarget{spell:Greater Aqueous Sphere}{}}\label{spell:Greater Aqueous Sphere}
-\begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Aqueous Sphere}{Greater Aqueous Sphere}}[\glossterm{Manifestation}, \glossterm{Water}]
-This spell functions like the \spell{aqueous sphere} spell, except that it targets everything in a \areamed radius within \rngmed range.
+\lowercase{\hypertarget{spell:Greater Aqueous Tentacles}{}}\label{spell:Greater Aqueous Tentacles}
+\begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Aqueous Tentacles}{Greater Aqueous Tentacles}}[\glossterm{Attune} (self)]
+This spell functions like the \spell{aqueous tentacles} spell, except that the tentacles have a \glossterm{reach} of 20 feet.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Greater Fountain}{}}\label{spell:Greater Fountain}
+\begin{freeability}[\nth{4}]{\hypertarget{spell:Greater Fountain}{Greater Fountain}}[\glossterm{Manifestation}, \glossterm{Water}]
+This spell functions like the \spell{fountain} spell, except that the area increases to a \arealarge radius from you.
 \end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Greater Geyser}{}}\label{spell:Greater Geyser}
+\begin{freeability}[\nth{4}]{\hypertarget{spell:Greater Geyser}{Greater Geyser}}[\glossterm{Manifestation}, \glossterm{Water}]
+This spell functions like the \spell{geyser} spell, except that the area increases to a \areahuge, 10 ft.\ wide vertical line.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Misty Shroud}{}}\label{spell:Misty Shroud}
+\begin{attuneability}[\nth{4}]{\hypertarget{spell:Misty Shroud}{Misty Shroud}}[\glossterm{Attune} (self)]
+This spell functions like the \spell{obscuring mist} spell, except that the area becomes an \glossterm{emanation} from you.
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -427,6 +508,23 @@ This spell functions like the \spell{aqueous sphere} spell, except that it targe
 \begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Raging River}{Greater Raging River}}[\glossterm{Manifestation}, \glossterm{Water}]
 This spell functions like the \textit{raging river} spell, except that the spell gains the \glossterm{Sustain} (minor) tag instead of the \glossterm{Sustain} (standard) tag.
 \end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Great Flood}{}}\label{spell:Great Flood}
+\begin{freeability}[\nth{6}]{\hypertarget{spell:Great Flood}{Great Flood}}[\glossterm{Manifestation}, \glossterm{Water}]
+Make an attack vs. Fortitude against everything in a 200 ft.\ long, 30 ft.\ wide line from you.
+\hit Each target takes bludgeoning \glossterm{standard damage}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Supreme Aqueous Tentacles}{}}\label{spell:Supreme Aqueous Tentacles}
+\begin{attuneability}[\nth{6}]{\hypertarget{spell:Supreme Aqueous Tentacles}{Supreme Aqueous Tentacles}}[\glossterm{Attune} (self)]
+This spell functions like the \spell{aqueous tentacles} spell, except that the tentacles have a \glossterm{reach} of 50 feet.
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -531,11 +629,33 @@ Each target teleports into the location of a different target.
 
 
 
+\lowercase{\hypertarget{spell:Blink}{}}\label{spell:Blink}
+\begin{attuneability}[\nth{3}]{\hypertarget{spell:Blink}{Blink}}[\glossterm{Attune} (target), \glossterm{Planar}, \glossterm{Teleportation}]
+Choose yourself or an \glossterm{ally} within \rngclose range.
+The target randomly blinks between its current plane and the Astral Plane.
+This blinking stops if the target takes actions on its current plane.
+In any phase where it does not take any actions, \glossterm{targeted} attacks against the target have a 50\% miss chance.
+It is still affected normally by abilities that affect an area.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Dimension Door}{}}\label{spell:Dimension Door}
 \begin{freeability}[\nth{3}]{\hypertarget{spell:Dimension Door}{Dimension Door}}[\glossterm{Teleportation}]
 You teleport to a location within \rngext range of you.
 You must clearly visualize the destination's appearance, but you do not need \glossterm{line of sight} or \glossterm{line of effect} to your destination.
 \end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Dimension Walk}{}}\label{spell:Dimension Walk}
+\begin{attuneability}[\nth{3}]{\hypertarget{spell:Dimension Walk}{Dimension Walk}}[\glossterm{Attune} (self), \glossterm{Teleportation}]
+You can teleport horizontally instead of moving normally.
+Teleporting a given distance costs movement equal to that distance.
+If your \glossterm{line of effect} to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are that phase.
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -554,29 +674,34 @@ Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this c
 
 \lowercase{\hypertarget{spell:Greater Teleport}{}}\label{spell:Greater Teleport}
 \begin{freeability}[\nth{3}]{\hypertarget{spell:Greater Teleport}{Greater Teleport}}[\glossterm{Teleportation}]
-This spell functions like the \textit{teleport} spell, except that the range is increased to \rngext.
+This spell functions like the \textit{teleport} spell, except that the range is increased to \rnglong.
 \end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Blink}{}}\label{spell:Blink}
-\begin{attuneability}[\nth{4}]{\hypertarget{spell:Blink}{Blink}}[\glossterm{Attune} (target), \glossterm{Planar}, \glossterm{Teleportation}]
-Choose an \glossterm{ally} within \rngclose range.
-The target randomly blinks between its current plane and the Astral Plane.
-This blinking stops if the target takes actions on its current plane.
-In any phase where it does not take any actions, \glossterm{targeted} attacks against the target have a 50\% miss chance.
-It is still affected normally by abilities that affect an area.
+\lowercase{\hypertarget{spell:Dimensional Jitter}{}}\label{spell:Dimensional Jitter}
+\begin{attuneability}[\nth{4}]{\hypertarget{spell:Dimensional Jitter}{Dimensional Jitter}}[\glossterm{Attune} (self), \glossterm{Teleportation}]
+At the end of each \glossterm{action phase}, you may teleport 10 feet in any direction.
+If your \glossterm{line of effect} to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are.
 \end{attuneability}
 \vspace{0.25em}
 
 
 
 \lowercase{\hypertarget{spell:Dimensional Jaunt -- Myriad}{}}\label{spell:Dimensional Jaunt -- Myriad}
-\begin{freeability}[\nth{4}]{\hypertarget{spell:Dimensional Jaunt -- Myriad}{Dimensional Jaunt -- Myriad}}[\glossterm{Planar}, \glossterm{Teleportation}]
-This spell functions like the \spell{dimensional jaunt} spell, except that the target is partially teleported through a dizzying array of planes.
+\begin{freeability}[\nth{5}]{\hypertarget{spell:Dimensional Jaunt -- Myriad}{Dimensional Jaunt -- Myriad}}[\glossterm{Planar}, \glossterm{Teleportation}]
+This spell functions like the \spell{dimensional jaunt} spell, except that the target is partially teleported through a number of planes in sequence.
 The damage dealt increases to \glossterm{standard damage} \plus3d and becomes damage of all types.
 \end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Greater Blink}{}}\label{spell:Greater Blink}
+\begin{attuneability}[\nth{6}]{\hypertarget{spell:Greater Blink}{Greater Blink}}[\glossterm{Attune} (target), \glossterm{Planar}, \glossterm{Teleportation}]
+This spell functions like the \spell{blink} spell, except that the target also has a 20\% chance to completely ignore any effect that targets it directly during phases where it takes an action.
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -590,9 +715,9 @@ A struck target is \glossterm{confused} as a \glossterm{condition}.
 
 
 
-\lowercase{\hypertarget{spell:Greater Blink}{}}\label{spell:Greater Blink}
-\begin{attuneability}[\nth{7}]{\hypertarget{spell:Greater Blink}{Greater Blink}}[\glossterm{Attune} (target), \glossterm{Planar}, \glossterm{Teleportation}]
-This spell functions like the \spell{blink} spell, except that the target also has a 20\% chance to completely ignore any effect that targets it directly during phases where it takes an action.
+\lowercase{\hypertarget{spell:Greater Dimensional Jitter}{}}\label{spell:Greater Dimensional Jitter}
+\begin{attuneability}[\nth{7}]{\hypertarget{spell:Greater Dimensional Jitter}{Greater Dimensional Jitter}}[\glossterm{Attune} (self), \glossterm{Teleportation}]
+This spell functions like the \spell{dimensional jitter} spell, except that the distance you can teleport is increased to 30 feet.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -719,7 +844,7 @@ This ritual takes one week to perform, and requires 98 action points from its pa
 
 \lowercase{\hypertarget{spell:Deflective Shield}{}}\label{spell:Deflective Shield}
 \begin{attuneability}[\nth{1}]{\hypertarget{spell:Deflective Shield}{Deflective Shield}}[\glossterm{Attune} (target), \glossterm{Shielding}]
-Choose an \glossterm{ally} in \rngclose range.
+Choose yourself or an \glossterm{ally} in \rngclose range.
 The target gains a \plus1 \glossterm{magic bonus} to Armor defense.
 
 You can cast this spell as a \glossterm{minor action}.
@@ -730,7 +855,7 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Kinetic Shield}{}}\label{spell:Kinetic Shield}
 \begin{attuneability}[\nth{1}]{\hypertarget{spell:Kinetic Shield}{Kinetic Shield}}[\glossterm{Attune} (target), \glossterm{Shielding}]
-Choose an \glossterm{ally} in \rngclose range.
+Choose yourself or an \glossterm{ally} in \rngclose range.
 The target gains a \glossterm{magic bonus} equal to your \glossterm{power} to \glossterm{damage reduction} against \glossterm{physical} damage.
 
 You can cast this spell as a \glossterm{minor action}.
@@ -739,24 +864,24 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
-\lowercase{\hypertarget{spell:Resist Energy}{}}\label{spell:Resist Energy}
-\begin{attuneability}[\nth{1}]{\hypertarget{spell:Resist Energy}{Resist Energy}}[\glossterm{Attune} (target), \glossterm{Shielding}]
-Choose an \glossterm{ally} in \rngclose range.
-The target gains a \glossterm{magic bonus} equal to your \glossterm{power} to \glossterm{damage reduction} against \glossterm{energy damage}.
-
-You can cast this spell as a \glossterm{minor action}.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Wall of Force}{}}\label{spell:Wall of Force}
-\begin{freeability}[\nth{1}]{\hypertarget{spell:Wall of Force}{Wall of Force}}[\glossterm{Sustain} (minor)]
+\lowercase{\hypertarget{spell:Mystic Barrier}{}}\label{spell:Mystic Barrier}
+\begin{freeability}[\nth{1}]{\hypertarget{spell:Mystic Barrier}{Mystic Barrier}}[\glossterm{Sustain} (minor)]
 You create a wall of magical energy in a 10 ft.\ high, \areamed line within \rngmed range.
 The wall is visible as a shimmering magical membrane that does not block sight.
 Nothing can pass through the wall until it is destroyed.
 Each 5-ft.\ square of wall has hit points equal to your \glossterm{power}.
 \end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Resist Energy}{}}\label{spell:Resist Energy}
+\begin{attuneability}[\nth{1}]{\hypertarget{spell:Resist Energy}{Resist Energy}}[\glossterm{Attune} (target), \glossterm{Shielding}]
+Choose yourself or an \glossterm{ally} in \rngclose range.
+The target gains a \glossterm{magic bonus} equal to your \glossterm{power} to \glossterm{damage reduction} against \glossterm{energy damage}.
+
+You can cast this spell as a \glossterm{minor action}.
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -769,9 +894,9 @@ This spell functions like the \spell{kinetic shield} spell, except that the dama
 
 
 
-\lowercase{\hypertarget{spell:Expanded Wall of Force}{}}\label{spell:Expanded Wall of Force}
-\begin{freeability}[\nth{2}]{\hypertarget{spell:Expanded Wall of Force}{Expanded Wall of Force}}[\glossterm{Sustain} (minor)]
-This spell functions like the \spell{wall of force} spell, except that the wall fills a 10 ft.\ high, \arealarge line.
+\lowercase{\hypertarget{spell:Expanded Mystic Barrier}{}}\label{spell:Expanded Mystic Barrier}
+\begin{freeability}[\nth{2}]{\hypertarget{spell:Expanded Mystic Barrier}{Expanded Mystic Barrier}}[\glossterm{Sustain} (minor)]
+This spell functions like the \spell{mystic barrier} spell, except that the wall fills a 10 ft.\ high, \arealarge line.
 \end{freeability}
 \vspace{0.25em}
 
@@ -800,9 +925,9 @@ It does not impede passage for objects or creatures, but any ability that deals 
 
 
 
-\lowercase{\hypertarget{spell:Fortified Wall of Force}{}}\label{spell:Fortified Wall of Force}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Fortified Wall of Force}{Fortified Wall of Force}}[\glossterm{Sustain} (minor)]
-This spell functions like the \spell{wall of force} spell, except that each 5-ft.\ square of wall has hit points equal to four times your \glossterm{power}.
+\lowercase{\hypertarget{spell:Fortified Mystic Barrier}{}}\label{spell:Fortified Mystic Barrier}
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Fortified Mystic Barrier}{Fortified Mystic Barrier}}[\glossterm{Sustain} (minor)]
+This spell functions like the \spell{mystic barrier} spell, except that each 5-ft.\ square of wall has hit points equal to four times your \glossterm{power}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -810,7 +935,7 @@ This spell functions like the \spell{wall of force} spell, except that each 5-ft
 
 \lowercase{\hypertarget{spell:Immunity}{}}\label{spell:Immunity}
 \begin{attuneability}[\nth{3}]{\hypertarget{spell:Immunity}{Immunity}}[\glossterm{Attune} (target), \glossterm{Shielding}]
-Choose an \glossterm{ally} in \rngclose range, and a type of damage that is not a type of physical damage (see \pcref{Damage Types}).
+Choose yourself or an \glossterm{ally} in \rngclose range, and a type of damage that is not a type of physical damage (see \pcref{Damage Types}).
 The target becomes immune to damage of the chosen type.
 Attacks that deal damage of multiple types still inflict damage normally unless the target is immune to all types of damage dealt.
 \end{attuneability}
@@ -880,9 +1005,9 @@ This spell functions like the \spell{kinetic shield} spell, except that the dama
 
 
 
-\lowercase{\hypertarget{spell:Impervious Wall of Force}{}}\label{spell:Impervious Wall of Force}
-\begin{freeability}[\nth{5}]{\hypertarget{spell:Impervious Wall of Force}{Impervious Wall of Force}}[\glossterm{Sustain} (minor)]
-This spell functions like the \spell{wall of force} spell, except that the wall is immune to all damage except sonic damage and thaumatic damage.
+\lowercase{\hypertarget{spell:Impervious Mystic Barrier}{}}\label{spell:Impervious Mystic Barrier}
+\begin{freeability}[\nth{5}]{\hypertarget{spell:Impervious Mystic Barrier}{Impervious Mystic Barrier}}[\glossterm{Sustain} (minor)]
+This spell functions like the \spell{mystic barrier} spell, except that the wall is immune to all damage except sonic damage and thaumatic damage.
 \end{freeability}
 \vspace{0.25em}
 
@@ -893,7 +1018,7 @@ This spell functions like the \spell{wall of force} spell, except that the wall 
 
 \lowercase{\hypertarget{spell:Endure Elements}{}}\label{spell:Endure Elements}
 \begin{attuneability}[\nth{1}]{\hypertarget{spell:Endure Elements}{Endure Elements}}[\glossterm{Attune} (ritual), \glossterm{Shielding}]
-Choose an \glossterm{ally} or unattended object within \rngclose range.
+Choose yourself or an \glossterm{ally} or unattended object within \rngclose range.
 The target suffers no harm from being in a hot or cold environment.
 It can exist comfortably in conditions between \minus50 and 140 degrees Fahrenheit.
 Its equipment, if any, is also protected.
@@ -998,7 +1123,7 @@ In addition, the DR to break it open increases by 20 instead of by 10.
 
 \lowercase{\hypertarget{spell:Blessing of Protection}{}}\label{spell:Blessing of Protection}
 \begin{attuneability}[\nth{1}]{\hypertarget{spell:Blessing of Protection}{Blessing of Protection}}[\glossterm{Attune} (target)]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 The target gains a \plus1 \glossterm{magic bonus} to Armor defense and Mental defense.
 
 You can cast this spell as a \glossterm{minor action}.
@@ -1009,7 +1134,7 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Battle Blessing}{}}\label{spell:Battle Blessing}
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Battle Blessing}{Battle Blessing}}[\glossterm{Attune} (target)]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 The target gains a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} with all attacks.
 
 You can cast this spell as a \glossterm{minor action}.
@@ -1020,7 +1145,7 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Blessing of Might}{}}\label{spell:Blessing of Might}
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Blessing of Might}{Blessing of Might}}[\glossterm{Attune} (target)]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 The target gains a \plus2 \glossterm{magic bonus} to \glossterm{power} with \glossterm{mundane} abilities.
 
 You can cast this spell as a \glossterm{minor action}.
@@ -1031,7 +1156,7 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Cleansing Blessing}{}}\label{spell:Cleansing Blessing}
 \begin{freeability}[\nth{2}]{\hypertarget{spell:Cleansing Blessing}{Cleansing Blessing}}
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 The target can remove a \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
@@ -1040,7 +1165,7 @@ The target can remove a \glossterm{condition}.
 
 \lowercase{\hypertarget{spell:Blessing of Resilience}{}}\label{spell:Blessing of Resilience}
 \begin{attuneability}[\nth{3}]{\hypertarget{spell:Blessing of Resilience}{Blessing of Resilience}}[\glossterm{Attune} (target)]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 Whenever the target gains a \glossterm{condition}, it can choose to negate that condition.
 After negating a condition in this way, this spell ends.
 
@@ -1052,7 +1177,7 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Blessing of Supremacy}{}}\label{spell:Blessing of Supremacy}
 \begin{attuneability}[\nth{3}]{\hypertarget{spell:Blessing of Supremacy}{Blessing of Supremacy}}[\glossterm{Attune} (target)]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 The target gains a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} and a \plus2 \glossterm{magic bonus} to \glossterm{power}.
 
 You can cast this spell as a \glossterm{minor action}.
@@ -1119,7 +1244,7 @@ This spell functions like the \spell{cleansing benediction} spell, except that e
 
 \lowercase{\hypertarget{spell:Greater Blessing of Supremacy}{}}\label{spell:Greater Blessing of Supremacy}
 \begin{attuneability}[\nth{7}]{\hypertarget{spell:Greater Blessing of Supremacy}{Greater Blessing of Supremacy}}[\glossterm{Attune} (target)]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 The target gains a \plus2 \glossterm{magic bonus} to \glossterm{accuracy} and a \plus4 \glossterm{magic bonus} to \glossterm{power}.
 
 You can cast this spell as a \glossterm{minor action}.
@@ -1298,6 +1423,15 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
+\lowercase{\hypertarget{spell:Word of Faith}{}}\label{spell:Word of Faith}
+\begin{freeability}[\nth{2}]{\hypertarget{spell:Word of Faith}{Word of Faith}}
+Make an attack vs. Mental against \glossterm{enemies} in a \areamed radius from you.
+\hit Each target takes divine \glossterm{standard damage}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Divine Might}{}}\label{spell:Divine Might}
 \begin{attuneability}[\nth{3}]{\hypertarget{spell:Divine Might}{Divine Might}}[\glossterm{Attune} (self), \glossterm{Shaping}, \glossterm{Sizing}]
 You increase your size by one \glossterm{size category}.
@@ -1306,15 +1440,6 @@ However, your muscles are not increased fully to match its new size, and your St
 
 You can cast this spell as a \glossterm{minor action}.
 \end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Word of Faith}{}}\label{spell:Word of Faith}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Word of Faith}{Word of Faith}}
-Make an attack vs. Mental against all enemies in a \areamed radius from you.
-\hit Each target takes divine \glossterm{standard damage}.
-\end{freeability}
 \vspace{0.25em}
 
 
@@ -1351,8 +1476,8 @@ This spell functions like the \spell{complete mantle of faith} spell, except tha
 
 
 
-\lowercase{\hypertarget{spell:Word of Faith}{}}\label{spell:Word of Faith}
-\begin{freeability}[\nth{6}]{\hypertarget{spell:Word of Faith}{Word of Faith}}
+\lowercase{\hypertarget{spell:Greater Word of Faith}{}}\label{spell:Greater Word of Faith}
+\begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Word of Faith}{Greater Word of Faith}}
 This spell functions like the \textit{word of faith} spell, except that the damage increases to \glossterm{standard damage} \plus1d and the area increases to a \arealarge radius from you.
 \end{freeability}
 \vspace{0.25em}
@@ -1436,7 +1561,7 @@ You gain a \plus5 bonus to this check.
 
 \lowercase{\hypertarget{spell:Haste}{}}\label{spell:Haste}
 \begin{attuneability}[\nth{1}]{\hypertarget{spell:Haste}{Haste}}[\glossterm{Attune} (target), \glossterm{Temporal}]
-Choose an \glossterm{ally} within \rngmed range.
+Choose yourself or an \glossterm{ally} within \rngmed range.
 The target gains a \plus10 foot \glossterm{magic bonus} to its \glossterm{base speed}.
 
 You can cast this spell as a \glossterm{minor action}.
@@ -1496,7 +1621,7 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Greater Haste}{}}\label{spell:Greater Haste}
 \begin{attuneability}[\nth{3}]{\hypertarget{spell:Greater Haste}{Greater Haste}}[\glossterm{Attune} (target), \glossterm{Temporal}]
-Choose an \glossterm{ally} within \rngmed range.
+Choose yourself or an \glossterm{ally} within \rngmed range.
 The target gains a \plus30 foot \glossterm{magic bonus} to its \glossterm{base speed}, up to a maximum of double its \glossterm{base speed}.
 
 You can cast this spell as a \glossterm{minor action}.
@@ -1532,7 +1657,7 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Temporal Duplicate}{}}\label{spell:Temporal Duplicate}
 \begin{freeability}[\nth{4}]{\hypertarget{spell:Temporal Duplicate}{Temporal Duplicate}}[\glossterm{Temporal}]
-Choose an \glossterm{ally} within \rngmed range.
+Choose yourself or an \glossterm{ally} within \rngmed range.
 You reach into a possible future and create a duplicate of the target.
 The duplicate is identical in all ways to the target when the spell resolves, except that it has no \glossterm{legend points}.
 The target and its duplicate can act during the next round.
@@ -1552,7 +1677,7 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Time Lock}{}}\label{spell:Time Lock}
 \begin{freeability}[\nth{4}]{\hypertarget{spell:Time Lock}{Time Lock}}[\glossterm{Sustain} (minor), \glossterm{Temporal}]
-Choose an \glossterm{ally} within \rngmed range.
+Choose yourself or an \glossterm{ally} within \rngmed range.
 You lock the state of the target's body in time.
 Note the target's hit points, vital damage, and active conditions.
 If the target dies, this effect ends immediately.
@@ -1645,7 +1770,7 @@ This ritual takes one minute to perform.
 
 \lowercase{\hypertarget{spell:Collapse}{}}\label{spell:Collapse}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Collapse}{Collapse}}[\glossterm{Compulsion}]
-Make an attack vs. Mental against all enemies in a \areamed radius from you.
+Make an attack vs. Mental against \glossterm{enemies} in a \areamed radius from you.
 \hit Each target falls \glossterm{prone}.
 \crit As above, and as a \glossterm{condition}, each target is unable to stand up.
 If a target is somehow brought into a standing position, it will immediately fall and become prone again.
@@ -1716,7 +1841,7 @@ On a critical hit, the target becomes \glossterm{dominated} by you as long as yo
 
 \lowercase{\hypertarget{spell:Discordant Song}{}}\label{spell:Discordant Song}
 \begin{freeability}[\nth{5}]{\hypertarget{spell:Discordant Song}{Discordant Song}}[\glossterm{Compulsion}]
-Make an attack vs. Mental against all enemies in a \areamed radius from you.
+Make an attack vs. Mental against \glossterm{enemies} in a \areamed radius from you.
 \hit Each target is \disoriented as a \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
@@ -1763,6 +1888,15 @@ It can only take damage in this way once per round.
 
 
 
+\lowercase{\hypertarget{spell:Miasma}{}}\label{spell:Miasma}
+\begin{freeability}[\nth{2}]{\hypertarget{spell:Miasma}{Miasma}}[\glossterm{Life}]
+Make an attack vs. Fortitude against living \glossterm{enemies} within an \areamed radius from you.
+\hit Each target is \glossterm{sickened} as a \glossterm{condition}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Pernicious Sickness}{}}\label{spell:Pernicious Sickness}
 \begin{freeability}[\nth{2}]{\hypertarget{spell:Pernicious Sickness}{Pernicious Sickness}}[\glossterm{Life}]
 Make an attack vs. Fortitude with a \plus2 bonus to \glossterm{accuracy} against a living creature within \rngclose range.
@@ -1787,15 +1921,6 @@ When the condition is removed, the target's maximum hit points are restored.
 \begin{freeability}[\nth{3}]{\hypertarget{spell:Eyebite}{Eyebite}}[\glossterm{Life}]
 Make an attack vs. Fortitude against a living creature within \rngclose range.
 \hit The target is \glossterm{blinded} as a \glossterm{condition}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Miasma}{}}\label{spell:Miasma}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Miasma}{Miasma}}[\glossterm{Life}]
-Make an attack vs. Fortitude against all living enemies within an \areamed radius from you.
-\hit Each target is \glossterm{sickened} as a \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1831,7 +1956,7 @@ This spell functions like the \spell{sickening decay} spell, except that a struc
 
 \lowercase{\hypertarget{spell:Greater Miasma}{}}\label{spell:Greater Miasma}
 \begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Miasma}{Greater Miasma}}[\glossterm{Life}]
-Make an attack vs. Fortitude against all living enemies within an \areamed radius from you.
+Make an attack vs. Fortitude against living \glossterm{enemies} within an \areamed radius from you.
 \hit Each target is \glossterm{nauseated} as a \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
@@ -1924,7 +2049,7 @@ If the item loses all of its hit points, this effect is \glossterm{dismissed}.
 
 \lowercase{\hypertarget{spell:Blizzard}{}}\label{spell:Blizzard}
 \begin{freeability}[\nth{2}]{\hypertarget{spell:Blizzard}{Blizzard}}[\glossterm{Cold}]
-Make an attack vs. Fortitude against everything in a \areamed radius from you.
+Make an attack vs. Fortitude against \glossterm{enemies} and objects in a \areasmall radius within \rngclose range.
 \hit Each target takes cold \glossterm{standard damage}.
 \end{freeability}
 \vspace{0.25em}
@@ -1992,6 +2117,14 @@ This spell functions like the \spell{cone of cold} spell, except that each struc
 
 
 
+\lowercase{\hypertarget{spell:Greater Blizzard}{}}\label{spell:Greater Blizzard}
+\begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Blizzard}{Greater Blizzard}}[\glossterm{Cold}]
+This spell functions like the \spell{blizzard} spell, except that the area becomes a \areamed radius within \rngmed range.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Greater Frostbite}{}}\label{spell:Greater Frostbite}
 \begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Frostbite}{Greater Frostbite}}[\glossterm{Cold}]
 This spell functions like the \spell{frostbite} spell, except that the target is \glossterm{decelerated} instead of \glossterm{slowed}.
@@ -2023,7 +2156,7 @@ This spell functions like the \spell{cone of cold} spell, except it affects ever
 
 
 \begin{apability}{Cheer}[\glossterm{Emotion}, \glossterm{Sustain} (free)]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 The target's mood improves and it feels more cheerful.
 \end{apability}
 
@@ -2208,20 +2341,20 @@ If this spell has its area increased, such as with the Widened \glossterm{augmen
 
 
 
-\lowercase{\hypertarget{spell:Dynamo}{}}\label{spell:Dynamo}
-\begin{freeability}[\nth{2}]{\hypertarget{spell:Dynamo}{Dynamo}}[\glossterm{Electricity}]
-This spell functions like the \spell{lightning bolt} spell, except that it gains the \glossterm{Sustain} (standard) tag.
-The area affected by the spell becomes a \glossterm{zone} that is continuously filled with electrical pulses.
-At the end of each \glossterm{action phase} in subsequent rounds, the attack is repeated in that area.
+\lowercase{\hypertarget{spell:Discharge}{}}\label{spell:Discharge}
+\begin{freeability}[\nth{2}]{\hypertarget{spell:Discharge}{Discharge}}[\glossterm{Electricity}]
+Make an attack vs. Fortitude against \glossterm{enemies} and objects in a \areamed radius from you.
+\hit Each target takes electricity \glossterm{standard damage}.
 \end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Uncontrolled Discharge}{}}\label{spell:Uncontrolled Discharge}
-\begin{freeability}[\nth{2}]{\hypertarget{spell:Uncontrolled Discharge}{Uncontrolled Discharge}}[\glossterm{Electricity}]
-Make an attack vs. Fortitude against everything in a \areamed radius from you.
-\hit Each target takes electricity \glossterm{standard damage}.
+\lowercase{\hypertarget{spell:Dynamo}{}}\label{spell:Dynamo}
+\begin{freeability}[\nth{2}]{\hypertarget{spell:Dynamo}{Dynamo}}[\glossterm{Electricity}]
+This spell functions like the \spell{lightning bolt} spell, except that it gains the \glossterm{Sustain} (standard) tag.
+The area affected by the spell becomes a \glossterm{zone} that is continuously filled with electrical pulses.
+At the end of each \glossterm{action phase} in subsequent rounds, the attack is repeated in that area.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2255,7 +2388,7 @@ This spell functions like the \spell{lightning bolt} spell, except that it targe
 
 \lowercase{\hypertarget{spell:Magnetic Blade}{}}\label{spell:Magnetic Blade}
 \begin{attuneability}[\nth{3}]{\hypertarget{spell:Magnetic Blade}{Magnetic Blade}}[\glossterm{Attune} (target), \glossterm{Electricity}]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 Metal weapons wielded by the target gain a \plus2 \glossterm{magic bonus} to \glossterm{accuracy} against targets wearing metal armor or otherwise carrying or composed of a significant amount of metal.
 
 You can cast this spell as a \glossterm{minor action}.
@@ -2474,11 +2607,11 @@ This ritual takes one hour to perform.
 \subsubsection{Cantrips}
 
 
-\begin{apability}{Assist Disguise}[\glossterm{Sensation}, \glossterm{Sustain} (minor), \glossterm{Visual}]
-Choose an \glossterm{ally} within \rngclose range.
+\begin{attuneability}{Assist Disguise}[\glossterm{Attune} (self), \glossterm{Sensation}, \glossterm{Visual}]
+Choose yourself or an \glossterm{ally} within \rngclose range.
 % TODO: wording?
 If the target is disguised as another creature, it gains a \plus2 \glossterm{magic bonus} to the result of the disguise.
-\end{apability}
+\end{attuneability}
 
 \end{spellsection}
 
@@ -2488,7 +2621,7 @@ If the target is disguised as another creature, it gains a \plus2 \glossterm{mag
 
 \lowercase{\hypertarget{spell:Blur}{}}\label{spell:Blur}
 \begin{attuneability}[\nth{1}]{\hypertarget{spell:Blur}{Blur}}[\glossterm{Attune} (target), \glossterm{Sensation}, \glossterm{Visual}]
-Choose an \glossterm{ally} within \rngmed range.
+Choose yourself or an \glossterm{ally} within \rngmed range.
 The target's physical outline is distorted so it appears blurred, shifting, and wavering.
 It gains a \plus1 \glossterm{magic bonus} to Armor defense and Stealth (see \pcref{Stealth}).
 This effect provides no defensive benefit against creatures immune to \glossterm{Visual} abilities.
@@ -2530,7 +2663,7 @@ Any object or effect which blocks light also blocks this spell's \glossterm{eman
 
 \lowercase{\hypertarget{spell:Disguise Image}{}}\label{spell:Disguise Image}
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Disguise Image}{Disguise Image}}[\glossterm{Attune} (target), \glossterm{Sensation}, \glossterm{Visual}]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 You make a Disguise check to alter the target's appearance (see \pcref{Disguise Creature}).
 You gain a \plus5 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form.
 However, this effect is unable to alter the sound, smell, texture, or temperature of the target or its clothes and equipment.
@@ -2541,7 +2674,7 @@ However, this effect is unable to alter the sound, smell, texture, or temperatur
 
 \lowercase{\hypertarget{spell:Mirror Image}{}}\label{spell:Mirror Image}
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Mirror Image}{Mirror Image}}[\glossterm{Attune} (target), \glossterm{Sensation}, \glossterm{Visual}]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 Four illusory duplicates appear around the target that mirror its every move.
 The duplicates shift chaotically in its space, making it difficult to identify the real creature.
 
@@ -2574,7 +2707,7 @@ At the end of each \glossterm{action phase}, one destroyed image reappears, to a
 
 \lowercase{\hypertarget{spell:Displacement}{}}\label{spell:Displacement}
 \begin{attuneability}[\nth{6}]{\hypertarget{spell:Displacement}{Displacement}}[\glossterm{Attune} (target), \glossterm{Sensation}, \glossterm{Visual}]
-Choose an \glossterm{ally} within \rngmed range.
+Choose yourself or an \glossterm{ally} within \rngmed range.
 The target's image appears to be two to three feet from its real location.
 \glossterm{Targeted} \glossterm{physical attacks} against the target suffer a 50\% miss chance.
 This ability provides no defensive benefit against creatures immune to \glossterm{Visual} abilities.
@@ -2783,7 +2916,7 @@ Make an attack vs. Fortitude against a creature within \rngmed range.
 
 \lowercase{\hypertarget{spell:Shrink}{}}\label{spell:Shrink}
 \begin{attuneability}[\nth{1}]{\hypertarget{spell:Shrink}{Shrink}}[\glossterm{Attune} (target), \glossterm{Shaping}, \glossterm{Sizing}]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 The target's size decreases by one size category, to a minimum of Tiny.
 This decreases its Strength by 2 and usually decreases its \glossterm{reach} (see \pcref{Size in Combat}).
 
@@ -2795,7 +2928,7 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Spider Climb}{}}\label{spell:Spider Climb}
 \begin{attuneability}[\nth{1}]{\hypertarget{spell:Spider Climb}{Spider Climb}}[\glossterm{Attune} (target)]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 The target gains a \glossterm{climb speed} equal to its \glossterm{base speed}.
 It also gains a \plus4 \glossterm{magic bonus} to Climb checks.
 This bonus is increased to \plus8 when you climb on ceilings and similar surfaces.
@@ -2819,7 +2952,7 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Barkskin}{}}\label{spell:Barkskin}
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Barkskin}{Barkskin}}[\glossterm{Attune} (target)]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 The target gains a \glossterm{magic bonus} equal to your \glossterm{power} to \glossterm{damage reduction} against damage dealt by \glossterm{physical attacks}.
 In addition, it is \glossterm{vulnerable} to fire damage.
 
@@ -2858,7 +2991,7 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Stoneskin}{}}\label{spell:Stoneskin}
 \begin{attuneability}[\nth{3}]{\hypertarget{spell:Stoneskin}{Stoneskin}}[\glossterm{Attune} (target)]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 The target gains a \glossterm{magic bonus} equal to your \glossterm{power} to \glossterm{damage reduction} against damage dealt by \glossterm{physical attacks}, except for damage from adamantine weapons.
 
 You can cast this spell as a \glossterm{minor action}.
@@ -2885,7 +3018,7 @@ This spell functions like the \spell{shrink} spell, except that the target's siz
 
 \lowercase{\hypertarget{spell:Regeneration}{}}\label{spell:Regeneration}
 \begin{attuneability}[\nth{4}]{\hypertarget{spell:Regeneration}{Regeneration}}[\glossterm{Attune} (target)]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 A the end of each round, the target heals hit points equal to your \glossterm{power}.
 \end{attuneability}
 \vspace{0.25em}
@@ -3103,6 +3236,20 @@ Make an attack vs. Armor against one creature within \rngmed range.
 
 
 
+\lowercase{\hypertarget{spell:Ignition}{}}\label{spell:Ignition}
+\begin{freeability}[\nth{1}]{\hypertarget{spell:Ignition}{Ignition}}[\glossterm{Fire}]
+Make an attack vs. Fortitude against one creature within \rngmed range.
+\hit The target is \glossterm{ignited} as a \glossterm{condition}.
+This condition can be removed if the target makes a \glossterm{DR} 10 Dexterity check as a \glossterm{move action} to put out the flames.
+Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this check.
+The flames can also be extinguished if the target is drenched in water, takes at least 5 cold damage, or other similar effects.
+\crit As above, except that the condition cannot be removed by putting out the flames.
+In addition, the ignited effect deals fire \glossterm{standard damage} \minus2d instead of the normal 1d6 fire damage each round.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Fireball}{}}\label{spell:Fireball}
 \begin{freeability}[\nth{2}]{\hypertarget{spell:Fireball}{Fireball}}[\glossterm{Fire}]
 Make an attack vs. Armor against everything in a \areasmall radius within \rngclose range.
@@ -3114,7 +3261,7 @@ Make an attack vs. Armor against everything in a \areasmall radius within \rngcl
 
 \lowercase{\hypertarget{spell:Flame Blade}{}}\label{spell:Flame Blade}
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Flame Blade}{Flame Blade}}[\glossterm{Attune} (target), \glossterm{Fire}]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 % Is this clear enough at not stacking with magic bonuses intrinsic to the creature?
 Weapons wielded by the target gain a \plus2 \glossterm{magic bonus} to \glossterm{power} with \glossterm{strikes}.
 In addition, all damage dealt with strikes using its weapons becomes fire damage in addition to the attack's normal damage types.
@@ -3134,15 +3281,6 @@ Make an attack vs. Armor against everything in a \areamed, 5 ft.\ wide shapeable
 
 
 
-\lowercase{\hypertarget{spell:Inferno}{}}\label{spell:Inferno}
-\begin{freeability}[\nth{2}]{\hypertarget{spell:Inferno}{Inferno}}[\glossterm{Fire}]
-Make an attack vs. Armor against everything in a \areamed radius from you.
-\hit Each target takes fire \glossterm{standard damage}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Blast Furnace}{}}\label{spell:Blast Furnace}
 \begin{freeability}[\nth{3}]{\hypertarget{spell:Blast Furnace}{Blast Furnace}}[\glossterm{Fire}]
 This spell functions like the \spell{fireball} spell, except that it gains the \glossterm{Sustain} (standard) tag.
@@ -3153,19 +3291,18 @@ At the end of each \glossterm{action phase} in subsequent rounds, the attack is 
 
 
 
-\lowercase{\hypertarget{spell:Ignition}{}}\label{spell:Ignition}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Ignition}{Ignition}}[\glossterm{Fire}]
-This spell functions like the \spell{firebolt} spell, except that a struck target is also \glossterm{ignited} as a \glossterm{condition}.
-This condition can be removed if the target makes a \glossterm{DR} 10 Dexterity check as a \glossterm{move action} to put out the flames.
-Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this check.
+\lowercase{\hypertarget{spell:Heat Metal}{}}\label{spell:Heat Metal}
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Heat Metal}{Heat Metal}}[\glossterm{Fire}]
+This spell functions like the \spell{ignition} spell, except that you gain a \plus2 bonus to \glossterm{accuracy} against a target wearing metal armor, wielding a metal weapon, or significantly composed of metal.
 \end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Superheated Fireball}{}}\label{spell:Superheated Fireball}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Superheated Fireball}{Superheated Fireball}}[\glossterm{Fire}]
-This spell functions like the \spell{fireball} spell, except that it attacks Fortitude defense instead of Armor defense.
+\lowercase{\hypertarget{spell:Inferno}{}}\label{spell:Inferno}
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Inferno}{Inferno}}[\glossterm{Fire}]
+Make an attack vs. Armor against everything in a \arealarge radius from you.
+\hit Each target takes fire \glossterm{standard damage}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3188,7 +3325,7 @@ It is immune to most forms of attack, but it can be destroyed by \glossterm{cold
 
 \lowercase{\hypertarget{spell:Flame Aura}{}}\label{spell:Flame Aura}
 \begin{attuneability}[\nth{4}]{\hypertarget{spell:Flame Aura}{Flame Aura}}[\glossterm{Attune} (target), \glossterm{Fire}]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 Heat constantly radiates in a \areasmall radius \glossterm{emanation} from the target.
 At the end of each \glossterm{action phase}, make an attack vs. Armor against everything in the area.
 \hit Each target takes fire \glossterm{standard damage} \minus2d.
@@ -3207,9 +3344,9 @@ This spell functions like the \spell{blast furnace} spell, except that the spell
 
 
 
-\lowercase{\hypertarget{spell:Greater Inferno}{}}\label{spell:Greater Inferno}
-\begin{freeability}[\nth{4}]{\hypertarget{spell:Greater Inferno}{Greater Inferno}}[\glossterm{Fire}]
-This spell functions like the \textit{inferno} spell, except that it affects everything in a \arealarge radius from you.
+\lowercase{\hypertarget{spell:Mass Ignition}{}}\label{spell:Mass Ignition}
+\begin{freeability}[\nth{4}]{\hypertarget{spell:Mass Ignition}{Mass Ignition}}[\glossterm{Fire}]
+This spell functions like the \spell{ignition} spell, except that it targets all creatures in a \areasmall radius within \rngmed range.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3241,10 +3378,9 @@ This spell functions like the \spell{flame serpent} spell, except that the area 
 
 
 
-\lowercase{\hypertarget{spell:Greater Ignition}{}}\label{spell:Greater Ignition}
-\begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Ignition}{Greater Ignition}}[\glossterm{Fire}]
-This spell functions like the \spell{firebolt} spell, except that a struck target is also \glossterm{ignited} as a \glossterm{condition}.
-In addition, the ignited effect deals fire \glossterm{standard damage} \minus2d instead of the normal 1d6 fire damage each round.
+\lowercase{\hypertarget{spell:Greater Inferno}{}}\label{spell:Greater Inferno}
+\begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Inferno}{Greater Inferno}}[\glossterm{Fire}]
+This spell functions like the \textit{inferno} spell, except that the area increases to a \areahuge radius from you.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3254,14 +3390,6 @@ In addition, the ignited effect deals fire \glossterm{standard damage} \minus2d 
 \begin{attuneability}[\nth{6}]{\hypertarget{spell:Greater Flame Aura}{Greater Flame Aura}}[\glossterm{Attune} (target), \glossterm{Fire}]
 This spell functions like the \spell{flame aura} spell, except that the area increases to a \areamed radius.
 \end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Supreme Inferno}{}}\label{spell:Supreme Inferno}
-\begin{freeability}[\nth{6}]{\hypertarget{spell:Supreme Inferno}{Supreme Inferno}}[\glossterm{Fire}]
-This spell functions like the \textit{inferno} spell, except that it affects everything in a \areahuge radius from you.
-\end{freeability}
 \vspace{0.25em}
 
 
@@ -3280,9 +3408,15 @@ This spell functions like the \textit{inferno} spell, except that it affects eve
 \subsubsection{Cantrips}
 
 
-\begin{apability}{Minor Vision}
+\begin{apability}{Reveal Truth}
 You may reroll one Knowledge check you made last round.
 You can only cast this spell once per hour.
+\end{apability}
+
+
+\begin{apability}{Remote Sensing}[\glossterm{Scrying}, \glossterm{Sustain} (minor)]
+This cantrip functions like the \textit{arcane eye} spell, except that it gains the \glossterm{Sustain} (minor) tag in place of the \glossterm{Attune} (self) tag.",
+In addition, the sensor cannot be moved after it is originally created.
 \end{apability}
 
 \end{spellsection}
@@ -3291,9 +3425,37 @@ You can only cast this spell once per hour.
 \subsubsection{Spells}
 
 
+\lowercase{\hypertarget{spell:Alarm}{}}\label{spell:Alarm}
+\begin{attuneability}[\nth{1}]{\hypertarget{spell:Alarm}{Alarm}}[\glossterm{Attune} (self), \glossterm{Scrying}]
+A \glossterm{scrying sensor} appears floating in the air in an unoccupied square within \rngmed range.
+The sensor passively observes its surroundings.
+If it sees a creature or object of Tiny size or larger moving within 50 feet of it, it will trigger a mental "ping" that only you can notice.
+You must be within 1 mile of the sensor to receive this mental alarm.
+This mental sensation is strong enough to wake you from normal sleep, but does not otherwise disturb concentration.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Arcane Eye}{}}\label{spell:Arcane Eye}
+\begin{attuneability}[\nth{1}]{\hypertarget{spell:Arcane Eye}{Arcane Eye}}[\glossterm{Attune} (self), \glossterm{Scrying}]
+A \glossterm{scrying sensor} appears floating in the air in an unoccupied square within \rngmed range.
+At the start of each round, you choose whether you see from this sensor or from your body.
+
+While viewing through the sensor, your visual acuity is the same as your normal body, except that it does not share the benefits of any \glossterm{magical} effects that improve your vision.
+You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \blinded.
+
+If undisturbed, the sensor floats in the air in its position.
+As a \glossterm{minor action}, you can concentrate to move the sensor up to 30 feet in any direction, even vertically.
+At the end of each round, if the sensor is does not have \glossterm{line of effect} from you, it is destroyed.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Boon of Mastery}{}}\label{spell:Boon of Mastery}
 \begin{attuneability}[\nth{1}]{\hypertarget{spell:Boon of Mastery}{Boon of Mastery}}[\glossterm{Attune} (target)]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 The target gains a \plus2 \glossterm{magic bonus} to all skills.
 \end{attuneability}
 \vspace{0.25em}
@@ -3302,16 +3464,26 @@ The target gains a \plus2 \glossterm{magic bonus} to all skills.
 
 \lowercase{\hypertarget{spell:Precognitive Defense}{}}\label{spell:Precognitive Defense}
 \begin{attuneability}[\nth{1}]{\hypertarget{spell:Precognitive Defense}{Precognitive Defense}}[\glossterm{Attune} (target)]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 The target gains a \plus1 \glossterm{magic bonus} to Armor defense and Reflex defense.
 \end{attuneability}
 \vspace{0.25em}
 
 
 
+\lowercase{\hypertarget{spell:Reveal Vulnerability}{}}\label{spell:Reveal Vulnerability}
+\begin{freeability}[\nth{1}]{\hypertarget{spell:Reveal Vulnerability}{Reveal Vulnerability}}
+Make an attack vs. Mental against a creature within \rngmed range.
+\hit The target's physical vulnerabilities are highlighted, and openings in its defenses are revealed to attackers moments before they exist.
+It suffers a \minus2 penalty to Armor defense as a \glossterm{condition}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:True Strike}{}}\label{spell:True Strike}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:True Strike}{True Strike}}[\glossterm{Swift}]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 If the target makes a \glossterm{strike} during the current phase,
 it gains a \plus4 bonus to \glossterm{accuracy} and rolls twice and takes the higher result.
 If you cast this spell on yourself, it affects the first strike you make until the end of the next round.
@@ -3320,9 +3492,28 @@ If you cast this spell on yourself, it affects the first strike you make until t
 
 
 
+\lowercase{\hypertarget{spell:Accelerated Eye}{}}\label{spell:Accelerated Eye}
+\begin{attuneability}[\nth{2}]{\hypertarget{spell:Accelerated Eye}{Accelerated Eye}}[\glossterm{Attune} (self), \glossterm{Scrying}]
+This spell functions like the \spell{arcane eye} spell, except that the sensor moves up to 100 feet when moved instead of up to 30 feet.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Auditory Eye}{}}\label{spell:Auditory Eye}
+\begin{attuneability}[\nth{2}]{\hypertarget{spell:Auditory Eye}{Auditory Eye}}[\glossterm{Attune} (self), \glossterm{Scrying}]
+This spell functions like the \spell{arcane eye} spell, except that you can you can also hear through the sensor.
+At the start of each round, you can choose whether you hear from the sensor or from your body.
+This choice is made independently from your sight.
+The sensor's auditory acuity is the same as your own, except that it does not share the benefits of any \glossterm{magical} effects that improve your hearing.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Boon of Knowledge}{}}\label{spell:Boon of Knowledge}
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Boon of Knowledge}{Boon of Knowledge}}[\glossterm{Attune} (target)]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 The target gains a \plus4 \glossterm{magic bonus} to all Knowledge skills (see \pcref{Knowledge}).
 \end{attuneability}
 \vspace{0.25em}
@@ -3331,7 +3522,7 @@ The target gains a \plus4 \glossterm{magic bonus} to all Knowledge skills (see \
 
 \lowercase{\hypertarget{spell:Boon of Many Eyes}{}}\label{spell:Boon of Many Eyes}
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Boon of Many Eyes}{Boon of Many Eyes}}[\glossterm{Attune} (target)]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 The target gains a \plus1 \glossterm{magic bonus} to \glossterm{overwhelm resistance}.
 \end{attuneability}
 \vspace{0.25em}
@@ -3341,20 +3532,81 @@ The target gains a \plus1 \glossterm{magic bonus} to \glossterm{overwhelm resist
 \lowercase{\hypertarget{spell:Discern Lies}{}}\label{spell:Discern Lies}
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Discern Lies}{Discern Lies}}[\glossterm{Attune} (self), \glossterm{Detection}]
 Make an attack vs. Mental against a creature within \rngmed range.
-\hit You know when the target deliberately and knowingly speaks a lie.
+\hit When you hear the target deliberately and knowingly speaks a lie, you know that the target was lying.
 This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
 \end{attuneability}
 \vspace{0.25em}
 
 
 
+\lowercase{\hypertarget{spell:Greater Alarm}{}}\label{spell:Greater Alarm}
+\begin{attuneability}[\nth{2}]{\hypertarget{spell:Greater Alarm}{Greater Alarm}}[\glossterm{Attune} (self), \glossterm{Scrying}]
+This spell functions like the \textit{alarm} spell, except that the sensor gains 100 ft.\ \glossterm{darkvision} and its Awareness bonus is equal to your \glossterm{power}.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Greater Reveal Truth}{}}\label{spell:Greater Reveal Truth}
+\begin{freeability}[\nth{2}]{\hypertarget{spell:Greater Reveal Truth}{Greater Reveal Truth}}
+You may reroll one Knowledge check you made last round with a \plus5 \glossterm{magic bonus}.
+You can only cast this spell once per hour.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Myriad Visions}{}}\label{spell:Myriad Visions}
+\begin{freeability}[\nth{2}]{\hypertarget{spell:Myriad Visions}{Myriad Visions}}
+Make an attack vs. Mental against a creature within \rngmed range.
+\hit The target sees visions of possible futures that confuse its ability to determine reality.
+It suffers a \minus2 penalty to \glossterm{accuracy} and Awareness as a \glossterm{condition}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Precognitive Offense}{}}\label{spell:Precognitive Offense}
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Precognitive Offense}{Precognitive Offense}}[\glossterm{Attune} (target)]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 The target gains a \plus1 \glossterm{magic bonus} to \glossterm{accuracy} with all attacks.
 
 You can cast this spell as a \glossterm{minor action}.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Purge Invisibility}{}}\label{spell:Purge Invisibility}
+\begin{attuneability}[\nth{2}]{\hypertarget{spell:Purge Invisibility}{Purge Invisibility}}[\glossterm{Attune} (self)]
+All invisibility effects are \glossterm{suppressed} within a \arealarge radius \glossterm{emanation} from you.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Reverse Scrying}{}}\label{spell:Reverse Scrying}
+\begin{attuneability}[\nth{2}]{\hypertarget{spell:Reverse Scrying}{Reverse Scrying}}[\glossterm{Attune} (self), \glossterm{Scrying}]
+Choose a magical sensor within \rngmed range.
+A new scrying sensor appears at the location of the source of the the ability that created the target sensor.
+This sensor functions like the sensor created by the \spell{autonomous eye} spell, except that the sensor cannot move.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Autonomous Eye}{}}\label{spell:Autonomous Eye}
+\begin{attuneability}[\nth{3}]{\hypertarget{spell:Autonomous Eye}{Autonomous Eye}}[\glossterm{Attune} (self), \glossterm{Scrying}]
+This spell functions like the \spell{arcane eye} spell, except that the sensor is not destroyed when it loses \glossterm{line of effect} to you.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Greater Reveal Vulnerability}{}}\label{spell:Greater Reveal Vulnerability}
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Greater Reveal Vulnerability}{Greater Reveal Vulnerability}}
+This spell functions like the \spell{reveal vulnerability} spell, except that the penalty increases to -4.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -3369,9 +3621,18 @@ This spell functions like the \textit{true strike} spell, except that the bonus 
 
 \lowercase{\hypertarget{spell:Third Eye}{}}\label{spell:Third Eye}
 \begin{attuneability}[\nth{3}]{\hypertarget{spell:Third Eye}{Third Eye}}[\glossterm{Attune} (target)]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 The target gains \glossterm{blindsight} with a 50 foot range.
 This can allow it to see perfectly without any light, regardless of concealment or invisibility.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Twin Eye}{}}\label{spell:Twin Eye}
+\begin{attuneability}[\nth{3}]{\hypertarget{spell:Twin Eye}{Twin Eye}}[\glossterm{Attune} (self), \glossterm{Scrying}]
+This spell functions like the \spell{arcane eye} spell, except that you constantly receive sensory input from both your body and the sensor.
+This allows you to see simultaneously from your body and from the sensor.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -3385,9 +3646,28 @@ This spell functions like the \spell{boon of mastery} spell, except that the bon
 
 
 
+\lowercase{\hypertarget{spell:Greater Myriad Visions}{}}\label{spell:Greater Myriad Visions}
+\begin{freeability}[\nth{4}]{\hypertarget{spell:Greater Myriad Visions}{Greater Myriad Visions}}
+This spell functions like the \spell{false visions} spell, except that the penalties increase to -4.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Greater Precognitive Defense}{}}\label{spell:Greater Precognitive Defense}
 \begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Precognitive Defense}{Greater Precognitive Defense}}[\glossterm{Attune} (target)]
 This spell functions like the \spell{precognitive defense} spell, except that the bonus is increased to \plus2.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Penetrating Eye}{}}\label{spell:Penetrating Eye}
+\begin{attuneability}[\nth{4}]{\hypertarget{spell:Penetrating Eye}{Penetrating Eye}}[\glossterm{Attune} (self), \glossterm{Scrying}]
+This spell functions like the \spell{autonomous eye} spell, except that you do not need \glossterm{line of sight} or \glossterm{line of effect} to target a location.
+You must specify a distance and direction to target a location you cannot see.
+This can allow you to cast the spell beyond walls and similar obstacles.
+As normal, if the intended location is occupied or otherwise impossible, the spell is \glossterm{miscast}.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -3401,9 +3681,29 @@ This spell functions like the \spell{precognitive offense} spell, except that th
 
 
 
+\lowercase{\hypertarget{spell:Greater Purge Invisibility}{}}\label{spell:Greater Purge Invisibility}
+\begin{attuneability}[\nth{5}]{\hypertarget{spell:Greater Purge Invisibility}{Greater Purge Invisibility}}[\glossterm{Attune} (self)]
+This spell functions like the \spell{purge invisibility} spell, except that the area increases to a 200 ft.\ radius \glossterm{emanation} from you.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Supreme True Strike}{}}\label{spell:Supreme True Strike}
 \begin{freeability}[\nth{5}]{\hypertarget{spell:Supreme True Strike}{Supreme True Strike}}
 This spell functions like the \textit{true strike} spell, except that the bonus is increased to \plus8.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:One Truth}{}}\label{spell:One Truth}
+\begin{freeability}[\nth{7}]{\hypertarget{spell:One Truth}{One Truth}}
+Choose a fact that you know and make an attack vs. Mental against a creature within \rngmed range.
+If the fact is true and the target does not already know that fact, you gain a \plus2 bonus to \glossterm{accuracy}.
+Otherwise, you take a \minus2 penalty to accuracy.
+\hit The target's mind is overwhelmed by a total awareness of your chosen fact.
+It is \glossterm{stunned} as a \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3498,6 +3798,25 @@ This ritual takes 24 hours to perform, and it requires 32 action points from its
 
 
 
+\lowercase{\hypertarget{spell:Scry Creature}{}}\label{spell:Scry Creature}
+\begin{apability}[\nth{4}]{\hypertarget{spell:Scry Creature}{Scry Creature}}[\glossterm{AP}, \glossterm{Scrying}]
+Make an attack vs. Mental against a creature on the same plane as you.
+You do not need \glossterm{line of sight} or \glossterm{line of effect} to the target.
+However,  must specify your target with a precise mental image of its appearance.
+The image does not have to be perfect, but it must unambiguously identify the target.
+If you specify its appearance incorrectly, or if the target has changed its appearance, you may accidentally target a different creature, or the spell may simply be \glossterm{miscast}.
+This attack roll cannot \glossterm{explode}.
+\hit A scrying sensor appears in the target's space.
+This sensor functions like the sensor created by the \spell{arcane eye} spell, except that you cannot move the sensor manually.
+Instead, it automatically tries to follow the target to stay in its space.
+At the end of each phase, if the sensor is not in the target's space, this effect is \glossterm{dismissed}.
+
+This ritual takes one hour to perform.
+\end{apability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Long-Distance Bond}{}}\label{spell:Long-Distance Bond}
 \begin{attuneability}[\nth{5}]{\hypertarget{spell:Long-Distance Bond}{Long-Distance Bond}}[\glossterm{Attune} (ritual; see text)]
 This ritual functions like the \ritual{telepathic bond} ritual, except that the effect works at any distance.
@@ -3527,160 +3846,20 @@ It gains the \glossterm{Planar} tag in addition to the tags from the \ritual{sen
 
 
 
-\lowercase{\hypertarget{spell:Planar Bond}{}}\label{spell:Planar Bond}
-\begin{attuneability}[\nth{7}]{\hypertarget{spell:Planar Bond}{Planar Bond}}[\glossterm{Attune} (ritual; see text)]
-This ritual functions like the \ritual{telepathic bond} ritual, except that the effect works at any distance and across planes.
-It gains the \glossterm{Planar} tag in addition to the tags from the \ritual{telepathic bond} ritual.
-\end{attuneability}
-\vspace{0.25em}
-
-
-\newpage
-\begin{spellsection}{Scry}
-
-\begin{spellheader}
-\spelldesc{See and hear at great distances.}
-\end{spellheader}
-
-
-\parhead{Schools} Divination
-
-\parhead{Mystic Sphere Lists} Arcane, Divine, Nature
-
-\subsubsection{Cantrips}
-
-
-\begin{apability}{Remote Sensing}[\glossterm{Scrying}, \glossterm{Sustain} (minor)]
-This cantrip functions like the \textit{arcane eye} spell, except that it gains the \glossterm{Sustain} (minor) tag in place of the \glossterm{Attune} (self) tag.",
-In addition, the sensor cannot be moved after it is originally created.
-\end{apability}
-
-\end{spellsection}
-
-
-\subsubsection{Spells}
-
-
-\lowercase{\hypertarget{spell:Alarm}{}}\label{spell:Alarm}
-\begin{attuneability}[\nth{1}]{\hypertarget{spell:Alarm}{Alarm}}[\glossterm{Attune} (self), \glossterm{Scrying}]
-A \glossterm{scrying sensor} appears floating in the air in an unoccupied square within \rngmed range.
-The sensor passively observes its surroundings.
-If it sees a creature or object of Tiny size or larger moving within 50 feet of it, it will trigger a mental "ping" that only you can notice.
-You must be within 1 mile of the sensor to receive this mental alarm.
-This mental sensation is strong enough to wake you from normal sleep, but does not otherwise disturb concentration.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Arcane Eye}{}}\label{spell:Arcane Eye}
-\begin{attuneability}[\nth{1}]{\hypertarget{spell:Arcane Eye}{Arcane Eye}}[\glossterm{Attune} (self), \glossterm{Scrying}]
-A \glossterm{scrying sensor} appears floating in the air in an unoccupied square within \rngmed range.
-At the start of each round, you choose whether you see from this sensor or from your body.
-
-While viewing through the sensor, your visual acuity is the same as your normal body, except that it does not share the benefits of any \glossterm{magical} effects that improve your vision.
-You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \blinded.
-
-If undisturbed, the sensor floats in the air in its position.
-As a \glossterm{minor action}, you can concentrate to move the sensor up to 30 feet in any direction, even vertically.
-At the end of each round, if the sensor is does not have \glossterm{line of effect} from you, it is destroyed.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Accelerated Eye}{}}\label{spell:Accelerated Eye}
-\begin{attuneability}[\nth{2}]{\hypertarget{spell:Accelerated Eye}{Accelerated Eye}}[\glossterm{Attune} (self), \glossterm{Scrying}]
-This spell functions like the \spell{arcane eye} spell, except that the sensor moves up to 100 feet when moved instead of up to 30 feet.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Auditory Eye}{}}\label{spell:Auditory Eye}
-\begin{attuneability}[\nth{2}]{\hypertarget{spell:Auditory Eye}{Auditory Eye}}[\glossterm{Attune} (self), \glossterm{Scrying}]
-This spell functions like the \spell{arcane eye} spell, except that you can you can also hear through the sensor.
-At the start of each round, you can choose whether you hear from the sensor or from your body.
-This choice is made independently from your sight.
-The sensor's auditory acuity is the same as your own, except that it does not share the benefits of any \glossterm{magical} effects that improve your hearing.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Alarm}{}}\label{spell:Greater Alarm}
-\begin{attuneability}[\nth{2}]{\hypertarget{spell:Greater Alarm}{Greater Alarm}}[\glossterm{Attune} (self), \glossterm{Scrying}]
-This spell functions like the \textit{alarm} spell, except that the sensor gains 100 ft.\ \glossterm{darkvision} and its Awareness bonus is equal to your \glossterm{power}.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Reverse Scrying}{}}\label{spell:Reverse Scrying}
-\begin{attuneability}[\nth{2}]{\hypertarget{spell:Reverse Scrying}{Reverse Scrying}}[\glossterm{Attune} (self), \glossterm{Scrying}]
-Choose a magical sensor within \rngmed range.
-A new scrying sensor appears at the location of the source of the the ability that created the target sensor.
-This sensor functions like the sensor created by the \spell{autonomous eye} spell, except that the sensor cannot move.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Autonomous Eye}{}}\label{spell:Autonomous Eye}
-\begin{attuneability}[\nth{3}]{\hypertarget{spell:Autonomous Eye}{Autonomous Eye}}[\glossterm{Attune} (self), \glossterm{Scrying}]
-This spell functions like the \spell{arcane eye} spell, except that the sensor is not destroyed when it loses \glossterm{line of effect} to you.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Twin Eye}{}}\label{spell:Twin Eye}
-\begin{attuneability}[\nth{3}]{\hypertarget{spell:Twin Eye}{Twin Eye}}[\glossterm{Attune} (self), \glossterm{Scrying}]
-This spell functions like the \spell{arcane eye} spell, except that you constantly receive sensory input from both your body and the sensor.
-This allows you to see simultaneously from your body and from the sensor.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Penetrating Eye}{}}\label{spell:Penetrating Eye}
-\begin{attuneability}[\nth{4}]{\hypertarget{spell:Penetrating Eye}{Penetrating Eye}}[\glossterm{Attune} (self), \glossterm{Scrying}]
-This spell functions like the \spell{autonomous eye} spell, except that you do not need \glossterm{line of sight} or \glossterm{line of effect} to target a location.
-You must specify a distance and direction to target a location you cannot see.
-This can allow you to cast the spell beyond walls and similar obstacles.
-As normal, if the intended location is occupied or otherwise impossible, the spell is \glossterm{miscast}.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\subsubsection{Rituals}
-
-
-\lowercase{\hypertarget{spell:Scry Creature}{}}\label{spell:Scry Creature}
-\begin{apability}[\nth{4}]{\hypertarget{spell:Scry Creature}{Scry Creature}}[\glossterm{AP}, \glossterm{Scrying}]
-Make an attack vs. Mental against a creature on the same plane as you.
-You do not need \glossterm{line of sight} or \glossterm{line of effect} to the target.
-However,  must specify your target with a precise mental image of its appearance.
-The image does not have to be perfect, but it must unambiguously identify the target.
-If you specify its appearance incorrectly, or if the target has changed its appearance, you may accidentally target a different creature, or the spell may simply be \glossterm{miscast}.
-This attack roll cannot \glossterm{explode}.
-\hit A scrying sensor appears in the target's space.
-This sensor functions like the sensor created by the \spell{arcane eye} spell, except that you cannot move the sensor manually.
-Instead, it automatically tries to follow the target to stay in its space.
-At the end of each phase, if the sensor is not in the target's space, this effect is \glossterm{dismissed}.
-
-This ritual takes one hour to perform.
-\end{apability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Interplanar Scry Creature}{}}\label{spell:Interplanar Scry Creature}
 \begin{apability}[\nth{7}]{\hypertarget{spell:Interplanar Scry Creature}{Interplanar Scry Creature}}[\glossterm{AP}, \glossterm{Scrying}]
 This ritual functions like the \ritual{scry creature} ritual, except that the target does not have to be on the same plane as you.
 It gains the \glossterm{Planar} tag in addition to the tags from the \ritual{scry creature} ritual.
 \end{apability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Planar Bond}{}}\label{spell:Planar Bond}
+\begin{attuneability}[\nth{7}]{\hypertarget{spell:Planar Bond}{Planar Bond}}[\glossterm{Attune} (ritual; see text)]
+This ritual functions like the \ritual{telepathic bond} ritual, except that the effect works at any distance and across planes.
+It gains the \glossterm{Planar} tag in addition to the tags from the \ritual{telepathic bond} ritual.
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -3716,7 +3895,7 @@ All of its defenses are equal to your 4 \add your level, and its \glossterm{land
 It does not have any \glossterm{action points}.
 If a summoned creature has no hit points remaining at the end of a phase, it disappears.
 
-Each round, you can choose the creature's actions by mentally commanding it.
+Each round, you can choose the creature's actions by mentally commanding it as a \glossterm{minor action}.
 There are only two actions it can take.
 As a \glossterm{move action}, it can move as you direct.
 As a standard action, it can make a melee \glossterm{strike} against a creature it threatens.
@@ -3726,6 +3905,7 @@ The type of damage dealt by this attack depends on the creature's appearance.
 Most animals bite or claw their foes, which deals bludgeoning and slashing damage.
 
 If you do not command the creature's actions, it will continue to obey its last instructions if possible or do nothing otherwise.
+Summoned creatures have no mind or agency, and will not act on their own even if attacked.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -3753,19 +3933,38 @@ It has the same statistics as a creature from the \spell{summon monster} spell, 
 
 
 
-\lowercase{\hypertarget{spell:Summon Bird}{}}\label{spell:Summon Bird}
-\begin{attuneability}[\nth{3}]{\hypertarget{spell:Summon Bird}{Summon Bird}}[\glossterm{Attune} (self), \glossterm{Manifestation}]
-This spell functions like the \spell{summon monster} spell, except that the creature appears to be a bird.
-It has a 30 foot \glossterm{fly speed}.
+\lowercase{\hypertarget{spell:Summon Water Elemental}{}}\label{spell:Summon Water Elemental}
+\begin{attuneability}[\nth{2}]{\hypertarget{spell:Summon Water Elemental}{Summon Water Elemental}}[\glossterm{Attune} (self), \glossterm{Manifestation}]
+This spell functions like the \spell{summon monster} spell, except that the summoned creature appears to be an water elemental and deals bludgeoning damage.
+In addition, it has a 30 foot \glossterm{swim speed} and suffer no penalties for fighting underwater (see \pcref{Underwater Combat}).
 \end{attuneability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Summon Flying Mount}{}}\label{spell:Summon Flying Mount}
-\begin{attuneability}[\nth{4}]{\hypertarget{spell:Summon Flying Mount}{Summon Flying Mount}}[\glossterm{Attune} (target), \glossterm{Manifestation}]
+\lowercase{\hypertarget{spell:Summon Air Elemental}{}}\label{spell:Summon Air Elemental}
+\begin{attuneability}[\nth{3}]{\hypertarget{spell:Summon Air Elemental}{Summon Air Elemental}}[\glossterm{Attune} (self), \glossterm{Manifestation}]
+This spell functions like the \spell{summon monster} spell, except that the summoned creature appears to be an air elemental and deals bludgeoning damage.
+In addition, it has a 30 foot \glossterm{fly speed} with good \glossterm{maneuverability}
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Summon Earth Elemental}{}}\label{spell:Summon Earth Elemental}
+\begin{attuneability}[\nth{3}]{\hypertarget{spell:Summon Earth Elemental}{Summon Earth Elemental}}[\glossterm{Attune} (self), \glossterm{Manifestation}]
+This spell functions like the \spell{summon monster} spell, except that the summoned creature appears to be an earth elemental and deals bludgeoning damage.
+In addition, it gains a \plus1 bonus to Armor and Fortitude defenses and a bonus to hit points equal to your \glossterm{power}.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Summon Pegasus}{}}\label{spell:Summon Pegasus}
+\begin{attuneability}[\nth{4}]{\hypertarget{spell:Summon Pegasus}{Summon Pegasus}}[\glossterm{Attune} (target), \glossterm{Manifestation}]
 This spell functions like the \spell{summon mount} spell, except that the summoned creature appears to be either a Large or Medium pegasus.
-It has a 30 foot \glossterm{fly speed}.
+% TODO: wording of "trained as a mount"?
+It has a 30 foot \glossterm{fly speed} and is trained as a mount.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -3783,12 +3982,24 @@ Each creature obeys your command to the extent it can.
 
 
 
+\lowercase{\hypertarget{spell:Summon Fire Elemental}{}}\label{spell:Summon Fire Elemental}
+\begin{attuneability}[\nth{5}]{\hypertarget{spell:Summon Fire Elemental}{Summon Fire Elemental}}[\glossterm{Attune} (self), \glossterm{Manifestation}]
+This spell functions like the \spell{summon monster} spell, except that the summoned creature appears to be a fire elemental and deals fire damage.
+In addition, when it deals fire damage to a creature, that creature is \glossterm{ignited} as a \glossterm{condition}.
+This condition can be removed if the target makes a \glossterm{DR} 10 Dexterity check as a \glossterm{move action} to put out the flames.
+Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this check.
+The flames can also be extinguished if the target is drenched in water, takes at least 5 cold damage, or other similar effects.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \subsubsection{Rituals}
 
 
 \lowercase{\hypertarget{spell:Ritual Mount}{}}\label{spell:Ritual Mount}
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Ritual Mount}{Ritual Mount}}[\glossterm{Attune} (ritual), \glossterm{Manifestation}]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 This ritual summons your choice of a Large light horse or a Medium pony to serve as a mount.
 The creature appears in an unoccupied location within \rngclose range.
 It comes with a bit and bridle and a riding saddle, and will only accept the target as a rider.
@@ -3801,7 +4012,7 @@ It has the same statistics as a creature from the \spell{summon monster} spell, 
 \begin{spellsection}{Telekinesis}
 
 \begin{spellheader}
-\spelldesc{Manipulate creatures and objects at a distance.}
+\spelldesc{Manipulate kinetic energy at a distance.}
 \end{spellheader}
 
 
@@ -3826,10 +4037,32 @@ Any attacks you make with the object or checks you make to manipulate the object
 \subsubsection{Spells}
 
 
-\lowercase{\hypertarget{spell:Telekinetic Crush}{}}\label{spell:Telekinetic Crush}
-\begin{freeability}[\nth{1}]{\hypertarget{spell:Telekinetic Crush}{Telekinetic Crush}}
-Make an attack vs. Mental against one creature or object within \rngmed range.
+\lowercase{\hypertarget{spell:Force Extension}{}}\label{spell:Force Extension}
+\begin{attuneability}[\nth{1}]{\hypertarget{spell:Force Extension}{Force Extension}}[\glossterm{Attune} (target)]
+Choose yourself or an \glossterm{ally} within \rngclose range.
+Melee weapons wielded by the target gain an additional five feet of \glossterm{reach}.
+This has no effect on ranged attacks the target makes.
+
+You can cast this spell as a \glossterm{minor action}.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Force Slam}{}}\label{spell:Force Slam}
+\begin{freeability}[\nth{1}]{\hypertarget{spell:Force Slam}{Force Slam}}
+Make an attack vs. Armor against one creature or object within \rngmed range.
 \hit The target takes bludgeoning \glossterm{standard damage} \plus1d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Kinetic Impedance}{}}\label{spell:Kinetic Impedance}
+\begin{freeability}[\nth{1}]{\hypertarget{spell:Kinetic Impedance}{Kinetic Impedance}}
+Make an attack vs. Mental against a Large or smaller target within \rngmed range.
+\hit The target is \glossterm{slowed} as a \glossterm{condition}.
+\crit The target is \glossterm{immobilized} as a \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -3856,10 +4089,31 @@ Moving the target upwards costs twice the normal movement cost.
 
 
 
-\lowercase{\hypertarget{spell:Binding Crush}{}}\label{spell:Binding Crush}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Binding Crush}{Binding Crush}}
-This spell functions like the \spell{telekinetic crush} spell, except that the struck creature is also \glossterm{slowed} as a \glossterm{condition} if it is Medium or smaller.
+\lowercase{\hypertarget{spell:Force Lance}{}}\label{spell:Force Lance}
+\begin{freeability}[\nth{2}]{\hypertarget{spell:Force Lance}{Force Lance}}
+Make an attack vs. Armor against everything in a \areamed, 5 ft.\ wide line from you.
+\hit Each target takes piercing \glossterm{standard damage} \plus1d.
 \end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Force Wave}{}}\label{spell:Force Wave}
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Force Wave}{Force Wave}}
+Make an attack vs. Armor against everything in a \areamed cone from you.
+\hit Each target takes bludgeoning \glossterm{standard damage} \plus1d.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Greater Force Extension}{}}\label{spell:Greater Force Extension}
+\begin{attuneability}[\nth{3}]{\hypertarget{spell:Greater Force Extension}{Greater Force Extension}}[\glossterm{Attune} (target)]
+Choose yourself or an \glossterm{ally} within \rngclose range.
+Melee weapons wielded by the target gain an additional ten feet of \glossterm{reach}.
+
+You can cast this spell as a \glossterm{minor action}.
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -3869,6 +4123,14 @@ This spell functions like the \spell{telekinetic crush} spell, except that the s
 This spell functions like the \spell{telekinetic lift} spell, except that the target is reduced to one quarter of its normal weight.
 This increases the Jump bonus to \plus8.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Greater Force Lance}{}}\label{spell:Greater Force Lance}
+\begin{freeability}[\nth{4}]{\hypertarget{spell:Greater Force Lance}{Greater Force Lance}}
+This spell functions like the \spell{force lance} spell, except that the area increases to a \arealarge, 10 ft.\ wide line from you.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -3894,9 +4156,18 @@ Each five-foot square of wall has hit points equal to twice your \glossterm{powe
 
 
 
-\lowercase{\hypertarget{spell:Greater Binding Crush}{}}\label{spell:Greater Binding Crush}
-\begin{freeability}[\nth{6}]{\hypertarget{spell:Greater Binding Crush}{Greater Binding Crush}}
-This spell functions like the \spell{telekinetic crush} spell, except that the struck creature is also \glossterm{decelerated} as a \glossterm{condition} if it is Medium or smaller.
+\lowercase{\hypertarget{spell:Greater Force Wave}{}}\label{spell:Greater Force Wave}
+\begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Force Wave}{Greater Force Wave}}
+This spell functions like the \spell{force wave} spell, except that the area increases to a \arealarge cone from you.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Force Crush}{}}\label{spell:Force Crush}
+\begin{freeability}[\nth{6}]{\hypertarget{spell:Force Crush}{Force Crush}}
+Make an attack vs. Armor against one creature or object within \rngmed range.
+\hit The target takes bludgeoning \glossterm{standard damage} \plus4d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -4211,7 +4482,7 @@ the attuning creature can regain the \glossterm{action point} spent to attune to
 
 \lowercase{\hypertarget{spell:Enhance Magic}{}}\label{spell:Enhance Magic}
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Enhance Magic}{Enhance Magic}}[\glossterm{Attune} (target), \glossterm{Mystic}]
-Choose an \glossterm{ally} within \rngmed range.
+Choose yourself or an \glossterm{ally} within \rngmed range.
 The target gains a \plus2 \glossterm{magic bonus} to \glossterm{power} with spells.
 \end{attuneability}
 \vspace{0.25em}
@@ -4220,7 +4491,7 @@ The target gains a \plus2 \glossterm{magic bonus} to \glossterm{power} with spel
 
 \lowercase{\hypertarget{spell:Malign Transferance}{}}\label{spell:Malign Transferance}
 \begin{freeability}[\nth{2}]{\hypertarget{spell:Malign Transferance}{Malign Transferance}}
-Choose an \glossterm{ally} within \rngmed range.
+Choose yourself or an \glossterm{ally} within \rngmed range.
 The ally must be currently affected by a \glossterm{magical} \glossterm{condition}.
 In addition, make an attack vs. Mental against a creature within \rngmed range.
 \hit One magical condition of your choice is removed from the chosen ally and applied to the struck creature.
@@ -4509,7 +4780,7 @@ Make an attack vs. Fortitude against a creature within \rngmed range.
 
 \lowercase{\hypertarget{spell:Vital Persistence}{}}\label{spell:Vital Persistence}
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Vital Persistence}{Vital Persistence}}[\glossterm{Attune} (target), \glossterm{Life}]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 The target reduces its \glossterm{vital damage penalties} by an amount equal to your \glossterm{power}.
 \end{attuneability}
 \vspace{0.25em}
@@ -4557,7 +4828,7 @@ This spell functions like the \spell{inflict wounds} spell, except that a struck
 \lowercase{\hypertarget{spell:Circle of Death}{}}\label{spell:Circle of Death}
 \begin{attuneability}[\nth{4}]{\hypertarget{spell:Circle of Death}{Circle of Death}}[\glossterm{Attune} (self), \glossterm{Life}]
 You are surrounded by an aura of death in a \areamed radius \glossterm{emanation} from you.
-When this spell resolves, and the end of each \glossterm{action phase} in subsequent rounds, make an attack vs. Fortitude against all enemies in the area.
+When this spell resolves, and the end of each \glossterm{action phase} in subsequent rounds, make an attack vs. Fortitude against living \glossterm{enemies} in the area.
 \hit Each target takes life \glossterm{standard damage} \minus2d.
 \end{attuneability}
 \vspace{0.25em}
@@ -4643,7 +4914,7 @@ This spell functions like the \spell{inflict wounds} spell, except that the dama
 
 \lowercase{\hypertarget{spell:Purge Curse}{}}\label{spell:Purge Curse}
 \begin{apability}[\nth{2}]{\hypertarget{spell:Purge Curse}{Purge Curse}}[\glossterm{AP}, \glossterm{Mystic}]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 All curses affecting the target are removed.
 This ritual cannot remove a curse that is part of the effect of an item the target has equipped.
 However, it can allow the target to remove any cursed items it has equipped.
@@ -4656,7 +4927,7 @@ This ritual takes 24 hours to perform, and requires 8 action points from its par
 
 \lowercase{\hypertarget{spell:Remove Disease}{}}\label{spell:Remove Disease}
 \begin{apability}[\nth{2}]{\hypertarget{spell:Remove Disease}{Remove Disease}}[\glossterm{AP}, \glossterm{Life}]
-Choose an \glossterm{ally} within \rngmed range.
+Choose yourself or an \glossterm{ally} within \rngmed range.
 All diseases affecting the target are removed.
 \end{apability}
 \vspace{0.25em}
@@ -4665,7 +4936,7 @@ All diseases affecting the target are removed.
 
 \lowercase{\hypertarget{spell:Restore Senses}{}}\label{spell:Restore Senses}
 \begin{apability}[\nth{2}]{\hypertarget{spell:Restore Senses}{Restore Senses}}[\glossterm{AP}, \glossterm{Life}]
-Choose an \glossterm{ally} within \rngmed range.
+Choose yourself or an \glossterm{ally} within \rngmed range.
 One of the target's physical senses, such as sight or hearing, is restored to full capacity.
 This can heal both magical and mundane effects, but it cannot completely replace missing body parts required for a sense to function (such as missing eyes).
 \end{apability}
@@ -4675,7 +4946,7 @@ This can heal both magical and mundane effects, but it cannot completely replace
 
 \lowercase{\hypertarget{spell:Restoration}{}}\label{spell:Restoration}
 \begin{apability}[\nth{3}]{\hypertarget{spell:Restoration}{Restoration}}[\glossterm{AP}, \glossterm{Flesh}]
-Choose an \glossterm{ally} within \rngclose range.
+Choose yourself or an \glossterm{ally} within \rngclose range.
 All of the target's hit points, \glossterm{subdual damage}, and \glossterm{vital damage} are healed.
 In addition, any of the target's severed body parts or missing organs grow back by the end of the next round.
 
