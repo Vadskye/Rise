@@ -22,6 +22,12 @@ elements of spells, since they all trade off against each other.
 The way the system currently represents this is by giving spells an extra +1 level of effects for
 AOE effects.
 
+### Radius from self effects
+Normally, a radius is a stronger effect than a line or cone because it hits a larger area.
+However, when using a radius from self, it's actually weaker because it removes your ability to avoid hitting allies.
+For this reason, all radius from self abilities can get the "exclude enemies" effect at no extra
+cost.
+
 ## Accuracy vs. damage tradeoffs
 
 In general, +1 accuracy = +1 damage. However, there are exceptions:
@@ -77,7 +83,6 @@ condition".
   * AOE:
     * Deal std to all within Med/10 line from you
     * Deal std to all within Med cone from you
-    * Deal std +1a/+1d to all within Small radius from you
 * Maneuvers only:
   * AOE:
     * Deal std to 2 in reach
@@ -105,7 +110,7 @@ condition".
   * AOE:
     * Deal std to all within Large/10 line from you
     * Deal std to all within Small radius in Close range
-    * Deal std to all within Med radius from you
+    * Deal std to enemies within Med radius from you
     * Deal std to all within Med/5 line entirely within Med range
 
 3rd level spell:
@@ -124,7 +129,7 @@ condition".
   * AOE:
     * Remove condition from non-self in Med radius from you
     * Deal std to all within Huge/15 line from you
-    * Deal std to all within Large radius from you
+    * Deal std to enemies within Large radius from you
     * Deal std to all within Large/10 line entirely within Med range
     * Deal std to all within Med radius in Med range
 * Maneuvers only:
