@@ -434,10 +434,6 @@ This choice determines a great deal about your character's abilities.
         \cf{Clr}[2]{Mystic Knowledge}[Magical]
         You gain your choice of one of the following abilities.
         {
-            \parhead{Augment} You learn one \glossterm{augment} (see \pcref{Augments}).
-                You can apply that augment to divine spells you cast and divine rituals you perform.
-                When you gain access to a new divine spell level, you may change which augments you know.
-                \par You can choose this ability multiple times, learning an additional \glossterm{augment} each time.
             \parhead{Insight} You learn an additional divine \glossterm{spell} (see \pcref{Divine Mystic Spheres}).
                 You can choose this ability multiple times, gaining access to an additional spell each time.
             \parhead{Rituals} You gain the ability to perform divine rituals to create unique magical effects (see \pcref{Rituals}).
@@ -678,10 +674,11 @@ This choice determines a great deal about your character's abilities.
         \subsubsection{Magic}
             \parhead{Gift} You gain a \plus1 bonus to \glossterm{power} with divine spells.
             \parhead{Aspect} You learn an additional \glossterm{spell} for a divine \glossterm{mystic sphere} you have access to.
-            \parhead{Essence} When you cast a spell, you heal hit points equal to your \glossterm{power}.
-            \parhead{Mastery} When you are affected by a \glossterm{magical} ability, you heal hit points equal to your \glossterm{power}.
+            \parhead{Essence} You learn an \glossterm{augment} (see \pcref{Augments}).
+            You can apply augments to spells to change their effects.
+            When you gain access to a new arcane spell level, you may change which augments you know.
+            \parhead{Mastery} When you are affected by a spell, you heal hit points equal to your \glossterm{power}.
             This healing applies even if the spell has an attack that fails to beat your defenses.
-            It stacks with the healing from this domain's essence if you target yourself with a spell.
 
         \subsubsection{Strength}
             If you choose this domain, you add the Climb, Jump, and Swim skills to your cleric \glossterm{class skill} list.
@@ -734,6 +731,8 @@ This choice determines a great deal about your character's abilities.
             \parhead{Gift} You gain proficiency with heavy armor and an additional weapon group of your choice.
             \parhead{Aspect} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks}.
             \parhead{Essence} You learn one of the Legion, Selective, or Widened \glossterm{augments} (see \pcref{Augments}).
+            You can apply augments to spells to change their effects.
+            When you gain access to a new arcane spell level, you may change which augments you know, though this augment can only be one of the three listed.
             \parhead{Mastery} You gain a \plus2 bonus to \glossterm{power} with \glossterm{physical attacks}.
 
         \subsubsection{Water}
@@ -1104,10 +1103,6 @@ This choice determines a great deal about your character's abilities.
         \cf{Drd}[2]{Mystic Knowledge}
         You gain your choice of one of the following abilities.
         {
-            \parhead{Augment} You learn one \glossterm{augment} (see \pcref{Augments}).
-                You can apply that augment to nature spells you cast and nature rituals you perform.
-                When you gain access to a new nature spell level, you may change which augments you know.
-                \par You can choose this ability multiple times, learning an additional \glossterm{augment} each time.
             \parhead{Insight} You learn an additional nature \glossterm{spell} (see \pcref{Nature Mystic Spheres}).
                 You can choose this ability multiple times, gaining access to an additional spell each time.
             \parhead{Rituals} You gain the ability to perform nature rituals to create unique magical effects (see \pcref{Rituals}).
@@ -1535,7 +1530,7 @@ This choice determines a great deal about your character's abilities.
             1    & Mystic spheres  & Mage armor                  & Scholastic lore       & Mystic healing
             \\ 2 & Spells          & Mystic knowledge            & Rituals               & Limited components
             \\ 3 & Spell level (2) & Wellspring of power         & Scholastic insight    & Spell knowledge
-            \\ 4 & Spell level (3), spell & Mystic knowledge            & Ritual expertise      & Magic resistance
+            \\ 4 & Spell level (3), spell & Mystic knowledge     & Ritual expertise      & Magic resistance
             \\ 5 & Spell level (4) & Greater mage armor          & Contingency           & Greater limited components
             \\ 6 & Spell level (5) & Mystic knowledge            & Scholastic insight    & Spell knowledge
             \\ 7 & Spell level (6), spell & Greater wellspring of power & Malleable contingency & Spell absorption
@@ -1637,10 +1632,6 @@ This choice determines a great deal about your character's abilities.
         \cf{Mge}[2]{Mystic Knowledge}[Magical]
         You gain your choice of one of the following abilities.
         {
-            \parhead{Augment} You learn one \glossterm{augment} (see \pcref{Augments}).
-                You can apply that augment to arcane spells you cast and arcane rituals you perform.
-                When you gain access to a new arcane spell level, you may change which augments you know.
-                \par You can choose this ability multiple times, learning an additional \glossterm{augment} each time.
             \parhead{Spell Knowledge} You learn an additional arcane \glossterm{spell} (see \pcref{Arcane Mystic Spheres}).
                 You can choose this ability multiple times, gaining access to an additional spell each time.
             \parhead{Rituals} You can only choose this mystic knowledge if you are a wizard.
@@ -1743,7 +1734,7 @@ This choice determines a great deal about your character's abilities.
         This archetype deepens your innate connection to arcane magic.
         You be a sorcerer and have the Arcane Spellcasting archetype to gain the abilities from this archetype.
 
-        \cf{Mge}[1]{Stilled Caster} When you cast a spell, you can omit that spell's \glossterm{somatic components}.
+        \cf{Mge}[1]{Nonverbal Caster} When you cast a spell, you can omit that spell's \glossterm{verbal components}.
         This tests your focus when casting the spell, forcing you to make a \glossterm{concentration} check to cast the spell successfully (see \pcref{Concentration}).
 
         \cf{Mge}[2]{Mystic Healing}
@@ -1752,17 +1743,19 @@ This choice determines a great deal about your character's abilities.
         You can only gain this healing once per round.
         If you are affected by multiple spells simultaneously, you can choose which spell you benefit from.
 
-        \cf{Mge}[3]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
+        \cf{Mge}[3]{Augment} You learn one \glossterm{augment} (see \pcref{Augments}).
+        You can apply augments to spells to change their effects.
+        When you gain access to a new arcane spell level, you may change which augments you know.
 
-        \cf{Mge}[4]{Nonverbal Caster} When you cast a spell, you can omit that spell's \glossterm{verbal components}.
+        \cf{Mge}[4]{Stilled Caster} When you cast a spell, you can omit that spell's \glossterm{somatic components}.
         This tests your focus when casting the spell, forcing you to make a \glossterm{concentration} check to cast the spell successfully (see \pcref{Concentration}).
-        If you also omit the spell's \glossterm{somatic components} with your \textit{stilled caster} ability,
+        If you also omit the spell's \glossterm{somatic components} with your \textit{nonverbal caster} ability,
             you take a \minus2 penalty to the \glossterm{concentration} check to cast the spell,
             as normal when there are multiple effects testing your concentration.
 
         \cf{Mge}[5]{Magic Resistance} You gain a \plus2 bonus to \glossterm{defenses} against \glossterm{magical} abilities.
 
-        \cf*{Mge}[6]{Spell Knowledge} You learn an additional arcane \glossterm{spell}.
+        \cf*{Mge}[6]{Augment} You learn an additional \glossterm{augment}.
 
         \cf{Mge}[7]{Spell Absorption} When a spell is used to attack you, if the attack fails to beat your defenses, you gain the ability to cast the spell once.
         The spell retains its original \glossterm{augments}, if any, and you cannot apply any \glossterm{augments} to it.
