@@ -88,10 +88,11 @@ def set_skill(a, s):
                     var pointsModifier = 0;
                     var ranks = 0;
 
-                    if (Number(v.{s}_points) === 1) {{
+                    if (Number(v.{s}_points) === 0) {{
+                        attributeModifier = Math.floor(Number(v.{a} || 0) / 2);
+                    }} else if (Number(v.{s}_points) === 1) {{
                         attributeModifier = Number(v.{a} || 0);
-                        ranks = Math.floor(level / 2);
-                        pointsModifier = 1;
+                        ranks = Math.floor(level / 2) + 1;
                     }} else if (Number(v.{s}_points || 0) >= 2) {{
                         attributeModifier = Number(v.{a} || 0);
                         ranks = level
@@ -142,8 +143,8 @@ def action_points():
 
 def armor_defense():
     return f"""
-        on("change:level change:dexterity change:body_armor_defense_value change:shield_defense_value change:armor_defense_misc change:challenge_rating", function(eventInfo) {{
-            getAttrs(["level", "dexterity", "body_armor_defense_value", "shield_defense_value", "armor_defense_misc", "challenge_rating"], function(v) {{
+        on("change:level change:dexterity_starting change:body_armor_defense_value change:shield_defense_value change:armor_defense_misc change:challenge_rating", function(eventInfo) {{
+            getAttrs(["level", "dexterity_starting", "body_armor_defense_value", "shield_defense_value", "armor_defense_misc", "challenge_rating"], function(v) {{
                 var cr_mod = Math.max(0, Number(v.challenge_rating || 1) - 1);
                 var before_equipment = Number(v.level || 0) + Number(v.dexterity_starting || 0) + cr_mod;
                 var total = before_equipment + Number(v.body_armor_defense_value || 0) + Number(v.shield_defense_value || 0) + Number(v.armor_defense_misc || 0);
