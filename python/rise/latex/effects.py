@@ -5,7 +5,7 @@ logger = getLogger(__name__)
 
 def targets_are_plural(target_text):
     target_text = target_text.lower()
-    for keyword in ['any number', 'allies', 'enemies']:
+    for keyword in ['any number', 'allies', 'enemies', 'everything', 'special']:
         if keyword in target_text:
             return True
     return False
