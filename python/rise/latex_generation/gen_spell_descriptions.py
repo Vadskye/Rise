@@ -26,10 +26,10 @@ def generate_mystic_spheres():
         name='Aeromancy',
         short_description="Command air to protect allies and blast foes",
         cantrips=[
-            Effects('Airborne Leap', 'Self', """
+            Effects('Airborne Leap', 'Yourself', """
                 You gain a +4 bonus to the Jump skill until the end of the next round.
             """, tags=['Air']),
-            Effects('Soften Landing', 'Self or an \\glossterm<ally> within \\rngmed range', """
+            Effects('Soften Landing', 'Yourself or an \\glossterm<ally> within \\rngmed range', """
                 Until the end of the round, the target treats all falls as if they were 5 feet shorter per \\glossterm<power> for the purpose of determining \\glossterm<falling damage>.
             """, tags=['Air']),
         ],
@@ -179,7 +179,7 @@ def generate_mystic_spheres():
                 You create up to one gallon per \\glossterm<power> of wholesome, drinkable water at the target locations, allowing you to fill multiple small water containers.
                 You must create a minimum of one ounce of water in each location.
             """, tags=['Creation', 'Water']),
-            Effects('Slippery Escape', 'Self or an \\glossterm<ally> within \\rngclose range', """
+            Effects('Slippery Escape', 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 The target gains a +4 bonus to the Escape Artist skill until the end of the next round.
             """, tags=['Manifestation', 'Water']),
         ],
@@ -269,15 +269,15 @@ def generate_mystic_spheres():
             Spell('Misty Shroud', 4, None, """
                 This spell functions like the \\spell<obscuring mist> spell, except that the area becomes an \\glossterm<emanation> from you.
             """, tags=['Attune (self)']),
-            Spell('Aqueous Tentacles', 2, 'Self', """
+            Spell('Aqueous Tentacles', 2, 'Yourself', """
                 Each of your arms with a \\glossterm<free hand> is covered with watery tentacles that you can attack with.
                 Each tentacle is a slam \\glossterm<natural weapon> (see \\tref<Natural Weapons>).
                 The tentacles have a \\glossterm<reach> of 10 feet, and any strikes with them are \\glossterm<magical strikes>.
             """, tags=['Attune (self)']),
-            Spell('Greater Aqueous Tentacles', 4, 'Self', """
+            Spell('Greater Aqueous Tentacles', 4, 'Yourself', """
                 This spell functions like the \\spell<aqueous tentacles> spell, except that the tentacles have a \\glossterm<reach> of 20 feet.
             """, tags=['Attune (self)']),
-            Spell('Supreme Aqueous Tentacles', 6, 'Self', """
+            Spell('Supreme Aqueous Tentacles', 6, 'Yourself', """
                 This spell functions like the \\spell<aqueous tentacles> spell, except that the tentacles have a \\glossterm<reach> of 50 feet.
             """, tags=['Attune (self)']),
         ],
@@ -329,7 +329,7 @@ def generate_mystic_spheres():
                 In addition, if it is an outsider not on its home plane, it is teleported to a random location on its home plane.
                 If it is a creature created by a \\glossterm<Manifestation> ability, it immediately disappears.
             """, tags=['Planar', 'Teleportation']),
-            Spell('Dimension Door', 3, 'Self', """
+            Spell('Dimension Door', 3, 'Yourself', """
                 You teleport to a location within \\rngext range of you.
                 You must clearly visualize the destination's appearance, but you do not need \\glossterm<line of sight> or \\glossterm<line of effect> to your destination.
             """, tags=['Teleportation']),
@@ -344,11 +344,11 @@ def generate_mystic_spheres():
                 This condition can also be removed if the target makes a \\glossterm<DR> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
                 Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
             """, tags=['Planar', 'Teleportation']),
-            Spell('Dimensional Jitter', 4, 'Self', """
+            Spell('Dimensional Jitter', 4, 'Yourself', """
                 At the end of each \\glossterm<action phase>, you may teleport 10 feet in any direction.
                 If your \\glossterm<line of effect> to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are.
             """, tags=['Attune (self)', 'Teleportation']),
-            Spell('Greater Dimensional Jitter', 7, 'Self', """
+            Spell('Greater Dimensional Jitter', 7, 'Yourself', """
                 This spell functions like the \\spell<dimensional jitter> spell, except that the distance you can teleport is increased to 30 feet.
             """, tags=['Attune (self)', 'Teleportation']),
             Spell('Dimensional Jaunt -- Myriad', 5, 'One creature within \\rngmed range', """
@@ -363,7 +363,7 @@ def generate_mystic_spheres():
             Spell('Dimensional Shuffle', 2, 'Up to five targets within \\rngmed range from among you and your \\glossterm<allies>', """
                 Each target teleports into the location of a different target.
             """, tags=['Teleportation']),
-            Spell('Dimension Walk', 3, 'Self', """
+            Spell('Dimension Walk', 3, 'Yourself', """
                 You can teleport horizontally instead of moving normally.
                 Teleporting a given distance costs movement equal to that distance.
                 If your \\glossterm<line of effect> to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are that phase.
@@ -720,7 +720,7 @@ def generate_mystic_spheres():
         name="Channel Divinity",
         short_description="Invoke divine power to smite foes and gain power",
         cantrips=[
-            Effects('Testament', 'Self', """
+            Effects('Testament', 'Yourself', """
                 The magical essence of your deity or alignment is overlayed on your body as an aura.
                 This channels your deity if you are a cleric, or your alignment if you are a paladin.
                 In either case, you gain the ability to see the auras of other creatures using this spell.
@@ -745,33 +745,33 @@ def generate_mystic_spheres():
             Spell('Greater Word of Faith', 5, '\\glossterm<Enemies> in a \\arealarge radius from you', """
                 This spell functions like the \\spell<word of faith> spell, except that it affects more targets and the damage increases to \\glossterm<standard damage> +1d.
             """, tags=[]),
-            Spell('Mantle of Faith', 1, 'Self', """
+            Spell('Mantle of Faith', 1, 'Yourself', """
                 You gain a \\glossterm<magic bonus> to equal to your \\glossterm<power> to \\glossterm<damage reduction> against \\glossterm<physical> damage.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (self)', 'Shielding']),
-            Spell('Greater Mantle of Faith', 4, 'Self', """
+            Spell('Greater Mantle of Faith', 4, 'Yourself', """
                 This spell functions like the \\spell<mantle of faith> spell, except that the bonus is equal to twice your \\glossterm<power>.
             """, tags=['Attune (self)']),
-            Spell('Complete Mantle of Faith', 2, 'Self', """
+            Spell('Complete Mantle of Faith', 2, 'Yourself', """
                 You gain a \\glossterm<magic bonus> equal to your \\glossterm<power> to \\glossterm<damage reduction> against all damage.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (self)']),
-            Spell('Greater Complete Mantle of Faith', 5, 'Self', """
+            Spell('Greater Complete Mantle of Faith', 5, 'Yourself', """
                 This spell functions like the \\spell<complete mantle of faith> spell, except that the bonus is equal to twice your \\glossterm<power>.
             """, tags=['Attune (self)']),
-            Spell('Divine Might', 3, 'Self', """
+            Spell('Divine Might', 3, 'Yourself', """
                 You increase your size by one \\glossterm<size category>.
                 This increases your \\glossterm<overwhelm value>, \\glossterm<overwhelm resistance>, and usually increases your \\glossterm<reach> (see \\pcref<Size in Combat>).
                 However, your muscles are not increased fully to match its new size, and your Strength is unchanged.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (self)', 'Shaping', 'Sizing']),
-            Spell('Divine Might, Greater', 5, 'Self', """
+            Spell('Divine Might, Greater', 5, 'Yourself', """
                 This spell functions like the \\spell<divine might> spell, except that you also gain a +2 \\glossterm<magic bonus> to Strength.
             """, tags=['Attune (self)', 'Shaping', 'Sizing']),
-            Spell('Divine Might, Supreme', 7, 'Self', """
+            Spell('Divine Might, Supreme', 7, 'Yourself', """
                 This spell functions like the \\spell<divine might> spell, except that your size is increased by two size categories.
                 You gain a +2 \\glossterm<magic bonus> to Strength to partially match your new size.
             """, tags=['Attune (self)', 'Shaping', 'Sizing']),
@@ -810,11 +810,11 @@ def generate_mystic_spheres():
         name="Chronomancy",
         short_description="Manipulate the passage of time to inhibit foes and aid allies",
         cantrips=[
-            Effects('Accelerated Reading', 'Self', """
+            Effects('Accelerated Reading', 'Yourself', """
                 You can read at five times your normal speed.
                 However, the mental effort imposes a -4 penalty to Mental defense.
             """, tags=['Sustain (free)', 'Temporal']),
-            Effects('Accelerated Search', 'Self', """
+            Effects('Accelerated Search', 'Yourself', """
                 Make an Awareness check to notice things in a single 10-ft.\\ squrae within 10 feet of you.
                 You gain a +5 bonus to this check.
             """, tags=['Temporal']),
@@ -885,7 +885,7 @@ def generate_mystic_spheres():
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (self)', 'Temporal']),
-            Spell('Delay Damage', 3, 'Self', """
+            Spell('Delay Damage', 3, 'Yourself', """
                 When you take damage, half of the damage (rounded down) is not dealt to you immediately.
                 This damage is tracked separately.
                 When the ends, you take all of the delayed damage at once.
@@ -910,7 +910,7 @@ def generate_mystic_spheres():
                 If the target is restored to life in this way, all of its properties not locked by this spell, such as any resources expended, are identical to what they were when the target died.
                 In addition, this spell has the \\glossterm<Attune> (self) tag instead of the \\glossterm<Sustain> (minor) tag.
             """, tags=['Attune (self)', 'Temporal']),
-            Spell('Time Stop', 7, 'Self', """
+            Spell('Time Stop', 7, 'Yourself', """
                 You can take two full rounds of actions immediately.
                 During this time, all other creatures and objects are fixed in time, and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
                 You can still affect yourself and create areas or new effects.
@@ -1155,7 +1155,7 @@ def generate_mystic_spheres():
         name="Delusion",
         short_description="Instill false emotions to influence creatures",
         cantrips=[
-            Effects('Cheer', 'Self or \\glossterm<ally> within \\rngclose range', """
+            Effects('Cheer', 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 The target's mood improves and it feels more cheerful.
             """, tags=['Emotion', 'Sustain (free)']),
         ],
@@ -1319,7 +1319,7 @@ def generate_mystic_spheres():
         short_description="Create objects to damage and impair foes",
         # TODO: Narrative implications of at-will acid are annoying
         cantrips=[
-            Effects('Fabricate Trinket', 'Self', """
+            Effects('Fabricate Trinket', 'Yourself', """
                 You make a Craft check to create an object of Tiny size or smaller.
                 The object appears in your hand or at your feet.
                 It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
@@ -1412,7 +1412,7 @@ def generate_mystic_spheres():
         name="Glamer",
         short_description="Change how creatures and objects are perceived",
         cantrips=[
-            Effects('Assist Disguise', 'Self or \\glossterm<ally> within \\rngclose range', """
+            Effects('Assist Disguise', 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 % TODO: wording?
                 If the target is disguised as another creature, it gains a +2 \\glossterm<magic bonus> to the result of the disguise.
             """, tags=['Attune (self)', 'Sensation', 'Visual']),
@@ -1740,7 +1740,7 @@ def generate_mystic_spheres():
                 \\hit The target takes fire damage equal to your \\glossterm<power>.
                 If the target is highly flammable, such as a torch or campfire, it ignites.
             """, tags=['Fire']),
-            Effects('Personal Torch', 'Self', """
+            Effects('Personal Torch', 'Yourself', """
                 You create a flame in your hand.
                 You can create it at any intensity, up to a maximum heat equivalent to a burning torch.
                 At it most intense, it sheds bright light in a 20 foot radius and dim light in an 40 foot radius.
@@ -1848,7 +1848,7 @@ def generate_mystic_spheres():
         name="Revelation",
         short_description="Share visions of the present and future, granting insight or combat prowess",
         cantrips=[
-            Effects('Reveal Truth', 'Self', """
+            Effects('Reveal Truth', 'Yourself', """
                 You may reroll one Knowledge check you made last round.
                 You can only cast this spell once per hour.
             """, tags=[]),
@@ -1915,7 +1915,7 @@ def generate_mystic_spheres():
                 The target gains \\glossterm<blindsight> with a 50 foot range.
                 This can allow it to see perfectly without any light, regardless of concealment or invisibility.
             """, tags=['Attune (target)']),
-            Spell('Greater Reveal Truth', 2, 'Self', """
+            Spell('Greater Reveal Truth', 2, 'Yourself', """
                 You may reroll one Knowledge check you made last round with a +5 \\glossterm<magic bonus>.
                 You can only cast this spell once per hour.
             """, tags=[]),
@@ -1992,7 +1992,7 @@ def generate_mystic_spheres():
             # spell to cast spells from the eye instead of from your body?
         ],
         rituals=[
-            Spell('Read Magic', 1, 'Self', """
+            Spell('Read Magic', 1, 'Yourself', """
                 You gain the ability to decipher magical inscriptions that would otherwise be unintelligible.
                 This can allow you to read ritual books and similar objects created by other creatures.
                 After you have read an inscription in this way, you are able to read that particular writing without the use of this ritual.
@@ -2391,7 +2391,7 @@ def generate_mystic_spheres():
         name='Thaumaturgy',
         short_description="Suppress and manipulate magical effects",
         cantrips=[
-            Effects('Sense Magic', 'Self', """
+            Effects('Sense Magic', 'Yourself', """
                 You gain a +4 bonus to the Spellcraft skill until the end of the next round.
             """, tags=[]),
         ],
@@ -2598,7 +2598,7 @@ def generate_mystic_spheres():
         name="Vital Surge",
         short_description="Alter life energy to cure or inflict wounds",
         cantrips=[
-            Effects('Cure Minor Wounds', 'Self or living \\glossterm<ally> within \\rngclose range', """
+            Effects('Cure Minor Wounds', 'Yourself or a living \\glossterm<ally> within \\rngclose range', """
                 The target heals hit points equal to your \\glossterm<power>.
             """, tags=['Life']),
         ],
@@ -2658,12 +2658,12 @@ def generate_mystic_spheres():
                 % TODO: wording
                 If the target dies while the condition is active, you heal hit points equal to twice your \\glossterm<power>.
             """, tags=['Life']),
-            Spell('Circle of Death', 4, ['Self', 'Living \\glossterm<enemies> in the area (see text)'], """
+            Spell('Circle of Death', 4, ['Yourself', 'Living \\glossterm<enemies> in the area (see text)'], """
                 You are surrounded by an aura of death in a \\areamed radius \\glossterm<enamation> from you.
                 When this spell resolves, and the end of each \\glossterm<action phase> in subsequent rounds, make an attack vs. Fortitude against each secondary target.
                 \\hit Each target takes life \\glossterm<standard damage> -2d.
             """, tags=['Attune (self)', 'Life']),
-            Spell('Circle of Healing', 4, ['Self', 'You and each living \\glossterm<ally> in the area (see text)'], """
+            Spell('Circle of Healing', 4, ['Yourself', 'You and each living \\glossterm<ally> in the area (see text)'], """
                 You are surrounded by an aura of healing in a \\areamed radius \\glossterm<emanation> from you.
                 When this spell resolves, and the end of each \\glossterm<action phase> in subsequent rounds, each secondary target heals hit points equal to half your \\glossterm<power>.
             """, tags=['Attune (self)', 'Life']),
@@ -2803,7 +2803,7 @@ def generate_mystic_spheres():
         name="Weaponcraft",
         short_description="Create and manipulate weapons to attack foes",
         cantrips=[
-            Effects('Personal Weapon', 'Self', """
+            Effects('Personal Weapon', 'Yourself', """
                 Choose a type of weapon that you are proficient with.
                 You create a normal item of that type in your hand.
                 If the item stops touching you, it disappears, and this effect ends.
