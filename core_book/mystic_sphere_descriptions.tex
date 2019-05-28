@@ -14,12 +14,13 @@
 
 
 \begin{freeability}{Airborne Leap}[\glossterm{Air}]
+\target{Self}
 You gain a \plus4 bonus to the Jump skill until the end of the next round.
 \end{freeability}
 
 
 \begin{freeability}{Soften Landing}[\glossterm{Air}]
-Choose yourself or an \glossterm{ally} in \rngmed range.
+\target{Self or an \glossterm{ally} within \rngmed range}
 Until the end of the round, the target treats all falls as if they were 5 feet shorter per \glossterm{power} for the purpose of determining \glossterm{falling damage}.
 \end{freeability}
 
@@ -307,14 +308,14 @@ The target gains a 30 foot \glossterm{fly speed} with good \glossterm{maneuverab
 
 
 \begin{freeability}{Create Water}[\glossterm{Creation}, \glossterm{Water}]
-You create up to one gallon per \glossterm{power} of wholesome, drinkable water anywhere within \rngclose range.
-The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
+\targets{Any number of locations within \rngclose range}
+You create up to one gallon per \glossterm{power} of wholesome, drinkable water at the target locations, allowing you to fill multiple small water containers.
 You must create a minimum of one ounce of water in each location.
 \end{freeability}
 
 
 \begin{freeability}{Slippery Escape}[\glossterm{Manifestation}, \glossterm{Water}]
-Choose yourself or an \glossterm{ally} within \rngclose range.
+\target{Self or an \glossterm{ally} within \rngclose range}
 The target gains a \plus4 bonus to the Escape Artist skill until the end of the next round.
 \end{freeability}
 
@@ -569,7 +570,7 @@ This ritual takes one minute to perform.
 
 
 \begin{freeability}{Minor Translocation}[\glossterm{Teleportation}]
-Choose a Tiny or smaller unattended object within \rngclose range.
+\target{Tiny or smaller unattended object within \rngclose range}
 The target teleports into an unoccupied location on a stable surface within range that can support the weight of the target.
 If the destination is invalid, the ability fails without effect.
 \end{freeability}
@@ -1381,6 +1382,7 @@ This ritual functions like the \spell{blessing of fortification} ritual, except 
 
 
 \begin{freeability}{Testament}[\glossterm{Sustain} (free)]
+\target{Self}
 The magical essence of your deity or alignment is overlayed on your body as an aura.
 This channels your deity if you are a cleric, or your alignment if you are a paladin.
 In either case, you gain the ability to see the auras of other creatures using this spell.
@@ -1543,12 +1545,14 @@ It is from the Conjuration school in addition to the Channeling school.
 
 
 \begin{freeability}{Accelerated Reading}[\glossterm{Sustain} (free), \glossterm{Temporal}]
+\target{Self}
 You can read at five times your normal speed.
 However, the mental effort imposes a \minus4 penalty to Mental defense.
 \end{freeability}
 
 
 \begin{freeability}{Accelerated Search}[\glossterm{Temporal}]
+\target{Self}
 Make an Awareness check to notice things in a single 10-ft.\ squrae within 10 feet of you.
 You gain a \plus5 bonus to this check.
 \end{freeability}
@@ -2156,7 +2160,7 @@ This spell functions like the \spell{cone of cold} spell, except it affects ever
 
 
 \begin{freeability}{Cheer}[\glossterm{Emotion}, \glossterm{Sustain} (free)]
-Choose yourself or an \glossterm{ally} within \rngclose range.
+\target{Self or \glossterm{ally} within \rngclose range}
 The target's mood improves and it feels more cheerful.
 \end{freeability}
 
@@ -2447,6 +2451,7 @@ This spell functions like the \spell{magnetic blade} spell, except that the bonu
 
 
 \begin{attuneability}{Fabricate Trinket}[\glossterm{Attune} (self), \glossterm{Manifestation}]
+\target{Self}
 You make a Craft check to create an object of Tiny size or smaller.
 The object appears in your hand or at your feet.
 It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
@@ -2608,7 +2613,7 @@ This ritual takes one hour to perform.
 
 
 \begin{attuneability}{Assist Disguise}[\glossterm{Attune} (self), \glossterm{Sensation}, \glossterm{Visual}]
-Choose yourself or an \glossterm{ally} within \rngclose range.
+\target{Self or \glossterm{ally} within \rngclose range}
 % TODO: wording?
 If the target is disguised as another creature, it gains a \plus2 \glossterm{magic bonus} to the result of the disguise.
 \end{attuneability}
@@ -2750,8 +2755,8 @@ This ritual takes one minute to perform.
 
 
 \begin{freeability}{Illuminate}[\glossterm{Light}, \glossterm{Sensation}, \glossterm{Visual}]
-Choose a location within \rngmed range.
-A glowing light appears in midair in the chosen location.
+\target{Location within \rngmed range}
+A glowing light appears in midair in the target location.
 It casts bright light in a 20 foot radius and dim light in a 40 foot radius.
 This effect lasts until you use it again or until you \glossterm{dismiss} it as a \glossterm{free action}.
 \end{freeability}
@@ -2891,7 +2896,7 @@ This ritual takes 24 hours to perform, and it requires 8 action points from its 
 
 
 \begin{freeability}{Alter Object}[\glossterm{Shaping}]
-Choose an unattended, nonmagical object you can touch.
+\target{Unattended, nonmagical object you can touch}
 You make a Craft check to alter the target (see \pcref{Craft}), except that you do not need any special tools to make the check (such as an anvil and furnace).
 The maximum hardness of a material you can affect with this ability is equal to your \glossterm{power}.
 
@@ -3198,13 +3203,15 @@ This ritual functions like the \spell{fortify} ritual, except that the \glosster
 
 
 \begin{freeability}{Kindle}[\glossterm{Fire}]
-Make an attack vs. Armor against one object within \rngclose range.
+\target{Object within \rngclose range}
+Make an attack vs. Armor against the target.
 \hit The target takes fire damage equal to your \glossterm{power}.
 If the target is highly flammable, such as a torch or campfire, it ignites.
 \end{freeability}
 
 
 \begin{freeability}{Personal Torch}[\glossterm{Fire}]
+\target{Self}
 You create a flame in your hand.
 You can create it at any intensity, up to a maximum heat equivalent to a burning torch.
 At it most intense, it sheds bright light in a 20 foot radius and dim light in an 40 foot radius.
@@ -3409,12 +3416,14 @@ This spell functions like the \spell{flame aura} spell, except that the area inc
 
 
 \begin{freeability}{Reveal Truth}
+\target{Self}
 You may reroll one Knowledge check you made last round.
 You can only cast this spell once per hour.
 \end{freeability}
 
 
 \begin{freeability}{Remote Sensing}[\glossterm{Scrying}, \glossterm{Sustain} (minor)]
+\target{Unoccupied location within \rngmed range}
 This cantrip functions like the \textit{arcane eye} spell, except that it gains the \glossterm{Sustain} (minor) tag in place of the \glossterm{Attune} (self) tag.",
 In addition, the sensor cannot be moved after it is originally created.
 \end{freeability}
@@ -4024,8 +4033,8 @@ It has the same statistics as a creature from the \spell{summon monster} spell, 
 
 
 \begin{freeability}{Distant Hand}[\glossterm{Sustain} (standard)]
-Choose a Medium or smaller unattended object within \rngclose range.
-You can move it up to five feet in any direction within range, using your \glossterm{power} instead of your Strength to determine your maximum carrying capacity.
+\target{Medium or smaller unattended object within \rngclose range}
+You can move the target up to five feet in any direction within range, using your \glossterm{power} instead of your Strength to determine your maximum carrying capacity.
 
 In addition, you can manipulate the target as if you were holding it in your hands.
 Any attacks you make with the object or checks you make to manipulate the object have a maximum bonus equal to your \glossterm{power}.
@@ -4403,6 +4412,7 @@ This spell functions like the \spell{fissure} spell, except that it affects all 
 
 
 \begin{freeability}{Sense Magic}
+\target{Self}
 You gain a \plus4 bonus to the Spellcraft skill until the end of the next round.
 \end{freeability}
 
@@ -4558,7 +4568,7 @@ However, this spell does not prevent you from sustaining or dismissing this spel
 
 
 \begin{freeability}{Rapid Growth}[\glossterm{Life}, \glossterm{Sustain} (minor)]
-Choose a Small or smaller inanimate plant within \rngclose range.
+\target{Small or smaller inanimate plant within \rngclose range}
 The target grows as if a month of time had passed.
 When this spell ends, the plant returns to its original state.
 \end{freeability}
@@ -4750,7 +4760,7 @@ It is from from the Conjuration school in addition to the Transmutation school.
 
 
 \begin{freeability}{Cure Minor Wounds}[\glossterm{Life}]
-Choose a living \glossterm{ally} within \rngclose range.
+\target{Self or living \glossterm{ally} within \rngclose range}
 The target heals hit points equal to your \glossterm{power}.
 \end{freeability}
 
@@ -5097,6 +5107,7 @@ In addition, it can only be learned through the divine \glossterm{magic source}.
 
 
 \begin{freeability}{Personal Weapon}[\glossterm{Manifestation}]
+\target{Self}
 Choose a type of weapon that you are proficient with.
 You create a normal item of that type in your hand.
 If the item stops touching you, it disappears, and this effect ends.

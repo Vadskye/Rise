@@ -26,11 +26,10 @@ def generate_mystic_spheres():
         name='Aeromancy',
         short_description="Command air to protect allies and blast foes",
         cantrips=[
-            Effects('Airborne Leap', """
+            Effects('Airborne Leap', 'Self', """
                 You gain a +4 bonus to the Jump skill until the end of the next round.
             """, tags=['Air']),
-            Effects('Soften Landing', """
-                Choose yourself or an \\glossterm<ally> in \\rngmed range.
+            Effects('Soften Landing', 'Self or an \\glossterm<ally> within \\rngmed range', """
                 Until the end of the round, the target treats all falls as if they were 5 feet shorter per \\glossterm<power> for the purpose of determining \\glossterm<falling damage>.
             """, tags=['Air']),
         ],
@@ -184,13 +183,11 @@ def generate_mystic_spheres():
         name="Aquamancy",
         short_description="Command water to crush and drown foes",
         cantrips=[
-            Effects('Create Water', """
-                You create up to one gallon per \\glossterm<power> of wholesome, drinkable water anywhere within \\rngclose range.
-                The water can be created at multiple locations within the ritual's range, allowing you to fill multiple small water containers.
+            Effects('Create Water', 'Any number of locations within \\rngclose range', """
+                You create up to one gallon per \\glossterm<power> of wholesome, drinkable water at the target locations, allowing you to fill multiple small water containers.
                 You must create a minimum of one ounce of water in each location.
             """, tags=['Creation', 'Water']),
-            Effects('Slippery Escape', """
-                Choose yourself or an \\glossterm<ally> within \\rngclose range.
+            Effects('Slippery Escape', 'Self or an \\glossterm<ally> within \\rngclose range', """
                 The target gains a +4 bonus to the Escape Artist skill until the end of the next round.
             """, tags=['Manifestation', 'Water']),
         ],
@@ -318,8 +315,7 @@ def generate_mystic_spheres():
         name="Astromancy",
         short_description="Transport creatures and objects instantly through space",
         cantrips=[
-            Effects('Minor Translocation', """
-                Choose a Tiny or smaller unattended object within \\rngclose range.
+            Effects('Minor Translocation', 'Tiny or smaller unattended object within \\rngclose range', """
                 The target teleports into an unoccupied location on a stable surface within range that can support the weight of the target.
                 If the destination is invalid, the ability fails without effect.
             """, tags=['Teleportation']),
@@ -760,7 +756,7 @@ def generate_mystic_spheres():
         name="Channel Divinity",
         short_description="Invoke divine power to smite foes and gain power",
         cantrips=[
-            Effects('Testament', """
+            Effects('Testament', 'Self', """
                 The magical essence of your deity or alignment is overlayed on your body as an aura.
                 This channels your deity if you are a cleric, or your alignment if you are a paladin.
                 In either case, you gain the ability to see the auras of other creatures using this spell.
@@ -851,11 +847,11 @@ def generate_mystic_spheres():
         name="Chronomancy",
         short_description="Manipulate the passage of time to inhibit foes and aid allies",
         cantrips=[
-            Effects('Accelerated Reading', """
+            Effects('Accelerated Reading', 'Self', """
                 You can read at five times your normal speed.
                 However, the mental effort imposes a -4 penalty to Mental defense.
             """, tags=['Sustain (free)', 'Temporal']),
-            Effects('Accelerated Search', """
+            Effects('Accelerated Search', 'Self', """
                 Make an Awareness check to notice things in a single 10-ft.\\ squrae within 10 feet of you.
                 You gain a +5 bonus to this check.
             """, tags=['Temporal']),
@@ -1205,8 +1201,7 @@ def generate_mystic_spheres():
         name="Delusion",
         short_description="Instill false emotions to influence creatures",
         cantrips=[
-            Effects('Cheer', """
-                Choose yourself or an \\glossterm<ally> within \\rngclose range.
+            Effects('Cheer', 'Self or \\glossterm<ally> within \\rngclose range', """
                 The target's mood improves and it feels more cheerful.
             """, tags=['Emotion', 'Sustain (free)']),
         ],
@@ -1371,7 +1366,7 @@ def generate_mystic_spheres():
         short_description="Create objects to damage and impair foes",
         # TODO: Narrative implications of at-will acid are annoying
         cantrips=[
-            Effects('Fabricate Trinket', """
+            Effects('Fabricate Trinket', 'Self', """
                 You make a Craft check to create an object of Tiny size or smaller.
                 The object appears in your hand or at your feet.
                 It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
@@ -1465,8 +1460,7 @@ def generate_mystic_spheres():
         name="Glamer",
         short_description="Change how creatures and objects are perceived",
         cantrips=[
-            Effects('Assist Disguise', """
-                Choose yourself or an \\glossterm<ally> within \\rngclose range.
+            Effects('Assist Disguise', 'Self or \\glossterm<ally> within \\rngclose range', """
                 % TODO: wording?
                 If the target is disguised as another creature, it gains a +2 \\glossterm<magic bonus> to the result of the disguise.
             """, tags=['Attune (self)', 'Sensation', 'Visual']),
@@ -1556,8 +1550,7 @@ def generate_mystic_spheres():
         name="Polymorph",
         short_description="Change the physical forms of objects and creatures",
         cantrips=[
-            Effects('Alter Object', """
-                Choose an unattended, nonmagical object you can touch.
+            Effects('Alter Object', 'Unattended, nonmagical object you can touch', """
                 You make a Craft check to alter the target (see \\pcref<Craft>), except that you do not need any special tools to make the check (such as an anvil and furnace).
                 The maximum hardness of a material you can affect with this ability is equal to your \\glossterm<power>.
 
@@ -1730,9 +1723,8 @@ def generate_mystic_spheres():
         name="Photomancy",
         short_description="Create bright light to blind foes and illuminate your surroundings",
         cantrips=[
-            Effects('Illuminate', """
-                Choose a location within \\rngmed range.
-                A glowing light appears in midair in the chosen location.
+            Effects('Illuminate', 'Location within \\rngmed range', """
+                A glowing light appears in midair in the target location.
                 It casts bright light in a 20 foot radius and dim light in a 40 foot radius.
                 This effect lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
             """, tags=['Light', 'Sensation', 'Visual']),
@@ -1809,12 +1801,12 @@ def generate_mystic_spheres():
         name='Pyromancy',
         short_description="Create fire to incinerate foes",
         cantrips=[
-            Effects('Kindle', """
-                Make an attack vs. Armor against one object within \\rngclose range.
+            Effects('Kindle', 'Object within \\rngclose range', """
+                Make an attack vs. Armor against the target.
                 \\hit The target takes fire damage equal to your \\glossterm<power>.
                 If the target is highly flammable, such as a torch or campfire, it ignites.
             """, tags=['Fire']),
-            Effects('Personal Torch', """
+            Effects('Personal Torch', 'Self', """
                 You create a flame in your hand.
                 You can create it at any intensity, up to a maximum heat equivalent to a burning torch.
                 At it most intense, it sheds bright light in a 20 foot radius and dim light in an 40 foot radius.
@@ -1924,11 +1916,11 @@ def generate_mystic_spheres():
         name="Revelation",
         short_description="Share visions of the present and future, granting insight or combat prowess",
         cantrips=[
-            Effects('Reveal Truth', """
+            Effects('Reveal Truth', 'Self', """
                 You may reroll one Knowledge check you made last round.
                 You can only cast this spell once per hour.
             """, tags=[]),
-            Effects('Remote Sensing', """
+            Effects('Remote Sensing', 'Unoccupied location within \\rngmed range', """
                 This cantrip functions like the \\textit<arcane eye> spell, except that it gains the \\glossterm<Sustain> (minor) tag in place of the \\glossterm<Attune> (self) tag.",
                 In addition, the sensor cannot be moved after it is originally created.
             """, tags=['Scrying', 'Sustain (minor)']),
@@ -2268,9 +2260,8 @@ def generate_mystic_spheres():
         name="Telekinesis",
         short_description="Manipulate kinetic energy at a distance",
         cantrips=[
-            Effects('Distant Hand', """
-                Choose a Medium or smaller unattended object within \\rngclose range.
-                You can move it up to five feet in any direction within range, using your \\glossterm<power> instead of your Strength to determine your maximum carrying capacity.
+            Effects('Distant Hand', 'Medium or smaller unattended object within \\rngclose range', """
+                You can move the target up to five feet in any direction within range, using your \\glossterm<power> instead of your Strength to determine your maximum carrying capacity.
 
                 In addition, you can manipulate the target as if you were holding it in your hands.
                 Any attacks you make with the object or checks you make to manipulate the object have a maximum bonus equal to your \\glossterm<power>.
@@ -2483,7 +2474,7 @@ def generate_mystic_spheres():
         name='Thaumaturgy',
         short_description="Suppress and manipulate magical effects",
         cantrips=[
-            Effects('Sense Magic', """
+            Effects('Sense Magic', 'Self', """
                 You gain a +4 bonus to the Spellcraft skill until the end of the next round.
             """, tags=[]),
         ],
@@ -2575,8 +2566,7 @@ def generate_mystic_spheres():
         name="Verdamancy",
         short_description="Animate and manipulate plants",
         cantrips=[
-            Effects('Rapid Growth', """
-                Choose a Small or smaller inanimate plant within \\rngclose range.
+            Effects('Rapid Growth', 'Small or smaller inanimate plant within \\rngclose range', """
                 The target grows as if a month of time had passed.
                 When this spell ends, the plant returns to its original state.
             """, tags=['Life', 'Sustain (minor)']),
@@ -2694,8 +2684,7 @@ def generate_mystic_spheres():
         name="Vital Surge",
         short_description="Alter life energy to cure or inflict wounds",
         cantrips=[
-            Effects('Cure Minor Wounds', """
-                Choose a living \\glossterm<ally> within \\rngclose range.
+            Effects('Cure Minor Wounds', 'Self or living \\glossterm<ally> within \\rngclose range', """
                 The target heals hit points equal to your \\glossterm<power>.
             """, tags=['Life']),
         ],
@@ -2912,7 +2901,7 @@ def generate_mystic_spheres():
         name="Weaponcraft",
         short_description="Create and manipulate weapons to attack foes",
         cantrips=[
-            Effects('Personal Weapon', """
+            Effects('Personal Weapon', 'Self', """
                 Choose a type of weapon that you are proficient with.
                 You create a normal item of that type in your hand.
                 If the item stops touching you, it disappears, and this effect ends.
