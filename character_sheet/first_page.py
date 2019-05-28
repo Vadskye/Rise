@@ -95,9 +95,6 @@ def resources():
             })),
             underlabel('Attuned', number_input({'name': 'action_points_attuned'})),
         ]),
-        labeled_number_input('Legend points', input_attributes={
-            'name': 'legend_points_display',
-        }),
     ])
 
 def statistics_header():
