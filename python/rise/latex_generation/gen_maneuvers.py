@@ -61,12 +61,12 @@ def generate_maneuvers():
         short_description='Make a strike with bonuses if attacked',
         effect_text="""
                 Make a \\glossterm<strike>.
-                If the target attacked you earlier in the current round, you gain a +2d bonus to damage with the strike.
+                If the target attacked you earlier in the current round, you gain a +1 bonus to \\glossterm<accuracy> and a +1d bonus to damage with the strike.
         """,
         rank_upgrades={
-            '3': 'The damage bonus increases to +3d.',
-            '5': 'You also gain the damage bonus if the target attacked you in the previous round.',
-            '7': 'The damage bonus increases to +5d.',
+            '3': 'The damage bonus increases to +2d.',
+            '5': 'You also gain the bonuses if the target attacked you in the previous round.',
+            '7': 'The damage bonus increases to +4d.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Trick'],
@@ -128,10 +128,10 @@ def generate_maneuvers():
         short_description='Jump and make a strike',
         effect_text="""
                 You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to your \\glossterm<base speed> (see \\pcref<Leap>).
-                You can make a \\glossterm<strike> from any location you occupy during the leap.
+                You can make a melee \\glossterm<strike> from any location you occupy during the leap.
         """,
         rank_upgrades={
-            '3': 'You gain a +1d bonus to damage with the strike.',
+            '3': "You gain a +1d bonus to damage with the strike if you attack while above the target's space.",
             '5': 'If you hit another creature with the strike that is of your size category or larger, you take no falling damage from the leap.',
             '7': 'The damage bonus increases to +3d.',
         },
@@ -511,6 +511,127 @@ def generate_maneuvers():
         },
         tags=[],
         lists=['Esoteric'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Feint',
+        short_description='Make a weak attack to take an opponent off guard',
+        effect_text="""
+            Make a melee \\glossterm<strike> with a +2 bonus to \\glossterm<accuracy> and a -2d penalty to damage.
+            If you hit, the target takes a -2 penalty to Armor defense until the end of the next round.
+        """,
+        rank_upgrades={
+            '3': 'The penalty increases to -3.',
+            '5': 'The accuracy bonus increases to +3.',
+            '7': 'The penalty increases to -4.',
+        },
+        tags=[],
+        lists=['Esoteric', 'Martial', 'Trick'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Reckless Strike',
+        short_description='Lower defenses to make a powerful strike',
+        effect_text="""
+            Make a melee \\glossterm<strike> with a +1 bonus to \\glossterm<accuracy> and a +1d bonus to damage.
+            Until the end of the next round, you take a -2 penalty to all defenses.
+        """,
+        rank_upgrades={
+            '3': 'The damage bonus increases to +2d.',
+            '5': 'The accuracy bonus increases to +2.',
+            '7': 'The damage bonus increases to +4d.',
+        },
+        tags=[],
+        lists=['Primal'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Knockdown',
+        short_description='Knock a foe prone with brute force',
+        effect_text="""
+            Make a melee \\glossterm<strike> using a bludgeoning weapon with a -1d penalty to damage.
+            If the attack result hits the target's Fortitude defense,
+                it falls \\glossterm<prone>.
+        """,
+        rank_upgrades={
+            '3': """
+                On a critical hit, the target is unable to stand up on its own until the end of the next round.
+                If it is somehow brought into a standing position, it will immediately fall and become prone again.
+            """,
+            '5': 'The damage penalty is removed.',
+            '7': 'The target is unable to stand on its own after a normal hit.',
+        },
+        tags=[],
+        lists=['Esoteric', 'Martial', 'Primal'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Defensive Strike',
+        short_description='Make a careful strike without lowering your defenses',
+        effect_text="""
+            Make a melee \\glossterm<strike> with a -2d penalty to damage.
+            You gain a +2 bonus to Armor defense until the end of the round.
+            This defense bonus takes effect immediately, so it protects you from attacks in the current phase.
+            The strike happens simultaneously with other actions.
+        """,
+        rank_upgrades={
+            '3': 'The defense bonus increases to +3.',
+            '5': 'The damage penalty is reduced to -1d.',
+            '7': 'The defense bonus increases to +4.',
+        },
+        tags=['Swift (see text)'],
+        lists=['Esoteric', 'Martial', 'Trick', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Quickdraw',
+        short_description='Rapidly draw a new weapon and attack with it',
+        effect_text="""
+            Sheathe one of your weapons and draw another weapon.
+            You must be able to wield both weapons with only one hand.
+            Make a \\glossterm<strike> using the new weapon.
+        """,
+        rank_upgrades={
+            '3': 'You gain a +1 bonus to accuracy with the strike.',
+            '5': 'You gain a +1d bonus to damage with the strike.',
+            '7': """
+                You may use another \\glossterm<maneuver> instead of making the strike.
+                That maneuver must make a strike using the new weapon.
+            """,
+        },
+        tags=[],
+        lists=['Esoteric', 'Martial', 'Trick', 'Primal', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Distracting Strike',
+        short_description='Attack vulnerabilities in concentrating foes',
+        effect_text="""
+            Make a melee \\glossterm<strike> with a -1d penalty to damage.
+            If you hit, the target takes a -4 penalty to \\glossterm<concentration> as a \\glossterm<condition>.
+        """,
+        rank_upgrades={
+            '3': 'On a critical hit, the penalty increases to -8.',
+            '5': 'The damage penalty is removed.',
+            '7': 'The penalty increases to -8.',
+        },
+        tags=[],
+        lists=['Esoteric', 'Martial', 'Trick', 'Primal', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
+        name='Focus',
+        short_description='You prepare yourself to strike a critical blow',
+        effect_text="""
+            Until the end of the next round, you gain a +2 bonus to \\glossterm<accuracy> with \\glossterm<strikes>.
+        """,
+        rank_upgrades={
+            '3': 'The accuracy bonus increases to +3.',
+            '5': 'You also gain a +1d bonus to damage with \\glossterm<strikes>.',
+            '7': 'The accuracy bonus increases to +5.',
+        },
+        tags=[],
+        lists=[],
     ))
 
     return maneuvers

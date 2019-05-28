@@ -37,6 +37,7 @@ valid_tags = set([
     'Sustain (minor)',
     'Sustain (free)',
     'Swift',
+    'Swift (see text)',
     'Teleportation',
     'Temporal',
     'Trap',

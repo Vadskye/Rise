@@ -83,12 +83,12 @@ This effect lasts until you take a \glossterm{short rest} or until you use this 
 \hypertarget{maneuver:Counterattack}{}
 \begin{freeability}{Counterattack}[]
 Make a \glossterm{strike}.
-If the target attacked you earlier in the current round, you gain a \plus2d bonus to damage with the strike.
+If the target attacked you earlier in the current round, you gain a \plus1 bonus to \glossterm{accuracy} and a \plus1d bonus to damage with the strike.
 
 \rankline
-\rank{4} The damage bonus increases to \plus3d.
-\rank{6} You also gain the damage bonus if the target attacked you in the previous round.
-\rank{8} The damage bonus increases to \plus5d.
+\rank{4} The damage bonus increases to \plus2d.
+\rank{6} You also gain the bonuses if the target attacked you in the previous round.
+\rank{8} The damage bonus increases to \plus4d.
 \parhead{Lists} Martial, Primal, Trick
 \end{freeability}
 \vspace{0.25em}
@@ -131,6 +131,24 @@ including allowing the target to regain its \glossterm{action point} when it tak
 
 
 
+\lowercase{\hypertarget{maneuver:Defensive Strike}{}}\label{maneuver:Defensive Strike}
+\hypertarget{maneuver:Defensive Strike}{}
+\begin{freeability}{Defensive Strike}[\glossterm{Swift} (see text)]
+Make a melee \glossterm{strike} with a \minus2d penalty to damage.
+You gain a \plus2 bonus to Armor defense until the end of the round.
+This defense bonus takes effect immediately, so it protects you from attacks in the current phase.
+The strike happens simultaneously with other actions.
+
+\rankline
+\rank{4} The defense bonus increases to \plus3.
+\rank{6} The damage penalty is reduced to \minus1d.
+\rank{8} The defense bonus increases to \plus4.
+\parhead{Lists} Esoteric, Martial, Trick, Wild
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{maneuver:Demoralizing Shout}{}}\label{maneuver:Demoralizing Shout}
 \hypertarget{maneuver:Demoralizing Shout}{}
 \begin{freeability}{Demoralizing Shout}[\glossterm{Emotion}]
@@ -158,6 +176,53 @@ You reduce your penalties for \glossterm{range increments} with the strike by 2.
 \rank{6} The penalty reduction increases to 4.
 \rank{8} The damage bonus increases to \plus3d.
 \parhead{Lists} Martial, Wild
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{maneuver:Distracting Strike}{}}\label{maneuver:Distracting Strike}
+\hypertarget{maneuver:Distracting Strike}{}
+\begin{freeability}{Distracting Strike}[]
+Make a melee \glossterm{strike} with a \minus1d penalty to damage.
+If you hit, the target takes a \minus4 penalty to \glossterm{concentration} as a \glossterm{condition}.
+
+\rankline
+\rank{4} On a critical hit, the penalty increases to -8.
+\rank{6} The damage penalty is removed.
+\rank{8} The penalty increases to -8.
+\parhead{Lists} Esoteric, Martial, Primal, Trick, Wild
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{maneuver:Feint}{}}\label{maneuver:Feint}
+\hypertarget{maneuver:Feint}{}
+\begin{freeability}{Feint}[]
+Make a melee \glossterm{strike} with a \plus2 bonus to \glossterm{accuracy} and a \minus2d penalty to damage.
+If you hit, the target takes a \minus2 penalty to Armor defense until the end of the next round.
+
+\rankline
+\rank{4} The penalty increases to -3.
+\rank{6} The accuracy bonus increases to \plus3.
+\rank{8} The penalty increases to -4.
+\parhead{Lists} Esoteric, Martial, Trick
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{maneuver:Focus}{}}\label{maneuver:Focus}
+\hypertarget{maneuver:Focus}{}
+\begin{freeability}{Focus}[]
+Until the end of the next round, you gain a \plus2 bonus to \glossterm{accuracy} with \glossterm{strikes}.
+
+\rankline
+\rank{4} The accuracy bonus increases to \plus3.
+\rank{6} You also gain a \plus1d bonus to damage with \glossterm{strikes}.
+\rank{8} The accuracy bonus increases to \plus5.
+\parhead{Lists}
 \end{freeability}
 \vspace{0.25em}
 
@@ -233,14 +298,32 @@ It lasts until you take a \glossterm{short rest} or use this ability on a differ
 
 
 
+\lowercase{\hypertarget{maneuver:Knockdown}{}}\label{maneuver:Knockdown}
+\hypertarget{maneuver:Knockdown}{}
+\begin{freeability}{Knockdown}[]
+Make a melee \glossterm{strike} using a bludgeoning weapon with a \minus1d penalty to damage.
+If the attack result hits the target's Fortitude defense,
+it falls \glossterm{prone}.
+
+\rankline
+\rank{4} On a critical hit, the target is unable to stand up on its own until the end of the next round.
+If it is somehow brought into a standing position, it will immediately fall and become prone again.
+\rank{6} The damage penalty is removed.
+\rank{8} The target is unable to stand on its own after a normal hit.
+\parhead{Lists} Esoteric, Martial, Primal
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{maneuver:Leaping Strike}{}}\label{maneuver:Leaping Strike}
 \hypertarget{maneuver:Leaping Strike}{}
 \begin{freeability}{Leaping Strike}[]
 You make a Jump check to leap and move as normal for the leap, up to a maximum distance equal to your \glossterm{base speed} (see \pcref{Leap}).
-You can make a \glossterm{strike} from any location you occupy during the leap.
+You can make a melee \glossterm{strike} from any location you occupy during the leap.
 
 \rankline
-\rank{4} You gain a \plus1d bonus to damage with the strike.
+\rank{4} You gain a \plus1d bonus to damage with the strike if you attack while above the target's space.
 \rank{6} If you hit another creature with the strike that is of your size category or larger, you take no falling damage from the leap.
 \rank{8} The damage bonus increases to \plus3d.
 \parhead{Lists} Esoteric, Primal, Wild
@@ -313,6 +396,24 @@ The attack is made against the target's Fortitude defense instead of its Armor d
 
 
 
+\lowercase{\hypertarget{maneuver:Quickdraw}{}}\label{maneuver:Quickdraw}
+\hypertarget{maneuver:Quickdraw}{}
+\begin{freeability}{Quickdraw}[]
+Sheathe one of your weapons and draw another weapon.
+You must be able to wield both weapons with only one hand.
+Make a \glossterm{strike} using the new weapon.
+
+\rankline
+\rank{4} You gain a \plus1 bonus to accuracy with the strike.
+\rank{6} You gain a \plus1d bonus to damage with the strike.
+\rank{8} You may use another \glossterm{maneuver} instead of making the strike.
+That maneuver must make a strike using the new weapon.
+\parhead{Lists} Esoteric, Martial, Primal, Trick, Wild
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{maneuver:Quivering Palm}{}}\label{maneuver:Quivering Palm}
 \hypertarget{maneuver:Quivering Palm}{}
 \begin{freeability}{Quivering Palm}[]
@@ -376,6 +477,22 @@ You take a \minus1 penalty to \glossterm{accuracy} on the strike.
 \rank{6} You can move in any direction during the movement instead of only in a straight line.
 \rank{8} The damage bonus increases to \plus3d.
 \parhead{Lists} Esoteric, Martial, Primal, Wild
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{maneuver:Reckless Strike}{}}\label{maneuver:Reckless Strike}
+\hypertarget{maneuver:Reckless Strike}{}
+\begin{freeability}{Reckless Strike}[]
+Make a melee \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy} and a \plus1d bonus to damage.
+Until the end of the next round, you take a \minus2 penalty to all defenses.
+
+\rankline
+\rank{4} The damage bonus increases to \plus2d.
+\rank{6} The accuracy bonus increases to \plus2.
+\rank{8} The damage bonus increases to \plus4d.
+\parhead{Lists} Primal
 \end{freeability}
 \vspace{0.25em}
 
