@@ -26,25 +26,10 @@ class Spell(object):
                 if not is_valid_tag(tag):
                     logger.log(WARNING, f"Spell {self.name} has invalid tag {tag}")
 
-    def tag_text(self):
-        """Get the text for this effect's tags and schools"""
-        if self.tags:
-            return "This is a {glossary_tags} effect{school_text}.".format(
-                school_text=(
-                    f" from the {self.school} school"
-                    if self.school
-                    else ""
-                ),
-            )
-        elif self.school:
-            return f"This effect is from the {self.school} school."
-        else:
-            return ""
-
     def __str__(self):
         tag_text = to_latex_tags(self.tags)
 
-        ability_type = 'attuneability' if 'Attune' in tag_text else ('apability' if 'AP' in tag_text else 'freeability')
+        ability_type = 'attuneability' if 'Attune' in tag_text else ('apability' if 'AP' in self.tags else 'freeability')
 
         if isinstance(self.targets, str):
             target_tag = 'targets' if targets_are_plural(self.targets) else 'target'
