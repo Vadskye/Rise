@@ -368,6 +368,24 @@
     \bottomrule
 }
 
+\DeclareDocumentCommand{\target}{m}{
+    \par\noindent
+    Target:~#1
+    \vspace{0.2em}
+    \hrule
+    \vspace{0.2em}
+    \par\noindent\hspace{-0.25em}
+}
+
+\DeclareDocumentCommand{\targets}{m}{
+    \par\noindent
+    Targets:~#1
+    \vspace{0.2em}
+    \hrule
+    \vspace{0.2em}
+    \par\noindent\hspace{-0.5em}
+}
+
 \ExplSyntaxOff
 
 \newcommand{\classbasics}[1]{\par\noindent\textbf{#1}:}
