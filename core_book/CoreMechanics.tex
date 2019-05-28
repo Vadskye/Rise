@@ -1042,7 +1042,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             % What ambiguity does having multiple points of origin cause?
             For the purpose of effects that care about the area's point of origin, all grid intersections within or touching the creature's space are used.
 
-        \subsubsection{Area Shape}
+        \subsubsection{Area Shapes}\label{Area Shapes}
 
             \parhead{Cone} A cone extends from the point of origin in a quarter-sphere, up to the given length.
 
@@ -1060,9 +1060,10 @@ It defines how attributes work and explains how to make physical attacks in comb
             \parhead{Sphere} A sphere extends from the point of origin in all directions.
             Any ability which only specifies a radius for its area is sphere-shaped.
 
-            \parhead{Wall} A wall is like a line, except that it has no width.
-            Instead, it affects the boundary between squares.
-            Walls can also be shapeable.
+            \parhead{Wall} A wall is like a line, except that its width is not defined in squares.
+            In a narrative sense, most walls have a defined width.
+            However, in a mechanical sense, walls are considered to have no width and simply occupy the boundary between squares.
+            Like lines, walls can be shapeable.
 
             Walls can normally be created within occupied squares, but not within solid objects.
             Some walls are called solid walls, and cannot be created within occupied squares.
