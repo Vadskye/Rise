@@ -1657,7 +1657,7 @@ def generate_mystic_spheres():
         name="Photomancy",
         short_description="Create bright light to blind foes and illuminate your surroundings",
         cantrips=[
-            Effects('Illuminate', 'Location within \\rngmed range', """
+            Effects('Illuminate', 'One location within \\rngmed range', """
                 A glowing light appears in midair in the target location.
                 It casts bright light in a 20 foot radius and dim light in a 40 foot radius.
                 This effect lasts until you use it again or until you \\glossterm<dismiss> it as a \\glossterm<free action>.
