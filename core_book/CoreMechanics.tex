@@ -194,6 +194,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         You can use \glossterm{action points} to \glossterm{attune} to effects such as spells or items (see \pcref{Attunement}).
         In addition, you can use some special abilities by spending \glossterm{action points}.
         Abilities that require action points have the \glossterm{AP} or \glossterm{Attune} tags (see \pcref{Ability Tags}).
+        The most common abilities that require \glossterm{action points} are the \textit{cleanse} and \textit{desperate exertion} abilities (see \pcref{Cleanse}, and \pcref{Desperate Exertion}).
 
         A 1st level character typically has 4 \glossterm{action points}.
         At higher levels, you gain additional \glossterm{action points} (see \pcref{Character Advancement}).
@@ -201,6 +202,11 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         When you take a \glossterm{long rest}, you recover all spent \glossterm{action points}.
         For details, see \pcref{Resting}.
+
+        \subsubsection{Legendary Actions}
+            On rare occasions, you can gain action points by performing extraordinary deeds worthy of legends.
+            These action points can even allow you to exceed your normal maximum number of action points.
+            If you have not spent these action points by the time you take your next \glossterm{long rest}, they are lost.
 
     \subsection{Attributes}\label{Attributes}
 
@@ -1412,6 +1418,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             \begin{dtabularx}{\columnwidth}{>{\lcol}p{6em} l X}
                 \tb{Ability}  & \tb{Defense} & \tb{Brief Description} \tableheaderrule
                 Cleanse\fn{1} & \tdash       & Quickly remove a \glossterm{condition} \\
+                Desperate Exertion\fn{1} & \tdash & Gain a bonus on a single roll     \\
                 Dirty Trick   & Any          & Impose penalty on a foe                \\
                 Disarm        & Ref          & Attack item, knocking it free          \\
                 Grapple       & Fort and Ref & Wrestle with a foe                     \\
@@ -1429,6 +1436,18 @@ It defines how attributes work and explains how to make physical attacks in comb
         \begin{apability}{\labeltext{Cleanse}}
             You remove all \glossterm{conditions} affecting you.
             This cannot remove a condition applied during the current round.
+        \end{apability}
+
+        \parhead{Desperate Exertion} You can use the \textit{desperate exertion} ability to succeed at a critical moment when you would otherwise fail.
+        Using this ability is not an action, and can be done at any time.
+        You can decide to use this ability after you learn whether the original roll succeeded or failed.
+        You can even use it after you learn what the effects of a successful attack or check would be, if that is information you could normally learn if it succeeded.
+        However, you must use it before the phase is over.
+
+        You can use this ability multiple times to affect the same roll if you have the action points to do so.
+
+        \begin{apability}{\labeltext{Desperate Exertion}}[\glossterm{Swift}]
+            You reroll any \glossterm{attack} or \glossterm{check} you just made.
         \end{apability}
 
         \parhead{Dirty Trick} As a standard action, you can use the \textit{dirty trick} ability to creatively impair a foe's ability to fight.
