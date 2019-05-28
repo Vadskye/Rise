@@ -847,7 +847,7 @@ def generate_mystic_spheres():
             """, tags=['Attune (target)', 'Temporal']),
             Spell('Temporal Duplicate', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
                 You reach into a possible future and create a duplicate of the target.
-                The duplicate is identical in all ways to the target when the spell resolves, except that it has no \\glossterm<legend points>.
+                The duplicate is identical in all ways to the target when the spell resolves.
                 The target and its duplicate can act during the next round.
                 At the end of that round, the target and its duplicate cease to exist.
                 At the end of the following round, the target reappears in the place where it ceased to exist.
