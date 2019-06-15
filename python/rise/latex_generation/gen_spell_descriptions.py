@@ -506,11 +506,11 @@ def generate_mystic_spheres():
 
                 Creatures in the area at the time that the spell is cast are unaffected by the spell.
             """, tags=['Sustain (minor)']),
-            Spell('Immunity', 3, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
+            Spell('Immunity', 3, 'Yourself', """
                 Choose a type of damage that is not a type of physical damage (see \\pcref<Damage Types>).
                 The target becomes immune to damage of the chosen type.
                 Attacks that deal damage of multiple types still inflict damage normally unless the target is immune to all types of damage dealt.
-            """, tags=['Attune (target)', 'Shielding']),
+            """, tags=['Attune (self)', 'Shielding']),
             Spell('Retributive Shield', 3, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
                 This spell functions like the \\spell<kinetic shield> spell, except that damage resisted by this spell is dealt back to the attacker as life damage.
                 If the attacker is beyond \\rngclose range of the target, this reflection fails.
@@ -1899,26 +1899,23 @@ def generate_mystic_spheres():
                 \\hit When you hear the target deliberately and knowingly speaks a lie, you know that the target was lying.
                 This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
             """, tags=['Attune (self)', 'Detection']),
-            Spell('Boon of Mastery', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                The target gains a +2 \\glossterm<magic bonus> to all skills.
-            """, tags=['Attune (target)']),
-            Spell('Greater Boon of Mastery', 4, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+            Spell('Boon of Mastery', 2, 'Yourself', """
+                You gain a +2 \\glossterm<magic bonus> to all skills.
+            """, tags=['Attune (self)']),
+            Spell('Greater Boon of Mastery', 4, 'Yourself', """
                 This spell functions like the \\spell<boon of mastery> spell, except that the bonus is increased to +4.
+            """, tags=['Attune (self)']),
+            Spell('Boon of Many Eyes', 2, 'Yourself', """
+                You gain a +1 \\glossterm<magic bonus> to \\glossterm<overwhelm resistance>.
+            """, tags=['Attune (self)']),
+            Spell('Boon of Knowledge', 3, 'Yourself', """
+                You gain a +4 \\glossterm<magic bonus> to all Knowledge skills (see \\pcref<Knowledge>).
+                In addition, once per hour you may reroll one Knowledge check you make and take the higher result.
             """, tags=['Attune (target)']),
-            Spell('Boon of Many Eyes', 2, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                The target gains a +1 \\glossterm<magic bonus> to \\glossterm<overwhelm resistance>.
-            """, tags=['Attune (target)']),
-            Spell('Boon of Knowledge', 2, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                The target gains a +4 \\glossterm<magic bonus> to all Knowledge skills (see \\pcref<Knowledge>).
-            """, tags=['Attune (target)']),
-            Spell('Third Eye', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                The target gains \\glossterm<blindsight> with a 50 foot range.
+            Spell('Third Eye', 3, 'Yourself', """
+                You gain \\glossterm<blindsight> with a 50 foot range.
                 This can allow it to see perfectly without any light, regardless of concealment or invisibility.
-            """, tags=['Attune (target)']),
-            Spell('Greater Reveal Truth', 2, 'Yourself', """
-                You may reroll one Knowledge check you made last round with a +5 \\glossterm<magic bonus>.
-                You can only cast this spell once per hour.
-            """, tags=[]),
+            """, tags=['Attune (self)']),
             Spell('Reveal Vulnerability', 1, 'One creature within \\rngmed range', """
                 Make an attack vs. Mental against the target.
                 \\hit The target's physical vulnerabilities are highlighted, and openings in its defenses are revealed to attackers moments before they exist.
