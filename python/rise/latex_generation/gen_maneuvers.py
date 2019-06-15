@@ -35,7 +35,7 @@ def generate_maneuvers():
             # Alternate idea: bonuses against attackers
             '3': 'You can also negate a condition that would be applied to you while this ability lasts.',
             '5': 'This ability lasts until the end of the next round.',
-            '7': 'You are also immune to condition while this ability lastss.',
+            '7': 'You are also immune to conditions while this ability lastss.',
         },
         tags=['Swift'],
         lists=['Martial', 'Primal', 'Wild', 'Esoteric'],
