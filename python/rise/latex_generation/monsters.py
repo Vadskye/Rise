@@ -120,8 +120,7 @@ def animals(sample_monsters):
         dire_wolf,
         active_abilities=[
             active_ability('Pounce', """
-                The dire wolf moves up to its movement speed.
-                If it uses this ability during the action phase, it can make a bite strike during the delayed action phase.
+                The dire wolf moves up to its speed in a single straight line and makes a bite \\glossterm<strike> from its new location.
             """),
         ],
     ))
@@ -535,7 +534,7 @@ def magical_beasts(sample_monsters):
                 At the end of each action phase, if the hydra took at least {trunc_to_five(hydra6.hit_points // 5)} damage during that phase, it loses one of its heads.
                 Severed heads leave behind a stump that can quickly grow new heads.
 
-                At the end of each delayed action phase, if the hydra has a severed stump, the stump is either sealed or it grows two new heads.
+                At the end of each round, if the hydra has a severed stump, the stump is either sealed or it grows two new heads.
                 If the hydra took {trunc_to_five(hydra6.hit_points // 10)} acid, cold, or fire damage during that phase, the stump is sealed, and will stop growing new heads.
                 Otherwise, the hydra grows two new heads from the stump.
                 This grants it additional actions during the action phase as normal.
@@ -553,8 +552,7 @@ def magical_beasts(sample_monsters):
         minotaur,
         active_abilities=[
             active_ability('Impaling Charge', f"""
-                The minotaur moves up to its speed in a single straight line.
-                If it uses this ability during the \\glossterm<action phase>, it can make a gore \\glossterm<strike> from its new location during the \\glossterm<delayed action phase>.
+                The minotaur moves up to its speed in a single straight line and makes a gore \\glossterm<strike> from its new location.
             """),
         ],
         passive_abilities=[
@@ -867,7 +865,6 @@ def undead(sample_monsters):
             passives['slow'](zombie),
             passives['soft flesh'](zombie),
         ],
-        # TODO: this creature acts during the delayed action phase
     ))
 
     zombie_warrior = sample_monsters['zombie_warrior']
@@ -886,7 +883,6 @@ def undead(sample_monsters):
             passives['slow'](zombie_hulking),
             passives['soft flesh'](zombie_hulking),
         ],
-        # TODO: this creature acts during the delayed action phase
     ))
 
     zombie_captain = sample_monsters['zombie_captain']
@@ -896,7 +892,6 @@ def undead(sample_monsters):
             passives['slow'](zombie_captain),
             passives['soft flesh'](zombie_captain),
         ],
-        # TODO: this creature acts during the delayed action phase
     ))
 
     zombie_elite = sample_monsters['zombie_elite']
