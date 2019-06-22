@@ -319,13 +319,13 @@ def generate_worn():
         material_type='Bracers',
         description="""
             As a standard action, you can activate these bracers.
-            When you do, they emit a telekinetic burst of force that targets everything within a \\areasmall radius burst from you.
-            You make a \\glossterm<shove> attack against each target to push it away from you, using this item's \\glossterm<power> as your \\glossterm<accuracy>.
+            When you do, they emit a telekinetic burst of force.
+            Make an attack vs. Fortitude against everything within a \\areasmall radius burst from you.
             If you use this item during the \\glossterm<delayed action phase>,
-                you gain a +4 bonus to \\glossterm<accuracy> with this attack against any creature that attacked you during the action phase.
-            You do not have to move with any targets to push them the full distance of the shove.
+                you gain a +4 bonus to \\glossterm<accuracy> with this attack against any creature that attacked you during the \\glossterm<action phase>.
+            On a hit, you \\glossterm<knockback> each target up to 20 feet.
         """,
-        short_description="Can shove nearby creatures back",
+        short_description="Can knock nearby creatures back",
     ))
 
     apparel.append(MagicItem(
@@ -335,7 +335,7 @@ def generate_worn():
         description="""
             This item functions like the \\mitem<bracers of repulsion> item, except that it targets everything within a \\arealarge radius burst.
         """,
-        short_description="Can shove foes back",
+        short_description="Can knock many nearby creatures back",
     ))
 
     apparel.append(MagicItem(
@@ -375,11 +375,11 @@ def generate_worn():
         level=2,
         material_type='Gauntlet',
         description="""
-            If you hit on a \\glossterm<strike> with this gauntlet during the \\glossterm<action phase>, you can attempt to \\glossterm<shove> your foe during the \\glossterm<delayed action phase>.
+            When you make a \\glossterm<strike> with this gauntlet, you also compare the attack result to the target's Fortitude defense.
+            On a hit, you \\glossterm<knockback> the target up to 10 feet.
             Making a strike with this gauntlet is equivalent to an \\glossterm<unarmed attack>.
-            You do not need to move with your foe to push it back the full distance.
         """,
-        short_description="Shoves foe when used to strike",
+        short_description="Knocks back foe when used to strike",
     ))
 
     apparel.append(MagicItem(
@@ -387,9 +387,9 @@ def generate_worn():
         level=7,
         material_type='Gauntlet',
         description="""
-            This item functions like the \\mitem<gauntlet of the ram>, except that you gain a bonus to the \\glossterm<shove> attack equal to the damage you dealt with the \\glossterm<strike>.
+            This item functions like the \\mitem<gauntlet of the ram>, except that you \\glossterm<knockback> the target up to 30 feet.
         """,
-        short_description="Shoves foe hard when use to strike",
+        short_description="Knocks back foe farther when use to strike",
     ))
 
     apparel.append(MagicItem(
@@ -1135,6 +1135,19 @@ def generate_worn():
             When you activate the gauntlets, you choose which spell to use.
         """,
         short_description="Can invest two spells to cast later",
+    ))
+
+    apparel.append(MagicItem(
+        name="Ring of Angel's Grace",
+        level=9,
+        material_type='Ring',
+        tags=[],
+        description="""
+            You gain +2 \\glossterm<magic bonus> to Mental defense.
+            In addition, if you fall at least 20 feet, ephemeral angel wings spring from your back.
+            The wings slow your fall to a rate of 60 feet per round, preventing you from taking \\glossterm<falling damage>.
+        """,
+        short_description="Grants +2 Mental and slows falls",
     ))
 
     # Other
