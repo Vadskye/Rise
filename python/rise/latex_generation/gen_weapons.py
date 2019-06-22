@@ -53,16 +53,6 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Potency",
-        level=4,
-        material_type='Weapon',
-        description="""
-            You gain a +1 \\glossterm<magic bonus> to \\glossterm<power> with this weapon.
-        """,
-        short_description="Grants +1 power",
-    ))
-
-    weapons.append(MagicItem(
-        name="Potency, Greater",
         level=8,
         material_type='Weapon',
         description="""
@@ -72,17 +62,7 @@ def generate_weapons():
     ))
 
     weapons.append(MagicItem(
-        name="Potency, Supreme",
-        level=12,
-        material_type='Weapon',
-        description="""
-            You gain a +3 \\glossterm<magic bonus> to \\glossterm<power> with this weapon.
-        """,
-        short_description="Grants +3 power",
-    ))
-
-    weapons.append(MagicItem(
-        name="Potency, Legendary",
+        name="Potency, Greater",
         level=16,
         material_type='Weapon',
         description="""
