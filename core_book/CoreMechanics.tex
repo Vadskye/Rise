@@ -139,7 +139,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             During the \glossterm{delayed action phase}, you can take a \glossterm{minor action} or \glossterm{standard action} if you did not use the corresponding action in the \glossterm{action phase}.
             Alternately, you can take a \glossterm{move action} or additional \glossterm{minor action} in place of a standard action.
             In addition, some abilities have effects during the delayed action phase instead of or in addition to their effects in the action phase.
-            For example, the \textit{charge} ability allows you to move during the action phase and attack during the delayed action phase (see \pcref{Charge}).
+            For example, the \textit{spring attack} ability allows you to move during the action phase and again during the delayed action phase (see Agility, page \featpref{Agility}).
 
     \subsection{Resolving Actions}\label{Resolving Actions}
 
@@ -967,6 +967,20 @@ It defines how attributes work and explains how to make physical attacks in comb
         A creature with a land speed can move across the ground at the indicated speed.
         Most creatures have a land speed.
 
+    \subsection{Forced Movement}\label{Forced Movement}
+        Some abilities can physically move you against your will.
+        Effects that limit movement speed, such as \glossterm{difficult terrain}, similarly limit the distance you can be moved by forced movement effects.
+        There are two kinds of forced movement: \glossterm{push} effects and \glossterm{knockback} effects.
+        Unless otherwise noted, all forced movement effects move the target in a single straight horizontal line.
+
+        \subsubsection{Push Effects}\label{Push Effects}
+            A creature affected by a \glossterm{push} effect is being pushed by a constant force.
+            If it encounters another creature or a solid obstacle during the movement, the forced movement effect ends without causing additional harm to the creature or the obstacle.
+
+        \subsubsection{Knockback Effects}\label{Knockback Effects}
+            A creature affected by a \glossterm{knockback} effect is thrown backwards by a single point of impact.
+            If it encounters another creature or a solid obstacle during the movement, it and the obstacle each take 1d6 damage \add 1d per 5 feet of movement remaining.
+
 \section{Ability Mechanics}\label{Ability Mechanics}
 
     \subsection{Targets}\label{Targets}
@@ -1417,19 +1431,29 @@ It defines how attributes work and explains how to make physical attacks in comb
             \lcaption{Special Combat Abilities}
             \begin{dtabularx}{\columnwidth}{>{\lcol}p{6em} l X}
                 \tb{Ability}  & \tb{Defense} & \tb{Brief Description} \tableheaderrule
-                Cleanse\fn{1} & \tdash       & Quickly remove a \glossterm{condition} \\
-                Desperate Exertion\fn{1} & \tdash & Gain a bonus on a single roll     \\
-                Dirty Trick   & Any          & Impose penalty on a foe                \\
-                Disarm        & Ref          & Attack item, knocking it free          \\
-                Grapple       & Fort and Ref & Wrestle with a foe                     \\
-                Overrun\fn{1} & Fort         & Move through foe's space               \\
-                Shove         & Fort         & Move a foe                             \\
-                Struggle      & \tdash       & Move 5 feet regardless of penalties    \\
-                Total Defense & \tdash       & Gain \plus2 to defenses                \\
-                Trip          & Ref          & Trip a foe                             \\
+                Charge                   & Armor        & Move and attack                        \\
+                Cleanse\fn{1}            & \tdash       & Quickly remove a \glossterm{condition} \\
+                Desperate Exertion\fn{1} & \tdash       & Gain a bonus on a single roll          \\
+                Dirty Trick              & Any          & Impose penalty on a foe                \\
+                Disarm                   & Ref          & Attack item, knocking it free          \\
+                Grapple                  & Fort and Ref & Wrestle with a foe                     \\
+                Overrun\fn{1}            & Fort         & Move through foe's space               \\
+                Shove                    & Fort         & Move a foe                             \\
+                Struggle                 & \tdash       & Move 5 feet regardless of penalties    \\
+                Total Defense            & \tdash       & Gain \plus2 to defenses                \\
+                Trip                     & Ref          & Trip a foe                             \\
             \end{dtabularx}
             1. This ability costs an \glossterm{action point} to use.
         \end{dtable}
+
+        \parhead{Charge} You can use the \textit{charge} ability as a standard action.
+
+        \begin{apability}{\labeltext{Charge}}
+            When you use this ability, you take \glossterm{subdual damage} equal to your level.
+
+            Move up to your speed in a single straight line.
+            At the end of your movement, you can make a melee \glossterm{strike} with a \minus2 penalty to \glossterm{accuracy} from your new location.
+        \end{apability}
 
         \parhead{Cleanse} You can use the \textit{cleanse} ability as a \glossterm{minor action}.
         As long as you are conscious, no effect can prevent you from using this ability, even effects that prohibit using any other abilities.
@@ -1506,11 +1530,9 @@ It defines how attributes work and explains how to make physical attacks in comb
             You use your Strength in place of your Perception to determine your \glossterm{accuracy} with this attack.
             In addition, for each size category larger or smaller than the target that you are, you gain a \plus4 bonus or penalty to \glossterm{accuracy}.
 
-            On a hit, you move the target up to 10 feet in a direction of your choice.
-            Effects that limit movement speed, such as \glossterm{difficult terrain}, similarly limit the distance you can move the target.
+            On a hit, you \glossterm{push} the target up to 10 feet.
             You can move the same distance that you push the target.
-            You cannot normally keep moving the target if it stops being adjacent to you.
-            If the target encounters a creature or solid object, you must stop moving it.
+            You cannot keep moving the target if it stops being adjacent to you.
         \end{freeability}
 
         \parhead{Struggle} As a standard action, you can use the \textit{struggle} ability to move despite movement impediments.
