@@ -43,15 +43,15 @@ def generate_mystic_spheres():
                 You cannot change direction the direction of the movement partway through.
                 Moving the target upwards cost twice the normal movement cost.
             """, tags=['Air', 'Swift']),
-            Spell('Wind Screen', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                The target gains a +1 \\glossterm<magic bonus> to Armor defense.
-                This bonus is increased to +5 against ranged \\glossterm<physical attacks> from weapons or projectiles that are Small or smaller.
+            Spell('Wind Screen', 1, 'Yourself', """
+                You gain a +1 \\glossterm<magic bonus> to Armor defense.
+                This bonus is increased to +4 against ranged \\glossterm<physical attacks> from weapons or projectiles that are Small or smaller.
 
                 You can cast this spell as a \\glossterm<minor action>.
                 Any effect which increases the size of creature this spell can affect also increases the size of ranged weapon it defends against by the same amount.
             """, tags=['Air', 'Attune (target)', 'Shielding']),
-            Spell('Greater Wind Screen', 4, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                This spell functions like the \\spell<wind screen> spell, except that the Armor defense bonus increases to +2 and the defense bonus against ranged attacks increases to +10.
+            Spell('Greater Wind Screen', 4, 'Yourself', """
+                This spell functions like the \\spell<wind screen> spell, except that the Armor defense bonus increases to +2 and the defense bonus against ranged attacks increases to +8.
             """, tags=['Air', 'Attune (target)', 'Shielding']),
             Spell('Windstrike', 1, 'One creature or object within \\rnglong range', """
                 Make an attack vs. Armor against the target.
@@ -836,14 +836,15 @@ def generate_mystic_spheres():
                 \\hit The target is \\glossterm<immobilized> and \\glossterm<dazed> as a single \\glossterm<condition>.
             """, tags=['Temporal']),
             Spell('Haste', 1, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-                The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<base speed>.
+                The target gains a +10 foot \\glossterm<magic bonus> to its \\glossterm<base speed>, up to a maximum of double its \\glossterm<base speed>.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)', 'Temporal']),
             Spell('Greater Haste', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
-                The target gains a +30 foot \\glossterm<magic bonus> to its \\glossterm<base speed>, up to a maximum of double its \\glossterm<base speed>.
-
-                You can cast this spell as a \\glossterm<minor action>.
+                This spell functions like the \\textit<haste> spell, except that the speed bonus increases to +20 feet.
+            """, tags=['Attune (target)', 'Temporal']),
+            Spell('Supreme Haste', 5, 'Yourself or an \\glossterm<ally> with in \\rngmed range', """
+                This spell functions like the \\textit<haste> spell, except that the speed bonus increases to +30 feet.
             """, tags=['Attune (target)', 'Temporal']),
             Spell('Temporal Duplicate', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
                 You reach into a possible future and create a duplicate of the target.
@@ -1450,18 +1451,18 @@ def generate_mystic_spheres():
                 You gain a +5 bonus on the check, and you can freely alter the appearance of the target's clothes and equipment, regardless of their original form.
                 However, this effect is unable to alter the sound, smell, texture, or temperature of the target or its clothes and equipment.
             """, tags=['Attune (target)', 'Sensation', 'Visual']),
-            Spell('Mirror Image', 2, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                Four illusory duplicates appear around the target that mirror its every move.
-                The duplicates shift chaotically in its space, making it difficult to identify the real creature.
+            Spell('Mirror Image', 2, 'Yourself', """
+                Four illusory duplicates appear around you that mirror your every move.
+                The duplicates shift chaotically in your space, making it difficult to identify your real location.
 
-                All \\glossterm<targeted> \\glossterm<physical attacks> against the target have a 50\\% miss chance.
+                All \\glossterm<targeted> \\glossterm<physical attacks> against you have a 50\\% miss chance.
                 When an attack misses in this way, it affects an image, destroying it.
                 This ability provides no defensive benefit against creatures immune to \\glossterm<Visual> abilities.
-            """, tags=['Attune (target)', 'Sensation', 'Visual']),
-            Spell('Greater Mirror Image', 4, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+            """, tags=['Attune (self)', 'Sensation', 'Visual']),
+            Spell('Greater Mirror Image', 4, 'Yourself', """
                 This spell functions like the \\spell<mirror image> spell, except that destroyed images can reappear.
                 At the end of each \\glossterm<action phase>, one destroyed image reappears, to a maximum of four images.
-            """, tags=['Attune (target)', 'Sensation', 'Visual']),
+            """, tags=['Attune (self)', 'Sensation', 'Visual']),
             Spell('Shadow Mantle', 3, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
                 This spell functions like the \\spell<blur> spell, except that the spell's deceptive nature extends beyond altering light to affect the nature of reality itself.
                 The defense bonus it provides applies to all defenses.
