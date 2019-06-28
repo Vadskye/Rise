@@ -230,9 +230,9 @@ def generate_maneuvers():
             If the target gains a point of \\glossterm<fatigue> from the attack, it gains an additional point of \\glossterm<fatigue>.
         """,
         rank_upgrades={
-            '3': 'You gain a +1 bonus to \\glossterm<accuracy> with the strike.',
-            '5': 'The target gains two additional points of fatigue instead of one.',
-            '7': 'The accuracy bonus increases to +3.',
+            '3': 'The damage penalty is reduced to -1d.',
+            '5': 'The target gains a point of \\glossterm<exhaustion> instead of a point of \\glossterm<fatigue>.',
+            '7': 'The target gains two additional points of \\glossterm<exhaustion> instead of one.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Wild', 'Trick'],
