@@ -255,10 +255,10 @@ def generate_armor():
         tags=['Mystic'],
         material_type='Shield',
         description="""
-            As a \\glossterm<minor action>, you can spend an \\glossterm<action point> to activate this item.
-            If you do, any \\glossterm<targeted> \\glossterm<magical> abilities that would target you are redirected to target the creature using that ability instead of you.
+            As a standard action, you can activate this shield.
+            When you do, any \\glossterm<targeted> \\glossterm<magical> abilities that would target you this round are redirected to target the creature using that ability instead of you.
             Any other targets of the ability are affected normally.
-            This is a \\glossterm<Swift> ability, and it lasts until the end of the round.
+            This is a \\glossterm<Swift> ability, so it affects any abilities targeting you in the phase you activate the item.
         """,
         short_description="React to reflect magical attacks",
     ))
@@ -315,27 +315,27 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Bracers of Repulsion",
-        level=5,
+        level=7,
         material_type='Bracers',
         description="""
-            As a standard action, you can spend an \\glossterm<action point> to activate these bracers.
-            When you do, they emit a telekinetic burst of force that targets everything within a \\areamed radius burst from you.
-            You make a \\glossterm<shove> attack against each target to push it away from you, using this item's \\glossterm<power> as your \\glossterm<accuracy>.
+            As a standard action, you can activate these bracers.
+            When you do, they emit a telekinetic burst of force.
+            Make an attack vs. Fortitude against everything within a \\areasmall radius burst from you.
             If you use this item during the \\glossterm<delayed action phase>,
-                you gain a +4 bonus to \\glossterm<accuracy> with this attack against any creature that attacked you during the action phase.
-            You do not have to move with any targets to push them the full distance of the shove.
+                you gain a +4 bonus to \\glossterm<accuracy> with this attack against any creature that attacked you during the \\glossterm<action phase>.
+            On a hit, you \\glossterm<knockback> each target up to 20 feet.
         """,
-        short_description="Can shove nearby creatures back",
+        short_description="Can knock nearby creatures back",
     ))
 
     apparel.append(MagicItem(
         name="Bracers of Repulsion, Greater",
-        level=10,
+        level=15,
         material_type='Bracers',
         description="""
             This item functions like the \\mitem<bracers of repulsion> item, except that it targets everything within a \\arealarge radius burst.
         """,
-        short_description="Can shove foes back",
+        short_description="Can knock many nearby creatures back",
     ))
 
     apparel.append(MagicItem(
@@ -375,11 +375,11 @@ def generate_worn():
         level=2,
         material_type='Gauntlet',
         description="""
-            If you hit on a \\glossterm<strike> with this gauntlet during the \\glossterm<action phase>, you can attempt to \\glossterm<shove> your foe during the \\glossterm<delayed action phase>.
+            When you make a \\glossterm<strike> with this gauntlet, you also compare the attack result to the target's Fortitude defense.
+            On a hit, you \\glossterm<knockback> the target up to 10 feet.
             Making a strike with this gauntlet is equivalent to an \\glossterm<unarmed attack>.
-            You do not need to move with your foe to push it back the full distance.
         """,
-        short_description="Shoves foe when used to strike",
+        short_description="Knocks back foe when used to strike",
     ))
 
     apparel.append(MagicItem(
@@ -387,9 +387,9 @@ def generate_worn():
         level=7,
         material_type='Gauntlet',
         description="""
-            This item functions like the \\mitem<gauntlet of the ram>, except that you gain a bonus to the \\glossterm<shove> attack equal to the damage you dealt with the \\glossterm<strike>.
+            This item functions like the \\mitem<gauntlet of the ram>, except that you \\glossterm<knockback> the target up to 30 feet.
         """,
-        short_description="Shoves foe hard when use to strike",
+        short_description="Knocks back foe farther when use to strike",
     ))
 
     apparel.append(MagicItem(
@@ -428,13 +428,13 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Circlet of Blasting",
-        level=4,
+        level=5,
         material_type='Circlet',
         tags=['Fire'],
         description="""
-            As a standard action, you can spend an \\glossterm<action point> to use this item.
+            As a standard action, you can activate this circlet.
             If you do, make an attack vs. Armor against a creature or object within \\rngmed range.
-            \\hit The target takes fire \\glossterm<standard damage> +1d.
+            \\hit The target takes fire \\glossterm<standard damage>.
         """,
         short_description="Can blast foe with fire",
     ))
@@ -502,9 +502,8 @@ def generate_worn():
             This crown is continuously on fire.
             The flame sheds light as a torch.
 
-            % TODO: clarify timing of choice
-            You and any number of willing creatures within a \\arealarge radius emanation from you
-            gain a \\glossterm<magic bonus> equal to this item's \\glossterm<power> to \\glossterm<damage reduction> against fire damage.
+            You and your \\glossterm<allies> within a \\arealarge radius emanation from you
+                gain a \\glossterm<magic bonus> equal to this item's \\glossterm<power> to \\glossterm<damage reduction> against fire damage.
         """,
         short_description="Grants nearby allies immunity to fire damage",
     ))
@@ -543,13 +542,9 @@ def generate_worn():
         tags=['Sonic'],
         description="""
             The crown constantly emits a low-pitched rumbling.
-            To you, the sound is barely perceptible.
+            To you and your \\glossterm<allies>, the sound is barely perceptible.
             However, all other creatures within a \\arealarge radius emanation from you hear the sound as a deafening, continuous roll of thunder.
             The noise blocks out all other sounds quieter than thunder, causing them to be \\deafened while they remain in the area and until the end of the next round after they leave.
-
-            As a \\glossterm<standard action>, you can designate a willing creature you touch as protected from the crown.
-            The target hears the crown's rumbling as a barely perceptable rumbling like you do.
-            This effect lasts until you revoke that protection, which you can do as a \\glossterm<free action>.
         """,
         short_description="Continously deafens nearby enemies",
     ))
@@ -577,11 +572,24 @@ def generate_worn():
         material_type='Boots',
         tags=['Air', 'Swift'],
         description="""
-            As a \\glossterm<free action>, you can spend an \\glossterm<action point> to use this item.
-            If you do, you may treat air as if it were solid ground to your feet for the rest of the current phase.
+            As a \\glossterm<free action>, you can activate these boots.
+            When you do, you may treat air as if it were solid ground to your feet for the rest of the current phase.
             You may selectively choose when to treat the air as solid ground, allowing you to walk or jump on air freely.
+            After using this ability, you cannot use it again until these boots touch the ground.
         """,
         short_description="Can walk on air",
+    ))
+
+    apparel.append(MagicItem(
+        name="Boots of the Skydancer, Greater",
+        level=13,
+        material_type='Boots',
+        tags=['Air', 'Swift'],
+        description="""
+            This item functions like the \\magicitem<boots of the skydancer>, except that the ability lasts until the end of the round.
+            In addition, you can use this item twice before the boots touch the ground.
+        """,
+        short_description="description",
     ))
 
     apparel.append(MagicItem(
@@ -708,7 +716,7 @@ def generate_worn():
         material_type='Boots',
         tags=['Teleportation'],
         description="""
-            As a standard action, you can spend an \\glossterm<action point> to use this item.
+            As a standard action, you can spend an \\glossterm<action point> to activate these boots.
             If you do, you teleport exactly 25 miles in a direction you specify.
             If this would place you within a solid object or otherwise impossible space, the boots will shunt you up to 1,000 feet in any direction to the closest available space.
             If there is no available space within 1,000 feet of your intended destination, the effect fails and you take \\glossterm<standard damage> -1d.
@@ -901,20 +909,8 @@ def generate_worn():
         description="""
             When you perform the \\ritual<plane shift> ritual, this amulet provides all action points required.
             This does not grant you the ability to perform the \\ritual<plane shift> ritual if you could not already.
-            It also does not provide any action points for subrituals of the \\ritual<plane shift> ritual.
         """,
         short_description="Aids travel with \\ritual<plane shift>",
-    ))
-
-    apparel.append(MagicItem(
-        name="Amulet of the Planes, Greater",
-        level=19,
-        material_type='Amulet',
-        tags=['Teleportation'],
-        description="""
-            This item functions like the \\magicitem<amulet of the planes> item, except that it also provides action points for all subrituals of the \\ritual<plane shift> ritual.
-        """,
-        short_description="Aid travel with \\ritual<plane shift> subrituals",
     ))
 
     apparel.append(MagicItem(
@@ -994,13 +990,13 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Vanishing Cloak",
-        level=8,
+        level=13,
         material_type='Cloak',
         tags=['Sensation', 'Teleportation'],
         description="""
-            As a standard action, you can spend an \\glossterm<action point> to use this item.
-            If you do, you teleport to an unoccupied location within \\rngmed range of your original location.
-            In addition, you become \\glossterm<invisible> unitl the end of the next round.
+            As a standard action, you can activate this cloak.
+            When you do, you teleport to an unoccupied location within \\rngmed range of your original location.
+            In addition, you become \\glossterm<invisible> until the end of the next round.
 
             If your intended destination is invalid, or if your teleportation otherwise fails, you still become invisible.
         """,
@@ -1010,7 +1006,19 @@ def generate_worn():
     # Maybe too strong?
     apparel.append(MagicItem(
         name="Hexward Amulet",
-        level=11,
+        level=9,
+        material_type='Amulet',
+        tags=['Mystic'],
+        description="""
+            You gain a +2 bonus to defenses against \\glossterm<magical> abilities that target you directly.
+            This does not protect you from abilities that affect an area.
+        """,
+        short_description="Grants +2 defenses against targeted magical attacks",
+    ))
+
+    apparel.append(MagicItem(
+        name="Hexproof Amulet, Greater",
+        level=15,
         material_type='Amulet',
         tags=['Mystic'],
         description="""
@@ -1020,23 +1028,11 @@ def generate_worn():
         short_description="Grants +4 defenses against targeted magical attacks",
     ))
 
-    apparel.append(MagicItem(
-        name="Hexproof Amulet, Greater",
-        level=17,
-        material_type='Amulet',
-        tags=['Mystic'],
-        description="""
-            You gain a +6 bonus to defenses against \\glossterm<magical> abilities that target you directly.
-            This does not protect you from abilities that affect an area.
-        """,
-        short_description="Grants +6 defenses against targeted magical attacks",
-    ))
-
     # Belts
 
     apparel.append(MagicItem(
         name="Belt of Healing",
-        level=1,
+        level=4,
         material_type='Belt',
         tags=['Life'],
         description="""
@@ -1048,7 +1044,7 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Belt of Healing, Greater",
-        level=7,
+        level=10,
         material_type='Belt',
         tags=['Life'],
         description="""
@@ -1122,17 +1118,17 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Gloves of Spell Investment",
-        level=5,
+        level=7,
         material_type='Gloves',
         tags=['Mystic'],
         description="""
-            When you cast a spell that does not have the \\glossterm<Attune> or \\glossterm<Sustain> tags,
+            When you cast a spell that does not have the \\glossterm<AP>, \\glossterm<Attune>, \\glossterm<Sustain> tags,
                 you can invest the magic of the spell in these gloves.
             If you do, the spell does not have its normal effect.
 
-            As a standard action, you can spend an \\glossterm<action point> to activate the gloves.
+            As a standard action, you can activate these gloves.
             When you do, you cause the effect of the last spell invested in the gloves.
-            This does not require \\glossterm<concentration> or \\glossterm<somatic components> and does not cost an \\glossterm<action point>.
+            This does not require \\glossterm<concentration> or \\glossterm<somatic components>.
             After you use a spell in this way, the energy in the gloves is spent, and you must invest a new spell to activate the gloves again.
 
             If you remove either glove from your hand, the magic of the spell invested in the gloves is lost.
@@ -1142,26 +1138,27 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Gloves of Spell Investment, Greater",
-        level=11,
+        level=13,
         material_type='Gloves',
         tags=['Mystic'],
         description="""
-            This item functions like the \\mitem<gloves of spell investment>, except that
-                activating the gloves to gain the effect of an invested spell does not cost an \\glossterm<action point>.
+            This item functions like the \\mitem<gloves of spell investment>, except that you can store up to two spells in the gloves.
+            When you activate the gauntlets, you choose which spell to use.
         """,
-        short_description="Can invest a spell to cast later for free",
+        short_description="Can invest two spells to cast later",
     ))
 
     apparel.append(MagicItem(
-        name="Gloves of Spell Investment, Supreme",
-        level=19,
-        material_type='Gloves',
-        tags=['Mystic'],
+        name="Ring of Angel's Grace",
+        level=9,
+        material_type='Ring',
+        tags=[],
         description="""
-            This item functions like the \\mitem<greater gloves of spell investment>, except that you can store up to two spells in the gloves.
-            When you activate the gauntlets, you choose which spell to use.
+            You gain +2 \\glossterm<magic bonus> to Mental defense.
+            In addition, if you fall at least 20 feet, ephemeral angel wings spring from your back.
+            The wings slow your fall to a rate of 60 feet per round, preventing you from taking \\glossterm<falling damage>.
         """,
-        short_description="Can invest two spells to cast later for free",
+        short_description="Grants +2 Mental and slows falls",
     ))
 
     # Other
