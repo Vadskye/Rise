@@ -1522,6 +1522,7 @@ It defines how attributes work and explains how to make attacks in combat.
                 Disarm                   & Ref          & Attack item, knocking it free          \\
                 Grapple                  & Fort and Ref & Wrestle with a foe                     \\
                 Overrun                  & Fort         & Move through foe's space               \\
+                Recover\fn{1}            & \tdash       & Remove all fatigue                     \\
                 Shove                    & Fort         & Move a foe                             \\
                 Struggle                 & \tdash       & Move 5 feet regardless of penalties    \\
                 Total Defense            & \tdash       & Gain \plus2 to defenses                \\
@@ -1607,6 +1608,12 @@ It defines how attributes work and explains how to make attacks in combat.
             On a miss, you end your movement immediately.
         \end{freeability}
 
+        \parhead{Recover} You can use the \textit{recover} ability as a standard action.
+        \begin{apability}{\labeltext{Recover}}[\glossterm{Swift}]
+            You remove all of your \glossterm{fatigue}.
+            Because this ability has the \glossterm{Swift} tag, this can increase your \glossterm{wound threshold} against attacks made against you during the current phase.
+        \end{apability}
+
         \parhead{Shove} As a standard action, you can use the \textit{shove} ability to physically move a creature.
 
         \begin{freeability}{Shove}\label{Shove}
@@ -1631,6 +1638,7 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \begin{freeability}{\labeltext{Total Defense}}[\glossterm{Swift}]
             You gain a \plus2 bonus to your \glossterm{defenses} until the end of the round.
+            Because this ability has the \glossterm{Swift} tag, this improves your defenses against attacks made against you during the current phase.
         \end{freeability}
 
         \parhead{Trip} As a standard action, you can use the \textit{trip} ability to trip a creature.
