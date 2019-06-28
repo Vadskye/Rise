@@ -366,6 +366,26 @@
     \bottomrule
 }
 
+\DeclareDocumentCommand{\targetrule}{s}{
+    \vspace{0.2em}
+    \hrule
+    \vspace{0.3em}
+    \par\noindent
+    \IfValueTF{#1}{\hspace{-0.25em}}{\hspace{-0.5em}}
+}
+
+\DeclareDocumentCommand{\target}{m}{
+    \par\noindent
+    Target:~#1
+    \targetrule*
+}
+
+\DeclareDocumentCommand{\targets}{m}{
+    \par\noindent
+    Targets:~#1
+    \targetrule
+}
+
 \ExplSyntaxOff
 
 \newcommand{\classbasics}[1]{\par\noindent\textbf{#1}:}

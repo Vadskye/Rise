@@ -80,7 +80,9 @@
 \DeclareDocumentEnvironment{freeability}{o m o}
 {
     \begin{thesamepage}
-        \spelltwocol{\IfValueTF{#1}{#1~--~}{}\textit{#2}}{
+    \spelltwocol{
+        \IfValueTF{#1}{#1~--~}{}\textit{#2}
+    }{
         \IfValueTF{#3}{#3}{}
     }
 }

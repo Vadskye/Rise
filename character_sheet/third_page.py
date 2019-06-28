@@ -6,24 +6,31 @@ from cgi_simple import (
 def create_page():
     return flex_row({'class': 'third-page'}, [
         flex_col({'class': 'sidebar'}, [
-            feats_summary(),
-            proficiencies(),
+            basic_info(),
             archetypes(),
+            feats_summary(),
             inventory(),
-            flex_col([
-                flex_wrapper(div({'class': 'section-header'}, 'Experience')),
-                div(text_input({'name': 'experience'})),
-            ]),
-            flex_col([
-                flex_wrapper(div({'class': 'section-header'}, 'Wealth')),
-                div(text_input({'name': 'wealth'})),
-            ]),
         ]),
         flex_col({'class': 'main-body'}, [
             equipment(),
             abilities_summary(),
             personality(),
         ]),
+    ])
+
+def basic_info():
+    return flex_col({'class': 'basic-info'}, [
+        flex_wrapper(div({'class': 'section-header'}, 'Basic Info')),
+        labeled_text_input('Species', input_attributes={'name': f'species'}),
+        labeled_text_input('Class', input_attributes={'name': f'class'}),
+        labeled_text_input('Armor proficiencies', input_attributes={'name': 'prof_armor'}),
+        text_input({'name': 'armor_proficiencies'}),
+        labeled_text_input('Weapon groups', input_attributes={'name': 'weapon_proficiencies_1'}),
+        text_input({'name': 'weapon_proficiencies_2'}),
+        labeled_text_input('Languages known', input_attributes={'name': 'language_proficiencies'}),
+        labeled_text_input('Alignment', input_attributes={'name': f'alignment'}),
+        labeled_text_input('Deity', input_attributes={'name': f'deity'}),
+        labeled_text_input('Experience points', input_attributes={'name': 'experience'}),
     ])
 
 def feats_summary():
@@ -64,11 +71,6 @@ def feat_row(level):
 def proficiencies():
     return flex_col({'class': 'proficiencies'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Proficiencies')),
-        labeled_text_input('Armor', input_attributes={'name': 'prof_armor'}),
-        text_input({'name': 'armor_proficiencies'}),
-        labeled_text_input('Weapons', input_attributes={'name': 'weapon_proficiencies_1'}),
-        text_input({'name': 'weapon_proficiencies_2'}),
-        labeled_text_input('Languages', input_attributes={'name': 'language_proficiencies'}),
     ])
 
 def subsection_header(attributes=None, contents=None):
@@ -84,7 +86,7 @@ def equipment():
                 labeled_text_input('Name', {'class': 'equipment-name'}, {'name': f'equipment_name_{i}'}),
                 labeled_text_input('Effects', {'class': 'equipment-effects'}, {'name': f'equipment_effects_{i}'}),
             ])
-            for i in range(5)
+            for i in range(6)
         ],
     ])
 
@@ -100,7 +102,7 @@ def inventory():
     return div({'class': 'inventory'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Inventory')),
         *[
-            text_input({'name': f"inventory_{i}"}) for i in range(13)
+            text_input({'name': f"inventory_{i}"}) for i in range(9)
         ]
     ])
 
@@ -115,8 +117,6 @@ def misc_equipment(body_slot, body_slot_html=None):
 
 def personality():
     return flex_col({'class': 'personality'}, [
-        div({'class': 'section-header'}, 'Alignment and Deity'),
-        div(text_input({'name': 'alignment_and_deity'})),
         div({'class': 'section-header'}, 'Personality and Background'),
         "".join([div(text_input({'name': f'personality_and_background_{i}'})) for i in range(5)]),
         div({'class': 'section-header goals-and-flaws'}, 'Goals and Flaws'),

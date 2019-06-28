@@ -52,8 +52,8 @@ def aberrations(sample_monsters):
             active_ability('Mind Crush', f"""
                 The aboleth makes a +{aboleth.accuracy()} vs. Mental attack against a creature in \\rnglong range.
                 \\hit The target takes {aboleth.standard_damage('magical') + 3} psionic damage and is \\glossterm<stunned> as a \\glossterm<condition>.
-                \\crit The aboleth can spend an action point.
-                If it does, the target is \\glossterm<dominated> by the aboleth for as long as the aboleth \\glossterm<attunes> to this ability.
+                \\crit The aboleth can spend an \\glossterm<action point> to \\glossterm<attune> to this ability.
+                If it does, the target is \\glossterm<dominated> by the aboleth as long as the ability lasts.
                 Otherwise, the target takes double the damage of a non-critical hit.
             """, tags=['Compulsion']),
             active_ability('Psionic Blast', f"""
@@ -120,8 +120,7 @@ def animals(sample_monsters):
         dire_wolf,
         active_abilities=[
             active_ability('Pounce', """
-                The dire wolf moves up to its movement speed.
-                If it uses this ability during the action phase, it can make a bite strike during the delayed action phase.
+                The dire wolf moves up to its speed in a single straight line and makes a bite \\glossterm<strike> from its new location.
             """),
         ],
     ))
@@ -248,13 +247,8 @@ def humanoids(sample_monsters):
     monsters.append(get_creature_latex(
         goblin_shouter,
         active_abilities=[
-            active_ability('Shout of Running', """
-                The shouter chooses any number of willing creatures other than itself who can hear it.
-                Each target does not have to spend \\glossterm<action points> to use use the \\textit<sprint> ability.
-            """, tags=['Sustain (standard)']),
             active_ability('Shout of Stabbing', """
-                The shouter chooses any number of willing creatures other than itself who can hear it.
-                Each target gains a +1d bonus to damage with \\glossterm<strikes>.
+                The shouter's \\glossterm<allies> that can hear it gain a +2 bonus to \\glossterm<power> with \\glossterm<strikes>.
             """, tags=['Sustain (standard)']),
         ],
         behavior='Attack lowest threat',
@@ -277,8 +271,7 @@ def humanoids(sample_monsters):
         orc_chieftain,
         active_abilities=[
             active_ability('Hit Everyone Else', """
-                The chieftain chooses any number of willing creatures other than itself who can hear it.
-                Each target gains a +2 bonus to \\glossterm<accuracy> with \\glossterm<strikes>.
+                The chieftain's \\glossterm<allies> that can hear it gain a +2 bonus to \\glossterm<accuracy> with \\glossterm<strikes>.
             """, tags=['Sustain (standard)']),
             active_ability('Hit Hardest', f"""
                 The chieftain makes a greataxe strike.
@@ -311,9 +304,8 @@ def humanoids(sample_monsters):
                 Its accuracy is reduced to {orc_loudmouth.accuracy('perception') - 2}, but the strike deals {orc_loudmouth.weapon_damage(Weapon('greataxe')) + 2} damage.
             """),
             active_ability('Hit That One Over There', """
-                The loudmouth chooses any number of willing creatures other than itself who can hear it.
-                In addition, it chooses an enemy within Long range.
-                Each target gains a +2 bonus to accuracy with strikes against the chosen enemy.
+                The loudmouth chooses an enemy within Long range.
+                The loudmouth's \\glossterm<allies> that can hear it gain a +2 bonus to \\glossterm<accuracy> with \\glossterm<strikes> against that target.
             """, tags=['Sustain (standard)']),
         ],
     ))
@@ -328,7 +320,7 @@ def humanoids(sample_monsters):
                 \\crit As above, except that the penalty is increased to -6.
             """),
             active_ability('Hurt Less', f"""
-                One other willing creature in Close range removes two points of \\glossterm<fatigue>.
+                One \\glossterm<ally> in Close range removes a point of \\glossterm<fatigue>.
             """),
         ],
     ))
@@ -541,7 +533,7 @@ def magical_beasts(sample_monsters):
                 When the hydra gains a point of \\glossterm<fatigue>, it loses once of its heads.
                 Severed heads leave behind a stump that can quickly grow new heads.
 
-                At the end of each delayed action phase, if the hydra has a severed stump, the stump is either sealed or it grows two new heads.
+                At the end of each round, if the hydra has a severed stump, the stump is either sealed or it grows two new heads.
                 If the hydra took at least as much acid, cold, or fire damage as its \\glossterm<fatigue threshold> during that phase, the stump is sealed, and will stop growing new heads.
                 Otherwise, the hydra grows two new heads from the stump.
                 This grants it additional actions during the action phase as normal.
@@ -558,8 +550,7 @@ def magical_beasts(sample_monsters):
         minotaur,
         active_abilities=[
             active_ability('Impaling Charge', f"""
-                The minotaur moves up to its speed in a single straight line.
-                If it uses this ability during the \\glossterm<action phase>, it can make a gore \\glossterm<strike> from its new location during the \\glossterm<delayed action phase>.
+                The minotaur moves up to its speed in a single straight line and makes a gore \\glossterm<strike> from its new location.
             """),
         ],
         passive_abilities=[
@@ -702,11 +693,11 @@ def outsiders(sample_monsters):
         astral_deva,
         active_abilities=[
             active_ability('Smite', """
-                The angel makes a mace strike.
+                The angel makes a melee \\glossterm<strike>.
                 If its target is evil, it gains a +2 bonus to accuracy and a +2d bonus to damage on the strike.
             """),
             active_ability("Angel's Grace", f"""
-                One willing creature within reach removes two points of \\glossterm<fatigue>.
+                One \\glossterm<ally> within reach removes two points of \\glossterm<fatigue>.
             """),
         ],
     ))
@@ -872,7 +863,6 @@ def undead(sample_monsters):
             passives['slow'](zombie),
             passives['soft flesh'](zombie),
         ],
-        # TODO: this creature acts during the delayed action phase
     ))
 
     zombie_warrior = sample_monsters['zombie_warrior']
@@ -891,7 +881,6 @@ def undead(sample_monsters):
             passives['slow'](zombie_hulking),
             passives['soft flesh'](zombie_hulking),
         ],
-        # TODO: this creature acts during the delayed action phase
     ))
 
     zombie_captain = sample_monsters['zombie_captain']
@@ -901,7 +890,6 @@ def undead(sample_monsters):
             passives['slow'](zombie_captain),
             passives['soft flesh'](zombie_captain),
         ],
-        # TODO: this creature acts during the delayed action phase
     ))
 
     zombie_elite = sample_monsters['zombie_elite']
