@@ -1,6 +1,7 @@
 valid_tags = set([
     'Acid',
     'Air',
+    'AP',
     'Attune (ritual)',
     'Attune (ritual; see text)',
     'Attune (self)',
@@ -36,6 +37,7 @@ valid_tags = set([
     'Sustain (minor)',
     'Sustain (free)',
     'Swift',
+    'Swift (see text)',
     'Teleportation',
     'Temporal',
     'Trap',
@@ -56,11 +58,9 @@ def is_valid_tag(tag):
     return tag in valid_tags
 
 def to_latex_tags(tags):
-    if tags:
-        return (
-            '[' + ', '.join([
-                glosstermify(tag) for tag in sorted(tags)
-            ]) + ']'
-        )
-    else:
-        return ""
+    tags = filter(lambda t: t != 'AP', tags)
+    return (
+        '[' + ', '.join([
+            glosstermify(tag) for tag in sorted(tags)
+        ]) + ']'
+    )

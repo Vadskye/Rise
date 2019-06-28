@@ -6,6 +6,10 @@ input {
     font-size: 1em;
 }
 
+.first-page input[type=number], .second-page input[type=number], .third-page  input[type=number] {
+    width: 3em;
+}
+
 .first-page {
     .boring-row {
         .level-input {
@@ -22,6 +26,9 @@ input {
         .skill-label {
             font-size: 1em;
         }
+        .skill-label.misc {
+            flex-basis: 2.5em;
+        }
     }
 }
 
@@ -29,16 +36,9 @@ input {
     margin-bottom: 1em;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type="number"] {
-    -moz-appearance: textfield;
-}
-
-input[type="number"], input[type="text"].fake-number {
-    width: 2.5em !important;
+input[type=number]:disabled::-webkit-inner-spin-button,
+input[type=number]:disabled::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    display: none;
+    margin: 0;
 }

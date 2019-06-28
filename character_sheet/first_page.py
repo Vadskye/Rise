@@ -2,7 +2,7 @@ from cgi_simple import (
     button, div, flex_col, flex_row, flex_wrapper, freeform_number_input,
     labeled_number_input, labeled_text_input, number_input, sidelabel, text_input, underlabel, underlabel_spaced
 )
-from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, ROLL20_CALC
+from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS
 
 def create_page():
     return flex_row({'class': 'first-page'}, [
@@ -25,27 +25,10 @@ def boring_stuff():
             labeled_text_input('Character name', input_attributes={'name': 'character_name'}),
             labeled_text_input('Player name', input_attributes={'name': 'player_name'}),
             labeled_text_input('Concept', input_attributes={'name': 'concept'}),
-        ]),
-        flex_row({'class': 'boring-row'}, [
             underlabel_spaced(
                 'Level',
                 number_input({'class': 'fake-text', 'name': 'level'}),
                 attributes={'class': 'level-input'},
-            ),
-            labeled_text_input(
-                'Class',
-                attributes={'class': 'class-input'},
-                input_attributes={'name': 'class'},
-            ),
-            labeled_text_input(
-                'Species and background',
-                attributes={'class': 'species-input'},
-                input_attributes={'name': 'species_and_background'},
-            ),
-            labeled_text_input(
-                'Description',
-                attributes={'class': 'description-input'},
-                input_attributes={'name': 'description'},
             ),
         ]),
     ])
@@ -97,30 +80,23 @@ def skill_box(name):
         }),
     ])
 
-# def resources():
-#     return flex_col({'class': 'resources'}, [
-#         flex_wrapper({'class': 'section-header'}, 'Resources'),
-#         flex_wrapper({'class': 'action-point-header'}, 'Action points'),
-#         flex_row({'class': 'action-point-wrapper'}, [
-#             underlabel('Reserve', number_input({
-#                 'disabled': True,
-#                 'name': 'action_points_max',
-#                 'value': ROLL20_CALC['reserve_ap'],
-#             })),
-#             underlabel('Recover', number_input({
-#                 'disabled': True,
-#                 'name': 'action_points_recovery_max',
-#                 'value': ROLL20_CALC['recovery_ap'],
-#             })),
-#             underlabel('Attuned', number_input({'name': 'action_points_attuned'})),
-#         ]),
-#         labeled_number_input('Legend points', input_attributes={
-#             'disabled': True,
-#             'name': 'legend_points_display',
-#             'value': '@{legend_points}',
-#         }),
-#         labeled_number_input('Item slots', input_attributes={'name': 'item_slots'}),
-#     ])
+def resources():
+    return flex_col({'class': 'resources'}, [
+        flex_wrapper({'class': 'section-header'}, 'Resources'),
+        flex_wrapper({'class': 'action-point-header'}, 'Action points'),
+        flex_row({'class': 'action-point-wrapper'}, [
+            underlabel('Max', number_input({
+                'disabled': True,
+                'name': 'action_points_total_display',
+                'value': '@{action_points_total}',
+            })),
+            # This needs to be editable to support the Null feat
+            underlabel('Available', number_input({
+                'name': 'action_points_available',
+            })),
+            underlabel('Attuned', number_input({'name': 'action_points_attuned'})),
+        ]),
+    ])
 
 def statistics_header():
     return ''.join([
@@ -173,43 +149,10 @@ def core_statistics():
             'name': 'fatigue_threshold_display',
             'value': '(@{fortitude_scaling} + @{fatigue_threshold_misc})',
         })),
-        freeform_number_input(number_input_attributes={'name': 'freeform-core-statistic'})
-    ])
-
-def resources():
-    return flex_col({'class': 'resources'}, [
-        flex_wrapper(div({'class': 'section-header'}, 'Resources')),
-        flex_row({'class': 'recovery-action-points'}, [
-            div({'class': 'resource-header number-label'}, 'Recovery AP'),
-            flex_row({'class': 'resource-inputs'}, [
-                number_input({
-                    'name': f"recovery_ap_{i}"
-                })
-                for i in range(5)
-            ]),
-        ]),
-        flex_row({'class': 'reserve-action-points'}, [
-            div({'class': 'resource-header number-label'}, 'Reserve AP'),
-            flex_row({'class': 'resource-inputs'}, [
-                number_input({
-                    'name': f"reserve_ap_{i}"
-                })
-                for i in range(6)
-            ]),
-        ]),
-        flex_row({'class': 'item-slots'}, [
-            div({'class': 'resource-header number-label'}, 'Item slots'),
-            flex_row({'class': 'resource-inputs'}, [
-                number_input({
-                    'name': f"item_slot_{i}"
-                })
-                for i in range(4)
-            ]),
-        ]),
-        flex_row({'class': 'legend-points'}, [
-            div({'class': 'resource-header number-label'}, 'Legend point'),
-            number_input({'name': 'legend_point'}),
-        ]),
+        freeform_number_input(
+            number_input_attributes={'name': 'freeform_core_statistic'},
+            text_input_attributes={'name': 'freeform_core_statistic_name'},
+        )
     ])
 
 def movement():
@@ -225,7 +168,7 @@ def movement():
 def abilities():
     return flex_col({'class': 'abilities'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Abilities')),
-        "".join([ability(i) for i in range(10)]),
+        "".join([ability(i) for i in range(11)]),
     ])
 
 def ability(ability_number=None):

@@ -73,10 +73,10 @@
             Walk & 150 ft. & 200 ft. & 300 ft. & 400 ft. \\
             Hustle & 300 ft. & 400 ft. & 600 ft. & 800 ft. \\
             One Hour (Overland) &  &  &  &  \\
-            Walk & 1-1/2 miles & 2 miles & 3 miles & 4 miles \\
-            Hustle & 3 miles & 4 miles & 6 miles & 8 miles \\
+            Walk & 3/4 mile & 1 mile & 1-1/2 miles & 2 miles \\
+            Hustle & 1-1/2 miles & 2 miles & 3 miles & 4 miles \\
             One Day (Overland) &  &  &  &  \\
-            Walk & 15 miles & 20 miles & 30 miles & 40 miles \\
+            Walk & 7-1/2 miles & 10 miles & 15 miles & 20 miles \\
             Hustle & \tdash & \tdash & \tdash & \tdash \\
         \end{dtabularx}
     \end{dtable}
@@ -116,16 +116,16 @@
         \begin{dtable}
             \lcaption{Terrain and Overland Movement}
             \begin{dtabularx}{\columnwidth}{>{\lcol}X c c c}
-                \tb{Terrain}  & \tb{Highway} & \tb{Road or Trail} & \tb{Trackless} \tableheaderrule
-                Desert, sandy & \mult1 & \mult1/2 & \mult1/2 \\
-                Forest & \mult1 & \mult1 & \mult1/2 \\
-                Hills & \mult1 & \mult3/4 & \mult1/2 \\
-                Jungle & \mult1 & \mult3/4 & \mult1/4 \\
-                Moor & \mult1 & \mult1 & \mult3/4 \\
-                Mountains & \mult3/4 & \mult3/4 & \mult1/2 \\
-                Plains & \mult1 & \mult1 & \mult3/4 \\
-                Swamp & \mult1 & \mult3/4 & \mult1/2 \\
-                Tundra, frozen & \mult1 & \mult3/4 & \mult3/4
+                \tb{Terrain}   & \tb{Highway} & \tb{Road or Trail} & \tb{Trackless} \tableheaderrule
+                Desert, sandy  & \mult1       & \mult1/2           & \mult1/2 \\
+                Forest         & \mult1       & \mult1             & \mult1/2 \\
+                Hills          & \mult1       & \mult3/4           & \mult1/2 \\
+                Jungle         & \mult1       & \mult3/4           & \mult1/4 \\
+                Moor           & \mult1       & \mult1             & \mult3/4 \\
+                Mountains      & \mult3/4     & \mult3/4           & \mult1/2 \\
+                Plains         & \mult1-1/2   & \mult1             & \mult3/4 \\
+                Swamp          & \mult1       & \mult3/4           & \mult1/2 \\
+                Tundra, frozen & \mult1       & \mult3/4           & \mult3/4
             \end{dtabularx}
         \end{dtable}
 
@@ -164,22 +164,48 @@
         \end{dtable}
 
         Characters covering long distances cross-country use overland movement. Overland movement is measured in miles per hour or miles per day. A day represents 10 hours of actual travel time. For rowed watercraft, a day represents 10 hours of rowing. For a sailing ship, it represents 24 hours.
-        \parhead{Walk} A character can walk 10 hours in a day of travel without a problem. Walking for longer than that can wear them out (see Forced March, below).
-        \parhead{Hustle} A character can hustle for 1 hour without a problem. Hustling for a second hour in between sleep cycles deals 1 point of \glossterm{subdual damage}, and each additional hour deals twice the damage taken during the previous hour of hustling.
+
+        \parhead{Walk} A character can walk 10 hours in a day of travel without a problem. Walking for longer than that, or hustling faster than that, can wear them out (see \pcref{Overland Exertion}).
         \parhead{Terrain} The terrain through which a character travels affects how much distance they can cover in an hour or a day (see \trefnp{Terrain and Overland Movement}).
         A highway is a straight, major, paved road.
         A road is typically a dirt track.
         A trail is like a road, except that it allows only single-file travel and does not benefit a party traveling with vehicles.
         Trackless terrain is a wild area with no significant paths.
-        \parhead{Forced March}\label{Forced March} In a day of normal walking, a character walks for 10 hours. The rest of the daylight time is spent making and breaking camp, resting, and eating.
-
-        A character can walk for more than 10 hours between \glossterm{long rests} by making a forced march. For each hour of marching beyond 10 hours, a Constitution check (DR 10, \plus2 per extra hour) is required. If the check fails, the character takes 1d6 points of subdual damage \plus1d per hour of marching. It's possible for you to march into unconsciousness by pushing yourself too hard.
-
-        \parhead{Mounted Movement} A mount bearing a rider can move at a hustle. The damage it takes when doing so, however, is not subdual damage. The creature can also be ridden in a forced march, but its Constitution checks automatically fail, and, again, the damage it takes is lethal damage.
+        \parhead{Mounted Movement} A mount bearing a rider can move at a hustle. The damage it takes when doing so, however, is lethal damage, not subdual damage. The creature can also be ridden in a forced march, but its Constitution checks automatically fail, and, again, the damage it takes is lethal damage. Mounts also become fatigued when they take any damage from hustling or forced marches.
 
         See \trefnp{Mounts and Vehicles} for mounted speeds and speeds for vehicles pulled by draft animals.
 
         \parhead{Waterborne Movement} See \trefnp{Mounts and Vehicles} for speeds for water vehicles.
+
+    \subsubsection{Overland Exertion}
+        You can exert yourself while travelling overland to cover more ground.
+        If you exert yourself, you can hustle, which allows you to travel twice the normal distance in the same time.
+        You can also make a forced march, which allows you to travel for a longer period of time during the day.
+        You can also combine both forms of exertion.
+        Exerting yourself for an hour in between \glossterm{long rests} deals 1d6 point of \glossterm{subdual damage}.
+        Each additional hour deals \plus1d more subdual damage than the previous hour.
+        This damage cannot be healed by a \glossterm{short rest}, and it ignores \glossterm{damage reduction} and \glossterm{hardness}.
+        The damage progression is summarized in \tref{Overland Exertion Damage}.
+
+        If you combine both forms of exertion, you take both increments of subdual damage in sequence, increasing each one.
+        For example, if you forced march for an hour and then both forced march and hustled for an hour, you would take 1d6 point of \glossterm{subdual damage} in the first hour.
+        In the second hour, you would take 1d8 points of subdual damage for hustling and 1d10 points of subdual damage for the forced march.
+
+        \begin{dtable}
+            \lcaption{Overland Exertion Damage}
+            \begin{dtabularx}{\columnwidth}{l X}
+                \tb{Hours exerted} & \tb{Damage per hour} \\
+                1 & 1d6 \\
+                2 & 1d8 \\
+                3 & 1d10 \\
+                4 & 2d6 \\
+                5 & 2d8 \\
+                6 & 2d10 \\
+                7 & 4d6 \\
+                8 & 4d8 \\
+                9 & 4d10 \\
+            \end{dtabularx}
+        \end{dtable}
 
 \section{Exploration}
     \subsection{Vision and Light}

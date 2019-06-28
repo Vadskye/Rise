@@ -53,16 +53,6 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Potency",
-        level=4,
-        material_type='Weapon',
-        description="""
-            You gain a +1 \\glossterm<magic bonus> to \\glossterm<power> with this weapon.
-        """,
-        short_description="Grants +1 power",
-    ))
-
-    weapons.append(MagicItem(
-        name="Potency, Greater",
         level=8,
         material_type='Weapon',
         description="""
@@ -72,17 +62,7 @@ def generate_weapons():
     ))
 
     weapons.append(MagicItem(
-        name="Potency, Supreme",
-        level=12,
-        material_type='Weapon',
-        description="""
-            You gain a +3 \\glossterm<magic bonus> to \\glossterm<power> with this weapon.
-        """,
-        short_description="Grants +3 power",
-    ))
-
-    weapons.append(MagicItem(
-        name="Potency, Legendary",
+        name="Potency, Greater",
         level=16,
         material_type='Weapon',
         description="""
@@ -257,8 +237,8 @@ def generate_weapons():
         material_type='Weapon',
         description="""
             You can throw this weapon as if it was designed to be thrown.
-            In addition, as a standard action, you can spend an \\glossterm<action point> to throw this weapon in a spinning arc.
-            When you do, make a thrown \\glossterm<strike> against up to three targets within two range increments.
+            In addition, as a standard action, you can throw this weapon in a spinning arc.
+            When you do, make a thrown \\glossterm<strike> against up to three targets within two \\glossterm<range increments>.
             After attacking the last target, the weapon flies to your hand.
         """,
         short_description="Can be thrown to strike multiple foes",
@@ -319,7 +299,7 @@ def generate_weapons():
         material_type='Weapon',
         tags=['Shaping'],
         description="""
-             As a standard action, you can spend an \\glossterm<action point> to activate this item.
+             As a standard action, you can activate this weapon.
              If you do, it changes shape into a new weapon of your choice from the same weapon group.
         """,
         short_description="Can change into similar weapon",
@@ -331,7 +311,7 @@ def generate_weapons():
         material_type='Weapon',
         tags=['Shaping'],
         description="""
-             As a standard action, you can spend an \\glossterm<action point> to activate this item.
+             As a standard action, you can activate this weapon.
              If you do, it changes shape into a new weapon of your choice that you are proficient with.
              This can only change into existing manufactured weapons, not improvised weapons (see \\pcref<Weapons>).
         """,
@@ -423,7 +403,7 @@ def generate_weapons():
         material_type='Weapon',
         tags=['Shaping'],
         description="""
-            As a \\glossterm<standard action>, you can spend an \\glossterm<action point> to activate this weapon.
+            As a \\glossterm<standard action>, you can activate this weapon.
             If you do, make a \\glossterm<strike> or a \\glossterm<disarm> attack.
             If your disarm succeeds, or if your strike hit an unattended object, this weapon can absorb the struck object.
             The object must be at least one size category smaller than the weapon.

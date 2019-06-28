@@ -12,8 +12,8 @@ For the Acid ability tag, see \pcref{Ability Tags}.
 \glossdef{action phase} The action phase is the second of two \glossterm{phases} in a combat \glossterm{round}.
 During the action phase, creatures can \glossterm{attack}, cast \glossterm{spells}, and take other major combat actions.
 
-\glossdef{action point} Action points allow you to perform special abilities that you have access to.
-There are two types of action points: \glossterm{recovery action points} and \glossterm{reserve action points}.
+\glossdef{action point} Action points allow you to \glossterm{attune} to effects such as spells or items (see \pcref{Attunement}).
+In addition, you can use some special abilities by spending \glossterm{action points}.
 For details, see \pcref{Action Points}.
 
 \glossdef{active cover} Active cover is a type of \glossterm{cover} provided by mobile obstacles that can block \glossterm{physical attacks}.
@@ -28,8 +28,8 @@ For details, see \pcref{Active Cover}.
 For details, see \pcref{Alignment}.
 
 \glossdef{ally}[allies] Some beneficial abilities affect allies.
-An ally is any creature you choose who also considers you an ally, not including yourself.
-Creatures who are not allies are considered \glossterm{enemies}.
+An ally is any creature you consider an ally who also considers you an ally, not including yourself.
+For details, see \pcref{Allies and Enemies}.
 
 \glossdef{AP} An ability with the AP tag costs an \glossterm{action point} to use.
 For details, see \pcref{Ability Tags}.
@@ -67,7 +67,7 @@ For details, see \pcref{Attunement}.
 \glossdef{Attune} An ability with this \glossterm{ability tag} lasts as long as a creature attunes to it.
 For details, see \pcref{Attunement}.
 
-\glossdef{attuned} If you are attuned to an ability, you have invested an action point in it to maintain its effect.
+\glossdef{attuned} If you are attuned to an ability, you have invested an \glossterm{action point} in it to maintain its effect.
 For details, see \pcref{Attunement}.
 
 \glossdef{Auditory} See \pcref{Ability Tags}.
@@ -109,8 +109,8 @@ If it takes an additional \glossterm{vital wound}, it becomes \glossterm{destroy
 \glossdef{burst} A burst is a type of area that an ability can have (see \pcref{Area Types}).
 A burst ability has an immediate effect on all valid targets within an area.
 
-\glossdef{cantrip}[cantrips] Every \glossterm{spell} can be cast as a cantrip.
-A cantrip is a weaker version of the spell that does not cost an \glossterm{action point} to use.
+\glossdef{cantrip}[cantrips] Some \glossterm{mystic spheres} have minor spells called cantrips.
+Anyone who has access to a mystic sphere knows all cantrips from that sphere.
 For details, see \pcref{Cantrips}.
 
 \glossdef{Chaos} See \pcref{Ability Tags}.
@@ -119,6 +119,7 @@ For details, see \pcref{Cantrips}.
 For details, see \pcref{Challenge Rating}.
 
 \glossdef{charge}[charging] You can move up to a foe and attack it with the \textit{charge} ability.
+This can allow you to make a melee attack during the \glossterm{action phase} if you did not end up adjacent to a creature during \glossterm{movement phase}.
 For details, see \pcref{Charge}.
 
 \glossdef{Charm} See \pcref{Ability Tags}.
@@ -216,9 +217,8 @@ For example, damage reduction against piercing damage would not help if you are 
 \glossdef{darkvision} A creature with darkvision can see in the dark clearly up to a given range.
 Darkvision does not function if a creature is in a brightly lit area, and does not resume functioning until the end of the next round after the creature leaves the brightly lit area.
 
-\glossdef{dazed} A dazed creature cannot act during the \glossterm{action phase}.
-It can take its normal actions during the \glossterm{delayed action phase}.
-In addition, the creature takes a \minus2 penalty to \glossterm{defenses}.
+\glossdef{dazed} A dazed creature takes a \minus2 penalty to \glossterm{accuracy} and Mental defense.
+This does not stack with the \glossterm{stunned} effect.
 
 \glossdef{dazzled} A dazzled creature has difficulty seeing.
 It loses any special vision abilities it has, such as \glossterm{darkvision} or \glossterm{low-light vision}.
@@ -229,6 +229,8 @@ In addition, it takes a \minus2 penalty to \glossterm{accuracy} and visual Aware
 \glossdef{deafened} A deafened creature cannot hear. It automatically fails at actions which depend on hearing. In addition, it has a 20\% failure chance when casting any spell with verbal components.
 
 \glossdef{decelerated} A decelerated creature moves at one quarter speed and takes a \minus4 penalty to Reflex defense.
+In addition, a dazed creature cannot act during the \glossterm{action phase}.
+It can take its normal actions during the \glossterm{delayed action phase}.
 
 \glossdef{defenseless} A defenseless creature is unable to defend itself in melee combat.
 \glossterm{Melee attacks} against it gain a \plus2 bonus to accuracy.
@@ -315,8 +317,8 @@ If that creature or object moves, the emanation moves with it.
 For details, see \pcref{Encumbrance}.
 
 \glossdef{enemy}[enemies] Some harmful abilities affect enemies.
-An enemy is any creature other than yourself who you consider to be an enemy or who considers you to be an enemy.
-Creatures who are not enemies are considered \glossterm{allies}.
+An enemy is any creature you consider to be an enemy.
+For details, see \pcref{Allies and Enemies}.
 
 \glossdef{energy}[energy damage] There are four types of energy: cold, electricity, fire, and sonic. Energy effects often deal damage.
 
@@ -424,6 +426,7 @@ It takes 1d6 fire damage at the end of each \glossterm{action phase} and takes a
 
 \glossdef{immobilized} An immobilized creature can't move out of the space it was in when it became immobilized.
 Immobilized flying creatures that have the ability to hover can maintain their initial altitude.
+% TODO: Fix flying interaction; safest way to descend for non-good maneuverability
 All other flying creatures subjected to this condition descend at a rate of 20 feet per round until they reach the ground, taking no falling damage.
 
 \glossdef{improvised weapon}[improvised weapons] An improvised weapon is an object which could conceivably be used as a weapon, but which was not designed for that purpose.
@@ -446,26 +449,21 @@ It can fight while partially inside an object, which grants it passive \glosster
 For details, see \pcref{Initiative}.
 
 \glossdef{insight points} Insight points can be spent to learn additional abilities.
-You gain access to insight points at 2nd level.
 For details, see \pcref{Insight Points}.
 
 \glossdef{invisible} An invisible creature or object cannot be seen. Creatures unable to see an invisible creature are \defenseless against its attacks. Attackers suffer a 50\% miss chance even if they know the location of the invisible creature. See \pcref{Awareness}, and \pcref{Stealth}, for how to identify invisible creatures.
-
-\glossdef{item slot}[item slots] Item slots are a resource that you can use to \glossterm{attune} to items in place of \glossterm{action points}.
-If you use an item slot to attune to an item, you gain its effects without reducing your available action points.
-For details, see \pcref{Item Slots}.
 
 \glossdef{key attribute} The key attribute for a skill is the attribute associated with that skill.
 For example, Climb is a Strength-based skill.
 Some skills, such as Persuasion, do not have a key attribute.
 
+\glossdef{knockback} Knockback is a type of \glossterm{forced movement}.
+It represents being thrown backwards by a single large impact.
+If a creature being knocked back encounters an obstacle, it and the obstacle each take 1d6 damage \add 1d per 5 feet of movement remaining.
+
 \glossdef{legacy item} A legacy item is an item magically bonded to its bearer.
 As its bearer gains levels, it increases in power as well.
 For details, see \pcref{Legacy Items}.
-
-\glossdef{legend point}[legend points] Legend points can be used to achieve extraordinary results on a roll you make, or to force a foe to accept a terrible failure.
-You gain access to legend points at 3rd level.
-For details, see \pcref{Legend Points}.
 
 \glossdef{Life} See \pcref{Ability Tags}.
 
@@ -478,6 +476,10 @@ Light undergrowth is \glossterm{difficult terrain} and provides \glossterm{conce
 You can use your Dexterity to determine your \glossterm{accuracy} when making \glossterm{physical attacks} with light weapons.
 For details, see \pcref{Weapon Usage Classes}.
 
+\glossdef{line} A line is an area shape that an ability can have (see \pcref{Area Shapes}).
+A line-shaped area has a given length, width, and height.
+Unless otherwise stated, a line's height is equal to its width.
+
 \glossdef{line of effect} You cannot target something that you do not have line of effect to.
 Line of sight is blocked by solid obstacles.
 For details, see \pcref{Line of Effect}.
@@ -487,7 +489,7 @@ Line of sight is blocked by any obstacle that blocks sight.
 For details, see \pcref{Line of Sight}.
 
 \glossdef{long rest} A long rest represents eight hours of relaxation or sleep.
-It allows you to recover all of your spent \glossterm{action points} and \glossterm{legend points}.
+It allows you to recover all of your \glossterm{exhaustion} and spent \glossterm{action points}.
 For details, see \pcref{Long Rest}.
 
 \glossdef{low-light vision} A creature with low-light vision can see more clearly in conditions of dim light.
@@ -505,6 +507,9 @@ Mages cast arcane spells, clerics cast divine spells, druids cast nature spells,
 \glossdef{magical} A magical ability is an ability that has no physical explanation.
 Examples include spells, a medusa's petrifying gaze, and a cleric's domain invocations.
 For details, see \pcref{Magical Abilities}.
+
+\glossdef{magical strike} A magical strike is a \glossterm{strike} caused by a \glossterm{magical} ability.
+Because it is a magical ability, you use your \glossterm{power} with magical abilities to determine your damage with the strike instead of your \glossterm{power} with \glossterm{mundane} abilities.
 
 \glossdef{maneuver} A maneuver is a type \glossterm{mundane} ability that some classes grant access to.
 For details, see \pcref{Maneuvers}.
@@ -575,6 +580,9 @@ For details, see \pcref{Natural Weapons}.
 \glossdef{nauseated} A nauseated creature takes a \minus4 penalty to \glossterm{accuracy} and Fortitude defense.
 This does not stack with the \glossterm{sickened} effect.
 
+\glossdef{neutral party}[neutral parties] A neutral party is any creature who is neither an \glossterm{ally} nor an \glossterm{enemy}.
+For details, see \pcref{Allies and Enemies}.
+
 \glossdef{opposed alignment} Each \glossterm{alignment} has an opposed alignment that is antethical to its principles and goals.
 Good and Evil are opposed alignments, and Chaos and Law are opposed alignments.
 For details, see \pcref{Alignment}.
@@ -606,7 +614,7 @@ If unable to flee, it must do nothing other than use the \textit{total defense} 
 
 If the source of a panicked creature's fear is a creature and is \glossterm{defeated}, this effect is broken.
 
-\glossdef{paralyzed} A paralyzed creature is unable to take physical actions. It has effective Dexterity and Strength scores of \minus10 and is \helpless, but can take purely mental actions. This can cause flying creatures to crash, swimming creatures to drown, and so on. A creature can move through a space occupied by a paralyzed creature -- ally or otherwise. Each square occupied by a paralyzed creature, however, counts as 2 squares.
+\glossdef{paralyzed} A paralyzed creature is unable to take physical actions. It has effective Dexterity and Strength scores of \minus10 and is \helpless, but can take purely mental actions. This can cause flying creatures to crash, swimming creatures to drown, and so on. Any creature can move through a space occupied by a paralyzed creature, though its space is treated as \glossterm{difficult terrain}.
 
 \glossdef{passive cover} Passive cover is a type of \glossterm{cover} provided by immobile obstacles that can block \glossterm{physical attacks}.
 Creatures and objects with passive cover from you gain a \plus2 bonus to Armor defense.
@@ -674,6 +682,10 @@ In addition, it takes a \minus2 penalty to accuracy with melee \glossterm{strike
 A creature can stand up from being prone during the movement phase.
 This generally requires one free hand.
 
+\glossdef{push} A push is a type of \glossterm{forced movement}.
+It represents being pushed by a constant force.
+If a creature being pushed encounters an obstacle, it stops moving with no negative consequences.
+
 \glossdef{range} The range of an ability determines how far away it can be used.
 You can't use abilities on a target outside of the ability's range.
 
@@ -686,15 +698,6 @@ They are described in \tref{Rare Languages}.
 
 \glossdef{reach} Your reach is how far away from your body you can make melee attacks.
 A typical Medium creature has a five-foot reach.
-
-\glossdef{recovery action point} A recovery action point is a type of \glossterm{action point}.
-You can regain spent recovery action points with a \glossterm{short rest}.
-Recovery action points are also required to \glossterm{attune} to abilities.
-For details, see \pcref{Action Points}, and \pcref{Attunement}.
-
-\glossdef{reserve action point} A reserve action point is a type of \glossterm{action point}.
-You can regain spent reserve action points with a \glossterm{long rest}.
-For detais, see \pcref{Action Points}.
 
 \glossdef{ritual}[rituals] A ritual is a discrete \glossterm{magical} ability with esoteric effects.
 For details, see \pcref{Rituals}.
@@ -731,7 +734,7 @@ For details, see \pcref{Armor}.
 \glossdef{Shielding} See \pcref{Ability Tags}.
 
 \glossdef{short rest}[short rests] A short rest represents five minutes of relaxation.
-It allows you to remove \glossterm{fatigue} and your spent \glossterm{recovery action points}.
+It allows you to remove \glossterm{fatigue} and any \glossterm{action points} you released from \glossterm{attunement}.
 For details, see \pcref{Short Rest}.
 
 \glossdef{shove} You can use the \textit{shove} ability to forcibly move a creature.
@@ -804,7 +807,8 @@ You can make a strike as a \glossterm{standard action} in the \glossterm{action 
 For details, see \pcref{Strikes}.
 
 \glossdef{stunned} A stunned creature cannot take any actions during the \glossterm{action phase} or \glossterm{delayed action phase}, except to use the \textit{cleanse} ability (see \pcref{Cleanse}).
-In addition, it takes a \minus2 penalty to \glossterm{accuracy}, \glossterm{checks}, and \glossterm{defenses}.
+In addition, it takes a \minus4 penalty to \glossterm{accuracy} and Mental defense.
+This does not stack with the \glossterm{dazed} effect.
 
 \glossdef{subdual damage} Subdual damage is a special kind of damage that can't kill you.
 If you would die from subdual damage, you fall unconscious instead.
@@ -893,9 +897,7 @@ Despite the name of the ability, it affects all senses, not merely sight.
 \glossdef{unarmed attack}[unarmed attacks] Every corporeal creature is capable of making an attack using its bare fists (or similar appendages).
 For details, see \pcref{Unarmed Combat}.
 
-% TODO: expand definition to include ``attended by a willing creature''
-% Or just expand ``willing'' to include objects
-\glossdef{unattended} An unattended item is an item not being held or carried by a creature.
+\glossdef{unattended} An unattended item is an item not being held or carried by a creature, or that is being held or carried by an \glossterm{ally}.
 Some abilities can only affect unattended items.
 
 \glossdef{unaware} An unaware creature does not know that it is being attacked.
@@ -924,6 +926,9 @@ If it takes damage from a damage source with multiple types or multiple material
 Vulnerability is calculated before applying \glossterm{damage reduction}.
 \par If a creature would become vulnerable to the same thing multiple times, it still only takes double damage from damage of that type.
 
+\glossdef{wall} A wall is an area shape that an ability can have (see \pcref{Area Shapes}).
+A wall-shaped area has a length and height, but its width is not measured in squares.
+
 \glossdef{Water} See \pcref{Ability Tags}.
 
 \glossdef{weapon}[weapons] A weapon is an object used to inflict damage.
@@ -933,8 +938,6 @@ For details, see \pcref{Weapons}.
 \glossdef{weapon group} A weapon group is a category of \glossterm{weapons} with a similar design and fighting style.
 You have proficiency with some number of weapon groups based on your \glossterm{class}.
 For details, see \pcref{Weapon Groups}.
-
-\glossdef{willing} Some abilities can only affect willing targets. You can choose to be a willing target at any time. Unconscious creatures and objects are automatically considered willing, but a character who is conscious but immobile or helpless (such as one who is bound or paralyzed) is not automatically willing.
 
 \glossdef{withdraw} The \textit{withdraw} ability allows you to stay away from a creature, preventing it from coming too close to you.
 For details, see \pcref{Withdraw}.
