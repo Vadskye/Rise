@@ -540,11 +540,12 @@ It defines how attributes work and explains how to make attacks in combat.
             It is normally equal to (your level \add 1) \x (5 \add your starting Constitution).
             Being fatigued from the current combat or exhausted from lack of rest makes you more vulnerable to serious wounds.
             For every point of \glossterm{fatigue} or \glossterm{exhaustion} that you have, you take a penalty to your \glossterm{wound threshold} equal to your level.
-            If you gain or remove \glossterm{fatigue} or \glossterm{exhaustion} during a round, your \glossterm{wound threshold} is not recalculated until the start of the next round.
-
             When you take at least as much damage as your \glossterm{wound threshold} from a single damage roll, you gain a \glossterm{vital wound}.
 
-            \parhead{Zero Vital Threshold}
+            When you gain or remove \glossterm{fatigue} or \glossterm{exhaustion} during a round, your \glossterm{wound threshold} is not normally recalculated until the start of the next round.
+            If you use the \textit{recover} ability, it will recalculate immediately (see \pcref{Recover}).
+
+            \parhead{Zero Wound Threshold}
             If your \glossterm{wound threshold} is reduced to 0, you gain a \glossterm{vital wound}.
             This can be caused by effects that inflict \glossterm{fatigue} without dealing damage.
             If that \glossterm{vital wound} gets a \glossterm{wound roll} less than 0, treat the roll as a 0, causing you to fall unconscious until the \glossterm{vital wound} is removed.
@@ -1611,6 +1612,7 @@ It defines how attributes work and explains how to make attacks in combat.
         \parhead{Recover} You can use the \textit{recover} ability as a standard action.
         \begin{apability}{\labeltext{Recover}}[\glossterm{Swift}]
             You remove all of your \glossterm{fatigue}.
+            In addition, your \glossterm{wound threshold} changes to match your new fatigue level.
             Because this ability has the \glossterm{Swift} tag, this can increase your \glossterm{wound threshold} against attacks made against you during the current phase.
         \end{apability}
 

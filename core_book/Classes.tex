@@ -147,7 +147,7 @@ This choice determines a great deal about your character's abilities.
             You gain the following benefits and drawbacks:
             \begin{itemize}
                 \item You gain a \plus2 bonus to \glossterm{power} with \glossterm{mundane} abilities.
-                \item You are unable to take \glossterm{standard actions} that do not cause you to make physical attacks.
+                \item You are unable to take \glossterm{standard actions} that do not cause you to make \glossterm{physical attacks}.
                 \item At the end of each round, if you did not make a physical attack that round, this ability ends.
                     If the ability ends this way, you regain the \glossterm{action point} you spent to attune to this ability the next time you take a \glossterm{short rest}.
             \end{itemize}
@@ -158,14 +158,16 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Bbn}[3]{Focused Anger} You gain a \plus2 bonus to Mental defense.
 
-        \cf{Bbn}[4]{Invigorating Rage} During your \textit{rage} ability, you remove a point of \glossterm{fatigue} at the end of each round if you dealt damage to another creature with a \glossterm{mundane} ability that round.
+        \cf{Bbn}[4]{Invigorating Rage} When you use your \textit{rage} ability, you may remove a point of \glossterm{fatigue}.
+        If you do, you regain that \glossterm{fatigue} when the ability ends.
 
         \cf{Bbn}[5]{Greater Rage} The \glossterm{power} bonus from your \textit{rage} ability increases to \plus4.
 
         \cf{Bbn}[6]{Greater Intimidating Anger}
         The bonuses from your \textit{intimidating anger} ability increase to \plus4.
 
-        \cf{Bbn}[7]{Greater Invigorating Rage} The healing from your \textit{invigorating rage} increases to be equal to your \glossterm{power}.
+        \cf{Bbn}[7]{Greater Invigorating Rage} You may remove two points of \textit{fatigue} instead of one with your \textit{invigorating rage} ability.
+        If you do, you regain two points of \glossterm{fatigue} when the ability ends.
 
         \cf{Bbn}[8]{Titanic Rage}
         When you use your \textit{rage} ability, you can grow by one \glossterm{size category}.
@@ -463,6 +465,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Clr}[1]{Divine Healing} You can use the \textit{divine healing} ability as a standard action.
         \begin{freeability}{Divine Healing}[\glossterm{Life}, \glossterm{Magical}]
             You or a living \glossterm{ally} you can touch removes a point of \glossterm{fatigue}.
+            You can use this ability up to 3 times between \glossterm{short rests}.
         \end{freeability}
 
         \cf{Clr}[2]{Divine Cleanse} You can use the \textit{divine cleanse} ability as a standard action.
@@ -470,21 +473,20 @@ This choice determines a great deal about your character's abilities.
             You or an \glossterm{ally} within \rngclose range can remove one \glossterm{condition}.
         \end{freeability}
 
-        \cf{Clr}[3]{Vital Healing} When you cause a creature to remove a point of \glossterm{fatigue} with a \glossterm{magical} ability, you can spend a \glossterm{reserve action point}.
+        \cf{Clr}[3]{Vital Healing} When you cause a creature to remove a point of \glossterm{fatigue} with a \glossterm{magical} ability, you can spend an \glossterm{action point}.
         If you do, you cause the target to remove a \glossterm{vital wound} instead of a point of \glossterm{fatigue}.
         You can only use this ability once per round.
 
-        \cf{Clr}[4]{Greater Divine Healing} When you use your \textit{divine healing} ability, you can spend an \glossterm{action point}.
-        If you do, the target removes an additional point of \glossterm{fatigue}.
-        In addition, the \glossterm{range} of that ability increases to \rngclose.
+        \cf{Clr}[4]{Greater Divine Healing} The \glossterm{range} of your \textit{divine healing} ability increases to \rngclose.
+        In addition, the target can also remove a \glossterm{condition}.
 
         \cf{Clr}[5]{Greater Divine Cleanse} Your \textit{divine cleanse} ability gains the \glossterm{Swift} tag.
         This means that any effects of the removed condition do not affect the target during the current phase.
 
-        \cf{Clr}[6]{Greater Vital Healing} You can use your \textit{vital healing} ability by spending a \glossterm{recovery action point} instead of a \glossterm{reserve action point}.
+        \cf{Clr}[6]{Greater Vital Healing} When you use your \textit{vital healing} ability, the target removes the \glossterm{vital wound} in addition to the point of \glossterm{fatigue}.
 
-        \cf{Clr}[7]{Supreme Divine Healing} When you use your \textit{divine healing} ability, the target removes two points of \glossterm{fatigue} instead of one. 
-        In addition, your \textit{divine healing} ability can can target a creature within \rngmed range.
+        \cf{Clr}[7]{Supreme Divine Healing} The \glossterm{range} of your \textit{divine healing} increases to \rngmed.
+        In addition, the target removes an additional point of \glossterm{fatigue}.
 
     \subsection{Cleric Domain Abilities}\label{Cleric Domain Abilities}
         These domain abilities can be granted by the \textit{domain influence} cleric archetype.
@@ -669,8 +671,7 @@ This choice determines a great deal about your character's abilities.
                 If it was dead for no more than 5 minutes, it is restored to life, as the \ritual{resurrection} ritual.
                 After using this ability, you cannot use it for 1 hour.
             \end{apability}
-            % Need special text to clarify that it is affected by the Aspect?
-            \parhead{Mastery} At the end of each round, you remove a point of \glossterm{fatigue}.
+            \parhead{Mastery} Whenever you remove any amount of \glossterm{fatigue}, you remove an additional point of fatigue.
 
         \subsubsection{Magic}
             \parhead{Gift} You gain a \plus1 bonus to \glossterm{power} with divine spells.
@@ -993,8 +994,8 @@ This choice determines a great deal about your character's abilities.
             \begin{freeability}{Photosynthesis}
                 As long as you are in natural sunlight, you gain a \plus10 foot bonus to your \glossterm{base speed}.
                 \rankline
-                \rank{3} As long as you are in natural sunlight, at the end of each round you may spend an \glossterm{action point}.
-                If you do, you remove a point of \glossterm{fatigue}.
+                \rank{3} As long as you are in natural sunlight, you do not gain hunger or thirst.
+                When you leave natural sunlight, you continue gaining hunger or thirst at your normal rate, ignoring any time you spent in natural sunlight.
                 \rank{5} The speed bonus increases to \plus20 feet.
                 \rank{7} When you take a \glossterm{short rest} while you are in natural sunlight, you remove a \glossterm{vital wound}.
             \end{freeability}
@@ -1739,10 +1740,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Mge}[1]{Nonverbal Caster} When you cast a spell, you can omit that spell's \glossterm{verbal components}.
         This tests your focus when casting the spell, forcing you to make a \glossterm{concentration} check to cast the spell successfully (see \pcref{Concentration}).
 
-        \cf{Mge}[2]{Mystic Healing}
-        Once per round, when you are the target of a spell, you may spend an \glossterm{action point}.
-        If you do, remove a point of \glossterm{fatigue}.
-        You can use this ability even if the spell has an attack that fails.
+        \cf{Mge}[2]{Innate Magic} You gain a \plus1 bonus to Fortitude and Mental defenses.
 
         \cf{Mge}[3]{Augment} You learn one \glossterm{augment} (see \pcref{Augments}).
         You can apply augments to spells to change their effects.
@@ -2242,6 +2240,7 @@ This choice determines a great deal about your character's abilities.
         \cf{Pal}[1]{Lay on Hands}[Magical] You can use the \textit{lay on hands} ability as a standard action.
         \begin{freeability}{Lay on Hands}[Life]
             You or an \glossterm{ally} you can touch removes a point of \glossterm{fatigue}.
+            That creature is unaffected by any additional uses of this ability until you take a \glossterm{short rest}.
         \end{freeability}
 
         \cf{Pal}[2]{Stalwart Champion}
@@ -2261,8 +2260,7 @@ This choice determines a great deal about your character's abilities.
         In addition, the \glossterm{wound threshold} bonus increases to twice your \glossterm{power}.
 
         \cf{Pal}[7]{Supreme Lay on Hands}[Magical]
-        You gain a \plus1d bonus to the healing from your \textit{lay on hands} ability.
-        In addition, the number of conditions you can remove with your \textit{lay on hands} ability increases to two.
+        The target of your \textit{lay on hands} ability removes an additional point of \glossterm{fatigue}.
 
     \subsection{Ex-Paladins}
         If you cease to follow your devoted alignment, you lose all \glossterm{magical} paladin class abilities.
@@ -2949,7 +2947,8 @@ This choice determines a great deal about your character's abilities.
         You can also spend \glossterm{insight points} to learn one additional eldritch augment per \glossterm{insight point}.
         Whenever you use your \textit{eldritch blast} ability, you may also use one eldritch augment to increase the power of the \textit{eldritch blast}.
         {
-            \parhead{Bloodreaving} If you inflict a \glossterm{vital wound} with the spell, you remove a point of \glossterm{fatigue}.
+            \parhead{Bloodfeeding} If you inflict a \glossterm{vital wound} with the spell, you remove a point of \glossterm{fatigue}.
+            You can only remove \glossterm{fatigue} in this way up to 3 times between \glossterm{short rests}.
 
             \parhead{Chaining} You can also target an additional creature or object within range.
             You take a \minus2 penalty to \glossterm{accuracy} against that target.
@@ -2990,6 +2989,9 @@ This choice determines a great deal about your character's abilities.
         {
             \parhead{Greater Chaining} You can also target up to five additional creatures or objects within range.
             You take a \minus2 penalty to \glossterm{accuracy} against each of those targets.
+
+            \parhead{Greater Bloodfeeding} If you inflict a \glossterm{vital wound} with the spell, you remove two points of \glossterm{fatigue}.
+            You can only remove \glossterm{fatigue} in this way up to 3 times between \glossterm{short rests}.
 
             \parhead{Greater Empowered} You gain a \plus4 bonus to \glossterm{power}.
 

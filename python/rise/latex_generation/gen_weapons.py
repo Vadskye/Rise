@@ -435,10 +435,10 @@ def generate_weapons():
         material_type='Weapon',
         tags=['Life'],
         description="""
-            When you deal damage to a living creature with a \\glossterm<strike> with this weapon, you remove a point of \\glossterm<fatigue>.
-            You can only remove fatigue in this way once per round.
+            When you inflict a \\glossterm<vital wound> on a living creature with this weapon, you may remove a point of \\glossterm<fatigue>.
+            You can only remove fatigue in this way once between \\glossterm<short rests>.
         """,
-        short_description="Heals you when dealing damage",
+        short_description="Heals you when inflicting a wound",
     ))
 
     weapons.append(MagicItem(
@@ -447,10 +447,10 @@ def generate_weapons():
         material_type='Weapon',
         tags=['Life'],
         description="""
-            When you deal damage to a living creature with a \\glossterm<strike> with this weapon, you remove two points of \\glossterm<fatigue>.
-            You can only remove fatigue in this way once per round.
+            When you inflict a \\glossterm<vital wound> on a living creature with this weapon, you may remove two points of \\glossterm<fatigue>.
+            You can only remove fatigue in this way once between \\glossterm<short rests>.
         """,
-        short_description="Drastically heals you when dealing damage",
+        short_description="Drastically heals you when inflicting a wound",
     ))
 
     weapons.append(MagicItem(
