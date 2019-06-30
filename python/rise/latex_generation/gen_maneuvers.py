@@ -397,12 +397,12 @@ def generate_maneuvers():
         short_description='Recover fatigue.',
         effect_text="""
             You remove a point of \\glossterm<fatigue>.
-            After you use this ability, you cannot use it again until you take a \\glossterm<short rest>.
+            You can only use this ability once between \\glossterm<short rests>.
         """,
         rank_upgrades={
-            '3': 'The ability gains the \\glossterm<Swift> tag, allowing it to increase your \\glossterm<wound threshold> against attacks in the current phase.',
+            '3': 'If you have a \\glossterm<vital wound>, you remove two points of \\glossterm<fatigue> instead of one.',
             '5': 'You can use the ability twice between \\glossterm<short rests>.',
-            '7': 'You remove an additional point of \\glossterm<fatigue>.',
+            '7': 'You remove two points of \\glossterm<fatigue> regardless of whether you have a \\glossterm<vital wound>.',
         },
         tags=['Life'],
         lists=['Esoteric', 'Primal', 'Wild'],
