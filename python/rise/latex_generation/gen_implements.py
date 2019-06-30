@@ -91,8 +91,8 @@ def generate_implements():
         material_type='Staff',
         tags=['Life'],
         description="""
-            Once per round, when you cast a spell other than a \\glossterm<cantrip> using this staff,
-                you remove a point of \\glossterm<fatigue>.
+            When you cast a spell using this staff, you may remove a point of \\glossterm<fatigue>.
+            You can only regain fatigue once in this way between \\glossterm<short rests>.
         """,
         short_description="Heals you when casting spells",
     ))
@@ -103,8 +103,8 @@ def generate_implements():
         material_type='Staff',
         tags=['Life'],
         description="""
-            Once per round, when you cast a spell other than a \\glossterm<cantrip> using this staff,
-                you remove two points of \\glossterm<fatigue>.
+            When you cast a spell using this staff, you may remove two points of \\glossterm<fatigue>.
+            You can only regain fatigue once in this way between \\glossterm<short rests>.
         """,
         short_description="Greatly heals you when casting spells",
     ))

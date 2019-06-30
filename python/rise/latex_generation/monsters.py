@@ -31,7 +31,7 @@ passives = {
         The {creature.name.lower()} has \\glossterm<damage reduction> {creature.magical_power} against piercing and slashing damage.
     """),
     'ichor healing': lambda creature: passive_ability('Ichor Healing', f"""
-        The {creature.name.lower()} removes {creature.cr_mod} points of \\glossterm<fatigue> at the end of each round.
+        The {creature.name.lower()} removes all \\glossterm<vital wounds> when it takes a \\glossterm<short rest>.
     """),
     'soft flesh': lambda creature: passive_ability('Soft Flesh', f"""
         The {creature.name.lower()} has \\glossterm<damage reduction> {creature.constitution} against piercing and bludgeoning damage.
@@ -321,6 +321,7 @@ def humanoids(sample_monsters):
             """),
             active_ability('Hurt Less', f"""
                 One \\glossterm<ally> in Close range removes a point of \\glossterm<fatigue>.
+                That creature is unaffected by any additional uses of this ability until the shaman takes a \\glossterm<short rest>.
             """),
         ],
     ))
@@ -566,7 +567,7 @@ def magical_beasts(sample_monsters):
         passive_abilities=[
             passive_ability('Consume Magic', f"""
                 The thaumavore gains a +4 bonus to \\glossterm<defenses> against \\glossterm<magical> abilities.
-                Whenever it resists a \\glossterm<magical> attack, it removes two points of \\glossterm<fatigue>.
+                Whenever it resists a \\glossterm<magical> attack, it removes a point of \\glossterm<fatigue>.
             """),
             passive_ability('Sense Magic', f"""
                 The thaumavore can sense the location of all sources of magic within 100 feet of it.
@@ -698,6 +699,7 @@ def outsiders(sample_monsters):
             """),
             active_ability("Angel's Grace", f"""
                 One \\glossterm<ally> within reach removes two points of \\glossterm<fatigue>.
+                That creature is unaffected by any additional uses of this ability until the angel takes a \\glossterm<short rest>.
             """),
         ],
     ))
@@ -835,7 +837,8 @@ def undead(sample_monsters):
             active_ability('Drain Life', f"""
                 The skeleton mage makes a +{skeleton_mage.accuracy()} vs. Fortitude attack against a creature in \\rngmed range.
                 \\hit The target takes {skeleton_mage.standard_damage('magical')} life damage.
-                In addition, the skeleton mage removes a point of \\glossterm<fatigue>.
+                If this damage inflicts a \\glossterm<vital wound>, the skeleton mage removes a point of \\glossterm<fatigue>.
+                It can only remove \\glossterm<fatigue> in this way up to 3 times between \\glossterm<short rests>.
             """, tags=['Life']),
             active_ability('Terror', f"""
                 The skeleton mage makes a +{skeleton_mage.accuracy()} vs. Mental attack against a creature in \\rngmed range.

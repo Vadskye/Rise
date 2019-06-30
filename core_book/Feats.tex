@@ -497,7 +497,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \item \plus1 bonus to Reflex defense
             \item \plus1 bonus to Mental defense
             \item One extra \glossterm{skill point}
-            \item One extra \glossterm{reserve action point}
         \end{itemize}
 
         \ff[13]{Expanded Versatility} You gain an additional \textit{versatile expertise} ability.
@@ -1432,19 +1431,23 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{feat}{Regenerator}{General}
         \featpre Starting Constitution of 2.
 
-        \ff[1]{Regenerative Rest} When you take a \glossterm{short rest}, you can spend a \glossterm{reserve action point}. If you do, you heal one \glossterm{vital wound}.
+        \ff[1]{Regenerative Recovery} You can use the \textit{regenerative recovery} ability as a standard action.
+        \begin{freeability}{name}
+            You remove a point of \glossterm{fatigue}.
+            After you use this ability a number of times equal to your starting Constitution, you cannot use it again until you take a \glossterm{short rest}.
+        \end{freeability}
 
-        \ff[4]{Diehard} You gain a \plus1 bonus to \glossterm{wound rolls}.
+        \ff[4]{Regenerative Rest} When you take a \glossterm{short rest}, you can spend an \glossterm{action point}. If you do, you heal one \glossterm{vital wound}.
 
-        \ff[7]{Vital Healing} At the end of each \glossterm{action phase}, if you have any \glossterm{vital wounds}, you remove one point of \glossterm{fatigue}.
+        \ff[7]{Diehard} You gain a \plus1 bonus to \glossterm{wound rolls}.
 
         \ff[10]{Injury Tolerance} You reduce your Fortitude and Mental defense penalties for having \glossterm{vital wounds} by 2 (see \pcref{Vital Wounds}).
 
         \ff[13]{Greater Regenerative Rest} You do not have to spend a \glossterm{reserve action point} to use your \textit{regenerative rest} ability.
 
-        \ff[16]{Fast Healing} The fatigue removal from your \textit{vital healing} ability happens even if you have no \glossterm{vital wounds}.
+        \ff[16]{Indestructible} The bonus from your \textit{diehard} ability increases to \plus2.
 
-        \ff[19]{Indestructible} The bonus from your \textit{diehard} ability increases to \plus2.
+        \ff[19]{Greater Regenerative Recovery} Your \textit{regenerative recovery} ability removes two points of \glossterm{fatigue}.
     \end{feat}
 
     \begin{feat}{Ride Specialization}{Skill}
@@ -2025,7 +2028,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[7]{Spell} You learn a spell from the \sphere{polymorph} \glossterm{mystic sphere}.
         When you gain access to new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[10]{Personal Regeneration} At the end of each \glossterm{action phase}, if you did not gain any \glossterm{fatigue} that phase, you remove a point of \glossterm{fatigue}.
+        \ff[10]{Malleable Flesh} You gain a \plus5 bonus to defenses when determining whether a \glossterm{strike} gets a \glossterm{critical hit} against you instead of a normal hit.
 
         \ff[13]{Greater Reshaper} When you use the \spell{alter object} cantrip, you can accomplish work that would take up to an hour with a normal Craft check.
         In addition, you can use the \textit{alter poison} ability as a standard action.
@@ -2039,7 +2042,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[16]{Greater Polymorph Focus} The bonus from your \textit{polymorph focus} ability increases to \plus2.
 
-        \ff[19]{Greater Personal Regeneratoin} The healing from your \textit{personal regeneration} ability increases to be equal to your \glossterm{power}.
+        \ff[19]{Greater Malleable Flesh} You are immune to \glossterm{critical hits} from \glossterm{strikes}.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Pyromancy}{Casting, Magical}
@@ -2229,19 +2232,19 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Vital Surge Focus} You gain a \plus1 bonus to \glossterm{accuracy} with abilities from the \sphere{vital surge} \glossterm{mystic sphere}.
 
-        \ff[4]{Reciprocal Healing} When you cause another creature to remove at least one point of \glossterm{fatigue} with a spell from the \sphere{vital surge} \glossterm{mystic sphere}, you also remove a point of \glossterm{fatigue}.
-        You can only gain this healing once per time you cast the spell.
+        \ff[4]{Personal Vitality} You gain a \plus2 bonus to Fortitude defense.
 
         \ff[7]{Spell} You learn a spell from the \sphere{vital surge} \glossterm{mystic sphere}.
         When you gain access to new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[10]{Personal Vitality} At the end of each \glossterm{action phase}, if you have at least three points of \glossterm{fatigue}, you remove a point of \glossterm{fatigue}.
+        \ff[10]{Reciprocal Healing} When you cause another creature to remove at least one point of \glossterm{fatigue} with a spell from the \sphere{vital surge} \glossterm{mystic sphere}, you also remove a point of \glossterm{fatigue}.
+        You can only gain this healing once per spell.
 
-        \ff[13]{Reciprocal Healing} The healing from your \textit{reciprocal healing} ability increases to twice your \glossterm{power} with the spell.
+        \ff[13]{Greater Personal Vitality} The bonus from your \textit{personal vitality} ability increases to \plus4.
 
         \ff[16]{Greater Vital Surge Focus} The bonus from your \textit{vital surge focus} ability increases to \plus2.
 
-        \ff[19]{Greater Personal Vitality} The healing from your \textit{personal vitality} ability increases to be equal to your \glossterm{power}.
+        \ff[19]{Greater Reciprocal Healing} Your \textit{reciprocal healing} ability removes fatigue from you equal to the fatigue you removed from one creature with the spell.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Weaponcraft}{Casting, Magical}
