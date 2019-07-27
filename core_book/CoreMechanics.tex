@@ -146,9 +146,6 @@ It defines how attributes work and explains how to make attacks in combat.
             Here is the order in which these abilities trigger each round, and some notable events that occur during the round:
             \begin{itemize}
                 \item Start of round
-                    \begin{itemize}
-                        \item Recalculate \glossterm{wound thresholds}
-                    \end{itemize}
                 \item Start of movement phase
                 \item End of movement phase
                 \item Start of action phase
@@ -268,12 +265,10 @@ It defines how attributes work and explains how to make attacks in combat.
                 Constitution represents your health and stamina.
                 It has the following efects:
                 \begin{itemize}
-                    \item Your \glossterm{wound threshold} is modified based on your starting Constitution (see \pcref{Wound Threshold}).
+                    \item You gain a bonus (or penalty) to your \glossterm{hit points} equal to your starting Constitution.
                     \item You gain a bonus (or penalty) to your Fortitude defense equal to your starting Constitution.
                     \item Your Constitution modifies the number of rounds you can hold your breath (see \pcref{Drowning}).
                 \end{itemize}
-
-                If you have a high Constitution, you can use it to determine your \glossterm{fatigue threshold} (see \pcref{Fatigue Threshold}).
 
             \parhead{Intelligence (Int)}\label{Intelligence}
                 Intelligence represents how well you learn and reason.
@@ -510,80 +505,55 @@ It defines how attributes work and explains how to make attacks in combat.
             \parhead{Lowering Defenses} When you are subject to an attack that you are aware of, you can voluntarily lower your defenses against the attack.
             If you do, your defense is treated as 0 against the attack.
 
-    \subsection{Taking Damage}\label{Taking Damage}
-        When you take damage, one of three things may happen.
+    \subsection{Hit Points}\label{Hit Points}
+        Your \glossterm{hit points} measure how hard you are to kill.
+        When you take damage in excess of your \glossterm{damage resistance}, you lose a \glossterm{hit point} (see \pcref{Damage Resistance}).
+        You can't normally exceed your maximum hit points, even with magical healing.
 
-        If the damage does not exceed your \glossterm{fatigue threshold}, you ignore the damage without any negative effects.
-        This represents the attack glancing harmlessly off of your armor, scratching you minimally, or otherwise failing to have a significant impact.
+        You normally have a number of \glossterm{hit points} equal to 5 \add your starting Constitution.
+        Some special abilities can give you additional \glossterm{hit points}.
 
-        If the damage exceeds your \glossterm{fatigue threshold}, but does not exceed your \glossterm{wound threshold}, you become more vulnerable to future damage but suffer no other negative consequences.
-        This represents some combination of endurance, luck, or even divine providence preventing you from suffering more serious injury from a dangerous attack.
+        If you would lose a \glossterm{hit point} while you have no \glossterm{hit points} remaining, you gain a \glossterm{vital wound} instead.
 
-        If the damage exceeds your \glossterm{wound threshold}, you suffer a \glossterm{vital wound}, which represents a potentially life-threatening injury (see \pcref{Vital Wounds}).
+        \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
+        When lose a single hit point from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
+        Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow fatigued you, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
 
-        \subsubsection{Fatigue Threshold}\label{Fatigue Threshold}
-            Your \glossterm{fatigue threshold} indicates the amount of damage an attack has to deal in order to fatigue you.
-            It is normally equal to the higher of your level and Constitution.
+    \subsection{Resistances}\label{Resistances}
+        When you are hit by an attack, you use your \glossterm{resistances} to mitigate the damage from the attack.
+        You have two types of resistances: \glossterm{damage resistance}, which protects you from losing \glossterm{hit points}, and \glossterm{wound resistance}, which protects you from gaining \glossterm{vital wounds}.
 
-            When you take at least as much damage as your \glossterm{fatigue threshold} from a single damage roll, but less damage than your \glossterm{wound threshold}, you gain a point of \glossterm{fatigue}.
-            Each point of fatigue lowers your \glossterm{wound threshold} (see below).
+        \subsection{Damage Resistance}\label{Damage Resistance}
+            Your \glossterm{damage resistance} measures your ability to shrug off insignificant amounts of damage.
+            When an attack would deal damage to you, if the damage is less than or equal to your \glossterm{damage resistance}, you take no damage from the attack.
+            This prevents you from losing a \glossterm{hit point} or suffering other negative consequences of taking damage.
 
-            \parhead{Missing Fatigue Thresholds} Objects do not generally have a \glossterm{fatigue threshold}.
-            Instead, objects have a \glossterm{hardness} that serves a similar purpose (see \pcref{Hardness}).
-            An object or creature without a listed \glossterm{fatigue threshold} gains a point of fatigue if it takes at least 1 damage from a single damage roll.
-            It effectively has a \glossterm{fatigue threshold} of 1.
+            Your \glossterm{damage resistance} is based on your level, as defined in \tref{Character Advancement}.
+            Wearing \glossterm{armor} can increase your damage resistance against \glossterm{physical damage}, and some special abilities can also increase it.
 
-            \parhead{Minimum Fatigue Threshold} No effect can reduce a creature's \glossterm{fatigue threshold} below 1.
+            \parhead{Missing Damage Resistance} An object or creature without a listed \glossterm{damage resistance} loses a \glossterm{hit point} if it takes at least 1 damage from a single damage roll.
+            It effectively has a \glossterm{damage resistance} of 0.
 
-        \subsubsection{Wound Threshold}\label{Wound Threshold}
-            Your \glossterm{wound threshold} indicates the amount of damage an attack has to deal to seriously injure you.
-            It is normally equal to (your level \add 1) \x (5 \add your starting Constitution).
-            Being fatigued from the current combat or exhausted from lack of rest makes you more vulnerable to serious wounds.
-            For every point of \glossterm{fatigue} or \glossterm{exhaustion} that you have, you take a penalty to your \glossterm{wound threshold} equal to your level.
-            If you gain or remove \glossterm{fatigue} or \glossterm{exhaustion} during a round, your \glossterm{wound threshold} is not recalculated until the start of the next round.
+        \subsection{Wound Resistance}\label{Wound Resistance}
+            Your \glossterm{wound resistance} measures your ability to avoid taking \glossterm{vital damage} from dangerous attacks.
+            When you take damage from an attack, if the damage is greater than your \glossterm{wound resistance}, you gain a \glossterm{vital wound} (see \pcref{Vital Wounds}).
 
-            When you take at least as much damage as your \glossterm{wound threshold} from a single damage roll, you gain a \glossterm{vital wound}.
+            Your \glossterm{wound resistance} is based on your level, as defined in \tref{Character Advancement}.
+            Some special abilities can increase your \glossterm{wound resistance}.
 
-            \parhead{Zero Vital Threshold}
-            If your \glossterm{wound threshold} is reduced to 0, you gain a \glossterm{vital wound}.
-            This can be caused by effects that inflict \glossterm{fatigue} without dealing damage.
-            If that \glossterm{vital wound} gets a \glossterm{wound roll} less than 0, treat the roll as a 0, causing you to fall unconscious until the \glossterm{vital wound} is removed.
+            \parhead{Missing Wound Resistance} An object or creature without a listed \glossterm{wound resistance} cannot gain \glossterm{vital wounds} from taking damage directly.
+            It can only gain \glossterm{vital wounds} from taking damage while it has no \glossterm{hit points} remaining.
 
-        \subsubsection{Vital Wounds}\label{Vital Wounds}
-            A \glossterm{vital wound} represents a serious injury to your body.
-            Each \glossterm{vital wound} has a specific detrimental effect on you.
+        \subsection{Damage Type Resistances}\label{Damage Type Resistances}
+            Each type of resistance is further divided into what type of damage it protects against.
+            Your \glossterm{damage resistance} and \glossterm{wound resistance} apply against damage of any type.
+            Those are collectively called your \glossterm{resistances}.
 
-            To determine the effect of a \glossterm{vital wound}, make a \glossterm{wound roll} and find the corresponding effect in \trefnp{Vital Wound Effects}.
-            The effect of the wound lasts until you remove that \glossterm{vital wound}.
-            The effects of vital wounds stack with each other, even if you roll the same effect twice for different \glossterm{vital wounds}.
+            Some effects increase your resistances against either \glossterm{physical damage} or \glossterm{energy damage}.
+            For example, wearing armor gives you a bonus to your \glossterm{resistances} against \glossterm{physical damage}.
 
-            \parhead{Wound Roll}\label{Wound Roll}
-            To make a \glossterm{wound roll}, roll 1d10 \sub the number of \glossterm{vital wounds} you have.
-
-            \begin{dtable}
-                \lcaption{Vital Wound Effects}
-                \begin{dtabularx}{\textwidth}{l X}
-                    \tb{Wound Roll} & \tb{Effect} \tableheaderrule
-                    \minus1 or less & You are unconscious, and at the end of the next round you die \\
-                    0 & You are unconscious \\
-                    1 & You fall unconscious immediately, but can be awoken as if from sleep \\
-                    2 & Your maximum \glossterm{recovery action points} are reduced by 2 \\
-                    3 & You move at half speed (minimum 5 ft.) \\
-                    % TODO: clarify that if you remove this wound on a long rest, you also remove the exhaustion in the same rest
-                    4 & You gain a point of \glossterm{exhaustion} that cannot be removed \\
-                    5 & Your maximum \glossterm{reserve action points} are reduced by 2 \\
-                    6 & You take a \minus2 penalty to \glossterm{accuracy} \\
-                    7 & Your maximum \glossterm{recovery action points} are reduced by 1 \\
-                    8 & You take a \minus4 penalty to all skills \\
-                    9 & You take a \minus2 penalty to Fortitude and Mental defenses \\
-                    10 or more & No effect \\
-                \end{dtabularx}
-            \end{dtable}
-
-        \subsubsection{Subdual Damage}\label{Subdual Damage}
-            Some attacks and environmental effects deal subdual damage.
-            Subdual damage works in the same way as normal damage, except that \glossterm{vital wounds} from subdual damage cannot kill.
-            Any \glossterm{wound roll} below 0 from subdual damage is treated as a 0, causing the target to fall unconscious until the \glossterm{vital wound} is removed.
+            \parhead{Stacking Magic Bonuses} A \glossterm{magic bonus} to a specific type of resistance does not stack with a \glossterm{magic bonus} to a more general resistance if both apply.
+            For example, if you have a \glossterm{magic bonus} to resistances against energy damage and another \glossterm{magic bonus} to resistances against fire damage, you only use the higher of the two when you take fire damage.
 
     \subsection{Initiative}\label{Initiative}
         When multiple creatures take mutually impossible actions simultaneously, such as racing to be the first one to a door, they must roll initiative checks.
@@ -644,6 +614,44 @@ It defines how attributes work and explains how to make attacks in combat.
             \item Rogue: Trick maneuvers
             \item Warlock: Eldritch augments, pact spells
         \end{itemize}
+
+\section{Taking Damage}\label{Taking Damage}
+
+    \subsection{Vital Wounds}\label{Vital Wounds}
+        A \glossterm{vital wound} represents a serious injury to your body.
+        Each \glossterm{vital wound} has a specific detrimental effect on you.
+
+        To determine the effect of a \glossterm{vital wound}, make a \glossterm{wound roll} and find the corresponding effect in \trefnp{Vital Wound Effects}.
+        The effect of the wound lasts until you remove that \glossterm{vital wound}.
+        The effects of vital wounds stack with each other, even if you roll the same effect twice for different \glossterm{vital wounds}.
+
+        \parhead{Wound Roll}\label{Wound Roll}
+        To make a \glossterm{wound roll}, roll 1d10 \sub the number of \glossterm{vital wounds} you have.
+
+        \begin{dtable}
+            \lcaption{Vital Wound Effects}
+            \begin{dtabularx}{\textwidth}{l X}
+                \tb{Wound Roll} & \tb{Effect} \tableheaderrule
+                \minus1 or less & You are unconscious, and at the end of the next round you die \\
+                0 & You are unconscious \\
+                1 & You fall unconscious immediately, but can be awoken as if from sleep \\
+                2 & Your maximum \glossterm{recovery action points} are reduced by 2 \\
+                3 & You move at half speed (minimum 5 ft.) \\
+                % TODO: clarify that if you remove this wound on a long rest, you also remove the exhaustion in the same rest
+                4 & You gain a point of \glossterm{exhaustion} that cannot be removed \\
+                5 & Your maximum \glossterm{reserve action points} are reduced by 2 \\
+                6 & You take a \minus2 penalty to \glossterm{accuracy} \\
+                7 & Your maximum \glossterm{recovery action points} are reduced by 1 \\
+                8 & You take a \minus4 penalty to all skills \\
+                9 & You take a \minus2 penalty to Fortitude and Mental defenses \\
+                10 or more & No effect \\
+            \end{dtabularx}
+        \end{dtable}
+
+    \subsection{Subdual Damage}\label{Subdual Damage}
+        Some attacks and environmental effects deal subdual damage.
+        Subdual damage works in the same way as normal damage, except that \glossterm{vital wounds} from subdual damage cannot kill.
+        Any \glossterm{wound roll} below 0 from subdual damage is treated as a 0, causing the target to fall unconscious until the \glossterm{vital wound} is removed.
 
 \section{Circumstances, Bonuses, and Penalties}
 
@@ -967,8 +975,7 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \begin{freeability}{\labeltext{Sprint}}
             You move up to double your normal movement speed.
-            % TODO: prevent infinite sprinting at 0 HP
-            In addition, you lose hit points equal to your level.
+            In addition, you lose a \glossterm{hit point}.
         \end{freeability}
 
     \subsection{Movement Impediments}
@@ -1421,28 +1428,34 @@ It defines how attributes work and explains how to make attacks in combat.
 
     % TODO: different section?
     \subsection{Damage Types}\label{Damage Types}
-        Abilities can deal many kinds of damage.
-        The damage types are listed below, along with any special properties that type of damage has.
+        All damage falls into one of three categories: \glossterm{energy damage}, \glossterm{physical damage}, and \glossterm{untyped damage}.
+        Physical damage is the most common type of damage.
+        Unless otherwise noted, all attacks with weapons deal physical damage.
+        Energy damage is a less common type of damage that is usually caused by \glossterm{magical} effects.
+        Any damage without a listed type is untyped damage.
 
-        \begin{dtable}
-            \lcaption{Damage Types}
-            \begin{dtabularx}{\columnwidth}{l X}
-                \tb{Name} & \tb{Special Effects} \tableheaderrule
-                Acid & Effective against many objects \\
-                Bludgeoning & A type of physical damage \\
-                Cold & At type of energy damage \\
-                Divine & \\
-                Electricity & A type of energy damage \\
-                Fire & A type of energy damage \\
-                Life & Heals undead creatures instead of damaging them \\
-                Physical & \\
-                Poison & \\
-                Piercing & A type of physical damage \\
-                Slashing & A type of physical damage \\
-                Sonic & Effective against many objects, a type of energy damage \\
-                Thaumatic & \\
-            \end{dtabularx}
-        \end{dtable}
+        \subsubsection{Damage Subtypes}\label{Damage Subtypes}
+            Physical damage has three subtypes: bludgeoning damage, piercing damage, and slashing damage.
+            Energy damage has four subtypes: acid damage, cold damage, electricity damage, and fire damage.
+            Damage of a particular subtype is also considered damage of its primary type.
+            For example, if you have a bonus to your \glossterm{resistances} against \glossterm{physical damage}, that bonus applies against bludgeoning damage because bludgeoning damage is a subtype of \glossterm{physical damage}.
+
+            Some damage types have special properties, as described below.
+            \parhead{Cold} Abilities that deal cold damage can freeze liquids and have similar effects appropriate to a sudden drop in temperature.
+            \parhead{Electricity} Abilities that deal electricity damage can ignite nonmagical fires if they damage combustible objects.
+            \parhead{Energy} Abilities that deal energy damage deal half damage underwater.
+            \parhead{Fire} Abilities that deal fire damage do not function underwater.
+            In addition, they provide light equivalent to a torch for their duration.
+            Abilities without a duration create a brief burst of torchlight.
+
+        \subsubsection{Multiple Damage Types}\label{Multiple Damage Types}
+            Some attacks deal damage that has multiple damage types.
+            When you take damage with multiple damage types, you use your lowest applicable \glossterm{resistance} to defend against it.
+            Other abilities similarly apply only if they apply to all damage types dealt by the attack.
+
+            For example, a flaming longsword deals slashing and fire damage.
+            If you were hit with a strike with that longsword, you would use the lower of your \glossterm{damage resistance} against \glossterm{physical damage} and your \glossterm{damage resistance} against \glossterm{energy damage} to resist the damage.
+            An ability that gave you immunity to fire damage would not prevent you from taking damage from the attack unless you were also immune to slashing damage.
 
     \subsection{Magical and Mundane Abilities}\label{Magical and Mundane Abilities}
 
@@ -1533,12 +1546,12 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \parhead{Charge} You can use the \textit{charge} ability as a standard action.
 
-        \begin{apability}{\labeltext{Charge}}
-            When you use this ability, you gain a point of \glossterm{fatigue}.
+        \begin{freeability}{\labeltext{Charge}}
+            \glossterm{Swift}: You take a \minus2 penalty to defenses until the end of the round.
 
             Move up to your speed in a single straight line.
             At the end of your movement, you can make a melee \glossterm{strike} with a \minus2 penalty to \glossterm{accuracy} from your new location.
-        \end{apability}
+        \end{freeability}
 
         \parhead{Cleanse} You can use the \textit{cleanse} ability as a \glossterm{minor action}.
         As long as you are conscious, no effect can prevent you from using this ability, even effects that prohibit using any other abilities.
@@ -1610,8 +1623,7 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \parhead{Recover} You can use the \textit{recover} ability as a standard action.
         \begin{apability}{\labeltext{Recover}}[\glossterm{Swift}]
-            You remove all of your \glossterm{fatigue}.
-            Because this ability has the \glossterm{Swift} tag, this can increase your \glossterm{wound threshold} against attacks made against you during the current phase.
+            You regain all of your \glossterm{hit points}.
         \end{apability}
 
         \parhead{Shove} As a standard action, you can use the \textit{shove} ability to physically move a creature.
@@ -1839,7 +1851,7 @@ It defines how attributes work and explains how to make attacks in combat.
             Resting for five minutes is considered a \glossterm{short rest}.
             When you take a short rest, you gain the following benefits.
             \begin{itemize}
-                \item You remove all points of \glossterm{fatigue}.
+                \item You regain all of your \glossterm{hit points}.
                 \item You regain any \glossterm{action points} you released from \glossterm{attuned} abilities (see \pcref{Attunement}).
                 \item You remove all \glossterm{conditions} affecting you (unless they cannot be removed normally).
                 \item Some other abilities have specific effects that last until you take a short rest.
@@ -1895,35 +1907,38 @@ It defines how attributes work and explains how to make attacks in combat.
         \item At 5th level, you gain access to \glossterm{legend points}.
     \end{itemize}
 
-    \begin{dtable}
+    \begin{dtable*}
         \lcaption{Character Advancement}
-        \begin{dtabularx}{\columnwidth}{*{2}{>{\lcol}l} *{4}{>{\lcol}X}}
-            \tb{Level} & \tb{XP}  & \tb{Max Rank}\fn{1} & \tb{Legacy Item}\fn{2} & \tb{AP}\fn{3} \tableheaderrule
-            1st          & 0      & 1      & \tdash & 4
-            \\ 2nd       & 20     & 2      & \tdash & \tdash
-            \\ 3rd       & 50     & \tdash & \tdash & 5
-            \\ 4th       & 90     & \tdash & 1      & \tdash
-            \\ 5th       & 150    & 3      & \tdash & \tdash
-            \\ 6th       & 230    & \tdash & \tdash & \tdash
-            \\ 7th       & 350    & \tdash & \tdash & \tdash
-            \\ 8th       & 510    & 4      & \tdash & \tdash
-            \\ 9th       & 750    & \tdash & \tdash & 6
-            \\ 10th      & 1,050  & \tdash & 2      & \tdash
-            \\ 11th      & 1,550  & 5      & \tdash & \tdash
-            \\ 12th      & 2,200  & \tdash & \tdash & \tdash
-            \\ 13th      & 3,150  & \tdash & \tdash & \tdash
-            \\ 14th      & 4,450  & 6      & \tdash & \tdash
-            \\ 15th      & 6,350  & \tdash & \tdash & 7
-            \\ 16th      & 8,900  & \tdash & 3      & \tdash
-            \\ 17th      & 13,000 & 7      & \tdash & \tdash
-            \\ 18th      & 18,000 & \tdash & \tdash & \tdash
-            \\ 19th      & 25,500 & \tdash & \tdash & \tdash
-            \\ 20th      & 36,000 & 8      & \tdash & \tdash
+        \begin{dtabularx}{\textwidth}{*{4}{>{\lcol}l} *{4}{>{\lcol}X}}
+            \tb{Level} & \tb{XP}  & \tb{DR}\fn{1} & \tb{WT}\fn{2} & \tb{Max Rank}\fn{3} & \tb{Legacy Item}\fn{4} & \tb{AP}\fn{5} \tableheaderrule
+            % Damage doubles every 7 levels; anchor points are 0th (12), 6th, 12th, 13th
+            1st     & 0  & 13  & 0      & 1      & \tdash & 4
+            \\ 2nd  & 0  & 14  & 20     & 2      & \tdash & \tdash
+            \\ 3rd  & 1  & 16  & 50     & \tdash & \tdash & 5
+            \\ 4th  & 2  & 18  & 90     & \tdash & 1      & \tdash
+            \\ 5th  & 3  & 21  & 150    & 3      & \tdash & \tdash
+            \\ 6th  & 4  & 24  & 230    & \tdash & \tdash & \tdash
+            \\ 7th  & 5  & 27  & 350    & \tdash & \tdash & \tdash
+            \\ 8th  & 6  & 30  & 510    & 4      & \tdash & \tdash
+            \\ 9th  & 8  & 34  & 750    & \tdash & \tdash & 6
+            \\ 10th & 10 & 38  & 1,050  & \tdash & 2      & \tdash
+            \\ 11th & 12 & 43  & 1,550  & 5      & \tdash & \tdash
+            \\ 12th & 14 & 48  & 2,200  & \tdash & \tdash & \tdash
+            \\ 13th & 16 & 54  & 3,150  & \tdash & \tdash & \tdash
+            \\ 14th & 18 & 61  & 4,450  & 6      & \tdash & \tdash
+            \\ 15th & 21 & 69  & 6,350  & \tdash & \tdash & 7
+            \\ 16th & 24 & 77  & 8,900  & \tdash & 3      & \tdash
+            \\ 17th & 27 & 86  & 13,000 & 7      & \tdash & \tdash
+            \\ 18th & 30 & 96  & 18,000 & \tdash & \tdash & \tdash
+            \\ 19th & 33 & 108 & 25,500 & \tdash & \tdash & \tdash
+            \\ 20th & 36 & 122 & 36,000 & 8      & \tdash & \tdash
         \end{dtabularx}
-        1. This is your maximum rank in your class archetypes (see \pcref{Archetype Ranks}). \\
-        2. This is the number of abilities you gain with your \glossterm{legacy item} (see \pcref{Legacy Items}). \\
-        3. This is the number of \glossterm{action points} you have (see \pcref{Action points}). \\
-    \end{dtable}
+        1. This is your \glossterm{damage resistance} (see \pcref{Damage Resistance}). \\
+        2. This is your \glossterm{wound resistance} (see \pcref{Wound Resistance}). \\
+        3. This is your maximum rank in your class archetypes (see \pcref{Archetype Ranks}). \\
+        4. This is the number of abilities you gain with your \glossterm{legacy item} (see \pcref{Legacy Items}). \\
+        5. This is the number of \glossterm{action points} you have (see \pcref{Action points}). \\
+    \end{dtable*}
 
     \subsection{Leveling Up}
         When you gain a level, the following things happen:
@@ -1931,7 +1946,7 @@ It defines how attributes work and explains how to make attacks in combat.
             \item Your \glossterm{attributes} increase (see \pcref{Increasing Attributes})
             \item Your skill modifiers usually increase by 1 (see \pcref{Skill Modifier})
             \item Your \glossterm{mundane power} and \glossterm{magical power} each increase by 1 (see \pcref{Power}).
-            \item Your \glossterm{fatigue threshold} and \glossterm{wound threshold} each increase (see \pcref{Taking Damage}).
+            \item Your \glossterm{damage resistance} and \glossterm{wound resistance} usually increase, (see \tref{Character Advancement}).
             \item Your \glossterm{accuracy} increases by 1 (see \pcref{Accuracy})
             \item All of your \glossterm{defenses} increase by 1 (see \pcref{Defenses})
             \item You gain an additional \glossterm{archetype rank} (see \pcref{Archetypes})
