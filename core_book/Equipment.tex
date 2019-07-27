@@ -420,33 +420,34 @@
         \begin{dtable!*}
             \lcaption{Armor and Shields}
             \begin{dtabularx}{\textwidth}{>{\lcol}X c c c c c c}
-                \tb{Armor} & \tb{Defense Bonus} & \tb{Dex Multiplier} & \tb{Encumbrance} & \tb{Material} & \tb{Cost} & \tb{Weight\fn{1}} \tableheaderrule
-                Light armor &  &  &  &  &  &  \\
-                \tind Leather          & \plus1        & 1\x    & \plus1       & Leather           & 10 gp      & 15 lb.      \\
-                \tind Studded leather  & \plus2        & 1\x    & \plus2       & Leather and metal & 25 gp      & 20 lb.      \\
-                \tind Chain shirt      & \plus2        & 1\x    & \plus2       & Metal             & 40 gp      & 25 lb.      \\
-                Medium armor\fn{2}     &               &        &              &                   &            &             \\
-                \tind Hide             & \plus2        & 1\x    & \plus3       & Leather           & 15 gp      & 25 lb.      \\
-                \tind Scale mail       & \plus3        & 1\x    & \plus5       & Metal             & 50 gp      & 30 lb.      \\
-                \tind Breastplate      & \plus3        & 1\x    & \plus4       & Metal             & 150 gp     & 30 lb.      \\
-                Heavy armor\fn{3}      &               &        &              &                   &            &             \\
-                \tind Half-plate       & \plus4        & 1/2\x  & \plus7       & Metal             & 200 gp     & 50 lb.      \\
-                \tind Full plate       & \plus5        & 1/2\x  & \plus6       & Metal             & 500 gp     & 50 lb.      \\
-                Shields                &               &        &              &                   &            &             \\
-                \tind Buckler          & \plus1        & \tdash & \tdash       & Metal or wood     & 15 gp      & 5 lb.       \\
-                \tind Shield, standard & \plus2        & \tdash & \tdash\fn{4} & Metal or wood     & 15 gp      & 10 lb.      \\
-                \tind Shield, tower    & \plus3\fn{5}  & 1/2\x  & \plus2\fn{4} & Metal or wood     & 30 gp      & 45 lb.      \\
-                Extras                 &               &        &              &                   &            &             \\
-                \tind Armor spikes     & \minus1\fn{6} & \tdash & \plus1       & Metal             & \plus50 gp & \plus10 lb. \\
-                \tind Gauntlet, locked & \tdash        & \tdash & Special      & Metal             & 8 gp       & \plus5 lb.  \\
-                \tind Shield spikes    & \tdash        & \tdash & \plus1       & Metal             & \plus10 gp & \plus5 lb.  \\
+                \tb{Armor} & \tb{Armor Defense} & \tb{Resistances}\fn{1} & \tb{Encumbrance} & \tb{Material} & \tb{Cost} & \tb{Weight}\fn{2} \tableheaderrule
+                Light armor            &              &         &              &                   &            &             \\
+                \tind Leather          & \plus2       & \plus0  & \plus1       & Leather           & 10 gp      & 15 lb.      \\
+                \tind Studded leather  & \plus2       & \plus1  & \plus1       & Leather and metal & 25 gp      & 20 lb.      \\
+                \tind Chain shirt      & \plus2       & \plus2  & \plus2       & Metal             & 40 gp      & 25 lb.      \\
+                Medium armor\fn{3}     &              &         &              &                   &            &             \\
+                \tind Hide             & \plus3       & \plus1  & \plus3       & Leather           & 15 gp      & 25 lb.      \\
+                \tind Scale mail       & \plus3       & \plus2  & \plus5       & Metal             & 50 gp      & 30 lb.      \\
+                \tind Breastplate      & \plus3       & \plus3  & \plus4       & Metal             & 150 gp     & 30 lb.      \\
+                Heavy armor\fn{4}      &              &         &              &                   &            &             \\
+                \tind Plated mail      & \plus4       & \plus4  & \plus5       & Metal             & 250 gp     & 35 lb.      \\
+                \tind Half-plate       & \plus4       & \plus5  & \plus7       & Metal             & 500 gp     & 50 lb.      \\
+                \tind Full plate       & \plus4       & \plus6  & \plus6       & Metal             & 1000 gp    & 50 lb.      \\
+                Shields                &              &         &              &                   &            &             \\
+                \tind Buckler          & \plus1       & \tdash  & \tdash       & Metal or wood     & 15 gp      & 5 lb.       \\
+                \tind Shield, standard & \plus2       & \tdash  & \tdash\fn{5} & Metal or wood     & 15 gp      & 10 lb.      \\
+                \tind Shield, tower    & \plus3\fn{6} & \tdash  & \plus2\fn{5} & Metal or wood     & 30 gp      & 45 lb.      \\
+                Extras                 &              &         &              &                   &            &             \\
+                \tind Armor spikes     & \tdash       & \minus1 & \plus1       & Metal             & \plus50 gp & \plus10 lb. \\
+                \tind Gauntlet, locked & \tdash       & \tdash  & Special      & Metal             & 8 gp       & \plus5 lb.  \\
+                \tind Shield spikes    & \minus1      & \tdash  & \tdash       & Metal             & \plus10 gp & \plus5 lb.  \\
             \end{dtabularx}
-            1 Weight figures are for armor sized to fit Medium characters. Armor fitted for Small characters weighs half as much, and armor fitted for Large characters weighs twice as much. \\
-            2 Speed is reduced by 5 feet while wearing medium armor (see \pcref{Armor Usage Classes}). \\
-            3 Speed is reduced by 10 feet (see \pcref{Armor Usage Classes}). \\
-            4 The hand holding the shield is not free, which may limit your actions. \\
-            5 Tower shields can grant you cover. See the description. \\
-            6 Armor spikes reduce the defense bonus granted by the armor they are put on by 1. \\
+            1 This increases your \glossterm{resistances} against \glossterm{physical damage} (see \pcref{Resistances}). \\
+            2 Weight figures are for armor sized to fit Medium characters. Armor fitted for Small characters weighs half as much, and armor fitted for Large characters weighs twice as much. \\
+            3 Speed is reduced by 5 feet (see \pcref{Armor Usage Classes}). \\
+            4 Speed is reduced by 10 feet and Dexterity is halved (see \pcref{Armor Usage Classes}). \\
+            5 The hand holding the shield is not free, which may limit your actions. \\
+            6 Tower shields can grant you cover. See the description. \\
         \end{dtable!*}
 
     \subsection{Armor Descriptions}
@@ -461,7 +462,7 @@
         However, if you wield weapons or otherwise take actions using the arm bearing the buckler, you do not gain the buckler's defensive bonus during that time.
         \par You can't bash someone with a buckler.
         \parhead{Chain Shirt} A chain shirt comes with a steel cap.
-        \parhead{Full Plate} The suit includes gauntlets, heavy leather boots, a visored helmet, and a thick layer of padding that is worn underneath the armor. Each suit of full plate must be individually fitted to its owner by a master armorsmith, although a captured suit can be resized to fit a new owner with a day of work and a DR 15 Craft (metalworking) check. The new owner must still be of the same size category as the size category that the suit was designed for.
+        \parhead{Full Plate} The suit includes gauntlets, heavy leather boots, a visored helmet, and a thick layer of padding that is worn underneath the armor. Each suit of full plate must be individually fitted to its owner by a master armorsmith, although a captured suit can be resized to fit a new owner with a day of work and a DR 10 Craft (metalworking) check. The new owner must still be of the same size category as the size category that the suit was designed for.
         \parhead{Gauntlet, Locked} This armored gauntlet has small chains and braces that allow the wearer to attach a weapon to the gauntlet so that it cannot be dropped easily.
         As a \glossterm{standard action}, you can lock or unlock the gauntlet with a different free hand.
         While the gauntlet is locked, any item held in that hand is extraordinarily well secured.
@@ -483,7 +484,6 @@
         \parhead{Shield Spikes} When added to your shield, these spikes turn it into a piercing weapon that increases the damage dealt by a shield bash as if the shield were designed for a creature one size category larger than you. You can't put spikes on a buckler or a tower shield. Otherwise, attacking with a spiked shield is like making a shield bash attack (see above).
         \parhead{Studded Leather} Only the studs on studded leather are made of metal.
         Studded leather armor made with studs from special materials does not grant the wearer the properties of the special material.
-        For example, studded leather armor made with adamantine studs does not grant the wearer damage reduction.
 
     \subsection{Armor for Unusual Creatures}\label{Armor for Unusual Creatures}
         Armor and shields for unusually big creatures, unusually little creatures, and nonhumanoid creatures have different costs and weights from those given on \trefnp{Armor and Shields}. Refer to the appropriate line on the table below and apply the multipliers to cost and weight for the armor type in question.
