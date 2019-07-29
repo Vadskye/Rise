@@ -127,24 +127,24 @@ def generate_armor():
 
     apparel.append(MagicItem(
         name="Armor of Energy Resistance",
-        level=4,
+        level=5,
         tags=['Shielding'],
         material_type='Body armor',
         description="""
-            You gain a \\glossterm<magic bonus> equal to the item's \\glossterm<power> to \\glossterm<damage reduction> against \\glossterm<energy damage>.
-            When you resist energy with this item, it sheds light as a torch until the end of the next round.
-            The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, red for fire, and brown for sonic.
+            You gain a \\glossterm<magic bonus> equal to half the item's \\glossterm<power> to \\glossterm<resistances> against \\glossterm<energy damage>.
+            When you resist energy damage, it sheds light as a torch until the end of the next round.
+            The color of the light depends on the energy damage resisted: green for acid, blue for cold, yellow for electricity, and red for fire.
         """,
         short_description="Reduces energy damage",
     ))
 
     apparel.append(MagicItem(
         name="Armor of Energy Resistance, Greater",
-        level=12,
+        level=14,
         tags=['Shielding'],
         material_type='Body armor',
         description="""
-            This item functions like the \\mitem<armor of energy resistance> item, except that the damage reduction is equal to twice the item's \\glossterm<power>.
+            This item functions like the \\mitem<armor of energy resistance> item, except that the bonus is equal to the item's \\glossterm<power>.
         """,
         short_description="Drastically reduces energy damage",
     ))
@@ -229,30 +229,41 @@ def generate_armor():
 
     apparel.append(MagicItem(
         name="Armor of Invulnerability",
-        level=10,
+        level=8,
         tags=['Shielding'],
         material_type='Body armor',
         description="""
-            You gain a \\glossterm<magic bonus> equal to this item's \\glossterm<power> to \\glossterm<damage reduction> against damage from \\glossterm<physical attacks>.
+            The armor's bonus to \\glossterm<resistances> based on its armor type is doubled.
         """,
-        short_description="Reduces damage from physical attacks",
+        short_description="Doubles armor resistance bonus",
     ))
 
     apparel.append(MagicItem(
         name="Armor of Invulnerability, Greater",
-        level=16,
+        level=14,
         tags=['Shielding'],
         material_type='Body armor',
         description="""
-            This item functions like the \\mitem<armor of invulnerability> item, except that the damage reduction is equal to twice the item's \\glossterm<power>.
+            The armor's bonus to \\glossterm<resistances> based on its armor type is tripled.
         """,
-        short_description="Drastically reduces damage from physical attacks",
+        short_description="Triples armor resistance bonus",
+    ))
+
+    apparel.append(MagicItem(
+        name="Armor of Invulnerability, Supreme",
+        level=20,
+        material_type='Body armor',
+        tags=[],
+        description="""
+            The armor's bonus to \\glossterm<resistances> based on its armor type is quadrupled.
+        """,
+        short_description="Quadruples armor resistance bonus",
     ))
 
     apparel.append(MagicItem(
         name="Shield of Mystic Reflection",
         level=12,
-        tags=['Mystic'],
+        tags=[],
         material_type='Shield',
         description="""
             As a standard action, you can activate this shield.
@@ -495,7 +506,7 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Crown of Flame",
-        level=5,
+        level=9,
         material_type='Crown',
         tags=['Fire'],
         description="""
@@ -503,7 +514,7 @@ def generate_worn():
             The flame sheds light as a torch.
 
             You and your \\glossterm<allies> within a \\arealarge radius emanation from you
-                gain a \\glossterm<magic bonus> equal to this item's \\glossterm<power> to \\glossterm<damage reduction> against fire damage.
+                gain a \\glossterm<magic bonus> equal to this item's \\glossterm<power> to \\glossterm<resistances> against fire damage.
         """,
         short_description="Grants nearby allies immunity to fire damage",
     ))
@@ -525,26 +536,26 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Crown of Frost",
-        level=11,
+        level=13,
         material_type='Crown',
         tags=['Cold'],
         description="""
             At the end of each \\glossterm<action phase>, you make an attack vs. Fortitude against all enemies within a \\areamed radius emanation from you.
-            At hit causes each target to gain a point of \\glossterm<fatigue>.
+            At hit deals cold \\glossterm<standard damage> -2d.
         """,
-        short_description="Continuously damages and fatigues nearby enemies",
+        short_description="Continuously damages nearby enemies",
     ))
 
     apparel.append(MagicItem(
         name="Crown of Thunder",
-        level=9,
+        level=11,
         material_type='Crown',
         tags=['Sonic'],
         description="""
             The crown constantly emits a low-pitched rumbling.
             To you and your \\glossterm<allies>, the sound is barely perceptible.
             However, all other creatures within a \\arealarge radius emanation from you hear the sound as a deafening, continuous roll of thunder.
-            The noise blocks out all other sounds quieter than thunder, causing them to be \\deafened while they remain in the area and until the end of the next round after they leave.
+            The noise blocks out all other sounds quieter than thunder, causing them to be \\deafened while they remain in the area.
         """,
         short_description="Continously deafens nearby enemies",
     ))
@@ -775,11 +786,11 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Ring of Energy Resistance",
-        level=5,
+        level=6,
         material_type='Ring',
         tags=['Shielding'],
         description="""
-            You gain a \\glossterm<magic bonus> equal to this item's \\glossterm<power> to \\glossterm<damage reduction> against \\glossterm<energy damage>.
+            You gain a \\glossterm<magic bonus> equal to half this item's \\glossterm<power> to \\glossterm<resistances> against \\glossterm<energy damage>.
             When you resist energy with this ability, the ring sheds light as a torch until the end of the next round.
             The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, red for fire, and brown for sonic.
         """,
@@ -788,11 +799,11 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Ring of Energy Resistance, Greater",
-        level=13,
+        level=15,
         material_type='Ring',
         tags=['Shielding'],
         description="""
-            This item functions like the \\mitem<ring of energy resistance>, except that the damage reduction is equal to twice the item's \\glossterm<power>.
+            This item functions like the \\mitem<ring of energy resistance>, except that the bonus is equal to the item's \\glossterm<power>.
         """,
         short_description="Drastically reduces energy damage",
     ))
@@ -842,11 +853,11 @@ def generate_worn():
         tags=['Life'],
         description="""
             As a standard action, you can use this ring to enhance your healing.
-            When you do, you remove a point of \\glossterm<fatigue>.
-            Only fatigue gained while wearing the ring can be healed in this way.
+            When you do, you regain a \\glossterm<hit point>.
+            Only \\glossterm<hit points> lost while wearing the ring can be healed in this way.
             You can only use this ability up to 3 times between \\glossterm<short rests>.
         """,
-        short_description="Heals fatigue",
+        short_description="Heals hit points",
     ))
 
     apparel.append(MagicItem(
@@ -855,9 +866,9 @@ def generate_worn():
         material_type='Ring',
         tags=['Life'],
         description="""
-            This item functions like the \\textit<ring of regeneration>, except that you can remove two points of \\glossterm<fatigue> instead of one.
+            This item functions like the \\textit<ring of regeneration>, except that you can regain two \\glossterm<hit points> instead of one.
         """,
-        short_description="Heals more fatigue",
+        short_description="Heals more hit points",
     ))
 
     # Amulets
@@ -1037,7 +1048,7 @@ def generate_worn():
         material_type='Belt',
         tags=['Life'],
         description="""
-            As a standard action, you can use this belt to remove a point of \\glossterm<fatigue>.
+            As a standard action, you can use this belt to regain a \\glossterm<hit point>.
             You can only use this item once between \\glossterm<short rests>.
         """,
         short_description="Grants healing",
@@ -1049,7 +1060,7 @@ def generate_worn():
         material_type='Belt',
         tags=['Life'],
         description="""
-            This item functions like the \\textit<belt of healing>, except that you can remove two points of \\glossterm<fatigue> instead of one.
+            This item functions like the \\textit<belt of healing>, except that you can heal two \\glossterm<hit points> instead of one.
         """,
         short_description="Grants more healing",
     ))
