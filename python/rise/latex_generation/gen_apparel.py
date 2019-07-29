@@ -837,26 +837,27 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Ring of Regeneration",
-        level=9,
+        level=10,
         material_type='Ring',
         tags=['Life'],
         description="""
-            At the end of each round, if you have at least three points of \\glossterm<fatigue>, you remove a point of \\glossterm<fatigue>.
-            Only damage taken while wearing the ring can be healed in this way.
+            As a standard action, you can use this ring to enhance your healing.
+            When you do, you remove a point of \\glossterm<fatigue>.
+            Only fatigue gained while wearing the ring can be healed in this way.
+            You can only use this ability up to 3 times between \\glossterm<short rests>.
         """,
-        short_description="Grants fast healing while significantly fatigued",
+        short_description="Heals fatigue",
     ))
 
     apparel.append(MagicItem(
         name="Ring of Regeneration, Greater",
-        level=14,
+        level=18,
         material_type='Ring',
         tags=['Life'],
         description="""
-            At the end of each round, you remove a point of \\glossterm<fatigue>.
-            Only damage taken while wearing the ring can be healed in this way.
+            This item functions like the \\textit<ring of regeneration>, except that you can remove two points of \\glossterm<fatigue> instead of one.
         """,
-        short_description="Grants fast healing",
+        short_description="Heals more fatigue",
     ))
 
     # Amulets
@@ -1032,24 +1033,23 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Belt of Healing",
-        level=4,
+        level=6,
         material_type='Belt',
         tags=['Life'],
         description="""
-            As a standard action, you can spend an \\glossterm<action point> to use this belt.
-            If you do, you remove a point of \\glossterm<fatigue>.
+            As a standard action, you can use this belt to remove a point of \\glossterm<fatigue>.
+            You can only use this item once between \\glossterm<short rests>.
         """,
         short_description="Grants healing",
     ))
 
     apparel.append(MagicItem(
         name="Belt of Healing, Greater",
-        level=10,
+        level=14,
         material_type='Belt',
         tags=['Life'],
         description="""
-            As a standard action, you can spend an \\glossterm<action point> to use this belt.
-            If you do, you remove two points of \\glossterm<fatigue>.
+            This item functions like the \\textit<belt of healing>, except that you can remove two points of \\glossterm<fatigue> instead of one.
         """,
         short_description="Grants more healing",
     ))
