@@ -91,8 +91,8 @@ def generate_implements():
         material_type='Staff',
         tags=['Life'],
         description="""
-            When you cast a spell using this staff, you may remove a point of \\glossterm<fatigue>.
-            You can only regain fatigue once in this way between \\glossterm<short rests>.
+            When you cast a spell using this staff, you may regain a \\glossterm<hit point>.
+            You can only regain \\glossterm<hit points> once in this way between \\glossterm<short rests>.
         """,
         short_description="Heals you when casting spells",
     ))
@@ -103,8 +103,8 @@ def generate_implements():
         material_type='Staff',
         tags=['Life'],
         description="""
-            When you cast a spell using this staff, you may remove two points of \\glossterm<fatigue>.
-            You can only regain fatigue once in this way between \\glossterm<short rests>.
+            When you cast a spell using this staff, you may regain two \\glossterm<hit points>.
+            You can only regain \\glossterm<hit points> once in this way between \\glossterm<short rests>.
         """,
         short_description="Greatly heals you when casting spells",
     ))
