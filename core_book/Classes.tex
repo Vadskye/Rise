@@ -102,9 +102,9 @@ This choice determines a great deal about your character's abilities.
             \\ 2 & Battlefield lore          & Intimidating anger         & Athletic prowess     & Exotic weaponry
             \\ 3 & Battle-scarred            & Focused anger              & Primal power         & Savage precision, savage force
             \\ 4 & Battleforged fortitude    & Invigorating rage          & Primal maneuver      & Greater fast movement
-            \\ 5 & Soulscarred               & Greater rage               & Greater primal power & Savage resilience
+            \\ 5 & Greater battle-scarred               & Greater rage               & Greater primal power & Savage resilience
             \\ 6 & Greater fury of the storm & Greater intimidating anger & Primal prowess       & Greater savage precision, greater savage force
-            \\ 7 & Greater battle-scarred    & Greater invigorating rage  & Primal maneuver      & Supreme fast movement
+            \\ 7 & Supreme battle-scarred    & Greater invigorating rage  & Primal maneuver      & Supreme fast movement
             \\ 8 & Battleforged supremacy    & Titanic rage               &
         \end{dtabularx}
     \end{dtable!*}
@@ -147,8 +147,10 @@ This choice determines a great deal about your character's abilities.
             You gain the following benefits and drawbacks:
             \begin{itemize}
                 \item You gain a \plus2 bonus to \glossterm{power} with \glossterm{mundane} abilities.
-                \item You are unable to take \glossterm{standard actions} that do not cause you to make \glossterm{physical attacks}.
-                \item At the end of each round, if you did not make a physical attack that round, this ability ends.
+                \item You take a \minus2 penalty to Armor and Reflex defenses.
+                \item You gain a bonus equal to your level to your \glossterm{resistances} against \glossterm{physical damage}.
+                \item You are unable to take \glossterm{standard actions} that do not cause you to make \glossterm{mundane} attacks.
+                \item At the end of each round, if you did not make a \glossterm{mundane} attack that round, this ability ends.
                     If the ability ends this way, you regain the \glossterm{action point} you spent to attune to this ability the next time you take a \glossterm{short rest}.
             \end{itemize}
         \end{attuneability}
@@ -158,16 +160,16 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Bbn}[3]{Focused Anger} You gain a \plus2 bonus to Mental defense.
 
-        \cf{Bbn}[4]{Invigorating Rage} When you use your \textit{rage} ability, you may remove a point of \glossterm{fatigue}.
-        If you do, you regain that \glossterm{fatigue} when the ability ends.
+        \cf{Bbn}[4]{Invigorating Rage} When you use your \textit{rage} ability, you may regain a \glossterm{hit point}.
+        If you do, you lose that \glossterm{hit point} when the ability ends.
 
         \cf{Bbn}[5]{Greater Rage} The \glossterm{power} bonus from your \textit{rage} ability increases to \plus4.
 
         \cf{Bbn}[6]{Greater Intimidating Anger}
         The bonuses from your \textit{intimidating anger} ability increase to \plus4.
 
-        \cf{Bbn}[7]{Greater Invigorating Rage} You may remove two points of \textit{fatigue} instead of one with your \textit{invigorating rage} ability.
-        If you do, you regain two points of \glossterm{fatigue} when the ability ends.
+        \cf{Bbn}[7]{Greater Invigorating Rage} You may regain two \textit{hit points} instead of one with your \textit{invigorating rage} ability.
+        If you do, you lose two \glossterm{hit points} when the ability ends.
 
         \cf{Bbn}[8]{Titanic Rage}
         When you use your \textit{rage} ability, you can grow by one \glossterm{size category}.
@@ -205,27 +207,27 @@ This choice determines a great deal about your character's abilities.
         % Rank 7 summary:
         % +2 overwhelm resistance
         % +2 skill points
-        % +2x level damage reduction vs all
+        % +level to resistances
         % +2 Fortitude
 
         \cf{Bbn}[1]{Fury of the Storm} You gain a \plus1 bonus to \glossterm{overwhelm resistance}.
 
         \cf{Bbn}[2]{Battlefield Lore} You gain two additional \glossterm{skill points}.
 
-        \cf{Bbn}[3]{Battle-Scarred} You gain a bonus equal to your level to \glossterm{damage reduction} against damage from \glossterm{physical attacks}.
+        \cf{Bbn}[3]{Battle-Scarred} You gain a bonus equal to half your level to your \glossterm{resistances} against \glossterm{physical damage}.
 
         \cf{Bbn}[4]{Battleforged Fortitude} You gain a \plus2 bonus to Fortitude defense.
 
-        \cf{Bbn}[5]{Soulscarred} The \glossterm{damage reduction} from your \textit{battle-scarred} ability applies against all damage, not just damage from physical attacks.
+        \cf{Bbn}[5]{Greater Battle-Scarred} The bonus from your \textit{battle-scarred} ability increases to be equal to your level.
 
         \cf{Bbn}[6]{Greater Fury of the Storm}
         The bonus from your \textit{fury of the storm} ability increases to \plus2.
 
-        \cf{Bbn}[7]{Greater Battle-Scarred}
-        The \glossterm{damage reduction} from your \textit{battle-scarred} ability increases to twice your level.
+        \cf{Bbn}[7]{Supreme Battle-Scarred}
+        The bonus from your \textit{battle-scarred} ability applies against all damage.
 
         \cf{Bbn}[8]{Battleforged Supremacy}
-        You gain a \plus1 bonus to all defenses.
+        The bonus from your \textit{battle-scarred} ability increases to be equal to twice your level.
 
     \subsection{Outland Savage}
         This archetype improves your mobility and combat prowess with direct, brutal abilities.
@@ -464,7 +466,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Clr}[1]{Divine Healing} You can use the \textit{divine healing} ability as a standard action.
         \begin{freeability}{Divine Healing}[\glossterm{Life}, \glossterm{Magical}]
-            You or a living \glossterm{ally} you can touch removes a point of \glossterm{fatigue}.
+            You or a living \glossterm{ally} you can touch regains a \glossterm{hit point}.
             You can use this ability up to 3 times between \glossterm{short rests}.
         \end{freeability}
 
@@ -473,8 +475,8 @@ This choice determines a great deal about your character's abilities.
             You or an \glossterm{ally} within \rngclose range can remove one \glossterm{condition}.
         \end{freeability}
 
-        \cf{Clr}[3]{Vital Healing} When you cause a creature to remove a point of \glossterm{fatigue} with a \glossterm{magical} ability, you can spend an \glossterm{action point}.
-        If you do, you cause the target to remove a \glossterm{vital wound} instead of a point of \glossterm{fatigue}.
+        \cf{Clr}[3]{Vital Healing} When you cause a creature to regain a \glossterm{hit point} with a \glossterm{magical} ability, you can spend an \glossterm{action point}.
+        If you do, the target also removes a \glossterm{vital wound}.
         You can only use this ability once per round.
 
         \cf{Clr}[4]{Greater Divine Healing} The \glossterm{range} of your \textit{divine healing} ability increases to \rngclose.
@@ -483,10 +485,10 @@ This choice determines a great deal about your character's abilities.
         \cf{Clr}[5]{Greater Divine Cleanse} Your \textit{divine cleanse} ability gains the \glossterm{Swift} tag.
         This means that any effects of the removed condition do not affect the target during the current phase.
 
-        \cf{Clr}[6]{Greater Vital Healing} When you use your \textit{vital healing} ability, the target removes the \glossterm{vital wound} in addition to the point of \glossterm{fatigue}.
+        \cf{Clr}[6]{Greater Vital Healing} When you use your \textit{vital healing} ability, the target removes a number of \glossterm{vital wounds} equal to the \glossterm{hit points} it regained.
 
         \cf{Clr}[7]{Supreme Divine Healing} The \glossterm{range} of your \textit{divine healing} increases to \rngmed.
-        In addition, the target removes an additional point of \glossterm{fatigue}.
+        In addition, the target regains an additional \glossterm{hit point}.
 
     \subsection{Cleric Domain Abilities}\label{Cleric Domain Abilities}
         These domain abilities can be granted by the \textit{domain influence} cleric archetype.
@@ -541,10 +543,7 @@ This choice determines a great deal about your character's abilities.
             \parhead{Mastery} If a living creature in your aura from this domain aspect takes \glossterm{vital damage}, you can choose to cause it to immediately die.
 
         \subsubsection{Destruction}
-            \parhead{Gift} When you deal damage to a target, you first negate an amount of \glossterm{damage reduction} equal to your \glossterm{power}.
-            In addition, you negate an amount of \glossterm{hardness} equal to half your \glossterm{power}.
-            Hardness and damage reduction negated in this way does not apply against your attack or against any other attacks during the current phase.
-            This effect lasts until the end of the round.
+            \parhead{Gift} Your attacks deal double damage to objects.
             % TODO: upgrade timing is a little weird
             \parhead{Aspect} You can use the \textit{destructive attack} ability as a standard action.
             \begin{freeability}{Destructive Attack}
@@ -567,7 +566,7 @@ This choice determines a great deal about your character's abilities.
             If you choose this domain, you add the \sphere{terramancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
             \parhead{Gift} You gain a \plus2 bonus to Fortitude defense.
-            \parhead{Aspect} You gain a \glossterm{magic bonus} equal to your \glossterm{power} to \glossterm{damage reduction} against damage from \glossterm{physical attacks}.
+            \parhead{Aspect} You gain a \glossterm{magic bonus} equal to half your \glossterm{power} to \glossterm{resistances} against \glossterm{physical damage}.
             \parhead{Essence} You can use the \textit{speak with earth} ability as a standard action.
             \begin{attuneability}{Speak with Earth}[\glossterm{Attune} (self)]
                 You can speak with earth within a \areahuge zone from your location.
@@ -575,7 +574,7 @@ This choice determines a great deal about your character's abilities.
 
                 After you use this ability on a particular area of earth, you cannot use it again on that same area for 24 hours.
             \end{attuneability}
-            \parhead{Mastery} Your damage reduction from this domain's aspect protects you against all damage, rather than only against damage from physical attacks.
+            \parhead{Mastery} The bonus from this domain's aspect increases to be equal to your \glossterm{power}.
             In addition, you gain a \plus1 bonus to all defenses as long as you are on solid ground.
 
         \subsubsection{Evil}
@@ -598,8 +597,10 @@ This choice determines a great deal about your character's abilities.
             If you choose this domain, you add the \sphere{pyromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
             All abilities from this domain are \glossterm{Fire} abilities.
 
-            \parhead{Gift} You gain a \glossterm{magic bonus} to equal to twice your \glossterm{power} to \glossterm{damage reduction} against fire damage.
-            \parhead{Aspect} Whenever you resist fire damage with this domain's gift, you gain a \plus2 bonus to \glossterm{power} with \glossterm{Fire} abilities until the end of the next round.
+            \parhead{Gift} You gain a \glossterm{magic bonus} to equal to twice your \glossterm{power} to \glossterm{resistances} against fire damage.
+            \parhead{Aspect} Whenever you deal fire damage to a creature with a \glossterm{critical hit}, that creature is \glossterm{ignited} as a \glossterm{condition}.
+            This condition can be removed if the target makes a \glossterm{DR} 10 Dexterity check as a \glossterm{move action} to put out the flames.
+            Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this check.
             \parhead{Essence} You can use the \textit{speak with fire} ability as a standard action.
             \begin{attuneability}{Speak with Fire}[\glossterm{Attune} (self), \glossterm{Fire}]
                 You can speak with and command fire within a \areahuge radius zone from your location.
@@ -611,9 +612,8 @@ This choice determines a great deal about your character's abilities.
                 After you use this ability on a particular area of fire, you cannot use it again on that same area for 24 hours.
                 % TODO: What does an ``area of fire'' mean?
             \end{attuneability}
-            \parhead{Mastery} When you get a \glossterm{critical hit} against a creature with a \glossterm{Fire} ability, that creature becomes \ignited as a \glossterm{condition}.
-            This condition deals fire \glossterm{standard damage} \minus2d instead of the normal 1d6 damage per round.
-            This is a \glossterm{Fire} ability.
+            \parhead{Mastery} The \glossterm{ignited} condition from this domain's gift cannot be removed by putting out the flames as a move action.
+            In addition, it deals fire \glossterm{standard damage} -1d instead of the normal 1d6 damage per round.
 
         \subsubsection{Good}
             \parhead{Gift} At the start of each phase, you may choose an adjacent \glossterm{ally}.
@@ -671,7 +671,7 @@ This choice determines a great deal about your character's abilities.
                 If it was dead for no more than 5 minutes, it is restored to life, as the \ritual{resurrection} ritual.
                 After using this ability, you cannot use it for 1 hour.
             \end{apability}
-            \parhead{Mastery} Whenever you remove any amount of \glossterm{fatigue}, you remove an additional point of fatigue.
+            \parhead{Mastery} Whenever you regain any number of \glossterm{hit points}, you regain an additional \glossterm{hit point}.
 
         \subsubsection{Magic}
             \parhead{Gift} You gain a \plus1 bonus to \glossterm{power} with divine spells.
@@ -951,8 +951,8 @@ This choice determines a great deal about your character's abilities.
                 You move at half speed.
                 In exchange, you gain a \plus1 bonus to Armor defense and Fortitude defense.
                 \rankline
-                \rank{3} You gain a \glossterm{magic bonus} equal to half your \glossterm{power} to \glossterm{damage reduction} against \glossterm{physical damage}.
-                \rank{5} The damage reduction increases to be equal to your \glossterm{power}.
+                \rank{3} You gain a \glossterm{magic bonus} equal to half your \glossterm{power} to \glossterm{resistances} against \glossterm{physical damage}.
+                \rank{5} The resistance bonus increases to be equal to your \glossterm{power}.
                 \rank{7} The defense bonuses increase to \plus2.
             \end{freeability}
 
@@ -1152,8 +1152,8 @@ This choice determines a great deal about your character's abilities.
 
             Your magical connection to the animal improves its resilience and strength in combat.
             If any of its statistics are higher than the normal values below, the animal uses its own statistics instead.
-            Its \glossterm{fatigue threshold} is equal to your \glossterm{power}.
-            Its \glossterm{wound threshold} is equal to three times your \glossterm{power}.
+            Its \glossterm{damage resistance} is equal to your \glossterm{power}.
+            Its \glossterm{wound resistance} is equal to three times your \glossterm{power}.
             Each of its defenses is normally equal to 4 \add your level.
             Its \glossterm{accuracy} is normally equal to the higher of your level and Perception.
             Its \glossterm{power} with its attacks is normally equal to your \glossterm{power}.
@@ -2239,7 +2239,7 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Pal}[1]{Lay on Hands}[Magical] You can use the \textit{lay on hands} ability as a standard action.
         \begin{freeability}{Lay on Hands}[Life]
-            You or an \glossterm{ally} you can touch removes a point of \glossterm{fatigue}.
+            You or an \glossterm{ally} you can touch regains a \glossterm{hit point}.
             That creature is unaffected by any additional uses of this ability until you take a \glossterm{short rest}.
         \end{freeability}
 
@@ -2260,7 +2260,7 @@ This choice determines a great deal about your character's abilities.
         In addition, the \glossterm{wound threshold} bonus increases to twice your \glossterm{power}.
 
         \cf{Pal}[7]{Supreme Lay on Hands}[Magical]
-        The target of your \textit{lay on hands} ability removes an additional point of \glossterm{fatigue}.
+        The target of your \textit{lay on hands} ability regains an additional \glossterm{hit point}.
 
     \subsection{Ex-Paladins}
         If you cease to follow your devoted alignment, you lose all \glossterm{magical} paladin class abilities.
@@ -2419,8 +2419,8 @@ This choice determines a great deal about your character's abilities.
                 The accuracy bonus against your quarry is replaced with a \plus1 bonus to defenses against your quarry's attacks.
 
                 \rankline
-                \rank{4} Your hunting party gains a bonus equal to half your level to \glossterm{damage reduction} against your quarry's attacks.
-                \rank{6} The damage reduction increases to be equal to your level.
+                \rank{4} Your hunting party gains a bonus equal to half your level to \glossterm{resistances} against your quarry's attacks.
+                \rank{6} The resistance bonus increases to be equal to your level.
                 \rank{8} The defense bonus increases to \plus2.
             \end{freeability}
 
@@ -2434,7 +2434,7 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
 
             \begin{freeability}{Lifeseal}[Magical]
-                As long as your quarry is \glossterm{threatened} by at least two members of your \glossterm{hunting party}, it cannot remove \glossterm{fatigue}.
+                As long as your quarry is \glossterm{threatened} by at least two members of your \glossterm{hunting party}, it cannot regain \glossterm{hit points}.
 
                 \rankline
                 \rank{4} This effect instead applies if the target is within \rngmed range of at least two members of your hunting party.
@@ -2947,8 +2947,8 @@ This choice determines a great deal about your character's abilities.
         You can also spend \glossterm{insight points} to learn one additional eldritch augment per \glossterm{insight point}.
         Whenever you use your \textit{eldritch blast} ability, you may also use one eldritch augment to increase the power of the \textit{eldritch blast}.
         {
-            \parhead{Bloodfeeding} If you inflict a \glossterm{vital wound} with the spell, you remove a point of \glossterm{fatigue}.
-            You can only remove \glossterm{fatigue} in this way up to 3 times between \glossterm{short rests}.
+            \parhead{Bloodfeeding} If you inflict a \glossterm{vital wound} with the spell, you regain a \glossterm{hit point}.
+            You can only regain \glossterm{hit points} in this way up to 3 times between \glossterm{short rests}.
 
             \parhead{Chaining} You can also target an additional creature or object within range.
             You take a \minus2 penalty to \glossterm{accuracy} against that target.
@@ -2981,7 +2981,7 @@ This choice determines a great deal about your character's abilities.
             \subcf{Whispers of the Mighty} You are immune to \glossterm{Poison} and \glossterm{Disease} abilities.
         }
 
-        \cf{War}[4]{Fiendish Resistance} You gain a bonus equal to your \glossterm{power} to \glossterm{damage reduction} against \glossterm{energy damage}.
+        \cf{War}[4]{Fiendish Resistance} You gain a bonus equal to your level to \glossterm{resistances} against \glossterm{energy damage}.
 
         \cf*{War}[5]{Eldritch Augment} You learn an additional \textit{eldritch augment}.
         In addition, you can also choose from the options on the list below.
@@ -2990,8 +2990,8 @@ This choice determines a great deal about your character's abilities.
             \parhead{Greater Chaining} You can also target up to five additional creatures or objects within range.
             You take a \minus2 penalty to \glossterm{accuracy} against each of those targets.
 
-            \parhead{Greater Bloodfeeding} If you inflict a \glossterm{vital wound} with the spell, you remove two points of \glossterm{fatigue}.
-            You can only remove \glossterm{fatigue} in this way up to 3 times between \glossterm{short rests}.
+            \parhead{Greater Bloodfeeding} If you inflict a \glossterm{vital wound} with the spell, you regain two \glossterm{hit points}.
+            You can only regain \glossterm{hit points} in this way up to 3 times between \glossterm{short rests}.
 
             \parhead{Greater Empowered} You gain a \plus4 bonus to \glossterm{power}.
 
