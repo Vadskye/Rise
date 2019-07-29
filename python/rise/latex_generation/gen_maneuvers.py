@@ -30,7 +30,7 @@ def generate_maneuvers():
         short_description='Take half damage',
         effect_text="""
                 You take half damage from all attacks this round.
-                This halving is applied before \\glossterm<damage reduction> and similar abilities.
+                This halving is applied before \\glossterm<resistances> and similar abilities.
         """,
         rank_upgrades={
             # Alternate idea: bonuses against attackers
@@ -224,15 +224,15 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Strip the Flesh',
-        short_description='Make a strike that inflicts additional fatigue',
+        short_description='Make a weak strike that is extremely painful',
         effect_text="""
             Make a \\glossterm<strike> using a slashing weapon with a -2d penalty to damage.
-            If the target gains a point of \\glossterm<fatigue> from the attack, it gains an additional point of \\glossterm<fatigue>.
+            If the strike deals damage, the target loses an additional \\glossterm<hit point>.
         """,
         rank_upgrades={
-            '3': 'The damage penalty is reduced to -1d.',
-            '5': 'The target gains a point of \\glossterm<exhaustion> instead of a point of \\glossterm<fatigue>.',
-            '7': 'The target gains two additional points of \\glossterm<exhaustion> instead of one.',
+            '3': 'You gain a +1 bonus to \\glossterm<accuracy> with the strike.',
+            '5': 'If the strike deals damage, the target is also \\glossterm<sickened> as a \\glossterm<condition>.',
+            '7': 'The accuracy bonus increases to +3.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Wild', 'Trick'],
@@ -394,15 +394,15 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Second Wind',
-        short_description='Recover fatigue.',
+        short_description='Recover hit points.',
         effect_text="""
-            You remove a point of \\glossterm<fatigue>.
+            You regain a \\glossterm<hit point>.
             You can only use this ability once between \\glossterm<short rests>.
         """,
         rank_upgrades={
-            '3': 'If you have a \\glossterm<vital wound>, you remove two points of \\glossterm<fatigue> instead of one.',
+            '3': 'If you have a \\glossterm<vital wound>, you regain two \\glossterm<hit points> instead of one.',
             '5': 'You can use the ability twice between \\glossterm<short rests>.',
-            '7': 'You remove two points of \\glossterm<fatigue> regardless of whether you have a \\glossterm<vital wound>.',
+            '7': 'You remove two \\glossterm<hit points> regardless of whether you have a \\glossterm<vital wound>.',
         },
         tags=['Life'],
         lists=['Esoteric', 'Primal', 'Wild'],
@@ -464,14 +464,9 @@ def generate_maneuvers():
         name="Wanderer's Strike",
         short_description='Make a strike and move',
         effect_text="""
-<<<<<<< HEAD
-            Make a melee \\glossterm<strike>.
-            If you hit a creature with the strike, you remove a point of \\glossterm<fatigue>.
-=======
             You can either move up to half your speed or make a \\glossterm<strike>.
             %TODO: wording
             During the \\glossterm<delayed action phase>, you can take the action you did not take during the \\glossterm<action phase>.
->>>>>>> master
         """,
         rank_upgrades={
             '3': 'You gain a +1d bonus to damage with the strike.',
