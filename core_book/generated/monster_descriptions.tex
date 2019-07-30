@@ -1099,7 +1099,7 @@ The shaman makes a \plus4 vs. Mental attack against one creature in Close range.
 
 \vspace{0.5em}
 \begin{freeability}{Hurt Less}
-One \glossterm{ally} in Close range removes a point of \glossterm{fatigue}.
+One \glossterm{ally} in Close range regains a \glossterm{hit point}.
 That creature is unaffected by any additional uses of this ability until the shaman takes a \glossterm{short rest}.
 \end{freeability}
 
@@ -1769,17 +1769,16 @@ Wil 0
 \subsubsection{Hydra, 5 Headed Abilities}
 
 \parhead{Multi-Headed}
-A hydra can take a number of actions in each \glossterm{action phase} equal to the number of heads it has active.
-When the hydra gains a point of \glossterm{fatigue}, it loses once of its heads.
+A hydra, 5 headed can make a number of \glossterm{strikes} in each \glossterm{action phase} equal to the number of heads it has active.
+When the hydra loses a \glossterm{hit point}, it loses one of its heads.
 Severed heads leave behind a stump that can quickly grow new heads.
 
-At the end of each delayed action phase, if the hydra has a severed stump, the stump is either sealed or it grows two new heads.
-If the hydra took at least as much acid, cold, or fire damage as its \glossterm{fatigue threshold} during that phase, the stump is sealed, and will stop growing new heads.
-Otherwise, the hydra grows two new heads from the stump.
-This grants it additional actions during the action phase as normal.
+Whenever the hydra takes acid, cold, or fire damage, all unsealed severed stumps are sealed, including new stumps severed during the current phase.
+At the end of each round, if the hydra has an unsealed severed stump, it grows two new heads from the stump.
+This grants it additional strikes during the action phase as normal.
 
 A hydra cannot sustain too many excess heads for a prolonged period of time.
-At the end of each round, if the hydra has more heads than twice its normal head count, it gains a point of \glossterm{fatigue}.
+At the end of each round, if the hydra has more heads than twice its normal head count, it loses a \glossterm{hit point}.
 If the hydra takes a \glossterm{long rest}, the excess heads shrivel and die, and any sealed stumps heal, restoring the hydra to its normal head count.
 
 \begin{monsection}{Hydra, 6 Headed}{6}[4]
@@ -1822,17 +1821,16 @@ Wil 0
 \subsubsection{Hydra, 6 Headed Abilities}
 
 \parhead{Multi-Headed}
-A hydra can take a number of actions in each \glossterm{action phase} equal to the number of heads it has active.
-When the hydra gains a point of \glossterm{fatigue}, it loses once of its heads.
+A hydra, 6 headed can make a number of \glossterm{strikes} in each \glossterm{action phase} equal to the number of heads it has active.
+When the hydra loses a \glossterm{hit point}, it loses one of its heads.
 Severed heads leave behind a stump that can quickly grow new heads.
 
-At the end of each round, if the hydra has a severed stump, the stump is either sealed or it grows two new heads.
-If the hydra took at least as much acid, cold, or fire damage as its \glossterm{fatigue threshold} during that phase, the stump is sealed, and will stop growing new heads.
-Otherwise, the hydra grows two new heads from the stump.
-This grants it additional actions during the action phase as normal.
+Whenever the hydra takes acid, cold, or fire damage, all unsealed severed stumps are sealed, including new stumps severed during the current phase.
+At the end of each round, if the hydra has an unsealed severed stump, it grows two new heads from the stump.
+This grants it additional strikes during the action phase as normal.
 
 A hydra cannot sustain too many excess heads for a prolonged period of time.
-At the end of each round, if the hydra has more heads than twice its normal head count, it gains a point of \glossterm{fatigue}.
+At the end of each round, if the hydra has more heads than twice its normal head count, it loses a \glossterm{hit point}.
 If the hydra takes a \glossterm{long rest}, the excess heads shrivel and die, and any sealed stumps heal, restoring the hydra to its normal head count.
 
 \begin{monsection}{Minotaur}{4}[1]
@@ -1922,7 +1920,7 @@ Wil 0
 
 \parhead{Consume Magic}
 The thaumavore gains a \plus4 bonus to \glossterm{defenses} against \glossterm{magical} abilities.
-Whenever it resists a \glossterm{magical} attack, it removes a point of \glossterm{fatigue}.
+Whenever it resists a \glossterm{magical} attack, it regains a \glossterm{hit point}.
 
 \vspace{0.5em}\parhead{Sense Magic}
 The thaumavore can sense the location of all sources of magic within 100 feet of it.
@@ -2368,7 +2366,7 @@ If its target is evil, it gains a \plus2 bonus to accuracy and a \plus2d bonus t
 
 \vspace{0.5em}
 \begin{freeability}{Angel's Grace}
-One \glossterm{ally} within reach removes two points of \glossterm{fatigue}.
+One \glossterm{ally} within reach regains two \glossterm{hit points}.
 That creature is unaffected by any additional uses of this ability until the angel takes a \glossterm{short rest}.
 \end{freeability}
 
@@ -2810,7 +2808,7 @@ Wil 0
 \subsubsection{Skeleton Abilities}
 
 \parhead{Hard Bones}
-The skeleton has \glossterm{damage reduction} 1 against piercing and slashing damage.
+The skeleton gains a \plus0 bonus to \glossterm{resistances} against piercing and slashing damage.
 
 \begin{monsection}{Skeleton}[Warrior]{4}[1]
 \vspace{-1em}\spelltwocol{}{Medium undead}\vspace{-1em}
@@ -2852,7 +2850,7 @@ Wil 0
 \subsubsection{Skeleton Abilities}
 
 \parhead{Hard Bones}
-The skeleton has \glossterm{damage reduction} 1 against piercing and slashing damage.
+The skeleton gains a \plus0 bonus to \glossterm{resistances} against piercing and slashing damage.
 
 \begin{monsection}{Skeleton}[Mage]{4}[1]
 \vspace{-1em}\spelltwocol{}{Medium undead}\vspace{-1em}
@@ -2896,8 +2894,8 @@ Wil 6
 \begin{freeability}{Drain Life}[\glossterm{Life}]
 The skeleton mage makes a \plus4 vs. Fortitude attack against a creature in \rngmed range.
 \hit The target takes 2d8 life damage.
-If this damage inflicts a \glossterm{vital wound}, the skeleton mage removes a point of \glossterm{fatigue}.
-It can only remove \glossterm{fatigue} in this way up to 3 times between \glossterm{short rests}.
+If this damage inflicts a \glossterm{vital wound}, the skeleton mage regains a \glossterm{hit point}.
+It can only regain \glossterm{hit points} in this way up to 3 times between \glossterm{short rests}.
 \end{freeability}
 
 \vspace{0.5em}
@@ -2908,7 +2906,7 @@ The skeleton mage makes a \plus4 vs. Mental attack against a creature in \rngmed
 \end{freeability}
 
 \parhead{Hard Bones}
-The skeleton has \glossterm{damage reduction} 1 against piercing and slashing damage.
+The skeleton gains a \plus0 bonus to \glossterm{resistances} against piercing and slashing damage.
 
 \begin{monsection}{Skeleton}[Warrior]{4}[3]
 \vspace{-1em}\spelltwocol{}{Large undead}\vspace{-1em}
@@ -2950,7 +2948,7 @@ Wil 0
 \subsubsection{Skeleton Abilities}
 
 \parhead{Hard Bones}
-The skeleton has \glossterm{damage reduction} 1 against piercing and slashing damage.
+The skeleton gains a \plus0 bonus to \glossterm{resistances} against piercing and slashing damage.
 
 \begin{monsection}{Zombie}{1}[1]
 \vspace{-1em}\spelltwocol{}{Medium undead}\vspace{-1em}
@@ -2996,7 +2994,7 @@ The zombie does not act during the \glossterm{action phase}.
 Instead, it acts during the \glossterm{delayed action phase}.
 
 \vspace{0.5em}\parhead{Soft Flesh}
-The zombie has \glossterm{damage reduction} 3 against piercing and bludgeoning damage.
+The zombie gains a \plus3 bonus to \glossterm{resistances} against piercing and slashing damage.
 
 \begin{monsection}{Zombie}[Warrior]{2}[2]
 \vspace{-1em}\spelltwocol{}{Medium undead}\vspace{-1em}
@@ -3042,7 +3040,7 @@ The zombie does not act during the \glossterm{action phase}.
 Instead, it acts during the \glossterm{delayed action phase}.
 
 \vspace{0.5em}\parhead{Soft Flesh}
-The zombie has \glossterm{damage reduction} 5 against piercing and bludgeoning damage.
+The zombie gains a \plus5 bonus to \glossterm{resistances} against piercing and slashing damage.
 
 \begin{monsection}{Zombie}[Hulking]{3}[2]
 \vspace{-1em}\spelltwocol{}{Large undead}\vspace{-1em}
@@ -3088,7 +3086,7 @@ The zombie does not act during the \glossterm{action phase}.
 Instead, it acts during the \glossterm{delayed action phase}.
 
 \vspace{0.5em}\parhead{Soft Flesh}
-The zombie has \glossterm{damage reduction} 6 against piercing and bludgeoning damage.
+The zombie gains a \plus6 bonus to \glossterm{resistances} against piercing and slashing damage.
 
 \begin{monsection}{Zombie}[Captain]{3}[3]
 \vspace{-1em}\spelltwocol{}{Medium undead}\vspace{-1em}
@@ -3134,7 +3132,7 @@ The zombie does not act during the \glossterm{action phase}.
 Instead, it acts during the \glossterm{delayed action phase}.
 
 \vspace{0.5em}\parhead{Soft Flesh}
-The zombie has \glossterm{damage reduction} 6 against piercing and bludgeoning damage.
+The zombie gains a \plus6 bonus to \glossterm{resistances} against piercing and slashing damage.
 
 \begin{monsection}{Zombie}[Elite]{4}[1]
 \vspace{-1em}\spelltwocol{}{Medium undead}\vspace{-1em}
@@ -3180,7 +3178,7 @@ The zombie does not act during the \glossterm{action phase}.
 Instead, it acts during the \glossterm{delayed action phase}.
 
 \vspace{0.5em}\parhead{Soft Flesh}
-The zombie has \glossterm{damage reduction} 8 against piercing and bludgeoning damage.
+The zombie gains a \plus8 bonus to \glossterm{resistances} against piercing and slashing damage.
 
 \begin{monsection}{Unliving Mother}{2}[2]
 \vspace{-1em}\spelltwocol{}{Medium undead}\vspace{-1em}
