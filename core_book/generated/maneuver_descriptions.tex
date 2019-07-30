@@ -36,7 +36,7 @@ This does not affect attacks during the current phase.
 \hypertarget{maneuver:Brace for Impact}{}
 \begin{freeability}{Brace for Impact}[\glossterm{Swift}]
 You take half damage from all attacks this round.
-This halving is applied before \glossterm{damage reduction} and similar abilities.
+This halving is applied before \glossterm{resistances} and similar abilities.
 
 \rankline
 \rank{4} You can also negate a condition that would be applied to you while this ability lasts.
@@ -500,14 +500,14 @@ Until the end of the next round, you take a \minus2 penalty to all defenses.
 
 \lowercase{\hypertarget{maneuver:Second Wind}{}}\label{maneuver:Second Wind}
 \hypertarget{maneuver:Second Wind}{}
-\begin{freeability}{Second Wind}[\glossterm{Life}]
-You remove a point of \glossterm{fatigue}.
+\begin{freeability}{Second Wind}[]
+You regain a \glossterm{hit point}.
 You can only use this ability once between \glossterm{short rests}.
 
 \rankline
-\rank{4} If you have a \glossterm{vital wound}, you remove two points of \glossterm{fatigue} instead of one.
+\rank{4} If you have a \glossterm{vital wound}, you regain two \glossterm{hit points} instead of one.
 \rank{6} You can use the ability twice between \glossterm{short rests}.
-\rank{8} You remove two points of \glossterm{fatigue} regardless of whether you have a \glossterm{vital wound}.
+\rank{8} You remove two \glossterm{hit points} regardless of whether you have a \glossterm{vital wound}.
 \parhead{Lists} Esoteric, Primal, Wild
 \end{freeability}
 \vspace{0.25em}
@@ -535,12 +535,12 @@ it is \glossterm{dazed} as a \glossterm{condition}.
 \hypertarget{maneuver:Strip the Flesh}{}
 \begin{freeability}{Strip the Flesh}[]
 Make a \glossterm{strike} using a slashing weapon with a \minus2d penalty to damage.
-If the target gains a point of \glossterm{fatigue} from the attack, it gains an additional point of \glossterm{fatigue}.
+If the strike deals damage, the target loses an additional \glossterm{hit point}.
 
 \rankline
-\rank{4} The damage penalty is reduced to \minus1d.
-\rank{6} The target gains a point of \glossterm{exhaustion} instead of a point of \glossterm{fatigue}.
-\rank{8} The target gains two additional points of \glossterm{exhaustion} instead of one.
+\rank{4} You gain a \plus1 bonus to \glossterm{accuracy} with the strike.
+\rank{6} If the strike deals damage, the target is also \glossterm{sickened} as a \glossterm{condition}.
+\rank{8} The accuracy bonus increases to \plus3.
 \parhead{Lists} Martial, Primal, Trick, Wild
 \end{freeability}
 \vspace{0.25em}
@@ -565,10 +565,10 @@ The strike targets each of up to two creatures or objects you \glossterm{threate
 
 \lowercase{\hypertarget{maneuver:Thunderous Shout}{}}\label{maneuver:Thunderous Shout}
 \hypertarget{maneuver:Thunderous Shout}{}
-\begin{freeability}{Thunderous Shout}[\glossterm{Sonic}]
+\begin{freeability}{Thunderous Shout}[]
 Make an attack vs. Fortitude against everything in a \areamed cone-shaped burst from you.
 You take a \minus1 penalty to \glossterm{accuracy} with the attack.
-\hit Each target takes sonic \glossterm{standard damage}.
+\hit Each target takes energy \glossterm{standard damage}.
 
 \rankline
 \rank{4} You gain a \plus1d bonus to damage with the shout.
@@ -583,14 +583,9 @@ You take a \minus1 penalty to \glossterm{accuracy} with the attack.
 \lowercase{\hypertarget{maneuver:Wanderer's Strike}{}}\label{maneuver:Wanderer's Strike}
 \hypertarget{maneuver:Wanderer's Strike}{}
 \begin{freeability}{Wanderer's Strike}[]
-{{{{{{{ HEAD
-Make a melee \glossterm{strike}.
-If you hit a creature with the strike, you remove a point of \glossterm{fatigue}.
-=======
 You can either move up to half your speed or make a \glossterm{strike}.
 %TODO: wording
 During the \glossterm{delayed action phase}, you can take the action you did not take during the \glossterm{action phase}.
-}}}}}}} master
 
 \rankline
 \rank{4} You gain a \plus1d bonus to damage with the strike.

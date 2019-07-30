@@ -12,7 +12,7 @@ def generate_implements():
         name="Wand of Sympathetic Shielding",
         level=8,
         material_type='Wand',
-        tags=['Shielding'],
+        tags=[],
         description="""
             When you cast a \\glossterm<targeted> \\glossterm<Shielding> spell using this wand,
                 if you would be a valid target for the spell,
@@ -25,7 +25,7 @@ def generate_implements():
         name="Wand of Transit",
         level=6,
         material_type='Wand',
-        tags=['Teleportation'],
+        tags=[],
         description="""
             When you cast a \\glossterm<Teleportation> spell using this wand,
                 the maximum distance that you can teleport targets with that spell is doubled.
@@ -67,7 +67,7 @@ def generate_implements():
         name="Protective Staff",
         level=8,
         material_type='Staff',
-        tags=['Shielding'],
+        tags=[],
         description="""
             You gain a +1 \\glossterm<magic bonus> to Armor defense.
         """,
@@ -78,7 +78,7 @@ def generate_implements():
         name="Protective Staff, Greater",
         level=16,
         material_type='Staff',
-        tags=['Shielding'],
+        tags=[],
         description="""
             You gain a +2 \\glossterm<magic bonus> to Armor defense.
         """,
@@ -89,7 +89,7 @@ def generate_implements():
         name="Spellfeeding Staff",
         level=9,
         material_type='Staff',
-        tags=['Life'],
+        tags=[],
         description="""
             When you cast a spell using this staff, you may regain a \\glossterm<hit point>.
             You can only regain \\glossterm<hit points> once in this way between \\glossterm<short rests>.
@@ -101,7 +101,7 @@ def generate_implements():
         name="Spellfeeding Staff, Greater",
         level=16,
         material_type='Staff',
-        tags=['Life'],
+        tags=[],
         description="""
             When you cast a spell using this staff, you may regain two \\glossterm<hit points>.
             You can only regain \\glossterm<hit points> once in this way between \\glossterm<short rests>.
@@ -143,7 +143,7 @@ def generate_implements():
         name="Staff of Spellpower",
         level=4,
         material_type='Staff',
-        tags=['Mystic'],
+        tags=[],
         description="""
             You gain a +1 \\glossterm<magic bonus> to \\glossterm<power> with spells you cast using this staff.
         """,
@@ -154,7 +154,7 @@ def generate_implements():
         name="Staff of Spellpower, Greater",
         level=8,
         material_type='Staff',
-        tags=['Mystic'],
+        tags=[],
         description="""
             You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with spells you cast using this staff.
         """,
@@ -165,7 +165,7 @@ def generate_implements():
         name="Staff of Spellpower, Supreme",
         level=12,
         material_type='Staff',
-        tags=['Mystic'],
+        tags=[],
         description="""
             You gain a +3 \\glossterm<magic bonus> to \\glossterm<power> with spells you cast using this staff.
         """,
@@ -176,7 +176,7 @@ def generate_implements():
         name="Staff of Spellpower, Legendary",
         level=16,
         material_type='Staff',
-        tags=['Mystic'],
+        tags=[],
         description="""
             You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with spells you cast using this staff.
         """,
@@ -187,7 +187,7 @@ def generate_implements():
         name="Staff of Precision",
         level=8,
         material_type='Staff',
-        tags=['Mystic'],
+        tags=[],
         description="""
             You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with spells you cast using this staff.
         """,
@@ -198,7 +198,7 @@ def generate_implements():
         name="Greater Staff of Precision",
         level=16,
         material_type='Staff',
-        tags=['Mystic'],
+        tags=[],
         description="""
             You gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy> with spells you cast using this staff.
         """,
@@ -209,7 +209,7 @@ def generate_implements():
         name="Wand of Precision",
         level=6,
         material_type='Wand',
-        tags=['Mystic'],
+        tags=[],
         description="""
             You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> if you cast spells from a particular \\glossterm<mystic sphere> using this wand.
             Many \\textit<wands of precision> exist, each for different \\glossterm<mystic spheres>.
@@ -221,7 +221,7 @@ def generate_implements():
         name="Wand of Precision, Greater",
         level=14,
         material_type='Wand',
-        tags=['Mystic'],
+        tags=[],
         description="""
             You gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy> if you cast spells from a particular \\glossterm<mystic sphere> using this wand.
             Many \\textit<greater wands of precision> exist, each for different \\glossterm<mystic spheres>.
@@ -233,7 +233,7 @@ def generate_implements():
         name="Wand of Spellpower",
         level=2,
         material_type='Wand',
-        tags=['Mystic'],
+        tags=[],
         description="""
             You gain a +1 \\glossterm<magic bonus> to \\glossterm<power> if you cast spells from a particular \\glossterm<mystic sphere> using this wand.
             Many \\textit<wands of spellpower> exist, each for different \\glossterm<mystic spheres>.
@@ -245,7 +245,7 @@ def generate_implements():
         name="Wand of Spellpower, Greater",
         level=6,
         material_type='Wand',
-        tags=['Mystic'],
+        tags=[],
         description="""
             You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> if you cast spells from a particular \\glossterm<mystic sphere> using this wand.
             Many \\textit<greater wands of spellpower> exist, each for different \\glossterm<mystic spheres>.
@@ -257,7 +257,7 @@ def generate_implements():
         name="Wand of Spellpower, Supreme",
         level=10,
         material_type='Wand',
-        tags=['Mystic'],
+        tags=[],
         description="""
             You gain a +3 \\glossterm<magic bonus> to \\glossterm<power> if you cast spells from a particular \\glossterm<mystic sphere> using this wand.
             Many \\textit<supreme wands of spellpower> exist, each for different \\glossterm<mystic spheres>.
@@ -269,7 +269,7 @@ def generate_implements():
         name="Wand of Spellpower, Legendary",
         level=14,
         material_type='Wand',
-        tags=['Mystic'],
+        tags=[],
         description="""
             You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> if you cast spells from a particular \\glossterm<mystic sphere> using this wand.
             Many \\textit<supreme wands of spellpower> exist, each for different \\glossterm<mystic spheres>.
