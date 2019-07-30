@@ -260,14 +260,14 @@ def generate_maneuvers():
         effect_text="""
             Make an attack vs. Fortitude against everything in a \\areamed cone-shaped burst from you.
             You take a -1 penalty to \\glossterm<accuracy> with the attack.
-            \\hit Each target takes sonic \\glossterm<standard damage>.
+            \\hit Each target takes energy \\glossterm<standard damage>.
         """,
         rank_upgrades={
             '3': 'You gain a +1d bonus to damage with the shout.',
             '5': 'The area increases to \\arealarge.',
             '7': 'The damage bonus increases to +3d.',
         },
-        tags=['Sonic'],
+        tags=[],
         lists=['Primal'],
     ))
 
@@ -404,7 +404,7 @@ def generate_maneuvers():
             '5': 'You can use the ability twice between \\glossterm<short rests>.',
             '7': 'You remove two \\glossterm<hit points> regardless of whether you have a \\glossterm<vital wound>.',
         },
-        tags=['Life'],
+        tags=[],
         lists=['Esoteric', 'Primal', 'Wild'],
     ))
 
