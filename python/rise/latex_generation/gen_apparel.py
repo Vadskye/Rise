@@ -1060,7 +1060,7 @@ def generate_worn():
         material_type='Belt',
         tags=[],
         description="""
-            This item functions like the \\textit<belt of healing>, except that you can heal two \\glossterm<hit points> instead of one.
+            This item functions like the \\textit<belt of healing>, except that you can regain two \\glossterm<hit points> instead of one.
         """,
         short_description="Grants more healing",
     ))
