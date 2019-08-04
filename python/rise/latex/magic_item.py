@@ -58,7 +58,7 @@ class MagicItem(object):
         if (self.tags):
             for tag in self.tags:
                 if not is_valid_tag(tag):
-                    logger.log(WARNING, f"Spell {self.name} has invalid tag {tag}")
+                    logger.log(WARNING, f"Magic item {self.name} has invalid tag {tag}")
 
     def latex_ability(self):
         if self.effects or self.targeting:
