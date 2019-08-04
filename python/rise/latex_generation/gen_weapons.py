@@ -481,7 +481,7 @@ def generate_weapons():
         name="Phasing",
         level=10,
         material_type='Weapon',
-        tags=['Planar'],
+        tags=[],
         description="""
             \\glossterm<Strikes> with this weapon can pass through a single solid obstacle of up to five feet thick on the way to their target.
             This can allow you to ignore \\glossterm<cover>, or even attack through solid walls.

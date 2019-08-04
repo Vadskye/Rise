@@ -11,7 +11,6 @@ valid_tags = set([
     'Emotion',
     'Detection',
     'Manifestation',
-    'Planar',
     'Physical',
     'Scrying',
     '(see text)',
@@ -23,7 +22,6 @@ valid_tags = set([
     'Sustain (free)',
     'Swift',
     'Swift (see text)',
-    'Trap',
     'Visual',
 ])
 
