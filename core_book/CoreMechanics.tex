@@ -1204,7 +1204,6 @@ It defines how attributes work and explains how to make attacks in combat.
             \parhead{Zone} A zone ability has effects within an area for the duration of the ability.
             Unless otherwise noted, it does not move after being created.
 
-
         When casting an area ability, you select the point where the ability originates.
         The point of origin of a ability is always a grid intersection.
         When determining whether a given creature is within the area of a ability, count out the distance from the point of origin in squares just as you do when moving a character or when determining the range for a ranged attack.
@@ -1307,8 +1306,6 @@ It defines how attributes work and explains how to make attacks in combat.
         Many of these tags have no game effect by themselves, but they govern how the ability interacts with spells, other abilities, unusual creatures, and so on.
         They are described below.
 
-        \parhead{Acid} Acid abilities use corrosive acid.
-
         \parhead{AP} AP abilities require spending \glossterm{action points} to use.
         Some AP abilities, such as specific \glossterm{rituals}, require spending multiple action points instead of only one.
         Unless otherwise specified in the ability's description, an AP ability requires a single \glossterm{action point}.
@@ -1335,15 +1332,6 @@ It defines how attributes work and explains how to make attacks in combat.
         \parhead{Flesh} Flesh abilities manipulate the physical flesh of creatures.
         They have no effect on creatures without flesh, such as ghosts or oozes.
 
-        \parhead{Life} Life abilities attack, restore, or manipulate the life force of creatures.
-        They have no effect on objects and creatures that are not alive.
-        \par Undead creatures are affected in a special way by Life abilities.
-        In addition to any differences given in the effect's description, life damage instead heals undead creatures, and healing instead deals life damage.
-
-        \parhead{Light} Light abilities create visible light.
-        Their area is blocked by barriers that prevent sight, even if the barriers would not otherwise block effect areas.
-        Similarly, their area of effect is not blocked by barriers which do not prevent sight, even if the barriers would normally block effect areas.
-
         \parhead{Manifestation} Manifestation abilities create temporary constructs formed from raw magical energy.
         Objects and creatures created with manifestation abilities seem real on the surface, but they have no internal structure.
         When an object or creature created by a Manifestation ability is destroyed or killed, or when the duration of the ability that created it ends, it disappears without a trace.
@@ -1351,10 +1339,6 @@ It defines how attributes work and explains how to make attacks in combat.
         \parhead{Physical} Physical abilities manipulate physical objects rather than having a direct magical effect on their targets.
         % TODO: find example? Does this still exist
         Some abilities are not themselves Physical, but have Physical effects.
-
-        \parhead{Planar} Planar abilities transport matter or information between planes.
-
-        \parhead{Poison} Poison abilities use substances to weaken the foe's body.
 
         \parhead{Scrying} Scrying abilities create one or more invisible magical sensors that send you information.
         Unless otherwise noted, the sensor created has the same powers of sensory acuity that you possess.
@@ -1370,14 +1354,6 @@ It defines how attributes work and explains how to make attacks in combat.
         For example, you cannot create an illusory figment which speaks coherently in a language you do not understand.
         \par If a Sensation ability appears to create a physical object or creature, its defenses are equal to 0.
 
-        \parhead{Shaping} Shaping abilities change the shape or structure of their targets.
-
-        \parhead{Shielding} Shielding abilities improve the defenses of their targets.
-
-        \parhead{Sizing} Sizing abilities alter the size of their targets.
-        Unless otherwise stated, multiple effects which increase or decrease size do not stack.
-        Opposing size modifications cancel each other out on a one for one basis, and any remaining effects occur normally.
-
         \parhead{Speech} Speech abilities use words to achieve their ends.
         You must specify a language when using a Speech effect, and the language must be one you know (or have memorized the correct words to say). They have no effect on objects or creatures that do not understand the chosen language.
 
@@ -1388,17 +1364,6 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \parhead{Swift} Swift abilities take effect before other abilities used during the same phase.
         For details, see \pcref{Swift Abilities}.
-
-        \parhead{Teleportation} Teleportation abilities move creature or objects through the Astral Plane to a distant destination.
-        A teleported creature can bring along equipment and held objects as long as their weight does not exceed the creature's maximum carrying capacity (see \pcref{Carrying Capacity}). Any excess items are left behind, in order of their distance from the creature's body.
-
-        \parhead{Trap} Trap abilities do not have their full effect immediately.
-        All Trap abilities specify a condition or circumstance, such as opening a door, which triggers the full effect of the ability.
-        \par Unless otherwise noted, active Trap effects can be detected with the Awareness skill and disabled with the Devices skill before their effect triggers (see \pcref{Awareness}, and \pcref{Devices}).
-        The DR to detect and disable the effect is equal to 20 \add the \glossterm{power} of the effect.
-        \par No more than one Trap ability can be placed on the same object or in the same area.
-        Only the first trap placed has any effect.
-        It must be dismissed before any new traps can be placed.
 
         \parhead{Visual} Visual abilities use visible objects or forces to cause their effects.
         Creatures and objects that cannot see the effect are immune to it.
@@ -1817,6 +1782,41 @@ It defines how attributes work and explains how to make attacks in combat.
         Land-based creatures have considerable difficulty when fighting in water.
         You take a \minus4 penalty to \glossterm{accuracy} with \glossterm{physical attacks}, Strength and Dexterity-based \glossterm{checks}, and Armor and Reflex defenses.
         In addition, all physical ranged attacks are considered to have a \glossterm{range increment} of 5 feet, regardless of the weapon's normal range increment or any other modifiers.
+
+    \subsection{Sleep and Fatigue}\label{Sleep and Fatigue}
+        A typical creature needs a minimum of 6 hours of sleep for every 18 hours spent awake, and a minimum of 50 hours of sleep every week.
+        If you stay awake beyond those limits, you gain a \glossterm{vital wound} from \glossterm{subdual damage}.
+        If you continue to stay awake without sleeping, you gain an additional \glossterm{vital wound} every 24 hours.
+        These \glossterm{vital wounds} cannot be removed by any means except sleeping until you are back within your limits.
+
+    \subsection{Teleportation}\label{Teleportation}
+        Some abilities can \glossterm{teleport} creatures or objects.
+        When you are teleported, you move through the Astral Plane and arrive at a new location.
+        You can be teleported between two different locations on the same \glossterm{plane}, or between two different locations on different planes.
+        If for some reason you cannot access the Astral Plane, you cannot be teleported.
+
+        \parhead{Carrying Objects}
+        When a creature is teleported, it can bring along equipment and held objects as long as two conditions are met.
+        First, the combined weight of the objects cannot exceed the creature's maximum carrying capacity (see \pcref{Carrying Capacity}).
+        If a creature is teleported while carrying more than its maximum carrying capacity, all excess objects are left behind, starting with the heaviest object and proceeding in order of weight.
+
+        Second, no object can extend more than two feet away from the creature's body.
+        Any objects that extend beyond that distance are left behind.
+        For example, a creature wearing handcuffs will arrive at its teleportation destination still wearing the handcuffs.
+        However, a creature that is tied to a post by a long rope will arrive at its teleportation destination without the rope.
+
+    \subsection{Traps}\label{Traps}
+        Some abilities create \glossterm{traps}.
+        All abilities that create traps specify a condition or circumstance, such as opening a door, which triggers the trap.
+        When a trap is triggered, an additional effect to occurs, as defined in the ability.
+
+        No more than one \glossterm{trap} can be placed on the same object or in the same area.
+        Only the first trap placed has any effect.
+        It must be removed before any new traps can be placed.
+
+        \subsubsection{Detecting Traps}\label{Detecting Traps}
+        Unless otherwise noted, active \glossterm{traps} can be detected with the Awareness skill and disabled with the Devices skill before their effect triggers (see \pcref{Awareness}, and \pcref{Devices}).
+        Unless otherwise noted, The DR to detect and disable a trap is equal to 20 \add the \glossterm{power} of the ability that created the trap.
 
 \section{Daily Resources}
 

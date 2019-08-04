@@ -315,7 +315,7 @@ def generate_mystic_spheres():
             Spell('Dimensional Jaunt', 1, 'One creature within \\rngmed range', """
                 Make an attack vs. Mental against the target.
                 \\hit The target takes \\glossterm<standard damage>.
-            """, tags=['Planar']),
+            """, tags=[]),
             Spell('Teleport', 1, 'One Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
                 The target teleports into an unoccupied destination within range.
                 If the destination is invalid, this spell is \\glossterm<miscast>.
@@ -328,7 +328,7 @@ def generate_mystic_spheres():
                 \\crit The target takes double damage.
                 In addition, if it is an outsider not on its home plane, it is teleported to a random location on its home plane.
                 If it is a creature created by a \\glossterm<Manifestation> ability, it immediately disappears.
-            """, tags=['Planar']),
+            """, tags=[]),
             Spell('Dimension Door', 3, 'Yourself', """
                 You teleport to a location within \\rngext range of you.
                 You must clearly visualize the destination's appearance, but you do not need \\glossterm<line of sight> or \\glossterm<line of effect> to your destination.
@@ -336,14 +336,14 @@ def generate_mystic_spheres():
             Spell('Dimensional Jaunt -- Plane of Earth', 2, 'One creature within \\rngmed range', """
                 This spell functions like the \\spell<dimensional jaunt> spell, except that the target is partially teleported into the Plane of Earth.
                 The damage dealt changes to bludgeoning \\glossterm<standard damage> -1d, and a struck target is \\glossterm<slowed> as a \\glossterm<condition>.
-            """, tags=['Planar']),
+            """, tags=[]),
             Spell('Dimensional Jaunt -- Plane of Fire', 3,  'One creature within \\rngmed range', """
                 This spell functions like the \\spell<dimensional jaunt> spell, except that the target is partially teleported into the Plane of Fire.
                 The damage dealt changes to fire \\glossterm<standard damage>.
                 In addition, a struck target is \\glossterm<ignited> until it puts out the fire.
                 This condition can also be removed if the target makes a \\glossterm<DR> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
                 Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
-            """, tags=['Planar']),
+            """, tags=[]),
             Spell('Dimensional Jitter', 4, 'Yourself', """
                 At the end of each \\glossterm<action phase>, you may teleport 10 feet in any direction.
                 If your \\glossterm<line of effect> to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are.
@@ -354,11 +354,11 @@ def generate_mystic_spheres():
             Spell('Dimensional Jaunt -- Myriad', 5, 'One creature within \\rngmed range', """
                 This spell functions like the \\spell<dimensional jaunt> spell, except that the target is partially teleported through a number of planes in sequence.
                 The damage dealt increases to \\glossterm<standard damage> +3d and becomes damage of all types.
-            """, tags=['Planar']),
+            """, tags=[]),
             Spell('Dimensional Jaunt -- Deep Astral Plane', 7, 'One creature within \\rngmed range', """
                 This spell functions like the \\spell<dimensional jaunt> spell, except that the target is partially teleported into the deep Astral Plane.
                 A struck target is \\glossterm<confused> as a \\glossterm<condition>.
-            """, tags=['Planar']),
+            """, tags=[]),
             # TODO: target wording
             Spell('Dimensional Shuffle', 2, 'Up to five targets within \\rngmed range from among you and your \\glossterm<allies>', """
                 Each target teleports into the location of a different target.
@@ -373,10 +373,10 @@ def generate_mystic_spheres():
                 This blinking stops if the target takes actions on its current plane.
                 In any phase where it does not take any actions, \\glossterm<targeted> attacks against the target have a 50\\% miss chance.
                 It is still affected normally by abilities that affect an area.
-            """, tags=['Attune (target)', 'Planar']),
+            """, tags=['Attune (target)']),
             Spell('Greater Blink', 6, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 This spell functions like the \\spell<blink> spell, except that the target also has a 20\% chance to completely ignore any effect that targets it directly during phases where it takes an action.
-            """, tags=['Attune (target)', 'Planar']),
+            """, tags=['Attune (target)']),
         ],
         rituals=[
             Spell('Gate', 7, 'Special', """
@@ -395,7 +395,7 @@ def generate_mystic_spheres():
                 From the Material Plane, you can only reach the Astral Plane.
 
                 This ritual takes one week to perform, and requires 98 action points from its participants.
-            """, tags=['AP', 'Planar', 'Sustain (standard)']),
+            """, tags=['AP', 'Sustain (standard)']),
             Spell('Plane Shift', 3, ['Up to five Large or smaller ritual participants', 'One \\glossterm<planar rift> within \\rngmed range'], """
                 The target creatures teleport to the unoccupied spaces closest to the other side of the target planar rift.
                 For details about \\glossterm<planar rifts>, see \\pcref<Planar Rifts>.
@@ -405,7 +405,7 @@ def generate_mystic_spheres():
                 From the Material Plane, you can only reach the Astral Plane.
 
                 This ritual takes 24 hours to perform, and requires 18 action points from its participants.
-            """, tags=['AP', 'Planar']),
+            """, tags=['AP']),
             Spell('Astral Projection', 4, 'Up to five Large or smaller ritual participants', """
                 The targets teleport to a random location within the Inner Astral Plane (see \\pcref<The Astral Plane>).
 
@@ -414,13 +414,13 @@ def generate_mystic_spheres():
                 It lasts for one week before disappearing permanently, potentially stranding the targets in the Astral Plane if they have not yet returned.
 
                 This ritual takes 24 hours to perform, and requires 32 action points from its participants.
-            """, tags=['AP', 'Planar']),
+            """, tags=['AP']),
             Spell('Homeward Shift', 5, 'Up to five Large or smaller ritual participants', """
                 This ritual can only be performed on the Astral Plane.
                 The targets teleport to the last spaces they occupied on their home planes.
 
                 This ritual takes 24 hours to perform, and requires 50 action points from its participants.
-            """, tags=['AP', 'Planar']),
+            """, tags=['AP']),
             Spell('Overland Teleportation', 4, 'Up to five Medium or smaller ritual participants', """
                 Choose a destination up to 100 miles away from you on your current plane.
                 Each target is teleported to the chosen destination.
@@ -566,6 +566,7 @@ def generate_mystic_spheres():
             Spell('Explosive Runes', 3, 'One Small or smaller unattended object with writing on it within \\rngclose range', """
                 % TODO: clarify how to identify that this is Explosive Runes instead of bad handwriting
                 The writing on the target is altered by the runes in subtle ways, making it more difficult to read.
+                It becomes a \\glossterm<trap>.
                 To read the writing, a creature must concentrate on reading it, which requires a standard action.
                 If a creature reads the target, the target explodes.
                 You make an attack vs. Armor against everything within a \\areamed radius from the target.
@@ -574,7 +575,7 @@ def generate_mystic_spheres():
                 After the target object explodes in this way, the ritual is \\glossterm<dismissed>.
                 If the target is destroyed or rendered illegible, the ritual is dismissed without exploding.
                 This ritual takes one hour to perform.
-            """, tags=['Attune (ritual)', 'Trap']),
+            """, tags=['Attune (ritual)']),
             Spell('Scryward', 2, None, """
                 This ritual creates a ward against scrying in a \\arealarge radius \\glossterm<zone> centered on your location.
                 All \\glossterm<Scrying> effects fail to function in the area.
@@ -905,11 +906,11 @@ def generate_mystic_spheres():
             """, tags=['Sustain (minor)']),
             Spell('Time Lock', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
                 You lock the state of the target's body in time.
-                Note the target's \\glossterm<hit points>, \\glossterm<exhaustion>, \\glossterm<vital wounds> (including \\glossterm<wound roll> results), and active conditions.
+                Note the target's \\glossterm<hit points>, \\glossterm<vital wounds> (including \\glossterm<wound roll> results), and \\glossterm<conditions>.
                 If the target dies, this effect ends immediately.
 
                 As a \\glossterm<standard action>, you can reach through time to restore the target's state.
-                If you do, the target's \\glossterm<hit points>, \\glossterm<exhaustion>, \\glossterm<vital wounds>, and active conditions become identical to what they were when you cast this spell.
+                If you do, the target's \\glossterm<hit points>, \\glossterm<vital wounds>, and \\glossterm<conditions> become identical to what they were when you cast this spell.
                 This does not affect any other properties of the target, such as any resources expended.
                 After you restore the target's state in this way, the spell ends.
 
@@ -1554,10 +1555,11 @@ def generate_mystic_spheres():
                 This spell functions like the \\spell<barkskin> spell, except that stuff the bonus is equal to twice your \\glossterm<power>.
             """, tags=['Attune (target)']),
             Spell('Regeneration', 4, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                A the end of each round, the target heals hit points equal to your \\glossterm<power>.
+                A the end of each round, if the target did not take damage that round, it regains a \\glossterm<hit point>.
+                After the target regains 3 hit points this way, this spell ends.
             """, tags=['Attune (target)']),
             Spell('Greater Regeneration', 7, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                This spell functions like the \\spell<regeneration> spell, except that the healing is equal to twice your \\glossterm<power>.
+                This spell functions like the \\spell<regeneration> spell, except that it lasts until the target regains 6 hit points.
             """, tags=['Attune (target)']),
             # Should this also/instead be under Terramancy?
             Spell('Stoneskin', 2, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
@@ -1609,7 +1611,7 @@ def generate_mystic_spheres():
             # Should this also be a spell? Incredibly niche, but golem makers
             # would want it...
             Spell('Mending', 1, 'One \\glossterm<unattended> object within \\rngclose range', """
-                The target is healed for hit points equal to \\glossterm<standard damage> +2d.
+                The target is regains one \\glossterm<hit point>.
 
                 This ritual takes one minute to perform.
             """, tags=['AP']),
@@ -2475,12 +2477,12 @@ def generate_mystic_spheres():
             Spell('Dimensional Anchor', 2, 'One creature or object within \\rngmed range', """
                 Make an attack vs. Mental against the target.
                 \\hit The target is unable to travel extradimensionally.
-                This prevents all \\glossterm<Manifestation>, \\glossterm<Planar>, and \\glossterm<Teleportation> effects.
+                This prevents all \\glossterm<Manifestation> effects and effects that teleport the target or move it between planes.
             """, tags=['Swift', 'Sustain (minor)']),
             Spell('Dimensional Lock', 4, None, """
                 This spell creates a dimensional lock in a \\arealarge radius \\glossterm<zone> from your location.
                 Extraplanar travel into or out of the area is impossible.
-                This prevents all \\glossterm<Manifestation>, \\glossterm<Planar>, and \\glossterm<Teleportation> effects.
+                This prevents all \\glossterm<Manifestation> effects and effects teleport targets or move them between planes.
             """, tags=['Attune (self)']),
         ],
         category='debuff, combat',
