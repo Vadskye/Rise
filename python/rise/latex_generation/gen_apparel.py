@@ -848,27 +848,36 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Ring of Regeneration",
-        level=10,
+        level=8,
         material_type='Ring',
         tags=[],
         description="""
-            As a standard action, you can use this ring to enhance your healing.
-            When you do, you regain a \\glossterm<hit point>.
-            Only \\glossterm<hit points> lost while wearing the ring can be healed in this way.
-            You can only use this ability up to 3 times between \\glossterm<short rests>.
+            A the end of each round, you gain a +2 bonus to the \\glossterm<wound roll> of your most recent \\glossterm<vital wound>.
+            The \\glossterm<wound roll> for that \\glossterm<vital wound> cannot be modified again.
         """,
-        short_description="Heals hit points",
+        short_description="Reduce the severity of vital wounds",
     ))
 
     apparel.append(MagicItem(
         name="Ring of Regeneration, Greater",
-        level=18,
+        level=14,
         material_type='Ring',
         tags=[],
         description="""
-            This item functions like the \\textit<ring of regeneration>, except that you can regain two \\glossterm<hit points> instead of one.
+            This item functions like the \\mitem<ring of regeneration> item, except that the bonus increases to +3.
         """,
-        short_description="Heals more hit points",
+        short_description="Greatly reduces the severity of vital wounds",
+    ))
+
+    apparel.append(MagicItem(
+        name="Ring of Regeneration, Supreme",
+        level=20,
+        material_type='Ring',
+        tags=[],
+        description="""
+            This item functions like the \\mitem<ring of regeneration> item, except that the bonus increases to +4.
+        """,
+        short_description="Drastically reduces the severity of vital wounds",
     ))
 
     # Amulets

@@ -858,14 +858,12 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[4]{Healing Touch} You can use the \textit{healing touch} ability as a standard action.
         \begin{freeability}{Healing Touch}[\glossterm{Life}]
-            Make a Heal check on an \glossterm{ally} within your \glossterm{reach}.
-            The target regains a \glossterm{hit point}.
-            You can use this ability up to 3 times between \glossterm{short rests}.
+            One \glossterm{ally} within your \glossterm{reach} gains a \plus2 bonus to its most recent \glossterm{wound roll}.
+            The \glossterm{wound roll} for that \glossterm{vital wound} cannot be modified again.
 
             \rankline
-            \rank{10} When you use this ability, you can spend an \glossterm{action point}.
-            If you do, the target removes a \glossterm{vital wound} instead of an 
-            \rank{16} For every two hit points you would heal, you can instead heal a point of \glossterm{vital damage}.
+            \rank{10} The bonus increases to \plus3.
+            \rank{16} The bonus increases to \plus4.
         \end{freeability}
 
         \ff[7]{Purging Touch} You can use the \textit{purging touch} ability as a standard action.
@@ -1177,7 +1175,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[7]{Widened Backlash} The area affected by your \glossterm{miscast backlash} increases to a \areamed radius centered on you.
 
-        \ff[10]{Toughened Body} You gain additional hit points equal to your level.
+        \ff[10]{Toughened Body} You gain an additional \glossterm{hit point}.
 
         \ff[13]{Resilient Channeler} The penalty to defenses from your \textit{overchannel} ability is removed.
 
@@ -1432,23 +1430,23 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{feat}{Regenerator}{General}
         \featpre Starting Constitution of 2.
 
-        \ff[1]{Regenerative Recovery} You can use the \textit{regenerative recovery} ability as a standard action.
+        \ff[1]{Diehard} You gain a \plus1 bonus to \glossterm{wound rolls}.
+
+        \ff[4]{Regenerative Rest} When you take a \glossterm{short rest}, you can spend an \glossterm{action point}. If you do, you heal one \glossterm{vital wound}.
+
+        \ff[7]{Regenerative Recovery} You can use the \textit{regenerative recovery} ability as a standard action.
         \begin{freeability}{Regenerative Recovery}
             You regain a \glossterm{hit point}.
             After you use this ability a number of times equal to your starting Constitution, you cannot use it again until you take a \glossterm{short rest}.
         \end{freeability}
 
-        \ff[4]{Regenerative Rest} When you take a \glossterm{short rest}, you can spend an \glossterm{action point}. If you do, you heal one \glossterm{vital wound}.
+        \ff[10]{Greater Diehard} The bonus from your \textit{diehard} ability increases to \plus2.
 
-        \ff[7]{Diehard} You gain a \plus1 bonus to \glossterm{wound rolls}.
+        \ff[13]{Greater Regenerative Rest} Your \textit{regenerative rest} ability removes an additional \glossterm{vital wound}.
 
-        \ff[10]{Injury Tolerance} You reduce your Fortitude and Mental defense penalties for having \glossterm{vital wounds} by 2 (see \pcref{Vital Wounds}).
+        \ff[16]{Greater Regenerative Recovery} Your \textit{regenerative recovery} ability causes you to regain an additional \glossterm{hit point}.
 
-        \ff[13]{Greater Regenerative Rest} You do not have to spend a \glossterm{reserve action point} to use your \textit{regenerative rest} ability.
-
-        \ff[16]{Indestructible} The bonus from your \textit{diehard} ability increases to \plus2.
-
-        \ff[19]{Greater Regenerative Recovery} Your \textit{regenerative recovery} ability regains two \glossterm{hit points}.
+        \ff[19]{Supreme Diehard} The bonus from your \textit{diehard} ability increases to \plus3.
     \end{feat}
 
     \begin{feat}{Ride Specialization}{Skill}
@@ -2229,19 +2227,22 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Vital Surge Focus} You gain a \plus1 bonus to \glossterm{accuracy} with abilities from the \sphere{vital surge} \glossterm{mystic sphere}.
 
-        \ff[4]{Personal Vitality} You gain a \plus2 bonus to Fortitude defense.
+        \ff[4]{Lifebind} Whenever you deal damage to a living creature using a spell from the \sphere{vital surge} \glossterm{mystic sphere}, you can choose to bind the target's life force to yours.
+        While the target is bound, you can see it through all forms of \glossterm{concealment} and \glossterm{invisibility} (but not through \glossterm{cover}).
+        In addition, you constantly know the exact direction and distance to the target bound by your \textit{lifebind} ability.
+        This binding lasts until you bind another creature with this ability.
 
         \ff[7]{Spell} You learn a spell from the \sphere{vital surge} \glossterm{mystic sphere}.
         When you gain access to new spell levels, you can change which spell you know from that \glossterm{mystic sphere}.
 
-        \ff[10]{Reciprocal Healing} When you cause another creature to regain at least \glossterm{hit point} with a spell from the \sphere{vital surge} \glossterm{mystic sphere}, you also regain a \glossterm{hit point}.
-        You can only gain this healing once per spell.
+        \ff[10]{Greater Lifebind} You are always considered to have \glossterm{line of effect} to the target bound by your \textit{lifebind} ability, regardless of intervening obstacles.
+        The target must still be within the normal \glossterm{range} of your spells.
 
-        \ff[13]{Greater Personal Vitality} The bonus from your \textit{personal vitality} ability increases to \plus4.
+        \ff[13]{Personal Vitality} You gain a \plus2 bonus to Fortitude defense.
 
         \ff[16]{Greater Vital Surge Focus} The bonus from your \textit{vital surge focus} ability increases to \plus2.
 
-        \ff[19]{Greater Reciprocal Healing} Your \textit{reciprocal healing} ability regains \glossterm{hit points} equal to the \glossterm{hit points} you removed from one creature with the spell.
+        \ff[19]{Supreme Lifebind} As long as the target of your \textit{lifebind} ability is on the same plane as you, it is always within the \glossterm{range} of your \glossterm{magical} abilities.
     \end{feat}
 
     \begin{feat}{Sphere Focus: Weaponcraft}{Casting, Magical}

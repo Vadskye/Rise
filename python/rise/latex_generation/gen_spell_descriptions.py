@@ -1554,16 +1554,19 @@ def generate_mystic_spheres():
             Spell('Supreme Barkskin', 7, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 This spell functions like the \\spell<barkskin> spell, except that stuff the bonus is equal to twice your \\glossterm<power>.
             """, tags=['Attune (target)']),
-            Spell('Regeneration', 4, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                A the end of each round, if the target did not take damage that round, it regains a \\glossterm<hit point>.
-                After the target regains 3 hit points this way, this spell ends.
+            Spell('Regeneration', 2, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+                A the end of each round, the target gains a +2 bonus to the \\glossterm<wound roll> of its most recent \\glossterm<vital wound>.
+                The \\glossterm<wound roll> for that \\glossterm<vital wound> cannot be modified again.
             """, tags=['Attune (target)']),
-            Spell('Greater Regeneration', 7, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                This spell functions like the \\spell<regeneration> spell, except that it lasts until the target regains 6 hit points.
+            Spell('Greater Regeneration', 4, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+                This spell functions like the \\spell<regeneration> spell, except that the bonus increases to +3.
+            """, tags=['Attune (target)']),
+            Spell('Supreme Regeneration', 6, """
+                This spell functions like the \\spell<regeneration> spell, except that the bonus increases to +4.
             """, tags=['Attune (target)']),
             # Should this also/instead be under Terramancy?
             Spell('Stoneskin', 2, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                The target gains a \\glossterm<magic bonus> equal to your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical damage>.
+                The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical damage>.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)']),
@@ -2613,16 +2616,42 @@ def generate_mystic_spheres():
         name="Vital Surge",
         short_description="Alter life energy to cure or inflict wounds",
         cantrips=[
-            Effects('Cure Minor Wounds', 'Yourself or a living \\glossterm<ally> within \\rngclose range', """
-                The target heals hit points equal to your \\glossterm<power>.
+            Effects('Ablate Wound', 'Yourself or a living \\glossterm<ally> within \\rngclose range', """
+                The target gains a +1 bonus to the \\glossterm<wound roll> of its most recent \\glossterm<vital wound>, up to a maximum of 0.
+                The \\glossterm<wound roll> for that \\glossterm<vital wound> cannot be modified again.
             """, tags=[]),
         ],
         schools=['Vivimancy'],
         lists=['Divine', 'Nature'],
         spells=[
-            Spell('Cure Wounds', 1, 'One living \\glossterm<ally> within \\rngmed range', """
-                The target heals hit points equal to \\glossterm<standard damage> +1d.
+            Spell('Seal Wound', 1, """
+                The target gains a +2 bonus to the \\glossterm<wound roll> of its most recent \\glossterm<vital wound>.
+                The \\glossterm<wound roll> for that \\glossterm<vital wound> cannot be modified again.
             """, tags=[]),
+            Spell('Greater Seal Wound', 3, """
+                This spell functions like the \\spell<healing surge> spell, except that the bonus increases to +3.
+            """, tags=[]),
+            Spell('Supreme Seal Wound', 5, """
+                This spell functions like the \\spell<healing surge> spell, except that the bonus increases to +4.
+            """, tags=[]),
+            Spell('Lifegift', 1, """
+                The target increases its current and maximum \\glossterm<hit points> by 1.
+                When this spell ends, the target loses one \\glossterm<hit point>.
+            """, tags=['Attune (target)']),
+            Spell('Greater Lifegift', 4, """
+                The target increases its current and maximum \\glossterm<hit points> by 2.
+                When this spell ends, the target loses two \\glossterm<hit point>.
+            """, tags=['Attune (target)']),
+            Spell('Supreme Lifegift', 7, """
+                The target increases its current and maximum \\glossterm<hit points> by 3.
+                When this spell ends, the target loses three \\glossterm<hit points>.
+            """, tags=['Attune (target)']),
+            Spell('Cure Serious Wound', 4, 'One living \\glossterm<ally> within \\rngmed range', """
+                The target removes one \\glossterm<vital wound>.
+            """, tags=['AP']),
+            Spell('Cure Critical Wound', 6, """
+                The target removes two \\glossterm<vital wounds>.
+            """, tags=['AP']),
             Spell('Inflict Wounds', 1, 'One creature within \\rngmed range', """
                 Make an attack vs. Fortitude against the target.
                 \\hit The target takes \\glossterm<standard damage>.
@@ -2640,38 +2669,17 @@ def generate_mystic_spheres():
                 This spell functions like the \\spell<cure wounds> spell, except that the healing increases to \\glossterm<standard damage> +2d.
                 In addition, for every 5 points of healing you provide, you can instead heal one point of \\glossterm<vital damage>.
             """, tags=[]),
-            Spell('Heal', 5, 'One living \\glossterm<ally> within \\rngmed range', """
-                This spell functions like the \\spell<cure wounds> spell, except that you gain a +2d bonus to healing.
-                In addition, it heals \\glossterm<vital damage> as easily as it heals hit points.
-            """, tags=[]),
             # TODO: make "Undead Bane" spell after figuring out undead / life
             # damage interaction
-            Spell('Drain Life', 3, 'One creature within \\rngmed range', """
-                This spell functions like the \\spell<inflict wounds> spell, except that the damage increases to \\glossterm<standard damage> +2d.
-                In addition, you heal hit points equal to your \\glossterm<power> if you deal damage.
-            """, tags=[]),
-            Spell('Greater Drain Life', 5, 'One creature within \\rngmed range', """
-                This spell functions like the \\spell<inflict wounds> spell, except that the damage increases to \\glossterm<standard damage> +3d.
-                In addition, you heal hit points equal to twice your \\glossterm<power> if you deal damage.
-            """, tags=[]),
             Spell('Vital Persistence', 2, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                The target reduces its \\glossterm<vital damage penalties> by an amount equal to your \\glossterm<power>.
+                The target ignores the vital wound effect of its most recent \\glossterm<vital wound>.
             """, tags=['Attune (target)']),
-            Spell('Greater Vital Persistence', 4, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                This spell functions like the \\spell<vital persistence> spell, except that the penalty reduction increases to be equal to twice your \\glossterm<power>.
+            Spell('Greater Vital Persistence', 5, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+                The target ignores the vital wound effect of its two most recent \\glossterm<vital wounds>.
             """, tags=['Attune (target)']),
-            Spell('Life Exchange', 4, ['One living \\glossterm<ally> within \\rngmed range', 'One other creature within that range'], """
-                Make an attack vs. Fortitude against the secondary target.
-                \\hit The secondary target takes damage equal to \\glossterm<standard damage> +1d.
-                In addition, the primary target heals hit points equal to the damage dealt in this way.
-                \\crit This spell does not deal additional damage on a critical hit.
-            """, tags=[]),
             Spell('Death Knell', 3, 'One creature within \\rngmed range', """
                 This spell functions like the \\spell<inflict wounds> spell, except that a struck target suffers a death knell as a \\glossterm<condition>.
                 At the end of each round, if the target has 0 hit points, it immediately dies.
-
-                % TODO: wording
-                If the target dies while the condition is active, you heal hit points equal to twice your \\glossterm<power>.
             """, tags=[]),
             Spell('Circle of Death', 4, ['Yourself', 'Living \\glossterm<enemies> in the area (see text)'], """
                 You are surrounded by an aura of death in a \\areamed radius \\glossterm<enamation> from you.
@@ -2680,7 +2688,8 @@ def generate_mystic_spheres():
             """, tags=['Attune (self)']),
             Spell('Circle of Healing', 4, ['Yourself', 'You and each living \\glossterm<ally> in the area (see text)'], """
                 You are surrounded by an aura of healing in a \\areamed radius \\glossterm<emanation> from you.
-                When this spell resolves, and the end of each \\glossterm<action phase> in subsequent rounds, each secondary target heals hit points equal to half your \\glossterm<power>.
+                When this spell resolves, and the end of each \\glossterm<action phase> in subsequent rounds, each secondary target gains a +2 bonus to the \\glossterm<wound roll> of its most recent \\glossterm<vital wound>.
+                The \\glossterm<wound roll> for each \\glossterm<vital wound> modified this way cannot be modified again.
             """, tags=['Attune (self)']),
             Spell('Finger of Death', 5, 'One living creature within \\rngclose range', """
                 Make an attack vs. Fortitude against the target.
