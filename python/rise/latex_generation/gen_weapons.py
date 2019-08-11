@@ -444,30 +444,6 @@ def generate_weapons():
     ))
 
     weapons.append(MagicItem(
-        name="Vampiric",
-        level=6,
-        material_type='Weapon',
-        tags=[],
-        description="""
-            When you inflict a \\glossterm<vital wound> on a living creature with this weapon, you may regain a \\glossterm<hit point>.
-            You can only regain \\glossterm<hit points> in this way once between \\glossterm<short rests>.
-        """,
-        short_description="Heals you when inflicting a wound",
-    ))
-
-    weapons.append(MagicItem(
-        name="Vampiric, Greater",
-        level=14,
-        material_type='Weapon',
-        tags=[],
-        description="""
-            When you inflict a \\glossterm<vital wound> on a living creature with this weapon, you may regain two \\glossterm<hit points>.
-            You can only regain \\glossterm<hit points> in this way once between \\glossterm<short rests>.
-        """,
-        short_description="Drastically heals you when inflicting a wound",
-    ))
-
-    weapons.append(MagicItem(
         name="Vorpal",
         level=12,
         material_type='Weapon',
