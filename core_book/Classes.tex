@@ -464,31 +464,60 @@ This choice determines a great deal about your character's abilities.
     \subsection{Healer}
         This archetype grants you healing abilities.
 
-        \cf{Clr}[1]{Divine Healing} You can use the \textit{divine healing} ability as a standard action.
-        \begin{freeability}{Divine Healing}[\glossterm{Life}, \glossterm{Magical}]
-            You or a living \glossterm{ally} you can touch regains a \glossterm{hit point}.
-            You can use this ability up to 3 times between \glossterm{short rests}.
-        \end{freeability}
+        \cf{Clr}[1]{Mitigate Wound} You can use the \textit{mitigate wound} ability as a standard action.
+        \begin{freeability}{Mitigate Wound}[\glossterm{Magical}]
+            Choose yourself or a living \glossterm{ally} within \rngclose range.
+            The target can roll again for its most recent \glossterm{wound roll} with a \plus2 bonus.
+            It can decide whether to keep its original roll or use the new roll.
+            In either case, the \glossterm{wound roll} for that \glossterm{vital wound} cannot be modified again.
+
+            \rankline
+            \rank{3} The bonus increases to \plus3.
+            \rank{5} The range increases to \rnglong.
+            \rank{7} The bonus increases to \plus4.
+        \end{ability}
 
         \cf{Clr}[2]{Divine Cleanse} You can use the \textit{divine cleanse} ability as a standard action.
         \begin{freeability}{Divine Cleanse}[\glossterm{Magical}]
-            You or an \glossterm{ally} within \rngclose range can remove one \glossterm{condition}.
+            You or an \glossterm{ally} within \rngclose range removes one \glossterm{condition}.
+
+            \rankline
+            \rank{4} The ability gains the \glossterm{Swift} tag.
+            This means that any effects of the removed condition do not affect the target during the current phase.
+            \rank{6} The range increases to \rnglong.
+            \rank{8} The target can remove an additional condition.
         \end{freeability}
 
-        \cf{Clr}[3]{Vital Healing} When you cause a creature to regain a \glossterm{hit point} with a \glossterm{magical} ability, you can spend an \glossterm{action point}.
-        If you do, the target also removes a \glossterm{vital wound}.
-        You can only use this ability once per round.
+        \cf{Clr}[3]{Divine Healing} You can use the \textit{divine healing} ability as a standard action.
+        \begin{apability}{Divine Healing}[\glossterm{Magical}]
+            You or a living \glossterm{ally} within \rngclose range removes a \glossterm{vital wound}.
 
-        \cf{Clr}[4]{Greater Divine Healing} The \glossterm{range} of your \textit{divine healing} ability increases to \rngclose.
-        In addition, the target can also remove a \glossterm{condition}.
+            \rankline
+            \rank{5} The target removes an additional \glossterm{vital wound}.
+            \rank{7} The range increases to \rnglong.
+        \end{apability}
 
-        \cf{Clr}[5]{Greater Divine Cleanse} Your \textit{divine cleanse} ability gains the \glossterm{Swift} tag.
-        This means that any effects of the removed condition do not affect the target during the current phase.
+        \cf{Clr}[4]{Healer's Grace} You gain a \plus1 bonus to all defenses.
+        After you attack a living creature, you lose this bonus until the end of the next round.
 
-        \cf{Clr}[6]{Greater Vital Healing} When you use your \textit{vital healing} ability, the target removes a number of \glossterm{vital wounds} equal to the \glossterm{hit points} it regained.
+        \cf{Clr}[5]{Revivify} You can use the \textit{revivify} ability as a standard action.
+        \begin{apability}{Revivify}
+            Choose a dead creature within \rngclose range.
+            If it was dead for no more than 1 minute, it is restored to life, as the \ritual{resurrection} ritual.
+            After using this ability, you cannot use it for 24 hours.
 
-        \cf{Clr}[7]{Supreme Divine Healing} The \glossterm{range} of your \textit{divine healing} increases to \rngmed.
-        In addition, the target regains an additional \glossterm{hit point}.
+            \rankline
+            \rank{7} You can use this ability again after 1 hour instead of after 24 hours.
+        \end{apability}
+
+        % \cf{Clr}[5]{Reflexive Healing} When you suffer a \glossterm{vital wound} that makes you \glossterm{unconscious}, you automatically use your \textit{mitigate wound} ability on yourself at the end of the round.
+
+        % TODO: why 4? Ideally, this should correspond to some sort of ``half as strong'' benchmark.
+        \cf{Clr}[6]{Wellspring of Health} When you use your \textit{divine healing} ability,
+            if the target's level is at least four levels lower than your level,
+            you regain the \glossterm{action point} spent to use the ability.
+
+        \cf{Clr}[7]{Greater Healer's Grace} The bonus from your \textit{healer's grace} ability increases to \plus2.
 
     \subsection{Cleric Domain Abilities}\label{Cleric Domain Abilities}
         These domain abilities can be granted by the \textit{domain influence} cleric archetype.
@@ -663,14 +692,10 @@ This choice determines a great deal about your character's abilities.
 
         \subsubsection{Life}
             \parhead{Gift} You gain a \plus4 bonus to the Heal skill (see \pcref{Heal}).
-            \parhead{Aspect} You gain a bonus equal to your \glossterm{power} to your \glossterm{wound threshold}.
-            \parhead{Essence} You can use the \textit{revivify} ability as a standard action.
-            \begin{apability}{Revivify}
-                Choose a dead creature adjacent to you.
-                If it was dead for no more than 5 minutes, it is restored to life, as the \ritual{resurrection} ritual.
-                After using this ability, you cannot use it for 1 hour.
-            \end{apability}
-            \parhead{Mastery} Whenever you regain any number of \glossterm{hit points}, you regain an additional \glossterm{hit point}.
+            \parhead{Aspect} You gain an additional \glossterm{hit point}.
+            \parhead{Essence} At the end of each round, if you became \glossterm{unconscious} from a \glossterm{vital wound} that round, you can use one \glossterm{magical} ability you have that modifies \glossterm{wound rolls} or removes \glossterm{vital wounds} on yourself without taking an action.
+            \parhead{Mastery} You gain an additional \glossterm{hit point}.
+            In addition, you gain a \plus1 bonus to \glossterm{wound rolls}.
 
         \subsubsection{Magic}
             \parhead{Gift} You gain a \plus1 bonus to \glossterm{power} with divine spells.
@@ -2238,28 +2263,34 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Pal}[1]{Lay on Hands}[Magical] You can use the \textit{lay on hands} ability as a standard action.
         \begin{freeability}{Lay on Hands}[Life]
-            You or an \glossterm{ally} you can touch regains a \glossterm{hit point}.
-            That creature is unaffected by any additional uses of this ability until you take a \glossterm{short rest}.
+            One \glossterm{ally} within your \glossterm{reach} gains a \plus2 bonus to its most recent \glossterm{wound roll}.
+            The \glossterm{wound roll} for that \glossterm{vital wound} cannot be modified again.
+
+            \rankline
+            \rank{3} The bonus increases to \plus3.
+            \rank{5} When you use this ability, you can spend an \glossterm{action point}.
+            If you do, the target's most recent \glossterm{vital wound} is removed instead of having its \glossterm{wound roll} modified.
+            \rank{7} The bonus increases to \plus5.
         \end{freeability}
 
-        \cf{Pal}[2]{Stalwart Champion}
+        \cf{Pal}[2]{Stalwart Defender}
         You gain a \plus2 bonus to \glossterm{threat} and a \plus1 bonus to Armor defense.
 
-        \cf{Pal}[3]{Stalwart Resilience}[Magical]
+        \cf{Pal}[3]{Stalwart Resilience}
         You gain a \plus1 bonus to Fortitude and Mental defense.
-        In addition, you gain a bonus equal to your \glossterm{power} to your \glossterm{wound threshold}.
+        In addition, you gain a \plus1 bonus to \glossterm{wound rolls}.
 
-        \cf{Pal}[4]{Greater Lay on Hands}[Magical]
-        The target of your \textit{lay on hands} ability can also remove a \glossterm{condition}.
+        \cf{Pal}[4]{Defender's Boon}
+        Whenever you are attacked, you gain a \plus1 bonus to \glossterm{accuracy} until the end of the next round.
+        This bonus does not stack with itself.
 
         \cf{Pal}[5]{Greater Stalwart Champion} The threat bonus from your \textit{stalwart champion} ability increases to \plus4.
         In addition, the Armor defense bonus increases to \plus2.
 
-        \cf{Pal}[6]{Greater Stalwart Resilience}[Magical] The defense bonus from your \textit{stalwart resilience} ability increases to \plus2.
-        In addition, the \glossterm{wound threshold} bonus increases to twice your \glossterm{power}.
+        \cf{Pal}[6]{Greater Stalwart Resilience} The bonuses from your \textit{stalwart resilience} ability increase to \plus2.
 
-        \cf{Pal}[7]{Supreme Lay on Hands}[Magical]
-        The target of your \textit{lay on hands} ability regains an additional \glossterm{hit point}.
+        \cf{Pal}[7]{Greater Defender's Boon}[Magical]
+        The bonus from your \textit{defender's boon} ability increase to \plus2.
 
     \subsection{Ex-Paladins}
         If you cease to follow your devoted alignment, you lose all \glossterm{magical} paladin class abilities.
