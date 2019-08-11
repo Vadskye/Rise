@@ -619,8 +619,13 @@ It defines how attributes work and explains how to make attacks in combat.
         The effect of the wound lasts until you remove that \glossterm{vital wound}.
         The effects of vital wounds stack with each other, even if you roll the same effect twice for different \glossterm{vital wounds}.
 
-        \parhead{Wound Roll}\label{Wound Roll}
+        \subsubsection{Wound Roll}\label{Wound Roll}
         To make a \glossterm{wound roll}, roll 1d10 \sub the number of \glossterm{vital wounds} you have.
+        The result determines the effeft of the \glossterm{vital wound}, as listed in \tref{Vital Wound Effects}.
+
+        \parhead{Changing Wound Rolls}
+            Some effects can change the \glossterm{wound roll} for \glossterm{vital wounds} you have already suffered.
+            If your \glossterm{wound roll} changes retroactively, it changes the effect of that \glossterm{vital wound}.
 
         \begin{dtable}
             \lcaption{Vital Wound Effects}
@@ -629,14 +634,14 @@ It defines how attributes work and explains how to make attacks in combat.
                 \minus1 or less & You are unconscious, and at the end of the next round you die \\
                 0 & You are unconscious \\
                 1 & You fall unconscious immediately, but can be awoken as if from sleep \\
-                2 & You are \glossterm{sickened} \\
-                3 & You are \glossterm{dazed} \\
-                4 & You are \glossterm{slowed} \\
+                2 & You move at half speed \\
+                3 & You take a \minus2 penalty to \glossterm{accuracy} \\
+                4 & You take a \minus2 penalty to all \glossterm{defenses} \\
                 5 & Your maximum \glossterm{action points} are reduced by 1 \\
                 6 & Your maximum \glossterm{hit points} are reduced by 1 \\
-                7 & You are \glossterm{dazzled} \\
-                8 & You take a \minus4 penalty to all skills \\
-                9 & You take a \minus2 penalty to Fortitude and Mental defenses \\
+                8 & You take a \minus2 penalty to Fortitude defense \\
+                8 & You take a \minus2 penalty to Mental defense \\
+                9 & You take a \minus1 penalty to future \glossterm{wound rolls} \\
                 10 or more & No effect \\
             \end{dtabularx}
         \end{dtable}
