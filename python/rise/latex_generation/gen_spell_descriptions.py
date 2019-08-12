@@ -221,8 +221,7 @@ def generate_mystic_spheres():
                 The wall provides both \\glossterm<passive cover> and \\glossterm<concealment> to targets on the opposite side of the wall, for a total of a +4 bonus to Armor defense.
                 Creatures can pass through the wall unharmed, though it costs five extra feet of movement to move through the wall.
 
-                Each five-foot square of wall has a \\glossterm<wound threshold> equal to four times your \\glossterm<power>, and all of its defenses are 0.
-                It is immune to most forms of attack, but it can be destroyed by \\glossterm<fire damage> and similar effects that can destroy water.
+                Each five-foot square of wall has a \\glossterm<wound resistance> equal to three times your \\glossterm<power> and all of its defenses are 0.
             """, tags=['Sustain (minor)', 'Manifestation']),
             Spell('Underwater Freedom', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 The target suffers no penalties for acting underwater, except for those relating to using ranged weapons.
@@ -1138,8 +1137,7 @@ def generate_mystic_spheres():
                 The pool of water targeted must be at least as large as the item you create.
 
                 The item functions like a normal item of its type, except that it is more fragile.
-                Its \\glossterm<wound threshold> is equal to twice your \\glossterm<power>, it does not have any \\glossterm<hardness>, and it is \\glossterm<vulnerable> to fire damage.
-                If the item would take cold damage, it instead regains a \\glossterm<hit point>.
+                Its \\glossterm<wound resistance> is equal to twice your \\glossterm<power>, and it is \\glossterm<vulnerable> to fire damage.
 
                 When a creature wearing armor created in this way takes physical damage, cold damage, or fire damage, that damage is also dealt to the armor.
                 Likewise, when a creature wielding a weapon created in this way deals damage with the weapon, that damage is also dealt to the weapon.
@@ -1377,13 +1375,13 @@ def generate_mystic_spheres():
             Spell('Web', 2, 'All Large or smaller creatures in the area (see text)', """
                 You fill a \\areasmall radius \\glossterm<zone> within \\rngclose range with webs.
                 The webs make the area \\glossterm<difficult terrain>.
-                Each 5-ft.\\ square of webbing has a \\glossterm<wound threshold> equal to your \\glossterm<power>, and is \\glossterm<vulnerable> to fire.
+                Each 5-ft.\\ square of webbing has a \\glossterm<wound resistance> equal to your \\glossterm<power> and is \\glossterm<vulnerable> to fire.
 
                 In addition, make an attack vs. Reflex against each target.
                 \\hit Each secondary target is \\glossterm<immobilized> as long as it has webbing from this ability in its space.
             """, tags=['Manifestation', 'Sustain (minor)']),
             Spell('Reinforced Webbing', 3, 'All Large or smaller creatures in the area (see text)', f"""
-                This spell functions like the \\spell<web> spell, except that each 5-ft.\\ square of webbing gains additional hit points equal to your \\glossterm<power>.
+                This spell functions like the \\spell<web> spell, except that each 5-ft.\\ square of webbing gains a bonus to \\glossterm<wound resistance> equal to your \\glossterm<power>.
                 In addition, the webs are no longer \\glossterm<vulnerable> to fire damage.
             """, tags=['Manifestation', 'Sustain (minor)']),
             Spell('Poison', 2, 'One creature within \\rngmed range', """
@@ -2269,7 +2267,7 @@ def generate_mystic_spheres():
             Spell('Wall of Force', 4, None, """
                 You create a wall of telekinetic force in a 10 ft.\\ high, \\arealarge line within \\rngmed range.
                 The wall is transparent, but blocks physical passage and \\glossterm<line of effect>.
-                Each five-foot square of wall has hit points equal to twice your \\glossterm<power>, and all of its defenses are 0.
+                Each five-foot square of wall has a \\glossterm<wound resistance> equal to four times your \\glossterm<power> and all of its defenses are 0.
             """, tags=['Attune (self)']),
             Spell('Forcecage', 7, None, """
                 You create a 10 ft.\\ cube of telekinetic force within \\rngmed range.
