@@ -474,7 +474,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[13]{Angelic Flight} You can use the \textit{angelic flight} ability as a \glossterm{free action}.
         \begin{freeability}{Angelic Flight}[Magical]
             You gain a \glossterm{fly speed} equal to your \glossterm{base speed} until the end of the round (see \pcref{Flying}).
-            In addition, you lose hit points equal to your level.
+            If you used this ability last round, you also lose a \glossterm{hit point}.
         \end{freeability}
 
         \ff[16]{TODO} 
@@ -587,7 +587,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         The DR to train the trick is 15.
         A creature with the trick gains the following benefits:
         \begin{itemize}
-            \item It gains a bonus equal to its level to its \glossterm{wound threshold}.
+            \item It gains a bonus equal to its level to its \glossterm{wound resistance}.
             \item It gains a \plus1 bonus to accuracy with all attacks.
             \item It gains a \plus1d bonus to damage with \glossterm{strikes}.
         \end{itemize}
@@ -598,7 +598,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         The DR to train the trick is 25.
         A creature with the trick gains the following benefits, which replace the benefits of the Battleforged trick:
         \begin{itemize}
-            \item It gains a bonus equal to twice its level to its \glossterm{wound threshold}.
+            \item It gains a bonus equal to twice its level to its \glossterm{wound resistance}.
             \item It gains a \plus2 bonus to accuracy with all attacks.
             \item It gains a \plus2d bonus to damage with \glossterm{strikes}.
         \end{itemize}
@@ -699,7 +699,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[13]{Draconic Flight}[Magical] You can use the \textit{draconic flight} ability as a \glossterm{free action}.
         \begin{freeability}{Draconic Flight}
             You gain a \glossterm{fly speed} equal to your \glossterm{base speed} until the end of the round (see \pcref{Flying}).
-            In addition, you lose hit points equal to your level.
+            If you used this ability last round, you also lose a \glossterm{hit point}.
         \end{freeability}
 
         \ff[16]{Draconic Scales} You gain a \plus1 bonus to Armor defense.
@@ -790,7 +790,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             Make a \glossterm{strike}.
             You gain a \plus2d bonus to damage on the strike.
             % TODO: wording?
-            If the strike does not beat the target's \glossterm{wound threshold}, the target takes no damage.
+            If the strike does not beat the target's \glossterm{wound resistance}, it deals no damage.
 
             \rankline
             \rank{10} The damage bonus increases to \plus3d.
@@ -801,6 +801,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[10]{Greater Blood Sense}[Magical] Your \textit{blood sense} ability allows you to know the location of all living creatures within range, not just living creatures with a \glossterm{vital wound}.
         You can automatically identify which of those creatures have a \glossterm{vital wound}.
+        In addition, you can see all living creatures within range that have a \glossterm{vital wound} perfectly instead of only knowing their location.
 
         \ff[13]{Bloody Resilience} You gain a \plus2 bonus to Fortitude defense.
 
@@ -932,7 +933,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Mental Discipline} You gain a \plus2 bonus to Mental defense.
         In addition, you gain a \plus2 bonus to \glossterm{concentration} checks (see \pcref{Concentration}).
 
-        \ff[4]{Mind over Matter} You gain a bonus equal to your level to your \glossterm{wound threshold}.
+        \ff[4]{Mind over Matter} You gain an additional \glossterm{hit point}.
 
         \ff[7]{Unclouded Mind} You are immune to being \glossterm{dazed}.
 
@@ -1949,7 +1950,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Fabrication Focus} You gain a \plus1 bonus to \glossterm{accuracy} with abilities from the \sphere{fabrication} \glossterm{mystic sphere}.
 
         \ff[4]{Crafting Familiarity} You gain a \plus2 bonus to all Craft skills.
-        In addition, any objects you create with abilities from the \sphere{fabrication} \glossterm{mystic sphere} gain a bonus equal to your \glossterm{power} to their \glossterm{wound threshold}.
+        In addition, any objects you create with abilities from the \sphere{fabrication} \glossterm{mystic sphere} gain a bonus equal to your \glossterm{power} to their \glossterm{wound resistance}.
 
         \ff[7]{Spell} You learn a spell from the \sphere{fabrication} \glossterm{mystic sphere}.
         When you gain access to a new spell level, you can change which spell you know from that \glossterm{mystic sphere}.
@@ -1957,7 +1958,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[10]{Greater Fabricate Trinket} The maximum size of object you can create with the \textit{fabricate trinket} \glossterm{cantrip} increases to Small.
 
         \ff[13]{Greater Crafting Familiarity} The Craft bonus from your \textit{crafting familiarity} ability increases to \plus4.
-        In addition, the \glossterm{wound threshold} bonus increases to twice your \glossterm{power}.
+        In addition, the \glossterm{wound resistance} bonus increases to twice your \glossterm{power}.
 
         \ff[16]{Greater Fabrication Focus} The bonus from your \textit{fabrication focus} ability increases to \plus2.
 
@@ -2102,7 +2103,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Guided Summons} Creatures you create with the \sphere{summoning} \glossterm{mystic sphere} gain a \plus1 bonus to \glossterm{accuracy}.
 
-        \ff[4]{Fortified Summons} Creatures you create with abilities from the \sphere{summon} spell gain a bonus equal to your \glossterm{power} to their \glossterm{wound threshold}.
+        \ff[4]{Fortified Summons} Creatures you create with abilities from the \sphere{summon} spell gain an additional \glossterm{hit point}.
 
         \ff[4]{Resummon} You can use the \textit{resummon} ability as a \glossterm{minor action}.
         \begin{freeability}{Resummon}
@@ -2115,7 +2116,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[10]{Augmented Summons} Creatures you create with abilities from the \sphere{summon} spell gain an \glossterm{action point}.
 
-        \ff[13]{Greater Fortified Summons} The bonus from your \textit{fortified summoning} ability increases to be equal to twice your \glossterm{power}.
+        \ff[13]{Greater Fortified Summons} The number of additional \glossterm{hit points} from your \textit{fortified summoning} ability increases to two.
 
         \ff[13]{Greater Resummon} The range of your \textit{resummon} ability increases to \rnglong.
         In addition, you can choose up to two creatures to teleport instead of only one.
@@ -2371,7 +2372,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[1]{Fortified Body} You gain a \plus2 bonus to Fortitude defense.
         In addition, you can sleep while you have \glossterm{encumbrance} without penalty (see \pcref{Encumbrance}).
 
-        \ff[4]{Durability} You gain a bonus equal to your level to your \glossterm{wound threshold}.
+        \ff[4]{Durability} You gain an additional \glossterm{hit point}.
 
         \ff[7]{Ailment Tolerance} You are immune to being \glossterm{sickened}.
 
@@ -2380,7 +2381,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         For example, a human would only need four hours of sleep per night.
         This does not reduce the time required for you to take a \glossterm{long rest}.
 
-        \ff[13]{Greater Durability} The bonus from your \textit{durability} ability increases to twice your level.
+        \ff[13]{Greater Durability} The number of additional \glossterm{hit points} from your \textit{durability} ability increases to two.
 
         \ff[16]{Greater Ailment Tolerance} You are immune to being \glossterm{nauseated}.
 

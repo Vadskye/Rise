@@ -848,7 +848,7 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Ring of Regeneration",
-        level=8,
+        level=10,
         material_type='Ring',
         tags=[],
         description="""
@@ -860,24 +860,13 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Ring of Regeneration, Greater",
-        level=14,
+        level=16,
         material_type='Ring',
         tags=[],
         description="""
             This item functions like the \\mitem<ring of regeneration> item, except that the bonus increases to +3.
         """,
         short_description="Greatly reduces the severity of vital wounds",
-    ))
-
-    apparel.append(MagicItem(
-        name="Ring of Regeneration, Supreme",
-        level=20,
-        material_type='Ring',
-        tags=[],
-        description="""
-            This item functions like the \\mitem<ring of regeneration> item, except that the bonus increases to +4.
-        """,
-        short_description="Drastically reduces the severity of vital wounds",
     ))
 
     # Amulets
@@ -904,22 +893,32 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Amulet of Health",
-        level=2,
+        level=6,
         material_type='Amulet',
         description="""
-            You gain a \\glossterm<magic bonus> equal to this item's \\glossterm<power> to your \\glossterm<wound threshold>.
+            You gain a +1 bonus to \\glossterm<wound rolls>.
         """,
-        short_description="Increases your \\glossterm<wound threshold>",
+        short_description="Grants a +1 bous to \\glossterm<wound rolls>",
     ))
 
     apparel.append(MagicItem(
         name="Amulet of Health, Greater",
-        level=8,
+        level=12,
         material_type='Amulet',
         description="""
-            You gain a \\glossterm<magic bonus> equal to twice this item's \\glossterm<power> to your \\glossterm<wound threshold>.
+            This item functions like the \\mitem<amulet of health>, except that the bonus increases to +2.
         """,
-        short_description="Greatly increases your \\glossterm<wound threshold>",
+        short_description="Grants a +2 bonus to \\glossterm<wound rolls>",
+    ))
+
+    apparel.append(MagicItem(
+        name="Amulet of Health, Supreme",
+        level=18,
+        material_type='Amulet',
+        description="""
+            This item functions like the \\mitem<amulet of health>, except that the bonus increases to +3.
+        """,
+        short_description="Grants a +3 bonus to \\glossterm<wound rolls>",
     ))
 
     apparel.append(MagicItem(
@@ -1027,49 +1026,70 @@ def generate_worn():
     # Maybe too strong?
     apparel.append(MagicItem(
         name="Hexward Amulet",
-        level=9,
+        level=7,
         material_type='Amulet',
         tags=[],
         description="""
-            You gain a +2 bonus to defenses against \\glossterm<magical> abilities that target you directly.
+            You gain a +1 bonus to defenses against \\glossterm<magical> abilities that target you directly.
             This does not protect you from abilities that affect an area.
+        """,
+        short_description="Grants +1 defenses against targeted magical attacks",
+    ))
+
+    apparel.append(MagicItem(
+        name="Hexproof Amulet, Greater",
+        level=13,
+        material_type='Amulet',
+        tags=[],
+        description="""
+            This item functions like the \\mitem<hexward amulet> item, except that the bonus increases to +2.
         """,
         short_description="Grants +2 defenses against targeted magical attacks",
     ))
 
     apparel.append(MagicItem(
-        name="Hexproof Amulet, Greater",
-        level=15,
+        name="Hexproof Amulet, Supreme",
+        level=19,
         material_type='Amulet',
         tags=[],
         description="""
-            You gain a +4 bonus to defenses against \\glossterm<magical> abilities that target you directly.
-            This does not protect you from abilities that affect an area.
+            This item functions like the \\mitem<hexward amulet> item, except that the bonus increases to +3.
         """,
-        short_description="Grants +4 defenses against targeted magical attacks",
+        short_description="Grants +3 defenses against targeted magical attacks",
     ))
 
     # Belts
 
     apparel.append(MagicItem(
         name="Belt of Healing",
-        level=6,
+        level=2,
         material_type='Belt',
         tags=[],
         description="""
-            As a standard action, you can use this belt to regain a \\glossterm<hit point>.
-            You can only use this item once between \\glossterm<short rests>.
+            As a standard action, you can use this belt to gain a +1 bonus to the \\glossterm<wound roll> of your most recent \\glossterm<vital wound>.
+            The \\glossterm<wound roll> for that \\glossterm<vital wound> cannot be modified again.
         """,
         short_description="Grants healing",
     ))
 
     apparel.append(MagicItem(
         name="Belt of Healing, Greater",
+        level=8,
+        material_type='Belt',
+        tags=[],
+        description="""
+            This item functions like the \\textit<belt of healing>, except that the bonus increases to +2.
+        """,
+        short_description="Grants more healing",
+    ))
+
+    apparel.append(MagicItem(
+        name="Belt of Healing, Supreme",
         level=14,
         material_type='Belt',
         tags=[],
         description="""
-            This item functions like the \\textit<belt of healing>, except that you can regain two \\glossterm<hit points> instead of one.
+            This item functions like the \\textit<belt of healing>, except that the bonus increases to +3.
         """,
         short_description="Grants more healing",
     ))

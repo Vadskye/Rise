@@ -87,7 +87,7 @@ def generate_implements():
 
     implements.append(MagicItem(
         name="Spellfeeding Staff",
-        level=9,
+        level=15,
         material_type='Staff',
         tags=[],
         description="""
@@ -95,18 +95,6 @@ def generate_implements():
             You can only regain \\glossterm<hit points> once in this way between \\glossterm<short rests>.
         """,
         short_description="Heals you when casting spells",
-    ))
-
-    implements.append(MagicItem(
-        name="Spellfeeding Staff, Greater",
-        level=16,
-        material_type='Staff',
-        tags=[],
-        description="""
-            When you cast a spell using this staff, you may regain two \\glossterm<hit points>.
-            You can only regain \\glossterm<hit points> once in this way between \\glossterm<short rests>.
-        """,
-        short_description="Greatly heals you when casting spells",
     ))
 
     implements.append(MagicItem(
