@@ -104,9 +104,8 @@
   margin-left: 1%;
   width: 57%;
 }
-.attributes-header {
+.attributes-header, .standard-damage, .standard-damage > .section-header {
   margin-top: 0;
-  margin-bottom: 0;
 }
 .sidebar {
   width: 42%;
@@ -168,33 +167,6 @@
 
 .adventuring {
     flex-grow: 1;
-
-    .carrying-capacity-header {
-        margin-top: 0;
-    }
-
-    .carrying-capacity {
-        .section-header {
-            margin-top: 0;
-        }
-
-        .labeled-text-input {
-            flex-basis: 25%;
-            flex-grow: 1;
-        }
-
-        .flex-row > div {
-            margin-left: 0.25em;
-            margin-right: 0.25em;
-        }
-
-        .flex-row > div:first-child {
-            margin-left: 0;
-        }
-        .flex-row > div:last-child {
-            margin-right: 0;
-        }
-    }
 }
 
 .standard-damage {
@@ -223,4 +195,27 @@ input[type=text].invisible-text-input {
     font-family: Calibri;
     padding: 2px 0 0 0;
     text-align: center;
+}
+
+.attribute-name {
+    font-weight: bold;
+}
+
+.carrying-capacity {
+    .labeled-text-input {
+        flex-basis: 25%;
+        flex-grow: 1;
+    }
+
+    .flex-row > div {
+        margin-left: 0.25em;
+        margin-right: 0.25em;
+    }
+
+    .flex-row > div:first-child {
+        margin-left: 0;
+    }
+    .flex-row > div:last-child {
+        margin-right: 0;
+    }
 }

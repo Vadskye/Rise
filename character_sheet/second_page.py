@@ -2,7 +2,7 @@ from cgi_simple import (
     div, fieldset, equation, flex_col, flex_row, flex_wrapper, labeled_text_input, minus, number_input,
     plus, text_input, underlabel
 )
-from sheet_data import ATTRIBUTE_SKILLS, ATTRIBUTES, ROLL20_CALC
+from sheet_data import ATTRIBUTE_SHORTHAND, ATTRIBUTE_SKILLS, ATTRIBUTES, ROLL20_CALC
 
 def equation_misc(name, i=0):
     return flex_col([
@@ -33,9 +33,10 @@ def create_page(destination):
         flex_col({'class': 'main-body'}, [
             flex_col({'class': 'statistics'}, [
                 flex_wrapper(div({'class': 'section-header'}, 'Core Statistics')),
+                calc_carrying_capacity(),
                 calc_damage_resistance(),
                 calc_encumbrance(),
-                calc_initiative(),
+                # calc_initiative(),
                 calc_insight_points(),
                 calc_magical_power(),
                 calc_maneuvers(),
@@ -132,7 +133,6 @@ def calc_attributes():
 
 def calc_attribute(attribute_name):
     return ''.join([
-        div({'class': 'calc-attribute-header'}, attribute_name.capitalize()),
         equation(
             [
                 underlabel('(Start)', number_input({
@@ -152,6 +152,8 @@ def calc_attribute(attribute_name):
                 'name': attribute_name + '_display',
                 'value': '@{' + attribute_name + '}',
             },
+            result_label=ATTRIBUTE_SHORTHAND[attribute_name],
+            underlabel_attributes={'class': 'attribute-name'},
         )
     ])
 
@@ -170,6 +172,46 @@ def abilities(name_prefix):
         }) for level in range(1, 14)]),
     ])
 
+def calc_carrying_capacity():
+    space = flex_col({'class': 'equation-glue'}, div({'class': 'equation-math'}, ' '))
+    return flex_row([
+        div({'class': 'calc-header'}, 'Carrying Capacity'),
+        underlabel(
+            'Light',
+            number_input({
+                'disabled': True,
+                'name': 'carrying_capacity_light_display',
+                'value': '@{carrying_capacity_light}',
+            }),
+        ),
+        space,
+        underlabel(
+            'Max',
+            number_input({
+                'disabled': True,
+                'name': 'carrying_capacity_max_display',
+                'value': '@{carrying_capacity_max}',
+            }),
+        ),
+        space,
+        underlabel(
+            'Over',
+            number_input({
+                'disabled': True,
+                'name': 'carrying_capacity_over_display',
+                'value': '@{carrying_capacity_over}',
+            }),
+        ),
+        space,
+        underlabel(
+            'Push',
+            number_input({
+                'disabled': True,
+                'name': 'carrying_capacity_push_display',
+                'value': '@{carrying_capacity_push}',
+            }),
+        ),
+    ])
 
 def calc_damage_resistance():
     return flex_row([
@@ -599,17 +641,6 @@ def calc_mental():
 
 def adventuring():
     return flex_col({'class': 'adventuring'}, [
-        flex_col({'class': 'carrying-capacity'}, [
-            flex_wrapper(div({'class': 'section-header'}, 'Carrying Capacity')),
-            flex_row([
-                labeled_text_input('Light', input_attributes={'name': 'weight_light'}),
-                labeled_text_input('Maximum', input_attributes={'name': 'weight_maximum'}),
-            ]),
-            flex_row([
-                labeled_text_input('Overloaded', input_attributes={'name': 'weight_overloaded'}),
-                labeled_text_input('Push/Drag', input_attributes={'name': 'weight_push_drag'}),
-            ]),
-        ]),
         standard_damage(),
     ])
 
