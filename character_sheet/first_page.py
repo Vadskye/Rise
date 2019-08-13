@@ -13,7 +13,6 @@ def create_page():
         flex_col({'class': 'main-body'}, [
             boring_stuff(),
             statistics_header(),
-            wound_thresholds(),
             attacks(),
             abilities(),
         ]),
@@ -103,7 +102,8 @@ def statistics_header():
         flex_row({'class': 'all-statistics'}, [
             core_statistics(),
             defenses(),
-            resources(),
+            damage_resistance(),
+            wound_resistance(),
         ])
     ])
 
@@ -123,12 +123,55 @@ def defenses():
         ]),
     ])
 
-def special_defenses():
-    return flex_col({'class': 'special-defenses'}, [
-        flex_wrapper(div({'class': 'section-header'}, 'Special Defenses')),
+def damage_resistance():
+    return flex_col({'class': 'damage-resistances'}, [
+        flex_wrapper(div({'class': 'section-header'}, 'Damage Resist')),
         "".join([
-            text_input({'name': f"special_defense_{i}"})
-            for i in range(4)
+            sidelabel('Global', number_input({
+                'disabled': True,
+                'name': 'damage_resistance_global',
+                'value': '@{damage_resistance_global}',
+            })),
+            sidelabel('Physical', number_input({
+                'disabled': True,
+                'name': 'damage_resistance_physical',
+                'value': '@{damage_resistance_physical}',
+            })),
+            sidelabel('Energy', number_input({
+                'disabled': True,
+                'name': 'damage_resistance_energy',
+                'value': '@{damage_resistance_energy}',
+            })),
+            freeform_number_input(
+                number_input_attributes={'name': 'damage_resistance_freeform'},
+                text_input_attributes={'name': 'damage_resistance_freeform_name'},
+            ),
+        ]),
+    ])
+
+def wound_resistance():
+    return flex_col({'class': 'wound-resistances'}, [
+        flex_wrapper(div({'class': 'section-header'}, 'Wound Resist')),
+        "".join([
+            sidelabel('Global', number_input({
+                'disabled': True,
+                'name': 'wound_resistance_global',
+                'value': '@{wound_resistance_global}',
+            })),
+            sidelabel('Physical', number_input({
+                'disabled': True,
+                'name': 'wound_resistance_physical',
+                'value': '@{wound_resistance_physical}',
+            })),
+            sidelabel('Energy', number_input({
+                'disabled': True,
+                'name': 'wound_resistance_energy',
+                'value': '@{wound_resistance_energy}',
+            })),
+            freeform_number_input(
+                number_input_attributes={'name': 'wound_resistance_freeform'},
+                text_input_attributes={'name': 'wound_resistance_freeform_name'},
+            ),
         ]),
     ])
 
@@ -139,20 +182,21 @@ def core_statistics():
             'name': 'land_speed',
             'value': '@{base_speed}',
         }),
-        sidelabel('Threat', number_input({
+        sidelabel('Hit points', number_input({
             'disabled': True,
-            'name': 'threat_display',
-            'value': '@{threat}',
+            'name': 'hit_points',
+            'value': '@{hit_points}',
         })),
-        sidelabel('FT', number_input({
+        sidelabel('Action points', number_input({
             'disabled': True,
             'name': 'fatigue_threshold_display',
             'value': '(@{fortitude_scaling} + @{fatigue_threshold_misc})',
         })),
-        freeform_number_input(
-            number_input_attributes={'name': 'freeform_core_statistic'},
-            text_input_attributes={'name': 'freeform_core_statistic_name'},
-        )
+        sidelabel('Initiative', number_input({
+            'disabled': True,
+            'name': 'initiative_display',
+            'value': '@{initiative}',
+        })),
     ])
 
 def movement():
@@ -213,38 +257,11 @@ def passive_ability(prefix, ability_number):
         }),
     ])
 
-def wound_thresholds():
-    return flex_col({'class': 'wound-thresholds'}, [
-        flex_wrapper(div({'class': 'section-header'}, 'Fatigue Track')),
-        flex_row({'class': 'wound-threshold-values'}, [
-            wound_threshold_header(),
-            "".join(wound_threshold_value(i) for i in range(8)),
-        ]),
-    ])
-
-
-def wound_threshold_header():
-    return flex_col({'class': 'wound-threshold-headers'}, [
-        div({'class': 'number-label'}, 'WT'),
-        div({'class': 'number-label'}, 'Fatigue'),
-    ])
-
-
-def wound_threshold_value(i):
-    return flex_col([
-        number_input({
-            'disabled': 'true',
-            'name': f"wound_threshold_fatigue_{i}_display",
-            'value': f"(@{{wound_threshold_total}} - (@{{level}} * {i}))",
-        }),
-        div({'class': 'fatigue-value'}, str(i)),
-    ])
-
 
 def attacks():
     return flex_col({'class': 'attacks'}, [
-        flex_wrapper(div({'class': 'section-header'}, 'Basic Attacks')),
-        "".join([attack(i) for i in range(4)]),
+        flex_wrapper(div({'class': 'section-header'}, 'Attacks')),
+        "".join([attack(i) for i in range(6)]),
     ])
 
 def attack(n=None):
