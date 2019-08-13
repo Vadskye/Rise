@@ -497,7 +497,7 @@ def calc_insight_points():
                 underlabel('Base', number_input({
                     'disabled': True,
                     'name': 'insight_points_base',
-                    'value': 1,
+                    'value': 2,
                 })),
                 plus(),
                 underlabel('(Int)', number_input({
