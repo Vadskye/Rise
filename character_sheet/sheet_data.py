@@ -2,6 +2,14 @@ from cgi_simple import value_sum
 
 ATTRIBUTES = 'Strength Dexterity Constitution Intelligence Perception Willpower'.split()
 DEFENSES = 'Armor Fortitude Reflex Mental'.split()
+ATTRIBUTE_SHORTHAND = {
+    'strength': 'Str',
+    'dexterity': 'Dex',
+    'constitution': 'Con',
+    'intelligence': 'Int',
+    'perception': 'Per',
+    'willpower': 'Wil',
+}
 ATTRIBUTE_SKILLS = {
     'strength': 'Climb Jump Swim'.split(),
     'dexterity': ['Acrobatics', 'Escape Artist', 'Ride', 'Sleight of Hand', 'Stealth'],
