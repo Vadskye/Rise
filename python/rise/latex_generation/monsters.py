@@ -264,7 +264,7 @@ def humanoids(sample_monsters):
                 The shouter's \\glossterm<allies> that can hear it gain a +2 bonus to \\glossterm<power> with \\glossterm<strikes>.
             """, tags=['Sustain (standard)']),
         ],
-        behavior='Attack lowest threat',
+        behavior='Attack lowest Strength',
     ))
 
     goblin_stabber = sample_monsters['goblin_stabber']
@@ -276,7 +276,7 @@ def humanoids(sample_monsters):
                 If the target is defenseless, overwhelmed, or unaware, the damage becomes {goblin_stabber.weapon_damage(Weapon('shortsword')) + 2}.
             """),
         ],
-        behavior='Attack lowest threat',
+        behavior='Attack lowest Strength',
     ))
 
     orc_chieftain = sample_monsters['orc_chieftain']
@@ -561,7 +561,7 @@ def magical_beasts(sample_monsters):
                 This includes magic items, attuned magical abilities, and so on.
             """)
         ],
-        behavior='Attack highest threat that has a source of magic; if no souces of magic exist, attack highest threat',
+        behavior='Attack highest Willpower that has a source of magic; if no souces of magic exist, attack highest Willpower',
     ))
 
     banehound = sample_monsters['banehound']
@@ -701,7 +701,7 @@ def outsiders(sample_monsters):
             """),
         ],
         speed='60 ft. fly (good)',
-        behavior='Attack lowest threat',
+        behavior='Attack lowest Dexterity',
     ))
 
     bebelith = sample_monsters['bebelith']
