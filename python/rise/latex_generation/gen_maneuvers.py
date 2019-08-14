@@ -293,16 +293,16 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Challenge',
-        short_description='Make a strike and increase your threat',
+        short_description='Make a strike and draw attention',
         effect_text="""
             Make a melee \\glossterm<strike>.
-            If the strike hits, you gain a +4 bonus to \\glossterm<threat> against the struck creature.
-            This effect lasts until you take a \\glossterm<short rest> or until you use this ability on a different creature.
+            If the strike beats the target's Mental defense, it takes a -2 penalty to \\glossterm<accuracy> with \\glossterm<strikes> against creatures other than you as a \\glossterm<condition>.
+            This condition is removed if another creature applies this condition to the same target.
         """,
         rank_upgrades={
-            '3': 'The threat bonus increases to +6.',
-            '5': 'Using this ability on a different creature does not end its effect.',
-            '7': 'The threat bonus increases to +10.',
+            '3': 'The penalty increases to -3.',
+            '5': 'As part of the same condition, target also moves at half speed while you \\glossterm<threaten> it.',
+            '7': 'The penalty increases to -5.',
         },
         tags=[],
         lists=['Martial'],

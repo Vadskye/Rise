@@ -137,9 +137,10 @@ This choice determines a great deal about your character's abilities.
         This archetype grants you a devastating rage, improving your combat prowess.
         % Rank 7 summary:
         % +4 power with mundane abilities
-        % +4 threat
+        % +2x level to physical resistances
         % +4 intimidate
-        % +2 Mental defense
+        % +4 Mental defense
+        % -2 Armor and Reflex defenses
 
         \cf{Bbn}[1]{Rage} You can use the \textit{rage} ability as a \glossterm{free action}.
         % TODO: prevent recovering this AP; may need to be Attunement again?
@@ -155,21 +156,20 @@ This choice determines a great deal about your character's abilities.
             \end{itemize}
         \end{attuneability}
 
-        \cf{Bbn}[2]{Intimidating Anger}
-        You gain a \plus2 bonus to the \glossterm{Intimidate} skill and to \glossterm{threat}.
+        \cf{Bbn}[2]{Seething Anger}
+        You gain a \plus2 bonus to the \glossterm{Intimidate} skill and to Mental defense.
 
-        \cf{Bbn}[3]{Focused Anger} You gain a \plus2 bonus to Mental defense.
-
-        \cf{Bbn}[4]{Invigorating Rage} When you use your \textit{rage} ability, you may regain a \glossterm{hit point}.
+        \cf{Bbn}[3]{Invigorating Rage} When you use your \textit{rage} ability, you may regain a \glossterm{hit point}.
         If you do, you lose that \glossterm{hit point} when the ability ends.
 
-        \cf{Bbn}[5]{Greater Rage} The \glossterm{power} bonus from your \textit{rage} ability increases to \plus4.
+        \cf{Bbn}[4]{Enduring Anger} You gain an additional \glossterm{hit point}.
 
-        \cf{Bbn}[6]{Greater Intimidating Anger}
-        The bonuses from your \textit{intimidating anger} ability increase to \plus4.
+        \cf{Bbn}[5]{Painless Rage} The bonus to \glossterm{resistances} from your \textit{rage} ability increases to be equal to twice your level.
 
-        \cf{Bbn}[7]{Greater Invigorating Rage} You may regain two \textit{hit points} instead of one with your \textit{invigorating rage} ability.
-        If you do, you lose two \glossterm{hit points} when the ability ends.
+        \cf{Bbn}[6]{Greater Seething Anger}
+        The bonuses from your \textit{seething anger} ability increase to \plus4.
+
+        \cf{Bbn}[7]{Powerful Rage} The \glossterm{power} bonus from your \textit{rage} ability increases to \plus4.
 
         \cf{Bbn}[8]{Titanic Rage}
         When you use your \textit{rage} ability, you can grow by one \glossterm{size category}.
@@ -210,23 +210,20 @@ This choice determines a great deal about your character's abilities.
         % +level to resistances
         % +2 Fortitude
 
-        \cf{Bbn}[1]{Fury of the Storm} You gain a \plus1 bonus to \glossterm{overwhelm resistance}.
+        \cf{Bbn}[1]{Battleforged Endurance} You gain an additional \glossterm{hit point}.
 
-        \cf{Bbn}[2]{Battlefield Lore} You gain two additional \glossterm{skill points}.
+        \cf{Bbn}[2]{Battle-Scarred} You gain a bonus equal to half your level to your \glossterm{resistances} against \glossterm{physical damage}.
 
-        \cf{Bbn}[3]{Battle-Scarred} You gain a bonus equal to half your level to your \glossterm{resistances} against \glossterm{physical damage}.
+        \cf{Bbn}[3]{Battlefield Lore} You gain two additional \glossterm{skill points}.
 
-        \cf{Bbn}[4]{Battleforged Fortitude} You gain a \plus2 bonus to Fortitude defense.
+        \cf{Bbn}[4]{Greater Battle-Scarred} The bonus from your \textit{battle-scarred} ability increases to be equal to your level.
 
-        \cf{Bbn}[5]{Greater Battle-Scarred} The bonus from your \textit{battle-scarred} ability increases to be equal to your level.
+        \cf{Bbn}[5]{Greater Battleforged Endurance} You gain an additional \glossterm{hit point}.
 
-        \cf{Bbn}[6]{Greater Fury of the Storm}
-        The bonus from your \textit{fury of the storm} ability increases to \plus2.
-
-        \cf{Bbn}[7]{Supreme Battle-Scarred}
+        \cf{Bbn}[6]{Soulscarred}
         The bonus from your \textit{battle-scarred} ability applies against all damage.
 
-        \cf{Bbn}[8]{Battleforged Supremacy}
+        \cf{Bbn}[7]{Supreme Battle-Scarred}
         The bonus from your \textit{battle-scarred} ability increases to be equal to twice your level.
 
     \subsection{Outland Savage}
@@ -1322,14 +1319,14 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Fighter Progression}
         \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Combat Discipline} & \tb{Equipment Training}  & \tb{Martial Mastery} & \tb{Battle Leader} \tableheaderrule
-               1 & Discipline          & Armor expertise         & Martial maneuvers         & Battle tactics
-            \\ 2 & Disciplined threat          & Weapon training         & Martial lore          & Guided strike
-            \\ 3 & Disciplined defense         & Greater armor expertise & Martial power         & Battle lore
-            \\ 4 & Greater discipline          & Weapon expertise        & Martial maneuver      & Battle tactic
-            \\ 5 & Greater disciplined threat  & Supreme armor expertise & Greater martial power & Brave leader, greater guided strike
-            \\ 6 & Disciplined mind            & Greater weapon training & Steady expertise      & Greater battle tactics
-            \\ 7 & Greater disciplined defense & Armored juggernaut      & Martial maneuver      & Battle tactic
-            \\ 8 & Supreme discipline          &                         &
+               1 & Discipline                   & Armor expertise         & Martial maneuvers         & Battle tactics
+            \\ 2 & Enduring discipline          & Weapon training         & Martial lore          & Guided strike
+            \\ 3 & Disciplined stance           & Greater armor expertise & Martial power         & Battle lore
+            \\ 4 & Disciplined reaction         & Weapon expertise        & Martial maneuver      & Battle tactic
+            \\ 5 & Greater enduring discipline  & Supreme armor expertise & Greater martial power & Brave leader
+            \\ 6 & Disciplined vitality         & Weapon mastery          & Steady expertise      & Greater battle tactics
+            \\ 7 & Supreme disciplined reaction & Armored juggernaut      & Martial maneuver      & Battle tactic
+            \\ 8 &                              &                         &
         \end{dtabularx}
     \end{dtable!*}
 
@@ -1414,42 +1411,49 @@ This choice determines a great deal about your character's abilities.
         As long as you are wearing body armor, you gain a \plus1 bonus to all defenses.
 
     \subsection{Combat Discipline}
-        This archetype allows you to control your \glossterm{threat} and improves your defenses, especially against special abilities.
+        This archetype allows you to improve your defenses and resist conditions.
 
         \cf{Ftr}[1]{Discipline} You can use the \textit{discipline} ability as a \glossterm{standard action}.
         \begin{freeability}{Discipline}
             Remove one \glossterm{condition} affecting you.
+
+            \rankline
+            \rank{3} You can remove an additional \glossterm{condition}.
+            \rank{5} This ability gains the \glossterm{Swift} tag.
+            When you use it, the penalties from the removed conditions do not affect you during the current phase.
+            \rank{7} You can remove any number of \glossterm{conditions}.
         \end{freeability}
 
-        \cf{Ftr}[2]{Disciplined Threat}
-        You know how to control your actions to appear more or less threatening, as you choose.
-        You can use the \textit{disciplined threat} ability as a \glossterm{minor action}.
-        \begin{freeability}{Disciplined Threat}[Sustain (free)]
-            You choose to enter a threatening stance, enter a nonthreatening stance, or act normally.
-            If you enter a threatening stance, you gain a \plus2 bonus to your \glossterm{threat}.
-            If you enter a nonthreatening stance, you take a \minus2 penalty to your \glossterm{threat}.
+        \cf{Ftr}[2]{Enduring Discipline}
+        You gain an additional \glossterm{hit point}.
+
+        \cf{Ftr}[3]{Disciplined Stance}
+        You learn how to control your body to adapt to any threat you face.
+        You can use the \textit{disciplined stance} ability as a \glossterm{minor action}.
+        \begin{freeability}{Disciplined Stance}
+            You gain a \plus2 bonus to one \glossterm{defense} of your choice and take a \minus2 penalty to a different defense of your choice.
+            This ability lasts until you use it again.
+
+            \rankline
+            \rank{5} The defense penalty is reduced to \minus1.
+            \rank{7} The defense penalty is removed.
         \end{freeability}
 
-        \cf{Ftr}[3]{Disciplined Defense}
-        You gain a \plus1 bonus to Armor defense.
+        \cf{Ftr}[4]{Disciplined Reaction}
+        You do not suffer any effects from \glossterm{conditions} in the first round that they are applied.
+        You suffer their normal effects in the following round.
+        You gain a \plus2 bonus to the Bluff and Intimidate skills.
 
-        \cf{Ftr}[4]{Greater Discipline}
-        You can remove an additional condition with your \textit{discipline} ability.
+        \cf{Ftr}[5]{Greater Enduring Discipline}
+        You gain an additional \glossterm{hit point}.
 
-        \cf{Ftr}[5]{Greater Disciplined Threat}
-        You gain more control over how threatening you appear.
-        When you use your \textit{disciplined threat} ability, you can change your threat by any amount, up to a maximum bonus of \plus4 and a maximum penalty of \minus4.
+        \cf{Ftr}[6]{Disciplined Vitality}
+        You do not suffer any effects from \glossterm{vital wounds} until the end of the next round after they are applied.
+        You suffer their normal effects after that time.
 
-        \cf{Ftr}[6]{Disciplined Mind}
-        You gain a \plus2 bonus to Mental defense.
-
-        \cf{Ftr}[7]{Greater Disciplined Defense}
-        The defense bonus from your \textit{disciplined defense} ability increases to \plus2.
-
-        \cf{Ftr}[8]{Supreme Discipline}
-        Your \textit{discipline} ability gains the \glossterm{Swift} tag.
-        When you use it, the penalties from the removed condition do not affect you during the current phase.
-        In addition, the ability removes any number of conditions.
+        \cf{Ftr}[7]{Supreme Disciplined Reaction}
+        You do not suffer any effects from \glossterm{conditions} until the end of the next round after they are applied.
+        You suffer their normal effects after that time.
 
     \subsection{Battle Leader}
 
@@ -1537,6 +1541,11 @@ This choice determines a great deal about your character's abilities.
         \begin{freeability}{Guided Strike}[\glossterm{Swift}]
             Choose an \glossterm{ally} within \rngmed range.
             If the target makes a \glossterm{strike} during the current phase, it rolls twice and takes the higher result.
+
+            \rankline
+            \rank{4} The strike gains a \plus1 bonus to \glossterm{accuracy}.
+            \rank{6} The bonus increases to \plus2.
+            \rank{8} The bonus increases to \plus3.
         \end{freeability}
 
         \cf{Ftr}[3]{Battle Lore} You gain two additional \glossterm{skill points}. 
@@ -1545,12 +1554,9 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Ftr}[5]{Brave Leader} You gain a \plus2 bonus to Mental defense.
 
-        \cf{Ftr}[5]{Greater Guided Strike} When you use your \textit{guided strike} ability, the target also gains a \plus2 bonus to \glossterm{accuracy} with the strike.
-
         \cf{Ftr}[6]{Greater Battle Tactics} The area affected by your \textit{battle tactics} increases to an \areahuge emanation.
 
         \cf*{Ftr}[7]{Battle Tactic} You learn an additional \textit{battle tactic}.
-
 \newpage
 \section{Mage}\label{Mage}
     \begin{dtable!*}
@@ -1657,6 +1663,11 @@ This choice determines a great deal about your character's abilities.
             This bonus is considered to come from a shield, and does not stack with the benefits of using a physical shield.
 
             This ability lasts until you \glossterm{dismiss} it as a free action.
+
+            \rankline
+            \rank{3} The body armor also gives you a \plus1 bonus to \glossterm{resistances} against \glossterm{physical damage}.
+            \rank{5} The defense bonus from the body armor increases to \plus3.
+            \rank{7} The bonus to \glossterm{resistances} from the body armor increases to \plus3.
         \end{freeability}
 
         \cf{Mge}[2]{Mystic Knowledge}[Magical]
@@ -2276,8 +2287,8 @@ This choice determines a great deal about your character's abilities.
             \rank{7} The bonus increases to \plus5.
         \end{freeability}
 
-        \cf{Pal}[2]{Stalwart Defender}
-        You gain a \plus2 bonus to \glossterm{threat} and a \plus1 bonus to Armor defense.
+        \cf{Pal}[2]{Enduring Defender}
+        You gain an additional \glossterm{hit point}.
 
         \cf{Pal}[3]{Stalwart Resilience}
         You gain a \plus1 bonus to Fortitude and Mental defense.
@@ -2287,8 +2298,8 @@ This choice determines a great deal about your character's abilities.
         Whenever you are attacked, you gain a \plus1 bonus to \glossterm{accuracy} until the end of the next round.
         This bonus does not stack with itself.
 
-        \cf{Pal}[5]{Greater Stalwart Champion} The threat bonus from your \textit{stalwart champion} ability increases to \plus4.
-        In addition, the Armor defense bonus increases to \plus2.
+        \cf{Pal}[5]{Greater Enduring Defender}
+        You gain an additional \glossterm{hit point}.
 
         \cf{Pal}[6]{Greater Stalwart Resilience} The bonuses from your \textit{stalwart resilience} ability increase to \plus2.
 

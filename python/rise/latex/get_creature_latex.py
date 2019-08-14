@@ -78,7 +78,7 @@ def get_latex(
         speed=30,
         reach=5,
 ):
-    behavior = behavior or 'Attack highest threat'
+    behavior = behavior or 'Attack highest Strength'
     return join(
         f"""
             \\begin<monsection><{name}>{name_suffix_text(name_suffix)}<{level}>[{challenge_rating}]
