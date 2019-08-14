@@ -1,7 +1,7 @@
 \chapter{Core Mechanics}
 
 This chapter describes the core mechanics of Rise.
-It defines how attributes work and explains how to make physical attacks in combat.
+It defines how attributes work and explains how to make attacks in combat.
 
 \section{Attacks and Checks}\label{Attacks and Checks}
     You can take many actions without needing to roll a die at all.
@@ -141,6 +141,21 @@ It defines how attributes work and explains how to make physical attacks in comb
             In addition, some abilities have effects during the delayed action phase instead of or in addition to their effects in the action phase.
             For example, the \textit{spring attack} ability allows you to move during the action phase and again during the delayed action phase (see Agility, page \featpref{Agility}).
 
+        \subsubsection{Triggered Ability Timing}\label{Triggered Ability Timing}
+            Some abilities trigger at the start or end of particular phases, or at the start or end of the round.
+            Here is the order in which these abilities trigger each round, and some notable events that occur during the round:
+            \begin{itemize}
+                \item Start of round
+                \item Start of movement phase
+                \item End of movement phase
+                \item Start of action phase
+                \item End of action phase
+                \item Start of delayed action phase
+                \item End of delayed action phase
+                \item End of round
+            \end{itemize}
+
+
     \subsection{Resolving Actions}\label{Resolving Actions}
 
         Within each phase, actions of all creatures are simultaneously resolved in the following order.
@@ -155,7 +170,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             \item Determine action results.
                 Example: Making damage rolls.
             \item Apply action results.
-                Examples: Reducing hit points, moving creature locations, and applying penalties.
+                Examples: Adding \glossterm{vital wounds}, moving creature locations, and applying penalties.
         \end{enumerate*}
 
         In the vast majority of cases, there is no need to go through this order explicitly.
@@ -221,19 +236,15 @@ It defines how attributes work and explains how to make physical attacks in comb
                 Strength measures muscle and physical power.
                 It has the following effects:
                 \begin{itemize}
-                    \item Strength determines how much a character can carry (see \tref{Carrying Capacity by Strength}).
+                    \item Strength determines how much you can carry (see \tref{Carrying Capacity by Strength}).
                     \item Strength affects Strength-based skills: Climb, Jump, and Swim (see \pcref{Skills}).
-                    \item You reduce your \textit{encumbrance} for weight or heavy armor by an amount equal to your starting Strength.
+                    \item You reduce your \textit{encumbrance} for weight or heavy armor by an amount equal to your starting Strength (minimum 0).
                     \item If your Strength is negative, you take a penalty to all Strength-based skills equal to your Strength.
                     % TODO: wording
                     \item If your Strength is negative, you take a penalty to \glossterm{power} with \glossterm{mundane} abilities equal to your Strength.
                 \end{itemize}
 
-                If you have a high Strength, you can use it to determine several statistics:
-                \begin{itemize}
-                    \item Your \glossterm{power} with most \glossterm{mundane} abilities, such as \glossterm{strikes} (see \pcref{Power}).
-                    \item Your \glossterm{threat} (see \pcref{Threat}).
-                \end{itemize}
+                If you have a high Strength, you can use it to determine your \glossterm{power} with most \glossterm{mundane} abilities, such as \glossterm{strikes} (see \pcref{Power}).
 
             \parhead{Dexterity (Dex)}\label{Dexterity}
                 Dexterity measures hand-eye coordination, agility, and reflexes.
@@ -250,9 +261,9 @@ It defines how attributes work and explains how to make physical attacks in comb
                 Constitution represents your health and stamina.
                 It has the following efects:
                 \begin{itemize}
-                    \item You gain bonus hit points based on your starting Constitution (see \pcref{Hit Points}).
-                    \item You heal additional \glossterm{vital damage} when you take a \glossterm{long rest} based on your starting Constitution (see \pcref{Short Rest}).
+                    \item You gain a bonus (or penalty) to your \glossterm{hit points} equal to your starting Constitution.
                     \item You gain a bonus (or penalty) to your Fortitude defense equal to your starting Constitution.
+                    \item Your Constitution modifies the number of rounds you can hold your breath (see \pcref{Drowning}).
                 \end{itemize}
 
             \parhead{Intelligence (Int)}\label{Intelligence}
@@ -388,15 +399,9 @@ It defines how attributes work and explains how to make physical attacks in comb
         Your power with mundane abilities is normally equal to the higher of your level and your Strength.
 
     \subsection{Damage}\label{Damage}
-        Some attacks deal damage when they hit.
-        Damage does not represent serious physical injury to your body.
-        Instead, it represents a depletion of some combination of endurance, luck, or even divine providence that prevents you from suffering more serious injury.
-        When you take damage, you reduce your \glossterm{hit points} by that amount (see \pcref{Hit Points}).
-        If you take damage in excess of your \glossterm{hit points}, the excess damage is dealt as \glossterm{vital damage}, which represents potentially life-threatening injuries (see \pcref{Vital Damage}).
-
-        Most attacks deal damage equal to the result rolled from a pool of dice.
-
+        Many attacks deal damage when they hit.
         \subsubsection{Die Increments}\label{Die Increments}
+            Most attacks deal damage equal to the result rolled from a pool of dice.
             Many abilities can increase or decrease your damage with abilities.
             These modifiers always increase or decrease your damage by one \glossterm{die increment}.
             Increasing by one die increment is written as \plus1d, and decreasing by one die increment is written as \minus1d.
@@ -434,19 +439,19 @@ It defines how attributes work and explains how to make physical attacks in comb
             \lcaption{Standard Damage}
             \begin{dtabularx}{\columnwidth}{l X}
                 \tb{Power} & \tb{Damage} \\
-                0--1         & 1d6  \\
-                2--3         & 1d8  \\
-                4--5         & 1d10 \\
-                6--7         & 2d6  \\
-                8--9         & 2d8  \\
-                10--11       & 2d10 \\
-                12--13       & 4d6  \\
-                14--15       & 4d8  \\
-                16--17       & 4d10 \\
-                18--19       & 5d10 \\
-                20--21       & 6d10 \\
-                22--23       & 7d10 \\
-                24--25\fn{1} & 8d10 \\
+                0--1   & 1d8  \\
+                2--3   & 1d10 \\
+                4--5   & 2d6  \\
+                6--7   & 2d8  \\
+                8--9   & 2d10 \\
+                10--11 & 4d6  \\
+                12--13 & 4d8  \\
+                14--15 & 4d10 \\
+                16--17 & 5d10 \\
+                18--19 & 6d10 \\
+                20--21 & 7d10 \\
+                22--23 & 8d10 \\
+                24--25\fn{1} & 9d10 \\
             \end{dtabularx}
             1. For values above 25, increase by 1d10 at every even value.
         \end{dtable}
@@ -485,8 +490,6 @@ It defines how attributes work and explains how to make physical attacks in comb
             \parhead{Class Bonuses} Each class provides bonuses to some combination of Fortitude, Reflex, and Mental defense.
             \parhead{Natural Armor} Creatures with unusually tough skin or thick hide, including most monsters, gain bonuses to their Armor defense.
             These bonuses stack with any armor such creatures might wear.
-            \parhead{Size Modifier} Large creatures have a penalty to Reflex defense.
-            For details, see \tref{Size in Combat}.
 
         \subsubsection{Resisting Attacks}
             If an attack fails against you, you almost always suffer no effects from the attack.
@@ -495,6 +498,60 @@ It defines how attributes work and explains how to make physical attacks in comb
 
             \parhead{Lowering Defenses} When you are subject to an attack that you are aware of, you can voluntarily lower your defenses against the attack.
             If you do, your defense is treated as 0 against the attack.
+
+    \subsection{Hit Points}\label{Hit Points}
+        Your \glossterm{hit points} measure how hard you are to kill.
+        When you take damage in excess of your \glossterm{damage resistance}, you lose a \glossterm{hit point} (see \pcref{Damage Resistance}).
+        You can't normally exceed your maximum hit points, even with magical healing.
+
+        You normally have a number of \glossterm{hit points} equal to 5 \add your starting Constitution.
+        Some special abilities can give you additional \glossterm{hit points}.
+
+        If you would lose a \glossterm{hit point} while you have no \glossterm{hit points} remaining, you gain a \glossterm{vital wound} instead.
+
+        \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
+        When lose a single hit point from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
+        Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow fatigued you, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
+
+        \subsubsection{Missing Hit Points}\label{Missing Hit Points}
+            Some objects and creatures have no \glossterm{hit points} or \glossterm{damage resistance}.
+            They ignore all damage less than their \glossterm{wound resistance}.
+
+    \subsection{Resistances}\label{Resistances}
+        When you are hit by an attack, you use your \glossterm{resistances} to mitigate the damage from the attack.
+        You have two types of resistances: \glossterm{damage resistance}, which protects you from losing \glossterm{hit points}, and \glossterm{wound resistance}, which protects you from gaining \glossterm{vital wounds}.
+
+        \subsection{Damage Resistance}\label{Damage Resistance}
+            Your \glossterm{damage resistance} measures your ability to shrug off insignificant amounts of damage.
+            When an attack would deal damage to you, if the damage is less than or equal to your \glossterm{damage resistance}, you take no damage from the attack.
+            This prevents you from losing a \glossterm{hit point} or suffering other negative consequences of taking damage.
+
+            Your \glossterm{damage resistance} is based on your level, as defined in \tref{Character Advancement}.
+            Wearing \glossterm{armor} can increase your damage resistance against \glossterm{physical damage}, and some special abilities can also increase it.
+
+            \parhead{Missing Damage Resistance} An object or creature without a listed \glossterm{damage resistance} loses a \glossterm{hit point} if it takes at least 1 damage from a single damage roll.
+            It effectively has a \glossterm{damage resistance} of 0.
+
+        \subsection{Wound Resistance}\label{Wound Resistance}
+            Your \glossterm{wound resistance} measures your ability to avoid taking \glossterm{vital damage} from dangerous attacks.
+            When you take damage from an attack, if the damage is greater than your \glossterm{wound resistance}, you gain a \glossterm{vital wound} (see \pcref{Vital Wounds}).
+
+            Your \glossterm{wound resistance} is based on your level, as defined in \tref{Character Advancement}.
+            Some special abilities can increase your \glossterm{wound resistance}.
+
+            \parhead{Missing Wound Resistance} An object or creature without a listed \glossterm{wound resistance} cannot gain \glossterm{vital wounds} from taking damage directly.
+            It can only gain \glossterm{vital wounds} from taking damage while it has no \glossterm{hit points} remaining.
+
+        \subsection{Damage Type Resistances}\label{Damage Type Resistances}
+            Each type of resistance is further divided into what type of damage it protects against.
+            Your \glossterm{damage resistance} and \glossterm{wound resistance} apply against damage of any type.
+            Those are collectively called your \glossterm{resistances}.
+
+            Some effects increase your resistances against either \glossterm{physical damage} or \glossterm{energy damage}.
+            For example, wearing armor gives you a bonus to your \glossterm{resistances} against \glossterm{physical damage}.
+
+            \parhead{Stacking Magic Bonuses} A \glossterm{magic bonus} to a specific type of resistance does not stack with a \glossterm{magic bonus} to a more general resistance if both apply.
+            For example, if you have a \glossterm{magic bonus} to resistances against energy damage and another \glossterm{magic bonus} to resistances against fire damage, you only use the higher of the two when you take fire damage.
 
     \subsection{Initiative}\label{Initiative}
         When multiple creatures take mutually impossible actions simultaneously, such as racing to be the first one to a door, they must roll initiative checks.
@@ -505,35 +562,6 @@ It defines how attributes work and explains how to make physical attacks in comb
         When making \glossterm{initiative} checks to determine the success of movement, having a faster movement speed is helpful (see \pcref{Movement and Positioning}).
         For every 5 feet of movement you would have available after completing your movement, you gain a \plus2 bonus to any initiative checks necessary to determine whether your movement succeeds.
         Regardless of whether your initiative check succeeds or fails, you cannot use that ``excess'' movement to move after making such an initiative check.
-
-    \subsection{Threat}\label{Threat}
-        Each creature has a value that represents how threatening it is.
-        This value is called a creature's \glossterm{threat}.
-        Many monsters choose the targets of their attacks based on the threat of their foes.
-        Your base threat is equal to the higher of your level and your Strength.
-        In addition, you gain bonuses to your threat based on your equipment and some other effects which can make you appear more or less intimidating.
-
-        \subsubsection{Threat From Equipment}
-            If you are visibly wearing \glossterm{body armor}, you gain a bonus to your threat equal to half the defense bonus provided by the armor.
-            For this purpose, ignore any abilities that increase the defense bonus you gain from the armor, and only use the base defense bonus from the armor itself.
-            If you are visibly wielding a weapon or otherwise obviously capable of inflicting lethal damage, you gain a \plus2 bonus to your threat.
-
-        \subsubsection{Threat From Size}
-            You gain a \plus2 bonus to your threat for each size category that you are larger than Medium.
-            Likewise, you take a \minus2 penalty to your threat for each size category that you are smaller than Medium.
-
-        \subsubsection{Subjective Threat Modifiers}
-            In addition to your base \glossterm{threat}, some actions and abilities modify the threat that particular creatures perceive you have.
-            For example, the \textit{Conceal Threat} ability from the Bluff skill allows you to lower your apparent threat to creatures that fail to see through the deception (see \pcref{Conceal Threat}).
-
-        \subsubsection{Consistent Targeting}
-            Unless their descriptions state otherwise, monsters prefer to keep attacking the same target rather than changing targets frequently.
-            A monster will only change targets based on \glossterm{threat} if the new target has a threat at least 5 points closer to its preference than its current target.
-
-        \subsubsection{Threat While Incapacitated}
-            While you are unconscious or otherwise obviously unable to take hostile actions, you take a \minus10 penalty to threat.
-            Many creatures stop attacking unconscious creatures, preferring to focus on targets that can still cause harm.
-            It is possible to trick creatures into thinking you are not a threat by playing dead or using similar tactics.
 
     \subsection{Insight Points}\label{Insight Points}
         You can spend \glossterm{insight points} to learn new special abilities.
@@ -556,6 +584,48 @@ It defines how attributes work and explains how to make physical attacks in comb
             \item Warlock: Eldritch augments, pact spells
         \end{itemize}
 
+\section{Taking Damage}\label{Taking Damage}
+
+    \subsection{Vital Wounds}\label{Vital Wounds}
+        A \glossterm{vital wound} represents a serious injury to your body.
+        Each \glossterm{vital wound} has a specific detrimental effect on you.
+
+        To determine the effect of a \glossterm{vital wound}, make a \glossterm{wound roll} and find the corresponding effect in \trefnp{Vital Wound Effects}.
+        The effect of the wound lasts until you remove that \glossterm{vital wound}.
+        The effects of vital wounds stack with each other, even if you roll the same effect twice for different \glossterm{vital wounds}.
+
+        \subsubsection{Wound Roll}\label{Wound Roll}
+        To make a \glossterm{wound roll}, roll 1d10 \sub the number of \glossterm{vital wounds} you have.
+        The result determines the effeft of the \glossterm{vital wound}, as listed in \tref{Vital Wound Effects}.
+
+        \parhead{Changing Wound Rolls}
+            Some effects can change the \glossterm{wound roll} for \glossterm{vital wounds} you have already suffered.
+            If your \glossterm{wound roll} changes retroactively, it changes the effect of that \glossterm{vital wound}.
+
+        \begin{dtable}
+            \lcaption{Vital Wound Effects}
+            \begin{dtabularx}{\textwidth}{l X}
+                \tb{Wound Roll} & \tb{Effect} \tableheaderrule
+                \minus1 or less & You are unconscious, and at the end of the next round you die \\
+                0 & You are unconscious \\
+                1 & You fall unconscious immediately, but can be awoken as if from sleep \\
+                2 & You move at half speed \\
+                3 & You take a \minus2 penalty to \glossterm{accuracy} \\
+                4 & You take a \minus2 penalty to all \glossterm{defenses} \\
+                5 & Your maximum \glossterm{action points} are reduced by 1 \\
+                6 & Your maximum \glossterm{hit points} are reduced by 1 \\
+                8 & You take a \minus2 penalty to Fortitude defense \\
+                8 & You take a \minus2 penalty to Mental defense \\
+                9 & You take a \minus1 penalty to future \glossterm{wound rolls} \\
+                10 or more & No effect \\
+            \end{dtabularx}
+        \end{dtable}
+
+    \subsection{Subdual Damage}\label{Subdual Damage}
+        Some attacks and environmental effects deal subdual damage.
+        Subdual damage works in the same way as normal damage, except that \glossterm{vital wounds} from subdual damage cannot kill.
+        Any \glossterm{wound roll} below 0 from subdual damage is treated as a 0, causing the target to fall unconscious until the \glossterm{vital wound} is removed.
+
 \section{Circumstances, Bonuses, and Penalties}
 
     Many effects can grant bonuses or penalties to actions you take.
@@ -566,24 +636,24 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \begin{dtable*}
             \lcaption{Size in Combat}
-            \begin{dtabularx}{\textwidth}{l l l l p{4em} p{4.5em} p{3em} p{5.5em} X}
-                \tb{Size} & \tb{Space}\fn{1} & \tb{Reach}\fn{1} & \tb{Base Speed} & \tb{Strength Modifier}\fn{2} & \tb{Reflex Modifier} & \tb{Overwhelm Value}\fn{3} & \tb{Overwhelm Resistance}\fn{4} & \tb{Example Creature} \tableheaderrule
-                Fine              & 1/2 ft.    & 0          & 10 ft. & \minus8 & \plus8  & 1/4 & \tdash & Fly                      \\
-                Diminutive        & 1 ft.      & 0          & 15 ft. & \minus6 & \plus6  & 1/2 & \tdash & Toad                     \\
-                Tiny              & 2-1/2 ft.  & 0          & 20 ft. & \minus4 & \plus4  & 1/2 & \tdash & Cat                      \\
-                Small             & 5 ft.      & 5 ft.      & 25 ft. & \minus2 & \plus2  & 1 & \tdash & Halfling                 \\
+            \begin{dtabularx}{\textwidth}{l l l l p{4.5em} p{4.5em} p{5em} p{5em} X}
+                \tb{Size} & \tb{Space}\fn{1} & \tb{Reach}\fn{1} & \tb{Base Speed} & \tb{Strength Modifier}\fn{2} & \tb{Dexterity Modifier}\fn{2} & \tb{Overwhelm Value}\fn{3} & \tb{Overwhelm Resistance}\fn{4} & \tb{Example Creature} \tableheaderrule
+                Fine              & 1/2 ft.    & 0          & 10 ft. & \minus4 & \plus4  & 1/4 & \tdash & Fly                      \\
+                Diminutive        & 1 ft.      & 0          & 15 ft. & \minus3 & \plus3  & 1/2 & \tdash & Toad                     \\
+                Tiny              & 2-1/2 ft.  & 0          & 20 ft. & \minus2 & \plus2  & 1/2 & \tdash & Cat                      \\
+                Small             & 5 ft.      & 5 ft.      & 25 ft. & \minus1 & \plus1  & 1 & \tdash & Halfling                 \\
                 Medium            & 5 ft.      & 5 ft.      & 30 ft. & \tdash & \tdash  & 1 & \tdash & Human                    \\
-                Large (tall)      & 10 ft.     & 10 ft.     & 40 ft. & \plus2 & \minus2 & 2 & 1 & Ogre                     \\
-                Large (long)      & 10 ft.     & 5 ft.      & 40 ft. & \plus2 & \minus2 & 2 & 1 & Horse                    \\
-                Huge (tall)       & 15 ft.     & 15 ft.     & 50 ft. & \plus4 & \minus4 & 3 & 2 & Cloud giant              \\
-                Huge (long)       & 15 ft.     & 10 ft.     & 50 ft. & \plus4 & \minus4 & 3 & 2 & Bulette                  \\
-                Gargantuan (tall) & 20 ft.     & 20 ft.     & 60 ft. & \plus6 & \minus6 & 4 & 3 & 50-ft.\ animated statue  \\
-                Gargantuan (long) & 20 ft.     & 15 ft.     & 60 ft. & \plus6 & \minus6 & 4 & 3 & Kraken                   \\
-                Colossal (tall)   & 25\add ft. & 25\add ft. & 70 ft. & \plus8 & \minus8 & 5 & 4 & Colossal animated object \\
-                Colossal (long)   & 25\add ft. & 25\add ft. & 70 ft. & \plus8 & \minus8 & 5 & 4 & Great wyrm red dragon    \\
+                Large (tall)      & 10 ft.     & 10 ft.     & 40 ft. & \plus1 & \minus1 & 2 & 1 & Ogre                     \\
+                Large (long)      & 10 ft.     & 5 ft.      & 40 ft. & \plus1 & \minus1 & 2 & 1 & Horse                    \\
+                Huge (tall)       & 15 ft.     & 15 ft.     & 50 ft. & \plus2 & \minus2 & 3 & 2 & Cloud giant              \\
+                Huge (long)       & 15 ft.     & 10 ft.     & 50 ft. & \plus2 & \minus2 & 3 & 2 & Bulette                  \\
+                Gargantuan (tall) & 20 ft.     & 20 ft.     & 60 ft. & \plus3 & \minus3 & 4 & 3 & 50-ft.\ animated statue  \\
+                Gargantuan (long) & 20 ft.     & 15 ft.     & 60 ft. & \plus3 & \minus3 & 4 & 3 & Kraken                   \\
+                Colossal (tall)   & 25\add ft. & 25\add ft. & 70 ft. & \plus4 & \minus4 & 5 & 4 & Colossal animated object \\
+                Colossal (long)   & 25\add ft. & 25\add ft. & 70 ft. & \plus4 & \minus4 & 5 & 4 & Great wyrm red dragon    \\
             \end{dtabularx}
             1 Creatures can vary in space and reach.  These are simply typical values.  \\
-            2. Applies to total Strength, not starting Strength. \\
+            2. Applies to starting attribute value. \\
             3. See \pcref{Overwhelm Value}. \\
             4. See \pcref{Overwhelm Resistance}. \\
         \end{dtable*}
@@ -608,7 +678,8 @@ It defines how attributes work and explains how to make physical attacks in comb
             For details about other speeds, see \pcref{Movement Modes}.
 
         \subsubsection{Other Effects}
-            A creature's size affects a number of additional skills and abilities.
+            % TODO: record all of these and add them here
+            A creature's size affects some additional skills and abilities.
             For example, larger creatures have a penalty to the Stealth skill (see \pcref{Size and Stealth}).
             The effects of unusual size are described in those skills and abilities.
             Unusually large or small creatures also have other special rules apply to them, as described below.
@@ -632,7 +703,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             \parhead{Movement} Creatures three size categories larger than you are not considered obstacles and do not hinder your movement.
 
             % Should this be two size categories larger, or be more dependent on creature anatomy?
-            \parhead{Immunities} Creatures at least three size categories larger than you are difficult to fight. You cannot get a \glossterm{critical hit} with \glossterm{strikes} or contribute to overwhelm penalties against such creatures. If you can reach a vulnerable point on the creature, such as by flying or by using ranged weapons, you can get critical hits and contribute to overwhelm penalties normally.
+            \parhead{Immunities} Creatures at least three size categories larger than you are difficult to fight. You cannot get a \glossterm{critical hit} with melee \glossterm{strikes} or contribute to overwhelm penalties against such creatures. If you can reach a vulnerable point on the creature, such as by flying or by using ranged weapons, you can get critical hits and contribute to overwhelm penalties normally.
 
         \subsubsection{Arbitrary Modifiers}
 
@@ -779,9 +850,9 @@ It defines how attributes work and explains how to make physical attacks in comb
             \item Magic bonuses do not stack with each other.
             \item If a creature gains the same condition multiple times, the effects do not stack, but each instance of the condition is tracked separately.
                 The creature must remove all instances of the condition before the effects are removed.
-            \item \glossterm{Sizing} effects do not stack.
+            \item Multiple effects that change a creature's \glossterm{size category} do not stack.
                 If multiple effects both increase and decrease size, size increases offset size decreases on a one-for-one basis to determine the creature's final size.
-            \item If a character has two separate abilities which let them add the same attribute to a given roll or statistic, the attribute is still only added once.
+            \item If you have two separate abilities which let you add the same attribute to a given roll or statistic, the attribute is still only added once.
         \end{itemize}
 
         \subsubsection{Maximum Bonuses}\label{Ability Limits}
@@ -810,18 +881,13 @@ It defines how attributes work and explains how to make physical attacks in comb
         However, the character cannot spend additional skill points on new skills until they level up.
         If a character's total skill points are decreased below their currently spent skill points, they immediately lose training from skills until their spent skill points are equal to their total skill points.
 
-        \parhead{Hit Points} Effects that change a character's maximum hit points take effect immediately.
-        However, increasing a character's maximum hit points does not immediately grant the character additional hit points.
-        They must be recovered in the normal fashion, such as by resting.
-        If a character's maximum hit points are decreased below their current hit points, they immediately lose hit points until their current hit points are equal to their maximum hit points.
-
 \section{Movement and Positioning}\label{Movement and Positioning}
 
     This section describes in more detail how creatures move and position themselves on a battlefield.
 
     \subsection{Measuring Movement}
 
-        For simplicity, all movement is measured in five-foot increments.
+        For simplicity, all movement in combat is measured in five-foot increments.
         While it is possible to be more precise than that, it's generally not worth the complexity.
 
         \parhead{Squares}\label{Squares} Area is commonly measured in 5-ft.\ by 5-ft.\ spaces called \glossterm{squares}.
@@ -883,8 +949,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \begin{freeability}{\labeltext{Sprint}}
             You move up to double your normal movement speed.
-            % TODO: prevent infinite sprinting at 0 HP
-            In addition, you lose hit points equal to your level.
+            In addition, you lose a \glossterm{hit point}.
         \end{freeability}
 
     \subsection{Movement Impediments}
@@ -1113,7 +1178,6 @@ It defines how attributes work and explains how to make physical attacks in comb
             \parhead{Zone} A zone ability has effects within an area for the duration of the ability.
             Unless otherwise noted, it does not move after being created.
 
-
         When casting an area ability, you select the point where the ability originates.
         The point of origin of a ability is always a grid intersection.
         When determining whether a given creature is within the area of a ability, count out the distance from the point of origin in squares just as you do when moving a character or when determining the range for a ranged attack.
@@ -1216,20 +1280,12 @@ It defines how attributes work and explains how to make physical attacks in comb
         Many of these tags have no game effect by themselves, but they govern how the ability interacts with spells, other abilities, unusual creatures, and so on.
         They are described below.
 
-        \parhead{Acid} Acid abilities use corrosive acid.
-        They do not function underwater.
-
-        \parhead{Air} Air abilities control the surrounding air.
-        They do not function in environments without air.
-
         \parhead{AP} AP abilities require spending \glossterm{action points} to use.
         Some AP abilities, such as specific \glossterm{rituals}, require spending multiple action points instead of only one.
         Unless otherwise specified in the ability's description, an AP ability requires a single \glossterm{action point}.
 
         \parhead{Auditory} Auditory abilities use sound to cause their effects.
         Creatures and objects that cannot hear the effect are immune to it.
-
-        \parhead{Cold} Cold abilities use cold \glossterm{energy}. It is possible to freeze liquids and have similar effects with cold abilities.
 
         \parhead{Compulsion} Compulsion abilities forcibly alter a creature's actions, but do not necessarily affect its opinions or personality.
         They have no effect on objects or creatures without minds.
@@ -1247,45 +1303,16 @@ It defines how attributes work and explains how to make physical attacks in comb
         They can penetrate up to 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.
         For its ability to penetrate other materials, use the most similar substance from the list above.
 
-        \parhead{Earth} Earth abilities manipulate the ground or other forms of dirt.
-        They do not function if no earth is accessible.
-
-        \parhead{Electricity} Electricity abilities use electrical \glossterm{energy}.
-
-        \parhead{Sensation} Sensation abilities create or manipulate light, sound, or other sensations.
-        You can only create sensations you understand.
-        For example, you cannot create an illusory figment which speaks coherently in a language you do not understand.
-        \par If a Sensation ability appears to create a physical object or creature, its defenses are equal to 0.
-
-        \parhead{Fire} Fire abilities use fire \glossterm{energy}. They do not function underwater.
-        \par Fire abilities provide light equivalent to a torch for their duration.
-        Abilities without a duration create a brief burst of torchlight.
-
         \parhead{Flesh} Flesh abilities manipulate the physical flesh of creatures.
         They have no effect on creatures without flesh, such as ghosts or oozes.
-
-        \parhead{Life} Life abilities attack, restore, or manipulate the life force of creatures.
-        They have no effect on objects and creatures that are not alive.
-        \par Undead creatures are affected in a special way by Life abilities.
-        In addition to any differences given in the effect's description, life damage instead heals undead creatures, and healing instead deals life damage.
-
-        \parhead{Light} Light abilities create visible light.
-        Their area is blocked by barriers that prevent sight, even if the barriers would not otherwise block effect areas.
-        Similarly, their area of effect is not blocked by barriers which do not prevent sight, even if the barriers would normally block effect areas.
 
         \parhead{Manifestation} Manifestation abilities create temporary constructs formed from raw magical energy.
         Objects and creatures created with manifestation abilities seem real on the surface, but they have no internal structure.
         When an object or creature created by a Manifestation ability is destroyed or killed, or when the duration of the ability that created it ends, it disappears without a trace.
 
-        \parhead{Mystic} Mystic abilities alter or destroy magic itself.
-
         \parhead{Physical} Physical abilities manipulate physical objects rather than having a direct magical effect on their targets.
         % TODO: find example? Does this still exist
         Some abilities are not themselves Physical, but have Physical effects.
-
-        \parhead{Planar} Planar abilities transport matter or information between planes.
-
-        \parhead{Poison} Poison abilities use substances to weaken the foe's body.
 
         \parhead{Scrying} Scrying abilities create one or more invisible magical sensors that send you information.
         Unless otherwise noted, the sensor created has the same powers of sensory acuity that you possess.
@@ -1296,15 +1323,10 @@ It defines how attributes work and explains how to make physical attacks in comb
         You cannot create a sensor in a location with lead sheeting between you and the location, and you sense that the effect is blocked in this way.
         \\
 
-        \parhead{Shaping} Shaping abilities change the shape or structure of their targets.
-
-        \parhead{Shielding} Shielding abilities improve the defenses of their targets.
-
-        \parhead{Sizing} Sizing abilities alter the size of their targets.
-        Unless otherwise stated, multiple effects which increase or decrease size do not stack.
-        Opposing size modifications cancel each other out on a one for one basis, and any remaining effects occur normally.
-
-        \parhead{Sonic} Sonic abilities use sonic \glossterm{energy}.
+        \parhead{Sensation} Sensation abilities create or manipulate light, sound, or other sensations.
+        You can only create sensations you understand.
+        For example, you cannot create an illusory figment which speaks coherently in a language you do not understand.
+        \par If a Sensation ability appears to create a physical object or creature, its defenses are equal to 0.
 
         \parhead{Speech} Speech abilities use words to achieve their ends.
         You must specify a language when using a Speech effect, and the language must be one you know (or have memorized the correct words to say). They have no effect on objects or creatures that do not understand the chosen language.
@@ -1317,48 +1339,39 @@ It defines how attributes work and explains how to make physical attacks in comb
         \parhead{Swift} Swift abilities take effect before other abilities used during the same phase.
         For details, see \pcref{Swift Abilities}.
 
-        \parhead{Teleportation} Teleportation abilities move creature or objects through the Astral Plane to a distant destination.
-        A teleported creature can bring along equipment and held objects as long as their weight does not exceed the creature's maximum carrying capacity (see \pcref{Carrying Capacity}). Any excess items are left behind, in order of their distance from the creature's body.
-
-        \parhead{Temporal} Temporal abilities alter the flow of time.
-
-        \parhead{Trap} Trap abilities do not have their full effect immediately.
-        All Trap abilities specify a condition or circumstance, such as opening a door, which triggers the full effect of the ability.
-        \par Unless otherwise noted, active Trap effects can be detected with the Awareness skill and disabled with the Devices skill before their effect triggers (see \pcref{Awareness}, and \pcref{Devices}).
-        The DR to detect and disable the effect is equal to 20 \add the \glossterm{power} of the effect.
-        \par No more than one Trap ability can be placed on the same object or in the same area.
-        Only the first trap placed has any effect.
-        It must be dismissed before any new traps can be placed.
-
         \parhead{Visual} Visual abilities use visible objects or forces to cause their effects.
         Creatures and objects that cannot see the effect are immune to it.
 
-        \parhead{Water} Water abilities use water to cause their effects.
-
     % TODO: different section?
     \subsection{Damage Types}\label{Damage Types}
-        Abilities can deal many kinds of damage.
-        The damage types are listed below, along with any special properties that type of damage has.
+        All damage falls into one of three categories: \glossterm{energy damage}, \glossterm{physical damage}, and \glossterm{untyped damage}.
+        Physical damage is the most common type of damage.
+        Unless otherwise noted, all attacks with weapons deal physical damage.
+        Energy damage is a less common type of damage that is usually caused by \glossterm{magical} effects.
+        Any damage without a listed type is untyped damage.
 
-        \begin{dtable}
-            \lcaption{Damage Types}
-            \begin{dtabularx}{\columnwidth}{l X}
-                \tb{Name} & \tb{Special Effects} \tableheaderrule
-                Acid & Effective against many objects \\
-                Bludgeoning & A type of physical damage \\
-                Cold & At type of energy damage \\
-                Divine & \\
-                Electricity & A type of energy damage \\
-                Fire & A type of energy damage \\
-                Life & Heals undead creatures instead of damaging them \\
-                Physical & \\
-                Poison & \\
-                Piercing & A type of physical damage \\
-                Slashing & A type of physical damage \\
-                Sonic & Effective against many objects, a type of energy damage \\
-                Thaumatic & \\
-            \end{dtabularx}
-        \end{dtable}
+        \subsubsection{Damage Subtypes}\label{Damage Subtypes}
+            Physical damage has three subtypes: bludgeoning damage, piercing damage, and slashing damage.
+            Energy damage has four subtypes: acid damage, cold damage, electricity damage, and fire damage.
+            Damage of a particular subtype is also considered damage of its primary type.
+            For example, if you have a bonus to your \glossterm{resistances} against \glossterm{physical damage}, that bonus applies against bludgeoning damage because bludgeoning damage is a subtype of \glossterm{physical damage}.
+
+            Some damage types have special properties, as described below.
+            \parhead{Cold} Abilities that deal cold damage can freeze liquids and have similar effects appropriate to a sudden drop in temperature.
+            \parhead{Electricity} Abilities that deal electricity damage can ignite nonmagical fires if they damage combustible objects.
+            \parhead{Energy} Abilities that deal energy damage deal half damage underwater.
+            \parhead{Fire} Abilities that deal fire damage do not function underwater.
+            In addition, they provide light equivalent to a torch for their duration.
+            Abilities without a duration create a brief burst of torchlight.
+
+        \subsubsection{Multiple Damage Types}\label{Multiple Damage Types}
+            Some attacks deal damage that has multiple damage types.
+            When you take damage with multiple damage types, you use your lowest applicable \glossterm{resistance} to defend against it.
+            Other abilities similarly apply only if they apply to all damage types dealt by the attack.
+
+            For example, a flaming longsword deals slashing and fire damage.
+            If you were hit with a strike with that longsword, you would use the lower of your \glossterm{damage resistance} against \glossterm{physical damage} and your \glossterm{damage resistance} against \glossterm{energy damage} to resist the damage.
+            An ability that gave you immunity to fire damage would not prevent you from taking damage from the attack unless you were also immune to slashing damage.
 
     \subsection{Magical and Mundane Abilities}\label{Magical and Mundane Abilities}
 
@@ -1437,7 +1450,8 @@ It defines how attributes work and explains how to make physical attacks in comb
                 Dirty Trick              & Any          & Impose penalty on a foe                \\
                 Disarm                   & Ref          & Attack item, knocking it free          \\
                 Grapple                  & Fort and Ref & Wrestle with a foe                     \\
-                Overrun\fn{1}            & Fort         & Move through foe's space               \\
+                Overrun                  & Fort         & Move through foe's space               \\
+                Recover\fn{1}            & \tdash       & Regain all hit points                  \\
                 Shove                    & Fort         & Move a foe                             \\
                 Struggle                 & \tdash       & Move 5 feet regardless of penalties    \\
                 Total Defense            & \tdash       & Gain \plus2 to defenses                \\
@@ -1448,12 +1462,12 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \parhead{Charge} You can use the \textit{charge} ability as a standard action.
 
-        \begin{apability}{\labeltext{Charge}}
-            When you use this ability, you take \glossterm{subdual damage} equal to your level.
+        \begin{freeability}{\labeltext{Charge}}
+            \glossterm{Swift}: You take a \minus2 penalty to defenses until the end of the round.
 
             Move up to your speed in a single straight line.
             At the end of your movement, you can make a melee \glossterm{strike} with a \minus2 penalty to \glossterm{accuracy} from your new location.
-        \end{apability}
+        \end{freeability}
 
         \parhead{Cleanse} You can use the \textit{cleanse} ability as a \glossterm{minor action}.
         As long as you are conscious, no effect can prevent you from using this ability, even effects that prohibit using any other abilities.
@@ -1523,6 +1537,11 @@ It defines how attributes work and explains how to make physical attacks in comb
             On a miss, you end your movement immediately.
         \end{freeability}
 
+        \parhead{Recover} You can use the \textit{recover} ability as a standard action.
+        \begin{apability}{\labeltext{Recover}}[\glossterm{Swift}]
+            You regain all of your \glossterm{hit points}.
+        \end{apability}
+
         \parhead{Shove} As a standard action, you can use the \textit{shove} ability to physically move a creature.
 
         \begin{freeability}{Shove}\label{Shove}
@@ -1547,6 +1566,7 @@ It defines how attributes work and explains how to make physical attacks in comb
 
         \begin{freeability}{\labeltext{Total Defense}}[\glossterm{Swift}]
             You gain a \plus2 bonus to your \glossterm{defenses} until the end of the round.
+            Because this ability has the \glossterm{Swift} tag, this improves your defenses against attacks made against you during the current phase.
         \end{freeability}
 
         \parhead{Trip} As a standard action, you can use the \textit{trip} ability to trip a creature.
@@ -1557,78 +1577,6 @@ It defines how attributes work and explains how to make physical attacks in comb
 
             On a hit, the target becomes \prone.
         \end{freeability}
-
-\section{Injury, Death, and Healing}\label{Injury, Death, and Healing}
-
-    \subsection{Hit Points}\label{Hit Points}
-        Your hit points measure how hard you are to kill.
-        When you take damage, you subtract that damage from your hit points.
-        No matter how many hit points you lose, you aren't significantly hindered until your hit points drop to 0.
-        When you run out of hit points, your actions are limited and you might die.
-        You can't normally exceed your maximum hit points, even with magical healing.
-
-        Your hit points are calculated as follows:
-
-        \begin{figure}[h]
-            \centering (Level \add 1) \x (5 \add starting Constitution)
-        \end{figure}
-
-        \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
-        When you take 10 damage from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
-        Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow fatigued you, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
-
-    \subsection{Vital Damage}\label{Vital Damage}
-        At the end of each phase, if you have taken damage in excess of your remaining hit points, the excess damage is converted into \glossterm{vital damage}.
-        Vital damage represents serious physical injury to your body.
-        For every 4 points of \glossterm{vital damage} you have, you take a \minus1 penalty to \glossterm{accuracy}, \glossterm{checks}, and \glossterm{defenses}.
-
-        \parhead{Healing Vital Damage} Vital damage is much more difficult to heal than lost hit points.
-        Vital damage can only be healed by taking a \glossterm{long rest} or with special abilities (see \pcref{Long Rest}).
-        Abilities that heal hit points cannot heal vital damage unless they explicitly say they can.
-
-    \subsection{Stages of Injury}
-
-        \parhead{Healthy} When you are above half hit points, you suffer no significant effects from losing hit points.
-        If you take damage, you can become bloodied (see Bloodied, below).
-
-        \parhead{Bloodied} At the end of each phase, if you are at half your hit points or below, you become \glossterm{bloodied}.
-        A bloodied creature takes a \minus4 penalty to Fortitude and Mental defense.
-        Becoming bloodied can also make you \glossterm{staggered}, as described below.
-        If you end a phase with more than half your hit points, you stop being bloodied.
-        If you end a phase with \glossterm{vital damage} and no hit points remaining, you begin \glossterm{dying}, as described below.
-
-        \parhead{Staggered}\label{Staggered}
-        The first time you become \glossterm{bloodied} in an encounter, you become \glossterm{staggered} until the end of the same phase in the next round.
-        For example, if you become bloodied at the end of the \glossterm{action phase}, you would be \glossterm{staggered} until the end of the action phase in the next round.
-        A staggered creature takes a \minus4 penalty to \glossterm{accuracy} and \glossterm{checks}.
-
-        \parhead{Dying}\label{Dying} At the end of each phase, if you have \glossterm{vital damage} and have no hit points remaining, you begin \glossterm{dying}.
-        Immediately after you begin dying, and at the end of each \glossterm{action phase} in subsequent rounds, you make a \glossterm{stabilization check}.
-        To make a stabilization check, roll 1d10 and add your Fortitude defense.
-        The \glossterm{difficulty rating} of this check is 10.
-        Success means that you suffer no immediate adverse effects.
-        Failure means you fall unconscious.
-
-        If you succeed at this check three times, you stabilize, and are no longer considered to be \glossterm{dying}.
-        Taking additional damage after stabilizing means you begin \glossterm{dying} again, and you ignore any previous successes or failures on \glossterm{stabilization checks}.
-        If you fail at this check three times, you die.
-
-        A creature can make a Heal check to tend to you while you are dying.
-        The Heal check result can be used in place of your stabilization check result.
-        However, any \glossterm{vital damage penalties} you suffer apply to the Heal check in the same way that they apply to your Fortitude defense.
-
-    \subsection{Subdual Damage}\label{Subdual Damage}
-        Some attacks and environmental effects deal subdual damage.
-        Subdual damage works in the same way as normal damage, except that it cannot turn into \glossterm{vital damage}.
-        % This makes subdual damage actually better at knocking creatures unconscious than non-subdual damage, but that doesn't seem to be a narrative problem?
-        At the end of each phase, if a creature has subdual damage in excess of its hit points, it immediately falls unconscious.
-
-    \subsection{Losing Hit Points}\label{Losing Hit Points}
-        Some attacks and abilities cause you to lose hit points directly instead of dealing damage to you.
-        Effects that reduce damage you take or react to you taking damage have no effect when you lose hit points directly.
-
-        Because effects that cause you to lose hit points do not deal damage, they never cause you to take \glossterm{vital damage}.
-        If your hit points would be reduced below 0, they are reduced to 0 instead.
 
 % TODO: This is a bad name; organize these better
 \section{Special Rules}
@@ -1673,8 +1621,7 @@ It defines how attributes work and explains how to make physical attacks in comb
         In addition, you reduce your encumbrance by amount equal to your starting Strength.
 
         Sleeping in armor is difficult.
-        % ``have any encumbrance'' is awkward - worth introducing ``encumbered''?
-        If you sleep while you have any encumbrance, you become \glossterm{fatigued} when you wake up.
+        If you sleep while you have any encumbrance, only half the time you spend sleeping counts as sleep for the purpose of determining your fatigue (see \pcref{Sleep and Fatigue}).
 
     \subsection{Grappling}\label{Grappling}
         A grappled creature is physically struggling with at least one other creature.
@@ -1787,10 +1734,10 @@ It defines how attributes work and explains how to make physical attacks in comb
         Most mounts flee combat without a rider.
 
     \subsection{Drowning}\label{Drowning}
-        You can hold your breath for a number of rounds equal to 5 \add your Constitution.
-        After that time, you must roll 1d10.
+        You can hold your breath for a number of consecutive rounds equal to 5 \add your Constitution.
+        After that time, you must roll 1d10 at the end of each \glossterm{action phase} that you continue holding your breath.
         This attack gains a \plus5 bonus for each round you hold your breath beyond your limit.
-        If the result exceeds your Fortitude defense, you take \glossterm{vital damage} equal to the difference.
+        If the result exceeds your Fortitude defense, you take a \glossterm{vital wound}.
 
     \subsection{Damage Reduction}\label{Damage Reduction}
         Some abilities can give you \glossterm{damage reduction}.
@@ -1810,6 +1757,41 @@ It defines how attributes work and explains how to make physical attacks in comb
         You take a \minus4 penalty to \glossterm{accuracy} with \glossterm{physical attacks}, Strength and Dexterity-based \glossterm{checks}, and Armor and Reflex defenses.
         In addition, all physical ranged attacks are considered to have a \glossterm{range increment} of 5 feet, regardless of the weapon's normal range increment or any other modifiers.
 
+    \subsection{Sleep and Fatigue}\label{Sleep and Fatigue}
+        A typical creature needs a minimum of 6 hours of sleep for every 18 hours spent awake, and a minimum of 50 hours of sleep every week.
+        If you stay awake beyond those limits, you gain a \glossterm{vital wound} from \glossterm{subdual damage}.
+        If you continue to stay awake without sleeping, you gain an additional \glossterm{vital wound} every 24 hours.
+        These \glossterm{vital wounds} cannot be removed by any means except sleeping until you are back within your limits.
+
+    \subsection{Teleportation}\label{Teleportation}
+        Some abilities can \glossterm{teleport} creatures or objects.
+        When you are teleported, you move through the Astral Plane and arrive at a new location.
+        You can be teleported between two different locations on the same \glossterm{plane}, or between two different locations on different planes.
+        If for some reason you cannot access the Astral Plane, you cannot be teleported.
+
+        \parhead{Carrying Objects}
+        When a creature is teleported, it can bring along equipment and held objects as long as two conditions are met.
+        First, the combined weight of the objects cannot exceed the creature's maximum carrying capacity (see \pcref{Carrying Capacity}).
+        If a creature is teleported while carrying more than its maximum carrying capacity, all excess objects are left behind, starting with the heaviest object and proceeding in order of weight.
+
+        Second, no object can extend more than two feet away from the creature's body.
+        Any objects that extend beyond that distance are left behind.
+        For example, a creature wearing handcuffs will arrive at its teleportation destination still wearing the handcuffs.
+        However, a creature that is tied to a post by a long rope will arrive at its teleportation destination without the rope.
+
+    \subsection{Traps}\label{Traps}
+        Some abilities create \glossterm{traps}.
+        All abilities that create traps specify a condition or circumstance, such as opening a door, which triggers the trap.
+        When a trap is triggered, an additional effect to occurs, as defined in the ability.
+
+        No more than one \glossterm{trap} can be placed on the same object or in the same area.
+        Only the first trap placed has any effect.
+        It must be removed before any new traps can be placed.
+
+        \subsubsection{Detecting Traps}\label{Detecting Traps}
+        Unless otherwise noted, active \glossterm{traps} can be detected with the Awareness skill and disabled with the Devices skill before their effect triggers (see \pcref{Awareness}, and \pcref{Devices}).
+        Unless otherwise noted, The DR to detect and disable a trap is equal to 20 \add the \glossterm{power} of the ability that created the trap.
+
 \section{Daily Resources}
 
     \subsection{Resting}\label{Resting}
@@ -1817,11 +1799,10 @@ It defines how attributes work and explains how to make physical attacks in comb
         There are two main types of rests: a \glossterm{short rest} and a \glossterm{long rest}.
 
         \subsubsection{Short Rest}\label{Short Rest}
-            Resting for five minutes is considered a \glossterm{short rest}.
+            Resting for ten minutes is considered a \glossterm{short rest}.
             When you take a short rest, you gain the following benefits.
             \begin{itemize}
-                \item You heal hit points equal to half your maximum hit points.
-                    The Heal skill can increase this healing (see \pcref{Accelerate Recovery}).
+                \item You regain all of your \glossterm{hit points}.
                 \item You regain any \glossterm{action points} you released from \glossterm{attuned} abilities (see \pcref{Attunement}).
                 \item You remove all \glossterm{conditions} affecting you (unless they cannot be removed normally).
                 \item Some other abilities have specific effects that last until you take a short rest.
@@ -1832,7 +1813,7 @@ It defines how attributes work and explains how to make physical attacks in comb
             Resting for eight hours is considered a \glossterm{long rest}.
             When you take a long rest, you gain the following benefits.
             \begin{itemize}
-                \item You heal \glossterm{vital damage} equal to your starting Constitution \add half your level, to a minimum of 1 vital damage.
+                \item You remove one \glossterm{vital wound}.
                     The Heal skill can increase this healing (see \pcref{Accelerate Recovery}).
                 \item You regain all spent \glossterm{action points} other than \glossterm{action points} which are currently \glossterm{attuned} to abilities (see \pcref{Attunement}).
                 \item Some other abilities have specific effects that last until you take a long rest.
@@ -1876,44 +1857,46 @@ It defines how attributes work and explains how to make physical attacks in comb
         \item At 5th level, you gain access to \glossterm{legend points}.
     \end{itemize}
 
-    \begin{dtable}
+    \begin{dtable*}
         \lcaption{Character Advancement}
-        \begin{dtabularx}{\columnwidth}{*{2}{>{\lcol}l} *{4}{>{\lcol}X}}
-            \tb{Level} & \tb{XP}  & \tb{Max Rank}\fn{1} & \tb{Legacy Item}\fn{2} & \tb{AP}\fn{3} \tableheaderrule
-            1st          & 0      & 1      & \tdash & 4
-            \\ 2nd       & 20     & 2      & \tdash & \tdash
-            \\ 3rd       & 50     & \tdash & \tdash & 5
-            \\ 4th       & 90     & \tdash & 1      & \tdash
-            \\ 5th\fn{4} & 150    & 3      & \tdash & \tdash
-            \\ 6th       & 230    & \tdash & \tdash & \tdash
-            \\ 7th       & 350    & \tdash & \tdash & \tdash
-            \\ 8th       & 510    & 4      & \tdash & \tdash
-            \\ 9th       & 750    & \tdash & \tdash & 6
-            \\ 10th      & 1,050  & \tdash & 2      & \tdash
-            \\ 11th      & 1,550  & 5      & \tdash & \tdash
-            \\ 12th      & 2,200  & \tdash & \tdash & \tdash
-            \\ 13th      & 3,150  & \tdash & \tdash & \tdash
-            \\ 14th      & 4,450  & 6      & \tdash & \tdash
-            \\ 15th      & 6,350  & \tdash & \tdash & 7
-            \\ 16th      & 8,900  & \tdash & 3      & \tdash
-            \\ 17th      & 13,000 & 7      & \tdash & \tdash
-            \\ 18th      & 18,000 & \tdash & \tdash & \tdash
-            \\ 19th      & 25,500 & \tdash & \tdash & \tdash
-            \\ 20th      & 36,000 & 8      & \tdash & \tdash
+        \begin{dtabularx}{\textwidth}{*{4}{>{\lcol}l} *{4}{>{\lcol}X}}
+            \tb{Level} & \tb{XP}  & \tb{DR}\fn{1} & \tb{WT}\fn{2} & \tb{Max Rank}\fn{3} & \tb{Legacy Item}\fn{4} & \tb{AP}\fn{5} \tableheaderrule
+            % Damage doubles every 7 levels; anchor points are 0th (12), 6th, 12th, 13th
+            1st     & 0  & 13  & 0      & 1      & \tdash & 4
+            \\ 2nd  & 0  & 14  & 20     & 2      & \tdash & \tdash
+            \\ 3rd  & 1  & 16  & 50     & \tdash & \tdash & 5
+            \\ 4th  & 2  & 18  & 90     & \tdash & 1      & \tdash
+            \\ 5th  & 3  & 21  & 150    & 3      & \tdash & \tdash
+            \\ 6th  & 4  & 24  & 230    & \tdash & \tdash & \tdash
+            \\ 7th  & 5  & 27  & 350    & \tdash & \tdash & \tdash
+            \\ 8th  & 6  & 30  & 510    & 4      & \tdash & \tdash
+            \\ 9th  & 8  & 34  & 750    & \tdash & \tdash & 6
+            \\ 10th & 10 & 38  & 1,050  & \tdash & 2      & \tdash
+            \\ 11th & 12 & 43  & 1,550  & 5      & \tdash & \tdash
+            \\ 12th & 14 & 48  & 2,200  & \tdash & \tdash & \tdash
+            \\ 13th & 16 & 54  & 3,150  & \tdash & \tdash & \tdash
+            \\ 14th & 18 & 61  & 4,450  & 6      & \tdash & \tdash
+            \\ 15th & 21 & 69  & 6,350  & \tdash & \tdash & 7
+            \\ 16th & 24 & 77  & 8,900  & \tdash & 3      & \tdash
+            \\ 17th & 27 & 86  & 13,000 & 7      & \tdash & \tdash
+            \\ 18th & 30 & 96  & 18,000 & \tdash & \tdash & \tdash
+            \\ 19th & 33 & 108 & 25,500 & \tdash & \tdash & \tdash
+            \\ 20th & 36 & 122 & 36,000 & 8      & \tdash & \tdash
         \end{dtabularx}
-        1. This is your maximum rank in your class archetypes (see \pcref{Archetype Ranks}). \\
-        2. This is the number of abilities you gain with your \glossterm{legacy item} (see \pcref{Legacy Items}). \\
-        3. This is the number of \glossterm{action points} you have (see \pcref{Action points}). \\
-        4. You gain access to \glossterm{legend points} at this level.
-    \end{dtable}
+        1. This is your \glossterm{damage resistance} (see \pcref{Damage Resistance}). \\
+        2. This is your \glossterm{wound resistance} (see \pcref{Wound Resistance}). \\
+        3. This is your maximum rank in your class archetypes (see \pcref{Archetype Ranks}). \\
+        4. This is the number of abilities you gain with your \glossterm{legacy item} (see \pcref{Legacy Items}). \\
+        5. This is the number of \glossterm{action points} you have (see \pcref{Action Points}). \\
+    \end{dtable*}
 
     \subsection{Leveling Up}
         When you gain a level, the following things happen:
         \begin{itemize}
-            \item Your hit points increase (see \pcref{Hit Points})
             \item Your \glossterm{attributes} increase (see \pcref{Increasing Attributes})
             \item Your skill modifiers usually increase by 1 (see \pcref{Skill Modifier})
             \item Your \glossterm{mundane power} and \glossterm{magical power} each increase by 1 (see \pcref{Power}).
+            \item Your \glossterm{damage resistance} and \glossterm{wound resistance} usually increase, (see \tref{Character Advancement}).
             \item Your \glossterm{accuracy} increases by 1 (see \pcref{Accuracy})
             \item All of your \glossterm{defenses} increase by 1 (see \pcref{Defenses})
             \item You gain an additional \glossterm{archetype rank} (see \pcref{Archetypes})

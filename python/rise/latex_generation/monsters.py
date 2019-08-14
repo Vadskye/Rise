@@ -28,17 +28,30 @@ modifiers['ichor'] = ichor_modifier
 # description.
 passives = {
     'hard bones': lambda creature: passive_ability('Hard Bones', f"""
-        The {creature.name.lower()} has \\glossterm<damage reduction> {creature.magical_power} against piercing and slashing damage.
+        The {creature.name.lower()} gains a \plus{creature.constitution} bonus to \\glossterm<resistances> against piercing and slashing damage.
     """),
     'ichor healing': lambda creature: passive_ability('Ichor Healing', f"""
-        The {creature.name.lower()} heals {creature.level * creature.cr_mod} hit points at the end of each round.
+        The {creature.name.lower()} removes all \\glossterm<vital wounds> when it takes a \\glossterm<short rest>.
     """),
     'soft flesh': lambda creature: passive_ability('Soft Flesh', f"""
-        The {creature.name.lower()} has \\glossterm<damage reduction> {creature.constitution} against piercing and bludgeoning damage.
+        The {creature.name.lower()} gains a \plus{creature.constitution} bonus to \\glossterm<resistances> against piercing and slashing damage.
     """),
     'slow': lambda creature: passive_ability('Slow', f"""
         The {creature.name.lower()} does not act during the \\glossterm<action phase>.
         Instead, it acts during the \\glossterm<delayed action phase>.
+    """),
+    'multi-headed': lambda creature: passive_ability('Multi-Headed', f"""
+        A {creature.name.lower()} can make a number of \\glossterm<strikes> in each \\glossterm<action phase> equal to the number of heads it has active.
+        When the hydra loses a \\glossterm<hit point>, it loses one of its heads.
+        Severed heads leave behind a stump that can quickly grow new heads.
+
+        Whenever the hydra takes acid, cold, or fire damage, all unsealed severed stumps are sealed, including new stumps severed during the current phase.
+        At the end of each round, if the hydra has an unsealed severed stump, it grows two new heads from the stump.
+        This grants it additional strikes during the action phase as normal.
+
+        A hydra cannot sustain too many excess heads for a prolonged period of time.
+        At the end of each round, if the hydra has more heads than twice its normal head count, it loses a \\glossterm<hit point>.
+        If the hydra takes a \\glossterm<long rest>, the excess heads shrivel and die, and any sealed stumps heal, restoring the hydra to its normal head count.
     """),
 }
 
@@ -251,7 +264,7 @@ def humanoids(sample_monsters):
                 The shouter's \\glossterm<allies> that can hear it gain a +2 bonus to \\glossterm<power> with \\glossterm<strikes>.
             """, tags=['Sustain (standard)']),
         ],
-        behavior='Attack lowest threat',
+        behavior='Attack lowest Strength',
     ))
 
     goblin_stabber = sample_monsters['goblin_stabber']
@@ -263,7 +276,7 @@ def humanoids(sample_monsters):
                 If the target is defenseless, overwhelmed, or unaware, the damage becomes {goblin_stabber.weapon_damage(Weapon('shortsword')) + 2}.
             """),
         ],
-        behavior='Attack lowest threat',
+        behavior='Attack lowest Strength',
     ))
 
     orc_chieftain = sample_monsters['orc_chieftain']
@@ -320,7 +333,8 @@ def humanoids(sample_monsters):
                 \\crit As above, except that the penalty is increased to -6.
             """),
             active_ability('Hurt Less', f"""
-                One ally in Close range heals {orc_shaman.standard_damage() + 2} hit points.
+                One \\glossterm<ally> in Close range regains a \\glossterm<hit point>.
+                That creature is unaffected by any additional uses of this ability until the shaman takes a \\glossterm<short rest>.
             """),
         ],
     ))
@@ -506,21 +520,7 @@ def magical_beasts(sample_monsters):
         hydra5,
         actions='Five in action phase',
         passive_abilities=[
-            passive_ability('Multi-Headed', f"""
-                A hydra can take a number of actions in each \\glossterm<action phase> equal to the number of heads it has active.
-                At the end of each action phase, if the hydra took at least {trunc_to_five(hydra5.hit_points // 5)} damage during that phase, it loses one of its heads.
-                Severed heads leave behind a stump that can quickly grow new heads.
-
-                At the end of each delayed action phase, if the hydra has a severed stump, the stump is either sealed or it grows two new heads.
-                If the hydra took {trunc_to_five(hydra5.hit_points // 10)} acid, cold, or fire damage during that phase, the stump is sealed, and will stop growing new heads.
-                Otherwise, the hydra grows two new heads from the stump.
-                This grants it additional actions during the action phase as normal.
-
-                A hydra cannot sustain too many excess heads for a prolonged period of time.
-                At the end of each round, if the hydra has more heads than twice its normal head count, it loses an \\glossterm<action point>.
-                If it has no action points remaining, the hydra collapses unconscious for 8 hours.
-                During that time, the excess heads shrivel and die, and any sealed stumps heal, restoring the hydra to its normal head count.
-            """),
+            passives['multi-headed'](hydra5),
         ]
     ))
 
@@ -529,21 +529,7 @@ def magical_beasts(sample_monsters):
         hydra6,
         actions='Six in action phase',
         passive_abilities=[
-            passive_ability('Multi-Headed', f"""
-                A hydra can take a number of actions in each \\glossterm<action phase> equal to the number of heads it has active.
-                At the end of each action phase, if the hydra took at least {trunc_to_five(hydra6.hit_points // 5)} damage during that phase, it loses one of its heads.
-                Severed heads leave behind a stump that can quickly grow new heads.
-
-                At the end of each round, if the hydra has a severed stump, the stump is either sealed or it grows two new heads.
-                If the hydra took {trunc_to_five(hydra6.hit_points // 10)} acid, cold, or fire damage during that phase, the stump is sealed, and will stop growing new heads.
-                Otherwise, the hydra grows two new heads from the stump.
-                This grants it additional actions during the action phase as normal.
-
-                A hydra cannot sustain too many excess heads for a prolonged period of time.
-                At the end of each round, if the hydra has more heads than twice its normal head count, it loses an \\glossterm<action point>.
-                If it has no action points remaining, the hydra collapses unconscious for 8 hours.
-                During that time, the excess heads shrivel and die, and any sealed stumps heal, restoring the hydra to its normal head count.
-            """),
+            passives['multi-headed'](hydra6),
         ]
     ))
 
@@ -568,14 +554,14 @@ def magical_beasts(sample_monsters):
         passive_abilities=[
             passive_ability('Consume Magic', f"""
                 The thaumavore gains a +4 bonus to \\glossterm<defenses> against \\glossterm<magical> abilities.
-                Whenever it resists a \\glossterm<magical> attack, it heals hit points equal to twice the \\glossterm<power> of the effect.
+                Whenever it resists a \\glossterm<magical> attack, it regains a \\glossterm<hit point>.
             """),
             passive_ability('Sense Magic', f"""
                 The thaumavore can sense the location of all sources of magic within 100 feet of it.
                 This includes magic items, attuned magical abilities, and so on.
             """)
         ],
-        behavior='Attack highest threat that has a source of magic; if no souces of magic exist, attack highest threat',
+        behavior='Attack highest Willpower that has a source of magic; if no souces of magic exist, attack highest Willpower',
     ))
 
     banehound = sample_monsters['banehound']
@@ -653,8 +639,8 @@ def monstrous_humanoids(sample_monsters):
             """),
             active_ability("Green Hag's Curse", f"""
                 The hag makes a +{green_hag.accuracy()} vs. Mental atack aginst one creature within Medium range.
-                \\hit As a condition, the target is either dazed, fatigued, or sickened, as the hag chooses.
-                \\crit As three separate conditions, the target is dazed, fatigued, and sickened.
+                \\hit As a condition, the target is \\glossterm<dazed> or \\glossterm<sickened>, as the hag chooses.
+                \\crit As two separate conditions, the target is dazed and sickened.
             """),
         ],
         passive_abilities=[
@@ -699,7 +685,8 @@ def outsiders(sample_monsters):
                 If its target is evil, it gains a +2 bonus to accuracy and a +2d bonus to damage on the strike.
             """),
             active_ability("Angel's Grace", f"""
-                One \\glossterm<ally> within reach heals {astral_deva.standard_damage() + 3} hit points.
+                One \\glossterm<ally> within reach regains two \\glossterm<hit points>.
+                That creature is unaffected by any additional uses of this ability until the angel takes a \\glossterm<short rest>.
             """),
         ],
     ))
@@ -714,7 +701,7 @@ def outsiders(sample_monsters):
             """),
         ],
         speed='60 ft. fly (good)',
-        behavior='Attack lowest threat',
+        behavior='Attack lowest Dexterity',
     ))
 
     bebelith = sample_monsters['bebelith']
@@ -837,7 +824,8 @@ def undead(sample_monsters):
             active_ability('Drain Life', f"""
                 The skeleton mage makes a +{skeleton_mage.accuracy()} vs. Fortitude attack against a creature in \\rngmed range.
                 \\hit The target takes {skeleton_mage.standard_damage('magical')} life damage.
-                In addition, the skeleton mage heals {skeleton_mage.magical_power} hit points.
+                If this damage inflicts a \\glossterm<vital wound>, the skeleton mage regains a \\glossterm<hit point>.
+                It can only regain \\glossterm<hit points> in this way up to 3 times between \\glossterm<short rests>.
             """, tags=['Life']),
             active_ability('Terror', f"""
                 The skeleton mage makes a +{skeleton_mage.accuracy()} vs. Mental attack against a creature in \\rngmed range.

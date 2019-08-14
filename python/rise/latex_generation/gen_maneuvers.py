@@ -11,14 +11,15 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Battle Cry',
-        short_description='Heal nearby allies',
+        short_description='Inspire allies',
         effect_text="""
-            Your \\glossterm<allies> within a \\areamed radius from you heal hit points equal to \\glossterm<standard damage> -2d.
+            Each \\glossterm<ally> that can hear you gains a +1 bonus to \\glossterm<accuracy> with \\glossterm<physical attacks> until the end of the next round.
+            This does not affect attacks during the current phase.
         """,
         rank_upgrades={
-            '3': 'The healing increases to \\glossterm<standard damage> -1d.',
-            '5': 'The area increases to a \\arealarge radius.',
-            '7': 'The healing increases to \\glossterm<standard damage> +1d.',
+            '3': 'The ability also affects you.',
+            '5': 'Each target also gains a +2 bonus to Mental defense.',
+            '7': 'The accuracy bonus increases to +2.',
         },
         tags=[],
         lists=['Primal'],
@@ -29,7 +30,7 @@ def generate_maneuvers():
         short_description='Take half damage',
         effect_text="""
                 You take half damage from all attacks this round.
-                This halving is applied before \\glossterm<damage reduction> and similar abilities.
+                This halving is applied before \\glossterm<resistances> and similar abilities.
         """,
         rank_upgrades={
             # Alternate idea: bonuses against attackers
@@ -191,13 +192,12 @@ def generate_maneuvers():
         name='Rapid Assault',
         short_description='Make two strikes',
         effect_text="""
-                Make a \\glossterm<strike> against a creature.
-                If you use this ability during the \\glossterm<action phase>, you can make another strike during the \\glossterm<delayed action phase>.
-                You take a -2 penalty to accuracy and a -1d penalty to damage on both strikes.
+                Make two \\glossterm<strikes> divided as you choose among up to two targets.
+                You take a -2 penalty to accuracy and a -2d penalty to damage on both strikes.
         """,
         rank_upgrades={
             '3': 'The accuracy penalty is reduced to -1.',
-            '5': 'You can make both strikes during the same phase regardless of when you use the ability instead of making the second strike in the \\glossterm<delayed action phase>.',
+            '5': 'The damage penalty is reduced to -1d.',
             '7': 'The accuracy and damage penalties are removed.',
         },
         tags=[],
@@ -224,17 +224,15 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Strip the Flesh',
-        short_description='Make a strike with bonus damage against unbloodied foes',
+        short_description='Make a weak strike that is extremely painful',
         effect_text="""
-                Make a \\glossterm<strike> with a slashing weapon.
-                At the end of the \\glossterm<action phase> of the next round,
-                    if you hit with the strike and the target is not \\glossterm<bloodied>,
-                    it takes additional damage equal to the damage you dealt with the strike.
+            Make a \\glossterm<strike> using a slashing weapon with a -2d penalty to damage.
+            If the strike deals damage, the target loses an additional \\glossterm<hit point>.
         """,
         rank_upgrades={
-            '3': 'You gain a +1d bonus to damage with the strike.',
-            '5': 'The extra damage is applied at the end of the current round instead of at the end of the \\glossterm<action phase> of the next round.',
-            '7': 'The damage bonus increases to +3d.',
+            '3': 'You gain a +1 bonus to \\glossterm<accuracy> with the strike.',
+            '5': 'If the strike deals damage, the target is also \\glossterm<sickened> as a \\glossterm<condition>.',
+            '7': 'The accuracy bonus increases to +3.',
         },
         tags=[],
         lists=['Primal', 'Martial', 'Wild', 'Trick'],
@@ -262,14 +260,14 @@ def generate_maneuvers():
         effect_text="""
             Make an attack vs. Fortitude against everything in a \\areamed cone-shaped burst from you.
             You take a -1 penalty to \\glossterm<accuracy> with the attack.
-            \\hit Each target takes sonic \\glossterm<standard damage>.
+            \\hit Each target takes energy \\glossterm<standard damage>.
         """,
         rank_upgrades={
             '3': 'You gain a +1d bonus to damage with the shout.',
             '5': 'The area increases to \\arealarge.',
             '7': 'The damage bonus increases to +3d.',
         },
-        tags=['Sonic'],
+        tags=[],
         lists=['Primal'],
     ))
 
@@ -295,16 +293,16 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Challenge',
-        short_description='Make a strike and increase your threat',
+        short_description='Make a strike and draw attention',
         effect_text="""
             Make a melee \\glossterm<strike>.
-            If the strike hits, you gain a +4 bonus to \\glossterm<threat> against the struck creature.
-            This effect lasts until you take a \\glossterm<short rest> or until you use this ability on a different creature.
+            If the strike beats the target's Mental defense, it takes a -2 penalty to \\glossterm<accuracy> with \\glossterm<strikes> against creatures other than you as a \\glossterm<condition>.
+            This condition is removed if another creature applies this condition to the same target.
         """,
         rank_upgrades={
-            '3': 'The threat bonus increases to +6.',
-            '5': 'Using this ability on a different creature does not end its effect.',
-            '7': 'The threat bonus increases to +10.',
+            '3': 'The penalty increases to -3.',
+            '5': 'As part of the same condition, target also moves at half speed while you \\glossterm<threaten> it.',
+            '7': 'The penalty increases to -5.',
         },
         tags=[],
         lists=['Martial'],
@@ -395,19 +393,19 @@ def generate_maneuvers():
     ))
 
     maneuvers.append(Maneuver(
-        name='Revitalizing Strike',
-        short_description='Make a melee strike against a creature to heal',
+        name='Second Wind',
+        short_description='Recover hit points.',
         effect_text="""
-            Make a melee \\glossterm<strike>.
-            If you hit a creature with the strike, you regain hit points equal to \\glossterm<standard damage>.
+            You regain a \\glossterm<hit point>.
+            You can only use this ability once between \\glossterm<short rests>.
         """,
         rank_upgrades={
-            '3': 'You gain a +1d bonus to the amount healed.',
-            '5': 'You gain the healing even if you miss with the strike.',
-            '7': 'The healing bonus increases to +3d.',
+            '3': 'If you have a \\glossterm<vital wound>, you regain two \\glossterm<hit points> instead of one.',
+            '5': 'You can use the ability twice between \\glossterm<short rests>.',
+            '7': 'You remove two \\glossterm<hit points> regardless of whether you have a \\glossterm<vital wound>.',
         },
-        tags=['Life'],
-        lists=['Primal', 'Wild'],
+        tags=[],
+        lists=['Esoteric', 'Primal', 'Wild'],
     ))
 
     maneuvers.append(Maneuver(
