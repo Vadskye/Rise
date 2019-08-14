@@ -1,5 +1,8 @@
+from logging import getLogger, WARNING
 from rise.latex.util import join
 from rise.statistics.rise_data import item_prices
+from rise.latex.tags import is_valid_tag
+logger = getLogger(__name__)
 
 class MagicItem(object):
 
@@ -51,6 +54,11 @@ class MagicItem(object):
         except KeyError:
             raise Exception(f"Item '{self.name}' has unknown material_type {material_type}")
         self.targeting = targeting
+
+        if (self.tags):
+            for tag in self.tags:
+                if not is_valid_tag(tag):
+                    logger.log(WARNING, f"Magic item {self.name} has invalid tag {tag}")
 
     def latex_ability(self):
         if self.effects or self.targeting:

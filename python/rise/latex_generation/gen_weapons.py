@@ -24,7 +24,7 @@ def generate_weapons():
         name="Flaming",
         level=5,
         material_type='Weapon',
-        tags=['Fire'],
+        tags=[],
         description="""
             This weapon is on fire.
             It sheds light as a torch, and all damage dealt with it is fire damage in addition to its other types.
@@ -42,7 +42,7 @@ def generate_weapons():
         name="Flaming, Greater",
         level=15,
         material_type='Weapon',
-        tags=['Fire'],
+        tags=[],
         description="""
             This weapon is on fire.
             It sheds light as a torch, and all damage dealt with it is fire damage in addition to its other types.
@@ -75,7 +75,7 @@ def generate_weapons():
         name="Shocking",
         level=6,
         material_type='Weapon',
-        tags=['Electricity'],
+        tags=[],
         description="""
             This weapon continuously crackles with electricity.
             The constant sparks shed light as a torch, and all damage dealt with it is electricity damage in addition to its other types.
@@ -90,7 +90,7 @@ def generate_weapons():
         name="Shocking, Greater",
         level=15,
         material_type='Weapon',
-        tags=['Electricity'],
+        tags=[],
         description="""
             This weapon continuously crackles with electricity.
             The constant sparks shed light as a torch, and all damage dealt with it is electricity damage in addition to its other types.
@@ -103,33 +103,33 @@ def generate_weapons():
         name="Freezing",
         level=6,
         material_type='Weapon',
-        tags=['Cold'],
+        tags=[],
         description="""
             This weapon is bitterly cold, and all damage dealt with it is cold damage in addition to its other types.
             As a standard action, you can intensify the cold.
             When you make a \\glossterm<strike> with this weapon, if the weapon is intensified and your attack result beats the target's Fortitude defense,
-                the target is \\fatigued as a \\glossterm<condition> and the weapon stops being intensified.
+                the target is \\chilled as a \\glossterm<condition> and the weapon stops being intensified.
         """,
-        short_description="Deals cold damage, can fatigue",
+        short_description="Deals cold damage, can chill",
     ))
 
     weapons.append(MagicItem(
         name="Freezing, Greater",
         level=16,
         material_type='Weapon',
-        tags=['Cold'],
+        tags=[],
         description="""
             This weapon is bitterly cold, and all damage dealt with it is cold damage in addition to its other types.
-            When you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Fortitude defense, the target is \\fatigued as a \\glossterm<condition>.
+            When you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Fortitude defense, the target is \\chilled as a \\glossterm<condition>.
         """,
-        short_description="Deals cold damage, fatigues foes",
+        short_description="Deals cold damage, chills foes",
     ))
 
     weapons.append(MagicItem(
         name="Thundering",
         level=4,
         material_type='Weapon',
-        tags=['Sonic'],
+        tags=[],
         description="""
             This weapon constantly emits a low-pitched rumbling noise and vibrates slightly in your hand.
             All damage dealt with it is sonic damage in addition to its other types.
@@ -144,7 +144,7 @@ def generate_weapons():
         name="Thundering, Greater",
         level=14,
         material_type='Weapon',
-        tags=['Sonic'],
+        tags=[],
         description="""
             This weapon constantly emits a low-pitched rumbling noise and vibrates slightly in your hand.
             All damage dealt with it is sonic damage in addition to its other types.
@@ -157,7 +157,7 @@ def generate_weapons():
         name="Protective",
         level=8,
         material_type='Weapon',
-        tags=['Shielding'],
+        tags=[],
         description="""
             You gain a +1 \\glossterm<magic bonus> to Armor defense.
         """,
@@ -168,7 +168,7 @@ def generate_weapons():
         name="Protective, Greater",
         level=16,
         material_type='Weapon',
-        tags=['Shielding'],
+        tags=[],
         description="""
             You gain a +2 \\glossterm<magic bonus> to Armor defense.
         """,
@@ -297,7 +297,7 @@ def generate_weapons():
         name="Morphing",
         level=2,
         material_type='Weapon',
-        tags=['Shaping'],
+        tags=[],
         description="""
              As a standard action, you can activate this weapon.
              If you do, it changes shape into a new weapon of your choice from the same weapon group.
@@ -309,7 +309,7 @@ def generate_weapons():
         name="Morphing, Greater",
         level=6,
         material_type='Weapon',
-        tags=['Shaping'],
+        tags=[],
         description="""
              As a standard action, you can activate this weapon.
              If you do, it changes shape into a new weapon of your choice that you are proficient with.
@@ -322,7 +322,7 @@ def generate_weapons():
         name="Returning",
         level=3,
         material_type='Weapon',
-        tags=['Teleportation'],
+        tags=[],
         description="""
             After being thrown, this weapon teleports back into your hand at the end of the current phase.
             Catching a rebounding weapon when it comes back is a free action.
@@ -335,7 +335,7 @@ def generate_weapons():
         name="Seeking",
         level=7,
         material_type='Weapon',
-        tags=['Knowledge'],
+        tags=[],
         description="""
             This weapon automatically veers towards its intended target.
             \\glossterm<Strikes> with this weapon ignore \\glossterm<concealment>.
@@ -353,22 +353,36 @@ def generate_weapons():
         description="""
             This weapon is transluscent and has no physical presence for anyone except you.
             It has no effect on objects or constructs, and creatures do not feel any pain or even notice attacks from it.
-            Attacks with this weapon ignore \\glossterm<damage reduction>, but the damage is delayed instead of being dealt immediately.
+            Attacks with this weapon deal \\glossterm<untyped damage> and ignore \\glossterm<resistances>, but the damage is delayed instead of being dealt immediately.
             Damage that would be dealt by the weapon can be delayed indefinitely.
             While the damage is delayed, it cannot be removed by any means short of the destruction of this weapon or the creature's death.
 
-            As a \\glossterm<minor action>, you can cut yourself with this weapon to activate it.
+            As a \\glossterm<standard action>, you can cut yourself with this weapon to activate it.
             This deals no damage to you.
-            If you do, all delayed damage dealt by this weapon is converted into real damage.
+            When you do, each creature hit with the weapon takes \\glossterm<untyped damage> equal to the delayed damage built up by the weapon for that target.
+            The target applies its \\glossterm<resistances> as normal against this damage.
+            Creatures farther than one mile away from the weapon are unaffected by this damage.
+            This ability expends all delayed damage built up by the weapon for all targets, including targets farther than one mile from the weapon.
         """,
         short_description="Deals delayed damage",
+    ))
+
+    weapons.append(MagicItem(
+        name="Soulreaving, Greater",
+        level=15,
+        material_type='Weapon',
+        tags=[],
+        description="""
+            This weapon functions like the \\mitem<soulreaving> weapon, except that you can activate the weapon as a \\glossterm<minor action> instead of as a \\glossterm<standard action>.
+        """,
+        short_description="Deals delayed damage that can be quickly converted",
     ))
 
     weapons.append(MagicItem(
         name="Surestrike",
         level=8,
         material_type='Weapon',
-        tags=['Knowledge'],
+        tags=[],
         description="""
             You gain a +1 \\glossterm<magic bonus> to accuracy with \\glossterm<strikes> with this weapon.
         """,
@@ -379,7 +393,7 @@ def generate_weapons():
         name="Surestrike, Greater",
         level=16,
         material_type='Weapon',
-        tags=['Knowledge'],
+        tags=[],
         description="""
             You gain a +2 \\glossterm<magic bonus> to accuracy with \\glossterm<strikes> with this weapon.
         """,
@@ -390,7 +404,7 @@ def generate_weapons():
         name="Heartseeker",
         level=19,
         material_type='Weapon',
-        tags=['Knowledge'],
+        tags=[],
         description="""
             When you make a \\glossterm<strike> with this weapon, you can roll twice and take the higher result.
         """,
@@ -401,7 +415,7 @@ def generate_weapons():
         name="Thieving",
         level=7,
         material_type='Weapon',
-        tags=['Shaping'],
+        tags=[],
         description="""
             As a \\glossterm<standard action>, you can activate this weapon.
             If you do, make a \\glossterm<strike> or a \\glossterm<disarm> attack.
@@ -422,33 +436,11 @@ def generate_weapons():
         name="Thieving, Greater",
         level=13,
         material_type='Weapon',
-        tags=['Shaping'],
+        tags=[],
         description="""
             This item functions like the \\mitem<thieving> item, except that the maximum size category of object it can absorb is one size category larger than the weapon.
         """,
         short_description="Can absorb large items",
-    ))
-
-    weapons.append(MagicItem(
-        name="Vampiric",
-        level=6,
-        material_type='Weapon',
-        tags=['Life'],
-        description="""
-            When you deal damage to a living creature with a \\glossterm<strike> with this weapon, you heal hit points equal to your level.
-        """,
-        short_description="Heals you when dealing damage",
-    ))
-
-    weapons.append(MagicItem(
-        name="Vampiric, Greater",
-        level=14,
-        material_type='Weapon',
-        tags=['Life'],
-        description="""
-            When you deal damage to a living creature with a \\glossterm<strike> with this weapon, you heal hit points equal to twice your level.
-        """,
-        short_description="Drastically heals you when dealing damage",
     ))
 
     weapons.append(MagicItem(
@@ -465,7 +457,7 @@ def generate_weapons():
         name="Phasing",
         level=10,
         material_type='Weapon',
-        tags=['Planar'],
+        tags=[],
         description="""
             \\glossterm<Strikes> with this weapon can pass through a single solid obstacle of up to five feet thick on the way to their target.
             This can allow you to ignore \\glossterm<cover>, or even attack through solid walls.

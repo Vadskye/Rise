@@ -1,3 +1,4 @@
+import random
 import re
 
 class DicePool(object):
@@ -10,6 +11,31 @@ class DicePool(object):
 
     def maximum(self):
         return self.size * self.count
+
+    def roll(self):
+        total = 0
+        for i in range(self.count):
+            total += random.randint(1, self.size)
+        return total
+
+    def roll_explosion(self):
+        if self.size != 10:
+            raise Exception("This only works for d10s")
+        total = 0
+        roll = random.randint(1, self.size)
+        total += roll
+        while roll == self.size:
+            roll = random.randint(1, self.size)
+            total += roll
+        return total
+
+    def probability_of_at_least(self, value, iterations=1000):
+        # Math is hard so just roll 1000 times to get the probability
+        times = 0
+        for i in range(iterations):
+            if self.roll() >= value:
+                times += 1
+        return times / iterations
 
     # adding and subtracting from a DicePool increases the die size
     # this includes wrapping at d10 into 2d6
@@ -98,4 +124,4 @@ class DicePool(object):
         return self.size == die.size and self.count == die.count
 
 def standard_damage(statistic):
-    return DicePool(6) + statistic // 2
+    return DicePool(8) + statistic // 2
