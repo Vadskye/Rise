@@ -523,9 +523,6 @@ def generate_mystic_spheres():
                 Any effect which increases this spell's range increases the range of this effect by the same amount.
                 This spell is from both the Abjuration and Vivimancy schools and gains the \\glossterm<Life> tag in addition to the tags from the \\spell<kinetic shield> spell.
             """, tags=['Attune (target)']),
-            Spell('Greater Kinetic Shield', 4, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
-                This spell functions like the \\spell<kinetic shield> spell, except that the bonus is equal to twice your \\glossterm<power>.
-            """, tags=['Attune (target)']),
             Spell('Deflective Shield', 1, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
                 The target gains a +1 \\glossterm<magic bonus> to Armor defense.
 
