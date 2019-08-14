@@ -667,7 +667,7 @@ def generate_mystic_spheres():
                 Unlike most abilities, this ritual can affect individual parts of a whole object.
 
                 % How should this affect Strength break DRs?
-                The target gains a +5 \\glossterm<magic bonus> to \\glossterm<hardness>.
+                The target gains a +5 \\glossterm<magic bonus> to \\glossterm<resistances>.
                 If the target is moved, this effect ends.
                 Otherwise, it lasts for one year.
 
@@ -680,10 +680,10 @@ def generate_mystic_spheres():
                 This ritual functions like the \\spell<greater fortification> ritual, except that the effect lasts for one hundred years.
             """, tags=['AP']),
             Spell('Greater Fortification', 3, 'One unattended, nonmagical object or part of an object of up to Large size', """
-                This ritual functions like the \\spell<blessing of fortification> ritual, except that the \\glossterm<hardness> bonus increases to 10.
+                This ritual functions like the \\spell<blessing of fortification> ritual, except that the bonus to \\glossterm<resistances> increases to 10.
             """, tags=['Attune (ritual)']),
             Spell('Supreme Fortification', 6, 'One unattended, nonmagical object or part of an object of up to Large size', """
-                This ritual functions like the \\spell<blessing of fortification> ritual, except that the \\glossterm<hardness> bonus increases to 15.
+                This ritual functions like the \\spell<blessing of fortification> ritual, except that the bonus to \\glossterm<resistances> increases to 15.
             """, tags=['Attune (ritual)']),
             Spell('Bless Water', 1, 'One pint of unattended, nonmagical water within \\rngclose range', """
                 The target becomes holy water.
@@ -1503,7 +1503,7 @@ def generate_mystic_spheres():
         cantrips=[
             Effects('Alter Object', 'Unattended, nonmagical object you can touch', """
                 You make a Craft check to alter the target (see \\pcref<Craft>), except that you do not need any special tools to make the check (such as an anvil and furnace).
-                The maximum hardness of a material you can affect with this ability is equal to your \\glossterm<power>.
+                The maximum \\glossterm<damage resistance> of a material you can affect with this ability is equal to your \\glossterm<power>.
 
                 % too short?
                 Each time you use this ability, you can accomplish work that would take up to five minutes with a normal Craft check.
@@ -1617,7 +1617,7 @@ def generate_mystic_spheres():
                 Unlike most abilities, this ritual can affect individual parts of a whole object.
 
                 % How should this affect Strength break DRs?
-                The target gains a +5 \\glossterm<magic bonus> to \\glossterm<hardness>.
+                The target gains a +5 \\glossterm<magic bonus> to \\glossterm<resistances>.
                 If the target is moved, this effect ends.
                 Otherwise, it lasts for one year.
 
@@ -1630,10 +1630,10 @@ def generate_mystic_spheres():
                 This ritual functions like the \\spell<greater fortify> ritual, except that the effect lasts for one hundred years.
             """, tags=['AP']),
             Spell('Greater Fortify', 3, 'One \\glossterm<unattended>, nonmagical object or part of an object of up to Large size.', """
-                This ritual functions like the \\spell<fortify> ritual, except that the \\glossterm<hardness> bonus increases to 10.
+                This ritual functions like the \\spell<fortify> ritual, except that the bonus to \\glossterm<resistances> increases to 10.
             """, tags=['Attune (ritual)']),
             Spell('Supreme Fortify', 6, 'One \\glossterm<unattended>, nonmagical object or part of an object of up to Large size.', """
-                This ritual functions like the \\spell<fortify> ritual, except that the \\glossterm<hardness> bonus increases to 15.
+                This ritual functions like the \\spell<fortify> ritual, except that the bonus to \\glossterm<resistances> increases to 15.
             """, tags=['Attune (ritual)']),
             Spell('Awaken', 5, 'One large or smaller \\glossterm<ally> within \\rngclose range', """
                 The target becomes sentient.
@@ -2288,7 +2288,7 @@ def generate_mystic_spheres():
         lists=['Arcane', 'Nature'],
         spells=[
             Spell('Rock Throw', 1, 'One creature or object within \\rngmed range', """
-                % TODO: define maximum hardness?
+                % TODO: define maximum resistance?
                 You extract a Tiny chunk from a body of earth or unworked stone within 5 feet of you and throw it at a foe.
                 If no such chunk can be extracted, this spell is \\glossterm<miscast>.
                 Otherwise, make an attack vs. Armor against the target.
@@ -2370,7 +2370,7 @@ def generate_mystic_spheres():
             """, tags=[]),
             Spell('Quagmire', 3, 'All earth and unworked stone in a \\areamed radius within \\rngmed range', """
                 % TODO: wording to allow it to affect smaller parts of larger objects
-                % TODO: define maximum hardness
+                % TODO: define maximum resistance
                 The targets are softened into a thick sludge, creating a quagmire that is difficult to move through.
                 The movement cost required to move out of each affected square within the area is quadrupled.
                 This does not affect objects under significant structural stress, such as walls and support columns.
@@ -2380,7 +2380,7 @@ def generate_mystic_spheres():
                 This takes the form of up to ten contiguous 5-foot squares, each of which is four inches thick.
                 The squares can be placed at any angle and used to form any structure as long as that structure is stable.
                 Since the fortifications are made of packed earth, their maximum weight is limited, and structures taller than ten feet high are usually impossible.
-                % TODO: define hit points and hardness of earth
+                % TODO: define hit points and resistances of earth
 
                 The fortifications form slowly, rather than instantly.
                 The structure becomes complete at the end of the action phase in the next round after this spell is cast.
@@ -2389,7 +2389,7 @@ def generate_mystic_spheres():
             Spell('Stone Fortification', 4,'Earthen Fortification', """
                 This spell functions like the \\spell<earthen fortification> spell, except that the fortifications are made of stone instead of earth.
                 This makes them more resistant to attack and allows the construction of more complex structures.
-                % TODO: define hit points and hardness of stone
+                % TODO: define hit points and resistances of stone
             """, tags=['Attune (self)', 'Manifestation']),
         ],
         rituals=[
