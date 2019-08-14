@@ -1556,7 +1556,7 @@ def generate_mystic_spheres():
             Spell('Greater Regeneration', 4, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 This spell functions like the \\spell<regeneration> spell, except that the bonus increases to +3.
             """, tags=['Attune (target)']),
-            Spell('Supreme Regeneration', 6, """
+            Spell('Supreme Regeneration', 6, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 This spell functions like the \\spell<regeneration> spell, except that the bonus increases to +4.
             """, tags=['Attune (target)']),
             # Should this also/instead be under Terramancy?
@@ -2619,32 +2619,32 @@ def generate_mystic_spheres():
         schools=['Vivimancy'],
         lists=['Divine', 'Nature'],
         spells=[
-            Spell('Seal Wound', 1, """
+            Spell('Seal Wound', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 The target gains a +2 bonus to the \\glossterm<wound roll> of its most recent \\glossterm<vital wound>.
                 The \\glossterm<wound roll> for that \\glossterm<vital wound> cannot be modified again.
             """, tags=[]),
-            Spell('Greater Seal Wound', 3, """
+            Spell('Greater Seal Wound', 3,  'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 This spell functions like the \\spell<healing surge> spell, except that the bonus increases to +3.
             """, tags=[]),
-            Spell('Supreme Seal Wound', 5, """
+            Spell('Supreme Seal Wound', 5, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 This spell functions like the \\spell<healing surge> spell, except that the bonus increases to +4.
             """, tags=[]),
-            Spell('Lifegift', 1, """
+            Spell('Lifegift', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 The target increases its current and maximum \\glossterm<hit points> by 1.
                 When this spell ends, the target loses one \\glossterm<hit point>.
             """, tags=['Attune (target)']),
-            Spell('Greater Lifegift', 4, """
+            Spell('Greater Lifegift', 4, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 The target increases its current and maximum \\glossterm<hit points> by 2.
                 When this spell ends, the target loses two \\glossterm<hit point>.
             """, tags=['Attune (target)']),
-            Spell('Supreme Lifegift', 7, """
+            Spell('Supreme Lifegift', 7, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 The target increases its current and maximum \\glossterm<hit points> by 3.
                 When this spell ends, the target loses three \\glossterm<hit points>.
             """, tags=['Attune (target)']),
-            Spell('Cure Serious Wound', 4, 'One living \\glossterm<ally> within \\rngmed range', """
+            Spell('Cure Serious Wound', 4, 'Yourself or one living \\glossterm<ally> within \\rngclose range', """
                 The target removes one \\glossterm<vital wound>.
             """, tags=['AP']),
-            Spell('Cure Critical Wound', 6, """
+            Spell('Cure Critical Wound', 6, 'Yourself or one living \\glossterm<ally> within \\rngclose range', """
                 The target removes two \\glossterm<vital wounds>.
             """, tags=['AP']),
             Spell('Inflict Wounds', 1, 'One creature within \\rngmed range', """

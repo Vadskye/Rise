@@ -498,8 +498,7 @@ Sight through the wall is possible, though distorted.
 The wall provides both \glossterm{passive cover} and \glossterm{concealment} to targets on the opposite side of the wall, for a total of a \plus4 bonus to Armor defense.
 Creatures can pass through the wall unharmed, though it costs five extra feet of movement to move through the wall.
 
-Each five-foot square of wall has a \glossterm{wound threshold} equal to four times your \glossterm{power}, and all of its defenses are 0.
-It is immune to most forms of attack, but it can be destroyed by \glossterm{fire damage} and similar effects that can destroy water.
+Each five-foot square of wall has a \glossterm{wound resistance} equal to three times your \glossterm{power} and all of its defenses are 0.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1031,15 +1030,6 @@ This spell functions like the \spell{deflective shield} spell, except that the b
 \begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Kinetic Shield}{Greater Kinetic Shield}}[\glossterm{Attune} (target)]
 \target{Yourself or an \glossterm{ally} in \rngclose range}
 This spell functions like the \spell{kinetic shield} spell, except that the bonus increases to be equal to your \glossterm{power}.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Kinetic Shield}{}}\label{spell:Greater Kinetic Shield}
-\begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Kinetic Shield}{Greater Kinetic Shield}}[\glossterm{Attune} (target)]
-\target{Yourself or an \glossterm{ally} in \rngclose range}
-This spell functions like the \spell{kinetic shield} spell, except that the bonus is equal to twice your \glossterm{power}.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -2200,8 +2190,7 @@ You can create any weapon, shield, or body armor that you are proficient with, a
 The pool of water targeted must be at least as large as the item you create.
 
 The item functions like a normal item of its type, except that it is more fragile.
-Its \glossterm{wound threshold} is equal to twice your \glossterm{power}, it does not have any \glossterm{hardness}, and it is \glossterm{vulnerable} to fire damage.
-If the item would take cold damage, it instead regains a \glossterm{hit point}.
+Its \glossterm{wound resistance} is equal to twice your \glossterm{power}, and it is \glossterm{vulnerable} to fire damage.
 
 When a creature wearing armor created in this way takes physical damage, cold damage, or fire damage, that damage is also dealt to the armor.
 Likewise, when a creature wielding a weapon created in this way deals damage with the weapon, that damage is also dealt to the weapon.
@@ -2713,7 +2702,7 @@ After the third hit, no further attacks are made, but the target remains nauseat
 \targets{All Large or smaller creatures in the area (see text)}
 You fill a \areasmall radius \glossterm{zone} within \rngclose range with webs.
 The webs make the area \glossterm{difficult terrain}.
-Each 5-ft.\ square of webbing has a \glossterm{wound threshold} equal to your \glossterm{power}, and is \glossterm{vulnerable} to fire.
+Each 5-ft.\ square of webbing has a \glossterm{wound resistance} equal to your \glossterm{power} and is \glossterm{vulnerable} to fire.
 
 In addition, make an attack vs. Reflex against each target.
 \hit Each secondary target is \glossterm{immobilized} as long as it has webbing from this ability in its space.
@@ -2758,7 +2747,7 @@ Make an attack vs. Armor against everything in its path.
 \lowercase{\hypertarget{spell:Reinforced Webbing}{}}\label{spell:Reinforced Webbing}
 \begin{freeability}[\nth{3}]{\hypertarget{spell:Reinforced Webbing}{Reinforced Webbing}}[\glossterm{Manifestation}, \glossterm{Sustain} (minor)]
 \targets{All Large or smaller creatures in the area (see text)}
-This spell functions like the \spell{web} spell, except that each 5-ft.\ square of webbing gains additional hit points equal to your \glossterm{power}.
+This spell functions like the \spell{web} spell, except that each 5-ft.\ square of webbing gains a bonus to \glossterm{wound resistance} equal to your \glossterm{power}.
 In addition, the webs are no longer \glossterm{vulnerable} to fire damage.
 \end{freeability}
 \vspace{0.25em}
@@ -3190,10 +3179,20 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
+\lowercase{\hypertarget{spell:Regeneration}{}}\label{spell:Regeneration}
+\begin{attuneability}[\nth{2}]{\hypertarget{spell:Regeneration}{Regeneration}}[\glossterm{Attune} (target)]
+\target{Yourself or an \glossterm{ally} within \rngclose range}
+A the end of each round, the target gains a \plus2 bonus to the \glossterm{wound roll} of its most recent \glossterm{vital wound}.
+The \glossterm{wound roll} for that \glossterm{vital wound} cannot be modified again.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Stoneskin}{}}\label{spell:Stoneskin}
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Stoneskin}{Stoneskin}}[\glossterm{Attune} (target)]
 \target{Yourself or an \glossterm{ally} within \rngclose range}
-The target gains a \glossterm{magic bonus} equal to your \glossterm{power} to \glossterm{resistances} against \glossterm{physical damage}.
+The target gains a \glossterm{magic bonus} equal to half your \glossterm{power} to \glossterm{resistances} against \glossterm{physical damage}.
 
 You can cast this spell as a \glossterm{minor action}.
 \end{attuneability}
@@ -3246,11 +3245,10 @@ This spell functions like the \spell{barkskin} spell, except that the bonus is e
 
 
 
-\lowercase{\hypertarget{spell:Regeneration}{}}\label{spell:Regeneration}
-\begin{attuneability}[\nth{4}]{\hypertarget{spell:Regeneration}{Regeneration}}[\glossterm{Attune} (target)]
+\lowercase{\hypertarget{spell:Greater Regeneration}{}}\label{spell:Greater Regeneration}
+\begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Regeneration}{Greater Regeneration}}[\glossterm{Attune} (target)]
 \target{Yourself or an \glossterm{ally} within \rngclose range}
-A the end of each round, if the target did not take damage that round, it regains a \glossterm{hit point}.
-After the target regains 3 hit points this way, this spell ends.
+This spell functions like the \spell{regeneration} spell, except that the bonus increases to \plus3.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -3305,20 +3303,20 @@ This spell functions like the \spell{baleful polymorph} spell, except that a str
 
 
 
-\lowercase{\hypertarget{spell:Enlarge, Supreme}{}}\label{spell:Enlarge, Supreme}
-\begin{attuneability}[\nth{7}]{\hypertarget{spell:Enlarge, Supreme}{Enlarge, Supreme}}[\glossterm{Attune} (target)]
-\target{One large or smaller \glossterm{ally} within \rngclose range}
-This spell functions like the \spell{enlarge} spell, except that the target's size is increased by two size categories.
-It gains a \plus2 \glossterm{magic bonus} to Strength to partially match its new size.
+\lowercase{\hypertarget{spell:Supreme Regeneration}{}}\label{spell:Supreme Regeneration}
+\begin{attuneability}[\nth{6}]{\hypertarget{spell:Supreme Regeneration}{Supreme Regeneration}}[\glossterm{Attune} (target)]
+\target{Yourself or an \glossterm{ally} within \rngclose range}
+This spell functions like the \spell{regeneration} spell, except that the bonus increases to \plus4.
 \end{attuneability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Greater Regeneration}{}}\label{spell:Greater Regeneration}
-\begin{attuneability}[\nth{7}]{\hypertarget{spell:Greater Regeneration}{Greater Regeneration}}[\glossterm{Attune} (target)]
-\target{Yourself or an \glossterm{ally} within \rngclose range}
-This spell functions like the \spell{regeneration} spell, except that it lasts until the target regains 6 hit points.
+\lowercase{\hypertarget{spell:Enlarge, Supreme}{}}\label{spell:Enlarge, Supreme}
+\begin{attuneability}[\nth{7}]{\hypertarget{spell:Enlarge, Supreme}{Enlarge, Supreme}}[\glossterm{Attune} (target)]
+\target{One large or smaller \glossterm{ally} within \rngclose range}
+This spell functions like the \spell{enlarge} spell, except that the target's size is increased by two size categories.
+It gains a \plus2 \glossterm{magic bonus} to Strength to partially match its new size.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -4474,7 +4472,7 @@ During the movement phase, you can move the target up to ten feet in any directi
 \targetrule
 You create a wall of telekinetic force in a 10 ft.\ high, \arealarge line within \rngmed range.
 The wall is transparent, but blocks physical passage and \glossterm{line of effect}.
-Each five-foot square of wall has hit points equal to twice your \glossterm{power}, and all of its defenses are 0.
+Each five-foot square of wall has a \glossterm{wound resistance} equal to four times your \glossterm{power} and all of its defenses are 0.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -5123,24 +5121,16 @@ It is from from the Conjuration school in addition to the Transmutation school.
 \subsubsection{Cantrips}
 
 
-\begin{freeability}{Cure Minor Wounds}
+\begin{freeability}{Ablate Wound}
 \target{Yourself or a living \glossterm{ally} within \rngclose range}
-The target heals hit points equal to your \glossterm{power}.
+The target gains a \plus1 bonus to the \glossterm{wound roll} of its most recent \glossterm{vital wound}, up to a maximum of 0.
+The \glossterm{wound roll} for that \glossterm{vital wound} cannot be modified again.
 \end{freeability}
 
 \end{spellsection}
 
 
 \subsubsection{Spells}
-
-
-\lowercase{\hypertarget{spell:Cure Wounds}{}}\label{spell:Cure Wounds}
-\begin{freeability}[\nth{1}]{\hypertarget{spell:Cure Wounds}{Cure Wounds}}[]
-\target{One living \glossterm{ally} within \rngmed range}
-The target heals hit points equal to \glossterm{standard damage} \plus1d.
-\end{freeability}
-\vspace{0.25em}
-
 
 
 \lowercase{\hypertarget{spell:Inflict Wounds}{}}\label{spell:Inflict Wounds}
@@ -5153,10 +5143,30 @@ Make an attack vs. Fortitude against the target.
 
 
 
+\lowercase{\hypertarget{spell:Lifegift}{}}\label{spell:Lifegift}
+\begin{attuneability}[\nth{1}]{\hypertarget{spell:Lifegift}{Lifegift}}[\glossterm{Attune} (target)]
+\target{Yourself or an \glossterm{ally} within \rngclose range}
+The target increases its current and maximum \glossterm{hit points} by 1.
+When this spell ends, the target loses one \glossterm{hit point}.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Seal Wound}{}}\label{spell:Seal Wound}
+\begin{freeability}[\nth{1}]{\hypertarget{spell:Seal Wound}{Seal Wound}}[]
+\target{Yourself or an \glossterm{ally} within \rngclose range}
+The target gains a \plus2 bonus to the \glossterm{wound roll} of its most recent \glossterm{vital wound}.
+The \glossterm{wound roll} for that \glossterm{vital wound} cannot be modified again.
+\end{freeability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Vital Persistence}{}}\label{spell:Vital Persistence}
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Vital Persistence}{Vital Persistence}}[\glossterm{Attune} (target)]
 \target{Yourself or an \glossterm{ally} within \rngclose range}
-The target reduces its \glossterm{vital damage penalties} by an amount equal to your \glossterm{power}.
+The target ignores the vital wound effect of its most recent \glossterm{vital wound}.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -5167,19 +5177,6 @@ The target reduces its \glossterm{vital damage penalties} by an amount equal to 
 \target{One creature within \rngmed range}
 This spell functions like the \spell{inflict wounds} spell, except that a struck target suffers a death knell as a \glossterm{condition}.
 At the end of each round, if the target has 0 hit points, it immediately dies.
-
-% TODO: wording
-If the target dies while the condition is active, you heal hit points equal to twice your \glossterm{power}.
-\end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Drain Life}{}}\label{spell:Drain Life}
-\begin{freeability}[\nth{3}]{\hypertarget{spell:Drain Life}{Drain Life}}[]
-\target{One creature within \rngmed range}
-This spell functions like the \spell{inflict wounds} spell, except that the damage increases to \glossterm{standard damage} \plus2d.
-In addition, you heal hit points equal to your \glossterm{power} if you deal damage.
 \end{freeability}
 \vspace{0.25em}
 
@@ -5190,6 +5187,15 @@ In addition, you heal hit points equal to your \glossterm{power} if you deal dam
 \target{One living \glossterm{ally} within \rngmed range}
 This spell functions like the \spell{cure wounds} spell, except that the healing increases to \glossterm{standard damage} \plus2d.
 In addition, for every 5 points of healing you provide, you can instead heal one point of \glossterm{vital damage}.
+\end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Greater Seal Wound}{}}\label{spell:Greater Seal Wound}
+\begin{freeability}[\nth{3}]{\hypertarget{spell:Greater Seal Wound}{Greater Seal Wound}}[]
+\target{Yourself or an \glossterm{ally} within \rngclose range}
+This spell functions like the \spell{healing surge} spell, except that the bonus increases to \plus3.
 \end{freeability}
 \vspace{0.25em}
 
@@ -5227,8 +5233,18 @@ Primary target: Yourself
 Secondary target: You and each living \glossterm{ally} in the area (see text)
 
 You are surrounded by an aura of healing in a \areamed radius \glossterm{emanation} from you.
-When this spell resolves, and the end of each \glossterm{action phase} in subsequent rounds, each secondary target heals hit points equal to half your \glossterm{power}.
+When this spell resolves, and the end of each \glossterm{action phase} in subsequent rounds, each secondary target gains a \plus2 bonus to the \glossterm{wound roll} of its most recent \glossterm{vital wound}.
+The \glossterm{wound roll} for each \glossterm{vital wound} modified this way cannot be modified again.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Cure Serious Wound}{}}\label{spell:Cure Serious Wound}
+\begin{apability}[\nth{4}]{\hypertarget{spell:Cure Serious Wound}{Cure Serious Wound}}[]
+\target{Yourself or one living \glossterm{ally} within \rngclose range}
+The target removes one \glossterm{vital wound}.
+\end{apability}
 \vspace{0.25em}
 
 
@@ -5242,27 +5258,12 @@ This spell functions like the \spell{inflict wounds} spell, except that the dama
 
 
 
-\lowercase{\hypertarget{spell:Greater Vital Persistence}{}}\label{spell:Greater Vital Persistence}
-\begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Vital Persistence}{Greater Vital Persistence}}[\glossterm{Attune} (target)]
+\lowercase{\hypertarget{spell:Greater Lifegift}{}}\label{spell:Greater Lifegift}
+\begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Lifegift}{Greater Lifegift}}[\glossterm{Attune} (target)]
 \target{Yourself or an \glossterm{ally} within \rngclose range}
-This spell functions like the \spell{vital persistence} spell, except that the penalty reduction increases to be equal to twice your \glossterm{power}.
+The target increases its current and maximum \glossterm{hit points} by 2.
+When this spell ends, the target loses two \glossterm{hit point}.
 \end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Life Exchange}{}}\label{spell:Life Exchange}
-\begin{freeability}[\nth{4}]{\hypertarget{spell:Life Exchange}{Life Exchange}}[]
-
-Primary target: One living \glossterm{ally} within \rngmed range
-\par\noindent
-Secondary target: One other creature within that range
-
-Make an attack vs. Fortitude against the secondary target.
-\hit The secondary target takes damage equal to \glossterm{standard damage} \plus1d.
-In addition, the primary target heals hit points equal to the damage dealt in this way.
-\crit This spell does not deal additional damage on a critical hit.
-\end{freeability}
 \vspace{0.25em}
 
 
@@ -5278,22 +5279,29 @@ Make an attack vs. Fortitude against the target.
 
 
 
-\lowercase{\hypertarget{spell:Greater Drain Life}{}}\label{spell:Greater Drain Life}
-\begin{freeability}[\nth{5}]{\hypertarget{spell:Greater Drain Life}{Greater Drain Life}}[]
-\target{One creature within \rngmed range}
-This spell functions like the \spell{inflict wounds} spell, except that the damage increases to \glossterm{standard damage} \plus3d.
-In addition, you heal hit points equal to twice your \glossterm{power} if you deal damage.
+\lowercase{\hypertarget{spell:Greater Vital Persistence}{}}\label{spell:Greater Vital Persistence}
+\begin{attuneability}[\nth{5}]{\hypertarget{spell:Greater Vital Persistence}{Greater Vital Persistence}}[\glossterm{Attune} (target)]
+\target{Yourself or an \glossterm{ally} within \rngclose range}
+The target ignores the vital wound effect of its two most recent \glossterm{vital wounds}.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Supreme Seal Wound}{}}\label{spell:Supreme Seal Wound}
+\begin{freeability}[\nth{5}]{\hypertarget{spell:Supreme Seal Wound}{Supreme Seal Wound}}[]
+\target{Yourself or an \glossterm{ally} within \rngclose range}
+This spell functions like the \spell{healing surge} spell, except that the bonus increases to \plus4.
 \end{freeability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Heal}{}}\label{spell:Heal}
-\begin{freeability}[\nth{5}]{\hypertarget{spell:Heal}{Heal}}[]
-\target{One living \glossterm{ally} within \rngmed range}
-This spell functions like the \spell{cure wounds} spell, except that you gain a \plus2d bonus to healing.
-In addition, it heals \glossterm{vital damage} as easily as it heals hit points.
-\end{freeability}
+\lowercase{\hypertarget{spell:Cure Critical Wound}{}}\label{spell:Cure Critical Wound}
+\begin{apability}[\nth{6}]{\hypertarget{spell:Cure Critical Wound}{Cure Critical Wound}}[]
+\target{Yourself or one living \glossterm{ally} within \rngclose range}
+The target removes two \glossterm{vital wounds}.
+\end{apability}
 \vspace{0.25em}
 
 
@@ -5303,6 +5311,16 @@ In addition, it heals \glossterm{vital damage} as easily as it heals hit points.
 \target{One creature within \rngmed range}
 This spell functions like the \spell{inflict wounds} spell, except that the damage increases to \glossterm{standard damage} \plus5d.
 \end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Supreme Lifegift}{}}\label{spell:Supreme Lifegift}
+\begin{attuneability}[\nth{7}]{\hypertarget{spell:Supreme Lifegift}{Supreme Lifegift}}[\glossterm{Attune} (target)]
+\target{Yourself or an \glossterm{ally} within \rngclose range}
+The target increases its current and maximum \glossterm{hit points} by 3.
+When this spell ends, the target loses three \glossterm{hit points}.
+\end{attuneability}
 \vspace{0.25em}
 
 
