@@ -2,7 +2,7 @@ from cgi_simple import (
     button, div, flex_col, flex_row, flex_wrapper, freeform_number_input,
     labeled_number_input, labeled_text_input, number_input, sidelabel, text_input, underlabel, underlabel_spaced
 )
-from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS, ROLL20_CALC
+from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS
 
 def create_page():
     return flex_row({'class': 'first-page'}, [
@@ -99,11 +99,11 @@ def resources():
 
 def statistics_header():
     return ''.join([
-        flex_row({'class': 'core-statistics'}, [
+        flex_row({'class': 'all-statistics'}, [
             core_statistics(),
             defenses(),
-            special_defenses(),
-            resources()
+            damage_resistance(),
+            wound_resistance(),
         ])
     ])
 
@@ -123,36 +123,79 @@ def defenses():
         ]),
     ])
 
-def special_defenses():
-    return flex_col({'class': 'special-defenses'}, [
-        flex_wrapper(div({'class': 'section-header'}, 'Special Defenses')),
+def damage_resistance():
+    return flex_col({'class': 'damage-resistances'}, [
+        flex_wrapper(div({'class': 'section-header'}, 'Damage Resist')),
         "".join([
-            text_input({'name': f"special_defense_{i}"})
-            for i in range(4)
+            sidelabel('Global', number_input({
+                'disabled': True,
+                'name': 'damage_resistance_global',
+                'value': '@{damage_resistance_global}',
+            })),
+            sidelabel('Physical', number_input({
+                'disabled': True,
+                'name': 'damage_resistance_physical',
+                'value': '@{damage_resistance_physical}',
+            })),
+            sidelabel('Energy', number_input({
+                'disabled': True,
+                'name': 'damage_resistance_energy',
+                'value': '@{damage_resistance_energy}',
+            })),
+            freeform_number_input(
+                number_input_attributes={'name': 'damage_resistance_freeform'},
+                text_input_attributes={'name': 'damage_resistance_freeform_name'},
+            ),
+        ]),
+    ])
+
+def wound_resistance():
+    return flex_col({'class': 'wound-resistances'}, [
+        flex_wrapper(div({'class': 'section-header'}, 'Wound Resist')),
+        "".join([
+            sidelabel('Global', number_input({
+                'disabled': True,
+                'name': 'wound_resistance_global',
+                'value': '@{wound_resistance_global}',
+            })),
+            sidelabel('Physical', number_input({
+                'disabled': True,
+                'name': 'wound_resistance_physical',
+                'value': '@{wound_resistance_physical}',
+            })),
+            sidelabel('Energy', number_input({
+                'disabled': True,
+                'name': 'wound_resistance_energy',
+                'value': '@{wound_resistance_energy}',
+            })),
+            freeform_number_input(
+                number_input_attributes={'name': 'wound_resistance_freeform'},
+                text_input_attributes={'name': 'wound_resistance_freeform_name'},
+            ),
         ]),
     ])
 
 def core_statistics():
-    return flex_col({'class': 'offense'}, [
+    return flex_col({'class': 'core-statistics'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Core Statistics')),
-        sidelabel('Hit points', number_input({
-            'disabled': True,
-            'name': 'hit_points_total_display',
-            'value': '(@{hit_points_total})',
-        })),
-        labeled_number_input('Bloodied', input_attributes={
-            'disabled': True,
-            'name': 'hit_points_bloodied_display',
-            'value': 'floor(@{hit_points_total} / 2)',
-        }),
         labeled_number_input('Land speed', input_attributes={
             'name': 'land_speed',
             'value': '@{base_speed}',
         }),
-        sidelabel('Threat', number_input({
+        sidelabel('Hit points', number_input({
             'disabled': True,
-            'name': 'threat_display',
-            'value': '@{threat}',
+            'name': 'hit_points',
+            'value': '@{hit_points}',
+        })),
+        sidelabel('Action points', number_input({
+            'disabled': True,
+            'name': 'fatigue_threshold_display',
+            'value': '(@{fortitude_scaling} + @{fatigue_threshold_misc})',
+        })),
+        sidelabel('Initiative', number_input({
+            'disabled': True,
+            'name': 'initiative_display',
+            'value': '@{initiative}',
         })),
     ])
 
@@ -213,6 +256,7 @@ def passive_ability(prefix, ability_number):
             'name': 'passive{0}-{1}-effect'.format(ability_number, prefix),
         }),
     ])
+
 
 def attacks():
     return flex_col({'class': 'attacks'}, [

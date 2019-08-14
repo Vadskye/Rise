@@ -6,9 +6,6 @@ Spells, racial traits, and the benefits from class \glossterm{archetypes} can al
 \glossdef{ability tag} An ability tag describes the effects of an ability.
 For details, see \pcref{Ability Tags}.
 
-\glossdef{acid}[Acid] Acid is a type of damage is very effective against most objects.
-For the Acid ability tag, see \pcref{Ability Tags}.
-
 \glossdef{action phase} The action phase is the second of two \glossterm{phases} in a combat \glossterm{round}.
 During the action phase, creatures can \glossterm{attack}, cast \glossterm{spells}, and take other major combat actions.
 
@@ -21,8 +18,6 @@ Physical attacks against creatures and objects with active cover suffer a 20\% m
 For details, see \pcref{Active Cover}.
 
 \glossdef{accuracy} The bonus added to an \glossterm{attack roll}.
-
-\glossdef{Air} See \pcref{Ability Tags}.
 
 \glossdef{alignment} Your alignment represents your general morality in broad terms.
 For details, see \pcref{Alignment}.
@@ -78,8 +73,6 @@ When casting a spell, you add the augment's level to the spell's level.
 If you do, the spell gains the effect of the augment.
 You can apply any number of augments to a spell in this way, increasing the spell's level for each augment.
 
-\glossdef{Barrier} See \pcref{Ability Tags}.
-
 \glossdef{base speed} Your base speed is the distance that you can usually move.
 For details, see \pcref{Base Speed}.
 
@@ -97,15 +90,14 @@ Blindsight always has a range, and grants no benefits beyond that range.
 \glossdef{block}[blocking] The \textit{block} ability allows you to try to prevent other creatures from entering an area.
 For details, see \pcref{Block}.
 
-\glossdef{bloodied} At or below half hit points. Bloodied creatures take a \minus4 penalty to Fortitude and Mental defense.
-
 \glossdef{body armor} Body armor is a form of \glossterm{armor} that you wear on your body.
 For details, see \pcref{Armor}.
 
 \glossdef{broken} A broken object is damaged and unsuitable for use, though it retains its general structure and can be repaired.
 For details, see \pcref{Broken Objects}.
 
-An object that reaches 0 hit points is broken. If an object takes additional damage equal to its maximum hit points, it is \glossterm{destroyed}. A destroyed object cannot be repaired by any means.
+An object that takes a \glossterm{vital wound} becomes broken.
+If it takes an additional \glossterm{vital wound}, it becomes \glossterm{destroyed}.
 
 \glossdef{burst} A burst is a type of area that an ability can have (see \pcref{Area Types}).
 A burst ability has an immediate effect on all valid targets within an area.
@@ -114,16 +106,12 @@ A burst ability has an immediate effect on all valid targets within an area.
 Anyone who has access to a mystic sphere knows all cantrips from that sphere.
 For details, see \pcref{Cantrips}.
 
-\glossdef{Chaos} See \pcref{Ability Tags}.
-
 \glossdef{challenge rating} The challenge rating of a monster indicates its approximate strength within its level.
 For details, see \pcref{Challenge Rating}.
 
 \glossdef{charge}[charging] You can move up to a foe and attack it with the \textit{charge} ability.
 This can allow you to make a melee attack during the \glossterm{action phase} if you did not end up adjacent to a creature during \glossterm{movement phase}.
 For details, see \pcref{Charge}.
-
-\glossdef{Charm} See \pcref{Ability Tags}.
 
 \glossdef{character level} Your character level is your total level, including levels from all of your classes.
 Whenever text refers to your ``level'', without specifying a particular kind of level, it means your character level.
@@ -141,6 +129,9 @@ For details, see \pcref{Checks}.
 \glossdef{check modifier}[check modifiers] A check modifier is a number that you add to or subtract from your d10 roll when you make a \glossterm{check}.
 For details, see \pcref{Checks}.
 
+\glossdef{chilled} A chilled creature is bitterly cold.
+It moves at half speed and takes a \minus2 penalty to Fortitude defense.
+
 \glossdef{class}[classes] Your class represents your fundamental source of power and the type of abilities you have.
 For example, barbarians draw power from the primal energy found deep within all living things, while clerics draw power from their worship of mighty deities.
 For details, see \pcref{Classes}.
@@ -154,7 +145,7 @@ For details, see \pcref{Skill Training}.
 \glossdef{climb speed} A creature with a climb speed can climb as easily as a human walks on land.
 The effects of a climb speed are described at \pcref{Climb Speed}.
 
-\glossdef{cold}[Cold] A kind of \glossterm{energy}. For the Cold ability tag, see \pcref{Ability Tags}.
+\glossdef{cold} A kind of \glossterm{energy damage}.
 
 \glossdef{common language}[common languages] Common languages are languages that are widely spoken.
 They are described in \tref{Common Languages}.
@@ -197,21 +188,12 @@ Some abilities have special effects on critical hits.
 \glossdef{critical success} When you make a check, if your result beat the DR by 10 or more, you get a critical success.
 Some abilities have special effects on critical successes.
 
-\glossdef{damage} Some attacks deal damage to you when they hit.
-When you take damage, you reduce your \glossterm{hit points} by that amount.
-If you have no hit points remaining, you may take that damage as \glossterm{vital damage} instead, which represents potentially life-threatening injuries.
-For details, see \pcref{Damage}.
+\glossdef{damage} Many attacks deal damage to you when they hit.
+When you take damage, you lose a \glossterm{hit point} or gain a \glossterm{vital wound}, depending on the amount of damage.
+For details, see \pcref{Taking Damage}.
 
-\glossdef{damage reduction} Damage reduction allows you to ignore a certain amount of incoming damage.
-If you have damage reduction, you ignore the first points of damage you would take each \glossterm{round}, up to a maximum equal to the value of your damage reduction.
-Any additional damage is dealt normally.
-% TODO: clarify how to tell whether a particular attack dealt damage to you if you have damage reduction
-Once it reduces that much damage, it stops functioning until the start of the next round.
-
-Most sources of damage reduction only apply against a specific type of attack.
-For example, a barbarian's damage reduction only applies against damage dealt by \glossterm{physical attacks}.
-If an attack deals multiple types of damage, you must have damage reduction against every type of damage dealt.
-For example, damage reduction against piercing damage would not help if you are struck by a morningstar, since it deals both bludgeoning and piercing damage.
+\glossdef{damage resistance} You lose a \glossterm{hit point} if you take more damage than your \glossterm{damage resistance} from a single damage roll.
+For details, see \pcref{Damage Resistance}.
 
 \glossdef{darkvision} A creature with darkvision can see in the dark clearly up to a given range.
 Darkvision does not function if a creature is in a brightly lit area, and does not resume functioning until the end of the next round after the creature leaves the brightly lit area.
@@ -234,8 +216,6 @@ It can take its normal actions during the \glossterm{delayed action phase}.
 \glossdef{defenseless} A defenseless creature is unable to defend itself in melee combat.
 \glossterm{Melee attacks} against it gain a \plus2 bonus to accuracy.
 Any creature not capable of using a weapon or shield to defend itself, such as most unarmed creatures, is defenseless.
-
-\glossdef{Death} See \pcref{Ability Tags}.
 
 \glossdef{defeated} A creature is defeated if it dies, surrenders or is incapacitated for an extended period of time (such as by being knocked unconscious).
 Some abilities, such as a ranger's \textit{quarry} ability (see \pcref{Quarry}), last until their target is defeated.
@@ -278,7 +258,7 @@ For details, see \pcref{Dirty Trick}.
 \glossdef{disarm} You can use the \textit{disarm} ability to strike items held or worn by a creature.
 For details, see \pcref{Disarm}.
 
-\glossdef{disease} An affliction of the body, causing a steady deterioration over time. For the Disease ability tag, see \pcref{Ability Tags}.
+\glossdef{disease} An affliction of the body, causing a steady deterioration over time.
 
 \glossdef{dismiss}[dismissed] When you dismiss an ability, it ends, and all of its lingering effects are removed.
 Unless otherwise noted, all abilities with a \glossterm{duration} can be dismissed.
@@ -293,13 +273,9 @@ If it does not understand the language of the creature that dominated it, it sti
 % Does this need more description?
 \glossdef{duration} An ability's duration determines how long that ability lasts.
 
-\glossdef{dying} A dying creature is unconscious and near death. See \pcref{Dying}.
-
-\glossdef{Earth} See \pcref{Ability Tags}.
-
 \glossdef{effect} The result of using an \glossterm{ability}.
 
-\glossdef{electricity}[Electricity] A kind of \glossterm{energy}. For the Electricity ability tag, see \pcref{Ability Tags}.
+\glossdef{electricity} A kind of \glossterm{energy damage}.
 
 \glossdef{emanation} An emanation is a type of area that an ability can have (see \pcref{Area Types}).
 An emanation ability has effects within an area for the \glossterm{duration} of the ability.
@@ -317,9 +293,6 @@ For details, see \pcref{Allies and Enemies}.
 
 \glossdef{energy}[energy damage] There are four types of energy: cold, electricity, fire, and sonic. Energy effects often deal damage.
 
-\glossdef{exhausted} An exhausted creature moves at half speed and takes a \minus4 penalty to \glossterm{defenses}
-This does not stack with the \glossterm{fatigued} effect.
-
 \glossdef{exotic weapon}[exotic weapons] A rare few weapons are considered exotic weapons.
 They are unusually difficult to wield, and even being \glossterm{proficient} with the associated \glossterm{weapon group} does not grant you the ability to use an exotic ewapon.
 Some class abilities grant proficiency with exotic weapons.
@@ -334,19 +307,7 @@ If you control your fall with a successful Acrobatics or Jump check, you can red
 \glossdef{fascinated} A fascinated creature can take no actions. It remains in place, giving its total attention to some object, creature, or effect. It takes a \minus4 penalty to skill checks made as reactions, such as Awareness checks.
 If the creature notices any threat against it, such as an approaching enemy, it is no longer fascinated.
 
-\glossdef{fast healing} A creature with fast healing automatically heals hit points at the end of every \glossterm{action phase}.
-
-\glossdef{fatigued} A fatigued creature takes a \minus2 penalty to \glossterm{defenses}.
-This does not stack with the \glossterm{exhausted} effect.
-
-\glossdef{Fear} See \pcref{Ability Tags}.
-
-\glossdef{feint} You can use the \textit{feint} ability to trick a creature into lowering its defenses.
-For details, see \pcref{Feint}.
-
-\glossdef{fire}[Fire] A kind of \glossterm{energy}. For the Fire ability tag, see \pcref{Ability Tags}.
-
-\glossdef{Flesh} See \pcref{Ability Tags}.
+\glossdef{fire} A kind of \glossterm{energy damage}.
 
 \glossdef{fly speed} A creature with a fly speed has the ability to fly through the air.
 Its speed is the distance it covers in a single \glossterm{move action}.
@@ -357,12 +318,8 @@ This is called focused casting.
 While you do, you suffer a \minus4 penalty to defenses.
 For details, see \pcref{Focused and Defensive Casting}.
 
-\glossdef{Fog} See \pcref{Ability Tags}.
-
 \glossdef{follow} The \textit{follow} ability allows you to follow another creature to match their movements during the \glossterm{movement phase}.
 For details, see \pcref{Follow}.
-
-\glossdef{Force} See \pcref{Ability Tags}.
 
 \glossdef{free action}[free actions] Each round, you can any number of free actions.
 Free actions can be taken in any phase.
@@ -377,7 +334,7 @@ If the source of a frightened creature's fear is a creature and is \glossterm{de
 It cannot fly upwards, but it can travel forward while it descends, and it descends at a significantly reduced rate.
 For details, see \pcref{Gliding}.
 
-\glossdef{good}[Good] One of the four \glossterm{alignment} components. For the Good ability tag, see \pcref{Ability Tags}.
+\glossdef{good} One of the four \glossterm{alignment} components.
 
 \glossdef{grapple} You can use the \textit{grapple} ability to physically restrain a creature.
 For details, see \pcref{Grapple}.
@@ -415,9 +372,7 @@ Any \glossterm{physical attack} against a helpless creature automatically \gloss
 You should not know the result of your check, or even that a check was made.
 For details, see \pcref{Hidden Tasks}.
 
-\glossdef{hit point}[hit points] Your hit points measure how hard you are to kill.
-When you take damage, you subtract that damage from your hit points.
-For details, see \pcref{Hit Points}.
+\glossdef{hunting party} A hunting party is the group of allies affected by a ranger's \textit{quarry} ability (see \pcref{Quarry}).
 
 \glossdef{ignited} An ignited creature has been set on fire.
 It takes 1d6 fire damage at the end of each \glossterm{action phase} and takes a \minus2 penalty to \glossterm{defenses}.
@@ -463,10 +418,6 @@ If a creature being knocked back encounters an obstacle, it and the obstacle eac
 As its bearer gains levels, it increases in power as well.
 For details, see \pcref{Legacy Items}.
 
-\glossdef{Life} See \pcref{Ability Tags}.
-
-\glossdef{Light} See \pcref{Ability Tags}.
-
 \glossdef{light undergrowth} A space with passable bushes, vines, and similar natural obstacles has light undergrowth.
 Light undergrowth is \glossterm{difficult terrain} and provides \glossterm{concealment}.
 
@@ -487,7 +438,7 @@ Line of sight is blocked by any obstacle that blocks sight.
 For details, see \pcref{Line of Sight}.
 
 \glossdef{long rest} A long rest represents eight hours of relaxation or sleep.
-It allows you to recover all of your spent \glossterm{action points}.
+It allows you to recover all of your spent \glossterm{action points} and heal one \glossterm{vital wound}.
 For details, see \pcref{Long Rest}.
 
 \glossdef{low-light vision} A creature with low-light vision can see more clearly in conditions of dim light.
@@ -566,8 +517,6 @@ The movement phase is followed by the \glossterm{action phase}.
 Mundane abilities have a tangible component and some form of natural explanation.
 Examples include \glossterm{strikes}, a dragon's breath weapon, and a barbarian's rage.
 Unless otherwise indicated, all abilities are mundane in nature.
-
-\glossdef{Mystic} See \pcref{Ability Tags}.
 
 \glossdef{mystic sphere} A mystic sphere is a collection of thematically related magical effects that includes both \glossterm{spells} and \glossterm{rituals}.
 For details, see \pcref{Mystic Spheres}.
@@ -731,8 +680,8 @@ For details, see \pcref{Armor}.
 
 \glossdef{Shielding} See \pcref{Ability Tags}.
 
-\glossdef{short rest}[short rests] A short rest represents five minutes of relaxation.
-It allows you to regain half of your \glossterm{hit points} and any \glossterm{action points} you released from \glossterm{attunement}.
+\glossdef{short rest}[short rests] A short rest represents ten minutes of relaxation.
+It allows you to regain lost \glossterm{hit points} and any \glossterm{action points} you released from \glossterm{attunement}.
 For details, see \pcref{Short Rest}.
 
 \glossdef{shove} You can use the \textit{shove} ability to forcibly move a creature.
@@ -791,13 +740,6 @@ Many areas are measured in squares for convenience.
 While squeezing, a creature moves at half speed and takes a \minus2 penalty to \glossterm{accuracy} with \glossterm{strikes} and Armor and Reflex defenses.
 For details, see \pcref{Squeezing}.
 
-\glossdef{stabilization check} A \glossterm{check} made when a creature is \glossterm{dying} to see if it stabilizes or dies.
-For details, see \pcref{Injury, Death, and Healing}.
-
-\glossdef{staggered} A staggered creature is temporarily overwhelmed by physical trauma.
-It takes a \minus4 penalty to \glossterm{accuracy} and \glossterm{checks}.
-Becoming \glossterm{bloodied} cause you to become staggered (see \pcref{Staggered}).
-
 \glossdef{standard action}[standard actions] You can use a standard action to attack with a weapon, cast a spell, drink a potion, and do most other things that take concentration and effort.
 
 \glossdef{standard damage} A common damage value for abilities.
@@ -813,7 +755,7 @@ In addition, it takes a \minus4 penalty to \glossterm{accuracy} and Mental defen
 This does not stack with the \glossterm{dazed} effect.
 
 \glossdef{subdual damage} Subdual damage is a special kind of damage that can't kill you.
-If you take subdual damage in excess of your hit points, you fall unconscious.
+If you would die from subdual damage, you fall unconscious instead.
 For details, see \pcref{Subdual Damage}.
 
 \glossdef{Subtle} See \pcref{Ability Tags}.
@@ -856,13 +798,10 @@ A spell that affects an area is not a targeted ability, because you choose the a
 For example, balancing on slippery ground is a task that you can use the Acrobatics skill for (see \pcref{Balance}).
 For details, see \pcref{Tasks}.
 
-\glossdef{Teleportation} See \pcref{Ability Tags}.
+\glossdef{teleportation}[teleport] A creature or object that is teleported instantly leaves one location and arrives at another.
+For deatils, see \pcref{Teleportation}.
 
 \glossdef{Temporal} See \pcref{Ability Tags}.
-
-\glossdef{threat} A creature's threat represents how threatening it is.
-Many monsters choose the targets of their attacks based on the threat of their foes.
-For details, see \pcref{Threat}.
 
 \glossdef{threaten}[threatened] If you are using a \glossterm{melee} weapon, all enemies within your \glossterm{reach} with that weapon are \glossterm{threatened}.
 A threatened creature may suffer \glossterm{overwhelm penalties} if there are multiple creatures threatening it.
@@ -879,7 +818,8 @@ For details, see \pcref{Total Cover}.
 Your modifier with a trained skill is equal to either half your level \add 1 or the skill's \glossterm{key attribute} (if any), whichever is higher.
 For details, see \pcref{Skill Training}.
 
-\glossdef{Trap} See \pcref{Ability Tags}.
+\glossdef{trap} A trap triggers a delayed effect once a particular condition is met.
+For details, see \pcref{Traps}.
 
 \glossdef{trip} You can knock a foe off its feet with the \textit{trip} ability.
 For details, see \pcref{Trip}.
@@ -918,17 +858,13 @@ For details, see \pcref{Casting Components}.
 
 \glossdef{Visual} See \pcref{Ability Tags}.
 
-\glossdef{vital damage} If you take damage in excess of your \glossterm{hit points}, that damage is dealt as vital damage.
-Vital damage inflicts debilitating \glossterm{vital damage penalties}.
-For details, see \pcref{Vital Damage}.
-
-\glossdef{vital damage penalties} For every 4 points of \glossterm{vital damage} you have, you take a \minus1 penalty to \glossterm{accuracy}, \glossterm{checks}, and \glossterm{defenses}.
-For details, see \pcref{Vital Damage}.
+\glossdef{vital wound} A \glossterm{vital wound} is a serious injury that inflicts negative effects on you.
+You gain a \glossterm{vital wound} if you take damage in excess of your \glossterm{wound resistance} from a single damage roll.
+For details, see \pcref{Vital Wounds}.
 
 \glossdef{vulnerable} A creature can be vulnerable to a type of damage or a special weapon material.
 It takes double damage from sources it is vulnerable to.
 If it takes damage from a damage source with multiple types or multiple materials, it takes double damage if it is vulnerable to any of those types or materials.
-Vulnerability is calculated before applying \glossterm{damage reduction}.
 \par If a creature would become vulnerable to the same thing multiple times, it still only takes double damage from damage of that type.
 
 \glossdef{wall} A wall is an area shape that an ability can have (see \pcref{Area Shapes}).
@@ -946,6 +882,13 @@ For details, see \pcref{Weapon Groups}.
 
 \glossdef{withdraw} The \textit{withdraw} ability allows you to stay away from a creature, preventing it from coming too close to you.
 For details, see \pcref{Withdraw}.
+
+\glossdef{wound resistance} You gain a \glossterm{vital wound} if you take more damage than your \glossterm{wound resistance} from a single damage roll.
+For details, see \pcref{Wound Resistance}.
+
+\glossdef{wound roll} When you gain a \glossterm{vital wound}, you make a \glossterm{wound roll} to determine the detrimental effect of the \glossterm{vital wound}.
+To make a \glossterm{wound roll}, roll 1d10 \sub the number of \glossterm{vital wounds} you have.
+For details, see \pcref{Vital Wounds}.
 
 \glossdef{zone} A zone is a type of area that an ability can have (see \pcref{Area Types}).
 A zone ability has effects within an area for the \glossterm{duration} of the ability.

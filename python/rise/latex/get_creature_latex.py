@@ -17,8 +17,8 @@ def get_creature_latex(
         challenge_rating=creature.challenge_rating,
         constitution=creature.constitution,
         dexterity=creature.dexterity,
+        fatigue_threshold=creature.fatigue_threshold,
         fortitude_defense=creature.fortitude_defense,
-        hit_points=creature.hit_points,
         intelligence=creature.intelligence,
         level=creature.level,
         mental_defense=creature.mental_defense,
@@ -36,6 +36,7 @@ def get_creature_latex(
         strength=creature.strength,
         strikes=creature.strikes,
         willpower=creature.willpower,
+        wound_threshold=creature.wound_threshold,
         # extra args
         actions=actions,
         active_abilities=active_abilities,
@@ -49,8 +50,8 @@ def get_latex(
         armor_defense,
         constitution,
         dexterity,
+        fatigue_threshold,
         fortitude_defense,
-        hit_points,
         intelligence,
         level,
         mental_defense,
@@ -63,6 +64,7 @@ def get_latex(
         strikes,
         reflex_defense,
         willpower,
+        wound_threshold,
         actions=None,
         active_abilities=None,
         behavior=None,
@@ -76,7 +78,7 @@ def get_latex(
         speed=30,
         reach=5,
 ):
-    behavior = behavior or 'Attack highest threat'
+    behavior = behavior or 'Attack highest Strength'
     return join(
         f"""
             \\begin<monsection><{name}>{name_suffix_text(name_suffix)}<{level}>[{challenge_rating}]
@@ -84,8 +86,7 @@ def get_latex(
                 \\begin<spellcontent>
                     \\begin<spelltargetinginfo>
                         \\spelltwocol<
-                            \\textbf<HP> {hit_points};
-                            \\textbf<Bloodied> {hit_points // 2};
+                            \\textbf<FT> {fatigue_threshold}, \\textbf<WT> {wound_threshold};
                         >
                             <\\textbf<AP> {recovery_action_points}/{reserve_action_points}>
 

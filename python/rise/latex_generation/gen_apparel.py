@@ -12,7 +12,7 @@ def generate_armor():
         name="Protective Armor",
         level=7,
         material_type='Body armor',
-        tags=['Shielding'],
+        tags=[],
         description="""
             You gain a +1 \\glossterm<magic bonus> to Armor defense.
         """,
@@ -23,7 +23,7 @@ def generate_armor():
         name="Protective Shield",
         level=7,
         material_type='Shield',
-        tags=['Shielding'],
+        tags=[],
         description="""
             You gain a +1 \\glossterm<magic bonus> to Armor defense.
         """,
@@ -127,24 +127,24 @@ def generate_armor():
 
     apparel.append(MagicItem(
         name="Armor of Energy Resistance",
-        level=4,
-        tags=['Shielding'],
+        level=5,
+        tags=[],
         material_type='Body armor',
         description="""
-            You gain a \\glossterm<magic bonus> equal to the item's \\glossterm<power> to \\glossterm<damage reduction> against \\glossterm<energy damage>.
-            When you resist energy with this item, it sheds light as a torch until the end of the next round.
-            The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, red for fire, and brown for sonic.
+            You gain a \\glossterm<magic bonus> equal to half the item's \\glossterm<power> to \\glossterm<resistances> against \\glossterm<energy damage>.
+            When you resist energy damage, it sheds light as a torch until the end of the next round.
+            The color of the light depends on the energy damage resisted: green for acid, blue for cold, yellow for electricity, and red for fire.
         """,
         short_description="Reduces energy damage",
     ))
 
     apparel.append(MagicItem(
         name="Armor of Energy Resistance, Greater",
-        level=12,
-        tags=['Shielding'],
+        level=14,
+        tags=[],
         material_type='Body armor',
         description="""
-            This item functions like the \\mitem<armor of energy resistance> item, except that the damage reduction is equal to twice the item's \\glossterm<power>.
+            This item functions like the \\mitem<armor of energy resistance> item, except that the bonus is equal to the item's \\glossterm<power>.
         """,
         short_description="Drastically reduces energy damage",
     ))
@@ -229,30 +229,41 @@ def generate_armor():
 
     apparel.append(MagicItem(
         name="Armor of Invulnerability",
-        level=10,
-        tags=['Shielding'],
+        level=8,
+        tags=[],
         material_type='Body armor',
         description="""
-            You gain a \\glossterm<magic bonus> equal to this item's \\glossterm<power> to \\glossterm<damage reduction> against damage from \\glossterm<physical attacks>.
+            The armor's bonus to \\glossterm<resistances> based on its armor type is doubled.
         """,
-        short_description="Reduces damage from physical attacks",
+        short_description="Doubles armor resistance bonus",
     ))
 
     apparel.append(MagicItem(
         name="Armor of Invulnerability, Greater",
-        level=16,
-        tags=['Shielding'],
+        level=14,
+        tags=[],
         material_type='Body armor',
         description="""
-            This item functions like the \\mitem<armor of invulnerability> item, except that the damage reduction is equal to twice the item's \\glossterm<power>.
+            The armor's bonus to \\glossterm<resistances> based on its armor type is tripled.
         """,
-        short_description="Drastically reduces damage from physical attacks",
+        short_description="Triples armor resistance bonus",
+    ))
+
+    apparel.append(MagicItem(
+        name="Armor of Invulnerability, Supreme",
+        level=20,
+        material_type='Body armor',
+        tags=[],
+        description="""
+            The armor's bonus to \\glossterm<resistances> based on its armor type is quadrupled.
+        """,
+        short_description="Quadruples armor resistance bonus",
     ))
 
     apparel.append(MagicItem(
         name="Shield of Mystic Reflection",
         level=12,
-        tags=['Mystic'],
+        tags=[],
         material_type='Shield',
         description="""
             As a standard action, you can activate this shield.
@@ -305,7 +316,7 @@ def generate_worn():
         name="Bracers of Armor",
         level=2,
         material_type='Bracers',
-        tags=['Shielding'],
+        tags=[],
         description="""
             You gain a +2 bonus to Armor defense.
             The protection from these bracers is treated as body armor, and it does not stack with any other body armor you wear.
@@ -342,7 +353,7 @@ def generate_worn():
         name="Torchlight Gloves",
         level=2,
         material_type='Gloves',
-        tags=['Light'],
+        tags=[],
         description="""
             These gloves shed light as a torch.
             As a \\glossterm<standard action>, you may snap your fingers to suppress or resume the light from either or both gloves.
@@ -430,7 +441,7 @@ def generate_worn():
         name="Circlet of Blasting",
         level=5,
         material_type='Circlet',
-        tags=['Fire'],
+        tags=[],
         description="""
             As a standard action, you can activate this circlet.
             If you do, make an attack vs. Armor against a creature or object within \\rngmed range.
@@ -443,7 +454,7 @@ def generate_worn():
         name="Circlet of Blasting, Greater",
         level=10,
         material_type='Circlet',
-        tags=['Fire'],
+        tags=[],
         description="""
             This item functions like the \\textit<circlet of blasting>, except that it gains a +1d bonus to damage.
         """,
@@ -454,7 +465,7 @@ def generate_worn():
         name="Circlet of Blasting, Supreme",
         level=16,
         material_type='Circlet',
-        tags=['Fire'],
+        tags=[],
         description="""
             This item functions like the \\textit<circlet of blasting>, except that it gains a +2d bonus to damage.
         """,
@@ -495,15 +506,15 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Crown of Flame",
-        level=5,
+        level=9,
         material_type='Crown',
-        tags=['Fire'],
+        tags=[],
         description="""
             This crown is continuously on fire.
             The flame sheds light as a torch.
 
             You and your \\glossterm<allies> within a \\arealarge radius emanation from you
-                gain a \\glossterm<magic bonus> equal to this item's \\glossterm<power> to \\glossterm<damage reduction> against fire damage.
+                gain a \\glossterm<magic bonus> equal to this item's \\glossterm<power> to \\glossterm<resistances> against fire damage.
         """,
         short_description="Grants nearby allies immunity to fire damage",
     ))
@@ -512,7 +523,7 @@ def generate_worn():
         name="Crown of Lightning",
         level=7,
         material_type='Crown',
-        tags=['Electricity'],
+        tags=[],
         description="""
             This crown continuously crackles with electricity.
             The constant sparks shed light as a torch.
@@ -525,27 +536,26 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Crown of Frost",
-        level=11,
+        level=13,
         material_type='Crown',
-        tags=['Cold'],
+        tags=[],
         description="""
             At the end of each \\glossterm<action phase>, you make an attack vs. Fortitude against all enemies within a \\areamed radius emanation from you.
-            A hit deals cold \\glossterm<standard damage> -3d.
-            Each creature that takes damage in this way is \\fatigued until the end of the next round.
+            At hit deals cold \\glossterm<standard damage> -2d.
         """,
-        short_description="Continuously damages and fatigues nearby enemies",
+        short_description="Continuously damages nearby enemies",
     ))
 
     apparel.append(MagicItem(
         name="Crown of Thunder",
-        level=9,
+        level=11,
         material_type='Crown',
-        tags=['Sonic'],
+        tags=[],
         description="""
             The crown constantly emits a low-pitched rumbling.
             To you and your \\glossterm<allies>, the sound is barely perceptible.
             However, all other creatures within a \\arealarge radius emanation from you hear the sound as a deafening, continuous roll of thunder.
-            The noise blocks out all other sounds quieter than thunder, causing them to be \\deafened while they remain in the area and until the end of the next round after they leave.
+            The noise blocks out all other sounds quieter than thunder, causing them to be \\deafened while they remain in the area.
         """,
         short_description="Continously deafens nearby enemies",
     ))
@@ -571,7 +581,7 @@ def generate_worn():
         name="Boots of the Skydancer",
         level=7,
         material_type='Boots',
-        tags=['Air', 'Swift'],
+        tags=['Swift'],
         description="""
             As a \\glossterm<free action>, you can activate these boots.
             When you do, you may treat air as if it were solid ground to your feet for the rest of the current phase.
@@ -585,7 +595,7 @@ def generate_worn():
         name="Boots of the Skydancer, Greater",
         level=13,
         material_type='Boots',
-        tags=['Air', 'Swift'],
+        tags=['Swift'],
         description="""
             This item functions like the \\magicitem<boots of the skydancer>, except that the ability lasts until the end of the round.
             In addition, you can use this item twice before the boots touch the ground.
@@ -597,7 +607,7 @@ def generate_worn():
         name="Boots of Earth's Embrace",
         level=4,
         material_type='Boots',
-        tags=['Earth'],
+        tags=[],
         description="""
             While you are standing on solid ground, you are immune to effects that would force you to move.
             This does not protect you from other effects of those attacks, such as damage.
@@ -643,7 +653,7 @@ def generate_worn():
         name="Boots of Speed",
         level=6,
         material_type='Boots',
-        tags=['Temporal'],
+        tags=[],
         description="""
             You gain a +10 foot \\glossterm<magic bonus> to your land speed, up to a maximum of double your normal speed.
         """,
@@ -654,7 +664,7 @@ def generate_worn():
         name="Boots of Speed, Greater",
         level=10,
         material_type='Boots',
-        tags=['Temporal'],
+        tags=[],
         description="""
             You gain a +20 foot \\glossterm<magic bonus> to your land speed, up to a maximum of double your normal speed.
         """,
@@ -665,7 +675,7 @@ def generate_worn():
         name="Boots of Speed, Supreme",
         level=14,
         material_type='Boots',
-        tags=['Temporal'],
+        tags=[],
         description="""
             You gain a +30 foot \\glossterm<magic bonus> to your land speed, up to a maximum of double your normal speed.
         """,
@@ -676,7 +686,7 @@ def generate_worn():
         name="Astral Boots",
         level=16,
         material_type='Boots',
-        tags=['Teleportation'],
+        tags=[],
         description="""
             When you move, you can teleport the same distance instead.
             This does not change the total distance you can move, but you can teleport in any direction, even vertically.
@@ -715,7 +725,7 @@ def generate_worn():
         name="Seven League Boots",
         level=12,
         material_type='Boots',
-        tags=['Teleportation'],
+        tags=[],
         description="""
             As a standard action, you can spend an \\glossterm<action point> to activate these boots.
             If you do, you teleport exactly 25 miles in a direction you specify.
@@ -754,7 +764,7 @@ def generate_worn():
         name="Ring of Protection",
         level=8,
         material_type='Ring',
-        tags=['Shielding'],
+        tags=[],
         description="""
             This ring creates a transluscent shield-like barrier that floats in front of you, deflecting enemy attacks.
             You gain a +1 \\glossterm<magic bonus> to Armor and Reflex defenses.
@@ -767,7 +777,7 @@ def generate_worn():
         name="Ring of Protection, Greater",
         level=16,
         material_type='Ring',
-        tags=['Shielding'],
+        tags=[],
         description="""
             This item functions like the \\magicitem<ring of protection>, except that the bonus increases to +2.
         """,
@@ -776,24 +786,24 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Ring of Energy Resistance",
-        level=5,
+        level=6,
         material_type='Ring',
-        tags=['Shielding'],
+        tags=[],
         description="""
-            You gain a \\glossterm<magic bonus> equal to this item's \\glossterm<power> to \\glossterm<damage reduction> against \\glossterm<energy damage>.
+            You gain a \\glossterm<magic bonus> equal to half this item's \\glossterm<power> to \\glossterm<resistances> against \\glossterm<energy damage>.
             When you resist energy with this ability, the ring sheds light as a torch until the end of the next round.
-            The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, red for fire, and brown for sonic.
+            The color of the light depends on the energy damage resisted: green for acid, blue for cold, yellow for electricity, and red for fire.
         """,
         short_description="Reduces energy damage",
     ))
 
     apparel.append(MagicItem(
         name="Ring of Energy Resistance, Greater",
-        level=13,
+        level=15,
         material_type='Ring',
-        tags=['Shielding'],
+        tags=[],
         description="""
-            This item functions like the \\mitem<ring of energy resistance>, except that the damage reduction is equal to twice the item's \\glossterm<power>.
+            This item functions like the \\mitem<ring of energy resistance>, except that the bonus is equal to the item's \\glossterm<power>.
         """,
         short_description="Drastically reduces energy damage",
     ))
@@ -802,7 +812,7 @@ def generate_worn():
         name="Ring of Elemental Endurance",
         level=2,
         material_type='Ring',
-        tags=['Shielding'],
+        tags=[],
         description="""
             You can exist comfortably in conditions between -50 and 140 degrees Fahrenheit without any ill effects.
             You suffer the normal penalties in temperatures outside of that range.
@@ -826,7 +836,7 @@ def generate_worn():
         name="Ring of Sustenance",
         level=7,
         material_type='Ring',
-        tags=['Creation', 'Temporal'],
+        tags=['Creation'],
         description="""
             You continuously gain nourishment, and no longer need to eat or drink.
             In addition, you need only one-quarter your normal amount of sleep (or similar activity, such as elven trance) each day.
@@ -838,14 +848,25 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Ring of Regeneration",
-        level=11,
+        level=10,
         material_type='Ring',
-        tags=['Life'],
+        tags=[],
         description="""
-            At the end of each \\glossterm<action phase>, you heal hit points equal to this item's \\glossterm<power>.
-            Only damage taken while wearing the ring can be healed in this way.
+            A the end of each round, you gain a +2 bonus to the \\glossterm<wound roll> of your most recent \\glossterm<vital wound>.
+            The \\glossterm<wound roll> for that \\glossterm<vital wound> cannot be modified again.
         """,
-        short_description="Grants fast healing",
+        short_description="Reduce the severity of vital wounds",
+    ))
+
+    apparel.append(MagicItem(
+        name="Ring of Regeneration, Greater",
+        level=16,
+        material_type='Ring',
+        tags=[],
+        description="""
+            This item functions like the \\mitem<ring of regeneration> item, except that the bonus increases to +3.
+        """,
+        short_description="Greatly reduces the severity of vital wounds",
     ))
 
     # Amulets
@@ -872,29 +893,39 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Amulet of Health",
-        level=2,
+        level=6,
         material_type='Amulet',
         description="""
-            You increase your maximum hit points by an amount equal to this item's \\glossterm<power>.
+            You gain a +1 bonus to \\glossterm<wound rolls>.
         """,
-        short_description="Increases your hit points",
+        short_description="Grants a +1 bous to \\glossterm<wound rolls>",
     ))
 
     apparel.append(MagicItem(
         name="Amulet of Health, Greater",
-        level=8,
+        level=12,
         material_type='Amulet',
         description="""
-            You increase your maximum hit points by an amount equal to twice this item's \\glossterm<power>.
+            This item functions like the \\mitem<amulet of health>, except that the bonus increases to +2.
         """,
-        short_description="Greatly increases your hit points",
+        short_description="Grants a +2 bonus to \\glossterm<wound rolls>",
+    ))
+
+    apparel.append(MagicItem(
+        name="Amulet of Health, Supreme",
+        level=18,
+        material_type='Amulet',
+        description="""
+            This item functions like the \\mitem<amulet of health>, except that the bonus increases to +3.
+        """,
+        short_description="Grants a +3 bonus to \\glossterm<wound rolls>",
     ))
 
     apparel.append(MagicItem(
         name="Amulet of the Planes",
         level=12,
         material_type='Amulet',
-        tags=['Teleportation'],
+        tags=[],
         description="""
             When you perform the \\ritual<plane shift> ritual, this amulet provides all action points required.
             This does not grant you the ability to perform the \\ritual<plane shift> ritual if you could not already.
@@ -906,7 +937,7 @@ def generate_worn():
         name="Amulet of Nondetection",
         level=6,
         material_type='Amulet',
-        tags=['Mystic'],
+        tags=[],
         description="""
             You gain a +4 bonus to defenses against abilities with the \\glossterm<Detection> or \\glossterm<Scrying> tags.
         """,
@@ -917,7 +948,7 @@ def generate_worn():
         name="Amulet of Nondetection, Greater",
         level=14,
         material_type='Amulet',
-        tags=['Mystic'],
+        tags=[],
         description="""
             You gain a +8 bonus to defenses against abilities with the \\glossterm<Detection> or \\glossterm<Scrying> tags.
         """,
@@ -952,7 +983,7 @@ def generate_worn():
         name="Cloak of Mist",
         level=8,
         material_type='Cloak',
-        tags=['Fog', 'Manifestation'],
+        tags=['Manifestation'],
         description="""
             Fog constantly fills a \\areamed radius emanation from you.
             This fog does not fully block sight, but it provides \\concealment.
@@ -966,7 +997,7 @@ def generate_worn():
         name="Cloak of Mist, Greater",
         level=16,
         material_type='Cloak',
-        tags=['Fog', 'Manifestation'],
+        tags=['Manifestation'],
         description="""
             A thick fog constantly fills a \\areamed radius emanation from you.
             This fog completely blocks sight beyond 10 feet.
@@ -981,7 +1012,7 @@ def generate_worn():
         name="Vanishing Cloak",
         level=13,
         material_type='Cloak',
-        tags=['Sensation', 'Teleportation'],
+        tags=['Sensation'],
         description="""
             As a standard action, you can activate this cloak.
             When you do, you teleport to an unoccupied location within \\rngmed range of your original location.
@@ -995,85 +1026,105 @@ def generate_worn():
     # Maybe too strong?
     apparel.append(MagicItem(
         name="Hexward Amulet",
-        level=9,
+        level=7,
         material_type='Amulet',
-        tags=['Mystic'],
+        tags=[],
         description="""
-            You gain a +2 bonus to defenses against \\glossterm<magical> abilities that target you directly.
+            You gain a +1 bonus to defenses against \\glossterm<magical> abilities that target you directly.
             This does not protect you from abilities that affect an area.
+        """,
+        short_description="Grants +1 defenses against targeted magical attacks",
+    ))
+
+    apparel.append(MagicItem(
+        name="Hexproof Amulet, Greater",
+        level=13,
+        material_type='Amulet',
+        tags=[],
+        description="""
+            This item functions like the \\mitem<hexward amulet> item, except that the bonus increases to +2.
         """,
         short_description="Grants +2 defenses against targeted magical attacks",
     ))
 
     apparel.append(MagicItem(
-        name="Hexproof Amulet, Greater",
-        level=15,
+        name="Hexproof Amulet, Supreme",
+        level=19,
         material_type='Amulet',
-        tags=['Mystic'],
+        tags=[],
         description="""
-            You gain a +4 bonus to defenses against \\glossterm<magical> abilities that target you directly.
-            This does not protect you from abilities that affect an area.
+            This item functions like the \\mitem<hexward amulet> item, except that the bonus increases to +3.
         """,
-        short_description="Grants +4 defenses against targeted magical attacks",
+        short_description="Grants +3 defenses against targeted magical attacks",
     ))
 
     # Belts
 
     apparel.append(MagicItem(
         name="Belt of Healing",
-        level=1,
+        level=2,
         material_type='Belt',
-        tags=['Life'],
+        tags=[],
         description="""
-            As a standard action, you can activate this belt.
-            If you do, you heal hit points equal to \\glossterm<standard damage> -1d.
+            As a standard action, you can use this belt to gain a +1 bonus to the \\glossterm<wound roll> of your most recent \\glossterm<vital wound>.
+            The \\glossterm<wound roll> for that \\glossterm<vital wound> cannot be modified again.
         """,
         short_description="Grants healing",
     ))
 
     apparel.append(MagicItem(
         name="Belt of Healing, Greater",
-        level=7,
+        level=8,
         material_type='Belt',
-        tags=['Life'],
+        tags=[],
         description="""
-            As a standard action, you can activate this belt.
-            If you do, you heal hit points equal to \\glossterm<standard damage>.
+            This item functions like the \\textit<belt of healing>, except that the bonus increases to +2.
+        """,
+        short_description="Grants more healing",
+    ))
+
+    apparel.append(MagicItem(
+        name="Belt of Healing, Supreme",
+        level=14,
+        material_type='Belt',
+        tags=[],
+        description="""
+            This item functions like the \\textit<belt of healing>, except that the bonus increases to +3.
         """,
         short_description="Grants more healing",
     ))
 
     apparel.append(MagicItem(
         name="Lifekeeping Belt",
-        level=2,
+        level=7,
         material_type='Belt',
-        tags=['Life'],
+        tags=[],
         description="""
-            You reduce your \\glossterm<vital damage penalties> by 2.
+            You gain a +1 \\glossterm<magic bonus> to \\glossterm<wound rolls>.
         """,
-        short_description="Reduces vital damage penalties by 2",
+        short_description="Grants +1 bonus to \\glossterm<wound rolls>",
     ))
 
     apparel.append(MagicItem(
         name="Lifekeeping Belt, Greater",
-        level=7,
+        level=13,
         material_type='Belt',
-        tags=['Life'],
+        tags=[],
         description="""
-            You reduce your \\glossterm<vital damage penalties> by 4.
+            You gain a +2 \\glossterm<magic bonus> to \\glossterm<wound rolls>.
         """,
-        short_description="Reduces vital damage penalties by 4",
+        short_description="Grants +2 bonus to \\glossterm<wound rolls>",
     ))
 
     apparel.append(MagicItem(
         name="Lifekeeping Belt, Supreme",
-        level=13,
+        level=19,
         material_type='Belt',
-        tags=['Life'],
+        tags=[],
         description="""
-            You reduce your \\glossterm<vital damage penalties> by 8.
+            You gain a +3 \\glossterm<magic bonus> to \\glossterm<wound rolls>.
         """,
-        short_description="Reduces vital damage penalties by 8",
+        short_description="Grants +3 bonus to \\glossterm<wound rolls>",
     ))
 
     apparel.append(MagicItem(
@@ -1109,7 +1160,7 @@ def generate_worn():
         name="Gloves of Spell Investment",
         level=7,
         material_type='Gloves',
-        tags=['Mystic'],
+        tags=[],
         description="""
             When you cast a spell that does not have the \\glossterm<AP>, \\glossterm<Attune>, \\glossterm<Sustain> tags,
                 you can invest the magic of the spell in these gloves.
@@ -1129,7 +1180,7 @@ def generate_worn():
         name="Gloves of Spell Investment, Greater",
         level=13,
         material_type='Gloves',
-        tags=['Mystic'],
+        tags=[],
         description="""
             This item functions like the \\mitem<gloves of spell investment>, except that you can store up to two spells in the gloves.
             When you activate the gauntlets, you choose which spell to use.

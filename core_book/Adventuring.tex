@@ -163,7 +163,7 @@
             If going downstream, add the speed of the current (typically 3 miles per hour) to the speed of the vehicle. In addition to 10 hours of being rowed, the vehicle can also float an additional 14 hours, if someone can guide it, so add an additional 42 miles to the daily distance traveled. These vehicles can't be rowed against any significant current, but they can be pulled upstream by draft animals on the shores.
         \end{dtable}
 
-        Characters covering long distances cross-country use overland movement. Overland movement is measured in miles per hour or miles per day. A day usually represents 10 hours of actual travel time. For rowed watercraft, a day represents 10 hours of rowing. For a sailing ship, it represents 24 hours.
+        Characters covering long distances cross-country use overland movement. Overland movement is measured in miles per hour or miles per day. A day represents 10 hours of actual travel time. For rowed watercraft, a day represents 10 hours of rowing. For a sailing ship, it represents 24 hours.
 
         \parhead{Walk} A character can walk 10 hours in a day of travel without a problem. Walking for longer than that, or hustling faster than that, can wear them out (see \pcref{Overland Exertion}).
         \parhead{Terrain} The terrain through which a character travels affects how much distance they can cover in an hour or a day (see \trefnp{Terrain and Overland Movement}).
@@ -171,20 +171,18 @@
         A road is typically a dirt track.
         A trail is like a road, except that it allows only single-file travel and does not benefit a party traveling with vehicles.
         Trackless terrain is a wild area with no significant paths.
-        \parhead{Mounted Movement} A mount bearing a rider can move at a hustle. The damage it takes when doing so, however, is lethal damage, not subdual damage. The creature can also be ridden in a forced march, but its Constitution checks automatically fail, and, again, the damage it takes is lethal damage. Mounts also become fatigued when they take any damage from hustling or forced marches.
+        \parhead{Mounted Movement} A mount bearing a rider can move at a hustle. The damage it takes when doing so, however, is not subdual damage. The creature can also be ridden in a forced march, but its Constitution checks automatically fail, and, again, the damage it takes is lethal damage. Mounts also become fatigued when they take any damage from hustling or forced marches.
 
         See \trefnp{Mounts and Vehicles} for mounted speeds and speeds for vehicles pulled by draft animals.
 
         \parhead{Waterborne Movement} See \trefnp{Mounts and Vehicles} for speeds for water vehicles.
 
-    \subsubsection{Overland Exertion}
-        You can exert yourself while travelling overland to cover more ground.
-        If you exert yourself, you can hustle, which allows you to travel twice the normal distance in the same time.
+    \subsubsection{Overland Exertion}\label{Overland Exertion}
+        While travelling overland, you can exert yourself while travelling overland to cover more ground.
+        You can hustle, which allows you to travel twice the normal distance in the same time.
         You can also make a forced march, which allows you to travel for a longer period of time during the day.
-        You can also combine both forms of exertion.
-        Exerting yourself for an hour in between \glossterm{long rests} deals 1d6 point of \glossterm{subdual damage}.
-        Each additional hour deals \plus1d more subdual damage than the previous hour.
-        This damage cannot be healed by a \glossterm{short rest}, and it ignores \glossterm{damage reduction} and \glossterm{hardness}.
+        Exerting yourself for an hour in between \glossterm{long rests} deals 1d6 points of \glossterm{subdual damage} \add 1d per additional hour beyond the first.
+        % TODO: it would be nice if these hit points couldn't be healed
         The damage progression is summarized in \tref{Overland Exertion Damage}.
 
         If you combine both forms of exertion, you take both increments of subdual damage in sequence, increasing each one.
@@ -234,11 +232,11 @@
             \parhead{Hardness} Each object has a \glossterm{hardness} which indicates how durable it is.
             For details, see \pcref{Hardness}.
 
-%None of these tables exist currently. Also object hit points are obnoxious.
-%(see \trefnp{Common Armor, Weapon, and Shield Hardness and Hit Points}; \trefnp{Substance Hardness and Hit Points}; and \trefnp{Object Hardness and Hit Points}).
-            \parhead{Hit Points} An object's hit point total depends on what it is made of and how big it is. When an object's hit points reach 0, it's ruined.
+%None of these tables exist currently. Also object thresholds are obnoxious.
+%(see \trefnp{Common Armor, Weapon, and Shield Hardness and Thresholds}; \trefnp{Substance Hardness and Thresholds}; and \trefnp{Object Hardness and Thresholds}).
+            \parhead{Resistances} An object's \glossterm{resistances} depend on what it is made of and how big it is.
 
-            Very large objects may have separate hit point totals for different sections.
+            Smaller sections of very large objects may be treated as independent objects for determining \glossterm{resistances} and tracking whether the object is \glossterm{broken} or \glossterm{destroyed}.
 
             \subparhead{Energy Attacks} Sonic attacks deal damage to most objects just as they do to creatures; roll damage and apply it normally after a successful hit. Electricity and fire attacks deal half damage to most objects, and cold attacks deal one-quarter damage to most objects.
 
@@ -256,13 +254,12 @@
 
             \subparhead{Animated Objects} Animated objects count as creatures for purposes of determining their Armor Defense (do not treat them as inanimate objects).
 
-
         \subsubsection{Damaged Objects}
-            An object that has taken damage remains fully functional until its hit points are reduced to 0, at which point it is \glossterm{broken}.
-            Any additional damage is applied as \glossterm{vital damage}.
-            If an object has more vital damage than its maximum hit points, it is \glossterm{destroyed}.
+            An object that gains a \glossterm{vital wound} becomes \glossterm{broken}.
+            If it gains an additional \glossterm{vital wound}, it is \glossterm{destroyed}.
+            Objects do not make \glossterm{wound rolls}, and they ignore any other effects of \glossterm{vital wounds}.
 
-            Both magical and mundane objects that are damaged or broken can be repaired to full hit points for a cost equal to 10\% of their value.
+            Both magical and mundane objects that have lost \glossterm{hit points} or become \glossterm{broken} can be repaired to normal for a cost equal to 10\% of their value.
             You must be able to craft the item originally to repair it.
 
             \parhead{Broken Objects}\label{Broken Objects}
@@ -274,10 +271,10 @@
             Magic items that are destroyed irrevocably lose their magical properties.
 
         \subsubsection{Breaking Items}
-            If you try to break something with sudden force rather than by dealing damage, use a Strength check (rather than an attack roll and damage roll, as with the disarm special attack) to see whether you succeed.
+            If you try to break something with sudden force rather than by dealing damage, use a Strength check to see whether you succeed.
             The DR depends more on the construction of the item than on the material.
 
-            If an item has no more than half its hit points remaining, the DR to break it drops by 5.
+            The DR to break an object with Strength is reduced by 2 for each \glossterm{hit point} the object has lost.
 
             A crowbar or portable ram improves a character's chance of breaking open a door.
 

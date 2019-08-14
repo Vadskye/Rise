@@ -350,15 +350,6 @@ This chapter describes each skill, including common uses for those skills.
 
         If you act differently from the crowd you are trying to blend in with, anyone observing you gets a \plus5 bonus to find you. You may need to make Awareness or Sense Motive checks to figure out how to act, depending on the situation. If you are extremely dissimilar from the crowd, such as a naked person in a temple or a human among halflings, anyone observing you may gain a \plus10 or greater bonus to find you.
 
-    \subsection{Conceal Threat}\label{Conceal Threat}
-        As a \glossterm{minor action}, you can use the \textit{conceal threat} ability to look less threatening.
-        \begin{freeability}{Conceal Threat}[\glossterm{Sustain} (minor)]
-            Choose a \glossterm{threat} value you wish to portray and make a Bluff check.
-            The intended threat cannot exceed your actual threat.
-            Your Bluff check is opposed by the Sense Motive checks of anyone observing you.
-            \hit Your threat against each target is equal to your chosen threat.
-        \end{freeability}
-
     \subsection{Distract}\label{Distract}
         As a standard action, you can make a Bluff check to distract a creature you are interacting with.
         Your Bluff check is opposed by your target's Sense Motive check.
@@ -618,7 +609,7 @@ This chapter describes each skill, including common uses for those skills.
             In addition, choose and state an action that the creature could take.
             \hit The target is unable to take any actions except to use the \textit{cleanse} ability (see \pcref{Cleanse}).
             \crit The target performs the chosen action if it is physically capable of performing it.
-            This can include convincing creatures to perform forced marches and similar activities (see \pcref{Forced March}).
+            This can include convincing creatures to perform forced marches and similar activities (see \pcref{Overland Exertion}).
             
             The target's defense is increased if it is not an animal, as normal for Creature Handling attacks and checks.
             You take a \minus10 penalty to accuracy against an actively hostile target.
@@ -848,16 +839,20 @@ This chapter describes each skill, including common uses for those skills.
         The Heal skill allows you to tend the wounds of others. In order to heal a creature, you must be able to see and touch it.
 
     \subsection{Accelerate Recovery}\label{Accelerate Recovery}
-        If you tend to a creature while it rests, you can make a DR 10 Heal check to accelerate its recovery.
-        Success means that it heals twice the normal number of hit points and \glossterm{vital damage} from its rest.
+        You can make a DR 10 Heal check to accelerate the recovery of up to four willing creatures during a \glossterm{long rest}.
+        Success means that each creature removes an additional \glossterm{vital wound} during the rest.
+        For every 10 points by which you succeed, each creature can removes an additional \glossterm{vital wound}.
 
         To accelerate a creature's recovery, you need a few items and supplies (bandages, salves, and so on) that are easy to come by in civilized areas.
-        You can tend to up to four creatures, including yourself, without penalty.
-        For every creature beyond that, you take a cumulative \minus2 penalty to your Heal check for all creatures.
+        You can accelerate the recovery of additional creatures during the same rest by taking a cumulative \minus2 penalty per additional creature.
 
-    \subsection{First Aid}
-        As a standard action, you can make a DR Heal check to stabilize a dying character (see \pcref{Dying}). The target can use your Heal check in place of its Fortitude defense to avoid dying. In addition, if your check result is at least 10, the target is partially stabilized, causing it to only make \glossterm{stabilization checks} once per minute.
-        For details, see \pcref{Dying}.
+    \subsection{First Aid}\label{First Aid}
+        As a standard action, you can make a Heal check to prevent a willing creature from dying from a \glossterm{vital wound} with a negative \glossterm{wound roll}.
+        The DR is equal to 5.
+        Success means that the target gains a \plus1 bonus to the \glossterm{wound roll} for its most recent \glossterm{vital wound}, up to a maximum of 0.
+        For every 10 points by which you succeed, the bonus increases by 1.
+        After you modify the \glossterm{wound roll} this way, it cannot be modified again.
+        For details, see \pcref{Vital Wounds}.
 
     \subsection{Treat Poison or Disease}
         You can make a Heal check to treat poison or disease in a character.
@@ -878,14 +873,6 @@ This chapter describes each skill, including common uses for those skills.
         Depending on how you are trying to intimidate creatures, you can use any attribute as a key attribute for Intimidate.
         For example, if you intimidate a creature by smashing a table and threatening to smash its head in, you can use Strength to make the Intimidate check.
         On the other hand, if you intimidate a creature by staring it down in a cold fury, you can use Willpower to make the Intimidate check.
-
-    \subsection{Augment Threat}\label{Augment Threat}
-        As a \glossterm{minor action}, you can use the \textit{augment threat} ability to look more threatening.
-        \begin{freeability}{Augment Threat}[\glossterm{Sustain} (minor)]
-            Choose any number of creatures within \rnglong range.
-            Make an Intimidate check against the Sense Motive checks of each target.
-            \hit You gain a \plus2 bonus to \glossterm{threat} against each target.
-        \end{freeability}
 
     \subsection{Coerce}
         You can make an Intimidate check to convince a creature to do what you want. This functions like a Persuasion check to form an agreement with a group, except that you do not apply a relationship modifier. In addition, the DR is up to 10 lower if the group thinks your group is significantly stronger than them, or up to 10 higher if the group thinks your group is significantly weaker.
@@ -1329,7 +1316,7 @@ This chapter describes each skill, including common uses for those skills.
 \skill{Stealth}{Dex}
         The Stealth skill represents your ability to escape detection while moving or hiding. All Stealth checks are made as part of movement or other actions, so they require no special action to perform. If you have been noticed by a creature, you automatically fail all Stealth checks against that creature until you can escape its notice, such as by disappearing out of sight.
 
-        \parhead{Size and Stealth}\label{Size and Stealth} A creature larger or smaller than Medium gains an bonus or penalty to the Stealth skill equal to \plus4 per size larger than Medium, or \minus4 for per size smaller than Medium: Fine \plus16, Diminutive \plus12, Tiny \plus8, Small \plus4, Large \minus4, Huge \minus8, Gargantuan \minus12, Colossal \minus16.
+        \parhead{Size and Stealth}\label{Size and Stealth} A creature larger or smaller than Medium gains an bonus or penalty to the Stealth skill equal to \plus2 per size larger than Medium, or \minus2 for per size smaller than Medium: Fine \plus8, Diminutive \plus6, Tiny \plus4, Small \plus2, Large \minus2, Huge \minus4, Gargantuan \minus6, Colossal \minus8.
 
     \subsection{Blend In}
         You can make a Stealth check to blend in with a crowd. Your Stealth check is opposed by the Awareness checks of anyone looking for you. Success means you remain unobserved. Failure means the person looking for you found you.

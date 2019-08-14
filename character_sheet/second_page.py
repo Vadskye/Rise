@@ -2,7 +2,28 @@ from cgi_simple import (
     div, fieldset, equation, flex_col, flex_row, flex_wrapper, labeled_text_input, minus, number_input,
     plus, text_input, underlabel
 )
-from sheet_data import ATTRIBUTE_SKILLS, ATTRIBUTES, ROLL20_CALC
+from sheet_data import ATTRIBUTE_SHORTHAND, ATTRIBUTE_SKILLS, ATTRIBUTES, ROLL20_CALC
+
+def equation_misc(name, i=0):
+    return flex_col([
+        number_input({
+            'class': 'equation-misc',
+            'name': f"{name}_misc_{i}",
+        }),
+        text_input({
+            'class': 'invisible-text-input',
+            'name': f"{name}_misc_label_{i}",
+        }),
+    ])
+
+def equation_misc_repeat(name, count=1):
+    out = []
+    for i in range(count):
+        out.append(''.join([
+            plus(),
+            equation_misc(name, i)
+        ]))
+    return ''.join(out)
 
 def create_page(destination):
     return flex_row({'class': 'second-page'}, [
@@ -12,15 +33,17 @@ def create_page(destination):
         flex_col({'class': 'main-body'}, [
             flex_col({'class': 'statistics'}, [
                 flex_wrapper(div({'class': 'section-header'}, 'Core Statistics')),
-                calc_base_speed(),
+                calc_carrying_capacity(),
+                calc_damage_resistance(),
                 calc_encumbrance(),
-                calc_hit_points(),
-                calc_initiative() if destination == 'roll20' else "",
+                # calc_initiative(),
                 calc_insight_points(),
-                calc_reserve_ap(),
+                calc_magical_power(),
+                calc_maneuvers(),
+                calc_mundane_power(),
                 calc_skill_points(),
-                calc_strike_damage() if destination == 'roll20' else "",
-                calc_threat(),
+                calc_spells(),
+                calc_wound_resistance(),
                 flex_wrapper(div({'class': 'section-header'}, 'Defenses')),
                 calc_defenses(),
             ]),
@@ -98,7 +121,7 @@ def calc_blank_skill():
         number_input({'class': 'skill-points', 'name': 'blank_skill_points'}),
         number_input({'class': 'skill-ranks', 'name': 'blank_skill_ranks'}),
         number_input({'class': 'skill-attr', 'name': 'blank_skill_attribute'}),
-        number_input({'class': 'equation-misc', 'name': 'blank_skill_misc'}),
+        equation_misc('blank_skill'),
     ])
 
 
@@ -110,10 +133,9 @@ def calc_attributes():
 
 def calc_attribute(attribute_name):
     return ''.join([
-        div({'class': 'calc-attribute-header'}, attribute_name.capitalize()),
         equation(
             [
-                underlabel('(Base)', number_input({
+                underlabel('(Start)', number_input({
                     'name': attribute_name + '_starting',
                 })),
                 plus(),
@@ -123,16 +145,15 @@ def calc_attribute(attribute_name):
                     'value': '@{' + attribute_name + '_scaling}',
                 })),
                 plus(),
-                number_input({
-                    'class': 'equation-misc',
-                    'name': attribute_name + '_misc',
-                }),
+                equation_misc(attribute_name),
             ],
             result_attributes={
                 'disabled': 'true',
                 'name': attribute_name + '_display',
                 'value': '@{' + attribute_name + '}',
             },
+            result_label=ATTRIBUTE_SHORTHAND[attribute_name],
+            underlabel_attributes={'class': 'attribute-name'},
         )
     ])
 
@@ -151,36 +172,89 @@ def abilities(name_prefix):
         }) for level in range(1, 14)]),
     ])
 
-def calc_hit_points():
+def calc_carrying_capacity():
+    space = flex_col({'class': 'equation-glue'}, div({'class': 'equation-math'}, ' '))
     return flex_row([
-        div({'class': 'calc-header'}, 'Hit Points'),
+        div({'class': 'calc-header'}, 'Carrying Capacity'),
+        underlabel(
+            'Light',
+            number_input({
+                'disabled': True,
+                'name': 'carrying_capacity_light_display',
+                'value': '@{carrying_capacity_light}',
+            }),
+        ),
+        space,
+        underlabel(
+            'Max',
+            number_input({
+                'disabled': True,
+                'name': 'carrying_capacity_max_display',
+                'value': '@{carrying_capacity_max}',
+            }),
+        ),
+        space,
+        underlabel(
+            'Over',
+            number_input({
+                'disabled': True,
+                'name': 'carrying_capacity_over_display',
+                'value': '@{carrying_capacity_over}',
+            }),
+        ),
+        space,
+        underlabel(
+            'Push',
+            number_input({
+                'disabled': True,
+                'name': 'carrying_capacity_push_display',
+                'value': '@{carrying_capacity_push}',
+            }),
+        ),
+    ])
+
+def calc_damage_resistance():
+    return flex_row([
+        div({'class': 'calc-header'}, 'Damage Resist'),
         equation(
             [
                 underlabel(
-                    '1+Level',
+                    'Base',
                     number_input({
                         'disabled': True,
-                        'name': 'hit_points_level',
-                        'value': '(@{level} + 1)',
+                        'name': 'damage_resistance_base_display',
+                        'value': '@{damage_resistance_base}',
                     }),
-                    {'class': 'eq-level'},
                 ),
-                flex_col({'class': 'equation-text'}, 'times'),
-                underlabel('5+(Con)', number_input({
-                    'disabled': True,
-                    'name': 'hit_points_constitution',
-                    'value': '(@{constitution_starting} + 5)',
-                })),
-                plus(),
-                number_input({
-                    'class': 'equation-misc',
-                    'name': 'hit_points_misc',
-                }),
+                equation_misc_repeat('damage_resistance', 3)
             ],
             result_attributes={
                 'disabled': 'true',
-                'name': 'hit_points_display',
-                'value': '(@{hit_points_total})',
+                'name': 'fatigue_threshold_display',
+                'value': '(@{damage_resistance_base} + @{damage_resistance_misc})',
+            },
+        ),
+    ])
+
+def calc_wound_resistance():
+    return flex_row([
+        div({'class': 'calc-header'}, 'Wound Resist'),
+        equation(
+            [
+                underlabel(
+                    'Base',
+                    number_input({
+                        'disabled': True,
+                        'name': 'wound_resistance_base_display',
+                        'value': '@{wound_resistance_base}',
+                    }),
+                ),
+                equation_misc_repeat('wound_resistance', 3),
+            ],
+            result_attributes={
+                'disabled': 'true',
+                'name': 'fatigue_threshold_display',
+                'value': '(@{wound_resistance_base} + @{wound_resistance_misc})',
             },
         ),
     ])
@@ -195,11 +269,7 @@ def calc_initiative():
                     'name': 'initiative_scaling_display',
                     'value': '@{initiative_scaling}',
                 })),
-                plus(),
-                number_input({
-                    'class': 'equation-misc',
-                    'name': 'initiative_misc',
-                }),
+                equation_misc_repeat('initiative', 3),
             ],
             result_attributes={
                 'disabled': True,
@@ -209,78 +279,110 @@ def calc_initiative():
         ),
     ])
 
-def calc_base_speed():
+def calc_magical_power():
     return flex_row([
-        div({'class': 'calc-header'}, 'Base Speed'),
+        div({'class': 'calc-header'}, 'Magical Power'),
         equation(
             [
-                underlabel('Size', number_input({'name': 'speed_size'})),
-                minus(),
-                underlabel('Armor', number_input({'name': 'speed_armor'})),
-                plus(),
-                number_input({
-                    'class': 'equation-misc',
-                    'name': 'speed_misc',
-                }),
+                underlabel('Lvl/Wil', number_input({
+                    'disabled': True,
+                    'name': 'magical_power_scaling_display',
+                    'value': '@{magical_power_scaling}',
+                })),
+                equation_misc_repeat('magical_power', 3),
             ],
             result_attributes={
                 'disabled': True,
-                'name': 'base_speed_display',
-                'value': '@{base_speed}',
+                'name': 'magical_power_display',
+                'value': '@{magical_power}',
             },
-        )
-    ])
-
-def calc_strike_damage():
-    return flex_row([
-        div({'class': 'calc-header'}, 'Strike Dmg'),
-        equation(
-            [
-                underlabel('Lvl/Str', text_input({
-                    'name': 'strike_damage_scaling_display',
-                })),
-                plus(),
-                text_input({
-                    'class': 'equation-misc',
-                    'name': 'strike_damage_misc',
-                }),
-            ],
-            result_attributes={
-                'name': 'strike_damage_display',
-            },
-            input_type=text_input,
         ),
     ])
 
-def calc_threat():
+def calc_mundane_power():
     return flex_row([
-        div({'class': 'calc-header'}, 'Threat'),
+        div({'class': 'calc-header'}, 'Mundane Power'),
         equation(
             [
                 underlabel('Lvl/Str', number_input({
                     'disabled': True,
-                    'name': 'threat_scaling_display',
-                    'value': '@{threat_scaling}',
+                    'name': 'mundane_power_scaling_display',
+                    'value': '@{mundane_power_scaling}',
                 })),
-                plus(),
-                underlabel('1/2 Armor', number_input({
-                    'disabled': True,
-                    'name': 'threat_armor_display',
-                    'value': '@{threat_armor}',
-                })),
-                plus(),
-                number_input({
-                    'class': 'equation-misc',
-                    'name': 'threat_misc',
-                }),
+                equation_misc_repeat('mundane_power', 3),
             ],
             result_attributes={
                 'disabled': True,
-                'name': 'threat_display',
-                'value': '@{threat}',
+                'name': 'mundane_power_display',
+                'value': '@{mundane_power}',
             },
         ),
     ])
+
+# def calc_base_speed():
+#     return flex_row([
+#         div({'class': 'calc-header'}, 'Base Speed'),
+#         equation(
+#             [
+#                 underlabel('Size', number_input({'name': 'speed_size'})),
+#                 minus(),
+#                 underlabel('Armor', number_input({'name': 'speed_armor'})),
+#                 equation_misc('speed')
+#             ],
+#             result_attributes={
+#                 'disabled': True,
+#                 'name': 'base_speed_display',
+#                 'value': '@{base_speed}',
+#             },
+#         )
+#     ])
+
+# def calc_strike_damage():
+#     return flex_row([
+#         div({'class': 'calc-header'}, 'Strike Dmg'),
+#         equation(
+#             [
+#                 underlabel('Lvl/Str', text_input({
+#                     'name': 'strike_damage_scaling_display',
+#                 })),
+#                 plus(),
+#                 text_input({
+#                     'class': 'equation-misc',
+#                     'name': 'strike_damage_misc',
+#                 }),
+#             ],
+#             result_attributes={
+#                 'name': 'strike_damage_display',
+#             },
+#             input_type=text_input,
+#         ),
+#     ])
+
+# def calc_threat():
+#     return flex_row([
+#         div({'class': 'calc-header'}, 'Threat'),
+#         equation(
+#             [
+#                 underlabel('Lvl/Str', number_input({
+#                     'disabled': True,
+#                     'name': 'threat_scaling_display',
+#                     'value': '@{threat_scaling}',
+#                 })),
+#                 plus(),
+#                 underlabel('1/2 Armor', number_input({
+#                     'disabled': True,
+#                     'name': 'threat_armor_display',
+#                     'value': '@{threat_armor}',
+#                 })),
+#                 equation_misc('threat')
+#             ],
+#             result_attributes={
+#                 'disabled': True,
+#                 'name': 'threat_display',
+#                 'value': '@{threat}',
+#             },
+#         ),
+#     ])
 
 def calc_encumbrance():
     return flex_row([
@@ -295,10 +397,9 @@ def calc_encumbrance():
                     'value': '(@{strength_starting})',
                 })),
                 minus(),
-                number_input({
-                    'class': 'equation-misc',
-                    'name': 'encumbrance_misc',
-                }),
+                equation_misc('encumbrance', 0),
+                minus(),
+                equation_misc('encumbrance', 1)
             ],
             result_attributes={
                 'disabled': True,
@@ -330,11 +431,7 @@ def calc_skill_points():
                     'name': 'skill_points_intelligence',
                     'value': '(@{intelligence_starting} * 2)',
                 })),
-                plus(),
-                number_input({
-                    'class': 'equation-misc',
-                    'name': 'skill_points_misc',
-                })
+                equation_misc_repeat('skill_points', 2)
             ],
             result_attributes={
                 'disabled': 'true',
@@ -344,34 +441,52 @@ def calc_skill_points():
         ),
     ])
 
-def calc_reserve_ap():
+def calc_maneuvers():
     return flex_row([
-        div({'class': 'calc-header'}, 'Reserve AP'),
+        div({'class': 'calc-header'}, 'Maneuvers'),
         equation(
             [
-                underlabel('Base', number_input({
-                    'disabled': True,
-                    'name': 'action_points_base',
-                    'value': 3,
+                underlabel('Class', number_input({
+                    'disabled': False,
+                    'name': 'maneuvers_class',
                 })),
                 plus(),
-                underlabel('(Wil)', number_input({
-                    'disabled': True,
-                    'name': 'action_points_willpower',
-                    'value': '(@{willpower_starting})',
+                underlabel('Insight', number_input({
+                    'disabled': False,
+                    'name': 'maneuvers_insight',
                 })),
-                plus(),
-                number_input({
-                    'class': 'equation-misc',
-                    'name': 'action_points_misc',
-                })
+                equation_misc_repeat('maneuvers', 2)
             ],
             result_attributes={
-                'disabled': 'true',
-                'name': 'reserve_ap_display',
-                'value': ROLL20_CALC['reserve_ap'],
+                'disabled': True,
+                'name': 'maneuvers',
+                'value': '@{maneuvers}',
             },
-        ),
+        )
+    ])
+
+def calc_spells():
+    return flex_row([
+        div({'class': 'calc-header'}, 'Spells'),
+        equation(
+            [
+                underlabel('Class', number_input({
+                    'disabled': False,
+                    'name': 'spells_class',
+                })),
+                plus(),
+                underlabel('Insight', number_input({
+                    'disabled': False,
+                    'name': 'spells_insight',
+                })),
+                equation_misc_repeat('spells', 2)
+            ],
+            result_attributes={
+                'disabled': True,
+                'name': 'spells',
+                'value': '@{spells}',
+            },
+        )
     ])
 
 def calc_insight_points():
@@ -382,7 +497,7 @@ def calc_insight_points():
                 underlabel('Base', number_input({
                     'disabled': True,
                     'name': 'insight_points_base',
-                    'value': 1,
+                    'value': 2,
                 })),
                 plus(),
                 underlabel('(Int)', number_input({
@@ -390,37 +505,12 @@ def calc_insight_points():
                     'name': 'insight_points_intelligence',
                     'value': '(@{intelligence_starting})',
                 })),
-                plus(),
-                number_input({
-                    'class': 'equation-misc',
-                    'name': 'insight_points_misc',
-                })
+                equation_misc_repeat('insight_points', 2)
             ],
             result_attributes={
                 'disabled': 'true',
                 'name': 'insight_points',
                 'value': ROLL20_CALC['insight_points'],
-            },
-        ),
-    ])
-
-def calc_special_attack():
-    return flex_row([
-        flex_wrapper({'class': 'calc-header'}, [
-            text_input({'class': 'calc-header'}),
-        ]),
-        equation(
-            [
-                underlabel('Level/Attr', number_input()),
-                plus(),
-                number_input({
-                    'class': 'equation-misc',
-                    'name': 'special-misc',
-                })
-            ],
-            result_attributes={
-                'disabled': 'true',
-                'name': 'special-attack',
             },
         ),
     ])
@@ -448,13 +538,13 @@ def calc_armor():
                     'value': '@{dexterity_starting}',
                 })),
                 plus(),
-                underlabel('Armor', number_input({'name': 'body_armor_defense_value'})),
+                underlabel('Body', number_input({'name': 'body_armor_defense_value'})),
                 plus(),
                 underlabel('Shield', number_input({'name': 'shield_defense_value'})),
                 plus(),
                 number_input({
                     'class': 'equation-misc',
-                    'name': 'armor_defense_misc',
+                    'name': 'armor_defense',
                 })
             ],
             result_attributes={
@@ -483,11 +573,7 @@ def calc_fort():
                 })),
                 plus(),
                 underlabel('Class', number_input({'name': 'fortitude_class', 'value': '4'})),
-                plus(),
-                number_input({
-                    'class': 'equation-misc',
-                    'name': 'fortitude_misc',
-                })
+                equation_misc_repeat('fortitude', 2)
             ],
             result_attributes={
                 'disabled': 'true',
@@ -515,11 +601,7 @@ def calc_ref():
                 })),
                 plus(),
                 underlabel('Class', number_input({'name': 'reflex_class', 'value': '4'})),
-                plus(),
-                number_input({
-                    'class': 'equation-misc',
-                    'name': 'reflex_misc',
-                })
+                equation_misc_repeat('reflex', 2)
             ],
             result_attributes={
                 'disabled': 'true',
@@ -547,11 +629,7 @@ def calc_mental():
                 })),
                 plus(),
                 underlabel('Class', number_input({'name': 'mental_class', 'value': '4'})),
-                plus(),
-                number_input({
-                    'class': 'equation-misc',
-                    'name': 'mental_misc',
-                })
+                equation_misc_repeat('mental', 2)
             ],
             result_attributes={
                 'disabled': 'true',
@@ -563,17 +641,6 @@ def calc_mental():
 
 def adventuring():
     return flex_col({'class': 'adventuring'}, [
-        flex_col({'class': 'carrying-capacity'}, [
-            flex_wrapper(div({'class': 'section-header'}, 'Carrying Capacity')),
-            flex_row([
-                labeled_text_input('Light', input_attributes={'name': 'weight_light'}),
-                labeled_text_input('Maximum', input_attributes={'name': 'weight_maximum'}),
-            ]),
-            flex_row([
-                labeled_text_input('Overloaded', input_attributes={'name': 'weight_overloaded'}),
-                labeled_text_input('Push/Drag', input_attributes={'name': 'weight_push_drag'}),
-            ]),
-        ]),
         standard_damage(),
     ])
 
@@ -597,17 +664,17 @@ def standard_damage():
 
 def standard_damage_at_power(power):
     return {
-        0: '1d6',
-        2: '1d8',
-        4: '1d10',
-        6: '2d6',
-        8: '2d8',
-        10: '2d10',
-        12: '4d6',
-        14: '4d8',
-        16: '4d10',
-        18: '5d10',
-        20: '6d10',
-        22: '7d10',
-        24: '8d10',
+        0: '1d8',
+        2: '1d10',
+        4: '2d6',
+        6: '2d8',
+        8: '2d10',
+        10: '4d6',
+        12: '4d8',
+        14: '4d10',
+        16: '5d10',
+        18: '6d10',
+        20: '7d10',
+        22: '8d10',
+        24: '9d10',
     }[power]

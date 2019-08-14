@@ -64,8 +64,13 @@ class Creature(object):
         self.reflex_defense_misc = 0
         self.mental_defense_misc = 0
 
-        self.damage_taken = 0
+        self.reset_combat()
+
+    def reset_combat(self):
+        self.is_conscious = True
+        self.fatigue = 0
         self.spent_action_points = 0
+        self.vital_wounds = 0
 
     def __copy__(self):
         return Creature(
@@ -182,19 +187,16 @@ class Creature(object):
         ])
 
     @property
-    def max_hit_points(self):
-        return (
-            (self.level + (1 if self.is_character() else 0))
-            * (5 + self.starting_constitution)
-        ) * self.challenge_rating
+    def fatigue_threshold(self):
+        return max(self.level, self.constitution)
 
     @property
-    def current_hit_points(self):
-        return self.max_hit_points - self.damage_taken
+    def wound_threshold(self):
+        return (self.level + 1) * 5
 
     @property
-    def hit_points(self):
-        return self.current_hit_points
+    def current_wound_threshold(self):
+        return self.wound_threshold - self.level * self.fatigue
 
     @property
     def intelligence(self):
@@ -258,6 +260,19 @@ class Creature(object):
     @property
     def willpower(self):
         return calculate_attribute(self.starting_willpower, self.level)
+
+    def take_wound(self):
+        self.vital_wounds += 1
+        wound_roll = DicePool(10).roll() - self.vital_wounds + self.starting_constitution
+        self.is_conscious = self.is_conscious and wound_roll >= 2
+
+    def take_damage(self, damage):
+        if damage >= self.current_wound_threshold:
+            self.take_wound()
+        elif damage >= self.fatigue_threshold:
+            self.fatigue += 1
+            if self.current_wound_threshold == 0:
+                self.take_wound()
 
     def accuracy(self, attribute=None):
         # Perception is normally used except in unusual situations
@@ -385,7 +400,7 @@ class Creature(object):
 
     def _to_string_defenses(self):
         text = '; '.join([
-            f"[HP] {self.hit_points}",
+            f"[FT] {self.fatigue_threshold}, [WT] {self.wound_threshold}",
             f"[Defs] {self.armor_defense}/{self.fortitude_defense}/{self.reflex_defense}/{self.mental_defense}",
             f"[AP] {self.recovery_action_points}/{self.reserve_action_points}",
         ])

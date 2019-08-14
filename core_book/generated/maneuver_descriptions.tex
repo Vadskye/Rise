@@ -19,12 +19,13 @@ it is \glossterm{sickened} as a \glossterm{condition}.
 \lowercase{\hypertarget{maneuver:Battle Cry}{}}\label{maneuver:Battle Cry}
 \hypertarget{maneuver:Battle Cry}{}
 \begin{freeability}{Battle Cry}[]
-Your \glossterm{allies} within a \areamed radius from you heal hit points equal to \glossterm{standard damage} \minus2d.
+Each \glossterm{ally} that can hear you gains a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks} until the end of the next round.
+This does not affect attacks during the current phase.
 
 \rankline
-\rank{4} The healing increases to \glossterm{standard damage} \minus1d.
-\rank{6} The area increases to a \arealarge radius.
-\rank{8} The healing increases to \glossterm{standard damage} \plus1d.
+\rank{4} The ability also affects you.
+\rank{6} Each target also gains a \plus2 bonus to Mental defense.
+\rank{8} The accuracy bonus increases to \plus2.
 \parhead{Lists} Primal
 \end{freeability}
 \vspace{0.25em}
@@ -35,7 +36,7 @@ Your \glossterm{allies} within a \areamed radius from you heal hit points equal 
 \hypertarget{maneuver:Brace for Impact}{}
 \begin{freeability}{Brace for Impact}[\glossterm{Swift}]
 You take half damage from all attacks this round.
-This halving is applied before \glossterm{damage reduction} and similar abilities.
+This halving is applied before \glossterm{resistances} and similar abilities.
 
 \rankline
 \rank{4} You can also negate a condition that would be applied to you while this ability lasts.
@@ -66,13 +67,13 @@ Make a \glossterm{strike} with a \plus1 bonus to accuracy.
 \hypertarget{maneuver:Challenge}{}
 \begin{freeability}{Challenge}[]
 Make a melee \glossterm{strike}.
-If the strike hits, you gain a \plus4 bonus to \glossterm{threat} against the struck creature.
-This effect lasts until you take a \glossterm{short rest} or until you use this ability on a different creature.
+If the strike beats the target's Mental defense, it takes a \minus2 penalty to \glossterm{accuracy} with \glossterm{strikes} against creatures other than you as a \glossterm{condition}.
+This condition is removed if another creature applies this condition to the same target.
 
 \rankline
-\rank{4} The threat bonus increases to \plus6.
-\rank{6} Using this ability on a different creature does not end its effect.
-\rank{8} The threat bonus increases to \plus10.
+\rank{4} The penalty increases to -3.
+\rank{6} As part of the same condition, target also moves at half speed while you \glossterm{threaten} it.
+\rank{8} The penalty increases to -5.
 \parhead{Lists} Martial
 \end{freeability}
 \vspace{0.25em}
@@ -450,13 +451,12 @@ In addition, each target suffers no penalties from any conditions it currently h
 \lowercase{\hypertarget{maneuver:Rapid Assault}{}}\label{maneuver:Rapid Assault}
 \hypertarget{maneuver:Rapid Assault}{}
 \begin{freeability}{Rapid Assault}[]
-Make a \glossterm{strike} against a creature.
-If you use this ability during the \glossterm{action phase}, you can make another strike during the \glossterm{delayed action phase}.
-You take a \minus2 penalty to accuracy and a \minus1d penalty to damage on both strikes.
+Make two \glossterm{strikes} divided as you choose among up to two targets.
+You take a \minus2 penalty to accuracy and a \minus2d penalty to damage on both strikes.
 
 \rankline
 \rank{4} The accuracy penalty is reduced to -1.
-\rank{6} You can make both strikes during the same phase regardless of when you use the ability instead of making the second strike in the \glossterm{delayed action phase}.
+\rank{6} The damage penalty is reduced to \minus1d.
 \rank{8} The accuracy and damage penalties are removed.
 \parhead{Lists} Esoteric, Martial, Primal, Trick, Wild
 \end{freeability}
@@ -498,17 +498,17 @@ Until the end of the next round, you take a \minus2 penalty to all defenses.
 
 
 
-\lowercase{\hypertarget{maneuver:Revitalizing Strike}{}}\label{maneuver:Revitalizing Strike}
-\hypertarget{maneuver:Revitalizing Strike}{}
-\begin{freeability}{Revitalizing Strike}[\glossterm{Life}]
-Make a melee \glossterm{strike}.
-If you hit a creature with the strike, you regain hit points equal to \glossterm{standard damage}.
+\lowercase{\hypertarget{maneuver:Second Wind}{}}\label{maneuver:Second Wind}
+\hypertarget{maneuver:Second Wind}{}
+\begin{freeability}{Second Wind}[]
+You regain a \glossterm{hit point}.
+You can only use this ability once between \glossterm{short rests}.
 
 \rankline
-\rank{4} You gain a \plus1d bonus to the amount healed.
-\rank{6} You gain the healing even if you miss with the strike.
-\rank{8} The healing bonus increases to \plus3d.
-\parhead{Lists} Primal, Wild
+\rank{4} If you have a \glossterm{vital wound}, you regain two \glossterm{hit points} instead of one.
+\rank{6} You can use the ability twice between \glossterm{short rests}.
+\rank{8} You remove two \glossterm{hit points} regardless of whether you have a \glossterm{vital wound}.
+\parhead{Lists} Esoteric, Primal, Wild
 \end{freeability}
 \vspace{0.25em}
 
@@ -534,15 +534,13 @@ it is \glossterm{dazed} as a \glossterm{condition}.
 \lowercase{\hypertarget{maneuver:Strip the Flesh}{}}\label{maneuver:Strip the Flesh}
 \hypertarget{maneuver:Strip the Flesh}{}
 \begin{freeability}{Strip the Flesh}[]
-Make a \glossterm{strike} with a slashing weapon.
-At the end of the \glossterm{action phase} of the next round,
-if you hit with the strike and the target is not \glossterm{bloodied},
-it takes additional damage equal to the damage you dealt with the strike.
+Make a \glossterm{strike} using a slashing weapon with a \minus2d penalty to damage.
+If the strike deals damage, the target loses an additional \glossterm{hit point}.
 
 \rankline
-\rank{4} You gain a \plus1d bonus to damage with the strike.
-\rank{6} The extra damage is applied at the end of the current round instead of at the end of the \glossterm{action phase} of the next round.
-\rank{8} The damage bonus increases to \plus3d.
+\rank{4} You gain a \plus1 bonus to \glossterm{accuracy} with the strike.
+\rank{6} If the strike deals damage, the target is also \glossterm{sickened} as a \glossterm{condition}.
+\rank{8} The accuracy bonus increases to \plus3.
 \parhead{Lists} Martial, Primal, Trick, Wild
 \end{freeability}
 \vspace{0.25em}
@@ -567,10 +565,10 @@ The strike targets each of up to two creatures or objects you \glossterm{threate
 
 \lowercase{\hypertarget{maneuver:Thunderous Shout}{}}\label{maneuver:Thunderous Shout}
 \hypertarget{maneuver:Thunderous Shout}{}
-\begin{freeability}{Thunderous Shout}[\glossterm{Sonic}]
+\begin{freeability}{Thunderous Shout}[]
 Make an attack vs. Fortitude against everything in a \areamed cone-shaped burst from you.
 You take a \minus1 penalty to \glossterm{accuracy} with the attack.
-\hit Each target takes sonic \glossterm{standard damage}.
+\hit Each target takes energy \glossterm{standard damage}.
 
 \rankline
 \rank{4} You gain a \plus1d bonus to damage with the shout.
