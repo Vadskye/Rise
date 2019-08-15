@@ -8,10 +8,10 @@ def generate_script():
         accuracy(),
         action_points(),
         armor_defense(),
+        damage_resistance(),
         fortitude(),
         reflex(),
         mental(),
-        threat(),
         encumbrance(),
         initiative(),
         base_speed(),
@@ -155,6 +155,73 @@ def armor_defense():
         }});
     """
 
+def damage_resistance():
+    return f"""
+        on("change:level change:damage_resistance_misc", function(eventInfo) {{
+            getAttrs(["level", "damage_resistance_misc"], function(v) {{
+                var damage_resistance = {{
+                    1: 0,
+                    2: 0,
+                    3: 1,
+                    4: 2,
+                    5: 3,
+                    6: 4,
+                    7: 5,
+                    8: 6,
+                    9: 8,
+                    10: 10,
+                    11: 12,
+                    12: 14,
+                    13: 16,
+                    14: 18,
+                    15: 21,
+                    16: 24,
+                    17: 27,
+                    18: 30,
+                    19: 33,
+                    20: 36,
+                }}[Number(v.level || 0)]
+                setAttrs({{
+                    damage_resistance: damage_resistance + Number(v.damage_resistance_misc || 0),
+                }});
+            }});
+        }});
+    """
+
+def wound_resistance():
+    return f"""
+        on("change:level change:wound_resistance_misc", function(eventInfo) {{
+            getAttrs(["level", "wound_resistance_misc"], function(v) {{
+                var wound_resistance = {{
+                    1: 13,
+                    2: 14,
+                    3: 16,
+                    4: 18,
+                    5: 21,
+                    6: 24,
+                    7: 27,
+                    8: 30,
+                    9: 34,
+                    10: 38,
+                    11: 43,
+                    12: 48,
+                    13: 54,
+                    14: 61,
+                    15: 69,
+                    16: 77,
+                    17: 86,
+                    18: 96,
+                    19: 108,
+                    20: 122,
+                }}[Number(v.level || 0)]
+                setAttrs({{
+                    wound_resistance: wound_resistance + Number(v.wound_resistance_misc || 0),
+                }});
+            }});
+        }});
+    """
+
+
 def fortitude():
     return f"""
         on("change:level change:strength change:constitution change:fortitude_class change:fortitude_misc change:challenge_rating", function(eventInfo) {{
@@ -189,21 +256,6 @@ def mental():
                 var total = Number(v.level || 0) + Number(v.willpower_starting || 0) + Number(v.mental_class || 0) + Number(v.mental_misc || 0) + cr_mod;
                 setAttrs({{
                     mental: total,
-                }});
-            }});
-        }});
-    """
-
-def threat():
-    return f"""
-        on("change:level change:strength change:body_armor_defense_value change:threat_misc", function(eventInfo) {{
-            getAttrs(["level", "strength", "body_armor_defense_value", "threat_misc"], function(v) {{
-                var scaling = Math.max(Number(v.level || 0), Number(v.strength || 0));
-                var armor_modifier = Math.floor(Number(v.body_armor_defense_value || 0) / 2);
-                setAttrs({{
-                    threat: scaling + armor_modifier + Number(v.threat_misc || 0),
-                    threat_armor: armor_modifier,
-                    threat_scaling: scaling,
                 }});
             }});
         }});
