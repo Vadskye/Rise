@@ -27,12 +27,12 @@ def equation_misc_repeat(name, count=1):
 def create_page(destination):
     return flex_row({'class': 'second-page'}, [
         flex_col({'class': 'sidebar'}, [
-            calc_skills(destination),
             level_chart(),
             flex_wrapper(div({'class': 'section-header abilities-known-header'}, 'Abilities Known')),
             calc_maneuvers(),
             calc_spells(),
             *[calc_blank_ability(i) for i in range(2)],
+            calc_skills(destination),
         ]),
         flex_col({'class': 'main-body'}, [
             flex_col({'class': 'statistics'}, [
@@ -165,8 +165,8 @@ def calc_attribute(attribute_name):
 
 def level_chart():
     return flex_row([
+        standard_damage(),
         calc_attributes(),
-        adventuring(),
     ])
 
 def abilities(name_prefix):
@@ -805,10 +805,6 @@ def calc_mental():
         ),
     ])
 
-def adventuring():
-    return flex_col({'class': 'adventuring'}, [
-        standard_damage(),
-    ])
 
 def standard_damage():
     return flex_col({'class': 'standard-damage'}, [
