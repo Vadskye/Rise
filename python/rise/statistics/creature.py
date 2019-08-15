@@ -33,7 +33,6 @@ class Creature(object):
             accuracy_modifier=0,
             active_abilities=None,
             attuned_ability_count=0,
-            damage_reduction=0,
             weapon_damage_modifier=0,
     ):
         self.character_class = character_class
@@ -57,7 +56,6 @@ class Creature(object):
         self.accuracy_modifier = accuracy_modifier
         self.active_abilities = active_abilities or []
         self.attuned_ability_count = attuned_ability_count
-        self.damage_reduction = damage_reduction
         self.weapon_damage_modifier = weapon_damage_modifier
 
         self.fortitude_defense_misc = 0
@@ -96,34 +94,11 @@ class Creature(object):
             accuracy_modifier=self.accuracy_modifier,
             active_abilities=self.active_abilities,
             attuned_ability_count=self.attuned_ability_count,
-            damage_reduction=self.damage_reduction,
             weapon_damage_modifier=self.weapon_damage_modifier,
         )
 
     def is_character(self):
         return self.character_class.class_type == 'character'
-
-    @property
-    def reserve_action_points(self):
-        if self.character_class.class_type == 'character':
-            return 3 + self.starting_willpower
-        elif self.character_class.class_type == 'monster':
-            return self.starting_willpower
-        else:
-            raise Exception(f"Unknown character class {self.character_class.class_type}")
-
-    @property
-    def recovery_action_points(self):
-        if self.character_class.class_type == 'character':
-            return 3 + self.level // 7 - self.attuned_ability_count
-        elif self.character_class.class_type == 'monster':
-            return self.challenge_rating + self.level // 7 - self.attuned_ability_count
-        else:
-            raise Exception(f"Unknown character class {self.character_class.class_type}")
-
-    @property
-    def remaining_action_points(self):
-        return self.recovery_action_points - self.spent_action_points
 
     @property
     def magical_power(self):
@@ -138,7 +113,7 @@ class Creature(object):
         return sum([
             self.armor.defense_bonus if self.armor else 0,
             self.shield.defense_bonus if self.shield else 0,
-            max(self.level, self.dexterity),
+            self.starting_dexterity,
             self.natural_armor,
             self.cr_mod,
         ])
@@ -235,7 +210,7 @@ class Creature(object):
 
     @property
     def strength(self):
-        return calculate_attribute(self.starting_strength, self.level) + self.size.strength_modifier
+        return calculate_attribute(self.starting_strength, self.level)
 
     @property
     def strikes(self):
