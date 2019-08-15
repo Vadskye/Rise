@@ -15,32 +15,49 @@ def generate_script():
         encumbrance(),
         initiative(),
         base_speed(),
-        legend_points(),
-        wound_threshold(),
         skill_points(),
         '</script>',
         ""
     ])
 
-
-def attribute_change(a):
+def js_wrapper(variables, function_body):
+    change_string = ' '.join([f'change:{var}' for var in variables])
+    get_attrs_string = ', '.join([f'"{var}"' for var in variables])
+    set_variables_string = ';\n    '.join([f'var {var} = Number(v.{var} || 0)' for var in variables]) + ';'
     return f"""
-        on("change:level change:{a}_starting change:{a}_misc", function(eventInfo) {{
-            getAttrs(["{a}_starting", "{a}_misc", "level"], function(v) {{
-                var starting = Number(v.{a}_starting);
-                var scaling = 0;
-                if (starting === 1) {{
-                    scaling = Math.floor(v.level / 2);
-                }} else if (starting > 1) {{
-                    scaling = Number(v.level) - 1;
-                }}
-                setAttrs({{
-                    {a}: starting + scaling + Number(v.{a}_misc),
-                    {a}_scaling: scaling,
-                }});
+        on("{change_string}", function(eventInfo) {{
+            getAttrs([{get_attrs_string}], function(v) {{
+                {set_variables_string}
+                {function_body}
             }});
         }});
     """
+
+def get_misc_variables(variable_name):
+    return [f'{variable_name}_misc_{i}' for i in range(3)]
+
+def numberify(variable_name):
+    return f'Number(variable_name || 0)'
+
+def sum_misc_variables(variable_name):
+    return '+'.join(get_misc_variables(variable_name))
+
+def attribute_change(a):
+    return js_wrapper(
+        ['level', f'{a}_starting', *get_misc_variables(a)],
+        f"""
+            var scaling = 0;
+            if ({a}_starting === 1) {{
+                scaling = Math.floor(v.level / 2);
+            }} else if ({a}_starting > 1) {{
+                scaling = Number(v.level) - 1;
+            }}
+            setAttrs({{
+                {a}: {a}_starting + scaling + {sum_misc_variables(a)},
+                {a}_scaling: scaling,
+            }});
+        """
+    )
 
 
 def attribute_skills(attribute):
@@ -114,224 +131,189 @@ def set_skill(a, s):
 
 
 def accuracy():
-    return f"""
-        on("change:level change:perception", function(eventInfo) {{
-            getAttrs(["level", "perception"], function(v) {{
-                var cr_mod = Math.max(0, Number(v.challenge_rating || 1) - 1);
-                setAttrs({{
-                    base_accuracy: Math.max(Number(v.level), Number(v.perception)) + cr_mod,
-                }});
+    return js_wrapper(
+        ['challenge_rating', 'level', 'perception', *get_misc_variables('accuracy')],
+        f"""
+            var cr_mod = Math.max(0, challenge_rating - 1);
+            var accuracy_scaling = Math.max(level, perception);
+            setAttrs({{
+                accuracy: accuracy_scaling + {sum_misc_variables('accuracy')} + cr_mod,
+                accuracy_scaling,
             }});
-        }});
-    """
+        """
+    )
 
 
 def action_points():
-    return f"""
-        on("change:level", function(eventInfo) {{
-            getAttrs(["level"], function(v) {{
-                var level = Number(v.level || 0);
-                var action_points = 4 + Math.floor((level + 3) / 6);
-                setAttrs({{
-                    action_points_max: action_points,
-                    action_points_total: action_points,
-                }});
+    return js_wrapper(
+        ['level'],
+        f"""
+            var action_points = 4 + Math.floor((level + 3) / 6);
+            setAttrs({{
+                action_points_max: action_points,
+                action_points_total: action_points,
             }});
-        }});
-    """
+        """,
+    )
 
 
 def armor_defense():
-    return f"""
-        on("change:level change:dexterity_starting change:body_armor_defense_value change:shield_defense_value change:armor_defense_misc change:challenge_rating", function(eventInfo) {{
-            getAttrs(["level", "dexterity_starting", "body_armor_defense_value", "shield_defense_value", "armor_defense_misc", "challenge_rating"], function(v) {{
-                var cr_mod = Math.max(0, Number(v.challenge_rating || 1) - 1);
-                var before_equipment = Number(v.level || 0) + Number(v.dexterity_starting || 0) + cr_mod;
-                var total = before_equipment + Number(v.body_armor_defense_value || 0) + Number(v.shield_defense_value || 0) + Number(v.armor_defense_misc || 0);
-                setAttrs({{
-                    armor_defense: total,
-                }});
+    return js_wrapper(
+        ['level', 'dexterity_starting', 'body_armor_defense_value', 'shield_defense_value', *get_misc_variables('armor_defense')],
+        f"""
+            var cr_mod = Math.max(0, challenge_rating - 1);
+            var before_equipment = level + dexterity_starting + cr_mod;
+            var total = before_equipment + body_armor_defense_value + shield_defense_value + {sum_misc_variables('armor_defense')};
+            setAttrs({{
+                armor_defense: total,
             }});
-        }});
-    """
+        """
+    )
+
 
 def damage_resistance():
-    return f"""
-        on("change:level change:damage_resistance_misc", function(eventInfo) {{
-            getAttrs(["level", "damage_resistance_misc"], function(v) {{
-                var damage_resistance = {{
-                    1: 0,
-                    2: 0,
-                    3: 1,
-                    4: 2,
-                    5: 3,
-                    6: 4,
-                    7: 5,
-                    8: 6,
-                    9: 8,
-                    10: 10,
-                    11: 12,
-                    12: 14,
-                    13: 16,
-                    14: 18,
-                    15: 21,
-                    16: 24,
-                    17: 27,
-                    18: 30,
-                    19: 33,
-                    20: 36,
-                }}[Number(v.level || 0)]
-                setAttrs({{
-                    damage_resistance: damage_resistance + Number(v.damage_resistance_misc || 0),
-                }});
+    return js_wrapper(
+        ['level'],
+        f"""
+            var damage_resistance = {{
+                1: 0,
+                2: 0,
+                3: 1,
+                4: 2,
+                5: 3,
+                6: 4,
+                7: 5,
+                8: 6,
+                9: 8,
+                10: 10,
+                11: 12,
+                12: 14,
+                13: 16,
+                14: 18,
+                15: 21,
+                16: 24,
+                17: 27,
+                18: 30,
+                19: 33,
+                20: 36,
+            }}[level]
+            setAttrs({{
+                damage_resistance,
             }});
-        }});
-    """
+        """
+    )
 
 def wound_resistance():
-    return f"""
-        on("change:level change:wound_resistance_misc", function(eventInfo) {{
-            getAttrs(["level", "wound_resistance_misc"], function(v) {{
-                var wound_resistance = {{
-                    1: 13,
-                    2: 14,
-                    3: 16,
-                    4: 18,
-                    5: 21,
-                    6: 24,
-                    7: 27,
-                    8: 30,
-                    9: 34,
-                    10: 38,
-                    11: 43,
-                    12: 48,
-                    13: 54,
-                    14: 61,
-                    15: 69,
-                    16: 77,
-                    17: 86,
-                    18: 96,
-                    19: 108,
-                    20: 122,
-                }}[Number(v.level || 0)]
-                setAttrs({{
-                    wound_resistance: wound_resistance + Number(v.wound_resistance_misc || 0),
-                }});
+    return js_wrapper(
+        ['level'],
+        f"""
+            var wound_resistance = {{
+                1: 13,
+                2: 14,
+                3: 16,
+                4: 18,
+                5: 21,
+                6: 24,
+                7: 27,
+                8: 30,
+                9: 34,
+                10: 38,
+                11: 43,
+                12: 48,
+                13: 54,
+                14: 61,
+                15: 69,
+                16: 77,
+                17: 86,
+                18: 96,
+                19: 108,
+                20: 122,
+            }}[level]
+            setAttrs({{
+                wound_resistance,
             }});
-        }});
-    """
+        """
+    )
 
 
 def fortitude():
-    return f"""
-        on("change:level change:strength change:constitution change:fortitude_class change:fortitude_misc change:challenge_rating", function(eventInfo) {{
-            getAttrs(["level", "strength", "constitution", "constitution_starting", "fortitude_class", "fortitude_misc", "challenge_rating"], function(v) {{
-                var cr_mod = Math.max(0, Number(v.challenge_rating || 1) - 1);
-                var total = Number(v.level || 0) + Number(v.constitution_starting || 0) + Number(v.fortitude_class || 0) + Number(v.fortitude_misc || 0) + cr_mod;
-                setAttrs({{
-                    fortitude: total,
-                }});
+    return js_wrapper(
+        ['level', 'constitution_starting', 'fortitude_class', 'challenge_rating', *get_misc_variables('fortitude')],
+        f"""
+            var cr_mod = Math.max(0, challenge_rating - 1);
+            var total = Number(v.level || 0) + Number(v.constitution_starting || 0) + Number(v.fortitude_class || 0) + Number(v.fortitude_misc || 0) + cr_mod;
+            setAttrs({{
+                fortitude: level + constitution_starting + fortitude_class + cr_mod + {sum_misc_variables('fortitude')},
             }});
-        }});
-    """
+        """
+    )
 
 def reflex():
-    return f"""
-        on("change:level change:dexterity change:perception change:shield_defense_value change:reflex_class change:reflex_misc change:challenge_rating", function(eventInfo) {{
-            getAttrs(["level", "dexterity", "perception", "dexterity_starting", "reflex_class", "reflex_misc", "challenge_rating"], function(v) {{
-                var cr_mod = Math.max(0, Number(v.challenge_rating || 1) - 1);
-                var total = Number(v.level || 0) + Number(v.dexterity_starting || 0) + Number(v.reflex_class || 0) + Number(v.reflex_misc || 0) + cr_mod;
-                setAttrs({{
-                    reflex: total,
-                }});
+    return js_wrapper(
+        ['level', 'dexterity_starting', 'reflex_class', 'challenge_rating', *get_misc_variables('reflex')],
+        f"""
+            var cr_mod = Math.max(0, challenge_rating - 1);
+            var total = Number(v.level || 0) + Number(v.dexterity_starting || 0) + Number(v.reflex_class || 0) + Number(v.reflex_misc || 0) + cr_mod;
+            setAttrs({{
+                reflex: level + dexterity_starting + reflex_class + cr_mod + {sum_misc_variables('reflex')},
             }});
-        }});
-    """
+        """
+    )
 
 def mental():
-    return f"""
-        on("change:level change:intelligence change:willpower change:mental_class change:mental_misc change:challenge_rating", function(eventInfo) {{
-            getAttrs(["level", "intelligence", "willpower", "willpower_starting", "mental_class", "mental_misc", "challenge_rating"], function(v) {{
-                var cr_mod = Math.max(0, Number(v.challenge_rating || 1) - 1);
-                var total = Number(v.level || 0) + Number(v.willpower_starting || 0) + Number(v.mental_class || 0) + Number(v.mental_misc || 0) + cr_mod;
-                setAttrs({{
-                    mental: total,
-                }});
+    return js_wrapper(
+        ['level', 'willpower_starting', 'mental_class', 'challenge_rating', *get_misc_variables('mental')],
+        f"""
+            var cr_mod = Math.max(0, challenge_rating - 1);
+            var total = Number(v.level || 0) + Number(v.willpower_starting || 0) + Number(v.mental_class || 0) + Number(v.mental_misc || 0) + cr_mod;
+            setAttrs({{
+                mental: level + willpower_starting + mental_class + cr_mod + {sum_misc_variables('mental')},
             }});
-        }});
-    """
+        """
+    )
 
 def encumbrance():
-    return f"""
-        on("change:level change:body_armor_encumbrance change:encumbrance_misc change:strength_starting", function(eventInfo) {{
-            getAttrs(["body_armor_encumbrance", "encumbrance_misc", "strength_starting"], function(v) {{
-                setAttrs({{
-                    encumbrance: Math.max(
-                        Number(v.body_armor_encumbrance || 0)
-                        - Number(v.encumbrance_misc || 0)
-                        - Number(v.strength_starting || 0)
-                    , 0),
-                }});
+    return js_wrapper(
+        ['level', 'body_armor_encumbrance', 'strength_starting', *get_misc_variables('encumbrance')],
+        f"""
+            setAttrs({{
+                encumbrance: Math.max(
+                    body_armor_encumbrance
+                    - strength_starting
+                    - {'-'.join(get_misc_variables('encumbrance'))}
+                , 0),
             }});
-        }});
-    """
+        """,
+    )
 
 def initiative():
-    return f"""
-        on("change:dexterity change:perception change:initiative_misc", function(eventInfo) {{
-            getAttrs(["dexterity", "perception", "initiative_misc"], function(v) {{
-                var scaling = Math.max(Number(v.dexterity || 0), Number(v.perception || 0));
-                setAttrs({{
-                    initiative: scaling + Number(v.initiative_misc || 0),
-                    initiative_scaling: scaling,
-                }});
+    return js_wrapper(
+        ['dexterity', 'perception', *get_misc_variables('initiative')],
+        f"""
+            var scaling = Math.max(dexterity, perception);
+            setAttrs({{
+                initiative: scaling + {sum_misc_variables('initiative')},
+                initiative_scaling: scaling,
             }});
-        }});
-    """
+        """
+    )
 
 def base_speed():
-    return f"""
-        on("change:level change:speed_size change:speed_armor change:speed_misc", function(eventInfo) {{
-            getAttrs(["speed_size", "speed_armor", "speed_misc"], function(v) {{
-                setAttrs({{
-                    base_speed: Number(v.speed_size || 0) - Number(v.speed_armor || 0) + Number(v.speed_misc || 0),
-                }});
+    return js_wrapper(
+        ['level', 'speed_size', 'speed_armor', *get_misc_variables('speed')],
+        f"""
+            setAttrs({{
+                base_speed: speed_size - speed_armor + {sum_misc_variables('speed')}
             }});
-        }});
-    """
-
-def legend_points():
-    return f"""
-        on("change:level", function(eventInfo) {{
-            getAttrs(["level"], function(v) {{
-                setAttrs({{
-                    legend_points: Number(v.level || 0) >= 5 ? 1 : 0,
-                }});
-            }});
-        }});
-    """
-
-def wound_threshold():
-    return f"""
-        on("change:wound_threshold_misc change:level change:constitution_starting change:challenge_rating", function(eventInfo) {{
-            getAttrs(["wound_threshold_misc", "level", "constitution_starting", "challenge_rating"], function(v) {{
-                var from_level = (1 + Number(v.level || 0)) * (5 + Number(v.constitution_starting || 0))
-                var wound_threshold = Number(v.wound_threshold_misc || 0) + from_level;
-                setAttrs({{
-                    wound_threshold_max: wound_threshold,
-                    wound_threshold_total: wound_threshold,
-                }});
-            }});
-        }});
-    """
+        """
+    )
 
 def skill_points():
-    return f"""
-        on("change:level change:intelligence_starting change:skill_points_misc", function(eventInfo) {{
-            getAttrs(["intelligence_starting", "skill_points_misc"], function(v) {{
-                setAttrs({{
-                    skill_points: 8 + Number(v.intelligence_starting || 0) * 2 + Number(v.skill_points_misc || 0),
-                }});
+    return js_wrapper(
+        ['level', 'intelligence_starting', *get_misc_variables('skill_points')],
+        f"""
+            setAttrs({{
+                skill_points: 8 + v.intelligence_starting * 2 + {sum_misc_variables('skill_points')}
             }});
-        }});
-    """
+        """
+    )
