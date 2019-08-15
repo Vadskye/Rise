@@ -109,6 +109,10 @@
 }
 .sidebar {
   width: 45%;
+
+  .calc-header {
+      width: 5.5em;
+  }
 }
 .calc-skills:nth-child(3) {
   margin-top: 0;
@@ -130,11 +134,11 @@
 .skill-labels {
   justify-content: space-between;
   margin-top: 0.15em;
-  margin-bottom: 0.15em;
+  margin-bottom: 0.1em;
   align-items: center;
 }
 .skill-labels {
-  margin-top: 0.2em;
+  margin-top: 0;
   margin-bottom: 0;
 }
 .skill-label {
@@ -151,7 +155,7 @@
 }
 .skill-name {
   text-align: right;
-  width: 8em;
+  width: 10em;
 }
 .skill-attribute {
   font-weight: bold;
@@ -177,12 +181,8 @@
       text-align: center;
     }
 
-    .damage-chart > .flex-col{
-        flex-grow: 1;
-    }
-
-    .damage-value {
-        flex-grow: 1;
+    .damage-chart {
+        justify-content: space-around;
     }
 
     .header {
@@ -218,4 +218,20 @@ input[type=text].invisible-text-input {
     .flex-row > div:last-child {
         margin-right: 0;
     }
+}
+
+.abilities-known-header {
+    margin-top: 0;
+}
+
+.skill-modifiers {
+    margin-top: 0;
+}
+
+.skill-modifier-reminder {
+    justify-content: space-around;
+}
+
+.skill-modifier-reminder-header {
+    font-weight: bold;
 }

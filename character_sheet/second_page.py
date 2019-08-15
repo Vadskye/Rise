@@ -4,6 +4,8 @@ from cgi_simple import (
 )
 from sheet_data import ATTRIBUTE_SHORTHAND, ATTRIBUTE_SKILLS, ATTRIBUTES, ROLL20_CALC
 
+equation_space = flex_col({'class': 'equation-glue'}, div({'class': 'equation-math'}, ' '))
+
 def equation_misc(name, i=0):
     return flex_col([
         number_input({
@@ -27,28 +29,47 @@ def create_page(destination):
         flex_col({'class': 'sidebar'}, [
             calc_skills(destination),
             level_chart(),
+            flex_wrapper(div({'class': 'section-header abilities-known-header'}, 'Abilities Known')),
+            calc_maneuvers(),
+            calc_spells(),
+            *[calc_blank_ability(i) for i in range(2)],
         ]),
         flex_col({'class': 'main-body'}, [
             flex_col({'class': 'statistics'}, [
                 flex_wrapper(div({'class': 'section-header'}, 'Core Statistics')),
                 calc_accuracy(),
+                calc_base_speed(),
                 calc_carrying_capacity(),
                 calc_encumbrance(),
-                # calc_initiative(),
+                calc_hit_points(),
+                calc_initiative(),
                 calc_insight_points(),
                 calc_magical_power(),
-                calc_maneuvers(),
                 calc_mundane_power(),
                 calc_skill_points(),
-                calc_spells(),
                 flex_wrapper(div({'class': 'section-header'}, 'Defenses')),
                 calc_defenses(),
                 flex_wrapper(div({'class': 'section-header'}, 'Resistances')),
-                calc_damage_resistance(),
+                calc_base_resistances(),
+                calc_global_resistance(),
                 calc_energy_resistance(),
                 calc_physical_resistance(),
-                calc_wound_resistance(),
             ]),
+            flex_wrapper(div({'class': 'section-header skill-modifiers'}, 'Skill Modifiers')),
+            flex_row({'class': 'skill-modifier-reminder'}, [
+                flex_col([
+                    div({'class': 'skill-modifier-reminder-header'}, 'Training Level'),
+                    div('Untrained'),
+                    div('Trained'),
+                    div('Mastered'),
+                ]),
+                flex_col([
+                    div({'class': 'skill-modifier-reminder-header'}, 'Modifier'),
+                    div('Half key attribute'),
+                    div('Key attribute or 1 + half level'),
+                    div('4 + key attribute or 4 + level'),
+                ]),
+            ])
         ]),
     ])
 
@@ -91,7 +112,11 @@ def calc_skill(skill_name, attribute=None):
         }),
         number_input({
             'class': 'equation-misc',
-            'name': skill_parsable + '_misc',
+            'name': skill_parsable + '_misc_0',
+        }),
+        number_input({
+            'class': 'equation-misc',
+            'name': skill_parsable + '_misc_1',
         }),
     ])
 
@@ -154,7 +179,6 @@ def abilities(name_prefix):
     ])
 
 def calc_carrying_capacity():
-    space = flex_col({'class': 'equation-glue'}, div({'class': 'equation-math'}, ' '))
     return flex_row([
         div({'class': 'calc-header'}, 'Carrying Capacity'),
         underlabel(
@@ -164,7 +188,7 @@ def calc_carrying_capacity():
                 'name': 'carrying_capacity_light_display',
             }),
         ),
-        space,
+        equation_space,
         underlabel(
             'Max',
             number_input({
@@ -172,7 +196,7 @@ def calc_carrying_capacity():
                 'name': 'carrying_capacity_max_display',
             }),
         ),
-        space,
+        equation_space,
         underlabel(
             'Over',
             number_input({
@@ -180,7 +204,7 @@ def calc_carrying_capacity():
                 'name': 'carrying_capacity_over_display',
             }),
         ),
-        space,
+        equation_space,
         underlabel(
             'Push',
             number_input({
@@ -208,6 +232,28 @@ def calc_accuracy():
                 'name': 'accuracy_display',
                 'value': '@{accuracy}',
             },
+        ),
+    ])
+
+def calc_base_resistances():
+    return flex_row([
+        div({'class': 'calc-header'}, 'Base Resistances'),
+        underlabel(
+            'Damage',
+            number_input({
+                'disabled': True,
+                'name': 'damage_resistance_base_display',
+                'value': '(@{damage_resistance_base})',
+            }),
+        ),
+        equation_space,
+        underlabel(
+            'Wound',
+            number_input({
+                'disabled': False,
+                'name': 'wound_resistance_base_display',
+                'value': '(@{wound_resistance_base})',
+            }),
         ),
     ])
 
@@ -259,9 +305,25 @@ def calc_wound_resistance():
         ),
     ])
 
+def calc_global_resistance():
+    return flex_row([
+        div({'class': 'calc-header'}, 'All Damage'),
+        equation(
+            [
+                equation_misc_repeat('global_resistance', 4)
+            ],
+            result_attributes={
+                'disabled': 'true',
+                'name': 'global_resistance_display',
+                'value': '(@{global_resistance})',
+            },
+            result_label='Bonus'
+        ),
+    ])
+
 def calc_physical_resistance():
     return flex_row([
-        div({'class': 'calc-header'}, 'Physical Bonus'),
+        div({'class': 'calc-header'}, 'Physical Damage'),
         equation(
             [
                 underlabel(
@@ -286,7 +348,7 @@ def calc_physical_resistance():
 
 def calc_energy_resistance():
     return flex_row([
-        div({'class': 'calc-header'}, 'Energy Bonus'),
+        div({'class': 'calc-header'}, 'Energy Damage'),
         equation(
             [
                 equation_misc_repeat('energy_resistance', 4)
@@ -297,6 +359,33 @@ def calc_energy_resistance():
                 'value': '(@{energy_resistance})',
             },
             result_label='Bonus'
+        ),
+    ])
+
+def calc_hit_points():
+    return flex_row([
+        div({'class': 'calc-header'}, 'Hit Points'),
+        equation(
+            [
+                underlabel('Base', number_input({
+                    'disabled': True,
+                    'name': 'hit_points_base',
+                    'value': '6',
+                })),
+                plus(),
+                underlabel('(Con)', number_input({
+                    'disabled': True,
+                    'name': 'hit_points_constitution',
+                    'value': '(@{constitution_starting})',
+                })),
+                plus(),
+                equation_misc_repeat('hit_points', 2),
+            ],
+            result_attributes={
+                'disabled': True,
+                'name': 'initiative_display',
+                'value': '@{initiative}',
+            },
         ),
     ])
 
@@ -363,23 +452,24 @@ def calc_mundane_power():
         ),
     ])
 
-# def calc_base_speed():
-#     return flex_row([
-#         div({'class': 'calc-header'}, 'Base Speed'),
-#         equation(
-#             [
-#                 underlabel('Size', number_input({'name': 'speed_size'})),
-#                 minus(),
-#                 underlabel('Armor', number_input({'name': 'speed_armor'})),
-#                 equation_misc('speed')
-#             ],
-#             result_attributes={
-#                 'disabled': True,
-#                 'name': 'base_speed_display',
-#                 'value': '@{base_speed}',
-#             },
-#         )
-#     ])
+def calc_base_speed():
+    return flex_row([
+        div({'class': 'calc-header'}, 'Base Speed'),
+        equation(
+            [
+                underlabel('Size', number_input({'name': 'speed_size'})),
+                minus(),
+                underlabel('Armor', number_input({'name': 'speed_armor'})),
+                plus(),
+                equation_misc_repeat('speed', 2)
+            ],
+            result_attributes={
+                'disabled': True,
+                'name': 'base_speed_display',
+                'value': '@{base_speed}',
+            },
+        )
+    ])
 
 # def calc_strike_damage():
 #     return flex_row([
@@ -491,7 +581,7 @@ def calc_maneuvers():
         div({'class': 'calc-header'}, 'Maneuvers'),
         equation(
             [
-                underlabel('Class', number_input({
+                underlabel('Base', number_input({
                     'disabled': False,
                     'name': 'maneuvers_class',
                 })),
@@ -516,7 +606,7 @@ def calc_spells():
         div({'class': 'calc-header'}, 'Spells'),
         equation(
             [
-                underlabel('Class', number_input({
+                underlabel('Base', number_input({
                     'disabled': False,
                     'name': 'spells_class',
                 })),
@@ -532,6 +622,31 @@ def calc_spells():
                 'disabled': True,
                 'name': 'spells',
                 'value': '@{spells}',
+            },
+        )
+    ])
+
+def calc_blank_ability(i):
+    return flex_row([
+        div({'class': 'calc-header'}, text_input({'name': f'active_ability_name_{i}'})),
+        equation(
+            [
+                underlabel('Base', number_input({
+                    'disabled': False,
+                    'name': f'active_ability_base_{i}',
+                })),
+                plus(),
+                underlabel('Insight', number_input({
+                    'disabled': False,
+                    'name': f'active_ability_insight_{i}',
+                })),
+                plus(),
+                equation_misc_repeat(f'active_ability_{i}', 2)
+            ],
+            result_attributes={
+                'disabled': True,
+                'name': 'active_ability_known_display',
+                'value': f'@{{active_ability_known_{i}}}',
             },
         )
     ])
