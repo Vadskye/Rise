@@ -60,6 +60,34 @@ def attribute_section(attribute):
         ''.join([skill_box(skill) for skill in ATTRIBUTE_SKILLS[attribute]])
     ])
 
+def attribute_skills(attribute, destination):
+    if destination == 'paper':
+        return ''.join([skill_box(skill) for skill in ATTRIBUTE_SKILLS[attribute]])
+    else:
+        return fieldset(
+            {'class': f'repeating_skills{attribute}'},
+            flex_row({'class': 'blank-skill-row'}, [
+                text_input({'class': 'blank-skill-name', 'name': 'blank_skill_name'}),
+                number_input({'class': 'blank-skill-points', 'name': 'blank_skill_points'}),
+                number_input({'class': 'equation-misc', 'name': 'blank_skill_misc'}),
+                number_input({
+                    'class': 'blank-skill-ranks',
+                    'disabled': True,
+                    'name': 'blank_skill_modifier_display',
+                    # TODO: fill in actual calculation
+                    'value': '@{blank_skill_points}',
+                }),
+                button(
+                    {
+                        'class': 'blank-skill-roll',
+                        'type': 'roll',
+                        # TODO: fill in actual calculation
+                        'value': "@{character_name} uses @{blank_skill_name}: [[d10 + @{blank_skill_misc}]]",
+                    },
+                ),
+            ]),
+        )
+
 def skill_box(name):
     formatted_skill = name.lower().replace(' ', '_')
     return flex_row({'class': 'skill-box'}, [
@@ -129,18 +157,18 @@ def damage_resistance():
         "".join([
             sidelabel('Global', number_input({
                 'disabled': True,
-                'name': 'damage_resistance_global',
-                'value': '@{damage_resistance_global}',
+                'name': 'global_damage_resistance_display',
+                'value': '@{global_damage_resistance}',
             })),
             sidelabel('Physical', number_input({
                 'disabled': True,
-                'name': 'damage_resistance_physical',
-                'value': '@{damage_resistance_physical}',
+                'name': 'physical_damage_resistance_display',
+                'value': '@{physical_damage_resistance}',
             })),
             sidelabel('Energy', number_input({
                 'disabled': True,
-                'name': 'damage_resistance_energy',
-                'value': '@{damage_resistance_energy}',
+                'name': 'energy_damage_resistance_display',
+                'value': '@{energy_damage_resistance}',
             })),
             freeform_number_input(
                 number_input_attributes={'name': 'damage_resistance_freeform'},
@@ -155,18 +183,18 @@ def wound_resistance():
         "".join([
             sidelabel('Global', number_input({
                 'disabled': True,
-                'name': 'wound_resistance_global',
-                'value': '@{wound_resistance_global}',
+                'name': 'global_wound_resistance_display',
+                'value': '@{global_wound_resistance}',
             })),
             sidelabel('Physical', number_input({
                 'disabled': True,
-                'name': 'wound_resistance_physical',
-                'value': '@{wound_resistance_physical}',
+                'name': 'physical_wound_resistance_display',
+                'value': '@{physical_wound_resistance}',
             })),
             sidelabel('Energy', number_input({
                 'disabled': True,
-                'name': 'wound_resistance_energy',
-                'value': '@{wound_resistance_energy}',
+                'name': 'energy_wound_resistance_display',
+                'value': '@{energy_wound_resistance}',
             })),
             freeform_number_input(
                 number_input_attributes={'name': 'wound_resistance_freeform'},
@@ -184,13 +212,13 @@ def core_statistics():
         }),
         sidelabel('Hit points', number_input({
             'disabled': True,
-            'name': 'hit_points',
+            'name': 'hit_points_display',
             'value': '@{hit_points}',
         })),
         sidelabel('Action points', number_input({
             'disabled': True,
-            'name': 'fatigue_threshold_display',
-            'value': '(@{fortitude_scaling} + @{fatigue_threshold_misc})',
+            'name': 'action_points_display',
+            'value': '@{action_points}',
         })),
         sidelabel('Initiative', number_input({
             'disabled': True,
