@@ -60,34 +60,6 @@ def attribute_section(attribute):
         ''.join([skill_box(skill) for skill in ATTRIBUTE_SKILLS[attribute]])
     ])
 
-def attribute_skills(attribute, destination):
-    if destination == 'paper':
-        return ''.join([skill_box(skill) for skill in ATTRIBUTE_SKILLS[attribute]])
-    else:
-        return fieldset(
-            {'class': f'repeating_skills{attribute}'},
-            flex_row({'class': 'blank-skill-row'}, [
-                text_input({'class': 'blank-skill-name', 'name': 'blank_skill_name'}),
-                number_input({'class': 'blank-skill-points', 'name': 'blank_skill_points'}),
-                number_input({'class': 'equation-misc', 'name': 'blank_skill_misc'}),
-                number_input({
-                    'class': 'blank-skill-ranks',
-                    'disabled': True,
-                    'name': 'blank_skill_modifier_display',
-                    # TODO: fill in actual calculation
-                    'value': '@{blank_skill_points}',
-                }),
-                button(
-                    {
-                        'class': 'blank-skill-roll',
-                        'type': 'roll',
-                        # TODO: fill in actual calculation
-                        'value': "@{character_name} uses @{blank_skill_name}: [[d10 + @{blank_skill_misc}]]",
-                    },
-                ),
-            ]),
-        )
-
 def skill_box(name):
     formatted_skill = name.lower().replace(' ', '_')
     return flex_row({'class': 'skill-box'}, [
