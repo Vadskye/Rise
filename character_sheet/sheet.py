@@ -28,7 +28,7 @@ def main(ability_cards, destination):
         with open('first_page.html', 'w') as fh:
             fh.write(''.join([
                 debug_stylesheets('first_page', destination),
-                debug_html_wrapper(first_page.create_page(), destination),
+                debug_html_wrapper(first_page.create_page(destination), destination),
             ]) + '\n')
 
         with open('second_page.html', 'w') as fh:
@@ -60,7 +60,7 @@ def main(ability_cards, destination):
     else:
         with open('roll20.html', 'w') as fh:
             fh.write(sheet_worker.generate_script())
-            fh.write(cgi.div({'class': 'first-page'}, first_page.create_page()))
+            fh.write(cgi.div({'class': 'first-page'}, first_page.create_page(cgi.DESTINATION)))
             fh.write(cgi.div({'class': 'second-page'}, second_page.create_page(cgi.DESTINATION)))
             fh.write(cgi.div({'class': 'third-page'}, third_page.create_page()))
 
