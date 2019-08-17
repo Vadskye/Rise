@@ -1,10 +1,10 @@
 from cgi_simple import (
-    button, div, flex_col, flex_row, flex_wrapper, freeform_number_input,
+    button, div, fieldset, flex_col, flex_row, flex_wrapper, freeform_number_input,
     labeled_number_input, labeled_text_input, number_input, sidelabel, text_input, underlabel, underlabel_spaced
 )
 from sheet_data import ATTRIBUTES, DEFENSES, ATTRIBUTE_SKILLS
 
-def create_page():
+def create_page(destination):
     return flex_row({'class': 'first-page'}, [
         flex_col({'class': 'sidebar'}, [
             rise_title(),
@@ -13,8 +13,8 @@ def create_page():
         flex_col({'class': 'main-body'}, [
             boring_stuff(),
             statistics_header(),
-            attacks(),
-            abilities(),
+            attacks(destination),
+            abilities(destination),
         ]),
     ])
 
@@ -209,10 +209,13 @@ def movement():
         freeform_number_input(),
     ])
 
-def abilities():
+def abilities(destination):
     return flex_col({'class': 'abilities'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Abilities')),
-        "".join([ability(i) for i in range(11)]),
+        "".join([ability(i) for i in range(11)]) if destination == 'paper' else fieldset(
+            {'class': f'repeating_abilities'},
+            ability(0),
+        )
     ])
 
 def ability(ability_number=None):
@@ -258,13 +261,16 @@ def passive_ability(prefix, ability_number):
     ])
 
 
-def attacks():
+def attacks(destination):
     return flex_col({'class': 'attacks'}, [
         flex_wrapper(div({'class': 'section-header'}, 'Attacks')),
-        "".join([attack(i) for i in range(6)]),
+        "".join([attack(i) for i in range(6)]) if destination == 'paper' else fieldset(
+            {'class': f'repeating_attacks'},
+            attack(0),
+        )
     ])
 
-def attack(n=None):
+def attack(n):
     return flex_row({'class': 'attack'}, [
         labeled_text_input(
             'Name',
@@ -289,7 +295,7 @@ def attack(n=None):
                 'class': 'attack-roll',
                 'name': f"roll_attack_{n}",
                 'type': 'roll',
-                'value': f"@{{character_name}} uses @{{attack{n}_name}}: [[d10! + @{{base_accuracy}} + @{{attack{n}_accuracy}}]] to hit! (@{{attack{n}_effect}})",
+                'value': f"@{{character_name}} uses @{{attack{n}_name}}: [[d10! + @{{accuracy}} + @{{attack{n}_accuracy}}]] to hit! (@{{attack{n}_effect}})",
             },
             'Attack',
         ),
