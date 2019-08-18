@@ -278,7 +278,7 @@ def calc_physical_resistance_bonus():
                 underlabel(
                     'Armor',
                     number_input({
-                        'name': 'physical_resistance_armor_display_bonus',
+                        'name': 'physical_resistance_bonus_armor',
                     }),
                 ),
                 plus(),
@@ -298,7 +298,7 @@ def calc_energy_resistance_bonus():
         div({'class': 'calc-header'}, 'Energy Damage'),
         equation(
             [
-                equation_misc_repeat('energy_resistance', 4)
+                equation_misc_repeat('energy_resistance_bonus', 4)
             ],
             result_attributes={
                 'disabled': 'true',
