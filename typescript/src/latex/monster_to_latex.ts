@@ -1,3 +1,5 @@
+import { attributesAtLevel } from "@src/calculate/attributes_at_level";
+import { skillModifierByName } from "@src/calculate/skill_modifier_by_name";
 import { MonsterBase } from "@src/monsters";
 import { titleCase } from "change-case";
 
@@ -29,12 +31,17 @@ function getName({ name }: MonsterBase): string {
   }
 }
 
-function getFooter(_monster: MonsterBase) {
+function getFooter(monster: MonsterBase) {
+  const attributes = attributesAtLevel(monster);
+  const awareness = skillModifierByName({
+    attributes,
+    level: monster.level,
+    name: "awareness",
+    skillPoints: monster.skills.awareness,
+  });
   return `
     \\begin{monsterfooter}
       \\pari \\textbf<Awareness>
     \\end{monsterfooter}
   `;
 }
-
-export default monsterToLatex;

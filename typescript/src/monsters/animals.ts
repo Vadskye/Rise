@@ -11,5 +11,3 @@ export const animals: MonsterInput[] = [
     species: "animal",
   },
 ];
-
-export default animals;

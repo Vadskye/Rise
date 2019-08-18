@@ -1,9 +1,12 @@
-import animals from "@src/monsters/animals";
+import { attributes } from "@src/data/attributes";
+import { skills } from "@src/data/skills";
+import { animals } from "@src/monsters/animals";
 interface Armor {
   armorDefenseBonus: number;
   name: string;
   resistanceBonus: number;
 }
+import { fromPairs } from "@src/util/from_pairs";
 import { Weapon } from "@src/weapons";
 
 interface MonsterRequiredInput {
@@ -13,24 +16,16 @@ interface MonsterRequiredInput {
 }
 
 interface MonsterOptionalInput {
-  attributes?: Partial<Attributes>;
+  attributes?: Partial<Creature.Attributes>;
   armor?: Armor[];
   challengeRating?: number;
   size?: string;
+  skills?: Partial<Creature.Skills>;
   weapons?: Weapon[];
 }
 
-interface Attributes {
-  str: number;
-  dex: number;
-  con: number;
-  int: number;
-  per: number;
-  wil: number;
-}
-
-export type MonsterBase = Omit<MonsterRequiredInput, "attributes"> &
-  Required<MonsterOptionalInput> & { attributes: Attributes };
+export type MonsterBase = Omit<MonsterRequiredInput, "attributes" | "skills"> &
+  Required<MonsterOptionalInput> & { attributes: Creature.Attributes; skills: Creature.Skills };
 
 export type MonsterInput = MonsterRequiredInput & MonsterOptionalInput;
 
@@ -38,20 +33,15 @@ export type MonsterInputByName = Record<string, MonsterInput>;
 
 export type MonsterBaseByName = Record<string, MonsterBase>;
 
-const monsterDefaults: Required<Omit<MonsterOptionalInput, "attributes">> & {
-  attributes: Attributes;
+const monsterDefaults: Required<Omit<MonsterOptionalInput, "attributes" | "skills">> & {
+  attributes: Creature.Attributes;
+  skills: Creature.Skills;
 } = {
-  attributes: {
-    str: 0,
-    dex: 0,
-    con: 0,
-    int: 0,
-    per: 0,
-    wil: 0,
-  },
+  attributes: fromPairs(attributes.map((a) => [a, 0])),
   armor: [],
   challengeRating: 1,
   size: "medium",
+  skills: fromPairs(skills.map((s) => [s, 0])),
   weapons: [],
 };
 
@@ -69,7 +59,7 @@ function generateMonsters(): MonsterBase[] {
   return monsters;
 }
 
-function mergeDefaultAttributes(monster: MonsterOptionalInput): Attributes {
+function mergeDefaultAttributes(monster: MonsterOptionalInput): Creature.Attributes {
   if (monster.attributes === undefined) {
     return monsterDefaults.attributes;
   }
@@ -77,5 +67,3 @@ function mergeDefaultAttributes(monster: MonsterOptionalInput): Attributes {
 }
 
 export const monsters = generateMonsters();
-
-export default monsters;
