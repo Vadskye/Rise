@@ -2624,10 +2624,10 @@ def generate_mystic_spheres():
                 The \\glossterm<wound roll> for that \\glossterm<vital wound> cannot be modified again.
             """, tags=[]),
             Spell('Greater Seal Wound', 3,  'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                This spell functions like the \\spell<healing surge> spell, except that the bonus increases to +3.
+                This spell functions like the \\spell<seal wound> spell, except that the bonus increases to +3.
             """, tags=[]),
             Spell('Supreme Seal Wound', 5, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                This spell functions like the \\spell<healing surge> spell, except that the bonus increases to +4.
+                This spell functions like the \\spell<seal wound> spell, except that the bonus increases to +4.
             """, tags=[]),
             Spell('Lifegift', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 The target increases its current and maximum \\glossterm<hit points> by 1.
@@ -2659,10 +2659,6 @@ def generate_mystic_spheres():
             """, tags=[]),
             Spell('Supreme Inflict Wounds', 7, 'One creature within \\rngmed range', """
                 This spell functions like the \\spell<inflict wounds> spell, except that the damage increases to \\glossterm<standard damage> +5d.
-            """, tags=[]),
-            Spell('Greater Cure Wounds', 3, 'One living \\glossterm<ally> within \\rngmed range', """
-                This spell functions like the \\spell<cure wounds> spell, except that the healing increases to \\glossterm<standard damage> +2d.
-                In addition, for every 5 points of healing you provide, you can instead heal one point of \\glossterm<vital damage>.
             """, tags=[]),
             # TODO: make "Undead Bane" spell after figuring out undead / life
             # damage interaction
