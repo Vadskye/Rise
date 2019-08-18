@@ -188,7 +188,7 @@ def action_points():
 def armor_defense():
     misc = get_misc_variables('armor_defense', 1)
     return js_wrapper(
-        ['level', 'dexterity_starting', 'body_armor_defense_value', 'shield_defense_value', *misc],
+        ['level', 'dexterity_starting', 'body_armor_defense_value', 'shield_defense_value', *misc, 'challenge_rating'],
         f"""
             var cr_mod = Math.max(0, challenge_rating - 1);
             var before_equipment = level + dexterity_starting + cr_mod;
