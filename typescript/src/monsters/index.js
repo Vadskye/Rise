@@ -1,25 +1,19 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const animals_1 = __importDefault(require("@src/monsters/animals"));
+const attributes_1 = require("@src/data/attributes");
+const skills_1 = require("@src/data/skills");
+const animals_1 = require("@src/monsters/animals");
+const from_pairs_1 = require("@src/util/from_pairs");
 const monsterDefaults = {
-    attributes: {
-        str: 0,
-        dex: 0,
-        con: 0,
-        int: 0,
-        per: 0,
-        wil: 0,
-    },
+    attributes: from_pairs_1.fromPairs(attributes_1.attributes.map((a) => [a, 0])),
     armor: [],
     challengeRating: 1,
     size: "medium",
+    skills: from_pairs_1.fromPairs(skills_1.skills.map((s) => [s, 0])),
     weapons: [],
 };
 function generateMonsters() {
-    const monsterInputs = [...animals_1.default];
+    const monsterInputs = [...animals_1.animals];
     const monsters = monsterInputs.map((monsterInput) => {
         return Object.assign({}, monsterInput, monsterDefaults, { attributes: mergeDefaultAttributes(monsterInput) });
     });
@@ -32,4 +26,3 @@ function mergeDefaultAttributes(monster) {
     return Object.assign({}, monster.attributes, monsterDefaults.attributes);
 }
 exports.monsters = generateMonsters();
-exports.default = exports.monsters;

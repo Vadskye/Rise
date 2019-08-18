@@ -1,5 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const attributes_at_level_1 = require("@src/calculate/attributes_at_level");
+const skill_modifier_by_name_1 = require("@src/calculate/skill_modifier_by_name");
 const change_case_1 = require("change-case");
 function monsterToLatex(monster) {
     return `
@@ -28,11 +30,17 @@ function getName({ name }) {
         throw new Error(`Name '${name}' has too many suffixes`);
     }
 }
-function getFooter(_monster) {
+function getFooter(monster) {
+    const attributes = attributes_at_level_1.attributesAtLevel(monster);
+    const awareness = skill_modifier_by_name_1.skillModifierByName({
+        attributes,
+        level: monster.level,
+        name: "awareness",
+        skillPoints: monster.skills.awareness,
+    });
     return `
     \\begin{monsterfooter}
       \\pari \\textbf<Awareness>
     \\end{monsterfooter}
   `;
 }
-exports.default = monsterToLatex;

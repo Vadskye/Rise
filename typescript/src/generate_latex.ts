@@ -1,5 +1,5 @@
-import monsterToLatex from "@src/latex/monster_to_latex";
-import monsters from "@src/monsters";
+import { monsterToLatex } from "@src/latex/monster_to_latex";
+import { monsters } from "@src/monsters";
 import cli from "commander";
 import _ from "lodash";
 

@@ -11,4 +11,3 @@ exports.animals = [
         species: "animal",
     },
 ];
-exports.default = exports.animals;
