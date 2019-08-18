@@ -96,7 +96,7 @@ def set_skill(a, s):
                 var ranks = 0;
 
                 if (Number(v.{s}_points) === 0) {{
-                    attributeModifier = {a} / 2;
+                    attributeModifier = Math.floor({a} / 2);
                 }} else if ({s}_points === 1) {{
                     attributeModifier = {a};
                     ranks = Math.floor(level / 2) + 1;
