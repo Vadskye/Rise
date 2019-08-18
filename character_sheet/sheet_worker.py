@@ -62,7 +62,7 @@ def attribute_skills(attribute):
 
 
 def set_skill(a, s):
-    misc = get_misc_variables(f'{s}_misc', 2)
+    misc = get_misc_variables(s, 2)
     if a == 'other':
         return js_wrapper(
             ['level', f'{s}_points', *misc],

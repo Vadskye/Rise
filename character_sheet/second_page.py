@@ -74,41 +74,53 @@ def create_page(destination):
     ])
 
 def calc_skills(destination):
-    # Does not work
-    blank_skill_info = [
-        calc_skill('')
-        for i in range(15)
-    ] if destination == 'paper' else [
-        div({'class': 'other-skills-header'}, 'Other Skills'),
-        fieldset({'class': 'repeating_blankskills'}, [
-            calc_blank_skill(),
-        ]),
-    ]
+    if destination == 'roll20':
+        return flex_col({'class': 'calc-skills'}, [
+            div({'class': 'section-header'}, 'Skills'),
+            skill_labels('Str'),
+            *[calc_skill(skill_name, 'strength') for skill_name in ATTRIBUTE_SKILLS['strength']],
+            skill_labels('Dex'),
+            *[calc_skill(skill_name, 'dexterity') for skill_name in ATTRIBUTE_SKILLS['dexterity']],
+            # *[calc_skill(skill_name) for skill_name in ATTRIBUTE_SKILLS['constitution']],
+            skill_labels('Int'),
+            *[calc_skill(skill_name, 'intelligence') for skill_name in ATTRIBUTE_SKILLS['intelligence']],
+            skill_labels('Per'),
+            *[calc_skill(skill_name, 'perception') for skill_name in ATTRIBUTE_SKILLS['perception']],
+            *[calc_skill(skill_name, 'constitution') for skill_name in ATTRIBUTE_SKILLS['willpower']],
+            skill_labels('Other'),
+            *[calc_skill(skill_name) for skill_name in ['Bluff', 'Intimidate', 'Perform ______', 'Persuasion']],
+        ])
+    else:
+        blank_skill_info = [
+            calc_skill('')
+            for i in range(15)
+        ]
 
-    return flex_col({'class': 'calc-skills'}, [
-        div({'class': 'section-header'}, 'Skills'),
-        skill_labels(),
-        *blank_skill_info
-    ])
+        return flex_col({'class': 'calc-skills'}, [
+            div({'class': 'section-header'}, 'Skills'),
+            skill_labels(destination),
+            *blank_skill_info
+        ])
 
-def skill_labels():
+def skill_labels(destination):
     return flex_row({'class': 'skill-labels'}, [
         div({'class': 'skill-name'}),
         div({'class': 'skill-label'}, 'Points'),
         div({'class': 'skill-label'}, 'Mod'),
+        *([div({'class': 'skill-label'}, 'Mod')] if destination == 'roll20' else []),
         div({'class': 'skill-label misc'}, 'Misc'),
     ])
 
-def calc_skill(skill_name, attribute=None):
+def calc_skill(skill_name, attribute=None, blank_input=False):
     skill_parsable = skill_name.lower().replace(' ', '_')
     return flex_row({'class': 'skill-row'}, [
-        span({'class': 'skill-name'}, skill_name),
+        div({'class': f'skill-name{" blank-input" if blank_input else ""}'}, skill_name),
         number_input({'class': 'skill-points', 'name': skill_parsable + '_points'}),
         number_input({
             'class': 'skill-mod',
             'disabled': True,
-            'name': skill_parsable + '_mod_display',
-            'value': '@{' + skill_parsable + '_mod}',
+            'name': skill_parsable + '_total_display',
+            'value': '@{' + skill_parsable + '_total}',
         }),
         number_input({
             'class': 'equation-misc',
@@ -119,17 +131,6 @@ def calc_skill(skill_name, attribute=None):
             'name': skill_parsable + '_misc_1',
         }),
     ])
-
-
-def calc_blank_skill():
-    return flex_row({'class': 'skill-row'}, [
-        text_input({'class': 'skill-name', 'name': 'blank_skill_name'}),
-        number_input({'class': 'skill-points', 'name': 'blank_skill_points'}),
-        number_input({'class': 'skill-ranks', 'name': 'blank_skill_ranks'}),
-        number_input({'class': 'skill-attr', 'name': 'blank_skill_attribute'}),
-        equation_misc('blank_skill'),
-    ])
-
 
 def calc_attributes():
     return flex_col({'class': 'calc-attributes'}, [
@@ -563,7 +564,7 @@ def calc_spells():
             result_attributes={
                 'disabled': True,
                 'name': 'spells_known_display',
-                'value': '@{spells}',
+                'value': '@{spells_known}',
             },
         )
     ])
