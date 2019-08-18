@@ -314,3 +314,9 @@ def sidelabel(label_name, input_html, attributes=None):
         ),
         input_html,
     ])
+
+def select(attributes=None, contents=None):
+    return html_tag('select', attributes, contents)
+
+def option(attributes=None, contents=None):
+    return html_tag('option', attributes, contents)
