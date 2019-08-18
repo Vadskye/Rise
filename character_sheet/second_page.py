@@ -649,7 +649,7 @@ def calc_armor():
                 plus(),
                 number_input({
                     'class': 'equation-misc',
-                    'name': 'armor_defense',
+                    'name': 'armor_defense_misc_0',
                 })
             ],
             result_attributes={
