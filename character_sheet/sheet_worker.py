@@ -458,10 +458,10 @@ def energy_resistance():
 def physical_resistance():
     misc = get_misc_variables('physical_resistance_bonus', 3)
     return js_wrapper(
-        ['physical_resistance_armor', *misc],
+        ['physical_resistance_bonus_armor', *misc],
         f"""
             setAttrs({{
-                physical_resistance_bonus: physical_resistance_armor + {sum_variables(misc)},
+                physical_resistance_bonus: physical_resistance_bonus_armor + {sum_variables(misc)},
             }});
         """
     )
