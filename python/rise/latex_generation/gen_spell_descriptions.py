@@ -190,7 +190,6 @@ def generate_mystic_spheres():
                 Make an attack vs. Fortitude against the target.
                 \\hit As a \\glossterm<condition>, the majority of the target's body is surrounded by a layer of water.
                 This does not impede the target's ability to breathe, but it takes penalties as if it was fighting underwater (see \\pcref<Underwater Combat>).
-                In addition, it gains a bonus equal to twice your \\glossterm<power> to \\glossterm<resistances> against fire damage.
             """, tags=['Manifestation']),
             Spell('Crushing Wave', 1, 'Everything in a \\areamed, 10 ft.\\ wide line from you', """
                 Make an attack vs. Fortitude against each target.
