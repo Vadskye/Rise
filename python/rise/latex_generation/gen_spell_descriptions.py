@@ -511,17 +511,18 @@ def generate_mystic_spheres():
 
                 Creatures in the area at the time that the spell is cast are unaffected by the spell.
             """, tags=['Sustain (minor)']),
-            Spell('Immunity', 3, 'Yourself', """
-                Choose a type of damage that is not a type of physical damage (see \\pcref<Damage Types>).
-                The target becomes immune to damage of the chosen type.
-                Attacks that deal damage of multiple types still inflict damage normally unless the target is immune to all types of damage dealt.
+            Spell('Energetic Immunity', 3, 'Yourself', """
+                Choose a subtype of \\glossterm<energy damage>: cold, electricity, or fire.
+                You become immune to damage of the chosen type.
+                Attacks that deal damage of multiple types still inflict damage normally unless you are immune to all types of damage dealt.
             """, tags=['Attune (self)']),
             Spell('Retributive Shield', 3, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
-                This spell functions like the \\spell<kinetic shield> spell, except that damage resisted by this spell is dealt back to the attacker as life damage.
+                This spell functions like the \\spell<kinetic shield> spell, except the target also reflects damage.
+                Whenever an attack that deals \\glossterm<physical damage> fails to beat the target's \\glossterm<damage resistance>, the attacker takes that damage.
                 If the attacker is beyond \\rngclose range of the target, this reflection fails.
 
                 Any effect which increases this spell's range increases the range of this effect by the same amount.
-                This spell is from both the Abjuration and Vivimancy schools and gains the \\glossterm<Life> tag in addition to the tags from the \\spell<kinetic shield> spell.
+                This spell is from both the Abjuration and Vivimancy schools.
             """, tags=['Attune (target)']),
             Spell('Deflective Shield', 1, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
                 The target gains a +1 \\glossterm<magic bonus> to Armor defense.
@@ -1366,7 +1367,7 @@ def generate_mystic_spheres():
             """, tags=['Manifestation']),
             Spell('Lingering Acid Orb', 3, 'One creature or object within \\rngmed range', f"""
                 This spell functions like the \\spell<acid orb> spell, except that the acid lingers on a struck target.
-                At the end of each \\glossterm<action phase> in subsequent rounds, the target takes physical \\glossterm<standard damage> -1d.
+                At the end of each \\glossterm<action phase> in subsequent rounds, the target takes acid \\glossterm<standard damage> -1d.
                 This is a \\glossterm<condition>, and lasts until removed.
             """, tags=['Manifestation']),
             Spell('Web', 2, 'All Large or smaller creatures in the area (see text)', """

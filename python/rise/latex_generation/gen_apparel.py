@@ -133,7 +133,7 @@ def generate_armor():
         description="""
             You gain a \\glossterm<magic bonus> equal to half the item's \\glossterm<power> to \\glossterm<resistances> against \\glossterm<energy damage>.
             When you resist energy damage, it sheds light as a torch until the end of the next round.
-            The color of the light depends on the energy damage resisted: green for acid, blue for cold, yellow for electricity, and red for fire.
+            The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, and red for fire.
         """,
         short_description="Reduces energy damage",
     ))
@@ -792,7 +792,7 @@ def generate_worn():
         description="""
             You gain a \\glossterm<magic bonus> equal to half this item's \\glossterm<power> to \\glossterm<resistances> against \\glossterm<energy damage>.
             When you resist energy with this ability, the ring sheds light as a torch until the end of the next round.
-            The color of the light depends on the energy damage resisted: green for acid, blue for cold, yellow for electricity, and red for fire.
+            The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, and red for fire.
         """,
         short_description="Reduces energy damage",
     ))
