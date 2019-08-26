@@ -27,8 +27,6 @@ def get_creature_latex(
         perception=creature.perception,
         species=creature.species.name,
         reach=creature.reach,
-        recovery_action_points=creature.recovery_action_points,
-        reserve_action_points=creature.reserve_action_points,
         reflex_defense=creature.reflex_defense,
         size=creature.size.name,
         space=creature.space,
@@ -57,8 +55,6 @@ def get_latex(
         mental_defense,
         name,
         perception,
-        recovery_action_points,
-        reserve_action_points,
         species,
         strength,
         strikes,
@@ -88,7 +84,7 @@ def get_latex(
                         \\spelltwocol<
                             \\textbf<FT> {fatigue_threshold}, \\textbf<WT> {wound_threshold};
                         >
-                            <\\textbf<AP> {recovery_action_points}/{reserve_action_points}>
+                            <\\textbf<AP> TODO/TODO>
 
                         \\pari \\textbf<Armor> {armor_defense};
                             \\textbf<Fort> {fortitude_defense};
