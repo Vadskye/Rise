@@ -984,6 +984,17 @@ This spell functions like the \spell{kinetic shield} spell, except that the bonu
 
 
 
+\lowercase{\hypertarget{spell:Energetic Immunity}{}}\label{spell:Energetic Immunity}
+\begin{attuneability}[\nth{3}]{\hypertarget{spell:Energetic Immunity}{Energetic Immunity}}[\glossterm{Attune} (self)]
+\target{Yourself}
+Choose a subtype of \glossterm{energy damage}: cold, electricity, or fire.
+You become immune to damage of the chosen type.
+Attacks that deal damage of multiple types still inflict damage normally unless you are immune to all types of damage dealt.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Fortified Mystic Barrier}{}}\label{spell:Fortified Mystic Barrier}
 \begin{freeability}[\nth{3}]{\hypertarget{spell:Fortified Mystic Barrier}{Fortified Mystic Barrier}}[\glossterm{Sustain} (minor)]
 \targetrule
@@ -993,25 +1004,15 @@ This spell functions like the \spell{mystic barrier} spell, except that each 5-f
 
 
 
-\lowercase{\hypertarget{spell:Immunity}{}}\label{spell:Immunity}
-\begin{attuneability}[\nth{3}]{\hypertarget{spell:Immunity}{Immunity}}[\glossterm{Attune} (self)]
-\target{Yourself}
-Choose a type of damage that is not a type of physical damage (see \pcref{Damage Types}).
-The target becomes immune to damage of the chosen type.
-Attacks that deal damage of multiple types still inflict damage normally unless the target is immune to all types of damage dealt.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Retributive Shield}{}}\label{spell:Retributive Shield}
 \begin{attuneability}[\nth{3}]{\hypertarget{spell:Retributive Shield}{Retributive Shield}}[\glossterm{Attune} (target)]
 \target{Yourself or an \glossterm{ally} in \rngclose range}
-This spell functions like the \spell{kinetic shield} spell, except that damage resisted by this spell is dealt back to the attacker as life damage.
+This spell functions like the \spell{kinetic shield} spell, except the target also reflects damage.
+Whenever an attack that deals \glossterm{physical damage} fails to beat the target's \glossterm{damage resistance}, the attacker takes that damage.
 If the attacker is beyond \rngclose range of the target, this reflection fails.
 
 Any effect which increases this spell's range increases the range of this effect by the same amount.
-This spell is from both the Abjuration and Vivimancy schools and gains the \glossterm{Life} tag in addition to the tags from the \spell{kinetic shield} spell.
+This spell is from both the Abjuration and Vivimancy schools.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -2724,7 +2725,7 @@ This spell functions like the \spell{acid orb} spell, except that the damage inc
 \begin{freeability}[\nth{3}]{\hypertarget{spell:Lingering Acid Orb}{Lingering Acid Orb}}[\glossterm{Manifestation}]
 \target{One creature or object within \rngmed range}
 This spell functions like the \spell{acid orb} spell, except that the acid lingers on a struck target.
-At the end of each \glossterm{action phase} in subsequent rounds, the target takes physical \glossterm{standard damage} \minus1d.
+At the end of each \glossterm{action phase} in subsequent rounds, the target takes acid \glossterm{standard damage} \minus1d.
 This is a \glossterm{condition}, and lasts until removed.
 \end{freeability}
 \vspace{0.25em}
