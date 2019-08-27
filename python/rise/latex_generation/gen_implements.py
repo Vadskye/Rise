@@ -9,26 +9,57 @@ def generate_implements():
     implements = []
 
     implements.append(MagicItem(
-        name="Wand of Sympathetic Shielding",
-        level=8,
+        name="Spell Wand, 1st",
+        level=5,
         material_type='Wand',
         tags=[],
         description="""
-            When you cast a \\glossterm<targeted> \\glossterm<Shielding> spell using this wand,
-                if you would be a valid target for the spell,
-                you can target yourself in addition to the spell's normal targets.
+            This wand grants you knowledge of a single 1st level spell.
+            You must have access to the \\glossterm<mystic sphere> that spell belongs to.
         """,
-        short_description="Shields you when shielding others",
+        short_description="Grants knowledge of a 1st level spell",
     ))
 
     implements.append(MagicItem(
-        name="Wand of Transit",
-        level=6,
+        name="Spell Wand, 2nd",
+        level=9,
         material_type='Wand',
         tags=[],
         description="""
-            When you cast a \\glossterm<Teleportation> spell using this wand,
-                the maximum distance that you can teleport targets with that spell is doubled.
+            This item functions like a \\mitem<spell wand>, except that it grants knowledge of a single 2nd level spell.
+        """,
+        short_description="Grants knowledge of a 2nd level spell",
+    ))
+
+    implements.append(MagicItem(
+        name="Spell Wand, 3rd",
+        level=13,
+        material_type='Wand',
+        tags=[],
+        description="""
+            This item functions like a \\mitem<spell wand>, except that it grants knowledge of a single 3rd level spell.
+        """,
+        short_description="Grants knowledge of a 3rd level spell",
+    ))
+
+    implements.append(MagicItem(
+        name="Spell Wand, 4th",
+        level=17,
+        material_type='Wand',
+        tags=[],
+        description="""
+            This item functions like a \\mitem<spell wand>, except that it grants knowledge of a single 4th level spell.
+        """,
+        short_description="Grants knowledge of a 4th level spell",
+    ))
+
+    implements.append(MagicItem(
+        name="Staff of Transit",
+        level=6,
+        material_type='Staff',
+        tags=[],
+        description="""
+            Spells you cast using this staff have the maximum distance they can \\glossterm<teleport> targets doubled.
         """,
         short_description="Doubles your teleportation distance",
     ))
@@ -45,7 +76,7 @@ def generate_implements():
 
     implements.append(MagicItem(
         name="Extending Staff, Greater",
-        level=14,
+        level=17,
         material_type='Staff',
         description="""
             You triple the range of spells you cast with this staff.
@@ -65,7 +96,7 @@ def generate_implements():
 
     implements.append(MagicItem(
         name="Protective Staff",
-        level=8,
+        level=5,
         material_type='Staff',
         tags=[],
         description="""
@@ -76,25 +107,13 @@ def generate_implements():
 
     implements.append(MagicItem(
         name="Protective Staff, Greater",
-        level=16,
+        level=14,
         material_type='Staff',
         tags=[],
         description="""
             You gain a +2 \\glossterm<magic bonus> to Armor defense.
         """,
         short_description="Grants +2 Armor defense",
-    ))
-
-    implements.append(MagicItem(
-        name="Spellfeeding Staff",
-        level=15,
-        material_type='Staff',
-        tags=[],
-        description="""
-            When you cast a spell using this staff, you may regain a \\glossterm<hit point>.
-            You can only regain \\glossterm<hit points> once in this way between \\glossterm<short rests>.
-        """,
-        short_description="Heals you when casting spells",
     ))
 
     implements.append(MagicItem(
@@ -109,7 +128,7 @@ def generate_implements():
 
     implements.append(MagicItem(
         name="Staff of Concentration, Greater",
-        level=5,
+        level=7,
         material_type='Staff',
         description="""
             You gain a +2 \\glossterm<magic bonus> to \\glossterm<concentration> on spells you cast using this staff.
@@ -119,7 +138,7 @@ def generate_implements():
 
     implements.append(MagicItem(
         name="Staff of Concentration, Supreme",
-        level=9,
+        level=13,
         material_type='Staff',
         description="""
             You gain a +3 \\glossterm<magic bonus> to \\glossterm<concentration> on spells you cast using this staff.
@@ -128,47 +147,25 @@ def generate_implements():
     ))
 
     implements.append(MagicItem(
-        name="Staff of Spellpower",
-        level=4,
-        material_type='Staff',
-        tags=[],
-        description="""
-            You gain a +1 \\glossterm<magic bonus> to \\glossterm<power> with spells you cast using this staff.
-        """,
-        short_description="Grants +1 power with spells",
-    ))
-
-    implements.append(MagicItem(
-        name="Staff of Spellpower, Greater",
+        name="Staff of Power",
         level=8,
         material_type='Staff',
         tags=[],
         description="""
-            You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with spells you cast using this staff.
+            You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<magical> abilities.
         """,
-        short_description="Grants +2 power with spells",
+        short_description="Grants +2 \\glossterm<magical> power",
     ))
 
     implements.append(MagicItem(
-        name="Staff of Spellpower, Supreme",
-        level=12,
+        name="Staff of Power, Greater",
+        level=17,
         material_type='Staff',
         tags=[],
         description="""
-            You gain a +3 \\glossterm<magic bonus> to \\glossterm<power> with spells you cast using this staff.
+            You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<magical> abilities.
         """,
-        short_description="Grants +3 power with spells",
-    ))
-
-    implements.append(MagicItem(
-        name="Staff of Spellpower, Legendary",
-        level=16,
-        material_type='Staff',
-        tags=[],
-        description="""
-            You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with spells you cast using this staff.
-        """,
-        short_description="Grants +4 power with spells",
+        short_description="Grants +4 \\glossterm<magical> power",
     ))
 
     implements.append(MagicItem(
@@ -177,92 +174,20 @@ def generate_implements():
         material_type='Staff',
         tags=[],
         description="""
-            You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> with spells you cast using this staff.
+            You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy>.
         """,
         short_description="Grants +1 accuracy with spells",
     ))
 
     implements.append(MagicItem(
         name="Greater Staff of Precision",
-        level=16,
+        level=17,
         material_type='Staff',
         tags=[],
         description="""
-            You gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy> with spells you cast using this staff.
+            You gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy>.
         """,
         short_description="Grants +2 accuracy with spells",
-    ))
-
-    implements.append(MagicItem(
-        name="Wand of Precision",
-        level=6,
-        material_type='Wand',
-        tags=[],
-        description="""
-            You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy> if you cast spells from a particular \\glossterm<mystic sphere> using this wand.
-            Many \\textit<wands of precision> exist, each for different \\glossterm<mystic spheres>.
-        """,
-        short_description="Grants +1 accuracy with a single sphere",
-    ))
-
-    implements.append(MagicItem(
-        name="Wand of Precision, Greater",
-        level=14,
-        material_type='Wand',
-        tags=[],
-        description="""
-            You gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy> if you cast spells from a particular \\glossterm<mystic sphere> using this wand.
-            Many \\textit<greater wands of precision> exist, each for different \\glossterm<mystic spheres>.
-        """,
-        short_description="Grants +2 accuracy with a single sphere",
-    ))
-
-    implements.append(MagicItem(
-        name="Wand of Spellpower",
-        level=2,
-        material_type='Wand',
-        tags=[],
-        description="""
-            You gain a +1 \\glossterm<magic bonus> to \\glossterm<power> if you cast spells from a particular \\glossterm<mystic sphere> using this wand.
-            Many \\textit<wands of spellpower> exist, each for different \\glossterm<mystic spheres>.
-        """,
-        short_description="Grants +1 power with a single sphere",
-    ))
-
-    implements.append(MagicItem(
-        name="Wand of Spellpower, Greater",
-        level=6,
-        material_type='Wand',
-        tags=[],
-        description="""
-            You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> if you cast spells from a particular \\glossterm<mystic sphere> using this wand.
-            Many \\textit<greater wands of spellpower> exist, each for different \\glossterm<mystic spheres>.
-        """,
-        short_description="Grants +2 power with a single sphere",
-    ))
-
-    implements.append(MagicItem(
-        name="Wand of Spellpower, Supreme",
-        level=10,
-        material_type='Wand',
-        tags=[],
-        description="""
-            You gain a +3 \\glossterm<magic bonus> to \\glossterm<power> if you cast spells from a particular \\glossterm<mystic sphere> using this wand.
-            Many \\textit<supreme wands of spellpower> exist, each for different \\glossterm<mystic spheres>.
-        """,
-        short_description="Grants +3 power with a single sphere",
-    ))
-
-    implements.append(MagicItem(
-        name="Wand of Spellpower, Legendary",
-        level=14,
-        material_type='Wand',
-        tags=[],
-        description="""
-            You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> if you cast spells from a particular \\glossterm<mystic sphere> using this wand.
-            Many \\textit<supreme wands of spellpower> exist, each for different \\glossterm<mystic spheres>.
-        """,
-        short_description="Grants +4 power with a single sphere",
     ))
 
     return implements
