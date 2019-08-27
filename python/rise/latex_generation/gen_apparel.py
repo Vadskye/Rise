@@ -10,7 +10,7 @@ def generate_armor():
 
     apparel.append(MagicItem(
         name="Protective Armor",
-        level=7,
+        level=5,
         material_type='Body armor',
         tags=[],
         description="""
@@ -20,14 +20,36 @@ def generate_armor():
     ))
 
     apparel.append(MagicItem(
+        name="Protective Armor, Greater",
+        level=14,
+        material_type='Body armor',
+        tags=[],
+        description="""
+            You gain a +2 \\glossterm<magic bonus> to Armor defense.
+        """,
+        short_description="Grants +2 Armor defense",
+    ))
+
+    apparel.append(MagicItem(
         name="Protective Shield",
-        level=7,
+        level=5,
         material_type='Shield',
         tags=[],
         description="""
             You gain a +1 \\glossterm<magic bonus> to Armor defense.
         """,
         short_description="Grants +1 Armor defense",
+    ))
+
+    apparel.append(MagicItem(
+        name="Protective Shield, Greater",
+        level=14,
+        material_type='Shield',
+        tags=[],
+        description="""
+            You gain a +2 \\glossterm<magic bonus> to Armor defense.
+        """,
+        short_description="Grants +2 Armor defense",
     ))
 
     apparel.append(MagicItem(
@@ -44,7 +66,7 @@ def generate_armor():
 
     apparel.append(MagicItem(
         name='Shield of Arrow Catching, Greater',
-        level=10,
+        level=11,
         material_type='Shield',
         description="""
             This item functions like the \\mitem<shield of arrow catching> item, except that it affects a \\arealarge radius from you.
@@ -69,7 +91,7 @@ def generate_armor():
         material_type='Shield',
         description="""
             As a \\glossterm<minor action>, you can activate this shield.
-            If you do, you gain a +5 \\glossterm<magic bonus> to Armor defense against ranged \\glossterm<physical attacks> from weapons or projectiles that are Small or smaller.
+            If you do, you gain a +4 \\glossterm<magic bonus> to Armor defense against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
             This is a \\glossterm<Swift> ability, and it lasts until the end of the round.
         """,
         short_description="Can block small projectiles",
@@ -80,7 +102,7 @@ def generate_armor():
         level=8,
         material_type='Shield',
         description="""
-            You gain a +5 \\glossterm<magic bonus> to Armor defense against ranged \\glossterm<physical attacks> from weapons or projectiles that are Small or smaller.
+            You gain a +4 \\glossterm<magic bonus> to Armor defense against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
         """,
         short_description="Blocks small projectiles",
     ))
@@ -127,7 +149,7 @@ def generate_armor():
 
     apparel.append(MagicItem(
         name="Armor of Energy Resistance",
-        level=5,
+        level=11,
         tags=[],
         material_type='Body armor',
         description="""
@@ -140,7 +162,7 @@ def generate_armor():
 
     apparel.append(MagicItem(
         name="Armor of Energy Resistance, Greater",
-        level=14,
+        level=20,
         tags=[],
         material_type='Body armor',
         description="""
@@ -151,7 +173,7 @@ def generate_armor():
 
     apparel.append(MagicItem(
         name="Featherlight Armor",
-        level=4,
+        level=6,
         material_type='Body armor',
         description="""
             This armor's \\glossterm<encumbrance> is reduced by 1.
@@ -161,10 +183,20 @@ def generate_armor():
 
     apparel.append(MagicItem(
         name="Featherlight Armor, Greater",
-        level=10,
+        level=12,
         material_type='Body armor',
         description="""
             This armor's \\glossterm<encumbrance> is reduced by 2.
+        """,
+        short_description="Reduces encumbrance by 2",
+    ))
+
+    apparel.append(MagicItem(
+        name="Featherlight Armor, Supreme",
+        level=18,
+        material_type='Body armor',
+        description="""
+            This armor's \\glossterm<encumbrance> is reduced by 3.
         """,
         short_description="Reduces encumbrance by 2",
     ))
@@ -194,14 +226,14 @@ def generate_armor():
         level=12,
         material_type='Body armor',
         description="""
-            This item functions like the \\mitem<armor of fortification> item, except that it applies against all attacks instead of only against; \\glossterm<strikes>.
+            This item functions like the \\mitem<armor of fortification> item, except that it applies against all attacks instead of only against \\glossterm<strikes>.
         """,
         short_description="Reduces critical hits from all attacks",
     ))
 
     apparel.append(MagicItem(
         name="Hidden Armor",
-        level=4,
+        level=5,
         tags=['Sensation'],
         material_type='Body armor',
         description="""
@@ -229,35 +261,24 @@ def generate_armor():
 
     apparel.append(MagicItem(
         name="Armor of Invulnerability",
-        level=8,
+        level=11,
         tags=[],
         material_type='Body armor',
         description="""
-            The armor's bonus to \\glossterm<resistances> based on its armor type is doubled.
+            You gain a \\glossterm<magic bonus> equal to half the item's \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical damage>.
         """,
-        short_description="Doubles armor resistance bonus",
+        short_description="Reduces physical damage",
     ))
 
     apparel.append(MagicItem(
         name="Armor of Invulnerability, Greater",
-        level=14,
-        tags=[],
-        material_type='Body armor',
-        description="""
-            The armor's bonus to \\glossterm<resistances> based on its armor type is tripled.
-        """,
-        short_description="Triples armor resistance bonus",
-    ))
-
-    apparel.append(MagicItem(
-        name="Armor of Invulnerability, Supreme",
         level=20,
-        material_type='Body armor',
         tags=[],
+        material_type='Body armor',
         description="""
-            The armor's bonus to \\glossterm<resistances> based on its armor type is quadrupled.
+            You gain a \\glossterm<magic bonus> equal to the item's \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical damage>.
         """,
-        short_description="Quadruples armor resistance bonus",
+        short_description="Greatly reduces physical damage",
     ))
 
     apparel.append(MagicItem(
