@@ -444,7 +444,6 @@ Everything in the area gain a bonus equal to your \glossterm{power} to \glosster
 Make an attack vs. Fortitude against the target.
 \hit As a \glossterm{condition}, the majority of the target's body is surrounded by a layer of water.
 This does not impede the target's ability to breathe, but it takes penalties as if it was fighting underwater (see \pcref{Underwater Combat}).
-In addition, it gains a bonus equal to twice your \glossterm{power} to \glossterm{resistances} against fire damage.
 \end{freeability}
 \vspace{0.25em}
 
@@ -907,17 +906,6 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
-\lowercase{\hypertarget{spell:Kinetic Shield}{}}\label{spell:Kinetic Shield}
-\begin{attuneability}[\nth{1}]{\hypertarget{spell:Kinetic Shield}{Kinetic Shield}}[\glossterm{Attune} (target)]
-\target{Yourself or an \glossterm{ally} in \rngclose range}
-The target gains a \glossterm{magic bonus} equal to half your \glossterm{power} to \glossterm{resistances} against \glossterm{physical} damage (minimum 1).
-
-You can cast this spell as a \glossterm{minor action}.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Mystic Barrier}{}}\label{spell:Mystic Barrier}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Mystic Barrier}{Mystic Barrier}}[\glossterm{Sustain} (minor)]
 \targetrule
@@ -926,17 +914,6 @@ The wall is visible as a shimmering magical membrane that does not block sight.
 Nothing can pass through the wall until it is destroyed.
 Each 5-ft.\ square of wall has hit points equal to your \glossterm{power}.
 \end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Resist Energy}{}}\label{spell:Resist Energy}
-\begin{attuneability}[\nth{1}]{\hypertarget{spell:Resist Energy}{Resist Energy}}[\glossterm{Attune} (target)]
-\target{Yourself or an \glossterm{ally} in \rngclose range}
-The target gains a \glossterm{magic bonus} equal to half your \glossterm{power} to \glossterm{resistances} against \glossterm{energy damage}.
-
-You can cast this spell as a \glossterm{minor action}.
-\end{attuneability}
 \vspace{0.25em}
 
 
@@ -975,26 +952,6 @@ It does not impede passage for objects or creatures, but any ability that deals 
 
 
 
-\lowercase{\hypertarget{spell:Complete Shield}{}}\label{spell:Complete Shield}
-\begin{attuneability}[\nth{3}]{\hypertarget{spell:Complete Shield}{Complete Shield}}[\glossterm{Attune} (target)]
-\target{Yourself or an \glossterm{ally} in \rngclose range}
-This spell functions like the \spell{kinetic shield} spell, except that the bonus applies against all damage.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Energetic Immunity}{}}\label{spell:Energetic Immunity}
-\begin{attuneability}[\nth{3}]{\hypertarget{spell:Energetic Immunity}{Energetic Immunity}}[\glossterm{Attune} (self)]
-\target{Yourself}
-Choose a subtype of \glossterm{energy damage}: cold, electricity, or fire.
-You become immune to damage of the chosen type.
-Attacks that deal damage of multiple types still inflict damage normally unless you are immune to all types of damage dealt.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Fortified Mystic Barrier}{}}\label{spell:Fortified Mystic Barrier}
 \begin{freeability}[\nth{3}]{\hypertarget{spell:Fortified Mystic Barrier}{Fortified Mystic Barrier}}[\glossterm{Sustain} (minor)]
 \targetrule
@@ -1004,15 +961,34 @@ This spell functions like the \spell{mystic barrier} spell, except that each 5-f
 
 
 
-\lowercase{\hypertarget{spell:Retributive Shield}{}}\label{spell:Retributive Shield}
-\begin{attuneability}[\nth{3}]{\hypertarget{spell:Retributive Shield}{Retributive Shield}}[\glossterm{Attune} (target)]
+\lowercase{\hypertarget{spell:Kinetic Shield}{}}\label{spell:Kinetic Shield}
+\begin{attuneability}[\nth{3}]{\hypertarget{spell:Kinetic Shield}{Kinetic Shield}}[\glossterm{Attune} (target)]
 \target{Yourself or an \glossterm{ally} in \rngclose range}
-This spell functions like the \spell{kinetic shield} spell, except the target also reflects damage.
-Whenever an attack that deals \glossterm{physical damage} fails to beat the target's \glossterm{damage resistance}, the attacker takes that damage.
-If the attacker is beyond \rngclose range of the target, this reflection fails.
+The target gains a \glossterm{magic bonus} equal to half your \glossterm{power} to \glossterm{resistances} against \glossterm{physical} damage.
 
-Any effect which increases this spell's range increases the range of this effect by the same amount.
-This spell is from both the Abjuration and Vivimancy schools.
+You can cast this spell as a \glossterm{minor action}.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Resist Energy}{}}\label{spell:Resist Energy}
+\begin{attuneability}[\nth{3}]{\hypertarget{spell:Resist Energy}{Resist Energy}}[\glossterm{Attune} (target)]
+\target{Yourself or an \glossterm{ally} in \rngclose range}
+The target gains a \glossterm{magic bonus} equal to half your \glossterm{power} to \glossterm{resistances} against \glossterm{energy damage}.
+
+You can cast this spell as a \glossterm{minor action}.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Energetic Immunity}{}}\label{spell:Energetic Immunity}
+\begin{attuneability}[\nth{4}]{\hypertarget{spell:Energetic Immunity}{Energetic Immunity}}[\glossterm{Attune} (self)]
+\target{Yourself}
+Choose a subtype of \glossterm{energy damage}: cold, electricity, or fire.
+You become immune to damage of the chosen type.
+Attacks that deal damage of multiple types still inflict damage normally unless you are immune to all types of damage dealt.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -1022,24 +998,6 @@ This spell is from both the Abjuration and Vivimancy schools.
 \begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Deflective Shield}{Greater Deflective Shield}}[\glossterm{Attune} (target)]
 \target{Yourself or an \glossterm{ally} in \rngclose range}
 This spell functions like the \spell{deflective shield} spell, except that the bonus is increased to \plus2.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Kinetic Shield}{}}\label{spell:Greater Kinetic Shield}
-\begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Kinetic Shield}{Greater Kinetic Shield}}[\glossterm{Attune} (target)]
-\target{Yourself or an \glossterm{ally} in \rngclose range}
-This spell functions like the \spell{kinetic shield} spell, except that the bonus increases to be equal to your \glossterm{power}.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Greater Resist Energy}{}}\label{spell:Greater Resist Energy}
-\begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Resist Energy}{Greater Resist Energy}}[\glossterm{Attune} (target)]
-\target{Yourself or an \glossterm{ally} in \rngclose range}
-This spell functions like the \spell{resist energy} spell, except that the bonus is equal to your \glossterm{power}.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -1065,6 +1023,15 @@ This effect functions like the \spell{repulsion field} spell, except that you ga
 
 
 
+\lowercase{\hypertarget{spell:Complete Shield}{}}\label{spell:Complete Shield}
+\begin{attuneability}[\nth{5}]{\hypertarget{spell:Complete Shield}{Complete Shield}}[\glossterm{Attune} (target)]
+\target{Yourself or an \glossterm{ally} in \rngclose range}
+This spell functions like the \spell{kinetic shield} spell, except that the bonus applies against all damage.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Impervious Mystic Barrier}{}}\label{spell:Impervious Mystic Barrier}
 \begin{freeability}[\nth{5}]{\hypertarget{spell:Impervious Mystic Barrier}{Impervious Mystic Barrier}}[\glossterm{Sustain} (minor)]
 \targetrule
@@ -1074,19 +1041,32 @@ This spell functions like the \spell{mystic barrier} spell, except that the wall
 
 
 
-\lowercase{\hypertarget{spell:Greater Complete Shield}{}}\label{spell:Greater Complete Shield}
-\begin{attuneability}[\nth{6}]{\hypertarget{spell:Greater Complete Shield}{Greater Complete Shield}}[\glossterm{Attune} (target)]
+\lowercase{\hypertarget{spell:Retributive Shield}{}}\label{spell:Retributive Shield}
+\begin{attuneability}[\nth{5}]{\hypertarget{spell:Retributive Shield}{Retributive Shield}}[\glossterm{Attune} (target)]
 \target{Yourself or an \glossterm{ally} in \rngclose range}
-This spell functions like the \spell{kinetic shield} spell, except that the bonus applies against all damage and is increased to be equal to your \glossterm{power}.
+This spell functions like the \spell{kinetic shield} spell, except the target also reflects damage.
+Whenever an attack that deals \glossterm{physical damage} fails to beat the target's \glossterm{damage resistance}, the attacker takes that damage.
+If the attacker is beyond \rngclose range of the target, this reflection fails.
+
+Any effect which increases this spell's range increases the range of this effect by the same amount.
 \end{attuneability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Supreme Kinetic Shield}{}}\label{spell:Supreme Kinetic Shield}
-\begin{attuneability}[\nth{7}]{\hypertarget{spell:Supreme Kinetic Shield}{Supreme Kinetic Shield}}[\glossterm{Attune} (target)]
+\lowercase{\hypertarget{spell:Greater Kinetic Shield}{}}\label{spell:Greater Kinetic Shield}
+\begin{attuneability}[\nth{6}]{\hypertarget{spell:Greater Kinetic Shield}{Greater Kinetic Shield}}[\glossterm{Attune} (target)]
 \target{Yourself or an \glossterm{ally} in \rngclose range}
-This spell functions like the \spell{kinetic shield} spell, except that the bonus increases to be equal to twice your \glossterm{power}.
+This spell functions like the \spell{kinetic shield} spell, except that the bonus increases to be equal to your \glossterm{power}.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Greater Resist Energy}{}}\label{spell:Greater Resist Energy}
+\begin{attuneability}[\nth{6}]{\hypertarget{spell:Greater Resist Energy}{Greater Resist Energy}}[\glossterm{Attune} (target)]
+\target{Yourself or an \glossterm{ally} in \rngclose range}
+This spell functions like the \spell{resist energy} spell, except that the bonus is equal to your \glossterm{power}.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -1503,34 +1483,12 @@ Make an attack vs. Mental against the target.
 
 
 
-\lowercase{\hypertarget{spell:Mantle of Faith}{}}\label{spell:Mantle of Faith}
-\begin{attuneability}[\nth{1}]{\hypertarget{spell:Mantle of Faith}{Mantle of Faith}}[\glossterm{Attune} (self)]
-\target{Yourself}
-You gain a \glossterm{magic bonus} to equal to half your \glossterm{power} to \glossterm{resistances} against \glossterm{physical} damage.
-
-You can cast this spell as a \glossterm{minor action}.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Word of Faith}{}}\label{spell:Word of Faith}
 \begin{freeability}[\nth{2}]{\hypertarget{spell:Word of Faith}{Word of Faith}}[]
 \targets{\glossterm{Enemies} in a \areamed radius from you}
 Make an attack vs. Mental against each target.
 \hit Each target takes \glossterm{standard damage}.
 \end{freeability}
-\vspace{0.25em}
-
-
-
-\lowercase{\hypertarget{spell:Complete Mantle of Faith}{}}\label{spell:Complete Mantle of Faith}
-\begin{attuneability}[\nth{3}]{\hypertarget{spell:Complete Mantle of Faith}{Complete Mantle of Faith}}[\glossterm{Attune} (self)]
-\target{Yourself}
-You gain a \glossterm{magic bonus} equal to half your \glossterm{power} to \glossterm{resistances} against all damage.
-
-You can cast this spell as a \glossterm{minor action}.
-\end{attuneability}
 \vspace{0.25em}
 
 
@@ -1548,6 +1506,17 @@ You can cast this spell as a \glossterm{minor action}.
 
 
 
+\lowercase{\hypertarget{spell:Mantle of Faith}{}}\label{spell:Mantle of Faith}
+\begin{attuneability}[\nth{3}]{\hypertarget{spell:Mantle of Faith}{Mantle of Faith}}[\glossterm{Attune} (self)]
+\target{Yourself}
+You gain a \glossterm{magic bonus} to equal to half your \glossterm{power} to \glossterm{resistances} against \glossterm{physical} damage.
+
+You can cast this spell as a \glossterm{minor action}.
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Greater Divine Judgment}{}}\label{spell:Greater Divine Judgment}
 \begin{freeability}[\nth{4}]{\hypertarget{spell:Greater Divine Judgment}{Greater Divine Judgment}}[]
 \target{One creature within \rngmed range}
@@ -1557,10 +1526,10 @@ This spell functions like the \spell{divine judgment} spell, except that that da
 
 
 
-\lowercase{\hypertarget{spell:Greater Mantle of Faith}{}}\label{spell:Greater Mantle of Faith}
-\begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Mantle of Faith}{Greater Mantle of Faith}}[\glossterm{Attune} (self)]
+\lowercase{\hypertarget{spell:Complete Mantle of Faith}{}}\label{spell:Complete Mantle of Faith}
+\begin{attuneability}[\nth{5}]{\hypertarget{spell:Complete Mantle of Faith}{Complete Mantle of Faith}}[\glossterm{Attune} (target)]
 \target{Yourself}
-This spell functions like the \spell{mantle of faith} spell, except that the bonus is equal to your \glossterm{power}.
+This spell functions like the \spell{kinetic shield} spell, except that the bonus applies against all damage.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -1593,20 +1562,20 @@ This spell functions like the \spell{complete mantle of faith} spell, except tha
 
 
 
-\lowercase{\hypertarget{spell:Divine Might, Supreme}{}}\label{spell:Divine Might, Supreme}
-\begin{attuneability}[\nth{7}]{\hypertarget{spell:Divine Might, Supreme}{Divine Might, Supreme}}[\glossterm{Attune} (self)]
+\lowercase{\hypertarget{spell:Greater Mantle of Faith}{}}\label{spell:Greater Mantle of Faith}
+\begin{attuneability}[\nth{6}]{\hypertarget{spell:Greater Mantle of Faith}{Greater Mantle of Faith}}[\glossterm{Attune} (self)]
 \target{Yourself}
-This spell functions like the \spell{divine might} spell, except that your size is increased by two size categories.
-You gain a \plus2 \glossterm{magic bonus} to Strength to partially match your new size.
+This spell functions like the \spell{mantle of faith} spell, except that the bonus is equal to your \glossterm{power}.
 \end{attuneability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Supreme Mantle Of Faith}{}}\label{spell:Supreme Mantle Of Faith}
-\begin{attuneability}[\nth{7}]{\hypertarget{spell:Supreme Mantle Of Faith}{Supreme Mantle Of Faith}}[\glossterm{Attune} (self)]
+\lowercase{\hypertarget{spell:Divine Might, Supreme}{}}\label{spell:Divine Might, Supreme}
+\begin{attuneability}[\nth{7}]{\hypertarget{spell:Divine Might, Supreme}{Divine Might, Supreme}}[\glossterm{Attune} (self)]
 \target{Yourself}
-This spell functions like the \spell{mantle of faith} spell, except that the bonus is equal to twice your \glossterm{power}.
+This spell functions like the \spell{divine might} spell, except that your size is increased by two size categories.
+You gain a \plus2 \glossterm{magic bonus} to Strength to partially match your new size.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -3131,18 +3100,6 @@ Make an attack vs. Fortitude against the target.
 
 
 
-\lowercase{\hypertarget{spell:Barkskin}{}}\label{spell:Barkskin}
-\begin{attuneability}[\nth{1}]{\hypertarget{spell:Barkskin}{Barkskin}}[\glossterm{Attune} (target)]
-\target{Yourself or an \glossterm{ally} within \rngclose range}
-The target gains a \glossterm{magic bonus} equal to half your \glossterm{power} to \glossterm{resistances} against \glossterm{physical damage} (minimum 1).
-In addition, it is \glossterm{vulnerable} to fire damage.
-
-You can cast this spell as a \glossterm{minor action}.
-\end{attuneability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Shrink}{}}\label{spell:Shrink}
 \begin{attuneability}[\nth{1}]{\hypertarget{spell:Shrink}{Shrink}}[\glossterm{Attune} (target)]
 \target{Yourself or an \glossterm{ally} within \rngclose range}
@@ -3190,10 +3147,11 @@ The \glossterm{wound roll} for that \glossterm{vital wound} cannot be modified a
 
 
 
-\lowercase{\hypertarget{spell:Stoneskin}{}}\label{spell:Stoneskin}
-\begin{attuneability}[\nth{2}]{\hypertarget{spell:Stoneskin}{Stoneskin}}[\glossterm{Attune} (target)]
+\lowercase{\hypertarget{spell:Barkskin}{}}\label{spell:Barkskin}
+\begin{attuneability}[\nth{3}]{\hypertarget{spell:Barkskin}{Barkskin}}[\glossterm{Attune} (target)]
 \target{Yourself or an \glossterm{ally} within \rngclose range}
 The target gains a \glossterm{magic bonus} equal to half your \glossterm{power} to \glossterm{resistances} against \glossterm{physical damage}.
+In addition, it is \glossterm{vulnerable} to fire damage.
 
 You can cast this spell as a \glossterm{minor action}.
 \end{attuneability}
@@ -3237,19 +3195,21 @@ This spell functions like the \spell{baleful polymorph} spell, except that a str
 
 
 
-\lowercase{\hypertarget{spell:Greater Barkskin}{}}\label{spell:Greater Barkskin}
-\begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Barkskin}{Greater Barkskin}}[\glossterm{Attune} (target)]
+\lowercase{\hypertarget{spell:Greater Regeneration}{}}\label{spell:Greater Regeneration}
+\begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Regeneration}{Greater Regeneration}}[\glossterm{Attune} (target)]
 \target{Yourself or an \glossterm{ally} within \rngclose range}
-This spell functions like the \spell{barkskin} spell, except that the bonus is equal to your \glossterm{power}.
+This spell functions like the \spell{regeneration} spell, except that the bonus increases to \plus3.
 \end{attuneability}
 \vspace{0.25em}
 
 
 
-\lowercase{\hypertarget{spell:Greater Regeneration}{}}\label{spell:Greater Regeneration}
-\begin{attuneability}[\nth{4}]{\hypertarget{spell:Greater Regeneration}{Greater Regeneration}}[\glossterm{Attune} (target)]
+\lowercase{\hypertarget{spell:Stoneskin}{}}\label{spell:Stoneskin}
+\begin{attuneability}[\nth{4}]{\hypertarget{spell:Stoneskin}{Stoneskin}}[\glossterm{Attune} (target)]
 \target{Yourself or an \glossterm{ally} within \rngclose range}
-This spell functions like the \spell{regeneration} spell, except that the bonus increases to \plus3.
+The target gains a \glossterm{magic bonus} equal to half your \glossterm{power} to \glossterm{resistances} against \glossterm{physical damage} and \glossterm{energy damage}.
+
+You can cast this spell as a \glossterm{minor action}.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -3286,10 +3246,10 @@ This spell functions like the \spell{shrink} spell, except that the target's siz
 
 
 
-\lowercase{\hypertarget{spell:Greater Stoneskin}{}}\label{spell:Greater Stoneskin}
-\begin{attuneability}[\nth{5}]{\hypertarget{spell:Greater Stoneskin}{Greater Stoneskin}}[\glossterm{Attune} (target)]
+\lowercase{\hypertarget{spell:Greater Barkskin}{}}\label{spell:Greater Barkskin}
+\begin{attuneability}[\nth{6}]{\hypertarget{spell:Greater Barkskin}{Greater Barkskin}}[\glossterm{Attune} (target)]
 \target{Yourself or an \glossterm{ally} within \rngclose range}
-This spell functions like the \spell{stoneskin} spell, except that the bonus is equal to your \glossterm{power}.
+This spell functions like the \spell{barkskin} spell, except that the bonus is equal to your \glossterm{power}.
 \end{attuneability}
 \vspace{0.25em}
 
@@ -3323,10 +3283,10 @@ It gains a \plus2 \glossterm{magic bonus} to Strength to partially match its new
 
 
 
-\lowercase{\hypertarget{spell:Supreme Barkskin}{}}\label{spell:Supreme Barkskin}
-\begin{attuneability}[\nth{7}]{\hypertarget{spell:Supreme Barkskin}{Supreme Barkskin}}[\glossterm{Attune} (target)]
+\lowercase{\hypertarget{spell:Greater Stoneskin}{}}\label{spell:Greater Stoneskin}
+\begin{attuneability}[\nth{7}]{\hypertarget{spell:Greater Stoneskin}{Greater Stoneskin}}[\glossterm{Attune} (target)]
 \target{Yourself or an \glossterm{ally} within \rngclose range}
-This spell functions like the \spell{barkskin} spell, except that stuff the bonus is equal to twice your \glossterm{power}.
+This spell functions like the \spell{stoneskin} spell, except that the bonus is equal to your \glossterm{power}.
 \end{attuneability}
 \vspace{0.25em}
 

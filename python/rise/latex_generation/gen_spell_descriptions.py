@@ -477,30 +477,24 @@ def generate_mystic_spheres():
                 The wall is visible as a shimmering magical membrane that does not block sight.
                 It does not impede passage for objects or creatures, but any \\glossterm<magical> ability treats the wall as an impassable barrier.
             """, tags=['Sustain (minor)']),
-            Spell('Kinetic Shield', 1, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
-                The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical> damage (minimum 1).
+            Spell('Kinetic Shield', 3, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
+                The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical> damage.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)']),
-            Spell('Greater Kinetic Shield', 4, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
+            Spell('Greater Kinetic Shield', 6, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
                 This spell functions like the \\spell<kinetic shield> spell, except that the bonus increases to be equal to your \\glossterm<power>.
             """, tags=['Attune (target)']),
-            Spell('Supreme Kinetic Shield', 7, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
-                This spell functions like the \\spell<kinetic shield> spell, except that the bonus increases to be equal to twice your \\glossterm<power>.
-            """, tags=['Attune (target)']),
-            Spell('Resist Energy', 1, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
+            Spell('Resist Energy', 3, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
                 The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<energy damage>.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)']),
-            Spell('Greater Resist Energy', 4, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
+            Spell('Greater Resist Energy', 6, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
                 This spell functions like the \\spell<resist energy> spell, except that the bonus is equal to your \\glossterm<power>.
             """, tags=['Attune (target)']),
-            Spell('Complete Shield', 3, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
+            Spell('Complete Shield', 5, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
                 This spell functions like the \\spell<kinetic shield> spell, except that the bonus applies against all damage.
-            """, tags=['Attune (target)']),
-            Spell('Greater Complete Shield', 6, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
-                This spell functions like the \\spell<kinetic shield> spell, except that the bonus applies against all damage and is increased to be equal to your \\glossterm<power>.
             """, tags=['Attune (target)']),
             Spell('Repulsion Field', 2, 'All \\glossterm<enemies> that enter the area (see text)', """
                 This spell creates a repulsive field in a \\areamed radius \\glossterm<zone> from your location.
@@ -510,18 +504,17 @@ def generate_mystic_spheres():
 
                 Creatures in the area at the time that the spell is cast are unaffected by the spell.
             """, tags=['Sustain (minor)']),
-            Spell('Energetic Immunity', 3, 'Yourself', """
+            Spell('Energetic Immunity', 4, 'Yourself', """
                 Choose a subtype of \\glossterm<energy damage>: cold, electricity, or fire.
                 You become immune to damage of the chosen type.
                 Attacks that deal damage of multiple types still inflict damage normally unless you are immune to all types of damage dealt.
             """, tags=['Attune (self)']),
-            Spell('Retributive Shield', 3, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
+            Spell('Retributive Shield', 5, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
                 This spell functions like the \\spell<kinetic shield> spell, except the target also reflects damage.
                 Whenever an attack that deals \\glossterm<physical damage> fails to beat the target's \\glossterm<damage resistance>, the attacker takes that damage.
                 If the attacker is beyond \\rngclose range of the target, this reflection fails.
 
                 Any effect which increases this spell's range increases the range of this effect by the same amount.
-                This spell is from both the Abjuration and Vivimancy schools.
             """, tags=['Attune (target)']),
             Spell('Deflective Shield', 1, 'Yourself or an \\glossterm<ally> in \\rngclose range', """
                 The target gains a +1 \\glossterm<magic bonus> to Armor defense.
@@ -748,22 +741,17 @@ def generate_mystic_spheres():
             Spell('Greater Word of Faith', 5, '\\glossterm<Enemies> in a \\arealarge radius from you', """
                 This spell functions like the \\spell<word of faith> spell, except that it affects more targets and the damage increases to \\glossterm<standard damage> +1d.
             """, tags=[]),
-            Spell('Mantle of Faith', 1, 'Yourself', """
+            Spell('Mantle of Faith', 3, 'Yourself', """
                 You gain a \\glossterm<magic bonus> to equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical> damage.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (self)']),
-            Spell('Greater Mantle of Faith', 4, 'Yourself', """
+            Spell('Greater Mantle of Faith', 6, 'Yourself', """
                 This spell functions like the \\spell<mantle of faith> spell, except that the bonus is equal to your \\glossterm<power>.
             """, tags=['Attune (self)']),
-            Spell('Supreme Mantle Of Faith', 7, 'Yourself', """
-                This spell functions like the \\spell<mantle of faith> spell, except that the bonus is equal to twice your \\glossterm<power>.
-            """, tags=['Attune (self)']),
-            Spell('Complete Mantle of Faith', 3, 'Yourself', """
-                You gain a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against all damage.
-
-                You can cast this spell as a \\glossterm<minor action>.
-            """, tags=['Attune (self)']),
+            Spell('Complete Mantle of Faith', 5, 'Yourself', """
+                This spell functions like the \\spell<kinetic shield> spell, except that the bonus applies against all damage.
+            """, tags=['Attune (target)']),
             Spell('Greater Complete Mantle of Faith', 6, 'Yourself', """
                 This spell functions like the \\spell<complete mantle of faith> spell, except that the bonus is equal to your \\glossterm<power>.
             """, tags=['Attune (self)']),
@@ -1537,17 +1525,14 @@ def generate_mystic_spheres():
                 It also gains a +4 \\glossterm<magic bonus> to Climb checks.
                 This bonus is increased to +8 when you climb on ceilings and similar surfaces.
             """, tags=['Attune (target)']),
-            Spell('Barkskin', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical damage> (minimum 1).
+            Spell('Barkskin', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+                The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical damage>.
                 In addition, it is \\glossterm<vulnerable> to fire damage.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)']),
-            Spell('Greater Barkskin', 4, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+            Spell('Greater Barkskin', 6, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 This spell functions like the \\spell<barkskin> spell, except that the bonus is equal to your \\glossterm<power>.
-            """, tags=['Attune (target)']),
-            Spell('Supreme Barkskin', 7, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                This spell functions like the \\spell<barkskin> spell, except that stuff the bonus is equal to twice your \\glossterm<power>.
             """, tags=['Attune (target)']),
             Spell('Regeneration', 2, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 A the end of each round, the target gains a +2 bonus to the \\glossterm<wound roll> of its most recent \\glossterm<vital wound>.
@@ -1560,12 +1545,12 @@ def generate_mystic_spheres():
                 This spell functions like the \\spell<regeneration> spell, except that the bonus increases to +4.
             """, tags=['Attune (target)']),
             # Should this also/instead be under Terramancy?
-            Spell('Stoneskin', 2, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical damage>.
+            Spell('Stoneskin', 4, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+                The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical damage> and \\glossterm<energy damage>.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)']),
-            Spell('Greater Stoneskin', 5, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+            Spell('Greater Stoneskin', 7, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 This spell functions like the \\spell<stoneskin> spell, except that the bonus is equal to your \\glossterm<power>.
             """, tags=['Attune (target)']),
             Spell('Enlarge', 3, 'One large or smaller \\glossterm<ally> within \\rngclose range', """
