@@ -56,17 +56,17 @@ def generate_weapons():
         level=8,
         material_type='Weapon',
         description="""
-            You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with this weapon.
+            You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
         """,
         short_description="Grants +2 power",
     ))
 
     weapons.append(MagicItem(
         name="Potency, Greater",
-        level=16,
+        level=17,
         material_type='Weapon',
         description="""
-            You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with this weapon.
+            You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
         """,
         short_description="Grants +4 power",
     ))
@@ -384,18 +384,18 @@ def generate_weapons():
         material_type='Weapon',
         tags=[],
         description="""
-            You gain a +1 \\glossterm<magic bonus> to accuracy with \\glossterm<strikes> with this weapon.
+            You gain a +1 \\glossterm<magic bonus> to accuracy.
         """,
         short_description="Grants +1 accuracy bonus",
     ))
 
     weapons.append(MagicItem(
         name="Surestrike, Greater",
-        level=16,
+        level=17,
         material_type='Weapon',
         tags=[],
         description="""
-            You gain a +2 \\glossterm<magic bonus> to accuracy with \\glossterm<strikes> with this weapon.
+            You gain a +2 \\glossterm<magic bonus> to accuracy.
         """,
         short_description="Grants +2 accuracy bonus",
     ))
