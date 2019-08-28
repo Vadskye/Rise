@@ -2297,13 +2297,13 @@ This choice determines a great deal about your character's abilities.
         \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X > {\lcol}X}
             \tb{Rank} & \tb{Huntmaster}  & \tb{Keen Senses} & \tb{Wilderness Warrior} & \tb{Monster Slayer} \tableheaderrule
             1    & Quarry & Keen vision        & Wild maneuvers         & Favored enemy
-            \\ 2 & Hunting style  & Learned perception & Wilderness lore    & Exotic weaponry
-            \\ 3 & Tracking lore  & Blindsense         & Wild power         & Monstrous lore
-            \\ 4 & Wary hunter    & Perceive weakness  & Wild maneuver      & Favored enemy
-            \\ 5 & Hunting style  & Blindsight         & Wilderness mastery & Monster familiarity
-            \\ 6 & Expert tracker & Farsight           & Greater wild power & Experienced defense
-            \\ 7 & Greater wary hunter   & Truesight          & Wild maneuver      & Greater favored enemy
-            \\ 8 & Dual quarry    &                    &
+            \\ 2 & Hunting style       & Learned perception  & Woodland stride         & Exotic weaponry
+            \\ 3 & Tracker             & Blindsense          & Wild reaction           & Slayer's power
+            \\ 4 & Wary hunter         & Greater keen vision & Wild maneuver           & Favored enemy
+            \\ 5 & Hunting style       & Perceive weakness   & Greater woodland stride & Monster familiarity
+            \\ 6 & Greater tracker     & Blindsight          & Greater wild reaction   & Greater slayer's power
+            \\ 7 & Greater wary hunter & Supreme keen vision & Wild maneuver           & Greater favored enemy
+            \\ 8 & Dual quarry         &                     &
         \end{dtabularx}
     \end{dtable!*}
 
@@ -2348,20 +2348,19 @@ This choice determines a great deal about your character's abilities.
         This ability allows you to sense the presence and location of objects and foes within 50 feet without seeing them.
         If you already have the blindsense ability, you increase its range by 50 feet.
 
-        \cf{Rgr}[4]{Perceive Weakness}
+        \cf{Rgr}[4]{Greater Keen Vision} The penalty reduction from your \textit{keen vision} ability increases to 2.
+        In addition, you gain \glossterm{darkvision} with a 50 foot range, allowing you to see in complete darkness clearly.
+
+        \cf{Rgr}[5]{Perceive Weakness}
         You gain a \plus1 bonus to \glossterm{accuracy}.
 
-        \cf{Rgr}[5]{Blindsight}
+        \cf{Rgr}[6]{Blindsight}
         You gain the \glossterm{blindsight} ability, allowing you to ``see'' perfectly without your eyes in a 50 foot radius around you.
         With this ability, you can fight just as well with your eyes closed as with them open.
         In addition, the range of your \glossterm{blindsense} ability increases by 50 feet.
 
-        \cf{Rgr}[6]{Greater Keen Vision}
-        You increase the range of your your \glossterm{blindsense} by 100 feet, and your \glossterm{blindsight} by 50 feet.
-        In addition, the penalty reduction from your \textit{keen vision} ability increaes to 2.
-
-        % This may not actually be very strong? Also inconsistent with other ``truesight'' abilities
-        \cf{Rgr}[7]{Truesight}
+        \cf{Rgr}[7]{Supreme Keen Vision}
+        The penalty reduction from your \textit{keen vision} ability increases to 3.
         Your perceptions are accurate enough to defeat even powerful magic.
         You can see through normal and magical darkness, see the truth behind visual figments and glamers, and see the true form of creatures and objects affected by \glossterm{Shaping} abilities.
         This ability works at any range.
@@ -2377,14 +2376,16 @@ This choice determines a great deal about your character's abilities.
         You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
         As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
 
-        \cf{Rgr}[2]{Wilderness Lore} You gain two additional skill points.
+        \cf{Rgr}[2]{Woodland Stride} Your movement is not impeded by \glossterm{light undergrowth}.
+        In addition, your movement costs are only doubled in \glossterm{heavy undergrowth} instead of quadrupled.
 
         \cf{Rgr}[3]{Wild Reaction} You gain a \plus2 bonus to \glossterm{initiative} checks and Reflex defense.
 
         \cf{Rgr}[4]{Wild Maneuver}
         You learn an additional \textit{wild maneuver}.
 
-        \cf{Rgr}[5]{Wilderness Mastery} You gain a \plus2 bonus to the Creature Handling, Heal, Knowledge (geography), Knowledge (nature), Ride, and Survival skills.
+        \cf{Rgr}[5]{Greater Woodland Stride} Your movement and actions are not impeded by \glossterm{heavy undergrowth}.
+        In addition, you gain a \plus10 foot bonus to your \glossterm{base speed}.
 
         \cf{Rgr}[6]{Greater Wild Reaction} The bonus from your \textit{wild reaction} bonus increases to \plus4.
 
@@ -2531,16 +2532,16 @@ This choice determines a great deal about your character's abilities.
             \end{freeability}
         }
 
-        \cf{Rgr}[3]{Tracking Lore}
-        You gain two additional \glossterm{skill points}.
+        \cf{Rgr}[3]{Tracker} You gain a \plus2 bonus to the Survival skill for the purpose of following tracks.
+        In addition, you gain two additional skill points.
 
         \cf{Rgr}[4]{Wary Hunter} You gain a \plus1 bonus to all \glossterm{defenses} against your quarry.
 
         \cf*{Rgr}[5]{Hunting Style}
         You learn an additional \textit{hunting style}.
 
-        \cf{Rgr}[6]{Expert Tracker} You gain a \plus4 bonus to the Survival skill.
-        In addition, you may use your \textit{quarry} ability on any creature whose tracks you are following, regardless of the creature's current location.
+        \cf{Rgr}[6]{Greater Tracker} The bonus from your \textit{tracker} ability increases to \plus4.
+        In addition, you can move at full speed while following tracks at no penalty.
 
         \cf{Rgr}[7]{Greater Wary Hunter}
         The bonus from your \textit{wary hunter} ability increases to \plus2.
@@ -2582,11 +2583,11 @@ This choice determines a great deal about your character's abilities.
             \tb{Rank} & \tb{Assassin} & \tb{Jack of All Trades}  & \tb{Combat Trickster} & \tb{Suave Scoundrel} \tableheaderrule
                1 & Sneak attack         & Skill lore             & Tricky manuevers         & Confound
             \\ 2 & Evasion              & Skill exemplar         & Trick lore          & Glibness
-            \\ 3 & Darkstalker          & Skill lore             & Trick power         & Distract
-            \\ 4 & Greater sneak attack & Greater skill exemplar & Trick manuever      & Suave lore
-            \\ 5 & Assassinate, evasion & Skillful defense       &                     & Greater glibness
-            \\ 6 & Hide in plain sight  & Supreme skill exemplar & Greater trick power & Compel belief
-            \\ 7 & Supreme sneak attack & Legendary fortune      & Trick maneuver      & Slippery mind
+            \\ 3 & Darkstalker          & Dabbler                & Trick power         & Distract
+            \\ 4 & Greater sneak attack & Skill lore             & Trick manuever      & Suave lore
+            \\ 5 & Assassinate, evasion & Greater skill exemplar &                     & Greater glibness
+            \\ 6 & Hide in plain sight  & Greater dabbler        & Greater trick power & Compel belief
+            \\ 7 & Supreme sneak attack & Master of masteries    & Trick maneuver      & Slippery mind
             \\ 8 & Greater darkstalker  &                        &
         \end{dtabularx}
     \end{dtable!*}
@@ -2623,6 +2624,11 @@ This choice determines a great deal about your character's abilities.
             Make a \glossterm{strike} against a creature within \rngclose range.
             If the target is \unaware, \defenseless, or \glossterm{overwhelmed}, you gain a \plus2d bonus to damage with the strike.
             You do not gain this damage bonus against creatures who are immune to \glossterm{critical hits} or who lack a discernible body structure, such as oozes.
+
+            \rankline
+            \rank{3} The damage bonus increases to \plus3d.
+            \rank{5} The damage bonus increases to \plus4d.
+            \rank{7} The damage bonus increases to \plus5d.
         \end{freeability}
 
         % TODO: wording
@@ -2632,28 +2638,27 @@ This choice determines a great deal about your character's abilities.
         \begin{attuneability}{Darkstalker}[\glossterm{Attune} (self)]
             You become completely undetectable by your choice of one of the following senses:
             \begin{itemize}
-                \item Blindsense and blindsight
-                \item Darkvision
-                \item Lifesense and lifesight
-                \item Scent
-                \item Tremorsense and tremorsight
+                \item \glossterm{Blindsense} and \glossterm{blindsight}
+                \item \glossterm{Darkvision}
+                \item \glossterm{Lifesense} and \glossterm{lifesight}
+                \item \glossterm{Scent}
+                \item \glossterm{Tremorsense} and \glossterm{tremorsight}
             \end{itemize}
         \end{attuneability}
 
-        \cf{Rog}[4]{Greater Sneak Attack} The damage bonus from your \textit{sneak attack} ability increases to \plus3d.
+        \cf{Rog}[4]{Hide in Plain Sight} You can use the Stealth skill to hide while observed.
+        Creatures observing you while you try to hide gain a \plus10 bonus to checks to notice you.
+        You must still have cover or concealment to hide successfully.
 
-        \cf{Rog}[5]{Assassination} You can use the \textit{assassination} ability as a \glossterm{minor action}.
+        \cf{Rog}[5]{Evasive Defense} You gain a \plus1 bonus to Armor defense and Reflex defense.
+
+        \cf{Rog}[6]{Assassination} You can use the \textit{assassination} ability as a \glossterm{minor action}.
         \begin{freeability}{Assassination}[\glossterm{Swift}]
             You study a creature within \rngmed range, finding weak points you can take advantage of.
             Until the end of the next round, if you make a melee \glossterm{strike} against the target while it is \unaware, your attack deals maximum damage.
         \end{freeability}
 
-        % TODO: wording?
-        \cf{Rog}[6]{Hide in Plain Sight} You can use the Stealth skill to hide while observed.
-        Creatures observing you while you try to hide gain a \plus5 bonus to checks to notice you.
-        You must still have cover or concealment to hide successfully.
-
-        \cf{Rog}[7]{Supreme Sneak Attack} The damage bonus from your \textit{sneak attack} ability increases to \plus4d.
+        \cf{Rog}[7]{Greater Hide in Plain Sight} Creatures observing you while you try to hide gain a \plus5 bonus to checks to notice you instead of a \plus10 bonus.
 
         \cf{Rog}[8]{Greater Darkstalker}[Magical] When you use your \textit{darkstalker} ability, you become undetectable by all of the listed senses, not just one.
 
@@ -2664,15 +2669,17 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rog}[2]{Skill Exemplar} You gain a \plus1 bonus to all skills.
 
-        \cf*{Rog}[3]{Skill Lore} You gain three additional skill points.
+        \cf{Rog}[3]{Dabbler} You gain an additional \glossterm{insight point}.
 
-        \cf{Rog}[4]{Greater Skill Exemplar} The skill bonus from your \textit{skill exemplar} ability increases to \plus2.
+        \cf*{Rog}[4]{Skill Lore} You gain three additional skill points.
 
-        \cf{Rog}[5]{Skillful Defense} You gain a \plus1 bonus to all defenses.
+        \cf{Rog}[5]{Greater Skill Exemplar} The skill bonus from your \textit{skill exemplar} ability increases to \plus2.
 
-        \cf{Rog}[6]{Supreme Skill Exemplar} The skill bonus from your \textit{skill exemplar} ability increases to \plus3.
+        \cf{Rog}[6]{Greater Dabbler} You gain an additional \glossterm{insight point}.
 
-        \cf{Rog}[8]{Legendary Fortune} When you make a skill attack or check, you roll twice and take either result.
+        \cf{Rog}[7]{Master of Masteries} You gain a \plus2 bonus to skills you have \glossterm{mastered}.
+
+        \cf{Rog}[8]{Supreme Skill Exemplar} The skill bonus from your \textit{skill exemplar} ability increases to \plus4.
 
     \subsection{Combat Trickster}
         This archetype grants you abilities to use in combat and improves your combat prowess.
@@ -2685,14 +2692,15 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rog}[2]{Trick Lore} You gain two additional skill points.
 
-        \cf{Rog}[3]{Trick Power} You gain a \plus1 bonus to \glossterm{power} with \glossterm{mundane} abilities.
+        \cf{Rog}[3]{Combat Trickster} You gain a \plus1 bonus to \glossterm{accuracy} with the \textit{dirty trick}, \textit{disarm}, \textit{grapple}, \textit{overrun}, \textit{shove}, and \textit{trip} abilities (see \pcref{Special Combat Abilities}).
+        In addition, you gain a \plus1 bonus to \glossterm{accuracy} with grapple actions (see \pcref{Grapple Actions}).
 
         \cf{Rog}[4]{Trick Maneuver}
         You learn an additional \textit{trick maneuver}.
 
-        % \cf{Rog}[5]{Skill Trick} % TODO
+        \cf{Rog}[5]{Combat Precision} You gain a \plus1 bonus to \glossterm{accuracy}.
 
-        \cf{Rog}[6]{Greater Trick Power} The bonus from your \textit{trick power} ability increases to \plus2.
+        \cf{Rog}[6]{Greater Combat Trickster} The bonuses from your \textit{combat trickster} ability increase to \plus2.
 
         \cf*{Rog}[7]{Trick Maneuver}
         You learn an additional \textit{trick maneuver}.
