@@ -86,18 +86,6 @@
             If your result is less than or equal to your \glossterm{encumbrance}, you \glossterm{miscast} the ability (see \pcref{Miscasting}).
             When you perform a ritual, this roll must be repeated at the end of each action phase during the ritual.
 
-    \subsection{Concentration}\label{Concentration}
-        Some abilities, such as spells and rituals, require focused thought to use successfully.
-        If your focus is tested, such as by casting a spell defensively (see \pcref{Defensive Casting}), you may need to make a \glossterm{concentration} check.
-        Your bonus with a concentration check is equal to your level or your Willpower, whichever is higher.
-        You apply any \glossterm{overwhelm penalties} you suffer as penalties to concentration checks.
-
-        Success on a concentration check generally means you successfully use the ability that triggered the check.
-        Failure generally means that you do not use the ability successfully.
-
-        If your concentration is tested in multiple ways simultaneously, you only make one \glossterm{concentration} check.
-        You take a \minus2 penalty to the check for each effect that tests your concentration simultaneously.
-
     \subsection{Miscasting}\label{Miscasting}
 
         If you start using a spell or ritual and fail to complete it successfully for any reason, you miscast it.
@@ -112,45 +100,7 @@
         For example, if you try to cast a spell that only affects living creatures on a creature that is undead, the spell would be miscast.
 
         % TODO: This may be more clear if minor + no miscast becomes a tag.
-        \parhead{Minor Action Spells} Spells that require a \glossterm{minor action} to cast are not miscast if your concentration is broken while casting the spell.
-        Instead, the spell simply fizzles without any effect.
-
-    \subsection{Focused and Defensive Casting}\label{Focused and Defensive Casting}
-        The concentration required to use spells and rituals can impair your ability to defend yourself.
-        When you use a spell or ritual, you choose whether to use \glossterm{focused casting} or \glossterm{defensive casting}.
-        For rituals, you can change your choice during each phase that you spend performing the ritual.
-        % This is a hack to prevent playing games involving delaying casting until the delayed action phase
-        % to avoid being disruptible without taking defense penalties.
-        You cannot use \glossterm{focused casting} if you are distracted, as your concentration is divided.
-        You are distracted if you are experiencing violent motion, such as if you are on a galloping horse, or if you already took damage during the current round.
-
-        \subsubsection{Focused Casting}\label{Focused Casting}
-            If you use a spell or ritual with \glossterm{focused casting}, you suffer a \minus4 penalty to all defenses during each \glossterm{phase} where you concentrate on the ability.
-
-        \subsubsection{Defensive Casting}\label{Defensive Casting}
-            If you use a spell or ritual using \glossterm{defensive casting}, you suffer no penalty to defenses.
-            In exchange, you have to make a \glossterm{concentration} check to use the ability successfully (see \pcref{Concentration}).
-            The \glossterm{difficulty rating} of the check is equal to 5 \add three times the level of the spell you are casting, as shown on \tref{Concentration DRs}.
-            Success means that you use the ability successfully.
-            Failure means that you \glossterm{miscast} the spell or ritual (see Miscasting, below).
-
-            When you use defensive casting to perform a ritual, you must make a new check during each phase.
-
-            \begin{dtable}
-                \lcaption{Concentration DRs}
-                \begin{dtabularx}{\columnwidth}{l X}
-                    \tb{Spell Level} & \tb{DR} \tableheaderrule
-                    Cantrip & 5 \\
-                    1st level & 8 \\
-                    2nd level & 11 \\
-                    3rd level & 15 \\
-                    4th level & 18 \\
-                    5th level & 21 \\
-                    6th level & 24 \\
-                    7th level & 27 \\
-                \end{dtabularx}
-            \end{dtable}
-
+        \parhead{Minor Action Spells} Spells that require a \glossterm{minor action} to cast do not cause a \glossterm{miscast backlash}, even if they are \glossterm{miscast}.
 
     \subsection{Augments}\label{Augments}
         There are a number of \glossterm{augments} that can be applied to spells and rituals to increase their power.
@@ -297,7 +247,7 @@
     \subsection{Cantrips}\label{Cantrips}
         Some \glossterm{mystic spheres} have minor spells called cantrips.
         Anyone who has access to a mystic sphere knows all cantrips from that sphere.
-        Cantrips are considered to be 0th level spells for the purpose of abilities that care about spell level, such as \glossterm{concentration} (see \pcref{Concentration}).
+        Cantrips are considered to be 0th level spells for the purpose of abilities that care about spell level.
 
 \section{Rituals}\label{Rituals}
     Each \glossterm{mystic sphere} has a number of \glossterm{rituals}.

@@ -1237,7 +1237,7 @@ It defines how attributes work and explains how to make attacks in combat.
             Some abilities last as long as you take an action to sustain them each round.
             The type of action required is always specified in the ability.
             At the end of each \glossterm{action phase}, the ability is dismissed unless you used the ability that phase or took the action to sustain the ability that phase.
-            Sustaining a spell does not take concentration, and cannot be disrupted in the same way that casting a spell can (see \pcref{Concentration}).
+            Sustaining a spell is not a \glossterm{Focus} ability, and cannot be disrupted in the same way that casting a spell can (see \pcref{Focus}).
 
             % TODO: a more robust timing system would make stating this explicitly unnecessary
             If a sustained ability has effects that trigger at the end of the action phase, it ends before having its effects if you fail to sustain the ability.
@@ -1296,15 +1296,24 @@ It defines how attributes work and explains how to make attacks in combat.
         \parhead{Curse} Curse abilities lay supernatural curses on their targets.
         They cannot be \glossterm{dismissed}, but can be removed with the \spell{remove curse} spell.
 
-        \parhead{Emotion} Emotion abilities alter a creature's opinons or personality, but do not necessarily affect their actions.
-        They have no effect on objects or creatures without minds.
-
         \parhead{Detection} Detection abilities reveal magical auras or information within an area.
         They can penetrate up to 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.
         For its ability to penetrate other materials, use the most similar substance from the list above.
 
+        \parhead{Emotion} Emotion abilities alter a creature's opinons or personality, but do not necessarily affect their actions.
+        They have no effect on objects or creatures without minds.
+
         \parhead{Flesh} Flesh abilities manipulate the physical flesh of creatures.
         They have no effect on creatures without flesh, such as ghosts or oozes.
+
+        \parhead{Focus} Focus abilities require concentration to use.
+        When you use a Focus ability, you take a \minus4 penalty to all defenses until the end of the round.
+        This penalty is called your \glossterm{focus penalty}.
+        It applies immediately, affecting attacks made against you during the current phase.
+        Some abilities can reduce or increase your \glossterm{focus penalty}.
+
+        When you use a Focus ability during the \glossterm{delayed action phase}, the ability has a 50\% chance to fail if you already lost a \glossterm{hit point} in the current round.
+        Most \glossterm{spells} are \glossterm{Focus} abilities.
 
         \parhead{Manifestation} Manifestation abilities create temporary constructs formed from raw magical energy.
         Objects and creatures created with manifestation abilities seem real on the surface, but they have no internal structure.
@@ -1500,7 +1509,7 @@ It defines how attributes work and explains how to make attacks in combat.
             The target uses whichever defense is appropriate to the nature of the trick you describe.
 
             On a hit, as a \glossterm{condition}, the target suffers a \minus2 penalty to one of the following statistics:
-                \glossterm{accuracy} with \glossterm{physical attacks}, \glossterm{concentration} checks, Armor defense, Fortitude defense, Reflex defense, or Mental defense.
+                \glossterm{accuracy} with \glossterm{physical attacks}, Armor defense, Fortitude defense, Reflex defense, or Mental defense.
         \end{freeability}
 
         \parhead{Disarm} As a standard action, you can use the \textit{disarm} ability to knock an item out of a foe's hands.
@@ -1636,7 +1645,6 @@ It defines how attributes work and explains how to make attacks in combat.
                     If you cannot free a hand, you suffer a \minus10 penalty to accuracy on all \glossterm{physical attacks} until you have a free hand.
                 \item You take a \minus4 penalty to accuracy with weapons that are not \glossterm{light weapons}, since they are too large and cumbersome to be used effectively in a grapple.
                 \item Spellcasting is extremely difficult. You cannot cast \glossterm{spells} or perform \glossterm{rituals} with \glossterm{somatic components}.
-                    Casting a spell without somatic components requires a \glossterm{concentration} check with a DR equal to 20 \add three times the spell's level.
                 \item You cannot normally move from your location (but see the \textit{move grapple} ability, below).
             \end{itemize}
 
@@ -1723,10 +1731,6 @@ It defines how attributes work and explains how to make attacks in combat.
         If your mount is moving in the current phase, you gain a \plus1d bonus to damage with Mounted weapons (see \pcref{Mounted Weapon}).
         You also take a \minus2 penalty to accuracy with ranged strikes.
         If your mount uses the \textit{sprint} ability, this penalty increases to \minus4 (see \pcref{Sprint}).
-
-        \parhead{Casting Spells while Mounted} You can cast a spell normally if your mount only moves during the \glossterm{movement phase}.
-        If you have your mount move during the same \glossterm{phase} that you cast a spell, you have to make a \glossterm{concentration} check due to the vigorous motion (DR 5 \add double spell level) to avoid \glossterm{miscasting} the spell.
-        If the mount uses the \textit{sprint} ability during that phase, you take a \minus2 penalty to the check due to the violent motion.
 
         \parhead{If Your Mount Falls in Battle} If your mount falls, you fall to the ground with it.
 

@@ -117,33 +117,23 @@ def generate_implements():
     ))
 
     implements.append(MagicItem(
-        name="Staff of Concentration",
-        level=1,
+        name="Staff of Focus",
+        level=6,
         material_type='Staff',
         description="""
-            You gain a +1 \\glossterm<magic bonus> to \\glossterm<concentration> on spells you cast using this staff.
+            You reduce your penalties for using a \\glossterm<Focus> ability by 1.
         """,
-        short_description="Grants +1 \\glossterm<concentration>",
+        short_description="Reduces \\glossterm<Focus> penalties by 1",
     ))
 
     implements.append(MagicItem(
-        name="Staff of Concentration, Greater",
-        level=7,
+        name="Staff of Focus, Greater",
+        level=15,
         material_type='Staff',
         description="""
-            You gain a +2 \\glossterm<magic bonus> to \\glossterm<concentration> on spells you cast using this staff.
+            You reduce your penalties for using a \\glossterm<Focus> ability by 2.
         """,
-        short_description="Grants +2 \\glossterm<concentration>",
-    ))
-
-    implements.append(MagicItem(
-        name="Staff of Concentration, Supreme",
-        level=13,
-        material_type='Staff',
-        description="""
-            You gain a +3 \\glossterm<magic bonus> to \\glossterm<concentration> on spells you cast using this staff.
-        """,
-        short_description="Grants +3 \\glossterm<concentration>",
+        short_description="Reduces \\glossterm<Focus> penalties by 1.",
     ))
 
     implements.append(MagicItem(

@@ -603,15 +603,15 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Distracting Strike',
-        short_description='Attack vulnerabilities in concentrating foes',
+        short_description='Attack vulnerabilities in focusing foes',
         effect_text="""
             Make a melee \\glossterm<strike> with a -1d penalty to damage.
-            If you hit, the target takes a -4 penalty to \\glossterm<concentration> as a \\glossterm<condition>.
+            If the target is using a \\glossterm<Focus> ability, the strike deals double damage.
         """,
         rank_upgrades={
-            '3': 'On a critical hit, the penalty increases to -8.',
+            '3': 'You gain a +1 bonus to \\glossterm<accuracy> with the strike.',
             '5': 'The damage penalty is removed.',
-            '7': 'The penalty increases to -8.',
+            '7': 'The accuracy bonus increases to +3.',
         },
         tags=[],
         lists=['Esoteric', 'Martial', 'Trick', 'Primal', 'Wild'],
