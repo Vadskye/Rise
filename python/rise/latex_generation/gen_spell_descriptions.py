@@ -1248,10 +1248,11 @@ def generate_mystic_spheres():
             """, tags=[]),
             # A little weird that "Shocking" Grasp doesn't daze
             Spell('Shocking Grasp', 1, 'One creature or object you \\glossterm<threaten>', """
+                This spell does not have the \\glossterm<Focus> tag.
+
                 Make an attack vs. Fortitude against the target.
-                You gain a +4 bonus to \\glossterm<concentration> checks to cast this spell.
                 \\hit The target takes electricity \\glossterm<standard damage> +1d.
-            """, tags=[]),
+            """, tags=[], focus=False),
             Spell('Discharge', 2, '\\glossterm<Enemies> and objects in a \\areamed radius from you', """
                 Make an attack vs. Fortitude against each target.
                 \\hit Each target takes electricity \\glossterm<standard damage>.

@@ -8,8 +8,9 @@ valid_tags = set([
     'Compulsion',
     'Creation',
     'Curse',
-    'Emotion',
     'Detection',
+    'Emotion',
+    'Focus',
     'Manifestation',
     'Physical',
     'Scrying',
@@ -38,6 +39,7 @@ def is_valid_tag(tag):
     return tag in valid_tags
 
 def to_latex_tags(tags):
+    tags = filter(bool, tags)
     tags = filter(lambda t: t != 'AP', tags)
     return (
         '[' + ', '.join([
