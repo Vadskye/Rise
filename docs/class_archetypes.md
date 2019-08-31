@@ -113,19 +113,19 @@ Barbarian - Rage
 Rage -> Focus Non-Standard Ability
 Primal Warrior -> Insight Ability
 Battleforged Resilience -> Statistic Boost
-Outland Savage -> Statistic Boost
+Outland Savage -> Statistic Boost (+power)
 
 ## Cleric
 
 Divine Spellcasting -> Spells
-Divine Spell Mastery -> Statistic Boost
+Divine Spell Mastery -> Statistic Boost (+power)
 Domain Influence -> ???
 Healer -> Focus Standard Ability
 
 ## Druid
 
 Nature Spellcasting -> Spells
-Nature Spell Mastery -> Statistic Boost
+Nature Spell Mastery -> Statistic Boost (+power)
 Shifter -> Insight Ability
 Beastmaster -> Statistic Boost
 
@@ -133,18 +133,44 @@ Beastmaster -> Statistic Boost
 
 Combat Discipline -> Focus Standard Ability
 Equipment Training -> Statistic Boost
-Martial Mastery -> Insight Ability
+Martial Mastery -> Insight Ability (+power)
 Battle Leader -> Insight Ability
 
 ## Mage
 
 Arcane Spellcasting -> Spells
-Arcane Spell Mastery -> Statistic Boost
+Arcane Spell Mastery -> Statistic Boost (+power)
 Arcane Scholar -> Statistic Boost
 Innate Arcanist -> Statistic Boost
 
 ## Monk
 
-Ki Manifestation -> Insight Ability
+Ki Manifestation -> Insight Ability (+power)
 Esoteric Warrior -> Insight Ability
 Transcendant Sage -> Focus Standard Ability
+Perfeted Form -> Statistic Boost
+
+## Paladin
+Aligned Aura -> Statistic Boost (+power)
+Divine Spellcasting -> Spells
+Zealous Warrior -> Focus Standard Ability
+Stalwart Guardian -> ???
+
+## Ranger
+Huntmaster -> ???
+Keen Senses -> Statistic Boost
+Wilderness Warrior -> Insight Ability
+Monster Slayer -> Insight Ability (+power)
+
+## Rogue
+Assassin -> Focus Standard Ability
+Jack of All Trades -> Statistic Boost
+Combat Trickster -> Insight Ability
+Suave Scoundrel -> Focus Standard Ability
+
+Note: Rogues have no inherent +power ability, unlike all other classes
+
+## Warlock
+Pact Spellcasting -> Spells
+Pact Spell Mastery -> Statistic Boost
+Blessings of the Abyss -> ???
