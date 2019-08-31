@@ -13,7 +13,11 @@ class Spell(object):
             effect_text,
             tags,
             extra_text=None,
+            focus=True,
     ):
+        if focus:
+            tags += ['Focus']
+
         self.level = level
         self.name = name
         self.targets = targets

@@ -1189,7 +1189,7 @@ def generate_worn():
 
             As a standard action, you can activate these gloves.
             When you do, you cause the effect of the last spell invested in the gloves.
-            This does not require \\glossterm<concentration> or \\glossterm<somatic components>.
+            This does not require \\glossterm<components>.
             After you use a spell in this way, the energy in the gloves is spent, and you must invest a new spell to activate the gloves again.
 
             If you remove either glove from your hand, the magic of the spell invested in the gloves is lost.

@@ -891,21 +891,25 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Mental Casting} You connect to the magical essence of the universe differently from other spellcasters, allowing you to cast spells with purely mental effort.
         None of your spells have \glossterm{somatic components} or \glossterm{verbal components}.
-        However, the lack of a physical focus for your magic makes it more difficult for you to concentrate on your spells.
-        You take a \minus5 penalty to \glossterm{concentration} checks to cast spells (see \pcref{Concentration}).
+        However, the lack of a physical focus for your magic makes it harder to concentrate on.
+        You increase your \glossterm{focus penalty} with spells by 2.
+        In addition, you automatically fail to use \glossterm{Focus} spells during the \glossterm{delayed action phase} if you already lost a \glossterm{hit point} earlier in the round.
+        This does not affect spells that do not have the \glossterm{Focus} tag.
 
         \ff[4]{Internal Magic} You gain a \plus1 bonus to Fortitude and Mental defense.
 
         \ff[7]{Innate Creativity} You learn an additional \glossterm{spell}.
         When you gain access to new spell levels, you can change which spell you know.
 
-        \ff[10]{Miscast Tolerance} You take half damage from your own \glossterm{miscast backlash}.
+        \ff[10]{Greater Mental Casting} The increase to your \glossterm{focus penalty} with spells from your \textit{mental casting} ability is removed.
 
         \ff[13]{Greater Internal Magic} The bonuses from your \textit{internal magic} ability increase to \plus2.
 
-        \ff[16]{Innate Power} You gain a \plus1 bonus to \glossterm{power} with \glossterm{spells}.
+        \ff[16]{Greater Innate Creativity} You learn an additional \glossterm{spell}.
+        When you gain access to new spell levels, you can change which spell you know.
 
-        \ff[19]{Greater Mental Casting} The penalty to \glossterm{concentration} checks from your \textit{mental casting} ability is removed.
+        \ff[19]{Supreme Mental Casting} The automatic spell failure from your \textit{mental casting} ability is removed.
+        In addition, you reduce your \glossterm{focus penalty} by 1.
     \end{feat}
 
     \begin{feat}{Intimidate Specialization}{Skill}
@@ -931,19 +935,18 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featpre Starting Willpower of 1.
 
         \ff[1]{Mental Discipline} You gain a \plus2 bonus to Mental defense.
-        In addition, you gain a \plus2 bonus to \glossterm{concentration} checks (see \pcref{Concentration}).
 
         \ff[4]{Mind over Matter} You gain an additional \glossterm{hit point}.
 
         \ff[7]{Unclouded Mind} You are immune to being \glossterm{dazed}.
 
-        \ff[10]{Greater Mental Discipline} The bonuses from your \textit{mental discipline} ability increase to \plus3.
+        \ff[10]{Greater Mental Discipline} The bonus from your \textit{mental discipline} ability increases to \plus3.
 
-        \ff[13]{Greater Mind over Matter} The bonus from your \textit{mind over matter} ability increases to twice your level.
+        \ff[13]{Greater Mind over Matter} The number of additional \glossterm{hit points} from your \textit{mind over matter} ability increases to two.
 
         \ff[16]{Greater Unclouded Mind} You are immune to being \glossterm{stunned}.
 
-        \ff[19]{Supreme Mental Discipline} The bonuses from your \textit{mental discipline} ability increase to \plus4.
+        \ff[19]{Supreme Mental Discipline} The bonus from your \textit{mental discipline} ability increases to \plus4.
     \end{feat}
 
     \begin{feat}{Jump Specialization}{Skill}
@@ -1159,31 +1162,32 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[19]{Augment} You learn an additional \glossterm{augment}.
     \end{feat}
 
-    \begin{feat}{Miscaster}{Casting, Magical}
-        \featpre Ability to cast a spell.
+    % TODO: replace with Wild Magic mage archetype
+    % \begin{feat}{Miscaster}{Casting, Magical}
+    %     \featpre Ability to cast a spell.
 
-        \ff[1]{Selective Backlash} You can freely exclude creatures other than yourself from the effects of your \glossterm{miscast backlash}.
+    %     \ff[1]{Selective Backlash} You can freely exclude creatures other than yourself from the effects of your \glossterm{miscast backlash}.
 
-        \ff[4]{Overchannel} When you cast a spell, you can use the \textit{overchannel} ability.
-        \begin{freeability}{Overchannel}
-            Your concentration on the spell you are casting cannot be disrupted, and you cannot \glossterm{miscast} the spell for any other reason.
-            Effects that prevent the spell from having any effect, such as the \textit{counterspell} ability from the Sphere Focus: Thaumaturgy feat, work normally (see \featpref{Sphere Focus: Thaumaturgy}).
-            In addition, you cause a \glossterm{miscast backlash} when the spell resolves.
+    %     \ff[4]{Overchannel} When you cast a spell, you can use the \textit{overchannel} ability.
+    %     \begin{freeability}{Overchannel}
+    %         Your concentration on the spell you are casting cannot be disrupted, and you cannot \glossterm{miscast} the spell for any other reason.
+    %         Effects that prevent the spell from having any effect, such as the \textit{counterspell} ability from the Sphere Focus: Thaumaturgy feat, work normally (see \featpref{Sphere Focus: Thaumaturgy}).
+    %         In addition, you cause a \glossterm{miscast backlash} when the spell resolves.
 
-            However, using this ability requires channeling excessive magical energy that temporarily limits your connection to magic.
-            During the next round, you take a \minus2 penalty to all defenses and any spell you cast is automatically \glossterm{miscast}.
-        \end{freeability}
+    %         However, using this ability requires channeling excessive magical energy that temporarily limits your connection to magic.
+    %         During the next round, you take a \minus2 penalty to all defenses and any spell you cast is automatically \glossterm{miscast}.
+    %     \end{freeability}
 
-        \ff[7]{Widened Backlash} The area affected by your \glossterm{miscast backlash} increases to a \areamed radius centered on you.
+    %     \ff[7]{Widened Backlash} The area affected by your \glossterm{miscast backlash} increases to a \areamed radius centered on you.
 
-        \ff[10]{Toughened Body} You gain an additional \glossterm{hit point}.
+    %     \ff[10]{Toughened Body} You gain an additional \glossterm{hit point}.
 
-        \ff[13]{Resilient Channeler} The penalty to defenses from your \textit{overchannel} ability is removed.
+    %     \ff[13]{Resilient Channeler} The penalty to defenses from your \textit{overchannel} ability is removed.
 
-        \ff[16]{Empowered Miscast} You gain a \plus2 bonus to \glossterm{power} with your \glossterm{miscast backlash}.
+    %     \ff[16]{Empowered Miscast} You gain a \plus2 bonus to \glossterm{power} with your \glossterm{miscast backlash}.
 
-        \ff[19]{Greater Widened Backlash} The area affected by your \glossterm{miscast backlash} increases to a \areamed radius centered on you.
-    \end{feat}
+    %     \ff[19]{Greater Widened Backlash} The area affected by your \glossterm{miscast backlash} increases to a \areamed radius centered on you.
+    % \end{feat}
 
     \begin{feat}{Mystic Archer}{Casting}
         \featpre Ability to cast a spell.
@@ -1613,8 +1617,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{feat}{Spellsword}{Spell}
         \featpre Ability to cast a spell.
 
-        \ff[1]{Combat Caster} You gain a \plus2 bonus to \glossterm{concentration} checks made to use spells and rituals.
-        In addition, you reduce your \glossterm{encumbrance} by 1 when determining your \glossterm{somatic component failure}.
+        \ff[1]{Combat Focus} You reduce your \glossterm{focus penalties} by 1.
 
         \ff[4]{Imbue Weapon} When you cast a spell that affects a single target and does not have the \glossterm{AP}, \glossterm{Attune}, \glossterm{Sustain} tags,
             you can use the \textit{imbue weapon} ability.
@@ -1635,15 +1638,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[7]{Spellsword Conduit}[Magical] You can cast spells using a melee weapon as if it were an implement (see \pcref{Implements}).
         When you do, you gain a \plus1 bonus to \glossterm{accuracy} with that weapon until the end of the next round.
 
-        \ff[10]{Greater Combat Caster} The \glossterm{concentration} bonus from your \textit{combat caster} ability increases to \plus4.
-        In addition, the \glossterm{encumbrance} reduction increases to 2.
+        \ff[10]{Greater Combat Focus} The penalty reduction from your \textit{combat focus} ability increases to 2.
 
         \ff[13]{Greater Imbue Weapon}[Magical] You can maintain two separate attunements to your \textit{imbue weapon} ability.
 
-        \ff[16]{Supreme Combat Caster} The \glossterm{concentration} bonus from your \textit{combat caster} ability increases to \plus6.
-        In addition, the \glossterm{encumbrance} reduction increases to 3.
+        \ff[16]{Greater Spellsword Conduit}[Magical] The accuracy bonus from your \textit{spellsword conduit} ability increases to \plus2.
 
-        \ff[19]{Greater Spellsword Conduit}[Magical] The accuracy bonus from your \textit{spellsword conduit} ability increases to \plus2.
+        \ff[19]{Supreme Combat Focus} The penalty reduction from your \textit{combat focus} ability increases to 3.
     \end{feat}
 
     \begin{feat}{Spellwarped}{General, Magical}
