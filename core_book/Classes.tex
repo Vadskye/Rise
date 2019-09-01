@@ -164,12 +164,12 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Bbn}[4]{Enduring Anger} You gain an additional \glossterm{hit point}.
 
-        \cf{Bbn}[5]{Powerful Rage} The \glossterm{power} bonus from your \textit{rage} ability increases to \plus4.
+        \cf{Bbn}[5]{Powerful Rage} The bonus to \glossterm{power} from your \textit{rage} ability increases to \plus4.
 
-        \cf{Bbn}[6]{Greater Painless Rage} The bonus to \glossterm{resistances} from your \textit{painless rage} ability increases to be equal to your \glossterm{power}.
-
-        \cf{Bbn}[7]{Greater Seething Anger}
+        \cf{Bbn}[6]{Greater Seething Anger}
         The bonuses from your \textit{seething anger} ability increase to \plus4.
+
+        \cf{Bbn}[7]{Greater Painless Rage} The bonus to \glossterm{resistances} from your \textit{painless rage} ability increases to be equal to your \glossterm{power}.
 
         \cf{Bbn}[8]{Titanic Rage}
         When you use your \textit{rage} ability, you can grow by one \glossterm{size category}.
@@ -2787,14 +2787,14 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable}
         \lcaption{Warlock Progression}
         \begin{dtabularx}{\columnwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Pact Spellcasting} & \tb{Pact Spell Mastery}  & \tb{Blessings of the Abyss} \tableheaderrule
-            1    & Spellcasting  & Armor tolerance             & Eldritch blast
-            \\ 2 & Mystic sphere          & Spell knowledge             & Eldritch augment
-            \\ 3 & Spell level (2)        & Wellspring of power         & Empowering Whispers
-            \\ 4 & Spell level (3), spell & Spell knowledge             & Fiendish resistance
-            \\ 5 & Spell level (4)        & Greater armor tolerance     & Eldritch Augment
-            \\ 6 & Spell level (5)        & Spell knowledge             & Greater Empowering Whispers
-            \\ 7 & Spell level (6), spell & Greater wellspring of power & Greater fiendish resistance
+            \tb{Rank} & \tb{Pact Spellcasting} & \tb{Pact Spell Mastery}  & \tb{Blessings of the Abyss} & \tb{Soulkeeper's Chosen} & \tableheaderrule
+            1    & Spellcasting  & Armor tolerance             & Eldritch blast & Possession
+            \\ 2 & Mystic sphere          & Spell knowledge             & Fiendish resistance & Empowering whispers
+            \\ 3 & Spell level (2)        & Wellspring of power         & Abyssal jaunt & Influence possession
+            \\ 4 & Spell level (3), spell & Spell knowledge             & Abyssal substitution & Exchange soul fragment
+            \\ 5 & Spell level (4)        & Greater armor tolerance     & Greater fiendish resistance & Powerful possession
+            \\ 6 & Spell level (5)        & Spell knowledge             & Abyssal curse & Greater empowering whispers
+            \\ 7 & Spell level (6), spell & Greater wellspring of power & Greater abyssal substitution & Control possession
             \\ 8 & Spell level (7)        &                             &
         \end{dtabularx}
     \end{dtable}
@@ -2987,19 +2987,22 @@ This choice determines a great deal about your character's abilities.
 
         \cf*{War}[7]{Mystic Knowledge} You gain an additional \textit{mystic knowledge} ability.
 
-    \subsection{Blessings of the Abyss}
-        This archetype grants you powers relating to the connection to the Abyss granted by your pact.
+    \subsection{Soulkeeper's Chosen}
+        This archetype enhances your connection to your soulkeeper, granting you abilities relating to your pact.
 
-        \cf{War}[1]{Abyssal Blast} You can use the \textit{abyssal blast} ability as a standard action.
-        \begin{freeability}{Abyssal Blast}[\glossterm{Magical}]
-            Make an attack vs. Armor against one creature or object within \rngclose range.
-            \hit The target takes \glossterm{standard damage}.
-
-            \rankline
-            \rank{3} You gain a \plus1d bonus to damage with the attack.
-            \rank{5} The damage bonus increases to \plus2d.
-            \rank{7} The damage bonus increases to \plus3d.
-        \end{freeability}
+        \cf{War}[1]{Possession} You can use the \textit{possession} ability as a \glossterm{free action} to allow your soulkeeper to directly control your actions.
+        Your soulkeeper's objectives may differ from your own, but except in very unusual circumstances, your soulkeeper is invested in continuing your life and ensuring your victory in difficult circumstances.
+        \begin{attuneability}{Possession}
+            You gain the following benefits and drawbacks:
+            \begin{itemize}
+                \item You increase your maximum \glossterm{hit points} by two and regain two \glossterm{hit points}.
+                \item You gain a \plus2 bonus to \glossterm{power} with \glossterm{magical} abilities.
+                \item You take a \minus2 penalty to Mental defense.
+                \item You are unable to control your actions. Instead, your soulkeeper chooses your actions for you.
+                \item At the start of each phase, if either you or your soulkeeper choose to end this ability, the ability ends.
+                    If the ability ends this way, you regain the \glossterm{action point} you spent to attune to this ability the next time you take a \glossterm{short rest}.
+            \end{itemize}
+        \end{attuneability}
 
         \cf{War}[2]{Empowering Whispers}[Magical]
         You gain an ability based on the type of whispers you hear with your \textit{whispers of the lost} ability.
@@ -3015,12 +3018,26 @@ This choice determines a great deal about your character's abilities.
             \subcf{Whispers of the Mighty} You gain a \plus2 bonus to Fortitude defense.
         }
 
-        \cf{War}[3]{Fiendish Resistance} You gain a bonus equal to half your level to \glossterm{resistances} against \glossterm{energy damage}.
+        % does this need to be more explicit that you can act during the delayed action phase if you interrupt during the action phase?
+        \cf{War}[3]{Influence Possession} During your \textit{possession} ability, whenever your soulkeeper chooses an action for you to perform, you can choose not to perform that action.
+        If you do, you take no action in that phase and the ability ends.
 
-        \cf{War}[4]{Abyssal Substitution} Whenever you use a \glossterm{magical} ability that deals \glossterm{energy damage} or any subtype of \glossterm{energy damage}, you may change the type of damage it deals to be untyped.
-        Any other aspects of the ability remain unchanged.
+        \cf{War}[4]{Exchange Soul Fragment} Your connection to your soulkeeper deepens, allowing you to send a fragment of your experiences through the link.
+        You can use the \textit{exchange soul fragment} ability as a \glossterm{minor action}.
+        \begin{freeability}{Exchange Soul Fragment}[\glossterm{Magical}]
+            You lose a \glossterm{hit point} and reduce your maximum \glossterm{hit points} by one.
+            Remove one \glossterm{condition} affecting you.
+            This cannot remove a condition applied during the current round.
+            When you take a \glossterm{short rest}, your maximum hit points are restored to their normal value.
 
-        \cf{War}[5]{Greater Empowering Whispers}[Magical] You gain an additional ability depending on the voices you chose with your \textit{whispers of the lost} ability.
+            \rankline
+            \rank{6} This ability does not reduce your maximum \glossterm{hit points}.
+            \rank{8} You can remove any number of \glossterm{conditions}.
+        \end{freeability}
+
+        \cf{War}[5]{Powerful Possession} The bonus to \glossterm{power} from your \textit{possession} ability increases to \plus4.
+
+        \cf{War}[6]{Greater Empowering Whispers}[Magical] You gain an additional ability depending on the voices you chose with your \textit{whispers of the lost} ability.
         {
             \subcf{Mentoring Whispers} You gain an additional \glossterm{insight point}.
 
@@ -3033,7 +3050,49 @@ This choice determines a great deal about your character's abilities.
             \subcf{Whispers of the Mighty} You are immune to being \glossterm{sickened} and \glossterm{nauseated}.
         }
 
-        \cf{War}[6]{Greater Fiendish Resistance}[Magical] The bonus from your \textit{fiendish resistance} ability increases to be equal to your level.
+        \cf{War}[7]{Control Possession} During your \textit{possession} ability, you can choose your actions normally.
+        Your soulkeeper may still choose to end the ability.
+
+    \subsection{Blessings of the Abyss}
+        This archetype enhances your connection to the Abyss and allows you to channel its sinister power more directly.
+
+        \cf{War}[1]{Abyssal Blast} You can use the \textit{abyssal blast} ability as a standard action.
+        \begin{freeability}{Abyssal Blast}[\glossterm{Magical}]
+            Make an attack vs. Armor against one creature or object within \rngclose range.
+            \hit The target takes \glossterm{standard damage}.
+
+            \rankline
+            \rank{3} You gain a \plus1d bonus to damage with the attack.
+            \rank{5} The damage bonus increases to \plus2d.
+            \rank{7} The damage bonus increases to \plus3d.
+        \end{freeability}
+
+        \cf{War}[2]{Fiendish Resistance} You gain a bonus equal to half your level to \glossterm{resistances} against \glossterm{energy damage}.
+
+        \cf{War}[3]{Abyssal Jaunt} You can use the \textit{abyssal jaunt} ability as a standard action.
+        \begin{freeability}{Abyssal Jaunt}[\glossterm{Magical}]
+            Make an attack vs. Mental against one creature or object within \rngclose range.
+            \hit The target is teleported into the Abyss and takes \glossterm{standard damage} \minus2d.
+            At the end of the next round, it returns to its original location, or the closest open space if that location is occupied.
+
+            \rankline
+            \rank{5} The damage penalty is reduced to \minus1d.
+            \rank{7} The damage penalty is removed.
+        \end{freeability}
+
+        \cf{War}[4]{Abyssal Substitution} Whenever you use a \glossterm{magical} ability that deals \glossterm{energy damage} or any subtype of \glossterm{energy damage}, you may change the type of damage it deals to be untyped.
+        Any other aspects of the ability remain unchanged.
+
+        \cf{War}[5]{Greater Fiendish Resistance}[Magical] The bonus from your \textit{fiendish resistance} ability increases to be equal to your level.
+
+        \cf{War}[6]{Abyssal Curse} You can use the \textit{abyssal curse} ability as a standard action.
+        \begin{freeability}{Abyssal Curse}[\glossterm{Curse}, \glossterm{Magical}]
+            Make an attack vs. Fortitude against one creature or object within \rngclose range.
+            \hit The target is \glossterm{nauseated}.
+
+            \rankline
+            \rank{8} On a \glossterm{critical hit}, the target is also \glossterm{paralyzed}.
+        \end{freeability}
 
         \cf{War}[7]{Greater Abyssal Substitution} Whenever you use an ability that deals damage, you may change the type of damage it deals to be untyped.
         Any other aspects of the ability remain unchanged.
