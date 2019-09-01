@@ -59,29 +59,29 @@ def generate_implements():
         material_type='Staff',
         tags=[],
         description="""
-            Spells you cast using this staff have the maximum distance they can \\glossterm<teleport> targets doubled.
+            Your \\glossterm<magical> abilities have the maximum distance they can \\glossterm<teleport> targets doubled.
         """,
         short_description="Doubles your teleportation distance",
     ))
 
     implements.append(MagicItem(
         name="Extending Staff",
-        level=8,
+        level=10,
         material_type='Staff',
         description="""
-            You double the range of spells you cast with this staff.
+            You double the range of your \\glossterm<magical> abilities.
         """,
-        short_description="Doubles spell range",
+        short_description="Doubles range",
     ))
 
     implements.append(MagicItem(
         name="Extending Staff, Greater",
-        level=17,
+        level=19,
         material_type='Staff',
         description="""
-            You triple the range of spells you cast with this staff.
+            You triple the range of your \\glossterm<magical> abilities.
         """,
-        short_description="Triples spell range",
+        short_description="Triples range",
     ))
 
     implements.append(MagicItem(
@@ -117,13 +117,38 @@ def generate_implements():
     ))
 
     implements.append(MagicItem(
+        name="Staff of Expansion",
+        level=7,
+        material_type='Staff',
+        tags=[],
+        description="""
+            When you use a \\glossterm<magical> ability that creates a \\glossterm<zone> or \\glossterm<emanation>, you can increase the size of the area by one size category, up to a maximum of \\areahuge.
+            You can only increase the area of one ability at a time in this way.
+            If you increase the area of another ability or lose this staff, the area of the original ability returns to its normal size.
+        """,
+        short_description="Increases area of emanations",
+    ))
+
+    implements.append(MagicItem(
+        name="Staff of Expansion, Greater",
+        level=16,
+        material_type='Staff',
+        tags=[],
+        description="""
+            This item functions like a \\textit<staff of expansion>, except that it increases the area by two size categories.
+            In addition, the maximum area is a 200 foot radius, which is one size category larger than \\areahuge.
+        """,
+        short_description="Greatly increases area of emanations",
+    ))
+
+    implements.append(MagicItem(
         name="Staff of Focus",
         level=6,
         material_type='Staff',
         description="""
-            You reduce your penalties for using a \\glossterm<Focus> ability by 1.
+            You reduce your \\glossterm<focus penalties> by 1.
         """,
-        short_description="Reduces \\glossterm<Focus> penalties by 1",
+        short_description="Reduces \\glossterm<focus penalties> by 1",
     ))
 
     implements.append(MagicItem(
@@ -131,9 +156,9 @@ def generate_implements():
         level=15,
         material_type='Staff',
         description="""
-            You reduce your penalties for using a \\glossterm<Focus> ability by 2.
+            You reduce your \\glossterm<focus penalties> by 2.
         """,
-        short_description="Reduces \\glossterm<Focus> penalties by 1.",
+        short_description="Reduces \\glossterm<focus penalties> by 2.",
     ))
 
     implements.append(MagicItem(
@@ -166,18 +191,18 @@ def generate_implements():
         description="""
             You gain a +1 \\glossterm<magic bonus> to \\glossterm<accuracy>.
         """,
-        short_description="Grants +1 accuracy with spells",
+        short_description="Grants +1 accuracy",
     ))
 
     implements.append(MagicItem(
-        name="Greater Staff of Precision",
+        name="Staff of Precision, Greater",
         level=17,
         material_type='Staff',
         tags=[],
         description="""
             You gain a +2 \\glossterm<magic bonus> to \\glossterm<accuracy>.
         """,
-        short_description="Grants +2 accuracy with spells",
+        short_description="Grants +2 accuracy",
     ))
 
     return implements

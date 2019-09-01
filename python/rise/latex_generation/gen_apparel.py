@@ -979,25 +979,70 @@ def generate_worn():
     # Cloaks
 
     apparel.append(MagicItem(
+        name="Quilled Cloak",
+        level=6,
+        material_type='Cloak',
+        tags=[],
+        description="""
+            Whenever a creature grapples you, you immediately deal it piercing \\glossterm<standard damage>.
+            This does not affect creatures that you initiate a grapple with.
+        """,
+        short_description="Deals damage to creatures that grapple you",
+    ))
+
+    apparel.append(MagicItem(
+        name="Greater Quilled Cloak",
+        level=12,
+        material_type='Cloak',
+        tags=[],
+        description="""
+            This item functions like the \\textit<quilled cloak>, except that the damage increases to \\glossterm<standard damage> +1d.
+        """,
+        short_description="Deals more damage to creatures that grapple you",
+    ))
+
+    apparel.append(MagicItem(
+        name="Supreme Quilled Cloak",
+        level=18,
+        material_type='Cloak',
+        tags=[],
+        description="""
+            This item functions like the \\textit<quilled cloak>, except that the damage increases to \\glossterm<standard damage> +2d.
+        """,
+        short_description="Deals even more damage to creatures that grapple you",
+    ))
+
+    apparel.append(MagicItem(
+        name="Avian Cloak",
+        level=8,
+        material_type='Cloak',
+        tags=[],
+        description="""
+            You gain a \\glossterm<glide speed> equal to your \\glossterm<base speed>.
+        """,
+        short_description="Grants a glide speed",
+    ))
+
+    apparel.append(MagicItem(
         name="Assassin's Cloak",
         level=7,
         material_type='Cloak',
         tags=['Sensation'],
         description="""
-            At the end of each round, if you took no actions that round, you become \\glossterm<invisible> until the end of the next round.
+            At the end of each round, if you took no actions that round, you become \\glossterm<invisible> until after you take an action.
         """,
         short_description="Grants invisibility while inactive",
     ))
 
     apparel.append(MagicItem(
         name="Assassin's Cloak, Greater",
-        level=17,
+        level=13,
         material_type='Cloak',
         tags=['Sensation'],
         description="""
-            At the end of each round, if you did not attack a creature that round, you become \\glossterm<invisible> until the end of the next round.
+            At the end of each round, if you took no actions that round, you become \\glossterm<invisible> until the end of the next round.
         """,
-        short_description="Grants invisibility while not attacking",
+        short_description="Grants longer invisibility while inactive",
     ))
 
     apparel.append(MagicItem(
