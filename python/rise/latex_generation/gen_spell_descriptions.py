@@ -351,7 +351,7 @@ def generate_mystic_spheres():
             """, tags=['Attune (self)']),
             Spell('Dimensional Jaunt -- Myriad', 5, 'One creature within \\rngmed range', """
                 This spell functions like the \\spell<dimensional jaunt> spell, except that the target is partially teleported through a number of planes in sequence.
-                The damage dealt increases to \\glossterm<standard damage> +3d and becomes damage of all types.
+                The damage dealt increases to \\glossterm<standard damage> +3d and becomes the type of damage the target is most vulnerable to.
             """, tags=[]),
             Spell('Dimensional Jaunt -- Deep Astral Plane', 7, 'One creature within \\rngmed range', """
                 This spell functions like the \\spell<dimensional jaunt> spell, except that the target is partially teleported into the deep Astral Plane.
@@ -729,14 +729,17 @@ def generate_mystic_spheres():
         spells=[
             Spell('Divine Judgment', 1, 'One creature within \\rngmed range', """
                 Make an attack vs. Mental against the target.
-                \\hit The target takes \\glossterm<standard damage> +1d.
+                \\hit The target takes \\glossterm<standard damage>.
             """, tags=[]),
             Spell('Greater Divine Judgment', 4, 'One creature within \\rngmed range', """
-                This spell functions like the \\spell<divine judgment> spell, except that that damage increases to \\glossterm<standard damage> +3d.
+                This spell functions like the \\spell<divine judgment> spell, except that that damage increases to \\glossterm<standard damage> +2d.
+            """, tags=[]),
+            Spell('Supreme Divine Judgment', 7, 'One creature within \\rngmed range', """
+                This spell functions like the \\spell<divine judgment> spell, except that the damage increases to \\glossterm<standard damage> +4d.
             """, tags=[]),
             Spell('Word of Faith', 2, '\\glossterm<Enemies> in a \\areamed radius from you', """
                 Make an attack vs. Mental against each target.
-                \\hit Each target takes \\glossterm<standard damage>.
+                \\hit Each target takes \\glossterm<standard damage> -1d.
             """, tags=[]),
             Spell('Greater Word of Faith', 5, '\\glossterm<Enemies> in a \\arealarge radius from you', """
                 This spell functions like the \\spell<word of faith> spell, except that it affects more targets and the damage increases to \\glossterm<standard damage> +1d.
@@ -1005,20 +1008,20 @@ def generate_mystic_spheres():
         schools=['Vivimancy'],
         lists=['Arcane', 'Divine', 'Nature', 'Pact'],
         spells=[
-            Spell('Sickening Decay', 1, 'One living creature within \\rngclose range', """
+            Spell('Decay', 1, 'One living creature within \\rngclose range', """
                 Make an attack vs. Fortitude against the target.
-                \\hit As a \\glossterm<condition>, the target is \\glossterm<sickened>.
+                \\hit The target decays as a \\glossterm<condition>.
                 At the end of each \\glossterm<phase>, it takes \\glossterm<standard damage> -3d if it took a \\glossterm<standard action> during that phase.
                 It can only take damage in this way once per round.
             """, tags=[]),
             Spell('Corruption of Blood and Bone', 3, 'One living creature within \\rngclose range', """
-                This spell functions like the \\spell<sickening decay> spell, except that the damage increases to \\glossterm<standard damage> -1d.
+                This spell functions like the \\spell<decay> spell, except that the damage increases to \\glossterm<standard damage> -2d.
                 In addition, damage from the spell reduces the target's maximum hit points by the same amount.
                 This hit point reduction is part of the same \\glossterm<condition> as the spell's other effects.
                 When the condition is removed, the target's maximum hit points are restored.
             """, tags=[]),
             Spell('Curse of Decay', 4, 'One living creature within \\rngclose range', """
-                This spell functions like the \\spell<sickening decay> spell, except that the attack is made against Mental defense instead of Fortitude defense.
+                This spell functions like the \\spell<decay> spell, except that the attack is made against Mental defense instead of Fortitude defense.
                 In addition, if the attack critically hits, the spell's effect becomes a permanent curse.
                 It is no longer a \\glossterm<condition>, and cannot be removed by abilities that remove conditions.
                 It can be removed by abilities that can remove curses.
@@ -1043,11 +1046,11 @@ def generate_mystic_spheres():
                 \\hit The target is \\glossterm<blinded> as a \\glossterm<condition>.
             """, tags=[]),
             Spell('Bleed', 4, 'One living creature within \\rngclose range', """
-                This spell functions like the \\spell<sickening decay> spell, except that a struck target also begins bleeding as an additional \\glossterm<condition>.
+                This spell functions like the \\spell<decay> spell, except that a struck target also begins bleeding as an additional \\glossterm<condition>.
                 At the end of every \\glossterm<action phase> in subsequent rounds, the target takes \\glossterm<standard damage> -3d.
             """, tags=[]),
             Spell('Crippling Decay', 5, 'One living creature within \\rngclose range', """
-                This spell functions like the \\spell<sickening decay> spell, except that a struck target is also \\glossterm<immobilized> as an additional \\glossterm<condition>.
+                This spell functions like the \\spell<decay> spell, except that a struck target is also \\glossterm<immobilized> as an additional \\glossterm<condition>.
             """, tags=[]),
         ],
         rituals=[
@@ -1187,7 +1190,7 @@ def generate_mystic_spheres():
                 \\hit The target is inflicted with agonizing pain as a \\glossterm<condition>.
                 It takes a -2 penalty to Mental defense.
                 % Does this need to clarify that it takes effect in the round the spell was cast?
-                In addition, at the end of each \\glossterm<delayed action phase>, if the target took damage that round, it takes \\glossterm<standard damage> -1d.
+                In addition, at the end of each \\glossterm<round>, if the target took damage that round, it takes \\glossterm<standard damage> -3d.
                 This damage is of all damage types that the target was damaged by during that round.
             """, tags=['Emotion']),
             Spell('Redirected Terror', 2, 'One creature within \\rngclose range', """
@@ -1586,7 +1589,7 @@ def generate_mystic_spheres():
             Spell('Disintegrate', 5, 'One creature within \\rngmed range', """
                 Make an attack vs. Fortitude against the target.
                 \\hit The target takes \\glossterm<standard damage> +2d.
-                In addition, if the target has no hit points remaining, it dies.
+                In addition, if the target has no hit points remaining at the end of the current \\glossterm<phase>, it dies.
                 Its body is completely disintegrated, leaving behind only a pinch of fine dust.
                 Its equipment is unaffected.
             """, tags=[]),
@@ -1824,10 +1827,12 @@ def generate_mystic_spheres():
             """, tags=['Attune (target)']),
             Spell('Flame Blade', 2, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 % Is this clear enough at not stacking with magic bonuses intrinsic to the creature?
-                Weapons wielded by the target gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes>.
-                In addition, all damage dealt with strikes using its weapons becomes fire damage in addition to the attack's normal damage types.
+                All damage dealt with strikes using its weapons becomes fire damage in addition to the attack's normal damage types.
 
                 You can cast this spell as a \\glossterm<minor action>.
+            """, tags=['Attune (target)']),
+            Spell('Greater Flame Blade', 5,  'Yourself or an \\glossterm<ally> within \\rngclose range', """
+                This spell functions like the \\spell<flame blade> spell, except that weapons wielded by the target also gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes>.
             """, tags=['Attune (target)']),
             Spell('Wall of Fire', 3, 'Each creature that moves through the area (see text)', """
                 You create a wall of fire in a 10 ft.\\ high, \\arealarge \\glossterm<wall> within \\rngmed range.
@@ -2108,8 +2113,8 @@ def generate_mystic_spheres():
                 As a \\glossterm<move action>, it can move as you direct.
                 As a standard action, it can make a melee \\glossterm{strike} against a creature it threatens.
                 Its accuracy is equal to your \\glossterm<accuracy>.
-                If it hits, it deals \\glossterm<standard damage> -2d.
-                The type of damage dealt by this attack depends on the creature's appearance.
+                If it hits, it deals physical \\glossterm<standard damage> -2d.
+                The subtypes of damage dealt by this attack depends on the creature's appearance.
                 Most animals bite or claw their foes, which deals bludgeoning and slashing damage.
 
                 If you do not command the creature's actions, it will continue to obey its last instructions if possible or do nothing otherwise.
@@ -2671,7 +2676,8 @@ def generate_mystic_spheres():
             Spell('Finger of Death', 5, 'One living creature within \\rngclose range', """
                 Make an attack vs. Fortitude against the target.
                 \\hit The target takes \\glossterm<standard damage> +2d.
-                \\crit The target immediately dies.
+                \\crit The target takes \\glossterm<standard damage> +5d.
+                If it gains a \\glossterm<vital wound> from this damage, it immediately dies.
             """, tags=[]),
         ],
         rituals=[
