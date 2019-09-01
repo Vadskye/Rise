@@ -58,6 +58,12 @@ In general, +1 accuracy = +1 damage. However, there are exceptions:
   * Generally cause complete action denial
   * List: paralyzed, panicked, stunned
 
+## Damage type modifiers
+
+* Physical damage: +0d
+* Energy damage: +0d
+* Untyped damage: -1d
+
 ## Stock spell effects
 
 For spell effects that only deal damage, "deal standard damage" can be replaced with "inflict r1
