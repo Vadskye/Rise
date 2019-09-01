@@ -22,16 +22,25 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Flaming",
-        level=5,
+        level=6,
         material_type='Weapon',
         tags=[],
         description="""
             This weapon is on fire.
             It sheds light as a torch, and all damage dealt with it is fire damage in addition to its other types.
-            As a standard action, you can kindle the flames.
+        """,
+        short_description="Deals fire damage",
+    ))
+
+    weapons.append(MagicItem(
+        name="Flaming, Greater",
+        level=12,
+        material_type='Weapon',
+        tags=[],
+        description="""
+            This item functions like a \\mitem<flaming> item, except that you can also kindle the flames as a standard action.
             When you make a \\glossterm<strike> with this weapon, if the weapon is kindled and your attack result beats the target's Reflex defense,
                 it is \\glossterm<ignited> as a \\glossterm<condition> and the weapon stops being kindled.
-
             This condition can be removed if the target makes a \\glossterm<DR> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
             Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
         """,
@@ -40,13 +49,14 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Flaming, Greater",
-        level=15,
+        level=20,
         material_type='Weapon',
         tags=[],
         description="""
-            This weapon is on fire.
-            It sheds light as a torch, and all damage dealt with it is fire damage in addition to its other types.
+            This item functions like a \\mitem<flaming> item, except that the flames are constantly kindled.
             When you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Reflex defense, it is \\glossterm<ignited> as a \\glossterm<condition>.
+            This condition can be removed if the target makes a \\glossterm<DR> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
+            Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
         """,
         short_description="Deals fire damage, ignites foes",
     ))
@@ -79,21 +89,30 @@ def generate_weapons():
         description="""
             This weapon continuously crackles with electricity.
             The constant sparks shed light as a torch, and all damage dealt with it is electricity damage in addition to its other types.
-            As a standard action, you can intensify the electricity.
-            When you make a \\glossterm<strike> with this weapon, if the weapon is intensified and your attack result beats the target's Fortitude defense,
-                the target is \\dazed as a \\glossterm<condition> and the weapon stops being intensified.
         """,
-        short_description="Deals electicity damage, can daze foes",
+        short_description="Deals electicity damage",
     ))
 
     weapons.append(MagicItem(
         name="Shocking, Greater",
-        level=15,
+        level=12,
         material_type='Weapon',
         tags=[],
         description="""
-            This weapon continuously crackles with electricity.
-            The constant sparks shed light as a torch, and all damage dealt with it is electricity damage in addition to its other types.
+            This item functions like a \\mitem<shocking> item, except that you can also intensify the electricity as a standard action.
+            When you make a \\glossterm<strike> with this weapon, if the weapon is intensified and your attack result beats the target's Fortitude defense,
+                the target is \\dazed as a \\glossterm<condition> and the weapon stops being intensified.
+        """,
+        short_description="Deals electricity damage, can daze foes",
+    ))
+
+    weapons.append(MagicItem(
+        name="Shocking, Greater",
+        level=20,
+        material_type='Weapon',
+        tags=[],
+        description="""
+            This item functions like a \\mitem<shocking> item, except that the electricity is constantly intensified.
             When you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Fortitude defense, it is \\dazed as a \\glossterm<condition>.
         """,
         short_description="Deals electicity damage, dazes foes",
@@ -106,7 +125,17 @@ def generate_weapons():
         tags=[],
         description="""
             This weapon is bitterly cold, and all damage dealt with it is cold damage in addition to its other types.
-            As a standard action, you can intensify the cold.
+        """,
+        short_description="Deals cold damage",
+    ))
+
+    weapons.append(MagicItem(
+        name="Freezing, Greater",
+        level=12,
+        material_type='Weapon',
+        tags=[],
+        description="""
+            This item functions like a \\mitem<freezing> item, except that you can also intensify the cold as a standard action.
             When you make a \\glossterm<strike> with this weapon, if the weapon is intensified and your attack result beats the target's Fortitude defense,
                 the target is \\chilled as a \\glossterm<condition> and the weapon stops being intensified.
         """,
@@ -115,43 +144,44 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Freezing, Greater",
-        level=16,
+        level=20,
         material_type='Weapon',
         tags=[],
         description="""
-            This weapon is bitterly cold, and all damage dealt with it is cold damage in addition to its other types.
+            This item functions like a \\mitem<freezing> item, except that the cold is constantly intensified.
             When you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Fortitude defense, the target is \\chilled as a \\glossterm<condition>.
         """,
         short_description="Deals cold damage, chills foes",
     ))
 
-    weapons.append(MagicItem(
-        name="Thundering",
-        level=4,
-        material_type='Weapon',
-        tags=[],
-        description="""
-            This weapon constantly emits a low-pitched rumbling noise and vibrates slightly in your hand.
-            All damage dealt with it is sonic damage in addition to its other types.
-            As a standard action, you can intensify the vibration.
-            When you make a \\glossterm<strike> with this weapon, if the weapon is intensified and your attack result beats the target's Fortitude defense,
-                the target is \\deafened as a \\glossterm<condition> and the weapon stops being intensified.
-        """,
-        short_description="Deals sonic damage, can deafen",
-    ))
+    # Restore this if sonic damage returns as a subtype
+    # weapons.append(MagicItem(
+    #     name="Thundering",
+    #     level=4,
+    #     material_type='Weapon',
+    #     tags=[],
+    #     description="""
+    #         This weapon constantly emits a low-pitched rumbling noise and vibrates slightly in your hand.
+    #         All damage dealt with it is sonic damage in addition to its other types.
+    #         As a standard action, you can intensify the vibration.
+    #         When you make a \\glossterm<strike> with this weapon, if the weapon is intensified and your attack result beats the target's Fortitude defense,
+    #             the target is \\deafened as a \\glossterm<condition> and the weapon stops being intensified.
+    #     """,
+    #     short_description="Deals sonic damage, can deafen",
+    # ))
 
-    weapons.append(MagicItem(
-        name="Thundering, Greater",
-        level=14,
-        material_type='Weapon',
-        tags=[],
-        description="""
-            This weapon constantly emits a low-pitched rumbling noise and vibrates slightly in your hand.
-            All damage dealt with it is sonic damage in addition to its other types.
-            When you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Fortitude defense, the target is \\deafened as a \\glossterm<condition>.
-        """,
-        short_description="Deals sonic damage, deafens foes",
-    ))
+    # weapons.append(MagicItem(
+    #     name="Thundering, Greater",
+    #     level=14,
+    #     material_type='Weapon',
+    #     tags=[],
+    #     description="""
+    #         This weapon constantly emits a low-pitched rumbling noise and vibrates slightly in your hand.
+    #         All damage dealt with it is sonic damage in addition to its other types.
+    #         When you make a \\glossterm<strike> with this weapon, if your attack result beats the target's Fortitude defense, the target is \\deafened as a \\glossterm<condition>.
+    #     """,
+    #     short_description="Deals sonic damage, deafens foes",
+    # ))
 
     weapons.append(MagicItem(
         name="Protective",
@@ -177,7 +207,7 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Disorienting",
-        level=9,
+        level=7,
         material_type='Weapon',
         tags=['Compulsion'],
         description="""
@@ -191,7 +221,7 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Disorienting, Greater",
-        level=19,
+        level=16,
         material_type='Weapon',
         tags=['Compulsion'],
         description="""
