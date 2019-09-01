@@ -738,7 +738,7 @@ If your \glossterm{line of effect} to your destination is blocked, or if this te
 \begin{freeability}[\nth{5}]{\hypertarget{spell:Dimensional Jaunt -- Myriad}{Dimensional Jaunt -- Myriad}}[\glossterm{Focus}]
 \target{One creature within \rngmed range}
 This spell functions like the \spell{dimensional jaunt} spell, except that the target is partially teleported through a number of planes in sequence.
-The damage dealt increases to \glossterm{standard damage} \plus3d and becomes damage of all types.
+The damage dealt increases to \glossterm{standard damage} \plus3d and becomes the type of damage the target is most vulnerable to.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1477,7 +1477,7 @@ This can allow you to identify other followers of your deity or alignment with c
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Divine Judgment}{Divine Judgment}}[\glossterm{Focus}]
 \target{One creature within \rngmed range}
 Make an attack vs. Mental against the target.
-\hit The target takes \glossterm{standard damage} \plus1d.
+\hit The target takes \glossterm{standard damage}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1487,7 +1487,7 @@ Make an attack vs. Mental against the target.
 \begin{freeability}[\nth{2}]{\hypertarget{spell:Word of Faith}{Word of Faith}}[\glossterm{Focus}]
 \targets{\glossterm{Enemies} in a \areamed radius from you}
 Make an attack vs. Mental against each target.
-\hit Each target takes \glossterm{standard damage}.
+\hit Each target takes \glossterm{standard damage} \minus1d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1520,7 +1520,7 @@ You can cast this spell as a \glossterm{minor action}.
 \lowercase{\hypertarget{spell:Greater Divine Judgment}{}}\label{spell:Greater Divine Judgment}
 \begin{freeability}[\nth{4}]{\hypertarget{spell:Greater Divine Judgment}{Greater Divine Judgment}}[\glossterm{Focus}]
 \target{One creature within \rngmed range}
-This spell functions like the \spell{divine judgment} spell, except that that damage increases to \glossterm{standard damage} \plus3d.
+This spell functions like the \spell{divine judgment} spell, except that that damage increases to \glossterm{standard damage} \plus2d.
 \end{freeability}
 \vspace{0.25em}
 
@@ -1577,6 +1577,15 @@ This spell functions like the \spell{mantle of faith} spell, except that the bon
 This spell functions like the \spell{divine might} spell, except that your size is increased by two size categories.
 You gain a \plus2 \glossterm{magic bonus} to Strength to partially match your new size.
 \end{attuneability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Supreme Divine Judgment}{}}\label{spell:Supreme Divine Judgment}
+\begin{freeability}[\nth{7}]{\hypertarget{spell:Supreme Divine Judgment}{Supreme Divine Judgment}}[\glossterm{Focus}]
+\target{One creature within \rngmed range}
+This spell functions like the \spell{divine judgment} spell, except that the damage increases to \glossterm{standard damage} \plus4d.
+\end{freeability}
 \vspace{0.25em}
 
 
@@ -1989,11 +1998,11 @@ This spell functions like the \spell{dance} spell, except that you gain a \plus4
 \subsubsection{Spells}
 
 
-\lowercase{\hypertarget{spell:Sickening Decay}{}}\label{spell:Sickening Decay}
-\begin{freeability}[\nth{1}]{\hypertarget{spell:Sickening Decay}{Sickening Decay}}[\glossterm{Focus}]
+\lowercase{\hypertarget{spell:Decay}{}}\label{spell:Decay}
+\begin{freeability}[\nth{1}]{\hypertarget{spell:Decay}{Decay}}[\glossterm{Focus}]
 \target{One living creature within \rngclose range}
 Make an attack vs. Fortitude against the target.
-\hit As a \glossterm{condition}, the target is \glossterm{sickened}.
+\hit The target decays as a \glossterm{condition}.
 At the end of each \glossterm{phase}, it takes \glossterm{standard damage} \minus3d if it took a \glossterm{standard action} during that phase.
 It can only take damage in this way once per round.
 \end{freeability}
@@ -2024,7 +2033,7 @@ Make an attack vs. Fortitude with a \plus2 bonus to \glossterm{accuracy} against
 \lowercase{\hypertarget{spell:Corruption of Blood and Bone}{}}\label{spell:Corruption of Blood and Bone}
 \begin{freeability}[\nth{3}]{\hypertarget{spell:Corruption of Blood and Bone}{Corruption of Blood and Bone}}[\glossterm{Focus}]
 \target{One living creature within \rngclose range}
-This spell functions like the \spell{sickening decay} spell, except that the damage increases to \glossterm{standard damage} \minus1d.
+This spell functions like the \spell{decay} spell, except that the damage increases to \glossterm{standard damage} \minus2d.
 In addition, damage from the spell reduces the target's maximum hit points by the same amount.
 This hit point reduction is part of the same \glossterm{condition} as the spell's other effects.
 When the condition is removed, the target's maximum hit points are restored.
@@ -2046,7 +2055,7 @@ Make an attack vs. Fortitude against the target.
 \lowercase{\hypertarget{spell:Bleed}{}}\label{spell:Bleed}
 \begin{freeability}[\nth{4}]{\hypertarget{spell:Bleed}{Bleed}}[\glossterm{Focus}]
 \target{One living creature within \rngclose range}
-This spell functions like the \spell{sickening decay} spell, except that a struck target also begins bleeding as an additional \glossterm{condition}.
+This spell functions like the \spell{decay} spell, except that a struck target also begins bleeding as an additional \glossterm{condition}.
 At the end of every \glossterm{action phase} in subsequent rounds, the target takes \glossterm{standard damage} \minus3d.
 \end{freeability}
 \vspace{0.25em}
@@ -2056,7 +2065,7 @@ At the end of every \glossterm{action phase} in subsequent rounds, the target ta
 \lowercase{\hypertarget{spell:Curse of Decay}{}}\label{spell:Curse of Decay}
 \begin{freeability}[\nth{4}]{\hypertarget{spell:Curse of Decay}{Curse of Decay}}[\glossterm{Curse}, \glossterm{Focus}]
 \target{One living creature within \rngclose range}
-This spell functions like the \spell{sickening decay} spell, except that the attack is made against Mental defense instead of Fortitude defense.
+This spell functions like the \spell{decay} spell, except that the attack is made against Mental defense instead of Fortitude defense.
 In addition, if the attack critically hits, the spell's effect becomes a permanent curse.
 It is no longer a \glossterm{condition}, and cannot be removed by abilities that remove conditions.
 It can be removed by abilities that can remove curses.
@@ -2068,7 +2077,7 @@ It can be removed by abilities that can remove curses.
 \lowercase{\hypertarget{spell:Crippling Decay}{}}\label{spell:Crippling Decay}
 \begin{freeability}[\nth{5}]{\hypertarget{spell:Crippling Decay}{Crippling Decay}}[\glossterm{Focus}]
 \target{One living creature within \rngclose range}
-This spell functions like the \spell{sickening decay} spell, except that a struck target is also \glossterm{immobilized} as an additional \glossterm{condition}.
+This spell functions like the \spell{decay} spell, except that a struck target is also \glossterm{immobilized} as an additional \glossterm{condition}.
 \end{freeability}
 \vspace{0.25em}
 
@@ -2307,7 +2316,7 @@ Make an attack vs. Mental against the target.
 \hit The target is inflicted with agonizing pain as a \glossterm{condition}.
 It takes a \minus2 penalty to Mental defense.
 % Does this need to clarify that it takes effect in the round the spell was cast?
-In addition, at the end of each \glossterm{delayed action phase}, if the target took damage that round, it takes \glossterm{standard damage} \minus1d.
+In addition, at the end of each \glossterm{round}, if the target took damage that round, it takes \glossterm{standard damage} \minus3d.
 This damage is of all damage types that the target was damaged by during that round.
 \end{freeability}
 \vspace{0.25em}
@@ -3221,7 +3230,7 @@ You can cast this spell as a \glossterm{minor action}.
 \target{One creature within \rngmed range}
 Make an attack vs. Fortitude against the target.
 \hit The target takes \glossterm{standard damage} \plus2d.
-In addition, if the target has no hit points remaining, it dies.
+In addition, if the target has no hit points remaining at the end of the current \glossterm{phase}, it dies.
 Its body is completely disintegrated, leaving behind only a pinch of fine dust.
 Its equipment is unaffected.
 \end{freeability}
@@ -3489,8 +3498,7 @@ Make an attack vs. Armor against each target.
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Flame Blade}{Flame Blade}}[\glossterm{Attune} (target), \glossterm{Focus}]
 \target{Yourself or an \glossterm{ally} within \rngclose range}
 % Is this clear enough at not stacking with magic bonuses intrinsic to the creature?
-Weapons wielded by the target gain a \plus2 \glossterm{magic bonus} to \glossterm{power} with \glossterm{strikes}.
-In addition, all damage dealt with strikes using its weapons becomes fire damage in addition to the attack's normal damage types.
+All damage dealt with strikes using its weapons becomes fire damage in addition to the attack's normal damage types.
 
 You can cast this spell as a \glossterm{minor action}.
 \end{attuneability}
@@ -3605,6 +3613,15 @@ This spell functions like the \spell{fireball} spell, except that the attack res
 Make an attack vs. Armor against each target.
 \hit Each target takes fire \glossterm{standard damage}.
 \end{freeability}
+\vspace{0.25em}
+
+
+
+\lowercase{\hypertarget{spell:Greater Flame Blade}{}}\label{spell:Greater Flame Blade}
+\begin{attuneability}[\nth{5}]{\hypertarget{spell:Greater Flame Blade}{Greater Flame Blade}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself or an \glossterm{ally} within \rngclose range}
+This spell functions like the \spell{flame blade} spell, except that weapons wielded by the target also gain a \plus2 \glossterm{magic bonus} to \glossterm{power} with \glossterm{strikes}.
+\end{attuneability}
 \vspace{0.25em}
 
 
@@ -4168,8 +4185,8 @@ There are only two actions it can take.
 As a \glossterm{move action}, it can move as you direct.
 As a standard action, it can make a melee \glossterm{strike} against a creature it threatens.
 Its accuracy is equal to your \glossterm{accuracy}.
-If it hits, it deals \glossterm{standard damage} \minus2d.
-The type of damage dealt by this attack depends on the creature's appearance.
+If it hits, it deals physical \glossterm{standard damage} \minus2d.
+The subtypes of damage dealt by this attack depends on the creature's appearance.
 Most animals bite or claw their foes, which deals bludgeoning and slashing damage.
 
 If you do not command the creature's actions, it will continue to obey its last instructions if possible or do nothing otherwise.
@@ -5225,7 +5242,8 @@ When this spell ends, the target loses two \glossterm{hit point}.
 \target{One living creature within \rngclose range}
 Make an attack vs. Fortitude against the target.
 \hit The target takes \glossterm{standard damage} \plus2d.
-\crit The target immediately dies.
+\crit The target takes \glossterm{standard damage} \plus5d.
+If it gains a \glossterm{vital wound} from this damage, it immediately dies.
 \end{freeability}
 \vspace{0.25em}
 
