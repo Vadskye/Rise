@@ -273,13 +273,13 @@
             \lcaption{Natural Weapons}
             \begin{dtabularx}{\textwidth}{p{12em} c c >{\ccol}p{15em} >{\ccol}X}
                 \tb{Natural Weapons} & \tb{Usage Class} & \tb{Damage} & \tb{Damage Type\fn{2}} & \tb{Special} \tableheaderrule
-                Bite            & Medium & \plus0d  & Piercing and bludgeoning & \tdash   \\
-                Claw            & Light  & \plus0d & Slashing and piercing    & \tdash   \\
-                Constrict\fn{2} & Heavy  & \plus1d  & Bludgeoning              & \tdash   \\
-                Gore            & Heavy  & \plus0d  & Piercing                 & Forceful \\
-                Slam            & Medium & \plus0d  & Bludgeoning              & \tdash   \\
-                Talon           & Light  & \minus1d & Piercing                 & \tdash   \\
-                Unarmed Strike  & Light  & \minus3d & Bludgeoning              & Unarmed  \\
+                Bite            & Medium & \plus0d  & Piercing and bludgeoning & \tdash    \\
+                Claw            & Light  & \plus0d  & Slashing and piercing    & \tdash    \\
+                Constrict\fn{2} & Heavy  & \plus1d  & Bludgeoning              & Grappling \\
+                Gore            & Heavy  & \plus0d  & Piercing                 & Forceful  \\
+                Slam            & Medium & \plus0d  & Bludgeoning              & \tdash    \\
+                Talon           & Light  & \minus1d & Piercing                 & \tdash    \\
+                Unarmed Strike  & Light  & \minus3d & Bludgeoning              & Unarmed   \\
             \end{dtabularx}
             1 When two types are given, the weapon is both types if the entry specifies ``and,'' or either type (attacker's choice) if the entry specifies ``or''. \\
             2 This attack can only be used against a foe you are grappling with. \\
@@ -298,7 +298,8 @@
         This property has no effect if the weapon is not sized appropriately for you.
         \parhead{Forceful} When you use the \textit{shove} ability, you can attack with this weapon instead of with a free hand (see \pcref{Shove}).
         If you do, you gain a \plus2 bonus to accuracy on the attack.
-        \parhead{Grappling} You gain a \plus2 bonus to accuracy on \glossterm{melee attacks} with this weapon against creatures who are \glossterm{grappled} by you.
+        \parhead{Grappling} You gain a \plus2 bonus to \glossterm{accuracy} on \glossterm{melee attacks} with this weapon against creatures who are \glossterm{grappled} by you.
+        In addition, it is treated as a light weapon for the purpose of determining whether you take accuracy penalties when attacking with it in a grapple.
         \parhead{Mounted}\label{Mounted Weapon} If you are mounted, and mount moves in the same phase that you make a \glossterm{strike} with a Mounted weapon, you gain a \plus1d bonus to damage with the strike.
         You take a \minus1d penalty to damage with Mounted weapons while not mounted.
         \parhead{Projectile} This weapon fires projectiles at range. Projectile weapons have a \glossterm{range increment} listed in their description, which indicates the distance they can be easily fired. Projectile weapons must be reloaded. The time required to reload a projectile weapon is given in the weapon description.
