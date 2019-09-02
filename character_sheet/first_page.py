@@ -11,14 +11,14 @@ def create_page(destination):
             attributes_and_skills(),
         ]),
         flex_col({'class': 'main-body'}, [
-            boring_stuff(),
+            boring_stuff(destination),
             statistics_header(),
             attacks(destination),
             abilities(destination),
         ]),
     ])
 
-def boring_stuff():
+def boring_stuff(destination):
     return div({'class': 'boring-stuff'}, [
         flex_row({'class': 'boring-row'}, [
             labeled_text_input('Character name', input_attributes={'name': 'character_name'}),
@@ -29,6 +29,13 @@ def boring_stuff():
                 number_input({'class': 'fake-text', 'name': 'level'}),
                 attributes={'class': 'level-input'},
             ),
+            *([
+                underlabel_spaced(
+                    'CR',
+                    number_input({'class': 'fake-text', 'name': 'challenge_rating'}),
+                    attributes={'class': 'challenge-rating-input'},
+                ),
+            ] if destination == 'roll20' else []),
         ]),
     ])
 
