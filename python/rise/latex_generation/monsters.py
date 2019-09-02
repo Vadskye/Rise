@@ -586,7 +586,7 @@ def monstrous_humanoids(sample_monsters):
         active_abilities=[
             active_ability('Wail', f"""
                 The banshee makes a +{banshee.accuracy()} vs. Fortitude attack against everything in a Large radius.
-                \\hit Each target takes {banshee.standard_damage()} sonic damage, and creatures are sickened as a condition.
+                \\hit Each target takes {banshee.standard_damage()} energy damage, and creatures are sickened as a condition.
             """),
         ],
     ))
@@ -622,7 +622,7 @@ def monstrous_humanoids(sample_monsters):
             active_ability('Thunderstrike', f"""
                 The storm giant makes a greatsword strike against a target.
                 If its attack result beats the target's Fortitude defense,
-                    the target also takes {storm_giant.standard_damage()} sonic damage
+                    the target also takes {storm_giant.standard_damage()} energy damage
                     and is deafened as a condition.
             """),
         ],
