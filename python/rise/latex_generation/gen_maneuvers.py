@@ -256,7 +256,7 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Thunderous Shout',
-        short_description='Deal sonic damage in a cone',
+        short_description='Deal damage in a cone',
         effect_text="""
             Make an attack vs. Fortitude against everything in a \\areamed cone-shaped burst from you.
             You take a -1 penalty to \\glossterm<accuracy> with the attack.
