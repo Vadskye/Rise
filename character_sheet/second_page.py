@@ -504,7 +504,7 @@ def calc_skill_points():
         equation(
             [
                 underlabel('Base', number_input({
-                    'disabled': True, 'name': 'skill_points_base', 'value': 8,
+                    'disabled': True, 'name': 'skill_points_base', 'value': 10,
                 })),
                 plus(),
                 underlabel('2 * (Int)', number_input({
@@ -647,10 +647,7 @@ def calc_armor():
                 plus(),
                 underlabel('Shield', number_input({'name': 'shield_defense_value'})),
                 plus(),
-                number_input({
-                    'class': 'equation-misc',
-                    'name': 'armor_defense_misc_0',
-                })
+                equation_misc('armor_defense')
             ],
             result_attributes={
                 'disabled': 'true',
