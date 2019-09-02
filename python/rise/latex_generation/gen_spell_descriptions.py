@@ -753,7 +753,7 @@ def generate_mystic_spheres():
                 This spell functions like the \\spell<mantle of faith> spell, except that the bonus is equal to your \\glossterm<power>.
             """, tags=['Attune (self)']),
             Spell('Complete Mantle of Faith', 5, 'Yourself', """
-                This spell functions like the \\spell<kinetic shield> spell, except that the bonus applies against all damage.
+                This spell functions like the \\spell<mantle of faith> spell, except that the bonus applies against all damage.
             """, tags=['Attune (target)']),
             Spell('Greater Complete Mantle of Faith', 6, 'Yourself', """
                 This spell functions like the \\spell<complete mantle of faith> spell, except that the bonus is equal to your \\glossterm<power>.
