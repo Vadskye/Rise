@@ -465,7 +465,7 @@ def generate_mystic_spheres():
                 This spell functions like the \\spell<mystic barrier> spell, except that the wall fills a 10 ft.\\ high, \\arealarge line.
             """, tags=['Sustain (minor)']),
             Spell('Impervious Mystic Barrier', 5, None, """
-                This spell functions like the \\spell<mystic barrier> spell, except that the wall is immune to all damage except sonic damage and thaumatic damage.
+                This spell functions like the \\spell<mystic barrier> spell, except that the wall is immune to \\glossterm<physical damage>.
             """, tags=['Sustain (minor)']),
             Spell('Wall of Energy Impedance', 2, None, """
                 You create a wall of magical energy in a 10 ft.\\ high, \\areamed line within \\rngmed range.
