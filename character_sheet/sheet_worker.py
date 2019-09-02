@@ -10,6 +10,7 @@ def generate_script():
         *resistances(),
         *abilities_known(),
         action_points(),
+        level_scaling(),
         '</script>',
         ""
     ])
@@ -160,12 +161,12 @@ def abilities_known():
 def accuracy():
     misc = get_misc_variables('accuracy', 3)
     return js_wrapper(
-        ['challenge_rating', 'level', 'perception', *misc],
+        ['challenge_rating', 'level', 'perception', 'level_scaling', *misc],
         f"""
-            var cr_mod = Math.max(0, challenge_rating - 1);
+            var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var accuracy_scaling = Math.max(level, perception);
             setAttrs({{
-                accuracy: accuracy_scaling + {sum_variables(misc)} + cr_mod,
+                accuracy: accuracy_scaling + level_scaling + {sum_variables(misc)} + cr_mod,
                 accuracy_scaling,
             }});
         """
@@ -185,14 +186,27 @@ def action_points():
     )
 
 
+# This only applies to monsters, which is defined as creatures with CR !== 0
+def level_scaling():
+    return js_wrapper(
+        ['challenge_rating', 'level'],
+        f"""
+            var level_scaling = challenge_rating === 0 ? 0 : Math.floor((level + 1) / 6);
+            setAttrs({{
+                level_scaling,
+            }});
+        """,
+    )
+
+
 def armor_defense():
     misc = get_misc_variables('armor_defense', 1)
     return js_wrapper(
-        ['level', 'dexterity_starting', 'body_armor_defense_value', 'shield_defense_value', *misc, 'challenge_rating'],
+        ['level', 'dexterity_starting', 'body_armor_defense_value', 'shield_defense_value', *misc, 'challenge_rating', 'level_scaling'],
         f"""
-            var cr_mod = Math.max(0, challenge_rating - 1);
+            var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var before_equipment = level + dexterity_starting + cr_mod;
-            var total = before_equipment + body_armor_defense_value + shield_defense_value + {sum_variables(misc)};
+            var total = before_equipment + body_armor_defense_value + shield_defense_value + level_scaling + {sum_variables(misc)};
             setAttrs({{
                 armor_defense: total,
             }});
@@ -202,11 +216,11 @@ def armor_defense():
 def fortitude():
     misc = get_misc_variables('fortitude', 2)
     return js_wrapper(
-        ['level', 'constitution_starting', 'fortitude_class', 'challenge_rating', *misc],
+        ['level', 'constitution_starting', 'fortitude_class', 'challenge_rating', 'level_scaling', *misc],
         f"""
-            var cr_mod = Math.max(0, challenge_rating - 1);
+            var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             setAttrs({{
-                fortitude: level + constitution_starting + fortitude_class + cr_mod + {sum_variables(misc)},
+                fortitude: level + constitution_starting + fortitude_class + cr_mod + level_scaling + {sum_variables(misc)},
             }});
         """
     )
@@ -214,11 +228,11 @@ def fortitude():
 def reflex():
     misc = get_misc_variables('reflex', 2)
     return js_wrapper(
-        ['level', 'dexterity_starting', 'reflex_class', 'challenge_rating', *misc],
+        ['level', 'dexterity_starting', 'reflex_class', 'challenge_rating', 'level_scaling', *misc],
         f"""
-            var cr_mod = Math.max(0, challenge_rating - 1);
+            var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             setAttrs({{
-                reflex: level + dexterity_starting + reflex_class + cr_mod + {sum_variables(misc)},
+                reflex: level + dexterity_starting + reflex_class + cr_mod + level_scaling + {sum_variables(misc)},
             }});
         """
     )
@@ -226,11 +240,11 @@ def reflex():
 def mental():
     misc = get_misc_variables('mental', 2)
     return js_wrapper(
-        ['level', 'willpower_starting', 'mental_class', 'challenge_rating', *misc],
+        ['level', 'willpower_starting', 'mental_class', 'challenge_rating', 'level_scaling', *misc],
         f"""
-            var cr_mod = Math.max(0, challenge_rating - 1);
+            var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             setAttrs({{
-                mental: level + willpower_starting + mental_class + cr_mod + {sum_variables(misc)},
+                mental: level + willpower_starting + mental_class + cr_mod + level_scaling + {sum_variables(misc)},
             }});
         """
     )
@@ -288,9 +302,16 @@ def skill_points():
 def hit_points():
     misc = get_misc_variables('hit_points', 2)
     return js_wrapper(
-        ['constitution_starting', *misc],
+        ['constitution_starting', 'challenge_rating', *misc],
         f"""
             var hit_points = 6 + constitution_starting + {sum_variables(misc)};
+            var cr_mod = 1;
+            if (challenge_rating === 1) {{
+                cr_mod = 0.5;
+            }} else if (challenge_rating === 0.5) {{
+                cr_mod = 0.25;
+            }}
+            hit_points = Math.floor(hit_points * cr_mod)
             setAttrs({{
                 hit_points,
                 hit_points_max: hit_points,
@@ -468,26 +489,28 @@ def physical_resistance():
 
 def damage_resistances():
     return js_wrapper(
-        ['base_damage_resistance', 'all_resistance_bonus', 'energy_resistance_bonus', 'physical_resistance_bonus'],
+        ['base_damage_resistance', 'all_resistance_bonus', 'energy_resistance_bonus', 'physical_resistance_bonus', 'challenge_rating'],
         f"""
             var global_damage_resistance = base_damage_resistance + all_resistance_bonus;
+            var resistance_modifier = challenge_rating === 0.5 ? 0.5 : 1;
             setAttrs({{
-                global_damage_resistance,
-                energy_damage_resistance: global_damage_resistance + energy_resistance_bonus,
-                physical_damage_resistance: global_damage_resistance + physical_resistance_bonus,
+                global_damage_resistance: Math.floor(global_damage_resistance * resistance_modifier),
+                energy_damage_resistance: Math.floor((global_damage_resistance + energy_resistance_bonus) * resistance_modifier),
+                physical_damage_resistance: Math.floor((global_damage_resistance + physical_resistance_bonus) * resistance_modifier),
             }})
         """
     )
 
 def wound_resistances():
     return js_wrapper(
-        ['base_wound_resistance', 'all_resistance_bonus', 'energy_resistance_bonus', 'physical_resistance_bonus'],
+        ['base_wound_resistance', 'all_resistance_bonus', 'energy_resistance_bonus', 'physical_resistance_bonus', 'challenge_rating'],
         f"""
             var global_wound_resistance = base_wound_resistance + all_resistance_bonus;
+            var resistance_modifier = challenge_rating === 0.5 ? 0.5 : 1;
             setAttrs({{
-                global_wound_resistance,
-                energy_wound_resistance: global_wound_resistance + energy_resistance_bonus,
-                physical_wound_resistance: global_wound_resistance + physical_resistance_bonus,
+                global_wound_resistance: Math.floor(global_wound_resistance * resistance_modifier),
+                energy_wound_resistance: Math.floor((global_wound_resistance + energy_resistance_bonus) * resistance_modifier),
+                physical_wound_resistance: Math.floor((global_wound_resistance + physical_resistance_bonus) * resistance_modifier),
             }})
         """
     )
