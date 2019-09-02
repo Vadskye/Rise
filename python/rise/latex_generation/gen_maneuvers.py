@@ -394,7 +394,7 @@ def generate_maneuvers():
 
     maneuvers.append(Maneuver(
         name='Second Wind',
-        short_description='Recover hit points.',
+        short_description='Recover hit points',
         effect_text="""
             You regain a \\glossterm<hit point>.
             You can only use this ability once between \\glossterm<short rests>.
