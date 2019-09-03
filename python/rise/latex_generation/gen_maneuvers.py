@@ -461,6 +461,22 @@ def generate_maneuvers():
     ))
 
     maneuvers.append(Maneuver(
+        name='Spring Attack',
+        short_description='Make a strike and continue moving',
+        effect_text="""
+            Move up to your movement speed and make a melee \\glossterm<strike> with a -1d penalty to damage.
+            If you use this ability during the \\glossterm<action phase>, you may continue moving during the \\glossterm<delayed action phase> if you have remaining movement available.
+        """,
+        rank_upgrades={
+            '3': 'If you have movement remaining after using this ability during the \\glossterm<action phase>, you gain a +2 bonus to Armor and Reflex defenses in the \\glossterm<delayed action phase>.',
+            '5': 'The damage penalty is removed.',
+            '7': 'The bonus to defenses increases to +4.',
+        },
+        tags=[],
+        lists=['Esoteric', 'Trick', 'Wild'],
+    ))
+
+    maneuvers.append(Maneuver(
         name="Wanderer's Strike",
         short_description='Make a strike and move',
         effect_text="""
