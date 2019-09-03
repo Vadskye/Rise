@@ -176,21 +176,12 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Specialization} You gain a \plus3 bonus to the Acrobatics skill.
 
-        \ff[4]{Acrobatic Dodge} You can use the \textit{acrobatic dodge} ability as a \glossterm{standard action}.
-        \begin{freeability}{Acrobatic Dodge}
-            You move up to your normal movement speed.
-            In addition, you gain a +2 bonus to Armor and Reflex defenses until the end of the round.
-            You gain this bonus immediately, and it applies against attacks against you in the same phase that you ues this ability.
-
-            \rankline
-            \featlevel{10} The defense bonus increases to +3.
-            \featlevel{16} The defense bonus increases to +4.
-        \end{freeability}
-
-        \ff[7]{Combat Tumble} During each phase, you may move through one creature's space during movement.
+        \ff[4]{Combat Tumble} During each phase, you may move through one creature's space during movement.
         You treat its space as \glossterm{difficult terrain}.
         After moving through that creature's space, other creatures block you as normal for the remainder of your movement.
         Certain unusual creatures that occupy their entire space, such as gelatinous cubes, may be immune to this ability.
+
+        \ff[7]{Acrobatic Fall} You take half damage from \glossterm{falling damage}.
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
@@ -216,24 +207,16 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Lightning Reflexes} You gain a \plus2 bonus to Reflex defense and \glossterm{initiative} checks.
 
-        \ff[4]{Spring Attack} You can use the \textit{spring attack} ability as a standard action.
-        \begin{freeability}{Spring Attack}
-            Move up to your movement speed and make a melee \glossterm{strike} with a \minus1d penalty to damage.
-            If you use this ability during the \glossterm{action phase}, you may continue moving during the \glossterm{delayed action phase} if you have remaining movement available.
+        \ff[4]{Evasion} When you are attacked by an ability that affects an area, you can use your Reflex defense in place of any other defenses against that attack.
 
-            \rankline
-            \featlevel{10} The damage penalty is removed.
-            \featlevel{16} You gain a +1d bonus to damage with the strike.
-        \end{freeability}
-
-        \ff[7]{Evasion} When you are attacked by an ability that affects an area, you can use your Reflex defense in place of any other defenses against that attack.
+        \ff[7]{Sidestep} If you have at least five feet of movement remaining after the \glossterm{movement phase}, you may move up to five feet during the \glossterm{action phase} or the \glossterm{delayed action phase} as a \glossterm{free action}.
 
         \ff[10]{Greater Lightning Reflexes} The bonuses from your \textit{lightning reflexes} ability increase to \plus4.
 
-        \ff[13]{Dodge} You gain a \plus1 bonus to Armor defense.
-
-        \ff[16]{Greater Evasion} You take half damage from abilities that affect areas.
+        \ff[13]{Greater Evasion} You take half damage from abilities that affect areas.
         You suffer non-damaging effects from such abilities normally.
+
+        \ff[16]{Greater Sidestep} The movement you can carry over with your \textit{sidestep} ability increases to half your \glossterm{base speed}.
 
         \ff[19]{Supreme Lightning Reflexes} The bonuses from your \textit{lightning reflexes} ability increase to \plus6.
     \end{feat}
@@ -422,49 +405,49 @@ Feats also make the system more mechanically complex, so they are not necessaril
         For details about how to fight while unarmed, see \pcref{Unarmed Combat}.
         This ability does not stack with the ability of the same name from the Esoteric Warrior monk archetype (see \pcref{Esoteric Warrior}).
 
-        \ff[4]{Takedown} You can use the \textit{takedown} ability as a standard action.
-        \begin{freeability}{Takedown}
-            Make an unarmed \glossterm{strike}.
-            In addition to the attack's normal effects, if the strike hits and the attack result also beats the target's Fortitude defense, you and the target are \grappled by each other.
+        \ff[1]{Grapple Expertise} You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability (see \pcref{Grapple}), as well as with all grapple actions (see \pcref{Grapple Actions}).
 
-            \rankline
-            \featlevel{10} You gain a \plus1 bonus to accuracy with the strike.
-            \featlevel{16} The accuracy bonus increases to \plus2.
-        \end{freeability}
+        \ff[4]{Takedown} Whenever you hit a target with the \textit{grapple} ability, the target also takes damage as if you had hit with your unarmed attack.
 
-        \ff[7]{Grapple Expertise} You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability (see \pcref{Grapple}), as well as with all grapple actions (see \pcref{Grapple Actions}).
+        \ff[7]{Greater Unarmed Warrior} The damage bonus from your \textit{unarmed warrior} increases to \plus3d.
 
-        \ff[10]{Greater Unarmed Warrior} The damage bonus from your \textit{unarmed warrior} increases to \plus3d.
+        \ff[7]{Greater Grapple Expertise} The bonus from your \textit{grapple expertise} ability increases to \plus3.
 
-        \ff[13]{Pin Mastery} You can use the \textit{pin} ability with only one free hand (see \pcref{Pin}).
+        \ff[10]{Pin Mastery} You can use the \textit{pin} ability with only one free hand (see \pcref{Pin}).
+        In addition, you can keep the target immobilized with only one free hand if you hit.
 
-        \ff[16]{Greater Grapple Expertise} The bonus from your \textit{grapple expertise} ability increases to \plus3.
+        \ff[13]{Supreme Unarmed Warrior} The damage bonus from your \textit{unarmed warrior} ability increases to \plus4d.
 
-        \ff[19]{Supreme Unarmed Warrior} The damage bonus from your \textit{unarmed warrior} ability increases to \plus4d.
+        \ff[13]{Greater Grapple Expertise} The bonus from your \textit{grapple expertise} ability increases to \plus4.
+
+        \ff[16]{Greater Pin Mastery} If you get a \glossterm{critical hit} with the \textit{grapple} ability, you can immediately pin the target as if you had hit with the \textit{pin} ability.
+
+        \ff[19]{Grapple Supremacy} When you grapple a target with the \textit{grapple} ability, you do not become \glossterm{grappled} by that target.
     \end{feat}
 
     \begin{feat}{Celestial Heritage}{Bloodline, Magical}
         \featpre Non-evil alignment.
         \parhead{Special} You can only have one Bloodline feat.
 
-        \ff[1]{Divine Favor} You gain a \plus1 bonus to Fortitude and Mental defense.
-
-        \ff[4]{Holy Smite} You can use the \textit{holy smite} ability as a standard action.
+        \ff[1]{Holy Smite} You can use the \textit{holy smite} ability as a standard action.
         \begin{freeability}{Smite}[Magical]
             Make a \glossterm{magical strike}.
             If your target is good, the strike deals no damage.
             Otherwise, the strike gains a \plus1d bonus to damage.
 
             \rankline
-            \featlevel{10} The damage bonus increases to \plus2d.
-            \featlevel{16} The damage bonus increases to \plus3d.
+            \featlevel{7} The damage bonus increases to \plus2d.
+            \featlevel{13} The damage bonus increases to \plus3d.
+            \featlevel{19} The damage bonus increases to \plus4d.
         \end{freeability}
+
+        \ff[4]{Celestial Soul} You gain a bonus to \glossterm{resistances} against \glossterm{energy damage} equal to half your level.
 
         \ff[7]{Angel Wings} You gain feathery wings that sprout from your back.
         These wings grant you a glide speed equal to your \glossterm{base speed} (see \pcref{Gliding}).
         The wings themselves are \glossterm{mundane}, but the ability to fly and glide with them is \glossterm{magical}.
 
-        \ff[10]{Greater Divine Favor} The bonuses from your \textit{divine favor} ability increase to \plus2.
+        \ff[10]{Celestial Might} You gain a \plus1 bonus to \glossterm{magical power}.
 
         \ff[13]{Angelic Flight} You can use the \textit{angelic flight} ability as a \glossterm{free action}.
         \begin{freeability}{Angelic Flight}[Magical]
@@ -472,7 +455,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
             If you used this ability last round, you also lose a \glossterm{hit point}.
         \end{freeability}
 
-        \ff[16]{TODO} 
+        \ff[16]{Greater Celestial Soul} The bonus from your \textit{celestial soul} ability increases to be equal to your level.
 
         \ff[19]{Greater Angelic Flight} Your \textit{angelic flight} ability lasts until the end of the next round.
     \end{feat}
@@ -533,10 +516,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Specialization} You gain a \plus3 bonus to the Creature Handling skill.
 
-        \ff[4]{Efficient Training} You can teach a creature a trick with 12 hours of work, split as you choose, rather than in a week of 4 hour sessions (see \pcref{Training Creatures}).
-        In addition, you can train creatures to learn two bonus tricks beyond their normal maximum (see \pcref{Bonus Tricks}).
-
-        \ff[7]{Battleforged Training} You can teach a creature the Battleforged trick.
+        \ff[4]{Battleforged Training} You can teach a creature the Battleforged trick.
         The DR to train the trick is 15.
         A creature with the trick gains the following benefits:
         \begin{itemize}
@@ -544,6 +524,12 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \item It gains a \plus1 bonus to accuracy with all attacks.
             \item It gains a \plus1d bonus to damage with \glossterm{strikes}.
         \end{itemize}
+
+        \ff[7]{Greater Command} You can \glossterm{sustain} the effect of the \textit{command} ability from the Creature Handling skill with a \glossterm{minor action} instead of with a standard action.
+        For details, see \pcref{Command}.
+
+        \ff[7]{Efficient Training} You can teach a creature a trick with 12 hours of work, split as you choose, rather than in a week of 4 hour sessions (see \pcref{Training Creatures}).
+        In addition, you can train creatures to learn two bonus tricks beyond their normal maximum (see \pcref{Bonus Tricks}).
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
@@ -561,8 +547,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[19]{Greater Efficient Training} You can teach a creature with 4 hours of work, split as you choose (see \pcref{Training Creatures}).
         In addition, the number of bonus tricks you can teach from your \textit{efficient training} ability increases to four.
 
-        \ff[19]{Greater Command} You can \glossterm{sustain} the effect of the \textit{command} ability from the Creature Handling skill with a \glossterm{minor action} instead of with a standard action.
-        For details, see \pcref{Command}.
+        \ff[19]{Supreme Command} You can \glossterm{sustain} the effect of the \textit{command} ability from the Creature Handling skill with a \glossterm{free action} instead of with a standard action.
     \end{feat}
 
     \begin{feat}{Devices Specialization}{Skill}
@@ -570,21 +555,21 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Specialization} You gain a \plus3 bonus to the Devices skill.
 
-        \ff[4]{Rapid Improvisation} It takes you only five rounds to make a device of up to Tiny size with the \textit{improvise} ability (see \pcref{Improvise}).
-
         % TODO: wording
-        \ff[7]{Lesser Disable Arcana}[Magical] You can affect spell effects on objects or areas with the Devices skill as if they were merely complex devices.
+        \ff[4]{Disable Arcana}[Magical] You can affect spell effects on objects or areas with the Devices skill as if they were merely complex devices.
         You must be aware of an effect to use the Devices skill to affect it, either through the Spellcraft skill or because the effect is noticeable.
         You cannot affect effects on creatures.
         The DR to affect an arcane spell effect is equal to 15 \add the effect's \glossterm{power}.
 
-        \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
+        \ff[7]{Rapid Improvisation} It takes you only a standard action to make a device of up to Diminuitive size with the \textit{improvise} ability (see \pcref{Improvise}).
 
-        \ff[13]{Greater Rapid Improvization} It takes you only a standard action to make a device of up to Tiny size with the \textit{improvise} ability (see \pcref{Improvise}).
+        \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
+        
+        \ff[13]{Greater Disable Arcana}[Magical] You can affect all \glossterm{magical} effects on objects or areas with the Devices skill, not just spell effects.
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus9.
 
-        \ff[19]{Greater Disable Arcana}[Magical] You can affect all magical effects on objects or areas with the Devices skill, not just spell effects.
+        \ff[19]{Greater Rapid Improvization} It takes you only a standard action to make a device of up to Small size with the \textit{improvise} ability (see \pcref{Improvise}).
     \end{feat}
 
     \begin{feat}{Disguise Specialization}{Skill}
@@ -618,11 +603,9 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{feat}{Draconic Heritage}{Bloodline}
         \parhead{Special} You can only have one Bloodline feat.
 
-        \ff[1]{Draconic Power} Your \glossterm{power} with abilities from this feat is equal to your level or your Constitution, whichever is higher.
-
         \ff[1]{Draconic Ancestry} Choose a type of dragon from among the dragons on \trefnp{Dragon Types}.
         You have the blood of that type of dragon in your veins.
-        You gain a bonus equal to twice your \glossterm{power} to your \glossterm{resistances} against the damage type dealt by that dragon's breath weapon.
+        You gain a bonus equal to your level to your \glossterm{resistances} against the damage type dealt by that dragon's breath weapon.
 
         \ff[1]{Draconic Weapons} You gain a bite natural weapon and two claw natural weapons, one on each arm.
         For details, see \pcref{Natural Weapons}.
@@ -630,14 +613,15 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[4]{Breath Weapon} You can use the \textit{breath weapon} ability as a \glossterm{standard action}.
         \begin{freeability}{Breath Weapon}
             Make an attack vs. Armor against everything in the area defined by your \textit{draconic ancestry} ability (see \trefnp{Dragon Types}).
-            \hit Each target takes \glossterm{standard damage} \minus1d.
+            You can use your Constitution in place of your Strength to determine your \glossterm{power} with this ability.
+            \hit Each target takes \glossterm{standard damage}.
             The damage type is defined by your \textit{draconic ancestry} ability.
 
             \rankline
             \featlevel{10} The area affected by your breath weapon increases.
                 A line breath weapon becomes a \areahuge, 15 ft.\ wide line.
                 A cone breath weapon becomes a \arealarge cone.
-                \featlevel{16} You gain a \plus1d bonus to damage.
+            \featlevel{16} You gain a \plus1d bonus to damage.
                 In addition, the area affected by your breath weapon increases again.
                 A line breath weapon becomes a \areahuge, 20 ft.\ wide line.
                 A cone breath weapon becomes a \areahuge cone.
@@ -647,7 +631,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         These wings grant you a glide speed equal to your \glossterm{base speed} (see \pcref{Gliding}).
         The wings themselves are physical, but the ability to fly and glide with them is \glossterm{magical}.
 
-        \ff[10]{Greater Draconic Ancestry} You become immune to the damage type dealt by your dragon's breath weapon.
+        \ff[10]{Greater Draconic Ancestry} The bonus to \glossterm{resistances} from your \textit{draconic ancestry} ability increases to be equal to twice your level.
 
         \ff[13]{Draconic Flight}[Magical] You can use the \textit{draconic flight} ability as a \glossterm{free action}.
         \begin{freeability}{Draconic Flight}
@@ -680,28 +664,29 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{feat}{Duelist}{Combat}
         \featpre Starting Dexterity of 1, starting Intelligence of 1.
 
-        \ff[1]{Parry} You gain a \plus1 bonus to Armor defense as long as you wield a melee weapon and are not \glossterm{threatened} by more than one creature.
-
-        \ff[4]{Focused Strike} You can use the \textit{focused strike} ability as a standard action.
+        \ff[1]{Focused Strike} You can use the \textit{focused strike} ability as a standard action.
         \begin{freeability}{Focused Strike}
             Make a melee \glossterm{strike}.
             If you are not \glossterm{threatened} by more than one creature, you gain a \plus1 bonus to \glossterm{accuracy} with the strike.
             If you are the only creature threatening your target, you gain a \plus1d bonus to damage with the strike.
 
             \rankline
-            \featlevel{10} The accuracy bonus increases to \plus2.
-            \featlevel{16} The damage bonus increases to \plus2d.
+            \featlevel{7} The damage bonus increases to \plus2d.
+            \featlevel{13} The accuracy bonus increases to \plus2.
+            \featlevel{19} The damage bonus increases to \plus4d.
         \end{freeability}
+
+        \ff[4]{Parry} You gain a \plus1 bonus to Armor defense as long as you wield a melee weapon and are not \glossterm{threatened} by more than one creature.
 
         \ff[7]{Riposte} You gain a \plus1 bonus to \glossterm{accuracy} with melee \glossterm{strikes} as long as you are not \glossterm{threatened} by more than one creature.
 
-        \ff[10]{Duel Expertise} You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{disarm} ability (see \pcref{Disarm}).
+        \ff[10]{Duel Focus} You are treated as being \glossterm{threatened} by one fewer creature than you actually are for the purpose of abilities from this feat.
 
         \ff[13]{Greater Parry} The bonus from your \textit{parry} ability increases to \plus2.
 
-        \ff[16]{Greater Duel Expertise} The accuracy bonus from your \textit{duel expertise} ability increases to \plus3.
+        \ff[16]{Greater Riposte} The bonus from your \textit{riposte} ability increases to \plus2.
 
-        \ff[19]{Legendary Duelist} You are treated as being \glossterm{threatened} by one fewer creature than you actually are for the purpose of abilities from this feat.
+        \ff[19]{Greater Duel Focus} The reduction in number of creatures threatening you from your \textit{duel focus} ability increases to two creatures.
     \end{feat}
 
     \begin{feat}{Escape Artist Specialization}{Skill}
@@ -711,7 +696,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[4]{Rapid Escape} You can squeeze and escape bindings and grapples as a move action, rather than as a standard action.
 
-        \ff[7]{Constraint Tolerance} You reduce your penalties for \glossterm{squeezing} by 1 (see \pcref{Squeezing}).
+        \ff[7]{Constraint Tolerance} You reduce your penalties for \glossterm{squeezing} by 2 (see \pcref{Squeezing}).
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
@@ -728,81 +713,81 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus9.
 
-        \ff[19]{Greater Constraint Tolerance} The penalty reduction from your \textit{constraint tolerance} ability increases to 2.
+        \ff[19]{Greater Constraint Tolerance} The penalty reduction from your \textit{constraint tolerance} ability increases to 4.
         In addition, your movement speed is not halved while \glossterm{squeezing}.
     \end{feat}
 
     \begin{feat}{Executioner}{Combat}
         \featpres Starting Strength of 1, starting Perception of 2.
 
-        \ff[1]{Blood Sense}[Magical] You automatically know the location of all living creatures with a \glossterm{vital wound} within 50 feet of you, regardless of concealment or invisibility.
-        You must have \glossterm{line of effect} to a creature to sense it in this way, but you do not need \glossterm{line of sight}.
+        \ff[1]{Marked for Execution} You consider living creatures that either have a \glossterm{vital wound} or have less than their \glossterm{maximum hit points} to be \textit{marked for execution}.
+        Several abilities from this feat affect creatures \textit{marked for execution}.
 
-        \ff[4]{Execution} You can use the \textit{execution} ability as a standard action.
+        % This ability is melee-only because it makes some of the questions around ``is this creature marked''
+        % less narratively awkward since you can automatically detect them with blood sense.
+        \ff[1]{Execution} You can use the \textit{execution} ability as a standard action.
         \begin{freeability}{Execution}
-            Make a \glossterm{strike}.
-            You gain a \plus2d bonus to damage on the strike.
-            % TODO: wording?
-            If the strike does not beat the target's \glossterm{wound resistance}, it deals no damage.
+            Make a melee \glossterm{strike}.
+            If the target has less than its maximum \glossterm{hit points}, you gain a \plus1d bonus to damage.
+            If the target has a \glossterm{vital wound}, you gain a \plus1d bonus to damage.
+            These bonuses stack.
 
             \rankline
-            \featlevel{10} The damage bonus increases to \plus3d.
-            \featlevel{16} The damage bonus increases to \plus4d.
+            \featlevel{7} You gain a \plus1d bonus to damage with the strike.
+            \featlevel{13} The automatic damage bonus increases to \plus2d.
+            \featlevel{19} Both circumstantial damage bonuses increase to \plus2d.
         \end{freeability}
 
-        \ff[7]{Purge the Weak} You gain a \plus1 bonus to \glossterm{accuracy} against creatures with a \glossterm{vital wound}.
+        \ff[4]{Blood Sense}[Magical] You automatically know the location of all creatures that are \textit{marked for execution} within 50 feet of you, regardless of concealment or invisibility.
+        You must have \glossterm{line of effect} to a creature to sense it in this way, but you do not need \glossterm{line of sight}.
 
-        \ff[10]{Greater Blood Sense}[Magical] Your \textit{blood sense} ability allows you to know the location of all living creatures within range, not just living creatures with a \glossterm{vital wound}.
-        You can automatically identify which of those creatures have a \glossterm{vital wound}.
-        In addition, you can see all living creatures within range that have a \glossterm{vital wound} perfectly instead of only knowing their location.
+        \ff[7]{Purge the Weak} You gain a \plus1 bonus to \glossterm{accuracy} against creatures that are \textit{marked for execution}.
+
+        \ff[10]{Greater Blood Sense}[Magical] Your \textit{blood sense} ability allows you to know the location of all living creatures within range.
+        In addition, you can see creatures that are \textit{marked for death} perfectly instead of only knowing their location.
+        Youc an still automatically identify which creatures within range are \textit{marked for execution}.
 
         \ff[13]{Bloody Resilience} You gain a \plus2 bonus to Fortitude defense.
 
         \ff[16]{Greater Purge the Weak} The bonus from your \textit{purge the weak} ability increases to \plus2.
 
-        \ff[19]{Blood Sight}[Magical] Your \textit{blood sense} ability allows you to see all living creatures within range perfectly instead of only knowing their location.
+        \ff[16]{Supreme Blood Sense}[Magical] The range of your \textit{blood sense} ability increases to 200 feet.
     \end{feat}
 
     \begin{feat}{Guardian}{Combat}
         \featpre Starting Perception and Willpower of 1.
 
-        \ff[1]{Protect} You can use the \textit{protect} ability as a \glossterm{minor action}.
-        \begin{freeability}{Protect}[\glossterm{Swift}]
-            Choose an adjacent \glossterm{ally}.
-            The target gains a \plus2 bonus to Armor defense this round.
-            However, you take a \minus2 penalty to Armor defense this round.
+        \ff[1]{Binding Strike} You can use the \textit{binding strike} ability as a standard action.
+        \begin{freeability}{Binding Strike}
+            Make a melee \glossterm{strike} against an adjacent creature with a \minus2d penalty to damage.
+            If the attack result hits the target's Mental defense,
+                it is \glossterm{decelerated} as a \glossterm{condition}.
+                At the end of each round, this condition ends if the target is not \glossterm{threatened} by you.
 
+            \rankline
+            \featlevel{7} On a \glossterm{critical hit}, the target is \glossterm{immobilized} instead of \glossterm{decelerated}.
+            \featlevel{13} The condition does not end if you stop threatening the target.
+            \featlevel{19} The target is \glossterm{immobilized} on a normal hit.
+        \end{freeability}
+
+        \ff[4]{Threatening Guardian} Your \glossterm{enemies} treat each space adjacent to you as \glossterm{difficult terrain}.
+
+        \ff[7]{Protect} You can use the \textit{protect} ability as a \glossterm{minor action}.
+        \begin{freeability}{Protect}[\glossterm{Sustain} (free), \glossterm{Swift}]
+            Allies adjacent to you gain a \plus2 bonus to Armor defense until the end of the round.
+            However, you take a \minus2 penalty to Armor defense this round.
             Because this ability has the \glossterm{Swift} tag, these bonuses and penalties apply against attacks made in the current phase.
 
             \rankline
-            \featlevel{7} The Armor defense penalty is reduced to \minus1.
-            \featlevel{13} You may target an additional adjacent \glossterm{ally}.
+            \featlevel{13} The Armor defense penalty is reduced to \minus1.
             \featlevel{19} The Armor defense penalty is removed.
         \end{freeability}
 
-        \ff[4]{Binding Strike} You can use the \textit{binding strike} ability as a standard action.
-        \begin{freeability}{Binding Strike}
-            Make a melee \glossterm{strike} against an adjacent creature.
-            In addition to the strike's normal effects, you also compare the attack result against the target's Mental defense.
+        \ff[10]{Resolute Defender} You gain a \plus1 bonus to Armor defense and Mental defense.
 
-            \hit The target is \glossterm{decelerated} as a \glossterm{condition}.
-            This effect immediately ends if the target is not \glossterm{threatened} by you.
-            \crit As above, except that the condition does not end when the target stops being threatened.
+        \ff[16]{Greater Threatening Guardian} Your \textit{threatening guardian} ability applies \glossterm{difficult terrain} twice, causing enemies to move at one quarter speed.
 
-            \rankline
-            \featlevel{10} The condition does not end when the target stops being threatened.
-            \featlevel{16} The target is also \glossterm{immobilized} as part of the same condition.
-        \end{freeability}
-
-        \ff[7]{Threatening Guardian} Your \glossterm{enemies} treat each space adjacent to you as \glossterm{difficult terrain}.
-
-        \ff[10]{Resolute Defender} You gain a \plus1 bonus to Mental defense.
-
-        \ff[13]{Defensive Training} You gain a \plus1 bonus to Armor defense.
-
-        \ff[16]{Greater Threatening Guardian} Your \textit{threatening guardian} ability applies \glossterm{difficult terrain}
-
-        \ff[19]{Greater Resolute Defender} The bonus from your \textit{resolute defender} ability increases to \plus2.
+        \ff[19]{Greater Resolute Defender} The bonuses from your \textit{resolute defender} ability increase to \plus2.
     \end{feat}
 
     \begin{feat}{Heal Specialization}{Skill}
