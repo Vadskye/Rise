@@ -87,19 +87,17 @@ def generate_armor():
 
     apparel.append(MagicItem(
         name="Shield of Arrow Deflection",
-        level=2,
+        level=5,
         material_type='Shield',
         description="""
-            As a \\glossterm<minor action>, you can activate this shield.
-            If you do, you gain a +4 \\glossterm<magic bonus> to Armor defense against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
-            This is a \\glossterm<Swift> ability, and it lasts until the end of the round.
+            You gain a +2 \\glossterm<magic bonus> to Armor defense against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
         """,
-        short_description="Can block small projectiles",
+        short_description="Blocks small projectiles",
     ))
 
     apparel.append(MagicItem(
         name="Shield of Arrow Deflection, Greater",
-        level=8,
+        level=14,
         material_type='Shield',
         description="""
             You gain a +4 \\glossterm<magic bonus> to Armor defense against ranged \\glossterm<strikes> from weapons or projectiles that are Small or smaller.
@@ -109,7 +107,7 @@ def generate_armor():
 
     apparel.append(MagicItem(
         name="Shield of Boulder Deflection",
-        level=6,
+        level=8,
         material_type='Shield',
         description="""
             This item functions like the \\mitem<shield of arrow deflection> item, except that it can affect weapons and projectiles of up to Large size.
@@ -119,7 +117,7 @@ def generate_armor():
 
     apparel.append(MagicItem(
         name="Shield of Boulder Deflection, Greater",
-        level=12,
+        level=17,
         material_type='Shield',
         description="""
             This item functions like the \\mitem<greater shield of arrow deflection> item, except that it can affect weapons and projectiles of up to Large size.
@@ -132,19 +130,29 @@ def generate_armor():
         level=2,
         material_type='Shield',
         description="""
-            You gain a +1d \\glossterm<magic bonus> to damage with \\glossterm<strikes> using this shield.
+            You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
         """,
         short_description="Deals +1d damage",
     ))
 
     apparel.append(MagicItem(
         name="Shield of Bashing, Greater",
-        level=12,
+        level=11,
         material_type='Shield',
         description="""
-            You gain a +2d \\glossterm<magic bonus> to damage with \\glossterm<strikes> using this shield.
+            You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
         """,
         short_description="Deals +2d damage",
+    ))
+
+    apparel.append(MagicItem(
+        name="Shield of Bashing, Supreme",
+        level=20,
+        material_type='Shield',
+        description="""
+            You gain a +6 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<strikes> using this shield.
+        """,
+        short_description="Deals +3d damage",
     ))
 
     apparel.append(MagicItem(
