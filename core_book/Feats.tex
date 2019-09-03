@@ -10,8 +10,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \parhead{Species Feat Only}
     One simple option is that characters gain a single feat at 1st level based on their species, and no other feats.
     This makes your choice of species more significant without dramatically increasing character complexity.
-    Since all common species have Class Versatility as an option for their species feat,
-        this also allows any character to ``multiclass'' between different classes, which can significantly increase build diversity.
 
     \parhead{Feat Progression}
     If you want characters to be more complex and to have more powerful abilities, you can also use the feat progression system.
@@ -24,17 +22,17 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \parhead{Human} Any feat.
 
-        \parhead{Dwarf} Any from the following list: \featref*{Blindfighter}, \featref*{Class Versatility}, \featref*{Craft Specialization}, \featref*{Guardian}, \featref*{Iron Will}, \featref*{Martial Training}, \featref*{Regenerator}, \featref*{Toughness}.
+        \parhead{Dwarf} Any from the following list: \featref*{Blindfighter}, \featref*{Craft Specialization}, \featref*{Guardian}, \featref*{Iron Will}, \featref*{Martial Training}, \featref*{Regenerator}, \featref*{Toughness}.
 
-        \parhead{Elf} Any Casting feat (see \pcref{Casting Feats}), or any from the following list: \featref*{Agility}, \featref*{Awareness Specialization}, \featref*{Class Versatility}, \featref*{Sniper}.
+        \parhead{Elf} Any Casting feat (see \pcref{Casting Feats}), or any from the following list: \featref*{Agility}, \featref*{Awareness Specialization}, \featref*{Sniper}.
 
-        \parhead{Gnome} Any Casting feat (see \pcref{Casting Feats}), or any from the following list: \featref*{Blindfighter}, \featref*{Class Versatility}, \featref*{Craft Specialization}, \featref*{Stealth Specialization}, \featref*{Toughness}.
+        \parhead{Gnome} Any Casting feat (see \pcref{Casting Feats}), or any from the following list: \featref*{Blindfighter}, \featref*{Craft Specialization}, \featref*{Stealth Specialization}, \featref*{Toughness}.
 
-        \parhead{Half-Elf} Any Skill feat (see \pcref{Skill Feats}), or \featref*{Class Versatility}.
+        \parhead{Half-Elf} Any Skill feat (see \pcref{Skill Feats}).
 
-        \parhead{Half-Orc} Any Combat feat (see \pcref{Combat Feats}), or any from the following list: \featref*{Class Versatility}, \featref*{Intimidate Specialization}, \featref*{Toughness}.
+        \parhead{Half-Orc} Any Combat feat (see \pcref{Combat Feats}), or any from the following list: \featref*{Intimidate Specialization}, \featref*{Toughness}.
 
-        \parhead{Halfling} Any from the following list: \featref*{Agility}, \featref*{Class Versatility}, \featref*{Climb Specialization}, \featref*{Iron Will}, \featref*{Jump Specialization}, \featref*{Stealth Specialization}.
+        \parhead{Halfling} Any from the following list: \featref*{Agility}, \featref*{Climb Specialization}, \featref*{Iron Will}, \featref*{Jump Specialization}, \featref*{Stealth Specialization}.
 
         \subsubsection{Changing Species}
             In extraordinary cases, a creature may change its species.
@@ -91,10 +89,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featref{Spellwarped}        & Wil 1    & Gain limited spellcasting        & Magical            & \featpref{Spellwarped}        \\
         \featref{Swift}              & Dex 1    & Move more quickly                & \tdash             & \featpref{Swift}              \\
         \featref{Toughness}          & Con 1    & Increase physical fortitude      & \tdash             & \featpref{Toughness}          \\
-
-        \tb{Class Feats}\label{Class Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
-        \featref{Class Versatility}      & \tdash                 & Swap for abilities from additional class & \tdash & \featpref{Class Versatility} \\
-        \tind \featref{Class Versatility, Greater} & Class Versatility feat & Gain archetype from additional class     & \tdash & \featpref{Class Versatility, Greater}  \\
 
         \tb{Skill Feats}\label{Skill Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
         \featref{Acrobatics Specialization}        & Mastered Acrobatics        & Improve use of chosen skill        & \tdash  & \featpref{Acrobatics Specialization}        \\
@@ -480,48 +474,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[16]{TODO} 
 
         \ff[19]{Greater Angelic Flight} Your \textit{angelic flight} ability lasts until the end of the next round.
-    \end{feat}
-
-    \begin{feat}{Class Versatility}{Class}
-
-        \ff[1]{Additional Class} Choose a class.
-        You gain the \glossterm{class skills} of that class in addition to your existing class skills.
-        You can exchange one class archetype from your class with one class archetype from that class.
-        You can also exchange any number of your basic class abilities, such as skill points or weapon proficiencies, for the corresponding abilities of that class.
-        If that class has any basic class abilities which are not part of an archetype and do not have abilities of the same on other classes, such as a cleric's \textit{divine power}, you gain those abilities.
-
-        \ff[7]{Versatile Expertise} Choose one of the following benefits.
-        You gain that benefit.
-        \begin{itemize}
-            \item \plus1 bonus to Fortitude defense
-            \item \plus1 bonus to Reflex defense
-            \item \plus1 bonus to Mental defense
-            \item One extra \glossterm{skill point}
-        \end{itemize}
-
-        \ff[13]{Expanded Versatility} You gain an additional \textit{versatile expertise} ability.
-
-        \ff[19]{Expanded Versatility} You gain an additional \textit{versatile expertise} ability.
-    \end{feat}
-
-    \begin{feat}{Class Versatility, Greater}{Class}
-        \featpre Class Versatility feat.
-
-        \ff[1]{Additional Archetype} Choose an archetype from a class you have chosen with the \textit{additional class} ability of the Class Versatility feat (see \featpref{Class Versatility}).
-        You gain that archetype in addition to your other archetypes.
-        Your \glossterm{archetype rank} in that archetype is Rank 1.
-
-        \ff[4]{Archetype Rank} You become Rank 2 in any of your archetypes.
-
-        \ff[7]{Archetype Rank} You become Rank 3 in any of your archetypes.
-
-        \ff[10]{Archetype Rank} You become Rank 4 in any of your archetypes.
-
-        \ff[13]{Archetype Rank} You become Rank 5 in any of your archetypes.
-
-        \ff[16]{Archetype Rank} You become Rank 6 in any of your archetypes.
-
-        \ff[19]{Archetype Rank} You become Rank 7 in any of your archetypes.
     \end{feat}
 
     \begin{feat}{Climb Specialization}{Skill}
