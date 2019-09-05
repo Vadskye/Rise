@@ -85,6 +85,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featref{Draconic Heritage}  & \tdash   & Gain aspects of draconic power   & Bloodline          & \featpref{Draconic Heritage}  \\
         \featref{Iron Will}          & Wil 1    & Increase mental resilience       & \tdash             & \featpref{Iron Will}          \\
         \featref{Null}               & Wil 2    & Become immune to magic           & \tdash             & \featpref{Null}               \\
+        \featref{Precognition}       & Int 2    & React to future events           & \tdash             & \featpref{Precognition}       \\
         \featref{Regenerator}        & Con 2    & Heal wounds with inhuman speed   & \tdash             & \featpref{Regenerator}        \\
         \featref{Spellwarped}        & Wil 1    & Gain limited spellcasting        & Magical            & \featpref{Spellwarped}        \\
         \featref{Swift}              & Dex 1    & Move more quickly                & \tdash             & \featpref{Swift}              \\
@@ -118,8 +119,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \tb{Casting Feats}\label{Casting Feats} & \tb{Prerequisites} & \tb{Benefits} & \tb{Feat Types} & \tb{Page} \\
         \featref{Boongiver}                      & Spellcasting ability                    & Improve ability to cast spells on allies     & Magical & \featpref{Boongiver}                      \\
-        \featref{Innate Magic}                   & Spellcasting ability, Wil 2             & Cast spells without words or gestures        & Magical & \featpref{Innate Magic}                   \\
         \featref{Metacaster}                     & Spellcasting ability                    & Manipulate spell effects in creative ways    & Magical & \featpref{Metacaster}                     \\
+        \featref{Mental Magic}                   & Spellcasting ability, Wil 2             & Cast spells without words or gestures        & Magical & \featpref{Mental Magic}                   \\
         % \featref{Miscaster}                      & Spellcasting ability                    & Miscast spells intentionally and effectively & Magical & \featpref{Miscaster}                      \\
         \featref{Mystic Archer}                  & Spellcasting ability                    & Imbue projectiles with magic                 & Magical & \featpref{Mystic Archer}                  \\
         \featref{Spellsword}                     & Spellcasting ability                    & Fight with sword and spell together          & \tdash  & \featpref{Spellsword}                     \\
@@ -157,7 +158,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featref{Guardian}            & Per 1, Wil 1 & Protect nearby allies                      & \tdash & \featpref{Guardian}            \\
         \featref{Leadership}          & Wil 2        & Inspire nearby allies                      & \tdash & \featpref{Leadership}          \\
         \featref{Martial Training}    & \tdash       & Improve combat abilities                   & \tdash & \featpref{Martial Training}    \\
-        \featref{Precognition}        & Int 2        & React to future events                     & \tdash & \featpref{Precognition}        \\
         \featref{Savage}              & Str 2        & Shove and overrun foes to deal damage      & \tdash & \featpref{Savage}              \\
         \featref{Sniper}              & Per 2        & Aim precisely at distant foes              & \tdash & \featpref{Sniper}              \\
         \featref{Two-Weapon Fighting} & Dex 2        & Fight better with two weapons at once      & \tdash & \featpref{Two-Weapon Fighting} \\
@@ -734,8 +734,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
             \rankline
             \featlevel{7} You gain a \plus1d bonus to damage with the strike.
-            \featlevel{13} The automatic damage bonus increases to \plus2d.
-            \featlevel{19} Both circumstantial damage bonuses increase to \plus2d.
+            \featlevel{13} Both circumstantial damage bonuses increase to \plus2d.
+            \featlevel{19} The automatic damage bonus increases to \plus2d.
         \end{freeability}
 
         \ff[4]{Blood Sense}[Magical] You automatically know the location of all creatures that are \textit{marked for execution} within 50 feet of you, regardless of concealment or invisibility.
@@ -759,7 +759,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Binding Strike} You can use the \textit{binding strike} ability as a standard action.
         \begin{freeability}{Binding Strike}
-            Make a melee \glossterm{strike} against an adjacent creature with a \minus2d penalty to damage.
+            Make a melee \glossterm{strike} against an adjacent creature with a \minus1d penalty to damage.
             If the attack result hits the target's Mental defense,
                 it is \glossterm{decelerated} as a \glossterm{condition}.
                 At the end of each round, this condition ends if the target is not \glossterm{threatened} by you.
@@ -824,32 +824,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[19]{Greater Lifesaver} You can use the \textit{first aid} ability as a \glossterm{free action}.
     \end{feat}
 
-    \begin{feat}{Innate Magic}{Casting, Magical}
-        \featpre Spellcasting ability, Willpower 2.
-
-        \ff[1]{Mental Casting} You connect to the magical essence of the universe differently from other spellcasters, allowing you to cast spells with purely mental effort.
-        None of your spells have \glossterm{somatic components} or \glossterm{verbal components}.
-        However, the lack of a physical focus for your magic makes it harder to concentrate on.
-        You increase your \glossterm{focus penalty} with spells by 2.
-        In addition, you automatically fail to use \glossterm{Focus} spells during the \glossterm{delayed action phase} if you already lost a \glossterm{hit point} earlier in the round.
-        This does not affect spells that do not have the \glossterm{Focus} tag.
-
-        \ff[4]{Internal Magic} You gain a \plus1 bonus to Fortitude and Mental defense.
-
-        \ff[7]{Innate Creativity} You learn an additional \glossterm{spell}.
-        When you gain access to new spell levels, you can change which spell you know.
-
-        \ff[10]{Greater Mental Casting} The increase to your \glossterm{focus penalty} with spells from your \textit{mental casting} ability is removed.
-
-        \ff[13]{Greater Internal Magic} The bonuses from your \textit{internal magic} ability increase to \plus2.
-
-        \ff[16]{Greater Innate Creativity} You learn an additional \glossterm{spell}.
-        When you gain access to new spell levels, you can change which spell you know.
-
-        \ff[19]{Supreme Mental Casting} The automatic spell failure from your \textit{mental casting} ability is removed.
-        In addition, you reduce your \glossterm{focus penalty} by 1.
-    \end{feat}
-
     \begin{feat}{Intimidate Specialization}{Skill}
         \featpre Intimidate as a mastered skill.
 
@@ -858,33 +832,36 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[4]{Greater Demoralize} When you use the \textit{demoralize} ability, the target is \glossterm{shaken} by you as a \glossterm{condition} instead of being shaken the end of the next round.
         For details, see \pcref{Demoralize}.
 
-        \ff[7]{Threatening Foe} You gain a \plus1 bonus to your \glossterm{overwhelm value}.
+        \ff[7]{Threatening Presence} You are considered to be \glossterm{threatening} each \glossterm{enemy} within a \arealarge emanation from you for the purpose of determining \glossterm{overwhelm penalties}. 
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[13]{Mass Demoralize} When you use the \textit{demoralize} ability, you can affect any number of targets within a \areamed radius within \rngmed range.
+        \ff[13]{Supreme Demoralize} When you use the \textit{demoralize} ability, each target is \frightened by you instead of being shaken.
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus9.
 
-        \ff[19]{Supreme Demoralize} When you use the \textit{demoralize} ability, each target is \frightened by you instead of being shaken.
+        \ff[19]{Fearsome Foe} You gain a \plus1 bonus to your \glossterm{overwhelm value}.
     \end{feat}
 
     \begin{feat}{Iron Will}{General}
         \featpre Starting Willpower of 1.
 
         \ff[1]{Mental Discipline} You gain a \plus2 bonus to Mental defense.
+        In addition, you reduce your \glossterm{focus penalty} by 1.
 
         \ff[4]{Mind over Matter} You gain an additional \glossterm{hit point}.
 
-        \ff[7]{Unclouded Mind} You are immune to being \glossterm{dazed}.
+        \ff[7]{Unclouded Mind} You are immune to being \glossterm{dazed} and \glossterm{stunned}.
 
         \ff[10]{Greater Mental Discipline} The bonus from your \textit{mental discipline} ability increases to \plus3.
+        In addition, the \glossterm{focus penalty} reduction increases to 2.
 
         \ff[13]{Greater Mind over Matter} The number of additional \glossterm{hit points} from your \textit{mind over matter} ability increases to two.
 
-        \ff[16]{Greater Unclouded Mind} You are immune to being \glossterm{stunned}.
+        \ff[16]{Greater Unclouded Mind} You are immune to being \glossterm{disoriented} and \glossterm{confused}.
 
         \ff[19]{Supreme Mental Discipline} The bonus from your \textit{mental discipline} ability increases to \plus4.
+        In addition, the \glossterm{focus penalty} reduction increases to 3.
     \end{feat}
 
     \begin{feat}{Jump Specialization}{Skill}
@@ -892,26 +869,23 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Specialization} You gain a \plus3 bonus to the Jump skill.
 
-        \ff[4]{Instant Leap} You suffer no penalty for jumping without a running start (see \pcref{Running Start}).
-
-        \ff[7]{Featherlight Leap} You can use the \textit{featherlight leap} ability as a \glossterm{free action}.
+        \ff[4]{Featherlight Leap} You can use the \textit{featherlight leap} ability as a \glossterm{free action}.
         \begin{freeability}{Featherlight Leap}[\glossterm{Swift}]
+            When you use this ability, you lose a \glossterm{hit point}.
             Your maximum height for jumps during the current phase is equal to your Jump check result, rather than half your Jump check result.
             This does not affect the forward distance you can reach with your jumps.
-            In addition, you take \glossterm{subdual damage} equal to your level.
-
-            \rankline
-            \featlevel{13} This ability lasts until the end of the current round.
-            \featlevel{19} You do not take damage from using this ability.
         \end{freeability}
+
+        \ff[7]{Instant Leap} You suffer no penalty for jumping without a running start (see \pcref{Running Start}).
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[13]{Impact Tolerance} You take half damgae from \glossterm{falling damage}.
+        \ff[13]{Impact Tolerance} You are immune to \glossterm{falling damage}.
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus9.
 
-        \ff[19]{Impact Tolerance} You are immune to \glossterm{falling damage}.
+        \ff[19]{Greater Featherlight Leap} Your maximum height for jumps is always equal to your Jump check result.
+        When you use your \textit{featherlight leap} ability, your maximum height increases to be equal to twice your Jump check result.
     \end{feat}
 
     \begin{feat}{Knowledge Specialization}{Skill}
@@ -935,35 +909,35 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{feat}{Leadership}{Combat}
         \featpre Starting Willpower of 2.
 
-        \ff[1]{Inspiring Leader} \glossterm{Allies} that can see or hear you gain a \plus1 bonus to Mental defense.
+        \ff[1]{Battle Command} You can use the \textit{battle command} ability as a standard action.
+        \begin{freeability}{Battle Command}[\glossterm{Swift}]
+            Choose an \glossterm{ally} within \rngmed range of you.
+            If the target makes an attack during the current phase, that attack automatically \glossterm{explodes}.
 
-        \ff[4]{Bolster} You can use the \textit{bolster} ability as a standard action.
+            \rankline
+            \featlevel{7} The target also gains a \plus1 bonus to \glossterm{accuracy} with the attack.
+            \featlevel{13} You may target an additional \glossterm{ally} within range.
+            \featlevel{19} The accuracy bonus increases to \plus2.
+        \end{freeability}
+
+        \ff[4]{Encouraging Presence} Your \glossterm{allies} within a \arealarge \glossterm{emanation} from you are immune to being \glossterm{shaken}, \glossterm{frightened}, and \glossterm{panicked}.
+
+        \ff[7]{Bolster} You can use the \textit{bolster} ability as a standard action.
         \begin{freeability}{Bolster}[\glossterm{Emotion}]
             One \glossterm{ally} within \rngclose range can remove one \glossterm{condition}.
 
             \rankline
-            \featlevel{10} You may instead target all \glossterm{allies} within a \areamed radius from you.
-            \featlevel{16} You may instead target all \glossterm{allies} within a \arealarge radius from you.
+            \featlevel{13} You may target an additional \glossterm{ally} within range.
+            \featlevel{19} Each target may remove an additional \glossterm{condition}.
         \end{freeability}
 
-        \ff[7]{Battle Command} You can use the \textit{battle command} ability as a standard action.
-        \begin{freeability}{Battle Command}[\glossterm{Swift}]
-            Choose an \glossterm{ally} within \rngmed range of you.
-            When the target makes a \glossterm{strike} during the current phase, it can roll the \glossterm{attack roll} twice and take the higher result.
-            It also gains a \plus1d bonus to damage with the strike.
+        \ff[10]{Inspiring Presence} Your \glossterm{allies} within a \arealarge \glossterm{emanation} from you gain a \plus2 bonus to Mental defense.
 
-            \rankline
-            \featlevel{13} The damage bonus increases to \plus2d.
-            \featlevel{19} The damage bonus increases to \plus3d.
-        \end{freeability}
+        \ff[13]{Brave Leader} You are immune to being \glossterm{shaken}, \glossterm{frightened}, and \glossterm{panicked}.
 
-        \ff[10]{Greater Inspiring Leader} The bonus from your \textit{inspiring leader} ability increases to \plus2.
+        \ff[16]{Sustaining Presence} Your \glossterm{allies} within a \arealarge \glossterm{emanation} from you gain a \plus2 bonus to \glossterm{wound rolls}.
 
-        \ff[13]{Commanding Presence} You gain a \plus2 bonus to the Intimidate and Persuasion skills.
-
-        \ff[16]{todo} 
-
-        \ff[19]{Greater Inspiring Leader} The bonus from your \textit{inspiring leader} ability increases to \plus2.
+        \ff[19]{Supreme Presence} The area of your \textit{presence} abilities from this feat increases to a \areahuge \glossterm{emanation} from you.
     \end{feat}
 
     \begin{feat}{Linguistics Specialization}{Skill}
@@ -990,38 +964,56 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \end{feat}
 
     \begin{feat}{Martial Training}{Combat}
-
-        \ff[1]{Equipment Training} You choose one of the following benefits.
-        \begin{itemize}
-            \item Proficiency with a category of \glossterm{armor}: light, medium, or heavy body armor, or shields.
-                You must be proficient with light armor to gain proficiency with medium armor, and you must be proficient with medium armor to gain proficiency with heavy armor.
-            \item Proficiency with an additional \glossterm{weapon group} of your choice.
-            \item Proficiency with \glossterm{exotic weapons} from a weapon group of your choice that you are already proficient with.
-        \end{itemize}
-
-        \ff[4]{Trained Strike} You can use the \textit{trained strike} ability as a standard action.
+        \ff[1]{Trained Strike} You can use the \textit{trained strike} ability as a standard action.
         \begin{freeability}{Trained Strike}
             You make a \glossterm{strike} with a \plus1 bonus to \glossterm{accuracy}.
 
             \rankline
-            \featlevel{10} The accuracy bonus increases to \plus2.
-            \featlevel{16} The accuracy bonus increases to \plus3.
+            \featlevel{7} The accuracy bonus increases to \plus2.
+            \featlevel{13} The accuracy bonus increases to \plus3.
+            \featlevel{19} The accuracy bonus increases to \plus4.
         \end{freeability}
 
-        \ff[7]{Equipment Training} You gain an additional \textit{equipment training} ability of your choice.
-        In addition, you add a new ability to the set of abilities you can choose with your \textit{equipment training}.
+        \ff[4]{Equipment Training} You choose one of the following benefits.
         \begin{itemize}
+            \item You gain proficiency with a category of \glossterm{armor}: light, medium, or heavy body armor, or shields.
+                You must be proficient with light armor to gain proficiency with medium armor, and you must be proficient with medium armor to gain proficiency with heavy armor.
+            \item You gain proficiency with an additional \glossterm{weapon group} of your choice.
+            \item You gain proficiency with \glossterm{exotic weapons} from a weapon group of your choice that you are already proficient with.
             \item You reduce the \glossterm{encumbrance} of \glossterm{body armor} you wear by 1.
                 If you choose this ability multiple times, its effects stack.
         \end{itemize}
 
-        \ff[10]{Practiced Defense} You gain a \plus1 bonus to Armor defense.
+        \ff[7]{Martial Power} You gain a \plus1 bonus to \glossterm{power} with \glossterm{mundane} abilities.
 
-        \ff[13]{Equipment Training} You gain an additional \textit{equipment training} ability of your choice.
+        \ff[10]{Equipment Training} You gain an additional \textit{equipment training} ability of your choice.
 
-        \ff[16]{Practiced Accuracy} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{mundane} abilities.
+        \ff[13]{Practiced Accuracy} You gain a \plus1 bonus to \glossterm{accuracy}.
 
-        \ff[19]{Equipment Training} You gain an additional \textit{equipment training} ability of your choice.
+        \ff[16]{Equipment Training} You gain an additional \textit{equipment training} ability of your choice.
+
+        \ff[19]{Greater Martial Power} The bonus from your \textit{martial power} ability increases to \plus2.
+    \end{feat}
+
+    \begin{feat}{Mental Magic}{Casting, Magical}
+        \featpre Spellcasting ability, Willpower 2.
+
+        \ff[1]{Mental Casting} You connect to the magical essence of the universe differently from other spellcasters, allowing you to cast spells with purely mental effort.
+        None of your spells have \glossterm{somatic components} or \glossterm{verbal components}.
+
+        \ff[4]{Focused Mind} You reduce your \glossterm{focus penalty} by 1.
+
+        \ff[7]{Innate Creativity} You learn an additional \glossterm{spell}.
+        When you gain access to new spell levels, you can change which spell you know.
+
+        \ff[10]{Fractured Mind} Once per round, you can sustain an ability with the \glossterm{Sustain} (minor) tag as a \glossterm{free action}.
+
+        \ff[13]{Focused Mind} The penalty reduction from your \textit{innate focus} ability increases to 2.
+
+        \ff[16]{Greater Innate Creativity} You learn an additional \glossterm{spell}.
+        When you gain access to new spell levels, you can change which spell you know.
+
+        \ff[19]{Greater Fractured Mind} You can use your \textit{fractured mind} ability on abilities with the \glossterm{Sustain} (standard) tag in addition to the \glossterm{Sustain} (minor) tag.
     \end{feat}
 
     \begin{feat}{Metacaster}{Casting, Magical}
@@ -1033,7 +1025,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         % TODO: wording
         If you have multiple \glossterm{magic sources}, you can cast spells from that sphere with any magic source that the mystic sphere belongs to.
 
-        \ff[4]{Blend Damage} Whenever you cast a spell that deals damage, you can change the type of damage it deals based on the \glossterm{mystic spheres} you have access to.
+        \ff[4]{Alter Damage} Whenever you cast a spell that deals damage, you can change the type of damage it deals based on the \glossterm{mystic spheres} you have access to.
         You can use this ability to affect both spells that deal damage directly and spells that cause effects or summon creatures that later deal damage.
 
         The damage types for each mystic sphere are given in \trefnp{Mystic Sphere Damage Types}.
@@ -1075,7 +1067,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         You can apply that augment to spells you cast and rituals you perform.
         When you gain access to a new spell level, you may change which augments you know.
 
-        \ff[10]{Blend Conditions} When you cast a spell that inflicts a \glossterm{condition} with a standard effect, you can change that effect to another effect of the same rank.
+        \ff[10]{Alter Conditions} When you cast a spell that inflicts a \glossterm{condition} with a standard effect, you can change that effect to another effect of the same rank.
         Condition effect ranks are described in \trefnp{Condition Effect Ranks}.
         To change the spell to inflict a particular effect, you must know another spell that inflicts that effect.
         \begin{dtable}
@@ -1091,11 +1083,9 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[13]{Augment} You learn an additional \glossterm{augment}.
 
-        \ff[16]{Greater Blend Damage} When you cast a spell that deals damage, you can change the damage type to have any combination of damage types provided by the \glossterm{mystic spheres} you have access to and the original spell's damage type.
+        \ff[16]{Blend Damage} When you cast a spell that deals damage, you can change the damage type to have any combination of damage types provided by the \glossterm{mystic spheres} you have access to and the original spell's damage type.
         For example, if you cast a spell that deals fire damage and you have access to the \textit{cryomancy} \glossterm{mystic sphere}, you can change that spell's damage type to be either fire damage, cold damage, or both fire and cold damage simultaneously.
         You cannot remove a spell's damage type entirely.
-
-        In addition, you gain a \plus1d bonus to damage with spells that deal damage with more than one type.
 
         \ff[19]{Augment} You learn an additional \glossterm{augment}.
     \end{feat}
@@ -1130,36 +1120,40 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{feat}{Mystic Archer}{Casting}
         \featpre Ability to cast a spell.
 
-        \ff[1]{Guided Projectiles}[Magical] Your attacks with projectiles ignore \glossterm{cover}, but not \glossterm{total cover}.
+        \ff[1]{Imbued Shot} You can use the \textit{imbued shot} ability as a standard action.
+        \begin{freeability}{Imbued Shot}[\glossterm{Magical}]
+            Make a ranged \glossterm{magical strike} with a \glossterm{projectile weapon} you wield.
 
-        \ff[4]{Imbue Projectile} When you cast a spell that affects a single target and does not have the \glossterm{AP}, \glossterm{Attune}, or \glossterm{Sustain} tags,
+            \rankline
+            \featlevel{7} You gain a \plus1 bonus to \glossterm{accuracy} with the strike.
+            \featlevel{13} The accuracy bonus increases to \plus2.
+            \featlevel{19} The accuracy bonus increases to \plus3.
+        \end{freeability}
+
+        \ff[4]{Guided Projectiles}[Magical] Your attacks with projectiles ignore \glossterm{cover}, but not \glossterm{total cover}.
+
+        \ff[7]{Imbue Projectile} When you cast a spell that affects a single target and does not have the \glossterm{AP}, \glossterm{Attune}, or \glossterm{Sustain} tags,
             you can use the \textit{imbue projectile} ability.
-            You can use the \textit{imbued shot} ability as a standard action to trigger the imbued spell.
         \begin{attuneability}{Imbue Projectile}[\glossterm{Attune} (self), \glossterm{Magical}]
             The spell does not have its effect immediately.
             Instead, its power is imbued in a \glossterm{projectile} you hold.
-        \end{attuneability}
 
-        \begin{freeability}{Imbued Shot}
-            As a standard action, you can make a ranged \glossterm{strike} using a projectile you have imbued with the \textit{imbued projectile} or \textit{imbue detonating projectile} ability.
-            If you do, the spell affects the target of the strike.
-
+            If you use your \textit{imbued shot} ability to attack with that projectile, the spell takes effect on the target of your \textit{imbued shot} ability.
             After the spell takes effect this way, your attunement to the ability that imbued that projectile ends.
             The next time you take a \glossterm{short rest}, you regain the \glossterm{action point} you spent to attune to that ability.
-        \end{freeability}
+        \end{attuneability}
 
-        \ff[7]{Missile Storm} You can use the \textit{missile storm} ability as a standard action.
-        \begin{freeability}{Missile Storm}[\glossterm{Magical}]
-            Make a ranged \glossterm{magical strike} with a \glossterm{projectile weapon} you wield.
-            You take a \minus1 penalty to \glossterm{accuracy} with the strike.
-            The strike targets up to five creatures or objects within one \glossterm{range increment} of you with that weapon, except for creatures adjacent to you.
+        % \ff[7]{Missile Storm} You can use the \textit{missile storm} ability as a standard action.
+        % \begin{freeability}{Missile Storm}[\glossterm{Magical}]
+        %     Make a ranged \glossterm{magical strike} with a \glossterm{projectile weapon} you wield.
+        %     The strike targets up to five creatures or objects within one \glossterm{range increment} of you with that weapon, except for creatures adjacent to you.
 
-            \rankline
-            \featlevel{13} The strike targets up to ten creatures or objects within range.
-            \featlevel{19} The strike targets any number of creatures or objects within range.
-        \end{freeability}
+        %     \rankline
+        %     \featlevel{13} The strike targets up to ten creatures or objects within range.
+        %     \featlevel{19} The strike targets any number of creatures or objects within range.
+        % \end{freeability}
 
-        \ff[10]{Phasing Projectiles}[\glossterm{Magical}, \glossterm{Teleportation}] When attacking with projectiles, you can ignore all physical obstacles in single one-foot span.
+        \ff[10]{Phasing Projectiles}[\glossterm{Magical}] When attacking with projectiles, you can ignore all physical obstacles in single one-foot span.
         This can allow you to fire projectiles through solid walls, though it does not grant you the ability to see through the wall.
 
         \ff[13]{Imbue Detonating Projectile} When you cast a spell that affects an area and does not have the \glossterm{AP}, \glossterm{Attune}, or \glossterm{Sustain} tags,
@@ -1167,12 +1161,17 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \begin{attuneability}{Imbue Detonating Projectile}[\glossterm{Attune} (self), \glossterm{Magical}]
             The spell does not have its effect immediately.
             Instead, its power is imbued in a \glossterm{projectile} you hold.
+
+            % TODO: clarify how to choose which corner things take effect in
+            If you use your \textit{imbued shot} ability to attack with that projectile, the spell takes effect centered on the target of your \textit{imbued shot} ability.
+            After the spell takes effect this way, your attunement to the ability that imbued that projectile ends.
+            The next time you take a \glossterm{short rest}, you regain the \glossterm{action point} you spent to attune to that ability.
         \end{attuneability}
 
-        \ff[16]{Mystic Precision} You gain a \plus1 bonus to \glossterm{accuracy}.
-
-        \ff[19]{Greater Phasing Projectiles}[\glossterm{Magical}, \glossterm{Teleportation}] Your \textit{phasing projectiles} ability improves, allowing you to ignore obstacles in up to five one-foot spans.
+        \ff[16]{Greater Phasing Projectiles}[\glossterm{Magical}] Your \textit{phasing projectiles} ability improves, allowing you to ignore obstacles in up to five one-foot spans.
         The spans can be contiguous or independent, which can allow you to ignore a single obstacle up to five feet deep.
+
+        \ff[19]{Powerful Imbuement} You gain a \plus2 bonus to \glossterm{power} with spells that you store with your \textit{imbue projectile} and \textit{imbue detonating projectile} abilities.
     \end{feat}
 
     \begin{feat}{Null}{General}
@@ -1183,10 +1182,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         In exchange, you lose the benefits of all \glossterm{magical} abilities you possess.
         In addition, you are unable to \glossterm{attune} to any \glossterm{magical} abilities, such as magic items or spells cast by other creatures.
 
-        \ff[4]{Personal Legacy} You do not gain any legacy item upgrades (see \pcref{Legacy Items}).
-        Instead, each time you would gain a legacy item upgrade, you instead increase your \glossterm{action points} by 1.
-
-        \ff[4]{Sever Magic} You can use the \textit{sever magic} ability as a standard action.
+        \ff[1]{Sever Magic} You can use the \textit{sever magic} ability as a standard action.
         \begin{freeability}{Sever Magic}
             Make a \glossterm{strike}.
 
@@ -1195,9 +1191,13 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \crit If the attack deals damage, the target breaks its attunement to all abilities that it is attuned to other than \glossterm{magic items}.
 
             \rankline
-            \featlevel{10} You gain a \plus1 bonus to \glossterm{accuracy} with the strike.
-            \featlevel{16} The accuracy bonus increases to \plus2.
+            \featlevel{7} You gain a \plus1 bonus to \glossterm{accuracy} with the strike.
+            \featlevel{13} The accuracy bonus increases to \plus2.
+            \featlevel{19} The accuracy bonus increases to \plus2.
         \end{freeability}
+
+        \ff[4]{Personal Legacy} You do not gain any legacy item upgrades (see \pcref{Legacy Items}).
+        Instead, each time you would gain a legacy item upgrade, you instead increase your \glossterm{action points} by 1.
 
         % clarify that it does not affect spells already in progress in the current phase?
         \ff[7]{Disruptive Presence} All enemies within an \areamed radius from you have a 50\% chance to \glossterm{miscast} any spell they cast.
@@ -1210,7 +1210,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
         Items with an intrinsic \glossterm{power} at least 10 higher than your level are immune to this effect.
         The \glossterm{power} of the item's wielder, if any, does not affect whether the item can be affected in this way.
 
-        \ff[13]{Mundane Precision} You gain a \plus1 bonus to \glossterm{accuracy}.
+        \ff[13]{Supreme Nullify Magic} The bonus to defenses from your \textit{nullify magic} ability increases to \plus8.
 
         \ff[16]{Greater Disruptive Presence} Your \textit{disruptive presence} ability affects all enemies in a \arealarge radius \glossterm{emanation} from you.
 
@@ -1299,7 +1299,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
             \featlevel{16} You may target any number of creatures within range.
         \end{freeability}
 
-        \ff[7]{todo}
+        \ff[7]{First Impressions} When you first meet creatures, you have an Ally relationship instead of a Just Met relationship.
+        This does not improve your relationship with creatures who already have an impression of you, whether positive or negative.
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
@@ -1321,24 +1322,14 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus9.
 
-        \ff[19]{todo}
+        \ff[19]{Greater First Impressions} When you first meet creatures, you have a Friend relationship instead of a Just Met relationship
+        This does not improve your relationship with creatures who already have an impression of you, whether positive or negative.
     \end{feat}
 
-    \begin{feat}{Precognition}{Combat}
+    \begin{feat}{Precognition}{General}
         \featpre Starting Intelligence of 2.
 
-        \ff[1]{Precognitive Strike} You can use the \textit{precognitive strike} ability as a standard action.
-        \begin{freeability}{Precognitive Strike}
-            Make a \glossterm{strike}.
-            You can use your Intelligence in place of your Perception and Strength to determine your accuracy and damage, respectively.
-
-            \rankline
-            \featlevel{7} You gain a \plus1 bonus to \glossterm{accuracy} with the strike.
-            \featlevel{13} The accuracy bonus increases to \plus2.
-            \featlevel{19} You also compare your attack result against the target's Mental defense.
-            On a hit, you gain insight into the actions that creature intends to take during each phase until the end of the next round.
-            This insight gives you the same information as the insight from your \textit{combat prediction} ability.
-        \end{freeability}
+        \ff[1]{Precognitive Precision} You can use your Intelligence in place of your Perception to determine your \glossterm{accuracy} with \glossterm{mundane} abilities.
 
         \ff[4]{Combat Prediction} You can use the \textit{combat prediction} ability as a standard action.
         \begin{freeability}{Combat Prediction}
@@ -1362,17 +1353,17 @@ Feats also make the system more mechanically complex, so they are not necessaril
         This insight gives you the same information as the insight from your \textit{combat prediction} ability.
         You choose your actions simultaneously with any other creatures who have a similar ability.
 
-        \ff[13]{Precognitive Defense} You gain a \plus1 bonus to Armor defense.
+        \ff[13]{Greater Precognitive Precision} You gain a \plus1 bonus to \glossterm{accuracy}.
 
         \ff[16]{Greater Precognitive Reaction} The bonuses from your \textit{precognitive reaction} ability increase to \plus4.
 
-        \ff[19]{Greater Foresight} The range of your \textit{foresight} ability increases to \rngmed range.
+        \ff[19]{Greater Foresight} The range of your \textit{foresight} ability increases to \rnglong range.
     \end{feat}
 
     \begin{feat}{Regenerator}{General}
         \featpre Starting Constitution of 2.
 
-        \ff[1]{Diehard} You gain a \plus1 bonus to \glossterm{wound rolls}.
+        \ff[1]{Diehard} You gain a \plus2 bonus to \glossterm{wound rolls}.
 
         \ff[4]{Regenerative Rest} When you take a \glossterm{short rest}, you can spend an \glossterm{action point}. If you do, you heal one \glossterm{vital wound}.
 
@@ -1380,15 +1371,19 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \begin{freeability}{Regenerative Recovery}
             You regain a \glossterm{hit point}.
             After you use this ability a number of times equal to your starting Constitution, you cannot use it again until you take a \glossterm{short rest}.
+
+            \rankline
+            \featlevel{13} You regain an additional \glossterm{hit point}.
+            \featlevel{19} You may use this ability a number of times equal to twice your starting Constitution.
         \end{freeability}
 
-        \ff[10]{Greater Diehard} The bonus from your \textit{diehard} ability increases to \plus2.
+        \ff[10]{Greater Diehard} The bonus from your \textit{diehard} ability increases to \plus4.
 
         \ff[13]{Greater Regenerative Rest} Your \textit{regenerative rest} ability removes an additional \glossterm{vital wound}.
 
-        \ff[16]{Greater Regenerative Recovery} Your \textit{regenerative recovery} ability causes you to regain an additional \glossterm{hit point}.
+        \ff[16]{Enduring Constitution} You gain a \plus1 bonus to your starting Constitution.
 
-        \ff[19]{Supreme Diehard} The bonus from your \textit{diehard} ability increases to \plus3.
+        \ff[19]{Supreme Diehard} The bonus from your \textit{diehard} ability increases to \plus6.
     \end{feat}
 
     \begin{feat}{Ride Specialization}{Skill}
@@ -1422,7 +1417,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[7]{Trample} If you use the \textit{overrun} ability to move through a creature, it takes bludgeoning \glossterm{standard damage} \minus2d.
 
-        \ff[10]{Greater Brute Force} The accuracy bonus from your \textit{brute force} ability increases to \plus3.
+        \ff[10]{Greater Brute Force} The accuracy bonus from your \textit{brute force} ability increases to \plus4.
 
         \ff[13]{Crush} You gain a \plus1d bonus to damage with your \textit{wall slam} and \textit{trample} abilities.
 
@@ -1430,7 +1425,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[19]{Greater Crush} The damage bonuses from your \textit{crush} ability increase to \plus2d.
 
-        \ff[19]{Supreme Brute Force} The accuracy bonus from your \textit{brute force} ability increases to \plus4.
+        \ff[19]{Supreme Brute Force} The accuracy bonus from your \textit{brute force} ability increases to \plus6.
     \end{feat}
 
     \begin{feat}{Sense Motive Specialization}{Skill}
@@ -1438,7 +1433,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Specialization} You gain a \plus3 bonus to the Sense Motive skill.
 
-        \ff[4]{Rapid Social Assessment} When you make a social assessment with only one round of observation instead of a full minute, the penalty is reduced by 5 (see \pcref{Social Assessment}).
+        \ff[4]{Social Intuition} You take no penalty for making a social assessment ability after only a single round of observation (see \pcref{Social Assessment}).
 
         \ff[7]{Read Mind}[Magical] You can use the \textit{read mind} ability as a standard action.
         \begin{freeability}{Read Mind}[\glossterm{Emotion}, \glossterm{Sustain} (minor)]
@@ -1456,11 +1451,12 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[13]{Immediate Social Assessment} When you make a social assessment with only one round of observation instead of a full minute, you take no penalty (see \pcref{Social Assessment}).
+        \ff[13]{Truthsense} Whenever a creature within a \arealarge radius \glossterm{emanation} from you that you can hear and see speaks the truth with no attempt at evasion, concealment, or creative wording, you automatically recognize that.
+        This ability does not work if the creature is using the Bluff skill in any way, even if it is speaking the truth.
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus9.
 
-        \ff[19]{todo}
+        \ff[19]{Greater Truthsense} The area of your \textit{truthsense} ability increases to a 200 foot radius.
     \end{feat}
 
     \begin{feat}{Sleight of Hand Specialization}{Skill}
@@ -2311,7 +2307,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[4]{Durability} You gain an additional \glossterm{hit point}.
 
-        \ff[7]{Ailment Tolerance} You are immune to being \glossterm{sickened}.
+        \ff[7]{Ailment Tolerance} You are immune to being \glossterm{sickened} and \glossterm{nauseated}.
 
         \ff[10]{Greater Fortified Body} The defense bonus from your \textit{fortified body} ability increases to \plus3.
         In addition, you need half the normal amount of rest and sleep each day to function normally.
@@ -2320,9 +2316,11 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[13]{Greater Durability} The number of additional \glossterm{hit points} from your \textit{durability} ability increases to two.
 
-        \ff[16]{Greater Ailment Tolerance} You are immune to being \glossterm{nauseated}.
+        \ff[16]{Greater Ailment Tolerance} You are immune to poisons and diseases.
 
         \ff[19]{Greater Fortified Body} The defense bonus from your \textit{fortified body} ability increases to \plus4.
+        In addition, the amount of rest and sleep you need each day is reduced to a quarter of the normal value.
+        For example, a human would only need two hours of sleep per night.
     \end{feat}
 
     \begin{feat}{Two-Weapon Fighting}{Combat}
