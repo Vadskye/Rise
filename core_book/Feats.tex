@@ -2221,8 +2221,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus9.
 
-        \ff[19]{Greater Movement Tolerance} The penalty reduction from your \textit{movement tolerance} ability increases to 10.
-        This allows you to move at full speed without penalty.
+        \ff[19]{Greater Hide in Plain Sight} Creatures observing you while you try to hide gain a \plus5 bonus to checks to notice you instead of a \plus10 bonus.
     \end{feat}
 
     \begin{feat}{Survival Specialization}{Skill}
@@ -2235,8 +2234,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[7]{Rapid Tracker}
         While following trails with the \textit{track} ability, you can move at your normal speed while following tracks without taking the normal \minus5 penalty.
-        In addition, you can use the ability as a \glossterm{minor action} by taking a \minus10 penalty to the check.
-        This can allow you to move twice in the same round.
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
@@ -2262,18 +2259,18 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[1]{Rapid Movement} You gain a \plus10 foot bonus to your \glossterm{base speed}.
 
-        \ff[4]{Sprinter} When you use the \textit{sprint} ability, you move at triple your movement speed.
+        \ff[4]{Sprinter} When you use the \textit{sprint} ability, you move can move up to triple your movement speed.
 
         \ff[7]{Wall Runner} You gain a \plus5 bonus to checks with the \textit{wallrun} ability (see \pcref{Wallrun}).
         In addition, you can make a Dexterity check in place of a Climb check to use that ability.
 
-        \ff[10]{Water Runner} When you use the \textit{sprint} ability, you can move on water and similar liquids as if they were solid ground.
+        \ff[10]{Water Runner} During your movement with the \textit{sprint} ability, you can move on water and similar liquids as if they were solid ground.
 
         \ff[13]{Greater Rapid Movement} The speed bonus from your \textit{rapid movement} ability increases to \plus20 feet.
 
-        \ff[16]{Greater Sprinter} When you use the \textit{sprint} ability, you move at quadruple your movement speed.
+        \ff[16]{Greater Sprinter} When you use the \textit{sprint} ability, you can move up to five times your movement speed.
 
-        \ff[19]{Cloud Runner} When you use the \textit{sprint} ability, you can move on dense fog and similar gaseous substances as if they were solid ground.
+        \ff[19]{Cloud Runner} During your movement with the \textit{sprint} ability, you can move on dense fog and similar gaseous substances as if they were solid ground.
     \end{feat}
 
     \begin{feat}{Swim Specialization}{Skill}
@@ -2295,8 +2292,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[19]{Earth Swimmer} You can swim through loose earth and dirt as if it were water.
         Your swim speed is halved while moving in this way.
-
-        \ff[20]{Greater Swim Speed} You gain a \plus30 foot bonus to your swim speed, up to a maximum swim speed equal to twice your \glossterm{base speed}.
     \end{feat}
 
     \begin{feat}{Toughness}{General}
@@ -2326,18 +2321,19 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{feat}{Two-Weapon Fighting}{Combat}
         \featpre Starting Dexterity of 2.
 
-        \ff[1]{Two-Weapon Defense} While wielding two melee weapons, you gain a \plus1 bonus to Armor defense.
-        This bonus is considered to come from a shield, and does not stack with the benefits of using a physical shield.
-
-        \ff[4]{Rend} You can use the \textit{rend} ability as a standard action.
+        \ff[1]{Rend} You can use the \textit{rend} ability as a standard action.
         \begin{freeability}{Rend}
             Make a melee \glossterm{strike} using two weapons.
             If you hit with the \glossterm{attack roll} for both weapons, you gain a \plus2d bonus to damage with the strike.
 
             \rankline
-            \featlevel{10} The damage bonus increases to \plus3d.
-            \featlevel{16} The damage bonus increases to \plus4d.
+            \featlevel{7} The damage bonus increases to \plus3d.
+            \featlevel{13} The damage bonus increases to \plus4d.
+            \featlevel{19} The damage bonus increases to \plus5d.
         \end{freeability}
+
+        \ff[4]{Two-Weapon Defense} While wielding two melee weapons, you gain a \plus1 bonus to Armor defense.
+        This bonus is considered to come from a shield, and does not stack with the benefits of using a physical shield.
 
         \ff[7]{Dual Precision} When you make a \glossterm{strike} using two weapons, your \glossterm{attack rolls} \glossterm{explode} on either a 9 or a 10.
         This does not affect attack rolls that have already \glossterm{exploded}.
@@ -2358,32 +2354,35 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \begin{feat}{Whirlwind Warrior}{Combat}
         \featpres Starting Dexterity of 2, starting Perception of 1.
 
-        \ff[1]{Eye of the Storm} You gain a \plus1 bonus to \glossterm{overwhelm resistance}.
-
-        \ff[4]{Whirlwind Spin} You can use the \textit{whirlwind spin} ability as a standard action.
-        \begin{freeability}{Whirlwind Spin}
-            Make a melee \glossterm{strike} with a slashing weapon.
-            The strike targets any number of creatures you \glossterm{threaten}.
-            You take a \minus1 penalty to \glossterm{accuracy} with the strike.
+        % TODO: this would be better if it hit threatened people, but increased weapon range is too common
+        \ff[1]{Cyclone} You can use the \textit{cyclone} ability as a standard action.
+        \begin{freeability}{Cyclone}[\glossterm{Sustain} (standard)]
+            When you use this ability, make a melee \glossterm{strike} with a slashing weapon.
+            The strike targets any number of creatures adjacent to you.
+            For the duration of this ability, you move at half speed.
+            Whenever you sustain this ability, you can move and make a melee \glossterm{strike} with a slashing weapon.
+            The strike targets any number of creatures adjacent to you at any point during your movement.
 
             \rankline
-            \featlevel{10} You gain a \plus1d bonus to damage with the strike.
-            \featlevel{16} You can move up to 5 feet when you use this ability.
-            The strike targets all creatures you threaten at any point in your movement.
+            \featlevel{7} You gain a \plus1d bonus to damage with the strike.
+            \featlevel{13} The damage bonus increases to \plus2d.
+            \featlevel{19} The damage bonus increases to \plus3d.
         \end{freeability}
+
+        \ff[4]{Wind Dance} You gain a \plus1 bonus to Armor defense.
 
         \ff[7]{Unfettered Movement} During each phase, you may move through one creature's space during movement.
         You treat its space as \glossterm{difficult terrain}.
         After moving through that creature's space, other creatures block you as normal for the remainder of your movement.
         Certain unusual creatures that occupy their entire space, such as gelatinous cubes, may be immune to this ability.
 
-        \ff[10]{todo}
+        \ff[10]{Eye of the Storm} You gain a \plus1 bonus to \glossterm{overwhelm resistance}.
 
-        \ff[13]{Greater Eye of the Storm} The bonus from your \textit{eye of the storm} ability increases to \plus2.
+        \ff[13]{Greater Wind Dance} The bonus from your \textit{wind dance} ability increases to \plus2.
 
-        \ff[16]{todo}
+        \ff[16]{Greater Unfettered Movement} Using your \textit{unfettered movement} ability does not cause you to move at half speed while in the creature's space.
 
-        \ff[19]{Greater Unfettered Movement} Using your \textit{unfettered movement} ability does not cause you to move at half speed while in the creature's space.
+        \ff[19]{Greater Eye of the Storm} The bonus from your \textit{eye of the storm} ability increases to \plus2.
     \end{feat}
 
 \section{Other Feat Rules}
