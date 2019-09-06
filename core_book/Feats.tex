@@ -1132,15 +1132,16 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[4]{Guided Projectiles}[Magical] Your attacks with projectiles ignore \glossterm{cover}, but not \glossterm{total cover}.
 
-        \ff[7]{Imbue Projectile} When you cast a spell that affects a single target and does not have the \glossterm{AP}, \glossterm{Attune}, or \glossterm{Sustain} tags,
+        \ff[7]{Imbue Projectile} When you cast a spell that does not have the \glossterm{AP}, \glossterm{Attune}, or \glossterm{Sustain} tags,
             you can use the \textit{imbue projectile} ability.
         \begin{attuneability}{Imbue Projectile}[\glossterm{Attune} (self), \glossterm{Magical}]
             The spell does not have its effect immediately.
             Instead, its power is imbued in a \glossterm{projectile} you hold.
+            An individual projectile can only be imbued with this ability once.
 
-            If you use your \textit{imbued shot} ability to attack with that projectile, the spell takes effect on the target of your \textit{imbued shot} ability.
-            After the spell takes effect this way, your attunement to the ability that imbued that projectile ends.
-            The next time you take a \glossterm{short rest}, you regain the \glossterm{action point} you spent to attune to that ability.
+            When you use your \textit{imbued shot} ability to attack with that projectile, the spell takes effect on the target of your \textit{imbued shot} ability.
+            After the spell takes effect this way, your attunement to this ability ends.
+            The next time you take a \glossterm{short rest}, you regain the \glossterm{action point} you spent to attune to this ability.
         \end{attuneability}
 
         % \ff[7]{Missile Storm} You can use the \textit{missile storm} ability as a standard action.
@@ -1156,22 +1157,12 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \ff[10]{Phasing Projectiles}[\glossterm{Magical}] When attacking with projectiles, you can ignore all physical obstacles in single one-foot span.
         This can allow you to fire projectiles through solid walls, though it does not grant you the ability to see through the wall.
 
-        \ff[13]{Imbue Detonating Projectile} When you cast a spell that affects an area and does not have the \glossterm{AP}, \glossterm{Attune}, or \glossterm{Sustain} tags,
-            you can use the \textit{imbue detonating projectile} ability.
-        \begin{attuneability}{Imbue Detonating Projectile}[\glossterm{Attune} (self), \glossterm{Magical}]
-            The spell does not have its effect immediately.
-            Instead, its power is imbued in a \glossterm{projectile} you hold.
-
-            % TODO: clarify how to choose which corner things take effect in
-            If you use your \textit{imbued shot} ability to attack with that projectile, the spell takes effect centered on the target of your \textit{imbued shot} ability.
-            After the spell takes effect this way, your attunement to the ability that imbued that projectile ends.
-            The next time you take a \glossterm{short rest}, you regain the \glossterm{action point} you spent to attune to that ability.
-        \end{attuneability}
+        \ff[13]{Imbued Connection} You gain a \plus1 bonus to \glossterm{accuracy} with spells that you store with your \textit{imbue projectile} ability.
 
         \ff[16]{Greater Phasing Projectiles}[\glossterm{Magical}] Your \textit{phasing projectiles} ability improves, allowing you to ignore obstacles in up to five one-foot spans.
         The spans can be contiguous or independent, which can allow you to ignore a single obstacle up to five feet deep.
 
-        \ff[19]{Powerful Imbuement} You gain a \plus2 bonus to \glossterm{power} with spells that you store with your \textit{imbue projectile} and \textit{imbue detonating projectile} abilities.
+        \ff[19]{Greater Imbued Connection} The bonus from your \textit{imbued connection} ability increases to \plus2.
     \end{feat}
 
     \begin{feat}{Null}{General}
@@ -1486,24 +1477,29 @@ Feats also make the system more mechanically complex, so they are not necessaril
         \featpre Starting Perception of 2.
 
         \ff[1]{Aim} You can use the \textit{aim} ability as a standard action.
-        \begin{freeability}{Aim}[\glossterm{Sustain} (minor)]
+        \begin{freeability}{Aim}[\glossterm{Focus}, \glossterm{Sustain} (minor)]
             Choose a creature or object within line of sight.
-            You gain a \plus1 bonus to accuracy against the target.
+            You gain a \plus2 bonus to accuracy against the target.
 
             If you lose sight of the target for a full round, this effect ends.
+
+            \rankline
+            \featlevel{7} You also gain a \plus4 bonus to \glossterm{power} against the target if it is \glossterm{unaware} of you.
+            \featlevel{13} The \glossterm{accuracy} bonus increases to \plus3.
+            \featlevel{19} The \glossterm{power} bonus increases to \plus8.
         \end{freeability}
 
-        \ff[4]{Distance Tolerance} You reduce your accuracy penalties from \glossterm{range increments} by 2.
+        \ff[4]{Distance Tolerance} You reduce your accuracy penalties from \glossterm{range increments} by 1.
 
-        \ff[7]{Sniper Shot} You gain a \plus4 bonus to \glossterm{power} against \unaware creatures that are affected by your \textit{aim} ability.
+        \ff[7]{Precise Shot} You ignore \glossterm{cover} (but not \glossterm{total cover}) with ranged attacks.
 
-        \ff[10]{Greater Aim} The bonus from your \textit{aim} ability increases to \plus2.
+        \ff[10]{Greater Distance Tolerance} The penalty reduction from your \textit{distance tolerance} ability increases to 2.
 
-        \ff[13]{Greater Distance Tolerance} The penalty reduction from your \textit{distance tolerance} ability increases to 4.
+        \ff[13]{Greater Precise Shot} You ignore \glossterm{concealment} with ranged attacks.
 
-        \ff[16]{Supreme Aim} The bonus from your \textit{aim} ability increases to \plus3.
+        \ff[16]{Supreme Distance Tolerance} The penalty reduction from your \textit{distance tolerance} ability increases to 3.
 
-        \ff[19]{Greater Sniper Shot} The bonus from your \textit{sniper shot} ability increases to \plus8.
+        \ff[19]{Sniper's Precision} You gain a \plus1 bonus to \glossterm{accuracy}.
     \end{feat}
 
     \begin{feat}{Spellcraft Specialization}{Skill}
@@ -1541,44 +1537,48 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
         \ff[10]{Greater Specialization} The bonus from your \textit{specialization} ability increases to \plus6.
 
-        \ff[13]{Mystic Tolerance} You gain a \plus1 bonus to Fortitude and Mental defense.
+        \ff[13]{Mystic Power} You gain a \plus1 bonus \glossterm{power} with \glossterm{magical} abilities.
 
         \ff[16]{Supreme Specialization} The bonus from your \textit{specialization} ability increases to \plus9.
 
-        \ff[19]{Greater Mystic Tolerance}[Magical] The defense bonus from your \textit{mystic tolerance} ability increases to \plus2.
+        \ff[19]{Greater Mystic Power}[Magical] The bonus from your \textit{mystic power} ability increases to \plus2.
     \end{feat}
 
     \begin{feat}{Spellsword}{Spell}
         \featpre Ability to cast a spell.
 
-        \ff[1]{Combat Focus} You reduce your \glossterm{focus penalties} by 1.
+        \ff[1]{Imbued Blow} You can use the \textit{imbued blow} ability as a standard action.
+        \begin{freeability}{Imbued Blow}[\glossterm{Magical}]
+            Make a melee \glossterm{magical strike}.
 
-        \ff[4]{Imbue Weapon} When you cast a spell that affects a single target and does not have the \glossterm{AP}, \glossterm{Attune}, \glossterm{Sustain} tags,
+            \rankline
+            \featlevel{7} You gain a \plus1 bonus to \glossterm{accuracy} with the strike.
+            \featlevel{13} The accuracy bonus increases to \plus2.
+            \featlevel{19} The accuracy bonus increases to \plus3.
+        \end{freeability}
+
+        \ff[4]{Spellsword Conduit}[\glossterm{Magical}] You can cast spells using a melee weapon as if it were an implement (see \pcref{Implements}).
+        When you do, you reduce your \glossterm{focus penalty} by 1.
+
+        \ff[7]{Imbue Weapon} When you cast a spell that does not have the \glossterm{AP}, \glossterm{Attune}, or \glossterm{Sustain} tags,
             you can use the \textit{imbue weapon} ability.
-            You can use the \textit{imbued strike} ability as a standard action to trigger the imbued spell.
         \begin{attuneability}{Imbue Weapon}[\glossterm{Attune} (self), \glossterm{Magical}]
             The spell does not have its effect immediately.
             Instead, its power is imbued in a melee weapon you hold.
+            An individual weapon can only be imbued with this ability once.
+
+            When you use your \textit{imbued blow} ability to attack with that weapon, the spell takes effect on the target of your \textit{imbued blow} ability.
+            After the spell takes effect this way, your attunement to this ability ends.
+            The next time you take a \glossterm{short rest}, you regain the \glossterm{action point} you spent to attune to this ability.
         \end{attuneability}
 
-        \begin{freeability}{Imbued Strike}
-            As a standard action, you can make a melee \glossterm{strike} using a weapon you have imbued with the \textit{imbue weapon} ability.
-            If you do, the spell affects the target of the strike.
+        \ff[10]{Greater Spellsword Conduit}[\glossterm{Magical}] The penalty reduction from your \textit{spellsword conduit} ability increases to 2.
 
-            After the spell takes effect this way, your attunement to the ability that imbued that weapon ends.
-            The next time you take a \glossterm{short rest}, you regain the \glossterm{action point} you spent to attune to that ability.
-        \end{freeability}
+        \ff[13]{Powerful Imbuement} You gain a \plus2 bonus to \glossterm{power} with spells that you store with your \textit{imbue projectile} ability.
 
-        \ff[7]{Spellsword Conduit}[Magical] You can cast spells using a melee weapon as if it were an implement (see \pcref{Implements}).
-        When you do, you gain a \plus1 bonus to \glossterm{accuracy} with that weapon until the end of the next round.
+        \ff[16]{Greater Spellsword Conduit}[Magical] The penalty reduction from your \textit{spellsword conduit} ability increases to 3.
 
-        \ff[10]{Greater Combat Focus} The penalty reduction from your \textit{combat focus} ability increases to 2.
-
-        \ff[13]{Greater Imbue Weapon}[Magical] You can maintain two separate attunements to your \textit{imbue weapon} ability.
-
-        \ff[16]{Greater Spellsword Conduit}[Magical] The accuracy bonus from your \textit{spellsword conduit} ability increases to \plus2.
-
-        \ff[19]{Supreme Combat Focus} The penalty reduction from your \textit{combat focus} ability increases to 3.
+        \ff[19]{Greater Powerful Imbuement} The bonus from your \textit{powerful imbuement} ability increases to \plus4.
     \end{feat}
 
     \begin{feat}{Spellwarped}{General, Magical}
