@@ -146,9 +146,9 @@ def generate_implements():
         level=6,
         material_type='Staff',
         description="""
-            You reduce your \\glossterm<focus penalties> by 1.
+            You reduce your \\glossterm<focus penalty> by 1.
         """,
-        short_description="Reduces \\glossterm<focus penalties> by 1",
+        short_description="Reduces \\glossterm<focus penalty> by 1",
     ))
 
     implements.append(MagicItem(
@@ -156,9 +156,9 @@ def generate_implements():
         level=15,
         material_type='Staff',
         description="""
-            You reduce your \\glossterm<focus penalties> by 2.
+            You reduce your \\glossterm<focus penalty> by 2.
         """,
-        short_description="Reduces \\glossterm<focus penalties> by 2.",
+        short_description="Reduces \\glossterm<focus penalty> by 2.",
     ))
 
     implements.append(MagicItem(
