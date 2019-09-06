@@ -91,13 +91,13 @@ def generate_mystic_spheres():
             Spell('Greater Buffeting Gale', 4, 'Everything in a \\areahuge, 10 ft. wide line from you', """
                 This spell functions like the \\spell<buffeting gale> spell, except that it affects more targets and targets are moved 50 feet instead of 20 feet.
             """, tags=[]),
-            Spell('Windblade', 1, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+            Spell('Windblade', 2, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 Melee weapons wielded by the target gain an additional five feet of \\glossterm<reach>.
                 This has no effect on ranged attacks the target makes.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)']),
-            Spell('Greater Windblade', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
+            Spell('Greater Windblade', 5, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 Melee weapons wielded by the target gain an additional ten feet of \\glossterm<reach>.
 
                 You can cast this spell as a \\glossterm<minor action>.
