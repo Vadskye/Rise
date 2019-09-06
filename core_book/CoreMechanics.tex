@@ -711,7 +711,7 @@ It defines how attributes work and explains how to make attacks in combat.
             % Should this be two size categories larger, or be more dependent on creature anatomy?
             \parhead{Immunities} Creatures at least three size categories larger than you are difficult to fight. You cannot get a \glossterm{critical hit} with melee \glossterm{strikes} or contribute to overwhelm penalties against such creatures. If you can reach a vulnerable point on the creature, such as by flying or by using ranged weapons, you can get critical hits and contribute to overwhelm penalties normally.
 
-        \subsubsection{Arbitrary Modifiers}
+        \subsection{Arbitrary Modifiers}
 
             Circumstances frequently modify your odds of success when making attacks and checks, or when defending yourself from attacks.
             There are two kinds of circumstantial modifiers.
@@ -722,7 +722,7 @@ It defines how attributes work and explains how to make attacks in combat.
             Extraordinary circumstances can potentially have greater modifiers.
             All circumstantial modifiers should be used at the discretion of the GM.\@
 
-        \subsubsection{Overwhelm}\label{Overwhelm}
+        \subsection{Overwhelm}\label{Overwhelm}
             When you are being attacked by multiple foes at once, or by a massive foe that can attack from many directions, you are less able to defend yourself.
             You take penalties to your Armor defense equal to half the combined \glossterm{overwhelm value} of all creatures threatening you, rounded down.
             Among equal sized creatures, this usually means you take a penalty equal to half the number of creatures threatening you.
@@ -758,7 +758,7 @@ It defines how attributes work and explains how to make attacks in combat.
             If you do, you are treated as being \unaware against that creature.
             In exchange, it does not contribute to the number of creatures overwhelming you.
 
-        \subsubsection{Range Increments}\label{Range Increments}
+        \subsection{Range Increments}\label{Range Increments}
             Most physical ranged attacks are less accurate against distant targets.
             This is represented with a \glossterm{range increment} for the attack, which is always measured in feet.
             You take a \minus1 penalty to accuracy with the ranged attack for each full range increment between you and your target.
@@ -807,7 +807,7 @@ It defines how attributes work and explains how to make attacks in combat.
             A creature with total cover cannot be targeted by any attacks.
             Abilities that ignore \glossterm{cover} do not ignore \glossterm{total cover} unless they say otherwise.
 
-        \subsubsection{Concealment}\label{Concealment}
+        \subsection{Concealment}\label{Concealment}
             Concealment represents anything which makes it more difficult to see your target, such as dim lighting.
             A creature or object with concealment from you gains a \plus2 bonus to Armor defense.
             The concealment bonus does not apply if you can't see your opponent (such as if you close your eyes).
@@ -821,16 +821,18 @@ It defines how attributes work and explains how to make attacks in combat.
             If your \glossterm{target square} square is in lighting that provides concealment, the target has concealment.
             Otherwise, it does not.
 
-        \subsubsection{Helpless Defenders}
+        \subsection{Helpless Defenders}
             A helpless creature is completely at an opponent's mercy.
             Its Armor and Reflex defenses are calculated as if it had a Dexterity of \minus10.
             Paralyzed, bound, and unconscious creatures are helpless.
+            % This explicitly doesn't use the seemingly simpler wording of ``this creature is unaware''
+            % because effects that prevent unawareness often shouldn't help helpess creatures.
             Any \glossterm{physical attack} against a helpless creature automatically \glossterm{explodes} on the first die.
 
-        \subsubsection{Invisibility}\label{Invisibility}
-            If it is impossible to see your target, you can't attack him normally. However, you can attack a square that you think he occupies. An attack into a square occupied by an invisible enemy has a 50\% miss chance. If an adjacent invisible creature strikes you, you can automatically identify the square he occupied when he struck you.
+        \subsection{Invisibility}\label{Invisibility}
+            If it is impossible to see your target, you can't attack him normally. However, you can attack a square that you think it occupies. An attack into a square occupied by an invisible enemy has a 50\% miss chance. If an adjacent invisible creature strikes you, you can automatically identify the square it occupied when it struck you.
 
-        \subsubsection{Surprise Attacks}\label{Surprise Attacks}
+        \subsection{Surprise Attacks}\label{Surprise Attacks}
             Sometimes, creatures are not aware that combat is taking place when the combat starts. This most commonly happens with ambushes. Any creature that is not aware of the combat continues taking whatever actions it would normally be taking until it becomes aware of the combat. It is \unaware until that point.
 
     \subsection{Stacking Rules}\label{Stacking Rules}
