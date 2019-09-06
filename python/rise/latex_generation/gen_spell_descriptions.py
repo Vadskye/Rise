@@ -92,15 +92,14 @@ def generate_mystic_spheres():
                 This spell functions like the \\spell<buffeting gale> spell, except that it affects more targets and targets are moved 50 feet instead of 20 feet.
             """, tags=[]),
             Spell('Windblade', 2, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                Melee weapons wielded by the target gain an additional five feet of \\glossterm<reach>.
+                Melee weapons wielded by the target gain +5 foot \\glossterm<magic bonus> to \\glossterm<reach>.
+                Attacks that hit because of this reach deal bludgeoning damage instead of any other damage types.
                 This has no effect on ranged attacks the target makes.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)']),
             Spell('Greater Windblade', 5, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
-                Melee weapons wielded by the target gain an additional ten feet of \\glossterm<reach>.
-
-                You can cast this spell as a \\glossterm<minor action>.
+                This spell functions like the \\textit<windblade> spell, except that the bonus to \\glossterm<reach> increases to +10 feet.
             """, tags=['Attune (target)']),
             Spell('Stormlord', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 This spell functions like the \\spell<wind screen> spell, except that the air also retaliates against creatures that attack the target.
