@@ -233,6 +233,7 @@ It defines how attributes work and explains how to make attacks in combat.
         \subsubsection{Attribute Descriptions}
 
             \parhead{Strength (Str)}\label{Strength}
+            {
                 Strength measures muscle and physical power.
                 It has the following effects:
                 \begin{itemize}
@@ -240,13 +241,15 @@ It defines how attributes work and explains how to make attacks in combat.
                     \item Strength affects Strength-based skills: Climb, Jump, and Swim (see \pcref{Skills}).
                     \item You reduce your \textit{encumbrance} for weight or heavy armor by an amount equal to your starting Strength (minimum 0).
                     \item If your Strength is negative, you take a penalty to all Strength-based skills equal to your Strength.
-                    % TODO: wording
+                        % TODO: wording
                     \item If your Strength is negative, you take a penalty to \glossterm{power} with \glossterm{mundane} abilities equal to your Strength.
                 \end{itemize}
 
                 If you have a high Strength, you can use it to determine your \glossterm{power} with most \glossterm{mundane} abilities, such as \glossterm{strikes} (see \pcref{Power}).
+            }
 
             \parhead{Dexterity (Dex)}\label{Dexterity}
+            {
                 Dexterity measures hand-eye coordination, agility, and reflexes.
                 It has the following effects:
                 \begin{itemize}
@@ -256,8 +259,10 @@ It defines how attributes work and explains how to make attacks in combat.
                 \end{itemize}
 
                 If you have a high Dexterity, you can use it to determine your \glossterm{accuracy} with melee and thrown \glossterm{strikes} using \glossterm{light weapons} (see \pcref{Accuracy}).
+            }
 
             \parhead{Constitution (Con)}\label{Constitution}
+            {
                 Constitution represents your health and stamina.
                 It has the following efects:
                 \begin{itemize}
@@ -265,8 +270,10 @@ It defines how attributes work and explains how to make attacks in combat.
                     \item You gain a bonus (or penalty) to your Fortitude defense equal to your starting Constitution.
                     \item Your Constitution modifies the number of rounds you can hold your breath (see \pcref{Drowning}).
                 \end{itemize}
+            }
 
             \parhead{Intelligence (Int)}\label{Intelligence}
+            {
                 Intelligence represents how well you learn and reason.
                 It has the following effects:
 
@@ -281,8 +288,10 @@ It defines how attributes work and explains how to make attacks in combat.
 
                 \par An animal has an Intelligence score of \minus6 or lower.
                 A creature of humanlike intelligence has a score of at least a \minus5 Intelligence.
+            }
 
             \parhead{Perception (Per)}\label{Perception}
+            {
                 Perception describes your ability to observe and be aware of your surroundings.
                 It has the following effects:
                 \begin{itemize}
@@ -292,8 +301,10 @@ It defines how attributes work and explains how to make attacks in combat.
                 \end{itemize}
 
                 If you have a high Perception, you can use it to determine your \glossterm{accuracy} with all attacks (see \pcref{Accuracy}).
+            }
 
             \parhead{Willpower (Wil)}\label{Willpower}
+            {
                 Willpower represents your ability to endure mental hardships.
                 It has the following effects:
                 \begin{itemize}
@@ -302,6 +313,7 @@ It defines how attributes work and explains how to make attacks in combat.
                 \end{itemize}
 
                 If you have a high Willpower, you can use it to determine your \glossterm{power} with most \glossterm{magical} abilities (see \pcref{Power}).
+            }
 
         \subsubsection{Increasing Attributes}\label{Increasing Attributes}
             As your level increases, your attributes increase as well, as shown on \trefnp{Increasing Attributes with Level}.
@@ -338,6 +350,7 @@ It defines how attributes work and explains how to make attacks in combat.
             For each penalty you take, you gain two additional \glossterm{skill points} (see \pcref{Skills}).
 
             \parhead{Point Buy}
+            {
                 With this method, you can fully control your attribute scores to match what you want to be able to do.
                 All your attribute scores start at 0.
                 You get ten points to distribute among your attributes.
@@ -367,6 +380,7 @@ It defines how attributes work and explains how to make attacks in combat.
                     2 You gain a total of four \glossterm{skill points}. \\
                     3 You gain two skill points. \\
                 \end{dtable}
+            }
 
         \subsubsection{Extraordinary Attributes}
             Some abilities can increase your starting attributes above 4.
@@ -435,26 +449,26 @@ It defines how attributes work and explains how to make attacks in combat.
             Standard damage starts at 1d8 and increases by \plus1d per two power.
             This is summarized on \trefnp{Standard Damage}.
 
-        \begin{dtable}
-            \lcaption{Standard Damage}
-            \begin{dtabularx}{\columnwidth}{l X}
-                \tb{Power} & \tb{Damage} \\
-                0--1   & 1d8  \\
-                2--3   & 1d10 \\
-                4--5   & 2d6  \\
-                6--7   & 2d8  \\
-                8--9   & 2d10 \\
-                10--11 & 4d6  \\
-                12--13 & 4d8  \\
-                14--15 & 4d10 \\
-                16--17 & 5d10 \\
-                18--19 & 6d10 \\
-                20--21 & 7d10 \\
-                22--23 & 8d10 \\
-                24--25\fn{1} & 9d10 \\
-            \end{dtabularx}
-            1. For values above 25, increase by 1d10 at every even value.
-        \end{dtable}
+            \begin{dtable}
+                \lcaption{Standard Damage}
+                \begin{dtabularx}{\columnwidth}{l X}
+                    \tb{Power} & \tb{Damage} \\
+                    0--1   & 1d8  \\
+                    2--3   & 1d10 \\
+                    4--5   & 2d6  \\
+                    6--7   & 2d8  \\
+                    8--9   & 2d10 \\
+                    10--11 & 4d6  \\
+                    12--13 & 4d8  \\
+                    14--15 & 4d10 \\
+                    16--17 & 5d10 \\
+                    18--19 & 6d10 \\
+                    20--21 & 7d10 \\
+                    22--23 & 8d10 \\
+                    24--25\fn{1} & 9d10 \\
+                \end{dtabularx}
+                1. For values above 25, increase by 1d10 at every even value.
+            \end{dtable}
 
         \subsubsection{Power vs. Die Increments}\label{Power vs. Die Increments}
             Many abilities specify that they deal damage based on some standard calculation, such as your \glossterm{standard damage} or your normal damage with a \glossterm{strike}, plus an additional modifier to the \glossterm{die increment}.
@@ -521,37 +535,37 @@ It defines how attributes work and explains how to make attacks in combat.
         When you are hit by an attack, you use your \glossterm{resistances} to mitigate the damage from the attack.
         You have two types of resistances: \glossterm{damage resistance}, which protects you from losing \glossterm{hit points}, and \glossterm{wound resistance}, which protects you from gaining \glossterm{vital wounds}.
 
-        \subsection{Damage Resistance}\label{Damage Resistance}
-            Your \glossterm{damage resistance} measures your ability to shrug off insignificant amounts of damage.
-            When an attack would deal damage to you, if the damage is less than or equal to your \glossterm{damage resistance}, you take no damage from the attack.
-            This prevents you from losing a \glossterm{hit point} or suffering other negative consequences of taking damage.
+    \subsection{Damage Resistance}\label{Damage Resistance}
+        Your \glossterm{damage resistance} measures your ability to shrug off insignificant amounts of damage.
+        When an attack would deal damage to you, if the damage is less than or equal to your \glossterm{damage resistance}, you take no damage from the attack.
+        This prevents you from losing a \glossterm{hit point} or suffering other negative consequences of taking damage.
 
-            Your \glossterm{damage resistance} is based on your level, as defined in \tref{Character Advancement}.
-            Wearing \glossterm{armor} can increase your damage resistance against \glossterm{physical damage}, and some special abilities can also increase it.
+        Your \glossterm{damage resistance} is based on your level, as defined in \tref{Character Advancement}.
+        Wearing \glossterm{armor} can increase your damage resistance against \glossterm{physical damage}, and some special abilities can also increase it.
 
-            \parhead{Missing Damage Resistance} An object or creature without a listed \glossterm{damage resistance} loses a \glossterm{hit point} if it takes at least 1 damage from a single damage roll.
-            It effectively has a \glossterm{damage resistance} of 0.
+        \parhead{Missing Damage Resistance} An object or creature without a listed \glossterm{damage resistance} loses a \glossterm{hit point} if it takes at least 1 damage from a single damage roll.
+        It effectively has a \glossterm{damage resistance} of 0.
 
-        \subsection{Wound Resistance}\label{Wound Resistance}
-            Your \glossterm{wound resistance} measures your ability to avoid taking \glossterm{vital damage} from dangerous attacks.
-            When you take damage from an attack, if the damage is greater than your \glossterm{wound resistance}, you gain a \glossterm{vital wound} (see \pcref{Vital Wounds}).
+    \subsection{Wound Resistance}\label{Wound Resistance}
+        Your \glossterm{wound resistance} measures your ability to avoid taking \glossterm{vital damage} from dangerous attacks.
+        When you take damage from an attack, if the damage is greater than your \glossterm{wound resistance}, you gain a \glossterm{vital wound} (see \pcref{Vital Wounds}).
 
-            Your \glossterm{wound resistance} is based on your level, as defined in \tref{Character Advancement}.
-            Some special abilities can increase your \glossterm{wound resistance}.
+        Your \glossterm{wound resistance} is based on your level, as defined in \tref{Character Advancement}.
+        Some special abilities can increase your \glossterm{wound resistance}.
 
-            \parhead{Missing Wound Resistance} An object or creature without a listed \glossterm{wound resistance} cannot gain \glossterm{vital wounds} from taking damage directly.
-            It can only gain \glossterm{vital wounds} from taking damage while it has no \glossterm{hit points} remaining.
+        \parhead{Missing Wound Resistance} An object or creature without a listed \glossterm{wound resistance} cannot gain \glossterm{vital wounds} from taking damage directly.
+        It can only gain \glossterm{vital wounds} from taking damage while it has no \glossterm{hit points} remaining.
 
-        \subsection{Damage Type Resistances}\label{Damage Type Resistances}
-            Each type of resistance is further divided into what type of damage it protects against.
-            Your \glossterm{damage resistance} and \glossterm{wound resistance} apply against damage of any type.
-            Those are collectively called your \glossterm{resistances}.
+    \subsection{Damage Type Resistances}\label{Damage Type Resistances}
+        Each type of resistance is further divided into what type of damage it protects against.
+        Your \glossterm{damage resistance} and \glossterm{wound resistance} apply against damage of any type.
+        Those are collectively called your \glossterm{resistances}.
 
-            Some effects increase your resistances against either \glossterm{physical damage} or \glossterm{energy damage}.
-            For example, wearing armor gives you a bonus to your \glossterm{resistances} against \glossterm{physical damage}.
+        Some effects increase your resistances against either \glossterm{physical damage} or \glossterm{energy damage}.
+        For example, wearing armor gives you a bonus to your \glossterm{resistances} against \glossterm{physical damage}.
 
-            \parhead{Stacking Magic Bonuses} A \glossterm{magic bonus} to a specific type of resistance does not stack with a \glossterm{magic bonus} to a more general resistance if both apply.
-            For example, if you have a \glossterm{magic bonus} to resistances against energy damage and another \glossterm{magic bonus} to resistances against fire damage, you only use the higher of the two when you take fire damage.
+        \parhead{Stacking Magic Bonuses} A \glossterm{magic bonus} to a specific type of resistance does not stack with a \glossterm{magic bonus} to a more general resistance if both apply.
+        For example, if you have a \glossterm{magic bonus} to resistances against energy damage and another \glossterm{magic bonus} to resistances against fire damage, you only use the higher of the two when you take fire damage.
 
     \subsection{Initiative}\label{Initiative}
         When multiple creatures take mutually impossible actions simultaneously, such as racing to be the first one to a door, they must roll initiative checks.
@@ -601,31 +615,31 @@ It defines how attributes work and explains how to make attacks in combat.
         The effects of vital wounds stack with each other, even if you roll the same effect twice for different \glossterm{vital wounds}.
 
         \subsubsection{Wound Roll}\label{Wound Roll}
-        To make a \glossterm{wound roll}, roll 1d10 \sub the number of \glossterm{vital wounds} you have.
-        The result determines the effeft of the \glossterm{vital wound}, as listed in \tref{Vital Wound Effects}.
+            To make a \glossterm{wound roll}, roll 1d10 \sub the number of \glossterm{vital wounds} you have.
+            The result determines the effeft of the \glossterm{vital wound}, as listed in \tref{Vital Wound Effects}.
 
-        \parhead{Changing Wound Rolls}
+            \parhead{Changing Wound Rolls}
             Some effects can change the \glossterm{wound roll} for \glossterm{vital wounds} you have already suffered.
             If your \glossterm{wound roll} changes retroactively, it changes the effect of that \glossterm{vital wound}.
 
-        \begin{dtable}
-            \lcaption{Vital Wound Effects}
-            \begin{dtabularx}{\textwidth}{l X}
-                \tb{Wound Roll} & \tb{Effect} \tableheaderrule
-                \minus1 or less & You are unconscious, and at the end of the next round you die \\
-                0 & You are unconscious \\
-                1 & You fall unconscious immediately, but can be awoken as if from sleep \\
-                2 & You move at half speed \\
-                3 & You take a \minus2 penalty to \glossterm{accuracy} \\
-                4 & You take a \minus2 penalty to all \glossterm{defenses} \\
-                5 & Your maximum \glossterm{action points} are reduced by 1 \\
-                6 & Your maximum \glossterm{hit points} are reduced by 1 \\
-                7 & You take a \minus2 penalty to Fortitude defense \\
-                8 & You take a \minus2 penalty to Mental defense \\
-                9 & You take a \minus1 penalty to future \glossterm{wound rolls} \\
-                10 or more & No effect \\
-            \end{dtabularx}
-        \end{dtable}
+            \begin{dtable}
+                \lcaption{Vital Wound Effects}
+                \begin{dtabularx}{\textwidth}{l X}
+                    \tb{Wound Roll} & \tb{Effect} \tableheaderrule
+                    \minus1 or less & You are unconscious, and at the end of the next round you die \\
+                    0 & You are unconscious \\
+                    1 & You fall unconscious immediately, but can be awoken as if from sleep \\
+                    2 & You move at half speed \\
+                    3 & You take a \minus2 penalty to \glossterm{accuracy} \\
+                    4 & You take a \minus2 penalty to all \glossterm{defenses} \\
+                    5 & Your maximum \glossterm{action points} are reduced by 1 \\
+                    6 & Your maximum \glossterm{hit points} are reduced by 1 \\
+                    7 & You take a \minus2 penalty to Fortitude defense \\
+                    8 & You take a \minus2 penalty to Mental defense \\
+                    9 & You take a \minus1 penalty to future \glossterm{wound rolls} \\
+                    10 or more & No effect \\
+                \end{dtabularx}
+            \end{dtable}
 
     \subsection{Subdual Damage}\label{Subdual Damage}
         Some attacks and environmental effects deal subdual damage.
@@ -711,76 +725,76 @@ It defines how attributes work and explains how to make attacks in combat.
             % Should this be two size categories larger, or be more dependent on creature anatomy?
             \parhead{Immunities} Creatures at least three size categories larger than you are difficult to fight. You cannot get a \glossterm{critical hit} with melee \glossterm{strikes} or contribute to overwhelm penalties against such creatures. If you can reach a vulnerable point on the creature, such as by flying or by using ranged weapons, you can get critical hits and contribute to overwhelm penalties normally.
 
-        \subsection{Arbitrary Modifiers}
+    \subsection{Arbitrary Modifiers}
 
-            Circumstances frequently modify your odds of success when making attacks and checks, or when defending yourself from attacks.
-            There are two kinds of circumstantial modifiers.
-            Circumstances that make you better or worse at your task give you a bonus or penalty to your attack or check.
-            Circumstances that make the task easier or harder increase or decrease the \glossterm{difficulty rating} of the task, or the defense of the attacked creature.
+        Circumstances frequently modify your odds of success when making attacks and checks, or when defending yourself from attacks.
+        There are two kinds of circumstantial modifiers.
+        Circumstances that make you better or worse at your task give you a bonus or penalty to your attack or check.
+        Circumstances that make the task easier or harder increase or decrease the \glossterm{difficulty rating} of the task, or the defense of the attacked creature.
 
-            Most circumstances grant a \plus2 bonus or impose a \minus2 penalty.
-            Extraordinary circumstances can potentially have greater modifiers.
-            All circumstantial modifiers should be used at the discretion of the GM.\@
+        Most circumstances grant a \plus2 bonus or impose a \minus2 penalty.
+        Extraordinary circumstances can potentially have greater modifiers.
+        All circumstantial modifiers should be used at the discretion of the GM.\@
 
-        \subsection{Overwhelm}\label{Overwhelm}
-            When you are being attacked by multiple foes at once, or by a massive foe that can attack from many directions, you are less able to defend yourself.
-            You take penalties to your Armor defense equal to half the combined \glossterm{overwhelm value} of all creatures threatening you, rounded down.
-            Among equal sized creatures, this usually means you take a penalty equal to half the number of creatures threatening you.
-            These penalties are called \glossterm{overwhelm penalties}.
-            If you are suffering at least a \minus1 overwhelm penalty, you are \glossterm{overwhelmed}.
+    \subsection{Overwhelm}\label{Overwhelm}
+        When you are being attacked by multiple foes at once, or by a massive foe that can attack from many directions, you are less able to defend yourself.
+        You take penalties to your Armor defense equal to half the combined \glossterm{overwhelm value} of all creatures threatening you, rounded down.
+        Among equal sized creatures, this usually means you take a penalty equal to half the number of creatures threatening you.
+        These penalties are called \glossterm{overwhelm penalties}.
+        If you are suffering at least a \minus1 overwhelm penalty, you are \glossterm{overwhelmed}.
 
-            \parhead{Overwhelm Value}\label{Overwhelm Value} Your \glossterm{overwhelm value} affects how much of a penalty you impose on creatures you threaten, as described above.
-            For example, Medium creatures have an overwhelm value of 1, and larger creatures have a higher overwhelm value (see \pcref{Size in Combat}).
-            Some abilities can affect your overwhelm value.
+        \parhead{Overwhelm Value}\label{Overwhelm Value} Your \glossterm{overwhelm value} affects how much of a penalty you impose on creatures you threaten, as described above.
+        For example, Medium creatures have an overwhelm value of 1, and larger creatures have a higher overwhelm value (see \pcref{Size in Combat}).
+        Some abilities can affect your overwhelm value.
 
-            Some creatures have fractional overwhelm values.
-            For example, a Tiny creature has an overwhelm value of 1/2.
-            Fractional overwhelm values are not rounded down until after being added with the overwhelm values from other threatening creatures.
-            For example, if five Tiny creatures were threatening a single creature, their combined overwhelm value would be 2 and 1/2.
-            That value is rounded down to 2 when determining whether the creature is overwhelmed, and how large that creature's overwhelm penalties are.
+        Some creatures have fractional overwhelm values.
+        For example, a Tiny creature has an overwhelm value of 1/2.
+        Fractional overwhelm values are not rounded down until after being added with the overwhelm values from other threatening creatures.
+        For example, if five Tiny creatures were threatening a single creature, their combined overwhelm value would be 2 and 1/2.
+        That value is rounded down to 2 when determining whether the creature is overwhelmed, and how large that creature's overwhelm penalties are.
 
-            If your \glossterm{overwhelm value} would be reduced below 1, special rules apply.
-            The first -1 penalty reduces your overwhelm value to 1/2.
-            An additional -1 penalty reduces your overwhelm value to 1/4.
-            Your overwhelm value cannot be reduced below 1/4.
+        If your \glossterm{overwhelm value} would be reduced below 1, special rules apply.
+        The first -1 penalty reduces your overwhelm value to 1/2.
+        An additional -1 penalty reduces your overwhelm value to 1/4.
+        Your overwhelm value cannot be reduced below 1/4.
 
-            \parhead{Overwhelm Resistance}\label{Overwhelm Resistance} Some abilities grant \glossterm{overwhelm resistance}.
-            For example, Large and larger creatures automatically gain overwhelm resistance (see \pcref{Size in Combat}).
-            A creature with overwhelm resistance treats creatures threating it as if their \glossterm{overwhelm value} was reduced by amount equal to the creatures overwhelm resistance.
-            Some abilities can increase or decrease overwhelm resistance, such as the \spell{boon of many eyes} spell.
-            A creature without overwhelm resistance is considered to have an overwhelm resistance of 0.
+        \parhead{Overwhelm Resistance}\label{Overwhelm Resistance} Some abilities grant \glossterm{overwhelm resistance}.
+        For example, Large and larger creatures automatically gain overwhelm resistance (see \pcref{Size in Combat}).
+        A creature with overwhelm resistance treats creatures threating it as if their \glossterm{overwhelm value} was reduced by amount equal to the creatures overwhelm resistance.
+        Some abilities can increase or decrease overwhelm resistance, such as the \spell{boon of many eyes} spell.
+        A creature without overwhelm resistance is considered to have an overwhelm resistance of 0.
 
-            For example, Felix the fighter has an \glossterm{overwhelm resistance} of 1.
-            If he was \glossterm{threatened} by a giant with an \glossterm{overwhelm value} of 2, he would reduce the giant's overwhelm value to 1.
-            As a result, Felix would not be overwhelmed.
+        For example, Felix the fighter has an \glossterm{overwhelm resistance} of 1.
+        If he was \glossterm{threatened} by a giant with an \glossterm{overwhelm value} of 2, he would reduce the giant's overwhelm value to 1.
+        As a result, Felix would not be overwhelmed.
 
-            \parhead{Ignoring Attackers} At the start of each phase, you can choose to ignore up to one creature threatening you.
-            If you do, you are treated as being \unaware against that creature.
-            In exchange, it does not contribute to the number of creatures overwhelming you.
+        \parhead{Ignoring Attackers} At the start of each phase, you can choose to ignore up to one creature threatening you.
+        If you do, you are treated as being \unaware against that creature.
+        In exchange, it does not contribute to the number of creatures overwhelming you.
 
-        \subsection{Range Increments}\label{Range Increments}
-            Most physical ranged attacks are less accurate against distant targets.
-            This is represented with a \glossterm{range increment} for the attack, which is always measured in feet.
-            You take a \minus1 penalty to accuracy with the ranged attack for each full range increment between you and your target.
-            For example, when using a longbow with a range increment of 100 feet against a target 170 feet away, you take a \minus1 penalty to accuracy.
-            You cannot make a ranged attack beyond 10 range increments away from you.
+    \subsection{Range Increments}\label{Range Increments}
+        Most physical ranged attacks are less accurate against distant targets.
+        This is represented with a \glossterm{range increment} for the attack, which is always measured in feet.
+        You take a \minus1 penalty to accuracy with the ranged attack for each full range increment between you and your target.
+        For example, when using a longbow with a range increment of 100 feet against a target 170 feet away, you take a \minus1 penalty to accuracy.
+        You cannot make a ranged attack beyond 10 range increments away from you.
 
-        \subsection{Cover}\label{Cover}
+    \subsection{Cover}\label{Cover}
 
-            Cover represents any obstacle that physically prevents you from striking your target, such as a tree or intervening creature.
-            A creature or object behind cover gains a \plus2 bonus to Armor defense.
-            If an attack misses the Armor Defense of a creature or object behind cover by no more than the defense bonus provided by the cover,
-                the attack is applied to the obstacle instead of to the intended target.
-            In addition, a creature behind cover can hide (see \pcref{Stealth}).
+        Cover represents any obstacle that physically prevents you from striking your target, such as a tree or intervening creature.
+        A creature or object behind cover gains a \plus2 bonus to Armor defense.
+        If an attack misses the Armor Defense of a creature or object behind cover by no more than the defense bonus provided by the cover,
+        the attack is applied to the obstacle instead of to the intended target.
+        In addition, a creature behind cover can hide (see \pcref{Stealth}).
 
-            \parhead{Partial Obstacles} Many obstacles, such as trees and low walls, can provide cover without normally blocking \glossterm{line of sight} or providing \glossterm{total cover}.
-            Unusually small creatures, or creatures who intentionally take cover behind such obstacles, may be able to gain total cover from them.
+        \parhead{Partial Obstacles} Many obstacles, such as trees and low walls, can provide cover without normally blocking \glossterm{line of sight} or providing \glossterm{total cover}.
+        Unusually small creatures, or creatures who intentionally take cover behind such obstacles, may be able to gain total cover from them.
 
-            \parhead{Improved Cover}
-            Cover of the same type generally doesn't stack; a creature behind two trees is not substantially more protected than a creature behind a single tree.
-            However, exceptionally well covered creatures, such as a creature behind an arrow slit in a castle, may gain a greater than normal benefit to defenses from cover.
+        \parhead{Improved Cover}
+        Cover of the same type generally doesn't stack; a creature behind two trees is not substantially more protected than a creature behind a single tree.
+        However, exceptionally well covered creatures, such as a creature behind an arrow slit in a castle, may gain a greater than normal benefit to defenses from cover.
 
-            \subsubsection{Measuring Cover}
+        \subsubsection{Measuring Cover}
 
             When you make an attack, choose a single square within your \glossterm{space} and a single \glossterm{target square} within your target's space.
             If you are making a ranged attack, choose one corner of your space.
@@ -802,38 +816,38 @@ It defines how attributes work and explains how to make attacks in combat.
             If any such line touches a square with an obstacle that grants active or passive cover, even at an edge or corner, the target has the appropriate cover from you.
             Otherwise, if the line is uninterrupted, the target does not have cover from you.
 
-        \subsection{Total Cover}\label{Total Cover}
-            If a creature is completely behind an physical object that blocks sight, it has \glossterm{total cover} from attacks.
-            A creature with total cover cannot be targeted by any attacks.
-            Abilities that ignore \glossterm{cover} do not ignore \glossterm{total cover} unless they say otherwise.
+    \subsection{Total Cover}\label{Total Cover}
+        If a creature is completely behind an physical object that blocks sight, it has \glossterm{total cover} from attacks.
+        A creature with total cover cannot be targeted by any attacks.
+        Abilities that ignore \glossterm{cover} do not ignore \glossterm{total cover} unless they say otherwise.
 
-        \subsection{Concealment}\label{Concealment}
-            Concealment represents anything which makes it more difficult to see your target, such as dim lighting.
-            A creature or object with concealment from you gains a \plus2 bonus to Armor defense.
-            The concealment bonus does not apply if you can't see your opponent (such as if you close your eyes).
-            Determining concealment works similarly to determining cover.
-            You must use the same \glossterm{points of origin} and \glossterm{target square} when determining concealment that you would use to determine cover.
+    \subsection{Concealment}\label{Concealment}
+        Concealment represents anything which makes it more difficult to see your target, such as dim lighting.
+        A creature or object with concealment from you gains a \plus2 bonus to Armor defense.
+        The concealment bonus does not apply if you can't see your opponent (such as if you close your eyes).
+        Determining concealment works similarly to determining cover.
+        You must use the same \glossterm{points of origin} and \glossterm{target square} when determining concealment that you would use to determine cover.
 
-            \parhead{Determining Concealment} There are two things that can cause a creature to be concealed: poor lighting, and intervening obstacles that block sight.
-            Determining concealment from obstacles that block sight works the same way as determining cover.
+        \parhead{Determining Concealment} There are two things that can cause a creature to be concealed: poor lighting, and intervening obstacles that block sight.
+        Determining concealment from obstacles that block sight works the same way as determining cover.
 
-            Determining concealment from lighting conditions is simpler, since it ignores lighting conditions between you and the target.
-            If your \glossterm{target square} square is in lighting that provides concealment, the target has concealment.
-            Otherwise, it does not.
+        Determining concealment from lighting conditions is simpler, since it ignores lighting conditions between you and the target.
+        If your \glossterm{target square} square is in lighting that provides concealment, the target has concealment.
+        Otherwise, it does not.
 
-        \subsection{Helpless Defenders}
-            A helpless creature is completely at an opponent's mercy.
-            Its Armor and Reflex defenses are calculated as if it had a Dexterity of \minus10.
-            Paralyzed, bound, and unconscious creatures are helpless.
-            % This explicitly doesn't use the seemingly simpler wording of ``this creature is unaware''
-            % because effects that prevent unawareness often shouldn't help helpess creatures.
-            Any \glossterm{physical attack} against a helpless creature automatically \glossterm{explodes} on the first die.
+    \subsection{Helpless Defenders}
+        A helpless creature is completely at an opponent's mercy.
+        Its Armor and Reflex defenses are calculated as if it had a Dexterity of \minus10.
+        Paralyzed, bound, and unconscious creatures are helpless.
+        % This explicitly doesn't use the seemingly simpler wording of ``this creature is unaware''
+        % because effects that prevent unawareness often shouldn't help helpess creatures.
+        Any \glossterm{physical attack} against a helpless creature automatically \glossterm{explodes} on the first die.
 
-        \subsection{Invisibility}\label{Invisibility}
-            If it is impossible to see your target, you can't attack him normally. However, you can attack a square that you think it occupies. An attack into a square occupied by an invisible enemy has a 50\% miss chance. If an adjacent invisible creature strikes you, you can automatically identify the square it occupied when it struck you.
+    \subsection{Invisibility}\label{Invisibility}
+        If it is impossible to see your target, you can't attack him normally. However, you can attack a square that you think it occupies. An attack into a square occupied by an invisible enemy has a 50\% miss chance. If an adjacent invisible creature strikes you, you can automatically identify the square it occupied when it struck you.
 
-        \subsection{Surprise Attacks}\label{Surprise Attacks}
-            Sometimes, creatures are not aware that combat is taking place when the combat starts. This most commonly happens with ambushes. Any creature that is not aware of the combat continues taking whatever actions it would normally be taking until it becomes aware of the combat. It is \unaware until that point.
+    \subsection{Surprise Attacks}\label{Surprise Attacks}
+        Sometimes, creatures are not aware that combat is taking place when the combat starts. This most commonly happens with ambushes. Any creature that is not aware of the combat continues taking whatever actions it would normally be taking until it becomes aware of the combat. It is \unaware until that point.
 
     \subsection{Stacking Rules}\label{Stacking Rules}
         Usually, modifiers stack with each other, meaning that you add or subtract all of the modifiers to get the final result.
@@ -1176,86 +1190,86 @@ It defines how attributes work and explains how to make attacks in combat.
             \parhead{Zone} A zone ability has effects within an area for the duration of the ability.
             Unless otherwise noted, it does not move after being created.
 
-        When casting an area ability, you select the point where the ability originates.
-        The point of origin of a ability is always a grid intersection.
-        When determining whether a given creature is within the area of a ability, count out the distance from the point of origin in squares just as you do when moving a character or when determining the range for a ranged attack.
-        The only difference is that instead of counting from the center of one square to the center of the next, you count from intersection to intersection.
+            When casting an area ability, you select the point where the ability originates.
+            The point of origin of a ability is always a grid intersection.
+            When determining whether a given creature is within the area of a ability, count out the distance from the point of origin in squares just as you do when moving a character or when determining the range for a ranged attack.
+            The only difference is that instead of counting from the center of one square to the center of the next, you count from intersection to intersection.
 
-        You can freely decrease a ability's area, provided that you decrease it uniformly across all of the ability's dimensions.
-        For example, you can cast a \spell{fireball} spell that affects a 5 foot radius if you choose to do so, but you can't cast a \spell{fireball} with any shape other than a sphere.
+            You can freely decrease a ability's area, provided that you decrease it uniformly across all of the ability's dimensions.
+            For example, you can cast a \spell{fireball} spell that affects a 5 foot radius if you choose to do so, but you can't cast a \spell{fireball} with any shape other than a sphere.
 
-        You can count diagonally across a square, but remember that every second diagonal counts as 2 squares of distance.
-        If the far edge of a square is within the ability's area, anything within that square is within the ability's area.
-        If the ability's area only touches the near edge of a square, however, anything within that square is unaffected by the ability.
+            You can count diagonally across a square, but remember that every second diagonal counts as 2 squares of distance.
+            If the far edge of a square is within the ability's area, anything within that square is within the ability's area.
+            If the ability's area only touches the near edge of a square, however, anything within that square is unaffected by the ability.
 
     \subsection{Ability Durations}
 
         An ability's duration determines how long its effect lasts.
         Abilities can have one of several different kinds of durations.
 
-        \subsection{Conditions}\label{Conditions}
-            Many abilities impose \glossterm{conditions} on their targets.
-            A condition lasts until it is removed.
-            You can remove a condition by taking a \glossterm{short rest} or using the \textit{cleanse} ability (see \pcref{Cleanse}).
-            There are several other abilities that can also remove conditions.
+    \subsection{Conditions}\label{Conditions}
+        Many abilities impose \glossterm{conditions} on their targets.
+        A condition lasts until it is removed.
+        You can remove a condition by taking a \glossterm{short rest} or using the \textit{cleanse} ability (see \pcref{Cleanse}).
+        There are several other abilities that can also remove conditions.
 
-        \subsection{Attunement}\label{Attunement}
-            Many abilities last as long as a creature attunes to them.
-            Attuning to an ability costs an \glossterm{action point}.
-            As long as you remain attuned to that ability, you cannot recover that \glossterm{action point} by any means.
+    \subsection{Attunement}\label{Attunement}
+        Many abilities last as long as a creature attunes to them.
+        Attuning to an ability costs an \glossterm{action point}.
+        As long as you remain attuned to that ability, you cannot recover that \glossterm{action point} by any means.
 
-            As a standard action, you can use the \textit{release attunement} ability to stop being attuned an ability you have attuned to.
-            \begin{freeability}{Release Attunement}
-                You stop being attuned to one effect you have attuned to.
-                The next time you take a \glossterm{short rest}, you regain the \glossterm{action point} you spent to attune to that effect.
-            \end{freeability}
+        As a standard action, you can use the \textit{release attunement} ability to stop being attuned an ability you have attuned to.
+        \begin{freeability}{Release Attunement}
+            You stop being attuned to one effect you have attuned to.
+            The next time you take a \glossterm{short rest}, you regain the \glossterm{action point} you spent to attune to that effect.
+        \end{freeability}
 
-            Attuned abilities continue to work across any distance, but not across planar boundaries.
+        Attuned abilities continue to work across any distance, but not across planar boundaries.
+        % TODO: wording
+        At the end of each round, your attunement to all abilities created by creatures on a different plane than your current plane ends.
+        Planar travel that does not last a full round, such as teleportation within a plane, does not interrupt your attunement.
+
+        \subsubsection{Attunement Types}\label{Attunement Types}
+            There are three types of attunement abilities: self, target, and ritual.
+
+            \parhead{Attune (self)} A self attunement ability requires the creature using the ability to attune to the effect.
+
+            \parhead{Attune (target)} A target attunement ability requires the target of the ability to attune to the effect.
+            If the ability targets multiple creatures, each creature must attune to the ability independently.
+
+            As a special case, if a target attunement ability targets an inanimate object, the creature using the ability must attune to the effect.
+
+            \parhead{Attune (ritual)} Only \glossterm{rituals} have the \glossterm{Attune} (ritual) tag.
+            A ritual attunement ability requires any participant in the ritual to attune to the effect.
+            In addition, ritual attunement abilities are not subject to the normal restrictions on multiple attunement.
             % TODO: wording
-            At the end of each round, your attunement to all abilities created by creatures on a different plane than your current plane ends.
-            Planar travel that does not last a full round, such as teleportation within a plane, does not interrupt your attunement.
+            You can maintain any number of activations of a particular ritual attunement ability at once.
 
-            \subsubsection{Attunement Types}\label{Attunement Types}
-                There are three types of attunement abilities: self, target, and ritual.
+    \subsection{Sustained Abilities}\label{Sustained Abilities}
+        Some abilities last as long as you take an action to sustain them each round.
+        The type of action required is always specified in the ability.
+        At the end of each \glossterm{action phase}, the ability is dismissed unless you used the ability that phase or took the action to sustain the ability that phase.
+        Sustaining a spell is not a \glossterm{Focus} ability, and cannot be disrupted in the same way that casting a spell can (see \pcref{Ability Tags}).
 
-                \parhead{Attune (self)} A self attunement ability requires the creature using the ability to attune to the effect.
+        % TODO: a more robust timing system would make stating this explicitly unnecessary
+        If a sustained ability has effects that trigger at the end of the action phase, it ends before having its effects if you fail to sustain the ability.
 
-                \parhead{Attune (target)} A target attunement ability requires the target of the ability to attune to the effect.
-                If the ability targets multiple creatures, each creature must attune to the ability independently.
+        Taking an action to sustain an ability only allows you to sustain a single use of that ability.
+        However, you can sustain multiple separate abilities at once if you have available actions.
 
-                As a special case, if a target attunement ability targets an inanimate object, the creature using the ability must attune to the effect.
+        You can only sustain an ability for up to 5 minutes.
+        After that time, the ability's effect is \glossterm{dismissed}.
 
-                \parhead{Attune (ritual)} Only \glossterm{rituals} have the \glossterm{Attune} (ritual) tag.
-                A ritual attunement ability requires any participant in the ritual to attune to the effect.
-                In addition, ritual attunement abilities are not subject to the normal restrictions on multiple attunement.
-                % TODO: wording
-                You can maintain any number of activations of a particular ritual attunement ability at once.
-
-        \subsection{Sustained Abilities}\label{Sustained Abilities}
-            Some abilities last as long as you take an action to sustain them each round.
-            The type of action required is always specified in the ability.
-            At the end of each \glossterm{action phase}, the ability is dismissed unless you used the ability that phase or took the action to sustain the ability that phase.
-            Sustaining a spell is not a \glossterm{Focus} ability, and cannot be disrupted in the same way that casting a spell can (see \pcref{Ability Tags}).
-
-            % TODO: a more robust timing system would make stating this explicitly unnecessary
-            If a sustained ability has effects that trigger at the end of the action phase, it ends before having its effects if you fail to sustain the ability.
-
-            Taking an action to sustain an ability only allows you to sustain a single use of that ability.
-            However, you can sustain multiple separate abilities at once if you have available actions.
-
-            You can only sustain an ability for up to 5 minutes.
-            After that time, the ability's effect is \glossterm{dismissed}.
-
-        \subsection{Permanent}
-            Some abilities last permanently.
-            Such abilities never expire on their own, but can be \glossterm{dismissed} or removed by other abilities appropriately.
+    \subsection{Permanent}
+        Some abilities last permanently.
+        Such abilities never expire on their own, but can be \glossterm{dismissed} or removed by other abilities appropriately.
 
         % Is this necessary?
         % Should this clarify interactions with bursts/zones/emanations?
-        \subsection{Targeting and Durations}
-            If an ability targets creatures or objects directly, the effects travel with the targets for the ability's duration.
-            If an ability creates or summons objects or creatures, they last for the duration of the ability, and are capable of moving outside the ability's initial range.
-            Such effects can sometimes be destroyed prior to when their duration ends.
+    \subsection{Targeting and Durations}
+        If an ability targets creatures or objects directly, the effects travel with the targets for the ability's duration.
+        If an ability creates or summons objects or creatures, they last for the duration of the ability, and are capable of moving outside the ability's initial range.
+        Such effects can sometimes be destroyed prior to when their duration ends.
 
     \subsection{Combining Effects}
         Abilities do not generally affect the way another abilities function.
@@ -1512,7 +1526,7 @@ It defines how attributes work and explains how to make attacks in combat.
             The target uses whichever defense is appropriate to the nature of the trick you describe.
 
             On a hit, as a \glossterm{condition}, the target suffers a \minus2 penalty to one of the following statistics:
-                \glossterm{accuracy} with \glossterm{physical attacks}, Armor defense, Fortitude defense, Reflex defense, or Mental defense.
+            \glossterm{accuracy} with \glossterm{physical attacks}, Armor defense, Fortitude defense, Reflex defense, or Mental defense.
         \end{freeability}
 
         \parhead{Disarm} As a standard action, you can use the \textit{disarm} ability to knock an item out of a foe's hands.
@@ -1790,8 +1804,8 @@ It defines how attributes work and explains how to make attacks in combat.
         It must be removed before any new traps can be placed.
 
         \subsubsection{Detecting Traps}\label{Detecting Traps}
-        Unless otherwise noted, active \glossterm{traps} can be detected with the Awareness skill and disabled with the Devices skill before their effect triggers (see \pcref{Awareness}, and \pcref{Devices}).
-        Unless otherwise noted, The DR to detect and disable a trap is equal to 20 \add the \glossterm{power} of the ability that created the trap.
+            Unless otherwise noted, active \glossterm{traps} can be detected with the Awareness skill and disabled with the Devices skill before their effect triggers (see \pcref{Awareness}, and \pcref{Devices}).
+            Unless otherwise noted, The DR to detect and disable a trap is equal to 20 \add the \glossterm{power} of the ability that created the trap.
 
 \section{Daily Resources}
 
