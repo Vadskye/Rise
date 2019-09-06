@@ -765,23 +765,22 @@ It defines how attributes work and explains how to make attacks in combat.
             For example, when using a longbow with a range increment of 100 feet against a target 170 feet away, you take a \minus1 penalty to accuracy.
             You cannot make a ranged attack beyond 10 range increments away from you.
 
-        \subsubsection{Cover}\label{Cover}
+        \subsection{Cover}\label{Cover}
 
             Cover represents any obstacle that physically prevents you from striking your target, such as a tree or intervening creature.
-            A creature behind cover is more difficult to attack.
-            There are three kinds of cover: \glossterm{active cover}, \glossterm{passive cover}, and \glossterm{total cover}.
-            All three types of cover are determined by the presence or absence of physical obstacles.
+            A creature or object behind cover gains a \plus2 bonus to Armor defense.
+            If an attack misses the Armor Defense of a creature or object behind cover by no more than the defense bonus provided by the cover,
+                the attack is applied to the obstacle instead of to the intended target.
+            In addition, a creature behind cover can hide (see \pcref{Stealth}).
 
-            \parhead{Active Cover}\label{Active Cover} Active cover is provided by mobile obstacles between you and your target, such as creatures or tree branches blowing in the wind.
-            Physical attacks against creatures and objects with active cover suffer a 20\% miss chance.
-            If an attack misses due to active cover, the attack is made against the intervening obstacle rather than being negated like normal for miss chances.
-            The obstacle takes any damage from a successful attack normally.
+            \parhead{Partial Obstacles} Many obstacles, such as trees and low walls, can provide cover without normally blocking \glossterm{line of sight} or providing \glossterm{total cover}.
+            Unusually small creatures, or creatures who intentionally take cover behind such obstacles, may be able to gain total cover from them.
 
-            \parhead{Passive Cover}\label{Passive Cover} Passive cover is provided by immobile obstacles between you and your target, such as trees and walls.
-            Creatures and objects with passive cover from you gain a \plus2 bonus to Armor defense.
-            In addition, creatures with passive cover can hide (see \pcref{Stealth}).
+            \parhead{Improved Cover}
+            Cover of the same type generally doesn't stack; a creature behind two trees is not substantially more protected than a creature behind a single tree.
+            However, exceptionally well covered creatures, such as a creature behind an arrow slit in a castle, may gain a greater than normal benefit to defenses from cover.
 
-            \parhead{Measuring Cover}
+            \subsubsection{Measuring Cover}
 
             When you make an attack, choose a single square within your \glossterm{space} and a single \glossterm{target square} within your target's space.
             If you are making a ranged attack, choose one corner of your space.
@@ -803,19 +802,10 @@ It defines how attributes work and explains how to make attacks in combat.
             If any such line touches a square with an obstacle that grants active or passive cover, even at an edge or corner, the target has the appropriate cover from you.
             Otherwise, if the line is uninterrupted, the target does not have cover from you.
 
-            \parhead{Partial Obstacles} Many obstacles, such as trees and low walls, can provide passive cover without normally blocking \glossterm{line of sight} or providing \glossterm{total cover}.
-            Unusually small creatures, or creatures who intentionally take cover behind such obstacles, may be able to gain total cover from them.
-
-            \parhead{Improved Cover}
-            A creature can benefit from both passive and active cover.
-            Cover of the same type generally doesn't stack; a creature behind two trees is not substantially more protected than a creature behind a single tree.
-            However, exceptionally well covered creatures, such as a creature behind an arrow slit in a castle, may receive additional benefits.
-            In that case, each additional major obstacle increases the miss chance by 10\% or increases the defense bonus by \plus1, as appropriate.
-
-            \parhead{Total Cover}\label{Total Cover}
+        \subsection{Total Cover}\label{Total Cover}
             If a creature is completely behind an physical object that blocks sight, it has \glossterm{total cover} from attacks.
             A creature with total cover cannot be targeted by any attacks.
-            Total cover is the only kind of cover that also affects attacks other than \glossterm{physical attacks}.
+            Abilities that ignore \glossterm{cover} do not ignore \glossterm{total cover} unless they say otherwise.
 
         \subsubsection{Concealment}\label{Concealment}
             Concealment represents anything which makes it more difficult to see your target, such as dim lighting.
