@@ -1,4 +1,4 @@
-export const skills: Array<keyof Creature.Skills> = [
+export const skills: Creature.Skill[] = [
   // Strength
   "climb",
   "jump",
