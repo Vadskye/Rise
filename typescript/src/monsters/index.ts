@@ -9,10 +9,12 @@ interface Armor {
 import { fromPairs } from "@src/util/from_pairs";
 import { Weapon } from "@src/weapons";
 
+type MonsterSpecies = "animal" | "humanoid";
+
 interface MonsterRequiredInput {
   level: number;
   name: string;
-  species: string;
+  species: MonsterSpecies;
 }
 
 interface MonsterOptionalInput {
