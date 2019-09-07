@@ -13,10 +13,6 @@ During the action phase, creatures can \glossterm{attack}, cast \glossterm{spell
 In addition, you can use some special abilities by spending \glossterm{action points}.
 For details, see \pcref{Action Points}.
 
-\glossdef{active cover} Active cover is a type of \glossterm{cover} provided by mobile obstacles that can block \glossterm{physical attacks}.
-Physical attacks against creatures and objects with active cover suffer a 20\% miss chance.
-For details, see \pcref{Active Cover}.
-
 \glossdef{accuracy} The bonus added to an \glossterm{attack roll}.
 
 \glossdef{alignment} Your alignment represents your general morality in broad terms.
@@ -162,7 +158,6 @@ Conditions last until they are removed, such as by the \textit{cleanse} ability 
 \glossdef{confused} A confused creature is unable to independently control its actions. \confusionexplanation
 
 \glossdef{cover} Cover represents any obstacle that physically prevents you from striking your target, such as a tree or intervening creature.
-There are three kinds of cover: \glossterm{active cover}, \glossterm{passive cover}, and \glossterm{total cover}.
 For details, see \pcref{Cover}.
 
 \glossdef{Creation} See \pcref{Ability Tags}.
@@ -364,7 +359,9 @@ For details, see \pcref{Hidden Tasks}.
 \glossdef{hunting party} A hunting party is the group of allies affected by a ranger's \textit{quarry} ability (see \pcref{Quarry}).
 
 \glossdef{ignited} An ignited creature has been set on fire.
-It takes 1d6 fire damage at the end of each \glossterm{action phase} and takes a \minus2 penalty to \glossterm{defenses}.
+At the end of each round, it takes fire \glossterm{standard damage} \minus1d per round since the creature became ignited.
+The \glossterm{power} of this damage is equal to the \glossterm{power} of the ability that ignited it.
+% TODO: cold damage should put this out?
 
 \glossdef{immobilized} An immobilized creature can't move out of the space it was in when it became immobilized.
 Immobilized flying creatures that have the ability to hover can maintain their initial altitude.
@@ -385,7 +382,7 @@ Even magical effects, including spells and attacks with magic weapons, have a 50
 
 An incorporeal creature can enter or pass through solid objects, but it must remain adjacent to the object's exterior at all times.
 If it is completely inside an object, it cannot see out or attack.
-It can fight while partially inside an object, which grants it passive \glossterm{cover} and allows it to attack and see normallly.
+It can fight while partially inside an object, which grants it \glossterm{cover} and allows it to attack and see normallly.
 
 \glossdef{initiative} When multiple creatures take mutually impossible actions simultaneously, such as racing to be the first one to a door, they must roll initiative checks to determine who completes the action first.
 For details, see \pcref{Initiative}.
@@ -560,10 +557,6 @@ If unable to flee, it must do nothing other than use the \textit{total defense} 
 If the source of a panicked creature's fear is a creature and is \glossterm{defeated}, this effect is broken.
 
 \glossdef{paralyzed} A paralyzed creature is unable to take physical actions. It has effective Dexterity and Strength scores of \minus10 and is \helpless, but can take purely mental actions. This can cause flying creatures to crash, swimming creatures to drown, and so on. Any creature can move through a space occupied by a paralyzed creature, though its space is treated as \glossterm{difficult terrain}.
-
-\glossdef{passive cover} Passive cover is a type of \glossterm{cover} provided by immobile obstacles that can block \glossterm{physical attacks}.
-Creatures and objects with passive cover from you gain a \plus2 bonus to Armor defense.
-For details, see \pcref{Passive Cover}.
 
 \glossdef{petrified} A petrified creature has been turned to stone. It is neither alive nor dead, but is unconscious and unable to take actions, and its body is an inanimate statue. If the statue is broken or damaged before the creature is restored to its original state, the creature has equivalent damage or deformities.
 
