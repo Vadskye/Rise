@@ -68,7 +68,7 @@ def generate_weapons():
         description="""
             You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
         """,
-        short_description="Grants +2 power",
+        short_description="Grants +2 \\glossterm<mundane> power",
     ))
 
     weapons.append(MagicItem(
@@ -78,7 +78,7 @@ def generate_weapons():
         description="""
             You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
         """,
-        short_description="Grants +4 power",
+        short_description="Grants +4 \\glossterm<mundane> power",
     ))
 
     weapons.append(MagicItem(
@@ -233,7 +233,7 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Longshot",
-        level=4,
+        level=5,
         material_type='Weapon',
         description="""
             When you make a ranged attack with this weapon, you reduce your penalties for \\glossterm<range increments> by 1.
@@ -243,7 +243,7 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Longshot, Greater",
-        level=10,
+        level=11,
         material_type='Weapon',
         description="""
             When you make a ranged attack with this weapon, you reduce your penalties for \\glossterm<range increments> by 2.
@@ -253,7 +253,7 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Longshot, Supreme",
-        level=16,
+        level=17,
         material_type='Weapon',
         description="""
             When you make a ranged attack with this weapon, you reduce your penalties for \\glossterm<range increments> by 3.
@@ -290,7 +290,7 @@ def generate_weapons():
 
     weapons.append(MagicItem(
         name="Forceful, Greater",
-        level=11,
+        level=13,
         material_type='Weapon',
         description="""
             This weapon feels heavy in the hand.
