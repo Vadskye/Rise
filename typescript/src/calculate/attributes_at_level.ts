@@ -1,19 +1,19 @@
 interface AttributeAtLevelArgs {
-  attributes: Creature.Attributes;
   level: number;
+  startingAttributes: Creature.Attributes;
 }
 
 export function attributesAtLevel({
-  attributes,
   level,
+  startingAttributes,
 }: AttributeAtLevelArgs): Creature.Attributes {
   return {
-    str: attributeAtLevel(attributes.str, level),
-    dex: attributeAtLevel(attributes.dex, level),
-    con: attributeAtLevel(attributes.con, level),
-    int: attributeAtLevel(attributes.int, level),
-    per: attributeAtLevel(attributes.per, level),
-    wil: attributeAtLevel(attributes.wil, level),
+    str: attributeAtLevel(startingAttributes.str, level),
+    dex: attributeAtLevel(startingAttributes.dex, level),
+    con: attributeAtLevel(startingAttributes.con, level),
+    int: attributeAtLevel(startingAttributes.int, level),
+    per: attributeAtLevel(startingAttributes.per, level),
+    wil: attributeAtLevel(startingAttributes.wil, level),
   };
 }
 

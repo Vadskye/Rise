@@ -1,4 +1,6 @@
 import { Armor } from "@src/armor";
+import { attributesAtLevel } from "@src/calculate/attributes_at_level";
+import { skillModifierByName } from "@src/calculate/skill_modifier_by_name";
 import { attributes } from "@src/data/attributes";
 import { skills } from "@src/data/skills";
 import { MonsterType } from "@src/monsters/types";
@@ -12,42 +14,69 @@ interface MonsterRequiredInput {
 }
 
 interface MonsterOptionalInput {
-  attributes?: Partial<Creature.Attributes>;
   armor?: Armor[];
   challengeRating?: number;
   size?: Creature.Size;
-  skills?: Partial<Creature.Skills>;
+  skillPoints?: Partial<Creature.Skills>;
+  startingAttributes?: Partial<Creature.Attributes>;
   weapons?: Weapon[];
 }
 
-export type MonsterBase = Omit<MonsterRequiredInput, "attributes" | "skills"> &
-  Required<MonsterOptionalInput> & { attributes: Creature.Attributes; skills: Creature.Skills };
+interface MonsterCalculatedValues {
+  attributes: Creature.Attributes;
+  skills: Creature.Skills;
+}
+
+export type MonsterBase = MonsterRequiredInput &
+  Required<MonsterOptionalInput> &
+  MonsterCalculatedValues;
 
 export type MonsterInput = MonsterRequiredInput & MonsterOptionalInput;
 
-const monsterDefaults: Required<Omit<MonsterOptionalInput, "attributes" | "skills">> & {
-  attributes: Creature.Attributes;
-  skills: Creature.Skills;
+const monsterDefaults: Required<
+  Omit<MonsterOptionalInput, "startingAttributes" | "skillPoints">
+> & {
+  startingAttributes: Creature.Attributes;
+  skillPoints: Creature.Skills;
 } = {
-  attributes: fromPairs(attributes.map((a) => [a, 0])),
   armor: [],
   challengeRating: 1,
   size: "medium",
-  skills: fromPairs(skills.map((s) => [s, 0])),
+  skillPoints: fromPairs(skills.map((s) => [s, 0])),
+  startingAttributes: fromPairs(attributes.map((a) => [a, 0])),
   weapons: [],
 };
 
-function mergeDefaultAttributes(monster: MonsterOptionalInput): Creature.Attributes {
-  if (monster.attributes === undefined) {
-    return monsterDefaults.attributes;
+function calculateSkills(
+  attributes: Creature.Attributes,
+  skillPoints: Creature.Skills,
+  monsterInput: MonsterInput,
+): Creature.Skills {
+  const skillModifiers: Partial<Creature.Skills> = {};
+  for (const skillName of skills) {
+    skillModifiers[skillName] = skillModifierByName({
+      attributes,
+      level: monsterInput.level,
+      name: skillName,
+      skillPoints: skillPoints[skillName],
+    });
   }
-  return Object.assign({}, monsterDefaults.attributes, monster.attributes);
+  return skillModifiers as Creature.Skills;
 }
 
 export function reformatMonsterInput(monsterInput: MonsterInput): MonsterBase {
+  const startingAttributes = Object.assign(
+    {},
+    monsterDefaults.startingAttributes,
+    monsterInput.startingAttributes,
+  );
+  const attributeModifiers = attributesAtLevel({ level: monsterInput.level, startingAttributes });
+  const skillPoints = Object.assign({}, monsterDefaults.skillPoints, monsterInput.skillPoints);
+  const skillModifiers = calculateSkills(attributeModifiers, skillPoints, monsterInput);
   return {
     ...monsterInput,
     ...monsterDefaults,
-    attributes: mergeDefaultAttributes(monsterInput),
+    attributes: attributeModifiers,
+    skills: skillModifiers,
   };
 }
