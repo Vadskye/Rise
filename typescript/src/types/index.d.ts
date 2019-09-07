@@ -47,4 +47,15 @@ declare namespace Creature {
     perform: number;
     persuasion: number;
   }
+
+  type Size =
+    | "fine"
+    | "diminuitive"
+    | "tiny"
+    | "small"
+    | "medium"
+    | "large"
+    | "huge"
+    | "gargantuan"
+    | "colossal";
 }
