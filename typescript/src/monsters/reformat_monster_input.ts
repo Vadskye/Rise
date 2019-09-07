@@ -41,7 +41,7 @@ function mergeDefaultAttributes(monster: MonsterOptionalInput): Creature.Attribu
   if (monster.attributes === undefined) {
     return monsterDefaults.attributes;
   }
-  return Object.assign({}, monster.attributes, monsterDefaults.attributes);
+  return Object.assign({}, monsterDefaults.attributes, monster.attributes);
 }
 
 export function reformatMonsterInput(monsterInput: MonsterInput): MonsterBase {
