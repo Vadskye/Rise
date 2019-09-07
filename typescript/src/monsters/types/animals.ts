@@ -5,8 +5,10 @@ export const animals = addType("animal", [
   {
     level: 3,
     name: "Bear, brown",
+    size: "large",
     startingAttributes: {
       str: 3,
+      con: 2,
       per: 5,
     },
   },
