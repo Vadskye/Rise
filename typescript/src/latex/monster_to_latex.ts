@@ -17,7 +17,7 @@ function getMonsectionArgs(monster: MonsterBase) {
 }
 
 function getTitleAndSpeciesHeader(monster: MonsterBase) {
-  return `\\vspace{-1em}\\spelltwocol{${titleCase(monster.size)} ${monster.species}}\\vspace{-1em}`;
+  return `\\vspace{-1em}\\spelltwocol{${titleCase(monster.size)} ${monster.type}}\\vspace{-1em}`;
 }
 
 function getName({ name }: MonsterBase): string {
