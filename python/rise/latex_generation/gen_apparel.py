@@ -312,12 +312,22 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Titan Gauntlets",
-        level=13,
+        level=10,
         material_type='Gauntlet',
         description="""
-            You gain a +1d \\glossterm<magic bonus> to damage with \\glossterm<strikes>.
+            You gain a +2 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
         """,
-        short_description="Grants +1d damage with strikes",
+        short_description="Grants +2 \\glossterm<mundane> power",
+    ))
+
+    apparel.append(MagicItem(
+        name="Titan Gauntlets, Greater",
+        level=19,
+        material_type='Gauntlet',
+        description="""
+            You gain a +4 \\glossterm<magic bonus> to \\glossterm<power> with \\glossterm<mundane> abilities.
+        """,
+        short_description="Grants +4 \\glossterm<mundane> power",
     ))
 
     apparel.append(MagicItem(
