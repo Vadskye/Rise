@@ -1,52 +1,48 @@
 declare namespace Creature {
-  interface Attributes {
-    str: number;
-    dex: number;
-    con: number;
-    int: number;
-    per: number;
-    wil: number;
-  }
+  type Attribute = "str" | "dex" | "con" | "int" | "per" | "wil";
 
-  interface Skills {
+  type Attributes = Record<Attribute, number>;
+
+  type Skill =
     // Strength
-    climb: number;
-    jump: number;
-    swim: number;
+    | "climb"
+    | "jump"
+    | "swim"
 
     // Dexterity
-    acrobatics: number;
-    "escape artist": number;
-    ride: number;
-    "sleight of hand": number;
-    stealth: number;
+    | "acrobatics"
+    | "escape artist"
+    | "ride"
+    | "sleight of hand"
+    | "stealth"
 
     // Constitution has no skills
 
     // Intelligence
-    craft: number;
-    deduction: number;
-    devices: number;
-    disguise: number;
-    heal: number;
-    knowledge: number;
-    linguistics: number;
+    | "craft"
+    | "deduction"
+    | "devices"
+    | "disguise"
+    | "heal"
+    | "knowledge"
+    | "linguistics"
 
     // Perception
-    awareness: number;
-    "creature handling": number;
-    "sense motive": number;
-    spellcraft: number;
-    survival: number;
+    | "awareness"
+    | "creature handling"
+    | "sense motive"
+    | "spellcraft"
+    | "survival"
 
     // Willpower has no skills
 
     // Other skills
-    bluff: number;
-    intimidate: number;
-    perform: number;
-    persuasion: number;
-  }
+    | "bluff"
+    | "intimidate"
+    | "perform"
+    | "persuasion";
+
+  type Skills = Record<Skill, number>;
 
   type Size =
     | "fine"
