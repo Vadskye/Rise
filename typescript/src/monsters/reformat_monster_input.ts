@@ -1,6 +1,10 @@
 import { Armor } from "@src/armor";
 import { attributesAtLevel } from "@src/calculate/attributes_at_level";
+import { calculateHitPoints } from "@src/calculate/calculate_hit_points";
+import { reachBySize } from "@src/calculate/reach_by_size";
 import { skillModifierByName } from "@src/calculate/skill_modifier_by_name";
+import { spaceBySize } from "@src/calculate/space_by_size";
+import { speedBySize } from "@src/calculate/speed_by_size";
 import { attributes } from "@src/data/attributes";
 import { skills } from "@src/data/skills";
 import { MonsterType } from "@src/monsters/types";
@@ -16,15 +20,24 @@ interface MonsterRequiredInput {
 interface MonsterOptionalInput {
   armor?: Armor[];
   challengeRating?: number;
+  reach?: number;
   size?: Creature.Size;
   skillPoints?: Partial<Creature.Skills>;
+  space?: number;
+  speed?: number;
   startingAttributes?: Partial<Creature.Attributes>;
   weapons?: Weapon[];
 }
 
 interface MonsterCalculatedValues {
   attributes: Creature.Attributes;
+  hitPoints: number;
+  reach: number;
   skills: Creature.Skills;
+  skillPoints: Creature.Skills;
+  startingAttributes: Creature.Attributes;
+  space: number;
+  speed: number;
 }
 
 export type MonsterBase = MonsterRequiredInput &
@@ -34,7 +47,7 @@ export type MonsterBase = MonsterRequiredInput &
 export type MonsterInput = MonsterRequiredInput & MonsterOptionalInput;
 
 const monsterDefaults: Required<
-  Omit<MonsterOptionalInput, "startingAttributes" | "skillPoints">
+  Omit<MonsterOptionalInput, "startingAttributes" | "skillPoints" | keyof MonsterCalculatedValues>
 > & {
   startingAttributes: Creature.Attributes;
   skillPoints: Creature.Skills;
@@ -70,13 +83,23 @@ export function reformatMonsterInput(monsterInput: MonsterInput): MonsterBase {
     monsterDefaults.startingAttributes,
     monsterInput.startingAttributes,
   );
-  const attributeModifiers = attributesAtLevel({ level: monsterInput.level, startingAttributes });
   const skillPoints = Object.assign({}, monsterDefaults.skillPoints, monsterInput.skillPoints);
-  const skillModifiers = calculateSkills(attributeModifiers, skillPoints, monsterInput);
-  return {
-    ...monsterInput,
+  const monster = {
     ...monsterDefaults,
+    ...monsterInput,
+    startingAttributes,
+    skillPoints,
+  };
+
+  const attributeModifiers = attributesAtLevel({ level: monster.level, startingAttributes });
+  const skillModifiers = calculateSkills(attributeModifiers, skillPoints, monster);
+  return {
     attributes: attributeModifiers,
+    hitPoints: calculateHitPoints({ startingAttributes }),
+    reach: reachBySize(monster.size),
+    space: spaceBySize(monster.size),
+    speed: speedBySize(monster.size),
     skills: skillModifiers,
+    ...monster,
   };
 }
