@@ -50,7 +50,7 @@ def generate_maneuvers():
         """,
         rank_upgrades={
             '3': 'The accuracy bonus increases to +2.',
-            '5': 'You also reroll any \\glossterm<miss chances>, such as from \\glossterm<active cover>, and take the better result.',
+            '5': 'You also reroll any \\glossterm<miss chances>, such as when attacking \\glossterm<invisible> creatures, and take the better result.',
             '7': 'The accuracy bonus increases to +4.',
         },
         tags=[],
@@ -468,7 +468,10 @@ def generate_maneuvers():
             If you use this ability during the \\glossterm<action phase>, you may continue moving during the \\glossterm<delayed action phase> if you have remaining movement available.
         """,
         rank_upgrades={
-            '3': 'If you have movement remaining after using this ability during the \\glossterm<action phase>, you gain a +2 bonus to Armor and Reflex defenses in the \\glossterm<delayed action phase>.',
+            '3': """
+                If you have movement remaining after using this ability during the \\glossterm<action phase>,
+                you gain a +2 bonus to Armor and Reflex defenses in the \\glossterm<delayed action phase>.
+            """,
             '5': 'The damage penalty is removed.',
             '7': 'The bonus to defenses increases to +4.',
         },
@@ -634,18 +637,19 @@ def generate_maneuvers():
     ))
 
     maneuvers.append(Maneuver(
-        name='Focus',
-        short_description='You prepare yourself to strike a critical blow',
+        name='Focused Strike',
+        short_description='You concentrate to strike a critical blow.',
         effect_text="""
-            Until the end of the next round, you gain a +2 bonus to \\glossterm<accuracy> with \\glossterm<strikes>.
+            Make a melee \\glossterm<strike>.
+            The attack roll \\glossterm<explodes> regardless of what you roll.
         """,
         rank_upgrades={
-            '3': 'The accuracy bonus increases to +3.',
-            '5': 'You also gain a +1d bonus to damage with \\glossterm<strikes>.',
-            '7': 'The accuracy bonus increases to +5.',
+            '3': 'You also gain a +1d bonus to damage with the \\glossterm<strike>.',
+            '5': 'The damage bonus increaseses to +2d.',
+            '7': 'The damage bonus increases to +3d.',
         },
-        tags=[],
-        lists=[],
+        tags=['Focus'],
+        lists=['Esoteric', 'Martial'],
     ))
 
     return maneuvers
