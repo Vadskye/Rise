@@ -1,6 +1,12 @@
-import { MonsterBase } from "@src/monsters";
+interface AttributeAtLevelArgs {
+  attributes: Creature.Attributes;
+  level: number;
+}
 
-export function attributesAtLevel({ attributes, level }: MonsterBase): Creature.Attributes {
+export function attributesAtLevel({
+  attributes,
+  level,
+}: AttributeAtLevelArgs): Creature.Attributes {
   return {
     str: attributeAtLevel(attributes.str, level),
     dex: attributeAtLevel(attributes.dex, level),
