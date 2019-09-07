@@ -18,6 +18,7 @@
   "author": "vadskye",
   "license": "MIT",
   "scripts": {
+    "clean": "rm src/*.js && rm src/**/*.js",
     "script": "node -r tsconfig-paths/register"
   }
 }
