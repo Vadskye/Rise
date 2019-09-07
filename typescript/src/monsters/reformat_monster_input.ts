@@ -15,7 +15,7 @@ interface MonsterOptionalInput {
   attributes?: Partial<Creature.Attributes>;
   armor?: Armor[];
   challengeRating?: number;
-  size?: string;
+  size?: Creature.Size;
   skills?: Partial<Creature.Skills>;
   weapons?: Weapon[];
 }
