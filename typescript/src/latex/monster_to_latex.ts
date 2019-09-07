@@ -1,5 +1,10 @@
 import { attributesAtLevel } from "@src/calculate/attributes_at_level";
+import { reachBySize } from "@src/calculate/reach_by_size";
 import { skillModifierByName } from "@src/calculate/skill_modifier_by_name";
+import { spaceBySize } from "@src/calculate/space_by_size";
+import { speedBySize } from "@src/calculate/speed_by_size";
+import * as format from "@src/latex/format";
+import { modifier } from "@src/latex/format/modifier";
 import { MonsterBase } from "@src/monsters";
 import { titleCase } from "change-case";
 
@@ -41,7 +46,13 @@ function getFooter(monster: MonsterBase) {
   });
   return `
     \\begin{monsterfooter}
-      \\pari \\textbf<Awareness>
+      \\pari \\textbf{Awareness} ${modifier(awareness)}
+      \\pari \\textbf{Speed} ${format.feet(speedBySize(monster.size))};
+        \\textbf{Space} ${format.feet(spaceBySize(monster.size))};
+        \\textbf{Reach} ${format.feet(reachBySize(monster.size))}
+      \\pari \\textbf{Attributes}:
+        Str ${attributes.str}, Dex ${attributes.dex}, Con ${attributes.con},
+        Int ${attributes.int}, Per ${attributes.per}, Wil ${attributes.wil}
     \\end{monsterfooter}
   `;
 }

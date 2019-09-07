@@ -5,6 +5,7 @@ export const animals = addType("animal", [
   {
     attributes: {
       str: 3,
+      per: 5,
     },
     level: 3,
     name: "Bear, brown",
