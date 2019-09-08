@@ -1,5 +1,5 @@
 import { skillModifier } from "@src/calculate/skill_modifier";
-import { skillAttributes } from "@src/data/skill_attributes";
+import { skillAttributes } from "@src/data";
 
 interface SkillModifierByNameArgs {
   attributes: Creature.Attributes;
