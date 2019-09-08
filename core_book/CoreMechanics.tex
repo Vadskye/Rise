@@ -1019,7 +1019,7 @@ It defines how attributes work and explains how to make attacks in combat.
         \parhead{Flying}\label{Flying}
         A creature with a \glossterm{fly speed} can fly through the air at the indicated speed.
         It must not be carrying weight in excess of its maximum carrying capacity (see \pcref{Carrying Capacity}).
-        Flying has the \glossterm{Focus} tag, so a creature that flies during the movement phase takes \glossterm{focus penalties} for the rest of the round (see \pcref{Focus}).
+        Flying normally has the \glossterm{Focus} tag, so a creature that flies during the movement phase takes \glossterm{focus penalties} for the rest of the round (see \pcref{Focus}).
 
         Each creature with a fly speed also has a maneuverability: good, average, poor, or special.
         Unless otherwise specified, a creature with a fly speed has average maneuverability.
@@ -1031,10 +1031,13 @@ It defines how attributes work and explains how to make attacks in combat.
 
         \parhead{Maneuverability}\label{Maneuverability} Some creatures have fly speeds with special maneuverability rules.
 
-        \subparhead{Good Maneuverability} If a creature has good maneuverability while flying, it gains three benefits while flying.
-        First, it not need to move forward to maintain its flight, allowing it to hover.
-        Second, it can turn in place without spending movement.
-        Third, it can move up at the same speed as it moves horizontally.
+        \subparhead{Good Maneuverability} If a creature has good maneuverability while flying, it gains four benefits while flying.
+        \begin{itemize}
+            \item The creature does not need to move forward to maintain its flight, allowing it to hover.
+            \item The creature can turn in place without spending movement.
+            \item The creature can move up at the same speed as it moves horizontally.
+            \item The creature's flight does not have the \glossterm{Focus} tag, so it takes no penalties for flying.
+        \end{itemize}
 
         \parhead{Poor Maneuverability} If a creature has poor maneuverability while flying, it must spend five feet of movement to turn by 45 degrees, and it can't turn in the same place by more than 45 degrees. In addition, it can only descend by up to one square vertically per square traveled horizontally without falling.
 
