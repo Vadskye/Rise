@@ -30,18 +30,9 @@ Until the end of the round, the target treats all falls as if they were 5 feet s
 \subsubsection{Spells}
 
 
-\lowercase{\hypertarget{spell:Gentle Descent}{}}\label{spell:Gentle Descent}
-\begin{attuneability}[\nth{1}]{\hypertarget{spell:Gentle Descent}{Gentle Descent}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{One Large or smaller \glossterm{ally} in \rngclose range}
-The target gains a 30 foot \glossterm{glide speed} (see \pcref{Gliding}).
-\end{attuneability}
-\vspace{0.25em}
-
-
-
 \lowercase{\hypertarget{spell:Propulsion}{}}\label{spell:Propulsion}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Propulsion}{Propulsion}}[\glossterm{Focus}, \glossterm{Swift}]
-\target{One Large or smaller \glossterm{ally} in \rngclose range}
+\target{Yourself or one Large or smaller \glossterm{ally} in \rngclose range}
 You move the target up to 50 feet in any direction.
 You cannot change direction the direction of the movement partway through.
 Moving the target upwards cost twice the normal movement cost.
@@ -95,9 +86,18 @@ Make an attack vs. Fortitude against each target.
 
 
 
+\lowercase{\hypertarget{spell:Gentle Descent}{}}\label{spell:Gentle Descent}
+\begin{attuneability}[\nth{2}]{\hypertarget{spell:Gentle Descent}{Gentle Descent}}[\glossterm{Attune} (target), \glossterm{Focus}]
+\target{Yourself}
+You gain a 30 foot \glossterm{glide speed} (see \pcref{Gliding}).
+\end{attuneability}
+\vspace{0.25em}
+
+
+
 \lowercase{\hypertarget{spell:Greater Propulsion}{}}\label{spell:Greater Propulsion}
 \begin{freeability}[\nth{2}]{\hypertarget{spell:Greater Propulsion}{Greater Propulsion}}[\glossterm{Focus}, \glossterm{Swift}]
-\target{One Large or smaller \glossterm{ally} in \rngclose range}
+\target{Yourself or one Large or smaller \glossterm{ally} in \rngclose range}
 This spell functions like the \spell{propulsion} spell, except that the distance you can move the target is increased to 100 feet.
 In addition, the target gains a \plus1 bonus to Armor defense during the current phase.
 \end{freeability}
@@ -196,8 +196,8 @@ If another ability would magically manipulate the weather in the same area, the 
 
 \lowercase{\hypertarget{spell:Flight}{}}\label{spell:Flight}
 \begin{attuneability}[\nth{4}]{\hypertarget{spell:Flight}{Flight}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{One large or smaller \glossterm{ally} in \rngclose range}
-The target gains a 30 foot \glossterm{fly speed} as long as it is no more than 50 feet above solid ground (see \pcref{Flying}).
+\target{Yourself}
+You gain a 30 foot \glossterm{fly speed} as long as you are no more than 100 feet above solid ground (see \pcref{Flying}).
 \end{attuneability}
 \vspace{0.25em}
 
@@ -245,7 +245,7 @@ Each target's final position should be the same distance from you as its startin
 
 \lowercase{\hypertarget{spell:Supreme Propulsion}{}}\label{spell:Supreme Propulsion}
 \begin{freeability}[\nth{4}]{\hypertarget{spell:Supreme Propulsion}{Supreme Propulsion}}[\glossterm{Focus}, \glossterm{Swift}]
-\target{One Large or smaller \glossterm{ally} in \rngclose range}
+\target{Yourself or one Large or smaller \glossterm{ally} in \rngclose range}
 This spell functions like the \spell{propulsion} spell, except that the distance you can move the target is increased to 300 feet.
 In addition, the target gains a \plus2 bonus to Armor defense during the current phase.
 \end{freeability}
@@ -303,8 +303,8 @@ This spell functions like the \spell{stormlord} spell, except that the damage in
 
 \lowercase{\hypertarget{spell:Greater Flight}{}}\label{spell:Greater Flight}
 \begin{attuneability}[\nth{7}]{\hypertarget{spell:Greater Flight}{Greater Flight}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{One large or smaller \glossterm{ally} in \rngclose range}
-The target gains a 30 foot \glossterm{fly speed} with good \glossterm{maneuverability} (see \pcref{Flying}).
+\target{Yourself}
+You gain a 30 foot \glossterm{fly speed} with good \glossterm{maneuverability} (see \pcref{Flying}).
 \end{attuneability}
 \vspace{0.25em}
 
@@ -629,7 +629,7 @@ Make an attack vs. Mental against the target.
 
 \lowercase{\hypertarget{spell:Teleport}{}}\label{spell:Teleport}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Teleport}{Teleport}}[\glossterm{Focus}]
-\target{One Medium or smaller \glossterm{ally} or unattended object within \rngclose range}
+\target{Yourself or one Medium or smaller \glossterm{ally} or unattended object within \rngclose range}
 The target teleports into an unoccupied destination within range.
 If the destination is invalid, this spell is \glossterm{miscast}.
 \end{freeability}
@@ -716,7 +716,7 @@ Dropping \glossterm{prone} as part of this action gives a \plus5 bonus to this c
 
 \lowercase{\hypertarget{spell:Greater Teleport}{}}\label{spell:Greater Teleport}
 \begin{freeability}[\nth{3}]{\hypertarget{spell:Greater Teleport}{Greater Teleport}}[\glossterm{Focus}]
-\target{One Medium or smaller \glossterm{ally} or unattended object within \rngclose range}
+\target{Yourself or one Medium or smaller \glossterm{ally} or unattended object within \rngclose range}
 This spell functions like the \spell{teleport} spell, except that the range is increased to \rnglong.
 \end{freeability}
 \vspace{0.25em}
@@ -1692,7 +1692,7 @@ Make an attack vs. Mental against the target.
 
 \lowercase{\hypertarget{spell:Time Hop}{}}\label{spell:Time Hop}
 \begin{freeability}[\nth{2}]{\hypertarget{spell:Time Hop}{Time Hop}}[\glossterm{Focus}]
-\target{One Medium or smaller \glossterm{ally} or unattended object within \rngmed range}
+\target{Yourself or one Medium or smaller \glossterm{ally} or unattended object within \rngmed range}
 You send the target into the future, causing it to temporarily cease to exist.
 When you cast this spell, you choose how many rounds the target ceases to exist for, up to a maximum of five rounds.
 At the end of the last round, it reappears in the same location where it disappeared.
@@ -1742,7 +1742,7 @@ Make an attack vs. Mental against the target.
 
 \lowercase{\hypertarget{spell:Temporal Stasis}{}}\label{spell:Temporal Stasis}
 \begin{attuneability}[\nth{3}]{\hypertarget{spell:Temporal Stasis}{Temporal Stasis}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{One Medium or smaller \glossterm{ally} within \rngmed range}
+\target{Yourself or one Medium or smaller \glossterm{ally} within \rngmed range}
 The target is placed into stasis, rendering it unconscious.
 While in stasis, it cannot take any actions and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
 
@@ -2814,7 +2814,7 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Hidden Blade}{}}\label{spell:Hidden Blade}
 \begin{freeability}[\nth{1}]{\hypertarget{spell:Hidden Blade}{Hidden Blade}}[\glossterm{Focus}, \glossterm{Sensation}, \glossterm{Visual}]
-\target{One \glossterm{ally} within \rngclose range}
+\target{Yourself or one \glossterm{ally} within \rngclose range}
 You can only cast this spell during the \glossterm{action phase}.
 
 The target's weapons become invisible, and its hands are blurred.
@@ -2904,7 +2904,7 @@ This ability provides no defensive benefit against creatures immune to \glosster
 
 \lowercase{\hypertarget{spell:Magic Mouth}{}}\label{spell:Magic Mouth}
 \begin{attuneability}[\nth{1}]{\hypertarget{spell:Magic Mouth}{Magic Mouth}}[\glossterm{Attune} (ritual), \glossterm{Focus}, \glossterm{Sensation}]
-\target{One large or smaller \glossterm{ally} or unattended object within \rngclose range}
+\target{Yourself or one large or smaller \glossterm{ally} or unattended object within \rngclose range}
 Choose a triggering condition and a message of twenty-five words or less.
 The condition must be something that a typical human in the target's place could detect.
 
@@ -3050,7 +3050,7 @@ This spell functions like the \spell{solar flare} spell, except that the accurac
 
 \lowercase{\hypertarget{spell:Mobile Light}{}}\label{spell:Mobile Light}
 \begin{attuneability}[\nth{1}]{\hypertarget{spell:Mobile Light}{Mobile Light}}[\glossterm{Attune} (ritual), \glossterm{Focus}, \glossterm{Sensation}]
-\target{One Medium or smaller \glossterm{ally} or unattended object within \rngclose range}
+\target{Yourself or one Medium or smaller \glossterm{ally} or unattended object within \rngclose range}
 The target glows like a torch, shedding bright light in a \areamed radius (and dim light for an additional 20 feet).
 
 This ritual takes one minute to perform.
@@ -3135,7 +3135,7 @@ This bonus is increased to \plus8 when you climb on ceilings and similar surface
 
 \lowercase{\hypertarget{spell:Alter Appearance}{}}\label{spell:Alter Appearance}
 \begin{attuneability}[\nth{2}]{\hypertarget{spell:Alter Appearance}{Alter Appearance}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{One large or smaller \glossterm{ally} within \rngclose range}
+\target{Yourself or one large or smaller \glossterm{ally} within \rngclose range}
 You make a Disguise check to alter the target's appearance (see \pcref{Disguise Creature}).
 You gain a \plus5 bonus on the check, and you ignore penalties for changing the target's gender, species, subtype, or age.
 However, this effect is unable to alter the target's clothes or equipment in any way.
@@ -3184,7 +3184,7 @@ If you do, it increases the maximum size of all targets combined.
 
 \lowercase{\hypertarget{spell:Enlarge}{}}\label{spell:Enlarge}
 \begin{attuneability}[\nth{3}]{\hypertarget{spell:Enlarge}{Enlarge}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{One large or smaller \glossterm{ally} within \rngclose range}
+\target{Yourself or one large or smaller \glossterm{ally} within \rngclose range}
 The target's size increases by one size category.
 This increases its \glossterm{overwhelm value}, \glossterm{overwhelm resistance}, and usually increases its \glossterm{reach} (see \pcref{Size in Combat}).
 However, its physical form is not altered fully to match its new size, and its Strength and Dexterity are unchanged.
@@ -3239,7 +3239,7 @@ Its equipment is unaffected.
 
 \lowercase{\hypertarget{spell:Enlarge, Greater}{}}\label{spell:Enlarge, Greater}
 \begin{attuneability}[\nth{5}]{\hypertarget{spell:Enlarge, Greater}{Enlarge, Greater}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{One large or smaller \glossterm{ally} within \rngclose range}
+\target{Yourself or one large or smaller \glossterm{ally} within \rngclose range}
 This spell functions like the \spell{enlarge} spell, except that the target also gains a \plus2 \glossterm{magic bonus} to Strength.
 \end{attuneability}
 \vspace{0.25em}
@@ -3284,7 +3284,7 @@ This spell functions like the \spell{regeneration} spell, except that the bonus 
 
 \lowercase{\hypertarget{spell:Enlarge, Supreme}{}}\label{spell:Enlarge, Supreme}
 \begin{attuneability}[\nth{7}]{\hypertarget{spell:Enlarge, Supreme}{Enlarge, Supreme}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{One large or smaller \glossterm{ally} within \rngclose range}
+\target{Yourself or one large or smaller \glossterm{ally} within \rngclose range}
 This spell functions like the \spell{enlarge} spell, except that the target's size is increased by two size categories.
 It gains a \plus2 \glossterm{magic bonus} to Strength to partially match its new size.
 \end{attuneability}
@@ -4364,7 +4364,7 @@ Make an attack vs. Mental against the target.
 
 \lowercase{\hypertarget{spell:Telekinetic Lift}{}}\label{spell:Telekinetic Lift}
 \begin{attuneability}[\nth{1}]{\hypertarget{spell:Telekinetic Lift}{Telekinetic Lift}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{One Medium or smaller \glossterm{ally} or unattended object within \rngclose range}
+\target{Yourself or one Medium or smaller \glossterm{ally} or unattended object within \rngclose range}
 The target is reduced to half of its normal weight.
 This gives it a \plus4 bonus to the Jump skill, if applicable, and makes it easier to lift and move.
 \end{attuneability}
@@ -4417,7 +4417,7 @@ You can cast this spell as a \glossterm{minor action}.
 
 \lowercase{\hypertarget{spell:Greater Telekinetic Lift}{}}\label{spell:Greater Telekinetic Lift}
 \begin{attuneability}[\nth{3}]{\hypertarget{spell:Greater Telekinetic Lift}{Greater Telekinetic Lift}}[\glossterm{Attune} (target), \glossterm{Focus}]
-\target{One Medium or smaller \glossterm{ally} or unattended object within \rngclose range}
+\target{Yourself or one Medium or smaller \glossterm{ally} or unattended object within \rngclose range}
 This spell functions like the \spell{telekinetic lift} spell, except that the target is reduced to one quarter of its normal weight.
 This increases the Jump bonus to \plus8.
 \end{attuneability}
@@ -4436,7 +4436,7 @@ This spell functions like the \spell{force lance} spell, except that affects mor
 
 \lowercase{\hypertarget{spell:Levitate}{}}\label{spell:Levitate}
 \begin{attuneability}[\nth{4}]{\hypertarget{spell:Levitate}{Levitate}}[\glossterm{Attune} (self), \glossterm{Focus}]
-\target{One Medium or smaller \glossterm{ally} or unattended object within \rngclose range}
+\target{Yourself or one Medium or smaller \glossterm{ally} or unattended object within \rngclose range}
 % TODO: Wording
 As long as the target remains within 50 feet above a surface that could support its weight, it floats in midair, unaffected by gravity.
 During the movement phase, you can move the target up to ten feet in any direction as a \glossterm{free action}.
