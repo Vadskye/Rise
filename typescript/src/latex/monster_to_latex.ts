@@ -1,4 +1,4 @@
-import { resistanceTypes } from "@src/data/resistance_types";
+import { resistanceTypes } from "@src/data";
 import * as format from "@src/latex/format";
 import { MonsterBase } from "@src/monsters";
 import { titleCase } from "change-case";
