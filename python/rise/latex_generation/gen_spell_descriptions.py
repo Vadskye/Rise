@@ -38,7 +38,7 @@ def generate_mystic_spheres():
         rituals=[
         ],
         spells=[
-            Spell('Propulsion', 1, 'One Large or smaller \\glossterm<ally> in \\rngclose range', """
+            Spell('Propulsion', 1, 'Yourself or one Large or smaller \\glossterm<ally> in \\rngclose range', """
                 You move the target up to 50 feet in any direction.
                 You cannot change direction the direction of the movement partway through.
                 Moving the target upwards cost twice the normal movement cost.
@@ -65,22 +65,22 @@ def generate_mystic_spheres():
                 In addition, if your attack result beats the target's Fortitude defense, you move it up to 30 feet in any direction.
                 Moving the target upwards cost twice the normal movement cost.
             """, tags=[]),
-            Spell('Greater Propulsion', 2, 'One Large or smaller \\glossterm<ally> in \\rngclose range', """
+            Spell('Greater Propulsion', 2, 'Yourself or one Large or smaller \\glossterm<ally> in \\rngclose range', """
                 This spell functions like the \\spell<propulsion> spell, except that the distance you can move the target is increased to 100 feet.
                 In addition, the target gains a +1 bonus to Armor defense during the current phase.
             """, tags=['Swift']),
-            Spell('Supreme Propulsion', 4, 'One Large or smaller \\glossterm<ally> in \\rngclose range', """
+            Spell('Supreme Propulsion', 4, 'Yourself or one Large or smaller \\glossterm<ally> in \\rngclose range', """
                 This spell functions like the \\spell<propulsion> spell, except that the distance you can move the target is increased to 300 feet.
                 In addition, the target gains a +2 bonus to Armor defense during the current phase.
             """, tags=['Swift']),
-            Spell('Gentle Descent', 1, 'One Large or smaller \\glossterm<ally> in \\rngclose range', """
-                The target gains a 30 foot \\glossterm<glide speed> (see \\pcref<Gliding>).
+            Spell('Gentle Descent', 2, 'Yourself', """
+                You gain a 30 foot \\glossterm<glide speed> (see \\pcref<Gliding>).
             """, tags=['Attune (target)']),
-            Spell('Flight', 4, 'One large or smaller \\glossterm<ally> in \\rngclose range', """
-                The target gains a 30 foot \\glossterm<fly speed> as long as it is no more than 50 feet above solid ground (see \\pcref<Flying>).
+            Spell('Flight', 4, 'Yourself', """
+                You gain a 30 foot \\glossterm<fly speed> as long as you are no more than 100 feet above solid ground (see \\pcref<Flying>).
             """, tags=['Attune (target)']),
-            Spell('Greater Flight', 7, 'One large or smaller \\glossterm<ally> in \\rngclose range', """
-                The target gains a 30 foot \\glossterm<fly speed> with good \\glossterm<maneuverability> (see \pcref<Flying>).
+            Spell('Greater Flight', 7, 'Yourself', """
+                You gain a 30 foot \\glossterm<fly speed> with good \\glossterm<maneuverability> (see \\pcref<Flying>).
             """, tags=['Attune (target)']),
             Spell('Buffeting Gale', 2, 'Everything in a \\arealarge, 10 ft. wide line from you', """
                 Make an attack vs. Fortitude against each target.
@@ -313,11 +313,12 @@ def generate_mystic_spheres():
                 Make an attack vs. Mental against the target.
                 \\hit The target takes \\glossterm<standard damage>.
             """, tags=[]),
-            Spell('Teleport', 1, 'One Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
+            # TODO: target wording is awkward
+            Spell('Teleport', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
                 The target teleports into an unoccupied destination within range.
                 If the destination is invalid, this spell is \\glossterm<miscast>.
             """, tags=[]),
-            Spell('Greater Teleport', 3,'One Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
+            Spell('Greater Teleport', 3,'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
                 This spell functions like the \\spell<teleport> spell, except that the range is increased to \\rnglong.
             """, tags=[]),
             Spell('Banishment', 2, 'One creature within \\rngmed range', """
@@ -861,7 +862,7 @@ def generate_mystic_spheres():
                 When you cast the spell, you choose the length of time before the target disappears.
                 The duplicate still only exists for a single round.
             """, tags=[]),
-            Spell('Time Hop', 2, 'One Medium or smaller \\glossterm<ally> or unattended object within \\rngmed range', """
+            Spell('Time Hop', 2, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngmed range', """
                 You send the target into the future, causing it to temporarily cease to exist.
                 When you cast this spell, you choose how many rounds the target ceases to exist for, up to a maximum of five rounds.
                 At the end of the last round, it reappears in the same location where it disappeared.
@@ -872,7 +873,7 @@ def generate_mystic_spheres():
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=[]),
-            Spell('Temporal Stasis', 3, 'One Medium or smaller \\glossterm<ally> within \\rngmed range', """
+            Spell('Temporal Stasis', 3, 'Yourself or one Medium or smaller \\glossterm<ally> within \\rngmed range', """
                 The target is placed into stasis, rendering it unconscious.
                 While in stasis, it cannot take any actions and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
 
@@ -1423,7 +1424,7 @@ def generate_mystic_spheres():
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)', 'Sensation', 'Visual']),
-            Spell('Hidden Blade', 1, 'One \\glossterm<ally> within \\rngclose range', """
+            Spell('Hidden Blade', 1, 'Yourself or one \\glossterm<ally> within \\rngclose range', """
                 You can only cast this spell during the \\glossterm<action phase>.
 
                 The target's weapons become invisible, and its hands are blurred.
@@ -1470,7 +1471,7 @@ def generate_mystic_spheres():
             """, tags=['Attune (target)', 'Sensation', 'Visual']),
         ],
         rituals=[
-            Spell('Magic Mouth', 1, 'One large or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
+            Spell('Magic Mouth', 1, 'Yourself or one large or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
                 Choose a triggering condition and a message of twenty-five words or less.
                 The condition must be something that a typical human in the target's place could detect.
 
@@ -1556,21 +1557,21 @@ def generate_mystic_spheres():
             Spell('Greater Stoneskin', 7, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 This spell functions like the \\spell<stoneskin> spell, except that the bonus is equal to your \\glossterm<power>.
             """, tags=['Attune (target)']),
-            Spell('Enlarge', 3, 'One large or smaller \\glossterm<ally> within \\rngclose range', """
+            Spell('Enlarge', 3, 'Yourself or one large or smaller \\glossterm<ally> within \\rngclose range', """
                 The target's size increases by one size category.
                 This increases its \\glossterm<overwhelm value>, \\glossterm<overwhelm resistance>, and usually increases its \\glossterm<reach> (see \\pcref<Size in Combat>).
                 However, its physical form is not altered fully to match its new size, and its Strength and Dexterity are unchanged.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)']),
-            Spell('Enlarge, Greater', 5, 'One large or smaller \\glossterm<ally> within \\rngclose range', """
+            Spell('Enlarge, Greater', 5, 'Yourself or one large or smaller \\glossterm<ally> within \\rngclose range', """
                 This spell functions like the \\spell<enlarge> spell, except that the target also gains a +2 \\glossterm<magic bonus> to Strength.
             """, tags=['Attune (target)']),
-            Spell('Enlarge, Supreme', 7, 'One large or smaller \\glossterm<ally> within \\rngclose range', """
+            Spell('Enlarge, Supreme', 7, 'Yourself or one large or smaller \\glossterm<ally> within \\rngclose range', """
                 This spell functions like the \\spell<enlarge> spell, except that the target's size is increased by two size categories.
                 It gains a +2 \\glossterm<magic bonus> to Strength to partially match its new size.
             """, tags=['Attune (target)']),
-            Spell('Alter Appearance', 2, 'One large or smaller \\glossterm<ally> within \\rngclose range', """
+            Spell('Alter Appearance', 2, 'Yourself or one large or smaller \\glossterm<ally> within \\rngclose range', """
                 You make a Disguise check to alter the target's appearance (see \\pcref<Disguise Creature>).
                 You gain a +5 bonus on the check, and you ignore penalties for changing the target's gender, species, subtype, or age.
                 However, this effect is unable to alter the target's clothes or equipment in any way.
@@ -1718,7 +1719,7 @@ def generate_mystic_spheres():
             """, tags=['Sensation', 'Visual']),
         ],
         rituals=[
-            Spell('Mobile Light', 1, 'One Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
+            Spell('Mobile Light', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
                 The target glows like a torch, shedding bright light in a \\areamed radius (and dim light for an additional 20 feet).
 
                 This ritual takes one minute to perform.
@@ -2238,15 +2239,15 @@ def generate_mystic_spheres():
                     You can change direction partway through the movement.
                     Moving the target upwards costs twice the normal movement cost.
             """, tags=[]),
-            Spell('Telekinetic Lift', 1, 'One Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
+            Spell('Telekinetic Lift', 1, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
                 The target is reduced to half of its normal weight.
                 This gives it a +4 bonus to the Jump skill, if applicable, and makes it easier to lift and move.
             """, tags=['Attune (target)']),
-            Spell('Greater Telekinetic Lift', 3, 'One Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
+            Spell('Greater Telekinetic Lift', 3, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
                 This spell functions like the \\spell<telekinetic lift> spell, except that the target is reduced to one quarter of its normal weight.
                 This increases the Jump bonus to +8.
             """, tags=['Attune (target)']),
-            Spell('Levitate', 4, 'One Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
+            Spell('Levitate', 4, 'Yourself or one Medium or smaller \\glossterm<ally> or unattended object within \\rngclose range', """
                 % TODO: Wording
                 As long as the target remains within 50 feet above a surface that could support its weight, it floats in midair, unaffected by gravity.
                 During the movement phase, you can move the target up to ten feet in any direction as a \\glossterm<free action>.
