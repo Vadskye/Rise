@@ -1,3 +1,4 @@
+import { resistanceTypes } from "@src/data/resistance_types";
 import * as format from "@src/latex/format";
 import { MonsterBase } from "@src/monsters";
 import { titleCase } from "change-case";
@@ -32,10 +33,25 @@ function getName({ name }: MonsterBase): string {
 }
 
 function getMainContent(monster: MonsterBase) {
+  const extraDamageResistances = [];
+  const extraWoundResistances = [];
+  for (const resistanceType of resistanceTypes) {
+    if (monster.resistanceBonuses[resistanceType]) {
+      const title = titleCase(resistanceType);
+      extraDamageResistances.push(`${title} ${monster.resistances.damage[resistanceType]}`);
+      extraWoundResistances.push(`${title} ${monster.resistances.wound[resistanceType]}`);
+    }
+  }
   return `
     \\begin{spellcontent}
       \\begin{spelltargetinginfo}
         \\pari \\textbf{HP} ${monster.hitPoints}
+        \\pari \\textbf{DR} ${monster.resistances.damage.global}${
+    extraDamageResistances.length > 0 ? "; " + extraDamageResistances.join("; ") : ""
+  }
+        \\pari \\textbf{WR} ${monster.resistances.wound.global}${
+    extraWoundResistances.length > 0 ? "; " + extraWoundResistances.join("; ") : ""
+  }
       \\end{spelltargetinginfo}
     \\end{spellcontent}
   `;

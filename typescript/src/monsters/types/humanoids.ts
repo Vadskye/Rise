@@ -5,6 +5,9 @@ export const humanoids = addType("humanoid", [
   {
     level: 8,
     name: "Orc elite",
+    resistanceBonuses: {
+      physical: 3,
+    },
     startingAttributes: {
       str: 3,
     },
