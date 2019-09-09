@@ -745,7 +745,7 @@ def generate_mystic_spheres():
                 This spell functions like the \\spell<word of faith> spell, except that it affects more targets and the damage increases to \\glossterm<standard damage> +1d.
             """, tags=[]),
             Spell('Mantle of Faith', 3, 'Yourself', """
-                You gain a \\glossterm<magic bonus> to equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical> damage.
+                You gain a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical> damage.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (self)']),
