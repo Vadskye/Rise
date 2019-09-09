@@ -935,29 +935,19 @@ def generate_worn():
         level=6,
         material_type='Amulet',
         description="""
-            You gain a +1 bonus to \\glossterm<wound rolls>.
+            You gain a +1 bonus to maximum \\glossterm<hit points>.
         """,
-        short_description="Grants a +1 bous to \\glossterm<wound rolls>",
+        short_description="Grants a +1 bonus to \\glossterm<wound rolls>",
     ))
 
     apparel.append(MagicItem(
         name="Amulet of Health, Greater",
-        level=12,
+        level=15,
         material_type='Amulet',
         description="""
             This item functions like the \\mitem<amulet of health>, except that the bonus increases to +2.
         """,
         short_description="Grants a +2 bonus to \\glossterm<wound rolls>",
-    ))
-
-    apparel.append(MagicItem(
-        name="Amulet of Health, Supreme",
-        level=18,
-        material_type='Amulet',
-        description="""
-            This item functions like the \\mitem<amulet of health>, except that the bonus increases to +3.
-        """,
-        short_description="Grants a +3 bonus to \\glossterm<wound rolls>",
     ))
 
     apparel.append(MagicItem(
