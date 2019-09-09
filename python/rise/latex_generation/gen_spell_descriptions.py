@@ -1786,8 +1786,7 @@ def generate_mystic_spheres():
                 This condition can be removed if the target makes a \\glossterm<DR> 10 Dexterity check as a \\glossterm<move action> to put out the flames.
                 Dropping \\glossterm<prone> as part of this action gives a +5 bonus to this check.
                 The flames can also be extinguished if the target is drenched in water, takes at least 5 cold damage, or other similar effects.
-                \\crit As above, except that the condition cannot be removed by putting out the flames.
-                In addition, the ignited effect deals fire \\glossterm<standard damage> -2d instead of the normal 1d6 fire damage each round.
+                \\crit As above, except that the condition cannot be removed without removing the \\glossterm<condition>.
             """, tags=[]),
             Spell('Heat Metal', 3, 'One creature within \\rngmed range', """
                 This spell functions like the \\spell<ignition> spell, except that you gain a +2 bonus to \\glossterm<accuracy> against a target wearing metal armor, wielding a metal weapon, or significantly composed of metal.
@@ -2334,7 +2333,7 @@ def generate_mystic_spheres():
             Spell('Greater Tremor', 3, 'All Large or smaller creatures in a \\areamed radius within \\rngmed range', """
                 This spell functions like the \\spell<tremor> spell, except that it affects more targets.
             """, tags=['Physical']),
-            Spell('Earthquake', 6, 'All creaturesin a \\areamed radius within \\rngmed range', """
+            Spell('Earthquake', 6, 'All creatures in a \\areamed radius within \\rngmed range', """
                 You create an intense but highly localized tremor that rips through the ground.
                 Make an attack vs. Reflex against each target.
                 \\hit Each target takes bludgeoning \\glossterm<standard damage>.
