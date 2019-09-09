@@ -333,11 +333,12 @@ def insight_points():
 def magical_power():
     misc = get_misc_variables('magical_power', 3)
     return js_wrapper(
-        ['level', 'willpower', *misc],
+        ['level', 'willpower', 'challenge_rating', *misc],
         f"""
+            var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var magical_power_scaling = Math.max(level, willpower);
             setAttrs({{
-                magical_power: magical_power_scaling + {sum_variables(misc)},
+                magical_power: magical_power_scaling + cr_mod + {sum_variables(misc)},
                 magical_power_scaling,
             }});
         """
@@ -346,11 +347,12 @@ def magical_power():
 def mundane_power():
     misc = get_misc_variables('mundane_power', 3)
     return js_wrapper(
-        ['level', 'strength', *misc],
+        ['level', 'strength', 'challenge_rating', *misc],
         f"""
+            var cr_mod = challenge_rating === 0 ? 0 : Math.max(0, challenge_rating - 1);
             var mundane_power_scaling = Math.max(level, strength)
             setAttrs({{
-                mundane_power: mundane_power_scaling + {sum_variables(misc)},
+                mundane_power: mundane_power_scaling + cr_mod + {sum_variables(misc)},
                 mundane_power_scaling,
             }});
         """
