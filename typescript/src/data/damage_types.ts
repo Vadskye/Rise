@@ -9,3 +9,14 @@ export const damageTypes: DamageType[] = [
   "electricity",
   "fire",
 ];
+
+export type DamageType =
+  | "physical"
+  | "acid"
+  | "bludgeoning"
+  | "piercing"
+  | "slashing"
+  | "energy"
+  | "cold"
+  | "electricity"
+  | "fire";

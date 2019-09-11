@@ -3,12 +3,12 @@ import { MonsterType } from "@src/monsters/types";
 
 export function addType(
   monsterType: MonsterType,
-  monsterInputs: Array<Omit<MonsterInput, "type">>,
+  monsterInputs: Array<Omit<MonsterInput, "monsterType">>,
 ): MonsterInput[] {
   return monsterInputs.map((monsterInput) => {
     return {
       ...monsterInput,
-      type: monsterType,
+      monsterType,
     };
   });
 }

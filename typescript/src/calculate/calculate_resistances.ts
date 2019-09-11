@@ -1,5 +1,6 @@
 import { damageResistanceByLevel } from "@src/calculate/damage_resistance_by_level";
 import { woundResistanceByLevel } from "@src/calculate/wound_resistance_by_level";
+import { ResistanceType, resistanceTypes } from "@src/data";
 import { MonsterBase } from "@src/monsters";
 
 export interface Resistances {
@@ -8,12 +9,13 @@ export interface Resistances {
 }
 
 export function calculateResistances({
+  challengeRating,
   level,
   resistanceBonuses,
-}: Pick<MonsterBase, "level" | "resistanceBonuses">): Resistances {
+}: Pick<MonsterBase, "challengeRating" | "level" | "resistanceBonuses">): Resistances {
   const dr = damageResistanceByLevel(level);
   const wr = woundResistanceByLevel(level);
-  return {
+  const resistances: Resistances = {
     damage: {
       global: dr + resistanceBonuses.global,
       physical: dr + resistanceBonuses.global + resistanceBonuses.physical,
@@ -49,4 +51,16 @@ export function calculateResistances({
       fire: wr + resistanceBonuses.global + resistanceBonuses.energy + resistanceBonuses.fire,
     },
   };
+
+  if (challengeRating !== 0.5) {
+    return resistances;
+  }
+
+  for (const category of ["damage" as const, "wound" as const]) {
+    for (const resistanceType of resistanceTypes) {
+      resistances[category][resistanceType] *= 0.5;
+    }
+  }
+
+  return resistances;
 }
