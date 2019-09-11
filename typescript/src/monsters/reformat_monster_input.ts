@@ -1,14 +1,17 @@
 import { Armor } from "@src/armor";
-import { attributesAtLevel } from "@src/calculate/attributes_at_level";
-import { calculateAccuracy } from "@src/calculate/calculate_accuracy";
-import { calculateDefenses } from "@src/calculate/calculate_defenses";
-import { calculateHitPoints } from "@src/calculate/calculate_hit_points";
-import { calculateMundanePower } from "@src/calculate/calculate_mundane_power";
-import { calculateResistances, Resistances } from "@src/calculate/calculate_resistances";
-import { reachBySize } from "@src/calculate/reach_by_size";
-import { skillModifierByName } from "@src/calculate/skill_modifier_by_name";
-import { spaceBySize } from "@src/calculate/space_by_size";
-import { speedBySize } from "@src/calculate/speed_by_size";
+import {
+  attributesAtLevel,
+  calculateAccuracy,
+  calculateDefenses,
+  calculateHitPoints,
+  calculateMundanePower,
+  calculateResistances,
+  reachBySize,
+  Resistances,
+  skillModifierByName,
+  spaceBySize,
+  speedBySize,
+} from "@src/calculate";
 import {
   attributes,
   DefenseType,
