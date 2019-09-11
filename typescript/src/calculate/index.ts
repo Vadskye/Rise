@@ -1,5 +1,6 @@
 export * from "./attributes_at_level";
 export * from "./calculate_accuracy";
+export * from "./calculate_defenses";
 export * from "./calculate_hit_points";
 export * from "./calculate_mundane_power";
 export * from "./calculate_resistances";
