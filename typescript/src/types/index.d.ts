@@ -55,16 +55,3 @@ declare namespace Creature {
     | "gargantuan"
     | "colossal";
 }
-
-type DamageType =
-  | "physical"
-  | "acid"
-  | "bludgeoning"
-  | "piercing"
-  | "slashing"
-  | "energy"
-  | "cold"
-  | "electricity"
-  | "fire";
-
-type ResistanceType = DamageType | "global";

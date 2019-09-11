@@ -5,11 +5,11 @@ import { titleCase } from "change-case";
 
 export function monsterToLatex(monster: MonsterBase): string {
   return `
-    \\begin{monsection}${getMonsectionArgs(monster)}
-      ${getTitleAndTypeHeader(monster)}
-      ${getMainContent(monster)}
-      ${getFooter(monster)}
-    \\end{monsection}
+  \\begin{monsection}${getMonsectionArgs(monster)}
+    ${getTitleAndTypeHeader(monster)}
+    ${getMainContent(monster)}
+    ${getFooter(monster)}
+  \\end{monsection}
   `;
 }
 
@@ -18,7 +18,9 @@ function getMonsectionArgs(monster: MonsterBase) {
 }
 
 function getTitleAndTypeHeader(monster: MonsterBase) {
-  return `\\vspace{-1em}\\spelltwocol{${titleCase(monster.size)} ${monster.type}}\\vspace{-1em}`;
+  return `\\vspace{-1em}\\spelltwocol{${titleCase(monster.size)} ${
+    monster.monsterType
+  }}\\vspace{-1em}`;
 }
 
 function getName({ name }: MonsterBase): string {
@@ -45,13 +47,18 @@ function getMainContent(monster: MonsterBase) {
   return `
     \\begin{spellcontent}
       \\begin{spelltargetinginfo}
-        \\pari \\textbf{HP} ${monster.hitPoints}
+        \\pari \\textbf{HP} ${monster.hitPoints};
+          \\textbf{AD} ${monster.defenses.armor};
+          \\textbf{Fort} ${monster.defenses.fortitude};
+          \\textbf{Ref} ${monster.defenses.reflex};
+          \\textbf{Ment} ${monster.defenses.mental}
         \\pari \\textbf{DR} ${monster.resistances.damage.global}${
     extraDamageResistances.length > 0 ? "; " + extraDamageResistances.join("; ") : ""
   }
         \\pari \\textbf{WR} ${monster.resistances.wound.global}${
     extraWoundResistances.length > 0 ? "; " + extraWoundResistances.join("; ") : ""
   }
+        \\pari \\textbf{Accuracy} ${monster.accuracy}
       \\end{spelltargetinginfo}
     \\end{spellcontent}
   `;
