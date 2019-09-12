@@ -47,13 +47,13 @@ In general, +1 accuracy = +1 damage. However, there are exceptions:
   * List: deafened, prone
 * Rank 1
   * Generally give -2 to a category (accuracy/defenses)
-  * List: dazed, fatigued, ignited, sickened, slowed
+  * List: dazed, fatigued, ignited (move action to remove), sickened, slowed
 * Rank 2
   * Generally give -4 to a category (accuracy/defenses)
   * List: decelerated, exhausted, frightened, nauseated, generic -2 to all
 * Rank 3
   * Generally cause partial action denial
-  * List: confused, blinded, disoriented, immobilized
+  * List: confused, blinded, disoriented, ignited, immobilized
 * Rank 4
   * Generally cause complete action denial
   * List: paralyzed, panicked, stunned
