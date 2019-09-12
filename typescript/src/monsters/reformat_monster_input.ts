@@ -22,7 +22,7 @@ import {
 } from "@src/data";
 import { MonsterType } from "@src/monsters/types";
 import { fromPairs } from "@src/util/from_pairs";
-import { Weapon } from "@src/weapons";
+import { parseWeaponInput, Weapon, WeaponInput } from "@src/weapons";
 
 export interface MonsterInput {
   accuracyBonus?: number;
@@ -39,7 +39,7 @@ export interface MonsterInput {
   space?: number;
   speed?: number;
   startingAttributes?: Partial<Creature.Attributes>;
-  weapons?: Weapon[];
+  weaponInput?: WeaponInput[];
 }
 
 interface MonsterCalculatedValues {
@@ -57,6 +57,7 @@ interface MonsterCalculatedValues {
   startingAttributes: Creature.Attributes;
   space: number;
   speed: number;
+  weapons: Weapon[];
 }
 
 export type MonsterBase = Required<MonsterInput> & MonsterCalculatedValues;
@@ -78,6 +79,7 @@ const monsterDefaults: Required<
   resistanceBonuses: Record<ResistanceType, number>;
   skillPoints: Creature.Skills;
   startingAttributes: Creature.Attributes;
+  weapons: Weapon[];
 } = {
   accuracyBonus: 0,
   armor: [],
@@ -87,6 +89,7 @@ const monsterDefaults: Required<
   size: "medium",
   skillPoints: fromPairs(skills.map((s) => [s, 0])),
   startingAttributes: fromPairs(attributes.map((a) => [a, 0])),
+  weaponInput: [],
   weapons: [],
 };
 
@@ -145,6 +148,7 @@ export function reformatMonsterInput(monsterInput: MonsterInput): MonsterBase {
     space: spaceBySize(monster.size),
     speed: speedBySize(monster.size),
     skills: calculateSkills(attributeModifiers, skillPoints, monster),
+    weapons: monster.weaponInput.map(parseWeaponInput),
     ...monster,
   };
 }
