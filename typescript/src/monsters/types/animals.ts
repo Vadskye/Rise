@@ -11,5 +11,6 @@ export const animals = addType("animal", [
       con: 2,
       per: 5,
     },
+    weaponInput: [{ name: "bite" }],
   },
 ]);
