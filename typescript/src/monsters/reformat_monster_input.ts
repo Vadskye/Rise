@@ -24,17 +24,14 @@ import { MonsterType } from "@src/monsters/types";
 import { fromPairs } from "@src/util/from_pairs";
 import { Weapon } from "@src/weapons";
 
-interface MonsterRequiredInput {
+export interface MonsterInput {
+  accuracyBonus?: number;
+  armor?: Armor[];
+  challengeRating?: number;
+  defenseBonuses?: Partial<Record<DefenseType, number>>;
   level: number;
   monsterType: MonsterType;
   name: string;
-}
-
-interface MonsterOptionalInput {
-  armor?: Armor[];
-  accuracyBonus?: number;
-  challengeRating?: number;
-  defenseBonuses?: Partial<Record<DefenseType, number>>;
   reach?: number;
   resistanceBonuses?: Partial<Record<ResistanceType, number>>;
   size?: Creature.Size;
@@ -62,26 +59,25 @@ interface MonsterCalculatedValues {
   speed: number;
 }
 
-export type MonsterBase = MonsterRequiredInput &
-  Required<MonsterOptionalInput> &
-  MonsterCalculatedValues;
-
-export type MonsterInput = MonsterRequiredInput & MonsterOptionalInput;
+export type MonsterBase = Required<MonsterInput> & MonsterCalculatedValues;
 
 const monsterDefaults: Required<
   Omit<
-    MonsterOptionalInput,
+    MonsterInput,
     | "defenseBonuses"
-    | "startingAttributes"
+    | "level"
+    | "monsterType"
+    | "name"
     | "skillPoints"
+    | "startingAttributes"
     | "resistanceBonuses"
     | keyof MonsterCalculatedValues
   >
 > & {
   defenseBonuses: Record<DefenseType, number>;
   resistanceBonuses: Record<ResistanceType, number>;
-  startingAttributes: Creature.Attributes;
   skillPoints: Creature.Skills;
+  startingAttributes: Creature.Attributes;
 } = {
   accuracyBonus: 0,
   armor: [],
