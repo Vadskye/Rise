@@ -1,3 +1,4 @@
+import { Attack } from "@src/calculate";
 import { resistanceTypes } from "@src/data";
 import * as format from "@src/latex/format";
 import { MonsterBase } from "@src/monsters";
@@ -10,6 +11,8 @@ export function monsterToLatex(monster: MonsterBase): string {
     ${getMainContent(monster)}
     ${getFooter(monster)}
   \\end{monsection}
+  \\subsubsection{${monster.name} Abilities}
+    ${getAbilities(monster)}
   `;
 }
 
@@ -58,7 +61,9 @@ function getMainContent(monster: MonsterBase) {
         \\pari \\textbf{WR} ${monster.resistances.wound.global}${
     extraWoundResistances.length > 0 ? "; " + extraWoundResistances.join("; ") : ""
   }
-        \\pari \\textbf{Accuracy} ${monster.accuracy}
+        \\pari \\textbf{Accuracy} ${monster.accuracy};
+          \\textbf{Mundane} ${monster.mundanePower};
+          \\textbf{Magical} ${monster.magicalPower}
       \\end{spelltargetinginfo}
     \\end{spellcontent}
   `;
@@ -75,5 +80,22 @@ function getFooter(monster: MonsterBase) {
         Str ${monster.attributes.str}, Dex ${monster.attributes.dex}, Con ${monster.attributes.con},
         Int ${monster.attributes.int}, Per ${monster.attributes.per}, Wil ${monster.attributes.wil}
     \\end{monsterfooter}
+  `;
+}
+
+function getAbilities(monster: MonsterBase) {
+  return monster.attacks.map((a) => formatAttack(a, monster)).join("\n");
+}
+
+function formatAttack(attack: Attack, monster: MonsterBase) {
+  // TODO: use the correct defense
+  // TODO: add attack tags
+  const tagText = "";
+  return `
+    \\begin{freeability}{${attack.name}}${tagText}
+      The ${monster.name} makes a ${format.modifier(attack.accuracy)} attack vs Armor.
+      \\hit The target takes ${format.damageDice(attack.power)}
+        ${format.damageTypes(attack.damageTypes)} damage.
+    \\end{freeability}
   `;
 }
