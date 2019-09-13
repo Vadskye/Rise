@@ -11,5 +11,6 @@ export const humanoids = addType("humanoid", [
     startingAttributes: {
       str: 3,
     },
+    weaponInput: [{ name: "greataxe" }],
   },
 ]);

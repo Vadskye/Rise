@@ -1,9 +1,12 @@
 import { Armor } from "@src/armor";
 import {
+  Attack,
   attributesAtLevel,
   calculateAccuracy,
+  calculateAttacks,
   calculateDefenses,
   calculateHitPoints,
+  calculateMagicalPower,
   calculateMundanePower,
   calculateResistances,
   reachBySize,
@@ -44,10 +47,12 @@ export interface MonsterInput {
 
 interface MonsterCalculatedValues {
   accuracy: number;
+  attacks: Attack[];
   attributes: Creature.Attributes;
   defenses: Record<DefenseType, number>;
   defenseBonuses: Record<DefenseType, number>;
   hitPoints: number;
+  magicalPower: number;
   mundanePower: number;
   reach: number;
   resistanceBonuses: Record<ResistanceType, number>;
@@ -137,18 +142,24 @@ export function reformatMonsterInput(monsterInput: MonsterInput): MonsterBase {
   };
 
   const attributeModifiers = attributesAtLevel({ level: monster.level, startingAttributes });
+  const accuracy = calculateAccuracy({ ...monster, attributes: attributeModifiers });
+  const magicalPower = calculateMagicalPower({ ...monster, attributes: attributeModifiers });
+  const mundanePower = calculateMundanePower({ ...monster, attributes: attributeModifiers });
+  const weapons = monster.weaponInput.map(parseWeaponInput);
   return {
-    accuracy: calculateAccuracy({ ...monster, attributes: attributeModifiers }),
+    accuracy,
     attributes: attributeModifiers,
+    attacks: calculateAttacks({ accuracy, magicalPower, mundanePower, weapons }),
     defenses: calculateDefenses(monster),
     hitPoints: calculateHitPoints(monster),
-    mundanePower: calculateMundanePower({ ...monster, attributes: attributeModifiers }),
+    magicalPower,
+    mundanePower,
     reach: reachBySize(monster.size),
     resistances: calculateResistances(monster),
     space: spaceBySize(monster.size),
     speed: speedBySize(monster.size),
     skills: calculateSkills(attributeModifiers, skillPoints, monster),
-    weapons: monster.weaponInput.map(parseWeaponInput),
+    weapons,
     ...monster,
   };
 }
