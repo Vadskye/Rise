@@ -1,4 +1,11 @@
 declare namespace Creature {
+  interface Attack {
+    accuracy: number;
+    effect: string | null;
+    name: string;
+    power: number;
+  }
+
   type Attribute = "str" | "dex" | "con" | "int" | "per" | "wil";
 
   type Attributes = Record<Attribute, number>;
