@@ -1435,6 +1435,7 @@ def generate_mystic_spheres():
                 This effect ends at the end of the current round if the target has not made a strike by that time.
                 % TODO: wording
                 The target is not actually \\glossterm<unaware> of the attack, and this does not work with abilities that have effects if the target is unaware of attacks.
+                If you cast this spell on yourself, it affects the first strike you make until the end of the next round.
 
                 This effect provides no offensive benefit against creatures immune to \\glossterm<Visual> abilities.
             """, tags=['Sensation', 'Visual']),
