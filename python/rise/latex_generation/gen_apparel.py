@@ -422,7 +422,7 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Gauntlet of the Ram",
-        level=2,
+        level=4,
         material_type='Gauntlet',
         description="""
             When you make a \\glossterm<strike> with this gauntlet, you also compare the attack result to the target's Fortitude defense.
