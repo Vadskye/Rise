@@ -1533,7 +1533,6 @@ def generate_mystic_spheres():
             """, tags=['Attune (target)']),
             Spell('Barkskin', 3, 'Yourself or an \\glossterm<ally> within \\rngclose range', """
                 The target gains a \\glossterm<magic bonus> equal to half your \\glossterm<power> to \\glossterm<resistances> against \\glossterm<physical damage>.
-                In addition, it is \\glossterm<vulnerable> to fire damage.
 
                 You can cast this spell as a \\glossterm<minor action>.
             """, tags=['Attune (target)']),
