@@ -800,12 +800,12 @@ This choice determines a great deal about your character's abilities.
         \lcaption{Druid Progression}
         \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
             \tb{Rank} & \tb{Nature Spellcasting} & \tb{Nature Spell Mastery} & \tb{Shifter} & \tb{Beastmaster} \tableheaderrule
-            1    & Spellcasting  & Natural spells              & Wild aspects  & Animal speech
-            \\ 2 & Mystic sphere   & Mystic knowledge            & Shifter lore               & Animal companion
-            \\ 3 & Spell level (2) & Wellspring of power         & Shifting defense           & Beast lore
-            \\ 4 & Spell level (3) & Mystic knowledge            & Dual aspect, wild aspect   & Greater wild speech
-            \\ 5 & Spell level (4) & Greater natural spells      & Nature's champion          & Beast companion
-            \\ 6 & Spell level (5) & Mystic knowledge            & Fluid aspect               & Beast tamer
+            1    & Spellcasting    & Natural spells              & Wild aspects  & Animal speech
+            \\ 2 & Mystic sphere   & Mystic knowledge            & Shifting defense           & Animal companion
+            \\ 3 & Spell level (2) & Wellspring of power         & Shift body                 & Beast lore
+            \\ 4 & Spell level (3) & Mystic knowledge            & Wild aspect                & Greater wild speech
+            \\ 5 & Spell level (4) & Greater natural spells      & Greater shifting defense   & Beast companion
+            \\ 6 & Spell level (5) & Mystic knowledge            & Greater shift body         & Beast tamer
             \\ 7 & Spell level (6) & Greater wellspring of power & Triple aspect, wild aspect & Supreme wild speech
             \\ 8 & Spell level (7) &                             & Avatar of nature           & True companion
         \end{dtabularx}
@@ -871,37 +871,38 @@ This choice determines a great deal about your character's abilities.
 
         {
             \begin{freeability}{Form of the Bear}
-                You gain a \plus1 bonus to Fortitude defense.
+                You gain a \plus2 bonus to Fortitude defense.
                 In addition, your mouth and hands transform, granting you bite and claw \glossterm{natural weapons}.
                 The bite deals \plus0d damage, and the claws deal \minus1d damage.
 
                 \rankline
-                \rank{3} The Fortitude bonus increases to \plus2.
-                \rank{5} You gain a \plus1d bonus to damage with the natural weapons.
-                \rank{7} The Fortitude bonus increases to \plus4.
+                \rank{3} You gain a \plus2 bonus to \glossterm{power} with natural weapons.
+                \rank{5} The Fortitude bonus increases to \plus4.
+                \rank{7} The bonus to \glossterm{power} increases to \plus4.
             \end{freeability}
 
             \begin{freeability}{Form of the Bull}
-                You gain a \plus1 bonus to \glossterm{accuracy} with the \textit{shove} ability (see \pcref{Shove}).
+                You gain a \plus2 bonus to \glossterm{accuracy} with the \textit{shove} ability (see \pcref{Shove}, and \pcref{Overrun}).
                 In addition, your head transforms, granting you a gore \glossterm{natural weapon}.
                 The weapon deals \plus0d damage, and has the Forceful weapon tag (see \pcref{Weapon Tags}).
 
                 \rankline
-                \rank{3} The accuracy bonus increases to \plus2.
-                \rank{5} You gain a \plus1d bonus to damage with the natural weapon.
-                \rank{7} The accuracy bonus increases to \plus4.
+                \rank{3} Your penalties to accuracy and defenses from the \textit{charge} ability are reduced by 1.
+                \rank{5} Your \textit{shove} ability moves the target as a \glossterm{knockback} instead of as a \glossterm{push}.
+                In addition, the accuracy bonus increases to \plus4.
+                \rank{7} Your penalties to accuracy and defenses from the \textit{charge} ability are removed.
             \end{freeability}
 
             \begin{freeability}{Form of the Constrictor}
-                You gain a \plus1 bonus to \glossterm{accuracy} with the Grapple ability (see \pcref{Grapple}).
+                You gain a \plus2 bonus to \glossterm{accuracy} with the Grapple ability and all grapple actions (see \pcref{Grapple}).
                 In addition, you gain a constrict \glossterm{natural weapon}.
                 This weapon deals \plus1d damage, and it has the Grappling weapon tag (see \pcref{Weapon Tags}).
                 It can only be used against a foe you are grappling with.
 
                 \rankline
-                \rank{3} The accuracy bonus increases to \plus2.
-                \rank{5} You gain a \plus1d bonus to damage with the natural weapon.
-                \rank{7} The accuracy bonus increases to \plus4.
+                \rank{3} You can contort your body, allowing it to act as a free hand for the purpose of using the \textit{grapple} ability and grapple actions.
+                \rank{5} The accuracy bonus increases to \plus4.
+                \rank{7} When you grapple a creature the \textit{grapple} ability, you are not considered to be \glossterm{grappled} (see \pcref{Asymmetric Grappling}).
             \end{freeability}
 
             \begin{freeability}{Form of the Fish}
@@ -912,18 +913,17 @@ This choice determines a great deal about your character's abilities.
                 \rank{3} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
                 \rank{5} You suffer no penalties for acting underwater.
                 \rank{7} You are immune to \glossterm{magical} effects that restrict your mobility.
-                In addition, you gain a \plus5 bonus to defenses against the \textit{grapple} ability (see \pcref{Grapple}).
+                In addition, you gain a \plus4 bonus to defenses against the \textit{grapple} ability and grapple actions (see \pcref{Grapple}).
             \end{freeability}
 
             \begin{freeability}{Form of the Hawk}
                 You gain \glossterm{low-light vision}.
                 If you already have low-light vision, you double its benefit, allowing you to treat sources of light as if they had four times their normal illumination range.
-                In addition, your feet transform, granting you a talon \glossterm{natural weapon}.
-                The weapon deals \minus1d damage.
+                In addition, you gain a \plus3 bonus to Awareness.
 
                 \rankline
                 \rank{3} You grow wings, granting your a glide speed equal to your \glossterm{base speed} (see \pcref{Gliding}).
-                \rank{5} You gain a \plus1d bonus to damage with the natural weapon.
+                \rank{5} The Awareness bonus increases to \plus6.
                 \rank{7} The glide speed is replaced with a \glossterm{fly speed} equal to your \glossterm{base speed} (see \pcref{Flying}).
             \end{freeability}
 
@@ -935,9 +935,9 @@ This choice determines a great deal about your character's abilities.
                 \rank{3} You gain the ability to move on all four limbs.
                 When doing so, you gain a \plus20 foot bonus to your land speed, up to a maximum of double your original speed.
                 When not using your hands to move, your ability to use your hands is unchanged.
-                Descending to four legs and rising up to stand on two legs again does not take an action.
-                \rank{5} You gain a \plus1d bonus to damage with the natural weapon.
-                \rank{7} You gain an additional \plus10 bonus to scent-based Awareness checks (see \pcref{Awareness}).
+                You can descend to four legs and rise up to stand on two legs again as part of movement.
+                \rank{5} You gain an additional \plus10 bonus to scent-based Awareness checks (see \pcref{Awareness}).
+                \rank{7} You gain a \plus10 foot bonus to your land speed.
             \end{freeability}
 
             % Seems boring? What abilities would make sense?
@@ -946,9 +946,9 @@ This choice determines a great deal about your character's abilities.
                 In addition, you gain a bite \glossterm{natural weapon} that deals \plus0d damage.
 
                 \rankline
-                \rank{3} You gain a \plus1 bonus to your Reflex defense.
-                \rank{5} You gain a \plus1d bonus to damage with the natural weapon.
-                \rank{7} The defense bonus increases to \plus2.
+                \rank{3} You grow a tail that you can use as a free hand for the purpose of climbing.
+                \rank{5} You gain a \plus10 foot bonus to your climb speed.
+                \rank{7} You can use the \textit{creature climb} ability against creatures only two or more size categories larger than you instead of three size categories.
             \end{freeability}
 
             \begin{freeability}{Form of the Mouse}
@@ -957,8 +957,8 @@ This choice determines a great deal about your character's abilities.
                 
                 \rankline
                 \rank{3} When you use this wild aspect, you can choose to shrink by one \glossterm{size category}.
-                \rank{5} The skill bonuses increases to \plus3.
-                \rank{7} The skill bonuses increases to \plus4. In addition, when you use this wild aspect, you can choose to shrink by up to two \glossterm{size categories} instead of only one.
+                \rank{5} The skill bonuses increases to \plus4.
+                \rank{7} When you use this wild aspect, you can choose to shrink by up to two \glossterm{size categories} instead of only one.
             \end{freeability}
 
             \begin{freeability}{Form of the Oak}
@@ -976,25 +976,22 @@ This choice determines a great deal about your character's abilities.
                 In addition, you gain a bite \glossterm{natural weapon} that deals \plus0d damage.
 
                 \rankline
-                \rank{3} When a creatures takes damage from your bite \glossterm{natural weapon}, it is poisoned.
-                At the end of each \glossterm{action phase} in subsequent rounds, you make an attack vs. Fortitude against the target.
+                \rank{3} When a creature takes damage from your bite \glossterm{natural weapon}, it is poisoned.
+                At the end of each round, you make an attack vs. Fortitude against the target.
                 If you hit, the target is \glossterm{sickened} until it removes the poison.
                 The poison is removed if you miss the target on this attack three times.
-                \rank{5} You gain a \plus1d bonus to damage with the natural weapon.
+                \rank{5} On a critical hit with the poison, the target is \glossterm{nauseated} instead of \glossterm{sickened}.
                 \rank{7} The poison makes the target \glossterm{nauseated} instead of \glossterm{sickened}.
             \end{freeability}
 
             \begin{freeability}{Form of the Wolf}
-                You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{physical attacks} against \glossterm{overwhelmed} creatures.
+                You gain a \plus1 bonus to \glossterm{accuracy} against \glossterm{overwhelmed} creatures.
                 In addition, you gain a bite \glossterm{natural weapon} that deals \plus0d damage.
 
                 \rankline
-                \rank{3} You gain the ability to move on all four limbs.
-                When doing so, you gain a \plus20 foot bonus to your land speed, up to a maximum of double your original speed.
-                When not using your hands to move, your ability to use your hands is unchanged.
-                Descending to four legs and rising up to stand on two legs again does not take an action.
-                \rank{5} You gain a \plus1d bonus to damage with the natural weapon.
-                \rank{7} You increase your \glossterm{overwhelm value} by 1.
+                \rank{3} You gain a \plus2 bonus to \glossterm{power} with \glossterm{natural weapons}.
+                \rank{5} You gain a \plus1 bonus to your \glossterm{overwhelm value}.
+                \rank{7} The bonus to \glossterm{power} increases to \plus4.
             \end{freeability}
 
             \begin{freeability}{Myriad Form}
@@ -1016,32 +1013,31 @@ This choice determines a great deal about your character's abilities.
 
             \begin{freeability}{Plantspeaker}
                 Your speed is not reduced when moving in light or heavy \glossterm{undergrowth}.
-                In addition, you can ignore \glossterm{cover} (but not \glossterm{total cover}) from plants when attacking, as the plants move out of the way to help you.
+                In addition, you can ignore \glossterm{cover} and \glossterm{concealment} (but not \glossterm{total cover}) from plants whenever doing so would be beneficial to you, as the plants move out of the way to help you.
 
                 \rankline
-                \rank{3} You can ignore \glossterm{cover} (but not \glossterm{total cover}) and \glossterm{concealment} from plants whenever doing so would be beneficial to you.
+                \rank{3} You gain a \plus1 bonus to Armor and Reflex defenses while standing in \glossterm{undergrowth}.
                 For example, creatures cannot use concealment from plants to hide from you.
                 \rank{5} The movement penalties from \glossterm{undergrowth} are doubled for enemies within a \areahuge radius emanation from you.
                 \rank{7} You can ignore \glossterm{total cover} from plants whenever doing so would be beneficial to you.
             \end{freeability}
         }
 
-        \cf{Drd}[2]{Shifter Lore}
-        You gain two additional skill points.
-
-        \cf{Drd}[3]{Shifting Defense} You gain a \plus1 bonus to Armor, Fortitude, Reflex, or Mental defense.
+        \cf{Drd}[2]{Shifting Defense} You gain a \plus1 bonus to Armor, Fortitude, Reflex, or Mental defense.
         You can change the defense this bonus applies to as a \glossterm{standard action}.
+
+        \cf{Drd}[3]{Shift Body} You gain a \plus1 bonus to the starting value of one physical \glossterm{attribute} of your choice: Strength, Dexterity, or Constitution.
+        You can change the attribute this bonus applies to whenever you take a \glossterm{long rest}.
+        If you change the attribute during a rest, the bonus does not apply to any attribute.
 
         \cf{Drd}[4]{Wild Aspect}[Magical]
         You learn an additional \textit{wild aspect}.
 
-        \cf{Drd}[5]{Dual Aspect} 
-        %TODO: wording
-        You gain the ability to maintain the effects of up to two \textit{wild aspects} simultaneously.
-        When you activate a new \textit{wild aspect}, you can choose which of your wild aspects remain active. 
-
-        \cf{Drd}[6]{Greater Shifting Defense}
+        \cf{Drd}[5]{Greater Shifting Defense}
         The bonus from your \textit{shifting defense} ability increases to \plus2.
+
+        \cf{Drd}[6]{Greater Shift Body}
+        The bonus from your \textit{shift body} ability increases to \plus2.
 
         \cf*{Drd}[7]{Wild Aspect}[Magical]
         You learn an additional \textit{wild aspect}.
