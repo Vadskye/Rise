@@ -843,6 +843,12 @@ def generate_mystic_spheres():
             Spell('Supreme Haste', 5, 'Yourself or an \\glossterm<ally> with in \\rngmed range', """
                 This spell functions like the \\textit<haste> spell, except that the speed bonus increases to +30 feet.
             """, tags=['Attune (target)']),
+            Spell('Accelerated Strike', 3, 'Yourself', """
+                As a \\glossterm<minor action>, you can make a \\glossterm<strike> with a -2 penalty to \\glossterm<accuracy> and a -2d penalty to damage.
+            """, tags=['Attune (self)']),
+            Spell('Greater Accelerated Strike', 6, 'Yourself', """
+                This spell functions like the \\spell<accelerated strike> spell, except that the accuracy penalty is reduced to -1 and the damage penalty is reduced to -1d.
+            """, tags=['Attune (self)']),
             Spell('Temporal Duplicate', 4, 'Yourself or an \\glossterm<ally> within \\rngmed range', """
                 You reach into a possible future and create a duplicate of the target.
                 The duplicate is identical in all ways to the target when the spell resolves.
@@ -2892,6 +2898,12 @@ def generate_mystic_spheres():
                 This spell functions like the \\spell<summon weapon> spell, except that you summon two weapons instead of one.
                 Each weapon attacks independently.
             """, tags=['Manifestation', 'Sustain (minor)']),
+            Spell('Animated Weapon', 3, 'Yourself', """
+                As a \\glossterm<minor action>, you can make a \\glossterm<magical strike> with a -2 penalty to \\glossterm<accuracy> and a -2d penalty to damage.
+            """, tags=['Attune (self)']),
+            Spell('Greater Animated Weapon', 6, 'Yourself', """
+                This spell functions like the \\spell<animated weapon> spell, except that the accuracy penalty is reduced to -1 and the damage penalty is reduced to -1d.
+            """, tags=['Attune (self)']),
         ],
         category='buff, offense',
     ))
