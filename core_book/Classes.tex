@@ -1307,13 +1307,13 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable!*}
         \lcaption{Fighter Progression}
         \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Combat Discipline} & \tb{Equipment Training}  & \tb{Martial Mastery} & \tb{Battle Leader} \tableheaderrule
+            \tb{Rank} & \tb{Combat Discipline} & \tb{Equipment Training}  & \tb{Martial Mastery} & \tb{Tactician} \tableheaderrule
                1 & Discipline                   & Armor expertise         & Martial maneuvers         & Battle tactics
-            \\ 2 & Enduring discipline          & Weapon training              & Martial lore          & Guided strike
-            \\ 3 & Disciplined stance           & Equipment efficiency         & Martial power         & Brave leader
+            \\ 2 & Enduring discipline          & Weapon training              & Martial lore          & Tactical advice
+            \\ 3 & Disciplined stance           & Equipment efficiency         & Martial power         & Tactical coordination
             \\ 4 & Disciplined reaction         & Greater armor expertise      & Martial maneuver      & Battle tactic
-            \\ 5 & Greater enduring discipline  & Weapon expertise             & Greater martial power & Expanded battle tactics
-            \\ 6 & Disciplined vitality         & Greater equipment efficiency & Steady expertise      & Greater brave leader
+            \\ 5 & Greater enduring discipline  & Weapon expertise             & Greater martial power & Greater battle tactics
+            \\ 6 & Disciplined vitality         & Greater equipment efficiency & Steady expertise      & Greater tactical coordination
             \\ 7 & Supreme disciplined reaction & Supreme armor expertise      & Martial maneuver      & Battle tactic
             \\ 8 &                              &                              &
         \end{dtabularx}
@@ -1446,7 +1446,7 @@ This choice determines a great deal about your character's abilities.
         You do not suffer any effects from \glossterm{conditions} until the end of the next round after they are applied.
         You suffer their normal effects after that time.
 
-    \subsection{Battle Leader}
+    \subsection{Tactician}
 
         \cf{Ftr}[1]{Battle Tactics}
         You can lead your allies using tactics appropriate for the situation.
@@ -1474,7 +1474,7 @@ This choice determines a great deal about your character's abilities.
 
             \begin{attuneability}{Dogpile}[\glossterm{Attune} (self)]
                 Each target that is adjacent to at least one other target
-                    gains a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability (see \pcref{Grapple}).
+                gains a \plus2 bonus to \glossterm{accuracy} with the \textit{grapple} ability and with all grapple actions (see \pcref{Grapple}, and \pcref{Grapple Actions}).
 
                 \rankline
                 \rank{3} The bonus increases to \plus3.
@@ -1528,24 +1528,25 @@ This choice determines a great deal about your character's abilities.
             \end{attuneability}
         }
 
-        \cf{Ftr}[2]{Guided Strike} You can use the \textit{guided strike} ability as a standard action.
-        \begin{freeability}{Guided Strike}[\glossterm{Swift}]
+        \cf{Ftr}[2]{Tactical Advice} You can use the \textit{tactical advice} ability as a standard action.
+        \begin{freeability}{Tactical Advice}[\glossterm{Swift}]
             Choose an \glossterm{ally} within \rngmed range.
-            If the target makes a \glossterm{strike} during the current phase, it rolls twice and takes the higher result.
+            If the target makes an attack during the current phase, that attack automatically \glossterm{explodes}.
 
             \rankline
-            \rank{4} The strike gains a \plus1 bonus to \glossterm{accuracy}.
-            \rank{6} The bonus increases to \plus2.
-            \rank{8} The bonus increases to \plus3.
+            \rank{4} The attack gains a \plus1 bonus to \glossterm{accuracy}.
+            \rank{6} The accuracy bonus increases to \plus2.
+            \rank{8} The accuracy bonus increases to \plus3.
         \end{freeability}
 
-        \cf{Ftr}[3]{Brave Leader} You gain a \plus2 bonus to Mental defense.
+        \cf{Ftr}[3]{Tactical Coordination} You gain a \plus1 bonus to \glossterm{overwhelm value} while you have a \textit{battle tactics} ability active.
 
         \cf{Ftr}[4]{Battle Tactic} You learn an additional \textit{battle tactic}.
 
-        \cf{Ftr}[5]{Expanded Battle Tactics} The area affected by your \textit{battle tactics} increases to an \areahuge emanation.
+        \cf{Ftr}[5]{Greater Battle Tactics} The area affected by your \textit{battle tactics} increases to an \areahuge emanation.
+        In addition, if are attuned to a \textit{battle tactics} ability, you can change which tactic you are attuned to as a \glossterm{minor action}.
 
-        \cf{Ftr}[6]{Greater Brave Leader} The bonus from your \textit{brave leader} ability increases to \plus4.
+        \cf{Ftr}[6]{Greater Tactical Coordination} The bonus from your \textit{tactical coordination} ability increases to \plus2.
 
         \cf*{Ftr}[7]{Battle Tactic} You learn an additional \textit{battle tactic}.
 
