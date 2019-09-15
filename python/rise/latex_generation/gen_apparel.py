@@ -825,7 +825,7 @@ def generate_worn():
 
     apparel.append(MagicItem(
         name="Ring of Energy Resistance",
-        level=6,
+        level=12,
         material_type='Ring',
         tags=[],
         description="""
@@ -834,17 +834,6 @@ def generate_worn():
             The color of the light depends on the energy damage resisted: blue for cold, yellow for electricity, and red for fire.
         """,
         short_description="Reduces energy damage",
-    ))
-
-    apparel.append(MagicItem(
-        name="Ring of Energy Resistance, Greater",
-        level=15,
-        material_type='Ring',
-        tags=[],
-        description="""
-            This item functions like the \\mitem<ring of energy resistance>, except that the bonus is equal to the item's \\glossterm<power>.
-        """,
-        short_description="Drastically reduces energy damage",
     ))
 
     apparel.append(MagicItem(
