@@ -799,15 +799,15 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable!*}
         \lcaption{Druid Progression}
         \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Nature Spellcasting} & \tb{Nature Spell Mastery}   & \tb{Shifter}               & \tb{Beastmaster}         \tableheaderrule
-            1 & Spellcasting    & Natural spells              & Wild aspects               & Animal speech       \\
-            2 & Mystic sphere   & Mystic knowledge            & Shifting defense           & Animal companion    \\
-            3 & Spell level (2) & Wellspring of power         & Shift body                 & Beast lore          \\
-            4 & Spell level (3) & Mystic knowledge            & Wild aspect                & Greater wild speech \\
-            5 & Spell level (4) & Greater natural spells      & Greater shifting defense   & Beast companion     \\
-            6 & Spell level (5) & Mystic knowledge            & Greater shift body         & Beast tamer         \\
-            7 & Spell level (6) & Greater wellspring of power & Triple aspect, wild aspect & Supreme wild speech \\
-            8 & Spell level (7) &                             & Avatar of nature           & True companion      \\
+            \tb{Rank} & \tb{Beastmaster}    & \tb{Nature Spellcasting} & \tb{Nature Spell Mastery}   & \tb{Shifter} \tableheaderrule
+            1 & Animal speech       & Spellcasting    & Natural spells              & Wild aspects               \\
+            2 & Animal companion    & Mystic sphere   & Mystic knowledge            & Shifting defense           \\
+            3 & Beast lore          & Spell level (2) & Wellspring of power         & Shift body                 \\
+            4 & Greater wild speech & Spell level (3) & Mystic knowledge            & Wild aspect                \\
+            5 & Beast companion     & Spell level (4) & Greater natural spells      & Greater shifting defense   \\
+            6 & Beast tamer         & Spell level (5) & Mystic knowledge            & Greater shift body         \\
+            7 & Supreme wild speech & Spell level (6) & Greater wellspring of power & Triple aspect, wild aspect \\
+            8 & True companion      & Spell level (7) &                             & Avatar of nature           \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -847,6 +847,127 @@ This choice determines a great deal about your character's abilities.
 
         You can avoid this penalty by using armor made of wood altered with the \ritual{ironwood} ritual.
         Such wood is as strong as steel.
+
+    \subsection{Beastmaster}
+        This archetype improves your connection to animals, allowing you to control and command them in battle.
+
+        \cf{Drd}[1]{Animal Companion}
+        You can use the \textit{animal companion} ability.
+        This ability requires 8 hours of training and attunement which the target must actively parcipate in.
+        You can compel a wild animal to undergo this training by sustaining the \textit{command} ability from the Creature Handling skill (see \pcref{Command}).
+        \begin{attuneability}{Animal Companion}[\glossterm{Attune} (self), \glossterm{Emotion}, \glossterm{Magical}]
+            Choose an animal \glossterm{ally} within your \glossterm{reach} with a level no higher than your level and a \glossterm{challenge rating} no higher than 1.
+            The target serves as a loyal companion to you.
+            It follows your directions to the best of its ability.
+            Animals are unable to understand complex concepts, so their ability to obey convoluted instructions is limited.
+
+            Your magical connection to the animal improves its resilience and strength in combat.
+            If any of its statistics are higher than the normal values below, the animal uses its own statistics instead.
+            All other aspects of the animal, such as its speed and natural weapons, are unchanged.
+            \begin{itemize}
+                \item Its \glossterm{damage resistance} and \glossterm{wound resistance} are equal to the base values for your level (see \pcref{Character Advancement}).
+                \item Its \glossterm{hit points} are equal to 6.
+                \item Each of its \glossterm{defenses} is normally equal to 4 \add your level.
+                \item Its \glossterm{accuracy} is normally equal to the higher of your level and Perception.
+                \item Its \glossterm{power} with its attacks is normally equal to your \glossterm{power}.
+                \item It can heal \glossterm{vital damage} using your level in place of its level.
+            \end{itemize}
+        \end{attuneability}
+
+        \cf{Drd}[2]{Wild Speech}[Magical] You can use the \textit{wild speech} ability as a standard action.
+        \begin{attuneability}{Wild Speech}[\glossterm{Attune} (self)]
+            Choose an animal within \rnglong range.
+            You can speak to and understand the speech of the target animal, and any other animals of the same species.
+
+            This ability does not make the target any more friendly or cooperative than normal.
+            Wary and cunning animals are likely to be terse and evasive, while stupid ones tend to make inane comments and are unlikely to say or understand anything of use.
+        \end{attuneability}
+
+        \cf{Drd}[3]{Beast Tamer} You gain a \plus4 bonus to the Creature Handling skill (see \pcref{Creature Handling}).
+
+        \cf{Drd}[4]{Beast Companion} When you use your \textit{animal companion} ability,
+        you can target a \glossterm{magical beast} \glossterm{ally} with an Intelligence of \minus6 or lower instead of an animal.
+
+        \cf{Drd}[5]{Greater Wild Speech} When you use your \textit{wild speech} ability, you do not have to target an animal.
+        Instead, you understand the speech of animals of any species.
+
+        \cf{Drd}[6]{Greater Beast Tamer} The bonus from your \textit{beast tamer} ability increaeses to \plus8.
+
+        \cf{Drd}[7]{True Companion} The maximum \glossterm{challenge rating} of creatures you can affect with your \textit{animal companion} increases to 2.
+        In addition, the creature affected by your \textit{animal companion} ability has its \glossterm{challenge rating} increased to 2 if it was lower.
+
+    \subsection{Nature Spellcasting}
+        This archetype grants you the ability to cast nature spells.
+        You must have a starting Perception of at least 1 to gain this archetype.
+
+        \cf{Drd}[1]{Spellcasting}[Magical]
+        Your connection to nature grants you the ability to use nature magic.
+        You gain access to one nature \glossterm{mystic sphere} (see \pcref{Nature Mystic Spheres}).
+        You may spend \glossterm{insight points} to learn one additional \glossterm{mystic sphere} per two \glossterm{insight points}.
+        Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
+
+        You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
+        In addition, you learn one 1st level \glossterm{spell} from your chosen \glossterm{mystic sphere}.
+        You can also spend \glossterm{insight points} to learn one additional nature spell per \glossterm{insight point}.
+        Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
+
+        When you gain access to a new \glossterm{mystic sphere} or spell level,
+            you can exchange any number of spells you know for other spells,
+            including spells of the higher level.
+
+        Nature spells require \glossterm{verbal components} to cast (see \pcref{Casting Components}).
+        For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
+
+        \cf{Drd}[2]{Mystic Sphere} You gain access to an additional nature \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
+        In addition, you learn an additional nature \glossterm{spell}.
+
+        \cf{Drd}[3]{Spell Level}[Magical] You gain the ability to cast 2nd level nature spells.
+
+        \cf*{Drd}[4]{Spell Level}[Magical] You gain the ability to cast 3rd level nature spells.
+
+        \cf*{Drd}[5]{Spell Level}[Magical] You gain the ability to cast 4th level nature spells.
+
+        \cf*{Drd}[6]{Spell Level}[Magical] You gain the ability to cast 5th level nature spells.
+
+        \cf*{Drd}[7]{Spell Level}[Magical] You gain the ability to cast 6th level nature spells.
+
+        \cf*{Drd}[8]{Spell Level}[Magical] You gain the ability to cast 7th level nature spells.
+
+    \subsection{Nature Spell Mastery}
+        This archetype improves the nature spells you cast.
+        You must be able to cast nature spells to gain the abilities from this archetype.
+
+        \cf{Drd}[1]{Mystic Knowledge}
+        You gain your choice of one of the following abilities.
+        {
+            \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
+                You can choose this ability multiple times.
+                Its effects stack.
+            \parhead{Insight} You learn an additional nature \glossterm{spell} (see \pcref{Nature Mystic Spheres}).
+                You can choose this ability multiple times, gaining access to an additional spell each time.
+            \parhead{Mystic Sphere Access} You gain access to an additional nature \glossterm{mystic sphere}.
+                You cannot choose this ability multiple times.
+            \parhead{Rituals} You gain the ability to perform nature rituals to create unique magical effects (see \pcref{Rituals}).
+                The maximum level of nature ritual you can learn or perform is equal to the maximum level of divine spell that you can cast.
+                You cannot choose this ability multiple times.
+        }
+
+        \cf{Drd}[2]{Natural Spells} Your spells ignore \glossterm{cover} and \glossterm{concealment} provided by living plants (but not \glossterm{total cover}).
+
+        \cf{Drd}[3]{Wellspring of Power}[Magical]
+        You gain a \plus1 bonus to \glossterm{power} with \glossterm{magical} abilities.
+
+        \cf*{Drd}[4]{Mystic Knowledge}[Magical]
+        You gain an additional \textit{mystic knowledge} ability.
+
+        \cf{Drd}[5]{Greater Natural Spells} Your spells ignore \glossterm{total cover} provided by living plants.
+        This does not allow you to see targets through plants.
+
+        \cf{Drd}[6]{Greater Wellspring of Power}[Magical]
+        The bonus from your \textit{wellspring of power} ability increases to \plus2.
+
+        \cf*{Drd}[7]{Mystic Knowledge}[Magical]
+        You gain an additional \textit{mystic knowledge} ability.
 
     \subsection{Shifter}\label{Shifter}
         This archetype grants you the ability to embody aspects of the natural world in your own form.
@@ -1063,126 +1184,6 @@ This choice determines a great deal about your character's abilities.
         While you are an avatar of nature, you do not age and you cannot die of old age.
         You can continue to exist in this form indefinitely.
 
-    \subsection{Nature Spellcasting}
-        This archetype grants you the ability to cast nature spells.
-        You must have a starting Perception of at least 1 to gain this archetype.
-
-        \cf{Drd}[1]{Spellcasting}[Magical]
-        Your connection to nature grants you the ability to use nature magic.
-        You gain access to one nature \glossterm{mystic sphere} (see \pcref{Nature Mystic Spheres}).
-        You may spend \glossterm{insight points} to learn one additional \glossterm{mystic sphere} per two \glossterm{insight points}.
-        Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
-
-        You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-        In addition, you learn one 1st level \glossterm{spell} from your chosen \glossterm{mystic sphere}.
-        You can also spend \glossterm{insight points} to learn one additional nature spell per \glossterm{insight point}.
-        Unless otherwise noted in a spell's description, casting a spell requires a \glossterm{standard action}.
-
-        When you gain access to a new \glossterm{mystic sphere} or spell level,
-            you can exchange any number of spells you know for other spells,
-            including spells of the higher level.
-
-        Nature spells require \glossterm{verbal components} to cast (see \pcref{Casting Components}).
-        For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
-
-        \cf{Drd}[2]{Mystic Sphere} You gain access to an additional nature \glossterm{mystic sphere}, including all \glossterm{cantrips} from that sphere.
-        In addition, you learn an additional nature \glossterm{spell}.
-
-        \cf{Drd}[3]{Spell Level}[Magical] You gain the ability to cast 2nd level nature spells.
-
-        \cf*{Drd}[4]{Spell Level}[Magical] You gain the ability to cast 3rd level nature spells.
-
-        \cf*{Drd}[5]{Spell Level}[Magical] You gain the ability to cast 4th level nature spells.
-
-        \cf*{Drd}[6]{Spell Level}[Magical] You gain the ability to cast 5th level nature spells.
-
-        \cf*{Drd}[7]{Spell Level}[Magical] You gain the ability to cast 6th level nature spells.
-
-        \cf*{Drd}[8]{Spell Level}[Magical] You gain the ability to cast 7th level nature spells.
-
-    \subsection{Nature Spell Mastery}
-        This archetype improves the nature spells you cast.
-        You must be able to cast nature spells to gain the abilities from this archetype.
-
-        \cf{Drd}[1]{Mystic Knowledge}
-        You gain your choice of one of the following abilities.
-        {
-            \parhead{Focused Caster} You reduce your \glossterm{focus penalty} by 1.
-                You can choose this ability multiple times.
-                Its effects stack.
-            \parhead{Insight} You learn an additional nature \glossterm{spell} (see \pcref{Nature Mystic Spheres}).
-                You can choose this ability multiple times, gaining access to an additional spell each time.
-            \parhead{Mystic Sphere Access} You gain access to an additional nature \glossterm{mystic sphere}.
-                You cannot choose this ability multiple times.
-            \parhead{Rituals} You gain the ability to perform nature rituals to create unique magical effects (see \pcref{Rituals}).
-                The maximum level of nature ritual you can learn or perform is equal to the maximum level of divine spell that you can cast.
-                You cannot choose this ability multiple times.
-        }
-
-        \cf{Drd}[2]{Natural Spells} Your spells ignore \glossterm{cover} and \glossterm{concealment} provided by living plants (but not \glossterm{total cover}).
-
-        \cf{Drd}[3]{Wellspring of Power}[Magical]
-        You gain a \plus1 bonus to \glossterm{power} with \glossterm{magical} abilities.
-
-        \cf*{Drd}[4]{Mystic Knowledge}[Magical]
-        You gain an additional \textit{mystic knowledge} ability.
-
-        \cf{Drd}[5]{Greater Natural Spells} Your spells ignore \glossterm{total cover} provided by living plants.
-        This does not allow you to see targets through plants.
-
-        \cf{Drd}[6]{Greater Wellspring of Power}[Magical]
-        The bonus from your \textit{wellspring of power} ability increases to \plus2.
-
-        \cf*{Drd}[7]{Mystic Knowledge}[Magical]
-        You gain an additional \textit{mystic knowledge} ability.
-
-    \subsection{Beastmaster}
-        This archetype improves your connection to animals, allowing you to control and command them in battle.
-
-        \cf{Drd}[1]{Animal Companion}
-        You can use the \textit{animal companion} ability.
-        This ability requires 8 hours of training and attunement which the target must actively parcipate in.
-        You can compel a wild animal to undergo this training by sustaining the \textit{command} ability from the Creature Handling skill (see \pcref{Command}).
-        \begin{attuneability}{Animal Companion}[\glossterm{Attune} (self), \glossterm{Emotion}, \glossterm{Magical}]
-            Choose an animal \glossterm{ally} within your \glossterm{reach} with a level no higher than your level and a \glossterm{challenge rating} no higher than 1.
-            The target serves as a loyal companion to you.
-            It follows your directions to the best of its ability.
-            Animals are unable to understand complex concepts, so their ability to obey convoluted instructions is limited.
-
-            Your magical connection to the animal improves its resilience and strength in combat.
-            If any of its statistics are higher than the normal values below, the animal uses its own statistics instead.
-            All other aspects of the animal, such as its speed and natural weapons, are unchanged.
-            \begin{itemize}
-                \item Its \glossterm{damage resistance} and \glossterm{wound resistance} are equal to the base values for your level (see \pcref{Character Advancement}).
-                \item Its \glossterm{hit points} are equal to 6.
-                \item Each of its \glossterm{defenses} is normally equal to 4 \add your level.
-                \item Its \glossterm{accuracy} is normally equal to the higher of your level and Perception.
-                \item Its \glossterm{power} with its attacks is normally equal to your \glossterm{power}.
-                \item It can heal \glossterm{vital damage} using your level in place of its level.
-            \end{itemize}
-        \end{attuneability}
-
-        \cf{Drd}[2]{Wild Speech}[Magical] You can use the \textit{wild speech} ability as a standard action.
-        \begin{attuneability}{Wild Speech}[\glossterm{Attune} (self)]
-            Choose an animal within \rnglong range.
-            You can speak to and understand the speech of the target animal, and any other animals of the same species.
-
-            This ability does not make the target any more friendly or cooperative than normal.
-            Wary and cunning animals are likely to be terse and evasive, while stupid ones tend to make inane comments and are unlikely to say or understand anything of use.
-        \end{attuneability}
-
-        \cf{Drd}[3]{Beast Tamer} You gain a \plus4 bonus to the Creature Handling skill (see \pcref{Creature Handling}).
-
-        \cf{Drd}[4]{Beast Companion} When you use your \textit{animal companion} ability,
-        you can target a \glossterm{magical beast} \glossterm{ally} with an Intelligence of \minus6 or lower instead of an animal.
-
-        \cf{Drd}[5]{Greater Wild Speech} When you use your \textit{wild speech} ability, you do not have to target an animal.
-        Instead, you understand the speech of animals of any species.
-
-        \cf{Drd}[6]{Greater Beast Tamer} The bonus from your \textit{beast tamer} ability increaeses to \plus8.
-
-        \cf{Drd}[7]{True Companion} The maximum \glossterm{challenge rating} of creatures you can affect with your \textit{animal companion} increases to 2.
-        In addition, the creature affected by your \textit{animal companion} ability has its \glossterm{challenge rating} increased to 2 if it was lower.
 
         % \subcf{15th -- Air Mantle}
         % You are surrounded by a mantle of air.
@@ -1338,64 +1339,6 @@ This choice determines a great deal about your character's abilities.
         \cf{Ftr}{Weapon and Armor Proficiencies}
         You are proficient with simple weapons, any four other weapon groups, all body armor (light, medium, and heavy \glossterm{usage classes}), and shields.
 
-    \subsection{Martial Mastery}
-        This archetype grants you special abilities to use in combat.
-
-        \cf{Ftr}[1]{Martial Maneuvers}
-        You can channel your martial prowess into devastating attacks.
-        You learn one \glossterm{maneuver} from the martial maneuver list (see \pcref{Martial Maneuvers}).
-        You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
-        As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
-
-        \cf{Ftr}[2]{Martial Expertise} You gain a \plus1 bonus to Armor defense.
-
-        \cf{Ftr}[3]{Martial Power} You gain a \plus1 bonus to \glossterm{power} with \glossterm{mundane} abilities.
-
-        \cf{Ftr}[4]{Martial Maneuver}
-        You learn an additional \textit{martial maneuver}.
-
-        \cf{Ftr}[5]{Greater Martial Expertise} The bonus from your \textit{martial expertise} ability increases to \plus2.
-
-        \cf{Ftr}[6]{Greater Martial Power} The bonus from your \textit{martial power} ability increases to \plus2.
-
-        \cf*{Ftr}[7]{Martial Maneuver}
-        You learn an additional \textit{martial maneuver}.
-
-    \subsection{Equipment Training}
-        This archetype improves your combat prowess with weapons and armor.
-
-        \cf{Ftr}[1]{Armor Expertise}
-        You gain a \plus1 bonus to Armor defense while wearing body armor.
-        In addition, you reduce the \glossterm{encumbrance} of body armor you wear by 1.
-
-        \cf{Ftr}[2]{Weapon Training} You can use the \textit{weapon training} ability by spending an hour training with a weapon.
-        You cannot use this ability with an \glossterm{exotic weapon} unless you are proficient with the \glossterm{weapon group} that weapon belongs to.
-        \begin{freeability}{Weapon Training}
-            You become proficient with the weapon you trained with.
-            This ability's effect lasts until you use this ability again.
-
-            \rankline
-            \rank{4} You can use this ability with only five minutes of training.
-            \rank{6} The effect is permanent.
-            \rank{8} You can use this ability as a \glossterm{minor action}.
-        \end{freeability}
-
-        % TODO: wording
-        \cf{Ftr}[3]{Equipment Efficiency} You can \glossterm{attune} to an additional magic weapon or magic armor without spending an \glossterm{action point}.
-        After using this ability, you cannot use it again until you take a \glossterm{long rest}.
-
-        \cf{Ftr}[4]{Greater Armor Expertise}
-        The \glossterm{encumbrance} reduction from your \textit{armor expertise} ability increases to 2.
-        In addition, you treat body armor were one encumbrance category lighter than normal when doing so would be beneficial for you.
-
-        \cf{Ftr}[5]{Weapon Expertise} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{mundane} abilities.
-
-        \cf{Ftr}[6]{Greater Equipment Efficiency} The number of additional attunements you gain with your \textit{efficient equipment} ability increases to two.
-
-        \cf{Ftr}[7]{Supreme Armor Expertise}
-        The \glossterm{encumbrance} reduction from your \textit{armor expertise} ability increases to 3.
-        In addition, you treat body armor as if it were an additional encumbrance category lighter than normal when doing so would be beneficial for you.
-
     \subsection{Combat Discipline}
         This archetype allows you to improve your defenses and resist conditions.
 
@@ -1441,6 +1384,64 @@ This choice determines a great deal about your character's abilities.
         \cf{Ftr}[7]{Supreme Disciplined Reaction}
         You do not suffer any effects from \glossterm{conditions} until the end of the next round after they are applied.
         You suffer their normal effects after that time.
+
+    \subsection{Equipment Training}
+        This archetype improves your combat prowess with weapons and armor.
+
+        \cf{Ftr}[1]{Armor Expertise}
+        You gain a \plus1 bonus to Armor defense while wearing body armor.
+        In addition, you reduce the \glossterm{encumbrance} of body armor you wear by 1.
+
+        \cf{Ftr}[2]{Weapon Training} You can use the \textit{weapon training} ability by spending an hour training with a weapon.
+        You cannot use this ability with an \glossterm{exotic weapon} unless you are proficient with the \glossterm{weapon group} that weapon belongs to.
+        \begin{freeability}{Weapon Training}
+            You become proficient with the weapon you trained with.
+            This ability's effect lasts until you use this ability again.
+
+            \rankline
+            \rank{4} You can use this ability with only five minutes of training.
+            \rank{6} The effect is permanent.
+            \rank{8} You can use this ability as a \glossterm{minor action}.
+        \end{freeability}
+
+        % TODO: wording
+        \cf{Ftr}[3]{Equipment Efficiency} You can \glossterm{attune} to an additional magic weapon or magic armor without spending an \glossterm{action point}.
+        After using this ability, you cannot use it again until you take a \glossterm{long rest}.
+
+        \cf{Ftr}[4]{Greater Armor Expertise}
+        The \glossterm{encumbrance} reduction from your \textit{armor expertise} ability increases to 2.
+        In addition, you treat body armor were one encumbrance category lighter than normal when doing so would be beneficial for you.
+
+        \cf{Ftr}[5]{Weapon Expertise} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{mundane} abilities.
+
+        \cf{Ftr}[6]{Greater Equipment Efficiency} The number of additional attunements you gain with your \textit{efficient equipment} ability increases to two.
+
+        \cf{Ftr}[7]{Supreme Armor Expertise}
+        The \glossterm{encumbrance} reduction from your \textit{armor expertise} ability increases to 3.
+        In addition, you treat body armor as if it were an additional encumbrance category lighter than normal when doing so would be beneficial for you.
+
+    \subsection{Martial Mastery}
+        This archetype grants you special abilities to use in combat.
+
+        \cf{Ftr}[1]{Martial Maneuvers}
+        You can channel your martial prowess into devastating attacks.
+        You learn one \glossterm{maneuver} from the martial maneuver list (see \pcref{Martial Maneuvers}).
+        You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
+        As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
+
+        \cf{Ftr}[2]{Martial Expertise} You gain a \plus1 bonus to Armor defense.
+
+        \cf{Ftr}[3]{Martial Power} You gain a \plus1 bonus to \glossterm{power} with \glossterm{mundane} abilities.
+
+        \cf{Ftr}[4]{Martial Maneuver}
+        You learn an additional \textit{martial maneuver}.
+
+        \cf{Ftr}[5]{Greater Martial Expertise} The bonus from your \textit{martial expertise} ability increases to \plus2.
+
+        \cf{Ftr}[6]{Greater Martial Power} The bonus from your \textit{martial power} ability increases to \plus2.
+
+        \cf*{Ftr}[7]{Martial Maneuver}
+        You learn an additional \textit{martial maneuver}.
 
     \subsection{Tactician}
 
@@ -1824,6 +1825,41 @@ This choice determines a great deal about your character's abilities.
         Monks are proficient with simple weapons, monk weapons, and any one other weapon group.
         Monks are not proficient with any armor or shields.
 
+    \subsection{Esoteric Warrior}\label{Esoteric Warrior}
+        This archetype improves your combat prowess with unusual fighting styles like unarmed attacks and grappling.
+
+        \cf{Mnk}[1]{Esoteric Maneuvers} 
+        You learn one \glossterm{maneuver} from the esoteric maneuver list (see \pcref{Esoteric Maneuvers}).
+        You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
+        As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
+
+        \cf{Mnk}[1]{Unarmed Warrior}
+        You are \glossterm{proficient} with your \glossterm{unarmed attack}.
+        In addition, you gain a \plus2d bonus to damage with your unarmed attack.
+        For details about how to fight while unarmed, see \pcref{Unarmed Combat}.
+
+        \cf{Mnk}[2]{Unarmed Expertise}
+        When you attack with a free hand, you gain a \plus1 bonus to \glossterm{accuracy} with the \textit{dirty trick}, \textit{disarm}, \textit{grapple}, \textit{overrun}, \textit{shove}, and \textit{trip} abilities (see \pcref{Special Combat Abilities}).
+        In addition, you gain a \plus1 bonus to \glossterm{accuracy} with grapple actions (see \pcref{Grapple Actions}).
+
+        % TODO: wording?
+        % \cf{Mnk}[3]{Evasion} When you are attacked by an ability that affects an area, you can use your Reflex defense in place of any other defenses against that attack.
+
+        % \cf{Mnk}[3]{Unfettered Athletics} You gain two additional skill points.
+
+        % \cf{Mnk}[6]{Intuitive Reaction}
+        % You gain a \plus2 bonus to Reflex defense and \glossterm{initiative}.
+
+        \cf*{Mnk}[3]{Greater Unarmed Warrior} The damage bonus from your \textit{unarmed warrior} ability increases to \plus3d.
+
+        \cf{Mnk}[4]{Esoteric Maneuver} You learn an additional esoteric \glossterm{maneuver} (see \pcref{Esoteric Maneuvers}).
+
+        \cf{Mnk}[5]{Greater Unarmed Expertise} The bonus from your \textit{unarmed expertise} ability increases to \plus2.
+
+        \cf{Mnk}[6]{Supreme Unarmed Warrior} The damage bonus from your \textit{unarmed warrior} ability increases to \plus4d.
+
+        \cf*{Mnk}[7]{Esoteric Maneuver} You learn an additional esoteric \glossterm{maneuver} (see \pcref{Esoteric Maneuvers}).
+
     \subsection{Ki}
         This archtype grants you abilities you can use in combat.
         If you wear armor, use a shield, or have \glossterm{encumbrance}, you lose the benefit of all abilities from this archetype.
@@ -1984,40 +2020,22 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Mnk}[8]{Rapid Manifestation}[Magical] After using a \textit{ki manifestation} ability, you can use another one after the end of the current round instead of the end of the next round. 
 
-    \subsection{Esoteric Warrior}\label{Esoteric Warrior}
-        This archetype improves your combat prowess with unusual fighting styles like unarmed attacks and grappling.
+    \subsection{Perfected Form}
+        This archetype improves the perfection of your physical body through rigorous training.
 
-        \cf{Mnk}[1]{Esoteric Maneuvers} 
-        You learn one \glossterm{maneuver} from the esoteric maneuver list (see \pcref{Esoteric Maneuvers}).
-        You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
-        As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
+        \cf{Mnk}[1]{Fast Movement} You gain a \plus10 foot bonus to your \glossterm{base speed}.
 
-        \cf{Mnk}[1]{Unarmed Warrior}
-        You are \glossterm{proficient} with your \glossterm{unarmed attack}.
-        In addition, you gain a \plus2d bonus to damage with your unarmed attack.
-        For details about how to fight while unarmed, see \pcref{Unarmed Combat}.
+        \cf{Mnk}[2]{Graceful Athletics} You gain a \plus1 bonus to Strength-based and Dexterity-based checks.
 
-        \cf{Mnk}[2]{Unarmed Expertise}
-        When you attack with a free hand, you gain a \plus1 bonus to \glossterm{accuracy} with the \textit{dirty trick}, \textit{disarm}, \textit{grapple}, \textit{overrun}, \textit{shove}, and \textit{trip} abilities (see \pcref{Special Combat Abilities}).
-        In addition, you gain a \plus1 bonus to \glossterm{accuracy} with grapple actions (see \pcref{Grapple Actions}).
+        \cf{Mnk}[3]{Perfect Body} You gain a \plus1 bonus to the starting value of one physical \glossterm{attribute} of your choice: Strength, Dexterity, or Constitution.
 
-        % TODO: wording?
-        % \cf{Mnk}[3]{Evasion} When you are attacked by an ability that affects an area, you can use your Reflex defense in place of any other defenses against that attack.
+        \cf{Mnk}[4]{Greater Fast Movement} The speed bonus from your \textit{fast movement} ability increases to \plus20 feet.
 
-        % \cf{Mnk}[3]{Unfettered Athletics} You gain two additional skill points.
+        \cf{Mnk}[5]{Greater Graceful Athletics} The bonus from your \textit{graceful athletics} ability increases to \plus2.
 
-        % \cf{Mnk}[6]{Intuitive Reaction}
-        % You gain a \plus2 bonus to Reflex defense and \glossterm{initiative}.
+        \cf{Mnk}[6]{Greater Perfect Body} The bonus from your \textit{perfect body} ability applies to the starting value of all physical attributes, not just the one you chose.
 
-        \cf*{Mnk}[3]{Greater Unarmed Warrior} The damage bonus from your \textit{unarmed warrior} ability increases to \plus3d.
-
-        \cf{Mnk}[4]{Esoteric Maneuver} You learn an additional esoteric \glossterm{maneuver} (see \pcref{Esoteric Maneuvers}).
-
-        \cf{Mnk}[5]{Greater Unarmed Expertise} The bonus from your \textit{unarmed expertise} ability increases to \plus2.
-
-        \cf{Mnk}[6]{Supreme Unarmed Warrior} The damage bonus from your \textit{unarmed warrior} ability increases to \plus4d.
-
-        \cf*{Mnk}[7]{Esoteric Maneuver} You learn an additional esoteric \glossterm{maneuver} (see \pcref{Esoteric Maneuvers}).
+        \cf{Mnk}[7]{Supreme Fast Movement} The speed bonus from your \textit{fast movement} ability increases to \plus30 feet.
 
     \subsection{Transcendent Sage}
         This archetype grants you abilities to resist or remove conditions.
@@ -2063,23 +2081,6 @@ This choice determines a great deal about your character's abilities.
         After each time you reform yourself in this way, it takes an additional hour to reform the next time you ``die''.
         You can only be permanently killed by the direct intervention of a deity.
 
-    \subsection{Perfected Form}
-        This archetype improves the perfection of your physical body through rigorous training.
-
-        \cf{Mnk}[1]{Fast Movement} You gain a \plus10 foot bonus to your \glossterm{base speed}.
-
-        \cf{Mnk}[2]{Graceful Athletics} You gain a \plus1 bonus to Strength-based and Dexterity-based checks.
-
-        \cf{Mnk}[3]{Perfect Body} You gain a \plus1 bonus to the starting value of one physical \glossterm{attribute} of your choice: Strength, Dexterity, or Constitution.
-
-        \cf{Mnk}[4]{Greater Fast Movement} The speed bonus from your \textit{fast movement} ability increases to \plus20 feet.
-
-        \cf{Mnk}[5]{Greater Graceful Athletics} The bonus from your \textit{graceful athletics} ability increases to \plus2.
-
-        \cf{Mnk}[6]{Greater Perfect Body} The bonus from your \textit{perfect body} ability applies to the starting value of all physical attributes, not just the one you chose.
-
-        \cf{Mnk}[7]{Supreme Fast Movement} The speed bonus from your \textit{fast movement} ability increases to \plus30 feet.
-
     \subsection{Ex-Monks}
         As long as you are chaotic, you lose all of your \glossterm{magical} monk abilities.
 
@@ -2088,15 +2089,15 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable!*}
         \lcaption{Paladin Progression}
         \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Devoted Paragon}  & \tb{Divine Spellcasting} & \tb{Zealous Warrior}       & \tb{Stalwart Guardian} \tableheaderrule
-            1 & Aligned aura          & Spellcasting    & Smite                      & Lay on hands                \\
-            2 & Aligned immunity      & Mystic spheres  & Zealous conviction         & Stalwart champion           \\
-            3 & Paragon power         & Spell level (2) & Zealous power              & Stalwart resilience         \\
-            4 & Greater aligned aura  & Spell level (3) & Greater smite              & Greater lay on hands        \\
-            5 & Devoted mind          & Spell level (4) & Greater zealous conviction & Greater stalwart champion   \\
-            6 & Greater paragon power & Spell level (5) & Greater zealous power      & Greater stalwart resilience \\
-            7 & Supreme aligned aura  & Spell level (6) & Supreme smite              & Supreme lay on hands        \\
-            8 & Aligned soul          & Spell level (7) &                            &                             \\
+            \tb{Rank} & \tb{Devoted Paragon}  & \tb{Divine Spellcasting} & \tb{Stalwart Guardian}      & \tb{Zealous Warrior}       \tableheaderrule
+            1         & Aligned aura          & Spellcasting             & Lay on hands                & Smite                      \\
+            2         & Aligned immunity      & Mystic spheres           & Stalwart champion           & Zealous conviction         \\
+            3         & Paragon power         & Spell level (2)          & Stalwart resilience         & Zealous power              \\
+            4         & Greater aligned aura  & Spell level (3)          & Greater lay on hands        & Greater smite              \\
+            5         & Devoted mind          & Spell level (4)          & Greater stalwart champion   & Greater zealous conviction \\
+            6         & Greater paragon power & Spell level (5)          & Greater stalwart resilience & Greater zealous power      \\
+            7         & Supreme aligned aura  & Spell level (6)          & Supreme lay on hands        & Supreme smite              \\
+            8         & Aligned soul          & Spell level (7)          &                             &                            \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -2225,6 +2226,40 @@ This choice determines a great deal about your character's abilities.
 
         \cf*{Pal}[8]{Spell} You gain an additional \glossterm{spell} for any divine \glossterm{mystic sphere} you know.
 
+    \subsection{Stalwart Guardian}
+        This archetype grants you healing abilities and improves your defensive prowess.
+
+        \cf{Pal}[1]{Lay on Hands}[Magical] You can use the \textit{lay on hands} ability as a standard action.
+        \begin{freeability}{Lay on Hands}[Life]
+            One \glossterm{ally} within your \glossterm{reach} gains a \plus2 bonus to its most recent \glossterm{wound roll}.
+            The \glossterm{wound roll} for that \glossterm{vital wound} cannot be modified again.
+
+            \rankline
+            \rank{3} The bonus increases to \plus3.
+            \rank{5} When you use this ability, you can spend an \glossterm{action point}.
+            If you do, the target's most recent \glossterm{vital wound} is removed instead of having its \glossterm{wound roll} modified.
+            \rank{7} The bonus increases to \plus5.
+        \end{freeability}
+
+        \cf{Pal}[2]{Enduring Defender}
+        You gain an additional \glossterm{hit point}.
+
+        \cf{Pal}[3]{Stalwart Resilience}
+        You gain a \plus1 bonus to Fortitude and Mental defense.
+        In addition, you gain a \plus1 bonus to \glossterm{wound rolls}.
+
+        \cf{Pal}[4]{Defender's Boon}
+        Whenever you are attacked, you gain a \plus1 bonus to \glossterm{accuracy} until the end of the next round.
+        This bonus does not stack with itself.
+
+        \cf{Pal}[5]{Greater Enduring Defender}
+        You gain an additional \glossterm{hit point}.
+
+        \cf{Pal}[6]{Greater Stalwart Resilience} The bonuses from your \textit{stalwart resilience} ability increase to \plus2.
+
+        \cf{Pal}[7]{Greater Defender's Boon}[Magical]
+        The bonus from your \textit{defender's boon} ability increase to \plus2.
+
     \subsection{Zealous Warrior}
         This archetype improves your combat prowess, especially against foes who do not share your devoted alignment.
 
@@ -2281,40 +2316,6 @@ This choice determines a great deal about your character's abilities.
         % Both of these effects harm only the paladin's foes, and do not harm your allies.
         % However, your allies' vision is still impeded by the \spell{storm of vengeance}.
 
-    \subsection{Stalwart Guardian}
-        This archetype grants you healing abilities and improves your defensive prowess.
-
-        \cf{Pal}[1]{Lay on Hands}[Magical] You can use the \textit{lay on hands} ability as a standard action.
-        \begin{freeability}{Lay on Hands}[Life]
-            One \glossterm{ally} within your \glossterm{reach} gains a \plus2 bonus to its most recent \glossterm{wound roll}.
-            The \glossterm{wound roll} for that \glossterm{vital wound} cannot be modified again.
-
-            \rankline
-            \rank{3} The bonus increases to \plus3.
-            \rank{5} When you use this ability, you can spend an \glossterm{action point}.
-            If you do, the target's most recent \glossterm{vital wound} is removed instead of having its \glossterm{wound roll} modified.
-            \rank{7} The bonus increases to \plus5.
-        \end{freeability}
-
-        \cf{Pal}[2]{Enduring Defender}
-        You gain an additional \glossterm{hit point}.
-
-        \cf{Pal}[3]{Stalwart Resilience}
-        You gain a \plus1 bonus to Fortitude and Mental defense.
-        In addition, you gain a \plus1 bonus to \glossterm{wound rolls}.
-
-        \cf{Pal}[4]{Defender's Boon}
-        Whenever you are attacked, you gain a \plus1 bonus to \glossterm{accuracy} until the end of the next round.
-        This bonus does not stack with itself.
-
-        \cf{Pal}[5]{Greater Enduring Defender}
-        You gain an additional \glossterm{hit point}.
-
-        \cf{Pal}[6]{Greater Stalwart Resilience} The bonuses from your \textit{stalwart resilience} ability increase to \plus2.
-
-        \cf{Pal}[7]{Greater Defender's Boon}[Magical]
-        The bonus from your \textit{defender's boon} ability increase to \plus2.
-
     \subsection{Ex-Paladins}
         If you cease to follow your devoted alignment, you lose all \glossterm{magical} paladin class abilities.
         If your atone for your misdeeds and resume the service of your devoted alignment, you can regain your abilities.
@@ -2324,15 +2325,15 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable!*}
         \lcaption{Ranger Progression}
         \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X > {\lcol}X}
-            \tb{Rank} & \tb{Huntmaster}     & \tb{Keen Senses}    & \tb{Wilderness Warrior}  & \tb{Monster Slayer} \tableheaderrule
-            1 & Quarry              & Keen vision         & Wild maneuvers           & Favored enemy          \\
-            2 & Hunting style       & Learned perception  & Woodland stride          & Exotic weaponry        \\
-            3 & Tracker             & Blindsense          & Wild reaction            & Slayer's power         \\
-            4 & Wary hunter         & Greater keen vision & Wild maneuver            & Favored enemy          \\
-            5 & Hunting style       & Perceive weakness   & Greater woodland stride  & Monster familiarity    \\
-            6 & Greater tracker     & Blindsight          & Greater wild reaction    & Greater slayer's power \\
-            7 & Greater wary hunter & Supreme keen vision & Wild maneuver            & Greater favored enemy  \\
-            8 & Dual quarry         &                     &                         \\
+            \tb{Rank} & \tb{Huntmaster}     & \tb{Keen Senses}    & \tb{Monster Slayer}    & \tb{Wilderness Warrior} \tableheaderrule
+            1 & Quarry              & Keen vision         & Favored enemy          & Wild maneuvers          \\
+            2 & Hunting style       & Learned perception  & Exotic weaponry        & Woodland stride         \\
+            3 & Tracker             & Blindsense          & Slayer's power         & Wild reaction           \\
+            4 & Wary hunter         & Greater keen vision & Favored enemy          & Wild maneuver           \\
+            5 & Hunting style       & Perceive weakness   & Monster familiarity    & Greater woodland stride \\
+            6 & Greater tracker     & Blindsight          & Greater slayer's power & Greater wild reaction   \\
+            7 & Greater wary hunter & Supreme keen vision & Greater favored enemy  & Wild maneuver           \\
+            8 & Dual quarry         &                     &                        &                         \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -2393,33 +2394,6 @@ This choice determines a great deal about your character's abilities.
         Your perceptions are accurate enough to defeat even powerful magic.
         You can see through normal and magical darkness, see the truth behind visual figments and glamers, and see the true form of creatures and objects affected by \glossterm{Shaping} abilities.
         This ability works at any range.
-
-    % Would be nice to call this ``Hunter'' and the maneuvers ``Hunting'' maneuvers,
-    % but that conflicts with the naming for Huntmaster
-    \subsection{Wilderness Warrior}
-        This archetype grants you abilities to use in combat and improves your wilderness skills.
-
-        \cf{Rgr}[1]{Wild Maneuvers} 
-        You can channel your martial prowess into devastating attacks.
-        You learn one \glossterm{maneuver} from the wild maneuver list (see \pcref{Wild Maneuvers}).
-        You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
-        As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
-
-        \cf{Rgr}[2]{Woodland Stride} Your movement is not impeded by \glossterm{light undergrowth}.
-        In addition, your movement costs are only doubled in \glossterm{heavy undergrowth} instead of quadrupled.
-
-        \cf{Rgr}[3]{Wild Reaction} You gain a \plus2 bonus to \glossterm{initiative} checks and Reflex defense.
-
-        \cf{Rgr}[4]{Wild Maneuver}
-        You learn an additional \textit{wild maneuver}.
-
-        \cf{Rgr}[5]{Greater Woodland Stride} Your movement and actions are not impeded by \glossterm{heavy undergrowth}.
-        In addition, you gain a \plus10 foot bonus to your \glossterm{base speed}.
-
-        \cf{Rgr}[6]{Greater Wild Reaction} The bonus from your \textit{wild reaction} bonus increases to \plus4.
-
-        \cf*{Rgr}[7]{Wild Maneuver}
-        You learn an additional \textit{wild maneuver}.
 
     \subsection{Huntmaster}
         This archetype grants you and your allies abilities to hunt down specific foes.
@@ -2588,6 +2562,34 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rgr}[7]{Greater Favored Enemy} The bonus from your \textit{favored enemy} ability increases to \plus2.
 
+    % Would be nice to call this ``Hunter'' and the maneuvers ``Hunting'' maneuvers,
+    % but that conflicts with the naming for Huntmaster
+    \subsection{Wilderness Warrior}
+        This archetype grants you abilities to use in combat and improves your wilderness skills.
+
+        \cf{Rgr}[1]{Wild Maneuvers} 
+        You can channel your martial prowess into devastating attacks.
+        You learn one \glossterm{maneuver} from the wild maneuver list (see \pcref{Wild Maneuvers}).
+        You can also spend \glossterm{insight points} to learn one additional \glossterm{maneuver} per \glossterm{insight point}.
+        As a \glossterm{standard action}, you can use any \glossterm{maneuver} you know.
+
+        \cf{Rgr}[2]{Woodland Stride} Your movement is not impeded by \glossterm{light undergrowth}.
+        In addition, your movement costs are only doubled in \glossterm{heavy undergrowth} instead of quadrupled.
+
+        \cf{Rgr}[3]{Wild Reaction} You gain a \plus2 bonus to \glossterm{initiative} checks and Reflex defense.
+
+        \cf{Rgr}[4]{Wild Maneuver}
+        You learn an additional \textit{wild maneuver}.
+
+        \cf{Rgr}[5]{Greater Woodland Stride} Your movement and actions are not impeded by \glossterm{heavy undergrowth}.
+        In addition, you gain a \plus10 foot bonus to your \glossterm{base speed}.
+
+        \cf{Rgr}[6]{Greater Wild Reaction} The bonus from your \textit{wild reaction} bonus increases to \plus4.
+
+        \cf*{Rgr}[7]{Wild Maneuver}
+        You learn an additional \textit{wild maneuver}.
+
+
     % \subsection{Boundary Warden}
     %     This archetype grants you abilities improving your ability to guard the boundaries between civilization and nature.
 
@@ -2600,15 +2602,15 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable!*}
         \lcaption{Rogue Progression}
         \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Assassin}               & \tb{Jack of All Trades} & \tb{Combat Trickster}  & \tb{Suave Scoundrel} \tableheaderrule
-            1 & Sneak attack                & Skill lore             & Tricky manuevers     & Confound         \\
-            2 & Evasion                     & Skill exemplar         & Trick lore           & Glibness         \\
-            3 & Darkstalker                 & Dabbler                & Trick power          & Distract         \\
-            4 & Hide in plain sight         & Skill lore             & Trick manuever       & Suave lore       \\
-            5 & Greater evasion             & Greater skill exemplar &                      & Greater glibness \\
-            6 & Assassination               & Greater dabbler        & Greater trick power  & Compel belief    \\
-            7 & Greater hide in plain sight & Master of masteries    & Trick maneuver       & Slippery mind    \\
-            8 & Greater darkstalker         &                        &                     \\
+            \tb{Rank} & \tb{Assassin}               & \tb{Combat Trickster} & \tb{Jack of All Trades} & \tb{Suave Scoundrel} \tableheaderrule
+            1 & Sneak attack                & Tricky manuevers    & Skill lore             & Confound         \\
+            2 & Evasion                     & Trick lore          & Skill exemplar         & Glibness         \\
+            3 & Darkstalker                 & Trick power         & Dabbler                & Distract         \\
+            4 & Hide in plain sight         & Trick manuever      & Skill lore             & Suave lore       \\
+            5 & Greater evasion             &                     & Greater skill exemplar & Greater glibness \\
+            6 & Assassination               & Greater trick power & Greater dabbler        & Compel belief    \\
+            7 & Greater hide in plain sight & Trick maneuver      & Master of masteries    & Slippery mind    \\
+            8 & Greater darkstalker         &                     &                        &                  \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -2683,25 +2685,6 @@ This choice determines a great deal about your character's abilities.
 
         \cf{Rog}[8]{Greater Darkstalker}[Magical] When you use your \textit{darkstalker} ability, you become undetectable by all of the listed senses, not just one.
 
-    \subsection{Jack of All Trades}
-        This archetype improves your skills.
-
-        \cf{Rog}[1]{Skill Lore} You gain three additional skill points.
-
-        \cf{Rog}[2]{Skill Exemplar} You gain a \plus1 bonus to all skills.
-
-        \cf{Rog}[3]{Dabbler} You gain an additional \glossterm{insight point}.
-
-        \cf*{Rog}[4]{Skill Lore} You gain three additional skill points.
-
-        \cf{Rog}[5]{Greater Skill Exemplar} The skill bonus from your \textit{skill exemplar} ability increases to \plus2.
-
-        \cf{Rog}[6]{Greater Dabbler} You gain an additional \glossterm{insight point}.
-
-        \cf{Rog}[7]{Master of Masteries} You gain a \plus2 bonus to skills you have \glossterm{mastered}.
-
-        \cf{Rog}[8]{Supreme Skill Exemplar} The skill bonus from your \textit{skill exemplar} ability increases to \plus4.
-
     \subsection{Combat Trickster}
         This archetype grants you abilities to use in combat and improves your combat prowess.
 
@@ -2725,6 +2708,25 @@ This choice determines a great deal about your character's abilities.
 
         \cf*{Rog}[7]{Trick Maneuver}
         You learn an additional \textit{trick maneuver}.
+
+    \subsection{Jack of All Trades}
+        This archetype improves your skills.
+
+        \cf{Rog}[1]{Skill Lore} You gain three additional skill points.
+
+        \cf{Rog}[2]{Skill Exemplar} You gain a \plus1 bonus to all skills.
+
+        \cf{Rog}[3]{Dabbler} You gain an additional \glossterm{insight point}.
+
+        \cf*{Rog}[4]{Skill Lore} You gain three additional skill points.
+
+        \cf{Rog}[5]{Greater Skill Exemplar} The skill bonus from your \textit{skill exemplar} ability increases to \plus2.
+
+        \cf{Rog}[6]{Greater Dabbler} You gain an additional \glossterm{insight point}.
+
+        \cf{Rog}[7]{Master of Masteries} You gain a \plus2 bonus to skills you have \glossterm{mastered}.
+
+        \cf{Rog}[8]{Supreme Skill Exemplar} The skill bonus from your \textit{skill exemplar} ability increases to \plus4.
 
     \subsection{Suave Scoundrel}
         This archetype improves your social manipulation abilities.
@@ -2811,15 +2813,15 @@ This choice determines a great deal about your character's abilities.
     \begin{dtable!*}
         \lcaption{Warlock Progression}
         \begin{dtabularx}{\textwidth}{c >{\lcol}X >{\lcol}X >{\lcol}X >{\lcol}X}
-            \tb{Rank} & \tb{Pact Spellcasting} & \tb{Pact Spell Mastery}     & \tb{Blessings of the Abyss}  & \tb{Soulkeeper's Chosen} \tableheaderrule
-            1 & Spellcasting           & Armor tolerance             & Eldritch blast               & Possession                  \\
-            2 & Mystic sphere          & Spell knowledge             & Fiendish resistance          & Empowering whispers         \\
-            3 & Spell level (2)        & Wellspring of power         & Abyssal jaunt                & Influence possession        \\
-            4 & Spell level (3), spell & Spell knowledge             & Abyssal substitution         & Exchange soul fragment      \\
-            5 & Spell level (4)        & Greater armor tolerance     & Greater fiendish resistance  & Powerful possession         \\
-            6 & Spell level (5)        & Spell knowledge             & Abyssal curse                & Greater empowering whispers \\
-            7 & Spell level (6), spell & Greater wellspring of power & Greater abyssal substitution & Control possession          \\
-            8 & Spell level (7)        &                             &                              &                             \\
+            \tb{Rank} & \tb{Blessings of the Abyss}  & \tb{Pact Spellcasting} & \tb{Pact Spell Mastery}     & \tb{Soulkeeper's Chosen} \tableheaderrule
+            1 & Eldritch blast               & Spellcasting           & Armor tolerance             & Possession                  \\
+            2 & Fiendish resistance          & Mystic sphere          & Spell knowledge             & Empowering whispers         \\
+            3 & Abyssal jaunt                & Spell level (2)        & Wellspring of power         & Influence possession        \\
+            4 & Abyssal substitution         & Spell level (3), spell & Spell knowledge             & Exchange soul fragment      \\
+            5 & Greater fiendish resistance  & Spell level (4)        & Greater armor tolerance     & Powerful possession         \\
+            6 & Abyssal curse                & Spell level (5)        & Spell knowledge             & Greater empowering whispers \\
+            7 & Greater abyssal substitution & Spell level (6), spell & Greater wellspring of power & Control possession          \\
+            8 &                              & Spell level (7)        &                             &                             \\
         \end{dtabularx}
     \end{dtable!*}
 
@@ -2883,6 +2885,50 @@ This choice determines a great deal about your character's abilities.
             \subcf{Whispers of the Mighty} Your soulkeeper forges the connection to your soul into a boon granted to any soul in the Abyss strong enough to claim it in battle.
             You hear the voice of whatever soul currently possesses the boon, which may change suddenly and unexpectedly.
         }
+
+    \subsection{Blessings of the Abyss}
+        This archetype enhances your connection to the Abyss and allows you to channel its sinister power more directly.
+
+        \cf{War}[1]{Abyssal Blast} You can use the \textit{abyssal blast} ability as a standard action.
+        \begin{freeability}{Abyssal Blast}[\glossterm{Magical}]
+            Make an attack vs. Armor against one creature or object within \rngclose range.
+            \hit The target takes \glossterm{standard damage}.
+
+            \rankline
+            \rank{3} You gain a \plus1d bonus to damage with the attack.
+            \rank{5} The damage bonus increases to \plus2d.
+            \rank{7} The damage bonus increases to \plus3d.
+        \end{freeability}
+
+        \cf{War}[2]{Fiendish Resistance} You gain a bonus equal to half your level to \glossterm{resistances} against \glossterm{energy damage}.
+
+        \cf{War}[3]{Abyssal Jaunt} You can use the \textit{abyssal jaunt} ability as a standard action.
+        \begin{freeability}{Abyssal Jaunt}[\glossterm{Magical}]
+            Make an attack vs. Mental against one creature or object within \rngclose range.
+            \hit The target is teleported into the Abyss and takes \glossterm{standard damage} \minus2d.
+            At the end of the next round, it returns to its original location, or the closest open space if that location is occupied.
+
+            \rankline
+            \rank{5} The damage penalty is reduced to \minus1d.
+            \rank{7} The damage penalty is removed.
+        \end{freeability}
+
+        \cf{War}[4]{Abyssal Substitution} Whenever you use a \glossterm{magical} ability that deals \glossterm{energy damage} or any subtype of \glossterm{energy damage}, you may change the type of damage it deals to be untyped.
+        Any other aspects of the ability remain unchanged.
+
+        \cf{War}[5]{Greater Fiendish Resistance}[Magical] The bonus from your \textit{fiendish resistance} ability increases to be equal to your level.
+
+        \cf{War}[6]{Abyssal Curse} You can use the \textit{abyssal curse} ability as a standard action.
+        \begin{freeability}{Abyssal Curse}[\glossterm{Curse}, \glossterm{Magical}]
+            Make an attack vs. Fortitude against one creature or object within \rngclose range.
+            \hit The target is \glossterm{nauseated}.
+
+            \rankline
+            \rank{8} On a \glossterm{critical hit}, the target is also \glossterm{paralyzed}.
+        \end{freeability}
+
+        \cf{War}[7]{Greater Abyssal Substitution} Whenever you use an ability that deals damage, you may change the type of damage it deals to be untyped.
+        Any other aspects of the ability remain unchanged.
 
     \subsection{Pact Spellcasting}
         This archetype grants you the ability to cast pact spells.
@@ -3078,47 +3124,3 @@ This choice determines a great deal about your character's abilities.
 
         \cf{War}[7]{Control Possession} During your \textit{possession} ability, you can choose your actions normally.
         Your soulkeeper may still choose to end the ability.
-
-    \subsection{Blessings of the Abyss}
-        This archetype enhances your connection to the Abyss and allows you to channel its sinister power more directly.
-
-        \cf{War}[1]{Abyssal Blast} You can use the \textit{abyssal blast} ability as a standard action.
-        \begin{freeability}{Abyssal Blast}[\glossterm{Magical}]
-            Make an attack vs. Armor against one creature or object within \rngclose range.
-            \hit The target takes \glossterm{standard damage}.
-
-            \rankline
-            \rank{3} You gain a \plus1d bonus to damage with the attack.
-            \rank{5} The damage bonus increases to \plus2d.
-            \rank{7} The damage bonus increases to \plus3d.
-        \end{freeability}
-
-        \cf{War}[2]{Fiendish Resistance} You gain a bonus equal to half your level to \glossterm{resistances} against \glossterm{energy damage}.
-
-        \cf{War}[3]{Abyssal Jaunt} You can use the \textit{abyssal jaunt} ability as a standard action.
-        \begin{freeability}{Abyssal Jaunt}[\glossterm{Magical}]
-            Make an attack vs. Mental against one creature or object within \rngclose range.
-            \hit The target is teleported into the Abyss and takes \glossterm{standard damage} \minus2d.
-            At the end of the next round, it returns to its original location, or the closest open space if that location is occupied.
-
-            \rankline
-            \rank{5} The damage penalty is reduced to \minus1d.
-            \rank{7} The damage penalty is removed.
-        \end{freeability}
-
-        \cf{War}[4]{Abyssal Substitution} Whenever you use a \glossterm{magical} ability that deals \glossterm{energy damage} or any subtype of \glossterm{energy damage}, you may change the type of damage it deals to be untyped.
-        Any other aspects of the ability remain unchanged.
-
-        \cf{War}[5]{Greater Fiendish Resistance}[Magical] The bonus from your \textit{fiendish resistance} ability increases to be equal to your level.
-
-        \cf{War}[6]{Abyssal Curse} You can use the \textit{abyssal curse} ability as a standard action.
-        \begin{freeability}{Abyssal Curse}[\glossterm{Curse}, \glossterm{Magical}]
-            Make an attack vs. Fortitude against one creature or object within \rngclose range.
-            \hit The target is \glossterm{nauseated}.
-
-            \rankline
-            \rank{8} On a \glossterm{critical hit}, the target is also \glossterm{paralyzed}.
-        \end{freeability}
-
-        \cf{War}[7]{Greater Abyssal Substitution} Whenever you use an ability that deals damage, you may change the type of damage it deals to be untyped.
-        Any other aspects of the ability remain unchanged.
