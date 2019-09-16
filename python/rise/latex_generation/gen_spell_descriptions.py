@@ -40,8 +40,8 @@ def generate_mystic_spheres():
         spells=[
             Spell('Propulsion', 1, 'Yourself or one Large or smaller \\glossterm<ally> in \\rngclose range', """
                 You move the target up to 50 feet in any direction.
-                You cannot change direction the direction of the movement partway through.
-                Moving the target upwards cost twice the normal movement cost.
+                You cannot change the direction of the movement partway through.
+                Moving the target upwards costs twice the normal movement cost.
             """, tags=['Swift']),
             Spell('Wind Screen', 1, 'Yourself', """
                 You gain a +1 \\glossterm<magic bonus> to Armor defense.
